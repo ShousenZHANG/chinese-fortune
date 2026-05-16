@@ -1,0 +1,290 @@
+{
+  "major_arcana": [
+    {
+      "number": 0,
+      "name_en": "The Fool",
+      "name_zh": "愚者",
+      "element": "风",
+      "keywords_upright": ["新开始", "天真", "冒险", "自由", "潜力"],
+      "keywords_reversed": ["鲁莽", "幼稚", "迟疑", "缺乏方向"],
+      "upright_meaning": "新的旅程开始,纯真,自由,无限潜力。鼓起勇气踏出第一步。",
+      "reversed_meaning": "鲁莽行事,愚蠢的决定,缺乏方向感,不愿承担责任。"
+    },
+    {
+      "number": 1,
+      "name_en": "The Magician",
+      "name_zh": "魔术师",
+      "element": "水星",
+      "keywords_upright": ["创造力", "意志力", "技能", "行动"],
+      "keywords_reversed": ["操控", "欺骗", "技能未发挥", "犹豫"],
+      "upright_meaning": "拥有实现目标的全部资源与能力,意志坚定,创造力强。",
+      "reversed_meaning": "操控他人或被操控,才能未能发挥,自欺欺人。"
+    },
+    {
+      "number": 2,
+      "name_en": "The High Priestess",
+      "name_zh": "女祭司",
+      "element": "月亮",
+      "keywords_upright": ["直觉", "潜意识", "神秘", "智慧"],
+      "keywords_reversed": ["压抑直觉", "秘密", "失衡", "迷失"],
+      "upright_meaning": "倾听直觉,深入潜意识,神秘智慧引导你前行。",
+      "reversed_meaning": "忽视直觉,隐藏的秘密,内在与外在失衡。"
+    },
+    {
+      "number": 3,
+      "name_en": "The Empress",
+      "name_zh": "皇后",
+      "element": "金星",
+      "keywords_upright": ["丰饶", "母性", "创造", "自然"],
+      "keywords_reversed": ["依赖", "占有", "创造力受阻", "停滞"],
+      "upright_meaning": "丰盛、母性能量、艺术创造、与自然连结、感性丰满。",
+      "reversed_meaning": "过度依赖或占有欲,创造力受阻,生活停滞不前。"
+    },
+    {
+      "number": 4,
+      "name_en": "The Emperor",
+      "name_zh": "皇帝",
+      "element": "白羊座",
+      "keywords_upright": ["权威", "结构", "稳定", "领导"],
+      "keywords_reversed": ["独裁", "僵化", "缺乏纪律", "滥用权力"],
+      "upright_meaning": "建立秩序,父权能量,领导力,稳定的根基。",
+      "reversed_meaning": "权威滥用,过度僵化,缺乏自律或权力被剥夺。"
+    },
+    {
+      "number": 5,
+      "name_en": "The Hierophant",
+      "name_zh": "教皇",
+      "element": "金牛座",
+      "keywords_upright": ["传统", "教导", "信仰", "团体"],
+      "keywords_reversed": ["叛逆", "教条", "新方法", "脱离传统"],
+      "upright_meaning": "传统、宗教、教育、寻求精神导师、遵循既定规范。",
+      "reversed_meaning": "反叛传统,过于教条或挑战权威,寻找新方法。"
+    },
+    {
+      "number": 6,
+      "name_en": "The Lovers",
+      "name_zh": "恋人",
+      "element": "双子座",
+      "keywords_upright": ["爱情", "和谐", "选择", "结合"],
+      "keywords_reversed": ["不和", "失衡", "错误选择", "分离"],
+      "upright_meaning": "深刻的爱情、重要的选择、价值观契合、和谐结合。",
+      "reversed_meaning": "关系不和、价值观冲突、错误决定、内心矛盾。"
+    },
+    {
+      "number": 7,
+      "name_en": "The Chariot",
+      "name_zh": "战车",
+      "element": "巨蟹座",
+      "keywords_upright": ["意志", "胜利", "决心", "控制"],
+      "keywords_reversed": ["失控", "缺乏方向", "侵略", "挫败"],
+      "upright_meaning": "凭决心与意志取胜,掌控方向,克服对立力量。",
+      "reversed_meaning": "失去控制,缺乏自律,方向迷失,过度侵略。"
+    },
+    {
+      "number": 8,
+      "name_en": "Strength",
+      "name_zh": "力量",
+      "element": "狮子座",
+      "keywords_upright": ["勇气", "内在力量", "耐心", "慈悲"],
+      "keywords_reversed": ["怀疑自我", "懦弱", "失控", "缺乏耐心"],
+      "upright_meaning": "以柔克刚的内在力量、勇气、耐心、温和的影响力。",
+      "reversed_meaning": "自我怀疑、内心软弱、情绪失控、缺乏自制力。"
+    },
+    {
+      "number": 9,
+      "name_en": "The Hermit",
+      "name_zh": "隐者",
+      "element": "处女座",
+      "keywords_upright": ["内省", "孤独", "智慧", "寻找"],
+      "keywords_reversed": ["孤立", "拒绝建议", "疏离", "退缩"],
+      "upright_meaning": "向内寻找答案,独处沉思,智慧之光指引前路。",
+      "reversed_meaning": "过度孤立、拒绝他人帮助、回避现实、迷失方向。"
+    },
+    {
+      "number": 10,
+      "name_en": "Wheel of Fortune",
+      "name_zh": "命运之轮",
+      "element": "木星",
+      "keywords_upright": ["循环", "命运", "转折", "好运"],
+      "keywords_reversed": ["逆运", "中断", "失控", "外力影响"],
+      "upright_meaning": "命运之轮转动,机遇来临,生命周期的转折点。",
+      "reversed_meaning": "运势低迷,意外事件,循环被打断,需顺势而为。"
+    },
+    {
+      "number": 11,
+      "name_en": "Justice",
+      "name_zh": "正义",
+      "element": "天秤座",
+      "keywords_upright": ["公正", "真相", "因果", "平衡"],
+      "keywords_reversed": ["不公", "偏见", "逃避责任", "失衡"],
+      "upright_meaning": "公正裁决、因果报应、诚实面对、追求真相。",
+      "reversed_meaning": "不公平待遇、逃避责任、偏见、决策失衡。"
+    },
+    {
+      "number": 12,
+      "name_en": "The Hanged Man",
+      "name_zh": "倒吊人",
+      "element": "海王星",
+      "keywords_upright": ["放下", "新视角", "牺牲", "暂停"],
+      "keywords_reversed": ["拖延", "无谓牺牲", "卡住", "抗拒"],
+      "upright_meaning": "暂停,换个角度看问题,主动放下与牺牲获得新领悟。",
+      "reversed_meaning": "陷于停滞,无意义的牺牲,抗拒改变,无法前进。"
+    },
+    {
+      "number": 13,
+      "name_en": "Death",
+      "name_zh": "死神",
+      "element": "天蝎座",
+      "keywords_upright": ["结束", "转化", "重生", "蜕变"],
+      "keywords_reversed": ["抗拒改变", "停滞", "恐惧", "无法放下"],
+      "upright_meaning": "彻底的结束与新生,旧事物消亡,蜕变重生。",
+      "reversed_meaning": "抗拒必要的改变,被过去束缚,停滞不前。"
+    },
+    {
+      "number": 14,
+      "name_en": "Temperance",
+      "name_zh": "节制",
+      "element": "射手座",
+      "keywords_upright": ["平衡", "调和", "耐心", "中庸"],
+      "keywords_reversed": ["失衡", "极端", "缺乏耐心", "冲突"],
+      "upright_meaning": "调和对立,中庸之道,耐心融合,内心平静。",
+      "reversed_meaning": "走向极端,失去平衡,缺乏自制力,内在冲突。"
+    },
+    {
+      "number": 15,
+      "name_en": "The Devil",
+      "name_zh": "恶魔",
+      "element": "摩羯座",
+      "keywords_upright": ["束缚", "诱惑", "执念", "物欲"],
+      "keywords_reversed": ["解脱", "自由", "释放", "觉醒"],
+      "upright_meaning": "被欲望、执念或不健康关系束缚,沉迷享乐或物质。",
+      "reversed_meaning": "打破束缚,挣脱不健康模式,获得自由与觉醒。"
+    },
+    {
+      "number": 16,
+      "name_en": "The Tower",
+      "name_zh": "塔",
+      "element": "火星",
+      "keywords_upright": ["崩塌", "突变", "真相", "解放"],
+      "keywords_reversed": ["避免灾难", "延缓崩塌", "恐惧改变", "内在剧变"],
+      "upright_meaning": "突如其来的剧变,旧结构崩塌,真相暴露,被迫重建。",
+      "reversed_meaning": "避免或延缓必要的崩塌,恐惧巨变,内在动荡。"
+    },
+    {
+      "number": 17,
+      "name_en": "The Star",
+      "name_zh": "星星",
+      "element": "水瓶座",
+      "keywords_upright": ["希望", "灵感", "宁静", "信念"],
+      "keywords_reversed": ["失望", "失去信念", "悲观", "气馁"],
+      "upright_meaning": "希望之光,内心宁静,灵感涌现,信念坚定。",
+      "reversed_meaning": "失去希望,信念动摇,悲观失意,需重新点燃心灯。"
+    },
+    {
+      "number": 18,
+      "name_en": "The Moon",
+      "name_zh": "月亮",
+      "element": "双鱼座",
+      "keywords_upright": ["幻象", "潜意识", "恐惧", "直觉"],
+      "keywords_reversed": ["释放恐惧", "真相显露", "困惑解开", "看清幻象"],
+      "upright_meaning": "进入潜意识深处,面对内心恐惧,事物隐藏真相,直觉敏锐。",
+      "reversed_meaning": "拨开迷雾,看清幻象,释放恐惧,真相浮现。"
+    },
+    {
+      "number": 19,
+      "name_en": "The Sun",
+      "name_zh": "太阳",
+      "element": "太阳",
+      "keywords_upright": ["喜悦", "成功", "活力", "光明"],
+      "keywords_reversed": ["延迟成功", "缺乏自信", "悲观", "暂时阴影"],
+      "upright_meaning": "光明、成功、喜悦、活力四射,生命的高光时刻。",
+      "reversed_meaning": "成功被延迟、内心黯淡、缺乏自信、暂时受阻。"
+    },
+    {
+      "number": 20,
+      "name_en": "Judgement",
+      "name_zh": "审判",
+      "element": "冥王星",
+      "keywords_upright": ["重生", "觉醒", "召唤", "宽恕"],
+      "keywords_reversed": ["自我批判", "拒绝召唤", "悔恨", "无法宽恕"],
+      "upright_meaning": "灵魂的觉醒与召唤,重大转化,反思过去,获得新生。",
+      "reversed_meaning": "陷入自我批判,无法宽恕过去,拒绝重要的觉醒召唤。"
+    },
+    {
+      "number": 21,
+      "name_en": "The World",
+      "name_zh": "世界",
+      "element": "土星",
+      "keywords_upright": ["完成", "圆满", "成就", "整合"],
+      "keywords_reversed": ["未完成", "缺乏圆满", "停滞", "迟到的成功"],
+      "upright_meaning": "圆满完成一个循环,达成目标,整合所有面向,世界一体。",
+      "reversed_meaning": "未能圆满收尾,缺少最后一步,成就延迟,需补全。"
+    }
+  ],
+  "minor_arcana": {
+    "wands": [
+      {"rank": "Ace", "name_zh": "权杖王牌", "upright": "创造力萌发,新机遇,灵感火花迸发。", "reversed": "灵感停滞,新计划受阻,缺乏热情。"},
+      {"rank": "2", "name_zh": "权杖二", "upright": "规划未来,做出抉择,寻求新视野。", "reversed": "犹豫不决,计划失败,缺乏远见。"},
+      {"rank": "3", "name_zh": "权杖三", "upright": "扩展视野,远行成功,看见机遇。", "reversed": "计划延迟,合作受阻,目光短浅。"},
+      {"rank": "4", "name_zh": "权杖四", "upright": "庆祝、家庭和谐、阶段性成功。", "reversed": "家庭不和,庆祝被推迟,根基不稳。"},
+      {"rank": "5", "name_zh": "权杖五", "upright": "竞争、冲突、意见分歧。", "reversed": "化解冲突,内心斗争,避免争执。"},
+      {"rank": "6", "name_zh": "权杖六", "upright": "胜利、公众认可、凯旋归来。", "reversed": "失败、骄傲跌落、未被认可。"},
+      {"rank": "7", "name_zh": "权杖七", "upright": "坚守阵地、勇敢面对挑战。", "reversed": "被压垮、放弃、缺乏自信。"},
+      {"rank": "8", "name_zh": "权杖八", "upright": "迅速行动、消息快速到来、进展神速。", "reversed": "延迟、阻碍、急躁失败。"},
+      {"rank": "9", "name_zh": "权杖九", "upright": "坚韧、最后一搏、警觉防御。", "reversed": "精疲力竭,放弃,过度防御。"},
+      {"rank": "10", "name_zh": "权杖十", "upright": "重负、责任过载、压力沉重。", "reversed": "卸下重担、过度承担、需要委派。"},
+      {"rank": "Page", "name_zh": "权杖侍者", "upright": "热情新人、探索新机会、激情十足的消息。", "reversed": "缺乏方向,坏消息,鲁莽行事。"},
+      {"rank": "Knight", "name_zh": "权杖骑士", "upright": "冒险精神、行动派、热情奔放。", "reversed": "鲁莽冲动、半途而废、急躁。"},
+      {"rank": "Queen", "name_zh": "权杖皇后", "upright": "自信魅力、热情独立、领导力。", "reversed": "嫉妒、专横、缺乏自信。"},
+      {"rank": "King", "name_zh": "权杖国王", "upright": "远见领导、有魅力的指挥者、果敢决断。", "reversed": "独断专行、缺乏耐心、暴躁。"}
+    ],
+    "cups": [
+      {"rank": "Ace", "name_zh": "圣杯王牌", "upright": "新感情萌芽,爱的源泉,情感丰沛。", "reversed": "情感受阻,失恋,创意枯竭。"},
+      {"rank": "2", "name_zh": "圣杯二", "upright": "灵魂伴侣、互相吸引、和谐关系。", "reversed": "关系失衡、误解、分手。"},
+      {"rank": "3", "name_zh": "圣杯三", "upright": "庆祝、友谊、欢聚。", "reversed": "聚会取消、八卦闲话、过度放纵。"},
+      {"rank": "4", "name_zh": "圣杯四", "upright": "不满足、冷漠、错失机会。", "reversed": "新觉察、振作起来、接受机会。"},
+      {"rank": "5", "name_zh": "圣杯五", "upright": "失落、后悔、悲伤。", "reversed": "走出阴影,接受失去,重燃希望。"},
+      {"rank": "6", "name_zh": "圣杯六", "upright": "怀旧、童年回忆、重逢。", "reversed": "停留过去、无法前进、童年阴影。"},
+      {"rank": "7", "name_zh": "圣杯七", "upright": "幻想、选择多、迷失方向。", "reversed": "做出明确选择、看清现实。"},
+      {"rank": "8", "name_zh": "圣杯八", "upright": "离开熟悉、寻求更深意义、放下。", "reversed": "停留不前、害怕改变、再三犹豫。"},
+      {"rank": "9", "name_zh": "圣杯九", "upright": "愿望实现、满足、感官享受。", "reversed": "不满足、贪婪、表面快乐。"},
+      {"rank": "10", "name_zh": "圣杯十", "upright": "家庭幸福、情感圆满、和睦。", "reversed": "家庭不和、关系破裂、孤独。"},
+      {"rank": "Page", "name_zh": "圣杯侍者", "upright": "情感纯真、艺术灵感、好消息。", "reversed": "情绪化、空想、灵感受阻。"},
+      {"rank": "Knight", "name_zh": "圣杯骑士", "upright": "浪漫追求、感性表达、艺术家精神。", "reversed": "情绪不稳、不切实际、被骗。"},
+      {"rank": "Queen", "name_zh": "圣杯皇后", "upright": "情感成熟、直觉敏锐、富同理心。", "reversed": "情绪化、依赖他人、过度敏感。"},
+      {"rank": "King", "name_zh": "圣杯国王", "upright": "情感稳定、智慧之爱、外交。", "reversed": "情感压抑、操控、阴沉。"}
+    ],
+    "swords": [
+      {"rank": "Ace", "name_zh": "宝剑王牌", "upright": "突破、真相、新思维、清晰。", "reversed": "混乱思维、错误信息、缺乏清晰。"},
+      {"rank": "2", "name_zh": "宝剑二", "upright": "抉择困难、僵局、保持平衡。", "reversed": "下定决心,打破僵局,信息浮现。"},
+      {"rank": "3", "name_zh": "宝剑三", "upright": "心碎、悲伤、痛苦的真相。", "reversed": "走出伤痛,原谅,治愈。"},
+      {"rank": "4", "name_zh": "宝剑四", "upright": "休息、冥想、恢复。", "reversed": "倦怠、过度劳累、需重新起步。"},
+      {"rank": "5", "name_zh": "宝剑五", "upright": "冲突、不光彩的胜利、损失。", "reversed": "和解、放下争执、寻求和平。"},
+      {"rank": "6", "name_zh": "宝剑六", "upright": "过渡、远离困境、平稳前行。", "reversed": "无法逃离过去、被困住。"},
+      {"rank": "7", "name_zh": "宝剑七", "upright": "策略、欺骗、独行其是。", "reversed": "良心发现、承认错误、坦诚。"},
+      {"rank": "8", "name_zh": "宝剑八", "upright": "被困、自我设限、感到无助。", "reversed": "解放、走出困境、看清真相。"},
+      {"rank": "9", "name_zh": "宝剑九", "upright": "焦虑、噩梦、内心煎熬。", "reversed": "走出焦虑、内心平静、求助。"},
+      {"rank": "10", "name_zh": "宝剑十", "upright": "彻底失败、痛苦终结、谷底。", "reversed": "重生、走出低谷、伤痛过去。"},
+      {"rank": "Page", "name_zh": "宝剑侍者", "upright": "好奇心、警觉、新想法。", "reversed": "言语刻薄、好斗、八卦。"},
+      {"rank": "Knight", "name_zh": "宝剑骑士", "upright": "雷厉风行、勇往直前、追求真理。", "reversed": "鲁莽、咄咄逼人、缺乏计划。"},
+      {"rank": "Queen", "name_zh": "宝剑皇后", "upright": "理性独立、明辨是非、客观判断。", "reversed": "冷酷无情、苛刻、心怀怨恨。"},
+      {"rank": "King", "name_zh": "宝剑国王", "upright": "智慧权威、理性判断、公正。", "reversed": "滥用权威、操控、暴政。"}
+    ],
+    "pentacles": [
+      {"rank": "Ace", "name_zh": "钱币王牌", "upright": "新财运、机会、富足种子。", "reversed": "机会错失、财务延迟、计划不实。"},
+      {"rank": "2", "name_zh": "钱币二", "upright": "平衡、适应、灵活应对。", "reversed": "失衡、过度负荷、混乱。"},
+      {"rank": "3", "name_zh": "钱币三", "upright": "合作、技艺、团队成果。", "reversed": "缺乏合作、平庸、不被认可。"},
+      {"rank": "4", "name_zh": "钱币四", "upright": "节俭、安全、保守财富。", "reversed": "贪婪、过度紧握、吝啬。"},
+      {"rank": "5", "name_zh": "钱币五", "upright": "贫困、孤立、财务困境。", "reversed": "走出困境、得到帮助、复原。"},
+      {"rank": "6", "name_zh": "钱币六", "upright": "慷慨、施与受、慈善。", "reversed": "施舍带条件、不平等、自私。"},
+      {"rank": "7", "name_zh": "钱币七", "upright": "评估收成、耐心等待、长远规划。", "reversed": "投入未见回报、急于求成。"},
+      {"rank": "8", "name_zh": "钱币八", "upright": "钻研技艺、勤奋专注、精益求精。", "reversed": "懒散、缺乏专注、技能停滞。"},
+      {"rank": "9", "name_zh": "钱币九", "upright": "独立富足、自给自足、奢华享受。", "reversed": "依赖他人、华而不实、孤独。"},
+      {"rank": "10", "name_zh": "钱币十", "upright": "家族富裕、传承、长久繁荣。", "reversed": "家产纠纷、短暂富贵、断绝。"},
+      {"rank": "Page", "name_zh": "钱币侍者", "upright": "学习新事物、新机遇、好消息。", "reversed": "拖延、不切实际、机会流失。"},
+      {"rank": "Knight", "name_zh": "钱币骑士", "upright": "勤恳务实、稳步前进、可靠。", "reversed": "顽固保守、懒散、停滞。"},
+      {"rank": "Queen", "name_zh": "钱币皇后", "upright": "务实丰盛、滋养、照顾。", "reversed": "物质主义、忽视自我、依赖。"},
+      {"rank": "King", "name_zh": "钱币国王", "upright": "事业成功、富足稳定、领导力。", "reversed": "贪婪、固执、滥用财富。"}
+    ]
+  }
+}

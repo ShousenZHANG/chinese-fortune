@@ -1,0 +1,6 @@
+interface:
+  display_name: "Chinese Fortune"
+  short_description: "Chinese metaphysics, divination, almanac, naming, and compatibility readings."
+  default_prompt: "Use $chinese-fortune to give a grounded Chinese fortune-telling reading with clear method boundaries."
+policy:
+  allow_implicit_invocation: true

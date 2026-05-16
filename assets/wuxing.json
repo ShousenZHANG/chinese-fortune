@@ -1,0 +1,95 @@
+{
+  "elements": [
+    {
+      "name": "木",
+      "yin_yang": "阳/阴",
+      "season": "春",
+      "direction": "东",
+      "color": ["青", "绿"],
+      "taste": "酸",
+      "organ": "肝",
+      "fu": "胆",
+      "emotion": "怒",
+      "numbers": [3, 8],
+      "climate": "风",
+      "stage_of_life": "生"
+    },
+    {
+      "name": "火",
+      "yin_yang": "阳/阴",
+      "season": "夏",
+      "direction": "南",
+      "color": ["赤", "红"],
+      "taste": "苦",
+      "organ": "心",
+      "fu": "小肠",
+      "emotion": "喜",
+      "numbers": [2, 7],
+      "climate": "暑",
+      "stage_of_life": "长"
+    },
+    {
+      "name": "土",
+      "yin_yang": "阳/阴",
+      "season": "长夏",
+      "direction": "中",
+      "color": ["黄"],
+      "taste": "甘",
+      "organ": "脾",
+      "fu": "胃",
+      "emotion": "思",
+      "numbers": [5, 10],
+      "climate": "湿",
+      "stage_of_life": "化"
+    },
+    {
+      "name": "金",
+      "yin_yang": "阳/阴",
+      "season": "秋",
+      "direction": "西",
+      "color": ["白"],
+      "taste": "辛",
+      "organ": "肺",
+      "fu": "大肠",
+      "emotion": "悲",
+      "numbers": [4, 9],
+      "climate": "燥",
+      "stage_of_life": "收"
+    },
+    {
+      "name": "水",
+      "yin_yang": "阳/阴",
+      "season": "冬",
+      "direction": "北",
+      "color": ["黑", "玄"],
+      "taste": "咸",
+      "organ": "肾",
+      "fu": "膀胱",
+      "emotion": "恐",
+      "numbers": [1, 6],
+      "climate": "寒",
+      "stage_of_life": "藏"
+    }
+  ],
+  "sheng": [
+    {"from": "木", "to": "火"},
+    {"from": "火", "to": "土"},
+    {"from": "土", "to": "金"},
+    {"from": "金", "to": "水"},
+    {"from": "水", "to": "木"}
+  ],
+  "ke": [
+    {"from": "木", "to": "土"},
+    {"from": "土", "to": "水"},
+    {"from": "水", "to": "火"},
+    {"from": "火", "to": "金"},
+    {"from": "金", "to": "木"}
+  ],
+  "wang_xiang_xiu_qiu_si": {
+    "木": {"旺": "春", "相": "冬", "休": "夏", "囚": "秋", "死": "长夏"},
+    "火": {"旺": "夏", "相": "春", "休": "长夏", "囚": "冬", "死": "秋"},
+    "土": {"旺": "长夏", "相": "夏", "休": "秋", "囚": "春", "死": "冬"},
+    "金": {"旺": "秋", "相": "长夏", "休": "冬", "囚": "夏", "死": "春"},
+    "水": {"旺": "冬", "相": "秋", "休": "春", "囚": "长夏", "死": "夏"}
+  }
+}

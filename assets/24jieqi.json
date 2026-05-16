@@ -1,0 +1,29 @@
+{
+  "jieqi": [
+    {"name": "立春", "type": "节", "branch": "寅", "month_in_bazi": 1, "approx_date": "2-3 to 2-5", "meaning": "春季开始,万物苏生。八字以此为寅月之始。"},
+    {"name": "雨水", "type": "气", "branch": "寅", "month_in_bazi": 1, "approx_date": "2-18 to 2-20", "meaning": "降水增多,冰雪融化。"},
+    {"name": "惊蛰", "type": "节", "branch": "卯", "month_in_bazi": 2, "approx_date": "3-5 to 3-7", "meaning": "春雷始鸣,蛰虫惊醒。八字进入卯月。"},
+    {"name": "春分", "type": "气", "branch": "卯", "month_in_bazi": 2, "approx_date": "3-20 to 3-22", "meaning": "昼夜平分,春季中点。"},
+    {"name": "清明", "type": "节", "branch": "辰", "month_in_bazi": 3, "approx_date": "4-4 to 4-6", "meaning": "天气清朗明洁,适宜祭祖踏青。八字进入辰月。"},
+    {"name": "谷雨", "type": "气", "branch": "辰", "month_in_bazi": 3, "approx_date": "4-19 to 4-21", "meaning": "雨水增多,有利谷物生长。"},
+    {"name": "立夏", "type": "节", "branch": "巳", "month_in_bazi": 4, "approx_date": "5-5 to 5-7", "meaning": "夏季开始,万物繁茂。八字进入巳月。"},
+    {"name": "小满", "type": "气", "branch": "巳", "month_in_bazi": 4, "approx_date": "5-20 to 5-22", "meaning": "夏熟作物籽粒开始饱满但未成熟。"},
+    {"name": "芒种", "type": "节", "branch": "午", "month_in_bazi": 5, "approx_date": "6-5 to 6-7", "meaning": "有芒作物成熟,适宜耕种。八字进入午月。"},
+    {"name": "夏至", "type": "气", "branch": "午", "month_in_bazi": 5, "approx_date": "6-20 to 6-22", "meaning": "白昼最长,阳气极盛,一阴始生。"},
+    {"name": "小暑", "type": "节", "branch": "未", "month_in_bazi": 6, "approx_date": "7-6 to 7-8", "meaning": "天气炎热,但未至极点。八字进入未月。"},
+    {"name": "大暑", "type": "气", "branch": "未", "month_in_bazi": 6, "approx_date": "7-22 to 7-24", "meaning": "一年最热之时。"},
+    {"name": "立秋", "type": "节", "branch": "申", "month_in_bazi": 7, "approx_date": "8-7 to 8-9", "meaning": "秋季开始,万物开始成熟。八字进入申月。"},
+    {"name": "处暑", "type": "气", "branch": "申", "month_in_bazi": 7, "approx_date": "8-22 to 8-24", "meaning": "暑气将止,天气转凉。"},
+    {"name": "白露", "type": "节", "branch": "酉", "month_in_bazi": 8, "approx_date": "9-7 to 9-9", "meaning": "天气转凉,清晨现露水。八字进入酉月。"},
+    {"name": "秋分", "type": "气", "branch": "酉", "month_in_bazi": 8, "approx_date": "9-22 to 9-24", "meaning": "昼夜平分,秋季中点。"},
+    {"name": "寒露", "type": "节", "branch": "戌", "month_in_bazi": 9, "approx_date": "10-7 to 10-9", "meaning": "露水寒冷将凝结成霜。八字进入戌月。"},
+    {"name": "霜降", "type": "气", "branch": "戌", "month_in_bazi": 9, "approx_date": "10-22 to 10-24", "meaning": "初霜出现,天气更冷。"},
+    {"name": "立冬", "type": "节", "branch": "亥", "month_in_bazi": 10, "approx_date": "11-7 to 11-8", "meaning": "冬季开始,万物收藏。八字进入亥月。"},
+    {"name": "小雪", "type": "气", "branch": "亥", "month_in_bazi": 10, "approx_date": "11-22 to 11-23", "meaning": "气温下降,开始降雪。"},
+    {"name": "大雪", "type": "节", "branch": "子", "month_in_bazi": 11, "approx_date": "12-6 to 12-8", "meaning": "降雪加大,大地银装。八字进入子月。"},
+    {"name": "冬至", "type": "气", "branch": "子", "month_in_bazi": 11, "approx_date": "12-21 to 12-23", "meaning": "白昼最短,阴气极盛,一阳始生。"},
+    {"name": "小寒", "type": "节", "branch": "丑", "month_in_bazi": 12, "approx_date": "1-5 to 1-7", "meaning": "天气寒冷,但未至极点。八字进入丑月。"},
+    {"name": "大寒", "type": "气", "branch": "丑", "month_in_bazi": 12, "approx_date": "1-19 to 1-21", "meaning": "一年最冷之时,冬季终末。"}
+  ],
+  "note": "节气分节与气两类:节标志月支变换,八字立柱以节为界(不以朔望月);气仅为节气推进,不改变月柱。"
+}

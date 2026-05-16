@@ -1,0 +1,1054 @@
+{
+  "symbols": [
+    {
+      "symbol": "蛇",
+      "category": "动物",
+      "traditional": "梦见蛇缠身主有大病;蛇咬人主进财;蛇入怀主生贵子",
+      "modern_psychology": "蛇象征隐藏的恐惧、转变、性能量(弗洛伊德);也可代表智慧、新生(荣格)",
+      "common_scenarios": [
+        {"scene": "蛇咬", "meaning": "意外之财或意外冲突,看具体咬何处"},
+        {"scene": "蛇追", "meaning": "现实中有压力或威胁待面对"},
+        {"scene": "蛇变龙", "meaning": "事业升级,贵人助"}
+      ]
+    },
+    {
+      "symbol": "龙",
+      "category": "动物",
+      "traditional": "梦见龙主大贵之兆,事业腾达;乘龙飞天主升迁",
+      "modern_psychology": "象征强大的内在力量、领导潜能与精神觉醒",
+      "common_scenarios": [
+        {"scene": "见龙在天", "meaning": "事业飞跃,贵人相助"},
+        {"scene": "龙入怀", "meaning": "得贵子或获得重要机遇"},
+        {"scene": "斗龙", "meaning": "面对重大挑战需勇气"}
+      ]
+    },
+    {
+      "symbol": "虎",
+      "category": "动物",
+      "traditional": "梦见老虎主有强敌或贵人;骑虎主权位",
+      "modern_psychology": "象征本能力量、勇气、潜在的攻击性",
+      "common_scenarios": [
+        {"scene": "被虎追", "meaning": "现实中有强势对手或压力"},
+        {"scene": "驯服虎", "meaning": "克服内心恐惧,掌控局面"},
+        {"scene": "虎入家", "meaning": "家中有变故或贵客到"}
+      ]
+    },
+    {
+      "symbol": "鱼",
+      "category": "动物",
+      "traditional": "梦见鱼主财利、丰收;鱼跃龙门主升迁;死鱼主损失",
+      "modern_psychology": "鱼象征潜意识中的灵感、生育力、丰盛",
+      "common_scenarios": [
+        {"scene": "钓鱼", "meaning": "财运将至或追求目标"},
+        {"scene": "鱼跃出水", "meaning": "突破现状,机遇来临"},
+        {"scene": "鱼死", "meaning": "财运受损或感情受挫"}
+      ]
+    },
+    {
+      "symbol": "鸟",
+      "category": "动物",
+      "traditional": "梦见鸟飞主消息至;鸟入怀主生子;鸟死主灾",
+      "modern_psychology": "象征自由、灵魂、心灵的提升",
+      "common_scenarios": [
+        {"scene": "鸟飞入屋", "meaning": "好消息到来"},
+        {"scene": "群鸟齐飞", "meaning": "人脉广布,人缘佳"},
+        {"scene": "笼中鸟", "meaning": "感到束缚,渴望自由"}
+      ]
+    },
+    {
+      "symbol": "凤凰",
+      "category": "动物",
+      "traditional": "梦见凤凰主大吉,女子主婚喜",
+      "modern_psychology": "象征重生、转化、女性力量的升华",
+      "common_scenarios": [
+        {"scene": "凤凰来仪", "meaning": "极大吉兆,事业婚姻俱佳"},
+        {"scene": "凤凰涅槃", "meaning": "经历困难后重生"}
+      ]
+    },
+    {
+      "symbol": "猫",
+      "category": "动物",
+      "traditional": "梦见猫主有小人、女子;白猫吉,黑猫凶",
+      "modern_psychology": "象征独立、神秘、女性气质或潜在敌意",
+      "common_scenarios": [
+        {"scene": "猫扑人", "meaning": "需防小人暗算"},
+        {"scene": "猫与鼠斗", "meaning": "正邪较量,胜负未定"}
+      ]
+    },
+    {
+      "symbol": "狗",
+      "category": "动物",
+      "traditional": "梦见狗主忠诚朋友;咬人主小人;白狗吉",
+      "modern_psychology": "象征忠诚、守护、本能的友谊",
+      "common_scenarios": [
+        {"scene": "狗咬人", "meaning": "亲信背叛或小人作祟"},
+        {"scene": "群狗追逐", "meaning": "众人围攻或被流言困扰"}
+      ]
+    },
+    {
+      "symbol": "马",
+      "category": "动物",
+      "traditional": "梦见马主奔波、迁移;骑白马主吉,坠马主忧",
+      "modern_psychology": "象征动力、性能量、进取精神",
+      "common_scenarios": [
+        {"scene": "骑马奔驰", "meaning": "事业前进,出行有利"},
+        {"scene": "马失前蹄", "meaning": "事业遇挫,需谨慎"}
+      ]
+    },
+    {
+      "symbol": "牛",
+      "category": "动物",
+      "traditional": "梦见牛主财源、勤劳;黄牛吉,水牛主忧",
+      "modern_psychology": "象征坚韧、勤勉、稳定的根基",
+      "common_scenarios": [
+        {"scene": "牛耕田", "meaning": "勤奋有得,渐入佳境"},
+        {"scene": "斗牛", "meaning": "与人争执,需让步"}
+      ]
+    },
+    {
+      "symbol": "羊",
+      "category": "动物",
+      "traditional": "梦见羊主吉利、和平;群羊主财",
+      "modern_psychology": "象征温顺、奉献、纯洁",
+      "common_scenarios": [
+        {"scene": "牧羊", "meaning": "事业稳定,得人和"},
+        {"scene": "羊角触人", "meaning": "小人作梗"}
+      ]
+    },
+    {
+      "symbol": "猪",
+      "category": "动物",
+      "traditional": "梦见猪主财气、福气;杀猪主破财",
+      "modern_psychology": "象征丰盛、本能欲望、自然力",
+      "common_scenarios": [
+        {"scene": "肥猪入家", "meaning": "财运大旺"},
+        {"scene": "猪逃跑", "meaning": "财源流失"}
+      ]
+    },
+    {
+      "symbol": "鸡",
+      "category": "动物",
+      "traditional": "梦见鸡鸣主吉信;母鸡下蛋主得财",
+      "modern_psychology": "象征觉醒、警觉、新的开始",
+      "common_scenarios": [
+        {"scene": "公鸡报晓", "meaning": "新机遇即将到来"},
+        {"scene": "斗鸡", "meaning": "口舌是非"}
+      ]
+    },
+    {
+      "symbol": "兔",
+      "category": "动物",
+      "traditional": "梦见兔主吉、女子之喜",
+      "modern_psychology": "象征温柔、敏捷、繁衍",
+      "common_scenarios": [
+        {"scene": "白兔奔跑", "meaning": "好运临门"},
+        {"scene": "捕兔", "meaning": "追求目标需技巧"}
+      ]
+    },
+    {
+      "symbol": "鼠",
+      "category": "动物",
+      "traditional": "梦见鼠主小人、暗事;咬人主财损",
+      "modern_psychology": "象征隐忧、潜在威胁、被忽视的小事",
+      "common_scenarios": [
+        {"scene": "鼠群出没", "meaning": "多有小人困扰"},
+        {"scene": "捉到老鼠", "meaning": "化解隐患"}
+      ]
+    },
+    {
+      "symbol": "龟",
+      "category": "动物",
+      "traditional": "梦见龟主长寿、贵气、智慧",
+      "modern_psychology": "象征智慧、长寿、稳定与保护",
+      "common_scenarios": [
+        {"scene": "神龟献瑞", "meaning": "得贵人指点"},
+        {"scene": "龟入屋", "meaning": "家中将有福事"}
+      ]
+    },
+    {
+      "symbol": "蝴蝶",
+      "category": "动物",
+      "traditional": "梦见蝴蝶主爱情、美好;双蝶飞舞主姻缘",
+      "modern_psychology": "象征蜕变、灵魂、生命的转化",
+      "common_scenarios": [
+        {"scene": "蝴蝶绕身", "meaning": "桃花运至"},
+        {"scene": "蝴蝶死亡", "meaning": "感情消逝"}
+      ]
+    },
+    {
+      "symbol": "蜜蜂",
+      "category": "动物",
+      "traditional": "梦见蜂主勤劳得利;蜂蛰主小损",
+      "modern_psychology": "象征勤奋、集体协作、辛勤的回报",
+      "common_scenarios": [
+        {"scene": "蜂窝", "meaning": "团队事务多需协调"},
+        {"scene": "采蜜", "meaning": "辛勤得财"}
+      ]
+    },
+    {
+      "symbol": "蜘蛛",
+      "category": "动物",
+      "traditional": "梦见蜘蛛结网主巧计、谋划;蜘蛛在身主有缠绕",
+      "modern_psychology": "象征陷阱、束缚、复杂的人际网",
+      "common_scenarios": [
+        {"scene": "蜘蛛织网", "meaning": "需小心谋算"},
+        {"scene": "被蜘蛛网困", "meaning": "陷入复杂局面"}
+      ]
+    },
+    {
+      "symbol": "水",
+      "category": "自然",
+      "traditional": "梦见清水主财吉;浊水主病;洪水主破败",
+      "modern_psychology": "象征潜意识、情感、流动与变化",
+      "common_scenarios": [
+        {"scene": "清水流淌", "meaning": "财运顺畅,内心平静"},
+        {"scene": "洪水滔天", "meaning": "情感泛滥或大变将至"},
+        {"scene": "渡水", "meaning": "渡过难关"}
+      ]
+    },
+    {
+      "symbol": "火",
+      "category": "自然",
+      "traditional": "梦见火主财、热情;火烧屋主家有变故",
+      "modern_psychology": "象征激情、转化、毁灭与重生",
+      "common_scenarios": [
+        {"scene": "大火熊熊", "meaning": "事业兴旺或情感炽热"},
+        {"scene": "灭火", "meaning": "化解危机"},
+        {"scene": "被火烧", "meaning": "内心焦虑或现实压力大"}
+      ]
+    },
+    {
+      "symbol": "山",
+      "category": "自然",
+      "traditional": "梦见登山主步步高升;山崩主大变",
+      "modern_psychology": "象征目标、挑战、稳定与障碍",
+      "common_scenarios": [
+        {"scene": "登顶", "meaning": "目标达成,事业巅峰"},
+        {"scene": "山崩", "meaning": "重大变故,根基动摇"}
+      ]
+    },
+    {
+      "symbol": "树",
+      "category": "自然",
+      "traditional": "梦见大树参天主家业兴;树倒主家败",
+      "modern_psychology": "象征生命力、成长、根基",
+      "common_scenarios": [
+        {"scene": "古树参天", "meaning": "家族兴旺,根基稳固"},
+        {"scene": "树枯", "meaning": "运势衰退"}
+      ]
+    },
+    {
+      "symbol": "花",
+      "category": "自然",
+      "traditional": "梦见花开主喜事、姻缘;花落主分离",
+      "modern_psychology": "象征美、爱情、短暂的喜悦",
+      "common_scenarios": [
+        {"scene": "百花盛开", "meaning": "好事临门"},
+        {"scene": "采花", "meaning": "桃花运但需慎选"}
+      ]
+    },
+    {
+      "symbol": "月亮",
+      "category": "自然",
+      "traditional": "梦见明月主吉、女贵;月缺主忧",
+      "modern_psychology": "象征潜意识、女性、情感周期",
+      "common_scenarios": [
+        {"scene": "明月当空", "meaning": "心想事成"},
+        {"scene": "月食", "meaning": "情绪低落,需调整"}
+      ]
+    },
+    {
+      "symbol": "太阳",
+      "category": "自然",
+      "traditional": "梦见太阳主显贵、阳光得志",
+      "modern_psychology": "象征意识、阳性能量、生命力",
+      "common_scenarios": [
+        {"scene": "旭日东升", "meaning": "新事业起步"},
+        {"scene": "日落", "meaning": "一阶段结束"}
+      ]
+    },
+    {
+      "symbol": "星星",
+      "category": "自然",
+      "traditional": "梦见繁星满天主前程似锦",
+      "modern_psychology": "象征希望、指引、远大理想",
+      "common_scenarios": [
+        {"scene": "流星", "meaning": "稍纵即逝的机遇"},
+        {"scene": "北极星", "meaning": "明确目标方向"}
+      ]
+    },
+    {
+      "symbol": "云",
+      "category": "自然",
+      "traditional": "梦见祥云主吉事;乌云主忧",
+      "modern_psychology": "象征心境、未明朗的事物、变化",
+      "common_scenarios": [
+        {"scene": "云开见日", "meaning": "拨云见日,问题解决"},
+        {"scene": "乌云压顶", "meaning": "压力沉重"}
+      ]
+    },
+    {
+      "symbol": "雷电",
+      "category": "自然",
+      "traditional": "梦见雷电交加主大变、警示",
+      "modern_psychology": "象征突变、顿悟、强烈的觉醒",
+      "common_scenarios": [
+        {"scene": "雷击物", "meaning": "突发事件"},
+        {"scene": "电光闪烁", "meaning": "灵感乍现"}
+      ]
+    },
+    {
+      "symbol": "雪",
+      "category": "自然",
+      "traditional": "梦见瑞雪主丰年、纯净",
+      "modern_psychology": "象征纯洁、冷静、内心的平静",
+      "common_scenarios": [
+        {"scene": "雪花飘落", "meaning": "心境澄明"},
+        {"scene": "暴风雪", "meaning": "情感冻结或困难重重"}
+      ]
+    },
+    {
+      "symbol": "雨",
+      "category": "自然",
+      "traditional": "梦见细雨润物主吉;暴雨主忧",
+      "modern_psychology": "象征情绪释放、滋养、清洗",
+      "common_scenarios": [
+        {"scene": "及时雨", "meaning": "困境得解"},
+        {"scene": "雨过天晴", "meaning": "烦恼消散"}
+      ]
+    },
+    {
+      "symbol": "海",
+      "category": "自然",
+      "traditional": "梦见大海风平浪静主顺;惊涛骇浪主险",
+      "modern_psychology": "象征无意识、生命之源、情感的广阔",
+      "common_scenarios": [
+        {"scene": "平静海面", "meaning": "内心宁静"},
+        {"scene": "海啸", "meaning": "情感剧变"}
+      ]
+    },
+    {
+      "symbol": "桥",
+      "category": "场所",
+      "traditional": "梦见过桥主转变、机遇",
+      "modern_psychology": "象征过渡、连接、改变阶段",
+      "common_scenarios": [
+        {"scene": "顺利过桥", "meaning": "顺利转入新阶段"},
+        {"scene": "桥断", "meaning": "转变受阻"}
+      ]
+    },
+    {
+      "symbol": "路",
+      "category": "场所",
+      "traditional": "梦见走平路主顺;走崎岖路主难",
+      "modern_psychology": "象征人生方向、选择",
+      "common_scenarios": [
+        {"scene": "迷路", "meaning": "人生方向迷失"},
+        {"scene": "路分岔", "meaning": "面临重要选择"}
+      ]
+    },
+    {
+      "symbol": "房屋",
+      "category": "场所",
+      "traditional": "梦见新房主家业兴;破屋主家衰",
+      "modern_psychology": "象征自我、人格的不同层面、安全感",
+      "common_scenarios": [
+        {"scene": "建新房", "meaning": "事业家业兴旺"},
+        {"scene": "房屋倒塌", "meaning": "家运不利,根基动摇"}
+      ]
+    },
+    {
+      "symbol": "门",
+      "category": "场所",
+      "traditional": "梦见开门主新机;关门主阻塞",
+      "modern_psychology": "象征机遇、过渡、新可能性",
+      "common_scenarios": [
+        {"scene": "推门而入", "meaning": "新机会出现"},
+        {"scene": "门关上", "meaning": "机会错失或拒绝"}
+      ]
+    },
+    {
+      "symbol": "窗户",
+      "category": "场所",
+      "traditional": "梦见窗明几净主吉信",
+      "modern_psychology": "象征视野、外界与内心的连接",
+      "common_scenarios": [
+        {"scene": "透窗远望", "meaning": "需放宽视野"},
+        {"scene": "窗破", "meaning": "需防小人入侵"}
+      ]
+    },
+    {
+      "symbol": "学校",
+      "category": "场所",
+      "traditional": "梦见学校主学业、求知",
+      "modern_psychology": "象征学习、社交、童年记忆",
+      "common_scenarios": [
+        {"scene": "考试", "meaning": "现实压力或自我评估"},
+        {"scene": "上课迟到", "meaning": "焦虑、准备不足"}
+      ]
+    },
+    {
+      "symbol": "医院",
+      "category": "场所",
+      "traditional": "梦见医院主健康忧、亲人病",
+      "modern_psychology": "象征康复需求、内心创伤",
+      "common_scenarios": [
+        {"scene": "住院", "meaning": "需关注健康"},
+        {"scene": "探病", "meaning": "牵挂亲人"}
+      ]
+    },
+    {
+      "symbol": "坟墓",
+      "category": "场所",
+      "traditional": "梦见坟墓主长寿或祖荫;掘坟主吉",
+      "modern_psychology": "象征过去的结束、转化、潜意识深处",
+      "common_scenarios": [
+        {"scene": "扫墓", "meaning": "缅怀过去,得祖荫"},
+        {"scene": "挖坟得宝", "meaning": "意外之财"}
+      ]
+    },
+    {
+      "symbol": "庙宇",
+      "category": "场所",
+      "traditional": "梦见庙宇主求愿、得护佑",
+      "modern_psychology": "象征精神追求、内在平静",
+      "common_scenarios": [
+        {"scene": "进庙拜神", "meaning": "祈求得护"},
+        {"scene": "庙宇崩塌", "meaning": "信念动摇"}
+      ]
+    },
+    {
+      "symbol": "市场",
+      "category": "场所",
+      "traditional": "梦见市场热闹主财源旺",
+      "modern_psychology": "象征社交、交易、选择",
+      "common_scenarios": [
+        {"scene": "买卖东西", "meaning": "财运或人际交往活跃"},
+        {"scene": "市场空荡", "meaning": "孤独或财运不济"}
+      ]
+    },
+    {
+      "symbol": "镜子",
+      "category": "物品",
+      "traditional": "梦见照镜主自省;镜碎主破裂",
+      "modern_psychology": "象征自我认知、内省、真实自我",
+      "common_scenarios": [
+        {"scene": "镜中无影", "meaning": "对自我感到迷失"},
+        {"scene": "镜子破碎", "meaning": "自我认知重塑"}
+      ]
+    },
+    {
+      "symbol": "钱",
+      "category": "物品",
+      "traditional": "梦见捡钱主小财;丢钱主损失",
+      "modern_psychology": "象征价值、自尊、能量交换",
+      "common_scenarios": [
+        {"scene": "数钱", "meaning": "财务规划或得财"},
+        {"scene": "钱被偷", "meaning": "财物损失或被剥夺"}
+      ]
+    },
+    {
+      "symbol": "金子",
+      "category": "物品",
+      "traditional": "梦见得金主大财、贵气",
+      "modern_psychology": "象征价值、永恒、内在珍贵的部分",
+      "common_scenarios": [
+        {"scene": "捡到金", "meaning": "意外之财"},
+        {"scene": "藏金", "meaning": "保守财富或秘密"}
+      ]
+    },
+    {
+      "symbol": "宝玉",
+      "category": "物品",
+      "traditional": "梦见宝玉主贵气、得财",
+      "modern_psychology": "象征精神财富、内在珍宝",
+      "common_scenarios": [
+        {"scene": "获赠宝玉", "meaning": "得贵人或贵重事物"},
+        {"scene": "宝玉破裂", "meaning": "失去重要事物"}
+      ]
+    },
+    {
+      "symbol": "剑",
+      "category": "物品",
+      "traditional": "梦见得剑主权位、勇武",
+      "modern_psychology": "象征决断、攻击性、智慧之剑",
+      "common_scenarios": [
+        {"scene": "舞剑", "meaning": "展现能力或攻击"},
+        {"scene": "剑断", "meaning": "失去权威或决断力"}
+      ]
+    },
+    {
+      "symbol": "书",
+      "category": "物品",
+      "traditional": "梦见读书主学问、考试吉",
+      "modern_psychology": "象征知识、智慧、自我探索",
+      "common_scenarios": [
+        {"scene": "得新书", "meaning": "获得新知识"},
+        {"scene": "书页空白", "meaning": "感到知识匮乏或迷茫"}
+      ]
+    },
+    {
+      "symbol": "船",
+      "category": "物品",
+      "traditional": "梦见乘船主远行、机遇",
+      "modern_psychology": "象征人生旅程、情感之旅",
+      "common_scenarios": [
+        {"scene": "扬帆远航", "meaning": "新事业启动"},
+        {"scene": "船沉", "meaning": "事业或情感受挫"}
+      ]
+    },
+    {
+      "symbol": "车",
+      "category": "物品",
+      "traditional": "梦见乘车主出行;翻车主忧",
+      "modern_psychology": "象征人生方向、控制力",
+      "common_scenarios": [
+        {"scene": "开车顺畅", "meaning": "掌控人生方向"},
+        {"scene": "车祸", "meaning": "事业或生活突变"}
+      ]
+    },
+    {
+      "symbol": "刀",
+      "category": "物品",
+      "traditional": "梦见刀剑主刑或权;伤人主血光",
+      "modern_psychology": "象征切割、决断、潜在伤害",
+      "common_scenarios": [
+        {"scene": "持刀", "meaning": "需果断决策"},
+        {"scene": "被刀伤", "meaning": "需防小人或意外"}
+      ]
+    },
+    {
+      "symbol": "衣服",
+      "category": "物品",
+      "traditional": "梦见新衣主喜事;破衣主忧",
+      "modern_psychology": "象征自我形象、社会角色",
+      "common_scenarios": [
+        {"scene": "穿新衣", "meaning": "新身份或新阶段"},
+        {"scene": "衣不蔽体", "meaning": "感到暴露、缺乏保护"}
+      ]
+    },
+    {
+      "symbol": "鞋",
+      "category": "物品",
+      "traditional": "梦见新鞋主出行吉;丢鞋主家事忧",
+      "modern_psychology": "象征人生立场、行动力",
+      "common_scenarios": [
+        {"scene": "买新鞋", "meaning": "新方向开始"},
+        {"scene": "鞋破", "meaning": "事业或感情磨损"}
+      ]
+    },
+    {
+      "symbol": "帽子",
+      "category": "物品",
+      "traditional": "梦见戴新帽主升职",
+      "modern_psychology": "象征身份、思想、社会地位",
+      "common_scenarios": [
+        {"scene": "戴官帽", "meaning": "得地位"},
+        {"scene": "丢帽", "meaning": "失去身份感"}
+      ]
+    },
+    {
+      "symbol": "戒指",
+      "category": "物品",
+      "traditional": "梦见得戒指主姻缘、得贵",
+      "modern_psychology": "象征承诺、完整、关系",
+      "common_scenarios": [
+        {"scene": "戴婚戒", "meaning": "婚姻或承诺"},
+        {"scene": "戒指丢失", "meaning": "感情或承诺消逝"}
+      ]
+    },
+    {
+      "symbol": "钥匙",
+      "category": "物品",
+      "traditional": "梦见得钥匙主得机会、解困",
+      "modern_psychology": "象征解决问题的方法、秘密的揭示",
+      "common_scenarios": [
+        {"scene": "找到钥匙", "meaning": "找到解决之道"},
+        {"scene": "钥匙丢失", "meaning": "无法解决困境"}
+      ]
+    },
+    {
+      "symbol": "床",
+      "category": "物品",
+      "traditional": "梦见新床主婚喜;床破主家事忧",
+      "modern_psychology": "象征休息、亲密关系、内在世界",
+      "common_scenarios": [
+        {"scene": "卧床", "meaning": "需要休息或反思"},
+        {"scene": "床塌", "meaning": "家庭或健康问题"}
+      ]
+    },
+    {
+      "symbol": "棺材",
+      "category": "物品",
+      "traditional": "梦见棺材主大吉、升官发财(谐音棺=官,材=财)",
+      "modern_psychology": "象征旧事物的结束、新生",
+      "common_scenarios": [
+        {"scene": "见棺材", "meaning": "升迁得财"},
+        {"scene": "扛棺材", "meaning": "承担重任,后有福"}
+      ]
+    },
+    {
+      "symbol": "婚礼",
+      "category": "行为",
+      "traditional": "梦见自己结婚主家事变;参加婚礼主吉",
+      "modern_psychology": "象征结合、新阶段、人格不同面向的整合",
+      "common_scenarios": [
+        {"scene": "自己结婚", "meaning": "人生新阶段开始"},
+        {"scene": "婚礼中断", "meaning": "重要事情受阻"}
+      ]
+    },
+    {
+      "symbol": "葬礼",
+      "category": "行为",
+      "traditional": "梦见葬礼主一阶段结束",
+      "modern_psychology": "象征告别、结束、释怀",
+      "common_scenarios": [
+        {"scene": "参加葬礼", "meaning": "需放下过去"},
+        {"scene": "自己葬礼", "meaning": "人格重大蜕变"}
+      ]
+    },
+    {
+      "symbol": "飞翔",
+      "category": "行为",
+      "traditional": "梦见飞翔主自由、得志",
+      "modern_psychology": "象征自由意志、超越限制、灵感",
+      "common_scenarios": [
+        {"scene": "飞向高空", "meaning": "实现愿望"},
+        {"scene": "飞不起来", "meaning": "受限于现实"}
+      ]
+    },
+    {
+      "symbol": "坠落",
+      "category": "行为",
+      "traditional": "梦见坠落主失位、忧惧",
+      "modern_psychology": "象征失控感、焦虑、放手",
+      "common_scenarios": [
+        {"scene": "从高处坠落", "meaning": "事业或地位下滑"},
+        {"scene": "坠入水中", "meaning": "情感困扰"}
+      ]
+    },
+    {
+      "symbol": "奔跑",
+      "category": "行为",
+      "traditional": "梦见奔跑主追求、急事",
+      "modern_psychology": "象征追逐目标、逃避或前进",
+      "common_scenarios": [
+        {"scene": "拼命奔跑", "meaning": "现实压力大"},
+        {"scene": "跑不动", "meaning": "无力感"}
+      ]
+    },
+    {
+      "symbol": "哭泣",
+      "category": "行为",
+      "traditional": "梦见自己哭主反而吉、情绪释放",
+      "modern_psychology": "象征情感释放、治愈",
+      "common_scenarios": [
+        {"scene": "嚎啕大哭", "meaning": "情绪得宣泄,反主吉"},
+        {"scene": "无声流泪", "meaning": "压抑悲伤"}
+      ]
+    },
+    {
+      "symbol": "笑",
+      "category": "行为",
+      "traditional": "梦见大笑主反主忧",
+      "modern_psychology": "象征情感伪装或真实喜悦",
+      "common_scenarios": [
+        {"scene": "众人大笑", "meaning": "防表面欢笑下的危机"},
+        {"scene": "微笑", "meaning": "内心平和"}
+      ]
+    },
+    {
+      "symbol": "战斗",
+      "category": "行为",
+      "traditional": "梦见打斗主与人争执、对抗",
+      "modern_psychology": "象征内在冲突、外在对立",
+      "common_scenarios": [
+        {"scene": "战胜对手", "meaning": "克服困难"},
+        {"scene": "战败", "meaning": "需调整策略"}
+      ]
+    },
+    {
+      "symbol": "迷路",
+      "category": "行为",
+      "traditional": "梦见迷路主迷茫、方向不明",
+      "modern_psychology": "象征人生方向迷失、决策困难",
+      "common_scenarios": [
+        {"scene": "在森林迷路", "meaning": "内心困惑"},
+        {"scene": "找到出路", "meaning": "重新找到方向"}
+      ]
+    },
+    {
+      "symbol": "考试",
+      "category": "行为",
+      "traditional": "梦见考试主能力测试",
+      "modern_psychology": "象征自我评估、外界期待",
+      "common_scenarios": [
+        {"scene": "考试得满分", "meaning": "自信、成就感"},
+        {"scene": "考试不及格", "meaning": "焦虑、自我怀疑"}
+      ]
+    },
+    {
+      "symbol": "怀孕",
+      "category": "行为",
+      "traditional": "梦见怀孕主新生、新计划",
+      "modern_psychology": "象征创造、新可能性、潜能孕育",
+      "common_scenarios": [
+        {"scene": "自己怀孕", "meaning": "新事业或创意诞生"},
+        {"scene": "他人怀孕", "meaning": "周围有新变化"}
+      ]
+    },
+    {
+      "symbol": "生子",
+      "category": "行为",
+      "traditional": "梦见生孩子主大吉、新阶段",
+      "modern_psychology": "象征创造力实现、新自我",
+      "common_scenarios": [
+        {"scene": "生男", "meaning": "事业突破"},
+        {"scene": "生女", "meaning": "情感丰富"}
+      ]
+    },
+    {
+      "symbol": "死亡",
+      "category": "行为",
+      "traditional": "梦见自己死主长寿、再生(反主吉)",
+      "modern_psychology": "象征旧自我消亡、新生开始",
+      "common_scenarios": [
+        {"scene": "梦见亲人死", "meaning": "亲人长寿(反梦)"},
+        {"scene": "自己死而复生", "meaning": "蜕变重生"}
+      ]
+    },
+    {
+      "symbol": "洗澡",
+      "category": "行为",
+      "traditional": "梦见洗澡主消灾解困",
+      "modern_psychology": "象征净化、清洗过去、重新开始",
+      "common_scenarios": [
+        {"scene": "清水沐浴", "meaning": "解除烦恼"},
+        {"scene": "浴中有异物", "meaning": "需清理隐患"}
+      ]
+    },
+    {
+      "symbol": "吃饭",
+      "category": "行为",
+      "traditional": "梦见吃饭主有客来或得财",
+      "modern_psychology": "象征滋养、需求、生活享受",
+      "common_scenarios": [
+        {"scene": "宴席", "meaning": "人际丰收"},
+        {"scene": "饿肚子", "meaning": "需求未满足"}
+      ]
+    },
+    {
+      "symbol": "饮酒",
+      "category": "行为",
+      "traditional": "梦见饮酒主有喜事、宴会",
+      "modern_psychology": "象征放松、社交、可能的失控",
+      "common_scenarios": [
+        {"scene": "对饮", "meaning": "良缘或好友相聚"},
+        {"scene": "醉酒", "meaning": "情绪失控"}
+      ]
+    },
+    {
+      "symbol": "唱歌",
+      "category": "行为",
+      "traditional": "梦见唱歌主快乐、表达",
+      "modern_psychology": "象征自我表达、释放、和谐",
+      "common_scenarios": [
+        {"scene": "众人合唱", "meaning": "团队和谐"},
+        {"scene": "唱不出声", "meaning": "表达受阻"}
+      ]
+    },
+    {
+      "symbol": "跳舞",
+      "category": "行为",
+      "traditional": "梦见跳舞主喜事、欢乐",
+      "modern_psychology": "象征自由、自我表达、生命活力",
+      "common_scenarios": [
+        {"scene": "翩翩起舞", "meaning": "生活愉快"},
+        {"scene": "跳错步", "meaning": "生活节奏失调"}
+      ]
+    },
+    {
+      "symbol": "亲人",
+      "category": "人物",
+      "traditional": "梦见父母主孝、家事;梦见已故亲人主托梦或思念",
+      "modern_psychology": "象征家庭关系、内在父母原型",
+      "common_scenarios": [
+        {"scene": "见到去世的亲人", "meaning": "潜意识思念或托付"},
+        {"scene": "与父母争吵", "meaning": "现实中的家庭冲突"}
+      ]
+    },
+    {
+      "symbol": "朋友",
+      "category": "人物",
+      "traditional": "梦见朋友主社交、互助",
+      "modern_psychology": "象征自我的不同面向、人际关系",
+      "common_scenarios": [
+        {"scene": "老友重逢", "meaning": "怀旧或寻求支持"},
+        {"scene": "与朋友绝交", "meaning": "需重新评估关系"}
+      ]
+    },
+    {
+      "symbol": "陌生人",
+      "category": "人物",
+      "traditional": "梦见陌生人主新机遇或贵人",
+      "modern_psychology": "象征未知的自我、潜意识面向",
+      "common_scenarios": [
+        {"scene": "陌生人帮助", "meaning": "未知机遇到来"},
+        {"scene": "陌生人追赶", "meaning": "未识别的威胁"}
+      ]
+    },
+    {
+      "symbol": "婴儿",
+      "category": "人物",
+      "traditional": "梦见婴儿主新事、纯真",
+      "modern_psychology": "象征新生、潜能、纯真自我",
+      "common_scenarios": [
+        {"scene": "抱婴儿", "meaning": "新责任或新阶段"},
+        {"scene": "婴儿哭闹", "meaning": "需关注内在的需求"}
+      ]
+    },
+    {
+      "symbol": "老人",
+      "category": "人物",
+      "traditional": "梦见老人主长辈、智者指点",
+      "modern_psychology": "象征智慧、经验、内在导师",
+      "common_scenarios": [
+        {"scene": "老人指路", "meaning": "得贵人或内在智慧引导"},
+        {"scene": "老人过世", "meaning": "一个阶段或观念的终结"}
+      ]
+    },
+    {
+      "symbol": "鬼",
+      "category": "人物",
+      "traditional": "梦见鬼主邪扰或心结",
+      "modern_psychology": "象征未处理的恐惧、过去的阴影",
+      "common_scenarios": [
+        {"scene": "被鬼追", "meaning": "逃避内在恐惧"},
+        {"scene": "降伏鬼", "meaning": "克服心理障碍"}
+      ]
+    },
+    {
+      "symbol": "神仙",
+      "category": "人物",
+      "traditional": "梦见神仙主得护佑、贵人",
+      "modern_psychology": "象征精神追求、高我",
+      "common_scenarios": [
+        {"scene": "神仙赐物", "meaning": "得贵人或机缘"},
+        {"scene": "神仙训示", "meaning": "需反思生活方向"}
+      ]
+    },
+    {
+      "symbol": "皇帝",
+      "category": "人物",
+      "traditional": "梦见皇帝主大贵、得权",
+      "modern_psychology": "象征权威、父性原型",
+      "common_scenarios": [
+        {"scene": "面见皇帝", "meaning": "得贵人或升迁"},
+        {"scene": "成为皇帝", "meaning": "野心或自我膨胀"}
+      ]
+    },
+    {
+      "symbol": "孩子",
+      "category": "人物",
+      "traditional": "梦见小孩主家事、新事",
+      "modern_psychology": "象征内在小孩、纯真、新可能",
+      "common_scenarios": [
+        {"scene": "玩耍的孩子", "meaning": "重拾纯真"},
+        {"scene": "受伤的孩子", "meaning": "内在需要疗愈"}
+      ]
+    },
+    {
+      "symbol": "白色",
+      "category": "颜色",
+      "traditional": "梦见白色主纯洁、丧事",
+      "modern_psychology": "象征纯洁、空灵、新开始",
+      "common_scenarios": [
+        {"scene": "白衣人", "meaning": "纯洁之灵或丧事预兆"},
+        {"scene": "全白世界", "meaning": "心灵净化"}
+      ]
+    },
+    {
+      "symbol": "红色",
+      "category": "颜色",
+      "traditional": "梦见红色主喜事、热情",
+      "modern_psychology": "象征激情、危险、生命力",
+      "common_scenarios": [
+        {"scene": "红衣女子", "meaning": "桃花或喜事"},
+        {"scene": "见血", "meaning": "见财或受伤"}
+      ]
+    },
+    {
+      "symbol": "黑色",
+      "category": "颜色",
+      "traditional": "梦见黑色主神秘、忧事",
+      "modern_psychology": "象征未知、潜意识深处、神秘",
+      "common_scenarios": [
+        {"scene": "黑衣人", "meaning": "未知威胁或神秘人物"},
+        {"scene": "黑暗中行走", "meaning": "面对未知"}
+      ]
+    },
+    {
+      "symbol": "黄色",
+      "category": "颜色",
+      "traditional": "梦见黄色主财、贵气",
+      "modern_psychology": "象征智慧、活力、警觉",
+      "common_scenarios": [
+        {"scene": "黄金光芒", "meaning": "得财或得贵"},
+        {"scene": "黄沙漫天", "meaning": "迷失、不安"}
+      ]
+    },
+    {
+      "symbol": "数字3",
+      "category": "数字",
+      "traditional": "三主和合、变化",
+      "modern_psychology": "象征三位一体、创造性的整合",
+      "common_scenarios": [
+        {"scene": "重复出现3", "meaning": "三件事将变化或机缘"}
+      ]
+    },
+    {
+      "symbol": "数字7",
+      "category": "数字",
+      "traditional": "七主神秘、完整",
+      "modern_psychology": "象征精神圆满、神秘力量",
+      "common_scenarios": [
+        {"scene": "重复出现7", "meaning": "精神觉醒或一阶段完结"}
+      ]
+    },
+    {
+      "symbol": "数字8",
+      "category": "数字",
+      "traditional": "八主发(谐音)、富贵",
+      "modern_psychology": "象征无限、循环、丰盛",
+      "common_scenarios": [
+        {"scene": "重复出现8", "meaning": "财运将至"}
+      ]
+    },
+    {
+      "symbol": "数字9",
+      "category": "数字",
+      "traditional": "九主长久、阳极",
+      "modern_psychology": "象征完成、智慧的圆满",
+      "common_scenarios": [
+        {"scene": "重复出现9", "meaning": "事情接近完成"}
+      ]
+    },
+    {
+      "symbol": "米饭",
+      "category": "食物",
+      "traditional": "梦见米饭主丰收、得财",
+      "modern_psychology": "象征基本需求满足、稳定",
+      "common_scenarios": [
+        {"scene": "白米饭满桌", "meaning": "丰盛得财"},
+        {"scene": "饭烧焦", "meaning": "财运受损"}
+      ]
+    },
+    {
+      "symbol": "肉",
+      "category": "食物",
+      "traditional": "梦见吃肉主得养、欲望",
+      "modern_psychology": "象征本能需求、丰盛",
+      "common_scenarios": [
+        {"scene": "大块吃肉", "meaning": "需求满足"},
+        {"scene": "生肉", "meaning": "未成熟的事或冲动"}
+      ]
+    },
+    {
+      "symbol": "水果",
+      "category": "食物",
+      "traditional": "梦见水果主丰收、好事",
+      "modern_psychology": "象征成果、收获",
+      "common_scenarios": [
+        {"scene": "摘水果", "meaning": "收获成功"},
+        {"scene": "腐烂水果", "meaning": "机会流失"}
+      ]
+    },
+    {
+      "symbol": "面条",
+      "category": "食物",
+      "traditional": "梦见长面主长寿、长久",
+      "modern_psychology": "象征延续、连接",
+      "common_scenarios": [
+        {"scene": "吃长面", "meaning": "长寿或长久之事"}
+      ]
+    },
+    {
+      "symbol": "茶",
+      "category": "食物",
+      "traditional": "梦见喝茶主清闲、待客",
+      "modern_psychology": "象征沉思、休闲、清醒",
+      "common_scenarios": [
+        {"scene": "品茶", "meaning": "心境平和"}
+      ]
+    },
+    {
+      "symbol": "牙齿",
+      "category": "身体",
+      "traditional": "梦见掉牙主家中长辈忧或大变;新牙主新生",
+      "modern_psychology": "象征自我形象、力量、转变",
+      "common_scenarios": [
+        {"scene": "掉牙", "meaning": "面临重要转变或失去"},
+        {"scene": "长新牙", "meaning": "新的开始或转化"}
+      ]
+    },
+    {
+      "symbol": "头发",
+      "category": "身体",
+      "traditional": "梦见剪发主烦恼解;长发主长寿",
+      "modern_psychology": "象征思想、力量、自我形象",
+      "common_scenarios": [
+        {"scene": "剃头", "meaning": "重大改变或失去"},
+        {"scene": "白发", "meaning": "智慧增长或忧愁"}
+      ]
+    },
+    {
+      "symbol": "眼睛",
+      "category": "身体",
+      "traditional": "梦见眼明主察觉;眼盲主蒙蔽",
+      "modern_psychology": "象征洞察力、感知",
+      "common_scenarios": [
+        {"scene": "看见远处", "meaning": "有远见"},
+        {"scene": "失明", "meaning": "看不清现实"}
+      ]
+    },
+    {
+      "symbol": "手",
+      "category": "身体",
+      "traditional": "梦见手脏主有作为;断手主大失",
+      "modern_psychology": "象征行动力、创造、给予与接受",
+      "common_scenarios": [
+        {"scene": "握手", "meaning": "达成合作"},
+        {"scene": "手受伤", "meaning": "行动受阻"}
+      ]
+    },
+    {
+      "symbol": "脚",
+      "category": "身体",
+      "traditional": "梦见脚伤主行动受阻",
+      "modern_psychology": "象征立场、稳定、前进",
+      "common_scenarios": [
+        {"scene": "光脚走", "meaning": "回归本真或缺乏保护"},
+        {"scene": "脚被困", "meaning": "无法前进"}
+      ]
+    },
+    {
+      "symbol": "血",
+      "category": "身体",
+      "traditional": "梦见见血主见财(俗云血光为财)或受伤",
+      "modern_psychology": "象征生命力、情感强度、能量损失",
+      "common_scenarios": [
+        {"scene": "流血不止", "meaning": "能量或情感损耗"},
+        {"scene": "他人流血", "meaning": "关心他人或牵连"}
+      ]
+    },
+    {
+      "symbol": "心",
+      "category": "身体",
+      "traditional": "梦见心痛主情志受伤",
+      "modern_psychology": "象征情感核心、爱、生命中心",
+      "common_scenarios": [
+        {"scene": "心剧烈跳动", "meaning": "情感激动或恐惧"}
+      ]
+    }
+  ]
+}

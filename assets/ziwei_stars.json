@@ -1,0 +1,180 @@
+{
+  "main_stars": [
+    {
+      "name": "紫微",
+      "category": "帝座",
+      "wuxing": "土",
+      "yin_yang": "阴",
+      "nature": "尊贵",
+      "keywords": ["领袖", "尊贵", "权威", "稳重"],
+      "good_palaces": ["命", "官禄", "田宅"],
+      "challenges": ["孤高", "无辅则孤", "刚愎"]
+    },
+    {
+      "name": "天机",
+      "category": "兄弟",
+      "wuxing": "木",
+      "yin_yang": "阴",
+      "nature": "智慧",
+      "keywords": ["智慧", "机敏", "谋略", "善变"],
+      "good_palaces": ["命", "迁移", "兄弟"],
+      "challenges": ["多虑", "不定", "心浮"]
+    },
+    {
+      "name": "太阳",
+      "category": "中天主星",
+      "wuxing": "火",
+      "yin_yang": "阳",
+      "nature": "贵显",
+      "keywords": ["光明", "博爱", "进取", "热情"],
+      "good_palaces": ["命", "官禄", "迁移"],
+      "challenges": ["劳碌", "好炫", "燥急"]
+    },
+    {
+      "name": "武曲",
+      "category": "财帛主",
+      "wuxing": "金",
+      "yin_yang": "阴",
+      "nature": "刚毅",
+      "keywords": ["果决", "财富", "刚直", "执着"],
+      "good_palaces": ["财帛", "官禄", "命"],
+      "challenges": ["孤克", "固执", "婚姻不顺"]
+    },
+    {
+      "name": "天同",
+      "category": "福德主",
+      "wuxing": "水",
+      "yin_yang": "阳",
+      "nature": "温和",
+      "keywords": ["享福", "温和", "情感", "知足"],
+      "good_palaces": ["福德", "命", "夫妻"],
+      "challenges": ["懒散", "缺主见", "依赖"]
+    },
+    {
+      "name": "廉贞",
+      "category": "次桃花",
+      "wuxing": "火",
+      "yin_yang": "阴",
+      "nature": "囚星",
+      "keywords": ["公关", "感情", "矛盾", "争胜"],
+      "good_palaces": ["官禄", "命"],
+      "challenges": ["感情纠纷", "易招是非", "血光"]
+    },
+    {
+      "name": "天府",
+      "category": "南斗主",
+      "wuxing": "土",
+      "yin_yang": "阳",
+      "nature": "财库",
+      "keywords": ["稳重", "财库", "保守", "慈善"],
+      "good_palaces": ["命", "财帛", "田宅"],
+      "challenges": ["保守", "缺冲劲", "孤独"]
+    },
+    {
+      "name": "太阴",
+      "category": "中天主星",
+      "wuxing": "水",
+      "yin_yang": "阴",
+      "nature": "富贵",
+      "keywords": ["温柔", "财富", "感性", "细心"],
+      "good_palaces": ["命", "田宅", "财帛"],
+      "challenges": ["多愁", "敏感", "感情困扰"]
+    },
+    {
+      "name": "贪狼",
+      "category": "正桃花",
+      "wuxing": "木",
+      "yin_yang": "阳",
+      "nature": "桃花",
+      "keywords": ["欲望", "才艺", "交际", "投机"],
+      "good_palaces": ["命", "交友"],
+      "challenges": ["纵欲", "投机", "感情多变"]
+    },
+    {
+      "name": "巨门",
+      "category": "暗星",
+      "wuxing": "水",
+      "yin_yang": "阴",
+      "nature": "口舌",
+      "keywords": ["口才", "研究", "深思", "辩才"],
+      "good_palaces": ["官禄", "迁移"],
+      "challenges": ["是非", "猜忌", "口舌纠纷"]
+    },
+    {
+      "name": "天相",
+      "category": "印星",
+      "wuxing": "水",
+      "yin_yang": "阳",
+      "nature": "辅佐",
+      "keywords": ["辅佐", "正直", "公正", "服务"],
+      "good_palaces": ["官禄", "命", "夫妻"],
+      "challenges": ["优柔", "依赖", "缺主见"]
+    },
+    {
+      "name": "天梁",
+      "category": "荫星",
+      "wuxing": "土",
+      "yin_yang": "阳",
+      "nature": "庇荫",
+      "keywords": ["长寿", "庇荫", "正直", "清高"],
+      "good_palaces": ["命", "父母", "福德"],
+      "challenges": ["孤高", "好管闲事", "晚成"]
+    },
+    {
+      "name": "七杀",
+      "category": "将星",
+      "wuxing": "金",
+      "yin_yang": "阴",
+      "nature": "肃杀",
+      "keywords": ["权威", "冲劲", "独立", "决断"],
+      "good_palaces": ["命", "官禄", "迁移"],
+      "challenges": ["孤克", "刚烈", "易冲突"]
+    },
+    {
+      "name": "破军",
+      "category": "耗星",
+      "wuxing": "水",
+      "yin_yang": "阴",
+      "nature": "破耗",
+      "keywords": ["开创", "变革", "破旧", "革新"],
+      "good_palaces": ["命", "迁移"],
+      "challenges": ["破耗", "动荡", "六亲难全"]
+    }
+  ],
+  "auspicious_assistants": [
+    {"name": "左辅", "wuxing": "土", "nature": "辅佐", "keywords": ["贵人", "助力", "辅佐"], "meaning": "助主为善之星,逢吉则吉,主得贵人扶持"},
+    {"name": "右弼", "wuxing": "水", "nature": "辅佐", "keywords": ["贵人", "助力", "辅佐"], "meaning": "助主为善之星,与左辅同义,主得贵人提携"},
+    {"name": "文昌", "wuxing": "金", "nature": "文星", "keywords": ["文采", "考试", "聪明", "文书"], "meaning": "主科甲文章,利于考试、学业、文书契约"},
+    {"name": "文曲", "wuxing": "水", "nature": "文星", "keywords": ["才艺", "口才", "桃花", "文学"], "meaning": "主才艺口才,带桃花,利于艺术、文学才华"},
+    {"name": "天魁", "wuxing": "火", "nature": "贵人", "keywords": ["天乙贵人", "提携", "男性贵人"], "meaning": "天乙贵人,主白天遇贵,常为男性长辈相助"},
+    {"name": "天钺", "wuxing": "火", "nature": "贵人", "keywords": ["玉堂贵人", "提携", "女性贵人"], "meaning": "玉堂贵人,主夜间遇贵,常为女性长辈相助"}
+  ],
+  "malefic_assistants": [
+    {"name": "擎羊", "wuxing": "金", "nature": "刑伤", "keywords": ["刚烈", "刑伤", "意外"], "meaning": "主刑伤、争斗,性刚烈,易招意外、手术"},
+    {"name": "陀罗", "wuxing": "金", "nature": "拖延", "keywords": ["延滞", "纠缠", "暗损"], "meaning": "主延滞、纠缠不清,做事易有阻碍"},
+    {"name": "火星", "wuxing": "火", "nature": "急躁", "keywords": ["急躁", "突发", "火灾"], "meaning": "主性急刚烈,事突发,常与贪狼会合可成大富"},
+    {"name": "铃星", "wuxing": "火", "nature": "阴险", "keywords": ["阴险", "暗损", "意外"], "meaning": "主性阴沉刚烈,事在暗中,与贪狼会合亦主富贵"},
+    {"name": "地空", "wuxing": "火", "nature": "空亡", "keywords": ["空想", "破财", "出世"], "meaning": "主精神空虚、破财损失,但利宗教、哲学"},
+    {"name": "地劫", "wuxing": "火", "nature": "劫夺", "keywords": ["劫财", "突变", "失落"], "meaning": "主财物突失、人事突变,需防小人劫夺"}
+  ],
+  "four_transformations": {
+    "甲": {"禄": "廉贞", "权": "破军", "科": "武曲", "忌": "太阳"},
+    "乙": {"禄": "天机", "权": "天梁", "科": "紫微", "忌": "太阴"},
+    "丙": {"禄": "天同", "权": "天机", "科": "文昌", "忌": "廉贞"},
+    "丁": {"禄": "太阴", "权": "天同", "科": "天机", "忌": "巨门"},
+    "戊": {"禄": "贪狼", "权": "太阴", "科": "右弼", "忌": "天机"},
+    "己": {"禄": "武曲", "权": "贪狼", "科": "天梁", "忌": "文曲"},
+    "庚": {"禄": "太阳", "权": "武曲", "科": "太阴", "忌": "天同"},
+    "辛": {"禄": "巨门", "权": "太阳", "科": "文曲", "忌": "文昌"},
+    "壬": {"禄": "天梁", "权": "紫微", "科": "左辅", "忌": "武曲"},
+    "癸": {"禄": "破军", "权": "巨门", "科": "太阴", "忌": "贪狼"}
+  },
+  "twelve_palaces_order": ["命宫", "兄弟", "夫妻", "子女", "财帛", "疾厄", "迁移", "交友", "官禄", "田宅", "福德", "父母"],
+  "wuxing_ju": [
+    {"name": "水二局", "number": 2},
+    {"name": "木三局", "number": 3},
+    {"name": "金四局", "number": 4},
+    {"name": "土五局", "number": 5},
+    {"name": "火六局", "number": 6}
+  ]
+}
