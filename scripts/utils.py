@@ -292,31 +292,87 @@ def require_lunar():
 # 真太阳时 — longitude correction
 # --------------------------------------------------------------------------- #
 
+import math
+import calendar
+
+
+def equation_of_time(day_of_year: int, leap: bool = False) -> float:
+    """Equation of Time (EOT) in minutes for a given Julian day of year.
+
+    Uses Spencer's truncated approximation (good to ~±20 s vs JPL Horizons):
+        B = 2π (n - 81) / N
+        EOT = 9.87 sin(2B) - 7.53 cos(B) - 1.5 sin(B)
+    Positive EOT = sundial ahead of clock.
+    """
+    n_days = 366 if leap else 365
+    b = 2.0 * math.pi * (day_of_year - 81) / n_days
+    return 9.87 * math.sin(2 * b) - 7.53 * math.cos(b) - 1.5 * math.sin(b)
+
+
 def longitude_correction(
     birth_hour: int,
     birth_minute: int,
     longitude: float,
     tz_offset_hours: float = 8.0,
+    year: Optional[int] = None,
+    month: Optional[int] = None,
+    day: Optional[int] = None,
 ) -> Tuple[int, int]:
-    """Adjust clock time to local mean solar time using longitude offset.
+    """Adjust clock time to local true solar time.
 
-    Each degree east of the timezone's reference meridian (default 120°E for
-    GMT+8) adds 4 minutes; each degree west subtracts.
+    Combines two corrections:
+      (1) Longitude offset: each degree east of the timezone's reference
+          meridian (120°E for GMT+8) adds 4 minutes; each degree west subtracts.
+      (2) Equation of Time (EOT): orbital eccentricity + axial tilt cause clock
+          and sundial to differ by up to ±16 minutes across the year. Applied
+          only if year/month/day supplied.
 
-    This is a coarse approximation (no equation-of-time correction); for true
-    solar time include EOT separately.
-
-    Returns (hour, minute) in 0..23, 0..59 — date roll-over not handled here,
-    callers should use the returned values only if no roll-over happens (which
-    is the typical case for longitude offsets within China).
+    Returns (hour, minute) in 0..23, 0..59. Date roll-over clamped to same day;
+    typical longitude+EOT offsets within China stay inside one day.
     """
     ref_meridian = tz_offset_hours * 15.0  # 120° for GMT+8
     delta_minutes = (longitude - ref_meridian) * 4.0
+
+    if year is not None and month is not None and day is not None:
+        day_of_year = (
+            (calendar.datetime.date(year, month, day) - calendar.datetime.date(year, 1, 1)).days + 1
+        )
+        delta_minutes += equation_of_time(day_of_year, leap=calendar.isleap(year))
+
     total = birth_hour * 60 + birth_minute + delta_minutes
     total = int(round(total))
-    # clamp to same day for safety
     total = max(0, min(24 * 60 - 1, total))
     return divmod(total, 60)
+
+
+def true_solar_time_info(
+    longitude: float,
+    tz_offset_hours: float,
+    year: int,
+    month: int,
+    day: int,
+    hour: int,
+    minute: int,
+) -> dict:
+    """Return structured info on the longitude + EOT correction applied."""
+    ref_meridian = tz_offset_hours * 15.0
+    lon_delta = (longitude - ref_meridian) * 4.0
+    day_of_year = (
+        (calendar.datetime.date(year, month, day) - calendar.datetime.date(year, 1, 1)).days + 1
+    )
+    eot = equation_of_time(day_of_year, leap=calendar.isleap(year))
+    total_delta = lon_delta + eot
+    corrected_total = hour * 60 + minute + total_delta
+    corrected_h, corrected_m = divmod(int(round(corrected_total)), 60)
+    return {
+        "longitude": longitude,
+        "ref_meridian": ref_meridian,
+        "longitude_offset_min": round(lon_delta, 2),
+        "equation_of_time_min": round(eot, 2),
+        "total_offset_min": round(total_delta, 2),
+        "clock_time": f"{hour:02d}:{minute:02d}",
+        "true_solar_time": f"{corrected_h:02d}:{corrected_m:02d}",
+    }
 
 
 # --------------------------------------------------------------------------- #

@@ -111,6 +111,10 @@ def check_core_scripts() -> None:
         ["scripts/liuyao_cast.py", "coins", "--seed", "42", "--date", "2026-06-01", "--time", "10:00"],
         ["scripts/ziwei_calc.py", "--year", "1995", "--month", "7", "--day", "20", "--hour", "1", "--gender", "female", "--lunar"],
         ["scripts/xiaoliuren_cast.py", "lunar", "--month", "3", "--day", "15", "--hour-branch", "午"],
+        ["scripts/qimen_cast.py", "--date", "2026-05-16", "--time", "14:30"],
+        ["scripts/liuren_cast.py", "--date", "2026-05-16", "--time", "14:30", "--question", "感情"],
+        ["scripts/liuren_cast.py", "--date", "2026-12-25", "--time", "03:00"],
+        ["scripts/liuren_cast.py", "--date", "2026-03-01", "--time", "11:30", "--question", "出行"],
     ]
     for case in cases:
         run_json(case)
