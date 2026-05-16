@@ -59,6 +59,7 @@ def check_skill_metadata() -> None:
 def run_json(args: list[str]) -> dict:
     env = os.environ.copy()
     env.setdefault("PYTHONIOENCODING", "utf-8")
+    env.setdefault("PYTHONDONTWRITEBYTECODE", "1")
     completed = subprocess.run(
         [sys.executable, *args],
         cwd=ROOT,

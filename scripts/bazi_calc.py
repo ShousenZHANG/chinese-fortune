@@ -906,11 +906,17 @@ def select_yong_shen(
         key = f"{day_stem}|{month_branch}"
         entry = nested.get(key) if isinstance(nested, dict) else None
         if isinstance(entry, dict):
-            primary = entry.get("primary") or entry.get("yong_shen")
+            primary = (
+                entry.get("primary")
+                or entry.get("yong_shen")
+                or entry.get("primary_yongshen")
+            )
+            if isinstance(primary, list):
+                primary = primary[0] if primary else None
             if primary:
                 tiaohou_primary = primary
                 tiaohou_match = True
-                tiaohou_reason = entry.get("reason", entry.get("note", ""))
+                tiaohou_reason = entry.get("reason", entry.get("note", entry.get("notes", "")))
 
     # 扶抑 candidate
     candidates_strong = [_ke_me(day_wx), _me_ke(day_wx), _xie_me(day_wx)]
