@@ -26,7 +26,12 @@ def _serialize(solar, lunar) -> dict:
     # 24 节气 (nearest jieqi)
     jieqi_info: dict = {}
     try:
-        nearest_name = lunar.getJieQi() or lunar.getCurrentJieQi() and lunar.getCurrentJieQi().getName()
+        jq_today = lunar.getJieQi()
+        if jq_today:
+            nearest_name = jq_today
+        else:
+            cur = lunar.getCurrentJieQi()
+            nearest_name = cur.getName() if cur else None
     except Exception:
         nearest_name = None
     try:

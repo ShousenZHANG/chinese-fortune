@@ -1,1 +1,2 @@
-lunar_python>=1.4.4
+# Calendrical engine: 公历↔农历, 24节气, 60甲子, 真太阳时. Pinned for reproducibility.
+lunar_python>=1.4.4,<2.0

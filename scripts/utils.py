@@ -317,7 +317,7 @@ def longitude_correction(
     year: Optional[int] = None,
     month: Optional[int] = None,
     day: Optional[int] = None,
-) -> Tuple[int, int]:
+) -> Tuple[int, int, int]:
     """Adjust clock time to local true solar time.
 
     Combines two corrections:
@@ -327,8 +327,11 @@ def longitude_correction(
           and sundial to differ by up to ±16 minutes across the year. Applied
           only if year/month/day supplied.
 
-    Returns (hour, minute) in 0..23, 0..59. Date roll-over clamped to same day;
-    typical longitude+EOT offsets within China stay inside one day.
+    Returns (day_offset, hour, minute) where ``day_offset`` ∈ {-1, 0, +1}
+    indicates that the corrected instant rolled into the previous (-1) or next
+    (+1) calendar day. Callers MUST apply ``day_offset`` to the birth date
+    *before* deriving the day pillar (日柱); otherwise near-midnight births at
+    western/eastern longitudes are assigned the wrong 日柱 and 子时.
     """
     ref_meridian = tz_offset_hours * 15.0  # 120° for GMT+8
     delta_minutes = (longitude - ref_meridian) * 4.0
@@ -339,10 +342,11 @@ def longitude_correction(
         )
         delta_minutes += equation_of_time(day_of_year, leap=calendar.isleap(year))
 
-    total = birth_hour * 60 + birth_minute + delta_minutes
-    total = int(round(total))
-    total = max(0, min(24 * 60 - 1, total))
-    return divmod(total, 60)
+    total = int(round(birth_hour * 60 + birth_minute + delta_minutes))
+    # divmod handles negative totals correctly: -9 -> (-1, 1431) i.e. prev day 23:51
+    day_offset, minutes_in_day = divmod(total, 24 * 60)
+    hour, minute = divmod(minutes_in_day, 60)
+    return day_offset, hour, minute
 
 
 def true_solar_time_info(

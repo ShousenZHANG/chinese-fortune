@@ -216,6 +216,10 @@ def load_bihua_table() -> dict[str, int]:
         os.path.join(here, "..", "assets", "name_bihua.json"),
         os.path.join(here, "assets", "name_bihua.json"),
     ]
+    # Fallback is the base layer (common given-name chars); the asset overrides
+    # and extends it. Merging — not replacing — guarantees high-frequency chars
+    # like 涵/浩/然 stay covered even if the asset omits them.
+    table: dict[str, int] = dict(FALLBACK_BIHUA)
     asset = next((p for p in candidates if os.path.exists(p)), None)
     if asset:
         try:
@@ -223,11 +227,12 @@ def load_bihua_table() -> dict[str, int]:
                 data = json.load(f)
             chars = data.get("chars", data) if isinstance(data, dict) else data
             if isinstance(chars, dict):
-                return {k: int(v) for k, v in chars.items() if len(k) == 1}
+                table.update({k: int(v) for k, v in chars.items() if len(k) == 1})
+                return table
         except Exception as e:
             warn(f"failed to load name_bihua.json: {e}")
     warn("使用内置简表笔画 (覆盖有限); 可补 assets/name_bihua.json 完整康熙笔画表")
-    return dict(FALLBACK_BIHUA)
+    return table
 
 
 def stroke_count(ch: str, table: dict[str, int]) -> Optional[int]:
@@ -296,6 +301,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="完整中文姓名, 如 王小明 / 欧阳子轩")
     p.add_argument("--compound-surname", action="store_true",
                    help="若姓为复姓, 加上此标志")
+    p.add_argument("--strict", action="store_true",
+                   help="严格模式: 任一字缺笔画即报错退出, 不用默认值蒙混")
     return p
 
 
@@ -341,6 +348,16 @@ def main(argv: Optional[list[str]] = None) -> int:
         chars_info.append({"char": ch, "role": "given", "strokes": s})
         given_strokes.append(s)
 
+    if missing and getattr(args, "strict", False):
+        json_print({
+            "ok": False,
+            "error": "missing_strokes",
+            "message": f"以下字不在康熙笔画表中, 严格模式拒绝估算: {missing}",
+            "missing_in_table": missing,
+            "input": vars(args),
+        })
+        return 1
+
     grids = five_grids(surname_strokes, given_strokes)
 
     sancai = {
@@ -364,16 +381,21 @@ def main(argv: Optional[list[str]] = None) -> int:
     ]
 
     out = {
+        "ok": True,
         "input": vars(args),
         "name": name,
         "characters": chars_info,
         "missing_in_table": missing,
+        "reliable": not missing,
         "five_grids": grids,
         "san_cai": sancai,
         "summary": "; ".join(summary_parts),
     }
     if missing:
-        out["warning"] = f"以下字未在笔画表中, 已用默认值 8: {missing}"
+        out["warning"] = (
+            f"以下字未在康熙笔画表中, 用默认值 8 估算, 五格吉凶不可靠: {missing}。"
+            f"请补 assets/name_bihua.json 或用 --strict 拒绝估算。"
+        )
 
     json_print(out)
     return 0

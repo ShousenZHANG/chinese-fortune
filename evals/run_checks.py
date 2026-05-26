@@ -151,12 +151,100 @@ def check_release_cleanliness() -> None:
         match = forbidden.search(text)
         if match:
             fail(f"release marker {match.group(0)!r} left in {path.relative_to(ROOT)}")
-    generated = [
-        path for path in ROOT.rglob("*")
-        if path.name == "__pycache__" or path.suffix == ".pyc"
-    ]
-    if generated:
-        fail(f"generated Python cache files present: {[str(p.relative_to(ROOT)) for p in generated]}")
+    # Only TRACKED generated artifacts are a problem; gitignored runtime
+    # __pycache__/*.pyc regenerate on every import and must not fail the suite.
+    try:
+        tracked = subprocess.run(
+            ["git", "ls-files"], cwd=ROOT, text=True, encoding="utf-8",
+            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15,
+        ).stdout.splitlines()
+    except (OSError, subprocess.SubprocessError):
+        tracked = []
+    committed_cache = [p for p in tracked if p.endswith(".pyc") or "__pycache__" in p]
+    if committed_cache:
+        fail(f"generated Python cache files committed: {committed_cache}")
+
+
+# --------------------------------------------------------------------------- #
+# Eval assertions — machine-verify the deterministic substrate
+# --------------------------------------------------------------------------- #
+
+_MISSING = object()
+
+
+def _resolve_path(obj, dotted: str):
+    """Resolve 'a.b.0.c' against nested dict/list; return _MISSING if absent."""
+    cur = obj
+    for part in dotted.split("."):
+        if isinstance(cur, list):
+            try:
+                cur = cur[int(part)]
+            except (ValueError, IndexError):
+                return _MISSING
+        elif isinstance(cur, dict):
+            if part not in cur:
+                return _MISSING
+            cur = cur[part]
+        else:
+            return _MISSING
+    return cur
+
+
+def _run_assertion(a: dict, label: str) -> None:
+    kind = a.get("kind")
+    if kind == "file_contains":
+        path = ROOT / a["file"]
+        if not path.exists():
+            fail(f"{label}: file_contains target missing: {a['file']}")
+        text = path.read_text(encoding="utf-8")
+        for needle in a["needles"]:
+            if needle not in text:
+                fail(f"{label}: {a['file']} missing required text {needle!r}")
+        return
+    if kind == "script":
+        data = run_json(a["cmd"])
+        for path, expected in a.get("paths", {}).items():
+            got = _resolve_path(data, path)
+            if got != expected:
+                fail(f"{label}: path {path!r} expected {expected!r}, got {got!r}")
+        for path, substr in a.get("contains", {}).items():
+            got = _resolve_path(data, path)
+            if got is _MISSING or substr not in str(got):
+                fail(f"{label}: path {path!r} must contain {substr!r}, got {got!r}")
+        for path in a.get("has_keys", []):
+            if _resolve_path(data, path) is _MISSING:
+                fail(f"{label}: missing required key/path {path!r}")
+        for path, n in a.get("count", {}).items():
+            got = _resolve_path(data, path)
+            if not isinstance(got, list) or len(got) != n:
+                fail(f"{label}: path {path!r} expected list len {n}, got {got!r}")
+        return
+    fail(f"{label}: unknown assertion kind {kind!r}")
+
+
+def check_eval_assertions() -> None:
+    spec = json.loads((ROOT / "evals" / "evals.json").read_text(encoding="utf-8"))
+    evals = spec.get("evals", [])
+    total = 0
+    for ev in evals:
+        assertions = ev.get("assertions", [])
+        if not assertions:
+            fail(f"eval #{ev['id']} ({ev['name']}) has no assertions")
+        for i, a in enumerate(assertions):
+            _run_assertion(a, f"eval #{ev['id']} [{i}]")
+            total += 1
+    if total < len(evals):
+        fail(f"only {total} assertions for {len(evals)} evals")
+
+
+def check_unit_tests() -> None:
+    proc = subprocess.run(
+        [sys.executable, "-m", "pytest", "tests/", "-q"],
+        cwd=ROOT, text=True, encoding="utf-8",
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=180,
+    )
+    if proc.returncode != 0:
+        fail(f"pytest failed:\n{proc.stdout[-1500:]}")
 
 
 def main() -> int:
@@ -164,17 +252,28 @@ def main() -> int:
         check_skill_metadata,
         check_core_scripts,
         check_reference_coverage,
+        check_eval_assertions,
+        check_unit_tests,
         check_release_cleanliness,
     ]
+    results: list[tuple[str, bool, str]] = []
     for check in checks:
-        check()
-        print(f"ok {check.__name__}")
-    return 0
+        try:
+            check()
+            results.append((check.__name__, True, ""))
+        except AssertionError as exc:
+            results.append((check.__name__, False, str(exc)))
+
+    passed = sum(1 for _, ok, _ in results if ok)
+    print("=" * 60)
+    for name, ok, msg in results:
+        print(f"[{'PASS' if ok else 'FAIL'}] {name}")
+        if not ok:
+            print(f"       -> {msg.splitlines()[0] if msg else ''}")
+    print("=" * 60)
+    print(f"{passed}/{len(results)} checks passed")
+    return 0 if passed == len(results) else 1
 
 
 if __name__ == "__main__":
-    try:
-        raise SystemExit(main())
-    except AssertionError as exc:
-        print(f"FAIL: {exc}", file=sys.stderr)
-        raise SystemExit(1)
+    raise SystemExit(main())

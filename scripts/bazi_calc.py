@@ -49,7 +49,7 @@ from utils import (
 )
 
 
-VERSION = "1.1.0"
+VERSION = "1.1.1"
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 
@@ -1433,7 +1433,28 @@ def build_parser() -> argparse.ArgumentParser:
                    help="跳过 用神/喜神/忌神 计算")
     p.add_argument("--no-geju", action="store_true",
                    help="跳过 格局 判定")
+    p.add_argument("--as-of-year", type=int, default=None,
+                   help="流年起算年份 (默认当前年; 指定后输出确定可复现)")
     return p
+
+
+def _validate_args(args) -> Optional[str]:
+    """Boundary-validate inputs before touching lunar_python.
+
+    Returns an error message string if invalid, else None.
+    """
+    if not 1 <= args.month <= 12:
+        return f"month 必须在 1-12, 收到 {args.month}"
+    if not 1 <= args.day <= 31:
+        return f"day 必须在 1-31, 收到 {args.day}"
+    if not 0 <= args.hour <= 23:
+        return f"hour 必须在 0-23, 收到 {args.hour}"
+    if not 0 <= args.minute <= 59:
+        return f"minute 必须在 0-59, 收到 {args.minute}"
+    # lunar_python supports roughly 1900-2100.
+    if not 1900 <= args.year <= 2100:
+        return f"year 超出支持范围 1900-2100, 收到 {args.year}"
+    return None
 
 
 # --------------------------------------------------------------------------- #
@@ -1442,6 +1463,14 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Optional[list[str]] = None) -> int:
     args = build_parser().parse_args(argv)
+
+    err = _validate_args(args)
+    if err:
+        json_print({
+            "ok": False, "tool": "bazi", "version": VERSION,
+            "error": "invalid_input", "message": err, "input": vars(args),
+        })
+        return 1
 
     require_lunar()
     from lunar_python import Solar, Lunar  # type: ignore
@@ -1462,21 +1491,26 @@ def main(argv: Optional[list[str]] = None) -> int:
         warn(f"true_solar_time_info failed: {e}")
         tst_info = {"applied": False, "error": str(e)}
 
-    # Apply correction for pillar computation
-    corr_hour, corr_minute = longitude_correction(
+    # Apply correction for pillar computation (incl. day roll-over near midnight)
+    day_offset, corr_hour, corr_minute = longitude_correction(
         args.hour, args.minute, args.longitude, args.tz,
         year=args.year, month=args.month, day=args.day,
     )
+    corr_year, corr_month, corr_day = args.year, args.month, args.day
+    if day_offset != 0:
+        from datetime import date, timedelta
+        _d = date(args.year, args.month, args.day) + timedelta(days=day_offset)
+        corr_year, corr_month, corr_day = _d.year, _d.month, _d.day
 
     try:
         if args.lunar:
             lunar = Lunar.fromYmdHms(
-                args.year, args.month, args.day, corr_hour, corr_minute, 0
+                corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
             )
             solar = lunar.getSolar()
         else:
             solar = Solar.fromYmdHms(
-                args.year, args.month, args.day, corr_hour, corr_minute, 0
+                corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
             )
             lunar = solar.getLunar()
     except Exception as e:
@@ -1616,7 +1650,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     liu_nian: list[dict] = []
     try:
         from datetime import datetime
-        now_year = datetime.now().year
+        now_year = args.as_of_year if args.as_of_year else datetime.now().year
         for y in range(now_year, now_year + 6):
             ly = Solar.fromYmdHms(y, 6, 1, 12, 0, 0).getLunar()
             gz = ly.getYearInGanZhi()

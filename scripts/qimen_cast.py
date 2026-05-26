@@ -694,11 +694,15 @@ def main(argv: Optional[list[str]] = None) -> int:
     else:
         hh, mm = now.hour, now.minute
 
-    # Longitude correction
+    # Longitude correction (apply day roll-over near midnight)
     if args.longitude is not None:
-        hh, mm = longitude_correction(hh, mm, args.longitude,
-                                      tz_offset_hours=8.0,
-                                      year=y, month=m, day=d)
+        _doff, hh, mm = longitude_correction(hh, mm, args.longitude,
+                                             tz_offset_hours=8.0,
+                                             year=y, month=m, day=d)
+        if _doff != 0:
+            from datetime import date as _date, timedelta as _td
+            _nd = _date(y, m, d) + _td(days=_doff)
+            y, m, d = _nd.year, _nd.month, _nd.day
 
     # Compute ganzhi via lunar_python
     require_lunar()
