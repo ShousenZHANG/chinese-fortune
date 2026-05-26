@@ -49,11 +49,11 @@ def test_known_chart_1990():
     assert pillars(d) == ("庚午", "辛巳", "乙亥", "癸未")
 
 
-def test_known_chart_1997_winter():
-    d = run_bazi("--year", 1997, "--month", 12, "--day", 24, "--hour", 19,
-                 "--minute", 30, "--gender", "male", "--as-of-year", 2026)
-    assert pillars(d) == ("丁丑", "壬子", "庚子", "丙戌")
-    assert d["day_master"]["stem"] == "庚"
+def test_known_chart_winter():
+    d = run_bazi("--year", 2000, "--month", 1, "--day", 15, "--hour", 12,
+                 "--gender", "male", "--as-of-year", 2026)
+    assert pillars(d) == ("己卯", "丁丑", "壬申", "丙午")
+    assert d["day_master"]["stem"] == "壬"
 
 
 def test_midnight_rollover_changes_day_pillar():
@@ -74,10 +74,10 @@ def test_midnight_rollover_changes_day_pillar():
 
 
 def test_determinism_with_as_of_year():
-    a = run_bazi("--year", 1997, "--month", 12, "--day", 24, "--hour", 19,
-                 "--minute", 30, "--gender", "male", "--as-of-year", 2026)
-    b = run_bazi("--year", 1997, "--month", 12, "--day", 24, "--hour", 19,
-                 "--minute", 30, "--gender", "male", "--as-of-year", 2026)
+    a = run_bazi("--year", 1990, "--month", 5, "--day", 10, "--hour", 14,
+                 "--gender", "male", "--as-of-year", 2026)
+    b = run_bazi("--year", 1990, "--month", 5, "--day", 10, "--hour", 14,
+                 "--gender", "male", "--as-of-year", 2026)
     assert a == b
     assert [ln["year"] for ln in a["liu_nian"]] == [2026, 2027, 2028, 2029, 2030, 2031]
 
