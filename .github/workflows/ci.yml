@@ -42,10 +42,9 @@ jobs:
       - name: Tests + coverage gate (subprocess-tracked, fail under 80%)
         env:
           COVERAGE_PROCESS_START: ${{ github.workspace }}/pyproject.toml
-        run: |
-          python -m pytest tests/ -q --cov=scripts --cov-report=
-          python -m coverage combine
-          python -m coverage report
+        # pytest-cov auto-combines the parallel subprocess data and applies
+        # fail_under (from [tool.coverage.report]); no manual combine needed.
+        run: python -m pytest tests/ -q --cov=scripts --cov-report=term-missing
 
       - name: Release harness (evals/run_checks.py)
         run: python -X utf8 evals/run_checks.py
