@@ -2,6 +2,27 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.3] — 2026-05-31
+
+Packaging + bilingual-install pass — one-command distributable for Claude
+Code, Claude.ai upload, and OpenAI/other runtimes.
+
+### Added
+- `scripts/build_skill.py` — self-validating, deterministic packager that
+  emits `dist/chinese-fortune-v<version>.zip`. Whitelists runtime files
+  (SKILL.md, references/, scripts/ runtime, assets/, agents/, READMEs,
+  LICENSE), excludes all dev/test cruft (tests/, evals/, __pycache__, .bak,
+  _competitors, the builder itself), nests under `chinese-fortune/`, and
+  aborts on bad frontmatter / over-long description / non-compiling script.
+- `tests/test_build.py` (+4, suite now 94) — asserts SKILL.md at package
+  root, runtime files present, ZERO dev-cruft leakage, and that a freshly
+  extracted package runs standalone.
+
+### Changed
+- README.md / README.zh.md: replaced the single `cp -r` step with a 3-target
+  **Install** table (Claude Code unzip · Claude.ai upload · OpenAI adapter)
+  plus the `build_skill.py` one-liner. Stays concise.
+
 ## [1.1.2] — 2026-05-31
 
 Test-coverage + agent-hardening pass, informed by a 2026 market scan of

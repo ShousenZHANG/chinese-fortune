@@ -6,12 +6,24 @@
 
 用于**文化研习与自我反思**，不构成医疗、法律、金融建议。
 
-## 快速开始
+## 安装
+
+从 [Releases](../../releases) 下载 `chinese-fortune-v*.zip`（或自己打包，见下），按平台选择：
+
+| 平台 | 方法 |
+|---|---|
+| **Claude Code** | 解压到 `~/.claude/skills/` → 重启。压缩包里的 `chinese-fortune/` 文件夹即技能。 |
+| **Claude.ai** | 设置 → Capabilities → Skills → **上传技能** → 选该 zip。 |
+| **OpenAI / 其他** | 解压到任意位置；agent 指向 `agents/openai.yaml`，把 `scripts/` 当工具调用。 |
 
 ```bash
-git clone https://github.com/<your-org>/chinese-fortune.git
-cp -r chinese-fortune ~/.claude/skills/chinese-fortune   # 安装到 Claude Code
-pip install "lunar_python>=1.4.4,<2.0"                    # 精确农历/八字/黄历
+pip install "lunar_python>=1.4.4,<2.0"   # 所有平台：精确农历/八字/黄历
+```
+
+从源码自己打包：
+
+```bash
+python scripts/build_skill.py            # -> dist/chinese-fortune-v<版本>.zip
 ```
 
 之后直接对 Claude 说话即可，技能会根据中英文请求自动触发：

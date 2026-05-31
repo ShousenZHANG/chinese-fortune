@@ -6,12 +6,24 @@ A Claude Code / Agent SDK skill covering the Chinese metaphysical canon (五术�
 
 For **cultural exploration and self-reflection** — not medical, legal, or financial advice.
 
-## Quickstart
+## Install
+
+Grab `chinese-fortune-v*.zip` from [Releases](../../releases) (or build it — see below), then pick your platform:
+
+| Platform | How |
+|---|---|
+| **Claude Code** | Unzip into `~/.claude/skills/` → restart. The `chinese-fortune/` folder is the skill. |
+| **Claude.ai** | Settings → Capabilities → Skills → **Upload skill** → select the zip. |
+| **OpenAI / other** | Unzip anywhere; point your agent at `agents/openai.yaml` and call the `scripts/` as tools. |
 
 ```bash
-git clone https://github.com/<your-org>/chinese-fortune.git
-cp -r chinese-fortune ~/.claude/skills/chinese-fortune   # install for Claude Code
-pip install "lunar_python>=1.4.4,<2.0"                    # accurate 农历/八字/黄历
+pip install "lunar_python>=1.4.4,<2.0"   # all platforms: accurate 农历/八字/黄历
+```
+
+Build the package yourself from source:
+
+```bash
+python scripts/build_skill.py            # -> dist/chinese-fortune-v<version>.zip
 ```
 
 Then just talk to Claude — the skill auto-triggers on Chinese or English fortune requests:
