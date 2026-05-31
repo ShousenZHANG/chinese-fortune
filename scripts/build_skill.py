@@ -3,7 +3,7 @@
 
 Produces ``dist/chinese-fortune-v<VERSION>.zip`` containing ONLY the files an
 end user needs — SKILL.md, references/, scripts/ (runtime + requirements),
-assets/, agents/, README (EN + ZH), LICENSE — with all dev/test cruft excluded
+assets/, agents/, README (中文 + English), LICENSE — with dev/test cruft excluded
 (tests/, evals/, __pycache__, .git, *.bak, _competitors, dist/build).
 
 The archive nests everything under a top-level ``chinese-fortune/`` folder so it
@@ -33,7 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL_FOLDER = "chinese-fortune"  # top-level dir inside the archive
 
 # Whitelist of paths (relative to repo root) to ship to end users.
-INCLUDE_FILES = ["SKILL.md", "README.md", "README.zh.md", "LICENSE"]
+INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE"]
 INCLUDE_DIRS = ["references", "assets", "agents"]
 # scripts/: ship runtime .py + requirements.txt, but NOT this builder or tests.
 SCRIPT_EXCLUDE = {"build_skill.py"}

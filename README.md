@@ -1,36 +1,58 @@
-# Chinese Fortune · 中国传统命理 Claude Skill
+<div align="center">
+
+# 中国传统命理 · Chinese Fortune
+
+**一个 Claude Skill，把中国五术（山·医·命·相·卜）的 20+ 种命理方法装进一个可移植技能。**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-&nbsp;![tests](https://img.shields.io/badge/tests-94%20passing-brightgreen)
-&nbsp;![license](https://img.shields.io/badge/license-MIT-blue)
+[![tests](https://img.shields.io/badge/tests-977%20passing-brightgreen)](tests)
+[![coverage](https://img.shields.io/badge/coverage-82%25-brightgreen)](#质量保障)
+[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
 
-> 20+ traditional Chinese metaphysics methods in one Claude skill · MIT · [中文](README.zh.md)
+**简体中文** ｜ [English](README.en.md)
 
-A Claude Code / Agent SDK skill covering the Chinese metaphysical canon (五术：山医命相卜) — BaZi, Zi Wei Dou Shu, I-Ching, Liu Yao, Qi Men, Feng Shui, almanac, naming, Tarot, and more. Heavy calendrical math runs in deterministic Python scripts; Claude narrates the result from the reference docs.
+</div>
 
-For **cultural exploration and self-reflection** — not medical, legal, or financial advice.
+---
 
-## Install
+八字、紫微斗数、周易、六爻、奇门遁甲、风水、黄历、姓名学、塔罗……繁重的历法计算交给确定性 Python 脚本，Claude 依据参考文档解读。**仅供文化研习与自我反思，不构成医疗、法律、金融建议。**
 
-Grab `chinese-fortune-v*.zip` from [Releases](../../releases) (or build it — see below), then pick your platform:
+## 目录
 
-| Platform | How |
+- [特性](#特性)
+- [快速开始](#快速开始)
+- [覆盖方法](#覆盖方法)
+- [工作原理](#工作原理)
+- [安全边界](#安全边界)
+- [质量保障](#质量保障)
+- [贡献](#贡献)
+- [许可与来源](#许可与来源)
+
+## 特性
+
+- **20+ 种方法，一个技能** — 命卜相术全覆盖，单一自包含 skill，无需后端、无需联网。
+- **确定性计算** — 13 个 Python 引擎在 `lunar_python`（[寿星天文历](https://github.com/6tail/lunar-python) 算法移植，节气误差 < 1 秒）上排盘起卦，而非让大模型手算（易错）。
+- **历法严谨** — 真太阳时、节气定月、立春年界、夜子时、闰月等业余易错处全部正确，并经**独立引擎 sxtwl 跨库对照** 1920–2080 全网格验证。
+- **渐进式披露** — Claude 先加载小路由，再按需调用对应方法的文档与脚本，上下文最小化。
+- **安全护栏** — 硬红线（不预测死亡、不做医疗法律金融决断、不接诅咒）+ 危机转介，内建于技能。
+- **工程化** — 977 测试 / 82% 覆盖 / `ruff` + `mypy` + CI 五道质量门。
+
+## 快速开始
+
+从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载 `chinese-fortune-v*.zip`，按平台导入：
+
+| 平台 | 导入方式 |
 |---|---|
-| **Claude Code** | Unzip into `~/.claude/skills/` → restart. The `chinese-fortune/` folder is the skill. |
-| **Claude.ai** | Settings → Capabilities → Skills → **Upload skill** → select the zip. |
-| **OpenAI / other** | Unzip anywhere; point your agent at `agents/openai.yaml` and call the `scripts/` as tools. |
+| **Claude Code** | 解压到 `~/.claude/skills/` → 重启。压缩包内 `chinese-fortune/` 文件夹即技能。 |
+| **Claude.ai** | 设置 → Capabilities → Skills → **上传技能** → 选该 zip。 |
+| **OpenAI / 其他** | 解压到任意位置；agent 指向 `agents/openai.yaml`，把 `scripts/` 当工具调用。 |
 
 ```bash
-pip install "lunar_python>=1.4.4,<2.0"   # all platforms: accurate 农历/八字/黄历
+pip install "lunar_python>=1.4.4,<2.0"   # 所有平台：精确农历 / 八字 / 黄历
 ```
 
-Build the package yourself from source:
-
-```bash
-python scripts/build_skill.py            # -> dist/chinese-fortune-v<version>.zip
-```
-
-Then just talk to Claude — the skill auto-triggers on Chinese or English fortune requests:
+导入后直接对 Claude 说话即可，技能按中英文请求自动触发：
 
 ```text
 我 1990 年 5 月 10 日下午 2 点半出生，男，北京。详细批一下八字。
@@ -38,57 +60,65 @@ Then just talk to Claude — the skill auto-triggers on Chinese or English fortu
 2026 年 6 月想搬家，我属龙，哪几天合适？
 ```
 
-Scripts also run standalone (structured JSON on stdout):
+脚本也可独立运行（输出结构化 JSON）：
 
 ```bash
 python scripts/bazi_calc.py --year 1990 --month 5 --day 10 --hour 14 --gender male
-python scripts/yijing_cast.py coins --question "should I take the offer?"
+python scripts/yijing_cast.py coins --question "要不要接这个 offer？"
 python scripts/huangli_query.py --date 2026-06-15
 ```
 
-Run `python scripts/<name>.py --help` for options.
+`python scripts/<名>.py --help` 查看完整参数。从源码自行打包：`python scripts/build_skill.py`。
 
-## Methods
+## 覆盖方法
 
-| Group | Methods | Has script |
+| 分类 | 方法 | 配套脚本 |
 |---|---|---|
-| 命 Destiny | 八字 BaZi, 紫微斗数, 称骨, 河洛理数, 七政四余 | 八字, 紫微 |
-| 卜 Divination | 周易 I-Ching, 六爻, 梅花易数, 奇门遁甲, 大六壬, 小六壬, 太乙, 灵签, 杯筊 | I-Ching, 六爻, 梅花, 奇门, 大六壬, 小六壬 |
-| 相 Physiognomy | 风水 (八宅/玄空), 面相, 手相, 测字 | — (reference-guided) |
-| 术 Practical | 黄历择日, 姓名学, 合婚, 解梦, 生肖, 星座, 塔罗 | 黄历, 姓名, 合婚/生肖, 塔罗 |
+| **命** | 八字、紫微斗数、称骨、河洛理数、七政四余 | 八字、紫微 |
+| **卜** | 周易、六爻、梅花易数、奇门遁甲、大六壬、小六壬、太乙、灵签、杯筊 | 周易、六爻、梅花、奇门、大六壬、小六壬 |
+| **相** | 风水（八宅 / 玄空）、面相、手相、测字 | —（文档解读） |
+| **术** | 黄历择日、姓名学、合婚、解梦、生肖、星座、塔罗 | 黄历、姓名、合婚 / 生肖、塔罗 |
 
-Each method maps to a reference doc in `references/` and (where computation helps) a script in `scripts/`. The full routing table lives in [SKILL.md](SKILL.md).
+每种方法对应 `references/` 中的参考文档，需要计算的另配 `scripts/` 脚本。完整路由表见 [SKILL.md](SKILL.md)。
 
-## How it works
+## 工作原理
 
 ```
-SKILL.md          router — frontmatter trigger + method table
-references/  (23)  the canon: theory + per-method interpretation guides
-scripts/     (13)  deterministic computation (lunar_python + SystemRandom)
-assets/      (12)  JSON lookup tables (干支, 64卦, 神煞, 塔罗, 笔画 …)
-evals/            release harness + 12 scenario assertions
-tests/            pytest golden-value + edge-case suite
+SKILL.md           路由：frontmatter 触发词 + 方法表
+references/  (23)   命理正文：理论 + 各方法解读指南
+scripts/     (13)   确定性计算引擎（lunar_python + SystemRandom）
+assets/      (12)   JSON 查表（干支、64卦、神煞、塔罗、笔画 …）
+evals/             发布校验 + 12 场景机器断言
+tests/             pytest 黄金值 + 边界 + 独立引擎差分
 ```
 
-Progressive disclosure: Claude loads the small router first, then only the reference/script for the method in play. Calendrical correctness (真太阳时, 节气定月, 立春年界, 夜子时, 闰月) is delegated to `lunar_python`; the skill adds the 格局/用神/interpretation layer on top.
+历法正确性（真太阳时、节气定月、立春年界、夜子时、闰月）交给 `lunar_python`，技能在其上叠加格局 / 用神 / 解读层。
 
-## Safety
+## 安全边界
 
-Hard red lines (see [references/20-disclaimer.md](references/20-disclaimer.md)): no death-date prediction, no medical/legal/financial decisions, no curse/harm requests, no blaming third parties, no paid "remedies". Every reading is framed as a reflective pattern with a brief disclaimer, and acute-distress signals trigger a crisis-resource handoff.
+硬红线（见 [references/20-disclaimer.md](references/20-disclaimer.md)）：不预测死亡日期、不做医疗 / 法律 / 金融决断、不接诅咒加害、不归咎他人、不推销付费“化解”。每次解读都以“启发性倾向”呈现并附简短免责；遇急性危机信号转介求助资源。
 
-## Validation
+## 质量保障
 
 ```bash
-python -X utf8 evals/run_checks.py     # 6-check release harness
-python -m pytest tests/                # unit + integration suite
+python -X utf8 evals/run_checks.py     # 发布校验（6 项）
+python -m pytest tests/                # 单元 + 集成 + 独立引擎差分
 ```
 
-`run_checks.py` verifies: SKILL.md frontmatter, every script emits valid JSON, reference coverage, the 12 eval scenarios' machine assertions, the pytest suite, and release cleanliness. It prints a PASS/FAIL summary and exits non-zero on any failure.
+CI（Python 3.11 / 3.12）强制执行五道门：
 
-## Contributing
+| 门 | 内容 |
+|---|---|
+| `ruff` | 代码规范，0 容忍 |
+| `mypy` | 静态类型检查 |
+| `pytest` | **977 测试** — 黄金值、立春 / 夜子时 / 闰月边界、五鼠遁不变量、对 sxtwl 独立引擎差分 |
+| coverage | 子进程追踪 **82%**，低于 80% 即失败 |
+| harness | SKILL.md 校验 + 12 场景机器断言 + 脚本 JSON 合法性 |
 
-PRs welcome — deeper 紫微/玄空飞星 logic, more `evals` scenarios, 繁體/English reference translations. Run `evals/run_checks.py` and `pytest` before submitting. See [CONTRIBUTING.md](CONTRIBUTING.md).
+## 贡献
 
-## License & sources
+欢迎 PR——更深的紫微 / 玄空飞星逻辑、更多 `evals` 场景、繁體翻译。提交前请跑 `evals/run_checks.py` 与 `pytest`，详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-[MIT](LICENSE). Built on classical texts (《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》 …) and [`6tail/lunar-python`](https://github.com/6tail/lunar-python). Cultural/educational reference only — readings are probabilistic patterns, not deterministic predictions.
+## 许可与来源
+
+[MIT](LICENSE)。基于经典文献（《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》…）与 [`6tail/lunar-python`](https://github.com/6tail/lunar-python)。仅供文化 / 教育参考——结果是概率性倾向，非确定性预言。

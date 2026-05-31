@@ -41,7 +41,7 @@ def test_runtime_files_present(package):
         "chinese-fortune/references/00-foundations.md",
         "chinese-fortune/agents/openai.yaml",
         "chinese-fortune/README.md",
-        "chinese-fortune/README.zh.md",
+        "chinese-fortune/README.en.md",
         "chinese-fortune/LICENSE",
     ]:
         assert must in names, f"missing from package: {must}"
