@@ -14,7 +14,6 @@ import argparse
 import random
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import (
     BAGUA,
@@ -22,20 +21,21 @@ from utils import (
     DIZHI,
     DIZHI_WUXING,
     TIANGAN,
-    TIANGAN_WUXING,
     WUXING_GEN,
     WUXING_KE,
     json_print,
     require_lunar,
-    warn,
 )
-
 from yijing_cast import (
-    cast_coins, lines_to_trigrams, hex_lookup_by_trigrams,
-    line_visual, active_lines, changed_lines, nuclear_lines,
+    active_lines,
+    cast_coins,
+    changed_lines,
+    hex_lookup_by_trigrams,
+    line_visual,
+    lines_to_trigrams,
     load_hex_assets,
+    nuclear_lines,
 )
-
 
 # --------------------------------------------------------------------------- #
 # 八宫 — assign each of the 64 hexagrams to one of 8 palaces.
@@ -95,7 +95,7 @@ ROLE_TO_SHIYAO: dict[str, int] = {
 }
 
 
-def find_palace(hex_num: int) -> tuple[Optional[str], Optional[str]]:
+def find_palace(hex_num: int) -> tuple[str | None, str | None]:
     for palace, entries in EIGHT_PALACES.items():
         for n, role in entries:
             if n == hex_num:
@@ -381,7 +381,7 @@ QUESTION_KEYWORDS = {
 }
 
 
-def yongshen_hint(question: Optional[str]) -> Optional[str]:
+def yongshen_hint(question: str | None) -> str | None:
     if not question:
         return None
     for k, v in QUESTION_KEYWORDS.items():
@@ -409,7 +409,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     require_lunar()
     from lunar_python import Solar  # type: ignore
@@ -445,7 +445,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     main_chart = dress_chart(lines, day_stem, day_branch, month_branch)
 
     actives = active_lines(lines)
-    changed_chart: Optional[dict] = None
+    changed_chart: dict | None = None
     if actives:
         new_lines = changed_lines(lines)
         changed_chart = dress_chart(new_lines, day_stem, day_branch, month_branch)

@@ -4,8 +4,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pytest
-
 import name_analyze as na
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"

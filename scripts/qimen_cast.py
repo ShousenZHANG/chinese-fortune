@@ -29,20 +29,16 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import (
     DIZHI,
     TIANGAN,
     TIANGAN_WUXING,
-    DIZHI_WUXING,
     WUXING_KE,
     json_print,
     longitude_correction,
     require_lunar,
-    warn,
 )
-
 
 # --------------------------------------------------------------------------- #
 # 九宫 / 后天八卦 constants
@@ -668,7 +664,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     # Determine input datetime
@@ -700,7 +696,8 @@ def main(argv: Optional[list[str]] = None) -> int:
                                              tz_offset_hours=8.0,
                                              year=y, month=m, day=d)
         if _doff != 0:
-            from datetime import date as _date, timedelta as _td
+            from datetime import date as _date
+            from datetime import timedelta as _td
             _nd = _date(y, m, d) + _td(days=_doff)
             y, m, d = _nd.year, _nd.month, _nd.day
 
@@ -714,7 +711,6 @@ def main(argv: Optional[list[str]] = None) -> int:
     day_gz = lunar.getDayInGanZhi()
     hour_gz = lunar.getTimeInGanZhi()
     day_stem = lunar.getDayGan()
-    day_branch = lunar.getDayZhi()
     hour_stem = lunar.getTimeGan()
     hour_branch = lunar.getTimeZhi()
 

@@ -12,7 +12,6 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import json_print, require_lunar, warn
 
@@ -72,7 +71,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     require_lunar()
     from lunar_python import Solar  # type: ignore

@@ -16,10 +16,8 @@ import argparse
 import json
 import os
 import sys
-from typing import Optional
 
-from utils import json_print, warn
-
+from utils import WUXING_GEN, WUXING_KE, json_print, warn
 
 # --------------------------------------------------------------------------- #
 # 81 数理 table — number -> {"luck": "大吉/吉/中/凶/大凶", "comment": "..."}
@@ -137,8 +135,6 @@ def wuxing_for(n: int) -> str:
 # Simplified version: scoring by 相生/相克 relationships.
 # --------------------------------------------------------------------------- #
 
-from utils import WUXING_GEN, WUXING_KE
-
 
 def sancai_luck(tian_wx: str, ren_wx: str, di_wx: str) -> str:
     score = 0
@@ -201,12 +197,12 @@ FALLBACK_BIHUA: dict[str, int] = {
     "莹": 15, "燕": 16, "梅": 11, "兰": 23, "竹": 6, "菊": 14, "松": 18,
     "柏": 9, "鹏": 19, "云": 12, "凯": 12, "辉": 15, "海": 11, "山": 3,
     "川": 3, "河": 9, "天": 4, "地": 6, "和": 8, "平": 5, "安": 6,
-    "康": 11, "宁": 14, "福": 14, "寿": 14, "禄": 13, "财": 11, "兴": 16,
+    "宁": 14, "福": 14, "寿": 14, "禄": 13, "财": 11, "兴": 16,
     "旺": 8, "成": 7, "功": 5, "立": 5, "建": 9, "国": 11, "家": 10,
     "兵": 7, "军": 9, "民": 5, "新": 13, "永": 5, "良": 7, "学": 16,
-    "诗": 13, "婷": 12, "宇": 6, "晓": 16, "丽": 19, "倩": 10, "颖": 16,
+    "诗": 13, "婷": 12, "晓": 16, "倩": 10, "颖": 16,
     "妍": 7, "悦": 11, "瑶": 15, "雅": 12, "薇": 19, "婕": 11, "婉": 11,
-    "嘉": 14, "怡": 9, "妙": 7, "佳": 8, "嫣": 14, "宁": 14, "甜": 11,
+    "嘉": 14, "怡": 9, "妙": 7, "佳": 8, "嫣": 14, "甜": 11,
 }
 
 
@@ -235,7 +231,7 @@ def load_bihua_table() -> dict[str, int]:
     return table
 
 
-def stroke_count(ch: str, table: dict[str, int]) -> Optional[int]:
+def stroke_count(ch: str, table: dict[str, int]) -> int | None:
     return table.get(ch)
 
 
@@ -306,7 +302,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     name = args.name.strip()
     if not name or len(name) < 2:

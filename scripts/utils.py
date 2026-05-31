@@ -12,10 +12,10 @@ Constants and helpers for:
 
 from __future__ import annotations
 
+import calendar
 import json
+import math
 import sys
-from typing import Optional, Tuple
-
 
 # --------------------------------------------------------------------------- #
 # Core cycles
@@ -292,9 +292,6 @@ def require_lunar():
 # 真太阳时 — longitude correction
 # --------------------------------------------------------------------------- #
 
-import math
-import calendar
-
 
 def equation_of_time(day_of_year: int, leap: bool = False) -> float:
     """Equation of Time (EOT) in minutes for a given Julian day of year.
@@ -314,10 +311,10 @@ def longitude_correction(
     birth_minute: int,
     longitude: float,
     tz_offset_hours: float = 8.0,
-    year: Optional[int] = None,
-    month: Optional[int] = None,
-    day: Optional[int] = None,
-) -> Tuple[int, int, int]:
+    year: int | None = None,
+    month: int | None = None,
+    day: int | None = None,
+) -> tuple[int, int, int]:
     """Adjust clock time to local true solar time.
 
     Combines two corrections:

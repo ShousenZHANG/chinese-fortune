@@ -30,7 +30,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-from typing import Optional
 
 from utils import (
     DIZHI,
@@ -43,8 +42,7 @@ from utils import (
     warn,
 )
 
-
-VERSION = "1.1.5"
+VERSION = "1.1.6"
 
 
 # --------------------------------------------------------------------------- #
@@ -827,11 +825,11 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     require_lunar()
-    from lunar_python import Solar, Lunar  # type: ignore
+    from lunar_python import Lunar, Solar  # type: ignore
 
     try:
         if args.lunar:
@@ -956,7 +954,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         # 借宫.
         borrowed = False
         borrowed_stars: list[str] = []
-        borrowed_from: Optional[str] = None
+        borrowed_from: str | None = None
         if is_empty_palace(mains):
             opp_b, opp_main = borrow_from_opposite(b, branch_to_main)
             if opp_main:
@@ -1020,6 +1018,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         "tool": "ziwei",
         "version": VERSION,
         "input": vars(args),
+        "true_solar_time_applied": tst_applied,
         "solar_date": {
             "year": solar.getYear(), "month": solar.getMonth(),
             "day": solar.getDay(), "hour": solar.getHour(),

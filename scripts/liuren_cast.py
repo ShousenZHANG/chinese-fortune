@@ -23,7 +23,6 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import (
     DIZHI,
@@ -35,7 +34,6 @@ from utils import (
     json_print,
     require_lunar,
 )
-
 
 __version__ = "1.0.0"
 
@@ -282,10 +280,10 @@ def _pick_by_polarity(candidates: list[dict], ri_gan: str,
 
 
 def fa_yong_zei_ke(si_ke: list[dict], ri_gan: str,
-                    tian_pan: dict[str, str]) -> Optional[dict]:
+                    tian_pan: dict[str, str]) -> dict | None:
     """贼克法 + 比用法. 贼 (下贼上) takes priority over 克 (上克下)."""
     zei, ke = detect_zei_ke(si_ke)
-    pool: Optional[list[dict]] = None
+    pool: list[dict] | None = None
     label = ""
     if len(zei) == 1:
         pool, label = zei, "贼克法 (重审课, 一贼为用)"
@@ -313,7 +311,7 @@ def fa_yong_zei_ke(si_ke: list[dict], ri_gan: str,
 
 
 def fa_yong_yao_ke(si_ke: list[dict], ri_gan: str,
-                    tian_pan: dict[str, str]) -> Optional[dict]:
+                    tian_pan: dict[str, str]) -> dict | None:
     """遥克法 — no 上下 克贼 at all → 日干 与 天盘上神 互克.
 
     弹射课 (上神克日干, priority) → 蒿矢课 (日干克上神).
@@ -327,7 +325,7 @@ def fa_yong_yao_ke(si_ke: list[dict], ri_gan: str,
         elif WUXING_KE.get(gan_wx) == u_wx:
             outward.append(u)
 
-    chosen: Optional[str] = None
+    chosen: str | None = None
     label = ""
     for pool, lbl in [(inward, "遥克法 (弹射课, 上神克日干)"),
                       (outward, "遥克法 (蒿矢课, 日干克上神)")]:
@@ -345,7 +343,7 @@ def fa_yong_yao_ke(si_ke: list[dict], ri_gan: str,
 
 
 def fa_yong_fu_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
-                   yue_jiang: str, zhan_shi: str) -> Optional[dict]:
+                   yue_jiang: str, zhan_shi: str) -> dict | None:
     """伏吟法 — 月将 == 占时 (天地盘 各居本位).
 
     阳日: 初 = 干寄宫上神; 中 = 支上神; 末 = 中传上神.
@@ -368,7 +366,7 @@ def chong_zhi(zhi: str) -> str:
 
 
 def fa_yong_fan_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
-                    yue_jiang: str, zhan_shi: str) -> Optional[dict]:
+                    yue_jiang: str, zhan_shi: str) -> dict | None:
     """反吟法 — 月将 与 占时 相冲 (e.g. 子加午, 天地盘逐位相冲)."""
     if chong_zhi(yue_jiang) != zhan_shi:
         return None
@@ -454,7 +452,7 @@ QUESTION_USHIN: list[tuple[tuple[str, ...], str]] = [
 ]
 
 
-def yong_shen_hint(question: Optional[str]) -> Optional[str]:
+def yong_shen_hint(question: str | None) -> str | None:
     if not question:
         return None
     for keys, hint in QUESTION_USHIN:
@@ -520,7 +518,7 @@ def classify_course(fa_yong_method: str) -> str:
 
 def build_summary(ri_gan: str, ri_zhi: str, san_chuan: dict,
                   yue_jiang_name: str, zhan_shi: str,
-                  classification: str, yong_hint: Optional[str]) -> str:
+                  classification: str, yong_hint: str | None) -> str:
     chu = san_chuan["chu_chuan"]
     zhong = san_chuan["zhong_chuan"]
     mo = san_chuan["mo_chuan"]
@@ -549,7 +547,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         dt = datetime.strptime(f"{args.date} {args.time}", "%Y-%m-%d %H:%M")

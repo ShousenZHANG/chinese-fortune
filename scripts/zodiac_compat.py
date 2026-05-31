@@ -11,16 +11,13 @@ from __future__ import annotations
 
 import argparse
 import sys
-from typing import Optional
 
 from utils import (
-    DIZHI,
     DIZHI_ZODIAC,
     ZODIAC_TO_DIZHI,
     json_print,
     require_lunar,
 )
-
 
 ZODIAC_DATA: dict[str, dict] = {
     "鼠": {
@@ -174,13 +171,11 @@ def compat(a: str, b: str) -> dict:
     if LIU_HE.get(da) == db:
         relations.append("六合")
         score += 4
-    in_sanhe = False
     for group in SAN_HE_GROUPS:
         # 三合需两个 *不同* 地支同组; 同生肖(da==db)是比和/自刑, 非三合。
         if da != db and da in group and db in group:
             relations.append("三合")
             score += 3
-            in_sanhe = True
             break
 
     if LIU_CHONG.get(da) == db:
@@ -262,7 +257,7 @@ def taisui_zodiacs(year: int) -> dict:
     hai = LIU_HAI.get(year_branch)
     po = LIU_PO.get(year_branch)
 
-    def to_zodiac(b: Optional[str]) -> Optional[str]:
+    def to_zodiac(b: str | None) -> str | None:
         return DIZHI_ZODIAC.get(b) if b else None
 
     return {
@@ -330,7 +325,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     if args.cmd == "info":

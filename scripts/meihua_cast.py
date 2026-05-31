@@ -14,21 +14,22 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
-    XIANTIAN_NUM_TO_TRIGRAM,
     WUXING_GEN,
     WUXING_KE,
+    XIANTIAN_NUM_TO_TRIGRAM,
     json_print,
-    warn,
 )
-
 from yijing_cast import (
-    line_visual, lines_to_trigrams, hex_lookup_by_trigrams,
-    nuclear_lines, changed_lines, load_hex_assets,
+    changed_lines,
+    hex_lookup_by_trigrams,
+    line_visual,
+    lines_to_trigrams,
+    load_hex_assets,
+    nuclear_lines,
 )
 
 
@@ -175,7 +176,7 @@ def hex_info(lines: list[int], assets: dict[int, dict]) -> dict:
     }
 
 
-def package(cast_meta: dict, question: Optional[str], month: int) -> dict:
+def package(cast_meta: dict, question: str | None, month: int) -> dict:
     upper_tri = cast_meta["upper_tri"]
     lower_tri = cast_meta["lower_tri"]
     change = cast_meta["change_num"]
@@ -243,7 +244,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     now = datetime.now()
 

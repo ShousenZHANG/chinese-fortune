@@ -13,10 +13,8 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import json_print, require_lunar
-
 
 WEEKDAY_CN = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
 
@@ -168,10 +166,10 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     require_lunar()
-    from lunar_python import Solar, Lunar  # type: ignore
+    from lunar_python import Lunar, Solar  # type: ignore
 
     if args.cmd == "solar2lunar":
         return cmd_solar2lunar(args, Solar, Lunar)

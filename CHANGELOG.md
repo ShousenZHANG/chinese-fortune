@@ -2,6 +2,32 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.6] — 2026-05-31
+
+Independent-verification + quality-gate release. Cross-checks the calendar
+engine against a second codebase and wires lint + coverage gates into CI.
+
+### Added
+- **Differential tests vs `sxtwl`** (`tests/test_differential.py`) — an
+  INDEPENDENT engine (C++ port of 寿星天文历). Cross-checks 日柱 over a 447-date
+  grid (1920-2080) and 年/月柱 on all non-节气 days; both engines agree. This
+  closes the "self-snapshot" gap (the rest of the suite validated bazi_calc
+  against the very library it wraps). Also asserts the 立春 year-pillar switch
+  is time-aware (flips at the exact instant, verified more precise than sxtwl's
+  date-level API).
+- **lint + coverage gates** — `ruff` (config in `pyproject.toml`) and
+  subprocess-tracked `coverage` with `fail_under = 80` (real total **82%**;
+  subprocess tracking via `COVERAGE_PROCESS_START` since most tests drive the
+  CLIs out-of-process). Both wired into CI.
+- Tests for `lunar_convert` (公历↔农历 round-trip) and zodiac info/year/taisui
+  sub-commands (suite 94 → 977 with the differential grid).
+
+### Changed
+- Cleaned all `ruff` findings across 16 scripts: removed unused imports/vars,
+  deduped 4 repeated keys in the name 笔画 fallback (same-value, no behaviour
+  change), moved module imports to top, renamed ambiguous `l`, added explicit
+  `zip(strict=...)`. `ziwei_calc` now surfaces `true_solar_time_applied`.
+
 ## [1.1.5] — 2026-05-31
 
 Bug-fix release — three silent-wrong defects found by an adversarial line-by-line

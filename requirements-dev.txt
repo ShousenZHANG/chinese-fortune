@@ -1,3 +1,7 @@
 # Dev / CI dependencies. Runtime deps live in scripts/requirements.txt.
 -r scripts/requirements.txt
 pytest>=8,<10
+pytest-cov>=5
+coverage>=7
+ruff>=0.6
+sxtwl>=2.0          # independent calendar engine for differential tests

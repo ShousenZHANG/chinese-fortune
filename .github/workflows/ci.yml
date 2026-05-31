@@ -36,8 +36,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
-      - name: Unit + integration tests (pytest)
-        run: python -m pytest tests/ -q
+      - name: Lint (ruff)
+        run: python -m ruff check scripts/ tests/
+
+      - name: Tests + coverage gate (subprocess-tracked, fail under 80%)
+        env:
+          COVERAGE_PROCESS_START: ${{ github.workspace }}/pyproject.toml
+        run: |
+          python -m pytest tests/ -q --cov=scripts --cov-report=
+          python -m coverage combine
+          python -m coverage report
 
       - name: Release harness (evals/run_checks.py)
         run: python -X utf8 evals/run_checks.py

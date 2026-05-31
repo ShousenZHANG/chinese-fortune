@@ -1,0 +1,29 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["dist", "_competitors"]
+
+[tool.ruff.lint]
+# Pyflakes (F), pycodestyle errors (E), warnings (W), isort (I), bugbear (B),
+# comprehensions (C4), pyupgrade (UP). Pragmatic for a script-heavy repo.
+select = ["F", "E", "W", "I", "B", "C4", "UP"]
+ignore = [
+    "E501",  # line length handled by formatter, not enforced hard
+    "B008",  # function call in default arg — argparse pattern is fine
+    "UP015", # redundant open mode "r" — explicit is clearer here
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["E402"]  # tests insert scripts/ onto sys.path before importing
+
+[tool.coverage.run]
+# parallel + COVERAGE_PROCESS_START let the subprocess-invoked scripts be tracked
+# (most tests run the CLIs via subprocess, invisible to in-process coverage).
+parallel = true
+source = ["scripts"]
+sigterm = true
+omit = ["scripts/build_skill.py"]  # build tooling, not runtime
+
+[tool.coverage.report]
+fail_under = 80
+precision = 1

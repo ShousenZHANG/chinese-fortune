@@ -27,7 +27,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 from utils import (
     DIZHI,
@@ -48,8 +48,7 @@ from utils import (
     warn,
 )
 
-
-VERSION = "1.1.5"
+VERSION = "1.1.6"
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 
@@ -57,7 +56,7 @@ ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 # Asset loading (graceful degradation if files absent)
 # --------------------------------------------------------------------------- #
 
-def _load_json(name: str) -> Optional[dict]:
+def _load_json(name: str) -> dict | None:
     path = ASSETS_DIR / name
     if not path.exists():
         return None
@@ -537,11 +536,11 @@ SHI_E_DA_BAI = [
 ]
 
 
-def _find_entry(shensha_data: dict, name: str) -> Optional[dict]:
+def _find_entry(shensha_data: dict, name: str) -> dict | None:
     """Locate a shensha entry by name across all top-level categories."""
     if not isinstance(shensha_data, dict):
         return None
-    for category, entries in shensha_data.items():
+    for _category, entries in shensha_data.items():
         if not isinstance(entries, list):
             continue
         for e in entries:
@@ -551,7 +550,7 @@ def _find_entry(shensha_data: dict, name: str) -> Optional[dict]:
 
 
 def detect_all_shensha(
-    shensha_data: Optional[dict],
+    shensha_data: dict | None,
     day_stem: str,
     day_branch: str,
     day_ganzhi: str,
@@ -725,8 +724,8 @@ def weighted_wuxing(
     Root bonus: if day-stem's 五行 appears as a hidden stem of any branch,
     we add 0.5 per such branch into the day-stem's own 五行 score (通根加权).
     """
-    counts: dict[str, float] = {w: 0.0 for w in ["木", "火", "土", "金", "水"]}
-    root_bonus: dict[str, float] = {w: 0.0 for w in ["木", "火", "土", "金", "水"]}
+    counts: dict[str, float] = dict.fromkeys(["木", "火", "土", "金", "水"], 0.0)
+    root_bonus: dict[str, float] = dict.fromkeys(["木", "火", "土", "金", "水"], 0.0)
 
     day_wx = TIANGAN_WUXING.get(day_stem, "")
 
@@ -885,7 +884,7 @@ def select_yong_shen(
     month_branch: str,
     strength: dict,
     weighted_counts: dict[str, float],
-    tiaohou_data: Optional[dict],
+    tiaohou_data: dict | None,
 ) -> dict:
     """Choose 用神 / 喜神 / 忌神 by 扶抑 + 调候 combined.
 
@@ -898,7 +897,7 @@ def select_yong_shen(
 
     # 调候 candidate
     tiaohou_match = False
-    tiaohou_primary: Optional[str] = None
+    tiaohou_primary: str | None = None
     tiaohou_reason = ""
     if tiaohou_data and isinstance(tiaohou_data, dict):
         # Accept either flat top-level keys or nested under "tiaohou"
@@ -1112,7 +1111,7 @@ def detect_ge_ju(
                         f"月支{month_branch}本气属{hua_wx}",
                     ],
                     "broken_or_pure": "纯",
-                    "notes": f"化气格成立需化神得令且无破化之神; 行化神旺地为吉.",
+                    "notes": "化气格成立需化神得令且无破化之神; 行化神旺地为吉.",
                 }
 
     # --- 2. 正格: 月令本气透干 ---
@@ -1259,8 +1258,6 @@ PILLAR_ORDER: list[str] = ["year", "month", "day", "hour"]
 def detect_interactions(pillars: dict[str, dict]) -> dict:
     stems = [pillars[p]["stem"] for p in PILLAR_ORDER]
     branches = [pillars[p]["branch"] for p in PILLAR_ORDER]
-    stem_positions = {p: pillars[p]["stem"] for p in PILLAR_ORDER}
-    branch_positions = {p: pillars[p]["branch"] for p in PILLAR_ORDER}
 
     out: dict[str, list] = {
         "tiangan_he": [],
@@ -1438,7 +1435,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def _validate_args(args) -> Optional[str]:
+def _validate_args(args) -> str | None:
     """Boundary-validate inputs before touching lunar_python.
 
     Returns an error message string if invalid, else None.
@@ -1461,7 +1458,7 @@ def _validate_args(args) -> Optional[str]:
 # Main
 # --------------------------------------------------------------------------- #
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     err = _validate_args(args)
@@ -1473,7 +1470,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         return 1
 
     require_lunar()
-    from lunar_python import Solar, Lunar  # type: ignore
+    from lunar_python import Lunar, Solar  # type: ignore
 
     # 真太阳时 info (informational + applied)
     try:
@@ -1616,7 +1613,7 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     # 大运
     da_yun_list: list[dict] = []
-    qi_yun: Optional[dict] = None
+    qi_yun: dict | None = None
     try:
         yun = eight.getYun(1 if args.gender == "male" else 0)
         start_solar = yun.getStartSolar()

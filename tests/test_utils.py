@@ -6,9 +6,7 @@ Pure functions only — no lunar_python dependency. These lock in the
 import math
 
 import pytest
-
 import utils
-
 
 # --------------------------------------------------------------------------- #
 # 五行 / 阴阳

@@ -19,7 +19,6 @@ import os
 import random
 import sys
 from datetime import datetime
-from typing import Optional
 
 from utils import (
     BAGUA,
@@ -28,7 +27,6 @@ from utils import (
     json_print,
     warn,
 )
-
 
 # --------------------------------------------------------------------------- #
 # 64 卦 — embedded fallback table (just names + king-wen number)
@@ -107,8 +105,8 @@ KING_WEN_ORDER: list[tuple[int, str, int, int]] = [
 
 def hex_lookup_by_trigrams(upper_bin: int, lower_bin: int) -> tuple[int, str]:
     """Look up Kingwen #, name by (upper_binary, lower_binary)."""
-    for n, name, u, l in KING_WEN_ORDER:
-        if u == upper_bin and l == lower_bin:
+    for n, name, up, low in KING_WEN_ORDER:
+        if up == upper_bin and low == lower_bin:
             return n, name
     return 0, "未知卦"
 
@@ -165,7 +163,7 @@ def load_hex_assets() -> dict[int, dict]:
 
     # fallback: just names
     fallback: dict[int, dict] = {}
-    for n, name, u, l in KING_WEN_ORDER:
+    for n, name, _up, _low in KING_WEN_ORDER:
         fallback[n] = {
             "name": name,
             "judgment": "(暂无卦辞, 请在 assets/64hex.json 中补充)",
@@ -377,7 +375,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def summarize(method: str, main: dict, changed: Optional[dict],
+def summarize(method: str, main: dict, changed: dict | None,
               actives: list[int]) -> str:
     if changed is None or not actives:
         return f"得本卦【{main['name']}】, 无动爻, 应以卦辞为主。"
@@ -386,11 +384,11 @@ def summarize(method: str, main: dict, changed: Optional[dict],
 
 
 def cast(method: str, lines: list[int], meta: dict,
-         question: Optional[str]) -> dict:
+         question: str | None) -> dict:
     assets = load_hex_assets()
     actives = active_lines(lines)
     main = hex_info(lines, assets)
-    changed: Optional[dict] = None
+    changed: dict | None = None
     if actives:
         new_lines = changed_lines(lines)
         changed = hex_info(new_lines, assets)
@@ -418,7 +416,7 @@ def cast(method: str, lines: list[int], meta: dict,
     }
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     if args.method == "coins":
