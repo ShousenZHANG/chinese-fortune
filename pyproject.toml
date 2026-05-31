@@ -27,3 +27,8 @@ omit = ["scripts/build_skill.py"]  # build tooling, not runtime
 [tool.coverage.report]
 fail_under = 80
 precision = 1
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+warn_unused_ignores = false

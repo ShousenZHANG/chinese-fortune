@@ -48,7 +48,7 @@ from utils import (
     warn,
 )
 
-VERSION = "1.1.6"
+VERSION = "1.1.7"
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 
@@ -536,7 +536,7 @@ SHI_E_DA_BAI = [
 ]
 
 
-def _find_entry(shensha_data: dict, name: str) -> dict | None:
+def _find_entry(shensha_data: dict | None, name: str) -> dict | None:
     """Locate a shensha entry by name across all top-level categories."""
     if not isinstance(shensha_data, dict):
         return None
@@ -673,13 +673,13 @@ def detect_all_shensha(
             triggered.extend(_scan_tian_luo_di_wang(branches_map, gender, meaning))
 
     # Dedupe identical hits (same name+position+hit)
-    seen = set()
+    seen: set[tuple] = set()
     deduped: list[dict] = []
     for h in triggered:
-        key = (h["name"], h.get("position"), h.get("hit"))
-        if key in seen:
+        dedup_key = (h["name"], h.get("position"), h.get("hit"))
+        if dedup_key in seen:
             continue
-        seen.add(key)
+        seen.add(dedup_key)
         deduped.append(h)
     return deduped
 
@@ -915,7 +915,9 @@ def select_yong_shen(
             if primary:
                 tiaohou_primary = primary
                 tiaohou_match = True
-                tiaohou_reason = entry.get("reason", entry.get("note", entry.get("notes", "")))
+                tiaohou_reason = str(
+                    entry.get("reason") or entry.get("note") or entry.get("notes") or ""
+                )
 
     # 扶抑 candidate
     candidates_strong = [_ke_me(day_wx), _me_ke(day_wx), _xie_me(day_wx)]

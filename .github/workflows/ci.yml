@@ -39,6 +39,9 @@ jobs:
       - name: Lint (ruff)
         run: python -m ruff check scripts/ tests/
 
+      - name: Type check (mypy)
+        run: python -m mypy scripts/ --ignore-missing-imports
+
       - name: Tests + coverage gate (subprocess-tracked, fail under 80%)
         env:
           COVERAGE_PROCESS_START: ${{ github.workspace }}/pyproject.toml

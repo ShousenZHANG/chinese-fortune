@@ -16,6 +16,7 @@ import calendar
 import json
 import math
 import sys
+from datetime import date as _date
 
 # --------------------------------------------------------------------------- #
 # Core cycles
@@ -246,7 +247,7 @@ def json_print(obj) -> None:
     # Reconfigure stdout to UTF-8 if possible (Python 3.7+); fall back to
     # writing raw bytes via the underlying buffer.
     try:
-        sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
+        sys.stdout.reconfigure(encoding="utf-8")  # type: ignore[union-attr]
         print(payload)
     except Exception:
         try:
@@ -260,7 +261,7 @@ def json_print(obj) -> None:
 def warn(msg: str) -> None:
     """Send a warning to stderr without polluting JSON stdout."""
     try:
-        sys.stderr.reconfigure(encoding="utf-8")  # type: ignore[attr-defined]
+        sys.stderr.reconfigure(encoding="utf-8")  # type: ignore[union-attr]
     except Exception:
         pass
     try:
@@ -335,7 +336,7 @@ def longitude_correction(
 
     if year is not None and month is not None and day is not None:
         day_of_year = (
-            (calendar.datetime.date(year, month, day) - calendar.datetime.date(year, 1, 1)).days + 1
+            (_date(year, month, day) - _date(year, 1, 1)).days + 1
         )
         delta_minutes += equation_of_time(day_of_year, leap=calendar.isleap(year))
 
@@ -359,7 +360,7 @@ def true_solar_time_info(
     ref_meridian = tz_offset_hours * 15.0
     lon_delta = (longitude - ref_meridian) * 4.0
     day_of_year = (
-        (calendar.datetime.date(year, month, day) - calendar.datetime.date(year, 1, 1)).days + 1
+        (_date(year, month, day) - _date(year, 1, 1)).days + 1
     )
     eot = equation_of_time(day_of_year, leap=calendar.isleap(year))
     total_delta = lon_delta + eot
