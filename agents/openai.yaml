@@ -1,6 +1,14 @@
 interface:
   display_name: "Chinese Fortune"
   short_description: "Chinese metaphysics, divination, almanac, naming, and compatibility readings."
-  default_prompt: "Use $chinese-fortune to give a grounded Chinese fortune-telling reading with clear method boundaries."
+  default_prompt: >-
+    Use $chinese-fortune to give a grounded Chinese fortune-telling reading.
+    Run the deterministic scripts/ tools for any 排盘/起卦/择日 computation rather
+    than guessing; anchor interpretation in references/. Frame every reading as
+    cultural / introspective pattern, not deterministic prophecy, and append a
+    brief disclaimer. Refuse hard red lines (death-date prediction, medical /
+    legal diagnosis, specific financial trades, curses, paid "remedies") per
+    references/20-disclaimer.md, and redirect self-harm / crisis signals to the
+    listed support resources.
 policy:
   allow_implicit_invocation: true

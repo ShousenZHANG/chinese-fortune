@@ -2,6 +2,37 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] — 2026-05-31
+
+Test-coverage + agent-hardening pass, informed by a 2026 market scan of
+best-in-class 命理 engines (cantian-ai/bazi-mcp, 6tail/lunar-python &
+tyme4ts, sxwnl, SylarLong/iztro) and academic evals (Celebrity-50, BaziQA).
+
+### Added
+- **Engine test coverage** (`tests/test_engines.py`, +15 tests, suite now 90):
+  contract + determinism tests for the 8 previously-untested engines (周易,
+  梅花, 六爻, 小六壬, 生肖合婚, 奇门, 大六壬, 黄历) plus 紫微 structure, and a
+  table-free **五鼠遁 hour-stem invariant** verified across 5 charts. Seeded
+  casts asserted reproducible; 六冲/三合 compatibility asserted by score.
+
+### Changed
+- `agents/openai.yaml` default_prompt hardened: restates script-first
+  computation, references/ grounding, disclaimer, and the red-line refusals —
+  so the OpenAI adapter carries the safety layer even before SKILL.md loads.
+
+### Notes
+- **Precision re-classified as already-solved.** Market scan confirmed
+  lunar_python's 节气 engine is a port of sxwnl's `ShouXingUtil` (VSOP87,
+  mean 节气 error < 1s) — i.e. already at the top-tier ephemeris bar. The
+  earlier "no high-precision ephemeris" concern was a false deduction; the
+  only remaining numeric approximation (Spencer EOT, ±20s) is negligible
+  against 2-hour 时辰 buckets.
+- **Honest ceiling.** Remaining depth gaps (per-method golden corpus, iztro
+  紫微 cross-check, LLM-judge interpretation eval) require validated external
+  datasets and are intentionally not fabricated. Divination *truth* is not
+  scientifically validatable; engine *correctness* is — and that is what the
+  test suite now locks.
+
 ## [1.1.1] — 2026-05-26
 
 Engineering-hardening pass (no reading-logic changes). Closes blockers from a CTO-grade code audit; raises correctness, determinism, and test rigor.
