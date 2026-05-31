@@ -11,10 +11,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
-import random
 import sys
 from datetime import datetime
 
+import entropy
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
@@ -406,6 +406,8 @@ def build_parser() -> argparse.ArgumentParser:
                     help="起卦时 HH:MM (默认现在)")
     pc.add_argument("--question", type=str, default=None,
                     help="所问之事 (用于推断用神)")
+    pc.add_argument("--entropy", choices=["system", "quantum"], default="system",
+                    help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
     return p
 
 
@@ -439,7 +441,7 @@ def main(argv: list[str] | None = None) -> int:
     day_branch = lunar.getDayZhi()
     month_branch = lunar.getMonthZhi()
 
-    rng = random.Random(args.seed) if args.seed is not None else random.SystemRandom()
+    rng = entropy.get_rng(args.seed, args.entropy)
     lines = cast_coins(rng)
 
     main_chart = dress_chart(lines, day_stem, day_branch, month_branch)
@@ -465,6 +467,7 @@ def main(argv: list[str] | None = None) -> int:
     out = {
         "method": "coins",
         "question": args.question,
+        "entropy": entropy.describe(rng, args.entropy, args.seed),
         "yongshen_hint": yongshen_hint(args.question),
         "cast_time": {
             "solar": f"{y:04d}-{m:02d}-{d:02d} {h:02d}:{mi:02d}",

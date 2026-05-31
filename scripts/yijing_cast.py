@@ -20,6 +20,7 @@ import random
 import sys
 from datetime import datetime
 
+import entropy
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
@@ -358,6 +359,8 @@ def build_parser() -> argparse.ArgumentParser:
     pc = sub.add_parser("coins", help="三枚硬币 6 次")
     pc.add_argument("--seed", type=int, default=None, help="可选随机种子")
     pc.add_argument("--question", type=str, default=None)
+    pc.add_argument("--entropy", choices=["system", "quantum"], default="system",
+                    help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
 
     pn = sub.add_parser("numbers", help="三数起卦 (上/下/动爻)")
     pn.add_argument("--upper", type=int, required=True)
@@ -420,9 +423,9 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
 
     if args.method == "coins":
-        rng = random.Random(args.seed) if args.seed is not None else random.SystemRandom()
+        rng = entropy.get_rng(args.seed, args.entropy)
         lines = cast_coins(rng)
-        meta = {"seed": args.seed}
+        meta = {"seed": args.seed, "entropy": entropy.describe(rng, args.entropy, args.seed)}
         out = cast("coins", lines, meta, args.question)
     elif args.method == "numbers":
         lines = from_numbers(args.upper, args.lower, args.change)

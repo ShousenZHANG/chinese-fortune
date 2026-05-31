@@ -23,6 +23,7 @@ import os
 import random
 import sys
 
+import entropy
 from utils import json_print, warn
 
 # --------------------------------------------------------------------------- #
@@ -249,6 +250,8 @@ def build_parser() -> argparse.ArgumentParser:
         ps = sub.add_parser(s, help=f"{s} 牌阵")
         ps.add_argument("--seed", type=int, default=None)
         ps.add_argument("--question", type=str, default=None)
+        ps.add_argument("--entropy", choices=["system", "quantum"], default="system",
+                        help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
     return p
 
 
@@ -261,7 +264,7 @@ def main(argv: list[str] | None = None) -> int:
         json_print({"error": "unknown_spread", "valid": list(SPREAD_DEFS.keys())})
         return 2
 
-    rng = random.Random(args.seed) if args.seed is not None else random.SystemRandom()
+    rng = entropy.get_rng(args.seed, args.entropy)
     cards = draw_cards(rng, len(positions), deck)
 
     out_cards = []
@@ -288,6 +291,7 @@ def main(argv: list[str] | None = None) -> int:
         }.get(args.spread),
         "question": args.question,
         "seed": args.seed,
+        "entropy": entropy.describe(rng, args.entropy, args.seed),
         "cards": out_cards,
         "summary": position_summary(positions, cards),
     }

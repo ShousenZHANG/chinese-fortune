@@ -2,6 +2,30 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.8] — 2026-05-31
+
+Optional quantum entropy source for divination casts.
+
+### Added
+- `scripts/entropy.py` — pluggable cast entropy: `seed` (deterministic),
+  `system` (OS CSPRNG, default), or `quantum` (`QuantumRandom`, physical
+  randomness from ANU quantum-vacuum noise, gracefully degrading to
+  `os.urandom` with a `degraded` flag if the source is unreachable).
+- `--entropy {system,quantum}` on `yijing_cast`, `liuyao_cast`, `tarot_draw`;
+  output carries an honest `entropy` provenance block.
+- `tests/test_entropy.py` (+12, suite 977 → 989) — source selection,
+  forced-offline degrade, `getrandbits`/`shuffle`/`choice` correctness, and
+  script wiring. Network-free (the quantum path is tested via the fallback).
+
+### Note
+The `quantum` source is offered as a *physically-true randomness* option only.
+It does **not** make a reading more accurate — hexagram/card outcomes are
+uniform regardless of entropy source, and divination accuracy has no physical
+dependence on where the bits come from. Output always labels the source so the
+distinction stays transparent. (Relativity/quantum mechanics cannot improve
+divination accuracy; the calendar layer's solar-term precision already uses
+relativistic time scales via lunar_python's VSOP87 port, to < 1 s.)
+
 ## [1.1.6] — 2026-05-31
 
 Independent-verification + quality-gate release. Cross-checks the calendar
