@@ -38,12 +38,13 @@ from utils import (
     WUHU_DUN,
     jiazi_index,
     json_print,
+    longitude_correction,
     require_lunar,
     warn,
 )
 
 
-VERSION = "1.1.4"
+VERSION = "1.1.5"
 
 
 # --------------------------------------------------------------------------- #
@@ -853,14 +854,40 @@ def main(argv: Optional[list[str]] = None) -> int:
         })
         return 1
 
+    # 真太阳时校正 — 仅当用户显式提供非默认经度/时区时应用。
+    # 紫微输入通常是粗粒度时辰; 默认经度(120)/时区(8) 表示"未提供精确出生地",
+    # 此时保留所输入时辰原样, 避免 EOT 把临界时辰(如 01:00)误推过 时辰边界。
+    # 给出真实经度即视为有精确出生地, 按 bazi 同法校正(近子时可滚日)。
+    tst_applied = False
+    birth_hour = args.hour
+    if args.longitude != 120.0 or args.tz != 8.0:
+        try:
+            day_off, corr_hour, corr_minute = longitude_correction(
+                args.hour, args.minute, args.longitude, args.tz,
+                year=solar.getYear(), month=solar.getMonth(), day=solar.getDay(),
+            )
+            if (day_off, corr_hour, corr_minute) != (0, args.hour, args.minute):
+                from datetime import date, timedelta
+                base = date(solar.getYear(), solar.getMonth(), solar.getDay())
+                if day_off:
+                    base = base + timedelta(days=day_off)
+                solar = Solar.fromYmdHms(base.year, base.month, base.day,
+                                         corr_hour, corr_minute, 0)
+                lunar = solar.getLunar()
+            birth_hour = corr_hour
+            tst_applied = True
+        except Exception as exc:
+            warn(f"true_solar_time correction skipped: {exc}")
+            birth_hour = args.hour
+
     year_stem = lunar.getYearGan()
     year_branch = lunar.getYearZhi()
     lunar_month = abs(lunar.getMonth())
     lunar_day = lunar.getDay()
 
     # 1. 命宫 / 身宫 / 宫干.
-    mg_branch = calc_ming_gong(lunar_month, args.hour)
-    sg_branch = calc_shen_gong(lunar_month, args.hour)
+    mg_branch = calc_ming_gong(lunar_month, birth_hour)
+    sg_branch = calc_shen_gong(lunar_month, birth_hour)
     mg_stem = stem_of_palace(year_stem, mg_branch)
 
     # 2. 五行局.
@@ -871,14 +898,14 @@ def main(argv: Optional[list[str]] = None) -> int:
     main_pos = place_main_stars(zw_branch)
 
     # 4. 六吉 + 六煞 + 杂曜.
-    lucky_pos = place_lucky_stars(year_stem, lunar_month, args.hour)
-    malefic_pos = place_malefic_stars(year_stem, year_branch, args.hour)
+    lucky_pos = place_lucky_stars(year_stem, lunar_month, birth_hour)
+    malefic_pos = place_malefic_stars(year_stem, year_branch, birth_hour)
     misc_pos = place_miscellaneous_stars(year_branch)
 
     # 5. 命主 / 身主 / 斗君.
     ming_zhu = MING_ZHU.get(year_branch, "?")
     shen_zhu = SHEN_ZHU.get(year_branch, "?")
-    dou_jun_branch = calc_dou_jun(lunar_month, args.hour)
+    dou_jun_branch = calc_dou_jun(lunar_month, birth_hour)
 
     # 6. 反向索引 — branch -> list of stars by category.
     branch_to_main: dict[str, list[str]] = {b: [] for b in DIZHI}

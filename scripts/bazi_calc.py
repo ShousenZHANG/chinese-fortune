@@ -49,7 +49,7 @@ from utils import (
 )
 
 
-VERSION = "1.1.4"
+VERSION = "1.1.5"
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 

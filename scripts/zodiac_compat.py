@@ -176,7 +176,8 @@ def compat(a: str, b: str) -> dict:
         score += 4
     in_sanhe = False
     for group in SAN_HE_GROUPS:
-        if da in group and db in group:
+        # 三合需两个 *不同* 地支同组; 同生肖(da==db)是比和/自刑, 非三合。
+        if da != db and da in group and db in group:
             relations.append("三合")
             score += 3
             in_sanhe = True

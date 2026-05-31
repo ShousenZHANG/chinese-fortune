@@ -123,6 +123,54 @@ def build_full_deck() -> list[dict]:
     return deck
 
 
+# Suit metadata for flattening the {major_arcana, minor_arcana} asset shape.
+_ASSET_SUITS: dict[str, dict[str, str]] = {
+    "wands": {"zh": "权杖", "en": "Wands", "element": "火", "domain": "事业/行动"},
+    "cups": {"zh": "圣杯", "en": "Cups", "element": "水", "domain": "情感/关系"},
+    "swords": {"zh": "宝剑", "en": "Swords", "element": "风", "domain": "思想/冲突"},
+    "pentacles": {"zh": "星币", "en": "Pentacles", "element": "土", "domain": "物质/财务"},
+}
+_RANK_NUM: dict[str, int] = {
+    "Ace": 1, "Page": 11, "Knight": 12, "Queen": 13, "King": 14,
+}
+
+
+def _flatten_asset_deck(data: dict) -> list[dict]:
+    """Convert the {major_arcana:[...], minor_arcana:{suit:[...]}} asset into
+    the flat card schema used by draw_cards. Returns [] on shape mismatch so
+    the caller can fall back to the embedded deck."""
+    major = data.get("major_arcana")
+    minor = data.get("minor_arcana")
+    if not isinstance(major, list) or not isinstance(minor, dict):
+        return []
+    deck: list[dict] = []
+    for m in major:
+        deck.append({
+            "arcana": "major",
+            "number": m.get("number"),
+            "en": m.get("name_en"), "zh": m.get("name_zh"),
+            "suit": None, "element": m.get("element"),
+            "keywords_up": "、".join(m.get("keywords_upright", [])) or m.get("upright_meaning", ""),
+            "keywords_rev": "、".join(m.get("keywords_reversed", [])) or m.get("reversed_meaning", ""),
+        })
+    for suit_key, cards in minor.items():
+        meta = _ASSET_SUITS.get(suit_key, {"zh": suit_key, "en": suit_key,
+                                           "element": None, "domain": ""})
+        for c in cards:
+            rank = str(c.get("rank", ""))
+            deck.append({
+                "arcana": "minor",
+                "number": _RANK_NUM.get(rank, int(rank) if rank.isdigit() else 0),
+                "en": f"{rank} of {meta['en']}",
+                "zh": c.get("name_zh"),
+                "suit": meta["zh"], "suit_en": meta["en"],
+                "element": meta["element"], "domain": meta["domain"],
+                "keywords_up": c.get("upright", ""),
+                "keywords_rev": c.get("reversed", ""),
+            })
+    return deck
+
+
 def load_deck() -> list[dict]:
     here = os.path.dirname(os.path.abspath(__file__))
     candidates = [
@@ -133,9 +181,17 @@ def load_deck() -> list[dict]:
     if asset:
         try:
             with open(asset, "r", encoding="utf-8") as f:
-                deck = json.load(f)
-            if isinstance(deck, list) and len(deck) >= 22:
+                raw = json.load(f)
+            # Asset ships as {major_arcana, minor_arcana}; flatten it.
+            if isinstance(raw, dict):
+                deck = _flatten_asset_deck(raw)
+            elif isinstance(raw, list):
+                deck = raw
+            else:
+                deck = []
+            if len(deck) >= 78:
                 return deck
+            warn(f"tarot78.json yielded {len(deck)} cards (<78); using embedded deck")
         except Exception as e:
             warn(f"failed to load tarot78.json: {e}")
     return build_full_deck()

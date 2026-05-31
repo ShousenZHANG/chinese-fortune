@@ -66,8 +66,10 @@ def test_meihua_structure():
     d = run("meihua_cast.py", "numbers", "--upper", "3", "--lower", "5", "--question", "x")
     has(d, "main_hex", "changed_hex", "nuclear_hex", "ti_yong")
     assert 1 <= d["main_hex"]["number"] <= 64
-    # body/use relation must be one of the 5 五行 relations
-    assert d["ti_yong"]["relation"]
+    # body/use relation must be one of the 5 五行 relations (not just truthy).
+    rel = d["ti_yong"]["relation"]
+    assert any(rel.startswith(r) for r in
+               ("体生用", "用生体", "体克用", "用克体", "比和")), rel
 
 
 # --------------------------------------------------------------------------- #
@@ -95,6 +97,26 @@ def test_xiaoliuren_structure():
 
 
 # --------------------------------------------------------------------------- #
+# 塔罗 — REGRESSION: the curated 78-card asset must actually load (the dict-vs-
+# list check used to discard it, silently degrading to placeholder text).
+# --------------------------------------------------------------------------- #
+
+def test_tarot_loads_real_asset_not_placeholder():
+    d = run("tarot_draw.py", "three", "--seed", "42", "--question", "x")
+    assert len(d["cards"]) == 3
+    for c in d["cards"]:
+        assert c["card_name_zh"]
+        assert c["meaning_brief"]
+        # The degraded fallback emits "...第N阶: 见详细解读"; real asset never does.
+        assert "见详细解读" not in c["meaning_brief"]
+
+def test_tarot_seed_reproducible():
+    a = run("tarot_draw.py", "celtic", "--seed", "7", "--question", "x")
+    b = run("tarot_draw.py", "celtic", "--seed", "7", "--question", "x")
+    assert [c["card_name_zh"] for c in a["cards"]] == [c["card_name_zh"] for c in b["cards"]]
+
+
+# --------------------------------------------------------------------------- #
 # 生肖合婚 — deterministic; 虎申 must be 相冲 (score low)
 # --------------------------------------------------------------------------- #
 
@@ -109,6 +131,11 @@ def test_zodiac_compat_sanhe_high():
     d = run("zodiac_compat.py", "compat", "--a", "虎", "--b", "马")
     assert d["score"] >= 6
 
+def test_zodiac_same_sign_not_sanhe():
+    # 同生肖(鼠-鼠)是比和/自刑, 不能误判为三合 (子∈申子辰).
+    d = run("zodiac_compat.py", "compat", "--a", "鼠", "--b", "鼠")
+    assert "三合" not in d["relations"]
+
 
 # --------------------------------------------------------------------------- #
 # 奇门遁甲 — deterministic by date/time
@@ -121,6 +148,8 @@ def test_qimen_structure():
     has(d, "ju_type", "ju_number", "ganzhi")
     assert d["ju_type"] in {"阳遁", "阴遁"}
     assert 1 <= d["ju_number"] <= 9
+    # Value golden — 芒种前 阳遁, this date/time resolves to 阳遁 8局.
+    assert (d["ju_type"], d["ju_number"]) == ("阳遁", 8)
 
 
 # --------------------------------------------------------------------------- #
@@ -132,6 +161,8 @@ def test_liuren_structure():
     d = run("liuren_cast.py", "--date", "2026-06-01", "--time", "14:30", "--question", "x")
     assert d["ok"] is True
     has(d, "ri_gan", "ri_zhi", "month_zhi")
+    # Value golden — 2026-06-01 is 丙午 day, 占时 within 巳 month-general window.
+    assert (d["ri_gan"], d["ri_zhi"]) == ("丙", "午")
 
 
 # --------------------------------------------------------------------------- #
@@ -144,6 +175,35 @@ def test_huangli_structure():
     has(d, "yi", "ji", "ganzhi", "zhi_shen_12jianchu")
     assert isinstance(d["yi"], list)
     assert isinstance(d["ji"], list)
+
+
+@needs_lunar
+def test_huangli_jishi_uses_huangdao_not_all12():
+    """REGRESSION: 吉时/凶时 must come from 时辰黄黑道 (吉/凶), not "has any 宜".
+    The old logic marked all 12 时辰 吉 and 0 凶."""
+    d = run("huangli_query.py", "--date", "2026-06-01")
+    ji, xiong = d["ji_shi"], d["xiong_shi"]
+    assert len(ji) + len(xiong) == 12          # every 时辰 classified
+    assert 0 < len(ji) < 12                     # not all-吉 (the bug)
+    assert len(xiong) > 0                       # 凶时 exist
+    assert all(s.get("luck") == "吉" for s in ji)
+    assert all(s.get("huang_hei_dao") == "黄道" for s in ji)
+
+
+@needs_lunar
+def test_ziwei_value_golden_and_longitude_optin():
+    """ziwei standard chart value golden + longitude correction is opt-in
+    (default longitude must NOT shift the 时辰-granular chart)."""
+    d = run("ziwei_calc.py", "--year", "1995", "--month", "7", "--day", "20",
+            "--hour", "1", "--gender", "female", "--lunar")
+    assert (d["ming_gong"]["branch"], d["shen_gong"]["branch"],
+            d["wuxing_ju"]["name"]) == ("未", "酉", "木三局")
+    # Explicit far-west longitude near midnight DOES correct (different 命宫).
+    near = run("ziwei_calc.py", "--year", "2000", "--month", "6", "--day", "15",
+               "--hour", "23", "--minute", "30", "--gender", "male")
+    west = run("ziwei_calc.py", "--year", "2000", "--month", "6", "--day", "15",
+               "--hour", "23", "--minute", "30", "--longitude", "75", "--gender", "male")
+    assert near["ming_gong"]["branch"] != west["ming_gong"]["branch"]
 
 
 # --------------------------------------------------------------------------- #

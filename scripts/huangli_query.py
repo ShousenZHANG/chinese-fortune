@@ -34,44 +34,29 @@ def _safe_method(obj, name: str, default=None):
 
 
 def _hour_pillars(lunar) -> list[dict]:
-    """For each of the 12 双小时, return ganzhi + ji/xiong markers."""
-    out: list[dict] = []
-    try:
-        shichen_list = lunar.getTimes()
-        # Some versions: getShichenJiXiong / getTimeJiXiong.
-    except Exception:
-        shichen_list = []
+    """For each of the 12 双小时, return ganzhi + 黄黑道 吉凶 markers.
 
-    # Fallback: build 12 time entries by iterating over hour 0..23 step 2
+    吉凶 comes from the hour's 天神 黄道/黑道 (getTimeTianShenLuck), NOT from
+    whether the hour has any 宜 — every 时辰 has non-empty 宜, so the latter
+    would mark all 12 as 吉.
+    """
+    out: list[dict] = []
     try:
         from lunar_python import Solar  # type: ignore
         solar = lunar.getSolar()
         for hour_pair in range(0, 24, 2):
-            # 子时归当日 (sect=2). Use middle of the 2-hour window for safety.
-            h = hour_pair if hour_pair != 23 else 23
             s = Solar.fromYmdHms(solar.getYear(), solar.getMonth(),
-                                 solar.getDay(), h, 30, 0)
+                                 solar.getDay(), hour_pair, 30, 0)
             lh = s.getLunar()
-            time_in_gz = lh.getTimeInGanZhi()
-            # ji or xiong
-            try:
-                jx = lh.getTimeXun()  # not exactly ji/xiong but provides 旬
-            except Exception:
-                jx = None
-            try:
-                yixion = lh.getTimeYi()
-                ji = lh.getTimeJi()
-                chong_sha = lh.getTimeChongDesc()
-            except Exception:
-                yixion = []
-                ji = []
-                chong_sha = None
             out.append({
-                "hour_range": f"{hour_pair:02d}:00-{(hour_pair+2)%24:02d}:00",
-                "ganzhi": time_in_gz,
-                "yi": yixion,
-                "ji": ji,
-                "chong_sha": chong_sha,
+                "hour_range": f"{hour_pair:02d}:00-{(hour_pair + 2) % 24:02d}:00",
+                "ganzhi": lh.getTimeInGanZhi(),
+                "tian_shen": _safe_method(lh, "getTimeTianShen", None),
+                "huang_hei_dao": _safe_method(lh, "getTimeTianShenType", None),
+                "luck": _safe_method(lh, "getTimeTianShenLuck", None),
+                "yi": _safe_method(lh, "getTimeYi", []),
+                "ji": _safe_method(lh, "getTimeJi", []),
+                "chong_sha": _safe_method(lh, "getTimeChongDesc", None),
             })
     except Exception as e:
         warn(f"hour pillars failed: {e}")
@@ -128,10 +113,10 @@ def main(argv: Optional[list[str]] = None) -> int:
     peng_zu_gan = _safe_method(lunar, "getPengZuGan", None)
     peng_zu_zhi = _safe_method(lunar, "getPengZuZhi", None)
 
-    # 今日吉时/凶时
+    # 今日吉时/凶时 — 按 时辰黄黑道吉凶 (黄道=吉, 黑道=凶), 非"有无宜事"
     ji_xiong_shichen = _hour_pillars(lunar)
-    ji_shi = [s for s in ji_xiong_shichen if s.get("yi")]
-    xiong_shi = [s for s in ji_xiong_shichen if not s.get("yi") and s.get("ji")]
+    ji_shi = [s for s in ji_xiong_shichen if s.get("luck") == "吉"]
+    xiong_shi = [s for s in ji_xiong_shichen if s.get("luck") == "凶"]
 
     # Nearest jieqi
     jieqi_now = _safe(lunar.getJieQi, None)

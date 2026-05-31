@@ -2,6 +2,36 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.5] — 2026-05-31
+
+Bug-fix release — three silent-wrong defects found by an adversarial line-by-line
+audit, plus value-level test coverage to lock them.
+
+### Fixed
+- **塔罗 (HIGH)** — `tarot_draw.load_deck` gated on `isinstance(deck, list)`, but
+  the asset ships as `{major_arcana, minor_arcana}` (dict), so the curated 78-card
+  deck **never loaded** and every reading silently used placeholder text
+  ("…第N阶: 见详细解读"). Added `_flatten_asset_deck`; readings now carry the real
+  per-card 正/逆位 meanings.
+- **黄历 吉时/凶时 (HIGH)** — classification used "时辰 has any 宜", which is true for
+  all 12, so output was always 12 吉 / 0 凶 (meaningless). Now derived from the
+  时辰 黄道/黑道 (`getTimeTianShenLuck`): a real 吉/凶 split. Removed dead
+  `getTimes()` / `getTimeXun()` calls.
+- **紫微 真太阳时 (HIGH)** — `--tz`/`--longitude` were accepted but ignored, so a
+  user-supplied longitude produced an uncorrected chart (silent-wrong near 子时).
+  Now wired through `longitude_correction` (with day roll-over) — **opt-in**: only
+  applied when a non-default longitude/tz is given, so 时辰-granular charts on the
+  default meridian are unchanged (no regression).
+- **生肖 (LOW)** — same-sign pairs (e.g. 鼠-鼠) were mis-flagged 三合 because
+  `da in group and db in group` is true when `da == db`. Now requires distinct
+  branches.
+
+### Added
+- +5 tests (suite 94 → 99): value-golden assertions for 紫微 命宫/身宫/局,
+  奇门 阳遁8局, 大六壬 丙午日; regression locks for the tarot asset, huangli 黄黑道
+  吉凶 split, ziwei longitude opt-in, same-sign 三合; replaced a tautological
+  meihua `relation` truthy-check with a valid-relation assertion.
+
 ## [1.1.4] — 2026-05-31
 
 Continuous integration — closes the last engineering gap found in a 4-repo
