@@ -2,6 +2,19 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.4] — 2026-05-31
+
+Continuous integration — closes the last engineering gap found in a 4-repo
+competitor scan (only the off-topic Master-skill had CI; no fortune skill did).
+
+### Added
+- `.github/workflows/ci.yml` — on every push / PR to main: install deps,
+  run the 94-test pytest suite, the `run_checks.py` release harness, and
+  `build_skill.py`, on Python 3.11 + 3.12; uploads the built skill zip as a
+  CI artifact. Concurrency-cancelled, pip-cached, least-privilege permissions.
+- `requirements-dev.txt` — dev/CI deps (runtime + pytest).
+- CI / tests / license badges on both READMEs.
+
 ## [1.1.3] — 2026-05-31
 
 Packaging + bilingual-install pass — one-command distributable for Claude

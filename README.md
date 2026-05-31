@@ -1,5 +1,9 @@
 # Chinese Fortune · 中国传统命理 Claude Skill
 
+[![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
+&nbsp;![tests](https://img.shields.io/badge/tests-94%20passing-brightgreen)
+&nbsp;![license](https://img.shields.io/badge/license-MIT-blue)
+
 > 20+ traditional Chinese metaphysics methods in one Claude skill · MIT · [中文](README.zh.md)
 
 A Claude Code / Agent SDK skill covering the Chinese metaphysical canon (五术：山医命相卜) — BaZi, Zi Wei Dou Shu, I-Ching, Liu Yao, Qi Men, Feng Shui, almanac, naming, Tarot, and more. Heavy calendrical math runs in deterministic Python scripts; Claude narrates the result from the reference docs.

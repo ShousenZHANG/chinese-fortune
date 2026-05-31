@@ -1,5 +1,9 @@
 # 中国传统命理 · Claude Skill
 
+[![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
+&nbsp;![tests](https://img.shields.io/badge/tests-94%20passing-brightgreen)
+&nbsp;![license](https://img.shields.io/badge/license-MIT-blue)
+
 > 一个 Claude skill 集成 20+ 种中国传统命理方法 · MIT · [English](README.md)
 
 覆盖五术（山医命相卜）的 Claude Code / Agent SDK 技能：八字、紫微斗数、周易、六爻、奇门遁甲、风水、黄历、姓名学、塔罗等。繁重的历法计算交给确定性 Python 脚本，Claude 依据参考文档解读结果。
