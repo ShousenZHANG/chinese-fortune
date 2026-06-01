@@ -59,6 +59,7 @@ When a reading needs personal data (八字 / 紫微 / 合婚 / 起名 / 择日),
 | 神煞 / 桃花 / 驿马 / 天乙贵人 | 神煞详表 | [19-shensha.md](references/19-shensha.md) | — |
 | 小六壬 / 大安留连速喜 | 小六壬快占 | [21-extended-methods.md](references/21-extended-methods.md) | [xiaoliuren_cast.py](scripts/xiaoliuren_cast.py) |
 | 太乙 / 铁板 / 称骨 / 河洛 / 七政四余 / 灵签 / 杯筊 / 玄空飞星 | 扩展术数索引 | [21-extended-methods.md](references/21-extended-methods.md) | — |
+| 随机寻访 / 今日探索点 / 出门走走去哪 / QRNG 探索 | 随机探索 (非占卜) | — | [explore_cast.py](scripts/explore_cast.py) |
 | 五行 / 天干地支 / 阴阳 / 八卦 (理论) | 基础理论 | [00-foundations.md](references/00-foundations.md) | — |
 
 When the user request is ambiguous, ask **one** clarifying question (preferred method? specific concern: 财运/感情/事业/健康?) and proceed.

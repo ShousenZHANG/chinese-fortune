@@ -2,6 +2,29 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.9] — 2026-05-31
+
+Randonautica-inspired exploration tool (honest, no pseudoscience).
+
+### Added
+- `scripts/explore_cast.py` — 今日随机寻访点: QRNG (reuses `entropy.py`) →
+  uniform random points in a radius → dependency-free grid-density anomaly
+  (attractor / void / power / blindspot, all clamped inside the circular
+  radius) → bearing + distance + 16-point compass, cross-referenced with
+  today's 黄历 吉神方位 (财神/喜神/福神). Carries a safety block and an explicit
+  disclaimer: it is a randomized walk prompt, NOT a prediction and NOT a
+  mind-matter-interaction (MMI) device — intention is recorded, never biases
+  the entropy. SKILL.md routes 随机寻访/探索 to it.
+- `tests/test_explore.py` (+12, suite 989 → 1001) — within-radius for all 4
+  modes, seed determinism, geometry (haversine/bearing/compass), input
+  validation, 黄历 alignment, safety/disclaimer presence.
+
+### Note
+Borrowed only the *legitimate* tech from Randonautica (QRNG + spatial density
+anomaly + intention UX + safety). The "intention biases quantum RNG / z-score =
+psi" MMI claim is explicitly rejected, consistent with this project's stance
+that divination efficacy is not a physically-measurable quantity.
+
 ## [1.1.8] — 2026-05-31
 
 Optional quantum entropy source for divination casts.
