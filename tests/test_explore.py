@@ -36,6 +36,20 @@ def test_determinism_with_seed():
     assert a["target"] == b["target"]
 
 
+@pytest.mark.parametrize("lat,lon", [
+    (90, 0), (-90, 0), (89.95, 10), (0, 179.999), (0, -180), (0, 180),
+])
+def test_pole_and_antimeridian_output_finite_and_in_range(lat, lon):
+    """REGRESSION: at the poles cos(lat)->0 used to emit target.lon ~1.9e14;
+    near ±180 the lon must wrap into range. Target must stay sane + in radius."""
+    d = run("--lat", lat, "--lon", lon, "--radius", 2000, "--seed", 1)
+    assert d["ok"] is True
+    t = d["target"]
+    assert -90.0 <= t["lat"] <= 90.0
+    assert -180.0 <= t["lon"] <= 180.0
+    assert d["distance_m"] <= 2000.1
+
+
 def test_entropy_and_safety_and_disclaimer_present():
     d = run("--lat", 1.0, "--lon", 1.0, "--seed", 3)
     assert d["entropy"]["source"] == "seed"

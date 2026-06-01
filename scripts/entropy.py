@@ -48,7 +48,9 @@ def _fetch_quantum_bytes(n: int, timeout: float = 6.0) -> bytes | None:
                 f"{_ANU_LEGACY_URL}?length={n}&type=uint8"
             )
         with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310
-            payload = json.loads(resp.read().decode("utf-8"))
+            # Cap the read: a compromised/misbehaving endpoint ignoring length=
+            # must not stream an unbounded body into memory.
+            payload = json.loads(resp.read(1 << 20).decode("utf-8"))
         if payload.get("success") and isinstance(payload.get("data"), list):
             data = bytes(int(b) & 0xFF for b in payload["data"])
             return data[:n] if len(data) >= n else None

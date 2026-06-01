@@ -28,6 +28,18 @@ import entropy
 from utils import json_print
 
 EARTH_M_PER_DEG = 111_320.0  # metres per degree of latitude (mean)
+MAX_PROJ_LAT = 89.9          # clamp for the cos(lat) longitude projection
+
+
+def _cos_lat(lat: float) -> float:
+    """cos(latitude) clamped away from the poles so the longitude projection
+    never explodes (cos -> 0 at ±90 would blow dx/(cos) up to ~1e14)."""
+    return math.cos(math.radians(max(-MAX_PROJ_LAT, min(MAX_PROJ_LAT, lat))))
+
+
+def _norm_lon(lon: float) -> float:
+    """Wrap longitude into [-180, 180)."""
+    return ((lon + 180.0) % 360.0) - 180.0
 
 # 后天八卦 -> compass bearing (degrees, 0=N clockwise).
 BAGUA_BEARING: dict[str, float] = {
@@ -46,7 +58,7 @@ SAFETY = [
 def random_points(lat: float, lon: float, radius_m: float, n: int, rng):
     """n uniformly-distributed points within radius_m of (lat, lon)."""
     pts = []
-    cos_lat = math.cos(math.radians(lat)) or 1e-9
+    cos_lat = _cos_lat(lat) or 1e-9
     for _ in range(n):
         r = radius_m * math.sqrt(rng.random())   # sqrt for uniform area
         theta = 2 * math.pi * rng.random()
@@ -62,7 +74,7 @@ def find_anomaly(pts, origin, radius_m, mode, grid=16):
     being grid-density, not gaussian KDE). Returns (target_lat, target_lon, z)."""
     olat, olon = origin
     span = radius_m / EARTH_M_PER_DEG  # half-extent in degrees lat
-    cos_lat = math.cos(math.radians(olat)) or 1e-9
+    cos_lat = _cos_lat(olat) or 1e-9
     span_lon = span / cos_lat
 
     if mode == "blindspot":
@@ -193,6 +205,8 @@ def main(argv: list[str] | None = None) -> int:
     rng = entropy.get_rng(args.seed, args.entropy)
     pts = random_points(args.lat, args.lon, args.radius, n, rng)
     tlat, tlon, z = find_anomaly(pts, (args.lat, args.lon), args.radius, args.mode)
+    tlat = max(-90.0, min(90.0, tlat))
+    tlon = _norm_lon(tlon)
 
     dist = haversine_m(args.lat, args.lon, tlat, tlon)
     brg = bearing_deg(args.lat, args.lon, tlat, tlon)
