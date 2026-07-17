@@ -13,7 +13,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 
@@ -67,8 +66,7 @@ def run_json(args: list[str]) -> dict:
         text=True,
         encoding="utf-8",
         errors="replace",
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
+        capture_output=True,
         timeout=30,
     )
     if completed.returncode != 0:
@@ -144,6 +142,26 @@ def check_reference_coverage() -> None:
             fail(f"missing reference file: {ref}")
 
 
+def check_interpretive_discipline() -> None:
+    """SKILL.md must carry the classical-source interpretive discipline:
+    judgments anchored in the five classics, no unsupported claims, no
+    platitudes/flattery, strongest-evidence conclusions only."""
+    skill_text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    needles = [
+        "解读纪律",
+        "子平真诠", "滴天髓", "穷通宝鉴", "三命通会", "渊海子平",
+        "凡古籍无据者不妄断",
+        "禁止套话和迎合",
+        "可验证性最高",
+    ]
+    for needle in needles:
+        if needle not in skill_text:
+            fail(f"SKILL.md missing interpretive-discipline element: {needle!r}")
+    agent_text = (ROOT / "agents" / "openai.yaml").read_text(encoding="utf-8")
+    if "子平真诠" not in agent_text:
+        fail("agents/openai.yaml missing classics anchor in default_prompt")
+
+
 def check_release_cleanliness() -> None:
     forbidden = re.compile(r"\b(TODO|TBD|placeholder|not implemented)\b", re.IGNORECASE)
     for path in [ROOT / "SKILL.md", *sorted((ROOT / "scripts").glob("*.py"))]:
@@ -156,7 +174,7 @@ def check_release_cleanliness() -> None:
     try:
         tracked = subprocess.run(
             ["git", "ls-files"], cwd=ROOT, text=True, encoding="utf-8",
-            stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=15,
+            capture_output=True, timeout=15,
         ).stdout.splitlines()
     except (OSError, subprocess.SubprocessError):
         tracked = []
@@ -252,6 +270,7 @@ def main() -> int:
         check_skill_metadata,
         check_core_scripts,
         check_reference_coverage,
+        check_interpretive_discipline,
         check_eval_assertions,
         check_unit_tests,
         check_release_cleanliness,

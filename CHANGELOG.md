@@ -2,6 +2,30 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-07-04
+
+Interpretive-discipline release: classical sources become the binding rule.
+
+### Added
+- **SKILL.md「解读纪律 (Interpretive Discipline) — 古籍为纲」** — BaZi judgments
+  must anchor in the five classics with an explicit precedence order:
+  《子平真诠》(格局) →《滴天髓》(强弱气势) →《穷通宝鉴》(调候, already shipped as
+  assets/tiaohou.json) →《三命通会》(神煞杂断) →《渊海子平》(十神六亲). Hard
+  rules: 凡古籍无据者不妄断 (label folk-lore/school views as such or stay
+  silent); 禁止套话和迎合 (no platitudes, no flattery-softened verdicts); only
+  the strongest-evidence, most-verifiable conclusions (chart-anchored, 应期
+  falsifiable, classic-citable); 学理/民俗 layered; explicit conflict-resolution
+  order (调候 vs 格局, classics vs modern schools).
+- `check_interpretive_discipline` in evals/run_checks.py (harness now 7 checks)
+  — CI-locks the discipline text in SKILL.md and the classics anchor in
+  agents/openai.yaml so it cannot silently regress.
+- references/01-bazi.md header now carries the binding 论断依据 note.
+- agents/openai.yaml default_prompt extended with the same discipline for
+  OpenAI-runtime consumers.
+
+### Changed
+- evals/run_checks.py: ruff-clean (import order, capture_output).
+
 ## [1.1.9] — 2026-05-31
 
 Randonautica-inspired exploration tool (honest, no pseudoscience).
