@@ -148,6 +148,11 @@ def determine_ju(jieqi_name: str, days_since_jieqi: int) -> tuple[str, str, int]
     """Return (ju_type, san_yuan, ju_number) for given 节气 + 距节气天数.
 
     days_since_jieqi: 0 = 节气当日 ; 1..14 = 之后. 上元 0-4, 中元 5-9, 下元 10-14.
+
+    流派说明 (honest approximation): 三元切分用「节气日起简化日数法」——
+    自节气日起每 5 日一元。传统另有「拆补置闰法」(以符头甲己日定上元, 遇
+    超神/接气再置闰) 与「茅山道人法」等, 距节气首尾 1-2 日内两法可能差一元
+    (局数相邻)。本实现选简化法因其确定、可回测; 边界日批断请注明此差异。
     """
     if days_since_jieqi < 5:
         yuan_idx, yuan_name = 0, "上元"

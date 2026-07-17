@@ -33,7 +33,13 @@ def _safe_method(obj, name: str, default=None):
 
 
 def _hour_pillars(lunar) -> list[dict]:
-    """For each of the 12 双小时, return ganzhi + 黄黑道 吉凶 markers.
+    """For each of the 12 传统时辰, return ganzhi + 黄黑道 吉凶 markers.
+
+    时辰 boundaries follow the classical odd-start convention (子 23-01,
+    丑 01-03, 寅 03-05 … 亥 21-23) — NOT even clock blocks (00-02, 02-04 …),
+    which straddle two 时辰 and mislabel the second half. Each block is
+    sampled at its midpoint so 干支/天神 are correct for the whole block.
+    子时 spans this day 23:00 → next day 01:00 (晚子时, sampled at 23:30).
 
     吉凶 comes from the hour's 天神 黄道/黑道 (getTimeTianShenLuck), NOT from
     whether the hour has any 宜 — every 时辰 has non-empty 宜, so the latter
@@ -43,12 +49,14 @@ def _hour_pillars(lunar) -> list[dict]:
     try:
         from lunar_python import Solar  # type: ignore
         solar = lunar.getSolar()
-        for hour_pair in range(0, 24, 2):
+        branches = "子丑寅卯辰巳午未申酉戌亥"
+        for i, start in enumerate([23, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]):
             s = Solar.fromYmdHms(solar.getYear(), solar.getMonth(),
-                                 solar.getDay(), hour_pair, 30, 0)
+                                 solar.getDay(), start, 30, 0)
             lh = s.getLunar()
             out.append({
-                "hour_range": f"{hour_pair:02d}:00-{(hour_pair + 2) % 24:02d}:00",
+                "shichen": branches[i],
+                "hour_range": f"{start:02d}:00-{(start + 2) % 24:02d}:00",
                 "ganzhi": lh.getTimeInGanZhi(),
                 "tian_shen": _safe_method(lh, "getTimeTianShen", None),
                 "huang_hei_dao": _safe_method(lh, "getTimeTianShenType", None),

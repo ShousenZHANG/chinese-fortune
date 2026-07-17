@@ -5,8 +5,8 @@
 **一个 Claude Skill，把中国五术（山·医·命·相·卜）的 20+ 种命理方法装进一个可移植技能。**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-977%20passing-brightgreen)](tests)
-[![coverage](https://img.shields.io/badge/coverage-82%25-brightgreen)](#质量保障)
+[![tests](https://img.shields.io/badge/tests-1013%20passing-brightgreen)](tests)
+[![coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)](#质量保障)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
 
@@ -32,11 +32,14 @@
 ## 特性
 
 - **20+ 种方法，一个技能** — 命卜相术全覆盖，单一自包含 skill，无需后端、无需联网。
-- **确定性计算** — 13 个 Python 引擎在 `lunar_python`（[寿星天文历](https://github.com/6tail/lunar-python) 算法移植，节气误差 < 1 秒）上排盘起卦，而非让大模型手算（易错）。
+- **确定性计算** — 15 个 Python 引擎在 `lunar_python`（[寿星天文历](https://github.com/6tail/lunar-python) 算法移植，节气误差 < 1 秒）上排盘起卦，而非让大模型手算（易错）。
 - **历法严谨** — 真太阳时、节气定月、立春年界、夜子时、闰月等业余易错处全部正确，并经**独立引擎 sxtwl 跨库对照** 1920–2080 全网格验证。
 - **渐进式披露** — Claude 先加载小路由，再按需调用对应方法的文档与脚本，上下文最小化。
+- **解读纪律 (CI 锁定)** — 八字论断严格以《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》五大古籍为准绳：凡古籍无据者不妄断、禁套话迎合、只出可验证性最高的结论。纪律文本被发布校验断言，删改即构建失败。
+- **量子熵源（可选）** — 起卦/抽牌可用 `--entropy quantum` 接入 ANU 量子真空噪声（物理真随机，源不可达时优雅降级并如实标注；不声称提升准确度）。
+- **随机寻访** — `explore_cast.py`：QRNG 撒点 + 密度异常（attractor/void）+ 黄历吉方对照 + 安全提示，Randonautica 式散步灵感（明确非预测、非念力）。
 - **安全护栏** — 硬红线（不预测死亡、不做医疗法律金融决断、不接诅咒）+ 危机转介，内建于技能。
-- **工程化** — 977 测试 / 82% 覆盖 / `ruff` + `mypy` + CI 五道质量门。
+- **工程化** — 1013 测试 / 85% 覆盖 / `ruff` + `mypy` + CI 五道质量门 + 7 项发布校验。
 
 ## 快速开始
 
@@ -78,6 +81,7 @@ python scripts/huangli_query.py --date 2026-06-15
 | **卜** | 周易、六爻、梅花易数、奇门遁甲、大六壬、小六壬、太乙、灵签、杯筊 | 周易、六爻、梅花、奇门、大六壬、小六壬 |
 | **相** | 风水（八宅 / 玄空）、面相、手相、测字 | —（文档解读） |
 | **术** | 黄历择日、姓名学、合婚、解梦、生肖、星座、塔罗 | 黄历、姓名、合婚 / 生肖、塔罗 |
+| **游** | 随机寻访（QRNG 探索点 + 黄历吉方，非占卜） | explore |
 
 每种方法对应 `references/` 中的参考文档，需要计算的另配 `scripts/` 脚本。完整路由表见 [SKILL.md](SKILL.md)。
 
@@ -86,7 +90,7 @@ python scripts/huangli_query.py --date 2026-06-15
 ```
 SKILL.md           路由：frontmatter 触发词 + 方法表
 references/  (23)   命理正文：理论 + 各方法解读指南
-scripts/     (13)   确定性计算引擎（lunar_python + SystemRandom）
+scripts/     (15)   确定性计算引擎（lunar_python + SystemRandom + 可选 QRNG）
 assets/      (12)   JSON 查表（干支、64卦、神煞、塔罗、笔画 …）
 evals/             发布校验 + 12 场景机器断言
 tests/             pytest 黄金值 + 边界 + 独立引擎差分
@@ -101,7 +105,7 @@ tests/             pytest 黄金值 + 边界 + 独立引擎差分
 ## 质量保障
 
 ```bash
-python -X utf8 evals/run_checks.py     # 发布校验（6 项）
+python -X utf8 evals/run_checks.py     # 发布校验（7 项）
 python -m pytest tests/                # 单元 + 集成 + 独立引擎差分
 ```
 
@@ -111,9 +115,9 @@ CI（Python 3.11 / 3.12）强制执行五道门：
 |---|---|
 | `ruff` | 代码规范，0 容忍 |
 | `mypy` | 静态类型检查 |
-| `pytest` | **977 测试** — 黄金值、立春 / 夜子时 / 闰月边界、五鼠遁不变量、对 sxtwl 独立引擎差分 |
-| coverage | 子进程追踪 **82%**，低于 80% 即失败 |
-| harness | SKILL.md 校验 + 12 场景机器断言 + 脚本 JSON 合法性 |
+| `pytest` | **1013 测试** — 黄金值、立春 / 夜子时 / 闰月边界、五鼠遁不变量、对 sxtwl 独立引擎差分 |
+| coverage | 子进程追踪 **85%**，低于 80% 即失败 |
+| harness | SKILL.md 校验 + 解读纪律锁 + 12 场景机器断言 + 脚本 JSON 合法性（7 项） |
 
 ## 贡献
 

@@ -48,7 +48,7 @@ from utils import (
     warn,
 )
 
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 

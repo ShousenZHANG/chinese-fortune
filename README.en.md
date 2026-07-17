@@ -5,8 +5,8 @@
 **A Claude Skill packing 20+ Chinese metaphysics methods (五术: 山·医·命·相·卜) into one portable skill.**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-977%20passing-brightgreen)](tests)
-[![coverage](https://img.shields.io/badge/coverage-82%25-brightgreen)](#quality-gates)
+[![tests](https://img.shields.io/badge/tests-1013%20passing-brightgreen)](tests)
+[![coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)](#quality-gates)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
 
@@ -32,11 +32,14 @@ BaZi, Zi Wei Dou Shu, I-Ching, Liu Yao, Qi Men Dun Jia, Feng Shui, almanac, nami
 ## Features
 
 - **20+ methods, one skill** — divination, destiny, physiognomy, and practical arts in a single self-contained skill. No backend, no network.
-- **Deterministic computation** — 13 Python engines on `lunar_python` (a port of the [寿星天文历](https://github.com/6tail/lunar-python) algorithm, solar-term error < 1s) do the 排盘/起卦, instead of asking an LLM to do error-prone arithmetic.
+- **Deterministic computation** — 15 Python engines on `lunar_python` (a port of the [寿星天文历](https://github.com/6tail/lunar-python) algorithm, solar-term error < 1s) do the 排盘/起卦, instead of asking an LLM to do error-prone arithmetic.
 - **Calendrically rigorous** — true solar time, solar-term month boundaries, the 立春 year boundary, late-子时, and leap months are all correct, and cross-checked against the **independent `sxtwl` engine** over a 1920–2080 date grid.
 - **Progressive disclosure** — Claude loads the small router first, then only the reference/script for the method in play. Minimal context cost.
+- **Interpretive discipline (CI-locked)** — BaZi judgments are bound to the five classics (《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》): no claim the classics cannot support, no platitudes or flattery, only the most verifiable conclusions. The discipline text is asserted by the release harness — deleting it fails the build.
+- **Optional quantum entropy** — casts accept `--entropy quantum` (ANU quantum-vacuum noise; degrades gracefully and is honestly labeled; no accuracy claim).
+- **Exploration tool** — `explore_cast.py`: QRNG points + density anomalies (attractor/void) + almanac auspicious-direction overlay + safety block, Randonautica-style walk prompts (explicitly not prediction, not MMI).
 - **Safety rails** — hard red lines (no death-date prediction, no medical/legal/financial calls, no curses) plus a crisis hand-off, built into the skill.
-- **Engineered** — 977 tests / 82% coverage / `ruff` + `mypy` + a 5-gate CI.
+- **Engineered** — 1013 tests / 85% coverage / `ruff` + `mypy` + a 5-gate CI + a 7-check release harness.
 
 ## Quick Start
 
@@ -78,6 +81,7 @@ Run `python scripts/<name>.py --help` for options. Build the package from source
 | **卜 Divination** | I-Ching, Liu Yao, Mei Hua, Qi Men, Da Liu Ren, Xiao Liu Ren, Tai Yi, oracle slips, Bei Jiao | I-Ching, Liu Yao, Mei Hua, Qi Men, Da/Xiao Liu Ren |
 | **相 Physiognomy** | Feng Shui (Eight Mansions / Xuan Kong), face, palm, glyphomancy | — (reference-guided) |
 | **术 Practical** | almanac date selection, naming, compatibility, dream, zodiac, astrology, Tarot | almanac, naming, compatibility/zodiac, Tarot |
+| **游 Exploration** | random walk points (QRNG + almanac directions; not divination) | explore |
 
 Each method maps to a reference doc in `references/` and (where computation helps) a script in `scripts/`. The full routing table lives in [SKILL.md](SKILL.md).
 
@@ -86,7 +90,7 @@ Each method maps to a reference doc in `references/` and (where computation help
 ```
 SKILL.md           router — frontmatter trigger + method table
 references/  (23)   the canon: theory + per-method interpretation guides
-scripts/     (13)   deterministic engines (lunar_python + SystemRandom)
+scripts/     (15)   deterministic engines (lunar_python + SystemRandom + optional QRNG)
 assets/      (12)   JSON lookup tables (干支, 64卦, 神煞, Tarot, strokes …)
 evals/             release harness + 12 machine-asserted scenarios
 tests/             pytest golden values + edge cases + independent-engine diff
@@ -101,7 +105,7 @@ Hard red lines (see [references/20-disclaimer.md](references/20-disclaimer.md)):
 ## Quality Gates
 
 ```bash
-python -X utf8 evals/run_checks.py     # release harness (6 checks)
+python -X utf8 evals/run_checks.py     # release harness (7 checks)
 python -m pytest tests/                # unit + integration + independent diff
 ```
 
@@ -111,9 +115,9 @@ CI (Python 3.11 / 3.12) enforces five gates:
 |---|---|
 | `ruff` | linting, zero tolerance |
 | `mypy` | static type checking |
-| `pytest` | **977 tests** — golden values, 立春/late-子时/leap-month edges, 五鼠遁 invariant, differential vs the independent `sxtwl` engine |
-| coverage | subprocess-tracked **82%**, fails under 80% |
-| harness | SKILL.md validation + 12 machine-asserted scenarios + script JSON integrity |
+| `pytest` | **1013 tests** — golden values, 立春/late-子时/leap-month edges, 五鼠遁 invariant, differential vs the independent `sxtwl` engine |
+| coverage | subprocess-tracked **85%**, fails under 80% |
+| harness | SKILL.md validation + interpretive-discipline lock + 12 machine-asserted scenarios + script JSON integrity (7 checks) |
 
 ## Contributing
 

@@ -2,6 +2,36 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.0] — 2026-07-04
+
+Maintenance + correctness sweep: traditional 时辰 boundaries, CI runner
+deadline, qimen school-note, subcommand coverage, README refresh.
+
+### Fixed
+- **huangli 时辰 boundaries (correctness)** — `shichen_detail` used even clock
+  blocks (00-02, 02-04 …) that straddle two traditional 时辰, mislabeling the
+  second half of every block. Now uses the classical odd-start convention
+  (子 23-01, 丑 01-03 … 亥 21-23) with a `shichen` label per block; each
+  block's 干支 branch now provably equals its 时辰 (regression-tested).
+  NOTE: `hour_range` values in output changed — hence the minor version bump.
+
+### Added
+- Qimen 三元 school note: `determine_ju` documents the 简化日数法 vs 拆补置闰法
+  divergence (±1 元 near 节气 edges) in both the script docstring and
+  references/06-qimen.md — honest approximation, no unfounded claims.
+- `tests/test_subcommands.py` (+6, suite 1007 → 1013; coverage 82.5 → 84.8%):
+  hand-verified yijing numbers golden (3/5 → 火风鼎50, 变 火水未济), yijing
+  text / meihua name determinism, xiaoliuren solar golden + 子时 boundary,
+  huangli traditional-boundary regression lock.
+
+### Changed
+- CI actions bumped for the GitHub Node20 runner removal (2026-09-16):
+  checkout v4→v5, setup-python v5→v6, upload-artifact v4→v5.
+- READMEs (中/EN): badges + metrics refreshed (1013 tests / 85% coverage /
+  15 engines / 7-check harness), new feature bullets (解读纪律 CI-lock,
+  optional quantum entropy, exploration tool), methods table gains the
+  exploration row.
+
 ## [1.2.0] — 2026-07-04
 
 Interpretive-discipline release: classical sources become the binding rule.
