@@ -35,6 +35,7 @@ from utils import (
     DIZHI,
     TIANGAN,
     WUHU_DUN,
+    __version__,
     ensure_utf8_stdio,
     hour_branch,
     hour_branch_index,
@@ -45,7 +46,7 @@ from utils import (
     warn,
 )
 
-VERSION = "1.5.0"
+VERSION = __version__
 
 
 # --------------------------------------------------------------------------- #

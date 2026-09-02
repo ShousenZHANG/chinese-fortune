@@ -94,6 +94,15 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 
 
 # --------------------------------------------------------------------------- #
+# Package version — the single source of truth.
+# build_skill.py reads it from here to name the release zip, and every CLI
+# echoes it in its JSON envelope.
+# --------------------------------------------------------------------------- #
+
+__version__ = "1.5.0"
+
+
+# --------------------------------------------------------------------------- #
 # 八卦
 # --------------------------------------------------------------------------- #
 # Lines from top to bottom: list of 3 (1=阳, 0=阴)

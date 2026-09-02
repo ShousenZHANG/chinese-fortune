@@ -33,6 +33,7 @@ from datetime import datetime
 from utils import (
     TIANGAN_WUXING,
     WUXING_KE,
+    __version__,
     ensure_utf8_stdio,
     jiazi_index,
     json_print,
@@ -754,7 +755,7 @@ def main(argv: list[str] | None = None) -> int:
     out = {
         "ok": True,
         "tool": "qimen",
-        "version": "1.0.0",
+        "version": __version__,
         "input": {
             "date": f"{y:04d}-{m:02d}-{d:02d}",
             "time": f"{hh:02d}:{mm:02d}",

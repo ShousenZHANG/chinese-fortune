@@ -17,7 +17,7 @@ exceeds 1024 chars, any bundled script fails to compile, or a required path is
 missing. Deterministic output (sorted, fixed mtime) for reproducible builds.
 
 Usage:
-    python scripts/build_skill.py            # -> dist/chinese-fortune-v1.1.2.zip
+    python scripts/build_skill.py            # -> dist/chinese-fortune-v<version>.zip
     python scripts/build_skill.py --out X    # custom output path
 """
 from __future__ import annotations
@@ -51,9 +51,9 @@ def read_version() -> str:
     Fails hard rather than falling back to "0.0.0": a silent fallback would
     ship a misnamed release zip, and nothing downstream would go red.
     """
-    source = ROOT / "scripts" / "bazi_calc.py"
+    source = ROOT / "scripts" / "utils.py"
     text = source.read_text(encoding="utf-8")
-    m = re.search(r'VERSION\s*=\s*"([^"]+)"', text)
+    m = re.search(r'__version__\s*=\s*"([^"]+)"', text)
     if not m:
         raise SystemExit(
             f"FATAL: no VERSION constant in {source.relative_to(ROOT)}; "

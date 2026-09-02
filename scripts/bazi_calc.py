@@ -1,4 +1,4 @@
-"""Compute a full BaZi (八字) chart — v1.1.
+"""Compute a full BaZi (八字) chart.
 
 Outputs four pillars, hidden stems, 十神, weighted 五行 distribution, 日主旺衰,
 35 神煞 (driven by assets/shensha.json), 用神/喜神/忌神 (扶抑 + 调候 combined),
@@ -38,6 +38,7 @@ from utils import (
     TIANGAN_YIN_YANG,
     WUXING_GEN,
     WUXING_KE,
+    __version__,
     ensure_utf8_stdio,
     json_print,
     longitude_correction,
@@ -48,7 +49,7 @@ from utils import (
     xun_kong,
 )
 
-VERSION = "1.5.0"
+VERSION = __version__
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 

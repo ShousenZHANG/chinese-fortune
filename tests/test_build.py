@@ -107,3 +107,32 @@ def test_default_output_name_carries_the_version(tmp_path, monkeypatch):
     assert proc.returncode == 0, proc.stderr
     produced = list((ROOT / "dist").glob(f"chinese-fortune-v{build_skill.read_version()}.zip"))
     assert produced, f"no versioned zip produced; stdout={proc.stdout[-400:]}"
+
+
+def test_all_engines_report_the_single_version():
+    """Four divergent version sources existed: bazi/ziwei constants, liuren's
+    own __version__ pinned at 1.0.0, and a hardcoded "1.0.0" in qimen's
+    payload. Every engine that emits a version must echo utils.__version__."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import utils
+    from conftest import run_cli
+
+    probes = [
+        ("bazi_calc.py", ["--year", 2000, "--month", 1, "--day", 15,
+                          "--hour", 10, "--gender", "male"]),
+        ("ziwei_calc.py", ["--year", 2000, "--month", 1, "--day", 15,
+                           "--hour", 10, "--gender", "male"]),
+        ("qimen_cast.py", ["--date", "2026-06-24", "--time", "13:05"]),
+        ("liuren_cast.py", ["--date", "2026-06-24", "--time", "13:05"]),
+    ]
+    for script, args in probes:
+        out = run_cli(script, *args)
+        assert out["version"] == utils.__version__, script
+
+
+def test_build_reads_version_from_utils():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_skill
+    import utils
+
+    assert build_skill.read_version() == utils.__version__

@@ -31,15 +31,13 @@ from utils import (
     TIANGAN_YIN_YANG,
     WUXING_GEN,
     WUXING_KE,
+    __version__,
     chong_branch,
     ensure_utf8_stdio,
     hour_branch,
     json_print,
     require_lunar,
 )
-
-__version__ = "1.0.0"
-
 
 # --------------------------------------------------------------------------- #
 # 12 月将: 中气 boundary -> 月将地支 + 神名
