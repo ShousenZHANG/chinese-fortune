@@ -162,3 +162,14 @@ def test_every_asset_is_reachable_from_a_script():
     orphans = [f.name for f in sorted((ROOT / "assets").glob("*.json"))
                if f.name not in scripts]
     assert not orphans, f"assets no script reads: {orphans}"
+
+
+def test_no_script_exceeds_the_size_limit():
+    """The project's own limit is 200-400 lines typical, 800 max. bazi_calc was
+    2.1x that and ziwei_calc 1.3x before the v1.5.1 split; keep them there."""
+    oversize = {
+        f.name: sum(1 for _ in f.open(encoding="utf-8"))
+        for f in sorted((ROOT / "scripts").glob("*.py"))
+        if sum(1 for _ in f.open(encoding="utf-8")) > 800
+    }
+    assert not oversize, f"scripts over the 800-line maximum: {oversize}"

@@ -1,0 +1,766 @@
+{
+  "ok": true,
+  "tool": "ziwei",
+  "input": {
+    "year": 2000,
+    "month": 1,
+    "day": 15,
+    "hour": 10,
+    "minute": 0,
+    "gender": "male",
+    "tz": 8.0,
+    "longitude": 120.0,
+    "lunar": false,
+    "liu_year": null,
+    "no_patterns": false,
+    "no_sihua": false
+  },
+  "true_solar_time_applied": false,
+  "solar_date": {
+    "year": 2000,
+    "month": 1,
+    "day": 15,
+    "hour": 10,
+    "minute": 0
+  },
+  "lunar_date": {
+    "year": 1999,
+    "month": 12,
+    "day": 9,
+    "year_ganzhi": "己卯",
+    "month_chinese": "腊",
+    "day_chinese": "初九"
+  },
+  "year_stem": "己",
+  "year_branch": "卯",
+  "wuxing_ju": {
+    "number": 4,
+    "name": "金四局"
+  },
+  "ming_gong": {
+    "branch": "申",
+    "stem": "壬",
+    "ganzhi": "壬申"
+  },
+  "shen_gong": {
+    "branch": "午"
+  },
+  "ming_zhu": "文曲",
+  "shen_zhu": "天同",
+  "dou_jun": "申宫",
+  "ziwei_position": "丑",
+  "main_stars_positions": {
+    "紫微": "丑",
+    "天机": "子",
+    "太阳": "戌",
+    "武曲": "酉",
+    "天同": "申",
+    "廉贞": "巳",
+    "天府": "卯",
+    "太阴": "辰",
+    "贪狼": "巳",
+    "巨门": "午",
+    "天相": "未",
+    "天梁": "申",
+    "七杀": "酉",
+    "破军": "丑"
+  },
+  "lucky_stars_positions": {
+    "左辅": "卯",
+    "右弼": "亥",
+    "文昌": "巳",
+    "文曲": "酉",
+    "天魁": "子",
+    "天钺": "申"
+  },
+  "malefic_stars_positions": {
+    "禄存": "午",
+    "擎羊": "未",
+    "陀罗": "巳",
+    "火星": "寅",
+    "铃星": "卯",
+    "地空": "午",
+    "地劫": "辰"
+  },
+  "miscellaneous_stars_positions": {
+    "天马": "巳",
+    "红鸾": "子",
+    "天喜": "午",
+    "孤辰": "巳",
+    "寡宿": "丑",
+    "天哭": "卯",
+    "天虚": "酉",
+    "龙池": "未",
+    "凤阁": "未"
+  },
+  "twelve_palaces": [
+    {
+      "index": 0,
+      "name": "命宫",
+      "branch": "申",
+      "stem": "壬",
+      "ganzhi": "壬申",
+      "main_stars": [
+        {
+          "name": "天同",
+          "brightness": "旺"
+        },
+        {
+          "name": "天梁",
+          "brightness": "陷"
+        }
+      ],
+      "lucky_stars": [
+        "天钺"
+      ],
+      "malefic_stars": [],
+      "miscellaneous_stars": [],
+      "sihua_native": [
+        "化科(天梁)"
+      ],
+      "self_transformations": [
+        "自化禄"
+      ],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "申",
+        "对宫": "寅",
+        "三合": [
+          "子",
+          "辰"
+        ]
+      },
+      "is_ming_gong": true,
+      "is_shen_gong": false
+    },
+    {
+      "index": 1,
+      "name": "兄弟宫",
+      "branch": "未",
+      "stem": "辛",
+      "ganzhi": "辛未",
+      "main_stars": [
+        {
+          "name": "天相",
+          "brightness": "庙"
+        }
+      ],
+      "lucky_stars": [],
+      "malefic_stars": [
+        "擎羊"
+      ],
+      "miscellaneous_stars": [
+        "龙池",
+        "凤阁"
+      ],
+      "sihua_native": [],
+      "self_transformations": [],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "未",
+        "对宫": "丑",
+        "三合": [
+          "亥",
+          "卯"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 2,
+      "name": "夫妻宫",
+      "branch": "午",
+      "stem": "庚",
+      "ganzhi": "庚午",
+      "main_stars": [
+        {
+          "name": "巨门",
+          "brightness": "旺"
+        }
+      ],
+      "lucky_stars": [],
+      "malefic_stars": [
+        "禄存",
+        "地空"
+      ],
+      "miscellaneous_stars": [
+        "天喜"
+      ],
+      "sihua_native": [],
+      "self_transformations": [],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "午",
+        "对宫": "子",
+        "三合": [
+          "戌",
+          "寅"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": true
+    },
+    {
+      "index": 3,
+      "name": "子女宫",
+      "branch": "巳",
+      "stem": "己",
+      "ganzhi": "己巳",
+      "main_stars": [
+        {
+          "name": "廉贞",
+          "brightness": "陷"
+        },
+        {
+          "name": "贪狼",
+          "brightness": "陷"
+        }
+      ],
+      "lucky_stars": [
+        "文昌"
+      ],
+      "malefic_stars": [
+        "陀罗"
+      ],
+      "miscellaneous_stars": [
+        "天马",
+        "孤辰"
+      ],
+      "sihua_native": [
+        "化权(贪狼)"
+      ],
+      "self_transformations": [
+        "自化权"
+      ],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "巳",
+        "对宫": "亥",
+        "三合": [
+          "酉",
+          "丑"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 4,
+      "name": "财帛宫",
+      "branch": "辰",
+      "stem": "戊",
+      "ganzhi": "戊辰",
+      "main_stars": [
+        {
+          "name": "太阴",
+          "brightness": "陷"
+        }
+      ],
+      "lucky_stars": [],
+      "malefic_stars": [
+        "地劫"
+      ],
+      "miscellaneous_stars": [],
+      "sihua_native": [],
+      "self_transformations": [
+        "自化权"
+      ],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "辰",
+        "对宫": "戌",
+        "三合": [
+          "申",
+          "子"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 5,
+      "name": "疾厄宫",
+      "branch": "卯",
+      "stem": "丁",
+      "ganzhi": "丁卯",
+      "main_stars": [
+        {
+          "name": "天府",
+          "brightness": "旺"
+        }
+      ],
+      "lucky_stars": [
+        "左辅"
+      ],
+      "malefic_stars": [
+        "铃星"
+      ],
+      "miscellaneous_stars": [
+        "天哭"
+      ],
+      "sihua_native": [],
+      "self_transformations": [],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "卯",
+        "对宫": "酉",
+        "三合": [
+          "未",
+          "亥"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 6,
+      "name": "迁移宫",
+      "branch": "寅",
+      "stem": "丙",
+      "ganzhi": "丙寅",
+      "main_stars": [],
+      "lucky_stars": [],
+      "malefic_stars": [
+        "火星"
+      ],
+      "miscellaneous_stars": [],
+      "sihua_native": [],
+      "self_transformations": [],
+      "borrowed": true,
+      "borrowed_stars": [
+        "天同",
+        "天梁"
+      ],
+      "borrowed_from_branch": "申",
+      "san_fang_si_zheng": {
+        "本宫": "寅",
+        "对宫": "申",
+        "三合": [
+          "午",
+          "戌"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 7,
+      "name": "奴仆宫",
+      "branch": "丑",
+      "stem": "丁",
+      "ganzhi": "丁丑",
+      "main_stars": [
+        {
+          "name": "紫微",
+          "brightness": "庙"
+        },
+        {
+          "name": "破军",
+          "brightness": "旺"
+        }
+      ],
+      "lucky_stars": [],
+      "malefic_stars": [],
+      "miscellaneous_stars": [
+        "寡宿"
+      ],
+      "sihua_native": [],
+      "self_transformations": [],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "丑",
+        "对宫": "未",
+        "三合": [
+          "巳",
+          "酉"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 8,
+      "name": "官禄宫",
+      "branch": "子",
+      "stem": "丙",
+      "ganzhi": "丙子",
+      "main_stars": [
+        {
+          "name": "天机",
+          "brightness": "庙"
+        }
+      ],
+      "lucky_stars": [
+        "天魁"
+      ],
+      "malefic_stars": [],
+      "miscellaneous_stars": [
+        "红鸾"
+      ],
+      "sihua_native": [],
+      "self_transformations": [
+        "自化权"
+      ],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "子",
+        "对宫": "午",
+        "三合": [
+          "辰",
+          "申"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 9,
+      "name": "田宅宫",
+      "branch": "亥",
+      "stem": "乙",
+      "ganzhi": "乙亥",
+      "main_stars": [],
+      "lucky_stars": [
+        "右弼"
+      ],
+      "malefic_stars": [],
+      "miscellaneous_stars": [],
+      "sihua_native": [],
+      "self_transformations": [],
+      "borrowed": true,
+      "borrowed_stars": [
+        "廉贞",
+        "贪狼"
+      ],
+      "borrowed_from_branch": "巳",
+      "san_fang_si_zheng": {
+        "本宫": "亥",
+        "对宫": "巳",
+        "三合": [
+          "卯",
+          "未"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 10,
+      "name": "福德宫",
+      "branch": "戌",
+      "stem": "甲",
+      "ganzhi": "甲戌",
+      "main_stars": [
+        {
+          "name": "太阳",
+          "brightness": "陷"
+        }
+      ],
+      "lucky_stars": [],
+      "malefic_stars": [],
+      "miscellaneous_stars": [],
+      "sihua_native": [],
+      "self_transformations": [
+        "自化忌"
+      ],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "戌",
+        "对宫": "辰",
+        "三合": [
+          "寅",
+          "午"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    },
+    {
+      "index": 11,
+      "name": "父母宫",
+      "branch": "酉",
+      "stem": "癸",
+      "ganzhi": "癸酉",
+      "main_stars": [
+        {
+          "name": "武曲",
+          "brightness": "旺"
+        },
+        {
+          "name": "七杀",
+          "brightness": "陷"
+        }
+      ],
+      "lucky_stars": [
+        "文曲"
+      ],
+      "malefic_stars": [],
+      "miscellaneous_stars": [
+        "天虚"
+      ],
+      "sihua_native": [
+        "化禄(武曲)",
+        "化忌(文曲)"
+      ],
+      "self_transformations": [],
+      "borrowed": false,
+      "borrowed_stars": [],
+      "borrowed_from_branch": null,
+      "san_fang_si_zheng": {
+        "本宫": "酉",
+        "对宫": "卯",
+        "三合": [
+          "丑",
+          "巳"
+        ]
+      },
+      "is_ming_gong": false,
+      "is_shen_gong": false
+    }
+  ],
+  "four_transformations_native": {
+    "禄": "武曲",
+    "权": "贪狼",
+    "科": "天梁",
+    "忌": "文曲"
+  },
+  "da_xian": [
+    {
+      "index": 1,
+      "palace_index": 0,
+      "palace_name": "命宫",
+      "palace_branch": "申",
+      "palace_stem": "壬",
+      "age_range": "4-13",
+      "start_age": 4,
+      "end_age": 13,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "天梁",
+        "权": "紫微",
+        "科": "左辅",
+        "忌": "武曲"
+      }
+    },
+    {
+      "index": 2,
+      "palace_index": 11,
+      "palace_name": "父母宫",
+      "palace_branch": "酉",
+      "palace_stem": "癸",
+      "age_range": "14-23",
+      "start_age": 14,
+      "end_age": 23,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "破军",
+        "权": "巨门",
+        "科": "太阴",
+        "忌": "贪狼"
+      }
+    },
+    {
+      "index": 3,
+      "palace_index": 10,
+      "palace_name": "福德宫",
+      "palace_branch": "戌",
+      "palace_stem": "甲",
+      "age_range": "24-33",
+      "start_age": 24,
+      "end_age": 33,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "廉贞",
+        "权": "破军",
+        "科": "武曲",
+        "忌": "太阳"
+      }
+    },
+    {
+      "index": 4,
+      "palace_index": 9,
+      "palace_name": "田宅宫",
+      "palace_branch": "亥",
+      "palace_stem": "乙",
+      "age_range": "34-43",
+      "start_age": 34,
+      "end_age": 43,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "天机",
+        "权": "天梁",
+        "科": "紫微",
+        "忌": "太阴"
+      }
+    },
+    {
+      "index": 5,
+      "palace_index": 8,
+      "palace_name": "官禄宫",
+      "palace_branch": "子",
+      "palace_stem": "丙",
+      "age_range": "44-53",
+      "start_age": 44,
+      "end_age": 53,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "天同",
+        "权": "天机",
+        "科": "文昌",
+        "忌": "廉贞"
+      }
+    },
+    {
+      "index": 6,
+      "palace_index": 7,
+      "palace_name": "奴仆宫",
+      "palace_branch": "丑",
+      "palace_stem": "丁",
+      "age_range": "54-63",
+      "start_age": 54,
+      "end_age": 63,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "太阴",
+        "权": "天同",
+        "科": "天机",
+        "忌": "巨门"
+      }
+    },
+    {
+      "index": 7,
+      "palace_index": 6,
+      "palace_name": "迁移宫",
+      "palace_branch": "寅",
+      "palace_stem": "丙",
+      "age_range": "64-73",
+      "start_age": 64,
+      "end_age": 73,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "天同",
+        "权": "天机",
+        "科": "文昌",
+        "忌": "廉贞"
+      }
+    },
+    {
+      "index": 8,
+      "palace_index": 5,
+      "palace_name": "疾厄宫",
+      "palace_branch": "卯",
+      "palace_stem": "丁",
+      "age_range": "74-83",
+      "start_age": 74,
+      "end_age": 83,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "太阴",
+        "权": "天同",
+        "科": "天机",
+        "忌": "巨门"
+      }
+    },
+    {
+      "index": 9,
+      "palace_index": 4,
+      "palace_name": "财帛宫",
+      "palace_branch": "辰",
+      "palace_stem": "戊",
+      "age_range": "84-93",
+      "start_age": 84,
+      "end_age": 93,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "贪狼",
+        "权": "太阴",
+        "科": "右弼",
+        "忌": "天机"
+      }
+    },
+    {
+      "index": 10,
+      "palace_index": 3,
+      "palace_name": "子女宫",
+      "palace_branch": "巳",
+      "palace_stem": "己",
+      "age_range": "94-103",
+      "start_age": 94,
+      "end_age": 103,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "武曲",
+        "权": "贪狼",
+        "科": "天梁",
+        "忌": "文曲"
+      }
+    },
+    {
+      "index": 11,
+      "palace_index": 2,
+      "palace_name": "夫妻宫",
+      "palace_branch": "午",
+      "palace_stem": "庚",
+      "age_range": "104-113",
+      "start_age": 104,
+      "end_age": 113,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "太阳",
+        "权": "武曲",
+        "科": "太阴",
+        "忌": "天同"
+      }
+    },
+    {
+      "index": 12,
+      "palace_index": 1,
+      "palace_name": "兄弟宫",
+      "palace_branch": "未",
+      "palace_stem": "辛",
+      "age_range": "114-123",
+      "start_age": 114,
+      "end_age": 123,
+      "direction": "逆行",
+      "transformations": {
+        "禄": "巨门",
+        "权": "太阳",
+        "科": "文曲",
+        "忌": "文昌"
+      }
+    }
+  ],
+  "liu_nian_sihua": null,
+  "patterns": [
+    {
+      "name": "机月同梁",
+      "type": "中上格",
+      "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴"
+    }
+  ],
+  "notes": [
+    "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
+    "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",
+    "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",
+    "三合派与飞星派对火铃起例及部分自化有分歧, 本脚本采用《紫微斗数全书》主流。"
+  ]
+}

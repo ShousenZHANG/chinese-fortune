@@ -298,3 +298,23 @@ def test_help_documents_output_keys(script):
     )
     assert proc.returncode == 0
     assert "Top-level JSON keys" in proc.stdout, f"{script} --help has no schema"
+
+
+@needs_lunar
+def test_ziwei_full_output_snapshot():
+    """Value-level lock ahead of the ziwei_calc module split.
+
+    evals only asserts has_keys for this engine, so 命宫/身宫/五行局/星位/四化/
+    大限 values were unguarded — the same gap the bazi snapshot closed."""
+    import json
+    from pathlib import Path
+
+    from conftest import run_cli
+
+    got = run_cli("ziwei_calc.py", "--year", 2000, "--month", 1, "--day", 15,
+                  "--hour", 10, "--gender", "male")
+    got.pop("version", None)
+    want = json.loads(
+        (Path(__file__).resolve().parent / "data" /
+         "ziwei_snapshot_20000115.json").read_text(encoding="utf-8"))
+    assert got == want

@@ -149,11 +149,11 @@ def test_engines_delegate_to_the_shared_hour_helper():
     import meihua_cast
     import xiaoliuren_cast
     import yijing_cast
-    import ziwei_calc
+    import ziwei_tables
     from utils import hour_branch, shichen_number
 
     for h in range(24):
-        assert ziwei_calc.branch_of_hour(h) == hour_branch(h)
+        assert ziwei_tables.branch_of_hour(h) == hour_branch(h)
         assert liuren_cast.hour_to_zhi(h) == hour_branch(h)
         assert xiaoliuren_cast.hour_branch_from_hour(h) == hour_branch(h)
         assert meihua_cast.shichen_num(h) == shichen_number(h)
