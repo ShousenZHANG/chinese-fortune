@@ -2,6 +2,62 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.1] — 2026-09-02
+
+Gate-hardening release. No behaviour changes to any engine; the release
+harness now fails where it previously passed vacuously.
+
+### Fixed
+- `check_release_cleanliness` ignored `git ls-files`' exit code, so the
+  committed-`.pyc` gate degraded to a loop over an empty list — reporting
+  PASS — whenever git failed or the tree was not a worktree.
+- `check_interpretive_discipline` guarded SKILL.md with 8 needles but
+  `agents/openai.yaml` with a single substring, so four of the five classics
+  and both discipline clauses could be stripped from the agent prompt with the
+  gate still green. The needle lists are now symmetric constants. This
+  immediately surfaced a real gap: openai.yaml carried the clauses only in
+  English, so the canonical 凡古籍无据者不妄断 / 禁止套话和迎合 anchors are now
+  present in both files.
+- `check_unit_tests` crashed inside its own failure path — pytest output that
+  is not valid UTF-8 on a CJK console left `proc.stdout` as `None`, so a
+  failing test surfaced as the harness's own `TypeError` rather than the
+  failure it was meant to report.
+- `build_skill.read_version()` fell back to `"0.0.0"` when the VERSION
+  constant was absent, and `test_build` always passed `--out`, so the
+  version-derived default filename was never exercised. A refactor moving the
+  constant would have shipped a misnamed zip with nothing red.
+
+### Added
+- **`--help` is now the output schema.** Every CLI's parser carries an epilog
+  listing its top-level JSON keys and the error contract. Callers previously
+  had no documented way to learn that BaZi emits `four_pillars` (not
+  `pillars`), or that 黄历 emits `ji_shi` / `xiong_shi` / `shichen_detail` —
+  `four_pillars` appears in zero `.md` or `.yaml` files. Kept in argparse
+  rather than a `docs/` file so the schema cannot drift from the CLI it
+  documents.
+- Tests for the release harness itself, which previously had none.
+- A lock on the ANU quantum honesty disclaimer, which could be deleted with
+  every check and all 1039 tests still green.
+- eval #7 asserted a single CJK character (蛇) in a 38 KB asset; it now
+  asserts the dual-reading structure its `expected_output` promises. (The
+  obvious 传统/心理 needles were checked against the asset first and do not
+  occur — those keys are English.)
+- eval #13 locks the qimen 三元 honesty note, which shipped in v1.3.0 with no
+  invariant lock unlike every other honesty text in the project.
+
+### Changed
+- CI lints the whole repo, not just `scripts/` + `tests/` — `run_checks.py`,
+  the release gate itself, was never linted.
+- Documentation claims corrected after verifying each against the code:
+  `assets/` does NOT hold 1900-2100 fallback tables (no script reads them and
+  `require_lunar()` exits 1); `64hex.json` has no 序卦/综卦 fields; SKILL.md's
+  闰月 pointer led to a section that never mentions 闰月; CONTRIBUTING still
+  said "4 checks" in both language sections; CHANGELOG dated 1.2.0/1.3.0
+  2026-07-04 when both commits are 2026-07-17; the READMEs claimed every
+  method has a `references/` doc, which 随机寻访 does not.
+
+Suite 1039 → 1064, coverage floor unchanged.
+
 ## [1.4.0] — 2026-09-02
 
 Correctness release. Two engines were returning wrong answers with full
