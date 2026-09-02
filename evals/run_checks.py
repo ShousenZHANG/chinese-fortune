@@ -142,24 +142,34 @@ def check_reference_coverage() -> None:
             fail(f"missing reference file: {ref}")
 
 
+FIVE_CLASSICS = ["子平真诠", "滴天髓", "穷通宝鉴", "三命通会", "渊海子平"]
+
+SKILL_DISCIPLINE_NEEDLES = [
+    "解读纪律",
+    *FIVE_CLASSICS,
+    "凡古籍无据者不妄断",
+    "禁止套话和迎合",
+    "可验证性最高",
+]
+
+# Kept symmetric with SKILL.md's list on purpose: guarding openai.yaml with a
+# single substring let four of the five classics and both discipline clauses
+# be stripped while this gate still reported PASS.
+AGENT_DISCIPLINE_NEEDLES = [*FIVE_CLASSICS, "凡古籍无据者不妄断"]
+
+
 def check_interpretive_discipline() -> None:
-    """SKILL.md must carry the classical-source interpretive discipline:
-    judgments anchored in the five classics, no unsupported claims, no
-    platitudes/flattery, strongest-evidence conclusions only."""
+    """SKILL.md and agents/openai.yaml must carry the classical-source
+    interpretive discipline: judgments anchored in the five classics, no
+    unsupported claims, no platitudes/flattery, strongest evidence only."""
     skill_text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    needles = [
-        "解读纪律",
-        "子平真诠", "滴天髓", "穷通宝鉴", "三命通会", "渊海子平",
-        "凡古籍无据者不妄断",
-        "禁止套话和迎合",
-        "可验证性最高",
-    ]
-    for needle in needles:
+    for needle in SKILL_DISCIPLINE_NEEDLES:
         if needle not in skill_text:
             fail(f"SKILL.md missing interpretive-discipline element: {needle!r}")
     agent_text = (ROOT / "agents" / "openai.yaml").read_text(encoding="utf-8")
-    if "子平真诠" not in agent_text:
-        fail("agents/openai.yaml missing classics anchor in default_prompt")
+    for needle in AGENT_DISCIPLINE_NEEDLES:
+        if needle not in agent_text:
+            fail(f"agents/openai.yaml missing interpretive-discipline element: {needle!r}")
 
 
 def check_release_cleanliness() -> None:
@@ -172,12 +182,17 @@ def check_release_cleanliness() -> None:
     # Only TRACKED generated artifacts are a problem; gitignored runtime
     # __pycache__/*.pyc regenerate on every import and must not fail the suite.
     try:
-        tracked = subprocess.run(
+        proc = subprocess.run(
             ["git", "ls-files"], cwd=ROOT, text=True, encoding="utf-8",
-            capture_output=True, timeout=15,
-        ).stdout.splitlines()
-    except (OSError, subprocess.SubprocessError):
-        tracked = []
+            errors="replace", capture_output=True, timeout=15,
+        )
+    except (OSError, subprocess.SubprocessError) as exc:
+        fail(f"git ls-files could not run, so tracked .pyc files cannot be "
+             f"verified: {exc}")
+    if proc.returncode != 0:
+        fail(f"git ls-files failed (rc={proc.returncode}), so tracked .pyc "
+             f"files cannot be verified: {(proc.stderr or '')[:200]}")
+    tracked = (proc.stdout or "").splitlines()
     committed_cache = [p for p in tracked if p.endswith(".pyc") or "__pycache__" in p]
     if committed_cache:
         fail(f"generated Python cache files committed: {committed_cache}")
@@ -258,11 +273,15 @@ def check_eval_assertions() -> None:
 def check_unit_tests() -> None:
     proc = subprocess.run(
         [sys.executable, "-m", "pytest", "tests/", "-q"],
-        cwd=ROOT, text=True, encoding="utf-8",
+        # errors="replace": pytest output can carry bytes that are not
+        # valid UTF-8 on a CJK console, and a decode error here used to
+        # mask the real test failure with the harness's own traceback.
+        cwd=ROOT, text=True, encoding="utf-8", errors="replace",
         stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=180,
     )
     if proc.returncode != 0:
-        fail(f"pytest failed:\n{proc.stdout[-1500:]}")
+        output = (proc.stdout or "")[-1500:] or "(no output captured)"
+        fail(f"pytest failed:\n{output}")
 
 
 def main() -> int:

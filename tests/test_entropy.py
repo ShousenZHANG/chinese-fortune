@@ -119,3 +119,24 @@ def test_yijing_entropy_field_and_seed_reproducible():
 def test_tarot_default_entropy_is_system():
     d = _run("tarot_draw.py", "three", "--question", "x")
     assert d["entropy"]["source"] == "system_csprng"
+
+
+# --------------------------------------------------------------------------- #
+# 诚实声明锁 — 量子熵源不得暗示提升准确度
+# --------------------------------------------------------------------------- #
+
+def test_quantum_provenance_carries_no_accuracy_claim():
+    """The ANU QRNG honesty disclaimer had no lock at all: it could be deleted
+    and all harness checks plus the whole suite still passed.
+
+    This pins the emitted JSON, not just the source text."""
+    import entropy
+
+    class _NotDegraded:
+        degraded = False
+
+    prov = entropy.describe(_NotDegraded(), "quantum", None)
+    blob = json.dumps(prov, ensure_ascii=False)
+    assert "不影响卦象准确度" in blob, (
+        f"quantum provenance lost its no-accuracy-claim disclaimer: {blob}"
+    )

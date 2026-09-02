@@ -15,9 +15,37 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/bazi_calc.py", "--year", "1990", "--month", "5", "--day", "10", "--hour", "14", "--minute", "30", "--gender", "male", "--longitude", "116.4", "--as-of-year", "2026"],
-          "paths": {"ok": true, "four_pillars.day.ganzhi": "乙亥", "four_pillars.year.ganzhi": "庚午", "day_master.stem": "乙"},
-          "has_keys": ["da_yun", "shen_sha", "yong_shen", "ge_ju"]
+          "cmd": [
+            "scripts/bazi_calc.py",
+            "--year",
+            "1990",
+            "--month",
+            "5",
+            "--day",
+            "10",
+            "--hour",
+            "14",
+            "--minute",
+            "30",
+            "--gender",
+            "male",
+            "--longitude",
+            "116.4",
+            "--as-of-year",
+            "2026"
+          ],
+          "paths": {
+            "ok": true,
+            "four_pillars.day.ganzhi": "乙亥",
+            "four_pillars.year.ganzhi": "庚午",
+            "day_master.stem": "乙"
+          },
+          "has_keys": [
+            "da_yun",
+            "shen_sha",
+            "yong_shen",
+            "ge_ju"
+          ]
         }
       ]
     },
@@ -29,9 +57,23 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/yijing_cast.py", "coins", "--seed", "42", "--question", "跳槽"],
-          "paths": {"main_hex.number": 22, "main_hex.name": "山火贲"},
-          "has_keys": ["changed_hex", "nuclear_hex", "active_lines"]
+          "cmd": [
+            "scripts/yijing_cast.py",
+            "coins",
+            "--seed",
+            "42",
+            "--question",
+            "跳槽"
+          ],
+          "paths": {
+            "main_hex.number": 22,
+            "main_hex.name": "山火贲"
+          },
+          "has_keys": [
+            "changed_hex",
+            "nuclear_hex",
+            "active_lines"
+          ]
         }
       ]
     },
@@ -43,9 +85,20 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/zodiac_compat.py", "compat", "--a", "虎", "--b", "猴"],
-          "paths": {"score": 1},
-          "contains": {"summary": "相冲"}
+          "cmd": [
+            "scripts/zodiac_compat.py",
+            "compat",
+            "--a",
+            "虎",
+            "--b",
+            "猴"
+          ],
+          "paths": {
+            "score": 1
+          },
+          "contains": {
+            "summary": "相冲"
+          }
         }
       ]
     },
@@ -57,8 +110,17 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/huangli_query.py", "--date", "2026-06-01"],
-          "has_keys": ["yi", "ji", "ganzhi.day", "zhi_shen_12jianchu"]
+          "cmd": [
+            "scripts/huangli_query.py",
+            "--date",
+            "2026-06-01"
+          ],
+          "has_keys": [
+            "yi",
+            "ji",
+            "ganzhi.day",
+            "zhi_shen_12jianchu"
+          ]
         }
       ]
     },
@@ -70,9 +132,22 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/tarot_draw.py", "three", "--seed", "42", "--question", "感情"],
-          "count": {"cards": 3},
-          "has_keys": ["cards.0.card_name_zh", "cards.0.orientation", "summary"]
+          "cmd": [
+            "scripts/tarot_draw.py",
+            "three",
+            "--seed",
+            "42",
+            "--question",
+            "感情"
+          ],
+          "count": {
+            "cards": 3
+          },
+          "has_keys": [
+            "cards.0.card_name_zh",
+            "cards.0.orientation",
+            "summary"
+          ]
         }
       ]
     },
@@ -84,8 +159,19 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/name_analyze.py", "--name", "张子涵"],
-          "has_keys": ["five_grids.tian_ge", "five_grids.ren_ge", "five_grids.di_ge", "five_grids.wai_ge", "five_grids.zong_ge", "san_cai"]
+          "cmd": [
+            "scripts/name_analyze.py",
+            "--name",
+            "张子涵"
+          ],
+          "has_keys": [
+            "five_grids.tian_ge",
+            "five_grids.ren_ge",
+            "five_grids.di_ge",
+            "five_grids.wai_ge",
+            "five_grids.zong_ge",
+            "san_cai"
+          ]
         }
       ]
     },
@@ -98,7 +184,12 @@
         {
           "kind": "file_contains",
           "file": "assets/jiemeng.json",
-          "needles": ["蛇"]
+          "needles": [
+            "蛇",
+            "traditional",
+            "modern_psychology",
+            "蛇变龙"
+          ]
         }
       ]
     },
@@ -111,12 +202,18 @@
         {
           "kind": "file_contains",
           "file": "references/20-disclaimer.md",
-          "needles": ["预测死亡", "婉拒", "红线"]
+          "needles": [
+            "预测死亡",
+            "婉拒",
+            "红线"
+          ]
         },
         {
           "kind": "file_contains",
           "file": "SKILL.md",
-          "needles": ["20-disclaimer.md"]
+          "needles": [
+            "20-disclaimer.md"
+          ]
         }
       ]
     },
@@ -128,9 +225,30 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/ziwei_calc.py", "--year", "1995", "--month", "7", "--day", "20", "--hour", "1", "--gender", "female", "--lunar"],
-          "paths": {"ok": true},
-          "has_keys": ["ming_gong", "shen_gong", "wuxing_ju", "ziwei_position", "ming_zhu"]
+          "cmd": [
+            "scripts/ziwei_calc.py",
+            "--year",
+            "1995",
+            "--month",
+            "7",
+            "--day",
+            "20",
+            "--hour",
+            "1",
+            "--gender",
+            "female",
+            "--lunar"
+          ],
+          "paths": {
+            "ok": true
+          },
+          "has_keys": [
+            "ming_gong",
+            "shen_gong",
+            "wuxing_ju",
+            "ziwei_position",
+            "ming_zhu"
+          ]
         }
       ]
     },
@@ -143,7 +261,10 @@
         {
           "kind": "file_contains",
           "file": "references/08-fengshui.md",
-          "needles": ["床头", "八宅"]
+          "needles": [
+            "床头",
+            "八宅"
+          ]
         }
       ]
     },
@@ -155,8 +276,22 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/meihua_cast.py", "numbers", "--upper", "3", "--lower", "5", "--question", "决定"],
-          "has_keys": ["main_hex", "changed_hex", "nuclear_hex", "ti_yong"]
+          "cmd": [
+            "scripts/meihua_cast.py",
+            "numbers",
+            "--upper",
+            "3",
+            "--lower",
+            "5",
+            "--question",
+            "决定"
+          ],
+          "has_keys": [
+            "main_hex",
+            "changed_hex",
+            "nuclear_hex",
+            "ti_yong"
+          ]
         }
       ]
     },
@@ -168,9 +303,65 @@
       "assertions": [
         {
           "kind": "script",
-          "cmd": ["scripts/bazi_calc.py", "--year", "1988", "--month", "2", "--day", "14", "--hour", "15", "--gender", "male", "--as-of-year", "2026"],
-          "paths": {"ok": true},
-          "has_keys": ["four_pillars.day.ganzhi", "yong_shen", "da_yun"]
+          "cmd": [
+            "scripts/bazi_calc.py",
+            "--year",
+            "1988",
+            "--month",
+            "2",
+            "--day",
+            "14",
+            "--hour",
+            "15",
+            "--gender",
+            "male",
+            "--as-of-year",
+            "2026"
+          ],
+          "paths": {
+            "ok": true
+          },
+          "has_keys": [
+            "four_pillars.day.ganzhi",
+            "yong_shen",
+            "da_yun"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "qimen-school-note-honesty",
+      "prompt": "帮我起一个奇门遁甲的盘，今天下午一点。",
+      "expected_output": "Should call scripts/qimen_cast.py, report 局数/值符/值使/九宫, and — when the date is near a 节气 boundary — state that this tool uses 简化日数法 and that 拆补置闰法 may differ by one 元. Must not claim the chosen school is the only correct one. Reference 06-qimen.md.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/qimen_cast.py",
+            "--date",
+            "2026-06-24",
+            "--time",
+            "13:05"
+          ],
+          "has_keys": [
+            "san_yuan",
+            "ju_type",
+            "ju_number",
+            "zhi_fu_star",
+            "zhi_shi_men",
+            "palaces"
+          ]
+        },
+        {
+          "kind": "file_contains",
+          "file": "references/06-qimen.md",
+          "needles": [
+            "流派注",
+            "简化日数法",
+            "拆补置闰",
+            "不妄断"
+          ]
         }
       ]
     }
