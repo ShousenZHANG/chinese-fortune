@@ -80,3 +80,44 @@ def test_zodiac_compat_unknown_exits_nonzero():
     from conftest import run_cli
     d = run_cli("zodiac_compat.py", "compat", "--a", "鼠", "--b", "XX", expect_rc=1)
     assert "error" in d
+
+
+# --------------------------------------------------------------------------- #
+# 不揣测时辰 — lunar2solar 无时辰时不得输出时柱
+# --------------------------------------------------------------------------- #
+
+def test_lunar2solar_without_hour_emits_no_hour_pillar():
+    """00-intake.md: 时辰未知 → 时柱缺如, 标注"时柱待补". 不揣测时辰.
+
+    lunar2solar took no --hour, silently used 12:00, and still published a
+    fully-formed 时柱 — a fabricated pillar in exactly the unknown-hour case
+    the intake table prescribes this tool for.
+    """
+    from conftest import run_cli
+    d = run_cli("lunar_convert.py", "lunar2solar",
+                "--year", 1958, "--month", 9, "--day", 12)
+    assert d["solar_date"]["iso"] == "1958-10-24"
+    assert d["lunar_date"]["time_in_ganzhi"] is None
+    assert d["ganzhi"]["hour"] is None
+    assert "待补" in d["lunar_date"]["time_note"]
+    # the three determinate pillars are unaffected
+    assert d["ganzhi"]["day"] == "甲戌"
+
+
+def test_lunar2solar_with_hour_emits_the_hour_pillar():
+    """Supplying --hour makes the 时柱 legitimate, so it must appear."""
+    from conftest import run_cli
+    d = run_cli("lunar_convert.py", "lunar2solar",
+                "--year", 1958, "--month", 9, "--day", 12, "--hour", 12)
+    assert d["ganzhi"]["hour"] == "庚午"
+    assert d["lunar_date"]["time_in_ganzhi"] == "庚午"
+
+
+def test_solar2lunar_without_hour_emits_no_hour_pillar():
+    """Same rule: --hour defaulting to 0 is indistinguishable from a user who
+    genuinely said 子时."""
+    from conftest import run_cli
+    d = run_cli("lunar_convert.py", "solar2lunar",
+                "--year", 1958, "--month", 10, "--day", 24)
+    assert d["ganzhi"]["hour"] is None
+    assert "待补" in d["lunar_date"]["time_note"]

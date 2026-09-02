@@ -119,6 +119,9 @@ def hex_lookup_by_trigrams(upper_bin: int, lower_bin: int) -> tuple[int, str]:
 # Hex assets loading
 # --------------------------------------------------------------------------- #
 
+YAO_POSITION_NAMES = ["初爻", "二爻", "三爻", "四爻", "五爻", "上爻"]
+
+
 def yao_title(position: int, type_: str) -> str:
     """Classical 爻题: 初爻 and 上爻 put the ordinal FIRST, the rest last.
 
@@ -358,7 +361,14 @@ def hex_info(lines: list[int], assets: dict[int, dict]) -> dict:
         "lower_trigram": BINARY_TO_TRIGRAM.get(lower_bin),
         "lines": [{"position": i + 1, "value": v, "visual": line_visual(v)}
                   for i, v in enumerate(lines)],
-        "lines_visual": "\n".join(line_visual(v) for v in reversed(lines)),
+        # Drawn 上爻-first, as a hexagram is written, but `lines` and
+        # `active_lines` number 初爻=1 from the bottom. Labelling every row
+        # means the reader never has to guess which end to count from —
+        # references/04-liuyao.md §3.1 labels its own diagram the same way.
+        "lines_visual": "\n".join(
+            f"{YAO_POSITION_NAMES[i]} {line_visual(v)}"
+            for i, v in reversed(list(enumerate(lines)))
+        ),
         "judgment": a.get("judgment", "(暂无)"),
         "image": a.get("image", "(暂无)"),
     }
@@ -378,6 +388,9 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
 
 *_hex: number name upper_trigram lower_trigram lines lines_visual
   judgment image
+
+lines_visual is drawn 上爻-first with each row labelled; lines[] and
+  active_lines number 初爻 = 1 from the bottom.
 
 lookup --number N: number name name_short name_en judgment image lines summary
 lookup --all:      hexagrams[] of the above

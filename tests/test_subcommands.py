@@ -307,3 +307,22 @@ def test_yijing_lookup_all_covers_64():
 def test_yijing_lookup_rejects_out_of_range():
     d = run_cli("yijing_cast.py", "lookup", "--number", "65", expect_rc=1)
     assert d["error"] == "bad_hexagram_number"
+
+
+def test_lines_visual_rows_carry_their_position_label():
+    """The drawing is 上爻-first while lines/active_lines number 初爻=1, so the
+    ○ marker lands on visual row (7 - position). Without row labels a reader
+    counting from the top reads a 三爻 move as 四爻 — and v1.4.0 already had to
+    fix a real mirrored-爻位 bug in this same file, so the hazard is not
+    hypothetical. references/04-liuyao.md §3.1 labels every row; so do we.
+    """
+    d = run_cli("yijing_cast.py", "numbers", "--upper", "3", "--lower", "5",
+                "--change", "3")
+    rows = d["main_hex"]["lines_visual"].split("\n")
+    assert len(rows) == 6
+    assert [r.split()[0] for r in rows] == ["上爻", "五爻", "四爻", "三爻", "二爻", "初爻"]
+    # the marked row must be the one active_lines names
+    marked = [r for r in rows if "○" in r or "✕" in r]
+    assert len(marked) == 1
+    assert marked[0].startswith("三爻"), marked[0]
+    assert d["active_lines"] == [3]
