@@ -68,3 +68,42 @@ def test_extracted_package_runs(package, tmp_path):
     )
     assert proc.returncode == 0
     assert "乙亥" in proc.stdout  # day pillar of the canonical test chart
+
+
+# --------------------------------------------------------------------------- #
+# 版本来源 — 静默回退 "0.0.0" 会产出错名的发布包
+# --------------------------------------------------------------------------- #
+
+def test_read_version_matches_the_shipped_constant():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import bazi_calc
+    import build_skill
+
+    assert build_skill.read_version() == bazi_calc.VERSION
+
+
+def test_read_version_fails_loudly_when_absent(monkeypatch):
+    """A missing VERSION used to yield "0.0.0" silently, so a refactor that
+    moved the constant would have shipped a misnamed zip with nothing red."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_skill
+
+    monkeypatch.setattr(Path, "read_text", lambda self, *a, **kw: "# no version here")
+    with pytest.raises(SystemExit):
+        build_skill.read_version()
+
+
+def test_default_output_name_carries_the_version(tmp_path, monkeypatch):
+    """test_build always passed --out, so the version-derived default filename
+    was never exercised."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_skill
+
+    monkeypatch.chdir(tmp_path)
+    proc = subprocess.run(
+        [sys.executable, str(BUILD)], cwd=tmp_path,
+        capture_output=True, text=True, encoding="utf-8",
+    )
+    assert proc.returncode == 0, proc.stderr
+    produced = list((ROOT / "dist").glob(f"chinese-fortune-v{build_skill.read_version()}.zip"))
+    assert produced, f"no versioned zip produced; stdout={proc.stdout[-400:]}"

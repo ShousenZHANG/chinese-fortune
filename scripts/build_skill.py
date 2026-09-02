@@ -46,9 +46,20 @@ EXCLUDE_RE = re.compile(
 
 
 def read_version() -> str:
-    text = (ROOT / "scripts" / "bazi_calc.py").read_text(encoding="utf-8")
+    """Read the shipped VERSION constant.
+
+    Fails hard rather than falling back to "0.0.0": a silent fallback would
+    ship a misnamed release zip, and nothing downstream would go red.
+    """
+    source = ROOT / "scripts" / "bazi_calc.py"
+    text = source.read_text(encoding="utf-8")
     m = re.search(r'VERSION\s*=\s*"([^"]+)"', text)
-    return m.group(1) if m else "0.0.0"
+    if not m:
+        raise SystemExit(
+            f"FATAL: no VERSION constant in {source.relative_to(ROOT)}; "
+            f"refusing to build a misnamed package"
+        )
+    return m.group(1)
 
 
 def validate_skill_md() -> None:

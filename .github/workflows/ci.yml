@@ -37,7 +37,10 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Lint (ruff)
-        run: python -m ruff check scripts/ tests/
+        # Whole repo, not just scripts/ + tests/: evals/run_checks.py IS the
+        # release gate and was never linted. pyproject already excludes
+        # dist/ and _competitors/, so widening the scope is free.
+        run: python -m ruff check .
 
       - name: Type check (mypy)
         run: python -m mypy scripts/ --ignore-missing-imports
