@@ -2,6 +2,73 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] — 2026-09-02
+
+Correctness release. Two engines were returning wrong answers with full
+confidence; both are fixed and locked by oracles that assert values, not
+shapes. **Readings produced by v1.3.0 and earlier should be re-run.**
+
+### Fixed
+- **爻位序 mirrored in every hexagram cast (周易 / 梅花 / 六爻)** — `BAGUA`
+  encodes each trigram top-to-bottom, so 初爻 is bit 2, but the writer
+  (`from_numbers` / `build_lines`) and the reader (`lines_to_trigrams`) both
+  iterated bit 0 as 初爻. Being wrong on both sides made the round trip
+  self-consistent: the hexagram NAME was always right, so no test caught it,
+  while everything downstream was mirrored. Over all 384 (上卦, 下卦, 动爻)
+  combinations: 每爻阴阳 wrong in 288, **变卦 wrong in 256** (every cast whose
+  changing line was 1, 3, 4 or 6), 互卦 wrong in 360; `liuyao_cast` coin casts
+  resolved 48 of 64 hexagrams to the wrong 卦名 and 纳甲. Output contradicted
+  itself — a line drawn 阳 carried a 六 line text. The tables were already
+  right (`assets/64hex.json` `lines[].type` agrees 64/64, and
+  `references/64hex-full.md` numbers 初爻 upward), so only the three call
+  sites changed.
+  ERRATUM: `numbers --upper 3 --lower 5 --change 1` gave 火水未济64; correct is
+  火天大有14. `coins --seed 42` gave 雷火丰55; correct is 山火贲22.
+- **黄历 子时 row carried the next day's 时柱** — the 子 block was sampled at
+  23:30 of the queried day, which under the 晚子时 (sect-2) convention this
+  project uses belongs to the NEXT day's 子 时柱. The row reported that day's
+  干支/天神/吉凶/冲煞 while the same JSON's `ganzhi.day` and `chong_sha`
+  described the queried day, and the 12 rows were not a contiguous 六十甲子
+  run. For 2026-06-24 (日柱 己巳, 五鼠遁 甲己起甲子) the row printed 丙子 and
+  its verdict flipped 凶 → 吉. The v1.3.0 regression test asserted only the
+  干支 BRANCH against the 时辰 label, which the wrong pillar satisfied.
+- **`--help` unusable on non-UTF-8 stdio** — 14 of the 15 CLIs carry Chinese
+  argparse help. `json_print` forced UTF-8, but argparse writes `--help` long
+  before it, so `--help` exited 1 with no output on a non-CJK console and
+  emitted undecodable bytes when stdout was a pipe — which is how SKILL.md
+  documents invoking them. `utils.ensure_utf8_stdio()` now runs before
+  `parse_args` in every CLI.
+- **`zodiac_compat` exited 0 while emitting an error payload** — the only one
+  of the 13 engines to do so, so callers checking the exit code read a failure
+  as success.
+- **`huangli` `tai_shen_fang_wei.desc` removed** — it called
+  `getDayPositionTaiDesc`, which `lunar_python` does not define, so the key
+  was `None` on every date. Not repointed at `getDayPositionTaiSuiDesc`: 太岁
+  is not 胎神.
+
+### Added
+- `--datetime` (ISO) on `meihua_cast` (top level — 当下月令 feeds 体用旺衰 for
+  all three subcommands, not just `time`) and on `yijing_cast time`. Defaults
+  to `now()`, so behaviour is unchanged. `ti_yong.body_strength` drifted with
+  the real calendar month and was therefore entirely untested; it now has a
+  golden.
+- Oracles that assert values rather than shapes: all 64 hexagrams' line values
+  against `assets/64hex.json`; 黄历 时辰 stems against 五鼠遁 plus a contiguous
+  60-cycle check; a full-output 八字 snapshot locking
+  `shen_sha`/`yong_shen`/`ge_ju`/`interactions`; `--help` under `cp1252` for
+  every CLI; `zodiac_compat` error exit codes. Shared `run_cli()` in
+  `conftest.py` asserts the exit code, so a status regression cannot pass
+  silently. Suite 1013 → 1039, coverage 84.8% → 85.9%.
+
+### Changed
+- **BREAKING** — `shichen_detail` / `ji_shi` / `xiong_shi` now hold **13**
+  entries, not 12: 子时 is split into `早子 00:00-01:00` (queried day's 日干)
+  and `夜子 23:00-24:00` (next day's), so no row spans two 时柱. Rows are in
+  clock order, so index 0 is `00:00-01:00` and `hour_range` `23:00-01:00` no
+  longer appears. Each row gains a `branch` key, since `shichen` is now
+  早子/夜子 for the two 子 rows.
+- `evals.json` #2 golden corrected to 山火贲22 (was the mirrored 雷火丰55).
+
 ## [1.3.0] — 2026-07-04
 
 Maintenance + correctness sweep: traditional 时辰 boundaries, CI runner

@@ -30,7 +30,7 @@
         {
           "kind": "script",
           "cmd": ["scripts/yijing_cast.py", "coins", "--seed", "42", "--question", "跳槽"],
-          "paths": {"main_hex.number": 55, "main_hex.name": "雷火丰"},
+          "paths": {"main_hex.number": 22, "main_hex.name": "山火贲"},
           "has_keys": ["changed_hex", "nuclear_hex", "active_lines"]
         }
       ]
