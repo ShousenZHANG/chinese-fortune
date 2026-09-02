@@ -245,7 +245,7 @@
 - **阳爻** —— (单线, 数9)
 - **阴爻** -- (断线, 数6)
 - 三爻成一卦 (8 经卦)
-- 六爻成一重卦 (64 别卦) — 详见 [03-yijing.md](03-yijing.md) 与 [64hex-full.md](64hex-full.md)
+- 六爻成一重卦 (64 别卦) — 详见 [03-yijing.md](03-yijing.md); 各卦卦辞/大象/爻辞用 `python scripts/yijing_cast.py lookup --number N` 查阅
 
 ---
 

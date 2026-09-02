@@ -272,3 +272,38 @@ def test_bad_datetime_reports_error_and_exits_1():
                 else ("time", "--datetime", "nope"))
         d = run_cli(script, *argv, expect_rc=1)
         assert d["error"] == "bad_datetime"
+
+
+# --------------------------------------------------------------------------- #
+# 卦辞查阅 — 取代整读 references/64hex-full.md
+# --------------------------------------------------------------------------- #
+
+def test_yijing_lookup_single_hexagram():
+    """lookup 必须给出 64hex-full.md 曾提供的全部内容: 卦名/卦辞/大象/六爻辞/白话.
+
+    此前周易路由强制整读 43 KB 的 64hex-full.md, 而其 卦辞 64/64、象辞 64/64、
+    爻辞 384/384 与 assets/64hex.json 逐条相同 —— 脚本本就能给。
+    """
+    d = run_cli("yijing_cast.py", "lookup", "--number", "50")
+    assert d["number"] == 50
+    assert d["name"] == "火风鼎"
+    assert d["judgment"].startswith("元吉")
+    assert "木上有火" in d["image"]
+    assert len(d["lines"]) == 6
+    assert "鼎颠趾" in d["lines"][0]
+    assert d["summary"]
+
+
+def test_yijing_lookup_all_covers_64():
+    """--all 保留"全卦浏览"能力, 不因删除参考文档而丢失功能."""
+    d = run_cli("yijing_cast.py", "lookup", "--all")
+    assert len(d["hexagrams"]) == 64
+    nums = sorted(h["number"] for h in d["hexagrams"])
+    assert nums == list(range(1, 65))
+    for h in d["hexagrams"]:
+        assert h["judgment"] and h["image"] and len(h["lines"]) == 6
+
+
+def test_yijing_lookup_rejects_out_of_range():
+    d = run_cli("yijing_cast.py", "lookup", "--number", "65", expect_rc=1)
+    assert d["error"] == "bad_hexagram_number"

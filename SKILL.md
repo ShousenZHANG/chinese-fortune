@@ -60,7 +60,7 @@ When a reading needs personal data (八字 / 紫微 / 合婚 / 起名 / 择日),
 |---|---|---|---|
 | 八字 / 四柱 / 排盘 / 看命 / "我是X年X月X日X时生的" | 八字 BaZi | [01-bazi.md](references/01-bazi.md) | [bazi_calc.py](scripts/bazi_calc.py) |
 | 紫微 / 紫微斗数 / 命宫 / 十二宫 | 紫微斗数 | [02-ziwei.md](references/02-ziwei.md) | [ziwei_calc.py](scripts/ziwei_calc.py) |
-| 周易 / 易经 / 64卦 / 卦象 | 周易 YiJing | [03-yijing.md](references/03-yijing.md) + [64hex-full.md](references/64hex-full.md) | [yijing_cast.py](scripts/yijing_cast.py) |
+| 周易 / 易经 / 64卦 / 卦象 | 周易 YiJing | [03-yijing.md](references/03-yijing.md) | [yijing_cast.py](scripts/yijing_cast.py) |
 | 六爻 / 摇卦 / 金钱卦 / 世应 | 六爻 LiuYao | [04-liuyao.md](references/04-liuyao.md) | [liuyao_cast.py](scripts/liuyao_cast.py) |
 | 梅花易数 / 梅花心易 | 梅花易数 | [05-meihua.md](references/05-meihua.md) | [meihua_cast.py](scripts/meihua_cast.py) |
 | 奇门 / 奇门遁甲 | 奇门遁甲 | [06-qimen.md](references/06-qimen.md) | [qimen_cast.py](scripts/qimen_cast.py) |

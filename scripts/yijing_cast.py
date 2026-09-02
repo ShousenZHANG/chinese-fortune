@@ -118,6 +118,20 @@ def hex_lookup_by_trigrams(upper_bin: int, lower_bin: int) -> tuple[int, str]:
 # Hex assets loading
 # --------------------------------------------------------------------------- #
 
+def yao_title(position: int, type_: str) -> str:
+    """Classical 爻题: 初爻 and 上爻 put the ordinal FIRST, the rest last.
+
+    乾卦 reads 初九 / 九二 / 九三 / 九四 / 九五 / 上九 — not 九初 … 九上, which
+    is what a uniform f"{type}{ordinal}" produced for positions 1 and 6. This
+    text is quoted back to the reader as active_line_text on every cast.
+    """
+    if position == 1:
+        return f"初{type_}"
+    if position == 6:
+        return f"上{type_}"
+    return f"{type_}{['', '', '二', '三', '四', '五'][position]}"
+
+
 def load_hex_assets() -> dict[int, dict]:
     """Load ``assets/64hex.json`` if available; otherwise minimal fallback.
 
@@ -126,7 +140,8 @@ def load_hex_assets() -> dict[int, dict]:
         {"name": "...", "judgment": "...", "image": "...",
          "lines": ["初九 ...", "九二 ...", ...]}
 
-    Detailed commentary should be read from references/64hex-full.md when needed.
+    The same text is exposed by the ``lookup`` subcommand, so callers never
+    need to read a reference file to obtain 卦辞/大象/爻辞.
     """
     here = os.path.dirname(os.path.abspath(__file__))
     candidates = [
@@ -145,7 +160,8 @@ def load_hex_assets() -> dict[int, dict]:
                     n = int(h["number"])
                     lines_raw = h.get("lines", [])
                     lines_str = [
-                        f"{ln.get('type','')}{['初','二','三','四','五','上'][ln.get('position',1)-1]}: {ln.get('text','')}"
+                        f"{yao_title(ln.get('position', 1), ln.get('type', ''))}: "
+                        f"{ln.get('text', '')}"
                         if isinstance(ln, dict) else str(ln)
                         for ln in lines_raw
                     ]
@@ -364,6 +380,9 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
 *_hex: number name upper_trigram lower_trigram lines lines_visual
   judgment image
 
+lookup --number N: number name name_short name_en judgment image lines summary
+lookup --all:      hexagrams[] of the above
+
 On error: {"error": ..., "message": ...} and exit 1."""
 
 
@@ -394,6 +413,11 @@ def build_parser() -> argparse.ArgumentParser:
     px = sub.add_parser("text", help="字数起卦")
     px.add_argument("--text", type=str, required=True)
     px.add_argument("--question", type=str, default=None)
+
+    pl = sub.add_parser("lookup", help="查阅卦辞/大象/爻辞 (不起卦)")
+    grp = pl.add_mutually_exclusive_group(required=True)
+    grp.add_argument("--number", type=int, help="卦序 1-64")
+    grp.add_argument("--all", action="store_true", help="全 64 卦")
 
     return p
 
@@ -439,6 +463,27 @@ def cast(method: str, lines: list[int], meta: dict,
     }
 
 
+def lookup_entry(num: int, assets: dict[int, dict]) -> dict:
+    """One hexagram's full text: 卦名/卦辞/大象/六爻辞/白话.
+
+    This is what references/64hex-full.md used to be read in full for, although
+    its 卦辞 (64/64), 象辞 (64/64) and 爻辞 (384/384) are identical to
+    assets/64hex.json, which the engine already loads.
+    """
+    a = assets.get(num, {})
+    full = next((nm for n, nm, _up, _low in KING_WEN_ORDER if n == num), None)
+    return {
+        "number": num,
+        "name": full or a.get("name"),
+        "name_short": a.get("name"),
+        "name_en": a.get("name_en"),
+        "judgment": a.get("judgment", ""),
+        "image": a.get("image", ""),
+        "lines": a.get("lines", []),
+        "summary": a.get("summary", ""),
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
@@ -466,6 +511,16 @@ def main(argv: list[str] | None = None) -> int:
         lines, meta = from_text(args.text)
         meta["text"] = args.text
         out = cast("text", lines, meta, args.question)
+    elif args.method == "lookup":
+        assets = load_hex_assets()
+        if args.all:
+            out = {"hexagrams": [lookup_entry(n, assets) for n in range(1, 65)]}
+        else:
+            if not 1 <= args.number <= 64:
+                json_print({"error": "bad_hexagram_number",
+                            "message": f"卦序需在 1-64 之间, 收到: {args.number}"})
+                return 1
+            out = lookup_entry(args.number, assets)
     else:
         json_print({"error": "unknown_method"})
         return 2
