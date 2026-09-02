@@ -30,12 +30,10 @@ from pathlib import Path
 from typing import Any
 
 from utils import (
-    DIZHI,
     DIZHI_WUXING,
     DIZHI_YIN_YANG,
     DIZHI_ZODIAC,
     HIDDEN_STEMS,
-    TIANGAN,
     TIANGAN_WUXING,
     TIANGAN_YIN_YANG,
     WUXING_GEN,
@@ -47,6 +45,7 @@ from utils import (
     shi_shen,
     true_solar_time_info,
     warn,
+    xun_kong,
 )
 
 VERSION = "1.5.0"
@@ -144,24 +143,9 @@ PILLAR_LABELS_CN = {"year": "年", "month": "月", "day": "日", "hour": "时"}
 # 空亡 (旬空)
 # --------------------------------------------------------------------------- #
 
-XUN_KONG_BY_OFFSET: dict[int, list[str]] = {
-    0: ["戌", "亥"],   # 甲子旬
-    1: ["申", "酉"],   # 甲戌旬
-    2: ["午", "未"],   # 甲申旬
-    3: ["辰", "巳"],   # 甲午旬
-    4: ["寅", "卯"],   # 甲辰旬
-    5: ["子", "丑"],   # 甲寅旬
-}
-
-
 def xun_kong_of_day(day_stem: str, day_branch: str) -> list[str]:
     """Return the two 地支 in 旬空 for the given day pillar."""
-    ts = TIANGAN.index(day_stem)
-    db = DIZHI.index(day_branch)
-    diff = (db - ts) % 12
-    mapping = {0: 0, 10: 1, 8: 2, 6: 3, 4: 4, 2: 5}
-    idx = mapping.get(diff, 0)
-    return XUN_KONG_BY_OFFSET[idx]
+    return xun_kong(day_stem, day_branch)
 
 
 # --------------------------------------------------------------------------- #

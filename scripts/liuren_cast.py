@@ -31,6 +31,7 @@ from utils import (
     TIANGAN_YIN_YANG,
     WUXING_GEN,
     WUXING_KE,
+    chong_branch,
     ensure_utf8_stdio,
     hour_branch,
     json_print,
@@ -362,7 +363,7 @@ def fa_yong_fu_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
 
 def chong_zhi(zhi: str) -> str:
     """Return 六冲 partner (子↔午, 丑↔未, ...)."""
-    return DIZHI[(DIZHI.index(zhi) + 6) % 12]
+    return chong_branch(zhi)
 
 
 def fa_yong_fan_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,

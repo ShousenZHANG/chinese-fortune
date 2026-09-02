@@ -18,14 +18,15 @@ import entropy
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
-    DIZHI,
     DIZHI_WUXING,
-    TIANGAN,
     WUXING_GEN,
     WUXING_KE,
     ensure_utf8_stdio,
     json_print,
     require_lunar,
+)
+from utils import (
+    xun_kong as utils_xun_kong,
 )
 from yijing_cast import (
     active_lines,
@@ -282,18 +283,7 @@ LIU_CHONG_PAIRS = {
 
 
 def xun_kong(day_stem: str, day_branch: str) -> list[str]:
-    ts = TIANGAN.index(day_stem)
-    db = DIZHI.index(day_branch)
-    diff = (db - ts) % 12
-    table = {
-        0:  ["戌", "亥"],
-        10: ["申", "酉"],
-        8:  ["午", "未"],
-        6:  ["辰", "巳"],
-        4:  ["寅", "卯"],
-        2:  ["子", "丑"],
-    }
-    return table.get(diff, [])
+    return utils_xun_kong(day_stem, day_branch)
 
 
 # --------------------------------------------------------------------------- #

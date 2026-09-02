@@ -222,6 +222,36 @@ def shi_shen(day_stem: str, other_stem: str) -> str:
 # 60 甲子 helper
 # --------------------------------------------------------------------------- #
 
+XUN_KONG_BY_OFFSET: dict[int, list[str]] = {
+    0: ["戌", "亥"],   # 甲子旬
+    1: ["申", "酉"],   # 甲戌旬
+    2: ["午", "未"],   # 甲申旬
+    3: ["辰", "巳"],   # 甲午旬
+    4: ["寅", "卯"],   # 甲辰旬
+    5: ["子", "丑"],   # 甲寅旬
+}
+
+# (地支 index - 天干 index) % 12 -> which 旬 the pillar belongs to.
+_XUN_DIFF_TO_OFFSET: dict[int, int] = {0: 0, 10: 1, 8: 2, 6: 3, 4: 4, 2: 5}
+
+
+def xun_kong(stem: str, branch: str) -> list[str]:
+    """The two 地支 that are 旬空 for a given 干支 pillar.
+
+    Every 旬 covers 10 of the 12 branches; the two left over are 空亡. bazi and
+    liuyao carried identical copies of this table, verified equal across all 60
+    pillars before merging.
+    """
+    diff = (DIZHI.index(branch) - TIANGAN.index(stem)) % 12
+    offset = _XUN_DIFF_TO_OFFSET.get(diff)
+    return XUN_KONG_BY_OFFSET[offset] if offset is not None else []
+
+
+def chong_branch(branch: str) -> str:
+    """六冲 partner: the branch directly opposite on the 12-branch circle."""
+    return DIZHI[(DIZHI.index(branch) + 6) % 12]
+
+
 def hour_branch_index(hour: int) -> int:
     """0-11 index of the 时辰 containing ``hour`` (子=0).
 

@@ -158,3 +158,46 @@ def test_engines_delegate_to_the_shared_hour_helper():
         assert xiaoliuren_cast.hour_branch_from_hour(h) == hour_branch(h)
         assert meihua_cast.shichen_num(h) == shichen_number(h)
         assert yijing_cast.shichen_index(h) == shichen_number(h)
+
+
+def test_xun_kong_covers_all_60_pillars():
+    """Every 旬 leaves exactly two branches 空亡, and the six 旬 partition the
+    60 pillars. bazi and liuyao each carried a copy of this table."""
+    from utils import DIZHI, TIANGAN, jiazi_index, xun_kong
+
+    seen = {}
+    for stem in TIANGAN:
+        for branch in DIZHI:
+            try:
+                jiazi_index(stem, branch)
+            except ValueError:
+                continue
+            kong = xun_kong(stem, branch)
+            assert len(kong) == 2, f"{stem}{branch}: {kong}"
+            assert all(k in DIZHI for k in kong)
+            seen[stem + branch] = tuple(kong)
+    assert len(seen) == 60
+    assert len(set(seen.values())) == 6  # six 旬
+
+
+def test_engines_delegate_xun_kong_and_chong():
+    import bazi_calc
+    import liuren_cast
+    import liuyao_cast
+    from utils import DIZHI, TIANGAN, chong_branch, jiazi_index, xun_kong
+
+    for stem in TIANGAN:
+        for branch in DIZHI:
+            try:
+                jiazi_index(stem, branch)
+            except ValueError:
+                continue
+            want = xun_kong(stem, branch)
+            assert bazi_calc.xun_kong_of_day(stem, branch) == want
+            assert liuyao_cast.xun_kong(stem, branch) == want
+
+    for branch in DIZHI:
+        partner = chong_branch(branch)
+        assert liuren_cast.chong_zhi(branch) == partner
+        assert chong_branch(partner) == branch  # involution
+        assert liuyao_cast.LIU_CHONG_PAIRS[branch] == partner
