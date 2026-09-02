@@ -45,10 +45,11 @@ def build_lines(upper_tri: str, lower_tri: str, change_line: int) -> list[int]:
     upper_bin = BAGUA[upper_tri]["binary"]
     lower_bin = BAGUA[lower_tri]["binary"]
     lines: list[int] = []
+    # BAGUA["binary"] is top-to-bottom, so 初爻 is bit 2 (see yijing_cast).
     for i in range(3):
-        lines.append(7 if (lower_bin >> i) & 1 else 8)
+        lines.append(7 if (lower_bin >> (2 - i)) & 1 else 8)
     for i in range(3):
-        lines.append(7 if (upper_bin >> i) & 1 else 8)
+        lines.append(7 if (upper_bin >> (2 - i)) & 1 else 8)
     idx = change_line - 1
     lines[idx] = 9 if lines[idx] == 7 else 6
     return lines

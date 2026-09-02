@@ -209,12 +209,13 @@ def from_numbers(upper: int, lower: int, change: int) -> list[int]:
     upper_bin = BAGUA[upper_tri]["binary"]
     lower_bin = BAGUA[lower_tri]["binary"]
     lines: list[int] = []
-    # lower trigram: bits low-to-high are line 1,2,3 (bottom-to-top)
+    # BAGUA["binary"] encodes the trigram top-to-bottom, so bit 2 is 初爻.
+    # Emit bottom-to-top: line 1,2,3 = bits 2,1,0.
     for i in range(3):
-        bit = (lower_bin >> i) & 1
+        bit = (lower_bin >> (2 - i)) & 1
         lines.append(7 if bit == 1 else 8)
     for i in range(3):
-        bit = (upper_bin >> i) & 1
+        bit = (upper_bin >> (2 - i)) & 1
         lines.append(7 if bit == 1 else 8)
     # apply changing line: convert static -> moving (7 -> 9, 8 -> 6)
     idx = change - 1
@@ -293,16 +294,18 @@ def line_visual(v: int) -> str:
 
 
 def lines_to_trigrams(lines: list[int]) -> tuple[int, int]:
-    """Return (upper_bin, lower_bin), where each bit pattern represents lines
-    bottom-to-top (bit 0 = bottom of the trigram)."""
+    """Return (upper_bin, lower_bin) in BAGUA["binary"] convention.
+
+    `lines` runs bottom-to-top (index 0 = 初爻); BAGUA encodes each trigram
+    top-to-bottom, so 初爻 is bit 2, not bit 0."""
     lower_bin = 0
     for i in range(3):
         if lines[i] in (7, 9):  # yang
-            lower_bin |= 1 << i
+            lower_bin |= 1 << (2 - i)
     upper_bin = 0
     for i in range(3):
         if lines[3 + i] in (7, 9):
-            upper_bin |= 1 << i
+            upper_bin |= 1 << (2 - i)
     return upper_bin, lower_bin
 
 

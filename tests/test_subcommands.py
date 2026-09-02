@@ -31,11 +31,18 @@ def run(script, *args) -> dict:
 # --------------------------------------------------------------------------- #
 
 def test_yijing_numbers_hand_verified_ding():
-    """先天卦数 3=离(上) 5=巽(下) → 火风鼎 #50; 动初爻 → 火水未济 #64."""
+    """先天卦数 3=离(上) 5=巽(下) → 火风鼎 #50; 动初爻 → 火天大有 #14.
+
+    手工推导: 巽☴ 自下而上 阴阳阳, 离☲ 自下而上 阳阴阳 → 鼎 阴阳阳阳阴阳.
+    初爻(阴)变阳 → 下卦成乾☰ → 火天大有 #14. 互卦 2,3,4=乾 / 3,4,5=兑 → 泽天夬 #43.
+    v1.4.0 前此处曾断言 火水未济 #64 —— 那是爻序镜像造成的错值 (见 CHANGELOG 勘误).
+    """
     d = run("yijing_cast.py", "numbers", "--upper", "3", "--lower", "5", "--change", "1")
     assert (d["main_hex"]["number"], d["main_hex"]["name"]) == (50, "火风鼎")
+    assert [ln["value"] for ln in d["main_hex"]["lines"]] == [6, 7, 7, 7, 8, 7]
     assert d["active_lines"] == [1]
-    assert d["changed_hex"]["name"] == "火水未济"
+    assert d["changed_hex"]["name"] == "火天大有"
+    assert d["nuclear_hex"]["name"] == "泽天夬"
 
 
 def test_yijing_text_deterministic():

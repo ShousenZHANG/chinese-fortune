@@ -96,7 +96,8 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 # 八卦
 # --------------------------------------------------------------------------- #
 # Lines from top to bottom: list of 3 (1=阳, 0=阴)
-# Binary index (used for 64 hex) — convention: bottom line is bit-0
+# Binary index (used for 64 hex) — same top-to-bottom order, so the
+# bottom line (初爻) is bit-2 and the top line is bit-0.
 # Names in 先天 / 后天 order keyed by binary value.
 
 BAGUA: dict[str, dict] = {
