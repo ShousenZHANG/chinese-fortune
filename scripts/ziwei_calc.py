@@ -116,25 +116,19 @@ NAYIN_60: list[str] = [
     "天上火", "天上火", "石榴木", "石榴木", "大海水", "大海水",
 ]
 
-NAYIN_WX_KEYWORD: dict[str, list[str]] = {
-    "金": ["海中金", "剑锋金", "白蜡金", "沙中金", "金箔金", "钗钏金"],
-    "火": ["炉中火", "山头火", "霹雳火", "山下火", "覆灯火", "天上火"],
-    "木": ["大林木", "杨柳木", "松柏木", "平地木", "桑柘木", "石榴木"],
-    "水": ["涧下水", "井泉水", "长流水", "天河水", "大溪水", "大海水"],
-    "土": ["路旁土", "城头土", "屋上土", "壁上土", "大驿土", "沙中土"],
-}
-
 WUXING_JU_NUM: dict[str, int] = {"水": 2, "木": 3, "金": 4, "土": 5, "火": 6}
 WUXING_JU_NAME: dict[int, str] = {2: "水二局", 3: "木三局", 4: "金四局",
                                    5: "土五局", 6: "火六局"}
 
 
 def nayin_wuxing(stem: str, branch: str) -> str:
-    name = NAYIN_60[jiazi_index(stem, branch)]
-    for wx, names in NAYIN_WX_KEYWORD.items():
-        if name in names:
-            return wx
-    return "?"
+    """五行 of a pillar's 纳音.
+
+    Every 纳音 name ends with its own 五行 character (海中金 -> 金,
+    大林木 -> 木); verified for all 60 pairs, so the reverse keyword table this
+    used to scan was redundant.
+    """
+    return NAYIN_60[jiazi_index(stem, branch)][-1]
 
 
 def wuxing_ju(year_stem: str, ming_gong_branch: str) -> tuple[int, str]:

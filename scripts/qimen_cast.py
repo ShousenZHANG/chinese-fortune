@@ -31,11 +31,10 @@ import sys
 from datetime import datetime
 
 from utils import (
-    DIZHI,
-    TIANGAN,
     TIANGAN_WUXING,
     WUXING_KE,
     ensure_utf8_stdio,
+    jiazi_index,
     json_print,
     longitude_correction,
     require_lunar,
@@ -216,18 +215,9 @@ XUN_HEADS: list[tuple[str, str]] = [
 ]
 
 
-def jiazi_index_of(stem: str, branch: str) -> int:
-    s = TIANGAN.index(stem)
-    b = DIZHI.index(branch)
-    for i in range(60):
-        if i % 10 == s and i % 12 == b:
-            return i
-    raise ValueError(f"invalid 干支: {stem}{branch}")
-
-
 def xun_head(stem: str, branch: str) -> tuple[str, str]:
     """Return (旬首名 e.g. '甲子', 对应六仪 e.g. '戊') for 干支."""
-    idx = jiazi_index_of(stem, branch)
+    idx = jiazi_index(stem, branch)
     head_idx = idx - (idx % 10)  # 0,10,20,30,40,50
     return XUN_HEADS[head_idx // 10]
 
@@ -235,52 +225,6 @@ def xun_head(stem: str, branch: str) -> tuple[str, str]:
 # --------------------------------------------------------------------------- #
 # Heaven plate — rotate earth plate by 值符
 # --------------------------------------------------------------------------- #
-
-def heaven_plate(
-    earth: dict[int, str],
-    hour_stem: str,
-    hour_branch: str,
-    ju_type: str,
-) -> tuple[dict[int, str], int, int]:
-    """Compute 天盘.
-
-    值符宫 = 旬首之六仪 落于地盘的宫位.
-    时干宫 = 时干 (或其代位六仪) 落于地盘的宫位.
-    旋转: 把 地盘 整体 平移, 使 值符宫(of earth) 的内容 飞到 时干宫.
-
-    Returns (heaven, zhi_fu_palace, shi_gan_palace).
-    """
-    head_name, head_yi = xun_head(hour_stem, hour_branch)
-
-    # 值符宫: 该旬六仪所在地盘宫位
-    zhi_fu_palace = next(p for p, y in earth.items() if y == head_yi)
-
-    # 时干 在地盘的位置: if 时干 是六仪, 直接查 earth; 若是三奇 (乙丙丁), 同样查 earth.
-    # 时干本身的位置不变, 只是 "时干宫" 就是当前 hour_stem 在地盘的宫.
-    shi_gan_palace = next(p for p, y in earth.items() if y == hour_stem)
-
-    # If 时干 = 该旬旬首所代之甲 (即 时干 = 甲), 则 时干 隐在 六仪 之下,
-    # 值符宫 与 时干宫 重合 (即 用神不动, 称为 "伏吟" 之兆).
-    # 这种情况下面会再单独处理.
-
-    # 阳遁 顺转, 阴遁 逆转 — 但 旋转方向 实际上 与遁种无关,
-    # 转盘式以 "值符宫的元素 飞到 时干宫" 为主, 走的是 1..9 顺时针 palace path.
-    # 这里我们 直接求 offset, 让 earth[zhi_fu] -> heaven[shi_gan].
-    full_seq = YANG_PALACE_SEQ if ju_type == "阳遁" else YIN_PALACE_SEQ
-
-    # Find offset along path
-    from_idx = full_seq.index(zhi_fu_palace)
-    to_idx = full_seq.index(shi_gan_palace)
-    shift = (to_idx - from_idx) % 9
-
-    heaven: dict[int, str] = {}
-    for k, palace in enumerate(full_seq):
-        # The element at earth[full_seq[k]] moves to heaven[full_seq[(k+shift)%9]]
-        target = full_seq[(k + shift) % 9]
-        heaven[target] = earth[palace]
-
-    return heaven, zhi_fu_palace, shi_gan_palace
-
 
 # --------------------------------------------------------------------------- #
 # 八宫环 (8-palace ring excluding 中5) — used for rotating 八门 / 九星.
@@ -757,9 +701,7 @@ def main(argv: list[str] | None = None) -> int:
     effective_shi_gan = hour_stem
     if hour_stem == "甲":
         effective_shi_gan = head_yi  # 甲 遁于 六仪
-    # Re-derive heaven plate with effective stem
-    head_name2, head_yi2 = xun_head(hour_stem, hour_branch)
-    zhi_fu_palace = next(p for p, yq in earth.items() if yq == head_yi2)
+    zhi_fu_palace = next(p for p, yq in earth.items() if yq == head_yi)
     shi_gan_palace = next(p for p, yq in earth.items() if yq == effective_shi_gan)
 
     # heaven
