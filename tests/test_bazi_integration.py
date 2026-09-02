@@ -222,3 +222,54 @@ def test_shensha_meanings_carry_their_reference_stance():
 
     kui_gang = by_name["魁罡"]["meaning"]
     assert "破格" in kui_gang and "印比" in kui_gang, kui_gang
+
+
+# --------------------------------------------------------------------------- #
+# 三柱模式 — 时辰未知时仍可排年/月/日柱
+# --------------------------------------------------------------------------- #
+
+def test_three_pillar_mode_when_hour_unknown():
+    """00-intake.md: 时辰未知 → 仍可排年/月/日柱; 时柱缺如, 标注"时柱待补". 不揣测时辰.
+
+    --hour used to be required, so the script could not follow the skill's own
+    documented edge case at all; the only way through was to pass a fabricated
+    hour and hope the caller suppressed every contaminated field.
+    """
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1958, "--month", 10, "--day", 24,
+                "--gender", "male", "--as-of-year", 2026)
+
+    assert d["hour_known"] is False
+    fp = d["four_pillars"]
+    assert fp["year"]["ganzhi"] == "戊戌"
+    assert fp["month"]["ganzhi"] == "壬戌"
+    assert fp["day"]["ganzhi"] == "甲戌"
+    assert "待补" in fp["hour"]["status"]
+    assert fp["hour"].get("ganzhi") in (None, "")
+    # nothing hour-derived may be asserted as fact
+    assert d["na_yin"].get("hour") is None
+    assert d["true_solar_time"]["applied"] is False
+    assert any("时柱" in n for n in d["notes"])
+
+
+def test_three_pillar_aggregates_exclude_the_hour():
+    """五行得分 must count six characters, not eight, when the hour is unknown —
+    a guessed hour silently moves 旺衰, 用神, 格局 and 神煞 with it."""
+    from conftest import run_cli
+    three = run_cli("bazi_calc.py", "--year", 1958, "--month", 10, "--day", 24,
+                    "--gender", "male", "--as-of-year", 2026)
+    guessed = run_cli("bazi_calc.py", "--year", 1958, "--month", 10, "--day", 24,
+                      "--hour", 12, "--gender", "male", "--as-of-year", 2026)
+    assert three["wuxing_count"] != guessed["wuxing_count"], (
+        "three-pillar totals must differ from an eight-character chart")
+    assert three["hour_known"] is False and guessed["hour_known"] is True
+
+
+def test_supplying_hour_is_unchanged():
+    """Relaxing required=True must not alter any existing invocation."""
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                "--hour", 7, "--minute", 30, "--gender", "female",
+                "--as-of-year", 2026)
+    assert d["hour_known"] is True
+    assert d["four_pillars"]["hour"]["ganzhi"] == "丙辰"

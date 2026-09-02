@@ -47,6 +47,8 @@
     "day_in_chinese": "初九",
     "zodiac": "兔"
   },
+  "hour_known": true,
+  "notes": [],
   "four_pillars": {
     "year": {
       "stem": "己",

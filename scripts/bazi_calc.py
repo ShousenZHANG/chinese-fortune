@@ -87,8 +87,10 @@ PILLAR_ORDER: list[str] = ["year", "month", "day", "hour"]
 
 
 def detect_interactions(pillars: dict[str, dict]) -> dict:
-    stems = [pillars[p]["stem"] for p in PILLAR_ORDER]
-    branches = [pillars[p]["branch"] for p in PILLAR_ORDER]
+    # Only the pillars actually present — a three-pillar chart has no 时柱.
+    present = [p for p in PILLAR_ORDER if p in pillars]
+    stems = [pillars[p]["stem"] for p in present]
+    branches = [pillars[p]["branch"] for p in present]
 
     out: dict[str, list] = {
         "tiangan_he": [],
@@ -237,7 +239,8 @@ def ten_gods_per_pillar(day_stem: str, pillars: dict) -> dict:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version input true_solar_time solar_date lunar_date four_pillars
+  ok tool version hour_known notes input true_solar_time solar_date
+  lunar_date four_pillars
   day_master ten_gods wuxing_count day_master_strength interactions shen_sha
   yong_shen xi_shen ji_shen ge_ju na_yin qi_yun da_yun liu_nian
 
@@ -258,7 +261,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--year", type=int, required=True, help="出生年 (公历或农历)")
     p.add_argument("--month", type=int, required=True, help="出生月 1-12")
     p.add_argument("--day", type=int, required=True, help="出生日 1-31")
-    p.add_argument("--hour", type=int, required=True, help="出生时 0-23")
+    p.add_argument("--hour", type=int, default=None,
+                   help="出生时 0-23; 省略则走三柱模式 (时柱待补, 不揣测时辰)")
     p.add_argument("--minute", type=int, default=0, help="出生分 0-59")
     p.add_argument("--gender", choices=["male", "female"], required=True,
                    help="性别 (用于排大运 + 天罗地网)")
@@ -290,7 +294,7 @@ def _validate_args(args) -> str | None:
         return f"month 必须在 1-12, 收到 {args.month}"
     if not 1 <= args.day <= 31:
         return f"day 必须在 1-31, 收到 {args.day}"
-    if not 0 <= args.hour <= 23:
+    if args.hour is not None and not 0 <= args.hour <= 23:
         return f"hour 必须在 0-23, 收到 {args.hour}"
     if not 0 <= args.minute <= 59:
         return f"minute 必须在 0-59, 收到 {args.minute}"
@@ -320,6 +324,14 @@ def main(argv: list[str] | None = None) -> int:
     from lunar_python import Lunar, Solar  # type: ignore
 
     # 真太阳时 info (informational + applied)
+    # 时辰未知 -> three-pillar mode. Noon is used only to obtain the 年/月/日柱
+    # (it cannot cross a day boundary); no 时柱 is derived from it, and every
+    # aggregate below is computed over six characters instead of eight.
+    # references/00-intake.md: 时辰未知 → 仍可排年/月/日柱; 时柱缺如, 不揣测时辰.
+    hour_known = args.hour is not None
+    eff_hour = args.hour if hour_known else 12
+    eff_minute = args.minute if hour_known else 0
+
     try:
         tst_info = true_solar_time_info(
             longitude=args.longitude,
@@ -327,19 +339,23 @@ def main(argv: list[str] | None = None) -> int:
             year=args.year,
             month=args.month,
             day=args.day,
-            hour=args.hour,
-            minute=args.minute,
+            hour=eff_hour,
+            minute=eff_minute,
         )
         tst_info["applied"] = True
     except Exception as e:
         warn(f"true_solar_time_info failed: {e}")
         tst_info = {"applied": False, "error": str(e)}
+    if not hour_known:
+        tst_info = {"applied": False, "reason": "时辰未知, 无法校正真太阳时"}
 
     # Apply correction for pillar computation (incl. day roll-over near midnight)
     day_offset, corr_hour, corr_minute = longitude_correction(
-        args.hour, args.minute, args.longitude, args.tz,
+        eff_hour, eff_minute, args.longitude, args.tz,
         year=args.year, month=args.month, day=args.day,
     )
+    if not hour_known:
+        day_offset = 0  # noon cannot roll into an adjacent day
     corr_year, corr_month, corr_day = args.year, args.month, args.day
     if day_offset != 0:
         from datetime import date, timedelta
@@ -400,8 +416,9 @@ def main(argv: list[str] | None = None) -> int:
         "year":  pillar_dict(*year_gz,  year_nayin),
         "month": pillar_dict(*month_gz, month_nayin),
         "day":   pillar_dict(*day_gz,   day_nayin),
-        "hour":  pillar_dict(*hour_gz,  hour_nayin),
     }
+    if hour_known:
+        pillars["hour"] = pillar_dict(*hour_gz, hour_nayin)
 
     day_stem = day_gz[0]
     day_branch = day_gz[1]
@@ -410,8 +427,9 @@ def main(argv: list[str] | None = None) -> int:
     year_branch = year_gz[1]
     month_branch = month_gz[1]
 
-    stems_map = {p: pillars[p]["stem"] for p in PILLAR_ORDER}
-    branches_map = {p: pillars[p]["branch"] for p in PILLAR_ORDER}
+    active = [p for p in PILLAR_ORDER if p in pillars]
+    stems_map = {p: pillars[p]["stem"] for p in active}
+    branches_map = {p: pillars[p]["branch"] for p in active}
 
     # 十神
     ten_gods = ten_gods_per_pillar(day_stem, pillars)
@@ -548,7 +566,12 @@ def main(argv: list[str] | None = None) -> int:
             "day_in_chinese": lunar.getDayInChinese(),
             "zodiac": lunar.getYearShengXiao(),
         },
-        "four_pillars": pillars,
+        "hour_known": hour_known,
+        "notes": ([] if hour_known else
+                  ["时柱待补: 未提供出生时辰, 已按三柱 (年/月/日) 论断; "
+                   "五行得分/旺衰/用神/格局/神煞 均只计六字, 未揣测时辰。"]),
+        "four_pillars": (pillars if hour_known else
+                         {**pillars, "hour": {"status": "时柱待补"}}),
         "day_master": {
             "stem": day_stem,
             "wuxing": TIANGAN_WUXING.get(day_stem),
@@ -568,7 +591,8 @@ def main(argv: list[str] | None = None) -> int:
         "ge_ju": ge_ju,
         "na_yin": {
             "year": year_nayin, "month": month_nayin,
-            "day": day_nayin, "hour": hour_nayin,
+            "day": day_nayin,
+            "hour": hour_nayin if hour_known else None,
         },
         "qi_yun": qi_yun,
         "da_yun": da_yun_list,

@@ -37,7 +37,7 @@ def detect_ge_ju(
     day_wx = TIANGAN_WUXING.get(day_stem, "")
     month_branch = pillars["month"]["branch"]
     month_stem = pillars["month"]["stem"]
-    hour_stem = pillars["hour"]["stem"]
+    hour_stem = pillars.get("hour", {}).get("stem", "")  # absent in three-pillar mode
 
     total_wx = sum(weighted_counts.values()) or 1.0
     rooted = strength.get("rooted_count", 0)
