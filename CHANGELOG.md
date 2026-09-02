@@ -2,6 +2,81 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] — 2026-09-03
+
+Context-cost release. What a reading actually loads is roughly halved, without
+deleting any content a reader can reach — the material moved behind pointers
+or behind a script, and two content bugs surfaced while verifying the moves.
+
+Measured cost per trigger (CJK 1.1 tok/char, ASCII 0.25):
+
+| 触发 | before | after |
+|---|---|---|
+| 周易 | 27.4k | 8.6k (-69%) |
+| 解梦 | 24.7k | 7.3k (-70%) |
+| 塔罗 | 14.8k | 8.6k (-42%) |
+| 八字 | 21.9k | 14.1k (-36%) |
+| 黄历 | 14.4k | 9.2k (-36%) |
+| 紫微 | 22.0k | 14.8k (-33%) |
+
+### Fixed
+- **爻题 ordering** — positions 1 and 6 emitted 九初 / 九上. Classically the
+  ordinal leads at exactly those two positions: 乾 reads 初九 九二 九三 九四
+  九五 上九. This string is quoted back to the reader as `active_line_text` on
+  every cast, so it was wrong throughout, not only in the new lookup.
+- **03-yijing.md 四动 rule** — the prose said 以上爻为主 while the table at the
+  end of the same file said 下爻为主. 朱子《易学启蒙·考变占》: 二爻变以上爻为主,
+  四爻变以之卦二不变爻占、仍以下爻为主. The prose was wrong.
+
+### Added
+- `yijing_cast.py lookup --number N` (卦名/卦辞/大象/六爻辞/白话) and
+  `--all`, replacing the reference file the 周易 route used to force-load.
+- `jiemeng_lookup.py` — `--symbol` / `--search` / `--categories`. The 解梦
+  route previously had no script, so the only way to reach the 105 传统
+  readings was to read the whole 38 KB asset.
+- `references/00-intake.md` — the collection protocol, 边界情形 table and
+  必出字段 list, moved out of the always-loaded router and linked from all
+  five personal-data routes so the step-9 在世状态 ethics check stays reachable.
+- `references/01-bazi-paipan.md`, `references/02-ziwei-paipan.md` — the manual
+  casting procedures, opened only when the script is unavailable or the user
+  wants the derivation explained.
+- Tests locking progressive disclosure, which run_checks cannot: every
+  personal-data route must carry 00-intake.md, no references/ file may be
+  unreachable, and no asset may be unread by every script.
+
+### Removed
+- `references/64hex-full.md` (43 KB). Its 卦辞 (64/64), 象辞 (64/64) and 爻辞
+  (384/384) were identical to `assets/64hex.json`, which the engine already
+  loads and prints; a cast needed two or three hexagram blocks and paid for
+  all 64. The 六条变爻断例 it also carried are already in 03-yijing.md §八.
+- Six assets read by no script and mentioned in no reference, eval or test:
+  24jieqi, bagua, ganzhi, wuxing, ziwei_stars, name_shuli (37 KB). Two were
+  contradictory second sources — ganzhi.json's 巳 hidden-stem order had drifted
+  from utils.HIDDEN_STEMS (order is load-bearing), and name_shuli.json's 吉凶
+  labels disagree with name_analyze.SHULI_81 on 22 of 81 numbers.
+
+### Changed
+- Workflow step 5 no longer says "read the relevant reference file in full
+  (always read 00-foundations.md on first invocation)". Foundations is opened
+  for 理论 questions or a missing table; 塔罗/解梦/星座 never needed its
+  干支/五行 tables (0, 1 and 2 keyword hits respectively).
+- The one-line 免责声明 template is inlined in SKILL.md; 20-disclaimer.md is
+  opened when a request touches a red line, shows a crisis signal, or concerns
+  a third party's chart. The seven red-line bullets stay in SKILL.md.
+- The Data assets table became one line telling Claude not to open assets —
+  every value reaches it through a script's JSON.
+- SKILL.md 15,491 -> 11,599 bytes.
+
+### Not done (and why)
+The planned reference trimming (删「学习路径」/「现代视角」) was dropped after
+checking each target: 15-jiemeng.md's 现代心理学视角 is the 心理 half of the
+dual reading eval #7 asserts, 09-mianxiang.md's 现代医学警告 is a safety
+guardrail, and several others are the cultural/psychological framing
+CONTRIBUTING's code of conduct requires. The 学习路径 sections total ~1 KB
+spread across four different method files, so they save under 400 tokens on
+any single trigger. 03-yijing.md's 六十四卦速查 was also kept — it is now the
+only in-document hexagram index, since 64hex-full.md is gone.
+
 ## [1.4.1] — 2026-09-02
 
 Gate-hardening release. No behaviour changes to any engine; the release
