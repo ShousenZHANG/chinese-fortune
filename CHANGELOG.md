@@ -2,6 +2,60 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.1] — 2026-09-03
+
+Maintainability release. No behaviour change to any engine — every split and
+merge below is locked by a value-level snapshot or an equivalence test.
+
+### Changed
+- **No script exceeds the project's own 800-line maximum.** bazi_calc.py
+  (1719, 2.1x) split into bazi_tables / bazi_shensha / bazi_strength /
+  bazi_geju + a 562-line entry point; ziwei_calc.py (1071) into ziwei_tables /
+  ziwei_stars / ziwei_palaces / ziwei_patterns + a 364-line entry point. Both
+  cut at the files' existing section banners, so nothing moved relative to its
+  neighbours, and both dependency graphs are acyclic. The largest script is now
+  qimen_cast.py at 794 lines, and a test keeps it that way.
+- **One 时辰 helper instead of five.** ziwei's branch_of_hour, liuren's
+  hour_to_zhi, xiaoliuren's hour_branch_from_hour, meihua's shichen_num and
+  yijing's shichen_index all carried the same arithmetic with the same 23/0 ->
+  子 case. Verified identical across all 24 hours, then pointed at
+  utils.hour_branch / hour_branch_index / shichen_number. This is the
+  arithmetic huangli got wrong in v1.4.0 — worth having in one place.
+- **旬空 and 六冲 to utils.** bazi and liuyao carried identical 旬空 offset
+  tables (verified equal across all 60 pillars); 六冲 existed three ways. bazi's
+  copy also fell back to 甲子旬 for an impossible offset, silently claiming a
+  空亡 that is not there.
+- **One version constant instead of four.** utils.__version__ is the single
+  source; liuren_cast had its own pinned at 1.0.0 and qimen_cast a hardcoded
+  "1.0.0" in its payload, so both had been reporting a version five minors
+  stale in every response. build_skill reads utils.py rather than
+  regex-scraping bazi_calc.py.
+
+### Removed
+- qimen_cast.heaven_plate (46 lines) — called from nowhere. main() computes
+  the same rotation inline and, unlike the dead function, handles
+  hour_stem == 甲 (甲 遁于六仪), so wiring the function in rather than deleting
+  it would have been a regression.
+- A duplicate xun_head call in qimen main(), a byte-identical copy of
+  utils.jiazi_index, and ziwei's reverse 纳音 keyword table (every 纳音 name
+  already ends with its own 五行 character; verified for all 60 pairs).
+
+### Added
+- A full-output snapshot for ziwei_calc, added before its split: evals asserts
+  only has_keys for that engine, so 命宫/身宫/五行局/星位/四化/大限 values were
+  unguarded — the same gap the bazi snapshot closed in v1.4.0.
+- Equivalence tests: all five 时辰 wrappers still agree with utils on every
+  hour; the 60 pillars still partition into six 旬; every engine echoes
+  utils.__version__; no script exceeds 800 lines.
+
+### Kept deliberately
+bazi_calc.INLINE_QI_FA was flagged as an unreachable fallback but is NOT
+removed: it is unreachable only while assets/shensha.json is present. With the
+asset missing it supplies 羊刃/飞刃/天乙贵人, which is the graceful degradation
+CONTRIBUTING requires of every script.
+
+Suite 1064 -> 1083, coverage 85.9% -> 87.3%.
+
 ## [1.5.0] — 2026-09-03
 
 Context-cost release. What a reading actually loads is roughly halved, without
