@@ -57,7 +57,7 @@ Use this line — no need to open a file for it:
 | 黄历 / 老黄历 / 宜忌 / 择日 | 黄历择日 | [12-huangli.md](references/12-huangli.md) + [00-intake.md](references/00-intake.md) | [huangli_query.py](scripts/huangli_query.py) |
 | 起名 / 改名 / 取名 / 公司名 | 姓名学 | [13-qiming.md](references/13-qiming.md) + [00-intake.md](references/00-intake.md) | [name_analyze.py](scripts/name_analyze.py) |
 | 合婚 / 八字合婚 / 配对 | 合婚 | [14-hehun.md](references/14-hehun.md) + [00-intake.md](references/00-intake.md) | [zodiac_compat.py](scripts/zodiac_compat.py) |
-| 解梦 / 梦见 / 周公解梦 | 解梦 | [15-jiemeng.md](references/15-jiemeng.md) | — |
+| 解梦 / 梦见 / 周公解梦 | 解梦 | [15-jiemeng.md](references/15-jiemeng.md) | [jiemeng_lookup.py](scripts/jiemeng_lookup.py) |
 | 生肖 / 属相 / 十二生肖 | 生肖 | [16-shengxiao.md](references/16-shengxiao.md) | [zodiac_compat.py](scripts/zodiac_compat.py) |
 | 星座 / 太阳星座 / 上升 | 星座 | [17-xingzuo.md](references/17-xingzuo.md) | — |
 | 塔罗 / Tarot | 塔罗 | [18-tarot.md](references/18-tarot.md) | [tarot_draw.py](scripts/tarot_draw.py) |

@@ -148,3 +148,17 @@ def test_moved_reference_files_all_exist_and_are_linked():
         f.read_text(encoding="utf-8") for f in refs)
     for f in refs:
         assert corpus.count(f.name) >= 2, f"{f.name} is unreachable (only self-reference)"
+
+
+def test_every_asset_is_reachable_from_a_script():
+    """assets/*.json are consumed by scripts, never opened by Claude, so an
+    asset no script reads is unreachable data.
+
+    Moving the SKILL.md asset table out silently orphaned jiemeng.json until
+    jiemeng_lookup.py was added — this test is what should have caught it.
+    """
+    scripts = "".join(
+        f.read_text(encoding="utf-8") for f in (ROOT / "scripts").glob("*.py"))
+    orphans = [f.name for f in sorted((ROOT / "assets").glob("*.json"))
+               if f.name not in scripts]
+    assert not orphans, f"assets no script reads: {orphans}"
