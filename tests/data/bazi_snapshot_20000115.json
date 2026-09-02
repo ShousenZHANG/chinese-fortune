@@ -1,0 +1,547 @@
+{
+  "ok": true,
+  "tool": "bazi",
+  "input": {
+    "year": 2000,
+    "month": 1,
+    "day": 15,
+    "hour": 10,
+    "minute": 30,
+    "gender": "male",
+    "tz": 8.0,
+    "longitude": 120.0,
+    "lunar": false,
+    "years": 80,
+    "no_shensha": false,
+    "no_yongshen": false,
+    "no_geju": false,
+    "as_of_year": 2026
+  },
+  "true_solar_time": {
+    "longitude": 120.0,
+    "ref_meridian": 120.0,
+    "longitude_offset_min": 0.0,
+    "equation_of_time_min": -9.41,
+    "total_offset_min": -9.41,
+    "clock_time": "10:30",
+    "true_solar_time": "10:21",
+    "applied": true
+  },
+  "solar_date": {
+    "year": 2000,
+    "month": 1,
+    "day": 15,
+    "hour": 10,
+    "minute": 21
+  },
+  "lunar_date": {
+    "year": 1999,
+    "month": 12,
+    "day": 9,
+    "year_in_ganzhi": "己卯",
+    "month_in_ganzhi": "丁丑",
+    "day_in_ganzhi": "壬申",
+    "time_in_ganzhi": "乙巳",
+    "year_in_chinese": "一九九九",
+    "month_in_chinese": "腊",
+    "day_in_chinese": "初九",
+    "zodiac": "兔"
+  },
+  "four_pillars": {
+    "year": {
+      "stem": "己",
+      "branch": "卯",
+      "ganzhi": "己卯",
+      "stem_wuxing": "土",
+      "branch_wuxing": "木",
+      "stem_yin_yang": "阴",
+      "branch_yin_yang": "阴",
+      "hidden_stems": [
+        "乙"
+      ],
+      "nayin": "城头土",
+      "zodiac": "兔"
+    },
+    "month": {
+      "stem": "丁",
+      "branch": "丑",
+      "ganzhi": "丁丑",
+      "stem_wuxing": "火",
+      "branch_wuxing": "土",
+      "stem_yin_yang": "阴",
+      "branch_yin_yang": "阴",
+      "hidden_stems": [
+        "己",
+        "癸",
+        "辛"
+      ],
+      "nayin": "涧下水",
+      "zodiac": "牛"
+    },
+    "day": {
+      "stem": "壬",
+      "branch": "申",
+      "ganzhi": "壬申",
+      "stem_wuxing": "水",
+      "branch_wuxing": "金",
+      "stem_yin_yang": "阳",
+      "branch_yin_yang": "阳",
+      "hidden_stems": [
+        "庚",
+        "壬",
+        "戊"
+      ],
+      "nayin": "剑锋金",
+      "zodiac": "猴"
+    },
+    "hour": {
+      "stem": "乙",
+      "branch": "巳",
+      "ganzhi": "乙巳",
+      "stem_wuxing": "木",
+      "branch_wuxing": "火",
+      "stem_yin_yang": "阴",
+      "branch_yin_yang": "阴",
+      "hidden_stems": [
+        "丙",
+        "庚",
+        "戊"
+      ],
+      "nayin": "覆灯火",
+      "zodiac": "蛇"
+    }
+  },
+  "day_master": {
+    "stem": "壬",
+    "wuxing": "水",
+    "yin_yang": "阳"
+  },
+  "ten_gods": {
+    "year": {
+      "stem": "正官",
+      "hidden": [
+        {
+          "stem": "乙",
+          "shi_shen": "伤官"
+        }
+      ]
+    },
+    "month": {
+      "stem": "正财",
+      "hidden": [
+        {
+          "stem": "己",
+          "shi_shen": "正官"
+        },
+        {
+          "stem": "癸",
+          "shi_shen": "劫财"
+        },
+        {
+          "stem": "辛",
+          "shi_shen": "正印"
+        }
+      ]
+    },
+    "day": {
+      "stem": "日主",
+      "hidden": [
+        {
+          "stem": "庚",
+          "shi_shen": "偏印"
+        },
+        {
+          "stem": "壬",
+          "shi_shen": "比肩"
+        },
+        {
+          "stem": "戊",
+          "shi_shen": "七杀"
+        }
+      ]
+    },
+    "hour": {
+      "stem": "伤官",
+      "hidden": [
+        {
+          "stem": "丙",
+          "shi_shen": "偏财"
+        },
+        {
+          "stem": "庚",
+          "shi_shen": "偏印"
+        },
+        {
+          "stem": "戊",
+          "shi_shen": "七杀"
+        }
+      ]
+    }
+  },
+  "wuxing_count": {
+    "weighted": {
+      "木": 2.0,
+      "火": 2.0,
+      "土": 4.75,
+      "金": 2.8,
+      "水": 4.25
+    },
+    "root_bonus": {
+      "木": 0.0,
+      "火": 0.0,
+      "土": 0.0,
+      "金": 0.0,
+      "水": 1.0
+    }
+  },
+  "day_master_strength": {
+    "label": "身旺",
+    "score": 1.0,
+    "state_from_yueling": "旺",
+    "party_ratio": 0.446,
+    "rooted_count": 2,
+    "explanation": "日主壬(水)生于丑月,处于'旺'地; 通根2处; 党众占比44.6%. 综合判定:身旺."
+  },
+  "interactions": {
+    "tiangan_he": [
+      {
+        "pair": [
+          "丁",
+          "壬"
+        ],
+        "positions": [
+          "月干",
+          "日干"
+        ],
+        "transforms_to": "木"
+      }
+    ],
+    "dizhi_liu_he": [
+      {
+        "pair": [
+          "申",
+          "巳"
+        ],
+        "positions": [
+          "日支",
+          "时支"
+        ],
+        "transforms_to": "水"
+      }
+    ],
+    "san_he": [
+      {
+        "branches": [
+          "巳",
+          "丑"
+        ],
+        "type": "半合",
+        "transforms_to": "金"
+      }
+    ],
+    "san_hui": [],
+    "dizhi_chong": [],
+    "dizhi_hai": [],
+    "dizhi_xing": [
+      {
+        "branches": [
+          "巳",
+          "申"
+        ],
+        "type": "半刑"
+      }
+    ]
+  },
+  "shen_sha": [
+    {
+      "name": "天乙贵人",
+      "position": "年支",
+      "source_pillar": "year",
+      "hit": "卯",
+      "trigger": "日干",
+      "meaning": "尊贵之神,主逢凶化吉,得贵人扶持。命带天乙贵人者一生多得贵人相助,逢难必有救。"
+    },
+    {
+      "name": "天乙贵人",
+      "position": "时支",
+      "source_pillar": "hour",
+      "hit": "巳",
+      "trigger": "日干",
+      "meaning": "尊贵之神,主逢凶化吉,得贵人扶持。命带天乙贵人者一生多得贵人相助,逢难必有救。"
+    },
+    {
+      "name": "太极贵人",
+      "position": "日支",
+      "source_pillar": "day",
+      "hit": "申",
+      "trigger": "日干",
+      "meaning": "主聪明好学,知玄理,中年有成,易得名声。"
+    },
+    {
+      "name": "太极贵人",
+      "position": "时支",
+      "source_pillar": "hour",
+      "hit": "巳",
+      "trigger": "日干",
+      "meaning": "主聪明好学,知玄理,中年有成,易得名声。"
+    },
+    {
+      "name": "学堂",
+      "position": "日支",
+      "source_pillar": "day",
+      "hit": "申",
+      "trigger": "日干",
+      "meaning": "主学问、教育,利从事教学、研究、文化工作。"
+    },
+    {
+      "name": "金舆",
+      "position": "月支",
+      "source_pillar": "month",
+      "hit": "丑",
+      "trigger": "日干",
+      "meaning": "主乘车坐辇,荣华富贵,得配偶贤良。"
+    },
+    {
+      "name": "驿马",
+      "position": "时支",
+      "source_pillar": "hour",
+      "hit": "巳",
+      "trigger": "年支三合",
+      "meaning": "主迁移、奔波、出行。命带驿马者多动、远行、变迁、利于外出发展。"
+    },
+    {
+      "name": "将星",
+      "position": "年支",
+      "source_pillar": "year",
+      "hit": "卯",
+      "trigger": "年支三合",
+      "meaning": "主权威、领袖、统帅之能,利武职、领导职位。"
+    },
+    {
+      "name": "劫煞",
+      "position": "日支",
+      "source_pillar": "day",
+      "hit": "申",
+      "trigger": "年支三合",
+      "meaning": "主突遭劫难、损失、是非。命带劫煞者需防小人陷害与意外损失。"
+    },
+    {
+      "name": "孤辰",
+      "position": "时支",
+      "source_pillar": "hour",
+      "hit": "巳",
+      "trigger": "年支季节",
+      "meaning": "主孤独,男命遇之难得妻缘,六亲缘薄,孤芳自赏。"
+    },
+    {
+      "name": "寡宿",
+      "position": "月支",
+      "source_pillar": "month",
+      "hit": "丑",
+      "trigger": "年支季节",
+      "meaning": "主孤独,女命遇之难得夫缘,孤独寡居,六亲缘浅。"
+    },
+    {
+      "name": "小耗",
+      "position": "日支",
+      "source_pillar": "day",
+      "hit": "申",
+      "trigger": "年支",
+      "meaning": "主小额破财、零散花费,日常琐事破财。"
+    },
+    {
+      "name": "天德合",
+      "position": "时干",
+      "source_pillar": "hour",
+      "hit": "乙",
+      "trigger": "月支",
+      "meaning": "天德之合化,功用同天德,主平安福祉。"
+    },
+    {
+      "name": "月德合",
+      "position": "时干",
+      "source_pillar": "hour",
+      "hit": "乙",
+      "trigger": "月支三合",
+      "meaning": "月德之合化,主仁德、福报,助人化解灾厄。"
+    },
+    {
+      "name": "十恶大败",
+      "position": "日柱",
+      "source_pillar": "day",
+      "hit": "壬申",
+      "trigger": "日柱",
+      "meaning": "主大败之时,事业财运均不利,需谨慎防失。"
+    }
+  ],
+  "yong_shen": {
+    "primary": "丙",
+    "wuxing": "火",
+    "reason": "扶抑与调候一致: 身旺需克/泄/耗调和, 取火为扶抑用神(其在命局力量最弱, 需被激活); 调候: 丑月寒土冻水, 必取丙火解冻暖局, 丁火配合调候, 甲木辅之. 丙丁两透, 富贵显达, 福寿绵长.",
+    "tiaohou_match": true,
+    "fuyi_match": true
+  },
+  "xi_shen": {
+    "primary": "甲",
+    "wuxing": "木",
+    "reason": "生火(丙)之神, 辅助用神"
+  },
+  "ji_shen": {
+    "primary": "壬",
+    "wuxing": "水",
+    "reason": "克火(丙), 损用为忌"
+  },
+  "ge_ju": {
+    "primary": "正官格",
+    "type": "正格",
+    "month_origin": "月令本气透出",
+    "supporting_evidence": [
+      "月支丑本气藏己",
+      "年干透己"
+    ],
+    "broken_or_pure": "纯",
+    "notes": "正官格喜见正财生官, 忌见七杀混杂. 身旺官弱以财生官, 身弱官旺以印化官."
+  },
+  "na_yin": {
+    "year": "城头土",
+    "month": "涧下水",
+    "day": "剑锋金",
+    "hour": "覆灯火"
+  },
+  "qi_yun": {
+    "start_year": 2003,
+    "start_month": 1,
+    "start_day": 15,
+    "start_age": 3
+  },
+  "da_yun": [
+    {
+      "start_age": 4,
+      "start_year": 2003,
+      "end_year": 2012,
+      "ganzhi": "丙子",
+      "stem": "丙",
+      "branch": "子",
+      "shi_shen": "偏财",
+      "branch_wuxing": "水"
+    },
+    {
+      "start_age": 14,
+      "start_year": 2013,
+      "end_year": 2022,
+      "ganzhi": "乙亥",
+      "stem": "乙",
+      "branch": "亥",
+      "shi_shen": "伤官",
+      "branch_wuxing": "水"
+    },
+    {
+      "start_age": 24,
+      "start_year": 2023,
+      "end_year": 2032,
+      "ganzhi": "甲戌",
+      "stem": "甲",
+      "branch": "戌",
+      "shi_shen": "食神",
+      "branch_wuxing": "土"
+    },
+    {
+      "start_age": 34,
+      "start_year": 2033,
+      "end_year": 2042,
+      "ganzhi": "癸酉",
+      "stem": "癸",
+      "branch": "酉",
+      "shi_shen": "劫财",
+      "branch_wuxing": "金"
+    },
+    {
+      "start_age": 44,
+      "start_year": 2043,
+      "end_year": 2052,
+      "ganzhi": "壬申",
+      "stem": "壬",
+      "branch": "申",
+      "shi_shen": "比肩",
+      "branch_wuxing": "金"
+    },
+    {
+      "start_age": 54,
+      "start_year": 2053,
+      "end_year": 2062,
+      "ganzhi": "辛未",
+      "stem": "辛",
+      "branch": "未",
+      "shi_shen": "正印",
+      "branch_wuxing": "土"
+    },
+    {
+      "start_age": 64,
+      "start_year": 2063,
+      "end_year": 2072,
+      "ganzhi": "庚午",
+      "stem": "庚",
+      "branch": "午",
+      "shi_shen": "偏印",
+      "branch_wuxing": "火"
+    },
+    {
+      "start_age": 74,
+      "start_year": 2073,
+      "end_year": 2082,
+      "ganzhi": "己巳",
+      "stem": "己",
+      "branch": "巳",
+      "shi_shen": "正官",
+      "branch_wuxing": "火"
+    },
+    {
+      "start_age": 84,
+      "start_year": 2083,
+      "end_year": 2092,
+      "ganzhi": "戊辰",
+      "stem": "戊",
+      "branch": "辰",
+      "shi_shen": "七杀",
+      "branch_wuxing": "土"
+    }
+  ],
+  "liu_nian": [
+    {
+      "year": 2026,
+      "ganzhi": "丙午",
+      "zodiac": "马",
+      "shi_shen": "偏财"
+    },
+    {
+      "year": 2027,
+      "ganzhi": "丁未",
+      "zodiac": "羊",
+      "shi_shen": "正财"
+    },
+    {
+      "year": 2028,
+      "ganzhi": "戊申",
+      "zodiac": "猴",
+      "shi_shen": "七杀"
+    },
+    {
+      "year": 2029,
+      "ganzhi": "己酉",
+      "zodiac": "鸡",
+      "shi_shen": "正官"
+    },
+    {
+      "year": 2030,
+      "ganzhi": "庚戌",
+      "zodiac": "狗",
+      "shi_shen": "偏印"
+    },
+    {
+      "year": 2031,
+      "ganzhi": "辛亥",
+      "zodiac": "猪",
+      "shi_shen": "正印"
+    }
+  ]
+}

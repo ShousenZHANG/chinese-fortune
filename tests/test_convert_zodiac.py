@@ -63,3 +63,20 @@ def test_zodiac_taisui_2026_horse_year():
     assert d["year_zodiac"] == "马"
     assert d["犯太岁"] == "马"
     assert d["冲太岁"] == "鼠"
+
+
+# --------------------------------------------------------------------------- #
+# 错误路径退出码 — 13 引擎中 zodiac_compat 是唯一 error 仍 exit 0 的异类
+# --------------------------------------------------------------------------- #
+
+def test_zodiac_info_unknown_exits_nonzero():
+    """输出 error 负载时必须 rc=1, 否则按退出码判断的调用方会当成功."""
+    from conftest import run_cli
+    d = run_cli("zodiac_compat.py", "info", "--zodiac", "XX", expect_rc=1)
+    assert "error" in d
+
+
+def test_zodiac_compat_unknown_exits_nonzero():
+    from conftest import run_cli
+    d = run_cli("zodiac_compat.py", "compat", "--a", "鼠", "--b", "XX", expect_rc=1)
+    assert "error" in d

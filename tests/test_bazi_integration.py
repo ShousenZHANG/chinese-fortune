@@ -129,3 +129,30 @@ def test_leap_month_lunar_input():
                  "--gender", "male", "--lunar", "--as-of-year", 2026)
     assert d["ok"] is True
     assert pillars(d) == ("庚子", "辛巳", "庚戌", "壬午")
+
+
+# --------------------------------------------------------------------------- #
+# 全量快照 — 拆分重构的安全网
+# --------------------------------------------------------------------------- #
+
+def test_bazi_full_output_snapshot():
+    """中性示例盘的完整 JSON 必须逐字段不变.
+
+    既有测试只断 has_keys, shen_sha/yong_shen/ge_ju/interactions 的“值”无人锁;
+    P4 拆分 bazi_calc 前必须有这一条, 否则搬代码搬出语义漂移也无人发现.
+    version 字段已剔除, 发版不影响本快照.
+    """
+    import json
+    from pathlib import Path
+
+    from conftest import run_cli
+
+    got = run_cli("bazi_calc.py", "--year", 2000, "--month", 1, "--day", 15,
+                  "--hour", 10, "--minute", 30, "--gender", "male",
+                  "--as-of-year", 2026)
+    got.pop("version", None)
+    want = json.loads(
+        (Path(__file__).resolve().parent / "data" /
+         "bazi_snapshot_20000115.json").read_text(encoding="utf-8")
+    )
+    assert got == want

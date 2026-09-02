@@ -245,3 +245,33 @@ def test_wushu_dun_hour_stem_invariant(y, m, dd):
     assert hour_gz[0] == WUSHU_DUN[day_stem], (
         f"五鼠遁 violated: 日干{day_stem} -> 时干 should be "
         f"{WUSHU_DUN[day_stem]}子, got {hour_gz}")
+
+
+# --------------------------------------------------------------------------- #
+# --help 在非 UTF-8 控制台 / 管道下必须可用
+# --------------------------------------------------------------------------- #
+
+CLI_SCRIPTS = sorted(
+    p.name for p in SCRIPTS.glob("*.py")
+    if p.name not in {"utils.py", "build_skill.py"}
+)
+
+
+@pytest.mark.parametrize("script", CLI_SCRIPTS)
+def test_help_survives_non_utf8_console(script):
+    """中文 help 在 cp1252 环境下不得崩溃, 且 stdout 必须仍是合法 UTF-8.
+
+    真实失效场景是 stdout 走管道 (agent 调用方式) 与非 CJK 控制台, 此时
+    Python 回退到 ANSI 代码页, argparse 写 help 时抛 UnicodeEncodeError.
+    """
+    import os
+    env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
+    proc = subprocess.run(
+        [sys.executable, str(SCRIPTS / script), "--help"],
+        capture_output=True, env=env,
+    )
+    assert proc.returncode == 0, (
+        f"{script} --help rc={proc.returncode} under cp1252\n"
+        f"stderr={proc.stderr[:400]!r}"
+    )
+    proc.stdout.decode("utf-8")  # raises UnicodeDecodeError if mojibake

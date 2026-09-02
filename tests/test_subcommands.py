@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from conftest import run_cli
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
 
@@ -65,10 +66,19 @@ def test_xiaoliuren_solar_golden():
     assert d["result"]["tone"] == "吉"
 
 
-def test_xiaoliuren_solar_midnight_boundary():
-    """23:30 falls in 子时; must not crash and must return a valid palace."""
-    d = run("xiaoliuren_cast.py", "solar", "--date", "2026-06-24", "--time", "23:30")
-    assert d["result"]["palace"] in {"大安", "留连", "速喜", "赤口", "小吉", "空亡"}
+def test_xiaoliuren_solar_hai_to_zi_boundary():
+    """亥→子 边界 golden: 22:59 属亥, 23:00/23:01 同属子, 三者不得同宫.
+
+    旧断言只查返回值在六宫之内 —— 对任何返回值都成立, 锁不住边界.
+    """
+    def palace(t):
+        return run("xiaoliuren_cast.py", "solar",
+                   "--date", "2026-06-24", "--time", t)["result"]["palace"]
+
+    hai, zi_start, zi_next = palace("22:59"), palace("23:00"), palace("23:01")
+    assert hai == "大安"
+    assert zi_start == zi_next == "留连"
+    assert hai != zi_start, "23:00 必须已跨入子时"
 
 
 # --------------------------------------------------------------------------- #
@@ -89,3 +99,121 @@ def test_huangli_shichen_traditional_boundaries():
     for s in detail:
         assert s["ganzhi"][1] == s["shichen"], (
             f"{s['hour_range']} 干支 {s['ganzhi']} != 时辰 {s['shichen']}")
+
+
+# --------------------------------------------------------------------------- #
+# 爻位约定 oracle — 卦名往返自洽掩盖了爻序镜像, 故断言爻值而非卦名
+# --------------------------------------------------------------------------- #
+
+def _yy(lines: list[int]) -> list[int]:
+    """Reduce raw line values to yin/yang (1=阳, 0=阴)."""
+    return [1 if v in (7, 9) else 0 for v in lines]
+
+
+def test_from_numbers_lines_match_trigram_definition():
+    """每组 (上卦, 下卦): 生成的 6 爻自下而上必须等于八卦的经典爻画.
+
+    BAGUA[x]["lines"] 自上而下, 故自下而上取 reversed().
+    """
+    import yijing_cast as yj
+    from utils import BAGUA, XIANTIAN_NUM_TO_TRIGRAM
+
+    for upper in range(1, 9):
+        for lower in range(1, 9):
+            lines = _yy(yj.from_numbers(upper, lower, 1))
+            up_tri = XIANTIAN_NUM_TO_TRIGRAM[upper]
+            low_tri = XIANTIAN_NUM_TO_TRIGRAM[lower]
+            want = (list(reversed(BAGUA[low_tri]["lines"]))
+                    + list(reversed(BAGUA[up_tri]["lines"])))
+            # 动爻已把 7->9 / 8->6, 阴阳不变, 故可直接比阴阳
+            assert lines == want, (
+                f"上{up_tri}/下{low_tri}: 爻画自下而上 {lines} != 经典 {want}"
+            )
+
+
+def test_main_hex_lines_match_asset_line_types():
+    """全 64 卦: 引擎输出的爻阴阳必须与 assets/64hex.json 的 六/九 一致.
+
+    资产的 lines[].type 自下而上 (position 1 = 初爻), 是独立于代码位序约定的
+    经典基准 —— 卦名对而爻画反的错误只能被这条断言抓到.
+    """
+    import yijing_cast as yj
+
+    assets = yj.load_hex_assets()
+    raw = json.loads(
+        (SCRIPTS.parent / "assets" / "64hex.json").read_text(encoding="utf-8")
+    )
+    by_num = {h["number"]: h for h in raw["hexagrams"]}
+    seen = set()
+    for upper in range(1, 9):
+        for lower in range(1, 9):
+            lines = yj.from_numbers(upper, lower, 1)
+            info = yj.hex_info(lines, assets)
+            num = info["number"]
+            seen.add(num)
+            want = [1 if ln["type"] == "九" else 0
+                    for ln in sorted(by_num[num]["lines"],
+                                     key=lambda x: x["position"])]
+            assert _yy(lines) == want, (
+                f"#{num} {info['name']}: 爻画 {_yy(lines)} != 资产 {want}"
+            )
+    assert len(seen) == 64, f"应覆盖全 64 卦, 实际 {len(seen)}"
+
+
+def test_active_lines_equal_positions_where_main_and_changed_differ():
+    """动爻下标必须等于本卦与变卦逐爻相异的位置集合 (全 384 组)."""
+    import yijing_cast as yj
+
+    for upper in range(1, 9):
+        for lower in range(1, 9):
+            for change in range(1, 7):
+                lines = yj.from_numbers(upper, lower, change)
+                changed = yj.changed_lines(lines)
+                diff = [i + 1 for i, (a, b) in enumerate(zip(_yy(lines), _yy(changed), strict=True))
+                        if a != b]
+                assert diff == [change], (
+                    f"上{upper}/下{lower}/动{change}: 相异爻位 {diff} != [{change}]"
+                )
+
+
+# --------------------------------------------------------------------------- #
+# 黄历 时辰 — 早子/夜子 分列, 天干须合五鼠遁
+# --------------------------------------------------------------------------- #
+
+def test_huangli_shichen_pillars_follow_wushu_dun():
+    """13 行: 早子(本日干) → 亥 为连续 60 甲子段, 夜子(次日干) 另计.
+
+    只断地支等于时辰名的旧断言无法发现"子行报次日时柱", 故此处断天干.
+    """
+    from utils import WUSHU_DUN, jiazi_index
+
+    d = run_cli("huangli_query.py", "--date", "2026-06-24")
+    detail = d["shichen_detail"]
+    day_stem = d["ganzhi"]["day"][0]
+
+    assert len(detail) == 13, "早子 00:00-01:00 与 夜子 23:00-24:00 必须分列"
+    assert detail[0]["shichen"] == "早子"
+    assert detail[0]["hour_range"] == "00:00-01:00"
+    assert detail[-1]["shichen"] == "夜子"
+    assert detail[-1]["hour_range"] == "23:00-24:00"
+
+    # 早子 天干 = 五鼠遁(本日干)
+    assert detail[0]["ganzhi"][0] == WUSHU_DUN[day_stem], (
+        f"早子时干应为 {WUSHU_DUN[day_stem]}, 实际 {detail[0]['ganzhi']}"
+    )
+    # 早子 → 亥 连续 60 甲子
+    run12 = detail[:12]
+    idxs = [jiazi_index(r["ganzhi"][0], r["ganzhi"][1]) for r in run12]
+    for a, b in zip(idxs, idxs[1:], strict=True):
+        assert (a + 1) % 60 == b, f"时柱非连续六十甲子: {idxs}"
+    # 夜子 天干 = 五鼠遁(次日干), 即比早子晚一轮
+    nxt = run_cli("huangli_query.py", "--date", "2026-06-25")
+    assert detail[-1]["ganzhi"][0] == WUSHU_DUN[nxt["ganzhi"]["day"][0]]
+
+
+def test_huangli_shichen_labels_match_branches():
+    """每块的时柱地支必须等于其时辰名 (子/丑/…/亥); 早子与夜子同为 子."""
+    d = run_cli("huangli_query.py", "--date", "2026-06-24")
+    for row in d["shichen_detail"]:
+        want = "子" if row["shichen"] in ("早子", "夜子") else row["shichen"]
+        assert row["ganzhi"][1] == want, f"{row['shichen']}: {row['ganzhi']}"
