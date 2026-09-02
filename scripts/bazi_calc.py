@@ -241,6 +241,10 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   day_master ten_gods wuxing_count day_master_strength interactions shen_sha
   yong_shen xi_shen ji_shen ge_ju na_yin qi_yun da_yun liu_nian
 
+qi_yun: years months days text (起运 duration, 周岁).
+da_yun[]: start_age/end_age are 周岁 anchored to qi_yun.years;
+  start_age_xusui is the 虚岁 equivalent.
+
 On error: {"error": ..., "message": ...} and exit 1."""
 
 
@@ -460,6 +464,13 @@ def main(argv: list[str] | None = None) -> int:
     try:
         yun = eight.getYun(1 if args.gender == "male" else 0)
         start_solar = yun.getStartSolar()
+        # 起运 is a DURATION from birth (年/月/日), not an age: lunar_python's
+        # Yun.getStartYear() is "years until 起运". 01-bazi.md §7.2 writes it as
+        # 6岁4个月 and anchors every 大运 band to it — 起运6岁 -> 6—16, 16—26 —
+        # so the band start is that figure in 周岁, stepping by 10.
+        start_years = yun.getStartYear()
+        start_months = yun.getStartMonth()
+        start_days = yun.getStartDay()
         cycles = yun.getDaYun(args.years // 10 + 2)
         for d in cycles:
             ganzhi = d.getGanZhi()
@@ -467,8 +478,13 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             stem = ganzhi[0]
             branch = ganzhi[1] if len(ganzhi) > 1 else ""
+            band = start_years + 10 * len(da_yun_list)
             da_yun_list.append({
-                "start_age": d.getStartAge(),
+                # 周岁, per 01-bazi.md §7.2. lunar_python's getStartAge() is
+                # 虚岁 (one greater); kept beside it rather than passed off as 周岁.
+                "start_age": band,
+                "end_age": band + 10,
+                "start_age_xusui": d.getStartAge(),
                 "start_year": d.getStartYear(),
                 "end_year": d.getEndYear(),
                 "ganzhi": ganzhi,
@@ -477,11 +493,16 @@ def main(argv: list[str] | None = None) -> int:
                 "shi_shen": _shi_shen_safe(day_stem, stem) if stem in TIANGAN_WUXING else "",
                 "branch_wuxing": DIZHI_WUXING.get(branch),
             })
+        remainder = (f"{start_months}个月" if start_months else "")
         qi_yun = {
             "start_year": start_solar.getYear(),
             "start_month": start_solar.getMonth(),
             "start_day": start_solar.getDay(),
-            "start_age": yun.getStartYear(),
+            "years": start_years,
+            "months": start_months,
+            "days": start_days,
+            "text": f"{start_years}岁{remainder}".rstrip(),
+            "convention": "周岁; 大运各柱起讫岁数以此为基准 (01-bazi.md §7.2)",
         }
     except Exception as e:
         warn(f"da_yun unavailable: {e}")

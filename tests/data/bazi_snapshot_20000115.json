@@ -412,11 +412,17 @@
     "start_year": 2003,
     "start_month": 1,
     "start_day": 15,
-    "start_age": 3
+    "years": 3,
+    "months": 0,
+    "days": 0,
+    "text": "3岁",
+    "convention": "周岁; 大运各柱起讫岁数以此为基准 (01-bazi.md §7.2)"
   },
   "da_yun": [
     {
-      "start_age": 4,
+      "start_age": 3,
+      "end_age": 13,
+      "start_age_xusui": 4,
       "start_year": 2003,
       "end_year": 2012,
       "ganzhi": "丙子",
@@ -426,7 +432,9 @@
       "branch_wuxing": "水"
     },
     {
-      "start_age": 14,
+      "start_age": 13,
+      "end_age": 23,
+      "start_age_xusui": 14,
       "start_year": 2013,
       "end_year": 2022,
       "ganzhi": "乙亥",
@@ -436,7 +444,9 @@
       "branch_wuxing": "水"
     },
     {
-      "start_age": 24,
+      "start_age": 23,
+      "end_age": 33,
+      "start_age_xusui": 24,
       "start_year": 2023,
       "end_year": 2032,
       "ganzhi": "甲戌",
@@ -446,7 +456,9 @@
       "branch_wuxing": "土"
     },
     {
-      "start_age": 34,
+      "start_age": 33,
+      "end_age": 43,
+      "start_age_xusui": 34,
       "start_year": 2033,
       "end_year": 2042,
       "ganzhi": "癸酉",
@@ -456,7 +468,9 @@
       "branch_wuxing": "金"
     },
     {
-      "start_age": 44,
+      "start_age": 43,
+      "end_age": 53,
+      "start_age_xusui": 44,
       "start_year": 2043,
       "end_year": 2052,
       "ganzhi": "壬申",
@@ -466,7 +480,9 @@
       "branch_wuxing": "金"
     },
     {
-      "start_age": 54,
+      "start_age": 53,
+      "end_age": 63,
+      "start_age_xusui": 54,
       "start_year": 2053,
       "end_year": 2062,
       "ganzhi": "辛未",
@@ -476,7 +492,9 @@
       "branch_wuxing": "土"
     },
     {
-      "start_age": 64,
+      "start_age": 63,
+      "end_age": 73,
+      "start_age_xusui": 64,
       "start_year": 2063,
       "end_year": 2072,
       "ganzhi": "庚午",
@@ -486,7 +504,9 @@
       "branch_wuxing": "火"
     },
     {
-      "start_age": 74,
+      "start_age": 73,
+      "end_age": 83,
+      "start_age_xusui": 74,
       "start_year": 2073,
       "end_year": 2082,
       "ganzhi": "己巳",
@@ -496,7 +516,9 @@
       "branch_wuxing": "火"
     },
     {
-      "start_age": 84,
+      "start_age": 83,
+      "end_age": 93,
+      "start_age_xusui": 84,
       "start_year": 2083,
       "end_year": 2092,
       "ganzhi": "戊辰",

@@ -156,3 +156,42 @@ def test_bazi_full_output_snapshot():
          "bazi_snapshot_20000115.json").read_text(encoding="utf-8")
     )
     assert got == want
+
+
+# --------------------------------------------------------------------------- #
+# 起运 / 大运 岁数 — 周岁 per 01-bazi.md §7.2, with the months remainder shown
+# --------------------------------------------------------------------------- #
+
+def test_qi_yun_reports_years_months_and_days():
+    """§7.2 writes 起运 as 6岁4个月 / 5岁余6月 / 4岁余 — the sub-year remainder
+    carries meaning. The old output truncated it to a bare integer, and put
+    lunar_python's 起运年数 into a field named start_age."""
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                "--hour", 7, "--minute", 30, "--gender", "female",
+                "--as-of-year", 2026)
+    q = d["qi_yun"]
+    assert q["years"] == 9 and q["months"] == 5
+    assert "9岁" in q["text"] and "5个月" in q["text"]
+    assert q["start_year"] == 2004
+
+
+def test_da_yun_bands_anchor_to_qi_yun_age():
+    """01-bazi.md §7.2: 起运6岁4个月 → 6—16、16—26、26—36. Every worked example
+    (:625 起运5岁 → 5—15, :655 起运8岁 → 8—18, :684 起运4岁 → 4—14) anchors the
+    band to the 起运岁 in 周岁 and steps by 10.
+
+    lunar_python's DaYun.getStartAge() is 虚岁, one greater — kept alongside
+    under an honest name rather than silently used as if it were 周岁.
+    """
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                "--hour", 7, "--minute", 30, "--gender", "female",
+                "--as-of-year", 2026)
+    base = d["qi_yun"]["years"]
+    for i, yun in enumerate(d["da_yun"]):
+        assert yun["start_age"] == base + 10 * i, yun
+        assert yun["end_age"] == base + 10 * i + 10
+        assert yun["start_age_xusui"] == yun["start_age"] + 1
+    assert d["da_yun"][0]["start_age"] == 9
+    assert d["da_yun"][1]["start_age"] == 19
