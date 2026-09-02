@@ -175,8 +175,18 @@ def huangli_directions(date_str: str | None) -> dict:
         return {}
 
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok tool mode intention entropy origin target distance_m bearing_deg
+  compass anomaly_z huangli_directions safety disclaimer
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="今日随机寻访点 (QRNG 探索提示)")
+    p = argparse.ArgumentParser(description="今日随机寻访点 (QRNG 探索提示)",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p.add_argument("--lat", type=float, required=True, help="当前纬度")
     p.add_argument("--lon", type=float, required=True, help="当前经度")
     p.add_argument("--radius", type=float, default=3000.0, help="半径(米), 默认 3000")

@@ -306,8 +306,19 @@ def info_zodiac(z: str) -> dict:
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  info: zodiac branch wuxing yinyang traits strengths weaknesses
+  industries best_match worst_match
+compat / year / taisui have their own keys.
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="生肖 信息 / 相配 / 太岁 查询")
+    p = argparse.ArgumentParser(description="生肖 信息 / 相配 / 太岁 查询",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = p.add_subparsers(dest="cmd", required=True)
 
     p1 = sub.add_parser("info", help="生肖详情")

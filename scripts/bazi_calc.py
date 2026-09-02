@@ -1408,9 +1408,20 @@ def ten_gods_per_pillar(day_stem: str, pillars: dict) -> dict:
 # Argparse
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok tool version input true_solar_time solar_date lunar_date four_pillars
+  day_master ten_gods wuxing_count day_master_strength interactions shen_sha
+  yong_shen xi_shen ji_shen ge_ju na_yin qi_yun da_yun liu_nian
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description="八字排盘 v1.1 — 公历/农历, 含 35 神煞 / 用神 / 格局 / 干支互动"
+    ,
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--year", type=int, required=True, help="出生年 (公历或农历)")
     p.add_argument("--month", type=int, required=True, help="出生月 1-12")

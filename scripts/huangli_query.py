@@ -89,9 +89,24 @@ def _hour_pillars(lunar) -> list[dict]:
     return out
 
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  input solar_date lunar_date ganzhi zhi_shen_12jianchu xiu_28 yi ji
+  ji_shi xiong_shi shichen_detail directions peng_zu_bai_ji
+  tai_shen_fang_wei chong_sha jieqi
+
+shichen_detail: 13 rows, 早子 00:00-01:00 ... 亥 ... 夜子 23:00-24:00.
+  Each row: shichen branch hour_range ganzhi tian_shen huang_hei_dao
+  luck yi ji chong_sha
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description="黄历日历查询 (今日宜忌 / 神位 / 吉凶时辰)"
+    ,
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--date", type=str, default=None,
                    help="日期 YYYY-MM-DD (默认今日)")

@@ -653,9 +653,20 @@ def jieqi_context(solar_year: int, solar_month: int, solar_day: int) -> tuple[st
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok tool version input ganzhi jieqi san_yuan ju_type ju_number shi_gan
+  shi_zhi xun_head xun_yi zhi_fu_star zhi_fu_palace zhi_fu_origin_palace
+  zhi_shi_men zhi_shi_palace palaces patterns auspicious_directions
+  inauspicious_directions summary
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description="奇门遁甲 时家盘 (转盘式) — 计算九宫天地人神四盘 + 格局",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--date", type=str, default=None,
                    help="公历日期 YYYY-MM-DD (默认今日)")

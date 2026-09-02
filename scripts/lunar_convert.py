@@ -144,8 +144,17 @@ def cmd_today(args, Solar, Lunar) -> int:
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  mode input solar_date lunar_date ganzhi jieqi xiu_28
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="公历 / 农历 互转 / 今日万年历查询")
+    p = argparse.ArgumentParser(description="公历 / 农历 互转 / 今日万年历查询",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = p.add_subparsers(dest="cmd", required=True)
 
     p1 = sub.add_parser("solar2lunar", help="公历转农历")

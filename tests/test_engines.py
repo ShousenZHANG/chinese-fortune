@@ -277,3 +277,19 @@ def test_help_survives_non_utf8_console(script):
         f"stderr={proc.stderr[:400]!r}"
     )
     proc.stdout.decode("utf-8")  # raises UnicodeDecodeError if mojibake
+
+
+@pytest.mark.parametrize("script", CLI_SCRIPTS)
+def test_help_documents_output_keys(script):
+    """`--help` must carry the output schema: callers (Claude included) have no
+    other place to learn that bazi emits `four_pillars` not `pillars`, or that
+    huangli emits `ji_shi`/`shichen_detail`. Deliberately in the epilog rather
+    than a docs/ file."""
+    if script == "entropy.py":
+        pytest.skip("entropy.py is a helper module, not a CLI")
+    proc = subprocess.run(
+        [sys.executable, "-X", "utf8", str(SCRIPTS / script), "--help"],
+        capture_output=True, text=True, encoding="utf-8",
+    )
+    assert proc.returncode == 0
+    assert "Top-level JSON keys" in proc.stdout, f"{script} --help has no schema"

@@ -537,8 +537,20 @@ def build_summary(ri_gan: str, ri_zhi: str, san_chuan: dict,
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok tool version input ganzhi ri_gan ri_zhi month_zhi season_wuxing
+  zhong_qi yue_jiang yue_jiang_name zhan_shi ri_ye tian_pan
+  di_pan_jian_pan si_ke fa_yong_method san_chuan shi_er_tian_jiang
+  nine_gates_classification yong_shen wang_xiang summary boundary
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="大六壬起课 (月将加时 → 四课 → 三传 → 十二天将)")
+    p = argparse.ArgumentParser(description="大六壬起课 (月将加时 → 四课 → 三传 → 十二天将)",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p.add_argument("--date", required=True, help="占问日期 YYYY-MM-DD")
     p.add_argument("--time", required=True, help="占问时辰 HH:MM")
     p.add_argument("--longitude", type=float, default=None,

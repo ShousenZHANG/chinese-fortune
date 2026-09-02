@@ -357,8 +357,21 @@ def active_lines(lines: list[int]) -> list[int]:
 # Argparse
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  method question meta raw_lines main_hex changed_hex nuclear_hex
+  active_lines active_line_text summary
+
+*_hex: number name upper_trigram lower_trigram lines lines_visual
+  judgment image
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="周易/六十四卦起卦")
+    p = argparse.ArgumentParser(description="周易/六十四卦起卦",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = p.add_subparsers(dest="method", required=True)
 
     pc = sub.add_parser("coins", help="三枚硬币 6 次")

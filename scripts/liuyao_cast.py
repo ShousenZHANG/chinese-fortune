@@ -395,8 +395,19 @@ def yongshen_hint(question: str | None) -> str | None:
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  method question entropy yongshen_hint cast_time raw_lines main_chart
+  changed_chart nuclear_chart active_lines main_judgment main_image
+  active_line_text
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="六爻起卦 (装六亲/六神/纳甲/世应)")
+    p = argparse.ArgumentParser(description="六爻起卦 (装六亲/六神/纳甲/世应)",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = p.add_subparsers(dest="method", required=True)
 
     pc = sub.add_parser("coins", help="三枚硬币 6 次")

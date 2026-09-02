@@ -228,8 +228,19 @@ def package(cast_meta: dict, question: str | None, month: int) -> dict:
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  method now_iso ymd shichen upper_num lower_num change_num upper_tri
+  lower_tri question raw_lines changing_line main_hex changed_hex
+  nuclear_hex ti_yong summary
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="梅花易数起卦 (时间/数字/字数)")
+    p = argparse.ArgumentParser(description="梅花易数起卦 (时间/数字/字数)",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     # Top-level, not on `time` alone: 当下月令 feeds 体用旺衰 for every method.
     p.add_argument("--datetime", dest="dt", type=str, default=None,
                    help="ISO 时间 (如 2026-06-24T13:05), 默认当下; 用于可复现起卦")

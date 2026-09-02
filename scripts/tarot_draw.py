@@ -243,8 +243,17 @@ def position_summary(positions: list[str], cards: list[dict]) -> str:
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  spread spread_name_cn question seed entropy cards summary
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="塔罗抽牌 (one/three/celtic/relationship/daily)")
+    p = argparse.ArgumentParser(description="塔罗抽牌 (one/three/celtic/relationship/daily)",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = p.add_subparsers(dest="spread", required=True)
     for s in ["one", "three", "celtic", "relationship", "daily"]:
         ps = sub.add_parser(s, help=f"{s} 牌阵")

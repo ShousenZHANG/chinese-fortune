@@ -291,8 +291,18 @@ def five_grids(surname_strokes: list[int], given_strokes: list[int]) -> dict:
 # CLI
 # --------------------------------------------------------------------------- #
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok input name characters missing_in_table reliable five_grids
+  san_cai summary
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="姓名五格剖象 (康熙笔画 + 81 数理)")
+    p = argparse.ArgumentParser(description="姓名五格剖象 (康熙笔画 + 81 数理)",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     p.add_argument("--name", type=str, required=True,
                    help="完整中文姓名, 如 王小明 / 欧阳子轩")
     p.add_argument("--compound-surname", action="store_true",

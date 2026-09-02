@@ -98,8 +98,17 @@ def cast(month: int, day: int, hour_branch: str) -> dict:
     }
 
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  method input calculation result summary boundary
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="小六壬起课")
+    parser = argparse.ArgumentParser(description="小六壬起课",
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
     sub = parser.add_subparsers(dest="cmd", required=True)
 
     lunar = sub.add_parser("lunar", help="直接输入农历月日和时辰")

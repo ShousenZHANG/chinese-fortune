@@ -800,12 +800,24 @@ def detect_patterns(
 # --------------------------------------------------------------------------- #
 
 
+EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok tool version input true_solar_time_applied solar_date lunar_date
+  year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
+  dou_jun ziwei_position main_stars_positions lucky_stars_positions
+  malefic_stars_positions miscellaneous_stars_positions twelve_palaces
+  four_transformations_native da_xian liu_nian_sihua patterns notes
+
+On error: {"error": ..., "message": ...} and exit 1."""
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         description=(
             "紫微斗数排盘 v" + VERSION + " — 14主星 + 六吉六煞 + 杂曜 + "
             "命主身主 + 自化 + 大限/流年四化 + 借宫 + 格局识别"
         ),
+        epilog=EPILOG,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--year", type=int, required=True)
     p.add_argument("--month", type=int, required=True)
