@@ -117,3 +117,34 @@ def test_qimen_school_note_is_locked():
         if a.get("file", "").endswith("06-qimen.md") for n in a.get("needles", [])
     ]
     assert "拆补置闰" in needles, "qimen 流派注 unlocked"
+
+
+# --------------------------------------------------------------------------- #
+# 渐进式披露的可达性 — 搬走的内容必须仍能被路由到
+# --------------------------------------------------------------------------- #
+
+PERSONAL_DATA_REFS = ["01-bazi.md", "02-ziwei.md", "12-huangli.md",
+                      "13-qiming.md", "14-hehun.md"]
+
+
+def test_intake_reachable_from_every_personal_data_route():
+    """00-intake.md holds the collection protocol, the 边界情形 table and the
+    step-9 在世状态 ethics check. Moving it out of SKILL.md only works if every
+    method that needs birth data still routes to it."""
+    skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    assert (ROOT / "references" / "00-intake.md").exists()
+    for line in skill.splitlines():
+        if any(ref in line for ref in PERSONAL_DATA_REFS) and line.startswith("|"):
+            assert "00-intake.md" in line, f"route misses intake: {line[:70]}"
+
+
+def test_moved_reference_files_all_exist_and_are_linked():
+    """Every references/*.md must be reachable from SKILL.md or from another
+    reference — an unreachable file is dead weight that progressive disclosure
+    can never surface."""
+    skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    refs = sorted((ROOT / "references").glob("*.md"))
+    corpus = skill + "".join(
+        f.read_text(encoding="utf-8") for f in refs)
+    for f in refs:
+        assert corpus.count(f.name) >= 2, f"{f.name} is unreachable (only self-reference)"
