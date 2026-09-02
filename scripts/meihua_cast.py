@@ -24,6 +24,7 @@ from utils import (
     ensure_utf8_stdio,
     json_print,
     parse_datetime_arg,
+    shichen_number,
 )
 from yijing_cast import (
     changed_lines,
@@ -37,9 +38,7 @@ from yijing_cast import (
 
 # 时辰 number: 子=1 .. 亥=12 (used for 起卦)
 def shichen_num(hour: int) -> int:
-    if hour == 23 or hour == 0:
-        return 1
-    return ((hour + 1) // 2) + 1
+    return shichen_number(hour)
 
 
 # Build 6 raw line values from upper/lower trigram + a 1..6 changing line.

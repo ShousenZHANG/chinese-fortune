@@ -222,6 +222,28 @@ def shi_shen(day_stem: str, other_stem: str) -> str:
 # 60 甲子 helper
 # --------------------------------------------------------------------------- #
 
+def hour_branch_index(hour: int) -> int:
+    """0-11 index of the 时辰 containing ``hour`` (子=0).
+
+    子时 spans 23:00-01:00, so both 23 and 0 map to 子. Five engines carried
+    byte-identical copies of this arithmetic; they now share this one, which is
+    verified against all 24 hours in tests/test_utils.py.
+    """
+    if hour == 23 or hour == 0:
+        return 0
+    return ((hour + 1) // 2) % 12
+
+
+def hour_branch(hour: int) -> str:
+    """地支 of the 时辰 containing ``hour``."""
+    return DIZHI[hour_branch_index(hour)]
+
+
+def shichen_number(hour: int) -> int:
+    """1-based 时辰 ordinal (子=1 … 亥=12), as 梅花/周易 起卦 expects."""
+    return hour_branch_index(hour) + 1
+
+
 def jiazi_index(stem: str, branch: str) -> int:
     """Return 0-59 index of a 甲子 pair."""
     s = TIANGAN.index(stem)

@@ -36,6 +36,8 @@ from utils import (
     TIANGAN,
     WUHU_DUN,
     ensure_utf8_stdio,
+    hour_branch,
+    hour_branch_index,
     jiazi_index,
     json_print,
     longitude_correction,
@@ -61,14 +63,7 @@ def _branch_offset(branch: str, offset: int) -> str:
 
 def branch_of_hour(hour: int) -> str:
     """Hour 0-23 -> 时辰地支. 23/0->子, 1-2->丑, 3-4->寅, ..."""
-    if hour == 23 or hour == 0:
-        return "子"
-    return DIZHI[((hour + 1) // 2) % 12]
-
-
-def hour_branch_index(hour: int) -> int:
-    """Index 0..11 for the 时辰 (子=0, 丑=1, ...)."""
-    return DIZHI.index(branch_of_hour(hour))
+    return hour_branch(hour)
 
 
 # --------------------------------------------------------------------------- #

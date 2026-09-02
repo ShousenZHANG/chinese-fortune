@@ -32,6 +32,7 @@ from utils import (
     WUXING_GEN,
     WUXING_KE,
     ensure_utf8_stdio,
+    hour_branch,
     json_print,
     require_lunar,
 )
@@ -86,9 +87,7 @@ GAN_JI_GONG: dict[str, str] = {
 
 def hour_to_zhi(hour: int) -> str:
     """Return 地支 for given 24-h clock hour. 子时 spans 23:00–01:00."""
-    if hour == 23:
-        return "子"
-    return DIZHI[((hour + 1) // 2) % 12]
+    return hour_branch(hour)
 
 
 # --------------------------------------------------------------------------- #

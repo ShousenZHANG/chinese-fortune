@@ -11,7 +11,12 @@ import argparse
 import sys
 from datetime import datetime
 
-from utils import ensure_utf8_stdio, json_print, require_lunar
+from utils import (
+    ensure_utf8_stdio,
+    hour_branch,
+    json_print,
+    require_lunar,
+)
 
 PALACES = [
     {
@@ -56,9 +61,7 @@ HOUR_BRANCHES = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", 
 
 
 def hour_branch_from_hour(hour: int) -> str:
-    if hour == 23:
-        return "子"
-    return HOUR_BRANCHES[((hour + 1) // 2) % 12]
+    return hour_branch(hour)
 
 
 def cast(month: int, day: int, hour_branch: str) -> dict:

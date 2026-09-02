@@ -119,3 +119,42 @@ def test_equation_of_time_bounded(doy):
     eot = utils.equation_of_time(doy)
     assert math.isfinite(eot)
     assert -20.0 < eot < 20.0
+
+
+# --------------------------------------------------------------------------- #
+# 时辰 换算 — 五个引擎曾各写一份, 现共用 utils
+# --------------------------------------------------------------------------- #
+
+def test_hour_branch_covers_all_24_hours():
+    """子时 spans 23:00-01:00, so 23 and 0 share a 时辰; every other 时辰 is a
+    2-hour block starting on an odd hour."""
+    from utils import DIZHI, hour_branch, hour_branch_index, shichen_number
+
+    assert hour_branch(23) == hour_branch(0) == "子"
+    assert hour_branch(22) == "亥"
+    assert hour_branch(1) == hour_branch(2) == "丑"
+    for h in range(24):
+        assert hour_branch(h) == DIZHI[hour_branch_index(h)]
+        assert shichen_number(h) == hour_branch_index(h) + 1
+        assert 1 <= shichen_number(h) <= 12
+    # every 时辰 reachable, and each covers exactly 2 clock hours
+    seen = [hour_branch(h) for h in range(24)]
+    assert set(seen) == set(DIZHI)
+    assert all(seen.count(b) == 2 for b in DIZHI)
+
+
+def test_engines_delegate_to_the_shared_hour_helper():
+    """The five engine-local wrappers must stay equivalent to utils."""
+    import liuren_cast
+    import meihua_cast
+    import xiaoliuren_cast
+    import yijing_cast
+    import ziwei_calc
+    from utils import hour_branch, shichen_number
+
+    for h in range(24):
+        assert ziwei_calc.branch_of_hour(h) == hour_branch(h)
+        assert liuren_cast.hour_to_zhi(h) == hour_branch(h)
+        assert xiaoliuren_cast.hour_branch_from_hour(h) == hour_branch(h)
+        assert meihua_cast.shichen_num(h) == shichen_number(h)
+        assert yijing_cast.shichen_index(h) == shichen_number(h)

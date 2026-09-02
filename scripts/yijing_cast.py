@@ -28,6 +28,7 @@ from utils import (
     ensure_utf8_stdio,
     json_print,
     parse_datetime_arg,
+    shichen_number,
     warn,
 )
 
@@ -250,10 +251,8 @@ def from_numbers(upper: int, lower: int, change: int) -> list[int]:
 
 # 时辰 mapping for 时 column: 子时=1, 丑=2, ..., 亥=12
 def shichen_index(hour: int) -> int:
-    # 子 23-1, 丑 1-3, ..., 亥 21-23
-    if hour == 23 or hour == 0:
-        return 1
-    return ((hour + 1) // 2) + 1
+    """1-based 时辰 ordinal: 子 23-1 = 1, 丑 1-3 = 2, ... 亥 21-23 = 12."""
+    return shichen_number(hour)
 
 
 def from_time(now: datetime) -> tuple[list[int], dict]:
