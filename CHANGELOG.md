@@ -69,7 +69,7 @@ shapes. **Readings produced by v1.3.0 and earlier should be re-run.**
   早子/夜子 for the two 子 rows.
 - `evals.json` #2 golden corrected to 山火贲22 (was the mirrored 雷火丰55).
 
-## [1.3.0] — 2026-07-04
+## [1.3.0] — 2026-07-17
 
 Maintenance + correctness sweep: traditional 时辰 boundaries, CI runner
 deadline, qimen school-note, subcommand coverage, README refresh.
@@ -99,7 +99,7 @@ deadline, qimen school-note, subcommand coverage, README refresh.
   optional quantum entropy, exploration tool), methods table gains the
   exploration row.
 
-## [1.2.0] — 2026-07-04
+## [1.2.0] — 2026-07-17
 
 Interpretive-discipline release: classical sources become the binding rule.
 

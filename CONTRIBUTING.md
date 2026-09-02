@@ -40,10 +40,13 @@ git checkout -b feat/your-change
 # 4. Run the release checks
 PYTHONDONTWRITEBYTECODE=1 python -X utf8 evals/run_checks.py
 
-# 5. All 4 checks must pass:
+# 5. All 7 checks must pass:
 #    ok check_skill_metadata
 #    ok check_core_scripts
 #    ok check_reference_coverage
+#    ok check_interpretive_discipline
+#    ok check_eval_assertions
+#    ok check_unit_tests
 #    ok check_release_cleanliness
 
 # 6. Commit and push
@@ -132,10 +135,13 @@ git checkout -b feat/你的改动
 # 4. 跑发布检查
 PYTHONDONTWRITEBYTECODE=1 python -X utf8 evals/run_checks.py
 
-# 5. 必须 4/4 过:
+# 5. 必须 7/7 过:
 #    ok check_skill_metadata
 #    ok check_core_scripts
 #    ok check_reference_coverage
+#    ok check_interpretive_discipline
+#    ok check_eval_assertions
+#    ok check_unit_tests
 #    ok check_release_cleanliness
 
 # 6. 提交 + 推

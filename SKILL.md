@@ -95,7 +95,7 @@ Apply these BEFORE casting. Never silently guess.
 | 农历未知, 仅阳历 | 用 `lunar_convert.py solar2lunar` 自动换算. |
 | 出生在节气当日 / 前后 | **必须**问到精确时辰再判月柱归属 (节为月柱分界, 不是初一). |
 | 夜子时 (23:00-24:00) | 时柱用次日子时干支, 日柱仍用当日 (子初换日 vs 子正换日两派, 默认子正换日并说明). |
-| 闰月 | 农历闰月按本月气论; 详见 [01-bazi.md](references/01-bazi.md) §2.3. |
+| 闰月 | 农历闰月按本月气论 (节气定月, 与闰月无关); 换算见 `scripts/lunar_convert.py`. |
 | 已故亲属推盘 | 经直系亲属同意可推, 但避免预测在世事项; 重点在历史校准与纪念意义. |
 | 海外出生 | 必收集出生地经度 + 当地时区; 真太阳时按出生地, 不按北京时间. |
 | 同卵双胞胎 | 同八字; 区分需另行 [紫微](references/02-ziwei.md) 或紫微+八字综合, 或时柱后半 (前/后子). |
@@ -129,7 +129,7 @@ Most readings need numeric heavy-lifting (lunar calendar, solar terms, 60 甲子
 pip install -r scripts/requirements.txt
 ```
 
-Primary dependency: `lunar_python` (handles 公历↔农历, 24节气, 60甲子, 真太阳时). Fallback tables in `assets/` cover 1900-2100 if the lib is unavailable.
+Primary dependency: `lunar_python` (handles 公历↔农历, 24节气, 60甲子, 真太阳时). It is REQUIRED: scripts exit 1 with an install hint if it is missing — there is no table fallback.
 
 **Run pattern** (BaZi example):
 ```bash
@@ -163,7 +163,7 @@ When delivering BaZi readings, **always** surface these fields explicitly (scrip
 | [ganzhi.json](assets/ganzhi.json) | 10 干 + 12 支 + 60 甲子 + 阴阳五行属性 |
 | [wuxing.json](assets/wuxing.json) | 五行生克 + 颜色/方位/季节/脏腑映射 |
 | [bagua.json](assets/bagua.json) | 8 卦象 + 属性 + 后天/先天方位 |
-| [64hex.json](assets/64hex.json) | 64卦：卦名/卦辞/象辞/6爻辞/序卦/综卦 |
+| [64hex.json](assets/64hex.json) | 64卦：卦名/卦辞/象辞/6爻辞(六九+爻辞)/上下卦/白话 |
 | [ziwei_stars.json](assets/ziwei_stars.json) | 紫微14主星 + 14副星 + 化禄化权化科化忌 |
 | [shensha.json](assets/shensha.json) | 神煞表 (35条: 16吉 + 19凶, 含起法分类) |
 | [tiaohou.json](assets/tiaohou.json) | 调候用神 (10干×12月 = 120条, 《穷通宝鉴》体系) |

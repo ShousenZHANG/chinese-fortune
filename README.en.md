@@ -81,9 +81,9 @@ Run `python scripts/<name>.py --help` for options. Build the package from source
 | **卜 Divination** | I-Ching, Liu Yao, Mei Hua, Qi Men, Da Liu Ren, Xiao Liu Ren, Tai Yi, oracle slips, Bei Jiao | I-Ching, Liu Yao, Mei Hua, Qi Men, Da/Xiao Liu Ren |
 | **相 Physiognomy** | Feng Shui (Eight Mansions / Xuan Kong), face, palm, glyphomancy | — (reference-guided) |
 | **术 Practical** | almanac date selection, naming, compatibility, dream, zodiac, astrology, Tarot | almanac, naming, compatibility/zodiac, Tarot |
-| **游 Exploration** | random walk points (QRNG + almanac directions; not divination) | explore |
+| **游 Exploration** | random walk points (QRNG + almanac directions; not divination) | exploration |
 
-Each method maps to a reference doc in `references/` and (where computation helps) a script in `scripts/`. The full routing table lives in [SKILL.md](SKILL.md).
+Each method except exploration (a pure tool, no reference doc) maps to a reference doc in `references/`, and (where computation helps) a script in `scripts/`. The full routing table lives in [SKILL.md](SKILL.md).
 
 ## How It Works
 
