@@ -33,13 +33,26 @@ def _safe_method(obj, name: str, default=None):
 
 
 def _hour_pillars(lunar) -> list[dict]:
-    """For each of the 12 传统时辰, return ganzhi + 黄黑道 吉凶 markers.
+    """Return the queried day's 13 时辰 blocks: 早子 … 亥 … 夜子.
 
-    时辰 boundaries follow the classical odd-start convention (子 23-01,
-    丑 01-03, 寅 03-05 … 亥 21-23) — NOT even clock blocks (00-02, 02-04 …),
-    which straddle two 时辰 and mislabel the second half. Each block is
-    sampled at its midpoint so 干支/天神 are correct for the whole block.
-    子时 spans this day 23:00 → next day 01:00 (晚子时, sampled at 23:30).
+    时辰 boundaries follow the classical odd-start convention (丑 01-03,
+    寅 03-05 … 亥 21-23) — NOT even clock blocks (00-02, 02-04 …), which
+    straddle two 时辰 and mislabel the second half. Each block is sampled at
+    its midpoint so 干支/天神 are correct for the whole block.
+
+    子时 is emitted as TWO rows because one civil day contains two different
+    子 时柱 under the 晚子时 (sect-2) convention this project uses throughout
+    (see bazi_calc.setSect(2)):
+
+        早子 00:00-01:00 → 时干 from 五鼠遁 of the queried day's 日干
+        夜子 23:00-24:00 → 时干 from 五鼠遁 of the NEXT day's 日干
+
+    Collapsing them into one 23:00-01:00 row (as before v1.4.0) forced that
+    row to carry the next day's 干支/天神/冲煞 while the object's own
+    ganzhi.day and chong_sha described the queried day.
+
+    Rows are emitted in clock order, so 早子 … 亥 form a contiguous run of the
+    六十甲子 and 夜子 closes the day.
 
     吉凶 comes from the hour's 天神 黄道/黑道 (getTimeTianShenLuck), NOT from
     whether the hour has any 宜 — every 时辰 has non-empty 宜, so the latter
@@ -49,14 +62,20 @@ def _hour_pillars(lunar) -> list[dict]:
     try:
         from lunar_python import Solar  # type: ignore
         solar = lunar.getSolar()
-        branches = "子丑寅卯辰巳午未申酉戌亥"
-        for i, start in enumerate([23, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21]):
+        # (label, 时辰, sample hour, displayed range) in clock order.
+        blocks = [("早子", "子", 0, "00:00-01:00")]
+        blocks += [(b, b, h, f"{h:02d}:00-{h + 2:02d}:00") for b, h in zip(
+            "丑寅卯辰巳午未申酉戌亥", [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21],
+            strict=True)]
+        blocks.append(("夜子", "子", 23, "23:00-24:00"))
+        for label, branch, start, rng in blocks:
             s = Solar.fromYmdHms(solar.getYear(), solar.getMonth(),
                                  solar.getDay(), start, 30, 0)
             lh = s.getLunar()
             out.append({
-                "shichen": branches[i],
-                "hour_range": f"{start:02d}:00-{(start + 2) % 24:02d}:00",
+                "shichen": label,
+                "branch": branch,
+                "hour_range": rng,
                 "ganzhi": lh.getTimeInGanZhi(),
                 "tian_shen": _safe_method(lh, "getTimeTianShen", None),
                 "huang_hei_dao": _safe_method(lh, "getTimeTianShenType", None),

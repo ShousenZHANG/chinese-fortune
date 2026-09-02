@@ -3,7 +3,7 @@
 yijing numbers/text, meihua name, xiaoliuren solar — all fully deterministic
 (no RNG, no now()), so value-golden assertions are stable. The yijing
 numbers case is hand-verifiable: upper 3 = 离☲, lower 5 = 巽☴ → 火风鼎 (#50);
-change line 1 flips 巽 → 坎 → 火水未济 (#64).
+change line 1 (初爻, 阴) flips 巽 → 乾 → 火天大有 (#14).
 """
 import json
 import subprocess
@@ -93,19 +93,23 @@ def test_xiaoliuren_solar_hai_to_zi_boundary():
 # --------------------------------------------------------------------------- #
 
 def test_huangli_shichen_traditional_boundaries():
-    """REGRESSION: 时辰 blocks must use classical odd-start boundaries
-    (子 23-01, 丑 01-03 …) and each block's 干支 branch must equal its
-    时辰 label (the old even blocks straddled two 时辰)."""
+    """REGRESSION: 时辰 blocks use classical odd-start boundaries and每块的
+    干支地支必须等于其时辰 (旧的偶数块横跨两个时辰).
+
+    v1.4.0 起子时分早子/夜子两行, 故 13 行且按时钟顺序排列.
+    """
     d = run("huangli_query.py", "--date", "2026-06-24")
     detail = d["shichen_detail"]
-    assert len(detail) == 12
-    assert detail[0]["shichen"] == "子"
-    assert detail[0]["hour_range"] == "23:00-01:00"
-    assert detail[4]["shichen"] == "辰"
-    assert detail[4]["hour_range"] == "07:00-09:00"
+    assert len(detail) == 13
+    assert [s["shichen"] for s in detail] == [
+        "早子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌", "亥", "夜子"]
+    assert detail[0]["hour_range"] == "00:00-01:00"
+    assert detail[5]["shichen"] == "巳"
+    assert detail[5]["hour_range"] == "09:00-11:00"
+    assert detail[-1]["hour_range"] == "23:00-24:00"
     for s in detail:
-        assert s["ganzhi"][1] == s["shichen"], (
-            f"{s['hour_range']} 干支 {s['ganzhi']} != 时辰 {s['shichen']}")
+        assert s["ganzhi"][1] == s["branch"], (
+            f"{s['hour_range']} 干支 {s['ganzhi']} != 时辰 {s['branch']}")
 
 
 # --------------------------------------------------------------------------- #
@@ -211,7 +215,7 @@ def test_huangli_shichen_pillars_follow_wushu_dun():
     # 早子 → 亥 连续 60 甲子
     run12 = detail[:12]
     idxs = [jiazi_index(r["ganzhi"][0], r["ganzhi"][1]) for r in run12]
-    for a, b in zip(idxs, idxs[1:], strict=True):
+    for a, b in zip(idxs, idxs[1:], strict=False):
         assert (a + 1) % 60 == b, f"时柱非连续六十甲子: {idxs}"
     # 夜子 天干 = 五鼠遁(次日干), 即比早子晚一轮
     nxt = run_cli("huangli_query.py", "--date", "2026-06-25")
