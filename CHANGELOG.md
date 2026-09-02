@@ -2,6 +2,84 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.2] — 2026-09-03
+
+Defects surfaced by a behavioural evaluation of the skill, then each one
+independently reproduced before any fix was written. Two of the nine reported
+did not survive that check and are recorded below as not-fixed, with reasons.
+
+### Fixed
+- **`lunar_convert` published a 时柱 it invented.** Neither subcommand took an
+  hour worth the name — `lunar2solar` had no `--hour` at all and silently built
+  the chart at 12:00; `solar2lunar` defaulted to 0, which is indistinguishable
+  from a user who genuinely said 子时 — and both still emitted a fully-formed
+  `time_in_ganzhi` / `ganzhi.hour`. references/00-intake.md:30 says 时辰未知 →
+  时柱缺如, 标注"时柱待补", 不揣测时辰, and :31 — the line directly below — names
+  `lunar2solar` as the tool to reach for when only the 农历 date is known. The
+  tool prescribed for the missing-data case was inventing the missing data.
+  Sweeping the assumed hour across one date moves only those two fields; 日柱,
+  28宿 and 节气 are hour-invariant, so suppressing them costs nothing else.
+- **`bazi_calc` reported two different 起运 ages for one chart** — `qi_yun`
+  said 9, `da_yun[0]` said 10, with nothing explaining the gap. Neither was
+  wrong in isolation; the field names hid two different conventions.
+  `qi_yun.start_age` held lunar_python's `Yun.getStartYear()`, which is a
+  DURATION from birth (9 years 5 months here), with the months truncated away;
+  `da_yun[].start_age` held 虚岁. references/01-bazi.md §7.2 adjudicates: 起运 is
+  written 6岁4个月 and the bands are anchored to it — 起运6岁 → 6—16、16—26 — and
+  all three worked examples (:625, :655, :684) step by 10 from the 起运岁 in
+  周岁. **BREAKING: every `da_yun[].start_age` drops by 1.** `qi_yun` now carries
+  years / months / days and a rendered text; the 虚岁 figure survives as
+  `start_age_xusui` rather than being passed off as 周岁.
+- **`shen_sha` verdicts contradicted the reference that qualifies them.**
+  assets/shensha.json shipped 十恶大败 as a flat 主大败之时,事业财运均不利, while
+  references/19-shensha.md §3.15 says 命理界争议较大,子平派多不采用 and that
+  file's principle 6 names 十恶大败 as something that must not induce 恐慌. The
+  caveat lived only in a file the engine never reads, so the alarming line was
+  what reached the reader — on 10 of 60 day pillars. 魁罡 was missing §3.13's
+  两条件 (不喜见财官破格 / 喜见印比助力). Detection was correct in both cases; only
+  the wording was wrong.
+- **Tarot published a star sign in a field called `element`.** 21 of the 22
+  major arcana carry astrology (12 signs + 9 planets) and only 愚者 carries 风.
+  references/18-tarot.md §4 gives the four elements to the four MINOR suits and
+  gives the majors none, so 巨蟹座 under `element` invited a reader to treat it
+  as a peer of 火/水/风/土. Majors now report `element: null` with the
+  astrological value under a new `astro` key; minors are untouched.
+- **`lines_visual` had no way to be oriented.** It is drawn 上爻-first (correct
+  — that is how a hexagram is written) while `lines[]` and `active_lines` number
+  初爻=1 from the bottom, so the ○ marker always landed on visual row
+  `7 - position` and a 三爻 move rendered on the fourth row from the top. Every
+  row is now labelled, as references/04-liuyao.md §3.1 labels its own diagram.
+  v1.4.0 had already had to fix a genuinely mirrored 爻位 bug in this same file,
+  so the misreading risk was not hypothetical.
+
+### Added
+- **Three-pillar mode.** `--hour` is now optional. references/00-intake.md has
+  always said 时辰未知 → 仍可排年/月/日柱; 时柱缺如, but `required=True` meant the
+  script refused to run, leaving the rule unexecutable through the very tool
+  that implements it — in the evaluation an agent had to pass `--hour 12` and
+  hand-suppress every contaminated field. Omitting it now drops the hour from
+  the pillars dict entirely, so 五行得分, 旺衰, 用神, 格局, 神煞 and 干支互动 count
+  six characters instead of eight rather than counting a guess. Output gains
+  `hour_known` and `notes`; `four_pillars.hour` becomes `{status: 时柱待补}`.
+  Supplying `--hour` is provably unchanged — the snapshot diff for an
+  eight-character chart is exactly the two new keys.
+
+### Not fixed, and why
+- **解梦 script vs reference "contradiction" — refuted.** 15-jiemeng.md declares
+  itself a 解读框架 and the 105-entry asset is the 词条 lexicon; SKILL.md routes
+  to both as the 传统 and 心理 halves of one dual reading. Different granularity
+  is the design, not a conflict.
+- **`--search` returning 0 for 家 / 蟒 — left alone.** Widening the predicate to
+  scan interpretation text would take 家 from 0 to 12 matches and 水 from 2 to 6,
+  each returning a full entry — multiplying the payload of a script whose whole
+  purpose is to cost less than reading the 38 KB asset. 蟒 needs a synonym map or
+  a new entry, which is content authoring, not a bug fix.
+- **Tarot `--layout` — deferred.** 18-tarot.md §5.2 documents five three-card
+  layouts and the script offers only 过去/现在/未来. That is a missing feature,
+  not a defect, and it does not make any current reading wrong.
+
+Suite 1093 → 1096.
+
 ## [1.5.1] — 2026-09-03
 
 Maintainability release. No behaviour change to any engine — every split and
