@@ -195,3 +195,30 @@ def test_da_yun_bands_anchor_to_qi_yun_age():
         assert yun["start_age_xusui"] == yun["start_age"] + 1
     assert d["da_yun"][0]["start_age"] == 9
     assert d["da_yun"][1]["start_age"] == 19
+
+
+# --------------------------------------------------------------------------- #
+# 神煞 断语必须带上参考文档的立场
+# --------------------------------------------------------------------------- #
+
+def test_shensha_meanings_carry_their_reference_stance():
+    """19-shensha.md §3.15 says of 十恶大败 「子平派多不采用」 and its principle 6
+    forbids 炒作神煞恐慌 by name; §3.13 makes 魁罡 conditional on 不喜见财官(破格)
+    / 喜见印比(助力). The asset shipped 十恶大败 as a flat 「事业财运均不利」 and
+    魁罡 without either condition, so the caveat only existed in a file the
+    engine never reads.
+    """
+    import json
+    from pathlib import Path
+
+    assets = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+                         "shensha.json").read_text(encoding="utf-8"))
+    by_name = {e["name"]: e for grp in ("ji_shen", "xiong_sha")
+               for e in assets.get(grp, [])}
+
+    shi_e = by_name["十恶大败"]["meaning"]
+    assert "争议" in shi_e and "子平" in shi_e, shi_e
+    assert "均不利" not in shi_e, "flat adverse verdict contradicts §3.15"
+
+    kui_gang = by_name["魁罡"]["meaning"]
+    assert "破格" in kui_gang and "印比" in kui_gang, kui_gang

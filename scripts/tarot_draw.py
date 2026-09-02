@@ -148,7 +148,13 @@ def _flatten_asset_deck(data: dict) -> list[dict]:
             "arcana": "major",
             "number": m.get("number"),
             "en": m.get("name_en"), "zh": m.get("name_zh"),
-            "suit": None, "element": m.get("element"),
+            # 18-tarot.md §4 gives the four elements to the four MINOR suits;
+            # the majors have none. What the asset stores under "element" for a
+            # major is astrological (12 signs + 9 planets, 21 of 22 entries) —
+            # real tarot doctrine, but not an element, so it gets its own key.
+            # This also makes the asset path agree with the fallback deck,
+            # which already sets element None for majors.
+            "suit": None, "element": None, "astro": m.get("element"),
             "keywords_up": "、".join(m.get("keywords_upright", [])) or m.get("upright_meaning", ""),
             "keywords_rev": "、".join(m.get("keywords_reversed", [])) or m.get("reversed_meaning", ""),
         })
@@ -246,6 +252,9 @@ def position_summary(positions: list[str], cards: list[dict]) -> str:
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   spread spread_name_cn question seed entropy cards summary
 
+cards[].element is 火/水/风/土 for the four minor suits and null for
+  the majors; cards[].astro carries the major-arcana 星座/行星.
+
 On error: {"error": ..., "message": ...} and exit 1."""
 
 
@@ -287,6 +296,7 @@ def main(argv: list[str] | None = None) -> int:
             "arcana": c.get("arcana"),
             "suit": c.get("suit"),
             "element": c.get("element"),
+            "astro": c.get("astro"),
             "orientation": c["orientation"],
             "orientation_cn": "正位" if c["orientation"] == "upright" else "逆位",
             "meaning_brief": c.get("meaning_brief"),
