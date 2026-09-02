@@ -13,7 +13,7 @@ import argparse
 import sys
 from datetime import datetime
 
-from utils import json_print, require_lunar, warn
+from utils import ensure_utf8_stdio, json_print, require_lunar, warn
 
 
 def _safe(fn, default=None):
@@ -99,6 +99,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     require_lunar()
     from lunar_python import Solar  # type: ignore
@@ -131,7 +132,6 @@ def main(argv: list[str] | None = None) -> int:
     yin_gui = _safe_method(lunar, "getDayPositionYinGui", None)    # 阴贵神
 
     tai_shen = _safe_method(lunar, "getDayPositionTai", None)
-    tai_shen_desc = _safe_method(lunar, "getDayPositionTaiDesc", None)
 
     chong = _safe_method(lunar, "getDayChongDesc", None) or _safe_method(lunar, "getDayChongGan", None)
     sha = _safe_method(lunar, "getDaySha", None)
@@ -188,8 +188,10 @@ def main(argv: list[str] | None = None) -> int:
         "peng_zu_bai_ji": {
             "gan": peng_zu_gan, "zhi": peng_zu_zhi,
         },
+        # 胎神只有方位; lunar_python 无 getDayPositionTaiDesc, 旧的 desc 键
+        # 恒为 None (勿改调 getDayPositionTaiSuiDesc —— 那是太岁不是胎神).
         "tai_shen_fang_wei": {
-            "position": tai_shen, "desc": tai_shen_desc,
+            "position": tai_shen,
         },
         "chong_sha": {
             "chong": chong, "sha": sha,

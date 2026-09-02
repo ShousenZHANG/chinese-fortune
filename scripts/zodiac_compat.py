@@ -15,6 +15,7 @@ import sys
 from utils import (
     DIZHI_ZODIAC,
     ZODIAC_TO_DIZHI,
+    ensure_utf8_stdio,
     json_print,
     require_lunar,
 )
@@ -326,20 +327,25 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
     if args.cmd == "info":
-        json_print(info_zodiac(args.zodiac))
+        result = info_zodiac(args.zodiac)
     elif args.cmd == "compat":
-        json_print(compat(args.a, args.b))
+        result = compat(args.a, args.b)
     elif args.cmd == "year":
-        json_print(zodiac_of_year(args.year))
+        result = zodiac_of_year(args.year)
     elif args.cmd == "taisui":
-        json_print(taisui_zodiacs(args.year))
+        result = taisui_zodiacs(args.year)
     else:
         json_print({"error": "unknown_cmd"})
         return 2
-    return 0
+
+    json_print(result)
+    # Every other engine returns 1 on an error payload; match them so callers
+    # that check the exit code do not read a failure as success.
+    return 1 if "error" in result else 0
 
 
 if __name__ == "__main__":

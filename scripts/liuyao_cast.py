@@ -23,6 +23,7 @@ from utils import (
     TIANGAN,
     WUXING_GEN,
     WUXING_KE,
+    ensure_utf8_stdio,
     json_print,
     require_lunar,
 )
@@ -412,6 +413,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     require_lunar()
     from lunar_python import Solar  # type: ignore

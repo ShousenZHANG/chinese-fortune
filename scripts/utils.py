@@ -237,6 +237,24 @@ def jiazi_index(stem: str, branch: str) -> int:
 # JSON / IO helpers
 # --------------------------------------------------------------------------- #
 
+def ensure_utf8_stdio() -> None:
+    """Force stdout/stderr to UTF-8 before argparse can write to them.
+
+    The scripts carry Chinese help text. When stdout is a pipe (how an agent
+    invokes them) or the console is non-CJK (cp1252/cp437), Python falls back
+    to the ANSI codepage and argparse's --help raises UnicodeEncodeError,
+    exiting 1 with no output. Reconfiguring here — before parse_args — fixes
+    --help, error messages, and warnings in one place.
+
+    errors="replace" keeps a degraded console from turning into a crash.
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
+        except Exception:  # pragma: no cover - stream without reconfigure
+            pass
+
+
 def json_print(obj) -> None:
     """Pretty-print an object as UTF-8 JSON to stdout.
 

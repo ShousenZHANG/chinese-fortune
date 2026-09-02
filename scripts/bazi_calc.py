@@ -40,6 +40,7 @@ from utils import (
     TIANGAN_YIN_YANG,
     WUXING_GEN,
     WUXING_KE,
+    ensure_utf8_stdio,
     json_print,
     longitude_correction,
     require_lunar,
@@ -1461,6 +1462,7 @@ def _validate_args(args) -> str | None:
 # --------------------------------------------------------------------------- #
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
     err = _validate_args(args)

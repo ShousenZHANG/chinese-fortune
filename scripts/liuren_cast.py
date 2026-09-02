@@ -31,6 +31,7 @@ from utils import (
     TIANGAN_YIN_YANG,
     WUXING_GEN,
     WUXING_KE,
+    ensure_utf8_stdio,
     json_print,
     require_lunar,
 )
@@ -548,6 +549,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     try:
         dt = datetime.strptime(f"{args.date} {args.time}", "%Y-%m-%d %H:%M")

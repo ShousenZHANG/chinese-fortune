@@ -21,6 +21,7 @@ from utils import (
     WUXING_GEN,
     WUXING_KE,
     XIANTIAN_NUM_TO_TRIGRAM,
+    ensure_utf8_stdio,
     json_print,
 )
 from yijing_cast import (
@@ -246,6 +247,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     now = datetime.now()
 

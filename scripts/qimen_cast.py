@@ -35,6 +35,7 @@ from utils import (
     TIANGAN,
     TIANGAN_WUXING,
     WUXING_KE,
+    ensure_utf8_stdio,
     json_print,
     longitude_correction,
     require_lunar,
@@ -670,6 +671,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
     # Determine input datetime

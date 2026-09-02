@@ -35,6 +35,7 @@ from utils import (
     DIZHI,
     TIANGAN,
     WUHU_DUN,
+    ensure_utf8_stdio,
     jiazi_index,
     json_print,
     longitude_correction,
@@ -826,6 +827,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
     require_lunar()

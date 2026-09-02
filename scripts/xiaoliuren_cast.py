@@ -11,7 +11,7 @@ import argparse
 import sys
 from datetime import datetime
 
-from utils import json_print, require_lunar
+from utils import ensure_utf8_stdio, json_print, require_lunar
 
 PALACES = [
     {
@@ -114,6 +114,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     try:
         if args.cmd == "lunar":

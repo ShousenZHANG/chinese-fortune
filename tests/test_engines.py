@@ -180,11 +180,13 @@ def test_huangli_structure():
 @needs_lunar
 def test_huangli_jishi_uses_huangdao_not_all12():
     """REGRESSION: 吉时/凶时 must come from 时辰黄黑道 (吉/凶), not "has any 宜".
-    The old logic marked all 12 时辰 吉 and 0 凶."""
+    The old logic marked all 时辰 吉 and 0 凶.
+
+    13 blocks since v1.4.0 (子时 split into 早子/夜子)."""
     d = run("huangli_query.py", "--date", "2026-06-01")
     ji, xiong = d["ji_shi"], d["xiong_shi"]
-    assert len(ji) + len(xiong) == 12          # every 时辰 classified
-    assert 0 < len(ji) < 12                     # not all-吉 (the bug)
+    assert len(ji) + len(xiong) == 13          # every 时辰 classified
+    assert 0 < len(ji) < 13                     # not all-吉 (the bug)
     assert len(xiong) > 0                       # 凶时 exist
     assert all(s.get("luck") == "吉" for s in ji)
     assert all(s.get("huang_hei_dao") == "黄道" for s in ji)

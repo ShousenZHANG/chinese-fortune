@@ -17,7 +17,7 @@ import json
 import os
 import sys
 
-from utils import WUXING_GEN, WUXING_KE, json_print, warn
+from utils import WUXING_GEN, WUXING_KE, ensure_utf8_stdio, json_print, warn
 
 # --------------------------------------------------------------------------- #
 # 81 数理 table — number -> {"luck": "大吉/吉/中/凶/大凶", "comment": "..."}
@@ -303,6 +303,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     name = args.name.strip()
     if not name or len(name) < 2:

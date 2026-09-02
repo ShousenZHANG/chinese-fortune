@@ -25,7 +25,7 @@ import math
 import sys
 
 import entropy
-from utils import json_print
+from utils import ensure_utf8_stdio, json_print
 
 EARTH_M_PER_DEG = 111_320.0  # metres per degree of latitude (mean)
 MAX_PROJ_LAT = 89.9          # clamp for the cos(lat) longitude projection
@@ -192,6 +192,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     if not (-90 <= args.lat <= 90 and -180 <= args.lon <= 180):
         json_print({"ok": False, "error": "invalid_coords"})

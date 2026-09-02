@@ -25,6 +25,7 @@ from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
     XIANTIAN_NUM_TO_TRIGRAM,
+    ensure_utf8_stdio,
     json_print,
     warn,
 )
@@ -423,6 +424,7 @@ def cast(method: str, lines: list[int], meta: dict,
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
     if args.method == "coins":

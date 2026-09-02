@@ -24,7 +24,7 @@ import random
 import sys
 
 import entropy
-from utils import json_print, warn
+from utils import ensure_utf8_stdio, json_print, warn
 
 # --------------------------------------------------------------------------- #
 # Fallback minimal tarot deck (78 cards)
@@ -256,6 +256,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     deck = load_deck()
 
