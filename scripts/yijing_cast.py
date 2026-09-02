@@ -27,6 +27,7 @@ from utils import (
     XIANTIAN_NUM_TO_TRIGRAM,
     ensure_utf8_stdio,
     json_print,
+    parse_datetime_arg,
     warn,
 )
 
@@ -373,6 +374,8 @@ def build_parser() -> argparse.ArgumentParser:
     pn.add_argument("--question", type=str, default=None)
 
     pt = sub.add_parser("time", help="当下时间起卦")
+    pt.add_argument("--datetime", dest="dt", type=str, default=None,
+                    help="ISO 时间 (如 2026-06-24T13:05), 默认当下; 用于可复现起卦")
     pt.add_argument("--question", type=str, default=None)
 
     px = sub.add_parser("text", help="字数起卦")
@@ -438,7 +441,11 @@ def main(argv: list[str] | None = None) -> int:
                 "change_num": args.change}
         out = cast("numbers", lines, meta, args.question)
     elif args.method == "time":
-        now = datetime.now()
+        try:
+            now = parse_datetime_arg(args.dt)
+        except ValueError as e:
+            json_print({"error": "bad_datetime", "message": str(e)})
+            return 1
         lines, meta = from_time(now)
         meta["now_iso"] = now.isoformat()
         out = cast("time", lines, meta, args.question)

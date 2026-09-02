@@ -17,6 +17,7 @@ import json
 import math
 import sys
 from datetime import date as _date
+from datetime import datetime as _datetime
 
 # --------------------------------------------------------------------------- #
 # Core cycles
@@ -236,6 +237,26 @@ def jiazi_index(stem: str, branch: str) -> int:
 # --------------------------------------------------------------------------- #
 # JSON / IO helpers
 # --------------------------------------------------------------------------- #
+
+def parse_datetime_arg(value: str | None) -> _datetime:
+    """Return the caller-supplied ISO datetime, or now() when omitted.
+
+    Time-based casts are otherwise unreproducible and untestable: the wall
+    clock feeds both the hexagram and 体用旺衰, so the same question yields a
+    different reading on every run and no golden assertion is possible.
+
+    Raises ValueError on a malformed value; callers emit the standard error
+    envelope and return 1.
+    """
+    if value is None:
+        return _datetime.now()
+    try:
+        return _datetime.fromisoformat(value)
+    except ValueError:
+        raise ValueError(
+            f"--datetime 需 ISO 格式 (如 2026-06-24T13:05), 收到: {value}"
+        ) from None
+
 
 def ensure_utf8_stdio() -> None:
     """Force stdout/stderr to UTF-8 before argparse can write to them.

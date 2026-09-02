@@ -23,6 +23,7 @@ from utils import (
     XIANTIAN_NUM_TO_TRIGRAM,
     ensure_utf8_stdio,
     json_print,
+    parse_datetime_arg,
 )
 from yijing_cast import (
     changed_lines,
@@ -229,6 +230,9 @@ def package(cast_meta: dict, question: str | None, month: int) -> dict:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="梅花易数起卦 (时间/数字/字数)")
+    # Top-level, not on `time` alone: 当下月令 feeds 体用旺衰 for every method.
+    p.add_argument("--datetime", dest="dt", type=str, default=None,
+                   help="ISO 时间 (如 2026-06-24T13:05), 默认当下; 用于可复现起卦")
     sub = p.add_subparsers(dest="method", required=True)
 
     pt = sub.add_parser("time", help="年月日时起卦")
@@ -249,7 +253,11 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
-    now = datetime.now()
+    try:
+        now = parse_datetime_arg(args.dt)
+    except ValueError as e:
+        json_print({"error": "bad_datetime", "message": str(e)})
+        return 1
 
     if args.method == "time":
         meta = cast_by_time(now)

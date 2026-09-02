@@ -1,7 +1,8 @@
 """Coverage for previously-untested deterministic subcommands.
 
-yijing numbers/text, meihua name, xiaoliuren solar — all fully deterministic
-(no RNG, no now()), so value-golden assertions are stable. The yijing
+yijing numbers/text, meihua name/time, xiaoliuren solar — all fully deterministic
+(no RNG; time-based casts pin the clock with --datetime), so value-golden
+assertions are stable. The yijing
 numbers case is hand-verifiable: upper 3 = 离☲, lower 5 = 巽☴ → 火风鼎 (#50);
 change line 1 (初爻, 阴) flips 巽 → 乾 → 火天大有 (#14).
 """
@@ -228,3 +229,46 @@ def test_huangli_shichen_labels_match_branches():
     for row in d["shichen_detail"]:
         want = "子" if row["shichen"] in ("早子", "夜子") else row["shichen"]
         assert row["ganzhi"][1] == want, f"{row['shichen']}: {row['ganzhi']}"
+
+
+# --------------------------------------------------------------------------- #
+# 时间起卦可复现性 — --datetime 注入
+# --------------------------------------------------------------------------- #
+
+def test_meihua_datetime_injection_is_reproducible():
+    """固定 --datetime 后三个子命令都必须逐字段稳定.
+
+    梅花的 体用旺衰 由「当下月令」决定, 三个子命令都吃 now.month, 故
+    --datetime 挂在顶层而非 time 之下. 此前 body_strength 随真实月份漂移,
+    无法 golden, 是 100% 未测字段.
+    """
+    args = ("--datetime", "2026-06-24T13:05")
+    a = run_cli("meihua_cast.py", *args, "time")
+    b = run_cli("meihua_cast.py", *args, "time")
+    assert a == b
+    assert a["main_hex"]["name"] == "坤为地"
+    assert a["ti_yong"]["body_strength"] == "相"
+
+    # numbers / name 也吃月令, 同样必须被 --datetime 固定
+    n1 = run_cli("meihua_cast.py", *args, "numbers", "--upper", "3", "--lower", "5")
+    n2 = run_cli("meihua_cast.py", *args, "numbers", "--upper", "3", "--lower", "5")
+    assert n1 == n2
+    x1 = run_cli("meihua_cast.py", *args, "name", "--text", "张三")
+    x2 = run_cli("meihua_cast.py", *args, "name", "--text", "张三")
+    assert x1 == x2
+
+
+def test_yijing_time_datetime_injection_is_reproducible():
+    a = run_cli("yijing_cast.py", "time", "--datetime", "2026-06-24T13:05")
+    b = run_cli("yijing_cast.py", "time", "--datetime", "2026-06-24T13:05")
+    assert a["main_hex"] == b["main_hex"]
+    assert a["main_hex"]["name"] == "坤为地"
+
+
+def test_bad_datetime_reports_error_and_exits_1():
+    for script, tail in (("meihua_cast.py", ("time",)),
+                         ("yijing_cast.py", ())):
+        argv = (("--datetime", "nope") + tail if script.startswith("meihua")
+                else ("time", "--datetime", "nope"))
+        d = run_cli(script, *argv, expect_rc=1)
+        assert d["error"] == "bad_datetime"
