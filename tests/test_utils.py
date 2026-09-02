@@ -181,7 +181,7 @@ def test_xun_kong_covers_all_60_pillars():
 
 
 def test_engines_delegate_xun_kong_and_chong():
-    import bazi_calc
+    import bazi_tables
     import liuren_cast
     import liuyao_cast
     from utils import DIZHI, TIANGAN, chong_branch, jiazi_index, xun_kong
@@ -193,7 +193,7 @@ def test_engines_delegate_xun_kong_and_chong():
             except ValueError:
                 continue
             want = xun_kong(stem, branch)
-            assert bazi_calc.xun_kong_of_day(stem, branch) == want
+            assert bazi_tables.xun_kong_of_day(stem, branch) == want
             assert liuyao_cast.xun_kong(stem, branch) == want
 
     for branch in DIZHI:

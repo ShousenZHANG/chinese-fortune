@@ -253,9 +253,14 @@ def test_wushu_dun_hour_stem_invariant(y, m, dd):
 # --help 在非 UTF-8 控制台 / 管道下必须可用
 # --------------------------------------------------------------------------- #
 
+def _is_cli(path) -> bool:
+    """A CLI has an argparse entry point; helper modules do not."""
+    return '__main__' in path.read_text(encoding="utf-8")
+
+
 CLI_SCRIPTS = sorted(
     p.name for p in SCRIPTS.glob("*.py")
-    if p.name not in {"utils.py", "build_skill.py"}
+    if p.name not in {"utils.py", "build_skill.py"} and _is_cli(p)
 )
 
 
