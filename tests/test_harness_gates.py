@@ -189,3 +189,39 @@ def test_interpretive_discipline_names_an_anchor_for_every_scripted_method():
     # the two without a Chinese canon must be named AND labelled as such
     assert "塔罗" in block and "姓名" in block
     assert "无古籍" in block or "非中土古籍" in block or "无中土古籍" in block
+
+
+def test_contains_assertion_accepts_non_string_values(monkeypatch):
+    """`contains` did `substr not in str(got)`, which raises TypeError the
+    moment an eval pins a numeric field (hex_number, a score, a count). The
+    gate crashed instead of comparing, so numeric goldens were unusable."""
+    run_checks._run_assertion(
+        {"kind": "file_contains", "file": "CHANGELOG.md", "needles": ["1.7.0"]},
+        "self-test")
+    got = {"n": 33, "s": "天山遁"}
+    assert run_checks._contains_ok(got, "n", 33)
+    assert run_checks._contains_ok(got, "n", "33")
+    assert run_checks._contains_ok(got, "s", "天山")
+    assert not run_checks._contains_ok(got, "n", 34)
+
+
+def test_every_cli_engine_has_a_release_eval():
+    """The harness is the release gate, but six of fifteen CLIs never ran in
+    it — 六爻, 大六壬, 小六壬, 解梦, 历法换算 and 探索. liuyao is the pointed
+    example: its hexagram naming was wrong on 48 of 64 hexagrams until v1.4.0
+    and no eval would have caught it."""
+    import os
+    spec = json.loads((ROOT / "evals" / "evals.json").read_text(encoding="utf-8"))
+    covered = {
+        os.path.basename(a["cmd"][0])
+        for e in spec["evals"] for a in e.get("assertions", [])
+        if a.get("kind") == "script" and a.get("cmd")
+    }
+    helpers = {
+        "utils.py", "build_skill.py", "entropy.py",
+        "bazi_tables.py", "bazi_shensha.py", "bazi_strength.py", "bazi_geju.py",
+        "ziwei_tables.py", "ziwei_stars.py", "ziwei_palaces.py", "ziwei_patterns.py",
+    }
+    clis = {p.name for p in (ROOT / "scripts").glob("*.py")} - helpers
+    missing = sorted(clis - covered)
+    assert not missing, f"CLIs with no release eval: {missing}"

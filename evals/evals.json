@@ -364,6 +364,199 @@
           ]
         }
       ]
+    },
+    {
+      "id": 14,
+      "name": "liuyao-coin-cast",
+      "prompt": "帮我摇一卦六爻，问这次跳槽面试能不能成。",
+      "expected_output": "Should call scripts/liuyao_cast.py coins, report 本卦/变卦 with 卦名, the 六亲/世应/纳甲 per line, 动爻 and its 爻辞, and interpret 用神 for a 求职 question per references/04-liuyao.md. 六爻 hexagram naming was wrong on 48 of 64 hexagrams before v1.4.0, so the 卦名 golden below is load-bearing.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/liuyao_cast.py",
+            "coins",
+            "--seed",
+            "7"
+          ],
+          "has_keys": [
+            "main_chart.hex_name",
+            "main_chart.hex_number",
+            "main_chart.palace",
+            "changed_chart",
+            "nuclear_chart",
+            "active_lines",
+            "main_judgment"
+          ],
+          "contains": {
+            "main_chart.hex_name": "天山遁",
+            "main_chart.hex_number": 33,
+            "main_judgment": "亨,小利贞。"
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "xiaoliuren-quick-cast",
+      "prompt": "用小六壬起一课，看看现在出门顺不顺。",
+      "expected_output": "Should call scripts/xiaoliuren_cast.py solar with the date/time, report the 宫位 (大安/留连/速喜/赤口/小吉/空亡), its 吉凶 and keywords, and note the 子时 boundary handling.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/xiaoliuren_cast.py",
+            "solar",
+            "--date",
+            "2026-06-24",
+            "--time",
+            "13:00"
+          ],
+          "has_keys": [
+            "result.palace",
+            "result.tone",
+            "calculation.month_palace",
+            "calculation.day_palace",
+            "boundary"
+          ],
+          "contains": {
+            "result.palace": "速喜",
+            "result.tone": "吉"
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "daliuren-four-lessons",
+      "prompt": "起一个大六壬课盘，2026年6月24日下午1点05分。",
+      "expected_output": "Should call scripts/liuren_cast.py, report 月将/占时/天盘地盘, 四课, 三传 with 发用法, and 十二天将 per references/07-daliuren.md.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/liuren_cast.py",
+            "--date",
+            "2026-06-24",
+            "--time",
+            "13:05"
+          ],
+          "has_keys": [
+            "ganzhi",
+            "yue_jiang",
+            "tian_pan",
+            "si_ke",
+            "san_chuan",
+            "fa_yong_method",
+            "shi_er_tian_jiang"
+          ],
+          "contains": {
+            "ganzhi.day": "己巳",
+            "san_chuan.chu_chuan": "巳"
+          }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "lunar-solar-conversion",
+      "prompt": "1990年5月10号下午2点出生，农历是哪天？",
+      "expected_output": "Should call scripts/lunar_convert.py solar2lunar and report the 农历 date plus 四柱干支; the 时柱 must only appear because --hour was supplied.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/lunar_convert.py",
+            "solar2lunar",
+            "--year",
+            "1990",
+            "--month",
+            "5",
+            "--day",
+            "10",
+            "--hour",
+            "14"
+          ],
+          "has_keys": [
+            "solar_date",
+            "lunar_date",
+            "ganzhi",
+            "jieqi",
+            "xiu_28"
+          ],
+          "contains": {
+            "ganzhi.year": "庚午",
+            "ganzhi.day": "乙亥",
+            "ganzhi.hour": "癸未"
+          }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "jiemeng-symbol-lookup",
+      "prompt": "梦见蛇是什么意思？",
+      "expected_output": "Should call scripts/jiemeng_lookup.py --symbol 蛇 rather than reading the 38 KB asset, and give BOTH the 传统 and the 现代心理 reading without alarming the user.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/jiemeng_lookup.py",
+            "--symbol",
+            "蛇"
+          ],
+          "has_keys": [
+            "symbol",
+            "category",
+            "traditional",
+            "modern_psychology",
+            "common_scenarios"
+          ],
+          "contains": {
+            "symbol": "蛇",
+            "category": "动物"
+          }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "explore-honest-framing",
+      "prompt": "给我一个今天可以去走走的随机探索点，我在成都。",
+      "expected_output": "Should call scripts/explore_cast.py with the coordinates, return a target point with distance/bearing, and carry the honesty disclaimer verbatim: not prediction, not MMI, no accuracy claim. The disclaimer must reach the user.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/explore_cast.py",
+            "--lat",
+            "30.57",
+            "--lon",
+            "104.07",
+            "--seed",
+            "11"
+          ],
+          "has_keys": [
+            "target.lat",
+            "target.lon",
+            "distance_m",
+            "bearing_deg",
+            "anomaly_z",
+            "safety",
+            "disclaimer"
+          ]
+        },
+        {
+          "kind": "file_contains",
+          "file": "scripts/explore_cast.py",
+          "needles": [
+            "非预兆",
+            "非念力(MMI)影响",
+            "意图仅记录不改变随机数",
+            "后果自负"
+          ]
+        }
+      ]
     }
   ]
 }

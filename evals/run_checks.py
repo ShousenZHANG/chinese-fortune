@@ -223,6 +223,20 @@ def _resolve_path(obj, dotted: str):
     return cur
 
 
+def _contains_ok(data, path: str, substr) -> bool:
+    """Substring match that tolerates a non-string needle or value.
+
+    An eval pinning a numeric field (hex_number, a count, a score) used to
+    crash the gate with TypeError, because `substr not in str(got)` requires a
+    string on the left. Coerce both sides: the assertion is "the rendered value
+    contains the rendered needle".
+    """
+    got = _resolve_path(data, path)
+    if got is _MISSING:
+        return False
+    return str(substr) in str(got)
+
+
 def _run_assertion(a: dict, label: str) -> None:
     kind = a.get("kind")
     if kind == "file_contains":
@@ -241,8 +255,8 @@ def _run_assertion(a: dict, label: str) -> None:
             if got != expected:
                 fail(f"{label}: path {path!r} expected {expected!r}, got {got!r}")
         for path, substr in a.get("contains", {}).items():
-            got = _resolve_path(data, path)
-            if got is _MISSING or substr not in str(got):
+            if not _contains_ok(data, path, substr):
+                got = _resolve_path(data, path)
                 fail(f"{label}: path {path!r} must contain {substr!r}, got {got!r}")
         for path in a.get("has_keys", []):
             if _resolve_path(data, path) is _MISSING:
