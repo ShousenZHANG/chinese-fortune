@@ -76,7 +76,7 @@ VERSION = __version__
 
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version input true_solar_time_applied solar_date lunar_date
+  ok tool version input notes true_solar_time_applied solar_date lunar_date
   year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions twelve_palaces
@@ -104,6 +104,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--longitude", type=float, default=120.0)
     p.add_argument("--lunar", action="store_true",
                    help="若指定, 视输入为农历; 否则按公历换算")
+    p.add_argument("--leap", action="store_true",
+                   help="农历输入且该月为闰月 (等同传入负月份)")
     p.add_argument("--liu-year", type=int, default=None,
                    help="额外加算指定流年的四化 (公历)")
     p.add_argument("--no-patterns", action="store_true",
@@ -122,8 +124,10 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         if args.lunar:
+            # lunar_python encodes 闰月 as a negative month.
+            month = -abs(args.month) if args.leap else args.month
             lunar = Lunar.fromYmdHms(
-                args.year, args.month, args.day,
+                args.year, month, args.day,
                 args.hour, args.minute, 0,
             )
             solar = lunar.getSolar()
@@ -169,8 +173,26 @@ def main(argv: list[str] | None = None) -> int:
 
     year_stem = lunar.getYearGan()
     year_branch = lunar.getYearZhi()
-    lunar_month = abs(lunar.getMonth())
+    # 闰月归属 — 02-ziwei-paipan.md:15: 十五日前算本月, 十五日后算下月 (主流).
+    # 紫微 keys 命宫/身宫/斗君/辅星 off the lunar month, so attributing a whole
+    # 闰月 to its base month shifted every one of those by a palace for births
+    # after the 15th. bazi is unaffected: its 月柱 is 节气-based, not lunar.
+    raw_month = lunar.getMonth()
+    is_leap_month = raw_month < 0
     lunar_day = lunar.getDay()
+    lunar_month = abs(raw_month)
+    leap_note: list[str] = []
+    if is_leap_month and lunar_day > 15:
+        lunar_month = (lunar_month % 12) + 1
+        leap_note.append(
+            f"闰月十五日后, 按主流取法算作下月 ({abs(raw_month)} -> {lunar_month} 月) "
+            f"排命宫/身宫/斗君; 见 references/02-ziwei-paipan.md 闰月处理。"
+        )
+    elif is_leap_month:
+        leap_note.append(
+            f"闰月十五日前, 按主流取法算作本月 ({lunar_month} 月); "
+            f"见 references/02-ziwei-paipan.md 闰月处理。"
+        )
 
     # 1. 命宫 / 身宫 / 宫干.
     mg_branch = calc_ming_gong(lunar_month, birth_hour)
@@ -306,7 +328,8 @@ def main(argv: list[str] | None = None) -> int:
         "ok": True,
         "tool": "ziwei",
         "version": VERSION,
-        "input": vars(args),
+        "input": {**vars(args), "effective_lunar_month": lunar_month,
+                  "is_leap_month": is_leap_month},
         "true_solar_time_applied": tst_applied,
         "solar_date": {
             "year": solar.getYear(), "month": solar.getMonth(),
@@ -340,7 +363,7 @@ def main(argv: list[str] | None = None) -> int:
         "da_xian": da_xian,
         "liu_nian_sihua": liu_nian_sihua,
         "patterns": patterns,
-        "notes": [
+        "notes": leap_note + [
             "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
             "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",
             "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",

@@ -11,9 +11,12 @@
     "tz": 8.0,
     "longitude": 120.0,
     "lunar": false,
+    "leap": false,
     "liu_year": null,
     "no_patterns": false,
-    "no_sihua": false
+    "no_sihua": false,
+    "effective_lunar_month": 12,
+    "is_leap_month": false
   },
   "true_solar_time_applied": false,
   "solar_date": {

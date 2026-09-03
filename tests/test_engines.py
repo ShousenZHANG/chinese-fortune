@@ -318,3 +318,35 @@ def test_ziwei_full_output_snapshot():
         (Path(__file__).resolve().parent / "data" /
          "ziwei_snapshot_20000115.json").read_text(encoding="utf-8"))
     assert got == want
+
+
+@needs_lunar
+def test_ziwei_leap_month_splits_at_the_fifteenth():
+    """02-ziwei-paipan.md:15 — 闰月处理: 十五日前算上月, 十五日后算下月 (主流).
+
+    ziwei_calc took abs(lunar.getMonth()), so the whole leap month counted as
+    the base month and a birth on 闰四月十六 produced a chart identical to
+    闰四月初十. 命宫/身宫/斗君/辅星 all key off the lunar month, so the entire
+    chart was shifted one palace for such births.
+    """
+    from conftest import run_cli
+
+    early = run_cli("ziwei_calc.py", "--lunar", "--year", 2020, "--month", 4,
+                    "--day", 10, "--hour", 10, "--gender", "male", "--leap")
+    late = run_cli("ziwei_calc.py", "--lunar", "--year", 2020, "--month", 4,
+                   "--day", 16, "--hour", 10, "--gender", "male", "--leap")
+
+    assert early["ming_gong"]["branch"] != late["ming_gong"]["branch"], (
+        "闰月 before and after the 15th must not yield the same 命宫")
+    assert early["input"]["effective_lunar_month"] == 4
+    assert late["input"]["effective_lunar_month"] == 5
+    assert "闰月" in late["notes"][0]
+
+
+@needs_lunar
+def test_non_leap_month_is_unaffected_by_the_split():
+    from conftest import run_cli
+    d = run_cli("ziwei_calc.py", "--lunar", "--year", 2020, "--month", 4,
+                "--day", 16, "--hour", 10, "--gender", "male")
+    assert d["input"]["effective_lunar_month"] == 4
+    assert not any("闰月" in n for n in d["notes"])
