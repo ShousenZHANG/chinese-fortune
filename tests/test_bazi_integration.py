@@ -362,3 +362,40 @@ def test_sect_has_no_effect_outside_late_zi():
     b = run_cli("bazi_calc.py", "--year", 2020, "--month", 6, "--day", 15,
                 "--hour", 10, "--gender", "male", "--as-of-year", 2026, "--sect", 2)
     assert a["four_pillars"] == b["four_pillars"]
+
+
+# --------------------------------------------------------------------------- #
+# --city: 出生地 feeds the computation instead of being collected and dropped
+# --------------------------------------------------------------------------- #
+
+def test_city_sets_longitude_and_timezone():
+    """The Chengdu eval case: longitude correction flipped 时柱 丙辰 -> 乙卯, and
+    the only way to get it was for the LLM to know Chengdu's longitude itself."""
+    from conftest import run_cli
+    by_city = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                      "--hour", 7, "--minute", 30, "--gender", "female",
+                      "--as-of-year", 2026, "--city", "成都")
+    by_lon = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                     "--hour", 7, "--minute", 30, "--gender", "female",
+                     "--as-of-year", 2026, "--longitude", "104.07",
+                     "--timezone", "Asia/Shanghai")
+    assert by_city["four_pillars"]["hour"]["ganzhi"] == "乙卯"
+    assert by_city["four_pillars"] == by_lon["four_pillars"]
+    assert by_city["birthplace"]["name"] == "成都"
+
+
+def test_explicit_longitude_overrides_city():
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                "--hour", 7, "--minute", 30, "--gender", "female",
+                "--as-of-year", 2026, "--city", "成都", "--longitude", "120")
+    assert d["birthplace"]["longitude_source"] == "explicit"
+    assert d["true_solar_time"]["longitude"] == 120.0
+
+
+def test_unknown_city_is_a_clean_error():
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1995, "--month", 3, "--day", 8,
+                "--hour", 7, "--gender", "female", "--city", "亚特兰蒂斯",
+                expect_rc=1)
+    assert d["error"] == "unknown_city"

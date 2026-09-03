@@ -1,0 +1,4830 @@
+{
+  "source": "三路独立编制 (按省份 / 按行政区划代码 / 按拼音), 取一致值; 争议项经度差≤0.25° (1 分钟真太阳时) 取中位数; 三盟按盟公署驻地核对. 坐标为市政府/市中心, 2 位小数. 时区: 大陆一律 Asia/Shanghai (新疆官方亦 UTC+8), 港澳台各自 IANA 区.",
+  "precision_note": "1° 经度 = 4 分钟真太阳时; 本表精度 ≤0.25° (≤1 分钟), 时辰边界判定足够.",
+  "not_included": [
+    "海东 (province/longitude dispute)",
+    "宜州 (single-source, unverified)",
+    "琼海 (single-source, unverified)",
+    "文昌 (single-source, unverified)",
+    "万宁 (single-source, unverified)",
+    "东方 (single-source, unverified)",
+    "新竹县 (single-source, unverified)",
+    "嘉义县 (single-source, unverified)",
+    "连江 (single-source, unverified)",
+    "乐清 (single-source, unverified)",
+    "阿拉尔 (single-source, unverified)",
+    "图木舒克 (single-source, unverified)",
+    "五家渠 (single-source, unverified)",
+    "北屯 (single-source, unverified)",
+    "铁门关 (single-source, unverified)",
+    "双河 (single-source, unverified)",
+    "可克达拉 (single-source, unverified)",
+    "昆玉 (single-source, unverified)",
+    "胡杨河 (single-source, unverified)",
+    "马祖 (single-source, unverified)",
+    "太仓 (single-source, unverified)",
+    "海宁 (single-source, unverified)",
+    "石狮 (single-source, unverified)",
+    "普宁 (single-source, unverified)",
+    "敦煌 (single-source, unverified)",
+    "满洲里 (single-source, unverified)"
+  ],
+  "cities": [
+    {
+      "name": "上海",
+      "province": "上海",
+      "level": "直辖市",
+      "lon": 121.47,
+      "lat": 31.23,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shanghai",
+        "沪",
+        "申"
+      ]
+    },
+    {
+      "name": "临沧",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 100.09,
+      "lat": 23.88,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lincang",
+        "臨滄"
+      ]
+    },
+    {
+      "name": "丽江",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 100.23,
+      "lat": 26.86,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lijiang",
+        "麗江"
+      ]
+    },
+    {
+      "name": "保山",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 99.17,
+      "lat": 25.11,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baoshan",
+        "永昌"
+      ]
+    },
+    {
+      "name": "大理",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 100.27,
+      "lat": 25.61,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dali",
+        "下关",
+        "下關",
+        "大理白族自治州"
+      ]
+    },
+    {
+      "name": "德宏",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 98.59,
+      "lat": 24.43,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dehong",
+        "Mangshi",
+        "德宏傣族景颇族自治州",
+        "潞西",
+        "芒市"
+      ]
+    },
+    {
+      "name": "怒江",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 98.86,
+      "lat": 25.82,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lushui",
+        "Nujiang",
+        "六库",
+        "六庫",
+        "怒江傈僳族自治州",
+        "泸水",
+        "瀘水"
+      ]
+    },
+    {
+      "name": "文山",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 104.24,
+      "lat": 23.37,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wenshan",
+        "文山壮族苗族自治州"
+      ]
+    },
+    {
+      "name": "昆明",
+      "province": "云南",
+      "level": "省会",
+      "lon": 102.83,
+      "lat": 24.88,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Kunming",
+        "春城"
+      ]
+    },
+    {
+      "name": "昭通",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 103.72,
+      "lat": 27.34,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhaotong"
+      ]
+    },
+    {
+      "name": "普洱",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 100.97,
+      "lat": 22.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Pu'er",
+        "Puer",
+        "Simao",
+        "思茅"
+      ]
+    },
+    {
+      "name": "曲靖",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 103.8,
+      "lat": 25.49,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qujing"
+      ]
+    },
+    {
+      "name": "楚雄",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 101.55,
+      "lat": 25.04,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chuxiong",
+        "楚雄彝族自治州"
+      ]
+    },
+    {
+      "name": "玉溪",
+      "province": "云南",
+      "level": "地级市",
+      "lon": 102.54,
+      "lat": 24.35,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yuxi"
+      ]
+    },
+    {
+      "name": "红河",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 103.38,
+      "lat": 23.37,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Honghe",
+        "Mengzi",
+        "个旧",
+        "個舊",
+        "紅河",
+        "红河哈尼族彝族自治州",
+        "蒙自"
+      ]
+    },
+    {
+      "name": "西双版纳",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 100.8,
+      "lat": 22.01,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinghong",
+        "Sipsongpanna",
+        "Xishuangbanna",
+        "景洪",
+        "西双版纳傣族自治州",
+        "西雙版納"
+      ]
+    },
+    {
+      "name": "迪庆",
+      "province": "云南",
+      "level": "自治州",
+      "lon": 99.71,
+      "lat": 27.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Diqing",
+        "Dêqên",
+        "Shangri-La",
+        "Zhongdian",
+        "中甸",
+        "迪庆藏族自治州",
+        "迪慶",
+        "香格里拉"
+      ]
+    },
+    {
+      "name": "乌兰察布",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 113.13,
+      "lat": 41,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jining",
+        "Ulanqab",
+        "Wulanchabu",
+        "烏蘭察布",
+        "集宁",
+        "集寧"
+      ]
+    },
+    {
+      "name": "乌海",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 106.8,
+      "lat": 39.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wuhai",
+        "烏海"
+      ]
+    },
+    {
+      "name": "兴安盟",
+      "province": "内蒙古",
+      "level": "盟",
+      "lon": 122.06,
+      "lat": 46.08,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hinggan",
+        "Ulanhot",
+        "Xing'an",
+        "乌兰浩特",
+        "兴安",
+        "兴安盟",
+        "烏蘭浩特",
+        "興安盟"
+      ]
+    },
+    {
+      "name": "包头",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 109.84,
+      "lat": 40.66,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baotou",
+        "包頭"
+      ]
+    },
+    {
+      "name": "呼伦贝尔",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 119.77,
+      "lat": 49.21,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hailar",
+        "Hulunbeier",
+        "Hulunbuir",
+        "呼倫貝爾",
+        "海拉尔",
+        "海拉爾"
+      ]
+    },
+    {
+      "name": "呼和浩特",
+      "province": "内蒙古",
+      "level": "省会",
+      "lon": 111.75,
+      "lat": 40.84,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hohhot",
+        "Huhehaote",
+        "归绥",
+        "歸綏"
+      ]
+    },
+    {
+      "name": "巴彦淖尔",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 107.42,
+      "lat": 40.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bayannaoer",
+        "Bayannur",
+        "Linhe",
+        "临河",
+        "巴彥淖爾",
+        "臨河"
+      ]
+    },
+    {
+      "name": "赤峰",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 118.96,
+      "lat": 42.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chifeng",
+        "昭乌达",
+        "昭乌达盟",
+        "昭烏達"
+      ]
+    },
+    {
+      "name": "通辽",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 122.26,
+      "lat": 43.62,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tongliao",
+        "哲里木",
+        "哲里木盟",
+        "通遼"
+      ]
+    },
+    {
+      "name": "鄂尔多斯",
+      "province": "内蒙古",
+      "level": "地级市",
+      "lon": 109.78,
+      "lat": 39.61,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Eerduosi",
+        "Ordos",
+        "东胜",
+        "伊克昭盟",
+        "東勝",
+        "鄂爾多斯"
+      ]
+    },
+    {
+      "name": "锡林郭勒盟",
+      "province": "内蒙古",
+      "level": "盟",
+      "lon": 116.09,
+      "lat": 43.94,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xilingol",
+        "Xilinguole",
+        "Xilinhot",
+        "錫林浩特",
+        "錫林郭勒",
+        "錫林郭勒盟",
+        "锡林浩特",
+        "锡林郭勒",
+        "锡林郭勒盟"
+      ]
+    },
+    {
+      "name": "阿拉善盟",
+      "province": "内蒙古",
+      "level": "盟",
+      "lon": 105.7,
+      "lat": 38.84,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Alashan",
+        "Alxa",
+        "Bayanhot",
+        "巴彥浩特",
+        "巴彦浩特",
+        "阿拉善",
+        "阿拉善盟"
+      ]
+    },
+    {
+      "name": "北京",
+      "province": "北京",
+      "level": "直辖市",
+      "lon": 116.4,
+      "lat": 39.9,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Beijing",
+        "Peking",
+        "京",
+        "北平"
+      ]
+    },
+    {
+      "name": "云林",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.43,
+      "lat": 23.71,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Douliu",
+        "Yunlin",
+        "斗六",
+        "雲林",
+        "雲林縣"
+      ]
+    },
+    {
+      "name": "南投",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.69,
+      "lat": 23.91,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Nantou",
+        "南投縣"
+      ]
+    },
+    {
+      "name": "台东",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 121.15,
+      "lat": 22.76,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Taidong",
+        "Taitung",
+        "臺東",
+        "臺東縣"
+      ]
+    },
+    {
+      "name": "台中",
+      "province": "台湾",
+      "level": "直辖市",
+      "lon": 120.67,
+      "lat": 24.15,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Taichung",
+        "Taizhong",
+        "臺中"
+      ]
+    },
+    {
+      "name": "台北",
+      "province": "台湾",
+      "level": "直辖市",
+      "lon": 121.56,
+      "lat": 25.03,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Taibei",
+        "Taipei",
+        "臺北"
+      ]
+    },
+    {
+      "name": "台南",
+      "province": "台湾",
+      "level": "直辖市",
+      "lon": 120.21,
+      "lat": 22.99,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Tainan",
+        "臺南"
+      ]
+    },
+    {
+      "name": "嘉义",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.45,
+      "lat": 23.48,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Chiayi",
+        "Jiayi",
+        "嘉义市",
+        "嘉義",
+        "嘉義市"
+      ]
+    },
+    {
+      "name": "基隆",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 121.74,
+      "lat": 25.13,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Jilong",
+        "Keelung",
+        "雞籠",
+        "鸡笼"
+      ]
+    },
+    {
+      "name": "宜兰",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 121.75,
+      "lat": 24.75,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Ilan",
+        "Yilan",
+        "宜蘭",
+        "宜蘭縣"
+      ]
+    },
+    {
+      "name": "屏东",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.49,
+      "lat": 22.67,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Pingdong",
+        "Pingtung",
+        "屏東",
+        "屏東縣"
+      ]
+    },
+    {
+      "name": "彰化",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.54,
+      "lat": 24.08,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Changhua",
+        "Zhanghua",
+        "彰化縣"
+      ]
+    },
+    {
+      "name": "新北",
+      "province": "台湾",
+      "level": "直辖市",
+      "lon": 121.47,
+      "lat": 25.01,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Banqiao",
+        "New Taipei",
+        "Xinbei",
+        "台北县",
+        "板桥",
+        "板橋",
+        "臺北縣"
+      ]
+    },
+    {
+      "name": "新竹",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.97,
+      "lat": 24.8,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Hsinchu",
+        "Xinzhu",
+        "新竹市"
+      ]
+    },
+    {
+      "name": "桃园",
+      "province": "台湾",
+      "level": "直辖市",
+      "lon": 121.3,
+      "lat": 24.99,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Taoyuan",
+        "桃園"
+      ]
+    },
+    {
+      "name": "澎湖",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 119.57,
+      "lat": 23.57,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Magong",
+        "Penghu",
+        "Pescadores",
+        "澎湖縣",
+        "馬公",
+        "马公"
+      ]
+    },
+    {
+      "name": "花莲",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 121.61,
+      "lat": 23.99,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Hualian",
+        "Hualien",
+        "花蓮",
+        "花蓮縣"
+      ]
+    },
+    {
+      "name": "苗栗",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 120.82,
+      "lat": 24.56,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Miaoli",
+        "苗栗縣"
+      ]
+    },
+    {
+      "name": "金门",
+      "province": "台湾",
+      "level": "地级市",
+      "lon": 118.32,
+      "lat": 24.44,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Jinmen",
+        "Kinmen",
+        "Quemoy",
+        "金城",
+        "金門",
+        "金門縣"
+      ]
+    },
+    {
+      "name": "高雄",
+      "province": "台湾",
+      "level": "直辖市",
+      "lon": 120.31,
+      "lat": 22.62,
+      "tz": "Asia/Taipei",
+      "aliases": [
+        "Gaoxiong",
+        "Kaohsiung",
+        "打狗"
+      ]
+    },
+    {
+      "name": "吉林",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 126.55,
+      "lat": 43.84,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jilin",
+        "Kirin",
+        "吉林市"
+      ]
+    },
+    {
+      "name": "四平",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 124.35,
+      "lat": 43.17,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Siping"
+      ]
+    },
+    {
+      "name": "延边",
+      "province": "吉林",
+      "level": "自治州",
+      "lon": 129.51,
+      "lat": 42.89,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yanbian",
+        "Yanji",
+        "延吉",
+        "延边朝鲜族自治州",
+        "延邊"
+      ]
+    },
+    {
+      "name": "松原",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 124.82,
+      "lat": 45.14,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Songyuan",
+        "扶余"
+      ]
+    },
+    {
+      "name": "白城",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 122.84,
+      "lat": 45.62,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baicheng"
+      ]
+    },
+    {
+      "name": "白山",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 126.42,
+      "lat": 41.94,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baishan",
+        "浑江",
+        "渾江"
+      ]
+    },
+    {
+      "name": "辽源",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 125.14,
+      "lat": 42.89,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Liaoyuan",
+        "遼源"
+      ]
+    },
+    {
+      "name": "通化",
+      "province": "吉林",
+      "level": "地级市",
+      "lon": 125.94,
+      "lat": 41.73,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tonghua"
+      ]
+    },
+    {
+      "name": "长春",
+      "province": "吉林",
+      "level": "省会",
+      "lon": 125.32,
+      "lat": 43.88,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changchun",
+        "新京",
+        "長春"
+      ]
+    },
+    {
+      "name": "乐山",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 103.77,
+      "lat": 29.55,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Leshan",
+        "嘉定",
+        "樂山"
+      ]
+    },
+    {
+      "name": "内江",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 105.06,
+      "lat": 29.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Neijiang",
+        "內江"
+      ]
+    },
+    {
+      "name": "凉山",
+      "province": "四川",
+      "level": "自治州",
+      "lon": 102.27,
+      "lat": 27.88,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Liangshan",
+        "Xichang",
+        "凉山彝族自治州",
+        "涼山",
+        "西昌"
+      ]
+    },
+    {
+      "name": "南充",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 106.11,
+      "lat": 30.84,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nanchong"
+      ]
+    },
+    {
+      "name": "宜宾",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 104.64,
+      "lat": 28.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yibin",
+        "宜賓"
+      ]
+    },
+    {
+      "name": "巴中",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 106.75,
+      "lat": 31.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bazhong"
+      ]
+    },
+    {
+      "name": "广元",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 105.84,
+      "lat": 32.44,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Guangyuan",
+        "廣元"
+      ]
+    },
+    {
+      "name": "广安",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 106.63,
+      "lat": 30.46,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Guang'an",
+        "Guangan",
+        "廣安"
+      ]
+    },
+    {
+      "name": "德阳",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 104.4,
+      "lat": 31.13,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Deyang",
+        "德陽"
+      ]
+    },
+    {
+      "name": "成都",
+      "province": "四川",
+      "level": "省会",
+      "lon": 104.07,
+      "lat": 30.57,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chengdu",
+        "Chengtu",
+        "蓉"
+      ]
+    },
+    {
+      "name": "攀枝花",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 101.72,
+      "lat": 26.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Panzhihua",
+        "渡口"
+      ]
+    },
+    {
+      "name": "泸州",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 105.44,
+      "lat": 28.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Luzhou",
+        "瀘州"
+      ]
+    },
+    {
+      "name": "甘孜",
+      "province": "四川",
+      "level": "自治州",
+      "lon": 101.96,
+      "lat": 30.05,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dartsedo",
+        "Ganzi",
+        "Garze",
+        "Kangding",
+        "康定",
+        "甘孜藏族自治州"
+      ]
+    },
+    {
+      "name": "眉山",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 103.85,
+      "lat": 30.08,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Meishan"
+      ]
+    },
+    {
+      "name": "绵阳",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 104.68,
+      "lat": 31.47,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Mianyang",
+        "綿陽"
+      ]
+    },
+    {
+      "name": "自贡",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 104.78,
+      "lat": 29.34,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zigong",
+        "自貢"
+      ]
+    },
+    {
+      "name": "资阳",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 104.63,
+      "lat": 30.13,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ziyang",
+        "資陽"
+      ]
+    },
+    {
+      "name": "达州",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 107.47,
+      "lat": 31.21,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dazhou",
+        "达县",
+        "达川",
+        "達州",
+        "達縣"
+      ]
+    },
+    {
+      "name": "遂宁",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 105.59,
+      "lat": 30.53,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Suining",
+        "遂寧"
+      ]
+    },
+    {
+      "name": "阿坝",
+      "province": "四川",
+      "level": "自治州",
+      "lon": 102.22,
+      "lat": 31.9,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Aba",
+        "Barkam",
+        "Ngawa",
+        "阿坝藏族羌族自治州",
+        "阿壩",
+        "馬爾康",
+        "马尔康"
+      ]
+    },
+    {
+      "name": "雅安",
+      "province": "四川",
+      "level": "地级市",
+      "lon": 103.04,
+      "lat": 30.01,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ya'an",
+        "Yaan"
+      ]
+    },
+    {
+      "name": "天津",
+      "province": "天津",
+      "level": "直辖市",
+      "lon": 117.2,
+      "lat": 39.09,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tianjin",
+        "Tientsin",
+        "津"
+      ]
+    },
+    {
+      "name": "中卫",
+      "province": "宁夏",
+      "level": "地级市",
+      "lon": 105.19,
+      "lat": 37.5,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhongwei",
+        "中衛"
+      ]
+    },
+    {
+      "name": "吴忠",
+      "province": "宁夏",
+      "level": "地级市",
+      "lon": 106.2,
+      "lat": 37.99,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wuzhong",
+        "吳忠"
+      ]
+    },
+    {
+      "name": "固原",
+      "province": "宁夏",
+      "level": "地级市",
+      "lon": 106.24,
+      "lat": 36.02,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Guyuan"
+      ]
+    },
+    {
+      "name": "石嘴山",
+      "province": "宁夏",
+      "level": "地级市",
+      "lon": 106.38,
+      "lat": 39.01,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shizuishan",
+        "大武口"
+      ]
+    },
+    {
+      "name": "银川",
+      "province": "宁夏",
+      "level": "省会",
+      "lon": 106.23,
+      "lat": 38.49,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yinchuan",
+        "銀川"
+      ]
+    },
+    {
+      "name": "亳州",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 115.78,
+      "lat": 33.85,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bozhou",
+        "亳县"
+      ]
+    },
+    {
+      "name": "六安",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 116.52,
+      "lat": 31.73,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lu'an",
+        "Luan"
+      ]
+    },
+    {
+      "name": "合肥",
+      "province": "安徽",
+      "level": "省会",
+      "lon": 117.23,
+      "lat": 31.82,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hefei",
+        "庐州",
+        "廬州"
+      ]
+    },
+    {
+      "name": "安庆",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 117.06,
+      "lat": 30.54,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Anking",
+        "Anqing",
+        "安慶"
+      ]
+    },
+    {
+      "name": "宣城",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 118.76,
+      "lat": 30.94,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xuancheng",
+        "宣州"
+      ]
+    },
+    {
+      "name": "宿州",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 116.96,
+      "lat": 33.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Suzhou",
+        "Suzhou (Anhui)",
+        "宿县",
+        "宿縣"
+      ]
+    },
+    {
+      "name": "池州",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 117.49,
+      "lat": 30.66,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chizhou",
+        "貴池",
+        "贵池"
+      ]
+    },
+    {
+      "name": "淮北",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 116.8,
+      "lat": 33.96,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huaibei",
+        "濉溪"
+      ]
+    },
+    {
+      "name": "淮南",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 117,
+      "lat": 32.63,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huainan"
+      ]
+    },
+    {
+      "name": "滁州",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 118.32,
+      "lat": 32.3,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chuzhou"
+      ]
+    },
+    {
+      "name": "芜湖",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 118.43,
+      "lat": 31.35,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wuhu",
+        "蕪湖"
+      ]
+    },
+    {
+      "name": "蚌埠",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 117.39,
+      "lat": 32.92,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bengbu"
+      ]
+    },
+    {
+      "name": "铜陵",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 117.81,
+      "lat": 30.94,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tongling",
+        "銅陵"
+      ]
+    },
+    {
+      "name": "阜阳",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 115.81,
+      "lat": 32.89,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fuyang",
+        "阜陽"
+      ]
+    },
+    {
+      "name": "马鞍山",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 118.51,
+      "lat": 31.67,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ma'anshan",
+        "Maanshan",
+        "馬鞍山"
+      ]
+    },
+    {
+      "name": "黄山",
+      "province": "安徽",
+      "level": "地级市",
+      "lon": 118.34,
+      "lat": 29.71,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huangshan",
+        "Tunxi",
+        "屯溪",
+        "徽州",
+        "黃山"
+      ]
+    },
+    {
+      "name": "东营",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 118.67,
+      "lat": 37.43,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dongying",
+        "東營"
+      ]
+    },
+    {
+      "name": "临沂",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 118.36,
+      "lat": 35.1,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Linyi",
+        "臨沂"
+      ]
+    },
+    {
+      "name": "威海",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 122.12,
+      "lat": 37.51,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Weihai",
+        "Weihaiwei",
+        "威海卫"
+      ]
+    },
+    {
+      "name": "德州",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 116.36,
+      "lat": 37.44,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dezhou"
+      ]
+    },
+    {
+      "name": "日照",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 119.53,
+      "lat": 35.42,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Rizhao"
+      ]
+    },
+    {
+      "name": "枣庄",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 117.32,
+      "lat": 34.81,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zaozhuang",
+        "棗莊",
+        "薛城"
+      ]
+    },
+    {
+      "name": "泰安",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 117.09,
+      "lat": 36.2,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tai'an",
+        "Taian"
+      ]
+    },
+    {
+      "name": "济南",
+      "province": "山东",
+      "level": "省会",
+      "lon": 117,
+      "lat": 36.67,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinan",
+        "Tsinan",
+        "濟南"
+      ]
+    },
+    {
+      "name": "济宁",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 116.59,
+      "lat": 35.41,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "濟寧"
+      ]
+    },
+    {
+      "name": "淄博",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 118.05,
+      "lat": 36.81,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zibo",
+        "张店",
+        "張店"
+      ]
+    },
+    {
+      "name": "滨州",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 117.97,
+      "lat": 37.38,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Binzhou",
+        "濱州"
+      ]
+    },
+    {
+      "name": "潍坊",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 119.16,
+      "lat": 36.71,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Weifang",
+        "潍县",
+        "濰坊"
+      ]
+    },
+    {
+      "name": "烟台",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 121.45,
+      "lat": 37.46,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chefoo",
+        "Yantai",
+        "煙台",
+        "煙臺",
+        "芝罘"
+      ]
+    },
+    {
+      "name": "聊城",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 115.99,
+      "lat": 36.46,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Liaocheng"
+      ]
+    },
+    {
+      "name": "菏泽",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 115.48,
+      "lat": 35.23,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Heze",
+        "菏澤"
+      ]
+    },
+    {
+      "name": "青岛",
+      "province": "山东",
+      "level": "地级市",
+      "lon": 120.38,
+      "lat": 36.07,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qingdao",
+        "Tsingtao",
+        "青島"
+      ]
+    },
+    {
+      "name": "临汾",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 111.52,
+      "lat": 36.09,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Linfen",
+        "臨汾"
+      ]
+    },
+    {
+      "name": "吕梁",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 111.14,
+      "lat": 37.52,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lvliang",
+        "Lüliang",
+        "呂梁",
+        "离石",
+        "離石"
+      ]
+    },
+    {
+      "name": "大同",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 113.3,
+      "lat": 40.08,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Datong"
+      ]
+    },
+    {
+      "name": "太原",
+      "province": "山西",
+      "level": "省会",
+      "lon": 112.55,
+      "lat": 37.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Taiyuan",
+        "并州"
+      ]
+    },
+    {
+      "name": "忻州",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 112.73,
+      "lat": 38.42,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xinzhou"
+      ]
+    },
+    {
+      "name": "晋中",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 112.75,
+      "lat": 37.69,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinzhong",
+        "Yuci",
+        "晉中",
+        "榆次"
+      ]
+    },
+    {
+      "name": "晋城",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 112.85,
+      "lat": 35.49,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jincheng",
+        "晉城"
+      ]
+    },
+    {
+      "name": "朔州",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 112.43,
+      "lat": 39.33,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shuozhou"
+      ]
+    },
+    {
+      "name": "运城",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 111.01,
+      "lat": 35.03,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yuncheng",
+        "運城"
+      ]
+    },
+    {
+      "name": "长治",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 113.12,
+      "lat": 36.2,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changzhi",
+        "長治"
+      ]
+    },
+    {
+      "name": "阳泉",
+      "province": "山西",
+      "level": "地级市",
+      "lon": 113.58,
+      "lat": 37.86,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yangquan",
+        "陽泉"
+      ]
+    },
+    {
+      "name": "东莞",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.75,
+      "lat": 23.02,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dongguan",
+        "東莞"
+      ]
+    },
+    {
+      "name": "中山",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.39,
+      "lat": 22.52,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhongshan",
+        "石岐",
+        "香山"
+      ]
+    },
+    {
+      "name": "云浮",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 112.04,
+      "lat": 22.92,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yunfu",
+        "雲浮"
+      ]
+    },
+    {
+      "name": "佛山",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.12,
+      "lat": 23.02,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fatshan",
+        "Foshan"
+      ]
+    },
+    {
+      "name": "广州",
+      "province": "广东",
+      "level": "省会",
+      "lon": 113.26,
+      "lat": 23.13,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Canton",
+        "Guangzhou",
+        "廣州",
+        "穗"
+      ]
+    },
+    {
+      "name": "惠州",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 114.42,
+      "lat": 23.11,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huizhou"
+      ]
+    },
+    {
+      "name": "揭阳",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 116.37,
+      "lat": 23.55,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jieyang",
+        "揭陽"
+      ]
+    },
+    {
+      "name": "梅州",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 116.12,
+      "lat": 24.29,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Meizhou",
+        "梅县",
+        "梅縣"
+      ]
+    },
+    {
+      "name": "汕头",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 116.68,
+      "lat": 23.35,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shantou",
+        "Swatow",
+        "汕頭"
+      ]
+    },
+    {
+      "name": "汕尾",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 115.38,
+      "lat": 22.79,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shanwei",
+        "海丰"
+      ]
+    },
+    {
+      "name": "江门",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.08,
+      "lat": 22.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiangmen",
+        "Kongmoon",
+        "江門"
+      ]
+    },
+    {
+      "name": "河源",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 114.7,
+      "lat": 23.74,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Heyuan"
+      ]
+    },
+    {
+      "name": "深圳",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 114.06,
+      "lat": 22.55,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shenzhen",
+        "宝安",
+        "寶安"
+      ]
+    },
+    {
+      "name": "清远",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.06,
+      "lat": 23.68,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qingyuan",
+        "清遠"
+      ]
+    },
+    {
+      "name": "湛江",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 110.36,
+      "lat": 21.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhanjiang",
+        "广州湾",
+        "廣州灣"
+      ]
+    },
+    {
+      "name": "潮州",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 116.62,
+      "lat": 23.66,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chaozhou",
+        "Teochew"
+      ]
+    },
+    {
+      "name": "珠海",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.58,
+      "lat": 22.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhuhai"
+      ]
+    },
+    {
+      "name": "肇庆",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 112.47,
+      "lat": 23.05,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhaoqing",
+        "肇慶"
+      ]
+    },
+    {
+      "name": "茂名",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 110.93,
+      "lat": 21.66,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Maoming"
+      ]
+    },
+    {
+      "name": "阳江",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 111.98,
+      "lat": 21.86,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yangjiang",
+        "陽江"
+      ]
+    },
+    {
+      "name": "韶关",
+      "province": "广东",
+      "level": "地级市",
+      "lon": 113.6,
+      "lat": 24.81,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shaoguan",
+        "曲江",
+        "韶關"
+      ]
+    },
+    {
+      "name": "北海",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 109.12,
+      "lat": 21.48,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Beihai",
+        "Pakhoi"
+      ]
+    },
+    {
+      "name": "南宁",
+      "province": "广西",
+      "level": "省会",
+      "lon": 108.37,
+      "lat": 22.82,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nanning",
+        "南寧",
+        "邕"
+      ]
+    },
+    {
+      "name": "崇左",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 107.36,
+      "lat": 22.4,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chongzuo"
+      ]
+    },
+    {
+      "name": "来宾",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 109.22,
+      "lat": 23.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Laibin",
+        "來賓"
+      ]
+    },
+    {
+      "name": "柳州",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 109.42,
+      "lat": 24.33,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Liuzhou"
+      ]
+    },
+    {
+      "name": "桂林",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 110.29,
+      "lat": 25.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Guilin",
+        "Kweilin"
+      ]
+    },
+    {
+      "name": "梧州",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 111.28,
+      "lat": 23.48,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wuzhou"
+      ]
+    },
+    {
+      "name": "河池",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 108.09,
+      "lat": 24.7,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hechi",
+        "金城江"
+      ]
+    },
+    {
+      "name": "玉林",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 110.18,
+      "lat": 22.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yulin",
+        "郁林",
+        "鬱林"
+      ]
+    },
+    {
+      "name": "百色",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 106.62,
+      "lat": 23.9,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baise",
+        "Bose"
+      ]
+    },
+    {
+      "name": "贵港",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 109.6,
+      "lat": 23.1,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Guigang",
+        "貴港",
+        "贵县"
+      ]
+    },
+    {
+      "name": "贺州",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 111.57,
+      "lat": 24.4,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hezhou",
+        "八步",
+        "賀州",
+        "贺县"
+      ]
+    },
+    {
+      "name": "钦州",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 108.65,
+      "lat": 21.98,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qinzhou",
+        "欽州"
+      ]
+    },
+    {
+      "name": "防城港",
+      "province": "广西",
+      "level": "地级市",
+      "lon": 108.35,
+      "lat": 21.69,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fangchenggang",
+        "防城"
+      ]
+    },
+    {
+      "name": "乌鲁木齐",
+      "province": "新疆",
+      "level": "省会",
+      "lon": 87.62,
+      "lat": 43.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Urumqi",
+        "Wulumuqi",
+        "烏魯木齊",
+        "迪化"
+      ]
+    },
+    {
+      "name": "伊犁",
+      "province": "新疆",
+      "level": "自治州",
+      "lon": 81.32,
+      "lat": 43.92,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ghulja",
+        "Gulja",
+        "Ili",
+        "Yili",
+        "Yining",
+        "伊宁",
+        "伊寧",
+        "伊犁哈萨克自治州"
+      ]
+    },
+    {
+      "name": "克孜勒苏",
+      "province": "新疆",
+      "level": "自治州",
+      "lon": 76.17,
+      "lat": 39.72,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Artux",
+        "Atushi",
+        "Kizilsu",
+        "克孜勒苏柯尔克孜自治州",
+        "克孜勒蘇",
+        "克州",
+        "阿图什",
+        "阿圖什"
+      ]
+    },
+    {
+      "name": "克拉玛依",
+      "province": "新疆",
+      "level": "地级市",
+      "lon": 84.87,
+      "lat": 45.6,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Karamay",
+        "Kelamayi",
+        "克拉瑪依"
+      ]
+    },
+    {
+      "name": "博尔塔拉",
+      "province": "新疆",
+      "level": "自治州",
+      "lon": 82.07,
+      "lat": 44.9,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bole",
+        "Bortala",
+        "博乐",
+        "博尔塔拉蒙古自治州",
+        "博樂",
+        "博爾塔拉"
+      ]
+    },
+    {
+      "name": "吐鲁番",
+      "province": "新疆",
+      "level": "地级市",
+      "lon": 89.19,
+      "lat": 42.95,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tulufan",
+        "Turpan",
+        "吐魯番"
+      ]
+    },
+    {
+      "name": "和田",
+      "province": "新疆",
+      "level": "地区",
+      "lon": 79.92,
+      "lat": 37.11,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hetian",
+        "Hotan",
+        "Khotan",
+        "和田地区",
+        "和闐",
+        "和阗"
+      ]
+    },
+    {
+      "name": "哈密",
+      "province": "新疆",
+      "level": "地级市",
+      "lon": 93.51,
+      "lat": 42.82,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hami",
+        "Kumul"
+      ]
+    },
+    {
+      "name": "喀什",
+      "province": "新疆",
+      "level": "地区",
+      "lon": 75.99,
+      "lat": 39.47,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Kashgar",
+        "Kashi",
+        "喀什噶尔",
+        "喀什噶爾",
+        "喀什地区"
+      ]
+    },
+    {
+      "name": "塔城",
+      "province": "新疆",
+      "level": "地区",
+      "lon": 82.98,
+      "lat": 46.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qoqek",
+        "Tacheng",
+        "塔城地区"
+      ]
+    },
+    {
+      "name": "巴音郭楞",
+      "province": "新疆",
+      "level": "自治州",
+      "lon": 86.15,
+      "lat": 41.77,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bayingol",
+        "Bayingolin",
+        "Korla",
+        "Kuerle",
+        "巴州",
+        "巴音郭楞蒙古自治州",
+        "库尔勒",
+        "庫爾勒"
+      ]
+    },
+    {
+      "name": "昌吉",
+      "province": "新疆",
+      "level": "自治州",
+      "lon": 87.31,
+      "lat": 44.01,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changji",
+        "昌吉回族自治州"
+      ]
+    },
+    {
+      "name": "石河子",
+      "province": "新疆",
+      "level": "县级市",
+      "lon": 86.04,
+      "lat": 44.31,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shihezi"
+      ]
+    },
+    {
+      "name": "阿克苏",
+      "province": "新疆",
+      "level": "地区",
+      "lon": 80.26,
+      "lat": 41.17,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Akesu",
+        "Aksu",
+        "阿克苏地区",
+        "阿克蘇"
+      ]
+    },
+    {
+      "name": "阿勒泰",
+      "province": "新疆",
+      "level": "地区",
+      "lon": 88.14,
+      "lat": 47.85,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Aletai",
+        "Altay",
+        "阿勒泰地区"
+      ]
+    },
+    {
+      "name": "南京",
+      "province": "江苏",
+      "level": "省会",
+      "lon": 118.8,
+      "lat": 32.06,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nanjing",
+        "Nanking",
+        "宁",
+        "金陵"
+      ]
+    },
+    {
+      "name": "南通",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 120.89,
+      "lat": 31.98,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nantong"
+      ]
+    },
+    {
+      "name": "宜兴",
+      "province": "江苏",
+      "level": "县级市",
+      "lon": 119.82,
+      "lat": 31.34,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yixing",
+        "宜興"
+      ]
+    },
+    {
+      "name": "宿迁",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 118.28,
+      "lat": 33.96,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Suqian",
+        "宿遷"
+      ]
+    },
+    {
+      "name": "常州",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 119.97,
+      "lat": 31.81,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changzhou",
+        "武进"
+      ]
+    },
+    {
+      "name": "常熟",
+      "province": "江苏",
+      "level": "县级市",
+      "lon": 120.75,
+      "lat": 31.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changshu"
+      ]
+    },
+    {
+      "name": "张家港",
+      "province": "江苏",
+      "level": "县级市",
+      "lon": 120.56,
+      "lat": 31.88,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhangjiagang",
+        "張家港",
+        "沙洲"
+      ]
+    },
+    {
+      "name": "徐州",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 117.19,
+      "lat": 34.26,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xuzhou"
+      ]
+    },
+    {
+      "name": "扬州",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 119.41,
+      "lat": 32.39,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yangzhou",
+        "揚州"
+      ]
+    },
+    {
+      "name": "无锡",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 120.31,
+      "lat": 31.49,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wuxi",
+        "無錫"
+      ]
+    },
+    {
+      "name": "昆山",
+      "province": "江苏",
+      "level": "县级市",
+      "lon": 120.98,
+      "lat": 31.39,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Kunshan"
+      ]
+    },
+    {
+      "name": "江阴",
+      "province": "江苏",
+      "level": "县级市",
+      "lon": 120.29,
+      "lat": 31.92,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiangyin",
+        "江陰"
+      ]
+    },
+    {
+      "name": "泰州",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 119.92,
+      "lat": 32.46,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Taizhou"
+      ]
+    },
+    {
+      "name": "淮安",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 119.02,
+      "lat": 33.61,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huai'an",
+        "Huaian",
+        "淮阴",
+        "淮陰",
+        "清江"
+      ]
+    },
+    {
+      "name": "盐城",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 120.16,
+      "lat": 33.35,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yancheng",
+        "鹽城"
+      ]
+    },
+    {
+      "name": "苏州",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 120.59,
+      "lat": 31.3,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Soochow",
+        "蘇州"
+      ]
+    },
+    {
+      "name": "连云港",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 119.22,
+      "lat": 34.6,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lianyungang",
+        "新海连",
+        "新海連",
+        "連雲港"
+      ]
+    },
+    {
+      "name": "镇江",
+      "province": "江苏",
+      "level": "地级市",
+      "lon": 119.45,
+      "lat": 32.2,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhenjiang",
+        "鎮江"
+      ]
+    },
+    {
+      "name": "上饶",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 117.94,
+      "lat": 28.45,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shangrao",
+        "上饒"
+      ]
+    },
+    {
+      "name": "九江",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 116,
+      "lat": 29.71,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiujiang",
+        "Kiukiang"
+      ]
+    },
+    {
+      "name": "南昌",
+      "province": "江西",
+      "level": "省会",
+      "lon": 115.86,
+      "lat": 28.68,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nanchang"
+      ]
+    },
+    {
+      "name": "吉安",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 114.99,
+      "lat": 27.11,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ji'an",
+        "Jian",
+        "庐陵"
+      ]
+    },
+    {
+      "name": "宜春",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 114.42,
+      "lat": 27.8,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yichun"
+      ]
+    },
+    {
+      "name": "抚州",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 116.36,
+      "lat": 27.95,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fuzhou",
+        "Fuzhou (Jiangxi)",
+        "临川",
+        "撫州",
+        "臨川"
+      ]
+    },
+    {
+      "name": "新余",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 114.92,
+      "lat": 27.82,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xinyu",
+        "新餘"
+      ]
+    },
+    {
+      "name": "景德镇",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 117.18,
+      "lat": 29.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jingdezhen",
+        "景德鎮"
+      ]
+    },
+    {
+      "name": "萍乡",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 113.85,
+      "lat": 27.62,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Pingxiang",
+        "萍鄉"
+      ]
+    },
+    {
+      "name": "赣州",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 114.93,
+      "lat": 25.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ganzhou",
+        "贛州"
+      ]
+    },
+    {
+      "name": "鹰潭",
+      "province": "江西",
+      "level": "地级市",
+      "lon": 117.07,
+      "lat": 28.26,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yingtan",
+        "鷹潭"
+      ]
+    },
+    {
+      "name": "保定",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 115.46,
+      "lat": 38.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baoding"
+      ]
+    },
+    {
+      "name": "唐山",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 118.18,
+      "lat": 39.63,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tangshan"
+      ]
+    },
+    {
+      "name": "廊坊",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 116.68,
+      "lat": 39.54,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Langfang"
+      ]
+    },
+    {
+      "name": "张家口",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 114.89,
+      "lat": 40.82,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Kalgan",
+        "Zhangjiakou",
+        "张垣",
+        "張家口"
+      ]
+    },
+    {
+      "name": "承德",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 117.96,
+      "lat": 40.95,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chengde",
+        "热河",
+        "熱河"
+      ]
+    },
+    {
+      "name": "沧州",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 116.84,
+      "lat": 38.3,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Cangzhou",
+        "滄州"
+      ]
+    },
+    {
+      "name": "石家庄",
+      "province": "河北",
+      "level": "省会",
+      "lon": 114.51,
+      "lat": 38.04,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shijiazhuang",
+        "石家莊",
+        "石門",
+        "石门"
+      ]
+    },
+    {
+      "name": "秦皇岛",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 119.6,
+      "lat": 39.94,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qinhuangdao",
+        "秦皇島"
+      ]
+    },
+    {
+      "name": "衡水",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 115.67,
+      "lat": 37.74,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hengshui"
+      ]
+    },
+    {
+      "name": "邢台",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 114.5,
+      "lat": 37.07,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xingtai",
+        "邢臺"
+      ]
+    },
+    {
+      "name": "邯郸",
+      "province": "河北",
+      "level": "地级市",
+      "lon": 114.49,
+      "lat": 36.61,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Handan",
+        "邯鄲"
+      ]
+    },
+    {
+      "name": "三门峡",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 111.2,
+      "lat": 34.77,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Sanmenxia",
+        "三門峽"
+      ]
+    },
+    {
+      "name": "信阳",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.09,
+      "lat": 32.15,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xinyang",
+        "信陽"
+      ]
+    },
+    {
+      "name": "南阳",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 112.53,
+      "lat": 33,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nanyang",
+        "南陽"
+      ]
+    },
+    {
+      "name": "周口",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.65,
+      "lat": 33.63,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhoukou"
+      ]
+    },
+    {
+      "name": "商丘",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 115.66,
+      "lat": 34.41,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shangqiu",
+        "归德"
+      ]
+    },
+    {
+      "name": "安阳",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.39,
+      "lat": 36.1,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Anyang",
+        "安陽",
+        "彰德"
+      ]
+    },
+    {
+      "name": "平顶山",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 113.19,
+      "lat": 33.77,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Pingdingshan",
+        "平頂山"
+      ]
+    },
+    {
+      "name": "开封",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.31,
+      "lat": 34.8,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Kaifeng",
+        "汴",
+        "汴梁",
+        "開封"
+      ]
+    },
+    {
+      "name": "新乡",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 113.93,
+      "lat": 35.3,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xinxiang",
+        "新鄉"
+      ]
+    },
+    {
+      "name": "洛阳",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 112.45,
+      "lat": 34.62,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Luoyang",
+        "洛陽"
+      ]
+    },
+    {
+      "name": "济源",
+      "province": "河南",
+      "level": "县级市",
+      "lon": 112.6,
+      "lat": 35.07,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiyuan",
+        "濟源"
+      ]
+    },
+    {
+      "name": "漯河",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.02,
+      "lat": 33.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Luohe"
+      ]
+    },
+    {
+      "name": "濮阳",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 115.03,
+      "lat": 35.76,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Puyang",
+        "濮陽"
+      ]
+    },
+    {
+      "name": "焦作",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 113.24,
+      "lat": 35.22,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiaozuo"
+      ]
+    },
+    {
+      "name": "许昌",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 113.85,
+      "lat": 34.04,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xuchang",
+        "許昌"
+      ]
+    },
+    {
+      "name": "郑州",
+      "province": "河南",
+      "level": "省会",
+      "lon": 113.63,
+      "lat": 34.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhengzhou",
+        "郑县",
+        "鄭州"
+      ]
+    },
+    {
+      "name": "驻马店",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.02,
+      "lat": 33.01,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhumadian",
+        "駐馬店"
+      ]
+    },
+    {
+      "name": "鹤壁",
+      "province": "河南",
+      "level": "地级市",
+      "lon": 114.3,
+      "lat": 35.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hebi",
+        "鶴壁"
+      ]
+    },
+    {
+      "name": "丽水",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 119.92,
+      "lat": 28.45,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lishui",
+        "麗水"
+      ]
+    },
+    {
+      "name": "义乌",
+      "province": "浙江",
+      "level": "县级市",
+      "lon": 120.08,
+      "lat": 29.31,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yiwu",
+        "義烏"
+      ]
+    },
+    {
+      "name": "余姚",
+      "province": "浙江",
+      "level": "县级市",
+      "lon": 121.16,
+      "lat": 30.04,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yuyao",
+        "餘姚"
+      ]
+    },
+    {
+      "name": "台州",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 121.42,
+      "lat": 28.66,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "椒江",
+        "臺州"
+      ]
+    },
+    {
+      "name": "嘉兴",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 120.76,
+      "lat": 30.75,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiaxing",
+        "嘉興"
+      ]
+    },
+    {
+      "name": "宁波",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 121.55,
+      "lat": 29.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ningbo",
+        "Ningpo",
+        "寧波"
+      ]
+    },
+    {
+      "name": "慈溪",
+      "province": "浙江",
+      "level": "县级市",
+      "lon": 121.27,
+      "lat": 30.17,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Cixi"
+      ]
+    },
+    {
+      "name": "杭州",
+      "province": "浙江",
+      "level": "省会",
+      "lon": 120.16,
+      "lat": 30.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hangchow",
+        "Hangzhou"
+      ]
+    },
+    {
+      "name": "温岭",
+      "province": "浙江",
+      "level": "县级市",
+      "lon": 121.37,
+      "lat": 28.37,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wenling",
+        "溫嶺"
+      ]
+    },
+    {
+      "name": "温州",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 120.7,
+      "lat": 28,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wenzhou",
+        "溫州"
+      ]
+    },
+    {
+      "name": "湖州",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 120.09,
+      "lat": 30.89,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huzhou",
+        "吳興",
+        "吴兴"
+      ]
+    },
+    {
+      "name": "瑞安",
+      "province": "浙江",
+      "level": "县级市",
+      "lon": 120.66,
+      "lat": 27.78,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Rui'an",
+        "Ruian"
+      ]
+    },
+    {
+      "name": "绍兴",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 120.58,
+      "lat": 30.03,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shaoxing",
+        "紹興"
+      ]
+    },
+    {
+      "name": "舟山",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 122.21,
+      "lat": 29.99,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhoushan",
+        "定海"
+      ]
+    },
+    {
+      "name": "衢州",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 118.87,
+      "lat": 28.94,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Quzhou"
+      ]
+    },
+    {
+      "name": "诸暨",
+      "province": "浙江",
+      "level": "县级市",
+      "lon": 120.24,
+      "lat": 29.71,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhuji",
+        "諸暨"
+      ]
+    },
+    {
+      "name": "金华",
+      "province": "浙江",
+      "level": "地级市",
+      "lon": 119.65,
+      "lat": 29.08,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinhua",
+        "金華"
+      ]
+    },
+    {
+      "name": "三亚",
+      "province": "海南",
+      "level": "地级市",
+      "lon": 109.51,
+      "lat": 18.25,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Sanya",
+        "三亞",
+        "崖县",
+        "崖縣"
+      ]
+    },
+    {
+      "name": "三沙",
+      "province": "海南",
+      "level": "地级市",
+      "lon": 112.34,
+      "lat": 16.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Sansha",
+        "永兴岛",
+        "永興島"
+      ]
+    },
+    {
+      "name": "儋州",
+      "province": "海南",
+      "level": "地级市",
+      "lon": 109.58,
+      "lat": 19.52,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Danzhou",
+        "那大"
+      ]
+    },
+    {
+      "name": "海口",
+      "province": "海南",
+      "level": "省会",
+      "lon": 110.33,
+      "lat": 20.03,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Haikou",
+        "Hoihow"
+      ]
+    },
+    {
+      "name": "仙桃",
+      "province": "湖北",
+      "level": "县级市",
+      "lon": 113.45,
+      "lat": 30.36,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xiantao",
+        "沔阳",
+        "沔陽"
+      ]
+    },
+    {
+      "name": "十堰",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 110.8,
+      "lat": 32.63,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shiyan"
+      ]
+    },
+    {
+      "name": "咸宁",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 114.32,
+      "lat": 29.84,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xianning",
+        "咸寧"
+      ]
+    },
+    {
+      "name": "天门",
+      "province": "湖北",
+      "level": "县级市",
+      "lon": 113.17,
+      "lat": 30.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tianmen",
+        "天門"
+      ]
+    },
+    {
+      "name": "孝感",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 113.92,
+      "lat": 30.92,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xiaogan"
+      ]
+    },
+    {
+      "name": "宜昌",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 111.29,
+      "lat": 30.69,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ichang",
+        "Yichang"
+      ]
+    },
+    {
+      "name": "恩施",
+      "province": "湖北",
+      "level": "自治州",
+      "lon": 109.49,
+      "lat": 30.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Enshi",
+        "恩施土家族苗族自治州"
+      ]
+    },
+    {
+      "name": "武汉",
+      "province": "湖北",
+      "level": "省会",
+      "lon": 114.31,
+      "lat": 30.59,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hankow",
+        "Wuhan",
+        "武昌",
+        "武漢",
+        "汉口",
+        "汉阳",
+        "漢口",
+        "漢陽"
+      ]
+    },
+    {
+      "name": "潜江",
+      "province": "湖北",
+      "level": "县级市",
+      "lon": 112.9,
+      "lat": 30.4,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qianjiang",
+        "潛江"
+      ]
+    },
+    {
+      "name": "荆州",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 112.24,
+      "lat": 30.33,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jingzhou",
+        "Shashi",
+        "江陵",
+        "沙市",
+        "荆沙",
+        "荊州",
+        "荊沙"
+      ]
+    },
+    {
+      "name": "荆门",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 112.2,
+      "lat": 31.04,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jingmen",
+        "荊門"
+      ]
+    },
+    {
+      "name": "襄阳",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 112.12,
+      "lat": 32.01,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xiangfan",
+        "Xiangyang",
+        "襄樊",
+        "襄陽"
+      ]
+    },
+    {
+      "name": "鄂州",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 114.89,
+      "lat": 30.39,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ezhou",
+        "鄂城"
+      ]
+    },
+    {
+      "name": "随州",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 113.38,
+      "lat": 31.69,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Suizhou",
+        "随县",
+        "隨州"
+      ]
+    },
+    {
+      "name": "黄冈",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 114.87,
+      "lat": 30.45,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huanggang",
+        "黃岡",
+        "黃州",
+        "黄州"
+      ]
+    },
+    {
+      "name": "黄石",
+      "province": "湖北",
+      "level": "地级市",
+      "lon": 115.04,
+      "lat": 30.2,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huangshi",
+        "黃石"
+      ]
+    },
+    {
+      "name": "娄底",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 112,
+      "lat": 27.7,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Loudi",
+        "婁底"
+      ]
+    },
+    {
+      "name": "岳阳",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 113.13,
+      "lat": 29.36,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yueyang",
+        "岳陽"
+      ]
+    },
+    {
+      "name": "常德",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 111.7,
+      "lat": 29.03,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changde"
+      ]
+    },
+    {
+      "name": "张家界",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 110.48,
+      "lat": 29.12,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dayong",
+        "Zhangjiajie",
+        "大庸",
+        "張家界"
+      ]
+    },
+    {
+      "name": "怀化",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 110,
+      "lat": 27.57,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huaihua",
+        "懷化"
+      ]
+    },
+    {
+      "name": "株洲",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 113.13,
+      "lat": 27.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhuzhou"
+      ]
+    },
+    {
+      "name": "永州",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 111.61,
+      "lat": 26.42,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yongzhou",
+        "零陵"
+      ]
+    },
+    {
+      "name": "湘潭",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 112.94,
+      "lat": 27.83,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xiangtan"
+      ]
+    },
+    {
+      "name": "湘西",
+      "province": "湖南",
+      "level": "自治州",
+      "lon": 109.74,
+      "lat": 28.31,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jishou",
+        "Xiangxi",
+        "吉首",
+        "湘西土家族苗族自治州"
+      ]
+    },
+    {
+      "name": "益阳",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 112.36,
+      "lat": 28.55,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yiyang",
+        "益陽"
+      ]
+    },
+    {
+      "name": "衡阳",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 112.57,
+      "lat": 26.89,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hengyang",
+        "衡陽"
+      ]
+    },
+    {
+      "name": "邵阳",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 111.47,
+      "lat": 27.24,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shaoyang",
+        "宝庆",
+        "寶慶",
+        "邵陽"
+      ]
+    },
+    {
+      "name": "郴州",
+      "province": "湖南",
+      "level": "地级市",
+      "lon": 113.01,
+      "lat": 25.77,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chenzhou"
+      ]
+    },
+    {
+      "name": "长沙",
+      "province": "湖南",
+      "level": "省会",
+      "lon": 112.94,
+      "lat": 28.23,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changsha",
+        "長沙"
+      ]
+    },
+    {
+      "name": "澳门",
+      "province": "澳门",
+      "level": "特别行政区",
+      "lon": 113.54,
+      "lat": 22.19,
+      "tz": "Asia/Macau",
+      "aliases": [
+        "Aomen",
+        "Macao",
+        "Macau",
+        "澳門"
+      ]
+    },
+    {
+      "name": "临夏",
+      "province": "甘肃",
+      "level": "自治州",
+      "lon": 103.21,
+      "lat": 35.6,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Linxia",
+        "临夏回族自治州",
+        "河州",
+        "臨夏"
+      ]
+    },
+    {
+      "name": "兰州",
+      "province": "甘肃",
+      "level": "省会",
+      "lon": 103.83,
+      "lat": 36.06,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lanchow",
+        "Lanzhou",
+        "皋兰",
+        "蘭州"
+      ]
+    },
+    {
+      "name": "嘉峪关",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 98.29,
+      "lat": 39.77,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiayuguan",
+        "嘉峪關"
+      ]
+    },
+    {
+      "name": "天水",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 105.72,
+      "lat": 34.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tianshui",
+        "秦州"
+      ]
+    },
+    {
+      "name": "定西",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 104.63,
+      "lat": 35.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dingxi"
+      ]
+    },
+    {
+      "name": "平凉",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 106.67,
+      "lat": 35.54,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Pingliang",
+        "平涼"
+      ]
+    },
+    {
+      "name": "庆阳",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 107.64,
+      "lat": 35.73,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qingyang",
+        "慶陽",
+        "西峰"
+      ]
+    },
+    {
+      "name": "张掖",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 100.45,
+      "lat": 38.93,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zhangye",
+        "張掖",
+        "甘州"
+      ]
+    },
+    {
+      "name": "武威",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 102.64,
+      "lat": 37.93,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Wuwei",
+        "凉州",
+        "涼州"
+      ]
+    },
+    {
+      "name": "甘南",
+      "province": "甘肃",
+      "level": "自治州",
+      "lon": 102.91,
+      "lat": 34.98,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Gannan",
+        "Hezuo",
+        "合作",
+        "甘南藏族自治州"
+      ]
+    },
+    {
+      "name": "白银",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 104.14,
+      "lat": 36.55,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baiyin",
+        "白銀"
+      ]
+    },
+    {
+      "name": "酒泉",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 98.49,
+      "lat": 39.73,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiuquan",
+        "肃州",
+        "肅州"
+      ]
+    },
+    {
+      "name": "金昌",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 102.19,
+      "lat": 38.52,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinchang"
+      ]
+    },
+    {
+      "name": "陇南",
+      "province": "甘肃",
+      "level": "地级市",
+      "lon": 104.92,
+      "lat": 33.4,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Longnan",
+        "武都",
+        "隴南"
+      ]
+    },
+    {
+      "name": "三明",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 117.64,
+      "lat": 26.26,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Sanming"
+      ]
+    },
+    {
+      "name": "南平",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 118.18,
+      "lat": 26.64,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jianyang",
+        "Nanping",
+        "延平",
+        "建阳",
+        "建陽"
+      ]
+    },
+    {
+      "name": "厦门",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 118.09,
+      "lat": 24.48,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Amoy",
+        "Xiamen",
+        "廈門",
+        "鷺島",
+        "鹭岛"
+      ]
+    },
+    {
+      "name": "宁德",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 119.55,
+      "lat": 26.67,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ningde",
+        "寧德"
+      ]
+    },
+    {
+      "name": "晋江",
+      "province": "福建",
+      "level": "县级市",
+      "lon": 118.55,
+      "lat": 24.78,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinjiang",
+        "晉江"
+      ]
+    },
+    {
+      "name": "泉州",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 118.68,
+      "lat": 24.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chinchew",
+        "Quanzhou",
+        "鲤城"
+      ]
+    },
+    {
+      "name": "漳州",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 117.65,
+      "lat": 24.51,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Changchow",
+        "Zhangzhou"
+      ]
+    },
+    {
+      "name": "福州",
+      "province": "福建",
+      "level": "省会",
+      "lon": 119.3,
+      "lat": 26.08,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Foochow",
+        "榕城"
+      ]
+    },
+    {
+      "name": "福清",
+      "province": "福建",
+      "level": "县级市",
+      "lon": 119.38,
+      "lat": 25.72,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fuqing"
+      ]
+    },
+    {
+      "name": "莆田",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 119.01,
+      "lat": 25.45,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Putian",
+        "兴化",
+        "興化"
+      ]
+    },
+    {
+      "name": "龙岩",
+      "province": "福建",
+      "level": "地级市",
+      "lon": 117.02,
+      "lat": 25.08,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Longyan",
+        "龍岩"
+      ]
+    },
+    {
+      "name": "山南",
+      "province": "西藏",
+      "level": "地级市",
+      "lon": 91.77,
+      "lat": 29.24,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lhoka",
+        "Shannan",
+        "乃东",
+        "乃東",
+        "泽当",
+        "澤當"
+      ]
+    },
+    {
+      "name": "拉萨",
+      "province": "西藏",
+      "level": "省会",
+      "lon": 91.11,
+      "lat": 29.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Lasa",
+        "Lhasa",
+        "拉薩"
+      ]
+    },
+    {
+      "name": "日喀则",
+      "province": "西藏",
+      "level": "地级市",
+      "lon": 88.88,
+      "lat": 29.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Rikaze",
+        "Shigatse",
+        "Xigaze",
+        "日喀則"
+      ]
+    },
+    {
+      "name": "昌都",
+      "province": "西藏",
+      "level": "地级市",
+      "lon": 97.17,
+      "lat": 31.14,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chamdo",
+        "Changdu",
+        "Qamdo"
+      ]
+    },
+    {
+      "name": "林芝",
+      "province": "西藏",
+      "level": "地级市",
+      "lon": 94.36,
+      "lat": 29.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Linzhi",
+        "Nyingchi",
+        "八一"
+      ]
+    },
+    {
+      "name": "那曲",
+      "province": "西藏",
+      "level": "地级市",
+      "lon": 92.05,
+      "lat": 31.48,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Nagqu",
+        "Naqu"
+      ]
+    },
+    {
+      "name": "阿里",
+      "province": "西藏",
+      "level": "地区",
+      "lon": 80.11,
+      "lat": 32.5,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ali",
+        "Ngari",
+        "Shiquanhe",
+        "噶尔",
+        "噶爾",
+        "狮泉河",
+        "獅泉河",
+        "阿里地区"
+      ]
+    },
+    {
+      "name": "六盘水",
+      "province": "贵州",
+      "level": "地级市",
+      "lon": 104.83,
+      "lat": 26.59,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Liupanshui",
+        "六盤水",
+        "水城"
+      ]
+    },
+    {
+      "name": "安顺",
+      "province": "贵州",
+      "level": "地级市",
+      "lon": 105.95,
+      "lat": 26.25,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Anshun",
+        "安順"
+      ]
+    },
+    {
+      "name": "毕节",
+      "province": "贵州",
+      "level": "地级市",
+      "lon": 105.29,
+      "lat": 27.3,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Bijie",
+        "畢節"
+      ]
+    },
+    {
+      "name": "贵阳",
+      "province": "贵州",
+      "level": "省会",
+      "lon": 106.63,
+      "lat": 26.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Guiyang",
+        "筑",
+        "貴陽"
+      ]
+    },
+    {
+      "name": "遵义",
+      "province": "贵州",
+      "level": "地级市",
+      "lon": 106.93,
+      "lat": 27.73,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Zunyi",
+        "遵義"
+      ]
+    },
+    {
+      "name": "铜仁",
+      "province": "贵州",
+      "level": "地级市",
+      "lon": 109.19,
+      "lat": 27.72,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tongren",
+        "銅仁"
+      ]
+    },
+    {
+      "name": "黔东南",
+      "province": "贵州",
+      "level": "自治州",
+      "lon": 107.98,
+      "lat": 26.58,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Kaili",
+        "Qiandongnan",
+        "凯里",
+        "凱里",
+        "黔东南苗族侗族自治州",
+        "黔東南"
+      ]
+    },
+    {
+      "name": "黔南",
+      "province": "贵州",
+      "level": "自治州",
+      "lon": 107.52,
+      "lat": 26.25,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Duyun",
+        "Qiannan",
+        "都勻",
+        "都匀",
+        "黔南布依族苗族自治州"
+      ]
+    },
+    {
+      "name": "黔西南",
+      "province": "贵州",
+      "level": "自治州",
+      "lon": 104.9,
+      "lat": 25.09,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qianxinan",
+        "Xingyi",
+        "兴义",
+        "興義",
+        "黔西南布依族苗族自治州"
+      ]
+    },
+    {
+      "name": "丹东",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 124.38,
+      "lat": 40.12,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Andong",
+        "Dandong",
+        "丹東",
+        "安东",
+        "安東"
+      ]
+    },
+    {
+      "name": "大连",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 121.61,
+      "lat": 38.91,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Dairen",
+        "Dalian",
+        "大連",
+        "旅大"
+      ]
+    },
+    {
+      "name": "抚顺",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 123.96,
+      "lat": 41.88,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fushun",
+        "撫順"
+      ]
+    },
+    {
+      "name": "朝阳",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 120.45,
+      "lat": 41.57,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chaoyang",
+        "朝陽"
+      ]
+    },
+    {
+      "name": "本溪",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 123.77,
+      "lat": 41.29,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Benxi"
+      ]
+    },
+    {
+      "name": "沈阳",
+      "province": "辽宁",
+      "level": "省会",
+      "lon": 123.43,
+      "lat": 41.8,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Mukden",
+        "Shenyang",
+        "奉天",
+        "瀋陽"
+      ]
+    },
+    {
+      "name": "盘锦",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 122.07,
+      "lat": 41.12,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Panjin",
+        "盤錦"
+      ]
+    },
+    {
+      "name": "营口",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 122.24,
+      "lat": 40.67,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yingkou",
+        "營口"
+      ]
+    },
+    {
+      "name": "葫芦岛",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 120.84,
+      "lat": 40.71,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huludao",
+        "Jinxi",
+        "葫蘆島",
+        "錦西",
+        "锦西"
+      ]
+    },
+    {
+      "name": "辽阳",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 123.18,
+      "lat": 41.27,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Liaoyang",
+        "遼陽"
+      ]
+    },
+    {
+      "name": "铁岭",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 123.84,
+      "lat": 42.29,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tieling",
+        "鐵嶺"
+      ]
+    },
+    {
+      "name": "锦州",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 121.13,
+      "lat": 41.1,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jinzhou",
+        "錦州"
+      ]
+    },
+    {
+      "name": "阜新",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 121.67,
+      "lat": 42.02,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Fuxin"
+      ]
+    },
+    {
+      "name": "鞍山",
+      "province": "辽宁",
+      "level": "地级市",
+      "lon": 122.99,
+      "lat": 41.11,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Anshan"
+      ]
+    },
+    {
+      "name": "重庆",
+      "province": "重庆",
+      "level": "直辖市",
+      "lon": 106.55,
+      "lat": 29.56,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Chongqing",
+        "Chungking",
+        "渝",
+        "重慶"
+      ]
+    },
+    {
+      "name": "咸阳",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 108.71,
+      "lat": 34.33,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xianyang",
+        "咸陽"
+      ]
+    },
+    {
+      "name": "商洛",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 109.94,
+      "lat": 33.87,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shangluo",
+        "商县",
+        "商州"
+      ]
+    },
+    {
+      "name": "安康",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 109.03,
+      "lat": 32.68,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ankang"
+      ]
+    },
+    {
+      "name": "宝鸡",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 107.24,
+      "lat": 34.36,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Baoji",
+        "寶雞"
+      ]
+    },
+    {
+      "name": "延安",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 109.49,
+      "lat": 36.59,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yan'an",
+        "Yanan",
+        "肤施"
+      ]
+    },
+    {
+      "name": "榆林",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 109.73,
+      "lat": 38.29,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Yulin (Shaanxi)"
+      ]
+    },
+    {
+      "name": "汉中",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 107.02,
+      "lat": 33.07,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hanzhong",
+        "漢中"
+      ]
+    },
+    {
+      "name": "渭南",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 109.51,
+      "lat": 34.5,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Weinan"
+      ]
+    },
+    {
+      "name": "西安",
+      "province": "陕西",
+      "level": "省会",
+      "lon": 108.94,
+      "lat": 34.34,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Sian",
+        "Xi'an",
+        "Xian",
+        "長安",
+        "长安"
+      ]
+    },
+    {
+      "name": "铜川",
+      "province": "陕西",
+      "level": "地级市",
+      "lon": 108.95,
+      "lat": 34.9,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Tongchuan",
+        "銅川"
+      ]
+    },
+    {
+      "name": "果洛",
+      "province": "青海",
+      "level": "自治州",
+      "lon": 100.24,
+      "lat": 34.47,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Golog",
+        "Guoluo",
+        "Maqin",
+        "大武",
+        "果洛藏族自治州",
+        "玛沁",
+        "瑪沁"
+      ]
+    },
+    {
+      "name": "格尔木",
+      "province": "青海",
+      "level": "县级市",
+      "lon": 94.9,
+      "lat": 36.4,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Ge'ermu",
+        "Geermu",
+        "Golmud",
+        "格爾木"
+      ]
+    },
+    {
+      "name": "海北",
+      "province": "青海",
+      "level": "自治州",
+      "lon": 100.9,
+      "lat": 36.96,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Haibei",
+        "海北藏族自治州",
+        "海晏",
+        "西海鎮",
+        "西海镇"
+      ]
+    },
+    {
+      "name": "海南州",
+      "province": "青海",
+      "level": "自治州",
+      "lon": 100.62,
+      "lat": 36.28,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Gonghe",
+        "Hainan",
+        "Hainan (Qinghai)",
+        "共和",
+        "恰卜恰",
+        "海南藏族自治州"
+      ]
+    },
+    {
+      "name": "海西",
+      "province": "青海",
+      "level": "自治州",
+      "lon": 97.37,
+      "lat": 37.37,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Delingha",
+        "Haixi",
+        "德令哈",
+        "海西蒙古族藏族自治州"
+      ]
+    },
+    {
+      "name": "玉树",
+      "province": "青海",
+      "level": "自治州",
+      "lon": 97.01,
+      "lat": 33,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Gyegu",
+        "Yushu",
+        "玉树藏族自治州",
+        "玉樹",
+        "結古",
+        "结古"
+      ]
+    },
+    {
+      "name": "西宁",
+      "province": "青海",
+      "level": "省会",
+      "lon": 101.78,
+      "lat": 36.62,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Xining",
+        "西寧"
+      ]
+    },
+    {
+      "name": "黄南",
+      "province": "青海",
+      "level": "自治州",
+      "lon": 102.02,
+      "lat": 35.52,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Huangnan",
+        "Tongren (Qinghai)",
+        "同仁",
+        "黃南",
+        "黄南藏族自治州"
+      ]
+    },
+    {
+      "name": "香港",
+      "province": "香港",
+      "level": "特别行政区",
+      "lon": 114.17,
+      "lat": 22.28,
+      "tz": "Asia/Hong_Kong",
+      "aliases": [
+        "HK",
+        "Hong Kong",
+        "Xianggang",
+        "港"
+      ]
+    },
+    {
+      "name": "七台河",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 131,
+      "lat": 45.77,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qitaihe"
+      ]
+    },
+    {
+      "name": "伊春",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 128.84,
+      "lat": 47.73,
+      "tz": "Asia/Shanghai",
+      "aliases": []
+    },
+    {
+      "name": "佳木斯",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 130.32,
+      "lat": 46.8,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jiamusi"
+      ]
+    },
+    {
+      "name": "双鸭山",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 131.16,
+      "lat": 46.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Shuangyashan",
+        "雙鴨山"
+      ]
+    },
+    {
+      "name": "哈尔滨",
+      "province": "黑龙江",
+      "level": "省会",
+      "lon": 126.53,
+      "lat": 45.8,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Haerbin",
+        "Harbin",
+        "哈爾濱"
+      ]
+    },
+    {
+      "name": "大兴安岭",
+      "province": "黑龙江",
+      "level": "地区",
+      "lon": 124.12,
+      "lat": 50.42,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Daxing'anling",
+        "Jagdaqi",
+        "加格达奇",
+        "加格達奇",
+        "大兴安岭地区",
+        "大興安嶺"
+      ]
+    },
+    {
+      "name": "大庆",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 125.1,
+      "lat": 46.59,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Daqing",
+        "大慶"
+      ]
+    },
+    {
+      "name": "牡丹江",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 129.63,
+      "lat": 44.55,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Mudanjiang"
+      ]
+    },
+    {
+      "name": "绥化",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 126.97,
+      "lat": 46.65,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Suihua",
+        "綏化"
+      ]
+    },
+    {
+      "name": "鸡西",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 130.97,
+      "lat": 45.3,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Jixi",
+        "雞西"
+      ]
+    },
+    {
+      "name": "鹤岗",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 130.3,
+      "lat": 47.35,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Hegang",
+        "鶴崗"
+      ]
+    },
+    {
+      "name": "黑河",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 127.53,
+      "lat": 50.24,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Heihe",
+        "爱辉",
+        "瑷珲"
+      ]
+    },
+    {
+      "name": "齐齐哈尔",
+      "province": "黑龙江",
+      "level": "地级市",
+      "lon": 123.92,
+      "lat": 47.35,
+      "tz": "Asia/Shanghai",
+      "aliases": [
+        "Qiqihaer",
+        "Qiqihar",
+        "卜奎",
+        "齊齊哈爾"
+      ]
+    }
+  ]
+}

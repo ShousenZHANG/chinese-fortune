@@ -11,6 +11,7 @@
     "tz": 8.0,
     "longitude": 120.0,
     "lunar": false,
+    "city": null,
     "sect": 2,
     "timezone": null,
     "leap": false,
@@ -766,6 +767,7 @@
     "value": 2,
     "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
   },
+  "birthplace": null,
   "timezone": null,
   "notes": [
     "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",

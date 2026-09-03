@@ -237,3 +237,43 @@ def test_resolve_timezone_offset_rejects_unknown_zone():
     from utils import resolve_timezone_offset
     with _pytest.raises(ValueError, match="时区"):
         resolve_timezone_offset("Not/AZone", 1990, 1, 1, 12, 0)
+
+
+# --------------------------------------------------------------------------- #
+# 出生地 -> 经度/时区 table — the intake asks for 省市, nothing mapped it
+# --------------------------------------------------------------------------- #
+
+def _cities():
+    import json
+    from pathlib import Path
+    p = Path(__file__).resolve().parent.parent / "assets" / "cities_cn.json"
+    return json.loads(p.read_text(encoding="utf-8"))["cities"]
+
+
+def test_city_table_is_well_formed():
+    """Every entry inside China's bounding box, a known zone, no name that
+    resolves to two different places."""
+    cities = _cities()
+    assert len(cities) >= 300, len(cities)
+    zones = {"Asia/Shanghai", "Asia/Hong_Kong", "Asia/Macau", "Asia/Taipei"}
+    seen = {}
+    for c in cities:
+        assert 73.0 <= c["lon"] <= 135.5, c
+        assert 3.5 <= c["lat"] <= 54.0, c
+        assert c["tz"] in zones, c
+        for key in [c["name"], *c.get("aliases", [])]:
+            if key in seen and seen[key] != c["name"]:
+                raise AssertionError(f"{key!r} maps to both {seen[key]} and {c['name']}")
+            seen[key] = c["name"]
+
+
+def test_lookup_city_resolves_names_and_aliases():
+    from utils import lookup_city
+
+    cd = lookup_city("成都")
+    assert abs(cd["lon"] - 104.07) < 0.1 and cd["tz"] == "Asia/Shanghai"
+    assert lookup_city("成都市")["name"] == "成都"
+    assert lookup_city("乌鲁木齐")["lon"] < 90
+    assert lookup_city("香港")["tz"] == "Asia/Hong_Kong"
+    assert lookup_city("台北")["tz"] == "Asia/Taipei"
+    assert lookup_city("不存在的城市") is None

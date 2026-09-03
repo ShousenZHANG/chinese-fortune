@@ -99,7 +99,7 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 # echoes it in its JSON envelope.
 # --------------------------------------------------------------------------- #
 
-__version__ = "1.5.3"
+__version__ = "1.6.0"
 
 
 # --------------------------------------------------------------------------- #
@@ -406,6 +406,50 @@ def equation_of_time(day_of_year: int, leap: bool = False) -> float:
     n_days = 366 if leap else 365
     b = 2.0 * math.pi * (day_of_year - 81) / n_days
     return 9.87 * math.sin(2 * b) - 7.53 * math.cos(b) - 1.5 * math.sin(b)
+
+
+_CITY_INDEX: dict[str, dict] | None = None
+
+
+def _load_city_index() -> dict[str, dict]:
+    """name / alias -> city row, built once from assets/cities_cn.json."""
+    global _CITY_INDEX
+    if _CITY_INDEX is not None:
+        return _CITY_INDEX
+    import json
+    import os
+    here = os.path.dirname(os.path.abspath(__file__))
+    for cand in (os.path.join(here, "..", "assets", "cities_cn.json"),
+                 os.path.join(here, "assets", "cities_cn.json")):
+        if os.path.exists(cand):
+            with open(cand, encoding="utf-8") as f:
+                rows = json.load(f).get("cities", [])
+            break
+    else:
+        rows = []
+    index: dict[str, dict] = {}
+    for row in rows:
+        for key in [row["name"], *row.get("aliases", [])]:
+            index.setdefault(key, row)
+            index.setdefault(key + "市", row)
+    _CITY_INDEX = index
+    return index
+
+
+def lookup_city(name: str) -> dict | None:
+    """Resolve a 出生地 (省市 name, alias, or pinyin) to its table row.
+
+    The intake protocol collects 出生地 but, until this table existed, nothing
+    mapped it to a longitude — the LLM had to know that 成都 is 104°E itself.
+    1° of longitude is 4 minutes of true solar time and 时辰 boundaries fall on
+    the hour, so a birth anywhere off the 120°E meridian can change 时柱; the
+    Chengdu eval case flipped 丙辰 -> 乙卯 on exactly this correction.
+    """
+    if not name:
+        return None
+    key = name.strip()
+    index = _load_city_index()
+    return index.get(key) or index.get(key.rstrip("市")) or None
 
 
 def resolve_timezone_offset(

@@ -15,7 +15,7 @@ When a reading needs personal data (八字 / 紫微 / 合婚 / 起名 / 择日),
 | 4 | 农历生日 + 闰月否 | BaZi cross-check, ZiWei | plain text, ask if 3 not provided |
 | 5 | 出生时辰 (HH:MM 或 子/丑/...) | BaZi 时柱, ZiWei 命宫 | AskUserQuestion (12 时辰) or HH:MM |
 | 6 | 性别 (男/女) | 大运 顺逆, 紫微 排盘, 用神 | AskUserQuestion |
-| 7 | 出生地 (省市) | 真太阳时 longitude + 时区 | plain text |
+| 7 | 出生地 (省市) | 真太阳时 longitude + 时区 — 传 `--city 成都` 由 `assets/cities_cn.json` 解析经度与时区; **不要自己猜经度**; 表中无此地才改传 `--longitude` + `--timezone` | plain text |
 | 8 | 当前所在地 + 关心议题 (财/感情/事业/健康/学业) | 流年 / 择日 / 解读权重 | AskUserQuestion + free text |
 | 9 | 在世状态 (本人 / 已故 / 推他人盘) | ethics check, redirect if 3rd party | AskUserQuestion |
 

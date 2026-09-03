@@ -9,6 +9,7 @@
     "minute": 30,
     "gender": "male",
     "tz": 8.0,
+    "city": null,
     "sect": 2,
     "timezone": null,
     "longitude": 120.0,
@@ -54,6 +55,7 @@
     "value": 2,
     "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
   },
+  "birthplace": null,
   "timezone": null,
   "notes": [],
   "four_pillars": {

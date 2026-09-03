@@ -2,6 +2,74 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] — 2026-09-03
+
+Input-assumption release. Every item here is about the chart being cast from
+the right inputs and being checkable against something other than itself.
+Scoped by a grilling session over the landscape sweep: what could still make
+排盘 more correct, given every engine and oracle that exists.
+
+### Fixed
+- **命主 was keyed by 年支.** 《紫微斗数全书·安命主诀》(子宫贪狼丑亥巨门, 寅戌禄存
+  卯酉文曲, 辰申廉贞巳未武曲, 午宫破军) keys on the **命宫** branch. The table
+  values were right; the key was wrong, and no reference file stated the rule,
+  so nothing could have caught it. Found by differential comparison against
+  iztro-py, which agreed with this engine on 56 of 57 fields across 7 charts —
+  this was the 57th. 身主 by 年支 was already correct. §3.9 of
+  02-ziwei-paipan.md now carries both 诀.
+  **BREAKING: `ming_zhu` changes on most charts** (golden 2000-01-15: 文曲 → 廉贞).
+
+### Added
+- **`--city`: 出生地 finally feeds the computation.** The intake protocol has
+  always asked for 出生地 (省市), but nothing mapped it to a longitude — the LLM
+  had to know that 成都 is 104°E itself, and the Chengdu eval case flipped 时柱
+  丙辰 → 乙卯 on exactly that correction. `assets/cities_cn.json` holds 376
+  divisions (4 直辖市, every 省会, all prefecture-level 市/自治州/盟/地区, 港澳台,
+  and ~15 commonly-given 县级市), each with 市政府 longitude/latitude, IANA zone
+  and aliases (繁體, old names, pinyin). Compiled three ways independently
+  (by province, by 行政区划代码, by pinyin) and kept only where the three agreed;
+  ten disputes with longitude spread ≤ 0.25° (one minute of solar time) took the
+  median; 26 single-source entries (兵团市, 台湾 counties, minor 县级市) were
+  left out rather than shipped unverified, and are listed in the asset.
+  `--city` sets `--longitude` and `--timezone` unless the caller passed them
+  explicitly, and reports `birthplace.longitude_source`.
+- **`--sect {1,2}`, shared by both engines.** 00-intake.md:34 names both 晚子时
+  schools and promises the default is stated, but sect 2 was hardcoded and the
+  output never said so. Default 2 (子正换日: 日柱 and lunar day stay, hour stem
+  from the next day) and labelled; under 1 (子初换日) bazi rolls the 日柱 at
+  23:00 and ziwei rolls the whole lunar date first, so 命宫 / 五行局 / 紫微星表 /
+  闰月归属 shift once, coherently. One flag for both engines — mixing schools
+  across them for the same birth would be self-contradictory.
+- **紫微 differential oracle.** `tests/test_differential_ziwei.py` locks
+  agreement with iztro-py (MIT, pure-Python port of the 4,117-star iztro, same
+  《全书》三合派 rules) over a 1950–2030 grid × {0, 10, 23}h: **903/903** on 命宫,
+  身宫, 五行局, 命主, 身主, 14 主星 and the twelve palaces. Two input conventions
+  are mapped rather than "fixed": iztro's time_index 12 also rolls the
+  star-table day (our sect 1), so 23:xx is fed as same-day index 0; and 仆役宫 →
+  奴仆宫. Runs in-process (19 s); the subprocess-per-case version took 155 s
+  and pushed the release harness past its timeout. iztro-py is dev-only, like
+  sxtwl. 紫微 now has what 八字 has had since v1.1.6: an independent second
+  implementation to disagree with.
+
+### Changed
+- `--longitude` default is now `None` internally (resolved to 120.0 after
+  city lookup) so that an explicit `--longitude 120` is distinguishable from
+  "not given". Output is unchanged for every existing invocation.
+
+Charts cast without the new flags are byte-identical apart from the added
+`sect` / `birthplace` keys and the 命主 correction. Suite 1104 → 1115 + 903 grid.
+
+### Deferred, by decision
+- Citation audit of 调候 (120 cells vs 《穷通宝鉴》 — the asset says 经现代术数家
+  整理, never checked against 原文), 神煞 (35 起法 vs 《三命通会》) and 安星诀
+  (49 formulas) → v1.7.0, because each discrepancy needs a human to pick an
+  edition.
+- Classical 命例 (《三命通会》《滴天髓征义》 ~500 charts with the author's own
+  格局/用神 verdicts) as an oracle for 格局判定 → backlog; machine-readable
+  availability unverified.
+- 奇门 拆补置闰 alongside 简化日数法 → backlog; a completeness item, not a
+  correctness one.
+
 ## [1.5.3] — 2026-09-03
 
 Two chart-correctness defects, both about a chart being cast from the wrong

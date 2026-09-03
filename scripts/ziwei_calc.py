@@ -39,6 +39,7 @@ from utils import (
     ensure_utf8_stdio,
     json_print,
     longitude_correction,
+    lookup_city,
     require_lunar,
     resolve_timezone_offset,
     warn,
@@ -82,7 +83,7 @@ SECT_LABELS = {
 
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version input sect timezone notes true_solar_time_applied solar_date lunar_date
+  ok tool version input sect birthplace timezone notes true_solar_time_applied solar_date lunar_date
   year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions twelve_palaces
@@ -107,9 +108,13 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--minute", type=int, default=0)
     p.add_argument("--gender", choices=["male", "female"], required=True)
     p.add_argument("--tz", type=float, default=8.0)
-    p.add_argument("--longitude", type=float, default=120.0)
+    p.add_argument("--longitude", type=float, default=None,
+                   help="出生地经度 (E°, 默认 120, 用于真太阳时)")
     p.add_argument("--lunar", action="store_true",
                    help="若指定, 视输入为农历; 否则按公历换算")
+    p.add_argument("--city", type=str, default=None,
+                   help="出生地 (省市名/别名/拼音), 由 assets/cities_cn.json 解析为经度与"
+                        "时区; 显式 --longitude / --timezone 优先")
     p.add_argument("--sect", type=int, choices=(1, 2), default=2,
                    help="晚子时取日流派: 2=子正换日 (默认) 1=子初换日 (23:00 起按次日"
                         "排盘). 与八字共用同一开关")
@@ -161,6 +166,25 @@ def main(argv: list[str] | None = None) -> int:
     # 紫微输入通常是粗粒度时辰; 默认经度(120)/时区(8) 表示"未提供精确出生地",
     # 此时保留所输入时辰原样, 避免 EOT 把临界时辰(如 01:00)误推过 时辰边界。
     # 给出真实经度即视为有精确出生地, 按 bazi 同法校正(近子时可滚日)。
+    birthplace = None
+    if args.city:
+        row = lookup_city(args.city)
+        if row is None:
+            json_print({"ok": False, "tool": "ziwei", "error": "unknown_city",
+                        "message": f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"})
+            return 1
+        lon_explicit = args.longitude is not None
+        if not lon_explicit:
+            args.longitude = row["lon"]
+        if not args.timezone:
+            args.timezone = row["tz"]
+        birthplace = {"name": row["name"], "province": row["province"],
+                      "lon": row["lon"], "lat": row["lat"], "tz": row["tz"],
+                      "longitude_source": "explicit" if lon_explicit else "city_table"}
+
+    if args.longitude is None:
+        args.longitude = 120.0  # GMT+8 reference meridian
+
     tz_info = None
     tz_offset = args.tz
     if args.timezone:
@@ -408,6 +432,7 @@ def main(argv: list[str] | None = None) -> int:
         "liu_nian_sihua": liu_nian_sihua,
         "patterns": patterns,
         "sect": sect_info,
+        "birthplace": birthplace,
         "timezone": tz_info,
         "notes": sect_note + leap_note
         + ([tz_info["note"]] if tz_info and tz_info["note"] else [])

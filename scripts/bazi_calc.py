@@ -55,6 +55,7 @@ from utils import (
     ensure_utf8_stdio,
     json_print,
     longitude_correction,
+    lookup_city,
     require_lunar,
     resolve_timezone_offset,
     true_solar_time_info,
@@ -245,7 +246,7 @@ def ten_gods_per_pillar(day_stem: str, pillars: dict) -> dict:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version hour_known sect timezone notes input true_solar_time solar_date
+  ok tool version hour_known sect birthplace timezone notes input true_solar_time solar_date
   lunar_date four_pillars
   day_master ten_gods wuxing_count day_master_strength interactions shen_sha
   yong_shen xi_shen ji_shen ge_ju na_yin qi_yun da_yun liu_nian
@@ -274,13 +275,16 @@ def build_parser() -> argparse.ArgumentParser:
                    help="性别 (用于排大运 + 天罗地网)")
     p.add_argument("--tz", type=float, default=8.0,
                    help="时区偏移小时 (默认 8 即 GMT+8); --timezone 优先")
+    p.add_argument("--city", type=str, default=None,
+                   help="出生地 (省市名/别名/拼音), 由 assets/cities_cn.json 解析为经度与"
+                        "时区; 显式 --longitude / --timezone 优先")
     p.add_argument("--sect", type=int, choices=(1, 2), default=2,
                    help="晚子时取日流派: 2=子正换日 (默认, 日柱取当日) "
                         "1=子初换日 (23:00 起日柱推进). 与紫微共用同一开关")
     p.add_argument("--timezone", type=str, default=None,
                    help="IANA 时区名 (如 Asia/Shanghai). 给出则按出生当刻的真实"
                         "偏移取时柱, 自动处理历史时区与夏令时")
-    p.add_argument("--longitude", type=float, default=120.0,
+    p.add_argument("--longitude", type=float, default=None,
                    help="出生地经度 (E°, 默认 120, 用于真太阳时)")
     p.add_argument("--lunar", action="store_true",
                    help="若指定, 视输入日期为农历")
@@ -340,6 +344,27 @@ def main(argv: list[str] | None = None) -> int:
     # tzdata 记录 Asia/Shanghai 1900-1995 间 30 次偏移变化, 其中 14 段为 UTC+9
     # (1919, 1940-1949, 1986-1991 夏令时). 落在这些窗口内的钟表读数比标准时快
     # 一小时, 时辰边界后一小时内出生者的时柱因此整位偏移。
+    # 出生地 -> 经度/时区. Explicit --longitude / --timezone win; the table only
+    # fills what the caller left at its default.
+    birthplace = None
+    if args.city:
+        row = lookup_city(args.city)
+        if row is None:
+            json_print({"ok": False, "tool": "bazi", "error": "unknown_city",
+                        "message": f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"})
+            return 1
+        lon_explicit = args.longitude is not None
+        if not lon_explicit:
+            args.longitude = row["lon"]
+        if not args.timezone:
+            args.timezone = row["tz"]
+        birthplace = {"name": row["name"], "province": row["province"],
+                      "lon": row["lon"], "lat": row["lat"], "tz": row["tz"],
+                      "longitude_source": "explicit" if lon_explicit else "city_table"}
+
+    if args.longitude is None:
+        args.longitude = 120.0  # GMT+8 reference meridian
+
     tz_info = None
     tz_offset = args.tz
     if args.timezone:
@@ -602,6 +627,7 @@ def main(argv: list[str] | None = None) -> int:
         },
         "hour_known": hour_known,
         "sect": sect_info,
+        "birthplace": birthplace,
         "timezone": tz_info,
         "notes": (([] if hour_known else
                   ["时柱待补: 未提供出生时辰, 已按三柱 (年/月/日) 论断; "
