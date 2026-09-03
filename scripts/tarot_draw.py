@@ -229,6 +229,17 @@ def load_deck() -> list[dict]:
 # Spreads
 # --------------------------------------------------------------------------- #
 
+# 18-tarot.md §5.2 documents five equally valid three-card readings; only the
+# first was reachable, so a relationship or advice question had to be forced
+# into a past/present/future frame.
+THREE_LAYOUTS: dict[str, list[str]] = {
+    "past-present-future": ["过去", "现在", "未来"],
+    "situation-action-outcome": ["情况", "行动", "结果"],
+    "you-other-relationship": ["你", "对方", "关系"],
+    "body-mind-spirit": ["身", "心", "灵"],
+    "strength-challenge-advice": ["优势", "挑战", "建议"],
+}
+
 SPREAD_DEFS: dict[str, list[str]] = {
     "one": ["当下指引"],
     "three": ["过去", "现在", "未来"],
@@ -237,8 +248,11 @@ SPREAD_DEFS: dict[str, list[str]] = {
         "可能的未来", "近期未来", "你的态度", "外在影响", "希望与恐惧",
         "最终结果",
     ],
+    # 18-tarot.md §5.7 关系牌阵: 通常7张. The five-position version shipped here
+    # matched no documented layout.
     "relationship": [
-        "你的状态", "对方状态", "双方共同的能量", "需要面对的挑战", "建议与方向",
+        "你的感受", "对方的感受", "关系基础", "当前状态",
+        "障碍", "你能做的", "关系走向",
     ],
     "daily": ["今日提示"],
 }
@@ -273,7 +287,7 @@ def position_summary(positions: list[str], cards: list[dict]) -> str:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  spread spread_name_cn deck_source deck_warning question seed entropy
+  spread spread_name_cn layout deck_source deck_warning question seed entropy
   cards summary
 
 deck_source is "asset" or "embedded_fallback"; in the latter case
@@ -298,6 +312,11 @@ def build_parser() -> argparse.ArgumentParser:
         ps.add_argument("--question", type=str, default=None)
         ps.add_argument("--entropy", choices=["system", "quantum"], default="system",
                         help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
+        if s == "three":
+            ps.add_argument("--layout", type=str, default="past-present-future",
+                            help="三牌阵取法 (18-tarot.md §5.2): past-present-future | "
+                                 "situation-action-outcome | you-other-relationship | "
+                                 "body-mind-spirit | strength-challenge-advice")
     return p
 
 
@@ -312,6 +331,13 @@ def main(argv: list[str] | None = None) -> int:
     if positions is None:
         json_print({"error": "unknown_spread", "valid": list(SPREAD_DEFS.keys())})
         return 2
+    layout = getattr(args, "layout", None)
+    if args.spread == "three" and layout:
+        if layout not in THREE_LAYOUTS:
+            json_print({"error": "unknown_layout",
+                        "valid": list(THREE_LAYOUTS.keys())})
+            return 2
+        positions = THREE_LAYOUTS[layout]
 
     rng = entropy.get_rng(args.seed, args.entropy)
     cards = draw_cards(rng, len(positions), deck)
@@ -335,10 +361,11 @@ def main(argv: list[str] | None = None) -> int:
 
     out = {
         "spread": args.spread,
+        "layout": layout if args.spread == "three" else None,
         "deck_source": deck_source,
         "deck_warning": deck_warning,
         "spread_name_cn": {
-            "one": "单牌指引", "three": "三牌阵 (过去/现在/未来)",
+            "one": "单牌指引", "three": "三牌阵",
             "celtic": "凯尔特十字 (10 牌)",
             "relationship": "关系阵 (5 牌)", "daily": "每日一牌",
         }.get(args.spread),

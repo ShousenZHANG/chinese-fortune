@@ -92,3 +92,39 @@ def test_embedded_fallback_marks_itself_as_placeholder():
 def test_asset_cards_are_not_flagged_placeholder():
     d = run_cli("tarot_draw.py", "three", "--seed", 2)
     assert all(not c.get("filler") for c in d["cards"])
+
+
+# --------------------------------------------------------------------------- #
+# 牌阵必须与 18-tarot.md 一致
+# --------------------------------------------------------------------------- #
+
+def test_relationship_spread_matches_the_reference():
+    """18-tarot.md §5.7 关系牌阵: 通常7张 — 你的感受/对方的感受/关系基础/当前状态/
+    障碍/你能做的/关系走向. The script shipped 5 positions with different names,
+    contradicting its own reference."""
+    d = run_cli("tarot_draw.py", "relationship", "--seed", 1)
+    assert len(d["cards"]) == 7
+    got = [c["position_name"] for c in d["cards"]]
+    assert got == ["你的感受", "对方的感受", "关系基础", "当前状态",
+                   "障碍", "你能做的", "关系走向"], got
+
+
+def test_three_card_layouts_are_selectable():
+    """§5.2 documents five three-card readings; only 过去-现在-未来 was reachable."""
+    d = run_cli("tarot_draw.py", "three", "--seed", 1)
+    assert [c["position_name"] for c in d["cards"]] == ["过去", "现在", "未来"]
+
+    alt = run_cli("tarot_draw.py", "three", "--seed", 1,
+                  "--layout", "situation-action-outcome")
+    assert [c["position_name"] for c in alt["cards"]] == ["情况", "行动", "结果"]
+    # same seed, same cards — only the position labels differ
+    assert [c["card_name_en"] for c in alt["cards"]] == [c["card_name_en"] for c in d["cards"]]
+
+    rel = run_cli("tarot_draw.py", "three", "--seed", 1,
+                  "--layout", "you-other-relationship")
+    assert [c["position_name"] for c in rel["cards"]] == ["你", "对方", "关系"]
+
+
+def test_unknown_layout_is_a_clean_error():
+    d = run_cli("tarot_draw.py", "three", "--layout", "nope", expect_rc=2)
+    assert d["error"] == "unknown_layout"
