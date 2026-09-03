@@ -73,11 +73,16 @@ from ziwei_tables import (
 
 VERSION = __version__
 
+SECT_LABELS = {
+    1: "子初换日 (23:00 起整体视为次日: 日柱、农历日一并推进)",
+    2: "子正换日 (日柱与农历日取当日, 仅时柱按次日干)",
+}
+
 
 
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version input timezone notes true_solar_time_applied solar_date lunar_date
+  ok tool version input sect timezone notes true_solar_time_applied solar_date lunar_date
   year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions twelve_palaces
@@ -105,6 +110,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--longitude", type=float, default=120.0)
     p.add_argument("--lunar", action="store_true",
                    help="若指定, 视输入为农历; 否则按公历换算")
+    p.add_argument("--sect", type=int, choices=(1, 2), default=2,
+                   help="晚子时取日流派: 2=子正换日 (默认) 1=子初换日 (23:00 起按次日"
+                        "排盘). 与八字共用同一开关")
     p.add_argument("--timezone", type=str, default=None,
                    help="IANA 时区名 (如 Asia/Shanghai). 给出则按出生当刻的真实"
                         "偏移取时辰, 自动处理历史时区与夏令时")
@@ -189,6 +197,21 @@ def main(argv: list[str] | None = None) -> int:
             warn(f"true_solar_time correction skipped: {exc}")
             birth_hour = args.hour
 
+    # 晚子时取日 (shared convention with bazi_calc --sect). 子初换日 treats 23:00
+    # onwards as the next day outright, so the entire lunar date rolls before
+    # any 命宫 / 五行局 / 紫微星表 / 闰月 rule is applied — one coherent shift,
+    # never a second one layered on top of the leap-month split.
+    sect_note: list[str] = []
+    if args.sect == 1 and birth_hour == 23:
+        from datetime import date as _d
+        from datetime import timedelta as _td
+        nxt = _d(solar.getYear(), solar.getMonth(), solar.getDay()) + _td(days=1)
+        solar = Solar.fromYmdHms(nxt.year, nxt.month, nxt.day, 0, 0, 0)
+        lunar = solar.getLunar()
+        birth_hour = 0
+        sect_note.append("晚子时按子初换日 (--sect 1): 已整体推进至次日 00:00 排盘。")
+    sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
+
     year_stem = lunar.getYearGan()
     year_branch = lunar.getYearZhi()
     # 闰月归属 — 02-ziwei-paipan.md:15: 十五日前算本月, 十五日后算下月 (主流).
@@ -230,7 +253,10 @@ def main(argv: list[str] | None = None) -> int:
     misc_pos = place_miscellaneous_stars(year_branch)
 
     # 5. 命主 / 身主 / 斗君.
-    ming_zhu = MING_ZHU.get(year_branch, "?")
+    # 安命主诀 keys on the 命宫 branch (子宫贪狼丑亥巨门…); 安身主诀 on the 年支.
+    # Keying both by 年支 gave the wrong 命主 on most charts — caught by the
+    # iztro-py differential, which agreed with us on every other field.
+    ming_zhu = MING_ZHU.get(mg_branch, "?")
     shen_zhu = SHEN_ZHU.get(year_branch, "?")
     dou_jun_branch = calc_dou_jun(lunar_month, birth_hour)
 
@@ -381,8 +407,9 @@ def main(argv: list[str] | None = None) -> int:
         "da_xian": da_xian,
         "liu_nian_sihua": liu_nian_sihua,
         "patterns": patterns,
+        "sect": sect_info,
         "timezone": tz_info,
-        "notes": leap_note
+        "notes": sect_note + leap_note
         + ([tz_info["note"]] if tz_info and tz_info["note"] else [])
         + [
             "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",

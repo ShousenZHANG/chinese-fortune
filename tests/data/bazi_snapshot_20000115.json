@@ -9,6 +9,7 @@
     "minute": 30,
     "gender": "male",
     "tz": 8.0,
+    "sect": 2,
     "timezone": null,
     "longitude": 120.0,
     "lunar": false,
@@ -49,6 +50,10 @@
     "zodiac": "兔"
   },
   "hour_known": true,
+  "sect": {
+    "value": 2,
+    "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
+  },
   "timezone": null,
   "notes": [],
   "four_pillars": {

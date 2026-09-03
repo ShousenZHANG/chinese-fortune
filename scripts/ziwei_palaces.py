@@ -5,7 +5,7 @@ from utils import DIZHI, TIANGAN, hour_branch_index
 from ziwei_stars import MAIN_STARS
 from ziwei_tables import _branch_idx, _branch_offset, stem_of_palace
 
-# Section 9 — 命主 / 身主 (year-branch tables)
+# Section 9 — 命主 (by 命宫 branch) / 身主 (by 年支)
 # --------------------------------------------------------------------------- #
 
 MING_ZHU: dict[str, str] = {

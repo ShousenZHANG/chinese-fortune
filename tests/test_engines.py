@@ -350,3 +350,58 @@ def test_non_leap_month_is_unaffected_by_the_split():
                 "--day", 16, "--hour", 10, "--gender", "male")
     assert d["input"]["effective_lunar_month"] == 4
     assert not any("闰月" in n for n in d["notes"])
+
+
+@needs_lunar
+def test_ming_zhu_is_keyed_by_ming_gong_branch():
+    """《紫微斗数全书·安命主诀》: 子宫贪狼丑亥巨门, 寅戌禄存卯酉文曲, 辰申廉贞巳未武曲,
+    午宫破军 — keyed by the 命宫 branch. ziwei_calc looked it up by 年支, so
+    every chart whose 命宫 branch differed from its 年支 (most of them) carried
+    the wrong 命主. Found by differential comparison against iztro-py, which
+    agreed with us on 56 of 57 fields across 7 charts — this was the 57th.
+    身主 IS keyed by 年支, and was already right.
+    """
+    from conftest import run_cli
+
+    table = {"子": "贪狼", "丑": "巨门", "亥": "巨门", "寅": "禄存", "戌": "禄存",
+             "卯": "文曲", "酉": "文曲", "辰": "廉贞", "申": "廉贞",
+             "巳": "武曲", "未": "武曲", "午": "破军"}
+    births = [(2000, 1, 15, 10, "male"), (1985, 6, 30, 22, "male"),
+              (1992, 11, 11, 0, "female"), (2010, 3, 5, 12, "female"),
+              (1975, 9, 1, 5, "male")]
+    for y, m, d, h, g in births:
+        out = run_cli("ziwei_calc.py", "--year", y, "--month", m, "--day", d,
+                      "--hour", h, "--gender", g)
+        want = table[out["ming_gong"]["branch"]]
+        assert out["ming_zhu"] == want, (y, m, d, h, out["ming_gong"], out["ming_zhu"])
+
+
+@needs_lunar
+def test_ziwei_sect_shares_the_bazi_convention():
+    """One --sect for both engines. Under 子正换日 (2, default) a 23:30 birth keeps
+    its calendar day; under 子初换日 (1) the whole date rolls forward, so 命宫
+    and the 紫微 star-table day both move. Mixing schools across the two engines
+    for the same birth would be self-contradictory."""
+    from conftest import run_cli
+    s2 = run_cli("ziwei_calc.py", "--year", 1985, "--month", 6, "--day", 30,
+                 "--hour", 23, "--minute", 30, "--gender", "male")
+    s1 = run_cli("ziwei_calc.py", "--year", 1985, "--month", 6, "--day", 30,
+                 "--hour", 23, "--minute", 30, "--gender", "male", "--sect", 1)
+    assert s2["sect"]["value"] == 2 and s1["sect"]["value"] == 1
+    assert s2["lunar_date"]["day"] + 1 == s1["lunar_date"]["day"]
+    assert s2["ziwei_position"] != s1["ziwei_position"]
+    assert any("子初换日" in n for n in s1["notes"])
+
+
+@needs_lunar
+def test_ziwei_leap_month_and_late_zi_do_not_double_shift():
+    """闰月十六 23:30. Sect 2: month attribution flips (day 16 > 15), day stays.
+    Sect 1: the date rolls to 十七 first, then the same >15 rule applies — one
+    month shift, never two."""
+    from conftest import run_cli
+    for sect in (1, 2):
+        d = run_cli("ziwei_calc.py", "--lunar", "--leap", "--year", 2020,
+                    "--month", 4, "--day", 16, "--hour", 23, "--minute", 30,
+                    "--gender", "male", "--sect", sect)
+        assert d["input"]["effective_lunar_month"] == 5, (sect, d["input"])
+        assert d["lunar_date"]["day"] == (17 if sect == 1 else 16)

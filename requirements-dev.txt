@@ -6,3 +6,4 @@ coverage>=7
 ruff>=0.6
 mypy>=1.8
 sxtwl>=2.0          # independent calendar engine for differential tests
+iztro-py>=0.5        # independent 紫微 engine for differential tests

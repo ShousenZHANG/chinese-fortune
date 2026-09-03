@@ -62,6 +62,11 @@ from utils import (
 )
 
 VERSION = __version__
+
+SECT_LABELS = {
+    1: "子初换日 (23:00 起整体视为次日: 日柱、农历日一并推进)",
+    2: "子正换日 (日柱与农历日取当日, 仅时柱按次日干)",
+}
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 
@@ -240,7 +245,7 @@ def ten_gods_per_pillar(day_stem: str, pillars: dict) -> dict:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version hour_known timezone notes input true_solar_time solar_date
+  ok tool version hour_known sect timezone notes input true_solar_time solar_date
   lunar_date four_pillars
   day_master ten_gods wuxing_count day_master_strength interactions shen_sha
   yong_shen xi_shen ji_shen ge_ju na_yin qi_yun da_yun liu_nian
@@ -269,6 +274,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="性别 (用于排大运 + 天罗地网)")
     p.add_argument("--tz", type=float, default=8.0,
                    help="时区偏移小时 (默认 8 即 GMT+8); --timezone 优先")
+    p.add_argument("--sect", type=int, choices=(1, 2), default=2,
+                   help="晚子时取日流派: 2=子正换日 (默认, 日柱取当日) "
+                        "1=子初换日 (23:00 起日柱推进). 与紫微共用同一开关")
     p.add_argument("--timezone", type=str, default=None,
                    help="IANA 时区名 (如 Asia/Shanghai). 给出则按出生当刻的真实"
                         "偏移取时柱, 自动处理历史时区与夏令时")
@@ -419,10 +427,14 @@ def main(argv: list[str] | None = None) -> int:
         })
         return 1
 
+    # 晚子时取日 — 00-intake.md:34 names both schools and promises the default is
+    # stated. lunar_python: sect 2 keeps the day pillar and takes the hour stem
+    # from the next day; sect 1 rolls the day pillar at 23:00.
     try:
-        eight.setSect(2)
+        eight.setSect(args.sect)
     except Exception:
         pass
+    sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
 
     year_gz = (eight.getYearGan(), eight.getYearZhi())
     month_gz = (eight.getMonthGan(), eight.getMonthZhi())
@@ -589,6 +601,7 @@ def main(argv: list[str] | None = None) -> int:
             "zodiac": lunar.getYearShengXiao(),
         },
         "hour_known": hour_known,
+        "sect": sect_info,
         "timezone": tz_info,
         "notes": (([] if hour_known else
                   ["时柱待补: 未提供出生时辰, 已按三柱 (年/月/日) 论断; "

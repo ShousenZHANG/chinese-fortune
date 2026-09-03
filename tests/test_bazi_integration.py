@@ -324,3 +324,41 @@ def test_unknown_timezone_is_a_clean_error():
                 "--hour", 12, "--gender", "male",
                 "--timezone", "Not/AZone", expect_rc=1)
     assert d["error"] == "invalid_timezone"
+
+
+# --------------------------------------------------------------------------- #
+# --sect: 早子/晚子 school selectable, default unchanged
+# --------------------------------------------------------------------------- #
+
+def test_sect_default_is_2_and_labelled():
+    """00-intake.md:34 promises '默认子正换日并说明'. The code hardcoded sect 2 and
+    never said so in the output."""
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 2020, "--month", 6, "--day", 15,
+                "--hour", 23, "--minute", 30, "--gender", "male",
+                "--as-of-year", 2026)
+    assert d["sect"]["value"] == 2
+    assert "子正换日" in d["sect"]["label"]
+    assert d["four_pillars"]["day"]["ganzhi"] == "己丑"   # day pillar stays
+    assert d["four_pillars"]["hour"]["ganzhi"] == "丙子"  # hour stem from next day
+
+
+def test_sect_1_rolls_the_day_pillar_at_23():
+    """子初换日: 23:00 already belongs to the next day, so the 日柱 advances."""
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 2020, "--month", 6, "--day", 15,
+                "--hour", 23, "--minute", 30, "--gender", "male",
+                "--as-of-year", 2026, "--sect", 1)
+    assert d["sect"]["value"] == 1
+    assert "子初换日" in d["sect"]["label"]
+    assert d["four_pillars"]["day"]["ganzhi"] == "庚寅"
+    assert d["four_pillars"]["hour"]["ganzhi"] == "丙子"
+
+
+def test_sect_has_no_effect_outside_late_zi():
+    from conftest import run_cli
+    a = run_cli("bazi_calc.py", "--year", 2020, "--month", 6, "--day", 15,
+                "--hour", 10, "--gender", "male", "--as-of-year", 2026, "--sect", 1)
+    b = run_cli("bazi_calc.py", "--year", 2020, "--month", 6, "--day", 15,
+                "--hour", 10, "--gender", "male", "--as-of-year", 2026, "--sect", 2)
+    assert a["four_pillars"] == b["four_pillars"]

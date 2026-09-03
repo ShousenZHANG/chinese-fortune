@@ -11,6 +11,7 @@
     "tz": 8.0,
     "longitude": 120.0,
     "lunar": false,
+    "sect": 2,
     "timezone": null,
     "leap": false,
     "liu_year": null,
@@ -49,7 +50,7 @@
   "shen_gong": {
     "branch": "午"
   },
-  "ming_zhu": "文曲",
+  "ming_zhu": "廉贞",
   "shen_zhu": "天同",
   "dou_jun": "申宫",
   "ziwei_position": "丑",
@@ -761,6 +762,10 @@
       "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴"
     }
   ],
+  "sect": {
+    "value": 2,
+    "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
+  },
   "timezone": null,
   "notes": [
     "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
