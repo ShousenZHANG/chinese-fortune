@@ -40,6 +40,7 @@ from utils import (
     json_print,
     longitude_correction,
     require_lunar,
+    resolve_timezone_offset,
     warn,
 )
 from ziwei_palaces import (
@@ -76,7 +77,7 @@ VERSION = __version__
 
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version input notes true_solar_time_applied solar_date lunar_date
+  ok tool version input timezone notes true_solar_time_applied solar_date lunar_date
   year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions twelve_palaces
@@ -104,6 +105,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--longitude", type=float, default=120.0)
     p.add_argument("--lunar", action="store_true",
                    help="若指定, 视输入为农历; 否则按公历换算")
+    p.add_argument("--timezone", type=str, default=None,
+                   help="IANA 时区名 (如 Asia/Shanghai). 给出则按出生当刻的真实"
+                        "偏移取时辰, 自动处理历史时区与夏令时")
     p.add_argument("--leap", action="store_true",
                    help="农历输入且该月为闰月 (等同传入负月份)")
     p.add_argument("--liu-year", type=int, default=None,
@@ -149,12 +153,26 @@ def main(argv: list[str] | None = None) -> int:
     # 紫微输入通常是粗粒度时辰; 默认经度(120)/时区(8) 表示"未提供精确出生地",
     # 此时保留所输入时辰原样, 避免 EOT 把临界时辰(如 01:00)误推过 时辰边界。
     # 给出真实经度即视为有精确出生地, 按 bazi 同法校正(近子时可滚日)。
+    tz_info = None
+    tz_offset = args.tz
+    if args.timezone:
+        try:
+            tz_info = resolve_timezone_offset(
+                args.timezone, solar.getYear(), solar.getMonth(),
+                solar.getDay(), args.hour, args.minute,
+            )
+        except ValueError as exc:
+            json_print({"ok": False, "tool": "ziwei",
+                        "error": "invalid_timezone", "message": str(exc)})
+            return 1
+        tz_offset = tz_info["offset_hours"]
+
     tst_applied = False
     birth_hour = args.hour
-    if args.longitude != 120.0 or args.tz != 8.0:
+    if args.longitude != 120.0 or tz_offset != 8.0:
         try:
             day_off, corr_hour, corr_minute = longitude_correction(
-                args.hour, args.minute, args.longitude, args.tz,
+                args.hour, args.minute, args.longitude, tz_offset,
                 year=solar.getYear(), month=solar.getMonth(), day=solar.getDay(),
             )
             if (day_off, corr_hour, corr_minute) != (0, args.hour, args.minute):
@@ -363,7 +381,10 @@ def main(argv: list[str] | None = None) -> int:
         "da_xian": da_xian,
         "liu_nian_sihua": liu_nian_sihua,
         "patterns": patterns,
-        "notes": leap_note + [
+        "timezone": tz_info,
+        "notes": leap_note
+        + ([tz_info["note"]] if tz_info and tz_info["note"] else [])
+        + [
             "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
             "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",
             "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",

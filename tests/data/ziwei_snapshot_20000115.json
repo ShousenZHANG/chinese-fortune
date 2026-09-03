@@ -11,6 +11,7 @@
     "tz": 8.0,
     "longitude": 120.0,
     "lunar": false,
+    "timezone": null,
     "leap": false,
     "liu_year": null,
     "no_patterns": false,
@@ -760,6 +761,7 @@
       "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴"
     }
   ],
+  "timezone": null,
   "notes": [
     "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
     "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",

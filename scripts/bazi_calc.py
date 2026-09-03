@@ -56,6 +56,7 @@ from utils import (
     json_print,
     longitude_correction,
     require_lunar,
+    resolve_timezone_offset,
     true_solar_time_info,
     warn,
 )
@@ -239,7 +240,7 @@ def ten_gods_per_pillar(day_stem: str, pillars: dict) -> dict:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  ok tool version hour_known notes input true_solar_time solar_date
+  ok tool version hour_known timezone notes input true_solar_time solar_date
   lunar_date four_pillars
   day_master ten_gods wuxing_count day_master_strength interactions shen_sha
   yong_shen xi_shen ji_shen ge_ju na_yin qi_yun da_yun liu_nian
@@ -267,7 +268,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--gender", choices=["male", "female"], required=True,
                    help="性别 (用于排大运 + 天罗地网)")
     p.add_argument("--tz", type=float, default=8.0,
-                   help="时区偏移小时 (默认 8 即 GMT+8)")
+                   help="时区偏移小时 (默认 8 即 GMT+8); --timezone 优先")
+    p.add_argument("--timezone", type=str, default=None,
+                   help="IANA 时区名 (如 Asia/Shanghai). 给出则按出生当刻的真实"
+                        "偏移取时柱, 自动处理历史时区与夏令时")
     p.add_argument("--longitude", type=float, default=120.0,
                    help="出生地经度 (E°, 默认 120, 用于真太阳时)")
     p.add_argument("--lunar", action="store_true",
@@ -324,6 +328,24 @@ def main(argv: list[str] | None = None) -> int:
     from lunar_python import Lunar, Solar  # type: ignore
 
     # 真太阳时 info (informational + applied)
+    # 钟表时间 != 标准时. 时辰边界在整点, 而中国的钟表并非一直是 UTC+8:
+    # tzdata 记录 Asia/Shanghai 1900-1995 间 30 次偏移变化, 其中 14 段为 UTC+9
+    # (1919, 1940-1949, 1986-1991 夏令时). 落在这些窗口内的钟表读数比标准时快
+    # 一小时, 时辰边界后一小时内出生者的时柱因此整位偏移。
+    tz_info = None
+    tz_offset = args.tz
+    if args.timezone:
+        try:
+            tz_info = resolve_timezone_offset(
+                args.timezone, args.year, args.month, args.day,
+                args.hour if args.hour is not None else 12, args.minute,
+            )
+        except ValueError as exc:
+            json_print({"ok": False, "tool": "bazi", "error": "invalid_timezone",
+                        "message": str(exc)})
+            return 1
+        tz_offset = tz_info["offset_hours"]
+
     # 时辰未知 -> three-pillar mode. Noon is used only to obtain the 年/月/日柱
     # (it cannot cross a day boundary); no 时柱 is derived from it, and every
     # aggregate below is computed over six characters instead of eight.
@@ -335,7 +357,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         tst_info = true_solar_time_info(
             longitude=args.longitude,
-            tz_offset_hours=args.tz,
+            tz_offset_hours=tz_offset,
             year=args.year,
             month=args.month,
             day=args.day,
@@ -351,7 +373,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Apply correction for pillar computation (incl. day roll-over near midnight)
     day_offset, corr_hour, corr_minute = longitude_correction(
-        eff_hour, eff_minute, args.longitude, args.tz,
+        eff_hour, eff_minute, args.longitude, tz_offset,
         year=args.year, month=args.month, day=args.day,
     )
     if not hour_known:
@@ -567,9 +589,11 @@ def main(argv: list[str] | None = None) -> int:
             "zodiac": lunar.getYearShengXiao(),
         },
         "hour_known": hour_known,
-        "notes": ([] if hour_known else
+        "timezone": tz_info,
+        "notes": (([] if hour_known else
                   ["时柱待补: 未提供出生时辰, 已按三柱 (年/月/日) 论断; "
-                   "五行得分/旺衰/用神/格局/神煞 均只计六字, 未揣测时辰。"]),
+                   "五行得分/旺衰/用神/格局/神煞 均只计六字, 未揣测时辰。"])
+                  + ([tz_info["note"]] if tz_info and tz_info["note"] else [])),
         "four_pillars": (pillars if hour_known else
                          {**pillars, "hour": {"status": "时柱待补"}}),
         "day_master": {

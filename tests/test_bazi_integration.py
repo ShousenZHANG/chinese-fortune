@@ -273,3 +273,54 @@ def test_supplying_hour_is_unchanged():
                 "--as-of-year", 2026)
     assert d["hour_known"] is True
     assert d["four_pillars"]["hour"]["ganzhi"] == "丙辰"
+
+
+# --------------------------------------------------------------------------- #
+# 夏令时 — 钟表时间落在 DST 窗口时, 时柱必须按标准时折算
+# --------------------------------------------------------------------------- #
+
+def test_dst_birth_shifts_the_hour_pillar():
+    """China ran 夏令时 1986-1991. A clock reading of 07:30 on 1988-07-01 is
+    06:30 standard time, and 07:00 is the 卯/辰 boundary — so the 时柱 differs.
+
+    Without --timezone the tool assumes a flat UTC+8 and returns the 辰 pillar,
+    which is what a user entering their clock time would silently get.
+    """
+    from conftest import run_cli
+
+    naive = run_cli("bazi_calc.py", "--year", 1988, "--month", 7, "--day", 1,
+                    "--hour", 7, "--minute", 30, "--gender", "male",
+                    "--as-of-year", 2026)
+    aware = run_cli("bazi_calc.py", "--year", 1988, "--month", 7, "--day", 1,
+                    "--hour", 7, "--minute", 30, "--gender", "male",
+                    "--as-of-year", 2026, "--timezone", "Asia/Shanghai")
+
+    assert naive["four_pillars"]["hour"]["ganzhi"] == "甲辰"
+    assert aware["four_pillars"]["hour"]["ganzhi"] == "癸卯"
+    assert aware["timezone"]["dst_hours"] == 1.0
+    assert aware["timezone"]["offset_hours"] == 9.0
+    assert any("夏令时" in n for n in aware["notes"])
+
+
+def test_non_dst_birth_is_unchanged_by_timezone():
+    """Outside a DST window the flag must change nothing."""
+    from conftest import run_cli
+
+    naive = run_cli("bazi_calc.py", "--year", 1992, "--month", 7, "--day", 1,
+                    "--hour", 7, "--minute", 30, "--gender", "male",
+                    "--as-of-year", 2026)
+    aware = run_cli("bazi_calc.py", "--year", 1992, "--month", 7, "--day", 1,
+                    "--hour", 7, "--minute", 30, "--gender", "male",
+                    "--as-of-year", 2026, "--timezone", "Asia/Shanghai")
+
+    assert naive["four_pillars"] == aware["four_pillars"]
+    assert aware["timezone"]["dst_hours"] == 0.0
+    assert not any("夏令时" in n for n in aware["notes"])
+
+
+def test_unknown_timezone_is_a_clean_error():
+    from conftest import run_cli
+    d = run_cli("bazi_calc.py", "--year", 1990, "--month", 1, "--day", 1,
+                "--hour", 12, "--gender", "male",
+                "--timezone", "Not/AZone", expect_rc=1)
+    assert d["error"] == "invalid_timezone"

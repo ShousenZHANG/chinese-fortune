@@ -201,3 +201,39 @@ def test_engines_delegate_xun_kong_and_chong():
         assert liuren_cast.chong_zhi(branch) == partner
         assert chong_branch(partner) == branch  # involution
         assert liuyao_cast.LIU_CHONG_PAIRS[branch] == partner
+
+
+# --------------------------------------------------------------------------- #
+# 历史时区 / 夏令时 — 钟表时间 != 标准时
+# --------------------------------------------------------------------------- #
+
+def test_resolve_timezone_offset_detects_china_dst():
+    """China observed 夏令时 in 14 separate windows (1919, 1940-1949,
+    1986-1991). A clock reading during one of them is an hour ahead of standard
+    time, and 时辰 boundaries sit on the hour — so the 时柱 moves."""
+    from utils import resolve_timezone_offset
+
+    summer = resolve_timezone_offset("Asia/Shanghai", 1988, 7, 1, 7, 30)
+    assert summer["offset_hours"] == 9.0
+    assert summer["dst_hours"] == 1.0
+    assert "夏令时" in summer["note"]
+
+    after = resolve_timezone_offset("Asia/Shanghai", 1992, 7, 1, 7, 30)
+    assert after["offset_hours"] == 8.0
+    assert after["dst_hours"] == 0.0
+    assert after["note"] == ""
+
+
+def test_resolve_timezone_offset_handles_pre_1949_offsets():
+    """tzdata also carries the pre-PRC offsets; 1900 Shanghai was LMT +8:05:43."""
+    from utils import resolve_timezone_offset
+
+    r = resolve_timezone_offset("Asia/Shanghai", 1900, 6, 1, 12, 0)
+    assert r["offset_hours"] != 8.0
+
+
+def test_resolve_timezone_offset_rejects_unknown_zone():
+    import pytest as _pytest
+    from utils import resolve_timezone_offset
+    with _pytest.raises(ValueError, match="时区"):
+        resolve_timezone_offset("Not/AZone", 1990, 1, 1, 12, 0)

@@ -408,6 +408,65 @@ def equation_of_time(day_of_year: int, leap: bool = False) -> float:
     return 9.87 * math.sin(2 * b) - 7.53 * math.cos(b) - 1.5 * math.sin(b)
 
 
+def resolve_timezone_offset(
+    tz_name: str,
+    year: int,
+    month: int,
+    day: int,
+    hour: int,
+    minute: int = 0,
+) -> dict:
+    """Actual UTC offset of a clock reading, DST and history included.
+
+    A birth time is given as it read on the clock, but 时辰 boundaries are
+    defined against standard time — and China's clocks have not always been
+    UTC+8. tzdata records 30 offset changes for Asia/Shanghai between 1900 and
+    1995, of which 14 windows sit at UTC+9: 1919, 1940-1949, and the 夏令时 of
+    1986-1991. A clock reading inside one of those is an hour ahead of standard
+    time, so anything in the hour after a 时辰 boundary lands in the previous
+    时辰 once corrected.
+
+    Returns ``{offset_hours, dst_hours, tz_name, abbrev, note}``. Pass
+    ``offset_hours`` to :func:`longitude_correction` as ``tz_offset_hours``:
+    its reference meridian is ``tz * 15``, so a +9 offset moves the meridian to
+    135°E and the extra hour is subtracted by the existing arithmetic.
+    """
+    try:
+        from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
+    except ImportError as exc:  # pragma: no cover - Python < 3.9
+        raise ValueError(f"无法解析时区 (zoneinfo 不可用): {exc}") from exc
+
+    try:
+        zone = ZoneInfo(tz_name)
+    except (ZoneInfoNotFoundError, ValueError, ModuleNotFoundError) as exc:
+        raise ValueError(
+            f"未知时区 {tz_name!r}; 请用 IANA 名称, 如 Asia/Shanghai"
+        ) from exc
+
+    moment = _datetime(year, month, day, hour, minute, tzinfo=zone)
+    utcoff = moment.utcoffset()
+    dst = moment.dst()
+    if utcoff is None:
+        raise ValueError(f"时区 {tz_name!r} 未能给出偏移")
+
+    offset_hours = utcoff.total_seconds() / 3600.0
+    dst_hours = (dst.total_seconds() / 3600.0) if dst else 0.0
+
+    note = ""
+    if dst_hours:
+        note = (
+            f"出生时该地行夏令时 (UTC{offset_hours:+g}, 快 {dst_hours:g} 小时); "
+            f"时柱按标准时折算, 未按钟表时直接取时辰。"
+        )
+    return {
+        "tz_name": tz_name,
+        "offset_hours": offset_hours,
+        "dst_hours": dst_hours,
+        "abbrev": moment.tzname(),
+        "note": note,
+    }
+
+
 def longitude_correction(
     birth_hour: int,
     birth_minute: int,
