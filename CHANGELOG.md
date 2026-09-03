@@ -2,6 +2,74 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.3] — 2026-09-03
+
+Two chart-correctness defects, both about a chart being cast from the wrong
+inputs rather than from the wrong rules. Found by a landscape sweep of open
+source 命理 engines, datasets and corpora — the sweep found no engine that casts
+more accurately than this one, but it did surface an input assumption nothing
+here had ever questioned.
+
+### Fixed
+- **紫微 闰月 now splits at the fifteenth.** references/02-ziwei-paipan.md:15
+  states the mainstream rule — 闰月处理: 十五日前算上月, 十五日后算下月 — but
+  ziwei_calc took `abs(lunar.getMonth())`, attributing the whole leap month to
+  its base month. 命宫, 身宫, 斗君 and the 辅星 placements all key off the lunar
+  month, so a birth in a leap month after the 15th had every one of them a
+  palace out of place. 闰四月初十 and 闰四月十六 of 2020 previously returned an
+  identical chart (命宫 子 both); they now return 命宫 子 and 命宫 丑. The month
+  attribution is stated in `notes` rather than applied silently, matching how
+  the qimen 三元 divergence is already handled. Adds `--leap` so a leap month is
+  reachable without lunar_python's internal negative-month encoding. 八字 is
+  untouched: its 月柱 is 节气-based, so leap months never enter it.
+
+### Added
+- **`--timezone`: historical offsets and 夏令时, resolved from tzdata.** A birth
+  time is given as it read on the clock, but 时辰 boundaries are defined against
+  standard time — and China's clocks have not always been UTC+8. tzdata records
+  30 offset changes for Asia/Shanghai between 1900 and 1995, of which **14
+  windows sit at UTC+9**: 1919, 1940-1949, and the 夏令时 of **1986-1991**.
+  Inside one of those, a clock reading is an hour ahead of standard time, and
+  because 时辰 boundaries fall on the hour, anyone born in the hour after a
+  boundary was given a 时柱 one position out.
+
+  1988-07-01, clock 07:30 — which is 06:30 standard time, and 07:00 is the
+  卯/辰 boundary:
+
+  | | 时柱 | 用神 reasoning |
+  |---|---|---|
+  | without `--timezone` | 甲辰 | 扶抑与调候一致 |
+  | with `--timezone Asia/Shanghai` | **癸卯** | 调候优先, 扶抑次之 |
+
+  紫微 shifts with it: 命宫 寅 becomes 卯 for the same birth.
+
+  No new arithmetic was needed. `longitude_correction` already derives its
+  reference meridian as `tz * 15`, so handing it the real offset for that
+  instant moves the meridian to 135°E and the existing code subtracts the hour.
+  `zoneinfo` is stdlib and `tzdata` is Apache-2.0, so the MIT licence and the
+  runtime dependency set are unchanged. Both bazi_calc and ziwei_calc accept
+  the flag and fall back to the flat `--tz` without it.
+
+  00-intake.md now carries 夏令时 as an edge case, tells the reader to pass the
+  zone rather than hand-subtracting an hour, and to surface the uncertainty
+  when a user cannot recall whether the time they reported was 夏令时.
+
+Charts cast without the new flags are byte-identical apart from the added
+`timezone` / leap-month keys. Suite 1096 → 1104.
+
+### On the landscape sweep
+80 candidates across 8 lanes (八字/紫微/周易 engines, calendrical ground truth,
+classical corpora, golden charts, AI-era competitors), 22 verified against
+primary sources. Nothing displaced lunar_python or sxtwl. Worth recording so
+they are not re-proposed: `china-testing/bazi` (1.5k stars) wraps the same
+lunar_python and ships no licence, so it is useless as a differential oracle;
+`MingLi-Bench` (2.4k stars) scores predictive accuracy, which this project's
+解读纪律 refuses; one 3.8k-star repo advertising machine-readable 古籍原文 turned
+out to ship modern paraphrase in pseudo-classical register, ~23 KB of
+TypeScript standing in for works it labels at 100,000 characters. The Hong Kong
+Observatory 节气 XML matches our own boundary instants exactly but is
+non-commercial-only, so it can corroborate by hand and never ship.
+
 ## [1.5.2] — 2026-09-03
 
 Defects surfaced by a behavioural evaluation of the skill, then each one
