@@ -54,3 +54,41 @@ def test_minor_arcana_keep_their_element():
         for c in _cards(seed):
             if c.get("suit"):
                 assert c.get("element") in elements, c
+
+
+# --------------------------------------------------------------------------- #
+# 资产缺失时的降级必须可见 — 占位文本不得冒充牌义
+# --------------------------------------------------------------------------- #
+
+def test_output_names_its_deck_source():
+    """With the asset present the reading is built from real card text."""
+    d = run_cli("tarot_draw.py", "three", "--seed", 1)
+    assert d["deck_source"] == "asset"
+    assert not d.get("deck_warning")
+
+
+def test_embedded_fallback_marks_itself_as_placeholder():
+    """CONTRIBUTING requires graceful degradation when an asset is missing, but
+    graceful is not the same as silent. The embedded minor arcana carry filler
+    like '情感/关系/直觉 第1阶: 见详细解读' — text shaped like a meaning. It
+    warns on stderr, which the JSON consumer never sees, so a degraded reading
+    was indistinguishable from a real one and 解读纪律 (凡古籍无据者不妄断) would
+    be violated by narrating the filler as the card's meaning.
+    """
+    import sys
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import tarot_draw
+
+    deck = tarot_draw.build_full_deck()
+    assert len(deck) == 78
+    minors = [c for c in deck if c["arcana"] == "minor"]
+    assert minors and all(c.get("filler") is True for c in minors), (
+        "embedded minor arcana must declare themselves filler")
+    majors = [c for c in deck if c["arcana"] == "major"]
+    assert all(not c.get("filler") for c in majors), (
+        "the embedded majors carry real keywords and are not filler")
+
+
+def test_asset_cards_are_not_flagged_placeholder():
+    d = run_cli("tarot_draw.py", "three", "--seed", 2)
+    assert all(not c.get("filler") for c in d["cards"])

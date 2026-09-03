@@ -83,9 +83,13 @@ def build_minor_arcana() -> list[dict]:
                 "zh": f"{suit['zh']}{['一','二','三','四','五','六','七','八','九','十'][n-1]}",
                 "keywords_up": f"{suit['domain']} 第{n}阶: 见详细解读",
                 "keywords_rev": f"{suit['domain']} 受阻或倒置",
+                # Filler, not a card meaning: shaped like text but carrying no
+                # tarot content. Flagged so a reading never narrates it as one.
+                "filler": True,
             })
         for court in COURT_RANKS:
             out.append({
+                "filler": True,
                 "suit": suit["zh"], "suit_en": suit["en"],
                 "element": suit["element"], "domain": suit["domain"],
                 "number": court["number"],
@@ -118,6 +122,7 @@ def build_full_deck() -> list[dict]:
             "element": c["element"], "domain": c["domain"],
             "keywords_up": c["keywords_up"],
             "keywords_rev": c["keywords_rev"],
+            "filler": c.get("filler", False),
         })
     return deck
 
@@ -176,6 +181,9 @@ def _flatten_asset_deck(data: dict) -> list[dict]:
     return deck
 
 
+DECK_SOURCE = {"value": "asset", "warning": None}
+
+
 def load_deck() -> list[dict]:
     here = os.path.dirname(os.path.abspath(__file__))
     candidates = [
@@ -195,10 +203,25 @@ def load_deck() -> list[dict]:
             else:
                 deck = []
             if len(deck) >= 78:
+                DECK_SOURCE["value"] = "asset"
+                DECK_SOURCE["warning"] = None
                 return deck
             warn(f"tarot78.json yielded {len(deck)} cards (<78); using embedded deck")
+            reason = f"tarot78.json 仅 {len(deck)} 张 (<78)"
         except Exception as e:
             warn(f"failed to load tarot78.json: {e}")
+            reason = f"读取 tarot78.json 失败: {e}"
+    else:
+        reason = "未找到 assets/tarot78.json"
+    # The embedded deck keeps the tool runnable (CONTRIBUTING requires graceful
+    # degradation) but its minor arcana are filler. Say so in the payload, not
+    # only on stderr, or a consumer cannot tell a degraded reading from a real
+    # one — and would narrate filler text as a card meaning.
+    DECK_SOURCE["value"] = "embedded_fallback"
+    DECK_SOURCE["warning"] = (
+        f"{reason}; 已退回内置牌库。小阿卡纳仅有占位文本, 非真实牌义, "
+        f"请勿据以解读; 大阿卡纳关键词可用。"
+    )
     return build_full_deck()
 
 
@@ -250,7 +273,12 @@ def position_summary(positions: list[str], cards: list[dict]) -> str:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  spread spread_name_cn question seed entropy cards summary
+  spread spread_name_cn deck_source deck_warning question seed entropy
+  cards summary
+
+deck_source is "asset" or "embedded_fallback"; in the latter case
+  deck_warning is set and cards[].filler marks stand-in text that
+  must not be read as a card meaning.
 
 cards[].element is 火/水/风/土 for the four minor suits and null for
   the majors; cards[].astro carries the major-arcana 星座/行星.
@@ -277,6 +305,8 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     deck = load_deck()
+    deck_source = DECK_SOURCE["value"]
+    deck_warning = DECK_SOURCE["warning"]
 
     positions = SPREAD_DEFS.get(args.spread)
     if positions is None:
@@ -297,6 +327,7 @@ def main(argv: list[str] | None = None) -> int:
             "suit": c.get("suit"),
             "element": c.get("element"),
             "astro": c.get("astro"),
+            "filler": c.get("filler", False),
             "orientation": c["orientation"],
             "orientation_cn": "正位" if c["orientation"] == "upright" else "逆位",
             "meaning_brief": c.get("meaning_brief"),
@@ -304,6 +335,8 @@ def main(argv: list[str] | None = None) -> int:
 
     out = {
         "spread": args.spread,
+        "deck_source": deck_source,
+        "deck_warning": deck_warning,
         "spread_name_cn": {
             "one": "单牌指引", "three": "三牌阵 (过去/现在/未来)",
             "celtic": "凯尔特十字 (10 牌)",
