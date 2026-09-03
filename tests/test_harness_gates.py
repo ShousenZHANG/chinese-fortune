@@ -173,3 +173,19 @@ def test_no_script_exceeds_the_size_limit():
         if sum(1 for _ in f.open(encoding="utf-8")) > 800
     }
     assert not oversize, f"scripts over the 800-line maximum: {oversize}"
+
+
+def test_interpretive_discipline_names_an_anchor_for_every_scripted_method():
+    """解读纪律 says it governs 所有方法 but named canons for only 八字/周易/紫微.
+    An evaluation agent doing a tarot reading reported the rule as inoperative
+    there — tarot has no 古籍, and pretending otherwise would itself breach
+    凡古籍无据者不妄断. Every method with an engine must be named, and the two
+    that genuinely have no Chinese canon must say so rather than be omitted.
+    """
+    skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    block = skill.split("## 解读纪律")[1].split("\n## ")[0]
+    for method in ["周易", "紫微", "六爻", "梅花", "奇门", "六壬", "黄历"]:
+        assert method in block, f"解读纪律 names no anchor for {method}"
+    # the two without a Chinese canon must be named AND labelled as such
+    assert "塔罗" in block and "姓名" in block
+    assert "无古籍" in block or "非中土古籍" in block or "无中土古籍" in block

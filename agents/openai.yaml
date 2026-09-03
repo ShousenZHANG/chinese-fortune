@@ -13,6 +13,11 @@ interface:
     the five classics (子平真诠/滴天髓/穷通宝鉴/三命通会/渊海子平); make no claim
     the classics cannot support (凡古籍无据者不妄断), no platitudes or flattery
     (禁止套话和迎合) — output only the best-evidenced, most verifiable
-    conclusions, and label folk-lore or school-specific views as such.
+    conclusions, and label folk-lore or school-specific views as such. Each
+    method has its own canon (周易: 经传 + 易学启蒙; 六爻: 卜筮正宗/增删卜易;
+    紫微: 紫微斗数全书; 奇门: 奇门遁甲秘笈大全; 六壬: 六壬大全; 黄历: 协纪辨方书).
+    Tarot and 姓名学五格 have NO Chinese classical canon — tarot is a Western
+    symbolic system read from its own reference, and 五格剖象法 is a modern
+    Japanese invention; say so rather than inventing a 古籍 for either.
 policy:
   allow_implicit_invocation: true
