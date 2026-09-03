@@ -2,6 +2,58 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] — 2026-09-03
+
+Honesty release: three places where the engine either contradicted its own
+reference or degraded without saying so.
+
+### Fixed
+- **A degraded tarot deck now declares itself.** When `assets/tarot78.json` is
+  missing or short, the embedded fallback deck's minor arcana carry filler —
+  `情感/关系/直觉 第1阶: 见详细解读` — text shaped like a card meaning but
+  carrying none. The fallback warned on stderr only, which a JSON consumer
+  never sees, so a degraded reading was indistinguishable from a real one and
+  the filler would be narrated as the card's meaning — precisely what
+  解读纪律 (凡古籍无据者不妄断) forbids. CONTRIBUTING requires graceful
+  degradation, so the fallback stays; output now carries `deck_source`
+  (`asset` | `embedded_fallback`), `deck_warning`, and a per-card `filler`
+  flag, so a reading can still use the majors (whose embedded keywords are
+  real) while refusing to interpret the minors.
+- **关系牌阵 matches the reference.** 18-tarot.md §5.7 specifies 通常7张 —
+  你的感受 / 对方的感受 / 关系基础 / 当前状态 / 障碍 / 你能做的 / 关系走向. The
+  script drew 5 cards under names matching no documented layout, so a
+  relationship reading could not structurally follow the reference it was
+  narrated against. **BREAKING: `relationship` now returns 7 cards, renamed.**
+
+### Added
+- **`--layout` for the three-card spread.** §5.2 documents five equally valid
+  readings (过去-现在-未来, 情况-行动-结果, 你-对方-关系, 身-心-灵,
+  优势-挑战-建议) but only the first was reachable, so a monthly relationship
+  question had to be forced into a past/present/future frame — an evaluation
+  agent hit exactly this. The default reproduces the previous output byte for
+  byte; the same seed yields the same cards, only the position labels differ.
+- **解读纪律 names a canon for every scripted method — and admits where there
+  is none.** The block claimed to govern 所有方法 but named canons for only
+  八字, 周易 and 紫微; a tarot reading in the evaluation reported the rule as
+  inoperative. Every method now has a row (周易 with 易学启蒙 考变占 for 变占,
+  六爻, 梅花, 紫微, 奇门, 六壬, 黄历, 解梦), and two are marked as having **no**
+  Chinese canon with the reason: 塔罗 is a Western symbolic system read from
+  18-tarot.md, whose §9.6 itself warns against conflating it with 易理, and
+  姓名学五格 is 熊崎健翁's modern Japanese 五格剖象法, not 古法. Both still owe
+  不妄断 and 学理/民俗分层. `agents/openai.yaml` carries the same note.
+
+### Not done in this release
+The citation audit of 调候 (120 cells vs 《穷通宝鉴》 — the asset states
+经现代术数家整理 and has never been checked against 原文), 神煞起法 (35 entries vs
+《三命通会》) and 紫微安星 (the placement rules vs 《紫微斗数全书》安星诀) was
+launched but did not complete: all four audit lanes stopped simultaneously on a
+session limit with no lane finishing, so there is nothing to report and nothing
+was changed on their account. It remains the highest-value outstanding item and
+needs a fresh run. It is deliberately NOT partially applied — a half-audited
+table would be worse than an unaudited one, because it would look checked.
+
+Suite 1119 → 1122 (+ the 903-case 紫微 grid).
+
 ## [1.6.0] — 2026-09-03
 
 Input-assumption release. Every item here is about the chart being cast from
