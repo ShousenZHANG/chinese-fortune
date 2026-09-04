@@ -139,6 +139,10 @@ def build(out_path: Path, files: list[Path]) -> None:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Build the chinese-fortune skill package")
     ap.add_argument("--out", default=None, help="output zip path")
+    ap.add_argument("--dist-dir", default=None,
+                    help="directory for the version-derived default name "
+                         "(default: <repo>/dist). Lets tests exercise the default "
+                         "filename without writing into the repo's release dir.")
     args = ap.parse_args(argv)
 
     version = read_version()
@@ -146,7 +150,12 @@ def main(argv=None) -> int:
     files = collect()
     compile_check(files)
 
-    out_path = Path(args.out) if args.out else ROOT / "dist" / f"chinese-fortune-v{version}.zip"
+    if args.out:
+        out_path = Path(args.out)
+    else:
+        dist_dir = Path(args.dist_dir) if args.dist_dir else ROOT / "dist"
+        dist_dir.mkdir(parents=True, exist_ok=True)
+        out_path = dist_dir / f"chinese-fortune-v{version}.zip"
     build(out_path, files)
 
     size_kb = out_path.stat().st_size / 1024

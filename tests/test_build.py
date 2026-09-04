@@ -93,20 +93,59 @@ def test_read_version_fails_loudly_when_absent(monkeypatch):
         build_skill.read_version()
 
 
-def test_default_output_name_carries_the_version(tmp_path, monkeypatch):
+def test_default_output_name_carries_the_version(tmp_path):
     """test_build always passed --out, so the version-derived default filename
-    was never exercised."""
+    was never exercised.
+
+    This used to assert against ROOT/dist, which made it self-polluting AND
+    permanently green: build_skill wrote there on every test run (dist/ is
+    gitignored and never cleaned), so a stale zip of the right name satisfied
+    the glob even when the default path was broken. Verified: point the default
+    at a CWD-relative dir and pre-place a same-named zip -> the old test still
+    passed. It now builds into tmp_path via --dist-dir and asserts the file the
+    run actually produced.
+    """
     sys.path.insert(0, str(ROOT / "scripts"))
     import build_skill
 
-    monkeypatch.chdir(tmp_path)
+    dist = tmp_path / "dist"
     proc = subprocess.run(
-        [sys.executable, str(BUILD)], cwd=tmp_path,
+        [sys.executable, str(BUILD), "--dist-dir", str(dist)],
         capture_output=True, text=True, encoding="utf-8",
     )
     assert proc.returncode == 0, proc.stderr
-    produced = list((ROOT / "dist").glob(f"chinese-fortune-v{build_skill.read_version()}.zip"))
-    assert produced, f"no versioned zip produced; stdout={proc.stdout[-400:]}"
+    expected = dist / f"chinese-fortune-v{build_skill.read_version()}.zip"
+    assert expected.exists(), (
+        f"default name not version-derived; dir={list(dist.glob('*')) if dist.exists() else None}"
+        f" stdout={proc.stdout[-400:]}")
+    assert zipfile.ZipFile(expected).namelist(), "produced zip is empty"
+
+
+def test_no_test_invokes_the_builder_without_an_explicit_output():
+    """The suite must not write into dist/. It used to: this file's default-name
+    test ran build_skill with no --out, so every `pytest` silently overwrote
+    dist/chinese-fortune-v<current>.zip from whatever the working tree looked
+    like at that moment — possibly dirty, possibly not the tagged commit. That
+    also made the assertion permanently green, since dist/ is gitignored and
+    never cleaned.
+
+    Checked statically rather than by re-running pytest (which would recurse).
+    """
+    import re
+    offenders = []
+    for f in sorted((ROOT / "tests").glob("*.py")):
+        src = f.read_text(encoding="utf-8")
+        for m in re.finditer(r"subprocess\.run\(\s*\[(.*?)\]", src, re.S):
+            call = m.group(1)
+            if "BUILD" not in call and "build_skill" not in call:
+                continue
+            if "--out" in call or "--dist-dir" in call:
+                continue
+            line = src[:m.start()].count(chr(10)) + 1
+            offenders.append(f"{f.name}:{line}")
+    assert not offenders, (
+        "these call the builder with no explicit output path, so it writes to "
+        f"the repo's dist/: {offenders}")
 
 
 def test_all_engines_report_the_single_version():
