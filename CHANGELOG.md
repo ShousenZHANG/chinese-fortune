@@ -2,6 +2,77 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.2] — 2026-09-04
+
+紫微 audit. v1.7.1 checked the 八字 side against 原文; this checks the 紫微 side.
+Five findings changed a computed chart, one of them on 10% of all charts.
+
+### Method
+Same shape as v1.7.1: every rule read against the primary text (《紫微斗数全书》
+卷一/卷二/卷三 as raw wikitext, 《三命通会》 四庫全書本 cross-read against the
+punctuated 通行本), each finding handed to an independent agent told to REFUTE
+it, and only survivors applied. The recheck **overturned three findings and
+upgraded one** — including one it upgraded from 版本异文 to outright error.
+
+### Fixed — these change the chart
+
+- **大限 ran the wrong way.** The two branches were swapped, so 阳男阴女 got the
+  逆行 sequence and 阴男阳女 the 顺行 one. 卷二 安大限诀: 「阳男阴女从命前一宫起
+  顺行，是父母宫；阴男阳女从命后一宫起逆行，是兄弟宫。」 Every chart's 大限
+  sequence was one of the two, so every chart was affected.
+- **斗君 was a character-for-character copy of 命宫.** The 安身命例 rule under the
+  wrong name. 斗君 is the 流年's 正月宫 and must be keyed by 流年太岁 — which the
+  old signature could not even express, so its output was constant across every
+  流年. Rewritten per 「太岁宫中便起正，逆寻生月即留停，又从生月宫轮子，顺至生时
+  镇斗星」.
+- **辛年 天魁/天钺 were swapped** — two of the six 吉星 misplaced on every 辛-year
+  chart. The row came from an electronic text reading 「辛逢虎马」, which is
+  corrupt in the same breath (「丙丁猪狗」; 戌 is nobody's 丙丁贵人) and which this
+  table had already stopped following for the 丙丁 row. Every line of the couplet
+  puts 阴贵 first, 《三命通会》 puts 辛's 阴贵 at 午, 《御定星历考原》 reads 马虎.
+  Checked against iztro rather than taken on argument.
+- **词馆 contradicted its own reference.** Six of ten stems sat off the 临官(禄)
+  positions that references/19-shensha.md and 《三命通会》卷三·论十干禄 both state.
+- **Five 壬水 调候 cells.** 壬|卯 用神 庚 → 戊, 壬|巳 → 壬, 壬|午 → 癸 move a
+  computed 用神; 壬|辰/戌/子 had a 忌神 sitting in `secondary_yongshen`. That
+  completes the table: **120/120 cells now examined, 46 verified against 原文.**
+  (v1.7.1 said 11 cells were unexamined. It was 12, and they were all 壬水.)
+
+### Fixed — reader-facing
+
+- **七杀 亮度**: 丑卯辰未酉戌 read 陷 where 卷二 reads 「辰戌丑未入庙、卯酉旺地」.
+  Two to three levels off, and 庙→陷 is not producible by any 七级→四级 folding.
+  Brightness drives no logic, but Claude narrates it, so this told readers their
+  七杀 was afflicted where the classic calls it 庙.
+
+### The differential grid was looking at a third of the chart
+It compared 命宫/身宫/五行局/命主/身主 and the 14 主星 — and nothing else, which is
+how the 辛 魁钺 swap survived 903 charts. It now also compares **六吉, 禄存/擎羊/
+陀罗, and all four 生年四化**. On the old 辛 values it fails 87 of 903.
+火铃/空劫 stay out deliberately: their 起法 really does differ by 流派, so a
+mismatch there would be evidence of nothing.
+
+### Deliberately not changed, and why
+- **The other 29 亮度 cells.** The table is a four-level fold of the seven-level
+  scale in 卷二, and the classic supplies no folding map. Exhausting every 7→4
+  mapping leaves 35/168 cells unmatched; 六 are 七杀 (off by 2–3, fixed), the
+  other 29 are off by one and sit inside the folding ambiguity. Replacing one
+  undetermined fold with another and stamping it 已校原文 is precisely what this
+  audit exists to remove. Outside the 七杀 row the table is still unchecked.
+- **福星贵人**, flagged as a clear-error against 「丁宜亥」. It is not: the repo
+  keys it off the DAY stem and all ten values are where that day's 食神 falls in
+  the 五鼠遁 hour cycle. Derived independently; reproduces exactly. 起法 now on
+  the entry, rule locked by a test.
+- **文昌贵人 辛子.** 《星学大成》/《张果星宗》 read 辛戌, but that is the 星学 line
+  keyed on 年干; the repo is 子平, keyed on 日干, where 辛子 is the 食神临官 value
+  the entry's own 歌诀 states. Different system, not a variant.
+- **壬干化科 左辅.** 维基文库's 卷二 reads 天府, on a single transcription with no
+  second witness. Mainstream 三合派 and iztro read 左辅; 903 charts agree.
+- **纳音 spellings** (剑锋/剑峰, 井泉水/泉中水, 桑柘/桑拓): orthographic, no 五行
+  effect, and only the trailing 五行 character is ever read.
+
+Suite 2033 → 2039.
+
 ## [1.7.1] — 2026-09-04
 
 调候用神 audit. The 120-cell 调候 table drove 用神 selection while carrying only

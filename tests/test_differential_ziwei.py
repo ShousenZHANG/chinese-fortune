@@ -109,6 +109,12 @@ def test_core_fields_agree_with_iztro(day, hour):
     for star in sorted(AUX):
         assert ref["aux_pos"].get(star) == ours_aux[star], (
             star, ours_aux[star], ref["aux_pos"].get(star))
+    # 生年四化. 壬 is the contested stem (维基文库's 卷二 transcription reads
+    # 天府化科, mainstream and iztro read 左辅); locking all four against an
+    # independent engine says which side this project is actually on.
+    for hua, star in ours["four_transformations_native"].items():
+        assert ref["mutagen"].get(hua) == star, (
+            hua, star, ref["mutagen"].get(hua))
     for pal in ours["twelve_palaces"]:
         assert ref["palaces"].get(pal["name"]) == pal["branch"], (
             pal["name"], pal["branch"], ref["palaces"].get(pal["name"]))
