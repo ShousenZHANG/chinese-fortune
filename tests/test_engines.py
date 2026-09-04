@@ -477,3 +477,25 @@ def test_dou_jun_is_not_a_copy_of_ming_gong():
                 from utils import hour_branch_index
                 want = DIZHI[(DIZHI.index(yb) - (m - 1) + hour_branch_index(h)) % 12]
                 assert calc_dou_jun(yb, m, h) == want, (yb, m, h)
+
+
+@needs_lunar
+def test_qisha_brightness_follows_the_classic():
+    """《紫微斗数全书》卷二·七杀: 子午旺、卯酉旺、辰戌庙、丑未庙、寅申庙、巳亥和平
+    — six clauses covering all twelve palaces with no gap.
+
+    The table had 丑卯辰未酉戌 as 陷, two to three levels off, and 庙→陷 is not
+    producible by any 七级→四级 folding. The same file's 破军 (also 杀破狼) has
+    辰庙 戌庙 丑旺 未旺, so 七杀's four 墓 reading 陷 looked like a bulk mis-fill.
+    Brightness is reader-facing — Claude narrates it — so this told users their
+    七杀 was afflicted where the classic calls it 庙.
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from ziwei_stars import BRIGHTNESS
+
+    want = {"子": "旺", "午": "旺", "卯": "旺", "酉": "旺",
+            "辰": "庙", "戌": "庙", "丑": "庙", "未": "庙",
+            "寅": "庙", "申": "庙", "巳": "平", "亥": "平"}
+    assert BRIGHTNESS["七杀"] == want, BRIGHTNESS["七杀"]
