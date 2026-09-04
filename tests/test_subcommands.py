@@ -326,3 +326,36 @@ def test_lines_visual_rows_carry_their_position_label():
     assert len(marked) == 1
     assert marked[0].startswith("三爻"), marked[0]
     assert d["active_lines"] == [3]
+
+
+def test_64hex_binary_field_is_derivable_from_lines_and_trigrams():
+    """assets/64hex.json 的 `binary` 是 上→初 编码, 但 28 条 (14 组两两互换)
+    写的是另一个真实存在的卦: 小畜↔夬、履↔姤、随↔益、蛊↔损、临↔升、观↔萃、
+    大过↔中孚、咸↔渐、恒↔归妹、家人↔革、睽↔鼎、困↔涣、井↔节、巽↔兑。
+
+    没有代码消费这个字段, 所以没有任何测试或差分能碰到它 —— 但它随发布包分发
+    (tests/test_build.py 证明 assets/ 整个进 zip), Claude 可以直接读到并据以说
+    "此卦为⋯"。权威数据是 lines[].type 与 upper/lower_trigram, 这两者 64/64
+    自洽; binary 是它们的冗余副本, 因此可以逐卦重算而非人工校对。
+    """
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    d = json.loads((root / "assets" / "64hex.json").read_text(encoding="utf-8"))
+    items = list(d["hexagrams"].values()) if isinstance(d.get("hexagrams"), dict) \
+        else (d.get("hexagrams") or d)
+    assert len(items) == 64
+
+    # 八卦三爻, 写作 上→初 (乾三连=111, 兑上缺=011, 艮覆碗=100 ...)
+    tri = {"乾": "111", "兑": "011", "离": "101", "震": "001",
+           "巽": "110", "坎": "010", "艮": "100", "坤": "000"}
+    for h in items:
+        bottom_up = "".join("1" if ln["type"] == "九" else "0" for ln in h["lines"])
+        lower, upper = tri[h["lower_trigram"]][::-1], tri[h["upper_trigram"]][::-1]
+        # lines 必须与上下卦一致 (这是权威来源, 单独锁一次)
+        assert bottom_up == lower + upper, (h["number"], h["name_zh"])
+        assert h["binary"] == bottom_up[::-1], (
+            h["number"], h["name_zh"], h["binary"], bottom_up[::-1])
+
+    # 64 个编码必须两两互异 —— 任何一次两两互换都会在这里留下重复。
+    assert len({h["binary"] for h in items}) == 64
