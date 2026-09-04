@@ -451,6 +451,58 @@ def test_tiaohou_records_its_audit_state():
     data = json.loads(p.read_text(encoding="utf-8"))
     audit = data["audit"]
     assert audit["verified_cells"], "no cell recorded as verified"
-    assert set(audit["verified_cells"]) == {"甲|亥", "乙|戌"}
-    assert audit["pending"]["clear_error_unrechecked"] == 21
-    assert audit["pending"]["edition_variant_unrechecked"] == 26
+    assert len(audit["verified_cells"]) == 35
+    assert {"甲|亥", "乙|戌", "辛|卯", "乙|卯"} <= set(audit["verified_cells"])
+    # what was examined but deliberately left alone must stay visible
+    assert audit["pending"]["overturned_on_recheck"] == 13
+    assert audit["pending"]["not_examined"] == 11
+    assert "secondary_yongshen" in audit["engine_note"]
+
+
+def test_no_jishen_sits_in_secondary_yongshen():
+    """The recurring defect this table had: a stem the passage names as 病/忌
+    for that month sitting in secondary_yongshen, which inverts the reading.
+    辛|卯 held 戊己 as 次用 where 《穷通宝鉴》 says 「见戊己为病」; 乙|卯 held 庚
+    where the text says 「活木忌埋根之铁」. Eight cells were like this.
+    """
+    import json
+    from pathlib import Path
+    th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+                     "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
+    bad = {k: sorted(set(c.get("ji_shen", [])) & set(c.get("secondary_yongshen", [])))
+           for k, c in th.items()
+           if set(c.get("ji_shen", [])) & set(c.get("secondary_yongshen", []))}
+    assert not bad, f"忌神 listed as 次用: {bad}"
+
+
+def test_verified_cells_carry_their_source_clause():
+    """A cell claiming verification must show the sentence it was verified
+    against, so the claim is checkable rather than asserted."""
+    import json
+    from pathlib import Path
+    th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+                     "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
+    verified = [k for k, c in th.items() if c.get("verified_against_source")]
+    assert len(verified) >= 35, len(verified)
+    missing = [k for k in verified
+               if not (th[k].get("source_clause") or th[k].get("source"))]
+    assert not missing, f"verified but no source quoted: {missing}"
+
+
+def test_tiaohou_notes_do_not_contradict_a_named_jishen():
+    """notes is printed verbatim into yong_shen.reason, so it reaches the
+    reader. A note must not promise fortune from a stem the same cell marks
+    as 忌 — 辛|卯's old note read 壬戊两透, 富贵显达 while its source says that
+    pairing makes 平常之人."""
+    import json
+    import re
+    from pathlib import Path
+    th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+                     "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
+    offenders = []
+    for k, c in th.items():
+        note = c.get("notes", "")
+        for stem in c.get("ji_shen", []):
+            if re.search(rf"{stem}[^。;,]{{0,6}}(两透|双透)[^。;,]{{0,8}}(富贵|显达|科甲)", note):
+                offenders.append((k, stem))
+    assert not offenders, offenders
