@@ -223,17 +223,36 @@ def compat(a: str, b: str) -> dict:
 # --------------------------------------------------------------------------- #
 
 def zodiac_of_year(year: int) -> dict:
-    # Strict 八字 uses 立春. Folk usually uses 农历正月.
+    """一年的生肖, 外加两种换岁法的分界日。
+
+    从前这里探两个硬编码日期 (2月5日 / 3月1日) 再对**同一个** getYearShengXiao()
+    取值。getYearShengXiao() 按农历年 (正月初一) 换岁, 不按立春; 而春节约有一半
+    年份晚于 2月5日, 于是 strict_bazi_zodiac 在 1950-2050 的 49/101 年返回上一年
+    的生肖 —— 恰恰是它自称遵循的立春法唯一排除掉的那个答案 (2026 给「蛇」, 实为
+    丙午马年)。同文件的 taisui 子命令对 2026 给「马」, 两条命令自相矛盾。
+
+    换岁法之争只对**正月/二月出生的人**有意义: 一整年的生肖标签在两种算法下必然
+    相同 (两个分界都落在 1-2 月, 年中取值必在同一区间内)。所以这里改为年中取值,
+    两个字段都由各自的正确 API 得出, 并把真正有信息量的东西 —— 两个分界日 ——
+    直接输出, 让调用方能判断一个 1-2 月的生日落在哪一侧。
+    """
     require_lunar()
-    from lunar_python import Solar  # type: ignore
-    # Use 立春 boundary for strict; show both.
-    s_lichun = Solar.fromYmdHms(year, 2, 5, 12, 0, 0).getLunar()
-    s_lunar_newyear = Solar.fromYmdHms(year, 3, 1, 12, 0, 0).getLunar()
+    from lunar_python import Lunar, Solar  # type: ignore
+    mid = Solar.fromYmdHms(year, 6, 1, 12, 0, 0).getLunar()
+    li_chun = mid.getJieQiTable()["立春"].toYmd()
+    lunar_new_year = Lunar.fromYmd(year, 1, 1).getSolar().toYmd()
     return {
         "year": year,
-        "strict_bazi_zodiac": s_lichun.getYearShengXiao(),
-        "folk_zodiac": s_lunar_newyear.getYearShengXiao(),
-        "note": "八字以立春换岁, 民俗多以正月初一换岁",
+        "zodiac": mid.getYearShengXiaoByLiChun(),
+        "strict_bazi_zodiac": mid.getYearShengXiaoByLiChun(),
+        "folk_zodiac": mid.getYearShengXiao(),
+        "li_chun": li_chun,
+        "lunar_new_year": lunar_new_year,
+        "note": (
+            f"八字以立春换岁 ({li_chun}), 民俗多以正月初一换岁 ({lunar_new_year})。"
+            "整年标签两法一致; 仅当出生日落在这两个日期之间时, 两法才给出不同生肖 —— "
+            "此时以出生日期查 bazi_calc.py 的年柱为准。"
+        ),
     }
 
 

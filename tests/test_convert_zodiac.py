@@ -52,9 +52,31 @@ def test_zodiac_info():
 
 
 def test_zodiac_year_lichun_vs_folk():
-    d = run("zodiac_compat.py", "year", "--year", "1990")
+    """1990 是两种换岁法恰好一致的年份, 所以这条断言原本对该 bug 完全免疫:
+    strict_bazi_zodiac 探硬编码的 2月5日 + getYearShengXiao() (农历年口径),
+    在 1950-2050 的 49/101 年返回上一年生肖, 而 1990 不在其中。改用 2026 —— 丙午
+    马年, 立春 2月4日, 春节 2月17日, 旧实现给「蛇」。
+    """
+    d = run("zodiac_compat.py", "year", "--year", "2026")
+    assert d["zodiac"] == "马"
     assert d["strict_bazi_zodiac"] == "马"
     assert d["folk_zodiac"] == "马"
+    assert d["li_chun"] == "2026-02-04"
+    assert d["lunar_new_year"] == "2026-02-17"
+
+
+@pytest.mark.parametrize("year", list(range(1950, 2051)))
+def test_zodiac_year_matches_lichun_year_pillar(year):
+    """整年生肖必须等于该年立春后的年柱地支所对应的生肖, 逐年锁死 1950-2050。
+    旧实现在其中 49 年不符。
+    """
+    from lunar_python import Solar
+    truth = Solar.fromYmdHms(year, 6, 1, 12, 0, 0).getLunar().getYearShengXiaoByLiChun()
+    d = run("zodiac_compat.py", "year", "--year", str(year))
+    assert d["zodiac"] == truth, (year, d["zodiac"], truth)
+    assert d["strict_bazi_zodiac"] == truth
+    # 两法对整年标签必然一致 —— 分界都在 1-2 月, 年中取值落在同一区间。
+    assert d["folk_zodiac"] == truth
 
 
 def test_zodiac_taisui_2026_horse_year():
