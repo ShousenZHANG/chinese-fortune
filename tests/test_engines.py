@@ -523,3 +523,56 @@ def test_tiankui_tianyue_xin_row_is_ma_hu_not_hu_ma():
     # 阴贵 and 阳贵 are the two 天乙 seats of one stem and can never coincide.
     assert all(TIAN_KUI[g] != TIAN_YUE[g] for g in TIAN_KUI)
     assert set(TIAN_KUI) == set(TIAN_YUE) == set("甲乙丙丁戊己庚辛壬癸")
+
+
+def test_meihua_every_trigram_can_reach_every_wangshuai_state():
+    """SEASON_WX_BY_MONTH 从前把 12 个月全部映射到 木/火/金/水, 于是 season_wx
+    永远不是土, `.get(month, "土")` 的默认分支对任何合法月份都不可达 —— 体卦为
+    艮 或 坤 (五行属土) 时 ti_state 结构性地拿不到「旺」, 八个卦里有两个的旺衰
+    被系统性压低, 而输出照样把它当确定结论交给用户。
+
+    土王四季: 辰未戌丑 四个季末月土旺, 对应公历约 4/7/10/1 月。
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import meihua_cast
+    from utils import BAGUA
+
+    assert set(meihua_cast.SEASON_WX_BY_MONTH) == set(range(1, 13))
+    assert set(meihua_cast.SEASON_WX_BY_MONTH.values()) == {"木", "火", "土", "金", "水"}
+    assert {m for m, wx in meihua_cast.SEASON_WX_BY_MONTH.items()
+            if wx == "土"} == {1, 4, 7, 10}
+
+    want = {"旺", "相", "休", "囚", "死"}
+    for tri in BAGUA:
+        got = {meihua_cast.ti_state(tri, mo) for mo in range(1, 13)}
+        assert got == want, (tri, BAGUA[tri]["wuxing"], sorted(got))
+
+
+def test_meihua_tiyong_labels_are_not_interchangeable():
+    """体用关系的结论标签可以整体倒置而无人察觉: 把 用生体(吉) 与 体生用(耗体)
+    对调, 全量套件仍 2145 passed。这是梅花唯一的判断性输出, 会被直接叙述给用户。
+    原有断言只检查 startswith 属于五个关系名之一, 对调后仍然属于。
+
+    这里逐对锁死方向: 生我者为「用生体」, 我生者为「体生用」, 克我者凶, 我克者吉。
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from meihua_cast import ti_yong_relation
+    from utils import BAGUA
+
+    # 五行相生: 木生火 生土 生金 生水 生木; 相克: 木克土 克水 克火 克金 克木
+    by_wx = {}
+    for tri, info in BAGUA.items():
+        by_wx.setdefault(info["wuxing"], tri)
+    T = by_wx  # 木=震 火=离 土=艮/坤 金=乾/兑 水=坎
+
+    assert ti_yong_relation(T["火"], T["木"]).startswith("用生体")   # 木生火, 体火
+    assert ti_yong_relation(T["木"], T["火"]).startswith("体生用")   # 体木生用火
+    assert ti_yong_relation(T["木"], T["金"]).startswith("用克体")   # 金克木, 体木
+    assert ti_yong_relation(T["金"], T["木"]).startswith("体克用")   # 体金克用木
+    assert ti_yong_relation(T["木"], T["木"]) == "比和"
+    assert "吉" in ti_yong_relation(T["火"], T["木"])
+    assert "凶" in ti_yong_relation(T["木"], T["金"])

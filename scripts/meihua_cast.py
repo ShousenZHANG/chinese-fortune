@@ -80,21 +80,29 @@ def ti_yong_relation(ti_tri: str, yong_tri: str) -> str:
     return "未知"
 
 
-# 体卦旺衰 — based on current month (季节五行)
+# 体卦旺衰 — 按月令五行。
+#
+# 土王四季: 辰未戌丑四个季末月土旺 (严格说是每季末 18 天), 对应公历约 4/7/10/1 月。
+# 这四个月从前被并进了木/火/金/水, 于是 SEASON_WX_BY_MONTH 十二个月里没有一个是
+# 土, `.get(month, "土")` 的默认分支对任何合法月份都不可达 —— 体卦为 艮 或 坤
+# (五行属土) 时, ti_state 结构性地永远拿不到「旺」, 八个卦里有两个的旺衰判断被
+# 系统性压低, 而输出照样把它当确定结论交给用户。
+#
+# 月粒度模型必须在「辰月算木还是算土」之间二选一; 这里取通行的四季月归土, 与本
+# 文件原有注释声明的意图一致。真正的 18 天分界需要节气, 见 notes 字段的说明。
 SEASON_WX_BY_MONTH: dict[int, str] = {
-    # 公历月 -> 当令五行 (粗略对应)
-    2: "木", 3: "木", 4: "木",
-    5: "火", 6: "火", 7: "火",
-    8: "金", 9: "金", 10: "金",
-    11: "水", 12: "水", 1: "水",
+    # 公历月 -> 当令五行 (对应 寅卯/巳午/申酉/亥子 四组 + 辰未戌丑 四季月)
+    2: "木", 3: "木",
+    5: "火", 6: "火",
+    8: "金", 9: "金",
+    11: "水", 12: "水",
+    4: "土", 7: "土", 10: "土", 1: "土",
 }
 
-# 土王四季: 每季末 18 天土旺. For simplicity, treat months 4/7/10/1 with secondary
-# 土相 flag.
 
 def ti_state(ti_tri: str, month: int) -> str:
     ti_wx = BAGUA[ti_tri]["wuxing"]
-    season_wx = SEASON_WX_BY_MONTH.get(month, "土")
+    season_wx = SEASON_WX_BY_MONTH[month]
     if ti_wx == season_wx:
         return "旺"
     if WUXING_GEN.get(season_wx) == ti_wx:
