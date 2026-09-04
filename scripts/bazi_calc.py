@@ -387,13 +387,45 @@ def main(argv: list[str] | None = None) -> int:
     eff_hour = args.hour if hour_known else 12
     eff_minute = args.minute if hour_known else 0
 
+    # 农历输入必须**先**转公历, 再做真太阳时与经度校正。校正靠 day_of_year 求均时差
+    # (utils.true_solar_time_info / longitude_correction), 拿农历日期当公历用会引入
+    # 最坏近 20 分钟的误差 —— 足以让时辰边界附近的人整位跳时柱, 近午夜时连日柱一起翻。
+    # 同一处顺序错误还让 longitude_correction 内的 date() 对农历二月三十这类真实生日
+    # 抛出未捕获的 ValueError (1900-2100 间此类生日 273 个), 并让 day_offset 之后的
+    # 农历+1天 撞上"该农历月只有 29/30 天"而伪造出一条 invalid_date。
+    #
+    # Solar.fromYmdHms 不校验日期真实性 (1990-02-31 会被接受并给出一个农历转换),
+    # 所以公历分支要自己用 date() 验一次。
+    from datetime import date as _cal_date
+    from datetime import timedelta as _cal_delta
+    try:
+        if args.lunar:
+            # 农历日→公历日的映射与时辰无关; 时辰在下面校正后才参与排盘。
+            _bs = Lunar.fromYmdHms(
+                args.year, args.month, args.day, eff_hour, eff_minute, 0
+            ).getSolar()
+            base_y, base_m, base_d = _bs.getYear(), _bs.getMonth(), _bs.getDay()
+        else:
+            base_y, base_m, base_d = args.year, args.month, args.day
+        base_date = _cal_date(base_y, base_m, base_d)
+    except Exception as e:
+        json_print({
+            "ok": False,
+            "tool": "bazi",
+            "version": VERSION,
+            "error": "invalid_date",
+            "message": str(e),
+            "input": vars(args),
+        })
+        return 1
+
     try:
         tst_info = true_solar_time_info(
             longitude=args.longitude,
             tz_offset_hours=tz_offset,
-            year=args.year,
-            month=args.month,
-            day=args.day,
+            year=base_y,
+            month=base_m,
+            day=base_d,
             hour=eff_hour,
             minute=eff_minute,
         )
@@ -407,27 +439,18 @@ def main(argv: list[str] | None = None) -> int:
     # Apply correction for pillar computation (incl. day roll-over near midnight)
     day_offset, corr_hour, corr_minute = longitude_correction(
         eff_hour, eff_minute, args.longitude, tz_offset,
-        year=args.year, month=args.month, day=args.day,
+        year=base_y, month=base_m, day=base_d,
     )
     if not hour_known:
         day_offset = 0  # noon cannot roll into an adjacent day
-    corr_year, corr_month, corr_day = args.year, args.month, args.day
-    if day_offset != 0:
-        from datetime import date, timedelta
-        _d = date(args.year, args.month, args.day) + timedelta(days=day_offset)
-        corr_year, corr_month, corr_day = _d.year, _d.month, _d.day
+    _d = base_date + _cal_delta(days=day_offset) if day_offset else base_date
+    corr_year, corr_month, corr_day = _d.year, _d.month, _d.day
 
     try:
-        if args.lunar:
-            lunar = Lunar.fromYmdHms(
-                corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
-            )
-            solar = lunar.getSolar()
-        else:
-            solar = Solar.fromYmdHms(
-                corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
-            )
-            lunar = solar.getLunar()
+        solar = Solar.fromYmdHms(
+            corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
+        )
+        lunar = solar.getLunar()
     except Exception as e:
         json_print({
             "ok": False,

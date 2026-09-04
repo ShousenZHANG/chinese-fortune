@@ -569,3 +569,78 @@ def test_fuxing_guiren_is_the_day_stem_shishen_under_wushu_dun():
 
     assert got["qi_fa_table"] == want, (got["qi_fa_table"], want)
     assert "食神" in got["qi_fa"] and "五鼠遁" in got["qi_fa"]
+
+
+# --------------------------------------------------------------------------- #
+# --lunar 输入契约 — 农历日期必须先转公历, 再做真太阳时/经度校正
+# --------------------------------------------------------------------------- #
+
+def _run_bazi(*args):
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    proc = subprocess.run(
+        [sys.executable, str(root / "scripts" / "bazi_calc.py"), *map(str, args)],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    assert proc.stdout.strip(), (
+        f"no stdout (rc={proc.returncode})\nstderr={proc.stderr[-800:]}")
+    return json.loads(proc.stdout), proc
+
+
+def test_lunar_leap_day_birthdays_do_not_crash():
+    """农历二月三十 是真实存在的生日 (1993 年那一天 = 公历 1993-03-22), 而
+    longitude_correction 拿它当公历构造 date(1993, 2, 30) → 未捕获 ValueError,
+    stdout 无 JSON, stderr 吐带绝对路径的 traceback。1900-2100 间这类生日 273 个。
+
+    根因是农历→公历转换排在校正之后; 转换提前后, 校正永远只收到公历日期。
+    """
+    d, proc = _run_bazi("--lunar", "--year", 1993, "--month", 2, "--day", 30,
+                        "--hour", 10, "--gender", "male")
+    assert d["ok"] is True, d
+    assert proc.returncode == 0
+    assert (d["solar_date"]["year"], d["solar_date"]["month"]) == (1993, 3)
+    assert d["four_pillars"]["year"]["ganzhi"] == "癸酉"
+
+
+def test_lunar_day_rollover_does_not_fake_a_month_length_error():
+    """day_offset 从前加在**农历**日上, 于是 农历五月三十 + 1 天 撞上「该农历月
+    只有 30 天」, 一个完全合法的生日被一条假错误拒收。现在偏移加在公历日上。
+    """
+    d, _ = _run_bazi("--lunar", "--year", 1990, "--month", 5, "--day", 30,
+                     "--hour", 23, "--minute", 55, "--longitude", 135,
+                     "--gender", "male")
+    assert d["ok"] is True, d
+    # 23:55 @ 135°E 经度修正 +60 min → 翻到次日
+    assert (d["solar_date"]["year"], d["solar_date"]["month"],
+            d["solar_date"]["day"]) == (1990, 6, 23)
+
+
+def test_gregorian_nonexistent_date_is_rejected_not_fabricated():
+    """Solar.fromYmdHms 不校验日期真实性 —— 1990-02-31 会被接受并给出一个农历
+    转换。_validate_args 的 1-31 也放行。必须自己用 date() 验一次。
+    """
+    d, _ = _run_bazi("--year", 1990, "--month", 2, "--day", 31,
+                     "--hour", 10, "--gender", "male")
+    assert d["ok"] is False
+    assert d["error"] == "invalid_date"
+
+
+def test_lunar_input_equation_of_time_comes_from_the_solar_day():
+    """均时差按 day_of_year 求。农历日期当公历用时, 农历1990腊月初一 (= 公历
+    1991-01-16) 会取到 +10.13 分而非 -9.69 分, 差 19.8 分钟 —— 足以让时辰边界
+    附近的人整位跳时柱。这里直接比对 --lunar 与等价公历输入的真太阳时。
+    """
+    lun, _ = _run_bazi("--lunar", "--year", 1990, "--month", 12, "--day", 1,
+                       "--hour", 12, "--longitude", 116.4,
+                       "--gender", "male")
+    sol, _ = _run_bazi("--year", 1991, "--month", 1, "--day", 16,
+                       "--hour", 12, "--longitude", 116.4,
+                       "--gender", "male")
+    assert lun["ok"] and sol["ok"]
+    assert lun["solar_date"] == sol["solar_date"]
+    assert lun["true_solar_time"] == sol["true_solar_time"], (
+        lun["true_solar_time"], sol["true_solar_time"])
+    assert lun["four_pillars"] == sol["four_pillars"]
