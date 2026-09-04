@@ -284,6 +284,9 @@ def check_eval_assertions() -> None:
         fail(f"only {total} assertions for {len(evals)} evals")
 
 
+UNIT_TEST_TIMEOUT_S = 900
+
+
 def check_unit_tests() -> None:
     proc = subprocess.run(
         [sys.executable, "-m", "pytest", "tests/", "-q"],
@@ -291,7 +294,12 @@ def check_unit_tests() -> None:
         # valid UTF-8 on a CJK console, and a decode error here used to
         # mask the real test failure with the harness's own traceback.
         cwd=ROOT, text=True, encoding="utf-8", errors="replace",
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=180,
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        # 180s left under 2x headroom once the suite passed 90s, and it now runs
+        # a 58,440-day sxtwl sweep. A timeout here is not an AssertionError, so
+        # it used to escape main()'s handler and kill the harness before any
+        # check reported — see the try/except there.
+        timeout=UNIT_TEST_TIMEOUT_S,
     )
     if proc.returncode != 0:
         output = (proc.stdout or "")[-1500:] or "(no output captured)"
@@ -315,6 +323,13 @@ def main() -> int:
             results.append((check.__name__, True, ""))
         except AssertionError as exc:
             results.append((check.__name__, False, str(exc)))
+        except subprocess.TimeoutExpired as exc:
+            # Not an AssertionError, so this used to propagate out of main() and
+            # end the run with a bare traceback: no per-check verdict, no "x/7"
+            # line, and the remaining checks never ran. A timeout is a failed
+            # check, and the checks after it still deserve to report.
+            results.append((check.__name__, False,
+                            f"timed out after {exc.timeout}s"))
 
     passed = sum(1 for _, ok, _ in results if ok)
     print("=" * 60)

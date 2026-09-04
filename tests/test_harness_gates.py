@@ -225,3 +225,48 @@ def test_every_cli_engine_has_a_release_eval():
     clis = {p.name for p in (ROOT / "scripts").glob("*.py")} - helpers
     missing = sorted(clis - covered)
     assert not missing, f"CLIs with no release eval: {missing}"
+
+
+def test_harness_reports_a_timeout_as_a_failed_check_not_a_traceback():
+    """main() only caught AssertionError. subprocess.TimeoutExpired is not one,
+    so a slow pytest ended the harness with a bare traceback *before any check
+    reported*: no per-check verdict, no "x/7" line, and the checks after it
+    never ran. The gate's own contract ("7/7") did not hold on that path.
+
+    The margin was real, not theoretical: the timeout was 180s while the suite
+    had grown from 1013 to 2150 tests and now includes a 58,440-day sxtwl sweep.
+    """
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(root / "evals"))
+    import run_checks
+
+    assert run_checks.UNIT_TEST_TIMEOUT_S >= 600, run_checks.UNIT_TEST_TIMEOUT_S
+
+    def boom():
+        raise subprocess.TimeoutExpired(cmd="pytest", timeout=1)
+
+    after_ran = []
+
+    def later():
+        after_ran.append(True)
+
+    boom.__name__, later.__name__ = "check_boom", "check_later"
+    results = []
+    for check in (boom, later):
+        try:
+            check()
+            results.append((check.__name__, True, ""))
+        except AssertionError as exc:
+            results.append((check.__name__, False, str(exc)))
+        except subprocess.TimeoutExpired as exc:
+            results.append((check.__name__, False, f"timed out after {exc.timeout}s"))
+
+    assert results[0] == ("check_boom", False, "timed out after 1s")
+    assert after_ran == [True], "checks after a timeout must still run"
+
+    # 上面复刻的是 main() 的循环; 确认 main() 真的带了这个 except 分支。
+    src = (root / "evals" / "run_checks.py").read_text(encoding="utf-8")
+    assert "except subprocess.TimeoutExpired" in src
