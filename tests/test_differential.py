@@ -109,3 +109,30 @@ def test_bazi_script_matches_independent_engine():
     assert p["month"]["ganzhi"] == sx_gz(day, "m")
     assert p["day"]["ganzhi"] == sx_gz(day, "d")
     assert p["hour"]["ganzhi"] == sx_gz(day, "h", 12)
+
+
+def test_day_pillar_matches_sxtwl_on_every_day_1920_2080():
+    """真·全网格: 1920-01-01 到 2080-01-01 逐日比对, 58,440 天无遗漏。
+
+    上面那个参数化网格步长 131 天, 447 个采样点 = 该区间的 0.76%, 而 README
+    (中文版) 声称「1920–2080 全网格验证」—— 英文版同一行不带「全」字。函数名
+    test_day_pillar_matches_sxtwl_full_grid 与 docstring "on every date" 把同一个
+    夸大刻进了代码。
+
+    实测逐日跑一遍约 48 秒, 完全可行, 所以这里把声明兑现而不是把声明改小。
+    采样网格保留 —— 它给出逐日期的失败用例名, 定位快。
+    """
+    from datetime import date, timedelta
+    cur, end = date(1920, 1, 1), date(2080, 1, 1)
+    checked, mismatches = 0, []
+    while cur < end:
+        lp = lp_lunar(cur.year, cur.month, cur.day).getDayInGanZhi()
+        sx = sx_gz(sxtwl.fromSolar(cur.year, cur.month, cur.day), "d")
+        if lp != sx:
+            mismatches.append((cur.isoformat(), lp, sx))
+            if len(mismatches) >= 10:
+                break
+        checked += 1
+        cur += timedelta(days=1)
+    assert checked == 58440, checked
+    assert not mismatches, mismatches
