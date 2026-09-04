@@ -282,7 +282,8 @@ def main(argv: list[str] | None = None) -> int:
     # iztro-py differential, which agreed with us on every other field.
     ming_zhu = MING_ZHU.get(mg_branch, "?")
     shen_zhu = SHEN_ZHU.get(year_branch, "?")
-    dou_jun_branch = calc_dou_jun(lunar_month, birth_hour)
+    # 本命斗君 (以生年太岁起). 流年斗君须以该年太岁代入 calc_dou_jun.
+    dou_jun_branch = calc_dou_jun(year_branch, lunar_month, birth_hour)
 
     # 6. 反向索引 — branch -> list of stars by category.
     branch_to_main: dict[str, list[str]] = {b: [] for b in DIZHI}
@@ -421,6 +422,7 @@ def main(argv: list[str] | None = None) -> int:
         "ming_zhu": ming_zhu,
         "shen_zhu": shen_zhu,
         "dou_jun": f"{dou_jun_branch}宫",
+        "dou_jun_basis": "生年太岁 (流年斗君以该年太岁代入)",
         "ziwei_position": zw_branch,
         "main_stars_positions": main_pos,
         "lucky_stars_positions": lucky_pos,

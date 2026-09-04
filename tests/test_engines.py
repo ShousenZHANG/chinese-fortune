@@ -405,3 +405,75 @@ def test_ziwei_leap_month_and_late_zi_do_not_double_shift():
                     "--gender", "male", "--sect", sect)
         assert d["input"]["effective_lunar_month"] == 5, (sect, d["input"])
         assert d["lunar_date"]["day"] == (17 if sect == 1 else 16)
+
+
+@needs_lunar
+def test_da_xian_direction_follows_the_classic():
+    """《紫微斗数全书》卷二·安大限诀:「阳男阴女从命前一宫起顺行，是父母宫；
+    阴男阳女从命后一宫起逆行，是兄弟宫。」
+
+    assign_palaces puts 父母宫 (index 11) at mg_idx+1 and 兄弟宫 (index 1) at
+    mg_idx-1, so 顺行 must be branch-INCREASING and 逆行 branch-DECREASING.
+    The code had the two branches swapped: a 阳男 walked into 兄弟宫 and a 阴男
+    into 父母宫. references/02-ziwei.md:517 states the same worked example —
+    水二局阳年男命 命宫午 → 第二大限 顺一 父母宫 未 (午→未, increasing).
+
+    The iztro differential could not catch this: it covers 命宫/身宫/五行局/
+    命主/身主/14主星/十二宫, not 大限.
+    """
+    from conftest import run_cli
+    from utils import DIZHI
+
+    # 庚午 year (阳), male -> 阳男 -> 顺行 -> 父母宫, branch mg+1
+    yang = run_cli("ziwei_calc.py", "--year", 1990, "--month", 8, "--day", 10,
+                   "--hour", 10, "--gender", "male")
+    mg = DIZHI.index(yang["ming_gong"]["branch"])
+    assert yang["da_xian"][1]["palace_name"] == "父母宫", yang["da_xian"][:2]
+    assert yang["da_xian"][1]["palace_branch"] == DIZHI[(mg + 1) % 12]
+
+    # 己卯 year (阴), male -> 阴男 -> 逆行 -> 兄弟宫, branch mg-1
+    yin = run_cli("ziwei_calc.py", "--year", 2000, "--month", 1, "--day", 15,
+                  "--hour", 10, "--gender", "male")
+    mg2 = DIZHI.index(yin["ming_gong"]["branch"])
+    assert yin["da_xian"][1]["palace_name"] == "兄弟宫", yin["da_xian"][:2]
+    assert yin["da_xian"][1]["palace_branch"] == DIZHI[(mg2 - 1) % 12]
+
+    # first limit is always 命宫 itself
+    for d in (yang, yin):
+        assert d["da_xian"][0]["palace_name"] == "命宫"
+
+
+@needs_lunar
+def test_dou_jun_is_not_a_copy_of_ming_gong():
+    """《紫微斗数全书》卷二·安斗君诀:「于流年太岁宫起正月逆至本生月，又从本生月
+    起子顺数至本生时安斗君。」
+
+    calc_dou_jun was character-for-character identical to calc_ming_gong —
+    寅-anchored, 顺 to the month, 逆 to the hour — i.e. the 安身命例 rule copied
+    under the wrong name, so the chart reported 命宫 twice. 斗君 is also a
+    流年-indexed quantity, and a function taking no 流年 cannot express one.
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from utils import DIZHI
+    from ziwei_palaces import calc_dou_jun
+    from ziwei_tables import calc_ming_gong
+
+    # 流年 must actually move the answer
+    a = calc_dou_jun("子", 5, 10)
+    b = calc_dou_jun("午", 5, 10)
+    assert a != b, "斗君 does not depend on 流年"
+
+    # and it must not simply reproduce 命宫
+    same = sum(1 for m in range(1, 13) for h in (0, 6, 12, 18)
+               if calc_dou_jun("寅", m, h) == calc_ming_gong(m, h))
+    assert same < 48, "斗君 still mirrors 命宫 for every input"
+
+    # the rule itself: 太岁宫起正月逆至生月, 再从生月起子顺至生时
+    for yb in ("子", "卯", "午", "酉"):
+        for m in (1, 5, 11):
+            for h in (0, 7, 23):
+                from utils import hour_branch_index
+                want = DIZHI[(DIZHI.index(yb) - (m - 1) + hour_branch_index(h)) % 12]
+                assert calc_dou_jun(yb, m, h) == want, (yb, m, h)

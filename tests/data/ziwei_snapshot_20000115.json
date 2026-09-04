@@ -53,7 +53,8 @@
   },
   "ming_zhu": "廉贞",
   "shen_zhu": "天同",
-  "dou_jun": "申宫",
+  "dou_jun": "酉宫",
+  "dou_jun_basis": "生年太岁 (流年斗君以该年太岁代入)",
   "ziwei_position": "丑",
   "main_stars_positions": {
     "紫微": "丑",
@@ -569,77 +570,77 @@
     },
     {
       "index": 2,
-      "palace_index": 11,
-      "palace_name": "父母宫",
-      "palace_branch": "酉",
-      "palace_stem": "癸",
+      "palace_index": 1,
+      "palace_name": "兄弟宫",
+      "palace_branch": "未",
+      "palace_stem": "辛",
       "age_range": "14-23",
       "start_age": 14,
       "end_age": 23,
       "direction": "逆行",
       "transformations": {
-        "禄": "破军",
-        "权": "巨门",
-        "科": "太阴",
-        "忌": "贪狼"
+        "禄": "巨门",
+        "权": "太阳",
+        "科": "文曲",
+        "忌": "文昌"
       }
     },
     {
       "index": 3,
-      "palace_index": 10,
-      "palace_name": "福德宫",
-      "palace_branch": "戌",
-      "palace_stem": "甲",
+      "palace_index": 2,
+      "palace_name": "夫妻宫",
+      "palace_branch": "午",
+      "palace_stem": "庚",
       "age_range": "24-33",
       "start_age": 24,
       "end_age": 33,
       "direction": "逆行",
       "transformations": {
-        "禄": "廉贞",
-        "权": "破军",
-        "科": "武曲",
-        "忌": "太阳"
+        "禄": "太阳",
+        "权": "武曲",
+        "科": "太阴",
+        "忌": "天同"
       }
     },
     {
       "index": 4,
-      "palace_index": 9,
-      "palace_name": "田宅宫",
-      "palace_branch": "亥",
-      "palace_stem": "乙",
+      "palace_index": 3,
+      "palace_name": "子女宫",
+      "palace_branch": "巳",
+      "palace_stem": "己",
       "age_range": "34-43",
       "start_age": 34,
       "end_age": 43,
       "direction": "逆行",
       "transformations": {
-        "禄": "天机",
-        "权": "天梁",
-        "科": "紫微",
-        "忌": "太阴"
+        "禄": "武曲",
+        "权": "贪狼",
+        "科": "天梁",
+        "忌": "文曲"
       }
     },
     {
       "index": 5,
-      "palace_index": 8,
-      "palace_name": "官禄宫",
-      "palace_branch": "子",
-      "palace_stem": "丙",
+      "palace_index": 4,
+      "palace_name": "财帛宫",
+      "palace_branch": "辰",
+      "palace_stem": "戊",
       "age_range": "44-53",
       "start_age": 44,
       "end_age": 53,
       "direction": "逆行",
       "transformations": {
-        "禄": "天同",
-        "权": "天机",
-        "科": "文昌",
-        "忌": "廉贞"
+        "禄": "贪狼",
+        "权": "太阴",
+        "科": "右弼",
+        "忌": "天机"
       }
     },
     {
       "index": 6,
-      "palace_index": 7,
-      "palace_name": "奴仆宫",
-      "palace_branch": "丑",
+      "palace_index": 5,
+      "palace_name": "疾厄宫",
+      "palace_branch": "卯",
       "palace_stem": "丁",
       "age_range": "54-63",
       "start_age": 54,
@@ -671,9 +672,9 @@
     },
     {
       "index": 8,
-      "palace_index": 5,
-      "palace_name": "疾厄宫",
-      "palace_branch": "卯",
+      "palace_index": 7,
+      "palace_name": "奴仆宫",
+      "palace_branch": "丑",
       "palace_stem": "丁",
       "age_range": "74-83",
       "start_age": 74,
@@ -688,70 +689,70 @@
     },
     {
       "index": 9,
-      "palace_index": 4,
-      "palace_name": "财帛宫",
-      "palace_branch": "辰",
-      "palace_stem": "戊",
+      "palace_index": 8,
+      "palace_name": "官禄宫",
+      "palace_branch": "子",
+      "palace_stem": "丙",
       "age_range": "84-93",
       "start_age": 84,
       "end_age": 93,
       "direction": "逆行",
       "transformations": {
-        "禄": "贪狼",
-        "权": "太阴",
-        "科": "右弼",
-        "忌": "天机"
+        "禄": "天同",
+        "权": "天机",
+        "科": "文昌",
+        "忌": "廉贞"
       }
     },
     {
       "index": 10,
-      "palace_index": 3,
-      "palace_name": "子女宫",
-      "palace_branch": "巳",
-      "palace_stem": "己",
+      "palace_index": 9,
+      "palace_name": "田宅宫",
+      "palace_branch": "亥",
+      "palace_stem": "乙",
       "age_range": "94-103",
       "start_age": 94,
       "end_age": 103,
       "direction": "逆行",
       "transformations": {
-        "禄": "武曲",
-        "权": "贪狼",
-        "科": "天梁",
-        "忌": "文曲"
+        "禄": "天机",
+        "权": "天梁",
+        "科": "紫微",
+        "忌": "太阴"
       }
     },
     {
       "index": 11,
-      "palace_index": 2,
-      "palace_name": "夫妻宫",
-      "palace_branch": "午",
-      "palace_stem": "庚",
+      "palace_index": 10,
+      "palace_name": "福德宫",
+      "palace_branch": "戌",
+      "palace_stem": "甲",
       "age_range": "104-113",
       "start_age": 104,
       "end_age": 113,
       "direction": "逆行",
       "transformations": {
-        "禄": "太阳",
-        "权": "武曲",
-        "科": "太阴",
-        "忌": "天同"
+        "禄": "廉贞",
+        "权": "破军",
+        "科": "武曲",
+        "忌": "太阳"
       }
     },
     {
       "index": 12,
-      "palace_index": 1,
-      "palace_name": "兄弟宫",
-      "palace_branch": "未",
-      "palace_stem": "辛",
+      "palace_index": 11,
+      "palace_name": "父母宫",
+      "palace_branch": "酉",
+      "palace_stem": "癸",
       "age_range": "114-123",
       "start_age": 114,
       "end_age": 123,
       "direction": "逆行",
       "transformations": {
-        "禄": "巨门",
-        "权": "太阳",
-        "科": "文曲",
-        "忌": "文昌"
+        "禄": "破军",
+        "权": "巨门",
+        "科": "太阴",
+        "忌": "贪狼"
       }
     }
   ],

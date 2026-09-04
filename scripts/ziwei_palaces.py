@@ -82,8 +82,12 @@ def san_fang_si_zheng(branch: str) -> dict:
 # --------------------------------------------------------------------------- #
 # Section 12 — 大限 (10 年一限, 阴男阳女逆行修正)
 # --------------------------------------------------------------------------- #
-# 顺行 (阳男阴女): 大限i 在 palace_index i, branch = (mg_idx - i) % 12.
-# 逆行 (阴男阳女): 大限i 在 palace_index (-i)%12, branch = (mg_idx + i) % 12.
+# 安大限诀 (《紫微斗数全书》卷二): 「阳男阴女从命前一宫起顺行，是父母宫；
+# 阴男阳女从命后一宫起逆行，是兄弟宫。」
+# assign_palaces 把 父母宫 (index 11) 放在 mg_idx+1, 兄弟宫 (index 1) 放在
+# mg_idx-1, 所以 顺行 = 地支递增, 逆行 = 地支递减.
+# 顺行 (阳男阴女): 大限i 在 palace_index (-i)%12, branch = (mg_idx + i) % 12.
+# 逆行 (阴男阳女): 大限i 在 palace_index i,        branch = (mg_idx - i) % 12.
 
 
 def is_yang_stem(stem: str) -> bool:
@@ -100,11 +104,11 @@ def da_xian_ranges(
     mg_idx = palaces[0]["branch_index"]
     for i in range(12):
         if forward:
-            pal_idx_in_12 = i
-            branch_idx = (mg_idx - i) % 12
-        else:
-            pal_idx_in_12 = (-i) % 12  # 0,11,10,9,8,...
+            pal_idx_in_12 = (-i) % 12  # 0,11,10,9,8,... -> 命宫,父母,福德,...
             branch_idx = (mg_idx + i) % 12
+        else:
+            pal_idx_in_12 = i          # 0,1,2,...       -> 命宫,兄弟,夫妻,...
+            branch_idx = (mg_idx - i) % 12
         branch = DIZHI[branch_idx]
         stem = stem_of_palace(year_stem, branch)
         start_age = ju + i * 10
@@ -129,9 +133,21 @@ def da_xian_ranges(
 # 寅起正月顺数到农历生月, 该宫起子时逆数至生时 — 即为流年 子月 落点的标准锚.
 
 
-def calc_dou_jun(lunar_month: int, hour: int) -> str:
-    month_branch_idx = (2 + (lunar_month - 1)) % 12
-    return DIZHI[(month_branch_idx - hour_branch_index(hour)) % 12]
+def calc_dou_jun(liu_year_branch: str, lunar_month: int, hour: int) -> str:
+    """安斗君诀 (《紫微斗数全书》卷二).
+
+    「于流年太岁宫起正月逆至本生月，又从本生月起子顺数至本生时安斗君。」
+    歌诀:「太岁宫中便起正，逆寻生月即留停，又从生月宫轮子，顺至生时镇斗星。」
+
+    This was previously a character-for-character copy of ``calc_ming_gong`` —
+    the 安身命例 rule (寅 anchor, 顺 to the month, 逆 to the hour) under the
+    wrong name — so the chart reported 命宫 twice. 斗君 is the 流年's 正月宫 and
+    is therefore indexed by 流年太岁, which the old signature could not express:
+    its output was constant across every 流年.
+    """
+    start = DIZHI.index(liu_year_branch)
+    at_month = (start - (lunar_month - 1)) % 12   # 起正月, 逆至生月
+    return DIZHI[(at_month + hour_branch_index(hour)) % 12]  # 起子, 顺至生时
 
 
 # --------------------------------------------------------------------------- #

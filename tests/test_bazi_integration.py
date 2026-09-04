@@ -451,12 +451,12 @@ def test_tiaohou_records_its_audit_state():
     data = json.loads(p.read_text(encoding="utf-8"))
     audit = data["audit"]
     assert audit["verified_cells"], "no cell recorded as verified"
-    assert len(audit["verified_cells"]) == 35
+    assert len(audit["verified_cells"]) == 46
     assert {"甲|亥", "乙|戌", "辛|卯", "乙|卯"} <= set(audit["verified_cells"])
     # what was examined but deliberately left alone must stay visible
-    assert audit["pending"]["overturned_on_recheck"] == 13
-    assert audit["pending"]["not_examined"] == 12
-    assert len(audit["not_examined_cells"]) == 12
+    assert audit["cells_examined"] == 120 and audit["of_total"] == 120
+    assert audit["pending"]["not_examined"] == 0
+    assert audit["pending"]["overturned_on_recheck"] == 17
     assert "secondary_yongshen" in audit["engine_note"]
 
 
@@ -507,3 +507,37 @@ def test_tiaohou_notes_do_not_contradict_a_named_jishen():
             if re.search(rf"{stem}[^。;,]{{0,6}}(两透|双透)[^。;,]{{0,8}}(富贵|显达|科甲)", note):
                 offenders.append((k, stem))
     assert not offenders, offenders
+
+
+def test_cimu_and_xuetang_match_their_own_reference():
+    """词馆 is the 临官(禄) position of the day stem, 学堂 the 长生 position, and
+    references/19-shensha.md §2.7 tabulates both. The asset shipped 戊申 己酉
+    庚亥 辛子 壬寅 癸卯 for 词馆 — six of ten stems disagreeing with the repo's
+    own reference and with 《三命通会》 卷三 论十干禄.
+    """
+    import json
+    import re
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    md = (root / "references" / "19-shensha.md").read_text(encoding="utf-8")
+    assets = json.loads((root / "assets" / "shensha.json").read_text(encoding="utf-8"))
+    table = {e["name"]: e.get("qi_fa_table", {})
+             for grp in ("ji_shen", "xiong_sha") for e in assets.get(grp, [])}
+
+    def parse(section):
+        # bound at the NEXT bold heading, not the next ###: 学堂 and 词馆 share
+        # one ### section, so splitting on ### swallows both tables.
+        rest = md.split(section)[1]
+        body = rest.split(chr(10) + "**")[0]
+        out = {}
+        pat = r"\|\s*([甲乙丙丁戊己庚辛壬癸、]+)\s*\|\s*([寅卯辰巳午未申酉戌亥子丑])\s*\|"
+        for stems, branch in re.findall(pat, body):
+            for s in stems.split("、"):
+                out[s] = branch
+        return out
+
+    for name, section in (("词馆", "**词馆起法**"), ("学堂", "**学堂起法**")):
+        want = parse(section)
+        assert len(want) == 10, (name, want)
+        got = table[name]
+        assert got == want, f"{name}: asset {got} != reference {want}"
