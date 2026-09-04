@@ -1986,9 +1986,23 @@
       "overturned_on_recheck": 13,
       "no_change_after_derivation": 1,
       "unverifiable": 1,
-      "not_examined": 11
+      "not_examined": 12
     },
-    "pending_note": "复核阶段推翻 13 项 (判为 match 或版本异文, 未改); 导出阶段另有 1 格经重读判定原值可辩护, 亦未改。尚有 11 格未进入本轮比对。",
-    "engine_note": "引擎只消费 primary_yongshen[0] 与 notes (notes 原文出现在输出的 yong_shen.reason 中, 会呈现给用户); secondary_yongshen 与 ji_shen 目前不参与计算, 仅为数据正确性与后续使用而维护。"
+    "pending_note": "复核阶段推翻 13 项 (判为 match 或版本异文, 未改); 导出阶段另有 1 格经重读判定原值可辩护, 亦未改。壬水日主全部 12 格从未进入比对 (该轮 壬 分线取到了原文出处却未产出逐格判定), 故壬日调候尚属未核。",
+    "engine_note": "引擎只消费 primary_yongshen[0] 与 notes (notes 原文出现在输出的 yong_shen.reason 中, 会呈现给用户); secondary_yongshen 与 ji_shen 目前不参与计算, 仅为数据正确性与后续使用而维护。",
+    "not_examined_cells": [
+      "壬|寅",
+      "壬|卯",
+      "壬|辰",
+      "壬|巳",
+      "壬|午",
+      "壬|未",
+      "壬|申",
+      "壬|酉",
+      "壬|戌",
+      "壬|亥",
+      "壬|子",
+      "壬|丑"
+    ]
   }
 }

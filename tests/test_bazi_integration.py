@@ -455,7 +455,8 @@ def test_tiaohou_records_its_audit_state():
     assert {"甲|亥", "乙|戌", "辛|卯", "乙|卯"} <= set(audit["verified_cells"])
     # what was examined but deliberately left alone must stay visible
     assert audit["pending"]["overturned_on_recheck"] == 13
-    assert audit["pending"]["not_examined"] == 11
+    assert audit["pending"]["not_examined"] == 12
+    assert len(audit["not_examined_cells"]) == 12
     assert "secondary_yongshen" in audit["engine_note"]
 
 
