@@ -399,3 +399,58 @@ def test_unknown_city_is_a_clean_error():
                 "--hour", 7, "--gender", "female", "--city", "亚特兰蒂斯",
                 expect_rc=1)
     assert d["error"] == "unknown_city"
+
+
+# --------------------------------------------------------------------------- #
+# 调候用神 — 与《穷通宝鉴》原文核对过的格 (v1.7.1 起逐条进行)
+# --------------------------------------------------------------------------- #
+
+def _tiaohou(key):
+    import json
+    from pathlib import Path
+    p = Path(__file__).resolve().parent.parent / "assets" / "tiaohou.json"
+    return json.loads(p.read_text(encoding="utf-8"))["tiaohou"][key]
+
+
+def test_tiaohou_jia_hai_uses_geng_ding():
+    """《穷通宝鉴·论甲木·三冬甲木》: 「十月甲木, 庚丁为要, 丙火次之。忌壬水泛身,
+    须戊土制之。……用庚, 土妻金子。用丁, 木妻火子。」 — the text names its own
+    用神 as 庚 and 丁.
+
+    The table had primary 丙戊 / secondary 庚 and no 丁 at all: the 「次之」 pair
+    promoted to primary, the 「为要」 pair demoted or dropped. Its note read
+    「丙戊两透」, which is verbatim the 乙木亥月 passage (「取丙为用, 戊土次之。
+    丙戊两透, 科甲定然」) — the 乙 row appears to have been copied onto 甲.
+    """
+    cell = _tiaohou("甲|亥")
+    assert cell["primary_yongshen"] == ["庚", "丁"], cell
+    assert "丙" in cell["secondary_yongshen"] and "戊" in cell["secondary_yongshen"]
+
+
+def test_tiaohou_yi_xu_excludes_bing():
+    """《穷通宝鉴·论乙木·三秋乙木》: 「惟九月耑用癸水, 恐丙暖戊土为病也。」 — 丙 is
+    named as the disease for this month specifically, and the 九月乙木 passage
+    contains no 丙 anywhere.
+
+    The table had primary 癸丙. The 丙 matches 乙|酉's primary (「必取丙火制金为急」)
+    and appears to have bled across from the neighbouring month.
+    """
+    cell = _tiaohou("乙|戌")
+    assert cell["primary_yongshen"] == ["癸"], cell
+    assert "丙" not in cell["primary_yongshen"] + cell["secondary_yongshen"], cell
+    assert cell["secondary_yongshen"] == ["辛"], cell
+
+
+def test_tiaohou_records_its_audit_state():
+    """The asset used to claim only 经现代术数家整理. Which cells have actually
+    been checked against 原文, and which have not, must be visible — otherwise a
+    partially audited table reads as a fully audited one."""
+    import json
+    from pathlib import Path
+    p = Path(__file__).resolve().parent.parent / "assets" / "tiaohou.json"
+    data = json.loads(p.read_text(encoding="utf-8"))
+    audit = data["audit"]
+    assert audit["verified_cells"], "no cell recorded as verified"
+    assert set(audit["verified_cells"]) == {"甲|亥", "乙|戌"}
+    assert audit["pending"]["clear_error_unrechecked"] == 21
+    assert audit["pending"]["edition_variant_unrechecked"] == 26

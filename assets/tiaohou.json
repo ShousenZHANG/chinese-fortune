@@ -1,5 +1,5 @@
 {
-  "source": "《穷通宝鉴》调候用神体系, 经现代术数家整理",
+  "source": "《穷通宝鉴》调候用神体系, 经现代术数家整理; 自 v1.7.1 起逐格与原文核对, 核对状态见 audit 字段。",
   "version": "1.0",
   "method": "扶抑+调候综合; 仅取调候层面, 实际用神需结合八字整体扶抑判定",
   "tiaohou": {
@@ -8,8 +8,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "甲木初生, 寒气未除",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "寅月余寒未尽, 先取丙火暖局, 次用癸水滋润. 丙癸两透, 富贵双全. 不可缺火, 缺则甲木无力.",
       "score_modifier_hot_cold": -1
     },
@@ -18,8 +23,14 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "甲木旺极, 阳和渐升",
-      "primary_yongshen": ["庚", "丙"],
-      "secondary_yongshen": ["戊", "己"],
+      "primary_yongshen": [
+        "庚",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "戊",
+        "己"
+      ],
       "notes": "卯月木旺成林, 需庚金斫削以成栋梁, 丙火泄秀以发英华. 庚丙两透, 一品贵格.",
       "score_modifier_hot_cold": 0
     },
@@ -28,8 +39,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "甲木气泄, 余气犹存",
-      "primary_yongshen": ["庚", "壬"],
-      "secondary_yongshen": ["丁"],
+      "primary_yongshen": [
+        "庚",
+        "壬"
+      ],
+      "secondary_yongshen": [
+        "丁"
+      ],
       "notes": "辰月木气渐衰, 土厚困根, 取庚金疏土斫木, 壬水润泽培根. 庚壬两透为佳, 富贵显达.",
       "score_modifier_hot_cold": 0
     },
@@ -38,8 +54,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "甲木气泄, 火势渐炎",
-      "primary_yongshen": ["癸", "丁"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "癸",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "巳月火盛木枯, 急需癸水润根, 兼用丁火制庚以护木. 癸水透干, 富贵荣华, 缺水则枯朽.",
       "score_modifier_hot_cold": 1
     },
@@ -48,8 +69,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "甲木火炎, 木性焦枯",
-      "primary_yongshen": ["癸", "丁"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "癸",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "午月火炎木焚, 必取癸水救焚为急, 丁火秀气泄之. 癸水通根逢庚源, 主大贵, 无水则贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -58,8 +84,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "甲木枯燥, 土厚埋根",
-      "primary_yongshen": ["癸", "丁"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "癸",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "未月暑气犹存, 木性枯焦, 先取癸水润木, 次用丁火庚金成器. 癸丁两透, 名利双收.",
       "score_modifier_hot_cold": 1
     },
@@ -68,8 +99,14 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "甲木气衰, 金锐木凋",
-      "primary_yongshen": ["丁", "庚"],
-      "secondary_yongshen": ["丙", "壬"],
+      "primary_yongshen": [
+        "丁",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "丙",
+        "壬"
+      ],
       "notes": "申月金气当令, 木遭剋伐, 取丁火炼庚使为我用, 兼丙火暖局. 庚丁两透成器, 文武全才.",
       "score_modifier_hot_cold": 0
     },
@@ -78,8 +115,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "甲木受制, 金气最强",
-      "primary_yongshen": ["丁", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "丁",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "酉月辛金当权, 木气衰极, 取丁火制金为先, 丙火暖木为辅. 丁丙双透, 富而且贵.",
       "score_modifier_hot_cold": 0
     },
@@ -88,8 +130,14 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "甲木衰落, 土厚气燥",
-      "primary_yongshen": ["丁", "癸"],
-      "secondary_yongshen": ["庚", "壬"],
+      "primary_yongshen": [
+        "丁",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "庚",
+        "壬"
+      ],
       "notes": "戌月土燥木枯, 取丁火炼庚成器, 癸水润土养根. 丁癸庚壬配齐, 大富大贵之命.",
       "score_modifier_hot_cold": 0
     },
@@ -98,18 +146,32 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "甲木水冷, 寒气渐重",
-      "primary_yongshen": ["丙", "戊"],
-      "secondary_yongshen": ["庚"],
-      "notes": "亥月水旺木浮, 急需丙火暖局, 戊土止水. 丙戊两透, 衣食丰足, 缺火则寒木不发.",
-      "score_modifier_hot_cold": -1
+      "primary_yongshen": [
+        "庚",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "丙",
+        "戊"
+      ],
+      "notes": "亥月甲木, 庚丁为要: 庚金劈甲, 丁火为佐; 丙火调候次之, 戊土制壬. 庚丁两透又加戊出干, 名去浊留清, 富贵之极. 忌壬水泛木.",
+      "score_modifier_hot_cold": -1,
+      "source": "《穷通宝鉴·论甲木·三冬甲木》十月甲木",
+      "verified_against_source": true
     },
     "甲|子": {
       "day_stem": "甲",
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "甲木寒冻, 水多木漂",
-      "primary_yongshen": ["丁", "丙"],
-      "secondary_yongshen": ["庚", "戊"],
+      "primary_yongshen": [
+        "丁",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚",
+        "戊"
+      ],
       "notes": "子月天寒地冻, 木性严凝, 取丁火解冻为先, 丙火配合温局. 丁庚两透, 主富贵双全.",
       "score_modifier_hot_cold": -2
     },
@@ -118,8 +180,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "甲木冻土, 寒湿交加",
-      "primary_yongshen": ["丁", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "丁",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "丑月寒土冻木, 急需丁丙双火解冻暖局, 庚金辅助成材. 火透根深, 终身富贵享通.",
       "score_modifier_hot_cold": -2
     },
@@ -128,8 +195,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "乙木初生, 阴寒未消",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["己"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "己"
+      ],
       "notes": "寅月乙木嫩弱, 寒气未除, 先取丙火暖之, 癸水润之. 丙癸两透, 文章秀发, 富贵可期.",
       "score_modifier_hot_cold": -1
     },
@@ -138,8 +210,13 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "乙木建禄, 木气旺盛",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "卯月乙木乘旺, 阳和已动, 取丙火向阳, 癸水滋根. 丙癸并透天干, 才华横溢, 名扬四海.",
       "score_modifier_hot_cold": 0
     },
@@ -148,8 +225,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "乙木气泄, 土厚根伤",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "辰月阳气渐升, 土厚埋根, 取癸水润泽, 丙火向阳. 癸丙两透, 仕途显达, 衣食无忧.",
       "score_modifier_hot_cold": 0
     },
@@ -158,8 +240,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "乙木气泄, 火炎土燥",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "巳月火势渐炎, 木气将焚, 急取癸水救焚润根, 丙火配合泄秀. 癸透根深, 富贵齐全.",
       "score_modifier_hot_cold": 1
     },
@@ -168,8 +255,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "乙木火炎, 枯焦之象",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "午月火旺木焚, 急需癸水救燃, 兼庚金生水之源. 癸庚两透, 衣禄丰足, 无水则贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -178,8 +270,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "乙木枯萎, 燥土埋根",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "未月燥土暑气, 木性枯朽, 取癸水润土养根, 丙火向阳泄秀. 癸丙双透, 富贵荣昌.",
       "score_modifier_hot_cold": 1
     },
@@ -188,8 +285,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "乙木气衰, 金气当令",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["己"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "己"
+      ],
       "notes": "申月金气剋木, 取丙火制金护木, 癸水化金生木. 丙癸两透成器, 仕宦显荣, 衣食无缺.",
       "score_modifier_hot_cold": 0
     },
@@ -198,8 +300,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "乙木被剋, 金锐气肃",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["丁"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "丁"
+      ],
       "notes": "酉月辛金当令, 乙木被剋, 必取丙火制金为急, 兼癸水化金. 丙透癸隐, 富而且贵.",
       "score_modifier_hot_cold": 0
     },
@@ -208,18 +315,29 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "乙木气尽, 土燥金多",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["辛"],
-      "notes": "戌月土燥木枯, 急取癸水润根, 丙火向阳暖局. 癸丙双透, 衣禄丰足, 名利双收.",
-      "score_modifier_hot_cold": 0
+      "primary_yongshen": [
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "辛"
+      ],
+      "notes": "九月乙木根枯叶落, 耑用癸水滋养, 辛金为发水之源; 有癸无辛常人, 有辛无癸贫贱. 见甲申时名藤萝系甲, 可秋可冬. 丙火不用 —— 戌为燥土, 三秋总纲明言「恐丙暖戊土为病」.",
+      "score_modifier_hot_cold": 0,
+      "source": "《穷通宝鉴·论乙木·三秋乙木》九月乙木",
+      "verified_against_source": true
     },
     "乙|亥": {
       "day_stem": "乙",
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "乙木水冷, 寒气浸根",
-      "primary_yongshen": ["丙", "戊"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "亥月水旺木浮, 寒气逼人, 取丙火暖局, 戊土止水. 丙戊配齐, 富贵齐全, 缺火则贫寒.",
       "score_modifier_hot_cold": -1
     },
@@ -228,8 +346,13 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "乙木严寒, 水冻木僵",
-      "primary_yongshen": ["丙", "戊"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "子月天寒地冻, 木性严凝, 急需丙火解冻, 戊土制水. 丙火透干根固, 终身富贵双全.",
       "score_modifier_hot_cold": -2
     },
@@ -238,8 +361,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "乙木冻土, 寒湿夹攻",
-      "primary_yongshen": ["丙", "戊"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "丑月寒土冻木, 必取丙火解冻暖局, 戊土止水培根. 丙透通根, 大富大贵, 无火则贫困.",
       "score_modifier_hot_cold": -2
     },
@@ -248,8 +376,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "丙火长生, 阳气初升",
-      "primary_yongshen": ["壬", "庚"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "壬",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "寅月丙火长生, 木旺逢生, 取壬水制火显威, 庚金为水源. 壬庚两透, 才名俱备, 富贵双全.",
       "score_modifier_hot_cold": 0
     },
@@ -258,8 +391,13 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "丙火得地, 木气助势",
-      "primary_yongshen": ["壬", "己"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "壬",
+        "己"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "卯月丙火渐旺, 木盛火生, 取壬水制火为先, 己土泄秀辅之. 壬己两透, 仕途亨通, 衣禄丰足.",
       "score_modifier_hot_cold": 1
     },
@@ -268,8 +406,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "丙火渐炎, 土泄气生",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "辰月丙火渐盛, 土厚泄气, 取壬水制火, 甲木疏土生火. 壬甲两透, 文章秀发, 名利双全.",
       "score_modifier_hot_cold": 1
     },
@@ -278,8 +421,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "丙火建禄, 阳极炎热",
-      "primary_yongshen": ["壬", "庚"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "壬",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "巳月丙火乘旺, 火势炎上, 必取壬水制火为急, 庚金为水之源. 壬庚两透, 一品高官.",
       "score_modifier_hot_cold": 2
     },
@@ -288,8 +436,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "丙火羊刃, 火炎之极",
-      "primary_yongshen": ["壬", "庚"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "壬",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "午月丙火羊刃, 火炎极烈, 急取壬水制火, 庚金辅之为源. 壬庚两透通根, 富贵冠世.",
       "score_modifier_hot_cold": 2
     },
@@ -298,8 +451,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "丙火暑气, 土燥泄气",
-      "primary_yongshen": ["壬", "庚"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "壬",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "未月暑气犹炎, 土燥火炎, 取壬水救燃为先, 庚金生水, 甲木疏土. 壬庚两透, 福寿双全.",
       "score_modifier_hot_cold": 2
     },
@@ -308,8 +466,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "丙火气衰, 金水渐旺",
-      "primary_yongshen": ["壬", "戊"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "壬",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "申月丙火退气, 庚金壬水皆生, 取壬水制火, 戊土止水护火. 壬戊两透, 文武兼资.",
       "score_modifier_hot_cold": 0
     },
@@ -318,8 +481,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "丙火日落, 金气最旺",
-      "primary_yongshen": ["壬", "癸"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "壬",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "酉月丙火渐衰, 取壬水辉映成既济, 癸水辅之, 甲木为根. 壬甲两透, 文章显达, 富贵显荣.",
       "score_modifier_hot_cold": 0
     },
@@ -328,8 +496,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "丙火入墓, 土燥气衰",
-      "primary_yongshen": ["甲", "壬"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "甲",
+        "壬"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "戌月丙火入库, 土燥晦光, 取甲木疏土生火, 壬水辅以润燥. 甲壬两透, 富贵荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -338,8 +511,14 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "丙火失令, 水冷火寒",
-      "primary_yongshen": ["甲", "戊"],
-      "secondary_yongshen": ["庚", "壬"],
+      "primary_yongshen": [
+        "甲",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "庚",
+        "壬"
+      ],
       "notes": "亥月水旺火衰, 取甲木化水生火, 戊土止水护火. 甲戊两透, 富贵显达, 缺木则寒火无根.",
       "score_modifier_hot_cold": -1
     },
@@ -348,8 +527,14 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "丙火胎地, 水寒火灭",
-      "primary_yongshen": ["壬", "戊"],
-      "secondary_yongshen": ["甲", "己"],
+      "primary_yongshen": [
+        "壬",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "甲",
+        "己"
+      ],
       "notes": "子月水旺火微, 急取壬水辉映成既济, 戊土制水护火. 壬戊两透, 衣禄丰足, 名利双收.",
       "score_modifier_hot_cold": -2
     },
@@ -358,8 +543,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "丙火寒土, 火气微弱",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "丑月寒土冻金, 火气微寒, 取壬水辉映, 甲木生火暖局. 壬甲两透, 富贵双全, 大器晚成.",
       "score_modifier_hot_cold": -2
     },
@@ -368,8 +558,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "丁火得生, 木气助势",
-      "primary_yongshen": ["庚", "甲"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "庚",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "寅月丁火得生于木, 取庚金劈甲引丁, 甲木生火. 庚甲两透, 文章显达, 衣禄丰足.",
       "score_modifier_hot_cold": 0
     },
@@ -378,8 +573,13 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "丁火渐旺, 湿木难焚",
-      "primary_yongshen": ["庚", "甲"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "庚",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "卯月乙木湿润难生丁火, 必取庚金劈甲, 甲木助丁. 庚甲两透, 仕途显达, 富贵荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -388,8 +588,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "丁火渐炎, 土泄气盛",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "辰月土厚晦火, 取甲木疏土生火, 庚金劈甲引丁. 甲庚两透, 富贵双全, 名利亨通.",
       "score_modifier_hot_cold": 1
     },
@@ -398,8 +603,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "丁火当旺, 木助火炎",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "巳月丁火渐旺, 取甲木生火为体, 庚金劈甲为用. 甲庚两透, 富贵显达, 仕途亨通.",
       "score_modifier_hot_cold": 2
     },
@@ -408,8 +618,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "丁火建禄, 阳气极盛",
-      "primary_yongshen": ["壬", "庚"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "壬",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "午月丁火乘旺, 火势炎烈, 急取壬水济火为急, 庚金为水之源. 壬庚两透, 名利双收.",
       "score_modifier_hot_cold": 2
     },
@@ -418,8 +633,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "丁火暑气, 燥土晦光",
-      "primary_yongshen": ["甲", "壬"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "甲",
+        "壬"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "未月暑气犹炎, 燥土晦火, 取甲木生火疏土, 壬水润燥济炎. 甲壬两透, 福寿双全, 富贵荣华.",
       "score_modifier_hot_cold": 1
     },
@@ -428,8 +648,14 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "丁火退气, 金水当令",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["丙", "戊"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "丙",
+        "戊"
+      ],
       "notes": "申月丁火气衰, 庚金壬水当令, 取甲木生火为根, 庚金劈甲为用. 甲庚两透, 富贵双全.",
       "score_modifier_hot_cold": 0
     },
@@ -438,8 +664,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "丁火失令, 金气最强",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "酉月辛金当令, 丁火无根, 取甲木生火为体, 庚金劈甲为用. 甲庚两透, 文章秀气, 富贵荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -448,8 +679,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "丁火入墓, 燥土晦光",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "戌月丁火入库, 燥土晦光, 必取甲木疏土生火, 庚金劈甲为薪. 甲庚两透, 一品高官.",
       "score_modifier_hot_cold": 0
     },
@@ -458,8 +694,13 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "丁火胎地, 水冷火灭",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "亥月水旺火灭, 取甲木化水生火为先, 庚金劈甲引丁. 甲庚两透, 富贵双全, 缺木则火无根.",
       "score_modifier_hot_cold": -1
     },
@@ -468,8 +709,13 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "丁火绝地, 水寒火尽",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "子月天寒地冻, 丁火无根, 急取甲木生火, 庚金劈甲, 戊土止水. 甲庚两透, 富贵显达.",
       "score_modifier_hot_cold": -2
     },
@@ -478,8 +724,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "丁火寒土, 火气几灭",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "丑月寒土冻金, 丁火微弱, 取甲木生火暖局, 庚金劈甲为薪. 甲庚两透, 富贵双全, 名扬天下.",
       "score_modifier_hot_cold": -2
     },
@@ -488,8 +739,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "戊土初春, 寒气未除",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "寅月戊土犹寒, 木气剋身, 取丙火暖局解寒, 甲木疏土生火. 丙甲两透, 富贵显达, 仕途亨通.",
       "score_modifier_hot_cold": -1
     },
@@ -498,8 +754,13 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "戊土被剋, 木旺土虚",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "卯月木旺剋土, 戊土虚弱, 取丙火暖局生土, 甲木疏土通气. 丙甲两透, 衣禄丰足, 名利双全.",
       "score_modifier_hot_cold": 0
     },
@@ -508,8 +769,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "戊土得地, 木旺余气",
-      "primary_yongshen": ["甲", "丙"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "甲",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "辰月戊土得令, 取甲木疏土通气, 丙火暖局生土, 癸水润土. 甲丙癸俱透, 富贵双全, 福禄荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -518,8 +784,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "戊土禄地, 火炎土燥",
-      "primary_yongshen": ["甲", "丙"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "甲",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "巳月戊土建禄, 火炎土燥, 取甲木疏土, 癸水润土, 丙火向阳. 甲癸两透, 富贵双全, 仕途亨通.",
       "score_modifier_hot_cold": 2
     },
@@ -528,8 +799,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "戊土阳刃, 火土俱旺",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "午月戊土阳刃, 火炎土燥, 急取壬水润土, 甲木疏土. 壬甲两透, 富贵冠世, 名扬四海.",
       "score_modifier_hot_cold": 2
     },
@@ -538,8 +814,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "戊土暑气, 燥土埋金",
-      "primary_yongshen": ["癸", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "癸",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "未月暑气犹炎, 燥土厚重, 急取癸水润土为先, 甲木疏土为用. 癸甲两透, 富贵双全, 仕途显达.",
       "score_modifier_hot_cold": 2
     },
@@ -548,8 +829,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "戊土泄气, 金水当令",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "申月戊土泄气, 金多水生, 取丙火暖土生身, 癸水润土滋木. 丙癸两透, 衣禄丰足, 富贵齐全.",
       "score_modifier_hot_cold": 0
     },
@@ -558,8 +844,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "戊土气泄, 金气最强",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "酉月戊土被泄, 取丙火生土为先, 癸水润土滋金. 丙癸两透, 富贵双全, 文章秀发, 名利双收.",
       "score_modifier_hot_cold": 0
     },
@@ -568,8 +859,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "戊土归库, 土燥气盛",
-      "primary_yongshen": ["甲", "癸"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "甲",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "戌月戊土归库, 土燥气盛, 取甲木疏土通气, 癸水润燥滋根. 甲癸两透, 富贵显达, 福寿双全.",
       "score_modifier_hot_cold": 0
     },
@@ -578,8 +874,13 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "戊土寒湿, 水冷土冻",
-      "primary_yongshen": ["甲", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "甲",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "亥月水旺土寒, 取甲木疏土, 丙火暖局解寒. 甲丙两透, 富贵双全, 缺火则寒土无生气.",
       "score_modifier_hot_cold": -1
     },
@@ -588,8 +889,13 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "戊土严寒, 水旺土冻",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "子月天寒地冻, 戊土严凝, 急取丙火解冻暖局, 甲木疏土通气. 丙甲两透, 富贵显达, 福寿双全.",
       "score_modifier_hot_cold": -2
     },
@@ -598,8 +904,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "戊土寒冻, 土厚凝结",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "丑月寒土凝结, 必取丙火解冻暖局, 甲木疏土通气. 丙甲两透, 大富大贵, 名利双全, 福寿绵长.",
       "score_modifier_hot_cold": -2
     },
@@ -608,8 +919,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "己土初春, 田园冻土",
-      "primary_yongshen": ["丙", "庚"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "寅月己土卑湿, 木旺剋身, 取丙火暖局解寒, 庚金制甲护身. 丙庚两透, 衣禄丰足, 富贵显达.",
       "score_modifier_hot_cold": -1
     },
@@ -618,8 +934,13 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "己土被剋, 木旺土虚",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "卯月乙木剋土, 己土虚弱, 取丙火生身解剋, 甲木官星辅之. 丙甲两透, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": 0
     },
@@ -628,8 +949,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "己土得地, 木气余存",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "辰月己土渐厚, 取丙火暖局, 癸水润土, 甲木疏通. 丙癸甲俱透, 富贵双全, 福禄荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -638,8 +964,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "己土火炎, 田土燥裂",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "巳月火炎土燥, 急取癸水润土为急, 兼丙火暖局调候. 癸丙两透, 富贵双全, 仕途显达.",
       "score_modifier_hot_cold": 2
     },
@@ -648,8 +979,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "己土火炎, 燥裂之极",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "午月火炎土焦, 急需癸水救焚润土, 丙火配合调候. 癸水通根, 富贵冠世, 缺水则贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -658,8 +994,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "己土暑气, 燥土难滋",
-      "primary_yongshen": ["癸", "丙"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "癸",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "未月暑土干燥, 必取癸水润土为先, 丙火暖局, 甲木疏土. 癸甲丙俱透, 富贵荣华, 福寿双全.",
       "score_modifier_hot_cold": 2
     },
@@ -668,8 +1009,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "己土泄气, 金多土虚",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "申月金多泄土, 取丙火生土为先, 癸水润土滋金. 丙癸两透, 衣禄丰足, 富贵双全, 仕途亨通.",
       "score_modifier_hot_cold": 0
     },
@@ -678,8 +1024,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "己土气泄, 金气最强",
-      "primary_yongshen": ["丙", "癸"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "酉月辛金当令, 土气被泄, 急取丙火生身, 癸水润土. 丙癸两透, 富贵双全, 文章秀发.",
       "score_modifier_hot_cold": 0
     },
@@ -688,8 +1039,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "己土归库, 土燥金多",
-      "primary_yongshen": ["甲", "丙"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "甲",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "戌月土厚气燥, 取甲木疏土通气, 丙火暖局向阳, 癸水润土. 甲丙癸俱透, 富贵显达, 福禄绵长.",
       "score_modifier_hot_cold": 0
     },
@@ -698,8 +1054,13 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "己土水冷, 寒湿浸根",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "亥月水旺土寒, 取丙火暖局解寒, 甲木疏土通气. 丙甲两透, 富贵双全, 衣禄丰足, 名利亨通.",
       "score_modifier_hot_cold": -1
     },
@@ -708,8 +1069,13 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "己土严寒, 水冻土凝",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "子月天寒地冻, 己土严凝, 急取丙火解冻, 甲木疏土. 丙甲两透, 富贵显达, 福寿双全, 名利亨通.",
       "score_modifier_hot_cold": -2
     },
@@ -718,8 +1084,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "己土寒冻, 田土僵结",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "丑月寒土凝结, 必取丙火解冻暖局, 甲木疏土通气. 丙甲两透, 大富大贵, 终身亨通, 福寿绵长.",
       "score_modifier_hot_cold": -2
     },
@@ -728,8 +1099,14 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "庚金绝地, 木旺金衰",
-      "primary_yongshen": ["丙", "甲"],
-      "secondary_yongshen": ["庚", "丁"],
+      "primary_yongshen": [
+        "丙",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "庚",
+        "丁"
+      ],
       "notes": "寅月金绝木旺, 取丙火暖局解寒, 甲木为财. 丙甲两透, 富贵双全, 缺火则金寒无用.",
       "score_modifier_hot_cold": -1
     },
@@ -738,8 +1115,14 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "庚金胎地, 木旺金弱",
-      "primary_yongshen": ["丁", "甲"],
-      "secondary_yongshen": ["丙", "庚"],
+      "primary_yongshen": [
+        "丁",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙",
+        "庚"
+      ],
       "notes": "卯月木旺金弱, 取丁火炼金成器, 甲木助丁. 丁甲两透, 富贵显达, 仕途亨通, 名利双全.",
       "score_modifier_hot_cold": 0
     },
@@ -748,8 +1131,14 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "庚金养地, 土多金埋",
-      "primary_yongshen": ["甲", "丁"],
-      "secondary_yongshen": ["壬", "癸"],
+      "primary_yongshen": [
+        "甲",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "壬",
+        "癸"
+      ],
       "notes": "辰月土厚埋金, 取甲木疏土, 丁火炼金成器. 甲丁两透, 富贵双全, 名利双收, 福禄荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -758,8 +1147,14 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "庚金长生, 火旺金熔",
-      "primary_yongshen": ["壬", "戊"],
-      "secondary_yongshen": ["丙", "丁"],
+      "primary_yongshen": [
+        "壬",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "丙",
+        "丁"
+      ],
       "notes": "巳月火旺金熔, 急取壬水救之, 戊土制火生金. 壬戊两透, 富贵双全, 名利亨通, 仕途显达.",
       "score_modifier_hot_cold": 2
     },
@@ -768,8 +1163,14 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "庚金败地, 火炎金销",
-      "primary_yongshen": ["壬", "癸"],
-      "secondary_yongshen": ["戊", "己"],
+      "primary_yongshen": [
+        "壬",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "戊",
+        "己"
+      ],
       "notes": "午月火旺剋金, 急需壬癸救焚, 戊己土晦火生金. 壬癸透干, 富贵冠世, 无水则贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -778,8 +1179,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "庚金冠带, 燥土埋金",
-      "primary_yongshen": ["丁", "甲"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "丁",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "未月暑土燥金, 取丁火炼金, 甲木引丁, 壬水润土. 丁甲两透, 富贵双全, 仕途亨通, 名扬四海.",
       "score_modifier_hot_cold": 1
     },
@@ -788,8 +1194,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "庚金建禄, 金气最旺",
-      "primary_yongshen": ["丁", "甲"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "丁",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "申月金气当旺, 取丁火炼金成器, 甲木引丁为薪. 丁甲两透, 富贵双全, 文武兼资, 名扬天下.",
       "score_modifier_hot_cold": 0
     },
@@ -798,8 +1209,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "庚金阳刃, 金气最强",
-      "primary_yongshen": ["丁", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "丁",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "酉月金气最旺, 必取丁火锻炼成器, 甲木引丁为薪. 丁甲两透, 富贵冠世, 一品高官, 显赫无比.",
       "score_modifier_hot_cold": 0
     },
@@ -808,8 +1224,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "庚金衰地, 土厚金埋",
-      "primary_yongshen": ["甲", "壬"],
-      "secondary_yongshen": ["丁"],
+      "primary_yongshen": [
+        "甲",
+        "壬"
+      ],
+      "secondary_yongshen": [
+        "丁"
+      ],
       "notes": "戌月土燥埋金, 取甲木疏土通气, 壬水润燥, 丁火炼金. 甲壬两透, 富贵双全, 仕途亨通.",
       "score_modifier_hot_cold": 0
     },
@@ -818,8 +1239,13 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "庚金病地, 水寒金冷",
-      "primary_yongshen": ["丁", "丙"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丁",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "亥月水冷金寒, 取丁火炼金, 丙火暖局调候. 丁丙两透, 富贵双全, 名利亨通, 仕途显达.",
       "score_modifier_hot_cold": -1
     },
@@ -828,8 +1254,14 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "庚金死地, 水冷金沉",
-      "primary_yongshen": ["丁", "丙"],
-      "secondary_yongshen": ["甲", "戊"],
+      "primary_yongshen": [
+        "丁",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "甲",
+        "戊"
+      ],
       "notes": "子月水冷金寒, 急取丁火炼金, 丙火暖局调候, 戊土止水. 丁丙两透, 富贵显达, 名扬四海.",
       "score_modifier_hot_cold": -2
     },
@@ -838,8 +1270,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "庚金墓地, 寒土埋金",
-      "primary_yongshen": ["丙", "丁"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "丑月寒土冻金, 取丙火解冻暖局, 丁火炼金成器, 甲木助丁. 丙丁甲俱透, 富贵双全, 福寿绵长.",
       "score_modifier_hot_cold": -2
     },
@@ -848,8 +1285,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "辛金绝地, 木旺火生",
-      "primary_yongshen": ["己", "壬"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "己",
+        "壬"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "寅月辛金气弱, 木旺火生, 取己土生身, 壬水洗淘. 己壬两透, 富贵双全, 仕途亨通, 文章秀气.",
       "score_modifier_hot_cold": -1
     },
@@ -858,8 +1300,14 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "辛金气衰, 木旺金弱",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["戊", "己"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "戊",
+        "己"
+      ],
       "notes": "卯月辛金虚弱, 取壬水淘洗发辉, 戊己土生身. 壬戊两透, 富贵显达, 名利双全, 仕途亨通.",
       "score_modifier_hot_cold": 0
     },
@@ -868,8 +1316,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "辛金养地, 土厚埋金",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "辰月土厚埋金, 取壬水淘洗, 甲木疏土. 壬甲两透, 富贵双全, 仕途显达, 名利双收, 福禄荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -878,8 +1331,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "辛金长生, 火旺金熔",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "巳月火旺金熔, 急取壬水救焚淘洗, 甲木辅之. 壬甲两透, 富贵双全, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": 2
     },
@@ -888,8 +1346,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "辛金败地, 火炎金销",
-      "primary_yongshen": ["壬", "己"],
-      "secondary_yongshen": ["癸"],
+      "primary_yongshen": [
+        "壬",
+        "己"
+      ],
+      "secondary_yongshen": [
+        "癸"
+      ],
       "notes": "午月火炎金销, 必取壬水救焚, 己土晦火生身. 壬己两透, 富贵冠世, 无水则金销贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -898,8 +1361,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "辛金冠带, 燥土埋金",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "未月燥土埋金, 取壬水淘洗为先, 甲木疏土通气. 壬甲两透, 富贵双全, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": 1
     },
@@ -908,8 +1376,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "辛金禄地, 金水相生",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "申月金水相生, 取壬水淘洗辉光, 甲木为财. 壬甲两透, 富贵双全, 文章显达, 仕途亨通.",
       "score_modifier_hot_cold": 0
     },
@@ -918,8 +1391,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "辛金建禄, 金气最旺",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "酉月辛金乘旺, 取壬水淘洗发辉, 甲木为财. 壬甲两透, 富贵双全, 文采过人, 名利双收.",
       "score_modifier_hot_cold": 0
     },
@@ -928,8 +1406,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "辛金衰地, 土厚埋金",
-      "primary_yongshen": ["壬", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "壬",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "戌月土厚埋金, 取壬水淘洗, 甲木疏土通气. 壬甲两透, 富贵显达, 仕途亨通, 名利双全.",
       "score_modifier_hot_cold": 0
     },
@@ -938,8 +1421,13 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "辛金水旺, 寒金被泄",
-      "primary_yongshen": ["壬", "丙"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "壬",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "亥月水旺金寒, 取壬水淘洗辉光, 丙火暖局调候. 壬丙两透, 富贵双全, 名利亨通, 仕途显达.",
       "score_modifier_hot_cold": -1
     },
@@ -948,8 +1436,14 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "辛金水冷, 金寒水沉",
-      "primary_yongshen": ["丙", "戊"],
-      "secondary_yongshen": ["壬", "甲"],
+      "primary_yongshen": [
+        "丙",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "壬",
+        "甲"
+      ],
       "notes": "子月天寒水冻, 辛金沉寒, 急取丙火暖局调候, 戊土制水. 丙戊两透, 富贵显达, 名扬天下.",
       "score_modifier_hot_cold": -2
     },
@@ -958,8 +1452,14 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "辛金墓地, 寒土埋金",
-      "primary_yongshen": ["丙", "壬"],
-      "secondary_yongshen": ["戊", "己"],
+      "primary_yongshen": [
+        "丙",
+        "壬"
+      ],
+      "secondary_yongshen": [
+        "戊",
+        "己"
+      ],
       "notes": "丑月寒土冻金, 必取丙火解冻暖局, 壬水淘洗辉光. 丙壬两透, 富贵双全, 福寿绵长, 名利亨通.",
       "score_modifier_hot_cold": -2
     },
@@ -968,8 +1468,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "壬水病地, 木旺水泄",
-      "primary_yongshen": ["庚", "丙"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "庚",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "寅月木旺泄水, 取庚金发水源, 丙火暖局调候. 庚丙两透, 富贵双全, 仕途显达, 名利亨通.",
       "score_modifier_hot_cold": -1
     },
@@ -978,8 +1483,14 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "壬水死地, 木旺水弱",
-      "primary_yongshen": ["庚", "戊"],
-      "secondary_yongshen": ["辛", "丙"],
+      "primary_yongshen": [
+        "庚",
+        "戊"
+      ],
+      "secondary_yongshen": [
+        "辛",
+        "丙"
+      ],
       "notes": "卯月木旺泄水, 取庚金发水源, 戊土制木止水. 庚戊两透, 富贵显达, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": 0
     },
@@ -988,8 +1499,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "壬水入墓, 土厚水困",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "辰月土厚困水, 取甲木疏土, 庚金发水源. 甲庚两透, 富贵双全, 仕途显达, 名利双收, 福禄荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -998,8 +1514,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "壬水绝地, 火炎水竭",
-      "primary_yongshen": ["庚", "癸"],
-      "secondary_yongshen": ["辛"],
+      "primary_yongshen": [
+        "庚",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "辛"
+      ],
       "notes": "巳月火旺水绝, 急取庚金发水源, 癸水帮身. 庚癸两透, 富贵双全, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": 2
     },
@@ -1008,8 +1529,13 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "壬水胎地, 火炎水涸",
-      "primary_yongshen": ["庚", "癸"],
-      "secondary_yongshen": ["辛"],
+      "primary_yongshen": [
+        "庚",
+        "癸"
+      ],
+      "secondary_yongshen": [
+        "辛"
+      ],
       "notes": "午月火炎水涸, 急取庚辛金发水源, 癸水帮身解炎. 庚癸两透, 富贵冠世, 名利亨通, 无水则贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -1018,8 +1544,14 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "壬水养地, 燥土剋水",
-      "primary_yongshen": ["辛", "甲"],
-      "secondary_yongshen": ["庚", "癸"],
+      "primary_yongshen": [
+        "辛",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "庚",
+        "癸"
+      ],
       "notes": "未月暑土剋水, 取辛金发水源, 甲木疏土. 辛甲两透, 富贵双全, 仕途亨通, 文章显达, 名利双收.",
       "score_modifier_hot_cold": 1
     },
@@ -1028,8 +1560,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "壬水长生, 金水相生",
-      "primary_yongshen": ["戊", "丁"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "戊",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "申月金水相生, 壬水汪洋, 取戊土制水筑堤, 丁火制金生身. 戊丁两透, 富贵显达, 仕途亨通.",
       "score_modifier_hot_cold": 0
     },
@@ -1038,8 +1575,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "壬水沐浴, 金白水清",
-      "primary_yongshen": ["甲", "庚"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "甲",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "酉月金气当旺, 水势渐增, 取甲木泄水秀气, 庚金辅之. 甲庚两透, 富贵双全, 文章显达, 名利双收.",
       "score_modifier_hot_cold": 0
     },
@@ -1048,8 +1590,13 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "壬水冠带, 土旺剋水",
-      "primary_yongshen": ["甲", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "甲",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "戌月土旺剋水, 取甲木疏土, 丙火暖局调候. 甲丙两透, 富贵双全, 仕途显达, 名利亨通.",
       "score_modifier_hot_cold": 0
     },
@@ -1058,8 +1605,13 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "壬水建禄, 水旺寒冷",
-      "primary_yongshen": ["戊", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "戊",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "亥月壬水建禄, 水势汪洋, 取戊土筑堤制水, 丙火暖局解寒. 戊丙两透, 富贵双全, 名利亨通.",
       "score_modifier_hot_cold": -1
     },
@@ -1068,8 +1620,13 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "壬水阳刃, 水冻寒极",
-      "primary_yongshen": ["戊", "丙"],
-      "secondary_yongshen": ["丁"],
+      "primary_yongshen": [
+        "戊",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "丁"
+      ],
       "notes": "子月壬水羊刃, 水冻寒极, 急取戊土制水筑堤, 丙火解冻暖局. 戊丙两透, 富贵冠世, 名扬天下.",
       "score_modifier_hot_cold": -2
     },
@@ -1078,8 +1635,13 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "壬水寒冻, 土冻水凝",
-      "primary_yongshen": ["丙", "丁"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "丑月寒土冻水, 必取丙火解冻暖局, 丁火配合调候, 甲木辅之. 丙丁两透, 富贵显达, 福寿绵长.",
       "score_modifier_hot_cold": -2
     },
@@ -1088,8 +1650,13 @@
       "month_branch": "寅",
       "season": "初春",
       "wuxing_state": "癸水沐浴, 木旺水弱",
-      "primary_yongshen": ["辛", "丙"],
-      "secondary_yongshen": ["庚"],
+      "primary_yongshen": [
+        "辛",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "庚"
+      ],
       "notes": "寅月木旺泄水, 取辛金发水源, 丙火暖局调候. 辛丙两透, 富贵双全, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": -1
     },
@@ -1098,8 +1665,13 @@
       "month_branch": "卯",
       "season": "仲春",
       "wuxing_state": "癸水长生, 木盛水泄",
-      "primary_yongshen": ["庚", "辛"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "庚",
+        "辛"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "卯月木旺泄水太过, 取庚辛金发水源生身. 庚辛透干, 富贵双全, 仕途显达, 文章秀气, 名扬天下.",
       "score_modifier_hot_cold": 0
     },
@@ -1108,8 +1680,13 @@
       "month_branch": "辰",
       "season": "暮春",
       "wuxing_state": "癸水冠带, 土多水困",
-      "primary_yongshen": ["丙", "辛"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "辛"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "辰月土厚水弱, 取丙火暖局调候, 辛金发水源. 丙辛两透, 富贵双全, 仕途亨通, 名利双收, 福寿荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -1118,8 +1695,13 @@
       "month_branch": "巳",
       "season": "孟夏",
       "wuxing_state": "癸水胎地, 火旺水绝",
-      "primary_yongshen": ["辛", "庚"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "辛",
+        "庚"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "巳月火旺水绝, 急取辛金庚金发水源, 壬水帮身. 辛庚两透, 富贵显达, 仕途亨通, 名利双全.",
       "score_modifier_hot_cold": 2
     },
@@ -1128,8 +1710,14 @@
       "month_branch": "午",
       "season": "仲夏",
       "wuxing_state": "癸水绝地, 火炎水涸",
-      "primary_yongshen": ["庚", "辛"],
-      "secondary_yongshen": ["壬", "癸"],
+      "primary_yongshen": [
+        "庚",
+        "辛"
+      ],
+      "secondary_yongshen": [
+        "壬",
+        "癸"
+      ],
       "notes": "午月火炎水涸, 急需庚辛金发水源, 壬癸水帮身解炎. 庚辛透干通根, 富贵双全, 无金水则贫夭.",
       "score_modifier_hot_cold": 2
     },
@@ -1138,8 +1726,13 @@
       "month_branch": "未",
       "season": "季夏",
       "wuxing_state": "癸水墓地, 燥土剋水",
-      "primary_yongshen": ["庚", "辛"],
-      "secondary_yongshen": ["壬"],
+      "primary_yongshen": [
+        "庚",
+        "辛"
+      ],
+      "secondary_yongshen": [
+        "壬"
+      ],
       "notes": "未月暑土剋水, 取庚辛金发水源, 壬水帮身. 庚辛两透, 富贵双全, 仕途显达, 名利亨通, 福寿绵长.",
       "score_modifier_hot_cold": 1
     },
@@ -1148,8 +1741,13 @@
       "month_branch": "申",
       "season": "孟秋",
       "wuxing_state": "癸水死地, 金水相生",
-      "primary_yongshen": ["丁", "甲"],
-      "secondary_yongshen": ["丙"],
+      "primary_yongshen": [
+        "丁",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "丙"
+      ],
       "notes": "申月金水相生, 癸水有源, 取丁火制金生土, 甲木助丁. 丁甲两透, 富贵双全, 仕途亨通, 名扬四海.",
       "score_modifier_hot_cold": 0
     },
@@ -1158,8 +1756,13 @@
       "month_branch": "酉",
       "season": "仲秋",
       "wuxing_state": "癸水病地, 金白水清",
-      "primary_yongshen": ["辛", "丙"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "辛",
+        "丙"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "酉月金白水清, 取辛金辅水, 丙火暖局调候. 辛丙两透, 富贵双全, 文章秀气, 仕途显达, 名利双收.",
       "score_modifier_hot_cold": 0
     },
@@ -1168,8 +1771,14 @@
       "month_branch": "戌",
       "season": "季秋",
       "wuxing_state": "癸水衰地, 土旺剋水",
-      "primary_yongshen": ["辛", "甲"],
-      "secondary_yongshen": ["壬", "癸"],
+      "primary_yongshen": [
+        "辛",
+        "甲"
+      ],
+      "secondary_yongshen": [
+        "壬",
+        "癸"
+      ],
       "notes": "戌月土厚剋水, 取辛金发水源, 甲木疏土通气. 辛甲两透, 富贵显达, 仕途亨通, 名利双全, 福禄荣昌.",
       "score_modifier_hot_cold": 0
     },
@@ -1178,8 +1787,14 @@
       "month_branch": "亥",
       "season": "孟冬",
       "wuxing_state": "癸水帝旺, 水盛寒冷",
-      "primary_yongshen": ["庚", "辛"],
-      "secondary_yongshen": ["丙", "戊"],
+      "primary_yongshen": [
+        "庚",
+        "辛"
+      ],
+      "secondary_yongshen": [
+        "丙",
+        "戊"
+      ],
       "notes": "亥月水势汪洋, 取庚辛金辅水, 丙火戊土暖局制水. 庚丙两透, 富贵双全, 仕途亨通, 名利双收.",
       "score_modifier_hot_cold": -1
     },
@@ -1188,8 +1803,13 @@
       "month_branch": "子",
       "season": "仲冬",
       "wuxing_state": "癸水建禄, 水冻寒极",
-      "primary_yongshen": ["丙", "辛"],
-      "secondary_yongshen": ["戊"],
+      "primary_yongshen": [
+        "丙",
+        "辛"
+      ],
+      "secondary_yongshen": [
+        "戊"
+      ],
       "notes": "子月天寒水冻, 急取丙火解冻暖局调候, 辛金辅水. 丙辛两透, 富贵冠世, 名扬天下, 福寿双全.",
       "score_modifier_hot_cold": -2
     },
@@ -1198,10 +1818,32 @@
       "month_branch": "丑",
       "season": "季冬",
       "wuxing_state": "癸水冠带, 寒土冻水",
-      "primary_yongshen": ["丙", "丁"],
-      "secondary_yongshen": ["甲"],
+      "primary_yongshen": [
+        "丙",
+        "丁"
+      ],
+      "secondary_yongshen": [
+        "甲"
+      ],
       "notes": "丑月寒土冻水, 必取丙火解冻暖局, 丁火配合调候. 丙丁两透通根, 富贵显达, 福寿绵长, 名利亨通.",
       "score_modifier_hot_cold": -2
     }
+  },
+  "audit": {
+    "method": "每格与《穷通宝鉴》原文比对 (维基文库 / ctext / sajumania 等多本互校), 不一致者再由独立 agent 逐条反向复核; 仅复核后仍成立者才改表。",
+    "cells_examined": 109,
+    "of_total": 120,
+    "verified_cells": [
+      "甲|亥",
+      "乙|戌"
+    ],
+    "verified_note": "这两格经原文比对判为明显错误, 并通过独立复核 (复核结论: 维持), 已修正。",
+    "pending": {
+      "clear_error_unrechecked": 21,
+      "edition_variant_unrechecked": 26,
+      "unverifiable": 1,
+      "not_examined": 11
+    },
+    "pending_note": "其余不一致项尚未通过独立复核 (复核阶段中断), 因此一律未改。「edition-variant」多为各版本主次归属之别, 未必是错。在复核完成前, 除上列 verified_cells 外, 本表仍应视为「未与原文逐格核对」。"
   }
 }
