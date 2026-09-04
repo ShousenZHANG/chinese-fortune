@@ -541,3 +541,31 @@ def test_cimu_and_xuetang_match_their_own_reference():
         assert len(want) == 10, (name, want)
         got = table[name]
         assert got == want, f"{name}: asset {got} != reference {want}"
+
+
+def test_fuxing_guiren_is_the_day_stem_shishen_under_wushu_dun():
+    """福星贵人 was flagged as a clear-error against 《三命通会》「丁宜亥」 — but
+    the repo derives it from the DAY stem, and every one of the ten values is
+    exactly where that day's 食神 falls in the 五鼠遁 hour cycle. Deriving the
+    table from the rule reproduces the asset, so the entry is regular, not
+    copied; the 起法 is now recorded on the entry and locked here.
+    """
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    assets = json.loads((root / "assets" / "shensha.json").read_text(encoding="utf-8"))
+    got = next(e for e in assets["ji_shen"] if e["name"] == "福星贵人")
+
+    gan = "甲乙丙丁戊己庚辛壬癸"
+    zhi = "子丑寅卯辰巳午未申酉戌亥"
+    # 五鼠遁: 甲己起甲子, 乙庚起丙子, 丙辛起戊子, 丁壬起庚子, 戊癸起壬子.
+    first_hour_stem = {"甲": "甲", "己": "甲", "乙": "丙", "庚": "丙", "丙": "戊",
+                       "辛": "戊", "丁": "庚", "壬": "庚", "戊": "壬", "癸": "壬"}
+    want = {}
+    for day_stem in gan:
+        shi_shen = gan[(gan.index(day_stem) + 2) % 10]   # 食神: 同性而我生
+        start = gan.index(first_hour_stem[day_stem])
+        want[day_stem] = zhi[(gan.index(shi_shen) - start) % 10]
+
+    assert got["qi_fa_table"] == want, (got["qi_fa_table"], want)
+    assert "食神" in got["qi_fa"] and "五鼠遁" in got["qi_fa"]

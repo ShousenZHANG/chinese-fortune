@@ -499,3 +499,27 @@ def test_qisha_brightness_follows_the_classic():
             "辰": "庙", "戌": "庙", "丑": "庙", "未": "庙",
             "寅": "庙", "申": "庙", "巳": "平", "亥": "平"}
     assert BRIGHTNESS["七杀"] == want, BRIGHTNESS["七杀"]
+
+
+def test_tiankui_tianyue_xin_row_is_ma_hu_not_hu_ma():
+    """辛 shipped 天魁寅/天钺午 — copied from an electronic text whose last line
+    reads 「辛逢虎马」. That witness is corrupt in the same breath (「丙丁猪狗」;
+    戌 is nobody's 丙丁贵人), and this very table already takes 猪鸡 over 猪狗
+    for 丙丁, so the 辛 row was an unfixed leftover, not a chosen edition.
+    《三命通会》 puts 辛's 阴贵 at 午 (「丙德在午，丙与辛合，辛以马」) and every
+    line of the couplet lists 阴贵 first, so 辛 must read 马虎.
+
+    This swapped two of the six 吉星 on every 辛-year chart — 10% of charts.
+    The iztro differential missed it because the grid only compared 14 主星;
+    it now compares 六吉 and 禄存/羊陀 too, and 87 of 903 cases fail on the old
+    values.
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from ziwei_stars import TIAN_KUI, TIAN_YUE
+
+    assert TIAN_KUI["辛"] == "午" and TIAN_YUE["辛"] == "寅"
+    # 阴贵 and 阳贵 are the two 天乙 seats of one stem and can never coincide.
+    assert all(TIAN_KUI[g] != TIAN_YUE[g] for g in TIAN_KUI)
+    assert set(TIAN_KUI) == set(TIAN_YUE) == set("甲乙丙丁戊己庚辛壬癸")

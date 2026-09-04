@@ -26,6 +26,13 @@ PALACE_ALIAS = {"仆役宫": "奴仆宫", "交友宫": "奴仆宫", "事业宫":
 MAIN = {"紫微", "天机", "太阳", "武曲", "天同", "廉贞",
         "天府", "太阴", "贪狼", "巨门", "天相", "天梁", "七杀", "破军"}
 
+# 六吉 + 禄存/羊陀. Left out of the original comparison, which is how 辛干
+# 魁钺 stayed swapped until v1.7.2 — the grid only ever looked at 14 主星.
+# 火铃/空劫 are deliberately excluded: their 起法 differs by 流派 (火铃 by
+# 年支三合 vs 年支+时, 空劫 顺逆), so a mismatch there would not be evidence
+# of a bug. Everything listed here has one uncontested rule.
+AUX = {"左辅", "右弼", "文昌", "文曲", "天魁", "天钺", "禄存", "擎羊", "陀罗"}
+
 
 def _ours(y, m, d, hour, gender):
     """In-process call: 900 subprocess spawns pushed the release harness past
@@ -53,7 +60,7 @@ def _iztro(y, m, d, hour, gender):
     def name(key):
         return Star(name=key, type="major", scope="origin").translate_name("zh-CN")
 
-    out = {"palaces": {}, "main_pos": {}, "mutagen": {}}
+    out = {"palaces": {}, "main_pos": {}, "aux_pos": {}, "mutagen": {}}
     out["wuxing_ju"] = chart.five_elements_class
     out["soul"] = name(chart.soul)
     out["body"] = name(chart.body)
@@ -69,6 +76,8 @@ def _iztro(y, m, d, hour, gender):
             n = s.translate_name("zh-CN")
             if n in MAIN:
                 out["main_pos"][n] = br
+            if n in AUX:
+                out["aux_pos"][n] = br
             if s.mutagen:
                 out["mutagen"][str(s.mutagen)] = n
     return out
@@ -96,6 +105,10 @@ def test_core_fields_agree_with_iztro(day, hour):
     assert ours["shen_zhu"] == ref["body"]
     for star, br in ours["main_stars_positions"].items():
         assert ref["main_pos"].get(star) == br, (star, br, ref["main_pos"].get(star))
+    ours_aux = {**ours["lucky_stars_positions"], **ours["malefic_stars_positions"]}
+    for star in sorted(AUX):
+        assert ref["aux_pos"].get(star) == ours_aux[star], (
+            star, ours_aux[star], ref["aux_pos"].get(star))
     for pal in ours["twelve_palaces"]:
         assert ref["palaces"].get(pal["name"]) == pal["branch"], (
             pal["name"], pal["branch"], ref["palaces"].get(pal["name"]))
