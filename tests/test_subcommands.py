@@ -359,3 +359,39 @@ def test_64hex_binary_field_is_derivable_from_lines_and_trigrams():
 
     # 64 个编码必须两两互异 —— 任何一次两两互换都会在这里留下重复。
     assert len({h["binary"] for h in items}) == 64
+
+
+def test_meihua_reference_worked_example_matches_the_engine():
+    """references/05-meihua.md §2.3 的双数法算例 (37、98) 原本声称变卦是「风雷益」,
+    而益为巽上震下须二爻动; 三爻动实得巽上乾下「风天小畜」, 引擎给的也是小畜 ——
+    即引擎对、文档错。
+
+    这批 references 从未与引擎比对过, 而 SKILL.md 让 Claude 照着它们解读。这条
+    测试把这一个算例钉住; references 层的整体一致性检查见 P1。
+    """
+    import json
+    import re
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    md = (root / "references" / "05-meihua.md").read_text(encoding="utf-8")
+
+    # 从文档里抓出算例的两个数, 不写死 —— 文档改数字, 测试跟着改。
+    m = re.search(r'友人报"(\d+)、(\d+)"', md)
+    assert m, "算例格式变了"
+    upper, lower = m.group(1), m.group(2)
+
+    proc = subprocess.run(
+        [sys.executable, str(root / "scripts" / "meihua_cast.py"), "numbers",
+         "--upper", upper, "--lower", lower, "--question", "x"],
+        capture_output=True, text=True, encoding="utf-8",
+    )
+    assert proc.returncode == 0, proc.stderr[-400:]
+    d = json.loads(proc.stdout)
+
+    assert d["main_hex"]["name"] == "风泽中孚"
+    assert d["changed_hex"]["name"] == "风天小畜"
+    # 文档必须写着引擎给出的那个变卦, 且不再写旧的错误答案。
+    assert "风天小畜" in md
+    assert '三爻动 → 变卦"风雷益"' not in md
