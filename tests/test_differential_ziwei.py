@@ -32,6 +32,9 @@ MAIN = {"紫微", "天机", "太阳", "武曲", "天同", "廉贞",
 # 年支三合 vs 年支+时, 空劫 顺逆), so a mismatch there would not be evidence
 # of a bug. Everything listed here has one uncontested rule.
 AUX = {"左辅", "右弼", "文昌", "文曲", "天魁", "天钺", "禄存", "擎羊", "陀罗"}
+SI_HUA = {"禄", "权", "科", "忌"}
+PALACES = {"命宫", "兄弟宫", "夫妻宫", "子女宫", "财帛宫", "疾厄宫",
+           "迁移宫", "奴仆宫", "官禄宫", "田宅宫", "福德宫", "父母宫"}
 
 
 def _ours(y, m, d, hour, gender):
@@ -103,18 +106,33 @@ def test_core_fields_agree_with_iztro(day, hour):
     assert ours["wuxing_ju"]["name"] == ref["wuxing_ju"]
     assert ours["ming_zhu"] == ref["soul"]
     assert ours["shen_zhu"] == ref["body"]
-    for star, br in ours["main_stars_positions"].items():
-        assert ref["main_pos"].get(star) == br, (star, br, ref["main_pos"].get(star))
+    # 每组都先钉住 KEY SET 再逐项比值。从前这三处写作 `for x in ours[...]`,
+    # 即遍历被测方自己输出的键 —— 对"漏发字段"完全免疫: 删掉 七杀 与 化科 后
+    # 903 例仍全绿。差分 oracle 只有在键集也来自 oracle 时才是 oracle。
+    assert set(ours["main_stars_positions"]) == MAIN, (
+        "主星集合不完整", MAIN ^ set(ours["main_stars_positions"]))
+    for star in sorted(MAIN):
+        assert ours["main_stars_positions"][star] == ref["main_pos"][star], (
+            star, ours["main_stars_positions"][star], ref["main_pos"][star])
+
     ours_aux = {**ours["lucky_stars_positions"], **ours["malefic_stars_positions"]}
+    assert AUX <= set(ours_aux), ("辅星集合不完整", AUX - set(ours_aux))
     for star in sorted(AUX):
-        assert ref["aux_pos"].get(star) == ours_aux[star], (
-            star, ours_aux[star], ref["aux_pos"].get(star))
+        assert ours_aux[star] == ref["aux_pos"][star], (
+            star, ours_aux[star], ref["aux_pos"][star])
+
     # 生年四化. 壬 is the contested stem (维基文库's 卷二 transcription reads
     # 天府化科, mainstream and iztro read 左辅); locking all four against an
     # independent engine says which side this project is actually on.
-    for hua, star in ours["four_transformations_native"].items():
-        assert ref["mutagen"].get(hua) == star, (
-            hua, star, ref["mutagen"].get(hua))
-    for pal in ours["twelve_palaces"]:
-        assert ref["palaces"].get(pal["name"]) == pal["branch"], (
-            pal["name"], pal["branch"], ref["palaces"].get(pal["name"]))
+    assert set(ours["four_transformations_native"]) == SI_HUA, (
+        "四化不齐", SI_HUA ^ set(ours["four_transformations_native"]))
+    for hua in sorted(SI_HUA):
+        assert ours["four_transformations_native"][hua] == ref["mutagen"][hua], (
+            hua, ours["four_transformations_native"][hua], ref["mutagen"][hua])
+
+    ours_pal = {p["name"]: p["branch"] for p in ours["twelve_palaces"]}
+    assert set(ours_pal) == PALACES, ("十二宫不齐", PALACES ^ set(ours_pal))
+    assert len(ours["twelve_palaces"]) == 12
+    for name in sorted(PALACES):
+        assert ours_pal[name] == ref["palaces"][name], (
+            name, ours_pal[name], ref["palaces"][name])
