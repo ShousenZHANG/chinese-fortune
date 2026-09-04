@@ -2,6 +2,56 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.1] — 2026-09-04
+
+调候用神 audit. The 120-cell 调候 table drove 用神 selection while carrying only
+经现代术数家整理 as provenance — it had never been checked against 原文. This
+release checks it.
+
+### Method
+Every cell compared to the 《穷通宝鉴》 primary text (维基文库 / ctext /
+sajumania and others, cross-read against 徐乐吾 调候用神提要 where the wording
+differs). Each mismatch was then handed to an independent agent instructed to
+REFUTE it, and only survivors were handed to a third agent that derived exact
+replacement values from the quoted passage alone.
+
+109 of 120 cells examined; 59 matched. Adversarial recheck upheld 36 mismatches
+and **overturned 13** — the recheck filtered rather than rubber-stamped.
+Derivation judged 1 more defensible on re-reading and left it alone.
+**35 cells now carry `verified_against_source` plus the sentence checked against.**
+
+### Fixed
+- **A 忌神 was sitting in `secondary_yongshen` in eight cells.** 辛|卯 listed
+  戊己 as 次用 where the passage reads 「二月辛金，壬水为尊，**见戊己为病**」;
+  乙|卯 listed 庚 where it reads 「活木**忌**埋根之铁，支下有庚辛，戕贼其根」.
+  Also 乙|卯/辛|辰/辛|酉/辛|戌/庚|申/戊|亥/癸|子. A 忌神 in the 次用 slot inverts
+  the reading. Those stems moved to a new `ji_shen` field, and a test now fails
+  if any stem appears in both.
+- **A note promised fortune from a 忌神.** 辛|卯 read 「壬戊两透, 富贵显达, 名利
+  双全」 while its own source says 「或壬戊透，甲不出干，此为病不遇药，**平常之人**」.
+  This matters more than the inert data does: `notes` is printed verbatim into
+  `yong_shen.reason` and reaches the reader. A test now forbids a note promising
+  富贵/显达/科甲 from a stem the same cell marks 忌.
+- **11 cells had the wrong 用神 list**, including four where the 为要 pair was
+  demoted and the 次之 pair promoted (甲|子 and 甲|丑: 丁丙 → 丁庚, per
+  「丁先庚后」「耑取庚丁」).
+
+### Severity, stated plainly
+The engine consumes only `primary_yongshen[0]` and `notes`; `secondary_yongshen`
+is read by no script. So of the 33 cells changed here, **exactly one moves a
+computed answer**: 己|卯 primary 丙 → 甲, per 「先取甲木疏之，忌合，次取癸水润之」.
+The rest correct inert data or reader-facing text. Recorded this way rather
+than counting 33 as if they were 33 wrong charts.
+
+### Not done
+13 findings overturned on recheck (judged match or 版本异文) and left alone;
+1 left after re-reading; **11 cells never examined**; 1 unverifiable. The asset
+names all of these, and notes that `secondary_yongshen` / `ji_shen` do not yet
+feed the computation. Outside `verified_cells`, the table is still to be treated
+as unchecked against 原文.
+
+Suite 2025 → 2033.
+
 ## [1.7.0] — 2026-09-03
 
 Honesty release: three places where the engine either contradicted its own
