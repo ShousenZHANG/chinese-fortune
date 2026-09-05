@@ -164,6 +164,25 @@ MUTATIONS: list[Mutation] = [
         ["tests/test_liuyao_oracle.py"],
     ),
     Mutation(
+        "qimen:值使退化为值符", "scripts/qimen_cast.py",
+        "zhi_shi_palace = DIZHI_TO_PALACE.get(hour_branch, shi_gan_palace)",
+        "zhi_shi_palace = shi_gan_palace",
+        "值使是八门盘独立的枢; 退化成值符副本后整张八门盘失去独立信息",
+        ["tests/test_qimen_liuren_oracle.py"],
+    ),
+    Mutation(
+        "liuren:伏吟不用刑", "scripts/liuren_cast.py",
+        "mo = _xing_or_chong(zhong)", "mo = tian_pan[zhong]",
+        "伏吟时天地盘各居本位, 末传恒等于中传 —— 三传退化成两传",
+        ["tests/test_qimen_liuren_oracle.py"],
+    ),
+    Mutation(
+        "liuren:反吟不用驿马", "scripts/liuren_cast.py",
+        "    chu = YI_MA[ri_zhi]", "    chu = tian_pan[ri_zhi]",
+        "反吟时天盘逐位相冲, 末传恒等于初传 —— 三传退化成两传",
+        ["tests/test_qimen_liuren_oracle.py"],
+    ),
+    Mutation(
         "assets:卦辞对调", "assets/64hex.json",
         '"judgment": "元亨,利贞。勿用有攸往,利建侯。"',
         '"judgment": "亨。匪我求童蒙,童蒙求我。"',

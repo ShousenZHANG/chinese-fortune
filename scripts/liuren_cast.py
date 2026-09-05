@@ -233,7 +233,7 @@ def upper_controls_lower(lower: str, upper: str) -> bool:
 #   贼克 → 比用 → 涉害 → 遥克 → 昴星 → 别责 → 八专 → 伏吟 → 反吟
 #
 # We implement: 贼克, 比用, 遥克, 伏吟, 反吟 with priority-rule fallbacks
-# for 涉害 / 昴星 / 别责 / 八专 (rare and best handled by a human master).
+# for 涉害 / 昴星 / 别责 (rare and best handled by a human master); 八专 现已实现.
 # --------------------------------------------------------------------------- #
 
 def detect_zei_ke(si_ke: list[dict]) -> tuple[list[dict], list[dict]]:
@@ -341,22 +341,54 @@ def fa_yong_yao_ke(si_ke: list[dict], ri_gan: str,
             "mo_chuan": mo, "from_course": None}
 
 
+# 三刑 + 自刑 —— 伏吟课取传全靠它。
+# 寅刑巳, 巳刑申, 申刑寅 (无恩之刑); 丑刑戌, 戌刑未, 未刑丑 (恃势之刑);
+# 子刑卯, 卯刑子 (无礼之刑); 辰午酉亥 自刑。
+XING_MAP: dict[str, str] = {
+    "寅": "巳", "巳": "申", "申": "寅",
+    "丑": "戌", "戌": "未", "未": "丑",
+    "子": "卯", "卯": "子",
+    "辰": "辰", "午": "午", "酉": "酉", "亥": "亥",
+}
+
+# 驿马 — 反吟无亲课取初传。申子辰马在寅, 寅午戌马在申, 巳酉丑马在亥, 亥卯未马在巳。
+YI_MA: dict[str, str] = {
+    "申": "寅", "子": "寅", "辰": "寅",
+    "寅": "申", "午": "申", "戌": "申",
+    "巳": "亥", "酉": "亥", "丑": "亥",
+    "亥": "巳", "卯": "巳", "未": "巳",
+}
+
+
+def _xing_or_chong(zhi: str) -> str:
+    """取刑; 自刑者取冲 —— 否则三传会原地打转。"""
+    x = XING_MAP.get(zhi, zhi)
+    return chong_branch(zhi) if x == zhi else x
+
+
 def fa_yong_fu_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
                    yue_jiang: str, zhan_shi: str) -> dict | None:
-    """伏吟法 — 月将 == 占时 (天地盘 各居本位).
+    """伏吟法 — 月将 == 占时 (天地盘 各居本位)。
 
-    阳日: 初 = 干寄宫上神; 中 = 支上神; 末 = 中传上神.
-    阴日: 初 = 支上神; 中 = 干寄宫上神; 末 = 中传上神.
+    刚日(阳干): 初 = 干上神; 柔日(阴干): 初 = 支上神。
+    中 = 初传之刑, 末 = 中传之刑; 逢自刑则取冲。
+
+    从前中传取「另一个上神」、末传取「中传上神」—— 而伏吟时天地盘各居本位, 即
+    ``tian_pan[x] == x``, 于是 ``mo = tian_pan[zhong] == zhong`` **恒成立**:
+    末传永远是中传的复制品。实测 2026-06-01 16:00 得 巳/午/午。
+    经典伏吟课本就以「刑」取传, 正是为了避开这种原地打转。
     """
     if yue_jiang != zhan_shi:
         return None
     gan_ji = GAN_JI_GONG[ri_gan]
     gan_yang = TIANGAN_YIN_YANG[ri_gan] == "阳"
     chu = tian_pan[gan_ji] if gan_yang else tian_pan[ri_zhi]
-    zhong = tian_pan[ri_zhi] if gan_yang else tian_pan[gan_ji]
-    mo = tian_pan[zhong]
-    return {"method": "伏吟法 (天地盘同位)", "chu_chuan": chu,
-            "zhong_chuan": zhong, "mo_chuan": mo, "from_course": None}
+    zhong = _xing_or_chong(chu)
+    mo = _xing_or_chong(zhong)
+    return {"method": ("伏吟法 (天地盘同位; " + ("刚日取干上神" if gan_yang
+                       else "柔日取支上神") + ", 中末递刑, 自刑取冲)"),
+            "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
+            "from_course": None}
 
 
 def chong_zhi(zhi: str) -> str:
@@ -366,18 +398,62 @@ def chong_zhi(zhi: str) -> str:
 
 def fa_yong_fan_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
                     yue_jiang: str, zhan_shi: str) -> dict | None:
-    """反吟法 — 月将 与 占时 相冲 (e.g. 子加午, 天地盘逐位相冲)."""
+    """反吟法 — 月将 与 占时 相冲 (子加午之类, 天地盘逐位相冲)。
+
+    有克者已由贼克法取去 (本函数在其后才被调用), 到这里即「无亲反吟课」:
+    初 = 驿马, 中 = 支上神, 末 = 干上神。
+
+    从前三传全取上神递推 —— 而反吟时 ``tian_pan[x] == 冲(x)``, 于是
+    ``mo = 冲(冲(chu)) == chu`` **恒成立**: 末传永远是初传的复制品。实测
+    2026-06-01 04:00 得 子/午/子。取驿马正是经典为无亲课准备的出路。
+    """
     if chong_zhi(yue_jiang) != zhan_shi:
         return None
-    chu = tian_pan[ri_zhi]
-    zhong = tian_pan[chu]
-    mo = tian_pan[zhong]
-    return {"method": "反吟法 (天地盘相冲)", "chu_chuan": chu,
-            "zhong_chuan": zhong, "mo_chuan": mo, "from_course": None}
+    gan_ji = GAN_JI_GONG[ri_gan]
+    chu = YI_MA[ri_zhi]
+    zhong = tian_pan[ri_zhi]
+    mo = tian_pan[gan_ji]
+    return {"method": "反吟法 (天地盘相冲, 无亲课: 驿马为初, 支上为中, 干上为末)",
+            "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
+            "from_course": None}
+
+
+def fa_yong_ba_zhuan(tian_pan: dict[str, str], ri_gan: str,
+                     ri_zhi: str) -> dict | None:
+    """八专课 — 日干寄宫 与 日支 同位 (甲寅/庚申/己未/丁未 等)。
+
+    四课重叠成两课, 贼克无从分辨, 故另立一门:
+      阳日: 干上神起, 顺数三神为初传;
+      阴日: 支上神起, 逆数三神为初传;
+      中传、末传 皆取干上神。
+
+    本文件第 233 行自述的取法次序是「贼克 → 比用 → 涉害 → 遥克 → 昴星 → 别责 →
+    **八专** → 伏吟 → 反吟」, 但从前根本没有八专这一门, 于是这类课落进反吟或
+    fallback。实测 2026-04-16 08:00 (庚申日, 庚寄申, 日支申) 三传得 寅/寅/寅 ——
+    三传全同, 任何取法都产生不了。
+    """
+    gan_ji = GAN_JI_GONG[ri_gan]
+    if gan_ji != ri_zhi:
+        return None
+    gan_yang = TIANGAN_YIN_YANG[ri_gan] == "阳"
+    gan_shang = tian_pan[gan_ji]
+    if gan_yang:
+        chu = DIZHI[(DIZHI.index(gan_shang) + 2) % 12]      # 顺数三神 (含本位)
+        how = "阳日干上神顺数三神"
+    else:
+        zhi_shang = tian_pan[ri_zhi]
+        chu = DIZHI[(DIZHI.index(zhi_shang) - 2) % 12]      # 逆数三神
+        how = "阴日支上神逆数三神"
+    return {"method": f"八专法 (干支同宫, {how}为初, 中末皆取干上神)",
+            "chu_chuan": chu, "zhong_chuan": gan_shang, "mo_chuan": gan_shang,
+            "from_course": None}
 
 
 def fa_yong_fallback(tian_pan: dict[str, str]) -> dict:
-    """昴星法 / 别责 / 八专 简化 — 取酉宫上神为初 (rare; needs hand-排)."""
+    """昴星法 / 别责 简化 — 取酉宫上神为初 (rare; needs hand-排)。
+
+    八专已由 fa_yong_ba_zhuan 单独实现, 不再落到这里; 名字里去掉它。
+    """
     chu = tian_pan["酉"]
     zhong, mo = next_two_chuan(tian_pan, chu)
     return {"method": "昴星 / 别责 / 八专 简化路径 (酉宫为用 — 复杂课式需手排)",
@@ -392,6 +468,9 @@ def fa_yong(si_ke: list[dict], ri_gan: str, ri_zhi: str,
     伏吟 / 反吟 first because they depend on plate config rather than 四课 clashes.
     """
     for fn in (
+        # 八专 排在 伏吟/反吟 之前 —— 本文件第 233 行自述的次序如此, 且干支同宫时
+        # 四课重叠成两课, 反吟的「支上为中、干上为末」会与驿马撞在同一支上。
+        lambda: fa_yong_ba_zhuan(tian_pan, ri_gan, ri_zhi),
         lambda: fa_yong_fu_yin(tian_pan, ri_gan, ri_zhi, yue_jiang, zhan_shi),
         lambda: fa_yong_fan_yin(tian_pan, ri_gan, ri_zhi, yue_jiang, zhan_shi),
         lambda: fa_yong_zei_ke(si_ke, ri_gan, tian_pan),
@@ -627,6 +706,9 @@ def main(argv: list[str] | None = None) -> int:
         "si_ke": si_ke,
         "fa_yong_method": san_chuan["method"],
         "san_chuan": {
+            # 取法从前算出来却没进输出 —— 而「这三传是哪一门排出来的」正是六壬解读
+            # 的核心 (贼克/比用/遥克/八专/伏吟/反吟 各有断法), 读者无从分辨。
+            "method": san_chuan.get("method", "?"),
             "chu_chuan": san_chuan["chu_chuan"],
             "chu_chuan_wuxing": wx_of(san_chuan["chu_chuan"]),
             "zhong_chuan": san_chuan["zhong_chuan"],

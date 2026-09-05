@@ -629,8 +629,18 @@ def main(argv: list[str] | None = None) -> int:
     zhi_fu_star = star.get(_resolve_ring_palace(shi_gan_palace), "?")
 
     # 5. 八门 (rotates with 值使)
-    men = men_plate(zhi_fu_palace, shi_gan_palace, ju_type)
-    zhi_shi_men = men.get(_resolve_ring_palace(shi_gan_palace), "?")
+    #
+    # 值使宫从前与 值符宫 赋的是**同一个变量** (shi_gan_palace), 于是两者在所有
+    # 时辰恒等 —— 实测 2026-06-01 全部 12 个时辰 12/12 相同, 值使退化成值符的副本,
+    # 而它本该是八门盘独立的枢。
+    #
+    # references/06-qimen.md:215 「以时干所遁之六仪为枢 … 飞至时干所在宫」——
+    # 值符随**时干**;  :219 「以**时支**所在宫为『值使门』起点」—— 值使随时支。
+    # 同文 :358 也注明「值使门起法: 以日干起还是时干起, 各派不一」, 本实现依本仓库
+    # 自己的参考文档取时支。
+    zhi_shi_palace = DIZHI_TO_PALACE.get(hour_branch, shi_gan_palace)
+    men = men_plate(zhi_fu_palace, zhi_shi_palace, ju_type)
+    zhi_shi_men = men.get(_resolve_ring_palace(zhi_shi_palace), "?")
 
     # 6. 八神 — 值符 起于 时干宫 (即 当前 值符 所在)
     shen = shen_plate(shi_gan_palace, ju_type)
@@ -687,7 +697,8 @@ def main(argv: list[str] | None = None) -> int:
         "zhi_fu_palace": shi_gan_palace,
         "zhi_fu_origin_palace": zhi_fu_palace,
         "zhi_shi_men": zhi_shi_men,
-        "zhi_shi_palace": shi_gan_palace,
+        "zhi_shi_palace": zhi_shi_palace,
+        "zhi_shi_basis": "时支所在宫 (references/06-qimen.md:219); 值符则随时干",
         "palaces": palaces,
         "patterns": patterns,
         "auspicious_directions": sorted(set(aus_dirs)),
