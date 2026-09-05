@@ -328,6 +328,7 @@ def test_mutation_gate_is_wired_and_fails_on_a_survivor():
         assert (root / m.path).exists(), f"{m.name} 指向不存在的文件 {m.path}"
 
     # 一个必然存活的假变异: 只改注释, 任何测试都不会红。
+    before_bytes = (root / "scripts" / "utils.py").read_bytes()
     probe = root / "evals" / "_mutate_probe.py"
     probe.write_text(
         "from mutate import Mutation, main\n"
@@ -353,11 +354,11 @@ def test_mutation_gate_is_wired_and_fails_on_a_survivor():
     finally:
         probe.unlink(missing_ok=True)
 
-    # 探针跑完后工作树必须干净 —— mutate.py 的 finally 还原必须可靠。
-    st = subprocess.run(["git", "status", "--short"], cwd=root,
-                        capture_output=True, text=True, encoding="utf-8")
-    assert "scripts/utils.py" not in st.stdout, (
-        "变异后没有还原 scripts/utils.py:\n" + st.stdout)
+    # 探针跑完后, 被变异的文件必须回到探针**之前**的字节。
+    # 从前这里断言 git status 里不含 scripts/utils.py —— 分不清「变异没还原」与
+    # 「开发者本来就有未提交改动」, 于是任何改到 utils.py 的分支都会误报。
+    after = (root / "scripts" / "utils.py").read_bytes()
+    assert after == before_bytes, "变异后 scripts/utils.py 与探针前不一致"
 
 
 def test_version_is_consistent_across_all_four_sources():

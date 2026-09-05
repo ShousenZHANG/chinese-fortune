@@ -337,7 +337,7 @@ def ensure_utf8_stdio() -> None:
             pass
 
 
-def json_print(obj) -> None:
+def json_print(obj: object) -> None:
     """Pretty-print an object as UTF-8 JSON to stdout.
 
     Forces UTF-8 output regardless of platform console codepage — this lets
@@ -375,7 +375,7 @@ def json_print(obj) -> None:
 YEAR_MIN, YEAR_MAX = 1900, 2100
 
 
-def error_envelope(tool: str, error: str, message: str, **extra) -> dict:
+def error_envelope(tool: str, error: str, message: str, **extra: object) -> dict:
     """所有 CLI 的统一失败信封。
 
     ok/tool/version/error/message 五个键恒定存在, 调用方可无条件读取。
@@ -451,7 +451,7 @@ def warn(msg: str) -> None:
         sys.stderr.buffer.write(f"[warn] {msg}\n".encode("utf-8", errors="replace"))
 
 
-def require_lunar():
+def require_lunar() -> None:
     """Import ``lunar_python``. On failure, print JSON error & exit 1."""
     try:
         import lunar_python  # noqa: F401

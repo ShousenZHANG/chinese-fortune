@@ -45,7 +45,7 @@ jobs:
         run: python -m ruff check .
 
       - name: Type check (mypy)
-        run: python -m mypy scripts/ --ignore-missing-imports
+        run: python -m mypy scripts/ --ignore-missing-imports --disallow-untyped-defs
 
       - name: Tests + coverage gate (subprocess-tracked, fail under 80%)
         env:

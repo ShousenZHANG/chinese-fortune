@@ -24,6 +24,7 @@ import json
 import os
 import random
 import urllib.request
+from typing import Any
 
 # ANU Quantum Random Number Generator (quantum vacuum fluctuations).
 # Modern authenticated endpoint needs an API key (env ANU_QRNG_API_KEY);
@@ -98,12 +99,12 @@ class QuantumRandom(random.Random):
         # 53-bit mantissa float in [0, 1), per CPython convention.
         return self.getrandbits(53) / (1 << 53)
 
-    def seed(self, *args, **kwargs) -> None:  # noqa: D401
+    def seed(self, *args: object, **kwargs: object) -> None:  # noqa: D401
         """No-op: entropy is externally sourced, not seedable."""
         return None
 
 
-def get_rng(seed: int | None = None, source: str = "system"):
+def get_rng(seed: int | None = None, source: str = "system") -> Any:
     """Return an RNG for a cast.
 
     seed given         -> deterministic random.Random(seed) (source ignored)
@@ -117,7 +118,7 @@ def get_rng(seed: int | None = None, source: str = "system"):
     return random.SystemRandom()
 
 
-def describe(rng, source: str, seed: int | None) -> dict:
+def describe(rng: Any, source: str, seed: int | None) -> dict:
     """Structured, honest provenance for the output JSON."""
     if seed is not None:
         return {"source": "seed", "seed": seed, "reproducible": True,

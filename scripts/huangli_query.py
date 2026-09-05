@@ -11,7 +11,9 @@ from __future__ import annotations
 
 import argparse
 import sys
+from collections.abc import Callable
 from datetime import datetime
+from typing import Any
 
 from utils import (
     ensure_utf8_stdio,
@@ -22,7 +24,7 @@ from utils import (
 )
 
 
-def _safe(fn, default=None):
+def _safe(fn: Callable[[], Any], default: Any = None) -> Any:
     try:
         return fn()
     except Exception:
@@ -58,7 +60,7 @@ JIAN_CHU_TENDENCY: dict[str, dict[str, list[str]]] = {
 }
 
 
-def _safe_method(obj, name: str, default=None):
+def _safe_method(obj: Any, name: str, default: Any = None) -> Any:
     """Call an optional method by name across lunar_python versions."""
     try:
         fn = getattr(obj, name)
@@ -67,7 +69,7 @@ def _safe_method(obj, name: str, default=None):
     return _safe(fn, default)
 
 
-def _hour_pillars(lunar) -> list[dict]:
+def _hour_pillars(lunar: Any) -> list[dict]:
     """Return the queried day's 13 时辰 blocks: 早子 … 亥 … 夜子.
 
     时辰 boundaries follow the classical odd-start convention (丑 01-03,

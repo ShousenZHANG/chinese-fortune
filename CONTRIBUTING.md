@@ -69,9 +69,8 @@ git push origin feat/your-change
 **Python scripts**
 - Python 3.11+ (CI matrix is 3.11 / 3.12; `pyproject.toml` sets
   `target-version = py311` and `mypy python_version = 3.11`).
-  Type hints required — but note `mypy scripts/` currently runs
-  **without** `--disallow-untyped-defs`, so "required" is a
-  convention here, not a gate.
+  Type hints required, and enforced: `mypy scripts/ --disallow-untyped-defs`
+  runs in CI and via `[tool.mypy] disallow_untyped_defs = true`.
 - `from __future__ import annotations`
 - Argparse subcommands; `--help` must work without dependencies
 - Output: pretty UTF-8 JSON via `utils.json_print()`; warnings to stderr only
@@ -191,8 +190,8 @@ git push origin feat/你的改动
 **Python 脚本**
 - Python 3.11+（CI 矩阵为 3.11 / 3.12；`pyproject.toml` 的
   `target-version` 与 mypy `python_version` 均为 3.11）。
-  要求类型注解 —— 但 `mypy scripts/` 目前**未开** `--disallow-untyped-defs`，
-  所以这是约定而非门禁。
+  要求类型注解，且已是门禁：CI 跑 `mypy scripts/ --disallow-untyped-defs`，
+  `pyproject.toml` 亦设 `disallow_untyped_defs = true`。
 - `from __future__ import annotations`
 - argparse 子命令；`--help` 必须无依赖也能跑
 - 输出：`utils.json_print()` 出 UTF-8 JSON；警告只走 stderr

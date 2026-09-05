@@ -33,7 +33,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL_FOLDER = "chinese-fortune"  # top-level dir inside the archive
 
 # Whitelist of paths (relative to repo root) to ship to end users.
-INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE"]
+# CHANGELOG 也要进包: SKILL.md 的 frontmatter 只允许 name+description
+# (evals/run_checks.py:47 强制), 所以解压到 ~/.claude/skills/ 之后, 包内
+# 唯一的版本证据是 scripts/utils.py 里那一行常量 —— 用户看不出装的是哪版、
+# 修了什么。
+INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE",
+                 "CHANGELOG.md"]
 INCLUDE_DIRS = ["references", "assets", "agents"]
 # scripts/: ship runtime .py + requirements.txt, but NOT this builder or tests.
 SCRIPT_EXCLUDE = {"build_skill.py"}
@@ -144,7 +149,7 @@ def build(out_path: Path, files: list[Path]) -> None:
             zf.writestr(info, data)
 
 
-def main(argv=None) -> int:
+def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Build the chinese-fortune skill package")
     ap.add_argument("--out", default=None, help="output zip path")
     ap.add_argument("--dist-dir", default=None,

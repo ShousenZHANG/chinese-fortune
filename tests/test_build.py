@@ -206,3 +206,17 @@ def test_gitattributes_pins_line_endings():
     ga = ROOT / ".gitattributes"
     assert ga.exists(), "missing .gitattributes — checkout line endings unpinned"
     assert "eol=lf" in ga.read_text(encoding="utf-8")
+
+
+def test_changelog_ships_with_the_package(package):
+    """SKILL.md 的 frontmatter 只允许 name+description (evals/run_checks.py:47
+    强制), 所以解压到 ~/.claude/skills/ 之后, 包内唯一的版本证据是
+    scripts/utils.py 里那一行常量 —— 用户看不出装的是哪一版、修了什么。
+    """
+    names = set(zipfile.ZipFile(package).namelist())
+    assert "chinese-fortune/CHANGELOG.md" in names, sorted(
+        n for n in names if "/" not in n.split("/", 1)[1])
+    body = zipfile.ZipFile(package).read("chinese-fortune/CHANGELOG.md").decode("utf-8")
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from utils import __version__
+    assert f"## [{__version__}]" in body, "包内 CHANGELOG 没有当前版本的条目"

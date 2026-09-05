@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
+from typing import Any
 
 from utils import (
     DIZHI,
@@ -129,7 +130,7 @@ def is_day_birth(hour: int) -> bool:
 # Step 1 — locate 中气 and 月将
 # --------------------------------------------------------------------------- #
 
-def determine_yue_jiang(lunar) -> tuple[str, str, str]:
+def determine_yue_jiang(lunar: Any) -> tuple[str, str, str]:
     """Return (zhong_qi 中气名, yue_jiang 地支, 月将神名).
 
     Uses lunar_python's JieQi table; finds the most recent 中气 <= current time.

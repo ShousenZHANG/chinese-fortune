@@ -302,7 +302,7 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def _validate_args(args) -> str | None:
+def _validate_args(args: argparse.Namespace) -> str | None:
     """Boundary-validate inputs before touching lunar_python.
 
     Returns an error message string if invalid, else None.

@@ -13,13 +13,14 @@ from __future__ import annotations
 import argparse
 import sys
 from datetime import datetime
+from typing import Any
 
 from utils import ensure_utf8_stdio, json_print, require_lunar
 
 WEEKDAY_CN = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
 
 
-def _serialize(solar, lunar, hour_known: bool = True) -> dict:
+def _serialize(solar: Any, lunar: Any, hour_known: bool = True) -> dict:
     """Build a uniform info dict from a Solar + Lunar pair.
 
     ``hour_known=False`` blanks every hour-derived field and labels it 待补.
@@ -106,7 +107,7 @@ def _serialize(solar, lunar, hour_known: bool = True) -> dict:
 # Subcommand handlers
 # --------------------------------------------------------------------------- #
 
-def cmd_solar2lunar(args, Solar, Lunar) -> int:
+def cmd_solar2lunar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
     try:
         solar = Solar.fromYmdHms(
             args.year, args.month, args.day,
@@ -123,7 +124,7 @@ def cmd_solar2lunar(args, Solar, Lunar) -> int:
     return 0
 
 
-def cmd_lunar2solar(args, Solar, Lunar) -> int:
+def cmd_lunar2solar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
     try:
         # lunar_python uses negative month for 闰月.
         m = -args.month if args.leap else args.month
@@ -143,7 +144,7 @@ def cmd_lunar2solar(args, Solar, Lunar) -> int:
     return 0
 
 
-def cmd_today(args, Solar, Lunar) -> int:
+def cmd_today(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
     now = datetime.now()
     solar = Solar.fromYmdHms(now.year, now.month, now.day, now.hour, now.minute, 0)
     lunar = solar.getLunar()

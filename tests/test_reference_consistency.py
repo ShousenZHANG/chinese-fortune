@@ -147,6 +147,66 @@ def test_jianchu_tendency_matches_its_own_reference():
 
 
 # --------------------------------------------------------------------------- #
+# 天乙贵人 — 同一张表在仓库里有四份
+# --------------------------------------------------------------------------- #
+
+def _parse_stem_branch_table(md: str, section: str) -> dict[str, set]:
+    """从 markdown 小节里取「日干 -> 地支」两列表。"""
+    seg = md[md.index(section):]
+    seg = seg[:seg.index("###", len(section))] if "###" in seg[len(section):] else seg
+    out: dict[str, set] = {}
+    for stems, zhis in re.findall(
+            r"\|\s*([甲乙丙丁戊己庚辛壬癸、\s]+?)\s*\|\s*"
+            r"([子丑寅卯辰巳午未申酉戌亥、\s]+?)\s*\|", seg):
+        found = re.findall(r"[甲乙丙丁戊己庚辛壬癸]", stems)
+        branches = set(re.findall(r"[子丑寅卯辰巳午未申酉戌亥]", zhis))
+        for st in found:
+            out[st] = branches
+    return out
+
+
+def test_tianyi_guiren_agrees_across_all_four_copies():
+    """天乙贵人 的起法表在本仓库有**四份**手抄件:
+      assets/shensha.json、scripts/bazi_shensha.py 的 INLINE_QI_FA、
+      references/19-shensha.md §2.1、references/01-bazi.md §5.3 速查。
+
+    四份现在是一致的 (辛 → 午、寅), 但四份副本迟早会漂 —— 尤其 INLINE_QI_FA 的
+    生产路径永远走不到 (asset 里有表时不会 fallback), 改了也不会有人发现。
+
+    这一格还特别敏感: 辛干那一行正是 v1.7.2 从讹本「虎马」改回「马虎」的地方,
+    改的是 ziwei_stars 的 天魁天钺, 而这四张表当时没有一并核对。
+    """
+    import json
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import bazi_shensha
+
+    data = json.loads((ROOT / "assets" / "shensha.json").read_text(encoding="utf-8"))
+    asset = next(e["qi_fa_table"] for g in ("ji_shen", "xiong_sha")
+                 for e in data[g] if e["name"] == "天乙贵人")
+    copies = {
+        "assets/shensha.json": {k: set(v) for k, v in asset.items()},
+        "references/19-shensha.md": _parse_stem_branch_table(
+            _read("references/19-shensha.md"), "### 2.1 天乙贵人"),
+        "references/01-bazi.md": _parse_stem_branch_table(
+            _read("references/01-bazi.md"), "**天乙贵人速查**"),
+    }
+    inline = getattr(bazi_shensha, "INLINE_QI_FA", {}).get("天乙贵人")
+    if inline:
+        copies["scripts/bazi_shensha.py"] = {k: set(v) for k, v in inline.items()}
+    assert len(copies) >= 3, sorted(copies)
+
+    stems = "甲乙丙丁戊己庚辛壬癸"
+    for name, tbl in copies.items():
+        assert set(tbl) == set(stems), f"{name} 缺天干: {set(stems) - set(tbl)}"
+    for stem in stems:
+        vals = {name: tuple(sorted(tbl[stem])) for name, tbl in copies.items()}
+        assert len(set(vals.values())) == 1, f"{stem} 干在各副本间分歧: {vals}"
+    # 辛 是 v1.7.2 改过的那一格 —— 单独钉住, 免得四份一起漂回去
+    for name, tbl in copies.items():
+        assert tbl["辛"] == {"午", "寅"}, f"{name} 的辛行是 {tbl['辛']}, 应为 午寅"
+
+
+# --------------------------------------------------------------------------- #
 # 覆盖面 — 哪些共享表**还没有**门禁
 # --------------------------------------------------------------------------- #
 

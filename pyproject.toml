@@ -25,7 +25,9 @@ markers = [
 # parallel + COVERAGE_PROCESS_START let the subprocess-invoked scripts be tracked
 # (most tests run the CLIs via subprocess, invisible to in-process coverage).
 parallel = true
-source = ["scripts"]
+# evals/ 也计入: run_checks.py (发布门禁本体) 与 mutate.py 决定「发什么货」,
+# 却从来不在覆盖率分母里 —— 88.8% 这个数字对发布链路是零度量。
+source = ["scripts", "evals"]
 sigterm = true
 omit = ["scripts/build_skill.py"]  # build tooling, not runtime
 
@@ -34,6 +36,10 @@ fail_under = 80
 precision = 1
 
 [tool.mypy]
+# CONTRIBUTING 声明「必须类型注解」—— 此前只是约定, mypy 不开这个开关, 实测
+# `mypy scripts/ --disallow-untyped-defs` 有 22 处违反, 分布在 8 个文件里。
+# 现已全部补齐并把它变成门禁。lunar_python 无类型存根, 其对象一律标 Any。
+disallow_untyped_defs = true
 python_version = "3.11"
 ignore_missing_imports = true
 warn_unused_ignores = false

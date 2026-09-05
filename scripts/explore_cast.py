@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import math
 import sys
+from typing import Any
 
 import entropy
 from utils import ensure_utf8_stdio, json_print
@@ -55,7 +56,8 @@ SAFETY = [
 ]
 
 
-def random_points(lat: float, lon: float, radius_m: float, n: int, rng):
+def random_points(lat: float, lon: float, radius_m: float, n: int,
+                  rng: Any) -> list[tuple[float, float]]:
     """n uniformly-distributed points within radius_m of (lat, lon)."""
     pts = []
     cos_lat = _cos_lat(lat) or 1e-9
@@ -69,7 +71,9 @@ def random_points(lat: float, lon: float, radius_m: float, n: int, rng):
     return pts
 
 
-def find_anomaly(pts, origin, radius_m, mode, grid=16):
+def find_anomaly(pts: list[tuple[float, float]],
+                 origin: tuple[float, float], radius_m: float,
+                 mode: str, grid: int = 16) -> tuple[float, float, float]:
     """Grid-density anomaly over the point cloud (dependency-free, honest about
     being grid-density, not gaussian KDE). Returns (target_lat, target_lon, z)."""
     olat, olon = origin
@@ -126,7 +130,7 @@ def find_anomaly(pts, origin, radius_m, mode, grid=16):
     return tlat, tlon, z
 
 
-def haversine_m(lat1, lon1, lat2, lon2) -> float:
+def haversine_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     r = 6_371_000.0
     p1, p2 = math.radians(lat1), math.radians(lat2)
     dp = math.radians(lat2 - lat1)
@@ -135,7 +139,7 @@ def haversine_m(lat1, lon1, lat2, lon2) -> float:
     return 2 * r * math.asin(min(1.0, math.sqrt(a)))
 
 
-def bearing_deg(lat1, lon1, lat2, lon2) -> float:
+def bearing_deg(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     p1, p2 = math.radians(lat1), math.radians(lat2)
     dl = math.radians(lon2 - lon1)
     x = math.sin(dl) * math.cos(p2)
