@@ -423,3 +423,85 @@ def test_meihua_reference_worked_example_matches_the_engine():
     # 文档必须写着引擎给出的那个变卦, 且不再写旧的错误答案。
     assert "风天小畜" in md
     assert '三爻动 → 变卦"风雷益"' not in md
+
+
+def test_liuyao_najia_pins_every_line_branch():
+    """纳甲定每一爻的地支, 进而定 六亲/世应/旺衰/空亡 —— 即整个断卦层。
+    liuyao_cast.py 行覆盖 88.8%, 却没有任何断言检查排出来的爻装了什么;
+    变异测试实证: 乾宫 lower ["子","寅","辰"] 改成 ["子","寅","午"] 全量全绿。
+    这是「覆盖率高而无 oracle」的干净样本。
+
+    乾宫纳甲 (《卜筮正宗》): 内卦 甲子寅辰, 外卦 壬午申戌; 本例起于丙 (随日辰),
+    故取 丙辰/丙午/丙申 … 下三爻地支必为 辰午申。
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from liuyao_cast import NAJIA_TABLE
+
+    # 先锁整张表 —— 端到端断言只覆盖某一次起卦碰到的那一宫, 而缺陷可以落在
+    # 另外七宫的任何一行。八宫纳甲 (《卜筮正宗》): 乾甲壬、坎戊、艮丙、震庚、
+    # 巽辛、离己、坤乙癸、兑丁; 地支自内卦初爻起隔位顺(阳)/逆(阴)行。
+    want = {
+        "乾": ("甲", "壬", ["子", "寅", "辰"], ["午", "申", "戌"]),
+        "坎": ("戊", "戊", ["寅", "辰", "午"], ["申", "戌", "子"]),
+        "艮": ("丙", "丙", ["辰", "午", "申"], ["戌", "子", "寅"]),
+        "震": ("庚", "庚", ["子", "寅", "辰"], ["午", "申", "戌"]),
+        "巽": ("辛", "辛", ["丑", "亥", "酉"], ["未", "巳", "卯"]),
+        "离": ("己", "己", ["卯", "丑", "亥"], ["酉", "未", "巳"]),
+        "坤": ("乙", "癸", ["未", "巳", "卯"], ["丑", "亥", "酉"]),
+        "兑": ("丁", "丁", ["巳", "卯", "丑"], ["亥", "酉", "未"]),
+    }
+    assert set(NAJIA_TABLE) == set(want), set(NAJIA_TABLE) ^ set(want)
+    for tri, (lo_s, up_s, lo_b, up_b) in want.items():
+        row = NAJIA_TABLE[tri]
+        assert (row["lower_stem"], row["upper_stem"]) == (lo_s, up_s), tri
+        assert row["lower_branches"] == lo_b, (tri, row["lower_branches"], lo_b)
+        assert row["upper_branches"] == up_b, (tri, row["upper_branches"], up_b)
+
+    d = run_cli("liuyao_cast.py", "coins", "--seed", "7",
+                "--date", "2026-06-01", "--time", "10:00")
+    lines = d["main_chart"]["lines"]
+    assert [ln["position"] for ln in lines] == [1, 2, 3, 4, 5, 6]
+    assert [ln["branch"] for ln in lines[:3]] == ["辰", "午", "申"], \
+        [ln["branch"] for ln in lines]
+    # 地支必须真的驱动五行与六亲, 而不是各算各的
+    assert [ln["wuxing"] for ln in lines[:3]] == ["土", "火", "金"]
+    assert lines[0]["liu_qin"] == "父母"
+    # 世爻有且只有一个, 应爻同理 —— 世应错位是纳甲错的第一个下游症状
+    assert sum(1 for ln in lines if ln["is_shi"]) == 1
+    assert sum(1 for ln in lines if ln["is_ying"]) == 1
+
+
+def test_64hex_judgments_are_pinned_per_hexagram():
+    """全仓从前对 64hex.json 内容的值断言只有第 50 卦三条; 其余 63 卦卦辞、64 条
+    大象、378 条爻辞零断言。变异实证: 第 3、4 卦的 judgment 对调 -> 全量全绿。
+    这些正是脚本交付给用户的解读主体。
+    """
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    d = json.loads((root / "assets" / "64hex.json").read_text(encoding="utf-8"))
+    items = list(d["hexagrams"].values()) if isinstance(d.get("hexagrams"), dict) \
+        else d["hexagrams"]
+    by_num = {h["number"]: h for h in items}
+
+    # 通行本卦辞, 逐字锁 —— 挑的是彼此相邻、最容易被整体错位的几卦。
+    golden = {
+        1:  ("乾", "元亨利贞。"),
+        2:  ("坤", "元亨,利牝马之贞。"),
+        3:  ("屯", "元亨,利贞。勿用有攸往,利建侯。"),
+        4:  ("蒙", "亨。匪我求童蒙,童蒙求我。"),
+        11: ("泰", "小往大来,吉亨。"),
+        12: ("否", "否之匪人,不利君子贞,大往小来。"),
+        63: ("既济", "亨小,利贞。初吉终乱。"),
+        64: ("未济", "亨。小狐汔济,濡其尾,无攸利。"),
+    }
+    for num, (name, judgment) in golden.items():
+        h = by_num[num]
+        assert h["name_zh"] == name, (num, h["name_zh"], name)
+        assert h["judgment"].startswith(judgment[:6]), (num, h["judgment"], judgment)
+
+    # 64 条卦辞两两互异 —— 任何一次整体错位都会在这里留下重复。
+    judgments = [h["judgment"] for h in items]
+    assert len(set(judgments)) == 64, "有卦辞重复, 疑似整体错位"

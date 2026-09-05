@@ -40,6 +40,9 @@ def parse_frontmatter(text: str) -> dict[str, str]:
     return parsed
 
 
+MUTATION_TIMEOUT_S = 1800
+
+
 def check_skill_metadata() -> None:
     skill_md = ROOT / "SKILL.md"
     content = skill_md.read_text(encoding="utf-8")
@@ -170,6 +173,27 @@ def check_interpretive_discipline() -> None:
     for needle in AGENT_DISCIPLINE_NEEDLES:
         if needle not in agent_text:
             fail(f"agents/openai.yaml missing interpretive-discipline element: {needle!r}")
+
+
+def check_mutation_score() -> None:
+    """测试套件必须**抓得到 bug**, 而不只是数量多。
+
+    两轮独立审计各自实测出同一件事: 把关键常量或判断标签改坏, 2100+ 条测试照样
+    全绿, 存活率 77%。覆盖率对此无感 —— liuyao_cast 行覆盖 88.8%, 却没有任何
+    断言检查排出来的爻装了什么。
+
+    evals/mutate.py 施加一组人为缺陷 (每处都注明「这个值错了用户会看到什么」),
+    逐一确认套件会红。零存活是门禁条件: 存活即意味着该类缺陷能进主干而无人察觉。
+    """
+    proc = subprocess.run(
+        [sys.executable, "-X", "utf8", str(ROOT / "evals" / "mutate.py")],
+        cwd=ROOT, text=True, encoding="utf-8", errors="replace",
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+        timeout=MUTATION_TIMEOUT_S,
+    )
+    if proc.returncode != 0:
+        output = (proc.stdout or "")[-2000:] or "(no output captured)"
+        fail("变异测试有存活项 (这些缺陷能进主干而无人察觉):\n" + output)
 
 
 def check_release_cleanliness() -> None:
@@ -314,6 +338,7 @@ def main() -> int:
         check_interpretive_discipline,
         check_eval_assertions,
         check_unit_tests,
+        check_mutation_score,
         check_release_cleanliness,
     ]
     results: list[tuple[str, bool, str]] = []

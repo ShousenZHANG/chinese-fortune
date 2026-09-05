@@ -669,3 +669,80 @@ def test_lunar_input_resolves_timezone_from_the_solar_day():
         assert a["ok"] and b["ok"], (a, b)
         assert a["timezone"] == b["timezone"], (ly, lm, ld, a["timezone"], b["timezone"])
         assert a["four_pillars"] == b["four_pillars"], (ly, lm, ld)
+
+
+def test_tiaohou_primary_yongshen_reaches_the_output_for_representative_cells():
+    """调候用神 决定大运流年吉凶/方位/颜色/行业 —— 一格错则整份批断反号。变异实证:
+    把某格的 primary_yongshen 从 甲 改成 丙, 全量套件仍全绿。
+
+    以往对 tiaohou.json 的断言只覆盖「已核对格的字段形状」, 不覆盖「这个值真的
+    走到了输出」。这里挑四个不同日干/月支的格, 端到端跑到 yong_shen.primary。
+    """
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    table = json.loads(
+        (root / "assets" / "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
+
+    # (公历生日, 期望的日干|月支, 该格的 primary_yongshen[0])
+    cases = [
+        ((1990, 5, 10, 14), "戊|巳"),
+        ((1990, 1, 15, 10), "己|丑"),
+        ((1985, 8, 20, 10), "丙|申"),
+        ((2000, 11, 5, 10), "壬|亥"),
+    ]
+    checked = 0
+    for (y, mo, dd, hh), _hint in cases:
+        d, _ = _run_bazi("--year", y, "--month", mo, "--day", dd, "--hour", hh,
+                         "--gender", "male")
+        assert d["ok"], d
+        key = f'{d["day_master"]["stem"]}|{d["four_pillars"]["month"]["branch"]}'
+        cell = table[key]
+        want = cell["primary_yongshen"][0]
+        ys = d.get("yong_shen") or {}
+        if not ys.get("tiaohou_match"):
+            continue          # 该盘走的是扶抑路径, 不检验调候
+        assert ys["primary"] == want, (
+            f"{key}: 引擎输出用神 {ys['primary']}, 而 tiaohou.json 该格是 {want}")
+        # notes 原样进 reason, 也一并锁住 —— 它会被 Claude 转述给用户
+        assert cell["notes"][:8] in ys["reason"], (key, ys["reason"][:80])
+        checked += 1
+    assert checked >= 3, f"只有 {checked} 个用例走到调候路径, 覆盖不足"
+
+
+def test_tiaohou_primary_yongshen_table_is_locked():
+    """120 格的 primary_yongshen 整表锁死。
+
+    上一条端到端测试只能覆盖它恰好排到的那几格; 缺陷可以落在另外 116 格的任何一格,
+    而每一格都直接决定一份批断的用神 —— 进而决定大运流年吉凶、方位、颜色、行业。
+    变异实证: 改任意一格的 primary 而不动别处, 端到端用例照样全绿。
+
+    这里锁的是**当前值**, 不是「正确值」—— 46 格已与《穷通宝鉴》原文核对
+    (见 audit.verified_cells), 其余 74 格仍应视为未核。改动任何一格都必须同时
+    更新这里的哈希, 好让改动在 diff 里显形而不是静悄悄溜过去。
+    """
+    import hashlib
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    data = json.loads(
+        (root / "assets" / "tiaohou.json").read_text(encoding="utf-8"))
+    cells = data["tiaohou"]
+    assert len(cells) == 120, len(cells)
+
+    primaries = {k: v["primary_yongshen"] for k, v in sorted(cells.items())}
+    blob = json.dumps(primaries, ensure_ascii=False, sort_keys=True)
+    digest = hashlib.sha256(blob.encode("utf-8")).hexdigest()
+    assert digest == "6521859ffbe59ad4cf10720781a8e59ec18f292bb3146c6e445ae7128cbfa741", (
+        "调候 primary_yongshen 有改动。确认无误后更新此哈希, 并在提交信息里写清"
+        f"改了哪几格、依据是什么。当前 sha256={digest}")
+
+    # 每格必须非空且只含天干 —— 结构性护栏, 与上面的哈希互补。
+    for key, prim in primaries.items():
+        assert prim, f"{key} 的 primary_yongshen 为空"
+        assert all(c in "甲乙丙丁戊己庚辛壬癸" for c in prim), (key, prim)
+
+    verified = [k for k, v in cells.items() if v.get("verified_against_source")]
+    assert len(verified) == 46, (
+        f"已核对格数从 46 变成 {len(verified)} —— 若确有新核对, 更新此数并在"
+        "audit.verified_cells 里同步登记")

@@ -277,3 +277,57 @@ def test_harness_reports_a_timeout_as_a_failed_check_not_a_traceback():
     # 上面复刻的是 main() 的循环; 确认 main() 真的带了这个 except 分支。
     src = (root / "evals" / "run_checks.py").read_text(encoding="utf-8")
     assert "except subprocess.TimeoutExpired" in src
+
+
+def test_mutation_gate_is_wired_and_fails_on_a_survivor():
+    """变异门禁本身必须会红。
+
+    这道门禁的价值全在「有存活就失败」这一条上; 如果它只是跑一遍就放行, 那和没有
+    一样。这里检查两件事: (a) 它确实进了 checks 清单; (b) mutate.py 在有存活时
+    退出码非 0 —— 用一个必然存活的假变异 (改注释) 实测。
+    """
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(root / "evals"))
+    import mutate
+    import run_checks
+
+    src = (root / "evals" / "run_checks.py").read_text(encoding="utf-8")
+    assert "check_mutation_score," in src, "变异门禁没进 checks 清单"
+    assert run_checks.MUTATION_TIMEOUT_S >= 900
+
+    # 每处变异都必须写明「这个值错了用户会看到什么」, 否则存活清单读不出轻重。
+    assert len(mutate.MUTATIONS) >= 10
+    for m in mutate.MUTATIONS:
+        assert len(m.why) > 15, f"{m.name} 的 why 太空泛: {m.why!r}"
+        assert (root / m.path).exists(), f"{m.name} 指向不存在的文件 {m.path}"
+
+    # 一个必然存活的假变异: 只改注释, 任何测试都不会红。
+    probe = root / "evals" / "_mutate_probe.py"
+    probe.write_text(
+        "from mutate import Mutation, main\n"
+        "import mutate\n"
+        "mutate.MUTATIONS = [Mutation('probe:注释', 'scripts/utils.py',\n"
+        "    '# --------------------------------------------------------------------------- #',\n"
+        "    '# ---- probe ---- #', 'a comment-only change nothing can catch',\n"
+        "    ['tests/test_utils.py'])]\n"
+        "raise SystemExit(main([]))\n",
+        encoding="utf-8")
+    try:
+        proc = subprocess.run(
+            [sys.executable, "-X", "utf8", str(probe)],
+            cwd=root / "evals", capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=300)
+        assert proc.returncode != 0, (
+            "必然存活的变异没有让 mutate.py 失败 —— 门禁是摆设\n" + proc.stdout[-500:])
+        assert "SURVIVED" in proc.stdout
+    finally:
+        probe.unlink(missing_ok=True)
+
+    # 探针跑完后工作树必须干净 —— mutate.py 的 finally 还原必须可靠。
+    st = subprocess.run(["git", "status", "--short"], cwd=root,
+                        capture_output=True, text=True, encoding="utf-8")
+    assert "scripts/utils.py" not in st.stdout, (
+        "变异后没有还原 scripts/utils.py:\n" + st.stdout)
