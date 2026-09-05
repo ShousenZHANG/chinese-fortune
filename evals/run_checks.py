@@ -123,26 +123,35 @@ def check_core_scripts() -> None:
 
 
 def check_reference_coverage() -> None:
+    """SKILL.md 必须路由到 references/ 下的每一个文件, 且它们都得存在。
+
+    从前 required_refs 是一份手写的 12 项名单, 而 references/ 有 25 个文件、
+    SKILL.md 实际路由 23 个 —— 11 个已路由的 reference 没有任何存在性守护
+    (14-hehun、15-jiemeng、16-shengxiao、17-xingzuo、18-tarot、19-shensha、
+    20-disclaimer、00-intake、09/10/11 等)。名单每加一个方法就得记得同步, 而没人
+    记得。改为从磁盘枚举。
+    """
     skill_text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    required_refs = [
-        "00-foundations.md",
-        "01-bazi.md",
-        "02-ziwei.md",
-        "03-yijing.md",
-        "04-liuyao.md",
-        "05-meihua.md",
-        "06-qimen.md",
-        "07-daliuren.md",
-        "08-fengshui.md",
-        "12-huangli.md",
-        "13-qiming.md",
-        "21-extended-methods.md",
-    ]
-    for ref in required_refs:
-        if ref not in skill_text:
-            fail(f"SKILL.md does not route to {ref}")
-        if not (ROOT / "references" / ref).exists():
-            fail(f"missing reference file: {ref}")
+    refs = sorted((ROOT / "references").glob("*.md"))
+    if len(refs) < 20:
+        fail(f"references/ 只有 {len(refs)} 个文件, 疑似目录不完整")
+
+    # 直接被 SKILL.md 链接, 或被某个已链接的 reference 链接 (下沉链接)
+    linked_from_skill = {m.split("/")[-1]
+                         for m in re.findall(r"\]\(([^)]*?\.md)\)", skill_text)}
+    unrouted = []
+    for f in refs:
+        if f.name in linked_from_skill:
+            continue
+        # 允许下沉: 被另一个 reference 链接也算 (可达性由
+        # tests/test_harness_gates.py 的 BFS 严格把关)
+        if any(f.name in o.read_text(encoding="utf-8")
+               for o in refs if o != f):
+            continue
+        unrouted.append(f.name)
+    if unrouted:
+        fail(f"SKILL.md 与其它 reference 都没有链接到: {unrouted}")
+
 
 
 FIVE_CLASSICS = ["子平真诠", "滴天髓", "穷通宝鉴", "三命通会", "渊海子平"]

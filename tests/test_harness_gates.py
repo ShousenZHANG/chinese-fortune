@@ -139,15 +139,38 @@ def test_intake_reachable_from_every_personal_data_route():
 
 
 def test_moved_reference_files_all_exist_and_are_linked():
-    """Every references/*.md must be reachable from SKILL.md or from another
-    reference — an unreachable file is dead weight that progressive disclosure
-    can never surface."""
-    skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
-    refs = sorted((ROOT / "references").glob("*.md"))
-    corpus = skill + "".join(
-        f.read_text(encoding="utf-8") for f in refs)
-    for f in refs:
-        assert corpus.count(f.name) >= 2, f"{f.name} is unreachable (only self-reference)"
+    """每个 references/*.md 都必须从 SKILL.md **可达** —— 顺着链接走得到。
+
+    旧断言是 `corpus.count(name) >= 2`, 而一条 markdown 链接
+    `[X.md](references/X.md)` 本身就贡献 2 次出现 —— 一个只链接自己的孤儿文件
+    计数就是 2, 直接 PASS, 而函数 docstring 恰恰声称能抓 "only self-reference"。
+    它也从不要求「从 SKILL.md 出发」: 两个互相链接的孤岛同样满分。
+
+    改为真的走链接图: 从 SKILL.md 出发做 BFS, 未被访问到的即不可达。
+    """
+    import re
+    skill_text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    refs = {f.name: f.read_text(encoding="utf-8")
+            for f in sorted((ROOT / "references").glob("*.md"))}
+
+    def links_in(text: str) -> set:
+        # 只认真正的 markdown 链接目标, 不认正文里顺口提到的文件名
+        return {m.split("/")[-1] for m in
+                re.findall(r"\]\(([^)]*?\.md)\)", text)} & set(refs)
+
+    seen: set = set()
+    frontier = links_in(skill_text)
+    while frontier:
+        cur = frontier.pop()
+        if cur in seen:
+            continue
+        seen.add(cur)
+        frontier |= links_in(refs[cur]) - seen
+
+    unreachable = sorted(set(refs) - seen)
+    assert not unreachable, (
+        f"这些 reference 从 SKILL.md 顺着链接走不到, 渐进披露永远呈现不了: "
+        f"{unreachable}")
 
 
 def test_every_asset_is_reachable_from_a_script():
@@ -492,3 +515,31 @@ def test_engines_really_do_not_write_files():
                             writers.append(f"{f.name}:{node.lineno} open({a.value!r})")
     assert not writers, (
         "这些引擎会写文件, 与 00-intake.md 的「不落盘」声明矛盾: " + str(writers))
+
+
+def test_ci_does_not_cancel_main_branch_runs():
+    """cancel-in-progress 同时作用于 push:main 时, 连推两个 commit 会取消前一个的
+    CI —— 而发布 tag 恰恰打在这类 commit 上, 那次运行的结果就永远没有了。
+    """
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    ci = (root / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+    line = next((ln for ln in ci.splitlines() if "cancel-in-progress" in ln), "")
+    assert line, "ci.yml 没有 concurrency 设置"
+    assert "pull_request" in line, (
+        f"cancel-in-progress 无条件为真, push:main 的运行会被后一次推送取消: {line}")
+
+
+def test_dependency_updates_are_at_least_visible():
+    """Actions 全部按可变大版本 tag 引用 (checkout@v5 等) —— 上游改 tag 指向即
+    静默换掉 CI 里跑的代码, 而本仓库的发布产物由 CI 构建。
+
+    钉 commit SHA 更强但让升级变成手工活; 这里要求至少有 dependabot,
+    让每次变更可见、可复核。
+    """
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    dep = root / ".github" / "dependabot.yml"
+    assert dep.exists(), "无 dependabot.yml —— actions 与 pip 依赖的变更不可见"
+    text = dep.read_text(encoding="utf-8")
+    assert "github-actions" in text and "pip" in text

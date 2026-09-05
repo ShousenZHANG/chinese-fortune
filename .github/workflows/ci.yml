@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: ci-${{ github.ref }}
-  cancel-in-progress: true
+  # 只在 PR 上取消在途运行。push 到 main 时连推两个 commit 会取消前一个的 CI,
+  # 而发布 tag 恰恰打在这类 commit 上 —— 那次运行的结果就永远没有了。
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   test:
