@@ -17,7 +17,11 @@ import json
 import os
 import sys
 
-from utils import ensure_utf8_stdio, json_print
+from utils import (
+    ensure_utf8_stdio,
+    error_envelope,
+    json_print,
+)
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   --symbol S    symbol category traditional modern_psychology common_scenarios
@@ -61,8 +65,7 @@ def main(argv: list[str] | None = None) -> int:
 
     symbols = load_symbols()
     if not symbols:
-        json_print({"error": "asset_missing",
-                    "message": "assets/jiemeng.json 未找到或为空"})
+        json_print(error_envelope('jiemeng', "asset_missing", "assets/jiemeng.json 未找到或为空"))
         return 1
 
     if args.categories:
@@ -84,13 +87,9 @@ def main(argv: list[str] | None = None) -> int:
 
     near = [s["symbol"] for s in symbols
             if any(ch in s.get("symbol", "") for ch in args.symbol)]
-    json_print({
-        "error": "symbol_not_found",
-        "message": (f"未收录梦境符号: {args.symbol}。"
+    json_print(error_envelope('jiemeng', "symbol_not_found", f"未收录梦境符号: {args.symbol}。"
                     f"可用 --search 模糊查找, 或按 references/15-jiemeng.md 的"
-                    f"分类框架解读。"),
-        "suggestions": near[:10],
-    })
+                    f"分类框架解读。", suggestions=near[:10]))
     return 1
 
 

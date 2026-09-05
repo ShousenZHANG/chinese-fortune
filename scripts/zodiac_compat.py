@@ -376,7 +376,7 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         result = (zodiac_of_year if args.cmd == "year" else taisui_zodiacs)(args.year)
     else:
-        json_print({"error": "unknown_cmd"})
+        json_print(error_envelope('zodiac', "unknown_cmd", '输入无效'))
         return 2
 
     if "error" in result:

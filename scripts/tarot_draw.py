@@ -26,6 +26,7 @@ import sys
 import entropy
 from utils import (
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     ok_envelope,
     warn,
@@ -334,13 +335,12 @@ def main(argv: list[str] | None = None) -> int:
 
     positions = SPREAD_DEFS.get(args.spread)
     if positions is None:
-        json_print({"error": "unknown_spread", "valid": list(SPREAD_DEFS.keys())})
+        json_print(error_envelope('tarot', "unknown_spread", '输入无效', valid=list(SPREAD_DEFS.keys())))
         return 2
     layout = getattr(args, "layout", None)
     if args.spread == "three" and layout:
         if layout not in THREE_LAYOUTS:
-            json_print({"error": "unknown_layout",
-                        "valid": list(THREE_LAYOUTS.keys())})
+            json_print(error_envelope('tarot', "unknown_layout", '输入无效', valid=list(THREE_LAYOUTS.keys())))
             return 2
         positions = THREE_LAYOUTS[layout]
 

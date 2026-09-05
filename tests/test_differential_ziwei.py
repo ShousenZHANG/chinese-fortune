@@ -136,3 +136,47 @@ def test_core_fields_agree_with_iztro(day, hour):
     for name in sorted(PALACES):
         assert ours_pal[name] == ref["palaces"][name], (
             name, ours_pal[name], ref["palaces"][name])
+
+
+# 补齐 ZIWEI_TABLE 的 9 个盲格 —— 主网格 (步长 97 天 × 3 时辰) 只命中
+# 141/150 个 (五行局, 农历日) 组合。改这 9 格中任何一格, 全量套件此前全绿,
+# 而该格一动, 命中它的每张盘 14 主星全移、格局改写。
+# 日期由穷举 1950-1970 找出, 每格取第一个命中日。
+ZIWEI_TABLE_BLIND_SPOTS = [
+    ("1950-02-17", 2, 1),  ("1950-03-01", 2, 13),
+    ("1950-12-03", 3, 24), ("1951-01-07", 3, 30),
+    ("1950-02-07", 4, 21),
+    ("1950-03-25", 5, 8),  ("1950-01-08", 5, 20),
+    ("1950-06-01", 6, 16), ("1950-06-13", 6, 28),
+]
+
+
+@pytest.mark.parametrize("iso,ju,lday", ZIWEI_TABLE_BLIND_SPOTS,
+                         ids=[f"ju{j}-day{d}" for _, j, d in ZIWEI_TABLE_BLIND_SPOTS])
+def test_ziwei_table_blind_spots_agree_with_iztro(iso, ju, lday):
+    """主网格够不到的 9 格, 逐格对 iztro 比对。"""
+    y, m, d = (int(x) for x in iso.split("-"))
+    ours = _ours(y, m, d, 10, "male")
+    assert ours["wuxing_ju"]["number"] == ju, (iso, ours["wuxing_ju"])
+    assert ours["lunar_date"]["day"] == lday, (iso, ours["lunar_date"])
+
+    ref = _iztro(y, m, d, 10, "male")
+    assert ours["ming_gong"]["branch"] == ref["ming"], iso
+    assert ours["wuxing_ju"]["name"] == ref["wuxing_ju"], iso
+    for star in sorted(MAIN):
+        assert ours["main_stars_positions"][star] == ref["main_pos"][star], (
+            iso, star)
+
+
+def test_the_grid_plus_blind_spots_cover_every_ziwei_table_cell():
+    """覆盖面本身要有断言 —— 否则下次网格参数一调, 盲格重现而无人知。"""
+    covered = {(ju, d) for _, ju, d in ZIWEI_TABLE_BLIND_SPOTS}
+    for day in _grid():
+        for hour in (0, 10, 23):
+            ours = _ours(day.year, day.month, day.day, hour,
+                         "male" if day.year % 2 else "female")
+            covered.add((ours["wuxing_ju"]["number"], ours["lunar_date"]["day"]))
+    missing = sorted({(ju, d) for ju in (2, 3, 4, 5, 6) for d in range(1, 31)}
+                     - covered)
+    assert not missing, (
+        f"ZIWEI_TABLE 有 {len(missing)} 格没有任何用例命中, 改坏不会被发现: {missing}")

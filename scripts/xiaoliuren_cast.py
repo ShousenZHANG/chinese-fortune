@@ -13,6 +13,7 @@ from datetime import datetime
 
 from utils import (
     ensure_utf8_stdio,
+    error_envelope,
     hour_branch,
     json_print,
     ok_envelope,
@@ -146,10 +147,10 @@ def main(argv: list[str] | None = None) -> int:
             out["input"]["lunar_month_chinese"] = lunar.getMonthInChinese()
             out["input"]["lunar_day_chinese"] = lunar.getDayInChinese()
         else:
-            json_print({"error": "unknown_cmd"})
+            json_print(error_envelope('xiaoliuren', "unknown_cmd", '输入无效'))
             return 1
     except ValueError as exc:
-        json_print({"error": "invalid_input", "message": str(exc), "input": vars(args)})
+        json_print(error_envelope('xiaoliuren', "invalid_input", str(exc), input=vars(args)))
         return 1
 
     json_print(ok_envelope("xiaoliuren", out))

@@ -201,8 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.city:
         row = lookup_city(args.city)
         if row is None:
-            json_print({"ok": False, "tool": "ziwei", "error": "unknown_city",
-                        "message": f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"})
+            json_print(error_envelope('ziwei', "unknown_city", f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
             return 1
         lon_explicit = args.longitude is not None
         if not lon_explicit:
@@ -225,8 +224,7 @@ def main(argv: list[str] | None = None) -> int:
                 solar.getDay(), args.hour, args.minute,
             )
         except ValueError as exc:
-            json_print({"ok": False, "tool": "ziwei",
-                        "error": "invalid_timezone", "message": str(exc)})
+            json_print(error_envelope('ziwei', "invalid_timezone", str(exc)))
             return 1
         tz_offset = tz_info["offset_hours"]
 

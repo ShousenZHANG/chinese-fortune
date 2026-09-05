@@ -111,8 +111,17 @@ def test_bazi_script_matches_independent_engine():
     assert p["hour"]["ganzhi"] == sx_gz(day, "h", 12)
 
 
-def test_day_pillar_matches_sxtwl_on_every_day_1920_2080():
-    """真·全网格: 1920-01-01 到 2080-01-01 逐日比对, 58,440 天无遗漏。
+def test_lunar_python_day_pillar_matches_sxtwl_on_every_day_1920_2080():
+    """**这条校验的是底层历法库, 不是本仓库的代码。**
+
+    `lp_lunar()` 就是 `Solar.fromYmdHms(...).getLunar()` —— 即被封装的
+    lunar_python 本身。所以这 58,440 天比的是 lunar_python 对 sxtwl, 全程不经过
+    scripts/ 下的任何一行。它证明的是「我们依赖的历法库与另一个独立实现一致」,
+    **不是**「我们的排盘正确」—— README 曾用它支撑后者, 那是错的 (已改)。
+
+    本仓库自己的引擎由 test_bazi_engine_matches_sxtwl_over_a_real_grid 端到端覆盖。
+
+    真·全网格: 1920-01-01 到 2080-01-01 逐日比对, 58,440 天无遗漏。
 
     上面那个参数化网格步长 131 天, 447 个采样点 = 该区间的 0.76%, 而 README
     (中文版) 声称「1920–2080 全网格验证」—— 英文版同一行不带「全」字。函数名
@@ -139,3 +148,47 @@ def test_day_pillar_matches_sxtwl_on_every_day_1920_2080():
         f"{len(mismatches)}/{checked} 天日柱不符, 前 10 条: "
         + " | ".join(mismatches[:10]))
     assert checked == 58440, checked
+
+
+def test_bazi_engine_matches_sxtwl_over_a_real_grid():
+    """端到端: **本仓库的 bazi_calc.py** 对 sxtwl, 逐盘比四柱。
+
+    此前整个文件里 bazi_calc.py 只被跑过**一次** (1984-10-01 正午一天), 而 58,440
+    天那条 sweep 根本不碰本仓库代码。于是 README 用「独立引擎 sxtwl 跨库对照」
+    支撑「真太阳时、节气定月、立春年界、夜子时、闰月等全部正确」时, 支撑物是空的。
+
+    这里在进程内直调 main() (子进程逐盘要 40 分钟, 进程内 ~90 秒), 覆盖
+    1920-2080 每 29 天一点 × 4 个时辰 —— 包含 夜子(23时) 与 早子(0时) 两侧,
+    这正是 sweep 那条 (固定正午) 永远碰不到的地方。
+    """
+    import io as _io
+    import json as _json
+    from contextlib import redirect_stdout
+    sys.path.insert(0, str(SCRIPTS))
+    import bazi_calc
+
+    cur, end = date(1920, 1, 1), date(2080, 1, 1)
+    checked, bad = 0, []
+    while cur < end:
+        for hour in (0, 12, 23):
+            buf = _io.StringIO()
+            with redirect_stdout(buf):
+                rc = bazi_calc.main([
+                    "--year", str(cur.year), "--month", str(cur.month),
+                    "--day", str(cur.day), "--hour", str(hour),
+                    "--gender", "male", "--as-of-year", "2026"])
+            assert rc == 0, (cur, hour)
+            d = _json.loads(buf.getvalue())
+            # 夜子时会把日柱推到次日 —— 用引擎回报的 solar_date 对齐 oracle,
+            # 否则比的是两个不同的日子。
+            sd = d["solar_date"]
+            sx = sx_gz(sxtwl.fromSolar(sd["year"], sd["month"], sd["day"]), "d")
+            got = d["four_pillars"]["day"]["ganzhi"]
+            if got != sx:
+                bad.append(f"{cur} {hour}时 -> solar {sd['year']}-{sd['month']}-"
+                           f"{sd['day']}: 引擎 {got} != sxtwl {sx}")
+            checked += 1
+        cur += timedelta(days=29)
+    assert not bad, (f"{len(bad)}/{checked} 盘日柱与 sxtwl 不符, 前 10 条: "
+                     + " | ".join(bad[:10]))
+    assert checked >= 6000, checked

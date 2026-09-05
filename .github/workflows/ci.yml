@@ -52,7 +52,13 @@ jobs:
           COVERAGE_PROCESS_START: ${{ github.workspace }}/pyproject.toml
         # pytest-cov auto-combines the parallel subprocess data and applies
         # fail_under (from [tool.coverage.report]); no manual combine needed.
-        run: python -m pytest tests/ -q --cov=scripts --cov-report=term-missing
+        #
+        # 裸 `--cov` (不带值) 才会用 [tool.coverage.run] 的 source。写成
+        # `--cov=scripts` 会**覆盖** config 的 source=["scripts","evals"] ——
+        # 于是 9e2191d 那次「覆盖率含发布链路」的改动在 CI 里完全空转:
+        # 分母 3303 vs 3595, 差 292 条 evals 语句, 而 fail_under=80 对
+        # run_checks.py / mutate.py 这两个「决定发什么货」的文件零约束。
+        run: python -m pytest tests/ -q --cov --cov-report=term-missing
 
       - name: Release harness (evals/run_checks.py)
         run: python -X utf8 evals/run_checks.py

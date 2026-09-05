@@ -15,7 +15,12 @@ import sys
 from datetime import datetime
 from typing import Any
 
-from utils import ensure_utf8_stdio, json_print, require_lunar
+from utils import (
+    ensure_utf8_stdio,
+    error_envelope,
+    json_print,
+    require_lunar,
+)
 
 WEEKDAY_CN = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
 
@@ -115,8 +120,7 @@ def cmd_solar2lunar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
         )
         lunar = solar.getLunar()
     except Exception as e:
-        json_print({"error": "invalid_date", "message": str(e),
-                    "input": vars(args)})
+        json_print(error_envelope('lunar_convert', "invalid_date", str(e), input=vars(args)))
         return 1
 
     json_print({"mode": "solar2lunar", "input": vars(args),
@@ -135,8 +139,7 @@ def cmd_lunar2solar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
         lunar = Lunar.fromYmdHms(args.year, m, args.day, hour, 0, 0)
         solar = lunar.getSolar()
     except Exception as e:
-        json_print({"error": "invalid_date", "message": str(e),
-                    "input": vars(args)})
+        json_print(error_envelope('lunar_convert', "invalid_date", str(e), input=vars(args)))
         return 1
 
     json_print({"mode": "lunar2solar", "input": vars(args),

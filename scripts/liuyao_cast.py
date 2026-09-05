@@ -22,6 +22,7 @@ from utils import (
     WUXING_GEN,
     WUXING_KE,
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     ok_envelope,
     require_lunar,
@@ -429,14 +430,14 @@ def main(argv: list[str] | None = None) -> int:
             dt = datetime.strptime(args.date, "%Y-%m-%d")
             y, m, d = dt.year, dt.month, dt.day
         except ValueError as e:
-            json_print({"error": "invalid_date", "message": str(e)})
+            json_print(error_envelope('liuyao', "invalid_date", str(e)))
             return 1
     if args.time:
         try:
             ht, mit = map(int, args.time.split(":"))
             h, mi = ht, mit
         except Exception:
-            json_print({"error": "invalid_time", "expected": "HH:MM"})
+            json_print(error_envelope('liuyao', "invalid_time", "HH:MM"))
             return 1
 
     solar = Solar.fromYmdHms(y, m, d, h, mi, 0)

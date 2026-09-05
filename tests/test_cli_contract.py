@@ -163,3 +163,33 @@ def test_every_engine_entry_point_is_covered_by_the_contract():
     assert not missing, (
         f"这些引擎入口没有失败契约用例: {sorted(missing)}。"
         "加两条 IMPOSSIBLE_INPUTS (一条越界、一条格式错) 再提交。")
+
+
+def test_no_engine_hand_rolls_an_error_envelope():
+    """失败信封必须一律走 utils.error_envelope。
+
+    utils.py 明写「ok/tool/version/error/message 五个键恒定存在, 调用方可无条件
+    读取」, 而 bazi_calc 手搓了 7 处, 其中 unknown_city 与 invalid_timezone 两条
+    **漏掉 version 键** —— 契约当场破在自己的旗舰引擎里。逐个跑不可能输入只能碰到
+    走到的那几条分支, 所以这里改为静态扫描源码。
+    """
+    import ast
+    offenders = []
+    for f in sorted((ROOT / "scripts").glob("*.py")):
+        tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
+        for node in ast.walk(tree):
+            if not (isinstance(node, ast.Call)
+                    and getattr(node.func, "id", None) == "json_print"):
+                continue
+            if not node.args or not isinstance(node.args[0], ast.Dict):
+                continue                      # 走的是 error_envelope/ok_envelope
+            keys = {k.value for k in node.args[0].keys
+                    if isinstance(k, ast.Constant)}
+            if "error" not in keys:
+                continue                      # 成功载荷, 由 ok_envelope 管
+            missing = {"ok", "tool", "version", "error", "message"} - keys
+            if missing:
+                offenders.append(f"{f.name}:{node.lineno} 缺 {sorted(missing)}")
+    assert not offenders, (
+        "这些失败信封是手搓的且不完整 —— 应改用 utils.error_envelope(): "
+        + str(offenders))

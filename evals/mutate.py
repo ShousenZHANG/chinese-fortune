@@ -164,10 +164,13 @@ MUTATIONS: list[Mutation] = [
         ["tests/test_liuyao_oracle.py"],
     ),
     Mutation(
+        # 该值使宫的算法在 v1.7.4 从「时支所在宫」改回经典的「旬内序数」, 旧变异的
+        # 目标文本随之消失。跳过等同于失去覆盖 (mutate.py 把 skipped 计入失败),
+        # 所以变异要跟着实现走。
         "qimen:值使退化为值符", "scripts/qimen_cast.py",
-        "zhi_shi_palace = DIZHI_TO_PALACE.get(hour_branch, shi_gan_palace)",
-        "zhi_shi_palace = shi_gan_palace",
-        "值使是八门盘独立的枢; 退化成值符副本后整张八门盘失去独立信息",
+        "xun_step = jiazi_index(hour_stem, hour_branch) % 10",
+        "xun_step = 0",
+        "值使是八门盘独立的枢; step 恒 0 即值使恒等于值符, 整张八门盘失去独立信息",
         ["tests/test_qimen_liuren_oracle.py"],
     ),
     Mutation(
@@ -201,6 +204,35 @@ MUTATIONS: list[Mutation] = [
         '"classical_basis": "见《三命通会》",',
         "五格系近代日本熊崎式, 冒充古籍即违反 SKILL.md:54 的明令",
         ["tests/test_interpretation_coverage.py"],
+    ),
+    # ---- 复评复核者施加的 4 处, 与上面 26 处全不重叠, 当时 4/4 全部存活 ----
+    # 这批是「我的变异是我自己挑的」这个盲区的直接证据: 26 处测的是我想到的那些。
+    Mutation(
+        "qimen:吉门凶门对调", "scripts/qimen_cast.py",
+        'JI_MEN: set[str] = {"开门", "休门", "生门"}',
+        'JI_MEN: set[str] = {"死门", "休门", "生门"}',
+        "classify_directions 用它判吉凶方位 —— 对调即把大吉方位报成大凶",
+        ["tests/test_qimen_liuren_oracle.py"],
+    ),
+    Mutation(
+        "ziwei:紫微表盲格", "scripts/ziwei_tables.py",
+        '"丑", "寅", "寅", "卯", "卯", "辰"',
+        '"寅", "寅", "寅", "卯", "卯", "辰"',
+        "该格一动, 命中它的每张盘 14 主星全移、格局改写; 主网格 141/150 够不到",
+        ["tests/test_differential_ziwei.py"],
+    ),
+    Mutation(
+        "assets:乾卦爻辞", "assets/64hex.json",
+        '{"position": 1, "type": "九", "text": "潜龙勿用。"}',
+        '{"position": 1, "type": "九", "text": "亢龙有悔。"}',
+        "384 条爻辞是周易/六爻交付的解读主体, lookup 原样输出给用户",
+        ["tests/test_subcommands.py"],
+    ),
+    Mutation(
+        "liuren:一课五行口径", "scripts/liuren_cast.py",
+        '"lower_wuxing": TIANGAN_WUXING[ri_gan],', '"lower_wuxing": None,',
+        "一课贼克改用寄宫地支五行; 乙丁戊辛癸五干与本干不同, 三传 14% 变号",
+        ["tests/test_qimen_liuren_oracle.py"],
     ),
     Mutation(
         "assets:卦辞对调", "assets/64hex.json",

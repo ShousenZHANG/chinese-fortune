@@ -17,6 +17,7 @@ from typing import Any
 
 from utils import (
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     ok_envelope,
     require_lunar,
@@ -160,8 +161,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             dt = datetime.strptime(args.date, "%Y-%m-%d")
         except ValueError as e:
-            json_print({"error": "invalid_date_format",
-                        "message": str(e), "expected": "YYYY-MM-DD"})
+            json_print(error_envelope('huangli', "invalid_date_format", str(e), expected="YYYY-MM-DD"))
             return 1
     else:
         dt = datetime.now()

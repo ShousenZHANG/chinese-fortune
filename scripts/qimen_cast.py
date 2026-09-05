@@ -596,8 +596,7 @@ def main(argv: list[str] | None = None) -> int:
             jq_name, days_since = jieqi_context(y, m, d)
             ju_type, san_yuan, ju_number = determine_ju(jq_name, days_since)
         except (ValueError, KeyError) as e:
-            json_print({"ok": False, "error": "ju_determination_failed",
-                        "message": str(e)})
+            json_print(error_envelope('qimen', "ju_determination_failed", str(e)))
             return 1
 
     # 2. 地盘
@@ -634,11 +633,22 @@ def main(argv: list[str] | None = None) -> int:
     # 时辰恒等 —— 实测 2026-06-01 全部 12 个时辰 12/12 相同, 值使退化成值符的副本,
     # 而它本该是八门盘独立的枢。
     #
-    # references/06-qimen.md:215 「以时干所遁之六仪为枢 … 飞至时干所在宫」——
-    # 值符随**时干**;  :219 「以**时支**所在宫为『值使门』起点」—— 值使随时支。
-    # 同文 :358 也注明「值使门起法: 以日干起还是时干起, 各派不一」, 本实现依本仓库
-    # 自己的参考文档取时支。
-    zhi_shi_palace = DIZHI_TO_PALACE.get(hour_branch, shi_gan_palace)
+    # 经典安法: **值使门自值符宫(即旬首之六仪所落宫)起, 阳遁顺行、阴遁逆行,
+    # 数至本时在其旬中的序数** —— 甲子时不动, 乙丑时进一宫, ……, 癸酉时进九宫。
+    # references/06-qimen.md:219 后半句「值使门由当日符头时辰决定」说的正是这条;
+    # 同句前半「以时支所在宫为起点」与之矛盾, 是该文自身的讹误 (已改)。
+    #
+    # v1.7.3 曾据那半句取「时支所在宫」—— 穷举 60 时辰 × 2 遁 × 8 宫 = 960 组,
+    # 与经典仅 120 组相符 = 12.5%, 恰是 1/8 的随机命中率, 即与经典无关。
+    # 而它更早的形态是直接复用 shi_gan_palace, 使值使恒等于值符。两次都错。
+    #
+    # 后果不止一个标记: 该值是 men_plate 的旋转目标, 整张八门盘随之整体位移,
+    # 而 classify_directions 用八门判吉凶方位。
+    ring = EIGHT_RING_YANG if ju_type == "阳遁" else EIGHT_RING_YIN
+    xun_step = jiazi_index(hour_stem, hour_branch) % 10   # 本时在旬中的序数 0..9
+    _zf_ring = _resolve_ring_palace(zhi_fu_palace)
+    _i = ring.index(_zf_ring)
+    zhi_shi_palace = ring[(_i + xun_step) % 8] if ju_type == "阳遁"         else ring[(_i - xun_step) % 8]
     men = men_plate(zhi_fu_palace, zhi_shi_palace, ju_type)
     zhi_shi_men = men.get(_resolve_ring_palace(zhi_shi_palace), "?")
 
@@ -698,7 +708,8 @@ def main(argv: list[str] | None = None) -> int:
         "zhi_fu_origin_palace": zhi_fu_palace,
         "zhi_shi_men": zhi_shi_men,
         "zhi_shi_palace": zhi_shi_palace,
-        "zhi_shi_basis": "时支所在宫 (references/06-qimen.md:219); 值符则随时干",
+        "zhi_shi_basis": ("自值符宫(旬首之六仪落宫)起, 阳顺阴逆, 数至本时在其旬中的序数 "
+                          "(references/06-qimen.md:219); 值符则随时干"),
         "palaces": palaces,
         "patterns": patterns,
         "auspicious_directions": sorted(set(aus_dirs)),

@@ -54,12 +54,14 @@ from utils import (
     TIANGAN_YIN_YANG,
     __version__,
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     longitude_correction,
     lookup_city,
     require_lunar,
     resolve_timezone_offset,
     true_solar_time_info,
+    validate_birth_input,
     warn,
 )
 
@@ -302,23 +304,12 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
-def _validate_args(args: argparse.Namespace) -> str | None:
-    """Boundary-validate inputs before touching lunar_python.
-
-    Returns an error message string if invalid, else None.
-    """
-    if not 1 <= args.month <= 12:
-        return f"month 必须在 1-12, 收到 {args.month}"
-    if not 1 <= args.day <= 31:
-        return f"day 必须在 1-31, 收到 {args.day}"
-    if args.hour is not None and not 0 <= args.hour <= 23:
-        return f"hour 必须在 0-23, 收到 {args.hour}"
-    if not 0 <= args.minute <= 59:
-        return f"minute 必须在 0-59, 收到 {args.minute}"
-    # lunar_python supports roughly 1900-2100.
-    if not 1900 <= args.year <= 2100:
-        return f"year 超出支持范围 1900-2100, 收到 {args.year}"
-    return None
+# _validate_args 曾在此 —— 它与 utils.validate_birth_input 是同一个校验器的两份
+# 逐字副本 (五条 f-string 模板一字不差), 而 utils 那份的章节注释明说自己就是从
+# 「边界校验只有 bazi_calc 一家做」抽出来的。抽出来了, 原址一行没删, 且两份已行为
+# 分叉: 检查顺序不同 (year 最后 vs 最前) 使同一非法输入报不同的违规项, 本地这份
+# 还硬编码 1900/2100 而不是用 utils 的 YEAR_MIN/YEAR_MAX, 并缺少「这个月有没有这一天」
+# 的 date() 校验。现已删除, 统一走 utils.validate_birth_input。
 
 
 # --------------------------------------------------------------------------- #
@@ -329,12 +320,10 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
-    err = _validate_args(args)
+    err = validate_birth_input(args.year, args.month, args.day,
+                               args.hour, args.minute, lunar=args.lunar)
     if err:
-        json_print({
-            "ok": False, "tool": "bazi", "version": VERSION,
-            "error": "invalid_input", "message": err, "input": vars(args),
-        })
+        json_print(error_envelope("bazi", "invalid_input", err, input=vars(args)))
         return 1
 
     require_lunar()
@@ -351,8 +340,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.city:
         row = lookup_city(args.city)
         if row is None:
-            json_print({"ok": False, "tool": "bazi", "error": "unknown_city",
-                        "message": f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"})
+            json_print(error_envelope(
+                "bazi", "unknown_city",
+                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
             return 1
         lon_explicit = args.longitude is not None
         if not lon_explicit:
@@ -417,8 +407,7 @@ def main(argv: list[str] | None = None) -> int:
                 args.timezone, base_y, base_m, base_d, eff_hour, args.minute,
             )
         except ValueError as exc:
-            json_print({"ok": False, "tool": "bazi", "error": "invalid_timezone",
-                        "message": str(exc)})
+            json_print(error_envelope("bazi", "invalid_timezone", str(exc)))
             return 1
         tz_offset = tz_info["offset_hours"]
 

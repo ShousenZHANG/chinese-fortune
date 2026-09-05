@@ -362,7 +362,7 @@ def main(argv: list[str] | None = None) -> int:
     # Split: assume 1-char surname unless --compound-surname
     if args.compound_surname:
         if len(name) < 3:
-            json_print({"error": "compound_surname_needs_3plus"})
+            json_print(error_envelope('name', "compound_surname_needs_3plus", '输入无效'))
             return 1
         surname_chars = list(name[:2])
         given_chars = list(name[2:])
@@ -392,13 +392,7 @@ def main(argv: list[str] | None = None) -> int:
         given_strokes.append(s)
 
     if missing and getattr(args, "strict", False):
-        json_print({
-            "ok": False,
-            "error": "missing_strokes",
-            "message": f"以下字不在康熙笔画表中, 严格模式拒绝估算: {missing}",
-            "missing_in_table": missing,
-            "input": vars(args),
-        })
+        json_print(error_envelope('name', "missing_strokes", f"以下字不在康熙笔画表中, 严格模式拒绝估算: {missing}", missing_in_table=missing, input=vars(args)))
         return 1
 
     grids = five_grids(surname_strokes, given_strokes)

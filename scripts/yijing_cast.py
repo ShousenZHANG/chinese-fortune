@@ -26,6 +26,7 @@ from utils import (
     BINARY_TO_TRIGRAM,
     XIANTIAN_NUM_TO_TRIGRAM,
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     ok_envelope,
     parse_datetime_arg,
@@ -515,7 +516,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             now = parse_datetime_arg(args.dt)
         except ValueError as e:
-            json_print({"error": "bad_datetime", "message": str(e)})
+            json_print(error_envelope('yijing', "bad_datetime", str(e)))
             return 1
         lines, meta = from_time(now)
         meta["now_iso"] = now.isoformat()
@@ -530,12 +531,11 @@ def main(argv: list[str] | None = None) -> int:
             out = {"hexagrams": [lookup_entry(n, assets) for n in range(1, 65)]}
         else:
             if not 1 <= args.number <= 64:
-                json_print({"error": "bad_hexagram_number",
-                            "message": f"卦序需在 1-64 之间, 收到: {args.number}"})
+                json_print(error_envelope('yijing', "bad_hexagram_number", f"卦序需在 1-64 之间, 收到: {args.number}"))
                 return 1
             out = lookup_entry(args.number, assets)
     else:
-        json_print({"error": "unknown_method"})
+        json_print(error_envelope('yijing', "unknown_method", '输入无效'))
         return 2
 
     json_print(ok_envelope("yijing", out))

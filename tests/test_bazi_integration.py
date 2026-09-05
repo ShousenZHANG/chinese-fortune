@@ -625,7 +625,10 @@ def test_gregorian_nonexistent_date_is_rejected_not_fabricated():
     d, _ = _run_bazi("--year", 1990, "--month", 2, "--day", 31,
                      "--hour", 10, "--gender", "male")
     assert d["ok"] is False
-    assert d["error"] == "invalid_date"
+    # 统一走 utils.validate_birth_input 之后, 这类日期在**边界**就被拦下 (更早、
+    # 错误信息更具体), 错误码从深处转换失败的 invalid_date 变为 invalid_input。
+    assert d["error"] == "invalid_input"
+    assert "不是真实存在的公历日期" in d["message"]
 
 
 def test_lunar_input_equation_of_time_comes_from_the_solar_day():

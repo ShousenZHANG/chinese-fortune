@@ -22,6 +22,7 @@ from utils import (
     WUXING_KE,
     XIANTIAN_NUM_TO_TRIGRAM,
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     ok_envelope,
     parse_datetime_arg,
@@ -280,7 +281,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         now = parse_datetime_arg(args.dt)
     except ValueError as e:
-        json_print({"error": "bad_datetime", "message": str(e)})
+        json_print(error_envelope('meihua', "bad_datetime", str(e)))
         return 1
 
     if args.method == "time":
@@ -290,7 +291,7 @@ def main(argv: list[str] | None = None) -> int:
     elif args.method == "name":
         meta = cast_by_text(args.text)
     else:
-        json_print({"error": "unknown_method"})
+        json_print(error_envelope('meihua', "unknown_method", '输入无效'))
         return 2
 
     out = package(meta, args.question, now.month)

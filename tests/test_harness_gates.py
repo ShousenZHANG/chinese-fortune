@@ -555,3 +555,31 @@ def test_dependency_updates_are_at_least_visible():
     assert dep.exists(), "无 dependabot.yml —— actions 与 pip 依赖的变更不可见"
     text = dep.read_text(encoding="utf-8")
     assert "github-actions" in text and "pip" in text
+
+
+def test_ci_coverage_does_not_override_the_config_source():
+    """裸 `--cov` 才用 [tool.coverage.run] 的 source; `--cov=scripts` 会覆盖它。
+
+    9e2191d 把 source 改成 ["scripts","evals"] 并在提交标题宣称「覆盖率含发布
+    链路」, 而 ci.yml 跑的是 --cov=scripts —— 改动在 CI 里完全空转, 分母
+    3303 vs 3595 (差 292 条 evals 语句), fail_under=80 对 run_checks.py 与
+    mutate.py 零约束。CHANGELOG 里「86.6%, 分母现含发布链路代码」当时也是错的。
+    """
+    import re
+    import tomllib
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    ci = (root / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
+    # 只看真正的 run: 行, 不看解释这条规则的注释本身
+    cov_lines = [ln for ln in ci.splitlines()
+                 if "--cov" in ln and not ln.strip().startswith("#")]
+    assert cov_lines, "ci.yml 没有覆盖率步骤"
+    for ln in cov_lines:
+        assert not re.search(r"--cov=\S", ln), (
+            f"--cov=<值> 会覆盖 config 的 source, 使 pyproject 的设置失效: {ln.strip()}")
+
+    cfg = tomllib.loads((root / "pyproject.toml").read_text(encoding="utf-8"))
+    src = cfg["tool"]["coverage"]["run"]["source"]
+    assert "evals" in src, (
+        "发布门禁自身 (run_checks.py / mutate.py) 必须在覆盖率分母里 —— "
+        "它们决定发什么货")

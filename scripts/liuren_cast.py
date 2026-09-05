@@ -35,6 +35,7 @@ from utils import (
     __version__,
     chong_branch,
     ensure_utf8_stdio,
+    error_envelope,
     hour_branch,
     json_print,
     require_lunar,
@@ -198,8 +199,15 @@ def build_si_ke(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str) -> list[dict
     k3_l, k3_u = ri_zhi, tian_pan[ri_zhi]
     k4_l, k4_u = k3_u, tian_pan[k3_u]
     return [
+        # 一课的「下」在**位置**上是寄宫地支, 但在**五行**上是日干本身 ——
+        # 贼克要比的是日干与其上神的生克, 不是寄宫地支与上神的。乙寄辰(木/土)、
+        # 丁寄未(火/土)、戊寄巳(土/火)、辛寄戌(金/土)、癸寄丑(水/土) 五干两者不同,
+        # 占十干之半; 穷举 8640 盘, 一课判定错 31.7%, 三传整体不同 14.0%。
+        # 同一文件的 fa_yong_yao_ke 对同一个日干用的却是 TIANGAN_WUXING[ri_gan],
+        # 内部两套口径。
         {"index": 1, "name": "干上 (一课)", "lower": k1_l, "upper": k1_u,
-         "note": f"日干 {ri_gan} 寄宫 {g_ji} 之天盘"},
+         "lower_wuxing": TIANGAN_WUXING[ri_gan],
+         "note": f"日干 {ri_gan} 寄宫 {g_ji} 之天盘 (五行以日干 {ri_gan} 论)"},
         {"index": 2, "name": "干阴 (二课)", "lower": k2_l, "upper": k2_u,
          "note": "一课上神再上之天盘"},
         {"index": 3, "name": "支上 (三课)", "lower": k3_l, "upper": k3_u,
@@ -219,12 +227,14 @@ def wx_of(zhi: str) -> str:
     return DIZHI_WUXING[zhi]
 
 
-def lower_controls_upper(lower: str, upper: str) -> bool:
-    return WUXING_KE.get(wx_of(lower)) == wx_of(upper)
+def lower_controls_upper(lower: str, upper: str,
+                        lower_wx: str | None = None) -> bool:
+    return WUXING_KE.get(lower_wx or wx_of(lower)) == wx_of(upper)
 
 
-def upper_controls_lower(lower: str, upper: str) -> bool:
-    return WUXING_KE.get(wx_of(upper)) == wx_of(lower)
+def upper_controls_lower(lower: str, upper: str,
+                         lower_wx: str | None = None) -> bool:
+    return WUXING_KE.get(wx_of(upper)) == (lower_wx or wx_of(lower))
 
 
 # --------------------------------------------------------------------------- #
@@ -245,9 +255,10 @@ def detect_zei_ke(si_ke: list[dict]) -> tuple[list[dict], list[dict]]:
     zei: list[dict] = []
     ke: list[dict] = []
     for k in si_ke:
-        if lower_controls_upper(k["lower"], k["upper"]):
+        lw = k.get("lower_wuxing")          # 一课以日干五行论, 余课用地支
+        if lower_controls_upper(k["lower"], k["upper"], lw):
             zei.append(k)
-        elif upper_controls_lower(k["lower"], k["upper"]):
+        elif upper_controls_lower(k["lower"], k["upper"], lw):
             ke.append(k)
     return zei, ke
 
@@ -644,7 +655,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         dt = datetime.strptime(f"{args.date} {args.time}", "%Y-%m-%d %H:%M")
     except ValueError as exc:
-        json_print({"error": "invalid_datetime", "message": str(exc)})
+        json_print(error_envelope('daliuren', "invalid_datetime", str(exc)))
         return 1
 
     require_lunar()

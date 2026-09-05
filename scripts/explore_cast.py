@@ -26,7 +26,11 @@ import sys
 from typing import Any
 
 import entropy
-from utils import ensure_utf8_stdio, json_print
+from utils import (
+    ensure_utf8_stdio,
+    error_envelope,
+    json_print,
+)
 
 EARTH_M_PER_DEG = 111_320.0  # metres per degree of latitude (mean)
 MAX_PROJ_LAT = 89.9          # clamp for the cos(lat) longitude projection
@@ -209,11 +213,10 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     if not (-90 <= args.lat <= 90 and -180 <= args.lon <= 180):
-        json_print({"ok": False, "error": "invalid_coords"})
+        json_print(error_envelope('explore', "invalid_coords", '输入无效'))
         return 1
     if not (50 <= args.radius <= 100_000):
-        json_print({"ok": False, "error": "radius_out_of_range",
-                    "message": "radius 必须在 50-100000 米"})
+        json_print(error_envelope('explore', "radius_out_of_range", "radius 必须在 50-100000 米"))
         return 1
     n = max(100, min(50_000, args.points))
 

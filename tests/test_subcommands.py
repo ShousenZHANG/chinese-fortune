@@ -558,3 +558,46 @@ def test_xiaoliuren_intermediate_palaces_are_consistent():
         assert mp == (month - 1) % 6, (month, c["month_palace"])
         assert dp == (mp + day - 1) % 6, (month, day, c["day_palace"])
         assert names.index(d["result"]["palace"]) == (dp + hi) % 6, d
+
+
+def test_64hex_line_texts_are_pinned_not_just_judgments():
+    """384 条爻辞 + 64 条大象此前**零值断言**。
+
+    实证: 把乾卦初九爻辞「潜龙勿用。」改成「亢龙有悔。」, 全量套件全绿 ——
+    而 `yijing_cast.py lookup --number 1` 原样把它输出给用户, 这是周易/六爻
+    交付的解读主体。上一条测试的 docstring 自陈「其余 63 卦卦辞、64 条大象、
+    378 条爻辞零断言」, 却只补了 8 条 judgment。
+    """
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    d = json.loads((root / "assets" / "64hex.json").read_text(encoding="utf-8"))
+    items = list(d["hexagrams"].values()) if isinstance(d.get("hexagrams"), dict) \
+        else d["hexagrams"]
+    by_num = {h["number"]: h for h in items}
+
+    # 乾卦六爻 —— 最广为人知的一组, 逐条钉住
+    qian = [ln["text"] for ln in by_num[1]["lines"]]
+    assert qian[0].startswith("潜龙勿用")
+    assert qian[1].startswith("见龙在田")
+    assert qian[4].startswith("飞龙在天")
+    assert qian[5].startswith("亢龙有悔")
+    # 坤卦初六 + 上六
+    kun = [ln["text"] for ln in by_num[2]["lines"]]
+    assert kun[0].startswith("履霜")
+    assert kun[5].startswith("龙战于野")
+
+    # 大象: 每卦必有且互异 —— 整体错位会在这里留下重复
+    images = [h["image"] for h in items]
+    assert all(images) and len(set(images)) == 64
+    assert by_num[1]["image"].startswith("天行健")
+    assert by_num[2]["image"].startswith("地势坤")
+
+    # 384 条爻辞全部非空, 且同一卦内六爻互异
+    total = 0
+    for h in items:
+        texts = [ln["text"] for ln in h["lines"]]
+        assert len(texts) == 6 and all(texts), h["number"]
+        assert len(set(texts)) == 6, (h["number"], h["name_zh"])
+        total += 6
+    assert total == 384
