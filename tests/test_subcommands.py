@@ -505,3 +505,56 @@ def test_64hex_judgments_are_pinned_per_hexagram():
     # 64 条卦辞两两互异 —— 任何一次整体错位都会在这里留下重复。
     judgments = [h["judgment"] for h in items]
     assert len(set(judgments)) == 64, "有卦辞重复, 疑似整体错位"
+
+
+def test_xiaoliuren_closed_form_matches_the_step_by_step_walk():
+    """小六壬的闭式 (month_index + day - 1 + hour_branch_index) mod 6 必须等于
+    逐宫步进的结果。
+
+    古法是三段走: 从大安起正月, 数至本月; 从该宫起初一, 数至本日; 从该宫起子时,
+    数至本时。引擎把它压成一个取模式 —— 压对了没有, 从前无人验算。这里用步进法
+    独立走一遍, 覆盖 12 月 x 30 日 x 12 时辰 = 4320 组全枚举。
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from xiaoliuren_cast import PALACES, cast
+
+    names = [p["name"] for p in PALACES]
+    assert len(names) == 6 and len(set(names)) == 6, names
+    assert names[0] == "大安", names
+
+    for month in range(1, 13):
+        for day in range(1, 31):
+            for hi in range(12):
+                # 步进法: 起大安数月 -> 接着数日 -> 接着数时, 每段都含起点
+                pos = 0
+                for _ in range(month - 1):
+                    pos = (pos + 1) % 6
+                for _ in range(day - 1):
+                    pos = (pos + 1) % 6
+                for _ in range(hi):
+                    pos = (pos + 1) % 6
+                got = cast(month, day, "子丑寅卯辰巳午未申酉戌亥"[hi])
+                assert got["result"]["palace"] == names[pos], (
+                    month, day, hi, got["result"]["palace"], names[pos])
+
+
+def test_xiaoliuren_intermediate_palaces_are_consistent():
+    """输出的 month_palace / day_palace 必须与最终宫位处在同一条步进链上 ——
+    否则它们只是装饰, 而 Claude 会照着它们讲「起于速喜、转小吉」。
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from xiaoliuren_cast import PALACES, cast
+
+    names = [p["name"] for p in PALACES]
+    for month, day, hb, hi in [(3, 15, "午", 6), (1, 1, "子", 0),
+                               (12, 30, "亥", 11), (7, 8, "卯", 3)]:
+        d = cast(month, day, hb)
+        c = d["calculation"]
+        mp, dp = names.index(c["month_palace"]), names.index(c["day_palace"])
+        assert mp == (month - 1) % 6, (month, c["month_palace"])
+        assert dp == (mp + day - 1) % 6, (month, day, c["day_palace"])
+        assert names.index(d["result"]["palace"]) == (dp + hi) % 6, d

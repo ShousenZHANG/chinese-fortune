@@ -183,6 +183,13 @@ MUTATIONS: list[Mutation] = [
         ["tests/test_qimen_liuren_oracle.py"],
     ),
     Mutation(
+        "xiaoliuren:起宫公式", "scripts/xiaoliuren_cast.py",
+        "day_index = (month_index + day - 1) % 6",
+        "day_index = (month_index + day) % 6",
+        "整套小六壬结论错位一宫 —— 吉凶直接反号 (大安吉 vs 留连平)",
+        ["tests/test_subcommands.py"],
+    ),
+    Mutation(
         "assets:卦辞对调", "assets/64hex.json",
         '"judgment": "元亨,利贞。勿用有攸往,利建侯。"',
         '"judgment": "亨。匪我求童蒙,童蒙求我。"',
