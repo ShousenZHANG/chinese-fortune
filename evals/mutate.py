@@ -103,6 +103,19 @@ MUTATIONS: list[Mutation] = [
         ["tests/test_convert_zodiac.py"],
     ),
     Mutation(
+        "bazi:旺衰月令不对称", "scripts/bazi_strength.py",
+        '"旺": 0.45, "相": 0.22, "休": -0.10, "囚": -0.30, "死": -0.45,',
+        '"旺": 0.45, "相": 0.30, "休": 0.10, "囚": 0.00, "死": -0.10,',
+        "旺衰偏向旺侧 -> 用神取反 -> 大运流年吉凶/方位/颜色/行业全部反号",
+        ["tests/test_bazi_integration.py"],
+    ),
+    Mutation(
+        "bazi:旺衰通根只加不减", "scripts/bazi_strength.py",
+        "+ (rooted - 2) * 0.15", "+ rooted * 0.05",
+        "无根不扣分 -> 身弱近乎不可达 -> 用神取反, 整份批断极性错",
+        ["tests/test_bazi_integration.py"],
+    ),
+    Mutation(
         "bazi:时辰边界", "scripts/utils.py",
         "def hour_branch_index(hour: int) -> int:",
         "def hour_branch_index(hour: int) -> int:\n    hour = (hour + 1) % 24",

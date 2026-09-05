@@ -16,6 +16,11 @@ ignore = [
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["E402"]  # tests insert scripts/ onto sys.path before importing
 
+[tool.pytest.ini_options]
+markers = [
+    "slow: 跑真实排盘网格的用例, 单条数十秒",
+]
+
 [tool.coverage.run]
 # parallel + COVERAGE_PROCESS_START let the subprocess-invoked scripts be tracked
 # (most tests run the CLIs via subprocess, invisible to in-process coverage).

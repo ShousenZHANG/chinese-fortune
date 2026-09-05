@@ -746,3 +746,91 @@ def test_tiaohou_primary_yongshen_table_is_locked():
     assert len(verified) == 46, (
         f"已核对格数从 46 变成 {len(verified)} —— 若确有新核对, 更新此数并在"
         "audit.verified_cells 里同步登记")
+
+
+# --------------------------------------------------------------------------- #
+# 日主旺衰 — 评分式的对称性与分布
+# --------------------------------------------------------------------------- #
+
+def _strength(state, rooted, party):
+    """调用引擎真正用的那个函数。
+
+    先前这里复制了一份公式 —— 于是断言的是测试自己的副本, 实现怎么改都抓不到。
+    变异实证: 把 STATE_SCORE 改回旧的不对称值, 这几条测试照样全绿。评分式因此被
+    抽成 bazi_strength.strength_score, 测试直接调用。
+    """
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    from bazi_strength import strength_score
+    return strength_score(state, rooted, party)
+
+
+def test_day_master_strength_scoring_is_symmetric():
+    """三项都必须能双向推动。从前三项各自不对称且同向:
+    月令 +0.45..-0.10、通根 只加不减、党众 中性点定在 0.4 而非 0.5。
+    合起来 身旺 只要得令一项就够, 而 身弱 要同时 死地 + 无根 + 党众<0.2。
+
+    旺衰经 pick_yong_shen 分叉决定用神取「克泄耗」还是「生扶」—— 极性错则大运
+    流年吉凶、方位、颜色、行业全部反号, 所以这不是口味问题。
+    """
+    # 满弱与满旺必须对称于 0.5
+    lo = _strength("死", 0, 0.0)
+    hi = _strength("旺", 4, 1.0)
+    assert abs((hi - 0.5) - (0.5 - lo)) < 1e-9, (lo, hi)
+    # 中性输入必须正好 0.5
+    assert abs(_strength("休", 2, 0.5) - (0.5 - 0.10 / 2.4)) < 1e-9
+    # 月令必须是最重的一项 (月令为重, 次通根, 次党众)
+    d_ling = _strength("旺", 2, 0.5) - _strength("死", 2, 0.5)
+    d_di = _strength("休", 4, 0.5) - _strength("休", 0, 0.5)
+    d_shi = _strength("休", 2, 1.0) - _strength("休", 2, 0.0)
+    assert d_ling > d_di > d_shi, (d_ling, d_di, d_shi)
+
+
+def test_day_master_strength_never_clamps():
+    """截断会让分数在 0/1 两端堆积 —— 实测旧式 500 盘里 34% 被截断, 五档退化成
+    近似二分类。缩放后满量程必须落在开区间内。
+    """
+    lo = _strength("死", 0, 0.0)
+    hi = _strength("旺", 4, 1.0)
+    assert 0.0 < lo < 0.2 and 0.8 < hi < 1.0, (lo, hi)
+
+
+def test_day_master_strength_needs_two_factors_for_an_extreme_label():
+    """「月令虽旺, 无根则虚」: 仅得令不足以判身旺, 得令又得地才够。"""
+    only_ling = _strength("旺", 2, 0.5)          # 得令, 根与势中性
+    ling_and_di = _strength("旺", 4, 0.5)        # 得令 + 得地
+    assert 0.55 <= only_ling < 0.70, only_ling   # 偏旺
+    assert ling_and_di >= 0.70, ling_and_di      # 身旺
+    only_shi_ling = _strength("死", 2, 0.5)
+    assert 0.30 <= only_shi_ling < 0.45, only_shi_ling   # 偏弱, 不是身弱
+
+
+@pytest.mark.slow
+def test_day_master_strength_distribution_is_not_one_sided():
+    """旧式在 400 张随机盘上判出 75% 旺侧、身弱 3 张 —— 一个把四分之三的人判成
+    同一类的字段, 携带的信息接近零, 而它决定整份批断的极性。
+
+    这里不主张某个「正确分布」, 只要求: 没有任何一档独占多数, 且旺弱两侧不至于
+    悬殊到失去判别力。
+    """
+    import collections
+    import random
+    rng = random.Random(20260905)
+    cnt = collections.Counter()
+    for _ in range(120):
+        y, mo = rng.randint(1950, 2020), rng.randint(1, 12)
+        dd, hh = rng.randint(1, 28), rng.randint(0, 23)
+        d, _ = _run_bazi("--year", y, "--month", mo, "--day", dd,
+                         "--hour", hh, "--gender", "male")
+        if d.get("ok"):
+            cnt[d["day_master_strength"]["label"]] += 1
+    tot = sum(cnt.values())
+    assert tot >= 100, tot
+    assert set(cnt) == {"身旺", "偏旺", "中和", "偏弱", "身弱"}, dict(cnt)
+    for label, n in cnt.items():
+        assert n / tot < 0.45, f"{label} 独占 {n/tot:.0%}: {dict(cnt)}"
+        assert n / tot > 0.03, f"{label} 只占 {n/tot:.0%}, 近乎不可达: {dict(cnt)}"
+    wang = (cnt["身旺"] + cnt["偏旺"]) / tot
+    ruo = (cnt["身弱"] + cnt["偏弱"]) / tot
+    assert 0.5 < wang / ruo < 2.0, f"旺弱悬殊 {wang:.0%} vs {ruo:.0%}: {dict(cnt)}"

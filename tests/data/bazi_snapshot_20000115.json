@@ -206,12 +206,12 @@
     }
   },
   "day_master_strength": {
-    "label": "身旺",
-    "score": 1.0,
+    "label": "偏旺",
+    "score": 0.679,
     "state_from_yueling": "旺",
     "party_ratio": 0.446,
     "rooted_count": 2,
-    "explanation": "日主壬(水)生于丑月,处于'旺'地; 通根2处; 党众占比44.6%. 综合判定:身旺."
+    "explanation": "日主壬(水)生于丑月,处于'旺'地; 通根2处; 党众占比44.6%. 综合判定:偏旺."
   },
   "interactions": {
     "tiangan_he": [
