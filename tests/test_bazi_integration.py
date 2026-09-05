@@ -880,7 +880,7 @@ def test_geju_detects_every_type_its_own_reference_lists():
 
     # 文档表格里出现的每个格名, 引擎都必须认得
     import re
-    named = {m for m in re.findall(r"\|\s*([一-鿿]{2,5}格)", body)}
+    named = set(re.findall(r"\|\s*([一-鿿]{2,5}格)", body))
     named = {n.split("(")[0] for n in named}
     assert len(named) >= 9, named
     missing = sorted(n for n in named if n not in src)
