@@ -84,3 +84,60 @@ def xun_kong_of_day(day_stem: str, day_branch: str) -> list[str]:
 
 
 # --------------------------------------------------------------------------- #
+
+
+# --------------------------------------------------------------------------- #
+# 人元司令分野 — 月支 -> [(藏干, 司令日数), ...] 按 余气 / 中气 / 本气 顺序
+# --------------------------------------------------------------------------- #
+#
+# references/00-intake.md:47 把「月支司令」列为每次八字批断 always surface 的字段,
+# 01-bazi.md:74 与 01-bazi-paipan.md:3 都断言「scripts/bazi_calc.py 已自动完成」——
+# 而实测输出里「司令」二字一次都不出现, 全库也没有任何一份分野表。也就是说一个被
+# 两处文档声称「脚本已算好」的必出字段, 既没有数据也没有查表依据, Claude 只能漏报
+# 或凭空编。
+#
+# 分野日数取通行本 (《渊海子平》系, 与《三命通会·论人元司事》一致), 四仲月两分、
+# 四孟四季月三分, 每月合计 30 日。
+REN_YUAN_SI_LING: dict[str, list[tuple[str, int]]] = {
+    "寅": [("戊", 7), ("丙", 7), ("甲", 16)],
+    "卯": [("甲", 10), ("乙", 20)],
+    "辰": [("乙", 9), ("癸", 3), ("戊", 18)],
+    "巳": [("戊", 7), ("庚", 7), ("丙", 16)],
+    "午": [("丙", 10), ("己", 9), ("丁", 11)],
+    "未": [("丁", 9), ("乙", 3), ("己", 18)],
+    "申": [("戊", 7), ("壬", 7), ("庚", 16)],
+    "酉": [("庚", 10), ("辛", 20)],
+    "戌": [("辛", 9), ("丁", 3), ("戊", 18)],
+    "亥": [("戊", 7), ("甲", 7), ("壬", 16)],
+    "子": [("壬", 10), ("癸", 20)],
+    "丑": [("癸", 9), ("辛", 3), ("己", 18)],
+}
+
+SI_LING_ROLE = ("余气", "中气", "本气")
+
+
+def si_ling(month_branch: str, days_since_jie: int) -> dict | None:
+    """哪一个藏干当令。``days_since_jie`` 为距本月「节」的整日数 (交节当日为 0)。
+
+    返回 {stem, role, day_in_month, span, table}; 月支不识则返回 None。
+    """
+    fenye = REN_YUAN_SI_LING.get(month_branch)
+    if not fenye:
+        return None
+    day = max(0, days_since_jie) + 1          # 交节当日算第 1 日
+    total = sum(n for _, n in fenye)
+    day = min(day, total)
+    cursor = 0
+    for i, (stem, span) in enumerate(fenye):
+        cursor += span
+        if day <= cursor:
+            # 两分的月份没有中气, 末位仍是本气
+            role = SI_LING_ROLE[i] if len(fenye) == 3 else                 ("余气" if i == 0 else "本气")
+            return {
+                "stem": stem,
+                "role": role,
+                "day_in_month": day,
+                "span": span,
+                "table": [{"stem": s, "days": n} for s, n in fenye],
+            }
+    return None

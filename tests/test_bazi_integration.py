@@ -834,3 +834,162 @@ def test_day_master_strength_distribution_is_not_one_sided():
     wang = (cnt["身旺"] + cnt["偏旺"]) / tot
     ruo = (cnt["身弱"] + cnt["偏弱"]) / tot
     assert 0.5 < wang / ruo < 2.0, f"旺弱悬殊 {wang:.0%} vs {ruo:.0%}: {dict(cnt)}"
+
+
+# --------------------------------------------------------------------------- #
+# 格局 — 特殊格的发生率与成立条件
+# --------------------------------------------------------------------------- #
+
+def test_hua_qi_ge_requires_all_five_classical_conditions():
+    """化气格从前只查「合」与「化神得令」两条, 而同一段自己的 notes 写着
+    「需化神得令且无破化之神」, broken_or_pure 还硬编码成「纯」。
+    实测 300 张随机盘出 11 张 (3.7%), 而 references/01-bazi.md:344 写
+    「特殊格局极少见, 千万命中难得一二。判断时务必严格, 勿勉强套用」。
+
+    §6.2 的化气格表逐行写着「土旺无木破」「金旺无火炼」…… 即 无破化之神 是
+    文档自己给的条件。另加经典的 有根不化 与 合而不化 (化神须透干)。
+    """
+    import inspect
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import bazi_geju
+    src = inspect.getsource(bazi_geju.detect_ge_ju)
+    hua = src.split("--- 化气格 ---")[1].split("--- 2. 正格")[0]
+    assert "rooted > 0" in hua, "缺「有根不化」"
+    assert "hua_transparent" in hua, "缺「化神透干」"
+    assert "po_stems" in hua, "缺「无破化之神」"
+    assert '"broken_or_pure": "纯"' not in hua, "broken_or_pure 仍是硬编码"
+
+
+def test_geju_detects_every_type_its_own_reference_lists():
+    """references/01-bazi.md §6.2 列了 5 种从格 + 5 种一行得气格; 引擎从前只认
+    3 种从格 (从财/从杀/从儿), 从印格与从势格完全不检测, 一行得气格一种都没有。
+
+    静默落回正格的代价不是「少一个标签」—— 从势格与正格的用神方向正好相反。
+    """
+    import inspect
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    import bazi_geju
+    src = inspect.getsource(bazi_geju.detect_ge_ju)
+    md = (Path(__file__).resolve().parent.parent
+          / "references" / "01-bazi.md").read_text(encoding="utf-8")
+    body = md.split("### 6.2")[1].split("###", 1)[0]
+
+    # 文档表格里出现的每个格名, 引擎都必须认得
+    import re
+    named = {m for m in re.findall(r"\|\s*([一-鿿]{2,5}格)", body)}
+    named = {n.split("(")[0] for n in named}
+    assert len(named) >= 9, named
+    missing = sorted(n for n in named if n not in src)
+    assert not missing, f"文档列出但引擎不检测: {missing}"
+
+
+@pytest.mark.slow
+def test_special_geju_stay_rare_as_the_reference_demands():
+    """references/01-bazi.md:344 「特殊格局极少见, 千万命中难得一二」。
+
+    修前实测: 化气格 3.7% (只查两条件), 补上从印格后一度 7.8% (阈值 0.70 太松)。
+    ge_ju 是 00-intake.md 强制必出字段, 01-bazi.md:282 称格局「决定一个人的事业
+    天花板和人生主轴」—— 滥发等于给多数人贴上一个决定性的错标签。
+
+    这里不主张某个精确发生率, 只要求「极少见」在数量级上成立。
+    """
+    import collections
+    import random
+    rng = random.Random(11)
+    kinds = collections.Counter()
+    n = 0
+    for _ in range(150):
+        y, mo = rng.randint(1950, 2020), rng.randint(1, 12)
+        dd, hh = rng.randint(1, 28), rng.randint(0, 23)
+        d, _ = _run_bazi("--year", y, "--month", mo, "--day", dd,
+                         "--hour", hh, "--gender", "male")
+        if not d.get("ok"):
+            continue
+        n += 1
+        g = d.get("ge_ju") or {}
+        if g.get("type") == "特殊格":
+            kinds[g.get("primary")] += 1
+    special = sum(kinds.values())
+    assert n >= 140, n
+    assert special / n < 0.05, (
+        f"特殊格占 {special/n:.1%}, 与「极少见」不符: {dict(kinds)}")
+
+
+def test_si_ling_is_actually_computed_not_just_claimed():
+    """月支司令: 00-intake.md:47 把它列为每次批断 always surface 的字段,
+    01-bazi.md:74 与 01-bazi-paipan.md:3 都断言「scripts/bazi_calc.py 已自动完成」
+    —— 而在此之前输出里「司令」二字一次都不出现, 全库也没有任何一份人元分野表。
+    一个被两处文档声称「脚本已算好」的必出字段, 既没有数据也没有查表依据,
+    Claude 只能漏报或凭空编。
+    """
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(root / "scripts"))
+    from bazi_tables import REN_YUAN_SI_LING, si_ling
+
+    # 每月分野日数必须合计 30 日, 且藏干须与该支的藏干一致
+    from utils import HIDDEN_STEMS
+    for branch, fenye in REN_YUAN_SI_LING.items():
+        assert sum(n for _, n in fenye) == 30, (branch, fenye)
+        assert len(fenye) in (2, 3), (branch, fenye)
+        # 本气 (末位) 必须是该支藏干的第一个
+        assert fenye[-1][0] == HIDDEN_STEMS[branch][0], (branch, fenye)
+        # 中气 (三分月的中位) 必须也在本支藏干里
+        if len(fenye) == 3:
+            assert fenye[1][0] in HIDDEN_STEMS[branch], (branch, fenye)
+
+    # 余气 = **上一个月支的本气** 顺延, 故不在本支藏干里 (卯月余气甲 = 寅月本气)。
+    # 这条比「都在藏干里」强得多: 它把十二个月串成一个环, 抄错任何一格都断链。
+    order = "寅卯辰巳午未申酉戌亥子丑"
+    for i, branch in enumerate(order):
+        prev = order[i - 1]
+        yu_qi = REN_YUAN_SI_LING[branch][0][0]
+        prev_ben_qi = REN_YUAN_SI_LING[prev][-1][0]
+        if yu_qi != prev_ben_qi:
+            # 唯二例外: 寅、申 两个孟月的余气取阳土 戊, 而上月本气是阴土 己
+            # (丑、未)。四孟月 (寅申巳亥) 余气一律作 戊 是通行写法 —— 巳月余气戊
+            # 承辰月本气戊、亥月余气戊 承戌月本气戊, 两处本就同字, 只有寅申显出
+            # 阴阳之别。不是抄错。
+            assert branch in ("寅", "申"), (
+                f"{branch}月余气应为{prev}月本气 {prev_ben_qi}, 表里是 {yu_qi}")
+            assert (yu_qi, prev_ben_qi) == ("戊", "己"), (branch, yu_qi, prev_ben_qi)
+    assert set(REN_YUAN_SI_LING) == set("子丑寅卯辰巳午未申酉戌亥")
+
+    # 分野边界: 巳月 7/7/16
+    assert si_ling("巳", 0)["stem"] == "戊"
+    assert si_ling("巳", 6)["stem"] == "戊"
+    assert si_ling("巳", 7)["stem"] == "庚"
+    assert si_ling("巳", 13)["stem"] == "庚"
+    assert si_ling("巳", 14)["stem"] == "丙"
+
+    # 端到端: 1990-05-10 距立夏 (05-06) 4 日 -> 巳月余气 戊 当令
+    d, _ = _run_bazi("--year", 1990, "--month", 5, "--day", 10,
+                     "--hour", 14, "--gender", "male")
+    sl = d["yue_ling_si_ling"]
+    assert sl["stem"] == "戊" and sl["role"] == "余气"
+    assert sl["jie"] == "立夏" and sl["days_since_jie"] == 4
+    assert [x["days"] for x in sl["table"]] == [7, 7, 16]
+
+
+def test_fuyi_rule_declares_it_is_not_from_the_classics():
+    """扶抑用神在 财/官杀/食伤 三者之间「取最弱」是本实现的取舍, 古籍未定优先级;
+    01-bazi.md:455 引《滴天髓》「用神不可损伤, 日主最宜健旺」还与之方向相反。
+
+    这条理由串原样进入 yong_shen.reason 并被 Claude 转述 —— SKILL.md:34
+    「凡古籍无据者不妄断」要禁的正是这个。对照 assets/tiaohou.json 的
+    audit.engine_note, 调候那一半早已如实注记, 扶抑这一半从前没有。
+    """
+    seen = 0
+    for y, mo, dd, hh in [(1990, 5, 10, 14), (1985, 11, 3, 8), (2000, 1, 20, 22)]:
+        d, _ = _run_bazi("--year", y, "--month", mo, "--day", dd,
+                         "--hour", hh, "--gender", "male")
+        reason = (d.get("yong_shen") or {}).get("reason", "")
+        if "扶抑" in reason:
+            assert "出自本实现" in reason, reason
+            seen += 1
+    assert seen >= 2, f"只有 {seen} 个用例走到扶抑分支"

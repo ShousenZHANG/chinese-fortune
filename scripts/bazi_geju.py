@@ -8,6 +8,7 @@ from utils import (
     HIDDEN_STEMS,
     TIANGAN_WUXING,
     TIANGAN_YIN_YANG,
+    WUXING_KE,
     shi_shen,
 )
 
@@ -95,6 +96,77 @@ def detect_ge_ju(
                 "notes": "从儿者贵, 喜行食伤财地, 忌印星夺食.",
             }
 
+    # --- 从势格 / 从印格(从强) ---
+    # references/01-bazi.md §6.2 列了五种从格, 引擎从前只认三种 (从财/从杀/从儿),
+    # 且都要求单一五行 > 60%。真实的从势格往往是 财 40% + 官 30% 这种合力压制,
+    # 任一单项都够不到 60%, 于是静默落回正格 —— 而两者的用神方向正好相反。
+    # 实测 400 张随机盘: 37 张无根, 4 张党众 < 15%, 从格命中 0 张。
+    if rooted == 0 and yin_share < 0.15:
+        others = cai_share + sha_share + er_share
+        if others > 0.75:
+            strongest_wx, strongest_share = max(
+                ((cai_wx, cai_share), (sha_wx, sha_share), (er_wx, er_share)),
+                key=lambda kv: kv[1])
+            return {
+                "primary": "从势格",
+                "type": "特殊格",
+                "month_origin": "日主无根",
+                "supporting_evidence": [
+                    f"日主{day_stem}无通根",
+                    f"财官食伤合计{others*100:.1f}% (财{cai_share*100:.0f}%/"
+                    f"杀{sha_share*100:.0f}%/儿{er_share*100:.0f}%)",
+                    f"印比合计仅{yin_share*100:.1f}%",
+                    f"势力最强者为{strongest_wx}({strongest_share*100:.0f}%)",
+                ],
+                "broken_or_pure": "纯" if yin_share < 0.08 else "破",
+                "notes": ("从势格: 财官食伤皆旺而日主无根, 用神看势力最强者 "
+                          f"({strongest_wx}). 忌印比帮身。"),
+            }
+
+    # 从印格(从强): 满盘印比而日主极旺 —— 与从财/从杀方向相反, 从前完全不检测。
+    # 阈值 0.70 时 400 盘出 26 张 (6.5%), 远高于 references/01-bazi.md:344 自称的
+    # 「千万命中难得一二」。「满盘印比」须字面成立 —— 财官食伤近乎绝迹, 且日主得令。
+    if (yin_share > 0.88 and strength.get("label") == "身旺"
+            and strength.get("state_from_yueling") in ("旺", "相")):
+        return {
+            "primary": "从印格",
+            "type": "特殊格",
+            "month_origin": "印比满盘",
+            "supporting_evidence": [
+                f"印比合计{yin_share*100:.1f}%",
+                f"日主{strength.get('label')}",
+                f"财官食伤合计仅{(cai_share + sha_share + er_share)*100:.1f}%",
+            ],
+            "broken_or_pure": "纯" if yin_share > 0.93 else "破",
+            "notes": "从印格(从强): 满盘印比, 顺其旺势, 用印与比劫; 忌财星破印.",
+        }
+
+    # --- 一行得气格 ---
+    # references/01-bazi.md §6.2: 全局只有一种五行旺盛, 且月令属该五行。
+    YIXING = {
+        "木": ("曲直格", {"寅", "卯", "辰"}),
+        "火": ("炎上格", {"巳", "午", "未"}),
+        "土": ("稼穑格", {"辰", "戌", "丑", "未"}),
+        "金": ("从革格", {"申", "酉", "戌"}),
+        "水": ("润下格", {"亥", "子", "丑"}),
+    }
+    if day_wx in YIXING:
+        name, months = YIXING[day_wx]
+        share = weighted_counts.get(day_wx, 0.0) / total_wx
+        if month_branch in months and share > 0.70 and rooted >= 2:
+            return {
+                "primary": name,
+                "type": "特殊格",
+                "month_origin": f"月支{month_branch}属{day_wx}",
+                "supporting_evidence": [
+                    f"{day_wx}占全局{share*100:.1f}%",
+                    f"月支{month_branch}属{day_wx}",
+                    f"日主通根{rooted}处",
+                ],
+                "broken_or_pure": "纯",
+                "notes": f"{name}: 一行得气, 顺其旺势; 最忌克战之神冲破格局.",
+            }
+
     # --- 化气格 ---
     for adjacent_stem in (month_stem, hour_stem):
         if not adjacent_stem:
@@ -105,18 +177,46 @@ def detect_ge_ju(
             # 化神得令: month branch's 本气 五行 == hua_wx
             main_hs = _main_hidden(month_branch)
             main_wx = TIANGAN_WUXING.get(main_hs, DIZHI_WUXING.get(month_branch, ""))
-            if main_wx == hua_wx:
-                return {
-                    "primary": f"化{hua_wx}格",
-                    "type": "特殊格",
-                    "month_origin": "化神得月令",
-                    "supporting_evidence": [
-                        f"日干{day_stem}与{adjacent_stem}合化{hua_wx}",
-                        f"月支{month_branch}本气属{hua_wx}",
-                    ],
-                    "broken_or_pure": "纯",
-                    "notes": "化气格成立需化神得令且无破化之神; 行化神旺地为吉.",
-                }
+            if main_wx != hua_wx:
+                continue
+            # 从前到此为止就返回了, 只查「合」与「化神得令」两条, 而同一段自己的
+            # notes 写着「需化神得令且无破化之神」, broken_or_pure 还硬编码成「纯」。
+            # 实测 300 张随机盘出 11 张化气格 (3.7%), 而 references/01-bazi.md:344
+            # 白纸黑字「特殊格局极少见, 千万命中难得一二。判断时务必严格, 勿勉强
+            # 套用」—— 发生率差了几个数量级。ge_ju 是 00-intake.md 强制必出字段,
+            # 01-bazi.md:282 称格局「决定一个人的事业天花板和人生主轴」。
+            #
+            # 补齐经典三条:
+            #   1. 日主无根 —— 「有根不化」, 日主自身有气则不肯从合
+            #   2. 化神透干 —— 化神须在天干得见, 否则合而不化
+            #   3. 无破化之神 —— 有克化神之干则「化神被破」
+            if rooted > 0:
+                continue                       # 有根不化
+            stems = [p_["stem"] for p_ in pillars.values() if p_.get("stem")]
+            hua_transparent = any(TIANGAN_WUXING.get(s) == hua_wx for s in stems)
+            if not hua_transparent:
+                continue                       # 合而不化
+            po_wx = next((src for src, tgt in WUXING_KE.items() if tgt == hua_wx), "")
+            po_stems = [s for s in stems
+                        if TIANGAN_WUXING.get(s) == po_wx and s != day_stem]
+            evidence = [
+                f"日干{day_stem}与{adjacent_stem}合化{hua_wx}",
+                f"月支{month_branch}本气属{hua_wx} (化神得令)",
+                "日主无通根 (有根不化)",
+                f"化神{hua_wx}透干",
+            ]
+            if po_stems:
+                evidence.append(f"但有破化之神 {''.join(po_stems)} 克{hua_wx}")
+            return {
+                "primary": f"化{hua_wx}格",
+                "type": "特殊格",
+                "month_origin": "化神得月令",
+                "supporting_evidence": evidence,
+                "broken_or_pure": "破" if po_stems else "纯",
+                "notes": ("化气格成立需 合化 + 化神得令 + 日主无根 + 化神透干 + "
+                          "无破化之神; 行化神旺地为吉. 此格极罕见, 若与其他条件"
+                          "冲突应以正格论."),
+            }
 
     # --- 2. 正格: 月令本气透干 ---
     main_hs = _main_hidden(month_branch)

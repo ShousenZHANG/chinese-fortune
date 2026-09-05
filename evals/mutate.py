@@ -124,6 +124,26 @@ MUTATIONS: list[Mutation] = [
          "tests/test_differential_ziwei.py"],
     ),
     Mutation(
+        "bazi:化气格条件", "scripts/bazi_geju.py",
+        "if rooted > 0:\n                continue                       # 有根不化",
+        "if False:\n                continue                       # 有根不化",
+        "化气格滥发 -> 格局标签错 -> 「事业天花板和人生主轴」判错",
+        ["tests/test_bazi_integration.py"],
+    ),
+    Mutation(
+        "bazi:司令分野", "scripts/bazi_tables.py",
+        '"巳": [("戊", 7), ("庚", 7), ("丙", 16)],',
+        '"巳": [("戊", 7), ("庚", 10), ("丙", 13)],',
+        "司令是必出字段, 分野错则当令藏干错, 旺衰与取用的依据整体偏移",
+        ["tests/test_bazi_integration.py"],
+    ),
+    Mutation(
+        "bazi:扶抑来历标注", "scripts/bazi_strength.py",
+        "[取舍规则出自本实现, 古籍未定二者优先级]", "",
+        "自创规则以古籍权威的口吻输出 —— SKILL.md:34「凡古籍无据者不妄断」要禁的",
+        ["tests/test_bazi_integration.py"],
+    ),
+    Mutation(
         "assets:卦辞对调", "assets/64hex.json",
         '"judgment": "元亨,利贞。勿用有攸往,利建侯。"',
         '"judgment": "亨。匪我求童蒙,童蒙求我。"',

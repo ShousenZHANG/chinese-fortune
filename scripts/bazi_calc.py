@@ -43,6 +43,7 @@ from bazi_tables import (
     SAN_XING_SELF,
     SAN_XING_TRIPLES,
     TIANGAN_HE,
+    si_ling,
 )
 from utils import (
     DIZHI_WUXING,
@@ -522,6 +523,21 @@ def main(argv: list[str] | None = None) -> int:
     weighted_counts, root_bonus = weighted_wuxing(pillars, day_stem)
 
     # Day-master strength
+    # 距本月「节」的整日数 —— 司令按节令起算, 不按农历月。
+    try:
+        _pj = lunar.getPrevJie().getSolar()
+        _days_since_jie = (
+            _cal_date(solar.getYear(), solar.getMonth(), solar.getDay())
+            - _cal_date(_pj.getYear(), _pj.getMonth(), _pj.getDay())
+        ).days
+        si_ling_info = si_ling(month_gz[1], _days_since_jie)
+        if si_ling_info:
+            si_ling_info["jie"] = lunar.getPrevJie().getName()
+            si_ling_info["days_since_jie"] = _days_since_jie
+    except Exception as exc:                      # pragma: no cover - 防御
+        warn(f"si_ling failed: {exc}")
+        si_ling_info = None
+
     strength = day_master_strength(day_stem, month_branch, weighted_counts, pillars)
 
     # 神煞
@@ -671,6 +687,10 @@ def main(argv: list[str] | None = None) -> int:
             "root_bonus": {k: round(v, 3) for k, v in root_bonus.items()},
         },
         "day_master_strength": strength,
+        # 月支司令 (人元司令分野)。00-intake.md:47 把它列为每次批断必出的字段,
+        # 01-bazi.md:74 与 01-bazi-paipan.md:3 都断言「脚本已自动完成」—— 而在
+        # v1.7.3 之前输出里「司令」二字一次都不出现, 全库也没有一份分野表。
+        "yue_ling_si_ling": si_ling_info,
         "interactions": interactions,
         "shen_sha": shensha_list,
         "yong_shen": yong_shen,

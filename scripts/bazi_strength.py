@@ -295,9 +295,17 @@ def select_yong_shen(
         if not weighted:
             fuyi_wx = _ke_me(day_wx) or _me_ke(day_wx) or _xie_me(day_wx)
         else:
-            # Pick the weakest counter-force (most in need of activation)
+            # 「取最弱者」是**本实现的取舍, 非古籍规则**。
+            # references/01-bazi.md §9.1 的扶抑法只说「身旺扶其所克所泄(财、官、
+            # 食伤)」, 三者之间如何取舍全无规定; 同页 :455 引《滴天髓》「用神不可
+            # 损伤, 日主最宜健旺」, 取最弱者为用神与该原则方向相反。
+            # 这条理由串会原样进入 yong_shen.reason 并被 Claude 转述, 所以必须
+            # 标明来历 —— 对照 assets/tiaohou.json 的 audit.engine_note, 调候那
+            # 一半早已如实注记, 扶抑这一半从前没有。
             fuyi_wx = min(weighted, key=lambda x: x[1])[0]
-        fuyi_explain = f"身旺需克/泄/耗调和, 取{fuyi_wx}为扶抑用神(其在命局力量最弱, 需被激活)"
+        fuyi_explain = (f"身旺需克/泄/耗调和, 取{fuyi_wx}为扶抑用神"
+                        f"(财/官杀/食伤中力量最弱者, 需被激活)"
+                        f"[取舍规则出自本实现, 古籍未定三者优先级]")
     elif label in ("身弱", "偏弱"):
         weighted = [(c, weighted_counts.get(c, 0.0)) for c in candidates_weak if c]
         if not weighted:
@@ -305,12 +313,15 @@ def select_yong_shen(
         else:
             # Pick the stronger of 比劫/印 to lean on
             fuyi_wx = max(weighted, key=lambda x: x[1])[0]
-        fuyi_explain = f"身弱需扶身, 取{fuyi_wx}为扶抑用神(同党或印星中力量较强者助身)"
+        fuyi_explain = (f"身弱需扶身, 取{fuyi_wx}为扶抑用神"
+                        f"(比劫/印星中力量较强者助身)"
+                        f"[取舍规则出自本实现, 古籍未定二者优先级]")
     else:
         # 中和: prefer 调候; default to lightest unfilled 五行
         all_wx = list(weighted_counts.keys())
         fuyi_wx = min(all_wx, key=lambda w: weighted_counts.get(w, 0.0))
-        fuyi_explain = f"中和之局, 取最弱五行{fuyi_wx}调和五行"
+        fuyi_explain = (f"中和之局, 取最弱五行{fuyi_wx}调和"
+                        f"[取舍规则出自本实现, 古籍未定]")
 
     # Combine: if 调候 says X and 扶抑 says X → strong consensus; otherwise
     # 调候 takes precedence for boundary climates (冬火 / 夏水 / 春木需金 etc.).
