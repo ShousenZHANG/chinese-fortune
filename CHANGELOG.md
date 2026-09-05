@@ -2,6 +2,13 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+> **发布史勘误**：本文件有 22 个版本条目，而 `git tag` 只有 16 个。
+> **1.1.1 / 1.1.2 / 1.1.4 / 1.1.5 / 1.1.6 / 1.1.8 / 1.2.0 七个版本从**未打 tag**；
+> 反过来 tag `v1.1.7` 在本文件里没有对应条目。这是 v1.7.3 之前发布流程无门禁
+> 造成的漂移，已记于此而不追溯补 tag（补 tag 会改写发布史）。
+> 当前版本起，四个来源（`scripts/utils.py` 常量 / 本文件最新条目 / git tag /
+> dist 里的 zip 文件名）由 `tests/test_harness_gates.py` 强制一致。
+
 ## [1.7.2] — 2026-09-04
 
 紫微 audit. v1.7.1 checked the 八字 side against 原文; this checks the 紫微 side.

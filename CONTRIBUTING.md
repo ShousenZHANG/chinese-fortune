@@ -67,7 +67,11 @@ git push origin feat/your-change
 - No emojis in reference files
 
 **Python scripts**
-- Python 3.10+, type hints required
+- Python 3.11+ (CI matrix is 3.11 / 3.12; `pyproject.toml` sets
+  `target-version = py311` and `mypy python_version = 3.11`).
+  Type hints required — but note `mypy scripts/` currently runs
+  **without** `--disallow-untyped-defs`, so "required" is a
+  convention here, not a gate.
 - `from __future__ import annotations`
 - Argparse subcommands; `--help` must work without dependencies
 - Output: pretty UTF-8 JSON via `utils.json_print()`; warnings to stderr only
@@ -79,15 +83,38 @@ git push origin feat/your-change
 - UTF-8 (no `\u` escapes for CJK)
 - For ambiguous entries (e.g., unusual stroke counts), include `"note_uncertain": true`
 
+### Quality gates — all six run in CI
+
+`.github/workflows/ci.yml` runs these; `evals/run_checks.py` alone is **one of
+six**, so passing it locally does not mean CI will be green.
+
+```bash
+python -m ruff check .
+python -m mypy scripts/ --ignore-missing-imports
+COVERAGE_PROCESS_START=pyproject.toml python -m pytest tests/ -q --cov=scripts
+python -X utf8 evals/run_checks.py     # 8 checks, incl. evals/mutate.py
+python scripts/build_skill.py --dist-dir /tmp/dist
+```
+
+**`COVERAGE_PROCESS_START` is not optional.** The engines run as subprocesses,
+so without it `pytest --cov=scripts` reports ~30% and trips `fail_under = 80`.
+
+`run_checks.py` itself invokes `evals/mutate.py` (mutation testing, zero
+survivors required) — that step alone takes ~15 minutes.
+
 ### PR checklist
 
-- [ ] `evals/run_checks.py` passes
+- [ ] All six gates above pass
 - [ ] Changes are scoped (no drive-by reformatting)
 - [ ] Classical sources cited
 - [ ] No red lines crossed
 - [ ] No emojis added to release files
 - [ ] If adding new method: SKILL.md router updated + reference file + (optionally) script
-- [ ] If adding new script: graceful degradation when dependencies missing
+- [ ] If adding new script: degrade gracefully on optional deps —
+      **`lunar_python` 除外**. SKILL.md states it is REQUIRED and that
+      scripts exit 1 with an install hint, with no table fallback
+      (`utils.require_lunar()`). Writing a fallback for it would break
+      the shipped contract.
 - [ ] If adding/changing data: validate with `python -c "import json; json.load(open('assets/X.json', encoding='utf-8'))"`
 
 ### Code of conduct
@@ -162,7 +189,10 @@ git push origin feat/你的改动
 - 参考文档**不**用 emoji
 
 **Python 脚本**
-- Python 3.10+，必须类型注解
+- Python 3.11+（CI 矩阵为 3.11 / 3.12；`pyproject.toml` 的
+  `target-version` 与 mypy `python_version` 均为 3.11）。
+  要求类型注解 —— 但 `mypy scripts/` 目前**未开** `--disallow-untyped-defs`，
+  所以这是约定而非门禁。
 - `from __future__ import annotations`
 - argparse 子命令；`--help` 必须无依赖也能跑
 - 输出：`utils.json_print()` 出 UTF-8 JSON；警告只走 stderr
@@ -182,7 +212,9 @@ git push origin feat/你的改动
 - [ ] 没踩红线
 - [ ] 没在发布文件加 emoji
 - [ ] 加新方法: SKILL.md 路由表 + 参考文档 + (可选) 脚本
-- [ ] 加新脚本: 依赖缺失时优雅降级
+- [ ] 加新脚本: 可选依赖缺失时优雅降级 —— **`lunar_python` 除外**。
+      SKILL.md 明写它是 REQUIRED、脚本 exit 1 且无查表回退
+      (`utils.require_lunar()`)。给它写降级逻辑会违反已发布的行为契约。
 - [ ] 改/加数据: 用 `python -c "import json; json.load(open('assets/X.json', encoding='utf-8'))"` 验证
 
 ### 行为准则

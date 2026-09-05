@@ -29,10 +29,10 @@
             "30",
             "--gender",
             "male",
-            "--longitude",
-            "116.4",
             "--as-of-year",
-            "2026"
+            "2026",
+            "--city",
+            "北京"
           ],
           "paths": {
             "ok": true,

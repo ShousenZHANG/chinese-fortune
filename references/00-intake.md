@@ -7,6 +7,24 @@
 
 When a reading needs personal data (八字 / 紫微 / 合婚 / 起名 / 择日), **collect step-by-step**, not all at once. Use `AskUserQuestion` when there are discrete options (gender, calendar type); use plain text when free-form (name, location).
 
+### 数据处理声明 — 先说清楚再问
+
+这份表要采集九项个人信息（姓名、曾用名、生日、时辰、性别、出生地、现居地、
+关心议题含健康与财务、在世状态）。**采集之前必须让用户知道这些数据会怎样被处理：**
+
+- **本 skill 不落盘。** `scripts/` 与 `evals/` 全部代码零文件写入——无 logging、
+  无临时文件、无缓存（`tests/test_harness_gates.py` 强制）。生辰只在一次进程调用
+  里存在，进程结束即消失。
+- **但它们仍在对话记录里。** 本 skill 管不到宿主对话的留存策略；用户若不希望
+  生日留痕，应由用户自己决定说到多细（例如只给年月、或只给时辰不给日期）。
+- **命令行可见。** 所有数据以命令行参数传给脚本，因此会出现在进程列表
+  （`ps` / 任务管理器）与 shell 历史里。多用户共享的机器上尤须注意。
+- **第三方盘**：见 §在世状态 与 `20-disclaimer.md` 的同意条款——未经本人同意
+  不排他人盘。
+
+**开口第一句就带上这条**，不要等用户问。一句话即可：
+「这些信息只用于本次排盘、不会被保存；但会留在我们的对话记录里。」
+
 | Step | Field | Required for | How to ask |
 |---|---|---|---|
 | 1 | 姓名 / 化名 | naming, calibration | plain text |

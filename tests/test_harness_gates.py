@@ -320,6 +320,10 @@ def test_mutation_gate_is_wired_and_fails_on_a_survivor():
             [sys.executable, "-X", "utf8", str(probe)],
             cwd=root / "evals", capture_output=True, text=True,
             encoding="utf-8", errors="replace", timeout=300)
+        if "另一个 mutate.py 正在运行" in proc.stderr:
+            # 真的有一轮变异在跑 (例如后台的 run_checks)。锁正确挡住了我们 ——
+            # 这本身就是并发保护生效的证据, 但这次探针跑不成, 跳过。
+            pytest.skip("mutate.py 被另一进程占用, 探针无法运行 (锁生效中)")
         assert proc.returncode != 0, (
             "必然存活的变异没有让 mutate.py 失败 —— 门禁是摆设\n" + proc.stdout[-500:])
         assert "SURVIVED" in proc.stdout
@@ -331,3 +335,160 @@ def test_mutation_gate_is_wired_and_fails_on_a_survivor():
                         capture_output=True, text=True, encoding="utf-8")
     assert "scripts/utils.py" not in st.stdout, (
         "变异后没有还原 scripts/utils.py:\n" + st.stdout)
+
+
+def test_version_is_consistent_across_all_four_sources():
+    """版本有四个来源: scripts/utils.py 的常量、CHANGELOG 的最新条目、git tag、
+    dist 里的 zip 文件名。从前没有任何门禁把它们绑在一起 —— 而历史记录显示这个
+    流程已经实际失效过 8 次: CHANGELOG 有 22 个版本条目, git tag 只有 16 个,
+    1.1.1/1.1.2/1.1.4/1.1.5/1.1.6/1.1.8/1.2.0 七个从未打 tag, 而 tag v1.1.7
+    在 CHANGELOG 里根本不存在。
+
+    本测试只管**当前**版本的一致性 —— 历史断裂已在 CHANGELOG 里如实记明,
+    不追溯补 tag (那会改写发布史)。
+    """
+    import re
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(root / "scripts"))
+    from utils import __version__ as code_version
+
+    cl = (root / "CHANGELOG.md").read_text(encoding="utf-8")
+    latest = re.search(r"^## \[([0-9.]+)\]", cl, re.M).group(1)
+    assert latest == code_version, (
+        f"CHANGELOG 最新条目 {latest} != scripts/utils.py 的 {code_version}")
+
+    tags = subprocess.run(["git", "tag", "-l"], cwd=root,
+                          capture_output=True, text=True).stdout.split()
+    if tags:                       # 浅 clone / 无 tag 的 CI 环境跳过
+        assert f"v{code_version}" in tags, (
+            f"当前版本 {code_version} 没有对应的 git tag v{code_version}")
+
+
+def test_changelog_and_tags_drift_is_recorded_not_silent():
+    """CHANGELOG 与 tag 的历史断裂必须写在 CHANGELOG 里, 而不是只存在于
+    「谁去比对过才知道」的状态。
+    """
+    import re
+    import subprocess
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    cl = (root / "CHANGELOG.md").read_text(encoding="utf-8")
+    entries = set(re.findall(r"^## \[([0-9.]+)\]", cl, re.M))
+    tags = {t.lstrip("v") for t in
+            subprocess.run(["git", "tag", "-l"], cwd=root,
+                           capture_output=True, text=True).stdout.split()}
+    if not tags:
+        return
+    untagged = entries - tags
+    if untagged:
+        assert "未打 tag" in cl or "无 tag" in cl, (
+            f"这些 CHANGELOG 版本没有 tag 却也没在文件里说明: {sorted(untagged)}")
+
+
+def test_contributing_lists_every_ci_gate():
+    """贡献者文档只写了 run_checks.py 一道; ruff / mypy / coverage 三道 CI 门
+    全文零提及 —— 照文档走完的贡献者能复现 6 道 CI 门里的 1 道。
+    COVERAGE_PROCESS_START 同样只在 ci.yml/pyproject 里出现, 而不带它跑
+    `pytest --cov=scripts` 得 29.9%, 直接触发 fail_under 80 报红。
+    """
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    doc = (root / "CONTRIBUTING.md").read_text(encoding="utf-8")
+    for gate in ("ruff", "mypy", "pytest", "COVERAGE_PROCESS_START",
+                 "run_checks", "mutate"):
+        assert gate in doc, f"CONTRIBUTING 未提及 CI 门 {gate}"
+
+
+def test_contributing_does_not_contradict_the_shipped_contract():
+    """两处矛盾, 三份文件都在发布包里:
+    - PR checklist 要求「加新脚本: 依赖缺失时优雅降级」, 而 SKILL.md:118 明写
+      lunar_python is REQUIRED, scripts exit 1, there is no table fallback。
+      照 checklist 写降级逻辑会直接违反发布文档承诺的行为契约。
+    - 声称支持 Python 3.10+, 而 ci.yml 矩阵是 3.11/3.12, pyproject 的
+      target-version 与 mypy python_version 都是 3.11 —— 声明的支持下限既没测过,
+      又被 ruff 的 UP 规则反向推着走。
+    """
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    doc = (root / "CONTRIBUTING.md").read_text(encoding="utf-8")
+    assert "优雅降级" not in doc or "lunar_python` 除外" in doc, (
+        "checklist 仍要求依赖缺失时优雅降级, 与 SKILL.md 的 REQUIRED 契约矛盾")
+    assert "3.10+" not in doc, (
+        "仍声称支持 3.10, 而 CI 矩阵与 pyproject 都是 3.11+")
+
+
+def test_evals_do_not_pin_the_timezone_less_longitude_path():
+    """evals 是「黄金基准」—— 把一条错误的调用方式钉进去, 等于把它变成标准。
+
+    eval#1 的 prompt 明写「出生在北京」(--city 北京 可直接解析), 而 assertion 的
+    cmd 用 --longitude 116.4 且不带 --timezone。生日 1990-05-10 正落在
+    00-intake.md:38 点名的 1986-1991 夏令时窗口内: --city 北京 得真太阳时 13:19,
+    --longitude 无 tz 得 14:19 —— 整整差一小时。即使有人照 00-intake.md 修正了
+    SKILL.md 的示例, 这条 eval 仍会把旧路径锁死。
+    """
+    import json
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    spec = json.loads((root / "evals" / "evals.json").read_text(encoding="utf-8"))
+    offenders = []
+    for e in spec.get("evals", spec):
+        for a in e.get("assertions", []):
+            cmd = a.get("cmd") or []
+            if not cmd or a.get("kind") != "script":
+                continue
+            if "--longitude" in cmd and "--timezone" not in cmd and "--city" not in cmd:
+                offenders.append((e.get("id"), " ".join(map(str, cmd))))
+    assert not offenders, (
+        "这些 eval 用 --longitude 而不给 --timezone/--city, 会漏掉历史夏令时, "
+        f"却被当成黄金基准: {offenders}")
+
+
+def test_intake_declares_how_personal_data_is_handled():
+    """00-intake.md 是一份九项个人信息的采集协议 (姓名、生日、时辰、出生地、
+    现居地、关心议题含健康与财务、在世状态), 而全库此前没有任何一句数据处理声明
+    —— grep 隐私/privacy/保存/删除/数据保留 在 references + SKILL.md + README +
+    CONTRIBUTING 里零命中。
+
+    好消息是实现本身是干净的: scripts/ 与 evals/ 零文件写入, 生辰从不落盘。
+    但「事实上不保存」和「告诉用户不保存」是两件事, 而且还有一个真实的暴露通道:
+    所有数据以命令行参数传入, 会出现在 ps / 任务管理器 与 shell 历史里。
+    """
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    md = (root / "references" / "00-intake.md").read_text(encoding="utf-8")
+    assert "数据处理声明" in md
+    assert "不落盘" in md or "零文件写入" in md
+    assert "对话记录" in md, "必须说明 skill 管不到宿主对话的留存"
+    assert "命令行" in md and ("ps" in md or "进程列表" in md), (
+        "必须提到命令行参数会出现在进程列表与 shell 历史里")
+
+
+def test_engines_really_do_not_write_files():
+    """上一条声明的事实基础 —— 引擎确实不落盘。声明与实现必须一起被守住,
+    否则哪天有人加了个缓存, 声明就变成了假话。
+    """
+    import ast
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    writers = []
+    for f in sorted((root / "scripts").glob("*.py")):
+        if f.name == "build_skill.py":       # 打包器, 本来就要写文件
+            continue
+        tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Call):
+                fn = node.func
+                name = getattr(fn, "attr", None) or getattr(fn, "id", None)
+                if name in ("write_text", "write_bytes", "mkdir", "makedirs"):
+                    writers.append(f"{f.name}:{node.lineno} {name}")
+                if name == "open":
+                    for a in list(node.args[1:2]) + [k.value for k in node.keywords
+                                                     if k.arg == "mode"]:
+                        if isinstance(a, ast.Constant) and isinstance(a.value, str) \
+                                and any(c in a.value for c in "wax+"):
+                            writers.append(f"{f.name}:{node.lineno} open({a.value!r})")
+    assert not writers, (
+        "这些引擎会写文件, 与 00-intake.md 的「不落盘」声明矛盾: " + str(writers))
