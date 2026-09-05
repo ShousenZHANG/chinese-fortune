@@ -37,11 +37,13 @@ from utils import (
     DIZHI,
     __version__,
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
     longitude_correction,
     lookup_city,
     require_lunar,
     resolve_timezone_offset,
+    validate_birth_input,
     warn,
 )
 from ziwei_palaces import (
@@ -136,6 +138,15 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
+    # 边界校验必须在碰 lunar_python 之前。Solar.fromYmdHms 不校验日期真实性 ——
+    # 1990-02-31 会被接受并归一化成一张完整命盘随 ok:true 返回, 调用方无从分辨。
+    err = validate_birth_input(
+        args.year, args.month, args.day, args.hour, args.minute, lunar=args.lunar,
+    )
+    if err:
+        json_print(error_envelope("ziwei", "invalid_input", err, input=vars(args)))
+        return 1
+
     require_lunar()
     from lunar_python import Lunar, Solar  # type: ignore
 
@@ -155,11 +166,7 @@ def main(argv: list[str] | None = None) -> int:
             )
             lunar = solar.getLunar()
     except Exception as exc:
-        json_print({
-            "ok": False, "tool": "ziwei",
-            "error": "invalid_date", "message": str(exc),
-            "input": vars(args),
-        })
+        json_print(error_envelope("ziwei", "invalid_date", str(exc), input=vars(args)))
         return 1
 
     # 真太阳时校正 — 仅当用户显式提供非默认经度/时区时应用。

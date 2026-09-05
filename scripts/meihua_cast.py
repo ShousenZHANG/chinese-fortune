@@ -23,6 +23,7 @@ from utils import (
     XIANTIAN_NUM_TO_TRIGRAM,
     ensure_utf8_stdio,
     json_print,
+    ok_envelope,
     parse_datetime_arg,
     shichen_number,
 )
@@ -293,7 +294,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
 
     out = package(meta, args.question, now.month)
-    json_print(out)
+    json_print(ok_envelope("meihua", out))
     return 0
 
 

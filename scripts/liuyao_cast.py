@@ -23,6 +23,7 @@ from utils import (
     WUXING_KE,
     ensure_utf8_stdio,
     json_print,
+    ok_envelope,
     require_lunar,
 )
 from utils import (
@@ -492,7 +493,7 @@ def main(argv: list[str] | None = None) -> int:
         "main_image": main_text.get("image", "(暂无)"),
         "active_line_text": active_line_texts,
     }
-    json_print(out)
+    json_print(ok_envelope("liuyao", out))
     return 0
 
 

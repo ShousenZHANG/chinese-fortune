@@ -16,8 +16,11 @@ from utils import (
     DIZHI_ZODIAC,
     ZODIAC_TO_DIZHI,
     ensure_utf8_stdio,
+    error_envelope,
     json_print,
+    ok_envelope,
     require_lunar,
+    validate_birth_input,
 )
 
 ZODIAC_DATA: dict[str, dict] = {
@@ -364,18 +367,26 @@ def main(argv: list[str] | None = None) -> int:
         result = info_zodiac(args.zodiac)
     elif args.cmd == "compat":
         result = compat(args.a, args.b)
-    elif args.cmd == "year":
-        result = zodiac_of_year(args.year)
-    elif args.cmd == "taisui":
-        result = taisui_zodiacs(args.year)
+    elif args.cmd in ("year", "taisui"):
+        # 越界年份从前会一路走到 lunar_python 的历表外并崩栈, stdout 无 JSON,
+        # stderr 是带绝对路径的 traceback —— 调用方读不出发生了什么。
+        err = validate_birth_input(args.year)
+        if err:
+            json_print(error_envelope("zodiac", "invalid_input", err, input=vars(args)))
+            return 1
+        result = (zodiac_of_year if args.cmd == "year" else taisui_zodiacs)(args.year)
     else:
         json_print({"error": "unknown_cmd"})
         return 2
 
-    json_print(result)
-    # Every other engine returns 1 on an error payload; match them so callers
-    # that check the exit code do not read a failure as success.
-    return 1 if "error" in result else 0
+    if "error" in result:
+        # 从前这里直接 json_print 一个裸 dict, 既没有 ok:false 也没有 tool/version,
+        # 调用方要靠 "有没有 error 键" 特判本引擎。
+        msg = result.pop("message", None) or result.pop("summary", None) or             f"无效输入: {result.get('input_a', '') or result.get('input', '')}"
+        json_print(error_envelope("zodiac", result.pop("error"), msg, **result))
+        return 1
+    json_print(ok_envelope("zodiac", result))
+    return 0
 
 
 if __name__ == "__main__":

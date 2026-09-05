@@ -30,119 +30,34 @@ import argparse
 import sys
 from datetime import datetime
 
+from qimen_tables import (  # noqa: F401  (re-exported for callers/tests)
+    EIGHT_SHEN_ORDER,
+    LIU_YI,
+    MEN_HOME_PALACE,
+    MEN_ORDER_BY_PALACE,
+    PALACE_INFO,
+    SAN_QI,
+    STAR_HOME_PALACE,
+    STAR_ORDER_BY_PALACE,
+    XUN_HEADS,
+    YANG_JIE_QI,
+    YANG_PALACE_SEQ,
+    YIN_JIE_QI,
+    YIN_PALACE_SEQ,
+    YIQI_ORDER,
+)
 from utils import (
     TIANGAN_WUXING,
     WUXING_KE,
     __version__,
     ensure_utf8_stdio,
+    error_envelope,
     jiazi_index,
     json_print,
     longitude_correction,
     require_lunar,
+    validate_birth_input,
 )
-
-# --------------------------------------------------------------------------- #
-# 九宫 / 后天八卦 constants
-# --------------------------------------------------------------------------- #
-# Palace indexes 1..9 follow 洛书 numbering — also called 后天九宫.
-#
-#   ┌─────┬─────┬─────┐
-#   │  4  │  9  │  2  │     (上 = 南)
-#   │ 巽  │ 离  │ 坤  │
-#   ├─────┼─────┼─────┤
-#   │  3  │  5  │  7  │
-#   │ 震  │ 中  │ 兑  │
-#   ├─────┼─────┼─────┤
-#   │  8  │  1  │  6  │
-#   │ 艮  │ 坎  │ 乾  │     (下 = 北)
-#   └─────┴─────┴─────┘
-
-PALACE_INFO: dict[int, dict[str, str]] = {
-    1: {"palace": "坎", "direction": "北",   "wuxing": "水"},
-    2: {"palace": "坤", "direction": "西南", "wuxing": "土"},
-    3: {"palace": "震", "direction": "东",   "wuxing": "木"},
-    4: {"palace": "巽", "direction": "东南", "wuxing": "木"},
-    5: {"palace": "中", "direction": "中央", "wuxing": "土"},
-    6: {"palace": "乾", "direction": "西北", "wuxing": "金"},
-    7: {"palace": "兑", "direction": "西",   "wuxing": "金"},
-    8: {"palace": "艮", "direction": "东北", "wuxing": "土"},
-    9: {"palace": "离", "direction": "南",   "wuxing": "火"},
-}
-
-# 阳遁 顺行 sequence of palace indexes (洛书阳遁路径):
-# 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9
-YANG_PALACE_SEQ: list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-# 阴遁 逆行 sequence:
-# 9 → 8 → 7 → 6 → 5 → 4 → 3 → 2 → 1
-YIN_PALACE_SEQ: list[int] = [9, 8, 7, 6, 5, 4, 3, 2, 1]
-
-# Default 八门 mapping to base palace (阳遁一局 reference position).
-# 中宫无门, 寄于坤二宫 (or 艮八, 取流派而定; 本程序取传统的寄坤).
-MEN_HOME_PALACE: dict[str, int] = {
-    "休门": 1, "死门": 2, "伤门": 3, "杜门": 4,
-    "开门": 6, "惊门": 7, "生门": 8, "景门": 9,
-}
-# 八门 顺序 by 后天九宫 (1 8 3 4 9 2 7 6) — 中5 寄2
-MEN_ORDER_BY_PALACE: list[tuple[int, str]] = [
-    (1, "休门"), (8, "生门"), (3, "伤门"), (4, "杜门"),
-    (9, "景门"), (2, "死门"), (7, "惊门"), (6, "开门"),
-]
-# 九星 顺序 by 后天九宫 (1 8 3 4 9 2 7 6 5).  天禽 居中 5, 寄于坤二宫.
-STAR_ORDER_BY_PALACE: list[tuple[int, str]] = [
-    (1, "天蓬"), (8, "天任"), (3, "天冲"), (4, "天辅"),
-    (9, "天英"), (2, "天芮"), (7, "天柱"), (6, "天心"),
-    (5, "天禽"),
-]
-STAR_HOME_PALACE: dict[str, int] = {name: pal for pal, name in STAR_ORDER_BY_PALACE}
-
-# 八神 sequence — 阳顺
-EIGHT_SHEN_ORDER: list[str] = [
-    "值符", "螣蛇", "太阴", "六合", "白虎", "玄武", "九地", "九天",
-]
-
-# 三奇 六仪
-SAN_QI: list[str] = ["乙", "丙", "丁"]
-LIU_YI: list[str] = ["戊", "己", "庚", "辛", "壬", "癸"]
-# 三奇六仪 完整顺序 (六仪 + 三奇, 三奇逆序排为 丁 丙 乙).
-# 阳遁顺布: 戊→己→庚→辛→壬→癸→丁→丙→乙
-# 阴遁逆布: 同 sequence 但走逆向 palace path
-YIQI_ORDER: list[str] = ["戊", "己", "庚", "辛", "壬", "癸", "丁", "丙", "乙"]
-
-
-# --------------------------------------------------------------------------- #
-# 节气 → 三元局数 table (transcribed from 《奇门遁甲秘笈大全》)
-# --------------------------------------------------------------------------- #
-
-YANG_JIE_QI: dict[str, tuple[int, int, int]] = {
-    # (上元局, 中元局, 下元局)
-    "冬至": (1, 7, 4),
-    "小寒": (2, 8, 5),
-    "大寒": (3, 9, 6),
-    "立春": (8, 5, 2),
-    "雨水": (9, 6, 3),
-    "惊蛰": (1, 7, 4),
-    "春分": (3, 9, 6),
-    "清明": (4, 1, 7),
-    "谷雨": (5, 2, 8),
-    "立夏": (4, 1, 7),
-    "小满": (5, 2, 8),
-    "芒种": (6, 3, 9),
-}
-
-YIN_JIE_QI: dict[str, tuple[int, int, int]] = {
-    "夏至": (9, 3, 6),
-    "小暑": (8, 2, 5),
-    "大暑": (7, 1, 4),
-    "立秋": (2, 5, 8),
-    "处暑": (1, 4, 7),
-    "白露": (9, 3, 6),
-    "秋分": (7, 1, 4),
-    "寒露": (6, 9, 3),
-    "霜降": (5, 8, 2),
-    "立冬": (6, 9, 3),
-    "小雪": (5, 8, 2),
-    "大雪": (4, 7, 1),
-}
 
 
 def determine_ju(jieqi_name: str, days_since_jieqi: int) -> tuple[str, str, int]:
@@ -202,19 +117,6 @@ def earth_plate(ju_type: str, ju_number: int) -> dict[int, str]:
 # 旬首 — given 日干支 (or 时干支), return which of the 6 甲 it belongs to,
 # and the 六仪 (戊/己/庚/辛/壬/癸) for that 旬.
 # --------------------------------------------------------------------------- #
-
-# 60 甲子 indexed 0..59 with stem cycle (10) + branch cycle (12).
-# 旬首 = 甲X日, every 10 days:
-#   0: 甲子, 10: 甲戌, 20: 甲申, 30: 甲午, 40: 甲辰, 50: 甲寅
-XUN_HEADS: list[tuple[str, str]] = [
-    ("甲子", "戊"),   # 戊 represents 甲子旬
-    ("甲戌", "己"),
-    ("甲申", "庚"),
-    ("甲午", "辛"),
-    ("甲辰", "壬"),
-    ("甲寅", "癸"),
-]
-
 
 def xun_head(stem: str, branch: str) -> tuple[str, str]:
     """Return (旬首名 e.g. '甲子', 对应六仪 e.g. '戊') for 干支."""
@@ -637,8 +539,8 @@ def main(argv: list[str] | None = None) -> int:
             dt = datetime.strptime(args.date, "%Y-%m-%d")
             y, m, d = dt.year, dt.month, dt.day
         except ValueError as e:
-            json_print({"ok": False, "error": "invalid_date",
-                        "message": str(e), "expected": "YYYY-MM-DD"})
+            json_print(error_envelope("qimen", "invalid_date", str(e),
+                                      expected="YYYY-MM-DD"))
             return 1
     else:
         y, m, d = now.year, now.month, now.day
@@ -647,8 +549,14 @@ def main(argv: list[str] | None = None) -> int:
         try:
             hh, mm = map(int, args.time.split(":"))
         except Exception:
-            json_print({"ok": False, "error": "invalid_time",
-                        "expected": "HH:MM"})
+            json_print(error_envelope("qimen", "invalid_time",
+                                      f"无法解析时间 {args.time!r}", expected="HH:MM"))
+            return 1
+        # 解析成功 != 取值合法: "99:99" 是两个正经整数, 从前一路走到
+        # Solar.fromYmdHms 才以 Exception("wrong hour 99") 崩栈, stdout 无 JSON。
+        err = validate_birth_input(hour=hh, minute=mm)
+        if err:
+            json_print(error_envelope("qimen", "invalid_time", err, expected="HH:MM"))
             return 1
     else:
         hh, mm = now.hour, now.minute

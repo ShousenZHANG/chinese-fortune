@@ -13,7 +13,13 @@ import argparse
 import sys
 from datetime import datetime
 
-from utils import ensure_utf8_stdio, json_print, require_lunar, warn
+from utils import (
+    ensure_utf8_stdio,
+    json_print,
+    ok_envelope,
+    require_lunar,
+    warn,
+)
 
 
 def _safe(fn, default=None):
@@ -218,7 +224,7 @@ def main(argv: list[str] | None = None) -> int:
         },
     }
 
-    json_print(out)
+    json_print(ok_envelope("huangli", out))
     return 0
 
 

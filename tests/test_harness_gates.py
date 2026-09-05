@@ -217,12 +217,19 @@ def test_every_cli_engine_has_a_release_eval():
         for e in spec["evals"] for a in e.get("assertions", [])
         if a.get("kind") == "script" and a.get("cmd")
     }
-    helpers = {
-        "utils.py", "build_skill.py", "entropy.py",
-        "bazi_tables.py", "bazi_shensha.py", "bazi_strength.py", "bazi_geju.py",
-        "ziwei_tables.py", "ziwei_stars.py", "ziwei_palaces.py", "ziwei_patterns.py",
-    }
-    clis = {p.name for p in (ROOT / "scripts").glob("*.py")} - helpers
+    # 「哪些是 CLI」由结构判定, 不再手维护名单: 定义了 main() 的才是入口。
+    # 从前这里是一个硬编码的 helpers 集合, 每拆一次表就得记得往里加一个名字 ——
+    # qimen_tables.py 拆出来时就漏了, 门禁于是报「这个库模块没有发布 eval」。
+    import ast
+    build_only = {"build_skill.py"}      # 打包器, 不是占卜引擎
+    clis = set()
+    for f in (ROOT / "scripts").glob("*.py"):
+        if f.name in build_only:
+            continue
+        tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
+        if any(isinstance(n, ast.FunctionDef) and n.name == "main" for n in tree.body):
+            clis.add(f.name)
+    assert len(clis) >= 14, f"入口识别异常, 只找到 {sorted(clis)}"
     missing = sorted(clis - covered)
     assert not missing, f"CLIs with no release eval: {missing}"
 

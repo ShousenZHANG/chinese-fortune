@@ -24,7 +24,12 @@ import random
 import sys
 
 import entropy
-from utils import ensure_utf8_stdio, json_print, warn
+from utils import (
+    ensure_utf8_stdio,
+    json_print,
+    ok_envelope,
+    warn,
+)
 
 # --------------------------------------------------------------------------- #
 # Fallback minimal tarot deck (78 cards)
@@ -375,7 +380,7 @@ def main(argv: list[str] | None = None) -> int:
         "cards": out_cards,
         "summary": position_summary(positions, cards),
     }
-    json_print(out)
+    json_print(ok_envelope("tarot", out))
     return 0
 
 

@@ -27,6 +27,7 @@ from utils import (
     XIANTIAN_NUM_TO_TRIGRAM,
     ensure_utf8_stdio,
     json_print,
+    ok_envelope,
     parse_datetime_arg,
     shichen_number,
     warn,
@@ -537,7 +538,7 @@ def main(argv: list[str] | None = None) -> int:
         json_print({"error": "unknown_method"})
         return 2
 
-    json_print(out)
+    json_print(ok_envelope("yijing", out))
     return 0
 
 

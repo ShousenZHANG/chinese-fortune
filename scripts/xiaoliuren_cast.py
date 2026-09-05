@@ -15,6 +15,7 @@ from utils import (
     ensure_utf8_stdio,
     hour_branch,
     json_print,
+    ok_envelope,
     require_lunar,
 )
 
@@ -151,7 +152,7 @@ def main(argv: list[str] | None = None) -> int:
         json_print({"error": "invalid_input", "message": str(exc), "input": vars(args)})
         return 1
 
-    json_print(out)
+    json_print(ok_envelope("xiaoliuren", out))
     return 0
 
 

@@ -17,7 +17,15 @@ import json
 import os
 import sys
 
-from utils import WUXING_GEN, WUXING_KE, ensure_utf8_stdio, json_print, warn
+from utils import (
+    WUXING_GEN,
+    WUXING_KE,
+    ensure_utf8_stdio,
+    error_envelope,
+    json_print,
+    ok_envelope,
+    warn,
+)
 
 # --------------------------------------------------------------------------- #
 # 81 数理 table — number -> {"luck": "大吉/吉/中/凶/大凶", "comment": "..."}
@@ -312,13 +320,41 @@ def build_parser() -> argparse.ArgumentParser:
     return p
 
 
+def _is_han(ch: str) -> bool:
+    """CJK 统一表意文字 (含扩展 A/B 与兼容区)。间隔号、拉丁字母、空格皆非汉字。"""
+    cp = ord(ch)
+    return (
+        0x4E00 <= cp <= 0x9FFF      # 基本区
+        or 0x3400 <= cp <= 0x4DBF   # 扩展 A
+        or 0x20000 <= cp <= 0x2A6DF  # 扩展 B
+        or 0xF900 <= cp <= 0xFAFF   # 兼容表意文字
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     name = args.name.strip()
     if not name or len(name) < 2:
-        json_print({"error": "invalid_name", "input": name,
-                    "message": "姓名至少两个字"})
+        json_print(error_envelope("name", "invalid_name", "姓名至少两个字",
+                                  input=name))
+        return 1
+
+    # 五格数理只对汉字成立: 它数的是康熙笔画。从前 --name "John Smith" 返回
+    # ok:true, 把 10 个拉丁字母**连同那个空格**逐个按默认 8 画计, 输出
+    # 总格 80(大凶)「辛苦无功, 事与愿违」—— 一个凭空生成的凶断。
+    # 这不只是英文用户的问题: "阿依古丽·买买提" 里的间隔号同样被当成 8 画字
+    # 计进 地格/外格/总格。SKILL.md 的 description 把 naming 列为英文触发词。
+    non_han = [c for c in name if not _is_han(c)]
+    if non_han:
+        json_print(error_envelope(
+            "name", "non_han_characters",
+            "五格数理按康熙笔画计, 只适用于汉字姓名; "
+            f"以下字符无法计笔画: {''.join(dict.fromkeys(non_han))}",
+            input=name,
+            non_han_characters=sorted(set(non_han)),
+            hint="非汉字姓名请改用汉字译名, 或改用其他方法 (如生肖/星座)。",
+        ))
         return 1
 
     table = load_bihua_table()
@@ -404,7 +440,7 @@ def main(argv: list[str] | None = None) -> int:
             f"请补 assets/name_bihua.json 或用 --strict 拒绝估算。"
         )
 
-    json_print(out)
+    json_print(ok_envelope("name", out))
     return 0
 
 

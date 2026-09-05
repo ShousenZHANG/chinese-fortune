@@ -359,6 +359,86 @@ def json_print(obj) -> None:
             print(payload.encode("utf-8", errors="replace").decode("utf-8", errors="replace"))
 
 
+# --------------------------------------------------------------------------- #
+# CLI 契约 — 统一的错误信封与边界校验
+# --------------------------------------------------------------------------- #
+#
+# 从前 16 个 CLI 各自手搓错误 dict (全仓 54 处 "error" 字面量), 键不齐、语义不一,
+# 而边界校验只有 bazi_calc 一家做。实测出的洞: ziwei_calc 收到 1990-02-31 会返回
+# ok:true 加一张凭空归一化出来的命盘; zodiac_compat --year 99999 与 qimen_cast
+# --time 99:99 直接崩栈, stdout 无 JSON、stderr 是带绝对路径的 traceback。
+#
+# 调用方 (Claude) 无法从 traceback 或一张编造的盘里分辨对错, 所以这两种失败模式
+# 都必须收敛成一个信封。
+
+# lunar_python 的历表范围。
+YEAR_MIN, YEAR_MAX = 1900, 2100
+
+
+def error_envelope(tool: str, error: str, message: str, **extra) -> dict:
+    """所有 CLI 的统一失败信封。
+
+    ok/tool/version/error/message 五个键恒定存在, 调用方可无条件读取。
+    """
+    out = {
+        "ok": False,
+        "tool": tool,
+        "version": __version__,
+        "error": error,
+        "message": message,
+    }
+    out.update(extra)
+    return out
+
+
+def ok_envelope(tool: str, payload: dict) -> dict:
+    """给成功载荷补上 ok/tool/version 三个恒定键。
+
+    实测 16 个引擎里只有 4 个在成功时输出完整信封, 8 个一个键都没有 —— 调用方
+    (Claude) 因此无法统一判断一次调用是成功还是失败, 只能逐引擎特判。三个键放在
+    最前面, 载荷原有键一律保留且优先 (引擎已自带 ok 时不覆盖)。
+    """
+    out = {"ok": True, "tool": tool, "version": __version__}
+    out.update(payload)
+    return out
+
+
+def validate_birth_input(
+    year: int | None = None,
+    month: int | None = None,
+    day: int | None = None,
+    hour: int | None = None,
+    minute: int | None = None,
+    *,
+    year_range: tuple[int, int] = (YEAR_MIN, YEAR_MAX),
+    lunar: bool = False,
+) -> str | None:
+    """校验公历/农历生辰分量。返回错误信息字符串, 合法则返回 None。
+
+    ``lunar=True`` 时只做分量范围检查 —— 农历月大小与闰月由 lunar_python 决定,
+    这里不能用 calendar.monthrange 判。公历则连"这个月有没有这一天"一并验:
+    Solar.fromYmdHms 会接受 1990-02-31 并给出一个农历转换, argparse 的 1-31 也
+    放行, 所以必须自己用 date() 验一次。
+    """
+    lo, hi = year_range
+    if year is not None and not lo <= year <= hi:
+        return f"year 超出支持范围 {lo}-{hi}, 收到 {year}"
+    if month is not None and not 1 <= month <= 12:
+        return f"month 必须在 1-12, 收到 {month}"
+    if day is not None and not 1 <= day <= 31:
+        return f"day 必须在 1-31, 收到 {day}"
+    if hour is not None and not 0 <= hour <= 23:
+        return f"hour 必须在 0-23, 收到 {hour}"
+    if minute is not None and not 0 <= minute <= 59:
+        return f"minute 必须在 0-59, 收到 {minute}"
+    if not lunar and year is not None and month is not None and day is not None:
+        try:
+            _date(year, month, day)
+        except ValueError as exc:
+            return f"{year}-{month:02d}-{day:02d} 不是真实存在的公历日期 ({exc})"
+    return None
+
+
 def warn(msg: str) -> None:
     """Send a warning to stderr without polluting JSON stdout."""
     try:
