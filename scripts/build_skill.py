@@ -129,7 +129,15 @@ def build(out_path: Path, files: list[Path]) -> None:
     with zipfile.ZipFile(out_path, "w", zipfile.ZIP_DEFLATED) as zf:
         for p in files:
             arc = f"{SKILL_FOLDER}/{p.relative_to(ROOT).as_posix()}"
-            data = p.read_bytes()
+            # Normalise to LF. Every bundled file is text (.py/.md/.json/.yaml),
+            # and the build reads the WORKING TREE, so without this the artifact
+            # depends on the checkout rather than on the commit: with
+            # core.autocrlf=true and no .gitattributes, a fresh clone of a tag
+            # yields CRLF while the tree the release was cut from held LF.
+            # Verified on v1.7.2 — the published asset and a rebuild from the
+            # same tag differ in 59 of 63 files, and are byte-identical once
+            # line endings are normalised. LF also matches what shipped.
+            data = p.read_bytes().replace(b"\r\n", b"\n")
             info = zipfile.ZipInfo(arc, date_time=zi_date)
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16

@@ -175,3 +175,35 @@ def test_build_reads_version_from_utils():
     import utils
 
     assert build_skill.read_version() == utils.__version__
+
+
+def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout():
+    """The build reads the WORKING TREE. With core.autocrlf=true and no
+    .gitattributes, a fresh clone of a tag checks out CRLF while the tree a
+    release was cut from held LF — so the same commit produced two different
+    artifacts.
+
+    Measured on v1.7.2: the published asset and a rebuild from that exact tag
+    differ in 59 of 63 files, and are byte-identical once line endings are
+    normalised. build() now forces LF, and .gitattributes keeps the tree LF too.
+    """
+    out = ROOT / "dist" / "_lf_check.zip"
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import build_skill
+        build_skill.build(out, build_skill.collect())
+        offenders = []
+        with zipfile.ZipFile(out) as zf:
+            for name in zf.namelist():
+                if b"\r\n" in zf.read(name):
+                    offenders.append(name)
+        assert not offenders, f"CRLF in packaged files: {offenders[:10]}"
+    finally:
+        out.unlink(missing_ok=True)
+
+
+def test_gitattributes_pins_line_endings():
+    """Without this, the next clone silently reintroduces the CRLF drift above."""
+    ga = ROOT / ".gitattributes"
+    assert ga.exists(), "missing .gitattributes — checkout line endings unpinned"
+    assert "eol=lf" in ga.read_text(encoding="utf-8")

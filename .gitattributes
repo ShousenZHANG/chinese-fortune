@@ -1,0 +1,20 @@
+# 全部文本文件在工作树里统一用 LF。
+#
+# 没有这个文件时, core.autocrlf=true 的机器 (Windows 默认) 检出会得到 CRLF,
+# 而 build_skill.py 读的是工作树 —— 于是同一个 tag 在不同机器上产出不同的包。
+# 实测 v1.7.2: 已发布资产与从同一 tag 全新检出重建的包, 63 个文件里 59 个不同,
+# 归一化行尾后 63/63 完全相同。
+#
+# build_skill.py 现在也在写入 zip 时强制 LF, 两道一起保证发布产物只取决于 commit。
+* text=auto eol=lf
+
+# 二进制: 不做任何行尾转换。
+*.zip  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.woff binary
+*.woff2 binary
