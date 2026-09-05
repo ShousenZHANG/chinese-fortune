@@ -525,29 +525,66 @@ def test_tiankui_tianyue_xin_row_is_ma_hu_not_hu_ma():
     assert set(TIAN_KUI) == set(TIAN_YUE) == set("甲乙丙丁戊己庚辛壬癸")
 
 
-def test_meihua_every_trigram_can_reach_every_wangshuai_state():
-    """SEASON_WX_BY_MONTH 从前把 12 个月全部映射到 木/火/金/水, 于是 season_wx
-    永远不是土, `.get(month, "土")` 的默认分支对任何合法月份都不可达 —— 体卦为
-    艮 或 坤 (五行属土) 时 ti_state 结构性地拿不到「旺」, 八个卦里有两个的旺衰
-    被系统性压低, 而输出照样把它当确定结论交给用户。
+def test_meihua_wangshuai_matches_its_own_reference_table():
+    """ti_state 必须逐格等于 references/05-meihua.md §5.2 那张表。
 
-    土王四季: 辰未戌丑 四个季末月土旺, 对应公历约 4/7/10/1 月。
+    上一版测试只断言「八卦 x 12 月能取遍 旺相休囚死」—— 集合式断言, 对标签置换
+    结构性失明: 把 休/囚 两个 return 对调后全量套件仍全绿, 正是同一个 commit
+    后半段自己指认的缺陷类, 就留在它刚改过的上一个函数里。月份→五行的映射同样
+    只钉了 土 的 {1,4,7,10}, 把 8/9 月改成水、11/12 改成金也全绿 —— 12 个月里
+    7 个零覆盖。
+
+    改为从文档解析整张表再逐格 diff (范式同 test_cimu_and_xuetang_match_their_own
+    _reference)。96 格全部钉死, 任何一次标签置换或月份错配都会红。
+    """
+    import re
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    sys.path.insert(0, str(root / "scripts"))
+    import meihua_cast
+    from utils import BAGUA
+
+    md = (root / "references" / "05-meihua.md").read_text(encoding="utf-8")
+    body = md.split("### 5.2")[1].split("### 5.3")[0]
+
+    # | 月令 | 公历约当 | 旺卦 | 相卦 | 休卦 | 囚卦 | 死卦 |
+    want: dict[tuple[str, int], str] = {}
+    states = ["旺", "相", "休", "囚", "死"]
+    rows = 0
+    for line in body.splitlines():
+        cells = [c.strip() for c in line.split("|")[1:-1]]
+        if len(cells) != 7 or cells[0] in ("月令", "") or set(cells[1]) <= set("-"):
+            continue
+        months = [int(x) for x in re.findall(r"\d+", cells[1])]
+        assert months, line
+        rows += 1
+        for state, cell in zip(states, cells[2:], strict=True):
+            for tri in BAGUA:
+                if tri in cell:
+                    for mo in months:
+                        want[(tri, mo)] = state
+    assert rows == 5, f"§5.2 应有 5 行月令, 解析到 {rows}"
+    assert len(want) == 8 * 12, f"表不完整: {len(want)}/96 格"
+
+    for (tri, mo), state in sorted(want.items()):
+        got = meihua_cast.ti_state(tri, mo)
+        assert got == state, f"{tri}({BAGUA[tri]['wuxing']}) {mo}月: 引擎={got} 文档={state}"
+
+
+def test_meihua_season_table_covers_every_month_exactly_once():
+    """月份不重不漏 —— 旧表把 辰未戌丑 同时列进四季行和「四季月末」行, 同一个月
+    出现两次, 引擎只能站一边, 于是文档必然与引擎有一半对不上。
     """
     import sys
     from pathlib import Path
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
     import meihua_cast
-    from utils import BAGUA
 
     assert set(meihua_cast.SEASON_WX_BY_MONTH) == set(range(1, 13))
     assert set(meihua_cast.SEASON_WX_BY_MONTH.values()) == {"木", "火", "土", "金", "水"}
     assert {m for m, wx in meihua_cast.SEASON_WX_BY_MONTH.items()
             if wx == "土"} == {1, 4, 7, 10}
-
-    want = {"旺", "相", "休", "囚", "死"}
-    for tri in BAGUA:
-        got = {meihua_cast.ti_state(tri, mo) for mo in range(1, 13)}
-        assert got == want, (tri, BAGUA[tri]["wuxing"], sorted(got))
 
 
 def test_meihua_tiyong_labels_are_not_interchangeable():

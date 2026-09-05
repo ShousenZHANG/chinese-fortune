@@ -258,6 +258,31 @@ def test_meihua_datetime_injection_is_reproducible():
     assert x1 == x2
 
 
+@pytest.mark.parametrize("dt,hexagram,body,state", [
+    ("2026-04-24T13:05", "坎为水", "坎", "死"),   # 辰月, 土克水
+    ("2026-07-24T13:05", "乾为天", "乾", "相"),   # 未月, 土生金
+    ("2026-10-24T13:05", "震为雷", "震", "囚"),   # 戌月, 木克土
+    ("2026-01-24T13:05", "离为火", "离", "休"),   # 丑月, 火生土
+])
+def test_meihua_body_strength_golden_in_the_four_earth_months(dt, hexagram, body, state):
+    """四季月 (公历 4/7/10/1) 的端到端黄金值。
+
+    上面那条唯一的 body_strength 黄金值把体卦钉在 坤(土) —— 正是「永远不可能旺」
+    那个缺陷的当事卦 —— 却挑了 6 月, 是 SEASON_WX_BY_MONTH 里未被改动的 8 个月
+    之一, 新旧引擎在该用例都返回「相」。于是那次改动动了 96 格里的 32 格 (33%),
+    一条快照都没红。
+
+    这四个日期落在被改动的四个月上, 且四个值在改动前后全部不同
+    (休→死、死→相、死→囚、死→休), 下一次同类漂移会立刻现形。
+    """
+    d = run_cli("meihua_cast.py", "--datetime", dt, "time")
+    assert d["main_hex"]["name"] == hexagram
+    assert d["ti_yong"]["body_trigram"] == body
+    assert d["ti_yong"]["body_strength"] == state
+    # 精度标注必须随输出一起交付 —— 月令粒度不足以定 18 天的土王四季分界。
+    assert "月令粗略" in d["ti_yong"]["body_strength_granularity"]
+
+
 def test_yijing_time_datetime_injection_is_reproducible():
     a = run_cli("yijing_cast.py", "time", "--datetime", "2026-06-24T13:05")
     b = run_cli("yijing_cast.py", "time", "--datetime", "2026-06-24T13:05")
@@ -357,7 +382,10 @@ def test_64hex_binary_field_is_derivable_from_lines_and_trigrams():
         assert h["binary"] == bottom_up[::-1], (
             h["number"], h["name_zh"], h["binary"], bottom_up[::-1])
 
-    # 64 个编码必须两两互异 —— 任何一次两两互换都会在这里留下重复。
+    # 唯一性只抓「重复/手滑写错一个」, **抓不到本 bug 类**: 原缺陷是 14 组两两
+    # 互换, 互换是置换, 置换保持唯一性 —— 实测把 #9 小畜 与 #43 夬 的 binary
+    # 对调, 这里仍然是 64 个不同值。真正承重的是上面那条推导断言。
+    # (我在 4f8e9f6 的提交信息里把这条写成「任何一次互换都会留下重复」, 是错的。)
     assert len({h["binary"] for h in items}) == 64
 
 

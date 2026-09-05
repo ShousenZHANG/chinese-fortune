@@ -89,7 +89,9 @@ def ti_yong_relation(ti_tri: str, yong_tri: str) -> str:
 # 系统性压低, 而输出照样把它当确定结论交给用户。
 #
 # 月粒度模型必须在「辰月算木还是算土」之间二选一; 这里取通行的四季月归土, 与本
-# 文件原有注释声明的意图一致。真正的 18 天分界需要节气, 见 notes 字段的说明。
+# 文件原有注释声明的意图一致, references/05-meihua.md §5.2 已同步对齐。
+# 真正的 18 天分界需要节气, 本引擎不提供 —— 输出的 body_strength 因此在
+# package() 里带 granularity 标注, 供解读时如实说明其精度。
 SEASON_WX_BY_MONTH: dict[int, str] = {
     # 公历月 -> 当令五行 (对应 寅卯/巳午/申酉/亥子 四组 + 辰未戌丑 四季月)
     2: "木", 3: "木",
@@ -226,6 +228,9 @@ def package(cast_meta: dict, question: str | None, month: int) -> dict:
             "use_wuxing": BAGUA[yong_t]["wuxing"],
             "relation": relation,
             "body_strength": state,
+            # 旺衰按 公历月 粗略取值。土王四季严格说是每季末 18 天, 定 18 天分界
+            # 需要节气, 本引擎不提供 —— 落在月初/月末的盘可能实际处在相邻状态。
+            "body_strength_granularity": "月令粗略 (未按节气细分, 四季月整月作土)",
         },
         "summary": "; ".join(summary_parts),
     }

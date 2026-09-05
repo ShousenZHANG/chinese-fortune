@@ -129,10 +129,13 @@ def test_day_pillar_matches_sxtwl_on_every_day_1920_2080():
         lp = lp_lunar(cur.year, cur.month, cur.day).getDayInGanZhi()
         sx = sx_gz(sxtwl.fromSolar(cur.year, cur.month, cur.day), "d")
         if lp != sx:
-            mismatches.append((cur.isoformat(), lp, sx))
-            if len(mismatches) >= 10:
-                break
+            mismatches.append(f"{cur.isoformat()}: lunar_python {lp} != sxtwl {sx}")
         checked += 1
         cur += timedelta(days=1)
+    # 分歧优先报告。早先这里在攒够 10 条时 break, 于是 checked 也停在半路 ——
+    # 一旦真出现系统性分歧, 断言顺序会让它以 `assert 9 == 58440` 收场, 把唯一
+    # 有用的信息 (哪一天、差多少) 全吞掉。现在跑满全程, 只截断展示。
+    assert not mismatches, (
+        f"{len(mismatches)}/{checked} 天日柱不符, 前 10 条: "
+        + " | ".join(mismatches[:10]))
     assert checked == 58440, checked
-    assert not mismatches, mismatches

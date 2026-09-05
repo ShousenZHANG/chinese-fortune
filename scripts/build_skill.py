@@ -162,6 +162,10 @@ def main(argv=None) -> int:
         out_path = Path(args.out)
     else:
         dist_dir = Path(args.dist_dir) if args.dist_dir else ROOT / "dist"
+        if dist_dir.exists() and not dist_dir.is_dir():
+            # 否则 mkdir 抛 FileExistsError, 是一条裸 traceback 路径 —— 本文件
+            # 其余失败路径一律走 sys.exit("FATAL: ...")。
+            sys.exit(f"FATAL: --dist-dir is not a directory: {dist_dir}")
         dist_dir.mkdir(parents=True, exist_ok=True)
         out_path = dist_dir / f"chinese-fortune-v{version}.zip"
     build(out_path, files)

@@ -644,3 +644,28 @@ def test_lunar_input_equation_of_time_comes_from_the_solar_day():
     assert lun["true_solar_time"] == sol["true_solar_time"], (
         lun["true_solar_time"], sol["true_solar_time"])
     assert lun["four_pillars"] == sol["four_pillars"]
+
+
+def test_lunar_input_resolves_timezone_from_the_solar_day():
+    """resolve_timezone_offset 是第三个按公历日期取值的消费者, 上一轮只搬了两个。
+    后果一: 农历二月三十 这类真实生日只要带 --city (会自动填 timezone, 是最常见
+    用法) 就返回 ok:false + 误导性的 invalid_timezone。后果二: 历史夏令时按公历
+    日期立法, 拿农历日期查表会整整差 1 小时 —— 1986-1991 窗口尤甚。
+    """
+    from lunar_python import Lunar
+    d, _ = _run_bazi("--lunar", "--year", 1993, "--month", 2, "--day", 30,
+                     "--hour", 10, "--city", "北京", "--gender", "male")
+    assert d["ok"] is True, d
+    assert d["four_pillars"]["year"]["ganzhi"] == "癸酉"
+
+    # 夏令时窗口内, --lunar 与等价公历输入必须给出同一个偏移与同一副四柱。
+    for ly, lm, ld in [(1986, 3, 26), (1988, 4, 15), (1990, 5, 1), (1991, 6, 10)]:
+        s = Lunar.fromYmdHms(ly, lm, ld, 14, 0, 0).getSolar()
+        a, _ = _run_bazi("--lunar", "--year", ly, "--month", lm, "--day", ld,
+                         "--hour", 14, "--city", "北京", "--gender", "male")
+        b, _ = _run_bazi("--year", s.getYear(), "--month", s.getMonth(),
+                         "--day", s.getDay(), "--hour", 14, "--city", "北京",
+                         "--gender", "male")
+        assert a["ok"] and b["ok"], (a, b)
+        assert a["timezone"] == b["timezone"], (ly, lm, ld, a["timezone"], b["timezone"])
+        assert a["four_pillars"] == b["four_pillars"], (ly, lm, ld)

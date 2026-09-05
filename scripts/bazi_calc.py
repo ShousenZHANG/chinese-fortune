@@ -365,20 +365,6 @@ def main(argv: list[str] | None = None) -> int:
     if args.longitude is None:
         args.longitude = 120.0  # GMT+8 reference meridian
 
-    tz_info = None
-    tz_offset = args.tz
-    if args.timezone:
-        try:
-            tz_info = resolve_timezone_offset(
-                args.timezone, args.year, args.month, args.day,
-                args.hour if args.hour is not None else 12, args.minute,
-            )
-        except ValueError as exc:
-            json_print({"ok": False, "tool": "bazi", "error": "invalid_timezone",
-                        "message": str(exc)})
-            return 1
-        tz_offset = tz_info["offset_hours"]
-
     # 时辰未知 -> three-pillar mode. Noon is used only to obtain the 年/月/日柱
     # (it cannot cross a day boundary); no 时柱 is derived from it, and every
     # aggregate below is computed over six characters instead of eight.
@@ -387,12 +373,14 @@ def main(argv: list[str] | None = None) -> int:
     eff_hour = args.hour if hour_known else 12
     eff_minute = args.minute if hour_known else 0
 
-    # 农历输入必须**先**转公历, 再做真太阳时与经度校正。校正靠 day_of_year 求均时差
-    # (utils.true_solar_time_info / longitude_correction), 拿农历日期当公历用会引入
-    # 最坏近 20 分钟的误差 —— 足以让时辰边界附近的人整位跳时柱, 近午夜时连日柱一起翻。
-    # 同一处顺序错误还让 longitude_correction 内的 date() 对农历二月三十这类真实生日
-    # 抛出未捕获的 ValueError (1900-2100 间此类生日 273 个), 并让 day_offset 之后的
-    # 农历+1天 撞上"该农历月只有 29/30 天"而伪造出一条 invalid_date。
+    # 农历输入必须**先**转公历, 再交给任何按公历日期取值的东西。本文件有三个这样的
+    # 消费者: resolve_timezone_offset (历史夏令时按日期查表)、true_solar_time_info 与
+    # longitude_correction (均时差按 day_of_year 求)。
+    #
+    # 拿农历日期当公历用会: 对农历二月三十这类真实生日抛 ValueError (1900-2100 间
+    # 273 个); 最坏引入近 20 分钟均时差误差, 足以让时辰边界附近的人整位跳时柱;
+    # 并让 day_offset 之后的 农历+1天 撞上"该农历月只有 29/30 天"而伪造 invalid_date。
+    # 时区那一路还会整整差 1 小时 —— 1986-1991 夏令时窗口按农历日期查表会查错档。
     #
     # Solar.fromYmdHms 不校验日期真实性 (1990-02-31 会被接受并给出一个农历转换),
     # 所以公历分支要自己用 date() 验一次。
@@ -418,6 +406,20 @@ def main(argv: list[str] | None = None) -> int:
             "input": vars(args),
         })
         return 1
+
+    # 时区按**公历**日期解析 —— 历史夏令时是按公历日期立法的。
+    tz_info = None
+    tz_offset = args.tz
+    if args.timezone:
+        try:
+            tz_info = resolve_timezone_offset(
+                args.timezone, base_y, base_m, base_d, eff_hour, args.minute,
+            )
+        except ValueError as exc:
+            json_print({"ok": False, "tool": "bazi", "error": "invalid_timezone",
+                        "message": str(exc)})
+            return 1
+        tz_offset = tz_info["offset_hours"]
 
     try:
         tst_info = true_solar_time_info(

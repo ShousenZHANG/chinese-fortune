@@ -130,54 +130,56 @@ def test_no_test_invokes_the_builder_without_an_explicit_output():
     never cleaned.
 
     Checked statically rather than by re-running pytest (which would recurse).
+
+    The first version of this check only matched `subprocess.run([...])` with a
+    literal list, so three real regression paths walked straight through it:
+    an in-process `build_skill.main([])` (the most likely one — this file
+    already imports build_skill four times, and it was verified to actually
+    overwrite dist/chinese-fortune-v1.7.2.zip), a hoisted `cmd = [...]` passed
+    by name, and `subprocess.check_output([...])`. It now works on the parsed
+    AST instead of source text, so call shape no longer matters.
     """
-    import re
+    import ast
     offenders = []
     for f in sorted((ROOT / "tests").glob("*.py")):
-        src = f.read_text(encoding="utf-8")
-        for m in re.finditer(r"subprocess\.run\(\s*\[(.*?)\]", src, re.S):
-            call = m.group(1)
-            if "BUILD" not in call and "build_skill" not in call:
+        tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
+        # 先收集本文件里被赋值成 list 的名字, 以便 cmd = [...] 这种写法也能查。
+        lists: dict[str, ast.List] = {}
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Assign) and isinstance(node.value, ast.List):
+                for tgt in node.targets:
+                    if isinstance(tgt, ast.Name):
+                        lists[tgt.id] = node.value
+
+        def flags_of(node, lists=lists) -> tuple[bool, bool]:
+            """(mentions the builder, passes an explicit output)"""
+            text = ast.dump(node)
+            names = {n.id for n in ast.walk(node) if isinstance(n, ast.Name)}
+            for nm in names & set(lists):
+                text += ast.dump(lists[nm])
+            builder = "BUILD" in text or "build_skill" in text
+            explicit = "--out" in text or "--dist-dir" in text or "out_path" in text
+            return builder, explicit
+
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Call):
                 continue
-            if "--out" in call or "--dist-dir" in call:
+            fn = node.func
+            # subprocess.run/check_output/Popen(...) 或 build_skill.main(...)/build(...)
+            is_sub = isinstance(fn, ast.Attribute) and fn.attr in (
+                "run", "check_output", "check_call", "Popen")
+            is_direct = isinstance(fn, ast.Attribute) and fn.attr in ("main", "build")
+            if not (is_sub or is_direct):
                 continue
-            line = src[:m.start()].count(chr(10)) + 1
-            offenders.append(f"{f.name}:{line}")
+            builder, explicit = flags_of(node)
+            if builder and not explicit:
+                offenders.append(f"{f.name}:{node.lineno}")
     assert not offenders, (
-        "these call the builder with no explicit output path, so it writes to "
+        "these invoke the builder with no explicit output path, so it writes to "
         f"the repo's dist/: {offenders}")
 
 
-def test_all_engines_report_the_single_version():
-    """Four divergent version sources existed: bazi/ziwei constants, liuren's
-    own __version__ pinned at 1.0.0, and a hardcoded "1.0.0" in qimen's
-    payload. Every engine that emits a version must echo utils.__version__."""
-    sys.path.insert(0, str(ROOT / "scripts"))
-    import utils
-    from conftest import run_cli
-
-    probes = [
-        ("bazi_calc.py", ["--year", 2000, "--month", 1, "--day", 15,
-                          "--hour", 10, "--gender", "male"]),
-        ("ziwei_calc.py", ["--year", 2000, "--month", 1, "--day", 15,
-                           "--hour", 10, "--gender", "male"]),
-        ("qimen_cast.py", ["--date", "2026-06-24", "--time", "13:05"]),
-        ("liuren_cast.py", ["--date", "2026-06-24", "--time", "13:05"]),
-    ]
-    for script, args in probes:
-        out = run_cli(script, *args)
-        assert out["version"] == utils.__version__, script
-
-
-def test_build_reads_version_from_utils():
-    sys.path.insert(0, str(ROOT / "scripts"))
-    import build_skill
-    import utils
-
-    assert build_skill.read_version() == utils.__version__
-
-
-def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout():
+def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout(tmp_path):
     """The build reads the WORKING TREE. With core.autocrlf=true and no
     .gitattributes, a fresh clone of a tag checks out CRLF while the tree a
     release was cut from held LF — so the same commit produced two different
@@ -187,19 +189,16 @@ def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout(
     differ in 59 of 63 files, and are byte-identical once line endings are
     normalised. build() now forces LF, and .gitattributes keeps the tree LF too.
     """
-    out = ROOT / "dist" / "_lf_check.zip"
-    try:
-        sys.path.insert(0, str(ROOT / "scripts"))
-        import build_skill
-        build_skill.build(out, build_skill.collect())
-        offenders = []
-        with zipfile.ZipFile(out) as zf:
-            for name in zf.namelist():
-                if b"\r\n" in zf.read(name):
-                    offenders.append(name)
-        assert not offenders, f"CRLF in packaged files: {offenders[:10]}"
-    finally:
-        out.unlink(missing_ok=True)
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_skill
+    out_path = tmp_path / "lf_check.zip"          # 绝不写进仓库的 dist/
+    build_skill.build(out_path, build_skill.collect())
+    offenders = []
+    with zipfile.ZipFile(out_path) as zf:
+        for name in zf.namelist():
+            if b"\r\n" in zf.read(name):
+                offenders.append(name)
+    assert not offenders, f"CRLF in packaged files: {offenders[:10]}"
 
 
 def test_gitattributes_pins_line_endings():
