@@ -24,6 +24,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 from dataclasses import dataclass, field
@@ -144,6 +145,25 @@ MUTATIONS: list[Mutation] = [
         ["tests/test_bazi_integration.py"],
     ),
     Mutation(
+        "huangli:建除倾向表", "scripts/huangli_query.py",
+        '"满": {"yi": ["嫁娶", "开市", "入宅", "祈福"], "ji": ["动土", "安葬"]},',
+        '"满": {"yi": ["动土", "安葬"], "ji": ["嫁娶", "开市", "入宅", "祈福"]},',
+        "择日是唯一让用户做不可逆决策(婚期/搬迁/安葬)的输出, 宜忌对调即误导现实行动",
+        ["tests/test_reference_consistency.py", "tests/test_huangli_oracle.py"],
+    ),
+    Mutation(
+        "huangli:冲突不再暴露", "scripts/huangli_query.py",
+        '"jian_chu_conflicts": conflicts,', '"jian_chu_conflicts": {},',
+        "通书结论与建除倾向的分歧被藏起来, 读者以为看到的就是建除的结论",
+        ["tests/test_huangli_oracle.py"],
+    ),
+    Mutation(
+        "liuyao:六神起点", "scripts/liuyao_cast.py",
+        '"甲": "青龙", "乙": "青龙",', '"甲": "朱雀", "乙": "朱雀",',
+        "六神起于日干; 起点错则六爻的青龙白虎全部错位, 断卦的吉凶意象整体偏移",
+        ["tests/test_liuyao_oracle.py"],
+    ),
+    Mutation(
         "assets:卦辞对调", "assets/64hex.json",
         '"judgment": "元亨,利贞。勿用有攸往,利建侯。"',
         '"judgment": "亨。匪我求童蒙,童蒙求我。"',
@@ -187,6 +207,48 @@ def run_tests(m: Mutation) -> bool:
     return proc.returncode != 0
 
 
+_BASELINE_CACHE: dict[tuple[str, ...], bool] = {}
+
+
+def baseline_is_green(m: Mutation) -> bool:
+    """变异**之前**这批测试必须是绿的。
+
+    否则一条因无关原因报错的测试 (比如我自己写坏了一个 zip strict 参数) 会让
+    每一个变异都被算成「抓到」—— 得分虚高, 而门禁看起来还是满分。这是本工具
+    最容易骗到自己的地方, 实际已经发生过一次。
+
+    同一组测试目标只跑一次基线并缓存 —— 二十个变异里多数共用同几组目标, 不缓存
+    的话整轮耗时翻倍。
+    """
+    key = tuple(m.tests or ["tests/"])
+    if key not in _BASELINE_CACHE:
+        _BASELINE_CACHE[key] = not run_tests(m)
+    return _BASELINE_CACHE[key]
+
+
+class _Lock:
+    """进程级互斥。
+
+    本工具会临时改坏源文件再还原。两个实例并发跑时会互相踩踏 —— 甲刚把文件改坏,
+    乙就把这个坏值当成基线备份下来, 之后乙「还原」的其实是甲的变异。实际发生过
+    一次: 并发的两轮让全量套件冒出三个与改动无关的失败, 且 git status 时红时绿。
+    """
+
+    path = ROOT / ".mutate.lock"
+
+    def __enter__(self):
+        if self.path.exists():
+            sys.exit(
+                f"FATAL: 另一个 mutate.py 正在运行 ({self.path})。\n"
+                "并发会互相踩踏源文件。等它跑完, 或确认无进程后删掉该文件。")
+        self.path.write_text(str(os.getpid()), encoding="utf-8")
+        return self
+
+    def __exit__(self, *exc):
+        self.path.unlink(missing_ok=True)
+        return False
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--max-survivors", type=int, default=0,
@@ -199,12 +261,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"没有匹配 {args.only!r} 的变异")
         return 2
 
-    survivors, skipped = [], []
+    survivors, skipped, broken = [], [], []
     print(f"施加 {len(todo)} 处变异\n" + "=" * 64)
+    lock = _Lock().__enter__()
     for m in todo:
         p = ROOT / m.path
         backup = p.read_bytes()
         try:
+            if not baseline_is_green(m):
+                broken.append(m)
+                print(f"[BROKEN] {m.name} — 变异前这批测试就是红的, 结果不可信")
+                continue
             if not apply(m):
                 skipped.append(m)
                 print(f"[SKIP  ] {m.name} — 目标文本已不存在, 变异需更新")
@@ -219,20 +286,24 @@ def main(argv: list[str] | None = None) -> int:
             survivors.append(m)
             print(f"[SURVIVED] {m.name}\n           后果: {m.why}")
 
-    tested = len(todo) - len(skipped)
+    lock.__exit__()
+    tested = len(todo) - len(skipped) - len(broken)
     score = (tested - len(survivors)) / tested * 100 if tested else 0.0
     print("=" * 64)
     print(f"变异得分 {score:.0f}%  ({tested - len(survivors)}/{tested} 被抓到)")
     if skipped:
         print(f"跳过 {len(skipped)} 处 (目标文本已变), 需更新: "
               f"{[m.name for m in skipped]}")
+    if broken:
+        print(f"基线已红 {len(broken)} 处, 这些变异的结果无意义: "
+              f"{[m.name for m in broken]}")
     if survivors:
         print("\n存活 —— 这些缺陷现在能进主干而无人察觉:")
         for m in survivors:
             print(f"  - {m.name} ({m.path})\n      {m.why}")
 
     # 跳过的变异等同于失去覆盖, 计入失败。
-    if len(survivors) > args.max_survivors or skipped:
+    if len(survivors) > args.max_survivors or skipped or broken:
         return 1
     return 0
 

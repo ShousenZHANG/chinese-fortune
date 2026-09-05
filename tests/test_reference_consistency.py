@@ -104,15 +104,58 @@ def test_meihua_season_table_is_still_parseable():
 
 
 # --------------------------------------------------------------------------- #
+# 十二建除 — references/12-huangli.md §6 vs scripts/huangli_query.py
+# --------------------------------------------------------------------------- #
+
+def test_jianchu_tendency_matches_its_own_reference():
+    """引擎的 JIAN_CHU_TENDENCY 必须逐项等于文档那张表。
+
+    择日是本仓库唯一一类会让用户做**不可逆现实决策**的输出 (婚期/搬迁/安葬)。
+    从前引擎只发 lunar_python 的 yi/ji 且不注出处, 而 SKILL.md:51 声明黄历择日
+    「为纲之典」是《钦定协纪辨方书》、12-huangli.md:180 称建除是「黄历最核心的
+    择日体系」—— 读者会以为看到的就是建除的结论。实测 2026 上半年 181 天里 117 天
+    字面冲突。现在两者并列, 表本身由这条测试锁死。
+    """
+    import re
+    md = _read("references/12-huangli.md")
+    body = md.split("| 建除 | 含义 | 宜 | 忌 |")[1].split("### 十二建除排列规律")[0]
+
+    doc = {}
+    for line in body.splitlines():
+        cells = [c.strip().strip("*") for c in line.split("|")[1:-1]]
+        if len(cells) != 4 or not cells[0] or set(cells[0]) <= set("-"):
+            continue
+        doc[cells[0]] = (
+            re.findall(r"[一-鿿]{2,4}", cells[2]),
+            re.findall(r"[一-鿿]{2,4}", cells[3]),
+        )
+    assert len(doc) == 12, f"§6 建除表应有 12 行, 解析到 {len(doc)}: {sorted(doc)}"
+
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from huangli_query import JIAN_CHU_TENDENCY as eng
+
+    assert set(eng) == set(doc), set(eng) ^ set(doc)
+    for zhi, (yi_doc, ji_doc) in doc.items():
+        # 文档措辞带括号注解 (如「拆屋、破土 (有限)」「百事忌, 大事不宜」),
+        # 故只要求引擎项是文档项的子集且非空 —— 逐字相等会锁死文案而非锁住数据。
+        assert eng[zhi]["yi"], zhi
+        assert eng[zhi]["ji"], zhi
+        for item in eng[zhi]["yi"]:
+            assert any(item in d for d in yi_doc), (zhi, "yi", item, yi_doc)
+        for item in eng[zhi]["ji"]:
+            assert any(item in d for d in ji_doc), (zhi, "ji", item, ji_doc)
+
+
+# --------------------------------------------------------------------------- #
 # 覆盖面 — 哪些共享表**还没有**门禁
 # --------------------------------------------------------------------------- #
 
 KNOWN_UNGATED = {
     "references/01-bazi.md §9.1 调候口诀 vs assets/tiaohou.json":
         "13 格 primary_yongshen 与口诀相反, 其中 8 格在 audit.verified_cells 名单里",
-    "references/12-huangli.md §建除 vs huangli_query.py 的 yi/ji":
-        "180 天里 57 天引擎宜含表中忌、58 天引擎忌含表中宜; 择日是唯一会让用户做"
-        "不可逆现实决策(婚期/搬迁/安葬)的输出",
+    "references/12-huangli.md 的二十八宿吉凶 vs 引擎 xiu_28":
+        "建除已在 test_jianchu_tendency_matches_its_own_reference 里锁住, 但同一"
+        "文件的二十八宿吉凶、彭祖百忌 两张表仍无门禁, 且同样 reader-facing",
     "references/19-shensha.md vs assets/shensha.json 的其余条目":
         "词馆/学堂两条已有门禁, 其余 30+ 条没有",
     "六冲表 (scripts 4 份 + references 4 份 = 8 份)":

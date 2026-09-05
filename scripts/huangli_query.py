@@ -29,6 +29,35 @@ def _safe(fn, default=None):
         return default
 
 
+# --------------------------------------------------------------------------- #
+# 十二建除 的一般倾向 — 与 references/12-huangli.md 「| 建除 | 含义 | 宜 | 忌 |」
+# 那张表逐项一致 (tests/test_reference_consistency.py 强制)。
+# --------------------------------------------------------------------------- #
+#
+# 注意这**不是** yi/ji 的替代品。lunar_python 的 getDayYi/getDayJi 是通书系的结论
+# —— 建除、神煞、二十八宿、彭祖百忌 等一并权衡之后的结果; 建除表只是其中一条规则
+# 的一般倾向。二者在 2026 上半年 181 天里有 117 天字面冲突 (58 天引擎宜含表忌、
+# 59 天引擎忌含表宜), 但这多半不是矛盾, 而是「单条规则的倾向」被更强的神煞盖过。
+#
+# 从前引擎只发 yi/ji 且不注出处, 而 SKILL.md:51 声明黄历择日「为纲之典」是
+# 《钦定协纪辨方书》、12-huangli.md:180 称建除是「黄历最核心的择日体系」——
+# 读者会以为看到的就是建除的结论。现在两者并列, 冲突显式列出, 由解读方裁决。
+JIAN_CHU_TENDENCY: dict[str, dict[str, list[str]]] = {
+    "建": {"yi": ["上任", "入学", "求职", "出行"], "ji": ["动土", "破土"]},
+    "除": {"yi": ["扫除", "求医", "祭祀", "解除"], "ji": ["嫁娶", "入宅"]},
+    "满": {"yi": ["嫁娶", "开市", "入宅", "祈福"], "ji": ["动土", "安葬"]},
+    "平": {"yi": ["平整地", "铺路"], "ji": ["求官", "求财"]},
+    "定": {"yi": ["入宅", "安床", "订婚", "立约"], "ji": ["出行", "诉讼"]},
+    "执": {"yi": ["祭祀", "捕猎", "立约"], "ji": ["出行", "开市"]},
+    "破": {"yi": ["拆屋", "破土"], "ji": ["百事忌"]},
+    "危": {"yi": ["安床", "祭祀"], "ji": ["出行", "登高", "行船"]},
+    "成": {"yi": ["嫁娶", "入宅", "开市", "建造"], "ji": ["诉讼"]},
+    "收": {"yi": ["入宅", "安葬", "纳财", "收成"], "ji": ["出行"]},
+    "开": {"yi": ["开市", "上任", "入学", "出行"], "ji": ["动土", "安葬"]},
+    "闭": {"yi": ["安葬", "筑堤", "封口"], "ji": ["嫁娶", "出行"]},
+}
+
+
 def _safe_method(obj, name: str, default=None):
     """Call an optional method by name across lunar_python versions."""
     try:
@@ -142,6 +171,23 @@ def main(argv: list[str] | None = None) -> int:
     day_yi = _safe_method(lunar, "getDayYi", [])
     day_ji = _safe_method(lunar, "getDayJi", [])
     zhi_xing = _safe_method(lunar, "getZhiXing", None)
+    # 建除倾向, 以及它与通书结论字面冲突之处 —— 不做裁决, 只如实并列。
+    jian_chu = JIAN_CHU_TENDENCY.get(zhi_xing or "")
+    conflicts: dict[str, list[str]] = {}
+    if jian_chu:
+        yi_set, ji_set = set(day_yi or []), set(day_ji or [])
+        both_yi = sorted(yi_set & set(jian_chu["ji"]))
+        both_ji = sorted(ji_set & set(jian_chu["yi"]))
+        if both_yi:
+            conflicts["engine_yi_but_jianchu_ji"] = both_yi
+        if both_ji:
+            conflicts["engine_ji_but_jianchu_yi"] = both_ji
+        if conflicts:
+            conflicts["note"] = [
+                f"值神「{zhi_xing}」的建除倾向与通书结论在上列项目上相左。",
+                "建除是单条规则的一般倾向; 通书结论已把神煞/宿/干支一并权衡。",
+                "遇冲突以 yi/ji (通书结论) 为准, 并向用户说明存在分歧。",
+            ]
     xiu = _safe_method(lunar, "getXiu", None)
     zheng = _safe_method(lunar, "getZheng", None)
     animal_28 = _safe_method(lunar, "getAnimal", None)
@@ -196,6 +242,12 @@ def main(argv: list[str] | None = None) -> int:
         },
         "yi": day_yi,
         "ji": day_ji,
+        "yi_ji_source": (
+            "lunar_python getDayYi/getDayJi — 通书系综合结论 "
+            "(建除 + 神煞 + 二十八宿 + 彭祖百忌 等一并权衡后的结果)"
+        ),
+        "jian_chu_tendency": jian_chu,
+        "jian_chu_conflicts": conflicts,
         "ji_shi": ji_shi,
         "xiong_shi": xiong_shi,
         "shichen_detail": ji_xiong_shichen,
