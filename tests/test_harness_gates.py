@@ -386,9 +386,20 @@ def test_version_is_consistent_across_all_four_sources():
 
     tags = subprocess.run(["git", "tag", "-l"], cwd=root,
                           capture_output=True, text=True).stdout.split()
-    if tags:                       # 浅 clone / 无 tag 的 CI 环境跳过
-        assert f"v{code_version}" in tags, (
-            f"当前版本 {code_version} 没有对应的 git tag v{code_version}")
+    if not tags:                   # 浅 clone / 无 tag 的 CI 环境
+        return
+
+    def key(v: str) -> tuple:
+        return tuple(int(x) for x in v.lstrip("v").split("."))
+
+    if f"v{code_version}" in tags:
+        return
+    # 「改版本号」这一步合法地先于「打 tag」。待发布状态的判据是: 当前版本严格
+    # 大于已有的每一个 tag。若它小于或等于某个 tag, 那就是真的漏打了。
+    newest = max((key(x) for x in tags if x.startswith("v")), default=(0,))
+    assert key(code_version) > newest, (
+        f"版本 {code_version} 既没有 tag, 又不比已有的最新 tag "
+        f"{'.'.join(map(str, newest))} 新 —— 这是漏打 tag, 不是待发布")
 
 
 def test_changelog_and_tags_drift_is_recorded_not_silent():
