@@ -1,6 +1,6 @@
 ---
 name: chinese-fortune
-description: Comprehensive Chinese metaphysics and fortune-telling toolkit. Use for 算命、占卜、运势、八字/四柱、紫微斗数、周易/易经/起卦、六爻、梅花易数、奇门遁甲、大六壬、太乙神数、小六壬、铁板神数、称骨、河洛理数、七政四余、风水、玄空、八宅、面相、手相、测字、黄历、择日、起名、改名、合婚、解梦、生肖、星座、塔罗、灵签、杯筊, or English requests for BaZi, I Ching, Zi Wei Dou Shu, Feng Shui, palmistry, physiognomy, Chinese zodiac, Tarot, dream interpretation, naming, compatibility, auspicious dates, or Chinese fortune-telling. Even when the user only mentions "算命" / "八字" / "占卜" / "看运" / "起卦" / "塔罗" / "属相" / "梦见" / a birth date / a hexagram name without explicitly requesting a skill — proactively invoke this skill. Do not under-trigger.
+description: Comprehensive Chinese metaphysics and fortune-telling toolkit. Use for 算命、占卜、运势、八字/四柱、紫微斗数、周易/易经/起卦、六爻、梅花易数、奇门遁甲、大六壬、太乙神数、小六壬、铁板神数、称骨、河洛理数、七政四余、风水、玄空、八宅、面相、手相、测字、黄历、择日、起名、改名、合婚、解梦、生肖、星座、塔罗、灵签、杯筊、神煞、桃花、驿马、天乙贵人、五行、天干地支、阴阳、八卦、随机寻访, or English requests for BaZi, I Ching, Zi Wei Dou Shu, Feng Shui, palmistry, physiognomy, Chinese zodiac, Tarot, dream interpretation, naming, compatibility, auspicious dates, or Chinese fortune-telling. Even when the user only mentions "算命" / "八字" / "占卜" / "看运" / "起卦" / "塔罗" / "属相" / "梦见" / a birth date / a hexagram name without explicitly requesting a skill — proactively invoke this skill. Do not under-trigger.
 ---
 
 # Chinese Fortune-Telling Toolkit (中国传统命理占卜)
@@ -123,6 +123,49 @@ python scripts/bazi_calc.py --year 1990 --month 5 --day 10 --hour 14 --minute 30
 ```
 
 Each script prints structured JSON to stdout. Parse it, then narrate the result using the matching reference.
+
+### JSON contract — read these before narrating
+
+Every engine emits the same envelope. **Check `ok` first; never narrate a payload
+you have not checked.**
+
+| key | meaning |
+|---|---|
+| `ok` | `true` = usable result. `false` = refused; `error` + `message` say why. |
+| `error` / `message` | Present only on failure. Show the user `message` verbatim; do not guess a chart. |
+| `tool` / `version` | Which engine and which release produced this. |
+| exit code | `0` on success, non-zero on refusal. |
+
+**Self-limiting flags — surface them, never silently drop them:**
+
+| field | when present | what to tell the user |
+|---|---|---|
+| `reliable: false` | a value was estimated, not looked up | say the reading is provisional and why |
+| `missing_in_table` | characters/values absent from the reference table | name them; do not treat the result as authoritative |
+| `*_granularity` | the model is coarser than it looks (e.g. 梅花 月令 without 节气) | state the limit before drawing conclusions |
+| `boundary` | the engine's own scope note | repeat it |
+| `*_basis` / `*_source` | which school or library a value comes from | attribute it when the point is contested |
+| `hour_known: false` | 三柱 mode — no 时柱 | do not invent an hour pillar |
+
+An engine that refuses is doing its job. Relay the refusal; do not retry with
+invented inputs.
+
+### Trimming the payload
+
+Large charts crowd out the reference text. These flags cut the JSON without
+changing what is computed — use them when the user's question is narrow:
+
+| engine | flag | saves | drop when |
+|---|---|---|---|
+| bazi | `--no-shensha` | ~23% | question is not about 神煞 |
+| bazi | `--no-geju` `--no-yongshen` | ~8% | only 四柱/旺衰 is needed |
+| ziwei | `--brief-palaces` | ~53% | only the 宫位骨架 is needed |
+| ziwei | `--no-da-xian` | ~28% | only the 本命盘 is asked about |
+| ziwei | `--no-patterns` `--no-sihua` | ~4% | 格局/四化 not in scope |
+| bazi | `--as-of-year YYYY` | — | pins 流年 so the output is reproducible |
+
+八字全量 11.5 KB → 8.5 KB with the first two rows; 紫微 14.9 KB → 4.0 KB with all
+four. Ask for the whole payload when the user wants a full 批断.
 
 ## Data assets
 

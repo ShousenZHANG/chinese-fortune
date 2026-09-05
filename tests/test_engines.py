@@ -613,3 +613,40 @@ def test_meihua_tiyong_labels_are_not_interchangeable():
     assert ti_yong_relation(T["木"], T["木"]) == "比和"
     assert "吉" in ti_yong_relation(T["火"], T["木"])
     assert "凶" in ti_yong_relation(T["木"], T["金"])
+
+
+@pytest.mark.parametrize("script", sorted(
+    p.name for p in SCRIPTS.glob("*.py")
+    if "argparse" in p.read_text(encoding="utf-8")))
+def test_argparse_help_strings_escape_percent(script):
+    """argparse 对 help 字符串做 %-格式化, 未转义的 % 会让 --help 直接崩栈。
+
+    实测: 给 ziwei_calc 加「占载荷约 53%; …」后 `--help` 抛
+    ValueError: unsupported format character ';' —— 而 --help 正是调用方了解
+    输出契约的入口。写百分比必须用 %%。
+
+    用 AST 取 help= 的字面值 (正则取字符串字面量在转义上太脆)。
+    """
+    import ast
+    tree = ast.parse((SCRIPTS / script).read_text(encoding="utf-8"))
+    offenders = []
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        for kw in node.keywords:
+            if kw.arg not in ("help", "description", "epilog"):
+                continue
+            try:
+                value = ast.literal_eval(kw.value)
+            except Exception:
+                continue                       # 拼接出来的, 交给运行时检查
+            if not isinstance(value, str):
+                continue
+            # 合法写法: %% 转义, 以及 %(default)s 这类命名占位
+            stripped = value.replace("%%", "")
+            for name in ("default", "prog", "choices", "type", "metavar"):
+                stripped = stripped.replace(f"%({name})s", "")
+            if "%" in stripped:
+                offenders.append(f"{kw.arg}={value[:60]!r}")
+    assert not offenders, (
+        f"{script} 的 help/description 里有未转义的 %, --help 会崩: {offenders}")

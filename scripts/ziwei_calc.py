@@ -90,8 +90,13 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions twelve_palaces
   four_transformations_native da_xian liu_nian_sihua patterns notes
+  dou_jun_basis zhi_shi_basis
 
-On error: {"error": ..., "message": ...} and exit 1."""
+--brief-palaces 时 twelve_palaces 只留 name/branch/stem/index/main_stars;
+--no-da-xian 时 da_xian 为 null。两者不改变其余字段的值。
+
+On error: {"ok": false, "tool": ..., "version": ..., "error": ..., "message": ...}
+and exit 1."""
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -131,7 +136,26 @@ def build_parser() -> argparse.ArgumentParser:
                    help="略过 格局 检测以缩减输出")
     p.add_argument("--no-sihua", action="store_true",
                    help="略过 自化/大限四化/流年四化")
+    # twelve_palaces 与 da_xian 合占载荷 81.5%, 而此前两个开关只覆盖 1.3%+2.2%
+    # 的小块 —— 开关造在了不占体积的地方, 实测裁剪只省 0.3%。
+    p.add_argument("--no-da-xian", action="store_true",
+                   help="略过 大限 (占载荷约 28%%; 只看本命盘时可关)")
+    p.add_argument("--brief-palaces", action="store_true",
+                   help="十二宫只留 宫名/地支/宫干/主星名 (占载荷约 53%%; "
+                        "只需宫位骨架时用)")
     return p
+
+
+def brief_palaces(palaces: list[dict]) -> list[dict]:
+    """十二宫的精简形态 —— 只留骨架, 去掉星曜明细与逐宫注解。"""
+    keep = ("name", "branch", "stem", "index")
+    out = []
+    for p_ in palaces:
+        row = {k: p_[k] for k in keep if k in p_}
+        row["main_stars"] = [s["name"] if isinstance(s, dict) else s
+                             for s in p_.get("main_stars", [])]
+        out.append(row)
+    return out
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -435,9 +459,10 @@ def main(argv: list[str] | None = None) -> int:
         "lucky_stars_positions": lucky_pos,
         "malefic_stars_positions": malefic_pos,
         "miscellaneous_stars_positions": misc_pos,
-        "twelve_palaces": annotated,
+        "twelve_palaces": (brief_palaces(annotated) if args.brief_palaces
+                           else annotated),
         "four_transformations_native": sihua_native,
-        "da_xian": da_xian,
+        "da_xian": None if args.no_da_xian else da_xian,
         "liu_nian_sihua": liu_nian_sihua,
         "patterns": patterns,
         "sect": sect_info,

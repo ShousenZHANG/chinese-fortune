@@ -432,6 +432,23 @@ def main(argv: list[str] | None = None) -> int:
         "reliable": not missing,
         "five_grids": grids,
         "san_cai": sancai,
+        # SKILL.md:54 明令五格「无古籍 —— 系近代日本熊崎健翁所创, 非中土古法;
+        # 须如实标注其来历与争议, 不作古籍权威引用」。而输出此前一个
+        # note/source/boundary 字段都没有 —— 只能指望 Claude 记得去读
+        # 13-qiming.md 末尾那一句。同项目的 liuren_cast / xiaoliuren_cast 都在
+        # JSON 里带 boundary 自我限定, 唯独这里没有。
+        # 起名场景的用户多半是给新生儿取名, 而 81 数理会发「沦落天涯, 失意烦闷,
+        # 因缘薄弱, 家庭难圆」这类宿命式凶断。
+        "source": {
+            "system": "五格剖象法 (熊崎式)",
+            "origin": "近代日本 熊崎健翁 所创, 20 世纪传入华人地区",
+            "classical_basis": "无 —— 非中土古法, 《三命通会》等古籍均无此说",
+            "disputed": True,
+            "caveat": ("81 数理的吉凶断语出自该派自设的数理表, 无古籍依据; "
+                       "转述时须标明来历, 不可作命定之论, 尤不可据以劝阻取名。"),
+        },
+        "boundary": ("本工具只算五格数字与三才配置; 音韵、字义、与生辰八字的补益 "
+                     "皆不在内。取名请综合考量, 勿单凭数理。"),
         "summary": "; ".join(summary_parts),
     }
     if missing:

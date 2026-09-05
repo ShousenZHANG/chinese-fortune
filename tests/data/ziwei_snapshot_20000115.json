@@ -18,6 +18,8 @@
     "liu_year": null,
     "no_patterns": false,
     "no_sihua": false,
+    "no_da_xian": false,
+    "brief_palaces": false,
     "effective_lunar_month": 12,
     "is_leap_month": false
   },

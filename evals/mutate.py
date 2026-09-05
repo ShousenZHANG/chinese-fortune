@@ -190,6 +190,19 @@ MUTATIONS: list[Mutation] = [
         ["tests/test_subcommands.py"],
     ),
     Mutation(
+        "skill:自化来历标注", "references/02-ziwei.md",
+        "**《紫微斗数全书》全书三卷检索无「自化」二字**", "自化见于本门",
+        "自化是飞星派概念, 《全书》无此说; 不注来历即借古籍名义讲别家的话",
+        ["tests/test_interpretation_coverage.py"],
+    ),
+    Mutation(
+        "skill:五格来历标注", "scripts/name_analyze.py",
+        '"classical_basis": "无 —— 非中土古法, 《三命通会》等古籍均无此说",',
+        '"classical_basis": "见《三命通会》",',
+        "五格系近代日本熊崎式, 冒充古籍即违反 SKILL.md:54 的明令",
+        ["tests/test_interpretation_coverage.py"],
+    ),
+    Mutation(
         "assets:卦辞对调", "assets/64hex.json",
         '"judgment": "元亨,利贞。勿用有攸往,利建侯。"',
         '"judgment": "亨。匪我求童蒙,童蒙求我。"',
