@@ -144,6 +144,9 @@ def build(out_path: Path, files: list[Path]) -> None:
             # line endings are normalised. LF also matches what shipped.
             data = p.read_bytes().replace(b"\r\n", b"\n")
             info = zipfile.ZipInfo(arc, date_time=zi_date)
+            # ZIP defaults to the host OS (Windows=0, Unix=3). Pin it to match
+            # the Unix permission bits below and keep cross-platform hashes equal.
+            info.create_system = 3
             info.compress_type = zipfile.ZIP_DEFLATED
             info.external_attr = 0o644 << 16
             zf.writestr(info, data)

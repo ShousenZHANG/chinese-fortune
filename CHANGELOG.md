@@ -27,6 +27,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 - 独立差分在显式 clock 口径验证四柱，时间归一化另用独立预期测试；CI 不重复跑完整 pytest。
 - 增加测试依赖约束及 Windows 安装/发布包检查，移除手工写死的测试数和覆盖率宣传。
 - GitHub Actions 升级到已核对的 v7 发布提交并固定 SHA；依赖版本升级 PR 暂停自动创建，按 main 单分支维护。
+- 固定 ZIP 的创建平台标记，消除 Windows/Linux 内容相同但附件校验值不同的打包差异。
 
 ## [1.7.4] — 2026-09-05
 

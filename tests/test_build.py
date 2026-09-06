@@ -208,6 +208,41 @@ def test_gitattributes_pins_line_endings():
     assert "eol=lf" in ga.read_text(encoding="utf-8")
 
 
+def test_zip_creator_metadata_is_independent_of_host(tmp_path, monkeypatch):
+    """Windows and Unix ZipInfo defaults must produce the same release bytes."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_skill
+
+    source = tmp_path / "sample.md"
+    source.write_bytes(b"deterministic package\r\n")
+    monkeypatch.setattr(build_skill, "ROOT", tmp_path)
+    normal_out_path = tmp_path / "normal.zip"
+    windows_out_path = tmp_path / "windows.zip"
+    build_skill.build(normal_out_path, [source])
+
+    class WindowsZipInfo(zipfile.ZipInfo):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.create_system = 0
+
+    # Preserve ZipInfo's class identity contract used by ZipFile.writestr.
+    # The override simulates the Windows default even when CI runs on Linux.
+    with monkeypatch.context() as windows:
+        windows.setattr(zipfile, "ZipInfo", WindowsZipInfo)
+        build_skill.build(windows_out_path, [source])
+
+    assert normal_out_path.read_bytes() == windows_out_path.read_bytes(), (
+        "host-specific ZIP headers changed otherwise identical release bytes"
+    )
+    for out_path in (normal_out_path, windows_out_path):
+        with zipfile.ZipFile(out_path) as archive:
+            assert archive.namelist() == ["chinese-fortune/sample.md"]
+            assert archive.read("chinese-fortune/sample.md") == b"deterministic package\n"
+            assert all(info.create_system == 3 for info in archive.infolist()), (
+                "creator platform must be serialized consistently as Unix"
+            )
+
+
 def test_changelog_ships_with_the_package(package):
     """SKILL.md 的 frontmatter 只允许 name+description (evals/run_checks.py:47
     强制), 所以解压到 ~/.claude/skills/ 之后, 包内唯一的版本证据是
