@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "library_id": "bazi-five-classics-v1",
   "required_books": [
     "ziping",
@@ -4782,5 +4782,6 @@
       "revision": "9013306",
       "license": "CC BY-SA 4.0; Wikisource contributors"
     }
-  ]
+  ],
+  "distribution_kind": "source"
 }

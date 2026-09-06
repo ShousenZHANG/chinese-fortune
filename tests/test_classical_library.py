@@ -6,7 +6,13 @@ import json
 from pathlib import Path
 
 import pytest
-from classical_search import get_passage, normalized, search_classics, validate_library
+from classical_search import (
+    get_passage,
+    get_witnesses,
+    normalized,
+    search_classics,
+    validate_library,
+)
 from import_classics import clean_wiki, html_paragraphs
 
 
@@ -35,7 +41,7 @@ def mini_library(tmp_path: Path) -> Path:
             'completeness': {'acquisition': 'complete', 'missing_facsimile_pages': 'not_assessed'},
             'chapters': [{'id': 'c008', 'title': '论用神', 'path': 'chapter.json',
                           'sha256': sha, 'passage_count': 1}]}
-    _write(tmp_path / 'manifest.json', {'required_books': ['ziping'], 'books': [book]})
+    _write(tmp_path / 'manifest.json', {'schema_version': '2.0', 'distribution_kind': 'source', 'required_books': ['ziping'], 'books': [book]})
     return tmp_path
 
 
@@ -86,6 +92,20 @@ def test_simplified_query_preserves_original_text_and_attribution(mini_library: 
 
 def test_common_technical_aliases() -> None:
     assert normalized('傷官 調候 成敗救應 財官 氣候') == normalized('伤官 调候 成败救应 财官 气候')
+
+
+def test_image_witness_lookup_preserves_default_edition_status() -> None:
+    before = get_passage('ziping:c031:p0004')['facsimile_status']
+    result = get_witnesses()
+    assert len(result['records']) == 5
+    assert result['default_corpus_status_changed'] is False
+    assert all(e['default_corpus_same_edition'] is False for e in result['editions'])
+    selected = get_witnesses('ziping:c031:p0004')
+    assert selected['records'][0]['comparison'] == 'variant_recorded_no_emendation'
+    assert get_passage('ziping:c031:p0004')['facsimile_status'] == before
+    assert get_witnesses('ziping:c031:p0001')['records'] == []
+    with pytest.raises(ValueError):
+        get_witnesses('ziping:c000:p0000')
 
 
 def test_source_glyph_mapping_never_guesses_unencoded_characters() -> None:
@@ -180,3 +200,19 @@ def test_open_note_does_not_guess_the_layer_of_later_paragraphs() -> None:
     assert paragraphs[0]['layer'] == 'historical_work_transcription_with_commentary'
     assert paragraphs[0]['layer_status'] == 'explicit_marker_open_boundary'
     assert paragraphs[1]['layer'] == 'historical_work_transcription'
+
+
+@pytest.mark.parametrize("damage", ["raw_missing", "schema_missing", "kind_missing", "kind_unknown"])
+def test_source_mode_never_falls_back_when_raw_sources_are_absent(mini_library, damage):
+    path = mini_library / "manifest.json"
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    if damage == "raw_missing":
+        (mini_library / "source.txt").unlink()
+    elif damage == "schema_missing":
+        del manifest["schema_version"]
+    elif damage == "kind_missing":
+        del manifest["distribution_kind"]
+    else:
+        manifest["distribution_kind"] = "auto"
+    _write(path, manifest)
+    assert not validate_library(mini_library)["ok"]

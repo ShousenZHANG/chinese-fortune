@@ -32,7 +32,7 @@
 
 ## 版本、分层与完整性验收
 
-顶层 `library_id=bazi-five-classics-v1`，`schema_version=1.0`。书级 manifest 包含书名、所选版本、来源地址、固定 revision 或所选来源片段的 SHA-256、预期章节 ID、逐章路径/哈希、授权、提取方法、质量问题及完成状态。章节另带原始来源路径/哈希和段落哈希。
+顶层 `library_id=bazi-five-classics-v1`，清单 `schema_version=2.0`，显式声明 `distribution_kind=source/runtime`。书级信息包括版本、来源、revision 或片段 SHA-256、预期目录、逐章路径/哈希、授权与质量状态。章节另保留来源档案内的原始路径/哈希和段落哈希，既有段落格式没有随发行清单改变。
 
 `passage_id` 形如 `ziping:c008:p0001`，在当前锁定库版本内稳定；不能把新版、重新分段或改字结果冒充同一锁定版本。升级来源须单独审查目录差异、段落 ID 变化、来源 revision 和哈希，不在搜索时自动更新。
 
@@ -49,7 +49,7 @@
 
 完整获取、原文已校与实际应用可靠性是三个不同状态。本库现为 `acquired_not_collated`、`facsimile_status=not_checked`、`historical_edition_verified=false`。哈希只能证明冻结后未改动，不能证明网络转录无错、出处题署正确或个人预测有效。
 
-目录闭包是唯一发行数据集合：`manifest.json`、书级 `index_path` 和可选 `source_metadata_path`、每章 `path`、章节内 `raw_path`、顶层 `supporting_sources[].path`。已删除 364 个未引用采集中间 HTML 副本；不再同时保存 `chapter008.html` 与 `c008.html` 等重复正文。
+构建先验证完整源码目录闭包，再把 425 个 HTML/wiki 等原始来源文件移入独立 sources ZIP，运行包保留五书全部章节及来源索引。运行清单逐一校验运行文件和来源档案索引；原始路径明确属于 source_archive/knowledge，不假装文件在运行包内。外部 SHA256SUMS 覆盖两包，清单不做循环自哈希。源码缺来源失败，运行包缺正文失败，目录消失不能自动切换较弱模式。
 
 ## 离线使用
 

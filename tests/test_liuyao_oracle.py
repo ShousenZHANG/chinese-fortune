@@ -1,12 +1,7 @@
 """六爻引擎的独立 oracle。
 
-六爻此前是**零校验**的六个引擎之一: 行覆盖 88.8%, 却没有任何断言检查排出来的爻
-装了什么 —— 变异实证, 乾宫纳甲 子寅辰 改成 子寅午 全量套件仍全绿。
-「覆盖率高而无 oracle」的干净样本。
-
-这里不引入第二个第三方库。京房八宫、世应位、纳甲、六亲、六神 **全部可由生成规则
-独立重算**, 用规则重算再与引擎逐卦比对, 比"再装一个库"更强: 它检验的是规则本身,
-而不是两个实现是否碰巧同源。
+固定八宫与世应预期不从生产表导出；其余检查分别验证纳甲序列、六亲与六神。
+这些测试能发现指定计算错误，不验证规则的历史真实性或现实预测效果。
 """
 import sys
 from pathlib import Path
@@ -59,31 +54,63 @@ def test_najia_branches_follow_the_generating_rule():
         assert up[0] == want_up0, (tri, lo, up, want_up0)
 
 
-def test_shi_ying_positions_follow_the_eight_palace_rule():
-    """世爻位由京房八宫「本宫→一世→…→五世→游魂→归魂」决定, 应爻恒隔三位。
+# Independent fixtures: 卜筮正宗卷一「六十四卦名」「安世应诀」.
+# https://www.shidianguji.com/book/AMNL0060/chapter/1ma05akk4w74j
+# Network transcription checked 2026-09-06; not a facsimile-collation claim.
+# No production palace, role, or shi/ying table is imported to derive expectations.
+PALACE_SEQUENCE = {
+    "乾": (1, 44, 33, 12, 20, 23, 35, 14),
+    "坎": (29, 60, 3, 63, 49, 55, 36, 7),
+    "艮": (52, 22, 26, 41, 38, 10, 61, 53),
+    "震": (51, 16, 40, 32, 46, 48, 28, 17),
+    "巽": (57, 9, 37, 42, 25, 21, 27, 18),
+    "离": (30, 56, 50, 64, 4, 59, 6, 13),
+    "坤": (2, 24, 19, 11, 34, 43, 5, 8),
+    "兑": (58, 47, 45, 31, 39, 15, 62, 54),
+}
+ROLE_SEQUENCE = ("本宫", "一世", "二世", "三世", "四世", "五世", "游魂", "归魂")
+SHI_YING_SEQUENCE = ((6, 3), (1, 4), (2, 5), (3, 6), (4, 1), (5, 2), (4, 1), (3, 6))
+# Change first through fifth lines in order; 游魂 restores line four;
+# 归魂 restores the entire lower trigram. Inputs are generated independently.
+CHANGE_MASKS = (0, 1, 3, 7, 15, 31, 23, 16)
+PALACE_CASES = [(palace, index, number) for palace, row in PALACE_SEQUENCE.items()
+                for index, number in enumerate(row)]
 
-    引擎输出 shi_position / ying_position, 从前无人断言二者的关系。
-    """
-    import json
-    import subprocess
-    seen = set()
-    for seed in range(24):
-        proc = subprocess.run(
-            [sys.executable, str(ROOT / "scripts" / "liuyao_cast.py"), "coins",
-             "--seed", str(seed), "--date", "2026-06-01", "--time", "10:00"],
-            capture_output=True, text=True, encoding="utf-8")
-        assert proc.returncode == 0, proc.stderr[-300:]
-        c = json.loads(proc.stdout)["main_chart"]
-        shi, ying = c["shi_position"], c["ying_position"]
-        assert 1 <= shi <= 6 and 1 <= ying <= 6, c
-        # 应爻与世爻恒隔三位 (1↔4, 2↔5, 3↔6)
-        assert (ying - shi) % 6 == 3, (c["hex_name"], shi, ying)
-        # lines 里的标记必须与这两个数字一致, 且各只有一个
-        marks_shi = [ln["position"] for ln in c["lines"] if ln["is_shi"]]
-        marks_ying = [ln["position"] for ln in c["lines"] if ln["is_ying"]]
-        assert marks_shi == [shi] and marks_ying == [ying], c["hex_name"]
-        seen.add(c["palace"])
-    assert len(seen) >= 4, f"24 次起卦只覆盖 {seen}, 样本不足以检验八宫"
+
+def _oracle_chart(palace, index):
+    from liuyao_cast import dress_chart
+    base = [int(bit) for bit in _tri_bottom_up(palace)] * 2
+    mask = CHANGE_MASKS[index]
+    lines = [7 if bit ^ ((mask >> position) & 1) else 8 for position, bit in enumerate(base)]
+    return dress_chart(lines, "甲", "子", "午")
+
+
+def _assert_oracle_chart(chart, palace, index, number):
+    assert chart["hex_number"] == number
+    assert chart["palace"] == palace + "宫"
+    assert chart["palace_role"] == ROLE_SEQUENCE[index]
+    shi, ying = SHI_YING_SEQUENCE[index]
+    assert (chart["shi_position"], chart["ying_position"]) == (shi, ying)
+    assert [line["position"] for line in chart["lines"] if line["is_shi"]] == [shi]
+    assert [line["position"] for line in chart["lines"] if line["is_ying"]] == [ying]
+
+
+@pytest.mark.parametrize("palace,index,number", PALACE_CASES)
+def test_full_eight_palace_sequence_and_exact_shi_ying(palace, index, number):
+    _assert_oracle_chart(_oracle_chart(palace, index), palace, index, number)
+
+
+def test_shifted_shi_and_ying_mutant_is_rejected_without_touching_files(monkeypatch):
+    import liuyao_cast
+    actual = liuyao_cast.shi_yao_position
+    monkeypatch.setattr(liuyao_cast, "shi_yao_position", lambda role: actual(role) % 6 + 1)
+    for palace, index, number in PALACE_CASES:
+        chart = _oracle_chart(palace, index)
+        # This mutant still satisfies the old test's relative-distance/marker checks.
+        assert (chart["ying_position"] - chart["shi_position"]) % 6 == 3
+        assert [line["position"] for line in chart["lines"] if line["is_shi"]] == [chart["shi_position"]]
+        with pytest.raises(AssertionError):
+            _assert_oracle_chart(chart, palace, index, number)
 
 
 def test_liu_qin_is_derived_from_palace_wuxing_not_guessed():
@@ -150,3 +177,55 @@ def test_liu_shen_starts_from_the_day_stem():
         covered.add(day_stem)
     assert covered == set("甲乙丙丁戊己庚辛壬癸"), (
         f"未走遍十干, 只覆盖 {sorted(covered)} —— 漏掉的那几干可以随便改坏")
+
+
+@pytest.mark.parametrize('raw,main_name,changed_name,main_palace,changed_palace,relatives', [
+    ([7, 8, 6, 8, 8, 7], '山雷颐', '山火贲', '巽宫', '艮宫',
+     ['兄弟', '妻财', '父母', '妻财', '父母', '兄弟']),
+    ([9, 7, 7, 7, 7, 6], '泽天夬', '天风姤', '坤宫', '乾宫',
+     ['兄弟', '妻财', '子孙', '父母', '子孙', '兄弟']),
+])
+def test_changed_relatives_keep_the_original_palace(
+        monkeypatch, capsys, raw, main_name, changed_name, main_palace, changed_palace, relatives):
+    """增刪卜易/7 oldid=2100290: 變出之爻安六親者仍照正卦而推。
+
+    Fixed examples cross palace elements. Expectations do not use production
+    六亲 tables: 颐属木, 亥水生木为父母; 夬属土, 丑戌土为兄弟.
+    """
+    import json
+
+    import liuyao_cast
+
+    monkeypatch.setattr(liuyao_cast, 'cast_coins', lambda rng: raw)
+    assert liuyao_cast.main(['coins', '--seed', '4', '--date', '2026-06-01',
+                             '--time', '12:00', '--target-timezone', 'Asia/Shanghai']) == 0
+    result = json.loads(capsys.readouterr().out)
+    main, changed = result['main_chart'], result['changed_chart']
+    assert (main['hex_name'], changed['hex_name']) == (main_name, changed_name)
+    assert (main['palace'], changed['palace']) == (main_palace, changed_palace)
+    assert main['palace_wuxing'] != changed['palace_wuxing']
+    assert changed['liu_qin_basis'] == {
+        'palace': main_palace, 'wuxing': main['palace_wuxing'], 'scope': 'main_hexagram_palace',
+    }
+    assert [line['liu_qin'] for line in changed['lines']] == relatives
+
+    # The auxiliary nuclear chart still belongs to its own palace; it is not
+    # a second set of changed lines and must not inherit this override.
+    nuclear = result['nuclear_chart']
+    assert nuclear['liu_qin_basis'] == {
+        'palace': nuclear['palace'], 'wuxing': nuclear['palace_wuxing'],
+        'scope': 'own_hexagram_palace',
+    }
+
+
+def test_standalone_bi_keeps_its_own_palace_relatives():
+    """贲 as an independent main hexagram is 艮土, so its third 亥水 is 妻财."""
+    from liuyao_cast import dress_chart
+
+    chart = dress_chart([7, 8, 7, 8, 8, 7], '甲', '子', '午')
+    assert chart['hex_name'] == '山火贲'
+    assert chart['liu_qin_basis'] == {
+        'palace': '艮宫', 'wuxing': '土', 'scope': 'own_hexagram_palace',
+    }
+    assert chart['lines'][2]['branch'] == '亥'
+    assert chart['lines'][2]['liu_qin'] == '妻财'

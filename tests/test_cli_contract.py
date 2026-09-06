@@ -47,6 +47,10 @@ IMPOSSIBLE_INPUTS = [
     ("request_time.py", ["--current-timezone", "Invalid/Zone"], "不存在时区"),
     ('reading_support.py', ['--chart', 'assets/classical_evidence.json'], '证据库不是命盘'),
     ('reading_support.py', ['--chart', 'does-not-exist.json'], '输入文件不存在'),
+    ('method_rules.py', ['--method', 'ziwei', '--rule', 'liuyao-support-roles'], '跨方法条款'),
+    ('method_rules.py', ['--method', 'ziwei', '--rule', 'missing-rule'], '未知条款'),
+    ('tiaohou_provenance.py', ['--key', '甲|X'], '不是月支'),
+    ('tiaohou_provenance.py', ['--key', '甲寅'], '缺少格键分隔符'),
     ("bazi_calc.py", ["--year", 1990, "--month", 2, "--day", 31, "--hour", 10,
                       "--gender", "male"], "公历 2 月没有 31 日"),
     ("bazi_calc.py", ["--year", 1990, "--month", 13, "--day", 1, "--hour", 10,
@@ -116,6 +120,8 @@ def test_impossible_input_is_refused_not_fabricated(script, argv, why):
 
 # 合法输入必须依旧 ok —— 否则上面的契约可以靠"一律拒绝"作弊满足。
 VALID_INPUTS = [
+    ('method_rules.py', ['--method', 'ziwei']),
+    ('tiaohou_provenance.py', ['--key', '甲|寅']),
     ("bazi_calc.py", ["--year", 1990, "--month", 5, "--day", 10, "--hour", 14,
                       "--gender", "male"]),
     ("ziwei_calc.py", ["--year", 1990, "--month", 5, "--day", 10, "--hour", 14,

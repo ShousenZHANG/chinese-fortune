@@ -3,6 +3,8 @@
 Locks the distribution contract: the zip must nest under chinese-fortune/,
 carry SKILL.md + runtime files, and leak NO dev/test cruft.
 """
+import hashlib
+import json
 import subprocess
 import sys
 import zipfile
@@ -260,3 +262,146 @@ def test_changelog_ships_with_the_package(package):
     sys.path.insert(0, str(ROOT / "scripts"))
     from utils import __version__
     assert f"## [{__version__}]" in body, "包内 CHANGELOG 没有当前版本的条目"
+
+
+def test_runtime_and_source_archives_have_explicit_different_scopes(package, tmp_path):
+    from classical_search import validate_library
+    with zipfile.ZipFile(package) as archive:
+        archive.extractall(tmp_path / "runtime")
+        names = set(archive.namelist())
+        manifest = json.loads(archive.read("chinese-fortune/knowledge/manifest.json"))
+    source_out_path = package.with_name(package.stem + "-sources.zip")
+    assert manifest["schema_version"] == "2.0" and manifest["distribution_kind"] == "runtime"
+    assert not any("/knowledge/sources/" in name for name in names)
+    expected = json.loads((ROOT / "knowledge/manifest.json").read_text(encoding="utf-8"))
+    chapters = {"chinese-fortune/knowledge/" + c["path"] for b in expected["books"] for c in b["chapters"]}
+    assert len(chapters) == 416 and chapters <= names
+    assert set(manifest["runtime_files"]) == {n.removeprefix("chinese-fortune/") for n in names} - {"knowledge/manifest.json"}
+    assert manifest["source_archive"]["sha256"] == hashlib.sha256(source_out_path.read_bytes()).hexdigest()
+    with zipfile.ZipFile(source_out_path) as archive:
+        archive.extractall(tmp_path / "source")
+        for source in expected["supporting_sources"]:
+            data = archive.read("chinese-fortune/knowledge/" + source["path"])
+            assert hashlib.sha256(data).hexdigest() == source["sha256"]
+    runtime = validate_library(tmp_path / "runtime/chinese-fortune/knowledge")
+    source = validate_library(tmp_path / "source/chinese-fortune/knowledge")
+    assert runtime["ok"] and not runtime["raw_sources_verified"]
+    assert source["ok"] and source["raw_sources_verified"]
+    assert runtime["validation_scope"] != source["validation_scope"]
+    for line in (package.parent / "SHA256SUMS").read_text(encoding="utf-8").splitlines():
+        digest, name = line.split("  ")
+        assert hashlib.sha256((package.parent / name).read_bytes()).hexdigest() == digest
+
+
+@pytest.mark.parametrize("damage", ["chapter", "script", "inventory", "supporting_source", "source_mode"])
+def test_runtime_corruption_is_rejected(package, tmp_path, damage):
+    from classical_search import validate_library
+    zipfile.ZipFile(package).extractall(tmp_path)
+    skill = tmp_path / "chinese-fortune"
+    path = skill / "knowledge/manifest.json"
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    if damage == "chapter":
+        (skill / "knowledge" / manifest["books"][0]["chapters"][0]["path"]).unlink()
+    elif damage == "script":
+        (skill / "scripts/utils.py").write_text("# altered", encoding="utf-8")
+    elif damage == "inventory":
+        name = "knowledge/" + manifest["books"][0]["chapters"][0]["path"]
+        del manifest["runtime_files"][name]
+    elif damage == "supporting_source":
+        del manifest["source_archive"]["files"][manifest["supporting_sources"][0]["path"]]
+    else:
+        manifest["distribution_kind"] = "source"
+    path.write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
+    assert not validate_library(skill / "knowledge")["ok"]
+
+
+def test_working_tree_provenance_ignores_unrelated_untracked_notes(tmp_path, monkeypatch):
+    import build_skill
+    for cmd in (["git", "init", "-q", str(tmp_path)],
+                ["git", "-C", str(tmp_path), "config", "user.email", "fixture@example.invalid"],
+                ["git", "-C", str(tmp_path), "config", "user.name", "Fixture"]):
+        subprocess.run(cmd, check=True, capture_output=True)
+    (tmp_path / "SKILL.md").write_text("tracked", encoding="utf-8")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "SKILL.md"], check=True, capture_output=True)
+    subprocess.run(["git", "-C", str(tmp_path), "commit", "-qm", "fixture"], check=True, capture_output=True)
+    monkeypatch.setattr(build_skill, "ROOT", tmp_path)
+    (tmp_path / "user-notes.md").write_text("unrelated", encoding="utf-8")
+    assert build_skill._provenance(None)["dirty"] is False
+    (tmp_path / "SKILL.md").write_text("changed", encoding="utf-8")
+    assert build_skill._provenance(None)["dirty"] is True
+
+
+def test_fixed_commit_executes_its_builder_not_dirty_local_script(tmp_path, monkeypatch):
+    import build_skill
+    repo = tmp_path / "repo"
+    (repo / "scripts").mkdir(parents=True)
+    fixture = "import argparse\np=argparse.ArgumentParser()\np.add_argument('--out')\np.add_argument('--snapshot-commit')\np.add_argument('--snapshot-archive')\np.add_argument('--snapshot-commit-object')\na=p.parse_args()\nfrom pathlib import Path\nPath(a.out).write_text(a.snapshot_commit)\n"
+    (repo / "scripts/build_skill.py").write_text(fixture, encoding="utf-8")
+    for cmd in (["git", "init", "-q"], ["git", "config", "user.email", "fixture@example.invalid"],
+                ["git", "config", "user.name", "Fixture"], ["git", "add", "."],
+                ["git", "commit", "-qm", "fixture"]):
+        subprocess.run(cmd, cwd=repo, check=True, capture_output=True)
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo, text=True).strip()
+    (repo / "scripts/build_skill.py").write_text("raise SystemExit('dirty builder ran')", encoding="utf-8")
+    (repo / "untracked-user-plan.md").write_text("keep", encoding="utf-8")
+    monkeypatch.setattr(build_skill, "ROOT", repo)
+    out_path = tmp_path / "fixed.txt"
+    assert build_skill._build_snapshot(commit, out_path) == 0
+    assert out_path.read_text(encoding="utf-8") == commit
+    assert (repo / "untracked-user-plan.md").read_text(encoding="utf-8") == "keep"
+    with pytest.raises(ValueError, match="full immutable"):
+        build_skill._build_snapshot("HEAD", out_path)
+
+
+def test_prebuilt_verification_never_rebuilds_or_executes_tools(package, monkeypatch, capsys):
+    sys.path.insert(0, str(ROOT / "evals"))
+    import package_smoke
+    def forbidden(*args, **kwargs):
+        raise AssertionError("archive-only verification launched a subprocess")
+    monkeypatch.setattr(package_smoke.subprocess, "run", forbidden)
+    assert package_smoke.main(["--archive", str(package), "--verify-only"]) == 0
+    result = json.loads(capsys.readouterr().out)
+    assert result["artifact"]["sha256"] == hashlib.sha256(package.read_bytes()).hexdigest()
+    with pytest.raises(ValueError, match="required commit"):
+        package_smoke.verify_archive(package, expected_commit="0" * 40)
+
+
+def test_prebuilt_verification_rejects_changed_archive_bytes(package, tmp_path):
+    import shutil
+    sys.path.insert(0, str(ROOT / "evals"))
+    import package_smoke
+    out_path = tmp_path / package.name
+    shutil.copy2(package, out_path)
+    shutil.copy2(package.parent / "SHA256SUMS", tmp_path / "SHA256SUMS")
+    out_path.write_bytes(out_path.read_bytes() + b"changed")
+    with pytest.raises(ValueError, match="runtime ZIP checksum"):
+        package_smoke.verify_archive(out_path)
+
+
+def test_snapshot_proof_binds_the_tree_not_only_a_commit_label(tmp_path, monkeypatch):
+    import io
+    import tarfile
+
+    import build_skill
+    repo = tmp_path / "repo"
+    (repo / "nested").mkdir(parents=True)
+    (repo / "nested/text.md").write_bytes(b"committed\n")
+    for cmd in (["git", "init", "-q"], ["git", "config", "user.email", "fixture@example.invalid"],
+                ["git", "config", "user.name", "Fixture"], ["git", "add", "."],
+                ["git", "commit", "-qm", "fixture"]):
+        subprocess.run(cmd, cwd=repo, check=True, capture_output=True)
+    commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo, text=True).strip()
+    data = subprocess.check_output(["git", "-c", "core.autocrlf=false", "-c", "core.eol=lf", "archive", "--format=tar", commit], cwd=repo)
+    archive_out_path, proof_out_path = tmp_path / "commit.tar", tmp_path / "commit.object"
+    archive_out_path.write_bytes(data)
+    proof_out_path.write_bytes(subprocess.check_output(["git", "cat-file", "commit", commit], cwd=repo))
+    snapshot = tmp_path / "snapshot"
+    with tarfile.open(fileobj=io.BytesIO(data), mode="r:") as archive:
+        archive.extractall(snapshot, filter="data")
+    monkeypatch.setattr(build_skill, "ROOT", snapshot)
+    build_skill._verify_snapshot(commit, archive_out_path, proof_out_path)
+    (snapshot / "nested/text.md").write_bytes(b"changed\n")
+    with pytest.raises(ValueError, match="differs from commit archive"):
+        build_skill._verify_snapshot(commit, archive_out_path, proof_out_path)
+    with pytest.raises(ValueError, match="does not match its SHA"):
+        build_skill._verify_snapshot("0" * 40, archive_out_path, proof_out_path)

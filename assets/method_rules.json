@@ -1,0 +1,386 @@
+{
+  "schema_version": "1.0",
+  "scope": "selected_basic_rules_not_complete_books",
+  "sources": [
+    {
+      "id": "ziwei-quanshu-ming-shen",
+      "title": "紫微斗數全書/卷二",
+      "section": "安身命例",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=紫微斗數全書/卷二&oldid=1963110",
+      "revision": "1963110",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "大抵人命俱从寅上起正月，顺数至本生月止，又自人生月起子时逆至本生时安命，顺至本生时安身。\n假如正月生子时就在寅宫安身命，丑时逆转丑安命，顺去卯安身，寅时逆转子安命，顺至辰安身，\n余宫仿此，\n又若闰月正月生者要在二月内起安身命，凡有闰月具要依此为例，纳音甲子歌误要熟读。\n如甲生人安命在寅却起甲己之年丙为首，是丙寅丁卯炉中火，却去火局寻某日生期起紫微帝王，\n如是正月初一生者是火局，酉宫起初一日，就从酉宫起紫微，数无差迟，若错了则失之毫厘，差之千里矣。",
+      "sha256": "90333910103014bc96c79f197c41f112994066effa8a70b998678f26f5f9cf29",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": [
+        "该段闰月进次月与项目十五日分月不一致；本条只适用非闰月，闰月必须报告项目分支。"
+      ]
+    },
+    {
+      "id": "ziwei-quanshu-palaces",
+      "title": "紫微斗數全書/卷二",
+      "section": "安十二宫例",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=紫微斗數全書/卷二&oldid=1963110",
+      "revision": "1963110",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "安十二宫例 男女俱从逆转切忌莫顺去\n\n一 命宫、二兄弟、三妻妾、四子女、五财帛、六疾厄、七迁移、八奴仆、九官禄、十田宅、十一福德、十二父母",
+      "sha256": "e11adff3e1b7a08fb8839ee0c08e46431692782bdc10497ae88e6c6fab9583cb",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": [
+        "项目用夫妻宫代替妻妾主题名；宫名为主题标签，不是对真人关系的断言。"
+      ]
+    },
+    {
+      "id": "ziwei-quanshu-chang-qu",
+      "title": "紫微斗數全書/卷二",
+      "section": "安文昌文曲星诀",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=紫微斗數全書/卷二&oldid=1963110",
+      "revision": "1963110",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "子时戌上起文昌，逆到生时是贵乡，文曲数从辰上起，顺到生时是本乡。\n\n文昌星从戌上起子时，就在戌宫安，若丑时逆至酉宫安之。\n\n文曲星从辰上起子时，如人生子时就在辰宫安，若丑时顺去巳宫安之，余宫仿此。",
+      "sha256": "fa13d01d8f3a086452f09838c99293ada3aa83aa9125aa70905d06c36a3e98b8",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": []
+    },
+    {
+      "id": "ziwei-quanshu-fu-bi",
+      "title": "紫微斗數全書/卷二",
+      "section": "安左辅右弼星诀",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=紫微斗數全書/卷二&oldid=1963110",
+      "revision": "1963110",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "左辅从辰上起正月顺行，如正月生者就辰宫安之。二月在巳宫，右弼从戌宫逆转如正月便成戌宫安之，二月在酉宫余仿此。",
+      "sha256": "73c1f6ccaeae83e87024628f82fadc700c027cd86a06eaef7255517ba9bc79fd",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": []
+    },
+    {
+      "id": "liuyao-zengshan-relatives",
+      "title": "增刪卜易/5",
+      "section": "六亲歌章第五",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=增刪卜易/5&oldid=2100292",
+      "revision": "2100292",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "乾兌宮金兄、土父、木財、火鬼、水子。乾兌宮八卦都屬金。\n\n坎宮水兄、火財、土鬼、金父、木子。坎宮八卦都屬水。\n\n坤艮宮土兄、火父、木鬼、水財、金子。坤艮宮八卦都屬土。\n\n離宮火兄、水鬼、土子、木父，金財。離宮八卦都屬火。\n\n震巽木兄、水父、金鬼、火子、土財。震巽宮八卦都屬木。",
+      "sha256": "a3d455b53ce48f46384faad7affef464966d3d80228dea0deeece157ddab870d",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": [
+        "只取历史正文五宫属性表；网页末尾原剑按为现代按语，本条未把它标成古籍原文。"
+      ]
+    },
+    {
+      "id": "liuyao-zengshan-shi-ying",
+      "title": "增刪卜易/6",
+      "section": "世应章第六",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=增刪卜易/6&oldid=2100291",
+      "revision": "2100291",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "乾爲天「世」在六﹐天風姤「世」在初﹐\n天山遁「世」在二﹐天地否「世」在三﹐\n天地觀「世」在四﹐山地剝「世」在五﹐\n火地晉「世」在四﹐火天大有「世」退在三。\n\n隔世爻兩位卽是應爻﹐餘卦仿此。",
+      "sha256": "9378cb3317ee3b170f48d09d20f10a012e820d7b1843e9375e26b5f0fafc8741",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": [
+        "转录有天地观字样，卦名应另按卦象核；此条取世应间隔及乾卦例，不据该错名建卦表。"
+      ]
+    },
+    {
+      "id": "liuyao-zengshan-support-roles",
+      "title": "增刪卜易/9",
+      "section": "用神元神忌神仇神章第九",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=增刪卜易/9&oldid=2100299",
+      "revision": "2100299",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "用神，卽前各類之用神也。元神，生用神之神卽爲元神。忌神克用神之爻也。仇神者克元神而生忌神也。",
+      "sha256": "99d4a2405548d1f3fbbf0027f204455e4cba317f2037c57ac08a1c53316ef9b5",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": [
+        "只取首段定义，不移植其后的占病结果或现代原剑按。"
+      ]
+    },
+    {
+      "id": "liuyao-zengshan-support-effective",
+      "title": "增刪卜易/10",
+      "section": "元神忌神衰旺章第十",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=增刪卜易/10&oldid=2100301",
+      "revision": "2100301",
+      "acquired_on": "2026-09-06",
+      "layer": "historical_work_transcription",
+      "scope": "selected_paragraphs_only",
+      "text": "元神𨿽生用神，須要旺相，方可生得用神。元神能生用神者有五：元神旺相或臨日月或日月動爻生扶者一也。元神動化回頭生及化進神者二也。元神長生帝旺於日辰三也。元神與忌神同動四也。元神旺動臨空化空五也。\n\n元神𨿽現又有不能生用神者有六：元神休囚，不動或動而休囚又被傷克者一也。元神休囚又逢自空、月破二也。元神休囚動化退神三也。元神衰而又絕四也。元神入三墓五也。元神休囚動而化絕、化克、化破、化散六也。以上元神無力生用神，無用之元神也，𨿽有如無。\n\n忌神𨿽動，不能克用神者有七：忌神休囚不動，而動休囚被日、月動爻克者一也。忌神靜臨空破二也。忌神入三墓三也。忌神衰動化退神四也。忌神衰而又絕五也。忌神動化絕化破、化克、化散六也。忌神與元神同動七也。此忌神者乃無力之忌神也，諸占化凶爲吉。以上論元神、忌神之有力、無力者，亦要用神有气，倘若用神無根謂之元神有力亦難生，忌神無力何足喜。",
+      "sha256": "30258bfabf6edf5664cb66fd60aa6c19f7c132356f431d67a8a73b4c31cd4a15",
+      "verification": "selected_transcription_checked",
+      "facsimile_status": "not_checked",
+      "editorial_notes": [
+        "保留转录异体字；有效性是该书内部生克条件，不是经验证的现实预测能力。"
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "ziwei-ming-shen",
+      "method": "ziwei",
+      "name": "命身宫的月时起法",
+      "source_ids": [
+        "ziwei-quanshu-ming-shen"
+      ],
+      "quote": "大抵人命俱从寅上起正月，顺数至本生月止，又自人生月起子时逆至本生时安命，顺至本生时安身。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "chart_structure",
+      "required_conditions": {
+        "birth_month": "农历生月已确定",
+        "birth_hour": "经用户选择的时制和换日后时辰已确定",
+        "non_leap_month": "非闰月；该冻结段的闰月法与项目不一致"
+      },
+      "exceptions": [
+        "未知时辰不能生成唯一命身宫",
+        "闰月只报告项目口径，不标作本段方法已满足"
+      ],
+      "allowed_interpretation": "说明命宫和身宫怎样由月、时定位，并核对输出位置。",
+      "forbidden_inferences": [
+        "由命身宫断人格或人生优劣"
+      ],
+      "chart_paths": [
+        "lunar_date.month",
+        "input.is_leap_month",
+        "ming_gong.branch",
+        "shen_gong.branch"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "ziwei-palace-order",
+      "method": "ziwei",
+      "name": "十二宫从命宫逆排",
+      "source_ids": [
+        "ziwei-quanshu-palaces"
+      ],
+      "quote": "安十二宫例 男女俱从逆转切忌莫顺去",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "chart_structure",
+      "required_conditions": {
+        "ming_fixed": "命宫位置已经确定",
+        "ordered_palaces": "使用同一组十二宫主题且从命宫逆排"
+      },
+      "exceptions": [
+        "大限顺逆不是十二主题宫排列方向",
+        "夫妻宫是项目对妻妾宫的名称调整"
+      ],
+      "allowed_interpretation": "定位与问题有关的主题宫及其相对位置。",
+      "forbidden_inferences": [
+        "宫名等同真人经历",
+        "由财帛宫推出具体收入"
+      ],
+      "chart_paths": [
+        "ming_gong.branch",
+        "twelve_palaces.0.branch",
+        "twelve_palaces.1.branch"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "ziwei-chang-qu",
+      "method": "ziwei",
+      "name": "文昌文曲按时辰安星",
+      "source_ids": [
+        "ziwei-quanshu-chang-qu"
+      ],
+      "quote": "文昌星从戌上起子时，就在戌宫安，若丑时逆至酉宫安之。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "chart_structure",
+      "required_conditions": {
+        "birth_hour": "出生时辰与换日口径已确定",
+        "opposite_directions": "文昌从戌逆排，文曲从辰顺排，子时起点计零"
+      },
+      "exceptions": [
+        "出生时刻跨时辰边界时先列候选",
+        "安星诀中的贵乡不是现实学历或成就证明"
+      ],
+      "allowed_interpretation": "解释昌曲落宫及两者方向相反的安法。",
+      "forbidden_inferences": [
+        "星名推出学历、考试成败、智力高低"
+      ],
+      "chart_paths": [
+        "solar_date.hour",
+        "lucky_stars_positions.文昌",
+        "lucky_stars_positions.文曲"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "ziwei-fu-bi",
+      "method": "ziwei",
+      "name": "左辅右弼按生月安星",
+      "source_ids": [
+        "ziwei-quanshu-fu-bi"
+      ],
+      "quote": "左辅从辰上起正月顺行，如正月生者就辰宫安之。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "chart_structure",
+      "required_conditions": {
+        "birth_month": "生月及闰月取法已确定",
+        "opposite_directions": "左辅从辰顺排，右弼从戌逆排，正月起点计零"
+      },
+      "exceptions": [
+        "闰月按项目口径，不冒充冻结本规则一致"
+      ],
+      "allowed_interpretation": "解释辅弼位置及其是否与某宫同宫或夹宫。",
+      "forbidden_inferences": [
+        "位置直接证明贵人相助或个人合作能力"
+      ],
+      "chart_paths": [
+        "lunar_date.month",
+        "lucky_stars_positions.左辅",
+        "lucky_stars_positions.右弼"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "liuyao-relative-labels",
+      "method": "liuyao",
+      "name": "以本卦卦宫五行装六亲",
+      "source_ids": [
+        "liuyao-zengshan-relatives"
+      ],
+      "quote": "乾兌宮金兄、土父、木財、火鬼、水子。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "chart_structure",
+      "required_conditions": {
+        "palace_known": "已经按八宫确定本卦卦宫",
+        "line_element_known": "本卦每爻纳支五行已确定",
+        "palace_reference": "以卦宫五行为参照，不以日干或下卦五行代替"
+      },
+      "exceptions": [
+        "变爻六亲仍按本卦参照的细则需要另条原文，不由本条五宫歌自行证明",
+        "六亲标签与用户所问人物不是自动等同"
+      ],
+      "allowed_interpretation": "说明某爻为何标父母、兄弟、官鬼、妻财或子孙。",
+      "forbidden_inferences": [
+        "官鬼爻诊断疾病",
+        "妻财爻证明伴侣行为"
+      ],
+      "chart_paths": [
+        "main_chart.palace",
+        "main_chart.palace_wuxing",
+        "main_chart.lines.0.liu_qin"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "liuyao-shi-ying",
+      "method": "liuyao",
+      "name": "世应间隔",
+      "source_ids": [
+        "liuyao-zengshan-shi-ying"
+      ],
+      "quote": "隔世爻兩位卽是應爻﹐餘卦仿此。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "chart_structure",
+      "required_conditions": {
+        "shi_known": "先独立确定本卦世爻",
+        "line_order": "初爻在下、上爻在上，以一到六编号",
+        "two_between": "世应之间隔两个爻位，即编号相差三"
+      },
+      "exceptions": [
+        "隔两位不是编号只差二",
+        "本段天地观疑误字不作八宫卦名依据"
+      ],
+      "allowed_interpretation": "复核世应位置，例如乾世六应三、姤世初应四。",
+      "forbidden_inferences": [
+        "世应直接证明两人的真实关系状态"
+      ],
+      "chart_paths": [
+        "main_chart.shi_position",
+        "main_chart.ying_position"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "liuyao-support-roles",
+      "method": "liuyao",
+      "name": "元神忌神仇神是相对用神的关系",
+      "source_ids": [
+        "liuyao-zengshan-support-roles"
+      ],
+      "quote": "元神，生用神之神卽爲元神。忌神克用神之爻也。仇神者克元神而生忌神也。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "traditional_condition_review",
+      "required_conditions": {
+        "question_fixed": "本次所问对象与范围明确",
+        "use_line_reviewed": "已选用神并解释选择理由",
+        "element_relation": "按用神五行逐项核查生克关系"
+      },
+      "exceptions": [
+        "同名六亲可能多现，先解释为何选这一爻",
+        "生克关系存在不等于该爻有力或现实事件发生"
+      ],
+      "allowed_interpretation": "解释哪些爻在该选用神下构成相生、相克关系。",
+      "forbidden_inferences": [
+        "把五行相生当事情必成",
+        "把忌神当现实坏人"
+      ],
+      "chart_paths": [
+        "main_chart.palace_wuxing",
+        "yongshen_hint"
+      ],
+      "application_status": "needs_review"
+    },
+    {
+      "id": "liuyao-support-effective",
+      "method": "liuyao",
+      "name": "元神存在不等于能够生用神",
+      "source_ids": [
+        "liuyao-zengshan-support-effective"
+      ],
+      "quote": "元神𨿽生用神，須要旺相，方可生得用神。",
+      "rule_status": "transcription_supported_with_conditions",
+      "scope": "traditional_condition_review",
+      "required_conditions": {
+        "use_line_reviewed": "用神及元神已经明确",
+        "month_day_reviewed": "已核日月对元神和用神的作用",
+        "motion_change_reviewed": "已核动静、回头生克、进退、空破墓绝",
+        "use_root_reviewed": "用神本身有气根的条件已复核",
+        "competing_conditions": "相反条件、同动传生等例外已列出"
+      },
+      "exceptions": [
+        "元神休囚、受克、空破墓绝等不能只因名字相生便判有力",
+        "该书也要求用神有气；元神有力不足以替代此条件"
+      ],
+      "allowed_interpretation": "给出哪一环节有传统支持、哪一条件不足的过程性解释。",
+      "forbidden_inferences": [
+        "自动许诺成败或应期",
+        "将古代病例移植成个人医学判断"
+      ],
+      "chart_paths": [
+        "cast_time.day_ganzhi",
+        "cast_time.month_branch",
+        "active_lines"
+      ],
+      "application_status": "needs_review"
+    }
+  ],
+  "limits": [
+    "只冻结并核选段，不表示紫微或六爻全书已整理",
+    "均未校原刻影像",
+    "条款状态不是现实预测准确率；个人应用须另核盘面条件"
+  ]
+}

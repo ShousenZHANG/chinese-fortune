@@ -1,6 +1,7 @@
 """八字: weighted 五行, 日主旺衰, 用神 / 喜神 / 忌神."""
 from __future__ import annotations
 
+from tiaohou_provenance import get_tiaohou_audit
 from utils import (
     HIDDEN_STEMS,
     TIANGAN_WUXING,
@@ -12,9 +13,8 @@ from utils import (
 # --------------------------------------------------------------------------- #
 
 # Month branch -> ordered hidden stems with weights (本气, 中气, 余气).
-# Order in HIDDEN_STEMS already follows 本气→中气→余气 by convention; classical
-# weights: 本气 ≈ 1.0, 中气 ≈ 0.5, 余气 ≈ 0.3. We use the 月支 multipliers
-# specified in the spec (本气×3, 中气×1.5, 余气×0.8) by selecting positionally.
+# Order follows the project's 本气→中气→余气 table. These numerical weights
+# are engineering diagnostics; they are not classical textual conditions.
 MONTH_HIDDEN_WEIGHTS: tuple[float, ...] = (3.0, 1.5, 0.8)
 OTHER_BRANCH_HIDDEN_WEIGHTS: tuple[float, ...] = (1.0, 0.5, 0.3)
 
@@ -240,17 +240,11 @@ def _sheng_me(day_wx: str) -> str:
     return ""
 
 
-WUXING_TO_STEM_REPRESENTATIVE: dict[str, str] = {
-    "木": "甲", "火": "丙", "土": "戊", "金": "庚", "水": "壬",
-}
-
-
 def select_yong_shen(
     day_stem: str,
     month_branch: str,
     strength: dict,
     weighted_counts: dict[str, float],
-    tiaohou_data: dict | None,
 ) -> dict:
     """Return separate rule candidates, never an unverified personal verdict.
 
@@ -267,23 +261,16 @@ def select_yong_shen(
         fuyi = []
     fuyi = [wx for wx in fuyi if wx]
     key = f"{day_stem}|{month_branch}"
-    data = tiaohou_data or {}
-    table = data.get('tiaohou', data)
-    entry = table.get(key, {}) if isinstance(table, dict) else {}
-    if not isinstance(entry, dict):
-        entry = {}
-    primary = entry.get('primary_yongshen') or entry.get('primary') or entry.get('yong_shen') or []
-    if isinstance(primary, str):
-        primary = [primary]
-    primary = [stem for stem in primary if stem in TIANGAN_WUXING]
-    secondary = [stem for stem in entry.get('secondary_yongshen', []) if stem in TIANGAN_WUXING]
+    audit = get_tiaohou_audit(key)
+    primary = audit['source_general_candidates']
+    secondary = audit['source_conditional_candidates']
     overlap = sorted({TIANGAN_WUXING[stem] for stem in primary} & set(fuyi))
-    reason = ('扶抑候选出自本实现的旺衰启发式; 调候仅按日干与月支匹配条目。'
+    reason = ('扶抑候选出自本实现的旺衰启发式; 调候按日干月支查已定位的原文分支。'
               '尚未核验原局制化、透藏、救应等条件, 不据此确定唯一用神或吉凶。')
     return {
         'yong_shen': {
             'primary': None, 'wuxing': None, 'status': 'needs_review',
-            'method_version': 'conditional-2', 'rule_id': 'project-candidate-selection',
+            'method_version': 'conditional-4', 'rule_id': 'project-candidate-selection',
             'reason': reason, 'tiaohou_match': bool(primary),
             'fuyi_match': bool(overlap),
             'views': {
@@ -293,10 +280,12 @@ def select_yong_shen(
                 'tiaohou': {'candidates': primary, 'secondary_candidates': secondary,
                             'table_key': key, 'kind': 'traditional_table',
                             'source_id': 'qiong-tiaohou',
-                            'source_locator': f'assets/tiaohou.json#/tiaohou/{key}',
-                            'verification': 'legacy_audit_not_clause_verified',
+                            'source_locator': f'assets/tiaohou_provenance.json#/cells/{key}',
+                            'verification': 'frozen_transcription_candidate_review',
+                            'source_audit': audit,
+                            'secondary_meaning': '有特定条件的分支，不是固定次优列表',
                             'status': 'candidate_only' if primary else 'unavailable',
-                            'conditions_pending': ['原文版本与条款', '透干通根', '全局制化与救应']},
+                            'conditions_pending': ['原文分支在本盘是否成立', '透干、藏干与根气是否有效', '全局制化与救应']},
             },
             'agreement': {'shared_elements': overlap,
                           'meaning': '候选交集不等于独立验证, 不自动提升置信度'},

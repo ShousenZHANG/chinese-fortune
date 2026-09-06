@@ -1,7 +1,8 @@
-"""紫微斗数 (Zi Wei Dou Shu) — production-grade chart engine.
+"""紫微斗数 (Zi Wei Dou Shu) — chart engine using documented project tables.
 
-Implements the canonical排盘 pipeline derived from《紫微斗数全书》(罗洪先, 明) and
-《紫微斗数全集》(陈希夷传), independent of any third-party AGPL codebase:
+Implements a selected 排盘 pipeline. Some structural rules have located
+《紫微斗数全书》transcriptions; brightness, school variants and later flying-star
+concepts must retain their separate source status:
 
   1. 命宫 / 身宫              (寅宫起正月 + 子时定位)
   2. 五行局                  (命宫干支纳音)
@@ -10,7 +11,7 @@ Implements the canonical排盘 pipeline derived from《紫微斗数全书》(罗
   5. 六吉                    (左辅/右弼/文昌/文曲/天魁/天钺)
   6. 六煞                    (擎羊/陀罗/火星/铃星/地空/地劫) + 禄存
   7. 杂曜                    (天马/红鸾/天喜/孤辰/寡宿/天哭/天虚/龙池/凤阁)
-  8. 命主 / 身主             (年支主星)
+  8. 命主 / 身主             (分别按命宫支 / 生年支)
   9. 斗君                    (流年起算之锚)
  10. 四化                    (生年/大限/流年, 含自化离心向心)
  11. 12 宫                  (含借宫 — 命宫空宫自动借对宫主星)
@@ -19,7 +20,7 @@ Implements the canonical排盘 pipeline derived from《紫微斗数全书》(罗
                               同梁/杀破狼/火贪/铃贪/武贪/日月同宫/明珠出海/
                               辅弼夹命/昌曲夹命/羊陀夹忌/空劫夹命/马头带箭)
 
-Args mirror bazi_calc.py — lunar birthday is recommended for accuracy.
+Accepts either calendar; use the calendar actually known by the user.
 
 Usage:
     python ziwei_calc.py --year 1995 --month 7 --day 20 --hour 1 \\
@@ -30,6 +31,8 @@ from __future__ import annotations
 
 import argparse
 import sys
+
+from method_rules import method_reading_packet
 
 # Section 17 — CLI / main
 # --------------------------------------------------------------------------- #
@@ -58,6 +61,7 @@ from ziwei_palaces import (
 )
 from ziwei_patterns import detect_patterns
 from ziwei_stars import (
+    BRIGHTNESS_NOTE,
     brightness_of,
     place_lucky_stars,
     place_main_stars,
@@ -137,7 +141,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--no-patterns", action="store_true",
                    help="略过 格局 检测以缩减输出")
     p.add_argument("--no-sihua", action="store_true",
-                   help="略过 自化/大限四化/流年四化")
+                   help="略过各宫自化（保留生年及岁限四化）")
     # twelve_palaces 与 da_xian 合占载荷 81.5%, 而此前两个开关只覆盖 1.3%+2.2%
     # 的小块 —— 开关造在了不占体积的地方, 实测裁剪只省 0.3%。
     p.add_argument("--no-da-xian", action="store_true",
@@ -245,7 +249,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
 
     year_stem = lunar.getYearGan()
     year_branch = lunar.getYearZhi()
-    # 闰月归属 — 02-ziwei-paipan.md:15: 十五日前算本月, 十五日后算下月 (主流).
+    # 项目闰月归属：十五日及以前算本月，十五日后算下月；与所引全书转录不同。
     # 紫微 keys 命宫/身宫/斗君/辅星 off the lunar month, so attributing a whole
     # 闰月 to its base month shifted every one of those by a palace for births
     # after the 15th. bazi is unaffected: its 月柱 is 节气-based, not lunar.
@@ -257,12 +261,12 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     if is_leap_month and lunar_day > 15:
         lunar_month = (lunar_month % 12) + 1
         leap_note.append(
-            f"闰月十五日后, 按主流取法算作下月 ({abs(raw_month)} -> {lunar_month} 月) "
+            f"闰月十五日后, 按项目取法算作下月 ({abs(raw_month)} -> {lunar_month} 月) "
             f"排命宫/身宫/斗君; 见 references/02-ziwei-paipan.md 闰月处理。"
         )
     elif is_leap_month:
         leap_note.append(
-            f"闰月十五日前, 按主流取法算作本月 ({lunar_month} 月); "
+            f"闰月十五日及以前, 按项目取法算作本月 ({lunar_month} 月); "
             f"见 references/02-ziwei-paipan.md 闰月处理。"
         )
 
@@ -449,9 +453,9 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         + ([tz_info["note"]] if tz_info and tz_info["note"] else [])
         + [
             "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
-            "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",
+            BRIGHTNESS_NOTE,
             "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",
-            "三合派与飞星派对火铃起例及部分自化有分歧, 本脚本采用《紫微斗数全书》主流。",
+            "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。",
         ],
     }
     out['schema_version'] = '2.0'
@@ -464,6 +468,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
             '亮度采用项目简化表, 未完成全表原刻影像校勘',
             '自化等分歧规则须标明所用口径, 不冒充全书共识',
         ],
+        'method_rules': method_reading_packet('ziwei', out, brief=args.brief_palaces),
     }
     return out
 

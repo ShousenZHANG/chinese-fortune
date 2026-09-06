@@ -4,7 +4,7 @@ Pipeline:
   1. Determine 月将 (sun-sign) from 中气 boundary.
   2. 月将加时 → 天地盘 (heaven plate over fixed earth plate).
   3. 排四课 (four lessons) using 日干寄宫 and 日支.
-  4. 发三传 (three transmissions) via 九宗门 (priority chain).
+  4. 发三传：固定主本条件分支，未实现课式返回 unsupported。
   5. 排十二天将 (twelve heavenly generals) starting from 贵人 day/night.
   6. 用神 hint and 旺相休囚 evaluation for 三传.
 
@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import timedelta, timezone
 from typing import Any
 
 from request_time import add_request_arguments, resolve_time
@@ -63,10 +64,6 @@ ZHONG_QI_TO_YUE_JIANG: list[tuple[str, str, str]] = [
 ]
 
 YUE_JIANG_NAME: dict[str, str] = {z: n for _, z, n in ZHONG_QI_TO_YUE_JIANG}
-
-# Set of 中气 names (for fast membership)
-ZHONG_QI_SET = {z for z, _, _ in ZHONG_QI_TO_YUE_JIANG}
-
 
 # --------------------------------------------------------------------------- #
 # 干寄宫 — 天干在地盘所寄之地支
@@ -119,11 +116,7 @@ SHUN_BU_BRANCHES = {"亥", "子", "丑", "寅", "卯", "辰"}
 
 
 def is_day_birth(hour: int) -> bool:
-    """昼 = 06:00–17:59 inclusive (sun above horizon); 夜 otherwise.
-
-    Classical rule: 卯-酉 (5-6am sunrise to 5-6pm sunset). Here we use
-    06:00–17:59 as a practical proxy that covers the 卯时-酉时 span.
-    """
+    """Compatibility clock proxy: 06:00–17:59, not computed sunrise/sunset."""
     return 6 <= hour < 18
 
 
@@ -134,30 +127,17 @@ def is_day_birth(hour: int) -> bool:
 def determine_yue_jiang(lunar: Any) -> tuple[str, str, str]:
     """Return (zhong_qi 中气名, yue_jiang 地支, 月将神名).
 
-    Uses lunar_python's JieQi table; finds the most recent 中气 <= current time.
-    If none of the 12 中气 is yet reached this year, falls back to the previous
-    cycle (大寒/子).
+    The caller supplies the real instant on the library's UTC+8 calendar clock,
+    or an explicitly labelled floating clock. getPrevQi includes equality and
+    normalizes cross-year aliases such as DONG_ZHI; never guess a missing term.
     """
-    jq_dict = lunar.getJieQiTable()  # dict[name -> Solar]
-    solar = lunar.getSolar()
-    current_jd = solar.getJulianDay()
-
-    found: list[tuple[float, str]] = []
-    for name, jq_solar in jq_dict.items():
-        if name not in ZHONG_QI_SET:
-            continue
-        if jq_solar.getJulianDay() <= current_jd:
-            found.append((jq_solar.getJulianDay(), name))
-
-    if not found:
-        # Pre-雨水 of current year → previous 大寒 cycle still applies → 子将.
-        zhong_qi = "大寒"
-    else:
-        found.sort(reverse=True)
-        zhong_qi = found[0][1]
-
-    yue_jiang_zhi = next(z for q, z, _ in ZHONG_QI_TO_YUE_JIANG if q == zhong_qi)
-    return zhong_qi, yue_jiang_zhi, YUE_JIANG_NAME[yue_jiang_zhi]
+    previous_qi = lunar.getPrevQi()
+    if previous_qi is not None:
+        zhong_qi = previous_qi.getName()
+        for name, branch, general in ZHONG_QI_TO_YUE_JIANG:
+            if name == zhong_qi:
+                return name, branch, general
+    raise ValueError("历库未能定位前一中气，不能确定月将")
 
 
 # --------------------------------------------------------------------------- #
@@ -199,12 +179,7 @@ def build_si_ke(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str) -> list[dict
     k3_l, k3_u = ri_zhi, tian_pan[ri_zhi]
     k4_l, k4_u = k3_u, tian_pan[k3_u]
     return [
-        # 一课的「下」在**位置**上是寄宫地支, 但在**五行**上是日干本身 ——
-        # 贼克要比的是日干与其上神的生克, 不是寄宫地支与上神的。乙寄辰(木/土)、
-        # 丁寄未(火/土)、戊寄巳(土/火)、辛寄戌(金/土)、癸寄丑(水/土) 五干两者不同,
-        # 占十干之半; 穷举 8640 盘, 一课判定错 31.7%, 三传整体不同 14.0%。
-        # 同一文件的 fa_yong_yao_ke 对同一个日干用的却是 TIANGAN_WUXING[ri_gan],
-        # 内部两套口径。
+        # 一课以日干五行判克，寄宫仅表示位置。
         {"index": 1, "name": "干上 (一课)", "lower": k1_l, "upper": k1_u,
          "lower_wuxing": TIANGAN_WUXING[ri_gan],
          "note": f"日干 {ri_gan} 寄宫 {g_ji} 之天盘 (五行以日干 {ri_gan} 论)"},
@@ -238,13 +213,7 @@ def upper_controls_lower(lower: str, upper: str,
 
 
 # --------------------------------------------------------------------------- #
-# Step 4 — 三传 (nine-method priority chain)
-#
-# Order in 《六壬大全》:
-#   贼克 → 比用 → 涉害 → 遥克 → 昴星 → 别责 → 八专 → 伏吟 → 反吟
-#
-# We implement: 贼克, 比用, 遥克, 伏吟, 反吟 with priority-rule fallbacks
-# for 涉害 / 昴星 / 别责 (rare and best handled by a human master); 八专 现已实现.
+# Step 4 — 固定主法取传；分支与局限见 docs/QIMEN-LIUREN-METHODS.md。
 # --------------------------------------------------------------------------- #
 
 def detect_zei_ke(si_ke: list[dict]) -> tuple[list[dict], list[dict]]:
@@ -278,79 +247,67 @@ def next_two_chuan(tian_pan: dict[str, str], chu: str) -> tuple[str, str]:
     return zhong, mo
 
 
-def _pick_by_polarity(candidates: list[dict], ri_gan: str,
-                       multi_label: str, mismatch_label: str
-                       ) -> tuple[list[dict], str]:
-    """比用 sub-rule: prefer 上神 与 日干 同阴阳 candidate; else fall back."""
-    same = [k for k in candidates if same_polarity_as_gan(k["upper"], ri_gan)]
+LIUREN_SOURCE = "https://zh.wikisource.org/w/index.php?oldid=657303"
+
+
+def unsupported_transmissions(method: str, reason: str,
+                             candidates: list[str] | None = None) -> dict:
+    """Keep the chart usable without inventing any missing transmission."""
+    return {"status": "unsupported", "method": method, "reason": reason,
+            "chu_chuan": None, "zhong_chuan": None, "mo_chuan": None,
+            "from_course": None, "candidates": candidates or []}
+
+
+def _select_candidate(courses: list[dict], ri_gan: str, label: str) -> dict | None:
+    # Repeated courses naming the same upper god do not create another choice.
+    unique = {course["upper"]: course for course in reversed(courses)}
+    pool = list(unique.values())
+    if not pool:
+        return None
+    if len(pool) == 1:
+        return {"selected": pool[0], "method": f"贼克法 ({label})"}
+    same = [course for course in pool if same_polarity_as_gan(course["upper"], ri_gan)]
     if len(same) == 1:
-        return same, multi_label
-    if len(same) >= 2:
-        return [same[0]], "比用法 / 涉害法简化 (取首位, 复杂涉害请手排)"
-    return [candidates[0]], mismatch_label
+        return {"selected": same[0], "method": f"比用法 ({label}, 唯一同日干阴阳)"}
+    return unsupported_transmissions("涉害法 (未实现)",
+        "多候选俱比或俱不比，须按涉害深浅等条件另判；不能取首位代替。",
+        [course["upper"] for course in (same or pool)])
 
 
 def fa_yong_zei_ke(si_ke: list[dict], ri_gan: str,
                     tian_pan: dict[str, str]) -> dict | None:
-    """贼克法 + 比用法. 贼 (下贼上) takes priority over 克 (上克下)."""
+    """四库本卷一：下贼优先，上克次之；比用未决即止于涉害。"""
     zei, ke = detect_zei_ke(si_ke)
-    pool: list[dict] | None = None
-    label = ""
-    if len(zei) == 1:
-        pool, label = zei, "贼克法 (重审课, 一贼为用)"
-    elif not zei and len(ke) == 1:
-        pool, label = ke, "贼克法 (元首课, 一克为用)"
-    elif len(zei) >= 1:
-        pool, label = _pick_by_polarity(
-            zei, ri_gan,
-            "比用法 (多贼, 取阴阳同日干者)",
-            "比用法 (多贼皆异阴阳, 取首位)",
-        )
-    elif len(ke) >= 2:
-        pool, label = _pick_by_polarity(
-            ke, ri_gan,
-            "比用法 (多克, 取阴阳同日干者)",
-            "比用法 (多克皆异阴阳, 取首位)",
-        )
-
-    if not pool:
-        return None
-    chu = pool[0]["upper"]
+    selected = _select_candidate(zei or ke, ri_gan, "重审课" if zei else "元首课")
+    if selected is None or selected.get("status") == "unsupported":
+        return selected
+    course = selected["selected"]
+    chu = course["upper"]
     zhong, mo = next_two_chuan(tian_pan, chu)
-    return {"method": label, "chu_chuan": chu, "zhong_chuan": zhong,
-            "mo_chuan": mo, "from_course": pool[0]["index"]}
+    return {"status": "supported", "method": selected["method"],
+            "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
+            "from_course": course["index"]}
 
 
 def fa_yong_yao_ke(si_ke: list[dict], ri_gan: str,
                     tian_pan: dict[str, str]) -> dict | None:
-    """遥克法 — no 上下 克贼 at all → 日干 与 天盘上神 互克.
-
-    弹射课 (上神克日干, priority) → 蒿矢课 (日干克上神).
-    """
+    """无克贼且非八专：神克日为蒿矢，日克神为弹射，二者勿颠倒。"""
     gan_wx = TIANGAN_WUXING[ri_gan]
-    inward, outward = [], []
-    for u in (k["upper"] for k in si_ke):
-        u_wx = wx_of(u)
-        if WUXING_KE.get(u_wx) == gan_wx:
-            inward.append(u)
-        elif WUXING_KE.get(gan_wx) == u_wx:
-            outward.append(u)
-
-    chosen: str | None = None
-    label = ""
-    for pool, lbl in [(inward, "遥克法 (弹射课, 上神克日干)"),
-                      (outward, "遥克法 (蒿矢课, 日干克上神)")]:
-        if pool:
-            same = [u for u in pool if same_polarity_as_gan(u, ri_gan)]
-            chosen = same[0] if same else pool[0]
-            label = lbl
-            break
-
-    if not chosen:
+    uppers = list(dict.fromkeys(course["upper"] for course in si_ke))
+    inward = [u for u in uppers if WUXING_KE[wx_of(u)] == gan_wx]
+    outward = [u for u in uppers if WUXING_KE[gan_wx] == wx_of(u)]
+    pool = inward or outward
+    if not pool:
         return None
-    zhong, mo = next_two_chuan(tian_pan, chosen)
-    return {"method": label, "chu_chuan": chosen, "zhong_chuan": zhong,
-            "mo_chuan": mo, "from_course": None}
+    method = "遥克法 (蒿矢课, 神克日)" if inward else "遥克法 (弹射课, 日克神)"
+    same = [u for u in pool if same_polarity_as_gan(u, ri_gan)]
+    if len(pool) > 1 and len(same) != 1:
+        return unsupported_transmissions(method, "遥克比用仍不唯一，未实现继续取舍。", pool)
+    chu = pool[0] if len(pool) == 1 else same[0]
+    zhong, mo = next_two_chuan(tian_pan, chu)
+    return {"status": "supported", "method": method,
+            "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
+            "from_course": None}
 
 
 # 三刑 + 自刑 —— 伏吟课取传全靠它。
@@ -363,135 +320,99 @@ XING_MAP: dict[str, str] = {
     "辰": "辰", "午": "午", "酉": "酉", "亥": "亥",
 }
 
-# 驿马 — 反吟无亲课取初传。申子辰马在寅, 寅午戌马在申, 巳酉丑马在亥, 亥卯未马在巳。
-YI_MA: dict[str, str] = {
-    "申": "寅", "子": "寅", "辰": "寅",
-    "寅": "申", "午": "申", "戌": "申",
-    "巳": "亥", "酉": "亥", "丑": "亥",
-    "亥": "巳", "卯": "巳", "未": "巳",
-}
-
-
-def _xing_or_chong(zhi: str) -> str:
-    """取刑; 自刑者取冲 —— 否则三传会原地打转。"""
-    x = XING_MAP.get(zhi, zhi)
-    return chong_branch(zhi) if x == zhi else x
+def chong_zhi(zhi: str) -> str:
+    """Compatibility alias for the shared six-oppositions table."""
+    return chong_branch(zhi)
 
 
 def fa_yong_fu_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
                    yue_jiang: str, zhan_shi: str) -> dict | None:
-    """伏吟法 — 月将 == 占时 (天地盘 各居本位)。
-
-    刚日(阳干): 初 = 干上神; 柔日(阴干): 初 = 支上神。
-    中 = 初传之刑, 末 = 中传之刑; 逢自刑则取冲。
-
-    从前中传取「另一个上神」、末传取「中传上神」—— 而伏吟时天地盘各居本位, 即
-    ``tian_pan[x] == x``, 于是 ``mo = tian_pan[zhong] == zhong`` **恒成立**:
-    末传永远是中传的复制品。实测 2026-06-01 16:00 得 巳/午/午。
-    经典伏吟课本就以「刑」取传, 正是为了避开这种原地打转。
-    """
+    """卷一伏吟有克仍用克；自刑换日辰，卷七杜传例补明子卯不再循环。"""
     if yue_jiang != zhan_shi:
         return None
-    gan_ji = GAN_JI_GONG[ri_gan]
-    gan_yang = TIANGAN_YIN_YANG[ri_gan] == "阳"
-    chu = tian_pan[gan_ji] if gan_yang else tian_pan[ri_zhi]
-    zhong = _xing_or_chong(chu)
-    mo = _xing_or_chong(zhong)
-    return {"method": ("伏吟法 (天地盘同位; " + ("刚日取干上神" if gan_yang
-                       else "柔日取支上神") + ", 中末递刑, 自刑取冲)"),
+    direct = fa_yong_zei_ke(build_si_ke(tian_pan, ri_gan, ri_zhi), ri_gan, tian_pan)
+    if direct and direct.get("status") == "unsupported":
+        return direct
+    gan_shang, zhi_shang = tian_pan[GAN_JI_GONG[ri_gan]], tian_pan[ri_zhi]
+    if direct:
+        chu = direct["chu_chuan"]
+        from_course = direct["from_course"]
+        used_gan = from_course in (1, 2)
+        basis = "有克先取克"
+    else:
+        used_gan = TIANGAN_YIN_YANG[ri_gan] == "阳"
+        chu = gan_shang if used_gan else zhi_shang
+        from_course = 1 if used_gan else 3
+        basis = "无克阳日干上、阴日支上"
+    if XING_MAP[chu] == chu:
+        zhong = zhi_shang if used_gan else gan_shang
+        basis += "; 初自刑则交换日辰"
+    else:
+        zhong = XING_MAP[chu]
+    mo = XING_MAP[zhong]
+    if mo == zhong or mo == chu:
+        mo = chong_branch(zhong)
+        basis += "; 次自刑或刑回初则取冲"
+    return {"status": "supported", "method": f"伏吟法 ({basis}, 中末取刑冲)",
             "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
-            "from_course": None}
-
-
-def chong_zhi(zhi: str) -> str:
-    """Return 六冲 partner (子↔午, 丑↔未, ...)."""
-    return chong_branch(zhi)
+            "from_course": from_course}
 
 
 def fa_yong_fan_yin(tian_pan: dict[str, str], ri_gan: str, ri_zhi: str,
                     yue_jiang: str, zhan_shi: str) -> dict | None:
-    """反吟法 — 月将 与 占时 相冲 (子加午之类, 天地盘逐位相冲)。
-
-    有克者已由贼克法取去 (本函数在其后才被调用), 到这里即「无亲反吟课」:
-    初 = 驿马, 中 = 支上神, 末 = 干上神。
-
-    从前三传全取上神递推 —— 而反吟时 ``tian_pan[x] == 冲(x)``, 于是
-    ``mo = 冲(冲(chu)) == chu`` **恒成立**: 末传永远是初传的复制品。实测
-    2026-06-01 04:00 得 子/午/子。取驿马正是经典为无亲课准备的出路。
-    """
-    if chong_zhi(yue_jiang) != zhan_shi:
+    """反吟有克用克（允许初末同）；无克井栏按卷一六日法。"""
+    if chong_branch(yue_jiang) != zhan_shi:
         return None
-    gan_ji = GAN_JI_GONG[ri_gan]
-    chu = YI_MA[ri_zhi]
-    zhong = tian_pan[ri_zhi]
-    mo = tian_pan[gan_ji]
-    return {"method": "反吟法 (天地盘相冲, 无亲课: 驿马为初, 支上为中, 干上为末)",
-            "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
-            "from_course": None}
+    direct = fa_yong_zei_ke(build_si_ke(tian_pan, ri_gan, ri_zhi), ri_gan, tian_pan)
+    if direct:
+        return {**direct, "method": "反吟 / " + direct["method"]}
+    if ri_gan not in "丁己辛" or ri_zhi not in "丑未":
+        return unsupported_transmissions("反吟无克 (未支持)", "不属于所选主法井栏六日。")
+    return {"status": "supported", "method": "反吟法 (无克井栏: 丑日亥、未日巳为初)",
+            "chu_chuan": "亥" if ri_zhi == "丑" else "巳",
+            "zhong_chuan": tian_pan[ri_zhi],
+            "mo_chuan": tian_pan[GAN_JI_GONG[ri_gan]], "from_course": None}
 
 
 def fa_yong_ba_zhuan(tian_pan: dict[str, str], ri_gan: str,
                      ri_zhi: str) -> dict | None:
-    """八专课 — 日干寄宫 与 日支 同位 (甲寅/庚申/己未/丁未 等)。
-
-    四课重叠成两课, 贼克无从分辨, 故另立一门:
-      阳日: 干上神起, 顺数三神为初传;
-      阴日: 支上神起, 逆数三神为初传;
-      中传、末传 皆取干上神。
-
-    本文件第 233 行自述的取法次序是「贼克 → 比用 → 涉害 → 遥克 → 昴星 → 别责 →
-    **八专** → 伏吟 → 反吟」, 但从前根本没有八专这一门, 于是这类课落进反吟或
-    fallback。实测 2026-04-16 08:00 (庚申日, 庚寄申, 日支申) 三传得 寅/寅/寅 ——
-    三传全同, 任何取法都产生不了。
-    """
-    gan_ji = GAN_JI_GONG[ri_gan]
-    if gan_ji != ri_zhi:
+    """两课无克八专：阳取日阳顺三，阴取辰阴（第四课上神）逆三。"""
+    if GAN_JI_GONG[ri_gan] != ri_zhi:
         return None
-    gan_yang = TIANGAN_YIN_YANG[ri_gan] == "阳"
-    gan_shang = tian_pan[gan_ji]
-    if gan_yang:
-        chu = DIZHI[(DIZHI.index(gan_shang) + 2) % 12]      # 顺数三神 (含本位)
-        how = "阳日干上神顺数三神"
-    else:
-        zhi_shang = tian_pan[ri_zhi]
-        chu = DIZHI[(DIZHI.index(zhi_shang) - 2) % 12]      # 逆数三神
-        how = "阴日支上神逆数三神"
-    return {"method": f"八专法 (干支同宫, {how}为初, 中末皆取干上神)",
+    lessons = build_si_ke(tian_pan, ri_gan, ri_zhi)
+    zei, ke = detect_zei_ke(lessons)
+    if zei or ke:
+        return None
+    yang = TIANGAN_YIN_YANG[ri_gan] == "阳"
+    start = lessons[0]["upper"] if yang else lessons[3]["upper"]
+    chu = DIZHI[(DIZHI.index(start) + (2 if yang else -2)) % 12]
+    gan_shang = lessons[0]["upper"]
+    return {"status": "supported",
+            "method": "八专法 (两课无克, 论克不论遥; 阳日阳顺三、阴辰阴逆三)",
             "chu_chuan": chu, "zhong_chuan": gan_shang, "mo_chuan": gan_shang,
-            "from_course": None}
-
-
-def fa_yong_fallback(tian_pan: dict[str, str]) -> dict:
-    """昴星法 / 别责 简化 — 取酉宫上神为初 (rare; needs hand-排)。
-
-    八专已由 fa_yong_ba_zhuan 单独实现, 不再落到这里; 名字里去掉它。
-    """
-    chu = tian_pan["酉"]
-    zhong, mo = next_two_chuan(tian_pan, chu)
-    return {"method": "昴星 / 别责 / 八专 简化路径 (酉宫为用 — 复杂课式需手排)",
-            "chu_chuan": chu, "zhong_chuan": zhong, "mo_chuan": mo,
             "from_course": None}
 
 
 def fa_yong(si_ke: list[dict], ri_gan: str, ri_zhi: str,
             tian_pan: dict[str, str], yue_jiang: str, zhan_shi: str) -> dict:
-    """Master nine-method dispatcher: 伏吟 → 反吟 → 贼克/比用 → 遥克 → fallback.
-
-    伏吟 / 反吟 first because they depend on plate config rather than 四课 clashes.
-    """
-    for fn in (
-        # 八专 排在 伏吟/反吟 之前 —— 本文件第 233 行自述的次序如此, 且干支同宫时
-        # 四课重叠成两课, 反吟的「支上为中、干上为末」会与驿马撞在同一支上。
-        lambda: fa_yong_ba_zhuan(tian_pan, ri_gan, ri_zhi),
-        lambda: fa_yong_fu_yin(tian_pan, ri_gan, ri_zhi, yue_jiang, zhan_shi),
-        lambda: fa_yong_fan_yin(tian_pan, ri_gan, ri_zhi, yue_jiang, zhan_shi),
-        lambda: fa_yong_zei_ke(si_ke, ri_gan, tian_pan),
-        lambda: fa_yong_yao_ke(si_ke, ri_gan, tian_pan),
-    ):
-        result = fn()
-        if result:
+    """固定主法条件分支；伏反吟内先审克，八专不跳过有克也不审遥。"""
+    for method in (fa_yong_fu_yin, fa_yong_fan_yin):
+        result = method(tian_pan, ri_gan, ri_zhi, yue_jiang, zhan_shi)
+        if result is not None:
             return result
-    return fa_yong_fallback(tian_pan)
+    direct = fa_yong_zei_ke(si_ke, ri_gan, tian_pan)
+    if direct is not None:
+        return direct
+    ba_zhuan = fa_yong_ba_zhuan(tian_pan, ri_gan, ri_zhi)
+    if ba_zhuan is not None:
+        return ba_zhuan
+    remote = fa_yong_yao_ke(si_ke, ri_gan, tian_pan)
+    if remote is not None:
+        return remote
+    count = len({course["upper"] for course in si_ke})
+    method_name = "别责法" if count == 3 else "昴星法"
+    return unsupported_transmissions(method_name + " (未实现)",
+        f"{count}课且无贼克遥克；本版未实现该取法，保留天地盘和四课。")
 
 
 # --------------------------------------------------------------------------- #
@@ -522,33 +443,11 @@ def build_shi_er_tian_jiang(ri_gan: str, hour: int,
 # Step 6 — 用神 hint by question keywords
 # --------------------------------------------------------------------------- #
 
-QUESTION_USHIN: list[tuple[tuple[str, ...], str]] = [
-    (("求财", "财运", "钱", "投资", "生意"),
-     "妻财 + 青龙 — 看青龙所临之宫与三传财气."),
-    (("求官", "升职", "考核", "公职"),
-     "官鬼 + 朱雀 — 朱雀临三传主文书利, 官鬼旺主任用."),
-    (("感情", "婚姻", "恋爱", "桃花"),
-     "六合 + 妻财/官鬼 — 男看妻财, 女看官鬼; 六合临三传主和合."),
-    (("出行", "旅行", "远行", "出差"),
-     "驿马 + 青龙 — 青龙临三传主吉行, 白虎临则有道路阻."),
-    (("疾病", "病情", "健康"),
-     "官鬼 (病象) + 白虎 (凶象) + 子孙 (医药)."),
-    (("寻人", "找人", "失踪"),
-     "玄武 — 玄武所临之方为藏身或所在方向."),
-    (("官司", "诉讼", "纠纷"),
-     "朱雀 (文书) + 勾陈 (缠讼) + 白虎 (败诉)."),
-    (("失物", "丢失"),
-     "玄武 — 所临宫位为失物方向, 配合天将判断特征."),
-]
-
-
 def yong_shen_hint(question: str | None) -> str | None:
+    """Question-specific interpretation needs sourced rules, not keyword verdicts."""
     if not question:
         return None
-    for keys, hint in QUESTION_USHIN:
-        if any(k in question for k in keys):
-            return hint
-    return None
+    return "先明确所问事项与取象条款；本工具未登记问事解释规则，不从关键词判结果。"
 
 
 # --------------------------------------------------------------------------- #
@@ -589,9 +488,10 @@ _COURSE_TAGS: list[tuple[str, str]] = [
     ("遥克", "九宗门: 遥克法"),
     ("伏吟", "九宗门: 伏吟法"),
     ("反吟", "九宗门: 反吟法"),
-    ("昴星", "九宗门: 昴星/别责/八专 (复杂课式简化处理)"),
-    ("别责", "九宗门: 昴星/别责/八专 (复杂课式简化处理)"),
-    ("八专", "九宗门: 昴星/别责/八专 (复杂课式简化处理)"),
+    ("昴星", "九宗门: 昴星 (未实现)"),
+    ("别责", "九宗门: 别责 (未实现)"),
+    ("八专", "九宗门: 八专"),
+    ("涉害", "九宗门: 涉害 (未实现)"),
 ]
 
 
@@ -619,6 +519,8 @@ def build_summary(ri_gan: str, ri_zhi: str, san_chuan: dict,
     ]
     if yong_hint:
         parts.append(f"用神提示: {yong_hint}")
+    if san_chuan.get("status") == "unsupported":
+        parts[1] = "三传未完成: " + san_chuan["reason"]
     return " ".join(parts)
 
 
@@ -662,14 +564,24 @@ def main(argv: list[str] | None = None) -> int:
     require_lunar()
     from lunar_python import Solar  # type: ignore
 
-    solar = Solar.fromYmdHms(dt.year, dt.month, dt.day, dt.hour, dt.minute, 0)
+    solar = Solar.fromYmdHms(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second)
     lunar = solar.getLunar()
+    aware = dt.tzinfo is not None and dt.utcoffset() is not None
+    calendar_clock = dt.astimezone(timezone(timedelta(hours=8))) if aware else dt
+    term_lunar = Solar.fromYmdHms(
+        calendar_clock.year, calendar_clock.month, calendar_clock.day,
+        calendar_clock.hour, calendar_clock.minute, calendar_clock.second,
+    ).getLunar()
 
     ri_gan = lunar.getDayGan()
     ri_zhi = lunar.getDayZhi()
-    month_zhi = lunar.getMonthZhi()
+    month_zhi = term_lunar.getMonthZhiExact()
 
-    zhong_qi, yue_jiang, yue_jiang_name = determine_yue_jiang(lunar)
+    try:
+        zhong_qi, yue_jiang, yue_jiang_name = determine_yue_jiang(term_lunar)
+    except ValueError as exc:
+        json_print(error_envelope('daliuren', 'calendar_unavailable', str(exc)))
+        return 1
     zhan_shi = hour_to_zhi(dt.hour)
 
     tian_pan = build_tian_di_pan(yue_jiang, zhan_shi)
@@ -684,7 +596,7 @@ def main(argv: list[str] | None = None) -> int:
         "chu": wang_xiang_state(wx_of(san_chuan["chu_chuan"]), season_wx),
         "zhong": wang_xiang_state(wx_of(san_chuan["zhong_chuan"]), season_wx),
         "mo": wang_xiang_state(wx_of(san_chuan["mo_chuan"]), season_wx),
-    }
+    } if san_chuan["status"] == "supported" else None
 
     classification = classify_course(san_chuan["method"])
     yong_hint = yong_shen_hint(args.question)
@@ -692,8 +604,28 @@ def main(argv: list[str] | None = None) -> int:
     out = {
         "ok": True,
         "tool": "daliuren",
+        "completion_status": "complete" if san_chuan["status"] == "supported" else "partial",
         "version": __version__,
         "time_context": time_context,
+        "calendar_basis": {
+            "year_month_yue_jiang": "real_instant_at_UTC+08:00" if aware else "floating_calendar_assumption",
+            "day_hour": "local_clock",
+            "day_boundary": "midnight",
+            "term_calendar_zone": "UTC+08:00",
+            "comparison_clock": calendar_clock.isoformat(),
+            "previous_zhong_qi": {
+                "name": zhong_qi,
+                "calendar_datetime": term_lunar.getPrevQi().getSolar().toYmdHms(),
+            },
+            "limitation": None if aware else "未给目标时区，交节只能按输入钟面比较；无法保证交中气两侧的唯一月将，需补时区。",
+        },
+        "method_profile": {
+            "id": "liuren-siku-v1", "source": LIUREN_SOURCE,
+            "scope": "卷一入手法；卷七课经补明伏吟杜传和同书异说",
+            "verification": "transcription_checked_not_facsimile",
+            "unsupported": ["涉害", "昴星", "别责", "遥克比用仍不唯一"],
+            "remaining": "十二天将、昼夜贵人与课体解释尚未逐项校准；昼夜仅采用当地 06:00–17:59 钟面代理，不是日出日落；不作已完整核验声明",
+        },
         "input": {
             "date": dt.date().isoformat(),
             "time": dt.strftime("%H:%M"),
@@ -701,8 +633,8 @@ def main(argv: list[str] | None = None) -> int:
             "question": args.question,
         },
         "ganzhi": {
-            "year": lunar.getYearInGanZhi(),
-            "month": lunar.getMonthInGanZhi(),
+            "year": term_lunar.getYearInGanZhiExact(),
+            "month": term_lunar.getMonthInGanZhiExact(),
             "day": lunar.getDayInGanZhi(),
             "hour": lunar.getTimeInGanZhi(),
         },
@@ -720,15 +652,18 @@ def main(argv: list[str] | None = None) -> int:
         "si_ke": si_ke,
         "fa_yong_method": san_chuan["method"],
         "san_chuan": {
+            "status": san_chuan["status"],
+            "reason": san_chuan.get("reason"),
+            "candidates": san_chuan.get("candidates", []),
             # 取法从前算出来却没进输出 —— 而「这三传是哪一门排出来的」正是六壬解读
             # 的核心 (贼克/比用/遥克/八专/伏吟/反吟 各有断法), 读者无从分辨。
             "method": san_chuan.get("method", "?"),
             "chu_chuan": san_chuan["chu_chuan"],
-            "chu_chuan_wuxing": wx_of(san_chuan["chu_chuan"]),
+            "chu_chuan_wuxing": wx_of(san_chuan["chu_chuan"]) if san_chuan["chu_chuan"] else None,
             "zhong_chuan": san_chuan["zhong_chuan"],
-            "zhong_chuan_wuxing": wx_of(san_chuan["zhong_chuan"]),
+            "zhong_chuan_wuxing": wx_of(san_chuan["zhong_chuan"]) if san_chuan["zhong_chuan"] else None,
             "mo_chuan": san_chuan["mo_chuan"],
-            "mo_chuan_wuxing": wx_of(san_chuan["mo_chuan"]),
+            "mo_chuan_wuxing": wx_of(san_chuan["mo_chuan"]) if san_chuan["mo_chuan"] else None,
             "from_course": san_chuan.get("from_course"),
         },
         "shi_er_tian_jiang": shi_er,
@@ -739,11 +674,7 @@ def main(argv: list[str] | None = None) -> int:
             ri_gan, ri_zhi, san_chuan, yue_jiang_name, zhan_shi,
             classification, yong_hint,
         ),
-        "boundary": (
-            "六壬深奥, 九宗门完整 (涉害 / 昴星 / 别责 / 八专) 与 课体六十四格 "
-            "需手工排课配合典籍; 本简版覆盖 贼克 / 比用 / 遥克 / 伏吟 / 反吟 五法, "
-            "其余复杂课式回退到酉宫为用, 仅供参考."
-        ),
+        "boundary": "本版仅按所列主法完成支持分支；未支持的取传返回空值，不能补凑三传。",
     }
     json_print(out)
     return 0

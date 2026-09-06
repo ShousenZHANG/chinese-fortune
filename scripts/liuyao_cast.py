@@ -12,8 +12,10 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import timedelta, timezone
 
 import entropy
+from method_rules import method_reading_packet
 from request_time import add_request_arguments, resolve_time
 from utils import (
     BAGUA,
@@ -293,13 +295,20 @@ def xun_kong(day_stem: str, day_branch: str) -> list[str]:
 # --------------------------------------------------------------------------- #
 
 def dress_chart(lines: list[int], day_stem: str, day_branch: str,
-                month_branch: str) -> dict:
+                month_branch: str, *, liu_qin_palace: str | None = None) -> dict:
+    """Dress one hexagram, retaining the original palace for changed-line 六亲.
+
+    Palace membership and 世应 still describe this hexagram's own 八宫 sequence.
+    A nuclear/standalone chart uses its own palace unless explicitly supplied.
+    """
     upper_bin, lower_bin = lines_to_trigrams(lines)
     hex_num, hex_name = hex_lookup_by_trigrams(upper_bin, lower_bin)
     upper_tri = BINARY_TO_TRIGRAM[upper_bin]
     lower_tri = BINARY_TO_TRIGRAM[lower_bin]
     palace, role = find_palace(hex_num)
     palace_wx = BAGUA[palace[:-1]]["wuxing"] if palace else None
+    relative_palace = liu_qin_palace or palace
+    relative_wx = BAGUA[relative_palace[:-1]]["wuxing"] if relative_palace else None
     shi = shi_yao_position(role) if role else 0
     ying = ying_yao_position(shi) if shi else 0
 
@@ -329,7 +338,7 @@ def dress_chart(lines: list[int], day_stem: str, day_branch: str,
             "stem": nj[i]["stem"],
             "branch": b,
             "wuxing": wx,
-            "liu_qin": liu_qin(palace_wx, wx) if palace_wx else None,
+            "liu_qin": liu_qin(relative_wx, wx) if relative_wx else None,
             "liu_shen": ls[i],
             "state": wang_xiang(wx, season_wx),
             "is_shi": (i + 1 == shi),
@@ -346,6 +355,12 @@ def dress_chart(lines: list[int], day_stem: str, day_branch: str,
         "palace": palace,
         "palace_wuxing": palace_wx,
         "palace_role": role,
+        "liu_qin_basis": {
+            "palace": relative_palace,
+            "wuxing": relative_wx,
+            "scope": "main_hexagram_palace" if liu_qin_palace else "own_hexagram_palace",
+        },
+        "shi_ying_basis": "own_hexagram_palace_sequence",
         "shi_position": shi,
         "ying_position": ying,
         "lines": dressed_lines,
@@ -433,7 +448,14 @@ def main(argv: list[str] | None = None) -> int:
     lunar = solar.getLunar()
     day_stem = lunar.getDayGan()
     day_branch = lunar.getDayZhi()
-    month_branch = lunar.getMonthZhi()
+    # 月建 changes at the actual solar-term instant; the dependency's
+    # ephemeris uses UTC+8, while 日建 follows the selected local date.
+    aware = dt.tzinfo is not None and dt.utcoffset() is not None
+    calendar_clock = dt.astimezone(timezone(timedelta(hours=8))) if aware else dt
+    term_lunar = Solar.fromYmdHms(calendar_clock.year, calendar_clock.month, calendar_clock.day,
+                                  calendar_clock.hour, calendar_clock.minute,
+                                  calendar_clock.second).getLunar()
+    month_branch = term_lunar.getMonthZhiExact()
 
     rng = entropy.get_rng(args.seed, args.entropy)
     lines = cast_coins(rng)
@@ -444,7 +466,10 @@ def main(argv: list[str] | None = None) -> int:
     changed_chart: dict | None = None
     if actives:
         new_lines = changed_lines(lines)
-        changed_chart = dress_chart(new_lines, day_stem, day_branch, month_branch)
+        # 增刪卜易/7: 變出之爻安六親者仍照正卦而推.
+        # Its own 八宫 membership is unchanged; only the 六亲 reference differs.
+        changed_chart = dress_chart(new_lines, day_stem, day_branch, month_branch,
+                                    liu_qin_palace=main_chart["palace"])
 
     nuclear_chart = dress_chart(nuclear_lines(lines), day_stem, day_branch, month_branch)
 
@@ -467,13 +492,19 @@ def main(argv: list[str] | None = None) -> int:
         "cast_time": {
             "solar": f"{y:04d}-{m:02d}-{d:02d} {h:02d}:{mi:02d}",
             "lunar_date": lunar.getDayInChinese(),
-            "year_ganzhi": lunar.getYearInGanZhi(),
-            "month_ganzhi": lunar.getMonthInGanZhi(),
+            "year_ganzhi": term_lunar.getYearInGanZhiExact(),
+            "month_ganzhi": term_lunar.getMonthInGanZhiExact(),
             "day_ganzhi": lunar.getDayInGanZhi(),
             "hour_ganzhi": lunar.getTimeInGanZhi(),
             "day_stem": day_stem,
             "day_branch": day_branch,
             "month_branch": month_branch,
+            "calendar_basis": {
+                "year_month": "real_instant_at_UTC+08:00" if aware else "floating_calendar_assumption",
+                "day_hour": "local_clock",
+                "day_boundary": "midnight",
+                "limitation": None if aware else "未给目标时区，交节只能按输入钟面比较；边界判断需补时区。",
+            },
         },
         "raw_lines": lines,
         "main_chart": main_chart,
@@ -484,6 +515,7 @@ def main(argv: list[str] | None = None) -> int:
         "main_image": main_text.get("image", "(暂无)"),
         "active_line_text": active_line_texts,
     }
+    out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     json_print(ok_envelope("liuyao", out))
     return 0
 

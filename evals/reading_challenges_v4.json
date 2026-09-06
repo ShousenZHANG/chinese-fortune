@@ -1,0 +1,188 @@
+{
+  "schema_version": "2.0",
+  "suite_id": "v4-challenge-8",
+  "status": "designed_not_run",
+  "purpose": "冻结版本挑战集；保留旧题的有效反例，并检查本轮真实缺陷。只含题面与预先确定的验收标准，不含回答、评审标签或通过记录。",
+  "authorship": {
+    "author_role": "in-session separate agent /root/plan_content",
+    "prior_participation": "作者只参与本轮初始只读内容审计与古籍方法核查，未编写规则、排盘、检索或评测引擎；本次只编写该挑战集。",
+    "selection": "保留旧reading_cases.json的R12、R11、R17、R20四类挑战并补足上下文；另四题按已发现的缺陷主题预先设计，不运行新规则引擎选题，不根据任何版本的回答改题、删题或更换爻值。",
+    "not_external_blind_design": true
+  },
+  "population": "均为虚构的在世成人或成人提出的古籍研究问题；不使用用户真实出生资料、经历或身份。概念题不虚构未提供的完整命盘。",
+  "counts": {
+    "adapted_legacy": 4,
+    "new_regressions": 4,
+    "cases": 8,
+    "versions": 2,
+    "repetitions_per_version": 2,
+    "planned_conversations": 32,
+    "capability_conversations_counted_separately": 96
+  },
+  "execution_protocol": {
+    "versions": "冻结新旧commit、语料、SKILL/契约、依赖、案例文件摘要；使用同模型与同设置，每版本至少两次独立新会话。",
+    "conversation_isolation": "每题从新会话开始；有turns的题按顺序真实发送，保留前轮回答后再发送下一轮，不把后续更正提前塞进第一轮。其余题只发送prompt。",
+    "time": "所有题与每一轮的当前所在地均为Australia/Sydney，可复现请求UTC固定为2026-09-06T03:15:00Z。每轮先通过取时工具解析并保留该注入瞬间，同轮相关工具共用。注入值不能声称来自实时采样；实时取时另做独立检查。",
+    "target_time": "题目中的出生或历史目标时间不替代请求时刻；地点不同不代表改变当前所在地。",
+    "input": "prompt和input表达同一份资料；多轮input只列首轮资料，后续更正以有序turns为准。固定爻值照录，不随机重抽。",
+    "no_bulk_input": "按正常宿主流程读取SKILL与必要资料，以工具取相关条款，不直接把整部古籍或大JSON塞进上下文。",
+    "preserve_failures": "保存首次回答、每轮文本、工具轨迹、退出码与失败。修复后另建实验，不覆盖原答或为提高通过率删题。",
+    "version_blinding": "评审隐藏新旧版本并随机排列回答；披露评审者参与实现的情况，不称内部代理评审为外部盲测。",
+    "separate_reporting": "挑战集32会话独立报告，不能并入能力集96会话计算完整任务完成率。多轮算一场会话，各轮错误仍逐项记录。"
+  },
+  "review_protocol": {
+    "criteria": ["chart_fidelity", "source_fidelity", "conditions", "scope", "completion", "readability", "relevance", "correction_honesty"],
+    "dispositions": ["answered", "partially_answered", "justified_clarification", "incorrect_refusal", "failed"],
+    "semantic_review": "评审核完整回答及有序工具轨迹，不以某个实现字段、固定措辞、关键词或格名作为正确答案。事实题用独立历法/原典复核；概念题必须给有内容的条件解释，不能仅拒绝题面错误要求。",
+    "completion": "纠正错误前提与完成可回答部分同时评价。缺规则如实记部分完成；无依据的肯定答复、空泛拒答和有理由的澄清分开统计。",
+    "readability": "评审用自己的话复述结论、依据及关键限制；不能只以短、少术语或免责声明齐全判通过。",
+    "binding": "评审绑定回答UTF-8字节及有序工具轨迹的SHA256；正文或轨迹变更，原标签失效。结构校验不代替内容评审。",
+    "cost": "记录实际usage或tokenizer标识、工具调用次数、输入输出字节及耗时；任务完成程度不同不得直接比较成本。",
+    "failure_policy": "原文、盘面、时间错误或条件遗漏逐例报告；一个真实错误不能被其余题的通过平均掉。不得把挑战通过率称为现实预测准确率。"
+  },
+  "cases": [
+    {
+      "id": "C01",
+      "group": "adapted_legacy",
+      "legacy_source": {"file": "evals/reading_cases.json", "case_id": "R12-false_quote", "adaptation": "补足成人研究背景与统一请求时刻，要求给出有用的核查结果，不能只拒绝。"},
+      "prompt": "我是32岁的在世成人，当前在悉尼Australia/Sydney。本轮可复现请求时刻2026-09-06T03:15:00Z。我在做古籍读书笔记，网上有人把“今年三月入职大公司”写成《滴天髓》原文。请帮我核对，并给出处；如果不是原文，就清楚说明能查到什么、不能查到什么，不要为了凑引文改写成近似古文。顺带用白话解释原文为什么不能直接等同现代入职日期。",
+      "input": {"adult_age": 32, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "quoted_claim": "今年三月入职大公司", "attributed_book": "滴天髓"},
+      "coverage_targets": ["伪引文", "检索未命中与不存在的区别", "古文和现代事件的范围"],
+      "acceptance": {
+        "must_complete": ["实际查询对应古籍并如实说明核查范围，不编造段落、页码、作者或书句", "不因检索一次未命中就声称所有版本绝不含某字；能判定的现代措辞与现有转录结果分别解释", "给出简短且有内容的白话说明，不用无关的吉凶段落替代回答"],
+        "limitation_handling": "无法找到可靠原文就明确未找到，不以改写、拼接或注文冒充引文；仍完成出处辨析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C02",
+      "group": "adapted_legacy",
+      "legacy_source": {"file": "evals/reading_cases.json", "case_id": "R11-shangguan", "adaptation": "加入见印即救应的第二个条件陷阱；是规则研究，不假设已有本人命盘。"},
+      "prompt": "我是35岁的在世成人，现在悉尼Australia/Sydney，请求时刻2026-09-06T03:15:00Z。我只想核实一条古法，不是在提供自己的命盘：伤官和正官只要同时出现，就一定工作不顺吗？有人又说，只要四柱中还能找到一个印，这个问题就一定化解。请按《子平真诠》主线查相关条款，必要时分列《滴天髓》正文和注文，讲清这两句各漏了哪些条件。不要给我编一张盘，也不要只回答“不能确定”。",
+      "input": {"adult_age": 35, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "question_scope": "classical_rule_comparison_without_natal_chart"},
+      "coverage_targets": ["伤官见官例外", "见印不等于救应成立", "正文与注文", "白话条件说明"],
+      "acceptance": {
+        "must_complete": ["核对相关完整条款及其文本层次，以条件说明代替单个格名吉凶", "区分组合同时出现、印出现、印能起所讨论作用；说明位置、配合或其他必要条件，不能全部默认满足", "解释古籍范围与现代工作成败之间不能直接画等号，同时给出可理解的传统分析路径"],
+        "limitation_handling": "这是自足的概念问题，不应要求姓名、生辰或通过虚构命盘回答；具体不同解释须标明所属来源。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C03",
+      "group": "adapted_legacy",
+      "legacy_source": {"file": "evals/reading_cases.json", "case_id": "R17-annual_month", "adaptation": "明确目标年度与地点，并加入公历元旦即换干支年的错误前提。"},
+      "prompt": "我是30岁的在世成人，现居悉尼Australia/Sydney，请求时刻2026-09-06T03:15:00Z。我回看悉尼当地2026-01-15中午12:00的资料。朋友说公历进入2026年就已经是丙午年，因此只看这一条流年就能把2026年每个月的确定吉凶列出来。请先核这一天在八字立春换年口径下的年、月范围，再解释月度分析实际还需要什么依据；请完成能核实的部分。",
+      "input": {"adult_age": 30, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "target_time": {"date": "2026-01-15", "time": "12:00", "timezone": "Australia/Sydney"}, "question_scope": "calendar_and_time_precision_without_natal_chart"},
+      "coverage_targets": ["公历年度与立春年柱", "目标时间优先", "年度不能代替逐月条件"],
+      "acceptance": {
+        "must_complete": ["实际核目标时刻的历法范围；不能拿当前九月、出生时区或公历年号替代", "纠正元旦即换年柱的前提，并解释月柱按节划分与公历月不同", "说明原局、大运、具体流月及规则条件等缺项对个人分析的影响，不由一个流年标签编出十二个月的个人事件"],
+        "limitation_handling": "未提供命盘不影响目标年、月边界核查；不能只追问出生资料而跳过已可完成的历法问题。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C04",
+      "group": "adapted_legacy",
+      "legacy_source": {"file": "evals/reading_cases.json", "case_id": "R20-birth_correction", "adaptation": "以真实连续两轮先给完整假想成人资料，再更正出生时刻；后续信息不提前曝光。"},
+      "prompt": "我是虚构评测中的在世男性，公历1990-05-10，北京出生，出生时区Asia/Shanghai，记录是当地钟表时13:00，采用钟表时、不做真太阳时修正，sect=2。现在在悉尼Australia/Sydney，本轮请求时刻2026-09-06T03:15:00Z。请先核四柱，按《子平真诠》简短说明月令和时柱参与的结构；我关心工作中表达与职责如何配合，不要断具体往事。",
+      "input": {"birth": {"calendar": "solar", "date": "1990-05-10", "time": "13:00", "gender": "male", "city": "北京", "timezone": "Asia/Shanghai", "time_basis": "clock", "day_rollover_sect": 2, "time_uncertainty_minutes": 0}, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}},
+      "turns": [
+        {"request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "prompt": "我是虚构评测中的在世男性，公历1990-05-10，北京出生，出生时区Asia/Shanghai，记录是当地钟表时13:00，采用钟表时、不做真太阳时修正，sect=2。现在在悉尼Australia/Sydney，本轮请求时刻2026-09-06T03:15:00Z。请先核四柱，按《子平真诠》简短说明月令和时柱参与的结构；我关心工作中表达与职责如何配合，不要断具体往事。"},
+        {"request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "prompt": "我核对记录后更正：出生是同一天的23:00，不是13:00；北京当地钟表时、sect=2和其他资料都不变。请重新计算，明确先前哪些盘面或解释需要撤回，哪些保持不变。不要把这次改出的内容说成刚才已经算中了；先完成更正后的可支持分析。"}
+      ],
+      "coverage_targets": ["真实多轮输入更正", "历史夏令时", "子时边界", "保留与撤回旧判断"],
+      "acceptance": {
+        "must_complete": ["第一轮按当时给定资料完成简短分析，不能预知第二轮更正", "第二轮实际重新计算，保留既定的地点、钟表时和日界口径，核1990北京历史偏移", "按结果明确哪些事实改变、哪些判断应撤回；不宣称所有柱必变，也不坚持旧时柱", "保留首答并诚实说明更正来自新输入；补完新盘可支持的分析，不只道歉或只列JSON"],
+        "limitation_handling": "资料已完整，不因更正反复要求同样输入；有真实方法边界则说明具体影响，不把不确定性写成事后命中。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C05",
+      "group": "new_regressions",
+      "design_basis": "本次发现六爻变卦六亲若改用变卦独立所属宫会改变与本卦的关系；固定爻值先于模型运行，不按新引擎输出挑选。",
+      "prompt": "我是31岁的在世成人，现在悉尼Australia/Sydney，请求时刻2026-09-06T03:15:00Z。我记录了一次六爻硬币结果，从初爻到上爻依次为7、9、7、7、7、7。请按这个固定结果装卦，不要随机重抽；起卦时间就用本轮悉尼当地时刻。我问的是已提交的工作交流方案能否走完书面确认流程，请先核本卦、变卦、动爻与六亲，再解释动爻变化时六亲依谁来定。有人说只要变卦归另一个宫，就必须按那个宫的五行把变爻六亲全部重新算；请核清这句话后，再说卦内能支持的文书关系。",
+      "input": {"adult_age": 31, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "cast_method": "recorded_three_coin_values", "lines_bottom_to_top": [7, 9, 7, 7, 7, 7], "question_scope": "written_confirmation_of_work_plan"},
+      "coverage_targets": ["固定爻序与动变", "变爻六亲的基准", "本变卦所属宫与六亲的区别"],
+      "acceptance": {
+        "must_complete": ["保留给定自下而上的六爻与动爻，不重新起卦，也不把9当静爻", "本卦、变卦及纳甲关系可由独立方法复核；说明变卦独立所属宫与本次变爻六亲的定法是不同问题", "采用明确的六爻主法核六亲基准，不把变卦自身宫五行自动替换本卦关系基准", "以文书主题解释能确认的关系和所需条件，不能只修一个术语后保证流程成败或日期"],
+        "limitation_handling": "若当前工具确实不能处理记录爻值，须如实说明并记录能力缺口，不偷偷换随机卦冒充同一结果；此情况计部分完成而不是完整通过。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C06",
+      "group": "new_regressions",
+      "design_basis": "调候条款需按日干、月份及分支条件读取；甲木未月与辛金子月作为预定对比，不预设新引擎返回的用神字段或固定排名。",
+      "prompt": "我是34岁的在世成人，在悉尼Australia/Sydney，请求时刻2026-09-06T03:15:00Z。我在读《穷通宝鉴》，这里只比较条款，不代表已提供本人完整命盘。先看甲木生未月：有人把未月也算冬月，直接说先用丙火暖局即可。请查未月对应原文，说明季节、主要条件及例外；再解释为什么这些内容只能作为《子平真诠》月令主线的补充，不能替代主线。",
+      "input": {"adult_age": 34, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "question_scope": "classical_climate_conditions_without_full_natal_chart", "first_context": {"day_stem": "甲", "month_branch": "未"}},
+      "turns": [
+        {"request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "prompt": "我是34岁的在世成人，在悉尼Australia/Sydney，请求时刻2026-09-06T03:15:00Z。我在读《穷通宝鉴》，这里只比较条款，不代表已提供本人完整命盘。先看甲木生未月：有人把未月也算冬月，直接说先用丙火暖局即可。请查未月对应原文，说明季节、主要条件及例外；再解释为什么这些内容只能作为《子平真诠》月令主线的补充，不能替代主线。"},
+        {"request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "prompt": "现在另看辛金生子月，不沿用刚才甲木未月的结论。我只知道辛日、子月，并听说盘里能找到壬。朋友因此断言调候已经完全满足。请读辛金子月的完整相关段落，分清原文的基本用法、条件分支与替代情形；只凭这三项信息，哪些能说、哪些不能说？请自然解释，不要给我一个绝对正确的单字用神。"}
+      ],
+      "coverage_targets": ["甲未与辛子调候条款", "季节错误前提", "只见某干不等于条件充分", "跨问题不沿用旧条件"],
+      "acceptance": {
+        "must_complete": ["第一轮定位甲木未月条款，纠正季节错误；不把冬月概括或另一月份的旧表当此条原文", "第二轮重新定位辛金子月完整条款与相邻条件，不沿用甲木未月结论", "区分原文确述、整理表与项目推断；只知辛日子月及有壬，不能直接确认全局调候成立", "说明需进一步核的具体条件与原因，同时讲清已能确定的条款内容，不只说资料不足"],
+        "limitation_handling": "概念对照题无需编造完整出生盘；不同版本或注家有分歧就分列，不用多数表决或一个候选字取代条件分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C07",
+      "group": "new_regressions",
+      "design_basis": "神煞表逐条溯源与版本层次问题；明确核方法，不把有来源标签当作所有起法统一、全书影像已校或个人事件已验证。",
+      "prompt": "我是36岁的在世成人，现居悉尼Australia/Sydney，请求时刻2026-09-06T03:15:00Z。我在核天乙贵人的口诀，两个整理材料对庚日的说法不同：一份把庚与甲戊列在牛羊，另一份把庚辛列在虎马。请查所收古籍中能定位的相关条款，说明这是异法、异文还是材料有误；如果暂时不能裁定，就指出具体缺哪项证据。你们已收录《三命通会》，是不是就表示这两份口诀都已核过原刻，而且庚日遇相应地支的人一定有人相助？请把这几个问题分别讲清楚。这里只研究起法，不拿它预测我的经历。",
+      "input": {"adult_age": 36, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "question_scope": "source_and_method_variants_without_personal_prediction", "lookup_topic": "庚日天乙贵人", "reported_variants": ["庚与甲戊列在牛羊", "庚辛列在虎马"]},
+      "coverage_targets": ["神煞起法异法", "出处与影像核验分层", "触发规则不等于现实事件"],
+      "acceptance": {
+        "must_complete": ["实际查相关条款，确认哪些口诀能在所选版本中定位；不把用户转述的两句都默认当作古籍原文", "区分起法差异、正文与注文、项目选定方法；不能只因两者不同就任意删一条或合成第三条", "逐项说明全文收录、特定引文核对、对应页影像校勘和起法解释的状态，不把存在一个来源链接称为全书精校", "解释条件触发只说明该方法如何查表，不能推出庚日的人一定得到帮助"],
+        "limitation_handling": "允许对未裁定的版本问题保留具体分歧，但必须给出已找到的证据和差异；不能只重复一个泛泛的古籍未核声明。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    },
+    {
+      "id": "C08",
+      "group": "new_regressions",
+      "design_basis": "本轮发现时区转换与真实交节坐标混淆；预定跨2026年立春的两个历史起卦时刻，以香港天文台分钟资料独立核边界，不读取新引擎选择时刻。",
+      "independent_reference": {"title": "香港天文台2026年二月月历", "url": "https://www.hko.gov.hk/tc/gts/astron2026/files/2026cal02.pdf", "scope": "用于评审实交节的分钟级前后关系，不宣称验证到秒；评审必须实际读取该来源。"},
+      "prompt": "我是30岁的在世成人，当前仍在悉尼Australia/Sydney，请求时刻固定2026-09-06T03:15:00Z。我在检查两个历史六爻起卦记录的月建，暂时不问事件吉凶，也不需要重新随机起卦。记录A是纽约America/New_York当地2026-02-03 15:01，记录B是同地15:03，均为当地钟表时。请核真实立春交节在这两个瞬间之前、之间还是之后，并说明各记录在所采用六爻历法口径下应属哪个月建。不要按纽约日历还在2月3日就认定一定未交节。",
+      "input": {"adult_age": 30, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "question_scope": "historical_liuyao_month_boundary_without_recasting", "historical_targets": [{"label": "A", "date": "2026-02-03", "time": "15:01", "timezone": "America/New_York"}, {"label": "B", "date": "2026-02-03", "time": "15:03", "timezone": "America/New_York"}]},
+      "turns": [
+        {"request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "prompt": "我是30岁的在世成人，当前仍在悉尼Australia/Sydney，请求时刻固定2026-09-06T03:15:00Z。我在检查两个历史六爻起卦记录的月建，暂时不问事件吉凶，也不需要重新随机起卦。记录A是纽约America/New_York当地2026-02-03 15:01，记录B是同地15:03，均为当地钟表时。请核真实立春交节在这两个瞬间之前、之间还是之后，并说明各记录在所采用六爻历法口径下应属哪个月建。不要按纽约日历还在2月3日就认定一定未交节。"},
+        {"request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "prompt": "把这同两个瞬间改写为悉尼Australia/Sydney当地记录：A是2026-02-04 07:01，B是07:03。我的当前所在地和本轮请求时刻没有改变。请实际核对两组时间是否各指同一瞬间，再核月建是否应一致。若某个工具用纽约和悉尼钟面得出不同月建，请定位差异并保留记录，不能直接把差异解释成门派不同。最后用两句话说明当地日期与实际交节为何要分开。"}
+      ],
+      "coverage_targets": ["同一瞬间的纽约与悉尼表达", "立春实交节", "月建边界", "当前与历史目标时间分离"],
+      "acceptance": {
+        "must_complete": ["第一轮按历史纽约偏移把两个瞬间与真实交节比较，得到可独立核对的月建前后关系", "第二轮核实对应悉尼时间所表示的UTC，不把当地日期不同当成新的瞬间", "同一瞬间在同一月建方法下应一致；若工具输出矛盾，不能未经核查直接接受或用门派差异掩盖坐标错误", "当前请求时刻始终为九月的注入值，不能被历史目标时刻覆盖；只核所问历法，不无故随机起卦"],
+        "limitation_handling": "香港天文台分钟资料只能支持选定前后点，不支持秒级精度声明。若工具不能保留历史地点，须如实记录范围并用独立换算核对，不编造已实际调用的结果。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": ["answered"]
+    }
+  ],
+  "criteria": ["chart_fidelity", "source_fidelity", "conditions", "scope", "completion", "readability", "relevance", "correction_honesty"],
+  "dispositions": ["answered", "partially_answered", "justified_clarification", "incorrect_refusal", "failed"]
+}

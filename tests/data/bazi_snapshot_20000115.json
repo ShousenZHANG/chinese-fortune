@@ -45,6 +45,7 @@
     "minute": 21
   },
   "lunar_date": {
+    "basis": "所选日时钟面的农历日期；农历干支日期字段不等同于实交节四柱",
     "year": 1999,
     "month": 12,
     "day": 9,
@@ -60,10 +61,28 @@
   "hour_known": true,
   "sect": {
     "value": 2,
-    "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
+    "label": "子正换日 (日柱取当日；晚子时的时干依库采用次日干)"
   },
   "birthplace": null,
   "timezone": null,
+  "calendar_context": {
+    "status": "known_instant",
+    "term_calendar_zone": "UTC+08:00",
+    "year_month_basis": "真实出生瞬间比较固定UTC+08:00交节表；与日时柱钟面分开",
+    "day_hour_basis": "true-solar",
+    "timezone_source": "numeric_offset_parameter",
+    "precision": "出生输入精确到分钟；交节表采用固定依赖版本的秒值，非观测误差保证",
+    "birth_instant_utc": "2000-01-15T02:30:00+00:00",
+    "birth_calendar_datetime": "2000-01-15T10:30:00+08:00",
+    "previous_jie": {
+      "name": "小寒",
+      "calendar_datetime": "2000-01-06T09:00:42+08:00"
+    },
+    "next_jie": {
+      "name": "立春",
+      "calendar_datetime": "2000-02-04T20:40:24+08:00"
+    }
+  },
   "notes": [],
   "four_pillars": {
     "year": {
@@ -242,7 +261,8 @@
       }
     ],
     "jie": "小寒",
-    "days_since_jie": 9
+    "days_since_jie": 9,
+    "calendar_zone": "UTC+08:00"
   },
   "interactions": {
     "tiangan_he": [
@@ -301,6 +321,70 @@
       "source_pillar": "year",
       "hit": "卯",
       "trigger": "日干",
+      "rule_name": "天乙贵人",
+      "source_review": {
+        "status": "method_difference",
+        "selected_method": "day_stem",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c003:p0008",
+            "quote": "如此則甲戊庚牛羊六辛逢馬虎明矣",
+            "sha256": "215298fccc735104dce9939a7e0ccdab63c9f8fd2dce36bd758bdc86c9d8f3f8",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "sanming:c003:p0008",
+            "quote": "故尋寄火貴於酉亥寄水貴於卯巳",
+            "sha256": "215298fccc735104dce9939a7e0ccdab63c9f8fd2dce36bd758bdc86c9d8f3f8",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "sanming:c003:p0009",
+            "quote": "假如丑未生人月日時得甲戊庚是遇正天乙",
+            "sha256": "ec83eb5099604aec7736f5f4ba9c01c930481d84bbe20c5f3013dd3c4b7ec3b8",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "yuanhai:c024:p0003",
+            "quote": "甲戊兼牛羊，乙己鼠猴乡，丙丁猪鸡位，壬癸兔蛇藏，",
+            "sha256": "fe653ca7455da5ebf36225832db5d91a6db11fbde89b8ee2872a1295a13b0bd7",
+            "edition": "七卷网络转录选本；具体印本未确认",
+            "source_url": "https://luckclub.cn/bazi/001/024/",
+            "revision": "sha256:30993f7e5d0f8fd7b80459d40cc48438c8908d6243fb1b97022154e71e96b3db",
+            "layer": "historical_work_transcription"
+          },
+          {
+            "passage_id": "yuanhai:c024:p0004",
+            "quote": "庚辛逢马虎",
+            "sha256": "affabb4e59bc82652181acc8a963d021571b11fa6a9d0cab82daf5ce99eccdcf",
+            "edition": "七卷网络转录选本；具体印本未确认",
+            "source_url": "https://luckclub.cn/bazi/001/024/",
+            "revision": "sha256:30993f7e5d0f8fd7b80459d40cc48438c8908d6243fb1b97022154e71e96b3db",
+            "layer": "historical_work_transcription"
+          }
+        ],
+        "differences": [
+          "当前庚查丑未与所选《三命》甲戊庚牛羊歌一致；所选《渊海》却把庚辛并列取寅午，不能合并两表",
+          "《三命》另论阴阳、冬夏与昼夜取贵，又有由年支反查天干和年时互换；当前只按日干查四支",
+          "冻结卷三多处以己字出现在应为地支的句中；本表取巳，有同段卯巳明文可对照，未核影像不得断定原刻讹误"
+        ],
+        "unverified": [
+          "十干逐字影像校勘",
+          "日干独查四支的完整来源",
+          "阴阳或昼夜选择及命中后其他条件"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -309,6 +393,70 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "日干",
+      "rule_name": "天乙贵人",
+      "source_review": {
+        "status": "method_difference",
+        "selected_method": "day_stem",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c003:p0008",
+            "quote": "如此則甲戊庚牛羊六辛逢馬虎明矣",
+            "sha256": "215298fccc735104dce9939a7e0ccdab63c9f8fd2dce36bd758bdc86c9d8f3f8",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "sanming:c003:p0008",
+            "quote": "故尋寄火貴於酉亥寄水貴於卯巳",
+            "sha256": "215298fccc735104dce9939a7e0ccdab63c9f8fd2dce36bd758bdc86c9d8f3f8",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "sanming:c003:p0009",
+            "quote": "假如丑未生人月日時得甲戊庚是遇正天乙",
+            "sha256": "ec83eb5099604aec7736f5f4ba9c01c930481d84bbe20c5f3013dd3c4b7ec3b8",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "yuanhai:c024:p0003",
+            "quote": "甲戊兼牛羊，乙己鼠猴乡，丙丁猪鸡位，壬癸兔蛇藏，",
+            "sha256": "fe653ca7455da5ebf36225832db5d91a6db11fbde89b8ee2872a1295a13b0bd7",
+            "edition": "七卷网络转录选本；具体印本未确认",
+            "source_url": "https://luckclub.cn/bazi/001/024/",
+            "revision": "sha256:30993f7e5d0f8fd7b80459d40cc48438c8908d6243fb1b97022154e71e96b3db",
+            "layer": "historical_work_transcription"
+          },
+          {
+            "passage_id": "yuanhai:c024:p0004",
+            "quote": "庚辛逢马虎",
+            "sha256": "affabb4e59bc82652181acc8a963d021571b11fa6a9d0cab82daf5ce99eccdcf",
+            "edition": "七卷网络转录选本；具体印本未确认",
+            "source_url": "https://luckclub.cn/bazi/001/024/",
+            "revision": "sha256:30993f7e5d0f8fd7b80459d40cc48438c8908d6243fb1b97022154e71e96b3db",
+            "layer": "historical_work_transcription"
+          }
+        ],
+        "differences": [
+          "当前庚查丑未与所选《三命》甲戊庚牛羊歌一致；所选《渊海》却把庚辛并列取寅午，不能合并两表",
+          "《三命》另论阴阳、冬夏与昼夜取贵，又有由年支反查天干和年时互换；当前只按日干查四支",
+          "冻结卷三多处以己字出现在应为地支的句中；本表取巳，有同段卯巳明文可对照，未核影像不得断定原刻讹误"
+        ],
+        "unverified": [
+          "十干逐字影像校勘",
+          "日干独查四支的完整来源",
+          "阴阳或昼夜选择及命中后其他条件"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -317,6 +465,50 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "日干",
+      "rule_name": "太极贵人",
+      "source_review": {
+        "status": "located_partial",
+        "selected_method": "day_stem",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c003:p0012",
+            "quote": "甲乙木先造乎子坎水助而生後終乎午離火焚而死",
+            "sha256": "0445a9b2c50da5a10fd4f39093692599e69c7e47abea1ff01bcdd26c76edef2c",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          },
+          {
+            "passage_id": "sanming:c003:p0012",
+            "quote": "丙丁火先喜出乎震卯也後喜藏乎兌酉也庚辛金得寅乃金生乎艮見亥乃金廟乎乾壬癸水先得申而生後得巳而納",
+            "sha256": "0445a9b2c50da5a10fd4f39093692599e69c7e47abea1ff01bcdd26c76edef2c",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          },
+          {
+            "passage_id": "sanming:c003:p0012",
+            "quote": "戊己土也喜生乎申得辰戌丑未為正庫",
+            "sha256": "0445a9b2c50da5a10fd4f39093692599e69c7e47abea1ff01bcdd26c76edef2c",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          }
+        ],
+        "differences": [
+          "木火金水的目标支与当前表对应；土干原文还说喜生乎申，当前仅收辰戌丑未，不能声称完整照录原文"
+        ],
+        "unverified": [
+          "以日干而非其他干起查的限定",
+          "土干申位及四库齐全等层次条件",
+          "逐字影像校勘"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -325,6 +517,50 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "日干",
+      "rule_name": "太极贵人",
+      "source_review": {
+        "status": "located_partial",
+        "selected_method": "day_stem",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c003:p0012",
+            "quote": "甲乙木先造乎子坎水助而生後終乎午離火焚而死",
+            "sha256": "0445a9b2c50da5a10fd4f39093692599e69c7e47abea1ff01bcdd26c76edef2c",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          },
+          {
+            "passage_id": "sanming:c003:p0012",
+            "quote": "丙丁火先喜出乎震卯也後喜藏乎兌酉也庚辛金得寅乃金生乎艮見亥乃金廟乎乾壬癸水先得申而生後得巳而納",
+            "sha256": "0445a9b2c50da5a10fd4f39093692599e69c7e47abea1ff01bcdd26c76edef2c",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          },
+          {
+            "passage_id": "sanming:c003:p0012",
+            "quote": "戊己土也喜生乎申得辰戌丑未為正庫",
+            "sha256": "0445a9b2c50da5a10fd4f39093692599e69c7e47abea1ff01bcdd26c76edef2c",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          }
+        ],
+        "differences": [
+          "木火金水的目标支与当前表对应；土干原文还说喜生乎申，当前仅收辰戌丑未，不能声称完整照录原文"
+        ],
+        "unverified": [
+          "以日干而非其他干起查的限定",
+          "土干申位及四库齐全等层次条件",
+          "逐字影像校勘"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -333,6 +569,51 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "日干",
+      "rule_name": "学堂",
+      "source_review": {
+        "status": "located_partial",
+        "selected_method": "day_stem",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c003:p0013",
+            "quote": "長生乃學堂之正位如金命見辛巳金長生在巳辛巳納音又屬金是也",
+            "sha256": "6c1dec0b405b6b6cfb4a9eabaeafaef26f8a959789cfa2c7f04f0161155283ec",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          },
+          {
+            "passage_id": "sanming:c003:p0013",
+            "quote": "子平云學堂者天地陰陽清秀之氣五行長生之神乃甲見亥乙見午等例或月時一位見者即是不必兼全",
+            "sha256": "6c1dec0b405b6b6cfb4a9eabaeafaef26f8a959789cfa2c7f04f0161155283ec",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          },
+          {
+            "passage_id": "sanming:c003:p0013",
+            "quote": "如丁日酉時或酉月之類",
+            "sha256": "6c1dec0b405b6b6cfb4a9eabaeafaef26f8a959789cfa2c7f04f0161155283ec",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text_with_commentary"
+          }
+        ],
+        "differences": [
+          "本表选择日干长生支这一兼容分支；原文先有纳音真学堂，后有子平甲亥乙午等，并非同一张表",
+          "当前扫描年、月、日、时四支；已定位例子特别提月、时，不能把四支全扫视为已核完成"
+        ],
+        "unverified": [
+          "十干完整表与戊己寄位的逐项依据",
+          "月时之外扫描范围",
+          "纳音真学堂及完整制化条件"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -341,6 +622,18 @@
       "source_pillar": "month",
       "hit": "丑",
       "trigger": "日干",
+      "rule_name": "金舆",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "day_stem",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -349,6 +642,42 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "年支三合",
+      "rule_name": "驿马",
+      "source_review": {
+        "status": "located_partial",
+        "selected_method": "year_branch_sanhe",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c003:p0004",
+            "quote": "火局在申水局在寅金局在亥木局在己",
+            "sha256": "b6dc164f9848438adb21b501d9f9df402fbff2d1c7a54449433a12065ee54b0b",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=657369",
+            "revision": "657369",
+            "layer": "base_text"
+          },
+          {
+            "passage_id": "sanming:c006:p0109",
+            "quote": "亥卯未馬在巳",
+            "sha256": "978216e4a3255c323f334c94877d5511c7a203b733712ab0db2c07b0404e6d2b",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B706&oldid=657375",
+            "revision": "657375",
+            "layer": "base_text"
+          }
+        ],
+        "differences": [
+          "卷三冻结文字木局在己，卷六明确亥卯未马在巳；当前表用地支巳，记录异文，不擅改原文",
+          "原文另有禄马交驰及日时互换；当前只按年支三合局查支，不是该复合格局"
+        ],
+        "unverified": [
+          "年支独查四支的完整限定",
+          "逐字影像校勘",
+          "禄马交驰等复合条件"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -357,6 +686,32 @@
       "source_pillar": "year",
       "hit": "卯",
       "trigger": "年支三合",
+      "rule_name": "将星",
+      "source_review": {
+        "status": "located_partial",
+        "selected_method": "year_branch_sanhe",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [
+          {
+            "passage_id": "sanming:c002:p0039",
+            "quote": "故以三合中位謂之将星",
+            "sha256": "941ac9ed1a0e0f9afd4fdf77218a03f2f78db900d130f8bb8bed4d2f33d86ab3",
+            "edition": "文渊阁四库全书本，维基文库转录",
+            "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B702&oldid=761691",
+            "revision": "761691",
+            "layer": "base_text_with_commentary"
+          }
+        ],
+        "differences": [
+          "四组取中位与当前表对应；不等于原文后续作用条件已经满足"
+        ],
+        "unverified": [
+          "年支独查四支的完整限定",
+          "逐字影像校勘",
+          "其余作用条件"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -365,6 +720,18 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "年支三合",
+      "rule_name": "劫煞",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "year_branch_sanhe",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -373,6 +740,18 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "年支季节",
+      "rule_name": "孤辰",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "year_branch_season",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -381,6 +760,18 @@
       "source_pillar": "month",
       "hit": "丑",
       "trigger": "年支季节",
+      "rule_name": "寡宿",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "year_branch_season",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -389,6 +780,18 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "年支",
+      "rule_name": "小耗",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "year_branch_single",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -397,6 +800,18 @@
       "source_pillar": "hour",
       "hit": "乙",
       "trigger": "月支",
+      "rule_name": "天德合",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "month_branch",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -405,6 +820,18 @@
       "source_pillar": "hour",
       "hit": "乙",
       "trigger": "月支三合",
+      "rule_name": "月德合",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "month_branch_sanhe",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     },
     {
@@ -413,6 +840,18 @@
       "source_pillar": "day",
       "hit": "壬申",
       "trigger": "日柱",
+      "rule_name": "十恶大败",
+      "source_review": {
+        "status": "pending",
+        "selected_method": "day_pillar",
+        "scope": "只核起法来源及所列差异；查表命中不代表整套古法或个人解释成立",
+        "passages": [],
+        "differences": [],
+        "unverified": [
+          "尚未为当前完整起法定位可核的原文；保留项目兼容规则，不称古籍已核"
+        ],
+        "facsimile_status": "not_checked"
+      },
       "interpretation_status": "trigger_only"
     }
   ],
@@ -420,9 +859,9 @@
     "primary": null,
     "wuxing": null,
     "status": "needs_review",
-    "method_version": "conditional-2",
+    "method_version": "conditional-4",
     "rule_id": "project-candidate-selection",
-    "reason": "扶抑候选出自本实现的旺衰启发式; 调候仅按日干与月支匹配条目。尚未核验原局制化、透藏、救应等条件, 不据此确定唯一用神或吉凶。",
+    "reason": "扶抑候选出自本实现的旺衰启发式; 调候按日干月支查已定位的原文分支。尚未核验原局制化、透藏、救应等条件, 不据此确定唯一用神或吉凶。",
     "tiaohou_match": true,
     "fuyi_match": true,
     "views": {
@@ -446,21 +885,67 @@
       },
       "tiaohou": {
         "candidates": [
-          "丙",
-          "丁"
+          "丙"
         ],
         "secondary_candidates": [
-          "甲"
+          "丁",
+          "甲",
+          "戊"
         ],
         "table_key": "壬|丑",
         "kind": "traditional_table",
         "source_id": "qiong-tiaohou",
-        "source_locator": "assets/tiaohou.json#/tiaohou/壬|丑",
-        "verification": "legacy_audit_not_clause_verified",
+        "source_locator": "assets/tiaohou_provenance.json#/cells/壬|丑",
+        "verification": "frozen_transcription_candidate_review",
+        "source_audit": {
+          "status": "supported_with_conditions",
+          "scope": "candidate_selection_against_frozen_transcription",
+          "review_note": "上下半月同丙为主，甲佐；丁在金局或合化等条件下讨论，戊限多壬。旧表丙丁首组不能抹去这些限制。",
+          "source_general_candidates": [
+            "丙"
+          ],
+          "source_conditional_candidates": [
+            "丁",
+            "甲",
+            "戊"
+          ],
+          "source_refs": [
+            {
+              "passage_id": "qiongtong:c006:p0127",
+              "section": "卷六·论水 / 十二月壬水",
+              "sha256": "477ae4eafd9700412f4c6301f8786564abe1d9dd2807a72c3ecc3241d4d808d1"
+            },
+            {
+              "passage_id": "qiongtong:c006:p0129",
+              "section": "卷六·论水 / 十二月壬水",
+              "sha256": "eaf92cc75286976991c0d546c3857a376d85dfc8e36acf758e25bb85af9d5bc9"
+            },
+            {
+              "passage_id": "qiongtong:c006:p0130",
+              "section": "卷六·论水 / 十二月壬水",
+              "sha256": "b4026b79046b89e4bf444849a66e5cb35b221ca0642b244a33a2e4082d5dbc02"
+            },
+            {
+              "passage_id": "qiongtong:c006:p0131",
+              "section": "卷六·论水 / 十二月壬水",
+              "sha256": "59786a17b9f56a68ba154227c942ba78d6460922f4de69e4761fc56ec41e9f6d"
+            },
+            {
+              "passage_id": "qiongtong:c006:p0132",
+              "section": "卷六·论水 / 十二月壬水",
+              "sha256": "0d49c8870293461446815135d8858da638c9349e6fe81039da13f9c6df740a4d"
+            }
+          ],
+          "facsimile_status": "not_checked",
+          "individual_application": "requires_chart_conditions",
+          "key": "壬|丑",
+          "legacy_candidates_allowed": false
+        },
+        "secondary_meaning": "有特定条件的分支，不是固定次优列表",
         "status": "candidate_only",
         "conditions_pending": [
-          "原文版本与条款",
-          "透干通根",
+          "原文分支在本盘是否成立",
+          "透干、藏干与根气是否有效",
           "全局制化与救应"
         ]
       }
@@ -515,8 +1000,18 @@
     "months": 0,
     "days": 0,
     "text": "3岁",
-    "convention": "周岁; 大运各柱起讫岁数以此为基准 (01-bazi.md §7.2)"
+    "convention": "起运间隔按年/月/日分别记录；大运年龄整数部分以起运年数为基准",
+    "method": "lunar_python Yun sect=1：出生真实瞬间转UTC+08:00，按节距及该坐标时辰换算",
+    "algorithm_sect": 1,
+    "day_boundary_sect": 2,
+    "source": "lunar_python 1.4.8: eightchar.Yun.__compute_start sect=1",
+    "direction": "backward",
+    "interval_calendar_zone": "UTC+08:00",
+    "date_timezone": "UTC+08:00",
+    "start_calendar_datetime": "2003-01-15T10:30:00+08:00",
+    "start_local_datetime": "2003-01-15T10:30:00+08:00"
   },
+  "qi_yun_status": "computed",
   "da_yun": [
     {
       "start_age": 3,
@@ -750,8 +1245,7 @@
           {
             "path": "yong_shen.views.tiaohou.candidates",
             "value": [
-              "丙",
-              "丁"
+              "丙"
             ]
           }
         ],

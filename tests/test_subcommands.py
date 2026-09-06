@@ -406,7 +406,7 @@ def test_meihua_reference_worked_example_matches_the_engine():
     md = (root / "references" / "05-meihua.md").read_text(encoding="utf-8")
 
     # 从文档里抓出算例的两个数, 不写死 —— 文档改数字, 测试跟着改。
-    m = re.search(r'友人报"(\d+)、(\d+)"', md)
+    m = re.search(r'例如\s+(\d+)、(\d+)：([^\n]+)', md)
     assert m, "算例格式变了"
     upper, lower = m.group(1), m.group(2)
 
@@ -421,7 +421,7 @@ def test_meihua_reference_worked_example_matches_the_engine():
     assert d["main_hex"]["name"] == "风泽中孚"
     assert d["changed_hex"]["name"] == "风天小畜"
     # 文档必须写着引擎给出的那个变卦, 且不再写旧的错误答案。
-    assert "风天小畜" in md
+    assert "风泽中孚变风天小畜" in m.group(3)
     assert '三爻动 → 变卦"风雷益"' not in md
 
 

@@ -777,8 +777,10 @@
   "patterns": [
     {
       "name": "机月同梁",
-      "type": "中上格",
-      "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴"
+      "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴",
+      "status": "candidate_only",
+      "source_status": "classical_conditions_not_verified",
+      "recognition_basis": "project_star_combination"
     }
   ],
   "sect": {
@@ -789,9 +791,9 @@
   "timezone": null,
   "notes": [
     "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
-    "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",
+    "亮度为项目四级表（庙/旺/平/陷）。对照出处为《紫微斗数全书》卷二「一命宫」的七级记载，七级折四级并非原文所定；仅七杀行曾按转录文字修正，其余各行未逐格核定，全表未校原刻影像。亮度只展示，不参与排盘计算。",
     "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",
-    "三合派与飞星派对火铃起例及部分自化有分歧, 本脚本采用《紫微斗数全书》主流。"
+    "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。"
   ],
   "schema_version": "2.0",
   "reading_support": {
@@ -802,6 +804,228 @@
       "格局标签不直接推出富贵贫贱、健康或关系结论",
       "亮度采用项目简化表, 未完成全表原刻影像校勘",
       "自化等分歧规则须标明所用口径, 不冒充全书共识"
-    ]
+    ],
+    "method_rules": {
+      "schema_version": "1.0",
+      "method": "ziwei",
+      "review_scope": "structural_only",
+      "rules": [
+        {
+          "id": "ziwei-ming-shen",
+          "quote": "大抵人命俱从寅上起正月，顺数至本生月止，又自人生月起子时逆至本生时安命，顺至本生时安身。",
+          "required_conditions": {
+            "birth_month": "农历生月已确定",
+            "birth_hour": "经用户选择的时制和换日后时辰已确定",
+            "non_leap_month": "非闰月；该冻结段的闰月法与项目不一致"
+          },
+          "exceptions": [
+            "未知时辰不能生成唯一命身宫",
+            "闰月只报告项目口径，不标作本段方法已满足"
+          ],
+          "allowed_interpretation": "说明命宫和身宫怎样由月、时定位，并核对输出位置。",
+          "forbidden_inferences": [
+            "由命身宫断人格或人生优劣"
+          ]
+        },
+        {
+          "id": "ziwei-palace-order",
+          "quote": "安十二宫例 男女俱从逆转切忌莫顺去",
+          "required_conditions": {
+            "ming_fixed": "命宫位置已经确定",
+            "ordered_palaces": "使用同一组十二宫主题且从命宫逆排"
+          },
+          "exceptions": [
+            "大限顺逆不是十二主题宫排列方向",
+            "夫妻宫是项目对妻妾宫的名称调整"
+          ],
+          "allowed_interpretation": "定位与问题有关的主题宫及其相对位置。",
+          "forbidden_inferences": [
+            "宫名等同真人经历",
+            "由财帛宫推出具体收入"
+          ]
+        },
+        {
+          "id": "ziwei-chang-qu",
+          "quote": "文昌星从戌上起子时，就在戌宫安，若丑时逆至酉宫安之。",
+          "required_conditions": {
+            "birth_hour": "出生时辰与换日口径已确定",
+            "opposite_directions": "文昌从戌逆排，文曲从辰顺排，子时起点计零"
+          },
+          "exceptions": [
+            "出生时刻跨时辰边界时先列候选",
+            "安星诀中的贵乡不是现实学历或成就证明"
+          ],
+          "allowed_interpretation": "解释昌曲落宫及两者方向相反的安法。",
+          "forbidden_inferences": [
+            "星名推出学历、考试成败、智力高低"
+          ]
+        },
+        {
+          "id": "ziwei-fu-bi",
+          "quote": "左辅从辰上起正月顺行，如正月生者就辰宫安之。",
+          "required_conditions": {
+            "birth_month": "生月及闰月取法已确定",
+            "opposite_directions": "左辅从辰顺排，右弼从戌逆排，正月起点计零"
+          },
+          "exceptions": [
+            "闰月按项目口径，不冒充冻结本规则一致"
+          ],
+          "allowed_interpretation": "解释辅弼位置及其是否与某宫同宫或夹宫。",
+          "forbidden_inferences": [
+            "位置直接证明贵人相助或个人合作能力"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "ziwei-quanshu-ming-shen",
+          "section": "安身命例",
+          "edition": 0
+        },
+        {
+          "id": "ziwei-quanshu-palaces",
+          "section": "安十二宫例",
+          "edition": 0
+        },
+        {
+          "id": "ziwei-quanshu-chang-qu",
+          "section": "安文昌文曲星诀",
+          "edition": 0
+        },
+        {
+          "id": "ziwei-quanshu-fu-bi",
+          "section": "安左辅右弼星诀",
+          "edition": 0
+        }
+      ],
+      "editions": [
+        {
+          "title": "紫微斗數全書/卷二",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=紫微斗數全書/卷二&oldid=1963110",
+          "revision": "1963110",
+          "facsimile_status": "not_checked"
+        }
+      ],
+      "applications": [
+        {
+          "rule_id": "ziwei-ming-shen",
+          "status": "needs_review",
+          "scope": "chart_structure",
+          "conditions": {
+            "birth_month": "unknown",
+            "birth_hour": "unknown",
+            "non_leap_month": "met"
+          },
+          "facts": [
+            {
+              "path": "lunar_date.month",
+              "value": 12
+            },
+            {
+              "path": "input.is_leap_month",
+              "value": false
+            },
+            {
+              "path": "ming_gong.branch",
+              "value": "申"
+            },
+            {
+              "path": "shen_gong.branch",
+              "value": "午"
+            }
+          ],
+          "missing_paths": [],
+          "source_ids": [
+            "ziwei-quanshu-ming-shen"
+          ]
+        },
+        {
+          "rule_id": "ziwei-palace-order",
+          "status": "needs_review",
+          "scope": "chart_structure",
+          "conditions": {
+            "ming_fixed": "unknown",
+            "ordered_palaces": "unknown"
+          },
+          "facts": [
+            {
+              "path": "ming_gong.branch",
+              "value": "申"
+            },
+            {
+              "path": "twelve_palaces.0.branch",
+              "value": "申"
+            },
+            {
+              "path": "twelve_palaces.1.branch",
+              "value": "未"
+            }
+          ],
+          "missing_paths": [],
+          "source_ids": [
+            "ziwei-quanshu-palaces"
+          ]
+        },
+        {
+          "rule_id": "ziwei-chang-qu",
+          "status": "needs_review",
+          "scope": "chart_structure",
+          "conditions": {
+            "birth_hour": "unknown",
+            "opposite_directions": "unknown"
+          },
+          "facts": [
+            {
+              "path": "solar_date.hour",
+              "value": 9
+            },
+            {
+              "path": "lucky_stars_positions.文昌",
+              "value": "巳"
+            },
+            {
+              "path": "lucky_stars_positions.文曲",
+              "value": "酉"
+            }
+          ],
+          "missing_paths": [],
+          "source_ids": [
+            "ziwei-quanshu-chang-qu"
+          ]
+        },
+        {
+          "rule_id": "ziwei-fu-bi",
+          "status": "needs_review",
+          "scope": "chart_structure",
+          "conditions": {
+            "birth_month": "unknown",
+            "opposite_directions": "unknown"
+          },
+          "facts": [
+            {
+              "path": "lunar_date.month",
+              "value": 12
+            },
+            {
+              "path": "lucky_stars_positions.左辅",
+              "value": "卯"
+            },
+            {
+              "path": "lucky_stars_positions.右弼",
+              "value": "亥"
+            }
+          ],
+          "missing_paths": [],
+          "source_ids": [
+            "ziwei-quanshu-fu-bi"
+          ]
+        }
+      ],
+      "limits": [
+        "只冻结并核选段，不表示紫微或六爻全书已整理",
+        "均未校原刻影像",
+        "条款状态不是现实预测准确率；个人应用须另核盘面条件"
+      ]
+    }
   }
 }

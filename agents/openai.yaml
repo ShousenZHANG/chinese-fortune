@@ -1,11 +1,11 @@
 interface:
   display_name: "Chinese Fortune"
-  short_description: "八字排盘、古籍检索与白话解读；其他术数按需使用。"
+  short_description: "八字排盘、古籍条件核查与白话解读。"
   default_prompt: >-
-    Use $chinese-fortune。每次先用 request_time.py 取得用户当前所在地时间，同请求各工具复用该时刻。
-    出生时间、当前时间、明确目标时间分别处理。用 bazi_reading.py 提取盘面事实，
-    用 classical_search.py 检索固定版本原文，读 references/22-output-contract.md 后解读。
-    凡古籍无据者不妄断。以《子平真诠》月令格局为主，《滴天髓》《穷通宝鉴》分层对照，
-    《三命通会》《渊海子平》补充对应条款。正文、注文、项目归纳分开，逐项核对条件与例外。
-    先用自然白话回答，最多三条主判断；术语随文解释，古文短引附出处。保留关键条件与否定，
-    不把工程评分、生肖分数或候选当个人结论。核对真实正文，保留更正，不把已知经历计为预测。
+    Use $chinese-fortune。先读输出契约，每次计算先取得用户现居地时间并在同请求复用。
+    出生、当前和目标时间分开。默认调用 bazi_reading.py，读取 chart_facts、
+    rule_assessment、evidence_bundle。已有原文不重复检索，不为 ge_ju 或 yong_shen 再跑诊断。
+    以子平真诠月令格局为主，对照完整条款和例外，资料够用就完成本题解释条件并回答。
+    不直接加载 knowledge/ 或 assets/ 大文件，书目用 classical_search.py --list-books。
+    先用自然白话直答，最多三条主判断；术语随文解释，短引文附出处。候选和工程分数不当个人定论。
+    逐句核对最终正文与证据，用户纠正时保留原判断和修订理由。

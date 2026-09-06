@@ -9,13 +9,13 @@ flavor of 奇门遁甲. Output covers:
   * 八门 (rotated by 值使 to align with 旬首 落宫)
   * 九星 (天蓬…天禽, 天禽 寄坤二宫)
   * 八神 (值符 螣蛇 太阴 六合 白虎 玄武 九地 九天, 阳顺阴逆)
-  * 格局 detection (青龙返首, 飞鸟跌穴, 三诈, 天/地/人遁,
+  * 兼容格名触发 detection (青龙返首, 飞鸟跌穴, 三诈, 天/地/人遁,
                     击刑, 入墓, 五不遇时, 等)
 
 References:
   * 《奇门遁甲秘笈大全》    (明)
   * 《奇门遁甲统宗》        (明·程道生)
-  * references/06-qimen.md  (local primer, 408 lines)
+  * docs/QIMEN-LIUREN-METHODS.md (verified scope and conventions)
 
 CLI:
     python qimen_cast.py --date 2026-05-16 --time 14:30 [--longitude 120]
@@ -29,6 +29,13 @@ from __future__ import annotations
 import argparse
 import sys
 
+from qimen_dingju import (
+    SOURCE_URL,
+    determine_ju,
+    futou,
+    seasonal_context,
+    zhi_shi_position,
+)
 from qimen_tables import (  # noqa: F401  (re-exported for callers/tests)
     EIGHT_SHEN_ORDER,
     LIU_YI,
@@ -59,15 +66,10 @@ from utils import (
 )
 
 
-def determine_ju(jieqi_name: str, days_since_jieqi: int) -> tuple[str, str, int]:
-    """Return (ju_type, san_yuan, ju_number) for given 节气 + 距节气天数.
+def determine_ju_legacy(jieqi_name: str, days_since_jieqi: int) -> tuple[str, str, int]:
+    """旧版日数法，仅 --ju-method legacy-days 显式选择。
 
-    days_since_jieqi: 0 = 节气当日 ; 1..14 = 之后. 上元 0-4, 中元 5-9, 下元 10-14.
-
-    流派说明 (honest approximation): 三元切分用「节气日起简化日数法」——
-    自节气日起每 5 日一元。传统另有「拆补置闰法」(以符头甲己日定上元, 遇
-    超神/接气再置闰) 与「茅山道人法」等, 距节气首尾 1-2 日内两法可能差一元
-    (局数相邻)。本实现选简化法因其确定、可回测; 边界日批断请注明此差异。
+    交节日期起每五个民用日分元；保留旧结果比较，不称古籍拆补或置闰法。
     """
     if days_since_jieqi < 5:
         yuan_idx, yuan_name = 0, "上元"
@@ -235,9 +237,6 @@ def shen_plate(shi_gan_palace: int, ju_type: str) -> dict[int, str]:
 
 # 三吉门
 JI_MEN: set[str] = {"开门", "休门", "生门"}
-# 凶门
-XIONG_MEN: set[str] = {"伤门", "死门", "惊门"}
-
 # 三刑
 SAN_XING_PAIRS: list[tuple[str, str]] = [
     ("寅", "巳"), ("巳", "申"), ("申", "寅"),  # 寅巳申 三刑
@@ -300,7 +299,7 @@ def detect_patterns(
     if p_bing is not None and men.get(p_bing) == "生门" and shen.get(p_bing) == "九天":
         patterns.append({
             "name": "天遁",
-            "evidence": f"丙奇 在 {p_bing}宫 + 生门 + 九天 — 主隐密获利",
+            "evidence": f"丙奇 在 {p_bing}宫 + 生门 + 九天",
         })
 
     # 3. 地遁: 乙奇 + 开门 + 太阴.
@@ -308,7 +307,7 @@ def detect_patterns(
     if p_yi is not None and men.get(p_yi) == "开门" and shen.get(p_yi) == "太阴":
         patterns.append({
             "name": "地遁",
-            "evidence": f"乙奇 在 {p_yi}宫 + 开门 + 太阴 — 主稳固得财",
+            "evidence": f"乙奇 在 {p_yi}宫 + 开门 + 太阴",
         })
 
     # 4. 人遁: 丁奇 + 休门 + 太阴 (亦取 开/生门, 与太阴合).
@@ -318,7 +317,7 @@ def detect_patterns(
             and shen.get(p_ding) == "太阴"):
         patterns.append({
             "name": "人遁",
-            "evidence": f"丁奇 在 {p_ding}宫 + {men.get(p_ding)} + 太阴 — 主和合事成",
+            "evidence": f"丁奇 在 {p_ding}宫 + {men.get(p_ding)} + 太阴",
         })
 
     # 5. 青龙返首: 丙加甲 (即 天盘 丙 落于 地盘 戊 之上, 因 戊 代 甲子).
@@ -327,7 +326,7 @@ def detect_patterns(
         if heaven.get(p) == "丙" and earth.get(p) == "戊":
             patterns.append({
                 "name": "青龙返首",
-                "evidence": f"{p}宫 天盘丙 加 地盘戊 — 谋事大成",
+                "evidence": f"{p}宫 天盘丙 加 地盘戊",
             })
             break
 
@@ -336,7 +335,7 @@ def detect_patterns(
         if heaven.get(p) == "戊" and earth.get(p) == "丙":
             patterns.append({
                 "name": "飞鸟跌穴",
-                "evidence": f"{p}宫 天盘戊(代甲) 加 地盘丙 — 不期之吉",
+                "evidence": f"{p}宫 天盘戊(代甲) 加 地盘丙",
             })
             break
 
@@ -372,7 +371,7 @@ def detect_patterns(
         patterns.append({
             "name": "五不遇时",
             "evidence": f"时干 {hour_stem}({TIANGAN_WUXING[hour_stem]}) 克 "
-                        f"日干 {day_stem}({TIANGAN_WUXING[day_stem]}) — 大事不宜",
+                        f"日干 {day_stem}({TIANGAN_WUXING[day_stem]})",
         })
 
     # 10. 大格 (庚加癸): 天盘庚 加 地盘癸.
@@ -380,7 +379,7 @@ def detect_patterns(
         if heaven.get(p) == "庚" and earth.get(p) == "癸":
             patterns.append({
                 "name": "大格",
-                "evidence": f"{p}宫 天盘庚 加 地盘癸 — 万事不顺",
+                "evidence": f"{p}宫 天盘庚 加 地盘癸",
             })
             break
 
@@ -388,45 +387,12 @@ def detect_patterns(
     if all(heaven.get(p) == earth.get(p) for p in range(1, 10)):
         patterns.append({
             "name": "伏吟",
-            "evidence": "天盘地盘完全相同 — 主事停滞难前",
+            "evidence": "天盘地盘完全相同",
         })
 
+    for pattern in patterns:
+        pattern["interpretation_status"] = "trigger_only_pending_rule_verification"
     return patterns
-
-
-# --------------------------------------------------------------------------- #
-# 吉凶方位
-# --------------------------------------------------------------------------- #
-
-def classify_directions(
-    men: dict[int, str],
-    star: dict[int, str],
-    heaven: dict[int, str],
-) -> tuple[list[str], list[str]]:
-    """Return (aupicious_directions, inauspicious_directions) — palace 方位."""
-    aus: list[str] = []
-    inaus: list[str] = []
-    for p in range(1, 10):
-        if p == 5:
-            continue
-        info = PALACE_INFO[p]
-        direction = info["direction"]
-        score = 0
-        if men.get(p) in JI_MEN:
-            score += 2
-        if men.get(p) in XIONG_MEN:
-            score -= 2
-        if heaven.get(p) in SAN_QI:
-            score += 1
-        if star.get(p) in {"天心", "天辅", "天任", "天禽"}:
-            score += 1
-        if star.get(p) in {"天蓬", "天芮", "天柱"}:
-            score -= 1
-        if score >= 2:
-            aus.append(direction)
-        elif score <= -2:
-            inaus.append(direction)
-    return aus, inaus
 
 
 # --------------------------------------------------------------------------- #
@@ -502,8 +468,7 @@ def jieqi_context(solar_year: int, solar_month: int, solar_day: int) -> tuple[st
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   ok tool version input ganzhi jieqi san_yuan ju_type ju_number shi_gan
   shi_zhi xun_head xun_yi zhi_fu_star zhi_fu_palace zhi_fu_origin_palace
-  zhi_shi_men zhi_shi_palace palaces patterns auspicious_directions
-  inauspicious_directions summary
+  zhi_shi_men zhi_shi_palace palaces patterns method_profile summary
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
@@ -525,6 +490,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="手动指定 阳遁/阴遁 (覆盖自动算法)")
     p.add_argument("--ju-number", type=int, default=None,
                    help="手动指定 局数 1..9 (与 --ju-type 配合)")
+    p.add_argument("--ju-method", choices=["futou", "legacy-days"], default="futou",
+                   help="定局口径: 默认符头三元+实交节; legacy-days仅复现旧节气日数法")
     return p
 
 
@@ -573,7 +540,16 @@ def main(argv: list[str] | None = None) -> int:
     hour_stem = lunar.getTimeGan()
     hour_branch = lunar.getTimeZhi()
 
-    # 1. 局数 determination
+    # 1. 定局：真太阳时修正只改当地日时，不移动实际交节瞬间。
+    if (args.ju_type is None) != (args.ju_number is None):
+        json_print(error_envelope('qimen', 'incomplete_manual_ju',
+                                  '--ju-type 与 --ju-number 必须一起提供'))
+        return 1
+    if args.ju_number is not None and not 1 <= args.ju_number <= 9:
+        json_print(error_envelope('qimen', 'invalid_ju_number', '局数须为 1..9'))
+        return 1
+    term_context = None
+    day_futou = None
     if args.ju_type and args.ju_number:
         ju_type = "阳遁" if args.ju_type == "yang" else "阴遁"
         ju_number = args.ju_number
@@ -581,8 +557,14 @@ def main(argv: list[str] | None = None) -> int:
         jq_name = "(手动)"
     else:
         try:
-            jq_name, days_since = jieqi_context(y, m, d)
-            ju_type, san_yuan, ju_number = determine_ju(jq_name, days_since)
+            if args.ju_method == "legacy-days":
+                jq_name, days_since = jieqi_context(y, m, d)
+                ju_type, san_yuan, ju_number = determine_ju_legacy(jq_name, days_since)
+            else:
+                term_context = seasonal_context(dt)
+                jq_name = term_context["name"]
+                ju_type, san_yuan, ju_number = determine_ju(jq_name, day_gz)
+                day_futou, _ = futou(day_gz)
         except (ValueError, KeyError) as e:
             json_print(error_envelope('qimen', "ju_determination_failed", str(e)))
             return 1
@@ -615,28 +597,8 @@ def main(argv: list[str] | None = None) -> int:
     # 值符星: 时干宫 (5 寄 2) 上 当前 九星
     zhi_fu_star = star.get(_resolve_ring_palace(shi_gan_palace), "?")
 
-    # 5. 八门 (rotates with 值使)
-    #
-    # 值使宫从前与 值符宫 赋的是**同一个变量** (shi_gan_palace), 于是两者在所有
-    # 时辰恒等 —— 实测 2026-06-01 全部 12 个时辰 12/12 相同, 值使退化成值符的副本,
-    # 而它本该是八门盘独立的枢。
-    #
-    # 经典安法: **值使门自值符宫(即旬首之六仪所落宫)起, 阳遁顺行、阴遁逆行,
-    # 数至本时在其旬中的序数** —— 甲子时不动, 乙丑时进一宫, ……, 癸酉时进九宫。
-    # references/06-qimen.md:219 后半句「值使门由当日符头时辰决定」说的正是这条;
-    # 同句前半「以时支所在宫为起点」与之矛盾, 是该文自身的讹误 (已改)。
-    #
-    # v1.7.3 曾据那半句取「时支所在宫」—— 穷举 60 时辰 × 2 遁 × 8 宫 = 960 组,
-    # 与经典仅 120 组相符 = 12.5%, 恰是 1/8 的随机命中率, 即与经典无关。
-    # 而它更早的形态是直接复用 shi_gan_palace, 使值使恒等于值符。两次都错。
-    #
-    # 后果不止一个标记: 该值是 men_plate 的旋转目标, 整张八门盘随之整体位移,
-    # 而 classify_directions 用八门判吉凶方位。
-    ring = EIGHT_RING_YANG if ju_type == "阳遁" else EIGHT_RING_YIN
-    xun_step = jiazi_index(hour_stem, hour_branch) % 10   # 本时在旬中的序数 0..9
-    _zf_ring = _resolve_ring_palace(zhi_fu_palace)
-    _i = ring.index(_zf_ring)
-    zhi_shi_palace = ring[(_i + xun_step) % 8] if ju_type == "阳遁"         else ring[(_i - xun_step) % 8]
+    # 5. 值使按九宫数序行旬时；《元灵经》卷一两个起例可独立复核。
+    zhi_shi_raw, zhi_shi_palace = zhi_shi_position(zhi_fu_palace, hour_gz, ju_type)
     men = men_plate(zhi_fu_palace, zhi_shi_palace, ju_type)
     zhi_shi_men = men.get(_resolve_ring_palace(zhi_shi_palace), "?")
 
@@ -652,9 +614,6 @@ def main(argv: list[str] | None = None) -> int:
         hour_stem, hour_branch, day_stem,
         zhi_fu_palace, shi_gan_palace,
     )
-
-    # 9. 方位 吉凶
-    aus_dirs, inaus_dirs = classify_directions(men, star, heaven)
 
     # 10. Summary
     summary_parts = [
@@ -673,6 +632,17 @@ def main(argv: list[str] | None = None) -> int:
         "tool": "qimen",
         "version": __version__,
         "time_context": time_context,
+        "method_profile": {
+            "ding_ju": "manual" if args.ju_type else args.ju_method,
+            "source": SOURCE_URL,
+            "verification": "transcription_checked_not_facsimile",
+            "futou": day_futou,
+            "solar_term": term_context,
+            "day_boundary": "当地有效钟面00:00换日；23:00小时干支按历库晚子时规则",
+            "intercalation": "none",
+            "scope": "符头、局数和九宫值使已核；转盘其余组件与格名为待逐项核验的兼容实现",
+            "legacy_note": "legacy-days只兼容旧定局，其他已修正组件不回退旧错误",
+        },
         "input": {
             "date": f"{y:04d}-{m:02d}-{d:02d}",
             "time": f"{hh:02d}:{mm:02d}",
@@ -697,12 +667,10 @@ def main(argv: list[str] | None = None) -> int:
         "zhi_fu_origin_palace": zhi_fu_palace,
         "zhi_shi_men": zhi_shi_men,
         "zhi_shi_palace": zhi_shi_palace,
-        "zhi_shi_basis": ("自值符宫(旬首之六仪落宫)起, 阳顺阴逆, 数至本时在其旬中的序数 "
-                          "(references/06-qimen.md:219); 值符则随时干"),
+        "zhi_shi_raw_palace": zhi_shi_raw,
+        "zhi_shi_basis": "自旬首六仪原宫沿一至九宫阳顺阴逆数旬时，数完中五寄坤二；元灵经卷一",
         "palaces": palaces,
         "patterns": patterns,
-        "auspicious_directions": sorted(set(aus_dirs)),
-        "inauspicious_directions": sorted(set(inaus_dirs)),
         "summary": "; ".join(summary_parts),
     }
     json_print(out)

@@ -26,8 +26,10 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from datetime import UTC, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from bazi_geju import _shi_shen_safe, detect_ge_ju
 from bazi_shensha import detect_all_shensha
@@ -67,9 +69,10 @@ from utils import (
 VERSION = __version__
 
 SECT_LABELS = {
-    1: "子初换日 (23:00 起整体视为次日: 日柱、农历日一并推进)",
-    2: "子正换日 (日柱与农历日取当日, 仅时柱按次日干)",
+    1: "子初换日 (23:00 起日柱按次日；农历日期仍记录所选钟面日期)",
+    2: "子正换日 (日柱取当日；晚子时的时干依库采用次日干)",
 }
+CALENDAR_ZONE = timezone(timedelta(hours=8))
 ASSETS_DIR = Path(__file__).resolve().parents[1] / "assets"
 
 
@@ -243,6 +246,56 @@ def ten_gods_per_pillar(day_stem: str, pillars: dict) -> dict:
     return out
 
 
+def _luck_from_instant(calendar_eight: Any, birth_clock: datetime,
+                       zone_name: str | None, day_stem: str,
+                       args: argparse.Namespace) -> tuple[list[dict], dict]:
+    """Use the UTC+8 calendar coordinate for both term distance and year/month.
+
+    Yun sect=1 quantizes the interval by calendar days and two-hour branches;
+    its coordinate is fixed here, never a corrected local solar clock. The
+    resulting calendar start instant is converted back to the birth timezone.
+    """
+    yun = calendar_eight.getYun(1 if args.gender == 'male' else 0, 1)
+    start_solar = yun.getStartSolar()
+    start_calendar = datetime.fromisoformat(start_solar.toYmdHms()).replace(tzinfo=CALENDAR_ZONE)
+    target_zone = ZoneInfo(zone_name) if zone_name else birth_clock.tzinfo
+    start_local = start_calendar.astimezone(target_zone)
+    start_years, start_months, start_days = yun.getStartYear(), yun.getStartMonth(), yun.getStartDay()
+    cycles: list[dict] = []
+    for d in yun.getDaYun(args.years // 10 + 2):
+        ganzhi = d.getGanZhi()
+        if not ganzhi:
+            continue
+        stem, branch = ganzhi
+        index = len(cycles)
+        band = start_years + 10 * index
+        start_year = start_local.year + 10 * index
+        cycles.append({
+            'start_age': band, 'end_age': band + 10,
+            'start_age_xusui': start_year - birth_clock.year + 1,
+            'start_year': start_year, 'end_year': start_year + 9,
+            'ganzhi': ganzhi, 'stem': stem, 'branch': branch,
+            'shi_shen': _shi_shen_safe(day_stem, stem),
+            'branch_wuxing': DIZHI_WUXING.get(branch),
+        })
+    remainder = f'{start_months}个月' if start_months else ''
+    qi_yun = {
+        'start_year': start_local.year, 'start_month': start_local.month, 'start_day': start_local.day,
+        'years': start_years, 'months': start_months, 'days': start_days,
+        'text': f'{start_years}岁{remainder}',
+        'convention': '起运间隔按年/月/日分别记录；大运年龄整数部分以起运年数为基准',
+        'method': 'lunar_python Yun sect=1：出生真实瞬间转UTC+08:00，按节距及该坐标时辰换算',
+        'algorithm_sect': 1, 'day_boundary_sect': args.sect,
+        'source': 'lunar_python 1.4.8: eightchar.Yun.__compute_start sect=1',
+        'direction': 'forward' if yun.isForward() else 'backward',
+        'interval_calendar_zone': 'UTC+08:00',
+        'date_timezone': zone_name or str(birth_clock.tzinfo),
+        'start_calendar_datetime': start_calendar.isoformat(),
+        'start_local_datetime': start_local.isoformat(),
+    }
+    return cycles, qi_yun
+
+
 # --------------------------------------------------------------------------- #
 # Argparse
 # --------------------------------------------------------------------------- #
@@ -260,9 +313,9 @@ da_yun[]: start_age/end_age are 周岁 anchored to qi_yun.years;
 On error: {"error": ..., "message": ...} and exit 1."""
 
 
-def build_parser() -> argparse.ArgumentParser:
+def build_parser(*, diagnostics: bool = True) -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        description="八字排盘 v1.1 — 公历/农历, 含 35 神煞 / 用神 / 格局 / 干支互动"
+        description="八字排盘 — 公历/农历、历史时区、换日口径与可选诊断"
     ,
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -271,7 +324,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--month", type=int, required=True, help="出生月 1-12")
     p.add_argument("--day", type=int, required=True, help="出生日 1-31")
     p.add_argument("--hour", type=int, default=None,
-                   help="出生时 0-23; 省略则走三柱模式 (时柱待补, 不揣测时辰)")
+                   help="出生时 0-23; 省略则标记未知，默认解读比较候选并保留不变的柱")
     p.add_argument("--minute", type=int, default=0, help="出生分 0-59")
     p.add_argument("--gender", choices=["male", "female"], required=True,
                    help="性别 (用于排大运 + 天罗地网)")
@@ -296,12 +349,12 @@ def build_parser() -> argparse.ArgumentParser:
                    help="若指定, 视输入日期为农历")
     p.add_argument("--years", type=int, default=80,
                    help="大运覆盖年数 (默认 80)")
-    p.add_argument("--no-shensha", action="store_true",
-                   help="跳过 35 神煞 检测")
-    p.add_argument("--no-yongshen", action="store_true",
-                   help="跳过 用神/喜神/忌神 计算")
-    p.add_argument("--no-geju", action="store_true",
-                   help="跳过 格局 判定")
+    if diagnostics:
+        p.add_argument("--no-shensha", action="store_true", help="跳过神煞检测")
+        p.add_argument("--no-yongshen", action="store_true", help="跳过用神诊断")
+        p.add_argument("--no-geju", action="store_true", help="跳过格局诊断")
+    else:
+        p.set_defaults(no_shensha=True, no_yongshen=True, no_geju=True)
     add_request_arguments(p, target=False)
     p.add_argument("--as-of-year", type=int, default=None,
                    help="固定流年参考公历年；省略时需当前所在地时区，无则只输出原局")
@@ -360,10 +413,8 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     if args.longitude is None:
         args.longitude = 120.0  # GMT+8 reference meridian
 
-    # 时辰未知 -> three-pillar mode. Noon is used only to obtain the 年/月/日柱
-    # (it cannot cross a day boundary); no 时柱 is derived from it, and every
-    # aggregate below is computed over six characters instead of eight.
-    # references/00-intake.md: 时辰未知 → 仍可排年/月/日柱; 时柱缺如, 不揣测时辰.
+    # Unknown hours use provisional noon internally. The reading layer compares
+    # the civil date's endpoints and suppresses pillars that cross a boundary.
     hour_known = args.hour is not None
     eff_hour = args.hour if hour_known else 12
     eff_minute = args.minute if hour_known else 0
@@ -417,6 +468,18 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
             corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
         )
         lunar = solar.getLunar()
+        # Solar-term tables are in fixed UTC+8. Local clock and true-solar
+        # corrections select day/hour; they cannot move an astronomical event.
+        offset = tz_info['offset_hours'] if tz_info else args.tz
+        birth_clock = datetime(base_y, base_m, base_d, eff_hour, eff_minute,
+                               tzinfo=timezone(timedelta(hours=offset)))
+        calendar_clock = birth_clock.astimezone(CALENDAR_ZONE)
+        calendar_solar = Solar.fromYmdHms(
+            calendar_clock.year, calendar_clock.month, calendar_clock.day,
+            calendar_clock.hour, calendar_clock.minute, calendar_clock.second)
+        calendar_lunar = calendar_solar.getLunar()
+        calendar_eight = calendar_lunar.getEightChar()
+        calendar_eight.setSect(args.sect)
     except Exception as e:
         return {
             "ok": False,
@@ -448,13 +511,13 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         pass
     sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
 
-    year_gz = (eight.getYearGan(), eight.getYearZhi())
-    month_gz = (eight.getMonthGan(), eight.getMonthZhi())
+    year_gz = (calendar_eight.getYearGan(), calendar_eight.getYearZhi())
+    month_gz = (calendar_eight.getMonthGan(), calendar_eight.getMonthZhi())
     day_gz = (eight.getDayGan(), eight.getDayZhi())
     hour_gz = (eight.getTimeGan(), eight.getTimeZhi())
 
-    year_nayin = eight.getYearNaYin()
-    month_nayin = eight.getMonthNaYin()
+    year_nayin = calendar_eight.getYearNaYin()
+    month_nayin = calendar_eight.getMonthNaYin()
     day_nayin = eight.getDayNaYin()
     hour_nayin = eight.getTimeNaYin()
 
@@ -486,15 +549,16 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     # Day-master strength
     # 距本月「节」的整日数 —— 司令按节令起算, 不按农历月。
     try:
-        _pj = lunar.getPrevJie().getSolar()
+        _pj = calendar_lunar.getPrevJie().getSolar()
         _days_since_jie = (
-            _cal_date(solar.getYear(), solar.getMonth(), solar.getDay())
+            calendar_clock.date()
             - _cal_date(_pj.getYear(), _pj.getMonth(), _pj.getDay())
         ).days
         si_ling_info = si_ling(month_gz[1], _days_since_jie)
         if si_ling_info:
-            si_ling_info["jie"] = lunar.getPrevJie().getName()
+            si_ling_info["jie"] = calendar_lunar.getPrevJie().getName()
             si_ling_info["days_since_jie"] = _days_since_jie
+            si_ling_info["calendar_zone"] = "UTC+08:00"
     except Exception as exc:                      # pragma: no cover - 防御
         warn(f"si_ling failed: {exc}")
         si_ling_info = None
@@ -527,9 +591,8 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     # 用神 / 喜神 / 忌神
     yong_shen = xi_shen = ji_shen = None
     if not args.no_yongshen:
-        tiaohou_data = _load_json("tiaohou.json")
         yj = select_yong_shen(
-            day_stem, month_branch, strength, weighted_counts, tiaohou_data
+            day_stem, month_branch, strength, weighted_counts
         )
         yong_shen = yj["yong_shen"]
         xi_shen = yj["xi_shen"]
@@ -545,54 +608,15 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         ge_ju['notes'] = ('格名及纯破标记为程序候选; 须逐条核验成败救应, '
                          '不得直接推断财富、婚姻或应期。')
 
-    # 大运
+    # Unknown birth hours cannot establish an exact start date or duration.
     da_yun_list: list[dict] = []
     qi_yun: dict | None = None
-    try:
-        yun = eight.getYun(1 if args.gender == "male" else 0)
-        start_solar = yun.getStartSolar()
-        # 起运 is a DURATION from birth (年/月/日), not an age: lunar_python's
-        # Yun.getStartYear() is "years until 起运". 01-bazi.md §7.2 writes it as
-        # 6岁4个月 and anchors every 大运 band to it — 起运6岁 -> 6—16, 16—26 —
-        # so the band start is that figure in 周岁, stepping by 10.
-        start_years = yun.getStartYear()
-        start_months = yun.getStartMonth()
-        start_days = yun.getStartDay()
-        cycles = yun.getDaYun(args.years // 10 + 2)
-        for d in cycles:
-            ganzhi = d.getGanZhi()
-            if not ganzhi:
-                continue
-            stem = ganzhi[0]
-            branch = ganzhi[1] if len(ganzhi) > 1 else ""
-            band = start_years + 10 * len(da_yun_list)
-            da_yun_list.append({
-                # 周岁, per 01-bazi.md §7.2. lunar_python's getStartAge() is
-                # 虚岁 (one greater); kept beside it rather than passed off as 周岁.
-                "start_age": band,
-                "end_age": band + 10,
-                "start_age_xusui": d.getStartAge(),
-                "start_year": d.getStartYear(),
-                "end_year": d.getEndYear(),
-                "ganzhi": ganzhi,
-                "stem": stem,
-                "branch": branch,
-                "shi_shen": _shi_shen_safe(day_stem, stem) if stem in TIANGAN_WUXING else "",
-                "branch_wuxing": DIZHI_WUXING.get(branch),
-            })
-        remainder = (f"{start_months}个月" if start_months else "")
-        qi_yun = {
-            "start_year": start_solar.getYear(),
-            "start_month": start_solar.getMonth(),
-            "start_day": start_solar.getDay(),
-            "years": start_years,
-            "months": start_months,
-            "days": start_days,
-            "text": f"{start_years}岁{remainder}".rstrip(),
-            "convention": "周岁; 大运各柱起讫岁数以此为基准 (01-bazi.md §7.2)",
-        }
-    except Exception as e:
-        warn(f"da_yun unavailable: {e}")
+    if hour_known:
+        try:
+            da_yun_list, qi_yun = _luck_from_instant(
+                calendar_eight, birth_clock, args.timezone, day_stem, args)
+        except Exception as exc:
+            warn(f"da_yun unavailable: {exc}")
 
     # The current residence's year is independent from the birth timezone.
     liu_nian: list[dict] = []
@@ -619,6 +643,34 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     except Exception as e:
         warn(f"liu_nian failed: {e}")
 
+    calendar_context: dict[str, Any] = {
+        'status': 'known_instant' if hour_known else 'birth_time_required',
+        'term_calendar_zone': 'UTC+08:00',
+        'year_month_basis': '真实出生瞬间比较固定UTC+08:00交节表；与日时柱钟面分开',
+        'day_hour_basis': args.time_standard,
+        'timezone_source': 'iana' if args.timezone else 'numeric_offset_parameter',
+        'precision': '出生输入精确到分钟；交节表采用固定依赖版本的秒值，非观测误差保证',
+    }
+    if hour_known:
+        previous_jie = calendar_lunar.getPrevJie()
+        next_jie = calendar_lunar.getNextJie()
+        calendar_context.update({
+            'birth_instant_utc': birth_clock.astimezone(UTC).isoformat(),
+            'birth_calendar_datetime': calendar_clock.isoformat(),
+            'previous_jie': {
+                'name': previous_jie.getName(),
+                'calendar_datetime': datetime.fromisoformat(previous_jie.getSolar().toYmdHms())
+                                          .replace(tzinfo=CALENDAR_ZONE).isoformat(),
+            },
+            'next_jie': {
+                'name': next_jie.getName(),
+                'calendar_datetime': datetime.fromisoformat(next_jie.getSolar().toYmdHms())
+                                          .replace(tzinfo=CALENDAR_ZONE).isoformat(),
+            },
+        })
+    else:
+        calendar_context['note'] = '内部正午仅作临时计算；解读须比较当地日期首尾候选，不将正午当作生时'
+
     result: dict[str, Any] = {
         "ok": True,
         "tool": "bazi",
@@ -631,6 +683,7 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
             "minute": solar.getMinute(),
         },
         "lunar_date": {
+            "basis": "所选日时钟面的农历日期；农历干支日期字段不等同于实交节四柱",
             "year": lunar.getYear(), "month": lunar.getMonth(),
             "day": lunar.getDay(),
             "year_in_ganzhi": lunar.getYearInGanZhi(),
@@ -646,9 +699,10 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         "sect": sect_info,
         "birthplace": birthplace,
         "timezone": tz_info,
+        "calendar_context": calendar_context,
         "notes": (([] if hour_known else
-                  ["时柱待补: 未提供出生时辰, 已按三柱 (年/月/日) 论断; "
-                   "五行得分/旺衰/用神/格局/神煞 均只计六字, 未揣测时辰。"])
+                  ["时柱待补: 内部正午的年/月/日柱与工程诊断为临时结果；"
+                   "须经解读入口的当地日期首尾核对，不能保证总能固定三柱；不输出精确起运。"])
                   + ([tz_info["note"]] if tz_info and tz_info["note"] else [])),
         "four_pillars": (pillars if hour_known else
                          {**pillars, "hour": {"status": "时柱待补"}}),
@@ -679,6 +733,8 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
             "hour": hour_nayin if hour_known else None,
         },
         "qi_yun": qi_yun,
+        "qi_yun_status": ('computed' if qi_yun else
+                          'birth_time_required' if not hour_known else 'unavailable'),
         "da_yun": da_yun_list,
         "liu_nian": liu_nian,
         "current_time_context": current_time_context,

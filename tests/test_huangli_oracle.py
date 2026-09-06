@@ -84,14 +84,17 @@ def test_huangdao_heidao_split_matches_the_reference():
     """黄道/黑道 六六分, 且十二值神不重不漏。"""
     md = (ROOT / "references" / "12-huangli.md").read_text(encoding="utf-8")
     import re
-    huang = set(re.findall(r"[一-鿿]",
-                           md.split("**黄道日**:")[1].split("\n")[0]))
-    hei = set(re.findall(r"[一-鿿]",
-                         md.split("**黑道日**:")[1].split("\n")[0]))
-    huang &= set(JIAN_CHU)
-    hei &= set(JIAN_CHU)
-    assert len(huang) == 6 and len(hei) == 6, (sorted(huang), sorted(hei))
-    assert huang | hei == set(JIAN_CHU)
+    rows = {}
+    for category in ('黄道类', '黑道类'):
+        match = re.search(rf'^\|\s*{category}\s*\|([^|]+)\|', md, re.MULTILINE)
+        assert match, f'缺少 {category} 十二值神分类'
+        names = re.sub(r'（[^）]*）', '', match.group(1)).strip().split('、')
+        assert len(names) == len(set(names)) == 6, names
+        rows[category] = set(names)
+    huang, hei = rows['黄道类'], rows['黑道类']
+    assert huang == {'青龙', '明堂', '金匮', '天德', '玉堂', '司命'}
+    assert hei == {'天刑', '朱雀', '白虎', '天牢', '玄武', '勾陈'}
+    assert len(huang | hei) == 12
     assert not (huang & hei)
 
 

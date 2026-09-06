@@ -335,7 +335,7 @@
       "id": 13,
       "name": "qimen-school-note-honesty",
       "prompt": "帮我起一个奇门遁甲的盘，今天下午一点。",
-      "expected_output": "Should call scripts/qimen_cast.py, report 局数/值符/值使/九宫, and — when the date is near a 节气 boundary — state that this tool uses 简化日数法 and that 拆补置闰法 may differ by one 元. Must not claim the chosen school is the only correct one. Reference 06-qimen.md.",
+      "expected_output": "Should call scripts/qimen_cast.py, report 局数/值符/值使/九宫, and — when the date is near a 节气 boundary — state that the default uses 符头三元 with 实交节, while legacy-days uses 简化日数法 and is compatibility only. Must not claim the chosen school is the only correct one. Reference 06-qimen.md.",
       "assertions": [
         {
           "kind": "script",
@@ -360,7 +360,7 @@
           "file": "references/06-qimen.md",
           "needles": [
             "流派注",
-            "简化日数法",
+            "符头",
             "拆补置闰",
             "不妄断"
           ]
@@ -670,7 +670,7 @@
           ],
           "paths": {
             "method_profile.primary_book": "ziping",
-            "source_passages.0.passage_id": "ziping:c008:p0001"
+            "evidence_bundle.passages.0.passage_id": "ziping:c008:p0001"
           },
           "has_keys": [
             "chart_facts",

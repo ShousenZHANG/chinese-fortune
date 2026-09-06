@@ -4,7 +4,7 @@ Subcommands:
     one           — single card
     three         — past / present / future
     celtic        — 10-card Celtic Cross (凯尔特十字)
-    relationship  — 5-card relationship spread (关系阵)
+    relationship  — 7-card relationship spread (关系阵)
     daily         — daily card
 
 Args:
@@ -43,7 +43,7 @@ MAJOR_ARCANA: list[dict] = [
     {"number": 3,  "en": "The Empress",       "zh": "皇后",       "keywords_up": "丰盛, 母性, 创造", "keywords_rev": "依赖, 占有"},
     {"number": 4,  "en": "The Emperor",       "zh": "皇帝",       "keywords_up": "权威, 秩序, 父性", "keywords_rev": "专断, 僵硬"},
     {"number": 5,  "en": "The Hierophant",    "zh": "教皇",       "keywords_up": "传统, 教化, 信仰", "keywords_rev": "反叛, 教条"},
-    {"number": 6,  "en": "The Lovers",        "zh": "恋人",       "keywords_up": "结合, 抉择, 爱", "keywords_rev": "失衡, 第三者"},
+    {"number": 6,  "en": "The Lovers",        "zh": "恋人",       "keywords_up": "结合, 抉择, 爱", "keywords_rev": "失衡, 价值分歧"},
     {"number": 7,  "en": "The Chariot",       "zh": "战车",       "keywords_up": "意志胜利, 前进", "keywords_rev": "失控, 受阻"},
     {"number": 8,  "en": "Strength",          "zh": "力量",       "keywords_up": "勇气, 内力, 慈悲", "keywords_rev": "自疑, 软弱"},
     {"number": 9,  "en": "The Hermit",        "zh": "隐者",       "keywords_up": "内省, 寻索, 智慧", "keywords_rev": "孤立, 退缩"},
@@ -53,7 +53,7 @@ MAJOR_ARCANA: list[dict] = [
     {"number": 13, "en": "Death",             "zh": "死神",       "keywords_up": "结束, 转化, 新生", "keywords_rev": "停滞, 拒绝改变"},
     {"number": 14, "en": "Temperance",        "zh": "节制",       "keywords_up": "中庸, 调和, 平衡", "keywords_rev": "极端, 失调"},
     {"number": 15, "en": "The Devil",         "zh": "恶魔",       "keywords_up": "诱惑, 束缚, 物欲", "keywords_rev": "解脱, 觉察"},
-    {"number": 16, "en": "The Tower",         "zh": "塔",         "keywords_up": "突变, 崩塌, 启示", "keywords_rev": "避免灾难, 拖延"},
+    {"number": 16, "en": "The Tower",         "zh": "塔",         "keywords_up": "突变, 崩塌, 启示", "keywords_rev": "抗拒变化, 拖延"},
     {"number": 17, "en": "The Star",          "zh": "星星",       "keywords_up": "希望, 灵感, 治愈", "keywords_rev": "失望, 自疑"},
     {"number": 18, "en": "The Moon",          "zh": "月亮",       "keywords_up": "迷茫, 潜意识, 幻象", "keywords_rev": "澄清, 释放恐惧"},
     {"number": 19, "en": "The Sun",           "zh": "太阳",       "keywords_up": "成功, 喜悦, 显化", "keywords_rev": "暂时阴霾, 过度"},
@@ -62,12 +62,15 @@ MAJOR_ARCANA: list[dict] = [
 ]
 
 
-SUITS = [
-    {"en": "Wands",    "zh": "权杖", "element": "火", "domain": "热情/事业/行动"},
-    {"en": "Cups",     "zh": "圣杯", "element": "水", "domain": "情感/关系/直觉"},
-    {"en": "Swords",   "zh": "宝剑", "element": "风", "domain": "思想/冲突/沟通"},
-    {"en": "Pentacles","zh": "钱币", "element": "土", "domain": "物质/工作/财富"},
-]
+# Both asset loading and fallback generation use this one vocabulary.
+# 星币 is a known Chinese alias; public output consistently uses 钱币.
+SUIT_META: dict[str, dict[str, str]] = {
+    "wands": {"en": "Wands", "zh": "权杖", "element": "火", "domain": "热情/事业/行动"},
+    "cups": {"en": "Cups", "zh": "圣杯", "element": "水", "domain": "情感/关系/直觉"},
+    "swords": {"en": "Swords", "zh": "宝剑", "element": "风", "domain": "思想/冲突/沟通"},
+    "pentacles": {"en": "Pentacles", "zh": "钱币", "element": "土", "domain": "物质/工作/财富"},
+}
+
 
 COURT_RANKS = [
     {"rank": "Page",   "zh": "侍从", "number": 11},
@@ -79,7 +82,7 @@ COURT_RANKS = [
 
 def build_minor_arcana() -> list[dict]:
     out: list[dict] = []
-    for suit in SUITS:
+    for suit in SUIT_META.values():
         for n in range(1, 11):
             out.append({
                 "suit": suit["zh"], "suit_en": suit["en"],
@@ -133,13 +136,6 @@ def build_full_deck() -> list[dict]:
     return deck
 
 
-# Suit metadata for flattening the {major_arcana, minor_arcana} asset shape.
-_ASSET_SUITS: dict[str, dict[str, str]] = {
-    "wands": {"zh": "权杖", "en": "Wands", "element": "火", "domain": "事业/行动"},
-    "cups": {"zh": "圣杯", "en": "Cups", "element": "水", "domain": "情感/关系"},
-    "swords": {"zh": "宝剑", "en": "Swords", "element": "风", "domain": "思想/冲突"},
-    "pentacles": {"zh": "星币", "en": "Pentacles", "element": "土", "domain": "物质/财务"},
-}
 _RANK_NUM: dict[str, int] = {
     "Ace": 1, "Page": 11, "Knight": 12, "Queen": 13, "King": 14,
 }
@@ -170,7 +166,7 @@ def _flatten_asset_deck(data: dict) -> list[dict]:
             "keywords_rev": "、".join(m.get("keywords_reversed", [])) or m.get("reversed_meaning", ""),
         })
     for suit_key, cards in minor.items():
-        meta = _ASSET_SUITS.get(suit_key, {"zh": suit_key, "en": suit_key,
+        meta = SUIT_META.get(suit_key, {"zh": suit_key, "en": suit_key,
                                            "element": None, "domain": ""})
         for c in cards:
             rank = str(c.get("rank", ""))
@@ -178,7 +174,7 @@ def _flatten_asset_deck(data: dict) -> list[dict]:
                 "arcana": "minor",
                 "number": _RANK_NUM.get(rank, int(rank) if rank.isdigit() else 0),
                 "en": f"{rank} of {meta['en']}",
-                "zh": c.get("name_zh"),
+                "zh": str(c.get("name_zh", "")).replace("星币", "钱币"),
                 "suit": meta["zh"], "suit_en": meta["en"],
                 "element": meta["element"], "domain": meta["domain"],
                 "keywords_up": c.get("upright", ""),
@@ -372,8 +368,10 @@ def main(argv: list[str] | None = None) -> int:
         "spread_name_cn": {
             "one": "单牌指引", "three": "三牌阵",
             "celtic": "凯尔特十字 (10 牌)",
-            "relationship": "关系阵 (5 牌)", "daily": "每日一牌",
+            "relationship": "关系阵 (7 牌)", "daily": "每日一牌",
         }.get(args.spread),
+        "interpretation_status": "symbolic_prompt_only",
+        "interpretation_note": "牌义是象征词汇；牌位中的对方/结果不提供他人想法或未来事件的事实。",
         "question": args.question,
         "seed": args.seed,
         "entropy": entropy.describe(rng, args.entropy, args.seed),

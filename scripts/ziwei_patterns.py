@@ -38,7 +38,6 @@ def detect_patterns(
         if "紫微" in stars and "天府" in stars:
             out.append({
                 "name": "紫府同宫",
-                "type": "上格",
                 "evidence": f"紫微+天府同坐{branch}宫",
             })
             break
@@ -52,7 +51,6 @@ def detect_patterns(
     ):
         out.append({
             "name": "府相朝垣",
-            "type": "上格",
             "evidence": "命宫无紫府, 三方四正见天府+天相",
         })
 
@@ -67,7 +65,6 @@ def detect_patterns(
     ):
         out.append({
             "name": "阳梁昌禄",
-            "type": "上格",
             "evidence": "三方四正集齐太阳+天梁+文昌+(禄存或化禄)",
         })
 
@@ -77,7 +74,6 @@ def detect_patterns(
     if len(hit) >= 3:
         out.append({
             "name": "机月同梁",
-            "type": "中上格",
             "evidence": f"三方四正含机月同梁组合 {len(hit)}/4: {','.join(sorted(hit))}",
         })
 
@@ -86,7 +82,6 @@ def detect_patterns(
     if spl_set.issubset(sfsz_set):
         out.append({
             "name": "杀破狼",
-            "type": "变格",
             "evidence": "三方四正同时见七杀+破军+贪狼",
         })
 
@@ -96,20 +91,17 @@ def detect_patterns(
             if "火星" in stars:
                 out.append({
                     "name": "火贪格",
-                    "type": "上格",
-                    "evidence": f"火星+贪狼同坐{branch}宫(横发)",
+                    "evidence": f"火星+贪狼同坐{branch}宫",
                 })
             if "铃星" in stars:
                 out.append({
                     "name": "铃贪格",
-                    "type": "上格",
-                    "evidence": f"铃星+贪狼同坐{branch}宫(横发)",
+                    "evidence": f"铃星+贪狼同坐{branch}宫",
                 })
             if "武曲" in stars:
                 out.append({
                     "name": "武贪格",
-                    "type": "上格",
-                    "evidence": f"武曲+贪狼同坐{branch}宫(财富格)",
+                    "evidence": f"武曲+贪狼同坐{branch}宫",
                 })
 
     # 9. 日月同宫 — 太阳+太阴同宫, 限丑/未.
@@ -117,15 +109,13 @@ def detect_patterns(
         if "太阳" in stars and "太阴" in stars and branch in {"丑", "未"}:
             out.append({
                 "name": "日月同宫",
-                "type": "上格",
-                "evidence": f"太阳+太阴同坐{branch}宫(日月同辉)",
+                "evidence": f"太阳+太阴同坐{branch}宫",
             })
 
     # 10. 明珠出海 — 命宫在未 + 三方四正见太阳/太阴/文昌/文曲.
     if ming_branch == "未" and {"太阳", "太阴", "文昌", "文曲"}.issubset(sfsz_set):
         out.append({
             "name": "明珠出海",
-            "type": "上格",
             "evidence": "命宫在未, 三方四正聚太阳/太阴/文昌/文曲",
         })
 
@@ -140,7 +130,6 @@ def detect_patterns(
     ):
         out.append({
             "name": "辅弼夹命",
-            "type": "上格",
             "evidence": f"左辅/右弼分坐命宫前后({prev_b}/{next_b})",
         })
 
@@ -151,7 +140,6 @@ def detect_patterns(
     ):
         out.append({
             "name": "昌曲夹命",
-            "type": "上格",
             "evidence": f"文昌/文曲分坐命宫前后({prev_b}/{next_b})",
         })
 
@@ -164,7 +152,6 @@ def detect_patterns(
         ):
             out.append({
                 "name": "羊陀夹忌",
-                "type": "凶格",
                 "evidence": f"化忌({ji_star})坐命, 擎羊陀罗夹之",
             })
 
@@ -175,7 +162,6 @@ def detect_patterns(
     ):
         out.append({
             "name": "空劫夹命",
-            "type": "凶格",
             "evidence": f"地空/地劫分坐命宫前后({prev_b}/{next_b})",
         })
 
@@ -184,10 +170,13 @@ def detect_patterns(
         if "天马" in stars and "擎羊" in stars:
             out.append({
                 "name": "马头带箭",
-                "type": "变格",
-                "evidence": f"天马+擎羊同坐{branch}宫(冲锋陷阵)",
+                "evidence": f"天马+擎羊同坐{branch}宫",
             })
 
+    for candidate in out:
+        candidate["status"] = "candidate_only"
+        candidate["source_status"] = "classical_conditions_not_verified"
+        candidate["recognition_basis"] = "project_star_combination"
     return out
 
 

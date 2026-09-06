@@ -69,14 +69,15 @@ def test_gate_rejects_bad_claims(chart, mutation, expected):
     assert any(expected in err for err in review_claims(chart, packet))
 
 
-def test_verified_quote_and_declared_conditions_are_accepted(chart):
+def test_verified_quote_cannot_promote_a_legacy_framework_to_an_applied_rule(chart):
     packet = deepcopy(chart['reading_support'])
     claim = packet['claims'][1]
     claim['conditions'] = dict.fromkeys(claim['conditions'], 'met')
     claim['status'] = 'supported'
     source = next(s for s in load_evidence()['sources'] if s['id'] == 'ziping-month')
     claim['quotes'] = [{'source_id': source['id'], 'text': source['quote']}]
-    # Deliberately structural only: marking a condition met still needs semantic review.
+    assert any('framework rule' in e for e in review_claims(chart, packet))
+    claim['status'] = 'needs_review'
     assert review_claims(chart, packet) == []
 
 

@@ -17,8 +17,14 @@ from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, sh
 EVIDENCE_PATH = Path(__file__).resolve().parents[1] / 'assets' / 'classical_evidence.json'
 
 
-def load_evidence() -> dict:
-    return json.loads(EVIDENCE_PATH.read_text(encoding='utf-8'))
+def load_evidence(*, include_routes: bool = True) -> dict:
+    registry = json.loads(EVIDENCE_PATH.read_text(encoding='utf-8'))
+    if include_routes:
+        from bazi_rules import registered_routes
+        sources, rules = registered_routes()
+        registry['sources'].extend(sources)
+        registry['rules'].extend(rules)
+    return registry
 
 
 def resolve_fact(chart: dict, path: str) -> Any:
@@ -35,7 +41,7 @@ def resolve_fact(chart: dict, path: str) -> Any:
 
 def bazi_reading_packet(chart: dict) -> dict:
     """Expose observations and unverified conditions without inventing events."""
-    evidence = load_evidence()
+    evidence = load_evidence(include_routes=False)
     pillars = chart['four_pillars']
     facts = [{'path': f'four_pillars.{key}.ganzhi', 'value': p['ganzhi']}
              for key, p in pillars.items() if 'ganzhi' in p]
@@ -168,6 +174,8 @@ def review_claims(chart: dict, packet: dict, evidence: dict | None = None) -> li
             if any(conditions.get(k) not in ('met', 'not_met', 'unknown') for k in required):
                 errors.append(prefix + ': missing conditions')
             if claim.get('status') == 'supported':
+                if rule and rule.get('evaluation') != 'bazi_rules_v1':
+                    errors.append(prefix + ': framework rule alone cannot certify an applied interpretation')
                 if any(conditions.get(k) != 'met' for k in required):
                     errors.append(prefix + ': unsupported certainty')
                 if any(sources.get(s, {}).get('verification') not in
@@ -175,6 +183,25 @@ def review_claims(chart: dict, packet: dict, evidence: dict | None = None) -> li
                     errors.append(prefix + ': unverified source')
             if rule and claim.get('scope') != rule['scope']:
                 errors.append(prefix + ': unsupported time precision')
+            if rule and rule.get('evaluation') == 'bazi_rules_v1':
+                from bazi_rules import review_computed_conditions
+                errors.extend(prefix + ': ' + error for error in
+                              review_computed_conditions(chart, claim, rule))
+                details = claim.get('condition_evidence', {})
+                if not isinstance(details, dict):
+                    errors.append(prefix + ': invalid condition evidence')
+                else:
+                    for detail in details.values():
+                        try:
+                            if not isinstance(detail, dict):
+                                raise ValueError('invalid condition detail')
+                            for fact in detail.get('facts', []):
+                                if resolve_fact(chart, fact['path']) != fact['value']:
+                                    raise ValueError('condition fact differs')
+                            for pid in detail.get('passage_ids', []):
+                                get_passage(pid)
+                        except (OSError, KeyError, IndexError, TypeError, ValueError):
+                            errors.append(prefix + ': invalid condition evidence reference')
         quotes = claim.get('quotes', [])
         if not isinstance(quotes, list):
             errors.append(prefix + ': invalid quotes')

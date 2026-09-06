@@ -1,0 +1,1556 @@
+{
+  "schema_version": "1.0",
+  "profile": "ziping-month-v2",
+  "scope": "八类原局条件路线；保留藏干与变格候选，不是全部五书规则或自动定格",
+  "verification": "transcription_checked_conditions_under_review",
+  "facsimile_status": "not_checked",
+  "common_passage_ids": [
+    "ziping:c008:p0001",
+    "ziping:c008:p0002",
+    "ziping:c008:p0003",
+    "ziping:c008:p0004",
+    "ziping:c009:p0001",
+    "ziping:c009:p0002",
+    "ziping:c009:p0003",
+    "ziping:c009:p0004",
+    "ziping:c009:p0005",
+    "ziping:c009:p0006",
+    "ziping:c009:p0007",
+    "ziping:c010:p0001",
+    "ziping:c010:p0002",
+    "ziping:c010:p0003",
+    "ziping:c010:p0004",
+    "ziping:c010:p0005",
+    "ziping:c010:p0006"
+  ],
+  "families": [
+    {
+      "id": "officer",
+      "title": "正官",
+      "roles": [
+        "正官"
+      ],
+      "chapter": "c031",
+      "routes": [
+        {
+          "id": "officer-finance-seal",
+          "title": "财印配官",
+          "passage_id": "ziping:c031:p0002",
+          "quote": "兩不相礙",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "officer",
+              "label": "正官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "wealth",
+              "label": "财透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "seal",
+              "label": "印透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "position",
+              "label": "财与印的位置、合克不妨碍本条作用",
+              "kind": "interpretive"
+            },
+            {
+              "id": "protection",
+              "label": "官星的刑冲伤克已检查",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c031:p0003",
+            "ziping:c031:p0006"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "officer-hurt-seal",
+          "title": "遇伤检查佩印",
+          "passage_id": "ziping:c031:p0004",
+          "quote": "遇傷在於佩印",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "officer",
+              "label": "正官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "hurt",
+              "label": "伤官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "id": "seal",
+              "label": "印透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "seal_function",
+              "label": "印能制伤且未被财损害",
+              "kind": "interpretive"
+            },
+            {
+              "id": "other_damage",
+              "label": "官杀混杂与地支冲合另已核查",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c031:p0006",
+            "ziping:c031:p0007"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "officer-mixed",
+          "title": "官杀并见检查取清",
+          "passage_id": "ziping:c031:p0005",
+          "quote": "合煞留官",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "officer",
+              "label": "正官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "kill",
+              "label": "七杀透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "remove_kill",
+              "label": "有明确合杀留官路径，且不是把日主合官当合去",
+              "kind": "interpretive"
+            },
+            {
+              "id": "position",
+              "label": "所需合的天干、位置及争合已经检查",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c031:p0006",
+            "ziping:c005:p0003",
+            "ziping:c005:p0004",
+            "ziping:c005:p0005"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wealth",
+      "title": "财",
+      "roles": [
+        "正财",
+        "偏财"
+      ],
+      "chapter": "c033",
+      "routes": [
+        {
+          "id": "wealth-food",
+          "title": "财用食生",
+          "passage_id": "ziping:c033:p0004",
+          "quote": "身强而不露官",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "food",
+              "label": "食神在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "id": "no_officer",
+              "label": "没有正官透出",
+              "kind": "computed",
+              "predicate": "exposed_none",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "身强，能承受财与食神的泄耗",
+              "kind": "interpretive"
+            },
+            {
+              "id": "position",
+              "label": "比劫、食财位置与其他损害已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c033:p0007",
+            "ziping:c033:p0008"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "wealth-seal",
+          "title": "财格佩印",
+          "passage_id": "ziping:c033:p0005",
+          "quote": "財印不宜相並",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "position",
+              "label": "财印位置不形成妨碍",
+              "kind": "interpretive"
+            },
+            {
+              "id": "seal_function",
+              "label": "印帮身的实际作用成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c033:p0006"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "wealth-kill",
+          "title": "财带杀的处理",
+          "passage_id": "ziping:c033:p0008",
+          "quote": "或合煞存財，或制煞生財",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "kill",
+              "label": "七杀在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "resolution",
+              "label": "合杀存财或制杀生财的具体路径成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c033:p0009",
+            "ziping:c033:p0012"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "seal",
+      "title": "印",
+      "roles": [
+        "正印",
+        "偏印"
+      ],
+      "chapter": "c035",
+      "routes": [
+        {
+          "id": "seal-officer",
+          "title": "印而透官",
+          "passage_id": "ziping:c035:p0002",
+          "quote": "只要官星清純",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "officer",
+              "label": "正官透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "officer_purity",
+              "label": "官星无未处理的混杂或伤克",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c035:p0008"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "seal-output",
+          "title": "印用食伤泄气",
+          "passage_id": "ziping:c035:p0003",
+          "quote": "身强印旺",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "output",
+              "label": "食神或伤官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "身强且印旺，确有需要泄的条件",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c035:p0007"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "seal-wealth",
+          "title": "印多用财",
+          "passage_id": "ziping:c035:p0006",
+          "quote": "印重身强",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "wealth",
+              "label": "财透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "印重身强，不是印轻财重",
+              "kind": "interpretive"
+            },
+            {
+              "id": "wealth_root",
+              "label": "财能抑过而根不太深",
+              "kind": "interpretive"
+            },
+            {
+              "id": "resolution",
+              "label": "财与食、劫、印的作用已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c035:p0007"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "title": "食神",
+      "roles": [
+        "食神"
+      ],
+      "chapter": "c037",
+      "routes": [
+        {
+          "id": "food-wealth",
+          "title": "食神生财",
+          "passage_id": "ziping:c037:p0002",
+          "quote": "財要有根",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "food",
+              "label": "食神在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "身强食旺",
+              "kind": "interpretive"
+            },
+            {
+              "id": "wealth_root",
+              "label": "财有有效根气，并非只出现同字",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c037:p0003",
+            "ziping:c037:p0008"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "food-kill",
+          "title": "食带杀：核财印与制杀条件",
+          "passage_id": "ziping:c037:p0003",
+          "quote": "只要無財",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "food",
+              "label": "食神在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "id": "kill",
+              "label": "七杀透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "wealth_resolution",
+              "label": "无财，或财先杀后而食隔其间，财确不能党杀",
+              "kind": "interpretive"
+            },
+            {
+              "id": "hidden_wealth",
+              "label": "地支财与位置未破坏本条条件",
+              "kind": "interpretive"
+            },
+            {
+              "id": "control",
+              "label": "食制杀的力量与作用成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "seal_relation",
+              "label": "无印绶，或按夏木火炎等条款核明印不夺食；不把弃食就杀印当食制杀",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c037:p0008"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "food-seal-rescue",
+          "title": "食逢印检查财的解法",
+          "passage_id": "ziping:c037:p0005",
+          "quote": "透財以解",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "food",
+              "label": "食神在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "wealth",
+              "label": "财透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "resolution",
+              "label": "印是否夺食及财能否解开须按全局判断",
+              "kind": "interpretive"
+            },
+            {
+              "id": "climate",
+              "label": "夏木等气候例外已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c037:p0003"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kill",
+      "title": "七杀",
+      "roles": [
+        "七杀"
+      ],
+      "chapter": "c039",
+      "routes": [
+        {
+          "id": "kill-food",
+          "title": "七杀用食制",
+          "passage_id": "ziping:c039:p0002",
+          "quote": "煞旺食强而身健",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "kill",
+              "label": "七杀在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "food",
+              "label": "食神在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "杀、食与日主的强弱关系符合条文",
+              "kind": "interpretive"
+            },
+            {
+              "id": "position",
+              "label": "财印的位置没有转食生杀或去食护杀",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c039:p0003",
+            "ziping:c039:p0004"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "kill-seal",
+          "title": "七杀用印",
+          "passage_id": "ziping:c039:p0003",
+          "quote": "煞印有情",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "kill",
+              "label": "七杀在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "resolution",
+              "label": "杀印同通月令，或杀重身轻转而用印的分支成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "position",
+              "label": "印确能作用于本条，财和食的影响已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c039:p0002",
+            "ziping:c039:p0004"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "kill-mixed",
+          "title": "七杀混官取清",
+          "passage_id": "ziping:c039:p0006",
+          "quote": "或去官，或去煞",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "kill",
+              "label": "七杀在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "officer",
+              "label": "正官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "resolution",
+              "label": "按月令主次选明去留并核对其合制条件",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c039:p0007",
+            "ziping:c005:p0003",
+            "ziping:c005:p0004",
+            "ziping:c005:p0005"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hurt",
+      "title": "伤官",
+      "roles": [
+        "伤官"
+      ],
+      "chapter": "c041",
+      "routes": [
+        {
+          "id": "hurt-wealth",
+          "title": "伤官生财",
+          "passage_id": "ziping:c041:p0002",
+          "quote": "身强而財有根",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "hurt",
+              "label": "伤官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "身能承受泄耗",
+              "kind": "interpretive"
+            },
+            {
+              "id": "wealth_root",
+              "label": "财有有效根气",
+              "kind": "interpretive"
+            },
+            {
+              "id": "climate",
+              "label": "冬金等生财与化财差别已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c041:p0003",
+            "ziping:c041:p0004"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "hurt-seal",
+          "title": "伤官佩印",
+          "passage_id": "ziping:c041:p0005",
+          "quote": "傷官旺，身稍弱",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "hurt",
+              "label": "伤官在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "id": "seal",
+              "label": "印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "strength",
+              "label": "伤旺身稍弱，不是伤轻身重",
+              "kind": "interpretive"
+            },
+            {
+              "id": "seal_root",
+              "label": "印有深根且未重叠失当",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c041:p0006",
+            "ziping:c041:p0007"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "hurt-officer",
+          "title": "金水伤官用官",
+          "passage_id": "ziping:c041:p0008",
+          "quote": "不可傷、官並透",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "officer",
+              "label": "正官透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "no_hurt",
+              "label": "伤官没有同时透出",
+              "kind": "computed",
+              "predicate": "exposed_none",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "id": "metal_water",
+              "label": "金水伤官的月令与气候条件成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "support",
+              "label": "财印辅助和官根已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c041:p0009",
+            "ziping:c041:p0010"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "blade",
+      "title": "阳刃",
+      "roles": [
+        "劫财"
+      ],
+      "chapter": "c043",
+      "routes": [
+        {
+          "id": "blade-control",
+          "title": "阳刃用官杀",
+          "passage_id": "ziping:c043:p0001",
+          "quote": "刃宜伏制，官煞皆宜",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "control",
+              "label": "官或杀在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正官",
+                "七杀"
+              ]
+            },
+            {
+              "id": "control_root",
+              "label": "官杀根气与制刃作用成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "resolution",
+              "label": "伤食、合杀与官杀混杂已处理",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c043:p0002",
+            "ziping:c043:p0004",
+            "ziping:c043:p0003",
+            "ziping:c043:p0005"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "blade-kill-combine",
+          "title": "刃与杀同时透出时查合",
+          "passage_id": "ziping:c043:p0002",
+          "quote": "丁與壬合",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "blade",
+              "label": "劫财透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "劫财"
+              ]
+            },
+            {
+              "id": "kill",
+              "label": "七杀透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "combine",
+              "label": "逐字核对是否有合杀及是否影响制刃，不由标签直接认定",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c043:p0004",
+            "ziping:c043:p0005"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "blade-wealth",
+          "title": "阳刃用财须查转生",
+          "passage_id": "ziping:c043:p0006",
+          "quote": "用傷食以轉刃生財",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "output",
+              "label": "食伤在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            },
+            {
+              "id": "wealth_root",
+              "label": "财有有效深根",
+              "kind": "interpretive"
+            },
+            {
+              "id": "resolution",
+              "label": "食伤转生财的作用成立",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c043:p0005"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    },
+    {
+      "id": "salary",
+      "title": "建禄月劫",
+      "roles": [
+        "比肩",
+        "劫财"
+      ],
+      "chapter": "c045",
+      "routes": [
+        {
+          "id": "salary-officer",
+          "title": "禄劫用官",
+          "passage_id": "ziping:c045:p0002",
+          "quote": "又要財印相隨",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "officer",
+              "label": "正官透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "id": "support",
+              "label": "财或印在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财",
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "id": "position",
+              "label": "官得辅助，财印不互伤且无未处理伤官",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c045:p0007",
+            "ziping:c045:p0008"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "salary-wealth",
+          "title": "禄劫用财",
+          "passage_id": "ziping:c045:p0003",
+          "quote": "須帶傷食",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "wealth",
+              "label": "财在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "id": "output_or_transform",
+              "label": "有食伤转生，或按会支条款核明化劫为财、化劫为生；不能只凭缺透食伤排除",
+              "kind": "interpretive"
+            },
+            {
+              "id": "resolution",
+              "label": "食伤能转劫生财，不只是同在盘中",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c045:p0005",
+            "ziping:c045:p0009"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "salary-kill",
+          "title": "禄劫用杀",
+          "passage_id": "ziping:c045:p0004",
+          "quote": "必須制伏",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "kill",
+              "label": "七杀透出",
+              "kind": "computed",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "id": "control",
+              "label": "制杀的具体干支与作用已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c045:p0005",
+            "ziping:c045:p0010"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        },
+        {
+          "id": "salary-output",
+          "title": "禄劫无财官用食伤",
+          "passage_id": "ziping:c045:p0006",
+          "quote": "無財官而用傷食",
+          "conditions": [
+            {
+              "id": "full_chart",
+              "label": "四柱资料完整",
+              "kind": "computed",
+              "predicate": "full_chart"
+            },
+            {
+              "id": "output",
+              "label": "食伤在明干或支藏中可见（不等于已发挥作用）",
+              "kind": "computed",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            },
+            {
+              "id": "no_wealth_officer",
+              "label": "财官没有透出",
+              "kind": "computed",
+              "predicate": "exposed_none",
+              "roles": [
+                "正财",
+                "偏财",
+                "正官"
+              ]
+            },
+            {
+              "id": "hidden_roles",
+              "label": "地支财官与合局没有改变本条取用",
+              "kind": "interpretive"
+            },
+            {
+              "id": "season",
+              "label": "原文春木秋金等季节与泄过条件已核",
+              "kind": "interpretive"
+            },
+            {
+              "id": "month_resolution",
+              "label": "已核本条属于月令本格、可成立的变格或兼格；候选召回本身不算定格",
+              "kind": "interpretive"
+            }
+          ],
+          "exception_passage_ids": [
+            "ziping:c045:p0007"
+          ],
+          "scope": "natal",
+          "allowed_conclusion": "只解释本条结构与成立条件，不推出现实事件或优劣等级",
+          "review": {
+            "status": "source_examples_checked_pending_full_semantic_review",
+            "basis": "逐条比对冻结主段和例外；显式露透与支藏分开；见原典案例测试"
+          }
+        }
+      ]
+    }
+  ]
+}

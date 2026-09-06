@@ -1,11 +1,12 @@
 """八字: 神煞 detection, driven by assets/shensha.json."""
 from __future__ import annotations
 
+from copy import deepcopy
 from typing import Any
 
 from bazi_tables import PILLAR_LABELS_CN, xun_kong_of_day
 
-# 神煞 detection — driven by assets/shensha.json + classical fallbacks
+# 神煞 detection — selected compatibility rules; source status travels with hits.
 # --------------------------------------------------------------------------- #
 
 # Classification by 起法 type — determines which pillar's stem/branch to query.
@@ -199,35 +200,6 @@ def _scan_year_branch_single(
     return hits
 
 
-def _scan_month_branch_stem(
-    name: str,
-    qi_fa: dict,
-    month_branch: str,
-    stems: dict[str, str],
-    meaning: str,
-) -> list[dict]:
-    """月柱 keys like '寅月' -> target stem. Scan all 4 stems."""
-    key = _month_branch_key(month_branch)
-    target = qi_fa.get(key)
-    if not target:
-        return []
-    # Special: 天德贵人 qi_fa_table sometimes lists a branch instead of stem
-    # (e.g. 卯月 -> 申). Try both stems and branches.
-    targets = [target] if isinstance(target, str) else list(target)
-    hits: list[dict] = []
-    for pillar_label, s in stems.items():
-        if s in targets:
-            hits.append({
-                "name": name,
-                "position": PILLAR_LABELS_CN[pillar_label] + "干",
-                "source_pillar": pillar_label,
-                "hit": s,
-                "trigger": "月支",
-                "meaning": meaning,
-            })
-    return hits
-
-
 def _scan_month_branch_sanhe_stem(
     name: str,
     qi_fa: dict,
@@ -384,16 +356,17 @@ def detect_all_shensha(
     branches_map: dict[str, str],
     gender: str,
 ) -> list[dict]:
-    """Detect all 35 神煞 across the four pillars.
+    """Run the 35 selected compatibility lookups across known pillars.
 
     Returns a deduped list of dicts: {name, position, source_pillar, hit,
-    trigger}. Uses the tables in assets/shensha.json. Missing tables produce
-    no inferred hit; the caller must supply the complete reference asset.
+    trigger, source_review}. Source location, full method support and personal
+    interpretation are different claims; none follows merely from a hit.
     """
     triggered: list[dict] = []
 
     for name, category in SHENSHA_CATEGORY.items():
         entry = _find_entry(shensha_data, name) if shensha_data else None
+        first_hit = len(triggered)
         meaning = ""
         qi_fa = (entry or {}).get("qi_fa_table")
 
@@ -403,6 +376,7 @@ def detect_all_shensha(
                 # alias
                 alt = _find_entry(shensha_data, "红艳煞")
                 if alt:
+                    entry = alt
                     qi_fa = alt.get("qi_fa_table")
             if qi_fa is None:
                 raise ValueError(f'神煞起法表缺失: {name}')
@@ -491,6 +465,15 @@ def detect_all_shensha(
         elif category == "year_branch_special":
             # 天罗地网
             triggered.extend(_scan_tian_luo_di_wang(branches_map, gender, meaning))
+
+        source_review = (entry or {}).get('source_review') or {
+            'status': 'pending', 'selected_method': category, 'passages': [],
+            'unverified': ['当前完整起法尚未定位来源'], 'facsimile_status': 'not_checked',
+        }
+        for hit in triggered[first_hit:]:
+            # Canonical name also resolves 红艳 and the two 天罗地网 outputs.
+            hit['rule_name'] = (entry or {}).get('name', name)
+            hit['source_review'] = deepcopy(source_review)
 
     # Dedupe identical hits (same name+position+hit)
     seen: set[tuple] = set()

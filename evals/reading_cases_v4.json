@@ -1,0 +1,1045 @@
+{
+  "schema_version": "2.0",
+  "suite_id": "v4-capability-24",
+  "status": "designed_not_run",
+  "purpose": "冻结版本实际回答能力集；题目和验收口径，不含回答或通过记录",
+  "authorship": {
+    "review_scope": "in-session separate agent; authored packaging/time code, not the new eight-family BaZi interpretation implementation",
+    "selection": "八类样本仅以lunar_python历法换算、手工十神/月令关系选择，未运行新assess_rules或按其结果调题；coverage_targets是查读方向，不是预先判定成格",
+    "not_external_blind_design": true
+  },
+  "population": "虚构的自足测试资料，不使用用户私人命例；除T02明确代家人核对外，均按题面在世成人处理",
+  "counts": {
+    "complete_bazi": 12,
+    "time_followup": 4,
+    "ziwei": 4,
+    "liuyao": 4
+  },
+  "execution_protocol": {
+    "versions": "冻结新旧commit、语料、SKILL/契约和依赖；同模型同设置，每版本至少两次独立新会话",
+    "conversation_isolation": "每题从新会话开始；T01-T04按turns依次发送，其他题不共享记忆；prompt与结构化input表示同一份资料",
+    "time": "每轮先调用request_time取得明确当前时区的时间；比较实验注入该轮UTC一次后给所有相关工具共用。另独立记录真实时钟调用检查，不能声称注入值来自实时采样",
+    "randomness": "六爻seed只为重演且已预设，不根据卦象更换。模型生成设置能固定则完整记录，不能编造未知seed",
+    "no_bulk_input": "按正常宿主流程读取SKILL和必要说明；使用list-books/检索取相关条款，不把整书JSON作为提示词",
+    "preserve_failures": "首答、工具轨迹、退出码与实际错误保留。修订创建新实验/attempt，不能覆盖旧答或删题",
+    "version_blinding": "答案评审隐藏版本并随机排列；记录评审者与实现的关系，不冒称外部盲测"
+  },
+  "review_protocol": {
+    "criteria": [
+      "chart_fidelity",
+      "source_fidelity",
+      "conditions",
+      "scope",
+      "completion",
+      "readability",
+      "relevance",
+      "correction_honesty"
+    ],
+    "dispositions": [
+      "answered",
+      "partially_answered",
+      "justified_clarification",
+      "incorrect_refusal",
+      "failed"
+    ],
+    "complete_task_requirement": "12个完整八字和8个完整紫微/六爻题不能仅给盘面清单、泛泛知识或还需研究；必须完成题目要求中当前有依据的分析。必要解释规则缺口计为部分完成，不自动算通过，也不强迫无依据事件断言。",
+    "clarification_requirement": "T02/T03允许针对歧义的合理追问；其余已明确资料不能反复采集。追问同时完成不受缺项影响的部分，补齐后继续完成。",
+    "readability": "独立评审用自己的话复述主结论、原因和关键限制；不以字数少、术语少代替理解质量。",
+    "binding": "每条评审绑定完整回答UTF-8字节及有序工具轨迹的SHA256，正文或轨迹变动后旧标签失效；格式检查通过不等于语义通过。",
+    "cost": "记录实际usage/tokenizer标识、输入/工具输出UTF-8字节、调用次数与耗时；同任务完整程度才比较成本，缺项或退答不能冒充节省。",
+    "failure_policy": "盘面/引文/时间错误如实记录并先修复后新开实验。八类方向不强制输出某个格名，规则允许变化就核完整条件。不得用总体通过率掩盖错误样本。"
+  },
+  "cases": [
+    {
+      "id": "B01",
+      "group": "complete_bazi",
+      "prompt": "公历1988-02-14，当地钟表时间10:20，男，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我最近从个人执行转为负责团队流程，想按《子平真诠》看看原局中官的作用。请结合月令、透藏、财印食伤的实际位置说明这条分析路径能成立到哪里；有破坏条件或可讨论的救应也一起讲。别只给一个格名。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1988-02-14",
+          "time": "10:20",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "正官、取用及救应"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "解释月令与透藏所确定的查读方向；核官相关条件、干扰与救应，不把见到印或财就记为成立",
+          "把至少一条有依据的结构说明翻译成普通人能理解的话，并回应流程责任这一已提供的现实背景"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B02",
+      "group": "complete_bazi",
+      "prompt": "公历1991-01-14，当地钟表时间10:20，女，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我同时做本职工作和一个收费的小项目，想理解古法里财在这个原局中怎样起作用。先说财的来源与配合，再区分哪些条件会改变看法；不要据此报收入金额或建议投资。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1991-01-14",
+          "time": "10:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "财、身财配合及比劫"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "区分财出现、月令取财及条件充分三件事；结合比劫、官印食伤实际位置说明至少一条配合或冲突",
+          "讨论本职和项目这两个用户已经提供的主题，不把命盘硬译成某个职业或收入"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B03",
+      "group": "complete_bazi",
+      "prompt": "公历1993-02-14，当地钟表时间10:20，男，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我正在一边工作一边备考资格证。请从原局的印与食伤关系解释，哪些结构与学习、表达这个主题有关，哪里仍需看配合；请分清正印和偏印，别把有印就当一定考过。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1993-02-14",
+          "time": "10:20",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "印、正偏区别及食伤制化"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "根据实际盘面分清正偏印与食伤位置，不笼统套用印格名称",
+          "完整检索相关条件与例外，说明能够支持的传统解释及不能由盘面推出的考试结果"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B04",
+      "group": "complete_bazi",
+      "prompt": "公历1995-03-13，当地钟表时间10:20，女，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我做内容策划，最近在把零散想法整理成完整作品。请以月令主线看食神、财、印在原局中的配合，先解释最关键的两点，再说哪些条件会使这两点改变。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1995-03-13",
+          "time": "10:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "食神、财及印的关系"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "核食神与其他透藏关系；月令取法发生变化时如实解释，不为迎合题目强定食神格",
+          "至少完成一个成立条件与一个受限条件的全盘讨论，不能只有十神定义或评分"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B05",
+      "group": "complete_bazi",
+      "prompt": "公历1998-02-20，当地钟表时间10:20，男，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我近期负责一个截止期很紧的项目。请按原局讨论七杀以及食神制杀、印化杀这两条可能路径，哪条有盘面依据，哪条条件没齐。请把压力这个主题说清楚，但别直接断我性格强硬或一定出事。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1998-02-20",
+          "time": "10:20",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "七杀、制杀及化杀"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "分别核制杀、化杀的必要前提及原局可观察位置；未知条件不能写成满足",
+          "明确哪项是结构事实、哪项是条件解释，并给出与项目责任有关而不冒充现实预测的说明"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B06",
+      "group": "complete_bazi",
+      "prompt": "公历2000-01-19，当地钟表时间10:20，女，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我在工作中经常要提出修改意见。请按《子平真诠》讲这个原局的伤官及官、印、财配合：哪些地方值得先看，哪些组合不能单凭一个名称下结论。希望听得懂，不要只罗列术语。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "2000-01-19",
+          "time": "10:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "伤官、官印财的配合"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "说明伤官在本局中的实际位置和月令关系；核官印财的存在、位置及适用条件",
+          "回应表达与流程配合主题，不从伤官标签推出叛逆、口舌事件或职场灾难"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B07",
+      "group": "complete_bazi",
+      "prompt": "公历2001-03-12，当地钟表时间10:20，男，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我想按子平真诠的口径了解原局中的阳刃：它在这里为什么要单独看，官杀的制约条件如何核。请具体解释本局，不能看到羊刃就断意外或手术。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "2001-03-12",
+          "time": "10:20",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "阳刃、制化及杂见"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "核所采用的阳干阳刃取法与月令条件，说明与普通比劫讨论的区别",
+          "讨论官杀及其他配合是否具有足够条件；既不因名称判灾，也不因有制字就宣布吉格"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B08",
+      "group": "complete_bazi",
+      "prompt": "公历1985-02-14，当地钟表时间10:20，女，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我和老同事准备合作做一个小型设计项目，想用古法理解原局中的建禄或月劫。请说明为什么不能直接拿禄劫当用神结论，怎样从全局另看财官食伤；别替我判断同事是否可靠。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1985-02-14",
+          "time": "10:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "建禄月劫、外取与透藏"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "核建禄/月劫查读方向及全局外取条件，区分同类出现与最终取用",
+          "结合合作这一已知背景解释传统结构，不能从比劫直接断同事争财或背叛"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B09",
+      "group": "complete_bazi",
+      "prompt": "公历1990-05-10，当地钟表时间14:30，男，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我想对原局做一次有依据的综合阅读，重点是官杀、印食伤并见时如何分清主次。先完成能支持的判断，再说明成败救应还差什么条件；不要因为某一标准路径不成立就说整个命局失败。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1990-05-10",
+          "time": "14:30",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "杂见、变化及成败救应"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "结合完整四柱核透藏、兼杂和取用变化，不只查一条月令原则就结束",
+          "至少完成一个有盘面支持的路径和一个不成立或待核的路径，解释两者边界而不泛化人生好坏"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B10",
+      "group": "complete_bazi",
+      "prompt": "公历1992-11-18，当地钟表时间10:20，女，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我想理解格局取用与调候取用为什么可能说不同的字。请先按子平真诠读原局，再查《穷通宝鉴》中对应日干和月令的完整条件，对照解释差异，不能按五行数量投票选一个字。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1992-11-18",
+          "time": "10:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "格局与调候分层"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "完整完成原局取用方向，调候只用实际日干月令对应原文且保留条件与例外",
+          "解释两个体系所问问题不同；有分歧分列理由，不以数字多数或神煞评分裁决"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B11",
+      "group": "complete_bazi",
+      "prompt": "公历1987-08-21，当地钟表时间10:20，男，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我希望看一个可核对的原局分析，重点是财印与食伤关系。可以用滴天髓补充，但请区分正文和注解，并解释补充条款对本局的适用范围；不要把注家案例中的现实经历安到我身上。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1987-08-21",
+          "time": "10:20",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": null
+      },
+      "coverage_targets": [
+        "原文层次与条件解释"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "先完成子平月令主线，再用补充条款核实际条件，不混成多书投票",
+          "引用至少一组与本局相关的完整上下文；正文/古注身份与文字一致，案例人物经历不转嫁给用户"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "B12",
+      "group": "complete_bazi",
+      "prompt": "公历1994-07-16，当地钟表时间10:20，女，出生地北京，出生时区Asia/Shanghai。采用钟表时，不做真太阳时修正，子时换日按sect=2；时间准确。现在所在地悉尼，时区Australia/Sydney，本轮可复现请求时刻为2026-09-06T03:15:00+00:00。我在世；我想把原局和2027年的传统岁运分析分开看。我现在在考虑继续做专业岗位还是竞聘带团队的岗位，这只是现实背景。请先说明原局结构，再查相关取运条件讨论2027年可能涉及的变化；不要保证升职或报具体入职月份。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1994-07-16",
+          "time": "10:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "question_year": 2027
+      },
+      "coverage_targets": [
+        "原局到指定岁运"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "先完成与问题相关的原局分析；再用相应岁运条款核2027，而非把原局原则当年度事件依据",
+          "明确立春年界、具体运段及起运口径；规则不足时保留已经完成的部分，并精确标出岁运解释缺口"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "T01",
+      "group": "time_followup",
+      "prompt": "公历1990-05-10 14:30，男，出生地北京，出生时区Asia/Shanghai，采用钟表时、sect=2。我在世，现居洛杉矶America/Los_Angeles；本轮固定请求时刻2026-12-31T16:30:00+00:00。请先说明所在地的年月日和“今年”范围，再简要读原局中与工作主题有关的结构。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1990-05-10",
+          "time": "14:30",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        }
+      },
+      "coverage_targets": [
+        "同一瞬间更换现居地、跨公历年与立春范围"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "两轮按各自明确当前时区解析同一UTC，核对本地跨年；不能使用主机或出生时区代替",
+          "出生资料不变时原局不变；区分当前公历年度列表与立春开始的干支流年",
+          "首轮须完成简要原局分析，不能只返回两地时间"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "turns": [
+        {
+          "request_time": {
+            "utc": "2026-12-31T16:30:00+00:00",
+            "current_timezone": "America/Los_Angeles"
+          },
+          "prompt": "公历1990-05-10 14:30，男，出生地北京，出生时区Asia/Shanghai，采用钟表时、sect=2。我在世，现居洛杉矶America/Los_Angeles；本轮固定请求时刻2026-12-31T16:30:00+00:00。请先说明所在地的年月日和“今年”范围，再简要读原局中与工作主题有关的结构。"
+        },
+        {
+          "request_time": {
+            "utc": "2026-12-31T16:30:00+00:00",
+            "current_timezone": "Australia/Sydney"
+          },
+          "prompt": "把所在地改为悉尼Australia/Sydney；仍对照刚才同一个UTC瞬间，出生地和出生时刻完全不变。现在这里是哪年哪日？这会改变原局吗？“今年”的公历标签与立春流年范围应怎样说明？"
+        }
+      ],
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "T02",
+      "group": "time_followup",
+      "prompt": "公历2026-04-05 02:30在悉尼出生，女，出生和当前所在地时区都是Australia/Sydney，钟表时、sect=2。我替家人核对出生资料，孩子在世；请求时刻2026-09-06T03:15:00+00:00。请核对这次出生时间并解释能固定的基础盘面结构，不看升学婚恋等人生预测。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "2026-04-05",
+          "time": "02:30",
+          "gender": "female",
+          "city": "悉尼",
+          "timezone": "Australia/Sydney",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        }
+      },
+      "coverage_targets": [
+        "出生DST重复时间补充偏移后继续完成"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "第一轮识别真实重复时段、说明需要的偏移信息，不默选一次",
+          "第二轮使用+11:00所指同一出生瞬间，不能继续笼统拒答，也不以当前悉尼偏移替换历史偏移",
+          "说明已解决与仍未解决的信息，避免保证两候选一定有不同四柱"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "turns": [
+        {
+          "request_time": {
+            "utc": "2026-09-06T03:15:00+00:00",
+            "current_timezone": "Australia/Sydney",
+            "source": "injected_for_reproducible_comparison"
+          },
+          "prompt": "公历2026-04-05 02:30在悉尼出生，女，出生和当前所在地时区都是Australia/Sydney，钟表时、sect=2。我替家人核对出生资料，孩子在世；请求时刻2026-09-06T03:15:00+00:00。请核对这次出生时间并解释能固定的基础盘面结构，不看升学婚恋等人生预测。"
+        },
+        {
+          "request_time": {
+            "utc": "2026-09-06T03:15:00+00:00",
+            "current_timezone": "Australia/Sydney",
+            "source": "injected_for_reproducible_comparison"
+          },
+          "prompt": "出生记录补充明确写的是02:30+11:00，是时钟回拨前的第一次02:30。请按这个偏移继续完成基础盘面，并告诉我补充信息解决了什么歧义。"
+        }
+      ],
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "T03",
+      "group": "time_followup",
+      "prompt": "公历1990-05-10，男，北京出生，时区Asia/Shanghai，先按钟表时、sect=2，不知道出生几点。我在世、现居悉尼Australia/Sydney；请求时刻2026-09-06T03:15:00+00:00。想理解原局月令与十神，先做不依赖具体时辰的部分。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1990-05-10",
+          "time": null,
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        }
+      },
+      "coverage_targets": [
+        "未知时辰补齐后更新而非重写已定事实"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "首轮只固定真实不变事实并完成相应解释，不以午时代表未知时辰",
+          "补时后完整解释新增时柱及其对条件的影响，保留不变事实",
+          "正确处理1990北京历史夏令时；不编造此前预测命中的过程"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "turns": [
+        {
+          "request_time": {
+            "utc": "2026-09-06T03:15:00+00:00",
+            "current_timezone": "Australia/Sydney",
+            "source": "injected_for_reproducible_comparison"
+          },
+          "prompt": "公历1990-05-10，男，北京出生，时区Asia/Shanghai，先按钟表时、sect=2，不知道出生几点。我在世、现居悉尼Australia/Sydney；请求时刻2026-09-06T03:15:00+00:00。想理解原局月令与十神，先做不依赖具体时辰的部分。"
+        },
+        {
+          "request_time": {
+            "utc": "2026-09-06T03:15:00+00:00",
+            "current_timezone": "Australia/Sydney",
+            "source": "injected_for_reproducible_comparison"
+          },
+          "prompt": "家人查到记录，出生是当日14:30，北京当地钟表时，其余资料不变。请补完解读，明确哪些新判断来自时柱，哪些之前已经确定；不要把先前的未知写成已经算准。"
+        }
+      ],
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "T04",
+      "group": "time_followup",
+      "prompt": "公历1988-02-14 10:20，男，北京出生，时区Asia/Shanghai，钟表时、sect=2。我在世，现居悉尼Australia/Sydney；请求时刻2026-09-06T03:15:00+00:00。先按原局说明官与印食伤的实际关系，然后说分析今年还需要核哪些岁运条件。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1988-02-14",
+          "time": "10:20",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        }
+      },
+      "coverage_targets": [
+        "明确历史年度优先于现在和年度追问"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "首轮完成原局可支持分析，后轮只切换指定目标年度而非出生或请求时刻",
+          "明确2024的年度边界及所用运段；不能偷偷继续讲当前年度",
+          "按条款完成可支持的岁运关系，不虚构真实往事或以事后吻合自夸"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "turns": [
+        {
+          "request_time": {
+            "utc": "2026-09-06T03:15:00+00:00",
+            "current_timezone": "Australia/Sydney",
+            "source": "injected_for_reproducible_comparison"
+          },
+          "prompt": "公历1988-02-14 10:20，男，北京出生，时区Asia/Shanghai，钟表时、sect=2。我在世，现居悉尼Australia/Sydney；请求时刻2026-09-06T03:15:00+00:00。先按原局说明官与印食伤的实际关系，然后说分析今年还需要核哪些岁运条件。"
+        },
+        {
+          "request_time": {
+            "utc": "2026-09-06T03:15:00+00:00",
+            "current_timezone": "Australia/Sydney",
+            "source": "injected_for_reproducible_comparison"
+          },
+          "prompt": "更正我的目标：我要回看的是2024年，不是2026年，出生信息完全不变。请按2024年的取运条款继续分析，并区分立春前后；我没提供实际发生过的事情，请不要补写“当年你一定换工作了”。"
+        }
+      ],
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "Z01",
+      "group": "ziwei",
+      "prompt": "公历1995-07-20 01:20，女，北京出生，出生时区Asia/Shanghai，钟表时、sect=2，时间准确。我在世，现居悉尼Australia/Sydney；本轮请求时刻2026-09-06T03:15:00+00:00。请用紫微详细解释与职业发展主题有关的原局结构。我目前做产品设计，想了解命宫、官禄、财帛、迁移的联系。请保留相关辅星、四化、三方四正，先说重要结构再解释术语，不要只发十二宫JSON。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1995-07-20",
+          "time": "01:20",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        }
+      },
+      "coverage_targets": [
+        "独立紫微条款",
+        "完整宫位输入"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "围绕职业主题选择并完整检查主辅星、相关宫位与三方四正，不静默改为只看骨架",
+          "根据实际支持的独立紫微条款解释至少一项关系；未核亮度或格局不得包装为确定个人优劣"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "Z02",
+      "group": "ziwei",
+      "prompt": "公历1989-11-03 16:45，男，北京出生，出生时区Asia/Shanghai，钟表时、sect=2，时间准确。我在世，现居悉尼Australia/Sydney；本轮请求时刻2026-09-06T03:15:00+00:00。我准备在同一家公司申请跨城市岗位，想请你用紫微说明迁移宫与命宫、事业相关宫位的连接。先完成当前盘面的主星、四化和对宫三合关系，再说哪些解释条件不足；别直接用“迁移旺”断一定适合出国。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1989-11-03",
+          "time": "16:45",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        }
+      },
+      "coverage_targets": [
+        "独立紫微条款",
+        "完整宫位输入"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "在完整资料下完成与迁移问题有关的宫位关系，不因不可预测结果就拒绝整个任务",
+          "坐守与借宫分开、年四化与自化分开；把未核定的后起规则明确隔离"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "Z03",
+      "group": "ziwei",
+      "prompt": "公历1992-04-18 21:10，女，北京出生，出生时区Asia/Shanghai，钟表时、sect=2，时间准确。我在世，现居悉尼Australia/Sydney；本轮请求时刻2026-09-06T03:15:00+00:00。我想了解紫微中的命宫和身宫各在什么位置、与哪些星曜和三方四正相连。请拿我的盘解释二者的区别，再说明其中与你选择的传统条款相符的部分；不需要把年龄段的人生编成故事。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1992-04-18",
+          "time": "21:10",
+          "gender": "female",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        }
+      },
+      "coverage_targets": [
+        "独立紫微条款",
+        "完整宫位输入"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "正确展示命身位置及叠宫关系，并结合本人的实际星曜解释而不只背定义",
+          "引用的安宫/关系/解释条款层次明确，不能把身宫位置变成某年龄必然转运"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "Z04",
+      "group": "ziwei",
+      "prompt": "公历1984-09-22 08:40，男，北京出生，出生时区Asia/Shanghai，钟表时、sect=2，时间准确。我在世，现居悉尼Australia/Sydney；本轮请求时刻2026-09-06T03:15:00+00:00。请读我的紫微原局里命宫、福德、财帛之间的结构，我关心长期工作与生活安排。希望你说明四化落点和相关主辅星怎样组织这个主题，同时把亮度表、格名与已经核定的解释条件分清楚。",
+      "input": {
+        "birth": {
+          "calendar": "solar",
+          "date": "1984-09-22",
+          "time": "08:40",
+          "gender": "male",
+          "city": "北京",
+          "timezone": "Asia/Shanghai",
+          "time_basis": "clock",
+          "day_rollover_sect": 2,
+          "time_uncertainty_minutes": 0
+        },
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Australia/Sydney",
+          "source": "injected_for_reproducible_comparison"
+        }
+      },
+      "coverage_targets": [
+        "独立紫微条款",
+        "完整宫位输入"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "完整完成相关宫位与四化关系；不将亮度或格名的优劣标签直接等同个人幸福、财富或健康",
+          "给出可核对且可复述的主题分析；财帛宫不是收入数据，福德宫也不是心理诊断"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "L01",
+      "group": "liuyao",
+      "prompt": "我当前在北京Asia/Shanghai，本轮请求时刻2026-09-06T03:15:00+00:00。请用三枚硬币法替我起一次六爻卦；本次可复现评测固定seed=7，只起一次，不重抽。我已经通过面试，HR说本周会寄电子合同。我想按六爻看这件文书流程，请围绕父母爻、世应、日月与动变解释当前卦，先给卦内能支持的判断，再说缺哪些条件；不用保证合同到达日期。",
+      "input": {
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Asia/Shanghai",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "cast_method": "coins",
+        "seed": 7
+      },
+      "coverage_targets": [
+        "合同文书"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "实际调用起卦工具一次，保留原始爻序，本卦/变卦、动爻、宫序和世应准确",
+          "针对具体问题选择并解释用神，完成日月、动变可支持的关系，不只报告名称或免责声明",
+          "引用六爻自己的规则并检查条件；不能借八字规则证明事件、概率或第三方心理"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "L02",
+      "group": "liuyao",
+      "prompt": "我当前在北京Asia/Shanghai，本轮请求时刻2026-09-06T03:15:00+00:00。请用三枚硬币法替我起一次六爻卦；本次可复现评测固定seed=42，只起一次，不重抽。我刚参加完一个岗位的终面，问的是人选是否落实，不是纸质合同何时收到。请用六爻说明本次如何选择用神，并结合官鬼、世应和日月动变完成分析；别把父母爻有动就当已经录用。",
+      "input": {
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Asia/Shanghai",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "cast_method": "coins",
+        "seed": 42
+      },
+      "coverage_targets": [
+        "职位与文书取用区别"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "实际调用起卦工具一次，保留原始爻序，本卦/变卦、动爻、宫序和世应准确",
+          "针对具体问题选择并解释用神，完成日月、动变可支持的关系，不只报告名称或免责声明",
+          "引用六爻自己的规则并检查条件；不能借八字规则证明事件、概率或第三方心理"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "L03",
+      "group": "liuyao",
+      "prompt": "我当前在北京Asia/Shanghai，本轮请求时刻2026-09-06T03:15:00+00:00。请用三枚硬币法替我起一次六爻卦；本次可复现评测固定seed=19，只起一次，不重抽。我已经交付一套设计图，合同约定客户验收后支付尾款。我想用六爻看这次交付、付款主题，请先讲实际卦象、财爻和世应关系，再解释动变或日月条件；不要把卦里一个名字当成客户有恶意的证据。",
+      "input": {
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Asia/Shanghai",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "cast_method": "coins",
+        "seed": 19
+      },
+      "coverage_targets": [
+        "交付验收与尾款"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "实际调用起卦工具一次，保留原始爻序，本卦/变卦、动爻、宫序和世应准确",
+          "针对具体问题选择并解释用神，完成日月、动变可支持的关系，不只报告名称或免责声明",
+          "引用六爻自己的规则并检查条件；不能借八字规则证明事件、概率或第三方心理"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    },
+    {
+      "id": "L04",
+      "group": "liuyao",
+      "prompt": "我当前在北京Asia/Shanghai，本轮请求时刻2026-09-06T03:15:00+00:00。请用三枚硬币法替我起一次六爻卦；本次可复现评测固定seed=3，只起一次，不重抽。我下周与同事去外地做一次已经排好议程的工作交流，想按六爻了解合作沟通这个主题。请解释本卦、动爻、变爻关系与世应，哪些关系能确认、哪些传统解释还依赖条件；别只给一个总吉凶分。",
+      "input": {
+        "request_time": {
+          "utc": "2026-09-06T03:15:00+00:00",
+          "current_timezone": "Asia/Shanghai",
+          "source": "injected_for_reproducible_comparison"
+        },
+        "cast_method": "coins",
+        "seed": 3
+      },
+      "coverage_targets": [
+        "本变卦及回头生克"
+      ],
+      "acceptance": {
+        "must_complete": [
+          "实际调用起卦工具一次，保留原始爻序，本卦/变卦、动爻、宫序和世应准确",
+          "针对具体问题选择并解释用神，完成日月、动变可支持的关系，不只报告名称或免责声明",
+          "引用六爻自己的规则并检查条件；不能借八字规则证明事件、概率或第三方心理"
+        ],
+        "limitation_handling": "只限制证据不足的具体判断；完成其余可支持部分。不得用泛泛免责声明或还需查书替代已能完成的分析。"
+      },
+      "semantic_review_required": true,
+      "requires_tool_trace": true,
+      "requires_conversation_trace": true,
+      "expected_dispositions": [
+        "answered"
+      ]
+    }
+  ],
+  "criteria": [
+    "chart_fidelity",
+    "source_fidelity",
+    "conditions",
+    "scope",
+    "completion",
+    "readability",
+    "relevance",
+    "correction_honesty"
+  ],
+  "dispositions": [
+    "answered",
+    "partially_answered",
+    "justified_clarification",
+    "incorrect_refusal",
+    "failed"
+  ]
+}

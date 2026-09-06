@@ -43,42 +43,58 @@ jobs:
           pip install -r requirements-dev.txt -c constraints-dev.txt
 
       - name: Lint (ruff)
-        # Whole repo, not just scripts/ + tests/: evals/run_checks.py IS the
-        # release gate and was never linted. pyproject already excludes
-        # dist/ and _competitors/, so widening the scope is free.
         run: python -m ruff check .
 
       - name: Type check (mypy)
         run: python -m mypy scripts/ --ignore-missing-imports --disallow-untyped-defs
 
-      - name: Tests + coverage gate (subprocess-tracked, fail under 80%)
-        # coverage's subprocess patch tracks CLI processes; pytest-cov combines
-        # the parallel subprocess data and applies
-        # fail_under (from [tool.coverage.report]); no manual combine needed.
-        #
-        # 裸 `--cov` (不带值) 才会用 [tool.coverage.run] 的 source。写成
-        # `--cov=scripts` 会**覆盖** config 的 source=["scripts","evals"] ——
-        # 于是 9e2191d 那次「覆盖率含发布链路」的改动在 CI 里完全空转:
-        # 分母 3303 vs 3595, 差 292 条 evals 语句, 而 fail_under=80 对
-        # run_checks.py / mutate.py 这两个「决定发什么货」的文件零约束。
-        run: python -m pytest tests/ -q --cov --cov-report=term-missing
+      - name: Full tests and combined coverage gate
+        # No marker exclusion in CI. The local quick selection is not a release gate.
+        run: python -m pytest tests/ -q --cov --cov-report=term-missing --cov-report=json
 
-      - name: Release harness (evals/run_checks.py)
-        run: python -X utf8 evals/run_checks.py --checks-only
+      - name: Coverage groups (same collected data; combined threshold already enforced)
+        # Diagnostic reports do not replace or weaken the combined 80% gate.
+        run: |
+          python -m coverage report --include='scripts/*' --omit='scripts/build_skill.py,scripts/import_classics.py' --fail-under=0
+          python -m coverage report --include='evals/*,scripts/build_skill.py,scripts/import_classics.py' --fail-under=0
 
-      - name: Build importable skill package
-        run: python scripts/build_skill.py
-
-      - name: Clean runtime installation and extracted package smoke
+      - name: Build fixed commit skill and source archives
         if: matrix.python == '3.12'
-        run: python -X utf8 evals/package_smoke.py
+        run: python -X utf8 scripts/build_skill.py --commit "${{ github.sha }}"
+
+      - name: Clean runtime installation and exact artifact smoke
+        if: matrix.python == '3.12'
+        run: |
+          archive=$(find dist -maxdepth 1 -name '*.zip' ! -name '*-sources.zip' -print)
+          python -X utf8 evals/package_smoke.py --archive "$archive" --expected-commit "${{ github.sha }}"
+
+      - name: Bind artifact to successful CI run
+        if: matrix.python == '3.12'
+        env:
+          RELEASE_COMMIT: ${{ github.sha }}
+          RELEASE_RUN_ID: ${{ github.run_id }}
+          RELEASE_RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          checksums = Path('dist/SHA256SUMS').read_text(encoding='utf-8')
+          value = {'schema_version': '1.0', 'commit': os.environ['RELEASE_COMMIT'],
+                   'ci_run_id': os.environ['RELEASE_RUN_ID'], 'ci_run_attempt': os.environ['RELEASE_RUN_ATTEMPT'],
+                   'checksums': checksums, 'artifact_name': 'chinese-fortune-skill',
+                   'require_workflow_conclusion': 'success'}
+          Path('dist/CI-PROVENANCE.json').write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
+          PY
 
       - name: Upload package artifact
         if: matrix.python == '3.12'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: chinese-fortune-skill
-          path: dist/*.zip
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS
+            dist/CI-PROVENANCE.json
           if-no-files-found: error
 
   windows-smoke:

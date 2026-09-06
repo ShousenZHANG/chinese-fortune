@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "status": "independent_edition_witness",
+  "reviewer": "in-session model agent visual inspection; no independent human collation",
+  "scope": "仅下列五个短句经过影像逐字目视核对；不认证全段、全章、默认转录本或术数预测效度",
+  "normalization": "摘句不录标点、空格和换行；正文用字保留，不自动作简繁或异体归一",
+  "editions": [
+    {
+      "id": "ziping-wenming-1926-nlc46443-v2",
+      "title": "淵海子平 子平真詮 第2卷",
+      "edition": "文明書局，民國十五年（1926），秦慎安校勘；版本信息据馆藏说明",
+      "catalogue": "中国国家图书馆 MG/B992.3/33",
+      "source_url": "https://commons.wikimedia.org/w/index.php?oldid=752877821",
+      "file_url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/NLC416-13jh002326-46443_%E6%B7%B5%E6%B5%B7%E5%AD%90%E5%B9%B3_%E5%AD%90%E5%B9%B3%E7%9C%9F%E8%A9%AE_%E7%AC%AC2%E5%8D%B7.pdf",
+      "sha256": "b1ac0a7dd4dc260647b65bd9338ad815fc0855d78e0ea01ed428237b28eb61c8",
+      "byte_size": 2088007,
+      "pdf_pages": 75,
+      "license_record": "Commons: PD-scan / PD-China",
+      "default_corpus_same_edition": false
+    }
+  ],
+  "witnesses": [
+    {
+      "id": "ziping-w1926-001",
+      "edition_id": "ziping-wenming-1926-nlc46443-v2",
+      "passage_id": "ziping:c008:p0001",
+      "passage_sha256": "f367cd07ce5e7ff11e6e3adb609c8c1465974fe4ceacee973c1d8941821b0a18",
+      "pdf_page": 23,
+      "printed_page": "十",
+      "witness_text": "八字用神專求月令以日干配月令地支而生尅不同格局分焉",
+      "corpus_text": "八字用神專求月令以日干配月令地支而生尅不同格局分焉",
+      "comparison": "same_text_ignoring_punctuation",
+      "variants": []
+    },
+    {
+      "id": "ziping-w1926-002",
+      "edition_id": "ziping-wenming-1926-nlc46443-v2",
+      "passage_id": "ziping:c009:p0006",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543",
+      "pdf_page": 26,
+      "printed_page": "十三",
+      "witness_text": "如官逢傷而透印以解之",
+      "corpus_text": "如官逢傷而透印以解之",
+      "comparison": "same_text_ignoring_punctuation",
+      "variants": []
+    },
+    {
+      "id": "ziping-w1926-003",
+      "edition_id": "ziping-wenming-1926-nlc46443-v2",
+      "passage_id": "ziping:c010:p0006",
+      "passage_sha256": "cb7743ed881091ba21691e8102140c5f34eb57d66279e02a589c276848dff4de",
+      "pdf_page": 27,
+      "printed_page": "十四",
+      "witness_text": "乙生申月透壬化印而又透戊則財能生官印逢財而退位雖通月令格成正官而印為兼格",
+      "corpus_text": "乙生申月透壬化印而又透戊則財能生官印逢財而退位難通月氣格成正官而印爲兼格",
+      "comparison": "variant_recorded_no_emendation",
+      "variants": [
+        {"witness": "雖通月令", "corpus": "難通月氣", "kind": "substantive_reading"},
+        {"witness": "為", "corpus": "爲", "kind": "character_form"}
+      ]
+    },
+    {
+      "id": "ziping-w1926-004",
+      "edition_id": "ziping-wenming-1926-nlc46443-v2",
+      "passage_id": "ziping:c031:p0004",
+      "passage_sha256": "ca9d11ba239a6d2a17dcfbe8adcb2d8c45efe1683f9d96d945e25c9af242aeeb",
+      "pdf_page": 49,
+      "printed_page": "三十六",
+      "witness_text": "宣參國命己卯辛未壬寅辛亥未中己官透干清用支會木局而辛解之是遇傷而佩印也",
+      "corpus_text": "宣參國命己卯辛未壬寅辛亥未中己官透干用清支會木局兩辛解之是遇傷而佩印也",
+      "comparison": "variant_recorded_no_emendation",
+      "variants": [
+        {"witness": "清用", "corpus": "用清", "kind": "word_order"},
+        {"witness": "而辛", "corpus": "兩辛", "kind": "substantive_reading"}
+      ]
+    },
+    {
+      "id": "ziping-w1926-005",
+      "edition_id": "ziping-wenming-1926-nlc46443-v2",
+      "passage_id": "ziping:c031:p0005",
+      "passage_sha256": "dfc8bb6717f8857b4366ed5864aa02a22aeaa2ff5adee8be77d0a881c9790d43",
+      "pdf_page": 49,
+      "printed_page": "三十六",
+      "witness_text": "李參政命庚寅乙酉甲子戊辰甲用酉官庚金混煞乙以合之合煞留官是雜煞而取清也",
+      "corpus_text": "李參政命庚寅乙酉甲子戊辰甲用酉官庚金混雜乙以合之合煞留官是雜煞而取清也",
+      "comparison": "variant_recorded_no_emendation",
+      "variants": [
+        {"witness": "混煞", "corpus": "混雜", "kind": "substantive_reading"}
+      ]
+    }
+  ]
+}

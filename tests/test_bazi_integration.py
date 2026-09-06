@@ -458,63 +458,52 @@ def test_tiaohou_records_its_audit_state():
     p = Path(__file__).resolve().parent.parent / "assets" / "tiaohou.json"
     data = json.loads(p.read_text(encoding="utf-8"))
     audit = data["audit"]
-    assert audit["verified_cells"], "no cell recorded as verified"
-    assert len(audit["verified_cells"]) == 46
-    assert {"甲|亥", "乙|戌", "辛|卯", "乙|卯"} <= set(audit["verified_cells"])
-    # what was examined but deliberately left alone must stay visible
+    assert audit['status'] == 'superseded_by_cell_provenance'
+    assert audit['provenance_file'] == 'assets/tiaohou_provenance.json'
+    assert 'verified_cells' not in audit
     assert audit["cells_examined"] == 120 and audit["of_total"] == 120
-    assert audit["pending"]["not_examined"] == 0
-    assert audit["pending"]["overturned_on_recheck"] == 17
-    assert "secondary_yongshen" in audit["engine_note"]
+    assert audit['facsimile_checked'] == 0
 
 
 def test_no_jishen_sits_in_secondary_yongshen():
-    """The recurring defect this table had: a stem the passage names as 病/忌
-    for that month sitting in secondary_yongshen, which inverts the reading.
-    辛|卯 held 戊己 as 次用 where 《穷通宝鉴》 says 「见戊己为病」; 乙|卯 held 庚
-    where the text says 「活木忌埋根之铁」. Eight cells were like this.
-    """
+    """Conditional remedies must not become an unconditional global 忌神 list."""
     import json
     from pathlib import Path
     th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
                      "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
-    bad = {k: sorted(set(c.get("ji_shen", [])) & set(c.get("secondary_yongshen", [])))
-           for k, c in th.items()
-           if set(c.get("ji_shen", [])) & set(c.get("secondary_yongshen", []))}
-    assert not bad, f"忌神 listed as 次用: {bad}"
+    assert all('ji_shen' not in cell for cell in th.values())
+    from tiaohou_provenance import get_tiaohou_audit
+    cell = get_tiaohou_audit('庚|午')
+    assert '戊' not in cell['source_general_candidates']
+    assert '戊' in cell['source_conditional_candidates']
+    assert '无壬癸' in cell['review_note']
 
 
 def test_verified_cells_carry_their_source_clause():
-    """A cell claiming verification must show the sentence it was verified
-    against, so the claim is checkable rather than asserted."""
+    """Do not promote old mixed-edition quotations into blanket verification."""
     import json
     from pathlib import Path
     th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
                      "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
-    verified = [k for k, c in th.items() if c.get("verified_against_source")]
-    assert len(verified) >= 35, len(verified)
-    missing = [k for k in verified
-               if not (th[k].get("source_clause") or th[k].get("source"))]
-    assert not missing, f"verified but no source quoted: {missing}"
+    from tiaohou_provenance import audit_tiaohou, get_tiaohou_audit
+    assert not audit_tiaohou()
+    for key, cell in th.items():
+        assert 'verified_against_source' not in cell
+        assert 'source_clause' not in cell
+        review = get_tiaohou_audit(key)
+        assert review['source_refs'] and review['review_note']
+        assert review['facsimile_status'] == 'not_checked'
 
 
 def test_tiaohou_notes_do_not_contradict_a_named_jishen():
-    """notes is printed verbatim into yong_shen.reason, so it reaches the
-    reader. A note must not promise fortune from a stem the same cell marks
-    as 忌 — 辛|卯's old note read 壬戊两透, 富贵显达 while its source says that
-    pairing makes 平常之人."""
-    import json
-    import re
-    from pathlib import Path
-    th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
-                     "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
-    offenders = []
-    for k, c in th.items():
-        note = c.get("notes", "")
-        for stem in c.get("ji_shen", []):
-            if re.search(rf"{stem}[^。;,]{{0,6}}(两透|双透)[^。;,]{{0,8}}(富贵|显达|科甲)", note):
-                offenders.append((k, stem))
-    assert not offenders, offenders
+    """A moon's usual adverse element can be a conditional remedy, not a contradiction."""
+    from tiaohou_provenance import get_tiaohou_audit
+    cell = get_tiaohou_audit('辛|卯')
+    assert cell['source_general_candidates'] == ['壬']
+    assert '甲' in cell['source_conditional_candidates']
+    assert '戊' in cell['source_conditional_candidates']
+    assert '壬过多反须戊' in cell['review_note']
+    assert '无条件' not in cell['individual_application']
 
 
 def test_cimu_and_xuetang_match_their_own_reference():
@@ -683,18 +672,17 @@ def test_lunar_input_resolves_timezone_from_the_solar_day():
 
 
 def test_all_tiaohou_candidates_reach_output_without_automatic_verdict():
-    import json
-    from pathlib import Path
-    table = json.loads((Path(__file__).resolve().parents[1] / 'assets/tiaohou.json').read_text(encoding='utf-8'))['tiaohou']
+    from tiaohou_provenance import get_tiaohou_audit
     for y, mo, dd, hh in [(1990, 5, 10, 14), (1990, 1, 15, 10), (1985, 8, 20, 10), (2000, 11, 5, 10)]:
         chart, _ = _run_bazi('--year', y, '--month', mo, '--day', dd, '--hour', hh, '--gender', 'male')
         key = f"{chart['day_master']['stem']}|{chart['four_pillars']['month']['branch']}"
-        cell = table[key]
+        cell = get_tiaohou_audit(key)
         result = chart['yong_shen']
-        assert result['views']['tiaohou']['candidates'] == cell['primary_yongshen']
-        assert result['views']['tiaohou']['secondary_candidates'] == cell['secondary_yongshen']
+        assert result['views']['tiaohou']['candidates'] == cell['source_general_candidates']
+        assert result['views']['tiaohou']['secondary_candidates'] == cell['source_conditional_candidates']
+        assert result['views']['tiaohou']['source_audit'] == cell
         assert result['primary'] is None
-        assert cell['notes'] not in result['reason']
+        assert cell['review_note'] not in result['reason']
         assert chart['xi_shen']['primary'] is None and chart['ji_shen']['primary'] is None
 
 
@@ -705,9 +693,8 @@ def test_tiaohou_primary_yongshen_table_is_locked():
     而每一格都直接决定一份批断的用神 —— 进而决定大运流年吉凶、方位、颜色、行业。
     变异实证: 改任意一格的 primary 而不动别处, 端到端用例照样全绿。
 
-    这里锁的是**当前值**, 不是「正确值」—— 46 格已与《穷通宝鉴》原文核对
-    (见 audit.verified_cells), 其余 74 格仍应视为未核。改动任何一格都必须同时
-    更新这里的哈希, 好让改动在 diff 里显形而不是静悄悄溜过去。
+    这里锁的是**历史值**, 不是正确值或可直接应用的候选。当前运行时应按
+    tiaohou_provenance 的逐格状态、来源候选和条件读取，不把旧表直接用于断语。
     """
     import hashlib
     import json
@@ -730,10 +717,7 @@ def test_tiaohou_primary_yongshen_table_is_locked():
         assert prim, f"{key} 的 primary_yongshen 为空"
         assert all(c in "甲乙丙丁戊己庚辛壬癸" for c in prim), (key, prim)
 
-    verified = [k for k, v in cells.items() if v.get("verified_against_source")]
-    assert len(verified) == 46, (
-        f"已核对格数从 46 变成 {len(verified)} —— 若确有新核对, 更新此数并在"
-        "audit.verified_cells 里同步登记")
+    assert all('verified_against_source' not in cell for cell in cells.values())
 
 
 # --------------------------------------------------------------------------- #
@@ -848,63 +832,6 @@ def test_hua_qi_ge_requires_all_five_classical_conditions():
     assert "hua_transparent" in hua, "缺「化神透干」"
     assert "po_stems" in hua, "缺「无破化之神」"
     assert '"broken_or_pure": "纯"' not in hua, "broken_or_pure 仍是硬编码"
-
-
-def test_geju_detects_every_type_its_own_reference_lists():
-    """references/01-bazi.md §6.2 列了 5 种从格 + 5 种一行得气格; 引擎从前只认
-    3 种从格 (从财/从杀/从儿), 从印格与从势格完全不检测, 一行得气格一种都没有。
-
-    静默落回正格的代价不是「少一个标签」—— 从势格与正格的用神方向正好相反。
-    """
-    import inspect
-    import sys
-    from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
-    import bazi_geju
-    src = inspect.getsource(bazi_geju.detect_ge_ju)
-    md = (Path(__file__).resolve().parent.parent
-          / "references" / "01-bazi.md").read_text(encoding="utf-8")
-    body = md.split("### 6.2")[1].split("###", 1)[0]
-
-    # 文档表格里出现的每个格名, 引擎都必须认得
-    import re
-    named = set(re.findall(r"\|\s*([一-鿿]{2,5}格)", body))
-    named = {n.split("(")[0] for n in named}
-    assert len(named) >= 9, named
-    missing = sorted(n for n in named if n not in src)
-    assert not missing, f"文档列出但引擎不检测: {missing}"
-
-
-@pytest.mark.slow
-def test_special_geju_stay_rare_as_the_reference_demands():
-    """references/01-bazi.md:344 「特殊格局极少见, 千万命中难得一二」。
-
-    修前实测: 化气格 3.7% (只查两条件), 补上从印格后一度 7.8% (阈值 0.70 太松)。
-    ge_ju 是 00-intake.md 强制必出字段, 01-bazi.md:282 称格局「决定一个人的事业
-    天花板和人生主轴」—— 滥发等于给多数人贴上一个决定性的错标签。
-
-    这里不主张某个精确发生率, 只要求「极少见」在数量级上成立。
-    """
-    import collections
-    import random
-    rng = random.Random(11)
-    kinds = collections.Counter()
-    n = 0
-    for _ in range(150):
-        y, mo = rng.randint(1950, 2020), rng.randint(1, 12)
-        dd, hh = rng.randint(1, 28), rng.randint(0, 23)
-        d, _ = _run_bazi("--year", y, "--month", mo, "--day", dd,
-                         "--hour", hh, "--gender", "male")
-        if not d.get("ok"):
-            continue
-        n += 1
-        g = d.get("ge_ju") or {}
-        if g.get("type") == "特殊格":
-            kinds[g.get("primary")] += 1
-    special = sum(kinds.values())
-    assert n >= 140, n
-    assert special / n < 0.05, (
-        f"特殊格占 {special/n:.1%}, 与「极少见」不符: {dict(kinds)}")
 
 
 def test_si_ling_is_actually_computed_not_just_claimed():

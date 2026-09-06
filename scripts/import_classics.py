@@ -393,7 +393,8 @@ def main() -> int:
     existing = json.loads(manifest_path.read_text(encoding='utf-8')) if manifest_path.exists() else {}
     replaced = {book['id'] for book in books}
     books += [b for b in existing.get('books', []) if b['id'] not in replaced]
-    manifest = {'schema_version': '1.0', 'library_id': 'bazi-five-classics-v1',
+    manifest = {'schema_version': '2.0', 'distribution_kind': 'source',
+                'library_id': 'bazi-five-classics-v1',
                 'required_books': ['ziping', 'ditian', 'qiongtong', 'sanming', 'yuanhai'],
                 'retrieval_policy': 'offline; preserve original words; historical text is not personal advice',
                 'books': sorted(books, key=lambda b: b['id'])}

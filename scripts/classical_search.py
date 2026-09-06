@@ -21,7 +21,9 @@ _TRAD = '詮淵窮寶鑑會髓傷財殺煞調氣候敗救應論強弱體歲運�
 _SIMP = '诠渊穷宝鉴会髓伤财杀煞调气候败救应论强弱体岁运时阴阳从与为无见后先根透藏纯杂顺逆取舍轻浊清寒暖贵贱禄禄长养虚实隐显众寡进退克冲冲无印绶台门书经传征变刚柔母亲姻类祇神总说节录万归于东里细赋断机关荣寿兴湿燥亘异劫禄学命实验获错缓缘该当选数项规则检查两个阴间风险运势转暂未暂时条'
 _ALIASES = str.maketrans(_TRAD, _SIMP)
 _ALIASES.update({ord(k): ord(v) for k, v in {'專': '专', '爲': '为', '尅': '克', '須': '须',
-                                          '補': '补', '護': '护', '洩': '泄', '幹': '干'}.items()})
+                                          '補': '补', '護': '护', '洩': '泄', '幹': '干',
+                                          '驛': '驿', '馬': '马', '蓋': '盖', '葢': '盖',
+                                          '詞': '词', '館': '馆', '貴': '贵', '華': '华'}.items()})
 
 
 def normalized(text: str) -> str:
@@ -50,14 +52,73 @@ def _hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def _checked_name(name: str) -> str:
+    if not isinstance(name, str) or not name or name.startswith('/') or "\\" in name:
+        raise ValueError('invalid distribution path')
+    if any(part in ('', '.', '..') or ':' in part for part in name.split('/')):
+        raise ValueError('unsafe distribution path: ' + name)
+    return name
+
+
+def _checked_digest(value: str) -> str:
+    if not isinstance(value, str) or not re.fullmatch(r'[0-9a-f]{64}', value):
+        raise ValueError('invalid SHA256 digest')
+    return value
+
+
+def _validate_distribution(root: Path, manifest: dict) -> str:
+    if manifest.get('schema_version') != '2.0':
+        raise ValueError('unsupported library schema_version; expected 2.0')
+    kind = manifest.get('distribution_kind')
+    if kind not in ('source', 'runtime'):
+        raise ValueError('distribution_kind must explicitly be source or runtime')
+    if kind == 'runtime':
+        if manifest.get('source_paths_scope') != 'source_archive/knowledge':
+            raise ValueError('runtime raw pointers must refer to source_archive/knowledge')
+        archive = manifest['source_archive']
+        name = _checked_name(archive['filename'])
+        if '/' in name or not name.endswith('.zip'):
+            raise ValueError('source archive must have a ZIP filename')
+        _checked_digest(archive['sha256'])
+        if not archive['files']:
+            raise ValueError('source archive inventory is empty')
+        for name, digest in archive['files'].items():
+            _checked_name(name)
+            _checked_digest(digest)
+        files = manifest['runtime_files']
+        needed = {'LICENSE', 'RELEASE.json', 'SKILL.md', 'scripts/classical_search.py', 'scripts/utils.py'}
+        needed.update('knowledge/' + row['path'] for book in manifest['books'] for row in book['chapters'])
+        if not needed.issubset(files) or 'knowledge/manifest.json' in files:
+            raise ValueError('runtime file inventory missing required files or self-hashes its manifest')
+        for name, digest in files.items():
+            path = _path(root.parent, _checked_name(name))
+            if _hash(path) != _checked_digest(digest):
+                raise ValueError('runtime file hash mismatch: ' + name)
+    return kind
+
+
+def _validate_source_file(root: Path, manifest: dict, name: str, digest: str) -> None:
+    name, digest = _checked_name(name), _checked_digest(digest)
+    if manifest['distribution_kind'] == 'source':
+        if _hash(_path(root, name)) != digest:
+            raise ValueError('source hash mismatch: ' + name)
+    elif manifest['source_archive']['files'].get(name) != digest:
+        # Runtime validates the frozen provenance index, not unavailable raw bytes.
+        raise ValueError('source archive inventory mismatch: ' + name)
+
+
 def validate_library(library_root: Path | str | None = None) -> dict:
     """Recompute completeness; never trust a cached 'complete' label alone."""
     root = _root(library_root)
     errors: list[str] = []
     books = []
+    kind = None
     try:
         manifest = _read(root / 'manifest.json')
+        kind = _validate_distribution(root, manifest)
         required = manifest['required_books']
+        if not required or len(required) != len(set(required)):
+            raise ValueError('empty or duplicate required book inventory')
         actual = [b['id'] for b in manifest['books']]
         if len(actual) != len(set(actual)):
             errors.append('duplicate book id')
@@ -65,8 +126,7 @@ def validate_library(library_root: Path | str | None = None) -> dict:
             if bid not in actual:
                 errors.append('missing book: ' + bid)
         for source in manifest.get('supporting_sources', []):
-            if _hash(_path(root, source['path'])) != source['sha256']:
-                errors.append('supporting source hash mismatch: ' + source['path'])
+            _validate_source_file(root, manifest, source['path'], source['sha256'])
         passage_ids: set[str] = set()
         for book in manifest['books']:
             before = len(errors)
@@ -77,10 +137,9 @@ def validate_library(library_root: Path | str | None = None) -> dict:
                 errors.append(bid + ': empty or duplicate chapter inventory')
             if len(acquired) != len(set(acquired)) or set(expected) != set(acquired):
                 errors.append(bid + ': chapter inventory mismatch')
-            if _hash(_path(root, book['index_path'])) != book['index_sha256']:
-                errors.append(bid + ': index hash mismatch')
-            if book.get('source_metadata_path') and _hash(_path(root, book['source_metadata_path'])) != book['source_metadata_sha256']:
-                errors.append(bid + ': source metadata hash mismatch')
+            _validate_source_file(root, manifest, book['index_path'], book['index_sha256'])
+            if book.get('source_metadata_path'):
+                _validate_source_file(root, manifest, book['source_metadata_path'], book['source_metadata_sha256'])
             count = 0
             for row in book['chapters']:
                 cid = row['id']
@@ -93,8 +152,7 @@ def validate_library(library_root: Path | str | None = None) -> dict:
                 chapter = _read(path)
                 if chapter['chapter_id'] != cid or chapter['book_id'] != bid:
                     errors.append(bid + ':' + cid + ': chapter identity mismatch')
-                if _hash(_path(root, chapter['raw_path'])) != chapter['raw_sha256']:
-                    errors.append(bid + ':' + cid + ': raw source hash mismatch')
+                _validate_source_file(root, manifest, chapter['raw_path'], chapter['raw_sha256'])
                 passages = chapter['passages']
                 if not passages or len(passages) != row['passage_count']:
                     errors.append(bid + ':' + cid + ': empty or incomplete passages')
@@ -120,8 +178,11 @@ def validate_library(library_root: Path | str | None = None) -> dict:
                           'source_flags': book.get('source_flags', [])})
     except (OSError, ValueError, KeyError, TypeError) as exc:
         errors.append(str(exc))
-    return {'ok': not errors, 'errors': errors, 'books': books,
-            'meaning': 'complete acquisition means only the frozen source inventory; image collation is separate'}
+    return {'ok': not errors, 'schema_version': '2.0', 'distribution_kind': kind,
+            'validation_scope': 'raw_sources_and_text' if kind == 'source' else 'runtime_files_and_provenance_index',
+            'raw_sources_verified': kind == 'source' and not errors,
+            'errors': errors, 'books': books,
+            'meaning': 'Inventory and byte integrity only; runtime does not revalidate raw sources. Image collation and interpretation are separate.'}
 
 
 def _selected_books(root: Path, book: str | None) -> list[dict]:
@@ -205,6 +266,29 @@ def search_classics(query: str, book: str | None = None, chapter: str | None = N
     return [item for _, item in found[:limit]]
 
 
+def get_witnesses(passage_id: str | None = None) -> dict:
+    """Expose scoped image observations without relabelling the default edition."""
+    if passage_id is not None:
+        get_passage(passage_id)
+    data = _read(Path(__file__).resolve().parents[1] / 'assets/facsimile_witnesses.json')
+    witnesses = [w for w in data['witnesses'] if passage_id is None or w['passage_id'] == passage_id]
+    editions = {e['id']: e for e in data['editions']}
+    for witness in witnesses:
+        paragraph = get_passage(witness['passage_id'])
+        if hashlib.sha256(paragraph['text'].encode('utf-8')).hexdigest() != witness['passage_sha256']:
+            raise ValueError('witness refers to a different frozen paragraph')
+        text = re.sub(r'[^\w]', '', paragraph['text'])
+        if witness['corpus_text'] not in text:
+            raise ValueError('witness corpus excerpt differs from frozen text')
+        edition = editions[witness['edition_id']]
+        if not 1 <= witness['pdf_page'] <= edition['pdf_pages']:
+            raise ValueError('witness page outside source volume')
+    used = {w['edition_id'] for w in witnesses}
+    return {**{k: data[k] for k in ('schema_version', 'status', 'scope', 'reviewer', 'normalization')},
+            'default_corpus_status_changed': False,
+            'editions': [e for e in data['editions'] if e['id'] in used], 'records': witnesses}
+
+
 def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     parser = argparse.ArgumentParser(description='离线检索古籍全文、出处和相邻段落',
@@ -214,14 +298,19 @@ def main(argv: list[str] | None = None) -> int:
     mode.add_argument('--passage-id')
     mode.add_argument('--validate', action='store_true')
     mode.add_argument('--list-books', action='store_true')
+    mode.add_argument('--witnesses', nargs='?', const='all', metavar='PASSAGE_ID',
+                      help='查看全部或指定段落的异版影像短句见证；不升级默认底本状态')
     parser.add_argument('--book')
     parser.add_argument('--chapter')
     parser.add_argument('--limit', type=int, default=5)
     args = parser.parse_args(argv)
     try:
-        result: dict = {'ok': True, 'tool': 'classical_search', 'version': __version__}
+        result: dict = {'ok': True, 'tool': 'classical_search', 'version': __version__,
+                        'retrieval_schema_version': '1.0'}
         if args.validate:
             result.update(validate_library())
+        elif args.witnesses:
+            result['witnesses'] = get_witnesses(None if args.witnesses == 'all' else args.witnesses)
         elif args.list_books:
             result['books'] = [{k: b[k] for k in ('id', 'title', 'edition', 'completeness', 'facsimile_status')}
                                for b in _selected_books(LIBRARY_ROOT, args.book)]

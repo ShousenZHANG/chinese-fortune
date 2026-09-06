@@ -22,11 +22,11 @@ def test_reading_facts_are_valid_without_diagnostic_claims(chart):
     assert not {'day_master_strength', 'wuxing_count', 'shen_sha', 'ge_ju',
                 'yong_shen', 'xi_shen', 'ji_shen'} & result['chart_facts'].keys()
     assert result['method_profile']['primary_book'] == 'ziping'
-    assert result['source_passages']
-    assert all(p['book_id'] == 'ziping' and p['passage_id'] for p in result['source_passages'])
+    assert result['evidence_bundle']['passages']
+    assert all(p['passage_id'] for p in result['evidence_bundle']['passages'])
     assert any('成败救应' in p['chapter_title'] or '成敗救應' in p['chapter_title']
-               for p in result['source_passages'])
-    assert any('正官' in p['chapter_title'] for p in result['source_passages'])
+               for p in result['evidence_bundle']['chapters'].values())
+    assert any('正官' in p['chapter_title'] for p in result['evidence_bundle']['chapters'].values())
 
 
 def test_actual_exposure_and_hidden_positions_are_reported(chart):
@@ -57,10 +57,10 @@ def test_bad_chart_and_missing_primary_source_fail_closed(chart, monkeypatch):
         prepare_reading(chart)
 
 
-def test_reader_text_is_short_and_explains_technical_terms(chart):
+def test_reader_text_explains_terms_and_specific_route_conditions(chart):
     text = render_facts(prepare_reading(chart))
     assert '这里的“藏”' in text and '“透”' in text
-    assert len(text) < 550
+    assert '遇伤检查佩印' in text and '未满足' in text
     assert all(word not in text for word in ('必定', '事业天花板', '富贵', '分数', 'JSON'))
 
 
@@ -123,6 +123,15 @@ def test_unknown_hour_boundary_probes_do_not_read_current_clock(monkeypatch):
     monkeypatch.setattr(request_time, 'datetime', NoClock)
     result = prepare_reading(chart)
     assert result['chart_facts']['current_time_context']['utc'] == '2026-09-06T04:00:00+00:00'
+
+
+def test_unknown_hour_true_solar_dates_do_not_retain_the_internal_noon_date():
+    facts = prepare_reading(_unknown_chart(time_standard='true-solar'))['chart_facts']
+    assert facts['solar_date']['candidate_dates'] == [
+        {'year': 2026, 'month': 1, 'day': 14}, {'year': 2026, 'month': 1, 'day': 15}]
+    assert facts['lunar_date']['status'] == 'birth_time_required'
+    assert len(facts['lunar_date']['candidate_dates']) == 2
+    assert 'day' not in facts['lunar_date']
 
 
 def test_explicit_year_and_missing_current_zone_status_survive_adapter():

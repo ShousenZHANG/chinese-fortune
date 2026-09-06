@@ -1,0 +1,5297 @@
+{
+  "schema_version": "1.0",
+  "review_date": "2026-09-06",
+  "work": "穷通宝鉴",
+  "review_scope": "120格候选与现有冻结转录逐条对照；未校原刻影像，也未证明预测有效。",
+  "method": "逐月阅读相关正文及季节合论，分别记录一般候选、条件分支、旧表偏差和缺文；段落 hash 只验证定位，不能替代语义审核。",
+  "status_definitions": {
+    "supported_with_conditions": "旧候选可在正文的一般或条件分支找到支持；不表示排列、完备性或个人使用条件已经成立。",
+    "partially_supported": "部分旧候选或其固定主次缺少本月所引正文支持；阅读时使用来源分支，不直接使用旧表。",
+    "conflicts_with_text": "旧表一般首用/次用与冻结正文明确顺序或条件冲突；禁用旧表直接下结论。",
+    "seasonal_only": "冻结本缺少独立当月正文，只有季节一般论；不能标作当月逐字核验。"
+  },
+  "source_chapters": [
+    {
+      "book_id": "qiongtong",
+      "chapter_id": "c002",
+      "title": "卷二·论木",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_bbc940bfd959.aspx",
+      "revision": "sha256:40405923705c10d4de994291ecaf5493a166466d797a0e0f06cab7d5bb116e43",
+      "source_timestamp": "2026-09-06T04:15:57.734004+00:00",
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated"
+    },
+    {
+      "book_id": "qiongtong",
+      "chapter_id": "c003",
+      "title": "卷三·论火",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_ef269d9ba448.aspx",
+      "revision": "sha256:e9bfb4e29b9c6dd7f8b4d9aa1b6a913b3f967d62af567dbc87a7bebca63be78f",
+      "source_timestamp": "2026-09-06T04:15:59.271611+00:00",
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated"
+    },
+    {
+      "book_id": "qiongtong",
+      "chapter_id": "c004",
+      "title": "卷四·论土",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_4d487c9bc133.aspx",
+      "revision": "sha256:1cf16ab6bb40f53e5cd259ad0ce6194b0d9a077e2924759c7cac622cb6dfca7c",
+      "source_timestamp": "2026-09-06T04:16:00.562216+00:00",
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated"
+    },
+    {
+      "book_id": "qiongtong",
+      "chapter_id": "c005",
+      "title": "卷五·论金",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_5a069b0a3ca6.aspx",
+      "revision": "sha256:7023bb611334d32852f40d28f955d81eccbc2506a335392586106aeedfa9b273",
+      "source_timestamp": "2026-09-06T04:16:00.662189+00:00",
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated"
+    },
+    {
+      "book_id": "qiongtong",
+      "chapter_id": "c006",
+      "title": "卷六·论水",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_0c21f7ba5b30.aspx",
+      "revision": "sha256:0fd0f6f275e41e9f2bd7477821a0717d16ace5b2620025f59c66691e42eb7da0",
+      "source_timestamp": "2026-09-06T04:16:02.331802+00:00",
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated"
+    }
+  ],
+  "summary": {
+    "supported_with_conditions": 99,
+    "partially_supported": 17,
+    "conflicts_with_text": 3,
+    "seasonal_only": 1
+  },
+  "cells": {
+    "甲|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "初春丙癸并论；庚限木局或木旺，戊限水局，不是仅凭寅月便全部取用。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0007",
+          "section": "卷二·论木 / 春月之木",
+          "sha256": "8d4bd5962b6d83e559b2e2d125e8622e347cc8d5a87439b75a476fb2e2242b73"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0009",
+          "section": "卷二·论木 / 正月甲木",
+          "sha256": "b51d4260a96050e16442ffc3ab43d4e8deb95b167cd0f8a55ec7ed16cc0697b2"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0012",
+          "section": "卷二·论木 / 正月甲木",
+          "sha256": "3d5b609c8e3e99531446adc4896d04f725f96e66829a8a2ddbfdae332a46e72a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|卯": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "月段以庚及财资杀为主；丙来自春初温暖总论，不能与庚并列为卯月固定首选；戊己应核查财与全局。",
+      "source_general_candidates": [
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "丁",
+        "戊",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0007",
+          "section": "卷二·论木 / 春月之木",
+          "sha256": "8d4bd5962b6d83e559b2e2d125e8622e347cc8d5a87439b75a476fb2e2242b73"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0014",
+          "section": "卷二·论木 / 正月甲木",
+          "sha256": "1a478fcbb6d1816e2a50827094c76f2a740f125d92177c286341a26b7fa997ed"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0015",
+          "section": "卷二·论木 / 二月甲木",
+          "sha256": "f9e241ea533ab6a401a4fc0f787d3fa59a8421ce9d10ef86a5b98406f70cf78b"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "丙"
+        ],
+        "secondary": [
+          "戊",
+          "己"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先庚后壬；丁仅在支成金局时取，不能当普遍备选；壬癸破火另须丙火条件。",
+      "source_general_candidates": [
+        "庚",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "丁",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0016",
+          "section": "卷二·论木 / 三月甲木",
+          "sha256": "58615645ec9ec2a5471c11bab51df8f2946472fe1c23b27b2cdb3f501d38ab7a"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0017",
+          "section": "卷二·论木 / 三月甲木",
+          "sha256": "c74f2cf5f746166d11cb2590831d64aab9182e2772e942fadb17dab7fa123df5"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0018",
+          "section": "卷二·论木 / 三月甲木",
+          "sha256": "25fc4568d85ca553b9ce40ac63f4eed3326190761085d842b453d7e0ea4bc7df"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0021",
+          "section": "卷二·论木 / 三月甲木",
+          "sha256": "188d49ae2f233af6ce6f6a3c4f6905f59f3403111d569ce80d4de3996b771b44"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "壬"
+        ],
+        "secondary": [
+          "丁"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "正文先癸后丁，庚参与配合；庚太多反受病，壬为该条件下的调节。",
+      "source_general_candidates": [
+        "癸",
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0024",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "0b7af1535447ff2aa8db01451566d932535a2a91c5c76110ac71394e66f1aa33"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0025",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "87407dda869689126514556ecaab8d010c52239c29ce9cc6f387df9e1ff7fb24"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0027",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "1fa692d8a3a910121a048d84252d0cb8119b987b01c13b7a3e2807b0ab8906a7"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丁"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "五月先癸后丁、庚次；木盛先庚及庚盛先丁是另一个条件分支。",
+      "source_general_candidates": [
+        "癸",
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0028",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "87044b83a97c5b6dd67ede9ad2d5d8d3ab943c9e8388f446671c407cdc15f92e"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0031",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "673cde6ee0baedff48f1a79ce28cdb7b1f8b4d042ee024783c1e4b2f02ac5766"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丁"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|未": {
+      "status": "conflicts_with_text",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "六月正文先丁后庚并说无癸亦可；旧表癸列首用，遗漏月份及木盛/庚盛的条件差别。",
+      "source_general_candidates": [
+        "丁",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0028",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "87044b83a97c5b6dd67ede9ad2d5d8d3ab943c9e8388f446671c407cdc15f92e"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0031",
+          "section": "卷二·论木 / 四月甲木",
+          "sha256": "673cde6ee0baedff48f1a79ce28cdb7b1f8b4d042ee024783c1e4b2f02ac5766"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丁"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|申": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "七月丁为尊、庚次；壬水及戊制水有条件，所引段落未支持旧表丙作为固定次用。",
+      "source_general_candidates": [
+        "丁",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "壬",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0040",
+          "section": "卷二·论木 / 三秋甲木",
+          "sha256": "e28cbc2c330469f8718cc9279fa70182d5ab89d80ce3fc71e5e01a26081bf5d1"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0042",
+          "section": "卷二·论木 / 三秋甲木",
+          "sha256": "528e8f7ad70fd2bec334b57df38bacad05d629e054fea09289145416dd2bd252"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0046",
+          "section": "卷二·论木 / 七月甲木",
+          "sha256": "81a79fe5edb09f1ab46879a192dcec187e227eb2a0492f83af729f1060ea6eeb"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "庚"
+        ],
+        "secondary": [
+          "丙",
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "通常丁先、丙次、庚再次；支成木局且透比劫时反取庚先、丁次。",
+      "source_general_candidates": [
+        "丁",
+        "丙",
+        "庚"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0047",
+          "section": "卷二·论木 / 八月甲木",
+          "sha256": "bd163c8077987ac4682a31996758facd4b892b2cacb8aec21a6670682d07db49"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0048",
+          "section": "卷二·论木 / 八月甲木",
+          "sha256": "fc03b5c4fdc6b960656eaaf192cdd5f029d0b65501bb610ec0f941b0f0b86693"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0053",
+          "section": "卷二·论木 / 八月甲木",
+          "sha256": "4649e93836265c13290004fe890bba2f7145c5beb900b4f61bce07e5c207613c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "丙"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "月段含丁壬癸及端用丁癸两种叙述；木多取庚、水制伤官等须分开，不能视为单一无条件处方。",
+      "source_general_candidates": [
+        "丁",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "壬",
+        "庚",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0054",
+          "section": "卷二·论木 / 九月甲木",
+          "sha256": "21b48901196eefcc6b6d1853b2fb0b9b82102e4ecefc222227118eb5280229e5"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0056",
+          "section": "卷二·论木 / 九月甲木",
+          "sha256": "1d6ca812d7492c094d96b69f61901caefa1a5d5d3979c2748b98ed7ca81fabd4"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0059",
+          "section": "卷二·论木 / 九月甲木",
+          "sha256": "496b784ea1917ff78fb1a5d093c5174f2df9c298e8ac5a961b860c0589d8e9ba"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0062",
+          "section": "卷二·论木 / 九月甲木",
+          "sha256": "706f013b8ae851e559b8ce48edecc841b6fa37a730be3c6d1ca8592a67465dd2"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "癸"
+        ],
+        "secondary": [
+          "庚",
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "甲|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "庚丁为要、丙次；忌壬泛身时才须戊制，不能把戊无条件定为喜神。",
+      "source_general_candidates": [
+        "庚",
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0065",
+          "section": "卷二·论木 / 十月甲木",
+          "sha256": "9b98e819249de732b48156e50f2263d4852c739042c9422c5cbb54ea6211b3f0"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0066",
+          "section": "卷二·论木 / 十月甲木",
+          "sha256": "6dac11b5fe73ace8e38f96844572a87dc3255459e3fad48d6cff7b7eed88445c"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0067",
+          "section": "卷二·论木 / 十月甲木",
+          "sha256": "b6eddb3d0772b2fba8aa6463ef2a15654086b79e115c7023648847111adf9e9a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "丁"
+        ],
+        "secondary": [
+          "丙",
+          "戊"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": null
+    },
+    "甲|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁先庚后，丙佐；癸伤丁时戊己救，壬重无丁时丙的作用另论。",
+      "source_general_candidates": [
+        "丁",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "戊",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0069",
+          "section": "卷二·论木 / 十一月甲木",
+          "sha256": "8694ca04d7e8999583186b41a52105507b7379834125a1eae81f9130bdbb1e4e"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0071",
+          "section": "卷二·论木 / 十一月甲木",
+          "sha256": "9c209cd21905a1da5d030186cb90ad1f4ee3ea5a53e8c05325ea71366896d723"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "庚"
+        ],
+        "secondary": [
+          "丙",
+          "戊"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "十一月甲木，木性生寒，丁先庚後，丙火佐之。……總之十一月甲木，為寒枝，不比春木清茂，耑取庚丁。……用庚，土妻金子。（佐證句：庚丁兩透，支見巳寅，科甲有準；若癸透傷丁，無戊己輔救，殘疾之人。）"
+    },
+    "甲|丑": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先庚劈甲引丁是操作顺序，末段又强调丁不可少；旧表丁庚有解释空间，但当月段未支持丙固定次用。",
+      "source_general_candidates": [
+        "庚",
+        "丁"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0073",
+          "section": "卷二·论木 / 十二月甲木",
+          "sha256": "ee518dc23f6163ab14930f8cb980e881e1310675072bc92b8178c0b5517bc162"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0074",
+          "section": "卷二·论木 / 十二月甲木",
+          "sha256": "a8b560d1dc5d8deeddcd176c1378bfb4a54a750bedb3be312b703e74ea19a9fc"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0075",
+          "section": "卷二·论木 / 十二月甲木",
+          "sha256": "3e10068d29238a6ec3cc8854a28891406f00c856352f6b8e162f0fda2af4dabd"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "庚"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论甲木·三冬甲木》十二月甲木:「十二月甲木，天寒气冻，木性极寒，无生发之象，先用庚噼(劈)甲，方引丁火始得木火有通明之象，故丁次之。」「庚丁两透，科甲恩封。庚透丁藏，小贵。丁透庚藏，小富贵。无庚者，贫贱。无丁者，寒儒。」「总之腊月甲木，虽有庚金，丁不可少。乏庚略可，乏丁无用。」——全条只出现庚、丁二干, 无一「丙」字。丙之依据仅为徐乐吾系《甲木喜用提要·调候用神表》丑月条:「丁，庚，丙。丁火必不可少，通根巳、寅，甲木为助。」"
+    },
+    "乙|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙先癸次；丙多乏癸与丙少癸多均须辨，不能只检查二字出现。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0077",
+          "section": "卷二·论木 / 三春乙木",
+          "sha256": "4d95b6f7948df2185116537e559e6b1d25748ccf58896102e6e2d82c10141bbd"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0079",
+          "section": "卷二·论木 / 正月乙木",
+          "sha256": "a66bc40571b95fd1bc76018d76794735936e26eadbd1504d6750929a09a4e327"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0080",
+          "section": "卷二·论木 / 正月乙木",
+          "sha256": "375cccbb536b29a8c1b6fe39764cfe4e3158b8171e364674bc3de22d11b64485"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "正月乙木，必須用丙，因天氣尤有餘寒，非丙不暖，雖有癸水，恐凝寒氣，故以丙火為先，癸水次之。丙癸兩透，科甲定然……或丙少癸多，又為困丙，終為寒士。或癸己多見，為溼土之木皆下格。用丙者，木妻火子。用癸水見火多者，金妻水子。"
+    },
+    "乙|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙君癸臣；须核庚透、辰库、水多困丙以及化合，不把二字齐全直接当结果。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0082",
+          "section": "卷二·论木 / 二月乙木",
+          "sha256": "7045ff571557944f4705e213ee0ad07083bbbfc51613ec00cf997b38203668da"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0083",
+          "section": "卷二·论木 / 二月乙木",
+          "sha256": "6091ca278569a7aa3712b71b90062d90cb31d16b783f5267a94064430894405c"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0084",
+          "section": "卷二·论木 / 二月乙木",
+          "sha256": "a45a76d2193a4faf6d48a339c95c1d495bbeb214ff42a1d32bb40a44d2bbb2ef"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "二月乙木，陽氣漸升，木不寒矣，以丙為君，癸為臣，丙癸兩透，不透庚金，大富大貴。……二月乙木，耑用丙癸，或支成木局，有癸透乃作貴命，更得丙洩木氣，上上之命，但須透癸。或水多困丙，多戊化癸，皆下格。……活木忌埋根之鐵，支下有庚辛，戕賊其根，木則朽矣。（三春總綱：三春乙木……丙癸不可離也，春乙見丙，卉木向陽，萬象回春，須癸滋養根基。）"
+    },
+    "乙|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先癸后丙；戊限水局或水多制水，己亦只在特定水多条件下讨论。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0087",
+          "section": "卷二·论木 / 三月乙木",
+          "sha256": "b43a6b0e9279e0cb50d1431a0b20de99a4598e62931f825b29d6dae9823e6168"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0088",
+          "section": "卷二·论木 / 三月乙木",
+          "sha256": "5081703ea023fc431e46e66358b6800af9bd50466c83b889edaf6d0a30834862"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0089",
+          "section": "卷二·论木 / 三月乙木",
+          "sha256": "417fad1315b29412050aae5c10e61e9ac0dc7e37aca8b288c7ac43e3d640091f"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0090",
+          "section": "卷二·论木 / 三月乙木",
+          "sha256": "7e14c789e848501ec3d944d9d5c52be9cd022c1b2347b261e1076a22e88cfd7c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "专取癸、丙酌用，庚辛佐癸且须辛透为清；旧表漏辛并把丙与癸同列，不能代表完整条件顺序。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "庚",
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0094",
+          "section": "卷二·论木 / 三夏乙木",
+          "sha256": "39ea3fdc10fb1ceb24eeeb47aec8d3c9bc730cbd1be1720243ac05b5a1119625"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0097",
+          "section": "卷二·论木 / 四月乙木",
+          "sha256": "43f6d012811564f2590382d928fd682e391ddceb511e7a1da10de35358f550bc"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0111",
+          "section": "卷二·论木 / 六月乙木",
+          "sha256": "603e879c638096bc421d1e9e834fb8e3aa6a7b77ad6463831ac6e79e2afefb8f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "上半月用癸，下半月丙癸；柱多金水先丙，其余先癸。月份单键无法决定这个分支。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "庚",
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0094",
+          "section": "卷二·论木 / 三夏乙木",
+          "sha256": "39ea3fdc10fb1ceb24eeeb47aec8d3c9bc730cbd1be1720243ac05b5a1119625"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0100",
+          "section": "卷二·论木 / 五月乙木",
+          "sha256": "82fe054f47616734862745c98db778182a592e673cb058217c4bf682958748f4"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0101",
+          "section": "卷二·论木 / 五月乙木",
+          "sha256": "7072bf679d5b3f918b353ae57e875e53a1b05b2b3b5d8633983c348bada2d8f3"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0111",
+          "section": "卷二·论木 / 六月乙木",
+          "sha256": "603e879c638096bc421d1e9e834fb8e3aa6a7b77ad6463831ac6e79e2afefb8f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|未": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙优先限柱多金水；戊己混杂需甲制，夏月总结癸主丙酌庚辛次，旧表并列不能取代条件。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "甲",
+        "庚",
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0103",
+          "section": "卷二·论木 / 六月乙木",
+          "sha256": "cded7be63007095700e1146c380f361869b53162525ea157191d229db5be08c3"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0104",
+          "section": "卷二·论木 / 六月乙木",
+          "sha256": "52545533bfd94e000604566aa7d416cb4a25adda262b9951441a1afd715f87f1"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0105",
+          "section": "卷二·论木 / 六月乙木",
+          "sha256": "8834ed5d93b74ac75850dcbca459773b802bc8b76401af85e791bc9d1cb35fae"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0111",
+          "section": "卷二·论木 / 六月乙木",
+          "sha256": "603e879c638096bc421d1e9e834fb8e3aa6a7b77ad6463831ac6e79e2afefb8f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "己在庚多、欠丙癸等条件下使用；癸透丙藏庚少则不用己。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0113",
+          "section": "卷二·论木 / 三秋乙木",
+          "sha256": "93791584d2303b42f04c5c718a190f8e6326662a8fcbf8728fa77375f58281cb"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0114",
+          "section": "卷二·论木 / 七月乙木",
+          "sha256": "23bb52e4d44f9d9b4339300e7267400084e091e6fc61cd132e99c61bf64d72b6"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0115",
+          "section": "卷二·论木 / 七月乙木",
+          "sha256": "0cec5cb1253725ee7cbd50c48d2af3ad6f2139a9224e7405357e8450b0ce131c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "己"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "白露后先癸，秋分后先丙次癸；丁限支成金局，壬限上半月无癸，不能用一组顺序覆盖全月。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "丁",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0118",
+          "section": "卷二·论木 / 八月乙木",
+          "sha256": "434a91d93ab073dd0422ac15e658287ad5c8f226a22c401da474908aafedab37"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0119",
+          "section": "卷二·论木 / 八月乙木",
+          "sha256": "deb79df968e64b4a4408371843e41638265971f943541153c79f77f40fc6c55f"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0120",
+          "section": "卷二·论木 / 八月乙木",
+          "sha256": "0254caea02333a15ea39883172ed767d38a3cceb793a603cbc80e43b4d955299"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0121",
+          "section": "卷二·论木 / 八月乙木",
+          "sha256": "ec196514ed4753e4201fcf4520f64e50ba3cba790e24fe02e84daa566b720723"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "丁"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "九月端用癸，辛发水源；三秋总论明确惟九月例外，不沿用酉月丙。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0113",
+          "section": "卷二·论木 / 三秋乙木",
+          "sha256": "93791584d2303b42f04c5c718a190f8e6326662a8fcbf8728fa77375f58281cb"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0125",
+          "section": "卷二·论木 / 九月乙木",
+          "sha256": "cc458db3aabdbf76cdf58e4a246b3ecb175770c435c941fa081034d3ea07cb86"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸"
+        ],
+        "secondary": [
+          "辛"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": null
+    },
+    "乙|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙主戊次；甲制戊须一点壬而戊过多等条件，不是普遍次用。",
+      "source_general_candidates": [
+        "丙",
+        "戊"
+      ],
+      "source_conditional_candidates": [
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0129",
+          "section": "卷二·论木 / 十月乙木",
+          "sha256": "536da9d650413346dd38086ec37927ae7b002a80964727996bf4890524582b48"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0130",
+          "section": "卷二·论木 / 十月乙木",
+          "sha256": "b93b8eac8587166a4f5182eac3d1ac971a61888d1803e71414e6440ad71aca47"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "戊"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "乙|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "专丙解冻；戊仅救水泛，冬月总论仍说不可把制水土当通用用神。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0131",
+          "section": "卷二·论木 / 十一月乙木",
+          "sha256": "c673fc5ea982415cd2454450c4d4356965750bfc3e6dc01407ac780509eaca5c"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0132",
+          "section": "卷二·论木 / 十一月乙木",
+          "sha256": "bdcf098b6ece40c2ae0b1242952319eb1e8dfacf15792058aeeec23c9617d29d"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0134",
+          "section": "卷二·论木 / 十一月乙木",
+          "sha256": "1096b1a76537b5340b0def64f1324f3850ab54f28a2361fcfdbba544b1faea2a"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0135",
+          "section": "卷二·论木 / 冬月之木",
+          "sha256": "a29db1763aa17df1414f66a1e3d5ebe294affb6439fb5ea2bc2a249155d4d32d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「十一月乙木，花木寒冻，一阳来复，喜用丙火解冻，则花木有向阳之意，不宜用癸以冻花木，故耑用丙火。」「或壬癸出干，有戊制，可作能人，即丙在支内，亦是俊秀。若壬透无戊，贫贱之人。」「或成水局，壬癸两透，则木浮矣，不特贫贱，而且夭折，得一戊救方可。冬月之木，虽取戊制水，不可作用，耑取丙火则可。用火者，木妻、火子。用土者，火妻、土子。」"
+    },
+    "乙|丑": {
+      "status": "seasonal_only",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "冻结木章没有十二月乙木专段；冬月总论可支持丙的大方向，不能证实旧表丑月甲为次用或冒称当月逐句一致。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c002:p0131",
+          "section": "卷二·论木 / 十一月乙木",
+          "sha256": "c673fc5ea982415cd2454450c4d4356965750bfc3e6dc01407ac780509eaca5c"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0135",
+          "section": "卷二·论木 / 冬月之木",
+          "sha256": "a29db1763aa17df1414f66a1e3d5ebe294affb6439fb5ea2bc2a249155d4d32d"
+        },
+        {
+          "passage_id": "qiongtong:c002:p0136",
+          "section": "卷二·论木 / 冬月之木",
+          "sha256": "7d52ee86fec71b9b34227722e6ef2ead906b272470da659b5167ce201f92cc7f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《窮通寶鑑·論乙木·三冬乙木》丑月段：「木寒宜丙，有寒谷回春之象，得一丙透，无癸出破格，不特科甲，定主名臣显宦。丙火藏支，食饩而已。干支无丙，一介寒儒。……虽或一派戊己，见甲颇有衣禄。耑以丙火为用，方妙。」同章三冬總綱：「冬月之木，虽取戊制水，不可作用，耑取丙火则可。」《造化元鑰評註·乙木·十二月乙木》：「十二月冻木枯枝，见丙火照暖，则有回春之意，除丙火外，别无用神可取，与十一月同。」「或一派戊土，见甲，专用丙火，不能大富，颇有衣禄。」評註：「十二月水气已衰，柱无壬癸，固不必用戊土也，一派戊土，才多身弱，必须见甲破戊，甲为救应之神，仍以丙火为用。」「见癸破格，与冬至后乙木同看。」調候用神提要表：「十二月　丙，寒谷之木，专用丙火。」"
+    },
+    "丙|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬主庚佐、春总论庚辛佐；癸为无壬姑用，火局无壬癸才取戊，不能无条件替代。",
+      "source_general_candidates": [
+        "壬",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "辛",
+        "癸",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0009",
+          "section": "卷三·论火 / 三春丙火",
+          "sha256": "0607785e92305293ca543196a2ef11ebe03fbd541adcf4dc888c8679e8367d46"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0012",
+          "section": "卷三·论火 / 正月丙火",
+          "sha256": "aae77beaf7e33a2f048995237fc74cbdbde989e829384e009b32f342bcd9e32a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0016",
+          "section": "卷三·论火 / 正月丙火",
+          "sha256": "87113d52eccdcd7b22d46125583df99f0605888276b66e7b73083bd3426a9fe8"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0019",
+          "section": "卷三·论火 / 正月丙火",
+          "sha256": "859fa7ef8d6c8083ba7a7b3b1f749889b464475821cd756db691e1e15d6e9328"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "庚"
+        ],
+        "secondary": [
+          "癸",
+          "辛"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·正月丙火》：「正月丙火，三陽開泰，火氣漸炎，取壬為尊，庚金佐之。壬庚兩透，科甲定然。即壬透庚藏，亦有異途顯達。……或一片戊土，甲不出干，終非大器，且恐孤貧。正月之丙，忌戊晦光。或支成火局，耑取壬水為貴，無壬、癸亦姑用。……無壬用癸者，略富貴。」／《三春丙火》總論：「耑用壬水……正月用壬，庚辛為佐。」／徐乐吾《丙火喜用提要》寅月：「壬，庚。壬水為用，庚金發水之源為佐。」／徐乐吾《造化元钥·丙火》：「正月丙火，以用庚壬為正軌，財滋弱煞也。」"
+    },
+    "丙|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "端壬，己仅无壬时姑用；壬多取戊；旧表壬己同列首选不可读为同时必用。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "辛",
+        "己",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0034",
+          "section": "卷三·论火 / 二月丙火",
+          "sha256": "9864c3d5c2769a906cfeda035f8e8e76238c1ae4978d3b76bbeaf1a3a260aa98"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0035",
+          "section": "卷三·论火 / 二月丙火",
+          "sha256": "76f7d0dd773d5c43a4dde7a8d0a217d7930bf17aff88629e1f9910544d4810aa"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0036",
+          "section": "卷三·论火 / 二月丙火",
+          "sha256": "ad8a60581ca21f333ba4b21b01739eb56d78cee5de6460556c9b36528d2fd987"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "己"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "土局取甲辅壬；无甲用庚助壬泄土，有甲时庚反会破甲，两个分支互斥。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0046",
+          "section": "卷三·论火 / 三月丙火",
+          "sha256": "1201c5f0435e1e0a0bc077f85fc97476f51c1d005f04214de61cd1975f6f8071"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0047",
+          "section": "卷三·论火 / 三月丙火",
+          "sha256": "0921603cdc62f611c43374f3d548d2e345b55beab2bff71001af80c4b63b5fc5"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬为主、庚发源；无壬姑用癸。需核戊制水及根，不以出现即满足。",
+      "source_general_candidates": [
+        "壬",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0051",
+          "section": "卷三·论火 / 三夏丙火",
+          "sha256": "70762d6ba911b5545a2b5d45e789ee0f010cea6312f641d4084bfe0b396c35e6"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0052",
+          "section": "卷三·论火 / 三夏丙火",
+          "sha256": "3764388f55a5a8af2517336eb8a72dda44e585923830c6345feb3d2a4462ea2a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0055",
+          "section": "卷三·论火 / 四月丙火",
+          "sha256": "b683d0377f5dd7797e28cc17c85bf9455b94f08edaa6dbd08a57644e77f9581f"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0056",
+          "section": "卷三·论火 / 四月丙火",
+          "sha256": "fb5ac0302be424f82fcdb0bca5aa44d48cf8f078ab08e7841ccd865a8c8a662c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "庚"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬庚配合须防戊己及丁壬合；癸有局势限制，炎上分支不沿用水为普遍喜用。",
+      "source_general_candidates": [
+        "壬",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0071",
+          "section": "卷三·论火 / 五月丙火",
+          "sha256": "646282d7a774e939bcae1846736b5d194592cd3936b07b6f0e1eb8afb2486d50"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0073",
+          "section": "卷三·论火 / 五月丙火",
+          "sha256": "d821e7919986c9abc84baf6a099fc68e4139ca513b7b26648f0c013696157c02"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0074",
+          "section": "卷三·论火 / 五月丙火",
+          "sha256": "2cac835d0dddd0c216b0378afb6f54aba685ef0c6131afb1431e14fad875ee7f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "庚"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|未": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "六月壬主庚佐，忌己混及戊制壬；当前月段未支持旧表甲固定次用。",
+      "source_general_candidates": [
+        "壬",
+        "庚"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0052",
+          "section": "卷三·论火 / 三夏丙火",
+          "sha256": "3764388f55a5a8af2517336eb8a72dda44e585923830c6345feb3d2a4462ea2a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0083",
+          "section": "卷三·论火 / 六月丙火",
+          "sha256": "6afe053e99b3675ea1fa1be66abd9b614ac9ba332455dd5ae6e48513954a4147"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0084",
+          "section": "卷三·论火 / 六月丙火",
+          "sha256": "32a853e6fb62546a5b78072cecd13bdf7b229130d2ba271737ebbc15c401cbd4"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "庚"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|申": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬仍主，戊限壬多，戊多壬少另论；当前七月段没有甲固定次用依据。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0095",
+          "section": "卷三·论火 / 七月丙火",
+          "sha256": "08c7ce9dcf715e9400dca7061e0a8dbc49efcbd5f952b2718a0c86eaa428e9cb"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0096",
+          "section": "卷三·论火 / 七月丙火",
+          "sha256": "880285c9cdebc9041b19f50ea4576a893af2ca6a12087dc1c804dbd6761f20ae"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "戊"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬主，癸仅无壬替代；旧表壬癸并列不能解释成一同优先。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0104",
+          "section": "卷三·论火 / 八月丙火",
+          "sha256": "0bf14a5428e3cf9c8fc925e3102bdb0b56c83ab2702efceb70974c0c05f8fdd3"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0105",
+          "section": "卷三·论火 / 八月丙火",
+          "sha256": "33a279db5cba4b5c6c30dfe347007d4574faaefe4b31a4810a1ba17e8bf5b3c8"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "癸"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "八月丙火，日近黄昏，丙火之余光，存于光湖（湖海），仍用壬水辅映。四柱多丙，一壬高透为奇，定主登科及第。富贵双全。一壬藏支，亦主秀才。或戊多困水则假作斯文。若无壬水，癸亦可用，但功名不久。"
+    },
+    "丙|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲后壬；无壬癸可替，需核庚破甲与戊困水，不能只见甲壬便成论。",
+      "source_general_candidates": [
+        "甲",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0116",
+          "section": "卷三·论火 / 九月丙火",
+          "sha256": "87bc44f2e2adbe4864c307b52f3c6c9b1ad5c57f0bd923f9d746973d813a451a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0117",
+          "section": "卷三·论火 / 九月丙火",
+          "sha256": "6812f4b6ef53cc4170ec5e435a44a280e8fab9db67491ffdc189a726acd3e4ff"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "壬"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "九月丙火，火氣愈退，所忌土晦光，必須先用甲木，次取壬水。甲壬兩透，富貴非凡，若無壬水，得癸透干，亦可，雖不科甲，異路功名，壬癸藏支，貢監而已，甲藏壬透，無庚破甲，可許秀才。或庚戊困了水木，定是庸才，無甲壬癸者，下格。（調候用神表：「甲，壬。忌土晦光，先取甲疏土，次用壬水。」）"
+    },
+    "丙|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "木旺用庚、水旺用戊、火旺用壬，水多有甲无戊用己；甲戊并非覆盖所有局势的固定配方。",
+      "source_general_candidates": [
+        "甲",
+        "戊"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "壬",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0129",
+          "section": "卷三·论火 / 十月丙火",
+          "sha256": "b2f5eda4fcae1e21ada20bc53f835db4c92c106b52fa685d5ed579c90a0aa3de"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0131",
+          "section": "卷三·论火 / 十月丙火",
+          "sha256": "c927e6d0a35b3523d3c3098ab1d50a3a06fe29a7a609582dcd089edc08f8b6a0"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0132",
+          "section": "卷三·论火 / 十月丙火",
+          "sha256": "4b7a18d018e5260e5a430403ffbf79b73e6cd4f54c6be1bb3724c8367132020e"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0133",
+          "section": "卷三·论火 / 十月丙火",
+          "sha256": "e2423174c262302b2e7c1c563008be043d0fe1c03d8a996fff6d35ec0c89ef61"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "戊"
+        ],
+        "secondary": [
+          "庚",
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬主戊佐；戊晦光须甲，己在无戊或浊壬条件下使用，癸为无壬替代。",
+      "source_general_candidates": [
+        "壬",
+        "戊"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "己",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0142",
+          "section": "卷三·论火 / 十一月丙火",
+          "sha256": "ae6cf289665d960592002d796ae4f5f6e1acd9b88d5bba2fc3f93b8771788a2e"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0143",
+          "section": "卷三·论火 / 十一月丙火",
+          "sha256": "6be87dfa13cca3a0992626a0df3e970e8d1c6291dfd0e0f4ee8ad673af916839"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0145",
+          "section": "卷三·论火 / 十一月丙火",
+          "sha256": "4810a7690ff6edc6e426253db3e4dcb3033e2a61dab90ec507b3c571b80e0683"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0147",
+          "section": "卷三·论火 / 十一月丙火",
+          "sha256": "5d77abfe332f64b12dfb00bfd9c10aed07f1cf94fbe05292f9f0695eeab8b41d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "戊"
+        ],
+        "secondary": [
+          "甲",
+          "己"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丙|丑": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "土多不可少甲；癸多被己制太过才取辛。当前月段未支持旧表庚固定次用。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0156",
+          "section": "卷三·论火 / 十二月丙火",
+          "sha256": "360621c923f3700811233b75a044a852d33bdf9cf62b13a95836507c39130a3a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0158",
+          "section": "卷三·论火 / 十二月丙火",
+          "sha256": "39a760894959bb2c8cd7d93f93d26624ac5331ec14ec1a6391a7fb02d0b5bc9d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "庚劈当令甲引丁；丁壬化木时反忌庚破格，火局与水多须另辨，不把壬直接添加到庚甲同用。",
+      "source_general_candidates": [
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "壬",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0174",
+          "section": "卷三·论火 / 正月丁火",
+          "sha256": "0588d1199f633717d2af014bbec21cf8d81c7ee6a302d20887c22b5fefcc3696"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0176",
+          "section": "卷三·论火 / 正月丁火",
+          "sha256": "a3553f95118eade1c2c75b695d8b094adec669f2ab3331d9e5d662286f08cec8"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0177",
+          "section": "卷三·论火 / 正月丁火",
+          "sha256": "bd1e0c48479f0cd8592a3b68fb74e053f5b313cac98366020f7df022a6fcff15"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0180",
+          "section": "卷三·论火 / 正月丁火",
+          "sha256": "4f040d225923dd6b17376a5ee1b3e381c48c7a76f72c9452bacf0d6bd31c8112"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "甲"
+        ],
+        "secondary": [
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先庚后甲；须核庚乙贪合，戊只制过多水，不能仅以月令判戊喜用。",
+      "source_general_candidates": [
+        "庚",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0187",
+          "section": "卷三·论火 / 二月丁火",
+          "sha256": "ade7087a0847f5e7ee332e1c54e4b61d77b09c6877a8335e0d60062ed64fcdea"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0188",
+          "section": "卷三·论火 / 二月丁火",
+          "sha256": "325211098c6ec8a0e814579218c8b8ef4c0c57220a5e85c8bc6e0f9274d5a64e"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0191",
+          "section": "卷三·论火 / 二月丁火",
+          "sha256": "96170ce55ea7e270e0ce4d09661305ec860dcf93974d45199a9ff27bc1046527"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "甲"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「二月丁火，溼乙傷丁，先庚後甲，非庚不能去乙，非甲不能引丁。庚甲兩透，科甲定然。」「二月乙木司權，必須有庚，有乙無庚，主貧苦無依，用庚者、土妻金子。」「或一派水，無一戊制，主貧苦無依。或乙少癸多，有戊去制，反吉。用土者、火妻土子。」／ 徐樂吾《丁火喜用提要》卯月：「以庚去乙，以甲引丁。」"
+    },
+    "丁|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲后庚；木局庚先，水局戊己分支反忌甲破土，不能平铺所有候选。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0200",
+          "section": "卷三·论火 / 三月丁火",
+          "sha256": "d7da1a7860023e1ead08b686b9cabcd5859ddbea62c5eb4afa1d8a55c362b441"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0201",
+          "section": "卷三·论火 / 三月丁火",
+          "sha256": "1c0c8653d75aa36b13599a6a15802976dba1d1c9a7deab3ac9eecab11aaab3ea"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0202",
+          "section": "卷三·论火 / 三月丁火",
+          "sha256": "662d67f8b3c907738b6b03e3e584492496d3c3dc1830cce30e0f94f89c020925"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "三月丁火，戊土司令，洩弱丁氣，先用甲木引丁制土，次看庚金。庚甲兩透，定主科甲。或一藏一透，終非白丁。或支成木局，取庚為先。……或支成水局，加以壬透，名殺重身輕，必夭折天年。或遭凶死。……用甲者，水妻木子。用金者，土妻金子。"
+    },
+    "丁|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "甲引丁庚劈甲，甲多庚先；壬制丙、庚无甲戊透为另一分支；癸条件不能遗漏。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "壬",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0206",
+          "section": "卷三·论火 / 四月丁火",
+          "sha256": "71dc2479870f3a4f9839af310a763b26fba73a41f44397655f5cd3b50a425512"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0207",
+          "section": "卷三·论火 / 四月丁火",
+          "sha256": "051010a903beb820fb45224898698e99a2599abb32b0555e27237d585f754bdc"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0208",
+          "section": "卷三·论火 / 四月丁火",
+          "sha256": "ccb437e159a06fac00a599004f21f8ad976b12f922a2f970352585d57aa9f8d9"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0209",
+          "section": "卷三·论火 / 四月丁火",
+          "sha256": "6578866b32965894bb3fe56045aa54f54a6389e06b12c9527c2c6632e62b3683"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "戊",
+          "壬"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "四月丁火乘旺，虽取甲引丁，必用庚噼甲。伐甲、方云木火通明。甲多、又取庚为先。但四柱忌见癸水。癸水一见，洩金、溼甲、伤丁，故以癸为病。或癸水藏支，壬水出干制丙，不夺丁光，自是雁塔题名，玉堂清贵。或有庚无甲，戊透天干，此为伤官生才，又取戊为用，必主富贵。"
+    },
+    "丁|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "不宜乱用甲；火局壬庚及不贪合条件，无火局水透才用甲庚。旧表只保留其中部分路径。",
+      "source_general_candidates": [
+        "壬",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0217",
+          "section": "卷三·论火 / 五月丁火",
+          "sha256": "6167d89bbfa9d4a519e7df80ee080e776d611c396cadf193debba6a82de37c01"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0218",
+          "section": "卷三·论火 / 五月丁火",
+          "sha256": "330d53dd9c1d3d19e914500136b6513e34c9fcc838c9b2fe7359b69f3d3f8c2d"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0220",
+          "section": "卷三·论火 / 五月丁火",
+          "sha256": "44f1073e9c39ab050616f23c55852558a6eaca15272c57c6488d630ebe44883a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "庚"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|未": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "甲主壬次，庚有配合；水局透水会湿木，不能见水就作生木引丁。",
+      "source_general_candidates": [
+        "甲",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0236",
+          "section": "卷三·论火 / 六月丁火",
+          "sha256": "762da6d18ad479bf46250e1baf68216417567b5de6a2081ce3a260e54c8dc0d4"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0237",
+          "section": "卷三·论火 / 六月丁火",
+          "sha256": "56bde51c5285f634a120808ea90b116a93f95762ee18f2118cf144cd6f06145e"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0238",
+          "section": "卷三·论火 / 六月丁火",
+          "sha256": "0af653dae41e941416d5ca99d7f239cdc6f46b69c40d109a7767facf2a16796e"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "壬"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "七月甲丙、申中有庚；戊只在壬癸多时制水，旧表庚与甲并列仍须区分透干及藏支。",
+      "source_general_candidates": [
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "庚",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0248",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "b8766312ad20b02149069b6804d212118ce6183670fc14ff8c9417d7661ab6bc"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0249",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "6c947ab40b458d3c3197a0a4175fe3401154291ea2ebfd9e9d085cd907d9d2ee"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0250",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "dab00ab4d6b64e18343911fe164565419d7b122d9168a1a8f5b1765f1e0f5997"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "丙",
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "八月三者并用，七八月无甲可乙而不离丙晒；从财格另论，不按一般配方套用。",
+      "source_general_candidates": [
+        "甲",
+        "丙",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "乙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0249",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "6c947ab40b458d3c3197a0a4175fe3401154291ea2ebfd9e9d085cd907d9d2ee"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0262",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "decaf137530d876f8410e89dd00073228a8ef86fb75bf0f4e90e5932a2742cd1"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|戌": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "九月端甲庚；一派戊为泄丁且无甲的另格叙述，不能据此将戊当固定次用。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0249",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "6c947ab40b458d3c3197a0a4175fe3401154291ea2ebfd9e9d085cd907d9d2ee"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0263",
+          "section": "卷三·论火 / 七月丁火",
+          "sha256": "402d7d6a57d2b2c50f46914981243a0649db8ef109816d48dd611bd550680de8"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "来自明确三冬总论，戊癸权宜酌用；当前十月小节无独立完整月文，不冒称十月专段。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0275",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "05c9a49d3cefcfff54d53f5c03e4f4df0c47a3bc99a5ce280c70d98ea85bb5a3"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0277",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "0bc6282cac0c17d2a953443368c0fc91cdb94b62c7f1602cf405ccab204bff6a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0291",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "53f0049108e5e94286d1f705b14c77c0481b30deda2898c0b62a130e715c744c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三冬甲庚；仲冬水多从杀、有丁比则不成立，丙丁多用癸等条件须单独核验。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0275",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "05c9a49d3cefcfff54d53f5c03e4f4df0c47a3bc99a5ce280c70d98ea85bb5a3"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0289",
+          "section": "卷三·论火 / 十一月丁火",
+          "sha256": "cc88b0a399b7fe8959b7d84bd4058a06ab70c82313e1a24d28aae35c9db9f319"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0290",
+          "section": "卷三·论火 / 十一月丁火",
+          "sha256": "9b86f0624df5cef37cad78943c85e356109d8d56ece3524ee6b53cf3bc61e097"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0291",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "53f0049108e5e94286d1f705b14c77c0481b30deda2898c0b62a130e715c744c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "丁|丑": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "来自三冬总论的甲庚及戊癸酌用；冻结本无十二月丁火独立段，不能给出丑月专有优先级。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c003:p0275",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "05c9a49d3cefcfff54d53f5c03e4f4df0c47a3bc99a5ce280c70d98ea85bb5a3"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0277",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "0bc6282cac0c17d2a953443368c0fc91cdb94b62c7f1602cf405ccab204bff6a"
+        },
+        {
+          "passage_id": "qiongtong:c003:p0291",
+          "section": "卷三·论火 / 三冬丁火",
+          "sha256": "53f0049108e5e94286d1f705b14c77c0481b30deda2898c0b62a130e715c744c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "戊",
+          "癸"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论丁火·三冬丁火》：「三冬丁火微寒，耑用庚甲。甲乃庚之良友。凡用甲木，庚不可少，無庚無甲，何能引丁？……甲庚兩透，科甲分明。」同章結語：「三冬丁火，甲木為尊，庚金佐之，癸戊權宜酌用可也。」／徐樂吾《窮通寶鑑》丁火喜用提要·丑月條：「丑月甲，庚．庚金劈甲引丁，甲木為尊，庚金為佐，戊癸權宜酌用．」"
+    },
+    "戊|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "正二月合论，以丙除寒、甲疏、癸润；首段先丙后字后疑脱甲，结合后文说明而不静默改原文。",
+      "source_general_candidates": [
+        "丙",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0014",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "d0676fe9fb852b57df35dcb9cebd66a2248f4c1b05e3d1e414391ec562b42e15"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0016",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "172f42af639660ec2bf0c29401759a32051b16e2bf76b4671d724ec5d3ed966c"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0017",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "532642a17387d460db05cd249e9fe55d72a86dec4ffe7f4350631a05e64affb9"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "沿用正二月合论，需同时查丙、甲、癸与水量；文本先丙后疑脱字，不能称顺序逐字无误。",
+      "source_general_candidates": [
+        "丙",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0014",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "d0676fe9fb852b57df35dcb9cebd66a2248f4c1b05e3d1e414391ec562b42e15"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0016",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "172f42af639660ec2bf0c29401759a32051b16e2bf76b4671d724ec5d3ed966c"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0017",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "532642a17387d460db05cd249e9fe55d72a86dec4ffe7f4350631a05e64affb9"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三月甲先丙后癸次；火多水、木局庚等分支须核；月文毋癸字样疑讹，未校原刻。",
+      "source_general_candidates": [
+        "甲",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0014",
+          "section": "卷四·论土 / 三春戊土",
+          "sha256": "d0676fe9fb852b57df35dcb9cebd66a2248f4c1b05e3d1e414391ec562b42e15"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0021",
+          "section": "卷四·论土 / 三月戊土",
+          "sha256": "22065775e7bac62ba7e1b5e6769310299a78ba4009fc0b397208eb095213628a"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0022",
+          "section": "卷四·论土 / 三月戊土",
+          "sha256": "e97fd79ab7f2434e8167e9f01c5afa98fe743f032881b4a51c8fbcbe3499cc92"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0023",
+          "section": "卷四·论土 / 三月戊土",
+          "sha256": "18d5a06f3661f6b54db8bf0c4ae0c430c437774fece2fa72781425609d4a7e8b"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "丙"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲疏劈、丙癸佐；一派丙为火炎土燥时改查癸壬，不能忽略与一般论的差别。",
+      "source_general_candidates": [
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "癸",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0038",
+          "section": "卷四·论土 / 四月戊土",
+          "sha256": "34cc348abaa2b8c2d7e8fb8bb76473aaeb68343916b6791a7003f3e2d2657aa8"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0039",
+          "section": "卷四·论土 / 四月戊土",
+          "sha256": "137ecb9bdf615ce650c7868eea2282e5a26efcff012337df3e9804bb036014a8"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0040",
+          "section": "卷四·论土 / 四月戊土",
+          "sha256": "ca24d72739f1877a5934ac1d8ade1d0c9d542236d6bf0fa8a1683fdb6e8b54a4"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲"
+        ],
+        "secondary": [
+          "丙",
+          "癸"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "四月戊土，阳气发升，寒气内藏，外实内虚，不畏火炎，无阳气相催，万物不长，故先用甲疏噼，次取丙癸为佐。（繁体诸本作「故先用甲疏劈，次取丙癸為佐」）"
+    },
+    "戊|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先壬次甲、丙酌用；癸力微，火局不能等同壬的作用。",
+      "source_general_candidates": [
+        "壬",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0050",
+          "section": "卷四·论土 / 五月戊土",
+          "sha256": "bf8b3b40b0b95d1df8c2af2d3b44a36acd1b6869c8dc0acc745a52256cd16624"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0052",
+          "section": "卷四·论土 / 五月戊土",
+          "sha256": "cc5ae831be69b4ef215a5269a35f1fbd88934addf37abf8b41d1260b2e5bb4f7"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|未": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先癸，次丙甲；旧表把甲列首组而丙列次组不是正文顺序，土多甲出另有条件。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0056",
+          "section": "卷四·论土 / 六月戊土",
+          "sha256": "f430dfa59c4e9830acab0d9db31aeca426ae8375825d2a695e2f6b8637b16f1b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0057",
+          "section": "卷四·论土 / 六月戊土",
+          "sha256": "3acb62786917c303db026871d10bef9fdd0742418da1947b79980b476cd6387c"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0058",
+          "section": "卷四·论土 / 六月戊土",
+          "sha256": "8708549bb20dcf2e19d49dd10b0741c70c764d8a43a5272f705215316785f865"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "甲"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先丙后癸、甲次；水局取甲泄水，不能当从财自动成格。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0068",
+          "section": "卷四·论土 / 七月戊土",
+          "sha256": "de391dc225417745dd60886f33884538cc7c3850c4f4a4606a408d2a080c924b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0069",
+          "section": "卷四·论土 / 七月戊土",
+          "sha256": "7d21b2df2cda6cd93c51623a7f3115ffa1c0363401a42a95aea776596f473dff"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0070",
+          "section": "卷四·论土 / 七月戊土",
+          "sha256": "eddd2d712789723fe44ed50e786447f457f565743fdf8901a481695e9423f94b"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先丙后癸且不必木疏；丁依据秋土补身末段，需结合全局而非直接替丙。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丁"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0079",
+          "section": "卷四·论土 / 八月戊土",
+          "sha256": "4956c20c1881cfa8f74a7a1e2d7c0950fd553d81497e5437fa664026a7e604b9"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0081",
+          "section": "卷四·论土 / 八月戊土",
+          "sha256": "59c6e8fcc29c4ebde35bb83adf72bfe48c32f8132970ed3b939d2833611013ce"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0083",
+          "section": "卷四·论土 / 八月戊土",
+          "sha256": "0051ae851bde1f6b59a18fa9fc31826a7fc2c56af33eddd16a82e46b78008719"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "丁"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "八月戊土，金洩身寒，賴丙照暖，喜水滋潤，先丙後癸，不必木疏。丙癸兩透，科甲中人。丙透癸藏，可許入泮。癸透丙藏，納資得官。若丙藏又無癸，即多不透，此皆常人。丙癸全無，奔流之客。……秋土生金極弱，須丙火丁火出干方妙。【徐樂吾註】月令有當旺之金洩其秀，不必再用甲木疏土也。……丙癸缺一非上格。"
+    },
+    "戊|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "甲先癸次，见金则癸先丙后；水局用戊是另一分支，不能专丙或合化后仍照表。",
+      "source_general_candidates": [
+        "甲",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0085",
+          "section": "卷四·论土 / 九月戊土",
+          "sha256": "9a690d18f1a056436b81323183bf8a8a2c7af24e5682c1f8aeac897ba7c03ad8"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0087",
+          "section": "卷四·论土 / 九月戊土",
+          "sha256": "33cc150d5bda533abc2c32d85ccd9c3244323f5859d24b525433c7f59103a7a9"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0089",
+          "section": "卷四·论土 / 九月戊土",
+          "sha256": "99d32f3f784255fcd1804d13fe054200e9da98c1d4c28d090dce605311f66c7b"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "癸"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "戊|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲次丙；庚见则丁制庚与一般甲丙逻辑区分，水透也需检验救丙。",
+      "source_general_candidates": [
+        "甲",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "丁"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0103",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "729f8d92e43af423589d8b1ad9735ba3cc736371509ec1f4a8c705087b77b608"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0104",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "e60c107c219ef52287de5ece8bbef58aa3816b088aa65aa13450f44cf7832a64"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0105",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "152f7f30d2ad7104bce35bd0b77e69f9bf2ce4805be51e9e3193e8ff22d979df"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0107",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "63ac7faef52b0f1fb58a6d8dfaf3907787d638e4fa22fe28aa0733dda53a8533"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "丙"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「十月戊土，時值小陽，陽氣略出，先用甲木，次取丙火。非甲、土不靈。非丙、土不暖，安能生發萬物。甲丙兩出，富貴中人。」——此句定 primary=甲、丙 且次序為甲先丙後。secondary 之所以清空，因全段再無「佐／次之／輔」之干：「或甲得長生，遇支藏得地之水，一丙高透，亦主身貴揚名。支見庚金，入泮而已。若不見庚金，甲木藏支，丙火高透，科甲有之。若有庚，丁出制，必異路功名。或為典吏。即庚丁不透，甲丙藏支，亦云富貴。壬透得戊救丙，主富貴取貴。丙甲俱無，必為僧道。」其中丁僅為「有庚時制庚」之條件藥（且結果只到異路功名），戊僅為「壬透救丙」之條件藥且即日干本身，均非調候用神。"
+    },
+    "戊|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "十一二月合论丙尊甲佐；火多才讨论壬，水多从财另论。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0116",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "fc2ccdf08e1d79a1df8c449f291bfac9e53d601505fdfafc160ee6233400ed6d"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0117",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "ff3a8376d714fda8d7e833a8e6c9c9c979f13b0964101db5440cd9e7eb0c760b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0119",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "5188ee7ac378a6aea6827ee607d936cc8fa2c6777e48278be438a5cf48c7cdef"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "十一二月严寒冰冻，丙火为专，甲木为佐。丙甲两透，桃浪之人，丙出甲藏，采芹食饩。丙藏甲出，佐杂前程。有丙无甲者，豪富。有甲无丙者，清贫。丙甲全无，下流之造。……若寒土无丙，虽有甲木，亦是内虚外实之人。"
+    },
+    "戊|丑": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "十一二月丙主甲佐；癸仅无丙寒滞的特殊叙述，不能视为常规次用。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "壬",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0116",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "fc2ccdf08e1d79a1df8c449f291bfac9e53d601505fdfafc160ee6233400ed6d"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0117",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "ff3a8376d714fda8d7e833a8e6c9c9c979f13b0964101db5440cd9e7eb0c760b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0118",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "929a3541db4248367942294a840f9adff8cc8c50b26e45bbdb882511dde905ff"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0119",
+          "section": "卷四·论土 / 十月戊土",
+          "sha256": "5188ee7ac378a6aea6827ee607d936cc8fa2c6777e48278be438a5cf48c7cdef"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙为尊；甲多用庚、一派戊才用甲、壬多用戊。旧表庚列首组仍须甲木条件。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "甲",
+        "癸",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0131",
+          "section": "卷四·论土 / 正月己土",
+          "sha256": "28c731b7ed1a5da8cced7275a339ff8cc17f108ad3dcaca2f1cdf2520fe78cea"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0132",
+          "section": "卷四·论土 / 正月己土",
+          "sha256": "bca11cae6e8db6e2cf8e74e0c58e9c829508f71bade2d27a25a07b1dc39b794a"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0133",
+          "section": "卷四·论土 / 正月己土",
+          "sha256": "0923724269954b49eb501ab4fe4130d9f48e5402d628184e5e4a23905a2ff136"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0136",
+          "section": "卷四·论土 / 正月己土",
+          "sha256": "0c5ed8744188ae85063a73e8d234f522d213291a64f5b1ec6ae9ec72f9856f51"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "庚"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲疏忌合，癸润、丙助；庚在木局才论，不能让庚破常规甲。",
+      "source_general_candidates": [
+        "甲",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "庚",
+        "丁"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0139",
+          "section": "卷四·论土 / 二月己土",
+          "sha256": "33c0a5dda4ba0549600ec12d8b62bb9e6f4da4db9ae039db7993217234bc9525"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0140",
+          "section": "卷四·论土 / 二月己土",
+          "sha256": "9938a4b9b3154d6a5b214f0ead2ac7cb2627f89c1b684eeafbf278933a782f72"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0141",
+          "section": "卷四·论土 / 二月己土",
+          "sha256": "a2558df0a5bf1871e8ed938c42cb6d081311cc9a24a8e40294121898382499ff"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "癸"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "先取甲木疏之，忌合，次取癸水潤之。甲癸出干，定主科甲，加以一丙出透，勢壓百僚。"
+    },
+    "己|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先丙后癸随用甲；须得地，庚破甲为病，不只查有无三字。",
+      "source_general_candidates": [
+        "丙",
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0150",
+          "section": "卷四·论土 / 三月己土",
+          "sha256": "004be9fa7060aedb1be419113222f09f0e38a1cbe3fed237ef60b4e3601a047f"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0151",
+          "section": "卷四·论土 / 三月己土",
+          "sha256": "1bc7411ea9a8afbbd8db3c2e9bfbf47e1a215872c5f2943f5e9bc40fc823c1e3"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三夏合论癸主丙次，辛生癸；无癸有壬替代。冻结本没有独立巳月专段。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "辛",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0161",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "f2901d96f80d606474378d02796dace4e7c5e487f53fad90d63f1a68470de89b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0162",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "86b241980de9e23f68bfe77886a54e7f6bf780ea15f0feac0789df2cf8dbfbc7"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0163",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "3766305d8c4bdf254817a86c8e89771e055a3be7201ff07d14456afcdfe63587"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0165",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "56ed46160cc66bc282cdcde811f93b92e219d5da1a4d4d3bc70f7c3a7e37852a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": [
+          "辛",
+          "壬"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "三夏己土，杂气才官，禾稼在田，最喜甘沛，取癸为要，次用丙火。夏无太阳，禾稼不长，故无癸曰旱田，无丙曰孤阴。／或丙癸两透，又加辛金生癸，此富贵之格，名水火既济，鼎甲之人。却忌戊癸化合。／或有丙无癸，有壬亦可，但不大发。"
+    },
+    "己|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三夏合论，须防戊癸合；没有独立午月专段，不能声称午月顺序另已精校。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "辛",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0161",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "f2901d96f80d606474378d02796dace4e7c5e487f53fad90d63f1a68470de89b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0162",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "86b241980de9e23f68bfe77886a54e7f6bf780ea15f0feac0789df2cf8dbfbc7"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0163",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "3766305d8c4bdf254817a86c8e89771e055a3be7201ff07d14456afcdfe63587"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": [
+          "辛"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「三夏己土，雜氣才官，禾稼在田，最喜甘沛，取癸為要，次用丙火。夏無太陽，禾稼不長，故無癸曰旱田，無丙曰孤陰。或丙癸兩透，又加辛金生癸，此富貴之格，名水火既濟，鼎甲之人，卻忌戊癸化合。或有丙無癸，有壬亦可，但不大發。……用癸者，金妻水子；用丙者，木妻火子。」／ 徐樂吾《己土喜用提要》：「午月　癸、丙．調候不能無癸，土潤不能無丙．」"
+    },
+    "己|未": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三夏合论支持癸丙，辛及壬为条件补充；原表未记录这些不等于古籍未谈及。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "辛",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0161",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "f2901d96f80d606474378d02796dace4e7c5e487f53fad90d63f1a68470de89b"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0162",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "86b241980de9e23f68bfe77886a54e7f6bf780ea15f0feac0789df2cf8dbfbc7"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0163",
+          "section": "卷四·论土 / 三夏己土",
+          "sha256": "3766305d8c4bdf254817a86c8e89771e055a3be7201ff07d14456afcdfe63587"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "癸",
+          "丙"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论己土·三夏己土》：「三夏己土，杂气才官，禾稼在田，最喜甘沛，取癸为要，次用丙火。夏无太阳，禾稼不长，故无癸曰旱田，无丙曰孤阴。……或有甲木，又见丙火重重，无滴水解炎，亦孤贫到老。……用癸者、金妻水子。用丙者，木妻火子。」／ 徐乐吾《穷通宝鉴》喜用提要·己土：「未月癸，丙．调候不能无癸，土润不能无丙．」（对照戊土：「未月癸，丙，甲．……土重不能无甲．」）"
+    },
+    "己|申": {
+      "status": "conflicts_with_text",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三秋合论两处明确癸先丙后，旧表丙癸顺序相反；若仅当无序集合也仍缺辛发源条件。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0177",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "52e5763e1696a5387d155e2ca3e215e8963731c65d771591150e96c32dd9da06"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0178",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "80747740d978917ad6e619f4357d5840408c996be21caa732e01c46bda576113"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0179",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "2ab35df8e7e994a1e34459851c2d201f3af49c3e1c73efe5202984ce9f4e101e"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0183",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "4c9e16586457c37ac9fefec2178f5da442f208ff4d594fc62140e34d5e5afc3d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "辛"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「三秋己土，万物收藏之际，外虚内实，寒气渐升，须丙火温之，癸水润之，不特此也，且癸能泄金，丙能制金，补土精神，则秋生之物咸茂矣。癸先丙后。」；「或支四库，甲透者富。乏甲者孤贫。」；「总之，三秋己土，先癸后丙，取辛辅癸。九月土盛，宜甲木疏之，余皆酌用。」——《造化元鑰》徐乐吾逐月注：「七月己土，申宫金水长生，以丙火为主要，有丙辅己，癸透为上格，壬透为次格，水火缺一，便难显达，此言七月己土之用也。」；甲木句下注：「此言九月己土也，支全四库，土重必用甲木以疏之」。"
+    },
+    "己|酉": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三秋癸先丙后；八月金局丙丁救，甲限四库等土盛分支，不能作为酉月固定次用。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "辛",
+        "丁",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0177",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "52e5763e1696a5387d155e2ca3e215e8963731c65d771591150e96c32dd9da06"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0180",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "7d679d440e6f97b502d12339f5bf25e1d3aa1057d9625b99b8aed41c8ac7818e"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0182",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "c4b3adc416908c4580c536081c8bcbadadc41082149313f78aaf23800fe276a2"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0183",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "4c9e16586457c37ac9fefec2178f5da442f208ff4d594fc62140e34d5e5afc3d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "癸"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三秋主癸丙，九月土盛宜甲疏；旧表甲丙首组须有土盛条件，不能按单月直接跳过癸。",
+      "source_general_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0177",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "52e5763e1696a5387d155e2ca3e215e8963731c65d771591150e96c32dd9da06"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0180",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "7d679d440e6f97b502d12339f5bf25e1d3aa1057d9625b99b8aed41c8ac7818e"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0183",
+          "section": "卷四·论土 / 三秋己土",
+          "sha256": "4c9e16586457c37ac9fefec2178f5da442f208ff4d594fc62140e34d5e5afc3d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "丙"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "三冬丙主、甲酌；初冬壬旺戊制，丁不能等同丙解冻。冻结本为季节合论。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "戊",
+        "丁"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0192",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "a540a4ac9939997fff36fe7a8d8b4e4177a64006f20d2272b6b15caf86d142c9"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0193",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "2c1858bd4020462b916bbe0ea2c4f72d2fd1feb5eb1db8da699101043c9103f5"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0194",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "1b2d7ba4bed5060148391b067491e66119bb80b7e239a63a6cd4233610065bd5"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0196",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "636176fd75fdbcf354b65847daa0b5e797629c76d9e2fe63baad00085cc02146"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|子": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙主、甲酌；戊只在壬多具体条件讨论，原文又说戊癸不用与初冬例外，不支持所有子月固定次戊。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0192",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "a540a4ac9939997fff36fe7a8d8b4e4177a64006f20d2272b6b15caf86d142c9"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0194",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "1b2d7ba4bed5060148391b067491e66119bb80b7e239a63a6cd4233610065bd5"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0196",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "636176fd75fdbcf354b65847daa0b5e797629c76d9e2fe63baad00085cc02146"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "己|丑": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "来自三冬合论，戊须壬多而不能据丑月直接取；无独立丑月段，说明不得虚称逐月原文一致。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c004:p0192",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "a540a4ac9939997fff36fe7a8d8b4e4177a64006f20d2272b6b15caf86d142c9"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0194",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "1b2d7ba4bed5060148391b067491e66119bb80b7e239a63a6cd4233610065bd5"
+        },
+        {
+          "passage_id": "qiongtong:c004:p0196",
+          "section": "卷四·论土 / 三冬己土",
+          "sha256": "636176fd75fdbcf354b65847daa0b5e797629c76d9e2fe63baad00085cc02146"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|寅": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙甲主、丁次；旧表次庚不能由本月无条件支持，土厚甲疏时庚出反制甲。",
+      "source_general_candidates": [
+        "丙",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丁"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0011",
+          "section": "卷五·论金 / 正月庚金",
+          "sha256": "6ad7f706eea92645f8a7169aa665675a5997f4f4c7af0960ac97e09ddf899a8b"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0012",
+          "section": "卷五·论金 / 正月庚金",
+          "sha256": "39c1c17cd9fe323b03b3b955e1655da83535c28e977f96a2934a423b965f12a4"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0013",
+          "section": "卷五·论金 / 正月庚金",
+          "sha256": "8dec898060b8033f282ea65cc6e45483b059c1be47d3904d749c4d23cbfbdd98"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0016",
+          "section": "卷五·论金 / 正月庚金",
+          "sha256": "e00d35bde49cfe79494a69d4333a70599a58573d0588f16f5af6cef52dca85e7"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "甲"
+        ],
+        "secondary": [
+          "庚",
+          "丁"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁主甲引、庚劈甲；无丁才用丙，从财木局等分支忌比助，不能普遍加庚。",
+      "source_general_candidates": [
+        "丁",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0023",
+          "section": "卷五·论金 / 二月庚金",
+          "sha256": "5fd59721825a8cc969c34cc919772846d538d51adf7c64519bc168a8de7e8465"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0024",
+          "section": "卷五·论金 / 二月庚金",
+          "sha256": "cf9dbed71cfe1ed101616c6c3b4a920ca4739698c458f8279c1a77128f672131"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0025",
+          "section": "卷五·论金 / 二月庚金",
+          "sha256": "df319e05f35e9d9ec1e883cd50e8bbe68eb9213448fb96d131f4680c65f5fd78"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "甲"
+        ],
+        "secondary": [
+          "丙",
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲后丁，不需庚劈甲；壬癸限火局或火干需要制水，不能作为全月固定次用。",
+      "source_general_candidates": [
+        "甲",
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "壬",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0038",
+          "section": "卷五·论金 / 三月庚金",
+          "sha256": "1a05262a0e8ee43728526258c80aeb6a93042406c2064f6be65f34101f8578e3"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0039",
+          "section": "卷五·论金 / 三月庚金",
+          "sha256": "6a30f9d381fe1ba20dc0a0d0de391c27844db11736b2d97491ef7497b0716f08"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0040",
+          "section": "卷五·论金 / 三月庚金",
+          "sha256": "04bc5cbce5dbdb6350939d420afa6ebbbfde894f218dba3add8553e9665f5fed"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0042",
+          "section": "卷五·论金 / 三月庚金",
+          "sha256": "7179db870fcd2e76420b818268f3c88e9e487bcf9473d4a00a2f2fe8260b0cae"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "丁"
+        ],
+        "secondary": [
+          "壬",
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬丙戊须分病酌用，原文明确非拘执先后；金局变强才用丁。",
+      "source_general_candidates": [
+        "壬",
+        "戊"
+      ],
+      "source_conditional_candidates": [
+        "丙",
+        "丁"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0048",
+          "section": "卷五·论金 / 四月庚金",
+          "sha256": "23c145a7b9fc561d19646740c1e8d53edb3ab2bcdbffc62286da745f9d482b6c"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0050",
+          "section": "卷五·论金 / 四月庚金",
+          "sha256": "d91a34dda3e0b6616c871d6bfb51b6cba50d4a0752fe3cf149427c4a79e2c669"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0051",
+          "section": "卷五·论金 / 四月庚金",
+          "sha256": "bfd3e9f98707aaaafc139dfdf734704f9b761ea982c9e99e4fe78245335d875d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "戊"
+        ],
+        "secondary": [
+          "丙",
+          "丁"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬主癸次；戊己通常忌制水，仅无壬癸制火时才取泄火补金，两个分支不能并用。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "戊",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0054",
+          "section": "卷五·论金 / 五月庚金",
+          "sha256": "0e377e1aacbd015f113d17be11c8698e3d85f29b94b5f8a3111958c9d2b24255"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0055",
+          "section": "卷五·论金 / 五月庚金",
+          "sha256": "cc31879211d53f1174fbc1b86fabf1f3903dff4fae84fb4d1d14eceb70f168f8"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0056",
+          "section": "卷五·论金 / 五月庚金",
+          "sha256": "fbbc30f13b3e3182a61c53f21e929ce082c7ea531f7a99fdcc9c262b34e66d9e"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "癸"
+        ],
+        "secondary": [
+          "戊",
+          "己"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|未": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁先甲次，土局甲先；当前月段未给旧表壬固定次用依据，且支水会改丁的作用。",
+      "source_general_candidates": [
+        "丁",
+        "甲"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0060",
+          "section": "卷五·论金 / 六月庚金",
+          "sha256": "22573616e29f3cf1619d265d5e42100012c837aaa85d4052895b3d4bf1f67742"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0061",
+          "section": "卷五·论金 / 六月庚金",
+          "sha256": "937969e33c92078992810733816ebac7dfb7fbcb09a44748a3b8b6904b64677b"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0062",
+          "section": "卷五·论金 / 六月庚金",
+          "sha256": "15c78f92ce8a83c351462be9a5bbc94c3a42ea12572095659e151aaff31dfdd9"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "甲"
+        ],
+        "secondary": [
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁主甲引，土局甲先；水局乏丁才用丙，仍需甲，不是丙随时可替。",
+      "source_general_candidates": [
+        "丁",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0074",
+          "section": "卷五·论金 / 七月庚金",
+          "sha256": "e477bed211312fe1fa589dda815e0f853039af606e2069e4dae10c8502e01f72"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0075",
+          "section": "卷五·论金 / 七月庚金",
+          "sha256": "1023e8b2167792fbbf368094e1a9aa479d6fba020d7a129cb65bce527fe84ce7"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0076",
+          "section": "卷五·论金 / 七月庚金",
+          "sha256": "faf7c06dc9ae1e940facac1c34db8d807d8eee72829a8ef8124580eb6d72c202"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "甲"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·三秋庚金》：「七月庚金，刚锐极矣。专用丁火煅炼，次取甲木引丁，故曰：秋金锐锐最为奇，壬癸相逢总不宜，如逢木火来成局，试看福寿与天齐。……或支成水局，乏丁用丙。」／《造化元钥》七月庚金评注：「庚金生申，宜煅不宜泄……如得丁甲两透，权重百僚，有丁无甲，秀士，有甲无丁，常人，丁甲两无，下格，无丁，则姑用丙。」／徐乐吾《庚金喜用提要》：「申月：丁甲　专用丁火，以甲引丁。」"
+    },
+    "庚|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁甲并配丙，不同透藏和刑冲必须检查；不能由羊刃驾杀称号推现实职权。",
+      "source_general_candidates": [
+        "丁",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0079",
+          "section": "卷五·论金 / 八月庚金",
+          "sha256": "5e93f3e07b6117184eba29c0e1cd9da7799dad5da87b4cece9199e8e2e254f1c"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0080",
+          "section": "卷五·论金 / 八月庚金",
+          "sha256": "d1b5e1ec6d9bf61cfb3551319803590440bf4f36c25fc78b095e7b01d4e9bb7a"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0081",
+          "section": "卷五·论金 / 八月庚金",
+          "sha256": "27f8e7cff2659480a58e81c3d6fe0cfe77922ca7d06a5575064cb312f9efdb7d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "甲"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|戌": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先甲疏后壬洗；水局丙救，当前月段没有旧表丁固定次用的依据。",
+      "source_general_candidates": [
+        "甲",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0092",
+          "section": "卷五·论金 / 九月庚金",
+          "sha256": "8d6ce127c229d0d4030f119212132a97c620e36ffa3d15340dbbf0ecb7ef43f2"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0093",
+          "section": "卷五·论金 / 九月庚金",
+          "sha256": "3228c138d33861d5f965153c1a4c62748d543c62fe511880e3ea5cd4754f5eda"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0094",
+          "section": "卷五·论金 / 九月庚金",
+          "sha256": "02b88ae1acc8b415d7d29b2aa46ab9519e786acef4f369500d63ea22be54c094"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "壬"
+        ],
+        "secondary": [
+          "丁"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁造丙暖，甲引丁；亥子水见己制有条件，不能跳过支成水局检查。",
+      "source_general_candidates": [
+        "丁",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0104",
+          "section": "卷五·论金 / 十月庚金",
+          "sha256": "1893221357623677edfadf4e37f80b745e65e67336e543c128c3f70785e0172f"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0105",
+          "section": "卷五·论金 / 十月庚金",
+          "sha256": "7a19503a8326aad69d9e960e9fff7ab919ddcabdfdc3d4587292ec9d96ebb353"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0106",
+          "section": "卷五·论金 / 十月庚金",
+          "sha256": "9f3f9104fb078c926d99830147c71fda3a6097fdd63f76c492ee28de6f3b4033"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0107",
+          "section": "卷五·论金 / 十月庚金",
+          "sha256": "6cbe7a6352741896e24cab25999da7e2335642edaa81c8ca76e03bd2e8eb04a2"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "丙"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "庚|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "取丁甲、次丙；丙丁过多与水局另论，不把表名直接变成喜火的现实建议。",
+      "source_general_candidates": [
+        "丁",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0114",
+          "section": "卷五·论金 / 十一月庚金",
+          "sha256": "e4ca70b80336d6aaf14b248a3a37143aef44a80e7022754293ec4e664183fe03"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0115",
+          "section": "卷五·论金 / 十一月庚金",
+          "sha256": "a1e99841017a9f6452d4aa88f705a997907f543611f927ed37c2e415e16c9079"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0116",
+          "section": "卷五·论金 / 十一月庚金",
+          "sha256": "89fc458caab612005bbfdc5d298789de0949bdbc2fabe67d68aac8b2dd3c19bd"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0117",
+          "section": "卷五·论金 / 十一月庚金",
+          "sha256": "f468b7ccc84641fde73486b96ed5b05efe219b39a04af9e5051ed2b86add1e5e"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁",
+          "甲"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《窮通寶鑑·三冬庚金·十一月庚金》：「十一月庚金，天气严寒，仍取丁甲，次取丙火照暖。或丁甲两透，丙在支中，必主科甲。即无丙火，亦有衣衿。有丁无甲，亦可富中取贵。有甲无丁，只作常人。……若见癸透，一介寒儒。」／ 徐樂吾《庚金喜用提要》子月條：「丁，甲，丙．仍取丁甲，次取丙火照暖，丙丁须临寅巳午未戌支，方为有力．一派金水，不入和暖之乡，孤贫．」／ 忌神依據，《造化元鑰評註·庚金·十一月庚金》徐樂吾注：「庚金至亥子月，病死之地，水旺泄气，见戊己印则金水失其清，故专取比劫。」同書十月節三冬通則：「不能用印，金水喜清，见土则混浊，赋云：金水固聪明，有土反成顽懦是也。」"
+    },
+    "庚|丑": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙解冻先、丁炼金次、甲不可少；藏透差别只作传统条件，不据此断人生结果。",
+      "source_general_candidates": [
+        "丙",
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0126",
+          "section": "卷五·论金 / 十二月庚金",
+          "sha256": "c5f545ba98f06968aa7a668077b5024233cdd9c4ff166552560765423f999fc8"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0127",
+          "section": "卷五·论金 / 十二月庚金",
+          "sha256": "cd923baa217272d4dc4ff55dee23eea6d3bd5174fc891579d4160b5eb2f96a9f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "丁"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "己为本壬淘，庚制甲；火局与水局分别决定庚壬或丙救，不固定堆加。",
+      "source_general_candidates": [
+        "己",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0136",
+          "section": "卷五·论金 / 正月辛金",
+          "sha256": "3febb1f69fd899faa79dd99d17b4b9dc07e34401319d9b4067a92c32f216bd94"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0137",
+          "section": "卷五·论金 / 正月辛金",
+          "sha256": "0a0c555516b8c95d3708ab4eec62ea4accfa0aa028e176a20ae84935c4258b97"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0138",
+          "section": "卷五·论金 / 正月辛金",
+          "sha256": "4f8d3294b5498fc6ac5a9ba735062b74d3a72496e6d90551a8672c9ee11418d8"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0139",
+          "section": "卷五·论金 / 正月辛金",
+          "sha256": "0e39995b8757d292d58137ad9cd34e47b03413fa63507bed768f2988f305653a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "己",
+          "壬"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬主，甲只制戊己病；壬过多反须戊，两个土条件不同。月段二月庚金疑误字，保留原文不隐改。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0145",
+          "section": "卷五·论金 / 二月辛金",
+          "sha256": "3053514b314c3250523934c357c17e7e41c947d8867a3be384cdae6adf9ac852"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0146",
+          "section": "卷五·论金 / 二月辛金",
+          "sha256": "eb340a4b684baa250cadd4667baadd467abcdabcc7f9c2c6464818d0b0c27e20"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0147",
+          "section": "卷五·论金 / 二月辛金",
+          "sha256": "3d6cb25ad72927d348f466c0f14e6afc5b76e6a82c3b3ae0692ba4bc826eb357"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "二月辛金，阳和之际，壬水为尊，见戊己为病。得甲制伏，则辛金不致埋没，壬水不致混浊，合此者必身入玉堂。故二月辛金，有壬甲透者贵显。……或壬戊透，甲不出干，此为病不遇药，平常之人。得乙破戊，颇有衣衿。但假名假利，刻薄乖张。……如壬水重重，得戊反吉。"
+    },
+    "辛|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬先甲后；癸用于制丙贪合或火多，不能无条件替壬洗淘。",
+      "source_general_candidates": [
+        "壬",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0164",
+          "section": "卷五·论金 / 三月辛金",
+          "sha256": "3bd65e4e51b476b88eaa3286d77634ad5d5e95fa53159fab8ccc71f7d724042c"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0165",
+          "section": "卷五·论金 / 三月辛金",
+          "sha256": "8d6c8eeeed3f4653322262f6eb82a321931e4198be4a796248988d0f6019d89d"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0166",
+          "section": "卷五·论金 / 三月辛金",
+          "sha256": "509a23470d68fa48d260dd5873561dfb8f0c52555bce8921fc69608629bc67b6"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0167",
+          "section": "卷五·论金 / 三月辛金",
+          "sha256": "b85ec6a591a0e0451af6be5613dccbc2af7f7ad08b1bb4e99994805974f2845a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "三月辛金，戊土司令，辛承正气，母旺子相，先壬后甲。壬甲两透，富贵必然。壬透甲藏，廪贡不失。甲透壬藏，富则可云。壬甲皆无，平常之格。所忌者丙贪合也，如月时皆丙，名为争合，主慷慨风流，交游四海。若癸出干制丙，可许采芹。"
+    },
+    "辛|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬洗淘，甲制戊、癸作为另一水路；火旺无水取土泄属于替代分支。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0170",
+          "section": "卷五·论金 / 四月辛金",
+          "sha256": "b5dc38d703767dd0860e392943857fb8452d6065fd0e44f4ae203fbf070f9a84"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0171",
+          "section": "卷五·论金 / 四月辛金",
+          "sha256": "003ce34f6ed9c0f7eddfe00ece5f991604e618ab8d581f40336844409af0ae21"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0172",
+          "section": "卷五·论金 / 四月辛金",
+          "sha256": "711e6c165e95724d2e49d51cc1191e5e468e12997080500cd06470aa5fc708b1"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0173",
+          "section": "卷五·论金 / 四月辛金",
+          "sha256": "fbf6f4c1ba5ea81d09465a9ac6367b54b0c5b7e370885cfa083d0ba004bb4ad5"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬己兼用、无壬癸替；火局癸可能无力，水土过多才甲，不忽略这些必要条件。",
+      "source_general_candidates": [
+        "壬",
+        "己"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0178",
+          "section": "卷五·论金 / 五月辛金",
+          "sha256": "24bb4416f96bfe385141e4f7f7c44c29b5d94c4431e415fba47ff77bc728e624"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0179",
+          "section": "卷五·论金 / 五月辛金",
+          "sha256": "e8b758dbb48c0fdad03a260d60468edf692b22b6ec6e7fddc006f10e316c081d"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0180",
+          "section": "卷五·论金 / 五月辛金",
+          "sha256": "52b21ad43dfd1dc239c00d6635e2b33ea5ecf0bc983567f2fe949d8112f90182"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "己"
+        ],
+        "secondary": [
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|未": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬主庚佐；戊出需甲隔位制，但仅未中己壬时不可甲。该月内部条件须分流。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0186",
+          "section": "卷五·论金 / 六月辛金",
+          "sha256": "ce851bd642264066622264f984c3f085be58d910c03ccb67e2c68034ea430306"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0187",
+          "section": "卷五·论金 / 六月辛金",
+          "sha256": "14e72a41f3c621a62c3f47a3a1f284ce28673d84ace0d92b82e61d47d633d79c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「六月辛金，己土當權，輔助太多，恐掩金光，先用壬水，取庚佐之，壬庚兩透，科甲功名，即不出干，藏支得所，亦有榮華，但忌戊出，得甲制之，方吉，甲須隔位，恐貪己合，反掩金光，又塞壬水之流，下賤之格……不可見甲，甲出，反作平人，總以一壬一己，見庚無甲，方妙。」"
+    },
+    "辛|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "壬尊，甲戊酌用；旧表甲列首组仍必须先有土病，壬不在多且不以癸替。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0194",
+          "section": "卷五·论金 / 七月辛金",
+          "sha256": "9d6d7790798b8282f5939cbda7cf953b71eb9d941634bb6657cc06ee2caab50b"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0195",
+          "section": "卷五·论金 / 七月辛金",
+          "sha256": "b543b33b78063b5c7d726903d2b8061ae4b2923f7401b0aad735850295d25497"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0196",
+          "section": "卷五·论金 / 七月辛金",
+          "sha256": "1204846ee79eba7cc7e47a81ba2b456f2c271de38d9e7385eb9f6408f922d440"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0197",
+          "section": "卷五·论金 / 七月辛金",
+          "sha256": "b0562c975845a0753bbaabff96f25b3919b68a6acebe88c73364b902c7d990f5"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0198",
+          "section": "卷五·论金 / 七月辛金",
+          "sha256": "d978ef2f1058302fb24454fa9a8de2f6dee42d0a822c6ee40653c435742d1abc"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "无戊不宜甲；金局无壬才用丁、水过多才戊，旧表壬甲不得解释为无条件同取。",
+      "source_general_candidates": [
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "丁",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0203",
+          "section": "卷五·论金 / 八月辛金",
+          "sha256": "368c799e018cb2a03bb0f8d4c4a01bebbd4d0f40b95d632f73ed0ad4adc8c090"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0204",
+          "section": "卷五·论金 / 八月辛金",
+          "sha256": "bd2522e4123c8af51885bdb9040c09a93024197e869c4c0a7be7a64b29f876f0"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0208",
+          "section": "卷五·论金 / 八月辛金",
+          "sha256": "bf170065c75c425085b5ccc115c5bee4d81df83b87c38ae3f8d8cc35bb7642a6"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0209",
+          "section": "卷五·论金 / 八月辛金",
+          "sha256": "f598d9468fe4ac717ef90a56a5b7ed831d40bba44bef62f004e386bdd8e5867f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": [
+          "丁"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「八月辛金，當權得令，旺之極矣，專用壬水淘洗，故云金見水以流通，如見戊己，則生扶太過，故以土為病，見甲制土，方妙，無戊，不宜用甲。」／「或支成金局，干見比肩，無壬淘洗，此宜用丁，無丁必主凶頑無賴，若得一壬高透，以洩群金，又名一清到底，定有治國之材。」／（忌神依據）「或透丙火，雖有壬出，亦屬平庸。」「六辛日透戊子時，運喜西方，陰若朝陽，切忌丙丁離位。」"
+    },
+    "辛|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先壬后甲；癸有不同作用，不能当壬等价替代；需核土量与透干。",
+      "source_general_candidates": [
+        "壬",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0221",
+          "section": "卷五·论金 / 九月辛金",
+          "sha256": "abe75c39292d087582009f85375897597345b2738d73ec445b73b90384599f58"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0223",
+          "section": "卷五·论金 / 九月辛金",
+          "sha256": "c32096acdc6076e1fd95dba38c9be91cd5cbaa5b2d51d7dff955f87fc2ba4624"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0225",
+          "section": "卷五·论金 / 九月辛金",
+          "sha256": "3c5d044ce2917e16254a71bbbf288f153553f5e8b462a049d5617e0322bc5267"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0226",
+          "section": "卷五·论金 / 九月辛金",
+          "sha256": "30201ca6fa71841aa475fac519db7784a6031da901a764ef976acc253a674d96"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "甲"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "九月辛金，戊土司令，母旺子相，須甲疏土，壬洩旺金，先壬後甲。壬甲兩透，桃洞之仙。……或土多無壬甲，時月多透丙辛者，略貴，加以辰字在支，則榮顯莫及。……九月辛金，火土為病，水木為藥。"
+    },
+    "辛|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先壬后丙，戊制过多壬，戊己过多反困壬埋金。",
+      "source_general_candidates": [
+        "壬",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0236",
+          "section": "卷五·论金 / 十月辛金",
+          "sha256": "886940e55e913c7217fbc87cb737d2d9ab1a8bf0a76dddcadce5cd28eed1823a"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0238",
+          "section": "卷五·论金 / 十月辛金",
+          "sha256": "c3419df5f100443540c8cd31df07acf357bbff2a16190eb3c21c65ba2ab16dab"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0240",
+          "section": "卷五·论金 / 十月辛金",
+          "sha256": "6e54fac517ce2a2369393d0e6d50012c9cd51a1e5ed0b516fde46a874adefdf2"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "丙"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|子": {
+      "status": "conflicts_with_text",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "通常壬丙两透且不见戊癸；戊限壬多或水局。旧表将戊列首用并把壬降次，会倒置一般与例外。",
+      "source_general_candidates": [
+        "丙",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0242",
+          "section": "卷五·论金 / 十一月辛金",
+          "sha256": "0cb3991c4555b6c32995dc2232b9bb82a06414df9b2df918258a922155cab8ba"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0243",
+          "section": "卷五·论金 / 十一月辛金",
+          "sha256": "7a1eefe9a8f8bc585a1f9b2f9f21cef1667fa867c5bcf788d41c792212ffd9c5"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0244",
+          "section": "卷五·论金 / 十一月辛金",
+          "sha256": "961196d2f661cf24e2c6cd69412f5cbcac05823f8bd772133d16c2cd2715b77a"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0246",
+          "section": "卷五·论金 / 十一月辛金",
+          "sha256": "a01e95865b29959b55634953994f965db3526ab721bd6586384fab51d53d64af"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "戊"
+        ],
+        "secondary": [
+          "壬",
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "辛|丑": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先丙后壬，戊己限水多，不能只见季土就再添土。",
+      "source_general_candidates": [
+        "丙",
+        "壬"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "己"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c005:p0248",
+          "section": "卷五·论金 / 十二月辛金",
+          "sha256": "0a7dc57256977143b6ce7a91f1dcd364895e23b47e1aadd3b6bbf7fdd8810132"
+        },
+        {
+          "passage_id": "qiongtong:c005:p0249",
+          "section": "卷五·论金 / 十二月辛金",
+          "sha256": "e1f94175d56c73a363f677954572b482eb0924cab73ed772ab5b19cf2d9b7c10"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "壬"
+        ],
+        "secondary": [
+          "戊",
+          "己"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "壬|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "无比肩羊刃不必戊；比劫庚辛助旺才制，戊多才甲，不能固定三神通用。",
+      "source_general_candidates": [
+        "庚",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0013",
+          "section": "卷六·论水 / 正月壬水",
+          "sha256": "975a6502fb7cbdffa3cac8d7ee5c184f06e519b8ae011c41814296217992e7d9"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0014",
+          "section": "卷六·论水 / 正月壬水",
+          "sha256": "ff05c28391ca38485bcfb832d26cf6a3c796280c7ffc7e8c72cb71bcf3eabc32"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0015",
+          "section": "卷六·论水 / 正月壬水",
+          "sha256": "ef04872de7efe9dcc7f8e6d529fd8abf1dcc84bd2c36fb1903990a46e9468481"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0016",
+          "section": "卷六·论水 / 正月壬水",
+          "sha256": "6c314433f81fd79f80388503a35faf4a0c42402aaa7bd6c712c7f61d5da9d6a3"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "丙"
+        ],
+        "secondary": [
+          "戊"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水》(维基文库 action=raw 全文 + 古文岛《卷六·论水》独立转录互校); 本格经比对判为与原文一致, 未作改动。"
+    },
+    "壬|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先戊后辛、庚次；木局及比劫重重分别改变需求，不用丙暖。",
+      "source_general_candidates": [
+        "戊",
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0023",
+          "section": "卷六·论水 / 二月壬水",
+          "sha256": "c12f048aadccb113ce5d0a6d2370f63db701687f3f79e6af57a08af6f21467b4"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0024",
+          "section": "卷六·论水 / 二月壬水",
+          "sha256": "460cf0a1f2f321237dac248aec8f642adbf2af939322a5a61521ef8ea24d17ec"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0025",
+          "section": "卷六·论水 / 二月壬水",
+          "sha256": "fd2291e967ff4480a8291a87782f061f6da50b43f936f0a011295bd171dd0cc3"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0027",
+          "section": "卷六·论水 / 二月壬水",
+          "sha256": "2786bdc320d626d9871c28fca61d555d2f36e2032b7ed70e886ab9e866bdbb02"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "戊",
+          "辛"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水·三春壬水》二月壬水（本地留存原文 历史本地转录记录，具体条款待独立核验）：「二月壬水，寒气初除，有并流之象，不用丙暖，专取戊土辛金。二月壬水，先戊后辛，庚金次之。／戊辛两透，雁塔题名。戊透辛藏，亦有恩诰。或戊辛不透，有庚出干者、主富。或支成木局，有庚透者，金榜题名。庚在支者，异途之仕。／或木出火多，名木盛火炎，须比肩羊刃，尤宜水透，富贵恩荣。乏水者则否。／或比肩重重，又须戊土，书曰：土止流水福寿全。若戊不见，名水泛木浮。一生辛苦，再行水运，落水而亡。」\n\n对照本（同段，繁体全本 sajumania / 八字派）：文字一致，唯一异文为「落水而亡"
+    },
+    "壬|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "甲疏季土、庚次；癸滋甲、丙制庚都带条件，须查水旺及庚多。",
+      "source_general_candidates": [
+        "甲",
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "癸",
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0030",
+          "section": "卷六·论水 / 三月壬水",
+          "sha256": "08f225685f881556bef4eb2127f6a16f2341d12de8d560212ab9521b5f48d98e"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0031",
+          "section": "卷六·论水 / 三月壬水",
+          "sha256": "33bb9cf41862e44628396a91de7772ac631b17ec4e458f307c079994195a0a36"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0034",
+          "section": "卷六·论水 / 三月壬水",
+          "sha256": "325dc0025ec563c34e01c435dfbcf5f42b3c9543bf6e332bee7639d59dab7147"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "癸",
+          "丙"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水·三春壬水》三月壬水：「三月壬水，戊土司权，恐有推山填海之患，先用甲疏季土，次取庚金。甲庚俱透，科甲定然。……有癸滋甲，必主干城。……无甲、刚暴之徒。乏庚、愚顽之辈。……或支成四库，乏甲者，名杀重身轻，终身有损。凡水旺多见庚金者，乃无用之人，须丙制之方妙。」(互校: 古文岛本作「推山塞海」; 徐乐吾《造化元钥》作「塞河壅海，先用甲疏季土，次取庚发水源」。三本仅病喻四字互异, 取用之辞全同。)"
+    },
+    "壬|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "比肩壬助、辛源、庚佐；无壬从财及多金得地转强的路径不同，不能套同一取用。",
+      "source_general_candidates": [
+        "壬",
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0039",
+          "section": "卷六·论水 / 四月壬水",
+          "sha256": "eb18b1b19d279fe9e97b6c020b470d993bdc88eb3047e71953087ecc9723b42a"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0040",
+          "section": "卷六·论水 / 四月壬水",
+          "sha256": "33261d60dfcc55a9e48f75667c3cbc90ecdcbab22e08d0319a910c6bd8212a2c"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0041",
+          "section": "卷六·论水 / 四月壬水",
+          "sha256": "9e31dd0bbcd1130a4ffe4221a76dc6dca4acbf4d2cced2d010228a1a1ba021fc"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0042",
+          "section": "卷六·论水 / 四月壬水",
+          "sha256": "db1556eb872624fcc75b1add993c6293e48c584a395d498fe0f1884b491ff3f8"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "壬",
+          "辛"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·十干分论·论水·论壬水·三夏壬水》四月壬水: 「四月壬水，丙火司权，水弱极矣，专取壬水比肩为助，次取辛金发源，且暗合丙火，庚金为佐。壬辛两透，金榜有名，或癸辛两出，加以甲透，亦主异路之荣。无甲者、富贵门下之客。如无壬，木少火多者，又作弃命从才格，因妻致富。癸透者残疾。」(我本人复核了三份已抓取的原文: 维基文库 raw wikitext 第 1821 行; 古文岛卷六论水; cafengshuinet 异文本 —— 后者此处作「专取壬水比肩为助，次取辛金发源。壬辛两透，金榜有名。」, 无「且暗合丙火，庚金为佐」。) 旁证 徐乐吾《壬水喜用提要》巳月条: 「壬，辛庚，癸．壬水弱极，取庚，辛为源，壬癸比劫．」(同表午月条作「癸，庚，辛．取庚为源，取癸为佐．无庚用辛．」)"
+    },
+    "壬|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "正文癸为用庚为佐、辛癸亦参；旧表庚癸顺序不能替代伤丁与发源的不同任务。",
+      "source_general_candidates": [
+        "癸"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "辛",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0053",
+          "section": "卷六·论水 / 五月壬水",
+          "sha256": "f56c0ab121d505daae8954f8303f80b2947271eb3409140e2bce2faf0d0d049d"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0054",
+          "section": "卷六·论水 / 五月壬水",
+          "sha256": "bfadd14451bc22a120b1627c5bb568d7c143ec5c56cf9c1e1119bcfe84afbaed"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0055",
+          "section": "卷六·论水 / 五月壬水",
+          "sha256": "0b37a7be68c9d2b607c334d58cbceb062ee32f95befa11026362eaf2d626e04c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "癸"
+        ],
+        "secondary": [
+          "辛"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "壬|未": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "当月明确先辛后甲次癸；木局才泛称金水，旧表庚固定次用未由本月指名支持。",
+      "source_general_candidates": [
+        "辛",
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0062",
+          "section": "卷六·论水 / 六月壬水",
+          "sha256": "2e3a468be03cd436182a0277d4ff40a6b4d0d17e521543f3538677ce350acc6a"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0063",
+          "section": "卷六·论水 / 六月壬水",
+          "sha256": "ece554084735f905c80ddb9e2daa890c93a0fc7a91521e5134ed42a6dbc5da48"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0064",
+          "section": "卷六·论水 / 六月壬水",
+          "sha256": "bc36557a66fce81fa2d6c2205367fa76ee4e0ab23a73a70d59fbd8209d1a7b7a"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0065",
+          "section": "卷六·论水 / 六月壬水",
+          "sha256": "61a64ef36d33afce24ea88964e77307b08206a37394b07f17b49810e80893af5"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "辛",
+          "甲"
+        ],
+        "secondary": [
+          "庚",
+          "癸"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水》(维基文库 action=raw 全文 + 古文岛《卷六·论水》独立转录互校); 本格经比对判为与原文一致, 未作改动。"
+    },
+    "壬|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "戊主丁佐，须辰戌戊而非申中受病戊；庚、甲出入属特殊木多或戊多条件，不是统一补项。",
+      "source_general_candidates": [
+        "戊",
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0067",
+          "section": "卷六·论水 / 七月壬水",
+          "sha256": "3174ecb984fbcdfa1ed3b87598bd44de7c1403f61402448abe7f06e332772c86"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0068",
+          "section": "卷六·论水 / 七月壬水",
+          "sha256": "476496e58d87e7a12ef374a10442ff566d8274c2a5ef394af95be160d1118101"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0069",
+          "section": "卷六·论水 / 七月壬水",
+          "sha256": "f5b662f44ef0ae407c7b8c44b2c82a53de825f1d2acff4df1db4cc68815de0fd"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0070",
+          "section": "卷六·论水 / 七月壬水",
+          "sha256": "e2889438b5d5fb2e24be24e182d42540f99cfa924ea0a3c282e3eb27c6c8129c"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "戊",
+          "丁"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水》(维基文库 action=raw 全文 + 古文岛《卷六·论水》独立转录互校); 本格经比对判为与原文一致, 未作改动。"
+    },
+    "壬|酉": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "甲制戊，无甲用金是替代；申亥壬多另用戊。当前月段未支持旧表丙固定次用。",
+      "source_general_candidates": [
+        "甲"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0079",
+          "section": "卷六·论水 / 八月壬水",
+          "sha256": "2903c693a06c47f9b12684554835abf564504a788e4bad3d6e3f235b16dbfb70"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0080",
+          "section": "卷六·论水 / 八月壬水",
+          "sha256": "46e92a927f7125f9b728a75963b95832f2b82ec0d7eb858a78ccb711883945c6"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0082",
+          "section": "卷六·论水 / 八月壬水",
+          "sha256": "48727b8f41a0538a488f9a4fd75c91d9d6c99b773934e5cc40ce367945079d70"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0083",
+          "section": "卷六·论水 / 八月壬水",
+          "sha256": "152e1af9524ac64cdba2feba52fb5ec00546e5aa57dcd976a5a0a5b47a7ccf73"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "庚"
+        ],
+        "secondary": [
+          "丙"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水》(维基文库 action=raw 全文 + 古文岛《卷六·论水》独立转录互校); 本格经比对判为与原文一致, 未作改动。"
+    },
+    "壬|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "甲主丙次，水多乏丙又用戊；须核戊出、己庚杂乱，不是二字见即足够。",
+      "source_general_candidates": [
+        "甲",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0094",
+          "section": "卷六·论水 / 九月壬水",
+          "sha256": "9c209f2b64d090471345e3576b3f771bbbdd82d520a3572a37270100d09020ef"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0095",
+          "section": "卷六·论水 / 九月壬水",
+          "sha256": "559493aef4494c543941340d06d5e763cd12cebf6ce2db6b1fd12891f94f21af"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0097",
+          "section": "卷六·论水 / 九月壬水",
+          "sha256": "c85a3462e29ab351966b116a8fbe006ff2a186eaf377f8136e8dd8059aca3526"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0098",
+          "section": "卷六·论水 / 九月壬水",
+          "sha256": "42d40cbc45b30753a58d72d95c9609745aadf466dfe4a3c641dcf6d040761f41"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "甲",
+          "丙"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水·三秋壬水》九月壬水收束句：「九月壬水，专用甲木，次用丙火。用土者，火妻土子。」段中涉庚者仅两处，皆为贬斥：「或一派戊土，无一己庚杂乱，得一甲透时干，玉堂清贵」「或庚透乏丁，贫贱之人」。对照八月「八月壬水，专用甲木，庚金次之」、十月「十月壬水，专用戊丙，次取庚金」——庚金作次用神只出现在八月与十月收束句，九月收束句无庚。"
+    },
+    "壬|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "戊丙主庚次，甲破戊须庚救；支成水局无土之润下分支不能沿用一般戊制。",
+      "source_general_candidates": [
+        "戊",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0105",
+          "section": "卷六·论水 / 十月壬水",
+          "sha256": "e4445160b0c719cedf8ca4bacbfbe5a13053cb3b0e3d2d26e3570dea4304aa26"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0106",
+          "section": "卷六·论水 / 十月壬水",
+          "sha256": "c8f19a1d09032db5e1468038471dbce0b595d3c4cd9fac3472c2ff4d42e3ff58"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0107",
+          "section": "卷六·论水 / 十月壬水",
+          "sha256": "b414b11dd464c2ab734f511d494471d58a7f184adf2a2e246b7c447889574574"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0108",
+          "section": "卷六·论水 / 十月壬水",
+          "sha256": "f5904ff213387c9a017441e0b5ad96c086a5b448e3da30c020f72d2c31f9fa8a"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "戊",
+          "丙"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水》(维基文库 action=raw 全文 + 古文岛《卷六·论水》独立转录互校); 本格经比对判为与原文一致, 未作改动。"
+    },
+    "壬|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "戊先丙后，并用须得所；水局及丁争合会改变条件，不据此许现实富贵。",
+      "source_general_candidates": [
+        "戊",
+        "丙"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0115",
+          "section": "卷六·论水 / 十一月壬水",
+          "sha256": "b6f5dd4780ef22f2cdb04f57179f8ac2ab698450676fde60df0bd1abab735fd6"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0116",
+          "section": "卷六·论水 / 十一月壬水",
+          "sha256": "8f058711a7a2410c7614dc671fe91759d0b997fa7a99b530021d9d438c915347"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0118",
+          "section": "卷六·论水 / 十一月壬水",
+          "sha256": "7a0e47cf8b2a43ff180de28b12871211415945316f0d07cb1c90343a0eb38fc6"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0120",
+          "section": "卷六·论水 / 十一月壬水",
+          "sha256": "f1441b0b89025d1072473f33cbb4642d3dd0b3a2a9a857afd0c0464d5b64ddcf"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "戊",
+          "丙"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水·三冬壬水》十一月壬水: 「十一月壬水，阳刃帮身，较前更旺，先取戊土，次用丙火，丙戊两透，富贵荣华。有戊无丙，略可言富。有丙无戊，好谋无成。或支成水局，丙不出干，即有戊土，亦是庸人。或丙透得所，即戊藏支，亦可显达，须运得用方妙。或支成火局，一富而已。或比见月时，年见丁火，平常之辈。支成四库，富贵中人。或丁出时干，名为争合，主名利难成。或壬子日、丁未时，虽不能科甲，亦有恩荣，何也？盖用子中癸水为官，号曰用神得地，亦主荣华。十一月壬水，丙戊并用。」"
+    },
+    "壬|丑": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "上下半月同丙为主，甲佐；丁在金局或合化等条件下讨论，戊限多壬。旧表丙丁首组不能抹去这些限制。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "丁",
+        "甲",
+        "戊"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0127",
+          "section": "卷六·论水 / 十二月壬水",
+          "sha256": "477ae4eafd9700412f4c6301f8786564abe1d9dd2807a72c3ecc3241d4d808d1"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0129",
+          "section": "卷六·论水 / 十二月壬水",
+          "sha256": "eaf92cc75286976991c0d546c3857a376d85dfc8e36acf758e25bb85af9d5bc9"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0130",
+          "section": "卷六·论水 / 十二月壬水",
+          "sha256": "b4026b79046b89e4bf444849a66e5cb35b221ca0642b244a33a2e4082d5dbc02"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0131",
+          "section": "卷六·论水 / 十二月壬水",
+          "sha256": "59786a17b9f56a68ba154227c942ba78d6460922f4de69e4761fc56ec41e9f6d"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0132",
+          "section": "卷六·论水 / 十二月壬水",
+          "sha256": "0d49c8870293461446815135d8858da638c9349e6fe81039da13f9c6df740a4d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "丁"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论壬水》(维基文库 action=raw 全文 + 古文岛《卷六·论水》独立转录互校); 本格经比对判为与原文一致, 未作改动。"
+    },
+    "癸|寅": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "先辛后丙，另段强调辛主庚次、丙可少；壬限火局救辛，须保留同章侧重点差别。",
+      "source_general_candidates": [
+        "辛",
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0136",
+          "section": "卷六·论水 / 正月癸水",
+          "sha256": "c9453f27ad8cc778de4197effd0c4d558622165f38632ae12b46878de4f4fdee"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0137",
+          "section": "卷六·论水 / 正月癸水",
+          "sha256": "78b34c4ac7b68a2ac523d1eee1cc7ddbe8979ef0a27c5a01d523f4881d9e0d53"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0139",
+          "section": "卷六·论水 / 正月癸水",
+          "sha256": "879e27f37835d798469430dad4eb0b3f6ded7bd10f1153354304d5cf946077d5"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0140",
+          "section": "卷六·论水 / 正月癸水",
+          "sha256": "779385e8f486a7ee4df50e49f7492ebda6c88223390945dd3589dc671e70f3ac"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "辛",
+          "丙"
+        ],
+        "secondary": [
+          "庚"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|卯": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "专庚、辛次；丁出与庚辛重见配己丁的例外不同，不能只拿一条禁忌遍用于全章。",
+      "source_general_candidates": [
+        "庚"
+      ],
+      "source_conditional_candidates": [
+        "辛"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0143",
+          "section": "卷六·论水 / 二月癸水",
+          "sha256": "9b71e63295e14326dfc065d0e36a3867180970d1c0f12a03d6f195d30b52bb7a"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0144",
+          "section": "卷六·论水 / 二月癸水",
+          "sha256": "727a13d9e329cc98d9a90026340e2d7e3afad7de6e99f40d0b3ce19b0b879417"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0145",
+          "section": "卷六·论水 / 二月癸水",
+          "sha256": "993ac88477db13fe4bba07045aca6c5185e9b02b11c021cf1447c7b8de1186af"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚"
+        ],
+        "secondary": [
+          "辛"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "《穷通宝鉴·论癸水·三春癸水》二月癸水:「二月癸水，不刚不柔，乙木司令，洩弱元神，专以庚金为用，辛金次之。庚辛俱透，无丁出干者，贵由科甲。无庚辛者常人。」／ 徐乐吾《造化元钥》同节作「專用庚金為妙，辛金佐之」／ 徐乐吾《穷通宝鉴》癸水喜用提要卯月条:「卯月庚，辛．乙木司令，专用庚金，辛金次之。」"
+    },
+    "癸|辰": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "清明后专丙、谷雨后辛甲佐；旧表辛与丙并首组需节内位置条件，月份本身不足。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "辛",
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0154",
+          "section": "卷六·论水 / 三月癸水",
+          "sha256": "d89e3ac5e484faa633535f5df87cdb23abd794f0152d75076696af65bea15728"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0155",
+          "section": "卷六·论水 / 三月癸水",
+          "sha256": "63bb250b03761cd085aa4e035343428424bf499748b08baf31f2b34940e41f02"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0157",
+          "section": "卷六·论水 / 三月癸水",
+          "sha256": "b4f0d52efbb8144c8ad368215ae93fb0eff86c02ce03dc6fa7672a9a70944606"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0159",
+          "section": "卷六·论水 / 三月癸水",
+          "sha256": "ba84757650278fa8b12e809e57f276b04cd998cb2d42167943c679839ac1c36d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "辛"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|巳": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "辛主、无辛庚替，壬保护金源制火；庚辛并列不能理解为同时等价。",
+      "source_general_candidates": [
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "庚",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0170",
+          "section": "卷六·论水 / 四月癸水",
+          "sha256": "61f5ed0a3b83af70a6d696ac911e1689f043a4c7141fb7e970b6b1f02bb03f9a"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0171",
+          "section": "卷六·论水 / 四月癸水",
+          "sha256": "f673f8aa42f9aef1e54b4c1f8dedd980c52da6fc4e15a124e8adde0fd5014724"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "辛",
+          "庚"
+        ],
+        "secondary": [
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|午": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "金发源仍需比劫抵火，庚辛壬参酌；火局无壬等分支不能忽略。",
+      "source_general_candidates": [
+        "庚",
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "壬",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0173",
+          "section": "卷六·论水 / 五月癸水",
+          "sha256": "075b105c22ab3bdf094c3e6b83040254a55b4465ed50f953792ec85bb48eea79"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0174",
+          "section": "卷六·论水 / 五月癸水",
+          "sha256": "6d242804786a0eb76d7688c5c5bb216fb87699026ea9f46bbdca35a51eba8992"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0175",
+          "section": "卷六·论水 / 五月癸水",
+          "sha256": "f4823a995dabdd68a6413b9678e2b2351e6dcf8602f245122d78ae924187ec0d"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "辛"
+        ],
+        "secondary": [
+          "壬",
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|未": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "上半月金弱须比劫、下半月金有气无比亦可；旧表仅壬未体现癸及节内分支。",
+      "source_general_candidates": [
+        "庚",
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "壬",
+        "癸"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0178",
+          "section": "卷六·论水 / 六月癸水",
+          "sha256": "39b3294cd1110e82bc2de1eb18b6e2ff4a3d88bfdeb22f1a5765c3eae7e27ee0"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "辛"
+        ],
+        "secondary": [
+          "壬"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|申": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丁为用、甲引有焰；月段区分丁坐午与未戌，不支持旧历史引文把通根午戌未说成同等条件。",
+      "source_general_candidates": [
+        "丁"
+      ],
+      "source_conditional_candidates": [
+        "甲"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0185",
+          "section": "卷六·论水 / 七月癸水",
+          "sha256": "85094bb8d3f7df522730b36b41c5fe33525f61542fd4d387165bf6bc711e9959"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0186",
+          "section": "卷六·论水 / 七月癸水",
+          "sha256": "7fc24207220d15db0878f5ebdd5e66c7a6196969cbbc2e4df7621b5aa7f9aa18"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丁"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "原文本:「但庚司令刚锐极矣，必取丁火为用。或丁透有甲，名有燄之火，必主科甲。或丁透无甲，又无壬癸，即有一二庚金，亦有生监。有二丁更妙。或金多乏丁制者，贫困之人。」‖ 造化元钥/徐乐吾评注:「庚金秉令刚顽，必取丁火为用，以制多金……月令庚金临官，刚锐之气，非取丁火制金不可，用丁火不能无甲为佐也。」「丁火不离甲木，木火相生，名有焰之火。」‖ 喜用提要表:「申月丁．庚金得禄，必丁火制金为用，丁火以通根午戌未为妙．」"
+    },
+    "癸|酉": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "辛主丙佐且隔位同透；末句丙辛怕用疑讹，与前文相反，未校影像不得静默改成皆用。",
+      "source_general_candidates": [
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0195",
+          "section": "卷六·论水 / 八月癸水",
+          "sha256": "1ddee3d4c46b73d968fec2ef09b642638a9077b29737c69c3ca9d04e5e00fab9"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "辛",
+          "丙"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "「八月癸水，辛金虚灵，非顽金可比，正金白水清，故取辛金为用，丙火佐之。名水暖金温。如丙与辛隔位同透，主科甲功名。或丙透辛藏，一榜之士。或土多剋水，生意中人。八月癸水，丙辛皆用。」（徐乐吾《喜用提要》酉月癸水：「辛，丙．辛金為用，丙火佐之，名水暖金溫，須隔位同透。」）"
+    },
+    "癸|戌": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "辛源、比肩滋甲制戊；甲须水滋，壬仅见甲的条件叙述，不是无条件壬癸同加。",
+      "source_general_candidates": [
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "甲",
+        "癸",
+        "壬"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0202",
+          "section": "卷六·论水 / 九月癸水",
+          "sha256": "067ff2300dda7637aa9cc4598a54aa4521b347960c3bb05773eba43b25d44f7a"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0203",
+          "section": "卷六·论水 / 九月癸水",
+          "sha256": "70379bcdb4fe47a381b730923cb4fec0a0a3ae407a7f5ad84aaec15d108a11eb"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0204",
+          "section": "卷六·论水 / 九月癸水",
+          "sha256": "211a9642fb8267ccc5689d9a65acdabde2acb566eb13556fe05975e2be3c5bc8"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "辛",
+          "甲"
+        ],
+        "secondary": [
+          "壬",
+          "癸"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|亥": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "庚辛主，壬多才戊、庚辛一派才丁、木局丙丁又另论；旧表丙戊不能普遍暖局制水。",
+      "source_general_candidates": [
+        "庚",
+        "辛"
+      ],
+      "source_conditional_candidates": [
+        "戊",
+        "丁",
+        "丙"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0212",
+          "section": "卷六·论水 / 十月癸水",
+          "sha256": "6fcdf947ffd2c2e94bd3d0606fdf33ac5d53d9a4bd5500537c33df657ae56e04"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0213",
+          "section": "卷六·论水 / 十月癸水",
+          "sha256": "ce3785fa9daf960778934673db81623ca8e5ba9ccc377745b44a1f243f738a8f"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0214",
+          "section": "卷六·论水 / 十月癸水",
+          "sha256": "f79d1d301ed3fc7488cc53ef379437afa69160ce61a9ad0a1bea5be5a60dbbc4"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0215",
+          "section": "卷六·论水 / 十月癸水",
+          "sha256": "8144e54485685834f3e924c7c1885d7cb9b610a3bc7731676008ad5224c84f1f"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "庚",
+          "辛"
+        ],
+        "secondary": [
+          "丙",
+          "戊"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    },
+    "癸|子": {
+      "status": "supported_with_conditions",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙解冻辛滋扶，需分壬透、水局及戊己杀重；传统比喻不转换为疾病死亡个人结论。",
+      "source_general_candidates": [
+        "丙",
+        "辛"
+      ],
+      "source_conditional_candidates": [],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0223",
+          "section": "卷六·论水 / 十一月癸水",
+          "sha256": "ff1827920361322ef1f1f7959167df7e9fc9cfc3924c27c3a07c43fdc2b60492"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0224",
+          "section": "卷六·论水 / 十一月癸水",
+          "sha256": "147d85ad4ccaea0756c6519172344d1597de65f5b92508b9cdfca80d3f39127c"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0227",
+          "section": "卷六·论水 / 十一月癸水",
+          "sha256": "3c2568b6b8372e298c02a41d31711586f36bee8011036b942534ec2d42f72cb3"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "辛"
+        ],
+        "secondary": []
+      },
+      "historical_verification_claim": true,
+      "historical_source_note_not_verified": "十一月癸水，值冰凍之時，金水無交歡之象，專用丙火解凍，庶不致成冰，又要辛金滋扶，無丙有辛，不妙。……或一派戊己，名殺重身輕，非貧即夭。用火者，木妻火子，用辛者，土妻金子。"
+    },
+    "癸|丑": {
+      "status": "partially_supported",
+      "scope": "candidate_selection_against_frozen_transcription",
+      "review_note": "丙主；丁限癸己会党夜生等特例，金用于泄水太过的辅救；当前月文未支持旧表甲固定次用。",
+      "source_general_candidates": [
+        "丙"
+      ],
+      "source_conditional_candidates": [
+        "壬",
+        "戊",
+        "丁",
+        "辛",
+        "庚"
+      ],
+      "source_refs": [
+        {
+          "passage_id": "qiongtong:c006:p0230",
+          "section": "卷六·论水 / 十二月癸水",
+          "sha256": "14fe2be9a8363283fd692bd7e2ad3a1b90d22fa5ee697efc13978e737d9e1ccb"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0231",
+          "section": "卷六·论水 / 十二月癸水",
+          "sha256": "92a29cda902deed0cb1268cef0d20fb63dec288638005e5b85c92927190e8971"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0232",
+          "section": "卷六·论水 / 十二月癸水",
+          "sha256": "62ca01706c4cd3fcde38712a62b13a3bbb66b7b94adcaa63ba2f3fbd27a7e228"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0235",
+          "section": "卷六·论水 / 十二月癸水",
+          "sha256": "0e5d1a3e69a03b6fecbe27a959ca7c40e1ab7927fba1d94c1e8cd58382a884bf"
+        },
+        {
+          "passage_id": "qiongtong:c006:p0236",
+          "section": "卷六·论水 / 十二月癸水",
+          "sha256": "d6a7b9005568a23b9a55f34a188089ed14eaf4249387653434a443bc70d11a13"
+        }
+      ],
+      "facsimile_status": "not_checked",
+      "individual_application": "requires_chart_conditions",
+      "legacy_candidates": {
+        "primary": [
+          "丙",
+          "丁"
+        ],
+        "secondary": [
+          "甲"
+        ]
+      },
+      "historical_verification_claim": false,
+      "historical_source_note_not_verified": null
+    }
+  }
+}
