@@ -1,0 +1,94 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c111",
+  "title": "内十八格-井栏叉格",
+  "source_url": "https://luckclub.cn/bazi/001/111/",
+  "revision": "sha256:0e775f1751d8c0b7eabb3c4faf8589bf6705074ea07533b3be9a1ee4c0ba09e6",
+  "source_timestamp": "2026-09-06T04:10:47.187399+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c111.html",
+  "raw_sha256": "0e775f1751d8c0b7eabb3c4faf8589bf6705074ea07533b3be9a1ee4c0ba09e6",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c111:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "内十八格 - 井栏叉格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c111:p0002",
+      "sha256": "ac792eebb4b401969c8853893ca1840e523908df0aa6a895b112cb9e2c126735"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "此格庚子、庚申、庚辰，三处须要四柱申子辰三位全，不必三个庚字，若有三庚尤妙。只要庚日生申年，月时或戊子、戊辰不妨，但得支是申子辰全也。若是遇丙子，则是偏官；若时是申时，则是归禄格，而非井栏叉矣。此格四柱怕见寅午戌三字，则冲坏矣。庚用丁为官，以申子辰三合冲寅午成火局，庚日得官星。行运如正气，若行东方财地或南方皆好。若四柱中有巳字、丙丁字则减分数，岁君大运亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c111:p0003",
+      "sha256": "6aaf42130da9c42b556d0ad46d9851598df64078cd4162a0cec2565dd64cd12e"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "郭统制，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c111:p0004",
+      "sha256": "385a235092c9c00e5804fd77cd21debb4d8eaf350df75320be685e4a00e6c111"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "戊申 庚申 庚申 庚辰",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c111:p0005",
+      "sha256": "8350fb36b8a8e543c4ec1f10290e2d6f55003312c0d4e90888c6d804fa2a5205"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "宋大夫，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c111:p0006",
+      "sha256": "d5903228f822d4a925e559b9b6bba6235f628107f6d3600596beba321fc07543"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "庚子 庚辰 庚申 庚午(眉批：此命因行岁运午字，原命中有午，故失职丧妻。)",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 11,
+          "end": 37,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c111:p0007",
+      "sha256": "53e32b7a622dcb2ecc234782a6d08b737c057c492058495ca952cb44f7bb1e4f"
+    },
+    {
+      "section": "内十八格-井栏叉格",
+      "text": "眉批：取庚日申子辰水局，庚金能生水，申子辰合水局有情，若井栏并井中积水，故曰井栏格也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 43,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c111:p0008",
+      "sha256": "690345f8c5f59452a1d101083a98c09f2a2b511e30098180e62ecbbf4168c19e"
+    }
+  ]
+}

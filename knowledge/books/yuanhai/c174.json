@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c174",
+  "title": "论征太岁",
+  "source_url": "https://luckclub.cn/bazi/001/174/",
+  "revision": "sha256:7510ac6b31e4298d9210017a4ee2e3ba98660c5b398b11458bcb72a949d00606",
+  "source_timestamp": "2026-09-06T04:10:58.856927+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c174.html",
+  "raw_sha256": "7510ac6b31e4298d9210017a4ee2e3ba98660c5b398b11458bcb72a949d00606",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论征太岁",
+      "text": "渊海子平卷三",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0001",
+      "sha256": "afeacdbf71d62ad7e9312d541ed7283fc2913c2bfb438bd0e473b11c14c1a68c"
+    },
+    {
+      "section": "论征太岁",
+      "text": "论征太岁",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0002",
+      "sha256": "888f9512096358ea54590fee49f4a198e582b51dddceb1980b114afb151d91e3"
+    },
+    {
+      "section": "论征太岁",
+      "text": "征者，战也。如臣触其君，乃下犯上之意。日干支冲克太岁曰征，运干支伤冲太岁亦曰征，太岁干支冲日干支者亦曰征。但看八字有无救助，仔细推详，百发百中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0003",
+      "sha256": "349a2404b1ff1d864f2e86a7496eb296be59213fcbcb905a39560817e4c934f4"
+    },
+    {
+      "section": "论征太岁",
+      "text": "日干支合太岁干支，曰晦，大运会岁干者亦然。遇此主晦气一年，反复，欲速不达。假如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0004",
+      "sha256": "3c6e80e909529aedb18812ea25fef52692fcdfa6c79e3a9e67368a6d036172ea"
+    },
+    {
+      "section": "论征太岁",
+      "text": "乙丑 乙亥 壬申 乙巳，运行辛未，丙寅年，日子之壬克太岁之丙，日支申庚克太岁之寅甲，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0005",
+      "sha256": "6c3681827f996f9f0b9ceeffd7af4336b9a4f0ab2cb31e34a055cb5a5dc63625"
+    },
+    {
+      "section": "论征太岁",
+      "text": "又且寅刑巳、巳刑申、申刑寅，行辛未运会太岁木局之伤官，皆为不吉。其年甲午月火旺，战克己土，乙木生所为战，故死於非命矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0006",
+      "sha256": "31ef046a8aa405b9a8bab1c09b1f72e4a6e4c524f2dfbdca1f2b5903f785b969"
+    },
+    {
+      "section": "论征太岁",
+      "text": "眉批：征者如两君相持不能比和，谓之年征。得胜者吉，不得胜者凶，此只以一年之事断之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 41,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c174:p0007",
+      "sha256": "57a51ced836ecd3adee93d91cc966e0496344ef69c7e99802134da86631c9c7b"
+    },
+    {
+      "section": "论征太岁",
+      "text": "经曰：“太岁乃衆煞之主，人命遇之未必为灾。若遇战斗之乡，必主刑於本命。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c174:p0008",
+      "sha256": "e8ee859c379f68d26e352939162d3d1b013c44210296ec475bb9eec1cb58d429"
+    }
+  ]
+}

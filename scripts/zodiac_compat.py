@@ -1,4 +1,4 @@
-"""Chinese zodiac (生肖) info and compatibility.
+"""Chinese zodiac (生肖) calendar labels and branch relationships.
 
 Subcommands:
     info     --zodiac 鼠
@@ -26,87 +26,39 @@ from utils import (
 ZODIAC_DATA: dict[str, dict] = {
     "鼠": {
         "wuxing": "水", "yinyang": "阳",
-        "traits": "机敏灵活, 善察言观色, 适应力强",
-        "strengths": ["聪明", "勤俭", "随机应变"],
-        "weaknesses": ["疑心重", "见利忘义倾向", "格局易小"],
-        "industries": ["金融", "信息", "商贸", "策划"],
     },
     "牛": {
         "wuxing": "土", "yinyang": "阴",
-        "traits": "踏实勤恳, 坚毅守信, 不善变通",
-        "strengths": ["勤奋", "稳重", "责任心"],
-        "weaknesses": ["固执", "保守", "节奏慢"],
-        "industries": ["农业", "建筑", "制造", "公共事业"],
     },
     "虎": {
         "wuxing": "木", "yinyang": "阳",
-        "traits": "豪迈进取, 勇于开拓, 不畏强权",
-        "strengths": ["果断", "魄力", "领导力"],
-        "weaknesses": ["冲动", "刚愎", "易树敌"],
-        "industries": ["军警", "管理", "体育", "创业"],
     },
     "兔": {
         "wuxing": "木", "yinyang": "阴",
-        "traits": "温和谦逊, 细腻多虑, 重情感",
-        "strengths": ["温雅", "审美", "外交"],
-        "weaknesses": ["优柔", "敏感", "缺魄力"],
-        "industries": ["艺术", "设计", "外交", "教育"],
     },
     "龙": {
         "wuxing": "土", "yinyang": "阳",
-        "traits": "气宇轩昂, 抱负远大, 不甘平庸",
-        "strengths": ["志向", "魅力", "创造力"],
-        "weaknesses": ["自负", "好面子", "急躁"],
-        "industries": ["政界", "影视", "高科技", "玄学"],
     },
     "蛇": {
         "wuxing": "火", "yinyang": "阴",
-        "traits": "智谋深远, 神秘内敛, 沉静多虑",
-        "strengths": ["智慧", "洞察", "深谋远虑"],
-        "weaknesses": ["多疑", "嫉妒", "城府"],
-        "industries": ["哲学", "宗教", "研究", "投资"],
     },
     "马": {
         "wuxing": "火", "yinyang": "阳",
-        "traits": "热情奔放, 行动力强, 喜自由",
-        "strengths": ["活力", "热情", "执行力"],
-        "weaknesses": ["浮躁", "三分钟热度", "缺耐心"],
-        "industries": ["销售", "运动", "运输", "媒体"],
     },
     "羊": {
         "wuxing": "土", "yinyang": "阴",
-        "traits": "温柔善良, 包容退让, 重内在",
-        "strengths": ["温和", "艺术", "同理心"],
-        "weaknesses": ["懦弱", "依赖", "悲观"],
-        "industries": ["艺术", "宗教", "教育", "服务"],
     },
     "猴": {
         "wuxing": "金", "yinyang": "阳",
-        "traits": "机灵多变, 才思敏捷, 喜欢挑战",
-        "strengths": ["聪慧", "幽默", "多才"],
-        "weaknesses": ["浮夸", "投机", "缺定力"],
-        "industries": ["科技", "传媒", "演艺", "金融"],
     },
     "鸡": {
         "wuxing": "金", "yinyang": "阴",
-        "traits": "勤勉认真, 注重细节, 喜表现",
-        "strengths": ["精细", "守时", "口才"],
-        "weaknesses": ["挑剔", "好辩", "敏感"],
-        "industries": ["管理", "财务", "法律", "传播"],
     },
     "狗": {
         "wuxing": "土", "yinyang": "阳",
-        "traits": "忠诚正直, 讲义气, 富同情心",
-        "strengths": ["忠诚", "正直", "责任"],
-        "weaknesses": ["保守", "焦虑", "敏感"],
-        "industries": ["公检法", "医护", "教育", "公益"],
     },
     "猪": {
         "wuxing": "水", "yinyang": "阴",
-        "traits": "宽厚乐观, 真诚直率, 享乐主义",
-        "strengths": ["宽厚", "乐观", "包容"],
-        "weaknesses": ["懒散", "享乐", "易轻信"],
-        "industries": ["餐饮", "休闲", "服务", "贸易"],
     },
 }
 
@@ -200,24 +152,16 @@ def compat(a: str, b: str) -> dict:
 
     score = max(1, min(10, score))
 
-    if score >= 9:
-        verdict = "极佳, 天作之合"
-    elif score >= 7:
-        verdict = "良好, 相辅相成"
-    elif score >= 5:
-        verdict = "中等, 各有利弊"
-    elif score >= 3:
-        verdict = "偏差, 需要包容"
-    else:
-        verdict = "不合, 慎重对待"
-
     return {
         "a": a, "b": b,
         "branches": [da, db],
         "relations": relations,
         "score": score,
-        "verdict": verdict,
-        "summary": f"{a}与{b}: {' / '.join(relations)}, 评分 {score}/10 ({verdict})",
+        "score_kind": "legacy_heuristic_relation_index",
+        "score_calibrated": False,
+        "verdict": None,
+        "boundary": "score 仅为兼容旧程序保留的自设关系权重, 不代表婚恋相配度或个人结论。",
+        "summary": f"{a}与{b}: 地支 {da}、{db} 的表中关系为 {' / '.join(relations)}",
     }
 
 
@@ -293,7 +237,7 @@ def taisui_zodiacs(year: int) -> dict:
         "刑太岁": list({to_zodiac(b) for b in xing_list if b}),
         "害太岁": to_zodiac(hai),
         "破太岁": to_zodiac(po),
-        "note": "犯/冲/刑/害/破太岁皆建议谨慎行事, 可拜太岁化解",
+        "note": "仅列该年地支与各生肖的表中关系, 未据此推断个人事件。",
     }
 
 
@@ -319,8 +263,9 @@ def info_zodiac(z: str) -> dict:
             for b in group:
                 if b != da:
                     matches.append(DIZHI_ZODIAC[b])
-    base["best_match"] = sorted(set(matches))
-    base["worst_match"] = [DIZHI_ZODIAC[LIU_CHONG[da]]] if da in LIU_CHONG else []
+    base["liuhe_sanhe"] = sorted(set(matches))
+    base["liuchong"] = [DIZHI_ZODIAC[LIU_CHONG[da]]] if da in LIU_CHONG else []
+    base["interpretation_status"] = "relations_only"
     return base
 
 
@@ -329,15 +274,14 @@ def info_zodiac(z: str) -> dict:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  info: zodiac branch wuxing yinyang traits strengths weaknesses
-  industries best_match worst_match
+  info: zodiac branch wuxing yinyang liuhe_sanhe liuchong interpretation_status
 compat / year / taisui have their own keys.
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
 
 def build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(description="生肖 信息 / 相配 / 太岁 查询",
+    p = argparse.ArgumentParser(description="生肖分类 / 地支关系 / 年界查询",
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
@@ -347,7 +291,7 @@ def build_parser() -> argparse.ArgumentParser:
     p1.add_argument("--zodiac", type=str, required=True,
                     help="生肖中文名 (鼠/牛/虎/...)")
 
-    p2 = sub.add_parser("compat", help="两生肖相配度")
+    p2 = sub.add_parser("compat", help="两生肖地支关系")
     p2.add_argument("--a", type=str, required=True)
     p2.add_argument("--b", type=str, required=True)
 

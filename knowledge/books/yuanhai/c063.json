@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c063",
+  "title": "论未来月朔节气奥诀",
+  "source_url": "https://luckclub.cn/bazi/001/063/",
+  "revision": "sha256:0fdca3ab4505f8b2e508b1609fce4f23d5f545258481a7402d539513ff2b24b4",
+  "source_timestamp": "2026-09-06T04:10:37.480079+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c063.html",
+  "raw_sha256": "0fdca3ab4505f8b2e508b1609fce4f23d5f545258481a7402d539513ff2b24b4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论未来月朔节气奥诀",
+      "text": "论未来月朔节气奥诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c063:p0001",
+      "sha256": "67efa429600b3609da1896563d70030e901e921260ca4cb050c7343b3b3fb048"
+    },
+    {
+      "section": "论未来月朔节气奥诀",
+      "text": "月朔原来自古有，前九将来对後九，大月五干连九支，小月四干八支偶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c063:p0002",
+      "sha256": "dadaccfb43ab828f4271e013730a1522136bec62b2d27412bcc7efc306659d89"
+    },
+    {
+      "section": "论未来月朔节气奥诀",
+      "text": "六六之年仔细思，任君走尽风寒路，便作今年立春数，算来又本无差误。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c063:p0003",
+      "sha256": "cdbc9122981c3bb6f11fb9e90d09b2e7f63a65f39ac0c2759921569548bf0f83"
+    },
+    {
+      "section": "论未来月朔节气奥诀",
+      "text": "四十七年前有闰，闰前二月是今逢，分毫不漏真消息，尽在先生掌诀中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c063:p0004",
+      "sha256": "4e2a4ba4e9e4e9be6c5569b8c16c5973fc0aad16de69bd739889b32f8d4de296"
+    },
+    {
+      "section": "论未来月朔节气奥诀",
+      "text": "但观中气所在，闰前之月，中气在晦；闰後之月，中气在朔；无中气则谓之闰月。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c063:p0005",
+      "sha256": "2ecb0e59ec76846f03aa3e185aac0d64f3724c6f951713f8d210efaf496f8655"
+    }
+  ]
+}

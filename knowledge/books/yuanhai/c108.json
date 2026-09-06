@@ -1,0 +1,95 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c108",
+  "title": "内十八格-子遥巳格",
+  "source_url": "https://luckclub.cn/bazi/001/108/",
+  "revision": "sha256:268a4e79dc84b177bc6520d04d053812864054a99ad20ac098f9095a1c3708bd",
+  "source_timestamp": "2026-09-06T04:10:46.654022+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c108.html",
+  "raw_sha256": "268a4e79dc84b177bc6520d04d053812864054a99ad20ac098f9095a1c3708bd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "内十八格 - 子遥巳格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0002",
+      "sha256": "3786053d4451809754f414acbfc22502b1be5eafdf6ee67e5ded2d973b5fc1e2"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "此格以二甲子，子中癸水遥合巳中戊土，巳中戊丙同宫，丙动来合酉中辛金，甲子日得辛金官星，则巳酉丑三合官禄；要行官旺乡运，忌四柱中有庚申七杀，辛字官星，并申酉丑字绊住，则子不能去遥矣。若有午字冲子，则减分数，岁君、大运亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0003",
+      "sha256": "1fc092b7320ea83203b3449d62f4e9c4f863ea68f260a311ee793cb23640cbd6"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "赵知府，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0004",
+      "sha256": "6c36225cc1d0b59814e932c6ff427c3ef1abb2a3dcb4263fb38ab4f1fd9e3e30"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "丙寅 壬辰 甲子 甲子",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0005",
+      "sha256": "3286205de755113d5e4f59ff5710f9abecd2392fa5aca99d7cee539af8ebf4d5"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "平常人，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0006",
+      "sha256": "8feeb09c3b7bc80441a070cf5e58d02fd87b0d2370ada25bed7dd8b58bc5669b"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "己丑 甲戌 甲子 甲子",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0007",
+      "sha256": "e3bf5925ee4bd2bfb9dcf28b99423cf9731600e6ecf93faa22720faaab7a3974"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "以子合丑绊位，不能遥合巳动丙合辛，无贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0008",
+      "sha256": "4cd31565da89a093b7fd4bbac51297ec68f140f6a2834a89d673cc317a0413b8"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "诗诀：",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0009",
+      "sha256": "6cf7e2439fbb0f06beb499d9e525ecbd9b00a6e54b32e2a1f10611081cef2ef4"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "甲子生逢甲子时，子来遥合巳中戊，戊能动丙丙合酉，甲得辛官贵可知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0010",
+      "sha256": "e14b9952303821d52a0ea792e30ce93c4c967d93b8010290eb3d57c8395ebc06"
+    },
+    {
+      "section": "内十八格-子遥巳格",
+      "text": "不喜庚申辛酉出，丑来相绊亦非宜，更无午字相冲害，运入官乡运必奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c108:p0011",
+      "sha256": "715805ee02dbf3c166f9330fb81c12884eeafa58b5af79142a27435a7a135465"
+    }
+  ]
+}

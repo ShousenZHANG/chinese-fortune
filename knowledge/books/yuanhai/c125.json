@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c125",
+  "title": "外十八格-从革格",
+  "source_url": "https://luckclub.cn/bazi/001/125/",
+  "revision": "sha256:78041ab86b0e9244135f14673a1596ad36f0cdab436a2131c978a05b5a1e4e60",
+  "source_timestamp": "2026-09-06T04:10:49.401140+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c125.html",
+  "raw_sha256": "78041ab86b0e9244135f14673a1596ad36f0cdab436a2131c978a05b5a1e4e60",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-从革格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c125:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-从革格",
+      "text": "外十八格 - 从革格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c125:p0002",
+      "sha256": "250a7bcead6f4ea66579c69394ebeeab9de3ddb4a5bb2239fb2e81bc838db4de"
+    },
+    {
+      "section": "外十八格-从革格",
+      "text": "此格以庚辛日见巳酉丑金局全，或申酉戌全者是也。忌南方火运，喜庚辛旺运。见亥卯未者，为之金木间革也。忌冲刑库破，岁运同。此命得申酉戌全，月令戊土生金，得从其类，生在权卫之职。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c125:p0003",
+      "sha256": "5b35265bd08e13c76d2b0cc40e05bdf889ed6122f2bffed7e00298e9f3600caa"
+    },
+    {
+      "section": "外十八格-从革格",
+      "text": "眉批：秋月金居从头看，名为从革便相亲，外无炎帝来临害，定作当朝宰相官。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c125:p0004",
+      "sha256": "6e8bd5f8ffadab98968d22136c0a8e9748923540180dbbf869366c91a752abe2"
+    }
+  ]
+}

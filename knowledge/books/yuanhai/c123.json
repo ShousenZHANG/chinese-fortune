@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c123",
+  "title": "外十八格-炎上格",
+  "source_url": "https://luckclub.cn/bazi/001/123/",
+  "revision": "sha256:0c9a90bd114ae450d9488825075c0e569350a8b5bc8dee0b8303aca4902805bd",
+  "source_timestamp": "2026-09-06T04:10:49.279118+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c123.html",
+  "raw_sha256": "0c9a90bd114ae450d9488825075c0e569350a8b5bc8dee0b8303aca4902805bd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-炎上格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c123:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-炎上格",
+      "text": "外十八格 - 炎上格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c123:p0002",
+      "sha256": "4e32391cdb3ea4b4d59f2cc1ebc41b55222da456dd4f5ee5d5b96069aa681736"
+    },
+    {
+      "section": "外十八格-炎上格",
+      "text": "且如丙丁二日，见寅午戌全或巳午未全亦是。但忌水乡金地，喜行东方运，怕冲，要身旺，岁运同。炎上者，火之势急，又得火局，浑然成势。火为文明之象，值此者当为朱紫之贵，非寻常之命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c123:p0003",
+      "sha256": "8a084b2a38f0066fd32467dfd86aebc82b2e75f7f1c4672da81b50b12c8ab0c7"
+    },
+    {
+      "section": "外十八格-炎上格",
+      "text": "张太保，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c123:p0004",
+      "sha256": "03d65161e4007909f07d41cad36807c9b6a41dce3d9f5c4340405d8e36c94cc6"
+    },
+    {
+      "section": "外十八格-炎上格",
+      "text": "乙未 辛巳 丙午 甲午",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c123:p0005",
+      "sha256": "48acb0a2cc35aa3b17b3ee5cdbe719bdebe4b06e9dca80402ab74e9ade449f6a"
+    },
+    {
+      "section": "外十八格-炎上格",
+      "text": "眉批：火多炎上气冲天，只此无忧富贵全，一路东方行好运，金冠头顶带腰悬。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c123:p0006",
+      "sha256": "011ab93fef4a230c4638149c8c7757a291537c4840f50a621d3f2359abc52090"
+    }
+  ]
+}

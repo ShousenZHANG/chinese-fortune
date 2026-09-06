@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c179",
+  "title": "宝法第二",
+  "source_url": "https://luckclub.cn/bazi/001/179/",
+  "revision": "sha256:4d4b9b5990423236991dc1f9b207ae94885d4c5c6e9ce87f1c59da0beb2800c8",
+  "source_timestamp": "2026-09-06T04:10:59.594422+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c179.html",
+  "raw_sha256": "4d4b9b5990423236991dc1f9b207ae94885d4c5c6e9ce87f1c59da0beb2800c8",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "宝法第二",
+      "text": "宝法第二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c179:p0001",
+      "sha256": "843ebc8cee87375d2b2adf76213a55cfaa9acad026bd55417a74e9baf5594fa5"
+    },
+    {
+      "section": "宝法第二",
+      "text": "子平之法以日为主，先看提纲为重，次用年日时支合成格局，方可断之。皆以月令为用，不可以年取格。凡看子平之数，取格不定，十有九差。惟易鉴先生之法：月令用金只用金，用火只用火。八字水多却取水，不来取火，况此差矣。以法断之，误其大半。是西山易鉴参透玄机十八格，内取六格为重，用相生定格合局。仍用年日下以推轻重浅深，万无一失。六格法曰：逢官看财，逢财看杀，逢杀看印，逢印着官。如用印不怕杀，是杀拘印，印拘身，还作上格取之。如四柱逢印看七杀，但有官杀在，运行官杀乡亦作贵格。月令通官，柱中遇财，财生官妙矣，乃富贵之格。柱中见财，要人财旺兴发福矣。但见一杀，则以杀为重，不可又行财旺之乡，乃财生杀旺，当作贫贱之格。凡格当以杀官言之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c179:p0002",
+      "sha256": "f028b07e5d6ec7d0404efa742933596a87b24494dc4f77bfe604d169158d5452"
+    },
+    {
+      "section": "宝法第二",
+      "text": "眉批：“提纲”，月令也。“浅深”者，如丙午生甲寅月之类，二三日生，当取丙火，中旬之後生，当取甲木，余皆仿此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 54,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c179:p0003",
+      "sha256": "f17fbded2ace8a76494ff1ff58f93462162ec3828cfbffb83ffac04ee78e240b"
+    }
+  ]
+}

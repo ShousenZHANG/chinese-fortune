@@ -1,0 +1,304 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c193",
+  "title": "人鉴论",
+  "source_url": "https://luckclub.cn/bazi/001/193/",
+  "revision": "sha256:065aa108bf10b8cc14e3a7b5c0e58bf656e9e570a5a3853df270772ca2b7ce65",
+  "source_timestamp": "2026-09-06T04:11:02.351167+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c193.html",
+  "raw_sha256": "065aa108bf10b8cc14e3a7b5c0e58bf656e9e570a5a3853df270772ca2b7ce65",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "人鉴论",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "人鉴论",
+      "text": "人鉴论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0002",
+      "sha256": "2313b9f739ae24af702fcad5a0934704409783c5f8fb7bd1030b52f04bd96b97"
+    },
+    {
+      "section": "人鉴论",
+      "text": "洪蒙肇判，甲子攸生，幽显而变通莫测，沈潜于二理尤深。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0003",
+      "sha256": "f097a4215d58f24110503b7ddcb5f3cdf79b7c063b7eaf58faf434a0901499e3"
+    },
+    {
+      "section": "人鉴论",
+      "text": "二十二字之精神妙用，亿千万人之吉凶灼知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0004",
+      "sha256": "b92a0bc359c216c65299c2203b11621fcd5810acfd5620616e4eec06631545b2"
+    },
+    {
+      "section": "人鉴论",
+      "text": "日生为主，年长为君。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0005",
+      "sha256": "398851580c2051e54e88c470c56ecc7967fe252fca986cfbaa3ebb1218c8e745"
+    },
+    {
+      "section": "人鉴论",
+      "text": "先论根本，察贵贱之由易见。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0006",
+      "sha256": "29853faff3ff7525f9683d6f1c1a82cbe954ee88d4347bb419b94e3e6cadac60"
+    },
+    {
+      "section": "人鉴论",
+      "text": "假使粗识深藏之体，孰得而知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0007",
+      "sha256": "8f81ab7a76996c8aa71441202c9e598077a17c6f09703c4831e4602996b18dbf"
+    },
+    {
+      "section": "人鉴论",
+      "text": "盖贵若难言，贱由不易。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0008",
+      "sha256": "1b1164f2b03b63b8ced5062c9e92a9ae40ac2f76ed62b7a02ca2b708279339b4"
+    },
+    {
+      "section": "人鉴论",
+      "text": "森列三才，势有权衡轻重；包罗八卦，自存规矩方圆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0009",
+      "sha256": "b6909ef2a65e84bd46f5e61a21cb78b0e6f7c803f10b2f0b30d3237d55750a86"
+    },
+    {
+      "section": "人鉴论",
+      "text": "天道尚有盈亏，人道岂无反复。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0010",
+      "sha256": "895e01c08e483c91ccc71ac3d02252c8396b88b62068ef18c2ce55e5b408e84d"
+    },
+    {
+      "section": "人鉴论",
+      "text": "或先贫而终富，或先败而後兴，当舍短而从长，勿取彼而舍此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0011",
+      "sha256": "5855785bbc64f2086ca2d517fcd316183e98c5b1a471bd45815db651ac859b14"
+    },
+    {
+      "section": "人鉴论",
+      "text": "四柱仅嫌其一字，大醇亦求其小疵。详察其源，勿轻以断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0012",
+      "sha256": "87bb0eba7e13d9a7da02f74288f709796ea461550b192fe22fefa28e2c50ce83"
+    },
+    {
+      "section": "人鉴论",
+      "text": "官在禄乡，伊尹负阿衡之位；时居贵地，傅说兴作相之臣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0013",
+      "sha256": "2334c19124a97ed39c237e58189ceeba69abbad02fb8367a964a823622e58b17"
+    },
+    {
+      "section": "人鉴论",
+      "text": "生逢贵格，入仕为台阁之尊；重遇鬼生，乐道有山林之兴。是知居官居贵，五行醇而不疵；多滞多忧，八字杂而又战(眉批：五行生克谓之战)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 51,
+          "end": 63,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c193:p0014",
+      "sha256": "5baf1ee213c91b628942872e296f02e11ebbcc3cb7baa050d84a793954f96275"
+    },
+    {
+      "section": "人鉴论",
+      "text": "根甘裔苦，贾谊屈于长沙；源浊流清，太公兴于渭水。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0015",
+      "sha256": "b72503bf4b98e2164a973de9693a1bd9e7499288c6c9fcd45cef6c470d6d384a"
+    },
+    {
+      "section": "人鉴论",
+      "text": "禄马同乡而会登台阁，杀印重旺而早入科名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0016",
+      "sha256": "5015e180f4fe0d64f49b78629a48848dc2ef4db03e3e93594882b098560cf7d3"
+    },
+    {
+      "section": "人鉴论",
+      "text": "兄多逢弟，宜嗟范子之贫；印绶重叠，可比老彭之寿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0017",
+      "sha256": "536446c1f493c32f1d08c488edc269bc70278ba602b632912ff4e37f3aa0c3a4"
+    },
+    {
+      "section": "人鉴论",
+      "text": "夹官夹贵，日时值而峻宇雕梁；劫财夺马，岁时逢而蓬门瓮牖。嗣位克绝，鹊之巢而鸠占之；妻位犯伤，鸾之孤而凤无偶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0018",
+      "sha256": "fd1e6c910ba11899a4fdc3e43b072e9a42c27c261b41070bdbd0425347519e93"
+    },
+    {
+      "section": "人鉴论",
+      "text": "运行背禄，昔日富而今日贫；命遇旺财，昨日悲而今日笑。四柱坐学堂(眉批：五行以长生为学堂，如木生人以亥为学堂，见己亥为是，余同此)之上，回也不愚；三元助墓库之中，丘之好学。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 31,
+          "end": 64,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c193:p0019",
+      "sha256": "1bd729f51c0c1c7b027be553120a125fad37c7876c73a76531609c3e2c96028e"
+    },
+    {
+      "section": "人鉴论",
+      "text": "年逢官贵，财高立解成名；时值偏财，家富又添好业。庚行丙地，祷尔於祗；壬入戊乡，胡不遄死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0020",
+      "sha256": "de9d10d044fdcb484f94055921e55875731c6ec77751367449761cc90d08dec6"
+    },
+    {
+      "section": "人鉴论",
+      "text": "伯牛有疾，缘战克以交差；司马何忧，盖比和而无位。身中衰弱，逢吉运以为凶；命坐坚牢，遇祸年而反福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0021",
+      "sha256": "1928799c11b056557d2e8299c712b9492ddfc9a5618066ef79e2628b2f40fbed"
+    },
+    {
+      "section": "人鉴论",
+      "text": "杀虽重而多合，何伤日月之明；禄虽多而有破，难际风云之会。遇而不遇，庚辛在壬癸之乡；忧而不忧，甲乙行丙丁之地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0022",
+      "sha256": "766051a5320e7583329099fb67c86674063444a830443cd13fdb88bb9d4b5bc3"
+    },
+    {
+      "section": "人鉴论",
+      "text": "或若生逢败绝，郑谷归耕；禄马病衰，冯唐皓首。九宫旺相，难逃邀我于桑中；四柱和合，未免题诗於叶上。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0023",
+      "sha256": "23d03305d1859aac76f382c6cc01751c477c4109ef4ed42de3aa93ff4dfb0d08"
+    },
+    {
+      "section": "人鉴论",
+      "text": "西施貌美，多带长生；绿珠坠楼，凶恶又逢。七杀孤鸾入命，妻哭夫而夫哭妇；烟花绊身，女求男而男求女。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0024",
+      "sha256": "9b968885279a6a2976d81c96b6d72a8c2971823404ff651daaca43ba01ae0ef8"
+    },
+    {
+      "section": "人鉴论",
+      "text": "头目陷而肢体相亏，财有耗而田宅有害。生时若遇相冲，一生屡乏；岁月若临劫夺，百岁孤寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0025",
+      "sha256": "97410e4399c401573071de2fa1797e09fd4b5979d410e60b68e3ab73d0a6438d"
+    },
+    {
+      "section": "人鉴论",
+      "text": "财入财窠，不贵即当大富；杀居太岁，居安可不虑危。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0026",
+      "sha256": "86e99d50e1b1054dd1d2218f09bdb4e6083645eb2ed5f6c36f2e577a6060fcd0"
+    },
+    {
+      "section": "人鉴论",
+      "text": "乃若官星透露，未可便作贵推；杀星下攻，曷可便为凶断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0027",
+      "sha256": "73b6a3b9961a38530ac22b6d04a4bfd48d19188b4000c4159c879fef7157daa9"
+    },
+    {
+      "section": "人鉴论",
+      "text": "大抵归禄喜逢于印绶，刑杀宜值於济和。是以当忧不忧，闻喜不喜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0028",
+      "sha256": "94f22cc2e8794e6bbad7fa6c6c0e84936752029e43a66eb5c53e4f67b83831a2"
+    },
+    {
+      "section": "人鉴论",
+      "text": "考其根而明其实，论其始而究其终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0029",
+      "sha256": "0dbfa531b7cfd748ece0124b8dfc8155f8fbbff3e487e52381acefb0bac737ad"
+    },
+    {
+      "section": "人鉴论",
+      "text": "故知失其本而忘其末，不救其实而义有余。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0030",
+      "sha256": "31f2fb99789670d4f866c1b27bdb20d1eb2b1617dd364fc7d47038a814b7d800"
+    },
+    {
+      "section": "人鉴论",
+      "text": "是以妻宫有克，少年无早娶之人；鬼位逢伤，末岁损成家之子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0031",
+      "sha256": "ce426edcced3ff2981fb9199ee94aa2dd3c692936d9023dfe60edeb81be59451"
+    },
+    {
+      "section": "人鉴论",
+      "text": "生平不吉而寿美松椿；财禄带多而福姿蒲柳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0032",
+      "sha256": "c52efbd46f9f706b3e6c9f0c1b3b6ec04ce11f3eb4fbb551b8e94d398f2610b0"
+    },
+    {
+      "section": "人鉴论",
+      "text": "源清者其流必远，本壮者其叶必荣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0033",
+      "sha256": "13237e18332fada2056a1cd6e5e546396d5bc9bb84cdfe3bee7afda69586e1dd"
+    },
+    {
+      "section": "人鉴论",
+      "text": "三命冠群，不贵即当大富；九宫弱陷，怕凶运大忌凶年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0034",
+      "sha256": "d14fae7743ecb91f7534b2b7e746815ec4279f19b18e91910ff7f683a37a2232"
+    },
+    {
+      "section": "人鉴论",
+      "text": "千条万绪，当求不见之形；百派一源，贵得弥身之地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0035",
+      "sha256": "41fb4612e8f0c834187be226033563e57657e14bbaf4d338fb21a544412df4bb"
+    },
+    {
+      "section": "人鉴论",
+      "text": "详陈本末，备察盈亏，澄神定虑，深略沈机，可者而知，不言而喻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0036",
+      "sha256": "3ee32cd44aec63bfd019f9b4d176e9f4a8b2cb526f734e602b97b93a5777a52d"
+    },
+    {
+      "section": "人鉴论",
+      "text": "後之君子，鉴以前言，术者十常八九，造首者百无一二。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0037",
+      "sha256": "d4774132f74bc2993f59cf0445e51c6a6b8f035dd33002df0fb3ebc9074f2ecd"
+    },
+    {
+      "section": "人鉴论",
+      "text": "辞简而意微，言近而指远，为之贤乎已鉴，命无忽诸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c193:p0038",
+      "sha256": "4bd494f8b13b46a18632430964ec4e7619314ab50211323aba2f32b1757e1f23"
+    }
+  ]
+}

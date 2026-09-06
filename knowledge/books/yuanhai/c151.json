@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c151",
+  "title": "女命富贵贫贱篇",
+  "source_url": "https://luckclub.cn/bazi/001/151/",
+  "revision": "sha256:6e6f6c3407eb19b2ca25b0369f36b9202c7400e098b5d02a42083dbe6f2950ad",
+  "source_timestamp": "2026-09-06T04:10:54.723698+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c151.html",
+  "raw_sha256": "6e6f6c3407eb19b2ca25b0369f36b9202c7400e098b5d02a42083dbe6f2950ad",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "女命富贵贫贱篇",
+      "text": "女命富贵贫贱篇",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c151:p0001",
+      "sha256": "83cc94596be28f71198f3c8fa32aed0ec50bb942d693b227c9082990b5011e5a"
+    },
+    {
+      "section": "女命富贵贫贱篇",
+      "text": "欲推女命，先看官星。官带杀而贫贱，官得令以安荣。伤官太重必妨夫，且是为人性重。倒食重逢须减福，哪堪更犯孤辰。杀重必奔贵室，合多定损贞名。坐禄乘舆而稳厚，冲身动步以轻浮。若乃桃花浪滚，淫奔之耻不堪言。日禄归时，贵重为人所敬。天月二德坐本命，如逢印绶，贵当两国之封。羊刃本是凶神，既不利於夫主之宫，更兼有损生平之性。身干主祯祥，时犯金神健旺，要见八字之强弱。专食子荣，忌偏印穷身之盛。守闺门而正静，必由阴日守中和。代夫婿以经营，此乃日干支旺甚。大抵欣逢正禄，怕犯咸池，贵得长生之辅，贱以败气之归。四柱败多，大忌冲身而犯合；一生忙甚，若非娼妓即为尼。印坏与公姑相妒，食专得子嗣之力。官杀重逢，须防淫乱。姐妹透出，便见争夫。魁罡有灵变之机，日贵有安常之福。即以干支分定，官杀盛而无制伏，不为娼妓定作尼姑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c151:p0002",
+      "sha256": "4641065022027488f89e1d2ba326657c11655f5d5a05fd2ea00bb3fd8a4ea2b0"
+    },
+    {
+      "section": "女命富贵贫贱篇",
+      "text": "眉批：奔者，不得其正。《礼》曰，聘则为妻，奔则为妾，犹卓文君夜奔司马相如之类。身干即日主也。金神，辛丑辛巳辛酉，巳酉丑金局时上犯之谓金神。食神为子，若专旺，主其子有福。日贵，癸卯、癸酉、丁酉、丁亥四日是。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 102,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c151:p0003",
+      "sha256": "ed774069f84e23d04246da842f86b7cf03147811d7e529841b278747e978c2fe"
+    }
+  ]
+}

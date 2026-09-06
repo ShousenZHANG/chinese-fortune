@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c023",
+  "title": "论起通法",
+  "source_url": "https://luckclub.cn/bazi/001/023/",
+  "revision": "sha256:4626d71f27ae2283b25f4758d633150118e2823f2ac5964cf8c27ea83e1049cb",
+  "source_timestamp": "2026-09-06T04:10:29.221370+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c023.html",
+  "raw_sha256": "4626d71f27ae2283b25f4758d633150118e2823f2ac5964cf8c27ea83e1049cb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论起通法",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c023:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论起通法",
+      "text": "论起通法",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c023:p0002",
+      "sha256": "c07b2f7adcd7739059c23fe35900f3a758e834d2deb35d14794e383a4d23d5c8"
+    },
+    {
+      "section": "论起通法",
+      "text": "假如甲子月寅时生，卯上安命。取甲己之年丙作首之丙寅，即丁卯是通。其法寅卯相通，辰巳相通，午未相通，申酉相通，戌亥相通，子丑相通是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c023:p0003",
+      "sha256": "ed46358d30ffd8550cb09ccce6d64034cd04608c4c02c281763b794bfa22ea7b"
+    },
+    {
+      "section": "论起通法",
+      "text": "眉批：通者，通月中之气而相贯串而寅卯未气相通。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c023:p0004",
+      "sha256": "68103c6f5ab4624cb48ba09868437c2cdc6a4184e19017567f3364240de3388b"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c036",
+  "title": "论天赦",
+  "source_url": "https://luckclub.cn/bazi/001/036/",
+  "revision": "sha256:8baf496796eb27091892f1677d3e26b5c84c27b89bece9ec43973f6eda9d2bf9",
+  "source_timestamp": "2026-09-06T04:10:31.623432+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c036.html",
+  "raw_sha256": "8baf496796eb27091892f1677d3e26b5c84c27b89bece9ec43973f6eda9d2bf9",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论天赦",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c036:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论天赦",
+      "text": "论天赦",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c036:p0002",
+      "sha256": "a4a23542f9c7fd1803ec53b83335c9b83eccaa83d5a9767470e57d792930d4b8"
+    },
+    {
+      "section": "论天赦",
+      "text": "春戊寅，夏甲午，秋戊申，冬甲子。凡人生日干遇之方得用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c036:p0003",
+      "sha256": "423afd5955290b4d8a8d834f7306fa72cf60d2a2d88397be6278dbb0d9f0e80d"
+    },
+    {
+      "section": "论天赦",
+      "text": "眉批：此星解人灾祸。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c036:p0004",
+      "sha256": "ce62f8fe62cdd162406630f437e01b8fed442ea69cafe95f899eb6a5a06aa491"
+    }
+  ]
+}

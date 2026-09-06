@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c039",
+  "title": "论十干食禄",
+  "source_url": "https://luckclub.cn/bazi/001/039/",
+  "revision": "sha256:3e96a71865c1f3901147aa8bb6ec4b369e6a34e7ef739d5285ea2eff5dbfa33b",
+  "source_timestamp": "2026-09-06T04:10:32.174178+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c039.html",
+  "raw_sha256": "3e96a71865c1f3901147aa8bb6ec4b369e6a34e7ef739d5285ea2eff5dbfa33b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十干食禄",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "论十干食禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0002",
+      "sha256": "b3bc4732ce4d3e35456ce7094b27af8e850361fb7a41d712364305ca8968389e"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "甲食丙，乙食丁，丙食戊，丁食己，戊食庚，己食辛，庚食壬，辛食癸，壬食甲，癸食乙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0003",
+      "sha256": "0a7f62354fd8c0df7b80eb73c06e1cbf0da138d28f5c9abe72b2ab46349947b4"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "歌曰：",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0004",
+      "sha256": "b75ae22670f9ea7b78d2e2479ee0b5ab49252b4d3314ed84298194331380d4b0"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "时人欲识食神名，甲人食丙乙人丁，丙食戊兮丁食己，己食辛上戊食庚，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0005",
+      "sha256": "f2b77cae954a52a9376e15ec735c0de209c737e936688f08cff70edecb1ea301"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "庚壬辛癸偏相喜，壬甲癸乙最光荣，若遇食神骑禄马，必居豪富立功名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0006",
+      "sha256": "99b0232eeba8101fc9e01dd4c6725a55045ce0e1df15f50e01d97f87797a3c62"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "不食空亡羊刃杀，不食休囚并死绝。食生食旺食贵神，食印食财别优劣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0007",
+      "sha256": "0e64b94022345b2c31bfe718ec2b6cf9a7316fd26a927e5c7d8e73a99d79a5e4"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "若能推究得其真，禄食天厨无休歇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0008",
+      "sha256": "07789624d0e9a739ca0af9b386ab6878a467b30a5ed3c6e594d132f7d0e966ca"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c039:p0009",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "论十干食禄",
+      "text": "食神者，我生之子也，如甲木生丙火为食神言之，旺者主人体肥能饮食。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c039:p0010",
+      "sha256": "8a29b8600456689ddae1e4f9498aa6d86cad90f754d281ad8fe9a41ecaac4c77"
+    }
+  ]
+}

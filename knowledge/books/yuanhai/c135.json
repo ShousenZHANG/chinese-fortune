@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c135",
+  "title": "外十八格-岁德扶财格",
+  "source_url": "https://luckclub.cn/bazi/001/135/",
+  "revision": "sha256:5a2194111e224c42eca0abd7f44db659de52f4cf5e55c309447932d966e3c30b",
+  "source_timestamp": "2026-09-06T04:10:51.676916+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c135.html",
+  "raw_sha256": "5a2194111e224c42eca0abd7f44db659de52f4cf5e55c309447932d966e3c30b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-岁德扶财格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c135:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-岁德扶财格",
+      "text": "外十八格 - 岁德扶财格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c135:p0002",
+      "sha256": "7d9fcbe5f6288d817ab8c33ef2531a9f6523cb10bc326cdbf057ecfe1d7fc88a"
+    },
+    {
+      "section": "外十八格-岁德扶财格",
+      "text": "且如甲日见戊己年是也。若财命有气，则主其人得继上物。身弱者虽有祖业，当托用而无运也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c135:p0003",
+      "sha256": "66a7b01a2029f5b074d93ac13ab4ee30d38512f5122bdb07f53b51882cb50e8b"
+    },
+    {
+      "section": "外十八格-岁德扶财格",
+      "text": "眉批：凡身弱虽有祖业，不能任之，皆主花费不存，缘不及也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c135:p0004",
+      "sha256": "6818f263b71f2ad26a09da313ecf643e6759730512e4233b8a1fd286728cc08f"
+    }
+  ]
+}

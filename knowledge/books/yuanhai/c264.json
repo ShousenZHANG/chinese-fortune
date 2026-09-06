@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c264",
+  "title": "运通诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/264/",
+  "revision": "sha256:17bb636fd07cdcdaf23873d9054102089bf8b01e659a765f46666d8cfd4d069f",
+  "source_timestamp": "2026-09-06T04:11:18.437252+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c264.html",
+  "raw_sha256": "17bb636fd07cdcdaf23873d9054102089bf8b01e659a765f46666d8cfd4d069f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "运通诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "运通诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0002",
+      "sha256": "e9402b76c131d59b9a8025826c3cfd8c2f4350eaff95aef2404ea0a8c296b029"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "三合财官得运时，绮罗香里会佳期。洋洋已达青云志，财禄婚姻喜气宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0003",
+      "sha256": "577af5f6d97b7bb79aca5e0236bba3b87c33ac6f7db86dc36700a6aa4cbd7960"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "运遂时来事事宜，布衣有份上天梯。贵人轻着提携力，指日青云贵可期。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0004",
+      "sha256": "004be511672e745a5e65c8a4fee02eea7f1318334d3591358b2da3d067c3e0b8"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "自是生来不受贫，官居华屋四时春。夏凉冬暖清高处，馐馔杯盘胜别人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0005",
+      "sha256": "b8ccf0978df42974449c1737478c0da40ef99e6f4b08d51ca9c76cd200e92a34"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "此运祥光事转新，一团和气蔼阳春。青云有信天书近，定是超群拨萃人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0006",
+      "sha256": "bb3d537143a8e699eda862c88620e8af96347463a4aeaebd855456446a855c55"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "甲寅乙卯非为刃，辛酉庚申理一同。合起人元财马旺，中年显达富家翁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c264:p0007",
+      "sha256": "a1d0d078f37aaa6262e2c4099fc11268c0e45da818a0c55ee8cb45abd5d06e65"
+    },
+    {
+      "section": "运通诗诀",
+      "text": "眉批：人生四柱中已有财官印，逢三合又遇吉神，岂不为福喜事并有如锦上添花，常人发福，士人登第。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c264:p0008",
+      "sha256": "93e33e220d19dbdd48ac3f76b1e7d31e142d5e00ea05e31d1fcad81fd3695b44"
+    }
+  ]
+}

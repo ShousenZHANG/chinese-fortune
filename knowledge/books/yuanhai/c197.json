@@ -1,0 +1,213 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c197",
+  "title": "渊源集说",
+  "source_url": "https://luckclub.cn/bazi/001/197/",
+  "revision": "sha256:00c643d6294ecf92d591fe07f37a47c3d7aba78ac46f11a1148275d792c1d859",
+  "source_timestamp": "2026-09-06T04:11:03.200686+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c197.html",
+  "raw_sha256": "00c643d6294ecf92d591fe07f37a47c3d7aba78ac46f11a1148275d792c1d859",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "渊源集说",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "渊源集说",
+      "text": "渊源集说",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0002",
+      "sha256": "854d524c254d14c3d9be8ceb92331bcde877a2803cc89f245db77f4fa692188e"
+    },
+    {
+      "section": "渊源集说",
+      "text": "最贵者官星为命，时得偏正财为福；最凶者七杀临身，逢天月二德为祥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0003",
+      "sha256": "dbef8ee01e16b8fc5ae51e62d4594884c34705c20018c52f8537874803e94547"
+    },
+    {
+      "section": "渊源集说",
+      "text": "官星若遇劫财，虽官无贵；七杀如逢资助，其杀愈重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0004",
+      "sha256": "d58a31d6df8637adacc5149186b835ea899a307871dad4a5e3445018d64d31a5"
+    },
+    {
+      "section": "渊源集说",
+      "text": "三合六合(眉批：三合即申子辰之类，六合即子与丑之类)，运至逢而必荣；七官八官，月逢官而为喜。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 4,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c197:p0005",
+      "sha256": "ffacf85d56d183c6958629d2769ddb6a9eb4cb465f873ed5a874a732dd432070"
+    },
+    {
+      "section": "渊源集说",
+      "text": "四合四刑，合刑当为偏正；七冲七击，冲击喜得会藏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0006",
+      "sha256": "0af025bb7b937b9e06115a2a3679aa14f9958017d5496f2807786bac32a5ad4c"
+    },
+    {
+      "section": "渊源集说",
+      "text": "夹贵夹丘为暗会，财库官库要正冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0007",
+      "sha256": "3f6bccd0b4876854f3aca6e1e60cb02e5be057e062b1aa7ee826f060e55c30eb"
+    },
+    {
+      "section": "渊源集说",
+      "text": "官星在生旺之方，逢则何须发见；印绶临孟仲之下，见而不见露形。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0008",
+      "sha256": "9af65968ea46bad46a8887cc4f177627a9bcbf22c5c79dc9861c59c557fdc25e"
+    },
+    {
+      "section": "渊源集说",
+      "text": "印绶得劫财为贵，财源喜伤官为奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0009",
+      "sha256": "72132bc51d9f2d49f829dada495376757eeeb560fe56edec75bbadbb6f33a781"
+    },
+    {
+      "section": "渊源集说",
+      "text": "伤官要见印绶，贵不可言；归禄若见子孙，禄无限妙。年月立有阴阳羊刃，刑罚重犯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0010",
+      "sha256": "8d74aac9c92f9900acbdd14f5d3b7fc19abc7f687cd864933cb80b0f8cb3c814"
+    },
+    {
+      "section": "渊源集说",
+      "text": "官杀混逢天月二德，寿位高迁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0011",
+      "sha256": "841d09b580fce76ed035e6342286efc096021d3e40a4e767017be08b9ce76827"
+    },
+    {
+      "section": "渊源集说",
+      "text": "飞刃(眉批：羊刃对宫为飞刃)伏刃，会刃多凶；伤官见官，剥官见祸。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 2,
+          "end": 14,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c197:p0012",
+      "sha256": "9a69acf66a27bb60c2d4ac175482aac2ac227f8a1d7ff16b452e1359b5a097e2"
+    },
+    {
+      "section": "渊源集说",
+      "text": "羊刃若逢印绶，纵贵有疾病在身；七杀并制逢官，为祸而寿元不长。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0013",
+      "sha256": "92472e5d777609de4095c891bec426b29e1c304edeef39dc697b4ee2f082fb21"
+    },
+    {
+      "section": "渊源集说",
+      "text": "三偏三正，官居一品之尊；四柱四合，福坐衆人之上。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0014",
+      "sha256": "26febad7c32b5cb8654c4772a0a6cd61fe94a45a1dfbd5a961adc42280785185"
+    },
+    {
+      "section": "渊源集说",
+      "text": "杀化为印，早擢登科；财旺生官，少年承业。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0015",
+      "sha256": "11d847ae8a7f0655efd3a926839fd2949c1f391349834adfdf470f51d792b68b"
+    },
+    {
+      "section": "渊源集说",
+      "text": "官杀同来，要知扶官扶杀；偏正混合，须知合正合偏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0016",
+      "sha256": "ecf3759bdbac4dc8dbc59cdbe2da127b3c1dd7001c490a0e076c38adc0a00d17"
+    },
+    {
+      "section": "渊源集说",
+      "text": "福禄若逢羊刃，世事不明；金神运入水乡，身衰夭折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0017",
+      "sha256": "c2452daea932e846ecfaae53ba85f97074ba187e95b9103e273fa5594a6108e6"
+    },
+    {
+      "section": "渊源集说",
+      "text": "暗中藏杀，须凭月下刑神；见处无财，必受空中祸患。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0018",
+      "sha256": "bad96f5f672602ef81970e1cce019826e1e2324d9233531c12037a0a1707c7de"
+    },
+    {
+      "section": "渊源集说",
+      "text": "羊刃兼会七杀，千里徒流；月财若透劫夺，一生贫困。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0019",
+      "sha256": "a331fab7f09b42c20c9ae0166c78261d21c14613e63bad0ebad10316f6f24b0e"
+    },
+    {
+      "section": "渊源集说",
+      "text": "人生前定，穷富已明，如要识其消长，亦多究其始终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0020",
+      "sha256": "5111c0fd64c36c81331d90ee0b3491bccf0c000223dd2cb6b374d9f4be178d6e"
+    },
+    {
+      "section": "渊源集说",
+      "text": "或有前贫後富，或有骤发卒倾；或有白屋之公卿，或有朱门之饿殍；或一生长乐，或一生失所；当视流运之源，要察行年之位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0021",
+      "sha256": "bc6be58277907fb1db8ccdb3ce0162d6fc0d2b007cdc6fe2d847db402f705c8d"
+    },
+    {
+      "section": "渊源集说",
+      "text": "身弱徒然入格，纵发早亡；福转若遇休囚，卒发倾夭。是以用神不可妄求，形踪自然发见。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0022",
+      "sha256": "5bdf09a7478c0b4d6800b6fc1229ea90817b4124782bceb7e5d013d33e9a15e3"
+    },
+    {
+      "section": "渊源集说",
+      "text": "有福必当用彼，无时必是用身。祸患在於五行，福崇在於运气。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0023",
+      "sha256": "ffe6166060c423d1f2c0d0ab6086069e185c21b8e78e89ef7ebb54682f2018ce"
+    },
+    {
+      "section": "渊源集说",
+      "text": "福源人所同具，如或伤终困。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0024",
+      "sha256": "2fee43002016cd73047a396410b941dddd38b09324b34ff5ff0d4464c7fc3ee8"
+    },
+    {
+      "section": "渊源集说",
+      "text": "此中消息，阴阳在我；通明理智，荣辱两端，联研一断，自古相传，非贤勿授。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c197:p0025",
+      "sha256": "5cdb03f26dfcc901eb6a0b03dc6c0672662c6194ca911ce01b54e2af54eaffe0"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c045",
+  "title": "论垣城",
+  "source_url": "https://luckclub.cn/bazi/001/045/",
+  "revision": "sha256:01e2543d7e78d59ceb693a7bf2c6394555697bd4f20c4ca7c8c89739cde2adab",
+  "source_timestamp": "2026-09-06T04:10:33.262516+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c045.html",
+  "raw_sha256": "01e2543d7e78d59ceb693a7bf2c6394555697bd4f20c4ca7c8c89739cde2adab",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论垣城",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c045:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论垣城",
+      "text": "论垣城",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c045:p0002",
+      "sha256": "56dd91c2417a23071b805bb2a567d931787aefca52f90c38dc99987dc1a3f382"
+    },
+    {
+      "section": "论垣城",
+      "text": "垣城主妻宫与驿马合者，主有淫。其法取日上天干长生是也。如甲辰日生在时亥上，甲长生亥，申子辰马在寅，亥与寅合即是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c045:p0003",
+      "sha256": "222f70f34a3680ac0c54752639f374af151df8b6c2b55fb1d3e4659662275f1a"
+    },
+    {
+      "section": "论垣城",
+      "text": "眉批：子平云，垣城合马女非为，主妻私奔，不可不究。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c045:p0004",
+      "sha256": "9daa866e50c9cee5f8938e2210f9f48d04e8cabde2190ce466348418af96d42c"
+    }
+  ]
+}

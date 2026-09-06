@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c254",
+  "title": "弃命从财诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/254/",
+  "revision": "sha256:8ba9d4737deefae634bc426d3578e4f4d43e6bb1b44e96dbd78c016c83a50f5c",
+  "source_timestamp": "2026-09-06T04:11:16.159193+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c254.html",
+  "raw_sha256": "8ba9d4737deefae634bc426d3578e4f4d43e6bb1b44e96dbd78c016c83a50f5c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "弃命从财诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c254:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "弃命从财诗诀",
+      "text": "弃命从财诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c254:p0002",
+      "sha256": "968da04343f59434eddfdfa01a5afe16bbdf8eb75e7283f733eaa26374af3137"
+    },
+    {
+      "section": "弃命从财诗诀",
+      "text": "日主无根财犯重，全凭时印旺身宫，逢生必主兴家业，破印纷纷总是空。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c254:p0003",
+      "sha256": "5d9e5e7648589a881ada3e7c0c0f098f9324ace2b450e6b3763c7ac33614c204"
+    },
+    {
+      "section": "弃命从财诗诀",
+      "text": "日干无气满盘财，弃命相从是福胎，运旺财官皆福贵，如芬相助反为灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c254:p0004",
+      "sha256": "442274ede3df7484575f6dda001c3b6a610354d39131f6708006233f449a1f21"
+    },
+    {
+      "section": "弃命从财诗诀",
+      "text": "眉批：如",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 4,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c254:p0005",
+      "sha256": "0fa4c45242b14b5ccd2e6fa411fdcc60637ddb2037e2bc21ef82c1f0a104f33f"
+    },
+    {
+      "section": "弃命从财诗诀",
+      "text": "庚申 己酉 丙申 己丑，以金为财，弃命从之，主富，其命以丙断之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c254:p0006",
+      "sha256": "fc1cfe0ba9bc7b3b3a62a4fe04cd5d17ded17ec8f1cb5c1c32c89f12238064be"
+    }
+  ]
+}

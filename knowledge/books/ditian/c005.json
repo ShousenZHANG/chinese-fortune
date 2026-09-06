@@ -1,0 +1,88 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c005",
+  "title": "方局論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F05&oldid=844353",
+  "revision": "844353",
+  "source_timestamp": "2017-03-23T15:43:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c005.wiki",
+  "raw_sha256": "df699134405a00601b1d580610413553b8133af312bc8572914960570f51e48a",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "方局論",
+      "text": "方是方兮局是局，方要得方莫混局。",
+      "layer": "base_text",
+      "passage_id": "ditian:c005:p0001",
+      "sha256": "b3d72ff3f4b8e357cecfaa3cb7cb1c52547e810fb554c55f07bb11df9b07e37c"
+    },
+    {
+      "section": "方局論",
+      "text": "如寅卯辰，東方也，雜以亥卯未則太過，豈不為混局哉。",
+      "layer": "commentary",
+      "passage_id": "ditian:c005:p0002",
+      "sha256": "9686de22621b74ed022075df32a76b28176ce97c2e54a85cfc02af7c68533bbc"
+    },
+    {
+      "section": "方局論",
+      "text": "局混方兮有純庛，行運喜南或喜北。",
+      "layer": "base_text",
+      "passage_id": "ditian:c005:p0003",
+      "sha256": "ff3539a3c00d408dbe6224cf5b181ec35db208ccd4c3669585b308541a351f10"
+    },
+    {
+      "section": "方局論",
+      "text": "如亥卯未木局，混一寅辰，則太強，行運南北，則有純疵，不能俱利。",
+      "layer": "commentary",
+      "passage_id": "ditian:c005:p0004",
+      "sha256": "46cdb87422bd01741b45fe57c0e203bc111e8b544164ae6c21596d37331804fd"
+    },
+    {
+      "section": "方局論",
+      "text": "若然方局一齊來，須是干頭無反覆。",
+      "layer": "base_text",
+      "passage_id": "ditian:c005:p0005",
+      "sha256": "26f4e78822038d17ead0bf3f111c4a9a13c6dea48082525dfd076f3f026a26d7"
+    },
+    {
+      "section": "方局論",
+      "text": "如木局木方齊來，須要天干順序，行運不悖。",
+      "layer": "commentary",
+      "passage_id": "ditian:c005:p0006",
+      "sha256": "1b739ebcc235115a98ceeed16fe382035a0df2adbef3fbeaff16ac8a87e1aeeb"
+    },
+    {
+      "section": "方局論",
+      "text": "成方乾透一元神，生地庫地皆非福。",
+      "layer": "base_text",
+      "passage_id": "ditian:c005:p0007",
+      "sha256": "f79fe2867eb763cffa8dc087b7f8c1a3ff53e5be1ae879b4eb4f085c231cf354"
+    },
+    {
+      "section": "方局論",
+      "text": "如寅卯辰全，而又乾透甲乙一元神，復又遇亥之生，未之庫，決不發福，方不可混以局也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c005:p0008",
+      "sha256": "a970b0de664ec918e04fbdcf7fa60f64f396bae922b90cedaa311dc92ce22888"
+    },
+    {
+      "section": "方局論",
+      "text": "成局乾透一官星，左邊右邊空碌碌。",
+      "layer": "base_text",
+      "passage_id": "ditian:c005:p0009",
+      "sha256": "2a8fa3773709909ccc25cadbb5e70f9f14cf51d8bc52b8bc37a85975685216cf"
+    },
+    {
+      "section": "方局論",
+      "text": "如甲乙日遇亥卯未全，而又乾透庚辛一官星，又見右寅，左辰，則名利無成，局不可混以方也，甲乙日單遇庚辛，則亦無成。",
+      "layer": "commentary",
+      "passage_id": "ditian:c005:p0010",
+      "sha256": "a6b72e86ce0805f56c54ce789f95f0aafd3fa4e949742ea42639d0392cfa1346"
+    }
+  ]
+}

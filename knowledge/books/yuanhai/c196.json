@@ -1,0 +1,399 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c196",
+  "title": "掣要捷驰玄妙诀(此集诸家口诀)",
+  "source_url": "https://luckclub.cn/bazi/001/196/",
+  "revision": "sha256:767887888d10af99f83689b96f64c34da2ba21da5b4dad0ab8cdfe4d66fde8ae",
+  "source_timestamp": "2026-09-06T04:11:03.012193+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c196.html",
+  "raw_sha256": "767887888d10af99f83689b96f64c34da2ba21da5b4dad0ab8cdfe4d66fde8ae",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "掣要捷驰玄妙诀 (此集诸家口诀)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0002",
+      "sha256": "a15cfc282aaaa4c3dfa35825c2749c06f026ffce8388cdcba1c030981cad9ef7"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "以日为主，专论财官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0003",
+      "sha256": "aca877b816ac1a2425cb209d010bfc64a25958563c447fca385cfb0d1c939ca4"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "盖官乃扶身之本，财为养命之源 (眉批：财者，本命也，则人赖之以生)。故推天时，察地利，忌太过与不及，以中和而为用。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 15,
+          "end": 33,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0004",
+      "sha256": "66030bb4c9d90050c3b5a3383e3585e446a9d6b3d44a68bd2f553e216e337dc1"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "去留舒配 (眉批：去者，去而不用；留者，留而用之；舒者，屈而抑之；配者，合而成对)而中理，轻重强弱而表正。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 5,
+          "end": 41,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0005",
+      "sha256": "1c3d2dc3df5122b124ddab4b3484176b604c61d9aabebbe0d4059c272f17c761"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "先观节气之深浅，後论财官之向背。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0006",
+      "sha256": "b2709a29303a9be9b63b117fcb4f5a5f511af1970e1235ab7bf47ef360b018be"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "人之命内，皆不离乎财官；诸格局中，总要虚邀禄马。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0007",
+      "sha256": "dde8b17a9e94031b58b16b4bd65370d8b0a2898a45b3a61847675828377e7ae6"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "先贤已成矜式，後学须自变通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0008",
+      "sha256": "54291e0a7629356c8d13f31016eec92e699d9df0ede5ad577ee9eb2df4228329"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "宜向之而运背，决之贫贱；宜背之而运向，断之困弱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0009",
+      "sha256": "47b1c6fe6a809bef046380d075bc4ffd60d5ee9385d34427d76fa6ed5e91ba51"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "喜生以逢生，贵而可取；爱克而值克，吉亦堪言。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0010",
+      "sha256": "9f73875f30e18dd79461f4d27e2179d87e63da5a15116f15c091f331563a528b"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "逢官而看财，见财富贵；逢杀而看印，遇印荣华。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0011",
+      "sha256": "c11f075328f61677913c56497baee857d77175d8ea1013ef40d46e957fa41867"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "逢印看官而遇官，八而七贵；逢财看杀原有杀，十有九贫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0012",
+      "sha256": "f32b304bccf7ee2c1e36db70cb44eec35010b1e7c0405b0f2b7263b94e8a8eb6"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "甲乙运入西方，身旺功名可许；壬癸路经南域，主健为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0013",
+      "sha256": "1b28dda964bee64226558d83d9306070b51c7a1e1df65f11262c0166706eb6d2"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "印财不宜身旺地 (眉批：如印绶劫财，不宜又行印绶劫财之运)，食神最喜劫财乡。官杀混杂，身弱则贫；官杀两停，合杀而贵。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 8,
+          "end": 29,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0014",
+      "sha256": "f9f36d638f74e8c96a6a8bf3bb3f58c1d219b33c9d24789a931f809221885a0e"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "年月官星，早年出仕；日时正贵，晚岁得名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0015",
+      "sha256": "18d016b12910f17496dfc927a34da69ddc4ccf87394b302ee9026a8b97c3eb35"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "胞胎逢印绶，禄享千锺；财气遇长生，田肥万顷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0016",
+      "sha256": "f1f6c2742391717c976488051218c2c321acdc9edaab3fde8238846b54475d73"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "秋冬官星逢刃伤，存金去火贵无疑；腊月伤官喜见官 (眉批：十二月也，土曰用事，己生庚金伤官)，破印重伤而祸死。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 24,
+          "end": 45,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0017",
+      "sha256": "b0de0634ec3459a895550f16e60186f6b17b66895183f11d57d72e1925559ae2"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "财旺生官者何？贵少而富多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0018",
+      "sha256": "6f9f8b91c947cce3bfdef51792428a913cb03419cb4b35e72e38da0e406e010b"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "伤官见官者何？官高而富足。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0019",
+      "sha256": "0a4296423656ac0fe787efb711c94b8e3001b485b9f3d95c55738a82d3b78958"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "无伤不贵，有病为奇。宜当弃之，理妙於斯，何必外取。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0020",
+      "sha256": "76a939c8f27679d24c26d5243436cf9d3952dd04d0ecdea92b648e6e1a2fe759"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "如火炎水少遇庚辛，休作身旺官轻而取；或土重木绝逢壬癸，难作身旺官轻而决。财轻莫逢劫地，印多最妙财乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0021",
+      "sha256": "8f92aa322bbbaa5f92272033f84cb480a02697aedcadbc5c91e342308e0a99ce"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "财旺生官，用官取贵；杀星制刃，劫实图名 (眉批：有羊刃遇劫，当以劫官主，故名劫实图名)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 20,
+          "end": 43,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0022",
+      "sha256": "43484fedbff57d00fdd2300bbc1ae0dff4ad5e903cb74ed29995cf489acb8f3d"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "身旺偏财何取，必取横财；主健正财偏劫，频见妻灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0023",
+      "sha256": "245eba9a9dfbf9795ec58b1955b474f862c5a20c06ab8cf8c484e8efd8f5bfca"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "劫财羊刃入官杀，台阁之臣；归禄倒冲逢刃伤，廊庙之贵。身旺有杀逢印绶，权断之官；主弱逢印见财星，寻常之客。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0024",
+      "sha256": "d11541922d23c6c4ecefc7454d131101e3016e5b72f9f5d1f68566f48083f15a"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "阳刃伤官有制，膺职掌于兵刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0025",
+      "sha256": "9f28e6ff357039779ae347b9ae1f5ac20d6293e6027f108fbbe5a4e288f848ad"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "正官正印无伤，出仕牧其士庶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0026",
+      "sha256": "4fca6ac7307af137a5d3ad72b79908b1749101e666295447cf23ad57f6c39282"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "财旺稼穑(眉批：土多)，给饷(眉批：乃官之职)之官；飞禄朝阳，侍廷之相。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 4,
+          "end": 11,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        },
+        {
+          "start": 14,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0027",
+      "sha256": "2e06c888cabcb74db2c4af7e0a3c814dbe74d5e67376f2ee39aae734c5a72861"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "乾坤本清气，几国之荣；子午为极尊，黄门之贵。癸日癸时兼亥丑，魁名及第入翰林；壬日壬时叠寅辰，高爵承恩登御阁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0028",
+      "sha256": "f15f070d8b67465bf5905e70287dc06460ce0ff8fb1cb9e6f55bbf654fda4d95"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "日德见魁罡，纵吉运贫寒之士；魁罡见财官，任得地衣禄之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0029",
+      "sha256": "e1d11dde03388c618dfda8f0a195152d4579a490942e511db173be8d003f4459"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "伤官见官，妙入财印之地；财星破印，贵行比劫之中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0030",
+      "sha256": "c601b857379b76927e655924824b399d3441c6a75b1af1d1cc07a44c56bfda20"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "命逢财，运逢杀，吉而堪言；命逢杀，运逢财，凶而可决。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0031",
+      "sha256": "69f9f04d89baecc9991de78ef233cb9ca9b6c49732d2fbed921bd78542af1667"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "女多伤官，归禄得之极吉；男逢羊刃，身弱遇之为奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0032",
+      "sha256": "379cc96371b898e5a4bdf7e0147d6c16be6c5652dc52e027f09a85c5738d080d"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "金神归禄栏叉，女命逢之最忌；羊刃伤官七杀，男子值之得权。金神入火逢杀刃，贵而无疑；杀重有印逢食伤，荣而自有。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0033",
+      "sha256": "e4ffd5cbdc0e29ef47ad91314732f3f0cc63e84cdc1e31b6a9f8c0e1039e96bf"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "正官正印，居官不显 (眉批：正官正印无杀为之刑，则官无威，故云不显)；羊刃七杀，出牧驰名。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 10,
+          "end": 34,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0034",
+      "sha256": "90c1ca359d42b1193e4b155d19869f22ec90271d73d424975446de50d2054984"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "身旺无依，僧道之例；桃花滚浪，娼妓之流。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0035",
+      "sha256": "8a1f20b87a57897c6b280f86aa0891125ca444f365d2eb64e0eae29a42771116"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "金弱火强，土木销溶之匠；土多水浅，行商针线之工。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0036",
+      "sha256": "349121ba8b8b956b805479b6512677e0c44c0bc7b923263b7d6b48904816c717"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "五湖云绕，始荣终辱己身贫；遍野桃花 (眉批：子午卯酉多者谓之遍野桃花，初起八法，有类属从化照反鬼伏之类以分贵贱，女四纯则清贵、四浊则淫贱)，一世风流多酒色。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 18,
+          "end": 69,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c196:p0037",
+      "sha256": "9e5e7b17fc6c81b57763aae57ab2e3d8767f5decb345e6ac5803f662c5b28ba1"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "亡神拱杀，盗贼之徒；秀气失时，清名之士。印旺身强多嗜酒，丁壬妒合犯淫讹。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0038",
+      "sha256": "976349473ea1891d68a9f6d835ad48c2449a2bcf1c657669a475f693fb0d5682"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "身印俱强，平生少病；天月德助，处世无殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0039",
+      "sha256": "7d286ae57c82e6cc26d93aa96b935f6ac5c2ffce7eef97c7f88c46addf742675"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "食神生旺，胜似财官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0040",
+      "sha256": "f8da71868e91cbe72095d42d051ea1b2211bc2fe874e5fe6177f28b3bda1ddf1"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "贵全官杀，有弃命就财、就杀、就官者富贵有余；无依专旺，绝食、绝财、绝官者无限贫穷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0041",
+      "sha256": "26adc26e4c161d5c26da9cdb884f530373c97793840eca0e0380a7cc09f09dfe"
+    },
+    {
+      "section": "掣要捷驰玄妙诀(此集诸家口诀)",
+      "text": "身弱弃命要无根，官居宰辅；主衰身化得其时，位近天廷。男命类属从化照反鬼伏；女命纯和清贵浊滥淫娼，宜细详之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c196:p0042",
+      "sha256": "f1340776908e01f27c49c9b5a9147cb99046a3c32bc219ae4841fbe2c793b732"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c053",
+  "title": "论天罗地网",
+  "source_url": "https://luckclub.cn/bazi/001/053/",
+  "revision": "sha256:f277a57e043b53342dd5bb382068d770992880a2e5a1c5faeffc57020dbc75e6",
+  "source_timestamp": "2026-09-06T04:10:34.892146+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c053.html",
+  "raw_sha256": "f277a57e043b53342dd5bb382068d770992880a2e5a1c5faeffc57020dbc75e6",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论天罗地网",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c053:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论天罗地网",
+      "text": "论天罗地网",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c053:p0002",
+      "sha256": "25a3e30a721741087a438ea27c68449429d9e6356bf1792a12e49a58bd9ebfbd"
+    },
+    {
+      "section": "论天罗地网",
+      "text": "辰为天罗，戌为地网，又为魁罡所占，天乙不临之地也。何以见戌与亥为天罗，辰与巳为地网？凡火命人遇戍亥是为天罗，水土命人逢辰巳是为地网，乃五行墓绝处也，乃暗昧不明，不决之谓也。若金木生人，无天罗地网之说。男子忌之於天罗，女子忌之於地网。多主塞滞，加恶杀必至死亡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c053:p0003",
+      "sha256": "7d3e2b12e9cc09f8a78f712b84f2dafda5199c0d12edd23bb1be5027c4e7279f"
+    },
+    {
+      "section": "论天罗地网",
+      "text": "眉批：戌亥为天罗，辰巳为地网。惟水火土命忌，金木命不犯。男忌天罗，女忌地网。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c053:p0004",
+      "sha256": "d97e51da33ac22a35ba31a7cca757baea87c3e4865d7337e3b8ddf1cb1a9d2ed"
+    }
+  ]
+}

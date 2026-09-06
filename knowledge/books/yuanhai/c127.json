@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c127",
+  "title": "外十八格-曲直格",
+  "source_url": "https://luckclub.cn/bazi/001/127/",
+  "revision": "sha256:17f89ccefd21865c896a00e18138f42b21984a9e573dda149555277800073867",
+  "source_timestamp": "2026-09-06T04:10:49.934787+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c127.html",
+  "raw_sha256": "17f89ccefd21865c896a00e18138f42b21984a9e573dda149555277800073867",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-曲直格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c127:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-曲直格",
+      "text": "外十八格 - 曲直格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c127:p0002",
+      "sha256": "b1bc458ce6a7d32448d8e1fefdbd50b91905c7ad18b691194167d68d7a6c1a81"
+    },
+    {
+      "section": "外十八格-曲直格",
+      "text": "一曰仁寿，二曰青龙。此格以甲乙日取地支寅卯辰或亥卯未木局。要不见庚辛之气，见庚辛即官杀，非此格也。只从木而论，故曰曲直。运喜东方，北方有水，木赖水生，故从其类，主人多仁，忌西方运。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c127:p0003",
+      "sha256": "602e362b3d29e1c670d063afaa7431ad540fc16883558ad96ef1d2ff6a65cd33"
+    },
+    {
+      "section": "外十八格-曲直格",
+      "text": "李总兵，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c127:p0004",
+      "sha256": "1dade1edc590c89fbd0e113af0b8e95cb75ed1c7ec9750816031f085b07f52ea"
+    },
+    {
+      "section": "外十八格-曲直格",
+      "text": "甲寅 丁卯 乙未 丙子",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c127:p0005",
+      "sha256": "3edeec1e98e82dabc215ab12b99ddd98dceaa8541b72b8d8a08609b09fb9eb52"
+    },
+    {
+      "section": "外十八格-曲直格",
+      "text": "眉批：甲乙生人寅卯辰，亥卯未全嫌白帝，但从木类正为奇，得此清高仁且寿。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c127:p0006",
+      "sha256": "f9656fb3379835770f4667d9e71b4ce922a088ad9e42b6419cb3256221a5629f"
+    }
+  ]
+}

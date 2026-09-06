@@ -90,6 +90,6 @@ jobs:
           python-version: "3.12"
       - run: python -m pip install -r requirements-dev.txt -c constraints-dev.txt
       - name: Installed package, UTF-8 and historical timezone tests
-        run: python -X utf8 -m pytest tests/test_build.py tests/test_time_contract.py tests/test_reading_support.py -q
+        run: python -X utf8 -m pytest tests/test_build.py tests/test_time_contract.py tests/test_request_time.py tests/test_reading_support.py tests/test_bazi_reading.py tests/test_classical_library.py -q
       - name: Clean runtime installation and extracted package smoke
         run: python -X utf8 evals/package_smoke.py

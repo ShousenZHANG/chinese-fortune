@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c010",
+  "title": "论十二支相穿",
+  "source_url": "https://luckclub.cn/bazi/001/010/",
+  "revision": "sha256:51bbc6488a859d2bf18adff48775e172e7ff07e4d1921c27c8d7f20798d119b6",
+  "source_timestamp": "2026-09-06T04:10:26.786496+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c010.html",
+  "raw_sha256": "51bbc6488a859d2bf18adff48775e172e7ff07e4d1921c27c8d7f20798d119b6",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二支相穿",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "论十二支相穿",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0002",
+      "sha256": "4f0055d4e3cb1c617199bb4ca14d3e1af0224e23a611e4ae67aa7af3709ef1ad"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "子未相穿，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0003",
+      "sha256": "00071e958306772bd5814fc4a34d48d6cfdcbca36b5c0e0f8cb30499913f80be"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "丑午相穿，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0004",
+      "sha256": "60ff321e227f6dc3cdae0c1d398b619c346cced79ff9b86b510d9e4268eff6f2"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "寅巳相穿，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0005",
+      "sha256": "56f6e10de1aa66d2ecb86557d67647de590f0eaf35e4b269b75264927153376a"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "卯辰相穿，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0006",
+      "sha256": "7e3f5aebb840fbb840e02d9e7163b4c306683de606b1ca0aea0229353380c7a9"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "申亥相穿，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0007",
+      "sha256": "7399afcd03a9bcd6be607205dc1e4e451c0d2822bcf073630b200c89bf73b718"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "酉戌相穿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c010:p0008",
+      "sha256": "b25c28b317ed2d2e2ed9f31c57a02c5f4bd08d8a29f6a26600a7456f40c7b28a"
+    },
+    {
+      "section": "论十二支相穿",
+      "text": "眉批：相穿为害，犯此者损六亲，不作困蹇而论。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c010:p0009",
+      "sha256": "04cebc2bbf171248ce0164761af84ea420e764bee808edfd5304eab659ddd98c"
+    }
+  ]
+}

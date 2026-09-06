@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c089",
+  "title": "论刑合",
+  "source_url": "https://luckclub.cn/bazi/001/089/",
+  "revision": "sha256:e630dd427e3ffc32dbddabb6c4a888226a01af22952968ae3716697059227c0d",
+  "source_timestamp": "2026-09-06T04:10:42.925147+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c089.html",
+  "raw_sha256": "e630dd427e3ffc32dbddabb6c4a888226a01af22952968ae3716697059227c0d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论刑合",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论刑合",
+      "text": "论刑合",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0002",
+      "sha256": "971a8c19e28dbe869654e8f434391ddd3eb85430fd905fb457e900214d197413"
+    },
+    {
+      "section": "论刑合",
+      "text": "刑合者，刑中带有合者是也。如人命犯之，多因酒色丧家成病，至於耽迷不醒，乃神迷之也。如十八格中有合禄合格者，何谓也？是乃癸用戊官，戊禄在巳，不见巳字，但见寅刑，但巳酉丑合，此乃见不见之形，所以贵也。如此者，皆见於前，所以凶也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0003",
+      "sha256": "1e5b991cc906127a5ba51915eac72c358e3f5bb75217377da955ffbf30a2e0d4"
+    },
+    {
+      "section": "论刑合",
+      "text": "且如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0004",
+      "sha256": "f47037fecd04650c7c029483b7ac6aeeeaeff5cd7a7d2e6c87fa719a5bf99cc8"
+    },
+    {
+      "section": "论刑合",
+      "text": "丙子 辛卯 丙子 辛卯，此命年月日时俱带刑合，为子水冲丙火兼身又弱。二十六交甲午，三十六交丙申年，太岁并在羊刃之上，有二子冲午，其刃刑俱合，所以因酒淫泆而亡也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0005",
+      "sha256": "4edfee6890e5a22ae5921f82bd4bb7665c892c47f357fa21225bdcaa6fec03ae"
+    },
+    {
+      "section": "论刑合",
+      "text": "又如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0006",
+      "sha256": "c951f6e073df0f6f75948385d95b70851d93e358f263ca7a3be7980eb4ced16b"
+    },
+    {
+      "section": "论刑合",
+      "text": "己巳 己巳 甲寅 己巳。此命身旺财旺，身入长生，故为入格。不合带刑合太重，交癸亥冲巳，而饮酒耽色，遂患痼疾而死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0007",
+      "sha256": "f58047231cab9b83ada730275c3c3345d05f2c9142e297fbd003780d73662258"
+    },
+    {
+      "section": "论刑合",
+      "text": "又如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0008",
+      "sha256": "c951f6e073df0f6f75948385d95b70851d93e358f263ca7a3be7980eb4ced16b"
+    },
+    {
+      "section": "论刑合",
+      "text": "乙卯 癸未 戊戌 癸丑。此女人命，戊戌日生於六月中旬，岁干透出乙字，戊日见之为官，地支亥卯未木局生戌中之火，为戊之印绶，官印两全。只不合癸丑时，癸水冲戌中之火，丑中辛金伤官兼刑合重为戊用，乙官在岁干旺矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c089:p0009",
+      "sha256": "0fbab261ea72086757417f2c0f6eab5b08b07803b3ed693e3119bf0406d00d78"
+    },
+    {
+      "section": "论刑合",
+      "text": "眉批：此格不用官星，只是暗中刑来合去，取官为贵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c089:p0010",
+      "sha256": "f2ec31eb5e2d1e7f019fcd69fb888452524c00771bdd74e69685af26596eb972"
+    }
+  ]
+}

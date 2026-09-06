@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c187",
+  "title": "玄机赋",
+  "source_url": "https://luckclub.cn/bazi/001/187/",
+  "revision": "sha256:055b19b10a0789d271f52242be42d33409fe45f0d2c7163486b30209ddc37c99",
+  "source_timestamp": "2026-09-06T04:11:01.102512+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c187.html",
+  "raw_sha256": "055b19b10a0789d271f52242be42d33409fe45f0d2c7163486b30209ddc37c99",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "玄机赋",
+      "text": "玄机赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c187:p0001",
+      "sha256": "44fe71e934ed010264fbeaf603cf578bbfb46e6645ef949143a92175a2c02d99"
+    },
+    {
+      "section": "玄机赋",
+      "text": "太极判为天地，一气分有阴阳。日干为主，专论财官；月支取格，乃分贵贱。有格不正者败，无格有用者成。有官莫寻格局，有格局不喜官星。官印财食，无破清高；杀伤劫刃，用之最吉。善恶相交，喜去恶而从善；吉凶混杂，忌害吉以向凶。有官有杀，宜身旺制杀为奇；有官有印，畏财助杀为祸。身强杀浅，杀运无妨；杀重身轻，制乡为福。身旺印多，喜行财地；财多身弱，畏入财乡。男逢比劫伤官，克妻害子；女犯伤官偏印，丧子刑夫。幼失双亲，财星太重；为人孤克，身旺无依。年冲月令，离祖成家；日被提冲，断弦再续。时日对冲，伤妻克子；日通月令，得祖安身。是以木遇春长，遇庚辛反假为权；火归夏生，见壬癸能为福厚。土逢辰戌丑未，木重成名；金坐申酉之中，火乡发福。水居亥子，戊己难侵；身坐休囚，平生未济。身旺者喜逢禄马，身弱者忌见财官。得时俱为旺论，失令便作衰看。四柱无根，得时为旺；日干无气，遇劫为强。身弱喜印，主旺宜官。财官印绶，破则无功；杀伤劫刃，去则为福。甲乙秋生金透露，水木火运荣昌；丙丁冬降水汪洋，火土木方贵显。戊己春生，西南方有救；庚金夏长，水土运无伤。壬癸逢於土旺，金木宜荣。身弱有印，杀旺无伤，忌行财地。伤官伤尽，行官运以无妨。伤官用印宜去财，伤官用财宜去印。是或伤官财印俱彰，将何发福？身旺者用财，身弱者用印。用财去印，用印去财，方发弥福。正所谓喜者存之，憎者去之。财多身弱，身旺运以为荣；身旺财衰，财旺乡而发福。重犯官乡，只宜制伏。食神叠见，运忌官乡。顽金无火，大用不成；强木无金，清名难着。水多得土财多富，火焰逢水禄位高。有官有印，无破为荣；无官无印，有格取贵。羊刃格喜偏官，金神最宜制伏。杂气财官，刑冲则发；官财太盛，旺处必倾。身太旺喜见财官，主太柔不宜禄马。旺官旺印与旺财，入墓有祸；伤官食神并身旺，遇库兴灾。运贵在於支取，岁重向乎干求。印多者，行财而发；财旺者，遇比何妨。格清局正，富贵荣华；印旺官生，声名特达。合官非为贵取，合杀莫作凶推。桃花带杀喜淫奔，华盖重逢多克剥。平生不发，八字休囚；一世无权，身衰遇鬼。身旺则宜泄宜伤，身衰则喜扶喜助。务禀中和，莫令太过不及。若遵此法推详，祸福验如影响。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c187:p0002",
+      "sha256": "f5d89586219466242aa3a1dbeb43901fc74d385821e67f957c95f6c343e8cd76"
+    },
+    {
+      "section": "玄机赋",
+      "text": "眉批：天地未分之初名曰太极。偏印即枭神。身主者日干也。金神，辛巳辛酉辛丑。鬼即官也，如身衰者变官为鬼。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 51,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c187:p0003",
+      "sha256": "184ac451791d83c693f1c684be85d93bae255bb86e2a78bca26e743ce7d14852"
+    }
+  ]
+}

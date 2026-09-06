@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c271",
+  "title": "冠带诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/271/",
+  "revision": "sha256:bc7f1cb936c0e92bcda6e9cc402efdc5a1edee9e5f0357df5747d74bc192722d",
+  "source_timestamp": "2026-09-06T04:11:19.955826+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c271.html",
+  "raw_sha256": "bc7f1cb936c0e92bcda6e9cc402efdc5a1edee9e5f0357df5747d74bc192722d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "冠带诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c271:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "冠带诗诀",
+      "text": "冠带诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c271:p0002",
+      "sha256": "eb219d4e433271804a973385d9dbbed156e34b1e7b3895a808a3c9398b632b78"
+    },
+    {
+      "section": "冠带诗诀",
+      "text": "命逢冠带少人知，初主贫寒中主宜，更得贵人加本位，功成名遂又何疑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c271:p0003",
+      "sha256": "500b05f016c59dbe8e5510df555bf78e6ebdec0037805fba682394c4061836a5"
+    },
+    {
+      "section": "冠带诗诀",
+      "text": "人命若还逢冠带，兄弟妻孥无陷害，因何接祖绍箕裘，只为胎中有冠盖。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c271:p0004",
+      "sha256": "78353186b2a368564d417906542e56448f221637a749c233a33cad7c80d742fe"
+    },
+    {
+      "section": "冠带诗诀",
+      "text": "眉批：冠带如人年长至十五，可以冠中，更带以在。五行始生，招之故为吉庆，人命当此，可以兴家立业。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 47,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c271:p0005",
+      "sha256": "8a489d6d0f41baeb8359d2144d6799f9383466d58d1e6c7db080817e3abfcb3a"
+    }
+  ]
+}

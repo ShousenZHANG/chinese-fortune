@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c303",
+  "title": "讲命捷径赋",
+  "source_url": "https://luckclub.cn/bazi/001/303/",
+  "revision": "sha256:5fa808c06eabb64c1cc10c41b068e033055605543e9b4ea51b8549a913bbd066",
+  "source_timestamp": "2026-09-06T04:11:28.686573+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c303.html",
+  "raw_sha256": "5fa808c06eabb64c1cc10c41b068e033055605543e9b4ea51b8549a913bbd066",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "讲命捷径赋",
+      "text": "渊海子平卷七",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c303:p0001",
+      "sha256": "6b80087542a73aa2a75d1af474ca2cda84e4b0f80256e05bc5a13ae1bac1e7f3"
+    },
+    {
+      "section": "讲命捷径赋",
+      "text": "讲命捷径赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c303:p0002",
+      "sha256": "ce451ad4dc69f5bd3d7ba0ce66b5c0db572b5a89dc8a09bc72314fd4750e6788"
+    },
+    {
+      "section": "讲命捷径赋",
+      "text": "详观三命，细究五行，格局乃八字之枢机，日干为一生之主宰。清浊辨乎贵贱，运限决於荣华。莫言身弱而为造化之衰，勿以杀多而断寿年之夭，要在随时变通，须知入眼分明。阴为柔物，身遇刑克亦无妨。阳主刚权，原弱逢杀官而两破。壬癸生巳午月，逆运当主荣华。丙丁值孟冬时，顺行早当发达。壬癸喜财官，惟八月逢财则破。戊己入北方之运，一生作事无成。庚金无火，非夭则贫。身旺无财，纵寿则否。建刃若行财官运，为人必白手成家。庚辛若行巳午方，定是终年损寿。月逢羊刃，运神喜杀以嫌财。时透天干，岁月怕官而喜制。杀轻印重，为人到底迍邅。杀重制轻，身旺终须发达。时带伤官，男命决然损子。柱中印绶，女命决定无儿。印绶与伤官，为人奸吝。偏财兼作事虚花。正财隐於地支，良贾深藏之士。官印透於日月，浮潺浅露之人。金白水清，聪明特达。土多火少，晦性昏朦。月逢墓库，官杀混杂亦无妨。格用财神，比劫重逢於不利。干支同而伤官重，害子刑妻。财星旺而日主强，兴家创业。二月丁火有杀，荣贵非常。子提干水，无财飘荡。土怕寒而喜暖。水嫌印而宜财。身强杀浅，不宜有制。印多身旺，最喜逢财。大抵日主是人之根基，财官为人之禄马。财官旺而身衰，多主富贵。财官轻而日大旺，亦见贫寒。印绶多而宜见杀。伤官重而不忌官。一位食神，富贵贤良之女。满盘金水，淫邪智慧之人。官杀混而财星多，夫多重叠。印绶多而日主旺，子息难成。甲乙木生丑月，必主先亨。壬癸水值孟秋，终当富贵。四柱中有辰龙，方为得化。三元内无比劫，可作得从，从杀者必然富贵，从财者定主富豪。弃命无从，决然寿夭。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c303:p0003",
+      "sha256": "4b33e67b081d1c725b166bd7c9334a90259163114ccb2f6eec3a4cff75f8727a"
+    }
+  ]
+}

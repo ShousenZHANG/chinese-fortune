@@ -1,0 +1,147 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c054",
+  "title": "论羊刃",
+  "source_url": "https://luckclub.cn/bazi/001/054/",
+  "revision": "sha256:6f995ab8af6974583cc4155a8ba714aeb3488a29fa1a2fbbce4f81c64ed95cea",
+  "source_timestamp": "2026-09-06T04:10:34.982192+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c054.html",
+  "raw_sha256": "6f995ab8af6974583cc4155a8ba714aeb3488a29fa1a2fbbce4f81c64ed95cea",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论羊刃",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论羊刃",
+      "text": "论羊刃",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0002",
+      "sha256": "1bcb32d30a112d62bf1d780fc8d9af617b8f3bbb47462a4cf60c21b6628519fc"
+    },
+    {
+      "section": "论羊刃",
+      "text": "羊刃对宫即飞刃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0003",
+      "sha256": "5d39e0b5704bf792c25e38a8c0ecae3158d4d2f23c17d71eaaed28010af57897"
+    },
+    {
+      "section": "论羊刃",
+      "text": "甲生人，羊刃在卯，酉飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0004",
+      "sha256": "bc04cd939aaf436d4c68ebd6a79087d8d2de0556e262947da21b0dc8b4f6200a"
+    },
+    {
+      "section": "论羊刃",
+      "text": "乙生人，羊刃在辰，戌飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0005",
+      "sha256": "05f4d21b7f844052f3f48e2a80373ab555c4da1ea7ceb8e44f60248a7d880191"
+    },
+    {
+      "section": "论羊刃",
+      "text": "丙生人，羊刃在午，子飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0006",
+      "sha256": "c5a91801e5c01ca781bbcbee07df3698afcf4ef53edbf084a882ff4b2e1047ea"
+    },
+    {
+      "section": "论羊刃",
+      "text": "丁生人，羊刃在未，丑飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0007",
+      "sha256": "920998f2b172df2e45123148af5ac80cdb1ac7655bb0cdf0baac51405e9f71f3"
+    },
+    {
+      "section": "论羊刃",
+      "text": "戊生人，羊刃在午，子飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0008",
+      "sha256": "201187b7425f5a9dbd4d741ad1894ea53bd24e1e58c773947fe4fcf3840b9109"
+    },
+    {
+      "section": "论羊刃",
+      "text": "己生人，羊刃在未，丑飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0009",
+      "sha256": "fde63ff700f85e30449950fc73fb7681ab537039218492bfaf69a1c9168d9b7c"
+    },
+    {
+      "section": "论羊刃",
+      "text": "庚生人，羊刃在酉，卯飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0010",
+      "sha256": "8fb205b935d6a676a2115eef45a2aaf61006ab89b56f5ae0b4e08c0ddd74842f"
+    },
+    {
+      "section": "论羊刃",
+      "text": "辛生人，羊刃在戌，辰飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0011",
+      "sha256": "c32b5178e140ced192876bdcb8845fcafecfcd1a9f4fbd835733b750b5078f53"
+    },
+    {
+      "section": "论羊刃",
+      "text": "壬生人，羊刃在子，午飞刃；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0012",
+      "sha256": "414cb6ea535ba635e1e5803db70ee4a6f0e2b64729d562e45f634409eb1fed7b"
+    },
+    {
+      "section": "论羊刃",
+      "text": "癸生人，羊刃在丑，未飞刃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0013",
+      "sha256": "4fe668a96e4b254c5b4a870a1af7dfacbb10c33e2cbac34d02e0c2d2155a3c08"
+    },
+    {
+      "section": "论羊刃",
+      "text": "羊，主刚也。刃者，主刑也。禄过则刃生，功成当退不退，乃狠而进也。言进而有伤官，羊刃当居禄前一辰，谓吉极则否矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0014",
+      "sha256": "40d79f155d8c751806f6cd71425aae918b66c5eb3c24a6639e3da4a46da1ed4e"
+    },
+    {
+      "section": "论羊刃",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c054:p0015",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "论羊刃",
+      "text": "《壶中子》曰：凡人有禄必赖刃以卫之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0016",
+      "sha256": "c4558731bd9c5a50cfea654738a128343d51ad0c182faedce5aa922af20a1859"
+    },
+    {
+      "section": "论羊刃",
+      "text": "《一行禅师》曰：羊刃重重又见禄，富贵多金玉。以人生取之在天主征，截在人命主载门，小人主屠宰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c054:p0017",
+      "sha256": "e362ac6c792378d1724a79827924ec5487cc189285a24ea7d02d39cfb7fffd34"
+    }
+  ]
+}

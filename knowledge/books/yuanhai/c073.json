@@ -1,0 +1,220 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c073",
+  "title": "子平举要歌",
+  "source_url": "https://luckclub.cn/bazi/001/073/",
+  "revision": "sha256:a6ee741c5c1ea0310b7a2c5ad604405452f338cc1df2e4fd1f1047b66c694672",
+  "source_timestamp": "2026-09-06T04:10:40.101426+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c073.html",
+  "raw_sha256": "a6ee741c5c1ea0310b7a2c5ad604405452f338cc1df2e4fd1f1047b66c694672",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "子平举要歌",
+      "text": "子平举要歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0001",
+      "sha256": "0c6fce8bcfe6533cd5e11a597f3f9d1e7555a99251ee3f572088f5353158b431"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "造化先须看日主，坐官坐印衰旺取。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0002",
+      "sha256": "4b0aed166eb16bc3455eb238eafa2206f1ab601feed3e6e38eac6d4cc2f393e5"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "若甲子日生人，中用癸水，水能生木为印绶，谓之坐印，其余者同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0003",
+      "sha256": "af44ba2f83776f253e264483253dcdc8089c92fb11f1e8f4c991e96f0dba7639"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "眉批：日主所生之日辰，如甲子日生就以甲子日为主，以年月时论取财官。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 33,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c073:p0004",
+      "sha256": "fffca1e92457539e654686da9d5773f8edbb4b8a593a273a1fe0b0bbf2654b1b"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "年时月令号提纲，元有元无轻重举。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0005",
+      "sha256": "68cd8e9457319346c32388ee36928b9faab7ea8f3814a10ac8b2fe73573d3bf7"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "提纲，月支所藏之物，或金或水，以旺相者取之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0006",
+      "sha256": "7ddd722908b68dea6b96a37e4138bfd155cbcbd294d5ea5cdb55c78b0a212a6d"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "大抵官星要纯粹，正偏杂乱反无情。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0007",
+      "sha256": "186aaa3cd8f9c9fed32450352d16d70e3b7a5d0ff596c14bbbe979430fde1cb6"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "既用官星，又嫌冲破，谓之无情。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0008",
+      "sha256": "12aa7938edefca79e339fcf40f88085e413cf4434a5fe34db9a1452b10b63eed"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "露官藏杀方为福，露杀藏官是祸胎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0009",
+      "sha256": "41811a5f04c0fe9dc03953e4c411ea931611caac15439b85f8c1de3df7eca473"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "官露则清高，为人显达。杀露则凶狠，为人急暴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0010",
+      "sha256": "4c164086b48f8e97286df39a3139ef0d8876dae30c9a81e4f0655dd20e4e5b9a"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "杀官俱露将何拟，混杂财官取财议。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0011",
+      "sha256": "19808311f275b6f2aae0c44bd17a9048cbc9d78a2859e08d4de0734f185febe7"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "露杀露官，杀有制不伤官，或有财生之方福，否则，小人挟制君子不能行道。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0012",
+      "sha256": "88e30970ede3edcd904ce3eaf164781667e9fba0c4587eb35a674c334bb4921d"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "官旺怕官忌刑冲，官轻见财为福利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0013",
+      "sha256": "bd23073b75ce8e44b0ee077c45781a716ea92cf47ceb632ef6723956ecaed320"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "官旺怕官，如两官相遇，运岁逢之，见冲不利。官轻见财，以财为禄则吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0014",
+      "sha256": "fc8d7049f10f08f92efec15eb2e77eebfba3df2707beb4397177017cdc0aa308"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "年上伤官最可嫌，重怕伤官不可触。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0015",
+      "sha256": "4d9e6cf3c8ca3883ee32dd507701c89ed884ad012faa98180e0811f51e6754ca"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "年上伤官，克祖或伤祖业，月时重见，灾祸不能免。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0016",
+      "sha256": "fb64ae6910e8b23ec8c2f422582de8475d681a3b5a71eb9362b7756c8337ed8e"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "伤官用财乃为福，财绝官衰福亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0017",
+      "sha256": "2a3e9f38b0152618e6543d83889dd17d77b8b1bbb67907b3965389d383800907"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "伤官主为人喜财，官旺若无财，主为人无福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0018",
+      "sha256": "6e7ed13939ac16d038718b27ff966efb3656d0fa89aebeba0ad0f411f3396848"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "贪合忘官荣不足，贪合忘杀为己福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0019",
+      "sha256": "8850a66305e5a8a7fd2160d78dad509c80fbadf1f824b76ca365ce1a2e30d177"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "官者，君子，既合之，不为人用。杀者，凶恶小人，合而去之，不任其妄，为得所。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0020",
+      "sha256": "5e800bdd1ad5073293c478b406f6f7689fab0f00b6604fbf2a9a35aad3480052"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "眉批：甲以辛为官，有丙合之。以庚为煞，用乙合之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c073:p0021",
+      "sha256": "ec41066d1677db32a4acf25a612810c0381a5a3ccf06b9bd5697315d402f0840"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "堪嗟身弱怕财多，更历官乡祸相逐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0022",
+      "sha256": "476572373cb8617949bfdcd8469d7342f187bbbb55e55a2593d08d17f0bc5f66"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "如甲申、甲戌，四柱见戊己为财，身弱逢之不利。或运至官乡，两官相争必有祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0023",
+      "sha256": "d80b7697fbb4c5e298d5633730c6c44ef51059ad484f2ff7879e8a2fe25bd57e"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "财多身弱食神来，食神会杀必为灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0024",
+      "sha256": "0af3e137ab3be86cc7bd5e98fca3a92080e271ea013de00000fc6571544e8406"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "食神，我生之子，盗气之神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0025",
+      "sha256": "344a4515210a54ffbc31c2ec2042088c84e594a79a900b69f4d004657f26413a"
+    },
+    {
+      "section": "子平举要歌",
+      "text": "会天合地有刑克，更宜达士详推裁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c073:p0026",
+      "sha256": "35e7290ed1243de681e55a44a5472d3ef7a5653ee8da00285ea33cb8ba69c219"
+    }
+  ]
+}

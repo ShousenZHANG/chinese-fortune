@@ -1,0 +1,39 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c027",
+  "title": "二十七、論喜忌干支有別",
+  "source_url": "https://donglishuzhai.net/chapter/3740.html",
+  "revision": "sha256:82699063c090b634b51f09e9818f152305762c174a05abb7df4f87364491d56c",
+  "source_timestamp": "2026-09-06T04:18:05.403Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c027.html",
+  "raw_sha256": "82699063c090b634b51f09e9818f152305762c174a05abb7df4f87364491d56c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十七、論喜忌干支有別",
+      "text": "命中喜忌，雖干支俱有，而干主天，動而有爲；支主地，靜以待用。且干主一而支藏多，爲福爲禍，安得不殊？",
+      "layer": "base_text",
+      "passage_id": "ziping:c027:p0001",
+      "sha256": "3af7a6eb7c8474c8a5c9faa8121374dfbeea1ed05047129f28a3ae7c4ecb981f"
+    },
+    {
+      "section": "二十七、論喜忌干支有別",
+      "text": "故曰甲用酉官，逢庚辛則官煞雜，而申酉不作此例。申亦辛之旺地，辛坐申酉，如府官而又掌道印也。逢二辛則官犯重，而二酉不作此例。辛坐二酉，如一府官而攝二郡也。透丁則傷官，而逢午不作此例。丁動而午靜，且丁己並藏，焉知其不爲財也？",
+      "layer": "base_text",
+      "passage_id": "ziping:c027:p0002",
+      "sha256": "8aa9dcb0ac593a44fb30eecc07096d883bf4c142d2014f88f9e928e08cf7960a"
+    },
+    {
+      "section": "二十七、論喜忌干支有別",
+      "text": "然亦有支而能作禍福者，何也？如甲用酉官，逢午本未能傷，而又遇寅遇戌，不隔二位，二者合而火動，亦能傷矣，即此反官觀。如甲生申月，午不制煞，會寅會戌，二者清局而火動，亦能制煞矣。然必會有動，是正與干有別也。即此一端，餘者可知。",
+      "layer": "base_text",
+      "passage_id": "ziping:c027:p0003",
+      "sha256": "637cf49e97e8af555c1622ed2d05ea0aca8f045103efc4644157a4904753509c"
+    }
+  ]
+}

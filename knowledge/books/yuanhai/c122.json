@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c122",
+  "title": "外十八格-玄武当权格",
+  "source_url": "https://luckclub.cn/bazi/001/122/",
+  "revision": "sha256:ee53a01ca612c65f48e8673774865fd9ceff13197f472809bfd186b72f2bce86",
+  "source_timestamp": "2026-09-06T04:10:48.865721+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c122.html",
+  "raw_sha256": "ee53a01ca612c65f48e8673774865fd9ceff13197f472809bfd186b72f2bce86",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-玄武当权格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c122:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-玄武当权格",
+      "text": "外十八格 - 玄武当权格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c122:p0002",
+      "sha256": "f969423dbc018307b8cb37ea8494c5c1df71f813e93a71f3dfb018ec7d686804"
+    },
+    {
+      "section": "外十八格-玄武当权格",
+      "text": "且如壬癸二日生，值寅午戌火局为财，辰戌丑未为官是也。正是壬寅、壬午、壬戌；癸巳、癸未、癸丑是也。忌冲破，身弱则不吉。壬癸属水，故为玄武。但得火局，故曰当权，无非水火既济之理而已矣，夫何异哉。得斯道者，主人性格温和，有智慧，有礼貌，面带赤黑，威而不猛。遇刑冲或岁运见之，则不利矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c122:p0003",
+      "sha256": "fbbd83e722a693219fb875b5f93b518560594b7b53e3f0129778cc40ffbb81f2"
+    },
+    {
+      "section": "外十八格-玄武当权格",
+      "text": "李都督，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c122:p0004",
+      "sha256": "66fc8ef17a6caf96c6036b939faa9deefdc9e0b49245c9e85777102f1c4242eb"
+    },
+    {
+      "section": "外十八格-玄武当权格",
+      "text": "庚戌 壬午 壬寅 辛亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c122:p0005",
+      "sha256": "4dc901b24928bb32d53d4db65d673d571136a342f72336c4c2df84d11c2408ed"
+    },
+    {
+      "section": "外十八格-玄武当权格",
+      "text": "诗曰：壬癸名为玄武神，财官两见始成真，局无冲破当清贵，辅佐皇家一老臣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c122:p0006",
+      "sha256": "10660aa150d101aaebe011e7ef3215ae6d40460f9478c5c1c4dc144794b0d751"
+    }
+  ]
+}

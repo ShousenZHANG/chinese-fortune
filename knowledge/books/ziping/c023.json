@@ -1,0 +1,39 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c023",
+  "title": "二十三、論宮分用神配六親",
+  "source_url": "https://www.donglishuzhai.net/chapter/3736.html",
+  "revision": "sha256:3f35bddd4622bd50531505cea6b332d35aab4aabcc891b10bf9fc5d17838d2b6",
+  "source_timestamp": "2026-09-06T04:17:00.748Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c023.html",
+  "raw_sha256": "3f35bddd4622bd50531505cea6b332d35aab4aabcc891b10bf9fc5d17838d2b6",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十三、論宮分用神配六親",
+      "text": "人有六親，配之八字，亦存於命。其由宮分配之者，則年月日時，自上而下；祖父妻子，亦自上而下。以地相配，適得其宜，不易之位也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c023:p0001",
+      "sha256": "f931d65f9a43e428992fde25c568654f3a93742b1e4f27c7463229fdb0b733ee"
+    },
+    {
+      "section": "二十三、論宮分用神配六親",
+      "text": "其由用神而配之者，則正印爲母，身所自出，取其生我也。若偏財受我尅制，何反爲父？偏財者，母之正夫也。正印爲母，則偏財爲父矣。正財爲妻，受我尅制，夫爲妻綱，則妻從夫。若官煞則尅制於我，何以反爲子女者？官煞者，財所生也。財爲妻妾，則官煞爲子女矣。至於比肩爲兄弟之類，則又理之顯然者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c023:p0002",
+      "sha256": "c4bc97e528ce3ca2d2acea335a70f79e86d140cfd81dc68973e06ddbe8c16017"
+    },
+    {
+      "section": "二十三、論宮分用神配六親",
+      "text": "其間有無得力，或吉或凶，則以四柱所存，或年月或時日，財官傷刃，係是何物，然後以六親配之用神，局中作何喜忌，參而配之，可以了然矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c023:p0003",
+      "sha256": "ae1d0de6209ef5800e8ea41ce9329972d36465faa7c45876623d54d0fb84296f"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c286",
+  "title": "盖头说",
+  "source_url": "https://luckclub.cn/bazi/001/286/",
+  "revision": "sha256:a25af1a4931a3d5e0f54329463a2399dfc5156f25c41dbe91b47e9b513ac70cb",
+  "source_timestamp": "2026-09-06T04:11:24.294145+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c286.html",
+  "raw_sha256": "a25af1a4931a3d5e0f54329463a2399dfc5156f25c41dbe91b47e9b513ac70cb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "盖头说",
+      "text": "渊海子平卷六",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0001",
+      "sha256": "222a11cf776cbb806f37292c1b03f7e25c110d85b0768baf1ed10f8923622000"
+    },
+    {
+      "section": "盖头说",
+      "text": "盖头说",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0002",
+      "sha256": "aec0c3b99342f0017884ce51ac0b75ca90d16be9753cddd4c0bede4b66269422"
+    },
+    {
+      "section": "盖头说",
+      "text": "何以谓之盖头也？加人之一身，独有头为一身之端也。头与面相连，耳目口鼻系焉，统而言之为之头也。其下若四肢肚腹，稍有不善，可以衣服以饰其不善也。若头之诸物，发见于外，则为之动物。非若四肢肚腹所藏之物，不足为轻重也。大抵人之八字，类如此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0003",
+      "sha256": "c82e5060837b499e3f26102263fde842c6231f552505f3bb9cc54601b77318a4"
+    },
+    {
+      "section": "盖头说",
+      "text": "八字中上四个字是头也，下地支四宇是肚腹四肢也。支中所藏之物，是五藏六腑也，如肚腹秀，发出面头上来，便是英华发出外来，一生富贵贫贱只从头面上见得，如八字畏伤官，这伤官藏在内不足畏，如干天透此伤官，便是头面上已见了，怎能掩饰？凡有所害之物，露出头面，便是动物，就能作害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0004",
+      "sha256": "0f378e3561a8e9ff3824de3a036030ef322c7c3d2976f5066e2b6f2396cfb33c"
+    },
+    {
+      "section": "盖头说",
+      "text": "如果是乙日干，用丙丁火为伤官，乙日干伤官见庚金官星为病，若八字上见了庚金，便要丙丁去病之神。流年行壬申癸酉年，便是不好年。盖因壬癸水盖盖在申酉头上，是壬癸水盖了头，便不好也。后行甲戍乙亥年，便好了，是甲乙木盖了头也。又行丙子丁丑年又好，盖得丙丁火盖了头来克庚也，虽下面地支有亥子丑水，其水被丙丁盖了头，亦不能为害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0005",
+      "sha256": "c43ed4c2ea17758093a7671020c9192d87390a09afa5ad4cdbbc9215ce1d7841"
+    },
+    {
+      "section": "盖头说",
+      "text": "又如庚辛日干，喜甲乙丙丁四字为福神，如望庚辛壬癸四字为病神，流年望见甲乙丙丁数位，盖了头便好。如望见庚辛壬癸数位，便是坏命，虽地支有甲乙丙丁，亦被庚辛壬癸盖坏了头，此地支虽有甲乙丙丁，亦不能作福。盖为庚辛壬癸盖在上面，出头不得。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0006",
+      "sha256": "014dd9664dccd9b79074751e429745bbe8c01dd908596a6510ccc2f1e4c7d7f1"
+    },
+    {
+      "section": "盖头说",
+      "text": "看八字以此盖头字望见了，就识得人流年好歹，此是真传秘诀也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c286:p0007",
+      "sha256": "ffb541771a175fdcfeb0ca378ec32485ce49b1882fb79cfcc2fa41db3ee28ff7"
+    }
+  ]
+}

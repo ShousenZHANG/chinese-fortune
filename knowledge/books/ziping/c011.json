@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c011",
+  "title": "十一、論用神純雜",
+  "source_url": "https://www.donglishuzhai.net/chapter/3724.html",
+  "revision": "sha256:327cd303f2572e0ca568ae200a797c1756357949c8b2c84e0339307c5337c7e8",
+  "source_timestamp": "2026-09-06T04:16:54.291Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c011.html",
+  "raw_sha256": "327cd303f2572e0ca568ae200a797c1756357949c8b2c84e0339307c5337c7e8",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十一、論用神純雜",
+      "text": "用神既有變化，則變化之中，遂分純雜。純者吉，雜者凶。",
+      "layer": "base_text",
+      "passage_id": "ziping:c011:p0001",
+      "sha256": "fc2fe782de06bdd3aee84ee82d911d61da62f2146f4c80407db8b092e7b3df30"
+    },
+    {
+      "section": "十一、論用神純雜",
+      "text": "何謂純？互用而兩相得者是也。如辛生寅月，甲丙並透，財與官相生，兩相得也；戊生申月，庚壬並透，財與食相生，兩相得也；癸生未月，乙己並透，煞與食相尅，相尅而得其當，亦兩相得也。如此之類，皆用神之純者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c011:p0002",
+      "sha256": "1832d6dece2cf5008f99365d503cc8c6ee8fc148903b1cbb829865e34af23a2a"
+    },
+    {
+      "section": "十一、論用神純雜",
+      "text": "何謂雜？互用而兩不相謀者是也。如壬生未月，乙己並透，官與傷相尅，兩不相謀也；甲生辰月，戊壬並透，印與財相尅，亦兩不相謀也；癸生午月，丁己並透，財與煞相生，相生而適爲累，亦兩不相謀也。如此之類，皆用神之雜者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c011:p0003",
+      "sha256": "368b5316c56e69bee5eda38573af5b712953e0b980a1f59c767b78b5846261b4"
+    },
+    {
+      "section": "十一、論用神純雜",
+      "text": "純雜之理，不出變化，分而疏之，其理愈明，學命者不可不知也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c011:p0004",
+      "sha256": "7d70e75e42ed91c4dac1e44083a97a1bcca6b87ffcf081954f8a422fbd75b9e3"
+    }
+  ]
+}

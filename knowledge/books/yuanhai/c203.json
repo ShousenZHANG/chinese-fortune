@@ -1,0 +1,135 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c203",
+  "title": "正月建寅候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/203/",
+  "revision": "sha256:2baa755fc0a589ae95451fe5bf120b8dea6b981e4058d4c5717e95cb42f04a6d",
+  "source_timestamp": "2026-09-06T04:11:04.349481+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c203.html",
+  "raw_sha256": "2baa755fc0a589ae95451fe5bf120b8dea6b981e4058d4c5717e95cb42f04a6d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "正月建寅候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "正月建寅候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0002",
+      "sha256": "a31877f87468a7f66a2dd3967f4b43e86932188c7e2050678ba646b87fc65772"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "正月寅宫原是木，木生火旺土长生，戊兼午未宫中喜，申酉休囚数莫行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0003",
+      "sha256": "810ea21be8d830932e1236084ae3e97991ce8e935574bf47584e335f7c55ca71"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "眉批：正月甲木二十二日，艮土生三日，丁丙火生主五日，戊土寄生於寅",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 32,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c203:p0004",
+      "sha256": "048d41611e03d0c4e7aa99186ee89aea665741012c1e782f1616003e2b637a76"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "寅月重逢午戌亥，庚辛为主两推排，有根有土偏宜火，身弱休囚怕火来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0005",
+      "sha256": "cc13f98813aa8907d4759088debb51342a1d6f273020328bd05495367521d434"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "如用寅宫木火神，南方午未禄财欣，逆行戌亥还当旺，破损忧愁见酉申。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0006",
+      "sha256": "29d5241984c681670f5b126eb7890820bd6c705b79d1751843512b6698fab62d"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "眉批：寅午戌为三合，以木火为用神，行南方大利",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c203:p0007",
+      "sha256": "43f4ec42f17706b21ef7d0b50ba1404ba9227222ab7fb1d1de24d088524f2b2c"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "庚辛主弱逢寅月，午戍加临会杀星，日主无根还透土，逆行金水福兴隆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0008",
+      "sha256": "96ad20ed288523e7a207284dab61625678a9a012541a971e9141f0b27246dd25"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "眉批：金弱赖艮土以生，正谓“金逢艮而遇土，号曰还魂”",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c203:p0009",
+      "sha256": "c281788b99558c7ab8cfaeca5fb17188d9b1299ae7825044ae3b5a1d94ffc66d"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "己戊身衰喜见寅，重重官杀必荣身，只求木火相生吉，运到西方怕酉申。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c203:p0010",
+      "sha256": "1b739ae9ed4541dae0d2dbad68e6e2954e383ebdb8ffe673795efd19609c6147"
+    },
+    {
+      "section": "正月建寅候诗诀",
+      "text": "眉批：西方金旺，伤其官不利",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c203:p0011",
+      "sha256": "95845297e980f7ceec6e00fe39da035930ecb65963d6b92aef4324a66f01da9e"
+    }
+  ]
+}

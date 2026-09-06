@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c302",
+  "title": "总歌",
+  "source_url": "https://luckclub.cn/bazi/001/302/",
+  "revision": "sha256:e72852b00eacb8fb171cc589b3926a1cb35eed716ea51174293590035d6afaf4",
+  "source_timestamp": "2026-09-06T04:11:28.451050+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c302.html",
+  "raw_sha256": "e72852b00eacb8fb171cc589b3926a1cb35eed716ea51174293590035d6afaf4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "总歌",
+      "text": "渊海子平卷七",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c302:p0001",
+      "sha256": "6b80087542a73aa2a75d1af474ca2cda84e4b0f80256e05bc5a13ae1bac1e7f3"
+    },
+    {
+      "section": "总歌",
+      "text": "总歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c302:p0002",
+      "sha256": "e35dd2709fc61cd3c97537d5071dc0f6e8b54261a6afa9aec941dc91345f1b4a"
+    },
+    {
+      "section": "总歌",
+      "text": "正气官星第一格，财官两旺亦同说，官星带合兼坐禄，女命逢之真有福，官星桃花是良人，带合兼煞便不同，印终天德惟最妙，日贵财官亦相肖，独煞有制羊刃同，伤官生财亦不凶，归禄逢财准此断，食神生旺尤堪羡，煞化印绶格局纯，二德扶身贵无伦，三奇合局真造化，拱禄拱贵也不怕。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c302:p0003",
+      "sha256": "2381bc3560178ceed1249530c7e037947e0864270efb2ffe02cc3cd3d886d61b"
+    },
+    {
+      "section": "总歌",
+      "text": "煞官混杂兼无制，此等女人不堪娶，伤官太重又见官，贪财破印俱不堪，比肩重犯多争妒，财官遇劫决不富，财多身弱亦如然，羊刃冲刑屍不全，金神带刃凶恶断，桃花带合淫乱看，无官见合多官合，倒插桃花乱闺阁，身旺无依夫子伤，此等妇人大不祥，倒食重犯须减福，更犯寡宿主独宿，孤鸾红艳阴阳差，此等神煞俱不佳。若是贵命合官印，小小神煞不为病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c302:p0004",
+      "sha256": "61a921bae5db11ff22dea1330fa73f3293b180b97cc4c0bdb486533810022ce3"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c042",
+  "title": "貞元論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F42&oldid=844394",
+  "revision": "844394",
+  "source_timestamp": "2017-03-23T15:50:49Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c042.wiki",
+  "raw_sha256": "cf94ed25c743ed306549ccebb6c8bea757ad04de7cf24e52d93958b9ccc7d681",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "貞元論",
+      "text": "造化生生不息機，貞元往復運誰知，有人識得其中數，貞下開元是處宜。",
+      "layer": "base_text",
+      "passage_id": "ditian:c042:p0001",
+      "sha256": "1da6698fcd0474cfdd7d3b935f9f3ead4056139ac0de8c00cc9df08da51dd609"
+    },
+    {
+      "section": "貞元論",
+      "text": "三元皆有貞元，如以八字論，則年為元，月為亨，日為利，時為貞，年月吉者，前半世吉，日時吉者，後半世吉，以大運論，初十五年為元，次十五年為亨，中十五年為利，後十五年為貞，元亨運吉者，前半世吉，利貞運吉者，後半世吉，至於人壽既終之後，運之所行，果所喜者，則世世昌盛，此貞下起元之妙，生生不息之機，所以驗奕世之兆，而知運數之一定不易者也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c042:p0002",
+      "sha256": "ae278855820ad22a89be91fb140988b1e88f149364edafb7495a31c539908c44"
+    }
+  ]
+}

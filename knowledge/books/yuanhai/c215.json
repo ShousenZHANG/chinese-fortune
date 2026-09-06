@@ -1,0 +1,349 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c215",
+  "title": "十干体象",
+  "source_url": "https://luckclub.cn/bazi/001/215/",
+  "revision": "sha256:0e8969d6965c70f16d6f209a9340d61e0fa6607bd55aad7ada12879d04090fb3",
+  "source_timestamp": "2026-09-06T04:11:06.803052+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c215.html",
+  "raw_sha256": "0e8969d6965c70f16d6f209a9340d61e0fa6607bd55aad7ada12879d04090fb3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十干体象",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "十干体象",
+      "text": "十干体象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0002",
+      "sha256": "6cadf36106ab0469a867e92ebfc04ca8d3e2d545e63a7ab9bd75008bc1fdf921"
+    },
+    {
+      "section": "十干体象",
+      "text": "醉醒子集，附之便览。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0003",
+      "sha256": "a0d281846a0110d499c40969733bf33020ced7ef31e6b3fe619e1f7a75aa4564"
+    },
+    {
+      "section": "十干体象",
+      "text": "甲木天干作首排，原无枝叶与根荄。欲存天地千年久，直向泥沙万丈埋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0004",
+      "sha256": "ef51144330ff789156448abe678d2aed5562c66dae9a78627f4f849708f16cd7"
+    },
+    {
+      "section": "十干体象",
+      "text": "断就栋梁金得用，化成灰炭火为灾。蠢然块物无机事，一任春秋自往来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0005",
+      "sha256": "40cb8553327162404f9fa346793e9feb7ee5ac8fa2748e28cdb32720d4c8c7d3"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：甲木之肖枝，别刚柔刚，忌生扶，炭火为自焚之象。寅为卯之兄。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 32,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0006",
+      "sha256": "f5a5b06c4784ddcfeec7fe059c461072f10fe192985473fe87d49eb4f12a40f3"
+    },
+    {
+      "section": "十干体象",
+      "text": "乙木根荄种得深，只宜阳地不宜阴。漂浮最怕多逢水，刻斫何须苦用金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0007",
+      "sha256": "4b4a1bd8be583108433fd11a851f787e98f7222333e78330bd7ab45f2feddbca"
+    },
+    {
+      "section": "十干体象",
+      "text": "南去火炎灾不浅，西行土重祸犹侵。栋梁不是连根木，辨别工夫好用心。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0008",
+      "sha256": "2340df68a0a171aefda6b376af27e21725fb1686d5a39dcc11e36e86e5d29161"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：木有根荄，宜阳地不宜阴，阳和水安则成其林。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0009",
+      "sha256": "bcc3162ead7ecff12f97dcb34a816041b8d5f18ef7f6b9adeb4edf0dfeb2b18a"
+    },
+    {
+      "section": "十干体象",
+      "text": "丙火明明一太阳，原从正大立纲常。洪光不独窥千里，巨焰犹能遍八荒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0010",
+      "sha256": "e8fe88ffe1d7fec88886dc9394c48925f29f2f5893c7b20ad9624a3245e177fd"
+    },
+    {
+      "section": "十干体象",
+      "text": "出世肯为浮木子，传生不作湿泥娘。江湖死水安能克，惟怕成林木作殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0011",
+      "sha256": "d8964934f379d1dd50b865dcabcf51568e94e93a0b8a13ed1ee6b89250e2a5ff"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：丙火，太阳之象，忌生扶喜制削，火不合去，则云不能克，须忌木盛则蔽之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 37,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0012",
+      "sha256": "45cb6a46eee30ee4989593f7591fcfbc1fa328157451dbf3bad87f736e7a9258"
+    },
+    {
+      "section": "十干体象",
+      "text": "丁火其形一烛灯，太阳相见夺光明。得时能化千斤铁，失令难熔一寸金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0013",
+      "sha256": "6d1a937e97347a361154b7b051074455f3d661e2a5dc92c2f6164273e1f7ae78"
+    },
+    {
+      "section": "十干体象",
+      "text": "虽少乾柴尤可引，纵多湿木不能生。其间衰旺当分晓，旺比一炉衰一檠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0014",
+      "sha256": "762b794e39fa00f5949089976421a333514380a0144bacad2ad047a6b3348936"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：丁卯未支得时，忌失令，则未能生，从水难发真光。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0015",
+      "sha256": "c46f02ac0044a30c269b460e4233362f002f1ae698179caed1e53934f3e36ba6"
+    },
+    {
+      "section": "十干体象",
+      "text": "戊土城墙堤岸同，镇江河海要根重，柱中带合形还壮，日下乘虚势必崩。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0016",
+      "sha256": "3179b9af323de41634858b23890fb54efa2914122cecca473abba89ffaaa412b"
+    },
+    {
+      "section": "十干体象",
+      "text": "力薄不胜金漏泄，功成安用木疏通。平生最爱东南健，身旺东南健失中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0017",
+      "sha256": "10b5076fdd8c16b53193e69c51940129fa584186d59316bf02d0f030b7a27fb2"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：戊土禄厚，喜逢己迎，合水盛则崩。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0018",
+      "sha256": "a04a3311e25b38384dc8f5b35f1cd649265e7a682faa49600469207670230240"
+    },
+    {
+      "section": "十干体象",
+      "text": "己土田园属四维，坤深能为万物基。水金旺处身还弱，火土功成局最奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0019",
+      "sha256": "a2a0e19a797cfe6333252e1965629db37948fbf4e8a4e7ca62df9e481b4237d4"
+    },
+    {
+      "section": "十干体象",
+      "text": "失令岂能埋剑戟，得时方可用鎡基。漫夸印旺兼多合，不遇刑冲总不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0020",
+      "sha256": "a5c03de43872b304fde43fedd174bb0af711ddb0319ebf9e77349f25062a2b43"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：己土，卯木应合去，有金忌失时，善生旺又喜刑冲。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0021",
+      "sha256": "1eaca9a79ef4050e0e6aa296aed2b3a19e36f49dabe9c1e349a38c87649bc5f6"
+    },
+    {
+      "section": "十干体象",
+      "text": "庚金顽钝性偏刚，火制功成怕水乡。夏産东南过锻炼，秋生西北亦光芒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0022",
+      "sha256": "ba3c7311f52612dc7cceb46a30a665c0c1118205893c368192de3e6e0a408db0"
+    },
+    {
+      "section": "十干体象",
+      "text": "水深反见他相克，木旺能令我自伤。戊己干支重遇土，不逢冲破即埋藏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0023",
+      "sha256": "5c37593f9bd59476ea5d628a823bc7039136e2366fc850477298d5b0f28395a9"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：庚金顽铁，忌生扶喜剥削，怕土重。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0024",
+      "sha256": "327da0606b8f8fd1a23a1fc973acd9bf6fd024c169f942cfd276a2de0cc76dd3"
+    },
+    {
+      "section": "十干体象",
+      "text": "辛金珠玉性通灵，最爱阳和沙水清。成就不劳炎火煆，滋扶偏爱湿泥生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0025",
+      "sha256": "e5bb5574b1433305636ac96bd7fc3962a8381dfe1266e4e527fdf319619e9e61"
+    },
+    {
+      "section": "十干体象",
+      "text": "木多火旺宜西北，水冷金寒要丙丁。坐禄通根身旺地，何愁厚土没其形。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0026",
+      "sha256": "5e4d10e0e70ccdffea876ef26446ceb5fd9139b4622fece998249396e8d17229"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：辛金温润，喜生扶忌剥削，云喜见三水逢之，喜行西北。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0027",
+      "sha256": "496f2f3188fc399b26d8554f22780e578bd9377373bbc75ccd3e499f26a94f2f"
+    },
+    {
+      "section": "十干体象",
+      "text": "壬水汪洋并百川，漫流天下总无边。干支多聚成漂荡，火土重逢涸本源。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0028",
+      "sha256": "2cfad320f6f44b5dae2ead7e7ae001a29fb13eb3e7088a2dd4b8f7955b49a86f"
+    },
+    {
+      "section": "十干体象",
+      "text": "养性结胎须未午，长生归禄属乾坤。身强原自无财禄，西北行程厄少年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0029",
+      "sha256": "a3402ba897bd7dd8efe433a3ebd909d49d49e7e79543913e66973c7214394f95"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：壬水有痕之水，忌生扶喜剥削，无土则漫流。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0030",
+      "sha256": "ffa38046ec2d0ed8fb341b918ad678ff07d18d085236ed2ba90e9a29012eb742"
+    },
+    {
+      "section": "十干体象",
+      "text": "癸水应非雨露麽，根通亥子即江河。柱无坤坎身还弱，局有财官不尚多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0031",
+      "sha256": "67a6a9cdf813b8ffcf734aa658777c9cb2a9e9067dae0f7aa43389d19fce575b"
+    },
+    {
+      "section": "十干体象",
+      "text": "申子辰全成上格，午寅戌备要中和。假饶火土生深夏，西北行程岂太过。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c215:p0032",
+      "sha256": "bd1b4afc95c554521ea03f7e4844da28c0a42204c098ef95a1fba5c8a54be1b7"
+    },
+    {
+      "section": "十干体象",
+      "text": "眉批：癸乃润泽之水，通亥子则成江海，喜生扶忌剥削，喜合忌克冲。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 31,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c215:p0033",
+      "sha256": "e852c5381c6b89697e1af4c4ebd9e02c550720a1a3a241fdac100e171f6a267c"
+    }
+  ]
+}

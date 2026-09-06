@@ -1,0 +1,133 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c201",
+  "title": "弃命从杀论",
+  "source_url": "https://luckclub.cn/bazi/001/201/",
+  "revision": "sha256:fdd7455f9c8bcaae7c02f35d2850438598a2cb711df1d52a80d1f1f9999278a8",
+  "source_timestamp": "2026-09-06T04:11:04.205428+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c201.html",
+  "raw_sha256": "fdd7455f9c8bcaae7c02f35d2850438598a2cb711df1d52a80d1f1f9999278a8",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "弃命从杀论",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "弃命从杀论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0002",
+      "sha256": "740e1de4fc48fe3c9a79a9fc1be9db479fac4d7ed53be79c36f5e4df12a65f74"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "甲乙无根 怕逢申酉 杀合逢此 双目定瞽",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0003",
+      "sha256": "f32d4745c84558aa9bba9f96fa225e1eca0e785001821ea2482138d0cb5143c2"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "乙木酉月 见水为奇 有根丑绝 无根寅危",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0004",
+      "sha256": "e0e3168b6eb0604105faacca4dacf916b5cb0544d446aff01f7d1e807151afe8"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "乙木坐酉 庚丁透出 遇库归根 孤神得失",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0005",
+      "sha256": "8604dc769306c9d2728cb6fe1c4227913369becfbe6e586ca50a60bbff0858e4"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "丙火申提 无根从煞 有根南旺 脱根寿促",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0006",
+      "sha256": "5b84d020d99b292158d107697d95c6132374351e8a69d25a16a0bf2f588f16bc"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "阳火无根 水乡必忌 阴火无根 水乡必救",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0007",
+      "sha256": "d7ac22a12b2c560d40b620652046a119e8e497faa23e66a18355e9ee59f682e8"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "阴火酉月 弃命就财 北行入格 南走为灾",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0008",
+      "sha256": "6c6326294a6973309bb91294ae0a8d5a00a549159430f22b79ddb29e47f0aac8"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "戊己亥月 身弱为弃 卯月同推 嫌走劫比",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0009",
+      "sha256": "630383ac5ec9bf4c90f8aca976887771e9fc56926e2fcdc6d72397bee14dac34"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "庚金无根 寅宫火局 南方有贵 须防寿促",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0010",
+      "sha256": "06790691b3050a823183fa862aea93a15e31f34aca7328567aa3f27b67993489"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "辛巳阴柔 水囚官杀 运限加金 聪明发达",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0011",
+      "sha256": "a1bee27f0eebb3b919305c02f3e2d27abee8877c8c52b9665b581a906a32f955"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "壬日戌提 癸干未月 运喜东方 逢冲则绝",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0012",
+      "sha256": "bae55c7460d409cd0256d7921267486245c1037b4ab3e9ea428289ee1f3d6a16"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "弃命就财 须要会财 弃命从杀 须要会杀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0013",
+      "sha256": "07e5caca220a4c239447603fd1c5012dec730a0d18b77a39d1e7c1fac923c628"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "从财忌杀 从杀喜财 会逢根气 命损无猜",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c201:p0014",
+      "sha256": "7a5bc4470582b44612b516fb67366c9eb718f0418c343bd2818daa7e2d5eb15c"
+    },
+    {
+      "section": "弃命从杀论",
+      "text": "眉批：“甲乙无根”，无根，言休囚欲绝。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c201:p0015",
+      "sha256": "846e4673e94a06befab4fb09bdec964cc2157f05c878e0c89ae7514618f93aac"
+    }
+  ]
+}

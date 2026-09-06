@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c148",
+  "title": "论子息",
+  "source_url": "https://luckclub.cn/bazi/001/148/",
+  "revision": "sha256:22e6457ae7f99329acf345a4f6400b5bbc48c7ff453c2b6e5ac89a6ff78efcd7",
+  "source_timestamp": "2026-09-06T04:10:54.186624+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c148.html",
+  "raw_sha256": "22e6457ae7f99329acf345a4f6400b5bbc48c7ff453c2b6e5ac89a6ff78efcd7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论子息",
+      "text": "论子息",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c148:p0001",
+      "sha256": "0012be1b6d2979530576680af93d5f1b71d5a10654c5f3b2d582af75efb3c501"
+    },
+    {
+      "section": "论子息",
+      "text": "七杀者，子也。如甲见庚申是子，辛酉是女。若见丙火午寅，或杀临羊刃杀宫，主克子，不然疾病不肖。遇戊己得令，则子得力和顺。见丙巳字，女不正。若临沐浴桃花，更兼暗合食神多者，其女私通。若杀临长生、月德、天德所临之地，贵人禄马，食神财乡，言有强父贵子，要禀中和。阳日阳时男见重，阳日阴时先男後女，阴日阴时女见重，阴日阳时先女後男。伤官见官，子孙凶顽。时上伤官及空亡，难为子息。女命取伤官是子，食神是女，若见印绶、枭神，难得子也。男命官杀得地而禀中和者，言其有子，将生成之数断之。生旺倍加，死绝减半，太过不及，不以此断。太过有子而多克夭或凶顽，不及则少生养。官杀得地而有扶助，吉曜多者，其子忠孝贤明。居休囚死绝、破败衰病、勾绞、元亡、空虚之地，则子当不肖，贫贱疾病之子。更兼孤神寡宿，主孤苦伶仃。且如甲子之日、甲子之时，庚死於子，死中至老没儿郎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c148:p0002",
+      "sha256": "d897c95def377c07aaf1b8e186f3d62220fe9a407f4e04e0c118af586028951c"
+    },
+    {
+      "section": "论子息",
+      "text": "入墓之时难保双，受气绝中一个子，胎中头女有姑娘，养中三子只留二，长生之位旬中半，合主七个儿子也。沐浴一双保吉康，冠带临官三子位，旺中五子自成行，衰中二子病中一。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c148:p0003",
+      "sha256": "081d148eb7770f0bfbb55d45851b0493e0753eba159d59f3102810fb8bfadd86"
+    },
+    {
+      "section": "论子息",
+      "text": "自子数至亥，依此推之。且如八字中若无子星，时上又不生旺，运行官杀旺乡主有子，运过却无。如柱中有官杀而行伤食、休衰绝弱之运，伤损其子，运过方存。八字有一杀一子，二杀二子，无杀无子。如柱中身杀两停，而杀逢旺乡就作多子断之。亦看财神何如，逐时增减，多寡推之，无不验矣！",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c148:p0004",
+      "sha256": "34707390cde3665f3a406b638f04672eb5e5208d4759759e356457ed01a6c0e2"
+    },
+    {
+      "section": "论子息",
+      "text": "眉批：男取克干为子，以甲木为主，庚为七杀，从甲至庚第七，故谓之七杀，阳见阳之类。甲丙戊庚壬为阳日阳时，乙丁己辛癸为阴日阴时。吉曜者，天月德、天福、天官贵人之类。空亡对下为孤虚之地。甲以土为财，若土不旺则妻不旺。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 105,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c148:p0005",
+      "sha256": "414f8e0d9617356c80534a7994b21dafd64569f64fd0d35092b3b799218c3663"
+    }
+  ]
+}

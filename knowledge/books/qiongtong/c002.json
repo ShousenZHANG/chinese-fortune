@@ -1,0 +1,977 @@
+{
+  "book_id": "qiongtong",
+  "chapter_id": "c002",
+  "title": "卷二·论木",
+  "source_url": "https://www.gushiwen.cn/guwen/bookv_bbc940bfd959.aspx",
+  "revision": "sha256:40405923705c10d4de994291ecaf5493a166466d797a0e0f06cab7d5bb116e43",
+  "source_timestamp": "2026-09-06T04:15:57.734004+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/qiongtong/c002.html",
+  "raw_sha256": "40405923705c10d4de994291ecaf5493a166466d797a0e0f06cab7d5bb116e43",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷二·论木",
+      "text": "木性腾上而无所止，气重则欲金任使，有金则有惟高惟敛之德。仍爱土重，则根蟠深固，土少则有枝茂根危之患。木赖水生，少则滋润，多则漂流。甲戌、乙亥、木之源。甲寅、乙卯、木之乡。甲辰、乙巳、木之生。皆活木也。甲申、乙酉、木受克。甲午、乙未、木自死。甲子、乙丑、金克木。皆死木也。生木得火而秀，丙丁相同。死木得金而造，庚辛必利。生木见金自伤，死木得火自焚，无风自止，其势乱也。遇水返化其源，其势尽也。金木相等，格谓斲轮。若向秋生，反为伤斧，是秋生忌金重也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0001",
+      "sha256": "81696824046ab832a223ce67b799139ee6e63272c6c51fccfe32dcc4aff94651"
+    },
+    {
+      "section": "卷二·论木",
+      "text": "木生於春，余寒犹存。喜火温暖，则无盘屈之患。藉水资扶，而有舒畅之美。春初不宜水盛，阴浓则根损枝枯。春木阳气烦燥，无水则叶槁根枯。是以水火二物，既济方佳。土多而损力，土薄则财丰。忌逢金重伤残克伐，一生不闲。设使木旺，得金则良，终生获福。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0002",
+      "sha256": "54ea9298f46bf6c116592d0b9729497c5f1187741555f23691c9a772dfb006c6"
+    },
+    {
+      "section": "卷二·论木 / 夏月之木",
+      "text": "夏月之木，根乾叶燥，盘而且直，屈而能伸。欲得水盛而成滋润之力，诚不可少。切忌火旺而招焚化之忧，故以为凶。土宜在薄，不可厚重，厚则反为灾咎。恶金在多，不可欠缺，缺则不能琢削。重重见木，徒以成林，叠叠逢华，终无结果。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0003",
+      "sha256": "73f21a8a862f4c88e924516d3dd852a22e0ea2c5b9b769d2bc8bf0bc728386ce"
+    },
+    {
+      "section": "卷二·论木 / 秋月之木",
+      "text": "秋月之木，气渐凄凉，形渐凋败。初秋之时，火气未除，尤喜水土以相滋。中秋之令，果以成实，欲得刚金而修削。霜降後不宜水盛，水盛则木漂。寒露节又喜火炎，火炎则木实。木多有多材之美，土厚无自任之能。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0004",
+      "sha256": "5745e79ab3fb6b2af1ef48f2e0ad16cff5903a622329bd875b4e226c832227d6"
+    },
+    {
+      "section": "卷二·论木 / 冬月之木",
+      "text": "冬月之木，盘屈在地，欲土多而培养。恶水盛而忘形。金总多不能克伐。火重见温暖有功。归根复命之时。木病安能辅助，须忌死绝之地，只宜生旺之方。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0005",
+      "sha256": "05059b778228cf04428d2acce7525fd8d889942291a68b07ee3050c4fa806418"
+    },
+    {
+      "section": "卷二·论木 / 三春甲木总论",
+      "text": "三春甲木总论",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0006",
+      "sha256": "554b091406becb69e06429b071081223eec037cc1012f98bd8283b575a839b8f"
+    },
+    {
+      "section": "卷二·论木 / 春月之木",
+      "text": "春月之木，渐有生长之象。初春犹有余寒，当以火温暖，则有舒畅之美，水多变克，有损精神。重见生旺，必用庚金斲凿，可成楝梁。春末阳壮水渴，藉水资扶，则花繁叶茂。初春无火，增之以水，则阴浓气弱，根损枝枯，不能华秀。春末失水，增之以火，则阳气太盛，燥渴相加，枝枯叶乾，亦不华秀。是以水火二物，要得时相济为美。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0007",
+      "sha256": "8d4bd5962b6d83e559b2e2d125e8622e347cc8d5a87439b75a476fb2e2242b73"
+    },
+    {
+      "section": "卷二·论木 / 三春甲木",
+      "text": "三春甲木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0008",
+      "sha256": "d328ff3d0e471413562ce44f3067126c8da84dd044c67510b308036af1a66dcb"
+    },
+    {
+      "section": "卷二·论木 / 正月甲木",
+      "text": "正月甲木，初春尚有余寒，得丙癸逢，富贵双全。癸藏丙透，名寒木向阳，主大富贵。倘风水不及，亦不失儒林俊秀。如无丙癸，平常人也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0009",
+      "sha256": "b51d4260a96050e16442ffc3ab43d4e8deb95b167cd0f8a55ec7ed16cc0697b2"
+    },
+    {
+      "section": "卷二·论木 / 正月甲木",
+      "text": "正二月甲木，素无取从才从杀从化之理。或一派庚辛，主一生劳苦，克子刑妻，再支会金局，非贫即夭。如无丙丁，一派壬癸，又无戊己制之，名水泛木浮，死无棺椁。如一派戊己，支会金局，为财多身弱，富屋贫人，终生劳苦，妻晚子迟。或无庚金，有丁透，亦属文星，为木火通明之象，又名伤官生财格，主聪明雅秀。一见癸水伤丁，但作厚道迂儒。或柱中多癸，滋助木神，伤灭丁火，其人奸雄枭险，曹操之徒，言清行浊，笑里藏刀。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0010",
+      "sha256": "35f057bea11470f33d0ef21ad55024d55676e75c8db88b263c079515550ca786"
+    },
+    {
+      "section": "卷二·论木 / 正月甲木",
+      "text": "若庚申、戊寅、甲寅、丙寅。一行金水运，发进士。或甲午日庚午时，此人必贵。但要好运相催，不宜制了庚丁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0011",
+      "sha256": "a7c96f952ecf09aa44bc70414e38442638bbe39f99116d72e6e1952d7e419f9a"
+    },
+    {
+      "section": "卷二·论木 / 正月甲木",
+      "text": "或支成金局，多透庚辛，此又不吉，号曰木被金伤，若无丙丁破金，必主残疾。或支成火局，泄露太过，定主愚懦，常有啾唧灾病缠身，终有暗疾。支成木局，得庚为贵，无庚必凶，若非僧道，男主鳏孤，女主寡独。支成水局，戊透为贵，如无戊制，不但贫贱，且死无棺木。故书曰：甲木若无根，全赖辰，干得才杀透，平步上青云。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0012",
+      "sha256": "3d5b609c8e3e99531446adc4896d04f725f96e66829a8a2ddbfdae332a46e72a"
+    },
+    {
+      "section": "卷二·论木 / 正月甲木",
+      "text": "凡三春甲木，用庚者，土为妻，金为子。用丁者，木为妻，火为子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0013",
+      "sha256": "0ce503f14fc5faef63d480046184fe14bebd1f2ce6621636b4eaefe985ef18c9"
+    },
+    {
+      "section": "卷二·论木 / 正月甲木",
+      "text": "总之正二月甲木，有庚戊者上命。如有丁透，大富大贵之命也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0014",
+      "sha256": "1a478fcbb6d1816e2a50827094c76f2a740f125d92177c286341a26b7fa997ed"
+    },
+    {
+      "section": "卷二·论木 / 二月甲木",
+      "text": "二月甲木，庚金得所，名阳刃驾杀，可云小贵，异途显达，或主武职，但要财资之。柱中逢才，英雄独压万人。若见癸水，困了才杀，主为光棍，重刃必定遭凶。性情凶暴。书曰：木旺宜火之光辉，秋闱可试。木向春生，处世安然有寿。日主无依，却喜运行才地。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0015",
+      "sha256": "f9e241ea533ab6a401a4fc0f787d3fa59a8421ce9d10ef86a5b98406f70cf78b"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "三月甲木，木气相竭。先取庚金，次用壬水。庚壬两透，一榜堪图。但要运用相生，风水阴德，方许富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0016",
+      "sha256": "58615645ec9ec2a5471c11bab51df8f2946472fe1c23b27b2cdb3f501d38ab7a"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "或见一二庚金，独取壬水。壬透清秀之人，才学必富。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0017",
+      "sha256": "c74f2cf5f746166d11cb2590831d64aab9182e2772e942fadb17dab7fa123df5"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "或天干透出二丙，庚藏支下，此钝斧无钢，富贵难求。若有壬癸破火，堪作秀才。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0018",
+      "sha256": "25fc4568d85ca553b9ce40ac63f4eed3326190761085d842b453d7e0ea4bc7df"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "或柱中全无一水，戊己透干，支成土局，又作弃命从才，因人而致富贵，妻子有能。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0019",
+      "sha256": "5a1f08648560e934762743c7847f089439f8a44a1f7735e34c29a84d2f6e3466"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "或见戊己，及比劫多者，名为杂气夺才，此人劳碌到老，无驭内之权。女命合此，女掌男权，贤能内助，若比劫重见，氵㸒恶不堪。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0020",
+      "sha256": "89f7d6071c577564d1f8f09f56b884e8c63fda9e9d53c1d06ee954a6f532a6d7"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "或支成金局，方可用丁，不然，三月无用丁之法。惟有先庚後壬取用。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0021",
+      "sha256": "188d49ae2f233af6ce6f6a3c4f6905f59f3403111d569ce80d4de3996b771b44"
+    },
+    {
+      "section": "卷二·论木 / 三月甲木",
+      "text": "书曰：甲乙生寅卯，庚辛干上逢，离南推富贵，坎地却为凶。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0022",
+      "sha256": "c7305c633ea2dea963a85034708809266978ea770849b8a5de128c6e7bcceeb4"
+    },
+    {
+      "section": "卷二·论木 / 三夏甲木",
+      "text": "三夏甲木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0023",
+      "sha256": "ba8d02a8a011edea6e0db22bca028729520fd73efbfe25ab2e9db88038d99139"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "四月甲木退气，丙火司权，先癸後丁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0024",
+      "sha256": "0b7af1535447ff2aa8db01451566d932535a2a91c5c76110ac71394e66f1aa33"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "庚金太多，甲反受病。若得壬水，方配得中和，此人性好清高，假装富贵。即荫袭显达，终日好作祸乱，善辨巧谈，喜作诗文。此理最验。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0025",
+      "sha256": "87407dda869689126514556ecaab8d010c52239c29ce9cc6f387df9e1ff7fb24"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "如一庚二丙，稍有富贵。金多火多，又为下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0026",
+      "sha256": "feeaaab4db10f394dec9ffd7059eb1934cf7bae7e832ec282cef789392e88a01"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "或癸丁与庚齐透天干，此命可言科甲，即风水浅薄，亦有选拔之才。癸水不出，虽有庚金丁火，不过富中取贵异途官职而已。壬透可云一富，若全无点水，又无庚金丁火，一派丙戊，此无用之人也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0027",
+      "sha256": "1fa692d8a3a910121a048d84252d0cb8119b987b01c13b7a3e2807b0ab8906a7"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "五六月甲木，木性虚焦，一理共推。五月先癸後丁庚金次之。六月三伏生寒，丁火退气。先丁後庚，无癸亦可。或五月乏癸，用丁亦可，要运行北地为隹。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0028",
+      "sha256": "87044b83a97c5b6dd67ede9ad2d5d8d3ab943c9e8388f446671c407cdc15f92e"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "总之五六月用丁火，虽运行北地，不致於死。却不利运行火地，号曰木化成灰必死。行西程又不吉，号曰伤官遇杀，不测灾来，惟东方则吉，北方次之。此五六月用丁之说也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0029",
+      "sha256": "253a5537653f505e729d75b3a7d872ba3a56417cc2cf7747bda893c009f1e49f"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "凡用神太多，不宜克制，须泄之为妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0030",
+      "sha256": "1f0129e31069b90198b5143ab2d3f18ab018d230533e5428d9a1223f5d63c9af"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "五六月甲木，木盛先庚，庚盛先丁。五月癸庚两透，为上上之格。六月庚丁两透，亦为上上之格。用神既透，木火通明，自然大富大贵。或丁火太多，癸水亦多，反作平人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0031",
+      "sha256": "673cde6ee0baedff48f1a79ce28cdb7b1f8b4d042ee024783c1e4b2f02ac5766"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "若柱中多金，名曰杀重身轻，先富後贫，运不相扶，非贫即夭。或庚多，有一二丙丁制伏，又有壬癸透干，泄金之气，此又为先贫後富。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0032",
+      "sha256": "df54bcae7b433431e4b3a1bb9e3abdcb2e4f9a5d04dde0f944892ef31021c0cf"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "或满柱丙火，又加丁火，不见官杀，谓之伤官伤尽最为奇，反成清贵，定主才学过人，科甲有望，但岁运不宜见水。若柱中有壬水，运又逢水，必贫夭死。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0033",
+      "sha256": "d6819897608df22807f08e62fa4c11aa96bd5796e0991bfe2d942659ce0e3394"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "但凡木火伤官者，聪明智巧，却是人同心异，多见多疑，虽不生事害人，每抱忌妒之想，女命一理同推。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0034",
+      "sha256": "5fc095c8c5eacf049a215f55b5fa6d0510d258db5fc77f1ab14272d4b56f1b60"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "或四柱多土，干上有乙木，切勿作弃命从才。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0035",
+      "sha256": "1ec553184618978bccd45397c288abbcc45f4be0851de25bb6ee2e3c84eafe80"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "时月两透己土，名二土争合，男主奔流，女主氵㸒贱。见二甲则不争矣，亦属平庸之辈。或四柱有辰，干见二己二甲，此人名利双全，大富大贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0036",
+      "sha256": "6393059f6b89429fce02166a96694ea01ccd2b91232542e2c043a10ddba5292d"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "若在六月，见辰支，名为逢时化合格。以癸水为妻，丁火为子。若二己一甲争合。取支中比劫为用。以甲为用者，壬癸为妻，甲乙为子。其余用庚者，土妻金子。用丁者，木妻火子。女命以妻作夫，用作子。十干皆同。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0037",
+      "sha256": "67b03853ab02e87b20242a2adc4d826fa67c11ea270d8ce318bc24530330c3af"
+    },
+    {
+      "section": "卷二·论木 / 四月甲木",
+      "text": "或是己土，不见戊土，乃为假从，其人一生缩首，反畏妻子。若无印绶，一生贫苦。六月尤可，五月决不可。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0038",
+      "sha256": "8d4c395540c4b3236edd549fc51f01f4b5c799d192adc48f87948874fbfa4a21"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木总论",
+      "text": "三秋甲木总论",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0039",
+      "sha256": "e8a2f6fdcb3a75dea7e483e905a8569d6f7fb63db2774cfb012563b51b37b68a"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木",
+      "text": "三秋甲木，木性枯槁，金土乘旺，先丁後庚，丁庚两全，将甲造为画戟，七月甲堪为戟，非丁火不能造庚，非庚不能造甲，丁庚两透，科甲定然。庚禄居申，杀印相生，运行金水，身伴明君。或庚透无丁，一富而已，主为人操心太重，不能坐享。或丁透庚藏，亦主青衿小富。或庚多无丁，残疾之人若为僧道，灾厄可免。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0040",
+      "sha256": "e28cbc2c330469f8718cc9279fa70182d5ab89d80ce3fc71e5e01a26081bf5d1"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木",
+      "text": "或四柱庚旺，支内水多，不作弃命从杀。见土多可作从才而看。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0041",
+      "sha256": "0c0462290dafab2d231103633363979b3c6fbb18a57ac98ea9dc6af2db21c109"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木",
+      "text": "庚多无癸，而壬水多，戊己亦多，此则专用一点丁火，方可制金以养群土，此命大富。丁藏富小，不显。丁露定作富豪。得二丁，不坐死绝，必然富贵双全，即风水不及，亦可富中取贵，纳粟奏名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0042",
+      "sha256": "528e8f7ad70fd2bec334b57df38bacad05d629e054fea09289145416dd2bd252"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木",
+      "text": "或癸叠叠制伏丁火，虽满腹文章，终难显达。得运行火土，破癸，略可假就功名，岁运皆背，刀笔之徒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0043",
+      "sha256": "f0e4fca39f0295934b699c8f7c630adf882b4263feb567ad117e346b48ccab2c"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木",
+      "text": "支成水局，戊己透干，制去癸水，存其丁火又可云科甲，但此等命，主为人心奸巧诈，好讼争非，因贪致祸。奸险之徒，决非安份之人也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0044",
+      "sha256": "d8c12aedd0bb3c3b02b36bc1dae3ae149a928db006c9651b38a9e0d9a2dd60c9"
+    },
+    {
+      "section": "卷二·论木 / 三秋甲木",
+      "text": "三秋甲木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0045",
+      "sha256": "8d4c4ed672353cafd26e107374d0f0bfc99f3a61e4aaa31c30d2eea9c5a14ac4"
+    },
+    {
+      "section": "卷二·论木 / 七月甲木",
+      "text": "七月甲木，丁火为尊，庚金次之，庚金不可少。火隔水不能熔金，故丁火熔金，必赖甲木引助，方成洪炉。若有癸水阻隔，便灭丁火，壬水无碍，且能合丁，但须见戊土，方可制水存火。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0046",
+      "sha256": "81a79fe5edb09f1ab46879a192dcec187e227eb2a0492f83af729f1060ea6eeb"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "八月甲木，木囚金旺。丁火为先，次用丙火，庚金再次。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0047",
+      "sha256": "bd163c8077987ac4682a31996758facd4b892b2cacb8aec21a6670682d07db49"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "一丁一庚，科甲定显。癸水一透，科甲不全。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0048",
+      "sha256": "fc03b5c4fdc6b960656eaaf192cdd5f029d0b65501bb610ec0f941b0f0b86693"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "丙庚两透，富大贵小。丙丁全无，僧道之命。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0049",
+      "sha256": "4fbefddb61c1d95594b85e2ccfca0121f2166b3870576aab8039f8b60fd85b27"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "丙透无癸，富贵双全。有癸制丙，寻常之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0050",
+      "sha256": "875e9cbf5dc7575d5ca210b6a2551c32c389114df3cadf187f4388fb67d00dba"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "支成火局，可许假贵，戊己一透，可作富翁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0051",
+      "sha256": "29e5c4ef44c0e306f16b00c854d8787dd865ce0499802e1c82c1aa312eee4321"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "或支成金局，干露庚金，为木被金伤，必主残疾，得丙丁破金，亦主老来暗疾。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0052",
+      "sha256": "0f762100b0024e72b91deb7a73085c1261c226e918028782e6db3d6af2bf8d62"
+    },
+    {
+      "section": "卷二·论木 / 八月甲木",
+      "text": "或支成木局，干透比劫，反取庚金为先，次用丁火。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0053",
+      "sha256": "4649e93836265c13290004fe890bba2f7145c5beb900b4f61bce07e5c207613c"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "九月甲木，木星凋零，独爱丁火，壬癸滋扶，丁壬癸透，戊己亦透，此命配得中和，可许一榜。庚金得所，科甲定然。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0054",
+      "sha256": "21b48901196eefcc6b6d1853b2fb0b9b82102e4ecefc222227118eb5280229e5"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "或见一二比肩，无庚金制之，平常人也。倘运不得用，贫无立锥。一命，甲辰、甲戌、甲辰、甲戌、身伴明君，富贵寿考，此为天元一气，又名一才一用。遇比用才，专取季土。或见庚丙，可许入泮，白手成家。用火者，木妻火子，子肖妻贤。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0055",
+      "sha256": "a91bdb90d69917a6bb56fa5c90452c1ef920ef21ef85bd9ff8e92ba39fc0d866"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "或四柱木多，用丙用丁，皆不足异，端用庚金为妙。凡四季甲木，总不外乎庚金。譬如木为犁，能疏季土，非庚金为犁嘴，安能疏土虽用丙丁，癸庚决不可少也。九月却不取土妻庚子，当取水妻木子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0056",
+      "sha256": "1d6ca812d7492c094d96b69f61901caefa1a5d5d3979c2748b98ed7ca81fabd4"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "凡甲木，多见戊己，定作弃命从才而看。从才格，取火妻土子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0057",
+      "sha256": "cfb9b64850e222e3ed2440edf40b11060f9beacdbd47042a4807a7e29423d2bd"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "或见一派丙丁伤金，不过假道斯文，有壬癸破了丙丁，技艺之流。无壬癸破火，支又成火局，乃为枯朽之木，有庚亦何能为力，定作孤贫下贱之辈，男女一理。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0058",
+      "sha256": "74a446efad894fd4c85256fc667551ee1f275ee79e6ca7f305fcf2df0e16c16a"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "或有假伤官，得地逢生，此正合甲乙秋生贵元武之说，用水制伤官者，以金为妻，水为子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0059",
+      "sha256": "496b784ea1917ff78fb1a5d093c5174f2df9c298e8ac5a961b860c0589d8e9ba"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "或丁戊俱多，总不见水，又为伤官生财格，亦可云富贵，此格取火为妻，土为子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0060",
+      "sha256": "e5e5ad9a0713fefee22f9353afa0ae24a431ffe5c5f30fe4a17c0ca512b97569"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "凡甲多庚透，大贵。庚藏，小贵。若柱中多庚，则又以丁为奇，富贵人也。如庚申年、丙戌月、甲申日、壬申时，此主功名显达，有文学。若无庚丙年月，又无火星出干，虽曰好学，终困名场。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0061",
+      "sha256": "5dc99517f3d7bbd7672f9dc0d18a8b73c124f570fadccd4f420a368b7a6b6b59"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "九月甲木，端用丁癸，见戊透必贵。如戊戌、壬戌、甲子、甲申，支成水局，干有壬水，正合贵元武之说。配得中和，一榜之命，家计丰足。但庚丁未透出干，不能馆选。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0062",
+      "sha256": "706f013b8ae851e559b8ce48edecc841b6fa37a730be3c6d1ca8592a67465dd2"
+    },
+    {
+      "section": "卷二·论木 / 九月甲木",
+      "text": "甲乙比肩，又逢比劫运，主兄弟劫财争讼，刑妻损子。甲乙生正二月，无制无泄，主长发师姑。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0063",
+      "sha256": "35ae99179ef46fb8b5095aa8b392f121f9a1d65db6d79277db43b706f5da661c"
+    },
+    {
+      "section": "卷二·论木 / 三冬甲木",
+      "text": "三冬甲木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0064",
+      "sha256": "d2a331b37398d40fc0e676e15e69cbe373bf7f94afc49f527730b2bb6fae9d60"
+    },
+    {
+      "section": "卷二·论木 / 十月甲木",
+      "text": "十月甲木，庚丁为要，丙火次之。忌壬水泛身，须戊土制之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0065",
+      "sha256": "9b98e819249de732b48156e50f2263d4852c739042c9422c5cbb54ea6211b3f0"
+    },
+    {
+      "section": "卷二·论木 / 十月甲木",
+      "text": "若庚丁两透，又加戊出干，名曰去浊留清，富贵之极，即乏丁火，亦稍有富贵。或甲多制戊，庚金无根，平常人也。庚戊若透，虽出比劫，必定富而寿。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0066",
+      "sha256": "6dac11b5fe73ace8e38f96844572a87dc3255459e3fad48d6cff7b7eed88445c"
+    },
+    {
+      "section": "卷二·论木 / 十月甲木",
+      "text": "或多比劫，只一庚出干，坐禄逢生乃为舍丁从庚，略富贵。或支见申亥，戊己得所，以救庚丁，可许科甲。若单己透，其力弱小，不过贡监而已。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0067",
+      "sha256": "b6eddb3d0772b2fba8aa6463ef2a15654086b79e115c7023648847111adf9e9a"
+    },
+    {
+      "section": "卷二·论木 / 十月甲木",
+      "text": "用庚，土妻金子。用丁，木妻火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0068",
+      "sha256": "aa10c2842ab4fc0208d7c22961bbbf1b00790a47813d20f71548c86214062db3"
+    },
+    {
+      "section": "卷二·论木 / 十一月甲木",
+      "text": "十一月甲木，木性生寒，丁先庚後，丙火佐之。癸水司权，为火金之病。庚丁两透，支见巳寅，科甲有准，风水不及，选拔有之。若癸透伤丁。无戊己辅救，残疾之人。或壬水重出，丁火全无者，庸人也，得丙方妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0069",
+      "sha256": "8694ca04d7e8999583186b41a52105507b7379834125a1eae81f9130bdbb1e4e"
+    },
+    {
+      "section": "卷二·论木 / 十一月甲木",
+      "text": "或支成水局，加以壬透，名为水泛木浮，死无棺木。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0070",
+      "sha256": "2583459056917ba9a7023e0fb221b2ff7bf06a2b37cd14082f1b21f39e2f4714"
+    },
+    {
+      "section": "卷二·论木 / 十一月甲木",
+      "text": "总之十一月甲木，为寒枝，不比春木清茂，端取庚丁。透壬无丙，不过刀笔异途，武职有验。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0071",
+      "sha256": "9c209cd21905a1da5d030186cb90ad1f4ee3ea5a53e8c05325ea71366896d723"
+    },
+    {
+      "section": "卷二·论木 / 十一月甲木",
+      "text": "用庚，土妻金子。用火，木妻火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0072",
+      "sha256": "5669f26c3212eb16e330aa506284f925a647ad8706d68119ae80d4817444d41f"
+    },
+    {
+      "section": "卷二·论木 / 十二月甲木",
+      "text": "十二月甲木，天寒气冻，木性极寒，无生发之象，先用庚劈甲，方引丁火始得木火有通明之象，故丁次之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0073",
+      "sha256": "ee518dc23f6163ab14930f8cb980e881e1310675072bc92b8178c0b5517bc162"
+    },
+    {
+      "section": "卷二·论木 / 十二月甲木",
+      "text": "庚丁两透，科甲恩封。庚透丁藏，小贵。丁透庚藏，小富贵。无庚者，贫贱。无丁者，寒儒。或有丁透重重，亦是富贵中人，但须比肩，能发丁之焰，自有德业才能。如无比肩，寻常之士，稍有衣食而已。或支多见水，即有比肩，亦属平常。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0074",
+      "sha256": "a8b560d1dc5d8deeddcd176c1378bfb4a54a750bedb3be312b703e74ea19a9fc"
+    },
+    {
+      "section": "卷二·论木 / 十二月甲木",
+      "text": "总之腊月甲木，虽有庚金，丁不可少。乏庚略可，乏丁无用。经云：甲木无根，男女夭寿。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0075",
+      "sha256": "3e10068d29238a6ec3cc8854a28891406f00c856352f6b8e162f0fda2af4dabd"
+    },
+    {
+      "section": "卷二·论木 / 三春乙木总论",
+      "text": "三春乙木总论",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0076",
+      "sha256": "6989895199c7a3ca06716d45880266cb1460a96c5fa899a2515219926dca3c04"
+    },
+    {
+      "section": "卷二·论木 / 三春乙木",
+      "text": "三春乙木，为芝兰蒿草之物，丙癸不可离也，春乙见丙，卉木向阳，万象回春，须癸滋养根基。丙癸齐透天干，无化合制克，自然登科及第，故书云：乙木根荄种得深，只须阳地不宜阴，漂浮只怕多逢水，克制何须苦用金。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0077",
+      "sha256": "4d95b6f7948df2185116537e559e6b1d25748ccf58896102e6e2d82c10141bbd"
+    },
+    {
+      "section": "卷二·论木 / 三春乙木",
+      "text": "三春乙木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0078",
+      "sha256": "3a8b04e8e061b407d82623d8c51728fdb7a8406e6c823df882206a7857769ea8"
+    },
+    {
+      "section": "卷二·论木 / 正月乙木",
+      "text": "正月乙木，必须用丙，因天气尤有余寒，非丙不暖，虽有癸水，恐凝寒气，故以丙火为先，癸水次之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0079",
+      "sha256": "a66bc40571b95fd1bc76018d76794735936e26eadbd1504d6750929a09a4e327"
+    },
+    {
+      "section": "卷二·论木 / 正月乙木",
+      "text": "丙癸两透，科甲定然，或有丙无癸门户阐扬。或丙多乏癸，名曰春旱。独阳不长，浊富之人。或丙少癸多，又为困丙，终为寒士。或癸己多见，为湿土之木皆下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0080",
+      "sha256": "375cccbb536b29a8c1b6fe39764cfe4e3158b8171e364674bc3de22d11b64485"
+    },
+    {
+      "section": "卷二·论木 / 正月乙木",
+      "text": "用丙者，木妻火子。用癸水见火多者，金妻水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0081",
+      "sha256": "887fbc51c1c7035206045406778323c5a975cfbb584125b748c442a27d97925a"
+    },
+    {
+      "section": "卷二·论木 / 二月乙木",
+      "text": "二月乙木，阳气渐升，木不寒矣，以丙为君，癸为臣，丙癸两透，不透庚金，大富大贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0082",
+      "sha256": "7045ff571557944f4705e213ee0ad07083bbbfc51613ec00cf997b38203668da"
+    },
+    {
+      "section": "卷二·论木 / 二月乙木",
+      "text": "或天干透庚，支下无辰，不能化金，得癸透养木亦为贵，若见水库，则为假化，平常人也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0083",
+      "sha256": "6091ca278569a7aa3712b71b90062d90cb31d16b783f5267a94064430894405c"
+    },
+    {
+      "section": "卷二·论木 / 二月乙木",
+      "text": "二月乙木，端用丙癸，或支成木局，有癸透乃作贵命，更得丙泄木气，上上之命，但须透癸。或水多困丙，多戊化癸，皆下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0084",
+      "sha256": "a45a76d2193a4faf6d48a339c95c1d495bbeb214ff42a1d32bb40a44d2bbb2ef"
+    },
+    {
+      "section": "卷二·论木 / 二月乙木",
+      "text": "用丙者，木妻、火子。用癸者，金妻、水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0085",
+      "sha256": "4a1e1c947930af625be85d448f2260d21a1364d15796f9b2415e3a8a6b376d54"
+    },
+    {
+      "section": "卷二·论木 / 二月乙木",
+      "text": "亥卯未逢於甲乙，富贵无疑。木全寅卯辰方，功名有准。活木忌埋根之铁，支下有庚辛，戕贼其根，木则朽矣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0086",
+      "sha256": "c84b6560168ac4088b71bdcc6294f980c829401134a8bed1e5a439dde9867a3d"
+    },
+    {
+      "section": "卷二·论木 / 三月乙木",
+      "text": "三月乙木，阳气愈炽，先癸後丙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0087",
+      "sha256": "b43a6b0e9279e0cb50d1431a0b20de99a4598e62931f825b29d6dae9823e6168"
+    },
+    {
+      "section": "卷二·论木 / 三月乙木",
+      "text": "癸丙两透，不见己庚，玉堂之客。见己庚者，平常之人。或一乙逢庚，不见己者，亦主小富贵，但不显达。或多水见己，只恐高才不第。见戊堪发异途。或庚己混杂，丙癸全，则为下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0088",
+      "sha256": "5081703ea023fc431e46e66358b6800af9bd50466c83b889edaf6d0a30834862"
+    },
+    {
+      "section": "卷二·论木 / 三月乙木",
+      "text": "或见水局，丙戊高透，亦主科甲。或柱中全无丙戊，支合水局，此离乡之命。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0089",
+      "sha256": "417fad1315b29412050aae5c10e61e9ac0dc7e37aca8b288c7ac43e3d640091f"
+    },
+    {
+      "section": "卷二·论木 / 三月乙木",
+      "text": "或见一派癸水，又有辛金，则作旺看。得一戊己制癸，亦可云小富贵。若一派壬水，不特贫贱，而且夭折。有一戊己，方云有寿，但终为技术之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0090",
+      "sha256": "7e14c789e848501ec3d944d9d5c52be9cd022c1b2347b261e1076a22e88cfd7c"
+    },
+    {
+      "section": "卷二·论木 / 三月乙木",
+      "text": "又或庚辰时月，名二庚争合，乃贫贱之辈。如年干见丁破庚，可云从化，亦不失武职之权。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0091",
+      "sha256": "3612980a1b9feddc90328f2dde922dd91fcb97056674cb2548818099ab69ddd5"
+    },
+    {
+      "section": "卷二·论木 / 三月乙木",
+      "text": "用癸者，金妻水子。癸多用丙者，木妻火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0092",
+      "sha256": "0481a77168422375bff8d56dfdd36c95020bc10eb927f97e84e5e862bd212be7"
+    },
+    {
+      "section": "卷二·论木 / 三夏乙木总论",
+      "text": "三夏乙木总论",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0093",
+      "sha256": "d6f4af2d3327d070bfba2d2625f8e22ee405763912cd538990502b5af091bc5a"
+    },
+    {
+      "section": "卷二·论木 / 三夏乙木",
+      "text": "三夏乙木，木性枯焦。四月专尚癸水。五六月先丙後癸，夏至前仍用癸水。先得丙透，支下又有丙火，名曰木秀火明。得一癸透，科甲中人。或透二丙一癸，可许采芹。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0094",
+      "sha256": "39ea3fdc10fb1ceb24eeeb47aec8d3c9bc730cbd1be1720243ac05b5a1119625"
+    },
+    {
+      "section": "卷二·论木 / 三夏乙木",
+      "text": "或一派癸水，有丁无丙，平常之人。或一癸透干，异途显宦，难由科甲。癸居子辰，异路小职。或丙藏支下，癸透年干，己出月上，虽非科甲，异路功名。又或重重癸水，或支藏癸水，由行伍出身得功名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0095",
+      "sha256": "f7609afe43137de2937cec288fb3c9c9dcfc7cef7f176552c2d2f4456c5722ff"
+    },
+    {
+      "section": "卷二·论木 / 三夏乙木",
+      "text": "三夏乙木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0096",
+      "sha256": "4e024ac4a723660bfd1279cc77867364dd5adef7a1b20bd936565e85413b6cad"
+    },
+    {
+      "section": "卷二·论木 / 四月乙木",
+      "text": "四月乙木，自有丙火，端取癸水为尊。四月乙木专用癸水，丙火酌用，虽以庚辛佐癸，须辛透为清。癸透、庚辛又透，科甲定然，独一点癸水、无金，是水无根，虽出天干，不过秀才小富，须要大运相扶。或土多困癸，贫贱之人。丙戊太多，支成火局，瞽目之流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0097",
+      "sha256": "43f6d012811564f2590382d928fd682e391ddceb511e7a1da10de35358f550bc"
+    },
+    {
+      "section": "卷二·论木 / 四月乙木",
+      "text": "用癸者，金妻水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0098",
+      "sha256": "ae68092a66993fcfb3d858ff3b7009cbafeb1ba4b0e805f6fbeb49ee904ece24"
+    },
+    {
+      "section": "卷二·论木 / 四月乙木",
+      "text": "乙逢双女木伤残，若见辛金寿必难，不得丙丁来制伏，岂知安乐不久长。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0099",
+      "sha256": "e1ad57cda514f3c22026e84f3019bcc4f74bdcd0aac4152d721895496f0bfbf1"
+    },
+    {
+      "section": "卷二·论木 / 五月乙木",
+      "text": "五月乙木，丁火司权，禾稼俱旱。上半月属阳，仍用癸水。下半月属阴，三伏生寒，丙癸齐用。柱多金水，丙火为先，余皆用癸水为先。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0100",
+      "sha256": "82fe054f47616734862745c98db778182a592e673cb058217c4bf682958748f4"
+    },
+    {
+      "section": "卷二·论木 / 五月乙木",
+      "text": "乙木重逢火位，名为气散之文，支成火局，泄乙精神，须用癸滋。癸透有根，富贵双全。或庚辛年上，癸透时干，定许科甲，无癸者常人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0101",
+      "sha256": "7072bf679d5b3f918b353ae57e875e53a1b05b2b3b5d8633983c348bada2d8f3"
+    },
+    {
+      "section": "卷二·论木 / 五月乙木",
+      "text": "若见丙透，支成火局，阳焦木性，此人残疾，无癸必夭，见壬可解。或火土太多，其人愚贱，或为僧道门下闲人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0102",
+      "sha256": "172fc693885ae9d8cfeb52400e6d00e0da1229dd62e102bf3fe3ac5f4019b976"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "六月乙木，木性且寒，柱多金水，丙火为尊。支成水局，乙得无伤。癸水透干，大富大贵。无癸定作常人，运不行北，困苦一生。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0103",
+      "sha256": "cded7be63007095700e1146c380f361869b53162525ea157191d229db5be08c3"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "凡五六月乙木，气退枯焦，用癸水切忌戊己杂乱，则为下格。或甲木高透，制伏土神名为去浊留清，可许俊秀。土多乏甲秀气脱空，庸人而已。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0104",
+      "sha256": "52545533bfd94e000604566aa7d416cb4a25adda262b9951441a1afd715f87f1"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "或丙癸两透，加以甲透制戊，选拔定然。若不见丙癸，只有丁火，亦属常人，有壬、可充衣食。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0105",
+      "sha256": "8834ed5d93b74ac75850dcbca459773b802bc8b76401af85e791bc9d1cb35fae"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "或柱中无水，又无比劫出干，乃为弃命从才，富大贵小，能招贤德之妻。从才格以火为妻，土为子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0106",
+      "sha256": "fbdf9ce89b5c8023d3da041e293c802721351699708f82c4154db064deed2c25"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "或一派戊土出干，不见比肩，名为才多身弱，终为富屋贫人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0107",
+      "sha256": "2bfdd399ae4e9374d0e4ab98a71ebfdd6c8ca1aa9b3305504c0948fbdfd8420f"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "或丙辛化水，嫖赌破家，终非承受之儿。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0108",
+      "sha256": "0b54b62c5ff35458eb59834211881a6a06216583837004a5afc9eec7a6c97157"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "或一派乙木，不见丙癸，名为乱臣无主劳碌奔波，又加支多辛金，僧道之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0109",
+      "sha256": "dd18548a1cad03438e5849eb57c22a842b64e861a4eac274e2db0e5fedb23e8e"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "或一派甲木，无癸无丙，又无庚金，此人一生虚浮，总不诚实。有庚制甲，乃有谋之人，但嗜酒贪花，多欲败德，不修品行，男女一理。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0110",
+      "sha256": "1af35bdf45e7003d0ac780a1a056568eb720575e9fcc4735c2ba9a80ce5f8b1b"
+    },
+    {
+      "section": "卷二·论木 / 六月乙木",
+      "text": "总之夏月之乙木，端用癸水，丙火酌用，庚辛次之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0111",
+      "sha256": "603e879c638096bc421d1e9e834fb8e3aa6a7b77ad6463831ac6e79e2afefb8f"
+    },
+    {
+      "section": "卷二·论木 / 三秋乙木",
+      "text": "三秋乙木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0112",
+      "sha256": "62c0a17698cbec95db4cffcd3edd84c334d8983c3d781e0ca9e2db8f09bf3865"
+    },
+    {
+      "section": "卷二·论木 / 三秋乙木",
+      "text": "三秋乙木，金神司令，先丙後癸，惟九月端用癸水，恐丙暖戊土为病也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0113",
+      "sha256": "93791584d2303b42f04c5c718a190f8e6326662a8fcbf8728fa77375f58281cb"
+    },
+    {
+      "section": "卷二·论木 / 七月乙木",
+      "text": "七月乙木，庚金乘令，庚虽输情於乙妹，怎奈干乙难合支金。柱见庚多，乙难受载。或丙透干，又加巳出埋金，此格可云科甲。有己透、加丙，亦是上命。七月喜己土为用，或不见丙癸。己土必不可少，此则以火为妻，土为子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0114",
+      "sha256": "23bb52e4d44f9d9b4339300e7267400084e091e6fc61cd132e99c61bf64d72b6"
+    },
+    {
+      "section": "卷二·论木 / 七月乙木",
+      "text": "或癸透、丙藏、庚少，此不用己，可许贡拔。无丙、有癸透者，不失刀笔门户。有支下庚多，癸又藏者，无丙己二神，平常人物。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0115",
+      "sha256": "0cec5cb1253725ee7cbd50c48d2af3ad6f2139a9224e7405357e8450b0ce131c"
+    },
+    {
+      "section": "卷二·论木 / 七月乙木",
+      "text": "或生辰时，此为从化，反主富贵。凡化合格皆以所生之神为用。化金者，戊为用神，特忌丙丁煆炼破格。从化者以火为妻，土为子。其余以金为妻。妻必贤美。以水为子，子必克肖，但忌刑冲。凡命皆然，不特此也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0116",
+      "sha256": "aa40847f18bc5f68627dabd49bd11ec2bf6a830d3ce5e9c75d54e76f68a5bb1d"
+    },
+    {
+      "section": "卷二·论木 / 七月乙木",
+      "text": "秋乙逢金，非贫即夭。秋生乙木忌根枯，根既枯槁，贫苦到老。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0117",
+      "sha256": "0c7e8f7206cb28a7976bc33163f8167f94f28d47945e7e4ef8c2dedeaadb4f13"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "八月乙木，芝兰禾稼均退。以丹桂为乙木。在白露之後，桂蕊未开，端用癸水以滋桂萼。若秋分後，桂花已开，却喜向阳，又宜用丙，癸水次之，丙癸两透，科甲名臣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0118",
+      "sha256": "434a91d93ab073dd0422ac15e658287ad5c8f226a22c401da474908aafedab37"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "或支成金局，宜暗藏丁，无丁制金，恐木被金伤。若无水火，此人劳碌。或得癸水，为子得母，其人一生丰盈。或丙癸两透，戊土杂出，亦主异路功名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0119",
+      "sha256": "deb79df968e64b4a4408371843e41638265971f943541153c79f77f40fc6c55f"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "生秋分後，有丙无癸，亦略富贵。若有癸无丙，名利虚花。若四柱不见丙癸，下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0120",
+      "sha256": "0254caea02333a15ea39883172ed767d38a3cceb793a603cbc80e43b4d955299"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "或癸在年（月）干，丙透时干，名为木火文星，定主上达。生於秋分後方佳。或生上半月无癸，姑用壬水，不然，枯木无用，必作贫人。又四柱多见戊己，下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0121",
+      "sha256": "ec196514ed4753e4201fcf4520f64e50ba3cba790e24fe02e84daa566b720723"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "用癸者，金妻、水子。用丙者，木妻、火子。用壬者，金妻水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0122",
+      "sha256": "9ad79f13871e939f5de3f7d551f48c39a88453b1bf3a2fae480daf55f21bec59"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "甲乙遇强金，魂归西土，青龙逢兑旺，且贫且贱。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0123",
+      "sha256": "5cb22c4283de7d9edb2a58902928c6e8050828c24b7ebe102d45727092432f5d"
+    },
+    {
+      "section": "卷二·论木 / 八月乙木",
+      "text": "乙木生居酉，莫逢巳酉丑，富贵坎离宫，贫穷申酉守。木逢金旺巳伤，再遇金乡，岂不损寿。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0124",
+      "sha256": "152142e68dc9d924df4ed315406864f93b76743473dc71da24025d6d62679a4f"
+    },
+    {
+      "section": "卷二·论木 / 九月乙木",
+      "text": "九月乙木，根枯叶落，必赖癸水滋养。如见甲申时，名为藤萝系甲，可秋可冬。若见癸水，又遇辛金发水之源，定主科甲。或有癸无辛，常人。有辛无癸，贫贱。或四柱壬多，水难生乙，亦是寻常之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0125",
+      "sha256": "cc458db3aabdbf76cdf58e4a246b3ecb175770c435c941fa081034d3ea07cb86"
+    },
+    {
+      "section": "卷二·论木 / 九月乙木",
+      "text": "或支多戊土，又逢天干，作从才看，无比劫方妙，一逢比劫，富屋贫人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0126",
+      "sha256": "49392f67eeb3f7e5f72718ce89842aef3aa0386a4c8e7007ee78365a8677aa09"
+    },
+    {
+      "section": "卷二·论木 / 九月乙木",
+      "text": "用癸者，金妻、水子。但子女艰难，季土克制故也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0127",
+      "sha256": "48b1de5a2a213cb70d14795ac246c3246176cc7a5f1d7ac840713514671c4959"
+    },
+    {
+      "section": "卷二·论木 / 三冬乙木",
+      "text": "三冬乙木",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0128",
+      "sha256": "956644db944eeb03cb6009aa11b610da8e1314bb4d55f4805aed076c7a8a5b0c"
+    },
+    {
+      "section": "卷二·论木 / 十月乙木",
+      "text": "十月乙木，木不受气，而壬水司令，取丙为用，戊土次之。丙戊两透，科甲定然。有丙无戊，虽不科甲，亦入儒林。支多丙火，运入火乡，亦主显达。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0129",
+      "sha256": "536da9d650413346dd38086ec37927ae7b002a80964727996bf4890524582b48"
+    },
+    {
+      "section": "卷二·论木 / 十月乙木",
+      "text": "或水多无戊，乙性漂浮，流荡之徒。若不见丙巳，妻子难全，或一点壬水，即多见戊土，亦为不妙，得甲制戊，可许能干，但为人好生祸乱，构讼生非，男女一理。支成木局，时值小阳，此又如春木同旺，若有癸出，须取戊为尊，加以丙透，科甲之人。若无丙戊二字，自成自败，终非承受之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0130",
+      "sha256": "b93b8eac8587166a4f5182eac3d1ac971a61888d1803e71414e6440ad71aca47"
+    },
+    {
+      "section": "卷二·论木 / 十一月乙木",
+      "text": "十一月乙木，花木寒冻，一阳来复，喜用丙火解冻，则花木有向阳之意，不宜用癸以冻花木，故端用丙火。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0131",
+      "sha256": "c673fc5ea982415cd2454450c4d4356965750bfc3e6dc01407ac780509eaca5c"
+    },
+    {
+      "section": "卷二·论木 / 十一月乙木",
+      "text": "有一二点丙火出干，无癸制者，可许科甲。即丙藏支内，亦有选拔恩封，得此不贵，必因风水薄。或壬癸出干，有戊制，可作能人，即丙在支内，亦是俊秀。若壬透无戊，贫贱之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0132",
+      "sha256": "bdcf098b6ece40c2ae0b1242952319eb1e8dfacf15792058aeeec23c9617d29d"
+    },
+    {
+      "section": "卷二·论木 / 十一月乙木",
+      "text": "支成水局，干透壬癸，丙丁全无，虽有戊制，贫乏到老，运至南方，稍有衣食。丁火有亦如无，丁乃灯烛之火，岂能解严寒之冻。设无丙丁，戊土多见，金水奔流，下贱。或有戊己无火，亦属常人，但不至下贱。或一派丁火，大奸大诈之徒。如无甲引丁，孤鳏到老。丁火见甲，必主麟趾振振，芝兰绕膝。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0133",
+      "sha256": "d8caac9a7ac4022cbd141992f349a108595fd724a57c81ee0f99021a99e1097a"
+    },
+    {
+      "section": "卷二·论木 / 十一月乙木",
+      "text": "或成水局，壬癸两透，则木浮矣，不特贫贱，而且夭折，得一戊救方可。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0134",
+      "sha256": "1096b1a76537b5340b0def64f1324f3850ab54f28a2361fcfdbba544b1faea2a"
+    },
+    {
+      "section": "卷二·论木 / 冬月之木",
+      "text": "冬月之木，虽取戊制水，不可作用，端取丙火则可。用火者，木妻、火子。用土者，火妻、土子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0135",
+      "sha256": "a29db1763aa17df1414f66a1e3d5ebe294affb6439fb5ea2bc2a249155d4d32d"
+    },
+    {
+      "section": "卷二·论木 / 冬月之木",
+      "text": "乙木生於冬至之後，坐下木局，得丙透干者，富贵之造。即丁出干，亦有衣禄，须忌癸制丁。乙木生於冬月，己土透干，又有丙透，大富贵之造。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0136",
+      "sha256": "7d52ee86fec71b9b34227722e6ef2ead906b272470da659b5167ce201f92cc7f"
+    },
+    {
+      "section": "卷二·论木 / 十一月乙木",
+      "text": "十一月乙木，木寒宜丙，有寒谷回春之象，得一丙透，无癸出破格，不特科甲，定主名臣显宦。丙火藏支，食饩而已。干支无丙，一介寒儒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c002:p0137",
+      "sha256": "4d65aec99a493326d124693d3c52a397ec548dcc4b82f71b173fdc6c9d1ef88a"
+    }
+  ]
+}

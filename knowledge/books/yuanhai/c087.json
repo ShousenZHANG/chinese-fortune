@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c087",
+  "title": "论劫财",
+  "source_url": "https://luckclub.cn/bazi/001/087/",
+  "revision": "sha256:3aef645ca9f52a6796f1d0c46402fba31fd7c63743712138c74b5638699931de",
+  "source_timestamp": "2026-09-06T04:10:42.782721+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c087.html",
+  "raw_sha256": "3aef645ca9f52a6796f1d0c46402fba31fd7c63743712138c74b5638699931de",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论劫财",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c087:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论劫财",
+      "text": "论劫财",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c087:p0002",
+      "sha256": "90db69dd7359e6526bccb53c56d4e9563f10ffb7edcf31ca039feba12d974cef"
+    },
+    {
+      "section": "论劫财",
+      "text": "亦名逆刃。如乙见甲为劫财。乙以庚为夫，见丙克庚，故克夫，男命则克妻。五阳见五阴为败财，主克妻害子。五阴见五阳为劫财，主破耗，防小人，不克妻。乙以戊己为财，以甲夺己坏戊；丁以庚辛为财，丙能夺辛破庚类，如此也。兄见弟，弟能败兄之财，夺兄之妻；弟见兄，兄能劫弟之财，而不敢娶弟之妻。财者，人之所欲，方令弟兄见之，多有争夺，如夷齐能有几人。男命见劫财多克妻，女命见伤官多克夫，此极论也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c087:p0003",
+      "sha256": "888b531f3975133fd79667231694e2bd9323af617bbc1088654e9eb0d03ed7e9"
+    },
+    {
+      "section": "论劫财",
+      "text": "眉批：甲见乙为败财，乙见甲为劫财；丙见丁为败财，丁见丙为劫财；戊见己为败财，己见戊为劫财；庚见辛为败财，辛见庚为劫财；壬见癸为败财，癸见壬为劫财。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 73,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c087:p0004",
+      "sha256": "3431f3c7dce004ff3f75d7f9d26f5f1681b82e85ced009d98e04573c5977a5db"
+    }
+  ]
+}

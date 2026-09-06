@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c020",
+  "title": "论起胎法",
+  "source_url": "https://luckclub.cn/bazi/001/020/",
+  "revision": "sha256:93a47a8f8b1942063ed50fb50a950ed0b6daaab8bb94355a0ec752cf38a22232",
+  "source_timestamp": "2026-09-06T04:10:28.601874+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c020.html",
+  "raw_sha256": "93a47a8f8b1942063ed50fb50a950ed0b6daaab8bb94355a0ec752cf38a22232",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论起胎法",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c020:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论起胎法",
+      "text": "论起胎法",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c020:p0002",
+      "sha256": "9d8e95d236b5bd2bd9aca55f90efa404146399c4bc01fc613514588a9d368a6c"
+    },
+    {
+      "section": "论起胎法",
+      "text": "胎元，受胎之月也。子平有曰：先推胎息之位，次断变息之理，精命者不可不用此例也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c020:p0003",
+      "sha256": "2de4da005c6e3f44c41f99defa15f447975fb2a34f2e32e05f1e75508a3a1042"
+    },
+    {
+      "section": "论起胎法",
+      "text": "推法但从本生月前四位是也。其法如己巳月，则前午上是胎，却数退一位，於未上将生月天干己字，唤起己未，数至庚申，乃受胎之月也。其余皆仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c020:p0004",
+      "sha256": "89d7028835c1fb3fdb713f9d0b07a4cb17e96b36cb8c57f292fbda36a5b34b0b"
+    }
+  ]
+}

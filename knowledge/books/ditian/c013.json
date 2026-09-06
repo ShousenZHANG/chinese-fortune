@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c013",
+  "title": "中和論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F13&oldid=844361",
+  "revision": "844361",
+  "source_timestamp": "2017-03-23T15:45:07Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c013.wiki",
+  "raw_sha256": "e115a01606930a2dc3e46c5d550d1da02bd5d3872c566116285f03bc3a588ecf",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "中和論",
+      "text": "能識中和之正理，而於五行之妙，有全能焉。",
+      "layer": "base_text",
+      "passage_id": "ditian:c013:p0001",
+      "sha256": "947634317828b973f14bb8785fc9c5530034863aedf0450ebd3edf40c7bca131"
+    },
+    {
+      "section": "中和論",
+      "text": "中而且和，子平之要法，雖曰有病方為貴，無傷不是奇，然畢竟云：格中如去病，財祿兩相隨，則又中和矣，是必歸於中和，乃為至貴，若身弱而財官旺也，取富貴不必於中也，用神強，亦取富貴不必於和也，偏氣古怪，亦取富貴不必於中且和也，則以天下之財官，止有此數，而天下之人才，最邪巧也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c013:p0002",
+      "sha256": "3f7805c14506b3cb48026ad5e22088914b445427b47ae384c3ade3600eeabf9b"
+    }
+  ]
+}

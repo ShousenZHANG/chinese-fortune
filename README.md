@@ -1,128 +1,107 @@
-<div align="center">
+# Chinese Fortune · 古籍与八字研习
 
-# 中国传统命理 · Chinese Fortune
+把出生资料算成盘面，再对照古籍解释。重点是让人看懂：先回答问题，用白话说明依据，必要时附短古文。
 
-**一个 Claude Skill，把中国五术（山·医·命·相·卜）的 20+ 种命理方法装进一个可移植技能。**
+默认以《子平真诠》的月令格局为主线。《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》用于对应条款的补充与对照。不同体系的结论分开说明。
 
-[![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
+## 能做什么
 
-**简体中文** ｜ [English](README.en.md)
+- 排八字，处理出生地时区、夏令时、真太阳时和未知时辰。
+- 查询五部核心古籍的固定版本原文，返回章节、段落编号和相邻上下文。
+- 提供月令、透干、藏干等实际盘面依据，辅助逐项检查古籍条件。
+- 按用户当前所在地取得“今天”和“今年”，同次计算复用同一个时刻。
+- 用户点名时使用紫微、六爻、周易等其他方法。具体范围见 [方法路由](SKILL.md#方法路由)。
 
-</div>
+默认解读不使用工程旺衰评分、神煞吉凶套语、生肖分数或五格姓名结论。诊断接口保留计算信息，便于检查历史结果；这些信息不等于古籍判断。
 
----
+## 开始使用
 
-八字、紫微斗数、周易、六爻、奇门遁甲、风水、黄历、姓名学、塔罗……繁重的历法计算交给确定性 Python 脚本，Claude 依据参考文档解读。**仅供文化研习与自我反思，不构成医疗、法律、金融建议。**
+需要 Python 3.11 或以上，以及能读取技能文件、运行 Python 的宿主。安装与测试基线为 Python 3.11 / 3.12。
 
-## 目录
+1. 从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载对应版本 ZIP，解压。
+2. 进入解压后的 chinese-fortune 文件夹，运行：
 
-- [特性](#特性)
-- [快速开始](#快速开始)
-- [覆盖方法](#覆盖方法)
-- [工作原理](#工作原理)
-- [安全边界](#安全边界)
-- [质量保障](#质量保障)
-- [贡献](#贡献)
-- [许可与来源](#许可与来源)
-
-## 特性
-
-- **20+ 种方法，一个技能** — 命卜相术全覆盖，单一自包含 skill，无需后端、无需联网。
-- **确定性计算** — Python 脚本基于 lunar_python 排盘，模型负责条件化解释；数值启发式不冒充古籍定理。
-- **历法验证** — 八字与紫微共享时间归一化，支持显式真太阳时/钟表时、跨日与夏令时歧义。独立差分验证指定口径的四柱，时间处理另有边界回归；测试范围不等于证明所有输入或现实预测都正确。
-- **渐进式披露** — Claude 先加载小路由，再按需调用对应方法的文档与脚本，上下文最小化。
-- **有依据的解读** — 事实、古籍条款与候选解释分开，见 [输出契约](references/22-output-contract.md)。机器审核结构与引文；语义与现实预测效果需要独立评估。
-- **量子熵源（可选）** — 起卦/抽牌可用 `--entropy quantum` 接入 ANU 量子真空噪声（物理真随机，源不可达时优雅降级并如实标注；不声称提升准确度）。
-- **随机寻访** — `explore_cast.py`：QRNG 撒点 + 密度异常（attractor/void）+ 黄历吉方对照 + 安全提示，Randonautica 式散步灵感（明确非预测、非念力）。
-- **安全护栏** — 硬红线（不预测死亡、不做医疗法律金融决断、不接诅咒）+ 危机转介，内建于技能。
-- **工程化** — pytest、ruff、mypy、覆盖率门槛和发布校验；测试数量与覆盖率以对应提交的 CI 实际报告为准。
-
-## 快速开始
-
-从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载 `chinese-fortune-v*.zip`，按平台导入：
-
-| 平台 | 导入方式 |
-|---|---|
-| **Claude Code** | 解压到 `~/.claude/skills/` → 重启。压缩包内 `chinese-fortune/` 文件夹即技能。 |
-| **Claude.ai** | 设置 → Capabilities → Skills → **上传技能** → 选该 zip。 |
-| **OpenAI / 其他** | 解压到任意位置；agent 指向 `agents/openai.yaml`，把 `scripts/` 当工具调用。 |
-
-```bash
-pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
+```sh
+python -m pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
 ```
 
-导入后直接对 Claude 说话即可，技能按中英文请求自动触发：
+3. 按宿主的技能安装方式导入这个文件夹。宿主需要读取 SKILL.md，并能在同一 Python 环境运行 scripts/ 下的工具。
+4. 确认工具能运行：
 
-```text
-我 1990 年 5 月 10 日下午 2 点半出生，男，北京。详细批一下八字。
-帮我用铜钱起一卦，问要不要跳槽。
-2026 年 6 月想搬家，我属龙，哪几天合适？
+```sh
+python scripts/classical_search.py --validate
+python scripts/request_time.py --current-timezone Australia/Sydney
 ```
 
-脚本也可独立运行（输出结构化 JSON）：
+出现“缺少依赖”时，先确认安装命令和运行命令使用同一个 Python。出现时区错误时，提供城市对应的 IANA 时区，例如 Asia/Shanghai 或 Australia/Sydney。
 
-```bash
-python scripts/bazi_calc.py --year 1990 --month 5 --day 10 --hour 14 --gender male
-python scripts/yijing_cast.py coins --question "要不要接这个 offer？"
-python scripts/huangli_query.py --date 2026-06-15
+可以这样提问：
+
+> 我出生于 1990 年 5 月 10 日 14:30，男，出生地北京，现在住悉尼。请用白话解释这个盘的主要结构，重点说判断依据。
+
+> 《子平真诠》如何理解用神？请给原文位置，再用白话解释。
+
+仅查古籍不需要出生资料。排盘时不知道时辰就直接说明，系统保留三柱，不猜时间。
+
+## 直接运行
+
+白话盘面说明：
+
+```sh
+python scripts/bazi_reading.py --year 2000 --month 1 --day 15 --hour 10 --minute 30 --gender male --city 北京 --current-timezone Australia/Sydney --markdown
 ```
 
-`python scripts/<名>.py --help` 查看完整参数。从源码自行打包：`python scripts/build_skill.py`。
+这是可核对的盘面说明；完整个人解读仍需宿主阅读相关原文、检查条件并回答用户的问题。省略 --markdown 可取得结构化事实和原文检索结果。
 
-## 覆盖方法
+查原文：
 
-方法、资料和可调用脚本统一维护在 [SKILL.md 的路由表](SKILL.md#quick-router--pick-the-right-method)。Script 列为 `—` 的项目仅有资料支持；有脚本表示可计算表中所述范围，不表示涵盖所有流派或已经验证预测效果。具体流派限制见对应参考文档。
-
-## 工作原理
-
-```
-SKILL.md           路由：frontmatter 触发词 + 方法表
-references/        按需加载的传统资料与输出契约
-scripts/           计算引擎、共享模块与证据审核
-assets/            规则查表与古籍条款注册表
-evals/             发布校验、安装冒烟与真实回答评估（源码仓库）
-tests/             pytest 黄金值 + 边界 + 独立引擎差分
+```sh
+python scripts/classical_search.py --list-books
+python scripts/classical_search.py --book ziping --query 用神
+python scripts/classical_search.py --passage-id ziping:c008:p0001
 ```
 
-项目在 `lunar_python` 历法计算上实现时间归一化、格局候选与解读证据。2.0 的用神、喜忌最终值允许为空，调用方须检查状态与条件，详见 [迁移和验证说明](docs/OUTPUT-VALIDATION.md)。
+脚本参数见 python scripts/<脚本名>.py --help。明确历史或未来时刻时传目标日期时间；需要复现同次计算时，把 request_time.py 返回的 utc 传给后续工具的 --request-time。
 
-## 安全边界
+## 怎么看结果
 
-硬红线（见 [references/20-disclaimer.md](references/20-disclaimer.md)）：不预测死亡日期、不做医疗 / 法律 / 金融决断、不接诅咒加害、不归咎他人、不推销付费“化解”。每次解读都以“启发性倾向”呈现并附简短免责；遇急性危机信号转介求助资源。
+好的回答应直接说明三件事：盘上有什么、古籍为什么这样解释、哪些条件尚未满足。术语随文解释，古文作为依据，不让用户先读懂一串术语。
 
-## 质量保障
+“藏干”表示地支中包含的天干；“透干”表示它也出现在天干一排。查到这些位置不自动表示格局成立。时柱未知或条款条件不足时，会明确说明影响范围。
 
-```bash
-python -X utf8 evals/run_checks.py     # 发布校验（7 项）
-python -m pytest tests/                # 单元 + 集成 + 独立引擎差分
+[正文示例](docs/OUTPUT-EXAMPLE.md) · [输出规则](references/22-output-contract.md) · [迁移与验证](docs/OUTPUT-VALIDATION.md)
+
+## 古籍库的完整性
+
+以 knowledge/manifest.json 冻结的作品、版本和目录为准：
+
+- **全文收录**：逐章保存，检查目录、文件和段落摘要，缺章不能通过完整性检查。
+- **来源可追溯**：每段保留来源、版本、章节和文字层次。
+- **规则可用**：个人解释还需检查该条的前提与例外。全文收齐不代表所有规则已经自动实现。
+- **影像校勘**：单独记录，未实际校勘就不标为已校。
+
+[来源与授权记录](docs/CLASSICAL-SOURCES.md) 说明各书采用的版本、收录范围和尚存问题。古籍记载与现实预测效果分别验证，不把测试通过率当命中率。
+
+## 开发和验证
+
+以下命令在 Git 源码仓库执行；发行 ZIP 只含运行文件，不含开发依赖与测试集。
+
+```sh
+python -m pip install -r requirements-dev.txt -c constraints-dev.txt
+python -m ruff check .
+python -m mypy scripts/
+python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
+python -X utf8 evals/run_checks.py --checks-only
+python scripts/build_skill.py
+python -X utf8 evals/package_smoke.py
 ```
 
-CI（Python 3.11 / 3.12）强制执行五道门：
+--checks-only 用于前一步完整 pytest 已通过的情况。CI 结果见 [Actions](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)。实际回答评估与工程测试分开，见 [验证说明](docs/OUTPUT-VALIDATION.md)。
 
-| 门 | 内容 |
-|---|---|
-| `ruff` | 代码规范，0 容忍 |
-| `mypy` | 静态类型检查 |
-| `pytest` | 规则、边界、CLI、独立引擎差分与内容审核回归；具体通过/跳过数见 CI |
-| coverage | 追踪 scripts 与 evals（含子进程），低于 80% 失败；实际值见 CI |
-| harness | SKILL.md 校验 + 解读纪律锁 + 19 场景机器断言 + 脚本 JSON 合法性（7 项） |
+## 项目范围和许可
 
-## 贡献
+当前主线是八字五书及其可核查的解释。其他方法按各自覆盖范围开放，不自动混入综合结论；见 [可选方法](references/23-optional-methods.md)。
 
-欢迎 PR——更深的紫微 / 玄空飞星逻辑、更多 `evals` 场景、繁體翻译。提交前请跑 `evals/run_checks.py` 与 `pytest`，详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+代码采用 [MIT](LICENSE)。古籍原作、转录整理和来源页面的授权分别记录于知识库清单及来源说明；不能把代码的 MIT 许可套用到所有第三方资料。
 
-## 许可与来源
-
-[MIT](LICENSE)。基于经典文献（《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》…）与 [`6tail/lunar-python`](https://github.com/6tail/lunar-python)。解读属于有条件的传统解释，仅供文化 / 教育参考，不代表经过统计验证的事件概率。
-
-## 2.0 输出与验证
-
-用神与喜忌可能返回 `primary: null`，先读 `status` 与 `yong_shen.views`。这表示候选条件未核实，不是字段缺失。古籍的正文、注文和项目整理分开，见 `assets/classical_evidence.json`。
-
-八字/紫微默认 `--time-standard true-solar`，需要钟表时请显式指定 `clock`。有重复当地时间时用 `--fold 0/1`。
-
-内存接口：`calculate_bazi(build_parser().parse_args(argv))`，紫微对应 `calculate_ziwei`。CLI 仍输出 UTF-8 JSON。
-
-真实回答评估：`evals/reading_cases.json` 有 30 个场景；`python -X utf8 evals/evaluate_readings.py --responses recording.json` 检查实际回答及审核记录。没有实际回答或语义评审即不通过，场景文件自身不代表模型已通过。详见 [验证说明](docs/OUTPUT-VALIDATION.md)。
+用于传统文化研习。医疗、法律、投资等现实决定应依据相应专业信息。

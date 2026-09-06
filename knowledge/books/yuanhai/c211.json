@@ -1,0 +1,125 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c211",
+  "title": "九月建戌候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/211/",
+  "revision": "sha256:29fa68ff66050f0f09772b78c055237d0049f856d6d468a4965e7bf0b95163b1",
+  "source_timestamp": "2026-09-06T04:11:06.189605+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c211.html",
+  "raw_sha256": "29fa68ff66050f0f09772b78c055237d0049f856d6d468a4965e7bf0b95163b1",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "九月建戌候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "九月建戌候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0002",
+      "sha256": "2ee3262f07f61feb1455561833f7c3fe4161caf6bf40c20e376b566a48b14f55"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "九月戌中藏火土，庚辛不忌日无根，格中若有财官印，运到南方福禄亨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0003",
+      "sha256": "496380daa663d1f69e8673592d7803c7ef400d2c6005f07640aae9732d0a0284"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "眉批：九月戊土十八日，辛金七日，丙火库五日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c211:p0004",
+      "sha256": "244eda081495a79956a209f13438cb60f1e67cbb1fc54fa2200c5af9125bece2"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "甲乙之木九月生，木衰金旺怕庚辛，如临水火兴家计，金水才来祸便行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0005",
+      "sha256": "c5a0600e8b92d2d2c0bef0d7f5d61e9b4c06b31499585bd7aa564ed22d4f125d"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "财官印绶九月临，发旺升腾见卯寅，顺去北方行子丑，逆行嫌酉破逢申。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0006",
+      "sha256": "f1cb692ce4cf208176a42af2322fadc733899577fd6d62fab34b054699761d78"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "戌月金生藏火土，或行南北或行东，不分顺逆高低格，大运辰逢寿必终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0007",
+      "sha256": "97dc09b4b6e744ccc0a99a401ff040bffb688a453ed44e4f027e40fae74d2774"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "眉批：言日干是金，生於九月中，土为印绶，逢辰则冲官矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c211:p0008",
+      "sha256": "b8568015248f3a79be8f8d3ada24845231c7b8c9f8c8e9e48601997c44c20c52"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "壬日无根戊己多，生於九月忌财过，逆行休用南方午，寅若如逢奈若何。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0009",
+      "sha256": "a7bc8a17f7960bd40d469d21303c2406053c8913a3afe240d625e919127e1ee0"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "丙丁无主戌中旬，财透天干作用神，此格伤官杀喜旺，只愁身旺尽伤官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c211:p0010",
+      "sha256": "1b6c9a0c24401b807cf6bce7e602fdbe332c73ef53c9d38f8d35a9b24adeb40f"
+    },
+    {
+      "section": "九月建戌候诗诀",
+      "text": "眉批：南方火生土，东方木克土，此火土伤官格，以壬癸为杀。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c211:p0011",
+      "sha256": "07263695210c5d09b24f72b5d37bc34e416512f14b04b634c016e96cadfd75b9"
+    }
+  ]
+}

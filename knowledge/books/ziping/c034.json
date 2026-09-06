@@ -1,0 +1,74 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c034",
+  "title": "三十四、論財取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3747.html",
+  "revision": "sha256:a53957bc70fe5fb058758043bd7eb504254f6bf7ac0c780b09d09863d7b8c83f",
+  "source_timestamp": "2026-09-06T04:17:08.873Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c034.html",
+  "raw_sha256": "a53957bc70fe5fb058758043bd7eb504254f6bf7ac0c780b09d09863d7b8c83f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十四、論財取運",
+      "text": "財格取運，即以財格所就之局，分而配之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0001",
+      "sha256": "45720ad545bc92c90acea80ae0f5cb3d7cd7464fb1a3a70fa11a10a82d9c6699"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "其財旺生官者，運喜身旺印緩，不利七煞傷官；若生官而復透印，傷官之地，不甚有害。至於生官而帶食破局，則運喜印綬，而逢煞反吉矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0002",
+      "sha256": "b769ad6fd1d9f75d913e4457172bc497b09ef1dfa5bb2a9840138ba0d924290c"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "財用食生，財食重而身輕，則喜助身；財食輕而身重，則仍行財食，煞運不忌，官運反晦矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0003",
+      "sha256": "c1a384aef29c12376b4bebeb1299eb809705833652a640d91b19ad6492e4b61d"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "財格佩印，運喜官鄉；身弱逢之，最喜印旺。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0004",
+      "sha256": "2b2a268cbf66bdb1e72c129f276ca8a8ace00c2fa2b38ead9132dd641ec38fa4"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "財用食印，財輕則喜財食，身輕則喜比印，官運亦礙，煞反不忌也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0005",
+      "sha256": "655795ed5ea0854bd80a8738edcb095a3e0bbad40940fb3f953b7a5cf87a6c9f"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "財帶傷官，財運則亨，煞運不利，運行官印，未見其美矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0006",
+      "sha256": "3ba319c8e5096ae7055d499401f43de85fcc136fa159280009c540032e8b8552"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "財帶七煞，不論合煞制煞，運喜食傷身旺之方。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0007",
+      "sha256": "781f3318f98a0decc353d11d51caea2769b110e0f6812b5e5f6beebc07eb23ce"
+    },
+    {
+      "section": "三十四、論財取運",
+      "text": "財用煞印，印旺最宜，逢財必忌。傷食之方，亦順意矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c034:p0008",
+      "sha256": "5aacc4f01b39a24b75c44b6b9f2124bec3f148f6c22ec740d2cb25c4e3069d25"
+    }
+  ]
+}

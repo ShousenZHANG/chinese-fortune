@@ -35,6 +35,11 @@ def test_runtime_files_present(package):
     names = set(zipfile.ZipFile(package).namelist())
     for must in [
         "chinese-fortune/scripts/bazi_calc.py",
+        "chinese-fortune/scripts/bazi_reading.py",
+        "chinese-fortune/scripts/request_time.py",
+        "chinese-fortune/scripts/classical_search.py",
+        "chinese-fortune/knowledge/manifest.json",
+        "chinese-fortune/docs/CLASSICAL-SOURCES.md",
         "chinese-fortune/scripts/utils.py",
         "chinese-fortune/scripts/requirements.txt",
         "chinese-fortune/assets/64hex.json",
@@ -51,7 +56,7 @@ def test_no_dev_cruft_leaked(package):
     names = zipfile.ZipFile(package).namelist()
     leaks = [n for n in names if any(x in n for x in (
         "/tests/", "test_", "/evals/", "__pycache__", ".pyc",
-        ".bak", "/.git/", "_competitors", "build_skill",
+        ".bak", "/.git/", "_competitors", "build_skill", "import_classics",
     ))]
     assert leaks == [], f"dev cruft leaked into package: {leaks}"
 

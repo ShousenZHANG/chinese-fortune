@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c270",
+  "title": "沐浴诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/270/",
+  "revision": "sha256:b146dab40a120712b2bef8f7eb384f63be315abb9e26a1c601c52ea41a570c5b",
+  "source_timestamp": "2026-09-06T04:11:19.954521+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c270.html",
+  "raw_sha256": "b146dab40a120712b2bef8f7eb384f63be315abb9e26a1c601c52ea41a570c5b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "沐浴诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "沐浴诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0002",
+      "sha256": "983834464d7d602b6621bf7ff76b31f839a6b2c82f8294f86ce721b12f1c601b"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "沐浴凶神切忌之，多成多败少人知，男人值此应孤独，女命逢之定别离。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0003",
+      "sha256": "2ce6f43b07e2f299c28fc678c416af8491a1e3e7feaaf608253e53b52cfb7015"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "沐浴那堪吉位逢，更兼引从在其中，读书必定登科甲，莫比诸神例作凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0004",
+      "sha256": "0d3d86ffc31c5f73a0b5de9c49f5557861b945aad6f53dbd21715770fca8aef3"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "桃花沐浴不堪闻，叔伯姑姨合共婚，日月时胎如犯此，定知无义乱人伦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0005",
+      "sha256": "37131917bb496930755a9c0b5bd264a4ed6199e7ede93b25a61056ef4af608ac"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "咸池无禄号桃花，酒色多因败坏家，更被凶神来克破，疾赢病死莫咨嗟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0006",
+      "sha256": "eee4e8506176041c1e108228b5d74603cc4dd92e1580ec6834d81b9e25305c9b"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "女命若还逢沐浴，破败两三家不足，父母离乡寿不长，头男长女须防哭。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c270:p0007",
+      "sha256": "1ad190f2d5c88fbddbc9ffc49cfeeefc7a248c615cf7d4a7686d0ce0b8ad584f"
+    },
+    {
+      "section": "沐浴诗诀",
+      "text": "眉批：沐浴，五行强以见弱之地，如人初生浴于水中无力，掌持极恰也。在命前为引，在命後为行。沐浴又为桃花杀同看，子午卯酉全之局也主淫乱。咸池星，即桃花杀，主酒色亡家，女人更忌生於此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 89,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c270:p0008",
+      "sha256": "da8e9025456997121fd54d38996a8d5ccf60725ceb51efc5a5958291ad0ba58f"
+    }
+  ]
+}

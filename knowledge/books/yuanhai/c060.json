@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c060",
+  "title": "又论节气歌",
+  "source_url": "https://luckclub.cn/bazi/001/060/",
+  "revision": "sha256:26d611e08a9e6da72e1abc22bfca1010e5575736a8596753085def5f470517fd",
+  "source_timestamp": "2026-09-06T04:10:36.523857+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c060.html",
+  "raw_sha256": "26d611e08a9e6da72e1abc22bfca1010e5575736a8596753085def5f470517fd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "又论节气歌",
+      "text": "又论节气歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0001",
+      "sha256": "900dcd2af4237de9cc4e03adc10dff2cfb92770c8f16e029ad30263040542451"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "看命先须看日主，八字始能究奥理。假如子上十日壬，中旬下旬方是癸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0002",
+      "sha256": "ae573ee4e3c01e76b4da86ea3c72477ed5e1334eb42faf342d4aede4c62da5e4"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "丑宫九日癸之余，除却三辛皆属己。寅宫戊丙各七朝，十六甲木方堪器。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0003",
+      "sha256": "d0af4e2b95bf48842e07f6e2f5668ea94ea1253177a597815f3f41a251f5132f"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "卯宫阳木朝初旬，中下两旬阴木是。三月九朝仍是乙，三日癸库余戊奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0004",
+      "sha256": "592f2c7d40174d3276e3bf8836d9fde20f8c71a6e88ee336e95122edf0911553"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "初夏九日生庚金，十六丙火五戊时。午宫阳火属上旬，丁火十日九日己。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0005",
+      "sha256": "ae6f37750d24fc7862e4f55077c22a89d318853cf7690c619998f318837b9746"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "未宫九日丁火明，三朝是乙余是己。孟秋己七戊三朝，三壬十七庚金备。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0006",
+      "sha256": "d4d2de59c631330c0616c2c73ce746aa1952011fdb6663dd325edeb2b753aaba"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "酉宫还有十日庚，二十辛金属旺地。戌宫九日辛金盛，三丁十八戊土具。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0007",
+      "sha256": "8a1df30de9d65faf4dc32608285e41d02eae29d0ee2f23f548d5c3663f7a4674"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "亥宫七戊五日甲，余皆壬旺君须记。须知得一拟三分，此诀先贤与验秘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c060:p0008",
+      "sha256": "e98d18374c37d8d8ae8bc306a7546b9c41b96697868cd135b8041c933abf9693"
+    },
+    {
+      "section": "又论节气歌",
+      "text": "眉批：子宫初一日生至初十日生，当取壬水，十一日生至三十日生方取癸水，余仿此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c060:p0009",
+      "sha256": "8fd233774f73a45e06a54bc31664f2f0bc107483e402ddcff2abd26cd0ea3250"
+    }
+  ]
+}

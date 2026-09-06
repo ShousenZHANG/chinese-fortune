@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c031",
+  "title": "君臣論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F31&oldid=844382",
+  "revision": "844382",
+  "source_timestamp": "2017-03-23T15:48:07Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c031.wiki",
+  "raw_sha256": "4ff7045fb606d1131422e7826c62e9a534f864d1c068789ebd4c020b029e9ba1",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "君臣論",
+      "text": "君不可抗也，貴乎損上以益下。",
+      "layer": "base_text",
+      "passage_id": "ditian:c031:p0001",
+      "sha256": "b9792afaba2e959d96aa17d3a98f10aa2b56acfc7cee01978c190a6f39deb29e"
+    },
+    {
+      "section": "君臣論",
+      "text": "日主為君，財星為臣，如甲乙日主，滿盤是木，內有一二點土，是君盛臣衰，要助其臣，火生之，土實之，金衛之，（官制劫以衛財）其勢要多，庶幾上全而下安。",
+      "layer": "commentary",
+      "passage_id": "ditian:c031:p0002",
+      "sha256": "f194e3ff2cf544cbf354907084ce54b43e4960c714052eec2ed0af4b8ad6a5e0"
+    },
+    {
+      "section": "君臣論",
+      "text": "臣不可過也，貴乎損下益上。",
+      "layer": "base_text",
+      "passage_id": "ditian:c031:p0003",
+      "sha256": "f90b27ef28ca07e55fa99d39f53ab8e76321c6dca3d3fbfa6d7e2ae2156b20c8"
+    },
+    {
+      "section": "君臣論",
+      "text": "日主為臣，官星為君，如甲乙日主，滿盤是木，內有一二點金，是臣盛而君衰，要土金勢盛，方能助其君，用帶土之火以洩木氣，用帶水之土以生金，庶君安而臣全，若木火太盛，不得已存君之子，用水之氣，（用印）一路行水運，小能發福。",
+      "layer": "commentary",
+      "passage_id": "ditian:c031:p0004",
+      "sha256": "ace7e695517fb18907605ddc727cd4b9ab3d3c263bf44913aa76c27cd2702419"
+    }
+  ]
+}

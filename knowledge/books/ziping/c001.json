@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c001",
+  "title": "一、論十干十二支",
+  "source_url": "https://www.donglishuzhai.net/chapter/3714.html",
+  "revision": "sha256:c13cf839724d3d1b434b5e955249afdbaf6ab0ad57328468db3767f37b015f5c",
+  "source_timestamp": "2026-09-06T04:16:48.025Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c001.html",
+  "raw_sha256": "c13cf839724d3d1b434b5e955249afdbaf6ab0ad57328468db3767f37b015f5c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "一、論十干十二支",
+      "text": "天地之間，一氣而已。惟有動靜，遂分陰陽；有老少，遂分四象。老者極動極靜之時，是爲太陽太陰；少者初動初靜之際，是爲少陰少陽。有是四象，而五行具於其中矣。水者，太陰也；火者，太陽也；木者，少陽也；金者，少陰也；土者，陰陽老少、木火金水沖氣所結也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c001:p0001",
+      "sha256": "045abe37f77706fc913a26627b98a037313805a7e0ce6d10e7134b4ef1bf319c"
+    },
+    {
+      "section": "一、論十干十二支",
+      "text": "有是五行，何爲又有十干，又有十二支乎？蓋有陰陽，因生五行，而五行之中，各有陰陽。即以木論，甲乙者，木之陰陽也。甲者，乙之氣；乙者，甲之質。在天爲生氣，而流行於萬木者，甲也；在地爲萬木，而承茲生氣者，乙也。又細分之，生氣之散布者，甲之甲；而生氣之凝成者，甲之乙。萬木之所以有是枝葉者，乙之甲；而萬木之枝枝葉葉者，乙之乙也。方其爲甲，而乙之氣已備；及其爲乙，而甲之質乃堅。有是甲乙，而木之陰陽具矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c001:p0002",
+      "sha256": "f8ec84372d8261d10ed03fff069ee33bc9aae5eafa4130c35e92401065e47e84"
+    },
+    {
+      "section": "一、論十干十二支",
+      "text": "何以復有寅卯？寅卯者，又與甲乙分陰陽天地而言之者也。以甲乙而分陰陽，則甲爲陽，乙爲陰，木之行於天而爲陰陽者也；以寅卯而分陰陽，則寅爲陽，卯爲陰，木之存乎地而爲陰陽者也。以甲乙寅卯而統分陰陽，則甲乙爲陽，寅卯爲陰，木之在天成象而在地成形者也。甲乙行乎天，而寅卯受之；寅卯存乎地，而甲乙施焉。是故甲乙如官長，寅卯如該管地方。此其甲祿於寅，乙祿於卯，如府官之在郡，縣官之在邑，而各司一月之令也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c001:p0003",
+      "sha256": "ccd10b3a5e776f8f3287256c093067ddcc7a6ea8fea84823711a1b8be9d3015a"
+    },
+    {
+      "section": "一、論十干十二支",
+      "text": "甲乙在天，故動而不居。建寅之月，豈必常甲？建卯之月，豈必常乙？寅卯在地，故止而不遷。甲雖遞易，月必建寅；乙雖遞易，月必建卯。以氣而論，甲旺於乙；以質而論，乙堅於甲。而俗書謬論，以甲爲大林，盛而宜斵；乙爲微苗，脆而莫傷，可爲不知陰陽之理者矣。以木類推，餘者可知。惟土爲木火金水沖氣，故寄旺於四時，而陰陽氣質之理，亦同此論。欲學命者，必先須知干支之說，然後可以入門。",
+      "layer": "base_text",
+      "passage_id": "ziping:c001:p0004",
+      "sha256": "338cb96da3b10d8408e7c567ae45cca4e240884687bcdac3ffc186c9f228a72a"
+    }
+  ]
+}

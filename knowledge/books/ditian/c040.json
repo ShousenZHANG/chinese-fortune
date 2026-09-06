@@ -1,0 +1,74 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c040",
+  "title": "地位論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F40&oldid=844391",
+  "revision": "844391",
+  "source_timestamp": "2017-03-23T15:49:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c040.wiki",
+  "raw_sha256": "4274bdba492e09f130af7b7bf77861f0fc3d161abdf6ed88372d1b53154d1647",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "地位論",
+      "text": "臺閣勳勞百世傳，天然清氣顯機權。",
+      "layer": "base_text",
+      "passage_id": "ditian:c040:p0001",
+      "sha256": "c57eec04741642d411acbd1a872d777fd3d874402f853b7e13f46150af1c9a48"
+    },
+    {
+      "section": "地位論",
+      "text": "若為公為卿，必清中有一種權勢出人處。",
+      "layer": "commentary",
+      "passage_id": "ditian:c040:p0002",
+      "sha256": "00386b3a2754e809332a800d2b4afd02ac252e60868bf49af581918aea255183"
+    },
+    {
+      "section": "地位論",
+      "text": "職掌兵權豸冠客，刃殺神清氣勢特。",
+      "layer": "base_text",
+      "passage_id": "ditian:c040:p0003",
+      "sha256": "758b7d09bb5369d746a5200c29f445b7534952a6c37409ea1c640c81b8cb1692"
+    },
+    {
+      "section": "地位論",
+      "text": "掌生殺風紀，氣勢必起，清中精神自異，或刃殺兩顯者。",
+      "layer": "commentary",
+      "passage_id": "ditian:c040:p0004",
+      "sha256": "a48a1edf214d9f936e2abf3fd0ba9ebf55f7b262dabe8287ab1fc1921401d0fe"
+    },
+    {
+      "section": "地位論",
+      "text": "分藩司牧財官和，清奇純粹局全多。",
+      "layer": "base_text",
+      "passage_id": "ditian:c040:p0005",
+      "sha256": "60fcf6f3640699ac639cfae5b99cd2640910a37346290064e6af2b7ee35f9860"
+    },
+    {
+      "section": "地位論",
+      "text": "方面官財和順，清奇純粹，格正局全，又有一般精神。",
+      "layer": "commentary",
+      "passage_id": "ditian:c040:p0006",
+      "sha256": "cecf3e42e8c419b7a9d73030939e52732cfa2fa3e35e1fc9cad5c94b8b5f2cf1"
+    },
+    {
+      "section": "地位論",
+      "text": "便是諸司並首領，也從清濁分形影。",
+      "layer": "base_text",
+      "passage_id": "ditian:c040:p0007",
+      "sha256": "c23ed794138e195640995cf578f0e9a8534ee0d27680fabee20a8fb6fdb4bf0b"
+    },
+    {
+      "section": "地位論",
+      "text": "至貴者一以清而位乎上，即膺一命之榮，如雜職佐貳首領等官，亦莫不有股清氣，與濁者自別，然清濁之形影最難辨，不專是財官印綬內有清有濁，凡格局，氣象，用神，合神，日主化氣，從氣，精氣，神氣，次序收藏，發生意向，節度情性，理勢源流，主從之間皆有之，先於皮面上尋其形影，得其形影，而遂可以尋其精髓，乃論大小尊卑耳。",
+      "layer": "commentary",
+      "passage_id": "ditian:c040:p0008",
+      "sha256": "7a06f07a14c3b0bff4df3eb9c1361f9d51cf3a2ac4a846c2f813c1b84a32990f"
+    }
+  ]
+}

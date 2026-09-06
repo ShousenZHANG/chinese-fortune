@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c062",
+  "title": "论四季大节诀",
+  "source_url": "https://luckclub.cn/bazi/001/062/",
+  "revision": "sha256:363849ce798b5279612a6c81cdfbddc57b5122322709cf94cb0b2f17ecde04fd",
+  "source_timestamp": "2026-09-06T04:10:36.672295+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c062.html",
+  "raw_sha256": "363849ce798b5279612a6c81cdfbddc57b5122322709cf94cb0b2f17ecde04fd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论四季大节诀",
+      "text": "论四季大节诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c062:p0001",
+      "sha256": "2dba37b03f58b9320fe10fced38fdcd1f783f134db499ccadf83d2fdaa601747"
+    },
+    {
+      "section": "论四季大节诀",
+      "text": "今岁要知来年春，但加五日三时辰。立春三日便逢秋，隔岸退位夏更机。再过三朝冬又到，六郎又去打春牛。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c062:p0002",
+      "sha256": "4e4469cba4c516f2d86eef98520910ce13603ce5fd5f5afec3812d3d6f888b7e"
+    },
+    {
+      "section": "论四季大节诀",
+      "text": "此法如嘉靖一十七年，岁在戊申年十二月十七日，甲子日午时立春是二十年。今余令要知来年春，但加五日三时辰。如甲子日立春，至己巳日酉时便是五日三时辰，本年十二月二十八",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c062:p0003",
+      "sha256": "3cac3da0a8c26beafcfa6cf7651129bf08bcbf995612e9f7c0a89e7cdeda38a3"
+    },
+    {
+      "section": "论四季大节诀",
+      "text": "日己巳酉时交春二十年节。立春三日便逢秋：甲子日春至丁卯日丑时是三日六个时辰，六月二十四日丁卯日丑时交秋。隔岸退位复更临：丁卯日秋对丁酉乃是隔岸，天干不动，地支冲退丙申一位，乙未日酉时是，三月二十日乙未酉时立夏。再过三朝冬又到：或二日乙未日立夏，戊戌巳时冬至，九月二十六旧戊戌巳时立冬。年年以立春为主，余皆例此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c062:p0004",
+      "sha256": "b7569320a0a04482cf8d53ee433bf700e97a370d76acfb6a6071774dafdec914"
+    }
+  ]
+}

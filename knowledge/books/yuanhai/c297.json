@@ -1,0 +1,984 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c297",
+  "title": "渭泾篇",
+  "source_url": "https://luckclub.cn/bazi/001/297/",
+  "revision": "sha256:365a2f84d3358429ec9995d9d8ced2827cc1517f2d3f47c36800441b260a06a2",
+  "source_timestamp": "2026-09-06T04:11:27.396139+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c297.html",
+  "raw_sha256": "365a2f84d3358429ec9995d9d8ced2827cc1517f2d3f47c36800441b260a06a2",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "渭泾篇",
+      "text": "渊海子平卷七",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0001",
+      "sha256": "6b80087542a73aa2a75d1af474ca2cda84e4b0f80256e05bc5a13ae1bac1e7f3"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "渭泾篇",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0002",
+      "sha256": "1d1723491d273c32be969fb2db0653f1392589cd6e8edbb74a8f4d6e47030042"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命以柔为本，以刚为刑，以清为奇，以浊为贱。八字之刚柔清浊宜细辩之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0003",
+      "sha256": "a307cdf868b7f52f714a3e1939cbe210244a7a04402a1680c3baf969877157b2"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "三奇得位，良人万里可封侯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0004",
+      "sha256": "59bc7aa865953f0334b83f3fa1b948ab8542619b668e6bffc681f7b58f6941c4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "三奇者，财官印也。女命以官星为夫，如甲生人见辛为官，即夫也。辛金长生於子，旺于申酉之地；以己土为财，得辰戌丑未之地；以癸水为印，得亥子丑之方；皆得其位，主其夫有贵，故曰万里封侯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0005",
+      "sha256": "615dfc2538f629178d0a05adc0ff28c8362d69fbaeb5fa9030591b35e136d8ad"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "二德归垣，贵子九秋能步月。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0006",
+      "sha256": "82d214283381c6bb294796e2d17e161a8d3fbcb0a3225c3732cffaa5e6cdf602"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "二德者，天月二德也。女命带之，当主生贵子。(归垣是有两种解释：1、日主的长生名垣城，天月二德临日主长生；2、为二德临日柱时柱。步月指考试过关。从此句话全面理解是指日时柱见天月二德则会儿女学业优秀，事业有成。母会以子而贵，因为日时为子女宫。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0007",
+      "sha256": "b64e713c73d94baddb12cf87835703cf093516f66673e51fb3f42d7e7e4d0fab"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "一官一贵，乌云两鬓拥金冠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0008",
+      "sha256": "f2d6646aba1158937dff9ea02a15d1d4ff00bff714a983851800c33188463637"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命只取官星一位，无官取七杀一位，贵人取一位，毋得重见，重见即二夫也。亦要乘旺，禄马暗合，主有此贵。贵人不宜重见，多者乃为贵重合多之论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0009",
+      "sha256": "c0296ee8a8add34f657b3be6ad3f6e8bd1e9613a586458a1804868186a50a82c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "四杀四空，皎月满怀啼玉筋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0010",
+      "sha256": "9398c63ba171e37472ec17ca0f10b56d3436569a7f089ca616084f53e8e290d4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命忌煞多，并四柱空亡，主克夫伤子，重婚再嫁，还主孤单，故云啼玉筋。玉筋者，泪痕也。冬月天寒极矣，啼哭泪已结冰，如玉筋之状，故曰玉筋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0011",
+      "sha256": "45cdbf23f565b77468350ecf449124187714c7a485dfbcbfdcad6623774be44f"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "官行官运，镜破钗分。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0012",
+      "sha256": "4730fcfd496fd0f87ce0ccece624e5fc2631f12ee4233ba268cb44afdda7284c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女人命中只取一位正官为夫，又行官星之运，则又遇一夫星也，岂不为二夫争一妻也，必主分离之事。如甲以辛金为一夫矣，若又遇辛酉之地，主有克夫再嫁之理。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0013",
+      "sha256": "d9f1b4dd7cc9f0354eb2e124f399099a41d43a1c9c5aabad8281f30ff9588476"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "财入财乡，夫荣子贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0014",
+      "sha256": "25ae5e6a1236711d577b53442d59882c51e4797bb639e7e85e3d633b15be8fe3"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "柱中财得地，又行财运，此运旺夫而益子。财者，命之源也。男命以财为妻，故谓之妻财。女命以财而事夫，则其夫荣矣。凡女人之命，有财得地，又行财运，而财更盛，定主其夫家富贵，其子亦贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0015",
+      "sha256": "ede566c9e0f3a46459a909b04f676f2a05d3d2d04a576ef53607b98f891305ca"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "衣锦藏珍，官星有气。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0016",
+      "sha256": "3233072e2d031e1cec56b4481ee7edcb396330449fb7e6d3ffa3b03459aa9874"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "官星者，女人之夫星也。五行中得生旺无冲者，主其夫亦荣贵，故身衣锦而藏珍宝也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0017",
+      "sha256": "66391cfc06fc52aebd64cfc6ba3f183cfb1536be7429a6c4a63e34dcdb90edae"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "堆黄积白，财库无伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0018",
+      "sha256": "0f05a7d66e3294510be93496317918aee9a8a1fb5699bef83386cc4fc2c66247"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "黄白者，金银也。凡人有财丰厚者，必得财库以藏之。以辰戌丑未为四库，即藏财物仓库。恐有伤之，伤之则散矣，又岂能保其长富呼？",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0019",
+      "sha256": "3f291dd78b8f8615d5f7fb0d2e7db3ccd66aa8a4304b8f23e6a09d185c10abad"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "大抵官多不荣，财多不富。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0020",
+      "sha256": "3c125b47d329900a87f8edf00e098b43b23e16cced2d3b05471574bb97429ae0"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命官多者，夫则多，又岂得为荣哉？且男子衆多，与一女共处一室，如柳巷花街之流，安得有荣？而且有辱其身者也。但凡女命官多者，取其一官为主，以去留舒配之意断之，只得其发富，不得其荣华。财我者以事他人，自己亦不能富矣。且女命随其夫之贵贱，委身於人，岂由自身者呼！",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0021",
+      "sha256": "96ce9ac9f558eb5a0b0d05a1e01b2e373688f9aea19932508c1c88dfba5e4900"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "用正印而逢枭，兰阶夜冷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0022",
+      "sha256": "57ff5731ceb221d9345a1872c76580b1aaa54bf62f011e6978b6c52d6901cdd7"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "正印者，生我之母也。如甲人以癸水为正印，又逢壬水为偏印。女命以正印为用，又逢枭神，未免有侵淩之祸，主其人有兰阶夜冷之凄凉也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0023",
+      "sha256": "6e96929ea181fd79306d2129d0755e072af527215c56cdfed15b2dac687580b7"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "用枭神而遇印，玉树春荣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0024",
+      "sha256": "9d8de41bfb039763f240b987be499a2374776675c7b1afb5d8183becb9d30cfb"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "枭神不仁之人，正印慈善之君，虽恶人得善人正之为恶亦反福矣。凡女命以枭神为用，遇正印则为吉助，如玉树生於春风中。(此言身弱食伤多用印星和用枭神的区别。兰阶比喻子孙的孝养，玉树是指子孙是否会像槐书一样俊美成材。古人多以庭阶生兰芝玉树为儿孙秀发，见《晋书·谢玄传》。同样是身弱为什麽用印比枭神好呢？因为第一枭能夺食，第二它与日主同性相生，会有所保留，不如正印生身那样阴阳相生而无私。见偏印夺食则主子早夭或无子，或子孙不成材。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0025",
+      "sha256": "532389a7a220d51d35d6c5b72c8a4b26a0605c8bfcce7f29cbea0eb714456e41"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "金清水冷，日锁鸾台。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0026",
+      "sha256": "fb3df952adf9d55474cb9008339a420dc860667969c2d13cd1eb8030497c771c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "金生冬月之间，水且寒矣，且金为水之母，金泄气过多，而水又冷，则为骨肉无情之论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0027",
+      "sha256": "d28bccef90c387c70e7370100cb8f29789140dc56a3ad3a5eafbc861220322dc"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "土燥火炎，夜寒衾帐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0028",
+      "sha256": "7762e67b22a977b4e440868baf1d130defc0a030f36ada8b2342fd296138d7ea"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "土生夏月，火已盛，且土赖火生，火越盛而土越燥，正谓子枯母盛之论。女命遇此，主孤单无依之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0029",
+      "sha256": "bb0d3b4ee36d3b5c55d17cb111446d597ecdf3228ed902269b2644bb2a6bc3a7"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "群阴群阳，清灯自守。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0030",
+      "sha256": "4a84271c153fc931ddeba57cbce90c90ab111e0e9b6a316e054b797a8802491a"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "五行天干地支，俱见阴者，谓之群阴，俱见阳者，谓之群阳，无相济之理。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0031",
+      "sha256": "00f4664c026de69f76789cf46adb28d4a113a4ad900c22e5c1f8464495d7b23c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "重官重印，绿鬓孤眠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0032",
+      "sha256": "04dfa73418bb2ab5d1693f3860cc07ed8b2079f20026e9c65e980b10910b2165"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命只喜一官一印，则为一夫。如重见则为重夫，必主克夫。虽少年且有孤眠独宿之意，假使有不克夫者，亦主远别离隔，经年未交欠合，纵荣贵亦难免於此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0033",
+      "sha256": "bdaf850b5fa11d72d61acb6a56835bad3eb376f5226f231039a274db23a8a2c1"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "田园广置，食神得位不逢官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0034",
+      "sha256": "4bc8063b14e03349684387e08b60d85744f6ccda863e9eaca151bba9ae7c5a6e"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "食神者，女命以之为子。子星得位，则可以养母。食神主衣禄丰厚，女命甲生人，以丙为食神，甲能生丙，以丙为子，子能得禄，未有不养其母者也。甲见辛为官，且辛与丙合，使恋其子而忘其妻，则忘其母之谓，故云不逢官可矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0035",
+      "sha256": "866fc2b9cd975e22472c461fa877f50158cfd80c3962c5534088af0cfe881b14"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "粟帛盈余，印绶逢时还遇煞。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0036",
+      "sha256": "fd9f9734b0a512d145f5fac1bf4cc606b15a576bdc106d5ac652a66817a558f4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "用印者，虽有煞方显。女命甲生人，以癸水为印，庚金为杀，印赖杀生，遇之则显。男主权贵，女主富贵，故云粟帛盈余。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0037",
+      "sha256": "fde0dd7588ddd6022408216e08f7600f9c1c83a62d3c61b97758541e9be2ee6f"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "伤官不见官星，犹为贞洁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0038",
+      "sha256": "a554aa3387dc6b1ac749aad48924053446b11fcef401905fbd27647dc4b3f049"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女以官为夫，最忌伤夫之人。凡女命甲生人，以辛为正夫，丁火为伤官，若无癸水制之，是夫受伤。但用伤官者，四柱不见官星，无官星则伤官无所可伤，反为贞洁之妇。且伤官我生之子女，喜伤尽，更有财助，则为富矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0039",
+      "sha256": "123a0225d243aa6ae356327f432bc30fc1f11c358b56565b2a22cb08d7f6f2b4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "无食多逢印绶，反作刑伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0040",
+      "sha256": "0514bfbe83b23f00a35161bf4a1fef2cf723d5a0bfddfa7e1b9f1c3c2b5d00e1"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "凡女人之命，取食神为子，如无食神，则无子星。殊不知无子则无以为养，多遇印绶则损子，故云反作刑伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0041",
+      "sha256": "155d481d9de37d07e8fc85ea5aff0e7da2d1fce44141b1203e13eec11f1bd560"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "穷枭见食，生産花枯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0042",
+      "sha256": "1f59657bf236d5525957ddd2f85dfa5662369cb3423128036f714cbf900c261b"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "然甲木以壬水为枭以丙为食，是壬克丙之故，故云枭神能夺人之依。女人以食为子，故以坐産喻之然也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0043",
+      "sha256": "514fad51d4d9b7686d7fe5c80ba24fe28cedda4c2a4ffcbd78a702aff184baf9"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "恶煞混官，临春叶落。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0044",
+      "sha256": "eb7e082aec7a34e63530f08a9a69f995c42e1fcece062eb5ebb36eab4a11b6ac"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "恶煞，七煞也。女以正官为夫，偏官为偏夫，岂宜见之。若无正官，即以七杀为正夫；若有正夫，最忌见之。如妇人有偏夫，一善一恶，混同一室，岂不为反伤其身呼？故云临春叶落。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0045",
+      "sha256": "e7d988557218f84d8d1e1cf9f38dd1e21fb870305e6e12345f39701f76814d4c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "远合勾情，背夫寻主。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0046",
+      "sha256": "b539f1ca81daf14836b7e113b9eeadd984e29121bb7e40ac0b80cc0e8f1e418d"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命若三合六合，又有驿马交情，桃花临水，干带双鸳，支逢四杀，皆主与人私通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0047",
+      "sha256": "f19bd2210171be448519584bc8096a90737b269cda969436b7c4be31385c4176"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "冲官破食，弃子从人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0048",
+      "sha256": "32578b8e1fbd1a0caff071fd4c3ccb5436b6b2bd40cdd3fa82e72ea5bd038535"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "有官遇冲，有食遇破，夫子即被冲破，岂有不从他人者呼？",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0049",
+      "sha256": "4a7b512fdab257dbb62555ea6efad96f4851259bd4d4fc8d4da6941b7a77cc5e"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "财衰印绝，幼出娘门。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0050",
+      "sha256": "8b0970d1b27efc2dd43578a8254cd1b97402fd992bb45cf56d6aa8306cdfabc8"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "妇人之命，以财衰无以事夫，以印绝出身微贱，岂得以福气论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0051",
+      "sha256": "7d66de7822e00c6d28e15f91025e2d0fa06604d504f983d09cf8fe6a78319afb"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "身旺运强，早刑夫主。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0052",
+      "sha256": "0176a4930993147dadd2a5087ed9a67a25c8d7eddea5ac5d55d18d08c23a42d5"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女人不宜身强刚健，贵乎身弱沈静。若身旺又行身旺之运，必主刑夫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0053",
+      "sha256": "10c7d09a8676450e289878816c6a6bfd5f93e1bba8b573edd0871f695cabe7a3"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "五煞簪花，日夜迎宾送客。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0054",
+      "sha256": "51034cdbc4d2ee7fc6c3a90cf9b9e1d202f753823232656c92e4aa6df8bc0409"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "五煞，谓咸池红艳劫杀破耗之类。又见桃花杀，谓之簪花。凡女命带亡劫咸池，切不可合马合贵人，然必主外貌尊重，内意娇淫，心好酒色，如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0055",
+      "sha256": "3d4ec3562a553c61026c4bcea28e09bc416adc156c699fcf0178271816933f04"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "庚申 己丑 丁亥 壬寅是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0056",
+      "sha256": "0f68108c4d080a908ad16fcb9efe6fea94bd76e656cc69f6900b65db6b3f9d36"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "三刑带鬼，始终克子伤夫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0057",
+      "sha256": "9512b4b9c93bf444ac5d8b75a7ac64bb65aafb576902e3a6e697bf1d55b39232"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "三刑者，寅刑巳、巳刑申、申刑寅、丑刑戌、戌刑未、未刑丑、子刑卯、卯刑子、辰刑午、午刑亥之类。如带三刑，又见七煞者，主刑夫克子之造。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0058",
+      "sha256": "9655c40393c8ced071d96f894a879b55644dc85f2601fcf7031d528c935f23de"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "杨妃貌美，禄旁桃花。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0059",
+      "sha256": "044f5beef802ebbf1ae3ed52a7a2d23a7b85e03f5370bcd3c159f9fc4455956a"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "桃花煞，一名咸池。此煞主人清秀美貌，如寅午戌生人见卯是，巳酉丑生人见午是，申子辰生人见酉是，亥卯未生人见子是。殊不知桃花煞，年月带之为园中之花，与官星合禄主贵，堪为良妇。若时上带之，谓之墙外桃花，任人扳折，反为下贱。所以桃花会禄合官星者，以杨妃比之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0060",
+      "sha256": "32891c08b745649110ba3e7bc88359ca1486900e171aa5ecf34e4c3abf962c89"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "谢子才高，身任词馆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0061",
+      "sha256": "5c33491049027edd13751ffb6ad052fac427f13bf45b36f98ebcc3da28887d9e"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女人之命，带词馆，主有才学，五行旺处，即为词馆。或生坐於词馆之上，如木生人，得庚寅为正。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0062",
+      "sha256": "b67f644cb053bdba5aa25d813600d1aa10bbf9804d8ad5f74437e83904ec439d"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "华盖临官，情通僧道。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0063",
+      "sha256": "d16fc8d50b198eb43234369e444ff8f4522dac2da15f3a1cfb415e0863abb577"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "华盖星主孤。有官有印者遇之为翰苑之尊。华盖逢空，宜为僧道。女人命犯华盖，则与僧道同流，故云情通僧道。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0064",
+      "sha256": "1ef8e2cf0bab75b15421bacca39b996a68bdf62cab005242ffc289e857950175"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "孤辰坐印，身受尼姑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0065",
+      "sha256": "21e161a6fd7ce0835c19f1f8f731bfe160cab67e4328d07e35ba084563e238cc"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "孤辰寡宿，男女岂见。女人有此，亦主为师尼之类，不然亦且孤寡，身太旺犹忌之。诀曰：“寅卯辰人怕巳丑，巳午未人怕申辰，申酉戌人嫌丑未，亥子丑人怕寅戌。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0066",
+      "sha256": "d802b143b281670f92cf8fda498b4e392c513aeea17dcdfb9e98e6ad4f29d532"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "胞胎常堕，食旺身衰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0067",
+      "sha256": "ea8d82274c0c36c1ca578bb44d92b05d20c1df1d6f61069a99a997ad25f94a86"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "胞胎者，受胎之月也。若身衰而逢食神生旺，则主有堕胎之患。食者，子也，所以子旺而母衰，其理然也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0068",
+      "sha256": "726fe8ba54807957c963019376445bdc3b41a41596ca1f3991b46c606d832058"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "鸾凤频分，官轻比重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0069",
+      "sha256": "469360660fe8426590f979c967f739e8359f86f168ce50dad5ac932da3533fd4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "如甲生人，又重见一二甲，则弟妹衆多，且夫主无力，比肩争压，定夺其夫，则有分离之义，谓之官轻比重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0070",
+      "sha256": "871b9157aa01bb979b80662f4cd34eeecf7f8ba01f1f2baeb96767cd9444424c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "姐妹刚强，乃作填房之妇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0071",
+      "sha256": "d47cc7e912c67af9ddc88a00e5828fed17c2d1d32ca0f3c48ddc1a9467e9d268"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "姐妹，甲见乙、乙见甲之类。四柱重见之，又乘旺相，主其女不得洞房花烛之欢，当为填房结娶之姻，或为二婚侧室之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0072",
+      "sha256": "514030edfb4975be4e2ba6e333d878d425bd829ae98042db72f4ab78cde80118"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "财官死绝，当招过继之儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0073",
+      "sha256": "39543e775adad93f78a7ca68deabe9a65e2ee56d1588d065e7400052f279d1cb"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "财堪养命，夫赖终身，二者死绝，则无以延年。且官死绝，不能生子，必过继他人之子，以续宗枝可也。苟不承继，则绝嗣而无所望。如甲生人，以辛为官，以己为财，辛死於巳、己绝於子是也。余者并同此例是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0074",
+      "sha256": "d1dd7c0ec67aa34c2c35176a782c59c38e33f3a6a1b90636c35eef710b329848"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "官临财地必荣夫，身入败乡须克子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0075",
+      "sha256": "cef0b509383e6cb5df02d31fb63d23fd9cb13eaee4c401a1f84d52dc85ae092a"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "官者，女人夫星也。官行财乡，财为禄也，官之遇禄，岂不荣乎？财者男子以之为妻，妻即财也。女人以之事夫，财旺则夫亦盛。故以荣夫喻之。如逢败绝之地，主克子而孤，如甲木生於亥而败於子，子为甲之沐浴，如人初生临水而浴，故为险地，是取克子之所在矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0076",
+      "sha256": "096f4364a83d7777455c4d6bb8f105e86b422530f4d17483a8ba65dee12ae621"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "杀枭破禄连根，堕冰股於水火。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0077",
+      "sha256": "d1de061e4b6c934020e20e5dea43f873b171ed29e8a376fafa058dbd459e7a8e"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "如甲生人以庚为杀，以壬为枭，且甲之禄被杀枭破之，则根被害，主有水火之厄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0078",
+      "sha256": "ac34dc5c5f99c7cff85950d70479ec7a1bd35fd8b4068ab9e88404165b9686fc"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "比劫遭刑丧局，掩玉骨于尘沙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0079",
+      "sha256": "3dd9cb3cf73cfc95a5480332f7a1e407d4083fa57168edafa7057e6c6f7280a3"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "比劫者，兄弟姐妹之类。在人命中主有争端，如又遭刑，为祸非轻，正谓之劫财羊刃是也。妇人遇此垢害相残，如人家兄弟多者，有财则争，无财则祸，更加刑杀，则亡身害命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0080",
+      "sha256": "dc1141aca1f0decfeb4d6e11bdfecff56c6f05c6ce7677a111d1c8295067235c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "交驰逢驿马，母氏荒凉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0081",
+      "sha256": "89b190cc52db6b883af5e5108c8529d344d648c67d94ff0ee7ddd7567b47c6f8"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命贵乎恬静，最忌驿马。《格解》云禄是扶身之本，禄即官也。马为养命之源，马即财也。无非财官交互相见之理。男命喜有之，女人以财事夫，莫非得妻家之财以事夫也，岂不为损母氏之家物，故云母氏荒凉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0082",
+      "sha256": "7df667a948a50c842f0297b41418d9343febf7fe08d0722466031c2decdc5b59"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "差错对孤神，夫家零落。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0083",
+      "sha256": "adb86b4cf35e60fa8d34594202c0b663dc90fbc7500697d3b3cab9d5c8caaf41"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "阳差阴错者，只有十二日，丙子、丁丑、戊寅、辛卯、壬辰、癸巳、丙午、丁未、戊申、壬戌、癸亥。阳日为阳差，阴日为阴错，女子逢之，公姑寡合，妯娌不足。日月时两重，或三重犯之极验，只日家犯之犹重。妇人犯之，故主夫家零落。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0084",
+      "sha256": "2e27192cfdabb86735d8bef2e37afcda8d96ccb51bb429174dd112ecec4b01f8"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "五马六财，穷败比肩之地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0085",
+      "sha256": "e2a0a31c0404858960259deb363d23c0b347bfdd1b70a5181dac0caf2fb606bd"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "马即财也。甲子生人，以己为财，自甲至己乃六，为财之母，倘比肩兄弟多者，则劫而分之，故云穷败。妇人无财以事夫，亦中谓穷矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0086",
+      "sha256": "5c85dac8a180f0f4ae3ad30802a481d8af900183482feab96be5fe1e3eae2d08"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "八官七杀，分离刑害之乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0087",
+      "sha256": "508384263f2c9e8d2d537f70e186a4cb1b6b4ccc405211c0b1034a36b1235a5b"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "甲子生人，以庚午为杀、辛未为官。自甲至庚午为七杀，辛未为八官。七杀为偏夫，八官为正夫，倘遇三刑六害，或夫死或夫离，此之谓也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0088",
+      "sha256": "609c5eb176c316b4eac8ad7fbeb6e2bddcfadd4cbed0140e76cd1e7981d46225"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "刑空官煞，几临嫁而罢浓妆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0089",
+      "sha256": "956f5b02737896b639f767e945664fb1d41664f22dcfdd2a6ce844f0d07c93d5"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "既以官煞为夫星，当要旺相，不受克制，正谓夫贵则妻荣。倘官星落空，杀星被刑，二者俱不得力，受凶人所制，自己安能得妻哉？谓临嫁而罢浓妆者几希。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0090",
+      "sha256": "07b88d0994e3f2327da56110256528065019a623c90d2f61a8180b2673d6b3f6"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "冲克印财，纵得家难成厚福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0091",
+      "sha256": "6cad906c1291b9822b71a5091883c62f0b8a3f42d8b40995a5ca3dfe597e1ec2"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "财者可以养命，印者可以生命，二者人以之获福，假令冲克不能见用，故不可以为福。纵然成家，亦无安享之荣。女人之命，以财事夫，既被冲克，难以享福断之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0092",
+      "sha256": "bb626db0ba2eb37717bd998b598f399e19d57436cf17057be15094276e51b872"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "不若藏财不露，明杀无伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0093",
+      "sha256": "5a175546a9ff9b1282c2696c22bde3d5f4d3ed6fdcf106c43a0a8a1a7ca9416f"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "命中有财，贵乎藏而不露，财露者人人得而夺之，藏之者，始而安稳，终而慧厚。杀露者有何伤？书云藏财则丰厚，官露则清高，斯之谓也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0094",
+      "sha256": "ebec1fd28c4ddbb02df8caf1e2e9b5e8a1172d60498b7b7c00d5a74f4c237171"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "重印行财，多财遇印。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0095",
+      "sha256": "84ab69cf65aa9b0c22f45af5f484cc2e7aa155c790802e5f28c96a26470336ee"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "印与财本相克。克者，假使甲以癸为印、以己为财，甲以己为妻，且财多亦为喜。但恐有印，则财破之，重印行财稍可，多财遇印，谓贪财坏印，若有劫财乃可。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0096",
+      "sha256": "671f3b3fd8c06b8fcc1dc6b58d54f18fc1ee32e948bba1db1d2a7bfe8d9d95fc"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "四败非家人之有行，四冲岂良妇而无嫌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0097",
+      "sha256": "83ec26c047befc0b47d534356eda47d8ef7f3eed554f830f694822eec5b67c3b"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "此等皆女人所忌者。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0098",
+      "sha256": "b1cd3a90250a794e8e096e4b94c992053a2c45f0bb8a5089b4c7d69918cd646c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "水聚旺乡，花街之女。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0099",
+      "sha256": "eb2e322891207dce98b10c5859f07d6f9490e7e8f62fdf3b41bdace43896c6c0"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "水之性下，百不能返也。又至旺乡，且有汪洋之势，故女人之性似之者，保也。谓从其夫而不能由己，且妇人之质，若水之柔且清，赋性然也。若与金星相会合，则欲从其类，若花街女也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0100",
+      "sha256": "8fd4f0e2dd56bc8a3d7e312af09077c91715a1310c8376a544e5d54448cdbcf9"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "金成秀丽，桃洞之仙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0101",
+      "sha256": "abf0f903bf9f80b57dcc92863fbce810bf923f8f1bb866d685a21bf2e663bdcb"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "金以南极美，故以妇人喻之。女命金生得西方之秀气，加柔火以成质，并无瑕疵，非仙而何。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0102",
+      "sha256": "1e7b2bfffaeb673fb56fbcaf00a7080686dca13bf7e7abbf75371603c33440d5"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "四生驰四马，背井离乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0103",
+      "sha256": "25068fdfd788ddccf4a5c561670158a3d1475230bd0b6fc200612a45fabe4679"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "寅申巳亥者，四生之局也。又为马所驰之地，女人之命，最忌驿马，带之者，主有远行出离乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0104",
+      "sha256": "3083a97a2086876fd9e71f0eabf053948faa5b5c3b80b42a03fa372fd02931ee"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "三合带三刑，伤夫败业。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0105",
+      "sha256": "6a7a45b19dcd1c18d8ebe79c95d7ba4c1c56007f9c979402bf28f55412083732"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "妇人最忌有合，若与官星合，乃正夫相合为妙。又若有二三合，则为相妒，且为衆人之妻，又带三刑，且骨肉相残，并损六亲，故云伤夫败业。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0106",
+      "sha256": "333f61caebe5234a6cf9067208b534a1e9c606fb9aadaaf7cf4ddbd4866e1dd7"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "暗杀逢刑，槁砧不善。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0107",
+      "sha256": "bb842ded15940c518bb467479b5b0247b824233502adc394109611167e164e20"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "煞亦为夫也，且暗有刑伤，主其不善，且为恶人乎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0108",
+      "sha256": "893413671324e1e4cef678898a14226bf8ac2a956868c1632849506bc0d33649"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "明官跨马，夫主增荣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0109",
+      "sha256": "df12924a8c806248e504a9f4d0b1a3058dd5c873448c519b711671c61146b6ac"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "官星喜露，露者谓之明官，又逢禄马，主其夫出仕驰名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0110",
+      "sha256": "769525ac72b04c1d7b032a101807d57dfc197b64756e647745d7d288f7d0cab7"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "黄金满赢，一财得所。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0111",
+      "sha256": "430728f1106416d800576eccac7bd713907ec95b0f01c8184aaddda338989424"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "如甲木生人，用己土为财，又得辰戌丑未之地，乃财星得地也。其妇主有富贵，为相夫益子之造也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0112",
+      "sha256": "c3fa46246af6e205bd38fe1c578216885bab2bb20d4cd366a6509cf1a1f69db3"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "红顔失配，两贵无家。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0113",
+      "sha256": "963bc103dba0abadb8bfd242ee8e07c85540b1d7328657c84dec3befca83b8a4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "贵人，天乙贵人也，凡女命不宜多见。经云：“贵衆合多，定是师尼娼婢。”凡一官者，亦为一贵，若重见者主克夫，且如人无家者，不得地之谓也。所以主少年而失配也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0114",
+      "sha256": "bf87463654d13c18a0d53777ca3520c27347de2e6e1a33e8ae8eb04dff74663e"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "先比後财，自贫至富。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0115",
+      "sha256": "c47606ec3d7a73869dfa9904159a3d2758fa3250c7955f77e0930fffa9cd828b"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "四柱中，先有比肩，而後行财运，谓之先比後财。若四柱原有财有比，不为先比後财，乃是财源被劫，则不为美也。此经行运逢比，方以此断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0116",
+      "sha256": "cf29393f84fcf07def138be2ae9b1d444cbaeda6d7417f670bddcb24cd67b493"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "冲官合食，靠子刑夫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0117",
+      "sha256": "3ffa6aa3f6be625896a26bdd98cc5b855e6c7dd3fca9e56d3687f8f1af7484e4"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "官者，女人之夫也，食者，女人之子。官被冲，主其夫不得力，食神带合，其子得济，所以靠子而终身。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0118",
+      "sha256": "9f6ea1cd745ff16ff00c6183780db99b4078626c3c5f3f37dc13d0690f4f69ef"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "死绝胞胎，花枯寂寂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0119",
+      "sha256": "bc2e1704e1c838b1f812c72e2d3bfd8e26a90580d06f05d541358653d44d59dd"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "胞胎者，受气之月也。如逢死绝，主一生寂寞，至老而孤苦也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0120",
+      "sha256": "ad4eaa12d6e1c1939496897c48638a0be39d68543a9c32abcbe9f64348028a44"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "长生根本，瓜瓞绵绵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0121",
+      "sha256": "f7fa08eef24cb30fd4a929d3fe5c942808995c310c4e58f7e63e15857481cc35"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "五行得长生之位，女人多俊雅，且有子孙绵远，谓瓜瓞绵绵。根本者，木生亥、火生寅、金生巳、水生申。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0122",
+      "sha256": "b517cbc63c4d064381bd1dc08df3557ada1f363eda3830019a0fbb8f875f8976"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "合贵合财，珠盈金屋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0123",
+      "sha256": "5adefdd90c43e4336d796c6ddb38c88797ec5fa3ace856cd0f1a25a85a1b881c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "合贵者，官星夫星得合也。只合其一官为贵，非合贵人也。合财者，财神也。女人以财事夫，男命以财为妻，故喜合之，主有珠盈金屋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0124",
+      "sha256": "3f75f208de299d6ec59eed16cd2aab35f2b00f3669b99e4dc03673c8cbb7d2bc"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "破财破食，衾冷兰房。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0125",
+      "sha256": "325cc740f9f0bd8389a2f6161f8cf1379acf8a43bd6eccaa367793f97b291184"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女命最喜者，财与食而已。财以事夫，食以养老，假使破之，将难保安乐，遇此者甘受凄冷，故云衾冷兰房。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0126",
+      "sha256": "d0bd7e6291c998b62c617b42506a9f3296179a39223d5406388a5ad6efc5d3b9"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "吕後名驰天下，只缘阴并阳刚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0127",
+      "sha256": "707b791e32786b57958318779e9d738cec8111bf325b719683b5d558da839293"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "女人之命，以阴柔为贵福，兼并阳刚者，乃夺夫之权，多能多为，未免有阴邪绿珠身堕楼前，盖是枭冲煞位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0128",
+      "sha256": "d1bdefc2e0ff66197349a9ea7ec21c02bb177800e069f103a4883be897011030"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "命用有枭者，为事多不仁，妇人不宜有之，杀者女人亦忌之。何况又逢枭而冲之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0129",
+      "sha256": "ce3df804f6f501eb471643de014b27ee49855a3d25e9f5e6b13c16353fb36d86"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "秋水通源，剃眸立节。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0130",
+      "sha256": "52964a9d9523742c91ab2bfbeea59331fa956355638bf09a5fcd5b11a188ac48"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "此言癸生秋月，又兼有亥子水之源。秋金旺而生水，水性清，金性刚。以眼喻秋水，故云剔眸，有节操之女。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0131",
+      "sha256": "d2b499207dcd1bf1d00f98d448c857d3045eba5453b85bb39e6abf7e0a885613"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "冬金坐局，断臂流芳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0132",
+      "sha256": "24a5c60c7bffb25c2bdca64d6e849da2ce6565c9ba0b1c6c4c7daba9719ad5f3"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "金生於冬月，又得巳酉丑局，此金之类。夫金之性主义，有刚果毅然之立。男子禀之有威武之权，女人禀之有坚贞之节。此谓冬金者，则为金白水清，且水冷而金寒，故云断臂流芳，其理然矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0133",
+      "sha256": "0089ca0ab22bd5dbeaaf7767469844ea26c6a550bc275011b095f2bcf177ef51"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "姐妹同宫，未适而先有恨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0134",
+      "sha256": "3044e9bd52f10eeda335debcdc97951de47881e8da97ecadd7ace3f5c8eb7d9c"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "姐妹者，比劫也。如甲生人，重见甲乙之类。如甲寅乙卯之日月，谓之同宫。恐有争妒之意，故未适而先恨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0135",
+      "sha256": "ccbd67583b593a107090eea882c1f3c4e54c905d14b95ecee41cdc935b692860"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "命财有气，配夫到老无忧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0136",
+      "sha256": "50e3810cfe024bf91716c9bbc2ad16e57f34493aec24e6b7afa4e3ea4fa22b4f"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "命，谓本命也；财，谓财帛也。二者有生旺之气，可以荣身，可以助夫，岂不谓之到老而无忧也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0137",
+      "sha256": "1ad9813ad167ba620a50d8682ac4f8e56da1fbea43772f0d0cd93987f319cf9d"
+    },
+    {
+      "section": "渭泾篇",
+      "text": "是以荣枯贵贱，所造渊源，务要投明博学，领受真传。若理误而时差，虽先贤不自知矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c297:p0138",
+      "sha256": "6b454e980fe18e41d7c16a025d0afd9ae8e6852316b05dd754120761241730f0"
+    }
+  ]
+}

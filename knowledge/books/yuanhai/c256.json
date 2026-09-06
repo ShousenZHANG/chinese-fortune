@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c256",
+  "title": "杀重有救诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/256/",
+  "revision": "sha256:3e5339c0554eab6959eed5bd30e4347f318145a3fa2a9639cfda77516d2be78f",
+  "source_timestamp": "2026-09-06T04:11:16.357879+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c256.html",
+  "raw_sha256": "3e5339c0554eab6959eed5bd30e4347f318145a3fa2a9639cfda77516d2be78f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "杀重有救诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c256:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "杀重有救诗诀",
+      "text": "杀重有救诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c256:p0002",
+      "sha256": "4d6eba7af34e28fbdb958bb79d61657ef67c4ca753b32b701a78d6102553cf47"
+    },
+    {
+      "section": "杀重有救诗诀",
+      "text": "丙临申位逢阳水，月逢戌土反长年，若有吉神来救助，方知安乐寿绵绵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c256:p0003",
+      "sha256": "d6109cebf00736edaee7cff8916c5e152aeda9018f87392fb27fe1180b66cf89"
+    },
+    {
+      "section": "杀重有救诗诀",
+      "text": "巳到双鱼夭可知，重逢乙木死无移，干头若有庚金助，恰似春花放旧枝。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c256:p0004",
+      "sha256": "c4f9019adea5accb2437c26bb46767e6c46953649ba06130d59e1c58e77d9375"
+    },
+    {
+      "section": "杀重有救诗诀",
+      "text": "丙临申位火无焰，阳水逢之命不坚，若得土来相救助，管教福寿得长年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c256:p0005",
+      "sha256": "1e772663504a561805446df9c7fca7a09edfd355cdfb02f56c4b790667604f84"
+    },
+    {
+      "section": "杀重有救诗诀",
+      "text": "眉批：甲申日月有丙火，杀重靠丙制之，忌行壬运，行壬运必死。若以戊土克壬水，水不能克火，以土救之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 48,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c256:p0006",
+      "sha256": "58a26523b3ef034c10f0be019953af545569b4dd626603c7be6c1e37496b66f2"
+    }
+  ]
+}

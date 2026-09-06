@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c285",
+  "title": "动静说",
+  "source_url": "https://luckclub.cn/bazi/001/285/",
+  "revision": "sha256:7b275cf9d1ece54aa881b16b11ef5adfa4ac0cb8dc3e4fbed7d34389a16305cb",
+  "source_timestamp": "2026-09-06T04:11:24.317900+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c285.html",
+  "raw_sha256": "7b275cf9d1ece54aa881b16b11ef5adfa4ac0cb8dc3e4fbed7d34389a16305cb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "动静说",
+      "text": "渊海子平卷六",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c285:p0001",
+      "sha256": "222a11cf776cbb806f37292c1b03f7e25c110d85b0768baf1ed10f8923622000"
+    },
+    {
+      "section": "动静说",
+      "text": "动静说",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c285:p0002",
+      "sha256": "76b49c73b29ebf4604336548203a047742f260cbf404fcc44ec401f347f0b058"
+    },
+    {
+      "section": "动静说",
+      "text": "何以为之动也？其体属阳，阳主动，故天行健，团转回圈而无端。故以人之八字天干透露于上者，为之动也。如八字天干之甲木，但能克运上天干之戊土也，不能克巳中所藏之戊土也。盖以动攻动为亲切，如男人之攻得男人也，不攻闺中所藏之女人也。但虽不能攻人，而亦有摇动震惊之意，但不能作实祸也。如女人见男来攻，虽不能加垂楚于其身，而亦有恐惧之意焉。如运中申中地支之庚金，亦不能攻我八字中天干所透之甲木也。是以天干之动，只能攻得天干之动，不能攻地支之静也，明矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c285:p0003",
+      "sha256": "9d436e0a43b3d2636b2dab6611375e4e393180d59032ead2237000c08a0ee510"
+    },
+    {
+      "section": "动静说",
+      "text": "何以为之静也？其体属阴，阴主静，故地承顺，方静守固而有常。故以人之八字地支配藏于下者，为之静也。如八字地支之庚金，但能克运上地支之甲木，不能克运上天干之甲木也。盖以静攻静为亲切，如女人只攻得女人也，不能攻在外之男人也。但虽不能被其攻，亦有摇动震惊之意也。如运上地支之庚金，亦不能破我八字天干之甲木也。是以地支之静，只能攻得地支之静，不能攻天干之动也，亦明矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c285:p0004",
+      "sha256": "d036445fe23d4d4901d0d8a5f8c62071ede4abf36b831107fd09b6c6a6760af4"
+    },
+    {
+      "section": "动静说",
+      "text": "又如辰戍丑未四地支之物，乃天地四方收藏之库，极牢固，假如八字地支，辰中有戊土乙木癸水，运或行寅，寅中虽有甲木，亦不能破其戊。又运行酉，酉中虽有辛金，亦不能破其乙。又或行午，午中虽有己土，亦不能破其癸。非不能破也，盖其库中，锁钥甚牢，真要戍字运来冲开之，就如有了锁匙，开了其锁，而放出戊土乙木癸水出来。如丑字就要未字冲，别物不能攻之。故曰杂气财官喜见冲，正此意也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c285:p0005",
+      "sha256": "fcad14389f337f4ca539c8eca46fbeb190d1ba83c2b945d330a6c8731a11fcf9"
+    }
+  ]
+}

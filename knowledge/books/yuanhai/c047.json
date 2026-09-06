@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c047",
+  "title": "论六甲空亡",
+  "source_url": "https://luckclub.cn/bazi/001/047/",
+  "revision": "sha256:323e233e346e546b3859e375911951294447623a38c0bc8996889ad6278d0bae",
+  "source_timestamp": "2026-09-06T04:10:33.727736+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c047.html",
+  "raw_sha256": "323e233e346e546b3859e375911951294447623a38c0bc8996889ad6278d0bae",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论六甲空亡",
+      "text": "论六甲空亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0001",
+      "sha256": "3319d018c16c89b4b5580bb2c14249147adc796cc063ba788e37c31a502ed97b"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "甲子旬中无戌亥，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0002",
+      "sha256": "ae7e229328ed2a0b54d2cc6c25a56857a0f8d32d8a34a77688d28f4561ba7371"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "甲戌旬中无申酉，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0003",
+      "sha256": "c8b767d88ae5be9b9bae4421e079076631a96e6cd980e9a8b3868f962873f288"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "甲申旬中无午未，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0004",
+      "sha256": "1e9c4988061d0aaaf7e952daee5915538fcc353a124acdc5d768bbc01a1ff691"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "甲午旬中无辰巳，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0005",
+      "sha256": "d06b2e3d3d3ea573c1799a0150164929991fae4f390413b7f93451f6afd1ef54"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "甲辰旬中无寅卯，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0006",
+      "sha256": "6d31b458e622a94865a958d8349ef9427b544f640f3ca3794de649e5d6041abf"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "甲寅旬中无子丑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0007",
+      "sha256": "9c06a5bb4d18fea76f5ce161b1468ae0c2e35c53c93962af0fbbb93181c8200f"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "空亡，一名天中杀。甲子属金，至酉而十干足矣，以独无戌亥，是为空亡。阳空为空，阴空为亡。是戌为空，亥为亡，对宫辰巳为孤虚。余均可仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c047:p0008",
+      "sha256": "6d0cd4f9560871a656c51a1ed711913ff0205bb9be0869093de0f31039a90344"
+    },
+    {
+      "section": "论六甲空亡",
+      "text": "眉批：空亡对宫孤虚，火空则发，水空则脱，金空则响，木空则折，土空则陷。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c047:p0009",
+      "sha256": "d32d970111600cf1c6004f176e1d686d133d9efc82b5a5fb7614b050dbd98a54"
+    }
+  ]
+}

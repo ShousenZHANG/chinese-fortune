@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c131",
+  "title": "外十八格-伤官生财格",
+  "source_url": "https://luckclub.cn/bazi/001/131/",
+  "revision": "sha256:4850ee7363e27d35bb13ed3d2001da776967ff6221a2a49a67bed85580a6a0aa",
+  "source_timestamp": "2026-09-06T04:10:50.750935+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c131.html",
+  "raw_sha256": "4850ee7363e27d35bb13ed3d2001da776967ff6221a2a49a67bed85580a6a0aa",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-伤官生财格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c131:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-伤官生财格",
+      "text": "外十八格 - 伤官生财格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c131:p0002",
+      "sha256": "1fd8dc354aacfa7e3d2cd77b56f3a64c3f5d8f0fa00586cadbdb42fc330efe1e"
+    },
+    {
+      "section": "外十八格-伤官生财格",
+      "text": "且如乙日生，地支见寅午戌全，则自以戊己为财。要行火乡财运身旺运，怕官乡，忌刑冲，冲则不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c131:p0003",
+      "sha256": "be44f5b304b67b312593cb18b2798fe6c294ca603af85f64ee9da412e7791649"
+    }
+  ]
+}

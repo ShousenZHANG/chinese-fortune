@@ -1,0 +1,123 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c041",
+  "title": "貴賤貧富吉凶壽夭論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F41&oldid=844408",
+  "revision": "844408",
+  "source_timestamp": "2017-03-24T01:23:23Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c041.wiki",
+  "raw_sha256": "dee0a76ebb78d6b2458899379c851e239cb70eec5f471df2ea0d03a67fec7cb6",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人貴，官星有理會。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0001",
+      "sha256": "07b0b690926bc331fa0f4c70b8cce6a2b7a4cc00ed5bf5804895e73321bc3e6c"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "官星身旺，而印衛官，忌劫而官能制劫，喜印而官能生印，財星旺而星通達，官星旺而財神有氣，無官而暗成官局，官星藏而財神亦藏，此皆官星有理會，所以貴也，夫論官與論子之法，可相通也，然有子多而無官者，身顯而無子者，亦看刑沖會合，但官星清而身旺者必貴，官星濁而身旺者必多子，至於得像得氣得局得格者，妻子富貴雙全。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0002",
+      "sha256": "eabab6311f9596b95f2f2b4892051234d875449c010427378ca36ef55582a221"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人賤，官星總不見。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0003",
+      "sha256": "88dd2c0d49bab14dd3280fc2dfbe9af705ea63ffab6dfcb31367a692f1ebcaaa"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "官星不見者，不但失令被傷也，財輕官重，官輕印重，財重無官，官重無印者，皆是官星不見，中有一位濁氣，則不貧亦賤，至於用神無力，忌神太過，敵不受降，助旺欺弱，主從失宜，歲運不輔，既貧且賤矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0004",
+      "sha256": "3a9e72fc2b78e72740fd35eef60ea449c6f39036684295f0574adc8459bcd66b"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人富，財氣通門戶。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0005",
+      "sha256": "f608d8711bd200fd1bb3774a95610df0dd2f00969f80ec6df6aac144cdaf86f3"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "財旺身強，官星衛財，忌印而財能壞印，喜印而財能生官，傷官重而財神流通，財神重而傷官有限，無財而暗成財局，財露而傷官亦露，此皆財氣通門戶，所以富也，夫論財與論妻之法，可相通也，然有妻賢而財薄者，亦有妻傷而財厚者，須看刑沖會合，但財神清而身旺者妻美，財神濁而身旺者家富。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0006",
+      "sha256": "cfe3601b6366481da8e7d11b219a0d73ed5db99399fc9c73487c59b0ada06db1"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人貧，財神終不真。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0007",
+      "sha256": "87c9660c5809bc8fea541b26ab0c57de3baefcc9a893c196f1595c9265151f85"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "財不真者，不但洩氣被劫也，傷輕財重，財輕官重，傷重印輕，財重劫輕，皆為財神不真也，中有一位清氣則不貧。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0008",
+      "sha256": "da89e6c249e72ac7b76d19c311715552498454aaabcf3b248e9aba3fac0239c2"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人吉，喜神為輔弼。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0009",
+      "sha256": "6a35711657b362e97560568e62b876c45c86ee1b31c8eefcb5d605bd9389eaab"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "柱中所喜之神，左右終始皆得其力者必吉，若大勢平順，內體堅厚，主從得宜，縱有一二忌神來攻，亦不為凶，譬之國內安和，不愁外寇。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0010",
+      "sha256": "6717e113e9cab47197e1bdf70bb762a9e15618569b0ebb6a0312ed35fea69328"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人凶，忌神輾轉攻。\n:　　財官無力，用神無力，不過無所發達，少帶刑剋，至於忌神太多，或刑或沖，歲運助之，輾轉相攻，局內無備禦之神，又無主從，不免刑傷破敗，災難常侵，到老不吉。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0011",
+      "sha256": "2de132d7dd1bb12e1c4980d003349c5d99bde8139a327c0fc581ea467259a46f"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人壽，性定元氣厚。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0012",
+      "sha256": "7246fbb92828229e51ec51206848f8f4e84cc20d1ab6339bed53e94efbdf5958"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "靜者壽，柱中無沖無合，無缺無貪，則其性靜矣，元神厚者，不特靜氣神氣皆全之謂也，官星不絕，財神不滅，傷官有氣，身弱印輕，提綱輔主，用神有力，時上生根，運無絕地，皆是元神厚也，大率甲乙寅卯之氣，不遇沖戰洩氣，偏旺浮泛，而安頓得所者必壽，木屬仁，仁者壽，每每有驗，若貧賤而壽者，以其氣清身旺，或身弱而運行生地，小小安康，食祿不缺耳。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0013",
+      "sha256": "5fd37744c2a429c0a7c50ff94442bf1aa5ea7af9a6807ebfc6e70615f8d39b4e"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "何知其人夭，氣濁神枯了。",
+      "layer": "base_text",
+      "passage_id": "ditian:c041:p0014",
+      "sha256": "58ba0ed12451e99439e66497d2ce14a249485023e1752789c798fc37827e2ac5"
+    },
+    {
+      "section": "貴賤貧富吉凶壽夭論",
+      "text": "氣濁神枯之命，極易看，印綬太旺，日主無著落，財煞太旺，日主無依靠，忌神與喜神雜戰，四柱與行運反衝，絕而不和，靜而不專，濕而滯，燥而鬱，精流氣洩，此皆無壽之命也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c041:p0015",
+      "sha256": "331f8b2dc062af26d4013010d974015b798a9161fd09fa8eefdf242c1a91f875"
+    }
+  ]
+}

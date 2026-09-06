@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c069",
+  "title": "论五行墓库财印",
+  "source_url": "https://luckclub.cn/bazi/001/069/",
+  "revision": "sha256:e29b5ca01f8fef078020416ddf62e057bbb794f2601cb71ea34b35ba7a3059b5",
+  "source_timestamp": "2026-09-06T04:10:39.388301+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c069.html",
+  "raw_sha256": "e29b5ca01f8fef078020416ddf62e057bbb794f2601cb71ea34b35ba7a3059b5",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论五行墓库财印",
+      "text": "论五行墓库财印",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c069:p0001",
+      "sha256": "c13e89d880412aff2d9547bcc30895510bc0da29a40ef9d90cceeef5b9a15807"
+    },
+    {
+      "section": "论五行墓库财印",
+      "text": "丙丁生人以辰为官库，水土库於辰故也。须年月时中有木或亥卯未并寅即清。如无木则土夺丙丁之官，则浊卑而不清，亦不显。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c069:p0002",
+      "sha256": "0fb58bebaba22db06a82c2b260fc467c4acca94b080a6599cbff7ac038f76d5f"
+    },
+    {
+      "section": "论五行墓库财印",
+      "text": "眉批：印者，生身之木，有木则生火，明内之力。无木则火生土为盗气，有木则助，木克土之故。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 43,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c069:p0003",
+      "sha256": "764ccb18c36683f2d0a0435a0feaad8a7206795b28934413b6da15ddb49070e4"
+    }
+  ]
+}

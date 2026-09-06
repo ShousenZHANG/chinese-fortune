@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c028",
+  "title": "戰合論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F28&oldid=844379",
+  "revision": "844379",
+  "source_timestamp": "2017-03-23T15:47:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c028.wiki",
+  "raw_sha256": "8258880da21828ca004cdf1d3fe2fc7b7fed219ef58b37ae9546aac2a7a72b1c",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "戰合論",
+      "text": "天戰猶自可，地戰急如火。",
+      "layer": "base_text",
+      "passage_id": "ditian:c028:p0001",
+      "sha256": "dd0f8b0169d7b16c39ba8e472afd76c63eaaf85f07dd79f3485c85569168ff78"
+    },
+    {
+      "section": "戰合論",
+      "text": "天干遇甲庚，乙辛，謂之天戰，而得地順靜者無害，支寅申，卯酉，謂之地戰，則幹不能為力，其勢速凶，蓋天主動，地主靜故也，如庚申，甲寅，乙卯，辛酉，之類，皆見者，謂之天地交戰，必凶無疑，遇運歲合之會之，視其勝負，亦有可存可發者，其有兩沖者，只得一個合神有力，或會神，或庫神，或貴神，以收其動氣，息其爭氣，亦有佳者，至於喜神伏藏死絕者，又要衝動，引用生發之氣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c028:p0002",
+      "sha256": "64df7f1fe3a3dec4e3b2d66805330f56b46d64fbc88b7ead43e3e92598bbc04d"
+    },
+    {
+      "section": "戰合論",
+      "text": "合有宜不宜，合多不為奇。",
+      "layer": "base_text",
+      "passage_id": "ditian:c028:p0003",
+      "sha256": "dcf12ef2d95217ff15cdceceaa763ff3514c48ab28521e136e8ef8a392b54eec"
+    },
+    {
+      "section": "戰合論",
+      "text": "喜神有能合助之者，以庚為喜神，得乙合而助之，以其化金也，凶神有能合而去之者，以甲為凶神，得己合而去之，以其化土也，動局有能合而靜者，如子午相沖，得丑合而靜，生局有能合而成者，如甲生於亥，得寅合而成，皆宜也，若助其凶神之合，如己為凶神，甲合之，則助己，以其化土也，絆其喜神之合，如乙為喜神，庚合之，則絆乙，以其化金也，或丑未為喜神，子午合之，則成閒神，或甲木為忌神，寅亥合之，則增凶勢，皆不宜也，大率多合則不流通，不奮發，雖有秀氣，亦不為奇。",
+      "layer": "commentary",
+      "passage_id": "ditian:c028:p0004",
+      "sha256": "dfc38590e9c2e786450815215af963a5d1ade1c2ab3901d465353b382216a093"
+    }
+  ]
+}

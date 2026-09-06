@@ -1,0 +1,67 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c284",
+  "title": "损益生长四药说类",
+  "source_url": "https://luckclub.cn/bazi/001/284/",
+  "revision": "sha256:d06d87ee2adceaac53b6a7b9741d48b6bfe94f2e59fc85c07a40ef8d43e99b70",
+  "source_timestamp": "2026-09-06T04:11:23.518850+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c284.html",
+  "raw_sha256": "d06d87ee2adceaac53b6a7b9741d48b6bfe94f2e59fc85c07a40ef8d43e99b70",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "损益生长四药说类",
+      "text": "渊海子平卷六",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0001",
+      "sha256": "222a11cf776cbb806f37292c1b03f7e25c110d85b0768baf1ed10f8923622000"
+    },
+    {
+      "section": "损益生长四药说类",
+      "text": "损益生长四药说类",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0002",
+      "sha256": "f836d50569db3211f4a19516bb240054146ba40207f648555e367d659ce7b315"
+    },
+    {
+      "section": "损益生长四药说类",
+      "text": "何以为之损？损者。损其有余也。然木生震位，正木气当权也。金産兑宫，正金神之得位。当权者不宜资助，得位者不必生扶。假若水又滋土，土又培金。若木有余之病，用金以制之；金有余之病，用火以克之。官星之气有余，则损其官星；财之气有余，则损其财星。譬如人身元太旺为病，当以凉剂通药之剂之也。是以八字贵有损之药也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0003",
+      "sha256": "f33dec6250716723f994ffdf3e579adbbeac1cb21fb80ac2c4e4816b79021362"
+    },
+    {
+      "section": "损益生长四药说类",
+      "text": "何以为之益？益者，益其不及也。若木之死於午，若水之死於卯也。不及则宜资助，且如木气本衰，庚辛又来克木也；水气本衰，戊己土又来克水也，则水木不及之病在此矣。益之之理又当何如也？若木之不及，或行水运以滋其根本。或行木运以茂其枝叶。若水之不及，或行金运通其源流，或行水运以广其彭湃。若官星之气不足，则喜官旺之乡；财星之气不足，则喜行财旺之地。譬如人身血气不足，则用温药之剂以补之。是以八字贵有有益之药也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0004",
+      "sha256": "154203f16f83fd7d16ee06396ec64b7363c5175ad6a67ba3a0257917d5bbf14a"
+    },
+    {
+      "section": "损益生长四药说类",
+      "text": "何以为之生也？六阳生处，真为生也。如甲木生亥，亥有壬水，来滋甲木也。六阴生处，俱为弱。如乙木生於午也，午有丁火泄木之精英，有己土为乙木之挠屈。又有六阴死处真为死，如甲木死於午，且午中有丁火，泄木真精，己土为之挠屈。且如生之理，形气始分，赤子未离於褓，精华初现，婴儿初脱於胞胎。如木之生於亥，根气犹枯也，未可以木为旺也。如火之生於寅，气焰犹寒，未可以火旺也。又可财官印临於生地，未可以财官印为旺也。凡气之不足，故贵济有生之药也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0005",
+      "sha256": "6fb88ca5a129d17830aab99e933c6cc6250ff28db5edede809a3783859652e41"
+    },
+    {
+      "section": "损益生长四药说类",
+      "text": "何以为之长也？春蚕作茧，木气方敷。夏热成炉，炎光始着。如木临震位，火到离宫。如此帝旺之乡，实不同於生长之位。是以生者长之初，长者生之机也。如财官属木，则长养在寅卯辰之方，此木气方敷也，如是则贵行金运以克之，则与长生之木理不同也。如财官属火，火则长养在巳午未之方，此火气之方炽也，如是则贵行水运以克之，则与长生之火理不同也。走以长生二字，衰旺之不同，故行运有喜生喜克之异。是以八字贵有长之之药也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0006",
+      "sha256": "0af9dc5054db65a42876b5d2f526a0e7525b3cd0055e919692e80a3c4b279fa0"
+    },
+    {
+      "section": "损益生长四药说类",
+      "text": "以上诸格，楠於合理者取之，背理者辟之矣。以後各格，楠所未及者，附陈於後，以备参考。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c284:p0007",
+      "sha256": "db1bb2ac854b1a18dc78540d21702e25c743df81972e70e3f25839a2449d2bc2"
+    }
+  ]
+}

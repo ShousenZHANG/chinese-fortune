@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c120",
+  "title": "外十八格-六甲趋干格",
+  "source_url": "https://luckclub.cn/bazi/001/120/",
+  "revision": "sha256:a8e2340f1f7a86e03ad1308db0a6b329132f029673d14730e097d1d43994a313",
+  "source_timestamp": "2026-09-06T04:10:48.734393+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c120.html",
+  "raw_sha256": "a8e2340f1f7a86e03ad1308db0a6b329132f029673d14730e097d1d43994a313",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-六甲趋干格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c120:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-六甲趋干格",
+      "text": "外十八格 - 六甲趋乾格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c120:p0002",
+      "sha256": "c715e0bf75fa0f4494904f7cb29fcbb9697f95667c78b928d212ac7a6c677b31"
+    },
+    {
+      "section": "外十八格-六甲趋干格",
+      "text": "乾为亥宫，六甲日生亥多者是，有官杀非此格。且如六甲日生，柱中要亥字多，乃为天门之位，北极之垣，甲木赖之以长。如人以甲日生亥字多者，自然富贵矣。忌巳冲之。此论甲禄在寅，寅与亥合，谓之合禄。忌见财星及寅巳二字，岁运亦同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c120:p0003",
+      "sha256": "d9f11f5bca2196d87871be2667f1b0792ab87f12cc2db09b7fa1f68a9654125b"
+    },
+    {
+      "section": "外十八格-六甲趋干格",
+      "text": "靳安佰，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c120:p0004",
+      "sha256": "edd3bee683d721e95bbd0ed5924039708032e1c5cf060416891ab18ddc93e2b5"
+    },
+    {
+      "section": "外十八格-六甲趋干格",
+      "text": "癸亥 癸亥 甲子 乙丑",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c120:p0005",
+      "sha256": "4ead4e20a18415a2a0b404147d4969dd05e91868b3ad0dc3f3d5696ce08657b8"
+    },
+    {
+      "section": "外十八格-六甲趋干格",
+      "text": "诗曰：甲日生人喜亥字，趋乾为格正相宜，财官岁运如无见，管取声名达凤池。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c120:p0006",
+      "sha256": "17ff883ac40f64bb9b9f4a95b595e82251ff44b50733fed1d424a0ced7d5678d"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c037",
+  "title": "絆神論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F37&oldid=844388",
+  "revision": "844388",
+  "source_timestamp": "2017-03-23T15:49:07Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c037.wiki",
+  "raw_sha256": "ae67204bb0ec27da5c251c165bd26528fbec1262f7f1150bcff3d9d1ff95472c",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "絆神論",
+      "text": "出門要向天涯遊，何似裙釵恣意留，不管白雲與明月，任君策馬上皇州。",
+      "layer": "base_text",
+      "passage_id": "ditian:c037:p0001",
+      "sha256": "8f4bbd8e5627e7ff4d23a8e98306985136eef9a0f35347ce7b6c9a453d1684c8"
+    },
+    {
+      "section": "絆神論",
+      "text": "本欲發奮有為，而日主有合，不顧用神，用神有合，不顧日主，不欲貴而有貴，不欲祿而遇祿，不欲合而有合，不遇生而遇生，皆有情而反無情，如為裙釵所留，而不能去，若日主棄閒神而馳驟，無私意牽制，用神隨日主而驅策，無私情羈絆，足以成其大志，是無情而有情，譬之策馬而上皇州也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c037:p0002",
+      "sha256": "315970cc86acea04b7f67cd61b4a7f7b244ec5ad5ab669283c3627e42d2ff668"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c001",
+  "title": "题记与引",
+  "source_url": "https://luckclub.cn/bazi/001/001/",
+  "revision": "sha256:593804daeef5e1feeef16ffaa7e7c2479792d53f0b3c53731a63d9d147af917a",
+  "source_timestamp": "2026-09-06T04:10:24.846001+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c001.html",
+  "raw_sha256": "593804daeef5e1feeef16ffaa7e7c2479792d53f0b3c53731a63d9d147af917a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "题记与引",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "题记与引",
+      "text": "题记与引",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0002",
+      "sha256": "a446975e0f58cbeb309706fb588ed713115ab3ec25f9290cc742991f4e542261"
+    },
+    {
+      "section": "题记与引",
+      "text": "题记",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0003",
+      "sha256": "e764cadd096d3037d049832be69948c467dd47ba8f47e0720893df9f22d0b52f"
+    },
+    {
+      "section": "题记与引",
+      "text": "子平书，宋徐公东斋已详明矣。传有《渊海》、《渊源》之集，其理则一，篇句俱同。今之用者，惟宗《渊海》。而《渊源》亦有妙用，或未之集。今将二书合并参考，遗失总归一轶。加之诗诀、起例，增解字义。後学识之，则二书了然在目，无遗矣。谨白。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0004",
+      "sha256": "bf3034cbe916c5a38603ba36a8992c6a44c5c58f3506bb58a7d5b0d435856075"
+    },
+    {
+      "section": "题记与引",
+      "text": "引",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0005",
+      "sha256": "74925aa8d35393aebc22849c23eb01358fff2d1d224f113a50ce66ecf9b8d327"
+    },
+    {
+      "section": "题记与引",
+      "text": "子平渊海之理，始自唐大夫李公虚中，以人生年月日时，生克旺相，休囚制化，决人生之祸福，其验神矣。及公幕，昌黎韩炉为之作墓志，以记之後。经吕大夫才又裁定之，并无述作之者。至於有宋徐公升复以人生日主分作六事，议论精微，作《渊海》之书，集话儒之义传布，至今悉皆宗之。後之诸君，文集渊源理义，篇章雷同，迄今数百年矣。板籍有亥承鲁鱼之谬，学者少知其义。今唐君锦池礼请精通此理者，以二书并之，增之口诀，正其讹僞矣。非悬壶化杖者，孰能更易。样行於世，神後学习之，不失古人之遗范矣。书成，唐子示金书，以此为引。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0006",
+      "sha256": "05888ea97eee3c07838adb40bec481ae62966f01cddedb1e4fa3a40e690a127c"
+    },
+    {
+      "section": "题记与引",
+      "text": "崇领七年孟冬吉日重梓",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c001:p0007",
+      "sha256": "9134035662ffc099d4133ecaa10dc48bcaf3659d0e75fb6ae631483d0b02b455"
+    }
+  ]
+}

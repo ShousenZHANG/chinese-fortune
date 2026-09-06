@@ -1,7 +1,8 @@
 """Chinese name analysis (五格剖象 / 81 数理).
 
 Computes 天格, 人格, 地格, 外格, 总格 from 康熙笔画 of each character,
-plus 三才配置 (天人地 五行 sequence) and 吉凶 per the standard 81 数理表.
+plus 三才配置 (天人地 五行 sequence). Legacy numerology labels are marked
+as unverified diagnostic categories; no event predictions or naming advice.
 
 Usage:
     python name_analyze.py --name 王小明
@@ -28,92 +29,92 @@ from utils import (
 )
 
 # --------------------------------------------------------------------------- #
-# 81 数理 table — number -> {"luck": "大吉/吉/中/凶/大凶", "comment": "..."}
-# Source: 传统姓名学 81 数理通用表.
+# 81 数理 compatibility labels; no verified edition/source for this table.
+# These categories are not personal judgments or classical evidence.
 # --------------------------------------------------------------------------- #
 
 SHULI_81: dict[int, dict] = {
-    1:  {"luck": "大吉", "comment": "宇宙开泰之数, 万物开始, 唯一独尊, 头领之运。"},
-    2:  {"luck": "凶",   "comment": "动摇变化, 分离破败, 一身孤立无援之运。"},
-    3:  {"luck": "大吉", "comment": "进取如意, 名利双收, 表现智慧, 立身处世顺利。"},
-    4:  {"luck": "凶",   "comment": "万事休止, 不平不满, 难遂愿, 短命厄运之兆。"},
-    5:  {"luck": "大吉", "comment": "福禄寿长, 阴阳和合, 完璧之象, 富贵荣华之数。"},
-    6:  {"luck": "大吉", "comment": "天德地祥俱备, 福庆有余, 安稳吉祥之运。"},
-    7:  {"luck": "吉",   "comment": "刚毅果断, 勇往直前, 排除万难, 必获成功。"},
-    8:  {"luck": "吉",   "comment": "意志刚健, 持守坚毅, 富进取气慨, 易达目的。"},
-    9:  {"luck": "凶",   "comment": "虽抱奇才, 反遭劫难, 大都为零落败兵之命。"},
-    10: {"luck": "凶",   "comment": "万事终局, 充满损耗数, 多病弱苦, 暗淡无光。"},
-    11: {"luck": "大吉", "comment": "草木更新, 万象逢春, 稳健着实, 顺风扬帆。"},
-    12: {"luck": "凶",   "comment": "无理伸张, 虚弱之运, 易陷孤独, 灾难逢身。"},
-    13: {"luck": "大吉", "comment": "天赋吉运, 善用智慧, 学艺多能, 富贵显达。"},
-    14: {"luck": "凶",   "comment": "沦落天涯, 失意烦闷, 因缘薄弱, 家庭难圆。"},
-    15: {"luck": "大吉", "comment": "福寿圆满之大吉数, 慈祥有德, 富贵荣华。"},
-    16: {"luck": "大吉", "comment": "厚重镇守, 转败为胜, 能成大业, 名利双收。"},
-    17: {"luck": "吉",   "comment": "突破万难, 刚柔兼备, 必能贯彻志望, 功成名就。"},
-    18: {"luck": "大吉", "comment": "铁石心肠, 富贵繁荣, 排除万难, 终成大业。"},
-    19: {"luck": "凶",   "comment": "风云蔽月, 辛苦重来, 内外不和, 障害重重。"},
-    20: {"luck": "凶",   "comment": "智高志大, 历尽艰难, 进退维谷, 难免厄运。"},
-    21: {"luck": "大吉", "comment": "明月光照, 万物形成, 独立权威, 享尽富贵。"},
-    22: {"luck": "凶",   "comment": "秋草逢霜, 困苦愁闷, 中途易遭挫折, 不如意。"},
-    23: {"luck": "大吉", "comment": "旭日东升, 旺盛, 发育, 隆昌, 名扬四海。"},
-    24: {"luck": "大吉", "comment": "锦绣前程, 须靠自力, 多用智谋, 能奏大功。"},
-    25: {"luck": "吉",   "comment": "天时地利, 仅欠人和, 待人接物, 须忍辱内省。"},
-    26: {"luck": "凶带吉", "comment": "波澜起伏, 千变万化, 凌驾万难, 必可成功。"},
-    27: {"luck": "凶带吉", "comment": "一成一败, 一盛一衰, 须防中途突变。"},
-    28: {"luck": "凶",   "comment": "鱼临旱地, 难逃噩运, 此数大凶, 不如更名。"},
-    29: {"luck": "吉",   "comment": "智谋兼备, 名利双收, 大业成就, 漫长气运。"},
-    30: {"luck": "凶带吉", "comment": "吉凶参半, 得失相伴, 投机取巧, 须防失误。"},
-    31: {"luck": "大吉", "comment": "智勇得志, 千挑百战, 自力更生, 大功大业。"},
-    32: {"luck": "大吉", "comment": "池中之龙, 风云际会, 一跃上天, 成功可望。"},
-    33: {"luck": "大吉", "comment": "意气用事, 人和必失, 善用智慧, 必可昌隆。"},
-    34: {"luck": "大凶", "comment": "灾难不绝, 难望成功, 此数大凶, 不可使用。"},
-    35: {"luck": "吉",   "comment": "中吉之数, 进退保守, 生意安稳, 须靠保守。"},
-    36: {"luck": "凶带吉", "comment": "波澜重叠, 常陷穷困, 动不如静, 有才有德。"},
-    37: {"luck": "大吉", "comment": "逢凶化吉, 吉人天相, 风调雨顺, 福之大者。"},
-    38: {"luck": "凶带吉", "comment": "名虽可得, 利则难获, 艺界发展, 可望成功。"},
-    39: {"luck": "大吉", "comment": "云开见月, 虽有劳碌, 光明坦途, 指日可待。"},
-    40: {"luck": "凶带吉", "comment": "一胜一败, 沉浮不定, 知难而退, 自获天佑。"},
-    41: {"luck": "大吉", "comment": "天赋吉运, 德望兼备, 继续努力, 前途无限。"},
-    42: {"luck": "凶带吉", "comment": "事业不专, 十九不成, 专心一意, 始可成功。"},
-    43: {"luck": "凶带吉", "comment": "雨夜之花, 外祥内苦, 忍耐自重, 始保平安。"},
-    44: {"luck": "大凶", "comment": "虽用心计, 事难遂愿, 贪功好进, 必招失败。"},
-    45: {"luck": "大吉", "comment": "杨柳遇春, 绿叶发枝, 冲破难关, 一举成名。"},
-    46: {"luck": "凶",   "comment": "坎坷不平, 艰难重重, 若无耐心, 难定大业。"},
-    47: {"luck": "大吉", "comment": "有贵人助, 可成大业, 虽遇不幸, 浮沉不定。"},
-    48: {"luck": "大吉", "comment": "美化之数, 鹤鸣九皋, 可为顾问, 谋事有成。"},
-    49: {"luck": "凶",   "comment": "遇吉则吉, 遇凶则凶, 惟靠谨慎, 逢凶化吉。"},
-    50: {"luck": "凶带吉", "comment": "吉凶互见, 一成一败, 凶中有吉, 吉中有凶。"},
-    51: {"luck": "凶带吉", "comment": "一盛一衰, 浮沉不常, 自重自处, 可保平安。"},
-    52: {"luck": "大吉", "comment": "草木逢春, 雨过天晴, 渡过难关, 即获成功。"},
-    53: {"luck": "凶",   "comment": "盛衰参半, 外祥内苦, 先吉后凶, 先凶后吉。"},
-    54: {"luck": "大凶", "comment": "虽倾全力, 难望成功, 此数大凶, 最好改名。"},
-    55: {"luck": "凶带吉", "comment": "外观隆昌, 内隐祸患, 克服难关, 始可成功。"},
-    56: {"luck": "凶",   "comment": "事与愿违, 终难成功, 欲速不达, 有始无终。"},
-    57: {"luck": "吉",   "comment": "虽有困难, 时来运转, 曰后发达, 可享盛名。"},
-    58: {"luck": "凶带吉", "comment": "半凶半吉, 浮沉多端, 始遭灾难, 后得幸福。"},
-    59: {"luck": "凶",   "comment": "遇事犹疑, 难望成事, 大刀阔斧, 始可有成。"},
-    60: {"luck": "大凶", "comment": "黑暗无光, 心迷意乱, 出尔反尔, 难定方针。"},
-    61: {"luck": "大吉", "comment": "云遮半月, 内隐风波, 应自重慎始, 必可成功。"},
-    62: {"luck": "凶",   "comment": "烦闷懊恼, 事业不振, 信用渐失, 不致失败。"},
-    63: {"luck": "大吉", "comment": "万物化育, 繁荣之象, 专心一意, 始能成事。"},
-    64: {"luck": "大凶", "comment": "见异思迁, 十九不成, 徒劳无功, 不如更名。"},
-    65: {"luck": "大吉", "comment": "吉运自来, 能享盛名, 把握机会, 必获成功。"},
-    66: {"luck": "凶",   "comment": "黑夜漫长, 进退维谷, 内外不和, 信用缺乏。"},
-    67: {"luck": "大吉", "comment": "独营事业, 事事如意, 功成名就, 富贵自来。"},
-    68: {"luck": "大吉", "comment": "思虑周详, 计划力行, 不失先机, 可望成功。"},
-    69: {"luck": "大凶", "comment": "动摇不安, 常陷逆境, 不得时运, 难得利达。"},
-    70: {"luck": "大凶", "comment": "惨淡经营, 难免贫困, 此数大凶, 不可用之。"},
-    71: {"luck": "凶带吉", "comment": "吉凶参半, 惟赖勇气, 贯彻力行, 可得成功。"},
-    72: {"luck": "凶",   "comment": "利害混集, 凶多于吉, 得而复失, 难以安顺。"},
-    73: {"luck": "吉",   "comment": "安稳之中, 享自然之福, 力行不懈, 终必成功。"},
-    74: {"luck": "大凶", "comment": "利不及费, 坐食山空, 如无智谋, 难望成事。"},
-    75: {"luck": "凶带吉", "comment": "吉中带凶, 欲速不达, 进不如守, 可保安祥。"},
-    76: {"luck": "大凶", "comment": "此数大凶, 破产之象, 宜速改名, 以避厄运。"},
-    77: {"luck": "凶带吉", "comment": "先苦后甘, 先甘后苦, 如能守成, 可保安稳。"},
-    78: {"luck": "凶带吉", "comment": "有得有失, 华而不实, 须防劫财, 始保平安。"},
-    79: {"luck": "凶",   "comment": "如走夜路, 前途无光, 希望不大, 劳而无功。"},
-    80: {"luck": "大凶", "comment": "辛苦无功, 事与愿违, 若能避世, 可享余生。"},
-    81: {"luck": "大吉", "comment": "万物回春, 还本归元, 能得繁荣, 发达成功。"},
+    1:  {"luck": "大吉"},
+    2:  {"luck": "凶"},
+    3:  {"luck": "大吉"},
+    4:  {"luck": "凶"},
+    5:  {"luck": "大吉"},
+    6:  {"luck": "大吉"},
+    7:  {"luck": "吉"},
+    8:  {"luck": "吉"},
+    9:  {"luck": "凶"},
+    10: {"luck": "凶"},
+    11: {"luck": "大吉"},
+    12: {"luck": "凶"},
+    13: {"luck": "大吉"},
+    14: {"luck": "凶"},
+    15: {"luck": "大吉"},
+    16: {"luck": "大吉"},
+    17: {"luck": "吉"},
+    18: {"luck": "大吉"},
+    19: {"luck": "凶"},
+    20: {"luck": "凶"},
+    21: {"luck": "大吉"},
+    22: {"luck": "凶"},
+    23: {"luck": "大吉"},
+    24: {"luck": "大吉"},
+    25: {"luck": "吉"},
+    26: {"luck": "凶带吉"},
+    27: {"luck": "凶带吉"},
+    28: {"luck": "凶"},
+    29: {"luck": "吉"},
+    30: {"luck": "凶带吉"},
+    31: {"luck": "大吉"},
+    32: {"luck": "大吉"},
+    33: {"luck": "大吉"},
+    34: {"luck": "大凶"},
+    35: {"luck": "吉"},
+    36: {"luck": "凶带吉"},
+    37: {"luck": "大吉"},
+    38: {"luck": "凶带吉"},
+    39: {"luck": "大吉"},
+    40: {"luck": "凶带吉"},
+    41: {"luck": "大吉"},
+    42: {"luck": "凶带吉"},
+    43: {"luck": "凶带吉"},
+    44: {"luck": "大凶"},
+    45: {"luck": "大吉"},
+    46: {"luck": "凶"},
+    47: {"luck": "大吉"},
+    48: {"luck": "大吉"},
+    49: {"luck": "凶"},
+    50: {"luck": "凶带吉"},
+    51: {"luck": "凶带吉"},
+    52: {"luck": "大吉"},
+    53: {"luck": "凶"},
+    54: {"luck": "大凶"},
+    55: {"luck": "凶带吉"},
+    56: {"luck": "凶"},
+    57: {"luck": "吉"},
+    58: {"luck": "凶带吉"},
+    59: {"luck": "凶"},
+    60: {"luck": "大凶"},
+    61: {"luck": "大吉"},
+    62: {"luck": "凶"},
+    63: {"luck": "大吉"},
+    64: {"luck": "大凶"},
+    65: {"luck": "大吉"},
+    66: {"luck": "凶"},
+    67: {"luck": "大吉"},
+    68: {"luck": "大吉"},
+    69: {"luck": "大凶"},
+    70: {"luck": "大凶"},
+    71: {"luck": "凶带吉"},
+    72: {"luck": "凶"},
+    73: {"luck": "吉"},
+    74: {"luck": "大凶"},
+    75: {"luck": "凶带吉"},
+    76: {"luck": "大凶"},
+    77: {"luck": "凶带吉"},
+    78: {"luck": "凶带吉"},
+    79: {"luck": "凶"},
+    80: {"luck": "大凶"},
+    81: {"luck": "大吉"},
 }
 
 
@@ -131,7 +132,12 @@ LAST_DIGIT_WUXING: dict[int, str] = {
 
 def shuli_lookup(n: int) -> dict:
     n = ((n - 1) % 81) + 1 if n > 0 else 1
-    return SHULI_81.get(n, {"luck": "未知", "comment": ""})
+    return {
+        **SHULI_81.get(n, {"luck": "未知"}),
+        "label_kind": "legacy_numerology_category",
+        "source_status": "unverified",
+        "personal_verdict": None,
+    }
 
 
 def wuxing_for(n: int) -> str:
@@ -406,15 +412,17 @@ def main(argv: list[str] | None = None) -> int:
     sancai["luck"] = sancai_luck(
         sancai["tian_wuxing"], sancai["ren_wuxing"], sancai["di_wuxing"],
     )
+    sancai["label_kind"] = "heuristic_relation_category"
+    sancai["source_status"] = "unverified"
 
     summary_parts = [
         f"姓名 {name}",
-        f"天格 {grids['tian_ge']['number']}({grids['tian_ge']['luck']})",
-        f"人格 {grids['ren_ge']['number']}({grids['ren_ge']['luck']})",
-        f"地格 {grids['di_ge']['number']}({grids['di_ge']['luck']})",
-        f"外格 {grids['wai_ge']['number']}({grids['wai_ge']['luck']})",
-        f"总格 {grids['zong_ge']['number']}({grids['zong_ge']['luck']})",
-        f"三才 {sancai['combo']} → {sancai['luck']}",
+        f"天格 {grids['tian_ge']['number']}",
+        f"人格 {grids['ren_ge']['number']}",
+        f"地格 {grids['di_ge']['number']}",
+        f"外格 {grids['wai_ge']['number']}",
+        f"总格 {grids['zong_ge']['number']}",
+        f"三才 {sancai['combo']}",
     ]
 
     out = {
@@ -426,20 +434,13 @@ def main(argv: list[str] | None = None) -> int:
         "reliable": not missing,
         "five_grids": grids,
         "san_cai": sancai,
-        # SKILL.md:54 明令五格「无古籍 —— 系近代日本熊崎健翁所创, 非中土古法;
-        # 须如实标注其来历与争议, 不作古籍权威引用」。而输出此前一个
-        # note/source/boundary 字段都没有 —— 只能指望 Claude 记得去读
-        # 13-qiming.md 末尾那一句。同项目的 liuren_cast / xiaoliuren_cast 都在
-        # JSON 里带 boundary 自我限定, 唯独这里没有。
-        # 起名场景的用户多半是给新生儿取名, 而 81 数理会发「沦落天涯, 失意烦闷,
-        # 因缘薄弱, 家庭难圆」这类宿命式凶断。
         "source": {
             "system": "五格剖象法 (熊崎式)",
             "origin": "近代日本 熊崎健翁 所创, 20 世纪传入华人地区",
             "classical_basis": "无 —— 非中土古法, 《三命通会》等古籍均无此说",
             "disputed": True,
-            "caveat": ("81 数理的吉凶断语出自该派自设的数理表, 无古籍依据; "
-                       "转述时须标明来历, 不可作命定之论, 尤不可据以劝阻取名。"),
+            "caveat": ("81 数理标签仅保留为旧表分类, 本表出处尚未核验, 不可作命定之论; "
+                       "已移除事件断语, 不据此建议取名或改名。"),
         },
         "boundary": ("本工具只算五格数字与三才配置; 音韵、字义、与生辰八字的补益 "
                      "皆不在内。取名请综合考量, 勿单凭数理。"),
@@ -447,7 +448,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     if missing:
         out["warning"] = (
-            f"以下字未在康熙笔画表中, 用默认值 8 估算, 五格吉凶不可靠: {missing}。"
+            f"以下字未在康熙笔画表中, 用默认值 8 估算, 五格数字待核: {missing}。"
             f"请补 assets/name_bihua.json 或用 --strict 拒绝估算。"
         )
 

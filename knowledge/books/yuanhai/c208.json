@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c208",
+  "title": "六月建未候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/208/",
+  "revision": "sha256:993dc3300a825fea71460b148d4cec24bfdadd9b28e925e0d835a789893df2a3",
+  "source_timestamp": "2026-09-06T04:11:05.557084+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c208.html",
+  "raw_sha256": "993dc3300a825fea71460b148d4cec24bfdadd9b28e925e0d835a789893df2a3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六月建未候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c208:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "六月建未候诗诀",
+      "text": "六月建未候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c208:p0002",
+      "sha256": "056f4b18dcd64c0aa9a4935cb299f51f154c88b47fafce10cd99bccd9a3646eb"
+    },
+    {
+      "section": "六月建未候诗诀",
+      "text": "丙丁日坐未宫逢，金水虽凶未必凶，木库火乡应富贵，再行申酉祸灾重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c208:p0003",
+      "sha256": "3fe6610f0b35db6f8c5bf3d1ae0f9dac2fe3d7702013a004aa86b228f622dc44"
+    },
+    {
+      "section": "六月建未候诗诀",
+      "text": "眉批：六月未宫，己土十八日，丁火七日，乙木五日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c208:p0004",
+      "sha256": "d5807706ab8d751b668c067f7c3f996129961b1ae33c1ec3873187e54aa55127"
+    },
+    {
+      "section": "六月建未候诗诀",
+      "text": "未月支藏木火时，不逢顺逆格高低，南方行去东方旺，酉位休愁戌亥亏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c208:p0005",
+      "sha256": "6311bcaac66922acc56eee00a7f4b5d30908f9dde2e86553edb3c4af4536f124"
+    }
+  ]
+}

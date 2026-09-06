@@ -1,0 +1,39 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c018",
+  "title": "十八、論四吉神能破格",
+  "source_url": "https://donglishuzhai.net/chapter/3731.html",
+  "revision": "sha256:607bfae27e912a6caa5e9490ca5244fb8a1c1b7d54f8c929a68f55ab2213db9a",
+  "source_timestamp": "2026-09-06T04:18:05.382Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c018.html",
+  "raw_sha256": "607bfae27e912a6caa5e9490ca5244fb8a1c1b7d54f8c929a68f55ab2213db9a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十八、論四吉神能破格",
+      "text": "財官印食，四吉神也，然用之不當，亦能破格。",
+      "layer": "base_text",
+      "passage_id": "ziping:c018:p0001",
+      "sha256": "fd1e218fe044b70ea948529930c6d38e57b4f15e03480339727158ca06ea20d2"
+    },
+    {
+      "section": "十八、論四吉神能破格",
+      "text": "如食神帶煞，透財爲害，財能破格也；春木火旺，見官則忌，官能破格也；煞逢食制，透印無功，印能破格也；財旺生官，露食則雜，食能破格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c018:p0002",
+      "sha256": "40c8211072d898ca10a1aca83cc67c7a2a5ca447ee396c64b87d473ad6db5229"
+    },
+    {
+      "section": "十八、論四吉神能破格",
+      "text": "是故官用食破，印用財破。譬之用藥，參苓芪术，本屬良材，用之失宜，亦能害人。",
+      "layer": "base_text",
+      "passage_id": "ziping:c018:p0003",
+      "sha256": "cb836522e42fd137ba7d50bdb087dcf8a2b26e7e886be086e6a8b0ee1d27e8f5"
+    }
+  ]
+}

@@ -21,6 +21,8 @@ import sys
 from datetime import datetime
 
 import entropy
+from classical_time_numbers import add_calendar_arguments, time_numbers
+from request_time import add_request_arguments, resolve_time
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
@@ -29,7 +31,6 @@ from utils import (
     error_envelope,
     json_print,
     ok_envelope,
-    parse_datetime_arg,
     shichen_number,
     warn,
 )
@@ -260,21 +261,11 @@ def shichen_index(hour: int) -> int:
     return shichen_number(hour)
 
 
-def from_time(now: datetime) -> tuple[list[int], dict]:
-    # year/month/day numbers
-    # 用农历更传统, 但简化: 直接使用公历值作 plum-blossom 数 (常见简化)
-    y = now.year
-    m = now.month
-    d = now.day
-    sc = shichen_index(now.hour)
-
-    upper = ((y + m + d) % 8) or 8
-    lower = ((y + m + d + sc) % 8) or 8
-    change = ((y + m + d + sc) % 6) or 6
-    lines = from_numbers(upper, lower, change)
-    meta = {"upper_num": upper, "lower_num": lower, "change_num": change,
-            "shichen": sc, "ymd": [y, m, d]}
-    return lines, meta
+def from_time(now: datetime, profile: str = 'classical', leap_policy: str | None = None) -> tuple[list[int], dict]:
+    numbers = time_numbers(now, profile, leap_policy)
+    lines = from_numbers(numbers['upper_num'], numbers['lower_num'], numbers['change_num'])
+    return lines, {**numbers, 'shichen': numbers['hour_number'],
+                   'ymd': [now.year, now.month, now.day]}
 
 
 # --------------------------------------------------------------------------- #
@@ -420,6 +411,8 @@ def build_parser() -> argparse.ArgumentParser:
     pn.add_argument("--question", type=str, default=None)
 
     pt = sub.add_parser("time", help="当下时间起卦")
+    add_request_arguments(pt)
+    add_calendar_arguments(pt)
     pt.add_argument("--datetime", dest="dt", type=str, default=None,
                     help="ISO 时间 (如 2026-06-24T13:05), 默认当下; 用于可复现起卦")
     pt.add_argument("--question", type=str, default=None)
@@ -514,12 +507,13 @@ def main(argv: list[str] | None = None) -> int:
         out = cast("numbers", lines, meta, args.question)
     elif args.method == "time":
         try:
-            now = parse_datetime_arg(args.dt)
+            now, time_context = resolve_time(args, datetime_value=args.dt)
+            lines, meta = from_time(now, args.calendar_profile, args.leap_month_policy)
         except ValueError as e:
             json_print(error_envelope('yijing', "bad_datetime", str(e)))
             return 1
-        lines, meta = from_time(now)
         meta["now_iso"] = now.isoformat()
+        meta["time_context"] = time_context
         out = cast("time", lines, meta, args.question)
     elif args.method == "text":
         lines, meta = from_text(args.text)

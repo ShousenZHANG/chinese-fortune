@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c026",
+  "title": "恩怨論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F26&oldid=844377",
+  "revision": "844377",
+  "source_timestamp": "2017-03-23T15:47:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c026.wiki",
+  "raw_sha256": "0742665e10701b72cd02e2ddeb9fbf677590ab8cbf5d0e39c37050c53ca2e030",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "恩怨論",
+      "text": "兩意情通中有媒，雖然遙立意尋追，有情郤被人離間，怨起中間死者灰。",
+      "layer": "base_text",
+      "passage_id": "ditian:c026:p0001",
+      "sha256": "7eb8a49f576e040439cee95fe70b21d3deeca389ab416c0c25d11502acb95548"
+    },
+    {
+      "section": "恩怨論",
+      "text": "喜神合神，兩情相通，又引用神生化，如有媒矣，雖遠隔分立，其情自相和好，有恩而無怨，若忌神離間，求合不得，或至相害，則恩反成怨矣！\n至於可憎之神，遠之為妙，可愛之神，近之尤切，又有一般邂逅相逄者，得之不勝其樂，私情牽合者，去之亦足為喜。",
+      "layer": "commentary",
+      "passage_id": "ditian:c026:p0002",
+      "sha256": "7e9f005ba026a4d95ec943c5083954076b7f23898c8ed5ebab6357122b785988"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c091",
+  "title": "论杂气",
+  "source_url": "https://luckclub.cn/bazi/001/091/",
+  "revision": "sha256:77711743efec2d4dabf6586e7e3401c211bcadc9e4cfb90b70e0a3d26415ca35",
+  "source_timestamp": "2026-09-06T04:10:43.458115+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c091.html",
+  "raw_sha256": "77711743efec2d4dabf6586e7e3401c211bcadc9e4cfb90b70e0a3d26415ca35",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论杂气",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c091:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论杂气",
+      "text": "论杂气",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c091:p0002",
+      "sha256": "e62c8b9496f570d050f2ac3ddb59e15ad95df413b1b2f7299f79b54b9fe6741d"
+    },
+    {
+      "section": "论杂气",
+      "text": "杂气者，盖谓辰戌丑未之位也。辰中有乙戊癸字，戌中有辛丁戊字，丑中有癸辛己字，未中有乙己丁字，此四者，天地不正之气也。且如甲则镇於寅位，阳木之垣；乙专镇於卯，皆司春令，而穿东方之气。辰为东南之隅及春夏交接之界，受气不纯，禀命不一，故名杂气也，丑未戌亦然。还看六甲何如以论之，假日干是甲，而得丑月，贵既在中，辛则正官，癸为之印绶，己则为正财，不知用何者为福，要在四柱中看透出是何字，随其所出而言其吉凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c091:p0003",
+      "sha256": "3f71006ea72245f0601817dff22a6c97a6332d2988ac796606f9cc67c9f405ef"
+    },
+    {
+      "section": "论杂气",
+      "text": "有如前说法，但库中物皆闭藏，须待有以开其扃钥，方言发福。所言开啓钥者，何物也？乃刑冲破害耳，如四柱中原有刑冲破害，复行此等运气，则刑冲破害多反伤其福。大抵杂气要财多，便是贵命。若年时别入他格，当以他格例断之。盖此乃天地之杂气，不能纯一，故少力耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c091:p0004",
+      "sha256": "2f9a23e6d05a14c8d2c6d428c0e531165fb55a5ee80cd0f86244245f5dc6d1ea"
+    },
+    {
+      "section": "论杂气",
+      "text": "别格专於时年乃重事，看命须审轻重，以取祸福。先论重者，次言轻者，百发百中矣。其他当以此言类之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c091:p0005",
+      "sha256": "9d5c4c85f042db267bf4ecfaaa4c0d82710501e342166fe36b439876e0dd7242"
+    },
+    {
+      "section": "论杂气",
+      "text": "眉批：杂气诗诀，杂气官星在月宫，天干透露始为丰，财多官星刑冲破，切忌干支压伏重。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 40,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c091:p0006",
+      "sha256": "88442427ac49965991e6fcb9680ea8e5ac28bb5a3dd7d21b4977f8906b608d90"
+    }
+  ]
+}

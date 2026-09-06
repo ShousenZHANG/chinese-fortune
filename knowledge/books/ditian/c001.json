@@ -1,0 +1,130 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c001",
+  "title": "通天論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F01&oldid=844395",
+  "revision": "844395",
+  "source_timestamp": "2017-03-23T15:51:14Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c001.wiki",
+  "raw_sha256": "714bb5290a81d50d603aaf9098204102b72d625acd49c037305107bf2110c6a5",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "通天論",
+      "text": "欲識三元萬物宗，先觀帝載與神功。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0001",
+      "sha256": "c8cfc82e53d9b0e894aca1e0f6e570400bacbe00bee0a1705912eaab8dc8f0ea"
+    },
+    {
+      "section": "通天論",
+      "text": "天有陰陽，故春木，夏火，秋金，冬水，季土。得時而顯其神功，命中天地元之理，悉本於此，日干為天元，地支為地元，支中所為人元。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0002",
+      "sha256": "b59dac60fc9d38bca383a02fe1108c05b0a25e042e4526f1dbf80365f18c3144"
+    },
+    {
+      "section": "通天論",
+      "text": "坤元合德機緘通，五氣偏全定吉凶。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0003",
+      "sha256": "af6331e1c6e744560d176247bc4a6c77b8a79e05110538768e29a30ee638db3c"
+    },
+    {
+      "section": "通天論",
+      "text": "地有剛柔，故五行佈於東西南北，與天合德，而神其機緘，賦於人者，有偏全之不一，故吉凶定焉。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0004",
+      "sha256": "e5d194b83ec37b10716e8a8ff92137f322bc88d8e79c3921854fd662ca86d81b"
+    },
+    {
+      "section": "通天論",
+      "text": "戴天履地人為貴，順則吉兮悖則凶。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0005",
+      "sha256": "77cf9909732b0b53ffec68d013c86b35fa1326382c393b03935565f56d8cd19c"
+    },
+    {
+      "section": "通天論",
+      "text": "凡物莫不得五行，而戴天履地，惟人得五行之全，故為貴，其有吉凶之不一者，以其得於五行之順與逆也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0006",
+      "sha256": "19151723fe32b07bb1b799c02231bec0f7fda131aa2896599e193c8a7c65259f"
+    },
+    {
+      "section": "通天論",
+      "text": "欲與人間開聾瞶，順悖之機須理會。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0007",
+      "sha256": "c6ee4335d66aeca65dc2f3c9049d42a7d790a57e8470a98c2428a3272a0d81ea"
+    },
+    {
+      "section": "通天論",
+      "text": "不知命者如聾瞶，知命者於順悖之機而能理會之，庶可以開之耳。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0008",
+      "sha256": "dde129581ed9461d4cfb9889cd243b5533fe098b4abbfb7917db2ab7fe24e8cb"
+    },
+    {
+      "section": "通天論",
+      "text": "理承氣行荳有常，進兮退兮宜抑揚。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0009",
+      "sha256": "6b21aad446f7db97d9fcb503a96ff38c9c6764e9882399ee3670a9869a2cb827"
+    },
+    {
+      "section": "通天論",
+      "text": "翕闢往來皆氣，而理行乎其間，行之始而進，進之極。則為退之機，如三月甲木是也，行之盛而退，退之極，則為進之機，如九月甲木是也，學者能抑揚其淺深，斯可以言命。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0010",
+      "sha256": "a67787e56b3df7383e44aefdf869efe04b9079f3b001a1315026c95144a0ff3f"
+    },
+    {
+      "section": "通天論",
+      "text": "配合干支仔細詳，斷人禍福與災祥。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0011",
+      "sha256": "fb8df4c4c61b30b18d476b7f713d73bf55f9ec62a219d4f5a680baa006f94dfe"
+    },
+    {
+      "section": "通天論",
+      "text": "干支配合，細詳其進退之機。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0012",
+      "sha256": "2b479984d0513e0513df99e5a2c7fa7af19f31b9b7d47ba823e2627c1132f1ae"
+    },
+    {
+      "section": "通天論",
+      "text": "五陽皆陽丙為最，五陰皆陰癸為至。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0013",
+      "sha256": "dc563941d49e2cebf11e290588cfc877a36f80e7f32d6e94b1a67821c23e1114"
+    },
+    {
+      "section": "通天論",
+      "text": "甲，丙，戊，庚，壬，為陽，獨丙火稟陽之精，而為陽中之陽。\n乙，丁，己，辛，癸，為陰，獨癸水稟陰之精，而為陰中之陰。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0014",
+      "sha256": "2e80d4c0d8f9581bd39b9f5099df53ca089d7a7c5af4ea214447c1c4d31ae51a"
+    },
+    {
+      "section": "通天論",
+      "text": "五陽從氣不從勢，五陰從勢無情義。",
+      "layer": "base_text",
+      "passage_id": "ditian:c001:p0015",
+      "sha256": "a9d8ef4daf6ad58f78b43a6653669f68df535ea0f9dc40d634a644085707644e"
+    },
+    {
+      "section": "通天論",
+      "text": "五陽得陽之氣，即能成其陽剛，不畏財煞之勢，五陰得陰之氣，即能成其陰順，故木盛則從木，火盛則從火，金盛則從金，水盛則從水，土盛則從土，於情義之所在，見其勢衰則忘之，若從得其正，亦未必於無情義也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c001:p0016",
+      "sha256": "8de1c1af4d98e9f8b42e9f5b2358a994f3832cab7b819ef85282e123138165af"
+    }
+  ]
+}

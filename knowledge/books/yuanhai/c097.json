@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c097",
+  "title": "论时墓",
+  "source_url": "https://luckclub.cn/bazi/001/097/",
+  "revision": "sha256:4d8879d091dcaeb6b4a8f60f9204221f0798b568d25c57c85a534ac1e49cf301",
+  "source_timestamp": "2026-09-06T04:10:44.587314+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c097.html",
+  "raw_sha256": "4d8879d091dcaeb6b4a8f60f9204221f0798b568d25c57c85a534ac1e49cf301",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论时墓",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c097:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论时墓",
+      "text": "论时墓",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c097:p0002",
+      "sha256": "3b1618f47d2dbdc0d6973005500463ab647b26ad149f2a78fdb53d87e68fb429"
+    },
+    {
+      "section": "论时墓",
+      "text": "夫时墓之论，谓财官之墓时论之也。要刑冲破害以开啓钥，其人必难发于少年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c097:p0003",
+      "sha256": "49dd2817e094782e016ae04ca333db2a534fea9e0ced70eac9edc0e6b6312f9a"
+    },
+    {
+      "section": "论时墓",
+      "text": "经曰：少年不发库中人。也怕有物以压之，如丁用辰为官库，别有戊辰之类制之，则辰不能为官矣，如此难作好命。必乃有物以破其戊，虽得之发福亦浅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c097:p0004",
+      "sha256": "3435be12e9a8ea01e85389f52a255ff80881378ecd50dd74b1805981a5de15da"
+    },
+    {
+      "section": "论时墓",
+      "text": "经曰：鬼入墓中，危难者甚，若独类而长，才亦如之。此是秘言，不可轻泄也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c097:p0005",
+      "sha256": "81be754ef0eb98fcb67f1d440b51a1b595c3fb427d614019178a92c2db008138"
+    }
+  ]
+}

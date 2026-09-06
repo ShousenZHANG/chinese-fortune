@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c167",
+  "title": "神趣八法-化象",
+  "source_url": "https://luckclub.cn/bazi/001/167/",
+  "revision": "sha256:030fe6dad0c6ae38d89a956efa74bf97a587fe905bf78497c5ac9156efed86c8",
+  "source_timestamp": "2026-09-06T04:10:57.467521+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c167.html",
+  "raw_sha256": "030fe6dad0c6ae38d89a956efa74bf97a587fe905bf78497c5ac9156efed86c8",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-化象",
+      "text": "神趣八法-化象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c167:p0001",
+      "sha256": "23e08b6549b927576b219f0fe19615296c7de7123f174daa7d92ae398b8b5661"
+    },
+    {
+      "section": "神趣八法-化象",
+      "text": "化象者，乃甲乙日生人，在辰戌丑未月，天干有一己字合甲字，谓之甲己化土。喜行火运。如逢甲木生旺，逢化不成，反为不吉，己字中露出二甲字，为之争合，有一个己字露出，谓之妒合，均破格不成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c167:p0002",
+      "sha256": "48bdae96f6a9ad9c8fbece93df1fc5137bf66844df853666dbdaed7095801c55"
+    },
+    {
+      "section": "神趣八法-化象",
+      "text": "又曰：“化者，阴阳合化之意也。乃天地相停，五行均配。”经云：“化内从局，运转而成封帝侧。”又曰：“化象伏而平生碌碌。”谓支相停者化，是。看日时合化不合化。《玉井》云：“五气有化象，须要纯一清洁。化而或返，有贵有贱，化而不化，或寿或夭。”《通玄论》云：“乙旺庚从，庚旺乙从。日主无气化有气，方可用。若各无气，不可用，如丁壬化木，生於春，则夫从妻生；生於冬，则妻从夫生，是谓化也。”如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c167:p0003",
+      "sha256": "49c4b8f63facb079048cb4f043f39ed270e7e6e62462511015ef98f34726e52a"
+    },
+    {
+      "section": "神趣八法-化象",
+      "text": "甲戌 甲寅 癸巳 戊午,戊癸化火，生於寅月，临官於巳，旺於午，此化气得时得位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c167:p0004",
+      "sha256": "ed8d78247b1374af24bae3f95d67b4ba03583d827da4d02b8b591e6f6251e6b4"
+    }
+  ]
+}

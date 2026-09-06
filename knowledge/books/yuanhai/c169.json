@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c169",
+  "title": "神趣八法-返象",
+  "source_url": "https://luckclub.cn/bazi/001/169/",
+  "revision": "sha256:f5f0825d3f33f155883847102b1f3e71e376f0121c90e7a925b53f6c14b9f0ca",
+  "source_timestamp": "2026-09-06T04:10:57.922402+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c169.html",
+  "raw_sha256": "f5f0825d3f33f155883847102b1f3e71e376f0121c90e7a925b53f6c14b9f0ca",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-返象",
+      "text": "神趣八法-返象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c169:p0001",
+      "sha256": "63ed32c6fc781fd7561697c764fac3868900ce4416a29e64acdb5dbe852f9fa3"
+    },
+    {
+      "section": "神趣八法-返象",
+      "text": "返象者，乃所谓值身主用神，引至时上一位为绝之乡，谓之用而不用，皆为返象。又遇返之太甚者，不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c169:p0002",
+      "sha256": "484337cc4c189986c9329102251312cdd59451adeffa5784a25820b82671d145"
+    },
+    {
+      "section": "神趣八法-返象",
+      "text": "又曰：夫返者，乃绝处逢生之意也。如乙庚化金，生於寅月，乃金绝地，柱中木重，而却化金，此则化气失局，故曰返象。《玉井》又以化中返本倒化之类谓之返。如乙庚化金，见亥地多，木重，非化金而却化木，其义一也。岁运同断。或以生弱而遇官杀，有官则进，有杀则退，亦为返象。经云：“化成造化，各居於衰墓绝乡，象成杂局，遇合而犹如不遇。其象中性情，平生居止，频迁反复，无成立，心不定。”谓身弱而遇官杀，其义亦同。假如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c169:p0003",
+      "sha256": "a892d677c3cab477bcba28811371bd5dc36676ffc9f969e395c0ddc96c8c295a"
+    },
+    {
+      "section": "神趣八法-返象",
+      "text": "辛未 壬辰 丙午 癸巳，丙用癸为官，不合有壬来克。丙辛化水，柱中辰巳午未，乃水墓衰绝之地，真返象也。又",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c169:p0004",
+      "sha256": "0001080c53d27d1b145795e2c14d7ca43176e5767c5d6185007d135d8c80ca1d"
+    },
+    {
+      "section": "神趣八法-返象",
+      "text": "癸丑 丙辰 丙申 辛卯，丙与辛合，丙火生申无气，辛金坐卯衰行，辛金旺运夫从妻，丙火旺运夫从妻，此命无祖业，一生进退无成。余类推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c169:p0005",
+      "sha256": "c0d46683719dadaed2ade20f8a77814e00bfaf2d12cfad6807bbaf4dfb931671"
+    }
+  ]
+}

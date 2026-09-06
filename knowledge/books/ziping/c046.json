@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c046",
+  "title": "四十六、論建祿月劫取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3759.html",
+  "revision": "sha256:77b667983df72e58d8b6938cdb006ca5d877143c8657bbaaedd4a6a151351c15",
+  "source_timestamp": "2026-09-06T04:17:19.807Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c046.html",
+  "raw_sha256": "77b667983df72e58d8b6938cdb006ca5d877143c8657bbaaedd4a6a151351c15",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "祿劫取運，即以祿劫所成之局，分而配之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0001",
+      "sha256": "2dd43d42176e4de032d1e2be5670556472e77c5edec284708918e9fc70250416"
+    },
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "祿劫用官，印護者喜財，怕官星之逢合，畏七煞之相乘，傷食不能爲害，劫比未即爲凶；財生者喜印，宜官星之植根，畏傷食之相侮，逢財愈見其功，雜煞豈能無礙？",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0002",
+      "sha256": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b"
+    },
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "祿劫用財而帶傷食，財食重則喜印綬，而不忌比肩；財食輕則宜助財，而不喜印比。逢煞無傷，遇官非福。",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0003",
+      "sha256": "f083a1b6f7b4d6aee498014574bccfa67dfafea60dfee605c08b723035dbe386"
+    },
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "祿劫用煞以食制，食重煞輕，則運宜助煞；食輕煞重，則運喜助食。",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0004",
+      "sha256": "d4164213f7e586de0fb913698dcf3eeda6f614627a66e48b0a9922d1a9afa546"
+    },
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "若用煞而帶財，命中合煞存財，則傷食爲宜，財運不忌，透官無慮，身旺亦亨；若命中合財存煞，而用食制，煞輕則助煞，食輕則助食而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0005",
+      "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c"
+    },
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "祿劫而用傷食，財運最宜，煞亦不忌，行印非吉，透官不美。若命中傷食太重，則財運固利，而印亦不忌矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0006",
+      "sha256": "a390d570c6956c2835a2071971d379fa8b7abf4fc8ee5754ba2eaa3efd72d72b"
+    },
+    {
+      "section": "四十六、論建祿月劫取運",
+      "text": "祿劫而官煞並出，不論合煞留官，存官制煞，運喜傷食，比劫亦宜，印綬未爲良圖，財官亦非福運。",
+      "layer": "base_text",
+      "passage_id": "ziping:c046:p0007",
+      "sha256": "efb4db0b911a89d233be7799a52d3f20ebc76a7189678920102b36550bc4457e"
+    }
+  ]
+}

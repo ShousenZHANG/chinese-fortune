@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c178",
+  "title": "宝法第一",
+  "source_url": "https://luckclub.cn/bazi/001/178/",
+  "revision": "sha256:6e7bd4246d12133c4da605fc378b0f1012805fcc5e0c230e2fc52ecc32077b92",
+  "source_timestamp": "2026-09-06T04:10:59.518342+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c178.html",
+  "raw_sha256": "6e7bd4246d12133c4da605fc378b0f1012805fcc5e0c230e2fc52ecc32077b92",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "宝法第一",
+      "text": "宝法第一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c178:p0001",
+      "sha256": "e6cde35521b6682849fc215390b37ab3f80203b56531d861f977b85907dd830d"
+    },
+    {
+      "section": "宝法第一",
+      "text": "夫禀阴阳而生天地间，故造化之赋予人也。禀造化而生，物亦如之，莫不由阴阳变化。是固推人吉凶休咎，斯理昭着。然术家之法固多，究征索子平之外未有矣。子平一法，专以日干为主，而取提纲所用之物为令，次及年月时支以表其端。凡格用月令提纲，勿於傍求年日时为格。今人多不识其法於此，百发百失。譬如月令以金木水火土为要，但有一事而定言之，若干傍求则有失误。取其月令实事，则以遍求轻重深浅，格局破冲可 也。西山易鉴先生得其通变，将十格分为六格为重。曰官、曰印、曰财、曰杀、曰食神、曰伤官而消息之，无不验矣。其法曰：逢官看财，逢杀看印，逢印看官，斯有奥妙不传之法。取四者不偏不倚，生克制化，而遇破休囚为下运。有生有去为福，有助有剥为祸。其理深长，最宜消详，且常不昧庸术，宜熟读幸加免焉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c178:p0002",
+      "sha256": "ae845e87d54fb1465dbfdfa7e45eba415f6a1c04387071474f981ed5bb02776b"
+    },
+    {
+      "section": "宝法第一",
+      "text": "眉批：取月令宫中所藏之物，如子宫单取癸水之类。“西山”，号也。“易鉴”，姓名也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 40,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c178:p0003",
+      "sha256": "55b1b9b28678164860a29b939f7a88b36a2698a1d5cfdaa4430b7b4c8ce9bb60"
+    }
+  ]
+}

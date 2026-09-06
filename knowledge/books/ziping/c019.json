@@ -1,0 +1,32 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c019",
+  "title": "十九、論四凶神能成格",
+  "source_url": "https://www.donglishuzhai.net/chapter/3732.html",
+  "revision": "sha256:e70441ab4649f096f5c633e1ac1ad1d165cdcd95d3c347ef31587ef54d37edbd",
+  "source_timestamp": "2026-09-06T04:16:58.476Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c019.html",
+  "raw_sha256": "e70441ab4649f096f5c633e1ac1ad1d165cdcd95d3c347ef31587ef54d37edbd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十九、論四凶神能成格",
+      "text": "煞傷梟刃，四凶神也，然施之得宜，亦能成格。如印綬根輕，透煞爲助，煞能成格也；財逢比劫，傷官可解，傷能成格也；食神遇官，露梟得用，梟能成格也；財逢七煞，刃可解危，刃能成格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c019:p0001",
+      "sha256": "93395048a2d6068f3a23578edf85c7331f9b3c992c79dc74475aa11c3836ae1d"
+    },
+    {
+      "section": "十九、論四凶神能成格",
+      "text": "是故印不忌殺，財不忌傷，官不忌梟，煞不忌刃。譬如治國者，長槍大戟，本非美具，而施之得宜，可以戡亂。",
+      "layer": "base_text",
+      "passage_id": "ziping:c019:p0002",
+      "sha256": "24721d9a1fad4ebdf3a17f912bdd4b28a481a57dbed9b4833f3e236af493021e"
+    }
+  ]
+}

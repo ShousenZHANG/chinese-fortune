@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c116",
+  "title": "内十八格-拱禄格",
+  "source_url": "https://luckclub.cn/bazi/001/116/",
+  "revision": "sha256:eece6ed7605e7fc3076a22d77a18367d520a66098cfb621fad1dbbf9134d343f",
+  "source_timestamp": "2026-09-06T04:10:47.828598+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c116.html",
+  "raw_sha256": "eece6ed7605e7fc3076a22d77a18367d520a66098cfb621fad1dbbf9134d343f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-拱禄格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "内十八格 - 拱禄格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0002",
+      "sha256": "32b13d6d42473add33b373dbbf8aa6c7de7f30ac046e898203bb27f53fde8e16"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "此格只有五日，忌填实，最怕冲了日时拱位，又怕四柱中有伤日干。遇杀皆拱不住，则减分数，岁君大运同。经云：“拱禄拱贵，填实则凶。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0003",
+      "sha256": "1473a2a424b432c493d150c87324d48ab7914a30626fc9265f956bc6c144cbb5"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "刘知府，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0004",
+      "sha256": "108a77c853fab3abd3b7a6f21ffa7d5cf82d88ab4b5a8507c0765c891b4abe6c"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "癸卯 癸亥 戊辰 戊午(戊禄在巳，辰午之拱)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0005",
+      "sha256": "bb84087fc526632ba526b6deef257af0f3bb17c35cdf30184eec9473d9b3c208"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "白衣人，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0006",
+      "sha256": "ba223f10441b27eeaa20c325195147ec49e1d0853dbc4f4d67b1df4d7b75e24e"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "壬子 丁未 丁巳 丁未(丁禄在午，未巳拱，子冲)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0007",
+      "sha256": "3ac2c0fc0d02ac656295aafb3f188d721ca5462952b19273d7179e8197b1381f"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "详云：此格有五日，丁巳日见丁未，己未日见己巳，戊辰见戊午，癸丑见癸亥，癸亥见癸丑。(两半本身皆是我拱藏位，虚中好，只忌填实，更忌官星来克破。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c116:p0008",
+      "sha256": "41efabe4fdeb5bf4e53e8d52b766bdab08f071a9a5fd197b0857b5c9088a7f49"
+    },
+    {
+      "section": "内十八格-拱禄格",
+      "text": "眉批：两绊本身非是我，拱藏一位虚中好，不宜填实见官星，更忌官星来克破。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c116:p0009",
+      "sha256": "672af3c3f6f77fc764a992bf6226b188acf927137f2ab84079c2192011c86789"
+    }
+  ]
+}

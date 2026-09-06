@@ -1,14 +1,9 @@
 #!/usr/bin/env python3
-"""周公解梦 symbol lookup.
+"""Dream-symbol index with explicit source-verification status.
 
-assets/jiemeng.json holds 105 dream symbols whose 传统 readings appear in no
-reference file, so the data has to stay reachable — but reading the whole
-38 KB asset to answer one question costs roughly 10k tokens. This exposes it
-the way every other data asset in the project is exposed: a script that prints
-one entry as JSON.
-
-Interpretation guidance (dual 传统 + 心理 framing, what not to alarm the user
-with) lives in references/15-jiemeng.md.
+The 105 themes and their scenario labels remain searchable. Unverified
+traditional predictions and psychology attributions have been removed;
+null interpretations mean that no sourced interpretation is available.
 """
 from __future__ import annotations
 
@@ -25,6 +20,7 @@ from utils import (
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   --symbol S    symbol category traditional modern_psychology common_scenarios
+                interpretation_status source_status
   --search Q    query count matches[]
   --categories  categories[] total_symbols
 
@@ -48,7 +44,7 @@ def load_symbols() -> list[dict]:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        description="周公解梦符号查询 (传统 + 现代心理 双解)",
+        description="梦境主题索引查询 (未核验解释保持为空)",
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
@@ -88,8 +84,7 @@ def main(argv: list[str] | None = None) -> int:
     near = [s["symbol"] for s in symbols
             if any(ch in s.get("symbol", "") for ch in args.symbol)]
     json_print(error_envelope('jiemeng', "symbol_not_found", f"未收录梦境符号: {args.symbol}。"
-                    f"可用 --search 模糊查找, 或按 references/15-jiemeng.md 的"
-                    f"分类框架解读。", suggestions=near[:10]))
+                    f"可用 --search 模糊查找; 未核验的解释不自动补写。", suggestions=near[:10]))
     return 1
 
 

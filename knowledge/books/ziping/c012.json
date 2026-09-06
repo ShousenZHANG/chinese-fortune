@@ -1,0 +1,74 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c012",
+  "title": "十二、論用神格局高低",
+  "source_url": "https://www.donglishuzhai.net/chapter/3725.html",
+  "revision": "sha256:b646778bb4d9fcd1370a00a42f0d3a7a1a7c7eb7e8e8702d1ead899fa4abb6eb",
+  "source_timestamp": "2026-09-06T04:16:54.301Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c012.html",
+  "raw_sha256": "b646778bb4d9fcd1370a00a42f0d3a7a1a7c7eb7e8e8702d1ead899fa4abb6eb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十二、論用神格局高低",
+      "text": "八字既有用神，必有格局；有格局，必有高低。財官印食煞傷劫刃，何格無貴？何格無賤？由極貴而至極賤，萬有不齊，其變千狀，豈可言傳？然其理之大綱，亦在有情無情、有力無力之間而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0001",
+      "sha256": "40407e75baa1d98fefb02af45a44b37fcc524fb123fc914267bbebbb9b8b87ce"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "如正官佩印，不如透財，而四柱帶傷，反推佩印。故甲透酉官，透丁合壬，是謂合傷存官，遂成貴格，以其有情也。財忌比肩，而與煞作合，劫反爲用。故甲生辰月，透戊成格，遇乙爲劫，逢庚爲煞，二者相合，皆得其用，遂成貴格，亦以其有情也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0002",
+      "sha256": "b2d00b3468290dfea0a37aba0748e947eca5873839cbbde07a9172d1c7dbd6ab"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "身强煞露，而食神又旺，如乙生酉月，辛金透，丁火剛，秋木盛，三者皆備，極品之貴，以其有力也。官强財透，而身坐祿刃，如丙生子月，癸水透，庚金露，丙坐寅午，三者皆均，遂成大貴，亦以其有力也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0003",
+      "sha256": "a6e521dd0a6f13c50e446a97aa4a19fdbcfef8fd0f09cb4b9e0d1d443214fcce"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "又有有情而兼有力、有力而兼有情者。如甲用酉官，壬合以丁清官，而壬水根深，是有情而兼有力也。乙用酉煞，辛逢丁制，而辛之祿即丁之長生，同根月令，是有力而兼有情也。是皆格之最高者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0004",
+      "sha256": "48adc01d13c7137a38d37f893b5dcce0baa1af39b7346361ad7a2352af754921"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "若甲用酉官，透丁逢癸，癸尅不如壬合，是有情而非情之至。乙逢酉煞，透丁以制，而或煞强而丁稍弱，丁旺而煞不昂，又或辛丁並旺而乙根不甚深，是有力而非力之全。格之高而次者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0005",
+      "sha256": "844ac585d6034bbcf784afa618e7c5ce28be560ca42b8344e2cbaa31b02b8e00"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "至如印用七煞，本爲貴格，而身强印旺，透煞反爲孤貧。蓋身旺不勞印生，印旺何勞煞助？偏之又偏，以其無情也。傷官佩印，本秀而貴，而身主甚旺，傷官甚淺，印又太重，不貴不秀。蓋欲助身則身强，制傷則傷淺，要此重印何用？是亦無情也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0006",
+      "sha256": "607fe0bd0bf7a7e49ab9a22ba4fdb4d874e273c07754471b844714a05274617a"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "又如煞强食旺，而身無根；身强比重，而財無氣，或夭或貧，以其無力也。是皆格之低而無用者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0007",
+      "sha256": "074e89caa0a459d69cd784d53536109b2d7f0262b87cc7c77be10c27a96df85f"
+    },
+    {
+      "section": "十二、論用神格局高低",
+      "text": "然其中高低之故，變化甚微，或一字而有千鈞之力，或半字而敗全局之美，隨時觀理，難於擬議，此特大略而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c012:p0008",
+      "sha256": "7492a84bbc5a9e16aa25b0f1d073b8e31b6bbac8f84936a1b0ca56cead26cba9"
+    }
+  ]
+}

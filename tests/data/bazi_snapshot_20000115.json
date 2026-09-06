@@ -20,6 +20,8 @@
     "no_shensha": false,
     "no_yongshen": false,
     "no_geju": false,
+    "current_timezone": null,
+    "request_time": null,
     "as_of_year": 2026
   },
   "true_solar_time": {
@@ -299,7 +301,7 @@
       "source_pillar": "year",
       "hit": "卯",
       "trigger": "日干",
-      "meaning": "尊贵之神,主逢凶化吉,得贵人扶持。命带天乙贵人者一生多得贵人相助,逢难必有救。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "天乙贵人",
@@ -307,7 +309,7 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "日干",
-      "meaning": "尊贵之神,主逢凶化吉,得贵人扶持。命带天乙贵人者一生多得贵人相助,逢难必有救。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "太极贵人",
@@ -315,7 +317,7 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "日干",
-      "meaning": "主聪明好学,知玄理,中年有成,易得名声。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "太极贵人",
@@ -323,7 +325,7 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "日干",
-      "meaning": "主聪明好学,知玄理,中年有成,易得名声。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "学堂",
@@ -331,7 +333,7 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "日干",
-      "meaning": "主学问、教育,利从事教学、研究、文化工作。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "金舆",
@@ -339,7 +341,7 @@
       "source_pillar": "month",
       "hit": "丑",
       "trigger": "日干",
-      "meaning": "主乘车坐辇,荣华富贵,得配偶贤良。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "驿马",
@@ -347,7 +349,7 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "年支三合",
-      "meaning": "主迁移、奔波、出行。命带驿马者多动、远行、变迁、利于外出发展。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "将星",
@@ -355,7 +357,7 @@
       "source_pillar": "year",
       "hit": "卯",
       "trigger": "年支三合",
-      "meaning": "主权威、领袖、统帅之能,利武职、领导职位。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "劫煞",
@@ -363,7 +365,7 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "年支三合",
-      "meaning": "主突遭劫难、损失、是非。命带劫煞者需防小人陷害与意外损失。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "孤辰",
@@ -371,7 +373,7 @@
       "source_pillar": "hour",
       "hit": "巳",
       "trigger": "年支季节",
-      "meaning": "主孤独,男命遇之难得妻缘,六亲缘薄,孤芳自赏。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "寡宿",
@@ -379,7 +381,7 @@
       "source_pillar": "month",
       "hit": "丑",
       "trigger": "年支季节",
-      "meaning": "主孤独,女命遇之难得夫缘,孤独寡居,六亲缘浅。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "小耗",
@@ -387,7 +389,7 @@
       "source_pillar": "day",
       "hit": "申",
       "trigger": "年支",
-      "meaning": "主小额破财、零散花费,日常琐事破财。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "天德合",
@@ -395,7 +397,7 @@
       "source_pillar": "hour",
       "hit": "乙",
       "trigger": "月支",
-      "meaning": "天德之合化,功用同天德,主平安福祉。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "月德合",
@@ -403,7 +405,7 @@
       "source_pillar": "hour",
       "hit": "乙",
       "trigger": "月支三合",
-      "meaning": "月德之合化,主仁德、福报,助人化解灾厄。"
+      "interpretation_status": "trigger_only"
     },
     {
       "name": "十恶大败",
@@ -411,7 +413,7 @@
       "source_pillar": "day",
       "hit": "壬申",
       "trigger": "日柱",
-      "meaning": "传统谓凶险(大败之时);然命理界争议较大, 子平派多不采用, 仅作旁注不作主断 (见 19-shensha.md §3.15)。"
+      "interpretation_status": "trigger_only"
     }
   ],
   "yong_shen": {
@@ -663,6 +665,10 @@
       "shi_shen": "正印"
     }
   ],
+  "current_time_context": null,
+  "liu_nian_status": "explicit_year",
+  "liu_nian_scope": "calendar_year_reference_list",
+  "liu_nian_note": "按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻",
   "schema_version": "2.0",
   "reading_support": {
     "schema_version": "1.0",

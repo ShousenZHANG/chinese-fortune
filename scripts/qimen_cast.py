@@ -28,7 +28,6 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
 
 from qimen_tables import (  # noqa: F401  (re-exported for callers/tests)
     EIGHT_SHEN_ORDER,
@@ -46,6 +45,7 @@ from qimen_tables import (  # noqa: F401  (re-exported for callers/tests)
     YIN_PALACE_SEQ,
     YIQI_ORDER,
 )
+from request_time import add_request_arguments, resolve_time
 from utils import (
     TIANGAN_WUXING,
     WUXING_KE,
@@ -56,7 +56,6 @@ from utils import (
     json_print,
     longitude_correction,
     require_lunar,
-    validate_birth_input,
 )
 
 
@@ -515,6 +514,7 @@ def build_parser() -> argparse.ArgumentParser:
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
+    add_request_arguments(p)
     p.add_argument("--date", type=str, default=None,
                    help="公历日期 YYYY-MM-DD (默认今日)")
     p.add_argument("--time", type=str, default=None,
@@ -532,45 +532,33 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
 
-    # Determine input datetime
-    now = datetime.now()
-    if args.date:
-        try:
-            dt = datetime.strptime(args.date, "%Y-%m-%d")
-            y, m, d = dt.year, dt.month, dt.day
-        except ValueError as e:
-            json_print(error_envelope("qimen", "invalid_date", str(e),
-                                      expected="YYYY-MM-DD"))
-            return 1
-    else:
-        y, m, d = now.year, now.month, now.day
-
-    if args.time:
-        try:
-            hh, mm = map(int, args.time.split(":"))
-        except Exception:
-            json_print(error_envelope("qimen", "invalid_time",
-                                      f"无法解析时间 {args.time!r}", expected="HH:MM"))
-            return 1
-        # 解析成功 != 取值合法: "99:99" 是两个正经整数, 从前一路走到
-        # Solar.fromYmdHms 才以 Exception("wrong hour 99") 崩栈, stdout 无 JSON。
-        err = validate_birth_input(hour=hh, minute=mm)
-        if err:
-            json_print(error_envelope("qimen", "invalid_time", err, expected="HH:MM"))
-            return 1
-    else:
-        hh, mm = now.hour, now.minute
+    try:
+        dt, time_context = resolve_time(args, date_value=args.date, time_value=args.time)
+    except ValueError as exc:
+        json_print(error_envelope('qimen', 'invalid_time_context', str(exc)))
+        return 1
+    y, m, d, hh, mm = dt.year, dt.month, dt.day, dt.hour, dt.minute
 
     # Longitude correction (apply day roll-over near midnight)
     if args.longitude is not None:
+        import math
+        if not math.isfinite(args.longitude) or not -180 <= args.longitude <= 180:
+            json_print(error_envelope('qimen', 'invalid_longitude', '经度须在 -180..180'))
+            return 1
+        if time_context['offset_hours'] is None:
+            json_print(error_envelope('qimen', 'missing_timezone', '经度修正需要目标时区，不能默认 UTC+8'))
+            return 1
         _doff, hh, mm = longitude_correction(hh, mm, args.longitude,
-                                             tz_offset_hours=8.0,
+                                             tz_offset_hours=time_context["offset_hours"],
                                              year=y, month=m, day=d)
         if _doff != 0:
             from datetime import date as _date
             from datetime import timedelta as _td
             _nd = _date(y, m, d) + _td(days=_doff)
             y, m, d = _nd.year, _nd.month, _nd.day
+
+    time_context['time_standard'] = 'true-solar' if args.longitude is not None else 'clock'
+    time_context['effective_local'] = f'{y:04d}-{m:02d}-{d:02d}T{hh:02d}:{mm:02d}'
 
     # Compute ganzhi via lunar_python
     require_lunar()
@@ -684,6 +672,7 @@ def main(argv: list[str] | None = None) -> int:
         "ok": True,
         "tool": "qimen",
         "version": __version__,
+        "time_context": time_context,
         "input": {
             "date": f"{y:04d}-{m:02d}-{d:02d}",
             "time": f"{hh:02d}:{mm:02d}",

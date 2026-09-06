@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c267",
+  "title": "飘荡诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/267/",
+  "revision": "sha256:6c37a43405cb5aedf81e4edab57ee8d1441555760dc435a59f971187a82ab23a",
+  "source_timestamp": "2026-09-06T04:11:19.201892+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c267.html",
+  "raw_sha256": "6c37a43405cb5aedf81e4edab57ee8d1441555760dc435a59f971187a82ab23a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "飘荡诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c267:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "飘荡诗诀",
+      "text": "飘荡诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c267:p0002",
+      "sha256": "9b16786d8549559cbf36542439fcd0cdba1d61854ad81f6e53643e1cb3f02bf6"
+    },
+    {
+      "section": "飘荡诗诀",
+      "text": "偏财偏位发他乡，慷慨风流性要强，别立家园三两处，因名因利自家亡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c267:p0003",
+      "sha256": "ab5dbebfd6fe38bc3ac5f74a0ff19300216058e431313fdd6c4279018a1f5b15"
+    },
+    {
+      "section": "飘荡诗诀",
+      "text": "偏财别立在他乡，宠妾妨妻更克伤，爱欲有情妻妾衆，更宜春酒野花香。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c267:p0004",
+      "sha256": "088781e34ac8fd1504bcd95c4b0e06673a97ebe4361e32e03f79ce5bc1d19c3e"
+    },
+    {
+      "section": "飘荡诗诀",
+      "text": "眉批：偏财，天官未出者去招他方之财，支中若无藏者虽招求而无财，不必以他乡有断之。财官甲辰善之，辰主静，女人利之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 56,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c267:p0005",
+      "sha256": "b3cf471b5e6d8b1295be390e8184bdb99ec20e4da1006a9bf89dbe396ea48d40"
+    }
+  ]
+}

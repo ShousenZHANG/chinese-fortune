@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c134",
+  "title": "外十八格-岁德扶杀格",
+  "source_url": "https://luckclub.cn/bazi/001/134/",
+  "revision": "sha256:657cb91171396715556fb91717bf26f0573fa3bef7a07db2e2a0d733af6742a9",
+  "source_timestamp": "2026-09-06T04:10:51.250873+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c134.html",
+  "raw_sha256": "657cb91171396715556fb91717bf26f0573fa3bef7a07db2e2a0d733af6742a9",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-岁德扶杀格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c134:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-岁德扶杀格",
+      "text": "外十八格 - 岁德扶杀格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c134:p0002",
+      "sha256": "279ca76342899ad1f6038991aa79897ae52b10265e619c297dc19c019c4d6b87"
+    },
+    {
+      "section": "外十八格-岁德扶杀格",
+      "text": "且如甲日见庚年是也。正如年为君位，日为臣位，臣导权。然又以年为祖，日为己身，七杀有制，则祖上曾有要职。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c134:p0003",
+      "sha256": "7744e32b51b1b83b407ab18259ee42593bb08255bf3a46047a013d725ed8bf7d"
+    },
+    {
+      "section": "外十八格-岁德扶杀格",
+      "text": "眉批：甲为东方岁，居一岁之首，故曰岁德，主有仁寿。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c134:p0004",
+      "sha256": "b2ea7f5f28fb0570b488b8e158dd86042a98bfd0b11be76904a36c22566e4eb5"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c008",
+  "title": "论十二支三合",
+  "source_url": "https://luckclub.cn/bazi/001/008/",
+  "revision": "sha256:c2a66d70d4def16ea0701227056e1902c7bbec21d70a8f1c94ccf8cb21821713",
+  "source_timestamp": "2026-09-06T04:10:26.145894+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c008.html",
+  "raw_sha256": "c2a66d70d4def16ea0701227056e1902c7bbec21d70a8f1c94ccf8cb21821713",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二支三合",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "论十二支三合",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0002",
+      "sha256": "c37f3d5dc851ff7b3015aa9f00faff6926fdb7b44cf7bf0e990d9f2cc9995645"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "申子辰水局，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0003",
+      "sha256": "b8f799c8f08b57ee21ee490dc27fdb793d035cd761fb22443cbbce25e902748c"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "亥卯未木局，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0004",
+      "sha256": "7fdc7b3f0fcf6db149373441af91b37c158c5547f2eff45b74b935c4b3b89e92"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "寅午戌火局，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0005",
+      "sha256": "c3770af77fc2810d47fef54408d7c9b409d1d66c23539dc2ef1ef9bd88217c90"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "巳酉丑金局，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0006",
+      "sha256": "9905aa8608f2f7a208f220afad332f53cd580af0d6534deb4bd98d21c39bf7f6"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "辰戌丑未土局。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0007",
+      "sha256": "35fee434d5125fe6645544fc3a8ca731472495eb884f6070f2afdb07530d1bf0"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "(凡看命以三合取用为局入格。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c008:p0008",
+      "sha256": "3387371b779a5d6f4f2725ab36cdf0b13cecc4a6186409c1c90ddea16c2d40a0"
+    },
+    {
+      "section": "论十二支三合",
+      "text": "眉批：合局者为贵，但得五行相顺。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c008:p0009",
+      "sha256": "7053b79908e7ac1a642b65fa768a8a6a7cba917372cef45980780494929f3b19"
+    }
+  ]
+}

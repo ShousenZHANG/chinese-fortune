@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c072",
+  "title": "二至阴阳相生理",
+  "source_url": "https://luckclub.cn/bazi/001/072/",
+  "revision": "sha256:8304d3eb2b3314855cd58e657c597290d82da0ef82a2244b5c40a8108748c02d",
+  "source_timestamp": "2026-09-06T04:10:39.926669+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c072.html",
+  "raw_sha256": "8304d3eb2b3314855cd58e657c597290d82da0ef82a2244b5c40a8108748c02d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二至阴阳相生理",
+      "text": "二至阴阳相生理",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c072:p0001",
+      "sha256": "a82f4f135da9dfd90d6f927cdc3a3fcf899fc0be3d1c9f3a368d6c1ffe284b64"
+    },
+    {
+      "section": "二至阴阳相生理",
+      "text": "一年之内细分五行，配合气候於十二个月之中，各主旺相，以定用神。其中五行又分阴阳两股，於之生年之中各主生旺之气。用冬至一阳则有木先生旺之理。则试以甲、乙日生人，在冬至前，阳气未动，木方死绝，其木不甚吉利。若甲、乙日生人，在冬至之後，阳气已生，木乘暖气其命寿禄皆全，只要甲用神入格。又如丙丁日干生人，在冬至之前，遇水即灭，若在冬至之後，不甚忌水劫丙丁，乘木之生也。夏至阴生，则有金生水用之理。夏至之後，为三伏後而阴生，庚辛生於夏至之後，金有气不甚忌火，其理尤明，学者不可不知也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c072:p0002",
+      "sha256": "fe771c837ff8958e0016c68c7d19226f79d6c5256419e41734fac4e88e8d2162"
+    },
+    {
+      "section": "二至阴阳相生理",
+      "text": "眉批：冬至後阳生，夏至後阴生，五行各得其气，不为身弱，作中和而论。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 33,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c072:p0003",
+      "sha256": "e19e3eb00612e1677b6a1afd65dbc63a2f74760abfad7b663f3fc34677d0fca3"
+    }
+  ]
+}

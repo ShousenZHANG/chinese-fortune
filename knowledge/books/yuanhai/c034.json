@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c034",
+  "title": "论十干禄",
+  "source_url": "https://luckclub.cn/bazi/001/034/",
+  "revision": "sha256:06722cac90731d7204db220c456c5424913ddfbb59fa10c1e6c7112c9a79265b",
+  "source_timestamp": "2026-09-06T04:10:31.410823+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c034.html",
+  "raw_sha256": "06722cac90731d7204db220c456c5424913ddfbb59fa10c1e6c7112c9a79265b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十干禄",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c034:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十干禄",
+      "text": "论十干禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c034:p0002",
+      "sha256": "aacd8dc940d7d78b09681c8ddeae0ff7f00e641d587965af4a51decd172eb914"
+    },
+    {
+      "section": "论十干禄",
+      "text": "甲禄在寅，乙禄在卯，丙戊禄在巳，丁己禄在午，庚禄在申，辛禄在酉，壬禄在亥，癸禄在子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c034:p0003",
+      "sha256": "abfc834d011533b8c2f6cf5240508aa50b31d2fa38a8fad63be4b8849dbe8e18"
+    },
+    {
+      "section": "论十干禄",
+      "text": "夫禄者，以天干地支所旺之乡。如甲禄在寅，乃东方甲乙之地支，辰、寅、卯配之，余皆同此。辰戌丑未乃天罡恶杀，禄神不临也。凡人命带禄，或凶或吉，或贵或贱，何以论之？",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c034:p0004",
+      "sha256": "48206b7d70e7bf789d26407be59341346421cb162987c2d057dbaa079ce95af3"
+    },
+    {
+      "section": "论十干禄",
+      "text": "《天乙妙旨》云：禄马贵人无准托，考究五行之善恶，天元羸弱未为灾，地气坚牢足欢乐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c034:p0005",
+      "sha256": "494e7e37c0adf061f3d083b28385300839da4f0a2e612515708c4d9c21b46c51"
+    },
+    {
+      "section": "论十干禄",
+      "text": "《源髓歌》曰：禄马更有多般说，自衰自死兼败绝。若无吉煞加助时，定知破祖多浮劣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c034:p0006",
+      "sha256": "06097a7dfd14900d019cd60c9788175b1b973ac14ad06ec6ba7f752c122b42b5"
+    },
+    {
+      "section": "论十干禄",
+      "text": "眉批：可得爵禄也，官得势而亨通谓之禄。最喜生旺，最忌休囚，如有禄者必得羊刃以卫之方可言福。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 45,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c034:p0007",
+      "sha256": "d8f888c1b0cc8ba919759d5489705b80d1d98185870b0233e057b455e4b5adf7"
+    }
+  ]
+}

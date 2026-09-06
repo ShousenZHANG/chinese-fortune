@@ -1,0 +1,1054 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c191",
+  "title": "碧渊赋(元妙论)",
+  "source_url": "https://luckclub.cn/bazi/001/191/",
+  "revision": "sha256:52d362b64ff9dde48cb2ea9daf2016cf47e6c0985c9d233df0334c8ab6bbe500",
+  "source_timestamp": "2026-09-06T04:11:01.860496+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c191.html",
+  "raw_sha256": "52d362b64ff9dde48cb2ea9daf2016cf47e6c0985c9d233df0334c8ab6bbe500",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "碧渊赋 (元妙论)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0002",
+      "sha256": "3cc3c41f679b2c37ac499fda06c822709be98f106f92f1c8707fa60c385e491b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "尝谓分二气以定三才，播四时而成万物，皆由命令也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0003",
+      "sha256": "7c1766d5b78bfebe3d793a4961446fd7ce2b1f9da2099762cb805e1769b037b5"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "斯令者，贯四时而立四极，专以日主，以定三元。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0004",
+      "sha256": "c75261043fa9a040fafe4f462ba7726feba74feb09ac63ec32cf6c4f42e4c4a5"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "命乃无令而不行，令乃无命而不立，信之命令之相参，允知天地之全体也。(眉批：命之理微，故夫子罕言之。)",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 33,
+          "end": 50,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0005",
+      "sha256": "dba8faebafc6a931f3ca34e8f18557ceeddf898dff7b26f7b5f6d8207bb4827e"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "或云子平言命，皆天命而非人命欤？天命关乎气数，人命禀乎五行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0006",
+      "sha256": "be20a60a0899ebe5747dc8f10588b2ab130dbe3908d41cd3d32474bbfc63ee43"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "气数五行何以殊？天命人命何以异？诚哉是理，可得而议矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0007",
+      "sha256": "3a295d427a76eaf297817c598cfa6280d56060d5e6a905e5b87d647e2e7c4a6c"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "然而人命荣枯得失，尽在五行生克之中，富贵贫贱，不出八字中和之外。先看节气之浅深，後看财官之向背(眉批：顺为向，逆为背)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 47,
+          "end": 59,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0008",
+      "sha256": "8f3c9e144368c9592df16cbb2839a0a7a2028f3e6d34f2483be69b9936be8c94"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "人之命内，皆不离乎财官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0009",
+      "sha256": "2772e10d1beb252224b2419fa4871a6fb3aefdce0951694c88089f1c5ed5aee1"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "诸格局中，只要虚邀禄马，先贤已成定式，後学须要变通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0010",
+      "sha256": "b1c08c00eb5da9c6090944bfa55a1608ef9627a92a37e3c5149f26185127b39a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "太过无克制者贫贱，不及无生扶者夭折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0011",
+      "sha256": "4c636f10881a2bca7e69fc26facc49bb4cfd7e5a955a4d684a82d4f841496740"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "宜向之而运背，决之贫贱；宜背之而向运，断之困穷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0012",
+      "sha256": "73d88ad67cbd0ec9e48dc779a5ba86b2fdef26a31a610765b8f19e6ee9cd386f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "喜生而逢生 (眉批：喜生，乃五行长生之地，寅申巳亥)，贵而堪断；爱克而值克，吉亦可言。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 6,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0013",
+      "sha256": "e2db5801558820a8b5638fccd4f0ee0d41ee95e41ac1c05abf90d06b5b84c502"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "逢官而看财，见财而富贵 (眉批：财乃官之禄，有官必用禄以养之方为贵，无禄养则为假官)；逢杀而看印，遇印以荣华。逢印看官而遇官，十有八贵；逢财忌杀而有杀，十有九贫。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 12,
+          "end": 42,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0014",
+      "sha256": "8e28316bd7a466ee83131ff3153af8edbda3b5847af0b3aaec364f5fff5c53c9"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "盖木盛逢金，造作栋梁之材；水多遇土, 修防堤圻之功；火煆秋金，铸剑锋作之器；木疏秀土，培之稼穑之禾；火炎有水，名为既济之文；水浅金多，号为体全之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0015",
+      "sha256": "a31da0aa1e546884c5583878bce360f2ef820066271ecd71e8c92a4601df5415"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "甲乙运入西方，身旺功名可许；壬癸路经南域，主健财堪可图。劫杀不须逢旺地，食神最喜劫财乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0016",
+      "sha256": "81cd372f99498f0903156af3dc30d95f42b4ffc7a247bd841286e0f2478c370c"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "亥卯未逢於甲乙，富贵无疑；寅午戌遇于丙丁，荣华有准；庚辛局全巳酉丑，位重权高；壬癸格得申子辰，学优才足；戊己局全四季，荣冠诸曹。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0017",
+      "sha256": "7b2f304db534deefac6a81026bae281a9f720b6beaebf5e7f9cddf25af6fa496"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "更值德秀三奇 (眉批：乙丙丁也，乙为日丙为月丁为星，要在戌亥为大门者贵，若犯丑寅卯者贱)，名扬四岳。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 7,
+          "end": 44,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0018",
+      "sha256": "d8400498e58c3c798854dd54f8b2b60291abe2ad4602e6e5b577b1896dedf5b6"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "木全寅卯辰之方，功名自有；金备申酉戌之地，富贵无亏；水归亥子丑之源，荣华之客；火临巳午未之域，显达之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0019",
+      "sha256": "aefb713b765c39e2ee75b1dada0e612232218ed99612b0eca1ea38fa297cae84"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "木旺宜火之高辉，秋闱可试；金坚爱水之相涵，文学堪夸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0020",
+      "sha256": "376ef73595b646af824ee6f48af6551bf52cdb01c21eaff0e4451853f3cc6467"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "用火愁水，用木愁金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0021",
+      "sha256": "0c3910ce0bb5ddd0c8a5e7593714aa7662c7049acec9bafee447a2b1d0426e85"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "春木重重，休为太旺无依；夏火炎炎，莫作过刚有厌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0022",
+      "sha256": "f5fc36eed82a0772720dc25b85cd3fd12759508a3e33be5acea25c966d395b98"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "秋金锐锐最为奇，冬水汪汪真可美，削之剥之为奇，生我扶我为忌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0023",
+      "sha256": "1b989f9100212c8a4bb74f3bf8698d6a5d6ce2c9c94c5865db5a78df25d179e7"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "五行有配，曰康、曰治、曰和。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0024",
+      "sha256": "0e34d7264a14a5c2096350fd0a6d1c18648f40db41d9c3b527572657613dea91"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "四柱无情，为乱、为伤、为祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0025",
+      "sha256": "056e8f3765a50c10855524ffd3d1e2c662567464ffa92fa1604f73d85b0b3460"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "合中逢战，如大治之遇乱离。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0026",
+      "sha256": "61308e493298b19cdd11485ae164c5414adab68db9a23acffca45ca979440723"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "死地逢生，若极否更以盛世。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0027",
+      "sha256": "199e1b962c20f96432fc4f42caf139d0bdb985cff20092d17f6931e36cae583a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "一治一乱，柱中滚浪刑冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0028",
+      "sha256": "763c8e07f99432a91c16c6f182a611c53044728be655493a39ec864b8ccc4adf"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "乍旺乍衰，命里交横破害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0029",
+      "sha256": "97c56ef791db682a3db5f1955c8b1658568fed72ccd1163413fa8ab25dd23f34"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "刘蕡(音同份)不第，只因文学年衰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0030",
+      "sha256": "8db338ab857063ebaf49185fa8b2a9a9134b4eb87b1ff63d4646008ee92a2f75"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "李广非侯，盖为人强马劣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0031",
+      "sha256": "05396f751f464cf5ef2250ab14a95a88b0844d9777277c4aa36aedf1d00e81f7"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "欲知平生贵贱，当推科甲之星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0032",
+      "sha256": "ea4066ed12d5a521557979e13382c2a318091287a65cc6b69f73228bb4694762"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "要问职分高低，细察财官之位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0033",
+      "sha256": "e441d1095538d1257abc2d5bee4b702584a962a94e6b433d003adba00736c275"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "求官未就，冲伤命贵便登科。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0034",
+      "sha256": "266785e7262ebc4ade9f739b88572dc37b41811abc1749eaa49e772ac3ff0834"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "功名已成，不可覆临伤以破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0035",
+      "sha256": "623337a1eb40bd5f83131c8def80c37aa253c524a93b8baf13c27718514ad646"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "魁胜官则终身不第，官胜印而唾手成名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0036",
+      "sha256": "f9e0b6dd849e764d699b2c1801e2b1554c5d1aa60504997dbd6ef51579332f68"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "木相火明，此辈宜登甲第。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0037",
+      "sha256": "39ceddbf3bcce171e2bffdad1f73ad013d66bd23c804d62f498764a9f0bd7197"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "金寒水冷，斯人终是贫寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0038",
+      "sha256": "90b16a14ebd7c889ed81012e8b286a9e39953b9ebcd5f8d75681bc173982ad9d"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "胎元日主，提纲印旺夺魁元。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0039",
+      "sha256": "a4c5c136e6ae3d31d969b4e956b6207e89274815e7376ffd61b526fce0949ad0"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "聚贵岁苗，高坐玉堂荣翰苑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0040",
+      "sha256": "7fbb13b3dbe845b8da0bab3f41cf06458709b17bed6f99efda402564cbe2a22b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "病乃魁星，病去方能成就。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0041",
+      "sha256": "b73e37259049fe3589740d41660d0b6801b2e4472cd91fc3f64a0ee515629a90"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "文为甲首，官来始见升腾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0042",
+      "sha256": "78ae413e8e6233875b8dae6d86e8b34f95e9f183ed1e03ddcf3f9062b2da7ca4"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "元武格而比劫多，太乙玉堂真甲第。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0043",
+      "sha256": "e6c690d0fc17266e4fb6be42619db604283e7d89b86e6f2e1281343ec9a6608c"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "朱雀赋而食神旺，官年印岁拟登科。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0044",
+      "sha256": "c6232fd4fca307656c36a40b90b5a1f0169c6e1573e1be2bf87f2030a63a6be2"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "比肩多见官煞印，是魁星合岁冲官及第。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0045",
+      "sha256": "1f80383f35f7cd63776b913ff77eb14509a8630f7780b1b02b06df8f9a43bb5d"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "官煞重遇印伤，便是甲宿食年印岁题名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0046",
+      "sha256": "ef0c7e740a0fb36c66a5f0b000862fa55d3631cc26d86266d0e3c3e2c6704f0f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "木魁若临年月旺，状头解首届斯人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0047",
+      "sha256": "b3be317975237f2b9a503c43967fe572b711bbc2198b39a88daeae06c89543e8"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "火宿加值岁干炎，甲榜状元归此辈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0048",
+      "sha256": "44b3ddb13ccb45d39d2083625cc0dfd8a7cddcc20129f1cdc2fe3255ec7f0d43"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "数科不第，只因财破文书。一举成名，乃是魁星带甲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0049",
+      "sha256": "4b878d625ec72744e64762462dc57a86df6d3243a19f3be94a676e632b644cc6"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "五行消长，皆因鬼以成功。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0050",
+      "sha256": "407113afa712a7b25267428fd3510208846230c05bd7cd844e9c980774f6a87f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "四柱兴隆，若无病而不贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0051",
+      "sha256": "42cc80af2a2bdd2f04cd272c5b5e93372f9d448a975f9a085b775138a9559002"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "虽用鬼病为奇，终是去之为福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0052",
+      "sha256": "fdf6b3a76e33995ac91e3357e3fd823da4edbffe7a1a4ca34c0ed619ff8c558a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "更寻三合禄马之年，须着玉堂天乙之岁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0053",
+      "sha256": "aaf8bfecdd4dc4a57e253fe683dee9beb74962311d4382faa978250bb326aff4"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "丙丁生於冬月，贵乎戊己当头 (眉批：火弱不宜水多)；庚辛産於夏天，妙乎壬癸得局。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 14,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0054",
+      "sha256": "0cbb4a139a85b80aaa5b8df0334843a479a8d52de4d6415933bb98bb8a1aa007"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "甲乙秋生，贵宜玄武；庚辛夏长，宜用勾陈 (眉批：戊土也)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 20,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0055",
+      "sha256": "806dc97a2eae05b842c7e9ab2def4d71ea31f24c127a502dea69c93653400c53"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "丙丁水多嫌北地，逢戊己则反贵推；庚辛火旺怕南方，遇戊己反成荣断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0056",
+      "sha256": "17a253bdb48a6e5bf60d99efdd527292e886875002dbf40880956dd54904d4d8"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "甲乙秋生透丙丁，莫作伤看；戊己夏産露庚辛，当为贵论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0057",
+      "sha256": "d79b843e9a319cebf71ce3f8de5ac022e045f8dd8d5a4e319d5e1e2743321d5c"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "火带水多，贵行木运；土逢木旺，荣入火乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0058",
+      "sha256": "b6b998ff10825971a174c50e61a8c162de791c5f443fabc4c0d653e2a1a8e1b2"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "庚逢水重，水冷金寒喜炎热；戊遇酉多，身衰气锐爱荧煌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0059",
+      "sha256": "3d5f732d20e798482c2f8197a1634ac76a760cc58bb4ce61d6f740bad5be8e3a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "不及喜生扶(眉批：生是父母，扶是比肩)，太过宜克剥。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 5,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0060",
+      "sha256": "c96169293fc53b87504e5d76c32f0c56fe061854116530ec7b737da2b27e4f61"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "官杀混杂，身弱则贫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0061",
+      "sha256": "578f0636ba6b0a4561539caaa683991a9df9334a7ac25a2815b7f84b152567c9"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "官杀相停，合杀为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0062",
+      "sha256": "b0b91009186d5fd17c724ed7ae48fb2a284c133c26e9761524437d29cd2aca7f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "年月官星，早年出仕；日时正贵，晚岁成名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0063",
+      "sha256": "47267c4bcae1772302da06880818fdf02b56a7402f60cd04a8afff3e2dd16742"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "胞胎逢印绶，禄享千锺 (眉批：盛米之容器)；财气遇长生，肥田万顷。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 11,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0064",
+      "sha256": "e3b1f8e2590e7f3e274d4b15a16c4067aa071340f176071c5871318f158ee56b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "秋冬官星逢刃伤，存金去火贵无疑；腊月伤官喜见官，破印重伤祸而死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0065",
+      "sha256": "49248698a6e58d373dcc276cacb2142580eb3abb44884afd9a10e9d9eb6f7f35"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "财旺生官者，乃贵少而富多；伤官见贵者，又官高而财足。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0066",
+      "sha256": "6a5d5d0261fa5503f35d72c489b970c93d88e2693ae2f78a1709c98c36869b37"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "无伤不贵，有病为奇，理明於後，何必他求。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0067",
+      "sha256": "6312bea77c7053f82fd8d7c0df33c7e64faa10a50e3f3cf5d7aad0d807d8d434"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "虽始用之为奇，终宜去之为美，审其轻重，毋取一途。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0068",
+      "sha256": "78e6b2d03dcc1507c345e08c942d4d8143f1037d702fe94214fd31e800a9cac4"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "如十分火炎而遇庚辛，休作身旺官轻而取；或木绝坐金重逢杀印，难为身弱气旺之断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0069",
+      "sha256": "be321944526aca84c6ca1823ed57e19f8f0b0699d6796ea13b916d1d197a86a4"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "财轻勿经劫地，顿见妻灾；劫财刃有官杀，台阁(眉批：宰辅之官)之臣。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 21,
+          "end": 30,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0070",
+      "sha256": "94ba663d07fbbc0ec7f54431ac752b9169b4c25b5ec51094894ad3b95fa02ac7"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "归禄倒冲行刃伤，庙廊之士；身旺有杀行印绶，权断之官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0071",
+      "sha256": "f273b369ad6d33db824be707433a66a9da02e853f9291f5de7202684635b89f2"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "身强主弱无印绶，遇财星寻常之辈。阳刃偏官有制，应职掌於兵权。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0072",
+      "sha256": "1ca8049fcba1157c048eb956191fbc7d4aba8868ce6e8d6c319cdb3e4b893f4b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "正官正印无伤，出仕牧於庶士 (眉批：府官之职)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 14,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0073",
+      "sha256": "e8f8437d0b24589f392d63998e6c80d2621e7a09c2e88961e92d1be701f9091f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "润下稼穑，给赏之官 (眉批：运粮官)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 10,
+          "end": 18,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0074",
+      "sha256": "13a7ef28a4a1b9093bd5c038f9d28464d5d6a8ff15d258c79228e13781f94e0d"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "子午尊位，黄门之客。癸日癸时兼亥丑，魁名及第入翰林。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0075",
+      "sha256": "d37d7a73f8b1528cbbdea1da24279e1c123045db887e605ab7e7b1b6e3dbd612"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "壬日壬时叠壬辰，官爵厚恩登御阁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0076",
+      "sha256": "3d41a2890dd379f0b17f2c1704fd1ded030dc077eb17cc8602eba1bd7ba05171"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "日德见魁罡，遇刑冲贫寒之士；魁罡 (眉批：辰为魁，戌为罡)见财星，总得地食禄之人。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 17,
+          "end": 29,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0077",
+      "sha256": "4322561797a1ddf1f43ed950fdfea76dd05066e2c0b9e2a004483dd70c5289d3"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "伤官见官，妙入印财之地；财星破印，宜逢比劫之宫。命逢财运逢杀，吉亦堪陈；命逢杀运逢财，凶而可决。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0078",
+      "sha256": "500343164420b6e4e42d75924c6e9ffdcd374de3030e699c3f9fc86ec58878b4"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "女遇伤官，归禄得之极美；男逢阳刃，身弱遇之为奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0079",
+      "sha256": "c794771a6cf66190a896b19d49524a61094f3380b1f1ac6c39fca4afe4d947b5"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "金神飞禄伤官，女命逢之最忌；阳刃伤官七杀，男命值之得权。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0080",
+      "sha256": "257587dd730b58fe0d1eaaf999be6de8daf83fb726cd05ebae79a41e8ffe807f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "金神入火，逢刃杀贵而无疑；归禄无官，逢食伤荣而有权。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0081",
+      "sha256": "d4bae32e8b80725f5149bcd93b4e920ba269bbfe3199b4137a96437c14a69c89"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "正印无官，居官不显；阳刃七杀，出仕驰名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0082",
+      "sha256": "9df8ea34645976ca6d61ebdee10d8f6b91c6613d6a8c6a97a31ea4d80e27dc7a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "身旺无依，僧道之命；桃花滚浪 (眉批：桃花杀，女人大忌，若官星带桃花主贵，惟比劫带之主淫贱，时上见之为墙外桃花，娼妓之断。)，妓女之流。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 15,
+          "end": 62,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0083",
+      "sha256": "423d5b33ad84a698439dc397b8c3a96c6749aa2e0ec0f50f39d5a09f2904af63"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "金弱火绝，土木消磨之匠；身强财浅，金火陶冶之流。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0084",
+      "sha256": "307e3083f793f17315a6e5cbee3757d9a56646026b5578afd0f042710790a69b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "伤官逢财而有子，七杀有制亦多儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0085",
+      "sha256": "774198df8215bc9d395aea6d7301a817a3ad43785dd93fd02b9d3634f09599c4"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "印绶被伤，早年丧母；财源被劫，父命先倾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0086",
+      "sha256": "d7501e8b09bf63a5e908122a69f314872200abb8582e3ebe402375c0fd486527"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "男命伤官恐损子，女命伤官防克夫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0087",
+      "sha256": "db80b46c5ac07d97a130a87913f6117df9dee9fca04f584928682e60cb1b0d0b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "年月财官身旺，祖显父荣；日时禄马长生，妻贤子贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0088",
+      "sha256": "d3671162a220754feca775b5f88970b2842f4e60595653f6b8df792810cd3fbd"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "月中归禄无财官，父丧他邦；年逢禄马被冲破，公亡外郡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0089",
+      "sha256": "aca80f1d06a64ce383cd800258527fab2ac6010202ed1bf2c83e631781459a8c"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "日逢财时逢劫，妻妾産亡；岁值杀月值伤，兄弟不睦 (眉批：月干支为兄弟)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 24,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0090",
+      "sha256": "c539a3e996bb7660326467c01a5e9f30de7fc131e9a27d29a8f4c18091f997c3"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "专禄若遇阴错，外家零落；逐马如遇阳差，公姑真假 (眉批：阳日为阳差，阴日为阴错，辛卯、壬辰、癸巳、丙午、丁未、戊申、辛酉、壬戌、癸丑、丙子、丁丑、戊寅日是也)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 24,
+          "end": 79,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0091",
+      "sha256": "5be2df946bc4e0aad7e019f8179980adbfe3f7770b04c3a94aca14ddf9bd83d8"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "岁月值杀有刑害，公父连伤；日时皆禄无财助，妻儿离散。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0092",
+      "sha256": "79f7e628b808c6e05256e994bcee30b9f06323505b156e7ccca834408cd3dd5e"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "正财偏财见和合，妻妾奸淫；伤官正官有克破，夫妻刑并。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0093",
+      "sha256": "9de52cc0c0061bdd3723960e89804a399a87a08dd52630d970280917a9f818c0"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "旺妻伤子，必因食宿遭伤；旺子丧夫，乃是官主失位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0094",
+      "sha256": "9d77da19132bbfd1db303071a531ad162594cfdbbe1ab2ae8f7421665ff8b73d"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "女逢财旺生官，夫权必夺；男遇财多身弱，妻话偏听。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0095",
+      "sha256": "f9da8572d496fb9092bef26945bb8de610141e3b959e0f0cbd40b950b453ed7b"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "差错居日，外家冷淡；建刃伏年，祖基微浅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0096",
+      "sha256": "0f261e375cc16c877363e78fcd92b14b7160a5fb150ad6d1aa54f2773097873d"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "财官生时，逢财旺生官，助国兴家之子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0097",
+      "sha256": "25643d85d18109fa096b17ca06e0805a84876506be7329dcf99c11e810c49e25"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "正官重见，多生女子少生男；出现偏财，少爱正妻偏爱妾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0098",
+      "sha256": "d1f1e949d395eb1cc81a361469d3ea4c1f25b47c80036a5b1ef258000eb3752a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "财星得位，因妻致富成名；官禄归垣，显己增荣祖业。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0099",
+      "sha256": "d65e16f73370b88646fd6c023c9f17f21ed678de5fc22b2a8b87ab4b6e125c11"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "年正官月伤官，公强父弱；日值财时劫财，父兴子败 (眉批：年为公，月为父，日支为妻，时为子息)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 24,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0100",
+      "sha256": "6deb3523423b90c8786b795eb3e111cfe6cd3ca556944cc43170999abc361de2"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "青龙全从格之金，且贫且贱；白虎备润下之水，曰富曰贵 (眉批：甲乙木为青龙，庚辛金为白虎)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 26,
+          "end": 44,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0101",
+      "sha256": "25361e7597a383531982e792458355d065bd15931164eb317a3e0c37343d75f0"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "春木荣而水浅，补衲之僧；夏火炎而金衰，簪冠之道。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0102",
+      "sha256": "a1329547beb949648aadfb9b1155e4b4f9cfe348950ccaa21a56674fb48236f9"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "勾陈全润下，奔流之辈；朱雀合玄武，窘弱之徒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0103",
+      "sha256": "3c27911d9e8f4fb31d5a0625a82bc7b08d79e04ad495f332e88db909b96a15f6"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "金刚木弱，行商坐贾之人；土坚水竭，破祖离乡之客。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0104",
+      "sha256": "386e348f718f6d574366ad4e3bb23baf1551e3724fd8d9a3440da9f13881e8d5"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "金生秋月土重重，贫无寸铁；火长夏天金叠叠，禄有千锺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0105",
+      "sha256": "ff35518111727fde7506cdd0dccf172fc5ddb28ccddd5317e87d6237785cbee6"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "春木水多，贫贱之辈；冬水金盛，癫弱之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0106",
+      "sha256": "521ec90984de580679f7a991da3f44dd1f6af1584a43365922cc28595d8e39b6"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "辰戌丑未遇刑冲，无人不发 (眉批：辰戌丑未为四墓，如财官入墓喜冲开)；子午卯酉带刑合，多主淫讹。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 13,
+          "end": 34,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0107",
+      "sha256": "826ae9b75ad69de53c9dda0cde3eefc638ce204d71fbc5c333b8e46de255305e"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "夏金叠火，秋木重金，非贫即贱；季木盛金，春金多火，不夭则贫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0108",
+      "sha256": "61f48eeb23cf92fbe29d56978121f924c77b0168b4913fc9c5617c451c59972f"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "秋木无根从妻福，禄位高崇；夏金失色配夫荣，功名显达。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0109",
+      "sha256": "c90c321236c5a26c39c25e743fe9e80fa7d3eb845d910f968b349655d0c261af"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "火向春林金水旺，好去求名；土临季地 (眉批：辰戌丑未月也，以上系外格)见金重，堪来出仕。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 18,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0110",
+      "sha256": "7b8bb7c8c01cf4b3d6e798e3b3ffabd2afb56d3c5bf1d57e72470cb3b2dfcdba"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "甲乙夏荣土气厚，功名半许足田庄；丙丁冬旺水源清，爵位全备荣锦奇。专禄带食伤，权掌阃外；阳刃入官杀，威镇边疆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0111",
+      "sha256": "1103e61faa5af11b8b3b00e0f8071ce5d0735eac5401e27995a9ff1eee66ef43"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "拱禄夹禄拱贵，爵禄丰荣；倒冲遥巳栏杆，功名显达。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0112",
+      "sha256": "72e6d24dad9f927fbd2b9eda4070854ab9bcd55b0970865f33e13e90ea118b62"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "壬趋艮，甲趋乾，清庙之士；辛朝阳，乙鼠贵，文学之臣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0113",
+      "sha256": "52e75d01f83dd3340c2a4d51b6a62272c12974f93ab6fb2f1f85c627c63b7753"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "局全风虎，良将之才；柱备云龙，大人之德。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0114",
+      "sha256": "c4bdba8ee78ed494172b75a39b343034e64dafda89020df82a6832b09262b40a"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "四库备全龙变化，逢大海为九五之尊；三奇局秀凤腾翔，遇天门乃二六之主(眉批：此二段言帝王之命)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 33,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c191:p0115",
+      "sha256": "8a72b1c17da54bae7d46edabddc9e8c29c18c9377cbf31dff12f8cc283e14536"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "明财官而致富，暗禄马以荣华。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0116",
+      "sha256": "12793f6e9177198728933efd8efdcb9aa2eaeb6f1a75f9213c1a86f2d5d1b749"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "入格以贵而推，破局以贫而断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0117",
+      "sha256": "9e901c3864bdb55675456a5d0f9127f8039c06fed14a9ee8e27f63e3bf2f72ff"
+    },
+    {
+      "section": "碧渊赋(元妙论)",
+      "text": "究一理而察百端，明片言而通万类。後学君子，勿忽於斯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c191:p0118",
+      "sha256": "a1c044d1edbf4ed7bd0721b214052e9b074864b320d40d07657a7bd76e789eb4"
+    }
+  ]
+}

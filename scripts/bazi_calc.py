@@ -1,7 +1,7 @@
 """Compute a full BaZi (八字) chart.
 
 Outputs four pillars, hidden stems, 十神, weighted 五行 distribution, 日主旺衰,
-35 神煞 (driven by assets/shensha.json), 用神/喜神/忌神 (扶抑 + 调候 combined),
+35 神煞起法命中 (driven by assets/shensha.json), 分列的扶抑/调候候选,
 格局 detection (special-format priority then 月令本气透干), 干支互动
 (合冲刑害三合三会), 纳音, 大运 sequence with 起运岁, and 流年 hints.
 
@@ -46,6 +46,7 @@ from bazi_tables import (
     si_ling,
 )
 from reading_support import bazi_reading_packet
+from request_time import add_request_arguments, resolve_time
 from utils import (
     DIZHI_WUXING,
     DIZHI_YIN_YANG,
@@ -301,8 +302,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="跳过 用神/喜神/忌神 计算")
     p.add_argument("--no-geju", action="store_true",
                    help="跳过 格局 判定")
+    add_request_arguments(p, target=False)
     p.add_argument("--as-of-year", type=int, default=None,
-                   help="流年起算年份 (默认当前年; 指定后输出确定可复现)")
+                   help="固定流年参考公历年；省略时需当前所在地时区，无则只输出原局")
     return p
 
 
@@ -503,18 +505,21 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     shensha_list: list[dict] = []
     if not args.no_shensha:
         shensha_data = _load_json("shensha.json")
-        shensha_list = detect_all_shensha(
-            shensha_data,
-            day_stem=day_stem,
-            day_branch=day_branch,
-            day_ganzhi=day_ganzhi,
-            year_stem=year_stem,
-            year_branch=year_branch,
-            month_branch=month_branch,
-            stems_map=stems_map,
-            branches_map=branches_map,
-            gender=args.gender,
-        )
+        try:
+            shensha_list = detect_all_shensha(
+                shensha_data,
+                day_stem=day_stem,
+                day_branch=day_branch,
+                day_ganzhi=day_ganzhi,
+                year_stem=year_stem,
+                year_branch=year_branch,
+                month_branch=month_branch,
+                stems_map=stems_map,
+                branches_map=branches_map,
+                gender=args.gender,
+            )
+        except ValueError as exc:
+            return error_envelope("bazi", "unavailable_reference", str(exc))
 
     # 干支 互动
     interactions = detect_interactions(pillars)
@@ -589,12 +594,19 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     except Exception as e:
         warn(f"da_yun unavailable: {e}")
 
-    # 流年 — current solar year + next 5
+    # The current residence's year is independent from the birth timezone.
     liu_nian: list[dict] = []
+    current_time_context = None
+    now_year = args.as_of_year
+    if args.current_timezone or args.request_time:
+        try:
+            current_dt, current_time_context = resolve_time(args)
+            if now_year is None:
+                now_year = current_dt.year
+        except ValueError as exc:
+            return error_envelope('bazi', 'invalid_time_context', str(exc))
     try:
-        from datetime import datetime
-        now_year = args.as_of_year if args.as_of_year else datetime.now().year
-        for y in range(now_year, now_year + 6):
+        for y in range(now_year, now_year + 6) if now_year is not None else []:
             ly = Solar.fromYmdHms(y, 6, 1, 12, 0, 0).getLunar()
             gz = ly.getYearInGanZhi()
             year_stem_y = gz[0] if gz else ""
@@ -669,6 +681,11 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         "qi_yun": qi_yun,
         "da_yun": da_yun_list,
         "liu_nian": liu_nian,
+        "current_time_context": current_time_context,
+        "liu_nian_status": ('explicit_year' if args.as_of_year is not None else
+                            'current_location_year' if now_year is not None else 'needs_current_timezone'),
+        "liu_nian_scope": 'calendar_year_reference_list',
+        "liu_nian_note": '按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻',
     }
 
     result['schema_version'] = '2.0'

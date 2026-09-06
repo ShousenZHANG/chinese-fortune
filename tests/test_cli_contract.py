@@ -42,6 +42,9 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
+    ('bazi_reading.py', ['--year', 1990, '--month', 2, '--day', 31, '--gender', 'male'], '无效生日'),
+    ('classical_search.py', ['--passage-id', 'missing:chapter:p0001'], '未知古籍段落'),
+    ("request_time.py", ["--current-timezone", "Invalid/Zone"], "不存在时区"),
     ('reading_support.py', ['--chart', 'assets/classical_evidence.json'], '证据库不是命盘'),
     ('reading_support.py', ['--chart', 'does-not-exist.json'], '输入文件不存在'),
     ("bazi_calc.py", ["--year", 1990, "--month", 2, "--day", 31, "--hour", 10,
@@ -143,7 +146,8 @@ def test_every_engine_entry_point_is_covered_by_the_contract():
     import ast
     entry_points = set()
     for f in sorted(SCRIPTS.glob("*.py")):
-        if f.name in ("utils.py", "build_skill.py"):
+        if f.name in ("utils.py", "build_skill.py", "import_classics.py"):
+            # import_classics is a maintenance importer, excluded from the runtime package.
             continue
         tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
         has_main = any(isinstance(n, ast.FunctionDef) and n.name == "main"

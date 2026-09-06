@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c105",
+  "title": "内十八格-乙巳鼠贵格",
+  "source_url": "https://luckclub.cn/bazi/001/105/",
+  "revision": "sha256:c2d25f788f4b1796a50c1e7a8bb2f966143bb6f863750c596f3ceb29a7f178f0",
+  "source_timestamp": "2026-09-06T04:10:46.122416+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c105.html",
+  "raw_sha256": "c2d25f788f4b1796a50c1e7a8bb2f966143bb6f863750c596f3ceb29a7f178f0",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "内十八格 - 乙巳鼠贵格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0002",
+      "sha256": "7c27e62664aee56e2458e985bd66c6fec52769c1497f6cd7a53f35001c594055"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "此格如月内有官星则不用之，大怕午字冲之。丙子时，丙字为妙，谓之聚贵也。或曰：柱中有庚字、辛字，并申字、酉字、丑字内有庚辛金则减分数，岁君大运亦然。又曰：四柱中原无官星，方用此格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0003",
+      "sha256": "bcf1e610fc674de3bbdd1b82b6d5dd09dc89b5ec78cc70475eadd556546af43a"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "袁判院，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0004",
+      "sha256": "1b0445f283c3f9baea63efdfbd86bde353ef94b17edb7b6fb5537bbd69ebf5d0"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "甲寅 戊辰 乙亥 丙子，贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0005",
+      "sha256": "8734959d48f1e66dce84cc3c3aec603b91c658d627020a8eed471cffddd249e2"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "车御带，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0006",
+      "sha256": "17f136b9d2c8c8d2e037b504ee3574a99f299b476bbfe384a17ef094051bb03a"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "戊子 癸亥 乙未 丙子，贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c105:p0007",
+      "sha256": "5112b067b25a16f3f8e2dd820012f6a3b7b28fda48622139662accf24b328532"
+    },
+    {
+      "section": "内十八格-乙巳鼠贵格",
+      "text": "眉批：诗诀，阴木天干丙午时，乙巳要贵富为奇，无冲官杀方为美，年少声名达凤池。以日干为主，取贵在时。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 49,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c105:p0008",
+      "sha256": "3a4c91a00ec0c77d9d1db152a1428561e52c57c0d593b10461a913f12e80f2e5"
+    }
+  ]
+}

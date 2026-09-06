@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c046",
+  "title": "论帝座",
+  "source_url": "https://luckclub.cn/bazi/001/046/",
+  "revision": "sha256:fb9f7a14e07ca4b154d89a56d868c51325afe4d5090e47846423b854841913b6",
+  "source_timestamp": "2026-09-06T04:10:33.593694+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c046.html",
+  "raw_sha256": "fb9f7a14e07ca4b154d89a56d868c51325afe4d5090e47846423b854841913b6",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论帝座",
+      "text": "论帝座",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c046:p0001",
+      "sha256": "e5719fbef5f12b1c755af32acb2b83a33b9cbcd69ddf48dfe4baa9e527e42ed7"
+    },
+    {
+      "section": "论帝座",
+      "text": "其取法时下纳音旺处是也。如甲子时，纳音属金，金旺於酉，即酉上是也。其余仿此。帝座主儿女官也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c046:p0002",
+      "sha256": "e8160babfdc3cdac871970b07e811cc15b4987ffb6da24a9d281a4e49c843f75"
+    },
+    {
+      "section": "论帝座",
+      "text": "眉批：子平云，帝座逢虚见不肖有是。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c046:p0003",
+      "sha256": "dcdac01cac7eb81cd57ef9a0ae324062567e9b31bf9f8162e53cc1e3f0e4e266"
+    }
+  ]
+}

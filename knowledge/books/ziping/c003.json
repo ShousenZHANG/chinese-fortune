@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c003",
+  "title": "三、論陰陽生死",
+  "source_url": "https://www.donglishuzhai.net/chapter/3716.html",
+  "revision": "sha256:6d25ca5a27044b005b83cd9cff7c887b11293782d3a4af6a3c4f91e57f8fe972",
+  "source_timestamp": "2026-09-06T04:16:49.897Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c003.html",
+  "raw_sha256": "6d25ca5a27044b005b83cd9cff7c887b11293782d3a4af6a3c4f91e57f8fe972",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三、論陰陽生死",
+      "text": "五行干支之說，已詳論於干支篇。干動而不息，支靜而有常，以每干流行於十二支之月，而生旺墓絕繫焉。",
+      "layer": "base_text",
+      "passage_id": "ziping:c003:p0001",
+      "sha256": "1d73164736118bbdbdab0082a071f0f98b5d147f2345b344eb91e5e0c2c4cb04"
+    },
+    {
+      "section": "三、論陰陽生死",
+      "text": "陽主聚，以進爲進，故主順；陰主散，以退爲進，故主逆。此長生沐浴等項，所以有陽順陰逆之殊也。四時之運，成功者去，待用者進，故每干流行於十二支之月，而生旺墓絕，又有一定。陽之所生，即陰之所死，彼此互換，自然之運也。即以甲乙論，甲爲木之陽，天之生氣流行萬木者，是故生於亥而死於午；乙爲木之陰，木之枝枝葉葉受天生氣者，是故生於午而死於亥。夫木當亥月，正枝葉剝落，而內之生氣，己收藏飽足，可以爲來春發洩之機，此其所以生於亥也。木當午月，正枝葉繁盛之候，而甲何以死？卻不知外雖繁盛，而內之生氣發洩已盡，此其所以死於午也。乙木反是，午月枝葉繁盛，即爲之生；亥月枝葉剝落，即爲之死。以質而論，自與氣殊也。以甲乙爲例，餘可知矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c003:p0002",
+      "sha256": "b43664a48adcda68dab97bdc6068c2eceb1cfe76099f57b39a99da199800d2b8"
+    },
+    {
+      "section": "三、論陰陽生死",
+      "text": "支有十二月，故每干自長生至胎養，亦分十二位。氣之由盛而衰，衰而復盛，逐節細分，遂成十二。而長生、沐浴等名，則假借形容之詞也。長生者，猶人之初生也。沐浴者，猶人既生之後，而沐浴以去垢也。如果核既爲苗，則前之青壳，洗而去之矣。冠帶者，形氣漸長，猶人之年長而冠帶也。臨官者，由長而壯，猶人之可以出仕也。帝旺者，壯盛之極，猶人之可以輔帝而大有爲也。衰者，盛極而衰，物之初變也。病者，衰之甚也。死者，氣之盡而無餘也。墓者，造化收藏，猶人之埋於土者也。絕者，前之氣已絕，而後之氣將續也。胎者，後之氣續而結聚成胎也。養者，如人養母腹也。自是而後長生，循環無端矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c003:p0003",
+      "sha256": "793402548b56c5094c7285236a984cf4601a65e8928112beaf045a48d38126f4"
+    },
+    {
+      "section": "三、論陰陽生死",
+      "text": "人之日主，不必生逢祿旺，即月令休囚，而年日時中,得長生祿旺，便不爲弱；就使逢庫，亦爲有根。時說謂投庫而必沖者，俗書之謬也。但陽長生有力，而陰長生不甚有力，然亦不弱。若是逢庫，則陽爲有根，而陰爲無用。蓋陽大陰小，陽得兼陰，陰不能兼陽，自然之理也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c003:p0004",
+      "sha256": "f02b41e1567ed16bec98e03fe3131753b7def215aacf66f741a7af6553866ad2"
+    }
+  ]
+}

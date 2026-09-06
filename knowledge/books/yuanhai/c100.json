@@ -1,0 +1,161 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c100",
+  "title": "内十八格-月上偏官格",
+  "source_url": "https://luckclub.cn/bazi/001/100/",
+  "revision": "sha256:1a9b71e588ec687d0c31bf3bea692e360a86e969aa31565c9c96235f87a139f4",
+  "source_timestamp": "2026-09-06T04:10:45.128473+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c100.html",
+  "raw_sha256": "1a9b71e588ec687d0c31bf3bea692e360a86e969aa31565c9c96235f87a139f4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "内十八格 - 月上偏官格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0002",
+      "sha256": "c0a83bd7682fe94d1690ecff35246db39d1c7e99012a437dfddff4c51ec2e0c8"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "喜身旺，怕冲多，为人性重，刚执不屈，时偏官多者亦然。喜见阳刃杀，月上偏官用地支，只要一位，要行偏官运。若有申子，年时上又有之，却要行偏官旺运，亦不要行官乡，岁君亦然，为太过而反成其祸。须要行制伏得地之运方发，与时偏官相似。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0003",
+      "sha256": "7740a00bec2251b3c9395e9acef10ca2484756a99bd2560cb6e2b365c2aea5c7"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "沈郎中，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0004",
+      "sha256": "f04a815d61143751454f8d29187de14fa9d24671f94c9157df6a5a9c48aa0772"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "丙子 甲午 辛亥 辛卯(丁偏官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0005",
+      "sha256": "cddecc9e6943e70b3ef664654acba0335f15003d19845bbf4ddae350d2d8fc14"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "何参政，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0006",
+      "sha256": "0b101a195bed5abe116bc98ea84d9e0aa7420d7802713b9326ca53208adb0477"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "丙寅 戊戌 壬戌 辛丑(戊偏官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0007",
+      "sha256": "cf9189d90cae78788658f9bc605eb4e6709502ae11539c98d1d9cb08a0d12bc1"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "岳总制，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0008",
+      "sha256": "fa97d646fc4212051fee892c90f7533dfee2adee76cc72974758a165c5da88d0"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "癸卯 丁巳 壬寅 甲辰(戊偏官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0009",
+      "sha256": "7ace55e8180f9c4196cbd38321a70f1ad48f809a937c9246f78ab1a15d17803d"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "王镇抚，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0010",
+      "sha256": "20bc98afd638749a0788844ba1e4ca6db6ccf4da0f709b0690d4b91191ebd483"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "戊寅 癸亥 丙申 戊子(壬偏官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0011",
+      "sha256": "d159fe323c6ef6874746bc73a431623cfec87cb444809230aeca7090bd3f5a18"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "王镇抚此格，杀神太重，喜行东方运。身衰，八字水多火微，独喜寅宫火旺，乃是一年之火，运行卯合戌火局何益？又系湿木，不生无焰火，则木自旺不能生火，譬如横水木於炉围之上，此火纵悍力，亦无由得盛，是以丁卯运中而死，而六丙生人亥子多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0012",
+      "sha256": "4853f214c90cc54ed515f977a21a5cb71ebbd147527a9c89c391bd851a7029c2"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "帖木丞相，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0013",
+      "sha256": "66236040c79a559c8a1805d8f12dfb6f4b12854f156751c45e1df30511b7b7aa"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "戊申 辛酉 丙申 庚寅(辛金偏官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0014",
+      "sha256": "0e1e0b07dfc3c0f6ef847a1379ee665cdef037a68d15ad692d321bc079b3157d"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "黄侍郎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0015",
+      "sha256": "0503969a16fb5d9508d2e8178b7df911d44b6719e4b52fd90d320df1281b8ced"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "丁亥 辛亥 丙申 庚寅(壬偏官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0016",
+      "sha256": "4de313766c3fef6163b8a20e4c081dc02745fe93f191cbc824db55d4255e1390"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "刘运司，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0017",
+      "sha256": "0d2a1907998a8fa809b933713aad7b66ec534ae8b31b3adccb89927580265cbe"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "甲寅 乙亥 甲戌 丙寅(壬水偏官，戊土财神，丙火食神)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c100:p0018",
+      "sha256": "e857de73fe0ed8bb6cf48a5c24061e4b72ef408b1b7ed417a374d0848f61a90f"
+    },
+    {
+      "section": "内十八格-月上偏官格",
+      "text": "眉批：即七杀也，要日干生旺方可任当得住为福，身弱当不住则为祸。论命不问是何格，但见有杀不攻用神，虽有然自可发福。帖木丞相命，杀官太重，喜逢寅时相冲，化杀生身，更得行运得力，所以贵也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 91,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c100:p0019",
+      "sha256": "d37309b29e85d238cc85fdf970bf81363d40c9c6d453648c9feaaf1a568322a6"
+    }
+  ]
+}

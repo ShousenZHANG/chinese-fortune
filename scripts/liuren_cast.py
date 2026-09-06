@@ -22,9 +22,9 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
 from typing import Any
 
+from request_time import add_request_arguments, resolve_time
 from utils import (
     DIZHI,
     DIZHI_WUXING,
@@ -640,8 +640,9 @@ def build_parser() -> argparse.ArgumentParser:
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    p.add_argument("--date", required=True, help="占问日期 YYYY-MM-DD")
-    p.add_argument("--time", required=True, help="占问时辰 HH:MM")
+    add_request_arguments(p)
+    p.add_argument("--date", default=None, help="占问日期 YYYY-MM-DD")
+    p.add_argument("--time", default=None, help="占问时辰 HH:MM")
     p.add_argument("--longitude", type=float, default=None,
                    help="经度 (可选, 仅记录, 不参与时辰换算; 真太阳时需另行调整)")
     p.add_argument("--question", type=str, default=None,
@@ -653,7 +654,7 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     try:
-        dt = datetime.strptime(f"{args.date} {args.time}", "%Y-%m-%d %H:%M")
+        dt, time_context = resolve_time(args, date_value=args.date, time_value=args.time)
     except ValueError as exc:
         json_print(error_envelope('daliuren', "invalid_datetime", str(exc)))
         return 1
@@ -692,9 +693,10 @@ def main(argv: list[str] | None = None) -> int:
         "ok": True,
         "tool": "daliuren",
         "version": __version__,
+        "time_context": time_context,
         "input": {
-            "date": args.date,
-            "time": args.time,
+            "date": dt.date().isoformat(),
+            "time": dt.strftime("%H:%M"),
             "longitude": args.longitude,
             "question": args.question,
         },

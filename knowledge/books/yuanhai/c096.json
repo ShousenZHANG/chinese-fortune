@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c096",
+  "title": "论金神",
+  "source_url": "https://luckclub.cn/bazi/001/096/",
+  "revision": "sha256:e1421b6748da0b160c21b1e9afce6431616a3c1467dc8604036d8a489b978693",
+  "source_timestamp": "2026-09-06T04:10:44.531459+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c096.html",
+  "raw_sha256": "e1421b6748da0b160c21b1e9afce6431616a3c1467dc8604036d8a489b978693",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论金神",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c096:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论金神",
+      "text": "论金神",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c096:p0002",
+      "sha256": "23c57e5992bab4420560d0723a12627bc3e1ce5b9a125378f77b670dc80d3811"
+    },
+    {
+      "section": "论金神",
+      "text": "夫金神者，只有三时，癸酉、己巳、乙丑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c096:p0003",
+      "sha256": "d89c4d3c8c8f2ab4734f59e54eb9d89fc67aba98275f8bffc48abafb3a73046b"
+    },
+    {
+      "section": "论金神",
+      "text": "金神乃破败之神，要制伏，入火乡为胜。如四柱中更带羊刃七杀，真贵人也。大抵威猛者，以强暴为能威，苟不专，人得以侮。故必狠暴如虎动，群兽既慑，威德行矣。然太刚必折，不有以制之，则宽猛不济，何以上履中和之道。故曰有刚者，在驯服调致其和，福禄踵至。其人有刚断明敏之才，屈强不可驯服之志。运至火乡，四柱有火局，便为贵命。惧水乡，则非福也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c096:p0004",
+      "sha256": "6653221c4c345423a64aeb075d88e827c63580839ef1bec05b5ef4e749342c98"
+    },
+    {
+      "section": "论金神",
+      "text": "眉批：此时上见之为佳，喜火助者，有助发福。诗诀，甲午时上见金神，杀不相居真贵人，木火运中必发福，如逢金水必伤身。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 56,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c096:p0005",
+      "sha256": "61600b4e9d005221855366b57ac452e886ae163580222de14b35af96b584d0de"
+    }
+  ]
+}

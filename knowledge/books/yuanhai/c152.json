@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c152",
+  "title": "女命贵格",
+  "source_url": "https://luckclub.cn/bazi/001/152/",
+  "revision": "sha256:50f5d0708de59edc8be40e08e4c6dbe0c3dd7d1d646617062e61a3b6054d5c89",
+  "source_timestamp": "2026-09-06T04:10:54.805004+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c152.html",
+  "raw_sha256": "50f5d0708de59edc8be40e08e4c6dbe0c3dd7d1d646617062e61a3b6054d5c89",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "女命贵格",
+      "text": "女命贵格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c152:p0001",
+      "sha256": "bad9ba680f2f0c1e62fe847b2757950100168d3f6268916c04743f3274854a7b"
+    },
+    {
+      "section": "女命贵格",
+      "text": "正气官星，财官两旺，印绶天德，独杀有制，伤官生财，坐禄逢财，官星带合，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c152:p0002",
+      "sha256": "6582964363331ae92178cd6da36c390fa9d30182ca33fee86bc95666cb2abd1b"
+    },
+    {
+      "section": "女命贵格",
+      "text": "日贵逢财，官贵逢官，官星坐禄，官星桃花，食神生旺，食神生财，杀化印绶，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c152:p0003",
+      "sha256": "be23a8837bf756e3ee72949a4c188783e5075cd3b28170a6401d88e2083f61f1"
+    },
+    {
+      "section": "女命贵格",
+      "text": "二德扶身，三奇合局，羊刃有制，拱禄拱贵，归禄逢财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c152:p0004",
+      "sha256": "209aa64593661c6ae68a4a29d93ae3567de6abd07827d7a86dc69f0fbfcd1e21"
+    },
+    {
+      "section": "女命贵格",
+      "text": "眉批：官星要合，只喜一位为贵，合多不贵反为下贱。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c152:p0005",
+      "sha256": "b67d95449e715135e50284eb97914ff80cee897c9ef1b17a140274f987d9ae6b"
+    }
+  ]
+}

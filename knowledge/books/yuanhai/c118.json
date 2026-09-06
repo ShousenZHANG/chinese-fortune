@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c118",
+  "title": "内十八格-杂气印绶格",
+  "source_url": "https://luckclub.cn/bazi/001/118/",
+  "revision": "sha256:dba47b073d7ab4b34e33e549eac1aa07bbf3b7b1ed2479b032e686447bbeab35",
+  "source_timestamp": "2026-09-06T04:10:48.286343+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c118.html",
+  "raw_sha256": "dba47b073d7ab4b34e33e549eac1aa07bbf3b7b1ed2479b032e686447bbeab35",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "内十八格 - 杂气印绶格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0002",
+      "sha256": "9bd9e8961f650aab0cd9e634a53cc24e0690d02de0ab03e361687890d30febf0"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "干头透出格为真，只问财多何尊贵？辰戌丑未也，亦忌财，紧要行官运。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0003",
+      "sha256": "88fe99c143915fae7771a932d3b85ab0718e83600889c5a22af9dfc474bab83d"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "吕丞相，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0004",
+      "sha256": "12a753511a567e8d2edbec7e4f0b8bddc6e9d53fa787d8a9e27579b5b25fd863"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "丙寅 辛丑 癸巳 癸亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0005",
+      "sha256": "ad30ffe3733ab4eb67bacb33403782c4b530a379c946ea8a40ab98d6f01a6eb0"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "葛侍诏，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0006",
+      "sha256": "c6e63018b7f52a14cd66a68e40ee3e432b257680f90fa795982a4fff86ee21e2"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "庚寅 丙戌 戊子 癸丑",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0007",
+      "sha256": "13e8877f6d86d489a7015139f5953226e9f9c297425dfabbfade626222ddd7c3"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "解云：葛侍诏系卖帽梳儿，此命是杂气之中，月令透出丙丁火，乃为印绶，只是还因日时上癸水为有财，行亥子财运，於壬辰运六年而不遂意，第七年岁在戊子年，二月二十八日壬寅日不禄，乃是贪财土也。不可不仔细推之、记之，以为违者鉴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c118:p0008",
+      "sha256": "482ad7a71782ffecc0451d15687cc92f0949cd8f15ca13333c0c525bc25600f0"
+    },
+    {
+      "section": "内十八格-杂气印绶格",
+      "text": "眉批：此统言之，亦忌财运。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c118:p0009",
+      "sha256": "fec8f6ed9702e69eb757eb804bd1f64b89d1fdef5553a279bedaa3660b0cce67"
+    }
+  ]
+}

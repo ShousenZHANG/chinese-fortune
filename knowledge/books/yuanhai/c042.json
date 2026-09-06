@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c042",
+  "title": "论交禄",
+  "source_url": "https://luckclub.cn/bazi/001/042/",
+  "revision": "sha256:c239b61c8b08f7177940e0132bd24e2d6438bf2635f7fdda258babeca1dffba5",
+  "source_timestamp": "2026-09-06T04:10:32.704417+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c042.html",
+  "raw_sha256": "c239b61c8b08f7177940e0132bd24e2d6438bf2635f7fdda258babeca1dffba5",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论交禄",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c042:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论交禄",
+      "text": "论交禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c042:p0002",
+      "sha256": "8245e6c95d7d5fd42e33f87c558aad79b68176392e004ecca571bfbeaa0e995b"
+    },
+    {
+      "section": "论交禄",
+      "text": "假如甲申生人见庚寅，庚寅生人见甲申，是甲禄在寅，庚禄居申，互换往来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c042:p0003",
+      "sha256": "691e71f86090ace75d57f0d004040dcf09ab4993af8d8c6a25d0148d332ad9d6"
+    }
+  ]
+}

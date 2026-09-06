@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c006",
+  "title": "论十二地支阴阳所属",
+  "source_url": "https://luckclub.cn/bazi/001/006/",
+  "revision": "sha256:718be82324402ce4fe5e35e473685be61309748cefba6fc6c733f7ab31d7394a",
+  "source_timestamp": "2026-09-06T04:10:25.552648+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c006.html",
+  "raw_sha256": "718be82324402ce4fe5e35e473685be61309748cefba6fc6c733f7ab31d7394a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二地支阴阳所属",
+      "text": "﻿渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c006:p0001",
+      "sha256": "57f46e9838fbd9eb98512f4751e2f801c26554663de18df244daca4937a857ab"
+    },
+    {
+      "section": "论十二地支阴阳所属",
+      "text": "﻿论十二地支阴阳所属",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c006:p0002",
+      "sha256": "4054554d95f08527f8e82bd4953653031d6d4a04a943dc4b2798d899b4b47303"
+    },
+    {
+      "section": "论十二地支阴阳所属",
+      "text": "子 丑 寅 卯 辰 巳 午 未 申 酉 戌 亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c006:p0003",
+      "sha256": "92ba2a9ab3547c838ea4d928cb4897974dfa669ec1f9f171a07250737cf54185"
+    },
+    {
+      "section": "论十二地支阴阳所属",
+      "text": "阳 阴 阳 阴 阳 阴 阳 阴 阳 阴 阳 阴",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c006:p0004",
+      "sha256": "2c4e3678a11351c6aa316458b6e86527ee3e2d01447b86e5e45865c8ca3574d9"
+    },
+    {
+      "section": "论十二地支阴阳所属",
+      "text": "(奇数阳 偶数阴)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c006:p0005",
+      "sha256": "dcb823c9c890ddf6001889e7041c078840fc8a14da02a8792144517331a84974"
+    }
+  ]
+}

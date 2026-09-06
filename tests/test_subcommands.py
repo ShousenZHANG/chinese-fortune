@@ -58,7 +58,7 @@ def test_yijing_text_deterministic():
 # --------------------------------------------------------------------------- #
 
 def test_meihua_name_deterministic():
-    d = run("meihua_cast.py", "name", "--text", "张三")
+    d = run("meihua_cast.py", "--datetime", "2026-06-24T13:05", "name", "--text", "张三")
     assert d["main_hex"]["name"] == "乾为天"
     assert d["changing_line"] == 2
     assert d["changed_hex"]["name"] == "天火同人"
@@ -242,7 +242,7 @@ def test_meihua_datetime_injection_is_reproducible():
     --datetime 挂在顶层而非 time 之下. 此前 body_strength 随真实月份漂移,
     无法 golden, 是 100% 未测字段.
     """
-    args = ("--datetime", "2026-06-24T13:05")
+    args = ("--calendar-profile", "legacy-gregorian", "--datetime", "2026-06-24T13:05")
     a = run_cli("meihua_cast.py", *args, "time")
     b = run_cli("meihua_cast.py", *args, "time")
     assert a == b
@@ -275,7 +275,7 @@ def test_meihua_body_strength_golden_in_the_four_earth_months(dt, hexagram, body
     这四个日期落在被改动的四个月上, 且四个值在改动前后全部不同
     (休→死、死→相、死→囚、死→休), 下一次同类漂移会立刻现形。
     """
-    d = run_cli("meihua_cast.py", "--datetime", dt, "time")
+    d = run_cli("meihua_cast.py", "--calendar-profile", "legacy-gregorian", "--datetime", dt, "time")
     assert d["main_hex"]["name"] == hexagram
     assert d["ti_yong"]["body_trigram"] == body
     assert d["ti_yong"]["body_strength"] == state
@@ -284,8 +284,8 @@ def test_meihua_body_strength_golden_in_the_four_earth_months(dt, hexagram, body
 
 
 def test_yijing_time_datetime_injection_is_reproducible():
-    a = run_cli("yijing_cast.py", "time", "--datetime", "2026-06-24T13:05")
-    b = run_cli("yijing_cast.py", "time", "--datetime", "2026-06-24T13:05")
+    a = run_cli("yijing_cast.py", "time", "--calendar-profile", "legacy-gregorian", "--datetime", "2026-06-24T13:05")
+    b = run_cli("yijing_cast.py", "time", "--calendar-profile", "legacy-gregorian", "--datetime", "2026-06-24T13:05")
     assert a["main_hex"] == b["main_hex"]
     assert a["main_hex"]["name"] == "坤为地"
 
@@ -411,7 +411,7 @@ def test_meihua_reference_worked_example_matches_the_engine():
     upper, lower = m.group(1), m.group(2)
 
     proc = subprocess.run(
-        [sys.executable, str(root / "scripts" / "meihua_cast.py"), "numbers",
+        [sys.executable, str(root / "scripts" / "meihua_cast.py"), "--datetime", "2026-06-24T13:05", "numbers",
          "--upper", upper, "--lower", lower, "--question", "x"],
         capture_output=True, text=True, encoding="utf-8",
     )

@@ -26,6 +26,7 @@ import sys
 from typing import Any
 
 import entropy
+from request_time import add_request_arguments, resolve_time
 from utils import (
     ensure_utf8_stdio,
     error_envelope,
@@ -159,14 +160,13 @@ def compass_16(bearing: float) -> str:
 
 def huangli_directions(date_str: str | None) -> dict:
     """Today's 黄历 吉神方位 (八卦 -> bearing). Empty dict if lunar_python absent."""
+    if date_str is None:
+        return {}
     try:
         from datetime import datetime
 
         from lunar_python import Solar  # type: ignore
-        if date_str:
-            dt = datetime.strptime(date_str, "%Y-%m-%d")
-        else:
-            dt = datetime(2026, 1, 1)  # deterministic default; pass --date for today
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
         lunar = Solar.fromYmdHms(dt.year, dt.month, dt.day, 12, 0, 0).getLunar()
         out = {}
         for name, method in (("喜神", "getDayPositionXi"), ("财神", "getDayPositionCai"),
@@ -204,6 +204,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--entropy", choices=["system", "quantum"], default="system")
     p.add_argument("--intention", type=str, default=None,
                    help="意图(概念性, 不影响随机数; 仅记录)")
+    add_request_arguments(p)
     p.add_argument("--date", type=str, default=None, help="黄历日期 YYYY-MM-DD")
     p.add_argument("--seed", type=int, default=None, help="确定性种子 (测试/复现)")
     return p
@@ -229,6 +230,16 @@ def main(argv: list[str] | None = None) -> int:
     dist = haversine_m(args.lat, args.lon, tlat, tlon)
     brg = bearing_deg(args.lat, args.lon, tlat, tlon)
 
+    time_context = None
+    almanac_date = None
+    if args.date or args.current_timezone or args.request_time:
+        try:
+            dt, time_context = resolve_time(args, date_value=args.date, day_only=True)
+            almanac_date = dt.date().isoformat()
+        except ValueError as exc:
+            json_print(error_envelope('explore', 'invalid_time_context', str(exc)))
+            return 1
+
     out = {
         "ok": True,
         "tool": "explore",
@@ -241,7 +252,10 @@ def main(argv: list[str] | None = None) -> int:
         "bearing_deg": round(brg, 1),
         "compass": compass_16(brg),
         "anomaly_z": round(z, 2),
-        "huangli_directions": huangli_directions(args.date),
+        "huangli_directions": huangli_directions(almanac_date),
+        "huangli_date": almanac_date,
+        "time_context": time_context,
+        "huangli_status": 'provided_date' if almanac_date else 'needs_current_timezone_or_date',
         "safety": SAFETY,
         "disclaimer": (
             "随机探索散步提示。attractor/void 是纯统计密度涨落, "

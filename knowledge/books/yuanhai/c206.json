@@ -1,0 +1,135 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c206",
+  "title": "四月建巳候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/206/",
+  "revision": "sha256:61d70238b8ec03d03cf23c855c5ea44757b29f2bbc9ebea80135de328304c934",
+  "source_timestamp": "2026-09-06T04:11:04.948245+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c206.html",
+  "raw_sha256": "61d70238b8ec03d03cf23c855c5ea44757b29f2bbc9ebea80135de328304c934",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四月建巳候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "四月建巳候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0002",
+      "sha256": "d3e8030542fdc30de91a98bd247644cc78bd9e9d77bd295d86f6ffbb1b5ae845"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "甲乙如临四月天，水乡木旺振财源，北方火地多凶破，酉又相逢祸便言。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0003",
+      "sha256": "cff395b589d116f5accf18b70c0eb159c64a2fd737bfa3d4ec87ccf08cbe79c6"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "眉批：四月巳宫火旺二十二日，庚金生五日，戊土三日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c206:p0004",
+      "sha256": "cb474e81b9501a08acc927df53483869b538932897a247082b020429009ac058"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "四月干头木土逢，水乡木旺禄还通，如行金水多成败，更怕提纲物对冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0005",
+      "sha256": "b67e834175a091d386eed794f182dfcdd503990622cba35b066952e676757193"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "金水干头四月胎，土为印绶火为财，身强土厚宜金土，日主轻浮怕水来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0006",
+      "sha256": "bbc92f75837e2eb9e3b0af99856657abe42db4eb5ac51d0e0d5d9179fc8d68e4"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "眉批：土为金之印，火为水之财。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 15,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c206:p0007",
+      "sha256": "62c7060d87db239e741ec59f4fc5026c3bf400626097943f4dec56bbf0e8a005"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "壬日巳月多火土，无根无印怕财乡，须行申酉是名利，逆走东南寿不长。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0008",
+      "sha256": "75aec44076662419ffe60eb596366349630f5a113cd6570ceb92cc89e29adb10"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "眉批：壬日以火为财，以土为杀，行申酉方金助之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c206:p0009",
+      "sha256": "f1bc199a69f12bd7d3de73d263284b068385f759f2104a20604b220f67269990"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "四月金生火土旺，三般用神要分明，财官印绶藏宫内，运看高低仔细寻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c206:p0010",
+      "sha256": "a3913e5b3948c117a8347f1c8b3a2d0124940d509b2052d1a9b10a0ceb9a0ae2"
+    },
+    {
+      "section": "四月建巳候诗诀",
+      "text": "眉批：四月丙戊皆明，丁己互相乘旺，看时参而用之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c206:p0011",
+      "sha256": "ac5a650e7479271abade8bcda5259d8a509e0c9a7336a3430e30b75822cbf04f"
+    }
+  ]
+}

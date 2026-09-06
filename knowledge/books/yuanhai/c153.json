@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c153",
+  "title": "女命贱格",
+  "source_url": "https://luckclub.cn/bazi/001/153/",
+  "revision": "sha256:2d899134d9a9b7b91e21056ffd34b98b36a31935fe61cfe576a9adc41e47b15f",
+  "source_timestamp": "2026-09-06T04:10:55.145393+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c153.html",
+  "raw_sha256": "2d899134d9a9b7b91e21056ffd34b98b36a31935fe61cfe576a9adc41e47b15f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "女命贱格",
+      "text": "女命贱格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c153:p0001",
+      "sha256": "01f6a32468566477be35a2abf9c91a94d4afe2ac4c35df86cbb9053f118542db"
+    },
+    {
+      "section": "女命贱格",
+      "text": "官杀混杂，官杀无制，杀星太重，伤官太重，贪财破印，比肩犯重，无官见合，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c153:p0002",
+      "sha256": "d43ae0e1dcdcf16ba24d12894515c4717cba650b49aaad376bc94a24a5a96432"
+    },
+    {
+      "section": "女命贱格",
+      "text": "无印见杀，伤官七杀，带合桃花，八字刑冲，财多身弱，羊刃冲刑，金神带刃，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c153:p0003",
+      "sha256": "82b7ebcfe1d53d6d6afb4636c26af9b3e1624e0db820ad570955348a446612f6"
+    },
+    {
+      "section": "女命贱格",
+      "text": "多官多合，倒插桃花，身旺无依，伤官见官，印绶遇劫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c153:p0004",
+      "sha256": "f21affcd11660551d8a58ec9c0af4690db6c4a5059f14083e8ff2a41f319b55d"
+    },
+    {
+      "section": "女命贱格",
+      "text": "眉批：倒插桃花，如用子畏生酉见之。主为娼妓。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c153:p0005",
+      "sha256": "5b99df6c6848ae12628a7e5e61285f6a17ab72ab2d58760af5657d1edecea629"
+    }
+  ]
+}

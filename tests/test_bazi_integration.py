@@ -158,6 +158,22 @@ def test_bazi_full_output_snapshot():
     assert got == want
 
 
+def test_shensha_output_contains_triggers_without_personal_predictions():
+    result = run_bazi('--year', 2000, '--month', 1, '--day', 15,
+                      '--hour', 10, '--gender', 'male', '--as-of-year', 2026)
+    assert result['shen_sha']
+    assert all('meaning' not in hit and hit['interpretation_status'] == 'trigger_only'
+               for hit in result['shen_sha'])
+
+
+def test_missing_day_stem_reference_cannot_use_an_inline_fallback():
+    from bazi_shensha import detect_all_shensha
+    with pytest.raises(ValueError, match='起法表缺失'):
+        detect_all_shensha(None, '壬', '申', '壬申', '己', '卯', '丑',
+                           {'year': '己', 'month': '丁', 'day': '壬', 'hour': '乙'},
+                           {'year': '卯', 'month': '丑', 'day': '申', 'hour': '巳'}, 'male')
+
+
 # --------------------------------------------------------------------------- #
 # 起运 / 大运 岁数 — 周岁 per 01-bazi.md §7.2, with the months remainder shown
 # --------------------------------------------------------------------------- #
@@ -201,13 +217,8 @@ def test_da_yun_bands_anchor_to_qi_yun_age():
 # 神煞 断语必须带上参考文档的立场
 # --------------------------------------------------------------------------- #
 
-def test_shensha_meanings_carry_their_reference_stance():
-    """19-shensha.md §3.15 says of 十恶大败 「子平派多不采用」 and its principle 6
-    forbids 炒作神煞恐慌 by name; §3.13 makes 魁罡 conditional on 不喜见财官(破格)
-    / 喜见印比(助力). The asset shipped 十恶大败 as a flat 「事业财运均不利」 and
-    魁罡 without either condition, so the caveat only existed in a file the
-    engine never reads.
-    """
+def test_shensha_asset_contains_rules_without_personal_fortune_verdicts():
+    """Retain trigger rules; unverified meanings must not feed the narrator."""
     import json
     from pathlib import Path
 
@@ -216,12 +227,9 @@ def test_shensha_meanings_carry_their_reference_stance():
     by_name = {e["name"]: e for grp in ("ji_shen", "xiong_sha")
                for e in assets.get(grp, [])}
 
-    shi_e = by_name["十恶大败"]["meaning"]
-    assert "争议" in shi_e and "子平" in shi_e, shi_e
-    assert "均不利" not in shi_e, "flat adverse verdict contradicts §3.15"
-
-    kui_gang = by_name["魁罡"]["meaning"]
-    assert "破格" in kui_gang and "印比" in kui_gang, kui_gang
+    assert len(by_name) == 35
+    assert all('meaning' not in entry for entry in by_name.values())
+    assert by_name['天乙贵人']['qi_fa_table']['辛']
 
 
 # --------------------------------------------------------------------------- #

@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c064",
+  "title": "论截流年节气日时刻数要诀",
+  "source_url": "https://luckclub.cn/bazi/001/064/",
+  "revision": "sha256:999753353ff932e0359e819337b60f3082ef0d5d6594458c6fc1cbc3f5485c65",
+  "source_timestamp": "2026-09-06T04:10:38.924947+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c064.html",
+  "raw_sha256": "999753353ff932e0359e819337b60f3082ef0d5d6594458c6fc1cbc3f5485c65",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论截流年节气日时刻数要诀",
+      "text": "论截流年节气日时刻数要诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c064:p0001",
+      "sha256": "76674a0dad8f2afe3b1b3b281b22c15a2e92418920c1ee67ecd3a97ad4a937b4"
+    },
+    {
+      "section": "论截流年节气日时刻数要诀",
+      "text": "审详春日莫他求，时正刻真节自酬。五时二刻惊蛰是，十时四刻清明头；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c064:p0002",
+      "sha256": "7a143bd182b652e049abc1cb09ed7d56051a4ce03d2cf4393eec4b772aee8ade"
+    },
+    {
+      "section": "论截流年节气日时刻数要诀",
+      "text": "立夏一日三时六，芒种一日九时收；二日二时二小暑，二日七时四亥秋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c064:p0003",
+      "sha256": "ee10fa8292d482cd470379bc66c917f5d34313fb8b3cca72dba84f95e370c8f3"
+    },
+    {
+      "section": "论截流年节气日时刻数要诀",
+      "text": "白露三朝单六刻，寒露三朝六时周；立冬三朝十一二，大雪四四两双流；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c064:p0004",
+      "sha256": "471ba245802244de3b510a07f812862d681e5c29a095cc3d8bd6892ac4d56f52"
+    },
+    {
+      "section": "论截流年节气日时刻数要诀",
+      "text": "小寒四时九时六，五日三时打春牛；节遇子时加一日，此为捷法记心头。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c064:p0005",
+      "sha256": "91ffe76e501c8396456af4793494d9787343f595006f6dd302abace3a844d1c9"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c004",
+  "title": "四、論十干配合性情",
+  "source_url": "https://www.donglishuzhai.net/chapter/3717.html",
+  "revision": "sha256:e44e3c9a179bc33210ada688b20584394d7fd83cbf037175265ee5c1d71519ce",
+  "source_timestamp": "2026-09-06T04:16:49.911Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c004.html",
+  "raw_sha256": "e44e3c9a179bc33210ada688b20584394d7fd83cbf037175265ee5c1d71519ce",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四、論十干配合性情",
+      "text": "合化之義，以十干陰陽相配而成。河圖之數，以一二三四五配六七八九十，先天之道也。故始於太陰之水，而終於沖氣之土，以氣而語其生之序也。蓋未有五行之先，必先有陰陽老少，而後沖氣，故生以土終之。既有五行，則萬物又生於土，而水火木金亦寄質焉，故以土先之。是以甲己相合之始，則化爲土；土則生金，故乙庚化金次之；金生水，故丙辛化水又次之；水生木，故丁壬化木又次之；木生火，故戊癸化火又次之，而五行遍焉。先之以土，相生之序，自然如此，此十干合化之義也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c004:p0001",
+      "sha256": "5cd45c84059f70fc6743ca5f70c1982f365442b79b26f3b9ef09d1f00ca53bcc"
+    },
+    {
+      "section": "四、論十干配合性情",
+      "text": "其性情何也？蓋既有配合，必有向背。如甲用辛官，透丙作合，而官非其官。甲用癸印，透戊作合，而印非其印。甲用己財，己與別位之甲作合，而財非其財。如年己月甲，年上之財，被月合去，而日主之甲乙無分；年甲月己，月上之財，被年合去，而日主之甲乙不與是也。甲用丙食，與辛作合，而食非其食。此四喜神因合而無用者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c004:p0002",
+      "sha256": "20c9cd6c108fdaa677bf7786dbc9894717bb33fbe2da2529ee4d1ad597aeb395"
+    },
+    {
+      "section": "四、論十干配合性情",
+      "text": "又如甲逢庚爲煞，與乙作合，而煞不攻身；甲逢乙爲劫，與庚作合，而乙不劫財；甲逢丁爲傷，與壬作合，而丁不爲傷官；甲逢壬爲梟，與丁作合，而壬不奪食。此四忌神因合而化吉者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c004:p0003",
+      "sha256": "f57eb90f3e871d113d961dad4d72247536f597fa5313eb78228544a85288d281"
+    },
+    {
+      "section": "四、論十干配合性情",
+      "text": "蓋有所合則有所忌，逢吉不爲吉，逢凶不爲凶。即以六親言之，如男以財爲妻，而被別干合去，財妻豈能親其夫乎？女以官爲夫，而被他干合去，官夫豈能愛其妻乎？此謂配合之性情，因向背而殊也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c004:p0004",
+      "sha256": "0f917c8008ca012757b3f9ffa8182d7ea90c9a7f4c0713e543d35b31edf8acaa"
+    }
+  ]
+}

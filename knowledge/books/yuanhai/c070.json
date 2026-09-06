@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c070",
+  "title": "论官杀混杂要制伏",
+  "source_url": "https://luckclub.cn/bazi/001/070/",
+  "revision": "sha256:fa168f9d2f3ae409fa165c5d536efd1d06b68d861179e22bbd40221905d2240d",
+  "source_timestamp": "2026-09-06T04:10:39.488385+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c070.html",
+  "raw_sha256": "fa168f9d2f3ae409fa165c5d536efd1d06b68d861179e22bbd40221905d2240d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论官杀混杂要制伏",
+      "text": "论官杀混杂要制伏",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c070:p0001",
+      "sha256": "aa05cf1cad34e6aaae0ca605d42749a23189bb6b2e0338fca09fb88bdf21ee4e"
+    },
+    {
+      "section": "论官杀混杂要制伏",
+      "text": "官星要纯不要杂。假如甲木用辛金为官，若年是辛，月是酉，时上亦是辛官，虽多但无妨，盖纯一尽好。若有金或庚申，则混杂为杀，以伤其身，要行火乡制伏则发福也。余仿此也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c070:p0002",
+      "sha256": "590a2c6540ebb72e1c28d5adb03c5e2b6c8454e1e0a032c47f25044a6a3844b5"
+    },
+    {
+      "section": "论官杀混杂要制伏",
+      "text": "眉批：假如金旺无制，则不能为吉。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c070:p0003",
+      "sha256": "cd40ad172320bfcdcd6d790533ec119937d7ec217c9c851ce1658f1807e1e73b"
+    }
+  ]
+}

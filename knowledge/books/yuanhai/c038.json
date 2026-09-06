@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c038",
+  "title": "论十干学堂",
+  "source_url": "https://luckclub.cn/bazi/001/038/",
+  "revision": "sha256:98d191bc2048454ba397c9d13984703859091ce54451793c6416918ad8bd1a74",
+  "source_timestamp": "2026-09-06T04:10:32.077855+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c038.html",
+  "raw_sha256": "98d191bc2048454ba397c9d13984703859091ce54451793c6416918ad8bd1a74",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十干学堂",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c038:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十干学堂",
+      "text": "论十干学堂",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c038:p0002",
+      "sha256": "304969766548f19b1d8dfa46653c91f037f997d3e21b8b557dbfa7c18a5ec078"
+    },
+    {
+      "section": "论十干学堂",
+      "text": "金生人见巳，辛巳为正；木生人见亥，己亥为正；水生人见申，甲申为正；土生人见申，戊申为正；火生人见寅，丙寅为正。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c038:p0003",
+      "sha256": "06faad6f6060e1fe9184ff8d2bbed8b34a502f742d90934f3b3d872d089463bf"
+    },
+    {
+      "section": "论十干学堂",
+      "text": "眉批：有此者主人聪明、通达、登科及第。犯空亡，教授之职。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c038:p0004",
+      "sha256": "859e3e5c66c2444f13ad6ee5b2ac2c12e18803f63d645e3029fa799973f04427"
+    }
+  ]
+}

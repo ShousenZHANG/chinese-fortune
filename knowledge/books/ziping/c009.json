@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c009",
+  "title": "九、論用神成敗救應",
+  "source_url": "https://www.donglishuzhai.net/chapter/3722.html",
+  "revision": "sha256:3218807f6133939ba36635c5885e5bbae021e0d1a71a2a84fa35078099ede345",
+  "source_timestamp": "2026-09-06T04:15:52.921Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c009.html",
+  "raw_sha256": "3218807f6133939ba36635c5885e5bbae021e0d1a71a2a84fa35078099ede345",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "九、論用神成敗救應",
+      "text": "用神專求月令，然以四柱配之，必有成敗。",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0001",
+      "sha256": "72aaf670e49b403b9c60a4ed7e8befb1cc5560610655c769fd36fdaf45f16887"
+    },
+    {
+      "section": "九、論用神成敗救應",
+      "text": "何謂成？如官逢財印，又無刑沖破害，官格成也；財生官旺，或財逢食生而身强帶比，或財格透印而位置妥貼，兩不相尅，財格成也；印輕逢煞，或官印雙全，或身印兩旺而用食傷洩氣，或印多逢財而財透根輕，印格成也；食神生財，或食帶煞而無財，棄食就煞而透印，食神格成也；身强七煞逢制，煞格成也；傷官生財，或傷官佩印而傷官旺、印有根，或傷官旺、身主弱而透煞印，或傷官帶煞而無財，傷官格成也；陽刃透官煞而露財印，不見傷官，陽刃格成也；建祿月劫，透官而逢財印，透財而逢食傷，透煞而遇制伏，建祿月劫之格成也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0002",
+      "sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "section": "九、論用神成敗救應",
+      "text": "何謂敗？官逢傷尅刑沖，官格敗也；財輕比重，財透七煞，財格敗也；印輕逢財，或身强印重而透煞，印格敗也；食神逢梟，或生財露煞，食神格敗也；七煞逢財無制，七煞格敗也；傷官非金水而見官，或生財而帶煞身輕，或佩印而傷輕身旺，傷官格敗也；陽刃無官煞，陽刃格敗也；建祿月劫，無財官，透煞印，建祿月劫之格敗也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0003",
+      "sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "section": "九、論用神成敗救應",
+      "text": "成中有敗，必是帶忌；敗中有成，全憑救應。",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0004",
+      "sha256": "ce6fcf2ad3cb14c09adcfdd51358921b603a316993f395e69f31431ab37efd24"
+    },
+    {
+      "section": "九、論用神成敗救應",
+      "text": "何謂帶忌？如正官逢財而又逢傷，透官而又逢合。財旺生官，而官又逢傷逢合。印透食神以洩其氣，而又遇財露；透煞以生印，而又透財以去印存煞。食神帶煞印而又逢財。七煞逢食制，而又逢印。傷官生財，而財又逢合；佩印而印又遭傷。陽刃透官而又被傷，透煞而又被合。建祿月劫，透官而逢傷，透財而逢煞。是皆謂之帶忌也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0005",
+      "sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "section": "九、論用神成敗救應",
+      "text": "何謂救應？如官逢傷，而透印以解之；雜煞，而合煞以清之；刑沖，而會合以解之。財逢劫，而透食以化之、生官以制之；逢煞，而食神制煞以生財、或存財而合煞。印逢財，而劫財以解之，或合財而存印。食逢梟，而就煞以成格，或生財以護食。煞逢食制，印來護煞，而逢財以去印存食。傷官生財，透煞而煞逢合。陽刃用官煞，帶傷食而重印以護之。建祿月劫，用官遇傷而傷被合，用財帶煞而煞被合，是皆謂之救應也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0006",
+      "sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "section": "九、論用神成敗救應",
+      "text": "八字妙用，全在成敗救應，其中權輕權重，甚是活潑。學者從此留心，能於萬變中融以一理，則於命之一道，亦庶幾矣！",
+      "layer": "base_text",
+      "passage_id": "ziping:c009:p0007",
+      "sha256": "21ffc797e988d64cf7abec31627b53e04d5764e83f732fe26e44a36e589b09ff"
+    }
+  ]
+}

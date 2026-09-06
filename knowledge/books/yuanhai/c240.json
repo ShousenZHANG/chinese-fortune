@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c240",
+  "title": "井栏叉格诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/240/",
+  "revision": "sha256:26d6abf93407df8702c5545631ae7437fad797a86aea94eea3ea4d3fe0ac6452",
+  "source_timestamp": "2026-09-06T04:11:12.564329+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c240.html",
+  "raw_sha256": "26d6abf93407df8702c5545631ae7437fad797a86aea94eea3ea4d3fe0ac6452",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "井栏叉格诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "井栏叉格诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0002",
+      "sha256": "06478361cd1962b7d7f15a1446f780091dfdb398e11dbca5fa260435986bc1cd"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "庚日全逢申子辰，井栏叉格制官星，局中无火方成贵，破动提纲祸亦刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0003",
+      "sha256": "449cac48244ac0634b7bc57f73d367609172fb714017d5b62c467c88bf414a0c"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "庚日喜逢全润下，贵神名曰井栏叉，丙丁巳午休相遇，申子辰宫全乃佳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0004",
+      "sha256": "a0268390b07b64e970d9dfb30c7b9b0864715ea5180f448d6d2b67cc81668e4f"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "若是申时归禄格，时逢丙子杀神加，水局要冲寅午戌，若还填实禄难赊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0005",
+      "sha256": "2b4796ed54eaf08d0c080d3ea0a783edd7d9e2931b7e47a33b75bcab1847aacd"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "井栏运喜东方地，得到财乡真富贵，丙丁巳午岁运逢，失禄破财须且畏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0006",
+      "sha256": "3c45d0d15a0bd1763ab7488df54607e427962f44734163db40c4c00d2041e01f"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "庚日全逢润下方，癸壬巳午怕刑伤，时逢子申福减半，功名成败不能长。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c240:p0007",
+      "sha256": "92490c96ae602bac0fea875de50b564cea687059a8385173685bacd2500c6759"
+    },
+    {
+      "section": "井栏叉格诗诀",
+      "text": "眉批：此庚日申子辰三合水局为井栏，水上用庚字，庚又生水，运是癸取贵，以申冲寅午戌火局为庚之官星，只是暗冲寅午戌，若柱中有一寅一午一戌，亦非此格，则无贵矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 77,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c240:p0008",
+      "sha256": "d9b22dea6252a207f7dd8c9087330cb9cb6b86b3cdc0e9a301c07b3db876d3cd"
+    }
+  ]
+}

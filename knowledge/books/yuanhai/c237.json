@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c237",
+  "title": "子遥巳诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/237/",
+  "revision": "sha256:81a534c6b26702acb4d76c3a43dc1fdb3d412dea025f44e78caa683ed1898599",
+  "source_timestamp": "2026-09-06T04:11:11.798280+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c237.html",
+  "raw_sha256": "81a534c6b26702acb4d76c3a43dc1fdb3d412dea025f44e78caa683ed1898599",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "子遥巳诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "子遥巳诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0002",
+      "sha256": "5e40bc2c4e72367a613edc1def0fb5e28c55461f125f08bd12d223ac1a4965ca"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "甲子重逢甲子时，休言官旺不相宜，月生日主根元壮，运到金乡反得奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0003",
+      "sha256": "26a6bad49f232c7a5f559691b20d968d2798a502a8384c90acf6643fe8e49609"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "甲临子字日时全，拟作蟾宫折桂仙，丑绊午冲官杀显，反为淹滞祸绵绵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0004",
+      "sha256": "1c4b1b31d398710d738e4f669a8fd734d647db0532d325ad78b97ee4fa64e56f"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "甲子重逢甲子时，名为遥巳最相宜，才临丑午家须破，岁运官逢亦不奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0005",
+      "sha256": "084be8b71ec5fe7a5401d8d9ebfe6c90d820d38c001cd2730473c5b440eb7099"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "甲子日逢甲子时，子来遥合巳中支，戊能动丙丙合酉，甲得辛官贵可知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0006",
+      "sha256": "4526f603187334f845355a04832f7bff5239c2a95c6411da86d3457a3675b51f"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "不喜庚辛申酉出，丑来相绊亦非宜，更嫌午字相冲害，运入官乡旺处奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0007",
+      "sha256": "05b5879b52202a61500e92a9803b66090cf129618b0740bd79fa995e00daf972"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "眉批：以甲子为主，以子合巳中戊土，巳中戊丙同宫，丙动来合酉中辛金为甲之官。如东钱丞相命，",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 44,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c237:p0008",
+      "sha256": "76d9f8803643370728dd7b08686488a812b8d8d6794be5811d20801ead659f4f"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "己巳 乙亥 甲子 甲子，即合此格。如赵太守，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0009",
+      "sha256": "de71d56b18e558416c6440eb76c283a16ca3e2b75e9d6cc358c6e9a34d641702"
+    },
+    {
+      "section": "子遥巳诗诀",
+      "text": "丙子 壬辰 甲子 甲子，亦合此格，所以为贵。或有丑字合子字则遥不成反成下格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c237:p0010",
+      "sha256": "e8d12b7a1ff1e28111688ca4943de04ed8045098393e6e2a8d589a6ee5ab1f7a"
+    }
+  ]
+}

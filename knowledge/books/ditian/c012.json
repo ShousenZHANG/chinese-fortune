@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c012",
+  "title": "衰旺論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F12&oldid=844360",
+  "revision": "844360",
+  "source_timestamp": "2017-03-23T15:44:57Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c012.wiki",
+  "raw_sha256": "c17a857454f0e545b63c90dac9ddac0361d61cfe07718f7a5a793b4a2ff2ec80",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "衰旺論",
+      "text": "能知衰旺之真機，其於立命之奧，思過半矣。",
+      "layer": "base_text",
+      "passage_id": "ditian:c012:p0001",
+      "sha256": "0898181f6653c67ae7175e7070e44701ae7a5ff88206b6d21d27d4830ba40772"
+    },
+    {
+      "section": "衰旺論",
+      "text": "旺則宜洩宜傷，衰則喜幫喜助，子平之理也，然旺中有衰者存，不可損也。衰中有旺者存，不可益也。旺之極者不可損，以損在其中矣，衰之極者不可益，以在其中矣。至於所當損者而損之反凶，所當益者而益之反害，此中真機皆能知之，何難於立命之微奧乎。",
+      "layer": "commentary",
+      "passage_id": "ditian:c012:p0002",
+      "sha256": "644ff3a6e0322303825cf1e0bb34423222810fabdd9283b4a7ba7b4fda9b4d92"
+    }
+  ]
+}

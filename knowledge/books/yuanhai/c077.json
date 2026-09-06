@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c077",
+  "title": "正官论",
+  "source_url": "https://luckclub.cn/bazi/001/077/",
+  "revision": "sha256:6d84994cbd1588f82308b262583bee0412fa9b07c8246b9a2134baad714ce4fa",
+  "source_timestamp": "2026-09-06T04:10:40.618172+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c077.html",
+  "raw_sha256": "6d84994cbd1588f82308b262583bee0412fa9b07c8246b9a2134baad714ce4fa",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "正官论",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "正官论",
+      "text": "正官论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0002",
+      "sha256": "89ce7c5e0662db87a80a45e46d64bcdf755e0046d2f0c5ea97a9e05b20138701"
+    },
+    {
+      "section": "正官论",
+      "text": "夫正官者，甲见辛之类。乃阴见阳为官，阳见阴为官。阴阳配合成其道也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0003",
+      "sha256": "f8b3317826b36229c2fcde3248c2a0e2cf7aa065112e8147e723b476b90354a7"
+    },
+    {
+      "section": "正官论",
+      "text": "大抵要行官旺乡，月令是也。月令者，提纲也。看命先看提纲，方看其余。既曰正官，运复行得官旺之乡，凡事有成，却又行不得伤官之地。行财旺之乡，皆是作福之处。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0004",
+      "sha256": "356d364c5944212b86c93f258b25d25f4dfcee0de0e42c7b990a8e0667b03e7e"
+    },
+    {
+      "section": "正官论",
+      "text": "正官乃贵气之物，大忌刑冲破害，及年月时中皆有官星隐露，恐福渺矣。又须看年时上别有何者入格，作福会处，方可断其吉凶。苟一途而执取之，则不能通变，必有差之毫厘，谬以千里之患。经曰：通变以为神者是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0005",
+      "sha256": "d84885503a12489afff27e7041f4bebfe10dbadd81b7887f83a6dd7efbadbe65"
+    },
+    {
+      "section": "正官论",
+      "text": "正官或多，反不为福，何以言之？盖人之命宜得中和之气，太过与不及同。中和之气为福厚，偏党之克为灾殃。既用提纲作正官，年时支干位或有一偏官，便难矣，不可不仔细以轻重推测也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0006",
+      "sha256": "2dd18de1feae748ff00352851b8933c2b55ce8cc7b3621383bd6c4031e2ac041"
+    },
+    {
+      "section": "正官论",
+      "text": "又曰：於月令得之是也，喜身旺印绶。如果用辛官，喜土生官，最怕刑冲破害，羊刃七杀为贫命。如时干逢杀，乃官杀混杂，盖四柱有刑冲害，皆不为贵命看。官来克我，我去克官，不为害。一位若两官不妨。若月令中有正官，时干支有偏官，便难以正官言之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0007",
+      "sha256": "e2e2276fadc082a0f066fedb561d87b1c51513975058671b2cd81794e0e5b5ee"
+    },
+    {
+      "section": "正官论",
+      "text": "且如甲用辛为官，生於八月中气之後，金旺在酉，故谓之正官。如天干不透出辛字，却地支有巳酉丑，虽不生於八月中气之後，亦可言官。大要身旺，时辰归於甲木旺处。如岁时透出正官，地支又有官局，却不拘八月中气之後。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0008",
+      "sha256": "90e9c087b999506d7e25ca4c0eda6fd6460b8a94eda861dc2a1f7b6152db5053"
+    },
+    {
+      "section": "正官论",
+      "text": "大率官星，须得印绶身旺则发。若无伤官破印，身不弱者，便为贵命。如命中有官星而行伤官之运，则不吉，必待印绶、官星旺运可发，必得官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c077:p0009",
+      "sha256": "c3d3d35d47d7840cd0056ff50ef60e68cc13d4c543eead2e812616c083d137d8"
+    },
+    {
+      "section": "正官论",
+      "text": "眉批：甲见辛为正官，乙见庚为正官，丙见癸为正官，丁见壬为正官，戊见乙为正官，己见甲为正官，以下仿此。年为君，月为五行君之令，谓之月令。正官无印乃非真官，故喜身旺财旺。“巳酉丑金局”，《四言独步》云，八月官星、大忌卯丁、卯丁克破、有情无情。诀曰，正气官星只用支，更详财气到年时，若还四支无冲破，富贵双全折桂枝。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 154,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c077:p0010",
+      "sha256": "b838103aa0b8b32f45705aceea0a06fc7a750397c0acf6298f9b21c82e14f4f8"
+    }
+  ]
+}

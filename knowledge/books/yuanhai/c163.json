@@ -1,0 +1,95 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c163",
+  "title": "化气十段锦",
+  "source_url": "https://luckclub.cn/bazi/001/163/",
+  "revision": "sha256:acd348664bbf7cebb85357f4486a8276b836a53ae87fee162d2bce5a0d85b3d8",
+  "source_timestamp": "2026-09-06T04:10:56.858446+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c163.html",
+  "raw_sha256": "acd348664bbf7cebb85357f4486a8276b836a53ae87fee162d2bce5a0d85b3d8",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "化气十段锦",
+      "text": "化气十段锦",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0001",
+      "sha256": "b8c3b51edec571fbbda8e5367ef3e842e4fb7fdc9b65cda9973af4ba7615a41c"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "甲从己合，赖土所生。遇乙兮妻财暗损。逢丁兮衣禄成空。贵显高门，乃因辛金之力。家殷大富，皆因戊土之功。见癸兮，平生发福。逢壬兮，一世飘蓬。月遇庚金，家徒四壁。时逢丙火，禄享千锺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0002",
+      "sha256": "00ebfd039c2a63ce18544602353fbdf7fb5d2705ac3c55831c844ad4528edf03"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "己能化甲，秀在於寅。逢丁兮他人淩辱。遇乙兮自身遭迍。阳水重重，奔走红尘之客。庚金锐锐，孤寒白屋之人。丙内藏辛，必得其贵。戊中隐癸，不致於贫。若要官职荣迁，先须见癸。家殷巨富，务在逢辛。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0003",
+      "sha256": "cfff3251c6fc3012b56cdfb6d6d2d850510b4fc67676b0a87c4dc4d0c3ebf36a"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "乙从庚化，气秉西方。蹇难兮生逢丙位，荣华兮长在壬乡。丁火当权，似春花之笑日。辛金指世，若秋草之逢霜。最喜己临，满堂金玉。宜偏甲向，麻麦盈仓。日日劳神，只为勾陈作乱。时时费力，多因玄武为殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0004",
+      "sha256": "1c60f652777bafcd3bf63937623aeb1a4c2aeb5ee012cf1a1d0c212645be9580"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "庚从乙化，金质弥坚。最忌辛金暗损。偏嫌丙火相煎。遇丁官兮，似蛟龙之得云雨。逢己印兮，若鹏鹗之在秋天。癸水旺兮，田园漂荡。壬水盛兮，财禄增迁。遇戊相侵兮，不成巨富。逢水助力兮，永保长年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0005",
+      "sha256": "56f4551448e3d21c15bcf2719f6d22cd92db0d4d82aa7bb02dfbbf736921b54c"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "丙为阳火，化水逢辛。有福兮戊土在位。成名兮乙木临身。官爵荣迁，生逢癸巳。家门显达，长在庚寅。横祸起於甲午。祸败发於壬辰。屡遇阴丁，纵富贵难有几日。重逢己土，虽荣华亦似浮云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0006",
+      "sha256": "69582ed2ce2c7a01c8c1bff382260a6edfe1145de68581e5a45247a1451f3514"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "辛能化水，得丙方成。四柱最宜见戊。一生最喜逢庚。见己兮何年发福。逢壬兮何日成名。癸水囚兮，纵困而不困。甲木旺兮，虽荣而不荣。富贵荣华，重重见乙。伤残穷迫，叠叠逢丁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0007",
+      "sha256": "cc45bff2e9acec84f70314060ff26b97c845bc45b96caabb884f7faeb5c43513"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "丁为阴火，喜遇阳壬。见丙兮百年安逸。逢辛兮一世优游。富贵双全，喜甲临於天秤。福封双美，欣己供于双牛。活计消疏，皆因戊败。生涯寂寞，皆为癸因。乙木重重，财禄决无成就。庚金灿灿，功名切莫强求。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0008",
+      "sha256": "59e00db266d8a2f8c415d936d4586d60e913578bf6117af9f9674a3e30ba0ecc"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "壬从丁化，秀在东方。遇甲兮多招仆马。逢辛兮广置田庄。丙火相逢，乃英雄之豪杰。癸水相会，乃辛苦之经商。配印乘轩，己临官位。飘蓬落魄，戊带杀官。皓首无成，皆为庚金乘旺。青年不遇，盖因乙木为殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0009",
+      "sha256": "b2464c0d84ca01d8747b6cb9a45cbbe581c311b3ede2ba48b7ab61f320358859"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "戊从癸合，火化成功。见乙兮终能显达。逢壬兮亦自丰隆。衆禄拱持，喜丁临於巳位。六亲不睦，因甲旺於寅宫。丙火炎炎，难寻福禄。庚金灿灿，易见亨通。妻子损兮，皆因己旺。谋为拙兮，盖为辛雄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0010",
+      "sha256": "c7d3eaf8284359c30405ed7692458e8a2f9b9707f04bc1ce3bab325fe7007a56"
+    },
+    {
+      "section": "化气十段锦",
+      "text": "癸从戊合，火化当临。丙内藏辛，一世多成多败。甲中隐己，百年劳力劳心。仓库丰肥，欣逢丁火。田财殷实，喜得庚金。官爵升荣，连绵见乙。赀财富贵，上下逢壬。财禄得失兮，皆辛金之火旺。仕途蹭蹬兮，盖己土之相侵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c163:p0011",
+      "sha256": "4e5ce51bcf88e37028e221c0cfbc67e1d6fbc5886ea885ed70fe2b8aaa0cd057"
+    }
+  ]
+}

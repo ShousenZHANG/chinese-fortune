@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c065",
+  "title": "论日为主",
+  "source_url": "https://luckclub.cn/bazi/001/065/",
+  "revision": "sha256:eaa2b72b86d25a63ba03c9d3c60f1c34dada9070667b34f1a72e101fca0c7753",
+  "source_timestamp": "2026-09-06T04:10:38.074764+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c065.html",
+  "raw_sha256": "eaa2b72b86d25a63ba03c9d3c60f1c34dada9070667b34f1a72e101fca0c7753",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论日为主",
+      "text": "论日为主",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0001",
+      "sha256": "dc092022fc90d4f86795a99457d44bbebc136a5f3af2fc06dcf3b330d4cbeff3"
+    },
+    {
+      "section": "论日为主",
+      "text": "予尝观唐书，所载有李虚中者，取人所生年、月、日、时干支生克论命之贵贱、寿夭之说，已详之矣。至於宋时，方有子平之说。取日干为主，以年为根，以月为苗，以日为花，以时为果，以生旺死绝，休囚制化决人生休咎，其理必然矣，复有何疑哉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0002",
+      "sha256": "007018e739ded7b85bbdacdc7d6eec8286a4e06ace37f5bf33f78611b3b7b5ba"
+    },
+    {
+      "section": "论日为主",
+      "text": "一曰官，分之阴阳，曰官、曰杀，甲乙见庚辛也。(甲见庚为杀，阳见阳也。见辛为官，阳见阴也。乙木庚为官，见辛为杀。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0003",
+      "sha256": "3f71bb05260129c7b293c54c8e45724b467d9796fd62e4269c3eee14c17af9d1"
+    },
+    {
+      "section": "论日为主",
+      "text": "二曰财，分之阴阳，曰正财、偏财，甲乙见戊己是也。(阳见阴为正财，阴见阴为偏财。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0004",
+      "sha256": "837546680a975cf3a0c9fa19e09038e1ae5a8b99be1805d93428c2a63801f70b"
+    },
+    {
+      "section": "论日为主",
+      "text": "三曰生气之阴阳，曰印绶、曰倒食，甲乙见壬癸是也。(甲见癸，乙见壬为印绶；甲见壬，乙见癸为偏印。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0005",
+      "sha256": "ce2c913e45f3ca422950a89d26abae0a7f0ad07009288b02f9674a55eee4331a"
+    },
+    {
+      "section": "论日为主",
+      "text": "四曰窃气之阴阳，曰食神、曰伤官，甲乙见丙丁是也。(甲见丙为食神、见丁为伤官，乙见丁为食神、见丙为伤官。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0006",
+      "sha256": "e4e05decc149cc6660271b269a246ba6fa069f78a13677cc415ef4cfb0d02153"
+    },
+    {
+      "section": "论日为主",
+      "text": "五曰同类之阴阳，曰劫财、曰羊刃，甲乙见甲乙是也。(阳见阳为羊刃，阴见阳为劫财。)大抵贵贱寿夭死生，皆不出於五者。倘有妄立格局，从列其名而无实用，其飞天禄马、倒冲、井栏叉即伤官。析而为之，举此一端，余可知矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0007",
+      "sha256": "854f70bcb1ed7e96c793918b9c93c3f1f5c8567bbe0b029269c53551146c32e4"
+    },
+    {
+      "section": "论日为主",
+      "text": "以日为主，年为本，月为提纲，时为辅佐。以日为主，大要看时临於甚度，或身旺，或身弱。又看地支有何格局，金木水火土之数，後看月令中金木水火土何者旺。又看岁运有何旺，却次日下消详，此非是拘之一隅之说也。且如甲子日生，四柱中有个申字，合用子辰为水局。次看余辰有何损益，四柱中有何字损其甲子日主之秀气。有坏其用神则要制之，不要益之。论命者切不可泥之月令消详，故表而出之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c065:p0008",
+      "sha256": "8950147fbc62d085bed9e73000038e25dc03f15a29f1233df929cb4f73956d27"
+    },
+    {
+      "section": "论日为主",
+      "text": "眉批：见杀宜身旺，用在杀主亨强，日主绰美。财者养命之源，印为生我之母。伤官食神我生之子，盗母气。甲见己为财，乙见甲为劫财，以强淩弱之故。以日为主，如人之己身。年干为祖、支为祖母，月干为父、支为母及兄弟也，日干为己、身支为妻身，时干为子、支为女。论命论人则贵贱有克制论之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 135,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c065:p0009",
+      "sha256": "b0a2b22ebb7cde50669ed035d243676968c5465ec66a3615baf7634be83b4587"
+    }
+  ]
+}

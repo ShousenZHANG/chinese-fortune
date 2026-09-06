@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c048",
+  "title": "论截路空亡",
+  "source_url": "https://luckclub.cn/bazi/001/048/",
+  "revision": "sha256:265c2660a004fb00e3d7e57df6d06ebc48a6f90adeb0b76c3a393ad8c09596fa",
+  "source_timestamp": "2026-09-06T04:10:33.811329+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c048.html",
+  "raw_sha256": "265c2660a004fb00e3d7e57df6d06ebc48a6f90adeb0b76c3a393ad8c09596fa",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论截路空亡",
+      "text": "论截路空亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c048:p0001",
+      "sha256": "e5be70d7312985ba71c2bc6b3a9e598b680d47fed303c13b70a13d7135a3ed67"
+    },
+    {
+      "section": "论截路空亡",
+      "text": "甲己申酉最为愁，乙庚午未不须求，丙辛辰巳何劳问，丁壬寅卯一场空，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c048:p0002",
+      "sha256": "41e8c66568f6083b536740665fe23f8d499e8885275f05cd9d3b5178a63c6ddf"
+    },
+    {
+      "section": "论截路空亡",
+      "text": "戊癸子丑君须记，人生值此也多忧，忽然更得胎中遇，白发盈盈苦未休。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c048:p0003",
+      "sha256": "71869b02ad2fd60f11c7f732359c899ba43c6f33f96dfc28af63706b2f8531cb"
+    },
+    {
+      "section": "论截路空亡",
+      "text": "以日取时见之方是，以年在日时论者非也。甲己日遁十二时中，有申酉二时上见壬癸为水，故甲己见申酉是也，余皆仿此。假如甲子日见申酉时乃为正犯，其余者见之非也。此空亡非但命中见之不美，以至百事，求财主官皆不利也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c048:p0004",
+      "sha256": "d60c94fd956cfb7e0ae6f226aa6d415e44c3b53d2ff1f6af4280f9e1f6a60141"
+    },
+    {
+      "section": "论截路空亡",
+      "text": "眉批：截路者，如人在路途之中，遇水则不能前进，不可以济，故曰截路空亡。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c048:p0005",
+      "sha256": "39b42d04e32cb7204a1246170c554d4ed456523e4d1df9a0499a8f3d2bbe53c3"
+    }
+  ]
+}

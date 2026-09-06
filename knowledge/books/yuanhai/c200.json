@@ -1,0 +1,154 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c200",
+  "title": "身弱论",
+  "source_url": "https://luckclub.cn/bazi/001/200/",
+  "revision": "sha256:301174d93836e63e4a72610eb23de7932ee9a62e9364bd1c5c2a48d1cbbf1178",
+  "source_timestamp": "2026-09-06T04:11:03.742195+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c200.html",
+  "raw_sha256": "301174d93836e63e4a72610eb23de7932ee9a62e9364bd1c5c2a48d1cbbf1178",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "身弱论",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "身弱论",
+      "text": "身弱论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0002",
+      "sha256": "16703eb904113f2f22de8dfed9a064c1c6379ec94af8ff94c25567fb58ff0ed0"
+    },
+    {
+      "section": "身弱论",
+      "text": "阳木无根 生於丑月 水多转贵 金多则折",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0003",
+      "sha256": "b90cb5837f23b4795eb38956031e4de74d27ba466a1f0866957691f7e67a643c"
+    },
+    {
+      "section": "身弱论",
+      "text": "乙木无根 生临丑月 金多转贵 火土则折",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0004",
+      "sha256": "6ccbb8eb3818fbd17219eb06e59498a069dd5653365ac9e7efad12da394a4c34"
+    },
+    {
+      "section": "身弱论",
+      "text": "丙火无根 子申全见 无制无生 此身贫贱",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0005",
+      "sha256": "7c4c283828b269e073e3e18a62bf5ad72b2d15751fddf899981f2ec34d04907b"
+    },
+    {
+      "section": "身弱论",
+      "text": "六甲坐申 三重见子 运至北方 须防横死",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0006",
+      "sha256": "0437453c3e5acd1aa4512c66d27103c184b6c38e54393d077b00da7e34295d09"
+    },
+    {
+      "section": "身弱论",
+      "text": "丙临申位 阳水大忌 有制身强 旺成名利",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0007",
+      "sha256": "3a3105624d4f88bbd481d8fb33e7ace40b401f5c4cc78c088eaca6d65c3a3c84"
+    },
+    {
+      "section": "身弱论",
+      "text": "己入亥宫 怕逢阴木 月逢印生 自然成福",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0008",
+      "sha256": "84a5a33d19295a1ce9c2c211d2190b0e5e966a679abf57cb8c48c3a618bd0d32"
+    },
+    {
+      "section": "身弱论",
+      "text": "己日逢杀 印旺财伏 运转东南 自然成福",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0009",
+      "sha256": "972123a728067507fafce53b56cca34a50ac49e1d656df813085d0ce151cb84e"
+    },
+    {
+      "section": "身弱论",
+      "text": "壬寅壬戌 阳土透出 不混官星 福崇显禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0010",
+      "sha256": "bced250baf70395497004a187155aabe621887aa963fe5f5111a91aa3c5ef8e7"
+    },
+    {
+      "section": "身弱论",
+      "text": "阴水无根 火乡有贵 阳水无根 火乡即畏",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0011",
+      "sha256": "a3458138aaaaf300e3bc51bb1810089932fe081c358fd91144eab58b227ffa4a"
+    },
+    {
+      "section": "身弱论",
+      "text": "丁酉阴柔 不愁多水 比肩透露 格中最忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0012",
+      "sha256": "f04799608dca9991abdc00cfd32bda1b46db24c87d021bffd04a9d5bd1f33558"
+    },
+    {
+      "section": "身弱论",
+      "text": "戊寅日主 何愁杀旺 露火成名 水来漂荡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0013",
+      "sha256": "026e45c92652c88a6959e264c00aed302ca0dbc962f981c8e8e0c939d9f231f1"
+    },
+    {
+      "section": "身弱论",
+      "text": "庚午日主 支火炎炎 见土取贵 见水为嫌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0014",
+      "sha256": "d3dc76f9da74726d62d1b6bf94d2bcdef942f4c07838d6ebfe0bcf01cfe80696"
+    },
+    {
+      "section": "身弱论",
+      "text": "辛未身弱 卯提取格 癸酉身弱 见财害格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0015",
+      "sha256": "2282445ccd6e4066bc2ba1b87de39599e88399a1e8da5ac2a139e53cda02dfda"
+    },
+    {
+      "section": "身弱论",
+      "text": "癸巳无根 火土重见 透财名利 露根则贱",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0016",
+      "sha256": "070d41fd2867a23c7646b67b9f1710b41e35ada476b069a0e8fcfa8208d79199"
+    },
+    {
+      "section": "身弱论",
+      "text": "辛酉八月 未时受生 人生逢此 平生多凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c200:p0017",
+      "sha256": "b20bf56b4f9eeda946bcd9a3fab3b0be4e527e53db0f3f55fe321e6325c17ee0"
+    },
+    {
+      "section": "身弱论",
+      "text": "眉批：“六甲坐申”，又行北方水多，木则漂流。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c200:p0018",
+      "sha256": "d6db2feae81157182932b7bbb2b2a965030b1a944fc6cdad131ed743216e9205"
+    }
+  ]
+}

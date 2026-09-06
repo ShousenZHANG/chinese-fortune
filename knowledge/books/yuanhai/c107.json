@@ -1,0 +1,210 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c107",
+  "title": "内十八格-合禄格",
+  "source_url": "https://luckclub.cn/bazi/001/107/",
+  "revision": "sha256:3d5690e6d6c44f9dcf492f0b84f92a0e2e8809cfa11119918aece8f2aa07c253",
+  "source_timestamp": "2026-09-06T04:10:46.255062+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c107.html",
+  "raw_sha256": "3d5690e6d6c44f9dcf492f0b84f92a0e2e8809cfa11119918aece8f2aa07c253",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-合禄格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "内十八格 - 合禄格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0002",
+      "sha256": "5ca7bb0b8b3124bd1056186a8ec6817314b6560861c655ca446e85da8ad6d6ae"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "此格以六戊日为主，以庚申时合卯中乙木为戊官。四柱有甲乙字，丙字、巳字，刑坏了申，丙伤庚字，则减分数，岁君大运同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0003",
+      "sha256": "517d2c0f5a489e13822ce993668f3c6656e9a9e34b4e5907e96250f8c82427c0"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "李武翼，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0004",
+      "sha256": "a96c613e9abc4be4e11003dfd952ce0fa3e2e9c3b92c4b227ed94c65ce43342d"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "丙申 庚子 戊申 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0005",
+      "sha256": "25a080f3e6332397c9db0e5f5fbaf00c2cba775fd1ed98696b2f642b53193be7"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "甘太尉，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0006",
+      "sha256": "d76d249da9d3b72e9f473f5b33c4c2681fbfa03ee61696c247ab056920f937e4"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "庚午 己丑 戊午 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0007",
+      "sha256": "a7d037452a235f632f1548f1eacee232d976c68c9d1aa42a98fbf4cbacf8f6ab"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "黄侍郎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0008",
+      "sha256": "0503969a16fb5d9508d2e8178b7df911d44b6719e4b52fd90d320df1281b8ced"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "己未 丙子 戊戌 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0009",
+      "sha256": "45f230b9791403cfcb2156db2ab8417b55104778df8b179b34f1eb5b739d7a83"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "黄春坊，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0010",
+      "sha256": "6b6fd47884b753c9d6f3e950c84c9066ccbeadeaff803ae9c32c449b20cac852"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "壬午 己酉 戊午 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0011",
+      "sha256": "30306130a045f23ab2a3b76c88534ae99900b5e164a84ff4aa0d28472f16bda6"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "以庚合卯乙木为戊土之官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0012",
+      "sha256": "ac4a87eb501a3f7e7bb885b709b2b0b7c722268e0d4bc1e4ea5ace80ba208791"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "眉批：此格取秋冬生者为妙，李武翼命虽是多庚，却被年干出丙字伤了秀气，行乙巳运不合，流年再见壬戌失职矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 51,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c107:p0013",
+      "sha256": "57daac90ff3b247093bec397ffa0093ab4ba409b3847991519184dd3d071b7bd"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "又合禄格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0014",
+      "sha256": "f30053650f9ac256ae2d47d028ec4b1a629fbd15736590adcda98d9919bf7d22"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "六癸日为主，喜逢庚申时，用申时合巳中戊土，癸日得官星。若四柱中有戊字并巳字，刑坏了申时，或丙字及伤庚申时，则减分数。岁君大运亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0015",
+      "sha256": "f2f1624415d4feddc02d466aa91f25fdc4b2cab278f06149f2ac87df02e73a6a"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "程同知，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0016",
+      "sha256": "f3543f0a94d452e408e8cffa4a1da4a3e8d10d92869ede2480c1d1e92b13c718"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "癸酉 乙卯 癸丑 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0017",
+      "sha256": "86e267bf837eec87f2205cea40188690ec1fe6380e6caaeb6a23dca93a5bd9c0"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "徐殿院，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0018",
+      "sha256": "42566913353d7cfb254042d4ff4ae26078b2248f2889ed5ec825a3b7fc83c689"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "癸酉 乙卯 癸酉 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0019",
+      "sha256": "4b83f36e6c6be7e3982a99209d029117ce381ca065ee62180c83eda1d839dbaa"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "赵丞相，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0020",
+      "sha256": "0120a51d36fcb0070c9b4b2d19d9c581341544aada5bdf74711d2b706de64821"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "乙酉 癸未 癸未 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0021",
+      "sha256": "b9f39521f71c4169a75bac82cc6870ec66480c5e462ab3d27757d86e92d160e9"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "杨抚安，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0022",
+      "sha256": "f597f68936a8853a11369cde1ff5313a3ebf2119a4ed571ba6de3a6573154d0f"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "壬午 庚戌 癸丑 庚申",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0023",
+      "sha256": "51846c8cf951737a8667381aa3d9daa6784462dfed2491c85716b8f9c07b6267"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "诗诀：",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0024",
+      "sha256": "6cf7e2439fbb0f06beb499d9e525ecbd9b00a6e54b32e2a1f10611081cef2ef4"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "时遇庚申癸日生，此为官印合官星，不逢官杀兼阳火，名誉昭彰拜紫官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0025",
+      "sha256": "82519f630c56e1098c646b732613719281dbf206517a5f38a6e7ae89867740b6"
+    },
+    {
+      "section": "内十八格-合禄格",
+      "text": "日干癸水时庚申，生在秋冬富贵人。大忌寅来伤秀气，若生春夏惹灾连。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c107:p0026",
+      "sha256": "36d3ffc4717a16e75f9b749281efade644df0a844472ab44768a161fb583772a"
+    }
+  ]
+}

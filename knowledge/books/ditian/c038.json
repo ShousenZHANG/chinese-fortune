@@ -1,0 +1,102 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c038",
+  "title": "六親論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F38&oldid=844389",
+  "revision": "844389",
+  "source_timestamp": "2017-03-23T15:49:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c038.wiki",
+  "raw_sha256": "0dfe532824071a8eb2647d9daf22a4bcb8d305fde75679eb8caecc6291e73c33",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六親論",
+      "text": "夫妻姻緣宿世來，喜神有意傍妻財。",
+      "layer": "base_text",
+      "passage_id": "ditian:c038:p0001",
+      "sha256": "aba7e3edafa328e3486c995de736c7885fcbcd006c7c878da8cf7bb6c87ae638"
+    },
+    {
+      "section": "六親論",
+      "text": "局中有喜神，一生富貴在於是，妻子在於是，大率依財看妻，如喜神即是財神，其妻美而且富貴，喜神與財神不相妒忌，亦可，否則剋妻，或不美，或欠和，然看財神，又須活法，如財神薄，須要助財，財旺身弱，又喜比劫，財神傷印者，要官星，財薄官多者，要傷官，財氣未行，要衝者沖，洩者洩，財既流通，要合者合，庫者庫，若財太洩，比肩透露，及身旺無財者，必非夫婦全美，若財旺身強而富貴者，必多妻妾。",
+      "layer": "commentary",
+      "passage_id": "ditian:c038:p0002",
+      "sha256": "a38845f6a05d5e02f696a04d519800d137a8133265691f153eb72910428e5aac"
+    },
+    {
+      "section": "六親論",
+      "text": "子女根枝一世傳，喜神看與殺相聯。",
+      "layer": "base_text",
+      "passage_id": "ditian:c038:p0003",
+      "sha256": "a2076e26ffe1e704f44135fa0372198a85ae381c8e31906e04cd00eb1468d99f"
+    },
+    {
+      "section": "六親論",
+      "text": "大率依官星看子，如喜神即官星，其子賢俊，喜神與官星不相妒，亦好，否則無子，或不肖，或有剋，然看官星又要活法，如官輕身旺，須要助官，殺重身輕，須要印比，若官星阻滯要衝發，官星太洩要幫助，無官星者以財取論，財能生官也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c038:p0004",
+      "sha256": "14d75920812aa6dc2833f42e1bed6bfa5c70fa8d44cd5b7580b3cb48b46bda68"
+    },
+    {
+      "section": "六親論",
+      "text": "父母或興與或替，歲月所關果非細。",
+      "layer": "base_text",
+      "passage_id": "ditian:c038:p0005",
+      "sha256": "9989c3ba4a190609428cfc69cba5f635d4563267772ec95aaa934b4e63a68838"
+    },
+    {
+      "section": "六親論",
+      "text": "子平之法，以財為父，以印為母，然看歲月為緊要，如歲月不傷夫喜神，及歲氣有益於月令者，父母必昌，歲月之氣，斲喪於時干者，先剋父，歲月之氣，斲喪於時支者，先剋母，又須活看局中大勢，有隱隱露其興亡之機，而不必在財印者，再看生財生印，與財生印生之神，而損益舒配，無不驗矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c038:p0006",
+      "sha256": "73324ec059ca853d1d4b055207726027eb0ca97b2126afa89db97c40d4af2799"
+    },
+    {
+      "section": "六親論",
+      "text": "兄弟誰廢與誰興，提綱喜神問重輕。",
+      "layer": "base_text",
+      "passage_id": "ditian:c038:p0007",
+      "sha256": "9ae0120886dd213adc224ecf64e751c13fd43478da209b1abbcfd8a0bc79f9d7"
+    },
+    {
+      "section": "六親論",
+      "text": "劫財，比肩，陽刃，皆兄弟，要與提綱之神及喜神，較其輕重，財官弱，三者顯其攘奪之跡，兄弟必強，財官旺，三者出其助主之功，兄弟必美，身與財官兩平，而三者伏而出助，兄弟必貴，比肩重，而傷官財煞亦旺者，兄弟必富，身弱而三者不顯，有印而兄弟必多，身旺而三者顯，無官，而兄弟必衰。",
+      "layer": "commentary",
+      "passage_id": "ditian:c038:p0008",
+      "sha256": "64cbc8142588468063dd70ddeb510fbc766010e1b2a8e29640330a13b8d27db0"
+    },
+    {
+      "section": "六親論",
+      "text": "女命須要論安詳，氣靜平和婦道彰，二德三奇虛好話，咸池驛馬漫推詳。",
+      "layer": "base_text",
+      "passage_id": "ditian:c038:p0009",
+      "sha256": "289d9be8ccafa4792642592f40dc2f22bcd63510201146023a446572150f921d"
+    },
+    {
+      "section": "六親論",
+      "text": "局中官星明順，夫貴而吉，不必言也，若官星太旺，以傷為夫，官星太微，以財為夫，比肩旺而無官，以食傷為夫，傷官旺而無財官，印綬為夫，滿局官星欺日主者，喜印綬而官不剋主也，滿局印星洩官星者，喜財星而身不剋夫也。\n局中食神清顯，子貴而清，不必言也，若傷官太旺，以印為子，食神無氣，以比肩為子，印旺而無傷官者以財為子，財旺洩食傷太甚者，以比肩為子也，不必專執一端而論，總之女命但以安詳順靜為貴，二德三奇不必論，咸池驛總無關，即或有驗，於理不長。",
+      "layer": "commentary",
+      "passage_id": "ditian:c038:p0010",
+      "sha256": "2d5e1fc660355d5b6dc98a401c2cfcc04f6c5a973dd2ced7ef11919383c20370"
+    },
+    {
+      "section": "六親論",
+      "text": "小財殺論精神，四柱平和易養成，氣勢悠長無斲喪，關星雖有不傷身。",
+      "layer": "base_text",
+      "passage_id": "ditian:c038:p0011",
+      "sha256": "dd6e84235f87a6d78b14d1955976c46e389de9e260f5789171287736fced2b48"
+    },
+    {
+      "section": "六親論",
+      "text": "格中不黨財生殺，日主健旺，精神貫足，干支安頓和平，又要看氣勢，如氣勢在於日主，而日主雄壯，氣勢在於財官，而財官助日主，氣勢在於東南，而五七歲之前，不行西北，氣勢在西北，而五七歲之前，不行東南，行運不逄斲喪，此為氣勢悠長，雖有關煞，亦不傷身。",
+      "layer": "commentary",
+      "passage_id": "ditian:c038:p0012",
+      "sha256": "da28095b4120836e73429145ab3a3acdbee2260aef46ad509bf12b5316fd00e5"
+    }
+  ]
+}

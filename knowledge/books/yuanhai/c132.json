@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c132",
+  "title": "外十八格-弃命从杀格",
+  "source_url": "https://luckclub.cn/bazi/001/132/",
+  "revision": "sha256:f884c6cc3fb9f59455a8a321c3278c0ec9c7656a7cebf5b7d7db3c7863644e25",
+  "source_timestamp": "2026-09-06T04:10:51.106424+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c132.html",
+  "raw_sha256": "f884c6cc3fb9f59455a8a321c3278c0ec9c7656a7cebf5b7d7db3c7863644e25",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-弃命从杀格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c132:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-弃命从杀格",
+      "text": "外十八格 - 弃命从杀格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c132:p0002",
+      "sha256": "dd252b19d547e2e02bc895e1802edb490662e4a0ffefc48ad33bbd44a36cc091"
+    },
+    {
+      "section": "外十八格-弃命从杀格",
+      "text": "且如乙日，支见巳酉丑，金局大胜又无制杀，身主无气，只得舍身而从之。要行杀旺及财乡，忌日主有根及比肩之地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c132:p0003",
+      "sha256": "608b435dca55ba534d4f5984e8ff50b02355ee506fae659a5b99f2c0b5654f9f"
+    }
+  ]
+}

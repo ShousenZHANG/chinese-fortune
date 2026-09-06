@@ -63,7 +63,7 @@ def test_yijing_structure_and_determinism():
 # --------------------------------------------------------------------------- #
 
 def test_meihua_structure():
-    d = run("meihua_cast.py", "numbers", "--upper", "3", "--lower", "5", "--question", "x")
+    d = run("meihua_cast.py", "--datetime", "2026-06-24T13:05", "numbers", "--upper", "3", "--lower", "5", "--question", "x")
     has(d, "main_hex", "changed_hex", "nuclear_hex", "ti_yong")
     assert 1 <= d["main_hex"]["number"] <= 64
     # body/use relation must be one of the 5 五行 relations (not just truthy).
@@ -117,17 +117,19 @@ def test_tarot_seed_reproducible():
 
 
 # --------------------------------------------------------------------------- #
-# 生肖合婚 — deterministic; 虎申 must be 相冲 (score low)
+# 生肖地支关系 — 虎申 must be 相冲; legacy index remains deterministic.
 # --------------------------------------------------------------------------- #
 
 def test_zodiac_compat_chong():
     d = run("zodiac_compat.py", "compat", "--a", "虎", "--b", "猴")
     has(d, "score", "verdict", "summary")
     assert "冲" in d["summary"]            # 寅申相冲
-    assert d["score"] <= 3                  # 六冲 => low compatibility
+    assert d["score"] <= 3                  # 旧权重降低, 不代表相配度
+    assert d["score_kind"] == "legacy_heuristic_relation_index"
+    assert d["verdict"] is None
 
 def test_zodiac_compat_sanhe_high():
-    # 寅午戌三合 — 虎与马 should score high.
+    # 寅午戌三合 — preserve the legacy relation-index arithmetic.
     d = run("zodiac_compat.py", "compat", "--a", "虎", "--b", "马")
     assert d["score"] >= 6
 

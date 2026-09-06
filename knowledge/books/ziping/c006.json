@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c006",
+  "title": "六、論十干得時不旺失時不弱",
+  "source_url": "https://www.donglishuzhai.net/chapter/3719.html",
+  "revision": "sha256:3ad4e1aa023c925ceb1e2c1f709cdda515c62c17190b360c4ac5b733fb51905e",
+  "source_timestamp": "2026-09-06T04:16:52.005Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c006.html",
+  "raw_sha256": "3ad4e1aa023c925ceb1e2c1f709cdda515c62c17190b360c4ac5b733fb51905e",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六、論十干得時不旺失時不弱",
+      "text": "書云：「得時俱爲旺論，失時便作衰看。」雖是至理，亦死法也，然亦可活看。夫五行之氣，流行四時，雖日干各有專令，而其實專令之中，亦有並存者在。假若春木司令，甲乙雖旺，而此時休囚之戊己，亦未嘗絕於天地也。特時當退避，不能爭先，而其實春土何嘗不生萬物，冬日何嘗不照萬國乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c006:p0001",
+      "sha256": "53aeafe274aca499b5f67a93a9572f1a240d1c6d50d4d2c064cd01a5003385e4"
+    },
+    {
+      "section": "六、論十干得時不旺失時不弱",
+      "text": "況八字雖以月令爲重，而旺相休囚，年月日時，亦有損益之權。故生月即不值令，而年時如值祿旺，豈便爲衰？不可執一而論。猶如春木雖强，金太重而木亦危。干庚辛而支酉丑，無火制而不富，逢土生而必夭，是以得時而不旺也。秋木雖弱，木根深而木亦强。干甲乙而支寅卯，遇官透而能受，逢水生而太過，是失時不弱也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c006:p0002",
+      "sha256": "350cb20870ff372909ef51e5335336dca76a3374c2104440cd2b2759f8a00409"
+    },
+    {
+      "section": "六、論十干得時不旺失時不弱",
+      "text": "是故十干不論月令休囚，只要四柱有根，便能受財官食神，而當傷官七煞。長生祿旺，根之重者也；墓庫餘氣，根之輕者也。得一比肩，不如得支中一墓庫，如甲逢未、丙逢戌之類。乙逢戌、丁逢丑，不作此論，以戌中無藏木，丑中無藏火也。得二比肩，不如得一餘氣，如乙逢辰、丁逢未之類。得三比肩，不如得一長生祿刃，如甲逢亥寅卯之類。陰長生不作此論，如乙逢午、丁逢酉之類，然亦爲有根，比得一餘氣。蓋比劫如朋友之相扶，通根如室家之可住，干多不如根重，理固然也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c006:p0003",
+      "sha256": "159a06cd15a1700863982606f3a80e987f66c1e9b70d49202879a94b78aafe28"
+    },
+    {
+      "section": "六、論十干得時不旺失時不弱",
+      "text": "今人不知命理，見如夏水冬火，不問有無通根，便謂之弱。更有陽干逢庫，如壬逢辰、丙坐戌之類，不以爲水火通根身庫，甚至求刑沖以開之。此種謬書謬論，必宜一切掃除也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c006:p0004",
+      "sha256": "ba76eb7888756bed85bffa4fe9cb0e8c563ae38cb14ccf098f7a2547d814f779"
+    }
+  ]
+}

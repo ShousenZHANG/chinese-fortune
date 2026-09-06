@@ -1,0 +1,25 @@
+{
+  "book_id": "sanming",
+  "chapter_id": "c000",
+  "title": "提要",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E4%B8%89%E5%91%BD%E9%80%9A%E6%9C%83+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29&oldid=657391",
+  "revision": "657391",
+  "source_timestamp": "2016-10-15T11:19:12Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/sanming/c000.wiki",
+  "raw_sha256": "4c9923df0ab644fe7b675796f41195746cc2a07273826116ab8d02ed442bb650",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "提要",
+      "text": "欽定四庫全書　　　　　子部七\n三命通會　　　　　　　術數類五〔注文〕命書相書之屬〔/注文〕提要\n〔注文〕臣〔/注文〕等謹案三命通會十二巻原本不著撰人姓名巻首但題育吾山人著明史藝文志有萬民育三命會通十二巻與此本卷數相合惟以通會作會通為稍異今考世所傳星學大成專論五星者為萬民英所撰己著於録此本專論子平亦出民英之手藝文志葢因育吾山人之號誤以民英為民育又通會二字傳寫互倒遂有不同其實即此書也自明以来二百餘年談星命者皆以此本為總彚㡬於家有其書中間所載仕宦八字往往及明季之人葢後来坊刻所攙入亦己非原本之舊特以其闡發子平之遺法於官印財禄食傷之名義用神之輕重諸神煞所係之吉凶皆能採撮羣言得其精要故為術家所恒用要有未可遽廢者至其立論多取正官正印正財而不知偏官偏印偏財亦能得力知食神之能吐秀而不知傷官之亦可出竒是則其偏執之見未能圓徹且胎元等論施之今日亦多有不驗言命學者但當得其大意而變通之可矣若所引珞琭子與今永樂大典中所輯完本其文迥殊則其時秘冊僅存外間末由窺見遂誤信依託之本固未足以為病也乾隆四十四年九月恭校上\n總纂官〔注文〕臣〔/注文〕紀昀〔注文〕臣〔/注文〕陸錫熊〔注文〕臣〔/注文〕孫士毅\n總　校　官〔注文〕臣〔/注文〕陸　費　墀",
+      "layer": "base_text_with_commentary",
+      "passage_id": "sanming:c000:p0001",
+      "sha256": "b6f0850e2a78d07a2491a80842d6bc214e33474666af104fb7d276d52165ff97"
+    }
+  ]
+}

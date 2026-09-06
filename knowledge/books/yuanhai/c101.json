@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c101",
+  "title": "内十八格-时上偏财格",
+  "source_url": "https://luckclub.cn/bazi/001/101/",
+  "revision": "sha256:10d58b40e9674e6f654e3d1db554fcdfe2d49050c48c0b9edc5ee8f1b67a4c86",
+  "source_timestamp": "2026-09-06T04:10:45.205037+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c101.html",
+  "raw_sha256": "10d58b40e9674e6f654e3d1db554fcdfe2d49050c48c0b9edc5ee8f1b67a4c86",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "内十八格 - 时上偏财格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0002",
+      "sha256": "0b1a77babb7a6832f001f6ae2313c18b753d89e68fe03acd39e34e8acaed0992"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "如时上偏财与时上偏官相似，只要时上一位，不要多。而三处不要再见财，却怕冲，与月上偏官一同。偏财要行财旺运。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0003",
+      "sha256": "6bac4e1105ec4cd7ebafdda84c4a794adcd46d51ad83154817e11806b8492c23"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "高侍郎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0004",
+      "sha256": "8b9d922314a4bee92828dfac3e15e726a940ab1bce6418bb94df5d7ec6956dbb"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "甲申 庚午 壬寅 壬寅(甲食神)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0005",
+      "sha256": "5c45d65f1386a71d13d6fd1fcabe979d3bbfa83710f2990c7120c94af572ec81"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "侯知府，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0006",
+      "sha256": "1e8fcdb5729c38a8b8e485ad79b784db45f922ab56b90efbd9dd48f8fe3ecb88"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "乙酉 乙卯 辛卯 辛卯",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0007",
+      "sha256": "df959e751183d6536ccf3a12b6b0f9faeedbab32923725ee4d19719c07576a53"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "眉批：侯知府命中干支重见，兄弟分夺，只是财多财旺，原干辛弱不堪任之，所以分去却得中和。诗诀：月偏财是衆人财，最怕干支兄多来。身强财旺皆为福，若归官星足为灾。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 78,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c101:p0008",
+      "sha256": "141953e61255b96b410fc0344c1122ed5e719ce942c0dfcee4942e2e5cde27d2"
+    },
+    {
+      "section": "内十八格-时上偏财格",
+      "text": "时正财与正官同，不逢破害与相冲。柱中不见财官杀，时旺来寻此格中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c101:p0009",
+      "sha256": "512d7344cbfd08476ff4874b87e2c3e4204a928d590019c51c3cdc22e09f4677"
+    }
+  ]
+}

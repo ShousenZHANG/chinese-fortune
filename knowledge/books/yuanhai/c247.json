@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c247",
+  "title": "玄武当权诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/247/",
+  "revision": "sha256:5cc8499990cb1924d020e00cc1189b7b2b9f375c54fdbe8c101c727d3d0d47ac",
+  "source_timestamp": "2026-09-06T04:11:14.283794+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c247.html",
+  "raw_sha256": "5cc8499990cb1924d020e00cc1189b7b2b9f375c54fdbe8c101c727d3d0d47ac",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "玄武当权诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c247:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "玄武当权诗诀",
+      "text": "玄武当权诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c247:p0002",
+      "sha256": "8300dc4caa6a3ec1d3e53922f73b6a10e2ae94b294be0a67c9663a4c7335c3ee"
+    },
+    {
+      "section": "玄武当权诗诀",
+      "text": "玄武当权妙人神，日干壬癸坐财星，官星若也居门户，无破当为大用人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c247:p0003",
+      "sha256": "c866204be323d195d9b70295a0f78ece6733ce3fa9945e30cefb51d65f313e3c"
+    },
+    {
+      "section": "玄武当权诗诀",
+      "text": "壬癸名为玄武神，财官两见始成真，局无冲破当清贵，辅佐皇家一老臣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c247:p0004",
+      "sha256": "5e4de918c0d198923a932709e05eef39aa3b3031f2498c2acd6b7fa34c7be980"
+    },
+    {
+      "section": "玄武当权诗诀",
+      "text": "眉批：以壬癸值寅午戌火局为财，辰戌丑未为官是也。正是壬寅、壬午、壬戌；癸巳、癸未、癸丑六者。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c247:p0005",
+      "sha256": "0c178f17fe87b3bf2eb2dcd5c75c8e832615bc6f33d664fa30c56eae98f6adc9"
+    }
+  ]
+}

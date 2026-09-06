@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c066",
+  "title": "论月令",
+  "source_url": "https://luckclub.cn/bazi/001/066/",
+  "revision": "sha256:e12de3106f56184f1d85159f82d1e284fc82cf0fd9d078ec51de0a391f8d2737",
+  "source_timestamp": "2026-09-06T04:10:38.016910+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c066.html",
+  "raw_sha256": "e12de3106f56184f1d85159f82d1e284fc82cf0fd9d078ec51de0a391f8d2737",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论月令",
+      "text": "论月令",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c066:p0001",
+      "sha256": "53761f6312ae85a3bbc2d149a4022584758969aa7958627fc5c88a9d6a8acdf1"
+    },
+    {
+      "section": "论月令",
+      "text": "假令年为本，带官星印绶，则早年有官出自祖宗。月为提纲，带官星印绶则慷慨聪明，见识高人。时为辅佐，平生操履。若年月日有吉神，则时归生旺之处。若凶神则要归时制伏之乡。时上吉凶神，则年月日吉者生之，凶者制之。假令月令有用神，得父母力。年有用神，得祖宗力。时有用神，得子孙力。反此则不得力。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c066:p0002",
+      "sha256": "3de11548fd9230180c3cb9e960af355712016ac9ca9cdb13d184a53a6939be37"
+    },
+    {
+      "section": "论月令",
+      "text": "眉批：出自祖宗，主庇荫之宫。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 14,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c066:p0003",
+      "sha256": "cdfc17198d7bbdd93f019996c478a426c9d80cb541254a61b0bf71affe9121bb"
+    }
+  ]
+}

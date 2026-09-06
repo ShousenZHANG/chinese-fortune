@@ -1,0 +1,60 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c038",
+  "title": "三十八、論食神取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3751.html",
+  "revision": "sha256:df3b9e35198d2918edbc5a6810b7c11e36341c9bd8ed80cbfca1859b5eabef70",
+  "source_timestamp": "2026-09-06T04:17:11.101Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c038.html",
+  "raw_sha256": "df3b9e35198d2918edbc5a6810b7c11e36341c9bd8ed80cbfca1859b5eabef70",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十八、論食神取運",
+      "text": "食神取運，即以食神所成之局，分而配之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c038:p0001",
+      "sha256": "2a9879a833428a97a40b89f990e1b3bf8cca5c5c18b586216bce0a9f03a44a41"
+    },
+    {
+      "section": "三十八、論食神取運",
+      "text": "食神生財，財食輕則行財食，財食重則喜幫身，官煞之方，俱爲不美。",
+      "layer": "base_text",
+      "passage_id": "ziping:c038:p0002",
+      "sha256": "bda9397f7338b0da261909ba719d4b1b5fb122d8eec44aee56ac935388e666fe"
+    },
+    {
+      "section": "三十八、論食神取運",
+      "text": "食用煞印，運喜印旺，切忌財鄉。身旺，食傷亦爲福運，行官行煞，亦爲吉也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c038:p0003",
+      "sha256": "31fafdac0b2a38bb5f398aa791cdb9d97ccd7fd36776542a5ca3786c10dfb79e"
+    },
+    {
+      "section": "三十八、論食神取運",
+      "text": "食神帶煞，喜行印綬。身旺，食傷亦爲美運，財則最忌。若食太重而煞輕，印運最利，逢財反吉矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c038:p0004",
+      "sha256": "584cfce0937390d9d81c9cbeb2aa834307611647f5dbeb2a7b5cdf64419ce659"
+    },
+    {
+      "section": "三十八、論食神取運",
+      "text": "食神太旺而帶印，運最利財，食傷亦吉，印則最忌，官煞皆不吉也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c038:p0005",
+      "sha256": "dd478f221f17fc0f87a03073cc0a6835207b54d085e7a9386292ed81f1e75758"
+    },
+    {
+      "section": "三十八、論食神取運",
+      "text": "若食神帶印，而透財以解，運喜財旺，食傷亦吉，印與官煞皆忌矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c038:p0006",
+      "sha256": "3567f61a37326b8087c4ceb2dc1392a16c2b44d4636ef3df6fbca9db3a5e2be0"
+    }
+  ]
+}

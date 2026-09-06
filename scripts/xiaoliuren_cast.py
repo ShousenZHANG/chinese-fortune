@@ -9,8 +9,8 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
 
+from request_time import add_request_arguments, resolve_time
 from utils import (
     ensure_utf8_stdio,
     error_envelope,
@@ -122,8 +122,9 @@ def build_parser() -> argparse.ArgumentParser:
     lunar.add_argument("--hour-branch", required=True, choices=HOUR_BRANCHES)
 
     solar = sub.add_parser("solar", help="输入公历日期时间自动换算农历")
-    solar.add_argument("--date", required=True, help="YYYY-MM-DD")
-    solar.add_argument("--time", default="12:00", help="HH:MM")
+    add_request_arguments(solar)
+    solar.add_argument("--date", default=None, help="YYYY-MM-DD")
+    solar.add_argument("--time", default=None, help="HH:MM")
     return parser
 
 
@@ -137,12 +138,13 @@ def main(argv: list[str] | None = None) -> int:
             require_lunar()
             from lunar_python import Solar  # type: ignore
 
-            dt = datetime.strptime(f"{args.date} {args.time}", "%Y-%m-%d %H:%M")
+            dt, time_context = resolve_time(args, date_value=args.date, time_value=args.time)
             lunar = Solar.fromYmdHms(dt.year, dt.month, dt.day, dt.hour, dt.minute, 0).getLunar()
             hour_branch = hour_branch_from_hour(dt.hour)
             out = cast(lunar.getMonth(), lunar.getDay(), hour_branch)
-            out["input"]["solar"] = args.date
-            out["input"]["time"] = args.time
+            out["time_context"] = time_context
+            out["input"]["solar"] = dt.date().isoformat()
+            out["input"]["time"] = dt.strftime("%H:%M")
             out["input"]["lunar_year"] = lunar.getYear()
             out["input"]["lunar_month_chinese"] = lunar.getMonthInChinese()
             out["input"]["lunar_day_chinese"] = lunar.getDayInChinese()

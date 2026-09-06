@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c022",
+  "title": "二十二、論外格用舍",
+  "source_url": "https://www.donglishuzhai.net/chapter/3735.html",
+  "revision": "sha256:42b1d6de6c4ff3d9f226bcaadc1eca7aa1e2e399161453ecea1421741e0b892f",
+  "source_timestamp": "2026-09-06T04:17:00.727Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c022.html",
+  "raw_sha256": "42b1d6de6c4ff3d9f226bcaadc1eca7aa1e2e399161453ecea1421741e0b892f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十二、論外格用舍",
+      "text": "八字用神，既專主月令，何以而又有外格乎？外格者，蓋因月令無用，權而用之，故曰外格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c022:p0001",
+      "sha256": "5053be8552ed1f2ee6832d7cf3b44ef856a00624f35519adcfbfbfd1bbaa2690"
+    },
+    {
+      "section": "二十二、論外格用舍",
+      "text": "如春木、冬水、土生四季之類，日與月同，難以作用，類象、屬象、沖財、會祿、刑合、遙迎、井欄、朝陽諸格，皆可用也。若月令自有用神，豈可別尋外格？",
+      "layer": "base_text",
+      "passage_id": "ziping:c022:p0002",
+      "sha256": "cba4c2ac16e0c25cdfe2b69a909f755de292c227a7190e384aca2947719bdf0c"
+    },
+    {
+      "section": "二十二、論外格用舍",
+      "text": "又或春木冬水，干頭已有財官七煞，而棄之以就外格，亦大謬矣。是故干頭有財，何用沖財？干頭有官，奚用合祿？書云：「提綱有用提綱重」，又曰：「有官莫尋格局」，不易之論也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c022:p0003",
+      "sha256": "060ce34329ba1ca78259ff262af9f6a11f6bc8e290d31afce7d3abc52522d2ae"
+    },
+    {
+      "section": "二十二、論外格用舍",
+      "text": "然所謂月令無用者，原是月令本無用神，而今人不知，往往以財被劫、官被傷之類，用神已破，皆以爲月令無用，而棄之以尋外格，則謬之又謬矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c022:p0004",
+      "sha256": "ec7f73b97e9ce07cd38b3c68bcb7d12f88d82429a9832793455b1f8ace1fc830"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c261",
+  "title": "克妻诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/261/",
+  "revision": "sha256:1358f71d940c04f55f8e56e3e1d0ed794c11e9c7845504014c9d525ce83402cf",
+  "source_timestamp": "2026-09-06T04:11:17.688451+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c261.html",
+  "raw_sha256": "1358f71d940c04f55f8e56e3e1d0ed794c11e9c7845504014c9d525ce83402cf",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "克妻诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c261:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "克妻诗诀",
+      "text": "克妻诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c261:p0002",
+      "sha256": "17ffcd7f3b304e5116d3132febf6d46d214860c12d1be812947676b253b41baf"
+    },
+    {
+      "section": "克妻诗诀",
+      "text": "天干透露弟兄多，财绝官衰旺太过，月令又逢身旺地，青春年少哭娇娥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c261:p0003",
+      "sha256": "eec226aa255d048ccdc8336b8ffe3eabb9e630b449ac1aeb80b0f1a77d37618b"
+    },
+    {
+      "section": "克妻诗诀",
+      "text": "当生四柱有财星，羊刃逢时定克刑，岁逢运行妻眷绝，妻宫频见损年龄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c261:p0004",
+      "sha256": "69a9ca2a40d2c9e6d59abaca20dcef6a73e23615b9d7d614aca21cc5fad21adc"
+    }
+  ]
+}

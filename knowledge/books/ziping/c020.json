@@ -1,0 +1,88 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c020",
+  "title": "二十、論生尅先後分吉凶",
+  "source_url": "https://www.donglishuzhai.net/chapter/3733.html",
+  "revision": "sha256:cd12bfa131310b5dd559df98c91ca13910fb58162bc13f86b50a3b07bcc616c3",
+  "source_timestamp": "2026-09-06T04:16:58.486Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c020.html",
+  "raw_sha256": "cd12bfa131310b5dd559df98c91ca13910fb58162bc13f86b50a3b07bcc616c3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "月令用神，配以四柱，固有每字之生尅以分吉凶。然有同此生尅，而先後之間，遂分吉凶者，尤談命之奧也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0001",
+      "sha256": "c15481c51d2e4a3701accf6c9c77124fffeeeca25d2b29444d7e39c4f66282e9"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "如正官格，同是財傷並透，而先後有殊。假如甲用酉官，丁先戊後，則爲財以解傷，即不能貴，後運必有結局；其戊先而丁在時，則爲官遇財生，而後因傷破，即使上蔭稍順，終無結局，子嗣亦難矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0002",
+      "sha256": "85cbebea64dfd67a4accad2e30fd7d560c205f365cdd707fdc09c71a60d8e927"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "印格，同是貪財壞印，而後先別殊。如甲用子印，己先癸後，即使不富，稍順晚境；若癸先而己在時，晚景亦悴矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0003",
+      "sha256": "72c6a630d48c6f1afbebac8028cfca9d7e990bdf7f792bf2efeaf92d04f8adf8"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "食神格，同是財梟並透，而先後有殊。如壬用寅食，庚先丙後，晚運必亨，格亦富而且貴；若丙先而庚在時，晚運必淡，富貴兩空矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0004",
+      "sha256": "cf11c9baad8d8050ce70e4f4c53cf8f6af8809aac36f6101e115bf34fd944648"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "七煞格，同是財食並透，而先後大殊。如己生卯月，癸先辛後，則爲財以助用，而後煞用食制，不失大貴；若辛先而癸在時，則煞逢食制，而財轉食黨煞，非特不貴，後運蕭索，兼難永壽矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0005",
+      "sha256": "35e137e1cb3cd62bd22918ffa25dcc74ecd92f194a89f1357587f7801c3fe5e8"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "他如此類，可以例推，然猶吉凶之易見者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0006",
+      "sha256": "173d43c5a4e4ea155098c422a74a3f9b356398a93d2a56220313671ef6944722"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "至丙生甲寅月，年癸時戊，官能生印，而不怕戊合，戊能洩身爲秀，而不得越甲以合癸，大貴之格也；假使年月戊癸而時甲，或年甲而月癸時戊，則戊無所隔而合癸，格大破矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0007",
+      "sha256": "b033d652afd1f6a75428ed2422b7b72f73e74784974620931f8f535b4414e743"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "丙生辛酉，年癸時己，傷因財間，傷之無力，間有小貴；假如癸己並而中無辛隔，格盡破矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0008",
+      "sha256": "644cbae3decee1e9bf46f9e16d9d36775346c6e7be1b0d32b58a5b764a93be38"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "辛生申月，年壬月戊，時上丙官，不愁隔戊之壬，格亦許貴；假使年丙月壬而時戊，或年戊月丙而時壬，則壬能尅丙，無望其貴矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0009",
+      "sha256": "bfb5b750f773f2e690af09a86b35a3a66c3ebd12adefcc1ab91380d0a39d98da"
+    },
+    {
+      "section": "二十、論生尅先後分吉凶",
+      "text": "如此之類，不可勝數，其中吉凶，似難猝喻，然細思其故，理甚顯然，特難爲淺者道耳。",
+      "layer": "base_text",
+      "passage_id": "ziping:c020:p0010",
+      "sha256": "6d9faaf18b73c13c9e38efd5fea9e0e15a405a6f6ad69559abda90eaa326bb26"
+    }
+  ]
+}

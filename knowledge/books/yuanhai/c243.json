@@ -1,0 +1,126 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c243",
+  "title": "拱禄拱贵诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/243/",
+  "revision": "sha256:ffbca63d32f86bae9893d74064b4a4f86a56cb6c58921cc2c60ec4c03bdfc991",
+  "source_timestamp": "2026-09-06T04:11:13.283801+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c243.html",
+  "raw_sha256": "ffbca63d32f86bae9893d74064b4a4f86a56cb6c58921cc2c60ec4c03bdfc991",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "拱禄拱贵诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0002",
+      "sha256": "34096996610a1a114cf488407a86ebcff857f2884259b1bdaf8b6e0b635300f3"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "拱禄拱贵格中稀，也须月令看支提，提纲有用提纲重，月令无官用此奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0003",
+      "sha256": "675c0eaaa0fc8046bbe1ff1a72aa96f0f13f03779101a3adc0179fe90eac4e1f"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "拱禄拱贵格稀奇，遇者腰是金紫衣，只怕刑冲并克破，应嫌七杀月年随。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0004",
+      "sha256": "2fdf4c844f2e64c3b5a82cd9126dcaa4db7d0652547e83ad917e3fe3d6752fb8"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "所拱之位怕填实，又怕伤官在月支，羊刃重重来格破，如无此破贵无疑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0005",
+      "sha256": "39fa65baa8bf4bd2bd3b9dfc7e484d8cd4cd7c528e41dd4a53f105afcc0f98d5"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "癸日癸时逢亥丑，名为拱禄福重重，若无官杀来冲坏，雁塔题名有路通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0006",
+      "sha256": "48193564ca23313ff410a42e7e68232b67f420bbae781672420dab826c8e85fe"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "两绊本身非是我，拱藏一位虚中好，不宜填实见官星，更忌官星当克破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0007",
+      "sha256": "bd720ef1dd5fdfe5a4eb7e7186d6c011973ef068ca44f9f13a78ad708ddc6df5"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "甲寅甲子拱辛官，壬辰壬寅拱贵看，日遇甲申时庚午，戊申戊午桂生香。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0008",
+      "sha256": "79b3b1aa8f97b6041fd5894dc8a82f66f306eba0ee41477a6c2177e905a926e4"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "看来辛丑逢辛卯，乙未乙酉格高强，切忌刑冲填破害，腰金衣紫食皇粮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0009",
+      "sha256": "7d471b13fdb9ec6d54264becbba75349e65817fba0d6dccac4eb623245892e03"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c243:p0010",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "此格只有五日，丁巳日见丁未，己未日见己巳，戊辰见戊午，癸丑见癸亥，癸亥见癸丑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0011",
+      "sha256": "676aa4ec669059b19680389aac32e0d23336e782e478c502ec184e63f935b0ba"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0012",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "癸卯 癸亥 戊辰 戊午，戊禄在巳，辰午拱之，不宜见巳，填实则凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0013",
+      "sha256": "d40261be2f1286bc69127553ce3b378c238caf06ae954275192ef6520e9cdb50"
+    },
+    {
+      "section": "拱禄拱贵诗诀",
+      "text": "拱贵之格，乃甲戌庚午未例，宜虚拱，不要填实，相绊刑冲破害皆拱不成矣，犯者非此格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c243:p0014",
+      "sha256": "6602193d750b67a801071a595f20fb1b849bd70ad150849f64421374050583e6"
+    }
+  ]
+}

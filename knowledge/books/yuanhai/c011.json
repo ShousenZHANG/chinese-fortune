@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c011",
+  "title": "论十二支相刑",
+  "source_url": "https://luckclub.cn/bazi/001/011/",
+  "revision": "sha256:1c8e45199a6cfb62a6ada146f306c087331977dea0faa4b79e5d85f99ab8e18b",
+  "source_timestamp": "2026-09-06T04:10:26.908222+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c011.html",
+  "raw_sha256": "1c8e45199a6cfb62a6ada146f306c087331977dea0faa4b79e5d85f99ab8e18b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二支相刑",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c011:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十二支相刑",
+      "text": "论十二支相刑",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c011:p0002",
+      "sha256": "f685666f358fa2832e2ea70b379bb62565affc53792edf2fa5e2e760db215281"
+    },
+    {
+      "section": "论十二支相刑",
+      "text": "寅刑巳，巳刑申，申刑寅，为恃势之刑；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c011:p0003",
+      "sha256": "4af8c1720841f946da01e3f3f8dff490d824f66a51ca89927c4f41c030e7b7d0"
+    },
+    {
+      "section": "论十二支相刑",
+      "text": "丑刑戌，戌刑未，未刑丑，为无恩之刑；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c011:p0004",
+      "sha256": "f3092ca60ea25510396fb6c1c0dd4964a7f0d3a57d2dca24dcc2f5e57f87f32d"
+    },
+    {
+      "section": "论十二支相刑",
+      "text": "子刑卯，卯刑子，为无礼之刑；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c011:p0005",
+      "sha256": "fdbb570b18a416a3d3c10b8a438da4b83eae36cb3840c14dc625e7b418834498"
+    },
+    {
+      "section": "论十二支相刑",
+      "text": "辰午酉亥，自刑之刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c011:p0006",
+      "sha256": "50b190c1b19efdb4db358f32b1150516f512153515b6cc44d09312716d7ec9c6"
+    }
+  ]
+}

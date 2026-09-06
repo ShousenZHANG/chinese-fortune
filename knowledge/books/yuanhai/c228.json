@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c228",
+  "title": "日德诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/228/",
+  "revision": "sha256:8900338bf64301189a4c83cbe22b931142666d1a2ebf043b091e82cc0d3d3ab5",
+  "source_timestamp": "2026-09-06T04:11:09.771410+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c228.html",
+  "raw_sha256": "8900338bf64301189a4c83cbe22b931142666d1a2ebf043b091e82cc0d3d3ab5",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "日德诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "日德诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0002",
+      "sha256": "0e988a4210ecee977bf5182fef416e88da11d32ed3bf0db41e11fcea42d96f94"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "壬戌庚辰日德宫，甲寅戊丙要骑龙，运逢身旺心慈善，日德居多福自丰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0003",
+      "sha256": "d0a8e4adc754840c94d2d1b9da6f8672dd10c17bc642102c9b05d8443b0461f5"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "刑冲破害官财旺，空与魁罡会合凶，克战孤贫危险甚，纵交发迹命还终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0004",
+      "sha256": "27ff2c0eb69eb37ce50f8761182f597f67e0dfdebb53d6edf5aa65646144a2df"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "丙辰且忌见壬辰，壬戌提防戊戌临，日坐庚辰与庚戌，甲寅还且虑庚辰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0005",
+      "sha256": "38b63ac9bdda08f3b718fecdc937ae6fd0a10c94350e044c8936b15eed1e0722"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "日德不喜见魁罡，化成杀曜最难当，局中重见须还疾，运限逢之必定亡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0006",
+      "sha256": "d7776cef9660ffa49b2feb5aed6016e211ed96a32868d72621a0cf30397412bc"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "日德重重免祸殃，官星切忌见财乡，更无冲破空刑物，堪作朝中一栋梁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0007",
+      "sha256": "5edc37060699230ea5dab684ba92178cc5bc574a8cfd43c8a3b0fd37e8c22b9c"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "甲寅壬戍与庚辰，丙戌逢辰日德真，不喜空亡嫌禄破，更逢破害与刑冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c228:p0008",
+      "sha256": "f718edc238da87c8c507ec717f7208aa0a4d9d6ffdbc2de536809bf96489a45b"
+    },
+    {
+      "section": "日德诗诀",
+      "text": "眉批：此只有五日，甲寅、戊辰、丙辰、庚辰、壬戌，喜逢居禄生旺之地，忌见刑冲破害之乡，言忌重见之。日德乃清贵之神，又遇魁罡恶曜则伤其贵，不利其重逢，如丙辰又见丙辰之例。日德怕空亡，乃本身落空，惟戊辰丙辰为最忌。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 104,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c228:p0009",
+      "sha256": "fe52aa22979dce81348824f6f213a1864e3b5cc8438332ce2956ff0e3463f32f"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c106",
+  "title": "内十八格-六乙鼠贵格",
+  "source_url": "https://luckclub.cn/bazi/001/106/",
+  "revision": "sha256:784e5e70ef27a930dc7c95f7b5bae28b85a90686eba1039d3fec8755017d969c",
+  "source_timestamp": "2026-09-06T04:10:46.179944+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c106.html",
+  "raw_sha256": "784e5e70ef27a930dc7c95f7b5bae28b85a90686eba1039d3fec8755017d969c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-六乙鼠贵格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c106:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-六乙鼠贵格",
+      "text": "内十八格 - 六乙鼠贵格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c106:p0002",
+      "sha256": "7346df05cb4ac5ae68770648801628ea4b2e1313742baeb91ba141756a276285"
+    },
+    {
+      "section": "内十八格-六乙鼠贵格",
+      "text": "此格以子暗合巳，巳动合申，庚禄居申，则用庚官，得引出庚金用事。喜於亥卯时为妙，忌日与寅，无冲害伤破子乙二字及无财官，即六乙日子时。原有官星论官，忌寅午戌冲，见庚申辛酉丑字，有一位元则减分数，岁君同。亦忌月通财官，六格不用，大运同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c106:p0003",
+      "sha256": "5e75bb263563c71788a3634eb6f32bb551b9d226e721c994f4379758505052ae"
+    }
+  ]
+}

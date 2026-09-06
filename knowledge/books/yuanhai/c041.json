@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c041",
+  "title": "论拱禄",
+  "source_url": "https://luckclub.cn/bazi/001/041/",
+  "revision": "sha256:8716f3853746bdaab1b1850d1b747df40d8d338241647acc8f9eb92989cd8133",
+  "source_timestamp": "2026-09-06T04:10:32.630508+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c041.html",
+  "raw_sha256": "8716f3853746bdaab1b1850d1b747df40d8d338241647acc8f9eb92989cd8133",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论拱禄",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c041:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论拱禄",
+      "text": "论拱禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c041:p0002",
+      "sha256": "dbbbf99a35141e1486e0525dd6214f8ad798c8add0780a5c4cb2cc570b2f345f"
+    },
+    {
+      "section": "论拱禄",
+      "text": "假如戊辰生人见丙午，丙午生人见戊辰；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c041:p0003",
+      "sha256": "507df9282c60d5081d63552288d5fbf7113d2b8070252ef21b26973c944f7e0d"
+    },
+    {
+      "section": "论拱禄",
+      "text": "丁巳生人见己未，己未生人见丁巳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c041:p0004",
+      "sha256": "e3a6163c077f5bd81cd4764c14e76ae10d5c7e8f05b49a4d512a6842d0f25a33"
+    },
+    {
+      "section": "论拱禄",
+      "text": "前後相拱，只此四位，其余不是。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c041:p0005",
+      "sha256": "c8c01260de8df5a987b57100b3e7a9eea136224f47a027ce6db41a3aeb4d980a"
+    },
+    {
+      "section": "论拱禄",
+      "text": "眉批：戊丙禄在巳，辰午虚拱巳禄，忌见填实，只要虚为贵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c041:p0006",
+      "sha256": "dc0d43562a65625f7dc69998ddabb139230f294a358016745af104e98e72739e"
+    }
+  ]
+}

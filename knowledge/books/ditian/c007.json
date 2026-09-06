@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c007",
+  "title": "從化論－真",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F07&oldid=844355",
+  "revision": "844355",
+  "source_timestamp": "2017-03-23T15:44:07Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c007.wiki",
+  "raw_sha256": "f4b092b4fc39897ca4ff1a356861d8e787cb87360bccf80bbcd851acc496fe55",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "從化論－真",
+      "text": "從得真者只論從，從神又有吉和凶。",
+      "layer": "base_text",
+      "passage_id": "ditian:c007:p0001",
+      "sha256": "e23b71a2b155b21e54332785821c5c6277eb58a447e1ee63f0e125fc6c403bdd"
+    },
+    {
+      "section": "從化論－真",
+      "text": "日主孤弱無氣，天地人三元，絕無一毫生扶之意，財官等強甚，乃為真從也，既從矣，當論所從之神，如從財則以財為主，財神是木，又看意向，或要火，或要土，而行運得所者必吉，否則凶，從煞等倣此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c007:p0002",
+      "sha256": "641046a0620eeb86e01279c3a4201e9e1d9364ac8ba4f0c25d1f79a728840667"
+    },
+    {
+      "section": "從化論－真",
+      "text": "化得真者只論化，化神還有幾般話。",
+      "layer": "base_text",
+      "passage_id": "ditian:c007:p0003",
+      "sha256": "8a0e8434e3c5a2f2c680df26a0b2ef3af3c57cdfa1a06f2bda802d6fea22b472"
+    },
+    {
+      "section": "從化論－真",
+      "text": "如甲日主，生於四季，單遇一位己土，在月時上作合，（在年幹不是）不遇壬癸甲乙庚（印，劫，官），乃為化得真，（庚能剋甲）又如丙辛生於冬月，（化神要通月令）戊癸生於夏月，乙庚生於秋月，丁壬生於春月，獨相作合，皆為真化，既化矣，又論化神，如甲己化土，土遇陰寒，要火為印，如土太旺，又要水為財，木為官，金為食傷，隨其所在意向，合其喜忌，再見甲乙亦不以爭合妒合論，蓋化者，如烈女不更二囚，歲運遇之，皆閒神也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c007:p0004",
+      "sha256": "9505d4b0fe2dde026066ddfe4d9ce778451a2aa732e10ddf4df9549fb627a78f"
+    }
+  ]
+}

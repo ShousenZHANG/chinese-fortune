@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c029",
+  "title": "震兌論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F29&oldid=844380",
+  "revision": "844380",
+  "source_timestamp": "2017-03-23T15:47:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c029.wiki",
+  "raw_sha256": "82b0f331cbca3da75fde41ed79c23d697a07f0e104db26b62499a01cf4380d75",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "震兌論",
+      "text": "震兌勢不兩立，而有相成者存。",
+      "layer": "base_text",
+      "passage_id": "ditian:c029:p0001",
+      "sha256": "885b81348718251644cc56fe00170db5ad04ce0bd5a48e81be8a50dbded8e083"
+    },
+    {
+      "section": "震兌論",
+      "text": "震在內，兌在外，月日皆木，年時皆金是也，主之所喜者在震，以兌為敵國，必用火攻，主之所喜者在兌，以震為奸宄，備禦之而已，兌在內，震在外，月日皆金，年時皆木是也，主之所喜者在兌，以震為遊兵，易於滅，然不可黨也，主之所喜者在震，以兌為內寇，難於滅，尤不可助也，惟水可為說客，可以相間相解，亦論主之所喜所忌何如，若金忌木而木帶火，木不傷土，不必去木也，若木忌金而金強者不可戰，秋金而木茂，木終不能為金之害，反以成金之仁，春木而金盛，金實足以制木之性，反足以全木之義，其月提是木，年日時皆金者，雖問主之所喜所忌，而亦宜順金之性，凡月是金，年日時皆木者，雖問主之所喜所忌，而亦宜順木之性。",
+      "layer": "commentary",
+      "passage_id": "ditian:c029:p0002",
+      "sha256": "36f6ce94e30b9b1a4ea2c4a1b0e5cb5a210a431394764993524fb1215efb9130"
+    }
+  ]
+}

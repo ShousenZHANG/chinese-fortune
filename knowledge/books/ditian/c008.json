@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c008",
+  "title": "從化論－假",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F08&oldid=844356",
+  "revision": "844356",
+  "source_timestamp": "2017-03-23T15:44:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c008.wiki",
+  "raw_sha256": "7264788dac3dc81bd84396b848adcde978407146d44e642025bcded785aa1d7b",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "從化論－假",
+      "text": "真從之像有幾人，假從亦可發其身。",
+      "layer": "base_text",
+      "passage_id": "ditian:c008:p0001",
+      "sha256": "eb287558a87b9324912123be378b27b3be4503e2d13a7842fa3de78251a920f5"
+    },
+    {
+      "section": "從化論－假",
+      "text": "日主弱矣，財官強矣，不能不從，中有所助者，便假，至於行運，財官得地，雖是假從，亦可富貴，但其人不能免禍，或心術不端耳。",
+      "layer": "commentary",
+      "passage_id": "ditian:c008:p0002",
+      "sha256": "c81a1c9f59e7be5b55c062a3cd30f98dd78d369f3b8e0c9983139b7589010053"
+    },
+    {
+      "section": "從化論－假",
+      "text": "假化之人亦可貴，孤兒異姓能出類。",
+      "layer": "base_text",
+      "passage_id": "ditian:c008:p0003",
+      "sha256": "9e3ec4ceaf711d54ca844f526c529f5e847bd9747928ae7f3d27e5bcb943d203"
+    },
+    {
+      "section": "從化論－假",
+      "text": "日主孤弱，而遇合神，不能不化，但有暗扶日主，如合神虛弱，則化不真，至歲運扶起合神，制伏忌神，雖為假化，亦可取用，異姓孤兒，亦能出類，但其人多執滯偏拗，作事迍邅，骨肉刑剋耳。",
+      "layer": "commentary",
+      "passage_id": "ditian:c008:p0004",
+      "sha256": "1f16e58f7664c880c382a0e7b07533d14ecd55ca6c44939e3add9fcd92584f17"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c248",
+  "title": "润下诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/248/",
+  "revision": "sha256:f2cc896c2f0f3af49a5baad3ec0120119b38b4686f8756708f5abfc75880cff3",
+  "source_timestamp": "2026-09-06T04:11:14.759171+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c248.html",
+  "raw_sha256": "f2cc896c2f0f3af49a5baad3ec0120119b38b4686f8756708f5abfc75880cff3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "润下诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c248:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "润下诗诀",
+      "text": "润下诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c248:p0002",
+      "sha256": "9a1cb2b346a02fff99c80dd541d6fa17b737cd8bcb003887d551a3c97e0e0113"
+    },
+    {
+      "section": "润下诗诀",
+      "text": "天干壬癸喜冬生，更值申辰会局成，或是全归亥子丑，等闲平步上青云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c248:p0003",
+      "sha256": "92d6083a7e6c7f621415e14a06ce818e461649c26b1b8da7a7e7e3641f65fc57"
+    },
+    {
+      "section": "润下诗诀",
+      "text": "壬癸生临水局中，汪洋一会向流东，若然不遇堤防土，金紫荣身位至公。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c248:p0004",
+      "sha256": "ca32cd22804b1a4fb1ce19779dcbce6daad5db4d1879ec5956af4b9d8c62e46c"
+    },
+    {
+      "section": "润下诗诀",
+      "text": "眉批：如万宗人，",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 8,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c248:p0005",
+      "sha256": "c894d9dfb84ab87fa0b6561b89635a25dbd73aeeefacf702b957f7c7202c5522"
+    },
+    {
+      "section": "润下诗诀",
+      "text": "庚子 庚辰 壬申 辛亥，得申子辰合亥子水局，合此格，只忌官运。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c248:p0006",
+      "sha256": "30aaf186472fd3b2269a33cee3afca4d4771419305dc6e5a283af1640c5a305d"
+    }
+  ]
+}

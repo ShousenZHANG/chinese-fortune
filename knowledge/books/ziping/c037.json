@@ -1,0 +1,81 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c037",
+  "title": "三十七、論食神",
+  "source_url": "https://www.donglishuzhai.net/chapter/3750.html",
+  "revision": "sha256:cfa9cfe790264f433d62ec2d8f13ad6793347a27ebf8709d9b8f4881db0421ac",
+  "source_timestamp": "2026-09-06T04:17:11.091Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c037.html",
+  "raw_sha256": "cfa9cfe790264f433d62ec2d8f13ad6793347a27ebf8709d9b8f4881db0421ac",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十七、論食神",
+      "text": "食神本屬洩氣，以其能生財，所以喜之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0001",
+      "sha256": "fb80b4e3dc84b297aa43d5f5b6e9c793556780261a72672397bd66421892499f"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "故食神生財，美格也。財要有根，不必偏正疊出。如身强食旺而財透，大貴之格。若丁未、癸卯、癸亥、癸丑，梁丞相之命是也；己未、壬申、戊子、庚申，謝閣老是也。藏食露傷，主人性剛，如丁亥、癸卯、癸卯、甲寅，沈路分命是也。偏正疊出，富貴不巨，如甲午、丁卯、癸丑、丙辰，龔知縣命是也。夏木用財，火炎土燥，貴多就武。如己未、己巳、甲寅、丙寅，黃都督命是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0002",
+      "sha256": "eb32b2e325d3845add4e541a470ac2ee30236887bb10113b837bf818648d6168"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "若不用財而就煞印，最爲威權顯赫。如辛卯、辛卯、癸酉、己未，常國公命是也。若無印綬而單露偏官，只要無財，亦爲貴格，如戊戌、壬戌、丙子、戊戌，胡會元命是也。若金水食神而用煞，貴而且秀，如丁亥、壬子、辛巳、丁酉，舒尚書命是也。至於食神忌印，夏火太炎而木焦，透印不礙，如丙午、癸巳、甲子、丙寅，錢參政命是也。食神忌官，金水不忌，即金水傷官可見官之謂。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0003",
+      "sha256": "d252ffe73b957caff9a46a4b95c15ffc7726c2321e02165ee96ba77796ca1dc5"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "至若單用食神，作食神有氣，有財運則富，無財運則貧。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0004",
+      "sha256": "6fc646e2a88c13e350ae56c3b8e958913265e0aa0115b4252e8536fbc0c2ab56"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "更有印來奪食，透財以解，亦有富貴，須就其全局之勢而斷之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0005",
+      "sha256": "493f806a35e7de778a252946839ef658c520ccbbc601c6f8a1840d3c436e2e3f"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "至於食神而官煞競出，亦可成格，但不甚貴耳。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0006",
+      "sha256": "29d3ff3992b38756910be4c2e025453d8c0542ffff3619a5d0360f21f16cd85c"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "更有食神合煞存財，最爲貴格。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0007",
+      "sha256": "e9fe053aa7776e44aa9274eea6d54c9d83fd1d2fe5de83d2b039c002dfc41d2c"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "至若食神透煞，本忌見財，而財先煞後，食以間之，而財不能黨煞，亦可就貴。如劉提督命，癸酉、辛酉、己卯、乙亥是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0008",
+      "sha256": "f3dac6be56d76d55a49d3f974a6395a8afa19c5860738500731785ec41994885"
+    },
+    {
+      "section": "三十七、論食神",
+      "text": "其餘變化，不能盡述，類而推之可也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c037:p0009",
+      "sha256": "f0e4a22db2fc56e9e1f17f5e3b9b2ce4fb65aa5d73e34bac0e63c9e339ba1d23"
+    }
+  ]
+}

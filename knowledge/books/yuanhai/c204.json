@@ -1,0 +1,183 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c204",
+  "title": "二月建卯候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/204/",
+  "revision": "sha256:ecf185c8981ba2f145b3fdcfee9f0c1d4ec64d52465f36d4b333f63c7e8a4715",
+  "source_timestamp": "2026-09-06T04:11:04.777785+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c204.html",
+  "raw_sha256": "ecf185c8981ba2f145b3fdcfee9f0c1d4ec64d52465f36d4b333f63c7e8a4715",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二月建卯候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "二月建卯候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0002",
+      "sha256": "2392a25a26c5d1953153e3d43d96f3031466c6b9d64a7ed61fb0e8b9ce81e75e"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "丙丁二月身逢印，大怕庚辛酉丑伤，水运敛荣木火旺，西方行运定遭殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0003",
+      "sha256": "73a81e55cc5d96f6d8ccb86192c0aeb53a5c4d54704185bfca1bba8dafbd4e71"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "眉批：二月乙木旺，为丙丁之母，忌金克之，喜水佐之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c204:p0004",
+      "sha256": "af5dd5fb1a6e88b84eda29cc557bb21c89f623ab811f84a994feb7f7e851230d"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "甲日卯月重逢丑，格中有火不须嫌，再行火土兴财禄，岁运宜金怕水缠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0005",
+      "sha256": "74fdaea531929348656b77d9366e6c7bba40b2fc89c9c4deb0e03b239b4236ec"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "眉批：丑中有己土，为甲之妻财，火又为子，故喜而乐之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c204:p0006",
+      "sha256": "a3258a2c5162bd8e6ef6d1df875e7c72cedd056bb52290581c16e8c5a051ede0"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "木正荣於二月中，若将为用喜生逢，北方亥子成名利，午未行来坐福浓。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0007",
+      "sha256": "2df615a807cf3bef2c92cb7064c2239f573fbbe6a0bac061501a12444295b68e"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "眉批：木以比为日，以南为食，正木火通明。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c204:p0008",
+      "sha256": "ff4c89e679800135b9b5cb2d573b49dc6f7832ae1f47a0c76a79727144bae4cb"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "卯宫大怕逢金降，火旺根深制伏强，四柱有金嫌巳丑，运来酉上定须伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0009",
+      "sha256": "ff0d1b85552be606aabd04711790a6fc7da70a3bd683138d88eb541f4e025057"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "眉批：巳丑乃巳酉丑全金局，故忌之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c204:p0010",
+      "sha256": "c10736d1114ae41c7e0883df0e6484a5f9994602f426bbcb642578784dc72965"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "己卯日元二三月，杀生有露火偏奇，只宜木火重迎见，金水行来命必亏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0011",
+      "sha256": "9742910a0e1967780c359d9b29e8bff94e89bd6bf36404b98f1a3d9f9f82baa2"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "庚辛卯月多逢木，日主无根怕旺财，南北两头防有破，如逢申酉祸难来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0012",
+      "sha256": "d0304d1d98bea2c4fa6f0555c704b85be0766dafda6829bcad4061087c24c875"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "眉批：南为官杀，北为盗气，如行西方可以助力。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c204:p0013",
+      "sha256": "d208ccfc67c1df317d55fedaa2bfcbaff3ebe35a4916e42e75fc072837d8222a"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "癸日无根卯月逢，局中有火反成功，如行身旺多财富，若至官乡数必终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c204:p0014",
+      "sha256": "f1de4b70e8266e67fa4397901a189e5a5c18466127eb0259982e9e66582c2127"
+    },
+    {
+      "section": "二月建卯候诗诀",
+      "text": "眉批：卯月癸水长生之地，火者财也，身旺宜北方也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c204:p0015",
+      "sha256": "d8fda6ad57500269bbff54160cef44dda24367205e6e5ec0f3ea98b230b48bbc"
+    }
+  ]
+}

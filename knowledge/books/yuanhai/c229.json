@@ -1,0 +1,67 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c229",
+  "title": "魁罡诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/229/",
+  "revision": "sha256:9f9c3ec0ce1ec24944216603d7abd1cf4628288f82f9b59202108e3b5c96b78c",
+  "source_timestamp": "2026-09-06T04:11:10.250517+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c229.html",
+  "raw_sha256": "9f9c3ec0ce1ec24944216603d7abd1cf4628288f82f9b59202108e3b5c96b78c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "魁罡诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "魁罡诗诀",
+      "text": "魁罡诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0002",
+      "sha256": "c8b32710de21fd3bdd67785af402f76f1181453c895f79cacacf09a0359e5e5b"
+    },
+    {
+      "section": "魁罡诗诀",
+      "text": "魁罡四日最为先，叠叠相逢掌大权，庚戌庚辰怕官显，壬戌壬辰畏财连。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0003",
+      "sha256": "4abb005dafe2d1f1546b16a920dd360b67a72908b031da9e7104c5a2763739e2"
+    },
+    {
+      "section": "魁罡诗诀",
+      "text": "主人性格多聪慧，好杀之心断不偏，柱有刑冲兼破害，一贫彻骨受答鞭。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0004",
+      "sha256": "12aa64239d971632b032c241e9b598e380c8152b94148b246e5da708fd45b993"
+    },
+    {
+      "section": "魁罡诗诀",
+      "text": "戊戌庚辰杀最强，壬辰庚戍号魁罡，日加重者方为福，身旺逢之贵异常，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0005",
+      "sha256": "83b1ecbd471c381459fbf67f5dfa0b7c910f1ef3c7b4a30df4b397f58f9e1f67"
+    },
+    {
+      "section": "魁罡诗诀",
+      "text": "如逢一位冲刑重，彻骨贫寒不可当。魁罡四柱日多同，贵气期来在此中，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0006",
+      "sha256": "31faa4f786c165d8e03481df49b0b4bf35a589a55e50ac389d959c771d9e1c82"
+    },
+    {
+      "section": "魁罡诗诀",
+      "text": "日主独逢冲克重，财官显露祸无穷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c229:p0007",
+      "sha256": "f7fa1fd3a3a09a5c5e0b34c31d720804bc77f7ecc4b223b76118c1d98e7d361a"
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c192",
+  "title": "造微论",
+  "source_url": "https://luckclub.cn/bazi/001/192/",
+  "revision": "sha256:aba23ce2de1ce35f73997269d64ebca8e7e61e4458a0e832f7fd8414f692dbec",
+  "source_timestamp": "2026-09-06T04:11:02.351167+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c192.html",
+  "raw_sha256": "aba23ce2de1ce35f73997269d64ebca8e7e61e4458a0e832f7fd8414f692dbec",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "造微论",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "造微论",
+      "text": "造微论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0002",
+      "sha256": "cbbda7baebfe9db63bd52c156ac41ac80eae5f8798ed79bb50043adea6be6826"
+    },
+    {
+      "section": "造微论",
+      "text": "两仪肇辟，六甲攸生。将三元而作三才，建四时而为四柱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0003",
+      "sha256": "622eec2de6fb28e55efda7ef098e564d45b30b5e7c116c50ae4b20cfe286c872"
+    },
+    {
+      "section": "造微论",
+      "text": "干为禄本，定一生职位高低；支作命基，布三限寿元终始。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0004",
+      "sha256": "79b3583a6ed470433c1006b45be40ce22ba5a8ffc82c07e7ff4be14111216d3b"
+    },
+    {
+      "section": "造微论",
+      "text": "年生为根，月建为苗。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0005",
+      "sha256": "27ada713ed3351a01d404f4eda6ed0177eb8f99c2085b025e9511b96d67374dd"
+    },
+    {
+      "section": "造微论",
+      "text": "日管经营，断中年之休咎；时为结果，定晚岁之荣枯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0006",
+      "sha256": "69a56d8a75301386e61b3148985f7c5e8cde8a8f5c16ad94d1698518f65aad5c"
+    },
+    {
+      "section": "造微论",
+      "text": "先推胎息之由，次入变通之道。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0007",
+      "sha256": "5cd59e7e7ec68034ddaea8e095bc5410e59ee680b1141c57e09ea6825bd4b3e6"
+    },
+    {
+      "section": "造微论",
+      "text": "为官为贵，缘上下以威合；多滞多危，本根元而相克。是故格清局正，当为台阁之臣；印旺官生，必为钧衡之任(眉批：钧是秤砣，衡是秤杆，用以称天下之物，如国家大臣主此，钧衡之任如称物一般意思)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 49,
+          "end": 91,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0008",
+      "sha256": "17e526ba8a85967c8de0c36e73b97b6812c26b8bbcbe70340738005546e9ea20"
+    },
+    {
+      "section": "造微论",
+      "text": "马头带剑，镇压边疆；印绶逢华，尊居翰苑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0009",
+      "sha256": "214733738107e956d034e495ae884893b10319cf30c6f931fdf9d26ec2723c5c"
+    },
+    {
+      "section": "造微论",
+      "text": "禄虽多而有害，福不为样；杀虽重而无伤，刑当不祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0010",
+      "sha256": "b32e6bffd94cab0d9ad7fe23cca19a7e138e465229e2c8ee59d5b007d9fd7768"
+    },
+    {
+      "section": "造微论",
+      "text": "三奇忽遇，才高立解成名；六合正逢，家富又能增荣。空亡亲於寡宿，孤独龙锺；长生陷於空亡(眉批：容陷杀名天中羊刃杀)，贫寒偃蹇。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 42,
+          "end": 56,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0011",
+      "sha256": "f7678f1c36dd1e16a4f8d8040cfc173c688c19aab93b98d377b101ad16297387"
+    },
+    {
+      "section": "造微论",
+      "text": "桃花临帝座，因色亡身；咸池更会日宫，缘妻致富。根源浅薄，逢生旺而不荣；本主兴隆，遇休囚而反吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0012",
+      "sha256": "83f340a64493d01982740accb30bb6325df6dce5836e0ded149ba07afc2b77e8"
+    },
+    {
+      "section": "造微论",
+      "text": "羊刃临於五鬼，定须重配徒流；勾绞叠于三刑，应是频遭编配。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0013",
+      "sha256": "5b476e0e8e92d62166d0b2ee67e9201ac3718a3dd7b3f2d1c085ff2ac4e5d104"
+    },
+    {
+      "section": "造微论",
+      "text": "是以登仕途者莫逢吞啖，爵禄亏停；当兵权者勿遇天中，身权退失。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0014",
+      "sha256": "e38f1c0db4e0d1e6d3ed87b520485f820e1f0408809f1bf527df79caf683bce7"
+    },
+    {
+      "section": "造微论",
+      "text": "胸襟澄澈，盖因水济江湖；学问渊博，本是水居壬癸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0015",
+      "sha256": "b759a57bdaae0c1ed8ba504deab4388e6cdaf9c0c532a0dbe419ea6c27d5c25e"
+    },
+    {
+      "section": "造微论",
+      "text": "慈祥恺悌，木乘甲乙之乡；焦燥炎阳，火盛丙丁之地。名高禄重，乾金(眉批：乃亥宫巳卦，以乾为金)早会庚辛；贯朽粟陈，镇土重亲戊己。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 31,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0016",
+      "sha256": "014ff153460d816bb81f3c0999248ec57c8386bc2a950db90d1ab68b7ceca97a"
+    },
+    {
+      "section": "造微论",
+      "text": "木繁而无金斩削，纵荣而末岁孤穷；火炎而无水陶溶，纵发而早年夭折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0017",
+      "sha256": "9e7c2fd7e8348543da49bc2ee227d8881b5d37309ef822f71bdd32063d6a1e9b"
+    },
+    {
+      "section": "造微论",
+      "text": "奥若水之浮泛，惟凭土以堤防；土重而无木疏通，遂归愚浊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0018",
+      "sha256": "6bbd1604284932438ecc90be63269036534a5c858f393d6694c0e99bda82e829"
+    },
+    {
+      "section": "造微论",
+      "text": "金坚而无火锻炼，终是凶顽。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0019",
+      "sha256": "48d839a15893e8f5b56b8b0c1567165dde862b7a704d5abf76af39ac21df70d6"
+    },
+    {
+      "section": "造微论",
+      "text": "至若金脆火炎，多则损己；木柔金重，利则伤身。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0020",
+      "sha256": "7f2eada0f28222f086c69cc06ca189a78db49949e50a7c21b7419ccf3b0db124"
+    },
+    {
+      "section": "造微论",
+      "text": "水清而不假土多，土弱而不禁木盛。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0021",
+      "sha256": "331f4e03a187ea2c2957b54c8e8db84d7f4c1fa339acde0b332e0ace8a943733"
+    },
+    {
+      "section": "造微论",
+      "text": "火强燥而微眇，水既济以宽和。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0022",
+      "sha256": "1f504120483e5e28e1a88aa206aee43c0fffd502b96ac55691479ffe92b48b7c"
+    },
+    {
+      "section": "造微论",
+      "text": "须将匀配为佳，亦以均调为上。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0023",
+      "sha256": "6d1791e84082588003f779bce730ba8ed56cf5b2a39886eb8babe30f93c61eeb"
+    },
+    {
+      "section": "造微论",
+      "text": "大显者贵乎深隐，大屈者贵乎卑伸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0024",
+      "sha256": "6212d8dbed7c0e7fe855fbd5f3038ef392f2291c304260c37170f60e0e74c955"
+    },
+    {
+      "section": "造微论",
+      "text": "寿极年高，皆是禄临帝旺；职崇位显，为缘马会官星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0025",
+      "sha256": "2c5e514eb79f9ef2c3fe22c3c7777d4812a92fe95677d902879cdd1d68352e96"
+    },
+    {
+      "section": "造微论",
+      "text": "华盖(眉批：寅午戌见戌，巳酉丑见丑，申子辰见辰，亥卯未见未)逢空，偏宜僧道；学堂遇贵，惟利师儒。五行若也萧索，五命因而低弱；日逢空寡，其妻多致生离。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 2,
+          "end": 30,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0026",
+      "sha256": "18653a11949db8ff00ed2e0eed86dcacd55c68b5af8c86d31fcce9f174e27a2a"
+    },
+    {
+      "section": "造微论",
+      "text": "时值孤虚，其子多饶不肖。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0027",
+      "sha256": "b4d80e8f9c1165cb69de59421fa1dca8c5dcd9b4026758f82763b054553a28ea"
+    },
+    {
+      "section": "造微论",
+      "text": "绝宫为鼓盆(眉批：鼓盆主克妻)之杀，胎宫(眉批：胞胎之宫也)为白虎之神。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 5,
+          "end": 15,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        },
+        {
+          "start": 20,
+          "end": 30,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0028",
+      "sha256": "e1b7abac4a2955dad51106af83b4851efcdddc0b5874355170d5239d8824d92d"
+    },
+    {
+      "section": "造微论",
+      "text": "天空临嗣息之宫，末岁损成家之子。运逢吉宿无本主，则未足欢娱；限守凶神有根苗，则不须畏惧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0029",
+      "sha256": "ec4947a46a0615d49c13a81eb63f2d63fe9cfa6ef295e7d8b0196860502844e6"
+    },
+    {
+      "section": "造微论",
+      "text": "岁君若临恶阿曜，一岁迍邅；生时若值休囚，一生愁叹。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0030",
+      "sha256": "bc749e93b7e763fbcb56971f2da34e2e3258ae923f0e974c03d81bb5cfc969e4"
+    },
+    {
+      "section": "造微论",
+      "text": "源清者其流必远(眉批：源为命，流为运)，本浊者所作无成。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 7,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0031",
+      "sha256": "bd3ecfd3c82615f369fd98604d03fb8ae4b54e815b0b8b93b82cfb0cc3ef7aef"
+    },
+    {
+      "section": "造微论",
+      "text": "八字超群，不贵即当大富；五行驳杂，居安当可虑危。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0032",
+      "sha256": "df1b2e7a97e560a15d64eefb96260365820c52f0604685a9da385ecc1c6430ad"
+    },
+    {
+      "section": "造微论",
+      "text": "休囚者身性卑微，旺相者名位壮实。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c192:p0033",
+      "sha256": "0753a3c19b1a16cd53363792992728acec314cbbd9451d52b3a6078ec390439d"
+    },
+    {
+      "section": "造微论",
+      "text": "先强後弱，必先吉而後凶；始弱终强，亦始凶而终吉。若乃运限所临之地，凭流年(眉批：当年太岁，参看方可断之作之吉凶) 星辰凶吉以定祸福。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 36,
+          "end": 56,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c192:p0034",
+      "sha256": "41e00dfa6a2b85d9255c189bf9fb3fb3aa61792d54de650018fde384d2a54470"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c025",
+  "title": "起天官贵人",
+  "source_url": "https://luckclub.cn/bazi/001/025/",
+  "revision": "sha256:91e2262c009389cb512ad9c0dbd82149f860a96e6448dd01939521cb1261841d",
+  "source_timestamp": "2026-09-06T04:10:29.676294+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c025.html",
+  "raw_sha256": "91e2262c009389cb512ad9c0dbd82149f860a96e6448dd01939521cb1261841d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "起天官贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c025:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "起天官贵人",
+      "text": "起天官贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c025:p0002",
+      "sha256": "11f99f60daf4de12d6d5e3478a71e8a76df5bc2e4576f1eafaeca89fe6e9dda9"
+    },
+    {
+      "section": "起天官贵人",
+      "text": "天官遁甲火羊群，乙诲青龙事可陈，丙见巳兮为官贵，丁见酉兮戊戌寻，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c025:p0003",
+      "sha256": "9481573e569f61e25cadb5395c9cf44811b47c6e894347d2afe1c890c3b65eed"
+    },
+    {
+      "section": "起天官贵人",
+      "text": "己用卯兮庚宜亥，辛喜申兮壬爱寅，六癸之人逢见午，必作朝廷显代人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c025:p0004",
+      "sha256": "f231c5d28c08d1fb79f426444e0f42e95a0fb16a8e38064bb0c018055a4f68e6"
+    },
+    {
+      "section": "起天官贵人",
+      "text": "其法以生年干论。甲申年生见未是，若时上见极佳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c025:p0005",
+      "sha256": "7dec853370a9c3fdf2fafa6899961fb6ff74ee217132a029ca0cefb823b2d974"
+    },
+    {
+      "section": "起天官贵人",
+      "text": "眉批：天官要天元庸秀，无伤纳音和而福助，乃为吉。喜福神者，财官印也。逢恶杀不吉。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 40,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c025:p0006",
+      "sha256": "ce4a70d1d86d685639c113d858fe288154fe0b0f2213ea0b45468d4f9a3bba4d"
+    }
+  ]
+}

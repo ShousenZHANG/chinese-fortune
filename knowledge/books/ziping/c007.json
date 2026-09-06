@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c007",
+  "title": "七、論刑沖會合解法",
+  "source_url": "https://www.donglishuzhai.net/chapter/3720.html",
+  "revision": "sha256:f215183ad4b91582ae09caeecfe455dca9aba7c54f0171725225d3cefc1b0e2b",
+  "source_timestamp": "2026-09-06T04:16:52.041Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c007.html",
+  "raw_sha256": "f215183ad4b91582ae09caeecfe455dca9aba7c54f0171725225d3cefc1b0e2b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "刑者，三刑也，子卯、巳申之類是也；沖者，六沖也，子午、卯酉之類是也；會者，三會也，申子辰之類是也；合者，六合也，子與丑合之類是也。此皆以地支宮分而言，斜對爲沖，擊射之意也；三方爲會，朋友之意也；並對爲合，比鄰之意也。至於三刑取義，姑且闕疑，雖不知其所以然，於命理亦無害也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0001",
+      "sha256": "b7600de84a47bf5774814971b99c6069f497cdd836d9c6b52484ce0140725208"
+    },
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "八字支中，刑沖俱非美事，而三會六合，可以解之。假如甲生酉月，逢卯則沖，而或支中有戌，則卯與戌合而不沖；有辰，則酉與辰合而不沖；有亥與未，則卯與亥未會而不沖；有巳與丑，則酉與巳丑會而不沖，是會合可以解沖也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0002",
+      "sha256": "ac2941089bfdd2b1759a9ac106e384ef7c957e38a04ebc2e9fe3f85b6e126e4a"
+    },
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "又如丙生子月，逢卯則刑，而或支中有戌，則卯與戌合而不刑；有丑，則子與丑合而不刑；有亥與未，則卯與亥未會而不刑；有申與辰，則子與申辰會而不刑，是會合可以解刑也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0003",
+      "sha256": "87d97f4903091515b679bc3d86b429fafe1f09a36ffe0c8e4c745484d4f730b8"
+    },
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "又有因解而反得刑沖者，何也？假如甲生子月，支逢二卯相並，二卯不刑一子，而支又逢戌，戌與卯合，本爲解刑，而合去其一，則一合而一刑，是因解而反得刑沖也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0004",
+      "sha256": "fbdb1d05b33ed5234874c950268f3329608552621e34b8594fbf967b08fb1095"
+    },
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "又有刑沖而會合不能解者，何也？假如子年午月，日坐丑位，丑與子合，可以解沖，而時逢巳酉，則丑與巳酉會，而子復沖午；子年卯月，日坐戌位，戌與卯合，可以解刑，而或時逢寅午，則戌與寅午會，而卯復刑子，是會合而不能解刑沖也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0005",
+      "sha256": "88c09951048611e15606dc7433852180e39cf27e5c73d95706bdb598ac197833"
+    },
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "更有刑沖而可以解刑沖者，何也？蓋四柱之中，刑沖俱不爲美，而刑沖用神，尤爲破格，不如以別位之刑沖，解月令之刑沖矣。假如丙生子月，卯以刑子，而支又逢酉，則又與酉沖，而不刑月令之官。甲生酉月，卯日沖之，而時逢子位，則卯與子刑，而月令官星，沖之無力。雖於別宮刑沖之位，六親不無刑尅，而月官猶在，其格不破，是所謂以刑沖而解刑沖也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0006",
+      "sha256": "0cc76a4afbd7341a6afc7903b3f22335f13a47499d8274401fe140c9d53cfe5d"
+    },
+    {
+      "section": "七、論刑沖會合解法",
+      "text": "如此之類，在人之變通而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c007:p0007",
+      "sha256": "44de369c5111d76041eaee69915e5191f22f168f489981d61c16fc2716761cab"
+    }
+  ]
+}

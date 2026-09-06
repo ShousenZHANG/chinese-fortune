@@ -1,0 +1,640 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c014",
+  "title": "论六十花甲子纳音并注解",
+  "source_url": "https://luckclub.cn/bazi/001/014/",
+  "revision": "sha256:af50360b2b1283e95621b0f6159ff655630b7cb555a0807a36b7befa5b5c4397",
+  "source_timestamp": "2026-09-06T04:10:27.440673+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c014.html",
+  "raw_sha256": "af50360b2b1283e95621b0f6159ff655630b7cb555a0807a36b7befa5b5c4397",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0001",
+      "sha256": "57f46e9838fbd9eb98512f4751e2f801c26554663de18df244daca4937a857ab"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿论六十花甲子纳音并注解",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0002",
+      "sha256": "7868c6a42e7aca827a293e2b44ff8a003439b3cfe49cfc2e06070315130a7a39"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "夫甲子者，始成干大挠氏，而纳音成之於鬼谷子，象成於东方曼倩子。时曼倩子既成其象，因号曰：“花甲子”。然甲子者，自子至亥，十二宫皆有金木水火土之属。始起於子，是一阳。终於亥，为六阴。其五行所属，但如人之世事也。何以谓之世事？大率五行金木水火土，在天为五星，於地为五岳，於德为五常，於人为五脏，其於命也为五行。是故甲子之属乃应之於命，命则一世之事，故甲子纳音象之。时圣人喻之，亦如人一世之事体也。一世之事者，宣圣所谓三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心。其甲子之象，自子而至於亥，其理灼然而可见矣。且如子、丑二位者，阴阳始孕，人在胞胎，物藏根核，未有涯际也。寅卯二位者，阴阳渐辟，人渐生长，物以折甲，群葩渐剖，如人将有立身也。辰巳二位者，阴阳气盛，物当华秀，人至三十、四十，而有立身之地，进取之象。午未二位者，阴阳彰露，物色成齐，人至五十、六十，富贵贫贱可知，凡事兴衰可见也。申酉二位者，阴阳肃杀，物已收成，人已龟缩，各得其静矣。戌亥二位者，阴阳闭塞，物气归根，人当休息，各有归者也。但只详此十二位先後灼然可见，於六十甲子可以次第而知矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0003",
+      "sha256": "65e93b584032b8a5a089e151a54c4f7b04cdab90080ca119cbcf235d83162ff2"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：周时王诩善道，隐清溪之鬼谷，世称鬼谷子。“五星”，金星木星水星火星土星。“五常”，仁义礼智信。“五行”，金木水火土。“始孕”，如妇人怀妊在腹。“折甲”，犹言笋离树有皮。“群葩”，犹言花有葩米有莠。“立身”言束带立于朝，盛旺行道也。五、六十人之贵贱可见，至於七十人，精神衰弱，以待数终，无能为也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 150,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0004",
+      "sha256": "db0f819b3a7bc53c2ce7db243bda596d9b757f13614bda61a631fafb4d1be63f"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿甲子、乙丑海中金 —以子属水，又为湖，又为水旺之地。兼金死於子，墓于丑，水旺而金死墓，故曰海中之金也。又曰：气在包藏，使极则沈潜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0005",
+      "sha256": "a2951b9757a527002f414c473f700f092db1273364c7838927bb8ad5ece55906"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：其金形行水路，性弱体寒，形行阳地则渐增。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0006",
+      "sha256": "b4aa811aed142e7a3a246a4812415366b9394e2b75a58406be0e8fe5c28362dd"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿丙寅、丁卯炉中火—以寅为三阳，卯为四阳，火既得位，又以寅卯之木生之。此时天地开炉，万物始生，故曰炉中火也。天地为炉，阴阳为炭。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0007",
+      "sha256": "ee3fc6e599da487315bfec2eb9260c14a264c0231fc031419a93fda7125ea6d1"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿戊辰、己巳大林木—以辰为原野，巳为六阳。水至六阳则枝荣叶茂，以茂盛之大林木而生原野之间，故曰大林木也。声播九天，阴生万倾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0008",
+      "sha256": "c1936f356e91684c5c09bd291503ca5e41a07b8de1006f24255acdd28e23faac"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：形可质，有物可形，执性坚刚，勿宜生旺则谓功。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0009",
+      "sha256": "61346b057a23f0755110718c920795c663294e2e87086bc7c7aad0650a712c37"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿庚午、辛未路旁土—以未中之木，生午中之旺火，火旺则土子斯而受刑。土之所生，未能育物，犹路旁土也。壮以及时，乘厚载木，多不喜木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0010",
+      "sha256": "e308b2bd07a2a340fadd0edbcb954cf665637e895d320f7bd0ad8752ca6e9a56"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿壬申、癸酉剑锋金—以申酉金之正位，兼临官申，帝旺酉。金既生旺，则成刚矣。刚则无逾於剑锋，故曰剑锋金也。虹光射斗牛，白刃凝霜雪。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0011",
+      "sha256": "6e1764d6f051174ce2ea9d6828d1eec140e099a6e1ace18dda89495267d82ca3"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：不退有伤和气。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0012",
+      "sha256": "3772a23589e99f35aded0f68163f192d2fdf10db383e63a4d6772dcce3dfd9c5"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿甲戌、乙亥山头火—以戌亥为天门，火照天门，其光至高，故曰山头火也。天际斜晖，山头落日，散绮因以反照，舒霞本自余光。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0013",
+      "sha256": "37c3a28f24ec66f26d6dfe8253a6a73576e495ab99b876e937c307ec7fc01ee3"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：气焰藏熄无光，报勳归王休息之中。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0014",
+      "sha256": "81d0857aefa2c186de14d98e3825ff0331ed45139a6309383d1e51d23356ad7d"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿丙子、丁丑涧下水—以水旺於子，衰於丑，旺而反衰，则不能为江河，故曰涧下水也。山环细浪，雪涌飞湍，深流三峡之倾，涧壑千寻之例。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0015",
+      "sha256": "6a32f53de1e6ac17f91ae69baed06497d05f4def4c5303340d4c06d77e597ba0"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "﻿戊寅、己卯城头土—以天干戊己属土，寅为艮山，土积而为山，故曰城头之土也。天京玉晶，帝里金城，龙蟠千里之形，虎踞四维之势也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0016",
+      "sha256": "e48c72c23fa5ae92a084973e3d2ca0668c676b82b6f05e558cc5ed574dc0c091"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：恶乎生旺，贵以休囚，能成物。土厚木疏，必成其器。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0017",
+      "sha256": "6d555634e8e0d1723c3bf6d74286582c39f2ba0a93892691200706ae3eeab2a0"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "庚辰、辛巳白腊金—以金养於辰，生於巳，形质初成，未能坚利，故曰白腊金也。气渐发生，金弱在矿，交接日月之光，凝象阴阳之气。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0018",
+      "sha256": "6ab11669ee0e17fc0e9d11798178ccae5dd75af9b697322e4fc5bd82c4450648"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：其金始舍北乡，子母富分当然，日主须假火成形，勿伤气盛，水济成功。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0019",
+      "sha256": "33f7304c8e46edc89a8f1f5deb764e277e2c0aa83a2f20705d241a02d15b6095"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "壬午、癸未杨柳木—以木死於午，墓於未。木既死墓，虽得天干壬癸之水以生之，终是柔木，故曰杨柳木。万缕不断之丝，千条不针之线。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0020",
+      "sha256": "5f5c50f06927cd5bbbb5028a940022ac9d861b60d1275042d25569a91d759485"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：安之圆静而清，扰之则动而浊。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0021",
+      "sha256": "1a0949e4b6564c9460fa0967f51a70e89358bbe32e12c74d25755bb2870e1136"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "甲申、乙酉井泉水—金临官在申，帝旺在酉，金既生旺，则水由以生，然方生之际，力量未洪，故曰井泉水也。气息而静，过而不竭，出而不穷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0022",
+      "sha256": "0ea77566650e4e6f145cfbfe66bc54d4d22811c6c9a430fe0cc2d2db1df27d1d"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "丙戌、丁亥屋上土—以丙丁属火，戌亥为天门，火既炎上，则土非在下而生，故曰屋上土也。以火木而生旺，是从增其势，至於死绝，喜以安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0023",
+      "sha256": "c65276e8250531901ea51210a1e61afe933de570b9e3527276bce60db51b27f0"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：积霖霖风雨之功。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 11,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0024",
+      "sha256": "0fb21b98f1a54f4a70a3755fe2db8f981e742f024ab57ea3e3d235d00dd583ef"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "戊子、己丑霹雳火—丑属土，子属水。水居正位而纳音乃火，水中之火，非龙神则无，故曰霹雳火。电掣金蛇之势，云驱铁骑之奔，变化之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0025",
+      "sha256": "4bba8410674737341dc8c3357a1b4646e36851531c7429d874e280e17709eb7f"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：气在一阳，形居水位。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0026",
+      "sha256": "043e3815d1f1d4369066da0de623e28330b0d3594c8bcbe17bc7f2f4c638ed8e"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "庚寅、辛卯松柏木—以木临官在寅，帝旺在卯，木既生旺，则非柔弱之比，故曰松柏木也。欺雪淩霜，参天覆地，风撼奏笙簧，雨余张旌施。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0027",
+      "sha256": "9b2bfb37a30a3a6c3753d0b909cb61568c58805de725d8533503b2bb03a3e52b"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：火旺而木则藏，喜水润之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 15,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0028",
+      "sha256": "cc028047c2850a18cdeec83eaafa7fd02f5429e0325b367073583ac1ac38caa6"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "壬辰、癸巳长流水—辰为水库，巳为金长生之地，金则生水，水性已存，以库水而逢生金，泉源终不竭，故曰长流水也。势居东南，贵安静。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0029",
+      "sha256": "cd761780982804aa34b5d687147a744beff02c58fb64b58b6f6726f0e86ea7d1"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：来之不穷，纳之不尽。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0030",
+      "sha256": "2c982a5a9fe37eea5abbc06b5e5d5de4badafb9c512bba5fec9f42f6d023c82c"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "甲午、乙未沙中金—午为火旺之地，火旺则金败。未为火衰之地，火衰则金冠带，败而方冠带，未能作伐，故曰沙中金也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0031",
+      "sha256": "666cdd55fc7571cefcf38bb906e399528fd636348689b3a36f100953af24d677"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "丙申、丁酉山下火—申为地户，酉为日入之门。日至此时而藏光也，故曰山下火。酉沈兑位，复喜东南，出震明离，其光愈辉，暗恶火，明喜济。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0032",
+      "sha256": "07e429212f7b9a6e3dcc27902394da0592502ab1e07226178d136cce4143c30e"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：龟宿地方，力微体弱。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0033",
+      "sha256": "0c7f7564be939a6449130a248d32be96c308008a36a9425b8fb987e9ab89f6dd"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "戊戌、己亥平地木—戌为原野，亥为木生之地。夫木生於原野，则非一根一林之比，故曰平地木也。惟贵雨露之功，不喜雪霜之侵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0034",
+      "sha256": "a20b11122a556e63c5ca3df6ec02fbf8e89c0849f25f7aca26008d25f49ba5be"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "庚子、辛丑壁上土—丑虽土家正位，而子则水旺之地，土见水多则为泥也，故曰壁上土也。气具闭塞，物尚包藏，掩形遮体，内外不及故也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0035",
+      "sha256": "f0f1b94db6bbe871a4e8b16dec959840465dfd3feacc263d2c55c8fadfa5fc4f"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：势未有用，土未能生。木多损志劳神，金助刚毅果敢。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0036",
+      "sha256": "a05f192764c55250bcbf46612f36c9ef9a843652e5c518b2fe7a50359de1e820"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "壬寅、癸卯金泊金—寅卯为木旺之地，木旺则金嬴。且金绝於寅，胎于卯，金既无力，故曰金泊金。气尚在寅，则金形绝地，薄若缯缟，乃云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0037",
+      "sha256": "c5476d361e4425b9614fea7ad9384f21eb7706293cc3224975d7b5f5093e505e"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "甲辰、乙巳覆灯火—辰为食时，巳为禹中，日之将午，艳阳之势，光於天下，故曰覆灯火。金盏摇光，玉台吐艳，照日月不照处，明天地未明时。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0038",
+      "sha256": "a07159ea36f05d7229806ae77b4c7cbc12b854082fc011494de144198d420c47"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：气形与地势立。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0039",
+      "sha256": "0a60afb23a17202f8b9cb79bec92a990c2852ceff60635dca1603b3c4a21ab73"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "丙午、丁未天河水—丙丁属火，午为火旺地，而纳音乃水，水自火出，非银汉不能有也，故曰天河水。气当升降，沛然作霖，生旺有济物之功。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0040",
+      "sha256": "6bdf9b4472d44b5f71533a0d2d73c57a2cbd2d44de33026c1a1c2e93ed54666d"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：金能相助於内必厚，木火拼行，火势难当，王静绳安，南缩退闲，算而无幸。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 37,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0041",
+      "sha256": "5a8ee20bc98c55d949511445dcccaf5de0d2f50a6dd6bdfab83e8474ea87ec85"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "戊申、己酉大驿土—申为坤，坤为地；酉为兑，兑为泽。戊己之土加於坤泽之上，非其他浮薄之土，故曰大驿土。气以归息，物当收敛，故云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0042",
+      "sha256": "ad6e723f5f865496f1a0e6fb2bbebf8618558e14348a41b72168f5b323d3a751"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "庚戌、辛亥钗钏金—金至戌而衰，至亥而病，金既衰病，则诚柔矣，故曰钗钏金。形已成器，华饰光发，厌乎生旺，贵乎藏体，火盛伤形，终为不喜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0043",
+      "sha256": "2daeb8e36cbfa2f2ce0c676aab57dc43d68a0604d5164d568952d1de14669735"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：气方藏伏，形体已残，煆炼百饰已成其状。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0044",
+      "sha256": "0fc619839f2346eee35aa2ba8acf695e1241d85ff01e308bd356296208169978"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "壬子、癸丑桑柘(音同折)木—子属水，丑属金，火方生木，金则伐之，犹桑柘方生，人便以戕伐，故曰桑柘木也。气居盘屈，居於水也，未施刀斧之劳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0045",
+      "sha256": "35e42c129479e53b37de9bab0a440ffe0577e4350bbf925898ede1ae03b9c591"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：喜水相养，见金无功。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0046",
+      "sha256": "6b6855b2a41c996997ad1e36fe83c1c06b1275f184837808153c820f41d866d1"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "甲寅、乙卯大溪水—寅为东旺，惟卯为正东。水流正东，则其性顺，而川涧地沼俱合而归，故曰大溪水。气出阳明，水势恃源，东流滔注，故云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0047",
+      "sha256": "54789e684778625140f06daf7ff0784b1092e27b0dd0170250b1f9671e2ff83b"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：梦向东行，若言川海潮。恶土相进，喜金加助。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0048",
+      "sha256": "1c3396948f60d5b6d1c7c90f9c5b11b9e84a3a09726876012ff300412afba71e"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "丙辰、丁巳沙中土—土库在辰而绝在巳，而天下丙丁之火至辰冠带，而临官在巳，土既库绝，旺火复兴生之，故曰沙中土。土疏气散故不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0049",
+      "sha256": "23f0d1d3f39f43c3998911248ef784ed7a9721e45c0ebe9661b828c30107dbc7"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：气已水阳，癸生已过壁，嫌金。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0050",
+      "sha256": "ac587d5f08a5a16ed0d3d7f0d04cd1de71b7d4a37a3bde03300e8265a4c24472"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "戊午、己未天上火—午为火旺之地，未中之木又复生之，火性炎上又逢生地，故曰天上火。气过阳宫，重离相会，炳灵交光，发焰炎主，故云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0051",
+      "sha256": "a2a874d6924ff99d745b21f6d49c715e25eb16e610af4eaa3f1d89ff0360a5a7"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：顺之则吉，逆之则殃。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0052",
+      "sha256": "db52658a966b7db38332f52974c7473df97ad7e4366a3e614c66d86c08745e04"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "庚申、辛酉石榴木—申为七月，酉为八月，此时木则绝矣，惟石榴之木复实，故曰石榴木。气归静肃，物渐成实，木居金上，其味秋果成实，故云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0053",
+      "sha256": "525a8fefb6bd141b0322fb0d5686ffc88f2f80fccd204a846b285bbf191b5ffb"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：金多则损，水润则荣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 13,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0054",
+      "sha256": "f330c869b01d92f95d8fc71390b7f0d58711dbd3e2dadbbaf26702e6f2f6f766"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "壬戌、癸亥大海水—水冠带在戌，临官在亥，水则力厚矣。兼亥为江，非池水之比，故曰大海水。势趋天门，历事已毕，生旺不泛，死绝不涸，故云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c014:p0055",
+      "sha256": "597315147fc12aeea943098c1d8f7efd7acee5d479af9e2402d8edc97c382541"
+    },
+    {
+      "section": "论六十花甲子纳音并注解",
+      "text": "眉批：海纳百川，汪洋万倾，戌为天门，亥子为汪海。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c014:p0056",
+      "sha256": "84781e535ac19ac899cafccb27df0f6595f396d9714ee57cf6ea5f28d051c00a"
+    }
+  ]
+}

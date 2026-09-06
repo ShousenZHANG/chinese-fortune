@@ -343,26 +343,8 @@ def _scan_tian_luo_di_wang(
 
 
 # Inline classical 起法 used when shensha.json entry has no qi_fa_table
-# (kept here for robustness — values cross-checked against 19-shensha.md).
-INLINE_QI_FA: dict[str, dict] = {
-    "羊刃": {
-        "甲": "卯", "乙": "寅", "丙": "午", "丁": "巳",
-        "戊": "午", "己": "巳", "庚": "酉", "辛": "申",
-        "壬": "子", "癸": "亥",
-    },
-    "飞刃": {
-        "甲": "酉", "乙": "申", "丙": "子", "丁": "亥",
-        "戊": "子", "己": "亥", "庚": "卯", "辛": "寅",
-        "壬": "午", "癸": "巳",
-    },
-    "天乙贵人": {
-        "甲": ["丑", "未"], "戊": ["丑", "未"], "庚": ["丑", "未"],
-        "乙": ["子", "申"], "己": ["子", "申"],
-        "丙": ["亥", "酉"], "丁": ["亥", "酉"],
-        "壬": ["卯", "巳"], "癸": ["卯", "巳"],
-        "辛": ["寅", "午"],
-    },
-}
+# Tables live in assets/shensha.json; a missing table must not silently select
+# a second, independently maintained implementation.
 
 # Inline 日柱-based classical sets (these are typically not in shensha.json's
 # qi_fa_table when there's only prose qi_fa).
@@ -405,15 +387,14 @@ def detect_all_shensha(
     """Detect all 35 神煞 across the four pillars.
 
     Returns a deduped list of dicts: {name, position, source_pillar, hit,
-    trigger, meaning}. Uses ``shensha_data`` from assets/shensha.json when
-    available; falls back to classical INLINE_QI_FA for any entry missing a
-    qi_fa_table.
+    trigger}. Uses the tables in assets/shensha.json. Missing tables produce
+    no inferred hit; the caller must supply the complete reference asset.
     """
     triggered: list[dict] = []
 
     for name, category in SHENSHA_CATEGORY.items():
         entry = _find_entry(shensha_data, name) if shensha_data else None
-        meaning = (entry or {}).get("meaning", "")
+        meaning = ""
         qi_fa = (entry or {}).get("qi_fa_table")
 
         if category == "day_stem":
@@ -423,10 +404,8 @@ def detect_all_shensha(
                 alt = _find_entry(shensha_data, "红艳煞")
                 if alt:
                     qi_fa = alt.get("qi_fa_table")
-                    if not meaning:
-                        meaning = alt.get("meaning", "")
             if qi_fa is None:
-                qi_fa = INLINE_QI_FA.get(name)
+                raise ValueError(f'神煞起法表缺失: {name}')
             display_name = "红艳" if name in ("红艳", "红艳煞") else name
             triggered.extend(_scan_day_stem(
                 display_name, qi_fa, day_stem, branches_map, meaning
@@ -521,6 +500,8 @@ def detect_all_shensha(
         if dedup_key in seen:
             continue
         seen.add(dedup_key)
+        h.pop('meaning', None)
+        h['interpretation_status'] = 'trigger_only'
         deduped.append(h)
     return deduped
 

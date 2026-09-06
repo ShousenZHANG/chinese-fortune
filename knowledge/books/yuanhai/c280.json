@@ -1,0 +1,123 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c280",
+  "title": "论八字撮要法",
+  "source_url": "https://luckclub.cn/bazi/001/280/",
+  "revision": "sha256:5809ced1413c57b790e7d9e23eae9b525b4d840015f8dca075a2039675cdb778",
+  "source_timestamp": "2026-09-06T04:11:22.471809+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c280.html",
+  "raw_sha256": "5809ced1413c57b790e7d9e23eae9b525b4d840015f8dca075a2039675cdb778",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论八字撮要法",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "论八字撮要法",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0002",
+      "sha256": "9be5b0ef21396f4116654fc3e0afd14ae7339efb3a66aee6425b5cc2a929e506"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "用之为官不可伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0003",
+      "sha256": "6656528bfcd61aba49f0c9a30564a7693ef8eff9c3f320629b37c5e35861bafb"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "用之为财不可劫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0004",
+      "sha256": "89b5732b9d4218c198415b3d5291e19a089a542629387642ec2071ba8671a760"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "用之为印不可破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0005",
+      "sha256": "8dd7ca13232c236bbbd58f0489e431310b5923aa21f9836d2469124fc263cf6f"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "用之为食不可夺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0006",
+      "sha256": "b6105de99c98de60cf8af0f7d586f1e1e620d40a124cd1bfcde0bd3f7ca9e3cd"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "用之为禄不可冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0007",
+      "sha256": "58319d42fe50ef9957cab145d2f2de82b6bf6923f099b1af5e6dac6156044640"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "若有七杀须要制，制伏太过反为凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0008",
+      "sha256": "a6afe4318c764b9535419635dfa4072d56d13794de70c243282853d7707c02e0"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "若用伤官须要静，此是子平万法宗。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0009",
+      "sha256": "c7bde4bc0a6c54121597c5447d3c207d01583d727eca9f6b4213b3e5a1da4506"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "伤官最怕为官运，伤官尤喜见财星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0010",
+      "sha256": "a88dc3c5612a54f460a8ef409ff05f8dc02e17a60097edaedf8272980b118b6e"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "印绶好杀嫌财旺，羊刃怕冲宜合迎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0011",
+      "sha256": "6f44341cedb5d91ca37df5c6fa3141b01ca66bf3c0e34fc8d2171b62d07c44fa"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "比肩要逢七杀制。七杀喜见食神刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0012",
+      "sha256": "57fee41d85eaa8c9ff24658549f61a9e4a8093a38d4b6b67f9e43303c4d52133"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "有禄怕见官星到。食神最喜偏财临。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0013",
+      "sha256": "cb875ee6346eb13fb1db36dec7d97f3f83962553af874d91edbf6c4cbf0e5ed5"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "此是子平撮要法，江湖术者仔细明。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0014",
+      "sha256": "8e24e04dd7378ee5cd034ee5c56f62272415b8c78f23526fbe1c29162cc44705"
+    },
+    {
+      "section": "论八字撮要法",
+      "text": "又不用财星尽可劫。不用官星尽可伤。不用印绶尽可坏。不用食神尽可夺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c280:p0015",
+      "sha256": "266e114e824ccd632c2790d437707e1f20602d3a75924fb11b1aab04e169d730"
+    }
+  ]
+}

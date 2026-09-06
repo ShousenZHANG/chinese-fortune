@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c036",
+  "title": "閒神論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F36&oldid=844387",
+  "revision": "844387",
+  "source_timestamp": "2017-03-23T15:48:57Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c036.wiki",
+  "raw_sha256": "39b937ce93d8890ce0f16a32a579499ba3c94d2c7d84615b734aacc6bd8a631d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "閒神論",
+      "text": "閒神一二未為疵，不去何妨莫動伊，半局閒神任閒著，要緊之地立根基。",
+      "layer": "base_text",
+      "passage_id": "ditian:c036:p0001",
+      "sha256": "a95aa538ed2851cfd0ab40e7c3e055acbd856c6c2a6270c574c436e0adc1c522"
+    },
+    {
+      "section": "閒神論",
+      "text": "喜神不必多，一喜而眾善備矣，忌神不必多，一忌而眾害備矣，自喜忌之外，不必以為喜，不足以為忌者，皆閒神也，如以天干為用神，成氣成合，而地支之神，虛脫無氣，沖合自適，升降無情，如以地支為用神，成局成合，而天干之神，遊散浮泛，不礙日主，陽輔陽而陰氣停泊，不沖不動，不合不助，陰亦如之，日月有情，年時不顧，日主無氣無情，日時閒斷，年月不顧，日主無沖無害，此等閒神，只不去動他，但有要緊之地，自然營寨，至於運道，只行自己邊界為妙。",
+      "layer": "commentary",
+      "passage_id": "ditian:c036:p0002",
+      "sha256": "6a5483faaa9757068ba29a5a7d4a6f1c216439a9add5aee15aa38a991d4f2712"
+    }
+  ]
+}

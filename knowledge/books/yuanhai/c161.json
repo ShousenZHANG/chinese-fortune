@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c161",
+  "title": "论太岁吉凶",
+  "source_url": "https://luckclub.cn/bazi/001/161/",
+  "revision": "sha256:eb2f1268c52e49a3ea72a093a8bcf790a97629f14c8e6beb8b1d8d2e5dca2592",
+  "source_timestamp": "2026-09-06T04:10:56.386599+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c161.html",
+  "raw_sha256": "eb2f1268c52e49a3ea72a093a8bcf790a97629f14c8e6beb8b1d8d2e5dca2592",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论太岁吉凶",
+      "text": "论太岁吉凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c161:p0001",
+      "sha256": "73867aec023ed77eb308d5038a257f6aa1e5d09cb782b40d519c465ed5809b67"
+    },
+    {
+      "section": "论太岁吉凶",
+      "text": "太岁乃年中天子，故不可犯，犯之则凶。经云：“日犯岁君，灾殃必重，五行有救，其年反必招财。”且如甲日见戊土太岁是也，克重者死。甲乙者，寅卯亥未日时者，犯克岁君，决死无疑。有救则吉，乃八字庚辛酉巳丑金局也。经云：戊己愁逢甲乙，干头需要庚辛或丙丁火局焚木，有灾勿咎，效此推之。或得己和甲亦解之。大抵太岁不可伤之，相生者吉，乃五行有救，其年反必为财。犯岁君者，其年必主凶丧，克妻妾及破财是非，犯上之悔。加以勾绞、空亡、咸地、宅墓、病符、死符、白虎、羊刃诸杀并临，祸患百出。神煞加临，轻重推之。日干虽不克岁，犹恐运克岁君，若加岁运冲刑，羊刃冲合，主破耗丧事，倘有贵人禄马释之稍吉。八字有救无虞。故云：太岁乃衆杀之主，人命遇之未必为灾。若遇战斗之乡，必主刑於本命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c161:p0002",
+      "sha256": "a90d8f4e63fc534563ed3ef0f65e5ef5e7a1c329a78a8ad569b6e9d25f58f6e4"
+    },
+    {
+      "section": "论太岁吉凶",
+      "text": "眉批：假如甲日生於戊年，是日年本克也，故谓之曰犯岁君主凶祸，柱中原有庚金制其日，甲受制则不能克戊土，谓五行有救，戊乃甲之偏财，则反招财。故言五行仿此。凡日犯岁君，即君臣相战，必有一死，臣犯刑君之罪必重，故云刑於本命。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 108,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c161:p0003",
+      "sha256": "df618f69d77c4cc7e854ae5c2e31bf8e1baa539cb66e5d38355861a222812360"
+    }
+  ]
+}

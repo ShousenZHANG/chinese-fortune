@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c052",
+  "title": "论天地转杀",
+  "source_url": "https://luckclub.cn/bazi/001/052/",
+  "revision": "sha256:9e8e539cec03f123bd7f482aeda25f69f51e228edc55d3325a5b36d935a63154",
+  "source_timestamp": "2026-09-06T04:10:34.774380+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c052.html",
+  "raw_sha256": "9e8e539cec03f123bd7f482aeda25f69f51e228edc55d3325a5b36d935a63154",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论天地转杀",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "论天地转杀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0002",
+      "sha256": "4c24969910fa9b06a9d3d650fc2491afa609dee6cf89ef53b1c4cd4fcdd06e97"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "春兔夏马天地转，秋鸡冬鼠便为殃。行人在路须忧死，造屋未成先架丧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0003",
+      "sha256": "0db24ac11ba418738e73f167f4812a44ac5827f73cbbfd21e2ec53dff17fae06"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "物极而反谓之转，旺连天干曰天转，旺连纳音曰地转，谓之天地转。如春木旺之时，见乙卯乃天连天，谓之天转。见辛卯乃旺连纳音，谓之地转。夏乃火旺，见丙午为天转，见戊午为地转。秋乃金旺，见辛酉为天转，见癸酉为地转。冬乃水旺之时，见壬子为天转，丙子为地转。地转取纳音为是，其日最忌，上官受职、出行商贾、造作、嫁娶，必主凶。命逢此日，必主夭折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0004",
+      "sha256": "17aa8de97b39abbcc2275f271fc958d844b661b5470ab1381d93160f2b0efdcd"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c052:p0005",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "春乙卯天转，夏丙午，秋辛酉，冬壬子；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0006",
+      "sha256": "7e5ae8083d903a91b461677bf1f02497e7f8538cbc7bfd243758cf9a183b70ca"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "春辛卯地转，夏戊午，秋癸酉，冬丙子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0007",
+      "sha256": "fc95c26a850263f6c57dd8031d99fb02f37e653bc0aeb711eee9ad9ccf654402"
+    },
+    {
+      "section": "论天地转杀",
+      "text": "经曰：韩信被伤，只因天地转杀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c052:p0008",
+      "sha256": "7572bdceeb3b1859cf8a54b64de8fc67dfe8a03bd9b69b7d13f4d9732bbcb8c6"
+    }
+  ]
+}

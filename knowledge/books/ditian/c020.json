@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c020",
+  "title": "通隔論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F20&oldid=844370",
+  "revision": "844370",
+  "source_timestamp": "2017-03-23T15:46:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c020.wiki",
+  "raw_sha256": "f646b66d51d6cd69a376e2b4e754c0b872ccbe24879772954579e03ae3639022",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "通隔論",
+      "text": "兩意本相通，中間有關隔，此關若通也，到處歡相得。",
+      "layer": "base_text",
+      "passage_id": "ditian:c020:p0001",
+      "sha256": "f526775973a4f2188d91467273d6523f3d9162d22485fe6162ebc775535617d8"
+    },
+    {
+      "section": "通隔論",
+      "text": "陰陽之氣，欲和合相生，木土而得火，火金而得土，土水而得金，金木而得水，水火而得木，情本相通，若中間或被間阻，或被刑沖，或被劫占，皆為關隔，如局中及歲運，得引用會合之神，去其間阻，和其刑沖，制其劫占，乃為通關，關通則滿局皆順遂矣，豈不歡相得哉。",
+      "layer": "commentary",
+      "passage_id": "ditian:c020:p0002",
+      "sha256": "61f758534924637dbd4078a5f1ff937ca4f102ae29a634bce9b45e049602d22b"
+    }
+  ]
+}

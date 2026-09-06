@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c028",
+  "title": "二十八、論支中喜忌逢運透清",
+  "source_url": "https://www.donglishuzhai.net/chapter/3741.html",
+  "revision": "sha256:5a4f959521594a37c4e293c40e1e6cc9476bd9f24ea7feea912b82001fe5d06b",
+  "source_timestamp": "2026-09-06T04:17:04.708Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c028.html",
+  "raw_sha256": "5a4f959521594a37c4e293c40e1e6cc9476bd9f24ea7feea912b82001fe5d06b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十八、論支中喜忌逢運透清",
+      "text": "支中喜忌，固與干有別矣，而逢運透清，則靜而待用者，正得其用，而喜忌之驗，於此乃見。",
+      "layer": "base_text",
+      "passage_id": "ziping:c028:p0001",
+      "sha256": "d8009865fc530e26f5daacede06576e19f0d269c1b2873fc25f902544880cae4"
+    },
+    {
+      "section": "二十八、論支中喜忌逢運透清",
+      "text": "何謂透清？如甲用酉官，逢辰未即爲財，而運透戊；逢午未即爲傷，而運透丁之類是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c028:p0002",
+      "sha256": "77190fb031091a6e3e9fdb8c8b0ad293fa5e0d0e66fbace0e83f44c270fe6aa4"
+    },
+    {
+      "section": "二十八、論支中喜忌逢運透清",
+      "text": "若命與運二支會局，亦作清論。如甲用酉官，本命有午，而運逢寅戌之類。然在年則重，在日次之，至於時生於午，而運逢寅戌會局，則緩而不急矣。雖格之成敗高低，八字已有定論，與命中原有不同，而此五年中，亦能爲其禍福。若月令之物，而運中透清，則與命中原有者，不甚相懸，即前篇所謂行運成格變格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c028:p0003",
+      "sha256": "6ab48bbead69b60a3efad20e64b8bab3a28b55133cfb2059f21a5d2024f4fc88"
+    },
+    {
+      "section": "二十八、論支中喜忌逢運透清",
+      "text": "故凡一八字到手，必須逐干逐支，上下統看。支以爲干之生地，干以爲支之發用。如命中有一甲字，則統觀四支，有寅亥未卯等字否，有一字，皆甲木之根也。有一亥字，則統觀四干，有壬甲二字否。有壬，則亥爲壬祿，以壬水用；有甲，則亥爲甲長生，以甲木用；有壬甲俱全，則一以祿爲根，一則以長生爲根，二者並用。取運亦用此術，將本命八字，逐干逐支配之而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c028:p0004",
+      "sha256": "03f092aa62659432b89f67237521846ec24a3b691bcac951163a049f214ec3d5"
+    }
+  ]
+}

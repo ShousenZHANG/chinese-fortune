@@ -1,0 +1,39 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c029",
+  "title": "二十九、論時說拘泥格局",
+  "source_url": "https://www.donglishuzhai.net/chapter/3742.html",
+  "revision": "sha256:73b57735f817df971e9dfc6f458c06e9ff620d2be9ba10036fb7bb0f4d232a1d",
+  "source_timestamp": "2026-09-06T04:17:04.717Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c029.html",
+  "raw_sha256": "73b57735f817df971e9dfc6f458c06e9ff620d2be9ba10036fb7bb0f4d232a1d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十九、論時說拘泥格局",
+      "text": "八字用神，專憑月令；月無用神，始尋格局。月令，本也；外格，末也。今人不知輕重，拘泥格局，執假失真。",
+      "layer": "base_text",
+      "passage_id": "ziping:c029:p0001",
+      "sha256": "b518ef2e76f7590e034dc1fc867d1333e51b1ec60aa6c9ec9b4f39413c2e2517"
+    },
+    {
+      "section": "二十九、論時說拘泥格局",
+      "text": "故見戊生甲寅之月，時上庚申，不以爲明煞有制，而以爲專食之格，逢甲減福；丙生子月，時逢巳祿，不以爲正官之格，歸祿幫身，而以爲日祿歸時，逢官破局；辛日透丙，時遇戊子，不以爲辛日得官逢印，而以爲朝陽之格，因丙無成；財逢時煞，不以爲生煞攻身，而以爲時上偏官；癸生巳月，時遇甲寅，不以爲暗官受破，而以爲刑合成格；癸生冬月，酉日亥時，透戊坐戌，不以爲月劫建祿，用官通根，而以爲拱戌之格，填實不利；辛日坐丑，寅年、亥月、卯時，不以爲正財之格，而以爲填實拱貴；乙逢寅月，時遇丙子，不以爲木火通明，而以爲格成鼠貴。",
+      "layer": "base_text",
+      "passage_id": "ziping:c029:p0002",
+      "sha256": "f2bd42a08c5268f5506fd51c843609886a667f8c006bf6743b6d7b4447affd6c"
+    },
+    {
+      "section": "二十九、論時說拘泥格局",
+      "text": "如此謬論，百無一是，此皆由不知命理，而妄爲評斷也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c029:p0003",
+      "sha256": "b239cba3246b57ed289b5ec22afe429a37d306497146074de9ea34babee627a7"
+    }
+  ]
+}

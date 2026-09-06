@@ -5,8 +5,9 @@ Subcommands:
     numbers --upper N --lower N           — 二数起卦 (no explicit change line)
     name --text 中文                      — 字数起卦
 
-Output includes 主卦, 变卦, 互卦, 体卦/用卦/体用关系 (生/克/比和) and a brief
-体卦旺衰 estimate based on the current solar season.
+Output includes 主卦, 变卦, 互卦 and 体卦/用卦/体用关系 (生/克/比和).
+The classical profile omits seasonal strength judgments; legacy-gregorian
+can expose the old Gregorian-month diagnostic, explicitly labeled as such.
 """
 
 from __future__ import annotations
@@ -15,6 +16,8 @@ import argparse
 import sys
 from datetime import datetime
 
+from classical_time_numbers import add_calendar_arguments, time_numbers
+from request_time import add_request_arguments, resolve_time
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
@@ -25,7 +28,6 @@ from utils import (
     error_envelope,
     json_print,
     ok_envelope,
-    parse_datetime_arg,
     shichen_number,
 )
 from yijing_cast import (
@@ -90,10 +92,8 @@ def ti_yong_relation(ti_tri: str, yong_tri: str) -> str:
 # (五行属土) 时, ti_state 结构性地永远拿不到「旺」, 八个卦里有两个的旺衰判断被
 # 系统性压低, 而输出照样把它当确定结论交给用户。
 #
-# 月粒度模型必须在「辰月算木还是算土」之间二选一; 这里取通行的四季月归土, 与本
-# 文件原有注释声明的意图一致, references/05-meihua.md §5.2 已同步对齐。
-# 真正的 18 天分界需要节气, 本引擎不提供 —— 输出的 body_strength 因此在
-# package() 里带 granularity 标注, 供解读时如实说明其精度。
+# 仅 legacy-gregorian 兼容诊断使用本表。它没有计算节令瞬间或季末 18 天分界,
+# 不能当作已核古法旺衰; classical 默认不输出这组判断。
 SEASON_WX_BY_MONTH: dict[int, str] = {
     # 公历月 -> 当令五行 (对应 寅卯/巳午/申酉/亥子 四组 + 辰未戌丑 四季月)
     2: "木", 3: "木",
@@ -124,21 +124,12 @@ def ti_state(ti_tri: str, month: int) -> str:
 # Cast methods
 # --------------------------------------------------------------------------- #
 
-def cast_by_time(now: datetime) -> dict:
-    y, m, d = now.year, now.month, now.day
-    sc = shichen_num(now.hour)
-    upper_num = ((y + m + d) % 8) or 8
-    lower_num = ((y + m + d + sc) % 8) or 8
-    change = ((y + m + d + sc) % 6) or 6
-    return {
-        "method": "time",
-        "now_iso": now.isoformat(),
-        "ymd": [y, m, d],
-        "shichen": sc,
-        "upper_num": upper_num, "lower_num": lower_num, "change_num": change,
-        "upper_tri": XIANTIAN_NUM_TO_TRIGRAM[upper_num],
-        "lower_tri": XIANTIAN_NUM_TO_TRIGRAM[lower_num],
-    }
+def cast_by_time(now: datetime, profile: str = 'classical', leap_policy: str | None = None) -> dict:
+    numbers = time_numbers(now, profile, leap_policy)
+    return {'method': 'time', 'now_iso': now.isoformat(),
+            'ymd': [now.year, now.month, now.day], 'shichen': numbers['hour_number'],
+            **numbers, 'upper_tri': XIANTIAN_NUM_TO_TRIGRAM[numbers['upper_num']],
+            'lower_tri': XIANTIAN_NUM_TO_TRIGRAM[numbers['lower_num']]}
 
 
 def cast_by_numbers(upper: int, lower: int) -> dict:
@@ -190,7 +181,7 @@ def hex_info(lines: list[int], assets: dict[int, dict]) -> dict:
     }
 
 
-def package(cast_meta: dict, question: str | None, month: int) -> dict:
+def package(cast_meta: dict, question: str | None, month: int | None) -> dict:
     upper_tri = cast_meta["upper_tri"]
     lower_tri = cast_meta["lower_tri"]
     change = cast_meta["change_num"]
@@ -198,7 +189,7 @@ def package(cast_meta: dict, question: str | None, month: int) -> dict:
 
     ti_t, yong_t = ti_yong(upper_tri, lower_tri, change)
     relation = ti_yong_relation(ti_t, yong_t)
-    state = ti_state(ti_t, month)
+    state = ti_state(ti_t, month) if month is not None else None
 
     assets = load_hex_assets()
     main_h = hex_info(lines, assets)
@@ -212,8 +203,9 @@ def package(cast_meta: dict, question: str | None, month: int) -> dict:
         f"互卦【{nuclear_h['name']}】",
         f"体卦{ti_t}({BAGUA[ti_t]['wuxing']}), 用卦{yong_t}({BAGUA[yong_t]['wuxing']})",
         f"体用: {relation}",
-        f"体卦当季: {state}",
     ]
+    if state is not None:
+        summary_parts.append(f"体卦当季(旧公历月诊断): {state}")
 
     return {
         **cast_meta,
@@ -232,7 +224,9 @@ def package(cast_meta: dict, question: str | None, month: int) -> dict:
             "body_strength": state,
             # 旺衰按 公历月 粗略取值。土王四季严格说是每季末 18 天, 定 18 天分界
             # 需要节气, 本引擎不提供 —— 落在月初/月末的盘可能实际处在相邻状态。
-            "body_strength_granularity": "月令粗略 (未按节气细分, 四季月整月作土)",
+            "body_strength_granularity": ("旧公历月诊断：月令粗略 (未按节气细分, 四季月整月作土)"
+                                          if month is not None else
+                                          "未输出：所核取数条款不等于旺衰条件已核验"),
         },
         "summary": "; ".join(summary_parts),
     }
@@ -255,9 +249,11 @@ def build_parser() -> argparse.ArgumentParser:
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    # Top-level, not on `time` alone: 当下月令 feeds 体用旺衰 for every method.
+    # Shared target/replay context; legacy-gregorian also uses its civil month.
     p.add_argument("--datetime", dest="dt", type=str, default=None,
                    help="ISO 时间 (如 2026-06-24T13:05), 默认当下; 用于可复现起卦")
+    add_request_arguments(p)
+    add_calendar_arguments(p)
     sub = p.add_subparsers(dest="method", required=True)
 
     pt = sub.add_parser("time", help="年月日时起卦")
@@ -279,13 +275,17 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     try:
-        now = parse_datetime_arg(args.dt)
+        now, time_context = resolve_time(args, datetime_value=args.dt)
     except ValueError as e:
         json_print(error_envelope('meihua', "bad_datetime", str(e)))
         return 1
 
     if args.method == "time":
-        meta = cast_by_time(now)
+        try:
+            meta = cast_by_time(now, args.calendar_profile, args.leap_month_policy)
+        except ValueError as exc:
+            json_print(error_envelope('meihua', 'invalid_calendar_profile', str(exc)))
+            return 1
     elif args.method == "numbers":
         meta = cast_by_numbers(args.upper, args.lower)
     elif args.method == "name":
@@ -294,7 +294,8 @@ def main(argv: list[str] | None = None) -> int:
         json_print(error_envelope('meihua', "unknown_method", '输入无效'))
         return 2
 
-    out = package(meta, args.question, now.month)
+    out = package(meta, args.question, now.month if args.calendar_profile == 'legacy-gregorian' else None)
+    out["time_context"] = time_context
     json_print(ok_envelope("meihua", out))
     return 0
 

@@ -1,0 +1,104 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c209",
+  "title": "七月建申候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/209/",
+  "revision": "sha256:fbc84caee520dc18c518ef0329a6e403d196e43425741526d1cd5e3ae2216d1c",
+  "source_timestamp": "2026-09-06T04:11:05.649614+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c209.html",
+  "raw_sha256": "fbc84caee520dc18c518ef0329a6e403d196e43425741526d1cd5e3ae2216d1c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "七月建申候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c209:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "七月建申候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c209:p0002",
+      "sha256": "273d4c8b397e900626ea892badc30ea222bf266d9ee62f82c9eaf730bdd7b5be"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "印绶财官月建申，北方回喜福还真，火金生旺多清贵，大限行来最怕寅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c209:p0003",
+      "sha256": "ef480451a6f18d45a8eab6924cff679497dd69fab047b4d09be105fa58a45339"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "眉批：七月申宫，庚金旺二十二日，壬水生五日，戊土二日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c209:p0004",
+      "sha256": "20814b3f461c4b24699b2a4499eac6b7561d5faa60c834da386752febc076476"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "建禄庚辛旺在申，有官有印有财星，逆行辰巳荣财禄，北地须知富贵成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c209:p0005",
+      "sha256": "f4c3f4f4ca33fe13e5deebd3db64341d3af4e4680447141fc58eca05a11388fe"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "眉批：庚金在申月旺，宜运行北地为吉。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 18,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c209:p0006",
+      "sha256": "11ecd5dbc695a0201b235e9243763f75950379a2e9e9ddff5d0efe633f55cc0a"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "壬癸生临七八月，火土多厚北方奇，无伤无破休行水，帝旺临官运不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c209:p0007",
+      "sha256": "2616dfb3cf669e36577a6064a9d578369867cb91c8cae4e5d2728d9792eb32f0"
+    },
+    {
+      "section": "七月建申候诗诀",
+      "text": "眉批：言壬水生申酉月即有根，至帝旺运太过。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c209:p0008",
+      "sha256": "34599b1dfbd178f3e2c3f510eba3c06424712cd95e8277c17b3a7c9ba953208c"
+    }
+  ]
+}

@@ -1,0 +1,725 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c278",
+  "title": "五行生克赋",
+  "source_url": "https://luckclub.cn/bazi/001/278/",
+  "revision": "sha256:9debf392579278ec42719b5d4165c6da31647369d9270dd4ef1a4ce19997a9af",
+  "source_timestamp": "2026-09-06T04:11:21.918740+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c278.html",
+  "raw_sha256": "9debf392579278ec42719b5d4165c6da31647369d9270dd4ef1a4ce19997a9af",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "五行生克赋",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "五行生克赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0002",
+      "sha256": "71c4b3cef932cba27d0f2d51add2697a0d4e7ade91de8cadb65389bd3bd2b250"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "大哉干支，生物之始，本乎天地，万象宗焉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0003",
+      "sha256": "3de1861daac29f977f412fd9d3a4323f8d49ff27ecc717d8ddf797d4ff251e10"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "太易生水，未有气也。太初生火，有气未有体也。太始生木，有形未有质也。太素生金，有质未有体也。太极生土，形质俱有也。此乃生物之始，本乎天地之物。所以五行之生，水数一，火数二，木数三，金数四，土数五，五行即成质，而太极既混沌，一判浑胎，浑轻清为天，重浊为地。二气相成，此而成天，且日月星辰，山川草木，人民鱼龙禽兽，万物宗之而生是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0004",
+      "sha256": "0a018038b95ecd680d9c31eb183f196bff7e5704aa088d566f040c7e5a811d01"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "阴阳变化之机，时候浅深之用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0005",
+      "sha256": "1309f2089f296a46a85c24b4d0e81d3bb66b8065e85cfa1c33d096a96ff433c8"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "以地为阴，以天为阳，言阴阳交合，而能生物。如人之妇与夫合，而生子，谓之变化之机。时谓四时，而分春夏秋冬，以三时为一春，三时为一夏，三时为一秋，三时为一冬，以三为三个月，以十二时为一日，三十日为一月，十二月为一年。一时有八刻，每时初刻，初一刻之分，故有浅深。候乃五日一候，每月三十日，分作六候，一年共计七十二侯，如正月工风解冻，蛰虫始振，鱼陟鲷冰，獭祭鱼，雁北乡，草木萌动之类是也。故有浅深之用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0006",
+      "sha256": "501d8c6bdb2d88ddc630b54af18cc4c699a2ce0cff8ee0b303e04906cfb62b9a"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "故金木水火土无正形，生克制化，理取不一。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0007",
+      "sha256": "1ae4f38c9372c2a0724fb0205ee0c0ae3b16b17724fa04fa98d4e197a954f029"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "水能生木，木能生火，火能生土，土能生金，金能生水，此生生不绝之义。金能克木，木能克土，土能克水，水能克火，火能克金，此取制化之义。虽无形之可观，其变化之理无穷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0008",
+      "sha256": "d58c06aff5bfed063e7939480f9e0b3cc379d9f676beb737fe10a74e4cbbe707"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "假如死木，偏宜活水滋濡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0009",
+      "sha256": "2ccc43e4a20dc0d7d3c819db1828c400a4fc5bf4521722285e79ebb4a16ebe39"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "木之枯者，谓之死。赖水生之，得沾濡译，可以复生。假若逢金则剥削矣、逢火则焚尽矣，得水济之，逢春刚荣。故云偏宜活水。理亦然矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0010",
+      "sha256": "1f5c200811e53436f026a4d4a324810c96cdfbb7a403c716150dbf5b6537edd5"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "譬若顽金，最喜红烟锻炼。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0011",
+      "sha256": "0f5ea92d5c0e460c3ac572c08e072a13828cede9fa1599a02026f535300099ac"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "庚辛金生於秋月，无火制伏者，谓之顽金。无金之质，本坚刚之物。人禀之性主义，有刚果毅然卓立。若要成器，必得洪炉丙丁之火，锻炼操持成物，方能用之於世。如无丙丁制之，俗云一块铁，不堪用也，故曰顽金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0012",
+      "sha256": "21d253fc88bb702f2bc58fc8fa80cf54c71fb664945971ea2747f56b4e06e02d"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "太阳火，忌林木为仇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0013",
+      "sha256": "f55e6b8d82e38d50c1f2a59510c23afc3c4752e471dc9bd51a3327d28124d1da"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "太阳，日也，属火，居午位。为人之德，诸星为敢犯，惟忌木星，春夏之木为林木也，正谓春生夏长，木之茂盛，蔽日之光，故云忌林为仇。若夫秋木凋零，冬木全落，其叶不能蔽日之光，此言丙火生於春夏，通木盛者忌之，秋冬不忌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0014",
+      "sha256": "3c87489acf3c0e181f259e25f2dd37628264be4bd80cd5a7532889369f264e59"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "栋梁材，求斧金为友。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0015",
+      "sha256": "870ed66e8499558a335f7f80e263d4462e5224481bb470ab4c87fb2b3e6bff85"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "甲木，为梁栋木也。夫梁之木，必得斧斫削雕刻，然後方可成。斧斫者，庚金也，以斧斫喻之，而取象此言甲木生春，须得庚剥削，然後有贵。若生於秋，则太过，恐伤之不为贵矣。且主筋疼骨病之病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0016",
+      "sha256": "f1c1527c94550b6881a63cf9dfcabcefac6008a1fcfcb9e000df550be2a6891b"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "火隔水不能熔金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0017",
+      "sha256": "43f7394b55bb95498a3d370444319d123d808407f4de5ed0818050f82888e54b"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "夫金生於秋，栖身旺之地，虽得丙火以陶熔，方可成器而贵。四柱又见壬水，以克其火，则火不能熔金，使其金仍为坚刚之气，亦不可以言贵。若无羁绊，当为从此而论可也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0018",
+      "sha256": "26ec051174d67ac234cbf5697e038ce1a1e9e6dd93fc85c5f768e55c80c5b4cc"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "金沉水岂能克木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0019",
+      "sha256": "bd4257414152a7ee64985745d6a8d5a1d9f359c32a3f331a00542885fa19ad14"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "且如甲木喜庚金为煞，若有金，又在申子辰之局，谓之金沉水底，水盛金沉，安能克其木哉？此为遇而不遇之名象也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0020",
+      "sha256": "87a6081386abc49bcbe33638a259bf83b1d88e31db95dd2cc743453f9ff6df2f"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "活木忌埋根之铁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0021",
+      "sha256": "75416cad96f42af0034d438a6a07aabb96bedfffa24e7c3ee33d1a3b1ecf4e1e"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "活木，无根之木，阳木也。若遇水旺有根，且能伤木，金刚伤身，自身受制於人，宁得为福哉？若有丙火制金，可以言福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0022",
+      "sha256": "97adbda4bb62d880f10167d50c29954b91a8f79a8df11e05e1e09fad0e1020e4"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "死金嫌盖项之泥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0023",
+      "sha256": "779274ee55158ef22b5e8f523421104d516fe2dc9b8a1d2e94c2a800cd5fcbc1"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此言金质之弱，又遇土金，是谓土重而金遭埋没之故。如以金为主，岁月时又见戊己，支可以连辰戍丑未之方是也。此象主一生被人压伏，未可以通达断之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0024",
+      "sha256": "0a34a70b679b0e15fb44eb5f047a4df9cbc838ac132b78fa7c4e4463b02450b0"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "甲乙欲成一块，须加穿凿之功。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0025",
+      "sha256": "5f61688b515d3a4cf4aa78f5adad1a52b9bf29c18d16b1af1e36dfe7db449001"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "甲乙之木，生於寅卯辰之方，为之一块，比为曲直仁寿之格局也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0026",
+      "sha256": "33d42c531e99510821456f1d3b1c3bf998da3485c79990a5b5e2d584dc6d20b9"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "壬癸能达五湖，盖有并流之性。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0027",
+      "sha256": "651103db224ffcaf4cf9bf237cc6e2971ec115da3220e8a0fa0ce2c6476f76f9"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "水至於亥子丑之地，乃为湖海，则为会局，其性相并，得汪洋之势。此等生人，有福有重才智士也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0028",
+      "sha256": "f74c861ea0f121ba1e63471459725e535da8462c4b340c3aabac44e03f16b3a4"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "樗木不禁利斧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0029",
+      "sha256": "f04d8f8e3763e3f13fb663a6829f1080592e115360ddabeb98e2752365890ef6"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "樗，朽木也，质性材弱，言甲乙之木，生於秋金之地，则伤其身，当以不美。东方之运大美，更遇西方已矣．",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0030",
+      "sha256": "b3288942ff712e2024a0223d99c9876406372eb6a4a95cc77e129ae544789b84"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "真珠最怕明烟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0031",
+      "sha256": "5f78cbbd8d48a0ac478608e570d72c24d66cdfe650a4a9087b66d04341ed4745"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此当作庚戌辛亥生人，遇丙寅丁卯是也，合者非谓此论。盖庚戌辛亥者，纳音为钗钏之金，所以怕丙寅丁卯炉中之火，非专以金怕火论也。若壬申癸酉剑锋金，又喜明炉也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0032",
+      "sha256": "228f05c444bb1548f8a6f53a0a4cfd23277b18cc79ffa259e521022091cc8ecf"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "弱柳乔松，时分衰旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0033",
+      "sha256": "01be2882004dc323fd756e5708d555a15ab036bf1acc860eff2b76902eaede75"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "壬午癸未为杨柳，至於五六月将衰矣，谓之弱柳，柔软之名象，生於春谓之盛。乔松者，庚寅辛卯松柏木也，生於春谓之乔松。此言木之盛衰，与论他木不同也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0034",
+      "sha256": "7668b60519b30346a1d925081df098e3e82d501c06ddcb9e780e96e3992e3ad1"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "寸金尺铁，气用刚柔。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0035",
+      "sha256": "086b56f64b97c9eb25df3a30453395d5d3c8712d16928975525bd53d3420e949"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "寸金言其微弱，尺铁言其刚健，此可审气候之浅深而用也。柔者用土以资之，刚者用火以制之，可以言福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0036",
+      "sha256": "e2ac6ec30c361432f60dcea86f9a87e39e48e7c2c8744100222983d99ebd6483"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "陇头之土，少木难疏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0037",
+      "sha256": "c17b0ec9235e0bc3ec3f6ca69721b133acde3bfacfe32596939aa2e5defe3fd2"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "戊寅己卯城头土也。寅为艮山，非浮薄土。既为山，虽得木以流之，木少与山不相称，故得均平，方见山林之秀。以人类之，则有福矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0038",
+      "sha256": "135d73be8f68ae15a5845c2be042ebb359b1259f8ef3123d7c95382676f30e95"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "炉内之金，湿泥反蔽。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0039",
+      "sha256": "9763d80da2d2b8fa1fd30bebad9c75827712a64bfd8dd063d1fa2d03d1ce32c3"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "金赖土生，又云湿泥反蔽，何也？假如丙寅丁卯为炉，且壬寅癸卯为金箔，其力甚薄，又在红炉之内，反为掩闭。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0040",
+      "sha256": "64e764536198ad8d20bc73e641ecc6f5cbfed69a73c8928ea8a9547f5d7eabb2"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "雨露安滋朽木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0041",
+      "sha256": "a8f042e33367f17caf1a414ced64d6d729cf6b39d307b6f2661aa4fa1ddadd40"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "木至午而死，至未而入墓矣。虽有雨露，安能得生，终为不达之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0042",
+      "sha256": "1f83dd9e7e06181f47bf87bad7106043730826efe199b2076d7f3464b100a716"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "城墙不産真金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0043",
+      "sha256": "2713f64953ea40070a96545e8a6e5e1080826bb9000ca9c23e8105cbd1bbe169"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "城墙之土，阳土也。惟能堤防水之泛滥，岂能産物乎？犹人之积土成陂，虽産者惟草木而已，安有珍金者乎？",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0044",
+      "sha256": "c5010a3a2628307c1f4afa78507ee1cddfab9bedd8f08c485765ba00bb119a66"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "剑戟成功，遇火乡而反坏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0045",
+      "sha256": "7f6e000407f3fb0971cd44f66eb27d5f78702d14025547514f258721dee442dd"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "美如剑拔，赖火以成其器。倘若这至南方，重见丙丁，此为之太过，反伤其挝，故云反坏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0046",
+      "sha256": "232f8646af49cd4c427f79b46cded1011c6279b4053dd6363feec07b378a696e"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "城墙积就，至木地而愁克。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0047",
+      "sha256": "8f94469a059e9e99b0c2f54bdd6b5b08b0f7424e601c3a9dc3f583e94790a079"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "城墙虚浮之土，遇木多则克之，或裂或伤，岂能当其伤哉？",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0048",
+      "sha256": "be35a8de1f66b75fd4c87374465ff2e432ab9b47dd420f1a691e2153ff4770ff"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "癸丙春生，不雨不晴之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0049",
+      "sha256": "f91e521d7267e0425186733d74b408a92014e96efad5aa955d859f6a53adf9ff"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "癸者，阴水也。在天为雨露之水，在地为泉石之水。丙者，阳火也。在天为太阳之象，在地为炉中之火，故生於春月，二月相兼，欲雨而不雨，欲晴而不晴，各有进退之状。人命禀此之象，亦将以为不显不达之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0050",
+      "sha256": "c26e3bf37167d000986c38bd4c3178b69b57bd16acd4e36948941e118bc56f96"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "乙丁冬産，非寒非暑之天。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0051",
+      "sha256": "d5e0db1e5d6718749f6c4f577338d3fd32b955f0bab8ac496bd1f91d0f48782e"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "乙木者，阴木也。丁火者，阴火也。乙木在天为丹桂，丁火在天为星，生於冬月水盛之地，水不能克，所以不能为寒不暖之象，正得比和之义。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0052",
+      "sha256": "79db6385e91603ad5dbac3e56524425d75023b7b96c4a227fb5ec5e9a706dc51"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "极锋抱水之金，最应离炉运铁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0053",
+      "sha256": "e2bbbd281d23d07209cb4935cae386c5a49a40be86fe6f5c98fd4c9edfdf3418"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "炉者，火也。言金刚无火制，即为铁也。安得成器而言之，当作无用之物可矣。运至陶熔之地，可以为用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0054",
+      "sha256": "449b474def00f11f3962df70809700544e267deb871fdb6198c0c3864dbcdfd6"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "甲乙遇金强，魂归西兑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0055",
+      "sha256": "537aae7dc1c232f150ec541cc84a4f6adaa70c4347acc6b49b087b59a1653fda"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "西方金旺之地，甲乙生於秋天，正以金为斧斫，苟无火制，则其身丧矣，故曰魂归西兑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0056",
+      "sha256": "4a0c6ee967f8e72f6ad5a421f544bf4667776e990d8750932217b10bf8c5e170"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "庚辛逢火旺，气散南离。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0057",
+      "sha256": "1913fe77613298bfbbe36499c184a702fd5127b83b19a5e3ae3bb11c8ac2f417"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此为庚辛夏长，丙丁得位。如人日主，以庚辛受丙丁之锻炼。则身受制太过。苟无土以生身，无壬癸以制火，则身无所赖，安可以福论之。顺支运行西北，可言发一运之财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0058",
+      "sha256": "d61cace8a29b9b2933c512255677e723ced777422f0c52a32225244ed2472081"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "土燥火炎，金无所赖。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0059",
+      "sha256": "d986771e52e9bcae63f5e39d69e1dbdc065b301839b2783525991ded26ae7a86"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "土生火盛之地，则身已爆矣。则己身所以暴躁，不能安逸，何暇生金？且金之母燥急，其子亦无所赖，理之然也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0060",
+      "sha256": "9c4c83edf23fd0f96705a6f4292909aa9dce477071361ec95dbe885fed22887b"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "木浮水泛，火不能生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0061",
+      "sha256": "f8115256fc991a3e6695413a566d8c345192cbf1d51880074b54b0a563683e7a"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "阳水无根之木，生於冬三月，则水溢矣。经云：水泛木浮者阳木。譬如木浮水上者则湿，岂能生火哉？主飘荡湖海之象。遇土堤防，可以言福，若运行西北，不为美矣，见东南可以兴隆。此为身弱者，则喜水多，未免有淫滥之讥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0062",
+      "sha256": "9ae51b3e8f69450778d04e968c2f08e9065f371940fe18f7b14fe8f1f6ebad78"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "九夏熔金，安制坚刚之木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0063",
+      "sha256": "d03ed972ba6731ec76d5087c4912f0d2dd37f511b83045643e5d410fd6da0be0"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "九夏者，四五六月九十日也。谓之九夏，且如庚辛生於九夏，丙丁之地，火旺太甚，金弱则熔化矣。己身受制，如行东方财运，则不能胜任，不可以言富贵矣。遇壬癸济之为美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0064",
+      "sha256": "ef65e7371ba90232ea6c6894f4cc511b3d743c94f4326523cedcf099337743c5"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "三冬湿土，难堤泛滥之波。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0065",
+      "sha256": "2f04bc65c29a30f5215daa2e8167430c7aa7ca7e71592b55c4fa483e056451b1"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "三冬者，冬季三月也。如土生於三冬，且冬令属水，土弱水盛，安能塞其巨流？反为伤身之害矣。行东南运，可以济生，遇土运可以发福，无此二者已矣乎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0066",
+      "sha256": "7e36f96b05c08754e6a2c06239f0a35b78b0e98110cb080945d68d11d6f89fc2"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "轻尘撮土，终非活木之基。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0067",
+      "sha256": "c6799e1e7bc2d02f6b8ad114b500b2c603d5d4957cb5a658b59c748c1ffd4f84"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此为土轻木盛之论。此言一撮土之多，不能为山，安任其活木乎？且木赖土培，土少木盛，则瘦损矣。其为贫乏之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0068",
+      "sha256": "0896ec7e5e8ebc530693c1cf6258e5309afdeb0d11c63453378daff89ce165ee"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "废铁销金，岂能滋流之木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0069",
+      "sha256": "3e95999f02395100625cd5b4de9f62ebe0109ff31e1b91faa3126f47b98b368c"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "言金遇休囚之地，则已废矣，焉能有生水之力。此谓自己血脉消耗已尽，不能与他人为母，亦主贫寒之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0070",
+      "sha256": "1de0d5616950c824dbd212a82fc2cc3377f87ebff9086d2f364dcecf915dd60a"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "木盛能令金自缺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0071",
+      "sha256": "0099fa195313945ed9d90f71065d90a19b4f6ce8066a6f475f68e3bde240d9b1"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此言木多金少，不能制伏。谓人自己身旺，官杀轻微，反伤之也。亦克太过之谓。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0072",
+      "sha256": "304c11beaa59639b90e374b1f7fbff015bdb5d509fb25dbee52a2dd04f34f570"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "土虚反被水相欺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0073",
+      "sha256": "2f8ba96fa35807aa4513703b9f3057333bb7a3d3ef3d48961b1045b4a89e6d2c"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "土虚於亥子丑，水盛土虚，此为不及之论，尚言富贵哉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0074",
+      "sha256": "2cb45d003ab675ecf96201546c1ffd78345536e23729f684b68cf453b67c44f4"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "火无木则终其光。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0075",
+      "sha256": "e06fa406d91e0231928015c708f800ab21bc2e9eb82af9983d2ab907b9cdccd6"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "火赖木生，木为火之母，火为文明之象。若无木生之火，安得有光？虽得子母相依，共发光辉，以显扬於天表可也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0076",
+      "sha256": "6df3a16840e48d266f1a29e7a6ca0d898ef054728053e8211ceecf7cba6e3421"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "木无火则晦其质。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0077",
+      "sha256": "95e156a5495549ee79f5cab5c4fc08eb3ee4d19a5af04a8afbc827270e7038d8"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "如木生人，禀东方一路之秀气。柱中须见火，则显其身，且火、木之子也，如人有根本，赖子以显扬，以生光辉，理亦然也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0078",
+      "sha256": "af6e30cee03cea498f94a2e99c412e55570e097ed67091598749c9e4c3bc508b"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "乙木秋生，腐朽摧枯之易也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0079",
+      "sha256": "1d1be2e810841d2e321b7232c29d9afd40e807a5e6285298acab8e435cd6951d"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "乙木，阴木也。自夏至後，六阴皆生，虽枯朽之时，不能摧其根也。须金盛能生水，水生木，有生生不绝之理也。但恐土多助杀，伤身之患也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0080",
+      "sha256": "8f030ace2f15b6b4960d96041018cdb7582fafbd9ff2b12287bb7f2ad1c11ff7"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "庚金冬死，沉沙坠海岂难乎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0081",
+      "sha256": "e784a97d4afd2e19ed1ddb95d7abd8d829901358218ec575af55d65abdee3ec0"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "庚金生於巳，而死於子。子为水旺之处，湖海之汪洋，况金又能生水，而使其身沈於水乡，不能见用於世。主为人寒薄，骨肉无依之论也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0082",
+      "sha256": "5b69355d8f74889adfc67419626b4c7f47c6d0d8e651c75d8f6ba157659f4ca3"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "凝霜之草，岂用逢金。出土之金，不能胜木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0083",
+      "sha256": "fc590212ff558a65d907beff191ce3ae8c4ae1b73a6624bf9ca49cbcb71a408e"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此二者气尚未足，故不能任其力也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0084",
+      "sha256": "f4cf808e776ccff4cf06d8113d5aaef801f90313626180398ae93343c2ba2d79"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "火未焰而先烟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0085",
+      "sha256": "58b3d058b4edc8d8eb1c868d5b52d8cebee5a95c82104caf058d650b4ea54e85"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此言初生之火，未乘旺而发泄其气，盖有土多之故也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0086",
+      "sha256": "2bba6b24ed99fd8f89d3d39d44be36a524bab7d4a06c1f923f79564b0ffd38a7"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "水既往而犹湿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0087",
+      "sha256": "6a5cd2b25bca417fb8e0a2d01c2a9a58ada371a01684a1ed874b6dd031c2bde1"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "此言水之盛溢，虽死已尽，尚有余波，主有智谋余足之家。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0088",
+      "sha256": "bc8aeab6a9fde3959ceb910331f7323706b8b906888c9527fb967397aaba4bcf"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "大抵水寒不流、木寒不发、土寒不生、火寒不烈、金寒不熔，皆非天地之正气也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0089",
+      "sha256": "8783d32852ffc11dfdc4d7c713533d2ab01662020963a7e160d722c7ba9e7b2d"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "上谓五行生非其时，况人禀之，亦犹是也。且水寒不流则凝冰不流，木寒不发则冻根，土寒不生则火不旺，金寒不熔则无火制，此皆不逢时之谓也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0090",
+      "sha256": "7ccd724aad41db4bb9ef2cbb32b800d3f8d5ee5cd52bd6fe886e441ae3952daa"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "然万物初生未成，成久则灭。其超凡入圣之机，脱死回生之妙，不旬而成、不形而化。固用不如固本，花繁岂若根深。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0091",
+      "sha256": "6773df4fcbef7ac5c4d73123cd65d76754c47c8e7455f5362be02139befeb5cf"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "用者，月神屯。须以之为今，宜乎坚固。苟本不固，用亦无所为也。本者，命令。命不固，虽固其用一时而已，犹君弱臣强之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0092",
+      "sha256": "e687cc7b3b531ae14deca4df21d01d9eca10b5f2189bbe4d6822f460fd04496f"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "且如北金恋水而沉形。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0093",
+      "sha256": "65eabb7f398b7fae61141e01cffdf5ae111416b72c469227c4c3e6dd61bb1dab"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "庚辛生於亥子丑，为金沉水底之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0094",
+      "sha256": "723ae3e9e73eceea8d5288b4dcd7d68aff9dad1afaa8f22e4a9ae89cbe3b1eee"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "南木飞灰而脱体。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0095",
+      "sha256": "34ccb66b8fbe39d6cd7d7a9772ad3c925506422ef57be86978e55eb66ba23552"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "甲木生於巳午未，则木又生火，火盛木焚，已成灰烬之说。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0096",
+      "sha256": "1100bf0fca34b898f427492097e6f02bb8e1ee80656ac8df51ba23465c65fe14"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "东水旺木以枯源。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0097",
+      "sha256": "d360f0460dc38f8eaa6479637e37020a70347207c2544ff76b652ac78c4a34ff"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "水生於东，春月木旺，则水将枯，亦为子多母枯之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0098",
+      "sha256": "bb2346ff3443452ad25c7c1f7a91a3484da111aae3480d5357656e1d64eb00f2"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "西土实金而虚己。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0099",
+      "sha256": "7a336afea023a00ba3e46626eab917a05613b84329cd837d052b6966d463e373"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "金旺於秋，以土生之，则金实而土虚，所谓子壮而母虚之故。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0100",
+      "sha256": "b57da1170f25488ba32ecf8efdc63e28dc52767ab788475bd5366df4b6e5ac19"
+    },
+    {
+      "section": "五行生克赋",
+      "text": "火因土晦皆太过。五行贵在中和，以理求之，慎勿苟言，掬尽寒潭须见底。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c278:p0101",
+      "sha256": "435aabb143965732ca57178d45a0ccc4d6a537d305667718591c00636b174328"
+    }
+  ]
+}

@@ -11,7 +11,7 @@
       "id": 1,
       "name": "bazi-full-reading",
       "prompt": "我是1990年5月10日下午2点30分出生的男性，出生在北京。帮我详细批一下八字，包括五行、十神、神煞、大运。",
-      "expected_output": "Should call scripts/bazi_calc.py with year=1990 month=5 day=10 hour=14 minute=30 gender=male tz=8 longitude=116.4, parse JSON, then narrate four pillars table, day master strength, 10 gods per pillar, key 神煞 hit, 大运 cycles. Should include disclaimer. Should reference 01-bazi.md and 00-foundations.md.",
+      "expected_output": "先取得用户现居地时间；未知现居地可先排原局并询问。默认 bazi_reading.py，按月令、透藏与条款条件解释；神煞仅在用户点名时展示起法命中，不推人格事件。",
       "assertions": [
         {
           "kind": "script",
@@ -155,7 +155,7 @@
       "id": 6,
       "name": "name-analysis",
       "prompt": "帮我分析下我女儿的名字：张子涵。看看吉凶。",
-      "expected_output": "Should call name_analyze.py --name 张子涵, output 五格 (天/人/地/外/总), 81 数理 吉凶 per grid, 三才配置, summary. Reference 13-qiming.md.",
+      "expected_output": "展示经核笔画、五格计算与三才。旧吉凶分类未核来源，不作个人定论；不能说改名能改变现实结果。",
       "assertions": [
         {
           "kind": "script",
@@ -179,7 +179,7 @@
       "id": 7,
       "name": "dream-interpretation",
       "prompt": "我昨晚梦见一条大蛇钻进了我家床底下，醒来很慌。",
-      "expected_output": "Should look up 蛇 in jiemeng.json or 15-jiemeng.md, give 传统 + 心理 dual interpretation, calm the user, avoid alarm. Mention 蛇 traditional readings (财/病/转化) without scaring. Disclaimer.",
+      "expected_output": "查询主题索引；缺来源的传统与心理解释明确留空。回应用户担心，不把梦境映射成财、病或具体事件。",
       "assertions": [
         {
           "kind": "file_contains",
@@ -272,12 +272,14 @@
       "id": 11,
       "name": "meihua-quick-cast",
       "prompt": "我现在心里有件事拿不定主意，用梅花给我起一卦。",
-      "expected_output": "Should call meihua_cast.py time (current time), output 上下卦 + 互卦 + 变卦 + 体用关系, interpret 体克用/用克体 etc. Reference 05-meihua.md. NOTE: time-cast is non-deterministic; assertion uses numbers-cast on the same engine as a structural proxy.",
+      "expected_output": "先取得用户当前所在地时间并复用 request_time，再按已核农历年月日时起例排梅花；闰月缺口径须补充。body_strength 默认空，不借旧公历月评分解释旺衰。固定时刻取数仅验证计算，不能当真实模型评审。",
       "assertions": [
         {
           "kind": "script",
           "cmd": [
             "scripts/meihua_cast.py",
+            "--datetime",
+            "2026-06-24T13:05",
             "numbers",
             "--upper",
             "3",
@@ -299,7 +301,7 @@
       "id": 12,
       "name": "cross-method-overview",
       "prompt": "1988年2月14日下午3点出生男，全面看看运势。",
-      "expected_output": "Should do: 八字 backbone (bazi_calc.py) → 紫微 (ziwei_calc.py) → 生肖 → 当年流年, then synthesize cohesively. Should not stack methods chaotically. Include disclaimer once.",
+      "expected_output": "默认只用八字月令主体系，先读取当前所在地时间。其他方法须用户明确要求，各自说明条件和分歧，不自动用多法共识提高置信度。",
       "assertions": [
         {
           "kind": "script",
@@ -377,7 +379,11 @@
             "scripts/liuyao_cast.py",
             "coins",
             "--seed",
-            "7"
+            "7",
+            "--date",
+            "2026-06-24",
+            "--time",
+            "13:05"
           ],
           "has_keys": [
             "main_chart.hex_name",
@@ -496,7 +502,7 @@
       "id": 18,
       "name": "jiemeng-symbol-lookup",
       "prompt": "梦见蛇是什么意思？",
-      "expected_output": "Should call scripts/jiemeng_lookup.py --symbol 蛇 rather than reading the 38 KB asset, and give BOTH the 传统 and the 现代心理 reading without alarming the user.",
+      "expected_output": "查询解梦主题索引；traditional 与 modern_psychology 均为空时，说明原文未核，不以通用心理套语填补。",
       "assertions": [
         {
           "kind": "script",
@@ -578,6 +584,98 @@
           "has_keys": [
             "packet.claims",
             "packet.limits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "current-time-context",
+      "prompt": "我在悉尼，取本次当前时间。",
+      "expected_output": "获得当前所在地时间；固定输入用于验证跨年转换。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/request_time.py",
+            "--current-timezone",
+            "Australia/Sydney",
+            "--request-time",
+            "2026-12-31T14:00:00+00:00"
+          ],
+          "has_keys": [
+            "utc",
+            "local",
+            "timezone",
+            "source"
+          ],
+          "paths": {
+            "timezone": "Australia/Sydney"
+          },
+          "contains": {
+            "local": "2027-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "full-classical-library",
+      "prompt": "检查已声明的五书目录和全部段落。",
+      "expected_output": "完整性检查须核实际文件摘要，版本与影像状态分别记录。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/classical_search.py",
+            "--validate"
+          ],
+          "has_keys": [
+            "books"
+          ],
+          "count": {
+            "books": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "primary-reading-adapter",
+      "prompt": "2000年1月15日10:30男，北京，现在悉尼，看盘面依据。",
+      "expected_output": "默认adapter返回干净事实和固定月令原文，不用评分做结论。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/bazi_reading.py",
+            "--year",
+            "2000",
+            "--month",
+            "1",
+            "--day",
+            "15",
+            "--hour",
+            "10",
+            "--minute",
+            "30",
+            "--gender",
+            "male",
+            "--city",
+            "北京",
+            "--current-timezone",
+            "Australia/Sydney",
+            "--request-time",
+            "2026-09-06T02:00:00+00:00"
+          ],
+          "paths": {
+            "method_profile.primary_book": "ziping",
+            "source_passages.0.passage_id": "ziping:c008:p0001"
+          },
+          "has_keys": [
+            "chart_facts",
+            "observed_structure",
+            "reading_support"
           ]
         }
       ]

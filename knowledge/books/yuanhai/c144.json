@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c144",
+  "title": "论父",
+  "source_url": "https://luckclub.cn/bazi/001/144/",
+  "revision": "sha256:4a5fa85953bcc71d1b924453f00a18848cd682bed77e092d1aa528dfd59d04e0",
+  "source_timestamp": "2026-09-06T04:10:53.470291+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c144.html",
+  "raw_sha256": "4a5fa85953bcc71d1b924453f00a18848cd682bed77e092d1aa528dfd59d04e0",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论父",
+      "text": "论父",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c144:p0001",
+      "sha256": "f8d0721bfc5e2b44689ffadc1e504bd1a728978eb6781953f6bd854205ae7d89"
+    },
+    {
+      "section": "论父",
+      "text": "偏财是父，乃印绶之官星也。如甲日以戊为父，再见甲寅字或木局全，或临死绝冲刑之地，主克父也。不然主离异、不睦或疾病伤残。若得庚字、申字救庶，无大害。如甲旺戊衰，亦主有疾少靠。如戊临生旺贵人、天月德，亦主有贵。更得丙丁生助，享父之福无穷。如临杀地，父死他乡。如居衰败受制之处，墓绝之地，主父平常，不得父力也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c144:p0002",
+      "sha256": "06a13c32d677ba07a47cf7b934658e8736540cac0bce07e82b0acb5cd1f247c6"
+    },
+    {
+      "section": "论父",
+      "text": "眉批：以甲木为主，故以戊为父也，癸乃甲之母，戊乃癸之夫，甲以戌丑偏财，财旺则父旺，财败财衰则父衰，所以论命之荣枯，则以父之兴散察其理，余皆仿此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 72,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c144:p0003",
+      "sha256": "519a152a26dc0220b69d260796909ac68243c45a709a43ac2e4aefaf0db7e61b"
+    }
+  ]
+}

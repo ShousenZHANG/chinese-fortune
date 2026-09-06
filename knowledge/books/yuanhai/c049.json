@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c049",
+  "title": "论四大空亡",
+  "source_url": "https://luckclub.cn/bazi/001/049/",
+  "revision": "sha256:7072d0ef72a3069825dabf9bed9b7abeed8927885a2e352b88715646e17877ad",
+  "source_timestamp": "2026-09-06T04:10:34.147340+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c049.html",
+  "raw_sha256": "7072d0ef72a3069825dabf9bed9b7abeed8927885a2e352b88715646e17877ad",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论四大空亡",
+      "text": "论四大空亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c049:p0001",
+      "sha256": "37ef25a00c5337a8c0484a58cecfeae60312b0c3ea8d7a662e9e4e9e6de38930"
+    },
+    {
+      "section": "论四大空亡",
+      "text": "甲子并甲午，旬中水绝流，甲寅与甲申，金气杳难求。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c049:p0002",
+      "sha256": "123756888923615f2faa673ef896bce29873dcfec527341421db23bc3a16a405"
+    },
+    {
+      "section": "论四大空亡",
+      "text": "六甲中只有甲辰、甲戌二旬之中，有金木水火土全。内甲子、甲午旬中独无水，甲寅、甲申旬无金。此四旬中，五行不全，谓之四大空亡。如甲子、甲午旬，主人见水者谓之正犯。如当生命中不犯，行运至水者亦为犯也。甲申、甲寅旬亦同此论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c049:p0003",
+      "sha256": "036ba2357a3d6ccb3d7ef0e9721cd2126f0b452d9851c09f5d4f695930f08086"
+    },
+    {
+      "section": "论四大空亡",
+      "text": "眉批：此主夭折，《壶中子》曰，顔回夭折，只因四大空亡。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c049:p0004",
+      "sha256": "0a840526ad7f26cb8632c2b8b22419facd9c81f4f8a486547caf086a1e3e64f4"
+    }
+  ]
+}

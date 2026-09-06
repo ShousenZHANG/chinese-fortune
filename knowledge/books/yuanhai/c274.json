@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c274",
+  "title": "衰病死诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/274/",
+  "revision": "sha256:b608c608a0d8fb292ca347ab5ec5179ca2942c2b2235015887c55dd91f54d252",
+  "source_timestamp": "2026-09-06T04:11:20.791666+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c274.html",
+  "raw_sha256": "b608c608a0d8fb292ca347ab5ec5179ca2942c2b2235015887c55dd91f54d252",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "衰病死诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c274:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "衰病死诗诀",
+      "text": "衰病死诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c274:p0002",
+      "sha256": "beadedfaf04e81dd6d0c31d51f1385d91ef57daa0bcfb95edd842335f3732387"
+    },
+    {
+      "section": "衰病死诗诀",
+      "text": "纳音衰病死重逢，成败之中见吉凶，若得吉神来救助，变灾为福始亨通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c274:p0003",
+      "sha256": "e6988961eda1b077f669886af14051c2796d1c8ad013702ca29cef810962096b"
+    },
+    {
+      "section": "衰病死诗诀",
+      "text": "衰病两逢兼值死，世人至老无妻子，不惟衣食不丰隆，灾病绵绵终损己。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c274:p0004",
+      "sha256": "53a2a8ae75718278406ad80ed65c97550e2a844301a2fe2b55dbee9630df2f71"
+    },
+    {
+      "section": "衰病死诗诀",
+      "text": "眉批：五行以此比人之至六七十，由老衰弱而又死命中遇此，主人孤苦之断。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 34,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c274:p0005",
+      "sha256": "dffe410c25f820dcc4b63bf692a30f4d330affa2b7a56220a16866dfd135a146"
+    }
+  ]
+}

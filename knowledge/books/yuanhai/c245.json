@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c245",
+  "title": "六壬趋艮诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/245/",
+  "revision": "sha256:87777eda4b2ce6713f59ee4e1ab5ab2c0961e0272d237a4b685dfb61d9d999d4",
+  "source_timestamp": "2026-09-06T04:11:14.046915+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c245.html",
+  "raw_sha256": "87777eda4b2ce6713f59ee4e1ab5ab2c0961e0272d237a4b685dfb61d9d999d4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六壬趋艮诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c245:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "六壬趋艮诗诀",
+      "text": "六壬趋艮诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c245:p0002",
+      "sha256": "73e8bece2ad4b2b11a5fec3624b25f98e3e1580e39458bc5eab0e71daf44cb80"
+    },
+    {
+      "section": "六壬趋艮诗诀",
+      "text": "壬日寅时为贵格，此名趋艮福非常，大伯刑冲并克破，相逢岁运祸非常。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c245:p0003",
+      "sha256": "8b65b82119e7deb73aa18325a0fb8e0fbefd1f58a5c7205a7a88929f046d0d79"
+    },
+    {
+      "section": "六壬趋艮诗诀",
+      "text": "壬喜逢寅庚喜辰，云龙凤虎越精神，支头重见无冲战，定是清朝食禄人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c245:p0004",
+      "sha256": "adb4dcae3bf7acfa8fe96965887baa414689fa919fb72ea088bb3fb7ca712e15"
+    },
+    {
+      "section": "六壬趋艮诗诀",
+      "text": "眉批：壬水日主，多见寅字，则用寅中甲木，暗邀己土为壬日之官星，己乃甲之妻也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c245:p0005",
+      "sha256": "9f7fe513bfe89fde9d44a4b63586a7d46b0793bdf452909598adbf50aedc52ad"
+    }
+  ]
+}

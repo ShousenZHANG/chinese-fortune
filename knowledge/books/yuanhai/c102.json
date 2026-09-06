@@ -1,0 +1,147 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c102",
+  "title": "内十八格-时上一位贵格",
+  "source_url": "https://luckclub.cn/bazi/001/102/",
+  "revision": "sha256:4fd23e9db330639c62cfd3937fc2c4491467fb0625116e3147aae43be83cf79f",
+  "source_timestamp": "2026-09-06T04:10:45.600222+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c102.html",
+  "raw_sha256": "4fd23e9db330639c62cfd3937fc2c4491467fb0625116e3147aae43be83cf79f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "内十八格 - 时上一位贵格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0002",
+      "sha256": "39e6cb68d79b235d33876ebe2188510591b4ae02281ba7fa0c975a99c52c4500"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "夫一位贵者，推只时上只见一位方为贵，或年月日又有，反为辛苦劳役之人也。如时上一位七杀，要本身自旺。而三处有制伏多则行七杀旺运，或三合得地可发。若无制伏，则要行制伏之运以发。或遇杀旺而无以制之，则祸生矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0003",
+      "sha256": "039af04e6acf7a0d2813a55b1c066819543be62d5cfd9bcb9147ca6f6d072c79"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "月上偏官却怕冲，与羊刃同。时上偏官不怕冲，与羊刃同。又要本身生日自旺，如甲乙日在正二月生是也。时偏官为人性重，刚执不屈，月偏官多者亦然。《四言独步》云：“杀重身轻终有败，一见制伏却为贵。”本七杀官制，贵中得奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0004",
+      "sha256": "08231a381daa5592665916a7cc99ad5cbf98ecbe86d431e2eaf2277365c54bc2"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "詹丞相，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0005",
+      "sha256": "f656a2fc29fdec8e1830f4a0219e0905a9400ecefa92038d0db713418fa7389f"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "壬午 庚戌 甲午 庚午(庚金为贵)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0006",
+      "sha256": "91a3c05beffd31036a6a3527b5505713ae76834fe1070bcbdd49bb8c75cf8d20"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "史魏王，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0007",
+      "sha256": "5a72cb9315cef3fe834a0396d700fdb0a39ca16adbbca80cb52a6f89fbebf1c3"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "甲申 丙寅 乙卯 辛巳(辛金为贵)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0008",
+      "sha256": "e149cb764524767282be5c7cea92fb3e6dc697b807622af54d1170b7f47b7e93"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "李丞相，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0009",
+      "sha256": "975c1972fa738309a5bee27cd43d962fe3d96c3da1cc2140a58c20f2e3e28e2f"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "己巳 丁卯 丙午 壬辰(壬水为贵)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0010",
+      "sha256": "c220a2c085803e892302f8b305913c65e4c03d4e7459e45fe61f488d89c1bc82"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "郑尚书，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0011",
+      "sha256": "2276590b2efc4570d44f18acfa69c110d2ad3d201f27bd9228958684628d7876"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "庚寅 壬午 戊寅 甲寅(壬水为贵)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0012",
+      "sha256": "2b1659c63762bf0fe61aa0259edc7f796beab8cdfec70de426a511a5feb487a4"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "宋尚书，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0013",
+      "sha256": "6c8420f50d007d1270fdd58655b60c69259f187eddac3ca0174288bb7b410f0c"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "庚辰 丙戌 戊戌 甲寅",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0014",
+      "sha256": "0c7ac5df83fcf2fc55ad4a911f3503dd3f8b8c64c7738a48cfec5a69ba0f51fe"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "庄尚书，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0015",
+      "sha256": "fd27c3c097892297273296bc0229d3ac0f9019b000aa40364d29adfe350a32fb"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "辛巳 辛丑 己卯 乙亥(乙木为贵)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c102:p0016",
+      "sha256": "3e3f78491b2f9510ad4ec21d0264c047b5be6900dd88ab35b91e410c9c04a1c5"
+    },
+    {
+      "section": "内十八格-时上一位贵格",
+      "text": "眉批：詹丞相命，甲木死午，况生月九月，日主又弱，何以取之。行北方水得以资生，行东方甲木之运，地支无杀则得以中和之气，贵亦在其中矣。其余当以生旺推之，其中妙理不可不知。诗诀：偏官妙喜食神逢，印绶身强福禄浓。若见正官并枭印，加逢死绝祸重重。偏官有印化为权，运助身强福禄全。切忌身弱并刑害，一生灾病祸连绵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 150,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c102:p0017",
+      "sha256": "6a4e9f4eeca41fe323fa1524643fb87300781eba294857df2586929deb917a67"
+    }
+  ]
+}

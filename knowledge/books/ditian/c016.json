@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c016",
+  "title": "寒暖論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F16&oldid=844365",
+  "revision": "844365",
+  "source_timestamp": "2017-03-23T15:45:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c016.wiki",
+  "raw_sha256": "fc7e7b33031a5fbaba4d02475a78b385490d65503ae9f504a40013e55ebb198d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "寒暖論",
+      "text": "天道有寒暖，發育萬物，人道得之，不可過也。",
+      "layer": "base_text",
+      "passage_id": "ditian:c016:p0001",
+      "sha256": "32b1264d49a00be96b7f6c4c76eaa7dba20af24f7d60c04089ef45bd089154a3"
+    },
+    {
+      "section": "寒暖論",
+      "text": "陰支為寒，陽支為暖，金水為寒，木火為暖，得氣之寒，遇暖而發，得氣之暖，遇寒而成，寒之甚，暖之至，內有一二成象，必無好處，若五行陽遇子月，則一陽後萬物懷胎，陽乘陽位，可東可西，陰逄午月，則一陰後，萬物收藏，陰乘陰位，可南可北。",
+      "layer": "commentary",
+      "passage_id": "ditian:c016:p0002",
+      "sha256": "8186d19d59d021310ebc2f7c1f47b5fca69926a5fd216adaeef323773af59639"
+    },
+    {
+      "section": "寒暖論",
+      "text": "地道有燥濕，生成品彙，人道得之，不可偏也。",
+      "layer": "base_text",
+      "passage_id": "ditian:c016:p0003",
+      "sha256": "a51d4dfdaff850a76c537f153ab1256d9b877a49018942825e6fb641c9f6040c"
+    },
+    {
+      "section": "寒暖論",
+      "text": "過於濕者，滯而無成，過於燥者，烈而有禍，水有金生，遇寒土而愈濕，火有木生，遇暖土而愈燥，皆偏枯也，木火而成其燥者，言木火傷官要濕也，土水而成其濕者，言金水傷官要燥也，間有火土而宜燥者，用土而後用火，金燥而宜濕者，用金而後用水。",
+      "layer": "commentary",
+      "passage_id": "ditian:c016:p0004",
+      "sha256": "7f5dc3d9d8b5bb94bbd006ad552cfd030a469e765327c0fd0a80ce6b84daa832"
+    }
+  ]
+}

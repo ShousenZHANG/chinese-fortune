@@ -1,0 +1,133 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c104",
+  "title": "内十八格-倒冲格",
+  "source_url": "https://luckclub.cn/bazi/001/104/",
+  "revision": "sha256:41d1a666085aa71cdb7d238db9edabbb90ae99ed3d82bb02d296de31aa486506",
+  "source_timestamp": "2026-09-06T04:10:45.730920+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c104.html",
+  "raw_sha256": "41d1a666085aa71cdb7d238db9edabbb90ae99ed3d82bb02d296de31aa486506",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-倒冲格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "内十八格 - 倒冲格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0002",
+      "sha256": "2fc1364da3f554f04a5e95b715337609c099bc87d1af453f5440faf480301058"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "凡四柱中原无官星，方用此格。以丙日为主，用午字冲子中癸水，丙日得官星。不论会，若四柱中有未字，则午不能去冲矣。大忌癸字并子字，则减分数，岁君大运亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0003",
+      "sha256": "9fd76ae924d60a29a8092f9050cb32ffcd00f52df146ee730117d19492bf1d5a"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "诗诀：",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0004",
+      "sha256": "6cf7e2439fbb0f06beb499d9e525ecbd9b00a6e54b32e2a1f10611081cef2ef4"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "丙日须逢午字冲，午能冲子吉相逢。不须论会干嫌水，子癸相逢再见凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0005",
+      "sha256": "e4240d9061ebd628b80ff66d25b7c4b75e2c56381873b2887df13227337eb999"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "午冲子癸是官星，功名荣达显神京。最忌未宫相伴合，平生虚利又虚名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0006",
+      "sha256": "4c16db409e5119b0ada6c8c9dee3fcd313e6d7af3ef475216dfad147c86c8c55"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "眉批：此格要四柱中全无官星合，是用合时中官来取贵，若实见之不入此格。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 34,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c104:p0007",
+      "sha256": "1aa6375cb10a1fa82444605747b538bc48da2ad969aa1692a1e3125b6562c6a9"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "又格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0008",
+      "sha256": "131212e4d8a60d9cd88605206920cb7aefe2cc84675009974475468b3462568e"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "此以丁日为主，用巳冲亥宫壬水为丁之官星，不论合。若四柱中有辰字，则巳不能冲矣。大忌四柱中有壬字并亥字，则减分数，岁君大运亦同。运重岁君轻，再见亥辛，则祸作矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0009",
+      "sha256": "1fde596883c5d0ede659d6e2bcec0654491ef10b276332dafae0ca13f98df959"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "诗诀：丁日以巳多冲亥，壬水休来在柱中。何若地支辰字出，必来相绊贵为同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0010",
+      "sha256": "60a707752b4aa38e9915093ee1ee2c0e96131bb24b5b9bfbbd2f5ea731135071"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "又诗诀：丁日多逢巳字重，局中无水贵和同。伤官此格宜伤尽，见亥刑冲数必空。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0011",
+      "sha256": "98d5e5b7954852bc429a168d4d327fb5c8003bcc0474ec8617c6ad5b576e9952"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "施判院，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0012",
+      "sha256": "ef5885adf0315d0d410ee3b2358efb7cfab92ee3d48bd98d39c8b10cf7634df6"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "辛酉 癸巳 乙巳 辛巳(以巳冲亥壬水为官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0013",
+      "sha256": "e3267fb50247354e55e381a60d6a03d89e667cd5cf6931c38366bbf7141ba8ff"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "岳总管，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0014",
+      "sha256": "771d156dde485a886c76031eb01ff2dae193b5a8f52e9b0ad829cc73374a0b49"
+    },
+    {
+      "section": "内十八格-倒冲格",
+      "text": "辛巳 甲午 丁未 乙巳(以巳冲亥壬水为官)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c104:p0015",
+      "sha256": "7b79f82da0b9ad860ac9463cc6af61e7dcea124d012e73f6bee0d3ea8e64a478"
+    }
+  ]
+}

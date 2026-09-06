@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c050",
+  "title": "论十恶大败",
+  "source_url": "https://luckclub.cn/bazi/001/050/",
+  "revision": "sha256:f627c3c66d66f35486959624c16f14f670a3419f83069ae753e7fa8bbd3fdcf4",
+  "source_timestamp": "2026-09-06T04:10:34.291603+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c050.html",
+  "raw_sha256": "f627c3c66d66f35486959624c16f14f670a3419f83069ae753e7fa8bbd3fdcf4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十恶大败",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c050:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十恶大败",
+      "text": "论十恶大败",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c050:p0002",
+      "sha256": "588dbfb127acafa275dfd66031f1f6bf41e18b5c8ddc2a95745859d376b8135b"
+    },
+    {
+      "section": "论十恶大败",
+      "text": "甲辰乙巳与壬申，丙申丁亥及庚辰，戊戌癸亥加辛巳，乙丑都来十位神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c050:p0003",
+      "sha256": "28aceb9f3cd9f5eca4ec5f3ca54f8178acb343120fbac4209c0b3dacaadc8fa7"
+    },
+    {
+      "section": "论十恶大败",
+      "text": "邦国用兵须大忌，龙蛇出穴也难伸，人命若还逢此日，仓库金银化作尘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c050:p0004",
+      "sha256": "611eaa038cb7922317a5c21b259cfb625b85c764f84e6148cfab013cfed82e47"
+    },
+    {
+      "section": "论十恶大败",
+      "text": "十恶者，凶也。大败者，怯敌也。谓六甲旬中，有十个日值禄入空亡，此十日谓之大败，故曰十恶大败。命中犯者，当以日主见之方是。其余见之，未可便作十恶论。若有吉神扶之稍吉。何以谓之禄入空亡？如甲辰、乙巳者，甲以寅为禄，乙以卯为禄，是甲辰禄以寅卯木为空，逢此为禄入空亡，是以败也。壬申者，壬以亥为禄，甲子旬以亥为空亡，是以败也。余皆仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c050:p0005",
+      "sha256": "31c2229577466318d856adbc4adc8c6b181fa9c56140f3fc05a426b4ea6d95ab"
+    },
+    {
+      "section": "论十恶大败",
+      "text": "眉批：取日干上见之方是，四柱有吉神多，身旺若有，未可便作十恶论。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 32,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c050:p0006",
+      "sha256": "da82816971d8b23908b40d4bb4f45d6a6e08c09dc4611e793a493f89a0191213"
+    }
+  ]
+}

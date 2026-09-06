@@ -1,0 +1,95 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c017",
+  "title": "天干五阴通变",
+  "source_url": "https://luckclub.cn/bazi/001/017/",
+  "revision": "sha256:a0a30d8b95d1085ae628c4df7263a82af4180b88fa424627128aa6a074207a7b",
+  "source_timestamp": "2026-09-06T04:10:28.018677+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c017.html",
+  "raw_sha256": "a0a30d8b95d1085ae628c4df7263a82af4180b88fa424627128aa6a074207a7b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "天干五阴通变",
+      "text": "**﻿天干五阴通变**",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0001",
+      "sha256": "9f8cb0a4ce9bd8019227cf29f836488f75f1de5ec8c6261c29b1f419bb97bb36"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "乙丁己辛癸 为比肩兄弟",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0002",
+      "sha256": "d332cbf016e62f5cfc1f125c2665ef1dfa19e71228e40c59a187065b71b0db30"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "丙戊庚壬甲 为伤官，小人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0003",
+      "sha256": "78fbd93efcac2b214c2befe644bd7351debf837dd66f29859d2956e1765bce74"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "丁己辛癸乙 为食神，天厨，寿星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0004",
+      "sha256": "03aa1f284b3aad4f3b2a0311fc458a8391ff842330d9beda5713f01c5347323c"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "戊庚壬甲丙 为正财，正妻，克母。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0005",
+      "sha256": "bb6df4a4265d733a9dd0aa89ba097dfd0b4cb93c6f897b2072eb286b6131c35f"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "己辛癸乙丁 为偏财，偏妻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0006",
+      "sha256": "9a4b7e2bbb2a7db93df53f988fc38d9743d288c942195d63caa7d9ad673aadaf"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "庚壬甲丙戊 为正官，禄马。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0007",
+      "sha256": "6d3969ddb5c23bb727f598d64dcbd78efd0fbbb27025532c7f071ff8488044a8"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "辛癸乙丁己 为偏官七杀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0008",
+      "sha256": "c15cced3abe63412b73e9c11cbf98b826cdd5652474c4a99ceb4979af6005900"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "壬甲丙戊庚 为印绶正人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0009",
+      "sha256": "9e73c2f19a0f1d72d35662e68e625e9db9ae26b53fc7c76bc2a9322ef498f510"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "癸乙丁乙辛 为枭神，偏印，倒食，主克子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0010",
+      "sha256": "a24267665c8647d4cb558b94a58063fe330599a8d5c9f49addb3b0b41c6f1f81"
+    },
+    {
+      "section": "天干五阴通变",
+      "text": "甲丙戊庚壬 为败财逐马。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c017:p0011",
+      "sha256": "2f1a20ea4318be1cade9efc39938dd93ff9ef9fbdbf78b4cadb4aad277401580"
+    }
+  ]
+}

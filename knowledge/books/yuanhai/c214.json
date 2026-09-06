@@ -1,0 +1,149 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c214",
+  "title": "十二月建丑候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/214/",
+  "revision": "sha256:15a7ca2cd2669f126f18a2872301abe3f21e0e3879ff10ce38bbe470035c57c7",
+  "source_timestamp": "2026-09-06T04:11:06.803052+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c214.html",
+  "raw_sha256": "15a7ca2cd2669f126f18a2872301abe3f21e0e3879ff10ce38bbe470035c57c7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "十二月建丑候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0001",
+      "sha256": "5e3635663db73c9016185021a5cf08a8d791a0385f267559a6032dd7dab7277e"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "甲子生居丑月中，无根金水不嫌凶，再行金水声名显，火土相逢破本宗。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0002",
+      "sha256": "e9e3377b3bb88e39f83a405c51990f95386254a4f2f0bd0322530842a0875400"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "眉批：十二月丑宫，癸水五日，辛金库七日，己土十八日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c214:p0003",
+      "sha256": "0e5b6377b5c87aa938bf688447e39108fcc80d282a8f85b314a36de46e2dfdd6"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "丙丁坐火财中杀，四柱无根忌水乡，运到火乡加福助，须知显振名利香。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0004",
+      "sha256": "43d423ae6400db560485531a02ef836ee1148b9bbdef768c187dbe86abb73167"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "眉批：丁生丑月，行南方运方福，东方运可救。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c214:p0005",
+      "sha256": "8f2987fa92e079acfaf51e474fd047e8f45abfbe79790df249ed2b817a14acfe"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "庚辛丑月中藏印，火土来临福禄齐，壬癸天干或透出，如逢戊己言相生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0006",
+      "sha256": "683804c18da4f6ebe565782308d7ae73fdf7c18f7a3fda7bf46f3f862bf54918"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "壬癸生居丑月提，有金有土格中奇，顺行辰巳兴财禄，逆去升腾申酉支。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0007",
+      "sha256": "64172e0d97d541c82ecff82d45c914eca549081af2191ecf064d741b97673e43"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "戊土生居十二月，伤官财旺藏时节，水清金白助格中，若逢火土多周折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0008",
+      "sha256": "a7efaa420e10d58de1d9f34e6fd6a45dccae4185419dda34f84136ad6f3c11f2"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "己干提丑支金局，杀旺身强格局高，金水重来名利厚，水乡火地不坚牢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0009",
+      "sha256": "6a03cfbe3908e0167d0f74244841c20ce323e446b5bc0837fdb07c1194701508"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "丙日多根丑局逢，财官藏在月提中，水乡在旺金乡吉，土困行南总是空。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0010",
+      "sha256": "9542e2e1700bac31ef8d23acac28b4f471bdfc0fe5ccee3ac59bd78305d4e794"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "眉批：言巳酉丑金局，癸水为官，辛金为财。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c214:p0011",
+      "sha256": "7627c58dcccceb5c4322e117dade5b0624b462b8ba2f857576aa9f70e8df6fe9"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "戊己生居丑月中，忽逢羊刃在天宫，金多有水方成贵，火土虽嫌比劫同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c214:p0012",
+      "sha256": "19dc4b9f0867b10e7f4212d680e6b1fbb2c0060da84888fbc3953a2fe2a98b55"
+    },
+    {
+      "section": "十二月建丑候诗诀",
+      "text": "眉批：羊刃，劫财也，在十一月合辰日天官。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c214:p0013",
+      "sha256": "f347c1818a53b0d3ccbe0e14e7d565646e0b091381254843dc02af64c2982010"
+    }
+  ]
+}

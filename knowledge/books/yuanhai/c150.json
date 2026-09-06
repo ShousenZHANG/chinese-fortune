@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c150",
+  "title": "阴命赋",
+  "source_url": "https://luckclub.cn/bazi/001/150/",
+  "revision": "sha256:ce13fde8b53fc72084891c6d6eef740ce6ff446a4da4720021d1103337b1c824",
+  "source_timestamp": "2026-09-06T04:10:54.616902+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c150.html",
+  "raw_sha256": "ce13fde8b53fc72084891c6d6eef740ce6ff446a4da4720021d1103337b1c824",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "阴命赋",
+      "text": "阴命赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c150:p0001",
+      "sha256": "0d901124db866529e5b1b64dda22091a369ff5235111b774f2638d852c22112e"
+    },
+    {
+      "section": "阴命赋",
+      "text": "凡见阴命，先见夫主之盛衰。次论身荣，要见子息之强弱。夫荣子旺，定知富贵荣华。子死夫衰，只是孤单下贱。有夫有子而贫寒者，盖因身在衰乡；无夫无子而昌盛者，亦为身居旺地。贵人少者，不富也昌。合神多者，非妓即尼。论淫贱者，四柱伤官，暗招财损夫。招贤婿者，夫兴於门户之中；引偏夫者，夫旺於四时之上。夫衰身旺，主为廉洁之人；鬼旺身衰，必作孤寒之妇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c150:p0002",
+      "sha256": "a0f0ad485bd4659328a5b4e0575f1585d029322d4ad092007958564561dcf920"
+    },
+    {
+      "section": "阴命赋",
+      "text": "眉批：女人取食神为子，甲人食丙、乙人食丁之类，食神生旺有气则有子有贵或富之类。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 39,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c150:p0003",
+      "sha256": "6151f6eb0b032002785e1784fa888fcdc1e81912e2d7086d4891a656a63038b4"
+    }
+  ]
+}

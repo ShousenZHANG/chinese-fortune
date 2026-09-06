@@ -1,0 +1,81 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c231",
+  "title": "杂气财官诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/231/",
+  "revision": "sha256:f614c47922bb8616a6ec3dc83a68f31c655b0205b1d6a59a5ad8c58eb7bf1c9f",
+  "source_timestamp": "2026-09-06T04:11:10.437621+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c231.html",
+  "raw_sha256": "f614c47922bb8616a6ec3dc83a68f31c655b0205b1d6a59a5ad8c58eb7bf1c9f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "杂气财官诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "杂气财官诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0002",
+      "sha256": "43abca7cabe90a6b3c108f289ce2b05c7dcccfc7def3256647fa880b78bd06de"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "杂气财官在月宫，天干透露始为丰，财多官旺宜冲破，切忌干支压伏重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0003",
+      "sha256": "7a574aa0350fb4f8f55d848e7ae8e30381af6037abaece0d624415b4d222b7b0"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "辰戌丑未为四季，印绶财官居杂气，干头透出格为真，只问财多为尊贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0004",
+      "sha256": "c1f6d1a9a21d74dd4bd20adee068acebf12150f2c3b9ffdb8d389e1e49c2504c"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "财官寓在库中藏，不露光芒福不昌，若得库门开透了，定教富贵不寻常。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0005",
+      "sha256": "cd1624c1103ad9395c6c509afae91e673ec6e495296fcb3d5f374a129e74e4d5"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "杂气从来福不轻，天干透出始为真，身强财旺生官禄，运见冲刑聚宝珍。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0006",
+      "sha256": "f3cfe134e5730738a8a197ad6967f581c5adeac6d0fe33c926970eee5f753237"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "四季财官月内藏，刑冲克制要相当，太过不及皆成祸，运到财乡是吉祥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0007",
+      "sha256": "f5098e12017576c5f79ad8d85daac61f1c29c790d59e9ddc9bbca6544462432f"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "透出财官官禄锺，官加富贵位三公，刑冲三变方为妙，得运应知蛇化龙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0008",
+      "sha256": "c2ad0dc29f6e9f95603b3a303182c6b06f3a9ccbe881f36a405b1843ac4713c2"
+    },
+    {
+      "section": "杂气财官诗诀",
+      "text": "五行四季月支逢，印绶干头要显荣，四柱相生喜官杀，更饶财産又峥嵘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c231:p0009",
+      "sha256": "3486e0318c3dbdc84e19ef3f849acad5f30c1ea9a3019ddcea55d6a855d352f6"
+    }
+  ]
+}

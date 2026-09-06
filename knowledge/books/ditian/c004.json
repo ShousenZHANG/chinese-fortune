@@ -1,0 +1,74 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c004",
+  "title": "形象論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F04&oldid=844352",
+  "revision": "844352",
+  "source_timestamp": "2017-03-23T15:43:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c004.wiki",
+  "raw_sha256": "5455b60b30f0770ebf8e78e6be715b72c1de2607947bc976476b16e0c49e9bef",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "形象論",
+      "text": "兩氣合而成象，像不可破也。",
+      "layer": "base_text",
+      "passage_id": "ditian:c004:p0001",
+      "sha256": "f16d7ae3b10df836dfb5543ed9f73aacde5b1c4742d853f04bc244b34b95cdc5"
+    },
+    {
+      "section": "形象論",
+      "text": "天干屬木，地支屬火，天干屬火，地支屬木，若見金即破，餘倣此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c004:p0002",
+      "sha256": "953b9f4f679f5050e13679fe84381262866cad636394aacdc5f7c61c24dd1120"
+    },
+    {
+      "section": "形象論",
+      "text": "五氣聚而成形，形不可害也。",
+      "layer": "base_text",
+      "passage_id": "ditian:c004:p0003",
+      "sha256": "67a4c904580212bf48c351b706a9eb04c60c419af3abc66b1dd096b37e24fe13"
+    },
+    {
+      "section": "形象論",
+      "text": "如木必得水以生之，火以行之，土以培之，金以成之，五者聚而成形或過或缺則害，餘倣此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c004:p0004",
+      "sha256": "91c701a914b823c6099f726a867e0d499fd06bde903bcd8544cdc0b15bf09147"
+    },
+    {
+      "section": "形象論",
+      "text": "獨象喜行化地，而化神要昌。",
+      "layer": "base_text",
+      "passage_id": "ditian:c004:p0005",
+      "sha256": "b8e67496a10ed464e7582fc93dd852df96a2727b856086319dcf851fc9172731"
+    },
+    {
+      "section": "形象論",
+      "text": "一氣者為獨，曲直炎上之類是也，所生者為化神，化神昌旺，則其氣流行。",
+      "layer": "commentary",
+      "passage_id": "ditian:c004:p0006",
+      "sha256": "dd21d76fd32588d8624628099fc39b59138de0c9cc977dfb23ceb4aaf2ddc7a6"
+    },
+    {
+      "section": "形象論",
+      "text": "全像喜行財地，而財神要旺。",
+      "layer": "base_text",
+      "passage_id": "ditian:c004:p0007",
+      "sha256": "a419958d3b1eb091c371673f4eb534d6551d85c92ef276ecb7b18c81358a2c89"
+    },
+    {
+      "section": "形象論",
+      "text": "三合者為全，主旺喜行財旺之地。\n形全者宜損其有餘，形缺者宜補其不足。\n如甲木生於寅卯辰月，丙火生於巳午未月，皆為形全。\n戊土生於寅卯辰月，庚金生於巳午未月，皆為形缺，餘仿此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c004:p0008",
+      "sha256": "cf961870ce8192a1bbb20ba4684f194f5b8502cd03a55300d0cfdfd889d69548"
+    }
+  ]
+}

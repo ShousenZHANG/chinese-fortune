@@ -1,0 +1,402 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c195",
+  "title": "万金赋(明津先生骨髓歌)",
+  "source_url": "https://luckclub.cn/bazi/001/195/",
+  "revision": "sha256:febb30fea3cb9a1c3c0adb2163804a9e05bf28d284a9f6015249ac5385475c53",
+  "source_timestamp": "2026-09-06T04:11:03.133393+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c195.html",
+  "raw_sha256": "febb30fea3cb9a1c3c0adb2163804a9e05bf28d284a9f6015249ac5385475c53",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "万金赋 (明津先生骨髓歌)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0002",
+      "sha256": "e19feab35864a910b645d7521bffdcdcd2a679b2abf0cadddfd8aea08dd80dff"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "欲知五行生死诀，轻易岂与凡人说，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0003",
+      "sha256": "49ecb3bf0425a2ef0ded45e641694f7d416763bbb3b54ec0ccd47ae2212c3ad6"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "五星只在限为凭，子平专以运为决，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0004",
+      "sha256": "db08829578c64f41de73cf256cb737b6bfa74c423eaa1752e1d6dab116e7285b"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "生知富贵问前程，死时未审如何截，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0005",
+      "sha256": "7a0b5e48de0e8c31993f813128fef86df4941cd353b61c6a66848e4fd06f65fa"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "格局只以用神推，用不受伤人不灭，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0006",
+      "sha256": "325b0fc577cc17b835505cee8e11bbb021a943ab335c8c80c1333979af604042"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "运行先布十二宫，看来何格坠时节，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0007",
+      "sha256": "958b5ed1627e06cf2d7b8dd9055a4e3560d3e3ce8ae65f1c25d2e0c9d33d2956"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "财官印绶与食神，当知轻重审分明，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0008",
+      "sha256": "5cfd299be2d6be9b612bd954d4abce4d9d1adcb5dbcac9bdeff029af78d69bb1"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官星怕行七煞运，偏官尤畏正官临，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0009",
+      "sha256": "23d5a23e022fd142523756b0d02ed803d425883f554db2d49e971768ca2f95b8"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官煞混行当知审，去煞留官仔细评，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0010",
+      "sha256": "741a837392d1a73714fcc17a1debbe93e46f5d9e0950376495b3fc2ba85540e7"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "留官去煞莫逢煞，留煞去官官莫逢，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0011",
+      "sha256": "1861915ba047ddb7086f8279e8436f9f2698c83bbaa6a8611ca6ea5e8680e6ed"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官煞受伤人必夭，更宜财格定前程，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0012",
+      "sha256": "4364bc75c704da2846579926706781ab6d6fc24b90f3302af1c574d90fe49acf"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "日时偏正问何财，又怕干头带煞来，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0013",
+      "sha256": "95233c5a5f2ba04975d1219c235502623d6444e60cfd3d37c8b542de1fff51b8"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "劫若重逢人夭寿，孰知偏正甚为灾，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0014",
+      "sha256": "0584c32bcce25a62a38d6970a2db8d5fa663062af6dd9388ce6936f10a382c88"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "自专偏正皆为福，兄弟同分是祸媒，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0015",
+      "sha256": "32503e8abf0b7789b6163568df7844206338fe64786699ed479d6d4db425c911"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "运到正财必争竞，各宜偏正两分推，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0016",
+      "sha256": "7fd821ec82ae7ca84b9a01b79fdacd39eb256a0aedaa69d5b689b7f430f46b50"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "有财官运须荣发，财地官乡是福胎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0017",
+      "sha256": "252f0dd06bca3dacb90b39af6cbba559cdb0000351a6f4598dab5c89a78e20d6"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "只怕日干元自弱，财多生鬼赶身衰，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0018",
+      "sha256": "438b5581422981b9b32931c21a12572ce9806e330209e7364f50912c713de42e"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "财多身弱行财运，此处方知入泉台，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0019",
+      "sha256": "3676a78f9b159253d49a0714fcb3a8b2e4cb393ea94133749d2e3c8acfb7d2c7"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官不受伤财不劫，寿山高耸岂能颓，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0020",
+      "sha256": "eb3b5f7a47ed275b2443ec1a00de0f52e6de3fad9458c43fab8739cb893185b7"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "第一限逢印绶乡，运生身旺必荣昌，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0021",
+      "sha256": "f64f6ca0b1048d71445282420e80a676e4f5888dce0ada90dc1eed4582227635"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官乡会合迁官职，死绝当头是祸殃，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0022",
+      "sha256": "523f5c98dcfa83feab3a4f5fd79430ca6168d703a034f6ca8122ac8dcfc9880e"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "若是逢财来害印，堕崖落水恶中亡，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0023",
+      "sha256": "b82241b70578d93079c8c5593af4823be2ed453e749573a8ab68d772bfdea7f8"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官居在任他乡死，作客逢丧在路傍，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0024",
+      "sha256": "9fa8d5e3a062bd8c413b58acd96e8cc4e076e5c70a83f9ce4739c28ca00c37a1"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "印不逢财人不死，如前逐一细推详，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0025",
+      "sha256": "82171c5d79139d663ac3426f0de80462798a73b7189b99a024ea9c0f49d5f3f6"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "财官印绶分明说，更有食神非易诀，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0026",
+      "sha256": "03b110670822dc59466b72cb38b575ef6f631d9858b6110788b16d1cdf0b5c15"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "食神有气胜财官，只怕残伤前後截，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0027",
+      "sha256": "84b65fb73360659072a3f74d26b5c41eccd436ad90490fc3ccbd849f4c00f41f"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "倒食运遇反伤年，须知早下泉台歇，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0028",
+      "sha256": "5237e124365baa900892e949d7e22817bc8b491b66be350e43f5b358318aede9"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "前格教君说短长，後格也来前路截，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0029",
+      "sha256": "b3ac7f7ff14efd22f1a966d9eb30f8a21ac041aac46db69471f9ee19caba63ce"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "却分轻重细推详，大怕官财临死绝，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0030",
+      "sha256": "6c365874c61a74d187b19cf41e1cd6adf8706d6e717fcca189c046db6e44102d"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "伤官命运再逢官，断是徒流祸百端，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0031",
+      "sha256": "943f2961120e2e84a3bb3adcff3aef9afc2d79b7e1dbe2fd9f4ba7e4af32dcfc"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "日贵日德逢冲战，此命危亡可立看，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0032",
+      "sha256": "b306e5090c79ecb2ba3d0b66b29670aa0854c4acbba836b126b09873f399afb1"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "飞天拱禄嫌填实，最怕绊神来犯干，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0033",
+      "sha256": "4dcd6342bee6876212e3a3a5c47c88ddbd6b81916aa17a89ac75549e95192a8d"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "若依喜忌篇中断，格局逢伤作夭看，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0034",
+      "sha256": "2cfc7db4198d1f8c5e2922f9247d4980e09819d1edc9570a82742f77aabdf73d"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "後格死生无异兆，第一财官为紧要，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0035",
+      "sha256": "54bbc0b1397bf8422e5b56d989102e0605a8f20e89be5a2932c70325006d19cf"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "运行若不遇财官，既遇财官无长少，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0036",
+      "sha256": "04a45e1f3066110bab52e2386f70c45e37750292f56eea82885c6cf265a67077"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "问寿须知向用神，用神受制定克身，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0037",
+      "sha256": "3675983566f58d665ed6ddfc5c3d243e372a7a129647f84ea081e7db16bb6503"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "受伤勿以便为祸，轻重须教认取真，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0038",
+      "sha256": "0fbe2d0ac36b97b1d2f959c9a6063f55053dcfcb50ef45be6b7da78da1b301e7"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "用神健旺定无虑，运若逢伤蹇迍地，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0039",
+      "sha256": "d88f45104a366c2f27fb570c8a7ff5fded2872f21123f6628324f0cf2127bcb1"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "退职卸官依例断，亡家败业损儿孙，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0040",
+      "sha256": "8e3b98a939b73c53e8ed575b4a0d7e7ab0462167762440db4e5ac765b0b5a1cb"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "六亲眷属还遭累，礼服亲丧百事临，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0041",
+      "sha256": "0f5edc10e252f9cb848d6e24f47b8b9fcbb8bc1b5a910ff5d46506b6486e65fa"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "何以知其能住寿，但宜运上细推寻，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0042",
+      "sha256": "5bc289adcd815a1bd1a7e5950204d4198a644ad7851371a8c73cd84127befb66"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "日干同运如逢煞，逢煞逢刑祸来侵，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0043",
+      "sha256": "895e4a63d18c6c4608b8ea75464ff11a62f81075a9bb93d27bdf2d996b94bab5"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "官星同运如逢禄，禄逢刑祸来相侵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0044",
+      "sha256": "6b781ce2cf64aa751768c0fb3487041575c3246c2d354b75391f8d2395c385a0"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "外敌仍远逢内敌，其余官分外方寻，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0045",
+      "sha256": "050ac9efa9be7213fafd5d96dbb3e2b029af52466128aabe555015d1e521e554"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "外逢内敌为灾重，内逢外敌祸微侵，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0046",
+      "sha256": "52d3e24e2c02d4d6b23ceeae7e89ebfd060835326ac8edbe1365e71636503eb0"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "戊己土须分四季，杂气中间难又易，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0047",
+      "sha256": "993c4e6aba324651c9d0a3010f7f70c5b814251b87ac07f89013e455cd3b0b03"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "逐年分定数中推，受制受伤随岁气，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0048",
+      "sha256": "75143ac885eea0b0aae4ec3e4cb443d9ad8a0128595d6dd9fef949284a324887"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "指定吉凶此运中，何年何月殃灾至，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0049",
+      "sha256": "9b810e97b750b4a11720cc070d387c092402ecd856615d3a923a7cf41791a42f"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "眉批：此段以下言行运相犯贵者)子运岁逢辰子癸，克应太岁及月位，寅运丙申逢年同，巳丙一同祸福类，卯运乙木怕相逢，巳中戌庚丙杂会，午运年上午戌凶，丑未年中须是畏，申宫庚亥莫相逢，酉逢辛丑皆为忌，亥运壬甲怕申宫，只是八宫包四季，四季从头混八宫，大抵回圈如指示，不知去处是无穷，配合干支同一位，更分轻重定灾凶，运重岁轻宜并论，吉凶岁随运一同，此是千金不传秘，予困济世写遗踪，术人且莫妄轻议。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 191,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c195:p0050",
+      "sha256": "3e04adfb8548565f381ce0fe939d99a59ddde8abd27778953421f494cb3d6718"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "眉批：官乃纯善之人，行七杀运会其恶星，必害其官。七杀是官，官旺则杀之，官弱则欺。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 40,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c195:p0051",
+      "sha256": "974cd009ddcc8d279d97a3128c5403e090c6173f38d246b88c8f90f9be6279eb"
+    },
+    {
+      "section": "万金赋(明津先生骨髓歌)",
+      "text": "财多身弱，生财不任，又行财运则死。“若是逢财来害印”，甲用癸为印，用己为财，己土能克癸水，所以言死，五行依此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c195:p0052",
+      "sha256": "9226f08be29199ea8c2148f24dd3039e216efe6c15200e6336ba23f46b538e76"
+    }
+  ]
+}

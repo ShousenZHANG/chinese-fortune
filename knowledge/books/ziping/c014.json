@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c014",
+  "title": "十四、論用神配氣候得失",
+  "source_url": "https://www.donglishuzhai.net/chapter/3727.html",
+  "revision": "sha256:5746ef6b7ec93357a8b273f12cdb18cb4c4a6e65d9b1ebee98b7d016d76451f2",
+  "source_timestamp": "2026-09-06T04:15:52.921Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c014.html",
+  "raw_sha256": "5746ef6b7ec93357a8b273f12cdb18cb4c4a6e65d9b1ebee98b7d016d76451f2",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "論命惟以月令用神爲主，然亦須配氣候而互參之。譬如英雄豪傑，生得其時，自然事半功倍；遭時不順，雖有奇才，成功不易。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0001",
+      "sha256": "7ce2626985d0ca8a7697675fd687486a4b64c82bd689cdcfdda775f6f315b4eb"
+    },
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "是以印綬遇官，此謂官印雙全，無人不貴。而木逢冬水，雖透官星，亦難必貴。蓋金寒而水益凍，凍水不能生木，其理然也。身印兩旺，透食則貴，凡印格皆然。而用之冬木，尤爲秀氣，以冬木逢火，不惟可以洩身，而即可以調候也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0002",
+      "sha256": "4ac5e28d468fb1aa46cbc10999b8ed886a1f8e9d0c5230e13803f590709b2990"
+    },
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "傷官見官，爲禍百端，而金水見之，反爲秀氣。非官之不畏夫傷，而調候爲急，權而用之也。傷官帶煞，隨時可用，而用之冬金，其秀百倍。傷官佩印，隨時可用，而用之夏木，其秀百倍，火濟水，水濟火也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0003",
+      "sha256": "94f97f8564953cc63c8201fbf04fa43c7f8c623ad7d36ebf851692ce6b493752"
+    },
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "傷官用財，本爲貴格，而用之冬金，即使小富，亦多不貴，凍水不能生木也。傷官用財，即爲秀氣，而用之夏木，貴而不甚秀，燥土不甚靈秀也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0004",
+      "sha256": "799108cb60d3073a712c8c5fae2a3db88e78e076697198e812b56c83a4299b5b"
+    },
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "春木逢火，則爲木火通明，而夏木不作此論；秋金遇水，則爲金水相涵，而冬金不作此論。氣有衰旺，取用不同也。春木逢火，木火通明，不利見官；而秋金遇水，金水相涵，見官無礙。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0005",
+      "sha256": "d58b3869c149de38e66ba931bbccee535c001e9c3d9157333d6711a08baac9bd"
+    },
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "假如庚生申月，而支中或子或辰，會成水局，天干透丁以爲官星，只要壬癸不透露干頭，便爲貴格，與金水傷官喜見官之說同論，亦調候之道也。食神雖逢正印，亦謂奪食，而夏木火盛，輕用之亦秀而貴，與木火傷官喜見水同論，亦調候之謂也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0006",
+      "sha256": "9ca53019d8f023d3207bb6deda2c2e4eda5fabd3e9985e1121c507d9582039f4"
+    },
+    {
+      "section": "十四、論用神配氣候得失",
+      "text": "此類甚多，不能悉述，在學者引伸觸類，神而明之而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c014:p0007",
+      "sha256": "d47fa44cb9146db34afd8049f953bd162982e9fde794b86fd26024b29a3a89db"
+    }
+  ]
+}

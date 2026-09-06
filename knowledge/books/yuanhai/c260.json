@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c260",
+  "title": "刑冲诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/260/",
+  "revision": "sha256:2218c8522d74299a31c8e49dfb95e04887cba83b360ab788be2d997ba629234b",
+  "source_timestamp": "2026-09-06T04:11:17.515153+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c260.html",
+  "raw_sha256": "2218c8522d74299a31c8e49dfb95e04887cba83b360ab788be2d997ba629234b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "刑冲诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c260:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "刑冲诗诀",
+      "text": "刑冲诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c260:p0002",
+      "sha256": "1ff3d1f8d0bcba748ed1b7049dfff30ff9cb0ba8d80b008956862328b1214490"
+    },
+    {
+      "section": "刑冲诗诀",
+      "text": "比肩羊刃日时逢，若问年令父道凶，父母干支相会合，财星健旺寿如松。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c260:p0003",
+      "sha256": "af32fe502cc2287583402ad42e0b1cb66fbb5aa77db365736c12abe19f9151b3"
+    },
+    {
+      "section": "刑冲诗诀",
+      "text": "克夫那堪妻又伤，堪居道院共僧房，闲身作保防连累，财破妻灾事几场。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c260:p0004",
+      "sha256": "fe524c3d4bf34baed2643835ec5a7ea6cbacfdacd89678797b78117e00f9bcee"
+    },
+    {
+      "section": "刑冲诗诀",
+      "text": "眉批：克日下伤妾，时下克上，月支克，大抵克妻尽于羊刃，防财上见之。又财官食神死绝，财者，妻也，财死则妻死，",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 53,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c260:p0005",
+      "sha256": "653580fddf26c8d00a3269783ebc6307eefc1d2d818d0e45d4b564611c313333"
+    }
+  ]
+}

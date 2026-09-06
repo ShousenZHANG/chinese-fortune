@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c226",
+  "title": "日贵诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/226/",
+  "revision": "sha256:6132613ecfe0f5935e8c2532258f3abc3e81f776d1d8a602a2f8fb369c3033c2",
+  "source_timestamp": "2026-09-06T04:11:09.489744+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c226.html",
+  "raw_sha256": "6132613ecfe0f5935e8c2532258f3abc3e81f776d1d8a602a2f8fb369c3033c2",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "日贵诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "日贵诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0002",
+      "sha256": "426d14107c5b61fbc80390ff9c7d9d34a2a39070b1edae0a91a5c90adebf388b"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "日贵支干一位同，空亡大忌带官冲，仁慈广德多姿色，会合财星空自崇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0003",
+      "sha256": "24ec9b788b4994752bcd75509031c37d99a33fb8444af0b79202e7fa5dea7da4"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "丁日猪鸡癸兔蛇，刑冲破害谩咨嗟，临绝会合方成贵，终始分之乃是佳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0004",
+      "sha256": "6c919d0e82c224313e720f0d1b34606dc92881dac7ff0929ce2db55dd341c16b"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "癸丁蛇卯届猪鸡，官被刑冲祸必随，纯粹施为有仁德，尊崇富贵出希奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0005",
+      "sha256": "fdc8614c1545b8f68544ec62d3f158ad888d602aedd99f8b980b639a14c27825"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "日贵看来是兔蛇，格生亥酉越堪夸，刑冲不遇空亡位，辅佐功勳在帝家。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0006",
+      "sha256": "3d988d73619cf89f14af61508eea3b496c02fc3e03d344f83d51e9cb51702f2e"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "眉批：天乙贵人本四日，",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 11,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c226:p0007",
+      "sha256": "199b2c9e64b3d98c551bf7408e27db8c159e193cece16f6fcd6abb0a3d62cf92"
+    },
+    {
+      "section": "日贵诗诀",
+      "text": "癸卯 癸巳 丁酉 丁亥是也，癸卯、癸巳为壬癸兔蛇藏，丁酉、丁亥乃丙丁猪鸡位，贵人就在日支，所以取贵。只忌刑冲破害则伤贵人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c226:p0008",
+      "sha256": "966101aa471915dfa7877833a8bb0b049eadd345eb040860d5e8ddfcc01f4d2e"
+    }
+  ]
+}

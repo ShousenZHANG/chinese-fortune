@@ -1,0 +1,210 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c202",
+  "title": "五言独步",
+  "source_url": "https://luckclub.cn/bazi/001/202/",
+  "revision": "sha256:02077bfcdbf4be48a7a6c0166d8b76a859b9614f699b1d04ae1e3e5063f17b17",
+  "source_timestamp": "2026-09-06T04:11:04.361364+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c202.html",
+  "raw_sha256": "02077bfcdbf4be48a7a6c0166d8b76a859b9614f699b1d04ae1e3e5063f17b17",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "五言独步",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "五言独步",
+      "text": "五言独步",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0002",
+      "sha256": "bea34c014533dbc0bb1ff30bb2f60e7032bdcb2a3a16b50dcb20f623464d3391"
+    },
+    {
+      "section": "五言独步",
+      "text": "有病方为贵，无伤不是奇，格中如去病，财禄喜相随。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0003",
+      "sha256": "d7839ee1171bea5479edc6deeb7f5075949803302445a02fd9381dec1aa426eb"
+    },
+    {
+      "section": "五言独步",
+      "text": "寅卯多金丑，贫富高低走，南地怕逢申，北方休见酉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0004",
+      "sha256": "405c545454f7b6320b8c80e8550c683b8b36ce5d9ac2efc2182326969390b9c5"
+    },
+    {
+      "section": "五言独步",
+      "text": "建禄生提月，财官喜透天，不宜身再旺，唯喜茂财源。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0005",
+      "sha256": "315553d62004e29c893e5b9661569a86bddc158d512a8c66f8b8080311637e00"
+    },
+    {
+      "section": "五言独步",
+      "text": "土厚多逢火，归金旺遇秋，冬天水木泛，名利总虚浮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0006",
+      "sha256": "cd7248d00fff07bc4ddddb2f8320fa02274279c61607236a0f684d488ae14ebf"
+    },
+    {
+      "section": "五言独步",
+      "text": "甲乙生居卯，金多反吉祥，不宜重见杀，火地得衣粮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0007",
+      "sha256": "e911e50a865f4c16cfcfb35958b55e1f6b95594b00a3318d70f924f0cbd67326"
+    },
+    {
+      "section": "五言独步",
+      "text": "火忌西方酉，金沈怕水乡，木神休见午，水到卯宫伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0008",
+      "sha256": "08affed6d5bc92889cc3d81233aa892d5b161a2a54683d653de724163a066b9d"
+    },
+    {
+      "section": "五言独步",
+      "text": "土宿休行亥，临官在巳宫，南方根有旺，西北莫相逢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0009",
+      "sha256": "0a2e695ec4ca4ac1f3dac18fc88d12a2ab7f29e65b9feebc9bf3f9fb62863d86"
+    },
+    {
+      "section": "五言独步",
+      "text": "阴日朝阳格，无根月建辰，西方还有贵，干怕火来侵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0010",
+      "sha256": "b91e25647d525a9301b301e3b04a38eb3ee6044fd71adf688f0edcc8fa002e39"
+    },
+    {
+      "section": "五言独步",
+      "text": "乙木生居酉，莫逢全巳丑，富贵坎离宫，贫穷坤艮守。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0011",
+      "sha256": "18d7e843d6b60649189ab917e8ac629523a1c052c52183c983a0c25be63d79de"
+    },
+    {
+      "section": "五言独步",
+      "text": "有杀只论杀，无杀方论用，只要去杀星，不怕提纲重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0012",
+      "sha256": "5737719c64f156039297c98cbcb11eec33ee9a34aab2baaaede66ad9b4e572bd"
+    },
+    {
+      "section": "五言独步",
+      "text": "甲乙若逢申，杀印暗相生，木旺金逢旺，冠袍必挂身。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0013",
+      "sha256": "5361f116ce58aa3645b7016e8f81d5111f0c07d929af76bbb57d0ea222c8db25"
+    },
+    {
+      "section": "五言独步",
+      "text": "丙火怕重逢，北方返有功，虽然宜见水，犹恐对提冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0014",
+      "sha256": "05cb8b1cda9711e24e99ce0eb438d846a6d1af9a5c0390c53936a1cc166dd710"
+    },
+    {
+      "section": "五言独步",
+      "text": "八月官星旺，甲逢秋气深，财官兼有助，名利自然亨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0015",
+      "sha256": "d085cfbe30b165e3de61095a52a425ae45f41a8b3f91b45e40f5eba0797aeac0"
+    },
+    {
+      "section": "五言独步",
+      "text": "曲直生春月，庚辛干上逢，南离推富贵，坎地却犹凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0016",
+      "sha256": "2e885882cabd655e6f36ee118378e485bd150e54fd1dd2532eda78cb26fc36d3"
+    },
+    {
+      "section": "五言独步",
+      "text": "甲乙生三月，庚辛戌未存，丑宫壬癸位，何处见无根。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0017",
+      "sha256": "5f3fbd6fc95953bf1e14478ed3c71315c083d0539b1050c5a4446a928d39d5ad"
+    },
+    {
+      "section": "五言独步",
+      "text": "木茂宜金火，身衰鬼作关，时分西与北，轻重辨东南。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0018",
+      "sha256": "d230795cecd656ed4919fbfb7fc32447b48aaeed988a3940c2b9dff566ae684c"
+    },
+    {
+      "section": "五言独步",
+      "text": "时上胞胎格，月逢印绶通，杀官行运助，职位至三公。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0019",
+      "sha256": "1613e499391d8819e260109c0e0ea2616f8b1293e9c56b9b59ebf6adb9091893"
+    },
+    {
+      "section": "五言独步",
+      "text": "二子不冲午，二寅不冲申，二午不冲子，二申不冲寅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0020",
+      "sha256": "f556713b7e4d5b28f6cfd54ef771e05772768ae196db830dc72addec4ca4a325"
+    },
+    {
+      "section": "五言独步",
+      "text": "得一分三格，财官印绶全，运中逢克破，一命丧黄泉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0021",
+      "sha256": "9b4b66eb94842897558acbc6eedc9dafd7836eaa0b05f8d2f025f56847b83577"
+    },
+    {
+      "section": "五言独步",
+      "text": "进气死不死，退气生不生，终年无发旺，犹忌少年刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0022",
+      "sha256": "ffcdcb46bcef74b7637816cfc1917c73a6d89258df930ec3bfb38a44b7f5a30d"
+    },
+    {
+      "section": "五言独步",
+      "text": "时上偏财格，干头忌比肩，月生身主旺，贵气福重添。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0023",
+      "sha256": "e0ba0568180008bf3affedaaec7882506be65cdcf93ba899043f4061f378e66c"
+    },
+    {
+      "section": "五言独步",
+      "text": "时上一位贵，藏在支中是，日主要刚强，名利方有气。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0024",
+      "sha256": "7e5b2a13d07932eeb20afcec9eb3f3966bbc92c542b9cc66496407003b2b9c00"
+    },
+    {
+      "section": "五言独步",
+      "text": "运行十载数，上下五年分，先看流年岁，深知往来旬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c202:p0025",
+      "sha256": "60c452d125d464397e03abc1b89c96d2f1156e4237b8d32d969202d908253f5f"
+    },
+    {
+      "section": "五言独步",
+      "text": "眉批：辰戌丑未，财官入墓须得库开为贵。如十二支中，寅刑巳、巳刑申、丑戌子卯刑伤破宫中取用。凡子冲午为不利，若有丑合子则不冲，余皆同。“鬼作关”，即杀也。大运重支，十年实无上下五年之分。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 92,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c202:p0026",
+      "sha256": "06346a1279856ddb07bb4389dde08b38de679ccb82f8ab439cd2045c7d8581fa"
+    }
+  ]
+}

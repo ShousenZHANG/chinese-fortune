@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c092",
+  "title": "论日贵",
+  "source_url": "https://luckclub.cn/bazi/001/092/",
+  "revision": "sha256:8414f17705fcc37d078e6f90e0d8e2ed1f768598980b9d80937199fb74166873",
+  "source_timestamp": "2026-09-06T04:10:43.522499+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c092.html",
+  "raw_sha256": "8414f17705fcc37d078e6f90e0d8e2ed1f768598980b9d80937199fb74166873",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论日贵",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c092:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论日贵",
+      "text": "论日贵",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c092:p0002",
+      "sha256": "e15d20c66d83d87817688f6390547a451ed1eaf4d06f3b939f4a8192d82356a6"
+    },
+    {
+      "section": "论日贵",
+      "text": "日贵者，又即甲午庚牛羊之类。只有四日，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c092:p0003",
+      "sha256": "dc51b2bc21f090b630710f8cae6817c214cfdc459175eb9b6ffcbb5d16a3143d"
+    },
+    {
+      "section": "论日贵",
+      "text": "丁酉 丁亥 癸巳 癸卯耳，最怕刑冲破害。经云：崇为宝也，命为贵也，所以贵人怕三刑六害也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c092:p0004",
+      "sha256": "28193cd91aa35919a44a5922d8c96f30299c9a1eb592ba1d585a7feee9830b01"
+    },
+    {
+      "section": "论日贵",
+      "text": "贵神要聚於日，运行怕空亡及运行太岁加会，不要魁罡。主人纯粹有仁德，有姿色，不傲物，或犯前刑则贫贱。刑冲太甚，贵人生怒，反成其祸，不可不察。日贵有时法异同，须分昼夜贵。日要日贵，夜要夜贵矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c092:p0005",
+      "sha256": "64dc7b4afdd7a0836c74c9ca290f44950efc3b729eccf9397eac3622a8add41c"
+    },
+    {
+      "section": "论日贵",
+      "text": "眉批：诀曰，日贵支干一位同，空亡大忌带刑冲，仁慈积德多姿色，会合财星空不空。法以丙丁猪鸡位、壬癸兔蛇藏为例。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 54,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c092:p0006",
+      "sha256": "93f02e72372cf3ea64fa50849aafb21d828b528ee89aff2172902a75ff344288"
+    }
+  ]
+}

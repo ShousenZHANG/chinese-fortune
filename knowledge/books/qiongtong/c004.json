@@ -1,0 +1,1432 @@
+{
+  "book_id": "qiongtong",
+  "chapter_id": "c004",
+  "title": "卷四·论土",
+  "source_url": "https://www.gushiwen.cn/guwen/bookv_4d487c9bc133.aspx",
+  "revision": "sha256:1cf16ab6bb40f53e5cd259ad0ce6194b0d9a077e2924759c7cac622cb6dfca7c",
+  "source_timestamp": "2026-09-06T04:16:00.562216+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/qiongtong/c004.html",
+  "raw_sha256": "1cf16ab6bb40f53e5cd259ad0ce6194b0d9a077e2924759c7cac622cb6dfca7c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷四·论土",
+      "text": "五行之土，散在四维，故金木水火，依而成象，是四时皆有用有忌者，火，死酉也，水，旺子也，盖土赖火运，火死则土囚，土喜水才，水旺则土虚，土得金火，方成大器，土高无贵，空惹灰尘，土聚则滞，土散则轻。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0001",
+      "sha256": "a49d6996b665177c478d7ecc6cae9c7d92a1865b904390bb4131770eed59a533"
+    },
+    {
+      "section": "卷四·论土",
+      "text": "辰戌丑未，土之正也，分阴分阳，主则不同，辰有伏水，未有匿木，滋养万物，春夏为功，戌有藏火，丑有隐金，秋火冬金，肃杀万物，土聚辰未为贵，聚丑戌不为贵，是土爱辰未，而不爱丑戌也明矣，若更五行有气，人命逢之，田产无比，晚年富贵悠悠，若土太实无水，燥则不和，无木则不疏通，土见火则焦，女命多不生长，土旺四季，惟土困弱，戌多为人好斗，多瞌睡，辰未人好食，丑人清省，丑为艮土，有癸水能润而膏，人命遇此，主能卓立。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0002",
+      "sha256": "2d11de14e78ae1c09a89c62f325e4735464e09c5dcc3b4921596db741f46055e"
+    },
+    {
+      "section": "卷四·论土 / 春月之土",
+      "text": "春月之土",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0003",
+      "sha256": "1249f7261f76fbd44660b2602a009a33c240a172abf891c30a29ad109c92c9db"
+    },
+    {
+      "section": "卷四·论土 / 春月之土",
+      "text": "生於春月，其势虚浮，喜火生扶，恶木太过，忌水泛滥，喜土比助，得金而制木为祥，金太多仍盗土气。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0004",
+      "sha256": "6b78732c02b33994d1977fa1f2824c26b96917645977498f77cfee3cdf055e48"
+    },
+    {
+      "section": "卷四·论土 / 夏月之土",
+      "text": "夏月之土",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0005",
+      "sha256": "ae666eb1f24c36fcf806c864fb30f6d04b9d9cc27229a067ea3692e7e3ae5c3c"
+    },
+    {
+      "section": "卷四·论土 / 夏月之土",
+      "text": "夏月之土，其势燥烈，得盛水滋润成功，忌旺火煆炼焦坼，木助火炎，水克无碍，金生水泛，妻才有益，见比肩蹇滞不通，如太过又宜木克。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0006",
+      "sha256": "4849a191b23c04146def0857732946104fad4bad72cf8329f54fcfe1636b7a61"
+    },
+    {
+      "section": "卷四·论土 / 秋月之土",
+      "text": "秋月之土",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0007",
+      "sha256": "5cef45f4894ca87ab268fa57d136465f20b6822cec464a5dd37412fa0ffdcac6"
+    },
+    {
+      "section": "卷四·论土 / 秋月之土",
+      "text": "秋月之土，子旺母衰，金多而耗盗其气，木盛须制伏纯良，火重重而不厌，水泛泛而不祥，得比肩则能助力，至霜降不比无妨。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0008",
+      "sha256": "bee38a079792fe0f93f058ff4c9f6e1f4fa9de0dd2b51510d8cea7732fb5f4a9"
+    },
+    {
+      "section": "卷四·论土 / 冬月之土",
+      "text": "冬月之土",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0009",
+      "sha256": "58fb207b6dddc3457204f750bd0db1c7b7dfc0714487857da5f7ad0e16268975"
+    },
+    {
+      "section": "卷四·论土 / 冬月之土",
+      "text": "冬月之土，外寒内温，水旺才丰，金多子秀，火盛有荣，木无咎，再加比肩扶助为佳，更喜身主康强足寿。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0010",
+      "sha256": "facada9b47af032eb5d60453c2f0569b052b159ca64f7b36d2a7e2192a442b65"
+    },
+    {
+      "section": "卷四·论土 / 冬月之土",
+      "text": "辰戌丑未，四土之神，惟未土为极旺，何也，辰土带木气克之，戌土之土，带金气泄之，此三土虽旺而不旺，故土临此三位，金多作稼穑格，不失中和，若未月土，则带火气也，带火以生之，所以为极旺也，若土临此旺未月，见四柱土重，多作火炎土燥，不可作稼穑看，但临此月之土，见金结局者，不贵即富也，书曰，土逢季月见金多，终为贵论，而在未月尤甚。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0011",
+      "sha256": "f4b7bd908a9c62c38658cb71ead98cef9a95f5160aa82c26f6642c4c5a21a9af"
+    },
+    {
+      "section": "卷四·论土 / 冬月之土",
+      "text": "论戊土",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0012",
+      "sha256": "7dfbb76eb150776f7d95326279b1f5214351d28686a3bce59497cf948b476fe6"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "三春戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0013",
+      "sha256": "84fb766e3c5189704cafd3aa5220d7b24bd2eacf60eb884552178eb4513f9f96"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "三春戊土，无丙照暖，戊土不生，无甲疏劈，戊土不灵，无癸滋润，万物不长，正二月先丙後，癸又次之，三月先甲後丙，癸又次之，因戊土司权故也，有甲、丙、癸、三者齐透，必主一品当朝，或二透一藏，亦登金榜，二藏一透，也可异途。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0014",
+      "sha256": "d0676fe9fb852b57df35dcb9cebd66a2248f4c1b05e3d1e414391ec562b42e15"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "正二月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0015",
+      "sha256": "b1e9b08ea72d13a05f1a3caeb51923965cb41547088f8053dc50cd0d2276dc8c"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "正二月即有甲癸，若无丙除寒，如万物生而不长，故无丙者，富贵艰辛，或有丙无甲癸者，名日春旱，如万物生而厄，无甲癸者，一生勤苦，劳而无功，或一丙火，有甲久癸，先泰後否，或支成火局，不见壬癸，僧道孤贫，癸透者贵，壬透者富。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0016",
+      "sha256": "172f42af639660ec2bf0c29401759a32051b16e2bf76b4671d724ec5d3ed966c"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "用水者要审水之多少，或一派，甲木无丙常人，得一庚透方妙，或支成水局，甲又出干，又有庚透，富贵双全。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0017",
+      "sha256": "532642a17387d460db05cd249e9fe55d72a86dec4ffe7f4350631a05e64affb9"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "或无庚金，又无比印，难作从杀，定主遭凶，不然，必为盗贼，若日下坐午，不得善终。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0018",
+      "sha256": "6f290e48850bec1cb25083fc16de2c8e1fd5556035d08c6fe49b5de0db7111a4"
+    },
+    {
+      "section": "卷四·论土 / 三春戊土",
+      "text": "或一派乙木，为官杀会党，即有庚从，郤难制乙，此人内奸外直，口是心非，加一甲在内，无庚，必懒惰自甘，好食无厌，或丙多甲多，宜以癸庚参用。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0019",
+      "sha256": "2aeb53e24d91a41f4fddea0a3a7ac2d3cc53ff84c0459ed29500fde76898bf33"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "三月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0020",
+      "sha256": "1b84b578a2b0e5100d87fb15f2de479924bb11ea868e987992ca5f4a2cda78b0"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "三月戊土司令，不见丙甲癸者，愚而且贱，毋癸透者、科甲，两癸透者、生员，甲癸俱藏者，只可云富，有癸异途。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0021",
+      "sha256": "22065775e7bac62ba7e1b5e6769310299a78ba4009fc0b397208eb095213628a"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "若丙多无癸，旱田无水，不能种苗，旧谷已没，新谷未登，此先富後贵之造，或火多有壬透者，先贫後富，癸透先贱後荣，壬藏不过食足，癸藏不过名传，即此亦须运美，或支成火局，得癸透者，富贵天然，壬透富贵辛苦，何也，癸乃天上甘霖，壬乃江河波浪，所以有劳逸之殊。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0022",
+      "sha256": "e97fd79ab7f2434e8167e9f01c5afa98fe743f032881b4a51c8fbcbe3499cc92"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "支成木局，又甲乙出干，此名官杀会党，官杀无去留之义，得一庚透，扫除官杀，亦主富贵，无庚乃浅薄之人，宜用火泄木气，有一命、丁未、癸卯、戊寅、乙卯、癸丁透干，加以戊癸化火，将甲木暗，反得武科探花。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0023",
+      "sha256": "18d5a06f3661f6b54db8bf0c4ae0c430c437774fece2fa72781425609d4a7e8b"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "或木多无比印透，作从杀而论，亦富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0024",
+      "sha256": "0beaa3713805e4b66d9debbc3a004b3829b2c023e48525a76f5bba73a08e14ba"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "或有比印，端看癸透，取癸而成贵格，无癸、无火、无金，名为土木自战，主腹主疾病，忧愁艰苦。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0025",
+      "sha256": "a0a342a3af4775e1041a98d45c65272c5a071565dca33e7cd13a8e06e27d5f87"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "用甲者，水妻、木子，用丙者，木妻、火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0026",
+      "sha256": "003cf6ea53668eb992dc5262c9e5b4d5074a164e3caee88d9e4a81bf95c9bbce"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "丙寅，庚寅，戊辰，庚申，丙癸．",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0027",
+      "sha256": "8fde8173feb8ca8c25f479615d11a9971776e297ebd52f5c00f1f4c2f9675d7a"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0028",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "丙戊乙癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0029",
+      "sha256": "82d33e6183c1d2d9cafa950709cd55582299b73feb82f5ef4621fd8c2c68cac1"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "辰寅卯未　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0030",
+      "sha256": "28e641d05c74bacf7943f4d17bc5f6a3edc4d23a3b94473a3e07f869f38b5db1"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "壬戊乙癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0031",
+      "sha256": "fe5300bc5c143bca9149465bde83a1d6120d468ef5fd48939e92b6d5b592badc"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "子寅卯未　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0032",
+      "sha256": "ed05cdb7d104ecf7e89d6fdec4afa21d13da606d800790224fd9a63bc4217d13"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "壬戊癸辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0033",
+      "sha256": "ee8232c9c1c1749e1e2e671708e9e2574b58be8517fba91abf2760b858b61c56"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "子寅卯卯　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0034",
+      "sha256": "0d3765df02d6041a0ad129e8cf4e1a7a703c8c89672c17dc9862bdccd2563360"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "甲戊戊己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0035",
+      "sha256": "b00fcb2e1daf5cb45cfb643e7660b9bc535733fc07b6e256e2939859264a5669"
+    },
+    {
+      "section": "卷四·论土 / 三月戊土",
+      "text": "寅寅辰未",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0036",
+      "sha256": "c9b122dcbf525c31e77d92f3d9c640ea78d7ecb4aed39b3c9f98445efd9c1074"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "四月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0037",
+      "sha256": "2cf70c557977819091c9ce4890b9480a60b6cd21ca5d69f81bac9e04e4546001"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "四月戊土，阳气发升，寒气内藏，外实内虚，不畏火炎，无阳气相催，万物不长，故先用甲疏劈，次取丙癸为佐。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0038",
+      "sha256": "34cc348abaa2b8c2d7e8fb8bb76473aaeb68343916b6791a7003f3e2d2657aa8"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "丙透甲出，廊庙之材，丙癸俱透，科甲之士，即透一位，支藏得所，终非白丁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0039",
+      "sha256": "137ecb9bdf615ce650c7868eea2282e5a26efcff012337df3e9804bb036014a8"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "若一派丙火，为火炎土燥，僧道之流，得一癸透壬藏，功名有准，或支藏癸，衣食充足，但骨肉多刑。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0040",
+      "sha256": "ca24d72739f1877a5934ac1d8ade1d0c9d542236d6bf0fa8a1683fdb6e8b54a4"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "化合成局无破，富贵非轻。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0041",
+      "sha256": "87eb0931bb3683f8f1e60d14e0d4ff17c4310eb777f423c06cc2b0c79f54998b"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "或支成金局，干出癸水，此为奇格，正是土润金生，即不为桃浪之客，定有异路恩荣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0042",
+      "sha256": "83290830c2c8d4fe1fb892699892395fbdfea06f6379ab95750c25c8f1c2b8d3"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "此用癸水，金妻水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0043",
+      "sha256": "815222450fca305c2c5bdbe7006986ddb3bd53fd65be8e0d07d3c110bec03dca"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0044",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "丙戊癸辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0045",
+      "sha256": "985e77887cc501e1e3e630cb60d95d043f39335c9810f28b69c1828f9a4efab3"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "辰午巳亥　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0046",
+      "sha256": "17f339b5c3c0b2e666c000d3811e3694b6ba7adae438e490d47630f3e799d319"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "丁戊丁癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0047",
+      "sha256": "9c1ebfda2838d26214ab3488d8b6e675d5abd562699c1b9848a11290440b5067"
+    },
+    {
+      "section": "卷四·论土 / 四月戊土",
+      "text": "巳午巳丑",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0048",
+      "sha256": "d93cc93886953ca2be258799ca259ceca2c10f988132ce00e87b2e4b4949231b"
+    },
+    {
+      "section": "卷四·论土 / 五月戊土",
+      "text": "五月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0049",
+      "sha256": "af09638a9f6b59e028a05f5d8d40d59e4a1cf2873c49e7a6e49e96a35a591273"
+    },
+    {
+      "section": "卷四·论土 / 五月戊土",
+      "text": "五月戊土，仲夏火炎，先看壬水，次取甲木，丙火酌用，用癸力微。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0050",
+      "sha256": "bf8b3b40b0b95d1df8c2af2d3b44a36acd1b6869c8dc0acc745a52256cd16624"
+    },
+    {
+      "section": "卷四·论土 / 五月戊土",
+      "text": "壬甲两透，名君臣庆会，自然桃浪先声，权高位显，又得辛透年干，官居一品，一命、辛未、甲午、戊寅、壬子，壬甲两透，印旺杀高，出将入相，名播四夷。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0051",
+      "sha256": "06ab99c1bc769c633efef90c1b14ed7ab90a0fbb947ea8b6f542cf2a196282bf"
+    },
+    {
+      "section": "卷四·论土 / 五月戊土",
+      "text": "若支成火局，即透癸水，不能大济，是一杯水济车薪火也，人命合此，即好学不倦，亦能成名，且主目疾，若得壬水出干，则此非比。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0052",
+      "sha256": "cc5ae831be69b4ef215a5269a35f1fbd88934addf37abf8b41d1260b2e5bb4f7"
+    },
+    {
+      "section": "卷四·论土 / 五月戊土",
+      "text": "又或土木重重，全无滴水，僧道孤贫之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0053",
+      "sha256": "71f4f7bf1889072d6e0adb3c88fc27c8d293c99cf9d73647c8d86fb19d509bd0"
+    },
+    {
+      "section": "卷四·论土 / 五月戊土",
+      "text": "用壬者，金妻水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0054",
+      "sha256": "82e7cb5d5f2c1bf9fa3601044c0472b89d1d5b90e2dee431720ba298948fb5b8"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "六月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0055",
+      "sha256": "4ef54226558f857ec2cab32812c94e374d0ad85463afe36b51766326cdc71e6f"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "六月戊土，遇夏乾枯，先看癸水，次用丙火甲木。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0056",
+      "sha256": "f430dfa59c4e9830acab0d9db31aeca426ae8375825d2a695e2f6b8637b16f1b"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "癸丙两透，科甲中人，或有癸无丙，见甲可许秀才，无甲略富，或有丙无癸，假道斯文，衣食颇足，或癸透辛出，以刀笔之才，可谋异路，无癸丙者，常人，若又无甲，下贱之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0057",
+      "sha256": "3acb62786917c303db026871d10bef9fdd0742418da1947b79980b476cd6387c"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "或土多得一甲出，不见庚辛，为人作事轩昂，性情谨慎，即不显扬，亦文章惊世。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0058",
+      "sha256": "8708549bb20dcf2e19d49dd10b0741c70c764d8a43a5272f705215316785f865"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "用癸者，金妻，水子，用丙者，木妻，火子，用甲者，水妻，木子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0059",
+      "sha256": "0686340ea615aebb10a8fcfc6312111df62b373a9f481fd60d4b553c14009bd8"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0060",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "癸戊己戊",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0061",
+      "sha256": "39207e6c80e9e80f691d7e05896bc15486a1d185242d06d881deb200d3bdb6da"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "丑辰未戍　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0062",
+      "sha256": "6856541be9a082f43f0f9c2600417a9d80f1f6ab53985266df71c07cef4f16c0"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "辛戊己戊",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0063",
+      "sha256": "187c6d13eddc7b445923ccbb05d3fe8606b845943bafe47e9fc3e0b85cc2ea0a"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "酉午未申　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0064",
+      "sha256": "e07357116174c27c1da56fe5fee9c6abe07e41ce22035ec7455b3a0be616deb9"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "丁戊癸庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0065",
+      "sha256": "8dc416c7e1e0573c90146e1009561591e4e4bb3d7407c26f86ab2d5a151b5180"
+    },
+    {
+      "section": "卷四·论土 / 六月戊土",
+      "text": "巳子未子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0066",
+      "sha256": "599e8893f40374dfded6af3dd5bde2d18f5f1a6533eb758484d411462dce4835"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "七月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0067",
+      "sha256": "cca3e792be313e2a35c0c9ac29112b82bd911ea8306e3d9b8da3d56fe1d360c3"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "七月戊土，阳气渐入，寒气渐出，先丙後癸，甲木次之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0068",
+      "sha256": "de391dc225417745dd60886f33884538cc7c3850c4f4a4606a408d2a080c924b"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "丙癸甲透者，富贵极品，癸藏丙透，不仅秀才，丙申两透，癸水会局藏辰，亦不失富贵，无丙得癸甲透，此人清雅，家富千金，无癸甲者，常人，有丙火，妻贤子肖，若丙甲癸三者俱无，下流之命。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0069",
+      "sha256": "7d21b2df2cda6cd93c51623a7f3115ffa1c0363401a42a95aea776596f473dff"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "或支成水局，休作弃命从才，宜取甲泄之，甲透者，稍有富贵，用神妻子同前。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0070",
+      "sha256": "eddd2d712789723fe44ed50e786447f457f565743fdf8901a481695e9423f94b"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0071",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "壬戊戊壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0072",
+      "sha256": "e1cfe1ebf36b66afc0b4910aeb083fff8986889c1cf7c5690f77e6c3d84b85cc"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "午辰申寅　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0073",
+      "sha256": "28d97a5c24223a2dd7673201ecefb209f4d1f3deda53b56eea441b905ef4088f"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "癸戊甲庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0074",
+      "sha256": "61dad39f3006a7c1f8cf78749a851806395197cbfb69461e234f7aaf4397f1a3"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "丑寅申寅　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0075",
+      "sha256": "530f65e35c8e1797e5b112e5ee8ee414b96df26d28aef31d32a7853c1aa13103"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "丙戊丙辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0076",
+      "sha256": "d82b98666ed925f1c2db3e7a26070ae2a23e30663a5ee373ba6b587b207d05f5"
+    },
+    {
+      "section": "卷四·论土 / 七月戊土",
+      "text": "辰子申酉",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0077",
+      "sha256": "8551522c3979d1f7e2eda562c4f834378a5cc27fa03ac691339e10cab236c5b2"
+    },
+    {
+      "section": "卷四·论土 / 八月戊土",
+      "text": "八月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0078",
+      "sha256": "9241c2bb4370b9c1cfe7788314351059584fc3bfb7155a7634664b89acc2f6b4"
+    },
+    {
+      "section": "卷四·论土 / 八月戊土",
+      "text": "八月戊土，金泄身寒，赖丙照暖，喜水滋润，先丙後癸，不必木疏。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0079",
+      "sha256": "4956c20c1881cfa8f74a7a1e2d7c0950fd553d81497e5437fa664026a7e604b9"
+    },
+    {
+      "section": "卷四·论土 / 八月戊土",
+      "text": "丙癸两透，科甲中人，丙透癸藏，可许入泮，癸透丙藏，纳资得官，若丙藏又无癸，即多不透，此皆常人，癸丙全无，奔流之客。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0080",
+      "sha256": "668e66926fa5ee023dc94b19ed2b5d2d6cabf3111bf483322dbd77c459a063ba"
+    },
+    {
+      "section": "卷四·论土 / 八月戊土",
+      "text": "或四柱皆辛，无丙丁，此名伤官格为人清秀，即不能拾芥，亦可武庠，一见癸水，富而且贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0081",
+      "sha256": "59c6e8fcc29c4ebde35bb83adf72bfe48c32f8132970ed3b939d2833611013ce"
+    },
+    {
+      "section": "卷四·论土 / 八月戊土",
+      "text": "或支成水局，壬癸出干，此名才多身弱，愚懦无能，若天干有比劫分散才神，颇言衣食。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0082",
+      "sha256": "e504c5016e960964b569fa541d904afc41770d11a01cd647c99af2b74b2f751d"
+    },
+    {
+      "section": "卷四·论土 / 八月戊土",
+      "text": "用神妻子同前，秋土生金极弱，须丙火丁火出干方妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0083",
+      "sha256": "0051ae851bde1f6b59a18fa9fc31826a7fc2c56af33eddd16a82e46b78008719"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "九月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0084",
+      "sha256": "d02512db4208a5df725207bcae2532781d067dfd188c8e10e04d17aa2f8c31fa"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "九月戊土当权，不可专用丙，先看甲木，次取癸水，郤忌化合，见金先用癸水，後取丙火，配合支干，方成有生之土，定发云程。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0085",
+      "sha256": "9a690d18f1a056436b81323183bf8a8a2c7af24e5682c1f8aeac897ba7c03ad8"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "或无丙有癸，不见甲透者，衣衿小富，无癸丙，有甲者，衣食而已，若癸甲全无，虽有丙火，亦属平常，或为僧道。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0086",
+      "sha256": "a33dd7f55751d420dafe7da86109f3b4f95c22a818803e029e18e9e0fe6de3e0"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "或支成水局，壬癸透干，用戊止流，有比透反主富。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0087",
+      "sha256": "33cc150d5bda533abc2c32d85ccd9c3244323f5859d24b525433c7f59103a7a9"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "支成火局，名土燥，不发。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0088",
+      "sha256": "8ca588106abe7dd39621a7d770c74405f007dfeeae2d7630bb940c2a2e9b5944"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "得金水两透，此人清高，略可富贵，无水，一生困苦，妻子仝前。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0089",
+      "sha256": "99d32f3f784255fcd1804d13fe054200e9da98c1d4c28d090dce605311f66c7b"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0090",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "丙戊甲己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0091",
+      "sha256": "eb2480bef0782d78f55b420cc96769a0e2ba35627392dc03201d26cbeff7d55d"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "辰辰戌酉　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0092",
+      "sha256": "488a116b3585a1dad309afbfe559ddb4aa9cd107271947090e919b785b730a78"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "癸戊庚丁",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0093",
+      "sha256": "4ed1f583d7874c7fa88acff8dc09e81f2cc9048d2d5c07634b72f312e8d7b381"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "亥戌戌亥",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0094",
+      "sha256": "137a4c80d75a444e35dcb6cc44b79ef87da65efb141b7725dc2ff6b98475ba3f"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0095",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "壬戊戊丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0096",
+      "sha256": "f2704e8dab0b74c5702da789d9b1b042efa6157d8f4cdb5b5bf4b260b8ae52bf"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "子寅戌戌　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0097",
+      "sha256": "9c5c4053827d04cc062b778e80d33f7c49d047dcb1a4d235697176cec1714a99"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "乙戊庚丁",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0098",
+      "sha256": "fbf6ce9df15115241ab101f954d3f30790a15dbcd1511d3305e9e4078cf422d6"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "卯寅戌酉　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0099",
+      "sha256": "a031b961b0a88bb6ddebdb2862b98c7967474bbb243b12c50a562551d3b9a570"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "己戊戊丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0100",
+      "sha256": "e0f8d59ac0fc4e59099a745b71c5802626748ea960b2fc7ffcb80af2c0f2b271"
+    },
+    {
+      "section": "卷四·论土 / 九月戊土",
+      "text": "未辰戌子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0101",
+      "sha256": "3157ccbd77b2b4d2a7ab55a9a68e8472ae879174a99be9d6075bf9820f10a0fc"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "十月戊土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0102",
+      "sha256": "dfda23bede194ea19dfca46084cfb5f5d6ffaa07b1f0c68557f6c4bfde79f721"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "十月戊土，时值小阳，阳气略出，先用甲木，次取丙火，非甲，土不灵，非丙，土不暖，安能发生万物，甲丙两出，富贵中人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0103",
+      "sha256": "729f8d92e43af423589d8b1ad9735ba3cc736371509ec1f4a8c705087b77b608"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "或甲得长生，遇支藏得地之水，一丙高透，亦主身贵扬名，支见庚金，入泮而已。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0104",
+      "sha256": "e60c107c219ef52287de5ece8bbef58aa3816b088aa65aa13450f44cf7832a64"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "若不见庚金，甲木藏支，丙火高透，科甲有之，若有庚，丁出制，必异路功名，或为典吏。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0105",
+      "sha256": "152f7f30d2ad7104bce35bd0b77e69f9bf2ce4805be51e9e3193e8ff22d979df"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "即庚丁不透，甲丙藏支，亦云富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0106",
+      "sha256": "8c0744abfce74f02760c708ebac48a379ab678a62d2677c4346a0743e33be1b0"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "壬透得戊救丙，主富中取贵，丙甲俱无，必为僧道。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0107",
+      "sha256": "63ac7faef52b0f1fb58a6d8dfaf3907787d638e4fa22fe28aa0733dda53a8533"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0108",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "戊戊癸癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0109",
+      "sha256": "edd72df09b31afe9360bd8f37a129fcbf7cf4c42cd82984a4f3caf63f1da86ca"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "午辰亥卯　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0110",
+      "sha256": "ce930d1df48053327d5a59091908a63090759d7189647fc299b3f9be9665b111"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "庚戊辛壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0111",
+      "sha256": "783d2bb7604a14ff2d022943bfcf3f3a48095d84345951f33608418c40950c8e"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "甲寅亥申　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0112",
+      "sha256": "234b4a8c9e759de748edf5310d82128696fb01fe359b53ca809f5551d5696e9c"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "丙戊丁乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0113",
+      "sha256": "0280a93876d62bd3e184a534a885be43fd56c38f7fad30d6ada2a45610fc1daf"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "辰戌亥卯",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0114",
+      "sha256": "668d03fd782f5effa76c5b690452edc52026aa71ffbf4817cebfa58824f540d5"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "十一二月：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0115",
+      "sha256": "b69a39e05bda6ed496b5306a4565733e14285bbd16c2a3ceeeabc482e84f1012"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "十一二月严寒冰冻，丙火为尊，甲木为佐，丙甲两透，桃浪之人，丙出甲藏，采芹食　，丙藏甲出，佐杂前程，有丙无甲者，豪富，有甲无丙者，清贫，丙甲全无，下流之造。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0116",
+      "sha256": "fc2ccdf08e1d79a1df8c449f291bfac9e53d601505fdfafc160ee6233400ed6d"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "或一派丙火，加以丙透，运值火土，弱中复强，又一壬透干，主清高荣禄，乏壬，僧道孤寒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0117",
+      "sha256": "ff3a8376d714fda8d7e833a8e6c9c9c979f13b0964101db5440cd9e7eb0c760b"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "或一派水土寒滞，不见一丙，得一癸透月时，亦不失儒雅风流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0118",
+      "sha256": "929a3541db4248367942294a840f9adff8cc8c50b26e45bbdb882511dde905ff"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "或一派壬水，不见比劫，可作从才而论，即有比劫，得甲出干，又主富贵，若寒土无丙，虽有甲木，亦是内虚外实之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0119",
+      "sha256": "5188ee7ac378a6aea6827ee607d936cc8fa2c6777e48278be438a5cf48c7cdef"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "或二癸透月时，名为争合，终属劳碌之人，得一己出干制癸，反为忠义之士，合己从人而论。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0120",
+      "sha256": "e38e7bd210439deab2e38255632d80e9b6dd9a7622166fdf322e4879eb85cd87"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "年月透辛金者，又属土金伤官，异路功名可许，以金为妻，水为子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0121",
+      "sha256": "257ad4c97cc381fb21edb1b924cf4a39f200b79ef60dbe09cf1a24816fbdda43"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0122",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "壬戊壬壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0123",
+      "sha256": "1d9fd0652518fa4c354ea47c35c0a0c4a18d8ee33c84ea849761eb69495ea066"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "子子子子　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0124",
+      "sha256": "764bf5f80edcc4a4665343c874027aa26a62dd924b6226c545b3e8529349a3a2"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "癸戊乙癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0125",
+      "sha256": "6bbb7c18e57585fd6443f5a6f28bb25fe3143b955d421861045b7af0ec11897f"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "丑申丑卯　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0126",
+      "sha256": "cdee61e9d92a7ad20cecadcd320bf2b4d1934720f75988c25597db4825ea97af"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "戊戊甲戊",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0127",
+      "sha256": "7144a220c74dda296d274e81ce7aaaf4ffd3ed9ffe6eb94cf6183342e2533312"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "午辰子寅",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0128",
+      "sha256": "e07fbc84be1e84614eb2f14ed49f5f914293d3a89c210fe3728d1324ff7202ee"
+    },
+    {
+      "section": "卷四·论土 / 十月戊土",
+      "text": "论己土",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0129",
+      "sha256": "b4e968fd700333d11c2164bfdf5c35172fcb087adb1c5ccfe3607b86af47e838"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "正月己土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0130",
+      "sha256": "fe9d20a2d660f502854d074a30a1ee72af5d707283390a9c8931fc72844e83a9"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "正月己土，田园犹冻，盖因腊气未除，余寒未退，故丙为尊，得丙照暖，万物自生，忌见壬水，反为己病，何也，壬乃江湖之水，湖水一发，则田园洗荡，变为沙土，而根苗尽没矣，须戊作堤，以保园圃，壬多要见戊制，有戊出干者，定主玉堂金马，若乏制戊，必属平常。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0131",
+      "sha256": "28c731b7ed1a5da8cced7275a339ff8cc17f108ad3dcaca2f1cdf2520fe78cea"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "或一派甲木，有庚出干，加以癸丙齐透，配得中和，亦名利双全。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0132",
+      "sha256": "bca11cae6e8db6e2cf8e74e0c58e9c829508f71bade2d27a25a07b1dc39b794a"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "即丙生寅月，庚透天干，亦有俊秀。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0133",
+      "sha256": "0923724269954b49eb501ab4fe4130d9f48e5402d628184e5e4a23905a2ff136"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "若甲多无庚，残疾废人，宜用丁泄。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0134",
+      "sha256": "52cb6db914f910af4edbf3cfdbaefc41642b161914acc014e360d51af8474ce8"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "或一派火，即不见水无碍，何也，正月己土湿，必丙燥暖，反主厚禄，加一癸透，科甲自然，戊透，反作常人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0135",
+      "sha256": "9298ec4c7c234b8698a4832d3c7bb6cfd333d9fd30919819dbaee05baf47df4c"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "或一派戊土，有甲出制，又主荣显，如见乙出，虽多不能疏土，且乙多者奸诈小人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0136",
+      "sha256": "0c5ed8744188ae85063a73e8d234f522d213291a64f5b1ec6ae9ec72f9856f51"
+    },
+    {
+      "section": "卷四·论土 / 正月己土",
+      "text": "用丙者，木妻，火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0137",
+      "sha256": "aa71cd186cc7bfcaf47afcfb3c443c6f366912147c68b4ad66e7ff5be0a595cf"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "二月己土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0138",
+      "sha256": "034d18c03ac447f35ac7eea92f8b73c31c96b40351c2ef3da76a2bc7901ccd94"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "二月己土，阳气渐升，虽禾稼未成，万物出土，田园未展，先取甲木疏之，忌合，次取癸水润之，甲癸出干，定主科甲，加以一丙出透，势压百僚，一见壬水，微末官职。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0139",
+      "sha256": "33c0a5dda4ba0549600ec12d8b62bb9e6f4da4db9ae039db7993217234bc9525"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "或见庚制甲，壬水出干，比劫重重，此必俗子，丙透犹有小富，丙藏衣禄无亏。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0140",
+      "sha256": "9938a4b9b3154d6a5b214f0ead2ac7cb2627f89c1b684eeafbf278933a782f72"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "或支成木局，庚透富贵，若柱多乙木，乙又屈庚，庚必输情於乙，不能扫邪於正，此必狡诈之徒，运入东南，恐有不测，当用丁泄之，有丁者，小人而已，不致无良。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0141",
+      "sha256": "a2558df0a5bf1871e8ed938c42cb6d081311cc9a24a8e40294121898382499ff"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "无比印，从杀者贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0142",
+      "sha256": "85815b2011598aca5a100f57480a2b2c2e1414879041e13e78a6cf05ad7d10fd"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "若柱中无甲丙癸者，皆下格，妻子用神仝前。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0143",
+      "sha256": "5d785c4166222594a645f6753b20deb6b570fcc8b568fd301c1dfc14060a1c73"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0144",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "庚己乙癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0145",
+      "sha256": "1d91b330d5a403c9c1b39ca0b099156bc409a61fa76024d16633980cbec290bb"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "午巳卯卯　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0146",
+      "sha256": "3f86440f313ff8523a80b63996edb0b24da90b59cac70341bde5178b4e6282d6"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "乙己乙癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0147",
+      "sha256": "acfb63931deb1d47d95b4b7b69a2509684becc8d413ca486d96834dd2970f452"
+    },
+    {
+      "section": "卷四·论土 / 二月己土",
+      "text": "丑巳卯卯",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0148",
+      "sha256": "fd5b09cce859c26e8a0a9a5fcf385e7b0d18c37985c81d0787b4c01088d63e0e"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "三月己土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0149",
+      "sha256": "fd3486d1eeb1987e7030903cade7e457bbc876b474d8301a9a249f72edd0e0f4"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "三月己土，正栽培禾稼之时，先丙後癸，土暖而润，随用甲疏，三者俱透天干，必官居黄阁，或三者透一，科甲定然，但要得地，郤以庚金为病。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0150",
+      "sha256": "004be9fa7060aedb1be419113222f09f0e38a1cbe3fed237ef60b4e3601a047f"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "或有丙甲无癸，亦可致富，但不贵显，或有癸而无甲丙，亦有衣衿，或有丙癸无甲，亦系才人，丙癸全无，流俗之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0151",
+      "sha256": "1bc7411ea9a8afbbd8db3c2e9bfbf47e1a215872c5f2943f5e9bc40fc823c1e3"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "或一片乙木，无金制伏，贫而且夭也，妻子仝前。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0152",
+      "sha256": "c613bd9590f4ff729cc705e6fbf063649c988aee8b087b16e570e92cebfc5fb3"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0153",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "丙己甲壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0154",
+      "sha256": "823046ad228671fee0b6a9aea186c90d51573b8088da54babdbbb75e8292f6ac"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "寅卯辰子　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0155",
+      "sha256": "cbfd4200038ed489db549d068136a7e195a8f47ed74efa547851af7a4394ac01"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "甲己壬辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0156",
+      "sha256": "653ce1573524b27604d829cca4c015e33fb516b6fedaa0fadf5fc19876911043"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "子巳辰未　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0157",
+      "sha256": "f41c5a01e1c91ba06ad28c0c5d6c86a99ff6c8f63c250203961ef9c8a0d33eef"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "壬己甲壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0158",
+      "sha256": "d8a0f43836fa55287a2d311b87266c88e3ef54200e9bc379495b09b94596f99b"
+    },
+    {
+      "section": "卷四·论土 / 三月己土",
+      "text": "申卯辰子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0159",
+      "sha256": "cb186f2b0af04acb60877390f419bde49ac6bd20cb3e1216acffffb2c73e91cb"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "三夏己土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0160",
+      "sha256": "8960d137bdb753fea7a6fc35fde89e18195bc562c49feda474272eb7f0e27b6e"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "三夏己土，杂气才官，禾稼在田，最喜甘沛，取癸为要，次用丙火，夏无太阳，禾稼不长，故无癸曰旱田，无丙曰孤阴。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0161",
+      "sha256": "f2901d96f80d606474378d02796dace4e7c5e487f53fad90d63f1a68470de89b"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "或丙癸两透，又加辛金生癸，此富贵之格，名水火既济，鼎甲之人，郤忌戊癸化合。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0162",
+      "sha256": "86b241980de9e23f68bfe77886a54e7f6bf780ea15f0feac0789df2cf8dbfbc7"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "或有丙无癸，有壬亦可，但不大发。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0163",
+      "sha256": "3766305d8c4bdf254817a86c8e89771e055a3be7201ff07d14456afcdfe63587"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "或一丙火烈土，加以丁火制辛，癸水无根，如七八月之间旱，则苗槁矣，此命孤苦零丁，或有甲木，又见丙火重重，无济水解炎，亦孤贫到老。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0164",
+      "sha256": "425cd4250f78ec72eacfdbf281ed08dadff1644b788870ccd5e81e6d593d5b2f"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "如有壬水，又见庚辛，此又不作孤看，但恐目疾，心肾肝脏之灾，若壬水有根，辛金得地，又非此而论，或壬癸并出，破火润土，此人聪颖特达，富中取贵，又转祸为福也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0165",
+      "sha256": "56ed46160cc66bc282cdcde811f93b92e219d5da1a4d4d3bc70f7c3a7e37852a"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "用癸者，金妻，水子，用丙者，木妻，火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0166",
+      "sha256": "532f8bf07ee56bdb795e53247ec8f589b372f286eee6f2406ba660ccf1596301"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0167",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "戊己己己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0168",
+      "sha256": "a83f53d09ddacb60807b735ffee28fc9201afd21faa3619cdc66a793efb2e2e8"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "辰巳巳巳　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0169",
+      "sha256": "c542f07db6ddf18da66ac61a0c125291acd5da2f5318e732933aa0b1bf8bf83d"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "辛己辛乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0170",
+      "sha256": "533971a3138d01f5fd97024d3c6e9d43a35e8b9969be43a68573f8dddd87253d"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "未巳巳巳　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0171",
+      "sha256": "a591c55cf70637ed9a4b6dd9db2a0fe43c73b37ae634e516dd86cda7cc5e7c74"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "庚己辛乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0172",
+      "sha256": "ac4e50231374d626e6c12ed901d47992fb75b1fd12b0b4c039c0e6d835ec0f90"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "午巳巳丑　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0173",
+      "sha256": "c92273a61f298cc1ccee92f58286ac4ce2d700a4c967a290f1e134570b4e30ea"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "乙己癸丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0174",
+      "sha256": "3e6945dc3610812835a01e50c25689c23763038597e556cfdee74d66ec0969c2"
+    },
+    {
+      "section": "卷四·论土 / 三夏己土",
+      "text": "亥亥巳申",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0175",
+      "sha256": "be236cce73f6894a4909d022d0305440a054d06b6b73737548a2244ef766cb39"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "三秋己土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0176",
+      "sha256": "642788c477396105a83ceb2beac83306a112e922d50021183b97ddb419f59c85"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "三秋己土，万物收藏之际，外虚内实，寒气渐升，须丙火温之，癸水润之，不特此也，且癸能泄金，丙能制金，补土精神，则秋生之物咸茂矣，癸先丙後。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0177",
+      "sha256": "52e5763e1696a5387d155e2ca3e215e8963731c65d771591150e96c32dd9da06"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "丙癸两透，雁塔题名，或无癸，有两丙透者，异途显达，或武职权高，或有丙火，不见壬癸，为假道斯文，终无诚实，或有壬癸无丙者，衣食充足，才能而已。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0178",
+      "sha256": "80747740d978917ad6e619f4357d5840408c996be21caa732e01c46bda576113"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "或支成金局，癸透有根，此人家畜万缗，富中取贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0179",
+      "sha256": "2ab35df8e7e994a1e34459851c2d201f3af49c3e1c73efe5202984ce9f4e101e"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "或支四库，甲透者富，乏甲者孤贫，或甲出无癸乏金，积德可全科甲，或会火局，无水救，乃大奸大恶之徒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0180",
+      "sha256": "7d679d440e6f97b502d12339f5bf25e1d3aa1057d9625b99b8aed41c8ac7818e"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "或丙透癸藏，遇金颇有选援，加一壬辅，富贵慷慨，有贤声，见戊透者，主遭凶厄且贫。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0181",
+      "sha256": "a87611275ca3cff3326c4acc55c32d7a0b3913c4e5aad17b4d007987d1e1b447"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "八月支成金局，无丙丁出救，此人零丁孤苦，如得丙透丁藏，生己元神，此人名魁天下，五福完人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0182",
+      "sha256": "c4b3adc416908c4580c536081c8bcbadadc41082149313f78aaf23800fe276a2"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "总之三秋己土，先癸後丙，取辛辅癸，九月土盛，宜甲木疏之，余皆酌用。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0183",
+      "sha256": "4c9e16586457c37ac9fefec2178f5da442f208ff4d594fc62140e34d5e5afc3d"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0184",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "壬己癸甲",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0185",
+      "sha256": "0d7506841af4c326c4245d6f7d4da430e8f0a2cdec9a040ff1f4a9ae96103aee"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "申未酉寅　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0186",
+      "sha256": "c0f2753f3b274b867573d65cc1f1375f0f72a205760148c8e8d1abf9107a1857"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "壬己甲己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0187",
+      "sha256": "c7e457d780f880ee534d6a6c7ff75ae203726cadd27822ba60e438c1c41e453a"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "申丑戌巳",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0188",
+      "sha256": "a327ed5a392b35849a24d176b8dad62286091cb5c9482090d9847c70a3e8a3c9"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "勾陈全备润下，劳碌奔波之客，土凝水竭，离乡背井之流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0189",
+      "sha256": "a4eacd1e23f0f87571f699833b3d6df0db792ba779b80606197c560a5066cca3"
+    },
+    {
+      "section": "卷四·论土 / 三秋己土",
+      "text": "勾陈得位会才官，无冲无破必然端，甲子北方寅卯木，管教环拱戴金冠，戊己喜亥卯未为官，申子辰为才，忌刑冲杀害。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0190",
+      "sha256": "21bbf4d76cf4d803f441bedec84c8d643930fa365eab49b4d0078e75944bc736"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "三冬己土：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0191",
+      "sha256": "ae1060e8bae1909aefac79ba07e6b4ac14eab8410dba2033d29d62fdef17351e"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "三冬己土，湿泥寒冻，非丙暖不生，取丙为尊，甲木参酌，戊土癸水不用，惟初冬壬旺，取戊制之，余皆用丙丁，但丁不能解冻除寒，不能大济。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0192",
+      "sha256": "a540a4ac9939997fff36fe7a8d8b4e4177a64006f20d2272b6b15caf86d142c9"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "或干透一丙，支藏一丙，如以甲透，科甲有准，即藏丙无制，亦主衣衿。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0193",
+      "sha256": "2c1858bd4020462b916bbe0ea2c4f72d2fd1feb5eb1db8da699101043c9103f5"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "或多壬水，得戊透制之，此命安然富中取贵，不见戊土，富屋贫人，凡三冬己土，见壬水出干，为水浸湖田，此人孤苦，若见火不孤，见土不贫。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0194",
+      "sha256": "1b2d7ba4bed5060148391b067491e66119bb80b7e239a63a6cd4233610065bd5"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "或一派癸，不见比劫，此为从才，反主富贵，虽不科甲，恩诰有之，若见比争，平常人物，妻子主事，从才者，木妻，火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0195",
+      "sha256": "b32b24101df2d33f105b1fe859e8674a788729a2db8d6bffa378b4a63df93624"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "或一派戊己，取甲制之，甲透者富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0196",
+      "sha256": "636176fd75fdbcf354b65847daa0b5e797629c76d9e2fe63baad00085cc02146"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "或一片辛庚，须用丙火，还须丁火为助，丙藏，富贵奇特之命。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0197",
+      "sha256": "97297712b5cb000f8725123612327a49644825494faeb350d213774a554bef92"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0198",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "甲己癸壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0199",
+      "sha256": "0fd40af3f40909967bb243f9ac492b5566f1358da9b9047f47883059b719e4c8"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "戌丑丑申　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0200",
+      "sha256": "cda8b2fe980dd82f16208d6fc71962c87a71d3bf7f62e4b982808a2cabd35ae6"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "己己癸壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0201",
+      "sha256": "87a4af908be3e097ccf2adf30403d73ce03b8c7a12e741bbcefcaaaa28b3f511"
+    },
+    {
+      "section": "卷四·论土 / 三冬己土",
+      "text": "巳卯丑子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c004:p0202",
+      "sha256": "4555ec3a062b3724a5022e28bc197318c65d5655b553122433ae9d56ea44b73b"
+    }
+  ]
+}

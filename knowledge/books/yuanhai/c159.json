@@ -1,0 +1,156 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c159",
+  "title": "论疾病",
+  "source_url": "https://luckclub.cn/bazi/001/159/",
+  "revision": "sha256:b26ae1d1fcba5abf83f79e40b1a063e35a86e79146befa2600d377fbd58ce1dc",
+  "source_timestamp": "2026-09-06T04:10:56.179198+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c159.html",
+  "raw_sha256": "b26ae1d1fcba5abf83f79e40b1a063e35a86e79146befa2600d377fbd58ce1dc",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论疾病",
+      "text": "论疾病",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0001",
+      "sha256": "a28badf47fa6f1275fb52054ba683358f3769569ed2069a1f2e307cfe06f9eab"
+    },
+    {
+      "section": "论疾病",
+      "text": "夫疾病者，乃精神血气之所主，各有感伤。内曰脏腑，外曰肢体。八字干支五行生克之义，取伤重者而断之。五行干支太旺不及俱病。金主刀刃相伤，水乃溺舟而死，木乃悬梁自缢、虎啖蛇咬，火则夜眠颠倒、蛇伤烧焚，土乃山崩石压、泥陷墙崩。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0002",
+      "sha256": "48ef35a92b1a4850c6ab3297cb955ddb5ba868f95fcfdc9bf0240c99668adde7"
+    },
+    {
+      "section": "论疾病",
+      "text": "且如生命，天干内腑所属，诗曰：甲肝乙胆丙小肠，丁心戊胃己脾乡，庚是大肠辛属肺，壬是膀胱癸肾藏。天干外肢所属：甲头乙项丙肩求，丁心戊胁己属腹，庚系人脐辛为股，壬胫癸足自来求。子疝气，丑肚腹，寅臂肢，卯目手，辰背胸，巳面齿，午心腹，未脾胸，申咳疾，酉肝腩，戌背肺，亥头肝。肝乃肾家苗，肾乃肝之主，肾通於眼，胆藏魂，肝藏魄，肾藏精，心藏神，脾藏气。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0003",
+      "sha256": "d966b2c5457ab815f1f3388c70bfd9ce7291f2df1c0d6e90ab2c5e6ff80d6e09"
+    },
+    {
+      "section": "论疾病",
+      "text": "木命见庚辛申酉多者，肝胆病。内则惊精、虚怯痨疾、呕血、头晕目眩、痰喘、头风脚气、左瘫右痪、口眼歪斜、风症。筋骨疼痛。外则皮肤乾燥、眼目之疾、发须疏少、颠朴手足损伤之患。女则堕胎、血气不调(堕胎，指孕妇不足月生産，又名小産、早産。血气不调，中医以气为血之帅，血为气之母，二者相互依存，如果不相协和，则可致病，而气血不调就是其病机。在这里指的是因气血不调所致的月经疾病)。小儿急慢惊风，夜啼咳嗽。经云：筋骨疼痛，盖因木被金伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0004",
+      "sha256": "414622db817163f4a8309caa7d4913d808c9ca96f1862418868b8ae9553ab412"
+    },
+    {
+      "section": "论疾病",
+      "text": "眉批：此以木命见金克之全，有此病，克之多者则重，少者则轻。若木生旺而逢金，亦无此病。日乃金木水火土五行之精聚会合而得，故明正行直。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 65,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c159:p0005",
+      "sha256": "63f89aa02d5f601dc957e4b7e614dbbd2b7db2b146c99415360f554e1972c93a"
+    },
+    {
+      "section": "论疾病",
+      "text": "火命见水及亥子旺地，主小肠心经之患，内则颠哑、口心痛疼、急缓惊风、秃舌口咽哑、潮热心烦。外则眼暗失明、小肠疝气、疮毒脓血。小儿痘疹、癣疮。妇女经血淋漓。火主燥，面色红赤。经云：眼暗目昏，多是火遭水克。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0006",
+      "sha256": "481dd3136463ed05e216d5294295c040b06bfa4d3339cba84b78a68aa12a6a9f"
+    },
+    {
+      "section": "论疾病",
+      "text": "土命见木及寅卯旺乡，主胆胃经受伤，内主膈食，翻胃气噎，蛊胀泄泻，黄肿不能饮食，吃物拣择呕吐，脾伤。外则左手，口腹有疾，皮肤燥涩。小儿疳病，脾黄。土主湿，多淹滞，面色痿黄。经云：土虚乘木旺之乡，脾伤定论。土主湿，土在五脏主脾，而脾的功能是运化水湿，如果土弱脾虚，则不能运化水湿，以致以水泛为病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0007",
+      "sha256": "1b55829d9ad9dceb659e790483426ec79b1fb67bbfc5e522126399ce2e646b17"
+    },
+    {
+      "section": "论疾病",
+      "text": "眉批：土命人见木多主有是病，见金则能克之可恕矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c159:p0008",
+      "sha256": "c55dd054b81a780943b4395ced68ab8f36a0d13b18a78400e3403727ca0b697d"
+    },
+    {
+      "section": "论疾病",
+      "text": "金命见火及巳午旺处，主大肠肺经受病，咳嗽喘吐，肠风痔露，魍魉失魂，痨怯之症。外则皮肤枯燥，疯鼻赤疽，痈背脓血之咎。经云：金弱遇火炎之地，血疾无疑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0009",
+      "sha256": "3912c6c66540f680c1168f679df16be36fd1dd429c0926253473b7e681d3dff0"
+    },
+    {
+      "section": "论疾病",
+      "text": "眉批：金主肺及大肠，若见火则有是病，见水亦能制之。水火相济得中和，自无此病。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c159:p0010",
+      "sha256": "b4614a4c8e5089a3d1bc1e73261d0b20880785be1c8e9156e44a9e622aa2f76d"
+    },
+    {
+      "section": "论疾病",
+      "text": "水命见土及四季旺月，主膀胱肾经受病。内则遗精白浊、盗汗、鬼交、虚损耳聋、伤寒感冒。外则牙痛、疝气、偏坠、腰痛、肾气淋漓，吐泄疼痛之病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0011",
+      "sha256": "48e9a56e587466433e68aad757f9b612c3e60bb3bc50eee8a78908faada780cf"
+    },
+    {
+      "section": "论疾病",
+      "text": "肾气淋漓，指肾气虚而致小便淋沥不畅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0012",
+      "sha256": "4f58bfed9f19f3060e879442ec31d71c76329e2791f779f8eecc8e680600b8e7"
+    },
+    {
+      "section": "论疾病",
+      "text": "女人主胎崩漏白带。水主寒。面色黝黑。经云：下元冷疾，且缘水值土伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c159:p0013",
+      "sha256": "c014397095a55d1aa24dee1533c61a2e7086c8879ededd65541b762a6d16c41b"
+    },
+    {
+      "section": "论疾病",
+      "text": "眉批：水主肾经，见土多克之则有是病，木多制之则免，不然天下人尽死矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 34,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c159:p0014",
+      "sha256": "2012ce6adc8857b11d1950b9c79e8065a666410643927f95322525e3e825a7de"
+    }
+  ]
+}

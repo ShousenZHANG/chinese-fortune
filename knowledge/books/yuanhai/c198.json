@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c198",
+  "title": "子平百章歌",
+  "source_url": "https://luckclub.cn/bazi/001/198/",
+  "revision": "sha256:814f2c3f83a902bd50ba4fd48851302bd24e1dc9bcb85bcbbfa1b8221ed6ba09",
+  "source_timestamp": "2026-09-06T04:11:03.620618+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c198.html",
+  "raw_sha256": "814f2c3f83a902bd50ba4fd48851302bd24e1dc9bcb85bcbbfa1b8221ed6ba09",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "子平百章歌",
+      "text": "子平百章歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c198:p0001",
+      "sha256": "65ba5794dcebf4e379cccad27b1de1c87c0a923f1f4c3ee5760d139babd3cc61"
+    },
+    {
+      "section": "子平百章歌",
+      "text": "魁星岁驾五经首，甲旺提纲榜眼清。火明木秀绶魁日，金白水清甲第新。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c198:p0002",
+      "sha256": "2535d15eff29a71d64a431fd64ed16fec383e0bee69aba4830f72091dc8391a4"
+    },
+    {
+      "section": "子平百章歌",
+      "text": "重叠土金登紫阁，调和木火贯黄金。木生春令逢食伤，甲宿文伤义理深。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c198:p0003",
+      "sha256": "2a50b3b7e97898e0abb060b9e541f148603ec4cdd753190944ce8e0779934971"
+    },
+    {
+      "section": "子平百章歌",
+      "text": "财印两轻官杀足，甲第连科一举成，根苗天乙俱榜眼，为魁木火定详英。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c198:p0004",
+      "sha256": "13138f9c4f2c147692bda2f495b612b2138ad617555eb026e784837aa18d33d4"
+    },
+    {
+      "section": "子平百章歌",
+      "text": "相涵金水亲黄榜，递互丙丁待紫宸，金水秋气炎方取，魁星官杀贵分明。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c198:p0005",
+      "sha256": "fcb8b7312a5de021508e4e74ce644928b7bad2e0551701b57d3c592560beea4c"
+    },
+    {
+      "section": "子平百章歌",
+      "text": "杀重身轻休道弱，如逢印绶作魁星，虽知识此分高下，熟记何须问子平。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c198:p0006",
+      "sha256": "16b733de82a0b38113feaa707410a45cea8ea193075d565f2ce92fc0c956b675"
+    }
+  ]
+}

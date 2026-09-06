@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c009",
+  "title": "论十二支相冲",
+  "source_url": "https://luckclub.cn/bazi/001/009/",
+  "revision": "sha256:4b405a6e23e07d76704566b0cb8bcdefc845affc1e3049c769683f7aa636ac8c",
+  "source_timestamp": "2026-09-06T04:10:26.162902+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c009.html",
+  "raw_sha256": "4b405a6e23e07d76704566b0cb8bcdefc845affc1e3049c769683f7aa636ac8c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二支相冲",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "论十二支相冲",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0002",
+      "sha256": "ef72b801a06fb65b6cc53f54e43f1b7fb53960e8dd5c427f7bfd03d33715584e"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "子午相冲，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0003",
+      "sha256": "9c8fb09d0fe656d556c97f1b5ec55f07943089655fede0de934ea422208b7ecc"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "寅申相冲，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0004",
+      "sha256": "b942616639c7e1d306d5bac9c0bb75e9389c104b1d14e301405957f18e10d6f0"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "卯酉相冲，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0005",
+      "sha256": "cf1728f3fda6c1afb35c907a1f269e4b226bfa6af5a73dfa3af769eb73c4e229"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "辰戌相冲，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0006",
+      "sha256": "53e3dcd830275b4fa474995478d370116cda92868c8ed4f4a7121c38839561d2"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "巳亥相冲，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0007",
+      "sha256": "e0db77e10dcfd0809c6a62288bb23affa78eed778bfbe7d032cf260e710c3d60"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "丑未相冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0008",
+      "sha256": "dd149a18491822a672d9a0870a0c31676546fda2fae0d4388950cdfedc5f24d5"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "(子宫癸水，午宫丁火，水能克火之故也。寅宫甲木，申宫庚金，因金克木之故也。以支中暗害为冲，余仿此。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c009:p0009",
+      "sha256": "66bed5ff701ff63539749f5829f9d794626086303d05d3f2b5b17cecc6900623"
+    },
+    {
+      "section": "论十二支相冲",
+      "text": "眉批：相冲者但得有逢合则不能冲。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c009:p0010",
+      "sha256": "983d10683266a7aa333dafa9c02d0c675605728254f7a3b49623f42753a35fde"
+    }
+  ]
+}

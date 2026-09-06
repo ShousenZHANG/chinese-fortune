@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c018",
+  "title": "论年上起月例",
+  "source_url": "https://luckclub.cn/bazi/001/018/",
+  "revision": "sha256:ec301720ee9ceb002ffacac0729521545948ef295c85f4ae944cbb0d93a5e30f",
+  "source_timestamp": "2026-09-06T04:10:28.017679+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c018.html",
+  "raw_sha256": "ec301720ee9ceb002ffacac0729521545948ef295c85f4ae944cbb0d93a5e30f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论年上起月例",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c018:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论年上起月例",
+      "text": "论年上起月例",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c018:p0002",
+      "sha256": "03773b197f857b1b8493e6aea17fd8a690819c911aadd52145a2aab2e2d98320"
+    },
+    {
+      "section": "论年上起月例",
+      "text": "甲己之年丙作首，乙庚之岁戊为头，丙辛之岁寻庚上，丁壬壬位顺行流，若言戊癸何方发，甲寅之上好追求。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c018:p0003",
+      "sha256": "8e807dff9e872501eca3c4cab409fbdbac536c9ab8a928d41c92dd6cc033f54a"
+    },
+    {
+      "section": "论年上起月例",
+      "text": "其法假如甲己生，於月上起丙寅，以正月为丙寅、二月丁卯，一顺数去，至其所生之月止，一月一位顺行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c018:p0004",
+      "sha256": "e75131e378c197967050c538d89048fab3e03082e63c60065eff214051d59bb6"
+    }
+  ]
+}

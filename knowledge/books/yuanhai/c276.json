@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c276",
+  "title": "胞胎诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/276/",
+  "revision": "sha256:65e0ba92b36dbbf5cf2e7c71b0de95fd9e930aaf4b8d25f4b4d0963e626b28a3",
+  "source_timestamp": "2026-09-06T04:11:21.547471+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c276.html",
+  "raw_sha256": "65e0ba92b36dbbf5cf2e7c71b0de95fd9e930aaf4b8d25f4b4d0963e626b28a3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "胞胎诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c276:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "胞胎诗诀",
+      "text": "胞胎诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c276:p0002",
+      "sha256": "aa4506f9ac246e11707511293dfa10206ba021ccf1a288ad617aaca94024e049"
+    },
+    {
+      "section": "胞胎诗诀",
+      "text": "绝中逢生少人知，却去当生命里推，反本还元直细辨，忽然迍否莫猜疑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c276:p0003",
+      "sha256": "e6434ca30478b21a532dbbf8791fe439e1fa65a6d3f1155885949bd5327c659a"
+    },
+    {
+      "section": "胞胎诗诀",
+      "text": "胎神一位难为绝，克陷妻奴家道劣，不惟朝暮走忙忙，羊食狼贪无以别。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c276:p0004",
+      "sha256": "4cdabec686ff5f423dd48091f6742aedff09eb4a0948ef0c992347af0abd07ac"
+    },
+    {
+      "section": "胞胎诗诀",
+      "text": "眉批：胞胎者，其行如人受气於母亲腹中以至胎成而生。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c276:p0005",
+      "sha256": "6d809b4d78ca2243788cc26145dfcc0ff075e4103041d8078862bf3928e32890"
+    }
+  ]
+}

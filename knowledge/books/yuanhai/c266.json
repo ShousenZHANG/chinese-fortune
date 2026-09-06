@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c266",
+  "title": "寿元诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/266/",
+  "revision": "sha256:0c104d0f1484f16ad698d97d9f02ce161725abd0ee9d8e0a11ed8441569eb177",
+  "source_timestamp": "2026-09-06T04:11:19.050146+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c266.html",
+  "raw_sha256": "0c104d0f1484f16ad698d97d9f02ce161725abd0ee9d8e0a11ed8441569eb177",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "寿元诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c266:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "寿元诗诀",
+      "text": "寿元诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c266:p0002",
+      "sha256": "c76750bdc398b5978f3c82266b5b6f5c7d626b77cc85027150ed99f5d0a4b94a"
+    },
+    {
+      "section": "寿元诗诀",
+      "text": "寿算幽玄识者稀，识时须是泄天机，六亲内有憎嫌者，岁运逢之总不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c266:p0003",
+      "sha256": "090ece4c268894ceb10626efd4d69018db4f42158be286317ad71d88f2f2ca29"
+    },
+    {
+      "section": "寿元诗诀",
+      "text": "寿星明朗寿元长，偏印逢之不可当，妻妾不来相救助，命如衰草值秋霜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c266:p0004",
+      "sha256": "7f69b5acd42686917ea6b75a3a3adf0111038919dc9da01bf78ee6df4f38d836"
+    },
+    {
+      "section": "寿元诗诀",
+      "text": "丙临申位逢阳水，定见天年未可知，透出干头壬癸水，其人必定死无疑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c266:p0005",
+      "sha256": "09998651816da19c61603c5be6d78ea2ccaa6ea21a552a0c47d0fa1d3ff1814e"
+    },
+    {
+      "section": "寿元诗诀",
+      "text": "眉批：寿元，五行纳音所取为，甲子生人乃取甲子乙丑海中金，金为寿元也。余皆同此。丙申日，忌水行运又逢壬水者，无土相救必死。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 60,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c266:p0006",
+      "sha256": "989254e59f42df0aca82cd308d0c85d2b459f69b24051ad0a3570985f3b70604"
+    }
+  ]
+}

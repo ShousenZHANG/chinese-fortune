@@ -53,13 +53,27 @@ def main() -> int:
                                            str(skill / 'scripts' / name), *common, *extra], work))
             assert outputs[name]['ok'] and outputs[name]['schema_version'] == '2.0'
         chart = outputs['bazi_calc.py']
+        library = json.loads(run([str(python), '-X', 'utf8',
+                                  str(skill / 'scripts/classical_search.py'), '--validate'], work))
+        assert library['ok']
+        instant = json.loads(run([str(python), '-X', 'utf8',
+                                  str(skill / 'scripts/request_time.py'),
+                                  '--current-timezone', 'Australia/Sydney'], work))
+        assert instant['ok'] and instant['timezone'] == 'Australia/Sydney'
+        reading = json.loads(run([str(python), '-X', 'utf8',
+                                  str(skill / 'scripts/bazi_reading.py'), *common,
+                                  '--current-timezone', 'Australia/Sydney',
+                                  '--request-time', instant['utc']], work))
+        assert reading['ok'] and reading['source_passages'][0]['passage_id'] == 'ziping:c008:p0001'
+        assert 'day_master_strength' not in reading['chart_facts']
         review = json.loads(run([str(python), '-X', 'utf8',
                                  str(skill / 'scripts/reading_support.py'), '--stdin'], work,
                                 data=json.dumps({'chart': chart}, ensure_ascii=False)))
         assert review['ok'] and review['semantic_review'] == 'required'
         assert outputs['bazi_calc.py']['solar_date'] == outputs['ziwei_calc.py']['solar_date']
         cast = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/yijing_cast.py'),
-                               'coins', '--question', '安装验证'], work))
+                               'time', '--current-timezone', 'Australia/Sydney',
+                               '--request-time', instant['utc'], '--question', '安装验证'], work))
         assert cast['ok']
         gap = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/bazi_calc.py'),
                               '--year', '2026', '--month', '10', '--day', '4', '--hour', '2',
@@ -68,7 +82,8 @@ def main() -> int:
         assert not gap['ok'] and '不存在' in gap['message']
         installed = json.loads(run([str(python), '-m', 'pip', 'list', '--format=json'], work))
         print(json.dumps({'ok': True, 'platform': sys.platform, 'python': sys.version.split()[0],
-                          'checks': ['bazi', 'ziwei', 'shared_time', 'reading_review', 'yijing', 'dst_gap'],
+                          'checks': ['bazi', 'ziwei', 'classical_library', 'current_time',
+                                     'bazi_reading', 'shared_time', 'reading_review', 'yijing', 'dst_gap'],
                           'dependencies': installed}, ensure_ascii=False, indent=2))
     return 0
 

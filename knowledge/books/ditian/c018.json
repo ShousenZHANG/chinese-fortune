@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c018",
+  "title": "生時論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F18&oldid=844367",
+  "revision": "844367",
+  "source_timestamp": "2017-03-23T15:45:57Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c018.wiki",
+  "raw_sha256": "3d07ca6feea015cfc31c261436d9ec0ad73c59e4738aaa060100563e839dad05",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "生時論",
+      "text": "生時歸宿，譬之墓也，人元用事之神，墓之穴也，不可以不辨。",
+      "layer": "base_text",
+      "passage_id": "ditian:c018:p0001",
+      "sha256": "27a7db01f941b4fbfd45fa57c5a8520169fd9a09418ac5bdbd3e70895446c9bc"
+    },
+    {
+      "section": "生時論",
+      "text": "子時生人前三刻三分，壬水用事，後四刻七分，癸水用事，其與寅時生人，戊土用事何如？ 丙火用事何如？\n甲木用事何如？ 局中所用之神，與壬水癸水用事何如？ 窮其淺深，如墓之定穴，斯可以斷人之禍福，凡同年月日時，而百人各一應者，固當究其時之先後，又當論其山川之異，世德之殊，十有九驗，其不然者，不過此則有官，彼則多子，此則多財，彼則妻美，小異耳，夫山川之異，不惟東酉南北，迴乎不同，即一吧一家，而風聲氣習，不能一律也，世德之殊，不惟富貴貧賤，截然不侔，即同門同戶，而善惡邪正，不盡齊也，學者察此，可以知興替矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c018:p0002",
+      "sha256": "c2f350641cb01c6b12ecace388d9381cf48593353b06d3b2707adabae0821c48"
+    }
+  ]
+}

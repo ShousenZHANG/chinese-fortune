@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c232",
+  "title": "时上偏财诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/232/",
+  "revision": "sha256:9244537fab37548ca52dd7199bff2e3b427f37a36808a264d93683e72628dbe7",
+  "source_timestamp": "2026-09-06T04:11:11.026185+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c232.html",
+  "raw_sha256": "9244537fab37548ca52dd7199bff2e3b427f37a36808a264d93683e72628dbe7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "时上偏财诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c232:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "时上偏财诗诀",
+      "text": "时上偏财诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c232:p0002",
+      "sha256": "92181a759a4803cb5b6e5e1a6ba2d854adc7d26e45cb9ff4a68fbae4ae7ff85e"
+    },
+    {
+      "section": "时上偏财诗诀",
+      "text": "时上偏财不用多，支干需要用搜罗，喜逢财旺兼身旺，冲破伤财受折磨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c232:p0003",
+      "sha256": "6c9ac53aa02f170c1d1e27f728046b442c7e659834b215c02e30221f957f0e5d"
+    },
+    {
+      "section": "时上偏财诗诀",
+      "text": "时上偏财一位佳，不逢冲破享荣华，破财劫刃还无遇，富贵双全比石家。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c232:p0004",
+      "sha256": "09c37a50edbef5121235937b3a3ce56709b5435e4891c0809d01b7f4fdbfc193"
+    },
+    {
+      "section": "时上偏财诗诀",
+      "text": "时上偏财遇劫星，田园破尽苦还贫，伤妻损妾多遭辱，食不相资困在陈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c232:p0005",
+      "sha256": "7381d57b3503de0fa35cd38563fac14016b60e3209b7b2f8c300cef79c25b38a"
+    },
+    {
+      "section": "时上偏财诗诀",
+      "text": "若是偏财带正官，劫星若露福难干，不宜劫运重来并，此处方知祸百端。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c232:p0006",
+      "sha256": "ed6ed2300e405f501a1327934a0f98800ae68807f028af7fc25ad79ff356f4e4"
+    }
+  ]
+}

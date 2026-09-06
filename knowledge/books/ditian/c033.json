@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c033",
+  "title": "才德論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F33&oldid=844384",
+  "revision": "844384",
+  "source_timestamp": "2017-03-23T15:48:27Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c033.wiki",
+  "raw_sha256": "5c86aa1a3654ce86d8da97eae64069b3b991fee2734a5dddd98fe90b57ea1c3b",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "才德論",
+      "text": "德勝才者，局全君子之風，才勝德者，用顯多能之象。",
+      "layer": "base_text",
+      "passage_id": "ditian:c033:p0001",
+      "sha256": "89ec2976b453265172d03a60678e9af1761133c2272ef2dbc461cfdb03c86052"
+    },
+    {
+      "section": "才德論",
+      "text": "清順中和，主輔得宜，所合之物，所用之神，皆正氣，不必節外生枝，弄假成真，才官食印之為喜用者，配置合宜，則其平生不生貪戀之私，度量寬宏，施為必正，此君子之風也，財官不向日主，而日主貪合強求，混濁破害，主弱輔強，用神雜亂，此心事奸貪，作事徼倖，為多能之象，大率陽內陰外，不激不沖者，為德勝才，如丙寅，戊辰月日，己卯，癸卯年時，皆是，若陽外陰內，則畏勢趨利，為才勝德矣。如己卯，己巳月日，丙寅，戊寅年時皆是。",
+      "layer": "commentary",
+      "passage_id": "ditian:c033:p0002",
+      "sha256": "5b1767e99a7535df0dddc02ba2d917b8cda21e3d73cac8bbd498be68b8bf903a"
+    }
+  ]
+}

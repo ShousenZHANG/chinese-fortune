@@ -1,0 +1,32 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c067",
+  "title": "论生旺",
+  "source_url": "https://luckclub.cn/bazi/001/067/",
+  "revision": "sha256:dce61fa0e316c9e831102f55f4406d91624e93c22b82e4f36ea5e6b3756e0487",
+  "source_timestamp": "2026-09-06T04:10:38.924947+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c067.html",
+  "raw_sha256": "dce61fa0e316c9e831102f55f4406d91624e93c22b82e4f36ea5e6b3756e0487",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论生旺",
+      "text": "论生旺",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c067:p0001",
+      "sha256": "b2fe64194bb1ebf7e0a706d3c0d45005ac24396a07541ba925f274b8958d8bdf"
+    },
+    {
+      "section": "论生旺",
+      "text": "常法以金生巳、木生亥、水生申、火生寅。土居中央寄母生，如戊在巳，己在午。又土为四季，各旺一十八日，共七十二日，并金木水火土各七十二日，共得三百六十日，以成岁功，此良法也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c067:p0002",
+      "sha256": "753aed76cc4165e6a27154da006b09ce25de34076aef7b674f97dca4893d2c5a"
+    }
+  ]
+}

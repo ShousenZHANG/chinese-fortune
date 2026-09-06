@@ -1,0 +1,105 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c239",
+  "title": "壬骑龙背诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/239/",
+  "revision": "sha256:7593dc971ab2217532aee098453a96492fda72548b8674b83dc6487f107e51c7",
+  "source_timestamp": "2026-09-06T04:11:12.564329+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c239.html",
+  "raw_sha256": "7593dc971ab2217532aee098453a96492fda72548b8674b83dc6487f107e51c7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬骑龙背诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0002",
+      "sha256": "a37b341ce37225071f321984896f6d9fe1912371a46ae0bb1c4fcbd1d3a47d7b"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬骑龙背喜非常，寅字辰多转发扬，大忌官星来破格，刑冲须见寿元伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0003",
+      "sha256": "47c90609c294ba9d6881e44e0b8e46b7e3b738426e33a7a8362a1658c1db8558"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬骑龙背怕官居，重叠逢辰贵有余，设若寅多辰字少，须应豪富比陶朱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0004",
+      "sha256": "29966a4b93c9ef6ee0d3292250ef0e051b047df517871f390d72feeba5eef51e"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬辰日又见辰时，年月辰多最是奇，四柱若逢寅位上，发财发福两相宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0005",
+      "sha256": "6e6167a6f0c4a1ced40d52a7866c0d2865df546253647d4b2a38e3de3c134567"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬寅不及壬辰日，四柱壬辰字要多，辰字多兮官杀重，寅多可比石崇过。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0006",
+      "sha256": "f4db4238a10bd760828a55ed1d6853edaf6b4aef5c7f269714b75529be3b453f"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "日遇壬辰格罕逢，格中曾见号骑龙。若还寅字重重出，富贵仍教比石崇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0007",
+      "sha256": "b1bd262cd8da3ff7e0c926a70297b147ff5ea9c36a6d04b36749b5c4be330667"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "午戌成财寅合局，戌中禄马用辰冲，忽然若是壬寅出，四柱居辰格亦同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0008",
+      "sha256": "efc145d36f58d68a9e3fe67ee01c2e0c7c0553fc5a9faf2a2d3b4bd138faddd6"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "眉批：此以辰冲戌中丁戊为壬之财官，如",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 18,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c239:p0009",
+      "sha256": "d5a06a5e22eb753898cd9e429959b160f6fdb72a71e22b298923d633a6521481"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬辰 甲辰 甲辰 壬寅，为贵命。如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0010",
+      "sha256": "a5985910e45b068b8937fd47a8df151f08ef4c317a6a00d1ce0d2bd47668dda6"
+    },
+    {
+      "section": "壬骑龙背诗诀",
+      "text": "壬寅 壬寅 壬辰 壬寅，为富命。正谓辰多则贵，寅多着富。若是戊见甲则不为富矣，却要年月时聚贵。若见官星，不为此格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c239:p0011",
+      "sha256": "a5aa4bd8282706d6ee8b20004f993cd1933450d8b2b54b190bd4fcfbfc1ceb08"
+    }
+  ]
+}

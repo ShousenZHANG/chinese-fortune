@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c015",
+  "title": "順逆論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F15&oldid=844364",
+  "revision": "844364",
+  "source_timestamp": "2017-03-23T15:45:27Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c015.wiki",
+  "raw_sha256": "2b437be8d102f50fe460e4206b3bace4d504f8ac002624bb970cc95a2fedfbb4",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "順逆論",
+      "text": "順逆不齊也，不可逆者，順其氣勢而己矣。",
+      "layer": "base_text",
+      "passage_id": "ditian:c015:p0001",
+      "sha256": "b10c38a5e665186ffcfbcd1748f25f12e6017af520461876012292ed7741207d"
+    },
+    {
+      "section": "順逆論",
+      "text": "剛柔之道，可順而不可逆也，源遠流長，可順而不可逆也，其勢已成，可順而不可逆也，權在一人，可順而不可逆也，二人同心，可順而不可逆也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c015:p0002",
+      "sha256": "1bae866758116343c6ff88c5d73180342ffa3ffb2c4eb0c650e1544be8755cc2"
+    }
+  ]
+}

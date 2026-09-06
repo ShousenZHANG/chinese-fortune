@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c025",
+  "title": "奮鬱論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F25&oldid=844376",
+  "revision": "844376",
+  "source_timestamp": "2017-03-23T15:47:07Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c025.wiki",
+  "raw_sha256": "53e8ae34628589925f070c26d0ba375814abe52e157d8228cfddadb7544cf2c0",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "奮鬱論",
+      "text": "局中顯奮發之機者，神舒意暢，局內多沉埋之氣者，心鬱志灰。",
+      "layer": "base_text",
+      "passage_id": "ditian:c025:p0001",
+      "sha256": "7fdc7f09b0028e7915e01559996adea3f50453390fe2fdb2116828db34d22942"
+    },
+    {
+      "section": "奮鬱論",
+      "text": "陽明用事，用神得力，天地交泰，神顯精通，大都奮發，陰晦用事，情多私戀，主弱臣強，神暗精洩，大抵困鬱。純陽之勢，身旺而財官旺者必發，純陰之局，身弱而官煞多者必困。",
+      "layer": "commentary",
+      "passage_id": "ditian:c025:p0002",
+      "sha256": "3884b7bbc0f739914f13d0bb30332e0c47f3d00150dd9fe5ff446f2288fe6c60"
+    }
+  ]
+}

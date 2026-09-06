@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c015",
+  "title": "十五、論相神緊要",
+  "source_url": "https://www.donglishuzhai.net/chapter/3728.html",
+  "revision": "sha256:50bd8e6dc671fe4379c20196617d6b61c20acc968bf14ac6fbbbc7701e92c8ca",
+  "source_timestamp": "2026-09-06T04:16:56.252Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c015.html",
+  "raw_sha256": "50bd8e6dc671fe4379c20196617d6b61c20acc968bf14ac6fbbbc7701e92c8ca",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十五、論相神緊要",
+      "text": "月令既得用神，則別位亦必有相，若君之有相，輔我用神者是也。如官逢財生，則官爲用，財爲相；財旺生官，則財爲用，官爲相；煞逢食制，則煞爲用，食爲相。然此乃一定之法，非通變之妙。要而言之，凡全局之格，賴此一字而成者，均謂之相也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c015:p0001",
+      "sha256": "ff9f79bc01ed887acffb95103aea01448d00a93ffc7ff1d1c7adacc5a61fd379"
+    },
+    {
+      "section": "十五、論相神緊要",
+      "text": "傷用甚於傷身，傷相甚於傷用。如甲用酉官，透丁逢壬，則合傷存官以成格者，全賴於壬之相；戊用子財，透甲並己，則合煞存財以成格者，全賴於己之相；乙用酉煞，年丁月癸，時上逢戊，則合去癸印，以使丁得制煞者，全賴於戊之相；癸生亥月，透丙爲財，財逢月劫，而卯未來會，則化水爲木，而轉劫以生財者，全賴於卯未之相；庚生申月，透水洩氣，不通月令而金氣不甚靈，子辰會局，則化金爲水，而成金水相涵者，全賴於子辰之相。如此之等類，相神之緊要也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c015:p0002",
+      "sha256": "dee5d758f8f7f1345a6936a7c10e53a222324147621c9f04cb8092268c649f6d"
+    },
+    {
+      "section": "十五、論相神緊要",
+      "text": "相神無破，貴格已成；相神有傷，立敗其格。如甲用酉官，透丁逢癸，印制傷以護官矣，而又逢戊，癸合戊而不制丁，癸水之相傷矣；丁用酉財，透癸逢己，食制煞以生財矣，而又並透甲，己合甲而不制癸，己土之相傷矣。是皆有情而化無情，有用而成無用之格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c015:p0003",
+      "sha256": "00bab60e381872b5d42bcc2bf8ec94a7755509fd2262614c9b952aae71d4c48a"
+    },
+    {
+      "section": "十五、論相神緊要",
+      "text": "凡八字排定，必有一種變化，一種議論，一種作用，一種棄取，隨地換形，難於虛擬，學命理者，其可忽諸？",
+      "layer": "base_text",
+      "passage_id": "ziping:c015:p0004",
+      "sha256": "997bf0bc47fa8463264e10e6486d52379a005033c698b55b3a12be28552be775"
+    }
+  ]
+}

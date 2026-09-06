@@ -1,0 +1,814 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c194",
+  "title": "爱憎赋",
+  "source_url": "https://luckclub.cn/bazi/001/194/",
+  "revision": "sha256:d4d74dde847f600c349f4f37868826c2a82c8b74274d4b63d4758e46efd48c89",
+  "source_timestamp": "2026-09-06T04:11:02.558612+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c194.html",
+  "raw_sha256": "d4d74dde847f600c349f4f37868826c2a82c8b74274d4b63d4758e46efd48c89",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "爱憎赋",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "爱憎赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0002",
+      "sha256": "48a7ac4122224190714b649cd4b73f957d53bed219ca6e9bdc7bcc23b31daf87"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "富莫富於纯粹，贫莫贫於战争。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0003",
+      "sha256": "03f62d2222227ec8cac6a0140a5d61907f3f710192fbd6c732e6a860e0322e4b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "贵莫贵於秀实，贱莫贱於反伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0004",
+      "sha256": "985a6a1f45a863bdd92950d5b543321c5b41b048b9071281d45875b0aae5102b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "文辞称辨，贵马会於学堂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0005",
+      "sha256": "d7ae2db9feeeb4838521b501cb9a9f02b595a361853c4ad084bef5f45b09cd84"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "锦绣文章，火木合於性情。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0006",
+      "sha256": "38a6675d4455c88c6390e1f965332d851367f16ca7184e204bd32e6b56b58635"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "深谋远虑，德性居沈静之宫。术业精微，帝座守文章之馆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0007",
+      "sha256": "47e7050f1e534e5e5d1ed9075b50315b132e0563045dc97780a3b6d87b0179fa"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "吉福生旺，禄马全要精神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0008",
+      "sha256": "4253926ce2802298d524db4af50f704cf7cb8436148a3897ea7bd99e09e169b7"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "魁罡有灵变之机，离坎亦聪明之户。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0009",
+      "sha256": "f20b5417cd2983fbf773a5bf2cb4a98163ddfc8464754c0d467c6406ac9981e6"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "贵人禄马宜逢，劫刃空亡可远。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0010",
+      "sha256": "666605fac61ce49554fec09f429f9351eb5451b8c779c0c7260167f769c101e3"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "长生招君子之可爱，衰败遇小人之憎嫌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0011",
+      "sha256": "69990b109128dfc440ced993cef419bd83f520e396d6299ff46cd1ffb31c23fe"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "四柱斗乱兮，不仁不义。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0012",
+      "sha256": "4f0350771b709712e4426e99b84165283d72cfb9f643ad93f07e9de89eb31ed8"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "五行相生兮，为孝为忠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0013",
+      "sha256": "d2cc9b97c8559a266e45c0864c73d145494bc93ada3ac3a059f340742f45faf1"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "印绶在刑冲之内，心乱身亡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0014",
+      "sha256": "d255081d51876f69e06a3b6f3001e17edb8880c00eaa4b08119874074ac300ec"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "日时居墓库之中，忧多乐少。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0015",
+      "sha256": "a5a0c5956f1c001bdca97e3177b384c91811697c1283f8799bea5aa4ae24f98b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "日干旺而灾咎寡，财命衰而惆怅多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0016",
+      "sha256": "e34ee9f2a44d499887b26dad1ded5c3a63ec91ee36c227cae10f8336bee78808"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "衣食奔波，旺处遭刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0017",
+      "sha256": "ac4787bb4ddac5f9066b7681bd10118657f890f08b83e4f95727e9c0f68137fb"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "利名成败，贵地逢伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0018",
+      "sha256": "1fdc19461cc9f82bf06078cf7e1d0d8e39ba78c475d6d7564f86f78b1d32994b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "平生祸福，赖於一时。一世吉凶，凭於气运。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0019",
+      "sha256": "14d8d9c33a4b367d65dddee9c0872d5ac6e6cdb51bbc6993df4a66875584ba3f"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "福星有气，而变通升迁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0020",
+      "sha256": "75b5d73fd67f5fa0bc2aae48535590c303626418c7b635c15c443f377c42e50c"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "岁克运凶，无气而人离财散。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0021",
+      "sha256": "cfb15e5be8e8a346d7da1e465cfcacaaf13cf66c9475034dce757140758cfd23"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "大运凶而生百祸，流年吉而除千殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0022",
+      "sha256": "4269e57cf41ec09ddf6ad3fe8edc67f8cf9a22cd732f95e1e55d3402b75d5cc2"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "无绝至绝，财命危倾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0023",
+      "sha256": "a2cf4c878bc2c1065815995e4a038203851a4024234166ae719b79872b69a6bb"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "本主得生，利名称遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0024",
+      "sha256": "444fb0214be5e2287e9ddf08233128ce06c1ca521e46d52d8fe4d3d87a9b2c81"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "三合六合，逢之吉重祸轻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0025",
+      "sha256": "da9c48a75959e80b59042185f4c50edeb0a95ce2b1e09c08cdfeae93ef77a13e"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "七杀四凶，遇之祸深福浅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0026",
+      "sha256": "6f928fc62e2fee4bab604b9bfbe280e192aa670bdace3e71bc6de4b4a61e2263"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "加官进职，定因禄会之年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0027",
+      "sha256": "eacbf2a8850f1f504686bbf4a71e12c0f0bbf4a745b14961de12320bbf0a1259"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "广置根基，必是合财之地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0028",
+      "sha256": "1d8909bf74d5a4abb2cc4c1d28085905bdb8ef4337e350a5afebb396ace7c2d0"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "岁君冲压主凶灾，大运受伤殊少吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0029",
+      "sha256": "27a19dc69c6fa8af206c9ef41db3fc7da60368a71347b5eb8a869b6e0c815697"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "岁宜生运，运喜生身，三位相生，一年称意。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0030",
+      "sha256": "c3189a9a82ac93bf9f831e818cd8f0f50448db38d926bf68effdcaa1506cf180"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "财官俱旺，应显达於仕途。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0031",
+      "sha256": "48b9e50f824b37e689ae6536653e651f753b48dd28d6336436d80182f54b6c45"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "财食均荣，岂淹留于白屋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0032",
+      "sha256": "8e1f4dfa5e8cb5dabe7a5c09d97a6298a051b82869d030de162b1c0f3ae69f0f"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "禄入聚生之地，富贵可知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0033",
+      "sha256": "43e70fced96505322dd26407b93686bc8a7fab3db753f8ff7322585078ac8a53"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "马奔禄旺之乡，荣华可断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0034",
+      "sha256": "973121db24da616c69aa1d78726cecc9867ca08b0937e1de5bb9237f8d3c8b2f"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "欲取交易利息，须寻六合相扶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0035",
+      "sha256": "b2540253f48a2a7af46e18dcb952b9eb10eb88e7bed1d5ba58851fd8e319f2ea"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "财官带禄朝元(眉批：寅生火，日月时上有甲字者用禄在寅，谓之朝元神，五行同此)，定主安然获福。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 6,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c194:p0036",
+      "sha256": "89d37eae6b5eb45d1c62fba875101e11c153ffd5af1544c383d2f2682bc3002f"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "月衰时旺，早岁丰肥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0037",
+      "sha256": "ce5a519820777665d0536b99b8edc5789cff90420a7b9e2c3355aa8259a020b0"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "木重土轻，终身漂荡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0038",
+      "sha256": "4a0ebd03cae75fc0595fb280d4b50dd18198f11137af4e572720164c3f06c5b4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "惯取市廛(卖东西的店铺)之利、必因旺处逢财。忽然显达成家，定是刑冲见贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0039",
+      "sha256": "d724b5b98c579600429a5dff353fb0650cb1a2aa468d03e9d3ce5a672c73c811"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "主本当时，得女子以扶持。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0040",
+      "sha256": "9f66ef27aaa652bb90532e560df08b786392b50767784de8182db4fe00e0577d"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "贵禄有情，因男子而升吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0041",
+      "sha256": "5849343dc5c34b551a0f725e6de1069ca3e70158040c883d4aa189ad18f57fb4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "南商北旅，定因马道之通(眉批：马若无栏，主走东西南北，如寅午戌马在申，见酉字为栏方好，无栏主此说，余同此)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 11,
+          "end": 53,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c194:p0042",
+      "sha256": "3c5128eeea7f58761eeda13f216c45251b4cb37fe78acd3385952922c2a85a0e"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "东贩西驰，必是车运之利。日干困弱，伯牛敢怨苍穹。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0043",
+      "sha256": "79886f20c21ce772e794ae58fdc06d0bd59b9a769b0a99562c057bf13826631d"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "禄马衰微，顔子难逃短命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0044",
+      "sha256": "dcfbbf575074358c08c55c8ca6d6e4da0d041912ad5f344ef30c544818c76fd9"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "凶莫凶於劫刃，吉莫吉於刚强。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0045",
+      "sha256": "1804757b246e3f3168e6de6768b59cb468d4c363ddcc8902b933a354a95b2054"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "官微马劣，男逃女走。天罗地网，非横之灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0046",
+      "sha256": "db34b26cfeee5315a41059e37cd98acab189c7020c68f72e413d27c41ae2b14b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "脱命夭亡，遇之必不得实而死。穷途逢劫，危疑必犯于自刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0047",
+      "sha256": "2f17fddf46ce713b0e9839faf382127a912b833117455b9d86598054d65e9992"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "绝处逢财，妻子应难谐老。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0048",
+      "sha256": "58ea5860eb26af23e165b9880e2c1e2e566393719854535dda57d56775effc21"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "大耗小耗，多因博戏亡家。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0049",
+      "sha256": "d708a4d4f310c7a5b72b0b362458a4f3a7b21c9b00e023e50311de3bfbb34ec4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "官符死符，必主狱讼时有。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0050",
+      "sha256": "6beb4e03425f8866dccb743771ac26a268d8e2dcb3c4f20161111745c49bbff4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "或行四柱遇绝、三命刑伤，未免徒绞之刑、难逃黥面之苦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0051",
+      "sha256": "85030c78542f434ef80d4a6051a2d64f7734d1c77f3f5c00f938f1c0cb57584a"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "若逢五鬼，雷伤虎咬无疑。更值群凶，恶殃横死定断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0052",
+      "sha256": "ffc4c2b446d3cc7458f5abf9856ed6910e75a87e72def6e0bd8544312bced405"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "女多淫贱，男必倡狂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0053",
+      "sha256": "6021db22dcb7dabcc13afb1822140d8fa8ce2522f7b80d27718d87950875d674"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "或问人之情性贤愚善恶，先推贵贱旺相之由，衰败方究机巧灵变。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0054",
+      "sha256": "4bc8d2521166a9377b6c62ca4bda75d7086a1bbc6861ec03e46ea23e2c56a545"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "心高者，魁罡为祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0055",
+      "sha256": "4cba7a8b38791933f578e281a4b0b4d7fc0f4ee630924bbf58178322b474ca87"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "性顺者，六合为祥。观幽闲潇洒之人，遇华盖孤虚(眉批：空亡对宫是孤虚)之位。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 22,
+          "end": 34,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c194:p0056",
+      "sha256": "6059d4ca7c84fb1ff5711862dfc5513170448d14b533bb7a3242db202a5a11a2"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "好恃势倚霸之辈，犯偏官劫刃之权。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0057",
+      "sha256": "7a80357da7253ab83dea8a2c9676b42a091a40a69d37beec3e62355851c5d6ba"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "劫刃生鄙吝之悭，更出机关之凶险。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0058",
+      "sha256": "56e5cb4c3aa61d1b8f6cfff0aebd2451854df54818d11eb3d232783805a0f607"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "谋略大因於壬癸，威风气猛于丙丁。孤囚遇之无精神，破败遇之多舒坦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0059",
+      "sha256": "f2d2f137ce8e7b8df7822c850c69c6c1c0e9c3a5bd37c1f52970f47cd682f005"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "甲乙顺而仁慈大量，庚辛强而果断气刚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0060",
+      "sha256": "7146cbb765659324f8cc83171f86694e2879e1be2c0eaff6c3d1595be84581ad"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "燥败火盛须疑，隐忍金多定论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0061",
+      "sha256": "b6ee54a46f7c4b007502f1976949d2c782e9ef5c1d1312e6663386c6a7a6a590"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "刑战者愚顽、安静者贤俊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0062",
+      "sha256": "ccd0643114f46783e701fa76681b824766a3383383b1ca640dea620b388b07d4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "金水司令而相生、火土逢时而相助，不劳心而衣食自足，不费力而家计自成，更若得神扶持，定是权尊乡里。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0063",
+      "sha256": "dfdb4add1e94d89bb7e2259b37404779bce02e70c286e663c6acad4e70e0fc4b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "禄位贵拱者，台省扬名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0064",
+      "sha256": "08c0981844da4fde2254ced475c5f8cc9dd655d678592f29dd802d517955deb8"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "其所忧者福不福，其所虑者成不成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0065",
+      "sha256": "38af7d8d1b688deace597dda3d661f28a331b1aae79ae4da9992ced79f685a56"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "福不福者吉处遭凶，成不成者格局见破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0066",
+      "sha256": "227203b4450bc5adf4db83e9e94a3c863f61f2f5b5c58375145a4764c5a9be91"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "伤其格者伤福，破其格者则祸。譬若苗逢秋旱，而冬廪空虚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0067",
+      "sha256": "0d1c30b437fa0d679484bdaa55699317deb30b32b2bc3ea65c25449200d6b3c3"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "花被春霜，而夏果无成。智谋思虑，措用无成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0068",
+      "sha256": "1c76f5c4e4fc1c959c6b30dc7a577ac1af07ffce9b2ddd6488d6cb318983d5c5"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "纵有回天转轴之机，而无建功立业之遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0069",
+      "sha256": "5981670c87d250b8f2f645797b3c33a8cef2b98481b1c4a37294909f80ca093c"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "岂不见郦生烹鼎、范生甑尘、渊明东归、子美西去、孟轲不遇、冯衍空回。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0070",
+      "sha256": "e9f35b7b02b100b852ea7f9fe3d20535a6ae42e50c90e02ad4080b0f5e6e889d"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "买臣负薪而行歌，江革苦寒而坐泣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0071",
+      "sha256": "85154765a207fd1c11246a9c91e1aa8cee395d4033c8651cd22caba039926fbe"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "盖苗而不秀者有之，秀而不实者有之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0072",
+      "sha256": "d83bab293fd965e5be3d790a428f3e4234119226b8139dee93f89b4a58517956"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "更值伤败太过，一福不过刍荛。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0073",
+      "sha256": "f3e13e383e84ab36c7c4d5ce9eb3e7af59ed3eaa97aae2371e17a82fcff6741d"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "纵有百艺多能，难免饥寒苦疾，困於沟壑，命使其然尔。淹滞无成，何劳叹嗟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0074",
+      "sha256": "a2f43349535081fd832214a937f630cedcf26daee36c79e7c1a1c4383c9133b2"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "欲问富贵，全仗财官，何由得之？",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0075",
+      "sha256": "b5c8e913b26c423e098f2740c7ae4c9583a9d33c06e4332a27108e9124eca9a9"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "大莫大於鎡基，奇莫奇於秀异。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0076",
+      "sha256": "4d7c02ebf8b7627ddbc7b301b33b3754d61b023c171c6e2b8e53f6b74032f737"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "达圣达贤者，无时不有。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0077",
+      "sha256": "6aea47aba7313ed3d3f590533b04af70a64e766605f73ee08a9e8b580472aacc"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "至富至贵者，自古皆然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0078",
+      "sha256": "a98cc8f3da0d814d8ed0b5c237c00ac6de8ab6e77d792f3f4de4a8a8aafae9cb"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "或生申月之中，文高武显。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0079",
+      "sha256": "97cfc31670a2c553a8beb259a99cfd91989fece206f71f53e1e3c5d8026c9e48"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "或居冠带之下，业大财奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0080",
+      "sha256": "4931c20b29d9768022aa1b7292538b652b3b43075d6210fa55b355d5399a78cc"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "若此玄妙，何如推测？先论学堂之内三奇四福，次察格局之外一吉二宜。若己未见甲午为祥，壬申见丁巳为瑞。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0081",
+      "sha256": "598b1105f8cef87f5f5a4c9e56181f3257f60548141361a86ec562e677ae355a"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "壬子丙午，主光风儒雅之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0082",
+      "sha256": "bc176ac919bf84286a23dfd0f5f666665098986a8686d7d0a66ca7169a14f4f4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "辛酉丙申，乃俊秀荣华之士。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0083",
+      "sha256": "ac05e29093dc7db7be1e0b83c90de70423f575ad7a9c580a0b05e68e993dc288"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "阴阳全凭纯美，造化最喜相生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0084",
+      "sha256": "9dff382a1ef62cfdaf92aab230d6b988882875967a312db07615c86aad0688af"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "难辨者日精月华，莫测者金堂玉匮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0085",
+      "sha256": "580f6a1ec883286351cad21fe356f2fcb4f5966faa1e352d58c2cd634375128c"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "得之者荣，遇之者贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0086",
+      "sha256": "37391fb73bebb7c6b4328a97ccc71754e557b1ff614f1c7becb27827973d3aaa"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "若遇贤愚显晦，无非造化钧陶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0087",
+      "sha256": "7afdceef3e1da9a03e1bfa4b1530b8722ba87f7902881726f9872e08a691cc38"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "物既荣枯，为人岂无成败。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0088",
+      "sha256": "df4b73ef1a8b4b666cd5bc85e35ed1b13b5b2c3d9fb0957ec5d79701a3b3c423"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "假若凤生於雉，蛇化为龙，芳兰不断於蓬蒿，枯木犹生於山野。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0089",
+      "sha256": "ebdb0d4bb3e5ef5d0fa89df027e163371a7038595e2d455233da6fcc7feb7acf"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "少贵老贱，初迍後亨，盖由大运之衰旺，以致富贵之更变。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0090",
+      "sha256": "227c02a5810d0bd5f6279faa0e88b998d67299406abcfdeb73826192eafccd46"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "格局纯而反杂，惆怅残春。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0091",
+      "sha256": "7ba49f55d7c1a814df59e40f84e9f3276761ca623203c4c20f6a9b83b8251b14"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "运行老而得时，优游晚景。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0092",
+      "sha256": "87b29e49f98c43e69e0e0d9972300016186b8975fe9c929225f3f15d59d353d4"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "防不测运之艰危，是以时有春秋，月有圆缺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0093",
+      "sha256": "14f1e1bcb58fba8fc2a6e34f00b48ab32689faf46a892f100b55626d9ed9ee5b"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "尝观资荫之子，亲一丧定无聊。复见耕钓之人，运一通而殊显。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0094",
+      "sha256": "00a44e3a8f643ddcb031f446329499ab0be492bbbb3510742f77f971ce2ea4f0"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "多年爵禄，一旦俱休。时运至者，片时相遇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0095",
+      "sha256": "3b108e94e251dde816f3cab3720dafcfbe4e5ee9976e55bcd2ed91600e9b0405"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "值生旺者，未必为凶。有情者通，无情者滞。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0096",
+      "sha256": "26da103129cba561a00242ba9d3cad1c2acc2f9fbb52f2fd582ade28fced0b44"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "有合者吉，有冲者凶。官印岁临，仕途定知进权。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0097",
+      "sha256": "9694be987393f3e6ab5cc2fdc67b1b1e7ae53373c1c54b49391e176fa9975201"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "食财运遇，庶民亦许荣昌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0098",
+      "sha256": "785fa1b5a8c9f55fbdac7f2a1200fb745b2e5bd471d042135b160312defe8672"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "或有少依祖父之荣，长借儿孙之贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0099",
+      "sha256": "4a9e771bb8569389f5ea96217a3db428548f7e4ffc8c0f639c6d6f1bad08e134"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "又有垂髫难苦，至老无依。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0100",
+      "sha256": "3ab4d69f9547fafd56e40b6afc17cc86531cc23b9465ca68bd49036195dceb58"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "盖因四柱之旺衰、所由大运之亨否。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0101",
+      "sha256": "7b6e21c36f02ef33db8a603ecc063ddd12d5858a571fd34673ea2e6177a18b4a"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "岂不见枯槁之木，纵逢春而不发。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0102",
+      "sha256": "f0a9915c586afa638f86d3b8eae62ce2c06c7479da6764c981a75300e48d05fc"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "茂盛之标，虽淩霜而不败。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0103",
+      "sha256": "1afdc521ecbcba49cdac69630c8d2f37e551dab9fb19cc1cab4f73c54fa8b165"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "时日更亏，年月定无下稍。生时旺气朝元(眉批：为甲日又四柱有寅字，寅中甲禄在寅之例)，必有晚福。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 18,
+          "end": 41,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c194:p0104",
+      "sha256": "51a22abc6f79a6dc10442297b1383d92403b63ca6de73887dcf116df276b3aa2"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "古有琢磨之玉，值价连城。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0105",
+      "sha256": "d474acfba8f93f89d47ece95ef317a0254bd7735f49a9162dfbe2a22163fead3"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "世有正直之人，自成家计。如烹炼之余而不朽，如岁寒之後而不凋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0106",
+      "sha256": "b052c15ac81e9a37191b8e747ac5be01f133299f4b1bf237041e95662538a5fb"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "消息妙在变通，祸福当察衰旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0107",
+      "sha256": "e4006b6b8401b846bc67e0b6330f9a5710d7e83c80b577a013aed3513fbdc3e5"
+    },
+    {
+      "section": "爱憎赋",
+      "text": "庶几君子，共鉴是幸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c194:p0108",
+      "sha256": "9d836805c83dc64c69adfc8121ba342d08d8b5672eda16e3f71949482a9b2e6d"
+    }
+  ]
+}

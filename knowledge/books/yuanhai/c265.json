@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c265",
+  "title": "带疾诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/265/",
+  "revision": "sha256:dd472563a244b2536d989cd1f2d9e53aa61a174fe69f18e241b28ab20e675e3a",
+  "source_timestamp": "2026-09-06T04:11:18.436264+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c265.html",
+  "raw_sha256": "dd472563a244b2536d989cd1f2d9e53aa61a174fe69f18e241b28ab20e675e3a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "带疾诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "带疾诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0002",
+      "sha256": "44283466dc90873cdf4195c73fcfcee592d7cb44b5d1bd635119d6fc52f221b8"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "戊己生时气不全，伤官时月见留连，必当头面有亏损，脓血之灾苦少年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0003",
+      "sha256": "9908125bb8f8199878777d457d6861c02bb70f7cd4596ae2f59c8d2136d9bc23"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "日主加临戊己生，支辰火局气熏蒸，冲刑克破当残疾，发秃那堪眼不明。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0004",
+      "sha256": "fd41de29a8911a7a3433da27759c2225aa3492cda6e8581f98bc37868a08addc"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "丙丁日主丑行衰，七杀加临三合来，升合日求衣食缺，耳聋残疾面尘埃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0005",
+      "sha256": "6570b6cb2ca95d8b3daa77c97ef193e87bc66d18e6d8f35793057afc2cb788b7"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "壬癸重重叠叠排，时辰若设见天财，纵然头面无斑癫，足见其人眼目灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0006",
+      "sha256": "f1233401ad6c521c8fbaf388dfe68aadba1ae294c73f77bbbf30be812459c654"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "丙丁火旺疾难防，四柱休囚辰巳方，水火相生来此地，哑中风疾喑中亡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c265:p0007",
+      "sha256": "d6241cc330b921fcaacb9bb619b2992fd3aa5ba09adc28f1904af8f578ece1ec"
+    },
+    {
+      "section": "带疾诗诀",
+      "text": "眉批：火气炎上若盛，伤其目。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 14,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c265:p0008",
+      "sha256": "12f97b5816e7b5f6229202fe220632b8d3fde10eff19b7efa4f76d9ee92e9c90"
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c257",
+  "title": "天元一气诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/257/",
+  "revision": "sha256:3bcfea2b70f2ae93478a4b8089d9a4db39a5d25761e4e0b30899227e5068dd5d",
+  "source_timestamp": "2026-09-06T04:11:16.981191+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c257.html",
+  "raw_sha256": "3bcfea2b70f2ae93478a4b8089d9a4db39a5d25761e4e0b30899227e5068dd5d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "天元一气诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "天元一气诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0002",
+      "sha256": "bb6bdcb8078e4a7424ed7fb220c6b3805f36ce0b9a67a8f8e524ec933b2000f1"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "四重阳水四重寅，离坎交争旺气赢，运至火乡成富贵，往来须忌对提刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0003",
+      "sha256": "f7784d7fcbb9fdcf1d02cdc3d5c3508a19b6b0c1a4287ba008a594776f2a9612"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "人命如逢四卯全，干头辛字又相连，身轻福浅犹闹事，诚恐将来寿不坚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0004",
+      "sha256": "0e9bfe332fb3af88e21f378da2f05909b6b291571297f83e7c785ae9634e4de0"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "金龙变化春三月，四柱全逢掌大权，不入朝中为宰相，也须名利震边疆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0005",
+      "sha256": "09fe20296ebe29d3e0a30f1ac79d6106b29307b0afbae53e080fc03800325738"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "己巳重逢命里排，一身天禄暗催来，人中必显名尊贵，秀夺江山出类才。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0006",
+      "sha256": "f67101ea14d6224b4c7db7e8332b8b5ecc98258c6228f3430c15afac916e3af4"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "戊土重逢午字多，天元一字得中和，英豪特达功名好，见子冲来没奈何。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0007",
+      "sha256": "b540cde5fc3e09e2d32526e52366f1819cdb8f86e9b2a9e87911c07197c73b3e"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "四重丁未命安排，暗合阴生禄位胎，有分东西成富贵，无情行到水中来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0008",
+      "sha256": "0a57d7139009f0b94d8b0631f1310ceead0c7be423210c725fb5600bb4e01e61"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "丙申四柱命中全，身杀相逢显福元，不是寻常名利客，管教势力夺魁权。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0009",
+      "sha256": "2e1315bb15736cb8b98b62b666c9501e5815f49b0d5767f842fc80982900cb4f"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "乙酉生居八月天，重重乙酉喜相连，不居左右皆荣显，更有收成在晚年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0010",
+      "sha256": "8eb0982cfa6062b0e306670eb476876b632b3ef97b8b415a1a6df48f9fbd96a6"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "天干甲戌重逢戌，分夺财官无所益，若还行运到南方，合出伤官名利赫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0011",
+      "sha256": "001ff6c7876e218b9011e9e5c0f6cff95f80d2d528aa26727a5ba85fd0cf7bf7"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "天干四癸在乾宫，水木相逢作倒冲，名利盈盈须有望，南方行运寿还终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0012",
+      "sha256": "d65bab741c86fc0225560a63062c861b44b7b6f39ec00fd179a07a3510c61bde"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c257:p0013",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "此谓天元一气，四阳相向，人命逢此，位至三公。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0014",
+      "sha256": "27923f8a29b880d15b845e300add3825ef3500ac0f5d628ed0ce76e8948d51df"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0015",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "辛卯 辛卯 辛卯 辛卯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0016",
+      "sha256": "32e321ddcd27fcc6a79c23a91607f214635c02ca80e8f80017edca003df11606"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "己巳 己巳 己巳 己巳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0017",
+      "sha256": "96854b1b37ef2ee403eefbec6009be8a11f40ee350607070aaeb3980cba6979d"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0018",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "戊午 戊午 戊午 戊午，关公八字。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0019",
+      "sha256": "628a19ef6e34d9ee53621803f8be2ad28cb5a7b11e5d650503dccee1a6c6eeb2"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "丁未 丁未 丁未 丁未，忌水。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0020",
+      "sha256": "e7ec6a080ec8d9d9e158f6eb0f59078fad5a378a942cf1a32ba2c4d79dfbaa2d"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "丙申 丙申 丙申 丙申，行北方南方运好。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0021",
+      "sha256": "7bca6c5fd7484fd04bdbaf17e4fc408cd2eea97b2f0cdb107261eb45d7a297f7"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "甲戌 甲戌 甲戌 甲戌，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0022",
+      "sha256": "695cef44962b977c59eb51aebd306885aa8c7c1436f85479d9b6a0c2addc0a21"
+    },
+    {
+      "section": "天元一气诗诀",
+      "text": "癸亥 癸亥 癸亥 癸亥，俱天干地支一气。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c257:p0023",
+      "sha256": "624b91f220e8cd69a805f2f7ee84557a1d777a45dd170db7a56a67b57b9169a3"
+    }
+  ]
+}

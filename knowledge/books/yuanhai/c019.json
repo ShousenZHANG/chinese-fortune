@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c019",
+  "title": "论日上起时例",
+  "source_url": "https://luckclub.cn/bazi/001/019/",
+  "revision": "sha256:e0e02832a5e560d8e78d6f8211bdaf0b99b65b98ad03bc251a1d72a2330f396d",
+  "source_timestamp": "2026-09-06T04:10:28.487620+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c019.html",
+  "raw_sha256": "e0e02832a5e560d8e78d6f8211bdaf0b99b65b98ad03bc251a1d72a2330f396d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论日上起时例",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c019:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论日上起时例",
+      "text": "论日上起时例",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c019:p0002",
+      "sha256": "8e292191dc59056710894fba63909f7db5391a65eb4391bbb58fcec5a0e2ae69"
+    },
+    {
+      "section": "论日上起时例",
+      "text": "甲己还加甲，乙庚丙作初，丙辛从戊起，丁壬庚子居，戊癸何方发？壬子是真途。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c019:p0003",
+      "sha256": "c363373452fc1c0546945e31f7999cd1662e1056c2a1aa854de227543d4d2138"
+    },
+    {
+      "section": "论日上起时例",
+      "text": "其法以甲己日从时上起甲子，至本人生时。余皆仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c019:p0004",
+      "sha256": "e0e93897c63a76fb6313c7ac18dcddbe1e3feafed57f43236267c8943c258934"
+    },
+    {
+      "section": "论日上起时例",
+      "text": "眉批：以甲子日生日子起，如甲子日午时於子上起甲子，丑上起乙丑，寅上起丙寅，余仿此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 41,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c019:p0005",
+      "sha256": "87e742042429a738553e8bf7c9552aa49e5060839324b4b12b92c49131ec49ae"
+    }
+  ]
+}

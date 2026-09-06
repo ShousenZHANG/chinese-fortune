@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c262",
+  "title": "克子诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/262/",
+  "revision": "sha256:b33d5d146f3638e630f2186b33693892bd24a17bbc239b42ad0c624a9fcc1d0d",
+  "source_timestamp": "2026-09-06T04:11:17.687437+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c262.html",
+  "raw_sha256": "b33d5d146f3638e630f2186b33693892bd24a17bbc239b42ad0c624a9fcc1d0d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "克子诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "克子诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0002",
+      "sha256": "725bd7774dbed3819afaa4af1b2500f0d3c9ac7b892831fbe04d4a3e1a6370de"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "五行四柱有伤官，子息初年必不安，官鬼运临生旺地，可存一二老来看。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0003",
+      "sha256": "b9f9265ab3def05a3152461dd7f693e9a96bfdde0155c5871c3d9d00b8f15e2d"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "嗣中生时见刑冲，月令休囚子息空，官鬼败亡重见克，如无庶出必螟蛉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0004",
+      "sha256": "e868879d9fe1669c18a0ca061dff4b691702f8b65b070cdd51914043f33d2f32"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "印绶重叠克子断，子息难养谁为伴，若还留得在身边，带破执拗难使唤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0005",
+      "sha256": "cc969c1bff3be31275d68973f02e9f16c1785b087a91b9a031959a038ebc358b"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "时逢七杀本无儿，此理人当仔细推，干上食神支又合，须知有子贵而奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0006",
+      "sha256": "46d77cdcef1d9a2831bf6d65f4aab7fc300c4b5548c522d83024274d45b704e2"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "女人印绶月时逢，官食遭伤子息空，当主过房兼别立，孤儿重犯两无功。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0007",
+      "sha256": "c983370eb2bbf4bd1f0a175c19828a13b85ca201ff2e781307da1abed3b1728f"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "局中官杀两难亲，羊刃重重福助之，八字纯阳偏印重，妨妻叠叠更埋儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c262:p0008",
+      "sha256": "66950014a4c41d4cdf000f65f762d0b7c900975425bac17409de7efedbb862f4"
+    },
+    {
+      "section": "克子诗诀",
+      "text": "眉批：年月日时有伤官者必有子嗣。时干支有官杀又生旺必有子。印绶重则母多，母多则灭子。七杀主无子，若有食神制伏，亦有好子。女人以官为夫，以食为子，伤官则伤夫，有伤必主害至。官杀重逢大有争，四柱日衰必害子。流年生年岁看年之祸福，吉则吉，凶则凶。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 120,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c262:p0009",
+      "sha256": "69d9bf9c092d272faf49a6e6cdb101b35b0cab0cfcc996f144968f3b233abdd1"
+    }
+  ]
+}

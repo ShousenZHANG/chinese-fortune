@@ -1,0 +1,67 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c263",
+  "title": "运晦诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/263/",
+  "revision": "sha256:ad2017d820c65c500d787186538ba3940e51a9698f6e8eeb8a067e8cac9423a3",
+  "source_timestamp": "2026-09-06T04:11:18.251729+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c263.html",
+  "raw_sha256": "ad2017d820c65c500d787186538ba3940e51a9698f6e8eeb8a067e8cac9423a3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "运晦诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "运晦诗诀",
+      "text": "运晦诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0002",
+      "sha256": "3a7c529feb80d9f6c0852c9b5bb5bd3f6e9e25425fdddbafe70bee88afb9279f"
+    },
+    {
+      "section": "运晦诗诀",
+      "text": "干事难成又费钱，提防凶事近流年。初心欲遂熊罴兆，中却反成饱事眠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0003",
+      "sha256": "b13658f027ee4b573893417732c21a6b5be98d6d72a0921a0c033ae06c8b93c4"
+    },
+    {
+      "section": "运晦诗诀",
+      "text": "比肩岁运必争论，斗讼官司为别人。兄弟阴人财帛事，闭门还有是非临。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0004",
+      "sha256": "f0a820d08d85119545a9ab155beff30b898d0413651fc90523746d015230b4db"
+    },
+    {
+      "section": "运晦诗诀",
+      "text": "不作祯祥反作灾，外情牵惹是非来。匣中珠宝牢难取，求谋不成又破财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0005",
+      "sha256": "2ee1370b5fd45598bf0891fdb92b9acdd00e9926e8c23ffd330c0e3d6cc45211"
+    },
+    {
+      "section": "运晦诗诀",
+      "text": "到此难留隔宿钱，求之劳碌又熬煎。若还财聚主克妻，又是官灾口舌缠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0006",
+      "sha256": "927bedd3d89e57d043b34a4d8cc18a5fde9fb69813da0fd77bf4e8993229452c"
+    },
+    {
+      "section": "运晦诗诀",
+      "text": "劫财羊刃两头居，外面光华内本虚。官杀两头俱不出，少年夭折漫嗟吁！",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c263:p0007",
+      "sha256": "cf616c21fb2fbda78d0b29d5f158234ea1b775aeffe4765d6a267fe1e183e418"
+    }
+  ]
+}

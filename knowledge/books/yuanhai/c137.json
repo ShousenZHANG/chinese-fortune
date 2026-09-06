@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c137",
+  "title": "外十八格-两干不杂格",
+  "source_url": "https://luckclub.cn/bazi/001/137/",
+  "revision": "sha256:5cc22797d98297ee1f854e93f4358c2ea80f12d18538e0ac436b6bdbe0eae2d7",
+  "source_timestamp": "2026-09-06T04:10:51.789734+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c137.html",
+  "raw_sha256": "5cc22797d98297ee1f854e93f4358c2ea80f12d18538e0ac436b6bdbe0eae2d7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-两干不杂格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c137:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-两干不杂格",
+      "text": "外十八格 - 两干不杂格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c137:p0002",
+      "sha256": "3dc9a3033eb0edb876fe7a4e27a07b3e19c1058636f154a7dd0f9744c7c88773"
+    },
+    {
+      "section": "外十八格-两干不杂格",
+      "text": "此格乃谓年月日时连占两干，纯一而不杂也，取两字不乱之类是也，又谓之两干连珠格。经云“两干不杂利名齐”，其斯之谓矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c137:p0003",
+      "sha256": "1e3c11481bf716f42d6e738e1a2a15c6f92bdb7b4eee329499d8ae7723d43ed9"
+    }
+  ]
+}

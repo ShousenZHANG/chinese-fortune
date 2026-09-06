@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c032",
+  "title": "论福星贵人",
+  "source_url": "https://luckclub.cn/bazi/001/032/",
+  "revision": "sha256:5cff3e175e43589346fac10cef0e3e61f41ffe9a7ddcca4e7bc7a183ba45bfbd",
+  "source_timestamp": "2026-09-06T04:10:30.959788+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c032.html",
+  "raw_sha256": "5cff3e175e43589346fac10cef0e3e61f41ffe9a7ddcca4e7bc7a183ba45bfbd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论福星贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c032:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论福星贵人",
+      "text": "论福星贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c032:p0002",
+      "sha256": "643c8cdfa77d937cdfafe4290011cc5137abaa0d036d08600877e4ee86c012e1"
+    },
+    {
+      "section": "论福星贵人",
+      "text": "甲丙相邀入虎乡，更游鼠穴最高强，戊猴己未丁宜亥，丙人惟喜戌中藏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c032:p0003",
+      "sha256": "eab9d0a1a736bb545b4575f1a5898cd5713331d6bf7341d9814a561dba9a0c91"
+    },
+    {
+      "section": "论福星贵人",
+      "text": "庚趁马头辛到巳，壬骑龙背喜非常，更有丁人爱寻酉，癸乙宜牛卯自昌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c032:p0004",
+      "sha256": "82cf6a96b8f1cb253c034cb0da91955aeeb26119b342bcb36215710586438fff"
+    }
+  ]
+}

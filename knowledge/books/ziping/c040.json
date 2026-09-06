@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c040",
+  "title": "四十、論偏官取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3753.html",
+  "revision": "sha256:e6384e31c3afd991cf54a0939945938a0a604ed43b7d2e0f5aec6a3b782283b3",
+  "source_timestamp": "2026-09-06T04:17:14.100Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c040.html",
+  "raw_sha256": "e6384e31c3afd991cf54a0939945938a0a604ed43b7d2e0f5aec6a3b782283b3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四十、論偏官取運",
+      "text": "偏官取運，即以偏官所成之局，分而配之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0001",
+      "sha256": "eb223034c8d868b06d767e0a94aa481a6c56098580c07a528d30cf5da9e0c33c"
+    },
+    {
+      "section": "四十、論偏官取運",
+      "text": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0002",
+      "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1"
+    },
+    {
+      "section": "四十、論偏官取運",
+      "text": "煞用印綬，不利財鄉，傷官爲美，印綬身旺，俱爲福地。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0003",
+      "sha256": "d8440f502a8fe9f9ad1948480831b519f01df15018b76b79cf522e3838d17dc3"
+    },
+    {
+      "section": "四十、論偏官取運",
+      "text": "煞用傷官，行運與食同。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0004",
+      "sha256": "bf6d3b36e51e5d9216e1fc53791193119173c89ef0c9fd4a866ac8788ca668cd"
+    },
+    {
+      "section": "四十、論偏官取運",
+      "text": "七煞用財，其以財而去印存食者，不利劫財，傷食皆吉，喜財怕印，透煞亦順。其以財而助煞不及者，財已足則喜食印與幫身，財未足則喜財旺而露煞。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0005",
+      "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba"
+    },
+    {
+      "section": "四十、論偏官取運",
+      "text": "煞帶正官，不論去官留煞，去煞留官，身輕則喜助身，食輕則喜助食。莫去取清之物，無傷制煞之神。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0006",
+      "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3"
+    },
+    {
+      "section": "四十、論偏官取運",
+      "text": "煞無食制，而用刃當，煞輕刃重，則喜助煞；刃輕煞重，則宜制伏。無食可奪，印運何傷？七煞既純，雜官不利。",
+      "layer": "base_text",
+      "passage_id": "ziping:c040:p0007",
+      "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93"
+    }
+  ]
+}

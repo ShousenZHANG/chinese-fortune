@@ -94,3 +94,57 @@ def test_pending_source_cannot_certify_a_conclusion(chart):
                                                  'quotes': [{'source_id': []}]}]}])
 def test_malformed_packet_fails_closed(chart, packet):
     assert review_claims(chart, packet)
+
+
+@pytest.mark.parametrize('mutation', ['forged', 'wrong_layer', 'missing', 'malformed'])
+def test_frozen_passage_quotes_reject_false_text_or_layer(chart, mutation):
+    from classical_search import get_passage
+    paragraph = get_passage('ziping:c008:p0001')
+    packet = deepcopy(chart['reading_support'])
+    quote = {'passage_id': paragraph['passage_id'], 'text': paragraph['text'][:12],
+             'layer': paragraph['layer']}
+    packet['claims'][0]['passage_quotes'] = [quote]
+    assert review_claims(chart, packet) == []
+    if mutation == 'forged':
+        quote['text'] = '今年三月必定升职'
+    elif mutation == 'wrong_layer':
+        quote['layer'] = 'modern_commentary'
+    elif mutation == 'missing':
+        quote['passage_id'] = 'ziping:c999:p9999'
+    else:
+        packet['claims'][0]['passage_quotes'] = [None]
+    assert any('quotation' in error for error in review_claims(chart, packet))
+
+
+def test_registered_quote_must_still_match_frozen_source(chart, monkeypatch):
+    import reading_support
+    monkeypatch.setattr(reading_support, 'get_passage', lambda _: {'text': 'unrelated'})
+    assert any('registered quote absent' in error
+               for error in review_claims(chart, chart['reading_support']))
+
+
+def test_default_reading_envelope_can_be_reviewed_without_fabricating_a_chart(chart):
+    from bazi_reading import prepare_reading
+    reading = prepare_reading(chart)
+    assert review_claims(reading, reading['reading_support']) == []
+    broken = deepcopy(reading)
+    broken['chart_facts']['four_pillars']['year']['ganzhi'] = '甲子'
+    assert any('mismatch' in e for e in review_claims(broken, broken['reading_support']))
+    broken['ok'] = False
+    assert review_claims(broken, broken['reading_support'])
+
+
+def test_reading_cli_accepts_the_default_envelope(chart):
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    from bazi_reading import prepare_reading
+    reading = prepare_reading(chart)
+    result = subprocess.run([sys.executable, str(Path(__file__).resolve().parents[1] /
+                            'scripts/reading_support.py'), '--stdin'],
+                            input=json.dumps({'chart': reading}, ensure_ascii=False),
+                            capture_output=True, text=True, encoding='utf-8')
+    assert result.returncode == 0, result.stderr
+    assert json.loads(result.stdout)['packet'] == reading['reading_support']

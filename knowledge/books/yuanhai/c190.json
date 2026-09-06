@@ -1,0 +1,779 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c190",
+  "title": "金玉赋",
+  "source_url": "https://luckclub.cn/bazi/001/190/",
+  "revision": "sha256:a451ea3e4a9a707f637dce2c5764aeecd2bd73bf6c0c587c78c8142f455fd987",
+  "source_timestamp": "2026-09-06T04:11:01.680414+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c190.html",
+  "raw_sha256": "a451ea3e4a9a707f637dce2c5764aeecd2bd73bf6c0c587c78c8142f455fd987",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "金玉赋",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "金玉赋",
+      "text": "金玉赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0002",
+      "sha256": "70516183d6ffedd74c29c4157081cfc965b088854e0bd4f179a03a917c9701d6"
+    },
+    {
+      "section": "金玉赋",
+      "text": "数体洪范(眉批：“洪范”箕子所衍，即河洛大衍之数五十)，法尊子平。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 4,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0003",
+      "sha256": "1870c9090ac126591d86627b18b3f2a64c8e13e07c397f98b0c47d8162502f6f"
+    },
+    {
+      "section": "金玉赋",
+      "text": "命天地之奥妙，听空谷之传声。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0004",
+      "sha256": "f06acd7a7ae181d8ebe6cf675809365d900f0d3b0840a845be3d6ef4f2d6e554"
+    },
+    {
+      "section": "金玉赋",
+      "text": "一气流行，则冬寒而夏暑；三阳生发，自春长以秋成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0005",
+      "sha256": "a004950d9bd09eabe76d626ab3183d634aa8bea05fce7c6f6e34bca102c570a4"
+    },
+    {
+      "section": "金玉赋",
+      "text": "窃闻既生有灭，若亏则盈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0006",
+      "sha256": "82664e3729603018f27d04abca72985b8d0c2f3065b705af3d2f48e7f4a8d4d1"
+    },
+    {
+      "section": "金玉赋",
+      "text": "造化归源，尽反寅申巳亥；五行藏蓄，各居四季丘陵。(眉批：“四季”，辰戌丑未土有墓库之方，故曰藏蓄。)",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 24,
+          "end": 50,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0007",
+      "sha256": "4eab42fe7ecca70a899f63fbb1bea557b4bd310429b9e649e09684736ce057a6"
+    },
+    {
+      "section": "金玉赋",
+      "text": "生长有时，自春夏秋冬之属；旺衰有数，察贫贱富贵之机。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0008",
+      "sha256": "58ea65286283b231748c4d0f7116c3745aa8fa2dd73ca07f9739321ac676e2d5"
+    },
+    {
+      "section": "金玉赋",
+      "text": "搜寻八字，专论财官；次究五行，须求气候。论财官之轻重，察气候之浅深。推向背财官之得失，论当生格局之高低。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0009",
+      "sha256": "a4b2c87c7b96f59d6c96379e790063530d9bc9517041e195226407d0daf8d977"
+    },
+    {
+      "section": "金玉赋",
+      "text": "他来克我为官鬼，身旺当权；我去克他为妻财，官强则富。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0010",
+      "sha256": "3e8ee1fd1b76a2127b99488c7011c8199737f1750afd844ba4d0d12fc2355f94"
+    },
+    {
+      "section": "金玉赋",
+      "text": "年伤身主，乃父与子而不亲；时克日辰，是子不遵于父命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0011",
+      "sha256": "40debc62876275781c472eb2de3838072d1570e7db5224faf02e3c455a89c8fe"
+    },
+    {
+      "section": "金玉赋",
+      "text": "年克日兮上能淩下；日克年兮下去犯上。(眉批：时为子息，日为自身，年为祖，月为父，克之乃犯上。)",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 18,
+          "end": 47,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0012",
+      "sha256": "c32fc401248c650fab3ae29774bf318b229f004e4b7f1a118d73a3d3f846c880"
+    },
+    {
+      "section": "金玉赋",
+      "text": "若得有物制日子，则可化恶为祥。(眉批：言七杀有制伏，化作偏官，当有兵权之任。)",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 15,
+          "end": 39,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0013",
+      "sha256": "9b84d43f8e0ac5a1ce918de5882fb1c1f38e4babf85b246182e76437a3ae48a8"
+    },
+    {
+      "section": "金玉赋",
+      "text": "更要本主逢喜神，则将凶而变吉。喜神(眉批：言财官印)庆会，当知资産丰隆；四柱无情，定见祸端并作。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 17,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0014",
+      "sha256": "5b2b266cd5ae1978b3581e31a17d61dedf1bcb6330411c46f99d6f996ea327f2"
+    },
+    {
+      "section": "金玉赋",
+      "text": "或见本主相冲，三刑重叠，岁运欺淩，必招横事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0015",
+      "sha256": "90938ce95977a59f307b4ccbf45e6d24c102c6fab447cd4f83d82c184d3ae492"
+    },
+    {
+      "section": "金玉赋",
+      "text": "纯粹五行入格，台阁风清；身强七杀逢伏，藩垣镇守。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0016",
+      "sha256": "12247c77f82188cc855a70fb2f289f0be023d657888dc8325c76e4aae89ebd1e"
+    },
+    {
+      "section": "金玉赋",
+      "text": "无财官而有格局，青云得路；无格局而有财官，黄门成名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0017",
+      "sha256": "a01a7b9ec72f3d8a47fc0dba2c5798e8f4f3efb8a7975f89c4c7c6d2791ec5eb"
+    },
+    {
+      "section": "金玉赋",
+      "text": "财官格局俱损，不贫寒而功名蹭蹬之夫；日子月令俱强，非穷困必草茅永逸之士。丙丁坐南离而无制，是不遵礼法凶暴之徒；壬癸遇戊己之相应，乃怀德抱才聪慧之士。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0018",
+      "sha256": "0288f4d4b467422ca9ee2b5e195bb9b136791684768ed24ad37960b0576b45ab"
+    },
+    {
+      "section": "金玉赋",
+      "text": "辛逢乙木于南墓，须富而不仁；丙逢辛金於北镇，纵贫而有德。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0019",
+      "sha256": "e376f76e8e9b79b12f64252d74ee9feca3e19bad275da6f29b294a4032662688"
+    },
+    {
+      "section": "金玉赋",
+      "text": "年时月令有偏印，凶吉未明；大运岁君逢寿星，灾殃立至。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0020",
+      "sha256": "5474b76791a60ded7909380c72b35bf81185a2bbe9cd1387dd1151bc7e793933"
+    },
+    {
+      "section": "金玉赋",
+      "text": "幼年乏乳，食神遭刑克之宫；壮岁峥嵘，乃财官居纯粹之位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0021",
+      "sha256": "22ea35844aa8031c2b9757c24c8840fa4c115c4b39b9a7a1ae06655662dc9ba4"
+    },
+    {
+      "section": "金玉赋",
+      "text": "阳日(眉批：甲丙戊庚壬)食神得地无冲损，则暗合官星；阴日食神无破亏，虽契合则自亲。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 2,
+          "end": 12,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0022",
+      "sha256": "20381c193dff25943f62c0829428e1d22fc1893bd1a436b478a4d249d3f859d8"
+    },
+    {
+      "section": "金玉赋",
+      "text": "印绶偏财，能益寿延年；羊刃七杀，善夺财化鬼。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0023",
+      "sha256": "02efc0e030322f153ea654363b1c326e6795d00cc71b02938ccaca1b78d69219"
+    },
+    {
+      "section": "金玉赋",
+      "text": "财星有破，废祖风别立他乡；印绶被伤，失宗业抛离故里。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0024",
+      "sha256": "7dd6a6ae703c209c2bfab5bb389877d4541c0f168038e4def4bca2028bfa742f"
+    },
+    {
+      "section": "金玉赋",
+      "text": "人命以贵神为福，遭克陷则凶祸不祥；五行会凶曜为灾，喜合杀并食神(眉批：食神能制杀，故善之)为贵。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 31,
+          "end": 45,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0025",
+      "sha256": "0d78d98018541dda73097df33e299ee1ea26a3ca511fd8d4ace03612581aebf7"
+    },
+    {
+      "section": "金玉赋",
+      "text": "命亏杀旺，要天赦二德呈祥；身弱财丰，喜羊刃兄弟 (眉批：甲见乙为弟，乙见甲为兄，五行同此。) 为助。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 24,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0026",
+      "sha256": "a80f93676ea2c1c68c464b4e7171b7ea5039be4174921f435d2e78744f43bd24"
+    },
+    {
+      "section": "金玉赋",
+      "text": "月令值食神健旺，善饮食而姿质丰满；四柱有吉曜相扶，堆金积玉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0027",
+      "sha256": "5660cf7ad63bed12c0853ccb47038b9a32b31dabf5ec0473716682ab5b2579ab"
+    },
+    {
+      "section": "金玉赋",
+      "text": "五行无凶杀侵犯，名显声扬。寅申巳亥叠犯，有聪明生发之心 (眉批：四生之局，故曰有生发之心。)；子午卯酉重逢，害酒色荒淫之志。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 28,
+          "end": 46,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0028",
+      "sha256": "70f44f89cf118dedf7a066c901aa2f39c891899c63633d0fcd538180cc68f501"
+    },
+    {
+      "section": "金玉赋",
+      "text": "女人无杀，一贵何妨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0029",
+      "sha256": "17851bee97974debe668a1f91be32f82c363cacd886e711bb878a325fe36224b"
+    },
+    {
+      "section": "金玉赋",
+      "text": "喜逢天月德神，忌见官杀混杂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0030",
+      "sha256": "57c3df44cd28237f965d022e9b241ce0dad1d05842a6608dc5452c4fbb219f9e"
+    },
+    {
+      "section": "金玉赋",
+      "text": "贵衆则舞裙歌扇，合多则暗约偷期。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0031",
+      "sha256": "f15337c320fc703d81b06d4a86a4a147800cf58e94c3753efa1ee70edcd35872"
+    },
+    {
+      "section": "金玉赋",
+      "text": "五行健旺，不遵礼法而行；官杀互逢，定是风声之配。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0032",
+      "sha256": "441c41839e66822bd4164125f73c4ad4f053c355285c6c575a2269440cab5bc2"
+    },
+    {
+      "section": "金玉赋",
+      "text": "廻眸倒插，泛水桃花；沐浴棵形，螟蛉重见。多为奴妾娼妓，少有三贞九烈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0033",
+      "sha256": "f42dc85d4b39bee6a3e3427f51d31c165c6f451185535b5d064f7573477331f6"
+    },
+    {
+      "section": "金玉赋",
+      "text": "双鱼双女号淫星，不宜多犯；官星七杀曰夫主，忌见重逢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0034",
+      "sha256": "87f61b9b364f51752156a5e2cda7c202ce2f554c1461dcf7a857fc17858d7046"
+    },
+    {
+      "section": "金玉赋",
+      "text": "寅申互见性荒淫，巳亥相逢心不已。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0035",
+      "sha256": "4e371f2ffd9b72cb9b482053305ab309c85472ab7a21e6cc93fe2060392023ec"
+    },
+    {
+      "section": "金玉赋",
+      "text": "或有伤官之位，不远嫁定主克夫；临冲嫋印之神，非孤离终须死别。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0036",
+      "sha256": "9a472f9b71590218b93ad49d7cb1d4cc3d39ec9ddaea479416b8dae898cad220"
+    },
+    {
+      "section": "金玉赋",
+      "text": "四柱官鬼 (眉批：官鬼即女人之夫，旺为官衰为鬼。)入墓，使夫星早人黄泉；岁运临夭绝之宫，俾鸳配飞分异路。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 5,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0037",
+      "sha256": "97b2175f64d653dfe1582c128b443c3635958009ca36703086e859ac934ee69f"
+    },
+    {
+      "section": "金玉赋",
+      "text": "要知女命难婚，运入背夫之位；欲识男儿早娶，定是运合财乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0038",
+      "sha256": "c82fc78f04c5caeec7c386e738550334296c57e36bf1acc4c164f08c0d65a687"
+    },
+    {
+      "section": "金玉赋",
+      "text": "子克重重，杀没官衰；伤食重重，伤妻叠叠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0039",
+      "sha256": "6b70b0b6fa2378536181e2211361e25735adbdf953236bf66a57595dcc4cd235"
+    },
+    {
+      "section": "金玉赋",
+      "text": "财轻身旺弟兄多，若不如斯，定是刑冲妻妾位。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0040",
+      "sha256": "ccd1ef179c6a73846a604d3fed1478bf5c3359867a4fe4374dc0072409b52967"
+    },
+    {
+      "section": "金玉赋",
+      "text": "暗合财星妻妾衆，虚朝财位主妻多。财星入墓，必定刑妻；支下伏神，偏房宠妾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0041",
+      "sha256": "7ef36912200924894d3ad409df650e8cc982b549180d58fca1ffb45e6e9ae727"
+    },
+    {
+      "section": "金玉赋",
+      "text": "妻星明朗，乔木相求。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0042",
+      "sha256": "800b336c2824747424dcdc965554017e80d0752b30dc1be4794c44c992d5e9dc"
+    },
+    {
+      "section": "金玉赋",
+      "text": "大运流年三合财乡，必主红鸾吉兆；或临财败之宫，家赀淩替，伤妻损妾，婚配难成。妻星失位在何宫，要求端的；官禄天厨甚位，须察根源。有格局纯粹，忽遇恶物相冲，亦主死亡；无财禄或行财禄旺相，亦当骤发。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0043",
+      "sha256": "a3e76e9ef8bc952ee8c2a9d7816e9e239c5587923dd7761c0a1444f8612c8bce"
+    },
+    {
+      "section": "金玉赋",
+      "text": "日求升合，食神旺处劫财多；或逢偏印克食神，非贫夭寿。(眉批：食神主人之饮食，受克主乞儿)。须知乞化，要审荣枯得失，当究轻重深浅。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 26,
+          "end": 44,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0044",
+      "sha256": "60f4753d4337f2ee18e90b3efa57b6a3c8e461c60b7894bfd0c0fccfc01ce4e5"
+    },
+    {
+      "section": "金玉赋",
+      "text": "官禄杀强，无制则夭；日衰财重，党杀则穷。更看岁运，何凶何吉。身宫冲破无倚，不离祖必出他乡；乾坤艮巽互换朝，好驰骋则心无定主。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0045",
+      "sha256": "12cf5b4c12dba28d33b54ee81e7b174dd1464b2482ed747a97716ba05be2a18e"
+    },
+    {
+      "section": "金玉赋",
+      "text": "柱中若逢华盖(眉批：华盖星者，主盖之状，主翰苑，若逢空亡主僧道。)，犯二德清贵之人；官星七杀落空亡，在九流任虚闲之职。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 6,
+          "end": 33,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0046",
+      "sha256": "951c10bb392737121ee5d6e7706bc6624d38ad1aa170f7176612494cf81091a1"
+    },
+    {
+      "section": "金玉赋",
+      "text": "五行克岁，非伤日主不为灾；岁运并临，若损用神皆有祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0047",
+      "sha256": "3f7d5dddbbe26b2849e1f0d9ad896095b94dae06de75185adeb727e6411e7310"
+    },
+    {
+      "section": "金玉赋",
+      "text": "木逢金克，定主腰肋之灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0048",
+      "sha256": "83cf1411cc479dc39a94c619fe593a07b93d91ed6111bf04f0a7fdefdffd62da"
+    },
+    {
+      "section": "金玉赋",
+      "text": "火被水伤，必是眼目之疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0049",
+      "sha256": "7e9b38ddb1e57c67b04dd48f7568dabdca61a28f464750c5d10b3f1037883735"
+    },
+    {
+      "section": "金玉赋",
+      "text": "三合火神旺盛，克庚辛损头面及脓血之疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0050",
+      "sha256": "907e218eb30a8af6906db07c0d720835c43badebea913fdba1d6c7f767de0612"
+    },
+    {
+      "section": "金玉赋",
+      "text": "如伤日干及财官太盛，折肢体有眷恋之灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0051",
+      "sha256": "98120f13dc3c21edaf14bda9dd5a8f6519a06cceaa73ff4138d61555dcdaf030"
+    },
+    {
+      "section": "金玉赋",
+      "text": "心肺喘满，亦本金火相刑；脾胃损伤，盖因土木克战。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0052",
+      "sha256": "2da8c27855664007af51b1b81e932bba401bf3410159c66c0d279fbdec40ce94"
+    },
+    {
+      "section": "金玉赋",
+      "text": "支水干头有火，遭水克必主腹胚心朦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0053",
+      "sha256": "1743a4491ddcf4ce97df258299b6d36de67533d0f4e1327e4ee6d3f83e47ce84"
+    },
+    {
+      "section": "金玉赋",
+      "text": "支火干头有水，遇火旺则内障睛盲。火土烦焦蒸四曜，则发秃眼昏；润下纯湿元气，反神清骨秀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0054",
+      "sha256": "80a0d1de7aaa03db8c52c5bbf5a0b7caaff08627441aada44515ce13bc869d53"
+    },
+    {
+      "section": "金玉赋",
+      "text": "荧惑乘旺临离巽，风中失音；太白坚利合兑坤，兵箭落魄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0055",
+      "sha256": "4456b8373ed426db540d7357e1431444f67acec975da3de9b63dfa4d36a0f26f"
+    },
+    {
+      "section": "金玉赋",
+      "text": "财星入墓，少许刑冲必发。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0056",
+      "sha256": "26e046c63148d13d1cf9fcaf2808413fdae7e02b6a209f831538e550d4d7dc23"
+    },
+    {
+      "section": "金玉赋",
+      "text": "伤官伤尽，或见官星则凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0057",
+      "sha256": "a2fe1bf1fee0ba595166d21abac3762a56ce8aeef12787333de52393173599d1"
+    },
+    {
+      "section": "金玉赋",
+      "text": "十有八格，当从善恶推求；总系五行，各取衰旺消息。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0058",
+      "sha256": "21f08b5cac5c7510644f91110f4c72ba4a9070dde00e588b091016229eb380ff"
+    },
+    {
+      "section": "金玉赋",
+      "text": "身旺何劳印绶(印绶，生身之母也，身旺者不必印来生身)，身衰不喜财官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0059",
+      "sha256": "75b39044f89bc2a75f0471f2ec99eded3d5573900c9f65ceb9376c6770eb02c6"
+    },
+    {
+      "section": "金玉赋",
+      "text": "中和为福，偏党为灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0060",
+      "sha256": "5c9c6648039d779bcd03f7374b3fbd9f79e0144256701439b73250dd21c19f1a"
+    },
+    {
+      "section": "金玉赋",
+      "text": "但见贵神、朝拱、禄马、飞天、遥合、虚邀(言禄马不在月令之中，虚邀成格)，不得冲格，逢合皆忌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0061",
+      "sha256": "b73a96b3051934e940468091e026036e63d13f0f16919faf69b29ece674fa758"
+    },
+    {
+      "section": "金玉赋",
+      "text": "七杀官星，各嫌羁绊，填实则凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0062",
+      "sha256": "5aaf9b15b3f82620ff0d7012f5c7960af99f5a108552a07e786608de4c40dbd3"
+    },
+    {
+      "section": "金玉赋",
+      "text": "忽然运到官乡，当以退身避职。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0063",
+      "sha256": "d3d47781ec24919d410ad9c63c25c908fe49b4961248f7718bc4f18c454c11d4"
+    },
+    {
+      "section": "金玉赋",
+      "text": "马瘦官破，困守穷途；禄旺财丰，峥嵘仕路。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0064",
+      "sha256": "a611d2897770195ee84d34a7f4ab78d80e25dfcd098b530badee5d9c2e64a651"
+    },
+    {
+      "section": "金玉赋",
+      "text": "如临喜处以得祸，是三合而隐凶星；或逢凶处而反祥，乃九宫 (眉批：迁宫也)而露吉曜。要知职品高低，当求运神向背。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 28,
+          "end": 36,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0065",
+      "sha256": "738d72a4877039bc4c6b5bdd97981cebc20094f18fcaa870fd314c82e2f7d3fe"
+    },
+    {
+      "section": "金玉赋",
+      "text": "清奇则早岁成名，沾缺则晚年得地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0066",
+      "sha256": "5ad420ef0ff09f2756832bd5c523f15ca909ef216bbcb64d7bab7ea5c32f8304"
+    },
+    {
+      "section": "金玉赋",
+      "text": "运行则一宫十载，流年乃逐岁推移。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0067",
+      "sha256": "d92f086e0f3a804931b83f0dd879b4950c03ccc54254fffae13e0a5ac5ffaa79"
+    },
+    {
+      "section": "金玉赋",
+      "text": "津路(眉批：运限也)通亨，权高爵重；程途偃蹇，禄薄官卑。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 2,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0068",
+      "sha256": "1050842c8af85734e43a6b351b5a35a3ffc1a4ec2c24866f3b43b0a23f1a4e3e"
+    },
+    {
+      "section": "金玉赋",
+      "text": "搜寻子位，先看妻宫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0069",
+      "sha256": "1ba5a3acc2d21ad4ff15cb57fc954a0f1b4f71c5dcb82a2a21dba2a4c9ce51e3"
+    },
+    {
+      "section": "金玉赋",
+      "text": "死绝者嫡庶难存，太旺者别门求觅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0070",
+      "sha256": "874646d63fd726d8f45a34e6f324e94446217ccc4d736e8d807f1449f4f34f6c"
+    },
+    {
+      "section": "金玉赋",
+      "text": "妻星显露，子息必多；刑害嗣宫，男女罕得。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0071",
+      "sha256": "9d31530bf56dd23681298205e5da82d470dc16a911c65d1e93ae854047b4c30a"
+    },
+    {
+      "section": "金玉赋",
+      "text": "若问兄弟多寡，细检四柱干支。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0072",
+      "sha256": "291dd7450ae7df86476b6ed501f027ec798a82b805ce7cde3711e170034ec1c1"
+    },
+    {
+      "section": "金玉赋",
+      "text": "月令虽强，更看运神向背。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0073",
+      "sha256": "d2b711358816aabe87c7f110adf5dc758fcbe9ecb403e4070ba03ade7ce0a6a0"
+    },
+    {
+      "section": "金玉赋",
+      "text": "死绝刑伤，雁行失序；相生喜庆，棣萼联荣 (眉批：言兄弟荣贵)。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 20,
+          "end": 30,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0074",
+      "sha256": "dce925cfbfa0908e4170858e89f41ee69ef94892a8a3c56c1c55cad263f5990c"
+    },
+    {
+      "section": "金玉赋",
+      "text": "兄弟身旺 (眉批：言五行比劫多者)，父命有亏；财帛旺多，母年早克。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 5,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0075",
+      "sha256": "e54bdd9d934be3e61c50b3aada6fdc0a40d9760701bccc44be8ebee0d8cdac97"
+    },
+    {
+      "section": "金玉赋",
+      "text": "若见官鬼出见，母反长年；如逢脱气排运，父还有寿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0076",
+      "sha256": "5e1698effb4705e5c7a2e7e19b50f1e7821c6f359927a29789dc5463dbd78c3b"
+    },
+    {
+      "section": "金玉赋",
+      "text": "壬临午位，癸坐巳宫，禀中和兮禄马 (眉批：财官也)同乡，遇休囚也胎元绝地。丙临申位，庚坐燕寅，己入巽乾，乙临双女，金乘火位，甲坐坤宫，名曰休囚，最嫌克制。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 17,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0077",
+      "sha256": "6073df815722c63c35deac137eadfbf1fa70c3a2b9c02f541134e87310d09ed1"
+    },
+    {
+      "section": "金玉赋",
+      "text": "七杀忌逢言丧魄，寿星欣遇曰还魄。天命能施，智力难出。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0078",
+      "sha256": "d0e8f5bbbac314a35a1019b0daa725880e76c9d0c3bb1c2c2cab0552e84559d8"
+    },
+    {
+      "section": "金玉赋",
+      "text": "罗网造化幽微，乃除功妙。贫寒将尽，能令白屋出公卿；奢侈太过，反使朱门出饿蜉。家赀将废，定生不肖之男儿；婚媾多刑，必娶无寿之妻妾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0079",
+      "sha256": "2a6607231af30d3807dcb1ccce982c6bd960cce21818dfdccba19bb2bbcbaaf7"
+    },
+    {
+      "section": "金玉赋",
+      "text": "四宫 (眉批：田宅宫也，此句以宫分立论)背禄，不可妄求，官将不成，财当见废。",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 3,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c190:p0080",
+      "sha256": "fe314fd1a71b44ffa2d36cb7085e6608e1f0ae4e6758b7550a05327a1eabc9bb"
+    },
+    {
+      "section": "金玉赋",
+      "text": "八字无财，须求本分；越外若贪，必招凶事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0081",
+      "sha256": "18fe8cce0f1f8063751acbb4e3ff5241eed82b6d51af7ec1f27ea8bf154bdff8"
+    },
+    {
+      "section": "金玉赋",
+      "text": "甘贫养拙，非原宪之不才；鼓腹吹萧，使伍员之挫志。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0082",
+      "sha256": "1b5fd52b7d23a3f464c200edbe67f6c05ea31fcf0267c3b983faf6c1765e9cf7"
+    },
+    {
+      "section": "金玉赋",
+      "text": "顺则行，逆则弃。知命乐天，困穷合义，洪范数终，渊源骨髓。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c190:p0083",
+      "sha256": "71b3cb40bccd2fa93b2d1bda485bc79e9437d06ce9e4a88087b57525f3ab65d1"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c142",
+  "title": "六亲总论",
+  "source_url": "https://luckclub.cn/bazi/001/142/",
+  "revision": "sha256:f13bcaf45ada171123ad1d9f464cb10c45e58d5277a1a52030fb85ee93264c2b",
+  "source_timestamp": "2026-09-06T04:10:52.874171+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c142.html",
+  "raw_sha256": "f13bcaf45ada171123ad1d9f464cb10c45e58d5277a1a52030fb85ee93264c2b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六亲总论",
+      "text": "六亲总论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c142:p0001",
+      "sha256": "1ba02cdb3dcf90f7f4df08abd313050104e5923608d3decefbc9e22ac0e443f4"
+    },
+    {
+      "section": "六亲总论",
+      "text": "夫六亲者，父母、兄弟、妻财、子孙是也。用日干为主，正印正母，偏印偏母及祖父也。偏财是父，乃母之夫星也，亦为偏妻。正财为妻，偏财为妾，为父是也。比肩为兄弟姐妹也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c142:p0002",
+      "sha256": "5f1df1ddcc85ffba2a9e9fbeb310d530e764d349e07f68c404be4d9b08e5fb99"
+    },
+    {
+      "section": "六亲总论",
+      "text": "七杀是男，正官为女。(阳为男，阴为女。) 食神是男孙，伤官是女孙及祖母也。(以上有图，必详其图说方可知)。妇人命取六亲与男命不同，取官星为夫星，七杀是偏夫，食神是男，伤官是女。经云：男取克干为嗣，女取干生为子息及奴婢也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c142:p0003",
+      "sha256": "246260c3e81f79193510b9ee0a92d4eb13516c1d158533afdcc89bce1ad81294"
+    },
+    {
+      "section": "六亲总论",
+      "text": "年为祖上，月为父母、伯叔兄弟门户，日为妻妾己身。且如六亲受克如何？印绶见财，克母及祖母也；见比劫羊刃，克妻妾及父也；官杀多者，难为兄弟；伤官食神多难为子息；枭印伤孙克祖母也。譬如正印作合母不正，财作合妻不正，偏财作合妾不正，比肩作合姐妹不正，伤官作合祖母不正，食神作合孙女不正。假如甲日为主，见癸为母，见戊辰，戊为父及妾，见己丑未字则与戊字相争夺，又伤癸水，克母之义明矣。见甲寅字，克父及妾；见庚申字，主克兄姐也；见乙卯字，克弟妹；见丙巳字，克子女也，余仿此。此必以运见何字则克何人。更将冲克衰旺向背，将来者进，功成者退。兼有孤神，寡宿，旬中有空亡者忌，二三反吉。金空则鸣，火空则发，水空则流 (此三者上吉)；木空则朽，土空则崩 (二者主凶)。当以本生年起，克害无疑也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c142:p0004",
+      "sha256": "579e4a3f015bbe570726178bbaa04b6d47e2d8ab2b82d768709b63a66ab44e50"
+    },
+    {
+      "section": "六亲总论",
+      "text": "眉批：生我身者为母，克我母者为父，克我之干者为我子也，我同类比肩者为我兄弟姐妹，生我妻者为我外母，克我外母者为我外父。若女命，则以我生之干为子息，以来克日干为夫，以生夫者为姑，以克姑者为公，其余兄弟父母皆与男命同之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 108,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c142:p0005",
+      "sha256": "58c51887e9f59d11c219cf970b092cfde93f0af27a8b3eb81d775e7e6997ec1b"
+    }
+  ]
+}

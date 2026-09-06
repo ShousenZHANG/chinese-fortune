@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c058",
+  "title": "论节候歌",
+  "source_url": "https://luckclub.cn/bazi/001/058/",
+  "revision": "sha256:1460812a5cd90b11076e2731989472060dda1fbdb1419a4204e13c32bb88029c",
+  "source_timestamp": "2026-09-06T04:10:35.969775+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c058.html",
+  "raw_sha256": "1460812a5cd90b11076e2731989472060dda1fbdb1419a4204e13c32bb88029c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论节候歌",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c058:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论节候歌",
+      "text": "论节候歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c058:p0002",
+      "sha256": "55beda0e3ecdc95a5a5c188e96961495e9d24e5d729bcd222c04ea5580615040"
+    },
+    {
+      "section": "论节候歌",
+      "text": "正月立春雨水节，二月惊蛰及春分，三月清明并谷雨，四月立夏小满方，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c058:p0003",
+      "sha256": "dfd541d6df259cc6132a5e9311f2f5701e66904a6aa63896829769a1a131cb6b"
+    },
+    {
+      "section": "论节候歌",
+      "text": "五月芒种并夏至，六月小暑大暑当，七月立秋还处暑，八月白露秋分忙，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c058:p0004",
+      "sha256": "106ef9f56652f0a1131af39f3ee5148cff17a1e8b510d39359a5e3858d6836db"
+    },
+    {
+      "section": "论节候歌",
+      "text": "九月寒露又霜降，十月立冬小雪张，子月大雪冬至节，丑月小寒大寒昌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c058:p0005",
+      "sha256": "923f2c20bfbda82eba95ea385b09d5e06aac7331087d64ce668c1ca9dac5f055"
+    },
+    {
+      "section": "论节候歌",
+      "text": "眉批：此以立春日为始，或正月一二三四五六，立春又不问内增二日，只以节义为始，且立春为节，雨水为候，又为节气，逐月仿此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 59,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c058:p0006",
+      "sha256": "2eb9e7548befabff307c669d1dc5cc16905d015fe2dcaef8b25a34db090be8a6"
+    }
+  ]
+}

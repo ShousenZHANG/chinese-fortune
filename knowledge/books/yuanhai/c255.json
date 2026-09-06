@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c255",
+  "title": "弃命从杀诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/255/",
+  "revision": "sha256:2e1212fd3ac6f189837669aad3ea8a34efd461a405bc2bd75df2aaf78dc30aef",
+  "source_timestamp": "2026-09-06T04:11:16.173709+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c255.html",
+  "raw_sha256": "2e1212fd3ac6f189837669aad3ea8a34efd461a405bc2bd75df2aaf78dc30aef",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "弃命从杀诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "弃命从杀诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0002",
+      "sha256": "170acef5a4ddb35fbd3f485835ef4d15b427d92ee85ddd736c7860a9b9fd8672"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "土临卯位三合全，木见当生金水缠，水木旺乡名利显，再逢坤坎祸连绵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0003",
+      "sha256": "1daf9d0f09dfccdee49f48c87f499e95971fbb84207e635d004981f5819c5907"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "五阳在日全逢杀，弃命相逢命不坚，如见五阴来此地，杀生根败吉难言。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0004",
+      "sha256": "6d4f91aed95749fa47e6830a00dc1fdde34c3c0aee5494d12ff8104a37a7b975"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "阳水重逢阳土戈，无根何处被刑磨，格中有贵须还显，切忌官星破局多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0005",
+      "sha256": "26428e5e20cb06330295bca8eee5d1a97a4b45e2b32e7fe80a54d840e87c0f1c"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "庚日全逢寅午戌，天干透出始为神，重重火旺声名显，命里休囚忌水乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0006",
+      "sha256": "ecbbc73cc472105175ea7394824b8803a7e730398fdd34160e2f1708d4b108d5"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "六乙生人巳酉丑，局中切忌财星守，若还行运到南方，管取其人寿不久。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0007",
+      "sha256": "e1bcdec699f3ace0c0d86353ad67dda7593457c3fdfab49f7f9dfdaa8ac53262"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "阳火喜居身弱地，勾陈朱雀作凶媒，一片江湖太白象，不为将相作高魁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c255:p0008",
+      "sha256": "d72bd236abc878943be42475ba11a790f438562a2a7a1802bcda4dfab74d64b0"
+    },
+    {
+      "section": "弃命从杀诗诀",
+      "text": "眉批：弃命从杀格者只用丙丁己三日火命，复要行运北方，又忌见官运，行南方见根者必凶。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 41,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c255:p0009",
+      "sha256": "d3d95749fdaaa539d1476aaf345a7e5b75e07f5168007637b5b5d7b38473b8dd"
+    }
+  ]
+}

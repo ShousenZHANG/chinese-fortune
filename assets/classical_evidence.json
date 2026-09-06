@@ -3,51 +3,138 @@
   "policy": "版本与出处核对不等于现实预测验证；未核影像，转录正文与注文分别记录。",
   "sources": [
     {
-      "id": "ziping-month", "title": "子平真诠", "edition": "东里书斋《秘本子平真诠》网络转录，未核底本影像",
-      "chapter": "卷一·八、论用神", "locator": "首段", "layer": "base_text",
-      "url": "https://donglishuzhai.net/chapter/3721.html", "checked_on": "2026-09-06",
-      "verification": "transcription_checked", "quote": "八字用神，專求月令，以日干配月令地支，而生尅不同，格局分焉。",
-      "context": "下文分顺用与逆用，并要求四柱配合；不能等同于最缺五行。"
+      "id": "ziping-month",
+      "title": "子平真诠",
+      "edition": "东里书斋《秘本子平真诠》网络转录，未核底本影像",
+      "chapter": "卷一·八、论用神",
+      "locator": "首段",
+      "layer": "base_text",
+      "url": "https://donglishuzhai.net/chapter/3721.html",
+      "checked_on": "2026-09-06",
+      "verification": "transcription_checked",
+      "quote": "八字用神，專求月令，以日干配月令地支，而生尅不同，格局分焉。",
+      "context": "下文分顺用与逆用，并要求四柱配合；不能等同于最缺五行。",
+      "passage_id": "ziping:c008:p0001"
     },
     {
-      "id": "ziping-rescue", "title": "子平真诠", "edition": "东里书斋《秘本子平真诠》网络转录，未核底本影像",
-      "chapter": "卷一·九、论用神成败救应", "locator": "首段、成败救应段", "layer": "base_text",
-      "url": "https://donglishuzhai.net/chapter/3722.html", "checked_on": "2026-09-06",
-      "verification": "transcription_checked", "quote": "用神專求月令，然以四柱配之，必有成敗。",
-      "context": "该章分别讨论成立、受损和救应；自动识别格名不等于完成成败判定。"
+      "id": "ziping-rescue",
+      "title": "子平真诠",
+      "edition": "东里书斋《秘本子平真诠》网络转录，未核底本影像",
+      "chapter": "卷一·九、论用神成败救应",
+      "locator": "首段、成败救应段",
+      "layer": "base_text",
+      "url": "https://donglishuzhai.net/chapter/3722.html",
+      "checked_on": "2026-09-06",
+      "verification": "transcription_checked",
+      "quote": "用神專求月令，然以四柱配之，必有成敗。",
+      "context": "该章分别讨论成立、受损和救应；自动识别格名不等于完成成败判定。",
+      "passage_id": "ziping:c009:p0001"
     },
     {
-      "id": "ziping-climate", "title": "子平真诠", "edition": "东里书斋《秘本子平真诠》网络转录，未核底本影像",
-      "chapter": "卷二·十四、论用神配气候得失", "locator": "首句", "layer": "base_text",
-      "url": "https://donglishuzhai.net/chapter/3727.html", "checked_on": "2026-09-06",
-      "verification": "transcription_checked", "quote": "論命惟以月令用神爲主，然亦須配氣候而互參之。",
-      "context": "本项目分别展示格局和调候，不设所有命局均由调候覆盖的默认裁决。"
+      "id": "ziping-climate",
+      "title": "子平真诠",
+      "edition": "东里书斋《秘本子平真诠》网络转录，未核底本影像",
+      "chapter": "卷二·十四、论用神配气候得失",
+      "locator": "首句",
+      "layer": "base_text",
+      "url": "https://donglishuzhai.net/chapter/3727.html",
+      "checked_on": "2026-09-06",
+      "verification": "transcription_checked",
+      "quote": "論命惟以月令用神爲主，然亦須配氣候而互參之。",
+      "context": "本项目分别展示格局和调候，不设所有命局均由调候覆盖的默认裁决。",
+      "passage_id": "ziping:c014:p0001"
     },
     {
-      "id": "ditian-shangguan", "title": "滴天髓", "edition": "维基文库转录 oldid=844363，未核底本影像",
-      "chapter": "格局论", "locator": "伤官见官条正文", "layer": "base_text",
-      "url": "https://zh.wikisource.org/w/index.php?title=滴天髓/06&oldid=844363", "checked_on": "2026-09-06",
-      "verification": "transcription_checked", "quote": "傷官見官果難辨，可見不可見。",
-      "context": "同页注文区分身强弱、财、印等情形；不能把并见直接判为凶。"
+      "id": "ditian-shangguan",
+      "title": "滴天髓",
+      "edition": "维基文库转录 oldid=844363，未核底本影像",
+      "chapter": "格局论",
+      "locator": "伤官见官条正文",
+      "layer": "base_text",
+      "url": "https://zh.wikisource.org/w/index.php?title=滴天髓/06&oldid=844363",
+      "checked_on": "2026-09-06",
+      "verification": "transcription_checked",
+      "quote": "傷官見官果難辨，可見不可見。",
+      "context": "同页注文区分身强弱、财、印等情形；不能把并见直接判为凶。",
+      "passage_id": "ditian:c006:p0007"
     },
     {
-      "id": "ditian-shangguan-comment", "title": "滴天髓", "edition": "维基文库转录 oldid=844363，注家身份未独立校核",
-      "chapter": "格局论", "locator": "伤官见官条注文首句", "layer": "commentary",
-      "url": "https://zh.wikisource.org/w/index.php?title=滴天髓/06&oldid=844363", "checked_on": "2026-09-06",
-      "verification": "transcription_checked", "quote": "身弱而傷官旺者，見印而可見官，官以生印，印以扶身也",
-      "context": "仅此条件分支；不能自动推及每一个伤官见官命局，亦不将注文冒充正文。"
+      "id": "ditian-shangguan-comment",
+      "title": "滴天髓",
+      "edition": "维基文库转录 oldid=844363，注家身份未独立校核",
+      "chapter": "格局论",
+      "locator": "伤官见官条注文首句",
+      "layer": "commentary",
+      "url": "https://zh.wikisource.org/w/index.php?title=滴天髓/06&oldid=844363",
+      "checked_on": "2026-09-06",
+      "verification": "transcription_checked",
+      "quote": "身弱而傷官旺者，見印而可見官，官以生印，印以扶身也",
+      "context": "仅此条件分支；不能自动推及每一个伤官见官命局，亦不将注文冒充正文。",
+      "passage_id": "ditian:c006:p0008"
     },
     {
-      "id": "qiong-tiaohou", "title": "穷通宝鉴", "edition": "项目既有调候整理表；具体条款需逐格定位",
-      "chapter": "十干分论", "locator": "按 table_key 访问 assets/tiaohou.json", "layer": "project_digest",
-      "url": "https://zh.wikisource.org/wiki/穷通宝鉴", "checked_on": null,
-      "verification": "pending", "quote": null,
+      "id": "qiong-tiaohou",
+      "title": "穷通宝鉴",
+      "edition": "项目既有调候整理表；具体条款需逐格定位",
+      "chapter": "十干分论",
+      "locator": "按 table_key 访问 assets/tiaohou.json",
+      "layer": "project_digest",
+      "url": "https://zh.wikisource.org/wiki/穷通宝鉴",
+      "checked_on": null,
+      "verification": "pending",
+      "quote": null,
       "context": "保留既有审计记录，但不把整表核对声明升级为每条原文已核；所有候选须检查条件。"
     }
   ],
   "rules": [
-    {"id": "bazi-month-structure", "source_ids": ["ziping-month", "ziping-rescue"], "scope": "natal", "required_conditions": ["month_origin", "whole_chart", "formation", "rescue"], "limit": "格名为候选，不凭格名断富贵"},
-    {"id": "bazi-climate-separate", "source_ids": ["ziping-climate", "qiong-tiaohou"], "scope": "natal", "required_conditions": ["specific_clause", "stems_roots", "whole_chart"], "limit": "调候与扶抑分别陈述，不机械覆盖"},
-    {"id": "bazi-shangguan-guan", "source_ids": ["ditian-shangguan", "ditian-shangguan-comment"], "scope": "natal", "required_conditions": ["co_presence", "strength", "wealth_and_seal", "rescue"], "limit": "并见只触发核查，不推出事业、婚姻或具体应期"}
-  ]
+    {
+      "id": "bazi-month-structure",
+      "source_ids": [
+        "ziping-month",
+        "ziping-rescue"
+      ],
+      "scope": "natal",
+      "required_conditions": [
+        "month_origin",
+        "whole_chart",
+        "formation",
+        "rescue"
+      ],
+      "limit": "格名为候选，不凭格名断富贵"
+    },
+    {
+      "id": "bazi-climate-separate",
+      "source_ids": [
+        "ziping-climate",
+        "qiong-tiaohou"
+      ],
+      "scope": "natal",
+      "required_conditions": [
+        "specific_clause",
+        "stems_roots",
+        "whole_chart"
+      ],
+      "limit": "调候与扶抑分别陈述，不机械覆盖"
+    },
+    {
+      "id": "bazi-shangguan-guan",
+      "source_ids": [
+        "ditian-shangguan",
+        "ditian-shangguan-comment"
+      ],
+      "scope": "natal",
+      "required_conditions": [
+        "co_presence",
+        "strength",
+        "wealth_and_seal",
+        "rescue"
+      ],
+      "limit": "并见只触发核查，不推出事业、婚姻或具体应期"
+    }
+  ],
+  "method_profile": {
+    "id": "ziping-month-v1",
+    "primary_book": "ziping",
+    "conflict_policy": "子平真诠月令格局为主；调候、气势与其他版本分列，保留分歧"
+  }
 }

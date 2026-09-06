@@ -1,0 +1,102 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c035",
+  "title": "疾病論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F35&oldid=844386",
+  "revision": "844386",
+  "source_timestamp": "2017-03-23T15:48:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c035.wiki",
+  "raw_sha256": "41df4bccbca8864002d81d51a739b5663014053dd7b02d10d6ee7b402689c508",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "疾病論",
+      "text": "五行和者，一世無災。",
+      "layer": "base_text",
+      "passage_id": "ditian:c035:p0001",
+      "sha256": "9d4e8de764a42596d910ea6ee019a919e0da51bd2dd4e191c2654b0cde4f9830"
+    },
+    {
+      "section": "疾病論",
+      "text": "五行和者，不特全不缺，生而不剋，只是全者宜全，缺者宜缺，生者宜生，剋者宜剋，，則和矣，主一世無災。",
+      "layer": "commentary",
+      "passage_id": "ditian:c035:p0002",
+      "sha256": "846b708fe091fae0799a79145dc85010edff2ce45d516611d84a27133a3a72f6"
+    },
+    {
+      "section": "疾病論",
+      "text": "血氣亂者，平生多疾。",
+      "layer": "base_text",
+      "passage_id": "ditian:c035:p0003",
+      "sha256": "d8a4b6cd057d6c3b788b4229fe203a853ecd85d616bd873072e91e68f8317dd4"
+    },
+    {
+      "section": "疾病論",
+      "text": "血氣亂者，不特火勝水，水剋火之類，五氣反逆，上下不通，往來不順，皆為亂，主其人多疾病。",
+      "layer": "commentary",
+      "passage_id": "ditian:c035:p0004",
+      "sha256": "2accd1ba643c60c8a36b8131702113671d3716829bdc032e9b5d29cca9673d69"
+    },
+    {
+      "section": "疾病論",
+      "text": "忌神入五臟而病凶。",
+      "layer": "base_text",
+      "passage_id": "ditian:c035:p0005",
+      "sha256": "e40724d399068dbadde0073e6fc2bc3a0504f3afeb0a3299541115e3bc6484d5"
+    },
+    {
+      "section": "疾病論",
+      "text": "柱中所忌之神，不制不化，不沖不散，隱伏深固，克人五臟，則其病凶。\n忌木而入土者脾病，忌火而入金則肺病，忌土而入水則腎病，忌金而入木則肝病，忌水而入火則心病。\n又看虛實，如木入土，土旺者，則脾有餘之病，發於四季月，土衰者，則貏不足之病，發於春冬月，餘倣此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c035:p0006",
+      "sha256": "2cb3e2b9edb01e5de020122a0472ea78a1faaa736e4019f0011ff69d58c2c76f"
+    },
+    {
+      "section": "疾病論",
+      "text": "客神遊六經而災小。",
+      "layer": "base_text",
+      "passage_id": "ditian:c035:p0007",
+      "sha256": "ba0c321596ee4d5dc3dbc4a705c7b6961c4a836e69482e9bbf3847fd2c0478d9"
+    },
+    {
+      "section": "疾病論",
+      "text": "客神比忌神為輕，遊行六道，則必有災，如木遊於土地而胃病，火遊金地而大腸病，土行水地而膀胱病，金行木地而膽病，水行火地而小腸病。",
+      "layer": "commentary",
+      "passage_id": "ditian:c035:p0008",
+      "sha256": "0790d184f507f9e5234514cff141c7d58a649c15d8448261b6fdd565e6efacd2"
+    },
+    {
+      "section": "疾病論",
+      "text": "木不受水者血病。",
+      "layer": "base_text",
+      "passage_id": "ditian:c035:p0009",
+      "sha256": "abde8b099b1aaa4ebacc4bf1a66aeca49b971c1ba920757f56582dd992ea5848"
+    },
+    {
+      "section": "疾病論",
+      "text": "木逄沖而或虛脫，則不受水，必主血病，蓋肝屬木而藏血，不納則病矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c035:p0010",
+      "sha256": "97922e78043bc6e1f04ee43f8f8327515bf06609f6d20e4e426a182e7f7fa3da"
+    },
+    {
+      "section": "疾病論",
+      "text": "土不受火者氣傷。",
+      "layer": "base_text",
+      "passage_id": "ditian:c035:p0011",
+      "sha256": "86b028f0dc4317132aa0dc46a24a51d2142d4cf0a58345cfff35871cb32988da"
+    },
+    {
+      "section": "疾病論",
+      "text": "土逄沖中虛脫，則不受火，必主氣病，蓋膽屬土而容火，不受則病矣。\n金水傷官，寒則冷嗽，熱則痰火，火土印綬，熱則風痰，燥則皮癢，論痰多木火，生毒鬱火金，金水枯傷而腎經虛，水土相勝而脾胃洩。\n凡此皆五行不和之病，嘗有局中應傷六親，而不盡驗者，殆以病免其咎，如土為妻，土受傷應剋妻，而不剋者，或其人恆患脾病，則亦足以當之矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c035:p0012",
+      "sha256": "1c479055a25c710c8b6a54b774767b6bb3018ec9ea573a98dff1f92f853942d0"
+    }
+  ]
+}

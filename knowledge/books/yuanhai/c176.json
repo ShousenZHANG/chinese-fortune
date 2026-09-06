@@ -1,0 +1,118 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c176",
+  "title": "群兴论",
+  "source_url": "https://luckclub.cn/bazi/001/176/",
+  "revision": "sha256:5c0315cee52abceee8040193b8466111dc0ac66fbfca063d8ea9807f8960fc64",
+  "source_timestamp": "2026-09-06T04:10:59.057894+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c176.html",
+  "raw_sha256": "5c0315cee52abceee8040193b8466111dc0ac66fbfca063d8ea9807f8960fc64",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "群兴论",
+      "text": "群兴论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0001",
+      "sha256": "3e69e24c77d65118fa7763f7b19c7b7796c7302ed0a69a6e9b7acfac9746d06e"
+    },
+    {
+      "section": "群兴论",
+      "text": "一当兴，二崛起，三聚兴，四中兴，五末兴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0002",
+      "sha256": "b8710c1c84666a3a3e835767e53e51d686694b8497a95f55699e1fea3342ee39"
+    },
+    {
+      "section": "群兴论",
+      "text": "夫人生有秉富贵之荣而当兴。富贵而且享福，而保其终身，其何故也？盖四柱中身主专旺，而其所用吉神或为财，或为官，或为印绶，或为食神，俱各带禄权得令，不偏不杂，又无刑冲伤损克害，方为富贵，本源不杂也。他日能成才，振耀前人之基业，成当代之功名，不招谗谤，不致伤害，又在运上步步皆吉。四柱益加吉利，是渭源清流洁，故能享福以过人，保其中而无悔也，皆由命运一路滔滔生旺而然。非幸也，乃命也，可不辨乎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0003",
+      "sha256": "03cf02e78924b84e000538e409c4502a00ccb31093dd22fe8ddad7f33c67732d"
+    },
+    {
+      "section": "群兴论",
+      "text": "夫人之生又有穷饿其身，愁苦孤寒，颠倒无何。一旦逢时，兴然而起。或当盈财满屋，白手庄田；或致君泽民，独步台鼎，斯人也。前後异见，其故何也？盖因柱中日主生气未旺，所用贵神，悉皆得位而成旺，又且合格，奈何日主无力，不能胜任其福，亦劳困淹塞。忽逢运扶，其日干得其强健，用神出呼啸风生，元命用神方为我用。我其乘之，则勃然而兴。是偏气乘合，衰以遇旺，故迎吉而能崛起。若夫建业创功，有大小之不同，当於所遭命之轻重，辨之可也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0004",
+      "sha256": "ebf00ca1d8c1d72010fd2dde91f2d28aab0bf23f2473023f4b71c91624e6e8ec"
+    },
+    {
+      "section": "群兴论",
+      "text": "又有日主强，则四柱五行杀纯不杂。身杀俱旺，则根本元无制伏，富贵不成，唯待运来制伏杀神，则化为权，方此崛兴。才德为公卿，功名显达，出类超群，是其身旺杀神逢制化为权也。制神力旺，发福非常，安得其人不显达，以至极品之尊贵乎？实有其命。又要行其运以扶，方见崛兴也。如或运不至，即常人耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0005",
+      "sha256": "ce51bc888022af1c6a4cb18f66eb92dac64af1f57dad9bb77dc208191547cf69"
+    },
+    {
+      "section": "群兴论",
+      "text": "眉批：经曰，以杀化权，定显寒门贵客，有此者，为杀用食制之是也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 31,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c176:p0006",
+      "sha256": "aee378233d7b762aa70ab5b95b16b34912648f4e727a38a317f5c46429a64b24"
+    },
+    {
+      "section": "群兴论",
+      "text": "又要四柱中日主健旺，用神亦旺，各相停均，为富屋制朱门贵命之贤子也。及其长大，成立丰隆，一逢恶曜运加临元命，见其财而夺之，因其官而伤之，临其印而坏之，逢其食而损之。遭逢此运，祸不胜言，所以胜年见倾而不发。如其恶运一去，又逢好运扶身，使我用神一新。譬如枯苗得雨，勃然而兴；鸿毛遇风，飘然而举，不可御也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0007",
+      "sha256": "ce4bdb975fefb445f324c3abe4bdeb696d1575e0d897b55aab1dd5bb4eb52bcc"
+    },
+    {
+      "section": "群兴论",
+      "text": "眉批：此假如得雨遇风，喻命之遇好运，忽然而发，便不知觉也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 29,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c176:p0008",
+      "sha256": "6137075eba231f962359fd135b25ef0b4f1355f2449b2271f7cf2001f337060e"
+    },
+    {
+      "section": "群兴论",
+      "text": "又有人生五行身旺，羊刃比肩仅各争旺，惟有财官杀神等物虚浮轻少，无力成功名矣。出门行运，又非作福之地，所以一生饥寒，劳苦落剥，有志无成。或至中年晚景，顿逢杀运，假杀为权，制伏羊刃，或得权贵以显扬，或招财资而发福。当随五行清浊，以遇其运而别之，是一生穷困，忽然兴起於中晚景也。故知此命元用财官，平生无气，即至运到，方成富贵，一一兴利。故未兴者，乃得运而然也，学者可不勉也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c176:p0009",
+      "sha256": "91999772b523776fa5c161bd5903ff8f1e0e050551072e430f1841cdb9c3ac6e"
+    },
+    {
+      "section": "群兴论",
+      "text": "眉批：“权贵”，当合之神，无非官财印食而已。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c176:p0010",
+      "sha256": "fdcd27c163dc514d2dbd0b25f3eb483d9e05ea6134ee4f94f02dd0b6988306ae"
+    }
+  ]
+}

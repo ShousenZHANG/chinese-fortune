@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c090",
+  "title": "论福德秀气",
+  "source_url": "https://luckclub.cn/bazi/001/090/",
+  "revision": "sha256:946471e1e249702d1b64c37661859a87d59f19bfb2009464f2d1ae874eacf55d",
+  "source_timestamp": "2026-09-06T04:10:43.386542+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c090.html",
+  "raw_sha256": "946471e1e249702d1b64c37661859a87d59f19bfb2009464f2d1ae874eacf55d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论福德秀气",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c090:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论福德秀气",
+      "text": "论福德秀气",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c090:p0002",
+      "sha256": "6589eddfab793ee1ddcdb1432ca4da7f195ab4f51a82fbfb16c29fc198b069ef"
+    },
+    {
+      "section": "论福德秀气",
+      "text": "福德秀气，专用其日主。且如乙巳、乙酉、乙丑是也。乙用庚官，露出杀喜制，喜印绶，不喜生於八月之中，恐露其杀。却喜行印绶官旺运，便能发福。苟四柱中露出辛杀须制伏。如丁巳、丁酉、丁丑，是壬为官，喜金旺生水，亦不喜生於八月，因火死在酉，却喜行官旺运，便可发福。亦不要露杀杂其官，为寿不耐久。己巳、己酉、己丑，是用甲木为官，巳酉丑金局，皆伤其官，亦名盗气，何以为吉？虽然喜得金局，能生水财，亦不要四柱见火，恐伤金局，却喜行财运便发。癸巳、癸酉、癸丑是用金神为印，见巳酉丑金局能生癸水，不喜生於四月，水绝於巳，虽然金生在巳，以金能生水，亦不能绝，得官印运便能发福。最不喜火财，恐伤金也。大抵与印绶相似，各有例於後。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c090:p0003",
+      "sha256": "14662874153aa62bf7131c402216b61112a51ed64b8a55d341867e0b4a36b856"
+    },
+    {
+      "section": "论福德秀气",
+      "text": "眉批：诗诀中俱有，无容多费笔墨。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c090:p0004",
+      "sha256": "9957b2904a4ab26f0f0de9ed8f3831b7300aa47459caeabe8343bb42f6474e2d"
+    }
+  ]
+}

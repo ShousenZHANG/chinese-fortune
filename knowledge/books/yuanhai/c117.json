@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c117",
+  "title": "内十八格-印绶格",
+  "source_url": "https://luckclub.cn/bazi/001/117/",
+  "revision": "sha256:6cdcf9b9880ac8c417b1199a05ed8f7a309edd843a66ce39e3c7c67807561cdf",
+  "source_timestamp": "2026-09-06T04:10:48.228238+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c117.html",
+  "raw_sha256": "6cdcf9b9880ac8c417b1199a05ed8f7a309edd843a66ce39e3c7c67807561cdf",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-印绶格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "内十八格 - 印绶格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0002",
+      "sha256": "a5bae4624eacf4261c3fda5850b0ff245945fadabb54b0a65c0258271acb2e10"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "此格大要生旺，忌死绝，要四柱中有官星为妙。月上印绶最紧，行官印运便发，见财运破印，反为贪财坏印，财运不利也，岁君亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0003",
+      "sha256": "f9a210daee1952ec9d20afa6e5625d14c027e50834f808de6af45d3ad9755014"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "知府，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0004",
+      "sha256": "c81c98877ff9a20cdeb8e55649067ddbf2942d3adb53f01a4d06a5caafa60d15"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "乙亥 戊子 甲寅 甲子",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0005",
+      "sha256": "f0f5812177205685cfee0501cd028a412b6574316f56fe5e4362dc63df2e5b82"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "侍郎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0006",
+      "sha256": "76f499c4f50377290af42c7e18e0c2dcc72af4f2507ff7f53b633d1299395f10"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "辛酉 丙申 壬寅 辛亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0007",
+      "sha256": "40a3a79c544fb6231410c56bca9206a88bd1326bf4b4ec5f9700f01aef39b5da"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "眉批：有印无财方是福，喜逢官位怕临财，主人囊括文章秀，一举丹墀面帝来。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c117:p0008",
+      "sha256": "a81b5dbd29d36d373fa32176525a4bee8f0584d708b5a3061955339b77e5db6e"
+    },
+    {
+      "section": "内十八格-印绶格",
+      "text": "解说：墀：音同迟，宫殿前台阶上面的空地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c117:p0009",
+      "sha256": "d0b9fe50cdd12d5011a11310bc358e7786a9514d67a64fd3a7a4bd9ae49e2160"
+    }
+  ]
+}

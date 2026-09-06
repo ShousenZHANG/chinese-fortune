@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c013",
+  "title": "十三、論用神因成得敗因敗得成",
+  "source_url": "https://www.donglishuzhai.net/chapter/3726.html",
+  "revision": "sha256:a898c866d5015fd0319727457a05416149d8427c2e32034f287aeb8fc76c8abb",
+  "source_timestamp": "2026-09-06T04:16:54.312Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c013.html",
+  "raw_sha256": "a898c866d5015fd0319727457a05416149d8427c2e32034f287aeb8fc76c8abb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十三、論用神因成得敗因敗得成",
+      "text": "八字之中，變化不一，遂分成敗；而成敗之中，又變化不測，遂有因成得敗，因敗得成之奇。",
+      "layer": "base_text",
+      "passage_id": "ziping:c013:p0001",
+      "sha256": "24c2402bdf53a6e0ffe432c0da38cd40c6dab195fea5b23dd7d1e184c57d7c12"
+    },
+    {
+      "section": "十三、論用神因成得敗因敗得成",
+      "text": "故化傷爲財，格之成也，然辛生亥月，透丁爲用，卯未會財，乃以黨煞，因成得敗矣。印用七煞，格之成也，然癸生申月，秋金重重，略帶財以損太過，逢煞則煞印忌財，因成得敗也。如此之類，不可勝數，皆因成得敗之例也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c013:p0002",
+      "sha256": "300823cdd73b84975fb8cb15aa0e54d0cfeb17408920dc84723e97a8007a504f"
+    },
+    {
+      "section": "十三、論用神因成得敗因敗得成",
+      "text": "官印逢傷，格之敗也，然辛生戊戌月，年丙時壬，壬不能越戊尅丙，而反能洩身爲秀，是因敗得成矣。煞刃逢食，格之敗也，然庚生酉月，年月丙丁，時上逢壬，則食神合官留煞，而官煞不雜，煞刃局清，是因敗得成矣。如此之類，亦不可勝數，皆因敗得成之例也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c013:p0003",
+      "sha256": "32844e0d963159e50a45d9bc8bc6d09744b45a5e287631736eb3db43a521fc50"
+    },
+    {
+      "section": "十三、論用神因成得敗因敗得成",
+      "text": "其間奇奇怪怪，變幻無窮，惟以一理之權衡。隨在觀理，因時達化，由他奇奇怪怪，自有一種至當不易之論。觀命者毋眩而無主、執而不化也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c013:p0004",
+      "sha256": "587d532d9903458aa3f9960b0bbd0034293cedc85db6a7f4d1c21bc3aab8c2b1"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c085",
+  "title": "论倒食",
+  "source_url": "https://luckclub.cn/bazi/001/085/",
+  "revision": "sha256:2133c66a701e5294d97c99543ec048f24f2eb444f35e777b1e58045705bd99fc",
+  "source_timestamp": "2026-09-06T04:10:42.242366+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c085.html",
+  "raw_sha256": "2133c66a701e5294d97c99543ec048f24f2eb444f35e777b1e58045705bd99fc",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论倒食",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论倒食",
+      "text": "论倒食",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0002",
+      "sha256": "ce791669e2ef8cf045c07545425bd05a77ae2b7b53936fdd7289be349c0e7db9"
+    },
+    {
+      "section": "论倒食",
+      "text": "夫倒食者，冲财神之谓也，一名吞陷杀。用财神大忌见之，用食神亦忌见之。倒食者，如甲见壬之类。如甲见丙为食神，能生土财。然壬克丙火，丙火不能生甲木之上财，所谓甲用食神大忌见之，凡命中带此二者，主福寿浅薄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0003",
+      "sha256": "6ace519eaffbbd9c37c89dbd65f610c0ba82cbef34add89a4551532b29651548"
+    },
+    {
+      "section": "论倒食",
+      "text": "又见庚为七杀，得丙火制之，怕见水反为祸矣。凡命中犯此者，犹尊长之制我身，不得自由也。做事进退悔懒，有始无终，财源屡成屡败，容貌奇斜，身品矮小，胆怯心慌，百事无成也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0004",
+      "sha256": "7bdc6b2142e975a54cd8067e4fb16b3bec07372f32664607c6698d9aa4db8635"
+    },
+    {
+      "section": "论倒食",
+      "text": "且如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0005",
+      "sha256": "f47037fecd04650c7c029483b7ac6aeeeaeff5cd7a7d2e6c87fa719a5bf99cc8"
+    },
+    {
+      "section": "论倒食",
+      "text": "丁未 丁未 己亥 丁卯。此命己亥日，己临亥上，身弱於亥，加以亥卯未木局克身，年月时透出三丁倒食，幼年行南方运，赖火生土身犹旺。才交乙巳运，为己之七杀，引出亥卯未木局，岁逢癸亥，所以死矣。此命非但倒食七杀之祸，而癸亥年与生杀坏印之说同义也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0006",
+      "sha256": "e2fe462415aba81c5ad003137ee64e3aebe9db0befb2dc1f686714538f4a0275"
+    },
+    {
+      "section": "论倒食",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0007",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "论倒食",
+      "text": "甲戌 丙寅 甲戌 壬申。此命甲戌日，甲见丙食，生於正月，甲木旺，身与食神俱旺，本是贵命。不合时上壬申，壬水伤其丙火，申金冲其寅木。又申中有庚金七杀，所以名利无成。行己巳运金生之地，见庚子年，庚金为七杀，又见子水，死於非命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c085:p0008",
+      "sha256": "1859d819d3078361693a411d58fd409b575bbf74d127d93e6ee922a68d3fddec"
+    }
+  ]
+}

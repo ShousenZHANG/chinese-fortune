@@ -1,0 +1,72 @@
+{
+  "book": "穷通宝鉴",
+  "edition": "古文岛六卷网络转录，具体印本未注明",
+  "source_url": "https://www.gushiwen.cn/guwen/book_112f16f9deeb.aspx",
+  "expected_chapters": 6,
+  "captured_chapters": 6,
+  "verification": "network_transcription_not_facsimile_collated",
+  "licensing": "Public-domain historical original text only; modern translation and commentary excluded",
+  "attribution": "古文岛/古诗文网，各卷附原始来源地址",
+  "editorial_policy": "保留网络转录原字、疑字和句读，不静默修正。",
+  "known_quality_issues": [
+    "具体印本未注明；网络转录不等于原刻影像已校。"
+  ],
+  "retrieved_at": "2026-09-06T04:15:54.828593+00:00",
+  "chapters": [
+    {
+      "chapter_id": "001",
+      "title": "卷一·五行总论",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_e96f74b03cf3.aspx",
+      "status": "captured",
+      "file": "c001.html",
+      "html_sha256": "3e5575c23f7aa1279ca13881939c4b111f3d183ffad9e5ea61ca6bcf1b30a2bf",
+      "retrieved_at": "2026-09-06T04:15:56.160604+00:00"
+    },
+    {
+      "chapter_id": "002",
+      "title": "卷二·论木",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_bbc940bfd959.aspx",
+      "status": "captured",
+      "file": "c002.html",
+      "html_sha256": "40405923705c10d4de994291ecaf5493a166466d797a0e0f06cab7d5bb116e43",
+      "retrieved_at": "2026-09-06T04:15:57.734004+00:00"
+    },
+    {
+      "chapter_id": "003",
+      "title": "卷三·论火",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_ef269d9ba448.aspx",
+      "status": "captured",
+      "file": "c003.html",
+      "html_sha256": "e9bfb4e29b9c6dd7f8b4d9aa1b6a913b3f967d62af567dbc87a7bebca63be78f",
+      "retrieved_at": "2026-09-06T04:15:59.271611+00:00"
+    },
+    {
+      "chapter_id": "004",
+      "title": "卷四·论土",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_4d487c9bc133.aspx",
+      "status": "captured",
+      "file": "c004.html",
+      "html_sha256": "1cf16ab6bb40f53e5cd259ad0ce6194b0d9a077e2924759c7cac622cb6dfca7c",
+      "retrieved_at": "2026-09-06T04:16:00.562216+00:00"
+    },
+    {
+      "chapter_id": "005",
+      "title": "卷五·论金",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_5a069b0a3ca6.aspx",
+      "status": "captured",
+      "file": "c005.html",
+      "html_sha256": "7023bb611334d32852f40d28f955d81eccbc2506a335392586106aeedfa9b273",
+      "retrieved_at": "2026-09-06T04:16:00.662189+00:00"
+    },
+    {
+      "chapter_id": "006",
+      "title": "卷六·论水",
+      "source_url": "https://www.gushiwen.cn/guwen/bookv_0c21f7ba5b30.aspx",
+      "status": "captured",
+      "file": "c006.html",
+      "html_sha256": "0fd0f6f275e41e9f2bd7477821a0717d16ace5b2620025f59c66691e42eb7da0",
+      "retrieved_at": "2026-09-06T04:16:02.331802+00:00"
+    }
+  ],
+  "index_file": "_index.html"
+}

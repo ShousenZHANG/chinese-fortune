@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c246",
+  "title": "勾陈得位诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/246/",
+  "revision": "sha256:dd1788c1d223bbc0a3082c1c3d76a70c1903a11cd1645b8aefa3a085297d6f8e",
+  "source_timestamp": "2026-09-06T04:11:14.065529+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c246.html",
+  "raw_sha256": "dd1788c1d223bbc0a3082c1c3d76a70c1903a11cd1645b8aefa3a085297d6f8e",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "勾陈得位诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c246:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "勾陈得位诗诀",
+      "text": "勾陈得位诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c246:p0002",
+      "sha256": "a31165d5cba3e00307489530b5292d223b5acdbf4b8df561d81f479a37fd1896"
+    },
+    {
+      "section": "勾陈得位诗诀",
+      "text": "日干戊己坐财官，号曰勾陈得位看，若有大财分归气，命中值此列朝班。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c246:p0003",
+      "sha256": "af0d1ea9bcfd0eca3456079b9d561c0edce0a425d28c4adebcf34e9ea32c1e9d"
+    },
+    {
+      "section": "勾陈得位诗诀",
+      "text": "勾陈得位会财官，无破无冲命必安，申子北方东卯木，管教环佩带金銮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c246:p0004",
+      "sha256": "86947848400554680ef88339a4ad47a47f91bc1e612a974d68c2e4f4e911da60"
+    },
+    {
+      "section": "勾陈得位诗诀",
+      "text": "戊己勾陈得局清，财官相遇两分明，假令岁运无冲破，富贵双全享太平。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c246:p0005",
+      "sha256": "09ac62a0405d39613db1e03f46f688812965b29bd55fce6a40dfcb5e4781a4fd"
+    },
+    {
+      "section": "勾陈得位诗诀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c246:p0006",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "勾陈得位诗诀",
+      "text": "此以戊寅、戊子、戊申；己未、己亥、己卯日是也。戊日以亥卯未木局为官、申子辰水局为财地是也。忌刑冲杀旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c246:p0007",
+      "sha256": "fd99942cb5bbba3587742c49ff911fd919e22a8f54246dd48f05514413e0a089"
+    }
+  ]
+}

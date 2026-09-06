@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c128",
+  "title": "外十八格-日德秀气格",
+  "source_url": "https://luckclub.cn/bazi/001/128/",
+  "revision": "sha256:dd23d486c65cef1a156a8c8b1fbe892ae6e2b2650d2165bd4d414aa2c70e3d2f",
+  "source_timestamp": "2026-09-06T04:10:50.236534+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c128.html",
+  "raw_sha256": "dd23d486c65cef1a156a8c8b1fbe892ae6e2b2650d2165bd4d414aa2c70e3d2f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-日德秀气格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c128:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-日德秀气格",
+      "text": "外十八格 - 日德秀气格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c128:p0002",
+      "sha256": "4ce03109e945c60ab8039e1e20b9fd3c2c35a133785e444735de6ca505275122"
+    },
+    {
+      "section": "外十八格-日德秀气格",
+      "text": "要天干三个乙字，地支巳酉丑全，更有丙子、壬子、辛卯、丁酉日亦是秀气，怕冲克，大运同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c128:p0003",
+      "sha256": "24e75119f8019d4817f4a785439e2ea9886039ecfbcba1a9a98731582d0518ef"
+    }
+  ]
+}

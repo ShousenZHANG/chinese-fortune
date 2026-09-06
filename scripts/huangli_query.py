@@ -12,9 +12,9 @@ from __future__ import annotations
 import argparse
 import sys
 from collections.abc import Callable
-from datetime import datetime
 from typing import Any
 
+from request_time import add_request_arguments, resolve_time
 from utils import (
     ensure_utf8_stdio,
     error_envelope,
@@ -146,6 +146,7 @@ def build_parser() -> argparse.ArgumentParser:
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
+    add_request_arguments(p)
     p.add_argument("--date", type=str, default=None,
                    help="日期 YYYY-MM-DD (默认今日)")
     return p
@@ -157,14 +158,11 @@ def main(argv: list[str] | None = None) -> int:
     require_lunar()
     from lunar_python import Solar  # type: ignore
 
-    if args.date:
-        try:
-            dt = datetime.strptime(args.date, "%Y-%m-%d")
-        except ValueError as e:
-            json_print(error_envelope('huangli', "invalid_date_format", str(e), expected="YYYY-MM-DD"))
-            return 1
-    else:
-        dt = datetime.now()
+    try:
+        dt, time_context = resolve_time(args, date_value=args.date, day_only=True)
+    except ValueError as exc:
+        json_print(error_envelope('huangli', 'invalid_time_context', str(exc)))
+        return 1
 
     solar = Solar.fromYmdHms(dt.year, dt.month, dt.day, 12, 0, 0)
     lunar = solar.getLunar()
@@ -220,6 +218,7 @@ def main(argv: list[str] | None = None) -> int:
 
     out = {
         "input": vars(args),
+        "time_context": time_context,
         "solar_date": {
             "iso": f"{solar.getYear():04d}-{solar.getMonth():02d}-{solar.getDay():02d}",
             "year": solar.getYear(), "month": solar.getMonth(),

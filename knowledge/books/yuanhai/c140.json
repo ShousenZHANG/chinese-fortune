@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c140",
+  "title": "外十八格-天元一气",
+  "source_url": "https://luckclub.cn/bazi/001/140/",
+  "revision": "sha256:d8ba19cd77f7bc806b4039abbd7dbf6df14d7824a00e89d047f91668381c22f3",
+  "source_timestamp": "2026-09-06T04:10:52.413601+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c140.html",
+  "raw_sha256": "d8ba19cd77f7bc806b4039abbd7dbf6df14d7824a00e89d047f91668381c22f3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-天元一气",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c140:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-天元一气",
+      "text": "外十八格 - 天元一气",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c140:p0002",
+      "sha256": "6296fe82307d74f95d365d388691fcee48ba2ac959f9fb8523f596ae7e81daee"
+    },
+    {
+      "section": "外十八格-天元一气",
+      "text": "此取干辰(天干)年月日时皆同为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c140:p0003",
+      "sha256": "28b002345877b8fd738db87249669532ce56761b90be9c03d9759e182a98637b"
+    }
+  ]
+}

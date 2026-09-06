@@ -1,0 +1,102 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c033",
+  "title": "三十三、論財",
+  "source_url": "https://www.donglishuzhai.net/chapter/3746.html",
+  "revision": "sha256:c39e39561157ac9b4a7aee4958f68b1cc4a620fdfd7c4be20a94c16099e2005b",
+  "source_timestamp": "2026-09-06T04:17:08.862Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c033.html",
+  "raw_sha256": "c39e39561157ac9b4a7aee4958f68b1cc4a620fdfd7c4be20a94c16099e2005b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十三、論財",
+      "text": "財爲我尅，使用之物也，以能生官，所以爲美。爲財帛，爲妻妾，爲才能，爲驛馬，皆財類也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0001",
+      "sha256": "ab2dcd8298c0ab2b4b1ca8cd753ee464f38618f1a3132c369563880e96c6ed42"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "財喜根深，不宜太露，然透一位以清用，格所最喜，不爲之露。即非月令用神，若寅透乙、卯透甲之類，一位亦不爲過，太多則露矣。然而財旺生官，露亦不忌，蓋露以防劫，生官則劫退。譬如府庫錢糧，有官守護，即使露白，誰敢劫之？如葛參政命，壬申、壬子、戊午、乙卯，豈非財露？唯其生官，所以不忌也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0002",
+      "sha256": "3bce9c8e9d59ad32c959bc5c7215139ec7282a68da2c7e34f72dcada34a9e3d3"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "財格之貴局亦不一，有財旺生官者，身强而不透傷官，不混七煞，貴格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0003",
+      "sha256": "22f1ca0d60732ff137e503f0b92b1103a40b6a19470539726d090eadc0098e6e"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "有財用食生者，身强而不露官，略帶一位比肩，益覺有情，如壬寅、壬寅、庚辰、辛巳，楊侍郎之命是也。透官身弱，則格壞矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0004",
+      "sha256": "1f0dabe60439ab2dca919c3f451aee6c15a86a8fb26355842a65cb8c54256812"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "有財格佩印者，蓋孤財不貴，佩印幫身，即以取貴，如乙未、甲申、丙申、庚寅，曾參政之命是也。然財印不宜相並，如乙未、己卯、庚寅、辛巳，乙與己兩不相能，即有好處，小富而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0005",
+      "sha256": "0c0db2faac495f4ef5344f91edfb3d5b1aaf7a268c4f164327569c3f86ede00a"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "有用食而兼用印者，食與印兩不相礙，或有暗官而去食護官，皆貴格也。如吳榜眼命，庚戌、戊子、戊子、丙辰，庚與丙隔二戊而不相尅，是食與印不相礙也。如平江伯命，壬辰、乙巳、癸巳、辛酉，雖食印相尅，而欲存巳中戊官，是去食護官也。反是則減福矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0006",
+      "sha256": "ab0bbc422f3b43f2947026af7b72c0f39afe3a642206e741a2c552b3a74b2d3f"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "有財用傷官者，財不甚旺而比强，略露一位傷官以化之，如甲子、辛未、辛酉、壬辰，甲透未庫，逢辛爲劫，壬以化劫生財，汪學士之命是也。財旺無劫而透傷，反爲不利。蓋傷官本非美物，財輕逢劫，不得己而用之。旺而露傷，何苦用彼？徒使財遇傷而死生官之具，安望富貴乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0007",
+      "sha256": "c53899e3f92e329afe1fe0ec13d9aa7c5cbbf9bd471940e95dced2c6e1114a9d"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "有財帶七煞者，或合煞存財，或制煞生財，皆貴格也。如毛狀元之命是也，乙酉、庚辰、甲午、戊辰，合煞存財也；李御史命，庚辰、戊子、戊寅、甲寅，制煞生財也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0008",
+      "sha256": "f7bd3704fbbc36727f480fc801b4b030480ebc20b9b43cb449c91dc9d0793c95"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "有財用煞印者，黨煞爲忌，印以化之，格成富局；若冬土逢之，亦貴格也。如趙侍郎命，乙丑、丁亥、己亥、乙亥，化煞而即以解凍，又不露財以雜其印，所以貴也。若財用煞印，印獨而財煞並透，非獨不貴，亦不富矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0009",
+      "sha256": "78fcbcbf7800a98b6f35ad4e7121594048b40c010f30d5bc267c79820f4377c1"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "至於壬生午月，癸生巳月，單透財而亦貴，以月令有暗官也。如丙寅、癸巳、癸未、壬戌，林尚書命是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0010",
+      "sha256": "bd7f806bb5c018bc05171ab2f8ed6002c66219c6320dd3e122bed638b2bc6bca"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "又有壬生巳月，單透財而亦貴，以其透丙藏戊，棄煞就財，美者存在憎者棄也。如丙辰、癸巳、壬戌、壬寅，王太僕命是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0011",
+      "sha256": "4af32f9243897b147a2fda4fcfd89f775828a607d6adb655d4b3eb358c56d9bd"
+    },
+    {
+      "section": "三十三、論財",
+      "text": "至於劫刃太重，棄財就煞，如一尚書命，丙辰、丙申、丙午、壬辰，此又變之又變者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c033:p0012",
+      "sha256": "2146f7018c866224040ccbf5e7836e78ba433cfd9d4122ee92cc1a3fa243034d"
+    }
+  ]
+}

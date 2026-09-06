@@ -12,9 +12,9 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
 
 import entropy
+from request_time import add_request_arguments, resolve_time
 from utils import (
     BAGUA,
     BINARY_TO_TRIGRAM,
@@ -403,6 +403,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="method", required=True)
 
     pc = sub.add_parser("coins", help="三枚硬币 6 次")
+    add_request_arguments(pc)
     pc.add_argument("--seed", type=int, default=None)
     pc.add_argument("--date", type=str, default=None,
                     help="起卦日 YYYY-MM-DD (默认今日)")
@@ -421,24 +422,12 @@ def main(argv: list[str] | None = None) -> int:
     require_lunar()
     from lunar_python import Solar  # type: ignore
 
-    # Determine cast date/time
-    now = datetime.now()
-    y, m, d = now.year, now.month, now.day
-    h, mi = now.hour, now.minute
-    if args.date:
-        try:
-            dt = datetime.strptime(args.date, "%Y-%m-%d")
-            y, m, d = dt.year, dt.month, dt.day
-        except ValueError as e:
-            json_print(error_envelope('liuyao', "invalid_date", str(e)))
-            return 1
-    if args.time:
-        try:
-            ht, mit = map(int, args.time.split(":"))
-            h, mi = ht, mit
-        except Exception:
-            json_print(error_envelope('liuyao', "invalid_time", "HH:MM"))
-            return 1
+    try:
+        dt, time_context = resolve_time(args, date_value=args.date, time_value=args.time)
+    except ValueError as exc:
+        json_print(error_envelope('liuyao', 'invalid_time_context', str(exc)))
+        return 1
+    y, m, d, h, mi = dt.year, dt.month, dt.day, dt.hour, dt.minute
 
     solar = Solar.fromYmdHms(y, m, d, h, mi, 0)
     lunar = solar.getLunar()
@@ -474,6 +463,7 @@ def main(argv: list[str] | None = None) -> int:
         "question": args.question,
         "entropy": entropy.describe(rng, args.entropy, args.seed),
         "yongshen_hint": yongshen_hint(args.question),
+        "time_context": time_context,
         "cast_time": {
             "solar": f"{y:04d}-{m:02d}-{d:02d} {h:02d}:{mi:02d}",
             "lunar_date": lunar.getDayInChinese(),

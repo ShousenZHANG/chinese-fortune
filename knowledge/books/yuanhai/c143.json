@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c143",
+  "title": "六亲捷要歌",
+  "source_url": "https://luckclub.cn/bazi/001/143/",
+  "revision": "sha256:918cb77e48cbe56ac4a2456461481863c5e0ba9b2b5a94bfa1862019ddf7df51",
+  "source_timestamp": "2026-09-06T04:10:53.001895+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c143.html",
+  "raw_sha256": "918cb77e48cbe56ac4a2456461481863c5e0ba9b2b5a94bfa1862019ddf7df51",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六亲捷要歌",
+      "text": "六亲捷要歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c143:p0001",
+      "sha256": "ebf6c10d988d37cf4ef72ab781dee71dbd7ddddfbb51d5af55be77490ed93d4c"
+    },
+    {
+      "section": "六亲捷要歌",
+      "text": "分禄须伤主馈人，比肩重叠损严亲。正财克母偏财父，夫妇相刑值退神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c143:p0002",
+      "sha256": "7832674798d56c4ef0d9be8a9958ddd0928086dcd0f0832e9b15e6596788584f"
+    },
+    {
+      "section": "六亲捷要歌",
+      "text": "食神有寿妻多子，偏官多女少麒麟。乘旺伤官嗣必绝，中和印绶自荣身。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c143:p0003",
+      "sha256": "a08664eeddf849ab2b0909da476dcf6184ab787ee6224a9734cbc16ceaf7e81f"
+    },
+    {
+      "section": "六亲捷要歌",
+      "text": "眉批：以上八句皆主男命刑害之言。有比有刃者过旺无制，主克父母刑妻。月令印绶格者，八字中财多克母，印多克子，大运遇财亦然。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 60,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c143:p0004",
+      "sha256": "2420ac34867d95a897569f7e5f9a0edd2cd4d67a67bd7e7a36943ff0fdf8f1c7"
+    }
+  ]
+}

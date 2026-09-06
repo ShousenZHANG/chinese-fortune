@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c022",
+  "title": "真假論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F22&oldid=844372",
+  "revision": "844372",
+  "source_timestamp": "2017-03-23T15:46:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c022.wiki",
+  "raw_sha256": "50779be0d79b31711371bca6669a85c36110d4f5c25937d5e794c5c8c7515333",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "真假論",
+      "text": "令上尋真聚得真，假神休要亂真神，真神得用平生貴，用假終為碌碌人。",
+      "layer": "base_text",
+      "passage_id": "ditian:c022:p0001",
+      "sha256": "02899818fcdc56eb80ac78c5bfde371ead214d3355b799e80aaec0b7ef918d07"
+    },
+    {
+      "section": "真假論",
+      "text": "如木火透者，生寅月聚得真，不要金水亂之，則真神得用，不為忌神所害，必然發貴，如金水猖狂，而用金水，是金水不得令，徒與木火不和，乃為碌碌平庸人矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c022:p0002",
+      "sha256": "56b019b5d69651aad52541667e2ae5724f04156d4bccf6f68f21e1816a6e0aa2"
+    },
+    {
+      "section": "真假論",
+      "text": "真假參差難辨論，不明不暗受邅迍，提綱不與真神照，暗處尋真也有真。",
+      "layer": "base_text",
+      "passage_id": "ditian:c022:p0003",
+      "sha256": "d7678c24fab0e3d507e6231a7fe138d60966a294dc7c779bc32c34d9cbfce314"
+    },
+    {
+      "section": "真假論",
+      "text": "命之真者得令，假神得局而黨多，或假神得令，真神得局而黨多，不見真假之跡，或真假皆得令得助，不能辨其勝負，雖無大禍，一生屯否而少安樂，寅月生人，不透木火而透金水為用神，是為提綱不照也，得巳丑暗邀，戊巳轉生，酉沖卯，乙庚暗化，氣轉西方，亦為有真，亦或發福，以上特舉一端耳，其會局合神，從化，用神，精神，形象，才德邪正。緩急，生死，進退之例，莫不有其真假，最宜詳辨。",
+      "layer": "commentary",
+      "passage_id": "ditian:c022:p0004",
+      "sha256": "a8cd4fead907e96ab158837e8a24b9f811806402c90f3e27c04f74b8925c5ba0"
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c034",
+  "title": "性情論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F34&oldid=844385",
+  "revision": "844385",
+  "source_timestamp": "2017-03-23T15:48:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c034.wiki",
+  "raw_sha256": "c434d4e817cecda7ab9c59d6d1bc11afc7a81b96ea1a57a99abdd9aba073f1d7",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "性情論",
+      "text": "五行不戾，惟正清和，濁亂偏枯，性情乖逆。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0001",
+      "sha256": "a5d970774e89811dcb2a4fc77303c4661ae31c80f842fd15c9cd7bfb527f3e5f"
+    },
+    {
+      "section": "性情論",
+      "text": "五行在天，為金木水火土之氣，在人為仁義禮智信之性，五氣不乖張，則其存於人之性，發於外為情，莫不清和矣，反此者乖戾。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0002",
+      "sha256": "b1a5c85c3b3a1d256b859a6b7c7b20a0d29417dfb136d35ee750e05393ce6376"
+    },
+    {
+      "section": "性情論",
+      "text": "火烈而性燥者，遇金水之激。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0003",
+      "sha256": "a21e9efea64c7b728a4c1886eb872c0622dc4c28cf63c057fce7b4caa7144b02"
+    },
+    {
+      "section": "性情論",
+      "text": "火烈而性燥，若能順其性，則光明磊落，遇金水激之，則燥急不可禦，反激而成患矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0004",
+      "sha256": "2360c863c7f190726db1322eac6a39d1103f8081d4108f6bb06091aae0428012"
+    },
+    {
+      "section": "性情論",
+      "text": "水奔而性柔者，全金木之神。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0005",
+      "sha256": "fa2107e02e87977eddb8a41eb2ebb5740a8bc93d2e8681258a97175b9f06d157"
+    },
+    {
+      "section": "性情論",
+      "text": "水順而奔，其性至剛至急，惟有金以行之，木以納之，則柔矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0006",
+      "sha256": "a931d228f1f4b66a5a27dde08a4b981313d7bd8e2dc5886f4092811e7cef4318"
+    },
+    {
+      "section": "性情論",
+      "text": "木奔南而軟怯。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0007",
+      "sha256": "d784c08f268e17efeeb2b3767c4fd8e59b89911c3cccd264007e8b7105263994"
+    },
+    {
+      "section": "性情論",
+      "text": "木之性，見火而慈，奔南則仁之性行於禮，其性軟怯，得其中者為惻隱，得其偏者為姑息。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0008",
+      "sha256": "bd9cea163526f8903b91cd840ff254b254fe070eeff3e42e416a8629c0ece70e"
+    },
+    {
+      "section": "性情論",
+      "text": "金見水以流通。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0009",
+      "sha256": "f354fd7985cec4e2b0dac096b139c9fa2a81429d9ea0908f3820e0218ccd8f48"
+    },
+    {
+      "section": "性情論",
+      "text": "金之性最方正，有斷制，見水則義之性行於智，而元神不滯，得氣之正者，是非不茍，有斟酌，有變化，得氣之偏者，必氾濫流蕩。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0010",
+      "sha256": "8925bc7085098649e95582a76020c2cd6fd923cac9280bfcb77669e52a2710be"
+    },
+    {
+      "section": "性情論",
+      "text": "最拗者，西水還南。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0011",
+      "sha256": "8ad36268a75856a0acd88fadb164459513c2e9620ac3531fd2ee3569701b4b5b"
+    },
+    {
+      "section": "性情論",
+      "text": "西方之水，發源最長，氣勢最旺，無土以制之，木以納之，浩蕩之勢，不能順行，而反行南方，則逆其性而強拗難制。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0012",
+      "sha256": "18548b8acabee15ae4b5cae82ba7edfba93045731df93a6c575fb6ca3e9b9730"
+    },
+    {
+      "section": "性情論",
+      "text": "至剛者東火轉北。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0013",
+      "sha256": "b8941f07d6f07b6e514cf4583b7c482f14fee2e23f5b2ff9ab2f92b752354a36"
+    },
+    {
+      "section": "性情論",
+      "text": "東方之火，其燄炎上，局中無土以收之，水以制之，焚烈之勢，若不能順行，反行北方，則逆其性而剛暴。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0014",
+      "sha256": "77ccb053dfb7e4dcf04018db4b8f83e931742564cb4f8ce0ae7a280d68fa4e34"
+    },
+    {
+      "section": "性情論",
+      "text": "順生之機，遇擊神而抗。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0015",
+      "sha256": "7369bd2e22b3d9dd101668819b624e5b6efd9b5903525a1f6764f56ccb614b48"
+    },
+    {
+      "section": "性情論",
+      "text": "如木生火，火生土，一路順其性序，自相平和，遇擊而不能遂其順生之性，則抗而躁急。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0016",
+      "sha256": "61a1eca3b4b3416a5d836498c5fb12713b3f1eb22e570b7d3687fe2f5d5094e6"
+    },
+    {
+      "section": "性情論",
+      "text": "逆折之序，見閒神而狂。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0017",
+      "sha256": "6df0982b36617da2f2086573b1f570592246c482b8c149bc4466397384a48596"
+    },
+    {
+      "section": "性情論",
+      "text": "木生於亥，見戌酉申則氣逆，非性之所安，又遇閒神，若巳酉丑逆之，則必發而為狂猛。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0018",
+      "sha256": "c0536ec1835ba4bae680f88de2fd1c22f5600ad0e5f04ef9559fe10f313f7be1"
+    },
+    {
+      "section": "性情論",
+      "text": "陽明遇金，鬱而多煩。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0019",
+      "sha256": "0cf7dc18d50b3cdc306528b913ea977856717b3df5ef1ac7902fcddbe4eec928"
+    },
+    {
+      "section": "性情論",
+      "text": "寅午戌為陽明，有金氣伏於內，則成其鬱，而多煩悶。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0020",
+      "sha256": "8645da3c0acf96478d8e7191c95b864a74ddf91418c3bda2b6f1670331763b21"
+    },
+    {
+      "section": "性情論",
+      "text": "陰濁藏火，包而多滯。",
+      "layer": "base_text",
+      "passage_id": "ditian:c034:p0021",
+      "sha256": "5397d11b8bb8ec6368046bb9054cde9820d3644a4bfd15087e308c6b62023b12"
+    },
+    {
+      "section": "性情論",
+      "text": "酉丑亥為陰濁，有火氣藏於內，則不能發揮而多濕滯。\n陽刃局，戰則逞威，弱則怕事，傷官局，清則謙和，濁則剛猛，用神多者，性情不常，支格濁者，作為多滯。 凡此皆性情之異，喜惡之殊，不得以日主論，凡局中莫不有性情，觀其情性，可知施為，觀其施為，可知吉凶。",
+      "layer": "commentary",
+      "passage_id": "ditian:c034:p0022",
+      "sha256": "44ff6d1bfcd0e7148bd2e2c7e146dd5a93beabd53146e4b7edf89ae670487007"
+    }
+  ]
+}

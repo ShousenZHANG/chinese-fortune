@@ -1,239 +1,58 @@
-# Contributing · 贡献指南
+# 贡献指南 · Contributing
 
-> [English](#english) · [中文](#中文)
+项目主线是可追溯的五部八字古籍、可靠排盘和有条件的白话解释。当前以《子平真诠》月令格局为主，其他四书作补充对照。不同体系不自动合并。
 
----
+## 内容修改
+
+- 引用必须指到知识库中的版本、章节、段落和文字层次。正文、古注与现代解释分开。
+- 新增条款须写明适用条件、例外和盘面证据。取到原文不等于已经证明条款适用。
+- 不把工程评分当古籍规则，不用无校准的百分比表达预测把握。
+- 先用自然中文回答问题，术语随文解释，古文只作必要依据。
+- 改动输入、输出或默认取法时，同步更新 SKILL.md、README 中英文版、参数帮助、用例和迁移说明。
+
+五书版本与收录范围见 [来源记录](docs/CLASSICAL-SOURCES.md)。采集工具 scripts/import_classics.py 仅供维护；重新采集后审核差异和授权，不能用网络新内容静默覆盖已经冻结的段落。
+
+可选解梦、姓名和生肖材料不得恢复无出处的人生断语。神煞只保留起法命中，不凭单一标签断吉凶。
+
+## 开发与验收
+
+需要 Python 3.11+；CI 使用 3.11 / 3.12。上游维护 main，依赖由维护者核查后更新。外部贡献可在自己的 fork 中建立分支并提交 PR。
+
+```sh
+python -m pip install -r requirements-dev.txt -c constraints-dev.txt
+python -m ruff check .
+python -m mypy scripts/
+python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
+python -X utf8 evals/run_checks.py --checks-only
+python scripts/classical_search.py --validate
+python scripts/build_skill.py
+python -X utf8 evals/package_smoke.py
+```
+
+只有完整 pytest 已通过，才能使用 --checks-only 避免重复执行。完整本地入口也可用 python -X utf8 evals/run_checks.py，但仍需另跑 lint、类型、覆盖率、打包和包内安装验证。
+
+覆盖率通过 coverage 的 subprocess patch 计入脚本子进程。修改查表数据时可另跑 python evals/mutate.py；突变测试用于检查测试是否足够严格，不是每次发布的必跑项。
+
+Python 输出使用 utils 的 JSON 信封；失败包含 ok、tool、version、error、message，退出非零。错误不能被转换成看似成功的命盘。缺少必需依赖时明确报错，不用简化表补出结果。
+
+当前时间统一从 request_time.py 取得，同次计算复用同一 UTC 时刻。出生地时区、当前所在地时区和查询目标时间分别处理。测试使用明确时间，不能依赖运行测试机器的日期。
+
+JSON 使用 UTF-8、两空格缩进。代码需类型注解。测试应证明输入边界、来源完整性或实际行为，不能只搜索提示词或机械复制实现。
+
+## 发布记录
+
+记录提交、测试、包内验证与远端 CI。工程测试、实际模型回答评审和现实预测验证分别报告。30 个用例清单不是 30 次模型运行；协作 agent 的试跑也不是多个独立宿主的基准。
+
+提交说明写清具体问题、改后行为、验证结果和仍有限制。古籍原作与转录页面授权分别处理，代码 MIT 不覆盖所有第三方资料。
 
 ## English
 
-### Welcome
+The primary scope is the five declared BaZi classics, deterministic chart calculation and readable, conditional interpretation. Zi Ping Zhen Quan is the primary method; other texts are compared explicitly.
 
-`chinese-fortune` aims to be the most complete, accurate, and ethically-bounded Chinese metaphysics skill for AI assistants. Contributions are welcome across:
+Every quotation needs an edition, chapter, passage and text layer. New interpretations need applicability conditions, exceptions and chart evidence. Do not turn engineering scores into classical authority or invent prediction probabilities.
 
-- **Reference depth** — expand classical citations, fix translation errors, add worked examples
-- **New methods** — currently `太乙神数`, `铁板神数`, `称骨` lack computational scripts
-- **Data quality** — `assets/jiemeng.json` (dream symbols) is at ~80 entries; classical 周公解梦 has 1000+. Same for `assets/name_bihua.json` (currently 2,594 chars).
-- **Translation** — currently 简体中文 only; we welcome 繁體中文 and English content in `references/`
-- **Test coverage** — add cases to `evals/evals.json` and assertions
-- **Bug fixes** — see open issues
+Keep both READMEs, skill routing, CLI help, fixtures and migration notes aligned. Run the commands above; use --checks-only only after a complete passing pytest run. Verify the built archive in a fresh environment.
 
-### Before you start
+Obtain request time once, using the user's present time zone; keep it separate from birth and target time zones. Preserve failures as explicit errors rather than fabricating successful charts.
 
-1. **Read the disclaimer** in [references/20-disclaimer.md](references/20-disclaimer.md). Any contribution that broadens or removes red lines (death prediction, medical diagnosis, etc.) will be rejected.
-2. **Cite sources** — for classical content, point to the source text. Don't fabricate 卦辞 or 神煞 起法.
-3. **Stay neutral on superstition** — frame readings as cultural / psychological / probabilistic, not deterministic prophecy.
-4. **No commercial nudging** — don't recommend purchase of charms, products, or fee-based services.
-
-### Development workflow
-
-The upstream repository currently keeps only `main`. Automatic Dependabot version
-PRs are paused; maintainers review dependency changes, update constraints or pinned
-Action SHAs, and validate them before publishing from `main`.
-
-```bash
-# 1. Fork & clone
-git clone https://github.com/<your-fork>/chinese-fortune.git
-cd chinese-fortune
-
-# 2. Install dev dependency
-pip install -r requirements-dev.txt -c constraints-dev.txt
-
-# 3. Make changes on a branch
-git checkout -b feat/your-change
-
-# 4. Run the release checks
-PYTHONDONTWRITEBYTECODE=1 python -X utf8 evals/run_checks.py
-
-# 5. All 7 checks must pass:
-#    ok check_skill_metadata
-#    ok check_core_scripts
-#    ok check_reference_coverage
-#    ok check_interpretive_discipline
-#    ok check_eval_assertions
-#    ok check_unit_tests
-#    ok check_release_cleanliness
-
-# 6. Commit and push
-git add .
-git commit -m "feat: add X to references/Y.md"
-git push origin feat/your-change
-
-# 7. Open PR with: what changed, why, sources cited, validation output
-```
-
-### Style
-
-**Markdown references**
-- Simplified Chinese as the primary language (translations welcome alongside)
-- Use markdown tables for tabular data
-- Quote classical sources verbatim with attribution: e.g., `《滴天髓·通神论》："五行不可逆..."` then a 白话 translation
-- Sections in this order: 概述 → 原理 → 排法 → 解读 → 案例 → 误区 → 出处
-- No emojis in reference files
-
-**Python scripts**
-- Python 3.11+ (CI matrix is 3.11 / 3.12; `pyproject.toml` sets
-  `target-version = py311` and `mypy python_version = 3.11`).
-  Type hints required, and enforced: `mypy scripts/ --disallow-untyped-defs`
-  runs in CI and via `[tool.mypy] disallow_untyped_defs = true`.
-- `from __future__ import annotations`
-- Argparse subcommands; `--help` must work without dependencies
-- Output: pretty UTF-8 JSON via `utils.json_print()`; warnings to stderr only
-- Errors as `{"error": ..., "message": ...}` JSON (exit 1) — never tracebacks
-- Each script standalone: `python scripts/<name>.py` runs
-
-**JSON assets**
-- 2-space indent
-- UTF-8 (no `\u` escapes for CJK)
-- For ambiguous entries (e.g., unusual stroke counts), include `"note_uncertain": true`
-
-### Quality gates — all six run in CI
-
-`.github/workflows/ci.yml` runs these; `evals/run_checks.py` alone is **one of
-six**, so passing it locally does not mean CI will be green.
-
-```bash
-python -m ruff check .
-python -m mypy scripts/ --ignore-missing-imports
-python -m pytest tests/ -q --cov
-python -X utf8 evals/run_checks.py --checks-only  # only after pytest passed
-python scripts/build_skill.py --dist-dir /tmp/dist
-```
-
-The engines run as subprocesses. With pytest-cov 7, `pyproject.toml` enables
-coverage's `patch = ["subprocess"]`; no machine-specific startup hook is required.
-See the [pytest-cov migration guidance](https://pytest-cov.readthedocs.io/en/latest/subprocess-support.html).
-
-`evals/mutate.py` (mutation testing) is **not** part of the gate — it
-answers "are the tests strict enough", a meta-question worth a periodic
-diagnostic rather than a 15-minute tax on every release. Run it by hand
-when you touch a lookup table: `python evals/mutate.py`.
-
-### PR checklist
-
-- [ ] All six gates above pass
-- [ ] Changes are scoped (no drive-by reformatting)
-- [ ] Classical sources cited
-- [ ] No red lines crossed
-- [ ] No emojis added to release files
-- [ ] If adding new method: SKILL.md router updated + reference file + (optionally) script
-- [ ] If adding new script: degrade gracefully on optional deps —
-      **`lunar_python` 除外**. SKILL.md states it is REQUIRED and that
-      scripts exit 1 with an install hint, with no table fallback
-      (`utils.require_lunar()`). Writing a fallback for it would break
-      the shipped contract.
-- [ ] If adding/changing data: validate with `python -c "import json; json.load(open('assets/X.json', encoding='utf-8'))"`
-
-### Code of conduct
-
-- Be respectful of different schools (流派) — don't claim one is universally correct.
-- Be sensitive to cultural context — readings about marriage, fertility, gender should not enforce traditional restrictions on modern users.
-- Be inclusive — LGBTQ+ users, single-parent families, non-traditional living arrangements are welcome. Don't apply 男命/女命 conventions inflexibly.
-- Disagree on PRs via classical texts and reasoning, not authority claims.
-
----
-
-## 中文
-
-### 欢迎
-
-`chinese-fortune` 的目标是做一份**最完整、最准确、伦理边界清晰**的中国命理 AI skill。欢迎以下贡献：
-
-- **加深参考文档** — 扩充经典出处、修正翻译错误、增加案例
-- **新方法脚本** — 当前 `太乙神数`、`铁板神数`、`称骨` 暂无脚本
-- **数据扩充** — `assets/jiemeng.json` 仅约 80 条 (周公解梦原本 1000+)，`assets/name_bihua.json` 当前 2594 字，可加深
-- **翻译** — 当前仅简体中文，欢迎繁體中文、English 翻译
-- **测试用例** — 扩充 `evals/evals.json` + 断言
-- **Bug 修复** — 见 open issues
-
-### 开始前
-
-1. **先读免责声明** — [references/20-disclaimer.md](references/20-disclaimer.md)。任何放宽或移除红线 (预测死亡、诊断疾病等) 的 PR 会被拒绝。
-2. **引用要有出处** — 经典内容必须能指到原文，不要编造卦辞或神煞起法。
-3. **不评判迷信问题** — 把读盘表述为文化 / 心理 / 概率视角，不做决定论预言。
-4. **不商业推销** — 不推荐购买物品、招财符、付费法事。
-
-### 开发流程
-
-```bash
-# 1. Fork & clone
-git clone https://github.com/<你的 fork>/chinese-fortune.git
-cd chinese-fortune
-
-# 2. 装开发依赖
-pip install -r requirements-dev.txt -c constraints-dev.txt
-
-# 3. 切分支
-git checkout -b feat/你的改动
-
-# 4. 跑发布检查
-PYTHONDONTWRITEBYTECODE=1 python -X utf8 evals/run_checks.py
-
-# 5. 必须 7/7 过:
-#    ok check_skill_metadata
-#    ok check_core_scripts
-#    ok check_reference_coverage
-#    ok check_interpretive_discipline
-#    ok check_eval_assertions
-#    ok check_unit_tests
-#    ok check_release_cleanliness
-
-# 6. 提交 + 推
-git add .
-git commit -m "feat: 给 references/Y.md 加 X"
-git push origin feat/你的改动
-
-# 7. 开 PR 注明: 改了什么、为何、引用出处、验收输出
-```
-
-### 风格
-
-**Markdown 参考文档**
-- 简体中文为主语言 (欢迎并列翻译版)
-- 表格化数据用 markdown table
-- 经典原文逐字引用 + 出处：如 `《滴天髓·通神论》："五行不可逆..."` 后接白话
-- 段落顺序：概述 → 原理 → 排法 → 解读 → 案例 → 误区 → 出处
-- 参考文档**不**用 emoji
-
-**Python 脚本**
-- Python 3.11+（CI 矩阵为 3.11 / 3.12；`pyproject.toml` 的
-  `target-version` 与 mypy `python_version` 均为 3.11）。
-  要求类型注解，且已是门禁：CI 跑 `mypy scripts/ --disallow-untyped-defs`，
-  `pyproject.toml` 亦设 `disallow_untyped_defs = true`。
-- `from __future__ import annotations`
-- argparse 子命令；`--help` 必须无依赖也能跑
-- 输出：`utils.json_print()` 出 UTF-8 JSON；警告只走 stderr
-- 报错出 `{"error": ..., "message": ...}` JSON (exit 1)，绝不抛 traceback
-- 每个脚本独立可跑：`python scripts/<名>.py`
-
-**JSON 资产**
-- 2 空格缩进
-- UTF-8 (中文不用 `\u` 转义)
-- 含糊条目 (例如非标准笔画) 加 `"note_uncertain": true`
-
-### PR Checklist
-
-- [ ] `evals/run_checks.py` 通过
-- [ ] 改动有范围 (不顺手大改格式)
-- [ ] 经典出处可查
-- [ ] 没踩红线
-- [ ] 没在发布文件加 emoji
-- [ ] 加新方法: SKILL.md 路由表 + 参考文档 + (可选) 脚本
-- [ ] 加新脚本: 可选依赖缺失时优雅降级 —— **`lunar_python` 除外**。
-      SKILL.md 明写它是 REQUIRED、脚本 exit 1 且无查表回退
-      (`utils.require_lunar()`)。给它写降级逻辑会违反已发布的行为契约。
-- [ ] 改/加数据: 用 `python -c "import json; json.load(open('assets/X.json', encoding='utf-8'))"` 验证
-
-### 行为准则
-
-- **尊重流派差异** — 不宣称某派绝对正确，明示"某派如此取法"。
-- **文化敏感** — 涉婚姻、生育、性别的解读不应把传统约束强加给现代用户。
-- **包容** — LGBTQ+ 用户、单亲家庭、非传统居住安排均欢迎；不死板套男命/女命。
-- **争议靠经典与推理决定** — PR 讨论中拒绝"权威诉求" (我师父说 / 某大师说)，请引经典 + 推理。
-
-### 内容修改与验证 / Content review
-
-见 `references/22-output-contract.md` 与 `docs/OUTPUT-VALIDATION.md`。新增断语必须给出版本、条款、条件与例外；未核引文不能作为原文。修改输出要更新相应契约测试，不只更新快照。
-
-本地全检查：`python -X utf8 evals/run_checks.py`。CI 在同一 job 的完整 pytest 成功后使用 `--checks-only` 避免重复；不能用此选项声称本地完整测试通过。
-
-Windows 直接执行 `python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing`；subprocess patch 已在仓库配置。发布记录需区分结构检查、实际模型语义审核和远端 CI。
+Report code tests, actual model-response reviews and predictive validation separately. Preserve attribution and edition boundaries when importing texts. Respect the scope in [the output contract](references/22-output-contract.md) and [sensitive-topic guidance](references/20-disclaimer.md).

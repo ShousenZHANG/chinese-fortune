@@ -1,0 +1,186 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c012",
+  "title": "论干支字义",
+  "source_url": "https://luckclub.cn/bazi/001/012/",
+  "revision": "sha256:8aaae950008961a639b8a4c66f02b32d27466b154c75e16d67e1cd9f880c647f",
+  "source_timestamp": "2026-09-06T04:10:26.827571+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c012.html",
+  "raw_sha256": "8aaae950008961a639b8a4c66f02b32d27466b154c75e16d67e1cd9f880c647f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论干支字义",
+      "text": "**﻿渊海子平卷一**",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0001",
+      "sha256": "6dc53b3663903fd8c9b031d7765a58bf4f996fb47be52fdc54ce3a1b103a5fd9"
+    },
+    {
+      "section": "论干支字义",
+      "text": "**﻿论干支字义**",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0002",
+      "sha256": "37cf889f6106bb36858ee97a9c4b453c79071cbc0144c90a887d4992e4cc18d3"
+    },
+    {
+      "section": "论干支字义",
+      "text": "《群书考异》曰：甲者，折也，言万物剖符甲而出也。《易》曰：百果草木皆甲折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0003",
+      "sha256": "d1d799d0595cf9598dc14bcfe4262f7c0e274b216f43979751fbc7a764618f04"
+    },
+    {
+      "section": "论干支字义",
+      "text": "乙言万物初生曲孽而未伸也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0004",
+      "sha256": "c38d0788461cf6082482c8e92bed3ed329951dce3a119e9799824bb33e7d9c57"
+    },
+    {
+      "section": "论干支字义",
+      "text": "丙言万物炳然着见。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0005",
+      "sha256": "698336bccb96dc1c8610f8c90eb83f3a5bc095dd6aa206e99f32e5f6060a58bd"
+    },
+    {
+      "section": "论干支字义",
+      "text": "丁言万物壮实之形，故《邦国图藉》曰：成丁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0006",
+      "sha256": "8a4b122ab76b80b4b050ae40f80d1de84f675fb935fe12a2029b793f01127d72"
+    },
+    {
+      "section": "论干支字义",
+      "text": "戊，茂也，言物之茂盛，故《汉志》曰：孽茂於戊是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0007",
+      "sha256": "b4d88149453e79f5b012eb90d6939a07870b1b67c6fee778e0c08aa9b90eaaf2"
+    },
+    {
+      "section": "论干支字义",
+      "text": "己，纪也，言物有形，可纪识也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0008",
+      "sha256": "81ee26c234146b9cddaf9a97b81e8b597cfff7a9d557aece6915560316d1e707"
+    },
+    {
+      "section": "论干支字义",
+      "text": "庚，坚强貌，言物收敛而有实也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0009",
+      "sha256": "08222bbbea72317ce42c7276c3498ad8880c0986ea5378fa315a466d2ab13be4"
+    },
+    {
+      "section": "论干支字义",
+      "text": "辛，言万物方盛而见制，故辛痛也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0010",
+      "sha256": "e09a69f1da589a9523c610bf0f3bbd1391a5f4175f62e51781f05429af9d994e"
+    },
+    {
+      "section": "论干支字义",
+      "text": "壬，妊也，阴阳之交，言万物怀妊至子而前也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0011",
+      "sha256": "6fc299ee9d7023c747a3a902cce51a9d9569e436b520718dda491adb01f47888"
+    },
+    {
+      "section": "论干支字义",
+      "text": "癸者，冬时土既平，万物可揆度也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0012",
+      "sha256": "8d7591b5e7b9ee06595d1225fb3f5e9e3dba6e7dc7af9d558f839a6ad212a5ef"
+    },
+    {
+      "section": "论干支字义",
+      "text": "子，率也，阳气始萌孽，生於下也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0013",
+      "sha256": "80dcc30df9fd76f9146809940a137b928b26bd4aff1890b288304b200ae22dca"
+    },
+    {
+      "section": "论干支字义",
+      "text": "丑，钮也，寒气自屈曲也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0014",
+      "sha256": "9938b917fce3b7245bcb70d7d7a9a59be2fd3569e9cd3e98a46b43a5986f9417"
+    },
+    {
+      "section": "论干支字义",
+      "text": "寅，骸也，阳气欲出，阴尚强而骸演於下。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0015",
+      "sha256": "de19a57e2f1fb7d14f45bce1a21bd2ad0b3904572338e1184d29e81db1af8325"
+    },
+    {
+      "section": "论干支字义",
+      "text": "卯者，冒也，万物冒地而出。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0016",
+      "sha256": "4e309b8d9a24808a2f795dd71e98477f0fd885dd7dc810fe32a07362c9f493ed"
+    },
+    {
+      "section": "论干支字义",
+      "text": "辰，伸也，物皆舒伸而出。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0017",
+      "sha256": "c4c9e9530fe7f4ef490b8506a90fdd829f90bda987b63f856177a9709ce23de1"
+    },
+    {
+      "section": "论干支字义",
+      "text": "巳，已也，阳气毕布已矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0018",
+      "sha256": "61c1c770df32bef9a25dc143b313054d211b8cb03c6b9aa24bc945f29d218933"
+    },
+    {
+      "section": "论干支字义",
+      "text": "午，件也，阴阳交相愕而作也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0019",
+      "sha256": "d81a24f2d8dec5bd9ea28b5296fb797a0c972365e17bf18c4800a1595d7ef9a3"
+    },
+    {
+      "section": "论干支字义",
+      "text": "未，昧也，日中则反，阳向幽也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0020",
+      "sha256": "bdcba465e22a028776c8216d4f768b5f307b11b9312ffb7782d752fa5f33baa1"
+    },
+    {
+      "section": "论干支字义",
+      "text": "申，伸速以成，故《晋志》曰：万物之体皆成也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0021",
+      "sha256": "a4ba7f8c978d41f9f4617966e4f5128a65bd94b8072358caf0203eb3ed75a354"
+    },
+    {
+      "section": "论干支字义",
+      "text": "酉，就也，万物成熟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0022",
+      "sha256": "ae907df6465620fb5ac203c18ffe93af36fdcd0b483b5694ec41f493c348938e"
+    },
+    {
+      "section": "论干支字义",
+      "text": "戌，灭也，万物灭尽。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0023",
+      "sha256": "8db47e36b553fa397a62cba82d697268975373d19552dcf11ff1196cfbd6b9e1"
+    },
+    {
+      "section": "论干支字义",
+      "text": "亥，孩也，万物收藏者，皆坚孩也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c012:p0024",
+      "sha256": "b2780a87af93f8cb84d559fd922c02bca512bc8aaabfdda08330943582413fc0"
+    }
+  ]
+}

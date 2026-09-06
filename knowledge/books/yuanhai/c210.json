@@ -1,0 +1,135 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c210",
+  "title": "八月建酉候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/210/",
+  "revision": "sha256:a2c225eca177ef106bc58f23864490e6b189757c81dd07b6e28d4ac41fc6f758",
+  "source_timestamp": "2026-09-06T04:11:05.996089+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c210.html",
+  "raw_sha256": "a2c225eca177ef106bc58f23864490e6b189757c81dd07b6e28d4ac41fc6f758",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "八月建酉候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "八月建酉候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0002",
+      "sha256": "319fdb1ebc74c3de974c1430c9364e7c3fbd9d0b585b99e299df3c34fe932297"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "甲乙无根八月逢，庚辛金旺不嫌凶，北方水运财星足，逆走南方得失中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0003",
+      "sha256": "e7f65f6ad39133b54e18bdbacab3e610e29df0eb5bfdc07598100d98f893be3e"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "眉批：八月辛金二十三日，庚金七日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c210:p0004",
+      "sha256": "7eb176358c2ffc6d98a48ae6b42cd87e1e37f5974efaaad0f23177df964726ae"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "酉月藏金乙日逢，北方亥子水重重，离明午未财权重，巳丑加临寿必终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0005",
+      "sha256": "ec5a8eb0c5d7305baa3b24886681d05213322e418da47ab463871591b865e20c"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "眉批：言乙木逢巳酉丑金局官杀太重，故云。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c210:p0006",
+      "sha256": "f76d17a9cea9a66f266dd0ccbf98863c461643dce3cfd520c05501c403237747"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "甲乙酉月多官杀，无根日主一生低，北逢顺走休临丑，逆走南方巳上亏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0007",
+      "sha256": "a5f0153415d3e06f2dbdcb9fc54deba0a2f900fbe36744846dbf549a3a9631e4"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "丁生酉月天干癸，去杀方能可去财，有气保身存印绶，无情行到水中来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0008",
+      "sha256": "262661a3d10606badb96e1d739267b90bec570bb9dacc292d02f53b8e4b8869c"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "眉批：言丁火生於酉月，以辛金为财，喜土忌木。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c210:p0009",
+      "sha256": "4c6cde3bba4cdf933695824354c818eeeec498d04393f7464223604ff3ff9fdc"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "秋金酉丑重金旺，除非火炼有声明，东方行去盈财禄，西北来临福必倾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c210:p0010",
+      "sha256": "9b3564beca93977e31aba00bf7cf2a4e78659b49270cfb162d2a3ea136ecf1f6"
+    },
+    {
+      "section": "八月建酉候诗诀",
+      "text": "眉批：金旺喜火喜财为之，西北又是金水，少利。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c210:p0011",
+      "sha256": "02f06792b451d7cf659a8ab8b7dd89b17ba3df11b6a3d01ac81ef399115e9cae"
+    }
+  ]
+}

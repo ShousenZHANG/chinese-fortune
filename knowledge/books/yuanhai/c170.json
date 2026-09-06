@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c170",
+  "title": "神趣八法-鬼象",
+  "source_url": "https://luckclub.cn/bazi/001/170/",
+  "revision": "sha256:45beb021987b2139ed32b0ced214e1fa64a9d339f7d4b35c1cdbafe71bf12939",
+  "source_timestamp": "2026-09-06T04:10:57.997515+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c170.html",
+  "raw_sha256": "45beb021987b2139ed32b0ced214e1fa64a9d339f7d4b35c1cdbafe71bf12939",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-鬼象",
+      "text": "神趣八法-鬼象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c170:p0001",
+      "sha256": "a2dbc820414d110b599075f15d7626ec900e809af6bf2399800026e9a27d321a"
+    },
+    {
+      "section": "神趣八法-鬼象",
+      "text": "鬼象者及秋金生甲乙日，地支四柱纯金，谓之鬼象。只要鬼生旺运，皆吉。怕见死绝之乡，而支身旺则不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c170:p0002",
+      "sha256": "6434053e18c328a8a562286fbf99e391453499cf90d12c97421c6e1f20644bd7"
+    },
+    {
+      "section": "神趣八法-鬼象",
+      "text": "眉批：甲乙生春遇金为官，秋遇金为鬼，身旺为官，身衰为鬼。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c170:p0003",
+      "sha256": "3a6ea8b4ea1efc8adaca23f44678aa21cda20756cb47e19b030125f6ab1e896c"
+    },
+    {
+      "section": "神趣八法-鬼象",
+      "text": "又曰：夫鬼者杀也，乃干逢杀克之意也。须明上下干支，或鬼旺身衰。如乙木以庚金为官，天干化合，又见辛酉七杀，则为鬼旺。经云：“己身临鬼，须明天地之中，象旺象衰，要识荣枯贵贱。身衰贵旺，应须肢体伤残，身旺鬼衰，定作凶徒之命。鬼身皆衰，男子飘蓬，女作尼姑。”《玉井》云：“身鬼俱强，兵法刑名而或济；鬼身尽弱，败破狂荡以何疑？木气胜者，专用微金。水气多者，宜凭病土。金气旺者，须病衰火。火气强者，要假浅水。土气厚者，却寻死木。”假如本身乘旺，而逢鬼象，返为贵命，旺中有制，方为全福。身鬼全彰，得刃为制，勇暴而贵显，或乘酒以得官位。如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c170:p0004",
+      "sha256": "92b3c02ea0fc9f658fbbbbbaf93419cdd5ea9527b5a57c6fb10dbbcab8a2490e"
+    },
+    {
+      "section": "神趣八法-鬼象",
+      "text": "癸丑 辛酉 乙亥 辛巳，乙木八月无气，二辛杀旺，故主残疾。又",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c170:p0005",
+      "sha256": "977041143fe64dc50bbfab1146c2b4370b95acf4e5d4d497b19d8bf7c5fff68d"
+    },
+    {
+      "section": "神趣八法-鬼象",
+      "text": "戊辰 癸亥 甲申 庚午，日坐杀星，可值庚时，本身受克，又亥中水旺，木死於午，此漂流命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c170:p0006",
+      "sha256": "30f3a2d2c68ab276f06ebfd300e1c051fcc82fa18a3b983197f9ce763b016286"
+    }
+  ]
+}

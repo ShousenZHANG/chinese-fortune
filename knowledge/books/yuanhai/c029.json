@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c029",
+  "title": "论月德合",
+  "source_url": "https://luckclub.cn/bazi/001/029/",
+  "revision": "sha256:c11555f3c0131881525fd97ee544047a1d86a7c19ba670d39ae75e5756c66d45",
+  "source_timestamp": "2026-09-06T04:10:30.403866+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c029.html",
+  "raw_sha256": "c11555f3c0131881525fd97ee544047a1d86a7c19ba670d39ae75e5756c66d45",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论月德合",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c029:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论月德合",
+      "text": "论月德合",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c029:p0002",
+      "sha256": "ceace3ec8155b6f76e95b912eeaafd58555981325c58dd3d879bd8fc7efd9b44"
+    },
+    {
+      "section": "论月德合",
+      "text": "寅午戌月在辛，申子辰月在丁，亥卯未月在己，巳酉丑月在乙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c029:p0003",
+      "sha256": "ee9a4d1f5ee8447afb35ca511873b707b58ed8a71bb4cb3f200381282fe4b144"
+    },
+    {
+      "section": "论月德合",
+      "text": "其法从寅上起，辛己丁乙逐位顺数。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c029:p0004",
+      "sha256": "d068f6a79a03e40eb89c05872c25e6946f9a122765480165d5e43382ac80635b"
+    }
+  ]
+}

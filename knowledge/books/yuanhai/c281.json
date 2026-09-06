@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c281",
+  "title": "会命要说",
+  "source_url": "https://luckclub.cn/bazi/001/281/",
+  "revision": "sha256:8ce81cc1d2e758ef4abac4b931b5713f754cf186cff49316c62a25936a2c6970",
+  "source_timestamp": "2026-09-06T04:11:22.768994+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c281.html",
+  "raw_sha256": "8ce81cc1d2e758ef4abac4b931b5713f754cf186cff49316c62a25936a2c6970",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "会命要说",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c281:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "会命要说",
+      "text": "会命要说",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c281:p0002",
+      "sha256": "c081339894758677aba3b71f1bce688478c294e369989194df1e471e830555aa"
+    },
+    {
+      "section": "会命要说",
+      "text": "夫造命书，先贤已穷尽天地精微之蕴而极矣。自唐李虚中，一行禅师，宋徐升东斋，明王桂、醉醒子诸公，登觉渊海渊源，其理雷同，至矣尽矣，无非水火土金水之微妙耳。今之後学，加增旨意口诀，莫非先贤已发之余意，大同小异。今将渊海二书合成一集，一览便知。不必齐穷二书之旨，删繁去简，永为矜式。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c281:p0003",
+      "sha256": "57a4af9e214d3b67b521ea99e61d5e7f0ef8b6738420916160831c85cdfd027b"
+    }
+  ]
+}

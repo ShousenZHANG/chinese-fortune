@@ -1,0 +1,81 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c036",
+  "title": "三十六、論印取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3749.html",
+  "revision": "sha256:310d94193b1549ba80cabe4ec8abf199b7b55e4257937288c5adb172678a8d65",
+  "source_timestamp": "2026-09-06T04:17:11.080Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c036.html",
+  "raw_sha256": "310d94193b1549ba80cabe4ec8abf199b7b55e4257937288c5adb172678a8d65",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十六、論印取運",
+      "text": "印格取運，即以印格所成之局，分而配之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0001",
+      "sha256": "3c6a7f4dfd11994369c05af3f645787506e7469e3fdfdd8278899c73be25207d"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "其印綬用官者，官露印重，財運反吉，傷食之方，亦爲最利。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0002",
+      "sha256": "2418903d0e303e2d1d8c7aa99d31efa5f4a5b924d6241eab32e3bc77ac2a9dc8"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "若用官而兼帶傷食，運喜官旺印綬之方，傷食爲害，逢煞不忌矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0003",
+      "sha256": "b3f7e7e0e12a840bfa21c78192f96e1e98258757e6dbf3a722f1519a9f95ab5d"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "印綬而用傷食，財運反吉，傷食亦利，若行官運，反見其災，煞運則反能爲福矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0004",
+      "sha256": "ae950fd6b163edb52ed007edb4b9a166cabf0457e2f36f1300397559bf05da9b"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "印用七煞，運喜傷食，身旺之方，亦爲美地，一見財鄉，其凶立至。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0005",
+      "sha256": "783dac376774012565ca29a707b79a4e4c362e242eb907979b2a8c06c6c6e0bd"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "若用煞而兼帶傷食，運喜身旺印綬之方，傷食亦美，逢官遇財，皆不吉也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0006",
+      "sha256": "c4cd4c7a13c1226b0ea3fc66c9ac81560b6e32295f8220efcad89be1f684913c"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "印綬遇財，運喜劫地，官印亦亨，財鄉則忌。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0007",
+      "sha256": "6cd05035b7918411af03c7c79f40c42797915b190d4ada77ee10dd5c606922f3"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "印格而官煞競透，運喜食神傷官，印旺身旺，行之亦利。若再透官煞，行財運，立見其災矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0008",
+      "sha256": "af8ca450dc51ec0a69c108f8a04d937c2a61fed27834d8588df7f9412f2b8b8f"
+    },
+    {
+      "section": "三十六、論印取運",
+      "text": "印用食傷，印輕者，亦不利見財也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c036:p0009",
+      "sha256": "1b5ab11c6b109f183c91a9357cbc2cf7609da38f9c5b900edc1456d21e1c48e6"
+    }
+  ]
+}

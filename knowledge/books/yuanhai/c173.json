@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c173",
+  "title": "论格局生死引用",
+  "source_url": "https://luckclub.cn/bazi/001/173/",
+  "revision": "sha256:b59b37816de291b8baf435f837493ff479aee84fe33fd6ec910110b20b9e68e0",
+  "source_timestamp": "2026-09-06T04:10:58.520967+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c173.html",
+  "raw_sha256": "b59b37816de291b8baf435f837493ff479aee84fe33fd6ec910110b20b9e68e0",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论格局生死引用",
+      "text": "论格局生死引用",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c173:p0001",
+      "sha256": "91b13b8a0a1e683d52aea931da250db34e185106226469bac0f70ad55f907162"
+    },
+    {
+      "section": "论格局生死引用",
+      "text": "夫格局者，自有定论，今略而述之。印绶见财行财运又兼死绝，必入黄泉，如柱有比肩，庶几有解。正官见杀及伤官，刑冲破害，岁运相并必死。正财偏财见比肩分夺，劫财羊刃又见岁运冲合，必死。伤官之格，财旺身弱，官杀重见，岁运又见必死，活则伤残。拱禄拱贵，又见官星之冲，岁运重见即死。日禄归时，刑冲破害，见七杀、官星、空亡、冲刃必死。杀官大忌，岁运相并必死。其余诸格，并忌杀及填实，岁运并临必死。会诸凶神，恶煞、勾绞、空亡、吊客、墓库、病、死、官杀，九死一生。官星太岁，财多身弱，原犯七杀，身轻有救则吉，无救则凶。金多夭折，水盛漂流，木旺则夭，土多痴呆，火多顽愚，太过不及作此论。一不可拘，二须敢断，必须理会推之，求其生死决矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c173:p0002",
+      "sha256": "99c4c35547d7a56e28fbc7c43e36d6fd491dcf48e918729bd7789ec7c53b6457"
+    },
+    {
+      "section": "论格局生死引用",
+      "text": "眉批：拱禄拱贵见官必无官，当消断填实见官者，只为下贱贫薄，亦不至死，或岁运恶杀相并，可以死断之。此节要详从化成者为贵，化不成者要如此说。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 68,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c173:p0003",
+      "sha256": "b8679774f3e72b038e8833ec58dcde43229389423da6bc3e55322ba0a2cc2aec"
+    }
+  ]
+}

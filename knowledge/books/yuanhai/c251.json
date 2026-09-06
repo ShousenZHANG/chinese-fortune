@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c251",
+  "title": "曲直格诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/251/",
+  "revision": "sha256:f08080022b0812c73927068d579cfa8fab02c6936b2e1c101ea5a42ba75c51eb",
+  "source_timestamp": "2026-09-06T04:11:15.417664+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c251.html",
+  "raw_sha256": "f08080022b0812c73927068d579cfa8fab02c6936b2e1c101ea5a42ba75c51eb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "曲直格诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c251:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "曲直格诗诀",
+      "text": "曲直格诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c251:p0002",
+      "sha256": "6e125393a0b892aad8239f8f6f3b004cf1600fec647313055f2373cff217c776"
+    },
+    {
+      "section": "曲直格诗诀",
+      "text": "甲乙生人寅卯辰，又名仁寿两堪许，亥卯未全嫌白帝，若逢坎地必荣身。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c251:p0003",
+      "sha256": "e87059013ca3a7efc87c354521a7ec51211c3b4be47e0232f0d34105ad7f7ca9"
+    },
+    {
+      "section": "曲直格诗诀",
+      "text": "木从木类正为奇，秋令逢之事不宜，得此清高仁且寿，水源相会福元齐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c251:p0004",
+      "sha256": "5213e361a0ec43839aecbf58b9157a5f3a75749114a18ed922db81fd9d1d37c2"
+    },
+    {
+      "section": "曲直格诗诀",
+      "text": "眉批：此命是木类旺之说，只从木论，忌金喜木。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c251:p0005",
+      "sha256": "b13b55d4bf905c93d783ee6093afe2b2fb12a94d6b813abe6c65aab55b7fe01e"
+    },
+    {
+      "section": "曲直格诗诀",
+      "text": "李总兵，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c251:p0006",
+      "sha256": "1dade1edc590c89fbd0e113af0b8e95cb75ed1c7ec9750816031f085b07f52ea"
+    },
+    {
+      "section": "曲直格诗诀",
+      "text": "甲寅 丁卯 乙未 丙子，无官杀，是以为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c251:p0007",
+      "sha256": "eb29131b284f02dd2b97e744d3dbf881430ccaab6a0b0cc92a3933f9e6462d59"
+    }
+  ]
+}

@@ -1,14 +1,11 @@
 interface:
   display_name: "Chinese Fortune"
-  short_description: "Chinese metaphysics, divination, almanac, naming, and compatibility readings."
+  short_description: "八字排盘、古籍检索与白话解读；其他术数按需使用。"
   default_prompt: >-
-    Use $chinese-fortune. Read references/22-output-contract.md before delivering
-    a personal interpretation. Use deterministic scripts for chart facts.
-    凡古籍无据者不妄断: 核对《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》
-    的版本、条款和成立条件，不混淆原文、注文与项目启发式。Inspect reading_support;
-    candidate_only and needs_review are not verdicts. Separate 格局、扶抑、调候;
-    never force one 用神, infer 喜忌 mechanically, or narrate raw fortune phrases.
-    Give up to three relevant claims with chart evidence, conditions, citations
-    and limitations. Review the actual prose as well as the evidence packet.
-    Never invent precise events or probabilities. Preserve corrections and do
-    not count user feedback as prediction success. State cultural limits once.
+    Use $chinese-fortune。每次先用 request_time.py 取得用户当前所在地时间，同请求各工具复用该时刻。
+    出生时间、当前时间、明确目标时间分别处理。用 bazi_reading.py 提取盘面事实，
+    用 classical_search.py 检索固定版本原文，读 references/22-output-contract.md 后解读。
+    凡古籍无据者不妄断。以《子平真诠》月令格局为主，《滴天髓》《穷通宝鉴》分层对照，
+    《三命通会》《渊海子平》补充对应条款。正文、注文、项目归纳分开，逐项核对条件与例外。
+    先用自然白话回答，最多三条主判断；术语随文解释，古文短引附出处。保留关键条件与否定，
+    不把工程评分、生肖分数或候选当个人结论。核对真实正文，保留更正，不把已知经历计为预测。

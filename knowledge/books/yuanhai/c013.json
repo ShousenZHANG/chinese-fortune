@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c013",
+  "title": "论十二支生肖",
+  "source_url": "https://luckclub.cn/bazi/001/013/",
+  "revision": "sha256:9339f88ea47bc165921bd96ed029b0b8826e2cac141d191317ffaf83413108a6",
+  "source_timestamp": "2026-09-06T04:10:27.359795+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c013.html",
+  "raw_sha256": "9339f88ea47bc165921bd96ed029b0b8826e2cac141d191317ffaf83413108a6",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二支生肖",
+      "text": "论十二支生肖",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c013:p0001",
+      "sha256": "6a22c63aeab355a17686fc52c8be98c963cf144901d220011e8ef9c241d1d08a"
+    },
+    {
+      "section": "论十二支生肖",
+      "text": "子　　丑　　寅　　卯　　辰　　巳　　午　　未　　申　　酉　　戌　　亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c013:p0002",
+      "sha256": "a1a5e6710643e35d6b7e5aeed7604c27ab04a973f8a6f91b1be5a66da2797cf2"
+    },
+    {
+      "section": "论十二支生肖",
+      "text": "阳鼠　阴牛　阳虎　阴兔　阳龙　阴蛇　阳马　阴羊　阳猴　阴鸡　阳狗　阴猪",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c013:p0003",
+      "sha256": "4f28d7948223d433b6282bbac18ab389376b003dc7f4b41745923b37edb23f01"
+    },
+    {
+      "section": "论十二支生肖",
+      "text": "《七修类纂》曰：仁和郎汉云，地支肖属十二物，人言取其不全者。予以庶物，何岂止十二不全者哉。以地支在下，各取其足爪於阴阳上分之。如子虽属阳，上四刻乃昨夜之阴，下四刻今日之阳。鼠前足四爪象阴，後足五爪象阳故也。丑属阴，牛蹄分也；寅属阳，虎有五爪；卯属阴，兔缺唇且四爪也。辰属阳，乃龙五爪。巳属",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c013:p0004",
+      "sha256": "fc0bd507e5b2821a2cd0e8484e80e998c925f0f7478fc40c9aecb4ea0e2af959"
+    },
+    {
+      "section": "论十二支生肖",
+      "text": "阴，蛇舌分也。午属阳，马蹄圆也。未属阴，羊蹄分也。申属阳，猴五爪。酉属阴，鸡四爪也。戌属阳，狗五爪也。亥属阴，猪蹄分也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c013:p0005",
+      "sha256": "eb80c7ca16b39ab014cb487235e2d1e818bb56dc46ef7056d19381882c79c228"
+    },
+    {
+      "section": "论十二支生肖",
+      "text": "又曰：子为阴极，幽潜隐晦，以鼠配之，鼠藏迹也。午为阳算，显明刚健，以马配之，马快行也。丑为阴也，府而慈爱生焉，以牛配之，牛有甜犊。未为阴也，仰而采礼行焉，以羊配之，羊有跪乳。寅为三阳，阳胜则暴，以虎配之，虎性暴也。申为三阴，阴胜则黠，以猴配之，猴性狡也。日生东而有酉西之鸡，月生酉而有东卯兔，此阴阳交感之义，故曰卯酉为日月之私门也。夫兔舔雄毛则成孕，鸡合踏而无形，皆藏而不交者，故卯酉属鸡兔。辰日阳起而勤作，龙为盛，蛇次之，故龙蛇配焉，龙蛇变化之物也。戌亥阴敛而潜寂，犬司夜，猪镇静，故狗猪配焉。狗猪，时守之物也。此亦明儒之论，故详记之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c013:p0006",
+      "sha256": "f3dcc5d33f0207630dd41bd3cf8235b33853e460df8ca0c56fa9427b52102430"
+    },
+    {
+      "section": "论十二支生肖",
+      "text": "眉批：取五为阳，四为阴。圆为阳，方为阴。谓“不全”者，鼠无睛、牛无牙、虎无项、兔无目、龙无耳、蛇无足、马无胆、羊无瞳、猴无腮、鸡无肾、狗无胃、猪无筋。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 75,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c013:p0007",
+      "sha256": "f0e75db522c6807649691720f488f9d3d792c492b67cf11e4db28296520653db"
+    }
+  ]
+}

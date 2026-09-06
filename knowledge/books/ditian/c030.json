@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c030",
+  "title": "坎離論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F30&oldid=844381",
+  "revision": "844381",
+  "source_timestamp": "2017-03-23T15:47:57Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c030.wiki",
+  "raw_sha256": "1a1ef9745d53ceca13b716377ff34e12f73ae43e82fc5c995492359899f1345e",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "坎離論",
+      "text": "坎離氣不並行，而有相濟者在。",
+      "layer": "base_text",
+      "passage_id": "ditian:c030:p0001",
+      "sha256": "49547e55cf9fdfd496d9b3d818d8ad1cb6265ffb35f14b1ba8237e86eee646b8"
+    },
+    {
+      "section": "坎離論",
+      "text": "天乾透壬癸，地支屬離，為既濟，要天氣下降，天乾透丙丁，地支屬坎，為未濟，要地氣上升，天干皆水，地支皆火，為交姤，身強則吉，天干皆火，地支皆水，為交戰，身弱則凶，坎外離內，亦謂之未濟，所喜在離，要水竭。\n按：原本缺兩頁，從主之所喜在坎起，至水奔而性柔者全金木之神為止，原本全缺，戡從別本抄錄補人，特誌之。\n主之所喜在坎，則不祥，離外坎內謂之既濟，主之所喜在坎，要離降，主之所喜在離，要木和，水火相間於天干，以火為主，而水盛者存，坎離相見於地支，喜坎而坎旺者昌，夫子午卯酉，專氣也，其相制相持之勢，宜悉辨之，若四生四庫之神，皆所以黨助子午卯酉者，其理亦可推詳。\n謹按震兌者，金木交爭之局也，坎離者，水火相戰之局也，戰爭之局，必須有以和之，金木交爭，不能缺水，水火相戰，不能缺木，以水與木為調和通關之神也，如原局無水木，必須一路行水運或木運，方能彌其缺，否則，必不為吉，又如火為日主，見金木為財印交差，土為日主，見水火亦為財印交差，必須有官煞以和之，原局無官煞，必須行官煞之運，亦調和之意也，此指財印相礙而言，若上下隔離，財印不相礙，則不以此論。",
+      "layer": "commentary",
+      "passage_id": "ditian:c030:p0002",
+      "sha256": "b843539e7c76e345a360f8093d157fcf0acb209f517d9d8d531c0c5fb1cd68ea"
+    }
+  ]
+}

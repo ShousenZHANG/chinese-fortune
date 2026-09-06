@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c236",
+  "title": "合禄诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/236/",
+  "revision": "sha256:51a83fac68eb5b3702a483e0fef2a8f77e645186ae020a519a714d83ebae30ac",
+  "source_timestamp": "2026-09-06T04:11:11.817461+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c236.html",
+  "raw_sha256": "51a83fac68eb5b3702a483e0fef2a8f77e645186ae020a519a714d83ebae30ac",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "合禄诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "合禄诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0002",
+      "sha256": "7d5a9e95698c6d28427d5366c5ea959499c513d8c95dd43480381e1f38966dba"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "戊日庚申时上逢，如无官印贵秋冬，甲丙卯寅兼巳字，四营岁运怕同宫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0003",
+      "sha256": "1315159ad64defbd6889784e6eeb584cef4b51c8bdc564a30837d2444dd6793e"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "日子癸水时庚申，生在秋冬富贵人，大忌寅来伤秀气，若逢春夏惹灾连。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0004",
+      "sha256": "64b0311bbb9541ad1cabbc17f501305391c545dfcf2fea10a4580c6815578f59"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "时遇庚申癸日生，此为官印合官星，不逢官杀兼阳火，名誉昭彰拜紫宸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0005",
+      "sha256": "ab382e4857f574284869b49aa17d698623cc427996ec693f7878a9f4664a6493"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "申时戊日食神奇，惟喜秋冬福禄宜，甲丙卯寅来克破，遇而不遇主孤离。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0006",
+      "sha256": "b120296079204bc5770014c720066f9e9baf70000b0ba41eb4992fc63390bafc"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "食神生旺无刑克，命中值此胜财官，官印更来相协助，少年登第拜金銮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0007",
+      "sha256": "fcf3669e97026a9ddcd296e9c73f42e6112697804ee1787889984931f5108044"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "眉批：六戊日为主，以庚申时合卯中乙木为戊官。四柱有甲乙字，丙字、巳字，刑坏了申，丙伤庚字，则减分数，岁君大运亦然。秋冬生者为妙。如",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 65,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c236:p0008",
+      "sha256": "55d763931a3920d1097ad137127bd7e1635bd868610c41749ef323464551c290"
+    },
+    {
+      "section": "合禄诗诀",
+      "text": "甲寅 丙辰 戊戌 庚申，乙木为官，以杀代之，庚合卯宫列门方是。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c236:p0009",
+      "sha256": "44688263bbc08e347d39a49fe901bf461299bc7b18a82c08bb111533c5bb967f"
+    }
+  ]
+}

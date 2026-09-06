@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c139",
+  "title": "外十八格-支后一字",
+  "source_url": "https://luckclub.cn/bazi/001/139/",
+  "revision": "sha256:95af4068e09474b3469fdf8b11b049b9d6ea3f4e3aa7ca0cf60cc6dda03465bd",
+  "source_timestamp": "2026-09-06T04:10:52.273740+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c139.html",
+  "raw_sha256": "95af4068e09474b3469fdf8b11b049b9d6ea3f4e3aa7ca0cf60cc6dda03465bd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-支后一字",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c139:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-支后一字",
+      "text": "外十八格 - 支後一字",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c139:p0002",
+      "sha256": "08f582c7fd7b3842653728ef0c450e3efe0b09c5be252d6d4e903bc1c0c8472f"
+    },
+    {
+      "section": "外十八格-支后一字",
+      "text": "此取年月日时支辰不杂为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c139:p0003",
+      "sha256": "1ab1b5aa26c8ded756079431463edb55d467613e28a78b3fc4278b41a4e99db4"
+    }
+  ]
+}

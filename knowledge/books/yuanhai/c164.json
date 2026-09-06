@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c164",
+  "title": "神趣八法-类象",
+  "source_url": "https://luckclub.cn/bazi/001/164/",
+  "revision": "sha256:756c290ab67bd52a8d3d343971ab603ad40b93e0d0816a31f0c93d2ea3259e53",
+  "source_timestamp": "2026-09-06T04:10:56.916221+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c164.html",
+  "raw_sha256": "756c290ab67bd52a8d3d343971ab603ad40b93e0d0816a31f0c93d2ea3259e53",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-类象",
+      "text": "神趣八法-类象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c164:p0001",
+      "sha256": "a3d52b5555841800875d40a02f8cedfcb2f603c6a5e22974c8c1111fbf1f25e8"
+    },
+    {
+      "section": "神趣八法-类象",
+      "text": "类象者，乃天地一类也。如春生人，甲乙天干，地支寅卯辰全无间断破坏，谓之东方一片秀气，最怕引至时为死绝之乡，谓之破了秀气。运至死绝，即不吉。或时上年上引之生旺，谓秀气加临，十分大美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c164:p0002",
+      "sha256": "712fe9ccaa4689831b1df970c3b2942b4e90d770c4e2dd7821688f3caeb27a9d"
+    },
+    {
+      "section": "神趣八法-类象",
+      "text": "眉批：春以甲乙，夏以丙丁，秋以庚辛，冬以壬癸，中以戊己，月亦如此，谓之类象，金火水土同此。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 45,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c164:p0003",
+      "sha256": "91a5a0868d529253686a0909fa6125019fd36bb6e19dccc294541c5ef19d6e45"
+    },
+    {
+      "section": "神趣八法-类象",
+      "text": "又曰：类者合成一家之意也。如甲乙得亥卯未会成木局，五行从其重要者为类。或曰：如比肩之类，五行皆归纯一。天干一类，本非其象。或类化气而不成局，或类印绶而不成印，靠别人之力，入赘过房命也。如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c164:p0004",
+      "sha256": "f98632b77aceecf20e34e975e30eb18dd2bf473a78e0ffa47b15718b86e6a4ca"
+    },
+    {
+      "section": "神趣八法-类象",
+      "text": "丙寅 戊戌 庚戌 戊寅，二戊生庚印绶，二寅克戊为七杀，寅戌火局，年干透丙，似印非印，是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c164:p0005",
+      "sha256": "8fec39dd99bca02f885d1e6ef287ed1f8a096f0948e3d172ec2db4b66dc9fa85"
+    }
+  ]
+}

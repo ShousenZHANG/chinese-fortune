@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c084",
+  "title": "论食神",
+  "source_url": "https://luckclub.cn/bazi/001/084/",
+  "revision": "sha256:28c4681cb2dde6fda049199818df4c9bf34be8a451d77d48bef790315181ba57",
+  "source_timestamp": "2026-09-06T04:10:42.185341+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c084.html",
+  "raw_sha256": "28c4681cb2dde6fda049199818df4c9bf34be8a451d77d48bef790315181ba57",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论食神",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论食神",
+      "text": "论食神",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0002",
+      "sha256": "d9541e34ffd748964d5fbb694251cc30e02d22a30e8f01270ba9aacb836f330e"
+    },
+    {
+      "section": "论食神",
+      "text": "食神者，生我财神之谓也。如甲属木，丙属火，名盗气，故谓之食神，何也？殊不知丙能生我戊土，甲食丙之成财，戊为甲之财，故以此名之也。命中带此者，主人财厚食丰、腹量宽宏、肌体肥大、化游自足、有子息，有寿考。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0003",
+      "sha256": "e67a882d605e352a31e46f53faf32734b23948666e33307ab20e4a59ab42932c"
+    },
+    {
+      "section": "论食神",
+      "text": "食不喜见官星，忌倒食，恐伤其食神。喜财食神相食，独一位见之，此为福人，然多亦不清。却喜身旺，不喜印绶，亦恐伤其食神也。如运得地，方可发福，大概与财神相似。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0004",
+      "sha256": "10e863f22dd84607a6de8e0c2444401388982c6b74e55b6ba01120ce6edb0c47"
+    },
+    {
+      "section": "论食神",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0005",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "论食神",
+      "text": "己未 己巳 丁未 辛丑。丁见己为食神，有一丑巳合起金局，得之为财，又喜身不弱，所以有官亦有寿也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0006",
+      "sha256": "bf5b2191ac51219ebb54b0efc61458b451ee77118fc94cb3a4f01968ab9b03f7"
+    },
+    {
+      "section": "论食神",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0007",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "论食神",
+      "text": "乙巳 乙酉 癸酉 乙卯。此命三见乙为食，见巳酉丑合金局为印绶，又有三乙化为伤官，癸用乙为食神，被金局来克乙木，再被三乙并卯旺克我官，所以名利都无成也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0008",
+      "sha256": "fddcce60230dbf12301557116bf6b1b4fd8e78df1f3ed31a5bab31b5f608ab1d"
+    },
+    {
+      "section": "论食神",
+      "text": "食神有气胜财官。诗诀曰：“凡甲见丙为盗气，丙去生财号食神，心慈体广福食厚，若临印绶主难成。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c084:p0009",
+      "sha256": "0f9af96742ff6499c3bc4491a809fc73b951af881bda98a941a1d6329dcc7e65"
+    },
+    {
+      "section": "论食神",
+      "text": "眉批：甲见丙为食神，乙见丁为食神，丙见戊为食神，丁见己为食神，戊见庚为食神，己见辛为食神，庚见壬为食神，辛见癸为食神，壬见甲为食神，癸见乙为食神。食神诗诀，食神有气胜财官，先要他强旺本干，若是反伤来夺食，忙忙辛苦祸千般。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 110,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c084:p0010",
+      "sha256": "114f2b8734a359dee836d554bf938626d7a3db021dd66df34af420e8cc83ba79"
+    }
+  ]
+}

@@ -12,9 +12,9 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
 from typing import Any
 
+from request_time import add_request_arguments, resolve_time
 from utils import (
     ensure_utf8_stdio,
     error_envelope,
@@ -148,10 +148,14 @@ def cmd_lunar2solar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
 
 
 def cmd_today(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
-    now = datetime.now()
+    try:
+        now, time_context = resolve_time(args)
+    except ValueError as exc:
+        json_print(error_envelope('lunar_convert', 'invalid_time_context', str(exc)))
+        return 1
     solar = Solar.fromYmdHms(now.year, now.month, now.day, now.hour, now.minute, 0)
     lunar = solar.getLunar()
-    json_print({"mode": "today", "now_iso": now.isoformat(),
+    json_print({"mode": "today", "now_iso": now.isoformat(), "time_context": time_context,
                 **_serialize(solar, lunar, hour_known=True)})
     return 0
 
@@ -192,7 +196,8 @@ def build_parser() -> argparse.ArgumentParser:
                     help="出生时 0-23; 省略则不输出时柱 (不揣测时辰)")
     p2.add_argument("--leap", action="store_true", help="是否闰月")
 
-    sub.add_parser("today", help="查询今日万年历")
+    today = sub.add_parser("today", help="查询用户所在地今日万年历")
+    add_request_arguments(today)
 
     return p
 

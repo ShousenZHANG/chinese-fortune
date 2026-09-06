@@ -1,0 +1,161 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c217",
+  "title": "正官诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/217/",
+  "revision": "sha256:c095c00e89e4e0ef0ac27394a3be854d8417888b06a80baff786c166719d53cd",
+  "source_timestamp": "2026-09-06T04:11:07.485013+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c217.html",
+  "raw_sha256": "c095c00e89e4e0ef0ac27394a3be854d8417888b06a80baff786c166719d53cd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "正官诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正官诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0002",
+      "sha256": "aaf2bc19d78c1561adc0f2601927955dc6d228ac4c373c9ef9e4f8677f507c19"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正官须在月中求，天破无伤贵不休，玉勒金鞍真富贵，两行旌节上皇州。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0003",
+      "sha256": "e882b6ef9cad135fb45b1474445e244ba039047f6deaf09ab13f47801c645b3d"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正气官星月上推，无冲无破始为奇，中年岁运来相助，将相公侯总可为。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0004",
+      "sha256": "1556360911e57f641fa7f7cc81c3c0dd3a6ab752247d4d5d53cc6aec2637069e"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正官仁德性情纯，词馆文章可立身，官印相生逢岁运，玉堂金马坐朝臣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0005",
+      "sha256": "4d799651fc5ddf10c0f48aab0a3d7be3db221119971f228820bd75ee751a2689"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正官大抵要身强，气弱须求运旺方，岁运更逢生旺地，无冲无破是荣昌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0006",
+      "sha256": "d2b125c234bd445c4eae44fd20f0f40a6b030fc2c7707ace5bdd3b9486e31080"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "日干为主透官星，须要提纲见丙丁，金水相生成下格，火来拘聚旺财名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0007",
+      "sha256": "f7232c141a85058a8e4274d480556432fa957285f161ab85a74121f60315c644"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "辛日透丙月逢寅，格中反化发财根，官星不许重相见，运至冲刑怕酉申。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0008",
+      "sha256": "115c48045bafe07773c23373b806ff9ae49fb01b268a100a002e3c35cf5f4da2"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "八月官星得正名，格中大怕卯和丁，若还柱内去其忌，运亦如之贵亦宁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0009",
+      "sha256": "cf7dc6b32c5610bd351b150628af6f36bec9a26f77560e00f125eff0b6c74be2"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "补：",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0010",
+      "sha256": "ad592f8b264aaeddf8801e317f934c68fd9278174ad0fac30c18e20ba79ba084"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "大抵官星祸福真，正偏杂乱太无情，露官藏杀多为福，露杀藏官大祸兴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0011",
+      "sha256": "4ef6517d7c23ae9ab79441181d54fcd76177cfabccfb6db0324a24618f4c3829"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正气官星用月支，喜逢财印到年时，破害冲空俱不犯，富贵双全报尔知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0012",
+      "sha256": "08948e2c1a1ff2abc7bd75c9bef37111fda00e08dfe39cd7c35e212e803e5df4"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "官星不可被刑冲，官杀同来吉变凶，化杀为官方是吉，变官为杀祸重重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0013",
+      "sha256": "d4d6fba322ecd0777f8c9a0a327d24cea4ef53d70ac74ab084dc3fa162c1e86b"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "生月官星坐禄乡，日辰生旺福无疆，有财有印无伤破，年少成名坐玉堂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0014",
+      "sha256": "a65b7711139b7b56d2b9698a82182d576fa5bdb132d7abb743aa6b4c7b1af4f1"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "月逢正禄号真官，不犯刑伤禄最宽，日主兴隆名利显，运逢财印步金銮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0015",
+      "sha256": "7827d4f1e0439cf8a8e47bdf08302e17a10028182971e5974411e1ba34959e99"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "印多官多为贵命，官旺身衰反为病，官多身旺化为财，财旺身衰贫病并。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0016",
+      "sha256": "159844cb83e8795ae7263e357e33314ac7baafae9af4e4e8b5349c0de911a217"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "正官大抵要纯和，四柱无伤擢显科，时上喜逢财健旺，柱中欣见印生多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0017",
+      "sha256": "72902ed1a2c9bf4db245ee543e4c866af13ee29158fefde78d1ddbfff7b5f2db"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "提纲独遇为真贵，年位重逢乃太多，别处若有杀来混，反为辛苦受奔波。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c217:p0018",
+      "sha256": "4eff9a20f73f5e7b22557228cc93841ffd3fa352fecbd455f9f6db7e75951189"
+    },
+    {
+      "section": "正官诗诀",
+      "text": "眉批：“月中”，月令支中，如甲日生酉月，酉工辛金是官也。有官无印不得为掌印之职位，佐二清闲之职。“玉堂”，翰林院堂名，宋徽宗飞帛书“玉堂”二字。“金马”，汉未央宫侧鼎名，待诏近门为金马门，此言己以甲为官喜火，火生土为贵。辛金月寅，以丙为官，官且弱，寅乃木旺，辛以木为财反旺。甲以辛酉为官，忌见丁卯伤之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 151,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c217:p0019",
+      "sha256": "def778770fb893f8bf140a053cf3d1a41ed8e704476afeee56f958bc48abf1ba"
+    }
+  ]
+}

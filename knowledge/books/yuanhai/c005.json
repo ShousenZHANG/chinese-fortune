@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c005",
+  "title": "十干所属方位十二支所属论",
+  "source_url": "https://luckclub.cn/bazi/001/005/",
+  "revision": "sha256:89902211b931f6a4e711541224a89164ab8edc4e308c6960493d2500c078da8b",
+  "source_timestamp": "2026-09-06T04:10:25.492536+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c005.html",
+  "raw_sha256": "89902211b931f6a4e711541224a89164ab8edc4e308c6960493d2500c078da8b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "十干所属方位十二支所属论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0002",
+      "sha256": "d15af60d23e35633d77966c14b69dbc76dc4249d6f8307c9d78a371f9199ef4a"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "甲乙木属东方(寅卯辰之位为东方青龙之象)，丙丁火属南方(巳午未之位为南方朱雀之象)，戊己土主中央(辰戌丑未位为勾陈腾蛇之象)，庚辛金属西方(申酉戌之位为西方白虎之象)，壬癸水主北方(亥子丑之位为北方玄武之象)。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0003",
+      "sha256": "a61e06d04cd824799717ed420e8058ed6564650392606404934e1fd3baa9cc4c"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "是时大挠氏虽以甲乙属木，丙丁属火，戊己属土，庚辛属金，壬癸属水。又以支元寅卯属木，巳午属火，申酉属金，亥子属水，辰戌丑未属土，其理何义？或曰：东方有神太昊，乘震执规司春，生仁风和气，万物发生，所以木居之故，甲乙寅卯同也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0004",
+      "sha256": "8cc20eb235323fed2220561fddac7b8bb5ded8b80bb2b4d59fc0bc3cde09bfee"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "南方有神农帝，乘离执衡司夏，生艳阳酷气，万物至此咸齐，所以火居之故，丙丁巳午同也。(夏天主长育万物，草木茂盛，咸赖火德之功也。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0005",
+      "sha256": "1d4b9818ff7a2ac6a2010820a684c347a621b184cda62cdc609d3fe02c718973"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "西方有神少吴，乘兑执矩司秋，生肃杀静气，万物到此收敛，所以金居之故，庚辛申酉同也。(秋气谓金如刀，英气肃杀，草木凋零，成熟收气之时。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0006",
+      "sha256": "7692c1ae27cd5983bb96ca6a9868852c05c7814775ccc32ca1958d75e7b22eb4"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "北方有神颛帝，乘坎执权司冬，生凝结严气，万物到此藏伏，所以水居之故，壬癸亥子同也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0007",
+      "sha256": "a9fa2d14aebc51fdb3107194960281d8f8110f3f6af5c8e9114912824d77ed69"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "中央有神黄帝，乘坤执绳司中土，况木火金水皆不可无土，故将戊己居中央，辰戌丑未散四维，各得所占。(四维，春三月，夏六月，秋九月，冬十二月。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0008",
+      "sha256": "23cb1616945d8fc2e25c81c0b7382292fbc919e27a5b57a72579dfd4e8739fb8"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "何公论曰：天若无土，不能圆盖於上；地若无土，不能厚载於地，五谷不生；人若无土，不能营运於中，五行不立(谓仁义礼智信为五常，金木水火土为五行)。此三才不可缺土也(三才谓天地人)。木若无土，有失载培之力；火若无土，不能烛照四方；金若无土，难施锋锐之气；水若无土，不能堤泛滥之波；土若无水，不能长育万物。此所以五行皆不可无土。所以土居中央，支散四维，建立五行而成也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c005:p0009",
+      "sha256": "63e26cf27e5387d79cd74f4e6390eb62529a35c5a1f42a07faa05ff4a92b1f0c"
+    },
+    {
+      "section": "十干所属方位十二支所属论",
+      "text": "眉批：甲乙木青色，丙丁火赤色，戊己土黄色，庚辛金白色，壬癸水黑色。木主仁，火主礼，金主义，水主智，土主信。“太昊”，伏羲氏。“颛帝”，高阳氏，黄帝之孙。土黄色，黄帝以信德治天下，故名黄帝。此论十干之所属也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 103,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c005:p0010",
+      "sha256": "ec6edf93966861ac4818cba6619d41bf3050128ccf24395504e141b94b40c3c3"
+    }
+  ]
+}

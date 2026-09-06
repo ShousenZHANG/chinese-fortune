@@ -1,0 +1,154 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c258",
+  "title": "化气诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/258/",
+  "revision": "sha256:6eae37c59d8f9cb01780c917d321c93578f1766a367c0180e16acecc274036dc",
+  "source_timestamp": "2026-09-06T04:11:16.861308+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c258.html",
+  "raw_sha256": "6eae37c59d8f9cb01780c917d321c93578f1766a367c0180e16acecc274036dc",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "化气诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "化气诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0002",
+      "sha256": "15f3c06bfce29d7fe6ca424c29f69c8254ba15def8c2249c1716bce4b9d9a4c1"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "甲己化土乙庚金，局中奇妙最难寻，如何六格分高下，贵贱方知论浅深。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0003",
+      "sha256": "a54e124bf67eb8c6a18690b0b4b18ebb00ce09b0ba8549a429edc721c01684b4"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "六乙坐亥多逢木，庚金相会透时干，干生无火方成化，又恐金多反作难。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0004",
+      "sha256": "45053c6b0def6fa2a19d95588038f8c8f9f74f577b076ab3d2efe17fb49e6409"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "丁壬化木在寅时，亥卯生提是福基，除此二宫皆别论，金多犹恐反伤之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0005",
+      "sha256": "0f1c137e088e06bf581a2bfed0096db24fc76cea6ee44317bf5f7ba45903d66f"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "戊癸南方火焰高，胜光时上显英豪，局中无水伤年月，献赋龙门夺锦袍。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0006",
+      "sha256": "f54f4411537c73f930f66f211e3d06fc42988d58a6080837590bf5014ee1fec9"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "丙辛化水生冬月，阴日阳时须见清，有土局中须破用，得金相助发前程。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0007",
+      "sha256": "7de4c4cfa9dd11fc00013e1911edeea6dcfb0177c4fec5a1dcd0d8a7058f3cb9"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "丁壬化木喜逢寅，盖世文章绝等伦，曲直更归年月地，少年平步上青云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0008",
+      "sha256": "11277200afc053055468beac61fd768b65ca9bdfdb610fce60b0f0ce085d3898"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "丁壬化木入金乡，苟禄蝇营空自忙，气喘残伤无足取，眼前骨肉亦参商。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0009",
+      "sha256": "905a26e8429c2f20ef5f5908b540871417427ff83fa8199afb069684f48aed8a"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "丙辛四柱月中生，变化艰辛福力增，土数重重贫且贱，飘飘身世若浮萍。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0010",
+      "sha256": "e256ded090cb3598d066efccc5b3f4d1cb6e5b5ae302b5df8915b9f4a6823144"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "丙辛化合喜逢申，翰苑英蜚气象新，润下若居年月上，须知不是等闲人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0011",
+      "sha256": "9a3ef3fd9b9db9b7542c222524954c5f351946339177a29f07204d017cfa8796"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "乙庚金局旺於西，时遇从魁是格奇，辰戌丑未如相生，此是名门将相儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0012",
+      "sha256": "347dfe2964a4f7fb59d5e0721854cfc68d435f687d9a5f3e5e3e1659a685e246"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "乙庚最怕火炎阳，志气消磨主不良，寅午重逢为下格，随缘奔走觅衣粮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0013",
+      "sha256": "f8a427a2859172f12eb7111fcd62f76eb5450563d700cdc4476f88b157b15d29"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "天元戊癸支藏水，败坏门庭事绪多，行运更逢生旺水，伤妻克子起风波。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0014",
+      "sha256": "7930d34a292fba51c078868b01fe543922e5a68f8a9f56d0b72cd8d47d5e3f19"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "甲己中央化土神，时逢辰日脱埃尘，局中岁月趋火地，方显功名富贵人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0015",
+      "sha256": "f3c6b524a6f56a8838ba4d5362aa7f94d5a0543eefbac4f2e13bb5ba29ad7ac9"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "甲己干头生遇春，平生作事漫劳神，百般机巧番成拙，孤苦伶仃走不停。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0016",
+      "sha256": "1948edfcb579c9e36101777d992f62f4d18cec4fabf5674a22a036992a2239b0"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c258:p0017",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "化气诗诀",
+      "text": "此言甲己日与乙庚日，土金之化。乙亥日主，干头有庚金，即乙与庚合而化金。丁与壬合逢寅木而化，有木局则从木论。戊与癸合化火，喜行南方忌北方。水系北方与西方，忌辰戌丑未。丁壬化木喜行东方运，忌庚辛金破木伤，化之若无，主其人不恶疾，也骨肉伤残。乙庚化金喜行四季，主生金吉，南方不利矣。乙庚金遇火克则不吉。戊癸化尽又有火在支无害，火变复行水方则休矣。土喜火生，忌木为害。甲己化土遇春，则木旺矣，受此剥削则主孤寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c258:p0018",
+      "sha256": "8a57e1f893f570c680aeef88ad603da4c1174e7f07dae49e82671a0f73e0d04e"
+    }
+  ]
+}

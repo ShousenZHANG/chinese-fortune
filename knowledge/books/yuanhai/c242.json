@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c242",
+  "title": "六阴朝阳诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/242/",
+  "revision": "sha256:b42fa87e0d4ce5b64a16c64930f47d24ba3260fbfb0d0489df50ef912c91f377",
+  "source_timestamp": "2026-09-06T04:11:13.282801+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c242.html",
+  "raw_sha256": "b42fa87e0d4ce5b64a16c64930f47d24ba3260fbfb0d0489df50ef912c91f377",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "六阴朝阳诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0002",
+      "sha256": "0d40749b5a71c5730d0fe06c4bc5757ec48027316d3fd9cf03a24afd917959e6"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "辛日单单逢戊子，六阴贵格喜朝阳，丙丁巳午休填实，岁运轮逢一例评。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0003",
+      "sha256": "6f171e3d99c525ac6f7a3bffef37573f8139a4250bd288c30e3a272e3b01d251"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "南地平平最嫌北，西方第一次东方，若还子字无相遇，贵处朝堂姓字香。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0004",
+      "sha256": "e412e1288989fec301d31dc27816d66758beafbe99fd263ce59500207b4e231c"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "戊子时逢日主辛，阴阳朝位贵超群，官星七杀休相见，巳马南离局里镇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0005",
+      "sha256": "88fde0f0d7e5c40f2000fab55d6d4b2c6e94a80273e978787b936e6c153c5eb4"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "岁月有财寻别格，辛中丑绊又非真，断然此格当为贵，西运行来作辅臣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0006",
+      "sha256": "920803b1ccee4d079f05e6b4c8001ce93c3f36a7914b2eb22953e1a4bd8dab08"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "辛逢戊子最相宜，名利高迁折桂技，四季秋生无亥字，荣华富贵业尤奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0007",
+      "sha256": "f4a8d5556c592efe7b56748650b8e42051391573d8596943f91eabb5de77a5a7"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "六阴行运喜西方，临在东方也吉昌，若到北方凶且畏，南离冲破主灾殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c242:p0008",
+      "sha256": "2d718ac2bd246567f29ac5a1dc7b340bed1edf3510caa430a089a43d2238825e"
+    },
+    {
+      "section": "六阴朝阳诗诀",
+      "text": "眉批：此以我动丙火为辛之官，暗合取贵，无官星方用此例。以辛为阴，以子为阳，忌南方火旺，有火即是官星，不用此格。西方金进火贵，亥乃北方水地，金生水，泄其气，秋昌金至善，六阴庚辛日，东方属木，财运亦然。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 99,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c242:p0009",
+      "sha256": "162d77c9d72c303fd1db282fcc2ace4a136d5785d4e03f774eefd0d75b7bc2c8"
+    }
+  ]
+}

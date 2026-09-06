@@ -1,0 +1,94 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c207",
+  "title": "五月建午候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/207/",
+  "revision": "sha256:39ea9b8c33979ba9a5df8686eff43bdf519476e05489f3c9262a82f3752b2737",
+  "source_timestamp": "2026-09-06T04:11:05.439501+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c207.html",
+  "raw_sha256": "39ea9b8c33979ba9a5df8686eff43bdf519476e05489f3c9262a82f3752b2737",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "五月建午候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c207:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "五月建午候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c207:p0002",
+      "sha256": "83be4faeeff6c71c10e76910b0d64ed26a5b5f793cecd27fddf1dd233353794a"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "五月宫中火正荣，高低贵贱两分明，财官印用直生旺，化杀欣逢要水平。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c207:p0003",
+      "sha256": "1ecb2bf5b449a1e758fb1dffcc684b904d971a3b32718a575d2db7d1624ad10b"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "眉批：五月丁火旺二十二日，丙火旺七日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c207:p0004",
+      "sha256": "5674c2b6cba1940ff781bf79445690ad6109461a080ac139a3279d88e0ae0a0d"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "五月炎炎则论火，如逢水火自然兴，西方金木多防克，丑土周还怕子迎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c207:p0005",
+      "sha256": "741c19951b3493c92a37be30a4fb1298d40867c59c1eb47114774597df54bcd8"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "午宫怕子水来冲，用火逢冲数必凶，日主庚辛如会杀，运中逢此反成功。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c207:p0006",
+      "sha256": "f92a70626ed8996629dcf0fa22cc21314ad4eebdcab0896212aac785b17982a3"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "眉批：言子宫相冲之救，午宫以丁火为用，忌子宫癸水来冲。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c207:p0007",
+      "sha256": "ce66c8a4fc824292fc2819cc54279faf4c503257d2df4840ec145c0e725f6759"
+    },
+    {
+      "section": "五月建午候诗诀",
+      "text": "财官印绶如藏午，西方休临申子辰，木火土乡还富贵，休来水土更嫌金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c207:p0008",
+      "sha256": "ec11e7fd7f847b53a0641b0f028e4386c3c8640d6681174d9cabda975e0ec700"
+    }
+  ]
+}

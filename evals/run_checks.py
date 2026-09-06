@@ -87,7 +87,7 @@ def run_json(args: list[str]) -> dict:
 def check_core_scripts() -> None:
     cases = [
         ["scripts/yijing_cast.py", "coins", "--seed", "42", "--question", "测试"],
-        ["scripts/meihua_cast.py", "numbers", "--upper", "3", "--lower", "5", "--question", "测试"],
+        ["scripts/meihua_cast.py", "--datetime", "2026-06-24T13:05", "numbers", "--upper", "3", "--lower", "5", "--question", "测试"],
         ["scripts/tarot_draw.py", "three", "--seed", "42", "--question", "测试"],
         ["scripts/name_analyze.py", "--name", "张子涵"],
         ["scripts/zodiac_compat.py", "compat", "--a", "虎", "--b", "猴"],

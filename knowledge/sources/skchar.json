@@ -1,0 +1,340 @@
+{
+  "source_url": "https://zh.wikisource.org/w/index.php?title=Module%3ASKchar&oldid=9013306",
+  "revision": "9013306",
+  "license": "CC BY-SA 4.0; Wikisource contributors",
+  "source_sha256": "6d66293622d00f29eca468e57114c1c931b45c66bd691bc7c9ceca00a4842aaa",
+  "entries": {
+    "269": {
+      "character": "𣷉",
+      "description": "𣷉"
+    },
+    "892": {
+      "character": "𤥣",
+      "description": "𤥣"
+    },
+    "977": {
+      "character": null,
+      "description": "兔"
+    },
+    "998": {
+      "character": "𡒄",
+      "description": "𡒄"
+    },
+    "1033": {
+      "character": "𠻳",
+      "description": "𠻳"
+    },
+    "1216": {
+      "character": "𤨏",
+      "description": "𤨏"
+    },
+    "1437": {
+      "character": "𤍜",
+      "description": "𤍜"
+    },
+    "1452": {
+      "character": "𨽻",
+      "description": "𨽻"
+    },
+    "1505": {
+      "character": "𦕈",
+      "description": "𦕈"
+    },
+    "1606": {
+      "character": "𦂳",
+      "description": "𦂳"
+    },
+    "1841": {
+      "character": "龜",
+      "description": "龜"
+    },
+    "1866": {
+      "character": "𣺌",
+      "description": "𣺌"
+    },
+    "1974": {
+      "character": "𠉀",
+      "description": "𠉀"
+    },
+    "2025": {
+      "character": "⿰",
+      "description": "⿰"
+    },
+    "2026": {
+      "character": "⿱",
+      "description": "⿱"
+    },
+    "2174": {
+      "character": "𣋌",
+      "description": "𣋌"
+    },
+    "2177": {
+      "character": "𣲖",
+      "description": "𣲖"
+    },
+    "2201": {
+      "character": "𤓰",
+      "description": "𤓰"
+    },
+    "2219": {
+      "character": "𢙣",
+      "description": "𢙣"
+    },
+    "2504": {
+      "character": "𤤽",
+      "description": "𤤽"
+    },
+    "2557": {
+      "character": "𡎊",
+      "description": "𡎊"
+    },
+    "2596": {
+      "character": "𦙍",
+      "description": "𦙍"
+    },
+    "2599": {
+      "character": "𠔃",
+      "description": "𠔃"
+    },
+    "2624": {
+      "character": "𠑽",
+      "description": "𠑽"
+    },
+    "2625": {
+      "character": "𠒋",
+      "description": "𠒋"
+    },
+    "2628": {
+      "character": null,
+      "description": "⿳亠口⿱冖至 -- 臺"
+    },
+    "2636": {
+      "character": "",
+      "description": ""
+    },
+    "2644": {
+      "character": "𠲒",
+      "description": "𠲒"
+    },
+    "2652": {
+      "character": "𫝊",
+      "description": "𫝊"
+    },
+    "2659": {
+      "character": null,
+      "description": "⿰亻⿱龷甸 -- 僃"
+    },
+    "2684": {
+      "character": null,
+      "description": "冢"
+    },
+    "2685": {
+      "character": "𠖥",
+      "description": "𠖥"
+    },
+    "2686": {
+      "character": null,
+      "description": "⿰冫麦 -- 凌"
+    },
+    "2694": {
+      "character": "𠛬",
+      "description": "𠛬"
+    },
+    "2720": {
+      "character": "𭅺",
+      "description": "𭅺"
+    },
+    "2728": {
+      "character": null,
+      "description": "段 -- 𠭊 or 叚 ?"
+    },
+    "2753": {
+      "character": null,
+      "description": "嗤"
+    },
+    "2791": {
+      "character": "𡍼",
+      "description": "𡍼"
+    },
+    "2807": {
+      "character": "𡒦",
+      "description": "𡒦"
+    },
+    "2824": {
+      "character": "𠫵",
+      "description": "𠫵"
+    },
+    "2834": {
+      "character": "𡚒",
+      "description": "𡚒"
+    },
+    "2917": {
+      "character": "𢃄",
+      "description": "𢃄"
+    },
+    "2959": {
+      "character": null,
+      "description": "弦"
+    },
+    "2982": {
+      "character": null,
+      "description": "㤀"
+    },
+    "3000": {
+      "character": null,
+      "description": "惨"
+    },
+    "3001": {
+      "character": null,
+      "description": "愽"
+    },
+    "3010": {
+      "character": "𢡟",
+      "description": "𢡟"
+    },
+    "3011": {
+      "character": "𢡖",
+      "description": "𢡖"
+    },
+    "3036": {
+      "character": "𢫎",
+      "description": "𢫎"
+    },
+    "3039": {
+      "character": null,
+      "description": "哲"
+    },
+    "3220": {
+      "character": null,
+      "description": "滛"
+    },
+    "3239": {
+      "character": null,
+      "description": "⿲氵身攵"
+    },
+    "3272": {
+      "character": "𤇍",
+      "description": "𤇍"
+    },
+    "3275": {
+      "character": "𤇺",
+      "description": "𤇺"
+    },
+    "3287": {
+      "character": "𤎅",
+      "description": "𤎅"
+    },
+    "3295": {
+      "character": null,
+      "description": "㸃"
+    },
+    "3303": {
+      "character": "𦦨",
+      "description": "𦦨"
+    },
+    "3309": {
+      "character": "𬋩",
+      "description": "𬋩"
+    },
+    "3392": {
+      "character": null,
+      "description": "眩"
+    },
+    "3410": {
+      "character": "𥌒",
+      "description": "𥌒"
+    },
+    "3475": {
+      "character": "𮅕",
+      "description": "𮅕"
+    },
+    "3477": {
+      "character": "𥮅",
+      "description": "𥮅"
+    },
+    "3487": {
+      "character": "𬖂",
+      "description": "𬖂"
+    },
+    "3559": {
+      "character": "𫟍",
+      "description": "𫟍"
+    },
+    "3622": {
+      "character": "𧇊",
+      "description": "𧇊"
+    },
+    "3623": {
+      "character": null,
+      "description": "⿰虗亏 -- 虧"
+    },
+    "3681": {
+      "character": "𫎇",
+      "description": "𫎇"
+    },
+    "3694": {
+      "character": null,
+      "description": "賻"
+    },
+    "3741": {
+      "character": null,
+      "description": "逄"
+    },
+    "3746": {
+      "character": "𬨨",
+      "description": "𬨨"
+    },
+    "3748": {
+      "character": "𨔛",
+      "description": "𨔛"
+    },
+    "3751": {
+      "character": null,
+      "description": "⿺辶𦮔"
+    },
+    "3769": {
+      "character": "𫑗",
+      "description": "𫑗"
+    },
+    "3800": {
+      "character": "𨳩",
+      "description": "𨳩"
+    },
+    "3813": {
+      "character": "𨺗",
+      "description": "𨺗"
+    },
+    "3814": {
+      "character": "𨼆",
+      "description": "𨼆"
+    },
+    "3864": {
+      "character": "𩯭",
+      "description": "𩯭"
+    },
+    "3904": {
+      "character": null,
+      "description": "搏"
+    },
+    "3944": {
+      "character": "𠫭",
+      "description": "𠫭"
+    },
+    "3947": {
+      "character": null,
+      "description": "愓 --（『昜』上『旦』之『日』與『一』相連）"
+    },
+    "3948": {
+      "character": null,
+      "description": "瘍"
+    },
+    "3949": {
+      "character": null,
+      "description": "場 --（『昜』上『旦』之『日』與『一』相連）"
+    },
+    "3951": {
+      "character": null,
+      "description": "揚 --（『昜』上『旦』之『日』與『一』相連）"
+    }
+  }
+}

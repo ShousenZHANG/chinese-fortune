@@ -1,0 +1,60 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c048",
+  "title": "胡焜序",
+  "source_url": "https://www.donglishuzhai.net/chapter/3713.html",
+  "revision": "sha256:11533d0d0bf3ab7241af819de346ca89992034811934b38662bba7e6a7d2e020",
+  "source_timestamp": "2026-09-06T04:17:52.028Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c048.html",
+  "raw_sha256": "11533d0d0bf3ab7241af819de346ca89992034811934b38662bba7e6a7d2e020",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "胡焜序",
+      "text": "余自束髮就傅，即喜讀子史諸集，暇則取《子平淵海大全》略爲流覽，亦頗曉其意。然無師授，而於五行生剋之理，終若有所未得者。後復購《三命通會》、《星平大成》諸書，悉心參究，晝夜思維，乃恍然於命之不可不信，而知命之君子當有以順受其正。",
+      "layer": "paratext",
+      "passage_id": "ziping:c048:p0001",
+      "sha256": "26bfd1248b2424ad94cb2d27d0ce1b8de697024c05de3d3f38acdda82e0d7c0f"
+    },
+    {
+      "section": "胡焜序",
+      "text": "戊子歲，余由副貢充補官學教習，館舍在阜城門右，得交同里章公君安，歡若生平，相得無間。每值館課暇，即詣君安寓談《三命》，彼此辯難，闡發無餘蘊。已而三年期滿，僦居宛平沈明府署，得讀山陰沈孝瞻先生所著《子平手錄》三十九篇，不覺爽然自失，悔前次之揣摩未至。遂携其書示君安，君安慨然嘆曰：「此談子平家真詮也！」",
+      "layer": "paratext",
+      "passage_id": "ziping:c048:p0002",
+      "sha256": "fcb4c66de269b277bb94ab96b61faa4ae6eb50fc073b9fd72e70006f259a4f42"
+    },
+    {
+      "section": "胡焜序",
+      "text": "先生諱燡燔，成乾隆己未進士，天資穎悟，學業淵邃，其於造化精微，固神而明之，變化從心者矣。觀其論用神之成敗得失，又用神之因成得敗、因敗得成，用神之必兼看於忌神，與用神先後生剋之別，並用神之透與會、有情無情、無力無力之辨，疑似毫芒，至詳且悉。是先生一生心血，全註於是，是安可以湮沒哉！",
+      "layer": "paratext",
+      "passage_id": "ziping:c048:p0003",
+      "sha256": "82e2be715c76867cbcd9001e4c52d2f862bca1a7d9c916f265e979df6edbe9cf"
+    },
+    {
+      "section": "胡焜序",
+      "text": "君安爰謀付剞劂，爲天下談命者立至當不易之準，而一切影響游移管窺蠡測之智，俱可以不惑，此亦談命家之幸也！且不惟談命家之幸，抑亦天下士君子之幸。何則？人能知命，則營競之心可以息，非分之想可以屏。凡一切富貴窮通壽夭之遭，皆聽之於天，而循循焉各安於義命，以共勉于聖賢之路，豈非士君子之厚幸哉！",
+      "layer": "paratext",
+      "passage_id": "ziping:c048:p0004",
+      "sha256": "c2d00b175e0e60567ef3a4bd16d2f5abbea928c785965e9f7c433bdd84bab69c"
+    },
+    {
+      "section": "胡焜序",
+      "text": "觀於此，而君安之不沒人善，公諸同好，其功不亦多乎哉？爰樂序其緣起。",
+      "layer": "paratext",
+      "passage_id": "ziping:c048:p0005",
+      "sha256": "67ead9470175cd7c7fe7d091cf4332e73a7f14cc73a4733bf2c72229641e4f4e"
+    },
+    {
+      "section": "胡焜序",
+      "text": "乾隆四十一年歲在丙申初夏同里後學胡焜倬雲甫謹識",
+      "layer": "paratext",
+      "passage_id": "ziping:c048:p0006",
+      "sha256": "72c7a4b40096392ddf814dae536a1f7daae2ef9315dec64f82b709404339c6d4"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c114",
+  "title": "内十八格-刑合格",
+  "source_url": "https://luckclub.cn/bazi/001/114/",
+  "revision": "sha256:d989b6cd6261dc05f8d9ec509a3dc3f4bf45c02bceb4b0de6dcddb2cff051aeb",
+  "source_timestamp": "2026-09-06T04:10:47.712092+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c114.html",
+  "raw_sha256": "d989b6cd6261dc05f8d9ec509a3dc3f4bf45c02bceb4b0de6dcddb2cff051aeb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-刑合格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "内十八格 - 刑合格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0002",
+      "sha256": "4a49053c65016756f8b3cca19c84626eb7198341c69b269869b1637e01c62dc2"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "此格以六癸日生人为主，用戊土为正气官星，喜逢甲寅时，用寅刑巳中戊土，癸日得官星。如庚寅刑不成(整理者按：癸日不可能得庚寅时)，惟甲寅时是，行运与飞天禄马同。若四柱中有戊字、巳字则减分数。又怕庚寅伤甲字，刑巳字，忌申字，则减分数，岁君大运亦同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0003",
+      "sha256": "91c345b1853d851d7665c92d558823ad7f3ba5b0c44dbc559b0d784fc9ba08c7"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "节度使，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0004",
+      "sha256": "63ed7ffa8c3eb64bb37b023663dc1fecc0b6c624b7405da6ea5d6a8259a0bfbf"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "己未 辛未 癸亥 甲寅",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0005",
+      "sha256": "e5eb907b54b4c8b34c917145ef6b49233b6e5af9a62e18dda86c4c37ec065b46"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "陈侍郎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0006",
+      "sha256": "7a8ce4fa8b873d4943dc20d249522320c7bfed7c0c889346be1d78110f645601"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "甲戌 甲戌 癸酉 甲寅",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0007",
+      "sha256": "d58c7195485ecfcfcd8a89ac16ad80e7cfeac9b87c0f330d83d172f9fedf4e5b"
+    },
+    {
+      "section": "内十八格-刑合格",
+      "text": "诗诀：阴水寅时格正清，又愁庚克不能刑，运行若不逢蛇地，方得清高有利名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c114:p0008",
+      "sha256": "d6bff7979944baaba24d9d8bdc32dbc625b4b4eee87f2802dc6925e9d0836779"
+    }
+  ]
+}

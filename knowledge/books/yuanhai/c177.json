@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c177",
+  "title": "论兴亡",
+  "source_url": "https://luckclub.cn/bazi/001/177/",
+  "revision": "sha256:d076a47f3a9aed7ad5c7ef2494a8d8f48969164e88c35dafd6cd131a95f91104",
+  "source_timestamp": "2026-09-06T04:10:59.384328+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c177.html",
+  "raw_sha256": "d076a47f3a9aed7ad5c7ef2494a8d8f48969164e88c35dafd6cd131a95f91104",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论兴亡",
+      "text": "论兴亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c177:p0001",
+      "sha256": "93b2863f156cda0f8eaff48f2c805dafb23823b9bd1bea1c1d2fed15e5417f98"
+    },
+    {
+      "section": "论兴亡",
+      "text": "夫人生柱中有纯杀为用也。杀神无制则为白屋穷途之人，或作豪门营干之士。故要逢制杀运，假杀而起，进用朝廷，操权威福，而不可脱制伏运。一入财乡，财能党杀，便兴祸患。如此官旺杀旺，运元恐失计，所以命党杀运倘来生凶。偶然遇流年财杀皆旺，杀神相党，并合兴殃，身主孤寒克害，轻则倾家徒配，重则刑弃其身，故其神杀并合，凶亡之可畏也。有如此杀刃者，一一难免祸焉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c177:p0002",
+      "sha256": "281626202d2ffa84d0af6b228888e0c23f4866d1a07566065e136fc5ac6532da"
+    },
+    {
+      "section": "论兴亡",
+      "text": "又有柱中月令正气官星，为一生贵气，唯逢印运则利。盖官星喜逢财旺以生之，印旺以护之，故令其人能行仁布德，纬国经邦，权重爵高，所以贵也。後遇杀神旺乡，杀神禄位，岁杀并临，官化为鬼，丧身必矣。不行杀运或逢伤官运，又无印绶治之，伤官得地，禄遭伤损，丧妻克子，剥职生灾，立可见矣。更遇流年党地，损官受克，必致亡为惨恶。故欲官禄逢伤，而免剥戮者，不甚难之乎？如有高见明识，知进退存亡之机，而保其身者，官禄逢伤，六亲免祸，亦当自己受恶疾而终者矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c177:p0003",
+      "sha256": "60dccf1e10e6a0da58f73d9d706809daefa364c1adeb68428eb1ce654308f6cf"
+    },
+    {
+      "section": "论兴亡",
+      "text": "又有四柱中所专用神无官杀气，唯偏财、正财当旺而已。财神当道隐隐兴隆，积财聚宝，但少贵矣。欲知且看行运如何，若财逢官禄旺之乡，又成富贵之局。设有不幸，财神脱局，羊刃相逢，财倾福败，多患其凶。及流年冲合羊刃，财神伤尽，元命衰绝，羊刃生凶，败亡极矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c177:p0004",
+      "sha256": "53e4e0cdb52a25047df7978cc4cdaa05488905ce8587abe24d822bb6de94bf78"
+    },
+    {
+      "section": "论兴亡",
+      "text": "眉批：“徒配”，谓犯徒罪，发配至馆驿罢站之罪。“岁杀”，流年地支再出，一太岁、二太空、三丧门之类。财官乃纯养之星，好善而不恶，无冲害，所以财遇印旺可言贵，恶杀相并则休，如今之良善或遇恶人，其时过当贵人和解矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 104,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c177:p0005",
+      "sha256": "d7c6cc106d46559519ced67acd24789e47ec06df32dd5b8b4d53a48fe581fc3e"
+    }
+  ]
+}

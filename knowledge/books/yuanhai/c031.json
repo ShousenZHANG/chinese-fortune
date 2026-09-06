@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c031",
+  "title": "论天厨贵人",
+  "source_url": "https://luckclub.cn/bazi/001/031/",
+  "revision": "sha256:fbf7fd17cb50065c4f34120bb35cad25c80d32c9df6e98edebb1981ffea4d080",
+  "source_timestamp": "2026-09-06T04:10:30.825864+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c031.html",
+  "raw_sha256": "fbf7fd17cb50065c4f34120bb35cad25c80d32c9df6e98edebb1981ffea4d080",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论天厨贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c031:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论天厨贵人",
+      "text": "论天厨贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c031:p0002",
+      "sha256": "5f322bb08225dc5eceb7d60bdd780526b61c970baf444a1eb04f14e98ce6a351"
+    },
+    {
+      "section": "论天厨贵人",
+      "text": "甲丙爱行双女游，乙丁狮子己金牛，戊坐阴阳庚鱼腹，二千石禄坐皇州，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c031:p0003",
+      "sha256": "161627676c0df8bad4598f3f38e875885fd0fb43840fbcd8a206602e0c3fbb63"
+    },
+    {
+      "section": "论天厨贵人",
+      "text": "癸用天蠍壬人马，辛到宝瓶禄自由，此是天厨注天禄，令人福慧两优游。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c031:p0004",
+      "sha256": "68cdfd7d32714a60deb96bb562ccc59087d968485ac88b25c8f2edcc1984a705"
+    },
+    {
+      "section": "论天厨贵人",
+      "text": "眉批：此以甲木生丙为命时，丙禄在巳，故乙巳为禄，如母食子也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 30,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c031:p0005",
+      "sha256": "e741b6b9657f1f0b7eb01073815e8670041408bc8aad862f65062b79c57a1a29"
+    }
+  ]
+}

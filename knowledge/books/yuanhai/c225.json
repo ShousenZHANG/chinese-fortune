@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c225",
+  "title": "刑合诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/225/",
+  "revision": "sha256:494a886830ab4b073cfe0342e207beee29fdc35daf8fe2e93d49b0af4745b5ca",
+  "source_timestamp": "2026-09-06T04:11:08.976141+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c225.html",
+  "raw_sha256": "494a886830ab4b073cfe0342e207beee29fdc35daf8fe2e93d49b0af4745b5ca",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "刑合诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "刑合诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0002",
+      "sha256": "c81f65d69bbb1fdf8b4c09b659ef824d74cddba718220b678778f862878b71e9"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "四柱支平合到刑，多因酒色丧其身，若临羊刃并七杀，定作黄泉路上人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0003",
+      "sha256": "567bd2c2a5b15b8dffbc38039262c75e24d12125127b657384b1ee0596726226"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "六癸日生时甲寅，假名刑合亦非真，月令若加亥子位，伤官格内倒推寻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0004",
+      "sha256": "4978b7f0466afc5a27791d308394987c2af229272e8fd00d92ff802fd0198c9e"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "癸日生人时甲寅，最嫌四柱带官星，若无戊己庚申字，壮岁荣华达帝京。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0005",
+      "sha256": "070ea1f27e9b5a89c132cc289021a294d834e28bba6a516b0289c0b74e8a6e68"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "但求癸日甲寅时，刑去官星贵可知，不喜庚金伤甲木，寅申冲破主忧危。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0006",
+      "sha256": "9c928df8052461dc9eb13276fab68a5c7fa32d2569d062209199426c2c8e1a8f"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "癸日寅时刑合格，入此格时须显赫，官星七杀莫相逢，甲庚己字为灾厄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0007",
+      "sha256": "9f32d549cbe5238ee6b43b94e66871618b5da8d311b90be18a539775f4bbe789"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "柱中若逢酉丑字，遇者英豪名利客，端详岁运定荣枯，此是子平真法则。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c225:p0008",
+      "sha256": "8e1dac6c9a07d1ac0b1d9baddfafa946318f8c3b5f7763d417791a46d9e895f6"
+    },
+    {
+      "section": "刑合诗诀",
+      "text": "眉批：寅刑巳，巳与申合，寅又冲申。“六癸日生时甲寅”，寅宫以甲为伤官，癸日甲寅刑巳申，戌土为官星，若四柱有子不是此论。或寅申冲破，则不吉，亦无贵气。若庚寅刑不成，酉丑邀巳金局助身。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 90,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c225:p0009",
+      "sha256": "9e957662d28e50070c1c53f7fe196efa58502d993511a919d61084af45792314"
+    }
+  ]
+}

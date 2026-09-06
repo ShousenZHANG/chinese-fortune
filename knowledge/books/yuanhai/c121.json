@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c121",
+  "title": "外十八格-勾陈得位格",
+  "source_url": "https://luckclub.cn/bazi/001/121/",
+  "revision": "sha256:0f3f485e72e0c7de46d02d3b0518ab83a38bc551ed0046e20c29216f77cb577c",
+  "source_timestamp": "2026-09-06T04:10:48.797158+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c121.html",
+  "raw_sha256": "0f3f485e72e0c7de46d02d3b0518ab83a38bc551ed0046e20c29216f77cb577c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-勾陈得位格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c121:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-勾陈得位格",
+      "text": "外十八格 - 勾陈得位格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c121:p0002",
+      "sha256": "0123e96d5c6dbd3c6abcf10493a527add6cbc657e254f3e9e5177968ceb06ebd"
+    },
+    {
+      "section": "外十八格-勾陈得位格",
+      "text": "此格以戊己日为勾陈，遇亥卯未木局为官、申子辰水局为财地是也。正是戊寅、戊子、戊申；己未、己亥、己卯日是也。忌刑冲杀旺则反生灾矣，岁君大运亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c121:p0003",
+      "sha256": "941fd1ed32f86acd90c6e05ce6ff92b552591140f270e365e400a71145e0fc32"
+    },
+    {
+      "section": "外十八格-勾陈得位格",
+      "text": "丁部督，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c121:p0004",
+      "sha256": "c4a15cf71ae23980887c34c833a9b9c51fcc72c3aaf9ee236c6aca969803261a"
+    },
+    {
+      "section": "外十八格-勾陈得位格",
+      "text": "丁亥 辛亥 己卯 戊辰",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c121:p0005",
+      "sha256": "09948031f165db399d4ce6c3623fa6c3679a3bf638ba7f9c31d6a0543719f252"
+    },
+    {
+      "section": "外十八格-勾陈得位格",
+      "text": "眉批：戊己勾陈得局清，财官相遇两为真，时令岁遇无冲害，富贵双全佐圣明。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c121:p0006",
+      "sha256": "175199f13fb471c30da7341e5a9f65eec160daa6d5899a5b3549d108d58e4dc0"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c227",
+  "title": "金神诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/227/",
+  "revision": "sha256:0eed1ef00bb522d85f44fe3a0ec90e3dce1ab00431281ff1aa3387acaff6e09a",
+  "source_timestamp": "2026-09-06T04:11:09.490749+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c227.html",
+  "raw_sha256": "0eed1ef00bb522d85f44fe3a0ec90e3dce1ab00431281ff1aa3387acaff6e09a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "金神诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "金神诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0002",
+      "sha256": "0c16d0547131cd479660818ae105930ab7d360fdf24789f130882a522fbd08c9"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "甲午时上见金神，杀刃相临真贵人，火木运中财禄发，如逢金水必伤身。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0003",
+      "sha256": "7c3c35d665d0e7fc0aad0ffc95ba6275f1bfd0de6bded464ffa98bbbc9f75a4f"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "金神遇火贵无疑，金水灾殃定有之，运到火乡多发达，官崇家富两相宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0004",
+      "sha256": "7fd439e62ece63c0e40f8890dc1a78a914b68b5345eb3db7b4906b617c4725ca"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "时遇金神贵气多，如逢羊刃却中和，若逢水运贫而疾，火制名高爵位峨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0005",
+      "sha256": "f2555139088c1ac1b5a9f9b2132d7d92b6b3477dd8c48f278ab26c614de37103"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "癸酉己巳并乙丑，时上逢之是福神，傲物恃才宜制伏，交逢杀刃贵人真。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0006",
+      "sha256": "91607c570d74607ca2c7c3eb9fe4af295f8648a63b39242b051e993b0c455d47"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "性多狠暴才明敏，遇水相生立困穷，制伏运行逢火局，超迁贵显禄千锺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c227:p0007",
+      "sha256": "d5a8fb57fef97dcecf2eab0adcb6d375bdc2820d1aaa53d5d70f4e39fa680640"
+    },
+    {
+      "section": "金神诗诀",
+      "text": "眉批：金神只有癸酉、己巳、乙丑，乃破财空祖，四柱要火制之为贵，带羊刃七杀为贵人，忌水运，如六甲日遇巳酉丑时是也，取巳酉丑三合为金局。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 66,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c227:p0008",
+      "sha256": "f3b9a1487ce908ace107c871dc39d3d01a72c5c2d9a0004119855b71875cfaef"
+    }
+  ]
+}

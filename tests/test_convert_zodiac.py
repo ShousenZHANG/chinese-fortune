@@ -48,7 +48,12 @@ def test_solar2lunar_invalid_date():
 def test_zodiac_info():
     d = run("zodiac_compat.py", "info", "--zodiac", "鼠")
     assert d["wuxing"] == "水"
-    assert isinstance(d["strengths"], list) and d["strengths"]
+    assert d["branch"] == "子"
+    assert d["yinyang"] == "阳"
+    assert set(d["liuhe_sanhe"]) == {"牛", "猴", "龙"}
+    assert d["liuchong"] == ["马"]
+    assert d["interpretation_status"] == "relations_only"
+    assert not {"traits", "strengths", "weaknesses", "industries", "best_match", "worst_match"}.intersection(d)
 
 
 def test_zodiac_year_lichun_vs_folk():
@@ -85,6 +90,20 @@ def test_zodiac_taisui_2026_horse_year():
     assert d["year_zodiac"] == "马"
     assert d["犯太岁"] == "马"
     assert d["冲太岁"] == "鼠"
+    assert "化解" not in json.dumps(d, ensure_ascii=False)
+
+
+@pytest.mark.parametrize("a,b,relation", [("鼠", "牛", "六合"), ("虎", "猴", "相冲"), ("虎", "马", "三合")])
+def test_zodiac_relations_are_not_personal_compatibility_verdicts(a, b, relation):
+    d = run("zodiac_compat.py", "compat", "--a", a, "--b", b)
+    assert relation in d["relations"]
+    assert relation in d["summary"]
+    assert d["verdict"] is None
+    assert d["score_kind"] == "legacy_heuristic_relation_index"
+    assert d["score_calibrated"] is False
+    assert "评分" not in d["summary"]
+    for removed in ("天作之合", "慎重对待", "需要包容", "相辅相成"):
+        assert removed not in json.dumps(d, ensure_ascii=False)
 
 
 # --------------------------------------------------------------------------- #

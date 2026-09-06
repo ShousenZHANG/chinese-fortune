@@ -1,0 +1,252 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c185",
+  "title": "络绎赋",
+  "source_url": "https://luckclub.cn/bazi/001/185/",
+  "revision": "sha256:d0c1e00e1f795cce349e0cf55f6c76e5355f0c03305d0610d145555f7ca34300",
+  "source_timestamp": "2026-09-06T04:11:00.670454+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c185.html",
+  "raw_sha256": "d0c1e00e1f795cce349e0cf55f6c76e5355f0c03305d0610d145555f7ca34300",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "络绎赋",
+      "text": "络绎赋",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0001",
+      "sha256": "ada3ba69a6774d671314e057d36a95f84b23a3c3104c1dd11998558e5817d70a"
+    },
+    {
+      "section": "络绎赋",
+      "text": "参天地之奥妙，测造化之幽微，别人生之贵贱，取法则於干支，决生死之吉凶，推得失之玄妙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0002",
+      "sha256": "53722d16ed49c196f8759ce268a76f988a7a8c519b6f74d4e0b4e05e49a02b8b"
+    },
+    {
+      "section": "络绎赋",
+      "text": "甲乙之木，最喜春生。壬癸之水，偏宜冬旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0003",
+      "sha256": "d1375741c77e4f907c3938e86dd341e558b3dd506d73d394d2dcf5cacf578fd2"
+    },
+    {
+      "section": "络绎赋",
+      "text": "丙丁火而夏明，庚辛金而秋锐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0004",
+      "sha256": "24732ed449acdba3f93ea2333baefac926d1e43f431754be5f7fd666cc232c1b"
+    },
+    {
+      "section": "络绎赋",
+      "text": "戊己两干之土，要旺四季之期。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0005",
+      "sha256": "0b1763dacba494f31494744a57905aaf40c9ccff8071ae593b280b6d1c6b1a86"
+    },
+    {
+      "section": "络绎赋",
+      "text": "日乃自身，须究强弱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0006",
+      "sha256": "73005387f06e06d133075d92b708d554cbdbe41517824a5375a04909fcf7d685"
+    },
+    {
+      "section": "络绎赋",
+      "text": "年为本主，宜细推详。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0007",
+      "sha256": "6ee04b01d9e7a86af0377e671727045eb2ff647395f243d8e2f64624b475325a"
+    },
+    {
+      "section": "络绎赋",
+      "text": "年干父兮支母，日干己兮支妻，月干兄兮支弟，时支女兮干儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0008",
+      "sha256": "f1d96b813a9cef60c2fcef9a0747acd3b39f22357f05eae3b1b75c4f1f211886"
+    },
+    {
+      "section": "络绎赋",
+      "text": "後杀克年，父母早丧；前杀克後，子息必亏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0009",
+      "sha256": "a360a4ebb4cc6d57b0f338ce8f890c6b0600272bc9617efa3e7189abb82d0638"
+    },
+    {
+      "section": "络绎赋",
+      "text": "马入妻宫，必得能家之妇；杀临子位，必招悖逆之儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0010",
+      "sha256": "e9bb391b5678998e34d7f3ce68a4e9d4025183910c2b0995992b14398538d78d"
+    },
+    {
+      "section": "络绎赋",
+      "text": "禄入妻宫，食妻之禄；印临子位，受子之荣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0011",
+      "sha256": "59ddbc3e24b874d9bbede2e034402482c80e1f43f17ea8c02cbf2351bd4410ab"
+    },
+    {
+      "section": "络绎赋",
+      "text": "枭居子位，破祖之基；财官月旺，得父赀财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0012",
+      "sha256": "3a3882e4fd748f8002ce958c9eefbe25e20cf02b64c2309c58f20e9161dcdc50"
+    },
+    {
+      "section": "络绎赋",
+      "text": "所忌财伤禄薄，最嫌鬼旺身衰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0013",
+      "sha256": "e954bb537c94e4d0de9155e195234bb2dcb92e92ddc1bb61cd8c1c0d111608c0"
+    },
+    {
+      "section": "络绎赋",
+      "text": "原其克彼为财，生我为印。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0014",
+      "sha256": "4677fdf9356c3a8fa447d4e7452e80345b3f8f4e2f9719b948d44fe5cf68e827"
+    },
+    {
+      "section": "络绎赋",
+      "text": "食神暗见，人物丰肥；枭印重生，祖财漂荡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0015",
+      "sha256": "3d0c340cc7b392dcc09855aa82349c14cf53a91071363651507ce220bed18d46"
+    },
+    {
+      "section": "络绎赋",
+      "text": "咸池财露主淫奢，凶杀合年防自刃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0016",
+      "sha256": "a31e62a1c100cc8284d76ca9be1f0b00b01e1988a98766300e691a44fc90402b"
+    },
+    {
+      "section": "络绎赋",
+      "text": "土克水而成腹脏之疾，火锻金以患痨疾之灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0017",
+      "sha256": "c38d05e93dd331c19ab684e704505c204b7838726964e22af04ba6142a01fbea"
+    },
+    {
+      "section": "络绎赋",
+      "text": "桃花会禄，酒色亡身；财旺身衰，因财丧命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0018",
+      "sha256": "1af03a182b646c9bb1e03b86bd626485fa72bd001525325e41576f2153d4a2ce"
+    },
+    {
+      "section": "络绎赋",
+      "text": "观乎财生官者，用贿求官；财坏印者，贪财卸职。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0019",
+      "sha256": "ef6b43f4568d59372abad95d634ff0f3b0715061fc633ced1d7a032658adc236"
+    },
+    {
+      "section": "络绎赋",
+      "text": "财旺生官，自身荣显；财生杀党，夭折童年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0020",
+      "sha256": "6de376872c1504b4f051c734091079ce67db78cf739318e6b0d041825d2f9f44"
+    },
+    {
+      "section": "络绎赋",
+      "text": "独杀冲破废闲人，诸杀逢刑凶狠辈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0021",
+      "sha256": "47a362580d41a8dbc2150e49141b2d286f4f8a619f876de3d9aef4d227b9144f"
+    },
+    {
+      "section": "络绎赋",
+      "text": "天干多杀见财年，须防夭折；地支多兮见支年，必见凶灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0022",
+      "sha256": "4b5b1b7ace113f7d0ab30e5d4d021dece8ba41210b8ac0e6e7f8aee7f8cba800"
+    },
+    {
+      "section": "络绎赋",
+      "text": "财生官，官生印，印生身，富贵双全；干党财，财党杀，杀攻身，凶穷两逼。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0023",
+      "sha256": "8c1196aa73f60cca9c538329d88f06b6c9d21be2b27ccd74a6dc4f220f5f030d"
+    },
+    {
+      "section": "络绎赋",
+      "text": "酉寅刑害断伤婚，丑卯风雷多性急。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0024",
+      "sha256": "1631e624e402c64d79ec7292a44e271e57d7e4991c6d885238a314a3cd49e0c0"
+    },
+    {
+      "section": "络绎赋",
+      "text": "杀官混逢，乃技艺之流；财禄坐马，为经商之客。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0025",
+      "sha256": "ca32bd7c148c89d914d487a4beea191b7e2fbbbd7793743c15e8693cebe2fc69"
+    },
+    {
+      "section": "络绎赋",
+      "text": "马落空亡，迁居漂流；禄遭冲破，别土离乡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0026",
+      "sha256": "b78d59151c5aeda081f140893bfb409ea4769be0ee59e71fd6e05834c5fe782a"
+    },
+    {
+      "section": "络绎赋",
+      "text": "阴多利於女人，阳盛宜於男子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0027",
+      "sha256": "3ce3cf60250d72de55f2980b0e3de0d4c392e1e276d4c7432643554cab0d1da6"
+    },
+    {
+      "section": "络绎赋",
+      "text": "阴盛於阳，主女兴家；阳盛於阴，男当建府。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0028",
+      "sha256": "3b0438a01da2c4a2b486c1fca8833ede3acb16f1dacbae4e90ba7b1a6b29d91f"
+    },
+    {
+      "section": "络绎赋",
+      "text": "纯阳则男必孤寒，纯阴则女必寡困。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0029",
+      "sha256": "5505bbc3e6ebfd606fbe94b01a9e2926b62f5d962b0a693b0fd02f72fd7ebc49"
+    },
+    {
+      "section": "络绎赋",
+      "text": "官贵生年，化凶杀而名垂万古。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0030",
+      "sha256": "00f971abd12c4a07b9d5a201189fd620cda0cdf9043c5d6a8c7109028a56c664"
+    },
+    {
+      "section": "络绎赋",
+      "text": "贵忌乎多，禄宜乎少，绝虑忘思，无差无误。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c185:p0031",
+      "sha256": "2a0259d8c2acd9f253e83a8d73f9a4e60a69fb7dbdefba152f8adb13c7457514"
+    },
+    {
+      "section": "络绎赋",
+      "text": "眉批：日干为自己之身，宜旺不宜弱，日下支辰为妻。妻者，财也，若在妻宫与妻同必主能者。甲寅日，甲禄在寅，乃是禄入妻宫。咸池，桃花杀也，合则主淫。干党财官，食神党财而生杀，杀又伤身，是甲以丙为子，子生财，财又生杀克刑以招身祸。经商之客，多带驿马。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 121,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c185:p0032",
+      "sha256": "356b5db45bd315cb98e00cb6c7269d501e74cb3ad684fb7b3aab5dfffba38bd3"
+    }
+  ]
+}

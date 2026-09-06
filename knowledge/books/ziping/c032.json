@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c032",
+  "title": "三十二、論正官取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3745.html",
+  "revision": "sha256:2ffb00c78a2638905da73c2e450926d8ccc9b655bc88b17518bc95b44acfcc30",
+  "source_timestamp": "2026-09-06T04:17:06.790Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c032.html",
+  "raw_sha256": "2ffb00c78a2638905da73c2e450926d8ccc9b655bc88b17518bc95b44acfcc30",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十二、論正官取運",
+      "text": "取運之道，一八字則有一八字之論，其理甚精，其法甚活，只可大略言之，變化在人，不可泥也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0001",
+      "sha256": "9f9c956fb36263fc2867662244f9d94e41ddb50e13068f038c0228c9b7b431a2"
+    },
+    {
+      "section": "三十二、論正官取運",
+      "text": "如正官取運，即以正官所就之格，分而配之。正官而用財印，身稍輕則取助身，官稍輕則助官。若官露而不可逢合、不可雜煞、不可重官與地支刑沖，不問所就何局，皆不利也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0002",
+      "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c"
+    },
+    {
+      "section": "三十二、論正官取運",
+      "text": "正官用財，運喜印綬身旺之地，切忌食傷。若身旺而財輕官弱，即仍取財官運可也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0003",
+      "sha256": "3641b09d75fbfe429ae32007dd9aa98fd5e3209b099b95e11792175c0883eb40"
+    },
+    {
+      "section": "三十二、論正官取運",
+      "text": "正官佩印，運喜財鄉，傷食反吉。若官重身輕而佩印，則身旺爲宜，不必財運也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0004",
+      "sha256": "866e02bd3da73b43f80328352d84a7999d1d127f415ff701e25364f1fe68fa4a"
+    },
+    {
+      "section": "三十二、論正官取運",
+      "text": "正官帶傷食而用印製，運喜官旺印旺之鄉，財運切忌。若印綬疊出，財運亦無害矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0005",
+      "sha256": "eef97b8568e8013b5be0d5733d140d50877005f15e7759575b5ad048d9cb0d36"
+    },
+    {
+      "section": "三十二、論正官取運",
+      "text": "正官而帶煞，傷食反爲不礙。其命中用劫合煞，則財運可行，傷食可行；身旺，印綬亦可行，只不可復露七煞；若命用傷官合煞，則傷食與財俱可行，而不宜逢印矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0006",
+      "sha256": "95525be664592a71fa4925037263b4af6fde653dfe82ca0493251f78b62498e1"
+    },
+    {
+      "section": "三十二、論正官取運",
+      "text": "此皆大略言之也，其八字各有議論。運中每遇一字，各有講究，隨時取用，不可言形。凡格皆然，不獨正官也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c032:p0007",
+      "sha256": "9ea830ec0597d43e78028f5fe0fa37e091372e89489551b25411fa3ab7256452"
+    }
+  ]
+}

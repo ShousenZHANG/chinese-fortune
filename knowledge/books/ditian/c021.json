@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c021",
+  "title": "清濁論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F21&oldid=844371",
+  "revision": "844371",
+  "source_timestamp": "2017-03-23T15:46:27Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c021.wiki",
+  "raw_sha256": "9ff7673e7a7a8af1cace52457d801d631ca117f5923e8e3433f7b1d05729be0f",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "清濁論",
+      "text": "一清到底有清神，管取平生富貴真，澄濁求清清得去，時來寒谷也生春。",
+      "layer": "base_text",
+      "passage_id": "ditian:c021:p0001",
+      "sha256": "93204be7e5b1f75b1784bb8a07c8437e90fbe04c3dd26d0cf3ea787b4a22bcc6"
+    },
+    {
+      "section": "清濁論",
+      "text": "清者，不必一氣成局之謂也，如正官之格，身旺有財，身弱有印，並無傷官七煞，縱有比肩，食神，財煞，印綬，雜之，皆循序得所，有安頓，或作閒神，不來破局，乃為之清，又要有精神，有氣勢，不枯不弱方佳，濁非五行並出之謂也；如正官格，身弱煞食雜之，不能傷我之官，反與官星不和，印綬雜之，不能扶我之身，反與財星相伐，俱為濁局，或得一神有力，或行運得所，掃其濁氣，皆為澄濁求清，亦富貴之命。",
+      "layer": "commentary",
+      "passage_id": "ditian:c021:p0002",
+      "sha256": "c6482066f68fb439e4f636f4cc46a2a2e3d8157150a2a80ffe598621608afbdc"
+    },
+    {
+      "section": "清濁論",
+      "text": "滿盤濁氣令人苦，一局清枯也苦人，半濁半清無去取，多成多敗度晨昏。",
+      "layer": "base_text",
+      "passage_id": "ditian:c021:p0003",
+      "sha256": "d26bef2d781e8f3b77e47d1807cbc7ec07aaa148d217a85d63265a5afb0e4fc4"
+    },
+    {
+      "section": "清濁論",
+      "text": "柱中尋他清氣不出，行運又不能去其濁氣，必是貧賤，若清而枯，弱而無氣，行運又不遇生地，亦清苦之人，至於濁氣又難去，清氣又不真，行運又不遇清氣，又不脫濁氣，此則成敗不一。",
+      "layer": "commentary",
+      "passage_id": "ditian:c021:p0004",
+      "sha256": "df8bba163dac938e6e305968339a75eeedf76f1c295c23a75f406cde6dcfe82e"
+    }
+  ]
+}

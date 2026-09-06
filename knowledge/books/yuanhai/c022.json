@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c022",
+  "title": "论起变法",
+  "source_url": "https://luckclub.cn/bazi/001/022/",
+  "revision": "sha256:00a6a54817ecd67779f0bdf2a4cfa191748ac44202c4f28ea094749acb0d4be7",
+  "source_timestamp": "2026-09-06T04:10:29.088649+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c022.html",
+  "raw_sha256": "00a6a54817ecd67779f0bdf2a4cfa191748ac44202c4f28ea094749acb0d4be7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论起变法",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c022:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论起变法",
+      "text": "论起变法",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c022:p0002",
+      "sha256": "e0e411effc42be354f85ea3914a70c6015600c8480c23ac9205774c2e488d2c7"
+    },
+    {
+      "section": "论起变法",
+      "text": "取时上天干合处，时下地支合处。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c022:p0003",
+      "sha256": "1d7dccb6dc6c960bd28337ea739304f6e96a6aa99d4ec02263535b96c8a6d34b"
+    },
+    {
+      "section": "论起变法",
+      "text": "假如丙寅时，取天干丙与辛合，地支寅与亥合，即辛亥是也。如柱中天干无辛字，地支无亥字，乃只虚邀为是，不必拘泥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c022:p0004",
+      "sha256": "e954a86785f664ade2f628b49f486e5a71ce4c885c737b0e7f915ee16f282755"
+    },
+    {
+      "section": "论起变法",
+      "text": "眉批：此等法例，时师罕见，不知此义，安能与士大夫谈命哉。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c022:p0005",
+      "sha256": "863fbff3e8527137cfdc5bbb4253927bea8685ab551826662cf5d52db2dce738"
+    }
+  ]
+}

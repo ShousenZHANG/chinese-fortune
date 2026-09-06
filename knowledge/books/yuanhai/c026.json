@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c026",
+  "title": "论太极贵人",
+  "source_url": "https://luckclub.cn/bazi/001/026/",
+  "revision": "sha256:8e2d5c3a9810d5061397188ee6a2f23724799754f620d388ca5dba1d6f65f4b4",
+  "source_timestamp": "2026-09-06T04:10:29.855823+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c026.html",
+  "raw_sha256": "8e2d5c3a9810d5061397188ee6a2f23724799754f620d388ca5dba1d6f65f4b4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论太极贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c026:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论太极贵人",
+      "text": "论太极贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c026:p0002",
+      "sha256": "55c6f4c5dbf963cdd5e477cb5f2387d783203d510713a04daa84f9e9a7a7e800"
+    },
+    {
+      "section": "论太极贵人",
+      "text": "甲乙生人子午中，丙丁鸡兔定亨通，戊己两干临四季，庚辛寅亥禄盈丰，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c026:p0003",
+      "sha256": "e7c243d739ef01b4166f6aace5a5fb6f6a4d819ac4dda23bc194bc2bbd57628f"
+    },
+    {
+      "section": "论太极贵人",
+      "text": "壬癸巳申偏喜美，值此应当福气锺，更须贵格相扶合，侯封万户列三公。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c026:p0004",
+      "sha256": "d8156df7f95f5b9fabb7d814396675c09e0f8ccd624cd1620ef37bec48f03820"
+    },
+    {
+      "section": "论太极贵人",
+      "text": "其法以生年为主，取别干则非也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c026:p0005",
+      "sha256": "76bc1484713ceff2a08b981ddf47146a096eeb2d3f472340f5d1a8f623ac1827"
+    },
+    {
+      "section": "论太极贵人",
+      "text": "眉批：太极者，乃初始也。物造于初为夫极者，乃成收也。物有归曰极，贵乎始终相保。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 39,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c026:p0006",
+      "sha256": "e1778d469ce47ff315fa0affdf52bb9596a4660bf56aabfe2301f530f6ebe13d"
+    }
+  ]
+}

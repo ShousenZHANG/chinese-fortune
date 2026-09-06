@@ -1,0 +1,242 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c003",
+  "title": "地支論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F03&oldid=844351",
+  "revision": "844351",
+  "source_timestamp": "2017-03-23T15:43:27Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c003.wiki",
+  "raw_sha256": "0b1f7d4b68d49cb9dbbf97f77d07cee8c8e2fb638984357c93648d59cf99f334",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "地支論",
+      "text": "陽支動且強，速達顯災祥。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0001",
+      "sha256": "7d75c5135eea45b27eb942b41abf6a4521fedaa4d7205895b3a4060958792bcf"
+    },
+    {
+      "section": "地支論",
+      "text": "子，寅，辰，午，申，戌，陽也，其性動，其勢強，其發至速，其災祥至顯。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0002",
+      "sha256": "f33db720e95a2d7f69da43c8aa9ae64f8e43c3c86dfcee915f47c9db0b45bc50"
+    },
+    {
+      "section": "地支論",
+      "text": "陰支靜且專，否泰每經年。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0003",
+      "sha256": "6059fc3bdcf7d6d33dd8a8d870e314037cfce227a512be720a4255f1317b6aa0"
+    },
+    {
+      "section": "地支論",
+      "text": "丑，卯，巳，未，酉，亥，陰也。其性靜，其氣專，其否泰之驗，每經年而始見。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0004",
+      "sha256": "e8b077a399a1a1f9f21983f36d57aae6d17ff69207cc2261460cab116226dea2"
+    },
+    {
+      "section": "地支論",
+      "text": "生方怕動庫宜開，敗地逄沖子細裁。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0005",
+      "sha256": "243596d1275b2c2f5d8288143ffbe3f81a1cc9818faab8b47ecd77ebf1998a36"
+    },
+    {
+      "section": "地支論",
+      "text": "寅申巳亥，四生也；忌衝動。辰戌丑未，四庫也；宜衝開。子午卯酉，四敗也，有逄合而喜沖者，不若生地之必不可沖也；有逄沖而喜合者，不若庫地之必不可閉也，宜詳細裁之。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0006",
+      "sha256": "de7a16b268908430760e1b617e42088793ae8b2fd15328387eb2222cab31fd6a"
+    },
+    {
+      "section": "地支論",
+      "text": "支神祇以沖為重，刑與害兮動不動。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0007",
+      "sha256": "a1e24ab4fcea97b5cb0977eee85e14526892b1a0e2a3761cb3a599037e511df4"
+    },
+    {
+      "section": "地支論",
+      "text": "沖者必是相剋，所以必動，至於刑害之間，又有相生相合者存，所以有動不動之異。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0008",
+      "sha256": "bbc5aa103847c9aec81eb0538588a4140fee5bee4c4139387fbe25a08c5a30b7"
+    },
+    {
+      "section": "地支論",
+      "text": "暗沖暗會尤為喜，彼衝我兮皆衝起。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0009",
+      "sha256": "fbeb4955ae8fd362ca0b9e16dc3928218f8b68f4e50ec6c39e8d472e24a6c287"
+    },
+    {
+      "section": "地支論",
+      "text": "如柱中所無，局取多者沖會暗神，比明沖明會尤佳，如子去沖午，柱中有寅與戌會者是也，日干為我，提綱為彼，提綱為我，年時為彼，四柱為我，歲月為彼，我寅彼申，是彼沖（剋）我，我子彼午，是我沖（剋）彼。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0010",
+      "sha256": "b1b2ff4da258ad1b859faa21984d44723549af9ff390aa3162d1e2265c7b1167"
+    },
+    {
+      "section": "地支論",
+      "text": "旺者沖衰衰者拔，衰者沖旺旺神發。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0011",
+      "sha256": "0fc936677b82f4a493066c981894a2f4e88a7f0532ecb6cb7cf59b36c6b527fe"
+    },
+    {
+      "section": "地支論",
+      "text": "子旺午衰，則午因沖而本拔，子衰午旺，則午因沖而發福，餘倣此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0012",
+      "sha256": "7609f5309d2f0f2782bcec9185432ce57c9f2f6e066c474ca655a5bfeb1e1e21"
+    },
+    {
+      "section": "地支論",
+      "text": "陽順陰逆，其理固殊，陽生陰死，其論勿執。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0013",
+      "sha256": "59067bbb1521c7a5ff33ac716c5d4f1b20eab0cd25d536e5ce03ee1d7cdc9aa1"
+    },
+    {
+      "section": "地支論",
+      "text": "以天干布地支，而生死之道出焉，陽順陰逆，其理非無出也，然甲木死於午，午為洩之地，理固然矣，乙木見亥，亥中有壬水，乃其嫡母，何為死哉，凡此皆詳其干支輕重之機，母子相依之勢，陰陽消息之理，而論吉凶可也，若專執生死推斷，則誤矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0014",
+      "sha256": "e38ed0b8adbf65629c7c44726068c95a31929301596947feb4cf4f52a51eaad4"
+    },
+    {
+      "section": "地支論",
+      "text": "天全一氣，不可使地道莫之載。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0015",
+      "sha256": "406de4b307d98e76bf64b8d593c850aed61c1564fc3be7e31350a3b201c6f6f1"
+    },
+    {
+      "section": "地支論",
+      "text": "四甲四乙，而遇寅申，卯酉相沖，為地莫載。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0016",
+      "sha256": "0e6eb968eda05dd606c79a46310975825da98d6a9fe36108067ceefcedbc223c"
+    },
+    {
+      "section": "地支論",
+      "text": "地全三物，不可使天道莫之覆。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0017",
+      "sha256": "103e59b8fbce5727dcbf4b2dd39044b4bec64e81e48f557c9f6d5791ae3700e1"
+    },
+    {
+      "section": "地支論",
+      "text": "寅卯辰，而遇甲乙庚辛相沖，為天莫覆。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0018",
+      "sha256": "0202a980a65c6f3aac6176e3c2cac1d36adcdc7b64c204fd1a8f41fb6921fdb3"
+    },
+    {
+      "section": "地支論",
+      "text": "陽乘陽位陽氣昌，最要行程安頓。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0019",
+      "sha256": "f0c7c17b9ea89ea80c71e84e865692ec54b1fe9f746db54d04da74c5784f6c05"
+    },
+    {
+      "section": "地支論",
+      "text": "六陽之位，獨子寅辰為陽方，乃陽位之純，五陽居之，其旺無比，其行運最宜陰順安頓之地。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0020",
+      "sha256": "c393b43ab690903696fb93b39f79f43c67af5c2bda24b3e4b3f27d361fb30b72"
+    },
+    {
+      "section": "地支論",
+      "text": "陰乘陰位陰氣盛，還須道路光亨。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0021",
+      "sha256": "d46e45ac240bb4e68e2ee3592b3182b721afc8e425d13ce8052e730ec9021652"
+    },
+    {
+      "section": "地支論",
+      "text": "六陰之位，獨未酉亥為陰方，乃陰位之純，五陰居之，其盛無比，其行運宜陽明光亨之地。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0022",
+      "sha256": "d6fc096f097936a33bf5c8b0cf07612e3687876c89ac2b7f1e0672987a1d4124"
+    },
+    {
+      "section": "地支論",
+      "text": "地生天者，天衰怕沖。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0023",
+      "sha256": "ef6a4e089dd57bc39820e05b8471dc51c73ef5438be5176fbfec2267b4ae96bf"
+    },
+    {
+      "section": "地支論",
+      "text": "如甲子，丙寅，丁卯，己巳，皆支生日，如日主衰弱，而支逄沖，則根拔矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0024",
+      "sha256": "03bbcfb4ba9432a3bf104a08af9e8a8c663fe92fa4d3b64379a245d73a55aa7d"
+    },
+    {
+      "section": "地支論",
+      "text": "天合地者，地旺喜靜。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0025",
+      "sha256": "851ae9d12b46238444651dd4880f9bc9b6ad5f535b62bc23e0fd232b34ca813e"
+    },
+    {
+      "section": "地支論",
+      "text": "如戊子（戊子癸水財），己亥（己亥甲木官，壬水財），壬午（壬午丁火財，己土官），癸巳（癸巳戊土官，丙火財）之類，皆支中人元與天干相合，此乃下財官，旺則得其用矣，不直衝壞。\n甲申（申中庚生壬，壬生甲）戊寅（寅中甲生丙，丙生戊），是為煞印相生。\n庚寅（寅中丙生戊，戊生庚）癸丑（丑中巳生辛，辛生癸），亦是煞印兩旺。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0026",
+      "sha256": "85ff76b7c2e70f6d019757691798c187218b118b7ae932a89bbd8c13566bd5f0"
+    },
+    {
+      "section": "地支論",
+      "text": "上下貴乎情協。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0027",
+      "sha256": "06ebd756c328f53d7c845a4bf3ace44e7d759311ebc878c7e15408a2db8400da"
+    },
+    {
+      "section": "地支論",
+      "text": "天干地支，雖非相生，郤有情而不悖。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0028",
+      "sha256": "efd07eb1785e895c10d7af532266f0aa9d941b8e79a501a206bd563a9fb5cb80"
+    },
+    {
+      "section": "地支論",
+      "text": "左右貴乎志同。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0029",
+      "sha256": "799eddbe4d7a752fd4852a1dab419e95031707bd8ec196dbad1e2ecbfd4347fb"
+    },
+    {
+      "section": "地支論",
+      "text": "左右雖不全一氣三物，郤化生而不錯。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0030",
+      "sha256": "2ef90f04f24493863d6b2bafb2f90703ed92dfa32dcdf4a76978db620f2b779e"
+    },
+    {
+      "section": "地支論",
+      "text": "始其所始，終其所終，富貴福壽，永乎無窮。",
+      "layer": "base_text",
+      "passage_id": "ditian:c003:p0031",
+      "sha256": "6de042be421d6af802343540120465e203e9ce0951f5e0fc9a5f650a48fbfff1"
+    },
+    {
+      "section": "地支論",
+      "text": "年月為始，日時不反悖之，日時為終，年月不妒忌之。\n凡局中所之神，本於年支，有所淵源，引於時支，有所歸者，皆為始終得所，則富貴福壽，永乎無窮矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c003:p0032",
+      "sha256": "36d65f2c49c87ed189f89eaba300360bf74d3125602af592f63a949178b2df89"
+    }
+  ]
+}

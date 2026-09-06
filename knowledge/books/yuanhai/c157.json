@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c157",
+  "title": "论小儿关杀例",
+  "source_url": "https://luckclub.cn/bazi/001/157/",
+  "revision": "sha256:aed4c9e3712276e6205bd8c8b3324c45c422539e00c1a1020423e0c9e430fe4d",
+  "source_timestamp": "2026-09-06T04:10:55.776458+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c157.html",
+  "raw_sha256": "aed4c9e3712276e6205bd8c8b3324c45c422539e00c1a1020423e0c9e430fe4d",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论小儿关杀例",
+      "text": "渊海子平卷三",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c157:p0001",
+      "sha256": "afeacdbf71d62ad7e9312d541ed7283fc2913c2bfb438bd0e473b11c14c1a68c"
+    },
+    {
+      "section": "论小儿关杀例",
+      "text": "论小儿关杀例",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c157:p0002",
+      "sha256": "4374eed48620d86a51c6164bf65fb8bf68921a093d7ce1f8608aa1333c34842f"
+    },
+    {
+      "section": "论小儿关杀例",
+      "text": "小儿之命，当论时辰为主，先看关杀，次看格局。日主强，财官旺，有关无杀；日干弱，财官少，常病可养；日干弱，财官多，有关有杀。又有三会聚杀者难养，不见刑冲者声音响亮，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c157:p0003",
+      "sha256": "7eb5ca16b0d874df48131ff896313116c060e7485a959c1d04c7aa6f4b85dc66"
+    },
+    {
+      "section": "论小儿关杀例",
+      "text": "夜啼急性。八字有财官，生於富贵之家，偏官生於平常之家，伤官劫财生於贫贱之家。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c157:p0004",
+      "sha256": "f909d9b2329700d3a0d6d9e488828da4580591917f7f93cae57fa9da820af37a"
+    },
+    {
+      "section": "论小儿关杀例",
+      "text": "偏官、偏印、偏财，主偏生庶出，不然第三、四胎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c157:p0005",
+      "sha256": "8e33c2a72cc6dceb085c3bdf2168c210c2032fe1262f1a7339cc517f1ae417eb"
+    },
+    {
+      "section": "论小儿关杀例",
+      "text": "子平之法，偏官为关，偏财为杀，取生辰之数断之。水一、火二、木三、金四、土五。且如甲日庚杀，乃四、九岁；丙见壬杀，一、六岁；戊日甲杀，三、八岁；庚日丙杀，二、七岁；壬见戊杀，五、十岁见之。至於阴乾亦如此，无不验矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c157:p0006",
+      "sha256": "5de86e070dec841f5cee2cebec36563b46c286997b52b409b5aa6577a1cbd2a2"
+    },
+    {
+      "section": "论小儿关杀例",
+      "text": "眉批：关杀之说，术家多不明也，但有一杀为关、一财为杀，於年时见之，总为关杀。在日月者，俱不准。无关无杀、有关有杀俱不准，若有准，验小儿命上中下存一，若依天罡之说，其谬甚矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 86,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c157:p0007",
+      "sha256": "45a8a5e8373e644d851b660942ec78cd3bbee18352272c4f92f69b19d9d3fd90"
+    }
+  ]
+}

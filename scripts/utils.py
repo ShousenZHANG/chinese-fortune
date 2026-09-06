@@ -101,7 +101,7 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 # echoes it in its JSON envelope.
 # --------------------------------------------------------------------------- #
 
-__version__ = "2.0.0"
+__version__ = "3.0.0"
 
 
 # --------------------------------------------------------------------------- #
@@ -301,24 +301,16 @@ def jiazi_index(stem: str, branch: str) -> int:
 # JSON / IO helpers
 # --------------------------------------------------------------------------- #
 
-def parse_datetime_arg(value: str | None) -> _datetime:
-    """Return the caller-supplied ISO datetime, or now() when omitted.
+def parse_datetime_arg(value: str | None, *, current_timezone: str | None = None,
+                       request_time: str | None = None, target_timezone: str | None = None,
+                       fold: int | None = None) -> _datetime:
+    """Compatibility helper using the same explicit request-time boundary."""
+    import argparse
 
-    Time-based casts are otherwise unreproducible and untestable: the wall
-    clock feeds both the hexagram and 体用旺衰, so the same question yields a
-    different reading on every run and no golden assertion is possible.
-
-    Raises ValueError on a malformed value; callers emit the standard error
-    envelope and return 1.
-    """
-    if value is None:
-        return _datetime.now()
-    try:
-        return _datetime.fromisoformat(value)
-    except ValueError:
-        raise ValueError(
-            f"--datetime 需 ISO 格式 (如 2026-06-24T13:05), 收到: {value}"
-        ) from None
+    from request_time import resolve_time
+    args = argparse.Namespace(current_timezone=current_timezone, request_time=request_time,
+                              target_timezone=target_timezone, fold=fold)
+    return resolve_time(args, datetime_value=value)[0]
 
 
 def ensure_utf8_stdio() -> None:

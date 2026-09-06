@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c042",
+  "title": "四十二、論傷官取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3755.html",
+  "revision": "sha256:e3372b80aac8f0973c910505916a644b07667c42bd31a1944a97f5aaf21a7ff3",
+  "source_timestamp": "2026-09-06T04:19:11.147Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c042.html",
+  "raw_sha256": "e3372b80aac8f0973c910505916a644b07667c42bd31a1944a97f5aaf21a7ff3",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官取運，即以傷官所成之局，分而配之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0001",
+      "sha256": "bd9b105d712d810a3da352d9461bac586113f614d28121a302d9c26dc0d235b9"
+    },
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官用財，財旺身輕，則利印比；身强財淺，則喜財運，傷官亦宜。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0002",
+      "sha256": "cc5619ac438cc0c994f1e20ee70d24909f54c3cd801e44ebfa3ce7800ad51f5b"
+    },
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官佩印，運行官煞爲宜，印運亦吉，傷食不礙，財地則凶。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0003",
+      "sha256": "597bf7271bcb9d941efc7bb147dbeeae61a93fad42ff8467061697d14db74dbe"
+    },
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官兼用財印，其財多而帶印者，運喜助印；印多而帶財者，運喜助財。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0004",
+      "sha256": "5fe3c9964a0c57a6d25213f651e244d1aae668d9630babb0ff9224704934887f"
+    },
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官而用煞印，印運最利，傷食亦亨，雜官非吉，逢財即危。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0005",
+      "sha256": "eb7f84368aa07c156e9713904eedc10b698c76c2500e3a414101db61eb145b8c"
+    },
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官帶煞，喜印忌財。然傷重煞輕，運喜印而財亦吉。惟七殺根重，則運喜傷食印綬，身旺亦吉，而逢財爲凶矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0006",
+      "sha256": "9b85865e31e665b063994dae25645be9dd317aa3bccdc01dd1fbda909e3a7569"
+    },
+    {
+      "section": "四十二、論傷官取運",
+      "text": "傷官用官，運喜財印，不利傷食。若局中官露而財印兩旺，則比劫傷官，未始非吉矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c042:p0007",
+      "sha256": "9d518c6be13ef470cb72632f336be550f84533165e9a364ef41e883c1da43050"
+    }
+  ]
+}

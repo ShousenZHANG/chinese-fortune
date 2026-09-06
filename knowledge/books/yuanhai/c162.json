@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c162",
+  "title": "论运化气",
+  "source_url": "https://luckclub.cn/bazi/001/162/",
+  "revision": "sha256:640248b056383aae662a9092201461b64225d8da610c613374f50d73046cada7",
+  "source_timestamp": "2026-09-06T04:10:56.715418+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c162.html",
+  "raw_sha256": "640248b056383aae662a9092201461b64225d8da610c613374f50d73046cada7",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论运化气",
+      "text": "论运化气",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c162:p0001",
+      "sha256": "63023a9b547432a156ea84ad07ea81efa27a18c941865a297d1bb15f5790b1d1"
+    },
+    {
+      "section": "论运化气",
+      "text": "夫五运化气者：甲己化土乙庚金，丁壬化木尽成林，丙辛化水分清浊，戊癸南方火焰侵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c162:p0002",
+      "sha256": "fd8d8a1eb23326a5e8244e2220cec0310b38c8b376b3b6cb13929b3ca7377900"
+    },
+    {
+      "section": "论运化气",
+      "text": "至於合而化者，取其岁首月建天干五行所生之五行。如甲己之年正月为丙寅，天干丙火生土，所以甲己合就化土；乙庚之年正月为戊寅，天干戊土生金，所以乙庚合化金；丙辛之年正月为庚寅，天干庚金生水，所以丙辛合化水。余仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c162:p0003",
+      "sha256": "4325cc470990ca5af0a954f278f1a6c5e252061efd7f7d2bf37a8b0846a06306"
+    },
+    {
+      "section": "论运化气",
+      "text": "甲己化土，中正之合。辰戌丑未全曰稼穑，勾陈得位。乙庚化金，仁义之合，巳酉丑全曰从革。戊癸化火，无情之合，得火局曰炎上。丙辛化水得申子辰水局曰润下。丁壬化木，得亥卯未全曰仁寿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c162:p0004",
+      "sha256": "0aebd95743f714de46f84577b4373204d8564169bc00910d9f673f7715e1f0db"
+    },
+    {
+      "section": "论运化气",
+      "text": "天干化合者，秀气。地支合局者，福德。化之真者，名公巨卿。化之假者，孤儿异性。逢龙即化，变作飞龙在天，利见大人。月令生旺，养库临官之地方化。阴阳得合，夫妇匹配，中和之气而化，太过不及皆不能化。有夫从妻化，妻从夫化，正化、偏化，日下自化。转角化，乃未坤申，丑艮寅。经云：东北丧朋，西北得朋。甲日见己字化土，己见甲亦然，乃化之真谓之正化。化之真者名公巨卿，乃富贵之格。化之假者孤儿异姓，或为僧道之类。十干效此推之。但戊癸化火，南木化午，北不化子。午乃少明君火，所以不化。寅申乃少阳火，乃化。经云：化之格局，玄中又玄，妙中又妙，不可俱述。常观天元神趣八法：返、照、鬼、伏、类、属、从、化，仔细推详。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c162:p0005",
+      "sha256": "5d6ff7b09b1c1b8e669523c745288ee69f3fb374b78a53fe83f510fbb2de809f"
+    },
+    {
+      "section": "论运化气",
+      "text": "眉批：其法亦从甲己起庚寅丁卯戊辰，逢龙便化，余仿此。诗诀见卷五，此处略。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 36,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c162:p0006",
+      "sha256": "7214628b240c9a656f6dc4c4b652e5425986413bca5ad6277da38db11069daf6"
+    }
+  ]
+}

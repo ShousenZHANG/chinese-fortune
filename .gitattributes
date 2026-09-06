@@ -8,6 +8,10 @@
 # build_skill.py 现在也在写入 zip 时强制 LF, 两道一起保证发布产物只取决于 commit。
 * text=auto eol=lf
 
+# Frozen source extracts retain their acquired trailing blank lines; their
+# recorded hashes must not change merely to satisfy code-format whitespace checks.
+knowledge/sources/** whitespace=-blank-at-eof
+
 # 二进制: 不做任何行尾转换。
 *.zip  binary
 *.png  binary

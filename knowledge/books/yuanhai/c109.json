@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c109",
+  "title": "内十八格-丑遥巳格",
+  "source_url": "https://luckclub.cn/bazi/001/109/",
+  "revision": "sha256:72cc08237841893a371758a4dcef516078ad7678a29aa711656dcc408a178a4f",
+  "source_timestamp": "2026-09-06T04:10:46.710819+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c109.html",
+  "raw_sha256": "72cc08237841893a371758a4dcef516078ad7678a29aa711656dcc408a178a4f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "内十八格 - 丑遥巳格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0002",
+      "sha256": "1738e5284334805f44027bb6f948f9152316a81b7d14884496510cc2dcbf524c"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "此格只有辛丑、癸丑二日，用丑字多遥巳中丙戊，辛癸日得官星，丑字多为妙，若四柱中有子字绊住，则丑不能去遥矣。要四柱中有申字并酉字，得一字为妙。如辛丑日四柱中有丙丁字并巳字、午字，则减分数，岁君大运同。癸丑日亦不要见戊字、己字、巳字、丁字。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0003",
+      "sha256": "98d3010cf41f25eb7a96c4bfcf4737a8e868189bd1629c1cb25a146b4a1c3598"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "章统制，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0004",
+      "sha256": "ad27789c13728f5353ba1dc50c2710402adbd6e71833992d16a35af554079dcf"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "辛丑 辛丑 辛丑 庚寅，以丑遥巳中丙火为辛之官星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0005",
+      "sha256": "9ad15cea295c643143daa6361458aa7a7f505acee87ba53a0145f48e742a618c"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "叶侍郎，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0006",
+      "sha256": "1f8fd41a51b4765926b247a58b025c3801531b7264326cc61ddd80eb1cea9232"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "乙丑 己丑 癸丑 乙卯，以丑遥巳中戊土为癸之官星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0007",
+      "sha256": "a42e8c2e8190afeffd56af81bc146c9ef83b9725ebf8e8f4c6b1f4b715ef06ac"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "诗诀：辛日癸日更逢丑，名为遥巳合官星，莫言不立官星旺，非信官来反作战。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c109:p0008",
+      "sha256": "4a1180ee14ac4ab3cc9ee67fe372a28c4ce7f09b8d3e2616ad8065902dc45fa1"
+    },
+    {
+      "section": "内十八格-丑遥巳格",
+      "text": "眉批：此格若有亥字亦不得，有官星可也，谓巳亥相冲也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c109:p0009",
+      "sha256": "8f9c3534714db5d0092d80d83d40d06c3b0b5445cd1cbb102f4687608383a6e1"
+    }
+  ]
+}

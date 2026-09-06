@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c165",
+  "title": "神趣八法-属象",
+  "source_url": "https://luckclub.cn/bazi/001/165/",
+  "revision": "sha256:f079be4ac176ccd1e724373d8e49f47ac0191d61157797353b8b616cc3409f9a",
+  "source_timestamp": "2026-09-06T04:10:57.256804+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c165.html",
+  "raw_sha256": "f079be4ac176ccd1e724373d8e49f47ac0191d61157797353b8b616cc3409f9a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-属象",
+      "text": "神趣八法-属象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c165:p0001",
+      "sha256": "f9390814c6751235f139cba9dc88d7bba42ece53c81edb9f1a389f387af52941"
+    },
+    {
+      "section": "神趣八法-属象",
+      "text": "属象者，乃天干甲乙木，地之亥卯未全者是也。水火金土同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c165:p0002",
+      "sha256": "038a12c16acaca984a298e602bd1f1eca8ac4afc1437181e4140b69cff7b4115"
+    },
+    {
+      "section": "神趣八法-属象",
+      "text": "又曰：属者，五行各属之意。即主干临何方位，乃东西南北之神也。如寅卯辰乃东方属木，巳午未南方属火，申酉戌西方属金，亥子丑北方属水，各专一方之气。如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c165:p0003",
+      "sha256": "520614ea931a5ac7bd5ad3236b0541ca071e5d161e36c44a7ff9589c2e8c7741"
+    },
+    {
+      "section": "神趣八法-属象",
+      "text": "壬子 壬子 癸丑 癸丑，二壬夺癸禄，乃僧道之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c165:p0004",
+      "sha256": "d4c3d1c1674cd180223d29fc3a421976060522f808b080c3a48ee02e50c9d487"
+    },
+    {
+      "section": "神趣八法-属象",
+      "text": "乙酉 甲申 乙酉 乙酉，乃都御史之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c165:p0005",
+      "sha256": "be81504f7a86834443711fb37b6eb96f6c33a5e35456d70ef4c6e8c16f9dd9d7"
+    }
+  ]
+}

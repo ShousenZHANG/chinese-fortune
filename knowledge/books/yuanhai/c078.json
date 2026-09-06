@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c078",
+  "title": "论官星太过",
+  "source_url": "https://luckclub.cn/bazi/001/078/",
+  "revision": "sha256:472c42230545b1c3beaff8c09765873f682dd8095f102b01b63b546029cfa88b",
+  "source_timestamp": "2026-09-06T04:10:41.105177+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c078.html",
+  "raw_sha256": "472c42230545b1c3beaff8c09765873f682dd8095f102b01b63b546029cfa88b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论官星太过",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c078:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论官星太过",
+      "text": "论官星太过",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c078:p0002",
+      "sha256": "98a8a2bb31d804bbe197d1c66d0c9bc2ecf98cb0b768cefefb6b06d4729a24f7"
+    },
+    {
+      "section": "论官星太过",
+      "text": "如壬癸生人，四柱是辰戌丑未巳午，天干不露官星与杀，则官杀暗藏於中为多。若四柱原有制伏为好，若无制伏，须行水运与三合木局亦好。大凡官星多则杂，务要除而清之，乃可发福。官乡多反行官运，亦不济事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c078:p0003",
+      "sha256": "403930931cef512e525894d4571ce078e751c028e9710ce2c8a58b6da1beb732"
+    }
+  ]
+}

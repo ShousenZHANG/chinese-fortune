@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c168",
+  "title": "神趣八法-照象",
+  "source_url": "https://luckclub.cn/bazi/001/168/",
+  "revision": "sha256:1a6390c554939644050d284fe424d4588e036bbcf3f2e2ea2c3045f4309f6b35",
+  "source_timestamp": "2026-09-06T04:10:57.811154+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c168.html",
+  "raw_sha256": "1a6390c554939644050d284fe424d4588e036bbcf3f2e2ea2c3045f4309f6b35",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-照象",
+      "text": "神趣八法-照象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c168:p0001",
+      "sha256": "6239335e8190a6a41b1ca84f9268937ccf79c54dc8865f0bbedf3f93572bc4a6"
+    },
+    {
+      "section": "神趣八法-照象",
+      "text": "照象者，如丙日巳午未年月日，遇时上一位卯木，谓之木火相照，甚吉。如壬癸日申子辰全，遇时上一位金，谓之金水相照，大吉。年干有照者，亦吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c168:p0002",
+      "sha256": "35f83680976d291c9449aff45b7382b445d3534839ea35063becb469fc10122c"
+    },
+    {
+      "section": "神趣八法-照象",
+      "text": "又云：照者，火土高明之意也。火气高明，土爱稼穑。土在上，如霾雾遮空，火在下，若太阳漏射，此乃先晦後明之象。日干属戊，得寅午戌火局，或地支午火时，干有丙生在戊上，谓之照象。柱中不宜见水，见水土熔火灭，则减福力。又如火居上，水居下，亦为照象。譬如日丽於天，水底有日，亦能返照。经云：“四柱无伤，直列朝廷之上。支中畏惧，亦须声誉非贫。运到衰乡，必生灾咎。”如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c168:p0003",
+      "sha256": "70768a2b25e2879fa284dcb6861cd07b18e46f3ea5a4f2dcdbe378655b6a3b24"
+    },
+    {
+      "section": "神趣八法-照象",
+      "text": "戊戌 戊午 丙午 戊戌，丙日以戊为食，火又旺生，四柱无伤，午戌亦能冲子辰之官星。又",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c168:p0004",
+      "sha256": "117436a644e8e478396df4f49de09e89e33a0425217bad2f166c75b548d2b852"
+    },
+    {
+      "section": "神趣八法-照象",
+      "text": "丙戌 癸巳 戊午 丁巳，日干戊土，支成巳午戌火局，年时丙丁，生其戊土，柱中虽有一癸，亦化成火，又化气得时得位，故皆大贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c168:p0005",
+      "sha256": "0f087b4ed58a7c90799458863d514bb4e312daf12dd795715a561952be6743d2"
+    }
+  ]
+}

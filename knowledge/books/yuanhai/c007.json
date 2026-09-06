@@ -1,0 +1,81 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c007",
+  "title": "论十二支六合",
+  "source_url": "https://luckclub.cn/bazi/001/007/",
+  "revision": "sha256:df43ab3c02b166a0c3a28dd9a8d7eeb151e6d45c08642ab6112dc8ab2b497383",
+  "source_timestamp": "2026-09-06T04:10:26.145894+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c007.html",
+  "raw_sha256": "df43ab3c02b166a0c3a28dd9a8d7eeb151e6d45c08642ab6112dc8ab2b497383",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论十二支六合",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "论十二支六合",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0002",
+      "sha256": "54c3e3c25d0886d20ba7cdeb2a872119bfefad4720b28844c4052fab6617ea40"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "子与丑合土，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0003",
+      "sha256": "94d703e48c92e346908ea71e1383a1208a3d5d136c13e626436c912079c9848c"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "寅与亥合木，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0004",
+      "sha256": "bc8dcef97fdcee03d65915ca218f1e3ecac5295004d24c9be4fcc51f5379d2b5"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "卯与戌合火，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0005",
+      "sha256": "5ba265edb86eb52b936edbdd27029e340e727831e1800669282efeb904d42897"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "辰与酉合金，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0006",
+      "sha256": "0f64b2dea6460ab82ed423d85083f4b24944ec4658792fbcca5efc8c98ba309d"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "巳与申合水，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0007",
+      "sha256": "4099a118e15864dcd4056a505ca56cf8568b31ef6caed8b6ab3b44dde10442f6"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "午与未合火，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0008",
+      "sha256": "95646d4ef0c3c3fccc213099d66929c5aa5361990088d673043713a22bc85a56"
+    },
+    {
+      "section": "论十二支六合",
+      "text": "午太阳、未太阴也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c007:p0009",
+      "sha256": "0e7a7e940b7e091674f5fef32f2469db7aa6ee12cd62ebbb5e456f9441ccb40a"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c155",
+  "title": "女命总断歌",
+  "source_url": "https://luckclub.cn/bazi/001/155/",
+  "revision": "sha256:9edf618ee214479f9c649924d4af61e5d7bb2b7fba0cb44a9af49da0e7ac9c01",
+  "source_timestamp": "2026-09-06T04:10:55.330199+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c155.html",
+  "raw_sha256": "9edf618ee214479f9c649924d4af61e5d7bb2b7fba0cb44a9af49da0e7ac9c01",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "女命总断歌",
+      "text": "女命总断歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0001",
+      "sha256": "213769f19ca7238b71fae3ea78fed14a7731b9d23eca0a2ef4e3590d6739b3b4"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "择妇要沈静，细说与君听，夫星要强健，身主要柔顺。官星若不合，夫主无所依。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0002",
+      "sha256": "927a1c1fb33868b1d5a70fe435cebedd1027821c9029f35870f35c0953b2d3aa"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "合绝莫合贵，此法少人推。专以日为主，此法少人传。带禄人生旺，病死教人谤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0003",
+      "sha256": "5d0e76df5502518633794a462122e62c92a871cfbb916f4f64f087ddfc2549f2"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "驿马带贵人，终久落风尘。有辰休见戌，有戌休见辰，辰戌若相逢，多是淫贱人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0004",
+      "sha256": "c789e4e13bd175676a59f0ffa631cc1358b8c87ec5ae0acc425abaa7af2774a0"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "有杀不怕合，无杀却怕合，合神若是多，非妓亦讴歌。贵人一位正，两三作宠定。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0005",
+      "sha256": "8acf9508f1f6db061ebe42277a4365590372cbbe8ae4e00d56e0a0ac0c3acdea"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "羊刃带伤官，驳杂事多端。满盘都是印，损子必须定。二德坐正财，富贵自然来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0006",
+      "sha256": "c7295d4d6ac6900009513cde1c1c6598c95cbf8010b99db2b657f52600504e7d"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "四柱带休囚，封赠福寿增。金水若相逢，必招美丽容。寅申巳亥全，孤淫口便便，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0007",
+      "sha256": "3c33ae00f98028864b2a98742743a6c02d8712841f9b48abcf0571970754c37b"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "子午逢卯酉，定是随人走。辰戌逢丑未，妇道大大忌。一贵或一杀，权家富贵说。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0008",
+      "sha256": "19b550a4d6bb463be8bf71b77ce31072d71701809a3fb4ec8a408ea7c622761b"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "财官若藏库，冲开岂不富。天干一字连，孤刑祸绵绵，地支连一字，两度成婚事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0009",
+      "sha256": "73e01306f3407d9362297f5dbfaacdecb8a88c96540a1da3c64628f16343b70e"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "此是女命诀，千金莫轻传。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c155:p0010",
+      "sha256": "bd17bd920ee45694c40dd1807d090e96cff9a0424b62f14e76289975f018629c"
+    },
+    {
+      "section": "女命总断歌",
+      "text": "眉批：辰戌乃魁罡之地，魁罡者恶煞也，故女忌见之。日下羊刃带伤官，其人必主恶死。寅申巳亥全，驿马多，女命忌之。子午卯酉桃花不宜全见。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 65,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c155:p0011",
+      "sha256": "495b30f5a0b457ec440ab3e5931c2664fd617bb421ef3eb3c244738d320e0bb7"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c017",
+  "title": "十七、論墓庫刑沖之說",
+  "source_url": "https://www.donglishuzhai.net/chapter/3730.html",
+  "revision": "sha256:de7683f28302669c76c82cdaa6337d910aca9d3d4e953d6a26fd62390ecab561",
+  "source_timestamp": "2026-09-06T04:16:56.273Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c017.html",
+  "raw_sha256": "de7683f28302669c76c82cdaa6337d910aca9d3d4e953d6a26fd62390ecab561",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十七、論墓庫刑沖之說",
+      "text": "「辰戌丑未，最喜刑沖。財官入庫，不沖不發。」此說雖俗書盛稱之，然子平先生造命，無是說也。夫雜氣透干會支，豈不甚美？又何勞刑沖乎？假如甲生辰月，戊土透，豈非偏財？申子會，豈非印綬？若戊土不透，即辰戌相沖，財格猶不甚清也。至於透壬爲印，辰戌相沖，將以累印，謂之沖開印庫，可乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c017:p0001",
+      "sha256": "2805faa9775a849fce2f7b3dadda490116a1fae27df6621659b5f2c933eaae0e"
+    },
+    {
+      "section": "十七、論墓庫刑沖之說",
+      "text": "況四庫之中，雖五行俱有，而終以土爲主。沖則土靈，金木水火，豈能以四庫之沖而動乎？故財官屬土，沖則庫啟。如甲用戊財而辰戌沖，壬用己官而丑未沖之類是也。然終以戊己干頭爲清，用干之既透，即不沖而亦得也。至於財官爲水，沖則反爲累。如己生辰月，壬透爲財，戌沖則劫動，何益之有？丁生辰月，透壬爲官，戌沖則傷動，豈能無害？其可謂之逢沖而壬水之財庫官庫開乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c017:p0002",
+      "sha256": "71dd208016c5f90bc9f8da3d249e6c389a3c1dd2caecc836f21e7ba68f4aa851"
+    },
+    {
+      "section": "十七、論墓庫刑沖之說",
+      "text": "今人不知此理，甚有以出庫爲投庫。如丁生辰月，壬官透干，不以爲庫內之壬，干頭透出，而反爲干頭之壬，逢辰入庫，求戌以沖土，不顧其官之傷。更有可笑者，月令本非四墓，別有用神，年月日時中一帶四墓，便求刑沖；日臨四庫，不以爲身坐庫根，而以爲身主入庫，求沖以解。種種謬論，令人掩耳。",
+      "layer": "base_text",
+      "passage_id": "ziping:c017:p0003",
+      "sha256": "d0f93a2f26a01424e78213b6014aa6d5d742ab250a0dcf0c2cb8ab1fef57b785"
+    },
+    {
+      "section": "十七、論墓庫刑沖之說",
+      "text": "然亦有逢沖而發者，何也？如官最忌沖，而癸生辰月，透戊爲官，與戌相沖，不見破格。四庫喜沖，不爲不是。卻不知子午卯酉之類，二者相仇，乃沖尅之沖，而四墓土自爲沖，乃沖動之沖，非沖尅之沖也。然既以土爲官，何害於事乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c017:p0004",
+      "sha256": "9baa17301d60d2611e8006fd490d7e99582e51d34dd093ac0b45ea5ce20ed716"
+    },
+    {
+      "section": "十七、論墓庫刑沖之說",
+      "text": "是故四墓不忌刑沖，刑沖未必成格。其理甚明，人自不察耳。",
+      "layer": "base_text",
+      "passage_id": "ziping:c017:p0005",
+      "sha256": "e9df85e1cf8465348da2469b641475faf8aed98c8f24ff82735ba9415203e2dc"
+    }
+  ]
+}

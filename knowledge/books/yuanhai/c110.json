@@ -1,0 +1,105 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c110",
+  "title": "内十八格-壬骑龙背格",
+  "source_url": "https://luckclub.cn/bazi/001/110/",
+  "revision": "sha256:8eccfe63eabb0cbe6309764cde298cd6926d5138e449868dd23d892037ea9ddf",
+  "source_timestamp": "2026-09-06T04:10:46.767490+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c110.html",
+  "raw_sha256": "8eccfe63eabb0cbe6309764cde298cd6926d5138e449868dd23d892037ea9ddf",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "内十八格 - 壬骑龙背格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0002",
+      "sha256": "d72d0bcfacf16d28f311f098a8bbf203296c55bdc4bef987e286be088c42d26a"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "此格以辰多者贵，寅多者富。壬日坐辰土上，以丁为财，以己为官。壬日以辰冲戌中丁戊，壬辰日得财官。而寅午戌三合，或壬日至寅，却要年月时上多聚辰字方可用。若壬辰日有年月时上皆在寅字，只为富命，以有午戌为财得地。若年月时上辰字多冲，则冲出财来，所以贵也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0003",
+      "sha256": "5cca11db0077127e38ea5fe1a8772c39d49d952a9e41ed1dd63212677cd5fb1c"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "诸葛判院，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0004",
+      "sha256": "0765cba6f765e78d0617ce642ed2ff8ec081688f6708f6425ea1c6efcbcda6ec"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "戊寅 庚申 壬辰 甲辰",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0005",
+      "sha256": "141491dd622888be7966447ddd4f3f1633eaddeaddcee111408b90bb08cb6c80"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "王巨富，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0006",
+      "sha256": "2903a833f4d1c7910e7aa050610d77092787cc8abd9601fe02bd82d080e54aa5"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "壬寅 壬寅 壬辰 壬寅，王巨富命，正谓寅多，故多发财也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0007",
+      "sha256": "6661191d39c569796ead3028377e0250d10f4270a4e00567971a0c3b6487c7d8"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "诗诀：壬辰日又见辰时，年月辰来最为奇，四柱又逢寅位上，发财发福两相宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0008",
+      "sha256": "eccdf64f66820e90ff548319caf387cc5cb47928acd5eef03dbc522529f59358"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "壬骑龙背喜非常，寅多辰少转发扬，大忌官星来破格，刑冲须见寿元伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0009",
+      "sha256": "5637cd634f4c2f23a8c19e372d697c2053bfc22c0d1c3e608bb82808cbada199"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "壬骑龙背怕官居，重叠逢辰贵有余，假若寅多辰字少，须应高富比陶朱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c110:p0010",
+      "sha256": "7449409002d9ef503bd628a34ce5922cae5e453cb827d82f62086ec244cb887c"
+    },
+    {
+      "section": "内十八格-壬骑龙背格",
+      "text": "眉批：经曰，阳水叠逢水位，是壬骑龙背之乡。经又云，壬骑龙背遇戊无情，寅多则富，辰多则贵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 44,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c110:p0011",
+      "sha256": "4297290a9c94dd1be5f3d928836fe6a60a5fd0ccd480970804029cea48758ff9"
+    }
+  ]
+}

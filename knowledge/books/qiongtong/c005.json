@@ -1,0 +1,1824 @@
+{
+  "book_id": "qiongtong",
+  "chapter_id": "c005",
+  "title": "卷五·论金",
+  "source_url": "https://www.gushiwen.cn/guwen/bookv_5a069b0a3ca6.aspx",
+  "revision": "sha256:7023bb611334d32852f40d28f955d81eccbc2506a335392586106aeedfa9b273",
+  "source_timestamp": "2026-09-06T04:16:00.662189+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/qiongtong/c005.html",
+  "raw_sha256": "7023bb611334d32852f40d28f955d81eccbc2506a335392586106aeedfa9b273",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷五·论金",
+      "text": "金以至阴为体，中含至阳之精，乃能坚刚，独异众物，若独阴而不坚，冰雪是也，遇火则消矣，故金无火链，不能成器，金重火轻，执事繁难，金轻火重，煆炼消亡，金极火盛，为格最精，金火全，名曰铸印，犯丑字，即为损馍，金火多名为乘轩，遇死衰，反为不利，木火炼金，成名锐而退速，纯金遇水，逢富显以赢余，金能生水，火旺则金沉，土能生金，金多则土贱，金无水乾枯，水重，则沉沦无用，金无土死绝，土重，则埋没不显，两金两火，最上，两金两木，才足，一金生三，氻弱难胜，一金得三木，顽钝自损，金成则火灭，故金未成器，欲得见火，金已成器，不欲见火，金到申酉巳丑，亦可谓之成也，运喜西北，不利南方。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0001",
+      "sha256": "70f4328f862d78a72d4940dbb36c1cf1db7b4183736ef80adafdd20be78a2cf7"
+    },
+    {
+      "section": "卷五·论金 / 春月之金",
+      "text": "春月之金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0002",
+      "sha256": "8ca9c159020384d00061286083372e10b2b94ba2833e32c7fae7159350b651cf"
+    },
+    {
+      "section": "卷五·论金 / 春月之金",
+      "text": "生於春月，余寒未尽，贵乎火气为荣，性柔体弱，欲得厚土辅助，水盛增寒，难施锋锐之势，木旺损力，有剉钝之厄，金来比助，扶持最妙，比而无火，失类非良。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0003",
+      "sha256": "0f0ad7c3f798f478d17d778cbfd3454f6a89bcc08f0946dc73bd9aef913061a4"
+    },
+    {
+      "section": "卷五·论金 / 夏月之金",
+      "text": "夏月之金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0004",
+      "sha256": "997f588e837c6b1d92432b2eddeb440d3e22cfa9731246be437bf72f338af144"
+    },
+    {
+      "section": "卷五·论金 / 夏月之金",
+      "text": "夏月之金，尤为柔弱，形质未具，尤嫌死绝，火多而郤为不厌，水盛而滋润呈祥，见木而助么伤身，遇金而扶持精壮，土薄而最为有用，土厚而埋没无光。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0005",
+      "sha256": "617a663abe67ec9182ac9f7ba2147f1035333b1c59710d309bb53649d74b2b35"
+    },
+    {
+      "section": "卷五·论金 / 秋月之金",
+      "text": "秋月之金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0006",
+      "sha256": "655c065431cb6bb7962a8774cb12c475e02afafc77a1fdbe9d6b63110d7857a4"
+    },
+    {
+      "section": "卷五·论金 / 秋月之金",
+      "text": "秋月之金，当权得令，火来煆炼，遂成钟鼎之材，土多培养，反惹顽浊之气，见水则精神越秀，逢木则琢削施威，金助愈刚，刚过则决，气重愈旺，旺极则衰。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0007",
+      "sha256": "4770d06dd08dd85b08cde03022d76b33e37993bb05e385f3e2cabe03c74581b7"
+    },
+    {
+      "section": "卷五·论金 / 冬月之金",
+      "text": "冬月之金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0008",
+      "sha256": "4d596276c43d43d77778b4621e4769acfb4f86c83e9e0aa6d67e2f1eb051ef83"
+    },
+    {
+      "section": "卷五·论金 / 冬月之金",
+      "text": "冬月之金，形寒性冷，木多则难施琢削之功，水盛而未免沉潜之患，土能制水，金体不寒，火来助土，子母成功，喜比肩聚气相扶，欲官印温养为利。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0009",
+      "sha256": "425f99aad2a26667adb0fb1cf8d79e4751266090a3c653c01420be3428cdcdbd"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "正月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0010",
+      "sha256": "0178ee014fbac0a844d764587ab7cbc93c46baf1051ef0e5d911fa604418de2d"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "正月庚金，木旺之际，有土皆死，不能生金，且金之寒气未除，先用丙暖庚性，又虑土厚埋金，须甲疏泄，丙甲两透，科甲显荣，二者透一，亦有生监，丙藏甲透，异路功名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0011",
+      "sha256": "6ad7f706eea92645f8a7169aa665675a5997f4f4c7af0960ac97e09ddf899a8b"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "或柱中土多，甲透者贵，甲藏者富，庚出则否。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0012",
+      "sha256": "39c1c17cd9fe323b03b3b955e1655da83535c28e977f96a2934a423b965f12a4"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "或丁火出干，加以戊己而无水者，又主富贵，何也，寅中甲木，引丁有根，无水为病，名官星有气，才旺生扶，故以富贵推之，如火多则用土，用土者火妻土子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0013",
+      "sha256": "8dec898060b8033f282ea65cc6e45483b059c1be47d3904d749c4d23cbfbdd98"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "或支成炎局，壬透，有根者，大富贵，无根者，小富贵，乏水者，残疾之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0014",
+      "sha256": "edd7e13f4b26c64f92e56614b4295fcff681b78cad462809dcab01dd01fdf6a2"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "或木被金伤，无丙丁出制，支无丁火，此系平人，或丙遭癸困，无戊制者亦然。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0015",
+      "sha256": "8b427506efd97c939ad0380fc58929be1e82ea42c477e4e839b80919fa9ddfdd"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "总之正月庚金，丙甲为上，丁火次之，春金多火，不夭则贫，阳金最喜火炼，煆炼太过，反主奔流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0016",
+      "sha256": "e00d35bde49cfe79494a69d4333a70599a58573d0588f16f5af6cef52dca85e7"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0017",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "庚庚壬壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0018",
+      "sha256": "2aee3428914640d0860c1c0c37385de12208d89f46c08847155f233fa23fe639"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "辰申寅子　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0019",
+      "sha256": "70830872126c6823b8fa176e31bb6f1b758661b7eee2e12a96a581df1978f54c"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "丙庚庚辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0020",
+      "sha256": "06f2629ceae01078e2b264d6f9ed4ac40de5939e1f1483c8fb8547bc7334224a"
+    },
+    {
+      "section": "卷五·论金 / 正月庚金",
+      "text": "戌戌寅巳",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0021",
+      "sha256": "9f7b8bef38c60fc6a696baf3fe63c9881fcfa4d72e10330e3a51235f5d8af887"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "二月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0022",
+      "sha256": "61a31ce142d870cae1d480a1ad2a3117319dbdb69ba3b1f349be1ea6411ef483"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "二月庚金，柱中自然有乙，当令之乙，见庚必留情於乙，此金有暗强之势，如秋金一理，故二月庚金，专用丁火，借甲引丁，借庚劈甲，无丁用丙者，富贵多出於勉强。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0023",
+      "sha256": "5fd59721825a8cc969c34cc919772846d538d51adf7c64519bc168a8de7e8465"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "或丁在干，甲透引丁，支下再见一庚制甲，配得中和，必然大贵，如不见庚合者，虽丁甲两透，亦属平人，春丁不旺不衰，故用甲为佐丁之物，甲若无庚劈，则不能引丁，乙木虽多，又忌湿乙伤丁，难为丁母，故有丁甲无庚者，常人，有丁庚，甲不出干者，常人，或丁透无庚甲者，可许贡监，无丁有丙者，异路功名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0024",
+      "sha256": "cf9dbed71cfe1ed101616c6c3b4a920ca4739698c458f8279c1a77128f672131"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "或一片甲乙，忌庚出帮破才，乃从才格，反主富贵，若见一比，又主孤贫。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0025",
+      "sha256": "df319e05f35e9d9ec1e883cd50e8bbe68eb9213448fb96d131f4680c65f5fd78"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "从才者，火妻土子，用丁者，取甲为妻，若有庚制，难许同偕。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0026",
+      "sha256": "273d5b97eed3df2b351140526ede45bb21261af9270f663bbadb1e867f376b7e"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "死金嫌盖顶之泥，重见戊己，如人压伏之象，须甲透为妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0027",
+      "sha256": "4877ea9f5484eeaa754bc9eceb9101fc1554e852f489680c17ca9ec8029883f4"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0028",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "丁庚己庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0029",
+      "sha256": "2fb2e3fabeffb6716a1ce721e23ee4326c08efa3c8e2c3dd45530c5ccc61e288"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "丑寅卯申　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0030",
+      "sha256": "5dbe4138d149990476b9230ecafd07aedb76eb63b06998dbfb30048b82a811aa"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "甲庚己庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0031",
+      "sha256": "d2bfd6fa6b0803821531814604095446d3082e309b997135cb96da2abd6860f1"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "申子卯午　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0032",
+      "sha256": "ddcaf8076b692e6a237bda7047dd0aded59e6a8dbe6420b20009447d185bb17f"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "丁庚辛辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0033",
+      "sha256": "9bbffd0cac1d34544eb254698f49202e1a6857cad2950e698d8a93cbfa95e557"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "亥寅卯酉　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0034",
+      "sha256": "3dbc3d2c5372b89111dc2ee240025af214b48e443812b0523fb98cde4060fd8a"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "丁庚辛丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0035",
+      "sha256": "54a8e7d055f6dd0b50a329d1a2db3a185c07ca83d93e187d09f865afa67dcaf2"
+    },
+    {
+      "section": "卷五·论金 / 二月庚金",
+      "text": "亥辰卯申",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0036",
+      "sha256": "6146499e7f4cf8175faeeedb273c2984388ea1c20fd218ea8c29675946a011b7"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "三月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0037",
+      "sha256": "9f7555baf35d22c938b6637ff02ea1f30670d667fc926290e962a9aa90d1d39b"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "三月庚金，戊土司令，无生金之理，有埋金之忧，故先甲後丁，不用庚劈甲，三月之庚，土旺金顽，顽金宜丁，旺土须甲，乏甲不能立业，乏丁焉能成名，二者少一，富贵不真，庚金无火，非夭则贫，身弱才多，富贵不久。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0038",
+      "sha256": "1a05262a0e8ee43728526258c80aeb6a93042406c2064f6be65f34101f8578e3"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "得丁甲丙透，不见比肩，科甲之命，但要好运相催，甲透丁藏，采芹拾芥，甲藏丁透，异路功名，丁甲俱藏，不受庚制，富中取富，刀笔起家，有甲无丁，平常之辈，有丁无甲，迂儒腐儒，丁甲两无，下贱之流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0039",
+      "sha256": "6a30f9d381fe1ba20dc0a0d0de391c27844db11736b2d97491ef7497b0716f08"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "或一甲，无丁，有丙，由行伍而得官职，须不见壬，癸，为妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0040",
+      "sha256": "04bc5cbce5dbdb6350939d420afa6ebbbfde894f218dba3add8553e9665f5fed"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "或支成土局，无木，贫贱僧道，见乙，奸诈小人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0041",
+      "sha256": "82fb97d3b5bcb74982eeb7cd05099c50eeb6a32aa6a2949bbc6d5d51445331dd"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "或支成火局，癸水透，富贵，有丙丁出干，见壬制之，方吉，无制，残疾之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0042",
+      "sha256": "7179db870fcd2e76420b818268f3c88e9e487bcf9473d4a00a2f2fe8260b0cae"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "用甲者，水妻木子，用丁者，木妻火子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0043",
+      "sha256": "28681ed90d38d2d3d0abe59354fedcf3037fd318eeac5e3e478b8045c73ef084"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0044",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "壬庚庚庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0045",
+      "sha256": "a5cf9c342566bc37f4b5d7d05191d0064638b0a0293e279b7d5319c70a23f59d"
+    },
+    {
+      "section": "卷五·论金 / 三月庚金",
+      "text": "午申辰子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0046",
+      "sha256": "30449a82b19102e7d155339f6292f946fdb56a64b09ed87bbd5b85ba4da458c5"
+    },
+    {
+      "section": "卷五·论金 / 四月庚金",
+      "text": "四月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0047",
+      "sha256": "4bd78ee557ea533003a50b11e11c6c878ccc9b0c8da4c10f8a4ea1dca0bf07df"
+    },
+    {
+      "section": "卷五·论金 / 四月庚金",
+      "text": "四月庚金，长生於巳，巳内有戊，丙不熔金，故不畏火炎，丙亦可作用，但先壬水，方得中和，故曰群金生夏，喜用勾陈，次取戊土，丙火佐之，三者皆全，登科及第，即透一二，亦非白丁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0048",
+      "sha256": "23c145a7b9fc561d19646740c1e8d53edb3ab2bcdbffc62286da745f9d482b6c"
+    },
+    {
+      "section": "卷五·论金 / 四月庚金",
+      "text": "或一派丙火，名曰假杀为权，须不见壬制者，此人假作清，高并无仁义，刑妻克子，有壬制者，又主荣华，壬藏支者，有富贵之名，而无其实。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0049",
+      "sha256": "7986cd7ce441cc225ff4fa7fee2d2805c7562d7eae75f2bc3daee6a312d105ea"
+    },
+    {
+      "section": "卷五·论金 / 四月庚金",
+      "text": "或支成金局，变弱为强，用丙无力，用丁方妙，故丁透者吉，无丁，无用之人，或丁出三四，煆制太过，其人奔波。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0050",
+      "sha256": "d91a34dda3e0b6616c871d6bfb51b6cba50d4a0752fe3cf149427c4a79e2c669"
+    },
+    {
+      "section": "卷五·论金 / 四月庚金",
+      "text": "四月庚金，须用壬丙戊，但非拘执先後，宜分病用药，妻子仝前。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0051",
+      "sha256": "bfd3e9f98707aaaafc139dfdf734704f9b761ea982c9e99e4fe78245335d875d"
+    },
+    {
+      "section": "卷五·论金 / 四月庚金",
+      "text": "偷戟成功，入火乡而反害，金逢火已损，再见火必伤，庚辛火旺怕南方，逢辰巳之乡，又为荣断。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0052",
+      "sha256": "c15a97400688a37745f0bdc22ef5032f7e44bdc105fe533cdadceddead039a11"
+    },
+    {
+      "section": "卷五·论金 / 五月庚金",
+      "text": "五月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0053",
+      "sha256": "0e6f870b15ab6852aa4616e2bf129beef30bc4e0e056fb8e4a398e315cd79e41"
+    },
+    {
+      "section": "卷五·论金 / 五月庚金",
+      "text": "五月庚金，丁火旺烈，庚金败地，专用壬水，癸又次之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0054",
+      "sha256": "0e377e1aacbd015f113d17be11c8698e3d85f29b94b5f8a3111958c9d2b24255"
+    },
+    {
+      "section": "卷五·论金 / 五月庚金",
+      "text": "壬透癸藏，支见庚辛，必然科甲，切忌戊己透干制水，则否，戊藏支内，不失儒林，或壬在支，有金生助，又得金神出干，明经之贵，或癸出带辛，异路之荣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0055",
+      "sha256": "cc31879211d53f1174fbc1b86fabf1f3903dff4fae84fb4d1d14eceb70f168f8"
+    },
+    {
+      "section": "卷五·论金 / 五月庚金",
+      "text": "或支成炎局，乏水者，奔波之客，有壬癸制者，捐纳之人，又见戊己透者则否，无壬癸制火者，又宜戊己出干补金泄火，庶不夭折孤贫。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0056",
+      "sha256": "fbbc30f13b3e3182a61c53f21e929ce082c7ea531f7a99fdcc9c262b34e66d9e"
+    },
+    {
+      "section": "卷五·论金 / 五月庚金",
+      "text": "总之仲夏无水，非上格，或一派木火，无伤，印，比劫，又作从杀而论。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0057",
+      "sha256": "7436b60e7a2dbc08f0ad528266423dc878b75b23b3d0149d23f081b9d9adc2ba"
+    },
+    {
+      "section": "卷五·论金 / 五月庚金",
+      "text": "己未，庚午，庚戌．",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0058",
+      "sha256": "e3ece7f8520985dcb9c78d82d0481df2786c6aabf39cb2baa6742de05dae85d2"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "六月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0059",
+      "sha256": "a2621defcb347a29fd21075e71f062c17f820a2e9b66342f1b74d87c48cc8049"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "六月庚金，三伏生寒，顽钝极矣，先用丁火，次取甲木。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0060",
+      "sha256": "22573616e29f3cf1619d265d5e42100012c837aaa85d4052895b3d4bf1f67742"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "丁甲两透名显身荣，忌癸伤丁，有甲无丁，庸俗，有丁无甲，生员，丁甲全无，下贱之人，木虽有，丁不透，支又见水，执鞭之士，丁火无伤，贸易之流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0061",
+      "sha256": "937969e33c92078992810733816ebac7dfb7fbcb09a44748a3b8b6904b64677b"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "支会土局，甲先丁後，甲透者，文章显达，丁透者，刀笔扬名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0062",
+      "sha256": "15c78f92ce8a83c351462be9a5bbc94c3a42ea12572095659e151aaff31dfdd9"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "或柱多金，有二丁出制，异路功名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0063",
+      "sha256": "bbf3f051370e0c2d8c91e2a51feea333ca4ba630c0c1ab044d6510f9e9d843f8"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0064",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "丁庚丁丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0065",
+      "sha256": "7327a7f239caf10c673b2c1b6a91a2a4a64130404aa7fd6c9ef559861baffc7c"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "亥申未辰　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0066",
+      "sha256": "47ccf655974e6012dcf70278b38e1e1ea104364bea34ba184837258117a7cf55"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "壬庚乙丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0067",
+      "sha256": "d79e6db79be10b1d4f8afe254acdc926a2ab7701409228119a07a4ce3a2e611e"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "午寅未午　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0068",
+      "sha256": "70b7ade1915c9c2b955e4291de432107ed98f7db81b7188186eac084fbce2a92"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "甲庚己癸",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0069",
+      "sha256": "1c885fac4a20e7047443e44041dae02c17f60fcba111d5c7c4a6cfb28063beb2"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "申子未巳　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0070",
+      "sha256": "dd0f3753141f71b7a1c0161f92d7afdb193993bd0fbc8b7f3e2c28cc24028a39"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "癸庚乙丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0071",
+      "sha256": "b20473cb45a1c9bb245a58e46fb988b0f0aef84cd5c49a97feece54b4728c0c5"
+    },
+    {
+      "section": "卷五·论金 / 六月庚金",
+      "text": "未辰未辰",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0072",
+      "sha256": "6614543ee3f5a4136b616659fbc8000548cc64ce79048a437a9911bc4db1d2ad"
+    },
+    {
+      "section": "卷五·论金 / 七月庚金",
+      "text": "七月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0073",
+      "sha256": "b41ca2ca9534aa9cb7f08aed64831449037d919fc7d15cacf5f1439940757767"
+    },
+    {
+      "section": "卷五·论金 / 七月庚金",
+      "text": "七月庚金，刚锐极矣，专用丁火煆炼，次取木引丁，故曰，秋金锐锐最为奇，壬癸相逢总不宜，如逢木火来成局，试看福寿与天齐，如得丁甲两透，定步青云，若有丁无甲为俊秀，有甲无丁是平人，丁甲两无无用物，只堪门下作闲人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0074",
+      "sha256": "e477bed211312fe1fa589dda815e0f853039af606e2069e4dae10c8502e01f72"
+    },
+    {
+      "section": "卷五·论金 / 七月庚金",
+      "text": "或支成水局，乏丁用丙，柱中即有丙火，不见甲木者，必主愚懦，何也，当时金水两旺，金生水以制火，何能发达，或见甲出引丁，可云生监，甲弱者，衣食充盈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0075",
+      "sha256": "1023e8b2167792fbbf368094e1a9aa479d6fba020d7a129cb65bce527fe84ce7"
+    },
+    {
+      "section": "卷五·论金 / 七月庚金",
+      "text": "或支成土局，先甲後丁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0076",
+      "sha256": "faf7c06dc9ae1e940facac1c34db8d807d8eee72829a8ef8124580eb6d72c202"
+    },
+    {
+      "section": "卷五·论金 / 七月庚金",
+      "text": "支成火局，富贵中人，金刚木明，行商坐贾之人，金备申酉戌之地，富贵疑，金神入火乡，逢羊刃富贵荣华。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0077",
+      "sha256": "ca010ee7d8bed57df1ea1e22db7de61f65b8a641575a6294e7d44b789ed8dc74"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "八月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0078",
+      "sha256": "3d2a1ecf79363aa51631080fe0f61ec7d83031f512cf594f27d5c37940db4ce9"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "八月庚金，刚锐支退，用丁甲，丙不可少，若丁甲透，又见一丙，功名显赫，且见羊刃无刑冲，丙杀藏支，名为羊刃架杀，主出将入相，直介忠臣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0079",
+      "sha256": "5e93f3e07b6117184eba29c0e1cd9da7799dad5da87b4cece9199e8e2e254f1c"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "或丙火重重，一丁高透，亦主科甲，丙出丁藏，异路之仕。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0080",
+      "sha256": "d1b5e1ec6d9bf61cfb3551319803590440bf4f36c25fc78b095e7b01d4e9bb7a"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "或甲藏支，火透而水不透者，亦主清高，衣衿可望。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0081",
+      "sha256": "27f8e7cff2659480a58e81c3d6fe0cfe77922ca7d06a5575064cb312f9efdb7d"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "或丁藏支内，重见丙火者，此名假杀重重，虽羊刃帖身，郤难从杀也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0082",
+      "sha256": "001a227be6f625c5e13f282cb1292a424389854b1216e6fd7e21ef5807ae9875"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "即一丙透，秀而不富，或支见重重甲乙，无用人也，总之旺金木衰，非火莫制，不见丙丁，艺术之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0083",
+      "sha256": "11a1e440037da94bc330e5323955ea2026f97e1bed0931f09c6707fb9ac65dfd"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0084",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "丙庚丁丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0085",
+      "sha256": "4c176c3529ab96e9ec950c6a0213eafa59e308614ccc86053af60f1983bef3f1"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "子子酉子　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0086",
+      "sha256": "f9a7d41fa1c2df81837e6a21ce151629dcbc095d5d72efb2bee3aaa012c2262d"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "丁庚乙乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0087",
+      "sha256": "5c6f8379ff851a710d1e32524da15255049350583c77c8f3db15c3505bc3bc9d"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "亥午酉巳　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0088",
+      "sha256": "0dd4018db4e85754be4ff4049c6e8a815b830e12c5646d0d199edb3f28318c30"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "戊庚癸己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0089",
+      "sha256": "f471433aac459dbb15b42b524c438171a541f9935b700072dbf8c166b49551ff"
+    },
+    {
+      "section": "卷五·论金 / 八月庚金",
+      "text": "寅申酉亥",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0090",
+      "sha256": "de175e40ecad3491df632c60b176fa1235533ab82b34a26c3d31f574c2b5c7f0"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "九月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0091",
+      "sha256": "3005289c6ec7c1a5e90889dad4b0d858043a2cf87217933a1c1456cad247a47c"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "九月庚金，戊土司令，最怕土厚埋金，宜先用甲疏，後用壬洗，则金自出矣，忌见己土浊壬。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0092",
+      "sha256": "8d6ce127c229d0d4030f119212132a97c620e36ffa3d15340dbbf0ecb7ef43f2"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "壬甲两透，科甲相宜，或甲透壬藏，乡魁可望，甲藏壬透，廪贡堪谋，有甲无壬，犹有学问，有壬无甲，莫问衣衿，壬甲两无，则为下格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0093",
+      "sha256": "3228c138d33861d5f965153c1a4c62748d543c62fe511880e3ea5cd4754f5eda"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "或支成水局，丙透救之，此人才高迈众，名重乡闾，不见癸水，一榜可许。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0094",
+      "sha256": "02b88ae1acc8b415d7d29b2aa46ab9519e786acef4f369500d63ea22be54c094"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "或四柱戊多金旺，全无甲壬者，即有衣禄，亦不能久，或庚戊多无壬甲者，愚顽之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0095",
+      "sha256": "fb3d0d49c7b5579a8c6e96d6a8fd666b5a31d29d07cee76d9fd3e6c4a9b12bb9"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0096",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "甲庚戊辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0097",
+      "sha256": "a0ca72a186c5d36b4fea8361e3c91b79321a716f6c9850ad082bf002fd230b54"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "申申戌酉　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0098",
+      "sha256": "06c78c271f6bd06149c8285d9d0c6d77c85cf594f0404066eadce41494121d34"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "辛庚丙庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0099",
+      "sha256": "fa146592fe1ac202c4ab4fab8b491af5826a7a8394a1afe1fe34e5d56387e4ac"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "巳戌戌寅　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0100",
+      "sha256": "c359e01c2752b678ee4e1d0244845ad4fe0ab3940d9d513fcffe4806df1266ff"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "辛庚戊辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0101",
+      "sha256": "63a1e37d8fadd26877ad8fd05e8a2d4752353f3b2f357f474a34702e43118f25"
+    },
+    {
+      "section": "卷五·论金 / 九月庚金",
+      "text": "巳申戌酉",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0102",
+      "sha256": "8ff6ee1c6b1fcea5dead9fad159bc89f8bc6bfd1f815df458d3f483b62fc86a1"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "十月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0103",
+      "sha256": "0859f8783780afa51597b7d922f7935501847cad52bc2b476cddbb6b14871f70"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "十月庚金，水冷性寒，非丁莫造，非丙不暖。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0104",
+      "sha256": "1893221357623677edfadf4e37f80b745e65e67336e543c128c3f70785e0172f"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "丁甲两透，支无水局，一榜有之，支藏丙火，桃浪之仙，支见亥子，得己出制，亦有功名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0105",
+      "sha256": "7a19503a8326aad69d9e960e9fff7ab919ddcabdfdc3d4587292ec9d96ebb353"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "若见丙透无丁者，无显达，丁藏甲透，武职之人，以上不合者，庸俗。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0106",
+      "sha256": "9f3f9104fb078c926d99830147c71fda3a6097fdd63f76c492ee28de6f3b4033"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "如金水混杂，全无丙丁者，鄙夫，支成金局，无火者，僧道之命也，书曰，水冷金寒爱丙丁。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0107",
+      "sha256": "6cbe7a6352741896e24cab25999da7e2335642edaa81c8ca76e03bd2e8eb04a2"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0108",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "壬庚辛丁",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0109",
+      "sha256": "dff9bfd3dd52831d6d1368ae8565c599406b12f9f9cf55cd4b5770d0d30c98ec"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "午子亥亥　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0110",
+      "sha256": "1787edec0cf8628bcce075d265c1252c8a50f923b1dfe9c43abb6157e18e3f61"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "丙庚辛壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0111",
+      "sha256": "703579b41a8b4555cc697f5e1e8a54ae71d5bb8ba2c7b5c233c459a4522eea85"
+    },
+    {
+      "section": "卷五·论金 / 十月庚金",
+      "text": "子辰亥辰",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0112",
+      "sha256": "965ac13ec997294d49f6011760576385ea5c3cb1ca04246b52afc0b545187f35"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "十一月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0113",
+      "sha256": "ad18ac55e02c1468d967466732a623c544dddff26cac4ba02a5b8d39615857f1"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "十一月庚金，天气严寒，仍取丁甲，次取丙火照暖，或丁甲两透，丙在支中，必主科甲，即无丙火，亦有衣衿，有丁无甲，亦可富中取贵，有甲无丁，只作常人，或丙透丁藏，异途名望，丁藏有甲，武学可许。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0114",
+      "sha256": "e4ca70b80336d6aaf14b248a3a37143aef44a80e7022754293ec4e664183fe03"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "或重重丙火，可许一富，但不清高，丙戊生寅，或丙底坐寅，有一二者，富真贵假，若见癸透，一介寒儒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0115",
+      "sha256": "a1e99841017a9f6452d4aa88f705a997907f543611f927ed37c2e415e16c9079"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "或支成水局，不见丙丁者，此乃伤官格，为人清雅，衣禄常盈，但子息艰难耳。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0116",
+      "sha256": "89fc458caab612005bbfdc5d298789de0949bdbc2fabe67d68aac8b2dd3c19bd"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "或丙丁太多，名官煞混杂最无良，又怕身轻有损伤，如遇东南二运地，焉能挨得过时光，过於清冷，似有凄凉，柱中一派金水，不入火土之乡，主一生孤贫浪荡，难望有成也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0117",
+      "sha256": "f468b7ccc84641fde73486b96ed5b05efe219b39a04af9e5051ed2b86add1e5e"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0118",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "庚庚壬壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0119",
+      "sha256": "2aee3428914640d0860c1c0c37385de12208d89f46c08847155f233fa23fe639"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "辰申子子　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0120",
+      "sha256": "5c880e7f68bbaf3050030bebd26d2079f97fbc5b437f8fc3009d8bf31f966b58"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "癸庚庚辛",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0121",
+      "sha256": "8318c6402f171e3a0259330cf128d86cc9a6e833b0834a52f5bb1a319f924fa6"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "未辰子亥　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0122",
+      "sha256": "d53620c671caa1467828e80804ee765cce1382b3ee9f1227a9e9b859fbf94832"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "戊庚戊乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0123",
+      "sha256": "09de1a2b5569676e1c7a7271328730e01711b2f3e09519f478c4b547b3eae6cd"
+    },
+    {
+      "section": "卷五·论金 / 十一月庚金",
+      "text": "寅寅子卯",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0124",
+      "sha256": "a77ec13e9c5f0c6312f23a375b98b24dc287f21371f139f6a2efc9b5e92b44d3"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "十二月庚金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0125",
+      "sha256": "812b973eadbcb30548ba24602954a41157c8a6a43d8ef6e817a2693de97921a8"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "十二月庚金，寒气太重，且多湿泥，愈寒愈冻，先取丙火解冻，次取丁火炼金，甲亦不可少。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0126",
+      "sha256": "c5f545ba98f06968aa7a668077b5024233cdd9c4ff166552560765423f999fc8"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "丙丁甲透者，即不科甲，亦有恩荣，有丙无丁甲者，富中取贵，有丁甲无丙者，特达才人，有丙丁无甲者，白手成家，刀笔亨通，乏金更美，或支成金局无水，僧道之流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0127",
+      "sha256": "cd923baa217272d4dc4ff55dee23eea6d3bd5174fc891579d4160b5eb2f96a9f"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0128",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "癸庚己庚",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0129",
+      "sha256": "9fd40f7cda02b59ab8ef69ed6c39a8fa2c846d70fa268007969330c8cea2b4d9"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "未戌丑辰",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0130",
+      "sha256": "61369396a22ee4b375da453ef15bf0e4540a8a373f0b1a669d95426ac37b2df4"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "女命　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0131",
+      "sha256": "b293d2ca1bc0ec65a6b94e63e53d68924f15768ea6da2bceba2284267abb257f"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "甲庚丁己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0132",
+      "sha256": "64aef5557410c2d0a00f1a81891e1483a1d2e0077caee5acc4644d94acdd6344"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "申子丑巳",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0133",
+      "sha256": "9a186ddd0bb5b42dee37c18349938c9c325555b85e99fa8cb3f8389ef50e3b98"
+    },
+    {
+      "section": "卷五·论金 / 十二月庚金",
+      "text": "论辛金",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0134",
+      "sha256": "b603151a94a6be6a823dd8159ac15aa897eba78a0a4030e9304a5ed42bb9b213"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "正月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0135",
+      "sha256": "75807098d2cc668fe7bbcee58adf576ebc17e8af685792211ff5565251dbc97e"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "正月辛金，阳气舒而寒未除，不知正月建寅，中有长生之丙，解去寒气，忌甲木司权，辛金失令，取己土为身之本，欲得辛金发现，全赖壬水之功，己壬两透，支见庚制甲，科甲定然，或己土透干，支中有甲，异路恩荣，或己土不全，号曰君臣失势，富贵难全，或有丙火出干，亦主武学，或见壬，无己庚者，贫贱之徒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0136",
+      "sha256": "3febb1f69fd899faa79dd99d17b4b9dc07e34401319d9b4067a92c32f216bd94"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "或支成火局，即壬水出干，不克己土，亦寻常之人，或庚壬两透，破局制火，必为显达之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0137",
+      "sha256": "0a0c555516b8c95d3708ab4eec62ea4accfa0aa028e176a20ae84935c4258b97"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "或支成水局，不见丙火，名为金弱沉寒，平常之士，书曰金水性寒寒到底，凄凉难免少年忧，得丙透照暖，反主富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0138",
+      "sha256": "4f8d3294b5498fc6ac5a9ba735062b74d3a72496e6d90551a8672c9ee11418d8"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "故正月辛金，先己後壬，己为君，庚为佐，如用丙火须参看，用己，火妻土子，用壬，金妻水子。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0139",
+      "sha256": "0e39995b8757d292d58137ad9cd34e47b03413fa63507bed768f2988f305653a"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "辛金珠玉，最怕红炉，辛逢卯日，子时，名曰朝阳。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0140",
+      "sha256": "486d88b80f03c44e24ac8c5ec369764886f3544b9250ae72ead32ea7ad597feb"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0141",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "己辛庚丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0142",
+      "sha256": "c975a60fc5df88100c35b56c82aa03c80b2a29a21168b7d7b58237d3102a4481"
+    },
+    {
+      "section": "卷五·论金 / 正月辛金",
+      "text": "丑酉寅辰",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0143",
+      "sha256": "15743bc49f1b593a379d9fc006640746ce76375cc06664d322087faeef5a0875"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "二月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0144",
+      "sha256": "00d19651716df1a8e4e2c60803343a732fc95a0d8234a1233b31de68fd48a3a0"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "二月辛金，阳和之际，壬水为尊，见戊己为病，得甲制伏，则辛金不致埋没，壬水不致混浊，合此者必身入玉堂，故二月庚金，有壬甲透者贵显，不则，乡绅，或壬坐亥支，不见土出，可能入芥，家亦小康，得申中之壬者，异途名望，无壬者常人，其生克之理，与正月辛金皆同。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0145",
+      "sha256": "3053514b314c3250523934c357c17e7e41c947d8867a3be384cdae6adf9ac852"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "或壬戊透，甲不出干，此为病不遇药，平常之人，得乙破戊，颇有衣衿，但假名假利，刻薄乖张。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0146",
+      "sha256": "eb340a4b684baa250cadd4667baadd467abcdabcc7f9c2c6464818d0b0c27e20"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "或一派壬水汪洋，名金水淘洗太过，不得中和，略有衣食，全无作为，如壬水重重，得戊反吉。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0147",
+      "sha256": "3d6cb25ad72927d348f466c0f14e6afc5b76e6a82c3b3ae0692ba4bc826eb357"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "或支成木局，泄尽壬水，有庚富贵，无庚平人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0148",
+      "sha256": "fa90388433adb6c5d42e273c23582850f85e3e87e3f828fef73be2d7ee9d834c"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "或支成火局，名官印相争，金水两伤，下流之格，得二壬出制，富贵反奇。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0149",
+      "sha256": "9d81393699e30d83c3505f8e3e6a2ec8ae1ef027eebe89dc42fcf86ae420b13e"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "辛金生於春季，一派壬水，而无丙水，即能显达，家无宿舂，得壬丙齐透，方许大富大贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0150",
+      "sha256": "e5220c09c1f9765ce3b76b61d8146e0da153ecb60519db8e4f4c4d4d930e7ab5"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0151",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "甲辛己乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0152",
+      "sha256": "ef0f87a2be573dd6cd8994d186cfff5368f7e1ccedbd16f38f2209116694c1eb"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "午酉卯卯　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0153",
+      "sha256": "d3fc0507ea79a4da02b631b61ff537ad66d060d61e3386426706197fa38a7b68"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "丙辛己乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0154",
+      "sha256": "115fdffeea5ccc19e309a52676e0b8780775758aaed33654c14e8a85c89f632f"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "申卯卯酉",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0155",
+      "sha256": "46346890c86144632dd82d556c07f2fb8c094079eaf278ad31f1922138f4b8e3"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0156",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "己辛丁己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0157",
+      "sha256": "aa381d310e78d767b54f1bfbcb2a4eeb0b5d7cfebe5930b4d606f3e03a4fe3b8"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "亥巳卯未　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0158",
+      "sha256": "e0625ceb3aaee06ecf10f8d0419d8d0b4beaf226f9f06cdeb12e84a25c2abdd3"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "己辛丁甲",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0159",
+      "sha256": "958f009bfdb5ea91e9b18488ab5de04c695e329c55a839dea00933c5e418ef8c"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "亥未卯午　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0160",
+      "sha256": "b0fd86a65291eae5fc116681b94feb37c35911f469399b98f825a59e95b83753"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "壬辛癸壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0161",
+      "sha256": "fe3187372a55ef28a7735cc6af80827b9b70c2f8527ee3d7bc3e65bf3976acc4"
+    },
+    {
+      "section": "卷五·论金 / 二月辛金",
+      "text": "辰卯卯子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0162",
+      "sha256": "32d042bb973620fd361127eadd539241da5988d067c585d695224e02ea5db2c5"
+    },
+    {
+      "section": "卷五·论金 / 三月辛金",
+      "text": "三月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0163",
+      "sha256": "bcf8983a2265de271bd40e19bfc6b7ca101065182ecc40bebdd4108aa4b5c88a"
+    },
+    {
+      "section": "卷五·论金 / 三月辛金",
+      "text": "三月辛金，戊土司令，辛承正气，母旺子相，先壬後甲，壬甲两透，富贵必然，壬透甲藏，廪贡不失，甲透壬藏，富贵可云，壬甲皆无，平常之格。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0164",
+      "sha256": "3bd65e4e51b476b88eaa3286d77634ad5d5e95fa53159fab8ccc71f7d724042c"
+    },
+    {
+      "section": "卷五·论金 / 三月辛金",
+      "text": "所忌者丙贪合也，如月时皆丙，名为争合，主慷慨风流，交四海，若癸出干制丙，可许采芹，或支坐亥子之乡，支又见申，即非玉堂，亦必高增禄位，若戊出干制水，不见甲乙，清闲之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0165",
+      "sha256": "8d6c8eeeed3f4653322262f6eb82a321931e4198be4a796248988d0f6019d89d"
+    },
+    {
+      "section": "卷五·论金 / 三月辛金",
+      "text": "又或支见四库，名土厚埋金，不见甲制，愚顽之辈。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0166",
+      "sha256": "509a23470d68fa48d260dd5873561dfb8f0c52555bce8921fc69608629bc67b6"
+    },
+    {
+      "section": "卷五·论金 / 三月辛金",
+      "text": "或四柱火多，无水制伏，名火土杂乱，主作缁衣，见癸可解。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0167",
+      "sha256": "b85ec6a591a0e0451af6be5613dccbc2af7f7ad08b1bb4e99994805974f2845a"
+    },
+    {
+      "section": "卷五·论金 / 三月辛金",
+      "text": "或比劫重重，壬癸浅弱，主夭，有甲出干，则贵，然无庚制方妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0168",
+      "sha256": "1ff7132c7572e3efb699dd7b6e77e3f9aa314e28cad95cc4d919a3e90acbe65b"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "四月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0169",
+      "sha256": "838761a2f7425efbefa95b537a19b66afb6ad622ff0023a1b949e594a38e8012"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "四月辛金，时道首夏，忌丙火之燥烈，喜壬水之洗淘，支成金局，水透出干，有木制戊，名一清澈底，科甲功名，癸透壬藏，富真贵假，若壬癸皆藏，戊己亦藏，略富，若壬癸俱无，反见火出，必主鳏独。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0170",
+      "sha256": "b5dc38d703767dd0860e392943857fb8452d6065fd0e44f4ae203fbf070f9a84"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "或支成火局，有制者吉，无制者凶，凡火旺无水，取土泄之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0171",
+      "sha256": "003ce34f6ed9c0f7eddfe00ece5f991604e618ab8d581f40336844409af0ae21"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "若壬水藏亥，戊不出干，亦主上达，有戊常人，有一甲透，衣禄可求，若有甲无壬癸者，富贵虚浮，所谓羊质虎皮是也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0172",
+      "sha256": "711e6c165e95724d2e49d51cc1191e5e468e12997080500cd06470aa5fc708b1"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "壬，癸，甲，三者全无，又不合格，斯为下品。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0173",
+      "sha256": "fbf6f4c1ba5ea81d09465a9ac6367b54b0c5b7e370885cfa083d0ba004bb4ad5"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0174",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "乙辛辛乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0175",
+      "sha256": "3f7a4df63e3399207d514b9ddf9dbf1cf2c14325c88e6ae2c56c7b3b3a013f3b"
+    },
+    {
+      "section": "卷五·论金 / 四月辛金",
+      "text": "未亥巳未",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0176",
+      "sha256": "4c310b348a09f98309d17ebfeeb59d941b34c3a0e634f59770f33a7e47238736"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "五月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0177",
+      "sha256": "c6dbad095e8213da6a54af0d1d69740a839353d24440e4712c6fc07217b98ec2"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "五月辛金，丁火司权，辛金失令，阴柔之极，不宜煆炼，须己壬兼用，何也，己为泥沙，壬为湖海，己无壬不湿，辛无己不生，故壬己并用，无壬，癸亦可用，但癸力小，或支成火局，即重见癸出，亦不济，得壬透破火方可，必主生员，若无壬，癸见戊，虽有午宫己土，燥泥成灰，金必煆熔，反遭埋没，必为僧道，有一二重比肩，不致孤独。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0178",
+      "sha256": "24bb4416f96bfe385141e4f7f7c44c29b5d94c4431e415fba47ff77bc728e624"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "五月辛金，壬，癸，己，三者皆用。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0179",
+      "sha256": "e8b758dbb48c0fdad03a260d60468edf692b22b6ec6e7fddc006f10e316c081d"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "或壬己两透，支见癸水，不冲，定主显达，即己藏支，亦有廪贡，或无壬有己，须得异途，或癸出有庚，必主衣锦，叨受恩荣，若水土多者，见甲方妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0180",
+      "sha256": "52b21ad43dfd1dc239c00d6635e2b33ea5ecf0bc983567f2fe949d8112f90182"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "庚辛生於夏月，要壬癸得地，若木多火多，不见金水，逢金水运必败。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0181",
+      "sha256": "cfa80f76cf4dc96e1ec5739e15818ae6aa31e774a3ef07c426513c29722b2a11"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0182",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "壬辛甲丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0183",
+      "sha256": "e184e9b11d3c5a1b57cf4d7853e1b144e6cadcca9d207aaa21c07cb3a214f581"
+    },
+    {
+      "section": "卷五·论金 / 五月辛金",
+      "text": "辰亥午子",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0184",
+      "sha256": "28a442f6a47bce2e0265524254ea3672b65e0360ffe8ad480d27255ee376da2b"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "六月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0185",
+      "sha256": "b90ad834438690cb55038bab740bd284156918614c9abc62a34ca7611d577cbe"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "六月辛金，己土当权，辅助太多，恐掩金光，先用壬水，取庚佐之，壬庚两透，科甲功名，即不出干，藏支得所，亦有荣华，但忌戊出，得甲制之，方吉，甲须隔位，恐贪己合，反掩金光，又寒壬水之流，下贱之格，又忌庚出制甲，或只有未中一己，见子壬水，又为湿泥，不可见甲，甲出，反作平人，总以一壬一己，见庚无甲，方妙，与五月用己壬同。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0186",
+      "sha256": "ce851bd642264066622264f984c3f085be58d910c03ccb67e2c68034ea430306"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "或丁乙出干，又有庚壬者，显贵，无壬者，否，或支成木局，得壬透，又有庚金发水之源，可云富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0187",
+      "sha256": "14e72a41f3c621a62c3f47a3a1f284ce28673d84ace0d92b82e61d47d633d79c"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0188",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "甲辛丁壬",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0189",
+      "sha256": "d2009169bbbad16fcb212ccffae9289a709113fef9a1d698d630b163242861bf"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "午丑未辰　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0190",
+      "sha256": "b7b1da7a11a463e48cdabe681ab5bde834b59a28f6c618052fd21391f462c9ff"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "丁辛辛甲",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0191",
+      "sha256": "de6a1598edede531b120dc65e5e40a9e9c456e9af4d991a1f812af5f945837a7"
+    },
+    {
+      "section": "卷五·论金 / 六月辛金",
+      "text": "酉未未寅",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0192",
+      "sha256": "f8da0cb926723869921031b7e576ea7dc6a07b480f8b5779e61997c84aaf6a59"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "七月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0193",
+      "sha256": "dd7c5a11bf31737477279795d36ed8c958f25ad3e2e588f8b81b37bd253fe927"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "七月辛金，值庚司令，不旺自旺，且壬水居申，四柱不见戊土，胎元戊藏申内，为壬岸，人命得此，为官清正，但不富耳。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0194",
+      "sha256": "9d6d7790798b8282f5939cbda7cf953b71eb9d941634bb6657cc06ee2caab50b"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "或有土无甲，为有病无药，常人，有甲者，衣衿可望。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0195",
+      "sha256": "b543b33b78063b5c7d726903d2b8061ae4b2923f7401b0aad735850295d25497"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "或四柱金多，宜水泄之，若一金水，得一戊土，反为辛用，又宜甲制，自然富贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0196",
+      "sha256": "1204846ee79eba7cc7e47a81ba2b456f2c271de38d9e7385eb9f6408f922d440"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "或干支水多，重见戊土，逢生得位，福寿之造。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0197",
+      "sha256": "b0562c975845a0753bbaabff96f25b3919b68a6acebe88c73364b902c7d990f5"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "七月辛金，壬不在多，故书曰，水浅金多，号曰体全之象，壬水为尊，甲戊酌用可也，癸水不可为用。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0198",
+      "sha256": "d978ef2f1058302fb24454fa9a8de2f6dee42d0a822c6ee40653c435742d1abc"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0199",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "癸辛壬甲",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0200",
+      "sha256": "33d28d428113e85488117fae80771f24d5f4213cb316ca1f473f1692eb259001"
+    },
+    {
+      "section": "卷五·论金 / 七月辛金",
+      "text": "巳卯申午",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0201",
+      "sha256": "30521be49b23670c97e2e3257a3c4bd3142feddee78c72efe684e7afe9db7280"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "八月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0202",
+      "sha256": "18602c2a08d57f15e7f51e7da8b3e99b0620aa8596adb07b6c59b252fc01a70c"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "八月辛金，当权得令，旺之极矣，专用壬水淘洗，故云金见水以流通，如见戊己，则生扶太过，故以土为病，见甲制土，方妙，无戊，不宜用甲。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0203",
+      "sha256": "368c799e018cb2a03bb0f8d4c4a01bebbd4d0f40b95d632f73ed0ad4adc8c090"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或四柱一点壬水，甲多泄水，此为用神无力，奸诈之徒，得庚制者，反主仁义，或三点辛金，一重壬水，多见甲木，有庚透者，主大富贵，不见丁为美，若见一丁，此人风雅清高，衣食饶裕而已。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0204",
+      "sha256": "bd2522e4123c8af51885bdb9040c09a93024197e869c4c0a7be7a64b29f876f0"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或一二比肩，壬甲皆一，无庚出干，亦有恩荣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0205",
+      "sha256": "2b5d61bc80d7ef8231250075dde33c024495dfb3b8f18caa96a3fc0cfaf1134a"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "若二三比肩，一点壬水，戊土多见，此为土厚埋金，此人愚懦，见一甲出，必为创立之人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0206",
+      "sha256": "4df814733fd8f973f57568bbdad73eb8738a56c8b6ee1a6f2db4783b6c210532"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或一派辛金，一位壬水，无庚杂乱，又主富中取贵。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0207",
+      "sha256": "2896fd5c986a2e15fc32f275e9a84c9aa5b8b6e5a5eb4f9fc32b2020bd45f900"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或一派壬水泄金，无戊出制，为沙水同流，主奔波贫苦，若得支见一戊止流，其人颇有才略，艺术过人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0208",
+      "sha256": "bf170065c75c425085b5ccc115c5bee4d81df83b87c38ae3f8d8cc35bb7642a6"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或支成金局，干见比肩，无壬淘洗，此宜用丁，无丁必主凶顽无赖，若得一壬高透，以泄群金，又名一清到底，定有治国之材。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0209",
+      "sha256": "f598d9468fe4ac717ef90a56a5b7ed831d40bba44bef62f004e386bdd8e5867f"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或支成金局，戊己透干，壬透无火，名白虎格，运行西北，富贵大显，子息艰难，或透丙火，虽有壬出，亦属平庸。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0210",
+      "sha256": "b647f6c132d674c1f5ba6877560f7cac89cab75a68d639028d63e0b5f39eb9cf"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或一二辛金，一派己土，定为僧道，或干透己土，支见庚甲，一生安闲。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0211",
+      "sha256": "cceea3387528927dd054ea77e2ea486d6e1f010802ce62da8b11807ca42dee45"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "或一派乙木，不见庚壬，为才多身弱，一见庚制，富贵可期。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0212",
+      "sha256": "1aaa8b3304d2c12ee8b30169b1be2745ceece1429115e225011a2f0b98b2435d"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "金生秋月土重，贫无寸铁，六辛日透戊子时，运喜西方，阴若朝阳，切忌丙丁离位，庚辛局全巳酉丑，位重权高。　　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0213",
+      "sha256": "8c2f27c62bffe0c0d27c3dc7e4517abe1159ae2ab5757d5dfff26f6124603f30"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "己辛癸己",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0214",
+      "sha256": "b4ee0f877d6d2e30527f7d32fd06a195252c4b554c5d9ed4446d0147421c4776"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "亥未酉酉　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0215",
+      "sha256": "f8b83954ce5404314d24ae96df529085f98835385e69e1491557af2c04ff6f00"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "丙辛己丁",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0216",
+      "sha256": "4528371ad0a1c1946362806f82e6ff595dd752885207fdd52e22b6c59f2c893f"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "申酉酉酉　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0217",
+      "sha256": "1359c46048477bd349629df66eb1365a7c5f41fd6c4885fb63b4ffaf0a454df2"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "壬辛己丁",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0218",
+      "sha256": "48ea7933863d62cb3024ba839747bf78e834a0dace7de8b9a73501a862b47cf8"
+    },
+    {
+      "section": "卷五·论金 / 八月辛金",
+      "text": "辰亥酉卯",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0219",
+      "sha256": "e3c831e3a34e152c70ffb0caefbd456960a8742924006d48b6cdc146d7a70f92"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "九月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0220",
+      "sha256": "b1f3e699bef9eec4ea4ec06844d9d28dcc29e7893dfbe22e00d21d2444c9e24f"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "九月辛金，成土司令，母旺子相，须甲疏土，壬泄旺金，先壬後甲，壬甲两透，桃洞之仙，或壬透甲藏，又见者，平人，甲透，壬藏，戊在支内，异途之仕。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0221",
+      "sha256": "abe75c39292d087582009f85375897597345b2738d73ec445b73b90384599f58"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "或辛日甲月，壬水在支，有庚自能去浊留清，秋闻一榜，若戊戌月，即有甲在支亦否。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0222",
+      "sha256": "f279b1e5e4d43b23b66c27011535b417a78363b4bc052905bdb54536d6761139"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "总之土太多，甲不出干，莫问功名，一壬出，洗土助甲，虽不发达，富而可求。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0223",
+      "sha256": "c32096acdc6076e1fd95dba38c9be91cd5cbaa5b2d51d7dff955f87fc2ba4624"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "或土多无壬甲，时月多透丙辛者，略贵，加以辰字在支，则荣显莫及。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0224",
+      "sha256": "06c62ad81539e8c41e94d25ac6ddf731a0f772d9d974d303d59a4ad61c2eafee"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "或木多土厚，无水者常人，或干上重见癸水，虽无淘洗之功，颇有清金之用，此命主富，辛苦。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0225",
+      "sha256": "3c5d044ce2917e16254a71bbbf288f153553f5e8b462a049d5617e0322bc5267"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "或己透无壬有癸，亦能滋生金力，衣衿之贵，但恐己多，不免浊富。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0226",
+      "sha256": "30201ca6fa71841aa475fac519db7784a6031da901a764ef976acc253a674d96"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "九月辛金，火土为病，水木为药。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0227",
+      "sha256": "be25ac1bd3bd201fd44fcd7d04b3ba90c21053178abf95c285fadaa1bf538d2c"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0228",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "壬辛戊丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0229",
+      "sha256": "7b879b29577476fca846bbb2a8f04ae3f29698b012ede0a81cd1609780d8f717"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "辰未戌戌　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0230",
+      "sha256": "9a8cf56c2e3d2033399c857eaddfc99db560ddadd63b93203101659b83dad4ab"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "戊辛壬戊",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0231",
+      "sha256": "79dc3af93533a990855ce6a7ad9844eb1c68f108f41853179f34a7436b3eee53"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "子酉戌戌　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0232",
+      "sha256": "32337df5dcfac51c8ff371740df08bb7e5159a1c30e370f632ea9388de228980"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "丁辛戊丙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0233",
+      "sha256": "6241a9356c492cec8d8408b10b36a2023587d3bde1dcda1c9320cfc10e70af87"
+    },
+    {
+      "section": "卷五·论金 / 九月辛金",
+      "text": "酉未戌戌",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0234",
+      "sha256": "587789e90e45b3400447301cbe3c59f66c03fa6fe2e8d7027df1bac6f41ce5cd"
+    },
+    {
+      "section": "卷五·论金 / 十月辛金",
+      "text": "十月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0235",
+      "sha256": "ef7ee072b7d057df83a17302d6bcf0426d567622c39f9a5dafffda22ef8e6680"
+    },
+    {
+      "section": "卷五·论金 / 十月辛金",
+      "text": "十月辛金，时值小阳，阳渐升，寒气将降，先用壬水，次取丙火，壬丙两透，金榜题名，何也，盖辛金有壬水丙火，名金白水清，又在亥月故发。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0236",
+      "sha256": "886940e55e913c7217fbc87cb737d2d9ab1a8bf0a76dddcadce5cd28eed1823a"
+    },
+    {
+      "section": "卷五·论金 / 十月辛金",
+      "text": "丙透壬藏，采芹之造，丙藏壬透，富有千金，壬丙在支，聪明之士。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0237",
+      "sha256": "cc86577bdeb7a704c989305cb01f85be4e5e44f697f737ca9b788abd4b760fd0"
+    },
+    {
+      "section": "卷五·论金 / 十月辛金",
+      "text": "戊壬存柱，积蓄之人，或壬多无戊，名辛水汪洋，反成贫贱，戊多壬少，又主成名。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0238",
+      "sha256": "c3419df5f100443540c8cd31df07acf357bbff2a16190eb3c21c65ba2ab16dab"
+    },
+    {
+      "section": "卷五·论金 / 十月辛金",
+      "text": "或甲多戊少，因艺术而蓄金。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0239",
+      "sha256": "56632f48ce1e5eb26208e37e1dccba8d0b22055fe7105e89925f1e24942ae795"
+    },
+    {
+      "section": "卷五·论金 / 十月辛金",
+      "text": "若己多有戊，壬水被困，金被埋，不过诚实之人，或壬癸多无戊丙者，劳碌辛苦，十月辛金，先壬後丙，余皆参用。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0240",
+      "sha256": "6e54fac517ce2a2369393d0e6d50012c9cd51a1e5ed0b516fde46a874adefdf2"
+    },
+    {
+      "section": "卷五·论金 / 十一月辛金",
+      "text": "十一月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0241",
+      "sha256": "cacaef7eab7ad7e8ecfb1b9bc9d4c2f87af62da45592966d0e69355e07ed24ce"
+    },
+    {
+      "section": "卷五·论金 / 十一月辛金",
+      "text": "十一月辛金，癸水司令，为寒冬雨露，切忌癸出冻金，而困丙火，壬丙两透，不见戊癸，衣锦腰金，即壬藏丙透，一榜堪图。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0242",
+      "sha256": "0cb3991c4555b6c32995dc2232b9bb82a06414df9b2df918258a922155cab8ba"
+    },
+    {
+      "section": "卷五·论金 / 十一月辛金",
+      "text": "或壬多有戊，丙甲出干者，青云之客，若壬多无戊丙者，泄金太过，定主寒儒，或壬多，甲乙重重，无丙火者，贫寒。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0243",
+      "sha256": "7a1eefe9a8f8bc585a1f9b2f9f21cef1667fa867c5bcf788d41c792212ffd9c5"
+    },
+    {
+      "section": "卷五·论金 / 十一月辛金",
+      "text": "或支成水局，癸水出干，有二戊制者，富贵恩荣，无戊者常人。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0244",
+      "sha256": "961196d2f661cf24e2c6cd69412f5cbcac05823f8bd772133d16c2cd2715b77a"
+    },
+    {
+      "section": "卷五·论金 / 十一月辛金",
+      "text": "或支见亥子丑，干出比劫，无丙，名润下格，富贵双全，运喜西北，若无庚辛，又出甲乙，无戊丙者，必主僧道。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0245",
+      "sha256": "12837ea093056844ad666f75896efeaaa96687da50ed3fd5a726ce88205d14d1"
+    },
+    {
+      "section": "卷五·论金 / 十一月辛金",
+      "text": "或支成木局，有丁出干，又见戊者，功名特达，冬月辛金，须丙温暖，方妙。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0246",
+      "sha256": "a01e95865b29959b55634953994f965db3526ab721bd6586384fab51d53d64af"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "十二月辛金：",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0247",
+      "sha256": "29719af5d10d09540222f43a18a9178bafa6b98f001ea077ad74d7ea38f2c2e0"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "十二月辛金，寒冻之极，先丙後壬，炳不能解冻，无壬不能洗淘，丙壬两透，金马玉堂之客，壬丙俱藏，游庠食　之人，有丙无壬，富真贵假，有壬乏丙，贱而且贫，或丙多，无壬，有癸，市中贸易之流。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0248",
+      "sha256": "0a7dc57256977143b6ce7a91f1dcd364895e23b47e1aadd3b6bbf7fdd8810132"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "或水多，有戊己出干，又有丙丁，必主衣食充盈，一生安乐，十二月辛金，丙先壬後，戊己次之。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0249",
+      "sha256": "e1f94175d56c73a363f677954572b482eb0924cab73ed772ab5b19cf2d9b7c10"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0250",
+      "sha256": "03654d2b28b4cfc5e6f04da30da13e9950f2a72792b6166130d2b2efc9849c73"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "戊辛己乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0251",
+      "sha256": "0fcc960d00da93765afc08a0b05288d820803c386fd6156103621c7c48db5d59"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "子丑丑丑　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0252",
+      "sha256": "7f06d2ba51ff5794f612186f6a23836a7e3768402e5c8df7c2a5f96bdff43039"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "戊辛癸丁",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0253",
+      "sha256": "d152647305b8d64284092bef3434388a8bbab8548faebaee74076a56571787e2"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "子卯丑丑　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0254",
+      "sha256": "2caf9c6a6e0e6d8b5e27778eae06f269e758754bd766b2c07706bf901c45b184"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "丁辛己乙",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0255",
+      "sha256": "7da035ad06cc6d2fb0ea30e65e3cec8930dd657867c40342904633c4f3aebd53"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "酉未丑卯　　时日月年",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0256",
+      "sha256": "d60ac7cb0f615d1b6b8284ad443109a627e65b1f41157160fba4641120349b74"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "己辛丁甲",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0257",
+      "sha256": "958f009bfdb5ea91e9b18488ab5de04c695e329c55a839dea00933c5e418ef8c"
+    },
+    {
+      "section": "卷五·论金 / 十二月辛金",
+      "text": "亥卯丑申",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c005:p0258",
+      "sha256": "0217bd1c10cc158395a6e13ea93ffa51bf1e6a1488e63f751e2c4101254c4355"
+    }
+  ]
+}

@@ -2,7 +2,23 @@
 
 可读正文示例见 [OUTPUT-EXAMPLE.md](OUTPUT-EXAMPLE.md)，与实际评估记录分开保存。
 
-## 2.0 迁移
+## 3.0 迁移
+
+默认解读入口改为 `bazi_reading.py`。它只提供盘面事实、透藏位置、固定主体系和原文检索结果；完整个人解释由宿主阅读条款后生成。`bazi_calc.py` 是保留的诊断接口，工程旺衰与旧调候候选不能作为古籍已核结论。
+
+每次计算先运行 `request_time.py --current-timezone <用户所在地时区>`，后续复用返回的 UTC 时刻作为 `--request-time`。出生 `--timezone` 与当前 `--current-timezone` 分开。无当前所在地也无 `--as-of-year` 时，八字仍给原局，但不猜流年参考年。显式历史/未来时级目标必须完整，不能用现在时分补历史日期。
+
+读取 `liu_nian_status` 判断参考年份来源。`liu_nian_scope=calendar_year_reference_list` 表示公历年度列表，不是当前瞬间已生效的年柱；立春前后需按目标时刻另核。未知时辰的默认解释只保留首尾时间核对后共同的柱，变化柱列候选；不输出占位时分和精确起运日期。
+
+`reading_support.py --chart` 和 stdin 审核都接收完整 `bazi_reading` 成功结果，内部按 chart_facts 校验路径。保存实际模型记录时保留完整原始结果，不自行补造 ok 字段。
+
+梅花与周易时间起卦默认 `--calendar-profile classical`：年支序数、农历月日与时支序数；闰月需明确 `--leap-month-policy repeat/next`。旧公历整数算法仅保留为 `legacy-gregorian`，不能冒充古法。梅花默认 `body_strength=null`，旧公历月旺衰只在兼容模式用于诊断。
+
+神煞结果只保留起法与命中位置，不再提供 `meaning` 断语。姓名旧表分类、生肖旧分数不再产生个人结论；解梦保留主题与场景索引，尚未核验的解释为空。可选方法不参与默认八字推断。
+
+古籍通过 `classical_search.py --validate` 检查选定版本目录与文件；`--query` 检索、`--passage-id` 定位原文。正文引用记录可带 `passage_quotes`，每项保存 `passage_id`、`text`、`layer`，审核器检查它与冻结原文相符。它仍不认证自然语言解释是否正确。
+
+### 沿用的 2.0 数据约定
 
 `yong_shen.primary`、`xi_shen.primary`、`ji_shen.primary` 可为 null。调用方读取 status 和 views，不能用候选第一项填补。格局纯破是程序启发式标记，须核成败救应后解释。
 
@@ -32,6 +48,8 @@ errors = review_claims(chart, chart['reading_support'])
 3. **现实预测验证**：另需前瞻记录、固定成功失败标准、独立结果和基线。本项目的测试通过不证明这一层。
 
 ## 真实回答记录（需源码仓库）
+
+本轮已有 [实际试跑说明](https://github.com/ShousenZHANG/chinese-fortune/blob/main/docs/MODEL-PILOT.md) 与 [逐条评审](https://github.com/ShousenZHANG/chinese-fortune/blob/main/docs/MODEL-PILOT-REVIEW.md)：原始 30 题复审后为 21 个完整回答、3 个部分完成、6 个待补资料；另有 3 个时间场景。首轮错误与修订均保留。这是会话内协作 agent 的开发试跑，不是冻结版本盲测或预测命中率验证。
 
 `evals/reading_cases.json` 提供 30 个场景。对候选技能在真实宿主中运行后保存以下形式，文件内容由实际运行填入，不能把预期答案当成运行记录：
 
@@ -86,6 +104,6 @@ python -X utf8 evals/package_smoke.py
 
 pytest-cov 7 的子进程追踪由 coverage `patch = ["subprocess"]` 开启，不能仅设置环境变量就假定 CLI 已被计入。此配置随仓库提供，干净环境也应能复现。
 
-古籍注册表目前只核部分网络转录，尚未进行全书原刻影像校勘。调候旧表逐格核验状态不因本次结构改造自动升级。
+五书所选转录版目录已收齐，详见来源说明；用于自动判断的规则注册表仍只有部分经核条款，尚未进行全书原刻影像校勘。调候旧表逐格核验状态不因全文收录自动升级。
 
 时区数据发布基线采用 [tzdata 2026.3](https://pypi.org/project/tzdata/2026.3/)（2026-09-06 核查 PyPI）。CI 设 `PYTHONTZPATH=""`，避免 Linux 系统时区库绕过固定版本；自行运行可采用系统数据，升级时应复查边界用例。

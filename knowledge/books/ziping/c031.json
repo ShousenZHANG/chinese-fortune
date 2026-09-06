@@ -1,0 +1,67 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c031",
+  "title": "三十一、論正官",
+  "source_url": "https://www.donglishuzhai.net/chapter/3744.html",
+  "revision": "sha256:1bafee8d7e78335aa0912b47a27e3e0b9f50fcbf905a632b39baf2e207fee61f",
+  "source_timestamp": "2026-09-06T04:17:06.778Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c031.html",
+  "raw_sha256": "1bafee8d7e78335aa0912b47a27e3e0b9f50fcbf905a632b39baf2e207fee61f",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三十一、論正官",
+      "text": "官以尅身，雖與七煞有別，終受彼制，何以切忌刑沖破害，尊之若是乎？豈知人生天地間，必無矯焉自尊之理，雖貴極天子，亦有天祖臨之。正官者，分所當尊，如在國有君，在家有親，刑沖破害，以下犯上，烏乎可乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0001",
+      "sha256": "be11cd789bc045b7cc6a6326bb39c0e92ec57e8a6d919c5373367eff84476bad"
+    },
+    {
+      "section": "三十一、論正官",
+      "text": "以刑沖破害爲忌，則以生之護之爲喜矣。存其喜而去其忌則貴，而貴之中又有高低者，何也？以財印並透者論之，兩不相礙，其貴也大。如薛相公命：甲申、壬申、乙巳、戊寅，壬印戊財，以乙隔之，水與土不相礙，故爲大貴。若壬戌、丁未、戊申、乙卯，雜氣正官，透干會支，最爲貴格，而壬財丁印，二者相合，仍以孤官無輔論，所以不上七品。",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0002",
+      "sha256": "bb81f4db5cc0277def148bc5830f238cbd0e8c49a53668b87f6afdf0e1353089"
+    },
+    {
+      "section": "三十一、論正官",
+      "text": "若財印不以兩用，則單用印不若單用財，以印能護官，亦能洩官，而財生官也。若化官爲印而透財，則又爲甚秀而大貴之格也。如金狀元命，乙卯、丁亥、丁未、庚戌，此並用財印，無傷官而不雜煞，所謂去其忌而存其喜者也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0003",
+      "sha256": "044aaa7bc7bc9a53f6097d500cd63d2b065b97c1a79b90084ef9d49ad44b0292"
+    },
+    {
+      "section": "三十一、論正官",
+      "text": "然而遇傷在於佩印，混煞貴乎取清。如宣參國命，己卯、辛未、壬寅、辛亥，未中己官透干用清，支會木局，兩辛解之，是遇傷而佩印也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0004",
+      "sha256": "ca9d11ba239a6d2a17dcfbe8adcb2d8c45efe1683f9d96d945e25c9af242aeeb"
+    },
+    {
+      "section": "三十一、論正官",
+      "text": "李參政命，庚寅、乙酉、甲子、戊辰，甲用酉官，庚金混雜，乙以合之，合煞留官，是雜煞而取清也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0005",
+      "sha256": "dfc8bb6717f8857b4366ed5864aa02a22aeaa2ff5adee8be77d0a881c9790d43"
+    },
+    {
+      "section": "三十一、論正官",
+      "text": "至於官格透傷用印者，又忌見財，以財能去印，未能生官，而適以護傷故也。然亦有逢財而反大貴者，如范太傅命，丁丑、壬寅、己巳、丙寅，支具巳丑，會金傷官，丙丁解之，透壬豈非破格？卻不知丙丁並透，用一而足，以丁合壬而財去，以丙制傷而官清，無情而愈有情。此正造化之妙，變幻無窮，焉得不貴？",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0006",
+      "sha256": "4fc9c8ad2000db3eeeacfd0c664d0294c417283f43e61ab7bc2c43884928fdaa"
+    },
+    {
+      "section": "三十一、論正官",
+      "text": "至若地支刑沖，會合可解，已見前篇，不必再述，而以後諸格，亦不談及矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c031:p0007",
+      "sha256": "0e130a2aaf7d6847905e396485c9c827e530e0ff6044bfe2c5edda5017f5e781"
+    }
+  ]
+}

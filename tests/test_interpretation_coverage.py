@@ -250,6 +250,8 @@ def test_name_analyze_declares_it_has_no_classical_basis():
     assert "不可作命定之论" in src["caveat"]
     assert d["boundary"] and "勿单凭数理" in d["boundary"]
 
-    # 凶断确实存在 —— 正因为存在, 来历标注才必须同行
-    assert any(g["luck"].endswith("凶") for g in d["five_grids"].values()
-               if isinstance(g, dict) and "luck" in g), d["five_grids"]
+    # 旧表分类保留作诊断数据, 但事件断语已移除, 不进入用户结论。
+    assert all(g["label_kind"] == "legacy_numerology_category"
+               and g["personal_verdict"] is None and "comment" not in g
+               for g in d["five_grids"].values())
+    assert "凶" not in d["summary"]

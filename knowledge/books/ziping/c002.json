@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c002",
+  "title": "二、論陰陽生尅",
+  "source_url": "https://www.donglishuzhai.net/chapter/3715.html",
+  "revision": "sha256:038546f2395549fcfc21c44857e721aa90a5a09a7eb05bd51416c89716dde304",
+  "source_timestamp": "2026-09-06T04:16:48.040Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c002.html",
+  "raw_sha256": "038546f2395549fcfc21c44857e721aa90a5a09a7eb05bd51416c89716dde304",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二、論陰陽生尅",
+      "text": "四時之運，相生而成，故木生火，火生土，土生金，金生水，水復生木，即相生之序，循環迭運，而時行不匱。然而有生又必有尅，生而不尅，則四時亦不成矣。尅者，所以節而止之，使之收斂，以爲發洩之基，故曰「天地節而四時成」。即以木論，木盛於夏，殺於秋。殺者，以使外之發洩者藏收於內，是殺者正所以爲生也。大《易》以收斂爲性情之實，以兌爲萬物所說，至哉言乎！譬如人之養身，固以飲食爲生，然使時時飲食，而不使稍饑以待將來，人壽其能久乎？是以四時之運，生與尅同用，尅與生同功。",
+      "layer": "base_text",
+      "passage_id": "ziping:c002:p0001",
+      "sha256": "1cf371b049a291ea3d51306493381c560c3aa20c1003cb722037cc23df884e69"
+    },
+    {
+      "section": "二、論陰陽生尅",
+      "text": "然以五行而統論之，則水木相生，金木相尅。以五行之陰陽分配之，則生尅之中，又有異同。此所以水同生木，而印有偏正；金同尅木，而局有官煞也。印綬之中，偏正相似，陰陽生尅之殊，可置勿論；而相尅之內，一官一煞，淑慝判然，其理不可不細詳也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c002:p0002",
+      "sha256": "403a1b90b4e80fbc7ed8fa730b807bae3782e4c8455b43538a0a4bbacc0c5743"
+    },
+    {
+      "section": "二、論陰陽生尅",
+      "text": "即以甲乙庚辛言之。甲者，陽木也，木之生氣也；乙者，陰木也，木之形質也；庚者，陽金也，秋天肅殺之氣也；辛者，陰金也，人間五金之質也。木之生氣，寄於木而行於天，故逢秋天肅殺之氣，而銷尅殆盡，而金鐵刀斧乃不能傷；木之形質，遇金鐵刀斧而斬伐無餘，而肅殺之氣，只可外掃落葉，而根柢愈固。此所以甲以庚爲煞，以辛爲官；而乙則反是也，庚官而辛煞也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c002:p0003",
+      "sha256": "482d8d1d8ad3c46407e0ac1f9826359036b444f19ce26921a0af70811532f5fc"
+    },
+    {
+      "section": "二、論陰陽生尅",
+      "text": "又以丙丁庚辛言之。丙者，陽火也，融和之氣也；丁者，陰火也，薪傳之火也。秋天肅殺之氣，逢陽和而尅去；而人間之金，不畏陽和。此庚以丙爲殺，而辛以丙爲官也。人間金鐵之質，逢薪傳之火而立化；而肅殺之氣，不畏薪傳之火。此所以辛以丁爲煞，而庚以丁爲官也。即此以推，而餘者之相尅可知矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c002:p0004",
+      "sha256": "37d99a34ce8fd196ee4b8235a71ca298211a428ab92591d4c50bdfa2d56af466"
+    }
+  ]
+}

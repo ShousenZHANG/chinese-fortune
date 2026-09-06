@@ -1,0 +1,133 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c253",
+  "title": "福德格诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/253/",
+  "revision": "sha256:0aba53401ea801bc2cccbb514a7d75e0a66ff4ec514f002086250c4ec544c9fb",
+  "source_timestamp": "2026-09-06T04:11:15.634687+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c253.html",
+  "raw_sha256": "0aba53401ea801bc2cccbb514a7d75e0a66ff4ec514f002086250c4ec544c9fb",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "福德格诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "福德格诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0002",
+      "sha256": "a20877196339e1cac157162f7bc0ef19bb4b79b0f4e66616e597d0e381b9b43b"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴土逢蛇金与牛，名为福德号貔貅，火来侵克非为美，名利空空一旦休。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0003",
+      "sha256": "f33e54a76184b43813e86aeaa107eabd12a0a275930b1c4102ad619d5f7a81c7"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴火相临巳酉丑，生居丑月寿难长，更兼名利多成败，破耗荒淫禄不昌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0004",
+      "sha256": "4363d3761efea112fc2181e73dfaa1d278c5ef2b4ceacdf7e4f97431718d9f96"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "癸巳癸酉月临风，名利迟延作事空，富贵生成难有望，始知成败苦匆匆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0005",
+      "sha256": "dfe1f3cdcc7cf5acd519c60508594be204c6e12556803d552300e5c99372c905"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴金合局有前程，造化清奇发利名，四柱火来侵克破，须知名利两无成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0006",
+      "sha256": "cbeda01a731dba74d140f338134a2c09d76f412937a13f67c1f4368819226069"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "西方金气坐阴柔，不怕休时不怕囚，鬼杀生时方发福，功名随步上瀛州。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0007",
+      "sha256": "081c73741ea8dd4ec98696bad5e87454bd987e9c44cf4e86f619f9976f2fcb8b"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴木加临丑酉蛇，生居六月暗咨嗟，为官得禄难成久，纵有文章不足夸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0008",
+      "sha256": "88a43b4f773c3f665e3b93a8f28381ef306e9d132b13459586aba75548224737"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "福德春丁壬所喜，夏逢甲己又逢癸，乙庚秋令辛冬妙，遇此吉祥真可美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0009",
+      "sha256": "d831563b8ae0629e3be9d75ad53b45310f4c73fd9cbcc57b79953f62289b2bb4"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c253:p0010",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴土止有三日，己巳、己丑、己酉，忌见丙丁寅戌午；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0011",
+      "sha256": "97486012e4e358b00a2ca8831462d41cf0422098945bd5661e6a2dc2e6bae4ad"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴火三日，丁巳、丁酉、丁丑，喜财官旺位，不爱见合；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0012",
+      "sha256": "6e26e725cd96be944bc07a067ffd4255c5c0a1f584800a55ddd13d47f10dfabb"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴水三日，癸巳、癸丑、癸酉，与飞天禄马同；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0013",
+      "sha256": "c971bf607eb29eff6756bc94dde867b2eecaee8191b4a0357afeb8e4245fbcc0"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "辛巳、辛丑、辛酉三日是全福德，若得巳酉丑金者为妙，丙火旺为官，主大贵；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0014",
+      "sha256": "e6e09f5e145d46d4e6432db3faf26a0486dacf8458d8d3000cfae6195ebe3eac"
+    },
+    {
+      "section": "福德格诗诀",
+      "text": "阴木三日，乙巳、乙丑、乙酉是也，不宜六月生，若在其余之月皆以六格断，阴木生於水上带金旺克木也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c253:p0015",
+      "sha256": "97a904729e3fb65c99b656d1c46c046dd4b86244aec97ec6376bc40ac502ff15"
+    }
+  ]
+}

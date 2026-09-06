@@ -1,0 +1,98 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c129",
+  "title": "外十八格-福德格",
+  "source_url": "https://luckclub.cn/bazi/001/129/",
+  "revision": "sha256:2e4fa6b5af7159821d18735ef4375959945f67816d2e8bc10000249a52988d28",
+  "source_timestamp": "2026-09-06T04:10:50.524800+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c129.html",
+  "raw_sha256": "2e4fa6b5af7159821d18735ef4375959945f67816d2e8bc10000249a52988d28",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-福德格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "外十八格 - 福德格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0002",
+      "sha256": "124ab7a38d92e24409a3cd4424d9b9849e920abdd2d4ea37446d6dec8de9cae1"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "此格只要己丑日主，地支巳酉丑全者是。忌火乡官乡，嫌冲破。福德非独己土，五阴皆有。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0003",
+      "sha256": "80da6290d9ac231a179926569a0b534d504619262e671e6227325302f183ff43"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "阴土己巳、己丑、己酉；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0004",
+      "sha256": "8fc64d2006668405dff0b3aa971022348f95111248ee0c0b5d0f596aa20e8c24"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "阴火丁巳、丁酉、丁丑；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0005",
+      "sha256": "107842f2aa277116294b263aa7b062705a4bd3de130664887e6e0af7e45fbdfc"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "阴水癸巳、癸丑、癸酉；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0006",
+      "sha256": "a1b37404ebf6136d395b964b47383911b58071cc81018819bdd653d52cacbef8"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "阴金辛巳、辛丑、辛酉；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0007",
+      "sha256": "3d8f407cd05379b188ef1420b5597bb39f4bf6132de6dccb00a07038f15bfb77"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "阴木乙巳、乙丑、乙酉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0008",
+      "sha256": "ecaf25909b69dd2ad0e9b86e870f14e8d01cd276e097e418bc01344f2d8f001d"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "忌刑冲破害，岁运同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c129:p0009",
+      "sha256": "963ffc4f97ead4c3ba49d004dcd000784893c1e6092748509d3f049ed404dfcb"
+    },
+    {
+      "section": "外十八格-福德格",
+      "text": "眉批：阴土逢蛇金与牛，名为福德号貔貅，火来侵克非为美，名利空空一旦休。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c129:p0010",
+      "sha256": "a4c0d3ad5ac99c43184e8d3ae192cb0f90105db51230e355579dbf64bd47b0d8"
+    }
+  ]
+}

@@ -244,7 +244,7 @@ def test_every_cli_engine_has_a_release_eval():
     # 从前这里是一个硬编码的 helpers 集合, 每拆一次表就得记得往里加一个名字 ——
     # qimen_tables.py 拆出来时就漏了, 门禁于是报「这个库模块没有发布 eval」。
     import ast
-    build_only = {"build_skill.py"}      # 打包器, 不是占卜引擎
+    build_only = {"build_skill.py", "import_classics.py"}  # 维护工具不随运行包分发
     clis = set()
     for f in (ROOT / "scripts").glob("*.py"):
         if f.name in build_only:
@@ -487,7 +487,7 @@ def test_engines_really_do_not_write_files():
     root = Path(__file__).resolve().parent.parent
     writers = []
     for f in sorted((root / "scripts").glob("*.py")):
-        if f.name == "build_skill.py":       # 打包器, 本来就要写文件
+        if f.name in ("build_skill.py", "import_classics.py"):  # 构建与古籍采集需写文件
             continue
         tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
         for node in ast.walk(tree):

@@ -1,0 +1,46 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c032",
+  "title": "母子論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F32&oldid=844383",
+  "revision": "844383",
+  "source_timestamp": "2017-03-23T15:48:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c032.wiki",
+  "raw_sha256": "c46fde313ccbcd8ac16ff64d0c59e773f7fd18ddd8ad64b5ec18cc5c57215f63",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "母子論",
+      "text": "知慈母恤孤之道，方有瓜瓞無疆之慶。",
+      "layer": "base_text",
+      "passage_id": "ditian:c032:p0001",
+      "sha256": "80f548a005a1598fad896c3ca829311060f3b0a55b953d2f6910f84410e6a329"
+    },
+    {
+      "section": "母子論",
+      "text": "日主為母，所生為子（食傷）如甲乙日主，滿盤是木，內有一二點火，是母旺子孤，要助其子，行火運，方有瓜瓞綿綿之慶矣。",
+      "layer": "commentary",
+      "passage_id": "ditian:c032:p0002",
+      "sha256": "76339b6abd39636258b17771fc476cb59ea4c1ad728972ea404aef0705c2d9a1"
+    },
+    {
+      "section": "母子論",
+      "text": "知孝子奉親之方，始能克諧大順之風。",
+      "layer": "base_text",
+      "passage_id": "ditian:c032:p0003",
+      "sha256": "1429ee7568c835ecefe9b9671867810877983cdded56114263aa7f60d459c722"
+    },
+    {
+      "section": "母子論",
+      "text": "日主為子，生我為母（印綬）如甲乙日主，滿盤是木，中有一二點水，為子眾母衰，要安其母，用金生水，用土生金，則子母之情順矣，設或無金，則水之情依乎木，行木火旺地亦可。",
+      "layer": "commentary",
+      "passage_id": "ditian:c032:p0004",
+      "sha256": "a1c07e454edbf834c68e821828466310a5050dca47bd85a367813678676e27a8"
+    }
+  ]
+}

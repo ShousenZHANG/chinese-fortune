@@ -1,0 +1,118 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c213",
+  "title": "十一月建子候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/213/",
+  "revision": "sha256:3a29f750fbb280ff24b6a8068e98e8c0660b09b0f74c9fb380f99c000e9e6e80",
+  "source_timestamp": "2026-09-06T04:11:06.566105+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c213.html",
+  "raw_sha256": "3a29f750fbb280ff24b6a8068e98e8c0660b09b0f74c9fb380f99c000e9e6e80",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十一月建子候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "十一月建子候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0002",
+      "sha256": "049759a4bd9d37e75189780c4636d9ab0b15262ea8348db7e6a3e709110c82fa"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "丙丁日主月逢子，支下存申时又辰，火土旺乡成富贵，再行金水祸难禁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0003",
+      "sha256": "6f7629badb68bef1aba46faea3304fb7f0c9f3edaf0477fdb4909bc0698eae97"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "眉批：十一月壬吉，壬水七日，癸水二十三日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c213:p0004",
+      "sha256": "6874dc76776fd0dbb3c9011a21ddf06b1d793dc7bb4bd5ef0bdf5043b507f6ce"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "子宫有水金乡旺，见主休囚忌破支，元有土离逢水贵，午来冲对寿元衰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0005",
+      "sha256": "cd492758f6f976c40dfc93494186c154fdcc848487bfcecd3da9973058c8e2be"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "眉批：金生水得助，有土不怕水，忌午火。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c213:p0006",
+      "sha256": "0cb76e31ae96786dee99027bd24c177fcb68acfb52113993a2d42a6ed57ba506"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "庚金遇子多强吉，火土根嫌未必凶，运去元辰番作贵，再行午运福重重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0007",
+      "sha256": "9af24f14ccd7590b16c75c05f0613ce8fe4399d52b8efcedeb5e76db506be829"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "庚日逢寅午戌行，日通火局是提纲，如行金水番成富，火土重来福怎当。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0008",
+      "sha256": "98a9ddcf62a7634e99c63763d4f5f311608df711ac8fa2a894a944d2ea9fa5d8"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "眉批：言庚金得火局，金见火土为害。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c213:p0009",
+      "sha256": "afc728bf53d93ebdf26dc5ffe3dc61b596b1b5edd7a0c8dcf3fc1a4ca4cd8eaf"
+    },
+    {
+      "section": "十一月建子候诗诀",
+      "text": "水归冬旺乐无忧，透用财官富九州，顺逆不分还富贵，提纲刑克事休休。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c213:p0010",
+      "sha256": "96a40fcb32777a05f8e7f3456bf867e4593ea4733dc17b44c187f3c77c022bc9"
+    }
+  ]
+}

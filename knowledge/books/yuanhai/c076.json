@@ -1,0 +1,1945 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c076",
+  "title": "继善篇",
+  "source_url": "https://luckclub.cn/bazi/001/076/",
+  "revision": "sha256:b9e34b4d162be7bbb5df8b1ef50294b0783313ebe359a36b000972864203ef67",
+  "source_timestamp": "2026-09-06T04:10:40.760542+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c076.html",
+  "raw_sha256": "b9e34b4d162be7bbb5df8b1ef50294b0783313ebe359a36b000972864203ef67",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "继善篇",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "继善篇",
+      "text": "继善篇",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0002",
+      "sha256": "a8b72fbd66901859707942e7c22a5f38fc9b97ce140120aff0694007132c9ce8"
+    },
+    {
+      "section": "继善篇",
+      "text": "人禀天地，命属阴阳，生居覆载之内，尽在五行之中—人禀二五之数，犹天地之生物以成形。人得万物之灵，乃天地之正气方为人，所属阴阳五行，不离乎金木水火土也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0003",
+      "sha256": "b690e8f8f0dfd238194ca150f017e8c1fad5f35c7565ff96ea352c2b26e33621"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：心主火，肺主金，肝主木，脾主土，肾主水。如断人疾病，当以五行相克而断。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0004",
+      "sha256": "b68448f81c51401899a521253820a81a7297a94be27ed14e594ac37e03ad3914"
+    },
+    {
+      "section": "继善篇",
+      "text": "欲知贵贱，先观月令提纲",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0005",
+      "sha256": "1ecd18a2ad68487f182ee00efd77e2ee1f47fb08a872703273b90d3a45368f3b"
+    },
+    {
+      "section": "继善篇",
+      "text": "月令乃八字之纲领，更知节气之深浅以知灾祸。如寅中有艮土余气七日半，丙火寄生又七日半，甲木正合共十五日。此三者不知用何为祸为福。见正官、正印、食神则吉，伤官、偏印则凶也。歌释：提纲即是月令，先观气候浅深吉凶。官印与财神，忌动冲刑，衰运逢吉，则为吉断，凶则为评。生於节气属何神，贵贱贫富由命定。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0006",
+      "sha256": "0d0ae012d833390ea605bcd171e1f87e20699f0729363035599ee526ae36fbcd"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：月令者，如人臣行君之令，掌一月之纲纪，生杀皆由此，故曰提纲。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 33,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0007",
+      "sha256": "0710cb91ca9f367f181113f84cf8654f2329b472c0cec453191a6dedaf303cd7"
+    },
+    {
+      "section": "继善篇",
+      "text": "次断吉凶，专用日干为主本。三元要成格局，四柱喜见财官",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0008",
+      "sha256": "99757a72bd49d1b84f91ded5a63e60ec8c64f85ed20fc2fc79e96672733b794c"
+    },
+    {
+      "section": "继善篇",
+      "text": "天干为天元，地支为地元，以支中所藏者为人元。年月日时为四柱，专以生日之干配合四柱三元而成格局，惟喜财官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0009",
+      "sha256": "0b98163d2e33b9b285f770160fe3b7d3a268da52b15ad692c1323fd27a8f0566"
+    },
+    {
+      "section": "继善篇",
+      "text": "用神不可损伤，日主最宜建旺",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0010",
+      "sha256": "8daec2f6d4f5121c8e225d1eaeebb824018170cd3b4741144233af141494ff13"
+    },
+    {
+      "section": "继善篇",
+      "text": "如月令有官不可伤，有财不可劫，有印不可破，凡柱中有用神不可损害也。仍要日干强健，则能任其财官。歌释：专以日干为主，次看印绶财官。甲子生於酉月，其中官禄端详。寅午戌嫌丙丁，又嗔比劫伤官。破印反为下残，无劫财运馨香。辰戌丑未祖遗粮，戊己名登金榜。又韵：欲问三元何取，天时地利人和。例如甲子日生，吾凭此依例无讹，甲天干地癸人笑，印绶官真可贺。若还有此又无伤，身惹天香台阁坐。取用以正官为例，嫌以劫破伤官。一位正财为美，财多坐杀为殃。比肩运行失旺，值斯男效才良。身衰财运祸难当，身健家肥福旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0011",
+      "sha256": "35042e8513cbaf94fecd282a714ae7c251b3e08dfb79f9adc51498e2d60324b3"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：官者正人君子也，故畏伤，如甲用辛为官忌丁火伤之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0012",
+      "sha256": "7bcaf445cb1e5f17361c22d9e29ad33a2360b4e41b71ea900b8281ca39e9f442"
+    },
+    {
+      "section": "继善篇",
+      "text": "年伤日干为本主不和",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0013",
+      "sha256": "d6cbdf5e6e941b5c4c0262d97d189b23eae9c7b89581213dbf075a7236459242"
+    },
+    {
+      "section": "继善篇",
+      "text": "假如日干甲乙，年见庚辛克之，故曰主本不合，乃父子不相合也。年逢七煞克日，祖宗无力过房。若还日月及时中，归禄逢财夭丧。煞旺运逢为祸，印生多福为祥。比肩旺运墓疑薨(音同轰)，只是单衾(音同亲)纸帐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0014",
+      "sha256": "6af59c96328e7c29ada49433be5743b05930b980da33e6626c2544cbeb2a88b6"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：日干为主，以年为祖基，月为父母兄弟，日支为妻，时为子息。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 31,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0015",
+      "sha256": "b9c0245359955b91e7cc73b0fabdbb75cddda984ff3d654fe52ee15a621512b7"
+    },
+    {
+      "section": "继善篇",
+      "text": "岁月时中大怕官杀混杂",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0016",
+      "sha256": "1d7f105f5c6a7f68fa433a3c9e2240b812e17e2795a9ccca362c6207f0a60959"
+    },
+    {
+      "section": "继善篇",
+      "text": "岁月时中既有官星又见七杀，则不吉也，务要配合而取断之，则祸福有凭也。歌释：大凡财官印食，俱凭生月用之。见财作财而断，逢官以官而议。逢印作印而论，浅深气便思之。死绝败衰较量，生年月运，贵多基多，出宗而求贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0017",
+      "sha256": "e90720e29f2f251f24600767aa1424cc30b4b59b924b1b8b44eec230dcc326ea"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：杀有制则为官为善，无制为七杀为杂，有官宜忌之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0018",
+      "sha256": "ca097554f412909b4e82fa07c5faa532213e7b8a076d3e34ddab7559a64229f9"
+    },
+    {
+      "section": "继善篇",
+      "text": "取用凭於生月，当推究於深浅；发觉在於日时，要消详於强弱",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0019",
+      "sha256": "cd1f1d7cacd9b7583acc980c276e71f620f4675797774a3d5dbe48b835da7baa"
+    },
+    {
+      "section": "继善篇",
+      "text": "用者，月令中所藏者。如甲木生於十一月，乃建子之月，就以子中所藏癸水为用神。癸为甲母，忌土克之，要日时相辅，其旺相体固可也，其余仿此而推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0020",
+      "sha256": "7fa2856283d0775e6da16120dc28cf81b0c6fe63519460b67666c0bd89753561"
+    },
+    {
+      "section": "继善篇",
+      "text": "官星正气，忌见刑冲",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0021",
+      "sha256": "d0f47e97655e99fab5fc65bdb588781baf93b98b3a5651fbd5769760ff5c6781"
+    },
+    {
+      "section": "继善篇",
+      "text": "《碧玉歌》曰：官星正气莫混，财多伤食莫逢。且如乙卯见庚辰时，月戍逢冲。指甲生巳酉丑月，午未火局休逢，若还官旺见申，时有印见之吉用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0022",
+      "sha256": "e8817ca061b2b1f42c51a0343cf1de57ed146e47f737498d52e6c8070cb19a53"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：如乙人生於七月，庚金为正官，忌寅中申刑冲之例也。正气官星，无杀伤相混。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0023",
+      "sha256": "017b0cc03eb28d3d08ee8004344d4713fe66d203418f367de2f3aad3eccf3d5f"
+    },
+    {
+      "section": "继善篇",
+      "text": "时上偏财，怕逢兄弟",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0024",
+      "sha256": "55365f1bbbe7de6aefaa6835693ddf70b4cd0dd95c099ef9a27ee3afe8adea98"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲人见戊辰时为偏财，见乙字比劫只地，则不吉之命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0025",
+      "sha256": "1c6b95a394f16783b52416e2814a17af5f25c628038e5fed32cec30d24a592a1"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此论时上偏财格。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 11,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0026",
+      "sha256": "9f81c9966e6afff1bfcd57b5d27f3e0d528b4dab752be0f645238638d8425084"
+    },
+    {
+      "section": "继善篇",
+      "text": "生气印绶，利官运畏见财乡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0027",
+      "sha256": "845d2eb2e4c75b6dfc768cc87c25d2ec0fdf065868db13e688bf4e7ad2b10ca7"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲乙生人，见亥子月为印，喜见庚辛申酉运财发。若行入戊己辰戌运，不吉兆也。歌释：年月时来生日，号为印绶资身。运行官印起珍珠，财旺运逢破印。印旺无制孤蹇，相停官印超群。旺南破印命归云，官运拟为贵命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0028",
+      "sha256": "aea79c4b2fca379c73e47c98e9003032de2325b03f9ad46cfcaab6bfc7fe7b05"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：有印必用官，若无官掌之，则用为虚废耶。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0029",
+      "sha256": "0cc4c8cc3882f9df10b9676728a8f51e24b15ec66c4688c41ecb5cf460c2175b"
+    },
+    {
+      "section": "继善篇",
+      "text": "七杀偏官喜制伏，不取太过",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0030",
+      "sha256": "95f59e107c666a12c1ee5730dc5d0b006ee4376b0eff3ef6a811fa7e94b57a41"
+    },
+    {
+      "section": "继善篇",
+      "text": "壬日见戊为七杀，要见甲木制之则吉贵也。甲木多则太过也，如小人受制君子，太过必主反逆。歌释：无制则为七煞，七煞有制是偏官。有制有煞则为良，一制一伏为上。制过贫寒愚蠢，喜行七煞之乡。身旺无制旺身强，却要运行煞向。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0031",
+      "sha256": "431ad490aad472bdca8869193a6a4fcc705344714b9a86d8b1f7bb1f1b147cd6"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：七杀无制则为祸，有制则纯，便是偏官合日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0032",
+      "sha256": "2a05ac4fb917553537c2dbfe71b675bbc28dcf0f25d598ff530d36d546890e2b"
+    },
+    {
+      "section": "继善篇",
+      "text": "伤官复行官运，不测灾来；羊刃冲合岁君，勃然祸至",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0033",
+      "sha256": "254d0917c72df33779de5c729c58d2f4b0ab85b81a7c69eb992aeced12beb063"
+    },
+    {
+      "section": "继善篇",
+      "text": "此甲日生人，见卯乃为羊刃，遇酉金而冲之，见戌而合之，则祸至。若当生四柱中原有羊刃之神，忽来相对，克破流年太岁，或三合相招，克害岁君，则其勃然祸至。若岁乙巳，於甲日生，四柱有乙亥对冲，或巳酉丑为祸。歌释：细论伤官喜忌，忌之不并官来。岁君月建日辰猜忌者，最为刑害。应如仇人相见，怒生厮杀难回。甲子日时卯，算来羊刃之功。岁运辛酉若相逢，丁破辛卯无用。丙日生时甲子，年逢成己相同。甲能破戊午子冲，制之返为吉用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0034",
+      "sha256": "56d54dc6fa267aa2647cc66223f4dc78278505800b9db8016af3a49e6f6e920c"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：月令有伤官用神，又行伤官运，如二虎相争，仇人相见，主凶，羊刃合岁君亦然。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 39,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0035",
+      "sha256": "809a7aa4e77b28934ce6e0c8c332324587071e9407d69a8ccb094374ef927503"
+    },
+    {
+      "section": "继善篇",
+      "text": "富而且贵，定因财旺生官",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0036",
+      "sha256": "753e7234ed88798e8a6b525e42c8d3f8d65d04c5c91d6016acc79c6ec0726010"
+    },
+    {
+      "section": "继善篇",
+      "text": "经云：财多生官，须要身强；财多盗气，本身自柔。且如甲乙以庚辛为官，戊己为财。气得天干生旺，则土生金，金乃木之官也。主先贫後富，盖是财旺生官也。此言财旺要藏，亦要日主生旺，得官来则可任，若身弱不堪任也。歌释：富而且贵，定因财旺生官。身强财积福如山，财宰叠露浮荡。若还主弱不能生，定是富家贫汉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0037",
+      "sha256": "0d6d21d98706146e5505824611ae8563d523e67db1f80f332f77a6a190e0bd13"
+    },
+    {
+      "section": "继善篇",
+      "text": "非夭则贫，必是身衰遇鬼",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0038",
+      "sha256": "afc8e7e93908b42eb2b6702cff48a07d28599184cb0934d24763a2d7b76c26dc"
+    },
+    {
+      "section": "继善篇",
+      "text": "经云：旺则以杀化权，衰则变官为鬼。且如甲乙生人，日午亥为身灾，失天时，见庚辛申酉来克，不夭则贫且贱矣。甲生庚金，秋旺身衰也，何以言福。歌释：甲生庚金秋旺，身衰制也难当。时逢寅卯夭须防，岂知未绝金旺，无疾祸重，孤苦早发，须是夭亡。刃食须印祸推详，贵显民豪达士。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0039",
+      "sha256": "d81a2cfa677bfcca708f0a69d3619ed2394e383860570f6132930daa7d9f2273"
+    },
+    {
+      "section": "继善篇",
+      "text": "六壬生临午位，号曰禄马同乡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0040",
+      "sha256": "667e704e99d9a9086add447ff773e38c1b6bc8d60bcd04b3341a640ed3aa70d1"
+    },
+    {
+      "section": "继善篇",
+      "text": "壬以丁为财马，己为禄官，丁己禄居午，故曰禄马同乡。此格喜秋生，有庚辛金制甲乙，故为无害。若见寅卯旺则文秀而不明。冬生玄武当权，知是火财而纷争。春生甲乙旺，寅卯时乃为凶杀会聚也。此格又怕财官显露克伤岁运，则不吉矣。歌释：壬日生临午位，午时配巳财官。更逢寅午戌来详，最喜刑冲官煞旺。又怕财官显露，魁伤岁运为殃。正官为禄马财乡，午月时运一样。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0041",
+      "sha256": "e4bcf809211e179a25dbcf919e7f26a759bcf8969984a058cd9a2fe0d609a0b9"
+    },
+    {
+      "section": "继善篇",
+      "text": "癸日生向巳宫，乃是财官双美",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0042",
+      "sha256": "20ac3cfa0495f88f8cf630fbd573a6b80cb65cb21a84e1da99c1d499aacde25a"
+    },
+    {
+      "section": "继善篇",
+      "text": "癸日以戊为官，丙为财，乃丙戊禄在巳也，故曰财官双美。若是四柱中不要见水局，时逢癸丑不为凶，何故？巳中戊土，丑中癸水余气，乃是财马也。此格最忌岁运官藏煞露，则反减福而艰辛矣。歌释：癸日生居巳位，财官福禄何如。巳藏丙戊最为奇，丙是财神官是戊。月时运同倒冲刑，贫贱多疑。岁运官煞露分明，减福艰辛而已。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0043",
+      "sha256": "4533caf59f5b3e18f36f59be28252605f93427c8d3a0b8b01523f4111ffe291d"
+    },
+    {
+      "section": "继善篇",
+      "text": "财多身弱，正为富屋贫人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0044",
+      "sha256": "8d8e703f9671a753fec23576bc64f110f191ade8f9c365fcaf86143e4479939a"
+    },
+    {
+      "section": "继善篇",
+      "text": "且如甲申年、壬申月、丙申日、辛卯时，申中有庚金，乃为财多。又有壬水，乃七杀制日主，身弱之甚也。此是富家贫子命也。歌释：财神二三叠见，身衰福浅难承。算来先富积珠珍，後破家似声。日主若连印助，始见富贵。稍贫正财乘旺倚妻荣，任事迷花不定。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0045",
+      "sha256": "9f28b6d7c67e9ece5c925a87de31667a3fed95bde33f6c247264f4b1eb68cc10"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：身弱而财多，尤喜比肩分之，不然则害命也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0046",
+      "sha256": "12e3bebe7c3e59b6d625aec7968b3e6b32118a63bf76285c0110992dfdaa1589"
+    },
+    {
+      "section": "继善篇",
+      "text": "以杀化权，定是寒门贵客",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0047",
+      "sha256": "a69832d843c3e27e2b4224c308a8f32e5bf5c040a021b4e6537454263792379e"
+    },
+    {
+      "section": "继善篇",
+      "text": "大抵七杀化为官星，如丙忌壬为杀，巳午财反恃土之势，则壬水不能为害，化杀为官，发于白屋。若四柱中有土，则丙逢壬时以为极品之贵也。歌释：癸日提进癸丑，天干二气相连。虽然逢煞本身坚，子丑俣(音同鱼)之杀浅。未与年支干杀，相停身煞也憎。如斯富贵两双全，显祖名扬福禄坚。又韵：逢煞切宜看印，印绶化杀为权。杀多宜食制为行，後富必当行蹇。甲日见庚申煞，喜逢木旺东行。丙丁寅午火燥，庚制过，反为下贱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0048",
+      "sha256": "6c8060c7f4047a62a647ea7475c45a6ecfae00e45a6d4643669b5beaf7d83445"
+    },
+    {
+      "section": "继善篇",
+      "text": "登科甲第，官星临无破之宫",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0049",
+      "sha256": "8361c442002b8bef3fce07c479c924247fdd0afd45ef693f20be4144d067b726"
+    },
+    {
+      "section": "继善篇",
+      "text": "正气官星，四柱中不见伤官，无杀混杂，行旺运，幼年必主登科及第。歌释：丙日生官，丑月财官归禄名驰。库中之物喜冲奇，柱外刑冲喜。其造逢冲则贵，登科科位至同知。若还柱内有冲刑，运再逢之不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0050",
+      "sha256": "361ce50b688e58241bbfbe4ff5d49544076ee344d252c8826e20c2cf7ab6f344"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：如甲生酉月为正气官星，遇丁为伤官。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0051",
+      "sha256": "2a756a8f6e19784ad267d0cd736d7020a47ec9c20e5ee50b174fb8f87bd0cf39"
+    },
+    {
+      "section": "继善篇",
+      "text": "纳粟奏名，财库居生旺之地",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0052",
+      "sha256": "b1899b8e2e73c20723a73faef0461370416222f7f4c4c4adae6255a16e445ce1"
+    },
+    {
+      "section": "继善篇",
+      "text": "此为墓库格。谓如临财官星之库墓，须要一物开之。其人难发于少年，经云：少年难发库中人。只怕有物压之，若行财旺运或开库，故云纳粟奏名。歌释：配丁巳日提己丑，时逢辛丑财全。年干乙卯助身坚，巳火出来锻炼。岂料财多归库，土金二曜结缘。分明纳粟去朝天，学士乙木为财。又韵：庚日生居未月，未中乙木为财。财星归库要冲开，无跃鸿门光呼。申日戊辰土重，逢冲富贵美哉。因财得富贵陈朱，贯朽粟陈豪迈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0053",
+      "sha256": "b72ecff13286790dd204e06d002e13b5281dbb63d2532bdd65b6108d1f169077"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：有气为库，开则取用；无气为墓，虽开无用。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0054",
+      "sha256": "27a991d5f66750c642a9e6561ee3c594a4599ef5cc3a84066318a0f4e6966705"
+    },
+    {
+      "section": "继善篇",
+      "text": "官贵太盛，才临旺处必倾",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0055",
+      "sha256": "c88229a62e3eab20de7c6994663920e1b62a3b1e5db91156f6e003518596a93e"
+    },
+    {
+      "section": "继善篇",
+      "text": "且如甲乙用庚辛申酉为官星，又有巳酉丑之类，乃是官星多。若四柱中无制伏，更行官旺运，造物太过，其祸患不胜言。歌释：柱中官星太旺，身强反福为奇。主旺无冲方论，运行财地家肥。身衰苦行财地，化鬼反必倾危。若然印绶喜财依，父死早岁无久贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0056",
+      "sha256": "b2009218806579d2409c4078ac77119f57ca7a439a08ef56e4d3a36655ed2826"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：如人居贵极之地，若有不正，则丧身亡家矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0057",
+      "sha256": "23da00af503d7a174f0c46d3952d306b3c8ebbb2e9f45f19231ea7ecce14ce02"
+    },
+    {
+      "section": "继善篇",
+      "text": "印绶被伤，倘若荣华不久",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0058",
+      "sha256": "c522887c48b35f0fa8758bbc26a790c31439686f83ae15b4edfc19d2cb5e7047"
+    },
+    {
+      "section": "继善篇",
+      "text": "印绶本生气之源，不可有伤，被伤乃见财也，为福有损，纵应禄位，不久而败，所谓贪财坏印是也。财见重重，有事难夸。歌释：六甲生逢癸地，最嫌戊己来侵。如柱财外运逢之退藏，灾刑可避。运不见财为美，柱中才气超群。诗书博览事多知，虎榜高标名姓。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0059",
+      "sha256": "8c7b0723cd0ec8743bf2595a8dafbf05bed4a483ebc8a6357dda36b6712f64e8"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：印当如朝廷之符信，如印当之见财，若贪之则失其职守矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 29,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0060",
+      "sha256": "d6b3260bbef9f71c48450cdced7b0a333e7f3b28b253b48ef06e8fd7de29b49e"
+    },
+    {
+      "section": "继善篇",
+      "text": "有官有印，无破作廊庙之材",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0061",
+      "sha256": "611f25c3289fd081ab01d6f03dc2031b835c0fd834daae4780dcc57bdd306fac"
+    },
+    {
+      "section": "继善篇",
+      "text": "有官有印乃杂气所藏官印也。鬼谷子云：罡中有乙，魁中伏辛，此为杂气印绶财官也，乃少年不发库中人也。假如丙寅、辛丑、甲辰、丙寅，此延生俊命，甲用辛为官，己土为财，癸水为印，提纲中有癸水余气，辛金墓库，己土见旺，故得溢封之贵也。此格忌食神伤印，见伤食则不吉。歌释：有印逢之为上，妙逢官煞为祥。仍分官煞莫刚强，富贵名登金榜。最忌财星破印，又嫌伤食破官。运行不错食皇粮，有家破坏毁伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0062",
+      "sha256": "99a41982f51dd64749e5f28709ed5473636a6b82e78bfc2b5a7ec5d50f6df7f6"
+    },
+    {
+      "section": "继善篇",
+      "text": "无官无印，有格乃朝廷之用",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0063",
+      "sha256": "0d2e5492d8a4e4de881683803ecc3dc1cffbfbf30c5bc7e8c10ed0dcf76a2275"
+    },
+    {
+      "section": "继善篇",
+      "text": "正气杂气，凭财官印绶为贵格、富贵之命。若成格时，要全无一点财官，方为富贵之命矣。假如己未、壬申、戊子、庚申，此乃谢左丞相之命，此命专食合禄之格，若四柱中全无一点财官印绶，以戊用乙官、癸财、丁印，四柱中全无矣。取戊食庚申、戊禄在巳，与申六合，名前格。歌释：命内无官无印，面观有格为奇。壬骑背及飞遥巳朝阳之例，例冲食伤杂气。魁罡日禄居时，金神鼠贵井栏，又无破，化生为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0064",
+      "sha256": "c3bb616429e39d1bdc03b7340ff8bc45930467743a9594bb9b6014865a41d31d"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此为无官印，俱作外格而推，若见官必破局矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 24,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0065",
+      "sha256": "292d9b662e1e0868fa066f594cce5169a3e51bab9852b74b899a387bd3237a5b"
+    },
+    {
+      "section": "继善篇",
+      "text": "名标金榜，须还身旺逢官；得佐圣君，贵旺冲官逢合",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0066",
+      "sha256": "71c24dd3696493046a935dff282dfbb249adfffa9f28be7a65575158ddc6b30f"
+    },
+    {
+      "section": "继善篇",
+      "text": "身旺逢正气官星，又行旺运，必登科及第。若四柱中是飞天禄马，冲官合禄，乃人臣极贵也。冲官者只有四日，庚子、壬子、辛亥、癸亥，怕冲。歌释：日主高强察理，官是有气当时。若逢财印助根基，无破文场得意。伤食劫财莫逢，财官旺气权威。首登虎榜凤凰池，乌帽金冠霞帔。又韵语曰：亥冲巳位，丙为官禄之藏。丙丁造也已嗔(音同称)殃，反丙连辰绊当。癸亥巳藏丙戌，为官禄位轩昂。不逢寅戊己垣乡，定拟紫袍卿位。又论：自身天元羸弱，纵官星得之，荣华不久也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0067",
+      "sha256": "d6f56d8b7094d788166a9a7629f3fbbf6503605a2d69f90cae36e95098c28a12"
+    },
+    {
+      "section": "继善篇",
+      "text": "歌释：非格非局细察，只因破损伤神。身弱官多先贵後贫，费力劳心。身若居官难发，运行身旺财荣。官星一二弱无嗔，相停日为贵命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0068",
+      "sha256": "3457aec1a27adec81fcb252076c112c7d9eb033831c8e3ac9edcdf91b1197d2d"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：破损伤神，谓非格局，身弱居官，不堪其任。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0069",
+      "sha256": "4766ca4ba8d4f1c9e9eab29f1fd7ca8eac31ba62c4ebe3f3b143891b241bb32d"
+    },
+    {
+      "section": "继善篇",
+      "text": "小人命内，亦有正气官星",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0070",
+      "sha256": "e8c54f903c88111dfbd91beaa955ca05a1f0da0a81f1b1c5060d8267e76a03cd"
+    },
+    {
+      "section": "继善篇",
+      "text": "印绶者，怕逢财气坏印。官星者，畏见伤官必败。若四柱中虽有财官印绶，遇其伤害，不成真名，反为凶恶，岂不为小人哉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0071",
+      "sha256": "68346fb6406bf1003f7efaaa32061637d2ea9bfdc6332d46e3127a31a8f7da86"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：若正气官星被恶煞夺其秀气之谓。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 18,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0072",
+      "sha256": "ff2be2ee31478fed1e693d25c31248b64a608edd96038336f30f97b243386b90"
+    },
+    {
+      "section": "继善篇",
+      "text": "君子格中，也犯七杀羊刃",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0073",
+      "sha256": "8709e9c2cb6ec65440fb38f9694bcf906e101ec7f9b57bce7fcc6b381e08a663"
+    },
+    {
+      "section": "继善篇",
+      "text": "七杀有制化为官，羊刃无冲极为贵。偏官发于白屋，羊刃起於边戌，为将为相，岂不为君子者哉。刃与杀主诛戮之权。杀星有制，道相显达。歌释：小人有正官正印中，伤克刑冲，恶多善少反为煞。善多恶少相逢，煞星喜刃七而同，制煞身强贵用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0074",
+      "sha256": "cee1a92428db0dc9852e529f7f4aa56fb2fac2ce5c755fb7c0c790a25f7a1194"
+    },
+    {
+      "section": "继善篇",
+      "text": "为人好杀，羊刃必犯於偏官",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0075",
+      "sha256": "f42985c9d3240b5279ab97acd3d71563f14079d17ea197d1a25f19854b60af07"
+    },
+    {
+      "section": "继善篇",
+      "text": "羊刃者，在天为紫暗星，专行诛戮，在地为羊刃杀。偏官者，七杀之暗鬼。羊刃又犯七杀，人多主凶。若遇贵人吉，则无大恶。歌释：羊刃若逢七煞，主人心毒害民，徒然富贵，不长自大，声高气象。甲日见庚为煞，卯来为刃分明。若逢印吉好求名，连杀亦看刃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0076",
+      "sha256": "b9c22040dd7145f3f030230af3ea7a812799fbd8d355b0b3badea0ceb2d32b46"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：七杀羊刃，有印必主权贵；征伐有恶，则必沦为盗寇。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0077",
+      "sha256": "09c2d8a7f00fc7d5d1b8c6d49b5f3db370fc44ec973d5afcc696a630a6ccaa63"
+    },
+    {
+      "section": "继善篇",
+      "text": "素食慈心，印绶逐逢於天德",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0078",
+      "sha256": "8fa057cd098581e6cc901e7d5db289fce4371c93293d144158495d890a211eb4"
+    },
+    {
+      "section": "继善篇",
+      "text": "如命中元犯凶神恶杀，若遇天月二德神救之，则凶不逞也。印绶本慈善之神，又逢天月德相助，主人心慈而食斋矣。天德月德，能解恶方善。歌释：大凡印旺重重，天月德而助吉。仁义礼智信常存，好善济人利物。富贵超群，发达心慈，拜道礼佛，有终有始。事三思，财旺为人反覆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0079",
+      "sha256": "1604237aa6806b5ae10325adf3da5ccff158024a7886534313aa86077d2d0183"
+    },
+    {
+      "section": "继善篇",
+      "text": "生平少病，日主高强",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0080",
+      "sha256": "d78e7f7ce0d7c667cab010c9b280e7ea0ebf5c1eb583739849d50562efd157d1"
+    },
+    {
+      "section": "继善篇",
+      "text": "日主自旺为恃旺杀。乃是本主得地，自恃旺乡，其人沈病不染，老年齿牢发黑，强其体骨。天元遇旺，顺身远害，欣然无忧，乐天之命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0081",
+      "sha256": "fb7d7fa67b54805349c2ba1cdfac2faf4f0d62bd1802cb76d48dd72cd4535397"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：日主高强，乃五行临官、帝旺之地。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0082",
+      "sha256": "6b2f3c2653ed87d331410a852443912267b6249614bad568c4bb811d1448c8f5"
+    },
+    {
+      "section": "继善篇",
+      "text": "一世安然，财命有气",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0083",
+      "sha256": "113f884b1b66015e9a8d09d87b3f56f1c1a07af2e455517cdf12a9b56a63acc6"
+    },
+    {
+      "section": "继善篇",
+      "text": "此论财者，妻财，马也。财旺有气来助，我身乘旺，必享财而用之，是得安然之乐矣。如甲生辰戌丑未之乡，皆作财有气。歌释：寅卯专嫌战克之乡，寿年鹤算少灾殃，福发浑如海漾。甲生辰戌丑未，安然财命荣昌。财官印绶旺为良，心地宽洪方能小祥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0084",
+      "sha256": "48ccbba3fafc16e3222dd32de2be069434dbfb46b1329f97dc9d21c8a8f15682"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此言五行得财旺之乡，无劫者亦作此论。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0085",
+      "sha256": "e7c785e4e661b8a434594de8d794ff9b514f99ed0dc98b0a76bff0a90673a089"
+    },
+    {
+      "section": "继善篇",
+      "text": "官刑不犯，印绶天德同官",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0086",
+      "sha256": "430e9e48ee2ac5e9768da8c413aaeeacd678167a06c0c80aca6f5f5044e5adef"
+    },
+    {
+      "section": "继善篇",
+      "text": "此五行自得天时，名为时旺。若印绶扶身，又带天月二德，一生不犯官刑之论。主慈善化凶为吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0087",
+      "sha256": "8754725c06cc8f7d426be5c9b46b569ffa8dbfeb4d62faff2f2c86100ee94321"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：论印与天月德同，主人慈善。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0088",
+      "sha256": "d7eeca2c1cf444938817898c7dc5d9509d521bc74ccf8ffe1da7949c1ec18147"
+    },
+    {
+      "section": "继善篇",
+      "text": "少乐多忧，盖因日主自弱",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0089",
+      "sha256": "2d204ac6350c8b60ce317ea20b29556cd7ab9ca06ba0573faf8e748fc693ad62"
+    },
+    {
+      "section": "继善篇",
+      "text": "此言日主无气，落於衰乡，又失了天元气，特鬼败之乡矣。多主奴婢之下，孤寡临於五墓，一生忧闷，不足之命也。歌释：印绶喜逢天德，平生福禄声香。乙日酉月煞刚强，又嫌巳丑金旺。若还无制梦黄梁，辛苦忧愁免丧。倘然日主衰弱，其造断然不良。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0090",
+      "sha256": "8a5a7a1ce1b2fe91f9ca834565d7f5afff51f275c914d94dc7a8b8d7c12123b2"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：少年当离祖过房，出继倚他人方可。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0091",
+      "sha256": "71a46bf3e57403d86709390bb07b3ee3e0fb31b46822233f55ad1080fac84eba"
+    },
+    {
+      "section": "继善篇",
+      "text": "身强杀浅，假杀为权",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0092",
+      "sha256": "e15b1bdac50ab5edae4303f1e6c0280d4abb432d10509033147bbfbb9a41465e"
+    },
+    {
+      "section": "继善篇",
+      "text": "假如丙戌日见壬辰时是也，生於四五月依此而断。《碧玉歌》云：“化杀为权何取？甲生寅卯之乡，更逢亥卯未成行，何怕庚金作党。乙生巳酉丑月，喜逢木局相当，若逢亥卯未生殃，处世艰难贫汉。”假者，借也，因身旺无杀必无官矣，借杀之威而旺己云深也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0093",
+      "sha256": "477672bc8553b261a24fbba8a8bce2041739f31ca4f5307557ad2dc0ff4e80fe"
+    },
+    {
+      "section": "继善篇",
+      "text": "杀重身轻，终身有损",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0094",
+      "sha256": "e3b090bbf00fe5bb423d8ebce3624eaf672dde3715e4e2f0f7bb444a9be924f4"
+    },
+    {
+      "section": "继善篇",
+      "text": "如戊寅、壬戌、壬戌、己酉是也。月时暗有戊土为七杀，故为伤身也。歌释：阴不生三乙酉，时逢辛巳少祥。身轻煞重最难当，又疾富贵早亡。如斯嫩草又逢霜，絮柳风吹飘荡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0095",
+      "sha256": "ff3303a9c41aa53c9d7b5357788cb6d2233d5d52df4333573bd6e59ab16fca45"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此格如衰草逢霜，又行杀运，则夭折无疑。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0096",
+      "sha256": "f4754d2e8305f13c1f2e6907946bce66949419946823933abfae1932e63f496e"
+    },
+    {
+      "section": "继善篇",
+      "text": "衰则变官为鬼，旺则化鬼为官",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0097",
+      "sha256": "7868f44415f19b14a92e1a23c1cc09287584e3ab4c92d642371148dbecf13a17"
+    },
+    {
+      "section": "继善篇",
+      "text": "若日主衰弱，纵有官星，当他不得，故变官为鬼矣。若日主旺盛，纵有七杀，其杀自降伏，当化鬼为官，乃主大富大贵之命也。歌释：日主生来衰弱，官多化鬼殃。或逢主旺煞来降，变鬼为官达士。官多必难领受，煞重无制夭亡。身衰身旺细推详，只喜化煞为上。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0098",
+      "sha256": "d922c0f73b0096fa89b548980ae1c14afd511f160b535f2e197af38fe4f7dd9f"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：官与鬼一也，身弱作官论，身弱作鬼论。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0099",
+      "sha256": "ff8fe1d8d436b3da23a4341ed4de800593f23d940354219cbb1405dab1469785"
+    },
+    {
+      "section": "继善篇",
+      "text": "月生日干，运行不喜财乡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0100",
+      "sha256": "4f49fa4e1af6c55cb0b4f40af97b9b12acaf64dbf7312166859419c05347bf91"
+    },
+    {
+      "section": "继善篇",
+      "text": "月生日干即印绶也，印乃母也，故云忌财破之。运行入财乡谓之贪财坏印。譬如为官者掌印，贪百姓之财则不美。(眉批：木用水为印，见土为财。)",
+      "layer": "historical_work_transcription_with_commentary",
+      "commentary_spans": [
+        {
+          "start": 50,
+          "end": 66,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0101",
+      "sha256": "476a0858294fe73d473efa8aab112bbaad5273e94e99f9c7d3a603701ae7de3f"
+    },
+    {
+      "section": "继善篇",
+      "text": "日主无依，却喜运行财地",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0102",
+      "sha256": "e73773d328b0d2f4be53216fcee72e074bfc1918e1aa4d9a213a516847f55cbd"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲乙生於春月，柱中若无财官，谓之无依，若运行辰戌丑未运，以土为财，方可发福。余者仿此而推，如背运不可言福。歌释：月生日干为印，不宜财运坏伤。甲生亥子印无冲，巳午辰戌丑未损日主。生旺太过，若无格局印逢，岂知身旺却无依，运喜财乡，多无福量。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0103",
+      "sha256": "bcae151a57f4ed4f79b9aee07ccd3b598b31473376625ad1a0dccb8929aa0e78"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：财养命，官扶身，人若无此，将何施设哉？",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0104",
+      "sha256": "c30df2581f6e8e2d07e1068112f069edc5d073a4a9b730934d4bb69a118fad83"
+    },
+    {
+      "section": "继善篇",
+      "text": "时归日禄，生平不喜官星",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0105",
+      "sha256": "168a2d29b2e71105b72b7948ad38954b2f99d038a497b9a684f546730b91e1ef"
+    },
+    {
+      "section": "继善篇",
+      "text": "命中日禄居时者最怕官星，所以强官破禄反贵为贱矣，若见官星则剥禄矣。歌释：日禄居时最妙，年提畏煞官星强，官制禄，禄难归，但见官星格，审月提，运喜财地，无官职显名高。天干之内见官星，运喜食伤福泰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0106",
+      "sha256": "451dfc1ba49ca4485f982d8add4c179c7649b3f08954fb2150e132b55009c5f8"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：甲得寅时为禄，四柱中不宜见辛官。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0107",
+      "sha256": "bb639e3fcde431dea425d15edd8df9dbb3c8e8371c07811677132545319339cf"
+    },
+    {
+      "section": "继善篇",
+      "text": "阴若朝阳，且忌丙丁离位",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0108",
+      "sha256": "8d71c441dffa69c956b3ad2783c0b634ce8eaea45e8fe34c6d4780ec4333de1a"
+    },
+    {
+      "section": "继善篇",
+      "text": "此言六辛日见戊子时也。岁月若见丙丁二字，乃南方火伤了辛金，所以不得朝阳以成真格局。若不见丙丁，皆主大富贵命，官自居一品之尊。此谓《喜忌篇》云：“六辛日逢戊子时，嫌午位运喜西方。忌见丙字，露出官星。”见丁字，乃七杀克辛。此说非虚矣。歌释：六辛时逢戊子，号曰阴去朝阳。运行西地姓名音，一举首登金榜。仍忌丙丁离位，最嫌官杀相伤。岁时最怯此星藏，只是经商之客长。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0109",
+      "sha256": "f820cfae883f4e5820c376df92446a54094b027452a305190378b78e44ea9150"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：子为阳、辛为阴，故阴朝之，只忌官星，丙抵合之，则朝阳不得，只作经商巨贾也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 40,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0110",
+      "sha256": "44b9a046a8496ffa638bf8feb1cd5f5a110849f7ef0cfeb06d08d7f652b0fe62"
+    },
+    {
+      "section": "继善篇",
+      "text": "太岁乃衆杀之主，人命抵必为灾，若遇刑战之乡，必主刑於本命",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0111",
+      "sha256": "d45d1dbad2e98b00e994c9f08ba3f61d8f0c7b02ee2d6f0c0aafde7350f515e7"
+    },
+    {
+      "section": "继善篇",
+      "text": "太岁乃一年所主之君，统衆煞之主君也，未可便作凶推。若命中羊刃诸杀或日主刑克岁君，乃臣犯君，必招战斗之祸。歌释：岁乃人君之象，未可便作凶言。当生羊刃克流年，不死灾刑非浅。冲破岁君为祸，应如臣犯於君。夫子遭陈于蔡地，浑如六国吞秦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0112",
+      "sha256": "bdafdf776447f6945498d51b782c54d09ed7a360f026692b7c7273f3f7ba744e"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：太岁会吉星为吉，遇恶煞为凶。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0113",
+      "sha256": "2bf8de14b41607e54df20e56b231fd594d5d7007b2107581f459d48bf053e0e4"
+    },
+    {
+      "section": "继善篇",
+      "text": "岁伤日干，有祸必轻；日犯岁君，灾殃必重",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0114",
+      "sha256": "ecf59b5bad689f45457d07957f85af3842aeca07a961593ceb23081f07c0ed6e"
+    },
+    {
+      "section": "继善篇",
+      "text": "若太岁克日干，谓为父怒子，其情可恕。日克岁君，如子怒父，罪不可赦也。假如太岁庚辛，日干甲乙则灾轻。日干庚辛，太岁甲乙，无救则灾重。歌释：岁伤日父怒子，祸则轻而可恕。日犯岁如子怒父，下犯上者难度。日干喻如臣子，太岁时若君父。凶运灾重吉灾陈，柱凶流年定故。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0115",
+      "sha256": "e92fd45618fe7f5d46c8341efc245ad591ef044620bdc6f44f2569ec92a9ebff"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：以上犯下轻，以下犯上重，如君臣父子不相和也。岁伤日干者轻，日犯岁君重。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 38,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0116",
+      "sha256": "9aa89ac3140071f2730cf4b7f1fe7234a933c373737996ac15b0920371e2b102"
+    },
+    {
+      "section": "继善篇",
+      "text": "五行有救，其年反必为财；四柱无情，故论名为克岁",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0117",
+      "sha256": "2e300d3dd4227f14ce309c2f2a7a9fcf7893a563703f681c07be430c3da123b5"
+    },
+    {
+      "section": "继善篇",
+      "text": "此言日犯岁君。若当生有救，祸减一半，其年反招其财。若无食神救之，便是造意不好，主害岁君，还伤日主。如甲日克戊岁，若得己字在，便是夫妇贪合有情。乙日克己，岁君干头有庚，亦是夫妇贪合有情，若无配合克制，便是无情，其祸不免。歌释：甲日主来逢戊，名为日犯岁君。庚辛柱制福非轻，柱若无之运询。庚辛日主干甲，岁伤日干略病。食神印绶制清平，无制灾非刑并。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0118",
+      "sha256": "da08af2f440c75731b17080be681126f9e70ab102f86c3e897730c4e51a2b87b"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：四柱中有财乃为先祸後福论，无财定作凶祸而断之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0119",
+      "sha256": "3c4ea46cd6be6ee47ad3de312985a6a29bda2b9af07a7e770f873d8b21b52d30"
+    },
+    {
+      "section": "继善篇",
+      "text": "庚辛来伤甲乙，丙丁先见无危",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0120",
+      "sha256": "c783ecf4542a7489e5a782459acb2eb48e415dd8c8226b9e9a2cd0de0e97ddda"
+    },
+    {
+      "section": "继善篇",
+      "text": "如庚辛金克甲乙木，柱中若有丙丁巳午火，则有救也；其余依此例。丙丁反克庚辛，壬癸逢之不畏。戊己愁逢甲乙，干头须用庚辛。壬癸虑遭戊己，甲乙临之有救。壬来克丙，须用戊去当头。癸去伤丁，却喜己来相制。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0121",
+      "sha256": "fe098f5d52986a24ce0f90f704b60fa8b38da22af42442efbeb5d0c736f22fe3"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：言丙丁火克庚辛金，金受制不能伤木。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0122",
+      "sha256": "8fe77316af8e303399486463abce9a0b52e6953a5f2ec26068f860e53f3dfb93"
+    },
+    {
+      "section": "继善篇",
+      "text": "庚得壬男制丙火，夭作长年；甲以乙妹妻庚，凶为吉兆",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0123",
+      "sha256": "abef0f5d66926dcc948f557c6c5eb6e2f1f27b7b9c8eb75fb2e8b230801d4510"
+    },
+    {
+      "section": "继善篇",
+      "text": "庚金最怕丙火，有壬水制伏反吉。甲乙忌见庚金，得乙妹配庚为妻，则以甲为妻兄，以变凶化吉也。歌释：庚得壬男制丙，子来救母无病。甲得乙妹配庚，亲任凶而吉庆。故曰有心变爱，果然无意伤人。贪欢喜合杀忘刑，福旺名扬财旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0124",
+      "sha256": "5bfe61a8780b17c84bd83cf8bb44d52c698f951f71aa476378cda5aeb2015a4a"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：壬乃庚之子，丙克庚则子救母，甲以乙妹妻庚之理亦然。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0125",
+      "sha256": "ba1dc623e6a9a515884ce0616c6cec579ead3c3a3f58bb216e252db55a40dd6b"
+    },
+    {
+      "section": "继善篇",
+      "text": "天元虽旺，若无依倚是常人；日主柔弱，纵遇财官是寒士",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0126",
+      "sha256": "a71978f2569752ea2600350f64f769b6abbf0abb858565a45fd12e0db0ab3e9c"
+    },
+    {
+      "section": "继善篇",
+      "text": "《碧玉歌》曰：“天元日主太旺，岁时月印财官，三才不显，主贫寒，僧道孤刑之汉。日柔全无生旺，财官多反生殃，当之不住过寒窗，守若囊消貌状。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0127",
+      "sha256": "1a648f50929518785489c271141511eb7f525e2870178a7b58024938fdebbd7d"
+    },
+    {
+      "section": "继善篇",
+      "text": "女人无杀带二德，作两代之封",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0128",
+      "sha256": "b0062b614b884992823f6a294967827628e48bd42ff66d130b35eb3a9d688a71"
+    },
+    {
+      "section": "继善篇",
+      "text": "凡阴人之命，不宜见偏官。若有天月二德全者，必主有封赐矣。天月二德命中有者，主人慈惠温良，镇压诸杀，不敢犯也。歌释：女以官为夫宿，不宜七煞争功。无官七煞是夫宫，不喜官星相混。财官印绶全带，夫荣贵名门。二重天月德相逢，职掌皇家赠俸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0129",
+      "sha256": "bbe088af5c6209b1d74902e7415721247a606ef015e2101d9d20286c13c4fb60"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：女人有此，生於名门贵族，职受皇家封赐。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 22,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0130",
+      "sha256": "5515ef0f7069a3109b413b0acebb4c632d798f3cc662775773d928e652249b3f"
+    },
+    {
+      "section": "继善篇",
+      "text": "男命身强遇三奇，为一品之贵",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0131",
+      "sha256": "36ef72b69abfe0b5dc46e06596a6ceb068b018ffb37fc5d8f9c2dae336282f13"
+    },
+    {
+      "section": "继善篇",
+      "text": "诀曰：“日主高强富贵，财官印绶俱全，甲逢辛己癸为禄，乙戊庚壬可见。丙日癸辛乙位，丁壬庚甲高迁，戊喜癸乙丁齐，己壬甲丙三奇。庚辛壬癸例依前，无破名登金殿。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0132",
+      "sha256": "5e1a74df03b99e03bdfd16a8fb09f3aa0461af8075af6a2fb0581cca1ac39145"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：三奇者，专取财官印三者为奇，若无刑冲破者，位极人臣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 29,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0133",
+      "sha256": "4cf6d2404711e29da99d81c16c2bc902b5a72caa136a7bc215823ffebb1a3d26"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲逢己而生旺，定怀中正之心",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0134",
+      "sha256": "0648ad5213a2489b7d03aac9d728512138fbc7670d50d48dfbbe541069dd9114"
+    },
+    {
+      "section": "继善篇",
+      "text": "诀曰：“甲逢己土合生旺，富贵荣华定可量，常怀中正得人心，当遇贵人须可望。”甲届东方生旺之气，主乎仁。土属中央厚重之气，主乎信。甲己化土，而四柱中更带生旺，为人忠厚正直之辈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0135",
+      "sha256": "68225805484bc74c6d8402e9028690a6ed741e4142f1a7f2d0a6d721777dad09"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此言甲与己合化土，主有仁信之谓也，为人不失信，行为至诚，君子也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0136",
+      "sha256": "b740f958fab3d2494266942a8d0aa7cb2b4bca3aadde511966d976d928f57b6d"
+    },
+    {
+      "section": "继善篇",
+      "text": "丁遇壬而太过，必犯淫讹之乱",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0137",
+      "sha256": "b291810be56e2a00cf805804389b4bb4677375e946d81f231e3e531669383afd"
+    },
+    {
+      "section": "继善篇",
+      "text": "诀曰：“丁遇壬而太过，多阴独阳定主淫讹，男因酒色须倾夭，女主私通内乱多。”丁与壬为合，若丁日见壬水制太过，主淫。丁壬得合遇庚辛，女人主淫，主烟花弹唱，此格要行土运方获福。歌释：己日生六甲，心存仁义忠良。日时甲己是财官化旺，家旺福旺。丁日遇壬太过，化官作鬼为殃。柱中三两巧淫娼，夫多沿门弹唱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0138",
+      "sha256": "e17216890e9340521b0938cca58bb544a2903dd0c0632c19dd554a799c0bc938"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：丁壬得合遇庚辛，女主淫。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 15,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0139",
+      "sha256": "682ecc597fca0a66fa6f0b59a5710b8ba28d80a0e6af86ad91d24bb53723c057"
+    },
+    {
+      "section": "继善篇",
+      "text": "丙临申位逢阳水，难获延年",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0140",
+      "sha256": "e2dda571f93b670947667ae747caffa61f7f472f4b72e7b64d4588eb5e0cb1ac"
+    },
+    {
+      "section": "继善篇",
+      "text": "诀曰：“丙临申位火光焰，阳水逢之命不坚。若得土来相救助，却加福寿享延年。”若丙申日主，行壬申、壬辰、壬子运主夭。歌释：丙日生地申位，申长生，水流通。壬申壬子及辰中，七煞刚强祸重。壬午壬寅壬戌，其祸轻而无用。煞多身弱定成凶，仔细参详理同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0141",
+      "sha256": "a7c82eee21e9850db697e672815fc0b101e7b920bf3ff8b12afbc25af0bba581"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此格行土运吉。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0142",
+      "sha256": "cd33bd6283d9aa761200553ed9c61b77889197c46c9a51af3e93a8a04241a4cd"
+    },
+    {
+      "section": "继善篇",
+      "text": "己入亥宫见阴木，终为损寿",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0143",
+      "sha256": "32608bda1d5096416d9814f0aa10ce8ad9949ba77d2132c892d259bbf0ec6557"
+    },
+    {
+      "section": "继善篇",
+      "text": "己亥日主，行乙木及亥卯未运，主寿夭。诀曰：“己为强土见双鱼，阴木临之寿必疏，四柱若无金救助，酆都岳岭寿无虚。”此格要遇金方可获福。歌释：为人日生己亥，祸逢乙木支争。殊知亥有木长生，无制夭亡蹭蹬。乙巳乙丑乙酉，煞中以义掩恩。乙未乙亥卯森森，不死贫寒偃蹇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0144",
+      "sha256": "5ec722801b8211dbb436618c908a9e111d133602ca32b806502a3a6e32de6a0f"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此格宜金运美。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0145",
+      "sha256": "02cf4eee7954737e97953603ed2a63d6df16743127e3f7af74be197d173edbc2"
+    },
+    {
+      "section": "继善篇",
+      "text": "庚值寅而遇丙，主旺无危",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0146",
+      "sha256": "48e871016e2e59ae1eb42c098df2c85cbee5f4b038f5cba8099de31856a2a882"
+    },
+    {
+      "section": "继善篇",
+      "text": "庚寅日主而遇柱中有丙火，若庚金多亦无羌，谓之多则生出艮土，土又生金，故无危也。诀曰：“庚逢寅位禄当权，丙火重逢寿不坚。身旺鬼衰犹可制，应为鬼杀化为权。”歌释：假如庚寅日主，生於丙火煞刚。寅中艮土返为祥，以煞化权为上。庚日生申归禄，其中旺气高强。反将丙火化为官，临危见机无恙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0147",
+      "sha256": "2852f77a830df72c66187ba0022d29ce1d7e4d8c7590943ddd34b7cc4322b971"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：庚金绝在寅，又寅中戊土生金助之，丙虽旺则不畏也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0148",
+      "sha256": "b5d491d72560f40005434004d0c5efff273b3d5cc1b145abcf7b0d4d7f1eaf81"
+    },
+    {
+      "section": "继善篇",
+      "text": "乙遇巳而见辛，身衰有祸",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0149",
+      "sha256": "f576083301c252b7a0aaaa1773a4b55db5226b18b4712fa6bbcfbdf5be242a51"
+    },
+    {
+      "section": "继善篇",
+      "text": "乙巳日主，柱中有辛金多，乃乙木衰而杀旺，故有祸也。诀曰：“乙逢双女木衰残，若见辛金寿必难，若得丙丁来救助，岂知安乐木成欢。”",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0150",
+      "sha256": "9b34c6969e53d953960e7ab2f418f055e647abcf5b9ca6993e04150be7edb17f"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：乙木生於午而败於巳，木本弱也，何堪逢辛杀之害。不可言吉，而可言祸也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 37,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0151",
+      "sha256": "76d82562fc424244152b6e0d3f8c3ccf2e0268cc61ad2f59af10611a13704d7c"
+    },
+    {
+      "section": "继善篇",
+      "text": "乙逢庚旺，常存仁义之风",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0152",
+      "sha256": "1a982c9fc8dcb79b95e257a3f80c7eb088c93615d0b188230eb68fd6106126e1"
+    },
+    {
+      "section": "继善篇",
+      "text": "诀曰：“仁义之风，乙日见申月之类。”此格者有仁有义之人也。诀曰：“乙逢庚旺是官星，遇此当为宰相行，若遇五行无冲破，常存仁义镇边疆。”歌释：乙木生临巳位，身衰有祸少祯祥。丙辛庚乙配鸾凰，处世无如福长。阴木逢庚之地，春风四海名扬。上和下睦休三纲，世超君少恙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0153",
+      "sha256": "23f567f49f0d9d9195e5a32e15bdedfdffeeba885bc0e1a7a5c4086cb2394a63"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：乙主仁，庚主义。故曰仁义之风，此格恐刑伤克破主不义。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 29,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0154",
+      "sha256": "46c61fdfe16cfae3cd3852d7465cb08a525fd15fa5609109e8d4e19593951eaa"
+    },
+    {
+      "section": "继善篇",
+      "text": "丙合辛生，镇掌威权之职",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0155",
+      "sha256": "b10e3945fc49a62b4690b0d0e7f4b04b46ec0331a77224a695a5513e6b1ab239"
+    },
+    {
+      "section": "继善篇",
+      "text": "丙日见辛酉月，辛日见巳月，此格局者，当主有权柄之命也。诀曰：“丙合辛生非是贱，掀轰名利真堪羡，不然黄阁显公卿，执掌兵权难有变。”此格又遇刑伤克破，反为不美，未可作贵推。歌释：丙合辛生夏令，岁月时见辛多。龙韬豹略志何，又怯刑伤克破。辛日见丙得合，逢生逢禄中和。运行官旺福崇峨，四海名扬振播。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0156",
+      "sha256": "cab994ecf65a1244daed6b9c8357ad9e8f00b7875d03a98349281dd57b1b1155"
+    },
+    {
+      "section": "继善篇",
+      "text": "一木重逢火位，名为气散之文",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0157",
+      "sha256": "350dd447ded4b472fa77193fc40ad92782a8a82bc59e2b299b6dc62a70ba3341"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲乙日生，重见丙丁之火，则泄气也。诗曰：“木能生火本荣昌，木火通明佐庙廊。一木重逢离火位，终身泄气落文章。” 歌释：一木叠逢火位，夏生丙丁重逢。火能化木气，岂知无功，作事无成贫曰。支喜寅午戌巳，戊己财通。火木化无凶，福禄优游家润。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0158",
+      "sha256": "af90d0dcc617b732b56e772bf6b42bb90519c7508be7d1a481f523a440daddf0"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：未可便作贵推。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0159",
+      "sha256": "fb9be53a03904d3da82d8f253b01ffd0a72685f5ae8baaba3a4257c6748d7466"
+    },
+    {
+      "section": "继善篇",
+      "text": "独水三犯庚辛，号曰体全之象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0160",
+      "sha256": "70eb4e44f59d2a0342b450fd9a92b6e597a02cda5f74871befc0492bbbbfe8e7"
+    },
+    {
+      "section": "继善篇",
+      "text": "壬日生，重见庚申辛酉，则印绶生身，主富贵也。诗曰：“独水三犯庚辛重，金能生水水还同；年生骨格天年秀，名利双全福禄丰。”主大富贵。歌释：壬癸逢两庚辛，喜生岁日时真。癸生辛两又庚逢，岁日时中亦用。莫道印多不说，一偏一正不凶。故知号曰体全功，五伯诸侯食俸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0161",
+      "sha256": "b5bbf633ba50b9a3234a94511ac37ba7b6ec8e437acf64985b930b9c24c1ad7c"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此言母多子多。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 10,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0162",
+      "sha256": "45130422dbd8ffff57ea89356cf5fa3296a9644a556c421cb98f9eaaa8887b49"
+    },
+    {
+      "section": "继善篇",
+      "text": "水归冬旺，生平乐自无忧",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0163",
+      "sha256": "30dffbed36238b3383183cf6514ee3a61505a7d8ae6558b9eef19857ba37361b"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲乙生於春三月，丙丁生於夏三月，庚辛生於秋三月，壬癸生於各三月，辰戌丑未戊己之所旺也，皆节气内，主寿无忧。歌释：壬癸连两庚辛，喜生岁日时中。提时伤劫运南程，最喜食财官印。师人含山住，拿下三百姓陈。然官旺处反处为嗔，刑等百端病症。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0164",
+      "sha256": "469fa0039920e39743afb0f539a97c46813a280c6d406b1d08a0da71c6aaa573"
+    },
+    {
+      "section": "继善篇",
+      "text": "木向春生，处世安然必寿",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0165",
+      "sha256": "8681069f5866a9e501273b9987265bb594b365d3ab2dc1bc2a8a995af5fa7cb4"
+    },
+    {
+      "section": "继善篇",
+      "text": "甲日生居春月，柱逢寅卯二重，温良性格定慈心，青史朝廷仍用。财食印官旺处，太旺又反夭穷。术家精究似中庸，谈命须求有用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0166",
+      "sha256": "f92f6bffe849046663caf0e037a225e1033ad7e751aeb08827d4083415eb1513"
+    },
+    {
+      "section": "继善篇",
+      "text": "金弱遇火炎之地，血疾无疑",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0167",
+      "sha256": "e07337dc07b0075cd15786704a029f8f91c11f849d62fe93a1f44637c3f5d5e5"
+    },
+    {
+      "section": "继善篇",
+      "text": "金主心肺者，心之华盖，金若被火来冲，必主因酒色成疾，肺心受伤，呕血瘤疾也。歌释：庚日生居火地，柱逢丙丁重逢。若还寅午戌全通，不病也防疾重。男主疯痨疾蛊，女産血劳之风。若无制伏岁时中，火急宜修棺塚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0168",
+      "sha256": "51c6551b904f3f1ba2e98bec9af94fcc77c974678d3c51b84c0d6dff7e26f1ab"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：金生火地，丙丁重见，男主痰痨，女主血崩。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0169",
+      "sha256": "c8b65d3c3e87c192a4114f1cb0aee89dda182e735fc66ecd19ca8e2c6164fe20"
+    },
+    {
+      "section": "继善篇",
+      "text": "土虚逢木旺之乡，脾伤定论",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0170",
+      "sha256": "cd3acd04118b67edb1631df4958db2be4bacc26e5df5a88e7ef59652fd339d71"
+    },
+    {
+      "section": "继善篇",
+      "text": "土主脾胃，若被木来克制，必受肚腹寒病之症。歌释：甲子年提，丁卯己丑日时乙亥。岁时提路木徘徊，煞重脾寒疾害。运行坎地夭折，岁逢木地定灾。西南方可发财钱，俊士闽丘後代。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0171",
+      "sha256": "640eb786a0ff5a2b645b32d5f892686d01c6589b3d154de09b79d889952fec3e"
+    },
+    {
+      "section": "继善篇",
+      "text": "筋骨疼痛，盖因木被金伤",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0172",
+      "sha256": "e602a5a1f092f7fe2f754aeaec7ef5b1f92ba10cf83007f703e5afd264441015"
+    },
+    {
+      "section": "继善篇",
+      "text": "诀曰：甲木身衰不旺，运提辛酉庚申，岁逢巳酉丑来临，害目风癫邪症。乙日身衰同论，巳酉丑字相刑，未逢此地四肢宁，须作不宜自矜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0173",
+      "sha256": "2a5ee39b585d36d6733173d1f2a0ae2c1e3a573806f3b02edf0de0585b9255e1"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：日主木被金伤之，则有筋骨疼痛之疾。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 20,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0174",
+      "sha256": "e4a4e774c3764c9e46942d671bc6897fde387b3a4e4958d3bea1e9cb43412ab5"
+    },
+    {
+      "section": "继善篇",
+      "text": "眼昏目暗，必是火遭水克",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0175",
+      "sha256": "82aa1ec29a1bd7da0129a3040dd97771c54b74a91f91c9173215c3fd663a44b3"
+    },
+    {
+      "section": "继善篇",
+      "text": "肝属木，心属火，肾属水，水克火，无相生之道，故有眼睛目昏之疾者矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0176",
+      "sha256": "ef586e613e0977441d9ef8f1ce88faa7de6f4967c7800a5bd97f12ed34185c9b"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：眼乃金木水火土俱有，故禀五行之精，少一则穴明。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 26,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0177",
+      "sha256": "a9855d9f7bc4a2107b6f81e7b8243a87bf7fc0f4fc00edc2d41e466046f21d3e"
+    },
+    {
+      "section": "继善篇",
+      "text": "下元冷疾，必是水值火伤",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0178",
+      "sha256": "0128cbe2505a6f54edc5989c71462b9a23e47f7a1fa840a3470a2a9d82a0d03f"
+    },
+    {
+      "section": "继善篇",
+      "text": "肾主北方水，心属南方火，肾水上升，心火下降为既济。若上下不交，则有冷疾之症也。丙丁生於坎地，亦为身弱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0179",
+      "sha256": "7e45505d17f790a107b1f59c063e13f662c6324f2bad93ca1456394832875311"
+    },
+    {
+      "section": "继善篇",
+      "text": "金逢艮而遇土，号曰还魂",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0180",
+      "sha256": "1cafdf0ac4044861d915566ab1a86e37c46f26248e66343d82e46fe21c8de5b3"
+    },
+    {
+      "section": "继善篇",
+      "text": "庚辛金受气於寅卯，得土生金，故曰还魂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0181",
+      "sha256": "dfca12f84aaf05799b1e42c9b2ab9a682460616c3c24ad5e6f339fc8c13b6bce"
+    },
+    {
+      "section": "继善篇",
+      "text": "歌释：天干戊日若相逢，扳桂云梯可上。重见丙丁相克，必当寿夭贫寒。不见丙丁逢戊已，管教家富千仓。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0182",
+      "sha256": "3d981d3ad5db83e8e34e37e9bbacc82e7f0a0bd1f944eaf4ae230626e203218e"
+    },
+    {
+      "section": "继善篇",
+      "text": "水人巽而见金，名为不绝",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0183",
+      "sha256": "20645009b9672048823a0e761d719c13715d13f79b01dff330f9039f58db676c"
+    },
+    {
+      "section": "继善篇",
+      "text": "壬水受气于巳，水得金而能生水，故曰不绝。水至巳而绝，且畏金生於巳故也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0184",
+      "sha256": "5b919d30f49febf5e97e49fbbe08cba061f0f2a94b72454a84a841d7ae4672f1"
+    },
+    {
+      "section": "继善篇",
+      "text": "歌释：壬癸生居巳地，本为富贵而看。柱嫌戊己作灾殃，喜逢庚金为上。壬水受气于巳，水得母而长生。而能生水，故曰水入云云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0185",
+      "sha256": "5e6aae575e05f2e5048e86bd6733e45196b865a02b9426f708e025c5a5cba57a"
+    },
+    {
+      "section": "继善篇",
+      "text": "土临卯位，未中年便作灰心；金遇火乡，虽少壮必然挫志",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0186",
+      "sha256": "dab8cce695e211d7bd4aed946d8635f195137d1f8a77cb6746d127d1def3cdc5"
+    },
+    {
+      "section": "继善篇",
+      "text": "戊土生至卯，厄於沐浴之地，虽是中年进退，五行遇死，必挫其志气也。金至午暴败中沐浴之地，男子至此，必挫其志。歌释：己日提逢卯位，身强有制贵人。财多无制本身轻，疾苦心中不正。庚辛行运煞旺，少年挫志无成。百为性运燥宪招刑，旺制堪为富贵命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0187",
+      "sha256": "4b2e88552fda363a75a92a7a78924793eae519c929b9e0e8b7a05fb89559e30d"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：此格主弱，谋百事不成，性燥遭刑，运旺制之可论福。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 27,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0188",
+      "sha256": "6cf6da788c10d3b7f650d38d3620cdf32f86e10c63f4ded211dc3689c72c9b51"
+    },
+    {
+      "section": "继善篇",
+      "text": "金木交差刑战，仁义俱无；水火递互相伤，是非日有",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0189",
+      "sha256": "21220b90c17583abaf844756eb98de4d6d3aef16371e8992cb7e38a147a09484"
+    },
+    {
+      "section": "继善篇",
+      "text": "赋云：“不仁不义，庚辛与甲乙争差；或是或非，壬癸与丙丁相畏”云云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0190",
+      "sha256": "eaf76cc49c45045b9eb06f76f0882c075f3a4df5cb9f35e6ff5c68a2ede2a2cc"
+    },
+    {
+      "section": "继善篇",
+      "text": "歌释：甲乙庚辛左右，乙逢左右庚辛。庚辛申酉旺支神，安有始终性情。又是官煞混杂，所为无仁无义。财乡发福更劳心，满源财能有胜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0191",
+      "sha256": "d9fa280e275224ca3dbf560611ac004fd41cec6f205b3fc2913eb74841f2f9dd"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：言旺中甲乙重见庚辛，是仁义俱无。辛丑、庚子、甲申、己丑，范端命。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0192",
+      "sha256": "f8f4b6993c066b72b7afe9678aad0367cfbad1c77aee9257693bef214fc7aeed"
+    },
+    {
+      "section": "继善篇",
+      "text": "木从水养，水盛而木则漂流",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0193",
+      "sha256": "e5240dd13051740b3db55a2e3bc4ec4571e1131fb2a6376cf9bee1a928ac96a5"
+    },
+    {
+      "section": "继善篇",
+      "text": "水生木弱，用金土为财官，太旺则官失矣。辛亥年，提庚子、甲申日，乙丑时支，年逢丁酉运，甲木溺水之灾难免。歌释：甲乙生居子地，但逢一二为奇。壬癸亥子叠干支，则木漂流无倚。辛亥年提庚子，甲申乙丑交支。年逢丁酉运申随滋水，故闽吴吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0194",
+      "sha256": "31e74f3c80e9858252a2c0c2ac2ce2557fd53107458090ee231e0c0bfcf452e7"
+    },
+    {
+      "section": "继善篇",
+      "text": "金赖土生，土厚而金遭埋没",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0195",
+      "sha256": "76702224ec92059d2d8a19518a3800c439480317e95a8c0c01677b729c3a39c0"
+    },
+    {
+      "section": "继善篇",
+      "text": "金以木火为财官，若土太多，则金遭土埋没而乏光辉矣。歌释：庚辛日土叠干支，辰戌丑未俱齐。若逢火土叠干支，土重埋金无气。纵有金珠万斛(音同壶)，难扳月桂仙枝。西江月下细详之，休道命之细微。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0196",
+      "sha256": "f2af86675f592517d30fe746f23e9b7b8807d059fbce382756711ece680c6571"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：如庚辛日生於丑未辰戌之地，又行土运，迍邅蹇滞，奴仆断之。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 31,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0197",
+      "sha256": "42f4c671c61a21b7b6e2c0987a1c0eebd2aec5fdaef4b09f6ee3291884c5cbf9"
+    },
+    {
+      "section": "继善篇",
+      "text": "是以五行不可偏枯，务禀中和之气。更须绝虑忘思，鉴命无差误矣",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0198",
+      "sha256": "570bf754a8f959fdfbc9900e6819b146fc7e29c794ec1085054f66ef55e30a4f"
+    },
+    {
+      "section": "继善篇",
+      "text": "看命要审节气浅深，旺相休囚，去留舒配，顺逆向背之理。只以中和为贵命，旺相为福。若休囚死绝，非格非局，为下贱矣。歌释：看命先观日主，次审岁月时支。去留强弱舒配之，轻重浅深察理。节禀中和之气，运参向背之宜。三才偏正産何时，俱藏西江月里。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0199",
+      "sha256": "0e9fcd8f3fc536917eed7939380a83b362f1a79ed1207ce685c3dbe6eb52ce4f"
+    },
+    {
+      "section": "继善篇",
+      "text": "五行提纲，凡看命排下八字，以日干为主。取年为根，为祖上财産，知世派之盛衰。取月为苗，为父母，则知亲荫之有无。日干为己身，日支为妻妾，则知妻妾之贤淑。时为花实，为子息，方知嗣续之所归。法分月气深浅，得令不得令。年时露出财官，须要身旺。如身衰财旺，但多反破财伤妻。身旺财多财亦旺，则多称意。若无财官，次看印绶得何局势，吉凶断之，学者不可拘执，而不知通变也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c076:p0200",
+      "sha256": "4e5e34337509bfc01e04da0b81eec89fdeed2ac8253c6cf87a53371db3be5d8a"
+    },
+    {
+      "section": "继善篇",
+      "text": "眉批：秘法取年干为祖、年支为祖母，月干为父、支为母、兄弟附之，日为己身、支为妻妾，时干为子、支为女，看日主衰旺刑克何如，以定四柱吉凶，足知人之立身行事矣。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 77,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c076:p0201",
+      "sha256": "61bbc1ff0e0062f4aa90584ff65841fe7b0c3fe0521704037e4ff790470b581c"
+    }
+  ]
+}

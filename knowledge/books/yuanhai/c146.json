@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c146",
+  "title": "论妻妾",
+  "source_url": "https://luckclub.cn/bazi/001/146/",
+  "revision": "sha256:d5ad6355c2fce2208f876386f84669a1d690a4498845d8ebe88fc356d65a98c8",
+  "source_timestamp": "2026-09-06T04:10:53.679147+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c146.html",
+  "raw_sha256": "d5ad6355c2fce2208f876386f84669a1d690a4498845d8ebe88fc356d65a98c8",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论妻妾",
+      "text": "论妻妾",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c146:p0001",
+      "sha256": "7968854377a2719fecfcc662eb3298a18454eba664daaf7de03f19528c07cac8"
+    },
+    {
+      "section": "论妻妾",
+      "text": "正财为正妻；偏财，妾也。甲木见己土为正财，戊土为偏财。又见乙木局(亥卯未)伤妻，甲寅克妻也，更主妻不正(不正谓淫贱也)。财衰败墓绝，主妻有疾不贤，否则年高再嫁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c146:p0002",
+      "sha256": "8743b548c22dbc45d819bb473a77c86389a992085bdd42631efd7270e80734cc"
+    },
+    {
+      "section": "论妻妾",
+      "text": "见癸字则妾不正(癸乃戊之妻也)。见己土丑未字，则主自安。比肩分夺，财临桃花，主妻妾私通。日下、月下坐财官，主妻多内助，更得妻财。偏财得位，妾胜於妻；正财自旺，妻不容妾。官杀重见，妻招干蛊可畏。财官并美，为人怕妻，见杀尤忌。财多身弱，妻反胜夫；财命有气，妻妾和顺，是得妻力。日坐空亡，难为妻妾。又看孤鸾之日，阳错阴差，主克妻或因妻致眷，寒房冷娶，入赘填房。女人犯此，主母家淩替或致讼事。余仿此例。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c146:p0003",
+      "sha256": "fb92b2766afd8f0fcfa8fc6b6853a0be8c79bf503accdbe06baf9eb48f536f8e"
+    },
+    {
+      "section": "论妻妾",
+      "text": "眉批：甲与己合，己为正财，正财即正妻。沐浴为遇水，更带桃花见漂流，故谓主妻妾私通。干蛊，谓妻有能，特有侠义可畏。甲戌、己亥日为日坐空亡。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 68,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c146:p0004",
+      "sha256": "9f20e3f01e98ac6fa0932e11d6b3c1a7cbb9ccda0ead9760304dc81febbdb74f"
+    }
+  ]
+}

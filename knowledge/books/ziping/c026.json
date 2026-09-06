@@ -1,0 +1,60 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c026",
+  "title": "二十六、論行運成格變格",
+  "source_url": "https://www.donglishuzhai.net/chapter/3739.html",
+  "revision": "sha256:9f4a96cec7fb9f152582ef0ac5245803640d364d9d91ed8e5a6a924f65dc1fef",
+  "source_timestamp": "2026-09-06T04:17:02.762Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c026.html",
+  "raw_sha256": "9f4a96cec7fb9f152582ef0ac5245803640d364d9d91ed8e5a6a924f65dc1fef",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十六、論行運成格變格",
+      "text": "命之格局，成於八字，然配之以運，亦有成格變格之權。成格變格，比之喜忌，禍福尤重。",
+      "layer": "base_text",
+      "passage_id": "ziping:c026:p0001",
+      "sha256": "c5c25e3c55b4c354b3cf945184bd01d33eda7892c2fc38a3792928152bd188d0"
+    },
+    {
+      "section": "二十六、論行運成格變格",
+      "text": "何爲成格？本命用神，成而未全，運從而就之者是也。如丁生辰月，透壬爲官，而運逢申子以會之；乙生辰月，或申或子會印成局，而運逢壬癸以透之。如此之類，皆成格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c026:p0002",
+      "sha256": "b8fe5f160c0f5b77549f0a2c0ee349fa9c2a14e92cba7a3a80faf0b4fdd5b379"
+    },
+    {
+      "section": "二十六、論行運成格變格",
+      "text": "何爲變格？如丁生辰月，透壬爲官，而運又逢戊，透出辰中傷官；壬生戌月，丁己並透，而支又會寅會午，作財旺生官矣，而運逢戊土，透出戌中七煞；壬生亥月，透己爲用，作建祿用官矣，而運逢卯未，會亥成木，又化建祿爲傷。如此之類，皆變格也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c026:p0003",
+      "sha256": "cc2fbd740a0cdd14440dd0e03996deae308a641275a01d24d95c6d48e5187701"
+    },
+    {
+      "section": "二十六、論行運成格變格",
+      "text": "然亦有逢成格而不喜者，何也？如壬生午月，運透己官，而本命有甲之類是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c026:p0004",
+      "sha256": "38cfe93458337513b68cab46df115069b04a9b2ff2abb3fea3dfc06123c0ae00"
+    },
+    {
+      "section": "二十六、論行運成格變格",
+      "text": "又有逢變格而不忌者，何也？如丁生辰月，透壬用官，逢戊而命有甲；壬生亥月，透己用官，運逢卯未會傷，而命有庚辛之類是也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c026:p0005",
+      "sha256": "5e8deb2698ec2e32fc25c473675c76e0f9b3fec409304b32c56ee79db839c274"
+    },
+    {
+      "section": "二十六、論行運成格變格",
+      "text": "成格變格，關係甚大，取運者其細詳之。",
+      "layer": "base_text",
+      "passage_id": "ziping:c026:p0006",
+      "sha256": "185f9972aab88ed1105e120105dd6482ff55460bbf5ad39d11ce9f74aaefbd3e"
+    }
+  ]
+}

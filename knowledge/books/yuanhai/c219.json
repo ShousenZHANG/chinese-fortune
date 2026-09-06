@@ -1,0 +1,189 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c219",
+  "title": "印绶诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/219/",
+  "revision": "sha256:bc8061317882ae5cdb75e50f25c2f64d13b29556d609d9be3d673d0eb63833d9",
+  "source_timestamp": "2026-09-06T04:11:07.800593+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c219.html",
+  "raw_sha256": "bc8061317882ae5cdb75e50f25c2f64d13b29556d609d9be3d673d0eb63833d9",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "印绶诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0002",
+      "sha256": "082652be307232ccb1c9a0bd162835035f35a54e343ed92467a20dbda71e942d"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "月逢印绶喜官星，运入官乡福必清，死绝运临身不利，再行财运百无成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0003",
+      "sha256": "1c9966c5616604239f0055ff3fcf252bfd9046f1e22dcc64c62e0784edfc086a"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶无亏享福全，为官承荫有庄园，家膺宣敕盈财谷，日用盘餐费万钱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0004",
+      "sha256": "020afa6e8389442bf28894eb8bfb0afef16d43f5046427a3cb8a5f50368e5626"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶无亏靠祖宗，光辉宅産耀门风，流年运气逢官旺，富贵双全步月宫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0005",
+      "sha256": "9bbc92e7be3dd0f5e17fa49c2cdbe45a0995e667e87f4e3d9a7bbfa5b928d8d1"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "月生日主喜官星，运入官乡禄必清，容貌堂堂多産业，官居廊庙作公卿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0006",
+      "sha256": "dec4536650a9329b523ec8206d0fd1affd50df55c99fbb80ed2a501286b7af86"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "重重生气若无官，当作清高技艺看，官杀不来无爵禄，总有技艺也孤寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0007",
+      "sha256": "ab4902c23187c05abf4f984d4c4ceb8c6b6025a52403fee19e8ade4af0a2beed"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "重重印绶格清奇，更要支中仔细推，支中咸池干带合，风流浪荡破家儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0008",
+      "sha256": "e91f1be394f6f931eafdc055861bdc307696999b2117e314ae1e059c4a7719f2"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶干支喜自然，功名富豪禄高迁，若逢财运来伤印，退职休官免祸惩。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0009",
+      "sha256": "1498e658db37d599e2c79ea2bfcec46202fe00251de15a47947c0c197a96142d"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶重重享见成，食神只恐暗相刑，早年若不归泉世，孤苦离乡宿疾萦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0010",
+      "sha256": "084d682267feaa138ff7830bdeb1fc5dac3277abee24e53e50ca6e0cfbf99ae4"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "丙丁卯月多官杀，四柱无根怕水乡，湿木不生无焰火，身荣除世在南方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0011",
+      "sha256": "e076eeeae773c214022a8e1c9d1d15d8f231e89e83770866049fdd5c74e272b4"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "壬癸逢身嫌火破，格中有土贵方知，北方水运皆为吉，如遇寅冲总不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0012",
+      "sha256": "f65a9e52c968d3f5197206c64f7a848b70f1ce8ac7f8159311fc6f5ece21eccc"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "木逢壬癸水漂流，日主无根罔度秋，岁运若逢财旺运，反凶为吉遇王侯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0013",
+      "sha256": "013e88dabf7e39a1c7a23491e5d140ac1ebb1c75b69cf2cf26ebd01b8aa6d249"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "贪财坏印莫言凶，须要参详妙理通，运若去财还作福，再行财运寿元终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0014",
+      "sha256": "bf6d6fa86a8b9d5fd9e3aa55ec5e9c8340df4c63222fae58123819109e4b2d50"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶如经死绝乡，怕财仍旧怕空亡，逢之定主多凶祸，落水火刑自缢伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0015",
+      "sha256": "6bfd3cd4cbee6bb6c0158ce96870595d3d87d9399244e9b2dea8fe7e937c90f0"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶不宜身太旺，纵然无事也平常，除非原命多官杀，却有声名作栋梁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0016",
+      "sha256": "84b786ff0207f7d68a2e44bcb03c27bdc4c9a288a2a864ed96bab50dae7de2f1"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶干头重见比，如行运助必伤身，莫言此格无奇妙，印入财乡福禄真。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0017",
+      "sha256": "87feb50d528e7bbe95f02083642197b0d37db959a97cffdc3716a6655c109a95"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶官乡运气纯，偏官多遇转精神，如行死绝并财地，无救番为泉下人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0018",
+      "sha256": "9a2a23a1249182e6fe1522886f73d43bb83bde7934ffe553adac679ab0cd2937"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "补：",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0019",
+      "sha256": "ad592f8b264aaeddf8801e317f934c68fd9278174ad0fac30c18e20ba79ba084"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶之星福最殊，更有权杀在何居，忽然并守居元位，声振朝廷位不虚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0020",
+      "sha256": "03909e043b5b971e8e7d20b1befb2c82382ed23016959120ad735a30434efc4f"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "印绶生居被杀同，杀同心胆反粗雄，运行便有军中职，只恐将来不善终。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0021",
+      "sha256": "08df771a812ff6038b6c1c26add104d910e5d761b055fe82f0da5e76f8455c45"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "命逢印绶福非轻，年少从容享现成，旺相印多偏福厚，受恩承荫立功名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c219:p0022",
+      "sha256": "cad41b28c8a83bf3790f07feb36516616faa4fbe62ba3880fa8c0537282b883b"
+    },
+    {
+      "section": "印绶诗诀",
+      "text": "眉批：印如一官，堂堂若受人财贿，则消其官故曰忌财。印乃生身之母，当享祖业，丰盛自足一生。有印必要有官，倘若无官，必为虚，无以取贵，故曰逢印而看官。印多无官杀，常言道，九流清高之人。咸池即桃花，子午卯酉生人，浪荡子也，一味贪财坏印之故也。丙丁卯月，以乙木为印，此旺木茂且盛，犹泾不能生木之谓，行南方当贵。壬癸以庚申为印，木以水生为印以土为财，喜行财运以止水流则吉。日喜官杀，正谓“有官有印无破，作廊庙之才”。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 203,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c219:p0023",
+      "sha256": "818c41e0367db726d93cec4638f419927598de854d4a876eae96f86712a89efe"
+    }
+  ]
+}

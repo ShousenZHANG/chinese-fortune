@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c250",
+  "title": "稼穑诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/250/",
+  "revision": "sha256:2f8cfffbcbddd24860c70a7c5ed87c2207f96075372f013f3ee99662ed3a69b9",
+  "source_timestamp": "2026-09-06T04:11:14.948057+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c250.html",
+  "raw_sha256": "2f8cfffbcbddd24860c70a7c5ed87c2207f96075372f013f3ee99662ed3a69b9",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "稼穑诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c250:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "稼穑诗诀",
+      "text": "稼穑诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c250:p0002",
+      "sha256": "eec65fa09f0ba8847f13c9e4eab7467dc15634a2e5889844c9246459e03a1a8b"
+    },
+    {
+      "section": "稼穑诗诀",
+      "text": "戊己生居四季中，辰戌丑未要全逢，喜逢财地嫌官杀，运到东方定有凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c250:p0003",
+      "sha256": "b72d036a985554e82ca2cec2fa8bea73dbcbb5e5031a87c850f8a1c1d93205b0"
+    },
+    {
+      "section": "稼穑诗诀",
+      "text": "戊己重逢杂气天，土多只论土居全，财星待遇堪为福，官杀如临有祸缠。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c250:p0004",
+      "sha256": "ca7f2ba23942c182aea3537b1ddb02860297d2c1c31e78cab6db9e3dca27de7e"
+    },
+    {
+      "section": "稼穑诗诀",
+      "text": "眉批：稼穑，承稻之神，领土气，故栽培土与稼穑想连而成一家，人命逢此反为贵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 37,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c250:p0005",
+      "sha256": "b60c4a5191320fff3183a56071df7878245a541173220544592bc990d91033a1"
+    },
+    {
+      "section": "稼穑诗诀",
+      "text": "戊戌 己未 戊辰 癸丑，乃张真人之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c250:p0006",
+      "sha256": "11f49e39f00f4dae8007c692be8a057a1967b5314fe9bf972b5f6e6c4bd68f84"
+    }
+  ]
+}

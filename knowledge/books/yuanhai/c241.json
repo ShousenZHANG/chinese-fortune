@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c241",
+  "title": "归禄格诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/241/",
+  "revision": "sha256:c234e209dd8bdc156b454aff09d094c4c6e477532ae53bdcf97eb7fdaac80218",
+  "source_timestamp": "2026-09-06T04:11:13.021267+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c241.html",
+  "raw_sha256": "c234e209dd8bdc156b454aff09d094c4c6e477532ae53bdcf97eb7fdaac80218",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "归禄格诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "归禄格诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0002",
+      "sha256": "b4916bdfdbe421e4f9e92801a0e351ce6833882b69fd7fcf7aaec4f709709eb0"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "归禄逢财名利全，干头不忌透财源，身强无破平生好，大怕行运遇比肩。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0003",
+      "sha256": "8af38ba2e06af223a747780c1951730fb8bb019fd9ca6ff8f11b73dc76db0441"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "日禄归时要旺宫，食神喜遇怕刑冲，伤官嫌入伤财运，官不高兮财不丰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0004",
+      "sha256": "f1b5bac35b354fb68b8808b0a013aadd692489cb7ae307892c98b668707a2dab"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "日禄归时格最良，怕官嫌杀喜身强，若见比肩分劫禄，刑冲破害更难当。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0005",
+      "sha256": "3e476bbfa0a53fb315712505b5c3438080eb48211d32c06c625f1f307cbe007c"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "青云得路禄归时，凡命逢之贵且奇，四柱无冲官不至，少年平步上云梯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0006",
+      "sha256": "a3b5edad5815c493d99374c1e2e09fd292341cff6562e6f71d340a2d65a85056"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "眉批：此格如甲日得寅时合之，甲禄在寅，四柱无一点官星，方是此格。若有官星，则非此格。如",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 43,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c241:p0007",
+      "sha256": "275a4ad78b9e9b15d870ff491553f42380a64413631b5faa969124518545c003"
+    },
+    {
+      "section": "归禄格诗诀",
+      "text": "丙午 癸巳 甲子 丙寅，此格正合，为富贵。行见官运亦凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c241:p0008",
+      "sha256": "3e92724e069af9c8bc46f1ae86cf77d11a6a4b835d1ca4f86d6aa99392c0352b"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c093",
+  "title": "论日德",
+  "source_url": "https://luckclub.cn/bazi/001/093/",
+  "revision": "sha256:bccff2f056162a7121d99caa18ce6bf4dd5693aade1958e7d1180a55eec495e9",
+  "source_timestamp": "2026-09-06T04:10:44.122764+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c093.html",
+  "raw_sha256": "bccff2f056162a7121d99caa18ce6bf4dd5693aade1958e7d1180a55eec495e9",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论日德",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c093:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论日德",
+      "text": "论日德",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c093:p0002",
+      "sha256": "c86554af97d0afda36dbec55d2b968d6ed0cf0520ab133c26272c74864897e5b"
+    },
+    {
+      "section": "论日德",
+      "text": "日德有五：甲寅、戊辰、丙辰、庚辰、壬戌日是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c093:p0003",
+      "sha256": "71853d9be9f157cf180bfc02eaa954b6fca06cb823ec5be3f11260afeb4b2ff9"
+    },
+    {
+      "section": "论日德",
+      "text": "其福要多而忌刑冲，无破害，恶官星，憎财旺加临会合，怕空亡而忌魁罡，此数者乃格之大忌也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c093:p0004",
+      "sha256": "6cac72034cdf03cfb0b3dd4dbfc3b23dd7069ae5f9f2934326e36f5a5d896711"
+    },
+    {
+      "section": "论日德",
+      "text": "大抵日德主人性格慈善。日德俱多福必丰厚，运行身旺，大是奇绝。若有财官加临，别寻他格，方能免非横之祸。若旺气已衰，运至魁罡，其死必矣。或未发福，运至魁罡，休囚即好，防生祸患。一脱於此，必能再发，终力微矣，不可不知也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c093:p0005",
+      "sha256": "673f30b82b39efd8d7bcba203cdbfde8ea21e3a9313e81d9e5bf767fc065071f"
+    },
+    {
+      "section": "论日德",
+      "text": "眉批：此格忌刑冲破害，有损福泽。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 16,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c093:p0006",
+      "sha256": "d1b93f6b1abee6e4780dcd0a39129e6f5f9568b10f5abcade5d34af64a3daa9e"
+    }
+  ]
+}

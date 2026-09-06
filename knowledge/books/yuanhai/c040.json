@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c040",
+  "title": "论金舆禄",
+  "source_url": "https://luckclub.cn/bazi/001/040/",
+  "revision": "sha256:092c274615a140f5b1f0364fbbffa953ce1837d6d468df369bad76b27e73af99",
+  "source_timestamp": "2026-09-06T04:10:32.508769+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c040.html",
+  "raw_sha256": "092c274615a140f5b1f0364fbbffa953ce1837d6d468df369bad76b27e73af99",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论金舆禄",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c040:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论金舆禄",
+      "text": "论金舆禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c040:p0002",
+      "sha256": "c7a1bfe81d6157efd06a651570718a9873dcf330eeab0f36d839306dcb5bbaf8"
+    },
+    {
+      "section": "论金舆禄",
+      "text": "十干禄前第二位是也。如甲禄在寅，辰上是也，余皆仿此而推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c040:p0003",
+      "sha256": "ed4f1decda2d7b136187c417c368a6fe86df1c27dec4024199c6a1208d6a2201"
+    },
+    {
+      "section": "论金舆禄",
+      "text": "眉批：此星遇之主带妻室财至。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 14,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c040:p0004",
+      "sha256": "933586325441d4f78452bcd5f27780a64c4e441df0826e30b82ac1be28a2ff34"
+    }
+  ]
+}

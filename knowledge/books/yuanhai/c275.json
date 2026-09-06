@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c275",
+  "title": "墓库诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/275/",
+  "revision": "sha256:5fce274ba887cd74bbd4f3e406523e5cfb9835b8597280b7df29c2f2de8a7f60",
+  "source_timestamp": "2026-09-06T04:11:21.172066+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c275.html",
+  "raw_sha256": "5fce274ba887cd74bbd4f3e406523e5cfb9835b8597280b7df29c2f2de8a7f60",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "墓库诗诀",
+      "text": "墓库诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c275:p0001",
+      "sha256": "fb08e034349b155cc36c98dd6d532211e7b2ba4745c91c6ac8ab603e81634559"
+    },
+    {
+      "section": "墓库诗诀",
+      "text": "墓库元来是葬神，一为正印细推论，相生相顺无相克，富贵之中次第分。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c275:p0002",
+      "sha256": "bbc85e14fdaba2707581ed150f0905c824d7bb4ab0359683174f6b179582cd48"
+    },
+    {
+      "section": "墓库诗诀",
+      "text": "人命若还逢墓库，积谷堆财难计数，悭贪不使一文钱，至老人呼守钱奴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c275:p0003",
+      "sha256": "ce3ff68fde6919cc01748a0cd80a801607b1bc266607859ebaa69798343922ef"
+    },
+    {
+      "section": "墓库诗诀",
+      "text": "眉批：墓库死者，埋葬于地，五行至此亦如是，如财官印於早有闭而不须用刑冲取用其财者。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 41,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c275:p0004",
+      "sha256": "572909b46efc4df968c1dea0b14215af5d1c3ec815905f289b020ae419d35ca5"
+    }
+  ]
+}

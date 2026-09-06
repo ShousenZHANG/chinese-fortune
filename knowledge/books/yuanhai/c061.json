@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c061",
+  "title": "地支藏遁歌",
+  "source_url": "https://luckclub.cn/bazi/001/061/",
+  "revision": "sha256:2839f3e61c97e1b977f5066612291f4d37510db67b7724c13b3a3412d0877fd4",
+  "source_timestamp": "2026-09-06T04:10:36.732758+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c061.html",
+  "raw_sha256": "2839f3e61c97e1b977f5066612291f4d37510db67b7724c13b3a3412d0877fd4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "地支藏遁歌",
+      "text": "地支藏遁歌",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c061:p0001",
+      "sha256": "8f5c22fb803b4f3940dd9f3a9646aa0fd481a38350394597ede3be9d6e16814d"
+    },
+    {
+      "section": "地支藏遁歌",
+      "text": "子宫癸水在其中，丑癸辛金己土同，寅宫甲木兼丙戊，卯宫乙木独相逢，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c061:p0002",
+      "sha256": "94264923fbf31d1e8784b3e25cad7244d9d4337658deb04b98ee06740b4af2a2"
+    },
+    {
+      "section": "地支藏遁歌",
+      "text": "辰藏乙戊三分癸，巳中庚金丙戊丛，午宫丁火拼己土，未宫乙己丁其宗，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c061:p0003",
+      "sha256": "9cf30057b51f33af252bf82de0bb5fce1fa7d6330f696adc3f6dfa54907058ee"
+    },
+    {
+      "section": "地支藏遁歌",
+      "text": "申位庚金壬水戊，酉宫辛字独丰隆，戌宫辛金及丁戊，亥中壬甲是真踪。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c061:p0004",
+      "sha256": "9e646065d4aeb8d0b6fcd68289b4ce3c057298ac5b72f36e6c33d3f94d7c87d1"
+    }
+  ]
+}

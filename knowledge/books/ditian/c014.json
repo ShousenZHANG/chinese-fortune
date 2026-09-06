@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c014",
+  "title": "剛柔論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F14&oldid=844374",
+  "revision": "844374",
+  "source_timestamp": "2017-03-23T15:46:55Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c014.wiki",
+  "raw_sha256": "bd737a47e778a4ac0a2de6b1bb4ca0a9c72e909d04cdd80630b58663d31bdc16",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "剛柔論",
+      "text": "剛柔不一也，不可制者，引其性情而已矣。",
+      "layer": "base_text",
+      "passage_id": "ditian:c014:p0001",
+      "sha256": "f42b353129b2e71c4c11fa966d423dfa07ae9225fd3efc4e36016365bbf230a5"
+    },
+    {
+      "section": "剛柔論",
+      "text": "剛柔相濟，不必言也，若夫剛者濟之以柔，而不得其情，反助其剛矣，譬之武人而得士卒，則成殺伐，如庚辛生於七月，遇丁火而激其威，遇乙木而助其暴，遇己土而成其志，遇癸水而益其銳，不如以柔之剛者濟之可也。壬水是也，蓋壬水有正性，能引通庚之情故也，若以剛者激之，其禍可勝言哉！柔者濟之以剛，而不得其情，反其柔矣，譬之婦人而遇恩威，則成淫賤，如乙木生於八月，遇甲丙壬而喜則舒情，遇戊寅庚而畏則失身，不如以剛之柔者濟之可也，丁火是也，蓋丁火有正性，能定乙木之情故也，若以柔之柔者合之，其弊何所底乎，餘倣此。",
+      "layer": "commentary",
+      "passage_id": "ditian:c014:p0002",
+      "sha256": "914ab9152a7edbc59da6266dd3007d8194458ff8fd71979d76a4d52ce66d0889"
+    }
+  ]
+}

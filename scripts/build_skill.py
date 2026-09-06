@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
-"""Build a distributable skill package (.zip) for Claude / OpenAI import.
+"""Build a distributable skill directory archive (.zip).
 
 Produces ``dist/chinese-fortune-v<VERSION>.zip`` containing ONLY the files an
 end user needs — SKILL.md, references/, scripts/ (runtime + requirements),
-assets/, agents/, README (中文 + English), LICENSE — with dev/test cruft excluded
+assets/, agents/, knowledge/, README (中文 + English), source licenses — with dev/test cruft excluded
 (tests/, evals/, __pycache__, .git, *.bak, _competitors, dist/build).
 
 The archive nests everything under a top-level ``chinese-fortune/`` folder so it
-extracts cleanly into a named skill directory, ready for:
-  - Claude Code:  unzip into ~/.claude/skills/
-  - Claude.ai:    upload the zip as a Skill
-  - OpenAI:       agents/openai.yaml + scripts/ as a custom tool/agent
+extracts cleanly into a named skill directory. The host must read SKILL.md and
+run Python tools; follow the host's supported skill installation workflow.
 
 Self-validating: aborts if SKILL.md frontmatter is malformed, the description
 exceeds 1024 chars, any bundled script fails to compile, or a required path is
@@ -23,6 +21,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import py_compile
 import re
 import sys
@@ -38,10 +37,11 @@ SKILL_FOLDER = "chinese-fortune"  # top-level dir inside the archive
 # 唯一的版本证据是 scripts/utils.py 里那一行常量 —— 用户看不出装的是哪版、
 # 修了什么。
 INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE",
-                 "CHANGELOG.md", "docs/OUTPUT-VALIDATION.md", "docs/OUTPUT-EXAMPLE.md"]
+                 "CHANGELOG.md", "docs/OUTPUT-VALIDATION.md", "docs/OUTPUT-EXAMPLE.md",
+                 "docs/OPTIONAL-TOOLS.md", "docs/CLASSICAL-SOURCES.md"]
 INCLUDE_DIRS = ["references", "assets", "agents"]
 # scripts/: ship runtime .py + requirements.txt, but NOT this builder or tests.
-SCRIPT_EXCLUDE = {"build_skill.py"}
+SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py"}
 
 # Patterns never to ship.
 EXCLUDE_RE = re.compile(
@@ -101,6 +101,30 @@ def collect() -> list[Path]:
         if not base.exists():
             sys.exit(f"FATAL: required dir missing: {d}")
         picked += [p for p in base.rglob("*") if p.is_file()]
+
+    # Only the frozen corpus closure ships; an unreferenced download cannot
+    # quietly become part of a future release.
+    from classical_search import validate_library
+    library = ROOT / 'knowledge'
+    report = validate_library(library_root=library)
+    if not report['ok']:
+        sys.exit('FATAL: classical library failed integrity validation: ' + str(report))
+    manifest = json.loads((library / 'manifest.json').read_text(encoding='utf-8'))
+    closure = {'manifest.json'}
+    for book in manifest['books']:
+        closure.add(book['index_path'])
+        if book.get('source_metadata_path'):
+            closure.add(book['source_metadata_path'])
+        for chapter in book['chapters']:
+            closure.add(chapter['path'])
+            content = json.loads((library / chapter['path']).read_text(encoding='utf-8'))
+            closure.add(content['raw_path'])
+    closure.update(source['path'] for source in manifest.get('supporting_sources', []))
+    for relative in sorted(closure):
+        path = (library / relative).resolve()
+        if not path.is_relative_to(library.resolve()) or not path.is_file():
+            sys.exit('FATAL: unsafe or missing corpus path: ' + relative)
+        picked.append(path)
 
     # scripts/ — runtime python + requirements, minus builder/tests.
     for p in (ROOT / "scripts").rglob("*"):

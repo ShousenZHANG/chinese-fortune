@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c273",
+  "title": "帝旺诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/273/",
+  "revision": "sha256:b08886480f543606d27005797a59f889949a350e98404447d4ed769848babf79",
+  "source_timestamp": "2026-09-06T04:11:20.928648+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c273.html",
+  "raw_sha256": "b08886480f543606d27005797a59f889949a350e98404447d4ed769848babf79",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "帝旺诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c273:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "帝旺诗诀",
+      "text": "帝旺诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c273:p0002",
+      "sha256": "365e4922f7982d3279868e1a9b355f1764434e19c652c7469898815869f2ac90"
+    },
+    {
+      "section": "帝旺诗诀",
+      "text": "临官帝旺两相逢，业绍箕裘显祖宗，失位纵然居世上，也须各姓达天聪。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c273:p0003",
+      "sha256": "184bf4361645c432b954e5711f0eda98e400f44f451198f5808f3d12bf93719c"
+    }
+  ]
+}

@@ -73,6 +73,24 @@ def test_all_five_grids_are_pinned_not_just_ren_ge():
     assert g["wai_ge"]["number"] == 13
     # 五格恒等式: 外格 = 总格 - 人格 + 1
     assert g["wai_ge"]["number"] == g["zong_ge"]["number"] - g["ren_ge"]["number"] + 1
-    # 数字必须真的驱动断语, 而不是各算各的
+    # 数字仍驱动旧表分类, 分类不得变成个人断语。
     assert g["wai_ge"]["luck"] == "大吉"
+    assert g["wai_ge"]["label_kind"] == "legacy_numerology_category"
     assert "外格 13" in d["summary"]
+
+
+def test_numerology_retains_categories_without_fate_or_rename_advice():
+    assert set(na.SHULI_81) == set(range(1, 82))
+    assert na.shuli_lookup(82)["luck"] == na.shuli_lookup(1)["luck"]
+    for number in range(1, 82):
+        label = na.shuli_lookup(number)
+        assert "comment" not in label
+        assert label["source_status"] == "unverified"
+        assert label["personal_verdict"] is None
+    for name in ("张子涵", "欧阳子轩", "王小明"):
+        d = run_name("--name", name)
+        output = json.dumps(d, ensure_ascii=False)
+        for removed in ("短命", "灾难", "最好改名", "不如更名", "宜速改名", "家庭难圆", "破产之象"):
+            assert removed not in output
+        assert "凶" not in d["summary"] and "吉" not in d["summary"]
+        assert all("comment" not in g for g in d["five_grids"].values())

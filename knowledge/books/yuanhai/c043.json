@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c043",
+  "title": "论暗禄",
+  "source_url": "https://luckclub.cn/bazi/001/043/",
+  "revision": "sha256:5e667664c3153c55d0939b5d74dbb5d25a4d032ced740faca0cdf2cea6243f09",
+  "source_timestamp": "2026-09-06T04:10:33.046765+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c043.html",
+  "raw_sha256": "5e667664c3153c55d0939b5d74dbb5d25a4d032ced740faca0cdf2cea6243f09",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论暗禄",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c043:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论暗禄",
+      "text": "论暗禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c043:p0002",
+      "sha256": "b2db92786e1c6f5a65b8640cf39dd28a40d36425f58427972ccd5cd5f72dd230"
+    },
+    {
+      "section": "论暗禄",
+      "text": "假如甲生人逢亥，是甲禄在寅，寅与亥合。乙生人逢戌，是乙禄在卯，卯与戌合是也。其余仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c043:p0003",
+      "sha256": "202513312335c387938f742b66c4bafb6b7fd00f84e809ee5bcc335067c5a000"
+    },
+    {
+      "section": "论暗禄",
+      "text": "眉批：此四柱无禄，却为贵命，乃是暗藏禄马，人不能见之，为大贵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 31,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c043:p0004",
+      "sha256": "b05edf796fece685a24e24ecab6024b6aa0236885ccb6d6ba466932d3c3ee2b2"
+    }
+  ]
+}

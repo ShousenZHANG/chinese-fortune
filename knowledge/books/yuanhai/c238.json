@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c238",
+  "title": "丑遥巳格诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/238/",
+  "revision": "sha256:d85c1827854bd0c3a22718769de913089dc7cd035df67c80784cf0bf3792437b",
+  "source_timestamp": "2026-09-06T04:11:12.390059+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c238.html",
+  "raw_sha256": "d85c1827854bd0c3a22718769de913089dc7cd035df67c80784cf0bf3792437b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "丑遥巳格诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0002",
+      "sha256": "46c9d332c302fae1b03184738267b4ac0a93508fe6cb1e435c18d345be691b9c"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "辛日癸日多逢丑，名为遥巳合官星，莫言不喜官星旺，谁信官来反有成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0003",
+      "sha256": "f80034f456da3f68ea1be21a296ab44862eb3adb484a45eb0f3f1fb28a0f21fc"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "辛丑癸丑二日子，丑能合巳巳藏官，丑日多见方为妙，不宜子字柱中间。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0004",
+      "sha256": "149197828b5a7c2a6e533bcc416fc46f1a9462b6af1c3eb80a2e14f746e64469"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "若逢申酉更为美，辛嫌巳午丙丁干，癸嫌戊己及巳午，此命必须仔细看。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0005",
+      "sha256": "0d6cb1e8df6d22c17e4b7ee38d8fabb1de40532c0e96e1666bfcb7472ff699bb"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "辛癸二日逢遇丑，便是官星暗入宫，申酉喜来临一字，忌逢巳午子垣凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0006",
+      "sha256": "53be66d32a87b1333f5e54815fcf9df579ead1139c8cefd96b8889fa3887f6bb"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "眉批：只用辛丑、癸丑二日是也。辛用丑遥巳中丙为官，癸用丑遥巳中戊土为官，忌子字合住丑字则不能遥也。如",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 50,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c238:p0007",
+      "sha256": "c0e60d103b726d224aa7e3662563dafeff607dd2098cf404774a7fa8444fc0a1"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "癸丑 乙丑 辛丑 戊子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0008",
+      "sha256": "ae76edfae572f3b687f21a58b5fcafc2183084cbd1059f467c2859c53f18b4af"
+    },
+    {
+      "section": "丑遥巳格诗诀",
+      "text": "辛丑 辛丑 辛丑 庚子，主大贵之命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c238:p0009",
+      "sha256": "e3da3a62a8ca8894c0834de4d87a45d26a7d5ed666ae4e94b45a377bb75d1945"
+    }
+  ]
+}

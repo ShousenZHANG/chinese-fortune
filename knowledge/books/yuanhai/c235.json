@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c235",
+  "title": "六乙鼠贵诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/235/",
+  "revision": "sha256:b7052e4afd8ea1d67617914750435d06be4b23893e536ad81ad49a565cfba47a",
+  "source_timestamp": "2026-09-06T04:11:11.635601+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c235.html",
+  "raw_sha256": "b7052e4afd8ea1d67617914750435d06be4b23893e536ad81ad49a565cfba47a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "六乙鼠贵诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0002",
+      "sha256": "cfd1782c4f5ffe67caac71c151f479dc7eabcce42be58a4e8c66482a5ae91066"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "六乙鼠贵在其时，官杀冲破不相宜，月宫通得真三日，方定当生禄马奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0003",
+      "sha256": "c9b27359f44b53f2e472dc42940ff42b3e50fa738d4e12f3eb7da1fda616d8ec"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "乙日生人得子时，名之聚贵最为奇，切嫌午字来冲破，辛酉庚申总不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0004",
+      "sha256": "44e0688c9fba17c772493df154411e1b82c382dc15c981385855c3bd37743a30"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "乙日须逢丙子时，如无午破贵尤奇，四柱忌逢申酉丑，若无官杀拜丹墀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0005",
+      "sha256": "a369b673ab1cdad895e00e73d34a99039d6d1210ed45f4ddd630f5cbb3a069ff"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "阴木逢阳亥子多，子为鼠贵贵嵯峨，柱中只怕南离位，困若伤残怎奈何。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0006",
+      "sha256": "8e2eb9da8a609ac1c4a526f189378931ad93d1e15c864f887ff1b587fd53e661"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "六乙生人时遇鼠，官星又带复如此，庚辛申酉马牛欺，一位逢之为丐子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c235:p0007",
+      "sha256": "0baa1f69d4aa92f6cacd275b66f37b404fe281b5699ba4b01ea9d0084b2f166c"
+    },
+    {
+      "section": "六乙鼠贵诗诀",
+      "text": "眉批：此单言六乙日生得子时，为鼠贵，甲子多官高明显，四柱无官者入此格。用此格者忌冲子，不宜见午字去冲，多为取贵。见庚申辛酉四字则减分数，岁运亦忌，凡遇见官只作别格断之。此言犯官星，遇此格当为贫穷不富之人。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 102,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c235:p0008",
+      "sha256": "837607e72df1349b208820277604ecda640e408b15dab9c878b2d8003567c0b6"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c095",
+  "title": "论魁罡",
+  "source_url": "https://luckclub.cn/bazi/001/095/",
+  "revision": "sha256:6995979e21b8110c0a14394519f68d9acecda8e5dbac3c5fe66a6c79a7f23c55",
+  "source_timestamp": "2026-09-06T04:10:44.065753+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c095.html",
+  "raw_sha256": "6995979e21b8110c0a14394519f68d9acecda8e5dbac3c5fe66a6c79a7f23c55",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论魁罡",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c095:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "论魁罡",
+      "text": "论魁罡",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c095:p0002",
+      "sha256": "706433a797366cb65faaa831de1d7d8bbe875a2b12f037f6589a5c285f8cc832"
+    },
+    {
+      "section": "论魁罡",
+      "text": "夫魁罡者有四：壬辰、庚戌、庚辰、戊戌日是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c095:p0003",
+      "sha256": "1f1fea5455aabc26d1f5e84a3ce67cf5a09087d539eca4410e81b51b2db32372"
+    },
+    {
+      "section": "论魁罡",
+      "text": "如日位加临者衆，必是福。运行身旺，发福百端；一见财官，祸患立至。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c095:p0004",
+      "sha256": "bee7a5b4b19f61d7a1eb0cce9df83e5fb3e861dc5887a1f48fb852ffced02ebd"
+    },
+    {
+      "section": "论魁罡",
+      "text": "主人性格聪明，文章振发，临事有断，惟是好杀。若四柱有财及官或带刑杀，祸不可测。倘日独处，冲者太衆，必是小人，刑责不已，穷必彻骨。运临财官旺处，亦防奇祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c095:p0005",
+      "sha256": "7068269c21d59a8ba561476cbf722ec63d5107eb0d1eba8ba5a01b2606c637a1"
+    },
+    {
+      "section": "论魁罡",
+      "text": "眉批：大凡四柱日多同，贵气斯来在此中，日主独逢冲克重，财官显露祸无穷。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c095:p0006",
+      "sha256": "04c226054db01607c6c4f4d94bc808fc2e400886dfd24021c28938b7d6c97589"
+    }
+  ]
+}

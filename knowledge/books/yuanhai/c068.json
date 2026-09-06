@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c068",
+  "title": "又论五行生旺衰绝吉凶",
+  "source_url": "https://luckclub.cn/bazi/001/068/",
+  "revision": "sha256:8add7b0df77d9a4df9028e1f0d65fb042248769bc0a0cee551ccbb51e3229679",
+  "source_timestamp": "2026-09-06T04:10:38.865711+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c068.html",
+  "raw_sha256": "8add7b0df77d9a4df9028e1f0d65fb042248769bc0a0cee551ccbb51e3229679",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "又论五行生旺衰绝吉凶",
+      "text": "又论五行生旺衰绝吉凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c068:p0001",
+      "sha256": "98725e98aeb9d50e495e20722d9d54793303d7e872fe0a16f39b8841a8124041"
+    },
+    {
+      "section": "又论五行生旺衰绝吉凶",
+      "text": "观阴阳家书有曰：生旺有阴死阳生，阳死阴生。假如甲木生於亥而死於午，乙木生於午而死於亥，余同例此。故推命十有九失，又非的法也。如议命岂可拘於生旺之说，且丙寅属火而绝於亥，本为不好，孰不知亥中有木为印绶而生丙火，丙日亥时乃多贵格矣。戊属土而旺於巳，兼又建禄，本作贵格，孰不测巳反生金之地而伤官星，凡戊日巳时，官终不显。举此二例，则议命切不可专泥於生旺而吉，衰败而凶也，又当以活法推之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c068:p0002",
+      "sha256": "1da76796db6366a3338b38f3f9eca08d4d1c8d7cdeea8e5be49e43d8c2e68e21"
+    },
+    {
+      "section": "又论五行生旺衰绝吉凶",
+      "text": "眉批：一死一生，五行之论定矣。曰用，有母扶子之爱，兄来扶弟之情，子来顾母之恩，生生不尽，化化无穷之理。宜细详之方可论命。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 60,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c068:p0003",
+      "sha256": "cba399c993349c4ea7641aae7a7e5c66ac8eed92564e5c2ae072ccf7bbb0ac97"
+    }
+  ]
+}

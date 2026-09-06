@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c233",
+  "title": "时上一位贵诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/233/",
+  "revision": "sha256:a5e679fbda46213ffe99689208f2aa9fdace4995d71777501a40cfebfc13976b",
+  "source_timestamp": "2026-09-06T04:11:10.922226+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c233.html",
+  "raw_sha256": "a5e679fbda46213ffe99689208f2aa9fdace4995d71777501a40cfebfc13976b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "时上一位贵诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "时上一位贵诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0002",
+      "sha256": "4b506c9229f5ff4a9522bed5999eb3f266dd4064019e1495e099557483c29e3a"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "时上偏官一位逢，身强杀浅怕刑冲，假如月上又重见，辛苦独劳百事空。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0003",
+      "sha256": "138bcca92e59e2646c55d2e2153d45485a33f5154d992170dd5e11a2e3597f8e"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "时上偏官喜刃冲，身强制伏禄丰隆。正官若也来相会，身弱财生主困穷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0004",
+      "sha256": "08e5ffa1611330790dea1fe2f5ab14f87c8ef82dfb64082db81b3d58defb8ece"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "时上偏官一位强，日辰自旺贵非常，有财有印多财禄，列定天生作栋梁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0005",
+      "sha256": "acdd633b3dbc88b210089aa5f0b55817670d489fd76cf3e2586e6d20b3f21d3a"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "时逢七杀是偏官，有制身强好命看，制过喜逢杀旺运，三方得地发何难。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0006",
+      "sha256": "615befdbe3e1294442d2e422cae317f910e5c6fbe587b6d687e1320b3018ac6a"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "元无制伏运须见，不怕刑冲多杀攒，若是身衰惟杀旺，定知此命是贫寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c233:p0007",
+      "sha256": "397ccd9b0d4494984649c0f727c8537effc06d27b1192314df68712908f3a3d8"
+    },
+    {
+      "section": "时上一位贵诗诀",
+      "text": "眉批：如时上偏财与时上偏官相似，其要时上一位，不要多，而三处不要重见，却怕冲，与月上偏官一同。偏财是财旺运，时上只一位为贵，若年月又有反贱，辛苦劳碌之人。亦要自身旺，行旺运可发。无制伏要行制伏运吉，杀旺运无制则祸生。书云，杀重身轻，终身有损，一见制伏却为贵。本七杀宜制，贵中得奇，原犯鬼轻，制却非宜。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 150,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c233:p0008",
+      "sha256": "e8799dea2a4cd8633dd00bcb1311dfe802b7e01737e947e7873b5f82fc1baae9"
+    }
+  ]
+}

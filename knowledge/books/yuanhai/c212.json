@@ -1,0 +1,121 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c212",
+  "title": "十月建亥候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/212/",
+  "revision": "sha256:6bb5b7d3b7f64736690cca4fe951d24de7567aadb61d1d743e26bbf6c98bf304",
+  "source_timestamp": "2026-09-06T04:11:06.189605+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c212.html",
+  "raw_sha256": "6bb5b7d3b7f64736690cca4fe951d24de7567aadb61d1d743e26bbf6c98bf304",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "十月建亥候诗诀",
+      "text": "十月建亥候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c212:p0001",
+      "sha256": "4a3d34c88f992a413750390e1e596bc184f16bdf2ec1fa878874922434236998"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "水木生居亥月乾，财官印绶喜相连，用壬运旺西方去，用木须欣寅卯逢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c212:p0002",
+      "sha256": "c98e98235f81e72d95cdecc68b1af2dd4b60e32b5747ea8ed86089b3dae6acd4"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "眉批：十月乾金三日，甲木六日，壬水旺二十一日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 23,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c212:p0003",
+      "sha256": "30479bc92edd849052d7ab2177fc547546036b51cff87678a01a0897c706f359"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "丙日壬杀喜东南，来至东南发显官，大运愁逢金水地，再行西兑寿难完。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c212:p0004",
+      "sha256": "720140df56d8f77b194da1a2b3a830819dfc294a742455497685dd026d5b20c3"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "眉批：行东方运，能助丙之力，酉运伤丙之身。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 21,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c212:p0005",
+      "sha256": "f9a7f51065dea358a03e4a3aac3bac02da30946840ead6a18b990fcf70eee5af"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "财官印绶立乾宫，水木相生福禄通，阳水喜金嫌火土，运行最怕巳相冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c212:p0006",
+      "sha256": "f44705fadebc620c348a19db84bd38b7b09d7b0d791cb97dc4633fa2566bc9b5"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "眉批：乾宫，亥宫也，壬水生旺之地。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c212:p0007",
+      "sha256": "4489090181b141160885834557c69b9ae7f050858f0fa060158d6ee8661edc4a"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "日主无根干土金，月通亥子土来侵，只宜印绶扶身旺，何怕提纲损用神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c212:p0008",
+      "sha256": "83348df09d98851596c107cf526601bb4267cea3d27b3b9ab5f2b9ee9b953b2e"
+    },
+    {
+      "section": "十月建亥候诗诀",
+      "text": "眉批：此言庚日或戊日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 11,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c212:p0009",
+      "sha256": "2bca0cf4ebc6871addc6b62c99185320fc4d6c6a23691c129c933eefd7091a77"
+    }
+  ]
+}

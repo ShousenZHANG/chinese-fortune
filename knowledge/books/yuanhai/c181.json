@@ -1,0 +1,206 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c181",
+  "title": "论命细法",
+  "source_url": "https://luckclub.cn/bazi/001/181/",
+  "revision": "sha256:d2ebbd922511045aaf3079201e98f1f6da54565f01f2b0f3c9b618522d048596",
+  "source_timestamp": "2026-09-06T04:11:00.050946+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c181.html",
+  "raw_sha256": "d2ebbd922511045aaf3079201e98f1f6da54565f01f2b0f3c9b618522d048596",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论命细法",
+      "text": "论命细法",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0001",
+      "sha256": "f3af99d4d447a902fe1bc017b5f4d009c6c1254ebf04bed948cc198d19494ea7"
+    },
+    {
+      "section": "论命细法",
+      "text": "(曷僧判止传歌，印净禅师传也。)",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0002",
+      "sha256": "6bc04d69c22b0b98a2039e1966a46e8e16f2e478f90d89c8d78b4d2aa8ae6892"
+    },
+    {
+      "section": "论命细法",
+      "text": "过房七杀带三刑，母明父暗是偷生。我明我暗从他象，父死之时不守灵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0003",
+      "sha256": "a35ad0ddbd46efc26756c8d6c988bdc69c29bd1b48cde90d3e715d497a8d2577"
+    },
+    {
+      "section": "论命细法",
+      "text": "庚金化成火相时，父亡见血不须疑。比肩三合族人害，三刑零落及离妻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0004",
+      "sha256": "b9d81f49b48c1c790154ae5067532192764ab6940c132a0f29264457b53fcfc5"
+    },
+    {
+      "section": "论命细法",
+      "text": "比肩暗损及门房，兄弟无情被罔欺。如带比肩成别象，弟兄不睦报君知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0005",
+      "sha256": "9d15fcc26a676d0ba934dfbd2fff1578ac769055ca45b808a01b5f61c39d9e84"
+    },
+    {
+      "section": "论命细法",
+      "text": "妻带三合及坐妻，妻曾认得是亲友。坐妻透妻成别象，定主离妻再娶妻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0006",
+      "sha256": "a3081182eff832414d3ad2f4cb5079bf414e38d05d22d9cf4ca85b31470ad4c2"
+    },
+    {
+      "section": "论命细法",
+      "text": "多透妻财须怕妇，妻归绝地不生儿，生成别象克正夫，必主欺夫礼义疏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0007",
+      "sha256": "5dd30baffde62f3580a006e807fb8526d043d03e78c1579e297af03db411b94d"
+    },
+    {
+      "section": "论命细法",
+      "text": "身旺食强亦如此，食明旺相欢然殂。阳母专位主伤儿，母来父上受其惊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0008",
+      "sha256": "95fd43d467ebd6f4171e290bb7c3c31df781a2e168b26b2be6fb4a823b7b39e6"
+    },
+    {
+      "section": "论命细法",
+      "text": "天时地利主过月，七杀兼刑顶上偏。印归杀地母有病，丙丁双者顶双灵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0009",
+      "sha256": "988fb1cba94d11f46a6b4e01782dbc64e45bdff8b7bb008e980d67c43e2652d4"
+    },
+    {
+      "section": "论命细法",
+      "text": "日禄归时须应梦，小儿无乳食冲刑。壬子乙酉对偏生，丙戌丁丑妻获云。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0010",
+      "sha256": "04372a9099a60c31fc821fffa9911862896f488f2d09e9c5e9582d30342eec5d"
+    },
+    {
+      "section": "论命细法",
+      "text": "背父而生甲乙卯，此时须要记分明。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0011",
+      "sha256": "a94a5724926154a0e4330132bbaa40295b3eb0745dad4dedad17a88e70fa31a8"
+    },
+    {
+      "section": "论命细法",
+      "text": "眉批：比肩以喻兄弟，甲木见壬水为阳母。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 19,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c181:p0012",
+      "sha256": "c0cfd3e75bc15a44776a774af69e8d546be42c9b2de51050f6272657d45880c9"
+    },
+    {
+      "section": "论命细法",
+      "text": "假令申子辰从水也，不然五月无水有火，不从也。戊癸化火，巳午地支，天干从火也，又将坐日甲木论。珞琭子云：学释则离宫修定，是如此取用也。杜老先生教镜镡僧判将此为例，终日参详，朝暮苦想，似此半年，忽然间得此时入处。公云初学，进退了几番，後获此法，非其他阴阳也，此别家幽微之经也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0013",
+      "sha256": "9a78dabe38ab579b61fdcad7bbd515b3732de577698b0fa17a3696cdf638a4bb"
+    },
+    {
+      "section": "论命细法",
+      "text": "又论心印口诀：双顶者，只可言八字有双丙丁者是也，若只一丙一丁，下有刑冲者，可言歪顶无失也。又一法：言人儿女麻面者，是戊己被甲乙克之，不然主面有疤痕，戊己见乙亥、乙巳、乙卯是矣。如此递相贯穿，天干地支往来相克，化合之气，死生破败，皆此所主也。其干支万变，如此化病源，此中出成败，此中出命之幽微，莫不由於此而假外来哉。更於此看得到处，不须归家多说。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0014",
+      "sha256": "b5d0fecd35ce3321199f760c2d64f4dd502e0ebb007eb07438131afc36318e30"
+    },
+    {
+      "section": "论命细法",
+      "text": "四柱之中原有忌者，切忌运中透出病。运中忌财作凶，财岁战便为灾。凡坐杀者，不可行杀旺运。身旺又加旺运，岁运并来伤杀与我无情者是。印轻怕行财运，主恶死或血疾。印绶多母衆，或食衆乳，或寄养外人家。如四柱有官星，流年太岁冲官星，必因官讼，如遇比肩助者，言比肩之人救助无事，流年转生财官者。凡识生财伤官有三，伤之不尽，多出吏道，元有物气，伤官运及印绶，岁复见官星者多凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0015",
+      "sha256": "65c36e47d2874577ea240ba8a1abaacb5c9b10a738d5d26284f5b7a9a190b136"
+    },
+    {
+      "section": "论命细法",
+      "text": "化气怕逢反本，不化有变局，如化不成者，只可用本日干断。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0016",
+      "sha256": "5e298af5633a37a1eb9fa82d97a43522844f9989832458d2478d5cd47c7c2bd2"
+    },
+    {
+      "section": "论命细法",
+      "text": "且如己土用癸水为妾，运逢辰库，主妾与自家人私通。丙用乙为母，遇庚申母多外情。丙用庚为父，遇寅丙多主父弱。戊用癸为妻，若坐酉宫或主好酒。本元无财官，运逢财官者主凶，他人发财发官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0017",
+      "sha256": "451b7c254457bffdb5da6d9bf385b0cb38dc3e20564a0b0e403379bbe4195a7b"
+    },
+    {
+      "section": "论命细法",
+      "text": "火入水乡主血疾。壬癸引归寅卯主阳不兴，时归败绝，老後无成。日干与流年合主晦气入门。假令六甲日以偏财阳土为父，阴土为妻，阳金子，阴金女，阳木阴木同法，余仿此。妻星入败地，主妻不正，如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0018",
+      "sha256": "15150f2d6d0b76e93d51854100a5c1e971fc0b096d089a362e0f22d66d9b6a78"
+    },
+    {
+      "section": "论命细法",
+      "text": "己酉 庚午 癸酉 丁丑是财入败地也。寅申巳亥乃四长生，必得聪明妻。财官印得气为妙。元见财官，商旅农家。财多印陷，少年克母，母不贞洁，必重嫁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0019",
+      "sha256": "d14d3308a1d0384ac80a41c0b02e0218c718cbb222e708bf431099dddb602b06"
+    },
+    {
+      "section": "论命细法",
+      "text": "女人之命，日干同者，若我旺她衰，我为正；她旺我衰，她为正。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0020",
+      "sha256": "117168edda55269b927cfd98e4dbb5660c7a3a5f863bd7e491826c9af1f6fec9"
+    },
+    {
+      "section": "论命细法",
+      "text": "壬癸之水盛者聪明多智，女多淫滥。时上见财者，必须入舍。支中有官无刑破者，因妻发官；局中有杀无制，因妻致祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0021",
+      "sha256": "8fd47716a5c31523ad9f29768f72a84d1e87aaa142204b4e88cba2740b860440"
+    },
+    {
+      "section": "论命细法",
+      "text": "假令壬癸日运逆行者，生於正月、二月，取戊己土为官，故为禄绝，此为背禄；取丙丁为财，四柱不透出财神，此为背禄不贫也，寅卯暗藏三阳、四阳之火为财。如行子丑运，遇比肩分夺，交亥运木长生而助火，主发财，戌运亦然。酉运火死水败，主破败。如壬癸生寅卯月顺运者，巳午运发财福，亦忌财神透露，岁运亦然。如遇财神透出，四柱原有比肩、羊刃，因妻制祸，忌申酉二运。如四柱原有印者，百物更改，革故鼎新。如流年遇杀者凶，酉运裸形沐浴，劫杀主死。如丙子、丁丑、戊寅、辛卯、壬辰、癸巳、丙午、丁未、戊申、辛酉、壬戌、癸亥，时犯之多因孝病中成亲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0022",
+      "sha256": "9ffaca70e250e9dc04221485b01f4509030d9eedc7efc09a0e8aee93a4783d02"
+    },
+    {
+      "section": "论命细法",
+      "text": "眉批：裸形乃脱衣，见其形体。五行乃子午卯酉见之为五行沐浴之地。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 31,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c181:p0023",
+      "sha256": "3549871b543d89d26c46d2dd5a12b86190db673c838bf1e6ac589e731cd80153"
+    },
+    {
+      "section": "论命细法",
+      "text": "如用子女之法，不喜入墓库。如子女入库，主无子女。庚日甲为偏财为父，坐申行酉地为财临杀位，父死不归家。阳干女命食神多者为娼，阴乾女命伤官多者为妓，有物去之为良。火至天干多主瘰癧，地支多时生疮。用杀反轻，多为僧道之首。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c181:p0024",
+      "sha256": "677d86fd66fbb2a7a0f8dd7d99198b917be315b7deb143b62dfd1871c6d5d50e"
+    }
+  ]
+}

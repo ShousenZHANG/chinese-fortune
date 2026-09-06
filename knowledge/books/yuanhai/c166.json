@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c166",
+  "title": "神趣八法-从象",
+  "source_url": "https://luckclub.cn/bazi/001/166/",
+  "revision": "sha256:603eaaccd36cefd3af1a508f9097695ebbe3347076a34c8de9efc0a6efaee527",
+  "source_timestamp": "2026-09-06T04:10:57.369409+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c166.html",
+  "raw_sha256": "603eaaccd36cefd3af1a508f9097695ebbe3347076a34c8de9efc0a6efaee527",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-从象",
+      "text": "神趣八法-从象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c166:p0001",
+      "sha256": "a0deb42556286fe9ada4fd181291c32603cac95f241e12a4ad038df91363221a"
+    },
+    {
+      "section": "神趣八法-从象",
+      "text": "从象者，如甲乙日主无根，地支全金，谓之从金。四柱纯土，谓之从土。四柱纯水，谓之从水。四柱纯木，为之从木。有秀气者吉，无秀气者凶。或天干有甲乙字者不吉，或有根者不吉。其从火者，火旺运吉，死绝地凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c166:p0002",
+      "sha256": "5aa116c056ff781318600f01ae8cdb0c2534e72eddb3a81228e87201f2b54928"
+    },
+    {
+      "section": "神趣八法-从象",
+      "text": "眉批：其法以从化，必得遇发财。法以甲己起庚寅丁卯戊辰，逢龙方化。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 32,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c166:p0003",
+      "sha256": "c6781740b876cfe59ba4cf70566bc7cbe72665e666049eee1c355226bee21471"
+    },
+    {
+      "section": "神趣八法-从象",
+      "text": "又曰：从者，夫妻相从之意也。论引用之气，夫乘旺则妇从，妇乘旺则夫从。官杀者，夫也；财者，妻也。借夫妻之名，以取人之祸福。如乙日生巳酉丑申之位，是妇从夫。庚日生亥卯未寅之位，是夫从妇。若遇其从，即从地支专气言之。若归其本，即从其本言之。《玉井》云：“从其有气，或党多亦从。”又云：“自身无气，从局变象，干支三合，所属同也。”经云：“从中有贵贱。从中显贵得时，位列三公。从中取与失时，孤贫奔走。”如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c166:p0004",
+      "sha256": "32efa09a580dcd88193da97552ab74186a984229d4ed436f864c5593959d1f23"
+    },
+    {
+      "section": "神趣八法-从象",
+      "text": "甲戌 丁卯 庚申 己卯，庚申金生卯月卯时，木极旺，是妻卯旺而夫从之，主因妻得财，或就妻得财。又曰，无根为从象，如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c166:p0005",
+      "sha256": "4e351ad61647d3f3379944ba56262aa3a6ab30f7fec9106473564550dcfb9130"
+    },
+    {
+      "section": "神趣八法-从象",
+      "text": "乙酉 壬午 甲申 己巳，甲木无倚，乃能从土。如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c166:p0006",
+      "sha256": "b15eca5520037e37b9a642a3ce906f36337e18b655bdcd1356f462cc09b638c5"
+    },
+    {
+      "section": "神趣八法-从象",
+      "text": "庚辰 乙酉 乙酉 庚辰，乙木无依，从金而化，庚辰庚戌纳音皆属金，贵命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c166:p0007",
+      "sha256": "26d6c826796f7d5033b3b593f2a02c423b45307b60f71fa4eb13eb147b4501a3"
+    }
+  ]
+}

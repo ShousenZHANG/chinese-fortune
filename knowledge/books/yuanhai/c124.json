@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c124",
+  "title": "外十八格-润下格",
+  "source_url": "https://luckclub.cn/bazi/001/124/",
+  "revision": "sha256:64379beb3d53e2f1623f88fd78bba9438426cdc2069690c239df5587f8658496",
+  "source_timestamp": "2026-09-06T04:10:49.702652+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c124.html",
+  "raw_sha256": "64379beb3d53e2f1623f88fd78bba9438426cdc2069690c239df5587f8658496",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-润下格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c124:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-润下格",
+      "text": "外十八格 - 润下格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c124:p0002",
+      "sha256": "2bafb696ada8c0dc0297c799c48b8dd82eceb790eb7982a4db868c36cd41646a"
+    },
+    {
+      "section": "外十八格-润下格",
+      "text": "且如壬癸日，要申子辰全或亥子丑全是也，忌辰戌丑未官乡，喜西方运，不宜东南，怕冲克，岁运同。润下者，天干地支浑是水，如湖海汪洋，望以无际，主人清秀量宏。倘遇土运，必主淹滞，若生於冬月者，又为奇特者也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c124:p0003",
+      "sha256": "80aaafa138ed842c803058afd3471c7371e05e6d6d067a2d1fd26f41020db1a0"
+    },
+    {
+      "section": "外十八格-润下格",
+      "text": "万宗人，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c124:p0004",
+      "sha256": "207982122e4adc812b87863800aa1f444212e21c3fc7bfaa33bcc22c85649b8b"
+    },
+    {
+      "section": "外十八格-润下格",
+      "text": "庚子 庚辰 壬申 辛亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c124:p0005",
+      "sha256": "b966735666840447037cc82f6ca027883e7c66686fae06f202025eafb9f1ad82"
+    },
+    {
+      "section": "外十八格-润下格",
+      "text": "眉批：生临壬癸水局中，汪洋又会向流东，若然不遇堤防土，金紫荣身位至公。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c124:p0006",
+      "sha256": "6248c3072567dc54a895c2ffe5db1697110a371428954a95a9df7d60455ce894"
+    }
+  ]
+}

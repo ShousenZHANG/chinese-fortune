@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c268",
+  "title": "女命诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/268/",
+  "revision": "sha256:4142d2cb405313d1f223204d376bef5ff36d14b7e68043c950661d1f4253d048",
+  "source_timestamp": "2026-09-06T04:11:19.200894+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c268.html",
+  "raw_sha256": "4142d2cb405313d1f223204d376bef5ff36d14b7e68043c950661d1f4253d048",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "女命诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "女命诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0002",
+      "sha256": "4258132c6e8bf69775d2b2f883355bdfefeccc97113a89c42893151522b4dba4"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "财官印绶三般物，女命逢之必旺夫，不犯杀多无混杂，身强制伏有称呼。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0003",
+      "sha256": "50a2b706b1703ceb7f34d3b6705b3990302e8f3ccf8a77cba00b08b7bc588f1b"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "女命伤官福不真，无财无印守孤贫，局中若见伤官透，必作堂前使唤人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0004",
+      "sha256": "e5b6abedd3b4f1816e0f7838acc056a53156aaf680124bdb6e16560a2a954e7e"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "有夫带合须还正，有合无夫定是偏，官杀重来成下格，伤官重合不须言。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0005",
+      "sha256": "46b9fd0090971b5bc0a867c51805f71e44402b69ece9eeb3d8639e54ea92e851"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "官带桃花福寿长，桃花带杀少祯祥，合多切忌桃花犯，劫比桃花大不良。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0006",
+      "sha256": "3284f1329e866d16585950abffd384296f69492c66d041d20c3948da11a690a9"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "女命伤官格内嫌，带财带印福方坚，伤官旺处伤夫主，破了伤官损寿元。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0007",
+      "sha256": "fc5740f5239ed5116ac7fcae47030f33c844cd4aaf3f87c09e1091068ec9489a"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "飞天禄马井栏叉，女命逢之福不佳，只好为偏并作妓，有财方可享荣华。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c268:p0008",
+      "sha256": "ca77bc11adb47654199ecc18eb7ec297c6e709c6af4d6e5e70d6adf089d7fd8f"
+    },
+    {
+      "section": "女命诗诀",
+      "text": "眉批：女命以官为夫，有伤官则伤其夫，夫既受伤其妻必无生矣。无官有合者，必作偏妾断之。桃花主淫，有官星犯之得其正，无官星犯之主偏僻之流，要於官上见之为佳。井栏叉格，凡日干干辰合者乃金水，为官人见之，多水性，故曰偏僻之流。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 109,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c268:p0009",
+      "sha256": "6ab9111f7e82034ed820667af980aa6ac586c25e1f4dd1edc9cf226f8394a892"
+    }
+  ]
+}

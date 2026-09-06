@@ -1,0 +1,67 @@
+{
+  "book_id": "qiongtong",
+  "chapter_id": "c001",
+  "title": "卷一·五行总论",
+  "source_url": "https://www.gushiwen.cn/guwen/bookv_e96f74b03cf3.aspx",
+  "revision": "sha256:3e5575c23f7aa1279ca13881939c4b111f3d183ffad9e5ea61ca6bcf1b30a2bf",
+  "source_timestamp": "2026-09-06T04:15:56.160604+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/qiongtong/c001.html",
+  "raw_sha256": "3e5575c23f7aa1279ca13881939c4b111f3d183ffad9e5ea61ca6bcf1b30a2bf",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷一·五行总论",
+      "text": "五行者，本乎天地之间而不穷者也，故谓之行。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0001",
+      "sha256": "0fef0c1c87dfd2fcd522b9d7a89e97824e6f8d85ca9f629984ee3133394bb3d4"
+    },
+    {
+      "section": "卷一·五行总论",
+      "text": "北方阴极而生寒，寒生水。南方阳极而生热，热生火。东方阳散以泄而生风，风生木。西方阴止以收而生燥，燥生金。中央阴阳交而生温，温生土。其相生也所以相维，其相克也所以相制，此之谓有伦。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0002",
+      "sha256": "ff1bba5359782cba5e83b960bd5bb3d56a6d1509650966235bd026a508d45818"
+    },
+    {
+      "section": "卷一·五行总论",
+      "text": "火为太阳，性炎上。水为太阴，性润下。木为少阳，性腾上而无所止。金为少阴，性沉下而有所止。土无常性，视四时所乘，欲使相济得所，勿令太过弗及。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0003",
+      "sha256": "f4f09bc1784b6cae632e66f5065ad832316cb3a4e96b079791e8ef863a4a37d4"
+    },
+    {
+      "section": "卷一·五行总论",
+      "text": "夫五行之性，各致其用。水者其性智，火者其性礼，木其性仁，金其性义，惟土主信，重宽厚博，无所不容：以之水，即水附之而行；以之木，则木托之而生；金不得土，则无自出；火不得土，则无自归。必损实以为通，致虚以为明，故五行皆赖土也。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0004",
+      "sha256": "f802c3a8aa77d1237b1f2ec46ab96d3135631bcd270b7ae966f7956c289ff4de"
+    },
+    {
+      "section": "卷一·五行总论",
+      "text": "推其形色，则水黑、火赤、木青、土黄，此正色也。及其变易，则不然。常以生旺从正色，死绝从母色，成形冠带从妻色，病败从鬼色，旺墓从子色。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0005",
+      "sha256": "5a266d3256e058c8870f121dbca3aee85e7ec76b2475242e5008842dce22ce7a"
+    },
+    {
+      "section": "卷一·五行总论",
+      "text": "其数则水一、火二、木三、金四、土五。 生旺加倍，死绝减半。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0006",
+      "sha256": "e58818e0f2e1a64ed2463da7721300544a201e53b8d589b43fe9ee927f1be920"
+    },
+    {
+      "section": "卷一·五行总论",
+      "text": "以义推之，夫万物负阴而抱阳，冲气以和。过与不及，皆为乖道。故高者抑之使平，下者举之使崇，或益其不及，或损其太过。所以贵在折衷，归於中道，使无有余不足之累，即才官印食贵人驿马之微意也。行运亦如之，识其微意，则於命理之说，思过半矣。",
+      "layer": "base_text",
+      "passage_id": "qiongtong:c001:p0007",
+      "sha256": "d2372026b2f06832f9672f9e84e36d8dd8fd88b55671e79f8e43aa9d23e1c194"
+    }
+  ]
+}

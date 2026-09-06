@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c141",
+  "title": "外十八格-凤凰地",
+  "source_url": "https://luckclub.cn/bazi/001/141/",
+  "revision": "sha256:85c6695f394137d646ac952f467f93a8584e5153c87854cdd4c5aa3adbfd7272",
+  "source_timestamp": "2026-09-06T04:10:52.875679+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c141.html",
+  "raw_sha256": "85c6695f394137d646ac952f467f93a8584e5153c87854cdd4c5aa3adbfd7272",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-凤凰地",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c141:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-凤凰地",
+      "text": "外十八格 - 凤凰地",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c141:p0002",
+      "sha256": "dc3ab79a63ddec916d2e6ce2f18ef0e529c3962e42813670aecb12c01b7822a6"
+    },
+    {
+      "section": "外十八格-凤凰地",
+      "text": "干支皆同为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c141:p0003",
+      "sha256": "f127dce726e63ebcd725d8d6971cac4c56a0f4f3be53f9e4b3ac30f069840a8c"
+    }
+  ]
+}

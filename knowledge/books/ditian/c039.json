@@ -1,0 +1,74 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c039",
+  "title": "出身論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F39&oldid=844409",
+  "revision": "844409",
+  "source_timestamp": "2017-03-24T01:24:20Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c039.wiki",
+  "raw_sha256": "c8440f84070319b0f68ba3e3ac5cbfd3f3d324a27628535987893a6f8ad6b897",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "出身論",
+      "text": "巍巍科第邁等倫，一個元機暗裏尋。",
+      "layer": "base_text",
+      "passage_id": "ditian:c039:p0001",
+      "sha256": "cd5dcb91be75d7a2507093f8eb208dae1b40d93af489167a6a2ecb04c521dfa9"
+    },
+    {
+      "section": "出身論",
+      "text": "狀元格局，清奇迴異，若隱若露，奇而難決者，必有元機，須搜尋之。",
+      "layer": "commentary",
+      "passage_id": "ditian:c039:p0002",
+      "sha256": "3e3235fd2fea691ad2503edca25068c366f18ab004135d5ed7e66904982386b1"
+    },
+    {
+      "section": "出身論",
+      "text": "清得靜時黃榜客，雖雜濁氣亦中式。",
+      "layer": "base_text",
+      "passage_id": "ditian:c039:p0003",
+      "sha256": "b73308a353576433b813a5902a52f46f0f6c1fc71ad0da15d0b89bd98341d4f7"
+    },
+    {
+      "section": "出身論",
+      "text": "天下之命，未有不清而發科甲者，清得盡時，不止一二成象，雖五行盡出，而生剋制化，情通理得，並不混閒神忌客，決發科甲，即有一二濁氣，而清氣或成一個體般，亦可發達。",
+      "layer": "commentary",
+      "passage_id": "ditian:c039:p0004",
+      "sha256": "3ce641bae066d6caf11dd3ccb0aac5c082471d48e1ba53c4e0f97e980df39c22"
+    },
+    {
+      "section": "出身論",
+      "text": "秀才不是塵凡子，清氣只嫌官不起。",
+      "layer": "base_text",
+      "passage_id": "ditian:c039:p0005",
+      "sha256": "c34f6e5a03a1dec89a1474d906ad1c3ac9ac010720ca947e9a379853461923f3"
+    },
+    {
+      "section": "出身論",
+      "text": "秀才之命，與異路人富人貧人，無甚大別，然終有一種清氣，但官星不起，故無爵祿。",
+      "layer": "commentary",
+      "passage_id": "ditian:c039:p0006",
+      "sha256": "bc6e2dcd83e30d0d5fd6aa33fdf9bf0bce4286fda04eaafd09d391c8b9ff1011"
+    },
+    {
+      "section": "出身論",
+      "text": "異路功名莫說輕，日幹得氣遇財星。",
+      "layer": "base_text",
+      "passage_id": "ditian:c039:p0007",
+      "sha256": "80e799b1e512c208b29345297e03ddc9e99c20610a0e752ffa87ba12364b1339"
+    },
+    {
+      "section": "出身論",
+      "text": "刀筆得成者，與不成者自異，必是財星成箇門戶，通得官星，有一種清旺之氣，所以得出身，其老於刀筆，而不能出身者，終是官星與財星相拗也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c039:p0008",
+      "sha256": "640293b09b02e61669d8d9d4c4fb046511a1cee1d1a7acc30b949350d3ae309f"
+    }
+  ]
+}

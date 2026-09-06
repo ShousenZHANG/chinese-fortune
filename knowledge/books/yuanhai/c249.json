@@ -1,0 +1,77 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c249",
+  "title": "从革诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/249/",
+  "revision": "sha256:dadb4338251510e2e2ae2a4888f62f3e903dd6cd04b5e18769aa3b98cd66e8f5",
+  "source_timestamp": "2026-09-06T04:11:14.759171+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c249.html",
+  "raw_sha256": "dadb4338251510e2e2ae2a4888f62f3e903dd6cd04b5e18769aa3b98cd66e8f5",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "从革诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c249:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "从革诗诀",
+      "text": "从革诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c249:p0002",
+      "sha256": "9c0f896f1f8a7620a452e755b39db040d19a38774c5e3c59b05e357f7ec0ebc3"
+    },
+    {
+      "section": "从革诗诀",
+      "text": "秋月金局一类看，名为从革使相欢，如无炎帝来临害，定作当朝宰相官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c249:p0003",
+      "sha256": "2f8f3f816aa1ae54b0c60595196eda34b1ab3dc4c9d4b1101fc184e001abebe8"
+    },
+    {
+      "section": "从革诗诀",
+      "text": "金居从格贵人钦，造化清高福禄真。四柱火来相混杂，空门艺术谩经纶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c249:p0004",
+      "sha256": "4b74945461f7319141fbe40c8550090bb896ec9bb4a7822f65ae62a23e83e74f"
+    },
+    {
+      "section": "从革诗诀",
+      "text": "眉批：天干地支纯金方用此格。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 14,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c249:p0005",
+      "sha256": "2fc30c3904f25c7269f5cd0b7f917e78a2e3adf9fc53eae3df9f5e986f246399"
+    },
+    {
+      "section": "从革诗诀",
+      "text": "如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c249:p0006",
+      "sha256": "b27f740b14fe3f5b2b622ce486a5e756d80850ff47c34a0dc365016b4737cd9a"
+    },
+    {
+      "section": "从革诗诀",
+      "text": "辛酉 戊戌 庚申 辛巳，乃杨太尉命，忌火喜土，岁运亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c249:p0007",
+      "sha256": "37cff049aedd3a423cb13f1fdb69998d16b050c6b28f980a23a972e719530665"
+    }
+  ]
+}

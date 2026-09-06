@@ -1,9 +1,4 @@
-"""解梦查询脚本 — 取代整读 38 KB 的 assets/jiemeng.json.
-
-The asset carries 105 传统 interpretations that appear in no reference file
-(0/105 overlap with 15-jiemeng.md's prose), so it must stay reachable — but
-reading the whole file to look up one symbol costs ~10k tokens.
-"""
+"""Dream topics remain reachable without inventing unsourced interpretations."""
 import pytest
 from conftest import run_cli
 
@@ -14,8 +9,10 @@ def test_lookup_known_symbol():
     d = run_cli("jiemeng_lookup.py", "--symbol", "蛇")
     assert d["symbol"] == "蛇"
     assert d["category"] == "动物"
-    assert "蛇" in d["traditional"]
-    assert d["modern_psychology"]
+    assert d["traditional"] is None
+    assert d["modern_psychology"] is None
+    assert d["interpretation_status"] == "pending_source_verification"
+    assert d["source_status"]["traditional"] == "unverified_no_citation"
     assert any(s["scene"] == "蛇咬" for s in d["common_scenarios"])
 
 
@@ -36,3 +33,33 @@ def test_unknown_symbol_suggests_and_exits_1():
     d = run_cli("jiemeng_lookup.py", "--symbol", "不存在的梦", expect_rc=1)
     assert d["error"] == "symbol_not_found"
     assert "suggestions" in d
+
+
+def test_all_topics_and_scenarios_are_indices_without_unsourced_claims():
+    from jiemeng_lookup import load_symbols
+
+    symbols = load_symbols()
+    assert len(symbols) == 105
+    assert len({s["symbol"] for s in symbols}) == 105
+    for entry in symbols:
+        assert entry["traditional"] is None
+        assert entry["modern_psychology"] is None
+        assert entry["interpretation_status"] == "pending_source_verification"
+        assert entry["common_scenarios"]
+        for scenario in entry["common_scenarios"]:
+            assert scenario["scene"]
+            assert scenario["meaning"] is None
+            assert scenario["source_status"] == "unverified_no_citation"
+
+
+@pytest.mark.parametrize("args", [("--symbol", "蛇"), ("--search", "动物")])
+def test_lookup_and_search_do_not_reintroduce_predictions(args):
+    import json
+
+    d = run_cli("jiemeng_lookup.py", *args)
+    output = json.dumps(d, ensure_ascii=False)
+    for removed in ("主有大病", "主进财", "主生贵子", "事业腾达", "弗洛伊德", "荣格"):
+        assert removed not in output
+    entries = d["matches"] if "matches" in d else [d]
+    assert entries
+    assert all(e["traditional"] is None and e["modern_psychology"] is None for e in entries)

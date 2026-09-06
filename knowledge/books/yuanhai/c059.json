@@ -1,0 +1,95 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c059",
+  "title": "论天地干支暗藏总诀",
+  "source_url": "https://luckclub.cn/bazi/001/059/",
+  "revision": "sha256:241ce5722062edf2da306123cf35635c6c6ddd0f801e6245b8d441af039ef1ab",
+  "source_timestamp": "2026-09-06T04:10:36.113715+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c059.html",
+  "raw_sha256": "241ce5722062edf2da306123cf35635c6c6ddd0f801e6245b8d441af039ef1ab",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "论天地干支暗藏总诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0002",
+      "sha256": "c1e93851b43c4307e540f2155e0eabcabcf38bf2204e5732552b617e643e98fb"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "立春念三丙火用，余日甲木旺提纲。惊蛰乙木未用事，春分乙木正相当。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0003",
+      "sha256": "6ca1564f2eec37ac6f91bc7e90d3c46e83371709d1a6bda7cc631bce80175a73"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "清明乙木十日管，後来八日癸水详。谷雨前三戊土盛，其中土旺要消详。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0004",
+      "sha256": "5e95c5c55d5796d585e7be09e5a243f119c8b15167ae1ee19bf7cd6a82206fd3"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "立夏又伏戊土取，小满过午丙火光。芒种己土相当好，中停七日火高强。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0005",
+      "sha256": "21d2348fb8778c85742efda7a91b45f566a7aec24348f917f78c649efde04258"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "夏至阴生阳极利，丙丁火旺有主张。小暑十日丁火旺，後来三日乙木芳，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0006",
+      "sha256": "18d87359c48dae10092416d4ad07c2aa745939444acfc07fd7aa80e7037872a7"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "己土三日威风盛，大暑己土十日黄。立秋十日壬水涨，处暑十五庚金良。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0007",
+      "sha256": "61292bead6ad1cce773bf8e5a2f6551b0b7924b90e936240f629bb590fdf609a"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "白露七日庚金旺，八日辛兮福独行。寒露七日辛金管，八日丁火又水降。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0008",
+      "sha256": "2f2cd39e01cf4e4964cfa776dc6ed0071054ab3c241cfbcee7cd47bd25c9353d"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "霜降己土十五日，其中杂气取无妨。立冬七日癸水旺，壬水八日更流忙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0009",
+      "sha256": "6b960b4351579b5cf5af80c526691f481adf5e377f12178e2cf30a52b7afdec5"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "小雪七日壬水急，八日甲水又芬芳。大雪七日壬水管，冬至癸水更深旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0010",
+      "sha256": "9784eab64edb926deac2ab26f0ac25b7c896f003e96d81c486c0898a215a0c76"
+    },
+    {
+      "section": "论天地干支暗藏总诀",
+      "text": "小寒七日癸水养，八日辛金丑库藏。大寒十日己土盛，术者精研仔细详。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c059:p0011",
+      "sha256": "ea0c9a2404d8a7086711fa9b521282080ba4d05b33afc13f7133b67674e97606"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c030",
+  "title": "论天德贵人",
+  "source_url": "https://luckclub.cn/bazi/001/030/",
+  "revision": "sha256:e8d86f5455e1565dbf11440b1e02d9efb4e0801b083680d62304936105bccf3e",
+  "source_timestamp": "2026-09-06T04:10:30.483653+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c030.html",
+  "raw_sha256": "e8d86f5455e1565dbf11440b1e02d9efb4e0801b083680d62304936105bccf3e",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论天德贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c030:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论天德贵人",
+      "text": "论天德贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c030:p0002",
+      "sha256": "babf3ad1011c7bc1b40484b50e27a9a8f04327381acbfe74f5172b17e4fcad75"
+    },
+    {
+      "section": "论天德贵人",
+      "text": "正丁二坤(申)中，三壬四辛同，五乾(亥)六甲上，七癸八寅同，九丙十归乙，子巽(巳)丑庚中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c030:p0003",
+      "sha256": "7968440f41287c8094c5fc0c433b9f23ced96d64e87e925c44bd5645f40a523d"
+    },
+    {
+      "section": "论天德贵人",
+      "text": "其法以生月分见之，正月生人见丁，二月生人见申即是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c030:p0004",
+      "sha256": "a62f029b442ed0bb5a849829c46998232cf7fcdb75baef834338b5c7d68012f9"
+    },
+    {
+      "section": "论天德贵人",
+      "text": "眉批：贵人在年月，乃补及父母之荫，在日时补己之贵。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 25,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c030:p0005",
+      "sha256": "5342b214516f5c74bb7573dd9d9cbc424e21d4e579f90e65bf4676eaa08997be"
+    }
+  ]
+}

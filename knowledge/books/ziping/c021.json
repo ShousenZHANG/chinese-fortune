@@ -1,0 +1,46 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c021",
+  "title": "二十一、論星辰無關格局",
+  "source_url": "https://www.donglishuzhai.net/chapter/3734.html",
+  "revision": "sha256:e6a78792c747e606b2d878ecdf7fa50a2206192208291c6203b3f1646f5030c1",
+  "source_timestamp": "2026-09-06T04:17:00.717Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c021.html",
+  "raw_sha256": "e6a78792c747e606b2d878ecdf7fa50a2206192208291c6203b3f1646f5030c1",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "二十一、論星辰無關格局",
+      "text": "八字格局，專以月令配四柱，至於星辰好歹，既不能爲生尅之用，又何以操成敗之權？況於局有礙，即財官美物，尚不能濟，何論吉星？於格有用，即七煞傷官，皆爲美物，何謂凶辰乎？是以格局既成，即使滿盤孤辰入煞，何損其貴？格局既破，即使満盤天德貴人，何以爲功？今人不知輕重，見是吉星，遂至拋卻用神，不觀四柱，妄論貴賤，謬談禍福，甚可笑也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c021:p0001",
+      "sha256": "dd0d96bca64b3b7a133e60f7d5af1442183114b1ca1cb3d2525238695d05dbca"
+    },
+    {
+      "section": "二十一、論星辰無關格局",
+      "text": "況書中所云「祿貴」，往往指正官而言，不是「祿堂貴人」。如「正財得傷貴爲奇」，「傷貴」者，傷官也。傷官乃生財之具，正財得之，所以爲奇。若作貴人，則「傷貴」爲何物乎？又若「因得祿而避位」，「得祿」者，得官也。運得官鄉，宜乎進爵，然如財用傷官食神，運透官則格雜；正官官露，運又遇官則重。凡此之類，只可避位也。若作「祿堂」，不獨無是理；抑且「得祿」避位，文法上下不相顧，古人作書，何至不通若是！",
+      "layer": "base_text",
+      "passage_id": "ziping:c021:p0002",
+      "sha256": "c0901d0f68a2128568d63cdf31d79d85de5fd26e3c5fc14a9f3084631bb230f3"
+    },
+    {
+      "section": "二十一、論星辰無關格局",
+      "text": "又若論女命，有云「貴眾則舞裙歌扇」，「貴眾」者，官眾也。女以官爲正夫，正夫豈可疊出乎？一女眾夫，舞裙歌扇，理固然也。若作貴人，貴人乃是天星，並非夫主，何礙於眾，而必爲娼妓乎？",
+      "layer": "base_text",
+      "passage_id": "ziping:c021:p0003",
+      "sha256": "06c1a8bd897a5b5d4c7c0d8bdb4e2c95ecc7d2a3f9399ad1d3df2b6cae619ce5"
+    },
+    {
+      "section": "二十一、論星辰無關格局",
+      "text": "然星辰，命書亦有談及，而不善看命書者執之也。如「貴人頭上帶財官，門充駟馬」，蓋財官如人美貌，貴人如人衣服。貌之美者，衣服美者愈顯。其實財官成格，即非貴人頭上，怕不門充駟馬！又如論女命云「無煞帶二德，受二國之封」，蓋言婦命無凶煞，格局清貴，又帶「二德」，必受榮封。若專主「二德」，則何不竟云帶「二德」受二國之封，而必先曰無煞乎？若云命逢險格，柱有「二德」，逢凶有救，可免于危，則亦有之，然終無關於格局之貴賤也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c021:p0004",
+      "sha256": "314c7fe7985c9a756416f1b104c1cb4f517892b4ad454763d476281882df0c87"
+    }
+  ]
+}

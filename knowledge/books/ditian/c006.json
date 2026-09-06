@@ -1,0 +1,74 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c006",
+  "title": "格局論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F06&oldid=844363",
+  "revision": "844363",
+  "source_timestamp": "2017-03-23T15:45:26Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c006.wiki",
+  "raw_sha256": "5dcc5b7bbad0248dacfa75fe3e9338bf55f20d8935def0717064943c91378a9f",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "格局論",
+      "text": "財官印綬分偏正，兼論食傷格局定。",
+      "layer": "base_text",
+      "passage_id": "ditian:c006:p0001",
+      "sha256": "10b1d961baafd8fdbbfeaaca3015d1adf0ec65a27c150992f1f11c69c96fef8b"
+    },
+    {
+      "section": "格局論",
+      "text": "自形象方局之外而格為最，格之真者，月支之神，透於天干也，(格局看月支要緊)以散亂之天干，而尋其得所附於提綱者，非格也，自偏正官財食傷印八格之外，若曲直等格皆為格，而以刑衝破害論者，亦不可言格也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c006:p0002",
+      "sha256": "8ee443016b4e79f14b7d91c443734ea08087760b9304117bc25d09218a734a72"
+    },
+    {
+      "section": "格局論",
+      "text": "影響遙繫既為虛，雜氣財官不可拘。",
+      "layer": "base_text",
+      "passage_id": "ditian:c006:p0003",
+      "sha256": "550741c1a39d8fa1b49b78afe181365072ed4919c26a153211f158243b8421b3"
+    },
+    {
+      "section": "格局論",
+      "text": "飛天合祿之類，固為影響遙繫，而非格矣，如四季月生人，只當取土為格，不可言雜氣財官，戊己日生於四季，當看人元透出天干者取格，不可概以雜氣論之，至於建祿陽刃，亦當看月令透於天干者取格，若不合形象方局，又無格可言，只取用神，用神又無取，只得輕輕泛泛，看其大勢，以皮面上斷窮通，不可執其格也。\n（用神無取，便非好命，然亦有窮通。）",
+      "layer": "commentary",
+      "passage_id": "ditian:c006:p0004",
+      "sha256": "7cdfcd87cd4eb90ac7eea7de900a5a19632adebd8c2ae06a094db73bf60fc33b"
+    },
+    {
+      "section": "格局論",
+      "text": "官煞相混來問我，有可有不可。",
+      "layer": "base_text",
+      "passage_id": "ditian:c006:p0005",
+      "sha256": "4fffd1b1f5b71eb519999a6174e3826a2c43fd59cb18c2dc88de0e1805ed65a7"
+    },
+    {
+      "section": "格局論",
+      "text": "煞，即官也。同流同止，可混也。官非煞也，各立門庭，不可混也，煞重矣，官從之，非混也。\n官輕矣，煞助之，即混也。劫財與比肩雙至者，煞可使官混也，一煞而遇食傷者，官助之，非混煞也，勢在於官，官有根，殺之情依乎官，依官之煞，歲助之而混官可不也，勢在於煞，煞有根，官之情依乎煞，依煞之官，歲忌之而混煞不可也，歲官露煞，干神助官，合官留煞，皆成煞氣，不可使官混也，歲煞露官，干神助官，合煞留官，皆成官象，不可使煞混也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c006:p0006",
+      "sha256": "99f9412a11e2167ae95eeacd2d25683973054df38897001ed7bdfde20b6bac4f"
+    },
+    {
+      "section": "格局論",
+      "text": "傷官見官果難辨，可見不可見。",
+      "layer": "base_text",
+      "passage_id": "ditian:c006:p0007",
+      "sha256": "700f3765824896780b779e6900412c14bf1c885b04e40bf968f61547bf0a17ed"
+    },
+    {
+      "section": "格局論",
+      "text": "身弱而傷官旺者，見印而可見官，官以生印，印以扶身也，身旺而傷官旺者，見財而可見官，以財生官，且以財洩傷也，傷官旺，財神輕，有比劫而可見官，（官以制劫）日主旺，傷官輕，無印綬而可見官，（傷輕不能害官，無印則官不能印克傷。）傷官旺而無財，一遇官而有禍，（官必遇害）。\n傷官旺而身弱，一見官而有禍，（官能剋身）。傷官弱而見印，一見官而有禍，（助印剋傷）。大抵傷官有財，皆可見官，傷官無財，皆不可見官，又要看身強身弱，不必分金木水火土也，又日傷官用印，無財不宜見財，（身弱用印，見財破印）。傷用財，無印不宜見印，（身旺用財，見印則剋傷，戰財）。須詳辨之。",
+      "layer": "commentary",
+      "passage_id": "ditian:c006:p0008",
+      "sha256": "79dbc084e64f701b143781a664f5a5ffe6e442e0aa8cfb114cf0b12013d7422c"
+    }
+  ]
+}

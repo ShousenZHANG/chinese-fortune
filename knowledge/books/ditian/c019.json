@@ -1,0 +1,60 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c019",
+  "title": "源流論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F19&oldid=844368",
+  "revision": "844368",
+  "source_timestamp": "2017-03-23T15:46:07Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c019.wiki",
+  "raw_sha256": "032a772c550dedb35aa130b835bb12d09dd3f3e89652aea382d7b00587ccf28d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "源流論",
+      "text": "何處起根源，流向可方住，機括此中求，知來亦知去。",
+      "layer": "base_text",
+      "passage_id": "ditian:c019:p0001",
+      "sha256": "228b81eaf7a74dbdab632fa8a135473e2a4763f186aa0022343fbd79f832b319"
+    },
+    {
+      "section": "源流論",
+      "text": "不必論當令不當令，以取最多旺，可為全局祖者宗為源頭，看此源頭，流到何方，流去之處，若是所喜之神，即在此住了為妙，如：",
+      "layer": "commentary",
+      "passage_id": "ditian:c019:p0002",
+      "sha256": "c71153206a30010ca9772e81ff2d1718ffdb110d6397b0e04887ac62de484891"
+    },
+    {
+      "section": "源流論",
+      "text": "{| class=\"wikitable\"\n|-\n! 時 !! 日 !! 月 !! 年\n|-\n| 丁巳 || 戊申 || 癸巳 || 辛酉\n|}",
+      "layer": "base_text",
+      "passage_id": "ditian:c019:p0003",
+      "sha256": "05eedb81deae65d4245c99aabe8c723c63058ba7ef5dc7a3d3e78d034a520268"
+    },
+    {
+      "section": "源流論",
+      "text": "以火為源頭，至金水方即住，所以富貴，若再流至木地，則氣洩為亂，如未曾流至去方，中間遇阻，看其阻在何地，阻住何神，可以知其吉凶，如：",
+      "layer": "commentary",
+      "passage_id": "ditian:c019:p0004",
+      "sha256": "6740773ca781e6261fbb9e96fe73fec62e229f83f7f64ce189efed9a7f10686b"
+    },
+    {
+      "section": "源流論",
+      "text": "{| class=\"wikitable\"\n|-\n! 時 !! 日 !! 月 !! 年\n|-\n| 壬子 || 癸丑 || 壬戌 || 癸丑\n|}",
+      "layer": "base_text",
+      "passage_id": "ditian:c019:p0005",
+      "sha256": "0ff05279ea6a5cbaa75bf64685bd8da61fb44fba4df03d29da9f36b3928caeae"
+    },
+    {
+      "section": "源流論",
+      "text": "以土為源頭，流至水方，只生得一個身子，而戌中火土之氣，無從引助，所以為僧也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c019:p0006",
+      "sha256": "74e154faf4d18d621a80d7663f343e3f396ad0ae230e0f0a400c4bdde229f87b"
+    }
+  ]
+}

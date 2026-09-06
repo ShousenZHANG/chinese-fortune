@@ -11,6 +11,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from classical_search import get_passage
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
 EVIDENCE_PATH = Path(__file__).resolve().parents[1] / 'assets' / 'classical_evidence.json'
@@ -101,6 +102,10 @@ def review_claims(chart: dict, packet: dict, evidence: dict | None = None) -> li
     """Return structural violations; a clean result still requires semantic review."""
     if not isinstance(chart, dict) or not isinstance(packet, dict):
         return ['chart and packet must be objects']
+    if chart.get('tool') == 'bazi_reading':
+        if not chart.get('ok') or not isinstance(chart.get('chart_facts'), dict):
+            return ['successful reading with chart_facts required']
+        chart = chart['chart_facts']
     registry = evidence or load_evidence()
     sources = {s['id']: s for s in registry['sources']}
     rules = {r['id']: r for r in registry['rules']}
@@ -143,6 +148,15 @@ def review_claims(chart: dict, packet: dict, evidence: dict | None = None) -> li
             source_ids = []
         if any(s not in sources for s in source_ids):
             errors.append(prefix + ': unknown source')
+        for sid in source_ids:
+            source = sources.get(sid, {})
+            if source.get('passage_id'):
+                try:
+                    paragraph = get_passage(source['passage_id'])
+                    if source.get('quote') and source['quote'] not in paragraph['text']:
+                        errors.append(prefix + ': registered quote absent from frozen source')
+                except (OSError, ValueError, KeyError, TypeError):
+                    errors.append(prefix + ': frozen source unavailable')
         rule = rules.get(claim.get('rule_id')) if isinstance(claim.get('rule_id'), str) else None
         if claim.get('kind') == 'traditional_interpretation':
             if not rule or not set(rule['source_ids']) <= set(source_ids):
@@ -175,6 +189,19 @@ def review_claims(chart: dict, packet: dict, evidence: dict | None = None) -> li
                     or quote.get('source_id') not in source_ids
                     or source.get('verification') not in ('transcription_checked', 'facsimile_checked')):
                 errors.append(prefix + ': unverified quotation')
+        passage_quotes = claim.get('passage_quotes', [])
+        if not isinstance(passage_quotes, list):
+            errors.append(prefix + ': invalid passage quotations')
+            passage_quotes = []
+        for quote in passage_quotes:
+            try:
+                paragraph = get_passage(quote['passage_id'])
+                text = quote['text']
+                if (not isinstance(text, str) or not text.strip() or text not in paragraph['text']
+                        or quote.get('layer') != paragraph['layer']):
+                    errors.append(prefix + ': quotation or text layer differs from frozen source')
+            except (OSError, ValueError, KeyError, TypeError):
+                errors.append(prefix + ': invalid passage quotation')
         if 'probability' in claim or 'confidence_percent' in claim:
             errors.append(prefix + ': uncalibrated probability')
     return errors
@@ -204,6 +231,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--markdown', action='store_true', help='render a readable evidence summary')
     args = parser.parse_args(argv)
     try:
+        if args.stdin and hasattr(sys.stdin, 'reconfigure'):
+            sys.stdin.reconfigure(encoding='utf-8', errors='strict')
         bundle = json.load(sys.stdin) if args.stdin else {}
         chart = bundle['chart'] if args.stdin else json.loads(Path(args.chart).read_text(encoding='utf-8'))
         if args.stdin and 'packet' in bundle:
@@ -211,9 +240,10 @@ def main(argv: list[str] | None = None) -> int:
         elif args.packet:
             packet = json.loads(Path(args.packet).read_text(encoding='utf-8'))
         else:
-            if chart.get('tool') != 'bazi' or not chart.get('ok'):
+            if chart.get('tool') not in ('bazi', 'bazi_reading') or not chart.get('ok'):
                 raise ValueError('automatic packet requires a successful bazi chart')
-            packet = bazi_reading_packet(chart)
+            packet = (chart['reading_support'] if chart['tool'] == 'bazi_reading'
+                      else bazi_reading_packet(chart))
         errors = review_claims(chart, packet)
         if args.markdown and not errors:
             ensure_utf8_stdio()

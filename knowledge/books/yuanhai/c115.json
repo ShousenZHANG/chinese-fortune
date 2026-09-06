@@ -1,0 +1,91 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c115",
+  "title": "内十八格-拱贵格",
+  "source_url": "https://luckclub.cn/bazi/001/115/",
+  "revision": "sha256:b292242fa758848cfdf13ceabcb081a5adc75bc30efa22cde17afb3dbbf1d5c4",
+  "source_timestamp": "2026-09-06T04:10:47.773260+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c115.html",
+  "raw_sha256": "b292242fa758848cfdf13ceabcb081a5adc75bc30efa22cde17afb3dbbf1d5c4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-拱贵格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "内十八格 - 拱贵格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0002",
+      "sha256": "6a86bc78ea88b740016e6aefda7a00d2cdc29b4d1980d4e2ae5e7ef638ca9407"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "以日干甲寅取贵人，甲戌庚牛羊是也。此格既为拱贵，看不见刑冲、填实字，运行会合，有印才为福。此格有六日，甲寅日见甲子时，壬辰日见壬寅时，甲申日见甲戌时，戊申日见戊午时，乙未日见乙酉时，辛丑日见辛卯时。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0003",
+      "sha256": "5c856f8a38404b881cf0ab1efa2a07183316aff1d238887376ff870f7cd87ea1"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "熊郎中，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0004",
+      "sha256": "d64e2f7c6ce5a4a4b7b15b911f003d0fd8c22a9f9106090f92ae0572a3b4c621"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "丁巳 丙午 甲寅 甲子",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0005",
+      "sha256": "bfef21c2c7f9b4ae304be6bfb6691aec77030f89dbfcf27d0d8e345b660335a5"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "范都事，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0006",
+      "sha256": "ea8a491db5287d2d1d8e943f55d7f560815ba4594a4dc732e5e5d275c265642c"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "庚丑 己丑 甲寅 甲子",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0007",
+      "sha256": "5f1176fdc4ed0314e529c499437981be941e3d93bd8661de446e224ae3db57fa"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "详云：贵人大忌填实贵位，怕刑冲了日时拱位，又怕四柱有官冲身及七杀之类，皆拱不住，则减分数，岁君大运亦然。如范都事，命不合年月丑字填实，只为白衣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c115:p0008",
+      "sha256": "9c109e2c5138ab74e639794215a5981bb23f833a1f68c49200df85808e4e999a"
+    },
+    {
+      "section": "内十八格-拱贵格",
+      "text": "眉批：甲寅甲子拱辛官，此格将为拱贵看，不见刑冲填丑字，进行会合拜玄变。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c115:p0009",
+      "sha256": "0e1693149224a94cec58516d8a9a67fd2e5fcdf73cb21064086cb3f0187f7bf1"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c252",
+  "title": "炎上格诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/252/",
+  "revision": "sha256:72ab241868eed5ffe43ee2a2686b3934ed90e670e1ac4ded85e88ac8d04067bd",
+  "source_timestamp": "2026-09-06T04:11:15.419670+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c252.html",
+  "raw_sha256": "72ab241868eed5ffe43ee2a2686b3934ed90e670e1ac4ded85e88ac8d04067bd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "炎上格诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c252:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "炎上格诗诀",
+      "text": "炎上格诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c252:p0002",
+      "sha256": "910b4bebd8b5a6acf8e781652c00bfef2fa2d2e452ec84ef7d39c062c1a8d808"
+    },
+    {
+      "section": "炎上格诗诀",
+      "text": "夏火炎天焰焰高，局中无水是英豪，运行本地方成器，一举峥嵘夺锦饱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c252:p0003",
+      "sha256": "e2d064c0eb09c77f88aaa38b9c70281a1e5a7517371e849df30f1d48887dab92"
+    },
+    {
+      "section": "炎上格诗诀",
+      "text": "火多炎上去冲天，玄武无侵富贵全，一路东方行好运，簪缨头顶带腰悬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c252:p0004",
+      "sha256": "a12c2dce1612f57594c55fb91831ee05d34f358a6d80c0bf614186b9a465d533"
+    },
+    {
+      "section": "炎上格诗诀",
+      "text": "眉批：丙丁火全巳午未一类，如张太保，",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 18,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c252:p0005",
+      "sha256": "dfb292c41f7ca9ffd18045f43dd9fde81935f0e4d12b8de2d3275a955a13f179"
+    },
+    {
+      "section": "炎上格诗诀",
+      "text": "乙未 辛巳 丙午 甲午，极贵之命，忌金水，喜东南要身旺怕冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c252:p0006",
+      "sha256": "67f5ad7f2d8cfe970ca21b068fccc4c127b63fd9d7ffb7bed2b537db64c7450d"
+    }
+  ]
+}

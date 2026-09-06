@@ -1,0 +1,84 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c035",
+  "title": "论驿马",
+  "source_url": "https://luckclub.cn/bazi/001/035/",
+  "revision": "sha256:9e29e26b480675d24a11a04b11536a0cc4e9bd6f245bc99e7a36cac880b44780",
+  "source_timestamp": "2026-09-06T04:10:31.543967+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c035.html",
+  "raw_sha256": "9e29e26b480675d24a11a04b11536a0cc4e9bd6f245bc99e7a36cac880b44780",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论驿马",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论驿马",
+      "text": "论驿马",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0002",
+      "sha256": "1ec5fdcb9f9fd57857ffc35062ab0afacf0d529f9e72e6c5eeda8b8a344797d5"
+    },
+    {
+      "section": "论驿马",
+      "text": "申子辰马在寅，寅午戌马在申，巳酉丑马在亥，亥卯未马在巳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0003",
+      "sha256": "d93b46d0691f89c5b6e40c95a1fa1692368063f27333d3003cf11ea31ecb42ce"
+    },
+    {
+      "section": "论驿马",
+      "text": "其法以水生申，病寅木。水生木，木为水子，此乃病处见子来相接。如人病不能进，待子来接之，如驿马来接。余依此推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0004",
+      "sha256": "fbef03efb242027c667dbadd34d23eecf442c4f3941498b8da3ced66d5114e88"
+    },
+    {
+      "section": "论驿马",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c035:p0005",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "论驿马",
+      "text": "有马必要鞍，必要闸方好。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0006",
+      "sha256": "916b000b4bc68de0e17b92371a1c5e154042342474bd0d1616d4a35886b60e14"
+    },
+    {
+      "section": "论驿马",
+      "text": "无鞍不能乘，无栏不能止，皆无用也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0007",
+      "sha256": "e66ca48c6bd62e8d5b885f2f4486440c691e17821381d654c8484cd0d5962801"
+    },
+    {
+      "section": "论驿马",
+      "text": "马前为栏，马後为鞍。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c035:p0008",
+      "sha256": "49d737f58b2e53d063365e92453c90948a343d8bbd251093e20c63a314dba60d"
+    }
+  ]
+}

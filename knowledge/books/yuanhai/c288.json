@@ -1,0 +1,746 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c288",
+  "title": "气象篇",
+  "source_url": "https://luckclub.cn/bazi/001/288/",
+  "revision": "sha256:44879c097c20a0b4180da24f9c728ce0ac23ac6cddef4ba900a7f83db7754252",
+  "source_timestamp": "2026-09-06T04:11:25.240757+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c288.html",
+  "raw_sha256": "44879c097c20a0b4180da24f9c728ce0ac23ac6cddef4ba900a7f83db7754252",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "气象篇",
+      "text": "渊海子平卷六",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0001",
+      "sha256": "222a11cf776cbb806f37292c1b03f7e25c110d85b0768baf1ed10f8923622000"
+    },
+    {
+      "section": "气象篇",
+      "text": "气象篇",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0002",
+      "sha256": "d06c7b016258c1073a3e3f62ddb45c67539fc5623446fa2280cba46b66daeaa9"
+    },
+    {
+      "section": "气象篇",
+      "text": "今夫立四柱而取五行，定一运而关十载。清浊纯驳，万有不齐。好恶是非，理难执一。故古之论命，研究精微，则由体而该用。分之论命，拘泥格局。遂执假而失真。是必先观气象规模，乃富贵贫贱之纲领。次论用神出处，尽死生穷达之精微。不须八字繁华，只要五行和气。浪指三元六甲，谁知万绪千端。学者务要鈎元索隐，发表归根，向实寻虚，从无取有。虽曰命之理微，於此思过半矣。然大海从于勺水，少明産於老阳，成乃败之机，变乃化之渐，此又所当深察。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0003",
+      "sha256": "7d4c7f3e2d92d0a98ac4c23a580199f66d159fff7f93f07433c9d0620b512be0"
+    },
+    {
+      "section": "气象篇",
+      "text": "乃若一阳解冻，三伏生寒，阳刚不中，亢则害也，刚而能柔，吉之道也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0004",
+      "sha256": "7aa1e5399e4a2cb1b566b696221b76360b64eb4a60adc658f04ecd562db19d18"
+    },
+    {
+      "section": "气象篇",
+      "text": "此象亢阳无制，更不包藏阴物，而运又行东南。则阳刚失中，必主於害，用此者孤贫凶暴，死於水火之间。乃若五阳生於阴月，干支夹合阴柔之物，运道又行阴柔之乡，乃谓吉也，用此者虽出寒贱，终必荣华。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0005",
+      "sha256": "89687266f9d37ac00ac80a45a325bcafc7152e6db84678e3f57de71fd139e84b"
+    },
+    {
+      "section": "气象篇",
+      "text": "柔弱偏枯，小人之象。刚健中正，君子之风。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0006",
+      "sha256": "732b6158e7709297437974311256acae74870afad6bd034efe5e8d7edd05ba6e"
+    },
+    {
+      "section": "气象篇",
+      "text": "此象不中之道也。四柱中但见阴柔而不入格，干支又不包阳，则终日柔懦，用此者机心阴毒，无所不至。乃若刚健，君子之体也，中正君子之德也，四柱中阳而藏阴，刚柔得制，不犯破克刑冲，用此者德行过人，中直盖世，故曰君子之风也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0007",
+      "sha256": "7a33783f5900368380b87511c16a0c7443edf04b3b19ea7b2006d3b32fba9557"
+    },
+    {
+      "section": "气象篇",
+      "text": "过於寒薄，和暖处终难奋发。过於燥烈，水激处反有凶灾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0008",
+      "sha256": "440da3aeba786eb1c86d1bc06fcefca7c9f174803e136b344e93b36612749a86"
+    },
+    {
+      "section": "气象篇",
+      "text": "四柱纯阴，生於十月，空绝五行之根，日干又见衰弱，而无强健之气，纵遇和暖之乡，终难发达。四柱纯火，生於夏至之前，火性燥烈，岁运中乍遇水激，不惟不能制，而反致害矣，用此者夭折孤贫，多犯刑宪。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0009",
+      "sha256": "47b8b83e88d5136a9f151b030adc44840881c563bef41229194a355053e22a7f"
+    },
+    {
+      "section": "气象篇",
+      "text": "过於执实，事难显豁。过於清冷，思有凄凉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0010",
+      "sha256": "55303bc82afb7dfdb7eca197274572f5fb670e968b16eaf72746ead39006ecdb"
+    },
+    {
+      "section": "气象篇",
+      "text": "执实者，用一而不通也。假如用官无财，用印无煞、多合少成者，遇事终无豁达。若金水过於清寒，不遇和暖之运，如庚辛生於十月，柱中纯水，运又行西北，平生独食孤眠，生涯寂寞，人不堪其忧矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0011",
+      "sha256": "ae6fa7de9bf6d8e837714bc18292cf87f01a07a12071325470d209d757f2c1ab"
+    },
+    {
+      "section": "气象篇",
+      "text": "过於有情，志无远达。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0012",
+      "sha256": "db701d77ba33ad4bdd0a2d06c7cd9335f0465c667d60f61326bf2715ba59c662"
+    },
+    {
+      "section": "气象篇",
+      "text": "局中之物不可过於有情，若过於有情则牵迷不能自脱，外无所见矣。如甲木以己土为妻，情固宜有，若甲己支下又乘子丑，内外加合，而外无财官印绶动甲之心，则甲常处於己土之下，其志安能远达哉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0013",
+      "sha256": "23b85364494843985ea3cc1db7b1698f0e16e188cfdd5b5923bfd987accd4fe3"
+    },
+    {
+      "section": "气象篇",
+      "text": "过於用力，成亦多难。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0014",
+      "sha256": "3dbfc1717fab20883babadbb0a6e0ec8a8f7d855155035954aea73d04868a597"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡柱中得自然之物为妙，若用力扶持，终不为美。且如用财，局中不见，必求伤官、食神所生，如食伤失时无气，又求比肩转助或外冲遥合，皆谓过於用力，其成就必艰难矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0015",
+      "sha256": "361337e18267cf8da90349dfbe04ed4e7cacf62e66be89fb93610586db0e9535"
+    },
+    {
+      "section": "气象篇",
+      "text": "过於贵人，逢灾自愈。过於恶煞，遇福难享。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0016",
+      "sha256": "fa0002f503109f8aeea519c678d68f42d421e31d186912cfe3aa34d93533b84d"
+    },
+    {
+      "section": "气象篇",
+      "text": "八字中原多贵人，二德，扶用财官，不有刑破，虽居颠沛之中，亦无危矣。原多恶煞，三刑、六冲，又与财官反背，纵遇财官之地，将何以为享福之基。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0017",
+      "sha256": "35370b036ebeede010f5e15c16a6c0e9dc03c542ab6fbbb5b80665ffb734524a"
+    },
+    {
+      "section": "气象篇",
+      "text": "五行绝处，禄马扶身，四柱奇中，比肩分福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0018",
+      "sha256": "98fe24cdeb3d1691f44dfdab623bec256262cb092ff605ebb30f0214d1ba108b"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡遇绝处，不可便指为凶，盖凶处亦有吉神相扶。假如木绝于申，申有壬水为印，庚戊为财官，皆我所用之物，必能扶身进福，只愁有神克害所用之宫，则所用绝矣，如此乃凶。若以官为贵，以财为奇，局中得遇财官，乃为吉美。如见比肩则无惮，争官劫财则无全美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0019",
+      "sha256": "60cf7db0367edc73924fcbf599c115b8c8422feaa43ef2902d97b340c73213f4"
+    },
+    {
+      "section": "气象篇",
+      "text": "阴阳固有刚柔，干支岂无颠倒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0020",
+      "sha256": "943eaae7c3fb77a3623a1e9009dbe695ad0117b8b0b3bb468ac50b3206b95552"
+    },
+    {
+      "section": "气象篇",
+      "text": "阳刚阴柔，无地之道也。颠之倒之，反覆之谓也。所以啓下文之端。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0021",
+      "sha256": "12c9349a5bdda49a64ad287c26b288a4a0f9596bdde7e16ca756bd436e56f1b1"
+    },
+    {
+      "section": "气象篇",
+      "text": "虽聘妻不识其夫",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0022",
+      "sha256": "36047e8662ffe1951f11e2788f6cbade0d8c3822d3f60822685cc366ed82c81d"
+    },
+    {
+      "section": "气象篇",
+      "text": "夫妇既入其宫，岂有不识，但情隔而不通，则不见其夫矣。如乙木用庚金为夫，中间丙火隔断，庚被火伤或坐子午败死之地，使其妻终不见其夫也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0023",
+      "sha256": "3d0710cad0376d63a40fff2cbbde3e7b1a3b2592be274cfe64f06f61251eeda9"
+    },
+    {
+      "section": "气象篇",
+      "text": "本有子不顾其母。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0024",
+      "sha256": "7e5d8b4e8a7120d89e407f188e82d9aeda4852a8b6e68e26cbf4bb241ed4a143"
+    },
+    {
+      "section": "气象篇",
+      "text": "子之顾母，理也情也，身有所羁则不得终养。如甲用丙为子，却被辛金合之，但恋妻之情，而易母之爱矣，故局中虽有丙火，不可用也。凡命中议论，至此庶几无误。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0025",
+      "sha256": "4de92cd4810804d46d20ebb6ef073721030d4add7be72c185d90c3ec3c1ea6e5"
+    },
+    {
+      "section": "气象篇",
+      "text": "父无子而不独，子有父而反孤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0026",
+      "sha256": "8f86fd3041290b548ef259af63aa2165db3ec812ae64e13df2cfe991d8f674c1"
+    },
+    {
+      "section": "气象篇",
+      "text": "木以火为子息，四柱中如无丙丁巳午之位则无子矣，若地支暗蓄有火或天干制化得用，亦不为无子。木以水为父母，若被损克则不得其所生，如甲乙日生於亥子之年月，值四季水被土伤，所生之人失矣，岂不孤哉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0027",
+      "sha256": "fcd98366564020f28094d99134cc77b79cfa69599bb5340e574005dc39dc113f"
+    },
+    {
+      "section": "气象篇",
+      "text": "生尚可以再生，死不可以算死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0028",
+      "sha256": "084a061b830761649d046bd867381285c0cac06d9dcff20a60a9efc9533dded7"
+    },
+    {
+      "section": "气象篇",
+      "text": "局中之物原有长生，先被克损，岁运复遇生旺之地，身力复强，如再生也。死者，终也，凡四柱之物原值死绝之宫，後来岁这再遇此地，不为更凶之论，盖死无二也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0029",
+      "sha256": "6b51491965b2969f7d20ba9ced62ce5d81eba1a834499e20224c5d006f8adc0e"
+    },
+    {
+      "section": "气象篇",
+      "text": "既死亦非为鬼，逢生又不成人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0030",
+      "sha256": "5458b0564ea44d6c80d41e35e126239e4a11cba109f0032c13c9d215bc1df802"
+    },
+    {
+      "section": "气象篇",
+      "text": "木值春生，得时乃旺，柱中虽遇死绝之首，若运行生旺之乡，亦不为之死也。木值秋生，失时乃弱，柱中虽遇生旺之宫，老运行衰绝之地，终不为生也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0031",
+      "sha256": "92db621ff7e307e1906c7b4156de31c96d947aca9872e9c76e913b8d74bc21e7"
+    },
+    {
+      "section": "气象篇",
+      "text": "子多母病，如佃甫田。母多子病，如临深渊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0032",
+      "sha256": "7cadf1b8471a9a7c233bb7d799c05cc3aabc07d2a3dc630296cff552a4337d66"
+    },
+    {
+      "section": "气象篇",
+      "text": "子者母之所生，多则泄母之气，正谓子能令母虚也。若母再加衰病，则精力不及，决不能以抚其子，其佃甫田之谓欤。母无二尊，其恩乃全，若母氏衆多，阴聚妒生，邪谋兴矣，即五星二母争权，姑息太过，母失所爱，子何所依，如更临病死之宫，申生之变必起於朝夕也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0033",
+      "sha256": "3ab3dd1cd0bab2d36fba5ea8cb0401d9f3392a9c27c235a6c0f0ca88a518db2f"
+    },
+    {
+      "section": "气象篇",
+      "text": "不正不冲，不偏不合，不横不刑，不直不破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0034",
+      "sha256": "70c3933095931356c680ead81d1b3c62794ee98762699169133333e7e3285ae4"
+    },
+    {
+      "section": "气象篇",
+      "text": "其为冲也，啓六极之歧门。其为合也，辟万物之形迹。其为刑也，变而改正。其为破也，敌而有伤。是以棘地生金，不若蓝田种玉。以上四端，乃战克击剥之象也，内有刑虚鈎远之用。若倒乱中而取用神为贵为福者，不若用财生官、用印得煞自然之妙，此子平所以专论财印食也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0035",
+      "sha256": "f773d0895747f254d802720aa425d92f29c5f62d1961ff653f4c53c46cba33ff"
+    },
+    {
+      "section": "气象篇",
+      "text": "吉神相我，功求相吉之神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0036",
+      "sha256": "15c664aadf2d0d71616aea6a505acaa3497b04011cf13ac4d0064d7a05455f63"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡人命衰弱或刑伤破害，不能成用者，必欲吉神扶佐，成我之福，又观相我之神势力轻重何如，若无根失令或自受伤，先用求助相吉之神何如。假如甲日夏生，遭火焚化，得壬癸亥子相我为救，但水先受火土耗克，不能为我之福，必欲求金转生水旺，使水有顾我之情，如此之功，不在水而在金矣。又如午被子冲，赖未合我而与子穿，则为相我之神，如未受伤不能为用，必求生助未土之神有力，而未土方得成用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0037",
+      "sha256": "dae4a4ac16d9c9d8bc5dd92e285bce4388bcd5835ab16608e8d7c2fc3769468e"
+    },
+    {
+      "section": "气象篇",
+      "text": "凶物伤身，解用伤凶之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0038",
+      "sha256": "fc9df6734c5671c83bd4c52947ff44a664ebddff298ab4b5d17a9b426fd4b5a1"
+    },
+    {
+      "section": "气象篇",
+      "text": "人命中若遇凶神克我身宫，必求柱中何物能制伤我之神，则被自解不暇，焉能及我哉。如甲木原被金伤，祸所不免，得火克，危自远矣。又如卯被酉冲，柱中见午亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0039",
+      "sha256": "c91e48c04869bfa7e866c282e1e7cc2f3903f0bffa3eaa3610b4396e48fb11e5"
+    },
+    {
+      "section": "气象篇",
+      "text": "五行各得其所者，归聚成福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0040",
+      "sha256": "b3f0ea4e745917875ba8f4184869a45a940fda621ddbd528a0c46f8f767135e7"
+    },
+    {
+      "section": "气象篇",
+      "text": "见五行不可虚名失位，但要得令归垣，方能为贵，若归聚一局，妙不可言。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0041",
+      "sha256": "fd48c9348030d09020252569d84688ed8ecf278b654f4ae680f401bd5ac906e1"
+    },
+    {
+      "section": "气象篇",
+      "text": "一局皆失其垣者，流荡无依。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0042",
+      "sha256": "39aca5852a0b02e93e8a0551dd3956a9b44590ee9188535c1d86490608133224"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡日主用神俱要着落之处，如四柱中不得通根有靠，又遇空亡、死绝、沐浴、刑冲，则终无成立，必然流荡失所矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0043",
+      "sha256": "f2238f5d5facc22272b22fdf3638f202a8e729b4cdeaed3722f5598d9277b743"
+    },
+    {
+      "section": "气象篇",
+      "text": "大运折除成岁，小运逆顺由时。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0044",
+      "sha256": "ba502af7e1eec18f1de41ff71f071cdb9f388b91b11093f2093856ff9ac42085"
+    },
+    {
+      "section": "气象篇",
+      "text": "文库冲而文明盛，武库掩而干戈宁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0045",
+      "sha256": "2a6f4d8ea969ded2bdc098e7cc06841d7ec778461fa0f3270234f660655ccb3d"
+    },
+    {
+      "section": "气象篇",
+      "text": "戌为文库，盖火为文明。八字中原无财官、印绶、食神生气，则无文章学问之机，徒得火库，又被关锁，此无文之人也，若暗有伤官，或印绶隐而不明者，亦主聪明。柱中得辰未丑字冲刑戌库，更入东南运道，发火光明，文章必由此而盛，高擢翰苑者，予见多矣。丑为武库，盖金为干戈。八字中如带秋气，申酉庚辛为煞，偏官羊刃又见同宫，此无惧好战之人也，柱中如得子巳酉神合局，兼行东南，木火制其顽金，则掩其武而干戈甯矣，壮士於此弃甲投闲者，予尝见之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0046",
+      "sha256": "5ad1a307d71006fa9ccfc50c1ee0d28862f2463e4cad290c37dcdd544215d4c1"
+    },
+    {
+      "section": "气象篇",
+      "text": "飞龙离天，随云人渊。潜龙在渊，随云上天。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0047",
+      "sha256": "28d61224f7476b1b97aa570bdaf066baebddd5d3c975dfd753e27b39e441ab6d"
+    },
+    {
+      "section": "气象篇",
+      "text": "龙者，辰也。天者，亥也。云，壬也。龙得其云即飞，若年见亥，月建辰，岁月干头有壬，则龙在天矣。若日时水旺，与龙会局，龙必随云入渊，盖龙以水为家，故上离于天下潜于水。得斯象者，文章盖世，平生有塞有通，功名虽出於台阁，事业终归于林泉。柱中有巳午二字者，贫薄下流之命也。若年见亥时见辰，日月会水，则龙下潜於渊，若干支有刑冲克破，龙不能安，要日时上有壬字，龙必随云上天矣。此象如年无亥用巳，反冲亦吉，但出寒贱，祖父无依，後必有人，借力奋发，功名主近侍之贵，运行巳酉败绝之乡，丧家罢职，即壬骑龙背格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0048",
+      "sha256": "b4a3f28b5d8b64b2aa36ac1bf07e741492e72b5e9d8a0b0eae0321cd8e62362c"
+    },
+    {
+      "section": "气象篇",
+      "text": "大林龙出值天河，四库土全居九五。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0049",
+      "sha256": "4010ca37eb39d89dd35a235b8a1cbbc4dfb5420fd30de52b74b2bdf767654705"
+    },
+    {
+      "section": "气象篇",
+      "text": "大林龙者，即戊辰也，要四柱之中纳音得天河水，则龙飞在天。更全四库，则四海俱备，所以天下皆沾雨泽，必为九五之大人也。明太祖命戊辰、壬戍、丁丑、丁未，此亦有因而言。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0050",
+      "sha256": "caebf9a1691cdf1fc958fc9a167f89968a185f9a5e4971c06f8d67c3d882dc78"
+    },
+    {
+      "section": "气象篇",
+      "text": "长流龙复归大海，五湖水聚掌群黎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0051",
+      "sha256": "cc61ac47966d12ec8d3f4ec8c315122df9124f7f341f3237c40d3a5e20c9a1c8"
+    },
+    {
+      "section": "气象篇",
+      "text": "长流龙者，即壬辰也，龙值长流，地支得亥，名回龙归大海，又曰龙跃天门，妙在纳音得大海水。四柱俱带水者，则五湖之水既备且深，龙所益喜，要有庚辛以生之，则出入动摇山岳，非贵象乎。如王阳明",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0052",
+      "sha256": "5fad2c2554737a116511f8086e4298e1da31cc56a6764d8c89cb2ad307e4d5d1"
+    },
+    {
+      "section": "气象篇",
+      "text": "壬辰 辛亥 癸亥 癸亥，此亦因阳明命而立论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0053",
+      "sha256": "4ef654b822d95e1980ca699d51ee13902e7c0df4b85865996ff095d824413202"
+    },
+    {
+      "section": "气象篇",
+      "text": "六合有功，权尊六部。三刑得用，威震三边。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0054",
+      "sha256": "332975de4b9e6968cb12916c65efb36d11ea036e592aad7f0b272314e03181c3"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡四柱中有刑冲克害，破象本为凶论，得神挽合有力者，即反为祥，其福高远，年月成用大贵，日时成用者次之。刑本不吉，得用者富贵聪明，无用者孤贫凶夭，何以为得用，三刑有气，日主刚强，无用反是。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0055",
+      "sha256": "dc5f82b4470a2e9f57b195f5650ecb4697fdd41abbd7f3b45b2279446b4dbb46"
+    },
+    {
+      "section": "气象篇",
+      "text": "子午端门，双拱歧嶷凭外正。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0056",
+      "sha256": "4030e825dd3dc46ccf78c72f9ef14ee3c66b9e95f1c5419ac4e790c8fc0bce6a"
+    },
+    {
+      "section": "气象篇",
+      "text": "子午二位，正而不偏，故曰端门。若得夹拱无破损者，更有力量，人必聪明，奋立勳业，正拱者，亥丑拱子，巳未拱午。外拱者，申辰拱子，戌寅拱午。忌空亡克破为害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0057",
+      "sha256": "22976e2306421154e63334fe47b5d238fa958d9af51fe0862b69150dab604b0d"
+    },
+    {
+      "section": "气象篇",
+      "text": "巳寅生地，十分秀气合乾坤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0058",
+      "sha256": "f3a7a081846ff27a06aa4a0d6a60b4d5f348a9e81280b710224b17ec1d91531c"
+    },
+    {
+      "section": "气象篇",
+      "text": "巳寅生有力，能合亥申。亥乃乾也，申乃坤也。若无冲杂，申亥乃乘贵气，才调出群。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0059",
+      "sha256": "f6eeeead68b2165a4b61d6dad954640a3cbff71ec62772ec0cb5aef9c416b8e4"
+    },
+    {
+      "section": "气象篇",
+      "text": "天地包藏神得用，显豁胸襟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0060",
+      "sha256": "769cd636d3e3eacbc741fdcc2a8208ce7e6d7d9efceb812f02dee944d9a24757"
+    },
+    {
+      "section": "气象篇",
+      "text": "亥为天，申为地，明有力量，如八字中不见二字，得左右之神拱起二字，兼有贵气，不落空亡，须当显豁。或以申亥包酉戌，看系天干何物，以有用为贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0061",
+      "sha256": "d7bf11d0794d1f41eae40fb0ffeb2457699ec7120b84bb5dc7232e3fff01abdd"
+    },
+    {
+      "section": "气象篇",
+      "text": "风雷激烈贵无亏，飞扬姓字。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0062",
+      "sha256": "b80c3bc475f56cbfaa2dd540704a7604bceff0dd3c4272730e75f52fa7927555"
+    },
+    {
+      "section": "气象篇",
+      "text": "巳为风门，卯为雷门，八字中虚拱一位，更有贵人，岁运若逢冲起，必能发达。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0063",
+      "sha256": "2501d49b59bb2fe1cba450c8985309cf145929193692ca608812cfa8acd75cce"
+    },
+    {
+      "section": "气象篇",
+      "text": "贼地成家，贼乱家亡身必丧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0064",
+      "sha256": "08e0114da8e0bd6cc51f4415340fe2808d30e17c01ffccbab2dd32fc11d4fe0b"
+    },
+    {
+      "section": "气象篇",
+      "text": "此法月支五阴者是也，若岁日中有神争合为妻，月支陷溺其中，欲出而不可得，故曰贼地。更得岁月之神自刑，无暇合我，得时支乘机与月支为合，是谓贼地成家，富贵不浅，大运去贼则安，再见贼乱则凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0065",
+      "sha256": "47e5bee2254a251466335723d04ccabf8d058feb37476d7904c85880320762d9"
+    },
+    {
+      "section": "气象篇",
+      "text": "梁材就斫(音同浊)，木多金缺用难成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0066",
+      "sha256": "2010335046652bc4ba8b1005377e2dae2010b0a49b7ff3c7abc2a6f2830c4505"
+    },
+    {
+      "section": "气象篇",
+      "text": "夫木本赖金所以成器，若金被神留合，不能来克其木，却要木与金为邻，就彼雕琢可也。若木盛金弱，则虽就金亦不能斫而有用。假使用木与金作合，彼此两强，乃为贵论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0067",
+      "sha256": "0e85a6071164a73fca455999c202bf2e83c4b686ed1cf94a044c78a82489f80f"
+    },
+    {
+      "section": "气象篇",
+      "text": "纯阳地户包阴，兵权显赫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0068",
+      "sha256": "a7b0ff287aa93dcf8471f9f989e29c2aa3f1035f5ab3c068a165fd25583f7c42"
+    },
+    {
+      "section": "气象篇",
+      "text": "八字纯阳，本为偏党，殊不知子寅辰午申戌暗拱丑卯巳亥未酉之阴，二象相济交感，则反全天地之正气矣。更要四柱无空亡及天干有生意者，极妙。此象权施边塞，位至公侯，发福非小。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0069",
+      "sha256": "b7075b7b40abbbd57a32f9401b932894653d51acc214ea82a479ea80bca5ae01"
+    },
+    {
+      "section": "气象篇",
+      "text": "独虎天门带木，台阁清高。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0070",
+      "sha256": "3c23f3eada47d04ee1571a864aeebf6f29c6ccabff53c33a63b62b186b6df12e"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡岁月得寅一位，却要时见天门，虎必朝天啸日，柱中更有卯未合局，木盛生风，风从於虎，岂不伟哉。若使刑冲克破，不得印绶财官则无用矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0071",
+      "sha256": "779c8f895e3050b272e481c2141d6703d594f8b9f0247bd4ec8dc4f46beecc6a"
+    },
+    {
+      "section": "气象篇",
+      "text": "学堂逢驿马，山斗文章。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0072",
+      "sha256": "675cd492b8fe3d61c9e3b0e19d5874274b6374d99be40e5aad88340b89d7a44e"
+    },
+    {
+      "section": "气象篇",
+      "text": "身坐长生之位为学堂，更得驿马交驰，一冲一合，又得高大气象，带财煞贵人者，最贵，文章潇洒出尘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0073",
+      "sha256": "bf968522fb4284c4e3732ae902af5749984f0a59b6fcc6cd36fdb7e7411c75a7"
+    },
+    {
+      "section": "气象篇",
+      "text": "日主坐咸池，江湖花酒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0074",
+      "sha256": "2cf149ceea32977d49fc1e2fd5e175761159321c721d4ff738404a6b1b4dd597"
+    },
+    {
+      "section": "气象篇",
+      "text": "咸池又名桃花煞，男女逢之必然淫乱，多因花酒流落江湖，若见财官贵德同宫，反得标格清奇，富贵安享，大忌刑合，只喜空亡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0075",
+      "sha256": "d3de2a90b2dd07a886668fa927729468fd9a09ee67480a098d6a79cdaded392a"
+    },
+    {
+      "section": "气象篇",
+      "text": "福满须防有祸，凶多未必无祯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0076",
+      "sha256": "7306c31aa507a85b4f856c12b8535dcd01807f478ca317c2572789b417fe5150"
+    },
+    {
+      "section": "气象篇",
+      "text": "大抵用印生身，乃为我之福也，柱中原有官煞转生印旺，不遇财伤食神泄气为贵，运行比印旺地，生扶太过，福满处岂无祸生，是以君子怕处其盛也。局中原多官煞，再行官煞岁运，其凶乃甚，历尽艰险，後必有制伏身旺之运，否极泰来之象。如甲日原被官煞所困，运神再行申酉，乃凶甚也，顺去有亥子印运，逆行有巳午制运，乃有救之物，岂不为佳。此二句言阴阳消长、祸福倚伏，天道人事相为流通，宜细味之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0077",
+      "sha256": "d2b577bc3e9e1ff10216be91bcba99c86c9022a97b24162ed8d2beae6f3bb5fd"
+    },
+    {
+      "section": "气象篇",
+      "text": "马头带箭，生於秦而死于楚。马後加鞭，朝乎北而暮平南。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0078",
+      "sha256": "fcfc7d3a05d21d899bd9285831ed7792422ec9d76aaafeb51be21b8ebdb675f2"
+    },
+    {
+      "section": "气象篇",
+      "text": "此言驿马在日时之下者，必要带合，谓之联繮，聚大财福，干事过人。若马前见有刑冲，谓之带箭，断繮之象也。若来冲者属金，受克者属木，其祸尤甚，主人他乡丧亡。凡取用驿马，顺则年取其日时，逆则时用其日主。马无堤拦则纵肆而不可遏，如後再加刑冲，马必疾行，终无安顿之地，主人一生劳碌，奔竞四方。若刑冲之神遇有三合六合，则不为加鞭矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0079",
+      "sha256": "7035ef3f386f6788e783912174415e0e876ae7303f2eeb8e2508bc711b5ada1e"
+    },
+    {
+      "section": "气象篇",
+      "text": "性灵形寝，多因浊里流清。貌使心蒙，盖是清中涵浊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0080",
+      "sha256": "68f97e5d356662f16b15b8788dd251acf82374e161cc8cc164ffc5dd398d4494"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡取用神错乱刑冲，未可便言浊而无用，当审其中有暗藏之物，如浊中流出一点孤清，则人虽朴陋，多见性情颖悟，机谋异常。若用神清奇特立，不为混杂刑伤，未可便言清也，但中间有暗藏之物与所用之物有伤，其病终不可去，故人虽貌美，必然失学无成，昏迷酒色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0081",
+      "sha256": "f7096385281fd68d0251e9162ad406db77b688b5572d7d3114abcc286a5888be"
+    },
+    {
+      "section": "气象篇",
+      "text": "一将当关，群邪自服。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0082",
+      "sha256": "f57c9ba9601bf6eff22f99de357047ff8dffb47b20bc27813484dd4c5bb971a6"
+    },
+    {
+      "section": "气象篇",
+      "text": "将者，贵重之神也。关者，紧要之处也。邪者，妒我之物也。假如甲乙日生於金旺年月，皆来克我，得丙透出月上，制煞为权而煞自服矣。又如壬癸遇戊己及支土乱克，身不能敌，紧要处却要庚辛为印，化煞不敢为乱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0083",
+      "sha256": "3424978c0c211a8f5771f8f45f907f83d729288f09083f7435fcf5d3952df6ce"
+    },
+    {
+      "section": "气象篇",
+      "text": "衆凶克主，独力难胜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0084",
+      "sha256": "be9f5f7a0fcea3a89f494b1a0e7e56454a29c89cc5942938afa35e2901c25802"
+    },
+    {
+      "section": "气象篇",
+      "text": "此言煞重身轻，孤独无助者，盖无当关可救之神，则不能胜所克矣，决主夭疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0085",
+      "sha256": "de597a488e3dc6da7b5de5c4a1b2d09e699c1dbeb4d1aa1cb31424496b6d5273"
+    },
+    {
+      "section": "气象篇",
+      "text": "脱此辈忌见此辈，化斯神喜见斯神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0086",
+      "sha256": "1a28eadaba94664d1b0fe5dbeb4548ac8f14e70d3b7c33a6a53fe297325bdffb"
+    },
+    {
+      "section": "气象篇",
+      "text": "从化之妙，造不可穷，务要用心详察。假如甲己化土，脱木气而从妻家，若见甲乙寅卯未亥，皆我比肩，则有原旺之借，岂无恋哉，况比刃又能争合我财，使甲己不能相成，反有离间之恨也。又如乙庚化金，喜见金旺而妻得倚其夫。丁壬化木，喜见木旺而女得倚其母。丙辛化水，喜见水旺而母得倚其子。戊癸化火，喜见火旺而主得倚其财。大怕空亡见煞，比肩争妒，不成名卿巨公，则为孤儿异姓矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0087",
+      "sha256": "2d77f54dbc0890257ec0d533a1be187729e23ac3c4f106a306c4f0d650112465"
+    },
+    {
+      "section": "气象篇",
+      "text": "驿马无繮，南北东西之客。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0088",
+      "sha256": "de58b8e65872dd51b4feac7e92dd42f7ac822560d566c8913d29f551387887be"
+    },
+    {
+      "section": "气象篇",
+      "text": "无繮，马无合也，南北东西无所不至矣，人命遇此，必主飘零。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0089",
+      "sha256": "5e510b6ba709594b78ffea09e185e8fcac598dd8e90ed7ca363c3aacf79dda57"
+    },
+    {
+      "section": "气象篇",
+      "text": "桃花带煞，娼优隶卒之徒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0090",
+      "sha256": "5302a175f1b78503862d72c31fce388c30fd88b6ebc59cf068c4ef429cc2ddd0"
+    },
+    {
+      "section": "气象篇",
+      "text": "桃花日时上见是也，不惟忌刑合有情，尤忌五煞同处，凡遇此者，不受礼义廉耻之教也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0091",
+      "sha256": "599d198da78be0d1fb16ab34c4e72313b785c9b8ce0f3354095fcfbdcdd881fa"
+    },
+    {
+      "section": "气象篇",
+      "text": "母子有始终之靠，夫妻得生死相依。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0092",
+      "sha256": "e44341c51b5a0af0874d259b444e6db301f5e2d67b98ad9612e8bd8523d13fd9"
+    },
+    {
+      "section": "气象篇",
+      "text": "母子、夫妻者，专言体用两端，惟在月日为要。假如戊日坐辰，生於申月，然土以金为子，金养於辰，少倚母而自强，土生於申，老得子而有靠，此象甚奇，大忌岁运破而为患。假如丙日坐子月用酉金，然火以金为妻，辛金生於子，适夫家以养其身，火至酉亡，赖妻财以活其命，此象贵用财官，大怕刑冲散局。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0093",
+      "sha256": "8b5475ebf02f5376b17ec8dd1824548a0b7491ed7d23283de3a66148308f0e57"
+    },
+    {
+      "section": "气象篇",
+      "text": "双眼无瞳，火上熬乾癸水。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0094",
+      "sha256": "d14c4e21eacd0f139c29c06e1b3a6d7d075e275752c2edfb06ae5c43218db0cc"
+    },
+    {
+      "section": "气象篇",
+      "text": "癸水在人属肾，为一身之基，两目之本，目关五行，惟瞳属水，水涸肾虚则瞳无所倚，若在日干生於火上月分，日时坐上塞源，而柱中遇木火耗熬，不成从化者，多患目疾。若在岁月时中虽得秋气，不行西北大运，遇木火太炎之地，恐有丧明之苦，即水稍得通根，亦有下元之疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0095",
+      "sha256": "71c736dcb70a1c23bc0eaacd68a767eaa77047ee584a82a5e224d741a565e9f5"
+    },
+    {
+      "section": "气象篇",
+      "text": "大肠有病，丙丁克损庚金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0096",
+      "sha256": "eb6c7270d566ed58b29dcbb41ce810aff7a06cebe2b333877d418287f1366fa0"
+    },
+    {
+      "section": "气象篇",
+      "text": "庚属大肠，宜临水土。嫌者，丙丁寅卯得局无制，庚金虽得挂根，又被刑冲克破，兼入木火大运，水土衰处，便有此疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0097",
+      "sha256": "d2c1bd8e94ab505a8ee71c7fe8931aca88b61f88d40cb35eedd80557cf1ec9c7"
+    },
+    {
+      "section": "气象篇",
+      "text": "土行湿地而倾根，伯牛有恨。火值炎天而得局，顔子无忧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0098",
+      "sha256": "4c641abcb00fe782c05a73b55fdd4de93928535c025510f47cea42092564a402"
+    },
+    {
+      "section": "气象篇",
+      "text": "戊土属牌，四柱中不有生旺通根之位，生遇阴湿之时，又加水浸土虚，运行湿地，岁见土克则脾土受伤，因而有疾。火乃文明之象，生於九夏，三合寅午戌局，火愈发辉，少用木资其势，不宜见水拖根遏火之焰，人生得此，乐道无忧，火行极处多遇木生，反主夭贫，至不利也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0099",
+      "sha256": "ec2f3cfcb014aac5bd060657ed13783a51b230f3adf88a677ae80ca44507800d"
+    },
+    {
+      "section": "气象篇",
+      "text": "水泛木浮，死无棺椁(音同郭)。火炎主燥，生受孤单。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0100",
+      "sha256": "210f48d2d703c3a0fc97713c7ec62419395e296410b0265c3370bec00b50c467"
+    },
+    {
+      "section": "气象篇",
+      "text": "木从水泛，不遇运土堤拦，更值死绝之乡，逢冲并煞，是必堕崖落水，横害毒亡，多不为美。土因火燥，万物不生，初运南行，废而无用，後来虽遇财官，不能为用，以致孤贫奔走，无家之命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0101",
+      "sha256": "2f17a1ee952e8e747a911681d2f09d26540d36448e2bd6e468e5723c02c346df"
+    },
+    {
+      "section": "气象篇",
+      "text": "妻多力弱，花粉生涯。马弱比多，形骸飘泊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0102",
+      "sha256": "99926c709580a1d2503d85eb62ab3d24a304861355d34d5144b4d8e5d6dbbc1b"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡用财为妻，最要得时得位，日主更喜刚强，岁月有倚，阴阳各得其所，良配可知。若财多散乱，刑合不齐，日主孤弱，不能任用，必因妻获利以养其身也。此又反言财为养身之物，用不可无。凡遇财旺身强，平生安乐，若见财轻比多，不足其用，终必飘泊江湖，逐财劳苦，安享何能。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0103",
+      "sha256": "99d881df53263d7d1f4731fc5e4d3bc2f416b62b0c54f5dc8fcb2bff71cdc255"
+    },
+    {
+      "section": "气象篇",
+      "text": "凡遇凶神交会，善以少而难成。吉曜并临，恶更多而亦化。道从理悟，神入。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c288:p0104",
+      "sha256": "478d9728ced0d0caee0bf40724577d4934b74d80a5b2c9c4b5d485b6a414476e"
+    }
+  ]
+}

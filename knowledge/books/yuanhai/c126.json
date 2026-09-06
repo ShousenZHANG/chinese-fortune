@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c126",
+  "title": "外十八格-稼穑格",
+  "source_url": "https://luckclub.cn/bazi/001/126/",
+  "revision": "sha256:598ec666b47fc4a426724b60f0607c4bec2e63a58e40031f1b4c81dd61afe855",
+  "source_timestamp": "2026-09-06T04:10:50.012855+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c126.html",
+  "raw_sha256": "598ec666b47fc4a426724b60f0607c4bec2e63a58e40031f1b4c81dd61afe855",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-稼穑格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c126:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-稼穑格",
+      "text": "外十八格 - 稼穑格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c126:p0002",
+      "sha256": "eba2a777fc85bb4ebeea4374446d15dc6b056d76bc2de71edd26aa70e7c646e2"
+    },
+    {
+      "section": "外十八格-稼穑格",
+      "text": "以戊己日生，值辰戌丑未是也。忌东方运及北方财运。此命辰戌丑未俱全，得水为财，又无木克，是以为福。此格喜行西南，惟忌东北。所谓稼穑者，俱从于土，支干重见则为土之一类，深有培养之功。主人多信，人品重厚丰肥，生财有道，斯为富贵人矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c126:p0003",
+      "sha256": "d1e6c3b72266a4345217b475cf4db4b72abcab299b75005acab52bb648774c46"
+    },
+    {
+      "section": "外十八格-稼穑格",
+      "text": "张真人，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c126:p0004",
+      "sha256": "0ba3eefb2e4916c233ad6607862d24389099d9c6af97e120cf16a0b368b828fc"
+    },
+    {
+      "section": "外十八格-稼穑格",
+      "text": "戊戌 己未 戊辰 癸丑",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c126:p0005",
+      "sha256": "fb46681bdc493f98539f8c61983cda96b548e26b41720920348c554c8cfc43da"
+    },
+    {
+      "section": "外十八格-稼穑格",
+      "text": "眉批：戊己生居四季中，辰戌丑未要全逢，喜逢财地兼官杀，运到东方定有凶。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c126:p0006",
+      "sha256": "8e7a8258e5e22b9659b16c574ec6093f71bda704b359eb5a0be0a098446d943a"
+    }
+  ]
+}

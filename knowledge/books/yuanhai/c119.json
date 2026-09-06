@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c119",
+  "title": "外十八格-六壬趋艮格",
+  "source_url": "https://luckclub.cn/bazi/001/119/",
+  "revision": "sha256:e6969ad8ac6e877d3e9eb03f2cd9817a34e2379eecf39dff6029552170d82c6a",
+  "source_timestamp": "2026-09-06T04:10:48.340915+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c119.html",
+  "raw_sha256": "e6969ad8ac6e877d3e9eb03f2cd9817a34e2379eecf39dff6029552170d82c6a",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-六壬趋艮格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c119:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-六壬趋艮格",
+      "text": "外十八格 - 六壬趋艮格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c119:p0002",
+      "sha256": "baf2ee7ed15b3a937f005f939d0b141491484b6cc43f44fb8da6a2ce8ace07e2"
+    },
+    {
+      "section": "外十八格-六壬趋艮格",
+      "text": "且如壬水日主，多见寅字，则用寅中甲木，暗邀己土为壬日之官星。丙火邀辛金为壬日印绶，怕午字、申字冲之，忌财官填实。喜身旺地，岁运同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c119:p0003",
+      "sha256": "2d5a4d6fe54838aabdb2fdc01df8db2572456d40275ec89d97ef23561d9a06ed"
+    },
+    {
+      "section": "外十八格-六壬趋艮格",
+      "text": "寅为艮土之方，故曰趋艮。谓壬禄在亥，寅与亥合，又谓之合禄，亦忌破害。运行申冲坏寅字，不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c119:p0004",
+      "sha256": "b5c4a4ee18ebc695ed282e6a0a5c7d89286b3664d59802f47a9585e6282f895c"
+    },
+    {
+      "section": "外十八格-六壬趋艮格",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c119:p0005",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "外十八格-六壬趋艮格",
+      "text": "壬寅 壬寅 壬寅 壬寅，此趋艮之格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c119:p0006",
+      "sha256": "95f3a6a78887ee2cf877c609a514adad88b891842ce1645ca4642ddacae6e619"
+    }
+  ]
+}

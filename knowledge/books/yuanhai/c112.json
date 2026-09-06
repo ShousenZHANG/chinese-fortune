@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c112",
+  "title": "内十八格-归禄格",
+  "source_url": "https://luckclub.cn/bazi/001/112/",
+  "revision": "sha256:d55245d462ed8c1e102d1b092fe9f23ffc0ec6646f562c2a3b0762d152e656d4",
+  "source_timestamp": "2026-09-06T04:10:47.247956+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c112.html",
+  "raw_sha256": "d55245d462ed8c1e102d1b092fe9f23ffc0ec6646f562c2a3b0762d152e656d4",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "内十八格-归禄格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c112:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "内十八格-归禄格",
+      "text": "内十八格 - 归禄格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c112:p0002",
+      "sha256": "7ab71c142cfc0412068365aa5286cfa929f03dafcf739c4dcfc5aa5469e5bd78"
+    },
+    {
+      "section": "内十八格-归禄格",
+      "text": "此格假令六甲日生人，得寅时为之归禄。盖甲禄在寅，余皆仿此。但四柱不合见官杀，见之则难归矣。喜行身旺运，兼行食神伤官财运，亦可发福，怕冲破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c112:p0003",
+      "sha256": "613bdf3b994eab323ca7078ea43c24ab919d039de5dc5f881b697d79a7d68cf3"
+    },
+    {
+      "section": "内十八格-归禄格",
+      "text": "王参政，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c112:p0004",
+      "sha256": "daf228b12387359ea21286ca61d71e31cae931f70b3aa1dac32c0b276e3d28b1"
+    },
+    {
+      "section": "内十八格-归禄格",
+      "text": "丙午 癸巳 甲子 丙寅",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c112:p0005",
+      "sha256": "0b2e19427bbf8d4473f78b507daaeceaed389eebe1786fa826fc88b8ac152cf2"
+    },
+    {
+      "section": "内十八格-归禄格",
+      "text": "眉批：日禄归时格最良，怕官嫌杀喜身强，若见比肩分劫禄，刑冲破害更难当。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 35,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c112:p0006",
+      "sha256": "dad722e2e7358be07b81871b3f7601c406ab0676cba10046be7e705b5dc4732e"
+    }
+  ]
+}

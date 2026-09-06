@@ -1,0 +1,32 @@
+{
+  "book_id": "ditian",
+  "chapter_id": "c027",
+  "title": "順反論",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%BB%B4%E5%A4%A9%E9%AB%93%2F27&oldid=844378",
+  "revision": "844378",
+  "source_timestamp": "2017-03-23T15:47:27Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ditian/c027.wiki",
+  "raw_sha256": "9f19e8b57d2926d13763cbb479c2687249c1b2b047f0ea02415def49d6d556f4",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "順反論",
+      "text": "一出門來要見兒，見兒成氣轉相楣，從兒不論身強弱，只要吾兒又遇兒。",
+      "layer": "base_text",
+      "passage_id": "ditian:c027:p0001",
+      "sha256": "2d02c24f0eaa63f2d9d51d495f10799c410415832b53377545b4091a0a450f48"
+    },
+    {
+      "section": "順反論",
+      "text": "此與成象從象傷官不同，只取我生者為兒，如木遇火成象，不論日主強弱，但看火能生土，又成生育之勢，是為順用，必然富貴。\n君賴臣生理最微，兒能生母洩天機，母慈滅子關頭異，夫健何為又怕妻。\n日干，君也，所剋者，臣也。皆君賴臣生也。\n水泛木浮，土止水則生木。\n木旺火晦，金伐木則生火。\n火炎土焦，水剋火則生土。\n土重埋金，木剋土則生金。\n金旺水濁，火剋金則生水。\n日干，母也，所生者，子也。皆兒生母也。\n木被金削，火剋金則生木。\n火遭水滅，土剋水則生火。\n土遇木傷，金剋木則生土。\n金逄火鎔，水剋火則生金。\n水因土塞，木剋土則生水。\n木，母也，火，子也。\n木太旺，反使火熾而熄，是為母慈滅子。\n木，夫也，土，妻也，木雖旺，土生金而剋木，是為夫健怕妻，此皆反取，餘如之，其有水逄烈火而生土，火逄寒金而生水，水生金者，潤土之燥，火生木者，解水之涷，火焚木而水竭，土滲水而木枯，亦皆反局也。",
+      "layer": "commentary",
+      "passage_id": "ditian:c027:p0002",
+      "sha256": "9406d1a1528369cb9e9afcb50268ae6cbbf088e25a7a759236747e2e2a6d63ca"
+    }
+  ]
+}

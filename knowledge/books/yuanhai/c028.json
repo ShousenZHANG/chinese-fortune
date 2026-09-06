@@ -1,0 +1,112 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c028",
+  "title": "论月德贵人",
+  "source_url": "https://luckclub.cn/bazi/001/028/",
+  "revision": "sha256:bbcfc172ee2aa89d25e18b29d94eab749d9111f43ad95b2633c4b065e177753b",
+  "source_timestamp": "2026-09-06T04:10:30.295929+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c028.html",
+  "raw_sha256": "bbcfc172ee2aa89d25e18b29d94eab749d9111f43ad95b2633c4b065e177753b",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论月德贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "论月德贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0002",
+      "sha256": "4e2565458bc342b5edbe531a1122fbec03568681413ae57aa15d30e8c66519e0"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "寅午戌月在丙；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0003",
+      "sha256": "a7a28d00f5639151afea917c783a7264ce78b45c02acfecf62d3628fc6e7cd15"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "申子辰月在壬；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0004",
+      "sha256": "b38d478e9d7668f036428eb134fea59638597d8263fbf4ae1d7693e5e6f84743"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "亥卯未月在甲；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0005",
+      "sha256": "525ec7d838340d21cdfcd658854e355f5709db48d5065c0e7eab012c5aed73b9"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "巳酉丑月在庚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0006",
+      "sha256": "6cee04f7b277feaa681f9f43db86b5a5a2a44516358e6b41109fbb9eb46fab0c"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "其法从寅起，丙甲壬庚，逐月顺数，周而复始，亦须在日上见之，更有福神助为吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0007",
+      "sha256": "49f78ff8253cd77d98a83a33ccaf7baf8ade6f1858e463a19d624772a984297c"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c028:p0008",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "寅午戌丙为和，正、五、九月；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0009",
+      "sha256": "68bc76c14c6a8fb93e7b94a8c46608390a5a6c72956f587aaeaa961211d0d074"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "申子辰壬为和，三、七、十一月；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0010",
+      "sha256": "a3e69b00ee91e51d27e519d4f79a49f5c19377a07f788ef8d6809dce60004daa"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "亥卯未甲为和，二、六、十月；",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0011",
+      "sha256": "e09231ddec511e37f681b6fa344b3f461c2f5e4ff874648f92f75d85abf4cf94"
+    },
+    {
+      "section": "论月德贵人",
+      "text": "巳酉丑庚为和，四、八、十二月。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c028:p0012",
+      "sha256": "ce959a2be704bc943a191dbb0db09b145b72253dc94b1a248729d55d020a3d64"
+    }
+  ]
+}

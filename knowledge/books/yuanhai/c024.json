@@ -1,0 +1,70 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c024",
+  "title": "论起玉堂天乙贵人",
+  "source_url": "https://luckclub.cn/bazi/001/024/",
+  "revision": "sha256:30993f7e5d0f8fd7b80459d40cc48438c8908d6243fb1b97022154e71e96b3db",
+  "source_timestamp": "2026-09-06T04:10:29.221370+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c024.html",
+  "raw_sha256": "30993f7e5d0f8fd7b80459d40cc48438c8908d6243fb1b97022154e71e96b3db",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论起玉堂天乙贵人",
+      "text": "渊海子平卷一",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c024:p0001",
+      "sha256": "a5b823f6ea5176cb26de398b4c34c75d5a8a162220ac6a0c9e33ec836fae8376"
+    },
+    {
+      "section": "论起玉堂天乙贵人",
+      "text": "论起玉堂天乙贵人",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c024:p0002",
+      "sha256": "6c0e075891c6211acec74fe64d60be758d6840b0161cc6b34c4c56462cc467f8"
+    },
+    {
+      "section": "论起玉堂天乙贵人",
+      "text": "甲戊兼牛羊，乙己鼠猴乡，丙丁猪鸡位，壬癸兔蛇藏，",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c024:p0003",
+      "sha256": "fe653ca7455da5ebf36225832db5d91a6db11fbde89b8ee2872a1295a13b0bd7"
+    },
+    {
+      "section": "论起玉堂天乙贵人",
+      "text": "庚辛逢马虎，此是贵人方，命中如遇此，定作紫薇郎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c024:p0004",
+      "sha256": "affabb4e59bc82652181acc8a963d021571b11fa6a9d0cab82daf5ce99eccdcf"
+    },
+    {
+      "section": "论起玉堂天乙贵人",
+      "text": "十干临十支皆贵人所临之方，惟辰戌二宫贵人不临，殊不知辰戌乃魁罡恶曜之地，天乙不临，所以不为贵也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c024:p0005",
+      "sha256": "1d5a3bf095852dd8e3ac25ffeca0a48079446333210607e4705df2bcc91a466b"
+    },
+    {
+      "section": "论起玉堂天乙贵人",
+      "text": "眉批：言本乃主天之神而曰天乙，临之方有恶煞相浑，或落空亡之地，不为贵也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 36,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c024:p0006",
+      "sha256": "e39b7d73341cf693308c40d7a6bdb0e7cfc4b505daa52fb04c8c17801a0cb078"
+    }
+  ]
+}

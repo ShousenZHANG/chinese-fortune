@@ -1,0 +1,46 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c171",
+  "title": "神趣八法-伏象",
+  "source_url": "https://luckclub.cn/bazi/001/171/",
+  "revision": "sha256:79f39918f72802eb1854e904ccb2ed7b329d84cede9e4962ed98c27c9df37bc0",
+  "source_timestamp": "2026-09-06T04:10:58.335057+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c171.html",
+  "raw_sha256": "79f39918f72802eb1854e904ccb2ed7b329d84cede9e4962ed98c27c9df37bc0",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-伏象",
+      "text": "神趣八法-伏象",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c171:p0001",
+      "sha256": "7f9235e0764125e38702c105ac876106c38247642b5155cba9606499e7190786"
+    },
+    {
+      "section": "神趣八法-伏象",
+      "text": "伏象者乃寅午戌三合全，又值五月生，逢壬日而天干无气，丁字透露，壬水又无根，乃取月支午中有丁火，合壬水而伏之。所谓伏象，运至木火之乡皆吉，只愁水旺之乡不利也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c171:p0002",
+      "sha256": "cdc5bb8939d25ca44df0728a470b35b397bb4052775feddf6ec302938ff1a631"
+    },
+    {
+      "section": "神趣八法-伏象",
+      "text": "又曰：伏者，隐而不显之意。柱中财官印杀，不通月气，不曾透露，隐於地支人元之中，无形而离明之谓。《玉井》云：“本身不通月气，而伏藏我气于别支之内，有援而起者也。”又日干不遇生旺，死绝气多，却遇官杀太甚，克伏其身，亦为伏也。经云：“官鬼皆全，乃遐龄而不遂。干中破败于支内，技艺随身。”如",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c171:p0003",
+      "sha256": "244d70087dc4516606ba7d1c66db0a0aad4d6b9a958aad5ad221a50f988b0054"
+    },
+    {
+      "section": "神趣八法-伏象",
+      "text": "戊午 甲寅 戊寅 辛酉，戊日被甲寅克之太甚，本身无气，故为手艺之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c171:p0004",
+      "sha256": "2efff62849a8c770bc1ce2a8dcd7ee185bb3a60f2cb3ebd3c2506efdc5d9afd1"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c044",
+  "title": "四十四、論陽刃取運",
+  "source_url": "https://www.donglishuzhai.net/chapter/3757.html",
+  "revision": "sha256:ee8eecfc941d787231b781093f2d6690ee4f242f35e7d1c59cf3baeb9ca3f086",
+  "source_timestamp": "2026-09-06T04:17:16.016Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c044.html",
+  "raw_sha256": "ee8eecfc941d787231b781093f2d6690ee4f242f35e7d1c59cf3baeb9ca3f086",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四十四、論陽刃取運",
+      "text": "陽刃用官，則運喜助官，然命中官根深，則印綬比劫之方，反爲美運，但不喜傷食合官耳。",
+      "layer": "base_text",
+      "passage_id": "ziping:c044:p0001",
+      "sha256": "3f4117e8c7ce75ff887a73cd3590bb5d1c33677114b2b220423535701e315ad6"
+    },
+    {
+      "section": "四十四、論陽刃取運",
+      "text": "陽刃用煞，煞不甚旺，則運喜助煞；煞若太重，則運喜身旺印綬，傷食亦不爲忌。",
+      "layer": "base_text",
+      "passage_id": "ziping:c044:p0002",
+      "sha256": "cb4319c27b3b15a04a9adf53c6fbfa217c5183682a6a905adaae165c2f2ab1cb"
+    },
+    {
+      "section": "四十四、論陽刃取運",
+      "text": "陽刃而官煞並出，不論去官去煞，運喜制伏，身旺亦利，財地官鄉反爲不吉也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c044:p0003",
+      "sha256": "81581eac2180f00e8d012cc8195a1285586691c33c85415cff383ce95fa93709"
+    }
+  ]
+}

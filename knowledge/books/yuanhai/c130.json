@@ -1,0 +1,56 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c130",
+  "title": "外十八格-弃命从财格",
+  "source_url": "https://luckclub.cn/bazi/001/130/",
+  "revision": "sha256:364cd9316b1b224aaf3f923144064d1e59e556fb8c9297ee77c557a7f9b1ca2c",
+  "source_timestamp": "2026-09-06T04:10:50.584388+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c130.html",
+  "raw_sha256": "364cd9316b1b224aaf3f923144064d1e59e556fb8c9297ee77c557a7f9b1ca2c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "外十八格-弃命从财格",
+      "text": "渊海子平卷二",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c130:p0001",
+      "sha256": "7ff3cf914c80f6b91688ae2c54d143b1d64be1e4fc0c5f98b16611fb00d628f4"
+    },
+    {
+      "section": "外十八格-弃命从财格",
+      "text": "外十八格 - 弃命从财格",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c130:p0002",
+      "sha256": "bd7997fe9f082cfc27930ea1d0324476b8049254942aa77f112f6227c4f2b0e4"
+    },
+    {
+      "section": "外十八格-弃命从财格",
+      "text": "假如乙日见辰戌丑未，财神极旺，乙木四柱无依，则舍而从之。其人平生惧内，为填房、赘继之人。财者妻也，身无所托，倚妻成立，故为此论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c130:p0003",
+      "sha256": "ca8581c31b6bc17728a22475b5a09a6cbeefab79c0a598b808d17ca143a1084e"
+    },
+    {
+      "section": "外十八格-弃命从财格",
+      "text": "眉批：日主无根财犯重，全凭时印旺身宫，逢生必主兴家业，破印纷纷总是空。日主有根则不可弃，主贫。无根弃之则富。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 54,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c130:p0004",
+      "sha256": "9dd5c9d04a7724502189a95e1b4633fde1fba6e6b7d3abfac02cf99446d7b858"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c259",
+  "title": "天元一字诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/259/",
+  "revision": "sha256:e550037a1534cbb920f5e5367788a8a053ebf96b66fbad3be0dae771cd199c55",
+  "source_timestamp": "2026-09-06T04:11:16.981191+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c259.html",
+  "raw_sha256": "e550037a1534cbb920f5e5367788a8a053ebf96b66fbad3be0dae771cd199c55",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "天元一字诗诀",
+      "text": "渊海子平卷五",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0001",
+      "sha256": "d284d3c59105f6347a605b7d9c7a48dc5eebdc667d0b53daee688840ad6bd8a9"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "天元一字诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0002",
+      "sha256": "0f6b0cd08548cf24f3fae0ad9e0f62f082fba19af1c61ade4054aab65bc2a8e8"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "天元一字水为源，生在秋冬贵莫言，大运吉神逢一位，少年仕路必高迁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0003",
+      "sha256": "d8c3c87ae8688546ff51bbc53e68fb052eee86e092acc182b79aae9bd93cf278"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "天元一字土为基，四季生时更是奇，申酉二支为格局，聪明俊秀异常儿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0004",
+      "sha256": "f51edda3b685d13705f05def190a5de2efd32d49161e7bece9676ce3252bc48a"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "天元一字木为根，传送登明显福元，四柱官星如得地，功名利禄早承恩。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0005",
+      "sha256": "17e82885ce672af43f25804c8b456878a332f7b3bfd56d7002652dcac70d947f"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "天元一字若逢金，日时魁罡福气深，库刃运中并带贵，天生德行贵人钦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0006",
+      "sha256": "e0fcd6db8e61b71add1ea3164850d8b8ef9399ed8d2584064ce3ddae7646019b"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "天元一字火融融，大吉功曹时日冲，冲起财官为发用，中平富贵福兴隆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0007",
+      "sha256": "3320c5621d050eab6ed7203ba7b8653e1da742b02f87b86d476045cb24940f55"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "眉批：",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 3,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c259:p0008",
+      "sha256": "d3cd2fcbf2e6933caadea1989197a6cc660dcb68a869e05c27b78d9589db0039"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "壬子 壬子 壬子 壬寅，此格生在冬月有贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0009",
+      "sha256": "b01ec0c6eb95e2f94432bfd4ca6770abb7d2ee5debae1b2de48bc3c691cd48e0"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "戊辰 戊午 戊戌 戊子之例，喜土金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0010",
+      "sha256": "fa21f44890bd40a1d2da924dc48489238529b59c9651620006e7190959ceec33"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "甲子 甲戌 甲寅 甲子，又",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0011",
+      "sha256": "486d85a88bf65a590b9b1e3f701afc5ef27adffea29e1d1fb42f2d14198d1159"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "乙丑 乙酉 乙亥 乙酉也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0012",
+      "sha256": "7235d751d8e290290f8f0f4e577d6116fdf9c31334acc426160a61c66702fa51"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "庚申 庚辰 庚戌 庚戌也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0013",
+      "sha256": "f3fcea0c332a679cafb37dbc16b1b6a1570d388ec61fe1c38e94089656e9a9ef"
+    },
+    {
+      "section": "天元一字诗诀",
+      "text": "丙寅 丙申 丙午 丙申之例，克父母後，财多健旺可见。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c259:p0014",
+      "sha256": "6b8af215acb459ffa2958144f805cd66b7a3aeac8866d2c42ddbf5330e9e4063"
+    }
+  ]
+}

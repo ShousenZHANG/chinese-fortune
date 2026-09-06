@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c051",
+  "title": "论四废日",
+  "source_url": "https://luckclub.cn/bazi/001/051/",
+  "revision": "sha256:94a018596a851549631a2e218f464d3cdbc1f9d5ce24d186096b8b79aac1be49",
+  "source_timestamp": "2026-09-06T04:10:34.379085+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c051.html",
+  "raw_sha256": "94a018596a851549631a2e218f464d3cdbc1f9d5ce24d186096b8b79aac1be49",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "论四废日",
+      "text": "论四废日",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c051:p0001",
+      "sha256": "8f5cf76fda86a9e023686501cec7ab3e1856fbbbf8609dbe554f55c42c53ca65"
+    },
+    {
+      "section": "论四废日",
+      "text": "春庚申(金囚死)，夏壬子(水囚死)，秋甲寅(木囚死)，冬丙午(火囚死)。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c051:p0002",
+      "sha256": "81a7e4f0dfc811509a59626dffdbe6ff89768e2d338b90656578d0a6de189362"
+    },
+    {
+      "section": "论四废日",
+      "text": "今人以春见庚辛，夏见壬癸，秋见甲乙，冬见丙丁为废者，皆非也。囚死，囚而无用谓之废。春乃木神用事，金囚而无用，故以庚金为废。夏用火而壬水为废。秋用金而甲木为废。冬用水而丙火为废。凡命中有遇之者，主作事无成，要分春夏秋冬四季看方准。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c051:p0003",
+      "sha256": "16893ba1d0714915efc44d4d63ed8509b2f88ad8665e8ef89037528b5e366691"
+    }
+  ]
+}

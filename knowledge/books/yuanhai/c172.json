@@ -1,0 +1,49 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c172",
+  "title": "神趣八法-总释",
+  "source_url": "https://luckclub.cn/bazi/001/172/",
+  "revision": "sha256:3e4910ec1b3c77315ed2ccca207d2785d99511d05840821ad7f46b2e85b8d1fd",
+  "source_timestamp": "2026-09-06T04:10:58.452062+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c172.html",
+  "raw_sha256": "3e4910ec1b3c77315ed2ccca207d2785d99511d05840821ad7f46b2e85b8d1fd",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "神趣八法-总释",
+      "text": "神趣八法-总释",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c172:p0001",
+      "sha256": "8837a9ea6091b8e90b8f1c824c97f8aefe0fa9199cce9d900a290e5ed17d2e9e"
+    },
+    {
+      "section": "神趣八法-总释",
+      "text": "荆山居士解云：若甲乙日干见地支寅卯辰全者为类，见亥卯未全者为属。乙日见巳酉丑或申酉戌之类为从。甲日见己、乙日见庚之类为化。类属要身旺，而从化要衰也。丙丁日四柱皆火，而时支得卯木，谓之木火相照。壬癸日四柱皆水，而时支得一金，为金水相照。壬生午月水无根，乃弃命与午中丁火合，此伏象也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c172:p0002",
+      "sha256": "c3f4f50bda5bf3ffb6fd4bfcbe78ee35c5dd3dd3b2f91bd66015126e0cc5fba6"
+    },
+    {
+      "section": "神趣八法-总释",
+      "text": "眉批：神趣八法云，看八字先明从化为本，化不成方论财官，财官无取方论格局，如人身行藏兴立，亦可自立，终身无败。从化成局则富贵。赋云，火虚有焰，金实无声，木盛多仁，得从得化，定显身名之故也。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 93,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c172:p0003",
+      "sha256": "d24a7577f6cf0c49be1de910d6ea2a3255c9bbe9e64d0aa3c39c6c1be23f35bc"
+    }
+  ]
+}

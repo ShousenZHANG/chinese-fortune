@@ -1,0 +1,60 @@
+{
+  "book_id": "ziping",
+  "chapter_id": "c005",
+  "title": "五、論十干合而不合",
+  "source_url": "https://www.donglishuzhai.net/chapter/3718.html",
+  "revision": "sha256:837d7c5977f6890e5bfee6a7fcbfd9483e749192b083951bd4715837c4f2a479",
+  "source_timestamp": "2026-09-06T04:16:49.921Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziping/c005.html",
+  "raw_sha256": "837d7c5977f6890e5bfee6a7fcbfd9483e749192b083951bd4715837c4f2a479",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "web_open_rendered_text_reconstructed_article",
+  "issues": [],
+  "passages": [
+    {
+      "section": "五、論十干合而不合",
+      "text": "十干化合之義，前篇既明之矣，然而亦有合而不合者，何也？蓋隔於有所間也，譬如人彼此相好，而有人從中間之，則交必不能成。假如甲與己合，而甲己中間以庚間隔之，則甲豈能越尅我之庚而合己？此制於勢者然也，合而不敢合也，有若無也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c005:p0001",
+      "sha256": "a2182849c28b77b0dacb73965ccfc55242511b36ba6e198d9369aa420a16b0a8"
+    },
+    {
+      "section": "五、論十干合而不合",
+      "text": "又有隔位太遠，如甲在年干，己在時上，心雖相契，地則相遠，如人天南地北，不能相合一般。然於有所制而不敢合者，亦稍有差，合而不能合也，半合也，其爲禍福，得十之二三而已。",
+      "layer": "base_text",
+      "passage_id": "ziping:c005:p0002",
+      "sha256": "e205d2130e2ed33aa1f0e650d9004b85c8f2e47870853e78abefbf8c8126cc90"
+    },
+    {
+      "section": "五、論十干合而不合",
+      "text": "又有合而無傷於合者，何也？如甲生寅卯，月時兩透辛官，以年丙合月辛，是爲合一留一，官星反清；甲逢月刃，庚辛並透，丙與辛合，是爲合官留煞，而煞刃依然成格，皆無傷於合也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c005:p0003",
+      "sha256": "43847b8b01aacd2bfe5950a4078589b71ad0288ffa0d4a817fea2cebdf442cb6"
+    },
+    {
+      "section": "五、論十干合而不合",
+      "text": "又有合而不以合論者，何也？本身之合也。蓋五陽逢財，五陰遇官，俱是作合，惟是本身十干合之，不爲合去。假如乙用庚官，日干之乙，與庚作合，是我之官，是我合之。何爲合去？若庚在年上，乙在月上，則月上之乙，先去合庚，而日干反不能合，是爲合去也。又如女以官爲夫，丁日逢壬，是我之夫，是我合之，正是夫妻相親，其情愈密。惟壬在月上，而年丁合之，日干之丁，反不能合，是以己之夫星，被姊妹合去，夫星透而不透矣。",
+      "layer": "base_text",
+      "passage_id": "ziping:c005:p0004",
+      "sha256": "c6551ad62e68011ce389ab4d45d8ee47bfcda771b0bd32291cd9c9c53053b1b2"
+    },
+    {
+      "section": "五、論十干合而不合",
+      "text": "然又有爭合妬合之說，何也？如兩辛合丙，兩丁合壬之類，一夫不娶二妻，一女不配二夫，所以有爭合妬合之說。然到底終有合意，但情不專耳。若以兩合一而隔位，則全無爭妬。如庚午、乙酉、甲子、乙亥，兩乙合庚，甲日隔之，此高太尉命，仍作合煞留官，無減福也。",
+      "layer": "base_text",
+      "passage_id": "ziping:c005:p0005",
+      "sha256": "956715d76011316da0679401bd6aa90a22bf2d10113c0fbbbc9d684577384055"
+    },
+    {
+      "section": "五、論十干合而不合",
+      "text": "今人不知命理，動以本身之合，妄論得失。更有可笑者，書云：「合官非爲貴取」，本是至論，而或以本身之合爲合，甚或以他支之合爲合，如辰與酉合，卯與戌合之類，皆作合官，一謬至此，子平之傳掃地矣！",
+      "layer": "base_text",
+      "passage_id": "ziping:c005:p0006",
+      "sha256": "93f625f7663f79ecf4332e5303178df8c97085e46fc1c7ba3e67e893cd34201f"
+    }
+  ]
+}

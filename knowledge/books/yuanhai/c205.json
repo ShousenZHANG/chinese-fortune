@@ -1,0 +1,87 @@
+{
+  "book_id": "yuanhai",
+  "chapter_id": "c205",
+  "title": "三月建辰候诗诀",
+  "source_url": "https://luckclub.cn/bazi/001/205/",
+  "revision": "sha256:81715e068240e0aa28216123ad8c17f2330922503c49e6755e784f32c623866c",
+  "source_timestamp": "2026-09-06T04:11:04.948245+00:00",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanhai/c205.html",
+  "raw_sha256": "81715e068240e0aa28216123ad8c17f2330922503c49e6755e784f32c623866c",
+  "raw_kind": "cleaned_original_transcription_not_complete_http_response",
+  "extraction_kind": "selected_original_html_node",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三月建辰候诗诀",
+      "text": "渊海子平卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c205:p0001",
+      "sha256": "f981a62c7da7a5ad79fbd8eff95f693bffd1820b2aa5425445b6992c612e6db0"
+    },
+    {
+      "section": "三月建辰候诗诀",
+      "text": "三月建辰候诗诀",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c205:p0002",
+      "sha256": "b6a45c19a9e54b192d2428f6e59c7f30a1ae1e3750a86e4b983f52c85c87935a"
+    },
+    {
+      "section": "三月建辰候诗诀",
+      "text": "三月辰宫只论土，杀多金水化为祥，提纲若用财官印，金水相临命有伤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c205:p0003",
+      "sha256": "440c7cc21d846128ac6d72df1db10ce6061cb03582fb205d3a89db26d99ab3ed"
+    },
+    {
+      "section": "三月建辰候诗诀",
+      "text": "眉批：三月水土墓库之宫，戊土十八日，癸水五日，乙木七日。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 28,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c205:p0004",
+      "sha256": "d74e2eacdd817d4e28bf2789f5198b28d46c1555b6a9eea1d3f2bb4f74c24cb6"
+    },
+    {
+      "section": "三月建辰候诗诀",
+      "text": "戊士无根日坐寅，重重水旺福源深，如行木火宫中吉，金水相逢祸必侵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c205:p0005",
+      "sha256": "56ad19ca6c285edb89f5e75d36b65c5df03c35a563fddf13b37efd87d7f55446"
+    },
+    {
+      "section": "三月建辰候诗诀",
+      "text": "三月干头只用金，火生土厚福还真，身为壬癸多逢土，火旺提防祸必临。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanhai:c205:p0006",
+      "sha256": "7974a43e8716df3ecd040b4766f1e74be8ce7e849861cc343a93ed040b5e3b59"
+    },
+    {
+      "section": "三月建辰候诗诀",
+      "text": "眉批：用金者喜有土生，火旺则伤金。",
+      "layer": "historical_commentary",
+      "commentary_spans": [
+        {
+          "start": 0,
+          "end": 17,
+          "layer": "historical_commentary",
+          "marker": "眉批：",
+          "boundary_closed": true
+        }
+      ],
+      "layer_status": "explicit_marker_not_collated",
+      "passage_id": "yuanhai:c205:p0007",
+      "sha256": "efa28888f92e6633e5c7697d63402cf79942f3cc9915901f087a74469cf49aef"
+    }
+  ]
+}
