@@ -297,6 +297,46 @@ def baseline_is_green(m: Mutation) -> bool:
     return _BASELINE_CACHE[key]
 
 
+BACKUP_DIR = ROOT / ".mutate-backup"
+
+
+def _backup_path(rel: str) -> Path:
+    return BACKUP_DIR / rel.replace("/", "__").replace("\\", "__")
+
+
+def stash(rel: str, data: bytes) -> None:
+    """把原始字节**落盘**再动源文件。
+
+    try/finally 挡不住 SIGKILL —— 进程被强杀时 finally 根本不执行, 变异就留在了
+    工作树里。这实际发生过: 一次被中断的运行把
+    ``JI_MEN = {"死门", "休门", "生门"}`` 留在 scripts/qimen_cast.py 里 (把凶门
+    写成了吉门), 随后的 build 差点把它打进发布包。
+
+    落盘备份让下一次启动能自愈, 无论上一次是怎么死的。
+    """
+    BACKUP_DIR.mkdir(exist_ok=True)
+    _backup_path(rel).write_bytes(data)
+
+
+def unstash(rel: str) -> None:
+    _backup_path(rel).unlink(missing_ok=True)
+
+
+def recover_stale_backups() -> list[str]:
+    """启动时先把上一次没还原的文件恢复回去, 再做别的。"""
+    if not BACKUP_DIR.exists():
+        return []
+    restored = []
+    for b in sorted(BACKUP_DIR.iterdir()):
+        rel = b.name.replace("__", "/")
+        target = ROOT / rel
+        if target.exists() and target.read_bytes() != b.read_bytes():
+            target.write_bytes(b.read_bytes())
+            restored.append(rel)
+        b.unlink()
+    return restored
+
+
 class _Lock:
     """进程级互斥。
 
@@ -332,12 +372,19 @@ def main(argv: list[str] | None = None) -> int:
         print(f"没有匹配 {args.only!r} 的变异")
         return 2
 
+    stale = recover_stale_backups()
+    if stale:
+        print("!" * 64)
+        print(f"上一次运行没有还原就退出了 (多半是被强杀)。已自动恢复: {stale}")
+        print("!" * 64)
+
     survivors, skipped, broken = [], [], []
     print(f"施加 {len(todo)} 处变异\n" + "=" * 64)
     lock = _Lock().__enter__()
     for m in todo:
         p = ROOT / m.path
         backup = p.read_bytes()
+        stash(m.path, backup)          # 先落盘, 再动文件 —— SIGKILL 也能自愈
         try:
             if not baseline_is_green(m):
                 broken.append(m)
@@ -351,6 +398,7 @@ def main(argv: list[str] | None = None) -> int:
         finally:
             p.write_bytes(backup)
             assert p.read_bytes() == backup, f"还原失败: {m.path}"
+            unstash(m.path)
         if caught:
             print(f"[CAUGHT] {m.name}")
         else:

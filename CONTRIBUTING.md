@@ -91,15 +91,17 @@ six**, so passing it locally does not mean CI will be green.
 python -m ruff check .
 python -m mypy scripts/ --ignore-missing-imports
 COVERAGE_PROCESS_START=pyproject.toml python -m pytest tests/ -q --cov=scripts
-python -X utf8 evals/run_checks.py     # 8 checks, incl. evals/mutate.py
+python -X utf8 evals/run_checks.py     # 7 checks (~9 min)
 python scripts/build_skill.py --dist-dir /tmp/dist
 ```
 
 **`COVERAGE_PROCESS_START` is not optional.** The engines run as subprocesses,
 so without it `pytest --cov=scripts` reports ~30% and trips `fail_under = 80`.
 
-`run_checks.py` itself invokes `evals/mutate.py` (mutation testing, zero
-survivors required) — that step alone takes ~15 minutes.
+`evals/mutate.py` (mutation testing) is **not** part of the gate — it
+answers "are the tests strict enough", a meta-question worth a periodic
+diagnostic rather than a 15-minute tax on every release. Run it by hand
+when you touch a lookup table: `python evals/mutate.py`.
 
 ### PR checklist
 

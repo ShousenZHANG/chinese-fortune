@@ -302,63 +302,41 @@ def test_harness_reports_a_timeout_as_a_failed_check_not_a_traceback():
     assert "except subprocess.TimeoutExpired" in src
 
 
-def test_mutation_gate_is_wired_and_fails_on_a_survivor():
-    """变异门禁本身必须会红。
+def test_mutation_tool_still_works_and_restores_the_tree():
+    """变异测试**不再是发布门禁** —— 它抓的是「测试够不够狠」这个元问题, 不是
+    「这次改动对不对」, 却让每轮发布多花 15 分钟 (全轮 24 分钟)。元问题适合按需
+    诊断, 不适合每次发布都付一遍。
 
-    这道门禁的价值全在「有存活就失败」这一条上; 如果它只是跑一遍就放行, 那和没有
-    一样。这里检查两件事: (a) 它确实进了 checks 清单; (b) mutate.py 在有存活时
-    退出码非 0 —— 用一个必然存活的假变异 (改注释) 实测。
+    但工具本身必须保持可用且**安全**: 它会临时改坏源文件, 一旦还原失败就会把
+    缺陷留在工作树里。这实际发生过 —— 一次被强杀的运行把
+    `JI_MEN = {"死门", ...}` (把凶门写成吉门) 留在了 qimen_cast.py 里, 随后的
+    build 差点把它打进发布包。所以这里只测两件事: 每处变异都写了后果说明,
+    以及落盘备份能在强杀后自愈。
     """
-    import subprocess
     import sys
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
     sys.path.insert(0, str(root / "evals"))
     import mutate
+
+    sys.path.insert(0, str(root / "evals"))
     import run_checks
+    assert not hasattr(run_checks, "check_mutation_score"), (
+        "变异测试又被接回发布门禁了 —— 它是按需诊断, 不是每次发布的税")
 
-    src = (root / "evals" / "run_checks.py").read_text(encoding="utf-8")
-    assert "check_mutation_score," in src, "变异门禁没进 checks 清单"
-    assert run_checks.MUTATION_TIMEOUT_S >= 900
-
-    # 每处变异都必须写明「这个值错了用户会看到什么」, 否则存活清单读不出轻重。
     assert len(mutate.MUTATIONS) >= 10
     for m in mutate.MUTATIONS:
         assert len(m.why) > 15, f"{m.name} 的 why 太空泛: {m.why!r}"
         assert (root / m.path).exists(), f"{m.name} 指向不存在的文件 {m.path}"
 
-    # 一个必然存活的假变异: 只改注释, 任何测试都不会红。
-    before_bytes = (root / "scripts" / "utils.py").read_bytes()
-    probe = root / "evals" / "_mutate_probe.py"
-    probe.write_text(
-        "from mutate import Mutation, main\n"
-        "import mutate\n"
-        "mutate.MUTATIONS = [Mutation('probe:注释', 'scripts/utils.py',\n"
-        "    '# --------------------------------------------------------------------------- #',\n"
-        "    '# ---- probe ---- #', 'a comment-only change nothing can catch',\n"
-        "    ['tests/test_utils.py'])]\n"
-        "raise SystemExit(main([]))\n",
-        encoding="utf-8")
-    try:
-        proc = subprocess.run(
-            [sys.executable, "-X", "utf8", str(probe)],
-            cwd=root / "evals", capture_output=True, text=True,
-            encoding="utf-8", errors="replace", timeout=300)
-        if "另一个 mutate.py 正在运行" in proc.stderr:
-            # 真的有一轮变异在跑 (例如后台的 run_checks)。锁正确挡住了我们 ——
-            # 这本身就是并发保护生效的证据, 但这次探针跑不成, 跳过。
-            pytest.skip("mutate.py 被另一进程占用, 探针无法运行 (锁生效中)")
-        assert proc.returncode != 0, (
-            "必然存活的变异没有让 mutate.py 失败 —— 门禁是摆设\n" + proc.stdout[-500:])
-        assert "SURVIVED" in proc.stdout
-    finally:
-        probe.unlink(missing_ok=True)
-
-    # 探针跑完后, 被变异的文件必须回到探针**之前**的字节。
-    # 从前这里断言 git status 里不含 scripts/utils.py —— 分不清「变异没还原」与
-    # 「开发者本来就有未提交改动」, 于是任何改到 utils.py 的分支都会误报。
-    after = (root / "scripts" / "utils.py").read_bytes()
-    assert after == before_bytes, "变异后 scripts/utils.py 与探针前不一致"
+    # 落盘备份 + 自愈: try/finally 挡不住 SIGKILL, 所以还原必须能跨进程。
+    target = root / "scripts" / "utils.py"
+    before = target.read_bytes()
+    mutate.stash("scripts/utils.py", before)
+    target.write_bytes(before + b"# probe\n")
+    restored = mutate.recover_stale_backups()
+    assert "scripts/utils.py" in restored, restored
+    assert target.read_bytes() == before, "自愈没有把文件还原回去"
 
 
 def test_version_is_consistent_across_all_four_sources():

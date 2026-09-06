@@ -5,7 +5,7 @@
 **一个 Claude Skill，把中国五术（山·医·命·相·卜）的 20+ 种命理方法装进一个可移植技能。**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-2149%20passing-brightgreen)](tests)
+[![tests](https://img.shields.io/badge/tests-2461%20passing-brightgreen)](tests)
 [![coverage](https://img.shields.io/badge/coverage-88%25-brightgreen)](#质量保障)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
@@ -33,13 +33,13 @@
 
 - **20+ 种方法，一个技能** — 命卜相术全覆盖，单一自包含 skill，无需后端、无需联网。
 - **确定性计算** — 15 个 Python 引擎在 `lunar_python`（[寿星天文历](https://github.com/6tail/lunar-python) 算法移植，节气误差 < 1 秒）上排盘起卦，而非让大模型手算（易错）。
-- **历法严谨** — 真太阳时、节气定月、立春年界、夜子时、闰月等业余易错处全部正确，并经**独立引擎 sxtwl 跨库对照**，分两层：(1) **本仓库引擎**端到端逐盘比对 1920–2080 每 29 天 × 3 个时辰（含夜子/早子两侧）共 6,045 盘，零分歧；(2) 底层历法库 `lunar_python` 对 sxtwl 逐日全量比对 58,440 天，零分歧——这一层校验的是依赖库，不是本仓库代码，两者分开陈述。
+- **历法严谨** — 真太阳时、节气定月、立春年界、夜子时、闰月等业余易错处全部正确，并经**独立引擎 sxtwl 跨库对照**：本仓库引擎端到端逐盘比对 1920–2080 （每 97 天 × 3 个时辰，含夜子/早子两侧）约 1,800 盘，零分歧。
 - **渐进式披露** — Claude 先加载小路由，再按需调用对应方法的文档与脚本，上下文最小化。
 - **解读纪律 (CI 锁定)** — 八字论断严格以《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》五大古籍为准绳：凡古籍无据者不妄断、禁套话迎合、只出可验证性最高的结论。纪律文本被发布校验断言，删改即构建失败。
 - **量子熵源（可选）** — 起卦/抽牌可用 `--entropy quantum` 接入 ANU 量子真空噪声（物理真随机，源不可达时优雅降级并如实标注；不声称提升准确度）。
 - **随机寻访** — `explore_cast.py`：QRNG 撒点 + 密度异常（attractor/void）+ 黄历吉方对照 + 安全提示，Randonautica 式散步灵感（明确非预测、非念力）。
 - **安全护栏** — 硬红线（不预测死亡、不做医疗法律金融决断、不接诅咒）+ 危机转介，内建于技能。
-- **工程化** — 2149 测试 / 88% 覆盖 / `ruff` + `mypy` + CI 五道质量门 + 7 项发布校验。
+- **工程化** — 2461 测试 / 86% 覆盖 / `ruff` + `mypy` + CI 五道质量门 + 7 项发布校验。
 
 ## 快速开始
 
@@ -115,7 +115,7 @@ CI（Python 3.11 / 3.12）强制执行五道门：
 |---|---|
 | `ruff` | 代码规范，0 容忍 |
 | `mypy` | 静态类型检查 |
-| `pytest` | **2149 测试** — 黄金值、立春 / 夜子时 / 闰月边界、五鼠遁不变量、对 sxtwl 逐日全量差分（58,440 天）、对 iztro 紫微 903 例差分 |
+| `pytest` | **2461 测试** — 黄金值、立春 / 夜子时 / 闰月边界、五鼠遁不变量、引擎对 sxtwl 端到端差分（约 1,800 盘）、对 iztro 紫微 903 例差分 |
 | coverage | 子进程追踪 **88%**，低于 80% 即失败 |
 | harness | SKILL.md 校验 + 解读纪律锁 + 19 场景机器断言 + 脚本 JSON 合法性（7 项） |
 

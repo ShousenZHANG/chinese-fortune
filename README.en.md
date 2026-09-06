@@ -5,7 +5,7 @@
 **A Claude Skill packing 20+ Chinese metaphysics methods (五术: 山·医·命·相·卜) into one portable skill.**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-2149%20passing-brightgreen)](tests)
+[![tests](https://img.shields.io/badge/tests-2461%20passing-brightgreen)](tests)
 [![coverage](https://img.shields.io/badge/coverage-88%25-brightgreen)](#quality-gates)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
@@ -33,13 +33,13 @@ BaZi, Zi Wei Dou Shu, I-Ching, Liu Yao, Qi Men Dun Jia, Feng Shui, almanac, nami
 
 - **20+ methods, one skill** — divination, destiny, physiognomy, and practical arts in a single self-contained skill. No backend, no network.
 - **Deterministic computation** — 15 Python engines on `lunar_python` (a port of the [寿星天文历](https://github.com/6tail/lunar-python) algorithm, solar-term error < 1s) do the 排盘/起卦, instead of asking an LLM to do error-prone arithmetic.
-- **Calendrically rigorous** — true solar time, solar-term month boundaries, the 立春 year boundary, late-子时, and leap months are all correct, and cross-checked against the **independent `sxtwl` engine** at two levels: (1) **this repo's engine** end-to-end over 6,045 charts (1920–2080, every 29 days × 3 hours, covering both sides of the 夜子/早子 boundary), zero divergence; (2) the underlying `lunar_python` library against sxtwl on all 58,440 days, zero divergence — that second layer validates the dependency, not this repo's code, and the two are stated separately.
+- **Calendrically rigorous** — true solar time, solar-term month boundaries, the 立春 year boundary, late-子时, and leap months are all correct, and cross-checked against the **independent `sxtwl` engine**: this repo's engine end-to-end over ~1,800 charts (1920–2080, every 97 days × 3 hours, covering both sides of the 夜子/早子 boundary), zero divergence.
 - **Progressive disclosure** — Claude loads the small router first, then only the reference/script for the method in play. Minimal context cost.
 - **Interpretive discipline (CI-locked)** — BaZi judgments are bound to the five classics (《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》): no claim the classics cannot support, no platitudes or flattery, only the most verifiable conclusions. The discipline text is asserted by the release harness — deleting it fails the build.
 - **Optional quantum entropy** — casts accept `--entropy quantum` (ANU quantum-vacuum noise; degrades gracefully and is honestly labeled; no accuracy claim).
 - **Exploration tool** — `explore_cast.py`: QRNG points + density anomalies (attractor/void) + almanac auspicious-direction overlay + safety block, Randonautica-style walk prompts (explicitly not prediction, not MMI).
 - **Safety rails** — hard red lines (no death-date prediction, no medical/legal/financial calls, no curses) plus a crisis hand-off, built into the skill.
-- **Engineered** — 2149 tests / 88% coverage / `ruff` + `mypy` + a 5-gate CI + a 7-check release harness.
+- **Engineered** — 2461 tests / 86% coverage / `ruff` + `mypy` + a 5-gate CI + a 7-check release harness.
 
 ## Quick Start
 
@@ -115,7 +115,7 @@ CI (Python 3.11 / 3.12) enforces five gates:
 |---|---|
 | `ruff` | linting, zero tolerance |
 | `mypy` | static type checking |
-| `pytest` | **2149 tests** — golden values, 立春/late-子时/leap-month edges, 五鼠遁 invariant, day-pillar differential vs the independent `sxtwl` engine over all 58,440 days of 1920–2080, and a 903-chart 紫微 differential vs `iztro` |
+| `pytest` | **2461 tests** — golden values, 立春/late-子时/leap-month edges, 五鼠遁 invariant, an end-to-end engine differential vs `sxtwl` (~1,800 charts), and a 903-chart 紫微 differential vs `iztro` |
 | coverage | subprocess-tracked **88%**, fails under 80% |
 | harness | SKILL.md validation + interpretive-discipline lock + 19 machine-asserted scenarios + script JSON integrity (7 checks) |
 

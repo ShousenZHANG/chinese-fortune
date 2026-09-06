@@ -18,6 +18,8 @@ import math
 import sys
 from datetime import date as _date
 from datetime import datetime as _datetime
+from datetime import timedelta as _timedelta
+from datetime import timezone as _timezone
 
 # --------------------------------------------------------------------------- #
 # Core cycles
@@ -539,6 +541,8 @@ def resolve_timezone_offset(
     day: int,
     hour: int,
     minute: int = 0,
+    *,
+    fold: int | None = None,
 ) -> dict:
     """Actual UTC offset of a clock reading, DST and history included.
 
@@ -567,7 +571,19 @@ def resolve_timezone_offset(
             f"未知时区 {tz_name!r}; 请用 IANA 名称, 如 Asia/Shanghai"
         ) from exc
 
-    moment = _datetime(year, month, day, hour, minute, tzinfo=zone)
+    if fold not in (None, 0, 1):
+        raise ValueError("fold 必须为 0 或 1")
+    wall = _datetime(year, month, day, hour, minute)
+    candidates = [wall.replace(tzinfo=zone, fold=f) for f in (0, 1)]
+    valid = [m for m in candidates if
+             m.astimezone(_timezone.utc).astimezone(zone).replace(tzinfo=None) == wall]
+    if not valid:
+        raise ValueError(f"当地时间 {wall.isoformat()} 在 {tz_name} 不存在 (夏令时跳时)")
+    ambiguous = len({m.utcoffset() for m in valid}) > 1
+    if ambiguous and fold is None:
+        raise ValueError(f"当地时间 {wall.isoformat()} 在 {tz_name} 重复; "
+                         "请用 --fold 0 (第一次) 或 --fold 1 (第二次)")
+    moment = candidates[fold or 0]
     utcoff = moment.utcoffset()
     dst = moment.dst()
     if utcoff is None:
@@ -587,6 +603,8 @@ def resolve_timezone_offset(
         "offset_hours": offset_hours,
         "dst_hours": dst_hours,
         "abbrev": moment.tzname(),
+        "fold": moment.fold,
+        "ambiguous": ambiguous,
         "note": note,
     }
 
@@ -648,8 +666,9 @@ def true_solar_time_info(
     )
     eot = equation_of_time(day_of_year, leap=calendar.isleap(year))
     total_delta = lon_delta + eot
-    corrected_total = hour * 60 + minute + total_delta
-    corrected_h, corrected_m = divmod(int(round(corrected_total)), 60)
+    day_offset, corrected_h, corrected_m = longitude_correction(
+        hour, minute, longitude, tz_offset_hours, year, month, day)
+    effective_date = _date(year, month, day) + _timedelta(days=day_offset)
     return {
         "longitude": longitude,
         "ref_meridian": ref_meridian,
@@ -658,7 +677,47 @@ def true_solar_time_info(
         "total_offset_min": round(total_delta, 2),
         "clock_time": f"{hour:02d}:{minute:02d}",
         "true_solar_time": f"{corrected_h:02d}:{corrected_m:02d}",
+        "day_offset": day_offset,
+        "effective_date": effective_date.isoformat(),
     }
+
+
+def normalize_birth_time(
+    year: int, month: int, day: int, hour: int | None, minute: int,
+    longitude: float, tz_offset: float = 8.0, timezone: str | None = None,
+    fold: int | None = None, time_standard: str = "true-solar",
+) -> dict:
+    """One civil-time contract for both engines, including explanation and date roll.
+
+    Unknown hours use an explicitly provisional noon for calendar calculation only.
+    Clock mode is an explicit school choice; it never silently bypasses EOT.
+    """
+    if not math.isfinite(longitude) or not -180 <= longitude <= 180:
+        raise ValueError("经度必须为 -180..180 的有限数")
+    if not math.isfinite(tz_offset) or not -14 <= tz_offset <= 14:
+        raise ValueError("时区偏移必须为 -14..14 的有限数")
+    if time_standard not in ("true-solar", "clock"):
+        raise ValueError("时间口径必须为 true-solar 或 clock")
+    known = hour is not None
+    h, m = (hour, minute) if known else (12, 0)
+    tz_info = (resolve_timezone_offset(timezone, year, month, day, h, m, fold=fold)
+               if timezone else None)
+    offset = tz_info['offset_hours'] if tz_info else tz_offset
+    applied = known and time_standard == "true-solar"
+    if applied:
+        info = true_solar_time_info(longitude, offset, year, month, day, h, m)
+        effective = _date.fromisoformat(info['effective_date'])
+        h, m = map(int, info['true_solar_time'].split(':'))
+        info['applied'] = True
+    else:
+        effective = _date(year, month, day)
+        info = {'applied': False, 'day_offset': 0,
+                'effective_date': effective.isoformat(),
+                'reason': '时辰未知, 不作真太阳时校正' if not known else '显式采用钟表时间口径'}
+    info['time_standard'] = time_standard
+    return {'solar_date': dict(year=effective.year, month=effective.month,
+                               day=effective.day, hour=h, minute=m),
+            'true_solar_time': info, 'timezone': tz_info, 'hour_known': known}
 
 
 # --------------------------------------------------------------------------- #
