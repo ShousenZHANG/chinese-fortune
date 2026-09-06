@@ -10,6 +10,10 @@ on:
 permissions:
   contents: read
 
+env:
+  # Use the pinned Python tzdata package on Linux as well as Windows.
+  PYTHONTZPATH: ""
+
 concurrency:
   group: ci-${{ github.ref }}
   # 只在 PR 上取消在途运行。push 到 main 时连推两个 commit 会取消前一个的 CI,
@@ -25,10 +29,10 @@ jobs:
       matrix:
         python: ["3.11", "3.12"]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python }}
           cache: pip
@@ -36,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements-dev.txt
+          pip install -r requirements-dev.txt -c constraints-dev.txt
 
       - name: Lint (ruff)
         # Whole repo, not just scripts/ + tests/: evals/run_checks.py IS the
@@ -48,9 +52,8 @@ jobs:
         run: python -m mypy scripts/ --ignore-missing-imports --disallow-untyped-defs
 
       - name: Tests + coverage gate (subprocess-tracked, fail under 80%)
-        env:
-          COVERAGE_PROCESS_START: ${{ github.workspace }}/pyproject.toml
-        # pytest-cov auto-combines the parallel subprocess data and applies
+        # coverage's subprocess patch tracks CLI processes; pytest-cov combines
+        # the parallel subprocess data and applies
         # fail_under (from [tool.coverage.report]); no manual combine needed.
         #
         # 裸 `--cov` (不带值) 才会用 [tool.coverage.run] 的 source。写成
@@ -61,15 +64,32 @@ jobs:
         run: python -m pytest tests/ -q --cov --cov-report=term-missing
 
       - name: Release harness (evals/run_checks.py)
-        run: python -X utf8 evals/run_checks.py
+        run: python -X utf8 evals/run_checks.py --checks-only
 
       - name: Build importable skill package
         run: python scripts/build_skill.py
 
+      - name: Clean runtime installation and extracted package smoke
+        if: matrix.python == '3.12'
+        run: python -X utf8 evals/package_smoke.py
+
       - name: Upload package artifact
         if: matrix.python == '3.12'
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: chinese-fortune-skill
           path: dist/*.zip
           if-no-files-found: error
+
+  windows-smoke:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -r requirements-dev.txt -c constraints-dev.txt
+      - name: Installed package, UTF-8 and historical timezone tests
+        run: python -X utf8 -m pytest tests/test_build.py tests/test_time_contract.py tests/test_reading_support.py -q
+      - name: Clean runtime installation and extracted package smoke
+        run: python -X utf8 evals/package_smoke.py

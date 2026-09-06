@@ -6,6 +6,7 @@ Run from the repository root:
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
@@ -315,7 +316,10 @@ def check_unit_tests() -> None:
         fail(f"pytest failed:\n{output}")
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Release checks")
+    parser.add_argument("--checks-only", action="store_true", help="CI only: pytest must pass in the preceding step")
+    args = parser.parse_args(argv or [])
     checks = [
         check_skill_metadata,
         check_core_scripts,
@@ -329,6 +333,8 @@ def main() -> int:
         # 手动跑: python evals/mutate.py
         check_release_cleanliness,
     ]
+    if args.checks_only:
+        checks.remove(check_unit_tests)
     results: list[tuple[str, bool, str]] = []
     for check in checks:
         try:
@@ -356,4 +362,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(sys.argv[1:]))

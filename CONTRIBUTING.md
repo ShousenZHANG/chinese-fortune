@@ -11,7 +11,7 @@
 `chinese-fortune` aims to be the most complete, accurate, and ethically-bounded Chinese metaphysics skill for AI assistants. Contributions are welcome across:
 
 - **Reference depth** — expand classical citations, fix translation errors, add worked examples
-- **New methods** — currently `奇门遁甲`, `大六壬`, `太乙神数`, `铁板神数`, `称骨` lack computational scripts
+- **New methods** — currently `太乙神数`, `铁板神数`, `称骨` lack computational scripts
 - **Data quality** — `assets/jiemeng.json` (dream symbols) is at ~80 entries; classical 周公解梦 has 1000+. Same for `assets/name_bihua.json` (currently 2,594 chars).
 - **Translation** — currently 简体中文 only; we welcome 繁體中文 and English content in `references/`
 - **Test coverage** — add cases to `evals/evals.json` and assertions
@@ -26,13 +26,17 @@
 
 ### Development workflow
 
+The upstream repository currently keeps only `main`. Automatic Dependabot version
+PRs are paused; maintainers review dependency changes, update constraints or pinned
+Action SHAs, and validate them before publishing from `main`.
+
 ```bash
 # 1. Fork & clone
 git clone https://github.com/<your-fork>/chinese-fortune.git
 cd chinese-fortune
 
 # 2. Install dev dependency
-pip install lunar_python
+pip install -r requirements-dev.txt -c constraints-dev.txt
 
 # 3. Make changes on a branch
 git checkout -b feat/your-change
@@ -90,13 +94,14 @@ six**, so passing it locally does not mean CI will be green.
 ```bash
 python -m ruff check .
 python -m mypy scripts/ --ignore-missing-imports
-COVERAGE_PROCESS_START=pyproject.toml python -m pytest tests/ -q --cov=scripts
-python -X utf8 evals/run_checks.py     # 7 checks (~9 min)
+python -m pytest tests/ -q --cov
+python -X utf8 evals/run_checks.py --checks-only  # only after pytest passed
 python scripts/build_skill.py --dist-dir /tmp/dist
 ```
 
-**`COVERAGE_PROCESS_START` is not optional.** The engines run as subprocesses,
-so without it `pytest --cov=scripts` reports ~30% and trips `fail_under = 80`.
+The engines run as subprocesses. With pytest-cov 7, `pyproject.toml` enables
+coverage's `patch = ["subprocess"]`; no machine-specific startup hook is required.
+See the [pytest-cov migration guidance](https://pytest-cov.readthedocs.io/en/latest/subprocess-support.html).
 
 `evals/mutate.py` (mutation testing) is **not** part of the gate — it
 answers "are the tests strict enough", a meta-question worth a periodic
@@ -134,7 +139,7 @@ when you touch a lookup table: `python evals/mutate.py`.
 `chinese-fortune` 的目标是做一份**最完整、最准确、伦理边界清晰**的中国命理 AI skill。欢迎以下贡献：
 
 - **加深参考文档** — 扩充经典出处、修正翻译错误、增加案例
-- **新方法脚本** — 当前 `奇门遁甲`、`大六壬`、`太乙神数`、`铁板神数`、`称骨` 暂无脚本
+- **新方法脚本** — 当前 `太乙神数`、`铁板神数`、`称骨` 暂无脚本
 - **数据扩充** — `assets/jiemeng.json` 仅约 80 条 (周公解梦原本 1000+)，`assets/name_bihua.json` 当前 2594 字，可加深
 - **翻译** — 当前仅简体中文，欢迎繁體中文、English 翻译
 - **测试用例** — 扩充 `evals/evals.json` + 断言
@@ -155,7 +160,7 @@ git clone https://github.com/<你的 fork>/chinese-fortune.git
 cd chinese-fortune
 
 # 2. 装开发依赖
-pip install lunar_python
+pip install -r requirements-dev.txt -c constraints-dev.txt
 
 # 3. 切分支
 git checkout -b feat/你的改动
@@ -224,3 +229,11 @@ git push origin feat/你的改动
 - **文化敏感** — 涉婚姻、生育、性别的解读不应把传统约束强加给现代用户。
 - **包容** — LGBTQ+ 用户、单亲家庭、非传统居住安排均欢迎；不死板套男命/女命。
 - **争议靠经典与推理决定** — PR 讨论中拒绝"权威诉求" (我师父说 / 某大师说)，请引经典 + 推理。
+
+### 内容修改与验证 / Content review
+
+见 `references/22-output-contract.md` 与 `docs/OUTPUT-VALIDATION.md`。新增断语必须给出版本、条款、条件与例外；未核引文不能作为原文。修改输出要更新相应契约测试，不只更新快照。
+
+本地全检查：`python -X utf8 evals/run_checks.py`。CI 在同一 job 的完整 pytest 成功后使用 `--checks-only` 避免重复；不能用此选项声称本地完整测试通过。
+
+Windows 直接执行 `python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing`；subprocess patch 已在仓库配置。发布记录需区分结构检查、实际模型语义审核和远端 CI。

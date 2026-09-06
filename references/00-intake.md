@@ -7,23 +7,11 @@
 
 When a reading needs personal data (八字 / 紫微 / 合婚 / 起名 / 择日), **collect step-by-step**, not all at once. Use `AskUserQuestion` when there are discrete options (gender, calendar type); use plain text when free-form (name, location).
 
-### 数据处理声明 — 先说清楚再问
+### 数据处理声明：只采集计算所需信息
 
-这份表要采集九项个人信息（姓名、曾用名、生日、时辰、性别、出生地、现居地、
-关心议题含健康与财务、在世状态）。**采集之前必须让用户知道这些数据会怎样被处理：**
-
-- **本 skill 不落盘。** `scripts/` 与 `evals/` 全部代码零文件写入——无 logging、
-  无临时文件、无缓存（`tests/test_harness_gates.py` 强制）。生辰只在一次进程调用
-  里存在，进程结束即消失。
-- **但它们仍在对话记录里。** 本 skill 管不到宿主对话的留存策略；用户若不希望
-  生日留痕，应由用户自己决定说到多细（例如只给年月、或只给时辰不给日期）。
-- **命令行可见。** 所有数据以命令行参数传给脚本，因此会出现在进程列表
-  （`ps` / 任务管理器）与 shell 历史里。多用户共享的机器上尤须注意。
-- **第三方盘**：见 §在世状态 与 `20-disclaimer.md` 的同意条款——未经本人同意
-  不排他人盘。
-
-**开口第一句就带上这条**，不要等用户问。一句话即可：
-「这些信息只用于本次排盘、不会被保存；但会留在我们的对话记录里。」
+按方法采集必要字段；纯八字不要求姓名、曾用名或其他无关资料。用户已经提供的信息不重复问。
+运行时排盘脚本不落盘，不主动保存生辰；但宿主对话记录与命令行进程列表可能保留信息；不得保证所有环境均不留痕。
+仅在需要额外保存时说明用途与位置。不要为了免责声明增加一轮必需确认。
 
 | Step | Field | Required for | How to ask |
 |---|---|---|---|
@@ -54,12 +42,12 @@ Apply these BEFORE casting. Never silently guess.
 | 已故亲属推盘 | 经直系亲属同意可推, 但避免预测在世事项; 重点在历史校准与纪念意义. |
 | 海外出生 | 必收集出生地经度 + 当地时区; 真太阳时按出生地, 不按北京时间. |
 | **夏令时时段出生** | 中国曾 14 次行夏令时 (1919、1940-1949、**1986-1991**), 钟表快 1 小时。时辰边界在整点, 故边界后一小时内出生者时柱整位偏移。传 `--timezone Asia/Shanghai` 由 tzdata 自动折算, **不要**手工减一小时。若用户报的是"户口本时间"或记不清是否夏令时, 明示此不确定性。 |
-| 同卵双胞胎 | 同八字; 区分需另行 [紫微](references/02-ziwei.md) 或紫微+八字综合, 或时柱后半 (前/后子). |
+| 同卵双胞胎 | 同输入可能得到同盘; 不承诺其他术数一定能区分, 不编造差异。 |
 | 收养 / 不知生父母 | 仅以已知信息推; 不强补"父母宫缺失"叙事. |
 
 ## Required output fields (BaZi readings)
 
-When delivering BaZi readings, **always** surface these fields explicitly (script provides them):
+Full-chart appendix fields (not all mandatory in a focused answer):
 
 - 四柱 (年/月/日/时, 含天干 + 地支 + 藏干 + 纳音)
 - 日主 + 旺衰判定 + 月支司令
@@ -71,4 +59,11 @@ When delivering BaZi readings, **always** surface these fields explicitly (scrip
 - 大运 + 当前大运 + 流年
 - 真太阳时校正信息 (经度 + 均时差 EOT + 时区/夏令时折算, 若适用)
 
-不省略任何一项。如某项无法判定（如时柱缺）, 明示"待补"而非略过。
+正文按 [输出契约](22-output-contract.md) 回答所问；完整字段放附录或按需展示。用神/喜忌与格局只是候选时明确待核，不强行下定论。
+
+## 时间口径补充
+
+八字与紫微默认 `--time-standard true-solar`，东经 120° 仍须计算均时差。
+用户明确选择钟表时流派或只给未经换算的时辰时，先说明差异，再显式使用 `--time-standard clock`。
+夏令时跳过的当地时间必须更正；重复时刻用 `--fold 0/1` 选择第一次/第二次，不默选。
+跨时辰区间计算候选盘，只把共同结论作为稳定部分；未知时辰的午时是历法占位，不是用户出生时间。

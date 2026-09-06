@@ -252,137 +252,57 @@ def select_yong_shen(
     weighted_counts: dict[str, float],
     tiaohou_data: dict | None,
 ) -> dict:
-    """Choose 用神 / 喜神 / 忌神 by 扶抑 + 调候 combined.
+    """Return separate rule candidates, never an unverified personal verdict.
 
-    身旺 → 克泄耗 (官杀/食伤/财) among weakest of these three to balance.
-    身弱 → 比劫/印 among stronger of these two to support.
-    调候 lookup at "{day_stem}|{month_branch}" overrides/boosts when present.
+    Month/day table lookup does not establish all conditions of a classical clause.
+    A strength heuristic is not a classical priority rule or a probability.
     """
     day_wx = TIANGAN_WUXING.get(day_stem, "")
     label = strength.get("label", "中和")
-
-    # 调候 candidate
-    tiaohou_match = False
-    tiaohou_primary: str | None = None
-    tiaohou_reason = ""
-    if tiaohou_data and isinstance(tiaohou_data, dict):
-        # Accept either flat top-level keys or nested under "tiaohou"
-        nested = tiaohou_data.get("tiaohou") if isinstance(tiaohou_data.get("tiaohou"), dict) else tiaohou_data
-        key = f"{day_stem}|{month_branch}"
-        entry = nested.get(key) if isinstance(nested, dict) else None
-        if isinstance(entry, dict):
-            primary = (
-                entry.get("primary")
-                or entry.get("yong_shen")
-                or entry.get("primary_yongshen")
-            )
-            if isinstance(primary, list):
-                primary = primary[0] if primary else None
-            if primary:
-                tiaohou_primary = primary
-                tiaohou_match = True
-                tiaohou_reason = str(
-                    entry.get("reason") or entry.get("note") or entry.get("notes") or ""
-                )
-
-    # 扶抑 candidate
-    candidates_strong = [_ke_me(day_wx), _me_ke(day_wx), _xie_me(day_wx)]
-    candidates_weak = [day_wx, _sheng_me(day_wx)]
-
     if label in ("身旺", "偏旺"):
-        # Want to balance via weakest of the three counter forces
-        weighted = [(c, weighted_counts.get(c, 0.0)) for c in candidates_strong if c]
-        if not weighted:
-            fuyi_wx = _ke_me(day_wx) or _me_ke(day_wx) or _xie_me(day_wx)
-        else:
-            # 「取最弱者」是**本实现的取舍, 非古籍规则**。
-            # references/01-bazi.md §9.1 的扶抑法只说「身旺扶其所克所泄(财、官、
-            # 食伤)」, 三者之间如何取舍全无规定; 同页 :455 引《滴天髓》「用神不可
-            # 损伤, 日主最宜健旺」, 取最弱者为用神与该原则方向相反。
-            # 这条理由串会原样进入 yong_shen.reason 并被 Claude 转述, 所以必须
-            # 标明来历 —— 对照 assets/tiaohou.json 的 audit.engine_note, 调候那
-            # 一半早已如实注记, 扶抑这一半从前没有。
-            fuyi_wx = min(weighted, key=lambda x: x[1])[0]
-        fuyi_explain = (f"身旺需克/泄/耗调和, 取{fuyi_wx}为扶抑用神"
-                        f"(财/官杀/食伤中力量最弱者, 需被激活)"
-                        f"[取舍规则出自本实现, 古籍未定三者优先级]")
+        fuyi = [_ke_me(day_wx), _me_ke(day_wx), _xie_me(day_wx)]
     elif label in ("身弱", "偏弱"):
-        weighted = [(c, weighted_counts.get(c, 0.0)) for c in candidates_weak if c]
-        if not weighted:
-            fuyi_wx = _sheng_me(day_wx) or day_wx
-        else:
-            # Pick the stronger of 比劫/印 to lean on
-            fuyi_wx = max(weighted, key=lambda x: x[1])[0]
-        fuyi_explain = (f"身弱需扶身, 取{fuyi_wx}为扶抑用神"
-                        f"(比劫/印星中力量较强者助身)"
-                        f"[取舍规则出自本实现, 古籍未定二者优先级]")
+        fuyi = [day_wx, _sheng_me(day_wx)]
     else:
-        # 中和: prefer 调候; default to lightest unfilled 五行
-        all_wx = list(weighted_counts.keys())
-        fuyi_wx = min(all_wx, key=lambda w: weighted_counts.get(w, 0.0))
-        fuyi_explain = (f"中和之局, 取最弱五行{fuyi_wx}调和"
-                        f"[取舍规则出自本实现, 古籍未定]")
-
-    # Combine: if 调候 says X and 扶抑 says X → strong consensus; otherwise
-    # 调候 takes precedence for boundary climates (冬火 / 夏水 / 春木需金 etc.).
-    fuyi_match = True
-    if tiaohou_match and tiaohou_primary:
-        primary_wx = TIANGAN_WUXING.get(tiaohou_primary, "")
-        if primary_wx and primary_wx != fuyi_wx:
-            # 调候 wins for climate balance
-            chosen_wx = primary_wx
-            chosen_stem = tiaohou_primary
-            reason = (
-                f"调候优先: {tiaohou_reason or f'生于{month_branch}月需{primary_wx}调和寒暖燥湿'}; "
-                f"扶抑次之取{fuyi_wx}({fuyi_explain})"
-            )
-            fuyi_match = False
-        else:
-            chosen_wx = fuyi_wx
-            chosen_stem = tiaohou_primary or WUXING_TO_STEM_REPRESENTATIVE.get(fuyi_wx, "")
-            reason = (
-                f"扶抑与调候一致: {fuyi_explain}; 调候: {tiaohou_reason or f'{day_stem}日生于{month_branch}月,'+primary_wx+'为暖局/润局之神'}"
-            )
-    else:
-        chosen_wx = fuyi_wx
-        chosen_stem = WUXING_TO_STEM_REPRESENTATIVE.get(fuyi_wx, "")
-        reason = fuyi_explain
-        if not tiaohou_match:
-            reason += " (调候表缺失, 仅以扶抑取用)"
-
-    # 喜神 = 生用神之神
-    xi_wx = ""
-    for src, tgt in WUXING_GEN.items():
-        if tgt == chosen_wx:
-            xi_wx = src
-            break
-
-    # 忌神 = 克用神之神
-    ji_wx = ""
-    for src, tgt in WUXING_KE.items():
-        if tgt == chosen_wx:
-            ji_wx = src
-            break
-
+        fuyi = []
+    fuyi = [wx for wx in fuyi if wx]
+    key = f"{day_stem}|{month_branch}"
+    data = tiaohou_data or {}
+    table = data.get('tiaohou', data)
+    entry = table.get(key, {}) if isinstance(table, dict) else {}
+    if not isinstance(entry, dict):
+        entry = {}
+    primary = entry.get('primary_yongshen') or entry.get('primary') or entry.get('yong_shen') or []
+    if isinstance(primary, str):
+        primary = [primary]
+    primary = [stem for stem in primary if stem in TIANGAN_WUXING]
+    secondary = [stem for stem in entry.get('secondary_yongshen', []) if stem in TIANGAN_WUXING]
+    overlap = sorted({TIANGAN_WUXING[stem] for stem in primary} & set(fuyi))
+    reason = ('扶抑候选出自本实现的旺衰启发式; 调候仅按日干与月支匹配条目。'
+              '尚未核验原局制化、透藏、救应等条件, 不据此确定唯一用神或吉凶。')
     return {
-        "yong_shen": {
-            "primary": chosen_stem,
-            "wuxing": chosen_wx,
-            "reason": reason,
-            "tiaohou_match": tiaohou_match,
-            "fuyi_match": fuyi_match,
+        'yong_shen': {
+            'primary': None, 'wuxing': None, 'status': 'needs_review',
+            'method_version': 'conditional-2', 'rule_id': 'project-candidate-selection',
+            'reason': reason, 'tiaohou_match': bool(primary),
+            'fuyi_match': bool(overlap),
+            'views': {
+                'fuyi': {'candidates': fuyi, 'basis': label, 'kind': 'heuristic',
+                         'weighted_counts': weighted_counts,
+                         'status': 'candidate_only', 'source_id': None},
+                'tiaohou': {'candidates': primary, 'secondary_candidates': secondary,
+                            'table_key': key, 'kind': 'traditional_table',
+                            'source_id': 'qiong-tiaohou',
+                            'source_locator': f'assets/tiaohou.json#/tiaohou/{key}',
+                            'verification': 'legacy_audit_not_clause_verified',
+                            'status': 'candidate_only' if primary else 'unavailable',
+                            'conditions_pending': ['原文版本与条款', '透干通根', '全局制化与救应']},
+            },
+            'agreement': {'shared_elements': overlap,
+                          'meaning': '候选交集不等于独立验证, 不自动提升置信度'},
         },
-        "xi_shen": {
-            "primary": WUXING_TO_STEM_REPRESENTATIVE.get(xi_wx, ""),
-            "wuxing": xi_wx,
-            "reason": f"生{chosen_wx}({chosen_stem})之神, 辅助用神",
-        },
-        "ji_shen": {
-            "primary": WUXING_TO_STEM_REPRESENTATIVE.get(ji_wx, ""),
-            "wuxing": ji_wx,
-            "reason": f"克{chosen_wx}({chosen_stem}), 损用为忌",
-        },
+        'xi_shen': {'primary': None, 'wuxing': None, 'status': 'needs_review',
+                    'reason': '须核验具体组合, 不以生用神自动判为喜神'},
+        'ji_shen': {'primary': None, 'wuxing': None, 'status': 'needs_review',
+                    'reason': '须核验具体组合, 不以克用神自动判为忌神'},
     }
-
-
-# --------------------------------------------------------------------------- #

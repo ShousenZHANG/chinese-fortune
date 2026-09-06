@@ -1,2 +1,4 @@
-# Calendrical engine: 公历↔农历, 24节气, 60甲子, 真太阳时. Pinned for reproducibility.
-lunar_python>=1.4.4,<2.0
+# Calendar compatibility range; releases use scripts/constraints-runtime.txt.
+lunar_python>=1.4.8,<2.0
+
+tzdata>=2024.1  # IANA data also required on Windows

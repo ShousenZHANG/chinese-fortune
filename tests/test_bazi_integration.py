@@ -323,7 +323,7 @@ def test_unknown_timezone_is_a_clean_error():
     d = run_cli("bazi_calc.py", "--year", 1990, "--month", 1, "--day", 1,
                 "--hour", 12, "--gender", "male",
                 "--timezone", "Not/AZone", expect_rc=1)
-    assert d["error"] == "invalid_timezone"
+    assert d["error"] == "invalid_time"
 
 
 # --------------------------------------------------------------------------- #
@@ -674,43 +674,20 @@ def test_lunar_input_resolves_timezone_from_the_solar_day():
         assert a["four_pillars"] == b["four_pillars"], (ly, lm, ld)
 
 
-def test_tiaohou_primary_yongshen_reaches_the_output_for_representative_cells():
-    """调候用神 决定大运流年吉凶/方位/颜色/行业 —— 一格错则整份批断反号。变异实证:
-    把某格的 primary_yongshen 从 甲 改成 丙, 全量套件仍全绿。
-
-    以往对 tiaohou.json 的断言只覆盖「已核对格的字段形状」, 不覆盖「这个值真的
-    走到了输出」。这里挑四个不同日干/月支的格, 端到端跑到 yong_shen.primary。
-    """
+def test_all_tiaohou_candidates_reach_output_without_automatic_verdict():
     import json
     from pathlib import Path
-    root = Path(__file__).resolve().parent.parent
-    table = json.loads(
-        (root / "assets" / "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
-
-    # (公历生日, 期望的日干|月支, 该格的 primary_yongshen[0])
-    cases = [
-        ((1990, 5, 10, 14), "戊|巳"),
-        ((1990, 1, 15, 10), "己|丑"),
-        ((1985, 8, 20, 10), "丙|申"),
-        ((2000, 11, 5, 10), "壬|亥"),
-    ]
-    checked = 0
-    for (y, mo, dd, hh), _hint in cases:
-        d, _ = _run_bazi("--year", y, "--month", mo, "--day", dd, "--hour", hh,
-                         "--gender", "male")
-        assert d["ok"], d
-        key = f'{d["day_master"]["stem"]}|{d["four_pillars"]["month"]["branch"]}'
+    table = json.loads((Path(__file__).resolve().parents[1] / 'assets/tiaohou.json').read_text(encoding='utf-8'))['tiaohou']
+    for y, mo, dd, hh in [(1990, 5, 10, 14), (1990, 1, 15, 10), (1985, 8, 20, 10), (2000, 11, 5, 10)]:
+        chart, _ = _run_bazi('--year', y, '--month', mo, '--day', dd, '--hour', hh, '--gender', 'male')
+        key = f"{chart['day_master']['stem']}|{chart['four_pillars']['month']['branch']}"
         cell = table[key]
-        want = cell["primary_yongshen"][0]
-        ys = d.get("yong_shen") or {}
-        if not ys.get("tiaohou_match"):
-            continue          # 该盘走的是扶抑路径, 不检验调候
-        assert ys["primary"] == want, (
-            f"{key}: 引擎输出用神 {ys['primary']}, 而 tiaohou.json 该格是 {want}")
-        # notes 原样进 reason, 也一并锁住 —— 它会被 Claude 转述给用户
-        assert cell["notes"][:8] in ys["reason"], (key, ys["reason"][:80])
-        checked += 1
-    assert checked >= 3, f"只有 {checked} 个用例走到调候路径, 覆盖不足"
+        result = chart['yong_shen']
+        assert result['views']['tiaohou']['candidates'] == cell['primary_yongshen']
+        assert result['views']['tiaohou']['secondary_candidates'] == cell['secondary_yongshen']
+        assert result['primary'] is None
+        assert cell['notes'] not in result['reason']
+        assert chart['xi_shen']['primary'] is None and chart['ji_shen']['primary'] is None
 
 
 def test_tiaohou_primary_yongshen_table_is_locked():

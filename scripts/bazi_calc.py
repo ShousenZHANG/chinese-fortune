@@ -45,6 +45,7 @@ from bazi_tables import (
     TIANGAN_HE,
     si_ling,
 )
+from reading_support import bazi_reading_packet
 from utils import (
     DIZHI_WUXING,
     DIZHI_YIN_YANG,
@@ -56,11 +57,8 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,
-    longitude_correction,
     lookup_city,
-    require_lunar,
-    resolve_timezone_offset,
-    true_solar_time_info,
+    normalize_birth_time,
     validate_birth_input,
     warn,
 )
@@ -287,6 +285,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--timezone", type=str, default=None,
                    help="IANA 时区名 (如 Asia/Shanghai). 给出则按出生当刻的真实"
                         "偏移取时柱, 自动处理历史时区与夏令时")
+    p.add_argument("--fold", type=int, choices=(0, 1), default=None,
+                   help="重复当地时间: 0=第一次, 1=第二次; 无歧义时不需要")
+    p.add_argument("--time-standard", choices=("true-solar", "clock"),
+                   default="true-solar", help="时间口径, 默认真太阳时; clock 为显式钟表时")
     p.add_argument("--longitude", type=float, default=None,
                    help="出生地经度 (E°, 默认 120, 用于真太阳时)")
     p.add_argument("--lunar", action="store_true",
@@ -316,18 +318,19 @@ def build_parser() -> argparse.ArgumentParser:
 # Main
 # --------------------------------------------------------------------------- #
 
-def main(argv: list[str] | None = None) -> int:
-    ensure_utf8_stdio()
-    args = build_parser().parse_args(argv)
+def calculate_bazi(request: argparse.Namespace) -> dict:
+    """Compute a chart without stdout; accepts arguments from build_parser()."""
+    args = argparse.Namespace(**vars(request))
 
     err = validate_birth_input(args.year, args.month, args.day,
                                args.hour, args.minute, lunar=args.lunar)
     if err:
-        json_print(error_envelope("bazi", "invalid_input", err, input=vars(args)))
-        return 1
+        return error_envelope("bazi", "invalid_input", err, input=vars(args))
 
-    require_lunar()
-    from lunar_python import Lunar, Solar  # type: ignore
+    try:
+        from lunar_python import Lunar, Solar  # type: ignore
+    except ImportError:
+        return error_envelope("bazi", "missing_dependency", "pip install -r scripts/requirements.txt")
 
     # 真太阳时 info (informational + applied)
     # 钟表时间 != 标准时. 时辰边界在整点, 而中国的钟表并非一直是 UTC+8:
@@ -340,10 +343,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.city:
         row = lookup_city(args.city)
         if row is None:
-            json_print(error_envelope(
+            return error_envelope(
                 "bazi", "unknown_city",
-                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
-            return 1
+                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone")
         lon_explicit = args.longitude is not None
         if not lon_explicit:
             args.longitude = row["lon"]
@@ -376,7 +378,6 @@ def main(argv: list[str] | None = None) -> int:
     # Solar.fromYmdHms 不校验日期真实性 (1990-02-31 会被接受并给出一个农历转换),
     # 所以公历分支要自己用 date() 验一次。
     from datetime import date as _cal_date
-    from datetime import timedelta as _cal_delta
     try:
         if args.lunar:
             # 农历日→公历日的映射与时辰无关; 时辰在下面校正后才参与排盘。
@@ -386,57 +387,28 @@ def main(argv: list[str] | None = None) -> int:
             base_y, base_m, base_d = _bs.getYear(), _bs.getMonth(), _bs.getDay()
         else:
             base_y, base_m, base_d = args.year, args.month, args.day
-        base_date = _cal_date(base_y, base_m, base_d)
+        _cal_date(base_y, base_m, base_d)
     except Exception as e:
-        json_print({
+        return {
             "ok": False,
             "tool": "bazi",
             "version": VERSION,
             "error": "invalid_date",
             "message": str(e),
             "input": vars(args),
-        })
-        return 1
-
-    # 时区按**公历**日期解析 —— 历史夏令时是按公历日期立法的。
-    tz_info = None
-    tz_offset = args.tz
-    if args.timezone:
-        try:
-            tz_info = resolve_timezone_offset(
-                args.timezone, base_y, base_m, base_d, eff_hour, args.minute,
-            )
-        except ValueError as exc:
-            json_print(error_envelope("bazi", "invalid_timezone", str(exc)))
-            return 1
-        tz_offset = tz_info["offset_hours"]
+        }
 
     try:
-        tst_info = true_solar_time_info(
-            longitude=args.longitude,
-            tz_offset_hours=tz_offset,
-            year=base_y,
-            month=base_m,
-            day=base_d,
-            hour=eff_hour,
-            minute=eff_minute,
-        )
-        tst_info["applied"] = True
-    except Exception as e:
-        warn(f"true_solar_time_info failed: {e}")
-        tst_info = {"applied": False, "error": str(e)}
-    if not hour_known:
-        tst_info = {"applied": False, "reason": "时辰未知, 无法校正真太阳时"}
-
-    # Apply correction for pillar computation (incl. day roll-over near midnight)
-    day_offset, corr_hour, corr_minute = longitude_correction(
-        eff_hour, eff_minute, args.longitude, tz_offset,
-        year=base_y, month=base_m, day=base_d,
-    )
-    if not hour_known:
-        day_offset = 0  # noon cannot roll into an adjacent day
-    _d = base_date + _cal_delta(days=day_offset) if day_offset else base_date
-    corr_year, corr_month, corr_day = _d.year, _d.month, _d.day
+        normalized = normalize_birth_time(
+            base_y, base_m, base_d, args.hour, args.minute, args.longitude,
+            args.tz, args.timezone, args.fold, args.time_standard)
+    except ValueError as exc:
+        return error_envelope("bazi", "invalid_time", str(exc))
+    tz_info = normalized['timezone']
+    tst_info = normalized['true_solar_time']
+    sd = normalized['solar_date']
+    corr_year, corr_month, corr_day = sd['year'], sd['month'], sd['day']
+    corr_hour, corr_minute = sd['hour'], sd['minute']
 
     try:
         solar = Solar.fromYmdHms(
@@ -444,28 +416,26 @@ def main(argv: list[str] | None = None) -> int:
         )
         lunar = solar.getLunar()
     except Exception as e:
-        json_print({
+        return {
             "ok": False,
             "tool": "bazi",
             "version": VERSION,
             "error": "invalid_date",
             "message": str(e),
             "input": vars(args),
-        })
-        return 1
+        }
 
     try:
         eight = lunar.getEightChar()
     except Exception as e:
-        json_print({
+        return {
             "ok": False,
             "tool": "bazi",
             "version": VERSION,
             "error": "bazi_failed",
             "message": str(e),
             "input": vars(args),
-        })
-        return 1
+        }
 
     # 晚子时取日 — 00-intake.md:34 names both schools and promises the default is
     # stated. lunar_python: sect 2 keeps the day pillar and takes the hour stem
@@ -564,6 +534,11 @@ def main(argv: list[str] | None = None) -> int:
     ge_ju = None
     if not args.no_geju:
         ge_ju = detect_ge_ju(day_stem, pillars, weighted_counts, strength)
+        ge_ju['status'] = 'candidate_only'
+        ge_ju['method_version'] = 'pattern-heuristic-1'
+        ge_ju['source_ids'] = ['ziping-month', 'ziping-rescue']
+        ge_ju['notes'] = ('格名及纯破标记为程序候选; 须逐条核验成败救应, '
+                         '不得直接推断财富、婚姻或应期。')
 
     # 大运
     da_yun_list: list[dict] = []
@@ -696,8 +671,19 @@ def main(argv: list[str] | None = None) -> int:
         "liu_nian": liu_nian,
     }
 
+    result['schema_version'] = '2.0'
+    result['day_master_strength']['kind'] = 'heuristic'
+    result['day_master_strength']['method_version'] = 'weighted-strength-1'
+    result['reading_support'] = bazi_reading_packet(result)
+    return result
+
+
+def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
+    args = build_parser().parse_args(argv)
+    result = calculate_bazi(args)
     json_print(result)
-    return 0
+    return 0 if result.get("ok") else 1
 
 
 if __name__ == "__main__":

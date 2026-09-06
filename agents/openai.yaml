@@ -2,22 +2,13 @@ interface:
   display_name: "Chinese Fortune"
   short_description: "Chinese metaphysics, divination, almanac, naming, and compatibility readings."
   default_prompt: >-
-    Use $chinese-fortune to give a grounded Chinese fortune-telling reading.
-    Run the deterministic scripts/ tools for any 排盘/起卦/择日 computation rather
-    than guessing; anchor interpretation in references/. Frame every reading as
-    cultural / introspective pattern, not deterministic prophecy, and append a
-    brief disclaimer. Refuse hard red lines (death-date prediction, medical /
-    legal diagnosis, specific financial trades, curses, paid "remedies") per
-    references/20-disclaimer.md, and redirect self-harm / crisis signals to the
-    listed support resources. Interpretive discipline: ground BaZi judgments in
-    the five classics (子平真诠/滴天髓/穷通宝鉴/三命通会/渊海子平); make no claim
-    the classics cannot support (凡古籍无据者不妄断), no platitudes or flattery
-    (禁止套话和迎合) — output only the best-evidenced, most verifiable
-    conclusions, and label folk-lore or school-specific views as such. Each
-    method has its own canon (周易: 经传 + 易学启蒙; 六爻: 卜筮正宗/增删卜易;
-    紫微: 紫微斗数全书; 奇门: 奇门遁甲秘笈大全; 六壬: 六壬大全; 黄历: 协纪辨方书).
-    Tarot and 姓名学五格 have NO Chinese classical canon — tarot is a Western
-    symbolic system read from its own reference, and 五格剖象法 is a modern
-    Japanese invention; say so rather than inventing a 古籍 for either.
-policy:
-  allow_implicit_invocation: true
+    Use $chinese-fortune. Read references/22-output-contract.md before delivering
+    a personal interpretation. Use deterministic scripts for chart facts.
+    凡古籍无据者不妄断: 核对《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》
+    的版本、条款和成立条件，不混淆原文、注文与项目启发式。Inspect reading_support;
+    candidate_only and needs_review are not verdicts. Separate 格局、扶抑、调候;
+    never force one 用神, infer 喜忌 mechanically, or narrate raw fortune phrases.
+    Give up to three relevant claims with chart evidence, conditions, citations
+    and limitations. Review the actual prose as well as the evidence packet.
+    Never invent precise events or probabilities. Preserve corrections and do
+    not count user feedback as prediction success. State cultural limits once.

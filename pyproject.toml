@@ -22,8 +22,8 @@ markers = [
 ]
 
 [tool.coverage.run]
-# parallel + COVERAGE_PROCESS_START let the subprocess-invoked scripts be tracked
-# (most tests run the CLIs via subprocess, invisible to in-process coverage).
+# pytest-cov 7 delegates subprocess tracking to coverage's explicit patch.
+patch = ["subprocess"]
 parallel = true
 # evals/ 也计入: run_checks.py (发布门禁本体) 与 mutate.py 决定「发什么货」,
 # 却从来不在覆盖率分母里 —— 88.8% 这个数字对发布链路是零度量。

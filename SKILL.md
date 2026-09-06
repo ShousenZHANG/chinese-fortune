@@ -19,41 +19,25 @@ Use this line — no need to open a file for it:
 
 > 以上为传统命理参考，仅供文化娱乐，不作专业建议。
 
-## 解读纪律 (Interpretive Discipline) — 古籍为纲
+## 解读纪律 (Interpretive Discipline)
 
-八字论断**严格以五大古籍为主要依据**, 优先级从高到低:
+**凡古籍无据者不妄断；禁止套话和迎合；优先给可验证性最高的盘面事实。**
+输出个人解读前必须读 [22-output-contract.md](references/22-output-contract.md)。
 
-1. **《子平真诠》** — 格局用神的判定准绳 (月令本气取格, 顺用逆用)
-2. **《滴天髓》** — 日主强弱、通根透干、气势体用
-3. **《穷通宝鉴》** — 调候用神 (assets/tiaohou.json 即此体系, 120 条全录)
-4. **《三命通会》** — 神煞、纳音、杂断的出处校验
-5. **《渊海子平》** — 十神定义、六亲宫位的原典依据
+《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》分别核对版本、条款与条件，
+不把五书混成一张用神表。原文、注文、项目启发式分开；没有可定位原文就不得加引号冒充引用。
 
-硬性规则:
+- 每条主判断说明盘面依据、条款及条件、例外、范围；未核条件不得默认为成立。
+- `reading_support` 和 `yong_shen.views` 为解释入口；候选及启发式不是个人定论。
+- 不默认调候覆盖格局，不机械以生用神为喜、克用神为忌，不直接转述资产中的富贵刑克套语。
+- 岁运判断须匹配时间层级；不能从单一冲合推出具体事件、日期或未经校准的概率。
+- 禁止强制猜往事或据反馈追改命盘；保留原始判断与更正理由。
+- 已核转录不等于已核影像，引用古籍不等于现实预测有效。跨方法相似结论不自动增加置信度。
+- 塔罗无中土古籍依据，依据 references/18-tarot.md 的象征体系；五格姓名学属近现代体系，不能编造古籍背书。
 
-- **凡古籍无据者不妄断** — 论断必须能落到上述古籍的具体条目/原则; 落不到 → 明说"此点古籍无据, 属民俗/流派之说"或不断。
-- **禁止套话和迎合** — 不输出"你很善良/内心强大"式空泛安抚, 不为讨好用户软化不利结论; 吉凶如实, 措辞守 20-disclaimer 红线即可。
-- **只输出应象最强、可验证性最高的结论** — 每次批断优先给: ①盘面依据最硬 (干支/十神/格局直接可指) ②应期可回测 (给出年份/月份供用户核对) ③古籍可引 (注明出处) 的判断; 弱证据的推测要么不说, 要么明确降级标注"倾向而非定论"。
-- **学理与民俗分层** — 古籍学理为主判, 民俗神煞 (非《三命通会》所载者) 只作旁注, 不作主断。
-- **矛盾时的裁决顺序**: 调候 (穷通宝鉴) 与格局 (子平真诠) 冲突 → 先调候后格局并注明分歧; 古籍与现代流派冲突 → 从古籍, 注明流派异说。
-
-此纪律对所有方法生效, 八字为最严。各方法之纲:
-
-| 方法 | 为纲之典 |
-|---|---|
-| 八字 | 上列五部 |
-| 周易 | 《周易》经传; 变占从朱子《易学启蒙·考变占》 |
-| 六爻 | 《卜筮正宗》《增删卜易》《火珠林》《京氏易传》 |
-| 梅花易数 | 《梅花易数》 |
-| 紫微斗数 | 《紫微斗数全书》(安星诀/骨髓赋/形性赋) |
-| 奇门遁甲 | 《奇门遁甲秘笈大全》《烟波钓叟歌》 |
-| 大六壬 | 《六壬大全》《大六壬指南》 |
-| 黄历择日 | 《钦定协纪辨方书》 |
-| 解梦 | 《梦林玄解》《敦煌占梦书》; 现代心理层单独标注, 不与传统层混说 |
-| **塔罗** | **无中土古籍可依** — 属西方象征系统, 以 references/18-tarot.md 所载牌义为准; 不得为其编造古籍出处, 亦不得援引易理充数 (18-tarot.md §9.6 明言两系不应混淆) |
-| **姓名学五格** | **无古籍** — 五格剖象法系近代日本熊崎健翁所创, 非中土古法; 须如实标注其来历与争议, 不作古籍权威引用 |
-
-凡表中标注"无古籍"者, 仍守"不妄断"与"分层"两条: 说得出依据的说, 说不出的明说无据。
+各方法分别定位出处：周易用《周易》经传；六爻核《卜筮正宗》《增删卜易》；
+梅花核《梅花易数》；紫微核《紫微斗数全书》及注明的注本；奇门核《烟波钓叟歌》等所用条款；
+六壬核《六壬大全》；黄历核《协纪辨方书》。这些是检索范围，不表示整书已经核过。
 
 ## Quick Router — pick the right method
 
@@ -97,14 +81,16 @@ When the user request is ambiguous, ask **one** clarifying question (preferred m
                user asks 理论/原理, or when the method file lacks a table you need.
 6. CAST       → run the script if computation needed; otherwise lookup
 7. INTERPRET  → ground every claim in the chart + reference
-8. CALIBRATE  → state 3-5 已发生 events derived from the chart; ask user to verify; refine reading if mismatch
+8. REVIEW     → verify chart facts, source clauses, conditions and prose; preserve corrections
 9. SYNTHESIZE → combine methods only if user asks for cross-method reading
 10. DISCLAIM  → state limits once
 ```
 
 **Default reading depth**: medium (5-8 paragraphs). If user says 详解 / 详细 / 全面 → deep (full chart breakdown). If user says 简单 / 一句话 / tldr → 1-2 lines.
 
-**Closed-loop calibration (Step 8) — MUST do** for BaZi / ZiWei readings: list 3-5 events the chart implies have already happened (e.g. "27 岁前后有学业 / 事业转折", "申子辰大运曾遇贵人"), ask the user "这几条对吗?" and adjust your 用神 / 格局 judgment based on which hit. This is the difference between rote chart reading and craftsmanship.
+**Correction protocol**: preserve the original interpretation. Separate input corrections,
+calculation fixes, school changes and interpretation revisions. Never count user-disclosed
+history as a prediction, or force guesses about past events. Unknown inputs remain unknown.
 
 ## Computation scripts
 
@@ -169,7 +155,7 @@ four. Ask for the whole payload when the user wants a full 批断.
 
 ## Data assets
 
-`assets/*.json` are consumed by the scripts, not by you — do not open them.
+`assets/*.json` are normally consumed by scripts. For evidence review, read the specific referenced clause in `assets/classical_evidence.json`; avoid loading unrelated tables.
 Every value they hold reaches you through a script's JSON output.
 
 ## Extended methods

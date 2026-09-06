@@ -42,6 +42,8 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
+    ('reading_support.py', ['--chart', 'assets/classical_evidence.json'], '证据库不是命盘'),
+    ('reading_support.py', ['--chart', 'does-not-exist.json'], '输入文件不存在'),
     ("bazi_calc.py", ["--year", 1990, "--month", 2, "--day", 31, "--hour", 10,
                       "--gender", "male"], "公历 2 月没有 31 日"),
     ("bazi_calc.py", ["--year", 1990, "--month", 13, "--day", 1, "--hour", 10,

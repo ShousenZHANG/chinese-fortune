@@ -9,6 +9,25 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 > 当前版本起，四个来源（`scripts/utils.py` 常量 / 本文件最新条目 / git tag /
 > dist 里的 zip 文件名）由 `tests/test_harness_gates.py` 强制一致。
 
+## [2.0.0] — 2026-09-06
+
+### 输出契约变更
+
+- JSON `schema_version=2.0`：用神/喜忌 `primary` 可以为 null，调候与扶抑候选分列于 `views`；不再以调候首项和机械生克生成个人定论。调用方必须检查 status。
+- `reading_support` 提供盘面证据、条款、条件和限制；格局标记为候选，去除自动转述的富贵刑克套语。
+- 新增已核转录条款注册表与结构审核器、30 个真实回答评估场景；未完成的实际模型评审明确记为 pending，不当成通过。
+- 输出按结论、盘面、条款、条件、分歧组织；取消强制猜往事，区分正文/注文和反馈更正。
+
+### 时间与工程
+
+- 八字/紫微共用时间归一化。默认 true-solar，东经120°同样应用均时差；需要旧的钟表口径时显式传 `--time-standard clock`。
+- 修正前例：2000-02-15 01:05、120°、UTC+8，紫微保留01:05而八字为00:50；现在两者均为00:50。跨日显示不再出现负小时。
+- 拒绝夏令时不存在时间；重复时间使用 `--fold 0/1` 明确选择。增加 Windows tzdata 依赖。
+- 提供不打印的 `calculate_bazi` / `calculate_ziwei`，CLI 保留 JSON 错误契约。
+- 独立差分在显式 clock 口径验证四柱，时间归一化另用独立预期测试；CI 不重复跑完整 pytest。
+- 增加测试依赖约束及 Windows 安装/发布包检查，移除手工写死的测试数和覆盖率宣传。
+- GitHub Actions 升级到已核对的 v7 发布提交并固定 SHA；依赖版本升级 PR 暂停自动创建，按 main 单分支维护。
+
 ## [1.7.4] — 2026-09-05
 
 第二轮独立评分（同一脚本、同一锚点）把 v1.7.3 的六个维度**又一次全部判为打高了**。

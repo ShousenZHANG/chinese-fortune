@@ -1,11 +1,11 @@
-# Actions 此前全部按可变大版本 tag 引用 (checkout@v5 等), 供应链侧无锁 ——
-# 上游改 tag 指向即静默换掉 CI 里跑的代码, 而本仓库的发布产物由 CI 构建。
-# 钉 commit SHA 是更强的做法, 但会让升级变成手工活; 这里取「可变 tag +
-# dependabot 每周提 PR」的折中, 至少让每次变更可见、可复核。
+# main-only maintenance: version-update PR creation is paused.
+# Actions use immutable commit SHAs; Python baselines use constraints files.
+# Dependency upgrades are reviewed and validated before direct main updates.
 version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
+    open-pull-requests-limit: 0
     schedule:
       interval: weekly
     commit-message:
@@ -14,6 +14,7 @@ updates:
       - dependencies
   - package-ecosystem: pip
     directory: /
+    open-pull-requests-limit: 0
     schedule:
       interval: weekly
     commit-message:

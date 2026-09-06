@@ -12,6 +12,8 @@
     "city": null,
     "sect": 2,
     "timezone": null,
+    "fold": null,
+    "time_standard": "true-solar",
     "longitude": 120.0,
     "lunar": false,
     "years": 80,
@@ -28,7 +30,10 @@
     "total_offset_min": -9.41,
     "clock_time": "10:30",
     "true_solar_time": "10:21",
-    "applied": true
+    "day_offset": 0,
+    "effective_date": "2000-01-15",
+    "applied": true,
+    "time_standard": "true-solar"
   },
   "solar_date": {
     "year": 2000,
@@ -211,7 +216,9 @@
     "state_from_yueling": "旺",
     "party_ratio": 0.446,
     "rooted_count": 2,
-    "explanation": "日主壬(水)生于丑月,处于'旺'地; 通根2处; 党众占比44.6%. 综合判定:偏旺."
+    "explanation": "日主壬(水)生于丑月,处于'旺'地; 通根2处; 党众占比44.6%. 综合判定:偏旺.",
+    "kind": "heuristic",
+    "method_version": "weighted-strength-1"
   },
   "yue_ling_si_ling": {
     "stem": "辛",
@@ -408,21 +415,72 @@
     }
   ],
   "yong_shen": {
-    "primary": "丙",
-    "wuxing": "火",
-    "reason": "扶抑与调候一致: 身旺需克/泄/耗调和, 取火为扶抑用神(财/官杀/食伤中力量最弱者, 需被激活)[取舍规则出自本实现, 古籍未定三者优先级]; 调候: 丑月寒土冻水, 必取丙火解冻暖局, 丁火配合调候, 甲木辅之. 丙丁两透, 富贵显达, 福寿绵长.",
+    "primary": null,
+    "wuxing": null,
+    "status": "needs_review",
+    "method_version": "conditional-2",
+    "rule_id": "project-candidate-selection",
+    "reason": "扶抑候选出自本实现的旺衰启发式; 调候仅按日干与月支匹配条目。尚未核验原局制化、透藏、救应等条件, 不据此确定唯一用神或吉凶。",
     "tiaohou_match": true,
-    "fuyi_match": true
+    "fuyi_match": true,
+    "views": {
+      "fuyi": {
+        "candidates": [
+          "土",
+          "火",
+          "木"
+        ],
+        "basis": "偏旺",
+        "kind": "heuristic",
+        "weighted_counts": {
+          "木": 2.0,
+          "火": 2.0,
+          "土": 4.75,
+          "金": 2.8,
+          "水": 4.25
+        },
+        "status": "candidate_only",
+        "source_id": null
+      },
+      "tiaohou": {
+        "candidates": [
+          "丙",
+          "丁"
+        ],
+        "secondary_candidates": [
+          "甲"
+        ],
+        "table_key": "壬|丑",
+        "kind": "traditional_table",
+        "source_id": "qiong-tiaohou",
+        "source_locator": "assets/tiaohou.json#/tiaohou/壬|丑",
+        "verification": "legacy_audit_not_clause_verified",
+        "status": "candidate_only",
+        "conditions_pending": [
+          "原文版本与条款",
+          "透干通根",
+          "全局制化与救应"
+        ]
+      }
+    },
+    "agreement": {
+      "shared_elements": [
+        "火"
+      ],
+      "meaning": "候选交集不等于独立验证, 不自动提升置信度"
+    }
   },
   "xi_shen": {
-    "primary": "甲",
-    "wuxing": "木",
-    "reason": "生火(丙)之神, 辅助用神"
+    "primary": null,
+    "wuxing": null,
+    "status": "needs_review",
+    "reason": "须核验具体组合, 不以生用神自动判为喜神"
   },
   "ji_shen": {
-    "primary": "壬",
-    "wuxing": "水",
-    "reason": "克火(丙), 损用为忌"
+    "primary": null,
+    "wuxing": null,
+    "status": "needs_review",
+    "reason": "须核验具体组合, 不以克用神自动判为忌神"
   },
   "ge_ju": {
     "primary": "正官格",
@@ -433,7 +491,13 @@
       "年干透己"
     ],
     "broken_or_pure": "纯",
-    "notes": "正官格喜见正财生官, 忌见七杀混杂. 身旺官弱以财生官, 身弱官旺以印化官."
+    "notes": "格名及纯破标记为程序候选; 须逐条核验成败救应, 不得直接推断财富、婚姻或应期。",
+    "status": "candidate_only",
+    "method_version": "pattern-heuristic-1",
+    "source_ids": [
+      "ziping-month",
+      "ziping-rescue"
+    ]
   },
   "na_yin": {
     "year": "城头土",
@@ -598,5 +662,166 @@
       "zodiac": "猪",
       "shi_shen": "正印"
     }
-  ]
+  ],
+  "schema_version": "2.0",
+  "reading_support": {
+    "schema_version": "1.0",
+    "claims": [
+      {
+        "id": "chart-pillars",
+        "kind": "chart_fact",
+        "status": "supported",
+        "text": "四柱：己卯、丁丑、壬申、乙巳",
+        "facts": [
+          {
+            "path": "four_pillars.year.ganzhi",
+            "value": "己卯"
+          },
+          {
+            "path": "four_pillars.month.ganzhi",
+            "value": "丁丑"
+          },
+          {
+            "path": "four_pillars.day.ganzhi",
+            "value": "壬申"
+          },
+          {
+            "path": "four_pillars.hour.ganzhi",
+            "value": "乙巳"
+          }
+        ],
+        "source_ids": [],
+        "rule_id": null,
+        "scope": "natal",
+        "conditions": {},
+        "exceptions": []
+      },
+      {
+        "id": "bazi-month-structure",
+        "kind": "traditional_interpretation",
+        "status": "needs_review",
+        "text": "格局候选须核查全局成败救应，暂不据格名断人生结果。",
+        "facts": [
+          {
+            "path": "four_pillars.month.ganzhi",
+            "value": "丁丑"
+          },
+          {
+            "path": "ge_ju.primary",
+            "value": "正官格"
+          }
+        ],
+        "source_ids": [
+          "ziping-month",
+          "ziping-rescue"
+        ],
+        "rule_id": "bazi-month-structure",
+        "scope": "natal",
+        "conditions": {
+          "month_origin": "unknown",
+          "whole_chart": "unknown",
+          "formation": "unknown",
+          "rescue": "unknown"
+        },
+        "exceptions": [
+          "时辰未提供时，候选可能随时柱变化"
+        ]
+      },
+      {
+        "id": "bazi-climate-separate",
+        "kind": "traditional_interpretation",
+        "status": "needs_review",
+        "text": "扶抑与调候分列候选；尚不足以确定全局用神及喜忌。",
+        "facts": [
+          {
+            "path": "yong_shen.views.fuyi.candidates",
+            "value": [
+              "土",
+              "火",
+              "木"
+            ]
+          },
+          {
+            "path": "yong_shen.views.tiaohou.candidates",
+            "value": [
+              "丙",
+              "丁"
+            ]
+          }
+        ],
+        "source_ids": [
+          "ziping-climate",
+          "qiong-tiaohou"
+        ],
+        "rule_id": "bazi-climate-separate",
+        "scope": "natal",
+        "conditions": {
+          "specific_clause": "unknown",
+          "stems_roots": "unknown",
+          "whole_chart": "unknown"
+        },
+        "exceptions": [
+          "时辰未提供时，候选可能随时柱变化"
+        ]
+      },
+      {
+        "id": "shangguan-review",
+        "kind": "traditional_interpretation",
+        "status": "needs_review",
+        "text": "伤官与正官在天干或藏干中并见，透藏作用需区别；不能仅据并见判凶。",
+        "facts": [
+          {
+            "path": "day_master.stem",
+            "value": "壬"
+          },
+          {
+            "path": "four_pillars.year.stem",
+            "value": "己"
+          },
+          {
+            "path": "four_pillars.year.hidden_stems.0",
+            "value": "乙"
+          },
+          {
+            "path": "four_pillars.month.hidden_stems.0",
+            "value": "己"
+          },
+          {
+            "path": "four_pillars.hour.stem",
+            "value": "乙"
+          }
+        ],
+        "rule_id": "bazi-shangguan-guan",
+        "source_ids": [
+          "ditian-shangguan",
+          "ditian-shangguan-comment"
+        ],
+        "scope": "natal",
+        "conditions": {
+          "co_presence": "met",
+          "strength": "unknown",
+          "wealth_and_seal": "unknown",
+          "rescue": "unknown"
+        },
+        "exceptions": [
+          "身强弱及财印救应尚未逐条核实"
+        ]
+      }
+    ],
+    "source_ids": [
+      "ditian-shangguan",
+      "ditian-shangguan-comment",
+      "qiong-tiaohou",
+      "ziping-climate",
+      "ziping-month",
+      "ziping-rescue"
+    ],
+    "review_status": "structural_only",
+    "limits": [
+      "旺衰分数是工程启发式，不是概率",
+      "未预测现实事件或具体应期",
+      "格局与神煞中的旧断语不可直接转述",
+      "古籍转录已核部分不等于全书已核"
+    ]
+  }
 }

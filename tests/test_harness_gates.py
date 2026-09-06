@@ -404,13 +404,12 @@ def test_changelog_and_tags_drift_is_recorded_not_silent():
 def test_contributing_lists_every_ci_gate():
     """贡献者文档只写了 run_checks.py 一道; ruff / mypy / coverage 三道 CI 门
     全文零提及 —— 照文档走完的贡献者能复现 6 道 CI 门里的 1 道。
-    COVERAGE_PROCESS_START 同样只在 ci.yml/pyproject 里出现, 而不带它跑
-    `pytest --cov=scripts` 得 29.9%, 直接触发 fail_under 80 报红。
+    覆盖率必须包含脚本子进程；pytest-cov 7 使用 coverage 的 subprocess patch。
     """
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
     doc = (root / "CONTRIBUTING.md").read_text(encoding="utf-8")
-    for gate in ("ruff", "mypy", "pytest", "COVERAGE_PROCESS_START",
+    for gate in ("ruff", "mypy", "pytest", "subprocess",
                  "run_checks", "mutate"):
         assert gate in doc, f"CONTRIBUTING 未提及 CI 门 {gate}"
 
@@ -520,19 +519,20 @@ def test_ci_does_not_cancel_main_branch_runs():
         f"cancel-in-progress 无条件为真, push:main 的运行会被后一次推送取消: {line}")
 
 
-def test_dependency_updates_are_at_least_visible():
-    """Actions 全部按可变大版本 tag 引用 (checkout@v5 等) —— 上游改 tag 指向即
-    静默换掉 CI 里跑的代码, 而本仓库的发布产物由 CI 构建。
-
-    钉 commit SHA 更强但让升级变成手工活; 这里要求至少有 dependabot,
-    让每次变更可见、可复核。
-    """
+def test_actions_are_pinned_and_dependency_pr_creation_is_paused():
+    """Main-only maintenance must not silently change Actions or recreate bot branches."""
+    import re
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
+    ci = (root / '.github/workflows/ci.yml').read_text(encoding='utf-8')
+    actions = re.findall(r'uses:\s+([^\s#]+)', ci)
+    assert actions and all(re.fullmatch(r'[\w.-]+/[\w.-]+@[0-9a-f]{40}', a) for a in actions)
     dep = root / ".github" / "dependabot.yml"
-    assert dep.exists(), "无 dependabot.yml —— actions 与 pip 依赖的变更不可见"
+    assert dep.exists()
     text = dep.read_text(encoding="utf-8")
-    assert "github-actions" in text and "pip" in text
+    blocks = text.split('- package-ecosystem:')[1:]
+    assert {block.splitlines()[0].strip() for block in blocks} == {'github-actions', 'pip'}
+    assert all(re.search(r'^\s+open-pull-requests-limit:\s*0\s*$', block, re.M) for block in blocks)
 
 
 def test_ci_coverage_does_not_override_the_config_source():

@@ -9,6 +9,8 @@
     "minute": 0,
     "gender": "male",
     "tz": 8.0,
+    "fold": null,
+    "time_standard": "true-solar",
     "longitude": 120.0,
     "lunar": false,
     "city": null,
@@ -23,13 +25,26 @@
     "effective_lunar_month": 12,
     "is_leap_month": false
   },
-  "true_solar_time_applied": false,
+  "true_solar_time_applied": true,
+  "true_solar_time": {
+    "longitude": 120.0,
+    "ref_meridian": 120.0,
+    "longitude_offset_min": 0.0,
+    "equation_of_time_min": -9.41,
+    "total_offset_min": -9.41,
+    "clock_time": "10:00",
+    "true_solar_time": "09:51",
+    "day_offset": 0,
+    "effective_date": "2000-01-15",
+    "applied": true,
+    "time_standard": "true-solar"
+  },
   "solar_date": {
     "year": 2000,
     "month": 1,
     "day": 15,
-    "hour": 10,
-    "minute": 0
+    "hour": 9,
+    "minute": 51
   },
   "lunar_date": {
     "year": 1999,
@@ -777,5 +792,16 @@
     "亮度依《紫微斗数全书·形性赋》简化为 庙/旺/平/陷, 实战可再细化为 庙旺得地利平不闲陷 七级。",
     "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",
     "三合派与飞星派对火铃起例及部分自化有分歧, 本脚本采用《紫微斗数全书》主流。"
-  ]
+  ],
+  "schema_version": "2.0",
+  "reading_support": {
+    "status": "requires_semantic_review",
+    "school": "project-synthesis",
+    "limits": [
+      "星曜与宫位为排盘结果; 象征含义不是个人经历或未来事件",
+      "格局标签不直接推出富贵贫贱、健康或关系结论",
+      "亮度采用项目简化表, 未完成全表原刻影像校勘",
+      "自化等分歧规则须标明所用口径, 不冒充全书共识"
+    ]
+  }
 }

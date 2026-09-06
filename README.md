@@ -5,8 +5,6 @@
 **一个 Claude Skill，把中国五术（山·医·命·相·卜）的 20+ 种命理方法装进一个可移植技能。**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-2461%20passing-brightgreen)](tests)
-[![coverage](https://img.shields.io/badge/coverage-88%25-brightgreen)](#质量保障)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
 
@@ -32,14 +30,14 @@
 ## 特性
 
 - **20+ 种方法，一个技能** — 命卜相术全覆盖，单一自包含 skill，无需后端、无需联网。
-- **确定性计算** — 15 个 Python 引擎在 `lunar_python`（[寿星天文历](https://github.com/6tail/lunar-python) 算法移植，节气误差 < 1 秒）上排盘起卦，而非让大模型手算（易错）。
-- **历法严谨** — 真太阳时、节气定月、立春年界、夜子时、闰月等业余易错处全部正确，并经**独立引擎 sxtwl 跨库对照**：本仓库引擎端到端逐盘比对 1920–2080 （每 97 天 × 3 个时辰，含夜子/早子两侧）约 1,800 盘，零分歧。
+- **确定性计算** — Python 脚本基于 lunar_python 排盘，模型负责条件化解释；数值启发式不冒充古籍定理。
+- **历法验证** — 八字与紫微共享时间归一化，支持显式真太阳时/钟表时、跨日与夏令时歧义。独立差分验证指定口径的四柱，时间处理另有边界回归；测试范围不等于证明所有输入或现实预测都正确。
 - **渐进式披露** — Claude 先加载小路由，再按需调用对应方法的文档与脚本，上下文最小化。
-- **解读纪律 (CI 锁定)** — 八字论断严格以《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》五大古籍为准绳：凡古籍无据者不妄断、禁套话迎合、只出可验证性最高的结论。纪律文本被发布校验断言，删改即构建失败。
+- **有依据的解读** — 事实、古籍条款与候选解释分开，见 [输出契约](references/22-output-contract.md)。机器审核结构与引文；语义与现实预测效果需要独立评估。
 - **量子熵源（可选）** — 起卦/抽牌可用 `--entropy quantum` 接入 ANU 量子真空噪声（物理真随机，源不可达时优雅降级并如实标注；不声称提升准确度）。
 - **随机寻访** — `explore_cast.py`：QRNG 撒点 + 密度异常（attractor/void）+ 黄历吉方对照 + 安全提示，Randonautica 式散步灵感（明确非预测、非念力）。
 - **安全护栏** — 硬红线（不预测死亡、不做医疗法律金融决断、不接诅咒）+ 危机转介，内建于技能。
-- **工程化** — 2461 测试 / 86% 覆盖 / `ruff` + `mypy` + CI 五道质量门 + 7 项发布校验。
+- **工程化** — pytest、ruff、mypy、覆盖率门槛和发布校验；测试数量与覆盖率以对应提交的 CI 实际报告为准。
 
 ## 快速开始
 
@@ -52,7 +50,7 @@
 | **OpenAI / 其他** | 解压到任意位置；agent 指向 `agents/openai.yaml`，把 `scripts/` 当工具调用。 |
 
 ```bash
-pip install "lunar_python>=1.4.4,<2.0"   # 所有平台：精确农历 / 八字 / 黄历
+pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
 ```
 
 导入后直接对 Claude 说话即可，技能按中英文请求自动触发：
@@ -75,28 +73,20 @@ python scripts/huangli_query.py --date 2026-06-15
 
 ## 覆盖方法
 
-| 分类 | 方法 | 配套脚本 |
-|---|---|---|
-| **命** | 八字、紫微斗数、称骨、河洛理数、七政四余 | 八字、紫微 |
-| **卜** | 周易、六爻、梅花易数、奇门遁甲、大六壬、小六壬、太乙、灵签、杯筊 | 周易、六爻、梅花、奇门、大六壬、小六壬 |
-| **相** | 风水（八宅 / 玄空）、面相、手相、测字 | —（文档解读） |
-| **术** | 黄历择日、姓名学、合婚、解梦、生肖、星座、塔罗 | 黄历、姓名、合婚 / 生肖、塔罗 |
-| **游** | 随机寻访（QRNG 探索点 + 黄历吉方，非占卜） | 随机寻访 |
-
-除随机寻访（纯工具，无参考文档）外，每种方法对应 `references/` 中的参考文档，需要计算的另配 `scripts/` 脚本。完整路由表见 [SKILL.md](SKILL.md)。
+方法、资料和可调用脚本统一维护在 [SKILL.md 的路由表](SKILL.md#quick-router--pick-the-right-method)。Script 列为 `—` 的项目仅有资料支持；有脚本表示可计算表中所述范围，不表示涵盖所有流派或已经验证预测效果。具体流派限制见对应参考文档。
 
 ## 工作原理
 
 ```
 SKILL.md           路由：frontmatter 触发词 + 方法表
-references/  (23)   命理正文：理论 + 各方法解读指南
-scripts/     (15)   确定性计算引擎（lunar_python + SystemRandom + 可选 QRNG）
-assets/      (12)   JSON 查表（干支、64卦、神煞、塔罗、笔画 …）
-evals/             发布校验 + 19 场景机器断言
+references/        按需加载的传统资料与输出契约
+scripts/           计算引擎、共享模块与证据审核
+assets/            规则查表与古籍条款注册表
+evals/             发布校验、安装冒烟与真实回答评估（源码仓库）
 tests/             pytest 黄金值 + 边界 + 独立引擎差分
 ```
 
-历法正确性（真太阳时、节气定月、立春年界、夜子时、闰月）交给 `lunar_python`，技能在其上叠加格局 / 用神 / 解读层。
+项目在 `lunar_python` 历法计算上实现时间归一化、格局候选与解读证据。2.0 的用神、喜忌最终值允许为空，调用方须检查状态与条件，详见 [迁移和验证说明](docs/OUTPUT-VALIDATION.md)。
 
 ## 安全边界
 
@@ -115,8 +105,8 @@ CI（Python 3.11 / 3.12）强制执行五道门：
 |---|---|
 | `ruff` | 代码规范，0 容忍 |
 | `mypy` | 静态类型检查 |
-| `pytest` | **2461 测试** — 黄金值、立春 / 夜子时 / 闰月边界、五鼠遁不变量、引擎对 sxtwl 端到端差分（约 1,800 盘）、对 iztro 紫微 903 例差分 |
-| coverage | 子进程追踪 **88%**，低于 80% 即失败 |
+| `pytest` | 规则、边界、CLI、独立引擎差分与内容审核回归；具体通过/跳过数见 CI |
+| coverage | 追踪 scripts 与 evals（含子进程），低于 80% 失败；实际值见 CI |
 | harness | SKILL.md 校验 + 解读纪律锁 + 19 场景机器断言 + 脚本 JSON 合法性（7 项） |
 
 ## 贡献
@@ -125,4 +115,14 @@ CI（Python 3.11 / 3.12）强制执行五道门：
 
 ## 许可与来源
 
-[MIT](LICENSE)。基于经典文献（《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》…）与 [`6tail/lunar-python`](https://github.com/6tail/lunar-python)。仅供文化 / 教育参考——结果是概率性倾向，非确定性预言。
+[MIT](LICENSE)。基于经典文献（《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》…）与 [`6tail/lunar-python`](https://github.com/6tail/lunar-python)。解读属于有条件的传统解释，仅供文化 / 教育参考，不代表经过统计验证的事件概率。
+
+## 2.0 输出与验证
+
+用神与喜忌可能返回 `primary: null`，先读 `status` 与 `yong_shen.views`。这表示候选条件未核实，不是字段缺失。古籍的正文、注文和项目整理分开，见 `assets/classical_evidence.json`。
+
+八字/紫微默认 `--time-standard true-solar`，需要钟表时请显式指定 `clock`。有重复当地时间时用 `--fold 0/1`。
+
+内存接口：`calculate_bazi(build_parser().parse_args(argv))`，紫微对应 `calculate_ziwei`。CLI 仍输出 UTF-8 JSON。
+
+真实回答评估：`evals/reading_cases.json` 有 30 个场景；`python -X utf8 evals/evaluate_readings.py --responses recording.json` 检查实际回答及审核记录。没有实际回答或语义评审即不通过，场景文件自身不代表模型已通过。详见 [验证说明](docs/OUTPUT-VALIDATION.md)。

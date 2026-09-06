@@ -193,11 +193,10 @@ def test_huangli_jishi_uses_huangdao_not_all12():
 
 
 @needs_lunar
-def test_ziwei_value_golden_and_longitude_optin():
-    """ziwei standard chart value golden + longitude correction is opt-in
-    (default longitude must NOT shift the 时辰-granular chart)."""
+def test_ziwei_clock_school_golden_and_solar_correction():
+    """The old clock-time golden is preserved under an explicit school option."""
     d = run("ziwei_calc.py", "--year", "1995", "--month", "7", "--day", "20",
-            "--hour", "1", "--gender", "female", "--lunar")
+            "--hour", "1", "--gender", "female", "--lunar", "--time-standard", "clock")
     assert (d["ming_gong"]["branch"], d["shen_gong"]["branch"],
             d["wuxing_ju"]["name"]) == ("未", "酉", "木三局")
     # Explicit far-west longitude near midnight DOES correct (different 命宫).

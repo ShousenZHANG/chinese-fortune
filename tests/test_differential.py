@@ -123,44 +123,31 @@ def test_bazi_script_matches_independent_engine():
 
 
 def test_bazi_engine_matches_sxtwl_over_a_real_grid():
-    """端到端: **本仓库的 bazi_calc.py** 对 sxtwl, 逐盘比四柱。
+    """Four pillars on an independent clock-time grid; solar correction has golden tests.
 
-    此前整个文件里 bazi_calc.py 只被跑过**一次** (1984-10-01 正午一天), 而 58,440
-    天那条 sweep 根本不碰本仓库代码。于是 README 用「独立引擎 sxtwl 跨库对照」
-    支撑「真太阳时、节气定月、立春年界、夜子时、闰月等全部正确」时, 支撑物是空的。
-
-    这里在进程内直调 main() (子进程逐盘要 40 分钟, 进程内约 60 秒), 覆盖
-    1920-2080 每 97 天一点 × 3 个时辰 —— 包含 夜子(23时) 与 早子(0时) 两侧,
-    这正是 sweep 那条 (固定正午) 永远碰不到的地方。
+    Exclude solar-term dates for year/month because sxtwl has date granularity.
+    Sect 2 keeps the same civil day at 23h; the hour stem uses the next day.
     """
-    import io as _io
-    import json as _json
-    from contextlib import redirect_stdout
-    sys.path.insert(0, str(SCRIPTS))
     import bazi_calc
-
     cur, end = date(1920, 1, 1), date(2080, 1, 1)
-    checked, bad = 0, []
+    checked = 0
     while cur < end:
+        independent = sxtwl.fromSolar(cur.year, cur.month, cur.day)
         for hour in (0, 12, 23):
-            buf = _io.StringIO()
-            with redirect_stdout(buf):
-                rc = bazi_calc.main([
-                    "--year", str(cur.year), "--month", str(cur.month),
-                    "--day", str(cur.day), "--hour", str(hour),
-                    "--gender", "male", "--as-of-year", "2026"])
-            assert rc == 0, (cur, hour)
-            d = _json.loads(buf.getvalue())
-            # 夜子时会把日柱推到次日 —— 用引擎回报的 solar_date 对齐 oracle,
-            # 否则比的是两个不同的日子。
-            sd = d["solar_date"]
-            sx = sx_gz(sxtwl.fromSolar(sd["year"], sd["month"], sd["day"]), "d")
-            got = d["four_pillars"]["day"]["ganzhi"]
-            if got != sx:
-                bad.append(f"{cur} {hour}时 -> solar {sd['year']}-{sd['month']}-"
-                           f"{sd['day']}: 引擎 {got} != sxtwl {sx}")
+            args = bazi_calc.build_parser().parse_args([
+                '--year', str(cur.year), '--month', str(cur.month), '--day', str(cur.day),
+                '--hour', str(hour), '--gender', 'male', '--as-of-year', '2026',
+                '--time-standard', 'clock'])
+            chart = bazi_calc.calculate_bazi(args)
+            assert chart['ok'], (cur, hour, chart)
+            assert chart['solar_date'] == {'year': cur.year, 'month': cur.month,
+                                           'day': cur.day, 'hour': hour, 'minute': 0}
+            pillars = chart['four_pillars']
+            assert pillars['day']['ganzhi'] == sx_gz(independent, 'd'), (cur, hour, 'day')
+            assert pillars['hour']['ganzhi'] == sx_gz(independent, 'h', hour), (cur, hour, 'hour')
+            if not independent.hasJieQi():
+                assert pillars['year']['ganzhi'] == sx_gz(independent, 'y'), (cur, hour, 'year')
+                assert pillars['month']['ganzhi'] == sx_gz(independent, 'm'), (cur, hour, 'month')
             checked += 1
         cur += timedelta(days=97)
-    assert not bad, (f"{len(bad)}/{checked} 盘日柱与 sxtwl 不符, 前 10 条: "
-                     + " | ".join(bad[:10]))
-    assert checked >= 1800, checked
+    assert checked >= 1800

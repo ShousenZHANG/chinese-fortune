@@ -38,7 +38,7 @@ SKILL_FOLDER = "chinese-fortune"  # top-level dir inside the archive
 # 唯一的版本证据是 scripts/utils.py 里那一行常量 —— 用户看不出装的是哪版、
 # 修了什么。
 INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE",
-                 "CHANGELOG.md"]
+                 "CHANGELOG.md", "docs/OUTPUT-VALIDATION.md", "docs/OUTPUT-EXAMPLE.md"]
 INCLUDE_DIRS = ["references", "assets", "agents"]
 # scripts/: ship runtime .py + requirements.txt, but NOT this builder or tests.
 SCRIPT_EXCLUDE = {"build_skill.py"}

@@ -11,7 +11,6 @@ Two input conventions differ and are mapped here rather than "fixed":
   to iztro as the same calendar day at time_index 0.
 - iztro names the palace 仆役宫; this project uses 奴仆宫.
 """
-import sys
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -40,19 +39,15 @@ PALACES = {"命宫", "兄弟宫", "夫妻宫", "子女宫", "财帛宫", "疾厄
 def _ours(y, m, d, hour, gender):
     """In-process call: 900 subprocess spawns pushed the release harness past
     its timeout; calling main() directly runs the same grid in a few seconds."""
-    import io as _io
-    import json
-    from contextlib import redirect_stdout
-
-    sys.path.insert(0, str(ROOT / "scripts"))
     import ziwei_calc
+    args = ziwei_calc.build_parser().parse_args([
+        '--year', str(y), '--month', str(m), '--day', str(d), '--hour', str(hour),
+        '--gender', gender, '--time-standard', 'clock'])
+    # Isolate star-placement rules from time normalization, tested independently.
+    chart = ziwei_calc.calculate_ziwei(args)
+    assert chart['ok']
+    return chart
 
-    buf = _io.StringIO()
-    with redirect_stdout(buf):
-        rc = ziwei_calc.main(["--year", str(y), "--month", str(m), "--day", str(d),
-                              "--hour", str(hour), "--gender", gender])
-    assert rc == 0
-    return json.loads(buf.getvalue())
 
 
 def _iztro(y, m, d, hour, gender):

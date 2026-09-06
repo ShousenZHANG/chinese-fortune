@@ -39,10 +39,8 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,
-    longitude_correction,
     lookup_city,
-    require_lunar,
-    resolve_timezone_offset,
+    normalize_birth_time,
     validate_birth_input,
     warn,
 )
@@ -115,6 +113,10 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--minute", type=int, default=0)
     p.add_argument("--gender", choices=["male", "female"], required=True)
     p.add_argument("--tz", type=float, default=8.0)
+    p.add_argument("--fold", type=int, choices=(0, 1), default=None,
+                   help="重复当地时间: 0=第一次, 1=第二次; 无歧义时不需要")
+    p.add_argument("--time-standard", choices=("true-solar", "clock"),
+                   default="true-solar", help="时间口径, 默认真太阳时; clock 为显式钟表时")
     p.add_argument("--longitude", type=float, default=None,
                    help="出生地经度 (E°, 默认 120, 用于真太阳时)")
     p.add_argument("--lunar", action="store_true",
@@ -158,9 +160,9 @@ def brief_palaces(palaces: list[dict]) -> list[dict]:
     return out
 
 
-def main(argv: list[str] | None = None) -> int:
-    ensure_utf8_stdio()
-    args = build_parser().parse_args(argv)
+def calculate_ziwei(request: argparse.Namespace) -> dict:
+    """Compute a chart without stdout; accepts arguments from build_parser()."""
+    args = argparse.Namespace(**vars(request))
 
     # 边界校验必须在碰 lunar_python 之前。Solar.fromYmdHms 不校验日期真实性 ——
     # 1990-02-31 会被接受并归一化成一张完整命盘随 ok:true 返回, 调用方无从分辨。
@@ -168,11 +170,12 @@ def main(argv: list[str] | None = None) -> int:
         args.year, args.month, args.day, args.hour, args.minute, lunar=args.lunar,
     )
     if err:
-        json_print(error_envelope("ziwei", "invalid_input", err, input=vars(args)))
-        return 1
+        return error_envelope("ziwei", "invalid_input", err, input=vars(args))
 
-    require_lunar()
-    from lunar_python import Lunar, Solar  # type: ignore
+    try:
+        from lunar_python import Lunar, Solar  # type: ignore
+    except ImportError:
+        return error_envelope("ziwei", "missing_dependency", "pip install -r scripts/requirements.txt")
 
     try:
         if args.lunar:
@@ -190,19 +193,14 @@ def main(argv: list[str] | None = None) -> int:
             )
             lunar = solar.getLunar()
     except Exception as exc:
-        json_print(error_envelope("ziwei", "invalid_date", str(exc), input=vars(args)))
-        return 1
+        return error_envelope("ziwei", "invalid_date", str(exc), input=vars(args))
 
-    # 真太阳时校正 — 仅当用户显式提供非默认经度/时区时应用。
-    # 紫微输入通常是粗粒度时辰; 默认经度(120)/时区(8) 表示"未提供精确出生地",
-    # 此时保留所输入时辰原样, 避免 EOT 把临界时辰(如 01:00)误推过 时辰边界。
-    # 给出真实经度即视为有精确出生地, 按 bazi 同法校正(近子时可滚日)。
+    # Resolve place before the shared time normalization.
     birthplace = None
     if args.city:
         row = lookup_city(args.city)
         if row is None:
-            json_print(error_envelope('ziwei', "unknown_city", f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
-            return 1
+            return error_envelope('ziwei', "unknown_city", f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone")
         lon_explicit = args.longitude is not None
         if not lon_explicit:
             args.longitude = row["lon"]
@@ -215,40 +213,20 @@ def main(argv: list[str] | None = None) -> int:
     if args.longitude is None:
         args.longitude = 120.0  # GMT+8 reference meridian
 
-    tz_info = None
-    tz_offset = args.tz
-    if args.timezone:
-        try:
-            tz_info = resolve_timezone_offset(
-                args.timezone, solar.getYear(), solar.getMonth(),
-                solar.getDay(), args.hour, args.minute,
-            )
-        except ValueError as exc:
-            json_print(error_envelope('ziwei', "invalid_timezone", str(exc)))
-            return 1
-        tz_offset = tz_info["offset_hours"]
-
-    tst_applied = False
-    birth_hour = args.hour
-    if args.longitude != 120.0 or tz_offset != 8.0:
-        try:
-            day_off, corr_hour, corr_minute = longitude_correction(
-                args.hour, args.minute, args.longitude, tz_offset,
-                year=solar.getYear(), month=solar.getMonth(), day=solar.getDay(),
-            )
-            if (day_off, corr_hour, corr_minute) != (0, args.hour, args.minute):
-                from datetime import date, timedelta
-                base = date(solar.getYear(), solar.getMonth(), solar.getDay())
-                if day_off:
-                    base = base + timedelta(days=day_off)
-                solar = Solar.fromYmdHms(base.year, base.month, base.day,
-                                         corr_hour, corr_minute, 0)
-                lunar = solar.getLunar()
-            birth_hour = corr_hour
-            tst_applied = True
-        except Exception as exc:
-            warn(f"true_solar_time correction skipped: {exc}")
-            birth_hour = args.hour
+    try:
+        normalized = normalize_birth_time(
+            solar.getYear(), solar.getMonth(), solar.getDay(), args.hour,
+            args.minute, args.longitude, args.tz, args.timezone, args.fold,
+            args.time_standard)
+    except ValueError as exc:
+        return error_envelope("ziwei", "invalid_time", str(exc))
+    tz_info = normalized['timezone']
+    tst_info = normalized['true_solar_time']
+    tst_applied = tst_info['applied']
+    sd = normalized['solar_date']
+    solar = Solar.fromYmdHms(sd['year'], sd['month'], sd['day'], sd['hour'], sd['minute'], 0)
+    lunar = solar.getLunar()
+    birth_hour = sd['hour']
 
     # 晚子时取日 (shared convention with bazi_calc --sect). 子初换日 treats 23:00
     # onwards as the next day outright, so the entire lunar date rolls before
@@ -429,6 +407,7 @@ def main(argv: list[str] | None = None) -> int:
         "input": {**vars(args), "effective_lunar_month": lunar_month,
                   "is_leap_month": is_leap_month},
         "true_solar_time_applied": tst_applied,
+        "true_solar_time": tst_info,
         "solar_date": {
             "year": solar.getYear(), "month": solar.getMonth(),
             "day": solar.getDay(), "hour": solar.getHour(),
@@ -475,9 +454,26 @@ def main(argv: list[str] | None = None) -> int:
             "三合派与飞星派对火铃起例及部分自化有分歧, 本脚本采用《紫微斗数全书》主流。",
         ],
     }
+    out['schema_version'] = '2.0'
+    out['reading_support'] = {
+        'status': 'requires_semantic_review',
+        'school': 'project-synthesis',
+        'limits': [
+            '星曜与宫位为排盘结果; 象征含义不是个人经历或未来事件',
+            '格局标签不直接推出富贵贫贱、健康或关系结论',
+            '亮度采用项目简化表, 未完成全表原刻影像校勘',
+            '自化等分歧规则须标明所用口径, 不冒充全书共识',
+        ],
+    }
+    return out
 
-    json_print(out)
-    return 0
+
+def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
+    args = build_parser().parse_args(argv)
+    result = calculate_ziwei(args)
+    json_print(result)
+    return 0 if result.get("ok") else 1
 
 
 if __name__ == "__main__":

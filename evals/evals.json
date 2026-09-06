@@ -557,6 +557,30 @@
           ]
         }
       ]
+    },
+    {
+      "id": 20,
+      "name": "reading-evidence-contract",
+      "prompt": "检查已核盘面的结论记录，不生成确定个人命运。",
+      "expected_output": "Evidence packet with explicitly pending classical conditions, no forced primary.",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/reading_support.py",
+            "--chart",
+            "tests/data/bazi_snapshot_20000115.json"
+          ],
+          "paths": {
+            "ok": true,
+            "semantic_review": "required"
+          },
+          "has_keys": [
+            "packet.claims",
+            "packet.limits"
+          ]
+        }
+      ]
     }
   ]
 }

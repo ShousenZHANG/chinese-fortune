@@ -5,8 +5,6 @@
 **A Claude Skill packing 20+ Chinese metaphysics methods (五术: 山·医·命·相·卜) into one portable skill.**
 
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-2461%20passing-brightgreen)](tests)
-[![coverage](https://img.shields.io/badge/coverage-88%25-brightgreen)](#quality-gates)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![release](https://img.shields.io/github/v/release/ShousenZHANG/chinese-fortune)](https://github.com/ShousenZHANG/chinese-fortune/releases)
 
@@ -32,14 +30,14 @@ BaZi, Zi Wei Dou Shu, I-Ching, Liu Yao, Qi Men Dun Jia, Feng Shui, almanac, nami
 ## Features
 
 - **20+ methods, one skill** — divination, destiny, physiognomy, and practical arts in a single self-contained skill. No backend, no network.
-- **Deterministic computation** — 15 Python engines on `lunar_python` (a port of the [寿星天文历](https://github.com/6tail/lunar-python) algorithm, solar-term error < 1s) do the 排盘/起卦, instead of asking an LLM to do error-prone arithmetic.
-- **Calendrically rigorous** — true solar time, solar-term month boundaries, the 立春 year boundary, late-子时, and leap months are all correct, and cross-checked against the **independent `sxtwl` engine**: this repo's engine end-to-end over ~1,800 charts (1920–2080, every 97 days × 3 hours, covering both sides of the 夜子/早子 boundary), zero divergence.
+- **Deterministic computation** — Python scripts calculate charts with `lunar_python`; the language model explains their structured results.
+- **Explicit time conventions** — BaZi and Zi Wei share solar-time normalization, date rollover and DST validation. Independent-engine grids check clock-time pillars and star placement; separate boundary tests check normalization. These checks do not establish predictive validity.
 - **Progressive disclosure** — Claude loads the small router first, then only the reference/script for the method in play. Minimal context cost.
-- **Interpretive discipline (CI-locked)** — BaZi judgments are bound to the five classics (《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》): no claim the classics cannot support, no platitudes or flattery, only the most verifiable conclusions. The discipline text is asserted by the release harness — deleting it fails the build.
+- **Traceable interpretation** — chart facts, conditional traditional readings and practical suggestions are separate. Selected classical passages have source records; unverified table entries remain candidates. Structural checks require evidence and conditions; actual prose still needs semantic review.
 - **Optional quantum entropy** — casts accept `--entropy quantum` (ANU quantum-vacuum noise; degrades gracefully and is honestly labeled; no accuracy claim).
 - **Exploration tool** — `explore_cast.py`: QRNG points + density anomalies (attractor/void) + almanac auspicious-direction overlay + safety block, Randonautica-style walk prompts (explicitly not prediction, not MMI).
 - **Safety rails** — hard red lines (no death-date prediction, no medical/legal/financial calls, no curses) plus a crisis hand-off, built into the skill.
-- **Engineered** — 2461 tests / 86% coverage / `ruff` + `mypy` + a 5-gate CI + a 7-check release harness.
+- **Quality checks** — pytest with coverage, `ruff`, `mypy`, release checks and Windows package smoke tests. Consult the current run for measured results.
 
 ## Quick Start
 
@@ -52,7 +50,7 @@ Download `chinese-fortune-v*.zip` from [Releases](https://github.com/ShousenZHAN
 | **OpenAI / other** | Unzip anywhere; point your agent at `agents/openai.yaml` and call the `scripts/` as tools. |
 
 ```bash
-pip install "lunar_python>=1.4.4,<2.0"   # all platforms: accurate 农历 / 八字 / 黄历
+pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
 ```
 
 Then just talk to Claude — the skill auto-triggers on Chinese or English fortune requests:
@@ -75,28 +73,20 @@ Run `python scripts/<name>.py --help` for options. Build the package from source
 
 ## Methods
 
-| Group | Methods | Has script |
-|---|---|---|
-| **命 Destiny** | BaZi, Zi Wei Dou Shu, 称骨, 河洛理数, 七政四余 | BaZi, Zi Wei |
-| **卜 Divination** | I-Ching, Liu Yao, Mei Hua, Qi Men, Da Liu Ren, Xiao Liu Ren, Tai Yi, oracle slips, Bei Jiao | I-Ching, Liu Yao, Mei Hua, Qi Men, Da/Xiao Liu Ren |
-| **相 Physiognomy** | Feng Shui (Eight Mansions / Xuan Kong), face, palm, glyphomancy | — (reference-guided) |
-| **术 Practical** | almanac date selection, naming, compatibility, dream, zodiac, astrology, Tarot | almanac, naming, compatibility/zodiac, Tarot |
-| **游 Exploration** | random walk points (QRNG + almanac directions; not divination) | exploration |
-
-Each method except exploration (a pure tool, no reference doc) maps to a reference doc in `references/`, and (where computation helps) a script in `scripts/`. The full routing table lives in [SKILL.md](SKILL.md).
+The [SKILL.md routing table](SKILL.md#quick-router--pick-the-right-method) is the shared inventory of methods, references and callable scripts. A `—` in the Script column means reference-only support. A script implements the documented scope; it does not cover every school or establish predictive validity. School-specific limits live in the linked reference.
 
 ## How It Works
 
 ```
 SKILL.md           router — frontmatter trigger + method table
-references/  (23)   the canon: theory + per-method interpretation guides
-scripts/     (15)   deterministic engines (lunar_python + SystemRandom + optional QRNG)
-assets/      (12)   JSON lookup tables (干支, 64卦, 神煞, Tarot, strokes …)
-evals/             release harness + 19 machine-asserted scenarios
+references/        theory, interpretation guides and output contract
+scripts/           deterministic engines and evidence review
+assets/            lookup tables and versioned classical evidence
+evals/             release checks and actual-response evaluation runner (source checkout)
 tests/             pytest golden values + edge cases + independent-engine diff
 ```
 
-Calendrical correctness (true solar time, solar-term months, 立春 year boundary, late-子时, leap months) is delegated to `lunar_python`; the skill adds the 格局/用神/interpretation layer on top.
+The project combines `lunar_python` calendrical calculations with its own time normalization and conditional interpretation layer. Version 2.0 returns nullable final 用神/喜忌 values and separate candidates. See [migration and validation](docs/OUTPUT-VALIDATION.md).
 
 ## Safety
 
@@ -115,8 +105,8 @@ CI (Python 3.11 / 3.12) enforces five gates:
 |---|---|
 | `ruff` | linting, zero tolerance |
 | `mypy` | static type checking |
-| `pytest` | **2461 tests** — golden values, 立春/late-子时/leap-month edges, 五鼠遁 invariant, an end-to-end engine differential vs `sxtwl` (~1,800 charts), and a 903-chart 紫微 differential vs `iztro` |
-| coverage | subprocess-tracked **88%**, fails under 80% |
+| `pytest` | **CI-reported tests** — golden values, 立春/late-子时/leap-month edges, 五鼠遁 invariant, an end-to-end engine differential vs `sxtwl` (~1,800 charts), and a 903-chart 紫微 differential vs `iztro` |
+| coverage | subprocess-tracked **CI-reported coverage**, fails under 80% |
 | harness | SKILL.md validation + interpretive-discipline lock + 19 machine-asserted scenarios + script JSON integrity (7 checks) |
 
 ## Contributing
@@ -125,4 +115,20 @@ PRs welcome — deeper Zi Wei / Xuan Kong logic, more `evals` scenarios, Traditi
 
 ## License & Sources
 
-[MIT](LICENSE). Built on classical texts (《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》 …) and [`6tail/lunar-python`](https://github.com/6tail/lunar-python). Cultural/educational reference only — readings are probabilistic patterns, not deterministic predictions.
+[MIT](LICENSE). Built on classical texts (《周易》《滴天髓》《三命通会》《渊海子平》《紫微斗数全书》《卜筮正宗》《梅花易数》 …) and [`6tail/lunar-python`](https://github.com/6tail/lunar-python). Readings are conditional traditional interpretations for cultural and educational reference; they do not represent statistically validated event probabilities.
+
+## Version 2 output contract
+
+Use `pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt`.
+BaZi and ZiWei default to `--time-standard true-solar`; `clock` is an explicit
+school choice. Ambiguous local times require `--fold 0/1`.
+
+`schema_version=2.0`: use `status` and `yong_shen.views`; `primary` can be null.
+Candidates are not final personal verdicts. `reading_support` links facts and
+conditions to source records. Quotation checks are structural, not independent
+proof of semantic correctness or predictive validity.
+
+Exact test counts and coverage belong to the CI report of the tested commit.
+Thirty scenarios in `evals/reading_cases.json` are an evaluation specification,
+not passed model runs. Missing real answers or semantic reviews fail
+`evals/evaluate_readings.py --responses recording.json`.
