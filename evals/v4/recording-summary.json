@@ -1,0 +1,710 @@
+{
+  "schema_version": "1.0",
+  "status": "user_requested_early_finish",
+  "recording_stopped_at_utc": "2026-09-08T02:27:28.032171+00:00",
+  "audited_at_utc": "2026-09-08T02:29:33.116102+00:00",
+  "active_recording_processes": 0,
+  "reason": "User explicitly requested quick final commit and release; remaining comparison and review were not completed.",
+  "baseline_commit": "524dc1739778017e0fd2c25dc19a7594a87d662c",
+  "tested_commit": "bffeae84f61f66b6e57382a54239132e866ca18d",
+  "superseded_experiment_commit": "fc5c255524d7be010347e9176fa2ec29cbfb7e88",
+  "runtime_input_fingerprint": "9502eab1142cb5ebfca9bbcecf6a6348c5b4dcb0a6990d2f035216db041a194b",
+  "runtime_input_count": 509,
+  "model": "gpt-6-astra",
+  "reasoning_effort": "ultra",
+  "cli_version": "0.153.4",
+  "backend_weights_observable": false,
+  "cases_sha256": {
+    "ability": "0416f1f04b4030202861f8e0ff8aeb18d502b348598bf71a47b6c848fc0316b9",
+    "challenge": "4998ccf0bd267959ac87b4bf646f4312298c898cebf7f6caeb3afb1627d94473"
+  },
+  "expected_final_comparison_sessions": 128,
+  "completed_final_comparison_sessions": 42,
+  "baseline_selected_completed": {
+    "ability": 24,
+    "challenge": 10,
+    "total": 34
+  },
+  "updated_selected_completed": {
+    "ability": 8,
+    "challenge": 0,
+    "total": 8
+  },
+  "september_8_recordings": {
+    "baseline": {
+      "completed_sessions": 11,
+      "execution_failures": 0,
+      "partial_sessions": [],
+      "not_started_slots": [
+        [
+          "C03",
+          2
+        ],
+        [
+          "C04",
+          2
+        ],
+        [
+          "C05",
+          2
+        ],
+        [
+          "C06",
+          2
+        ],
+        [
+          "C07",
+          2
+        ],
+        [
+          "C08",
+          2
+        ],
+        [
+          "B01",
+          2
+        ],
+        [
+          "B02",
+          2
+        ],
+        [
+          "B03",
+          2
+        ],
+        [
+          "B04",
+          2
+        ],
+        [
+          "B05",
+          2
+        ],
+        [
+          "B06",
+          2
+        ],
+        [
+          "B07",
+          2
+        ],
+        [
+          "B08",
+          2
+        ],
+        [
+          "B09",
+          2
+        ],
+        [
+          "B10",
+          2
+        ],
+        [
+          "B11",
+          2
+        ],
+        [
+          "B12",
+          2
+        ],
+        [
+          "T01",
+          2
+        ],
+        [
+          "T02",
+          2
+        ],
+        [
+          "T03",
+          2
+        ],
+        [
+          "T04",
+          2
+        ],
+        [
+          "Z01",
+          2
+        ],
+        [
+          "Z02",
+          2
+        ],
+        [
+          "Z03",
+          2
+        ],
+        [
+          "Z04",
+          2
+        ],
+        [
+          "L01",
+          2
+        ],
+        [
+          "L02",
+          2
+        ],
+        [
+          "L03",
+          2
+        ],
+        [
+          "L04",
+          2
+        ]
+      ],
+      "complete_case_slots": [
+        [
+          "C06",
+          1
+        ],
+        [
+          "C08",
+          1
+        ],
+        [
+          "Z02",
+          1
+        ],
+        [
+          "Z03",
+          1
+        ],
+        [
+          "Z04",
+          1
+        ],
+        [
+          "L01",
+          1
+        ],
+        [
+          "L02",
+          1
+        ],
+        [
+          "L03",
+          1
+        ],
+        [
+          "L04",
+          1
+        ],
+        [
+          "C01",
+          2
+        ],
+        [
+          "C02",
+          2
+        ]
+      ],
+      "reported_host_total_tokens": 7263698,
+      "usage_warning": "Unequal case sets; totals are not a version efficiency comparison or a bill."
+    },
+    "updated-bffeae8": {
+      "completed_sessions": 8,
+      "execution_failures": 0,
+      "partial_sessions": [],
+      "not_started_slots": [
+        [
+          "B09",
+          1
+        ],
+        [
+          "B10",
+          1
+        ],
+        [
+          "B11",
+          1
+        ],
+        [
+          "B12",
+          1
+        ],
+        [
+          "T01",
+          1
+        ],
+        [
+          "T02",
+          1
+        ],
+        [
+          "T03",
+          1
+        ],
+        [
+          "T04",
+          1
+        ],
+        [
+          "Z01",
+          1
+        ],
+        [
+          "Z02",
+          1
+        ],
+        [
+          "Z03",
+          1
+        ],
+        [
+          "Z04",
+          1
+        ],
+        [
+          "L01",
+          1
+        ],
+        [
+          "L02",
+          1
+        ],
+        [
+          "L03",
+          1
+        ],
+        [
+          "L04",
+          1
+        ],
+        [
+          "C01",
+          1
+        ],
+        [
+          "C02",
+          1
+        ],
+        [
+          "C03",
+          1
+        ],
+        [
+          "C04",
+          1
+        ],
+        [
+          "C05",
+          1
+        ],
+        [
+          "C06",
+          1
+        ],
+        [
+          "C07",
+          1
+        ],
+        [
+          "C08",
+          1
+        ],
+        [
+          "B01",
+          2
+        ],
+        [
+          "B02",
+          2
+        ],
+        [
+          "B03",
+          2
+        ],
+        [
+          "B04",
+          2
+        ],
+        [
+          "B05",
+          2
+        ],
+        [
+          "B06",
+          2
+        ],
+        [
+          "B07",
+          2
+        ],
+        [
+          "B08",
+          2
+        ],
+        [
+          "B09",
+          2
+        ],
+        [
+          "B10",
+          2
+        ],
+        [
+          "B11",
+          2
+        ],
+        [
+          "B12",
+          2
+        ],
+        [
+          "T01",
+          2
+        ],
+        [
+          "T02",
+          2
+        ],
+        [
+          "T03",
+          2
+        ],
+        [
+          "T04",
+          2
+        ],
+        [
+          "Z01",
+          2
+        ],
+        [
+          "Z02",
+          2
+        ],
+        [
+          "Z03",
+          2
+        ],
+        [
+          "Z04",
+          2
+        ],
+        [
+          "L01",
+          2
+        ],
+        [
+          "L02",
+          2
+        ],
+        [
+          "L03",
+          2
+        ],
+        [
+          "L04",
+          2
+        ],
+        [
+          "C01",
+          2
+        ],
+        [
+          "C02",
+          2
+        ],
+        [
+          "C03",
+          2
+        ],
+        [
+          "C04",
+          2
+        ],
+        [
+          "C05",
+          2
+        ],
+        [
+          "C06",
+          2
+        ],
+        [
+          "C07",
+          2
+        ],
+        [
+          "C08",
+          2
+        ]
+      ],
+      "complete_case_slots": [
+        [
+          "B01",
+          1
+        ],
+        [
+          "B02",
+          1
+        ],
+        [
+          "B03",
+          1
+        ],
+        [
+          "B04",
+          1
+        ],
+        [
+          "B05",
+          1
+        ],
+        [
+          "B06",
+          1
+        ],
+        [
+          "B07",
+          1
+        ],
+        [
+          "B08",
+          1
+        ]
+      ],
+      "reported_host_total_tokens": 3784742,
+      "usage_warning": "Unequal case sets; totals are not a version efficiency comparison or a bill."
+    }
+  },
+  "historical_first_attempts": {
+    "baseline_completed": 23,
+    "baseline_usage_limit_failures": 41,
+    "superseded_fc5_completed": 12,
+    "superseded_fc5_usage_limit_failures": 52,
+    "all_128_original_record_hashes_verified_unchanged": true
+  },
+  "completed_pairs": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08"
+  ],
+  "double_axis_review": {
+    "baseline_answers": 7,
+    "updated_answers": 4,
+    "superseded_fc5_historical_answers": 6,
+    "fully_reviewed_pairs": [
+      "B01",
+      "B02",
+      "B03",
+      "B04"
+    ],
+    "observed_result": "All 11 reviewed answers used in this comparison passed their eight assigned criteria; this is a small selected sample, not a whole-version quality rate.",
+    "review_summaries": [
+      {
+        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches\\ability-001\\reviewed-dual-20260908\\summary.json",
+        "sha256": "62b3f7edfb595811268366830f46c58f30e9d465f87809b66c36857ad3958c51",
+        "imported": 6
+      },
+      {
+        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches\\challenge-001\\reviewed-dual-20260908\\summary.json",
+        "sha256": "20f7fa59ae0a836a6621e9eb4174cf4348b6445ac8f22d1a6fe7ef0272d3ed74",
+        "imported": 6
+      },
+      {
+        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches-20260908\\ability-001\\reviewed-dual-20260908\\summary.json",
+        "sha256": "81e4313f97ceb5d697a3c5f6d95ca378bf3f9a6ccd4b5cc85066ac14ab19b669",
+        "imported": 2
+      },
+      {
+        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches-20260908\\ability-002\\reviewed-dual-20260908\\summary.json",
+        "sha256": "37865c47f7552ff41208880c222036541431f6438c0ee5e3c5a2307bb8c266f9",
+        "imported": 3
+      }
+    ]
+  },
+  "operational_reviews": {
+    "manual_sidecars": 7,
+    "source_directory": "D:\\suanming\\validation-next-eb65d70e\\operational-reviews-20260908",
+    "known_external_chart_counts": {
+      "baseline_B01_run1": 2,
+      "baseline_B02_run1": 2,
+      "updated_B01_run1": 1,
+      "updated_B02_run1": 2,
+      "updated_B03_run1": 1,
+      "updated_B04_run1": 1
+    },
+    "remaining_gap": "Time and exact external invocation checks do not cover all completed answers. No claim that all host re-computation has disappeared.",
+    "new_B02_duplicate": "Two completed same-input bazi_reading invocations returned byte-identical JSON. Cause not established; no evidence to blame output truncation or missing contract keys."
+  },
+  "recording_controls": {
+    "initial_runner_sha256": "bfd3a59366b98f40c58c2702b26f405d649ddfd70cc355ea703802ac5097d251",
+    "resume_runner_sha256": "42d439c326ada827a04f011631024628d095068769525eb2a5421fbbe5bae80b",
+    "change": "Added repetition-start bookkeeping; no model, prompt or fixed replay timestamp change.",
+    "time_caveat": "Initial baseline sessions ran September 6; continuation and new snapshot ran September 8. Explicit replay UTC remained September 6 03:15. Cache order and backend weights are not controlled."
+  },
+  "evidence_external_root": "D:\\suanming\\validation-next-eb65d70e",
+  "new_recording_bindings": [
+    {
+      "version": "baseline",
+      "case_id": "C06",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep1-batch01-20260908\\C06-run1\\record.json",
+      "record_sha256": "151bd10615139dfe181357d755f75db0b6952457dc3760c0c9bf35317f7cbe74",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "C08",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep1-batch01-20260908\\C08-run1\\record.json",
+      "record_sha256": "2e7a5fd3bfd704eadf00b7484b1df80a94ace0391f0794bfe73999fd61530b96",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "Z02",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch01-20260908\\Z02-run1\\record.json",
+      "record_sha256": "7e82cef85ab9299f54c30e16c2b9475c6845407826c8448eb41d4d4a37db10a0",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "Z03",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch01-20260908\\Z03-run1\\record.json",
+      "record_sha256": "f21ec6becbafd88e7e0b73c0dc81c33f74973d48dc7f27e6073521ede5d6ec66",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "Z04",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch02-20260908-guarded\\Z04-run1\\record.json",
+      "record_sha256": "2db7750d6a886076766242d19bef2bf0eb550b98227b6bf771623239696efce5",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "L01",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch02-20260908-guarded\\L01-run1\\record.json",
+      "record_sha256": "3ad0abfee358f3fd5a54505eb0c5125190c2682aad8c2f3cb5cd1e44aa7b866b",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "L02",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch03-20260908\\L02-run1\\record.json",
+      "record_sha256": "72df9554b3b86913fe681b027d846aeff29483f521e49e88ebebb687cf9c4b06",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "L03",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch03-20260908\\L03-run1\\record.json",
+      "record_sha256": "2e2f83e65d6fa047d6a8d3715d4babff05dffb59afacbf16a59396cac5b6c0be",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "L04",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch04-20260908\\L04-run1\\record.json",
+      "record_sha256": "152dbde6952159da2ba45e62e8edd7cf6b3a106a7010232ea461cd81c117cb77",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "C01",
+      "repetition": 2,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep2-batch01-20260908\\C01-run2\\record.json",
+      "record_sha256": "b9cafa43b8924df31599cd52ca1a2979f1acb688bf7cb6fb96de348b59f9dc4e",
+      "complete": true
+    },
+    {
+      "version": "baseline",
+      "case_id": "C02",
+      "repetition": 2,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep2-batch01-20260908\\C02-run2\\record.json",
+      "record_sha256": "1907e7f7622f160b623a021e2f86b53613295ff3c1992d1036cf273de7b6dfa7",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B01",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch01-20260908\\B01-run1\\record.json",
+      "record_sha256": "d508fc63fade16275b6ae5ea4634949184ebff828cf519709b30b3364a6445d6",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B02",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch01-20260908\\B02-run1\\record.json",
+      "record_sha256": "634217a6ce8c5038977b5adf7df6ca891cdb8b7941210ed206ae0f68228612c0",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B03",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch02-20260908\\B03-run1\\record.json",
+      "record_sha256": "a5963a2676c91317f722f817ac348ede22658737573efc568932a9b497da52f5",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B04",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch02-20260908\\B04-run1\\record.json",
+      "record_sha256": "0b6973b5c9563644f413d69ea16930de9b8ad4621422bf9d1be3e7eb70236a6d",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B05",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch03-20260908\\B05-run1\\record.json",
+      "record_sha256": "de150329abaf4774a77ea1cfa7be0aec551e5c1c299255ee0ca919d68fac8b1c",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B06",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch03-20260908\\B06-run1\\record.json",
+      "record_sha256": "dc33b7da3e31036fb5f696e0b645d45c8644e08e92eedfaaaf5aa4a963026c80",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B07",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch04-20260908\\B07-run1\\record.json",
+      "record_sha256": "81cd1fe391d24d39830d8b0ad1294dd021bc885be82b65735b75860f5cbdea07",
+      "complete": true
+    },
+    {
+      "version": "updated-bffeae8",
+      "case_id": "B08",
+      "repetition": 1,
+      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch04-20260908\\B08-run1\\record.json",
+      "record_sha256": "f9a2f8079d7beb6d40780f1d98bc835bc87bcf4f09698c21714b5775324e04f0",
+      "complete": true
+    }
+  ],
+  "limitations": [
+    "Full 128-session comparison was not completed.",
+    "No whole-version improvement percentage or predictive-accuracy score is derived.",
+    "Source fidelity and calculation consistency do not demonstrate real-world fortune prediction.",
+    "Reviews are version-masked in-session judgments, not external human double-blind validation.",
+    "Reported cumulative host usage includes cached input; reasoning is already contained in output tokens."
+  ]
+}
