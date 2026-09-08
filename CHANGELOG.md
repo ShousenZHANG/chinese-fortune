@@ -4,7 +4,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
-## [4.0.0] — 未发布
+## [4.0.0]
 
 ### 内容与接口
 
