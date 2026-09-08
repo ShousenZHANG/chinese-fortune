@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
+from datetime import date, datetime, timedelta, timezone
 from typing import Any
 
 from bazi_calc import build_parser as chart_parser
@@ -10,7 +11,14 @@ from bazi_calc import calculate_bazi
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from tiaohou_provenance import get_tiaohou_audit
-from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
+from utils import (
+    __version__,
+    ensure_utf8_stdio,
+    error_envelope,
+    json_print,
+    normalize_birth_time,
+    shi_shen,
+)
 
 PILLARS = {'year': '年柱', 'month': '月柱', 'day': '日柱', 'hour': '时柱'}
 PROFILE = {
@@ -91,50 +99,117 @@ def _observations(chart: dict, structure: dict) -> list[dict]:
     return records
 
 
+def _clock_dates(solar: dict, sect: int) -> tuple[date, date]:
+    civil = date(solar['year'], solar['month'], solar['day'])
+    pillar_day = civil + timedelta(days=int(sect == 1 and solar['hour'] == 23))
+    return civil, pillar_day
+
+
+def _probes_cover_minutes(chart: dict, probes: list[dict]) -> bool:
+    """Verify sampled dates and Jie intervals cover every supported clock minute.
+
+    This is time normalization only, not 1,440 additional charts. Both folds
+    belong to an unknown birth hour; nonexistent local minutes contribute no
+    candidate. Unusual history that three charts cannot cover stays uncertain.
+    """
+    args = chart['input']
+    base = chart['solar_date']  # Unknown-hour conversion preserves the input civil date.
+    sect = args['sect']
+    dates = [_clock_dates(p['solar_date'], sect) for p in probes]
+    civil_dates = {civil for civil, _ in dates}
+    pillar_dates = {pillar for _, pillar in dates}
+    intervals = [(
+        datetime.fromisoformat(p['calendar_context']['previous_jie']['calendar_datetime']),
+        datetime.fromisoformat(p['calendar_context']['next_jie']['calendar_datetime']),
+    ) for p in probes]
+    valid_minutes = 0
+    for minute_of_day in range(24 * 60):
+        hour, minute = divmod(minute_of_day, 60)
+        for fold in ((0, 1) if args.get('timezone') else (None,)):
+            try:
+                normalized = normalize_birth_time(
+                    base['year'], base['month'], base['day'], hour, minute,
+                    args['longitude'], args['tz'], args.get('timezone'), fold,
+                    args['time_standard'])
+            except ValueError as exc:
+                if args.get('timezone') and str(exc).endswith('不存在 (夏令时跳时)'):
+                    continue  # A confirmed gap is not a possible birth instant.
+                return False
+            civil, pillar = _clock_dates(normalized['solar_date'], sect)
+            if civil not in civil_dates or pillar not in pillar_dates:
+                return False
+            zone = normalized['timezone']
+            offset = zone['offset_hours'] if zone else args['tz']
+            instant = datetime(base['year'], base['month'], base['day'], hour, minute,
+                               tzinfo=timezone(timedelta(hours=offset)))
+            if not any(start <= instant < end for start, end in intervals):
+                return False
+            valid_minutes += 1
+    return valid_minutes > 0
+
+
 def _without_unknown_hour_precision(chart: dict) -> dict:
-    """Keep only stable observations; internal noon never becomes reading evidence."""
+    """Keep only verified stable observations; sampled noon is never a known birth time."""
     clean = deepcopy(chart)
     if clean['hour_known']:
         return clean
     probes: list[dict] = []
+    checked_times: list[str] = []
+    failed_times: list[str] = []
     original = chart.get('input')
     if isinstance(original, dict):
-        for hour, minute in ((0, 0), (23, 59)):
+        for hour, minute in ((0, 0), (12, 0), (23, 59)):
             values = {**original, 'hour': hour, 'minute': minute, 'years': 10,
                       'no_shensha': True, 'no_geju': True, 'no_yongshen': True,
                       'current_timezone': None, 'request_time': None, 'as_of_year': None}
             probe = calculate_bazi(argparse.Namespace(**values))
             if not probe.get('ok'):
-                probes = []
-                break
+                failed_times.append(f'{hour:02}:{minute:02}')
+                continue
             probes.append(probe)
+            checked_times.append(f'{hour:02}:{minute:02}')
+    complete = len(probes) == 3 and _probes_cover_minutes(chart, probes)
     affected = []
     for key in ('year', 'month', 'day'):
         possibilities = sorted({p['four_pillars'][key]['ganzhi'] for p in probes})
-        if len(possibilities) != 1:
+        if not complete or len(possibilities) != 1:
             affected.append(key)
             clean['four_pillars'][key] = {'status': 'birth_time_required',
                                            'candidate_ganzhi': possibilities}
+        else:
+            clean['four_pillars'][key] = deepcopy(probes[0]['four_pillars'][key])
     clean['four_pillars']['hour'] = {'status': '时柱待补'}
     if 'day' in affected:
         clean['day_master'] = {'status': 'birth_time_required'}
         for year in clean.get('liu_nian', []):
             year.pop('shi_shen', None)
+    else:
+        clean['day_master'] = deepcopy(probes[0]['day_master'])
+        for year in clean.get('liu_nian', []):
+            if year.get('ganzhi'):
+                year['shi_shen'] = shi_shen(clean['day_master']['stem'], year['ganzhi'][0])
     clean['birth_time_uncertainty'] = {
-        'status': 'day_endpoints_compared' if probes else 'boundary_check_unavailable',
-        'checked_clock_times': ['00:00', '23:59'] if probes else [],
+        'status': 'day_samples_verified' if complete else 'boundary_check_unavailable',
+        'checked_clock_times': checked_times,
+        'failed_clock_times': failed_times,
+        'candidate_coverage': 'minute_grid_verified' if complete else 'incomplete',
         'affected_pillars': affected,
-        'meaning': '候选来自同一出生日期的首尾钟表时间；它们不是已知生时，不能选中较像的一盘当作事实',
+        'meaning': ('候选来自同一出生日期的00:00、12:00、23:59实际排盘；'
+                    '按分钟核对全天时间归一化、日界及交节区间，重复钟面覆盖两个fold。'
+                    '核对失败则候选不完整，不能固定三柱。采样时刻不是已知生时，不能挑较像的一盘当事实'),
     }
-    clean['solar_date'] = {k: v for k, v in clean['solar_date'].items() if k not in ('hour', 'minute')}
-    clean['lunar_date'] = {k: v for k, v in clean['lunar_date'].items() if not k.endswith('_in_ganzhi')}
+    clean['calendar_context']['note'] = ('内部正午不是生时；解读另算首、中、尾候选，'
+                                        '其完整性见birth_time_uncertainty.candidate_coverage')
     for field in ('solar_date', 'lunar_date'):
         dates = sorted({tuple(p[field][part] for part in ('year', 'month', 'day')) for p in probes})
-        if len(dates) != 1:
+        if not complete or len(dates) != 1:
             clean[field] = {'status': 'birth_time_required',
                             'candidate_dates': [dict(zip(('year', 'month', 'day'), value, strict=True))
                                                 for value in dates],
                             'basis': '所选日时口径的日期也可能跨界；不把内部正午日期当确定事实'}
+        else:
+            clean[field] = {k: v for k, v in probes[0][field].items()
+                            if k not in ('hour', 'minute') and not k.endswith('_in_ganzhi')}
     old_tst = clean.get('true_solar_time') or {}
     clean['true_solar_time'] = {k: old_tst[k] for k in ('longitude', 'time_standard') if k in old_tst}
     clean['true_solar_time']['status'] = 'birth_time_required'
@@ -220,7 +295,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = chart_parser(diagnostics=False)
     parser.description = '八字白话解读准备：盘面事实、固定主体系、可追溯原文'
     parser.epilog = ('Top-level JSON keys: ok tool version schema_version question method_profile '
-                     'chart_facts observed_structure reading_support rule_assessment evidence_bundle next_checks '
+                     'chart_facts observed_structure reading_support rule_assessment evidence_bundle climate_review next_checks '
                      'output_policy boundary; errors: error message')
     parser.add_argument('--question', default='', help='本次最关心的问题')
     parser.add_argument('--markdown', action='store_true', help='输出简短盘面说明，非完整个人判断')

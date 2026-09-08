@@ -84,6 +84,8 @@ def test_unknown_hour_removes_all_placeholder_precision_and_keeps_stable_pillars
     assert facts['qi_yun'] is None and facts['da_yun'] == []
     assert facts['qi_yun_status'] == 'birth_time_required'
     assert facts['birth_time_uncertainty']['affected_pillars'] == []
+    assert facts['birth_time_uncertainty']['checked_clock_times'] == ['00:00', '12:00', '23:59']
+    assert facts['birth_time_uncertainty']['candidate_coverage'] == 'minute_grid_verified'
     assert all(facts['four_pillars'][k] == chart['four_pillars'][k] for k in ('year', 'month', 'day'))
     assert review_claims(facts, result['reading_support']) == []
 
@@ -132,6 +134,113 @@ def test_unknown_hour_true_solar_dates_do_not_retain_the_internal_noon_date():
     assert facts['lunar_date']['status'] == 'birth_time_required'
     assert len(facts['lunar_date']['candidate_dates']) == 2
     assert 'day' not in facts['lunar_date']
+
+
+def test_fall_back_day_keeps_all_three_true_solar_dates_and_day_pillars():
+    # The 25-hour New York civil day spans three solar dates. Endpoints alone
+    # see Nov 2/4 and 庚午/壬申; the actual middle date/day cannot be discarded.
+    chart = calculate_bazi(build_parser().parse_args([
+        '--year', '2024', '--month', '11', '--day', '3', '--gender', 'male',
+        '--timezone', 'America/New_York', '--longitude', '-74.006',
+        '--time-standard', 'true-solar', '--sect', '2']))
+    facts = prepare_reading(chart)['chart_facts']
+    assert facts['solar_date']['candidate_dates'] == [
+        {'year': 2024, 'month': 11, 'day': 2},
+        {'year': 2024, 'month': 11, 'day': 3},
+        {'year': 2024, 'month': 11, 'day': 4}]
+    assert facts['lunar_date']['candidate_dates'] == [
+        {'year': 2024, 'month': 10, 'day': 2},
+        {'year': 2024, 'month': 10, 'day': 3},
+        {'year': 2024, 'month': 10, 'day': 4}]
+    assert set(facts['four_pillars']['day']['candidate_ganzhi']) == {'庚午', '辛未', '壬申'}
+    assert facts['birth_time_uncertainty']['status'] == 'day_samples_verified'
+    assert facts['birth_time_uncertainty']['candidate_coverage'] == 'minute_grid_verified'
+    assert facts['birth_time_uncertainty']['checked_clock_times'] == ['00:00', '12:00', '23:59']
+    assert facts['day_master'] == {'status': 'birth_time_required'}
+    assert 'birth_instant_utc' not in facts['calendar_context']
+    assert 'hour' not in facts['solar_date'] and facts['qi_yun'] is None
+
+
+def test_unknown_hour_failed_endpoint_does_not_certify_remaining_samples(monkeypatch):
+    chart = _unknown_chart()
+
+    def fail_midnight(args):
+        return {'ok': False, 'error': 'invalid_time'} if args.hour == 0 else calculate_bazi(args)
+
+    monkeypatch.setattr('bazi_reading.calculate_bazi', fail_midnight)
+    facts = prepare_reading(chart)['chart_facts']
+    uncertainty = facts['birth_time_uncertainty']
+    assert uncertainty['status'] == 'boundary_check_unavailable'
+    assert uncertainty['candidate_coverage'] == 'incomplete'
+    assert uncertainty['checked_clock_times'] == ['12:00', '23:59']
+    assert uncertainty['failed_clock_times'] == ['00:00']
+    assert uncertainty['affected_pillars'] == ['year', 'month', 'day']
+    assert all('ganzhi' not in facts['four_pillars'][key] for key in ('year', 'month', 'day'))
+    assert facts['solar_date']['status'] == 'birth_time_required'
+    assert facts['lunar_date']['status'] == 'birth_time_required'
+
+
+def test_unknown_hour_three_matching_samples_do_not_hide_uncovered_minutes(monkeypatch):
+    from bazi_reading import normalize_birth_time
+
+    chart = _unknown_chart()
+
+    def unsampled_date(year, month, day, hour, minute, *args):
+        normalized = normalize_birth_time(year, month, day, hour, minute, *args)
+        if (hour, minute) == (7, 13):
+            normalized['solar_date']['day'] = 16
+        return normalized
+
+    monkeypatch.setattr('bazi_reading.normalize_birth_time', unsampled_date)
+    facts = prepare_reading(chart)['chart_facts']
+    assert facts['birth_time_uncertainty']['candidate_coverage'] == 'incomplete'
+    assert facts['birth_time_uncertainty']['affected_pillars'] == ['year', 'month', 'day']
+    assert 'ganzhi' not in facts['four_pillars']['day']
+
+
+def test_unknown_hour_normalization_error_is_not_silently_treated_as_a_dst_gap(monkeypatch):
+    from bazi_reading import normalize_birth_time
+
+    chart = _unknown_chart()
+
+    def fail_minute(year, month, day, hour, minute, *args):
+        if (hour, minute) == (7, 13):
+            raise ValueError('时区解析失败')
+        return normalize_birth_time(year, month, day, hour, minute, *args)
+
+    monkeypatch.setattr('bazi_reading.normalize_birth_time', fail_minute)
+    facts = prepare_reading(chart)['chart_facts']
+    assert facts['birth_time_uncertainty']['candidate_coverage'] == 'incomplete'
+    assert 'stem' not in facts['day_master']
+
+
+def test_unknown_hour_spring_forward_gap_is_not_a_birth_candidate():
+    chart = calculate_bazi(build_parser().parse_args([
+        '--year', '2024', '--month', '3', '--day', '10', '--gender', 'male',
+        '--timezone', 'America/New_York', '--longitude', '-74.006',
+        '--time-standard', 'clock', '--sect', '2']))
+    facts = prepare_reading(chart)['chart_facts']
+    assert facts['birth_time_uncertainty']['candidate_coverage'] == 'minute_grid_verified'
+    assert facts['birth_time_uncertainty']['affected_pillars'] == []
+    assert facts['solar_date'] == {'year': 2024, 'month': 3, 'day': 10}
+
+
+def test_stable_corrected_date_and_day_master_replace_provisional_noon_together():
+    # With the explicit longitude and timezone, Auckland's 23-hour spring
+    # day maps entirely onto Sept 28. The uncorrected placeholder was Sept 29.
+    chart = calculate_bazi(build_parser().parse_args([
+        '--year', '2024', '--month', '9', '--day', '29', '--gender', 'male',
+        '--timezone', 'Pacific/Auckland', '--longitude', '-179',
+        '--time-standard', 'true-solar', '--sect', '2', '--as-of-year', '2026']))
+    assert chart['day_master']['stem'] == '丙'
+    facts = prepare_reading(chart)['chart_facts']
+    assert facts['birth_time_uncertainty']['candidate_coverage'] == 'minute_grid_verified'
+    assert facts['solar_date'] == {'year': 2024, 'month': 9, 'day': 28}
+    assert facts['lunar_date']['day'] == 26
+    assert facts['four_pillars']['day']['ganzhi'] == '乙未'
+    assert facts['day_master']['stem'] == '乙'
+    assert facts['liu_nian'][0]['ganzhi'] == '丙午'
+    assert facts['liu_nian'][0]['shi_shen'] == '伤官'
 
 
 def test_explicit_year_and_missing_current_zone_status_survive_adapter():

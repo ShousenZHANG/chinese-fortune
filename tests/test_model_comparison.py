@@ -47,7 +47,8 @@ for line in sys.stdin:
               'turnId': turn_id, 'tokenUsage': {'total': {'totalTokens': value['id'] * 10}}}})
         emit({'method': 'turn/completed', 'params': {'threadId': 'fixture-thread',
               'turn': {'id': turn_id, 'items': [],
-                       'status': 'failed' if behavior == 'failed_turn' else 'completed'}}})
+                       'status': 'failed' if behavior == 'failed_turn' or
+                           (behavior == 'failed_followup' and 'second' in text) else 'completed'}}})
 ''', encoding='utf-8')
     real_server = runner.AppServer
     timeline = []
@@ -114,3 +115,63 @@ def test_protocol_failure_is_recorded_without_retry_or_followup(tmp_path, monkey
         assert row['turns'][0]['text'] == 'fixture answer: first'
         assert row['turns'][0]['status'] == 'failed'
     assert (folder / 'events.jsonl').exists()
+
+
+@pytest.mark.parametrize(('start', 'count', 'expected'), [(1, 2, [1, 2]), (2, 1, [2])])
+def test_cli_retry_preserves_original_repetition_numbers_and_prior_failure(
+        tmp_path, monkeypatch, start, count, expected):
+    """A retry records fresh whole turns, leaving the previous partial failure intact."""
+    args = setup_protocol(tmp_path, monkeypatch, behavior='failed_followup')
+    case = {'id': 'T-fixture', 'prompt': 'first',
+            'turns': [{'prompt': 'first'}, {'prompt': 'second'}]}
+    failed = runner.record_case(args, case, 2)
+    assert failed['exit_code'] == 1
+    assert [turn['status'] for turn in failed['turns']] == ['completed', 'failed']
+    old_folder = args.output / 'T-fixture-run2'
+    original_bytes = {path.name: path.read_bytes() for path in old_folder.iterdir()}
+
+    # The new run launches a fresh subprocess and resubmits both turns.
+    # Undo the first launch wrapper so setup_protocol cannot wrap it twice.
+    monkeypatch.undo()
+    setup_protocol(tmp_path, monkeypatch)
+    snapshot = tmp_path / 'snapshot'
+    snapshot.mkdir()
+    (snapshot / 'SKILL.md').write_text('protocol fixture', encoding='utf-8')
+    cases_file = tmp_path / 'cases.json'
+    cases_file.write_text(json.dumps({'cases': [case, {'id': 'unselected', 'prompt': 'omit'}]}), encoding='utf-8')
+    output = tmp_path / 'retry-campaign'
+    monkeypatch.setattr(sys, 'argv', ['runner', '--cli', 'fixture', '--python', sys.executable,
+        '--snapshot', str(snapshot), '--commit', 'fixture-commit', '--model', 'fixture-model',
+        '--cases', str(cases_file), '--case-id', case['id'], '--output', str(output),
+        '--repetitions', str(count), '--repetition-start', str(start), '--workers', '1'])
+    assert runner.main() == 0
+    metadata = json.loads((output / 'run.json').read_text())
+    assert metadata['repetition_start'] == start
+    assert metadata['selected_case_ids'] == ['T-fixture']
+    assert metadata['snapshot_unchanged'] is True
+    assert metadata['execution_failures'] == 0
+    assert sorted(path.name for path in output.glob('recording-run*.json')) == [
+        f'recording-run{rep}.json' for rep in expected]
+    for repetition in expected:
+        recording = json.loads((output / f'recording-run{repetition}.json').read_text())
+        row, = recording['responses']
+        assert row['repetition'] == repetition
+        assert [turn['prompt'] for turn in row['turns']] == ['first', 'second']
+        assert [turn['status'] for turn in row['turns']] == ['completed', 'completed']
+        assert (output / f'T-fixture-run{repetition}' / 'events.jsonl').exists()
+    assert {path.name: path.read_bytes() for path in old_folder.iterdir()} == original_bytes
+    with pytest.raises(FileExistsError):
+        runner.main()
+
+
+@pytest.mark.parametrize('start', [0, -1])
+def test_cli_rejects_invalid_repetition_start_before_creating_output(tmp_path, monkeypatch, start):
+    output = tmp_path / 'invalid-run'
+    monkeypatch.setattr(sys, 'argv', ['runner', '--cli', 'fixture', '--python', sys.executable,
+        '--snapshot', str(tmp_path / 'snapshot'), '--commit', 'fixture-commit',
+        '--cases', str(tmp_path / 'unused.json'), '--output', str(output),
+        '--repetition-start', str(start)])
+    with pytest.raises(SystemExit) as error:
+        runner.main()
+    assert error.value.code == 2
+    assert not output.exists()

@@ -669,7 +669,7 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
             },
         })
     else:
-        calendar_context['note'] = '内部正午仅作临时计算；解读须比较当地日期首尾候选，不将正午当作生时'
+        calendar_context['note'] = '内部正午仅作临时计算；解读须核对当地全天候选及覆盖范围，不将正午当作生时'
 
     result: dict[str, Any] = {
         "ok": True,
@@ -702,7 +702,7 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         "calendar_context": calendar_context,
         "notes": (([] if hour_known else
                   ["时柱待补: 内部正午的年/月/日柱与工程诊断为临时结果；"
-                   "须经解读入口的当地日期首尾核对，不能保证总能固定三柱；不输出精确起运。"])
+                   "须经解读入口的当地全天候选核对，不能保证总能固定三柱；不输出精确起运。"])
                   + ([tz_info["note"]] if tz_info and tz_info["note"] else [])),
         "four_pillars": (pillars if hour_known else
                          {**pillars, "hour": {"status": "时柱待补"}}),

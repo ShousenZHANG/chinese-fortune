@@ -230,14 +230,16 @@ def main() -> int:
     parser.add_argument('--case-id', action='append')
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repetitions', type=int, default=2)
+    parser.add_argument('--repetition-start', type=int, default=1,
+                        help='First original repetition number; retries still require a new output directory')
     parser.add_argument('--workers', type=int, default=2)
     parser.add_argument('--timeout', type=int, default=900)
     args = parser.parse_args()
     args.snapshot, args.output = args.snapshot.resolve(), args.output.resolve()
     if args.output.is_relative_to(args.snapshot):
         parser.error('recordings must be outside the tested snapshot')
-    if args.repetitions < 1 or args.workers < 1:
-        parser.error('repetitions/workers must be positive')
+    if args.repetitions < 1 or args.repetition_start < 1 or args.workers < 1:
+        parser.error('repetitions/repetition-start/workers must be positive')
     args.output.mkdir(parents=True, exist_ok=False)
     spec = json.loads(args.cases.read_text(encoding='utf-8'))
     cases = [case for case in spec['cases'] if not args.case_id or case['id'] in args.case_id]
@@ -247,14 +249,17 @@ def main() -> int:
     metadata = {'schema_version': '2.0', 'model': args.model, 'reasoning_effort': args.effort, 'commit': args.commit,
                 'snapshot_sha256': before, 'cases_sha256': hashlib.sha256(args.cases.read_bytes()).hexdigest(),
                 'cli': str(args.cli), 'python': str(args.python), 'repetitions': args.repetitions,
+                'repetition_start': args.repetition_start,
+                'selected_case_ids': [case['id'] for case in cases],
                 'runner_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                 'execution': 'app-server stdio; ephemeral read-only thread per case/repetition; sequential real turns; no semantic review yet'}
     (args.output / 'run.json').write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
     failures = 0
-    responses: dict[int, list] = {rep: [] for rep in range(1, args.repetitions + 1)}
+    repetitions = range(args.repetition_start, args.repetition_start + args.repetitions)
+    responses: dict[int, list] = {rep: [] for rep in repetitions}
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         futures = [executor.submit(record_case, args, case, rep)
-                   for rep in range(1, args.repetitions + 1) for case in cases]
+                   for rep in repetitions for case in cases]
         for future in as_completed(futures):
             result = future.result()
             responses[result['repetition']].append(result)
