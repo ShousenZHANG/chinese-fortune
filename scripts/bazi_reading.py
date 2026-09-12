@@ -221,17 +221,22 @@ def _without_unknown_hour_precision(chart: dict) -> dict:
     return clean
 
 
-def prepare_reading(chart: dict, question: str = '') -> dict:
+def chart_facts(chart: dict) -> dict:
+    """Reuse validated natal facts without loading every natal interpretation path."""
     if not chart.get('ok') or chart.get('tool') != 'bazi':
         raise ValueError('需要成功的八字盘面')
     chart = _without_unknown_hour_precision(chart)
-    structure = observed_structure(chart)
     # Keep the original paths so evidence checking can compare the same facts.
     keys = ('four_pillars', 'day_master', 'hour_known', 'solar_date', 'lunar_date',
             'true_solar_time', 'timezone', 'birthplace', 'sect', 'qi_yun', 'da_yun',
             'liu_nian', 'current_time_context', 'liu_nian_status', 'liu_nian_scope', 'liu_nian_note',
             'birth_time_uncertainty', 'qi_yun_status', 'calendar_context')
-    clean = {key: chart[key] for key in keys if key in chart}
+    return {key: chart[key] for key in keys if key in chart}
+
+
+def prepare_reading(chart: dict, question: str = '') -> dict:
+    clean = chart_facts(chart)
+    structure = observed_structure(clean)
     assessment = assess_rules(clean)
     climate = None
     extra_ids: list[str] = []
@@ -249,7 +254,7 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
             climate = {'status': 'birth_time_required',
                        'meaning': '日干或月令未固定，先比较候选盘；不拿占位柱选调候'}
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
-    claims = _observations(chart, structure)
+    claims = _observations(clean, structure)
     return {'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,

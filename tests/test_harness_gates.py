@@ -194,7 +194,10 @@ def test_engines_really_do_not_write_files():
     root = Path(__file__).resolve().parent.parent
     writers = []
     for f in sorted((root / "scripts").glob("*.py")):
-        if f.name in ("build_skill.py", "import_classics.py"):  # 构建与古籍采集需写文件
+        if f.name in ("build_skill.py", "import_classics.py", "personal_profiles.py"):
+            # User-authorized profile CRUD is a separate, explicit command.
+            # test_personalized_forecast checks confirmation, revision conflicts,
+            # external paths and that ordinary calculations never auto-save.
             continue
         tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
         for node in ast.walk(tree):

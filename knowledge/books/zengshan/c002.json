@@ -1,0 +1,25 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c002",
+  "title": "卦象圖第二",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F2&oldid=2100494",
+  "revision": "2100494",
+  "source_timestamp": "2022-01-20T22:03:56Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c002.wiki",
+  "raw_sha256": "45fb6987062f586191f78e14ed3fee46317779615e9af8db17c680710f003e74",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卦象圖第二",
+      "text": "* 乾三連，☰，連得三爻俱是單，爲乾卦。〔注文〕一點爲單〔/注文〕\n* 坤六斷，☷，連得三爻俱是拆，爲坤卦。〔注文〕兩點爲拆〔/注文〕\n* 震仰孟，☳，初爻單，二爻、三爻俱是拆，爲震卦。\n* 艮覆碗，☶，初爻、二爻俱是拆，三爻單，爲艮卦。\n* 離中虛，☲，初爻單、二爻拆、三爻單，爲離卦。\n* 坎中滿，☵，初爻拆、二爻單、三爻拆，爲坎卦。\n* 兌上缺，☱，初爻、二爻俱是單，三爻拆，爲兌卦。\n* 巽下斷，☴，初爻拆，二爻、三爻俱是單，爲巽卦。",
+      "layer": "base_text_with_commentary",
+      "passage_id": "zengshan:c002:p0001",
+      "sha256": "c175f2aa1ba3e6cfce780f99e0345c4db6e35b36d3493b39146bf12cb9cd57cd"
+    }
+  ]
+}

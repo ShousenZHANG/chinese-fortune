@@ -1,0 +1,1985 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c032",
+  "title": "卷32",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B732&oldid=787378",
+  "revision": "787378",
+  "source_timestamp": "2016-10-27T12:00:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c032.wiki",
+  "raw_sha256": "876c0162b65ab06dd858e57e48dcecf0e72f8653c2919a0c6cfa9eb87c15ab3f",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷32",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷三十二",
+      "text": "日表\n由年而月而日神煞備矣吉日既得而樞機之發必審乎時也時由日筦選時必根扵日作日表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0002",
+      "sha256": "dddb7dfa380d44d0e1ab30b7584672c17b68712224691fae6e39238e7e52747a"
+    },
+    {
+      "section": "六十日時辰定局",
+      "text": "貴登天門時定局",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0003",
+      "sha256": "7a51bb4c4f72b52934609c1a787d5c3df35300d1c1dc53ed8cb09364cd24cdfd"
+    },
+    {
+      "section": "六十日時辰定局",
+      "text": "甲子日十二時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0004",
+      "sha256": "a7e8302dbe0e41945e767709ed495162530ccef274192efa693e29eeb3c5162a"
+    },
+    {
+      "section": "子時",
+      "text": "〔注文〕日建　金匱〔/注文〕　　　　　　　　丑時〔注文〕天乙貴人　日合　寶光〔/注文〕寅時〔注文〕日禄　喜神　福星貴人　日馬白虎〔/注文〕　夘時〔注文〕玉堂日刑〔/注文〕\n辰時　　　　　　　　〔注文〕天牢〔/注文〕　　　　　　　　　　　巳時〔注文〕元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0005",
+      "sha256": "62b3c27c25f7159025617eac6a80ab3b1edd707c208659db1a25903b1ffbe644"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕司命　　　　日破　五不遇〔/注文〕　　　　　　　　未時〔注文〕天乙貴人日害　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0006",
+      "sha256": "7ce1c65fab641877efdf974d0016f18d7ed390514f98bf95f24e5aaef81a0216"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕青龍路空〔/注文〕　　　　　　　　　　　酉時〔注文〕天官貴人　明堂路空〔/注文〕\n戌時　　　　　　　　　　　〔注文〕天刑　旬空〔/注文〕　　　　　　　　　亥時〔注文〕朱雀　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0007",
+      "sha256": "7435fb06d9c7dde0e891e18a7790613d284855ba059b9026862c50b64f8c7b05"
+    },
+    {
+      "section": "乙丑日十二時",
+      "text": "子時〔注文〕天乙貴人　日合天刑〔/注文〕　　　　　　丑時〔注文〕福星貴人　日建朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0008",
+      "sha256": "d1aee7cd0f33db7edf1dbbd30b3b1e38959bd1e7e45cb2c5d6b5624369e056f1"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕金匱〔/注文〕　　　　　　　　　　夘時〔注文〕日祿　寳光〔/注文〕\n辰時　　　　　　　　〔注文〕白虎〔/注文〕　　　　　　　　　　巳時〔注文〕玉堂五不遇〔/注文〕\n午時　　　　　　　　　　　　　　〔注文〕路空　日害　天牢〔/注文〕　　　　　未時〔注文〕路空　日破　元武〔/注文〕申時〔注文〕天乙貴人　天官貴人　司命〔/注文〕　酉時〔注文〕勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0009",
+      "sha256": "db5227c9d8d512493b138af8461b60cac2fc3486ed881a87a42df96a242a5f83"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕喜神　青龍日刑　旬空〔/注文〕　　　　　　　亥時〔注文〕福星貴人　日馬　明堂旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0010",
+      "sha256": "5557a8ccd515503202ddfe753ea9003aa75c6a745c72b35fbf03fafbd699082e"
+    },
+    {
+      "section": "丙寅日十二時",
+      "text": "子時〔注文〕天官貴　人福星　貴人〔/注文〕　丑時〔注文〕青龍〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0011",
+      "sha256": "1b5dfba0e27067dfaa53ce930ba98ff2392880fa49c3a2009febea69f76b8297"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕明堂日建〔/注文〕　　　　　　　　　　夘時〔注文〕天刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0012",
+      "sha256": "bf265f39fed36651c5d06ed6aba1fe8ce07f9f71c18a8f4902a0341acaf32f6b"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕朱雀　　　　金匱五　不遇〔/注文〕　　　　　　巳時〔注文〕路空　日禄寳光　路空　日害〔/注文〕\n午時　　　　　　　　〔注文〕日刑〔/注文〕　　　　　　　　　　未時〔注文〕白虎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0013",
+      "sha256": "f5d1fb416b443238973b145dc711b4707811005185db82938cd54fe27b93b881"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕玉堂　喜神日馬　日破〔/注文〕　　　　　　　酉時〔注文〕天牢天乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0014",
+      "sha256": "0c9d3e3ec6b8e62301c10bde6d207738290be7597705ebd5d3dd352b750c6955"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕人元武福星〔/注文〕　　　　　　　　亥時〔注文〕貴人旬　空天乙貴　人日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0015",
+      "sha256": "2481d3b9e63dc1d4dfee1ff27d88a0ba5865a02d3c3032b089184fcbf46447ae"
+    },
+    {
+      "section": "丁夘日十二時",
+      "text": "子時〔注文〕合勾陳旬〔/注文〕　　　　　　　　　　丑時〔注文〕空司〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0016",
+      "sha256": "01947e9d3c286e0dbb42c0fe4d279eb4fdda2d31df74a2136c66cbf7a6fc879b"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕命日刑勾〔/注文〕　　　　　　　　　　夘時〔注文〕陳青　龍路空日建　明堂〔/注文〕\n辰時　　　　　　　　　　　〔注文〕五不　遇路〔/注文〕　　　　　　　巳時〔注文〕空日害天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0017",
+      "sha256": "dbcc3d17ded708835bad3da116977461d7b0fcb4e5387374b8e5e4f2601e6ef3"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕刑日　馬朱　雀日〔/注文〕　　　　未時〔注文〕禄喜〔/注文〕\n申時　　　　　　　　〔注文〕神金〔/注文〕　　　　　　　　　　酉時〔注文〕匱寶光　白虎天　乙貴人福〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0018",
+      "sha256": "93227097510a77662f1c29435ad32744af7dc5aaca2c4956f04ffb288433b126"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕星貴　　　人玉　堂日〔/注文〕　　　　　　　亥時〔注文〕破日合　天牢旬句天　乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0019",
+      "sha256": "59f0a35a4bf077fd0263b0d80979b07f9ac51d3c4eb95c6d2474403e75ef41e7"
+    },
+    {
+      "section": "戊辰日十二時",
+      "text": "子時　　　　　　　　　　　〔注文〕人天　官貴〔/注文〕　　　　　　　丑時〔注文〕人元武旬空　路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0020",
+      "sha256": "4e1d0c14d724690faaa1a670a0c3f711ba148d2b9cc87dc1af209fe629245d62"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕天牢　天乙貴人路〔/注文〕　　　　　　　夘時〔注文〕空元武日馬　司命〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0021",
+      "sha256": "9998428679eaf241b1b6b2ec603741b2e851faa420ca5b84551b7ee823c54cc7"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕喜神　日建　青龍日刑〔/注文〕　　　　　　巳時〔注文〕日禄　明堂〔/注文〕\n午時　　　　　　　　〔注文〕天刑〔/注文〕　　　　　　　　　　　　未時〔注文〕天乙貴人朱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0022",
+      "sha256": "1dcdd79748d0052e60687aeecb487abd10db36cf95b90847119f4d9e8d238edf"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕雀福星　貴人〔/注文〕　　　　　　　酉時〔注文〕金匱　日合〔/注文〕\n戌時　　　　　　　　　　　　　　　　〔注文〕寶光　路空　日破　白虎〔/注文〕　　　　亥時〔注文〕旬空玉堂　路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0023",
+      "sha256": "dd395d27628fff6a9835771dc279944254e04bd39b7ee8d35f61828bdf4a37e7"
+    },
+    {
+      "section": "己巳日十二時",
+      "text": "子時〔注文〕旬空天乙貴〔/注文〕　　　　　　　　　　丑時〔注文〕人白虎玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0024",
+      "sha256": "3f03d29f1c1fb7a3f5e536c0942bb61a43eb4f75e3e1496dcc31649ff193d515"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕五不　遇喜神天官　貴人〔/注文〕　　　　　　　夘時〔注文〕日害〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0025",
+      "sha256": "7c6d6282b7643f3275df4be4146509d565a0a86cd76271f9769a062c87ea1905"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕天牢〔/注文〕　　　　　　　　　　　　巳時〔注文〕元武司命〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0026",
+      "sha256": "61a7dc6bc0acfd846ff96fa443285292976cab1c256f3b8fd5686de4210baa1e"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日建　勾陳〔/注文〕　　　　　　　　　未時〔注文〕日禄青　龍福〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0027",
+      "sha256": "1377174eb279158501342e600d962f110ddc195a3890645d311a3ef3e4a37bbf"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕星貴人　明堂　天乙　貴人　日合〔/注文〕　　　　　　酉時〔注文〕路空　日刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0028",
+      "sha256": "d1fc9cf67c69c577a52dc086e16c904d2927740533ace65aec5f49af08391a8f"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕天刑路空〔/注文〕　　　　　　　　　　　　亥時〔注文〕朱雀　金匱　　　　旬空日　馬寳　光五〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0029",
+      "sha256": "0d39da7a099a1792264ff1373d73454114baa372fcf1f5d6bf84f1cbe166dae9"
+    },
+    {
+      "section": "庚午日十二時",
+      "text": "子時〔注文〕不遇　　　　日破旬　空金〔/注文〕　　　　　　　　丑時〔注文〕匱五不　遇日破天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0030",
+      "sha256": "36bca4323c70154bf16c538d05517a89a495f07011b6a877a756d9002f81446b"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕乙貴人寳〔/注文〕　　　　　　　　　　　　夘時〔注文〕光日〔/注文〕\n辰時　　　　　　　　〔注文〕害日〔/注文〕　　　　　　　　　　　　巳時〔注文〕馬白〔/注文〕午時〔注文〕虎玉堂　天牢元　武天　官貴人福　星貴〔/注文〕未時〔注文〕人日建　司命路空　日刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0031",
+      "sha256": "6325b0614bf3b9bf4f96de7bbe2958f1eaa26f33316c5f3e45f251a9acdd1015"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日禄　青龍　日馬〔/注文〕　　　　酉時〔注文〕明空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0032",
+      "sha256": "cea4956494ff22dfbf9991a06e7cf0c2b0192d9104606eee8211ce025b83bbfb"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕喜神　　　　　　五不遇　天刑　旬空〔/注文〕　　　亥時〔注文〕朱雀　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0033",
+      "sha256": "e8c5f00fc07feef029c9fd97ade0452f44b8eb325e35958a902f58a7ac3a28c0"
+    },
+    {
+      "section": "辛未日十二時",
+      "text": "子時　　　　　　　　　　　〔注文〕日害　天刑〔/注文〕　　　　　　丑時〔注文〕日破　日刑　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0034",
+      "sha256": "e43b81efd78e981bc9b36620aac68c57798535959567069d48a39624beb881ec"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕天乙貴　人金〔/注文〕　　　　夘時〔注文〕匱寶〔/注文〕\n辰時　　　　　　　　　　　〔注文〕光路　空白〔/注文〕　　　　　　巳時〔注文〕虎天官　貴人福　星貴　人日馬玉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0035",
+      "sha256": "70e82b70646c2d8d8498cf494ad99fba42ab3a387da73060ec8f10a547a1da6d"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕堂路空　天乙貴人〔/注文〕　　　　未時〔注文〕日合天牢〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0036",
+      "sha256": "940d2ab0fbbd1fd9d9cf8912f5006cd75b97dbd4617498b4b20b3102c76d83b8"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日建　元武〔/注文〕　　　　　　酉時〔注文〕喜神司命日　禄五〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0037",
+      "sha256": "7cc8386c8aeb316e5ae9405eea60cd147fbf84b8d6b5b97219c97b5e3cc153a1"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕不遇勾陳〔/注文〕　　　　　　　　　亥時〔注文〕青龍旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0038",
+      "sha256": "7d16e282f79f986cc549963003e90bd202584842919cb40700a1240225abcef0"
+    },
+    {
+      "section": "壬申日十二時",
+      "text": "子時〔注文〕明堂〔/注文〕　　　　　　　　　丑時〔注文〕旬空青　龍天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0039",
+      "sha256": "93e537e87000a92068db9a02587d40d0d43c787b820284b4aeaf6a87c6261fa7"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕官貴　　　　　　　　人明　堂日　馬路　空日〔/注文〕　夘時〔注文〕破日刑天刑　天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0040",
+      "sha256": "b2cccfd363435e9f1ebbc314f0f73a696de624cf15b4e252b937b4cae1b7a832"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕貴人路　空朱〔/注文〕　　　　巳時〔注文〕雀福星　貴人　金匱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0041",
+      "sha256": "bf4ead80487f45fbd26216d30965f343aa2e2071984bd90e91e8134b857cdb84"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕天乙貴人〔/注文〕　　　　　　　　　未時〔注文〕日合寶　光喜〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0042",
+      "sha256": "aa6f4ca3ac76cb90f6cae19a9cdd7bfb4b3caf3bdc32c5260090ed4a0a02d5c7"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕神白　　　　虎天官　貴人〔/注文〕　　　　　酉時〔注文〕玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0043",
+      "sha256": "53e2b9318b80a90dd8a25b98b6bb6e21fbe5ce13025091972486e42bd0b29d76"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕日建五不〔/注文〕　　　　　　　　　亥時〔注文〕遇天牢元　武司　命旬〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0044",
+      "sha256": "d43b73008e4776ef39794de9fa00a60622dfdcce2d46244298160ca45e642430"
+    },
+    {
+      "section": "癸酉日十二時",
+      "text": "子時〔注文〕日禄　司命路空〔/注文〕　　　　　　丑時〔注文〕路空　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0045",
+      "sha256": "f9bda7b3a70be2e53a29938bacae9629e48c296673d505186b63b6ceadc7dfec"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕青龍〔/注文〕　　　　　　　　　夘時〔注文〕天乙貴　人福星　貴人明堂〔/注文〕辰時〔注文〕日破　喜神天　官貴人日〔/注文〕　　巳時〔注文〕合天刑天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0046",
+      "sha256": "571fe36ae734b77e3df59b02a8b2ad2790819cc055fd2087e0942447cfb1b810"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕貴人〔/注文〕　　　　　　　　　未時〔注文〕朱雀金匱寶〔/注文〕\n申時　　　　　　　　〔注文〕光五〔/注文〕　　　　　　　　　酉時〔注文〕不遇　白虎日建〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0047",
+      "sha256": "c419938fae21998794da7d23af2eced1dcd2f115ddf58dfe33aaa93906b4cf1c"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕玉堂日　　　　　　刑天　官貴　人路　空日〔/注文〕　亥時〔注文〕害天牢旬　空日　馬路〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0048",
+      "sha256": "171af1d6dbe9fe5d8c949387ac53fd281b4205c44af25c26929cea9ce4be7470"
+    },
+    {
+      "section": "甲戌日十二時",
+      "text": "子時　　　　　　　　〔注文〕空元〔/注文〕　　　　　　　　　　　丑時〔注文〕武旬空天牢〔/注文〕寅時〔注文〕天乙　貴人　元武日　禄喜〔/注文〕　夘時〔注文〕神仙星貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0049",
+      "sha256": "66eb565f419e0085a18aaa6879deabdefb6070c6ecdb18938553b691dd061c9d"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕人司命日〔/注文〕　　　　　　　　　　　巳時〔注文〕合勾〔/注文〕\n午時　　　　　　　　　　　〔注文〕陳青龍　日破〔/注文〕　　　　　　　未時〔注文〕明堂五不遇　天刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0050",
+      "sha256": "15a5adc61dc0e6093680458f606d26d95e8540f99b423f443bf6a11870dccf0a"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕天乙　貴人日刑　朱雀〔/注文〕　　　　　　　　酉時〔注文〕日馬金　匱路空旬　空天　官貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0051",
+      "sha256": "90f3d1c2016a83c3b58366c8f9eb35fbe3f691a96ca9c22c4df39e169694bb6f"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕人寳光路〔/注文〕　　　　　　　　　　　亥時〔注文〕空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0052",
+      "sha256": "3a964c03a9d827b1c2fd8967170f0ea7017e3b198241604397f2a337326e3beb"
+    },
+    {
+      "section": "乙亥日十二時",
+      "text": "子時〔注文〕害旬空日建〔/注文〕　　　　　　　　　丑時〔注文〕白虎玉　堂天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0053",
+      "sha256": "87eea6d0d2182484b222793c71ce126c744ef396ff76daf1f6c8d533645d88e5"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕日合天牢〔/注文〕　　　　　　　　　　　　夘時〔注文〕日禄元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0054",
+      "sha256": "3fca242be824c0e21e3144d78ea2742de70c9bee4144bb615e406dbcc2c1cb8f"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕司命〔/注文〕　　　　　　　　　　　　巳時〔注文〕日馬五不遇　日破　旬陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0055",
+      "sha256": "92564a885efe0d3def486b9e29c3a052a57dd5f3c67dfce1a1fe22437308c489"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕青龍路空〔/注文〕　　　　　　　　　　　　未時〔注文〕明堂路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0056",
+      "sha256": "1e20ce872d958e8d90bdbd123ca9adca2058fa58d103da4680a7a6b579a7d990"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕天乙貴　人天官貴人　日害　天刑〔/注文〕　　　　　酉時〔注文〕旬空　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0057",
+      "sha256": "ef920daf6adb6119aa3c794669d2cfb534f7b4178180c07a3b37245f1cc649d5"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕旬空　喜神〔/注文〕　　　　　　　　　亥時〔注文〕金匱福　星貴　人日建寶〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0058",
+      "sha256": "e2ec22535dadc289cd5e3c40c57c8fd02ef5a896b04132b8aaed12056e75d1e6"
+    },
+    {
+      "section": "丙子日十二時",
+      "text": "子時〔注文〕光日刑　天官貴　人福　星貴〔/注文〕　丑時〔注文〕人日　建金〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0059",
+      "sha256": "c674b2f86727bf8585ce4deaea59c183283d6d6cdfe4515b9651f3fa7692f86d"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕匱日合寶〔/注文〕　　　　夘時〔注文〕光日馬白〔/注文〕\n辰時　　　　　　　　　　　　　　〔注文〕虎玉堂　日刑　五不〔/注文〕　　巳時〔注文〕遇路空天　牢日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0060",
+      "sha256": "64db48f8a82a6583a46944a78b9d0cd06ba61a3c492a8c68089aebb4ef0ab50a"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕禄路空元〔/注文〕　　　　　　　　未時〔注文〕武司　命日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0061",
+      "sha256": "e9b876c94c2ef6a0356846769fec8fcbf81433943e621654d98fc8186dcc662c"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕破日　害勾陳喜〔/注文〕　　　　　酉時〔注文〕神青龍　旬空天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0062",
+      "sha256": "8fd9d930de500ddaf33f78d81916171cb70c77536c9c54f7736841734a4c0649"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕貴人明堂旬〔/注文〕　　　　　　亥時〔注文〕空福星貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0063",
+      "sha256": "43e7fd3a2d239ec0576d12d093b82f3f3e5a50f004b90f5d4d5fe96eaa62e7a3"
+    },
+    {
+      "section": "丁丑日十二時",
+      "text": "子時〔注文〕天刑天乙〔/注文〕　　　　　　　　丑時〔注文〕貴人朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0064",
+      "sha256": "c9c3886b68722fd6d9381c84a613ecc32f32a57df2d1fb68d485aee1b5005dd3"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕日合天刑〔/注文〕　　　　　　　　夘時〔注文〕日建朱雀金　匱路〔/注文〕\n辰時　　　　　　　　〔注文〕空寶〔/注文〕　　　　　　　　巳時〔注文〕光五〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0065",
+      "sha256": "93abfaf3208a2046aab652614e0388f5ebd04dedd8f5ab9b811963e5651123d4"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日禄　喜神日害　天牢〔/注文〕　　　　未時〔注文〕日破　元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0066",
+      "sha256": "c37de777f33f07a49de513f5e90dbf75aebed2cf690c64d18da1a00ecadf6ccc"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕司命旬空〔/注文〕　　　　　　酉時〔注文〕天乙貴　人福星貴人　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0067",
+      "sha256": "a49d6825ccaa20d298ce4d8bc9186ddbc47322ccf35744607a2878320457a007"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕旬空青龍〔/注文〕　　　　　　亥時〔注文〕日刑天　乙貴人　天官　貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0068",
+      "sha256": "616baefe9d4c2d6dfee2d9335105825c0c6a8ac97513c59ed821a3287eee776b"
+    },
+    {
+      "section": "戊寅日十二時",
+      "text": "子時〔注文〕日馬明堂〔/注文〕　　　　　　丑時〔注文〕青龍路　空天乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0069",
+      "sha256": "c03756b8c6fc2ab2f6d3b3155d2ca7fc90472a3ad8a8b49e7a1f7bafe713405d"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕人明　　　　堂路空　日建〔/注文〕　　　夘時〔注文〕五不遇天刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0070",
+      "sha256": "06604b8025ab1fd16fbe5c5d9509ada68594b52a8544231e52d424ec3ce6c06b"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕天官　貴人〔/注文〕　　　　巳時〔注文〕朱雀　喜神金匱　日禄〔/注文〕\n午時　　　　　　　　〔注文〕寶光〔/注文〕　　　　　　未時〔注文〕日害日　刑白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0071",
+      "sha256": "2809f4b21194764c111ecf51d77f0f7963165f14f69ae1b36ee8b43d7ffdd5a6"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕虎天乙　貴人　玉堂　福星　貴人〔/注文〕　　　　酉時〔注文〕日馬　日破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0072",
+      "sha256": "5ef71366fed1c36d8a043441793da6ad6bdec0810a40cfd888714da7501cf946"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕天牢旬空〔/注文〕　　　　　　　　　亥時〔注文〕元武旬空　司命〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0073",
+      "sha256": "26b2093c744fbfe641e722958241dce8361025348c5c010700825198674abfea"
+    },
+    {
+      "section": "己夘日十二時",
+      "text": "子時〔注文〕路空日　合路空勾〔/注文〕　　　　丑時〔注文〕陳天乙　貴人〔/注文〕寅時〔注文〕司命　日刑五　不遇〔/注文〕　　夘時〔注文〕勾陳　喜神〔/注文〕\n辰時　　　　　　　　　　　〔注文〕天官　貴人〔/注文〕　　　　　　巳時〔注文〕青龍日建〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0074",
+      "sha256": "414fe0149a4d5a5c8d7633837307b0b4cd65b901260635cf0ec05720989628fe"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕明堂　日害〔/注文〕　　　　　　未時〔注文〕天刑日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0075",
+      "sha256": "058c43fc45b8259eb58a43f4ccf88cfeca99eba894311d551ce59d5c746022cd"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕馬朱雀　　　　日禄　金匱　福星〔/注文〕　　　　酉時〔注文〕貴人天乙　貴人　路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0076",
+      "sha256": "06932312839eb9c55c938e815d5917c712d8709a216534e69bcfad5f5f0b7f26"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕日合天牢〔/注文〕　　　　　　　　亥時〔注文〕五不遇　元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0077",
+      "sha256": "6b7035f98395ad68c97ee0591dcc6203429d406c13a50894e0583de06f170f98"
+    },
+    {
+      "section": "庚辰日十二時",
+      "text": "子時　　　　　　　　　　　　〔注文〕五不遇　天牢〔/注文〕　　　　　丑時〔注文〕天乙貴人元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0078",
+      "sha256": "96f84ffe1def7362786971c972b3976bb297516c923ecf2c92d9556438d4dabf"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕日馬　司命〔/注文〕　　　　　　夘時〔注文〕日害　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0079",
+      "sha256": "cf9c0d46d911e88cd5ed8b5d02b401929aa14cb850a95de5c48c612a10d0e277"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕日建　青龍日刑〔/注文〕　　　　　　巳時〔注文〕明堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0080",
+      "sha256": "6182457cd76ced1f06d5c552571e0b0856f97a7f94ea93737d4f7adbee0258c7"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕天官貴人　福星貴人路空　天刑〔/注文〕　　未時〔注文〕天乙貴人路空　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0081",
+      "sha256": "8d653532f5746d5a1e89e73438f07efcb3ba99d66fa14eca1ea1c3e233cb9bd7"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日禄　金匱旬空〔/注文〕　　　　　　酉時〔注文〕日合　寶光旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0082",
+      "sha256": "129f03b4dbd0d2917cb5ec242580998bf2d567c0dc5bdd3f8266f675605ad23a"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕喜神　　　　　　　五不遇　日破　白虎〔/注文〕　　亥時〔注文〕玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0083",
+      "sha256": "0e81a94c9a45d02ebaddea7df03b1b8fc0c4d922c0a7dfe979670817ab52cda0"
+    },
+    {
+      "section": "辛巳日十二時",
+      "text": "子時　　　　　　　　〔注文〕白虎〔/注文〕　　　　　　　　丑時〔注文〕玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0084",
+      "sha256": "c719449e64aff78ffae0d0d7c2f9b15cd4df4b20bf3559d081338116c0e45204"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕天乙貴人　日害　天牢〔/注文〕　　　　　　夘時〔注文〕元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0085",
+      "sha256": "01d8adfbed681a8a7de5018a4cd31133127b40b3386e49f77cb813cfe5a92e3d"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕司命路空〔/注文〕　　　　　　　　巳時〔注文〕天官貴人　福星貴人　日建路空　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0086",
+      "sha256": "5db2dd8fd763e94597305983ffe10ada788b6e447cd47fb6f36d2aa617a76a11"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕天乙貴人　青龍〔/注文〕　　　　未時〔注文〕明堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0087",
+      "sha256": "74a12851cc387a2e74b7d649f349c456c0c1c64776ab1d71138030e5f21fb3dd"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕喜神　日合　　　日刑　天刑　旬空〔/注文〕　　　酉時〔注文〕日禄五不遇　朱雀　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0088",
+      "sha256": "c38fa656408748fe78f1c95656e003eddfbd7364e7e2ab0e397f89127f2cb15e"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕金匱〔/注文〕　　　　　　　　亥時〔注文〕日馬　寶光日破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0089",
+      "sha256": "4c75ea399ba0a4f5dca77e4bb625fed5c2fdb670c6bcda2888eb7e72d5ba9d0f"
+    },
+    {
+      "section": "壬午日十二時",
+      "text": "子時〔注文〕金匱日破〔/注文〕　　　　　　　　　　丑時〔注文〕天官貴　人寶光日〔/注文〕\n寅時　　　　　　　　　　　〔注文〕害路　空白〔/注文〕　　　　　　　　夘時〔注文〕虎天乙　貴人玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0090",
+      "sha256": "be8a8ab3fd5a8dabf688f548495b8142c36edaa6cff85c57de2076e6283e6e6d"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕路空福星貴〔/注文〕　　　　　　　　　巳時〔注文〕人天牢天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0091",
+      "sha256": "9aa8c5e6fc5c748e863f94b5fc42225b6834ebffcc2ebc3b3e931eb448aace66"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕貴人　元武　喜神日建〔/注文〕　　　　　未時〔注文〕司命日　刑天官貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0092",
+      "sha256": "39eb5915567a5f50bbb321d5e73849afddc3bd183e093c8d940d5cdde833682d"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕人日　合勾　陳日馬　青龍〔/注文〕　　　　　　　酉時〔注文〕五不遇旬〔/注文〕\n戌時　　　　　　　　〔注文〕空明〔/注文〕　　　　　　　　　　　亥時〔注文〕堂旬空天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0093",
+      "sha256": "0bd5e33440e6570860c0bbf173097ae7e68c6ff8d66e4d5551f48ffe008ea63c"
+    },
+    {
+      "section": "癸未日十二時",
+      "text": "子時〔注文〕刑日　　　　　禄朱　雀日　禄路〔/注文〕　　　　　　丑時　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　〔注文〕空日　害天　刑路　空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0094",
+      "sha256": "015db03feb801448867d152d8fc406191dd8a464384ed2173ecc84ed40d080d3"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕破日〔/注文〕　　　　　　　　　　　夘時〔注文〕刑朱雀　金匱天　乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0095",
+      "sha256": "6f5efa340b71b23ea472ed9de5309b6a33a29b67157e900f9a424031e5420005"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕人福　星貴人寶光〔/注文〕　　　　　　巳時〔注文〕喜神天　官貴　人白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0096",
+      "sha256": "c31b69fb39b562b18013e1fdc59afa89eafd4056c6bf224f710dc26464eb5720"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕虎天乙貴〔/注文〕　　　　　　　　　　　未時〔注文〕人日馬玉堂　日合〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0097",
+      "sha256": "dc8e5509d45f2343468551652064066d9186a4c5e922661d198dcc76f13c94f3"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕天牢日建〔/注文〕　　　　　　　　　　　酉時〔注文〕五不　遇元〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0098",
+      "sha256": "6fbc92812b636c2318624475a9f32e6493711927ba1386888c1228c2865af0aa"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕武司命　旬空勾陳〔/注文〕　　　　　　亥時〔注文〕旬空天官〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0099",
+      "sha256": "f8cf7bccd0dd40931517d6ae5daad88027d8374418cb3a8504644771036ef305"
+    },
+    {
+      "section": "甲申日十二時",
+      "text": "子時〔注文〕貴人〔/注文〕　　　　　　　　　　　丑時〔注文〕青龍路　空明〔/注文〕寅時〔注文〕堂路　空青　龍天乙　貴人明堂　日禄　喜神〔/注文〕　夘時〔注文〕福星〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0100",
+      "sha256": "97482988a48567379129b0ed20a3fd3507f739208e91aad756ce536dff4831ca"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕金匱〔/注文〕　　　　　　　　巳時〔注文〕日合　寶光〔/注文〕\n午時　　　　　　　　　　　　　　〔注文〕五不遇　白虎　旬空〔/注文〕　未時〔注文〕天乙貴人　玉堂旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0101",
+      "sha256": "5021ee4bdff69fbc0b7253bebc2ca8a04a72087b916eca3491a53b91585be01f"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日建　　　路空　天牢〔/注文〕　　　　　酉時〔注文〕天官貴人路空　元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0102",
+      "sha256": "3c292655e30ad23866e94ec89feb26256cffde51a25eb4a2e037e7e6a14e09ac"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕司命〔/注文〕　　　　　　　　亥時〔注文〕日害　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0103",
+      "sha256": "cfee623167b2a910ccc3a86c5c1ebf6a507cc1fd8fe30a0e1a811ff523518477"
+    },
+    {
+      "section": "乙酉日十二時",
+      "text": "子時〔注文〕天乙貴人　司命〔/注文〕　　　丑時〔注文〕福星貴人勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0104",
+      "sha256": "08884ce26daad779a4f441adfbc3ce732969382153fa00b8123ec1504c887dfc"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕青龍〔/注文〕　　　　　　　　夘時〔注文〕日禄　明堂日破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0105",
+      "sha256": "8ead950f4c23064763411b15e10dc3ea5f0d7a7a6132b8b03767c93326661325"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕日合天刑〔/注文〕　　　　　　　　巳時〔注文〕五不遇　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0106",
+      "sha256": "0f0318692c5ecfa4ca7d3e0dc44e253ef2012f06277216879b4452cdfb2cc083"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕金匱　　　路空　旬空〔/注文〕　　　　　未時〔注文〕寶光路空　旬空〔/注文〕申時〔注文〕天乙貴人天官貴人白〔/注文〕　　酉時〔注文〕虎日　建玉堂日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0107",
+      "sha256": "b066352e291f434da82a5a97e218c9895afcfc73e10c8911a3f953a53690daa6"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕刑喜　　　神日　害天〔/注文〕　　　　　亥時〔注文〕牢福星貴　人日馬元〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0108",
+      "sha256": "16f8d220fa90fc22020364a46b768759ef87d620d60985d35d958277b85a0933"
+    },
+    {
+      "section": "丙戌日十二時",
+      "text": "子時〔注文〕武天官貴　人福星貴人天〔/注文〕　丑時〔注文〕牢元〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0109",
+      "sha256": "b15c76f12174ea62600fcb96ecf011dfb0aa213a6fb24e2dd6c4751d655cee3d"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕武司〔/注文〕　　　　　　　　夘時〔注文〕命日合勾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0110",
+      "sha256": "4de1df524a087b9991698df46eca1dbe8332e671dddf19aca3cf2947c7f470d0"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕陳青　　　　　　　龍五不　遇路　空日〔/注文〕　巳時〔注文〕破日　禄明堂路〔/注文〕\n午時　　　　　　　　　　〔注文〕空天　刑旬〔/注文〕　　　　　未時〔注文〕空日　刑朱　雀旬〔/注文〕申時〔注文〕喜神　日馬　金匱〔/注文〕　酉時〔注文〕天乙貴　人寶光日〔/注文〕戌時〔注文〕害福星　貴人日建〔/注文〕　　亥時〔注文〕白虎天　乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0111",
+      "sha256": "fcb8c8c7d70575f43bc6b27a71afc4e9e4ac4aff4be5c953207d30d2ceee647a"
+    },
+    {
+      "section": "丁亥日十二時",
+      "text": "子時　　　　　　　　〔注文〕人玉〔/注文〕　　　　　　丑時〔注文〕堂白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0112",
+      "sha256": "db4d14e689e2e65b51614b6fec8b5fa761e6d02dae4377b32ad04e0e59e334fc"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕虎玉　　　堂日　合路〔/注文〕　　　　夘時〔注文〕空天牢　五不　遇路〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0113",
+      "sha256": "fbd16c8f567c9422dacace3556d16662a4c569d076c6891b3ad07db9b4a33045"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕空元〔/注文〕　　　　　　巳時〔注文〕武司命日　馬日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0114",
+      "sha256": "5c6e7e4937ada4a24fc3b7eff58df5b563f772d980d356d7cdd83b764e36faf5"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕破勾　陳日　禄喜神青〔/注文〕　未時〔注文〕龍旬空明〔/注文〕\n申時　　　　　　　　　　　〔注文〕堂旬　空日〔/注文〕　　　　酉時〔注文〕害天刑　天乙貴人福〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0115",
+      "sha256": "f69de6264807e30448839b22968dd03015f7db179f73b1a9e09e14b89265624e"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕星貴〔/注文〕　　　　　　亥時〔注文〕人朱雀　金匱天　乙貴　人天官貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0116",
+      "sha256": "63dea385a3c3efd42d00353c7661260207318500a9567283e80f4d1543631b06"
+    },
+    {
+      "section": "戊子日十二時",
+      "text": "子時〔注文〕人日　建寶光日〔/注文〕　　　　丑時〔注文〕刑日建　金匱　路空天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0117",
+      "sha256": "6beea2ec887c09ad40ab6eb5d7921707f056e0caf8e968134059d40b56d570b3"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕貴人　　　　日合寶　光路〔/注文〕　　　夘時〔注文〕空日馬　五不遇白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0118",
+      "sha256": "45c831daa73f419a1ece317c51b3cfa9e4ff750d0cb90fb7938047dfa7f837f1"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕虎天官貴〔/注文〕　　　　　　巳時〔注文〕人玉堂日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0119",
+      "sha256": "b2f7e1ecbd9ac9a6df559239fe9c15f312a739b6f1b145f38e1160f859dabab6"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕刑喜　　　神天　牢日〔/注文〕　　　　未時〔注文〕禄元武司命　日破　旬空〔/注文〕申時〔注文〕天乙貴　人日〔/注文〕　　酉時〔注文〕害勾〔/注文〕\n戌時　　　　　　　　　　　〔注文〕陳旬　空福〔/注文〕　　　　亥時〔注文〕星貴　人青〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0120",
+      "sha256": "1cd35b8fdd8117db0599bbcb66ec40ee41ef743c14de8a29266c1e1d94c071c0"
+    },
+    {
+      "section": "己丑日十二時",
+      "text": "子時〔注文〕天乙貴　人日合天〔/注文〕　　　丑時〔注文〕刑日建五不　遇朱〔/注文〕寅時〔注文〕雀喜　神天官　貴人〔/注文〕　夘時〔注文〕金匱〔/注文〕\n辰時　　　　　　　〔注文〕寶光〔/注文〕　　　　　　　巳時〔注文〕白虎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0121",
+      "sha256": "127215378aa5ba983cda641553bd99ad3712bba5d1e168cbce18ce01db7d8fb3"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕玉堂　　　　　　日禄　日害　天牢〔/注文〕　　未時〔注文〕旬空福星貴　人日　破元〔/注文〕申時〔注文〕武旬空　天乙貴人〔/注文〕　　　酉時〔注文〕司命　路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0122",
+      "sha256": "5c6cf33985da7959afffa9c8965183c0ba7c39e853932b63c73195cfdea10f7d"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕路空勾陳〔/注文〕　　　　　　　亥時〔注文〕青龍　日刑日馬明〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0123",
+      "sha256": "76d127968f1f78f2fc6e8c68c5400d846d4dac4a1fbb75a66e757e43ce973b82"
+    },
+    {
+      "section": "庚寅日十二時",
+      "text": "子時〔注文〕堂五　不遇青〔/注文〕　　　　　　丑時〔注文〕龍五不　遇天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0124",
+      "sha256": "8cbc052ae3305749da770f56e5331b86b8896e2651c76e539536c743f56989a3"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕乙貴人明〔/注文〕　　　　　　　夘時〔注文〕堂日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0125",
+      "sha256": "e9483c713b2c4b1d1e75a1273e257425b1f96df429407a4fd89543c194f278a3"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕建天〔/注文〕　　　　　　　巳時〔注文〕刑朱雀金　匱寶〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0126",
+      "sha256": "6f0ab828cf7b227d5dd2f0fa2b2e96e7bbbf442b1bb65e66821a093cc5c6a02f"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕光日害　日刑天官貴　人福　星貴〔/注文〕未時〔注文〕人路空　白虎旬空　天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0127",
+      "sha256": "429bb9f71dfa5b843eb3627a00a90bba799b5279cc10175b1e2e21c0708cc8b1"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕貴人　玉堂路空　旬空〔/注文〕　　　　　酉時〔注文〕日禄〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0128",
+      "sha256": "5a0fd3d56523da844c0e6002509504682d4c7190454faba45b9b028536bb4328"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕日馬　日破天牢元〔/注文〕　　　　　亥時〔注文〕武喜神司〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0129",
+      "sha256": "4d0322b08983cb5bc751d57fbb5e087fbb9c846f17aeb1b8f43c26968dc415ba"
+    },
+    {
+      "section": "辛夘日十二時",
+      "text": "子時〔注文〕命五不遇〔/注文〕　　　　　　　丑時〔注文〕日合〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0130",
+      "sha256": "d35b4262db6f14bc944f0e8a4a93fc06dec95058668bee82514e80b7e79a006b"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕天乙貴人　青龍〔/注文〕　　　　夘時〔注文〕日建　明堂〔/注文〕\n辰時　　　　　　　　　　　　　　〔注文〕路空　日害　天刑〔/注文〕　　　巳時〔注文〕天官貴人　福星貴人　日馬路空　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0131",
+      "sha256": "e148f83f616fcd01f335f0c688d52c37ad329cada736020f0a5c45a672fc74e4"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕天乙貴人　金匱旬空〔/注文〕　　　　未時〔注文〕寶光旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0132",
+      "sha256": "9f81575446de2653814b4c3ce6c7e946d3411a8239a5791bc047c34fc1fa191e"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕喜神白虎〔/注文〕　　　　　　　　酉時〔注文〕日禄　玉堂五不遇　日破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0133",
+      "sha256": "b6c23dbe4267fb113a9214ae5587bf653e7bb6cd8231eee364c55e6ad6ae90b3"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕日合天牢〔/注文〕　　　　　　　　亥時〔注文〕元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0134",
+      "sha256": "ab5aaa6cd25d1cc3b014dd98ed6f8a57b434d8ec1dfa0131ba10211b100f1903"
+    },
+    {
+      "section": "壬辰日十二時",
+      "text": "子時　　　　　　　　〔注文〕天牢〔/注文〕　　　　　　　　丑時〔注文〕天官貴人元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0135",
+      "sha256": "f642adf8922a4a7917bfd26b66193b7b6a04fa069c78531b5454563a69bfecc1"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕日馬　司命路空〔/注文〕　　　　　　夘時〔注文〕天乙貴人路空　日害　勾陳〔/注文〕辰時〔注文〕福星貴人　日建　青龍日刑〔/注文〕　巳時〔注文〕天乙貴人　明堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0136",
+      "sha256": "b1cdca00f5a912d1e5baccf289564481cb9c93c26437e3314cbc9d45abd46456"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕喜神天刑〔/注文〕　　　　　　　　未時〔注文〕天官貴人朱雀　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0137",
+      "sha256": "914c3e88e27669c6b368d2389bdf8af5becf44a5d9196e4bbd1398d541a8be62"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕金匱　五不遇〔/注文〕　　　　　　　酉時〔注文〕日合　寳光〔/注文〕\n戌時　　　　　　　　　　　〔注文〕日破　白虎〔/注文〕　　　　　　亥時〔注文〕日禄　玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0138",
+      "sha256": "cd9ea6b23484b2c680530e33792b180435a85d7f661553e551e9f4e38eeaaa7f"
+    },
+    {
+      "section": "癸巳日十二時",
+      "text": "子時〔注文〕日禄　　　路空　白虎〔/注文〕　　　　　　丑時〔注文〕玉堂路空〔/注文〕\n寅時　　　　　　　　　　　〔注文〕日害　天牢〔/注文〕　　　　　　夘時〔注文〕天乙貴人　福星貴人元武〔/注文〕辰時〔注文〕喜神　天官貴人　司命〔/注文〕　巳時〔注文〕天乙貴人　日建勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0139",
+      "sha256": "04ec0e5fc96d810e10caebdc4694cf54ecf0829f1dfba6efdc14503596b343cf"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕青龍旬空〔/注文〕　　　　　　　　未時〔注文〕明堂五不遇　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0140",
+      "sha256": "856406f89cc9cd9d12a57dac3c9a9e19372a604d5fca7c7242e1970dd473819e"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日合　　　日刑　天刑〔/注文〕　　　　　　酉時〔注文〕朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0141",
+      "sha256": "f13c8cc11d5f46a5c81bd8f593cb6c6f0bbb129a2796bc1725c3c10dc059a157"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕天官貴　人金匱路〔/注文〕　　　　亥時〔注文〕空日　馬寶光路　空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0142",
+      "sha256": "0e1876c58bde2a049d492a475330ff758636e305859094cd5ba286f0b100a13d"
+    },
+    {
+      "section": "甲午日十二時",
+      "text": "子時〔注文〕破金匱日〔/注文〕　　　　　　　　丑時〔注文〕破天乙貴人〔/注文〕寅時〔注文〕日害　日禄　喜神福星貴〔/注文〕　夘時〔注文〕人白〔/注文〕\n辰時　　　　　　　　　　〔注文〕虎玉　堂天〔/注文〕　　　　　　巳時〔注文〕牢旬　空元〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0143",
+      "sha256": "fe7972158eec152ec7adcbb3c66f3727dc4a3d7fda0edd8ffaf71ad51d32c9a0"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕武旬　空日　建司命　五不〔/注文〕　　　　　未時〔注文〕遇日刑　天乙貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0144",
+      "sha256": "eb40acd0472826835209cf41f3c0780e48e6cb7e5bf515641502b47ccd239bfa"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日合　勾陳日馬〔/注文〕　　　　　　　酉時〔注文〕青龍路　空天官貴〔/注文〕\n戌時　　　　　　　　〔注文〕人明〔/注文〕　　　　　　　　　　亥時〔注文〕堂路〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0145",
+      "sha256": "1b400bb067d46e733ff2ea084ce9588aef53a5745741e6872eab30aee512802c"
+    },
+    {
+      "section": "乙未日十二時",
+      "text": "子時〔注文〕空天刑　朱雀　天乙〔/注文〕　　　　　　　丑時〔注文〕貴人日　　　　害天　刑福　星貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0146",
+      "sha256": "2425c2b026d69fa447f2e7efd18cd4215ee4b68ab6ed0987776674aca6a83d8f"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕人日〔/注文〕　　　　　　　　　　夘時〔注文〕破日　刑朱〔/注文〕\n辰時　　　　　　　　　　〔注文〕雀金　匱日〔/注文〕　　　　　　　巳時〔注文〕禄寶　光白虎旬空　日馬〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0147",
+      "sha256": "4745611e1ba0f5952ab6aaed4bf2f8f58387eca5430a192ea4527dcf1e0e44a4"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕玉堂　　　五不　遇旬〔/注文〕　　　　　　　未時〔注文〕空日合路　空天〔/注文〕申時〔注文〕牢日建　路空元　武天〔/注文〕　酉時〔注文〕乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0148",
+      "sha256": "a2f5adc4aaffd0569316785795383caf7ffc495185065f54aa8185b0f372eda4"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕喜神　青龍〔/注文〕　　　　　　　亥時〔注文〕福星貴　人明〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0149",
+      "sha256": "21ba1c36022bce596de429b9de9aa33d8bdaa3f0af2da8c2cbc14229e71999ea"
+    },
+    {
+      "section": "丙申日十二時",
+      "text": "子時〔注文〕堂天官　貴人福　星貴〔/注文〕　丑時〔注文〕人青〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0150",
+      "sha256": "39dc49b4fef6f3b22507b91a1c77829a880040ce0bed2d62e9894586fc8ef9b6"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕龍明　　　　　堂日　馬日　破日〔/注文〕　　　　夘時〔注文〕刑天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0151",
+      "sha256": "3057e6f61b6baafaf49281f1fd85aedbeb7e4a9b6513cd6f491305029881d252"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕刑朱　　　　　　雀金匱　五不　遇路〔/注文〕　　　巳時〔注文〕空旬　空日　禄日合寳　光路〔/注文〕\n午時　　　　　　　　〔注文〕空旬〔/注文〕　　　　　　　　　　未時〔注文〕空白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0152",
+      "sha256": "fdfdc48aab3ceea76033ce2639ce55ef85436db7ef24c9f64e4c947155037cfa"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕虎玉　堂喜神日〔/注文〕　　　　　　　酉時〔注文〕建天牢天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0153",
+      "sha256": "b6c9c775c1db1022b037ccc84552fae4bbe52b305d1e5162caa82e204d671df4"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕貴人元　武福〔/注文〕　　　　　亥時〔注文〕星貴人司命　天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0154",
+      "sha256": "f18a26a79e98c84979cc2d48081e8d17281651c1cfd05ce65a15abe34dcdffe3"
+    },
+    {
+      "section": "丁酉日十二時",
+      "text": "子時〔注文〕貴人〔/注文〕　　　　　　　丑時〔注文〕日害〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0155",
+      "sha256": "d6c55347c3688bc39e8fa2920e14c3676750ccd4a0e8975a3b2e26a55b8ad1c0"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕勾陳司命〔/注文〕　　　　　　　夘時〔注文〕勾陳青龍路　空明　堂五〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0156",
+      "sha256": "4d6f17acbd3c6a5f0ea0c3a4fd1de41d0b456354424a3261d2d87fb77cd71689"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕不遇　　　路空　日破〔/注文〕　　　　巳時〔注文〕日合　天刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0157",
+      "sha256": "d24750ed5ff34eb9b8d78aabdf4920da057447ce0fd4cece2d11bb9226a067b8"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕旬空　朱雀　旬空〔/注文〕　　未時〔注文〕日禄〔/注文〕\n申時　　　　　　　　〔注文〕喜神〔/注文〕　　　　　　　酉時〔注文〕金匱寶　光白虎　天乙　貴人福星〔/注文〕\n戌時　　　　　　　　　　　〔注文〕貴人　日建〔/注文〕　　　　亥時〔注文〕玉堂日　刑日害　天牢天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0158",
+      "sha256": "e869d58072448b36caa9ac88a347ce9fb5d12e339d87989c8c204c325a61c3b0"
+    },
+    {
+      "section": "戊戌日十二時",
+      "text": "子時　　　　　　　　　　〔注文〕路空　天牢〔/注文〕　　　　　　丑時〔注文〕天乙貴人路　空元〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0159",
+      "sha256": "23956c9338e1f495c2da89043daa8f8f9adcda06390d4d6917c408e675aab518"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕武司　命五不〔/注文〕　　　　　　　夘時〔注文〕遇天官　貴人日合〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0160",
+      "sha256": "67cd7ff9dbb9706499ce081f4e530c400faeb1e24fba0c9d0081056ef5c3afab"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕勾陳　喜神青龍　日破〔/注文〕　　　　　　巳時〔注文〕旬空　日禄明堂〔/注文〕\n午時　　　　　　　　〔注文〕旬空〔/注文〕　　　　　　　　未時〔注文〕天刑天乙貴　人日〔/注文〕申時〔注文〕刑朱雀　福星　貴人〔/注文〕　酉時〔注文〕日馬金匱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0161",
+      "sha256": "9d7236f00cc60dc660f1db922577a54812fe88b0bfe8459a6f788c9835d32cd6"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕寶光　　　日害　日建〔/注文〕　　　　　　亥時〔注文〕路空白虎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0162",
+      "sha256": "5fd6a068274343754d47737dae8992784d19df710b803c33f6ceac1f5f219444"
+    },
+    {
+      "section": "巳亥日十二時",
+      "text": "子時〔注文〕玉堂路空天〔/注文〕　　　　　　丑時〔注文〕乙貴人白虎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0163",
+      "sha256": "d9922417ee3d300647458e752c25d0e59a14d067906ddf9524060a81ffa5536f"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕玉堂　五不遇　喜神天官〔/注文〕　夘時〔注文〕貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0164",
+      "sha256": "2746b73faec587d2016bfa481ca232dcb3abf0440cc7289140ccd1f47087426b"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕日合天牢〔/注文〕　　　　　　　　巳時〔注文〕元武司命　旬空　日馬〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0165",
+      "sha256": "7645abd6cd5f2f2003e0243361e27de2bce17e0873ea9b3f10f68611b770ae22"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日破　勾陳〔/注文〕　　　　　　未時〔注文〕旬空日　禄青〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0166",
+      "sha256": "4de0b93f3e2b1e8096cbe3fc14b9b776b775eb6a5afe9c106fff7e7f7b5c22c6"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕龍福星　　　　貴人　明堂　天乙〔/注文〕　　　酉時〔注文〕貴人　路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0167",
+      "sha256": "c1744e4530dbe9e6fdce32ed1d88c552a0ac5767d9cf5e38d9f45eb13dd9f04d"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕日害〔/注文〕　　　　　　　　亥時〔注文〕天刑　路空朱雀金　匱日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0168",
+      "sha256": "0b8c0fbff86213075b9945362981ae5c077f612bc78e4f2026ef6e0fb0bcef2a"
+    },
+    {
+      "section": "庚子日十二時",
+      "text": "子時〔注文〕建寳　光五不遇日〔/注文〕　　　　　　丑時〔注文〕刑日建　金匱　五不〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0169",
+      "sha256": "529b4d02fcfa4063502d00a83c8f63309fbfbb2db765ec9d1693eff688489c2e"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕遇天乙貴〔/注文〕　　　　　　　　夘時〔注文〕人日合寳〔/注文〕\n辰時　　　　　　　　　　　〔注文〕天牢　旬空〔/注文〕　　　　　　　巳時〔注文〕元武　旬空〔/注文〕午時〔注文〕天官貴　　人福星　貴人司命　路空〔/注文〕　未時〔注文〕日破天乙貴　人路　空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0170",
+      "sha256": "9bef19594a68a9fb72b11cb836291376ca0206a1504061afc6eb57f7241c6fe2"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕害勾　陳日〔/注文〕　　　　　　　酉時〔注文〕禄青〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0171",
+      "sha256": "3571838a5aaa5b32d9335f5c72ba1b3d471dc635e56e197019fda6a7f397024f"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕龍明　　　　堂喜神　五不〔/注文〕　　　　　　亥時〔注文〕遇天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0172",
+      "sha256": "814063e09be4594a535bdb0b1ff4e93cbc0c31b3a829f4427721b4162bed07fe"
+    },
+    {
+      "section": "辛丑日十二時",
+      "text": "子時〔注文〕刑朱雀日〔/注文〕　　　　　　　　　　丑時〔注文〕合天刑日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0173",
+      "sha256": "416ffa61978c033e22c51cb5fca0a00a71b086bd5c9ad4e65698eebca6d05092"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕建朱雀　天乙〔/注文〕　　　　　夘時〔注文〕貴人〔/注文〕\n辰時　　　　　　　　　　　　　　〔注文〕金匱　寶光　路空〔/注文〕　　　　巳時〔注文〕白虎旬　　空天官　貴人福星　貴人〔/注文〕午時〔注文〕玉堂路　空旬　空天〔/注文〕　　　未時〔注文〕乙貴　人日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0174",
+      "sha256": "adb65b7bc21a3cbfce04cae1e0637db0f92c932cf9802f7fdaadbb12eefe1623"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕害天　牢日〔/注文〕　　　酉時〔注文〕破元武喜神　司命〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0175",
+      "sha256": "169c413bfe768d75a50647ac13006dd86e9db2b603b40cd68f7db0a8d029a0ca"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕日禄五不〔/注文〕　　　　　　亥時〔注文〕遇勾　陳青〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0176",
+      "sha256": "56b609664c1ac05b218e6cf82854c6fca31d3509f7c44c7aebed1dd97033c36a"
+    },
+    {
+      "section": "壬寅日十二時",
+      "text": "子時〔注文〕龍日〔/注文〕　　　　　　丑時〔注文〕刑日馬明　堂青〔/注文〕寅時〔注文〕龍天　　　官貴　人明〔/注文〕　　　夘時〔注文〕堂日建路空天　刑天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0177",
+      "sha256": "811f1695a05b45a59bb5c8d9b5665cafab23c5a0f5db0bb33150174019b81ba7"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕乙貴人　路空朱雀〔/注文〕　　巳時〔注文〕福星貴人　金匱旬空　天乙　貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0178",
+      "sha256": "703952e36e4f47a743b07bc5750f77730346f4ab7474bb1258e388ffe661399e"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕寶光日害〔/注文〕　　　　　　未時〔注文〕日刑旬空　喜神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0179",
+      "sha256": "33bd5c082e4ce2694348229fee2d9439eb86f7b4b24995e7a05965e839480cd0"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日馬　　　　　　五不遇　日破　天牢〔/注文〕　酉時〔注文〕元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0180",
+      "sha256": "9c7220260aa6f06deea5d69ff0bbef368388b5320c7d3f6c14a2a9afaf6d83cc"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕司命〔/注文〕　　　　　　　亥時〔注文〕日禄　日合勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0181",
+      "sha256": "674d1816a28ddf163fe9ef68c502e1417bd838bbfa14997c577ebd21ed4f4114"
+    },
+    {
+      "section": "癸夘日十二時",
+      "text": "子時〔注文〕日禄　司命路空　日刑〔/注文〕　　　　丑時〔注文〕路空　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0182",
+      "sha256": "a76d4e7f6fc0ce293c7f9aad6693303cf903c57e7d2f9bd79c2fdc01c8a4ba64"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕青龍〔/注文〕　　　　　　　夘時〔注文〕天乙貴　人福星貴　人日　建明〔/注文〕辰時〔注文〕堂喜　神天官　貴人　日害　天刑〔/注文〕　　巳時〔注文〕旬空天　乙貴人日　馬朱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0183",
+      "sha256": "852bad96fd66661accc2eb2fb20f645a31ab3e3c5aaea87fcb78d2a837caba46"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕雀旬〔/注文〕　　　　　　　未時〔注文〕空金匱寶光〔/注文〕\n申時　　　　　　　　〔注文〕五不〔/注文〕　　　　　　　酉時〔注文〕遇白虎玉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0184",
+      "sha256": "fdee09a82c6b2313a21c3c571b8f4087d8c9f4ec9cdb7bc5d4ca0b7e258c32b1"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕堂日破　天官貴人　日合〔/注文〕　　　　　　　　　亥時〔注文〕路空　天牢〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0185",
+      "sha256": "c3d0b636bef4efbbba331823958b01e16a796c679d6a78f190c1b8d7c1f5920a"
+    },
+    {
+      "section": "甲辰日十二時",
+      "text": "子時　　　　　　　　〔注文〕路空〔/注文〕　　　　　　　　　　　　　　丑時〔注文〕元武天牢天〔/注文〕寅時〔注文〕乙貴　人元　武日禄喜　神福　星貴人日〔/注文〕　夘時〔注文〕馬司　命旬　空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0186",
+      "sha256": "9121cbae07aa59e16c17ca257c5b9b836d8cb8ad14af89a8f328772e8fe3a2d0"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕害勾　陳旬空日〔/注文〕　　　　　　　　　　　巳時〔注文〕建青〔/注文〕\n午時　　　　　　　　　　　　〔注文〕龍日刑　明堂〔/注文〕　　　　　　　　　　未時〔注文〕五不遇天刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0187",
+      "sha256": "2e12bbd943754b7674506de7877e3e6afd1cc0f04fc3e85e5561bd56b8d93fda"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕天乙貴人〔/注文〕　　　　　　　　　　　　　　酉時〔注文〕朱雀金　匱路　空天官貴〔/注文〕\n戌時　　　　　　　　　　　〔注文〕人日　合寶〔/注文〕　　　　　　　　　　　亥時〔注文〕光路〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0188",
+      "sha256": "f3e3bedc9d1334e6aae56ed935899f702396b1244e64102c721b0990e7fbb3e7"
+    },
+    {
+      "section": "乙巳日十二時",
+      "text": "子時〔注文〕天乙貴人白虎〔/注文〕　　　　　　　　丑時〔注文〕福星貴人　玉堂〔/注文〕\n寅時　　　　　　　　　　　　　　〔注文〕日害　天牢　旬空〔/注文〕　　　　　夘時〔注文〕日禄元武　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0189",
+      "sha256": "b30142446e5ed4b93a8d49525d9181f39819a6988ee78f3ecab8f5be8b875c1a"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕司命〔/注文〕　　　　　　　　　　巳時〔注文〕日建五不遇　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0190",
+      "sha256": "df0598f4eb19f6c4392d37ebab41831fc65e99245355c4a42670c5defd866f6e"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕青龍路空〔/注文〕　　　　　　　　　　未時〔注文〕明堂路空〔/注文〕申時〔注文〕天乙貴人　天官貴人　日合日刑　天刑〔/注文〕　酉時〔注文〕朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0191",
+      "sha256": "fdaaddadff2cec655e4eecc95ee1d3165451a08e58c4b6e870b04ec804150a1e"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕喜神　金匱〔/注文〕　　　　　　　亥時〔注文〕福星貴人　日馬　寶光日破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0192",
+      "sha256": "9a9925c0374a48f038693d8546666ea96eb31facffac032281b58862918ae200"
+    },
+    {
+      "section": "丙午日十二時",
+      "text": "子時〔注文〕天官貴人　福星貴人　金匱日破〔/注文〕　丑時〔注文〕寶光日害〔/注文〕\n寅時　　　　　　　　　　　〔注文〕白虎　旬空〔/注文〕　　　　　　　夘時〔注文〕玉堂旬空〔/注文〕\n辰時　　　　　　　　　　　　　　　〔注文〕五不遇　路空　天牢〔/注文〕　　　　巳時〔注文〕日禄路空　元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0193",
+      "sha256": "b919b1cdeeb049ecaa8d2a4d0f3a836a757c38781d585b3624514bfcec655209"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日建　司命日刑〔/注文〕　　　　　　　未時〔注文〕日合勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0194",
+      "sha256": "9aa67e761daa61a0fe58b0f35c60092cca9ff0a12446c5b76da6af0639e53247"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕喜神　日馬　青龍〔/注文〕　　　　　酉時〔注文〕天乙貴人　明堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0195",
+      "sha256": "cdf6e6b1f7b2011d5e03071b1ed71b83221749cb357142d39b7de363750c0466"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕福星貴人天刑〔/注文〕　　　　　　　　亥時〔注文〕天乙貴人朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0196",
+      "sha256": "29e1e20f6ff692c364efd57d624991e3efffa5d7586a8e4fd7cb84965769fe3c"
+    },
+    {
+      "section": "丁未日十二時",
+      "text": "子時　　　　　　　　　　　〔注文〕日害　天刑〔/注文〕　　　　　　　丑時〔注文〕日破　日刑　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0197",
+      "sha256": "c7713f6f65268078cc78c5a8acf9a17b065c427ac2eeb16cd8fc776e27deae72"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕金匱　　　路空　旬空〔/注文〕　　　　　　　　　　夘時〔注文〕寶光五不遇　路空　旬空〔/注文〕\n辰時　　　　　　　　〔注文〕白虎〔/注文〕　　　　　　　　　　　　巳時〔注文〕日馬　玉堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0198",
+      "sha256": "c21bd4975bf53cfcf1b1957034bd93f80c33521f9cecc2240bfa30b275b9933e"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日禄　喜神　日合天牢〔/注文〕　　　　　　　未時〔注文〕日建元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0199",
+      "sha256": "f6b565b5e8a61e543b561972407b2244229e96edb7048ef52fb260edbbaf7c18"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕司命〔/注文〕　　　　　　　　　　　　酉時〔注文〕天乙貴　人福星貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0200",
+      "sha256": "66bfa21159040776ce341a3b4148e9a1cdbc56d8962775dee3585a5726dc3260"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕勾陳〔/注文〕　　　　　　　　　　　　亥時〔注文〕青龍天　乙貴人　天官〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0201",
+      "sha256": "c5c5dc9180db4596e907a23407b76b9959d1e742a462e40a5ffd3018c4007a61"
+    },
+    {
+      "section": "戊申日十二時",
+      "text": "子時〔注文〕貴人明堂〔/注文〕　　　　　　　　　　　　丑時〔注文〕青龍路　空天乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0202",
+      "sha256": "4f7722ebaff43cbfbae119cbd69eeec2ef0c09d9aa7753209039704335f8d739"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕人明　　　　　　　　　　　堂路空　日馬　五不　遇日　破日〔/注文〕　夘時〔注文〕刑天刑旬空　天官〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0203",
+      "sha256": "ed2f39b36724e5a8663df709f4befb2d9fdba3c31f3d04d5d9817d4ed2ae196c"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕貴人　朱雀〔/注文〕　　　　　　巳時〔注文〕旬空　喜神　金匱〔/注文〕\n午時　　　　　　　　〔注文〕日禄〔/注文〕　　　　　　　　　未時〔注文〕日合寶　光白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0204",
+      "sha256": "69281dc7eb395e1d1ab49c1d32509693b785fa3097d8bb1cdbfdbe0cc42100e9"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕虎天乙　貴人玉堂〔/注文〕　　　　酉時〔注文〕福星〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0205",
+      "sha256": "d954a755aef20a4cb7957848dc5eaf73dcab14d60b184d596229325d72b12bc4"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕貴人日建〔/注文〕　　　　　　　　　亥時〔注文〕天牢　元武　司命〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0206",
+      "sha256": "7647ee5c500475618c1ac71a35dbbe17908031a90a773185047607e3478b5cac"
+    },
+    {
+      "section": "己酉日十二時",
+      "text": "子時〔注文〕路空路　空日〔/注文〕　　　　丑時〔注文〕害勾陳　天乙〔/注文〕寅時〔注文〕貴人　司命五　不遇勾陳〔/注文〕　　夘時〔注文〕喜神天官　貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0207",
+      "sha256": "c8d0f20a3932c25331836db107b79853acd73c03eaa2e2e2485423e57205903c"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕青龍旬空〔/注文〕　　　　　　　　　巳時〔注文〕明堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0208",
+      "sha256": "f3cc1f1d55019af9f58dcd97611da52c0a67fc225d377c80b74f988c611dbdda"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日禄　金匱〔/注文〕　　　　　未時〔注文〕福星貴　人寶〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0209",
+      "sha256": "292093783f8844b3016f64fc10c6881fa96b875ed436b702f3fcbcf7d9ca607f"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕光天乙　貴人　路空〔/注文〕　　　　　酉時〔注文〕白虎　日建玉堂　路空〔/注文〕\n戌時　　　　　　　　　　〔注文〕日刑　日害〔/注文〕　　　　　亥時〔注文〕天牢日馬五　不遇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0210",
+      "sha256": "18176e322aa3ee62a9c75833c34c0f566c417fe5af11d0c44891036275d09d38"
+    },
+    {
+      "section": "庚戌日十二時",
+      "text": "子時　　　　　　　　　　　〔注文〕元武五　不遇〔/注文〕　　　　丑時〔注文〕天牢天乙貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0211",
+      "sha256": "00a1b9f4b0e014929a6af35625ceac34d2ad90b2748f92b558f1d816a83cf12e"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕人元武司〔/注文〕　　　　　　　夘時〔注文〕命旬空日　合勾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0212",
+      "sha256": "5430dd280ab6e0125b626d2ce0ca1042b9ee60282366c013135a913c4d4d0d4d"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕陳旬空青〔/注文〕　　　　　　　巳時〔注文〕龍日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0213",
+      "sha256": "4496fb68af87f93bec4c40cc4d04f82c46ddeed333dd3d8110210210aea7dc1b"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕破明堂　天官貴人福　星貴〔/注文〕　未時〔注文〕人路空天刑　天乙　貴人〔/注文〕申時〔注文〕路空　日刑　朱雀〔/注文〕　　酉時〔注文〕日禄日馬〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0214",
+      "sha256": "f609590ef8e5014a663f73112a890933ca5f5585eb6041503322a5e58d6340fd"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕金匱　寶光　日害喜　神日〔/注文〕　　　　亥時〔注文〕建五〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0215",
+      "sha256": "bab54599ef3a27814741fd565d48e5f41a8d7d8004ce048ba49964024bf0d2ab"
+    },
+    {
+      "section": "辛亥日十二時",
+      "text": "子時　　　　　　　　〔注文〕不遇〔/注文〕　　　　　　　丑時〔注文〕白虎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0216",
+      "sha256": "db3c6343e2bd1ef39f6c582728a35c61373a1e1b186480c24d5cbac5a5a26a5e"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕玉堂白　虎玉堂天乙〔/注文〕　　　夘時〔注文〕貴人　日合〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0217",
+      "sha256": "acabefe457b67169c0fc0897fb842e3e55b0dfefabc9fbf79e96ffa22e332e64"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕天牢旬空〔/注文〕　　　　　　　巳時〔注文〕元武旬　空司命路空天官　貴人　福星〔/注文〕午時〔注文〕貴人日　馬路〔/注文〕　　　未時〔注文〕空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0218",
+      "sha256": "f93c428ddc03bd3b74f732bb52de0e4ae14512b22c53c1149550c97e99d81196"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕破勾　　　陳天　乙貴〔/注文〕　　　　　酉時〔注文〕人青龍明堂　喜神〔/注文〕\n戌時　　　　　　　　〔注文〕天刑〔/注文〕　　　　　　　　　　亥時〔注文〕日禄朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0219",
+      "sha256": "16fc3dcabba8b42038d2d13873b107ce7c519e3cf188f99061699395300d31f8"
+    },
+    {
+      "section": "癸丑日十二時",
+      "text": "子時〔注文〕日禄　日合路空　天刑〔/注文〕　　　　　　　丑時〔注文〕日建路空　朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0220",
+      "sha256": "3c3782bb41ab01b5ffcb91787002e51bec2b8bafac180c855629182c41b5a162"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕金匱旬空〔/注文〕　　　　　　　　　　夘時〔注文〕天乙貴　人福星　貴人寳光〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0221",
+      "sha256": "d46fae30a15f905dfafc1fc0dcb3e8b8f28729fef354d0ea7ecf8a2ed863d0f8"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕旬空　喜神天乙貴〔/注文〕　　　　　巳時〔注文〕人白虎　天乙〔/注文〕\n午時　　　　　　　　〔注文〕貴人〔/注文〕　　　　　　　　　　未時〔注文〕玉堂日　害五　不遇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0222",
+      "sha256": "6fb597bb5df023004a06c1b4a33838de172b56e127c17a8216f98eb635ebe43e"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日破〔/注文〕　　　　　　　　　　酉時〔注文〕羅武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0223",
+      "sha256": "5110e71109e787b162971dea06fa2578831423389dd8072247c0986c07cf468e"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕司命勾　陳天官貴　人青〔/注文〕　　　　　亥時〔注文〕龍路　空日刑日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0224",
+      "sha256": "fd81d4276932b00cd9b53f5f3b5467286cf63de59329f6df3f0d99e07e4b3673"
+    },
+    {
+      "section": "甲寅日十二時",
+      "text": "子時〔注文〕馬明堂路〔/注文〕　　　　　　　　　　　丑時〔注文〕空青龍　旬空天乙〔/注文〕寅時〔注文〕貴人　明堂　旬空日　禄喜神福〔/注文〕　夘時〔注文〕星貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0225",
+      "sha256": "cd8ac06db2a31a977675dda1f3a5775f4a33b64cb273039626d9baf7d8155a57"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕人日〔/注文〕　　　　　　　　　　　巳時〔注文〕建天刑朱　雀金〔/注文〕\n午時　　　　　　　　　　　　〔注文〕匱寶光　日害〔/注文〕　　　　　　　未時〔注文〕日刑五　不遇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0226",
+      "sha256": "12f0dee9342e04c7657209e44461ce4c05bf66203b3a0351baccf0093ad308a9"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕白虎　　　　　天乙　貴人　玉堂〔/注文〕　　　　　酉時〔注文〕日馬路空日　破天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0227",
+      "sha256": "b733889062d0c9ccb6912e56d33c597c9b383734c7aebddbd3e2a988daa275ff"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕牢天〔/注文〕　　　　　　　　　　　亥時〔注文〕乙貴人路〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0228",
+      "sha256": "f5e56a283a9e90732a7f5d1dc14a8bf2439c9ce98fcb236bd82ad5a0f5f46e91"
+    },
+    {
+      "section": "乙夘日十二時",
+      "text": "子時〔注文〕天乙貴　人司命日　刑旬〔/注文〕　　　丑時〔注文〕空福星貴人　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0229",
+      "sha256": "fdca537abdcd481382c8f8b1aac13134d9fddc0354fc64ac1b062299eee90770"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕旬空〔/注文〕　　　　　　　夘時〔注文〕青龍　日禄　日建〔/注文〕\n辰時　　　　　　　　　　〔注文〕明堂　日害〔/注文〕　　　　　巳時〔注文〕天刑日馬五　不遇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0230",
+      "sha256": "4ea687694cc4cd9ad1a6dbcc20ea0a00bdd3fd85e89c4c34e205cfbcb512abf1"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕朱雀金匱〔/注文〕　　　　　　　未時〔注文〕路空寶光〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0231",
+      "sha256": "71c6e749c5ba20ab03c19b0a89c5df370191fc9d05504f6f0385fde822b34210"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕路空天　乙貴人天官〔/注文〕　酉時〔注文〕貴人白虎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0232",
+      "sha256": "401fa2bc84beb6065ea47c2ed1295788219905accc05ba11efbeed71ba3af5bb"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕王堂　日破喜神〔/注文〕　　　　　亥時〔注文〕日合天牢福〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0233",
+      "sha256": "6831873bae4a54c8dfe762142c1f6545346d2a1e41cde6021de39180ef7ead15"
+    },
+    {
+      "section": "丙辰日十二時",
+      "text": "子時〔注文〕星貴人　元武天官貴　人福〔/注文〕　丑時〔注文〕星貴　人天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0234",
+      "sha256": "53ff4f7514d01ee834f8bdaa3389cffecc56eb5f5d5814b15eb58e0f7d556344"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕牢旬　空元〔/注文〕　　　　　夘時〔注文〕武旬　空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0235",
+      "sha256": "893a1317c2e07e4a4ecf0301bc869e72c186f660f07d22eadbd58cd44019e42c"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕馬司　命日　　　　害勾陳　日建　青龍〔/注文〕　巳時〔注文〕五不　遇路空日〔/注文〕\n午時　　　　　　　　〔注文〕刑日〔/注文〕　　　　　　　未時〔注文〕禄明〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0236",
+      "sha256": "b157f8378f33b0461c544a0dbc6ebc4eb4ff2caa231a29fc91006ec08deb453a"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕堂路　空天〔/注文〕　　　　　酉時〔注文〕刑朱雀　喜神　金匱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0237",
+      "sha256": "710d24888357f448c14b0d8a1b132228bf11ce5a08165c5881670bc1ab13e299"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕天乙貴　人日　合寶〔/注文〕　　　　　亥時〔注文〕光福星　貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0238",
+      "sha256": "ee9ad68f0b720eab5b926bbce18a5807650f1b087c48045650ef70a77d6c9d3f"
+    },
+    {
+      "section": "丁巳日十二時",
+      "text": "子時　　　　　　　　　　〔注文〕日破　白虎〔/注文〕　　　　　丑時〔注文〕天乙貴人〔/注文〕\n寅時　　　　　　　　　　　　　〔注文〕玉堂　白虎　旬空〔/注文〕　　夘時〔注文〕玉堂旬　空路　空日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0239",
+      "sha256": "f861bd7cd8d3a0449c8220937499011148e5dba73e968d5414a858751e3d2b47"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕司命〔/注文〕　　　　　　巳時〔注文〕日建勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0240",
+      "sha256": "305521aa101e8b4faebfd8c6920a50216f45dca18ef9e60b792a51f7e11ee6af"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕日禄　喜神　青龍〔/注文〕　未時〔注文〕明堂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0241",
+      "sha256": "8c5ad73df0084e56ed7a8edec1e23f19b4bb984678c6d6d22d38699d11baace7"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日合　　　日刑　天刑〔/注文〕　　　酉時〔注文〕天乙貴人　福星貴人朱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0242",
+      "sha256": "ea9bc1c911a6476c289e044414aa00fa453e4e510e0a5936d6368a34987e49f7"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕雀金〔/注文〕　　　　　　亥時〔注文〕匱天乙貴　人天官　貴人　日馬寶光〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0243",
+      "sha256": "df85fe3d9b8da24ee934f9fd2ef89e8f0eb849ff7e18ec2b92fe66e8800bff87"
+    },
+    {
+      "section": "戊午日十二時",
+      "text": "子時〔注文〕日破　　　　　金匱　路空　日破〔/注文〕　丑時〔注文〕旬空天乙　貴人寶光　路空　日害〔/注文〕\n寅時　　　　　　　　　　　　〔注文〕旬空五　不遇〔/注文〕　　　夘時〔注文〕白虎天官　貴人〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0244",
+      "sha256": "de2643f2e613e8497f538f93ec6cad22663ad9fddcc7dde8e1ccb935770c7a1a"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕玉堂喜神〔/注文〕　　　　　　巳時〔注文〕天牢日禄〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0245",
+      "sha256": "e55ef751a5e165b14f717ffea2c2f56a327a6bf299cb8f6b750930963f84c456"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕元武　日建司命〔/注文〕　　　　　未時〔注文〕日刑天　乙貴人日〔/注文〕申時〔注文〕合勾陳　福星　貴人〔/注文〕　酉時〔注文〕日馬〔/注文〕\n戌時　　　　　　　　　　　〔注文〕青龍　明堂〔/注文〕　　　　　亥時〔注文〕路空　天刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0246",
+      "sha256": "7f3bdea2a1f4ea576801b5897f568dfaaf77426a61639a37ddcfc992c28fdfa6"
+    },
+    {
+      "section": "己未日十二時",
+      "text": "子時〔注文〕路空朱　　　　雀天　乙貴　人日〔/注文〕　　　丑時　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　〔注文〕害天刑　旬空　五不　遇日　破日〔/注文〕寅時〔注文〕刑朱　雀旬空　喜神〔/注文〕　夘時〔注文〕天官〔/注文〕\n辰時　　　　　　　　〔注文〕貴人〔/注文〕　　　　　　　　巳時〔注文〕金匱　寶光〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0247",
+      "sha256": "8c1fddfea7c368f19b30c2ccef7aef731c2b988920432d8987c83a0e5cae61bd"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕白虎　日馬玉堂〔/注文〕　　　　　未時〔注文〕日禄日　合天牢福〔/注文〕申時〔注文〕天乙貴人　司命路空〔/注文〕　　　酉時〔注文〕路空　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0248",
+      "sha256": "a2396c4a846ef805441c72777829c0918a4d18db47ac0b39d2a64578ad02a13f"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕青龍〔/注文〕　　　　　　　　亥時〔注文〕明堂五不遇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0249",
+      "sha256": "275b1d8a19ae912e56b1a6b24b770584ca1b3580fcb2e9a5005dcf4ce5961552"
+    },
+    {
+      "section": "庚申日十二時",
+      "text": "子時〔注文〕青龍　　　　五不遇　旬空〔/注文〕　　　　丑時〔注文〕天乙貴人　明堂旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0250",
+      "sha256": "398be2eb05996e9d36464ad71134e78b71dafcf103d0b94ad51ab3db148999bc"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕日馬　　　　　　日破　日刑　天刑〔/注文〕　　夘時〔注文〕朱雀〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0251",
+      "sha256": "41b8325ffd536f0ce65bddc723ce0841184cf7cf921bdd14cb2f167ada2fc4f1"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕金匱〔/注文〕　　　　　　　　巳時〔注文〕日合　寶光〔/注文〕午時〔注文〕天官貴人　福星貴人路空　白虎〔/注文〕　未時〔注文〕天乙貴人路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0252",
+      "sha256": "b9cb2803cb3b114451587ba71da31891171a60f4f31d53742d7c9acdf3c01169"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕日禄　日建天牢〔/注文〕　　　　　酉時〔注文〕元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0253",
+      "sha256": "dc9aea5568ce32b975ce73f035e151bc9213760f45f22f757b44e8bbfefa2ce0"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕喜神　司命五不遇〔/注文〕　　　亥時〔注文〕日害　勾陳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0254",
+      "sha256": "377ee3a4d21bed4578f76f0283cf884ce476b2fafeff1422413b5514a3d0a936"
+    },
+    {
+      "section": "辛酉日十二時",
+      "text": "子時〔注文〕司命旬空〔/注文〕　　　　　　丑時〔注文〕勾陳　旬空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0255",
+      "sha256": "c4566fd4ed2775f74fa975e9954cf1ffb3aa71850cab42da184178e0ecf73ba3"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕天乙貴人　青龍〔/注文〕　夘時〔注文〕明堂日破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0256",
+      "sha256": "e24a7f107b993ab2dca58fd30de99aac867fa69e6d3247659a2cd3b4b62f3c18"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕日合　　　路空　天刑〔/注文〕　　　巳時〔注文〕天官貴人　福星貴人路空　朱雀〔/注文〕午時〔注文〕天乙貴人　金匱〔/注文〕　未時〔注文〕寶光〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0257",
+      "sha256": "b38fb74b76bb8d69994036096ce595de8c4d8ed44b79596323922bb4119db003"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕喜神白虎〔/注文〕　　　　　　酉時〔注文〕日禄　日建　玉堂五不遇　日刑〔/注文〕\n戌時　　　　　　　　　　〔注文〕日害　天牢〔/注文〕　　　亥時〔注文〕日馬元武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0258",
+      "sha256": "87378c7f89cea32fc6d3b5b49b98ba1c6f246dee0373e3dc264e9d87cebc523d"
+    },
+    {
+      "section": "壬戌日十二時",
+      "text": "子時　　　　　　　　　　〔注文〕天牢　旬空〔/注文〕　　　丑時〔注文〕天官貴人元　武旬〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0259",
+      "sha256": "6a054d6d652f281f4bd47fe72ed3fe7b58c60abe3fb5fba88cc7f2ddeef2f6a4"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕空司命路〔/注文〕　　　　　　夘時〔注文〕空天乙　貴人日合　路空〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0260",
+      "sha256": "6d545cff6bbf67024abf812a1969f7b90b8e592e2fe0ed2b182be6d21d4279d4"
+    },
+    {
+      "section": "辰時",
+      "text": "〔注文〕勾陳福　星貴人青〔/注文〕　巳時〔注文〕龍日破　天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0261",
+      "sha256": "21384f501cf5668f3dc5f23a8595544e1f6161cb26b29e8f9122a81264876272"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕貴人明堂〔/注文〕　　　　　　未時〔注文〕喜神天刑天　官貴〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0262",
+      "sha256": "615cc591a73c41478da6e598baac473f698789044accde61b233046a6fe47487"
+    },
+    {
+      "section": "申時",
+      "text": "〔注文〕人日　刑朱雀日馬〔/注文〕　　　酉時〔注文〕金匱五不〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0263",
+      "sha256": "bd22747156dd6b501fd6d1e454016780f1742c276b68983b592f5cd3657cfcf1"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕遇寳光日〔/注文〕　　　　　　亥時〔注文〕害日　建白〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0264",
+      "sha256": "da55fcb3bf872c33d95025fdf87748f9c9d51fd622f784ad683a302edebca622"
+    },
+    {
+      "section": "癸亥日十二時",
+      "text": "子時〔注文〕虎日　　　　　　禄玉　堂日　禄路〔/注文〕　　　丑時〔注文〕空白虎旬　空玉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0265",
+      "sha256": "4023573d9dc56aa5611dd8a886ac92018cb12a8768f9e03704e502a450f325d6"
+    },
+    {
+      "section": "寅時",
+      "text": "〔注文〕堂路空旬〔/注文〕　　　　　　　　夘時〔注文〕空日合　天牢天乙貴人〔/注文〕辰時〔注文〕福星　貴人元　武喜〔/注文〕　巳時〔注文〕神天官　貴人司命　天乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0266",
+      "sha256": "7e9f5fc5667b31b8dcd9a8fa52fd613d09317632485f5f6f10ac34f8df95d2df"
+    },
+    {
+      "section": "午時",
+      "text": "〔注文〕貴人〔/注文〕　　　　　　　　未時〔注文〕日馬日破勾〔/注文〕\n申時　　　　　　　　　　〔注文〕陳青　龍明〔/注文〕　　　　　　酉時〔注文〕堂五〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0267",
+      "sha256": "fc6fe8ab8e79a76601cbbe8052598aa894357e801e8c1f00743b32ccaf80ed1c"
+    },
+    {
+      "section": "戌時",
+      "text": "〔注文〕不遇日　害天刑朱〔/注文〕　　　　亥時〔注文〕雀天　官貴人金　匱路〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0268",
+      "sha256": "3fa1f3d1f521276c1a7c6781516177cdcf28762e806cfe5d203609808df9cca6"
+    },
+    {
+      "section": "貴登天門時定局",
+      "text": "雨水後日躔在亥宫\n甲日　夘時　月將亥加夘　陽貴未加亥\n酉時　月將亥加酉　隂貴丑加亥\n乙日　戌時　月将亥加戌　隂貴子加亥\n丙日　亥時　月將亥加亥　隂貴亥加亥\n丁日　丑時　月將亥加丑　隂貴酉加亥\n戊日　酉時　月将亥加酉　陽貴丑加亥\n夘時　月将亥加夘　隂貴未加亥\n巳日　寅時　月将亥加寅　隂貴申加亥\n庚日　酉時　月將亥加酉　陽貴丑加亥\n夘時　月將亥加夘　隂貴未加亥\n辛日　申時　月將亥加申　陽貴寅加亥\n壬日　未時　月将亥加未　陽貴夘加亥\n癸日　巳時　月将亥加巳　陽貴巳加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0269",
+      "sha256": "43aab61816bcb9e42b4a6578c485016f256f1acf3d3bcef3106652d5536c0128"
+    },
+    {
+      "section": "春分後日躔在戌宫",
+      "text": "乙日　酉時　月将戌加酉　隂貴子加亥\n丙日　戌時　月将戌加戌　隂貴亥加亥\n丁日　子時　月将戌加子　隂貴酉加亥\n戊日　申時　月将戌加申　陽貴丑加亥\n寅時　月将戌加寅　隂貴未加亥\n巳日　酉時　月将戌加酉　陽貴子加亥\n丑時　月将戌加丑　隂貴申加亥\n庚日　申時　月将戌加申　陽貴丑加亥\n寅時　月将戌加寅　隂貴未加亥\n辛日　未時　月将戌加未　陽貴寅加亥\n夘時　月将戌加夘　隂貴午加亥\n壬日　午時　月将戌加午　陽貴夘加亥\n癸日　辰時　月将戌加辰　陽貴巳加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0270",
+      "sha256": "eee8483c9331d237ee231f80731bf4549d3224ee0918bf680d417f6c3bc20c27"
+    },
+    {
+      "section": "榖雨後日躔在酉宫",
+      "text": "丁日　酉時　月将酉加酉　陽貴亥加亥\n亥時　月将酉加亥　隂貴酉加亥\n戊日　未時　月將酉加未　陽貴丑加亥\n丑時　月將酉加丑　隂貴未加亥\n巳日　申時　月将酉加申　陽貴子加亥\n子時　月将酉加子　隂貴申加亥\n庚日　未時　月将酉加未　陽貴丑加亥\n丑時　月将酉加丑　隂貴未加亥\n辛日　午時　月将酉加午　陽貴寅加亥\n寅時　月将酉加寅　隂貴午加亥\n壬日　巳時　月将酉加巳　陽貴夘加亥\n癸日　夘時　月将酉加夘　陽貴巳加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0271",
+      "sha256": "9340e19870b4db336638d6abbaf97056b5b7ed351915da582e48ee04a414a8ed"
+    },
+    {
+      "section": "小滿後日躔在申宫",
+      "text": "丙日　戌時　月将申加戌　陽貴酉加亥\n丁日　申時　月将申加申　陽貴亥加亥\n戌時　月将申加戌　隂貴酉加亥\n戊日　午時　月将申加午　陽貴丑加亥\n子時　月将申加子　隂貴未加亥\n巳日　未時　月将申加未　陽貴子加亥\n亥時　月将申加亥　隂貴申加亥\n庚日　午時　月将申加午　陽貴丑加亥\n子時　月将申加子　隂貴未加亥\n辛日　巳時　月将申加巳　陽貴寅加亥\n丑時　月将申加丑　隂貴午加亥\n壬日　辰時　月将申加辰　陽貴夘加亥\n寅時　月将申加寅　隂貴巳加亥\n癸日　寅時　月将申加寅　陽貴巳加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0272",
+      "sha256": "7f42fed7f58b4a5a7b10043c11e4a07c980dedfef7e90dd9391ae95e3c40eafc"
+    },
+    {
+      "section": "夏至後日躔在未宫",
+      "text": "乙日　戌時　月将未加戌　陽貴申加亥\n丙日　酉時　月将未加酉　陽貴酉加亥\n丁日　未時　月将未加未　陽貴亥加亥\n戊日　巳時　月将未加巳　陽貴丑加亥\n亥時　月将未加亥　隂貴未加亥\n巳日　午時　月将未加午　陽貴子加亥\n戌時　月将未加戌　隂貴申加亥\n庚日　巳時　月将未加巳　陽貴丑加亥\n亥時　月将未加亥　隂貴未加亥\n辛日　辰時　月将未加辰　陽貴寅加亥\n子時　月将未加子　隂貴午加亥\n壬日　夘時　月将未加夘　陽貴夘加亥\n丑時　月将未加丑　隂貴巳加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0273",
+      "sha256": "1cf55210d388a9aa0c9624fbfcface7237ebbb032b9011a954947e9c2731983c"
+    },
+    {
+      "section": "大暑後日躔在午宫",
+      "text": "乙日　酉時　月将午加酉　陽貴申加亥\n丙日　申時　月将午加申　陽貴酉加亥\n丁日　午時　月将午加午　陽貴亥加亥\n戊日　辰時　月将午加辰　陽貴丑加亥\n戌時　月将午加戌　隂貴未加亥\n巳日　巳時　月将午加巳　陽貴子加亥\n庚日　辰時　月将午加辰　陽貴丑加亥\n戌時　月将午加戌　隂貴未加亥\n辛日　夘時　月将午加夘　陽貴寅加亥\n亥時　月将午加亥　隂貴午加亥\n壬日　寅時　月将午加寅　陽貴夘加亥\n子時　月将午加子　隂貴巳加亥\n癸日　寅時　月将午加寅　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0274",
+      "sha256": "b0071ebcfd10e8e8482a10c5a2fde2fa38fecc2d7db02d14af6a92aa06346132"
+    },
+    {
+      "section": "處暑後日躔在巳宫",
+      "text": "甲日　酉時　月将巳加酉　陽貴未加亥\n乙日　申時　月将巳加申　陽貴申加亥\n丙日　未時　月将巳加未　陽貴酉加亥\n丁日　巳時　月将巳加巳　陽貴亥加亥\n戊日　夘時　月将巳加夘　陽貴丑加亥\n酉時　月将巳加酉　隂貴未加亥\n巳日　辰時　月将巳加辰　陽貴子加亥\n庚日　夘時　月将巳加夘　陽貴丑加亥\n酉時　月将巳加酉　隂貴未加亥\n辛日　戌時　月将巳加戌　隂貴午加亥\n壬日　亥時　月将巳加亥　隂貴巳加亥\n癸日　丑時　月将巳加丑　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0275",
+      "sha256": "c07d8f9d5256ba53862def5cf8e17bee991df990d77ea0b2ee8b081f18cef85d"
+    },
+    {
+      "section": "秋分後日躔在辰宫",
+      "text": "甲日　申時　月将辰加申　陽貴未加亥\n寅時　月将辰加寅　隂貴丑加亥\n乙日　未時　月将辰加未　陽貴申加亥\n夘時　月将辰加夘　隂貴子加亥\n丙日　午時　月将辰加午　陽貴酉加亥\n丁日　辰時　月将辰加辰　陽貴亥加亥\n巳日　夘時　月将辰加夘　陽貴子加亥\n辛日　酉時　月将辰加酉　隂貴午加亥\n壬日　戌時　月将辰加戌　隂貴巳加亥\n癸日　子時　月将辰加子　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0276",
+      "sha256": "d927fc94cd6869611281efff7c1caad570d4285807bf20fb1a6785266238cad3"
+    },
+    {
+      "section": "霜降後日躔在夘宫",
+      "text": "甲日　未時　月将夘加未　陽貴未加亥\n丑時　月将夘加丑　隂貴丑加亥\n乙日　午時　月将夘加午　陽貴申加亥\n寅時　月將夘加寅　隂貴子加亥\n丙日　巳時　月将夘加巳　陽貴酉加亥\n夘時　月将夘加夘　隂貴亥加亥\n丁日　夘時　月将夘加夘　陽貴亥加亥\n壬日　酉時　月将夘加酉　隂貴巳加亥\n癸日　酉時　月将夘加酉　陽貴巳加亥\n亥時　月将夘加亥　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0277",
+      "sha256": "51637fb548b9a4088f357c15f03055606aa39e1f48f878c9982c2fda011ca132"
+    },
+    {
+      "section": "小雪後日躔在寅宫",
+      "text": "甲日　午時　月将寅加午　陽貴未加亥\n子時　月将寅加子　隂貴丑加亥\n乙日　巳時　月将寅加巳　陽貴申加亥\n丑時　月将寅加丑　隂貴子加亥\n丙日　辰時　月将寅加辰　陽貴酉加亥\n寅時　月将寅加寅　隂貴亥加亥\n癸日　申時　月将寅加申　陽貴巳加亥\n戌時　月将寅加戌　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0278",
+      "sha256": "7f9af89602a3e60cb1db16cced910092ec106899b238530a4f9181a28b6b6d4c"
+    },
+    {
+      "section": "冬至後日躔在丑宫",
+      "text": "甲日　巳時　月将丑加巳　陽貴未加亥\n亥時　月将丑加亥　隂貴丑加亥\n乙日　辰時　月将丑加辰　陽貴申加亥\n子時　月将丑加子　隂貴子加亥\n丙日　丑時　月将丑加丑　隂貴亥加亥\n丁日　夘時　月将丑加夘　隂貴酉加亥\n巳日　辰時　月将丑加辰　隂貴申加亥\n癸日　未時　月将丑加未　陽貴巳加亥\n酉時　月将丑加酉　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0279",
+      "sha256": "7195857249cac1c190c0c88dacbf3e8ade880738bed76fbb380c9be9d2432cfd"
+    },
+    {
+      "section": "大寒後日躔在子宫",
+      "text": "甲日　辰時　月将子加辰　陽貴未加亥\n戌時　月将子加戌　隂貴丑加亥\n乙日　夘時　月将子加夘　陽貴申加亥\n亥時　月将子加亥　隂貴子加亥\n丙日　子時　月将子加子　隂貴亥加亥\n丁日　寅時　月将子加寅　陽貴酉加亥\n己日　夘時　月将子加夘　隂貴申加亥\n壬日　申時　月将子加申　陽貴夘加亥\n癸日　午時　月将子加午　陽貴巳加亥\n申時　月将子加申　隂貴夘加亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c032:p0280",
+      "sha256": "e6398675cb9b25f194597073ac685954dc4ce4fa33f90b49f634b9fa0753a497"
+    },
+    {
+      "section": "四大吉時定局",
+      "text": "雨水後日躔在亥宫用甲丙庚壬時\n甲日　甲勾陳　丙勾陳　庚太常　壬太隂乙日　甲六合　丙六合　庚元武　壬天后丙日　甲朱雀　丙朱雀　庚太隂　壬天乙丁日　甲天乙　丙天乙　庚天乙　壬太隂〔注文〕戊庚〔/注文〕日　甲朱雀　丙朱雀　庚太隂　壬太常己日　甲天后　丙螣蛇　庚螣蛇　壬元武辛日　甲六合　丙六合　庚元武　壬白虎壬日　甲勾陳　丙勾陳　庚太常　壬天空癸日　甲天空　丙天空　庚天空　壬太常\n春分後日躔在戌宫用艮巽坤乾時\n甲日　艮六合　巽六合　坤元武　乾元武乙日　艮太隂　巽朱雀　坤太隂　乾太隂丙日　艮天后　巽螣蛇　坤天后　乾天后丁日　艮螣蛇　巽螣蛇　坤螣蛇　乾天后〔注文〕戊庚〔/注文〕日　艮六合　巽六合　坤元武　乾元武己日　艮朱雀　巽朱雀　坤朱雀　乾太隂辛日　艮太常　巽勾陳　坤太常　乾太常壬日　艮白虎　巽青龍　坤白虎　乾白虎癸日　艮青龍　巽青龍　坤青龍　乾白虎\n榖雨後日躔在酉宫用癸乙丁辛時\n甲日　癸勾陳　乙朱雀　丁太隂　辛太隂乙日　癸元武　乙螣蛇　丁天后　辛天后丙日　癸太隂　乙天乙　丁天乙　辛天乙丁日　癸天乙　乙朱雀　丁朱雀　辛太隂〔注文〕戊庚〔/注文〕日　癸朱雀　乙勾陳　丁太常辛太常\n己日　癸螣蛇　乙六合　丁六合　辛元武辛日　癸元武　乙青龍　丁白虎　辛白虎壬日　癸太常　乙天空　丁天空　辛天空癸日　癸天空　乙勾陳　丁勾陳　辛太常\n小滿後日躔在申宫用甲丙庚壬時\n甲日　甲螣蛇　丙天后　庚天后　壬青龍乙日　甲天乙　丙天乙　庚天乙　壬太常丙日　甲天后　丙螣蛇　庚螣蛇　壬元武丁日　甲六合　丙六合　庚元武　壬天后〔注文〕戊庚〔/注文〕日　甲青龍　丙白虎　庚白虎　壬螣蛇己日　甲勾陳　丙勾陳　庚太常　壬天乙辛日　甲天空　丙天空　庚天空　壬太隂壬日　甲白虎　丙青龍　庚青龍　壬元武癸日　甲六合　丙六合　庚元武　壬白虎\n夏至後日躔在未宫用艮巽坤乾時\n甲日　艮天乙　巽天乙　坤天乙　乾天乙乙日　艮天后　巽螣蛇　坤螣蛇　乾天后丙日　艮太隂　巽朱雀　坤朱雀　乾太隂丁日　艮勾陳　巽勾陳　坤太常　乾太常〔注文〕戊庚〔/注文〕日　艮天空　巽天空　坤天空　乾天空己日　艮青龍　巽青龍　坤白虎　乾白虎辛日　艮白虎　巽青龍　坤青龍　乾白虎壬日　艮太常　巽勾陳　坤勾陳　乾太常癸日　艮朱雀　巽朱雀　坤太隂　乾太隂\n大暑後日躔在午宫用癸乙丁辛時\n甲日　癸白虎　乙螣蛇　丁螣蛇　辛天后乙日　癸天空　乙朱雀　丁朱雀　辛太隂丙日　癸青龍　乙六合　丁六合　辛元武丁日　癸元武　乙青龍　丁白虎　辛白虎〔注文〕戊庚〔/注文〕日　癸天后　乙青龍　丁青龍　辛白虎己日　癸太隂　乙天空　丁天空　辛天空辛日　癸天乙　乙勾陳　丁勾陳　辛太常壬日　癸螣蛇　乙六合　丁六合　辛元武癸日　癸元武　乙螣蛇　丁天后　辛天后\n處暑後日躔在巳宫用甲丙庚壬時\n甲日　甲朱雀　丙朱雀庚太隂　壬太常\n乙日　甲六合　丙六合　庚元武　壬白虎丙日　甲勾陳　丙勾陳　庚太常　壬天空丁日　甲天空　丙天空　庚天空　壬太常〔注文〕戊庚〔/注文〕日　甲勾陳　丙勾陳　庚太常　壬太隂己日　甲白虎　丙青龍　庚青龍　壬元武辛日　甲六合　丙六合　庚元武　壬天后壬日　甲朱雀　丙朱雀　庚太隂　壬天乙癸日　甲天乙　丙天乙　庚天乙　壬太隂\n秋分後日躔在辰宫用艮巽坤乾時\n甲日　艮六合　巽六合　坤元武　乾元武乙日　艮太常　巽勾陳　坤太常　乾太常丙日　艮白虎　巽青龍　坤白虎　乾白虎丁日　艮青龍　巽青龍　坤青龍　乾白虎〔注文〕戊庚〔/注文〕日　艮六合　巽六合　坤元武　乾元武己日　艮勾陳　巽勾陳　坤勾陳　乾太常辛日　艮太隂　巽朱雀　坤太隂　乾太隂壬日　艮天后　巽螣蛇　坤天后　乾天后癸日　艮螣蛇　巽螣蛇　坤螣蛇　乾天后\n霜降後日躔在夘宫用癸乙丁辛時\n甲日　癸朱雀　乙勾陳　丁太常　辛太隂乙日　癸元武　乙青龍　丁白虎　辛元武丙日　癸太常　乙天空　丁天空　辛太常丁日　癸天空　乙勾陳　丁勾陳　辛天空〔注文〕戊庚〔/注文〕日　癸勾陳　乙朱雀　丁太隂　辛太常己日　癸青龍　乙六合　丁六合　辛白虎辛日　癸元武　乙螣蛇　丁天后　辛元武壬日　癸太隂　乙天乙　丁天乙　辛太隂癸日　癸天乙　乙朱雀　丁朱雀　辛天乙\n小雪後日躔在寅宫用甲丙庚壬時\n甲日　甲螣蛇　丙白虎　庚白虎　壬螣蛇乙日　甲朱雀　丙天空　庚天空　壬太隂丙日　甲六合　丙青龍　庚青龍　壬元武丁日　甲白虎　丙六合　庚元武　壬白虎〔注文〕戊庚〔/注文〕日　甲青龍　丙天后　庚天后　壬青龍己日　甲天空　丙朱雀　庚太隂　壬天空辛日　甲勾陳　丙天乙　庚天乙　壬太常壬日　甲六合　丙螣蛇　庚螣蛇　壬元武癸日　甲天后　丙六合　庚元武　壬天后\n冬至後日躔在丑宫用艮巽坤乾時\n甲日　艮天乙　巽天空　坤天空　乾天乙乙日　艮螣蛇　巽青龍　坤青龍　乾天后丙日　艮朱雀　巽勾陳　坤勾陳　乾太隂丁日　艮太常　巽朱雀　坤太隂　乾太常〔注文〕戊庚〔/注文〕日　艮天空　巽天乙　坤天乙　乾天空己日　艮白虎　巽螣蛇　坤天后　乾白虎辛日　艮青龍　巽螣蛇　坤螣蛇　乾白虎壬日　艮勾陳　巽朱雀　坤朱雀　乾太常癸日　艮太隂　巽勾陳　坤太隂　乾太隂\n大寒後日躔在子宫用癸乙丁辛時\n甲日　癸天后　乙青龍　丁青龍　辛天后乙日　癸天乙　乙勾陳　丁勾陳　辛天乙丙日　癸螣蛇　乙六合　不六合　辛天后丁日　癸元武　乙螣蛇　丁天后　辛元武〔注文〕戊庚〔/注文〕日　癸白虎　乙螣蛇　丁螣蛇　辛太常己日　癸太常　乙天乙　丁天乙　辛白虎辛日　癸天空　乙朱雀　丁朱雀　辛天空壬日　癸青龍　乙六合　丁六合　辛白虎癸日　癸元武　乙青龍　丁白虎　辛元武",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c032:p0281",
+      "sha256": "c4788e3b7d639700c1b561c4435ec681bde7b3156af07f6c6481f193e23624cb"
+    }
+  ]
+}

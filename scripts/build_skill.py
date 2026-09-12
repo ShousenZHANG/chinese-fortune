@@ -95,7 +95,7 @@ def _source_manifest() -> dict:
 
 
 def collect() -> list[Path]:
-    """Validate full sources, then select all five books' runtime chapters."""
+    """Validate full sources, then select every declared book's runtime chapters."""
     manifest = _source_manifest()
     picked = []
     for name in INCLUDE_FILES:

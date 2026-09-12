@@ -1,0 +1,676 @@
+{
+  "book_id": "liuren",
+  "chapter_id": "c004",
+  "title": "卷04",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B704&oldid=763671",
+  "revision": "763671",
+  "source_timestamp": "2016-10-24T18:38:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/liuren/c004.wiki",
+  "raw_sha256": "73fe5722a576b1947686ea3f87590e6c718965538e0f84290aee52596f409e88",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷04",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "六壬大全卷四",
+      "text": "括囊賦\n一氣初判二儀肇彰設四時以成象布六壬以配方吉凶本末之端生於好惡禍福推移之始造用柔剛〔注文〕此明\n加臨生克之端相生之道剛柔之意吉凶〔/注文〕\n原夫黄帝遭孽於蚩尤𤣥女降靈於風后以月將加於正時用五行論其克賊",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0002",
+      "sha256": "7cac22eb2f00b9394648e4546debc133aa84783bba0fb639daf6863c12b7a051"
+    },
+    {
+      "section": "加臨地局内外别於陰陽",
+      "text": "〔注文〕地局法用起干為陽為内起支為陰為外也〔/注文〕運轉天盤逆順分為南北〔注文〕亥至辰順巳至戌逆〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0003",
+      "sha256": "72655ac09b65b7fa721ff961f6aca253f2d84a38c702b50b9d5492f006c67ba8"
+    },
+    {
+      "section": "所用稽疑來方為准",
+      "text": "〔注文〕㸔來方上神合於日辰也〔/注文〕\n先立課體得何象次觀神將之是推\n貴人小吉傳中皆云其吉太乙螣蛇始末咸謂乎危如是則推索幽微之㫖惟詳探深淺之辭\n害挾太常動止則尊親有訝徳乘朱雀謀謨而官吏無虧\n〔注文〕朱雀乘德神為用與貴人合投書必來聽望信必來至也〔/注文〕\n復有勾陳𢃄劍白虎持喪〔注文〕勾陳乘金神克日干大凶白虎乘喪門殺克日亦凶〔/注文〕青龍被克兮財寡六合負喜兮婚良〔注文〕青龍乘金神内戰又值空亡無財六\n合乘天喜與日相生占婚吉矣〔/注文〕\n武作浴盆抱病魂歸逝水空持傳送望信僕造囘廊太陰巳午兮被辱天后辰戌兮孕妨\n月厭六丁往往家招怪異逰神本命頻頻夢主驚惶首視火鬼次審金殺宅中防火事主破碎\n直符飛亷天目火光天怪天鬼逰魂月宿號為八妖宅必見孽貴人刑處辰加孟而成妖華盖到宫知是嵗而起復〔注文〕月將加時㝷子落寅申卯酉是四足為怪加己午厨竈為怪加辰戌是産鬼加未井怪加丑主傷牛",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0004",
+      "sha256": "737911c8ca427709a24fcd7430b64edae25ff01e0d610c2b6d09ca586a06a63b"
+    },
+    {
+      "section": "馬加子鼠怪加亥宅神",
+      "text": "〔/注文〕\n時有休囚死衰兄弟妻兒旺相比則人是休囚氣則物為\n干稟長上支云賤卑支克干而尊禍干制支而㓜疲上下相生居處而内和外睦將神遇合訪尋而主喜客怡\n莫不課象淵源在乎天乙傳歸前理皆眀顯遞於後情多塞窒〔注文〕用在大乙後傳歸天乙前先昧而後顯用在天乙前傳歸天乙後主先明而後暗又㸔逆順也〔/注文〕貴臨魁罡論公而易換有司復詣從衝謁貴而動摇他室\n式體既定來情多猜任信多知動静返吟况是往來元首尊神所作仰為領袖空亡陰鬼加謀轉托梯媒龍戰不離於門户𤣥胎欲卜於嬰孩\n不備無淫必有陰私而起譖㧞茅連茹何妨類聚以求財",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0005",
+      "sha256": "0412dbf8f817878c0dc3bc4f1b639ea9a3e4681640785f682407647e2042edc5"
+    },
+    {
+      "section": "天獄囚禁三交暗災",
+      "text": "昴星歸去而防險〔注文〕剛日出災柔日歸忌〔/注文〕逰子商賈而未囘\n斬闗逃竄擬速疾乘軒寵招非徘徊\n三奇六儀交重連綿喜矣四殺五墓相衝不乆哀哉爰及見機察微贅壻亂首見機取舎宜變通察微暴進逢殃咎日臨辰位招兩姓以同居支就干宫寄一身而匹偶\n必見灾生九醜禍起二煩得絶嗣兮妨父母見無禄兮少子孫奄奄枕席難痊奈逢魄化恍惚精神不定必值飛魂\n其有曲直炎上潤下從革遇吉將而朋從見凶殺而支折\n或主公訟或遭難厄内出外而已求陽入陰而彼索用神得墓長生未以無憂吉將入傳帝旺終而有獲及乎彈射日克蒿矢辰凌望行人至有矣想求事成罕曽〔注文〕望行人至求事不成〔/注文〕\n貴人順治徳扶忠臣孝子天乙逆行殺動便佞交朋况夫課例極繁究推奚盡茍貴殺而可慿乃神將之在𦂳\n時逢土旺乘天后而失衣氣涉水休𢃄土神而傷腎𤣥武乘午兮職轉白虎申酉兮訟争罡作太陰奴婢乃非淳樸申為朱雀陰書必起途程\n螣蛇己午而怪夢六合寅卯而親情水遇雀蛇多横死於非命木逢勾虎必棟折於三刑\n陰作大吉兮僧願戍為白虎兮犬驚勾陳卯寅兮論訟寡宿子午兮孤惸\n龍帶勝光壬癸日妻懷姙孕常携小吉申酉辰首飾簮纓\n丑到戌兮足疾寅加巳兮竈更土克水兮潺潺金伐木兮丁丁相生相剋之元視於衰旺有吉有凶之本分爾輕重\n善惡有期進退相慶占宅兮忌克人問疾兮怕入墓論公訟兮惡獄留還官爵兮湏印綬\n闗遐門遠占行客而未來陽少陰多産男兒應不悞奪標望薦卷䇿須合乎主文越省登科傳末須逢於帝坐\n噫術之至幽也莫深乎課道之至遠也只在乎心心既逹於𤣥妙課亦通乎古今\n無常德兮不為卜有正已者乃可為占欲求夫感應志其在乎精嚴",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0006",
+      "sha256": "a327d2961f5a6ecfb51c1902803839bfb9dd547afc433a2991f56e75b9412817"
+    },
+    {
+      "section": "雲霄賦",
+      "text": "論人生五行之禍福詳課體剋戰之興衰",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0007",
+      "sha256": "24fc9b6824ac2b7e3712149854e6388831ebacf7aebb9d66c4f1b2646023aa74"
+    },
+    {
+      "section": "相生則喜剋戰為危",
+      "text": "月將與地分分其高下人元與貴神定其尊卑\n臣犯於君已欲侵人君陵臣下人來害己\n人元剋六陽之神陽男有禍天干戰六陰之將陰母逢凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0008",
+      "sha256": "4a61e27d0dfe6ec3f70783c74a6e1e9cd89a2ca04d2b201e5caca2481941700f"
+    },
+    {
+      "section": "泉沈蛇馬定生眼目之灾",
+      "text": "〔注文〕壬癸為龍泉己午為蛇馬亥子加己午上故有眼目之灾〔/注文〕虎負岡嵎必主羸瘦之症〔注文〕甲乙木剋辰戌土〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0009",
+      "sha256": "e0ec63571a311e4cbc2d8299e451e449c7728dc55bd8c6fa4f581a134ba57d9d"
+    },
+    {
+      "section": "紅馬登途行商外病",
+      "text": "〔注文〕丙午火剋庚申金〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0010",
+      "sha256": "ca0d9d0def890ae4a0287d8deb539c48e3f1ccfaea188e1e02dae1e1f3b72761"
+    },
+    {
+      "section": "赤蛇入户閨婦内灾",
+      "text": "〔注文〕丁巳火克辛酉金主暗昧之灾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0011",
+      "sha256": "3e85b6d4a86952aa8ed0a975fcf6bb3f0202ce60b1137c6ec07c1f260d569783"
+    },
+    {
+      "section": "西女來東户狂病傷蠶",
+      "text": "〔注文〕辛酉金剋乙卯木蠶不收也主風癱之狂病〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0012",
+      "sha256": "3adfb3d0f6ac68883162984eafbdfd9c07e842eff791529b3794098203e5f97f"
+    },
+    {
+      "section": "白道映緑林老翁損賭",
+      "text": "〔注文〕庚辛金剋寅卯木寅為山林申為道路損害老翁者神樹寅木也〔/注文〕東方賊子園中盗粟偷孳〔注文〕卯加丑丑乃金庫又為粟園〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0013",
+      "sha256": "a517a9bd0191e6467017970a194918e7113fc860331ef7ab6bf263c7d6206bba"
+    },
+    {
+      "section": "未地勤兒店内搬食弄酒",
+      "text": "〔注文〕未地井宿乃酒食之神小吉酒店也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0014",
+      "sha256": "4ac4ac23da8ceb399a54c047ac931891e0cd5afcce07f9e4352aa849f81f59d4"
+    },
+    {
+      "section": "産癆病患為土星填北海",
+      "text": "〔注文〕辰戌土剋亥子水也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0015",
+      "sha256": "b103b6214f9f44a8f45d31a7608629ac73b6ddf129fc9bd8dbd350b6bc86a589"
+    },
+    {
+      "section": "土牛逢江猪賊人自敗",
+      "text": "〔注文〕丑屬牛亥屬猪乃丑入亥也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0016",
+      "sha256": "9d3eb317e995a2658cc22ae078b437774b6f68c58a1746cb07b4c9efe871712b"
+    },
+    {
+      "section": "火宿遇波濤陰婦井溺",
+      "text": "〔注文〕丁巳火入亥子水也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0017",
+      "sha256": "09a93cd4ba527b571f75f8918cedfe4c76335a5836b6b1029e58be3a4b07c8d3"
+    },
+    {
+      "section": "南方赤烏怕北海之浮波",
+      "text": "〔注文〕丙午火怕逢壬子水也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0018",
+      "sha256": "05387f8397f7f78e1adbe1929ff071ef87e0cc8108ce5603b13529568b344ca9"
+    },
+    {
+      "section": "東地青龍畏西方之惡吼",
+      "text": "〔注文〕青龍畏白虎也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0019",
+      "sha256": "791dbe36010b974531e027b7eaf0b81e15225f6a95384f13eb5de23f9679b61d"
+    },
+    {
+      "section": "龍虎交加老來傷害",
+      "text": "〔注文〕甲寅木見申金也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0020",
+      "sha256": "ead13596ad24ba7492336c2c09fc61f3a30273b8137ad1a3d57541a79b7cbe38"
+    },
+    {
+      "section": "邱墳倚叠衰後獨孤",
+      "text": "〔注文〕辰戌重加是也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0021",
+      "sha256": "7de4b4b91d3fa7477b181f0c01604761dab7cea98ed915e2c98e899092b3ca72"
+    },
+    {
+      "section": "天冢為僧道犯陰后必主奸淫",
+      "text": "〔注文〕辰戌為天冢寺觀若六合天后太陰臨或值天\n空奸淫之兆又卯酉為門户之神也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0022",
+      "sha256": "34e121cb53a4c05d05c75316b8fb3e8dc903b447cf4802948d64655e582c1be2"
+    },
+    {
+      "section": "金井飲牛羊牧墳岡定然鰥寡",
+      "text": "〔注文〕丑未辰戌相加丑未為牛羊辰戌為墳岡金井\n乃未也犯之主二姓三名男鰥女寡〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0023",
+      "sha256": "0efdddfabe2af22536ee3fa4aca20d5700ae8e61b7edea8354a087fed55fdb0c"
+    },
+    {
+      "section": "青龍入户接脚老翁為夫",
+      "text": "〔注文〕寅入卯主接脚夫也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0024",
+      "sha256": "5aa553b6bda67695cc577c15daf8f0d81cc4ae60305d68d2eb0053d61c673ce2"
+    },
+    {
+      "section": "神樹臨池應得陰人財寳",
+      "text": "〔注文〕寅入亥男得陰人財物也〔/注文〕\n負水澆林木徒養他人揚波溢苑中終傷自己〔注文〕子水至卯為死\n又子卯相刑水浮泛溢故也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0025",
+      "sha256": "aa5df8b82b0606e3094d3e20c6d49ed07a68b018d42181824a088c79aa83ad12"
+    },
+    {
+      "section": "大門木户相見兩和",
+      "text": "〔注文〕指卯亥也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0026",
+      "sha256": "4265b841ec16bf4ee65e3bbc1481075ae957f27668dca7c1064e6f3d9ba92297"
+    },
+    {
+      "section": "醴酒𤣥漿相調兩便",
+      "text": "〔注文〕未為酒亥為水未亥和合富貴昌盛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0027",
+      "sha256": "ee846cfd65bb7fe038ea4a6ad9078258190153855c4f0231a33d1a74e6e00b47"
+    },
+    {
+      "section": "内室專權有僊女跨雲之象",
+      "text": "〔注文〕巳到寅也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0028",
+      "sha256": "fa6645406aa76b690b2e3b5aedd6c06c6ca53a8aea850452700f6e54b1f8a38e"
+    },
+    {
+      "section": "行商得利逢坤門灑酒之徵",
+      "text": "〔注文〕未為酒神加坤方主利禄非常〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0029",
+      "sha256": "e123c23474b144bb53b73736cccad849db779463ae33cc7e5a0c5ff11cc5bee0"
+    },
+    {
+      "section": "木象化天門經營自變",
+      "text": "〔注文〕未土克亥水亥旺得卯三合成木象是化於天門也〔/注文〕白虎嫌黒水禍患相仍〔注文〕申虎到亥水之鄉是金體衰必有禍患〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0030",
+      "sha256": "2fc5d6dfd490850449ea27ccfe711fb61d1f15ad52faed6569d3e07062107874"
+    },
+    {
+      "section": "當途决水享耄頤之遐齡",
+      "text": "〔注文〕申為道路水至申旺金水相生而有眉壽〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0031",
+      "sha256": "8fb9e1c6017e238878a19da71355d396300266c2a6b317c21db3ba9ef777ed6f"
+    },
+    {
+      "section": "生地安墳樂綿瓞之旺續",
+      "text": "〔注文〕辰戌為墳加申取生意也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0032",
+      "sha256": "add3e8fd3eeacaf576de1b3908bd5125e7b78e00a17d6b4dfd0dcacb15eee548"
+    },
+    {
+      "section": "陰人疤面赤蛇走入金門",
+      "text": "〔注文〕巳加酉丁加辛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0033",
+      "sha256": "d08f00945db122e2189f8f9d64eda53f85e584b9bbd4425d22068c4f74afc026"
+    },
+    {
+      "section": "姜女失音白雉飛來巽户",
+      "text": "〔注文〕酉加巳午剋之主有此兆〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0034",
+      "sha256": "8d2aeb4917b6f56e12793c8d58583d2e82541f7ad7a58fa58da73f1f67cb1510"
+    },
+    {
+      "section": "大吉小吉為勾陳爭訟田宅",
+      "text": "河魁從魁化六合逃亡奴婢",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0035",
+      "sha256": "761bc41abfa2131e3a040c5966bd349f1fee2b35d797c6a8870294b8ff25f5fb"
+    },
+    {
+      "section": "寅辰若遇勾陳官刑禁繫",
+      "text": "亥寅如逢白虎疾病驚憂",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0036",
+      "sha256": "10eefb847e2c18093d1244ea88272489a92a722e1bf1c7cc0eca9e5c3bf5990c"
+    },
+    {
+      "section": "子卯與𤣥武同傳當逢賊盗",
+      "text": "己亥逢驛馬並駕在路奔騰",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0037",
+      "sha256": "5a581bfd54923cb9e42cb40a9c15095b5e4c767f9fae922ef30df397f1e94143"
+    },
+    {
+      "section": "丑未之臨朱雀口舌呪咀之非",
+      "text": "未酉之加隔角夫婦休離之患〔注文〕丑寅辰巳戌亥未申入之者也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0038",
+      "sha256": "9a3b7c5330c443b88ece43910146d5841d847769bccc35740e162f07a2ea99c8"
+    },
+    {
+      "section": "魁罡臨處多生詞訟",
+      "text": "甲午併交常有狐疑\n原夫天乙所占官宦遇剋必定官嗔",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0039",
+      "sha256": "4c9189c37928727a88d57bf5c7e769b7f695af8076dd3e05ef4394cf4b89f424"
+    },
+    {
+      "section": "螣蛇為卜驚憂逢刑决然火怪",
+      "text": "朱雀文書口舌",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0040",
+      "sha256": "b27a8b872c4dd681a3b7fe5d016d2d6ca6ab6114a1067173e8c6498d054cd145"
+    },
+    {
+      "section": "六合喜慶婚姻",
+      "text": "勾陳主鬬訟勾連",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0041",
+      "sha256": "ffe1db9d6793233c2fade1b39cc6c2531fc8c6cd1bc602fbae8f78a718c5d615"
+    },
+    {
+      "section": "青龍應婚姻財寳",
+      "text": "天后奸心暗昧",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0042",
+      "sha256": "5b9c19a557086d229dae34b74222711c845bfb2639bc6f3c48a8141473a9c254"
+    },
+    {
+      "section": "太陰隠晦陰私",
+      "text": "𤣥武防盗賊之侵凌",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0043",
+      "sha256": "ae50e0f280d789f03f2b50f0d4962b456b958113b52b4ef8acf0738d7cec85a3"
+    },
+    {
+      "section": "太常有酒食之筵㑹",
+      "text": "三才賦\n金口𤣥妙入式幽微能决有疑之事先知未見之情指方定位神將成課體之機驗煞推元吉凶妙鬼神之用干神將位當立貴賤尊卑四象三才須分高低上下干剋神而剥官人謀害已神剋干而進職已欲侵人將剋神不求才當言身病神剋將非捕盗必主妻傷位剋干而神剋位病疾官灾位生神而將生干求財喜慶將剋干方損妻妾而牛失馬倒",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0044",
+      "sha256": "9483ccf6f28a69c54b96a94d78fe21d480f00558d1a1e67f40a7f3efebe4fceb"
+    },
+    {
+      "section": "干剋神位防盗賊而財散人離",
+      "text": "位生干兮印綬遷而子孫弱",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0045",
+      "sha256": "50f5d176f52abfa55055842e2ba026b7abfe875fd65734b0e397bf21bc46ab14"
+    },
+    {
+      "section": "干生位兮嗣續旺而名位卑",
+      "text": "本音全見妻兒難保長年",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0046",
+      "sha256": "0ade4a5388e4cd5f9732dadf9cbf17258e016bfc2235e0fc245c245c72245308"
+    },
+    {
+      "section": "妻旺官衰父母恐防不夀",
+      "text": "金純而道途分異",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0047",
+      "sha256": "17e26e87de4428830967f7ede1ac618b4c314e9e35690ace8aa876918fb89b45"
+    },
+    {
+      "section": "木全而官事纒身",
+      "text": "水多敗散主痔病兒童",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0048",
+      "sha256": "ac11cbba8128ba598fb9115f0696e8b5c4c10832ba850b75ed09e8577f7dd10a"
+    },
+    {
+      "section": "火盛驚憂應傷殘婦女",
+      "text": "純土乃醜婦當權孤立則尊人不利",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0049",
+      "sha256": "9eadaad750e11261b4313b145ca2ebfebae8f3de0398f224afd329273f283f27"
+    },
+    {
+      "section": "土入木鄉争訟田宅之兆",
+      "text": "火加水上生育産難之驚",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0050",
+      "sha256": "e599f66b895e29fa03e516333066ef3c20b2155a9665da110a0ca13233700274"
+    },
+    {
+      "section": "水入土鄉瘡灾牢獄",
+      "text": "火臨金地勞患纒縈",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0051",
+      "sha256": "0138441f86d803ad865b07c23697de7b271a7bd6fdb1a689afc64fc0113eaa64"
+    },
+    {
+      "section": "金加火上主銷鎔",
+      "text": "木到水中為飄蕩",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0052",
+      "sha256": "1c155ce2baa0a303411ed4a479f1485967aa949c0ab1fb8493ecd23bd1fcabae"
+    },
+    {
+      "section": "水臨火地寒熟往來",
+      "text": "木入金宫口舌争辨",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0053",
+      "sha256": "430a99a514444a8c164d72035c6211f8564d3640dfd4f917921f14573dfae748"
+    },
+    {
+      "section": "水加土上争競田疇",
+      "text": "土入水中多生腎病",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0054",
+      "sha256": "d3166a6d8b6b881cb83397feae71d6b6f22630a99a3ffb467abbbf6aad95fd52"
+    },
+    {
+      "section": "欲盡吉凶再推神將",
+      "text": "大抵功曹主文書木器",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0055",
+      "sha256": "8fd079be9c3da9168605183576cbb80440aa9e67b96c805f702e12a1dcaae70b"
+    },
+    {
+      "section": "傳送為信息行程",
+      "text": "太衝盗賊及車船",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0056",
+      "sha256": "dc5951bb58054e8cda3fbccba28d936277945be15a13a78317d90191f1fa6196"
+    },
+    {
+      "section": "從魁金銀與奴婢",
+      "text": "辰為鬬訟兼主犯喪",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0057",
+      "sha256": "07b3277368850abed3ac9f2fae140d36dd0c5bdc54401cfd43fff77c35f56045"
+    },
+    {
+      "section": "戍乃奸欺或稱印綬",
+      "text": "登明徴召太乙非災",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0058",
+      "sha256": "fbd78f97ef8950e448e746c2d95777863d89150d23487fc649ad34d7e24ebf2d"
+    },
+    {
+      "section": "勝光鬼怪連綿",
+      "text": "神后奸淫牽惹",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0059",
+      "sha256": "7d5f6e08812ab71d239b70d5a8d18e5f8fb49203968ed49b9db8129a63d376ac"
+    },
+    {
+      "section": "未為衣服筵席",
+      "text": "丑為田園苑圃",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0060",
+      "sha256": "03cd1fe7ac6b706dd72e36a114fe9ddb6d25c53704e5a8a67a837de94b09768a"
+    },
+    {
+      "section": "玉女逰斗宿之宫陰權太富",
+      "text": "〔注文〕酉與丑三合丑又為食庫〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0061",
+      "sha256": "393a28178b06d4d08d110e917243c0171f7e53d11c3b42809295b04500abafda"
+    },
+    {
+      "section": "牽牛至金門之路血畜尫羸",
+      "text": "〔注文〕丑至酉而無氣〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0062",
+      "sha256": "e3e5c023f44f3f20bf7aa77dd364c6d9d69e5dd715472f0397bc4ed15bc622e6"
+    },
+    {
+      "section": "仙女逰園樂生産充盈之兆",
+      "text": "〔注文〕已火雙女宫至丑乃因火生土而財帛充盈〔/注文〕土牛奔火恐虧負暗昧無言〔注文〕丑土入巳丑為巳火之爐未為木墓必傷身也〔/注文〕土多乏嗣續〔注文〕土孤獨也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0063",
+      "sha256": "52b2319523500d1727d024546b4eb4004902fa8154ef27710161654a7cb87eae"
+    },
+    {
+      "section": "水盛好荒淫",
+      "text": "〔注文〕水泛溢也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0064",
+      "sha256": "c6aac08a5134778563271be0a71956652e390c603c7efc49b5947149c2b3b342"
+    },
+    {
+      "section": "木衆枝繁金多體折",
+      "text": "火氣炎炎人多性燥",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0065",
+      "sha256": "2a2de871e4b69bae66a50facf9f9ac4b48da7e1b006707198ad8bef5e7ef7a8f"
+    },
+    {
+      "section": "水形汨汨性主必柔",
+      "text": "五行大忌結胎逢刑四位切防無權交戰",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0066",
+      "sha256": "acecf48f7c8b42a75faf699750867d23663dd61ef60cd3d42d675bebef28c04b"
+    },
+    {
+      "section": "金臨丑地木人遇肢體不全",
+      "text": "〔注文〕金旺若木人遇之主傷筋損骨肢體不全〔/注文〕水至申宫木命值飄蓬無定〔注文〕水旺若木人遇之男主為盗女主娼淫〔/注文〕火熾傷金邉塞奔馳之子",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0067",
+      "sha256": "ad2002215e1d00ccb95c96743e2a51eeef491c5ec495a32fea26aa8c7051ca4a"
+    },
+    {
+      "section": "卯榮破丑田園耗散之人",
+      "text": "獨木遇三金劍刃須防有鬼禍",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0068",
+      "sha256": "c6483782fd491d70f163ab96f11483896c521fbaff2b34672c3bd5149f688bbe"
+    },
+    {
+      "section": "一金遇二火鑠銷切備值天灾",
+      "text": "孤土入敗絶之鄉見木多傳尸乆患\n弱水臨休囚之地逢坤常嘔血之憂",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0069",
+      "sha256": "9d5248141f7dcadf350d73d85f202a6686565541ac7f4090c374ea93c1854167"
+    },
+    {
+      "section": "五行最要相生四位偏嫌殺戰",
+      "text": "果爾留心留意自然無惑無差",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0070",
+      "sha256": "49978479cdd3472f23636e94f9d381b68482e649504e094d46c5ae494328e3ea"
+    },
+    {
+      "section": "白虎主死喪之道路",
+      "text": "天空主欺詐之逃亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0071",
+      "sha256": "5b760f839a5f3b0d72d46f7ac9f02f8228a8f1f644cf0fdef43060d933b45e23"
+    },
+    {
+      "section": "將神更忌刑冲干位仍防帶煞",
+      "text": "將帶神兮神𢃄將於中𤣥妙",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0072",
+      "sha256": "c83935c04e2f1e025cfd7cdd132ac9500db92a0290384425dd78b5b5bb4f7e60"
+    },
+    {
+      "section": "干被刑兮位被煞就裏幽微",
+      "text": "天上神將有加臨幽顯之微",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0073",
+      "sha256": "c46041736052b5cb90ac2a7557c09ec86f9b7b2734b03be8a9fb1486bd09c4f5"
+    },
+    {
+      "section": "地下支元有隠伏不明之意",
+      "text": "是故太嵗受剋尊人有不測之災",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0074",
+      "sha256": "a8bb15d902f60b621270a2091ccd34156e3e6f38020223a478eb7fa9e064eeab"
+    },
+    {
+      "section": "月建遭刑兄長有沈溺之禍",
+      "text": "凶神同居白虎哭泣臨門",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0075",
+      "sha256": "e96ac51e393614befcb3bbee26d09616fe55bc24cbc958e0604f06d01604a521"
+    },
+    {
+      "section": "喪弔相併鬼鄉哀戚動地",
+      "text": "月建號曰青龍遇吉將資財進益\n月破名為白虎逢凶神疾病崩催",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0076",
+      "sha256": "348a021a4ca7af314df31d0a8a03853a4eee27c234b9e302b45ede02b614cddf"
+    },
+    {
+      "section": "枉横死於滅禍",
+      "text": "〔注文〕陽月前三辰為大禍後三辰為滅門陰月前二辰為滅門後三辰為大禍即平",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0077",
+      "sha256": "133daf678b9e873284bd1f61da2d6c49283be8e46382d25130c7b470ddafc98f"
+    },
+    {
+      "section": "收也",
+      "text": "〔/注文〕\n淫亂發於奸私",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0078",
+      "sha256": "0d9965817dd7d287a16e87c7b44c3056d33a6b97206e4601f06ce0a3da947339"
+    },
+    {
+      "section": "破耗失畜亡財",
+      "text": "〔注文〕嵗前五辰為小耗六辰為大耗即執破也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0079",
+      "sha256": "df81bc726340d316421541d16d8ab5fbd644edb8f49304b57e680a2fbaac676c"
+    },
+    {
+      "section": "青龍添人進口",
+      "text": "邱墓喪車併煞病者必臨孝幃〔注文〕邱者春丑夏辰秋未冬戌墓者春未夏戌秋丑\n冬辰喪車者春酉夏子秋卯冬午是也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0080",
+      "sha256": "17ac1a084f310841fba13b2621482b16d7e131270ec292e4ce55124715ec4547"
+    },
+    {
+      "section": "德合解神詔赦囚人定主脱災",
+      "text": "天醫宜占疾病喪門不免驚憂",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0081",
+      "sha256": "158f82d84f67cb8307314fdd11f354dd3b017f04f12d6f568d9247ce04b64e4c"
+    },
+    {
+      "section": "逰魂哭煞非災有准",
+      "text": "亡神月厭禍患難逃",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0082",
+      "sha256": "e96aec81117dd5fd61f0d8f3221ef97feeac2dd7eab0623089eb2b1a494a32ca"
+    },
+    {
+      "section": "星月為刑為煞",
+      "text": "太嵗為禍為奇",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0083",
+      "sha256": "567c5d25adba2893d62c86cb8c0fdcf3308c274c74b6de0733eb93b4865a0f13"
+    },
+    {
+      "section": "天馬驛馬入垣所占迅速",
+      "text": "孤虚死氣同傳謀舉逗遛",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0084",
+      "sha256": "1b41cd54550f41e1a4889aa05f5abac7488fad40c0aee6bcb2ec98bb3aa2e6f9"
+    },
+    {
+      "section": "徳合生神臨用占事有成",
+      "text": "煞併天空四課有像無依",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0085",
+      "sha256": "baadcc2864a172b940374e29d883ae320d14ac07777039ae86ec5ef1004dea4d"
+    },
+    {
+      "section": "五行衰敗之鄉加臨人情斷絶",
+      "text": "四位生榮之處相逢事體光輝",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0086",
+      "sha256": "6e748dc35c753a82faa5866bd8e5cf282cfe8869f82550eaf355c60923271d84"
+    },
+    {
+      "section": "將神沐浴之處所占事為露機",
+      "text": "功曹加畢昴之位河魁屬氐房之方\n重闗用鎖於西方見金則斬闗不閉〔注文〕寅卯加酉為闗上乘金將為斬闗〔/注文〕設隔致防於東位見木則毁隔無防〔注文〕辰戌加卯為隔上乘木將為毁隔〔/注文〕酉加卯上為鎖稱上再見火破鎖名〔注文〕申酉加卯為鎖上乘火將為破鎖〔/注文〕𤣥武與壬子窺户當憂盗賊〔注文〕卯酉上為窺户〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0087",
+      "sha256": "973c585ee5e7d9adc7affa59a2fc80cbe4b38bb931516375678411c3d62cfef1"
+    },
+    {
+      "section": "白虎同傳送臨門須防疾病",
+      "text": "〔注文〕子午卯酉上見〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0088",
+      "sha256": "f160692acfa02a85a71da1ee57c20cadcdc015429d7f4b03171557859e35263e"
+    },
+    {
+      "section": "煞神既定象類更詳",
+      "text": "合局則事從衆起分局則分劈支持",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0089",
+      "sha256": "a1b5e76e168c3dd3e446b715323d1d3ea3c6d85e4ab2592791d81af3cdc52471"
+    },
+    {
+      "section": "重疊則事多重疊",
+      "text": "〔注文〕二三神將同〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0090",
+      "sha256": "f1db2341836a1663edd3639dfa0d9ab097da7f9d944ac0f7ee28e5850ac8b2c1"
+    },
+    {
+      "section": "交互則宛轉無依",
+      "text": "〔注文〕上下交剋〔/注文〕\n若占脱走逃亡别課體興衰可見\n如占求財見貨視將位有氣方知",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c004:p0091",
+      "sha256": "ccede4cf29452ef2a2ec3067da5d19a75f87a06f7874709039eaa961f59266c2"
+    },
+    {
+      "section": "進表投書詳君臣察其善惡",
+      "text": "戰鬬博戲認主客定其輸贏",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0092",
+      "sha256": "0a025be0b5e7dac6295fcf021a24e38bc421532cc28520772487af30fc7a470f"
+    },
+    {
+      "section": "賊盗若值孤虛追之莫捕",
+      "text": "死氣加諸墓絶病者不愈\n詳天禽地獸之形察人間隠伏之狀",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0093",
+      "sha256": "a8f1d3d130a8d3e2892b5cf133bd469524f4ea2f2f6a5f6a6e2369f893312a79"
+    },
+    {
+      "section": "明此禍福之原細究五行之理",
+      "text": "六壬大全卷四",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c004:p0094",
+      "sha256": "87e80d3da7c2f53f50ab63389c08bb853206faa95f2642ee9fc3ddd9e8238898"
+    }
+  ]
+}

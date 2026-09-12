@@ -1,0 +1,74 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c016",
+  "title": "卷十六",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c016.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十六",
+      "text": "占求财\n凡占求财，其说不一。分体用以生门主之，以生门所落之宫向为体，以生门天盘所乘之星为用。用生体则吉，体生用则不吉。用旺体衰，体难克用，不为大吉。体旺用衰，用难克体，亦无大害。大抵专看生门所落之宫，分再看上下二盘格局吉凶何如，吉格吉星，所求如意，有一不吉，所求仅半。休囚不吉，所求全无。\n假如惊蜇中元阳七局丁壬日壬寅时，生门到坤二宫，属土为体；天蓬星亦到坤二，属水为用。体来克用，宜乎得财。但卧在惊蜇，坤二宫为囚，且坤宫中六辛加壬为蛇入刑狱格，安得为吉乎？虽休克所得亦微。得财之说是我所本有之财，或应有之财，但未知何日到手。占法须分内外，以时干在地盘者为主，以甲子戊为财星，盖甲为青龙，青龙为财星焉。时干在内地，甲子戊亦在内地，此为财将到手之期甚速，又以本宫所得何支定其日月之期。若时干、青龙俱在外，半年得。返吟、伏吟主反覆不得。如甲子戊、时干俱合吉门，得财甚速。又如立秋上元阴遁二局甲己日壬申时，时干在地盘七宫，为内。甲子戊青龙、生门亦在七宫，又七宫为兑，干支为酉子月，为八，主八月到手也，甚验甚速。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0001",
+      "sha256": "f96ac282200faa1c7fac8efd08c1755d133973dc756e1a826daecfc85cdefbac"
+    },
+    {
+      "section": "卷十六",
+      "text": "占求财谋望\n此时遇奇仪门生宫合吉格，或干相合、比和者，求谋得意，一切无阻。如门克宫，下克上，合凶格，凡求不遇，或因求谋破财。如主星在衰墓宫，又逢上干克下干，或门克宫，因求谋招非。\n又占谋望须看三奇、吉门、吉星加于本人年干之上，不犯奇墓门迫及五不遇，可成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0002",
+      "sha256": "0e77bf52e6e396513454648f88c22fbe0d952577d6b3e19049928b57ab2e96c3"
+    },
+    {
+      "section": "卷十六",
+      "text": "占放债\n以天乙为取财之人，以值符为财主，以生门为财神，各以生克旺相论。如值符宫克天乙宫为吉，天乙宫克值符宫为凶。天乙宫生值符宫为吉，反是为凶。如生门宫与天乙宫同克值符宫，其财尽失；同生值符宫，子母俱全。或生门与天乙有一生一克，本利不全而迟。如天乙、生门得休囚气，虽生值符，终不能全得，且必迟滞。天乙者，乃天盘上一宫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0003",
+      "sha256": "78a6262059d9612b76173510dc685cc8df45e14a4a18d7999e8cfc3f8adad8bd"
+    },
+    {
+      "section": "卷十六",
+      "text": "占索债\n以伤门为索债人，如伤门宫克天乙宫，去人必实心去索；天乙宫克伤门宫，彼必争闹不服；伤门与天乙同来生值符宫，子母全获；全克值符宫，不还。伤门、值符宫克天乙，必还；生天乙，克值符，不还。天乙旺相克伤门，虽有钱不还；天乙休囚生伤门，有心无力，不全或迟，终必还。若天乙乘庚辛来克值符，必有经官之事，或值符克天乙乘六丁。或景门加三四宫，亦有经官之事。如甲子戊符会开门加内地时干，其还速至。经官获利与否，乃以伤门、天乙、值符之生克断之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0004",
+      "sha256": "421ae581489d73cb55ed91edb13d5779ef7531012ca3a3872edfb7d285a7d5f3"
+    },
+    {
+      "section": "卷十六",
+      "text": "占借贷财物\n以值符为物主，以天乙为往借之人，各以所落宫分生克论之。值符生天乙，天乙克值符，借贷必遂。如值符克天乙，天乙生值符，借贷不遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0005",
+      "sha256": "0dbdf6da24a40b3e2d41f0f352376b0000debe1e0753d6d70c4a49bf370d074f"
+    },
+    {
+      "section": "卷十六",
+      "text": "占赊取给否\n亦以值符为物主，天乙为取物之人，各看所落之宫。相生则得，相克则不得，相比亦不得。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0006",
+      "sha256": "eaee63fa5a46f4dee898da1aa0d56edd295fabbf5ecb7dc756dfed84a2b7e05b"
+    },
+    {
+      "section": "卷十六",
+      "text": "占嘱托求人\n以天乙宫为求托之人，值符为所求之人，值使为受托之人。如值符生值使，其言必信；值符克值使，不信其言。值使克值符，彼必不悦；值符克值使而生天乙，虽践其言，不甚快利；值使生值符而克天乙，彼不肯尽力。必值使、值符俱生天乙，或俱克天乙，所生其事方有济，有一不生亦不济，各以所落宫分定之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0007",
+      "sha256": "90ccb1eea88ae79cb4b3dbc62051063565a57e6a93ec14b569929f11156d413d"
+    },
+    {
+      "section": "卷十六",
+      "text": "占事成否\n凡人来求我，以他为客，我为主；如我去求他，以我为客，他为主。宜主客相生、比和，求而自成；星、仪、门迫，求而难成，费力。若主客相伤，合凶格，因求事而生非，或反耗财物。只宜他生我为顺，易图；我生他为逆，难图。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c016:p0008",
+      "sha256": "4f7e22f3d1cc5f76d14f6ef93b888fdc81d980ea5804dd8e33a248887409287c"
+    }
+  ]
+}

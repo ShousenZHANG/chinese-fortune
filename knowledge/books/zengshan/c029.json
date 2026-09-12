@@ -1,0 +1,32 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c029",
+  "title": "各門類題頭總注章第又二十六",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%882&oldid=2100463",
+  "revision": "2100463",
+  "source_timestamp": "2022-01-20T19:34:03Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c029.wiki",
+  "raw_sha256": "8727ffa4aa1a773bb20d866bdc462895db0bf21ad43269f3e32f2550b42246bf",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "各門類題頭總注章第又二十六",
+      "text": "後值分門各類當用字眼，恐其煩絮，不便全寫，只用題頭卽如後有用神宜旺，不可指定旺於四時，但得用神臨日月、或遇日月動爻變爻生扶、或用爻遇長生逢帝旺，皆謂之旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c029:p0001",
+      "sha256": "0d333a005a60cdef9b1a8801220d13660eb03edc8b1657e6d5cff8aab53c2a70"
+    },
+    {
+      "section": "各門類題頭總注章第又二十六",
+      "text": "* 用神化吉：凡用神元神動化回頭生、化長生、化帝旺、化扶助、化日月皆爲化吉。\n* 用神化凶：凡用神元神動化回頭克、化絕、化墓、化空、化鬼、化退神皆爲化凶。\n* 歲君：卽當年太歲。歲五卽卦中第五爻爲太歲。\n* 五位：卦中第五位爲君位。易經曰：九五之尊。\n* 身：卽世爻。古以身爲卦身、身世，予試之不驗，後遇身者，卽以之爲世，非卦身，世身。\n* 三墓：卽用爻入日墓、入動墓、動而化墓，非古法之世墓、身墓、命墓。\n* 主象：卽定事吉凶之爻。古法以卦中世爻爲主象，又名主事爻。卽如占父母兄弟則卦中父母爻兄弟爻爲主事爻，餘仿此。\n* 变、化：老陰而成少陽謂之變，老陽而成少陰謂之化。古以變如物消亡而後長出，退而又進。化如物之生成而後敗，進而又退。予試之不驗。化進神、化生旺，𨿽化亦爲吉。變鬼、變克，𨿽變亦爲凶。各章所言變卽是化，化卽是變。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c029:p0002",
+      "sha256": "d5eef8d3572dea01b493f3c3931c66d5a95af8cd1db7b042751027e71d4e45d5"
+    }
+  ]
+}

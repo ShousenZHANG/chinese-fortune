@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c015",
+  "title": "卷十五",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c015.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十五",
+      "text": "占行人\n以行人年命，看合当时局中干支为行人，以支宫为宅舍，以左右宫为来之迟速。如占东方之人，得西方即来，得北方不来，得南方在路。其归期以地方远近、旺相决之。如行人是甲子生，往南方，若遇以坎，即归；遇坤、兑、乾三方，将至；遇艮、震、巽三方，又向他方去了。遇克我之卦，必半路有阻，再看吉凶神煞、克我之宫以定安危。余类推。\n又天蓬、天芮二星俱主行人，千里外者看天蓬，千里内者看天芮。得蓬芮者为来。又以时干为来期，伏吟不来，返吟为来。三奇合吉门于行人本命年干之上，即到。凶星凶门，其人必有妨碍。又年格年来，月格月来，日格日来，时格时来。一云各以落宫干支定其来期，又格则不来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c015:p0001",
+      "sha256": "410baffdfc738ad1b85e6d60bc740a2cc0df9cde8e92bcc6dd4bcdb9ee2c96a3"
+    },
+    {
+      "section": "卷十五",
+      "text": "又法占行人\n此时伏吟，行人身未动；返吟而且来速。若上干克下干，或门生宫克宫或庚加日干，行人即至。若上被克，或宫克门，行人不来。若日干加庚，行人不来。如上干在墓、衰宫，或门宫相克，行人来迟缓。若上干遇壬癸，临旺禄宫，又逢日时相生合吉之格，主有酒席相阻，或隔住无舟，或船水虚惊，或口舌、喜悦相阻。或上干在死绝之宫，或被克制及日时相犯，永为不来。切忌干支相冲在行人之行年干上者，或则死亡，或则囚禁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c015:p0002",
+      "sha256": "0adc00d444dc5445bd3a99824386ec8c2ad036631f4bb1d482fad029ffa7de9d"
+    },
+    {
+      "section": "卷十五",
+      "text": "占远信\n以六丁落宫为信，以时干落宫分内外来信之迟速。临内信速，外迟。六丁受制、休囚，轻则信迟，重则无信。夭矫信速，投江无信。六丁带三奇合得有喜信，带击刑有凶信。庚格无信，投江在内亦无信。又景门临于木人所居之地信来甚速。如人在北方，占南方之信，一宫得景门，信即到。如人在南方，占北方之信，九宫得景门，信即到。余仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c015:p0003",
+      "sha256": "30398d08505685a0c5206e68053bd32e53e7b5f85c5dbbc36f29c9a31c8df4a3"
+    },
+    {
+      "section": "卷十五",
+      "text": "在外占家中平安否\n以日干为主，日干长生为处家。如甲日干则甲木长生在亥，亥寄于乾，看乾宫地盘中无凶星、凶格，主家中平安；有凶星、凶门、凶格者，主凶。须看克宫是何干，以日干六亲决之。年为父母，月为兄弟，时为妻子，即各以本宫所得论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c015:p0004",
+      "sha256": "3be70949519228f299049a4fa6ed59a5639f36bae23c44b9d5fa5b23554694a4"
+    },
+    {
+      "section": "卷十五",
+      "text": "占外人安否\n先定方向，看其上下盘。得有三奇、吉门及诸吉格，外人平安。反此不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c015:p0005",
+      "sha256": "8a06a51d1f52469a8e27b1d6405cda008245c4096dfd89328616dff7f852a84b"
+    },
+    {
+      "section": "卷十五",
+      "text": "占回本乡\n凡人久在他乡，难回故里。占人本以天盘年命落宫，看其在内在外定之。如己在内界，即主回；落在外界，虽回心终得牵缠。如得吉星、吉门，回家平安；得凶星、凶门，回家有事。以地盘年命支干定其日期。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c015:p0006",
+      "sha256": "ef98217e562c331756be6bea389823c1988534818827c84f83e3b35aadc10f0e"
+    }
+  ]
+}

@@ -1,0 +1,2217 @@
+{
+  "book_id": "liuren",
+  "chapter_id": "c012",
+  "title": "卷12",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B712&oldid=763703",
+  "revision": "763703",
+  "source_timestamp": "2016-10-24T18:43:35Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/liuren/c012.wiki",
+  "raw_sha256": "8926a1b177d62ef9af4900488daea17fb25812f7592a4a6870e4ee4431bf470c",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "liuren:c012:p0011",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0012",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0015",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0023",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0026",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0028",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0031",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0067",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0081",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0131",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0133",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0134",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0191",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0192",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0224",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0225",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0237",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0238",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0271",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0274",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c012:p0279",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷12",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "六壬大全卷十二",
+      "text": "十二宫分野下",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0002",
+      "sha256": "a77ec97a65598ae4a9e1bcf3ed03f358de006a7f346755b1b109852d73f2da3f"
+    },
+    {
+      "section": "辰宫角亢鄭分野",
+      "text": "角亢在辰自軫十度至氐初度屬鄭分豫州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0003",
+      "sha256": "2120f85aeb87eae8245b3af62104eb93b1b3d9ee93942c118377b10ebe6a386a"
+    },
+    {
+      "section": "河南省",
+      "text": "開封府\n祥符縣　陳留縣　通許縣　尉氏縣　洧川縣鄢陵縣　扶溝縣　中牟縣　原武縣　陽武縣延津縣　封邱縣\n鄭　州\n滎陽縣　汜水縣　河隂縣　滎澤縣\n陳　州\n西華縣　商水縣　沈丘縣　項城縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0004",
+      "sha256": "be2079d7ab0cfa89b19cab7b9c5e5a5ba221af8b9c31a8fbf9dd91c2614ea587"
+    },
+    {
+      "section": "汝寧府",
+      "text": "汝陽縣　上蔡縣　新蔡縣　遂平縣　西平縣真陽縣　確山縣\n光　州\n光山縣　固始縣　商城縣　息　縣\n温　縣　濟源縣　孟　縣〔注文〕已上三縣屬懷慶府〔/注文〕\n南直𨽻\n穎　州\n潁上縣　太和縣〔注文〕係鳯陽府屬夀州〔/注文〕　霍邱縣",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0005",
+      "sha256": "b9283896cf78015f880a4f33528cef276558888bc034d989e4064a899c837e3a"
+    },
+    {
+      "section": "已宫翼軫楚分野",
+      "text": "翼軫在已自張十五度至軫九度屬楚分荆州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0006",
+      "sha256": "844cc83520a3d75aea06f50ca14c4a57882ff77f0963b224aad6bbf02c03c962"
+    },
+    {
+      "section": "湖廣省",
+      "text": "武昌府\n武昌縣　江夏縣　嘉魚縣　咸寧縣\n崇陽縣　通城縣\n興國州\n大冶縣　通山縣\n漢陽府\n漢陽縣　漢川縣\n黄州府\n黄岡縣　羅田縣　黄安縣　蘄水縣　麻城縣黄陂縣\n蘄　州\n廣濟縣　黄梅縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0007",
+      "sha256": "e3391d26565a6898b973f69408574d05ad8b5a8b0116544b11a3177bcf0935a1"
+    },
+    {
+      "section": "鄖陽府",
+      "text": "鄖　縣　房　縣　保康縣　上津縣　鄖西縣竹溪縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0008",
+      "sha256": "19ee7f85cf8fa3bb32776af27e219c846ad9e9db7318678dd26688cec35996df"
+    },
+    {
+      "section": "襄陽府",
+      "text": "襄陽縣　宜城縣　南漳縣　棗陽縣　榖城縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0009",
+      "sha256": "b8cdcfe909f41acdc1e9af8efe70cfa86f69cf014fb8399018d20aaf0f0b4c7c"
+    },
+    {
+      "section": "承天府",
+      "text": "鍾祥縣　京山縣　濳江縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0010",
+      "sha256": "9e10886fc93b14ef1ad643ae1341924b7f6192169158826f3c0dc75efdd1f273"
+    },
+    {
+      "section": "興都留守司",
+      "text": "顯〔字形SK3809：未编码〕衛",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0011",
+      "sha256": "01cfccff0e609ec4ac1880ab460d690f99e0fb0b4ea611313873b081c4103260"
+    },
+    {
+      "section": "沔陽州",
+      "text": "景〔字形SK3809：未编码〕縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0012",
+      "sha256": "4d15b5d05dced3addb5602e0535de21bbb69880e183a0a5f5cc9ab7cad028116"
+    },
+    {
+      "section": "荆門州",
+      "text": "當陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0013",
+      "sha256": "352550308708d0dac6c6b51ce42169855bf92770132799867e7e93a8ed66b9fd"
+    },
+    {
+      "section": "徳安府",
+      "text": "安陸縣　應城縣　雲夢縣　孝感縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0014",
+      "sha256": "8219293dd264a7e4c91e5371347e8c5d98ca02a3ee6f4bb30c435ff7cd29c60a"
+    },
+    {
+      "section": "荆州府",
+      "text": "江〔字形SK3809：未编码〕縣　公安縣　石首縣　監利縣　枝江縣松滋縣\n夷〔字形SK3809：未编码〕州\n逺安縣　宜都縣　長陽縣\n歸　州\n巴東縣　興山縣\n岳州府\n巴〔字形SK3809：未编码〕縣　臨湘縣　華容縣　平江縣\n澧　州\n石門縣　慈利縣　安鄉縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0015",
+      "sha256": "67ad2977d2dc1ff3fe8fb57c1fbbc1a3afc6d0d9a7d88bc657dff956647fd672"
+    },
+    {
+      "section": "永定衛",
+      "text": "〔注文〕在慈利縣西一百八十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0016",
+      "sha256": "1c46e00ab160956750114fe68ff0cbd712706285911925146edfa945d9121fe5"
+    },
+    {
+      "section": "九谿衛",
+      "text": "〔注文〕在慈利縣北九十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0017",
+      "sha256": "a418c902bdd95fc4e04d29c3fa09fc12ca78e302f9dec2636326043edea4c6cd"
+    },
+    {
+      "section": "大庸守禦千户所",
+      "text": "〔注文〕在慈利縣西二百一十五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0018",
+      "sha256": "887ee8bbd493ab677cc544e0ddf0854e54e8b7d2b2121478d9128efb32932209"
+    },
+    {
+      "section": "添平千户所",
+      "text": "〔注文〕在慈利縣北一百五十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0019",
+      "sha256": "f8dcd8ee670ddfe4eb773b1fbea6efe8096db0067fa9ac918ed516d2e2f07a93"
+    },
+    {
+      "section": "安福千户所",
+      "text": "〔注文〕在慈利縣西北二百九十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0020",
+      "sha256": "14d523dfc1843ac2569bffd418fe25cedc335be6fdd732e8365d6b09eeb9a546"
+    },
+    {
+      "section": "麻寮千戶所",
+      "text": "〔注文〕在慈利縣西北三百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0021",
+      "sha256": "8439ea30a395d762f62a8ae412283a2a9fd9431ae9ca91d24179cf9ee7fc9b28"
+    },
+    {
+      "section": "桑植安撫司",
+      "text": "〔注文〕在九谿衛西北四百里領美坪等一十八峒〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0022",
+      "sha256": "47556911bc8e2d82e8c45210268e19da5dee7a8afd1df6d4dd5c6e42f791eb32"
+    },
+    {
+      "section": "長沙府",
+      "text": "長沙縣　善化縣　湘潭縣　湘隂縣　寧鄉縣瀏陽縣　安化縣　醴〔字形SK3809：未编码〕縣　益陽縣　湘鄉縣攸　縣\n茶〔字形SK3809：未编码〕州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0023",
+      "sha256": "5c40bfe27a8c222e821693fe39f5a2f8411aa8dd3a68808e169b6b77e07ca3c3"
+    },
+    {
+      "section": "寳慶府",
+      "text": "邵陽縣　城歩縣　新化縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0024",
+      "sha256": "4aee064847876e4e3f9f2f95ce26e00ad0d334c2d2f8900377114bb93c7842ba"
+    },
+    {
+      "section": "武岡州",
+      "text": "新寧縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0025",
+      "sha256": "0a5e73a31acd540a8d23f31eb44b67f1e6a36bc7841b561a7256eb293754b00a"
+    },
+    {
+      "section": "辰州府",
+      "text": "沅〔字形SK3809：未编码〕縣　盧溪縣　溆浦縣　辰溪縣\n沅　州\n黔陽縣　麻陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0026",
+      "sha256": "2c1ae166b21a549e8e9b1730720cc159709a4f5980ae6f02f7a7a32b9363cfa2"
+    },
+    {
+      "section": "鎮溪軍民千戶所",
+      "text": "〔注文〕在盧溪縣西二百三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0027",
+      "sha256": "8ecd48dfe6b5a56305a4f6ed646edde48843f6782591b40d7882caf78622026e"
+    },
+    {
+      "section": "常徳府",
+      "text": "武〔字形SK3809：未编码〕縣　桃源縣　沅江縣　龍陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0028",
+      "sha256": "55add0486307765d7229e1afee7758317d6514be0b5a376582577ea841e38c8c"
+    },
+    {
+      "section": "衡州府",
+      "text": "衡陽縣　衡山縣　安仁縣　來陽縣　常寧縣酃　縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0029",
+      "sha256": "70336565fe56ca5d2a378da25ccf1b1c4751c866537008316771217dc5aa2b6a"
+    },
+    {
+      "section": "桂陽州",
+      "text": "臨武縣　藍山縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0030",
+      "sha256": "0250ae77241a7096004e6af6ce65856592f44ea2b7e775338f988e8b5096e003"
+    },
+    {
+      "section": "永州府",
+      "text": "零〔字形SK3809：未编码〕縣　祁陽縣　東安縣\n道　州\n寧逺縣　江華縣　永眀縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0031",
+      "sha256": "33d2ea209f767e01f8ace5fd8a574f5c57961e3f9341159a5c2a40645033be52"
+    },
+    {
+      "section": "錦田守禦千户所",
+      "text": "〔注文〕在江華縣二百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0032",
+      "sha256": "9b0034533d21b77a4cc7e111f815b9f67c14cf7714fd78829f74900fbf0653d7"
+    },
+    {
+      "section": "枇杷守禦千户所",
+      "text": "〔注文〕在永明縣東南三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0033",
+      "sha256": "b8d560d017aba9b27bdbf9f7ccecc4011f0b0b5e0ce30943e00dab62ee6b6de7"
+    },
+    {
+      "section": "桃川守禦千户所",
+      "text": "〔注文〕在永明縣西南四十里〔/注文〕\n靖　州\n㑹同縣　通道縣　綏寧縣　天柱縣",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0034",
+      "sha256": "9b3c2ac9656e324662ca3865d4abc95b3800de8d19222429172a908d301fba52"
+    },
+    {
+      "section": "天柱守禦千户所",
+      "text": "〔注文〕在州西北二百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0035",
+      "sha256": "f5e07dfcc72af047959321ebddd5bf83b6e1a5b280185cce7a0fc0b9b89938fa"
+    },
+    {
+      "section": "屯鎮文溪後千户所",
+      "text": "〔注文〕在州西北二百五十里〔/注文〕\n郴　州\n永興縣　宣章縣　桂陽縣　興寧縣　桂東縣廣安守禦千户所〔注文〕在桂陽縣東一十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0036",
+      "sha256": "5a6d917a36bdd5fbf3d92c7830a19ac7cc523299255209596161d094cdc33e21"
+    },
+    {
+      "section": "施州衛軍民指揮使司",
+      "text": "大田軍民守禦千户所〔注文〕在衛西北三百五十里〔/注文〕\n鎮南長官司　　　　　唐崔長官司",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0037",
+      "sha256": "5bbd5d6a148af886315a85ff0c06389adc3dfbba2b195035bfb4a2abca840c5e"
+    },
+    {
+      "section": "施南宣撫司",
+      "text": "東鄉五路安撫司\n摇把峒長官司　　　　上愛茶崆長官司下愛茶洞長官司　　　鎮逺蠻夷長官司隆奉蠻夷長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0038",
+      "sha256": "3e2a893c1846d6e804307d54666fe2f44ea52da62c7226d91b12cdfdfbe65455"
+    },
+    {
+      "section": "忠路安撫司",
+      "text": "劒南長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0039",
+      "sha256": "32d8664f434cfe0ed17ecb4164407ca8439bd7c79a3d98cc95c8d605f57d9125"
+    },
+    {
+      "section": "金峒安撫司",
+      "text": "西坪蠻夷長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0040",
+      "sha256": "657c92d5e9f7dd51dc61989de876a8f09068d770ded9f52e839c9bd88bf82d62"
+    },
+    {
+      "section": "盤順安撫司",
+      "text": "散毛宣撫司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0041",
+      "sha256": "2be642f3230af9359794e816aa2306b845fde87c148b387e90b76d8d7213aefd"
+    },
+    {
+      "section": "龍潭安撫司",
+      "text": "大旺安撫司\n東流蠻夷長官司　　　臘璧峒蠻長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0042",
+      "sha256": "a92f9263be14addb35c6e60abd2fc7e1bd0814dc26fb9b91a248c140eb3ce12a"
+    },
+    {
+      "section": "忠建宣撫司",
+      "text": "忠峒安撫司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0043",
+      "sha256": "87c982c5669be1844207facbdb3ef96d37adb05284a84c69ba7c5fc94fff620b"
+    },
+    {
+      "section": "髙羅安撫司",
+      "text": "木冊長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0044",
+      "sha256": "d1b2eedd855442ffd9d15b988441e96f93ed3633bf40cfb1bc3ce51c58bfabbc"
+    },
+    {
+      "section": "容美宣撫司",
+      "text": "椒山馬瑙長官司　　　五峰石寳長官司石梁下峒長官司　　　水盡源通塔平長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0045",
+      "sha256": "ffc655b6233066b9407a51dca129143e0788b6672ad2a74a9a761252bf1e505d"
+    },
+    {
+      "section": "永順軍民宣慰使司",
+      "text": "南渭州　施容州　上溪州\n臘惹峒長官司　　　　驢遅峒長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0046",
+      "sha256": "e2c20b971e576d5c18de8d146999f949698b98aec8058d08a4812f75a3aa3229"
+    },
+    {
+      "section": "麥著黄峒長官司",
+      "text": "保靖州軍民宣慰使司\n筸子坪長官司　　　　施溶溪長官司\n白崖峒長官司　　　　田家峒長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0047",
+      "sha256": "d5d584c1654804a44823f6af82b908fedcddf72ce77e7af5b3166d162aace963"
+    },
+    {
+      "section": "五寨長官司",
+      "text": "廣東省\n連　州\n陽山縣　連山縣　新安縣〔注文〕俱属廣州府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0048",
+      "sha256": "ce6b5c326e484286db8f10a30e9aa2adf97014defac5a8aaceb9ecbbbba80ef8"
+    },
+    {
+      "section": "韶州府",
+      "text": "曲江縣　樂昌縣　乳源縣　仁化縣　翁源縣英徳縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0049",
+      "sha256": "20ffc8ed9a107e150fcdf3ea199d8d0f757ccb46376007cf23d2693afc79ff25"
+    },
+    {
+      "section": "廉州府",
+      "text": "合浦縣\n欽　州\n靈山縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0050",
+      "sha256": "cdf6aa95b3fa2a7685285ac8184e004a61e8d6739b3cd39d393862e187da69f9"
+    },
+    {
+      "section": "永安守禦千户所",
+      "text": "〔注文〕在合浦縣東六十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0051",
+      "sha256": "353a79d8c2693eb4532d849f65f4a4cc5bba9414d516a3794f4596e28b4d474e"
+    },
+    {
+      "section": "廣西省",
+      "text": "桂林府\n臨桂縣　興安縣　陽朔縣　靈川縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0052",
+      "sha256": "794565fe8a30320ae5065b9ff27f19f49e756b614ee826505d00b57100fac5a3"
+    },
+    {
+      "section": "永寧州",
+      "text": "永福縣　義寧縣\n全　州\n灌陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0053",
+      "sha256": "a196b4640a720be74af86854ea08ba35aa8efcb1d637d9a12e282db9e24f64f7"
+    },
+    {
+      "section": "平樂府",
+      "text": "平樂縣　恭城縣　富川縣　荔浦縣　昭平縣賀　縣　修仁縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0054",
+      "sha256": "9de50b142ff8977ab85587bdaca1027a57dd3d2001e1832d2356d8bc31bcf2ae"
+    },
+    {
+      "section": "永安州",
+      "text": "欝林州〔注文〕屬梧州府〔/注文〕\n博白縣　北流縣　陸川縣　興業縣〔注文〕俱屬梧州府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0055",
+      "sha256": "5490877bd5f8dc3e70e6611ba5a1fae92b03472041ab42eafb03d2b59f4ad966"
+    },
+    {
+      "section": "潯州府",
+      "text": "桂平縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0056",
+      "sha256": "9a1ba18e74f216a837842743ecb787bba0d21d8d871222f5ebce57aa9dc973d1"
+    },
+    {
+      "section": "武靖州",
+      "text": "平南縣　貴縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0057",
+      "sha256": "6543dfdaa9b1acab3fbd2e446ecb172557f5eeefb33c52f2d63a375cad3cf6c1"
+    },
+    {
+      "section": "南寧府",
+      "text": "宣化縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0058",
+      "sha256": "f82f38a34f3d06094537ade4f0c2c60ce6b6446ef80e49fba2f9b322f612e975"
+    },
+    {
+      "section": "新寧州",
+      "text": "陸安縣\n横　州\n永淳縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0059",
+      "sha256": "60781792bfca1c3ebb88af6ccbe3ce8fecd132cc58cec93ae4740ab4bc8db39e"
+    },
+    {
+      "section": "上思州",
+      "text": "太平府\n安平州　鎮逺州\n養利州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0060",
+      "sha256": "b9e418bf31367edc8fa4a2a7471d312a8ea445ad8c982edbd08c4cac69acd08a"
+    },
+    {
+      "section": "龍英州",
+      "text": "左　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0061",
+      "sha256": "2cc62fdb6673539a89deab8a5a1078ba6ba28280dca39cf108a340a2417cd489"
+    },
+    {
+      "section": "太平州",
+      "text": "思同州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0062",
+      "sha256": "c2a6c37e5ef11d78bdaf3b3065b442476fff96247393abca50f00e0dd1b9501a"
+    },
+    {
+      "section": "萬承州",
+      "text": "全茗州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0063",
+      "sha256": "c50b8295ae793a685c09180ec0881844d50f34b60b9aea3cb66bb6bac6d155e1"
+    },
+    {
+      "section": "茗盈州",
+      "text": "都結州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0064",
+      "sha256": "12c4925351d246028cc65a1976af902f4954271aca00aa11f2c36acfd6131a48"
+    },
+    {
+      "section": "結安州",
+      "text": "結倫州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0065",
+      "sha256": "69593702f163731368cada3ef856c40ec5270b0b1d9659cc7bbd657581ac54b6"
+    },
+    {
+      "section": "思城州",
+      "text": "崇善縣　羅陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0066",
+      "sha256": "0b90f9f7329c55190c3a87a594ce79c910dad566c8483c458535c719b17a50a0"
+    },
+    {
+      "section": "上下凍州",
+      "text": "永康州\n陀〔字形SK3809：未编码〕縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0067",
+      "sha256": "f233da8b682109e825000e8b5cc277d49502aeb6ac509b6edbddf159790a443e"
+    },
+    {
+      "section": "思明府",
+      "text": "上石西州\n忠　州\n下石西州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0068",
+      "sha256": "0c0101c230d758dda59784f2ddcd85b2ff203cddf4a84a5c6d30e1fc4b6b866d"
+    },
+    {
+      "section": "憑祥州",
+      "text": "下雷州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0069",
+      "sha256": "21842531ec6f5c0a054735e90351dc835976db7eeab4891453fda7b8f4b0a6a9"
+    },
+    {
+      "section": "思眀州",
+      "text": "栁州府\n馬平縣　羅城縣　洛容縣　懐逺縣　来賔縣栁城縣　融縣\n象　州\n武宣縣\n賔　州\n遷江縣　上林縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0070",
+      "sha256": "08547d959bcf79cf3194683e3d99430ab71915b90835de498732e39a5218f579"
+    },
+    {
+      "section": "慶逺府",
+      "text": "宜山縣　天河縣　忻城縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0071",
+      "sha256": "e5bca08bbd4a3a5f3696f019a34806e4edf75ee5f9d65c21a8878e8b6465e000"
+    },
+    {
+      "section": "河池州",
+      "text": "思恩州　荔波縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0072",
+      "sha256": "348fb42ca145bae9115f07fcf480d43aac654f366be729c3f1866c305dfd09d9"
+    },
+    {
+      "section": "東蘭州",
+      "text": "那地州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0073",
+      "sha256": "d12f9cdb887349307ab31b084cdf200dbbf866288357fccc4b026ce44be5a35d"
+    },
+    {
+      "section": "南丹州",
+      "text": "永定長官司　　　　　永順長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0074",
+      "sha256": "3c01ce9b62af9a377835620300c15b2bab6a6b601a9c4695e9abc1ca94597158"
+    },
+    {
+      "section": "思㤙軍民府",
+      "text": "武縁縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0075",
+      "sha256": "fb415f2e96135597dea432c16ff316f4d59fdf76f30e99edd84781ad1f5b3177"
+    },
+    {
+      "section": "鎮安府",
+      "text": "田　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0076",
+      "sha256": "3286fffe8289fc034b1df69fd476b24c856419ef28a56832b0e92dca9c4ee908"
+    },
+    {
+      "section": "歸順州",
+      "text": "龍　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0077",
+      "sha256": "a83e8f5d8cc7f2d7d6fb4f23f718f20094fa597a5c5c01ff5559b0a75d618e87"
+    },
+    {
+      "section": "都康州",
+      "text": "奉議州\n利　州\n向武州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0078",
+      "sha256": "d7f10aee88564a29d8951c97651e49cf6a5296420cd29b1800d4ae2a194f92e5"
+    },
+    {
+      "section": "泗城州",
+      "text": "江　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0079",
+      "sha256": "8c2561003bf8bc83e9f28830d6e6d93393d738d3d1ec4b8b239e6d0fcdc87ad3"
+    },
+    {
+      "section": "上隆州",
+      "text": "果化州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0080",
+      "sha256": "b9eb51192372807e905887cd69c9bdfbf942bb73bccb66447d7d818698bb7902"
+    },
+    {
+      "section": "恩城州",
+      "text": "歸徳州\n思〔字形SK3809：未编码〕州\n程　縣\n上林長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0081",
+      "sha256": "872c994e4cb45ac736f988b99787c90a8bf987800c0733bb95dd461595fcae11"
+    },
+    {
+      "section": "安隆長官司",
+      "text": "五屯守禦千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0082",
+      "sha256": "acccb2b337d29d243642eb34987c59f3e2c987fe4199fe75b21a4a9e7ecb07e4"
+    },
+    {
+      "section": "貴州省",
+      "text": "安順府\n寧谷寨長官司　　　　西堡長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0083",
+      "sha256": "0dff95b93198a4ac926646538d57913c08a9e127b43747a1a6f119bb0e1c0fea"
+    },
+    {
+      "section": "普定衛軍民指揮使司",
+      "text": "都匀府\n都匀長官司　　　　　平浪長官司\n邦水長官司　　　　　平州六洞長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0084",
+      "sha256": "0c2e09827d390e8106ac7d7a072c6266086a3c60bffa5fbf9b0bfca55f99a3cc"
+    },
+    {
+      "section": "麻哈州",
+      "text": "樂平長官司　　　　　平定長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0085",
+      "sha256": "c1c405cf97d9da95763ebb9b0a1372cfa9ec5d1e024aab708b7e9430d1c5b172"
+    },
+    {
+      "section": "獨山州",
+      "text": "豐寧長官司　　　合江州陳𫎇爛土長官司清平縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0086",
+      "sha256": "e11820492ddc3d0e405abb667a0d4d86693357ff9dcfd0a2b5d5f55d76a1e401"
+    },
+    {
+      "section": "鎮逺府",
+      "text": "鎮逺縣　施秉縣\n卭水一十五洞蠻夷長官司　　偏橋長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0087",
+      "sha256": "37c96050aff0e35f0b5ebb495f3f70f0dafb9ce1315fb4cc82e17434fdc0ccf9"
+    },
+    {
+      "section": "鎮逺衛",
+      "text": "臻剖六洞横坡等處長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0088",
+      "sha256": "cf6dbb8db1e7a15c13e4241275cd67a7b916c38abc9ed1fa32a9846c691a088d"
+    },
+    {
+      "section": "偏橋衛",
+      "text": "〔注文〕在府西六十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0089",
+      "sha256": "a5b5e3fcb0f36a4653db5e11b151c1a5fb19df06ad758dd3444c4d7396acb34a"
+    },
+    {
+      "section": "清浪衛",
+      "text": "〔注文〕在府東七十五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0090",
+      "sha256": "b590c46b0afd3dfc4c39d32b1a16fe332fd5fd8567d9feed9227c569b052d35f"
+    },
+    {
+      "section": "黎平府",
+      "text": "永從縣\n潭溪蠻夷長官司　　　八舟蠻夷長官司洪州泊里蠻夷長官司　曹滴洞蠻夷長官司古州蠻夷長官司　　　西山陽洞蠻夷長官司胡耳蠻夷長官司　　　亮寨蠻夷長官司歐陽蠻夷長官司　　　新化蠻夷長官司中林驗洞蠻夷長官司　赤溪湳洞蠻夷長官司隆里蠻夷長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0091",
+      "sha256": "e89066afb3e38be333a06ab84b2a77aa0c93f128a889f62df8bc17c1d20e46a7"
+    },
+    {
+      "section": "五開衛",
+      "text": "〔注文〕在府東北〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0092",
+      "sha256": "d39b7b8bedd53ed8c7af84992409497c1d38220f51e74149812fb48784b7858c"
+    },
+    {
+      "section": "黎平守禦千户所",
+      "text": "〔注文〕在府西南二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0093",
+      "sha256": "df5183e23cb70f463ccf2884de6e684b158e16bda9f450b0be21cf84f9a39776"
+    },
+    {
+      "section": "中潮守禦千户所",
+      "text": "〔注文〕在洪州泊里長官司西南〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0094",
+      "sha256": "8b8b3cca755640779678105275bbc20f0ae1169a44d584ceefb430376f770e98"
+    },
+    {
+      "section": "新化亮寨守禦千戸所",
+      "text": "〔注文〕在新化長官司東〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0095",
+      "sha256": "10a37e57b1233f8f6852748dbaf5c97f395511c452608d67f2e04a7ce30d0796"
+    },
+    {
+      "section": "龍里守禦千戶所",
+      "text": "〔注文〕在隆里長官司南〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0096",
+      "sha256": "9c2ae0941d168aceb46ca5df346248fac221c6ca439c72a8979e2b8e9d71fc82"
+    },
+    {
+      "section": "新化屯千戸所",
+      "text": "〔注文〕在新化長官司西南三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0097",
+      "sha256": "dd870209c2e7aa280ead1e2d7fa18ce05bc0a38e9ac08c38abce853a1541cf1a"
+    },
+    {
+      "section": "平茶千戸所",
+      "text": "平茶屯千戸所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0098",
+      "sha256": "2be918051e1a197916d20d21d4558b1bf7d5f32185a00d46f1e27adf5c350904"
+    },
+    {
+      "section": "銅鼓衛",
+      "text": "〔注文〕在湖耳長官司西〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0099",
+      "sha256": "e3043bb0ff2eaaa0bb3cd0c8d53cebdf6cf18c6dcd418f3a194a8c05f8387e43"
+    },
+    {
+      "section": "思州府",
+      "text": "都坪峨異溪長官司　　都素長官司\n施溪長官司　　　　　黄道溪長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0100",
+      "sha256": "01e7a5d26c0f35a5d25be1a675494c9fb44ac6fa2c5f1de4fde1878f34ca1c29"
+    },
+    {
+      "section": "思南府",
+      "text": "水徳江長官司　　　　蠻夷長官司\n朗溪蠻夷長官司　　　沿河祐溪長官司婺川縣　安化縣　印江縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0101",
+      "sha256": "1119aee525c33b1e0d9e7f163203e0a7cb03cb5e31160d7d087290c1562f769f"
+    },
+    {
+      "section": "石阡府",
+      "text": "龍泉縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0102",
+      "sha256": "97804d1399e4cb6932cdccc1875aee5533bcad7f2c1df3de4b883150ec943f94"
+    },
+    {
+      "section": "石阡長官司",
+      "text": "苗民長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0103",
+      "sha256": "e697a375086e10a872296efb9c881603ea995cf7a6be9f976277294df65404d2"
+    },
+    {
+      "section": "龍泉坪長官司",
+      "text": "葛彰葛商長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0104",
+      "sha256": "a2d53b4a9d3ee2cf37152061f2d90be809a0bb503af8dc9e6b42a4d1f38962dc"
+    },
+    {
+      "section": "平越府",
+      "text": "甕安縣　湄潭縣　餘慶縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0105",
+      "sha256": "cc675ab5c98450cec836b01f8736198208695796c3b087bc459f60e94137fadd"
+    },
+    {
+      "section": "黄平州",
+      "text": "楊義長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0106",
+      "sha256": "b03e33db0add8bf89797b1b8a21299953ce8b10af975fac68671cef82660770b"
+    },
+    {
+      "section": "廣順州",
+      "text": "普安州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0107",
+      "sha256": "c0dca1acc9d34568ecff61584b87b755866eb033dbf1980458e746c35e7820b7"
+    },
+    {
+      "section": "普安衛",
+      "text": "樂民守禦千戸所〔注文〕在州西九十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0108",
+      "sha256": "42186a8b8c70678bfe8fd6480c360eef6b94c9002b20759d0f813bc819f8613a"
+    },
+    {
+      "section": "安南守禦千户所",
+      "text": "〔注文〕在州東南一百六十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0109",
+      "sha256": "d254284f251512ef2af52f40fcb60adfaa3613b57ef4a90468a9830fb56adb76"
+    },
+    {
+      "section": "安龍守禦千戶所",
+      "text": "〔注文〕在州東南三百一十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0110",
+      "sha256": "0239c033f18f58b3cf82af3cc17433d58983f646faf12606382ce2e5a10595cb"
+    },
+    {
+      "section": "平夷千户所",
+      "text": "永寧州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0111",
+      "sha256": "263bd96f6583412a88f647a8f10bbb3e77ac1efc79159a7332446a14842aa095"
+    },
+    {
+      "section": "慕役長官司",
+      "text": "頂营長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0112",
+      "sha256": "250fa643fa41f51ece52b56ee9ddfcd07488ca9a13a085d2bb77969719fe87d0"
+    },
+    {
+      "section": "永寧衛",
+      "text": "鎮寧州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0113",
+      "sha256": "ce17e5d82d2efdcc25d4cb87ef1906af909984a9745f67492e726f22884a8b0e"
+    },
+    {
+      "section": "十二营長官司",
+      "text": "康佐長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0114",
+      "sha256": "695734b381644fda02e3f9b97dc7a97b758b51e5d604ad34061ae82c5a844f3d"
+    },
+    {
+      "section": "安莊衛",
+      "text": "闗索嶺守禦千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0115",
+      "sha256": "8e555e64a397da744d0b25826cf4ac63e463ac0f25979515dad869519f235a59"
+    },
+    {
+      "section": "定畨州",
+      "text": "新添衛軍民指揮使司\n新添長官司　　　　　小平伐長官司\n丹平長官司　　　　　丹行長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0116",
+      "sha256": "02b07bc4c1c44360003ecae9368827eea140f080663559916b3d94a0c6d0e59c"
+    },
+    {
+      "section": "把平寨長官司",
+      "text": "龍里衛軍民指揮使司\n平伐長官司　　　　　太平伐長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0117",
+      "sha256": "830c194247ec1ec697925b7d8201c797501e3278711831deb9635e1c76d61a0e"
+    },
+    {
+      "section": "威清衛",
+      "text": "安南衛",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0118",
+      "sha256": "2bc1c8d9598fc2079add5ebbe54a4bd6d7b6bb543f54bac6b849856b8fc507d9"
+    },
+    {
+      "section": "畢節衛",
+      "text": "平壩衛",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0119",
+      "sha256": "5932f56aa1f05599f96f5ffb7452831af976046d3f938fdac168a6b637163443"
+    },
+    {
+      "section": "凱里安撫司",
+      "text": "午宫柳星張周分野\n栁星張在午自栁三度至張十四度屬周分三河",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0120",
+      "sha256": "a73e1d14191af224677a39ee082f54631317c7aab25400d003baf622157f8d2f"
+    },
+    {
+      "section": "河南省",
+      "text": "禹州\n密　縣\n新鄭縣〔注文〕俱屬開封府〔/注文〕\n許　州\n襄城縣　臨穎縣　郾城縣　長葛縣",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0121",
+      "sha256": "f46950987b4da17cede51627bdacd3a06083cdf08c3a27f021b01ea01c0a8a03"
+    },
+    {
+      "section": "河南府",
+      "text": "雒陽縣　郾師縣　宜陽縣　鞏　縣　新安縣沔池縣　孟津縣　登封縣　永寧縣　盧氏縣嵩　縣\n陕　州\n靈寳縣　閿鄉縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0122",
+      "sha256": "85edd4c546cf9930a95011c6fdc3bf3d05097cd34e55721cec7c060546e9c204"
+    },
+    {
+      "section": "信陽州",
+      "text": "羅山縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0123",
+      "sha256": "93eaa689e651073eae52a3592b0343304ff11d0e14062b49e03bffa14be2b3fa"
+    },
+    {
+      "section": "南陽府",
+      "text": "南陽縣　唐　縣　泌陽縣　桐柏縣　鎮平縣南召縣\n鄧　州\n内鄉縣　淅川縣　新野縣\n裕　州\n舞陽縣　葉　縣\n汝　州\n魯山縣　寳豐縣　郏　縣　伊陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0124",
+      "sha256": "206ef9c9c70ab08c750da34e589f1fda04f8f4836bee60375b4a896519fd5494"
+    },
+    {
+      "section": "湖廣省",
+      "text": "均　州〔注文〕屬襄陽府〔/注文〕　　　　光化縣〔注文〕屬襄陽府〔/注文〕\n隨　州\n應山縣〔注文〕属徳安府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0125",
+      "sha256": "3e908e27c142bb359a7115fde5b6d5777ddbe6f52504542ab7f02e640f2a1b4b"
+    },
+    {
+      "section": "陕西省",
+      "text": "商　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0126",
+      "sha256": "ac9311cde8507c2bd2acab461c108f45b3f10b59c2c322b0562096daec95bcf5"
+    },
+    {
+      "section": "洛南縣",
+      "text": "〔注文〕屬西安府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0127",
+      "sha256": "0c0e2e7cfbd13f76ccfd87a141a64e057c39f0e3f467253c6df18723c2137370"
+    },
+    {
+      "section": "貴州省",
+      "text": "銅仁府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0128",
+      "sha256": "c2380264c51d5b9f8380c13ea47b5f760b69c45a0dcec655a4aed256f77f9ee5"
+    },
+    {
+      "section": "銅仁縣",
+      "text": "銅仁長官司　　　　　提溪長官司\n烏羅長官司　　　　　省溪長官司\n大萬山長官司　　　　平頭著可長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0129",
+      "sha256": "5c014207eaedcb332aa4ed75e13e4c4c75a4ab375c6a4e9f0e12be37366e2d7a"
+    },
+    {
+      "section": "未宫井鬼秦分野",
+      "text": "井鬼在未自井八度至栁二度屬秦分野",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0130",
+      "sha256": "e443a6617d557f28ce61119e715c82aedb9a9ef7daf561133d35fd22dd922e64"
+    },
+    {
+      "section": "陕西省",
+      "text": "西安府\n長安縣　咸寧縣　咸陽縣　興平縣　鄠　縣藍田縣　臨潼縣　髙〔字形SK3809：未编码〕縣　涇陽縣　三原縣富平縣　盩厔縣　渭南縣\n鎮安縣　商南縣　山陽縣〔注文〕屬商州〔/注文〕\n同　州\n朝邑縣　韓城縣　郃陽縣　澄城縣　白水縣\n華　州\n華隂縣　蒲城縣\n耀　州\n同官縣\n乾　州\n醴泉縣　武功縣　永夀縣\n邠　州\n三水縣　淳化縣　長武縣",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0131",
+      "sha256": "f051179ef5f1362e9dfed1857775e67ea42c7024742ed51bec76ed1cf26338e9"
+    },
+    {
+      "section": "潼闗衛",
+      "text": "〔注文〕在華隂縣東四十里潼闗城中〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0132",
+      "sha256": "8da3657793eeaef7302c015d5175ea9b3b959a016561e518a2e6984de5b25ad7"
+    },
+    {
+      "section": "鳯翔府",
+      "text": "鳯翔縣　岐山縣　寳雞縣　扶風縣　〔字形SK3777：未编码〕　縣麟逰縣\n隴　州\n汧陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0133",
+      "sha256": "e95403ed4dd4c2a762d74c91e8264304c45b6c3f7e7e691296c529fc214e8a91"
+    },
+    {
+      "section": "漢中府",
+      "text": "南鄭縣　褒城縣　城固縣　洋　縣　西鄉縣鳯　縣\n寧〔字形SK1569：未编码〕州\n沔　縣　畧陽縣\n興安州\n平利縣　石泉縣　漢隂縣　洵陽縣　白河縣紫陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0134",
+      "sha256": "81507ca2561d70591f795b864dab72012ba98c8e395e422b3362b5a9fb12b175"
+    },
+    {
+      "section": "平凉府",
+      "text": "平凉縣　崇信縣　華亭縣　鎮原縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0135",
+      "sha256": "24a8e85e0dff608547ce5abae1c7c94dc2f61f76f4791d837628eeadf42cf41b"
+    },
+    {
+      "section": "固原州",
+      "text": "涇　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0136",
+      "sha256": "58d1f345d52962c28a42bece1b29fe8c1e7454597ef105886f755f6387ad88d2"
+    },
+    {
+      "section": "靈䑓縣",
+      "text": "静寧州\n莊浪縣　隆徳縣\n鞏昌府\n隴西縣　安定縣　㑹寧縣　通渭縣　漳　縣伏羌縣　寧逺縣　西和縣　成　縣\n徽　州\n階　州\n文　縣　兩當縣\n秦　州\n秦安縣　清水縣　禮　縣\n禮店守禦千戸所〔注文〕在秦州西南二百五十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0137",
+      "sha256": "e0c43f642ed61c1449faecff1259a47252924153ac5e66188549f9263fa4f9b2"
+    },
+    {
+      "section": "臨洮府",
+      "text": "狄道縣　渭源縣\n蘭　州\n金　縣\n河　州\n慶陽府\n安化縣　合水縣　環　縣\n寧　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0138",
+      "sha256": "bf97794282ba31556d17e083271f445e52680723716bc720d3185e8309b12329"
+    },
+    {
+      "section": "真寧縣",
+      "text": "延安府\n膚施縣　安塞縣　甘泉縣　保安縣　安定縣宜川縣　延長縣　清澗縣　延川縣\n鄜　州\n洛川縣　中部縣　宜君縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0139",
+      "sha256": "b4f77a8d1b5a3df68ebd032f7ed01795412161412dcf00e8bb8fb2a51cccea22"
+    },
+    {
+      "section": "綏徳州",
+      "text": "米脂縣\n葭　州\n神木縣　府谷縣　吴堡縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0140",
+      "sha256": "621aeafd1ce1c6df98117c41b54bdff15ea5e4d7f23b23f79ee4bb04c4daa1c8"
+    },
+    {
+      "section": "塞門守禦百户所",
+      "text": "〔注文〕在安塞縣北一百五十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0141",
+      "sha256": "bc5902c4e28d839fcd8a69ddd56e4b1954eec058ac26b571d0c5ebc21d26ef66"
+    },
+    {
+      "section": "清邉守禦百户所",
+      "text": "〔注文〕在大乾闗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0142",
+      "sha256": "1e9ba258f5fea3e582ab684037f04d6e9231eacb5acfdbb7d9006c2423be3701"
+    },
+    {
+      "section": "榆林衛",
+      "text": "〔注文〕在府東北七百五十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0143",
+      "sha256": "670dd19b27fa97da6de6a5e95ef260aaae43e66a5d98a26b7ef19d25fef94797"
+    },
+    {
+      "section": "寧夏衛",
+      "text": "潘咏堡　金貴堡　李祥堡　張濟堡　魏敬堡王信堡　王貴堡　任春堡　葉誠堡",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0144",
+      "sha256": "c667c80786a7867686bfd35f19af5406a90d6897e29072077abe13793ec86d7d"
+    },
+    {
+      "section": "寧夏前衛",
+      "text": "外家堡　張亮堡　李信堡　丁義堡　周澄堡平虜守禦千户所〔注文〕在衛城北四百一十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0145",
+      "sha256": "bfa1f324f87b306a888e264bae0c218ce4aabbbb68ebd6bfd347c3804cc71a4a"
+    },
+    {
+      "section": "寧夏左屯衛",
+      "text": "王景堡　李俊堡　卲綱堡　瞿靖堡　林臯堡将鼎堡　陳剛堡　王登堡　張政堡　魏政堡",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0146",
+      "sha256": "581c4616af88662eda866072776f31b03f2155613c0f42aab7b57fb7e9d22f94"
+    },
+    {
+      "section": "寧夏右屯衛",
+      "text": "楊顯堡　陶容堡　雷福堡　桂文堡　常信堡洪廣堡　髙榮堡　姚福堡",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0147",
+      "sha256": "3740e4cb5d5b638592c9b5da40e6ec7b8868cdc8378257ad5b1f8407834c50fa"
+    },
+    {
+      "section": "寧夏後衛",
+      "text": "〔注文〕在花馬池〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0148",
+      "sha256": "0297f2e137871be2d4aa9b5fb4988a252d7793b7a9e11f9c11e24434419258cf"
+    },
+    {
+      "section": "寧夏中屯衛",
+      "text": "〔注文〕在金勝闗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0149",
+      "sha256": "5c98ff1532519c92f92892906f70d5960331b2f55e4cb21f2ddb8316e8b5ebe9"
+    },
+    {
+      "section": "靈州守禦千户所",
+      "text": "〔注文〕在衞城南九十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0150",
+      "sha256": "f6b1e01d92a8cc2330a0fa5a71545fa0fb8386f70974c48a86e6c607e1378384"
+    },
+    {
+      "section": "興武營守禦千户所",
+      "text": "〔注文〕在衞城西南二百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0151",
+      "sha256": "1770b6a50b51cadd76043a8c9bb14e0ecf52a05cb2c19b99daa87c6750eecd3d"
+    },
+    {
+      "section": "寧夏中衛",
+      "text": "五百户堡　羚羊店堡　囘囘墓堡",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0152",
+      "sha256": "7216bd8bac029671b0202f069a39607dfa0e012967d0a662ceaebc866d58ecf6"
+    },
+    {
+      "section": "洮州衛軍民指揮使司",
+      "text": "鎮戎守禦千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0153",
+      "sha256": "68702193156adf3c4c6e371f35dea1dfe0c07adf4dc1a1288c94e05e0e3ae8e6"
+    },
+    {
+      "section": "岷州衛軍民指揮使司",
+      "text": "西固城軍民千户所〔注文〕在衛城西南四百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0154",
+      "sha256": "aee5bd1aab87cb88ed6b591412d6f41cf20887c37768fb2c64529f73f42154d4"
+    },
+    {
+      "section": "河州衛軍民指揮使司",
+      "text": "歸徳守禦千户所〔注文〕在衛城西七百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0155",
+      "sha256": "4e317c10ee18d59ce3cbf80c2a183a8b1b1696b1cf3874096ec3dd2d00471c69"
+    },
+    {
+      "section": "靖虜衛",
+      "text": "陕西行都指揮使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0156",
+      "sha256": "bd3d4906181a713ee5c7f7724d744a89f93d678669da7e60c447455c109a940e"
+    },
+    {
+      "section": "甘州左衛",
+      "text": "甘州右衛",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0157",
+      "sha256": "d7cd71eab9f2ac46de76fe5272981e26b0bdef0a4fc33a8cfd50564a57816472"
+    },
+    {
+      "section": "甘州中衛",
+      "text": "甘州前衛",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0158",
+      "sha256": "8afda49ff244d739a73d4c6e350ba8dbe373671cb70b5c102f90e1f7d9c3cf94"
+    },
+    {
+      "section": "甘州後衛",
+      "text": "肅州衛〔注文〕在都司城西五百一十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0159",
+      "sha256": "6f5e1f4888623b6be24897152ce00545fe51922b65e6b9256b33939456ccc544"
+    },
+    {
+      "section": "山丹衛",
+      "text": "〔注文〕在都司城東一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0160",
+      "sha256": "4eca3ebdb3b90da316880f34997ad1759cd1afea874ae196da0c440f45797e24"
+    },
+    {
+      "section": "永昌衛",
+      "text": "〔注文〕在都司城東南三百一十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0161",
+      "sha256": "d72774cb31b0a8277496bf0b3fb8e9e5a86cc8a0c1c32adb0c53b6773b03a5b2"
+    },
+    {
+      "section": "凉州衛",
+      "text": "〔注文〕在都司城東南五百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0162",
+      "sha256": "466b434db3e428f15a2edc34566c361189b2743a61c45b2ca59615bc79ccf89a"
+    },
+    {
+      "section": "鎮蕃衛",
+      "text": "〔注文〕在都司城東五百五十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0163",
+      "sha256": "48f346c2c87eb0fd82efe2eebb37168745bcb535e145fe3afaa7172b08064fb1"
+    },
+    {
+      "section": "荘浪衛",
+      "text": "〔注文〕在都司城南九百四十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0164",
+      "sha256": "f98b4be966c81be265db697e1b0f2cb02aac9cd3ee315fe970fd19b2dcc8c0a8"
+    },
+    {
+      "section": "西寧衛",
+      "text": "〔注文〕在都司城東南一千三百五十五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0165",
+      "sha256": "bb6febdd0dca451f339486e490a0122d5aff0ce6f83617e205ef1a1dd74b9c42"
+    },
+    {
+      "section": "鎮夷守禦千戸所",
+      "text": "〔注文〕在都司城西北三百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0166",
+      "sha256": "d348fc666974e3edb2bbc31a69253b48d7a0d0813cf1949539975b39630e1460"
+    },
+    {
+      "section": "古浪守禦千户所",
+      "text": "〔注文〕在都司城東南六百四十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0167",
+      "sha256": "0416ced8b1904134c8534eb0ceb5e8eacab26cb7b2f9bbb73418c73df1f0c151"
+    },
+    {
+      "section": "髙䑓守禦千户所",
+      "text": "四川省",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0168",
+      "sha256": "516a7ed467fc0b579a5bb150ef6248e5056ebc08164b96a4763ffc518ca55bbb"
+    },
+    {
+      "section": "成都府",
+      "text": "成都縣　華陽縣　䨇流縣　温江縣　新繁縣金堂縣　新都縣　仁夀縣　安　縣　内江縣崇寧縣　井研縣　郫　縣　灌　縣　彭　縣資　縣\n簡　州\n資陽縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0169",
+      "sha256": "59797bcc2d787c7b2267babe2ae31ee4dc493dda4a5d207fa1731a5aa5fdad7f"
+    },
+    {
+      "section": "崇慶州",
+      "text": "新津縣\n漢　州\n什邡縣　綿竹縣　徳陽縣\n綿　州\n彰明縣　羅江縣\n威　州\n保　縣\n茂　州\n汶川縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0170",
+      "sha256": "eb4cf8eb418f4527c2a22f8e203b8ca4e15cb9a13042534e141bc030c7ac8aff"
+    },
+    {
+      "section": "成都右衛",
+      "text": "〔注文〕在府治西三里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0171",
+      "sha256": "4578de1b0865d9499ad491b92d00c888ee517a037ef30a5311a9df64c4437c15"
+    },
+    {
+      "section": "成都中衛",
+      "text": "〔注文〕在府治西七里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0172",
+      "sha256": "fcfbd65a76ce941b27eac806892e74311c16ac6f064e83306bebd7f2acf18b69"
+    },
+    {
+      "section": "成都前衛",
+      "text": "〔注文〕在府治南六里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0173",
+      "sha256": "cc54e68f912deb05094bb08bdcf5b20ad8c6f4499c4e9662cf2d25dc9527a749"
+    },
+    {
+      "section": "成都後衛",
+      "text": "〔注文〕在府治東五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0174",
+      "sha256": "f1990b2f5b7f18be869e9dbef572ffae35b67d458f19a47a1f2de5823b9e6e38"
+    },
+    {
+      "section": "寧川衛",
+      "text": "〔注文〕在府治東四里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0175",
+      "sha256": "50ac30733ad2530d71da0d4db80dd8dc9956d935b49506f5df4131f203097fbf"
+    },
+    {
+      "section": "成都左護衛",
+      "text": "〔注文〕在府治南七里〔/注文〕\n隴木頭長官司　静州長官司　岳希蓬長官司",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0176",
+      "sha256": "a4aa456872d566fecdc25e8eb3d7b49c1a236044235ee2e4ad8651c39094e4c3"
+    },
+    {
+      "section": "龍安府",
+      "text": "平武縣　石泉縣　江油縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0177",
+      "sha256": "3faaef96ce331b7ec153bc7a1248d06e6d111cb183ba535676e295c7caaa8514"
+    },
+    {
+      "section": "順慶府",
+      "text": "南充縣　西充縣\n蓬　州\n營山縣　儀隴縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0178",
+      "sha256": "7758b9a0c9244367f752b429445acf6841e0a49245c759d7aad414986a2759b1"
+    },
+    {
+      "section": "廣安州",
+      "text": "大竹縣　岳池縣　渠　縣　隣水縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0179",
+      "sha256": "a468a045efc8094653a358f101b85be454b0f4416c0c5a5bc00cc5c80808cb9a"
+    },
+    {
+      "section": "保寧府",
+      "text": "閬中縣　蒼溪縣　南部縣　廣元縣　昭化縣\n巴　州\n通江縣　南江縣\n劒　州\n梓潼縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0180",
+      "sha256": "8f7805a69163db4bf1cfb7c4007fd694fd61597a1bbcd924a99b46976774bdbb"
+    },
+    {
+      "section": "重慶府",
+      "text": "巴　縣　江津縣　長夀縣　大足縣　永川縣榮昌縣　綦江縣　南川縣　安居縣　壁山縣黔江縣\n合　州\n銅梁縣　定逺縣\n忠　州\n酆都縣　墊江縣\n涪　州\n武隆縣　彭水縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0181",
+      "sha256": "5eb73607ce0a56001cd830515801fa20b442b7710bb85f599a1f9b31341be019"
+    },
+    {
+      "section": "石柱宣撫司",
+      "text": "酉陽宣撫司\n石耶洞長官司　　邑梅洞長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0182",
+      "sha256": "a8ca0c20ddb7abd5c34ce965964ffea05486f5d9da0202391d277d5848f67a17"
+    },
+    {
+      "section": "䕫州府",
+      "text": "奉節縣　巫山縣　雲陽縣　太寧縣　梁山縣萬　縣　開　縣　新寧縣　建始縣　大昌縣\n逹　州\n東鄉縣　太平縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0183",
+      "sha256": "917989aad505613a22a73a214a856a675d61a6c8fb220f9fcefb5dee98ca8dfa"
+    },
+    {
+      "section": "叙州府",
+      "text": "宜賔縣　慶符縣　富順縣　長寧縣　筠連縣珙　縣　髙　縣　興文縣　南溪縣　隆昌縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0184",
+      "sha256": "d4d735571678a7b1766b182f5f3205e1acd82c9f50d028e7274118aeb589aefc"
+    },
+    {
+      "section": "馬湖府",
+      "text": "屏山縣\n泥溪長官司　平蠻長官司　蠻夷長官司沐川長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0185",
+      "sha256": "db8ac65d18d38f8810af1e880f1e62a5509e92eadcde83a905651f1f5def9a6e"
+    },
+    {
+      "section": "遵義府",
+      "text": "遵義縣　桐梓縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0186",
+      "sha256": "8cd0e58801c256ccec6e5f5238239706d04299d76c51d069348b621109883857"
+    },
+    {
+      "section": "真安州",
+      "text": "綏陽縣　仁懐縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0187",
+      "sha256": "e74c824700f6992e5ea3ab104dbfe6a37a8aef23b560fa795b83a2fe9741c8fc"
+    },
+    {
+      "section": "艸塘守禦千户所",
+      "text": "鎮雄軍民府\n歸化長官司　懐徳長官司　威信長官司安静長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0188",
+      "sha256": "6a024aef2fdd6185502969ca24d3aeb79f2272605be1bd87fd921d1f04094bf1"
+    },
+    {
+      "section": "烏撒軍民府",
+      "text": "七星闗守禦千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0189",
+      "sha256": "6468959367b0afea0173c0b80b0c64c978dfed9684a8b5ed2da119a248cf4e01"
+    },
+    {
+      "section": "東川軍民府",
+      "text": "烏𫎇軍民府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0190",
+      "sha256": "c41b51425adeafdf0e68779a3c5e802a2e10827edd38726d9e175c1039f3b255"
+    },
+    {
+      "section": "潼川州",
+      "text": "射洪縣　〔字形SK3388：未编码〕亭縣　中江縣　遂寧縣　安岳縣蓬溪縣　樂至縣\n瀘　州\n江安縣　合江縣　納谿縣\n卭　州\n大邑縣　蒲江縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0191",
+      "sha256": "4087e51c6921dbcfa5b872dc86e18da9a308bfb235b3fb1e44f01f88caa7c6fd"
+    },
+    {
+      "section": "嘉定州",
+      "text": "峨睂縣　洪雅縣　夹江縣　犍為縣　榮　縣威逺縣\n睂　州\n彭山縣　丹〔字形SK3445：未编码〕縣　青神縣\n雅　州\n名山縣　榮經縣　蘆山縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0192",
+      "sha256": "c97459c200374aeb7edbfba31e55464869cf19e625b1bb2c3cebe692764c831b"
+    },
+    {
+      "section": "永寧宣撫司",
+      "text": "九姓長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0193",
+      "sha256": "cf93fb1b21cf6203d09973a7835d486883f5ee7ccad392a08c5a871e5a6995ba"
+    },
+    {
+      "section": "永寧衛",
+      "text": "阿落宻千户所〔注文〕在衛南四十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0194",
+      "sha256": "3ff8c3263975e0a69a0d068e9a365b9e0626337e3a47486bed0d64ae5dd6b961"
+    },
+    {
+      "section": "赤水衛",
+      "text": "〔注文〕在司東南一百四十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0195",
+      "sha256": "5e05afc6a2167cc8f5167d8a63bf6e4b51a24daccc14355c349645bbc35ffb21"
+    },
+    {
+      "section": "前千户所",
+      "text": "〔注文〕在衛南一百里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0196",
+      "sha256": "e050ba90e9664c8b3069104cb3c79e2a39e1d77d4da22e80dc9e97375df7c119"
+    },
+    {
+      "section": "摩尼千户所",
+      "text": "〔注文〕在衛北四十五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0197",
+      "sha256": "8b609f16c6516378b22b167892094d09458088eeaa631edb3049bbcf2ae1339f"
+    },
+    {
+      "section": "白撒千户所",
+      "text": "〔注文〕在衛東七十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0198",
+      "sha256": "2220077258a3fb315de7365692b08c850e6c1ac9c498634dfbe764e1402a2899"
+    },
+    {
+      "section": "普巾守禦千户所",
+      "text": "〔注文〕在九姓司東一百四十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0199",
+      "sha256": "521c2f4f5981194a71519368ecba0e8baa21f0e39200d482e019a3bdc94f663c"
+    },
+    {
+      "section": "思曩日安撫司",
+      "text": "青川守禦千户所〔注文〕在司東一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0200",
+      "sha256": "5b118b3d5809f277277ced5d2cb00d3dc00622891ad0ba3546d08120227fab86"
+    },
+    {
+      "section": "天全六畨招討使司",
+      "text": "黎州安撫司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0201",
+      "sha256": "8d1bb70ed9db66013524ed2295fdaf0d07578787741e35a895418d3c37d25803"
+    },
+    {
+      "section": "大渡河守禦千户所",
+      "text": "平茶洞長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0202",
+      "sha256": "b672992425abe543d7848da724771962adedef8b7cf514923c13705752f0e98f"
+    },
+    {
+      "section": "太平長官司",
+      "text": "松潘衛軍民指揮使司\n占蔵先結簇長官司　　蠟匝簇長官司\n白馬路簇長官司　　　山洞簇長官司\n阿昔洞簇長官司　　　北㝎簇長官司\n麥匝簇長官司　　　　者多簇長官司\n牟刀結簇長官司　　　班班簇長官司\n祈命簇長官司　　　　勒都簇長官司\n包藏簇長官司　　　　阿昔簇長官司\n思曩兒簇長官司　　　阿用簇長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0203",
+      "sha256": "b4ea253ed4f7206b8f836b2784f7e83d3c10aaca92f54734fca8f008382dcbb9"
+    },
+    {
+      "section": "潘幹寨長官司",
+      "text": "小河守禦千戶所\n八郎安撫司　　　　　阿角寨安撫司\n麻兒匝安撫司　　　　芒兒者安撫司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0204",
+      "sha256": "5fe3cf08d3f0cc1f63f4b866e7e2f8b875caa315c43879cf5dee085ae6f7d20a"
+    },
+    {
+      "section": "疊溪守禦千户所",
+      "text": "疊溪長官司　　　　　鬱郎長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0205",
+      "sha256": "dfed76009a6afaaa9a02a7e37be892f8d30f7fbfc2f7d3bb674ad613285e671d"
+    },
+    {
+      "section": "四川行都指揮使司",
+      "text": "建昌衛軍民指揮使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0206",
+      "sha256": "ccba5f69d533eaf4201a6c828a42c7883315bdffc1de27b4a8fa93a9784ca188"
+    },
+    {
+      "section": "建昌前衛",
+      "text": "寧畨衛軍民指揮使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0207",
+      "sha256": "25f8fdc5a039dbb56fdfe5fbc8cd10fce6195d932698464b91d3f503a80e1d51"
+    },
+    {
+      "section": "越嶲衛軍民指揮使司",
+      "text": "塩井衛軍民指揮使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0208",
+      "sha256": "ad9a847ee1526ea5423a66c34f546546ed0e121b30d3e166326952eef5ba18a4"
+    },
+    {
+      "section": "㑹川衛軍民指揮使司",
+      "text": "禮州守禦後千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0209",
+      "sha256": "52ce46212a5724f15c38e1e7a5227e75ec124b9be19a8666ff64480a213c6528"
+    },
+    {
+      "section": "禮州守禦中中千戶所",
+      "text": "打冲河守禦中前千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0210",
+      "sha256": "49bdb979cbff32774f2bb21f42cf58421733cd69715fdb099fd0010a0a546ba1"
+    },
+    {
+      "section": "打冲河守禦中左千户所",
+      "text": "冕山橋守禦千户所",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0211",
+      "sha256": "34bb02d52cb0f50fa49ed0e5e4c54be8cf78b73379339da88b1cb9f5b8444bdf"
+    },
+    {
+      "section": "徳昌守禦千户所",
+      "text": "迷易守禦千戸所\n昌州長官司　威龍長官司　普濟長官司馬刺長官司　卭部長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0212",
+      "sha256": "bed00251a823cdbf05357b61b24640cd3fd46224b8b3de4962b42e43ab6776ef"
+    },
+    {
+      "section": "雲南省",
+      "text": "雲南府\n昆明縣　富民縣　宜良縣\n嵩明州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0213",
+      "sha256": "95e946a393ec9e0b964ad0812a9f34cc760184d6b8d8382ce70e6e427e4b3b27"
+    },
+    {
+      "section": "晉寧州",
+      "text": "呈貢縣　歸化縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0214",
+      "sha256": "3c72ad286806e7fed92d6a191dfe4f8e57627dd7076d85cc55f56e8f59f77df8"
+    },
+    {
+      "section": "安寧州",
+      "text": "羅次縣　禄豐縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0215",
+      "sha256": "6b7352baca11f045688248c4ef421b36cd5656c2125147199e91f946a258a5de"
+    },
+    {
+      "section": "昆陽州",
+      "text": "三泊縣　易門縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0216",
+      "sha256": "66e0944c58c9d9749a380f90cd19579304fb9144dbb12221ec3c7a3233cf92cf"
+    },
+    {
+      "section": "易門守禦千户所",
+      "text": "〔注文〕在縣南三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0217",
+      "sha256": "2f29a7f0869090ed5169408b8db88b2b8674ff9512f3db5cb63c7c1a02324846"
+    },
+    {
+      "section": "楊家堡守禦千户所",
+      "text": "〔注文〕在縣東五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0218",
+      "sha256": "b679b24f31438adefb5c0a2c2e581b60aa70f751109db06d649043179e4070cc"
+    },
+    {
+      "section": "大理府",
+      "text": "太和縣\n趙　州\n雲南縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0219",
+      "sha256": "e6c019dcc76b8a5909f342a3815479cafb775c3a9037b3d18def8fd05ce7821c"
+    },
+    {
+      "section": "鄧川州",
+      "text": "浪穹縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0220",
+      "sha256": "835a1e75d58284a3fa4be6a5dcb384b19b6d41835a666204e5c5028be6ba03b5"
+    },
+    {
+      "section": "賔川州",
+      "text": "雲龍州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0221",
+      "sha256": "9d4e9267b49ddeed17a9504a8585cdedd1694ccb430e95eb4d10da3e2a9d383c"
+    },
+    {
+      "section": "十二關長官司",
+      "text": "臨安府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0222",
+      "sha256": "ab5c699c01241c7a9ecaa003f201cc00ad7ea6ecd0a4ab212c249919fa91b88c"
+    },
+    {
+      "section": "建水州",
+      "text": "石屏州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0223",
+      "sha256": "00e989d1a8d1f4063c90ed19f9f6ab21baba60d7f548dc68802fbd1e54f48857"
+    },
+    {
+      "section": "阿迷州",
+      "text": "納樓茶甸長官司　　　教化三部長官司\n溪處甸長官司　　　　左〔字形SK3112：未编码〕寨長官司\n王弄山長官司　　　　〔字形SK3623：⿰虗亏 -- 虧〕容甸長官司\n思陀甸長官司　　　　落恐甸長官司\n寧　州\n通海縣　河西縣　嶍峨縣　𫎇自縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0224",
+      "sha256": "890fb6e0a149db60bdac57584520d52b5db73a333ee72fe0a56ab59c6c48e125"
+    },
+    {
+      "section": "安南長官司",
+      "text": "楚雄府\n椘雄縣　定逺縣　定邉縣　廣通縣　〔字形SK392：未编码〕嘉縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0225",
+      "sha256": "9bc2acc13860230e2bf13969b24494aa9a921862db737698cadf7f282b4ea512"
+    },
+    {
+      "section": "南安州",
+      "text": "鎮南州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0226",
+      "sha256": "3958ea7935e3a914b1949bf0efe1b931660bf1a9dc81ed4a57cba75bc581d0a7"
+    },
+    {
+      "section": "定逺守禦千户所",
+      "text": "澂江府\n河陽縣　江川縣　陽宗縣\n新興州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0227",
+      "sha256": "f3b32c066a67df0f139c8b96b2d1e561e19097d90dfa3952845b560a274141b9"
+    },
+    {
+      "section": "路南州",
+      "text": "景東府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0228",
+      "sha256": "e16ba1269cf466eeb42d9ecc0d5ea898250792d711540192e1e4bc14cdc436bf"
+    },
+    {
+      "section": "廣南府",
+      "text": "富　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0229",
+      "sha256": "f60577392281cc148f9516a797e3081e86fb62297a980fa8454e5fd007b3b882"
+    },
+    {
+      "section": "廣西府",
+      "text": "師宗州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0230",
+      "sha256": "cdd052d245d3de2b1f934a41e9c7d8e5710bb598bd9bb944e48a280594a57a0e"
+    },
+    {
+      "section": "彌勒州",
+      "text": "維摩州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0231",
+      "sha256": "e6916d719ee00db0b31343dc4cc236c13efbcda8aadc1f12d6f874e8d00b3e33"
+    },
+    {
+      "section": "鎮沅府",
+      "text": "禄谷寨長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0232",
+      "sha256": "1dc4668c1cbfde0008fbcb6da2930880cf131eb8757bac5e173c2d74a486c786"
+    },
+    {
+      "section": "永寧府",
+      "text": "刺次和長官司　瓦魯之長官司　革甸長官司香羅長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0233",
+      "sha256": "3a93afc476af8fa571a4bd3e8dd4896a15b907b20202d889646a0b9b31a8491d"
+    },
+    {
+      "section": "順寧府",
+      "text": "曲靖軍民府\n南寧縣　亦佐縣\n霑益州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0234",
+      "sha256": "b90be18377da128c3ee76b1eff4a3d19b47be0361419cc89730bafcbb86987aa"
+    },
+    {
+      "section": "陸凉州",
+      "text": "馬龍州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0235",
+      "sha256": "67616ab2c82acd52ab042c3039393ab0f65b7449df2a8f890b04a9766f75f901"
+    },
+    {
+      "section": "羅平州",
+      "text": "平夷衛〔注文〕在霑益州南一百三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0236",
+      "sha256": "9c3c05594ba50bcccbfc6a8c2d8e43c98d6bac923e4cc1fd7efb48e7040ef53c"
+    },
+    {
+      "section": "越州衛",
+      "text": "〔注文〕在霑益州東南一百六十里〔/注文〕\n陸〔字形SK2687：未编码〕衛〔注文〕在府西南二十五里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0237",
+      "sha256": "b5e1e40dfbd714743ef67f405fad9d3a69f2b3196504c5b711fd03c6d55e5b5f"
+    },
+    {
+      "section": "姚安軍民府",
+      "text": "太姚縣\n姚　州\n〔字形SK2875：未编码〕慶軍民府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0238",
+      "sha256": "5507b488fac29728511b9a8344bc52fa9e210d3c76d187e7b970a742f9ea4b68"
+    },
+    {
+      "section": "劍川州",
+      "text": "順　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0239",
+      "sha256": "90f2b9bead862be605ed21341a0b7865adf693f63aacc5939d203e67b50ce945"
+    },
+    {
+      "section": "武定軍民府",
+      "text": "和曲州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0240",
+      "sha256": "d7f3f67d6d0cc33cc485babf6c871e547945b228b7d7dd32a14fb216d1d138cc"
+    },
+    {
+      "section": "元謀縣",
+      "text": "禄勸州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0241",
+      "sha256": "1f819217bbf5ee53ece04c29987d005c5cc9bcced0e71ef9f556e027de573ffa"
+    },
+    {
+      "section": "尋甸軍民府",
+      "text": "木宻闗守禦千户所〔注文〕在東南七十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0242",
+      "sha256": "b15595139bbcd0afe6097173ed58e6abd3ad08da17e82cc6ba1f21095ecacff0"
+    },
+    {
+      "section": "元江軍民府",
+      "text": "因逺羅必甸長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0243",
+      "sha256": "347d5c9f22b79517668f19e220e3916b3d080707b50eb684acbb1aa19e7ac5f9"
+    },
+    {
+      "section": "麗江軍民府",
+      "text": "通安州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0244",
+      "sha256": "bddc1385f236aa87c93ca57cea0c3fe45f3f037ece16bfa438d5ad23be47eaed"
+    },
+    {
+      "section": "寳山州",
+      "text": "蘭　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0245",
+      "sha256": "7eec41eb53a1cf8846642933106513a223c5c582ec91cff56dbb65d77223296b"
+    },
+    {
+      "section": "巨津州",
+      "text": "永昌軍民府\n保山縣　永平縣\n騰越州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0246",
+      "sha256": "dcd20c9de7f166a3399c0f53936e8486261089bbd8e284025331481445e58ba9"
+    },
+    {
+      "section": "騰衝州",
+      "text": "潞江安撫司\n鳯溪長官司　　施甸長官司\n𫎇化府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0247",
+      "sha256": "b44c1982b6c9a090d6b810856971c91487c00b3ea2791aad1a09cccc603384df"
+    },
+    {
+      "section": "騰衝衝軍民指揮使司",
+      "text": "新化州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0248",
+      "sha256": "0345a4dcdc95ddc5d3f2118201d7dee0aadc3325dbf1dc0faab4839f3d731ed3"
+    },
+    {
+      "section": "新平縣",
+      "text": "北勝州\n雲　州\n車里軍民宣慰使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0249",
+      "sha256": "ddec43d7b89f424ddc3a4c91e2b8e2914af5dc5826563c6e2146df310a920fbf"
+    },
+    {
+      "section": "緬甸軍民宣慰使司",
+      "text": "孟定府",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0250",
+      "sha256": "7db2dec71e2485005adfecda59e1df5fe156c26f7b2ebed4e6108a3ae62775e8"
+    },
+    {
+      "section": "孟艮府",
+      "text": "南甸宣撫司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0251",
+      "sha256": "b45e8a83088d01c5acab6aac40009f8a9ca5120a498c5cff53b95a93d34f770a"
+    },
+    {
+      "section": "干崖宣撫司",
+      "text": "隴川宣撫司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0252",
+      "sha256": "d91cfcd1afda85a033fc4aadcb4243be27b0dddc1a9783e01c3cea847b425f00"
+    },
+    {
+      "section": "威逺州",
+      "text": "灣甸州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0253",
+      "sha256": "e5c84bed65b9dc4d2d1ebc7140fdadd7324d26a054045be0a899e04f413f9e9d"
+    },
+    {
+      "section": "孟密安撫司",
+      "text": "鎮康縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0254",
+      "sha256": "10ac853bc08fa647c2ee2c52f7ae9c3e571027284b2fc71f54c19ff0e9ff4dcd"
+    },
+    {
+      "section": "大矦州",
+      "text": "鈕元長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0255",
+      "sha256": "971b5d6b1b405fd2cc979416501f29f68981b06c1ca115cd93ba0f835d8beb75"
+    },
+    {
+      "section": "木邦軍民宣慰使司",
+      "text": "孟養軍民宣慰使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0256",
+      "sha256": "001533c489e3a7c47428fe229841b665769bbe3d359064e32de501ea06223eed"
+    },
+    {
+      "section": "老撾軍民宣慰使司",
+      "text": "大古刺軍民宣慰使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0257",
+      "sha256": "de3f6677410c72cabcf8c5522d5f90ea3753a9853f1b7114a36f8128603bdfb7"
+    },
+    {
+      "section": "八百大甸軍民宣慰使司",
+      "text": "麓川平緬軍民宣慰使司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0258",
+      "sha256": "00c32e24b19c535cd690ea9a31ab70663e89c7d3f98db2d81fd26b45b1d05138"
+    },
+    {
+      "section": "底馬撒軍民宣慰使司",
+      "text": "孟連長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0259",
+      "sha256": "2031e12d96bb79be472045d54ade74b917322789ebe506cfe8ab3fc565aaa231"
+    },
+    {
+      "section": "茶山長官司",
+      "text": "麻里長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0260",
+      "sha256": "f12e32ec35ef68b6bc36912dafa70f8413e71ed3f5abcf49ab938e32a4e9da10"
+    },
+    {
+      "section": "芒市長官司",
+      "text": "者樂甸長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0261",
+      "sha256": "054a7b28a28444ac88cb1151144c7ca501d0a0719a2007f1806ea71e6f3adc66"
+    },
+    {
+      "section": "瀾滄衛軍民指揮使司",
+      "text": "蒗蕖州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0262",
+      "sha256": "7e2fc0bf629335abae7e5fff9135e95161b6486511a2fdf1fdb9c3bc48cb374d"
+    },
+    {
+      "section": "貴州省",
+      "text": "貴陽府\n新貴縣　貴定縣\n貴竹長官司　　　　　水東長官司\n中曹長官司　　　　　程番長官司\n韋畨長官司　　　　　方番長官司\n洪畨長官司　　　　　卧龍番長官司\n金石番長官司　　　　小龍番長官司\n羅番長官司　　　　　大龍番長官司\n小程番長官司　　　　上馬橋長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0263",
+      "sha256": "b2f53876c8fe0269aa81f01ef74458a84ffa1a715e88ec007d69e910d05cd687"
+    },
+    {
+      "section": "盧番長官司",
+      "text": "貴州宣慰使司\n青山長官司　　　　　劄佐長官司\n龍里長官司　　　　　白納長官司\n㡳寨長官司　　　　　乖西長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0264",
+      "sha256": "aec5f3058a59a5337af1435ced365eb4645da018a9879d18e258970f902e7da1"
+    },
+    {
+      "section": "養龍長官司",
+      "text": "金筑安撫司\n木𤓰長官司　　　　　盧山長官司\n麻嚮長官司　　　　　太華長官司",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0265",
+      "sha256": "e270895aa894e6766560d60707739ed510579ad96abe5887b0a4980b31580246"
+    },
+    {
+      "section": "申宫觜參晉分野",
+      "text": "觜参在申自畢六度至井七度屬晉分井州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0266",
+      "sha256": "a2c4b38ef5d865446e06b45ec91c784320da94b26e25534b2e31da193ee44525"
+    },
+    {
+      "section": "山西省",
+      "text": "太原府\n陽曲縣　太原縣　榆次縣　大谷縣　清源縣祁　縣　徐溝縣　交城縣　文水縣　夀陽縣盂　縣　静樂縣　河曲縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0267",
+      "sha256": "8bb048643e2f0ffa27add5d69118f9da9c32bf7ab6e46ba0ab001d75247c8066"
+    },
+    {
+      "section": "平定州",
+      "text": "樂平縣\n忻　州\n定襄縣\n代　州\n五臺縣　繁峙縣　崞　縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0268",
+      "sha256": "c4d6677fc98a0d1bf768f03454d4c33acc7df3d99c791262358adc93bcfd2e80"
+    },
+    {
+      "section": "保徳州",
+      "text": "岢嵐州\n嵐　縣　興　縣\n寧化守禦千户所〔注文〕在静樂縣北一百八十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0269",
+      "sha256": "afc1abe42de5ed0bb3ce05dd595557a73c620866af389b16a937d18fa8e84a27"
+    },
+    {
+      "section": "寧武守禦千户所",
+      "text": "鴈門闗守禦千户所〔注文〕在代州北三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0270",
+      "sha256": "52da4be168bed233fca2a1440cad1554d6a7869fc4d3fbc2fcbddf04b44e9a3f"
+    },
+    {
+      "section": "偏頭闗守禦千户所",
+      "text": "平陽府\n臨汾縣　襄〔字形SK3809：未编码〕縣　洪洞縣　浮山縣　岳陽縣趙城縣　太平縣　曲沃縣　翼城縣　蒲　縣汾西縣\n蒲　州\n臨晋縣　榮河縣　猗氏縣　萬泉縣　河津縣\n解　州\n安邑縣　夏　縣　聞喜縣　平陸縣　芮城縣\n綘　州\n稷山縣　綘　縣　垣曲縣\n霍　州\n吉　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0271",
+      "sha256": "8b0d3f54e4f6d4ee2d11731236b362f1928bd3e2c945c47da06b2db790f5b61d"
+    },
+    {
+      "section": "鄉寧縣",
+      "text": "隰　州\n太寧縣　永和縣　石樓縣\n潞安府\n長治縣　長子縣　襄垣縣　屯留縣　潞城縣壺闗縣　平順縣　黎城縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0272",
+      "sha256": "ea1e9727c8cc5934c3578d53cd4b072c9e030a4a5376db06204d8ec4e2be8e78"
+    },
+    {
+      "section": "汾州府",
+      "text": "汾陽縣　孝義縣　平遥縣　介休縣　靈石縣臨　縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0273",
+      "sha256": "1856a6c2e0fbcdc4a242637d4bc5ace24e54d2d8c3485e21b8f5a6345b4a6077"
+    },
+    {
+      "section": "永寧州",
+      "text": "寧鄉縣\n沁　州\n沁源縣　武鄉縣\n澤　州\n髙平縣　陽城縣　沁水縣　〔字形SK3809：未编码〕川縣\n遼　州\n和順縣　榆社縣\n酉宫胃〔字形SK3100：未编码〕畢趙分野\n胃〔字形SK3100：未编码〕畢在酉自胃三度至畢六度屬趙分冀州\n北直𨽻",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0274",
+      "sha256": "5fffd147f2a6ef43d640f51cac36be4fe0e25a6d07487a5688655c65a70d4551"
+    },
+    {
+      "section": "真定府",
+      "text": "真定縣　井陘縣　獲鹿縣　元氏縣　靈夀縣藳城縣　欒城縣　無極縣　平山縣　阜平縣\n定　州\n新樂縣　曲陽縣　行唐縣\n冀　州\n南宫縣　新河縣　棗強縣　武邑縣\n晉　州\n安平縣　饒陽縣　武強縣\n趙　州\n柏鄉縣　隆平縣　髙邑縣　臨城縣　賛皇縣寧晉縣\n深　州\n衡水縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0275",
+      "sha256": "c6e69589c14ffecf1bf80dd907bfd2cb8f1053f7137d70a77c95c99a1e8d9e22"
+    },
+    {
+      "section": "守禦倒馬闗中千户所",
+      "text": "〔注文〕在定州西倒馬闗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0276",
+      "sha256": "e4f07cda7c5b126127316f331dd71ee31bf5c46e67282528620d238b773a7916"
+    },
+    {
+      "section": "神武右衛",
+      "text": "〔注文〕在府東北〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0277",
+      "sha256": "d39b7b8bedd53ed8c7af84992409497c1d38220f51e74149812fb48784b7858c"
+    },
+    {
+      "section": "順徳府",
+      "text": "邢臺縣　沙河縣　南和縣　平鄉縣　廣宗縣鉅鹿縣　唐山縣　内丘縣　任　縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0278",
+      "sha256": "cf727ef4115f4b8b10033e52fe55cc754c0d53b5e1e375e83fa77fdf0f161cdf"
+    },
+    {
+      "section": "廣平府",
+      "text": "永年縣　曲周縣　〔字形SK3106：未编码〕鄉縣　雞澤縣　廣平縣邯鄲縣　成安縣　威　縣　清河縣\n祁　州〔注文〕屬保定府〔/注文〕\n深澤縣　束鹿縣\n山西省",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0279",
+      "sha256": "932c8a9c8ec8487545f8d7ffc66057548cf20fc11d6d236b8d4510e6fa87f5f8"
+    },
+    {
+      "section": "大同府",
+      "text": "大同縣　懐仁縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0280",
+      "sha256": "7dee700075ee3390f18b1a5a9ff0aaa62ed7ca2230e984d404bb7ddc06fbfa8d"
+    },
+    {
+      "section": "渾源州",
+      "text": "應　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0281",
+      "sha256": "de365c7636d793681b35c608ea813820f2b318ed378943dd3ae98475184075ef"
+    },
+    {
+      "section": "山隂縣",
+      "text": "朔　州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0282",
+      "sha256": "018c496880f3431f1c2ffe276c9b99819a092cdb55704acdfb5e7488b99e3cec"
+    },
+    {
+      "section": "馬邑縣",
+      "text": "蔚　州\n廣昌縣　靈丘縣　廣靈縣\n大同左衛〔注文〕在府西南一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0283",
+      "sha256": "a5349cfe8083f2bd53e9247e099f6ebf53b6c5ad18f9bf84bfe4cdc1c9ac8e06"
+    },
+    {
+      "section": "雲川衛",
+      "text": "〔注文〕在府西南一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0284",
+      "sha256": "c90606430a62db58b7a52203f7aa2a08c1656ff752c8ad793ff35516cb13c08f"
+    },
+    {
+      "section": "大同右衛",
+      "text": "〔注文〕在府西南一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0285",
+      "sha256": "c90606430a62db58b7a52203f7aa2a08c1656ff752c8ad793ff35516cb13c08f"
+    },
+    {
+      "section": "玉林衛",
+      "text": "〔注文〕在府西北一百一十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0286",
+      "sha256": "8b2d65c28d9b957772d2a36f02e0355e718207cc2fccecb3d5b280c6adbcf413"
+    },
+    {
+      "section": "陽和衛",
+      "text": "〔注文〕在府東北一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0287",
+      "sha256": "f96273212393f67cfece4a2e0c2e10457e8ed7570c75ecdc617ee02e612f7294"
+    },
+    {
+      "section": "髙山衛",
+      "text": "〔注文〕在府東北一百二十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0288",
+      "sha256": "f96273212393f67cfece4a2e0c2e10457e8ed7570c75ecdc617ee02e612f7294"
+    },
+    {
+      "section": "鎮虜衛",
+      "text": "〔注文〕在府東北一百八十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0289",
+      "sha256": "03d5ed842260e133ad28c3d1111bc458d6db55b4de67548cc9d64058204ef046"
+    },
+    {
+      "section": "天城衛",
+      "text": "〔注文〕在府東北一百八十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0290",
+      "sha256": "03d5ed842260e133ad28c3d1111bc458d6db55b4de67548cc9d64058204ef046"
+    },
+    {
+      "section": "威逺衛",
+      "text": "〔注文〕在府東一百三十里〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0291",
+      "sha256": "e9f9df53802f9676c061ceb3a2fdd65d000ecc55bd73d90998a217a53783467b"
+    },
+    {
+      "section": "河南省",
+      "text": "磁　州〔注文〕屬彰德府〔/注文〕\n武安縣　渉　縣\n山東省\n恩　縣〔注文〕屬髙唐州〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0292",
+      "sha256": "71615105bd200d46d8e1f5c58144ea7a51205f6568b0022745f6f823c11124f7"
+    },
+    {
+      "section": "戌宫奎婁魯分野",
+      "text": "奎婁在戍自奎一度至胃二度屬魯分兗州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0293",
+      "sha256": "6ee87da272505e831d8c9a9da10d49b45179936080a96b2dc6baad7ad9258771"
+    },
+    {
+      "section": "山東省",
+      "text": "兗州府\n滋陽縣　曲阜縣　寧陽縣　鄒　縣　泗水縣滕　縣　嶧　縣\n沂　州\n郯城縣　費　縣\n安邱縣　諸城縣　𫎇隂縣〔注文〕屬青州府〔/注文〕\n莒　州\n沂水縣　日照縣\n南直𨽻\n懐逺縣　五河縣　虹　縣〔注文〕屬鳯陽府〔/注文〕\n泗　州\n清河縣　桃源縣　沭陽縣〔注文〕屬淮安府〔/注文〕\n海　州\n贛榆縣\n邳　州\n宿遷縣　睢寧縣〔注文〕已上俱屬淮安府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0294",
+      "sha256": "7bae8deccdc4016dbc6988c24def365bee9b321a2a9092a310504f4564996d66"
+    },
+    {
+      "section": "亥宫室壁衞分野",
+      "text": "室壁在亥自危十二度至奎初度屬衛分河北",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0295",
+      "sha256": "f195e36b4e350b7d5900b4a7caa65da756358d0d9b4bb6db5c2b862ac25f3bbf"
+    },
+    {
+      "section": "河南省",
+      "text": "衛輝府\n汲　縣　胙城縣　新鄉縣　獲嘉縣　淇　縣輝　縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0296",
+      "sha256": "bb79b83e3d95b238bdf5371061757fa17049d6561a21e9cf9669e6a30a893e30"
+    },
+    {
+      "section": "彰徳府",
+      "text": "安陽縣　湯隂縣　臨漳縣　林　縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0297",
+      "sha256": "3cf0c70d14ced0ecc52d0858f0325d43d5c8a200dad6bd3740bd04a867abe66e"
+    },
+    {
+      "section": "懐慶府",
+      "text": "河内縣　修武縣　武陟縣\n北直𨽻",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0298",
+      "sha256": "79e1e9e5ed379fc3970cec5a0a91040ec80a01ad862039e595007838a3d5a7fd"
+    },
+    {
+      "section": "大名府",
+      "text": "元城縣　大名縣　魏　縣　清豐縣　南樂縣内黄縣　濬　縣　滑　縣　東明縣\n開　州\n長垣縣",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0299",
+      "sha256": "779845932d331185d08cd0b82b47f329bd83083e3b511c124104509d69df234c"
+    },
+    {
+      "section": "山東省",
+      "text": "東平州\n汶上縣　夀張縣\n濮　州\n范　縣　觀城縣　朝城縣\n臨清州",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0300",
+      "sha256": "72890609f1b83e45e61288227a9b2c53ee834d3e7d4644baf08a218b8f8e61d8"
+    },
+    {
+      "section": "館陶縣",
+      "text": "冠　縣〔注文〕屬東昌府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c012:p0301",
+      "sha256": "ef53e4e810e501c9d5862694c067448df39a15eeeb2cce5aae66520d589fdae0"
+    },
+    {
+      "section": "館陶縣",
+      "text": "六壬大全卷十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c012:p0302",
+      "sha256": "7fa19b982f3abea39f7fcac574348750cbee34adc0177eef660a7278c84c4249"
+    }
+  ]
+}

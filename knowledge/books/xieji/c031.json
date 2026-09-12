@@ -1,0 +1,69 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c031",
+  "title": "卷31",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B731&oldid=787376",
+  "revision": "787376",
+  "source_timestamp": "2016-10-27T11:59:57Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c031.wiki",
+  "raw_sha256": "a1bb7be6bd1d3a231aa5acdf854539efd2460cf6b3ede26091f1d5ecd0adb5d6",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "xieji:c031:p0004",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "xieji:c031:p0005",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷31",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c031:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷三十一",
+      "text": "月表十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c031:p0002",
+      "sha256": "2d7af0e05e1e728da452f3799837ff03ecf977800de900137c4b8f363d19173a"
+    },
+    {
+      "section": "十二月",
+      "text": "小寒十二月節天道西行宜向西行宜修造西方天徳在庚天徳合在乙月徳在庚月徳合在乙月空在甲宜修造取土\n月建在丑月破在未月厭在亥月刑在戌月害在午劫煞在寅災煞在夘月煞在辰忌修造取土\n初九日長星　二十五日短星　小寒後三十日往亡　土王用事後忌修造動土巳午日添母倉\n大寒十二月中日躔在子宫為十二月将宜用癸乙丁辛時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c031:p0003",
+      "sha256": "d03e3f3fdac9dff4ff01d537b95ddfa69970384720fb4738b31c69300514c00f"
+    },
+    {
+      "section": "丁亥屋上土伐開日",
+      "text": "戊子霹〔字形SK3823：未编码〕火制閉日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c031:p0004",
+      "sha256": "2ecb1cbd49e701b0c2da044191fa396f4741bb54bc1ac01e713be3f4177b1903"
+    },
+    {
+      "section": "丁亥屋上土伐開日",
+      "text": "己丑霹〔字形SK3823：未编码〕火専建日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c031:p0005",
+      "sha256": "81acb21491217e04137a1a52aeee64515c4dac2792a55b3d05ffb392eacbc38e"
+    },
+    {
+      "section": "癸亥大海水專開日",
+      "text": "右六十干支從建丑者始小寒終大寒其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c031:p0006",
+      "sha256": "3bf3ed92cfba8cf5945a76868939a180179a312e39ef119cf6b04392cb3df524"
+    }
+  ]
+}

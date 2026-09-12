@@ -24,6 +24,14 @@ _ALIASES.update({ord(k): ord(v) for k, v in {'專': '专', '爲': '为', '尅': 
                                           '補': '补', '護': '护', '洩': '泄', '幹': '干',
                                           '驛': '驿', '馬': '马', '蓋': '盖', '葢': '盖',
                                           '詞': '词', '館': '馆', '貴': '贵', '華': '华'}.items()})
+_ALIASES.update({ord(k): ord(v) for k, v in {'擧': '举', '舉': '举', '試': '试',
+    '業': '业', '遷': '迁', '開': '开', '進': '进', '遊': '游', '隨': '随',
+    '納': '纳', '帳': '帐', '約': '约', '擇': '择', '辦': '办', '觀': '观',
+    '談': '谈', '價': '价', '財': '财', '學': '学', '祿': '禄',
+    '盤': '盘', '儀': '仪', '輔': '辅', '飛': '飞', '臨': '临',
+    '墳': '坟', '靜': '静', '動': '动', '歿': '殁',
+    '將': '将', '權': '权', '顆': '颗', '謁': '谒',
+    '遞': '递', '晝': '昼', '啟': '启', '訣': '诀', '龍': '龙', '絕': '绝'}.items()})
 
 
 def normalized(text: str) -> str:
@@ -196,7 +204,8 @@ def _selected_books(root: Path, book: str | None) -> list[dict]:
 
 def _result(book: dict, chapter: dict, index: int) -> dict:
     passage = chapter['passages'][index]
-    context = chapter['passages'][max(0, index - 1):index + 2]
+    radius = book.get('retrieval_context_radius', 1)
+    context = chapter['passages'][max(0, index - radius):index + radius + 1]
     return {**passage, 'book_id': book['id'], 'book_title': book['title'],
             'edition': book['edition'], 'chapter_id': chapter['chapter_id'],
             'chapter_title': chapter['title'], 'source_url': chapter['source_url'],
@@ -204,6 +213,10 @@ def _result(book: dict, chapter: dict, index: int) -> dict:
             'transcription_status': chapter['transcription_status'],
             'facsimile_status': chapter['facsimile_status'],
             'issues': [issue for issue in chapter.get('issues', []) if issue['passage_id'] == passage['passage_id']],
+            'quality_notes': book.get('quality_notes', []),
+            'chapter_locator': book['id'] + ':' + chapter['chapter_id'],
+            'chapter_passages': len(chapter['passages']),
+            'context_scope': 'neighboring_paragraphs_not_necessarily_all_conditions',
             'context': [{'passage_id': p['passage_id'], 'text': p['text'], 'layer': p['layer']}
                         for p in context],
             'use_limit': '原文查阅；不自动构成个人判断或已满足规则条件'}
@@ -225,6 +238,32 @@ def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict
                     if passage['passage_id'] == passage_id:
                         return _result(book, chapter, i)
     raise ValueError('unknown passage: ' + passage_id)
+
+
+def get_chapter(chapter_id: str, *, offset: int = 0, limit: int = 5,
+                library_root: Path | str | None = None) -> dict:
+    """Page through an entire chapter without silently cutting conditions short."""
+    if len(chapter_id.split(':')) != 2 or type(offset) is not int or offset < 0 or not 1 <= limit <= 20:
+        raise ValueError('chapter id must be book:chapter; offset >= 0; limit 1..20')
+    root = _root(library_root)
+    bid, cid = chapter_id.split(':')
+    for book in _selected_books(root, bid):
+        for entry in book['chapters']:
+            if entry['id'] != cid:
+                continue
+            path = _path(root, entry['path'])
+            if _hash(path) != entry['sha256']:
+                raise ValueError('chapter hash mismatch')
+            chapter = _read(path)
+            count = len(chapter['passages'])
+            if offset >= count:
+                raise ValueError('offset outside chapter')
+            end = min(count, offset + limit)
+            return {'chapter_id': chapter_id, 'total_passages': count, 'offset': offset,
+                    'next_offset': end if end < count else None,
+                    'chapter_complete_in_this_response': offset == 0 and end == count,
+                    'results': [_result(book, chapter, i) for i in range(offset, end)]}
+    raise ValueError('unknown chapter: ' + chapter_id)
 
 
 def search_classics(query: str, book: str | None = None, chapter: str | None = None,
@@ -296,6 +335,7 @@ def main(argv: list[str] | None = None) -> int:
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument('--query')
     mode.add_argument('--passage-id')
+    mode.add_argument('--chapter-id', help='分页读全章及例外，例如 ziping:c032')
     mode.add_argument('--validate', action='store_true')
     mode.add_argument('--list-books', action='store_true')
     mode.add_argument('--witnesses', nargs='?', const='all', metavar='PASSAGE_ID',
@@ -303,6 +343,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--book')
     parser.add_argument('--chapter')
     parser.add_argument('--limit', type=int, default=5)
+    parser.add_argument('--offset', type=int, default=0)
     args = parser.parse_args(argv)
     try:
         result: dict = {'ok': True, 'tool': 'classical_search', 'version': __version__,
@@ -312,10 +353,14 @@ def main(argv: list[str] | None = None) -> int:
         elif args.witnesses:
             result['witnesses'] = get_witnesses(None if args.witnesses == 'all' else args.witnesses)
         elif args.list_books:
-            result['books'] = [{k: b[k] for k in ('id', 'title', 'edition', 'completeness', 'facsimile_status')}
+            result['books'] = [{**{k: b[k] for k in ('id', 'title', 'edition', 'completeness', 'facsimile_status')},
+                                'source_url': b.get('source_url'), 'revision': b.get('revision'),
+                                'quality_notes': b.get('quality_notes', [])}
                                for b in _selected_books(LIBRARY_ROOT, args.book)]
         elif args.passage_id:
             result['results'] = [get_passage(args.passage_id)]
+        elif args.chapter_id:
+            result.update(get_chapter(args.chapter_id, offset=args.offset, limit=args.limit))
         else:
             result['results'] = search_classics(args.query, args.book, args.chapter, args.limit)
         json_print(result)

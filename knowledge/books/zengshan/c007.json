@@ -1,0 +1,95 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c007",
+  "title": "動變章第七",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F7&oldid=2100290",
+  "revision": "2100290",
+  "source_timestamp": "2022-01-19T23:23:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c007.wiki",
+  "raw_sha256": "dd055b46d8752711e5e87d3dfd30dfafa11593172d5afb9796b780a0cba096bc",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "動變章第七",
+      "text": "六爻不動則不變，動則必變，「○」爲陽動則變「⚋」，「ㄨ』』爲陰動則變「⚊」。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0001",
+      "sha256": "22cc7bcd935a7358b72b8fa4d97247df2aa0abeab589f1291caa74b73469809b"
+    },
+    {
+      "section": "動變章第七",
+      "text": "如乾卦初爻動則變爲巽卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0002",
+      "sha256": "88204e8d5f226b20056342920e2a8943034f313f3eb567135ce2a952ef47b2ba"
+    },
+    {
+      "section": "動變章第七",
+      "text": "⚊⚊\n⚊⚊\n○⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0003",
+      "sha256": "81929b3a6b67656c72b856485961403ebde9556a55aa5e07c6f079448d0b10b1"
+    },
+    {
+      "section": "動變章第七",
+      "text": "乾卦上下爻動則變爲坎卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0004",
+      "sha256": "5047cbf77ca8997437f692a876d77901331edb32ce98270b5a2cb22be0b8329d"
+    },
+    {
+      "section": "動變章第七",
+      "text": "○⚋\n⚊⚊\n○⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0005",
+      "sha256": "fe9a5cb10e0f2f32ba7cf1624a91914aee9d1c4e9fee04ad897063929bcf2938"
+    },
+    {
+      "section": "動變章第七",
+      "text": "坤卦中爻動，變爲坎卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0006",
+      "sha256": "24251d0f49f58b38bfa3ec9f195deae5f82e96ae69043b603dd522d6a62592a5"
+    },
+    {
+      "section": "動變章第七",
+      "text": "⚋⚋\nㄨ⚊\n⚋⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0007",
+      "sha256": "acac1f940dc4e075a3ef0aabc0db45df1f1405c530379a2ec20f9d474de5817f"
+    },
+    {
+      "section": "動變章第七",
+      "text": "坤卦中三爻都動變作乾卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0008",
+      "sha256": "993f73093578c74315194ca1a5b69f4d72a2d633216758897aca82c48e0a0007"
+    },
+    {
+      "section": "動變章第七",
+      "text": "如占得水天需卦變天水訟：",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0009",
+      "sha256": "55db66113ccf89fb3185e1b03b42c1e599775000bc2cbb34f9ef2863e1650926"
+    },
+    {
+      "section": "動變章第七",
+      "text": "妻財子水ㄨ　　兄弟戌土⚊\n兄弟戌土⚊　　子孫申金⚊\n子孫申金ㄨ世　父母午火⚊\n兄弟辰土○　　父母午火⚋\n官鬼寅木⚊　　兄弟辰土⚊\n妻財子水○應　官鬼寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0010",
+      "sha256": "e22e94c2bd6f31ad20f57a46fb1d1a1d5ee48333866639c36da32c4c1fd2b3c4"
+    },
+    {
+      "section": "動變章第七",
+      "text": "上三爻坎卦卽是坎在外卦：申金、戌土、子水。四爻申金、五爻戌土、六爻子水，變爲乾卦。卽是乾在外卦：午火、申金、戌土。\n所以申金變出午火，子水變出戌土，申爻不動則不變。變出之爻安六親者仍照正卦而推，餘卦仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c007:p0011",
+      "sha256": "75f474c0b70ff9c1df934650a6d13b409d764abe9daa172062743a54989eec4c"
+    }
+  ]
+}

@@ -1,0 +1,1270 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c010",
+  "title": "卷10",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B710&oldid=787351",
+  "revision": "787351",
+  "source_timestamp": "2016-10-27T11:55:57Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c010.wiki",
+  "raw_sha256": "0774eba5ce8ca40c4e9067c82b63a6808a6c82532efe85f9384f345bbc6b43a9",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "xieji:c010:p0044",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "xieji:c010:p0169",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "xieji:c010:p0170",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷10",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷十",
+      "text": "宜忌\n易傳曰爻彖以情言吉凶以情遷神煞之有宜忌情也有其情即有其力力有相勝則其情隨之而變矣舊厯宜忌多與神煞名義不合且凡吉神所宜之事一遇凶煞則無論輕重而概忌之尤為未當今即其情之愛惡與其力之大小分合考訂然後趨避各當而取舍得宜非惟利用前民亦扶陽抑隂之意也作宜忌\n天德　月德　天德合　月德合",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0002",
+      "sha256": "9540af7889142abf37a1c616242c0cf17ce41cd8bfe60da7d2b970b3160386a2"
+    },
+    {
+      "section": "月空",
+      "text": "天恩",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0003",
+      "sha256": "6bf76cc00410b7f9fcec70716f83a03b72dd7c1e610cf45b21c6b8fb4a2444bc"
+    },
+    {
+      "section": "天赦",
+      "text": "母倉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0004",
+      "sha256": "72262ce7ea46be7ef3b40633dc922c7d14d25a98e81aaa0e36467ba7b24367b2"
+    },
+    {
+      "section": "天願",
+      "text": "月恩　四相　時德\n陽德　隂德\n王日\n官日　守日　相日\n民日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0005",
+      "sha256": "ecbd149392e0c0e16cca83739f0739bb194177ac17fdb2e0bf98a5c29ab33ca0"
+    },
+    {
+      "section": "三合",
+      "text": "臨日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0006",
+      "sha256": "81c0e67406068a10540708f3ada79b6ee9669d4c236f9498c8702fa786fc8915"
+    },
+    {
+      "section": "驛馬",
+      "text": "〔注文〕天后〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0007",
+      "sha256": "99c39466b04e539e8f35d2bb1fff93369c7c49e95c23bbb92141dbe37e59d976"
+    },
+    {
+      "section": "天馬",
+      "text": "建日〔注文〕兵福〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0008",
+      "sha256": "96c40b35a86554c659b3bc7ee0daf2f2966b7304ae0efbf0baea3bb44f72481e"
+    },
+    {
+      "section": "除日",
+      "text": "〔注文〕吉期　兵寶〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0009",
+      "sha256": "6c30c12c5fb3bca4f49cb630efe8d9348c4b1d7b6b9eda3871b6367c37edb0ca"
+    },
+    {
+      "section": "滿日",
+      "text": "〔注文〕天巫　福德〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0010",
+      "sha256": "87ba2465ffe87b5f0de4a95d01d1df570877947cbe20bbf5e3a1b26a219a432a"
+    },
+    {
+      "section": "平日",
+      "text": "定日〔注文〕時隂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0011",
+      "sha256": "08c1e0bbbcdf50e0230e45625c1f59e21bae231fea0f445e8b04500059cfaad6"
+    },
+    {
+      "section": "執日",
+      "text": "破日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0012",
+      "sha256": "6d5f39cbc37c7377a0087495b384e84d9a3818108e1a06d011d7adc030575c2d"
+    },
+    {
+      "section": "危日",
+      "text": "成日〔注文〕天喜　天醫〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0013",
+      "sha256": "a207ba2f972aab8750466f3069ffb0fd7e534a1a0f2421ae299bfa70b82df8d9"
+    },
+    {
+      "section": "收日",
+      "text": "開日〔注文〕時陽　生氣〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0014",
+      "sha256": "57110b85bb43cd2479c9b9e25e8a98db7d130858b7ec7ebf023ffe6dd7258c03"
+    },
+    {
+      "section": "閉日",
+      "text": "兵吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0015",
+      "sha256": "f53461fce56ba165f4afede6e7f9fe9303e23fb81a290fb3307ea55e283663b4"
+    },
+    {
+      "section": "六合",
+      "text": "六儀",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0016",
+      "sha256": "01f0fcf6a7f41aae1f7302781ef072b4fab9837144c16f3184378679cb0abbb7"
+    },
+    {
+      "section": "五富",
+      "text": "天倉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0017",
+      "sha256": "089382190056f17cea02a34b96af803d1c51e188427085b5c01bd1e17d9e9579"
+    },
+    {
+      "section": "不將",
+      "text": "要安　敬安\n玉宇　金堂\n普䕶　福生　聖心\n益後　續世\n解神",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0018",
+      "sha256": "d000e3ee87780262ed6e9d9d03b5db146de4987f33c67363ca18541bb87f96f9"
+    },
+    {
+      "section": "除神",
+      "text": "五合\n寶日　義日　制日\n青龍　明堂　金匱　寶光　玉堂　司命鳴吠",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0019",
+      "sha256": "f363a6d35416a45db3195de0805c5edf3387394a7f5075c1f384c046936da17e"
+    },
+    {
+      "section": "鳴吠對",
+      "text": "亥子日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0020",
+      "sha256": "4c9d7920aa5da095481bee54e121774c3ad4487f8d718ccfdf96990720822e7b"
+    },
+    {
+      "section": "午申日",
+      "text": "〔注文〕以上所宜〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0021",
+      "sha256": "2330e392782264b8c18e5fe5829114efd6f2ad863d7c856f8a7837dc692b58b6"
+    },
+    {
+      "section": "月建",
+      "text": "〔注文〕小時　土府〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0022",
+      "sha256": "cdfa6577b503364cbd8748d14a27a90109197332af18d775aa723b7dbbed7ca1"
+    },
+    {
+      "section": "月破",
+      "text": "〔注文〕大耗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0023",
+      "sha256": "6f072fb941b8baca27d76866660ad95dfc660ea9bf193836cbf2bb578e6fb8c5"
+    },
+    {
+      "section": "平日",
+      "text": "〔注文〕死神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0024",
+      "sha256": "7d900d0f7c74143c1b386eae06ac649490210353e31b3b26774a0c8780ca370c"
+    },
+    {
+      "section": "收日",
+      "text": "滿日〔注文〕天狗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0025",
+      "sha256": "5c79e5285d3373922564b54a82aadd59fb8e880e8989da83d6bd0ce3b760d9f9"
+    },
+    {
+      "section": "閉日",
+      "text": "〔注文〕血支〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0026",
+      "sha256": "0cb9fea39fb26e186245671a67785cc127d9e88c1cb96a27d9331f62ac1d75e7"
+    },
+    {
+      "section": "刼煞",
+      "text": "災煞〔注文〕天火〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0027",
+      "sha256": "477ba962a6e9dd3bd768e4d4d5c0438916ce815f1bf4d17b4f8c27ff7ac54379"
+    },
+    {
+      "section": "月煞",
+      "text": "〔注文〕月虛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0028",
+      "sha256": "228160adcc058ad79155cfe84ad9f33c568f7b186bff52ada1240e8f10dc68dc"
+    },
+    {
+      "section": "月刑",
+      "text": "月害",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0029",
+      "sha256": "2846992044ab2f28e47b7001c5b38ac2933e1792c2bd818542c289a47b416613"
+    },
+    {
+      "section": "月厭",
+      "text": "〔注文〕地火〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0030",
+      "sha256": "993b741b3b10bc83c643800898ac4b3ab484e45d44505ecfb131aef4ad1916fa"
+    },
+    {
+      "section": "厭對",
+      "text": "〔注文〕招摇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0031",
+      "sha256": "36cbbc2f16d017448c12b3740adc25b211afbbed20eab5fe13bbad0905855ace"
+    },
+    {
+      "section": "大時",
+      "text": "〔注文〕大敗　咸池〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0032",
+      "sha256": "60002fe300253b50f080b8a236b8acbd02937df5f51ee4eb753a6297c1b65946"
+    },
+    {
+      "section": "遊禍",
+      "text": "天吏〔注文〕致死〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0033",
+      "sha256": "a18de32062ffe0e0c7d33524428b849904b22763a1fffc95ee6ac5964b6e3eef"
+    },
+    {
+      "section": "死氣",
+      "text": "小耗",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0034",
+      "sha256": "d128d008e2b827848dbeb08fe0c52e5f393fa830fc87c194dd793b42293634d6"
+    },
+    {
+      "section": "天賊",
+      "text": "四擊",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0035",
+      "sha256": "82133470aa6d9d076bd11e15124d9efa2bd9348996e9bfc7a9c63f1bd2098f55"
+    },
+    {
+      "section": "四耗",
+      "text": "四廢\n四忌　四窮〔注文〕八龍　七鳥　九虎　六蛇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0036",
+      "sha256": "960ef9d213300514c05c7fabe0c7aadced2ef53138b8577a7705180302d0f5e4"
+    },
+    {
+      "section": "五虛",
+      "text": "八風",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0037",
+      "sha256": "5db4e490240fdc8637f11507c4323d8e80c73c4dc783cf627709bfe65afc9498"
+    },
+    {
+      "section": "五墓",
+      "text": "九空",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0038",
+      "sha256": "998b0ff4708383f91302c5ba5909203d36ef816c8977a73810a32ee8ccd7f805"
+    },
+    {
+      "section": "九坎",
+      "text": "〔注文〕九焦〔/注文〕\n土符　地囊\n兵禁",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0039",
+      "sha256": "a80ac94e328ca5acca64c41208bfd9e9b1fc32e7cf90c774b24d6369f4768632"
+    },
+    {
+      "section": "大煞",
+      "text": "歸忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0040",
+      "sha256": "385067c6858e0c189049209f367e098cc14b90c2211b9202c25cfd31f0506248"
+    },
+    {
+      "section": "血忌",
+      "text": "徃亡　氣徃亡\n復日　重日\n五離",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0041",
+      "sha256": "3272dd5dfb9c7c49ad2fb0602e50cc549e9d89bea55fea4fd4188072a8cb1863"
+    },
+    {
+      "section": "八專",
+      "text": "觸水龍\n專日　伐日\n天刑　朱雀　白虎　天牢　元武　勾陳無禄日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0042",
+      "sha256": "aae6c803f007f21749351200f45902865292a706819edcdcd5a8b772569bacef"
+    },
+    {
+      "section": "反支",
+      "text": "上朔　四離　四絶　晦日\n冬至　夏至　春分　秋分\n土王用事",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0043",
+      "sha256": "595df80838f5edfdbe406b4014896ffcdc29298a9582d428d10c728ef52c6896"
+    },
+    {
+      "section": "伏社",
+      "text": "朔〔字形SK2959：弦〕望",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0044",
+      "sha256": "3fb25001a37197810fbad895960cc1f0a49afcb482a77f79e0bcceb7a12174b4"
+    },
+    {
+      "section": "月忌日",
+      "text": "十五日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0045",
+      "sha256": "168baee354e0f5fa2d43b3633586749a13351eef22d8a59f4b566f4eb8aca456"
+    },
+    {
+      "section": "人神所在日",
+      "text": "長星　短星",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0046",
+      "sha256": "583648d51c4657e9b4ce8bd0ef01deb7546628ec149d6dfa85524dd9301aa6af"
+    },
+    {
+      "section": "百忌日",
+      "text": "〔注文〕以上所忌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0047",
+      "sha256": "aecfd1b1d35b058dfbad07fd2b83a3a592bf50df8af800423bd0d9a53830a2da"
+    },
+    {
+      "section": "表例附",
+      "text": "天德　月德　天德合　月德合",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0048",
+      "sha256": "f25fd33fc150b5f7af43c3170f27e5ca4c358b6bdab202d2651948c071eedda9"
+    },
+    {
+      "section": "宜祭祀祈福求嗣上冊進表章",
+      "text": "〔注文〕上冊受封上表章同〔/注文〕頒詔覃恩肆赦施恩封拜〔注文〕襲爵受封同後倣此〔/注文〕詔命公卿招賢舉正直施恩惠恤孤惸宣政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶般移解除求醫療病裁製營建宫室繕城郭興造動土豎柱上梁修倉庫栽種牧養納畜安葬",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0049",
+      "sha256": "de0c47e8a00056f1457252d173d886f86ac1c5b205678b0e81936ae92cc8c0de"
+    },
+    {
+      "section": "忌畋獵取魚",
+      "text": "按天德月德乃月建三合旺氣天德合月德合與旺氣作五合皆上吉之日故所宜應如此忌畋獵取魚者恐傷生氣也舊本天德止宜興土工營宮室繕城郭月德并宜上官宴樂天德合宜祭祀祈福覃恩肆赦緩刑獄選將訓兵月德合並宜上册進表章營建宮室殊於名義不合明原引五行論則曰月德合日百福並集又不及天月二德及天德合可見其為畧舉大意而非有義例也夫王者事神行政慶賞刑威與夫分職設官體國經野以及宮室城郭衣服居處所以謀室家之安而錫兆庶之福者無非體天心而行時令故因義起例罄無不宜庶名與事允協矣",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0050",
+      "sha256": "a59f08700bd863084c88c8e3ced3cf2c413b906dde584b4b385c3d06f0507457"
+    },
+    {
+      "section": "月空",
+      "text": "宜上表章",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0051",
+      "sha256": "bcea272346484a295a1a71ef1074d5e0beb0204b8655818a83b78984b2d409a9"
+    },
+    {
+      "section": "見義例",
+      "text": "天恩\n宜覃恩肆赦施恩惠恤孤惸布政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹\n與驛馬天馬建日併宜頒詔宣政事與修造吉神併尤宜興作\n按舊本以天恩為上吉日而所宜止於覃恩慶賞等事葢其日止取一定之干支而不參諸月令其力輕㣲不得與德合赦願比也又按舊本謂天德嵗德月德天德合嵗德合月德合天恩天赦母倉所㑹之辰並宜修營㑹之云者則非專指天恩故曰與修造吉神併尤宜興作",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0052",
+      "sha256": "3a24dcd48431f1aff571b4e442482b5d5b9c7dccdcaad6eb8c2a0aa391bb9cd7"
+    },
+    {
+      "section": "天赦",
+      "text": "宜祭祀祈福求嗣上册進表章頒詔覃恩肆赦施恩封拜詔命公卿招賢舉正直施恩惠恤孤惸宣政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹行幸遣使安撫邊境選將訓兵上官赴任臨政親民結婚姻納采問名嫁娶般移解除求醫療病裁製營建宫室繕城郭興造動土豎柱上梁修倉庫栽種牧養納畜安葬忌畋獵取魚\n按天赦為天地合德又為四時旺辰其力甚大故所宜與二德同舊本止宜覃恩肆赦緩刑獄特顧名而未思義耳不用以出師與忌畋獵取魚同意",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0053",
+      "sha256": "0b3ebdab1c8c870bbdad43ec8af68861df1261cb34235462d7eb7d9c64f5a021"
+    },
+    {
+      "section": "母倉",
+      "text": "宜納財栽種牧養納畜",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0054",
+      "sha256": "d360f94b716e5b8cfdf75bbd569a29a35b53b6959bc7dff25ff22b8807da0ae1"
+    },
+    {
+      "section": "與月恩四相開日併宜修倉庫",
+      "text": "按舊本以母倉為上吉日而所宜止於納財栽種牧養納畜葢其日係四時休氣又不得與天恩比也又按母倉春月亥日吉子日次之夏月寅日吉卯日次之冬月申日吉酉日次之葢亥寅申皆令星之長生而子卯酉為令星之敗地也至秋月之辰戌丑未日土王後之己午日則衰旺各有不同是又不可以不辨",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0055",
+      "sha256": "c84ec9348740b81e3a24c69a97c8cd2f1c67fab1bed4052768cadfbfb5be37c5"
+    },
+    {
+      "section": "天願",
+      "text": "宜祭祀祈福求嗣上册進表章頒詔覃恩肆赦施恩封拜詔命公卿招賢舉正直施恩惠恤孤惸宣政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹行幸遣使安撫邊境選將訓兵上官赴任臨政親民結婚姻納采問名嫁娶進人口般移裁製營建宮室繕城郭興造動土豎柱上梁修倉庫經絡醞釀開市立劵交易納財栽種牧養納畜安葬\n按天願為太陽加令星其吉最大故所宜與二德同不用以出師者兵隂象兵吉在太陽後四辰不用太陽日也宜葬事則專取太陽日也不用以解除療病者療解無取合義也何以取二德合彼乃德之合氣非兩相合也又按二德乃三合之全氣發于天干德合為其合氣天赦天願皆合干支取義其氣純其力大乃日之最吉者能解諸凶故特表之舊本謂天願宜納財敦睦親族葢其例二十四字已誤十三宜乎失其義也\n月恩　四相　時德\n宜祭祀祈福求嗣施恩封拜舉正直慶賜賞賀宴㑹行幸遣使上官赴任臨政親民結婚姻納采問名般移解除求醫療病裁製修宮室繕城郭興造動土豎柱上梁納財開倉庫出貨財栽種牧養\n與驛馬天馬併宜詔命公卿招賢\n按月恩四相時德皆月建所生之日所宜應同舊本月恩宜祭祀上官赴任結婚姻般移修造動土納財四相宜行幸遣使般移繕城郭修造動土栽種牧養時德宜施恩封拜慶賜賞賀宴㑹其義不倫今按月建所生為相氣其吉大於母倉我生為子孫其吉顯於福德觀其㑹通而推其義例故所宜應如此\n陽德　隂德\n宜施恩惠恤孤惸行惠愛雪寃枉緩刑獄\n按陽德隂德為乾坤納甲取天地生成之義而以月配爻義不甚切舊本謂陽德宜結婚姻開市交易隂德宜舉正直行惠愛雪寃枉緩刑獄亦無義例可推今按天地之大德曰生則施恩行惠等事庶與名義相稱",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0056",
+      "sha256": "c6c2a5fd4a7cbd2e2f3b8a9541c9e17e82dee00e5e841129171fcdc6ad665069"
+    },
+    {
+      "section": "王日",
+      "text": "宜頒詔覃恩肆赦施恩封拜詔命公卿招賢舉正直施恩惠恤孤惸宣政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹行幸遣使安撫邊境選將訓兵上官赴任臨政親民裁製\n官日　守日　相日\n宜襲爵受封上官赴任臨政親民",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0057",
+      "sha256": "e9ffd02c2d340cff1b80c6893e1892de9d7d605a1ea51ce73272807212e3723a"
+    },
+    {
+      "section": "守日又宜安撫邊境",
+      "text": "民日\n宜宴㑹結婚姻納采問名進人口般移開市立劵交易納財栽種牧養納畜\n按壇經專以此五日為命將登壇拜爵上官之吉日通書止宜施恩封拜上官赴任臨政親民今以義推之則五日所宜應各不同王日為臨官之辰其吉大於月建又居四時之首其吉不減天恩故所宜應如此不用以出師者不欲從我始也官日守日相日舊説可從襲爵受封義同封拜在臣下宜云爾也守日為四時旺土安撫邊境則守土所宜急者民日為令星所生所宜應同時德然既以民日名則上官等事義當另有取也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0058",
+      "sha256": "93abd2e30b71b45ad77882db04888c2d2bb11bbefae4727dbbe12d72af83daab"
+    },
+    {
+      "section": "三合",
+      "text": "宜慶賜賞賀宴㑹結婚姻納采問名嫁娶進人口裁製修宮室繕城郭興造動土豎柱上梁修倉庫經絡醞釀立劵交易納財安碓磑納畜\n又辰戌丑未日為三合墓庫所宜如前寅申巳亥日為三合長生所宜並同母倉子午卯酉日為三合帝旺所宜並同王日\n按日之吉者莫如三合天月二德皆從三合取義成定之吉亦由三合生也然三合皆吉而大小不同建為局始定為局中成為局終三合從建取故三合止有二日建在四生日者則三合一為旺一為墓建在四旺日者則三合一為墓一為生建在四墓日者則三合一為生一為旺其為墓日者則取三合之吉足矣其為生旺日者則土旺之吉當并取也故區而别之又三合即成定日而取義各有不同故分屬各條之下若義有兼取者則又不嫌其并見也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0059",
+      "sha256": "700aba31a77887e4456b0ffe1fd9b51c719afc610f7934d53d702333ce213f87"
+    },
+    {
+      "section": "臨日",
+      "text": "宜上册進表章上官赴任臨政親民陳詞訟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0060",
+      "sha256": "b56b6dd948917f800436af9c1e876bad097b1952066e0286892ff1622a641d53"
+    },
+    {
+      "section": "見義例",
+      "text": "驛馬〔注文〕天后〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0061",
+      "sha256": "3ea2f0a129f1ebd07830724274b73cb035d51956ab760ebaafa7d01b78dcef34"
+    },
+    {
+      "section": "宜行幸遣使般移",
+      "text": "與天恩併宜頒詔宣政事與月恩四相時德併宜詔命公卿招賢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0062",
+      "sha256": "36f0834df175ff1e8045acac8fa0080b6fb28a30e2fdfc67233ef1e50c400920"
+    },
+    {
+      "section": "又為天后宜求醫療病",
+      "text": "按驛馬天馬皆第取行遠之義舊本謂驛馬宜封拜官爵詔命公卿出行赴任移徙天馬宜頒詔封拜招賢宣政事遠行出征則失其義矣今以其日止宜行幸遣使般移與覃恩吉日併而後宜頒詔與封拜舉正直吉日併而後宜詔命公卿招賢與布政事吉日併而後宜宣政事庶為允協天后見義例",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0063",
+      "sha256": "f337cc23dcb63d63dbc059bbedbece1e8579294a088b4424341cfd9b18f59db3"
+    },
+    {
+      "section": "天馬",
+      "text": "宜行幸遣使般移\n與天恩併宜頒詔宣政事與月恩四相時德併宜詔命公卿招賢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0064",
+      "sha256": "eca3d179b918a682b52c832741bddb8ba54057c3f3a5da503688073eeca17200"
+    },
+    {
+      "section": "義見驛馬",
+      "text": "建日〔注文〕兵福〔/注文〕\n宜施恩封拜詔命公卿招賢舉正直行幸遣使上官赴任臨政親民",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0065",
+      "sha256": "245c9383566ff64f7556fd7e9ffd80e3e5e12081ca2fd433084880f320efb6ca"
+    },
+    {
+      "section": "與天恩併宜頒詔宣政事",
+      "text": "又為兵福宜安撫邊境選將訓兵出師\n按建日與王官同義舊本止宜施恩封拜出行夫舉正直之與封拜遣使之與行幸事同一例故增之詔命公卿招賢頒詔宣政事義見驛馬上施則下受故并宜上官赴任臨政親民兵福見義例",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0066",
+      "sha256": "c511dbe91bcd21f1de766c09a2d451342e856c82d0bdbda4d04384ce2ba5a04d"
+    },
+    {
+      "section": "除日",
+      "text": "〔注文〕吉期　兵寶〔/注文〕\n宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇又為吉期宜施恩封拜舉正直行幸遣使上官赴任臨政親民\n十月與天馬併宜詔命公卿招賢〔注文〕驛馬不得與吉期併〔/注文〕\n又為兵寶宜安撫邊境選將訓兵出師\n按舊本除日宜解除求醫療病掃舍宇取除義也沐浴等事亦除舊取新之義故并宜之吉期兵寶義取旺辰故所宜同建日舊謂吉期宜兵事葢兵寶之誤又謂宜結婚姻於義無取故刪",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0067",
+      "sha256": "624163ceffb611a86823c59679a1894aa85409ac77e53ea8a8699adc604db9e5"
+    },
+    {
+      "section": "滿日",
+      "text": "〔注文〕天巫　福德〔/注文〕\n宜進人口裁製修倉庫經絡開市立劵交易納財開倉庫出貨財補垣塞穴",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0068",
+      "sha256": "3d5849cd06f678fc61f41c0dbb9c740912cadcae17e9ebcd88227a642a60960b"
+    },
+    {
+      "section": "又為天巫宜祭祀祈福",
+      "text": "又為福德宜上册進表章慶賜賞賀宴㑹修宮室繕城郭\n按滿取豐豫之義故所宜如此天巫見義例福德義同時德具體而微故止宜上册數事舊本無宴㑹然未有宜慶賞而不宜宴㑹者又謂天巫宜療病與滿日所忌自相牴牾故刪",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0069",
+      "sha256": "ac5e8a6d7a759542155843af91dd81f164fb5b90d03b12d9e01c38eba7518b2c"
+    },
+    {
+      "section": "平日",
+      "text": "宜修飾垣墻平治道塗",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0070",
+      "sha256": "ab074ed7389efe5866ebbb21f14a24923c08376659b762ffbd6ec5f97da1c718"
+    },
+    {
+      "section": "義取諸平",
+      "text": "定日〔注文〕時隂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0071",
+      "sha256": "08c1e0bbbcdf50e0230e45625c1f59e21bae231fea0f445e8b04500059cfaad6"
+    },
+    {
+      "section": "宜冠帶",
+      "text": "又為時隂宜運謀算畫計策\n按定日為三合之中宜冠帶者既取其成局又取其方中而未昃之義也時隂舊宜睦子孫㑹親友於義不合故刪",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0072",
+      "sha256": "9d0c6d9c36f645658f6a8f90ed93e01365e450a62b66302f35e4e0f36a7b2e38"
+    },
+    {
+      "section": "執日",
+      "text": "宜捕捉\n霜降後立春前宜畋獵雨水後立夏前宜取魚義取諸執且順時也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0073",
+      "sha256": "cec2eef4b932510be230fbb867eb9ce67ababcb363223b879a30544d4ec786af"
+    },
+    {
+      "section": "破日",
+      "text": "宜求醫療病破屋壞垣",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0074",
+      "sha256": "b8e6031637069e696dfa31cebc6bbfc4a122d128468de7ae90d2c017ecab61a6"
+    },
+    {
+      "section": "義取諸破",
+      "text": "危日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0075",
+      "sha256": "a57ec9c995fa3f90b90eb80a8dd549516244da4b2d1d42817c0465a6752430a3"
+    },
+    {
+      "section": "宜安撫邊境選將訓兵安牀",
+      "text": "立冬後立春前宜伐木霜降後立春前宜畋獵雨水後立夏前宜取魚\n按危日取安為義故宜安牀然安不忘危則莫大於安撫訓練之事伐木畋獵取魚則以隂過盛而物當殺也各以其節氣者順時也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0076",
+      "sha256": "fc73550fd45300953c95dc9550e118f2ed2d0bf0f63313b44ff835308fae89ec"
+    },
+    {
+      "section": "成日",
+      "text": "〔注文〕天喜　天醫〔/注文〕\n宜入學安撫邊境般移築隄防開市\n又為天喜宜施恩封拜舉正直慶賜賞賀宴㑹行幸遣使上官赴任臨政親民結婚姻納采問名嫁娶五月與天馬併宜詔命公卿招賢〔注文〕驛馬不得與天喜併〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0077",
+      "sha256": "3866808f4bb0756638a8ab60a6a905e19398c0cac868665dd402788b29fa7f57"
+    },
+    {
+      "section": "乂為天醫宜求醫療病",
+      "text": "按成為合局之終開為生氣之始故其日宜入學原始要終之義也宜安撫邊境者功成而永奠也般移築隄防開市皆取成義天喜舊宜封拜自宜上官義同建日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0078",
+      "sha256": "11f395bb4e99342f58fbd0eacc4cf4695f812d72abd6f5a923eff28081c5a9c5"
+    },
+    {
+      "section": "收日",
+      "text": "宜進人口納財捕捉納畜\n霜降後立春前宜畋獵雨水後立夏前宜取魚與月恩四相時德併宜修倉庫\n義取諸收無修造義故必與月恩四相時德併而後宜修倉庫若開日則雖宜修造不得與收日併若德合赦願則自宜修倉庫又不待與收日併也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0079",
+      "sha256": "faf6cf1ea872dcfe6bcbfb73d245cda08a4ff42cdad44f91c190ef4522153216"
+    },
+    {
+      "section": "母倉義亦如此",
+      "text": "開日〔注文〕時陽　生氣〔/注文〕\n宜祭祀祈福求嗣上册進表章頒詔覃恩肆赦施恩封拜詔命公卿招賢舉正直施恩惠恤孤惸宣政事行惠愛雪寃枉緩刑獄慶賜賞賀宴㑹入學行幸遣使上官赴任臨政親民般移解除求醫療病裁製修宫室繕城郭興造動土豎柱上梁開市修置產室開渠穿井安碓磑栽種牧養\n忌伐木畋獵取魚破土安葬啓攢\n按開日一陽始生故又為時陽又為生氣其日最吉舊本所宜無祭祀祈福求嗣覃恩拜官等事於義未偹故補之不及婚事者無合義也忌伐木漁獵者恐傷生氣也忌葬事從俗也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0080",
+      "sha256": "c68a3757fa035b1c3f1300137744802efd4c33e189b62f3af78b236613246984"
+    },
+    {
+      "section": "閉日",
+      "text": "宜築隄防補垣塞穴",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0081",
+      "sha256": "7f3f483986bd85a04927eec9bb7e0eb6400e74e77cfa059a6b2ce921c7532e25"
+    },
+    {
+      "section": "義取諸閉",
+      "text": "兵吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0082",
+      "sha256": "f53461fce56ba165f4afede6e7f9fe9303e23fb81a290fb3307ea55e283663b4"
+    },
+    {
+      "section": "宜安撫邊境選將訓兵出師",
+      "text": "見義例",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0083",
+      "sha256": "7ad99179f0db9e2b8e728d2fb19d523c4bfa546aedf1af447b850aab85d0ecb5"
+    },
+    {
+      "section": "六合",
+      "text": "宜宴㑹結婚姻嫁娶進人口經絡醞釀立劵交易納財納畜安葬",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0084",
+      "sha256": "6bee515e741a1974d370285b5309180957f12405f6aff3aa20854fee9c87621e"
+    },
+    {
+      "section": "與月恩四相時德併宜修倉庫",
+      "text": "按六合之吉不減三合舊本止宜宴㑹結婚姻立劵交易今以義推之所宜當如此宜葬事見天願宜修倉庫見收日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0085",
+      "sha256": "e76dd02a6315a134e8a98e5d62364710911b0f024f5984e1deb104bd2b120d74"
+    },
+    {
+      "section": "六儀",
+      "text": "宜臨政親民",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0086",
+      "sha256": "1816e9790cc768187591ad6d1f9c7f0e5d3e5475a724935656707391eaf1bf3b"
+    },
+    {
+      "section": "見義例",
+      "text": "五富\n宜經絡醞釀開市立劵交易納財開倉庫出貨財栽種牧養納畜",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0087",
+      "sha256": "19379693fa25959f93773298e5163d7c2f8398c5ac672cde64236b063e6bdab6"
+    },
+    {
+      "section": "與月恩四相時德併宜修倉庫",
+      "text": "舊本止宜開市開倉庫納財今按其日有生義又有合義故所宜當如此",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0088",
+      "sha256": "ee9af920b4c50ced5451d0f120a5af9ca799b4c68dfa3932a99aee2b04af58d5"
+    },
+    {
+      "section": "天倉",
+      "text": "宜進人口納財納畜",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0089",
+      "sha256": "08cc2d79c8b409e3ec6c805faf898f41287304529b8b7d21465ba7bfb787003e"
+    },
+    {
+      "section": "與月恩四相開日併宜修倉庫",
+      "text": "〔注文〕時德不得與天倉併〔/注文〕\n義同收日然因合而名倉故不用以捕捉",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0090",
+      "sha256": "c24de7914124aae1796f4c8d78d18d972af8a6b08f8920297450af0598b84994"
+    },
+    {
+      "section": "不將",
+      "text": "宜嫁娶",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0091",
+      "sha256": "fe5eff240b0b6f24617351b53e8107bf28f1c3bfef96aeefd13e3a1ee93f2c66"
+    },
+    {
+      "section": "見義例",
+      "text": "要安　敬安",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0092",
+      "sha256": "47f9df8468840eca8c353bc0253aa363e8e4bf2721454b31dc83c5ba8c8594eb"
+    },
+    {
+      "section": "宜安神",
+      "text": "玉宇　金堂",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0093",
+      "sha256": "d6541fc1a64c053c611769988a45d7feb7e01818a179d58e1628010cb876de6a"
+    },
+    {
+      "section": "宜修祠宇",
+      "text": "普䕶　福生　聖心",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0094",
+      "sha256": "fd1118f0f23890ff90688ffe780dc4fcf6001bc225b1f0b9f4f5d7167ea0370d"
+    },
+    {
+      "section": "宜祭祀祈福",
+      "text": "益後　續世",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0095",
+      "sha256": "4dcc4bd0483247ca5e106b080232b2cfd702493d4a5623ab3e92eb6d9585983d"
+    },
+    {
+      "section": "宜祭祀祈福求嗣",
+      "text": "九神所宜見義例",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0096",
+      "sha256": "bae1db86d5f586454ed8e353692dbb10dc1857263c177e8399561d2c9ab2c97c"
+    },
+    {
+      "section": "解神",
+      "text": "宜上表章陳詞訟解除沐浴整容剃頭整手足甲求醫療病\n舊本止宜上表章陳詞訟解除今按沐浴以下等事皆解除類也况破日宜療病而解神吉於月破故並宜之",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0097",
+      "sha256": "b9ca2a354a1d974fb687d62690eb4718c677fb65db7a3809a9babe71e1e29559"
+    },
+    {
+      "section": "除神",
+      "text": "宜解除沐浴整容剃頭整手足甲求醫療病掃舍宇",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0098",
+      "sha256": "d35da40dd3aabb3a931f44fa5d559a302b3f6ac9f37e6b90eb2ad261eec4917e"
+    },
+    {
+      "section": "義同除日",
+      "text": "五合",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0099",
+      "sha256": "637be2bda0452192e4a60c212a5e960f765a3061b5b8197a25cd71abcc16f842"
+    },
+    {
+      "section": "宜宴㑹結婚姻立劵交易",
+      "text": "見義例\n寶日　義日　制日\n與吉神併宜安撫邊境選將訓兵出師\n按舊本謂其日宜軍事然至用事則皆不從葢其義太泛故必與所宜吉神併而後宜之若專日伐日則不宜矣與驛馬天馬之與吉神併而後宜頒詔者同意\n青龍　明堂　金匱　寶光　玉堂　司命\n與吉神併則從所宜與凶神併則從所忌\n按六黃道以位置得宜為吉猶秩叙典禮無徃不宜也舊本謂宜修宫室繕城郭結婚姻進人口則無義例可推今選時之法謂諸事皆宜而無專宜之事六黑道亦無專忌之事當以時例為斷",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0100",
+      "sha256": "8aabac727ebc2736b8754faeb56f89ae2a0b39647631a3d25b16e164a7b74b3f"
+    },
+    {
+      "section": "鳴吠",
+      "text": "宜破土安葬",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0101",
+      "sha256": "92852ffa7e7ee13724875cf55a88e938383b7a7a4c5aaf9163e4842031963660"
+    },
+    {
+      "section": "鳴吠對",
+      "text": "宜破土啟攢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0102",
+      "sha256": "342af5491668e563f2bc8e66c870d6bc1f1a4d28e16d26cd85347aad3eba00be"
+    },
+    {
+      "section": "見義例",
+      "text": "亥子日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0103",
+      "sha256": "4c9d7920aa5da095481bee54e121774c3ad4487f8d718ccfdf96990720822e7b"
+    },
+    {
+      "section": "宜沐浴",
+      "text": "取水旺也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0104",
+      "sha256": "604cfb54b3a96e836105d24ac69d42a0c702ed4a3ddfea49d5b8b33439df3c59"
+    },
+    {
+      "section": "午申日",
+      "text": "立冬後立春前宜伐木",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0105",
+      "sha256": "2a2c08a22348ea496a8e23fc36cdd6552ae0453b52bf932fa1f98e138ec22a24"
+    },
+    {
+      "section": "午木死申木絶也",
+      "text": "以上所宜",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0106",
+      "sha256": "14ea57703d5b3c582b5c951eb32f503e4b2705cf877001aadee63af5242531c9"
+    },
+    {
+      "section": "月建",
+      "text": "〔注文〕小時　土府〔/注文〕\n忌祈福求嗣上册進表章結婚姻納采問名解除整容剃頭整手足甲求醫療病營建宮室修宫室繕城郭興造動土豎柱上梁修倉庫開倉庫出貨財修置產室破屋壞垣伐木栽種破土安葬啟攢正月建日又忌出師\n又為土府專忌營建宮室修宮室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土\n與天德月德天德合月德合天赦月恩四相併〔注文〕天願不得與月建併〔/注文〕止忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置產室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣伐木栽種破土餘皆不忌未月己未日為陽錯不作德合論子午月值月厭辰午酉亥月值月刑從刑厭論二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月庚辰九月甲戌為隂位諸事皆忌\n按選擇宗鏡曰建破平收俗之所忌惟破日最凶建日吉多可用又曰月建為吉凶衆神之主疊吉星則吉疊凶星則凶葢月建本非凶日第以其為一月令氣之主故又名小時如太嵗之不敢犯耳若與德合天赦月恩四相併則益助吉神之力故動土伐木之外一切皆不忌遇刑厭則從刑厭論者刑厭之凶甚於月建故也舊忌頒詔宣政事與宜出行義相反忌上官赴任臨政親民與宜封拜義相反忌安撫邊境選將訓兵出師與其日兵福所宜自相牴牾故刪陽錯小㑹隂位詳月厭條下",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0107",
+      "sha256": "f257f3dfc4a9cba91c06af13c1edbef9c21ca2920761144b7a65c3e11a789552"
+    },
+    {
+      "section": "月破",
+      "text": "〔注文〕大耗〔/注文〕\n忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀整容剃頭整手足甲裁製營建宫室修宫室繕城郭築隄防興造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立劵交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻伐木栽種牧養納畜破土安葬啟攢\n又為大耗忌修倉庫開市立劵交易納財開倉庫出貨財",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0108",
+      "sha256": "7f4c19848d79e3d3f01707e048bec295600d71f1c4b027df633d3e090a006b48"
+    },
+    {
+      "section": "與天德月德天德合月德合併",
+      "text": "〔注文〕天赦天願不得與月破併〔/注文〕猶忌之止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學解除沐浴求醫療病掃舍宇平治道塗破屋壞垣捕捉畋獵取魚\n子午月值災煞未申月值月刑與月德天德合月德合併不忌祭祀覃恩肆赦等事仍忌解除求醫療病破屋壞垣不與德合併諸事皆忌卯酉月值災煞又值月厭雖與德合併仍諸事皆忌四月癸亥十月丁巳為隂陽交破六月癸丑十二月丁未為陽破隂衝亦諸事皆忌\n按月破為月建之衝又為月建氣絶之地故所忌如此德神臨此失力不能為福故與併猶忌若祭祀覃恩等事則不以衝絶為嫌故遇有宜用之神則不忌不待與德神併也若值災煞或值月刑則其凶尤甚故必與德神併而後不忌祭祀覃恩等事否則諸事皆忌也若值災煞又值月厭則隂氣尤毒故雖與德神併而仍諸事皆忌也隂陽交破陽破隂衝詳月厭條下舊本不忌嫁娶經絡而忌沐浴葢嫁娶舊止宜不將日又忌章光無翹伏斷歸忌紅沙若再忌月破等日恐致無日可用是不得已為權宜之術耳今按章光無翹等皆俗説拘於俗忌而不避大凶其所為權宜者殊為未當且按監本通書及各坊本皆云嫁娶宜不將天德月德天德合月德合上吉又云日辰全吉無不將亦可用則嫁娶吉日本自甚寛又無需乎權宜為也經絡舊止宜滿日原自不值破日今三合等日俱宜經絡故值破日則忌若沐浴尋常細事則自無當忌之理也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0109",
+      "sha256": "c6a881b712d7583c1d19f03f51a210fde65f0fd0442e39bf80dc966f3824d1d1"
+    },
+    {
+      "section": "平日",
+      "text": "〔注文〕死神〔/注文〕\n忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病裁製營建宮室修宮室繕城郭築隄防興造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立劵交易納財開倉庫出貨財修置產室開渠穿井栽種牧養納畜破土安葬啟攢○止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學沐浴整容剃頭整手足甲安碓磑補垣塞穴掃舍宇修飾垣墻平治道塗破屋壞垣伐木捕捉畋獵取魚\n又為死神忌安撫邊境選將訓兵出師進人口解除求醫療病修置產室栽種牧養納畜\n寅申巳亥月值相日亥月又值時德六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌申月值月害與天德月德合併亦止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德合併如常例寅巳月值月刑從月刑論子午夘酉月值天吏夘酉月與月德併午月與月德合併凡所忌者則不註宜所宜者亦不註忌不與徳合併如常例子月又值月刑從月刑論辰戌丑未月值月煞從月煞論\n按平日為月建隂氣既盡之地其凶次於月破惟其為氣盡也故多忌解除求醫療病而不忌伐木惟其次於月破也故不忌整容剃頭整手足甲安碓磑補垣塞穴修飾垣墻又按選擇宗鏡曰平收日與二德併可用又曰吉多可用葢平日為月建隂氣既盡乃建除家之言而非四時三合之氣之皆盡也亥月值相日又值時德六合即不與德願併其吉已足勝凶故止忌軍事療病餘皆不忌與德願併不待言矣申月雖亦為相日然值月害吉不抵凶而與徳神併則吉勝故亦從德神所宜止忌軍事療病餘皆不忌若不與德神併則如常例也巳月雖亦值六合然值月刑寅月既非六合又值月刑其凶甚於平日故從月刑論也子午夘酉月值天吏為三合死地平日又為死神乃是真死與德神併吉凶僅足相抵故忌則不宜宜則不忌若不與德神併則如常例也子月又值月刑辰戌丑未月值月煞其凶皆甚於平日故從刑煞論也以亥月之吉而猶忌軍事療病者慎戰疾也又按舊本凡吉神遇凶煞皆從忌而不從宜不但吉凶無大小之分即凶煞所忌亦諸月皆同無輕重之别於理固屬不合於事尤為不便夫即一凶煞而論各月之衰旺已有不同又况吉與吉併凶與凶併吉復與凶併其性情氣力至賾不齊亦安得一例而槩忌之乎今㕘互較量除建破等日條例簡易及專忌之日無庸分别外餘分為六等其上吉足勝凶從宜不從忌上次吉足抵凶遇德從宜不從忌不遇從宜亦從忌中等吉不抵凶遇德則吉勝從宜不從忌不遇從忌不從宜中次凶勝於吉遇德始相抵從宜亦從忌不遇從忌不從宜其下凶又逢凶遇德從忌不從宜不遇諸事皆忌最下凶叠大凶遇德仍諸事皆忌然後吉凶輕重各有區分而用靜用作趨避各當云表例並列於後",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0110",
+      "sha256": "d59ba15559150a726aec753dea6629d2fade2fb21dd2b5db9f2ac83ab836e0e2"
+    },
+    {
+      "section": "收日",
+      "text": "忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶般移安牀解除求醫療病裁製營建宫室修宮室繕城郭築隄防興造動土豎柱上梁鼓鑄經絡醞釀開市立劵交易開倉庫出貨財修置產室開渠穿井破土安葬啟攢○止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學進人口沐浴整容剃頭整手足甲修倉庫納財安碓磑補垣塞穴掃舍宇修飾垣墻平治道塗破屋壞垣伐木補捉畋獵取魚栽種牧養納畜\n寅申巳亥月值刼煞從刼煞論子午夘酉月值大時子午月與月德合併酉月與月德併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例夘月丑戌月皆值月刑從月刑論辰未月與德合併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德合併如常例\n按收日為月建陽氣既盡之地故所忌與平日同不忌進人口修倉庫納財納畜者收日之所宜也不忌栽種牧養者平在定前定為死氣平為死神收在開前開為生氣收已有生意故雖不宜而亦不忌也然收日陽氣之盡其義亦與平日同故其宜忌取舍亦畧如平日之例寅申巳亥月值刼煞故從刼煞論寅申月值六合己亥月值六害如亥申月平日之例子午夘酉月值大時為三合敗地較平日值天吏者為稍輕然此四月之平日却是相氣收日則是休氣其凶仍相等故亦如子午夘酉月平日之例夘月又值月刑其凶甚於收日故從月刑論如平日子月從月刑之例丑戌月無他吉而值月刑故如平日寅月從月刑之例辰未月無他吉亦無他凶故如申月平日之例",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0111",
+      "sha256": "673bc36d5d343635fc4f781a4ef1b26e9061bf19e4ea633a69b4b8e75e6b6ba3"
+    },
+    {
+      "section": "滿日",
+      "text": "〔注文〕天狗〔/注文〕\n忌施恩封拜詔命公卿招賢舉正直上官赴任臨政親民結婚姻納采問名求醫療病\n寅申月值守日子午夘酉月值相日與月德天德合月德合月恩四相併〔注文〕天赦天願不得與滿日併〔/注文〕則不忌辰戌丑未月值災煞從災煞論己亥月值月厭從月厭論申月又為天狗忌祭祀與德合併猶忌\n按滿為盈氣故所忌如此寅申月值守日子午夘酉月值相日與德合月恩四相併則旺氣發為德輝而盈非可惡也故不忌辰戌丑未月值民日然值災煞為三合無氣之辰月恩四相又復洩氣不足為吉子午月值月厭轉以相亢為凶故各從重論舊本並忌上册進表章與其日福德所宜自相矛盾故删天狗見義例",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0112",
+      "sha256": "95918862324da0341034d4f6dfaadf1bcabfbef21396d69b29b3caf8ab30e005"
+    },
+    {
+      "section": "閉日",
+      "text": "〔注文〕血支〔/注文〕\n忌上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹行幸遣使出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀求醫療目營建宫室修宮室興造動土豎柱上梁開市開倉庫出貨財修置產室開渠穿井",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0113",
+      "sha256": "3fcdc62064ea40708b67aa4e9c7f2569175d96cc6dcbcf72ae3265fe772ded70"
+    },
+    {
+      "section": "又為血支專忌針刺",
+      "text": "子午夘酉月值王日辰戌丑未月值官日天吏與天德月德天德合月德合天赦天願併凡所忌者則不註宜所宜者亦不註忌不與德合赦願併如常例寅申巳亥月值月煞從月煞論\n按閉日本不為凶第取建前斂息之義故所忌如此然斂息乃天地自然之用故子午夘酉月王日之吉亦與辰戌丑未月之值天吏者等與德合赦願併雖不註忌亦不註宜否則如常例也寅申巳亥月閉日未交本令正當斂息之時且又值月煞故從月煞論也滿日兼取月恩四相而閉日不取者方閉無取發生也舊本不忌出行出師今以義推之出行與赴任事同一例出師尤出行之大者故並忌之",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0114",
+      "sha256": "1fb63380875618c34b995e244e22bb836d6074d84761f151174946b183db9e5a"
+    },
+    {
+      "section": "刼煞",
+      "text": "忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除整容剃頭整手足甲求醫療病裁製營建宮室修宮室繕城郭築隄防興造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立劵交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜破土安葬啟攢○止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學沐浴掃舍宇平治道塗伐木捕捉畋獵取魚\n寅申巳亥月值收日為月令長生寅申月又值六合止忌安撫邊境選將訓兵出師求醫療病餘皆不忌己亥月值月害與月德天德合併亦止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德神併如常例辰戌丑未月值除日相日與天德月德天德合月德合併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德神併凡所忌者則不註宜所宜者亦不註忌子午夘酉月值執日與月德月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例\n按三煞為三合敵對刼煞為絶地災煞為正衝月煞為盡地故忌同月破乂忌解除求醫療病破屋壞垣但三合緩於月建不若月破之不可解耳寅申巳亥月值收日然實為月令之長生寅申月又值六合生則不絶合則不刼即不與德願併其吉已足勝凶故止忌軍事療病餘皆不忌而收日更不足言矣己亥月雖亦為長生然既非六合又值六害吉不抵凶而與德神併則吉勝故亦止忌軍事療病餘皆不忌否則如常例也辰戌丑未月值除日相日為本令旺相之辰其吉另有可取與德合併則又濟以三合吉干不當復以絶論故亦止忌軍事療病餘皆不忌若不與德神併則吉凶僅足相抵故忌則不宜宜則不忌也子午夘酉月值執日正為本令絶地乃是真絶與德神併吉凶僅足相抵故忌則不宜宜則不忌不與德神併則止乎刼煞之凶故如常例也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0115",
+      "sha256": "08587cdb9d1773b21401ab908eab4849f89df49baff6a2573c4c418a4b020993"
+    },
+    {
+      "section": "災煞",
+      "text": "〔注文〕天火〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0116",
+      "sha256": "aa1d6021494ae749f921bf0f72465bae27c6fc155ca46ca194af4be115fcaa5d"
+    },
+    {
+      "section": "忌同刼煞",
+      "text": "又為天火忌苫葢\n寅申巳亥月值開日辰戌丑未月值滿日與天德月德天德合月德合併〔注文〕赦願不得與災煞併〔/注文〕止忌安撫邊境選將訓兵出師求醫療病餘皆不忌寅申巳亥月不與德神併凡所忌者則不註宜所宜者亦不註忌辰戌丑未月不與德神併如常例子午夘酉月值破日從月破論\n按災煞為三合正衝其凶甚於刼煞故以寅申巳亥月開日之吉而非德無以解正衝之凶轉不得與刼煞收日比辰戌丑未月值滿日較刼煞之除日亦又次之子午夘酉月值月破更不可與刼煞之執日同語故比刼煞皆差一等是固災煞之凶亦其地原無氣無吉神助益故也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0117",
+      "sha256": "3433ff5a2494a8e9a65594cd8bb9aa13532f15a73d22e6af57a4e2f2b2f01b5c"
+    },
+    {
+      "section": "月煞",
+      "text": "〔注文〕月虛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0118",
+      "sha256": "228160adcc058ad79155cfe84ad9f33c568f7b186bff52ada1240e8f10dc68dc"
+    },
+    {
+      "section": "忌同刼煞",
+      "text": "又為月虛忌修倉庫開倉庫出貨財\n夘酉月值六合與月德天願併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德願併凡所忌者則不註宜所宜者亦不註忌子午月值月害與月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例寅申巳亥月值閉日辰戌丑未月值平日與天德月德天德合月德合併如常例不與德合併諸事皆忌\n按月煞之凶與刼煞同而所值之日則皆下一等夘酉月值危日雖亦值六合然非長生吉凶僅足相抵故與德願併而後從德願所宜否則不宜不忌是比刼煞寅申月之值六合者下一等也子午月既非六合又值六害與德合併吉凶僅足相抵故不宜不忌否則如常例是比刼煞己亥月之值月害者亦下一等也寅申巳亥月值閉日辰戌丑未月值平日閉日為月建之盡平日為月隂之盡月煞為三合之盡凶又逢凶是比刼煞子午夘酉月之正為本令絶辰者亦下一等葢刼煞之值令絶與平日之值天吏猶是一死一絶而月煞之值平閉則是兩盡與災煞遇月破等故與德神併而後如常例否則諸事皆忌也又按舊本刼煞止忌軍事上官結婚姻出入興販災煞止忌軍事上表章上官月煞止忌宴㑹栽種牧養其義不倫且嵗三煞與嵗破同凶而可以吉制月三煞義本相通今為推類而區别之庶條理咸貫矣不忌伐木與危日同義",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0119",
+      "sha256": "7da6041957a7edebf3d883873877cb94f1c242fb39914f70fd035160e1cdc95a"
+    },
+    {
+      "section": "月刑",
+      "text": "忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除整容剃頭整手足甲求醫療病裁製營建宫室修宫室繕城郭築隄防興造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立劵交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻破屋壞垣栽種牧養納畜破土安葬啟攢○止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學沐浴掃舍宇平治道塗伐木捕捉畋獵取魚\n巳月值平日相日六合與月德天德合天願併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德願併凡所忌者則不註宜所宜者亦不註忌寅月值平日相日六害辰酉亥月值建日丑戌月值收日與天德月德天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例子月值平日天吏夘月值收日大時未申月值月破與德合併如常例不與德合併諸事皆忌午月值月厭從月厭論按月刑為月建刑傷之地故所忌與三煞同而其所值又皆建破平收之日惟巳月值相日六合吉凶足以相抵與德願併則化凶為吉故從德願所宜止忌軍事療病餘皆不忌不與德願併則不宜不忌也寅月雖亦值相日然既非六合又值六害以及辰酉亥月之建日丑戌月之收日皆吉不勝凶助以德神然後吉凶相抵故與德神併而後不宜不忌否則皆如常例也若子月值平日天吏卯月值收日大時未申月值月破則皆凶又逢凶故與德神併而後如常例否則諸事皆忌也午月值月建月厭尤凶故從月厭論舊本止忌軍事結婚姻牧養非是",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0120",
+      "sha256": "8ad085e6e0c87138ddcc0643f75969ef5a40d302b5574814fa0913e56b701e3a"
+    },
+    {
+      "section": "月害",
+      "text": "忌祈福求嗣上册進表章慶賜賞賀宴㑹安撫邊境選將訓兵出師結婚姻納采問名嫁娶進人口求醫療病修倉庫經絡醞釀開市立劵交易納財開倉庫出貨財置産室牧養納畜破土安葬啟攢\n卯酉月值除日守日丑未月值執日大時與天德月德併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與二德併如常例辰戌月值閉日官日天吏與天德合月德合併凡所忌者則不註宜所宜者亦不註忌不與徳合併如常例子午月值月煞己亥月值刼煞寅月值月刑申月值平日各從重論\n按月害為六合之衝故所忌僅與六合所宜同不與刑煞比慶賜賞賀則宴㑹之類也納采問名則結婚姻之類也舊本并忌祈福上册出軍療病牧養等事亦惡相害之義修置産室重於牧養故並忌之然害雖不甚凶而非德不可解故卯酉月除日守日之吉亦止與丑未月之執日大時等必與德神併而後止忌軍事療病餘不忌否則如常例也辰戌月值天吏閉日其凶甚於大時故與德合併吉凶僅足相抵而不宜不忌否則亦如常例也子午月值月煞己亥月值刼煞寅月值月刑申月值平日其凶皆重於月害故從重論天吏之凶亦重於月害而不從天吏論者天吏不能該月害之所忌故也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0121",
+      "sha256": "735cd44462b1b08d30e2d0fa6da85171aaf02878ce18b8f76dc4dbd5e2879d71"
+    },
+    {
+      "section": "月厭",
+      "text": "〔注文〕地火〔/注文〕\n忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移遠廻安牀解除整容剃頭整手足甲求醫療病裁製營建宮室修宮室繕城郭築隄防興造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立劵交易納財開倉庫出貨財修置產室開渠穿井安碓磑補垣塞穴修飾垣墻平治道塗破屋壞垣伐木栽種牧養納畜破土安葬啟攢○止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學沐浴掃舍宇捕捉畋獵取魚",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0122",
+      "sha256": "292de76908fa169dd1bdda7c4f9403fd4c096642a3777b637a6df097635d640f"
+    },
+    {
+      "section": "又為地火忌栽種修築園圃",
+      "text": "寅申月值成日丑未月值開日與月德天德合月德合併止忌行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶求醫療病般移遠迴栽種餘皆不忌不與德神併如常例辰戌月值定日己亥月值滿日與天德月德月德合併凡所忌者則不註宜所宜者亦不註忌不與徳合併如常例子午月厭建㑹與天赦併如常例不與天赦併諸事皆忌卯酉月值月破災煞雖與德合併仍諸事皆忌又正月甲戌二月乙酉五月丙午六月丁巳七月庚辰八月辛卯十一月壬子十二月癸亥為隂陽大㑹與月德併仍諸事皆忌又二月己卯三月戊辰四月己巳五月戊午八月己酉九月戊戌十月己亥十一月戊子為隂陽小㑹三月又為單隂四月又為純陽九月又為孤陽十月又為純隂亦諸事皆忌又三月庚辰九月甲戌為隂位四月癸亥十月丁巳為隂陽交破五月壬子十一月丙午為隂陽擊衝六月癸丑十二月丁未為陽破隂衝二月己酉八月己卯為隂道衝陽亦諸事皆忌又四月丙午戊午十月壬子戊子為歲薄六月丙午戊午十二月壬子戊子為逐陣皆從月厭所忌四月丙午六月戊午亦不從德願所宜正月辛酉七月乙卯為三隂諸事皆忌又正月甲寅二月乙卯三月甲辰四月丁巳己巳六月丁未己未七月庚申八月辛酉九月庚戌十月癸亥十二月癸丑為陽錯除四月己巳為小㑹諸事皆忌外餘皆從建所忌六月己未亦不從德合所宜又正月庚戌二月辛酉三月庚申四月丁未己未六月丁巳己巳七月甲辰八月乙卯九月甲寅十月癸丑十二月癸亥為隂錯除二月八月值月破六月十二月為大㑹諸事皆忌外餘俱從厭所忌六月己巳亦不從德合所宜五月丙午十一月壬子為隂陽俱錯雖值月德仍諸事皆忌四月戊辰為絶隂十月戊戌為絶陽亦諸事皆忌\n按月厭為隂建是隂之自旺而陽之對也故合建破所忌而兼忌之然隂不勝陽故其義雖自為一家而其凶亦不若月破之不可解寅申月為三合丑未月為生氣再與德神併則吉勝矣故皆從德所宜而不從厭所忌猶忌行幸等事者惡隂盛也不與德神併則吉不抵凶故如常例也辰戌月雖亦為三合然隂陽始侵己亥月值滿日又隂陽相逼行狠了戾孤辰殆無虛日故與德神併然後吉凶相抵而不宜不忌否則如常例也子午月厭建㑹則隂陽争五月丙午十一月壬子雖值月德然為隂陽大㑹丙壬只作建論不作德論惟天赦另有生意故與天赦併而後如常例否則諸事皆忌也卯酉月值災破則顯然衝擊雖與德神併亦應諸事不宜矣又按舊厯止忌出行嫁娶般移逺廻於義固為未協淮南子厯事明原謂厭日不可舉百事則亦畧舉大義而未之深辨今逐月較量其輕重而區别之如此至大㑹小㑹隂位等日則皆從二建㑹合取義故皆與子午月例同隂陽交破隂陽擊衝陽破隂衝隂道衝陽等日則皆從二建對衝取義故皆與卯酉月例同嵗薄逐陣則取二建將合而先合始分而未分為義故與辰戌己亥月月厭例同德作建論不作德論故又與子午月例同三陰取厭破將併而先併為義故與卯酉月月厭例同陽建疊陽建為陽錯隂建疊隂建為隂錯故德作建論不作德論與厭建常例同子午月二建併又疊同建之干為隂陽俱錯故德作建論不作德論與子午月月厭例同絶隂絶陽則從單隂孤陽更進一義又值月煞閉日所㑹之辰故三例皆諸事不宜餘詳義例今通書惟四月己巳日凡事不宜餘日皆不載又四月辛巳癸巳日亦凡事不宜而乙巳丁巳如常例或係辛巳癸巳因己巳連及而誤因丁巳陽錯而訛或係四月五建亦如行狠了戾孤辰取義皆不可考然辛癸乙日既無義可推而辰戌亥月又無例可據考原所載確有精義故皆依考原訂補近刻不足慿也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0123",
+      "sha256": "b166eed68aef5fbb46f950f567e711bcfea3ead1198884bdd2e2f8b56f71f315"
+    },
+    {
+      "section": "厭對",
+      "text": "〔注文〕招摇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0124",
+      "sha256": "36cbbc2f16d017448c12b3740adc25b211afbbed20eab5fe13bbad0905855ace"
+    },
+    {
+      "section": "忌嫁娶",
+      "text": "又為招摇忌取魚乘船渡水\n與天德月德天德合月德合天赦併則不忌〔注文〕天願不得與厭對併〔/注文〕子午月與月破併則尤忌\n按厭對又為招摇皆以月厭之衝取義故所忌如此與德赦併則隂從陽故不忌與月破併則又為月建之衝故尤忌也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0125",
+      "sha256": "d114a9569b0be1db607a7d5f585d4e7ba8c5319bb8828beda3ed2542196d9fb7"
+    },
+    {
+      "section": "大時",
+      "text": "〔注文〕大敗　咸池〔/注文〕\n忌祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直冠𢃄行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宮室修宮室繕城郭築隄防興造動土豎柱上梁修倉庫開市立劵交易納財開倉庫出貨財修置產室栽種牧養納畜",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0126",
+      "sha256": "ab8a13e968686fbd3efe69f079ccd8fc1e298eb421464b866ddbca2c8bfdc45d"
+    },
+    {
+      "section": "又為咸池忌取魚乘船渡水",
+      "text": "寅申巳亥月值除日官日辰戌月值執日六合止忌安撫邊境選將訓兵出師餘皆不忌丑未月值執日六害與二德併亦止忌安撫邊境選將訓兵出師餘皆不忌不與二德併如常例子午卯酉月值收日子午月與月德合併酉月與月德併凡所忌者則不註宜所宜者亦不註忌不與德合併如常例卯月又值月刑從月刑論\n按大時又名大敗為三合敗地故所忌如此寅申巳亥月值除日官日為月建旺辰辰戌月值執日六合太陽合月建不應以三合敗氣論故即不與德合赦願併亦止忌軍事餘皆不忌也丑未月值執日六害吉不抵凶與德神併則吉勝亦不應以敗論故亦止忌軍事否則如常例也子午卯酉月正為四時敗氣又值收日卯月又值月刑其凶甚於大時故同刑收論也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0127",
+      "sha256": "ae90e9fed3500f84eef0a78110a2549d95d27e6d9b9cc65546a383692c3a3d8a"
+    },
+    {
+      "section": "遊禍",
+      "text": "忌祈福求嗣解除求醫療病",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0128",
+      "sha256": "e37cd782cb59a7d59ab89a03494294b25b083006c00962fb7ae55440c50ebef7"
+    },
+    {
+      "section": "與德合天赦併猶忌",
+      "text": "〔注文〕天願不得與遊禍併〔/注文〕\n按遊禍日本不為凶第為三合臨官故以過旺為禍而忌祈解醫藥之事與德赦併其旺如故故猶忌也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0129",
+      "sha256": "f58e6a1361f85c695d111517c087bc734d29bdc73a66f0e133e43e1326853d98"
+    },
+    {
+      "section": "天吏",
+      "text": "〔注文〕致死〔/注文〕\n忌祈福求嗣上册進表章施恩封拜詔命公卿招賢舉正直冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宫室修宫室繕城郭築隄防興造動土豎柱上梁修倉庫開市立劵交易納財開倉庫出貨財修置産室栽種牧養納畜\n寅申巳亥月值危日與天德月德天德合月德合併止忌安撫邊境選將訓兵出師求醫療病餘皆不忌不與德合併如常例辰戌丑未月值閉日與德合赦願併凡所忌者則不註宜所宜者亦不註忌不與德合赦願併如常例午卯酉月值平日從平日論子月又值月刑從月刑論\n按天吏又名致死為三合死地故所忌如此寅申巳亥月值危日吉不抵凶而與德合併則吉勝故止忌軍事療病餘皆不忌否則如常例也辰戌丑未月值閉日正當斂息之時與德神併吉凶僅足相抵故不宜不忌否則亦如常例也子午卯酉月值平日為真死子月又值月刑故從重者論也又按天吏之凶甚於大時第不為三合全局之衝故次於三煞非謂死之轉輕於絶也舊本止忌上表章上官療病失之逺矣",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0130",
+      "sha256": "a3df689ecc8405a69b86bb41b0397f602f95e31f9caeaab1a503b9c0d562f2e5"
+    },
+    {
+      "section": "死氣",
+      "text": "忌安撫邊境選將訓兵出師解除求醫療病修置産室栽種",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0131",
+      "sha256": "b956a084d620b0493cfc3b53f5899b78dd55cd5de90ed36689f58796715f6f2c"
+    },
+    {
+      "section": "與天德月德天德合月德合併",
+      "text": "〔注文〕天赦天願不得與死氣併〔/注文〕止忌安撫邊境選將訓兵出師求醫療病餘不忌辰戌月值月厭雖與德合併猶忌\n按死氣為月建一隂始生而陽氣始衰之地故所忌如此然皆與月建為三合再與德合併則益助其旺氣故不忌與月厭併則隂盛實甚故猶忌也死神忌進人口牧養納畜而死氣不忌者其日為三合又為時隂故也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0132",
+      "sha256": "c123ba724d7f5f52cad98699fef62546c2f59271b4f90c44480bed6016f7778a"
+    },
+    {
+      "section": "小耗",
+      "text": "忌修倉庫開市立劵交易納財開倉庫出貨財與天德月德天德合月德合天願併則不忌子午卯酉月值刼煞雖與德合併猶忌\n按小耗為舊月破又為本月閉日之衝故所忌如此與德合天願併則貪合忘衝故不忌與刼煞併則既耗而又逢絶故猶忌也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0133",
+      "sha256": "bb5f9ffb805489db654f77b2e5e6c2406d9301404e5b03aac8e745bb42a6ee0e"
+    },
+    {
+      "section": "天賊",
+      "text": "忌行幸遣使修倉庫開倉庫出貨財",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0134",
+      "sha256": "9b2e7af13a4fd23aadbaecf9c9271e63585651b28c36cf55175c5704cae887c3"
+    },
+    {
+      "section": "與德合併猶忌",
+      "text": "〔注文〕赦願不得與天賊併〔/注文〕\n按天賊為月厭之收日故所忌如此與德合義不相屬故與併猶忌",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0135",
+      "sha256": "8426eff011890e3c72ee17b13fa3ee960831113c57b9aa6d3a5e2efff188d018"
+    },
+    {
+      "section": "四擊",
+      "text": "忌安撫邊境選將訓兵出師",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0136",
+      "sha256": "7dc25449a2925d4b6ce62a7895c6ec47a27485d63353719fe0085198be95b892"
+    },
+    {
+      "section": "與德合天願併猶忌",
+      "text": "〔注文〕天赦不得與四擊併〔/注文〕\n按四擊為四時旺土之衝故所忌如此與德合天願併而猶忌者慎戰也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0137",
+      "sha256": "570928a5286d37745262aeba74a5f228d63b754f563cf934361710559a8f9628"
+    },
+    {
+      "section": "四耗",
+      "text": "忌安撫邊境選將訓兵出師修倉庫開市立劵交易納財開倉庫出貨財\n辰月與天德月德併寅申月與天德合併巳月與月德合併辰戌丑未月與三合併止忌安撫邊境選將訓兵出師餘不忌\n按四耗日干支皆四時休氣故所忌如此與德合三合併則干與支必有一遇生旺者矣故不忌也猶忌軍事與四擊同義",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0138",
+      "sha256": "403dd62a019740b983f76847dfe7c2365a0c82484a36d12e9c71527e88df29f1"
+    },
+    {
+      "section": "四廢",
+      "text": "忌祈福求嗣上册進表章頒詔施恩封拜詔命公卿招賢舉正直宣布政事慶賜賞賀宴㑹冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病裁製營建宫室修宫室繕城郭築隄防興造動土豎柱上梁修倉庫鼓鑄經絡醞釀開市立劵交易納財開倉庫出貨財修置産室開渠穿井安碓磑補垣塞穴修飾垣墻栽種牧養納畜破土安葬啟攢○止不忌祭祀覃恩肆赦施恩惠恤孤惸行惠愛雪寃枉緩刑獄入學沐浴整容剃頭整手足甲掃舍宇平治道塗破屋壞垣伐木捕捉畋獵取魚\n與德合併猶忌與月破併諸事皆忌\n按四廢干支皆死氣故所忌如此與德合併則德亦無氣故猶忌與月破併則既廢而又逢衝故諸事皆忌也舊忌無上官出行結婚姻療病等事今補之於義始備\n四忌　四窮〔注文〕八龍　七鳥　九虎　六蛇〔/注文〕\n忌安撫邊境選將訓兵出師結婚姻納采問名嫁娶安葬\n四窮又忌進人口修倉庫開市立劵交易納財開倉庫出貨財\n與月德天德合月德合併猶忌惟正月乙亥與天願併止忌安撫邊境選將訓兵出師餘皆不忌\n按四忌四窮合為八龍七鳥九虎六蛇義例謂隂陽首尾全數盡在於是夫兵凶器也非所以始萬物終萬物也婚嫁為人事之始葬埋為人事之終故並忌之四窮以令干居辰尾故又忌進人口等事此八日皆以旺極為凶故德神不能化解惟正月乙亥為天願與月建為六合辰雖居終而日躔實始不可以尾論故止忌軍事餘皆不忌舊本無四忌今依起例補之其義始備",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0139",
+      "sha256": "ca63d960f126356e69695e46ed3ba6ef8ee6180ed9b07ea778d5ccb736a2aaca"
+    },
+    {
+      "section": "五虛",
+      "text": "忌修倉庫開倉庫出貨財\n與天德月德天德合月德合六合併則不忌〔注文〕天赦不得與五虛併天願必是六合故不言而已在其中〔/注文〕\n按五虛乃四時五行絶氣三合之日三合之絶氣則凶絶氣之三合未為凶也故第名之曰五虛而所忌如此與德合六合併則與旺氣為合而並不可以絶氣三合論矣故不忌也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0140",
+      "sha256": "8d9eb7b9d468bcbe693bef7b99aa7583db05bbc2d079c9c6e05375b99911743d"
+    },
+    {
+      "section": "八風",
+      "text": "忌取魚乘船渡水\n與天德月德天德合月德合六合併則不忌〔注文〕天赦不得與八風併〔/注文〕\n按八風所忌見義例與德合六合併則風以合而定矣故不忌也",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0141",
+      "sha256": "ef01982f2c16f5a0086e2a0dba815261d359ea3cfd9e83ec442de05d1466ab40"
+    },
+    {
+      "section": "五墓",
+      "text": "忌冠帶行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移安牀解除求醫療病營建宮室修宮室繕城郭興造動土豎柱上梁開市立劵交易修置産室栽種牧養納畜破土安葬啟攢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0142",
+      "sha256": "f0578e99078575306b60433f26a847fd74ef47051b2552751b60fa15451b49e1"
+    },
+    {
+      "section": "五月十一月與月德併則不忌",
+      "text": "按五墓乃五行旺干臨於墓庫故所忌如此與月德併則為三合旺氣發於天干而不可以墓論矣故不忌也不取德合者不同行也舊忌無冠帶行幸上官療病安葬等事今補之其義始備",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0143",
+      "sha256": "d859395490871342639865b954c0f368e34043aa1c34da57fb81babe5e5f0ee4"
+    },
+    {
+      "section": "九空",
+      "text": "忌進人口修倉庫開市立劵交易納財開倉庫出貨財\n寅申月值滿日子午卯酉月值開日與月德天德合月德合併則不忌己亥月值月厭從月厭論辰戌丑未月值破日從月破論\n按九空為三合庫地之衝故所忌如此與德合併則支以干合而忘衝故不忌也若值月厭月破其凶甚於九空故從重論",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0144",
+      "sha256": "9652b13845b028ddd7239a1fa9d9181083ed70c226aa9792fc322017ae315b8c"
+    },
+    {
+      "section": "九坎",
+      "text": "〔注文〕九焦〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0145",
+      "sha256": "c72b4a0306c21987e445314966cc609e3b335a17ae6acaa0ad0b6616542db38a"
+    },
+    {
+      "section": "忌補垣塞穴取魚乘船渡水",
+      "text": "又為九焦忌鼓鑄栽種修築園圃",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0146",
+      "sha256": "b6b54a04e19efe74cceb6df24eca1b07cdfcdf8fd574b8809fd254d73ee80839"
+    },
+    {
+      "section": "與德合併猶忌",
+      "text": "〔注文〕赦願不得與九坎併〔/注文〕\n按九坎九焦忌見義例與德合義不相屬故與併猶忌非謂其日之凶德神不能化解也土符地囊歸忌血忌倣此\n土符　地囊\n忌營建宮室修宫室繕城郭築隄防興造動土修倉庫修置産室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壞垣栽種破土",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0147",
+      "sha256": "e35d07a24901d07b8453e2ae19bfa84f728ed7ea54b1d53798c706c9091e41ff"
+    },
+    {
+      "section": "與德合赦願併猶忌",
+      "text": "兵禁",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0148",
+      "sha256": "b47212fa1bfde0f0d1c3553b846cc8c0c7484afbcff4b767300b3124389e4623"
+    },
+    {
+      "section": "忌安撫邊境選將訓兵出師",
+      "text": "與德合赦願併猶忌\n按兵禁取逆義故忌軍事雖與德合赦願併無解於其逆也故猶忌大煞倣此",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0149",
+      "sha256": "02c4301577a4941e713f0d61beb11671a78c28d87157ad432ad7d6cd3acf07cb"
+    },
+    {
+      "section": "大煞",
+      "text": "忌安撫邊境選將訓兵出師",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0150",
+      "sha256": "7dc25449a2925d4b6ce62a7895c6ec47a27485d63353719fe0085198be95b892"
+    },
+    {
+      "section": "與德合併猶忌",
+      "text": "〔注文〕赦願不得與大煞併〔/注文〕\n按舊本並忌進人口納財豎柱上梁其義不倫故刪",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0151",
+      "sha256": "32759dc03390743828b5be4b381f6db265a853f9f6622ce6c135cd7276518646"
+    },
+    {
+      "section": "歸忌",
+      "text": "忌般移逺廻",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0152",
+      "sha256": "9ef3ed38b9528e453b6041a5b68b053d53cc5a7ced77e5ba81f7e3af4d4454dd"
+    },
+    {
+      "section": "與德合赦願併猶忌",
+      "text": "血忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0153",
+      "sha256": "67b416958396594308547ec36aec216e4ac9700c419fc3b531d2c2ea73326022"
+    },
+    {
+      "section": "忌針刺",
+      "text": "與德合赦願併猶忌\n徃亡　氣徃亡\n忌上册進表章頒詔詔命公卿招賢宣政事行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民嫁娶進人口般移求醫療病捕捉畋獵取魚",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0154",
+      "sha256": "5c9d147ac8bf6d93fc62867d7d6e4ddaff0f68e531cd2bef836b468fef3545bf"
+    },
+    {
+      "section": "與德合赦願併猶忌",
+      "text": "按徃亡本不為凶第取三合溺於所生而無尅制之義有徃而不返之象故所忌如此然世俗避之惟謹雖值德合赦願不能無疑故與併猶忌舊本并忌施恩封拜而不忌招賢宣政事今按徃亡與封拜無涉應不忌凡宜出行之日方宜招賢宣政事徃亡既忌出行自應并忌之也\n復日　重日\n忌破土安葬啟攢\n與天德月德天德合月德合天赦六合併〔注文〕天願必是六合故不言而已在其中〔/注文〕則不忌亦不註宜",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0155",
+      "sha256": "7efd9118ee0be9c1edd43175fb1125565a8f6e87263e11c7d305c013276c839d"
+    },
+    {
+      "section": "復日又宜裁製",
+      "text": "按舊本重復日忌為凶事利為吉事故忌破土安葬啟攢然其義亦泛矣夫葬乘生氣經有明文今選擇家亦以無禄四廢為凶日若復日則皆令星孟仲月又皆建禄其吉自無可疑己亥為隂陽盡日亦大率云然而推以十二月㕘以三合此二日無皆凶之理乃惟此之忌而不避刑厭三煞之凶且所宜又止於鳴吠日而舍德赦六合之吉而不知用是與嫁娶之僅取不將而不取德合惟忌章光無翹而不忌刑衝破害等也婚葬為人事之始終而俗論拘忌若此深為不便顧相傳已久遽去之轉不足以牖世故遇鳴吠則忌遇德赦六合則不忌識者自能辨之亦不註宜聊以從俗云爾並詳利用卷",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0156",
+      "sha256": "0cdfeba53b52098eba595b32a4a6f2b665cf16c436c83547b21691ac59151e85"
+    },
+    {
+      "section": "五離",
+      "text": "忌慶賜賞賀宴㑹結婚姻納采問名立劵交易與天德月德天德合月德合天赦三合六合併則不忌\n按五離為五合之衝故所忌如此與德合天赦三合六合併則其吉大於五合而非五離所能離矣故不忌也五合不宜慶賜賞賀納采問名而五離則并忌之者盖慶賜賞賀之事大於宴㑹納采問名之事大於結婚姻五合之吉可小事不可大事五離不宜其小則大者可知也若嫁娶之事則原不取五合自亦不忌五離矣",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0157",
+      "sha256": "ba6624835693199bf3daed6c5e9fa7295bb1382bee83bec1971a0e3aec506fde"
+    },
+    {
+      "section": "八專",
+      "text": "忌安撫邊境選將訓兵出師結婚姻納采問名嫁娶與德合併猶忌與天願併止忌安撫邊境選將訓兵出師餘不忌\n按八專自以干支取義與德合義不相屬故與併猶忌觸水龍專日伐日倣此又按八專之忌婚嫁取隂陽同居而無别為義天願五月丁未十一月癸丑丁乃午也非未也癸乃子也非丑也是相合而有别矣故不忌婚嫁也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0158",
+      "sha256": "814fa2d8863bc8b6f97d4a06579095cccdda32bfe18fa9d8d817572f7d3dcae5"
+    },
+    {
+      "section": "觸水龍",
+      "text": "忌取魚乘船渡水",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0159",
+      "sha256": "de8d529d20eae9034167af7880d9c9324948634cfad4d9cf696cebeeed2a505d"
+    },
+    {
+      "section": "與德合天願併猶忌",
+      "text": "〔注文〕觸水龍無天赦日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c010:p0160",
+      "sha256": "9ac8d5cb24ec42b22f3483cdf94ac11379f34d8610fbb67c461f1e526c3e5c59"
+    },
+    {
+      "section": "見義例",
+      "text": "專日　伐日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0161",
+      "sha256": "24a9cda805eed4143c07aa6c4231ab5c5eca5c7a54f74ea0fa48775d374b80af"
+    },
+    {
+      "section": "忌安撫邊境選將訓兵出師",
+      "text": "與德合赦願併猶忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0162",
+      "sha256": "c32baca4d67792d31868a44635ae725992cace755922207c866a7d1db5746043"
+    },
+    {
+      "section": "見義例",
+      "text": "天刑　朱雀　白虎　天牢　元武　勾陳\n與凶神併則從所忌與吉神併則從所宜\n按舊本六黑道忌興衆務而仍從吉神所宜並無專忌之事若選時則諸事皆忌也並詳六黃道",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0163",
+      "sha256": "fb711a5d13c1535b0f08a272533404a0aef0b3b0abf6688cb2f2502385ae17e4"
+    },
+    {
+      "section": "無禄日",
+      "text": "止註祭祀解除沐浴整容剃頭整手足甲掃舍宇修飾垣墻平治道塗破屋壞垣伐木餘事不註\n與天德月德併則不以無禄論寅年月甲辰日卯年月乙巳日巳年月丙申戊戌日午年月丁亥己丑日申年月庚辰日酉年月辛巳日亥年月壬申日歲月填實禄空亦不以無禄論雨水後壬申日榖雨後辛巳日小滿後庚辰日大暑後丁亥己丑日處暑後丙申戊戌日霜降後乙巳日小雪後甲辰日太陽填實禄空亦不以無禄論甲巳年亥卯未月己丑日乙庚年己酉丑月乙巳日丙辛年寅午戌月辛巳日丁壬年申子辰月丁亥日嵗德合月德合所㑹之辰亦不以無祿論乙庚年亥月庚辰日丙辛年巳月丙申日丁壬年寅月壬申日戊癸年申月戊戌日天徳合歳徳所㑹之辰亦不以無祿論甲年月甲辰日乙年月乙巳日丙年月丙申日丁年月丁亥日戊年月戊戌日巳年月己丑日庚年月庚辰日辛年月辛巳日壬年月壬申日歳徳嵗徳合天干三朋亦不以無祿論惟癸亥為干支俱盡日雖值天月二徳歳月太陽填實歳徳㑹合仍以無祿論\n按無祿日以干祿落旬空故諸事不宜惟祭祀解除等事不嫌其空故遇有所宜之神則不忌與天徳月徳併則三合成祿旺之局月建太陽填實則一月皆祿旺之宫至於嵗建填實嵗徳㑹合尤以嵗君為主而旬空不足道矣故不以無祿論也癸亥干支俱盡與上朔晦日同義又交中氣日嵗徳嵗徳合日每年不同故月表與萬年書俱不論無祿日臨時選用詳萬年書鋪註條例",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0164",
+      "sha256": "bdfb453238a5aef92346f44ff56d28eba85fa12ee534203d285b7c173444d8ae"
+    },
+    {
+      "section": "反支",
+      "text": "忌上冊進表章陳詞訟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0165",
+      "sha256": "4f1dbdec9611bd1bee7c4336decd9f9720da1c9db372d052af35614d11b9a96d"
+    },
+    {
+      "section": "與徳合赦願併猶忌",
+      "text": "見義例以下諸日皆毎年不同亦月表萬年書所不能載臨時選用詳萬年書鋪註條例\n上朔　四離　四絶　晦日\n止不忌祭祀解除沐浴整容剃頭整手足甲補垣塞穴掃舍宇修飾垣牆平治道塗破屋壊垣伐木餘事皆忌與徳合赦願併猶忌以下並同\n按上朔為隂陽與嵗徳俱盡之日四離四絶為二氣五行分判之日晦為月盡之日故諸事不宜惟祭祀解除等事或以事神而不敢禁或以除舊而不為嫌故遇有所宜之神則不忌晦日雖不與上朔同凶然亦止宜祭祀等事餘事雖不忌亦不註宜也又上朔以年干取義晦日反支以月朔取義四離四絶以節氣取義皆與徳合赦願義不相屬故與併猶忌也下倣此\n冬至　夏至　春分　秋分\n不註上册進表章慶賜賞賀宴㑹行幸遣使安撫邊境選將訓兵出師上官赴任臨政親民結婚姻納采問名嫁娶進人口般移開市立劵交易捕捉畋獵取魚冬至日又不註伐木\n按二至之日隂陽爭二分之日厭建對故雖吉日亦不註此數事冬至又不註伐木與開日同義",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0166",
+      "sha256": "ea4ae96d2bf634b3573c83869004a9ea069932c523a21d2c8200bb273be7b6f2"
+    },
+    {
+      "section": "土王用事",
+      "text": "忌營建宫室修宫室繕城郭築隄防興造動土修倉庫修置産室開渠穿井安碓磑補垣修飾垣墻平治道塗破屋壊垣栽種破土",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0167",
+      "sha256": "d8c878128fee22a11a33870692c7e739bb78bf47227229feedcb0c0edbd5d103"
+    },
+    {
+      "section": "義同土府",
+      "text": "伏社",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0168",
+      "sha256": "70b82ace1f9ea92281e452d5faae2813b895c1e434f766d16dad65a73f4af528"
+    },
+    {
+      "section": "忌沐浴",
+      "text": "按沐浴宜申酉亥子日伏為金伏是申酉之反也社為土旺是亥子之反也故忌沐浴\n朔〔字形SK2959：弦〕朢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0169",
+      "sha256": "b6acf4d911efc52cb3d75dcf3d70568e436025d39dabac3731174f13de1f5b85"
+    },
+    {
+      "section": "忌求醫療病",
+      "text": "按朔為日月同度〔字形SK2959：弦〕為近一逺三朢為日月相對猶建破平收之義也故忌療病",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0170",
+      "sha256": "4301d699372b9c0c887c3c55999b881de4c59683214adf02380c564ebbb4e609"
+    },
+    {
+      "section": "月忌日",
+      "text": "止註祭祀宴㑹沐浴整容剃頭整手足甲求醫療病補垣掃舍宇修飾垣牆平治道塗餘事不註",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0171",
+      "sha256": "51a4a5b8242239dc1b0a9de0c6644e12dd96938e35b7ffcd1c6d01bbe0308b12"
+    },
+    {
+      "section": "見義例",
+      "text": "十五日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0172",
+      "sha256": "168baee354e0f5fa2d43b3633586749a13351eef22d8a59f4b566f4eb8aca456"
+    },
+    {
+      "section": "忌求醫療病",
+      "text": "義同朢日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0173",
+      "sha256": "9d9043fa5b9c264cc72be2db11b3c73ed00354a6bce0d840baa234e3eb5700b2"
+    },
+    {
+      "section": "人神所在日",
+      "text": "十二日在髮際十五日在徧身忌剃頭一日在足大指六日在手十五日在徧身十九日在足二十一日在手小指二十三日在肝及足忌整手足甲\n長星　短星\n忌進人口裁製經絡開市立劵交易納財納畜見附錄",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0174",
+      "sha256": "af3c69ce8f59cd87a4bc0fdb0c1cd8375e5ded62128be1acc8c697cdb8e60a09"
+    },
+    {
+      "section": "百忌日",
+      "text": "甲日忌開倉庫出貨財乙日忌栽種丁日忌剃頭庚日忌經絡辛日忌醖釀壬日忌開渠丑日忌冠帶寅日忌祭祀夘日忌穿井巳日忌出行午日忌苫葢未日忌求醫療病申日忌安牀酉日忌宴㑹亥日忌嫁娶以上所忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0175",
+      "sha256": "ebba6285309a37741f903ebec8da76829e96888f247180b24161eef8fce5cff5"
+    },
+    {
+      "section": "鋪註條例",
+      "text": "凡鋪註萬年書通書先依用事次第察其所宜忌之日於某日下註宜某事某日下註忌某事次按宜忌較量其吉凶之輕重以定去取\n凡宜宣政事布政事之日止註宜宣政事\n凡宜營建宫室修宫室之日止註宜營建宫室\n凡吉足勝凶從宜不從忌者如遇徳猶忌之事則仍註忌\n凡吉凶相抵不註宜亦不註忌者如遇徳猶忌之事則仍註忌\n凡徳合赦願月恩四相時徳等日不註忌進人口安牀經絡醖釀開市立劵交易納財開倉庫出貨財如遇徳猶忌及從忌不從宜之日則仍註忌\n凡天狗寅日忌祭祀不註宜求福祈嗣\n凡夘日忌穿井不註宜開渠壬日忌開渠不註宜穿井凡巳日忌出行不註宜出師遣使\n凡酉日忌宴㑹亦不註宜慶賜賞賀",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0176",
+      "sha256": "ddf3e958689cba0ffe496ed00640a884278be4730b829907296ef4d713b0fcc0"
+    },
+    {
+      "section": "凡丁日忌剃頭亦不註宜整容",
+      "text": "凡吉凶相抵不註忌祈福亦不註忌求嗣\n凡忌詔命公卿招賢不註宜施恩封拜舉正直襲爵受封\n凡忌施恩封拜舉正直襲爵受封亦不註宜詔命公卿招賢\n凡宜宣政事之日遇往亡則改宣為布\n凡月厭忌行幸上官不註宜頒詔施恩封拜詔命公卿招賢舉正直遇宜宣政事之日則改宣為布\n凡吉凶相抵不註忌結婚姻亦不註忌冠帶納采問名嫁娶進人口如遇徳猶忌之日則仍註忌\n凡吉凶相抵不註忌嫁娶亦不註忌冠帶結婚姻納采問名進人口般移安牀如遇徳猶忌之日則仍註忌遇不將而不註忌嫁娶者亦仍註忌遇亥日厭對八專四忌四窮而仍註忌嫁娶者止註所忌之事其不忌者仍不註忌\n凡吉凶相抵不註忌般移亦不註忌安牀不註忌安牀亦不註忌般移如遇徳猶忌之日則仍註忌\n凡吉凶相抵不註忌解除亦不註忌整容剃頭整手足甲如遇徳猶忌之日則仍註忌\n凡吉凶相抵不註忌修造動土豎柱上梁亦不註忌修宫室繕城郭築隄防修倉庫鼓鑄苫葢修置産室開渠穿井安碓磑補垣塞穴修飾垣牆平治道塗破屋壊垣如遇徳猶忌之日則仍註忌\n凡吉凶相抵不註忌開市亦不註忌立劵交易納財不註忌納財亦不註忌開市立劵交易不註忌立劵交易亦不註忌開市納財\n凡吉凶相抵不註忌開市立劵交易亦不註忌開倉庫出貨財如遇專忌之日則仍註忌\n凡吉凶相抵不註忌牧養亦不註忌納畜不註忌納畜亦不註忌牧養\n凡吉凶相抵有宜安葬不註忌啟攢有宜啟攢不註忌安葬\n凡土府土符地囊止註忌補垣亦不註宜塞穴\n凡開日不註宜破土安葬啟攢亦不註忌遇忌則註凡四忌四窮止忌安葬如遇鳴吠鳴吠對亦不註宜破土啟攢\n凡天吏大時不以死敗論者遇四廢嵗薄逐陣仍以死敗論\n凡嵗薄逐陣日所宜事照月厭所忌刪所忌仍從本日二月甲戌四月丙申六月甲子七月戊申八月庚辰九月辛夘十月甲子十二月甲子徳合與赦願所㑹之辰諸事不忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c010:p0177",
+      "sha256": "33828f3227c9d160b35c0a6dae2f30a8efec7bf1e8d1cc36dd894188afd5dbf2"
+    }
+  ]
+}

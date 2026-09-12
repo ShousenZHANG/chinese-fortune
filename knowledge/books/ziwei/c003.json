@@ -1,0 +1,1348 @@
+{
+  "book_id": "ziwei",
+  "chapter_id": "c003",
+  "title": "卷三",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8%2F%E5%8D%B7%E4%B8%89&oldid=2268626",
+  "revision": "2268626",
+  "source_timestamp": "2023-03-15T10:18:42Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/ziwei/c003.wiki",
+  "raw_sha256": "ed327a68253a89a6e8b2962932a16f75546826ffcdd2e9e4ac419ad0f389b03b",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "谈星要论",
+      "text": "看身安命禄马不落空亡天空截空最紧，旬空次之。\n第一看命宫吉凶庙旺化吉化忌生克。\n次看身主吉凶生克。\n三看迁移财帛官禄三方星辰刑冲克破。\n四看福德宫权禄劫空庙陷，以福德宫对财帛宫也。\n身命迁移财官福德六宫名曰八座，俱在成照聚吉化吉，富贵高寿。\n六宫俱陷，聚凶化忌，孤寡夭寿。若卯酉时生人尤外，有田宅疾厄已录于后。\n又看父母妻子三宫，俱有劫空杀忌，僧道之命，否则孤独贫穷。\n若命宫无正曜者，财官二宫有吉星拱照，富贵全美，或偏房庶母所生。\n三方有恶星冲照，或二姓可延生，离祖可保成家。\n如命宫有正曜吉星，庙旺化吉，三方又有吉星会合，上上之命。\n如无正曜吉星，三方有吉，上次之命。\n命宫星辰无吉无凶，或吉凶相伴者，如三方亦有中等星辰，为中格。\n及命宫星辰庙旺，三方有恶星守照破格。\n及命星陷背，加羊陀化忌，却得十干禄元来相守化吉，亦为中等之命。\n若命无吉星，反有凶杀化忌无禄落陷，为下格之命。\n三方有吉星，亦可为中等，先小后大，不能久远，终为成败夭折论。\n若安命星躔陷地，又加凶杀化忌，三方又会羊陀火铃空劫，为下格贫贱，二姓延生，奴仆之命，否则夭折六畜之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0001",
+      "sha256": "7d0aaac174ca1a41ebd3ea59c12286ef9727d844251aff34f8e30d2654b530b8"
+    },
+    {
+      "section": "论人命入格",
+      "text": "如命入格，庙旺聚吉，科权禄守，上上之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0002",
+      "sha256": "9471cf9fe8b6e1f0c7f57c7c1272dfa4be01d0a48e2e62913a7fe177c31247be"
+    },
+    {
+      "section": "论人命入格",
+      "text": "不入庙加吉化，科权禄，上次之命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0003",
+      "sha256": "ac57c50f95de0c326c33edc847b8d4a6b1449cfd9e0ed6361f43fd6fbb19eae2"
+    },
+    {
+      "section": "论人命入格",
+      "text": "不入庙不加吉，为平常命。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0004",
+      "sha256": "d2cebe4d5f65dd04b6e076e3b9054ec8e4dfafe7881127c322e17257b3db59cf"
+    },
+    {
+      "section": "论人命入格",
+      "text": "入庙不加吉，平等。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0005",
+      "sha256": "f17c0f37990f68a8863d15f43b025bb0688adeb9d2c7ed35363bb46cb86c9e5b"
+    },
+    {
+      "section": "论人命入格",
+      "text": "若居陷地又加杀化忌，为下格之命，不以入格而论也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0006",
+      "sha256": "80e962772193051b27a664efc5e68fbeed84a022ea8f4870e4d66a795e6f0be7"
+    },
+    {
+      "section": "论人命入格",
+      "text": "又入格不化吉而化凶，只以本命吉凶多寡而断之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0007",
+      "sha256": "d48943bb37b8118c0b3f786c6f204c8b71a7e0edc9e31d3629f6daec0962dbb2"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "紫府与数相合何如，紫微南北斗中天帝主，天府乃南斗主。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0008",
+      "sha256": "9fffc23b4a300482928ec759cb395e2aab50a8f7b2c0830fef5d330715ac9fae"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "又看阴阳相伴者，看阴阳不相伴，又数不相生，为下格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0009",
+      "sha256": "4ca428afc4a47f327a85910f95090f03b607378e9e638bbb7ec3e52cb66e50a5"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "阴阳纯驳为中格。又三方四正皆吉星为上格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0010",
+      "sha256": "6732639b65543b8cd41d0cc0adb920ba5af20f8f5c77c1ff171b0b5de8086458"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "吉凶相伴守照为中格。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0011",
+      "sha256": "c4e94185fce50c0eaf8261506e4636d442e90d91fc1cf9fb7d35dc16bb3eb724"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "凶星恶杀为下格凶徒论。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0012",
+      "sha256": "e3c72e07e9583076b6c7c457e3f731d0da986248d9cf0628383f857af1f7adba"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "凡星得上格而数得上格为第一，位至极品之贵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0013",
+      "sha256": "13222b86268cd9b457876142f76708db9a6abc1daab721ec95ec41263f96dfe4"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "凡星得上格而数得中格为第二，位至三公。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0014",
+      "sha256": "ff63bb72bbbab6a7ab4419d06ec7bf2d98a3d11534dba830fa062c70ece8d30a"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "星得上格而数得下格为第三，位至六卿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0015",
+      "sha256": "9450ad3d6b2e10b8bc4e885f3d79a6d9095435a76d45a7809b72b099c9f62d73"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "皆为上格上寿之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0016",
+      "sha256": "3603d6a750a34e34381ef7098873205d49c088019dde96d39a922cfe0f13ae30"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "星得中格而数得上格为第四，位至监司。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0017",
+      "sha256": "4a25c70a498413edf6d9328cd480251d95b1a48a4eeb4be8d3b100bf34ac61c8"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "星中数中为第五，位至县令。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0018",
+      "sha256": "5c252246bf8fe8c6dbe457406f0d93c2767074697b53b1ba42970e32d2cb9dbc"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "星中敷下为第六，异路前程贵显。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0019",
+      "sha256": "402b3933974648efc32d3dd1fc88fb43c2b4c0ca26a61f3a523e82105d196dc5"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "皆得中等享福主人也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0020",
+      "sha256": "b336e4e26c63256fad8471967d31f07fc2377b98952f85f8af10f957119c528d"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "又星得下格而数得上格为第七，衣禄丰足，富比陶朱，子孙蕃盛，寿享遐龄，以星虽凶而命入格合局故也，再否虚名虚利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0021",
+      "sha256": "b9d47070bf2c6883f3817f0fffc2a78cc7cc6f247aec5a0932f97340b0af3291"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "星下数中为第八，衣食无亏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0022",
+      "sha256": "d8ffd09c8536af1a3db7e2e6a0629201014c6c6058ea39076a944ee92219d631"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "星下数下为第九，辛苦奔波，贫穷夭折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0023",
+      "sha256": "5df3ce30491984dbe3092874301087dc642d93c54ff7a2580808a6c94314fdba"
+    },
+    {
+      "section": "论格星数高下",
+      "text": "上中下三等，依理而断，则上可以知祖宗之源，而下可以知子孙之盛衰也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0024",
+      "sha256": "bee0597cfada564d41646947e83336c4062ab9d712729d01e3569eb1b26436bf"
+    },
+    {
+      "section": "论男女命同异",
+      "text": "男女命不同，星辰各别。男命先看身命，次看财帛宫禄迁移，俱要庙旺为吉，落陷聚凶为凶。三看福德，权禄劫空庙陷吉忌。又看田宅奴仆疾厄宫吉凶，吉凶已算于后。又看父母妻子三宫，俱有劫空杀忌则僧道之命，否则贫穷孤独。须要仔细参详，方可断人祸福荣辱。\n女命先看身命吉凶，如贪狼七杀擎羊则不美。次看福德宫吉凶，若七杀单居福德必为娼婢。三看夫君，四看子媳财帛田宅。若桃花刑杀要败绝空亡为凶，若诸吉庙旺则佳，虽是艰辛贫困亦不为下溅夭折论。女因夫贵，女命贵格反为无用，以子媳夫君福德为正强。田宅财帛为次强。宫禄迁移七杀为陷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0025",
+      "sha256": "1aeb8f3d3077872db7652f4a89d6e902705233825aaa9882e62e747a14f5ae51"
+    },
+    {
+      "section": "论小儿命",
+      "text": "小儿博士力士上短下长，青龙将军腮小头圆。大耗鼻仰唇缩，死符病符声高性雄。官府奏书逢恶曜落地无声，白虎太岁遇七杀幼弱遭伤。须分生克制化之垣，更看时禄衰败之地，后观关杀方知寿夭穷通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0026",
+      "sha256": "4a362e8e04c4dab4cd8a3232e306b98c96f638164639a4cb1d77946ca1993afa"
+    },
+    {
+      "section": "论小儿命",
+      "text": "小儿初生，命中星辰庙旺，大小二限未行，断其灾少，易养，父母无克。若命坐恶\n杀及缠陷弱之地，大小二限未行，断其灾多，难养，刑克父母。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0027",
+      "sha256": "8d8a76b78adf10450de24e24e577a7e6822bb4a01dec37d7ef80899e9c08a161"
+    },
+    {
+      "section": "定小儿生时诀",
+      "text": "子午卯酉单顶门，或偏左边二三分，寅申巳亥亦单顶，偏居右去始为真，辰戌丑未是双顶，胞胎受定正时辰。\n又\n子午卯酉面向天，寅申巳亥侧身眠，辰戌丑未脸伏地，临盆当试用心坚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0028",
+      "sha256": "1c2d816243b6a75d3f9063a458c8d368de9229d33d65b77b70259f9f6c9e0fe2"
+    },
+    {
+      "section": "论人生时安命吉凶",
+      "text": "凡男女生在寅午戌申子辰六阳时，安命在此六宫者吉。生在巳酉丑亥卯未六阴时，安命在此六宫者吉。反此则少遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0029",
+      "sha256": "e017c95aff97774ebc26eca59d1037a66fd7d77e669fc9dbc957a6d9fb41d2f9"
+    },
+    {
+      "section": "论人生时要审的确",
+      "text": "如人生子亥二时最难定，准要仔细推祥，如子时有十刻，上午刻属昨夜亥时，下午刻属今日子时，如天气阴雨之际，必须罗经以定真确时候，若差讹则命不准矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0030",
+      "sha256": "aae4d1b911f93ccbb76b4e86b3c6c57d1164ea562d07e7dcbb02dfad675679e8"
+    },
+    {
+      "section": "论小儿克亲",
+      "text": "如寅午巳酉生人，见辰戍丑未时最毒，子申亥卯生人次之。若寅亥巳生人，见午申酉亥时，主先克父，出十六岁则不妨。若辰巳丑未生人，见子午卯巳亥申酉时生者，主先克母。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0031",
+      "sha256": "0e0fd2cc57fa9cf38f8a6fb40ea9840d58e787e80a0837e7972f615c2ac1d645"
+    },
+    {
+      "section": "论命先贫后富",
+      "text": "人生于富贵之家，一生快乐享福，财官显达，妻荣子贵，奴仆成行，声名昭著。其间有半途遭伤，人离财散，官非火盗，身丧家亡，此等之命非命也。是限步逢大小二限及太岁相冲照，又加凶杀守临，故此破败，不贫即损寿也。所谓先成后败，先大后小也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0032",
+      "sha256": "386be45b92c4761cf788981ee13627b0b7d7a4958bbd7a64eb30fbf6b4a05d02"
+    },
+    {
+      "section": "论命先贫后富",
+      "text": "又有人命出身微贱，营活生计，百工巧艺，九流医术，又为农圃等辈，初历艰辛度日。却仍中末平地升腾，发财惊骇乡邦，因生在中庸之局，后因限步相扶，星辰逢吉曜兼庙旺，以此突然发达进禄。所谓先贫后富，先小后大是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0033",
+      "sha256": "596bdf41bca1e32d40af3670e9f3b7a1a1e22574932af919d591a313d85cb99f"
+    },
+    {
+      "section": "论大限十年祸福何如",
+      "text": "如宫分星缠全吉庙旺得地，无擎羊陀罗火铃空劫者，主十年安静，人财全美。若限内有擎羊陀罗火铃空劫忌星为伴，成败不一。如宫分星缠陷地，值擎羊陀罗火铃空劫忌，又加流年恶杀凑合，及小限巡逢凶杀，则官灾死亡立见。大限将出，有吉众者无灾悔，少者灾多，损人破财不利。凡行至寅申巳亥子午宫，遇紫微天府天同太阳太阴昌曲禄存禄主吉星，主人财兴旺，添丁进口之庆。行至辰戍丑未卯酉，遇恶杀廉贞天使羊陀火铃空劫忌星，主人酒色荒迷，贫乏死生。遇左右昌曲，仕宦迁官加职，士民生子发财，妇人喜事，僧道亦利，商贾得益。凡大小二限及太岁，怕行天伤天使夹地，怕行天空地劫之地，怕行擎羊陀罗之地，及羊陀冲照，怕脱凶限，怕逢凶限，又怕伤使劫空羊陀并夹岁限。如天伤在子，天使在寅，岁限在丑宫，乃并夹也。羊陀守命尚且无用，况夹限乎，若逃得过须看寿星，紫微天同天梁贪狼坐命可解。更须看月值恶杀，日值恶杀，加凑大小岁月日时五者参详吉凶推断。太岁行至奏书将军直符天使天伤羊陀火铃空劫忌星，逢一二位，主人离财散，疾病哭泣之兆。若岁限犯重月日一二位，又逢忌星合者，官吏遭谪，常人遭横事，妇人损胎，病者死亡。若恶杀在不得地，如风雨暴过。若岁限临无吉星，命中无救，其年难过必死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0034",
+      "sha256": "7dd3793b11c75a527be42ac0770b4d1c6336eaa23410459d4ee7ad51914d4a16"
+    },
+    {
+      "section": "论二限太岁吉凶",
+      "text": "须详大限独守吉凶何如，小限独守吉凶何如，太岁独守吉凶何如。如岁限俱凶则凶。又看大限与小限相逢吉凶何如，大限逢太岁吉凶何如，小限逢太岁吉凶何如，祸福所定。又看太岁冲大限小限，太岁冲羊陀七杀，然后可断吉凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0035",
+      "sha256": "9d35c0581812da3f69712a27d3071344dffdd411b8bf6473d279246e28b75c8f"
+    },
+    {
+      "section": "论行限分南北斗",
+      "text": "阳男阴女南斗为福。阴男阳女北斗为福。\n北斗诸星吉凶，大限断上五年应?小限断上半年应。\n南斗诸星吉凶，大限断下五年应，小限断下半年应。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0036",
+      "sha256": "71e9283be472fe2d129013781ba73a23e850bef6a7a4fb393ab2fc73ba0724cf"
+    },
+    {
+      "section": "论流年太岁吉凶星杀",
+      "text": "凡太岁看三方对照星辰吉凶何如以定祸福，太岁在命宫行者祸福尤紧。如命在子宫太岁到子，又癸生人逢吉则吉逢凶则凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0037",
+      "sha256": "82e6e76bec93fbc2393d7781c4aee0f0cc850e7279866a7fe4f060317ead1d46"
+    },
+    {
+      "section": "论阴骘延寿",
+      "text": "阴腾延寿生百福，虽然倒限不遭伤。假如有人大小二限及太岁到凶陷地，有延过寿去不死者，乃是其人曾行阴腾，平日利物济人，反身修德，以作善降福，虽凶不害。如宋郊编荻桥渡蚁是也。又如诸葛亮火烧藤甲军，伤人太毒减寿一纪。当以此参详。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0038",
+      "sha256": "b1957d0cf8cdcc40c3faa7e78d99865ffdf9f04f717ad1dcb9ff8778b6ca1a52"
+    },
+    {
+      "section": "论羊陀迭并",
+      "text": "如庚年生人，命在卯宫，迁移在酉宫。如遇羊陀，流年亦庚禄居申，流羊在酉，流陀在未，是命在卯宫原有酉宫擎羊冲合，流年又遇流羊流陀，谓之羊陀迭并。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0039",
+      "sha256": "6bd2be3835665cba23dbf6b88965c108e170001cda266d3632bc0e366a20ad6f"
+    },
+    {
+      "section": "论七杀重逢",
+      "text": "如命中三合原有七杀守照，而流年又遇流羊流陀冲照凶，七杀重逢二者为祸最毒，入庙灾晦减轻，如陷地逢忌及卯酉遇擎羊为闲宫，午生人不利也。然七杀逢吉曜众亦转凶化吉，不可一概论凶。擎羊陀罗七杀逢紫微天相禄存三合拱照可解。\n诗曰 羊陀迭并命难逃，七杀重逢祸必遭，太岁二限临此地，十生九死不坚牢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0040",
+      "sha256": "705c62b2f3d469a228feaf4ad63dc5f8ae2de9b4b3e2d29364cd83b74ca3fd24"
+    },
+    {
+      "section": "论大小限星辰过十二宫遇十二支所忌诀",
+      "text": "人生子命忌寅申  假如子年生人切忌寅申岁限，灾晦至重，及忌子午岁限相冲。\n丑午生人丑午瞋  假如丑年生人忌午丑岁限，午生人亦忌丑午岁限，及忌七杀星，灾晦极重。\n寅卯之人防巳亥  假如寅卯人忌巳亥岁限，及忌卯酉寅申相冲。\n龙蛇切忌本身临  假如巳生人忌逢巳年及忌行到巳限、辰生人忌行辰年又忌行到辰限为天罗，又忌行到戌为地网，限遇此灾晦疾厄之险，官非破财忧制连连矣。\n申人铃火灾殃重  假如申生人忌逢火铃二星，必主灾晦至重，及忌寅年冲。\n未遇猪鸡墓患殷  假如未生人忌逢酉戌岁限，又忌见擎羊在四墓宫。\n戌亥羊陀须避忌  假如戌亥生人忌遇羊陀灾重，戌生人又行到戍宫岁限为地网，又忌行到辰宫岁限为天罗，谓之辰戌相冲不美。\n酉人陀刃亦非亲  假如酉生人亦忌羊陀岁限及忌行卯宫限，及卯年岁君相冲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0041",
+      "sha256": "48922dd7438230a4e589c96a6a2d0be3b15566ab31a193755a3d125d6b5c5ad2"
+    },
+    {
+      "section": "论大小限星辰过十二宫遇十二支所忌诀",
+      "text": "猪犬生人莫遇蛇，辰戍切忌到网罗，预先整顿衣冠木，未免生人唱挽歌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0042",
+      "sha256": "6cfe9bbdec8446609cc64580227f9ea25fa05d239b350361629c63d823e0db57"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "金人遇坎命须伤，木命落离有祸殃，水遇艮宫应蹇滞，火来兑上祸难藏，\n土到东南逢震巽，须防脓血及惊慌，纵然吉曜相逢照，未免官灾闹一场。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0043",
+      "sha256": "3eac05366a5ff5b683a81b15642544a0389e730e3744acd69d537c1e3a69bfb2"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "论太岁小限星辰庙陷遇十二宫中吉凶 依此判断其人行年灾患应如神",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0044",
+      "sha256": "605a82e89e8881e96ad562d8d774fa8adbbd5337dce21433d053d59ab1b5584e"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "子年太岁并小限到子宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0045",
+      "sha256": "35960a9409b2617ba7e8ba5362e2cc1608c10c4f543358816a305765f9a31520"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "七杀破军在子宫守岁限癸庚己生人发福，巨门天机乙癸生人发福，天府天相天梁丁己庚人财旺遂心，又天同丙丁生人财官双美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0046",
+      "sha256": "9a5c59b8a799f0a1626c0400b6579420ade46e2b903c8607642552c9d8b09c59"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "子年太岁并小限到子宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0047",
+      "sha256": "2a8aafb452b0cdbc2e7eb304f5edbd4dcb22edf47b77fc2a2095f7ed1b0c5f78"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微在子宫守命及岁限丙戊生人悔吝，破财灾殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0048",
+      "sha256": "78e0d2dad1c68f3e547a3b34849fff757cea46ef7e2c46ed2cb0229de8da3a5c"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "子年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0049",
+      "sha256": "ad2aa1ead36c9420a9ce6b8f582d412a475d31cbf30622148095d6a00bd93331"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "禄存天机天同太阴昌曲辅弼破军天相廉真武曲天府巨门七杀，可断其年人财两美事事遂心。若遇贪狼紫微天梁忌星太阳擎羊，便断人财耗散孝服，本身灾晦不宁，减半论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0050",
+      "sha256": "3633c8bb70e627a0081ede550ffdb89f40303ef7ce155ab2842d2ade90fca75a"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "丑年太岁并小限到丑宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0051",
+      "sha256": "743f3145194931d91b9a3a563d7e33040c6097ca556ceff7e6e22477568cdcda"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "天机在丑守命丙辛生人发旺，天相戊生人发旺，太阴武曲丙戊生人发旺，天府廉贞戊生人发旺，天梁丙戊辛生人发旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0052",
+      "sha256": "d479af8ff59497a496923b583978f0844ad19b3fec76ac563f245e413092b449"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "丑年太岁并小限到丑宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0053",
+      "sha256": "3c4ef135a0a907bf28f22ac67344b9703efcbb6688e7f8d0cb4a4029545f76d4"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "太阴在丑宫守命戊生人悔吝，太阳星甲乙生人悔吝，天机丙辛癸生人悔吝，天同廉贞丁庚生人招官非。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0054",
+      "sha256": "3a9acf45098c6c76b964957fbe64961d1a2e120390002e1b65ef4834826a96ca"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "丑年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0055",
+      "sha256": "cb7bd0173d09c1d3892e8f91ecde93c2a3cbc11c12cfccfb3732a6cb1bf17458"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天相天梁太阴天府禄存廉贞破军昌曲天机辅弼，可断其年事事遂心。若遇天同巨门武曲贪狼忌宿太阳擎羊，便断其年人财耗散，官灾口舌孝服，本身遭晦，减半论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0056",
+      "sha256": "d8ee5c6a9a08b46274d8cd15c62d2540bf5aa7c88265361398797abbe880f62f"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "寅年太岁并小限到寅宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0057",
+      "sha256": "36f25beaafb50296f9f67490da81d0d40f6968ebc5f44a3572131da4586c9874"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微太阳武曲天梁七杀，甲庚丁己生人财官双美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0058",
+      "sha256": "e134b858552d5d089a6928202c85ef444a80f233e6e687ce319ac461ab297d2f"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "寅年太岁并小限到寅宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0059",
+      "sha256": "597f167517de4be9fff767ee4bf7540044503477d60d0f778ccff67247aed680"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "廉贞贪狼破军在寅，丙戊生人招官非，甲子生人不喜寅申岁限。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0060",
+      "sha256": "bc1ad5a8732c756106a7f590cf42f386ddd5d02afc994aed8ce9a5989d6d7ff2"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "寅年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0061",
+      "sha256": "4b61e4d751f49ca2cec02ec59c8d45333650271d7c30bbcff99bd0014a447031"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天府天机太阴武曲七杀天同天相太阳巨门天梁，便断其年人财进益作事遂心。若遇贪狼陀忌，便断其年人财破散，官非孝服，本身见灾，减半论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0062",
+      "sha256": "84ea0aea8a353a75193f6f7c6a6a8b044ba7f469709b57bdd7905a3ecfdd6028"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "卯年太岁并小限到卯宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0063",
+      "sha256": "2bd1e04fd8ebf55e38a7705b10e0e3175f14b03e39df5ba82d4386190da161a5"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天机太阳天相天府天同武曲在命乙辛生人发旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0064",
+      "sha256": "8a37169c3fd3631a742eaf0203eaab3eeaf07c701b25b65c3c476fab4ea1b887"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "卯年太岁并小限到卯宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0065",
+      "sha256": "610f9a50f55f37f850ff63dad9941145864c7947e3a62d3124e997f2385afad9"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "廉贞甲丙生人横破财，太阴甲乙生人财破灾害，庚生人亦不宜主灾害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0066",
+      "sha256": "30a22177ec14d468ca483e89c9946f81e6658cb7d9410fd3beb07c188f513378"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "卯年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0067",
+      "sha256": "e22c200a3646ecec92f7a2e2b5299a0680fb97854d2d4ed44d04d729b88650b1"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "太阴天梁紫微天机天同天府贪狼巨门七杀，即断其年人财兴旺，婚姻喜事重重，诸事称心。若遇廉贞破军太阴天相擎羊忌宿，其年破财，官灾口舌，本身见晦，减半论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0068",
+      "sha256": "440fba5b7eb3f149da4a851687b405f7190c1d9e30dcd08730f3ca638d394d41"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "辰年太岁并小限到辰宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0069",
+      "sha256": "ca5a584624d989eec7eb8495b262ffb97f1cf433c6249b05119930e89faaf84c"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微贪狼七杀在辰宫守命限癸甲生人财官禄旺，天机太阳丁庚癸生人财禄发旺，天同戊庚癸生人顺遂，巨门丙辛生人遂意。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0070",
+      "sha256": "43225656ebc27c3055c840d6f65e06de02e14f18f9ae0910bd2e19adb5041b0d"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "辰年太岁并小限到辰宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0071",
+      "sha256": "cd2907e3b363c06219261e3e7d0f21e8cf204336a8d6d851cf2e94bf7f704ca1"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "贪狼武曲在辰壬癸生人灾晦，天同巨门丁庚生人灾晦，廉贞壬癸生人主灾晦至重，太阴太阳天机甲乙戊己生人灾晦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0072",
+      "sha256": "26b09bb5dee6e7ba16e90c5d315d8dc983594b205c145506b98a4d1bd97ca769"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "辰年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0073",
+      "sha256": "b9250af9c4b8dccddabe9944136e7b43505d1f4f8f6641ef7f8b4c9fede9b97c"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "太阳天机天梁七杀贪狼文昌左辅右弼，便断其年财禄大进益，家道更兴隆，添丁进口，婚姻喜庆重重。若遇紫微天同廉贞天府太阴巨门天相破军忌宿，便断其年破财孝服，官灾口舌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0074",
+      "sha256": "dfc76d8f9e2de491f755c28b0aa03277482263c4c4df7296c20dc196dbb554a5"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "巳年太岁并小限到巳宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0075",
+      "sha256": "a1e6f32050a00ea1b5f81d1240e7634300d786595b6bac2efae9ef0bcad81e43"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天府天同巨门天相天梁破军丙戊辛人发福，太阴天机丁壬辛丙生人破财，贪狼甲戊生人平平。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0076",
+      "sha256": "953c6b288aab4a9333873ce984feae956df7258e0c128a0d3c19cd28ff676036"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "巳年太岁并小限到巳宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0077",
+      "sha256": "71d593878e25bff77bc5bf84aee34ddcfe063f9104b3847661c2aaee3e37493c"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "巨门贪狼癸丙生人口舌灾晦，太阴破军灾晦多端。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0078",
+      "sha256": "fee88e66e1e6c6c360753472f35def63c713c5191281b5828fa7102578a8d211"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "巳年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0079",
+      "sha256": "61683c9a543411aa1d090b9005d0128370172601f655a5ba201b6dda58be5d0f"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微太阳天同天府天梁禄存，便断其年人财称意，喜事重重。若遇武曲廉贞太阴贪狼巨门天相破军忌星，便断其年人财损失，官灾口舌，本身病患，减半论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0080",
+      "sha256": "db78d128a03fdaedc9eb679543c3beb9fb12481bcef032a464174ceb008bb945"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "午年太岁并小限到午宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0081",
+      "sha256": "ef669a81a641ae43f16fb41f1cd72a93a851c5252e38392282d37eb79f529e33"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微太阳武曲天同天梁廉贞七杀破军丁己甲癸生人进财遂心。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0082",
+      "sha256": "0679a68ab0b166837b67c560503124a6f953f1610f916683a5c243a6846b8256"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "午年太岁并小限到午宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0083",
+      "sha256": "43dd8307e0e6cf645ea5b3bd32e03a3803f311918a6472891861f2dac978bae6"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "贪狼在丙午壬癸生人破财官灾口舌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0084",
+      "sha256": "ea1413dbca404a9450b4db045112718a2c1fcc99b054466d0b62bebce88dd218"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "午年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0085",
+      "sha256": "751c48d4029a2de7b07b9f3da5b6a3f97814b2c33b30e47f50ecefb26944a40b"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天府天机太阳武曲廉贞天相巨门天梁破军禄存，便断其年人财兴旺，婚姻喜事重重。若值太阴贪狼天同羊陀忌星，便断其年人财破败，官灾口舌孝服，本身灾厄可免。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0086",
+      "sha256": "b3f4f0876913cbbe91f9081e08d9b4f67fd5d7eec1aa421502c5eebf09b11ec5"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "未年太岁并小限到未宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0087",
+      "sha256": "5d79452046795a7fc6af14ec6cc54270743264beafa9f3225b55e0cba901539c"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天机天府天相天梁壬乙生人发福，太阴庚壬生人发福生财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0088",
+      "sha256": "5dd0a025a683310f54545a231669c1fb4584aaa9a7f659c7862eea99200450a1"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "未年太岁并小限到未宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0089",
+      "sha256": "8b7583f0f1cfe410ea9ddfe74a5245884246a978217a9f35b44a36c695506764"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "太阳甲乙生人多灾晦，天同丁庚生人多灾，武曲壬癸生人生灾招官非横祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0090",
+      "sha256": "34db2b09d61f56fe1e8bdc74cd1609e1abd8da93130c2413959e5e7e81748556"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "未年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0091",
+      "sha256": "7899d1d7c7d73787513d981a84f90531697d6ae6045172881812f3f49c106700"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天府廉贞天机破军天相，便断其年人财增益，作事如意，婚姻产育之喜。若遇太阴太阳武曲天同贪狼巨门羊陀忌宿，便断其年人财耗散，孝服官灾，阴人小口不宁，本人灾厄难免。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0092",
+      "sha256": "a5231b4c9c6a2364d486dc34c257fafbcc07dd0811e9fc0438544ab1a44ee350"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "申年太岁并小限到申宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0093",
+      "sha256": "3c46e875527adba5195a06e6ca36c55e40c405695f242a9d1aedbf23ab41e6b1"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "廉侦破军紫微甲庚癸生人发福，巨门甲庚癸生人发福，天机丁甲癸生人发福，庚生人亦发财发福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0094",
+      "sha256": "b4297ac16db743d4bce2044da666123b4bab4aa3712cf7583f1756fecc0c4c6a"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "申年太岁并小限到申宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0095",
+      "sha256": "684f93f9d951ef802d8bc073b556ec3e9af68638f432288dadc8bc77efb6630e"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "天机乙戊生人灾晦，巨门丁生人不宜，廉贞丙壬生人有灾，天同甲庚生人灾祸，贪狼癸丙生人有灾祸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0096",
+      "sha256": "081244aaa181af18325bb211992edafc35bd4386b5b4afc41ee5f1e97d3b03f3"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "申年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0097",
+      "sha256": "7381c453fd6a5d7c5c99e7c8f824f9299a69175c85f8b53946bbab09b0766bb7"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微太阳廉贞天府巨门七杀文昌武曲禄存，便断其年人财利益，喜事重重。若遇天机天同天梁天相太阴破军忌星，便断其年人财散失，官非孝服，本身灾病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0098",
+      "sha256": "70bcb0bd68356ee91605c67fc22249f14cefceafbef2203555ad7cc65cc565db"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "酉年太岁并小限到酉宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0099",
+      "sha256": "3c16d7ca7085414a2b167ed3411e5e58b41c21c789bc1cf63e0e717fab69b75b"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天机太阴酉宫守命丙戊乙辛生人进财吉利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0100",
+      "sha256": "bee2fc8a8c8c920d96ea010d168f818e2251f799d2cfcfff90062993b6df064f"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "酉年太岁并小限到酉宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0101",
+      "sha256": "c8f202d381dc1b972e42fc3a1de4818dec480f257e467ddd019b89c65a205821"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "太阳天同甲乙生人不宜，武曲庚壬生人不宜，天相甲庚生人不宜，廉贞甲庚丙辛生人不宜，天府甲庚壬生人不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0102",
+      "sha256": "524f895949e7d8cf075f903a6b5b0ba1b1322d64c19ba9038a492c79c2b30f92"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "酉年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0103",
+      "sha256": "2fc15ed9878036bd578854afeae9887e0eec51038e93f7e0a16034fe80179a1e"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "禄存太阴紫微天府昌曲左右，便断其年人财兴旺，作事遂心。若值天机巨门武曲廉贞擎羊陀忌，便断其年人离财散，口舌官非。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0104",
+      "sha256": "eda976d8622a3c60a5063671522c5ee0f9fe7585d5255207baccfd7619827c85"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "戌年太岁并小限到戌宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0105",
+      "sha256": "7aa0eed39ebdf4a5585abad3a66cad7faf564905f13cf4cac5c422777ba17718"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微壬甲丁己生人进财，太阴丁己生人吉庆，武曲丁己甲庚生人吉庆，天机甲乙丁己生人发福，巨门己辛癸生人发福，天同廉贞破军七杀丁己甲生人发财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0106",
+      "sha256": "0590d4df143f24f2b0c22ad073ed6f84b7d3d33295bbee68d4842dfbb8ee7861"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "戌年太岁并小限到戌宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0107",
+      "sha256": "4ff1899a91aeaa0081dda22b08a547ce8a5476373ecc4c13e84439daaf50713b"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "贪狼癸生人不宜，天同庚生人不宜，天机戊生人不宜，巨门丁生人不宜，太阳甲生人不宜，廉贞丙生人不宜，武曲壬生人不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0108",
+      "sha256": "051817940c2149c2fda23df9a6ca36f0aee3df88397aa9ebc09a6a0891aad538"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "戌年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0109",
+      "sha256": "57c045766a3566dc496c88913abe615d84b72c1732421db71c33785a3b18a40e"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "天机太阴天梁天府武曲七杀贪狼左右天同，便断其年人财利益，作事遂心，家道兴隆。如遇巨门太阳破军紫微天相忌宿，便断其年人财退失，孝服官灾，本身见病，减半论之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0110",
+      "sha256": "2fb4caaf09ebb8755e2989f5ddff88f8389b0461f7d3d489c0cfa795fdeb199c"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "亥年太岁并小限到亥宫入庙化吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0111",
+      "sha256": "3fe5a65e08d63cea12ba86d0d30058262824b1408216ddad5b36a508f5ad2d1a"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "紫微天同巨门天梁壬癸戊生人吉庆，天机壬生人吉美，天相丁己生人及丙戊生人发福，太阴戊己生人财官双美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0112",
+      "sha256": "2b7903966e2dd5a96bf178eb188bbc6c832431b00f7f1ed704531651eab1abfa"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "亥年太岁并小限到亥宫不入庙化凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0113",
+      "sha256": "9c261ed78ff2788b926420a9f687a9a0828ba2e2ebbdd7f415a51d02f2e55ec1"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "廉贞丙壬癸生人不宜，武曲壬丙生人不宜，太阳甲生人不宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0114",
+      "sha256": "37fdb1d3da5101a7b38ecc5744ed73443d019874949f9be6bf866d77869ede83"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "亥年太岁所值吉凶星",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0115",
+      "sha256": "b737d757d78cb960f37e4b38a00619122a060b33563887679244ed572ffd932b"
+    },
+    {
+      "section": "论立命行限宫歌",
+      "text": "天同太阴天梁紫微天府昌曲禄存，便断其年人财进益，喜气重重，谋事俱称心怀。若遇廉贞破军七杀，便断其年人财耗散，小口死亡，本身灾晦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0116",
+      "sha256": "8def8b5a85ff9aa8226d8e22acff1106d599e14bb4e9910028516e0c0a6dd92b"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "紫微 庙丑未午 旺寅申卯酉巳亥 平子 无陷",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0117",
+      "sha256": "f63aacaeac8a46e6fce4968c78219c1a44df77ac5fa603659de68eaf1054d315"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "紫微居午无刑忌甲丁己命至公卿  加刑忌平常刑乃擎羊也。\n紫微居子午科权禄照最为奇  科权禄三方照是也为仰面朝斗格。\n紫微男亥女寅宫壬甲生人富贵同  同男女同也。\n紫微卯酉劫空四杀多为脱俗之僧  四杀羊陀火铃也。\n紫微天府全依辅弼之功  紫府得辅弼同垣，及三方拱照嘉会，终身富贵。\n紫微天府同宫无杀凑甲人享幅终身  紫府同在寅申宫守命，六甲人富贵。\n紫府朝垣活禄逢终身福厚至三公  命坐寅申再加吉星妙。\n紫府日月居旺地必定出佳公卿器  紫午府丑无杀加，又化禄是也。\n紫府武曲临财宅更兼权禄富奢翁  得左右禄存亦同。\n紫微辅弼同宫一呼百诺居上品  或作三方为次吉，在财帛宫则为财赋之官。\n紫府擎羊在巨商  得武曲居迁移者吉。\n紫禄同宫日月照贵不可言  紫微禄存同宫，日月三合拱照。\n紫微七杀化权反作桢梓\n紫微破军无左右无吉曜凶恶胥吏之徒\n紫微权禄遇羊陀虽获吉而无道  为人心术不正。\n紫破命临于辰戍丑未再加吉曜富贵堪期\n紫破贪狼为至淫男女邪淫\n紫府同临巳亥一朝富贵双全\n紫府夹命为贵格\n紫微昌曲富贵可期\n紫微太阴杀曜逢一生曹吏逞英雄\n紫微武曲破军会羊陀欺公祸乱  只宜经商。\n紫破辰戍君臣不义  安乐山，赵高命是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0118",
+      "sha256": "dc2aa5f2acfeeaf4deb89e02c3ecbe0be534f720644cba34ce2a10cc90bfc291"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "女命紫微太阳星早遇贤夫信可凭  女命紫微在寅午申宫吉，贵美旺夫益子。陷地平常，惟子酉及巳亥加四杀，美玉瑕玷日后不美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0119",
+      "sha256": "87414726d630fdf5b7716295783c949cdffdefb5665fb87ebe30903ed74caf34"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天府 庙子丑未寅辰戌 旺午酉 地卯巳申亥 无陷",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0120",
+      "sha256": "a5b6da897befd1c52cdd25b908e2d61fa58340f0f43b4d55c3643cb032eebb2b"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天府戌宫无杀凑甲己人腰金又且富  加四杀有疵。\n天府居午戌天相来朝甲人一品之贵\n府相朝垣千锺食禄  命寅申，府相在财帛宫，禄官朝者，上格别宫次之。\n天府昌曲左右高第恩荣\n天府天相天梁同君臣庆会\n天府禄存昌曲巨万之资\n天府武曲居财宅更兼权禄富奢翁  有左右禄存亦美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0121",
+      "sha256": "d148cf52c4337a3a4ef538bffd5e6a977c0fed8e18f4e4547c2416dddf1609a9"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天相 庙子午丑寅申 地辰戌巳亥未 陷卯酉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0122",
+      "sha256": "27548453bfcc06c14e8d9180ac652a806f3a9a9d09a3684ca7386ffd5443fe6c"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天相廉贞擎羊来多招刑杖难逃  终身不美招横祸，只宜僧道。\n天相之星女命缠必当子贵及夫贤  女命己生子宫，甲生午宫，庚生辰宫，俱是贵格。\n右弼天相福来临  女命天相、右弼，诸宫吉。子宫癸生人，寅宫癸己生人，申宫甲庚癸生人，俱是贵格，丑末亥宫不贵，子午卯酉皆少福。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0123",
+      "sha256": "8bf4984a5acd7b1456a11004426bc10d920ad0213ee242c97c0736bad9ff6247"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天梁 庙子午寅卯辰戌 旺丑未 地酉 陷申巳亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0124",
+      "sha256": "162d8663288bf030d0b35b7679ef107d56f6d6cef441a4e4dea4c567d3a7a391"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天梁月曜女淫贫  梁巳亥阴寅申主淫佚，不陷衣禄遂如陷下贱。\n天梁居午位官资清显朝堂  丁己癸人合格。\n梁同己亥男多浪荡女多淫  加刑忌杀凑多下贱。\n天梁文昌居庙旺位至台纲\n天梁守照吉相逢平生福寿  在午位极佳。\n梁同机月寅申位一生利业聪明  声多不论。\n天梁太阳昌禄会胪传第一名\n梁武阴铃拟作栋梁之客\n梁宿太阴却作飘蓬之客  梁居酉，月居已是也。\n天梁天马为人飘荡风流\n天梁加吉坐迁移臣商高贾  加刑忌平常。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0125",
+      "sha256": "13cf3a22364e4a1c59613ba92a70a54abfd66003d45360c3e520fd0c93fbbd55"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天同 庙巳亥 旺子申 陷午",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0126",
+      "sha256": "7a98b1e171cb1a1e38c06f83d8e98e88442bda4dd25c8940b1bd37f2f468e96d"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天同会吉寿元长\n天同贪羊陀居午位丙戌镇御边疆  为马头带箭富且贵。\n同月陷宫加杀重技艺羸黄\n天同戌宫为反背丁人命遇反为佳\n女命天同必是贤  子生人命坐寅，辛人命卯，丁人命戌入格。丙辛人命中吉，己亥逢此化吉虽美必淫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0127",
+      "sha256": "10559f386988f4fbe8d19f78d2febe55a83eedd13467c1bb03a6f255bdb93d6d"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天机 庙子午 旺辰酉 陷丑未",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0128",
+      "sha256": "a3fcf2e0dff97984606136ebccd1065ba0f23b8392b32b42577b42037fc278ac"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "机梁会合善谈兵，居戌亦为美论  孟子迁移戌宫，有机梁。\n机梁守命，加吉曜，富贵慈祥  加刑忌，僧道。\n机梁同照命身，又逢劫空，偏宜僧道  机同单守命身，又逢空亡。\n机梁七杀破军冲，羽客僧流命所逢  若兼帝座，加太阳，吉。\n机月同梁作吏人  命在寅申方论，加吉不论，无吉无杀亦是平常人，凶杀空劫化忌为下格。\n机梁贪月同机会，暮夜经商无眠睡  遇凶星奔波。\n天机加恶杀同宫，狗偷鼠窃\n天机巳宫酉逢，好饮离宗奸狡重\n巨陷天机为破格  女命在寅申卯酉，虽富贵，仍不免淫欲下贱，寅申守照，福不全美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0129",
+      "sha256": "d926619a22b49b7812ef45caafb22dd9159e7bc4ab99507f9acae9d499958b31"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "太阳 庙卯 旺寅辰巳午 陷子",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0130",
+      "sha256": "10ee9bc82af72de7766793074ec0b63d4d175fb89adcb7baa07c2f39902a73ab"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "日照雷门子辰卯地昼生富贵声扬\n太阳文昌在官禄皇殿朝班  文昌同亦然。\n日落未申在命位为人先勤后懒\n太阳居午庚辛丁己人富贵双全\n太阳化忌是非日有目还伤\n女命端正太阳星早配贤夫信可凭  太阳守命，陷平常。居卯辰巳午无杀，旺夫益子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0131",
+      "sha256": "8e9612adb095d9621893f30ce683f74445e730e9f3a2a5f4680b1927d5e042e9"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "太阴 庙亥子丑 旺寅酉戌 陷卯辰巳",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0132",
+      "sha256": "8f36c3b72eb4566a9be86e4c71293a2c60e716331a845f42d46973bc784afed9"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "太阴居子丙丁富贵忠良  夜生人合局。\n太阴武曲禄存同左右相逢富贵翁\n太阴同文曲于妻宫蟾宫折桂  文昌同亦然，在身命巧艺之人。\n太阴羊陀必主人离财散\n月朗天门于亥地登云职掌大权  子生人夜时生合局。不贵则大富。\n月曜天梁女淫贫  太阴寅申巳，多主淫贫，或偏房侍婢。若贪狼、文昌、文曲，同于夫宫必招配贤明之夫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0133",
+      "sha256": "d845cfcd31ba91bc93a3d03ae345c62f9bc5cff263f66af56e3576f4e2352881"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "太阳太阴拱照",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0134",
+      "sha256": "96e049f88398a74a302ae32db8d2aae6c10903f13b2102c2f7ff926fc33b9ca6"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "日巳月酉丑宫命步蟾宫\n日卯月亥安命未宫多折桂\n日月同未命安丑侯伯之材\n日月命身居丑末三方无吉反为凶  子午辰戌，身命更佳。\n日月守命不如照合并明  守命吉多主吉，凶多主凶。若吉少，亦不为美之论。\n日辰月戌并争耀权禄非浅\n日月夹命夹财加吉曜不权则富  加羊陀冲守，宜僧。\n日月最嫌反背  如日月同宫，看人之生时。日喜太阳，夜宜太阴。若反背日戌月辰，子月午。若出外离宗成家也吉。勿概以反背论。\n阴阳左右合为佳\n日月陷宫逢恶杀劳碌奔波\n日月羊陀多克亲\n日月更须贪杀会男多奸盗女多淫\n日月疾厄命宫空腰陀目瞽  如日月在疾厄宫，逢空亡必主腰陀，目瞽，命宫亦然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0135",
+      "sha256": "ecd5dd9cbda2b9d7237d154e5743ac7e4e59cfefa0347565e165f5c500d90126"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "文昌 庙巳酉丑 地申子辰 陷寅午戌",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0136",
+      "sha256": "1503ff20022a64e451b39af6dccc1a17e2cd41a8792adadd489d2199cd2e51d4"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "文昌武曲为人多学多能  四墓，卯酉巳亥身命。论三方科权禄。\n文科拱照贾谊年少登科  论三方。\n左辅文昌位至三台\n文昌武曲于身命文正兼备  孙膑之命是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0137",
+      "sha256": "bf0625ac87bd7a9cc7da7816d8d76c6bf020290ed7f9d8abe74e6e4b58649460"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "文曲 庙巳酉丑 地申子辰 陷寅午戌",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0138",
+      "sha256": "865b5c4dc689c1934deb9f029b7803726310d3b40e0a2abda252dc51a6a021bb"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "二曲庙垣逢左右将相之财  文曲宜子午酉，武曲宜四墓。\n二曲旺宫威名赫奕  文曲子宫第一，卯西宫次之。武曲辰宫第一，丑末宫次之。\n二曲贪狼午丑限防溺水之忧",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0139",
+      "sha256": "d1fe677dabd3d32040db420c4b1e848f5a39851566f8c0c1f8b48af79fe4f165"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "文昌文曲",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0140",
+      "sha256": "9de0e26ffddb5655caf37f073cc62932323c9ec207503046df3008bc09562f44"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "昌曲夹命最为奇  假若命在丑宫，文昌在寅，文曲在子是也。不贵即富，吉多方论此为贵\n昌曲临于丑未时逢卯酉近天颜  贾谊卜商，昌曲未宫命丑宫。在命兼化吉者方论。\n昌曲巳亥临不贵即当大富\n昌曲吉星居福德谓之玉袖天香  更得紫微，居午宫妙。\n昌曲陷宫凶杀破虚誉之隆  凶杀即羊陀空劫。\n昌曲陷于天伤颜回夭折  命有劫空，羊陀。限至七杀，羊陀迭并方论。\n昌曲己辛壬生人限逢辰戌虑投河  如入庙吉，大小二限俱到。\n昌曲廉贞于巳亥遭刑不善且虚夸  贪多作事颠倒，子申二官贵吉多美。\n昌曲禄存犹为奇特\n昌曲破军临虎兔杀羊冲破奔波  虎兔，即寅卯宫是也。\n昌曲左右会羊陀当生异痣\n女人昌曲聪明富贵只多淫",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0141",
+      "sha256": "88f05a255c9b531f58e2e3c66003654c42e3a46ce511b583d4085e226c88782d"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "武曲 庙辰戌丑未 旺子午 平巳亥 无失陷",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0142",
+      "sha256": "2f6d39e3c83b421b297bc5ca042744203eb5430b329068fe4cc21311bb7ba668"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "武曲庙垣威名赫奕  辰戍丑未生人安命在辰戍宫为四墓，若但在丑未次之。\n武曲相遇昌曲逢聪明巧艺定无穷  武曲或与天相同垣逢昌曲。\n武曲禄马交驰发财远郡\n武曲迁移巨商高贾  吉多方论。\n武曲廉贞贪杀便作经商\n武曲破军破祖破家劳碌\n武曲劫杀会擎羊因财持刀\n武曲魁钺居庙旺财赋之官\n武曲贪狼财宅位横发资财\n武曲贪狼加杀忌技艺之人\n武曲破贞于卯地木压雷惊\n武曲羊陀兼火宿丧命因财\n武曲之星为寡宿  火星柔弱，妇夺夫权方免刑克。若两刚相敌，必主刑克生离。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0143",
+      "sha256": "474b51e724da8b877635add5a392cfd6c7ecfaf307936b670005648c6d48977d"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "贪狠 庙辰戌丑未 旺子午 陷巳亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0144",
+      "sha256": "0a0c10c386a51c9c905925f4d3a153f1e1b0bbdd1947dc99a0efd80f3c325367"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "贪狼遇铃火四墓宫豪富家资侯伯贵  辰戌宫佳，丑未宫次之，若守照俱可论吉。\n贪狠入庙寿元长\n贪狼会杀无吉曜屠宰之人\n贪狠子午卯酉鼠窃狗偷之辈终身不能有为  申子辰人命坐子宫，寅午戌人命坐午宫，亥卯末人命坐卯宫，巳酉丑人命坐酉宫是也。\n贪狼加吉坐长生寿考永如彭租  寅午戌火生人，命坐寅木申金。\n贪狠巳亥加杀不为屠户亦遭刑  享福不久。\n贪狼同行晚景边夷神服  三十年后发财，坐命武曲守照。辰戌宫佳，丑未宫次之。\n贪武先贫而后富  利己损人，命有紫微日月左右昌曲，限逢绿权科，则贵显论。\n贪狼加杀同乡女偷香而男鼠窃\n贪狼武曲同守身无吉命反不长  命无吉曜，身有贪武，孤贫。\n贪月同杀会机梁贪财无厌作经商。\n贪遇羊陀居亥子名为泛水桃花  男女贪花，迷酒丧身。有吉曜则吉。\n贪狼陀罗在寅宫号曰风流彩杖\n贪武申宫为下格  化忌方论。\n贪武四生四墓宫破军忌杀百工通\n贪武破军无吉曜迷恋酒以忘身  或作手艺。\n贪狼廉贞同度男多浪荡女多淫\n女命贪狼多嫉妒  在亥子，遇羊陀嫉妒之流。逢禄马不美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0145",
+      "sha256": "4d7fb86be4c81d5cfc066cf9c14a8f2c35440e5486816bad6e2a099941cab37c"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "廉贞 庙寅申 利辰戌丑未 陷巳亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0146",
+      "sha256": "73b81df0e0c85d93e157cddd71e35bee89c76ac678dfd8944c23c0761ec6168b"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "廉贞申未宫无杀富贵声扬播远名  雄宿朝元格，加杀平常。\n廉贞卯酉宫加杀公胥无面官人  或巧艺人。\n廉贞暗臣曹吏贪婪\n廉贞贪杀破军逢武曲迁移作具戎  恐是文曲。\n廉贞七杀居庙旺反为积富之人  杀居午奇格，若陷地化忌，贫贱残疾。\n廉贞破火居陷地自缢投河\n廉贞七杀居巳亥流荡天涯\n仲由威猛廉贞入庙遇将军  甲生人坐酉，乙生人坐亥，丙戊生人命坐酉，丁己生人命坐寅，庚生人命坐子，辛生人命坐卯，癸生人命坐申。\n廉贞四杀遭刑戮  同羊陀火铃是也，若安布此星同，必遭刑戮终身。\n廉贞白虎刑杖难逃  流年太岁并小限坐宫，又值白虎加临，主官非遭刑杖。\n廉贞杀破会迁移死于外道\n廉贞羊杀居官禄加纽难逃\n廉贞清白能相守  女人甲己庚癸安命申酉亥子宫，丙辛乙戊安命寅卯巳午是也，若辰戌丑未反贱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0147",
+      "sha256": "518995c45b9c093cf929dad0f5645b33f62543d3eb773ff354cc40bbf5087656"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "巨门 庙寅申卯酉 旺子午巳亥 陷辰戌",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0148",
+      "sha256": "d151e611882b46e52e9e3508e04b3a60ab864121d4eeb935f391463c5ef3343d"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "巨日寅宫立命申先驰名而食禄\n巨日命宫寅位食禄驰名\n巨日申宫立命寅驰名食禄\n巨门子午科权禄石中隐玉福兴隆  富而子贵，辛癸人上格，丁己人次之，丙戊主男。\n巨日命立申宫亦妙\n巨在亥宫日在巳食禄驰名\n巨在巳宫日在亥反为不佳\n巨日拱照亦为奇  假如日午宫巨在戌宫是也，多方论日忌陷。\n巨机居卯乙辛己丙至公卿  不贵即富，甲人平常何也，因甲禄到寅卯宫有擎羊破格耳。\n巨机酉上化吉者纵有财官也不终  如值孤贫多有寿，巨富即夭亡。加化忌尤凶，若太岁在迁移宫财官化禄。\n巨门辰宫化忌辛人命遇反为奇\n巨机丑未为下格\n巨门陀罗必生异痣\n巨门羊陀于身命疾厄羸黄困弱盗而娼\n巨门四杀陷而凶\n巨火擎羊陀逢恶曜防缢死投河\n巨火铃星逢恶限死于外道\n巨宿天机为破荡  女命巨机于卯酉，虽富贵不免淫佚，若陷地下贱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0149",
+      "sha256": "b82d8f9f49e11409b7b08553f48a47438ca75f91aba9c548ecdc3a7b6a93d983"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "七杀 庙辰戌丑未寅申 旺子午卯酉 平巳亥 无陷",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0150",
+      "sha256": "4a0d48781335824c5d0541ae767ad4217f740fc417f8f9753a290a4c79f2673a"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "七杀寅申子午一生爵禄荣昌  为七杀朝斗格。\n七杀破军专依羊铃之虐\n七杀廉贞同位路上埋尸  观廉贞内注会耗于迁移亦然，若陷地加化忌尤凶。\n七杀破军宜出外诸般手艺不能精\n七杀临身命流年刑忌灾伤  逢紫微天相禄存可解。\n杀临绝地会羊陀颜回夭折\n七杀重逢四杀腰陀背曲阵中亡  杀与铃火，主阵亡，又有疾危。\n七杀火羊贪且贱屠宰之人  七杀羊陀会生乡，为屠宰。\n七杀羊铃流年白虎刑戮灾迍\n七杀流羊二官符离乡遭配  岁限俱到。\n七杀守照岁限擎羊午生人命安卯西宫主凶亡  余宫亦忌命限三合杀，流年羊刃到命，即七杀重逢，申酉宫忌，多忌限\n七杀沉吟福不荣  男有威权，女无所施。\n七杀临身终是夭\n七杀单居幅德女人切忌贱无疑",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0151",
+      "sha256": "f79002869633fd421d00197027a1ed4b89196858d7367f9767919258ead119dc"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "破军 庙子午 旺辰戌丑未 陷卯酉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0152",
+      "sha256": "dbbc157ad0e9c75bcda738683d20c6b34af8ca20a94548e567f711f6036e45a3"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "破军子午宫无杀官资清显至三公  甲癸生人合格，丁巳生人次之，丙戌生人主困。\n破军贪狼逢禄马男多浪荡女多淫\n破军暗巨同乡水中作冢  破与巨不同垣，恐照命宫或犯迁移。\n破军火铃奔波劳碌\n破军一曜性难明  男女命论。\n破耗羊铃官禄位到处乞求  又贪狼在子午卯酉者，看贪狼内注。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0153",
+      "sha256": "cae1ff200e9d59fdb1be8efc68d1b35dda8678de1ad766497ddd741a3b372aec"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "擎羊 庙辰戌丑未 陷子午卯酉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0154",
+      "sha256": "e388af031ad17603efd3ee956c2025ff40ff70c7ecc14141ff095cf9c46680b8"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "擎羊入庙富贵声扬  加吉万论。\n羊火同宫威权压众  辰戍人佳，丑未次之。\n羊陀铃火守身命腰驼背曲之人\n擎羊子午卯酉非夭折而刑伤  午凶卯次之。子酉又次之，马头带剑，吉多勿论。\n擎羊逢力士李广难封  甲生人命卯，丙生人命午，庚生人命酉，壬生人命子。吉多平常，加杀则凶\n羊陀火铃逢吉发财凶则忌\n羊铃坐命流年白虎灾伤  流年白虎，又到命宫也。\n擎羊对守在酉宫岁迭羊陀庚命凶  除宫亦忌，守命宫有羊陀。流年遇羊陀，为迭并。\n羊陀夹忌为败局  假如安命在申宫，又逢忌星，羊在酉陀在未夹之，余皆仿此为例。命岁凶孤贫刑克。若单守禄存无吉星同垣，亦有灾殃之凶。\n羊陀流年铃破面字斑痕\n擎羊火星为下格\n擎羊重逢流羊西施倾殒身  岁限重逢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0155",
+      "sha256": "dc63811e25476174d06df438c1e9de8fa1fa74ddcf90d7000b01f554422540bf"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "陀罗 庙辰戌丑未 陷寅申巳亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0156",
+      "sha256": "94a7676e15ab5142600f85a6c962564511ca3cb41303771aecd0b10e0affc7a4"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "陀罗巳亥寅申非夭折而刑伤  余试得多离祖出外成家者亦吉，主生人有破相。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0157",
+      "sha256": "3331aa0822dcb6c3800db75c13dfb9ae73eb70938aaf3f7fc3e667ce3bdef31a"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "火星 庙寅午戌 地巳酉丑 陷申子辰",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0158",
+      "sha256": "48518dbb298bea88203146586013e1cb537e0e1cb46ffa5fa16a75b4ea42198b"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "火铃相遇名振诸邦",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0159",
+      "sha256": "1d6f02d1fcdaa776c5cff8732ecb7d01382df816d025a724024995cde89f143c"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "火铃夹命为败局  如命安寅申，火星在丑，铃星在卯。吉多尚可，惟夹忌。辰凶岁限巡游者此地亦吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0160",
+      "sha256": "fe5af6df9f121165cff150e3b6b5f412026a15a7efc8b58f81a98744c41b6bce"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "铃星 庙寅午戌 地巳酉丑 陷申子辰",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0161",
+      "sha256": "31a50ba8a50f6af17252d249fb2ed423d28149a16229657af7e99c3253d1a8f0"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "火铃旺宫亦为福论",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0162",
+      "sha256": "c51e70dd6707f4782d1fff4faf7309a0487f63b27ca2ad3deeb0a47b48128214"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "擎羊火铃为下格  女人庙旺犹可，陷地下贱，贫穷夭折。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0163",
+      "sha256": "2af1dcd28e1443c559e60fac85d63642565e4f8593c1cc6d3fcaeea9fd593586"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "魁钺",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0164",
+      "sha256": "1247b27940fbc10ca1c827e08aac988323a0bbc1a7c91fdc1beb00229119966d"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "魁钺夹命为奇格  如命安在辰宫，魁在卯，钺在巳宫是也。\n魁钺命身多折桂  如吉方论，在命身最妙，三方次之。\n魁钺昌曲禄存扶刑杀无冲台辅贵  命身妙三方，次见刑杀冲会者平常，只宜僧道。\n魁钺重逢杀凑痼疾尤多  杀乃羊铃空劫。\n魁钺辅星为福寿  二上在命，诸宫福寿双全。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0165",
+      "sha256": "ef3cece3a211d1b908d272d1f5e5e530fa89a1fda11ac9c8d6892b67d929a5ba"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "左辅右弼",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0166",
+      "sha256": "9f0024f9ddae91fafb00d134e0f4304b3ba65f6db8e6856ab17f87df763e8668"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "左右文昌位至台辅",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0167",
+      "sha256": "e62ad5c96c3770e51e5a284b7576f722293b1345aae1946660e86d301061cdb0"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "左右夹命为贵格  如安命在丑宫，左辅在子宫，右弼在寅宫。四七十一月生者是也，若不贵则大富\n右弼左辅终身福厚  在命宫迁移是也，三方次之。\n左右同宫披罗衣紫  辰戌宫安命，正月七月生者，丑宫安命。四月生者卯亥宫安命，六月十二月生者，三方勿论。\n左右单守照命宫离宗庶出  身命无正曜是也，若三方合紫微，天相，天府吉。\n左右贞羊遭刑盗一左右昌曲逢羊陀当生暗痣\n左右财官兼夹拱衣禄丰盈\n左右魁钺为福寿  三星在命论宫，福寿全美。若女命逢之，旺夫益子。\n右弼天相福来临  诸宫遇福，丑未亥三宫不贵。纵贵不久远，前当主富，若卯酉二陷宫，少称心意",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0168",
+      "sha256": "af6f2ed3c6709c2b1cde42bddfb2d53bac3bc17fe963cc26f441a40b985f7423"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "禄存 十二宫中皆入庙",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0169",
+      "sha256": "78f781782dfaa4264c31fe1f89f9f1b3b543b0331b369848df4819cf3501f853"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "禄存守于财宅积玉堆金  在命方可喜，化禄，同科权，更妙。\n禄存子午位迁移身命逢之利禄宜\n明禄暗禄位至公卿\n双禄重返终身富贵\n禄逢冲破吉也成凶\n双禄守命吕后专权\n禄存厚重多衣禄  诸宫降福，起家富贵。女人嫁夫，招赘旺财。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0170",
+      "sha256": "46ba686593dac987c936f790b2a9c0746b6073c0b79cb401f0d01576b9c6a13c"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天马",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0171",
+      "sha256": "7b88c3fb2e4281dce39e3f34aeca89ceeb183a36b794670b199dd0a18722c429"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "禄马最喜交驰  忌见杀羊火截路空亡，多主劳苦。\n天马四生妻宫富贵还当封赠\n马遇空亡终身奔走",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0172",
+      "sha256": "aeb434ff03d3334a4114dec19b5b348f584cb8c5609d2d93a1a037484833c5a2"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "科权禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0173",
+      "sha256": "7f945223d8043eae7e105615ba1fc637157e8d4c43fce552339c2d4f25731cf5"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "科权禄合富贵双全  禄存亦是禄，禄会禄存，富贵全会。巨武戍扬科，会魁钺在命宫极佳。三方次吉，亦在凶多则不美。\n禄权命逢合吉威权压众相王朝\n权禄重逢财官双美  三方吉多方吉，因聚也不美。\n科命权朝登庸甲第  或权或禄全更佳。为言禄逢迎格。\n化禄子午位迁移，夫子文章冠世  迁移在子午宫为对面朝天子  命太阳同化禄在午宫，合此格，余宫要看吉凶科权禄来为贵格。如命安在子宫，禄在亥宫，权在丑宫，为夹贵。皆余仿此。\n权禄重逢杀凑虚誉之隆\n科名陷于凶神苗而不秀  如日戌，月卯，化科陷地，或又加羊陀劫空。\n禄主缠于弱地发不主财\n权禄守财福之位处世荣华\n权禄吉星奴仆位纵然官贵也奔波",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0174",
+      "sha256": "6f8712fe4518eb45c7099222c3efccf3856e483b83f02e7e7119cef0f081a4c6"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "劫空",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0175",
+      "sha256": "ea83e7c671542b24048f7a198d1408f6ce5739d8145cb086822afe1274231457"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "劫空夹命为败局  假如命安在亥宫，劫在子宫，空在亥宫是也。岁限行到亦凶，夹忌亦凶孤贫刑伤。\n劫空临限楚王丧国绿珠亡\n生处劫空犹如半天折翅\n劫空临财幅之乡生来贫贱",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0176",
+      "sha256": "3b521ab427dfee9f16fe22b470d005fe89785ef45ab6fcc16cd8f4f19706625a"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "伤使",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0177",
+      "sha256": "7cedfbf31ec5f20477e14b06e0537fe46fef2e0eb48910134071bf6744b7219e"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "天伤加恶曜仲尼绝粮邓通亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0178",
+      "sha256": "54a1c4a776d6e382f0a52b8d1005c7473089448242666088abc4d52c8dea1de4"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "命宫",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0179",
+      "sha256": "c9e35113a9c53eb44090a4ca1d09d95d67140f1703352d0b944f4a5246e59807"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "三夹命凶六夹吉  三夹是劫空火铃羊陀是也。六夹是紫府左右昌曲魁钺科权禄日月是也。若在命则凶多吉少虽吉也凶，如吉多凶少虽凶也吉，身命三方乃看庙旺。\n命无正曜二姓延生  或过房出维随母继拜入赘，或又是庶母所生者。\n命逢吉曜松柏清秀以难凋  身命官有吉星，太岁大小二限不利，末为凶。必太岁二限有凶，又且本生人所忌方凶。\n限逢凶曜柳绿桃红而易谢  命逢凶限庙旺犹发，达限凶星陷必凶。\n命实运生如旱苗而得雨  如命限平常，三方有吉星，如限行美地为福。\n命衰运弱如嫩草而遭霜  如命坐陷忌，岁限又逢恶曜，必刑伤死亡。\n命有吉星官杀重纵有财官也辛苦",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0180",
+      "sha256": "f15c764a7e037cbc547f3b9bf901670b28626afb3807e067ca454c65712372a2"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "身宫",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0181",
+      "sha256": "91b5963a7fbcadd4a53dc3e1a023a83cee60edb6051d03c680fd4b3fd713428a"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "三夹身凶六夹吉  夹忌劫空火铃羊陀凶，六夹贵逢吉甚妙。\n身命俱吉富贵双全\n身吉命凶亦为美论\n命弱身强财源不聚",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0182",
+      "sha256": "030b321b8965fcaaa2fdfdc1d0f33bb7d5bf65a177d62bfe530baa2bcd575501"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "纳音",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0183",
+      "sha256": "d0671a29e726e0ed5959959080623b17d2c07d1ffacb8ca2f87bdfd73ee1faee"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "纳音墓库看何宫  如水生人墓辰遇财官或禄存尤妙，遇迁移耗杀同为不美。\n生逢败地发也虚花  如年纳音水土长生见甲申，乃金星为水宫之主，若安命在酉败地又逢羊陀忌耗七杀同不美。得禄存吉。\n绝处逢生花而不败  如水土绝在巳安命在巳为绝地却得金星在巳生水不绝方为得禄",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0184",
+      "sha256": "b383c382d18b6d56955fe6270136805ca1ee60038d9b70d415a688f0dbe6e7ac"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "财帛",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0185",
+      "sha256": "0a9ca4682207d9129957eabb6f82a02b61c7f115765c67ccbd8412191dd006ce"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "日月夹财加吉曜不贵则富  如财帛宫在未天府星守，日在午月在申夹财是也，余仿此。\n左右财官兼夹拱衣禄丰隆  如左右同财帛宫，又或财官在丑日在子月在寅是夹也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0186",
+      "sha256": "d37b89f581a8fb995571f8174f38915ebd2f84832150b80b8db90222ce6afe2b"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "财宅",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0187",
+      "sha256": "e60a7fad9c5187a18bd93c825eb7f3c1cc114d2b36428276b9f0d49f7e5d7aba"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "紫微辅弼多为财赋之官\n武曲太阴多居财赋之任  不是武曲太阴同限度，取财帛宫遇武曲或遇太阴星，主为人多居财赋之任。\n紫府武曲居财帛更兼权禄富奢翁\n武曲贪狼财宅横发资财  忌空亡。\n禄存守于财宅堆金积玉",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0188",
+      "sha256": "13e03f4796a3fd2102a8a179b4be44e2d4798fdf50dfb4444fb196410229dbec"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "财福",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0189",
+      "sha256": "be7c56f6fbe496cdd148f520e4feb68738e558fc156c5c1e75964aafe63e96f8"
+    },
+    {
+      "section": "论诸星同垣各司所宜分别富贵贫贱夭寿",
+      "text": "权禄守财福之位出世荣华\n劫空临财福之乡生来贫贱",
+      "layer": "historical_work_transcription",
+      "passage_id": "ziwei:c003:p0190",
+      "sha256": "8c5fa4716de240a311d3423b5de8592ce418fae31c5555a92dfbed276e77108e"
+    }
+  ]
+}

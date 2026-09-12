@@ -1,0 +1,60 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c031",
+  "title": "歸魂遊魂章第又二十六",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%884&oldid=2100467",
+  "revision": "2100467",
+  "source_timestamp": "2022-01-20T19:36:36Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c031.wiki",
+  "raw_sha256": "9a6fd688ff6ffdcce4b49f53934c5c6502eb0621ef04f416780400de81fa2e2d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "歸魂遊魂章第又二十六",
+      "text": "遊魂卦爲各宮之第七卦，如乾宮中之火地晉，坤宮中之水天需。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c031:p0001",
+      "sha256": "a5fb79dcada6a6226c47c6c57451c6921d3351a0282a51f02f9b3a41f34c0d8d"
+    },
+    {
+      "section": "歸魂遊魂章第又二十六",
+      "text": "歸魂卦爲各宮之第八卦，如乾宮中之火天大有，坤宮中之水地比。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c031:p0002",
+      "sha256": "f986705105178a1c07331cf7140a380eae06d8fe35567ed5f3e87e777511e938"
+    },
+    {
+      "section": "歸魂遊魂章第又二十六",
+      "text": "古以遊魂行千里，我行此事而欲久者，遊魂而不能久，心無定向，遷改不常。占身命無安家樂業之所，占行人遊徧他鄕。占出行，行無定止。占家宅，遷變不常，占墳塋，亡靈不能安妥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c031:p0003",
+      "sha256": "c732819b072a9a52ca1a8b8e44b38c3ab534896a3af5e71054acaeb401720b12"
+    },
+    {
+      "section": "歸魂遊魂章第又二十六",
+      "text": "野鶴曰：須以用神爲主，然後以此參之，若捨用神執此而斷者，謬也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c031:p0004",
+      "sha256": "d6c63fbe0e0b2bc936168985a69b4dad8db0f35f9cd1725aa478a6522fa4ffee"
+    },
+    {
+      "section": "歸魂遊魂章第又二十六",
+      "text": "古以歸魂不出疆，諸事拘泥不行，與遊魂卦相反而斷之，可也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c031:p0005",
+      "sha256": "3926e239862616fbe5b8942af3823ea5e232448aa5dc018524cc21efcf8ba5c5"
+    },
+    {
+      "section": "歸魂遊魂章第又二十六",
+      "text": "野鶴曰：亦須以用神爲主。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c031:p0006",
+      "sha256": "e3d63145cb1dee4d61d109374547217099bbf488a56d159a161dbce1693e1c9b"
+    }
+  ]
+}

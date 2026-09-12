@@ -1,0 +1,598 @@
+<!--
+
+請根據四庫全書掃描版校對本頁，標準見[[Wikisource:四庫全書原文]]。加標點請另外建立頁面。
+
+
+-->{{SKQS header|title=欽定協紀辨方書|section=卷三十二|prev=卷三十一|prev_link=卷31|next=卷三十三|next_link=卷33|type=子}}<onlyinclude><poem>　　欽定四庫全書
+　　{{SK anchor|欽定協紀辨方書卷三十二}}
+　　日表
+　　由年而月而日神煞備矣吉日既得而樞機之發必審乎時也時由日筦選時必根扵日作日表
+　　{{SK anchor|六十日時辰定局}}
+　　貴登天門時定局
+　　{{SK anchor|四大吉時定局}}
+
+
+
+
+
+
+
+
+　　{{SK anchor|六十日時辰定局}}
+　　甲子日十二時
+　　{{SK anchor|子時}}{{SK notes|日建　金匱}}　　　　　　　　丑時{{SK notes|天乙貴人　日合　寶光}}寅時{{SK notes|日禄　喜神　福星貴人　日馬白虎}}　夘時{{SK notes|玉堂日刑}}
+　　辰時　　　　　　　　{{SK notes|天牢}}　　　　　　　　　　　巳時{{SK notes|元武}}
+　　{{SK anchor|午時}}{{SK notes|司命　　　　日破　五不遇}}　　　　　　　　未時{{SK notes|天乙貴人日害　勾陳}}
+　　{{SK anchor|申時}}{{SK notes|青龍路空}}　　　　　　　　　　　酉時{{SK notes|天官貴人　明堂路空}}
+　　戌時　　　　　　　　　　　{{SK notes|天刑　旬空}}　　　　　　　　　亥時{{SK notes|朱雀　旬空}}
+　　{{SK anchor|乙丑日十二時}}
+　　子時{{SK notes|天乙貴人　日合天刑}}　　　　　　丑時{{SK notes|福星貴人　日建朱雀}}
+　　{{SK anchor|寅時}}{{SK notes|金匱}}　　　　　　　　　　夘時{{SK notes|日祿　寳光}}
+　　辰時　　　　　　　　{{SK notes|白虎}}　　　　　　　　　　巳時{{SK notes|玉堂五不遇}}
+　　午時　　　　　　　　　　　　　　{{SK notes|路空　日害　天牢}}　　　　　未時{{SK notes|路空　日破　元武}}申時{{SK notes|天乙貴人　天官貴人　司命}}　酉時{{SK notes|勾陳}}
+　　{{SK anchor|戌時}}{{SK notes|喜神　青龍日刑　旬空}}　　　　　　　亥時{{SK notes|福星貴人　日馬　明堂旬空}}
+　　{{SK anchor|丙寅日十二時}}
+　　子時{{SK notes|天官貴　人福星　貴人}}　丑時{{SK notes|青龍}}
+　　{{SK anchor|寅時}}{{SK notes|明堂日建}}　　　　　　　　　　夘時{{SK notes|天刑}}
+　　{{SK anchor|辰時}}{{SK notes|朱雀　　　　金匱五　不遇}}　　　　　　巳時{{SK notes|路空　日禄寳光　路空　日害}}
+　　午時　　　　　　　　{{SK notes|日刑}}　　　　　　　　　　未時{{SK notes|白虎}}
+　　{{SK anchor|申時}}{{SK notes|玉堂　喜神日馬　日破}}　　　　　　　酉時{{SK notes|天牢天乙貴}}
+　　{{SK anchor|戌時}}{{SK notes|人元武福星}}　　　　　　　　亥時{{SK notes|貴人旬　空天乙貴　人日}}
+　　{{SK anchor|丁夘日十二時}}
+　　子時{{SK notes|合勾陳旬}}　　　　　　　　　　丑時{{SK notes|空司}}
+　　{{SK anchor|寅時}}{{SK notes|命日刑勾}}　　　　　　　　　　夘時{{SK notes|陳青　龍路空日建　明堂}}
+　　辰時　　　　　　　　　　　{{SK notes|五不　遇路}}　　　　　　　巳時{{SK notes|空日害天}}
+　　{{SK anchor|午時}}{{SK notes|刑日　馬朱　雀日}}　　　　未時{{SK notes|禄喜}}
+　　申時　　　　　　　　{{SK notes|神金}}　　　　　　　　　　酉時{{SK notes|匱寶光　白虎天　乙貴人福}}
+　　{{SK anchor|戌時}}{{SK notes|星貴　　　人玉　堂日}}　　　　　　　亥時{{SK notes|破日合　天牢旬句天　乙貴}}
+　　{{SK anchor|戊辰日十二時}}
+　　子時　　　　　　　　　　　{{SK notes|人天　官貴}}　　　　　　　丑時{{SK notes|人元武旬空　路空}}
+　　{{SK anchor|寅時}}{{SK notes|天牢　天乙貴人路}}　　　　　　　夘時{{SK notes|空元武日馬　司命}}
+　　{{SK anchor|辰時}}{{SK notes|喜神　日建　青龍日刑}}　　　　　　巳時{{SK notes|日禄　明堂}}
+　　午時　　　　　　　　{{SK notes|天刑}}　　　　　　　　　　　　未時{{SK notes|天乙貴人朱}}
+　　{{SK anchor|申時}}{{SK notes|雀福星　貴人}}　　　　　　　酉時{{SK notes|金匱　日合}}
+　　戌時　　　　　　　　　　　　　　　　{{SK notes|寶光　路空　日破　白虎}}　　　　亥時{{SK notes|旬空玉堂　路空}}
+　　{{SK anchor|己巳日十二時}}
+　　子時{{SK notes|旬空天乙貴}}　　　　　　　　　　丑時{{SK notes|人白虎玉堂}}
+　　{{SK anchor|寅時}}{{SK notes|五不　遇喜神天官　貴人}}　　　　　　　夘時{{SK notes|日害}}
+　　{{SK anchor|辰時}}{{SK notes|天牢}}　　　　　　　　　　　　巳時{{SK notes|元武司命}}
+　　{{SK anchor|午時}}{{SK notes|日建　勾陳}}　　　　　　　　　未時{{SK notes|日禄青　龍福}}
+　　{{SK anchor|申時}}{{SK notes|星貴人　明堂　天乙　貴人　日合}}　　　　　　酉時{{SK notes|路空　日刑}}
+　　{{SK anchor|戌時}}{{SK notes|天刑路空}}　　　　　　　　　　　　亥時{{SK notes|朱雀　金匱　　　　旬空日　馬寳　光五}}
+　　{{SK anchor|庚午日十二時}}
+　　子時{{SK notes|不遇　　　　日破旬　空金}}　　　　　　　　丑時{{SK notes|匱五不　遇日破天}}
+　　{{SK anchor|寅時}}{{SK notes|乙貴人寳}}　　　　　　　　　　　　夘時{{SK notes|光日}}
+　　辰時　　　　　　　　{{SK notes|害日}}　　　　　　　　　　　　巳時{{SK notes|馬白}}午時{{SK notes|虎玉堂　天牢元　武天　官貴人福　星貴}}未時{{SK notes|人日建　司命路空　日刑}}
+　　{{SK anchor|申時}}{{SK notes|日禄　青龍　日馬}}　　　　酉時{{SK notes|明空}}
+　　{{SK anchor|戌時}}{{SK notes|喜神　　　　　　五不遇　天刑　旬空}}　　　亥時{{SK notes|朱雀　旬空}}
+　　{{SK anchor|辛未日十二時}}
+　　子時　　　　　　　　　　　{{SK notes|日害　天刑}}　　　　　　丑時{{SK notes|日破　日刑　朱雀}}
+　　{{SK anchor|寅時}}{{SK notes|天乙貴　人金}}　　　　夘時{{SK notes|匱寶}}
+　　辰時　　　　　　　　　　　{{SK notes|光路　空白}}　　　　　　巳時{{SK notes|虎天官　貴人福　星貴　人日馬玉}}
+　　{{SK anchor|午時}}{{SK notes|堂路空　天乙貴人}}　　　　未時{{SK notes|日合天牢}}
+　　{{SK anchor|申時}}{{SK notes|日建　元武}}　　　　　　酉時{{SK notes|喜神司命日　禄五}}
+　　{{SK anchor|戌時}}{{SK notes|不遇勾陳}}　　　　　　　　　亥時{{SK notes|青龍旬空}}
+　　{{SK anchor|壬申日十二時}}
+　　子時{{SK notes|明堂}}　　　　　　　　　丑時{{SK notes|旬空青　龍天}}
+　　{{SK anchor|寅時}}{{SK notes|官貴　　　　　　　　人明　堂日　馬路　空日}}　夘時{{SK notes|破日刑天刑　天乙}}
+　　{{SK anchor|辰時}}{{SK notes|貴人路　空朱}}　　　　巳時{{SK notes|雀福星　貴人　金匱}}
+　　{{SK anchor|午時}}{{SK notes|天乙貴人}}　　　　　　　　　未時{{SK notes|日合寶　光喜}}
+　　{{SK anchor|申時}}{{SK notes|神白　　　　虎天官　貴人}}　　　　　酉時{{SK notes|玉堂}}
+　　{{SK anchor|戌時}}{{SK notes|日建五不}}　　　　　　　　　亥時{{SK notes|遇天牢元　武司　命旬}}
+　　{{SK anchor|癸酉日十二時}}
+　　子時{{SK notes|日禄　司命路空}}　　　　　　丑時{{SK notes|路空　勾陳}}
+　　{{SK anchor|寅時}}{{SK notes|青龍}}　　　　　　　　　夘時{{SK notes|天乙貴　人福星　貴人明堂}}辰時{{SK notes|日破　喜神天　官貴人日}}　　巳時{{SK notes|合天刑天乙}}
+　　{{SK anchor|午時}}{{SK notes|貴人}}　　　　　　　　　未時{{SK notes|朱雀金匱寶}}
+　　申時　　　　　　　　{{SK notes|光五}}　　　　　　　　　酉時{{SK notes|不遇　白虎日建}}
+　　{{SK anchor|戌時}}{{SK notes|玉堂日　　　　　　刑天　官貴　人路　空日}}　亥時{{SK notes|害天牢旬　空日　馬路}}
+　　{{SK anchor|甲戌日十二時}}
+　　子時　　　　　　　　{{SK notes|空元}}　　　　　　　　　　　丑時{{SK notes|武旬空天牢}}寅時{{SK notes|天乙　貴人　元武日　禄喜}}　夘時{{SK notes|神仙星貴}}
+　　{{SK anchor|辰時}}{{SK notes|人司命日}}　　　　　　　　　　　巳時{{SK notes|合勾}}
+　　午時　　　　　　　　　　　{{SK notes|陳青龍　日破}}　　　　　　　未時{{SK notes|明堂五不遇　天刑}}
+　　{{SK anchor|申時}}{{SK notes|天乙　貴人日刑　朱雀}}　　　　　　　　酉時{{SK notes|日馬金　匱路空旬　空天　官貴}}
+　　{{SK anchor|戌時}}{{SK notes|人寳光路}}　　　　　　　　　　　亥時{{SK notes|空日}}
+　　{{SK anchor|乙亥日十二時}}
+　　子時{{SK notes|害旬空日建}}　　　　　　　　　丑時{{SK notes|白虎玉　堂天}}
+　　{{SK anchor|寅時}}{{SK notes|日合天牢}}　　　　　　　　　　　　夘時{{SK notes|日禄元武}}
+　　{{SK anchor|辰時}}{{SK notes|司命}}　　　　　　　　　　　　巳時{{SK notes|日馬五不遇　日破　旬陳}}
+　　{{SK anchor|午時}}{{SK notes|青龍路空}}　　　　　　　　　　　　未時{{SK notes|明堂路空}}
+　　{{SK anchor|申時}}{{SK notes|天乙貴　人天官貴人　日害　天刑}}　　　　　酉時{{SK notes|旬空　朱雀}}
+　　{{SK anchor|戌時}}{{SK notes|旬空　喜神}}　　　　　　　　　亥時{{SK notes|金匱福　星貴　人日建寶}}
+　　{{SK anchor|丙子日十二時}}
+　　子時{{SK notes|光日刑　天官貴　人福　星貴}}　丑時{{SK notes|人日　建金}}
+　　{{SK anchor|寅時}}{{SK notes|匱日合寶}}　　　　夘時{{SK notes|光日馬白}}
+　　辰時　　　　　　　　　　　　　　{{SK notes|虎玉堂　日刑　五不}}　　巳時{{SK notes|遇路空天　牢日}}
+　　{{SK anchor|午時}}{{SK notes|禄路空元}}　　　　　　　　未時{{SK notes|武司　命日}}
+　　{{SK anchor|申時}}{{SK notes|破日　害勾陳喜}}　　　　　酉時{{SK notes|神青龍　旬空天乙}}
+　　{{SK anchor|戌時}}{{SK notes|貴人明堂旬}}　　　　　　亥時{{SK notes|空福星貴人}}
+　　{{SK anchor|丁丑日十二時}}
+　　子時{{SK notes|天刑天乙}}　　　　　　　　丑時{{SK notes|貴人朱雀}}
+　　{{SK anchor|寅時}}{{SK notes|日合天刑}}　　　　　　　　夘時{{SK notes|日建朱雀金　匱路}}
+　　辰時　　　　　　　　{{SK notes|空寶}}　　　　　　　　巳時{{SK notes|光五}}
+　　{{SK anchor|午時}}{{SK notes|日禄　喜神日害　天牢}}　　　　未時{{SK notes|日破　元武}}
+　　{{SK anchor|申時}}{{SK notes|司命旬空}}　　　　　　酉時{{SK notes|天乙貴　人福星貴人　勾陳}}
+　　{{SK anchor|戌時}}{{SK notes|旬空青龍}}　　　　　　亥時{{SK notes|日刑天　乙貴人　天官　貴人}}
+　　{{SK anchor|戊寅日十二時}}
+　　子時{{SK notes|日馬明堂}}　　　　　　丑時{{SK notes|青龍路　空天乙貴}}
+　　{{SK anchor|寅時}}{{SK notes|人明　　　　堂路空　日建}}　　　夘時{{SK notes|五不遇天刑}}
+　　{{SK anchor|辰時}}{{SK notes|天官　貴人}}　　　　巳時{{SK notes|朱雀　喜神金匱　日禄}}
+　　午時　　　　　　　　{{SK notes|寶光}}　　　　　　未時{{SK notes|日害日　刑白}}
+　　{{SK anchor|申時}}{{SK notes|虎天乙　貴人　玉堂　福星　貴人}}　　　　酉時{{SK notes|日馬　日破}}
+　　{{SK anchor|戌時}}{{SK notes|天牢旬空}}　　　　　　　　　亥時{{SK notes|元武旬空　司命}}
+　　{{SK anchor|己夘日十二時}}
+　　子時{{SK notes|路空日　合路空勾}}　　　　丑時{{SK notes|陳天乙　貴人}}寅時{{SK notes|司命　日刑五　不遇}}　　夘時{{SK notes|勾陳　喜神}}
+　　辰時　　　　　　　　　　　{{SK notes|天官　貴人}}　　　　　　巳時{{SK notes|青龍日建}}
+　　{{SK anchor|午時}}{{SK notes|明堂　日害}}　　　　　　未時{{SK notes|天刑日}}
+　　{{SK anchor|申時}}{{SK notes|馬朱雀　　　　日禄　金匱　福星}}　　　　酉時{{SK notes|貴人天乙　貴人　路空}}
+　　{{SK anchor|戌時}}{{SK notes|日合天牢}}　　　　　　　　亥時{{SK notes|五不遇　元武}}
+　　{{SK anchor|庚辰日十二時}}
+　　子時　　　　　　　　　　　　{{SK notes|五不遇　天牢}}　　　　　丑時{{SK notes|天乙貴人元武}}
+　　{{SK anchor|寅時}}{{SK notes|日馬　司命}}　　　　　　夘時{{SK notes|日害　勾陳}}
+　　{{SK anchor|辰時}}{{SK notes|日建　青龍日刑}}　　　　　　巳時{{SK notes|明堂}}
+　　{{SK anchor|午時}}{{SK notes|天官貴人　福星貴人路空　天刑}}　　未時{{SK notes|天乙貴人路空　朱雀}}
+　　{{SK anchor|申時}}{{SK notes|日禄　金匱旬空}}　　　　　　酉時{{SK notes|日合　寶光旬空}}
+　　{{SK anchor|戌時}}{{SK notes|喜神　　　　　　　五不遇　日破　白虎}}　　亥時{{SK notes|玉堂}}
+　　{{SK anchor|辛巳日十二時}}
+　　子時　　　　　　　　{{SK notes|白虎}}　　　　　　　　丑時{{SK notes|玉堂}}
+　　{{SK anchor|寅時}}{{SK notes|天乙貴人　日害　天牢}}　　　　　　夘時{{SK notes|元武}}
+　　{{SK anchor|辰時}}{{SK notes|司命路空}}　　　　　　　　巳時{{SK notes|天官貴人　福星貴人　日建路空　勾陳}}
+　　{{SK anchor|午時}}{{SK notes|天乙貴人　青龍}}　　　　未時{{SK notes|明堂}}
+　　{{SK anchor|申時}}{{SK notes|喜神　日合　　　日刑　天刑　旬空}}　　　酉時{{SK notes|日禄五不遇　朱雀　旬空}}
+　　{{SK anchor|戌時}}{{SK notes|金匱}}　　　　　　　　亥時{{SK notes|日馬　寶光日破}}
+　　{{SK anchor|壬午日十二時}}
+　　子時{{SK notes|金匱日破}}　　　　　　　　　　丑時{{SK notes|天官貴　人寶光日}}
+　　寅時　　　　　　　　　　　{{SK notes|害路　空白}}　　　　　　　　夘時{{SK notes|虎天乙　貴人玉堂}}
+　　{{SK anchor|辰時}}{{SK notes|路空福星貴}}　　　　　　　　　巳時{{SK notes|人天牢天乙}}
+　　{{SK anchor|午時}}{{SK notes|貴人　元武　喜神日建}}　　　　　未時{{SK notes|司命日　刑天官貴}}
+　　{{SK anchor|申時}}{{SK notes|人日　合勾　陳日馬　青龍}}　　　　　　　酉時{{SK notes|五不遇旬}}
+　　戌時　　　　　　　　{{SK notes|空明}}　　　　　　　　　　　亥時{{SK notes|堂旬空天}}
+　　{{SK anchor|癸未日十二時}}
+　　子時{{SK notes|刑日　　　　　禄朱　雀日　禄路}}　　　　　　丑時　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　{{SK notes|空日　害天　刑路　空日}}
+　　{{SK anchor|寅時}}{{SK notes|破日}}　　　　　　　　　　　夘時{{SK notes|刑朱雀　金匱天　乙貴}}
+　　{{SK anchor|辰時}}{{SK notes|人福　星貴人寶光}}　　　　　　巳時{{SK notes|喜神天　官貴　人白}}
+　　{{SK anchor|午時}}{{SK notes|虎天乙貴}}　　　　　　　　　　　未時{{SK notes|人日馬玉堂　日合}}
+　　{{SK anchor|申時}}{{SK notes|天牢日建}}　　　　　　　　　　　酉時{{SK notes|五不　遇元}}
+　　{{SK anchor|戌時}}{{SK notes|武司命　旬空勾陳}}　　　　　　亥時{{SK notes|旬空天官}}
+　　{{SK anchor|甲申日十二時}}
+　　子時{{SK notes|貴人}}　　　　　　　　　　　丑時{{SK notes|青龍路　空明}}寅時{{SK notes|堂路　空青　龍天乙　貴人明堂　日禄　喜神}}　夘時{{SK notes|福星}}
+　　{{SK anchor|辰時}}{{SK notes|金匱}}　　　　　　　　巳時{{SK notes|日合　寶光}}
+　　午時　　　　　　　　　　　　　　{{SK notes|五不遇　白虎　旬空}}　未時{{SK notes|天乙貴人　玉堂旬空}}
+　　{{SK anchor|申時}}{{SK notes|日建　　　路空　天牢}}　　　　　酉時{{SK notes|天官貴人路空　元武}}
+　　{{SK anchor|戌時}}{{SK notes|司命}}　　　　　　　　亥時{{SK notes|日害　勾陳}}
+　　{{SK anchor|乙酉日十二時}}
+　　子時{{SK notes|天乙貴人　司命}}　　　丑時{{SK notes|福星貴人勾陳}}
+　　{{SK anchor|寅時}}{{SK notes|青龍}}　　　　　　　　夘時{{SK notes|日禄　明堂日破}}
+　　{{SK anchor|辰時}}{{SK notes|日合天刑}}　　　　　　　　巳時{{SK notes|五不遇　朱雀}}
+　　{{SK anchor|午時}}{{SK notes|金匱　　　路空　旬空}}　　　　　未時{{SK notes|寶光路空　旬空}}申時{{SK notes|天乙貴人天官貴人白}}　　酉時{{SK notes|虎日　建玉堂日}}
+　　{{SK anchor|戌時}}{{SK notes|刑喜　　　神日　害天}}　　　　　亥時{{SK notes|牢福星貴　人日馬元}}
+　　{{SK anchor|丙戌日十二時}}
+　　子時{{SK notes|武天官貴　人福星貴人天}}　丑時{{SK notes|牢元}}
+　　{{SK anchor|寅時}}{{SK notes|武司}}　　　　　　　　夘時{{SK notes|命日合勾}}
+　　{{SK anchor|辰時}}{{SK notes|陳青　　　　　　　龍五不　遇路　空日}}　巳時{{SK notes|破日　禄明堂路}}
+　　午時　　　　　　　　　　{{SK notes|空天　刑旬}}　　　　　未時{{SK notes|空日　刑朱　雀旬}}申時{{SK notes|喜神　日馬　金匱}}　酉時{{SK notes|天乙貴　人寶光日}}戌時{{SK notes|害福星　貴人日建}}　　亥時{{SK notes|白虎天　乙貴}}
+　　{{SK anchor|丁亥日十二時}}
+　　子時　　　　　　　　{{SK notes|人玉}}　　　　　　丑時{{SK notes|堂白}}
+　　{{SK anchor|寅時}}{{SK notes|虎玉　　　堂日　合路}}　　　　夘時{{SK notes|空天牢　五不　遇路}}
+　　{{SK anchor|辰時}}{{SK notes|空元}}　　　　　　巳時{{SK notes|武司命日　馬日}}
+　　{{SK anchor|午時}}{{SK notes|破勾　陳日　禄喜神青}}　未時{{SK notes|龍旬空明}}
+　　申時　　　　　　　　　　　{{SK notes|堂旬　空日}}　　　　酉時{{SK notes|害天刑　天乙貴人福}}
+　　{{SK anchor|戌時}}{{SK notes|星貴}}　　　　　　亥時{{SK notes|人朱雀　金匱天　乙貴　人天官貴}}
+　　{{SK anchor|戊子日十二時}}
+　　子時{{SK notes|人日　建寶光日}}　　　　丑時{{SK notes|刑日建　金匱　路空天乙}}
+　　{{SK anchor|寅時}}{{SK notes|貴人　　　　日合寶　光路}}　　　夘時{{SK notes|空日馬　五不遇白}}
+　　{{SK anchor|辰時}}{{SK notes|虎天官貴}}　　　　　　巳時{{SK notes|人玉堂日}}
+　　{{SK anchor|午時}}{{SK notes|刑喜　　　神天　牢日}}　　　　未時{{SK notes|禄元武司命　日破　旬空}}申時{{SK notes|天乙貴　人日}}　　酉時{{SK notes|害勾}}
+　　戌時　　　　　　　　　　　{{SK notes|陳旬　空福}}　　　　亥時{{SK notes|星貴　人青}}
+　　{{SK anchor|己丑日十二時}}
+　　子時{{SK notes|天乙貴　人日合天}}　　　丑時{{SK notes|刑日建五不　遇朱}}寅時{{SK notes|雀喜　神天官　貴人}}　夘時{{SK notes|金匱}}
+　　辰時　　　　　　　{{SK notes|寶光}}　　　　　　　巳時{{SK notes|白虎}}
+　　{{SK anchor|午時}}{{SK notes|玉堂　　　　　　日禄　日害　天牢}}　　未時{{SK notes|旬空福星貴　人日　破元}}申時{{SK notes|武旬空　天乙貴人}}　　　酉時{{SK notes|司命　路空}}
+　　{{SK anchor|戌時}}{{SK notes|路空勾陳}}　　　　　　　亥時{{SK notes|青龍　日刑日馬明}}
+　　{{SK anchor|庚寅日十二時}}
+　　子時{{SK notes|堂五　不遇青}}　　　　　　丑時{{SK notes|龍五不　遇天}}
+　　{{SK anchor|寅時}}{{SK notes|乙貴人明}}　　　　　　　夘時{{SK notes|堂日}}
+　　{{SK anchor|辰時}}{{SK notes|建天}}　　　　　　　巳時{{SK notes|刑朱雀金　匱寶}}
+　　{{SK anchor|午時}}{{SK notes|光日害　日刑天官貴　人福　星貴}}未時{{SK notes|人路空　白虎旬空　天乙}}
+　　{{SK anchor|申時}}{{SK notes|貴人　玉堂路空　旬空}}　　　　　酉時{{SK notes|日禄}}
+　　{{SK anchor|戌時}}{{SK notes|日馬　日破天牢元}}　　　　　亥時{{SK notes|武喜神司}}
+　　{{SK anchor|辛夘日十二時}}
+　　子時{{SK notes|命五不遇}}　　　　　　　丑時{{SK notes|日合}}
+　　{{SK anchor|寅時}}{{SK notes|天乙貴人　青龍}}　　　　夘時{{SK notes|日建　明堂}}
+　　辰時　　　　　　　　　　　　　　{{SK notes|路空　日害　天刑}}　　　巳時{{SK notes|天官貴人　福星貴人　日馬路空　朱雀}}
+　　{{SK anchor|午時}}{{SK notes|天乙貴人　金匱旬空}}　　　　未時{{SK notes|寶光旬空}}
+　　{{SK anchor|申時}}{{SK notes|喜神白虎}}　　　　　　　　酉時{{SK notes|日禄　玉堂五不遇　日破}}
+　　{{SK anchor|戌時}}{{SK notes|日合天牢}}　　　　　　　　亥時{{SK notes|元武}}
+　　{{SK anchor|壬辰日十二時}}
+　　子時　　　　　　　　{{SK notes|天牢}}　　　　　　　　丑時{{SK notes|天官貴人元武}}
+　　{{SK anchor|寅時}}{{SK notes|日馬　司命路空}}　　　　　　夘時{{SK notes|天乙貴人路空　日害　勾陳}}辰時{{SK notes|福星貴人　日建　青龍日刑}}　巳時{{SK notes|天乙貴人　明堂}}
+　　{{SK anchor|午時}}{{SK notes|喜神天刑}}　　　　　　　　未時{{SK notes|天官貴人朱雀　旬空}}
+　　{{SK anchor|申時}}{{SK notes|金匱　五不遇}}　　　　　　　酉時{{SK notes|日合　寳光}}
+　　戌時　　　　　　　　　　　{{SK notes|日破　白虎}}　　　　　　亥時{{SK notes|日禄　玉堂}}
+　　{{SK anchor|癸巳日十二時}}
+　　子時{{SK notes|日禄　　　路空　白虎}}　　　　　　丑時{{SK notes|玉堂路空}}
+　　寅時　　　　　　　　　　　{{SK notes|日害　天牢}}　　　　　　夘時{{SK notes|天乙貴人　福星貴人元武}}辰時{{SK notes|喜神　天官貴人　司命}}　巳時{{SK notes|天乙貴人　日建勾陳}}
+　　{{SK anchor|午時}}{{SK notes|青龍旬空}}　　　　　　　　未時{{SK notes|明堂五不遇　旬空}}
+　　{{SK anchor|申時}}{{SK notes|日合　　　日刑　天刑}}　　　　　　酉時{{SK notes|朱雀}}
+　　{{SK anchor|戌時}}{{SK notes|天官貴　人金匱路}}　　　　亥時{{SK notes|空日　馬寶光路　空日}}
+　　{{SK anchor|甲午日十二時}}
+　　子時{{SK notes|破金匱日}}　　　　　　　　丑時{{SK notes|破天乙貴人}}寅時{{SK notes|日害　日禄　喜神福星貴}}　夘時{{SK notes|人白}}
+　　辰時　　　　　　　　　　{{SK notes|虎玉　堂天}}　　　　　　巳時{{SK notes|牢旬　空元}}
+　　{{SK anchor|午時}}{{SK notes|武旬　空日　建司命　五不}}　　　　　未時{{SK notes|遇日刑　天乙貴人}}
+　　{{SK anchor|申時}}{{SK notes|日合　勾陳日馬}}　　　　　　　酉時{{SK notes|青龍路　空天官貴}}
+　　戌時　　　　　　　　{{SK notes|人明}}　　　　　　　　　　亥時{{SK notes|堂路}}
+　　{{SK anchor|乙未日十二時}}
+　　子時{{SK notes|空天刑　朱雀　天乙}}　　　　　　　丑時{{SK notes|貴人日　　　　害天　刑福　星貴}}
+　　{{SK anchor|寅時}}{{SK notes|人日}}　　　　　　　　　　夘時{{SK notes|破日　刑朱}}
+　　辰時　　　　　　　　　　{{SK notes|雀金　匱日}}　　　　　　　巳時{{SK notes|禄寶　光白虎旬空　日馬}}
+　　{{SK anchor|午時}}{{SK notes|玉堂　　　五不　遇旬}}　　　　　　　未時{{SK notes|空日合路　空天}}申時{{SK notes|牢日建　路空元　武天}}　酉時{{SK notes|乙貴}}
+　　{{SK anchor|戌時}}{{SK notes|喜神　青龍}}　　　　　　　亥時{{SK notes|福星貴　人明}}
+　　{{SK anchor|丙申日十二時}}
+　　子時{{SK notes|堂天官　貴人福　星貴}}　丑時{{SK notes|人青}}
+　　{{SK anchor|寅時}}{{SK notes|龍明　　　　　堂日　馬日　破日}}　　　　夘時{{SK notes|刑天}}
+　　{{SK anchor|辰時}}{{SK notes|刑朱　　　　　　雀金匱　五不　遇路}}　　　巳時{{SK notes|空旬　空日　禄日合寳　光路}}
+　　午時　　　　　　　　{{SK notes|空旬}}　　　　　　　　　　未時{{SK notes|空白}}
+　　{{SK anchor|申時}}{{SK notes|虎玉　堂喜神日}}　　　　　　　酉時{{SK notes|建天牢天乙}}
+　　{{SK anchor|戌時}}{{SK notes|貴人元　武福}}　　　　　亥時{{SK notes|星貴人司命　天乙}}
+　　{{SK anchor|丁酉日十二時}}
+　　子時{{SK notes|貴人}}　　　　　　　丑時{{SK notes|日害}}
+　　{{SK anchor|寅時}}{{SK notes|勾陳司命}}　　　　　　　夘時{{SK notes|勾陳青龍路　空明　堂五}}
+　　{{SK anchor|辰時}}{{SK notes|不遇　　　路空　日破}}　　　　巳時{{SK notes|日合　天刑}}
+　　{{SK anchor|午時}}{{SK notes|旬空　朱雀　旬空}}　　未時{{SK notes|日禄}}
+　　申時　　　　　　　　{{SK notes|喜神}}　　　　　　　酉時{{SK notes|金匱寶　光白虎　天乙　貴人福星}}
+　　戌時　　　　　　　　　　　{{SK notes|貴人　日建}}　　　　亥時{{SK notes|玉堂日　刑日害　天牢天乙}}
+　　{{SK anchor|戊戌日十二時}}
+　　子時　　　　　　　　　　{{SK notes|路空　天牢}}　　　　　　丑時{{SK notes|天乙貴人路　空元}}
+　　{{SK anchor|寅時}}{{SK notes|武司　命五不}}　　　　　　　夘時{{SK notes|遇天官　貴人日合}}
+　　{{SK anchor|辰時}}{{SK notes|勾陳　喜神青龍　日破}}　　　　　　巳時{{SK notes|旬空　日禄明堂}}
+　　午時　　　　　　　　{{SK notes|旬空}}　　　　　　　　未時{{SK notes|天刑天乙貴　人日}}申時{{SK notes|刑朱雀　福星　貴人}}　酉時{{SK notes|日馬金匱}}
+　　{{SK anchor|戌時}}{{SK notes|寶光　　　日害　日建}}　　　　　　亥時{{SK notes|路空白虎}}
+　　{{SK anchor|巳亥日十二時}}
+　　子時{{SK notes|玉堂路空天}}　　　　　　丑時{{SK notes|乙貴人白虎}}
+　　{{SK anchor|寅時}}{{SK notes|玉堂　五不遇　喜神天官}}　夘時{{SK notes|貴人}}
+　　{{SK anchor|辰時}}{{SK notes|日合天牢}}　　　　　　　　巳時{{SK notes|元武司命　旬空　日馬}}
+　　{{SK anchor|午時}}{{SK notes|日破　勾陳}}　　　　　　未時{{SK notes|旬空日　禄青}}
+　　{{SK anchor|申時}}{{SK notes|龍福星　　　　貴人　明堂　天乙}}　　　酉時{{SK notes|貴人　路空}}
+　　{{SK anchor|戌時}}{{SK notes|日害}}　　　　　　　　亥時{{SK notes|天刑　路空朱雀金　匱日}}
+　　{{SK anchor|庚子日十二時}}
+　　子時{{SK notes|建寳　光五不遇日}}　　　　　　丑時{{SK notes|刑日建　金匱　五不}}
+　　{{SK anchor|寅時}}{{SK notes|遇天乙貴}}　　　　　　　　夘時{{SK notes|人日合寳}}
+　　辰時　　　　　　　　　　　{{SK notes|天牢　旬空}}　　　　　　　巳時{{SK notes|元武　旬空}}午時{{SK notes|天官貴　　人福星　貴人司命　路空}}　未時{{SK notes|日破天乙貴　人路　空日}}
+　　{{SK anchor|申時}}{{SK notes|害勾　陳日}}　　　　　　　酉時{{SK notes|禄青}}
+　　{{SK anchor|戌時}}{{SK notes|龍明　　　　堂喜神　五不}}　　　　　　亥時{{SK notes|遇天}}
+　　{{SK anchor|辛丑日十二時}}
+　　子時{{SK notes|刑朱雀日}}　　　　　　　　　　丑時{{SK notes|合天刑日}}
+　　{{SK anchor|寅時}}{{SK notes|建朱雀　天乙}}　　　　　夘時{{SK notes|貴人}}
+　　辰時　　　　　　　　　　　　　　{{SK notes|金匱　寶光　路空}}　　　　巳時{{SK notes|白虎旬　　空天官　貴人福星　貴人}}午時{{SK notes|玉堂路　空旬　空天}}　　　未時{{SK notes|乙貴　人日}}
+　　{{SK anchor|申時}}{{SK notes|害天　牢日}}　　　酉時{{SK notes|破元武喜神　司命}}
+　　{{SK anchor|戌時}}{{SK notes|日禄五不}}　　　　　　亥時{{SK notes|遇勾　陳青}}
+　　{{SK anchor|壬寅日十二時}}
+　　子時{{SK notes|龍日}}　　　　　　丑時{{SK notes|刑日馬明　堂青}}寅時{{SK notes|龍天　　　官貴　人明}}　　　夘時{{SK notes|堂日建路空天　刑天}}
+　　{{SK anchor|辰時}}{{SK notes|乙貴人　路空朱雀}}　　巳時{{SK notes|福星貴人　金匱旬空　天乙　貴人}}
+　　{{SK anchor|午時}}{{SK notes|寶光日害}}　　　　　　未時{{SK notes|日刑旬空　喜神}}
+　　{{SK anchor|申時}}{{SK notes|日馬　　　　　　五不遇　日破　天牢}}　酉時{{SK notes|元武}}
+　　{{SK anchor|戌時}}{{SK notes|司命}}　　　　　　　亥時{{SK notes|日禄　日合勾陳}}
+　　{{SK anchor|癸夘日十二時}}
+　　子時{{SK notes|日禄　司命路空　日刑}}　　　　丑時{{SK notes|路空　勾陳}}
+　　{{SK anchor|寅時}}{{SK notes|青龍}}　　　　　　　夘時{{SK notes|天乙貴　人福星貴　人日　建明}}辰時{{SK notes|堂喜　神天官　貴人　日害　天刑}}　　巳時{{SK notes|旬空天　乙貴人日　馬朱}}
+　　{{SK anchor|午時}}{{SK notes|雀旬}}　　　　　　　未時{{SK notes|空金匱寶光}}
+　　申時　　　　　　　　{{SK notes|五不}}　　　　　　　酉時{{SK notes|遇白虎玉}}
+　　{{SK anchor|戌時}}{{SK notes|堂日破　天官貴人　日合}}　　　　　　　　　亥時{{SK notes|路空　天牢}}
+　　{{SK anchor|甲辰日十二時}}
+　　子時　　　　　　　　{{SK notes|路空}}　　　　　　　　　　　　　　丑時{{SK notes|元武天牢天}}寅時{{SK notes|乙貴　人元　武日禄喜　神福　星貴人日}}　夘時{{SK notes|馬司　命旬　空日}}
+　　{{SK anchor|辰時}}{{SK notes|害勾　陳旬空日}}　　　　　　　　　　　巳時{{SK notes|建青}}
+　　午時　　　　　　　　　　　　{{SK notes|龍日刑　明堂}}　　　　　　　　　　未時{{SK notes|五不遇天刑}}
+　　{{SK anchor|申時}}{{SK notes|天乙貴人}}　　　　　　　　　　　　　　酉時{{SK notes|朱雀金　匱路　空天官貴}}
+　　戌時　　　　　　　　　　　{{SK notes|人日　合寶}}　　　　　　　　　　　亥時{{SK notes|光路}}
+　　{{SK anchor|乙巳日十二時}}
+　　子時{{SK notes|天乙貴人白虎}}　　　　　　　　丑時{{SK notes|福星貴人　玉堂}}
+　　寅時　　　　　　　　　　　　　　{{SK notes|日害　天牢　旬空}}　　　　　夘時{{SK notes|日禄元武　旬空}}
+　　{{SK anchor|辰時}}{{SK notes|司命}}　　　　　　　　　　巳時{{SK notes|日建五不遇　勾陳}}
+　　{{SK anchor|午時}}{{SK notes|青龍路空}}　　　　　　　　　　未時{{SK notes|明堂路空}}申時{{SK notes|天乙貴人　天官貴人　日合日刑　天刑}}　酉時{{SK notes|朱雀}}
+　　{{SK anchor|戌時}}{{SK notes|喜神　金匱}}　　　　　　　亥時{{SK notes|福星貴人　日馬　寶光日破}}
+　　{{SK anchor|丙午日十二時}}
+　　子時{{SK notes|天官貴人　福星貴人　金匱日破}}　丑時{{SK notes|寶光日害}}
+　　寅時　　　　　　　　　　　{{SK notes|白虎　旬空}}　　　　　　　夘時{{SK notes|玉堂旬空}}
+　　辰時　　　　　　　　　　　　　　　{{SK notes|五不遇　路空　天牢}}　　　　巳時{{SK notes|日禄路空　元武}}
+　　{{SK anchor|午時}}{{SK notes|日建　司命日刑}}　　　　　　　未時{{SK notes|日合勾陳}}
+　　{{SK anchor|申時}}{{SK notes|喜神　日馬　青龍}}　　　　　酉時{{SK notes|天乙貴人　明堂}}
+　　{{SK anchor|戌時}}{{SK notes|福星貴人天刑}}　　　　　　　　亥時{{SK notes|天乙貴人朱雀}}
+　　{{SK anchor|丁未日十二時}}
+　　子時　　　　　　　　　　　{{SK notes|日害　天刑}}　　　　　　　丑時{{SK notes|日破　日刑　朱雀}}
+　　{{SK anchor|寅時}}{{SK notes|金匱　　　路空　旬空}}　　　　　　　　　　夘時{{SK notes|寶光五不遇　路空　旬空}}
+　　辰時　　　　　　　　{{SK notes|白虎}}　　　　　　　　　　　　巳時{{SK notes|日馬　玉堂}}
+　　{{SK anchor|午時}}{{SK notes|日禄　喜神　日合天牢}}　　　　　　　未時{{SK notes|日建元武}}
+　　{{SK anchor|申時}}{{SK notes|司命}}　　　　　　　　　　　　酉時{{SK notes|天乙貴　人福星貴人}}
+　　{{SK anchor|戌時}}{{SK notes|勾陳}}　　　　　　　　　　　　亥時{{SK notes|青龍天　乙貴人　天官}}
+　　{{SK anchor|戊申日十二時}}
+　　子時{{SK notes|貴人明堂}}　　　　　　　　　　　　丑時{{SK notes|青龍路　空天乙貴}}
+　　{{SK anchor|寅時}}{{SK notes|人明　　　　　　　　　　　堂路空　日馬　五不　遇日　破日}}　夘時{{SK notes|刑天刑旬空　天官}}
+　　{{SK anchor|辰時}}{{SK notes|貴人　朱雀}}　　　　　　巳時{{SK notes|旬空　喜神　金匱}}
+　　午時　　　　　　　　{{SK notes|日禄}}　　　　　　　　　未時{{SK notes|日合寶　光白}}
+　　{{SK anchor|申時}}{{SK notes|虎天乙　貴人玉堂}}　　　　酉時{{SK notes|福星}}
+　　{{SK anchor|戌時}}{{SK notes|貴人日建}}　　　　　　　　　亥時{{SK notes|天牢　元武　司命}}
+　　{{SK anchor|己酉日十二時}}
+　　子時{{SK notes|路空路　空日}}　　　　丑時{{SK notes|害勾陳　天乙}}寅時{{SK notes|貴人　司命五　不遇勾陳}}　　夘時{{SK notes|喜神天官　貴人}}
+　　{{SK anchor|辰時}}{{SK notes|青龍旬空}}　　　　　　　　　巳時{{SK notes|明堂}}
+　　{{SK anchor|午時}}{{SK notes|日禄　金匱}}　　　　　未時{{SK notes|福星貴　人寶}}
+　　{{SK anchor|申時}}{{SK notes|光天乙　貴人　路空}}　　　　　酉時{{SK notes|白虎　日建玉堂　路空}}
+　　戌時　　　　　　　　　　{{SK notes|日刑　日害}}　　　　　亥時{{SK notes|天牢日馬五　不遇}}
+　　{{SK anchor|庚戌日十二時}}
+　　子時　　　　　　　　　　　{{SK notes|元武五　不遇}}　　　　丑時{{SK notes|天牢天乙貴}}
+　　{{SK anchor|寅時}}{{SK notes|人元武司}}　　　　　　　夘時{{SK notes|命旬空日　合勾}}
+　　{{SK anchor|辰時}}{{SK notes|陳旬空青}}　　　　　　　巳時{{SK notes|龍日}}
+　　{{SK anchor|午時}}{{SK notes|破明堂　天官貴人福　星貴}}　未時{{SK notes|人路空天刑　天乙　貴人}}申時{{SK notes|路空　日刑　朱雀}}　　酉時{{SK notes|日禄日馬}}
+　　{{SK anchor|戌時}}{{SK notes|金匱　寶光　日害喜　神日}}　　　　亥時{{SK notes|建五}}
+　　{{SK anchor|辛亥日十二時}}
+　　子時　　　　　　　　{{SK notes|不遇}}　　　　　　　丑時{{SK notes|白虎}}
+　　{{SK anchor|寅時}}{{SK notes|玉堂白　虎玉堂天乙}}　　　夘時{{SK notes|貴人　日合}}
+　　{{SK anchor|辰時}}{{SK notes|天牢旬空}}　　　　　　　巳時{{SK notes|元武旬　空司命路空天官　貴人　福星}}午時{{SK notes|貴人日　馬路}}　　　未時{{SK notes|空日}}
+　　{{SK anchor|申時}}{{SK notes|破勾　　　陳天　乙貴}}　　　　　酉時{{SK notes|人青龍明堂　喜神}}
+　　戌時　　　　　　　　{{SK notes|天刑}}　　　　　　　　　　亥時{{SK notes|日禄朱雀}}
+　　{{SK anchor|癸丑日十二時}}
+　　子時{{SK notes|日禄　日合路空　天刑}}　　　　　　　丑時{{SK notes|日建路空　朱雀}}
+　　{{SK anchor|寅時}}{{SK notes|金匱旬空}}　　　　　　　　　　夘時{{SK notes|天乙貴　人福星　貴人寳光}}
+　　{{SK anchor|辰時}}{{SK notes|旬空　喜神天乙貴}}　　　　　巳時{{SK notes|人白虎　天乙}}
+　　午時　　　　　　　　{{SK notes|貴人}}　　　　　　　　　　未時{{SK notes|玉堂日　害五　不遇}}
+　　{{SK anchor|申時}}{{SK notes|日破}}　　　　　　　　　　酉時{{SK notes|羅武}}
+　　{{SK anchor|戌時}}{{SK notes|司命勾　陳天官貴　人青}}　　　　　亥時{{SK notes|龍路　空日刑日}}
+　　{{SK anchor|甲寅日十二時}}
+　　子時{{SK notes|馬明堂路}}　　　　　　　　　　　丑時{{SK notes|空青龍　旬空天乙}}寅時{{SK notes|貴人　明堂　旬空日　禄喜神福}}　夘時{{SK notes|星貴}}
+　　{{SK anchor|辰時}}{{SK notes|人日}}　　　　　　　　　　　巳時{{SK notes|建天刑朱　雀金}}
+　　午時　　　　　　　　　　　　{{SK notes|匱寶光　日害}}　　　　　　　未時{{SK notes|日刑五　不遇}}
+　　{{SK anchor|申時}}{{SK notes|白虎　　　　　天乙　貴人　玉堂}}　　　　　酉時{{SK notes|日馬路空日　破天}}
+　　{{SK anchor|戌時}}{{SK notes|牢天}}　　　　　　　　　　　亥時{{SK notes|乙貴人路}}
+　　{{SK anchor|乙夘日十二時}}
+　　子時{{SK notes|天乙貴　人司命日　刑旬}}　　　丑時{{SK notes|空福星貴人　勾陳}}
+　　{{SK anchor|寅時}}{{SK notes|旬空}}　　　　　　　夘時{{SK notes|青龍　日禄　日建}}
+　　辰時　　　　　　　　　　{{SK notes|明堂　日害}}　　　　　巳時{{SK notes|天刑日馬五　不遇}}
+　　{{SK anchor|午時}}{{SK notes|朱雀金匱}}　　　　　　　未時{{SK notes|路空寶光}}
+　　{{SK anchor|申時}}{{SK notes|路空天　乙貴人天官}}　酉時{{SK notes|貴人白虎}}
+　　{{SK anchor|戌時}}{{SK notes|王堂　日破喜神}}　　　　　亥時{{SK notes|日合天牢福}}
+　　{{SK anchor|丙辰日十二時}}
+　　子時{{SK notes|星貴人　元武天官貴　人福}}　丑時{{SK notes|星貴　人天}}
+　　{{SK anchor|寅時}}{{SK notes|牢旬　空元}}　　　　　夘時{{SK notes|武旬　空日}}
+　　{{SK anchor|辰時}}{{SK notes|馬司　命日　　　　害勾陳　日建　青龍}}　巳時{{SK notes|五不　遇路空日}}
+　　午時　　　　　　　　{{SK notes|刑日}}　　　　　　　未時{{SK notes|禄明}}
+　　{{SK anchor|申時}}{{SK notes|堂路　空天}}　　　　　酉時{{SK notes|刑朱雀　喜神　金匱}}
+　　{{SK anchor|戌時}}{{SK notes|天乙貴　人日　合寶}}　　　　　亥時{{SK notes|光福星　貴人}}
+　　{{SK anchor|丁巳日十二時}}
+　　子時　　　　　　　　　　{{SK notes|日破　白虎}}　　　　　丑時{{SK notes|天乙貴人}}
+　　寅時　　　　　　　　　　　　　{{SK notes|玉堂　白虎　旬空}}　　夘時{{SK notes|玉堂旬　空路　空日}}
+　　{{SK anchor|辰時}}{{SK notes|司命}}　　　　　　巳時{{SK notes|日建勾陳}}
+　　{{SK anchor|午時}}{{SK notes|日禄　喜神　青龍}}　未時{{SK notes|明堂}}
+　　{{SK anchor|申時}}{{SK notes|日合　　　日刑　天刑}}　　　酉時{{SK notes|天乙貴人　福星貴人朱}}
+　　{{SK anchor|戌時}}{{SK notes|雀金}}　　　　　　亥時{{SK notes|匱天乙貴　人天官　貴人　日馬寶光}}
+　　{{SK anchor|戊午日十二時}}
+　　子時{{SK notes|日破　　　　　金匱　路空　日破}}　丑時{{SK notes|旬空天乙　貴人寶光　路空　日害}}
+　　寅時　　　　　　　　　　　　{{SK notes|旬空五　不遇}}　　　夘時{{SK notes|白虎天官　貴人}}
+　　{{SK anchor|辰時}}{{SK notes|玉堂喜神}}　　　　　　巳時{{SK notes|天牢日禄}}
+　　{{SK anchor|午時}}{{SK notes|元武　日建司命}}　　　　　未時{{SK notes|日刑天　乙貴人日}}申時{{SK notes|合勾陳　福星　貴人}}　酉時{{SK notes|日馬}}
+　　戌時　　　　　　　　　　　{{SK notes|青龍　明堂}}　　　　　亥時{{SK notes|路空　天刑}}
+　　{{SK anchor|己未日十二時}}
+　　子時{{SK notes|路空朱　　　　雀天　乙貴　人日}}　　　丑時　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　{{SK notes|害天刑　旬空　五不　遇日　破日}}寅時{{SK notes|刑朱　雀旬空　喜神}}　夘時{{SK notes|天官}}
+　　辰時　　　　　　　　{{SK notes|貴人}}　　　　　　　　巳時{{SK notes|金匱　寶光}}
+　　{{SK anchor|午時}}{{SK notes|白虎　日馬玉堂}}　　　　　未時{{SK notes|日禄日　合天牢福}}申時{{SK notes|天乙貴人　司命路空}}　　　酉時{{SK notes|路空　勾陳}}
+　　{{SK anchor|戌時}}{{SK notes|青龍}}　　　　　　　　亥時{{SK notes|明堂五不遇}}
+　　{{SK anchor|庚申日十二時}}
+　　子時{{SK notes|青龍　　　　五不遇　旬空}}　　　　丑時{{SK notes|天乙貴人　明堂旬空}}
+　　{{SK anchor|寅時}}{{SK notes|日馬　　　　　　日破　日刑　天刑}}　　夘時{{SK notes|朱雀}}
+　　{{SK anchor|辰時}}{{SK notes|金匱}}　　　　　　　　巳時{{SK notes|日合　寶光}}午時{{SK notes|天官貴人　福星貴人路空　白虎}}　未時{{SK notes|天乙貴人路空}}
+　　{{SK anchor|申時}}{{SK notes|日禄　日建天牢}}　　　　　酉時{{SK notes|元武}}
+　　{{SK anchor|戌時}}{{SK notes|喜神　司命五不遇}}　　　亥時{{SK notes|日害　勾陳}}
+　　{{SK anchor|辛酉日十二時}}
+　　子時{{SK notes|司命旬空}}　　　　　　丑時{{SK notes|勾陳　旬空}}
+　　{{SK anchor|寅時}}{{SK notes|天乙貴人　青龍}}　夘時{{SK notes|明堂日破}}
+　　{{SK anchor|辰時}}{{SK notes|日合　　　路空　天刑}}　　　巳時{{SK notes|天官貴人　福星貴人路空　朱雀}}午時{{SK notes|天乙貴人　金匱}}　未時{{SK notes|寶光}}
+　　{{SK anchor|申時}}{{SK notes|喜神白虎}}　　　　　　酉時{{SK notes|日禄　日建　玉堂五不遇　日刑}}
+　　戌時　　　　　　　　　　{{SK notes|日害　天牢}}　　　亥時{{SK notes|日馬元武}}
+　　{{SK anchor|壬戌日十二時}}
+　　子時　　　　　　　　　　{{SK notes|天牢　旬空}}　　　丑時{{SK notes|天官貴人元　武旬}}
+　　{{SK anchor|寅時}}{{SK notes|空司命路}}　　　　　　夘時{{SK notes|空天乙　貴人日合　路空}}
+　　{{SK anchor|辰時}}{{SK notes|勾陳福　星貴人青}}　巳時{{SK notes|龍日破　天乙}}
+　　{{SK anchor|午時}}{{SK notes|貴人明堂}}　　　　　　未時{{SK notes|喜神天刑天　官貴}}
+　　{{SK anchor|申時}}{{SK notes|人日　刑朱雀日馬}}　　　酉時{{SK notes|金匱五不}}
+　　{{SK anchor|戌時}}{{SK notes|遇寳光日}}　　　　　　亥時{{SK notes|害日　建白}}
+　　{{SK anchor|癸亥日十二時}}
+　　子時{{SK notes|虎日　　　　　　禄玉　堂日　禄路}}　　　丑時{{SK notes|空白虎旬　空玉}}
+　　{{SK anchor|寅時}}{{SK notes|堂路空旬}}　　　　　　　　夘時{{SK notes|空日合　天牢天乙貴人}}辰時{{SK notes|福星　貴人元　武喜}}　巳時{{SK notes|神天官　貴人司命　天乙}}
+　　{{SK anchor|午時}}{{SK notes|貴人}}　　　　　　　　未時{{SK notes|日馬日破勾}}
+　　申時　　　　　　　　　　{{SK notes|陳青　龍明}}　　　　　　酉時{{SK notes|堂五}}
+　　{{SK anchor|戌時}}{{SK notes|不遇日　害天刑朱}}　　　　亥時{{SK notes|雀天　官貴人金　匱路}}
+
+
+　　{{SK anchor|貴登天門時定局}}
+　　雨水後日躔在亥宫
+　　甲日　夘時　月將亥加夘　陽貴未加亥
+　　酉時　月將亥加酉　隂貴丑加亥
+　　乙日　戌時　月将亥加戌　隂貴子加亥
+　　丙日　亥時　月將亥加亥　隂貴亥加亥
+　　丁日　丑時　月將亥加丑　隂貴酉加亥
+　　戊日　酉時　月将亥加酉　陽貴丑加亥
+　　夘時　月将亥加夘　隂貴未加亥
+　　巳日　寅時　月将亥加寅　隂貴申加亥
+　　庚日　酉時　月將亥加酉　陽貴丑加亥
+　　夘時　月將亥加夘　隂貴未加亥
+　　辛日　申時　月將亥加申　陽貴寅加亥
+　　壬日　未時　月将亥加未　陽貴夘加亥
+　　癸日　巳時　月将亥加巳　陽貴巳加亥
+　　{{SK anchor|春分後日躔在戌宫}}
+　　乙日　酉時　月将戌加酉　隂貴子加亥
+　　丙日　戌時　月将戌加戌　隂貴亥加亥
+　　丁日　子時　月将戌加子　隂貴酉加亥
+　　戊日　申時　月将戌加申　陽貴丑加亥
+　　寅時　月将戌加寅　隂貴未加亥
+　　巳日　酉時　月将戌加酉　陽貴子加亥
+　　丑時　月将戌加丑　隂貴申加亥
+　　庚日　申時　月将戌加申　陽貴丑加亥
+　　寅時　月将戌加寅　隂貴未加亥
+　　辛日　未時　月将戌加未　陽貴寅加亥
+　　夘時　月将戌加夘　隂貴午加亥
+　　壬日　午時　月将戌加午　陽貴夘加亥
+　　癸日　辰時　月将戌加辰　陽貴巳加亥
+　　{{SK anchor|榖雨後日躔在酉宫}}
+　　丁日　酉時　月将酉加酉　陽貴亥加亥
+　　亥時　月将酉加亥　隂貴酉加亥
+　　戊日　未時　月將酉加未　陽貴丑加亥
+　　丑時　月將酉加丑　隂貴未加亥
+　　巳日　申時　月将酉加申　陽貴子加亥
+　　子時　月将酉加子　隂貴申加亥
+　　庚日　未時　月将酉加未　陽貴丑加亥
+　　丑時　月将酉加丑　隂貴未加亥
+　　辛日　午時　月将酉加午　陽貴寅加亥
+　　寅時　月将酉加寅　隂貴午加亥
+　　壬日　巳時　月将酉加巳　陽貴夘加亥
+　　癸日　夘時　月将酉加夘　陽貴巳加亥
+　　{{SK anchor|小滿後日躔在申宫}}
+　　丙日　戌時　月将申加戌　陽貴酉加亥
+　　丁日　申時　月将申加申　陽貴亥加亥
+　　戌時　月将申加戌　隂貴酉加亥
+　　戊日　午時　月将申加午　陽貴丑加亥
+　　子時　月将申加子　隂貴未加亥
+　　巳日　未時　月将申加未　陽貴子加亥
+　　亥時　月将申加亥　隂貴申加亥
+　　庚日　午時　月将申加午　陽貴丑加亥
+　　子時　月将申加子　隂貴未加亥
+　　辛日　巳時　月将申加巳　陽貴寅加亥
+　　丑時　月将申加丑　隂貴午加亥
+　　壬日　辰時　月将申加辰　陽貴夘加亥
+　　寅時　月将申加寅　隂貴巳加亥
+　　癸日　寅時　月将申加寅　陽貴巳加亥
+　　{{SK anchor|夏至後日躔在未宫}}
+　　乙日　戌時　月将未加戌　陽貴申加亥
+　　丙日　酉時　月将未加酉　陽貴酉加亥
+　　丁日　未時　月将未加未　陽貴亥加亥
+　　戊日　巳時　月将未加巳　陽貴丑加亥
+　　亥時　月将未加亥　隂貴未加亥
+　　巳日　午時　月将未加午　陽貴子加亥
+　　戌時　月将未加戌　隂貴申加亥
+　　庚日　巳時　月将未加巳　陽貴丑加亥
+　　亥時　月将未加亥　隂貴未加亥
+　　辛日　辰時　月将未加辰　陽貴寅加亥
+　　子時　月将未加子　隂貴午加亥
+　　壬日　夘時　月将未加夘　陽貴夘加亥
+　　丑時　月将未加丑　隂貴巳加亥
+　　{{SK anchor|大暑後日躔在午宫}}
+　　乙日　酉時　月将午加酉　陽貴申加亥
+　　丙日　申時　月将午加申　陽貴酉加亥
+　　丁日　午時　月将午加午　陽貴亥加亥
+　　戊日　辰時　月将午加辰　陽貴丑加亥
+　　戌時　月将午加戌　隂貴未加亥
+　　巳日　巳時　月将午加巳　陽貴子加亥
+　　庚日　辰時　月将午加辰　陽貴丑加亥
+　　戌時　月将午加戌　隂貴未加亥
+　　辛日　夘時　月将午加夘　陽貴寅加亥
+　　亥時　月将午加亥　隂貴午加亥
+　　壬日　寅時　月将午加寅　陽貴夘加亥
+　　子時　月将午加子　隂貴巳加亥
+　　癸日　寅時　月将午加寅　隂貴夘加亥
+　　{{SK anchor|處暑後日躔在巳宫}}
+　　甲日　酉時　月将巳加酉　陽貴未加亥
+　　乙日　申時　月将巳加申　陽貴申加亥
+　　丙日　未時　月将巳加未　陽貴酉加亥
+　　丁日　巳時　月将巳加巳　陽貴亥加亥
+　　戊日　夘時　月将巳加夘　陽貴丑加亥
+　　酉時　月将巳加酉　隂貴未加亥
+　　巳日　辰時　月将巳加辰　陽貴子加亥
+　　庚日　夘時　月将巳加夘　陽貴丑加亥
+　　酉時　月将巳加酉　隂貴未加亥
+　　辛日　戌時　月将巳加戌　隂貴午加亥
+　　壬日　亥時　月将巳加亥　隂貴巳加亥
+　　癸日　丑時　月将巳加丑　隂貴夘加亥
+　　{{SK anchor|秋分後日躔在辰宫}}
+　　甲日　申時　月将辰加申　陽貴未加亥
+　　寅時　月将辰加寅　隂貴丑加亥
+　　乙日　未時　月将辰加未　陽貴申加亥
+　　夘時　月将辰加夘　隂貴子加亥
+　　丙日　午時　月将辰加午　陽貴酉加亥
+　　丁日　辰時　月将辰加辰　陽貴亥加亥
+　　巳日　夘時　月将辰加夘　陽貴子加亥
+　　辛日　酉時　月将辰加酉　隂貴午加亥
+　　壬日　戌時　月将辰加戌　隂貴巳加亥
+　　癸日　子時　月将辰加子　隂貴夘加亥
+　　{{SK anchor|霜降後日躔在夘宫}}
+　　甲日　未時　月将夘加未　陽貴未加亥
+　　丑時　月将夘加丑　隂貴丑加亥
+　　乙日　午時　月将夘加午　陽貴申加亥
+　　寅時　月將夘加寅　隂貴子加亥
+　　丙日　巳時　月将夘加巳　陽貴酉加亥
+　　夘時　月将夘加夘　隂貴亥加亥
+　　丁日　夘時　月将夘加夘　陽貴亥加亥
+　　壬日　酉時　月将夘加酉　隂貴巳加亥
+　　癸日　酉時　月将夘加酉　陽貴巳加亥
+　　亥時　月将夘加亥　隂貴夘加亥
+　　{{SK anchor|小雪後日躔在寅宫}}
+　　甲日　午時　月将寅加午　陽貴未加亥
+　　子時　月将寅加子　隂貴丑加亥
+　　乙日　巳時　月将寅加巳　陽貴申加亥
+　　丑時　月将寅加丑　隂貴子加亥
+　　丙日　辰時　月将寅加辰　陽貴酉加亥
+　　寅時　月将寅加寅　隂貴亥加亥
+　　癸日　申時　月将寅加申　陽貴巳加亥
+　　戌時　月将寅加戌　隂貴夘加亥
+　　{{SK anchor|冬至後日躔在丑宫}}
+　　甲日　巳時　月将丑加巳　陽貴未加亥
+　　亥時　月将丑加亥　隂貴丑加亥
+　　乙日　辰時　月将丑加辰　陽貴申加亥
+　　子時　月将丑加子　隂貴子加亥
+　　丙日　丑時　月将丑加丑　隂貴亥加亥
+　　丁日　夘時　月将丑加夘　隂貴酉加亥
+　　巳日　辰時　月将丑加辰　隂貴申加亥
+　　癸日　未時　月将丑加未　陽貴巳加亥
+　　酉時　月将丑加酉　隂貴夘加亥
+　　{{SK anchor|大寒後日躔在子宫}}
+　　甲日　辰時　月将子加辰　陽貴未加亥
+　　戌時　月将子加戌　隂貴丑加亥
+　　乙日　夘時　月将子加夘　陽貴申加亥
+　　亥時　月将子加亥　隂貴子加亥
+　　丙日　子時　月将子加子　隂貴亥加亥
+　　丁日　寅時　月将子加寅　陽貴酉加亥
+　　己日　夘時　月将子加夘　隂貴申加亥
+　　壬日　申時　月将子加申　陽貴夘加亥
+　　癸日　午時　月将子加午　陽貴巳加亥
+　　申時　月将子加申　隂貴夘加亥
+
+
+　　{{SK anchor|四大吉時定局}}
+　　雨水後日躔在亥宫用甲丙庚壬時
+　　甲日　甲勾陳　丙勾陳　庚太常　壬太隂乙日　甲六合　丙六合　庚元武　壬天后丙日　甲朱雀　丙朱雀　庚太隂　壬天乙丁日　甲天乙　丙天乙　庚天乙　壬太隂{{SK notes|戊庚}}日　甲朱雀　丙朱雀　庚太隂　壬太常己日　甲天后　丙螣蛇　庚螣蛇　壬元武辛日　甲六合　丙六合　庚元武　壬白虎壬日　甲勾陳　丙勾陳　庚太常　壬天空癸日　甲天空　丙天空　庚天空　壬太常
+　　春分後日躔在戌宫用艮巽坤乾時
+　　甲日　艮六合　巽六合　坤元武　乾元武乙日　艮太隂　巽朱雀　坤太隂　乾太隂丙日　艮天后　巽螣蛇　坤天后　乾天后丁日　艮螣蛇　巽螣蛇　坤螣蛇　乾天后{{SK notes|戊庚}}日　艮六合　巽六合　坤元武　乾元武己日　艮朱雀　巽朱雀　坤朱雀　乾太隂辛日　艮太常　巽勾陳　坤太常　乾太常壬日　艮白虎　巽青龍　坤白虎　乾白虎癸日　艮青龍　巽青龍　坤青龍　乾白虎
+　　榖雨後日躔在酉宫用癸乙丁辛時
+　　甲日　癸勾陳　乙朱雀　丁太隂　辛太隂乙日　癸元武　乙螣蛇　丁天后　辛天后丙日　癸太隂　乙天乙　丁天乙　辛天乙丁日　癸天乙　乙朱雀　丁朱雀　辛太隂{{SK notes|戊庚}}日　癸朱雀　乙勾陳　丁太常辛太常
+　　己日　癸螣蛇　乙六合　丁六合　辛元武辛日　癸元武　乙青龍　丁白虎　辛白虎壬日　癸太常　乙天空　丁天空　辛天空癸日　癸天空　乙勾陳　丁勾陳　辛太常
+　　小滿後日躔在申宫用甲丙庚壬時
+　　甲日　甲螣蛇　丙天后　庚天后　壬青龍乙日　甲天乙　丙天乙　庚天乙　壬太常丙日　甲天后　丙螣蛇　庚螣蛇　壬元武丁日　甲六合　丙六合　庚元武　壬天后{{SK notes|戊庚}}日　甲青龍　丙白虎　庚白虎　壬螣蛇己日　甲勾陳　丙勾陳　庚太常　壬天乙辛日　甲天空　丙天空　庚天空　壬太隂壬日　甲白虎　丙青龍　庚青龍　壬元武癸日　甲六合　丙六合　庚元武　壬白虎
+　　夏至後日躔在未宫用艮巽坤乾時
+　　甲日　艮天乙　巽天乙　坤天乙　乾天乙乙日　艮天后　巽螣蛇　坤螣蛇　乾天后丙日　艮太隂　巽朱雀　坤朱雀　乾太隂丁日　艮勾陳　巽勾陳　坤太常　乾太常{{SK notes|戊庚}}日　艮天空　巽天空　坤天空　乾天空己日　艮青龍　巽青龍　坤白虎　乾白虎辛日　艮白虎　巽青龍　坤青龍　乾白虎壬日　艮太常　巽勾陳　坤勾陳　乾太常癸日　艮朱雀　巽朱雀　坤太隂　乾太隂
+　　大暑後日躔在午宫用癸乙丁辛時
+　　甲日　癸白虎　乙螣蛇　丁螣蛇　辛天后乙日　癸天空　乙朱雀　丁朱雀　辛太隂丙日　癸青龍　乙六合　丁六合　辛元武丁日　癸元武　乙青龍　丁白虎　辛白虎{{SK notes|戊庚}}日　癸天后　乙青龍　丁青龍　辛白虎己日　癸太隂　乙天空　丁天空　辛天空辛日　癸天乙　乙勾陳　丁勾陳　辛太常壬日　癸螣蛇　乙六合　丁六合　辛元武癸日　癸元武　乙螣蛇　丁天后　辛天后
+　　處暑後日躔在巳宫用甲丙庚壬時
+　　甲日　甲朱雀　丙朱雀庚太隂　壬太常
+　　乙日　甲六合　丙六合　庚元武　壬白虎丙日　甲勾陳　丙勾陳　庚太常　壬天空丁日　甲天空　丙天空　庚天空　壬太常{{SK notes|戊庚}}日　甲勾陳　丙勾陳　庚太常　壬太隂己日　甲白虎　丙青龍　庚青龍　壬元武辛日　甲六合　丙六合　庚元武　壬天后壬日　甲朱雀　丙朱雀　庚太隂　壬天乙癸日　甲天乙　丙天乙　庚天乙　壬太隂
+　　秋分後日躔在辰宫用艮巽坤乾時
+　　甲日　艮六合　巽六合　坤元武　乾元武乙日　艮太常　巽勾陳　坤太常　乾太常丙日　艮白虎　巽青龍　坤白虎　乾白虎丁日　艮青龍　巽青龍　坤青龍　乾白虎{{SK notes|戊庚}}日　艮六合　巽六合　坤元武　乾元武己日　艮勾陳　巽勾陳　坤勾陳　乾太常辛日　艮太隂　巽朱雀　坤太隂　乾太隂壬日　艮天后　巽螣蛇　坤天后　乾天后癸日　艮螣蛇　巽螣蛇　坤螣蛇　乾天后
+　　霜降後日躔在夘宫用癸乙丁辛時
+　　甲日　癸朱雀　乙勾陳　丁太常　辛太隂乙日　癸元武　乙青龍　丁白虎　辛元武丙日　癸太常　乙天空　丁天空　辛太常丁日　癸天空　乙勾陳　丁勾陳　辛天空{{SK notes|戊庚}}日　癸勾陳　乙朱雀　丁太隂　辛太常己日　癸青龍　乙六合　丁六合　辛白虎辛日　癸元武　乙螣蛇　丁天后　辛元武壬日　癸太隂　乙天乙　丁天乙　辛太隂癸日　癸天乙　乙朱雀　丁朱雀　辛天乙
+　　小雪後日躔在寅宫用甲丙庚壬時
+　　甲日　甲螣蛇　丙白虎　庚白虎　壬螣蛇乙日　甲朱雀　丙天空　庚天空　壬太隂丙日　甲六合　丙青龍　庚青龍　壬元武丁日　甲白虎　丙六合　庚元武　壬白虎{{SK notes|戊庚}}日　甲青龍　丙天后　庚天后　壬青龍己日　甲天空　丙朱雀　庚太隂　壬天空辛日　甲勾陳　丙天乙　庚天乙　壬太常壬日　甲六合　丙螣蛇　庚螣蛇　壬元武癸日　甲天后　丙六合　庚元武　壬天后
+　　冬至後日躔在丑宫用艮巽坤乾時
+　　甲日　艮天乙　巽天空　坤天空　乾天乙乙日　艮螣蛇　巽青龍　坤青龍　乾天后丙日　艮朱雀　巽勾陳　坤勾陳　乾太隂丁日　艮太常　巽朱雀　坤太隂　乾太常{{SK notes|戊庚}}日　艮天空　巽天乙　坤天乙　乾天空己日　艮白虎　巽螣蛇　坤天后　乾白虎辛日　艮青龍　巽螣蛇　坤螣蛇　乾白虎壬日　艮勾陳　巽朱雀　坤朱雀　乾太常癸日　艮太隂　巽勾陳　坤太隂　乾太隂
+　　大寒後日躔在子宫用癸乙丁辛時
+　　甲日　癸天后　乙青龍　丁青龍　辛天后乙日　癸天乙　乙勾陳　丁勾陳　辛天乙丙日　癸螣蛇　乙六合　不六合　辛天后丁日　癸元武　乙螣蛇　丁天后　辛元武{{SK notes|戊庚}}日　癸白虎　乙螣蛇　丁螣蛇　辛太常己日　癸太常　乙天乙　丁天乙　辛白虎辛日　癸天空　乙朱雀　丁朱雀　辛天空壬日　癸青龍　乙六合　丁六合　辛白虎癸日　癸元武　乙青龍　丁白虎　辛元武
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　　{{SK anchor|欽定協紀辨方書卷三十二}}
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書>
+</poem></onlyinclude>{{SKQS footer|title=欽定協紀辨方書|section=卷三十二|prev=卷三十一|prev_link=卷31|next=卷三十三|next_link=卷33|type=子}}{{PD-old}}

@@ -1,0 +1,95 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c010",
+  "title": "元神忌神衰旺章第十",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F10&oldid=2100301",
+  "revision": "2100301",
+  "source_timestamp": "2022-01-19T23:42:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c010.wiki",
+  "raw_sha256": "3afc338a9c87a3df29583d36cf608abe381d44a5736e33641ca6d95c1cf387b9",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "元神𨿽生用神，須要旺相，方可生得用神。元神能生用神者有五：元神旺相或臨日月或日月動爻生扶者一也。元神動化回頭生及化進神者二也。元神長生帝旺於日辰三也。元神與忌神同動四也。元神旺動臨空化空五也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0001",
+      "sha256": "5dd43fc5b6be0ec228b064d5f4a25f22c189548065eeca35d4fa8c92d80b0daf"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "占以臨空化空爲無用，非也。殊不知動不爲空，皆應沖空實空之日而有用也。故以爲吉能生用神，此五者乃有力之用神也，諸占皆吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0002",
+      "sha256": "484c5c867556d0201338c32def114a7462c8efb5f416db7becd8724b51f3f02f"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "例：酉月辛亥日占求財得兌爲澤卦變雷水解卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0003",
+      "sha256": "78be81d53711318159bbd5f0a40ee8e9b65f2353fcb4570134091d6a507273a3"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "父母未土⚋世　父母戌土⚋\n兄弟酉金○　　兄弟申金⚋\n子孫亥水⚊　　官鬼午火⚊\n父母丑土⚋應　官鬼午火⚋\n妻財卯木⚊　　父母辰土⚊\n官鬼巳火○　　妻財寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0004",
+      "sha256": "cdbe3b1379f675626155abaf4b1a403468191accb2719282b0f7e691227f47d9"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "斷曰：寅日得見財，亦如心。彼曰：卯木妻財爻空而月破，又被金克，初爻巳火官𨿽生世，亥日沖散又化旬空何以爲吉。予曰：神兆機於動，予從來不言散，正因巳火化空，所以目下不見，待甲寅日出空而相見。寅木之財以生官，官來生世，果於寅日早見木日得財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0005",
+      "sha256": "9c819bf679625cece359ed2071fd8afa75a9844a6130816020a7b6c2abcc0558"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "元神𨿽現又有不能生用神者有六：元神休囚，不動或動而休囚又被傷克者一也。元神休囚又逢自空、月破二也。元神休囚動化退神三也。元神衰而又絕四也。元神入三墓五也。元神休囚動而化絕、化克、化破、化散六也。以上元神無力生用神，無用之元神也，𨿽有如無。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0006",
+      "sha256": "d0a40cd1484870aa098a2cf38a35f3b5a81ed4a535577b60d8a46a3ccaadbe78"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "忌神動而克害用神者有五：忌神旺相或遇日月動爻生扶或臨日月者一也。忌神動化回頭生扶退神者二也。忌神旺動動臨空化空三也。忌神長生帝旺與日辰四也。忌神與仇神同動五也。以上之忌神者如斧戟之忌神，諸占大凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0007",
+      "sha256": "10b9c0be86b7f4d20d956bd5c7d19342088e3cc291b76a39711b6239ff9a74c6"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "忌神𨿽動，不能克用神者有七：忌神休囚不動，而動休囚被日、月動爻克者一也。忌神靜臨空破二也。忌神入三墓三也。忌神衰動化退神四也。忌神衰而又絕五也。忌神動化絕化破、化克、化散六也。忌神與元神同動七也。此忌神者乃無力之忌神也，諸占化凶爲吉。以上論元神、忌神之有力、無力者，亦要用神有气，倘若用神無根謂之元神有力亦難生，忌神無力何足喜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0008",
+      "sha256": "5e0538c59174c0bc7e409c042612f6903e1e8883a8325dad9324abc4c9c6d64f"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "例：巳月乙未日自占病得澤風大過變火風鼎卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0009",
+      "sha256": "fe40701bcbadc76ba4671352ea34ecfd4b261012fccbf3ce0659378a597b8c08"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "妻財未土ㄨ　　子孫巳火⚊\n官鬼酉金○　　妻財未土⚋\n父母亥水⚊世　官鬼酉金⚊\n官鬼酉金⚊　　官鬼酉金⚊\n父母亥水⚊　　父母亥水⚊\n妻財丑土⚋應　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0010",
+      "sha256": "43e6ffb0f9b40d342e7f28912129da56c5a2dc0e101abb877bcc87a77634c683"
+    },
+    {
+      "section": "元神忌神衰旺章第十",
+      "text": "自占病世爻亥水爲用神，被未土忌神動而克水，幸得酉金元神亦動，忌神未土反生元神之酉金，金生亥水，接續相生，化凶而爲吉。其如亥水月沖日克，值月破而被克，𨿽有生扶生之不起，如樹無根，寒谷不回春也。果卒於癸卯日，應卯日者沖去元神之日也。此謂之用神無根，元神有力亦難生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c010:p0011",
+      "sha256": "db389c515d7e3db7359d94c75676624abb8a6fc3b6b079f2832f42f52ba5dd1b"
+    }
+  ]
+}

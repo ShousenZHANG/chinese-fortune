@@ -1,0 +1,381 @@
+<!--
+
+請根據四庫全書掃描版校對本頁，標準見[[Wikisource:四庫全書原文]]。加標點請另外建立頁面。
+
+
+-->{{SKQS header|title=欽定協紀辨方書|section=卷十七|prev=卷十六|prev_link=卷16|next=卷十八|next_link=卷18|type=子}}<onlyinclude><poem>　　欽定四庫全書
+　　{{SK anchor|欽定協紀辨方書卷十七}}
+　　年表四
+　　{{SK anchor|甲午至癸卯}}
+
+
+
+
+
+
+
+
+
+
+
+
+　　{{SK anchor|太歲甲午幹木枝火納音屬金}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|甲}}　　歲徳合{{SK notes|巳}}　歲枝徳{{SK notes|亥}}
+　　{{SK anchor|陽貴人}}{{SK notes|未}}　隂貴人{{SK notes|丑}}　歲禄{{SK notes|寅}}
+　　{{SK anchor|歲馬}}{{SK notes|申}}　　奏書{{SK notes|巽}}　　博士{{SK notes|乾}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白艮　六白巽　八白乾　九紫兌中元　一白中　六白坎　八白震　九紫巽下元　一白坤　六白兌　八白離　九紫坎
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|巽辛}}　巨門{{SK notes|艮丙}}　武曲{{SK notes|震庚亥未}}文曲{{SK notes|乾甲}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|坤申　庚酉　辛戌}}三合後方{{SK notes|艮寅　甲卯　乙辰}}十二吉山宜寅午戌申子辰年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|丙午}}　　功曹{{SK notes|坤申}}　天罡{{SK notes|辛戌}}
+　　{{SK anchor|勝光}}{{SK notes|壬子}}　　{{SKchar|2652}}送{{SK notes|艮寅}}　河魁{{SK notes|乙辰}}
+　　十二吉山宜寅午戌申子辰年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|未}}　太隂{{SK notes|酉}}　龍徳{{SK notes|丑}}　福徳{{SK notes|卯}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|午}}　　歲破{{SK notes|子}}　　三煞{{SK notes|亥子丑}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|壬癸　丙丁}}　　浮天空亡{{SK notes|離壬}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|甲寅辰巽戌坎辛申丑癸坤庚未山}}隂府太歲{{SK notes|艮巽}}　六害{{SK notes|丑}}　　死符{{SK notes|亥}}　　灸退{{SK notes|酉}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|丁}}　　病符{{SK notes|巳}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|巳}}　地官符{{SK notes|戌}}　大煞{{SK notes|午}}　　大將軍{{SK notes|卯}}力士{{SK notes|坤}}　　蠶室{{SK notes|艮}}　　蠶官{{SK notes|丑}}　　蠶命{{SK notes|寅}}歲刑{{SK notes|午}}　　黄幡{{SK notes|戌}}　　豹尾{{SK notes|辰}}　　飛亷{{SK notes|寅}}喪門{{SK notes|申}}　　弔客{{SK notes|辰}}　　白虎{{SK notes|寅}}　　金神{{SK notes|午未申酉}}獨火{{SK notes|兑}}　　五鬼{{SK notes|戌}}　　破敗五鬼{{SK notes|巽}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲乙未幹木枝土納音屬金}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|庚}}　　歲徳合{{SK notes|乙}}　　歲枝徳{{SK notes|子}}
+　　{{SK anchor|陽貴人}}{{SK notes|申}}　隂貴人{{SK notes|子}}　　歲禄{{SK notes|卯}}
+　　{{SK anchor|歲馬}}{{SK notes|巳}}　　奏書{{SK notes|巽}}　　　博士{{SK notes|乾}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白離　六白中　八白兌　九紫艮中元　一白乾　六白坤　八白巽　九紫中下元　一白震　六白艮　八白坎　九紫坤
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|坤乙}}　巨門{{SK notes|坎癸申辰}}武曲{{SK notes|乾甲}}　文曲{{SK notes|震庚亥未}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|巽巳　丙午　丁未}}三合後方{{SK notes|乾亥　壬子　癸丑}}十二吉山宜亥卯未巳酉丑年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|巽巳}}　功曹{{SK notes|丁未}}　天罡{{SK notes|庚酉}}
+　　{{SK anchor|勝光}}{{SK notes|乾亥}}　{{SKchar|2652}}送{{SK notes|癸丑}}　河魁{{SK notes|甲卯}}
+　　十二吉山宜亥卯未巳酉丑年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|申}}　太隂{{SK notes|戌}}　龍徳{{SK notes|寅}}　福徳{{SK notes|辰}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|未}}　　歲破{{SK notes|丑}}　　　三煞{{SK notes|申酉戌}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|庚辛　甲乙}}　　浮天空亡{{SK notes|坎癸}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|震艮巳山}}
+　　{{SK anchor|隂府太歲}}{{SK notes|兌乾}}　六害{{SK notes|子}}　　死符{{SK notes|子}}　　灸退{{SK notes|午}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|坤}}　　病符{{SK notes|午}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|寅}}　地官符{{SK notes|亥}}　大煞{{SK notes|卯}}　　大將軍{{SK notes|卯}}力士{{SK notes|坤}}　　蠶室{{SK notes|艮}}　　蠶官{{SK notes|丑}}　　蠶命{{SK notes|寅}}歲刑{{SK notes|丑}}　　黄幡{{SK notes|未}}　　豹尾{{SK notes|丑}}　　飛亷{{SK notes|卯}}喪門{{SK notes|酉}}　　弔客{{SK notes|巳}}　　白虎{{SK notes|卯}}　　金神{{SK notes|辰巳}}獨火{{SK notes|離}}　　五鬼{{SK notes|酉}}　　破敗五鬼{{SK notes|艮}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲丙申幹火枝金納音屬火}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|丙}}　　歲徳合{{SK notes|辛}}　歲枝徳{{SK notes|丑}}
+　　{{SK anchor|陽貴人}}{{SK notes|酉}}　隂貴人{{SK notes|亥}}　歲禄{{SK notes|巳}}
+　　{{SK anchor|歲馬}}{{SK notes|寅}}　　奏書{{SK notes|坤}}　　博士{{SK notes|艮}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白坎　六白乾　八白艮　九紫離中元　一白兑　六白震　八白中　九紫乾下元　一白巽　六白離　八白坤　九紫震
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|坤乙}}　巨門{{SK notes|坎癸申辰}}武曲{{SK notes|乾甲}}　文曲{{SK notes|震庚亥未}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|艮寅　甲卯　乙辰}}三合後方{{SK notes|坤申　庚酉　辛戌}}十二吉山宜申子辰寅午戌年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|乙辰}}　功曹{{SK notes|丙午}}　天罡{{SK notes|坤申}}
+　　{{SK anchor|勝光}}{{SK notes|辛戌}}　{{SKchar|2652}}送{{SK notes|壬子}}　河魁{{SK notes|艮寅}}
+　　十二吉山宜申子辰寅午戌年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|酉}}　太隂{{SK notes|亥}}　龍徳{{SK notes|卯}}　福徳{{SK notes|巳}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|申}}　　歲破{{SK notes|寅}}　　三煞{{SK notes|巳午未}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|丙丁　壬癸}}　　浮天空亡{{SK notes|巽辛}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|震艮巳山}}
+　　{{SK anchor|隂府太歲}}{{SK notes|坎坤}}　六害{{SK notes|亥}}　　死符{{SK notes|丑}}　　灸退{{SK notes|卯}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|庚}}　　病符{{SK notes|未}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|亥}}　地官符{{SK notes|子}}　大煞{{SK notes|子}}　　大將軍{{SK notes|午}}力士{{SK notes|乾}}　　蠶室{{SK notes|巽}}　　蠶官{{SK notes|辰}}　　蠶命{{SK notes|巳}}
+　　{{SK anchor|歲刑}}{{SK notes|寅}}　　黄幡{{SK notes|辰}}　　豹尾{{SK notes|戌}}　　飛亷{{SK notes|辰}}
+　　{{SK anchor|喪門}}{{SK notes|戌}}　　弔客{{SK notes|午}}　　白虎{{SK notes|辰}}　　金神{{SK notes|寅卯午未子丑}}獨火{{SK notes|離}}　　五鬼{{SK notes|申}}　　破敗五鬼{{SK notes|坤}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲丁酉幹火枝金納音屬火}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|壬}}　　歲徳合{{SK notes|丁}}　歲枝徳{{SK notes|寅}}
+　　{{SK anchor|陽貴人}}{{SK notes|亥}}　隂貴人{{SK notes|酉}}　歲禄{{SK notes|午}}
+　　{{SK anchor|歲馬}}{{SK notes|亥}}　　奏書{{SK notes|坤}}　　博士{{SK notes|艮}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白坤　六白兌　八白離　九紫坎中元　一白艮　六白巽　八白乾　九紫兌下元　一白中　六白坎　八白震　九紫巽
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|離壬寅戌}}巨門{{SK notes|乾甲}}　武曲{{SK notes|坎癸申辰}}文曲{{SK notes|艮丙}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|乾亥　壬子　癸丑}}三合後方{{SK notes|巽巳　丙午　丁未}}十二吉山宜巳酉丑亥卯未年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|甲卯}}　　功曹{{SK notes|巽巳}}　天罡{{SK notes|丁未}}
+　　{{SK anchor|勝光}}{{SK notes|庚酉}}　　{{SKchar|2652}}送{{SK notes|乾亥}}　河魁{{SK notes|癸丑}}
+　　十二吉山宜巳酉丑亥卯未年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|戌}}　太隂{{SK notes|子}}　龍徳{{SK notes|辰}}　福徳{{SK notes|午}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|酉}}　歲破{{SK notes|卯}}　　　三煞{{SK notes|寅卯辰}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|甲乙庚辛}}　　浮天空亡{{SK notes|震庚}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|離壬丙乙}}
+　　{{SK anchor|隂府太歲}}{{SK notes|山乾}}　六害{{SK notes|離}}　　死符{{SK notes|戌}}　灸退{{SK notes|寅}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|子}}　　病符{{SK notes|辛}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|申}}　地官符{{SK notes|申}}　大煞{{SK notes|丑}}　　大將軍{{SK notes|酉}}力士{{SK notes|午}}　　蠶室{{SK notes|乾}}　　蠶官{{SK notes|巽}}　　蠶命{{SK notes|辰}}
+　　{{SK anchor|歲刑}}{{SK notes|已}}　　黄幡{{SK notes|酉}}　　豹尾{{SK notes|丑}}　　飛亷{{SK notes|未}}
+　　{{SK anchor|喪門}}{{SK notes|亥}}　　弔客{{SK notes|亥}}　　白虎{{SK notes|未}}　　金神{{SK notes|巳寅卯戌}}獨火{{SK notes|亥}}　　五鬼{{SK notes|坤}}　　破敗五鬼{{SK notes|未}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲戊戌幹土枝土納音屬木}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|戊}}　　歲徳合{{SK notes|癸}}　歲枝徳{{SK notes|卯}}
+　　{{SK anchor|陽貴人}}{{SK notes|丑}}　隂貴人{{SK notes|未}}　歲禄{{SK notes|巳}}
+　　{{SK anchor|歲馬}}{{SK notes|申}}　　奏書{{SK notes|坤}}　　博士{{SK notes|艮}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白震　　六白艮　八白坎　九紫坤中元　一白離　　六白中　八白兌　九紫艮下元　一白乾　　六白坤　八白巽　九紫中
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|坎癸申辰}}巨門{{SK notes|坤乙}}　武曲{{SK notes|離壬寅戌}}文曲{{SK notes|兌丁巳丑}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|坤申　庚酉　辛戌}}三合後方{{SK notes|艮寅　甲卯　乙辰}}十二吉山宜寅午戌申子辰年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|艮寅}}　功曹{{SK notes|乙辰}}　天罡{{SK notes|丙午}}
+　　{{SK anchor|勝光}}{{SK notes|坤申}}　傳送{{SK notes|辛戊}}　河魁{{SK notes|壬子}}
+　　十二吉山宜寅午戌申子辰年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|亥}}　太隂{{SK notes|丑}}　龍徳{{SK notes|巳}}　福徳{{SK notes|未}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|戌}}　　歲破{{SK notes|辰}}　　　三煞{{SK notes|亥子丑}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|壬癸　丙丁}}　　浮天空亡{{SK notes|坤乙}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|甲寅辰巽戌坎辛申丑癸坤庚未山}}隂府太歲{{SK notes|坤震}}　六害{{SK notes|酉}}　　死符{{SK notes|卯}}　　灸退{{SK notes|酉}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|乾}}　　病符{{SK notes|酉}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|己}}　地官符{{SK notes|寅}}　大煞{{SK notes|午}}　　大將軍{{SK notes|午}}力士{{SK notes|乾}}　　蠶室{{SK notes|巽}}　　蠶官{{SK notes|辰}}　　蠶命{{SK notes|巳}}歲刑{{SK notes|未}}　　黄幡{{SK notes|戌}}　　豹尾{{SK notes|辰}}　　飛亷{{SK notes|子}}喪門{{SK notes|子}}　　弔客{{SK notes|申}}　　白虎{{SK notes|午}}　　金神{{SK notes|申酉子丑}}獨火{{SK notes|乾}}　　五鬼{{SK notes|午}}　　破敗五鬼{{SK notes|離}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲巳亥幹土枝水納音屬木}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|甲}}　　歲徳合{{SK notes|巳}}　歲枝徳{{SK notes|辰}}
+　　{{SK anchor|陽貴人}}{{SK notes|子}}　隂貴人{{SK notes|申}}　歲禄{{SK notes|午}}
+　　{{SK anchor|歲馬}}{{SK notes|巳}}　　奏書{{SK notes|乾}}　　博士{{SK notes|巽}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白巽　　六白離　八白坤　九紫震中元　一白坎　　六白乾　八白艮　九紫離下元　一白兌　　六白震　八白中　九紫乾
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|坎癸申辰}}巨門{{SK notes|坤乙}}　　武曲{{SK notes|離壬寅戌}}文曲{{SK notes|兌丁己丑}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|巽巳　丙午　丁未}}三合後方{{SK notes|乾亥　壬子　癸丑}}十二吉山宜亥卯未巳酉丑年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|癸丑}}　　功曹{{SK notes|甲卯}}　天罡{{SK notes|巽巳}}
+　　{{SK anchor|勝光}}{{SK notes|丁未}}　　傳送{{SK notes|庚酉}}　河魁{{SK notes|乾亥}}
+　　十二吉山宜亥卯未巳酉丑年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|子}}　太隂{{SK notes|寅}}　龍徳{{SK notes|午}}　福徳{{SK notes|申}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|亥}}　　歲破{{SK notes|巳}}　　三煞{{SK notes|申酉戌}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|庚辛　甲乙}}　　浮天空亡{{SK notes|乾甲}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|震艮巳山}}
+　　{{SK anchor|隂府太歲}}{{SK notes|巽艮}}　六害{{SK notes|申}}　　死符{{SK notes|辰}}　　灸退{{SK notes|午}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|壬}}　　病符{{SK notes|戌}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|寅}}　地官符{{SK notes|卯}}　大煞{{SK notes|卯}}　　大將軍{{SK notes|酉}}力士{{SK notes|艮}}　　蠶室{{SK notes|坤}}　　蠶官{{SK notes|未}}　　蠶命{{SK notes|申}}
+　　{{SK anchor|歲刑}}{{SK notes|亥}}　　黄幡{{SK notes|未}}　　豹尾{{SK notes|丑}}　　飛亷{{SK notes|丑}}
+　　{{SK anchor|喪門}}{{SK notes|丑}}　　弔客{{SK notes|酉}}　　白虎{{SK notes|未}}　　金神{{SK notes|午未申酉}}獨火{{SK notes|乾}}　　五鬼{{SK notes|巳}}　　破敗五鬼{{SK notes|坎}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲庚子幹金枝水納音屬土}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|庚}}　　歲徳合{{SK notes|乙}}　歲枝徳{{SK notes|巳}}
+　　{{SK anchor|陽貴人}}{{SK notes|丑}}　隂貴人{{SK notes|未}}　歲禄{{SK notes|申}}
+　　{{SK anchor|歲馬}}{{SK notes|寅}}　　奏書{{SK notes|乾}}　　博士{{SK notes|巽}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白中　　六白坎　八白震　九紫巽中元　一白坤　　六白兌　八白離　九紫坎下元　一白艮　　六白巽　八白乾　九紫兌
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|震庚亥未}}巨門{{SK notes|兌丁巳丑}}武曲{{SK notes|巽辛}}　文曲{{SK notes|坤乙}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|艮寅　甲卯　乙辰}}三合後方{{SK notes|坤申　庚酉　辛戌}}十二吉山宜申子辰寅午戌年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|壬子}}　　功曹{{SK notes|艮寅}}　天罡{{SK notes|乙辰}}
+　　{{SK anchor|勝光}}{{SK notes|丙午}}　　{{SKchar|2652}}送{{SK notes|坤申}}　河魁{{SK notes|辛戌}}
+　　十二吉山宜申子辰寅午戌年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|丑}}　太隂{{SK notes|卯}}　龍徳{{SK notes|未}}　福徳{{SK notes|酉}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|子}}　　歲破{{SK notes|午}}　　　三煞{{SK notes|巳午未}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|丙丁　壬癸}}　　浮天空亡{{SK notes|兌丁}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|乾亥兌丁山}}
+　　{{SK anchor|隂府太歲}}{{SK notes|乾兌}}　六害{{SK notes|未}}　　死符{{SK notes|巳}}　　灸退{{SK notes|卯}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|癸}}　　病符{{SK notes|亥}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|亥}}地官符{{SK notes|辰}}　大煞{{SK notes|子}}　　大將軍{{SK notes|酉}}力士{{SK notes|艮}}　蠶室{{SK notes|坤}}　　蠶官{{SK notes|未}}　　蠶命{{SK notes|申}}
+　　{{SK anchor|歲刑}}{{SK notes|卯}}　黄幡{{SK notes|辰}}　　豹尾{{SK notes|戌}}　　飛亷{{SK notes|申}}
+　　{{SK anchor|喪門}}{{SK notes|寅}}　弔客{{SK notes|戌}}　　白虎{{SK notes|申}}　　金神{{SK notes|辰巳}}獨火{{SK notes|艮}}　五鬼{{SK notes|辰}}　　破敗五鬼{{SK notes|兌}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲辛丑幹金枝土納音屬土}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|丙}}　　歲徳合{{SK notes|辛}}　歲枝徳{{SK notes|午}}
+　　{{SK anchor|陽貴人}}{{SK notes|寅}}　隂貴人{{SK notes|午}}　歲禄{{SK notes|酉}}
+　　{{SK anchor|歲馬}}{{SK notes|亥}}　　奏書{{SK notes|乾}}　　博士{{SK notes|巽}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白乾　六白坤　八白巽　九紫中中元　一白震　六白艮　八白坎　九紫坤下元　一白離　六白中　八白兌　九紫艮
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|艮丙}}　巨門{{SK notes|巽辛}}　武曲{{SK notes|兌丁巳丑}}文曲{{SK notes|離壬寅戌}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|乾亥　壬子　癸丑}}　三合後方{{SK notes|巽巳　丙午　丁未}}十二吉山宜巳酉丑亥卯未年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|乾亥}}　　功曹{{SK notes|癸丑}}　天罡{{SK notes|甲卯}}
+　　{{SK anchor|勝光}}{{SK notes|巽巳}}　　傳送{{SK notes|丁未}}　河魁{{SK notes|庚酉}}
+　　十二吉山宜巳酉丑亥卯未年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|寅}}　太隂{{SK notes|辰}}龍徳{{SK notes|申}}　福徳{{SK notes|戌}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|丑}}　　歲破{{SK notes|未}}　　　三煞{{SK notes|寅卯辰}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|甲乙　庚辛}}　　浮天空亡{{SK notes|艮丙}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|甲寅辰巽戌坎辛申丑癸坤庚未山}}隂府太歲{{SK notes|坤坎}}　六害{{SK notes|午}}　　死符{{SK notes|午}}　灸退{{SK notes|子}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|艮}}　　病符{{SK notes|子}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|申}}　地官符{{SK notes|巳}}　大煞{{SK notes|酉}}　　大將軍{{SK notes|酉}}力士{{SK notes|艮}}　　蠶室{{SK notes|坤}}　　蠶官{{SK notes|未}}　　蠶命{{SK notes|申}}歲刑{{SK notes|戌}}　　黄幡{{SK notes|丑}}　　豹尾{{SK notes|未}}　　飛亷{{SK notes|酉}}喪門{{SK notes|卯}}　　弔客{{SK notes|亥}}　　白虎{{SK notes|酉}}　　金神{{SK notes|寅卯午未子丑}}獨火{{SK notes|震}}　　五鬼{{SK notes|卯}}　　破敗五鬼{{SK notes|乾}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|開山凶}}
+
+
+
+
+
+
+　　{{SK anchor|修方凶}}
+
+
+
+
+
+
+
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲壬寅幹水枝木納音屬金}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|壬}}　　歲徳合{{SK notes|丁}}　歲枝徳{{SK notes|未}}
+　　{{SK anchor|陽貴人}}{{SK notes|卯}}　隂貴人{{SK notes|巳}}　歲禄{{SK notes|亥}}
+　　{{SK anchor|歲馬}}{{SK notes|申}}　　奏書{{SK notes|艮}}　　博士{{SK notes|坤}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白兌　　六白震　八白中　九紫乾中元　一白巽　　六白離　八白坤　九紫震下元　一白坎　　六白乾　八白艮　九紫離
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|艮丙}}　巨門{{SK notes|巽辛}}　武曲{{SK notes|兌丁巳丑}}文曲{{SK notes|離壬寅戌}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|坤申　庚酉　辛戌}}三合後方{{SK notes|艮寅　甲卯　乙辰}}十二吉山宜寅午戌申子辰年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|辛戌}}　　功曹{{SK notes|壬子}}　天罡{{SK notes|艮寅}}
+　　{{SK anchor|勝光}}{{SK notes|乙辰}}　　傳送{{SK notes|丙午}}　河魁{{SK notes|坤申}}
+　　十二吉山宜寅午戌申子辰年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|卯}}　太隂{{SK notes|巳}}　龍徳{{SK notes|酉}}　福徳{{SK notes|亥}}
+　　{{SK anchor|開山立向修方凶}}
+　　太歲{{SK notes|寅}}　　歲破{{SK notes|申}}　　　三煞{{SK notes|亥子丑}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|壬癸　丙丁}}　　浮天空亡{{SK notes|乾甲}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|二十四山並無尅冬至後尅乾亥兌丁山}}隂府太歲{{SK notes|離乾}}　六害{{SK notes|已}}　　死符{{SK notes|未}}　　灸退{{SK notes|酉}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|甲}}　　病符{{SK notes|丑}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|巳}}　地官符{{SK notes|午}}　大煞{{SK notes|午}}　　大將軍{{SK notes|子}}力士{{SK notes|巽}}　　蠶室{{SK notes|乾}}　　蠶官{{SK notes|戌}}　　蠶命{{SK notes|亥}}歲刑{{SK notes|巳}}　　黄幡{{SK notes|戌}}　　豹尾{{SK notes|辰}}　　飛亷{{SK notes|戌}}喪門{{SK notes|辰}}　　弔客{{SK notes|子}}　　白虎{{SK notes|戌}}　　金神{{SK notes|寅卯戌亥}}獨火{{SK notes|震}}　　五鬼{{SK notes|寅}}　　破敗五鬼{{SK notes|巽}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+　　{{SK anchor|太歲癸卯幹水枝木納音屬金}}
+　　開山立向修方吉
+　　{{SK anchor|歲徳}}{{SK notes|戊}}　　歲徳合{{SK notes|癸}}　歲枝徳{{SK notes|申}}
+　　{{SK anchor|陽貴人}}{{SK notes|巳}}　隂貴人{{SK notes|卯}}　歲禄{{SK notes|子}}
+　　{{SK anchor|歲馬}}{{SK notes|巳}}　　奏書{{SK notes|艮}}　　博士{{SK notes|坤}}
+　　{{SK anchor|三元紫白}}
+　　上元　一白艮　六白巽　八白乾　九紫兌中元　一白中　六白坎　八白震　九紫巽下元　一白坤　六白兌　八白離　九紫坎
+　　{{SK anchor|蓋山黄道}}
+　　貪狼{{SK notes|乾甲}}　巨門{{SK notes|離壬寅戌}}武曲{{SK notes|坤乙}}　文曲{{SK notes|巽辛}}
+　　{{SK anchor|通天竅}}
+　　三合前方{{SK notes|巽巳　丙午　丁未}}　三合後方{{SK notes|乾亥　壬子　癸丑}}
+　　十二吉山宜亥卯未巳酉丑年月日時
+　　{{SK anchor|走馬六壬}}
+　　神后{{SK notes|庚酉}}　功曹{{SK notes|乾亥}}　天罡{{SK notes|癸丑}}
+　　{{SK anchor|勝光}}{{SK notes|甲卯}}　傳送{{SK notes|巽巳}}　河魁{{SK notes|丁未}}
+　　十二吉山宜亥卯未巳酉丑年月日時
+　　{{SK anchor|四利三元}}
+　　太陽{{SK notes|辰}}　太隂{{SK notes|午}}　龍徳{{SK notes|戌}}　福徳{{SK notes|子}}
+　　{{SK anchor|䦕山立向修方凶}}
+　　太歲{{SK notes|卯}}　　歲破{{SK notes|酉}}　　　三煞{{SK notes|申酉戌}}
+　　{{SK anchor|坐煞向煞}}{{SK notes|庚辛　甲乙}}　　浮天空亡{{SK notes|坤乙}}
+　　{{SK anchor|開山凶}}
+　　年尅山家{{SK notes|乾亥兌丁}}
+　　{{SK anchor|隂府太歲}}{{SK notes|山震}}六害{{SK notes|坤}}　　死符{{SK notes|辰}}　　灸退{{SK notes|申}}
+　　{{SK anchor|立向凶}}
+　　巡山羅㬋{{SK notes|午}}　　病符{{SK notes|乙}}
+　　{{SK anchor|修方凶}}
+　　天官符{{SK notes|寅}}　地官符{{SK notes|寅}}　大煞{{SK notes|未}}　　大將軍{{SK notes|卯}}力士{{SK notes|子}}　　蠶室{{SK notes|巽}}　　蠶官{{SK notes|乾}}　　蠶命{{SK notes|戌}}
+　　{{SK anchor|歲刑}}{{SK notes|亥}}　　黄幡{{SK notes|子}}　　豹尾{{SK notes|未}}　　飛亷{{SK notes|丑}}
+　　{{SK anchor|喪門}}{{SK notes|巳}}　　弔客{{SK notes|巳}}　　白虎{{SK notes|丑}}　　金神{{SK notes|亥申酉子}}獨火{{SK notes|丑}}　　五鬼{{SK notes|坎}}　　破敗五鬼{{SK notes|丑}}
+　　{{SK anchor|開山立向修方吉}}
+
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書,卷十七>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+　　{{SK anchor|欽定協紀辨方書卷十七}}
+<子部,術數類,陰陽五行之屬,欽定協紀辨方書>
+</poem></onlyinclude>{{SKQS footer|title=欽定協紀辨方書|section=卷十七|prev=卷十六|prev_link=卷16|next=卷十八|next_link=卷18|type=子}}{{PD-old}}

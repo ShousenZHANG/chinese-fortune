@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c005",
+  "title": "六親歌章第五",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F5&oldid=2100292",
+  "revision": "2100292",
+  "source_timestamp": "2022-01-19T23:24:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c005.wiki",
+  "raw_sha256": "14fe89ecc058462ff968c07898a2f85d57c2bc461044a32d16eda7906f5c6a1d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六親歌章第五",
+      "text": "* 乾兌宮金兄、土父、木財、火鬼、水子。乾兌宮八卦都屬金。\n* 坎宮水兄、火財、土鬼、金父、木子。坎宮八卦都屬水。\n* 坤艮宮土兄、火父、木鬼、水財、金子。坤艮宮八卦都屬土。\n* 離宮火兄、水鬼、土子、木父，金財。離宮八卦都屬火。\n* 震巽木兄、水父、金鬼、火子、土財。震巽宮八卦都屬木。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c005:p0001",
+      "sha256": "c13b52b8ce6801bd67d73bd1a3d199729dacbf67ba71bf3fedbcce534efd6019"
+    },
+    {
+      "section": "六親歌章第五",
+      "text": "如占得乾爲天：",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c005:p0002",
+      "sha256": "f18faea2b3f2efd603940bdd4bcd2c240b663690b3579ae4d1be58e56be1632f"
+    },
+    {
+      "section": "六親歌章第五",
+      "text": "父母戌土⚊世\n兄弟申金⚊\n官鬼午火⚊\n父母辰土⚊應\n妻財寅木⚊\n子孫子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c005:p0003",
+      "sha256": "56fedded0046f2d53bbe915302cf70ad671f405a4e235f379da27354a1755ecd"
+    },
+    {
+      "section": "六親歌章第五",
+      "text": "照乾宮金兄、土父、木財、火鬼、水子、裝之，所以辰、戌土爲父母，申金爲兄弟，火爲官鬼，木是妻財，水是子孫，餘卦仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c005:p0004",
+      "sha256": "8c01498c1ace8c67aa5c228abfce3682682627233cfc0132dc7b66ee35fbd499"
+    }
+  ]
+}

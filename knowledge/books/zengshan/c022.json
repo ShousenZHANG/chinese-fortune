@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c022",
+  "title": "三刑章第二十一",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F21&oldid=2100450",
+  "revision": "2100450",
+  "source_timestamp": "2022-01-20T19:18:17Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c022.wiki",
+  "raw_sha256": "4654288b95889084bf1c1b64aa8c1720f510a13ab46d0457b6f23d59f65e6846",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "三刑章第二十一",
+      "text": "寅刑巳、巳刑申、子刑卯、卯刑午、丑戌相刑、未辰相刑。又云：辰午酉亥謂之自刑，夫三刑者，予屢試之，或因用神休囚又兼他爻犯之，刑者則見凶，而獨犯三刑得驗者少，占過數十年只驗得一卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c022:p0001",
+      "sha256": "132a606f7e7addc3664b9ae01a1178b9e6e179492d43758fc460422762cd0da8"
+    },
+    {
+      "section": "三刑章第二十一",
+      "text": "如寅月庚申日占子痘癥，得風火家人變離卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c022:p0002",
+      "sha256": "fbcc3c2d7fbd1f820d2c21ed70b79fad13d6db7f85b87ec163257b34feadd9bb"
+    },
+    {
+      "section": "三刑章第二十一",
+      "text": "兄弟卯木⚊　　子孫巳火⚊\n子孫巳火○應　妻財未土⚋\n妻財未土ㄨ　　官鬼酉金⚊\n父母亥水⚊　　父母亥水⚊\n妻財丑土⚋世　妻財丑土⚋\n兄弟卯木⚊　　兄弟卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c022:p0003",
+      "sha256": "01d11908ef3eec9b667056d412ae493a6ce0b7ab1ce2ce46e386bff74fdf067d"
+    },
+    {
+      "section": "三刑章第二十一",
+      "text": "斷曰：巳火子孫旣當春令，子孫旺相許之可治，後死於寅日寅時。後悟月建在寅，日建在申，與巳爻子孫共作三刑，獨此一卦，無他爻之傷也，至於子卯、辰戌丑未亦有驗者皆附和而爲凶也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c022:p0004",
+      "sha256": "a1ccc8cc3e3de9c4fe5d5e5f0a6e81ad963b75dd55fe899ddf58743eabbb7694"
+    }
+  ]
+}

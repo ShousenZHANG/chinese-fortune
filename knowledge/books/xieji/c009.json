@@ -1,0 +1,305 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c009",
+  "title": "卷09",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B709&oldid=787349",
+  "revision": "787349",
+  "source_timestamp": "2016-10-27T11:55:36Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c009.wiki",
+  "raw_sha256": "8c201e4007e2467dc8792c3cf25915fe25d0cc4ae4367e7cfabf7ec9f01529ec",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷09",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷九",
+      "text": "立成\n神煞之所由起義例備矣然各為一篇不能一覽而盡其條理且年神方位通書時憲書取用各有不同而月家吉凶神又合建除叢辰諸家以輕重為次第則義例猶未盡焉今将時憲書及月表所用吉凶神另編立成入萬年書外而合通書萬年書嵗月日時吉凶神煞彚列成表各分起例以類相從庶其例益明而其義亦從可知也作立成",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0002",
+      "sha256": "0e88c4efbd3ec499375df6b56bbc025a2983ae3c26175011a1e41b2c15cff4a7"
+    },
+    {
+      "section": "日神取一定干支者",
+      "text": "天恩　　　　　　甲子　乙丑　丙寅　丁夘　戊辰己夘庚辰\n辛巳壬午　癸未　己酉　庚戌辛亥壬子",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0003",
+      "sha256": "3e6080c9e4c6f18f34e2aaf49ca6bee69cd458dce9985e35e748f9299067a2d8"
+    },
+    {
+      "section": "癸丑",
+      "text": "五合　　　　　寅夘",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0004",
+      "sha256": "d75e98c10bdc698c0dd4ee4ea5c7b61484e88c2e12f9472758cb9155b105f774"
+    },
+    {
+      "section": "除神",
+      "text": "〔注文〕五離〔/注文〕　　　申酉\n鳴吠　　　　　甲午　丙午　庚午　壬午　甲申　丙申　庚申\n壬申　乙酉　丁酉　己酉　辛酉　癸酉\n鳴吠對　　　　丙子　庚子　壬子　甲寅　丙寅　庚寅　壬寅\n乙夘　丁夘　辛夘　癸夘\n寶日　　　　　丁丑　丙戌　甲午　庚子　壬寅　癸夘　乙巳\n丁未　戊申　己酉　辛亥　丙辰\n義日　　　　　甲子　丙寅　丁夘　己巳　辛未　壬申　癸酉\n乙亥　庚辰　辛丑　庚戌　戊午\n制日　　　　　乙丑　甲戌　壬午　戊子　庚寅　辛夘　癸巳\n乙未　丙申　丁酉　己亥　甲辰\n專日　　　　　戊辰　己丑　戊戌　丙午　壬子　甲寅　乙夘\n丁巳　己未　庚申　辛酉　癸亥\n伐日　　　　　庚午　丙子　戊寅　己夘　辛巳　癸未　甲申\n乙酉　丁亥　壬辰　癸丑　壬戌\n八専　　　　　甲寅　丁未　己未　庚申　癸丑\n觸水龍　　　　丙子　癸未　癸丑\n無禄　　　　　甲辰　乙巳　丙申　丁亥　戊戌　己丑　庚辰\n辛巳　壬申　癸亥\n重日　　　　　己亥",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0005",
+      "sha256": "63c85a6f4d4d5f28aca1cc9d6bb8d6eb4c9c8b7b0a45be994ffd69a543790ded"
+    },
+    {
+      "section": "日神按年取干支者",
+      "text": "上朔　　　　　甲年癸亥　乙年己巳　丙年乙亥\n丁年辛巳　戊年丁亥　己年癸巳\n庚年己亥　辛年乙巳　壬年辛亥",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0006",
+      "sha256": "47be1fafb2f4a5e0186b878c392a84dfd023e843b208de306512fa08d1ab12fe"
+    },
+    {
+      "section": "癸年丁巳",
+      "text": "日神按月取日數者\n長星　　　　　正月〔注文〕七日〔/注文〕　　二月〔注文〕四日〔/注文〕三月〔注文〕一日〔/注文〕　　　四月〔注文〕九日〔/注文〕五月〔注文〕十五日〔/注文〕　六月〔注文〕十日〔/注文〕七月〔注文〕八日〔/注文〕　　　八月〔注文〕二日五日〔/注文〕九月〔注文〕三日四日〔/注文〕　　十月〔注文〕一日〔/注文〕十一月〔注文〕十二日〔/注文〕　十二月〔注文〕九日〔/注文〕\n短星　　　　　正月〔注文〕二十一日〔/注文〕二月〔注文〕十九日〔/注文〕三月〔注文〕十六日〔/注文〕　四月〔注文〕二十五日〔/注文〕五月〔注文〕二十五日〔/注文〕六月〔注文〕二十日〔/注文〕七月〔注文〕二十二日〔/注文〕八月〔注文〕十八日十九日〔/注文〕九月〔注文〕十六日十七日〔/注文〕十月〔注文〕十四日〔/注文〕十一月〔注文〕二十二日〔/注文〕十二月〔注文〕二十五日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0007",
+      "sha256": "a9f460e304f46f5e303ab70721c076865787f93647b1e165385b42d8b21372f1"
+    },
+    {
+      "section": "日神按月朔取日數者",
+      "text": "反支　　　　　子丑朔〔注文〕六日〔/注文〕　寅夘朔〔注文〕五日〔/注文〕　辰巳朔〔注文〕四日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0008",
+      "sha256": "cd8a65b16e8389a7bcc73025c66baf10d854b8158d57ea97d9e340bc7c209226"
+    },
+    {
+      "section": "午未朔",
+      "text": "〔注文〕三日〔/注文〕申酉朔〔注文〕二日〔/注文〕戌亥朔〔注文〕一日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0009",
+      "sha256": "27df33d9b100afaa205f670724d80974eae5064639f3812c9ff90c6ada409e9c"
+    },
+    {
+      "section": "日神按節氣取日數者",
+      "text": "四離　　　　　　冬至　夏至　春分　秋分　各前一日\n四絶　　　　　　立春　立夏　立秋　立冬　各前一日\n氣往亡　　　　　立春後〔注文〕七日〔/注文〕　驚蟄後〔注文〕十四日〔/注文〕清明後〔注文〕二十一日〔/注文〕立夏後〔注文〕八日〔/注文〕　芒種後〔注文〕十六日〔/注文〕小暑後〔注文〕二十四日〔/注文〕立秋後〔注文〕九日〔/注文〕　白露後〔注文〕十八日〔/注文〕寒露後〔注文〕二十七日〔/注文〕立冬後〔注文〕十日〔/注文〕　大雪後〔注文〕二十日〔/注文〕小雪後〔注文〕三十日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0010",
+      "sha256": "7cc265e1e3a710381e7f739d2d4e15fe9dc92be41cfb1debd4b436813747a759"
+    },
+    {
+      "section": "時神從日干起者",
+      "text": "日干",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0011",
+      "sha256": "3becbd1578d92e9e27ae70205cbd7a72400972a5ca7ee6bc15f47eee8abac8da"
+    },
+    {
+      "section": "日禄",
+      "text": "天乙貴人",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0012",
+      "sha256": "73b87548fcb4a56fa61ae4aa4da64dfb103930c348511c143f75fac04c8bd9eb"
+    },
+    {
+      "section": "喜神",
+      "text": "天官貴人",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0013",
+      "sha256": "7a609bf7be667773dd74d1c36f4827bff6c6c962e8d12b9cf34e41458df0935c"
+    },
+    {
+      "section": "福星貴人",
+      "text": "五不遇時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0014",
+      "sha256": "5f64670e625b4dcc54ba94465fa747f017f5985b30836bd3c74b96ef2855839b"
+    },
+    {
+      "section": "路空",
+      "text": "時神從日支起者",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0015",
+      "sha256": "211b945153180782138f1248b8e67f4a523e1976986afca5bcdf3a4f6a185402"
+    },
+    {
+      "section": "日支",
+      "text": "日建",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0016",
+      "sha256": "a00c1bf07174bf4147721d23fff5d0ce051a2018b15ac7c5b444b0e435f3f207"
+    },
+    {
+      "section": "日合",
+      "text": "日馬",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0017",
+      "sha256": "89a71ba225723c2403b82f4fc6e59f13f46b48c3b6f233faaa1a770632334c41"
+    },
+    {
+      "section": "日破",
+      "text": "日害",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0018",
+      "sha256": "200563ca542a1b4179c44ae84fd0fe6bfb6218fe0304eb5f117398f752c01275"
+    },
+    {
+      "section": "日刑",
+      "text": "青龍",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0019",
+      "sha256": "f09fcb38f108c337496977443e389d0ddace77e0eeb2ccd2f7d1c97345b40847"
+    },
+    {
+      "section": "明堂",
+      "text": "日支",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0020",
+      "sha256": "dc93e99ccc074dee43b94316b0596f4ef725c9b45265dae6c734aa2a86100118"
+    },
+    {
+      "section": "天刑",
+      "text": "朱雀",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0021",
+      "sha256": "eed186c7e6c32f41e02c3fd11ccbf569357ca562a6a86bc629bdfb91641dbe3d"
+    },
+    {
+      "section": "金匱",
+      "text": "寶光",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0022",
+      "sha256": "9b7811d73f6cab73e928534af74e59c47f620d5fc132e25cd7f55a42424a1482"
+    },
+    {
+      "section": "白虎",
+      "text": "玉堂",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0023",
+      "sha256": "70757f7616cf0c70ab48685c032dcc5d644752dce9c6c6f7d9e1562e1d30e81c"
+    },
+    {
+      "section": "天牢",
+      "text": "元武",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0024",
+      "sha256": "50a9c80ad184799d5a0f391324cdae9f0c3c9ea19c129826c338d4bd8509a657"
+    },
+    {
+      "section": "司命",
+      "text": "勾陳",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0025",
+      "sha256": "0288796ae9dcd6c86fbc4c3b25641c7ea338285fcb6f7742ccf1d58c2058a260"
+    },
+    {
+      "section": "四大吉時",
+      "text": "時神隨月將及日干支者",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0026",
+      "sha256": "92bcc3b071df1c40b069b0442f31c72ed7d30a71299f445bdd152b34978c2721"
+    },
+    {
+      "section": "貴登天門時",
+      "text": "甲日〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0027",
+      "sha256": "b21c098986d312c9f7c3e4c148b6bc7b048684714524f96f3754186c16550e85"
+    },
+    {
+      "section": "乙日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0028",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "丙日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0029",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "丁日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0030",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "戊庚日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0031",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "己日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0032",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "辛日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0033",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "壬日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0034",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "癸日",
+      "text": "〔注文〕旦夕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c009:p0035",
+      "sha256": "3ec235604e198cea04c61e7639b4b246c94b2d9cbac1a5db60fc52475a10af38"
+    },
+    {
+      "section": "九醜",
+      "text": "戊子日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0036",
+      "sha256": "56bb711f154d18f6d4676b15bdf73e37a5735756719595205b1c5d78e72824e2"
+    },
+    {
+      "section": "戊午日",
+      "text": "壬子日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0037",
+      "sha256": "3d23712a30a98fd3c079ddbc24bf425c910816bf668beaeee892f3771bc04f56"
+    },
+    {
+      "section": "壬午日",
+      "text": "乙夘日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0038",
+      "sha256": "98a301dcd5f16e6748b670d673debed0ea1fac46f5b5fa4781c96315f258d171"
+    },
+    {
+      "section": "己夘日",
+      "text": "辛夘日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0039",
+      "sha256": "9e52627b9c04f9b829291a5241239be9f3d1d1a335b303391f95fe21b8f29961"
+    },
+    {
+      "section": "乙酉日",
+      "text": "己酉日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0040",
+      "sha256": "85680a0f257047766a17d9803c4e807b72adb60b6aedc81c91ef64b6f34167ad"
+    },
+    {
+      "section": "辛酉日",
+      "text": "時神隨日六旬者",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c009:p0041",
+      "sha256": "1e0fdecf169c276ba36ed7e77a685e5d5468653c3ed1262028c6e7aa0ed71bb0"
+    }
+  ]
+}

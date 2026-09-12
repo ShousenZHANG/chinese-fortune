@@ -1,0 +1,69 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c024",
+  "title": "卷24",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B724&oldid=787367",
+  "revision": "787367",
+  "source_timestamp": "2016-10-27T11:58:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c024.wiki",
+  "raw_sha256": "fabc1223ee32d261f5b667005a44c9349490969364180fe26d83ac4c73dd04b6",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "xieji:c024:p0004",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "xieji:c024:p0005",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷24",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c024:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十四",
+      "text": "月表五",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c024:p0002",
+      "sha256": "0d03e0daa1c7c36e3f2abb558b84bb8005fab138a66278f734728b5c31589e7b"
+    },
+    {
+      "section": "五月",
+      "text": "芒種五月節天道西北行宜向西北行宜修造西北維天徳在乾月徳在丙月徳合在辛月空在壬宜修造取土\n月建在午月破在子月厭在午月刑在午月害在丑劫煞在亥災煞在子月煞在丑忌修造取土\n十五日長星　二十五日短星\n芒種後十六日徃亡　夏至前一日四離\n夏至五月中日躔在未宫為五月將宜用艮巽坤乾時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c024:p0003",
+      "sha256": "e43c2b8ccf882dd5693e24e5bbd34d7c72946179f3baf54c5565d27a594300d5"
+    },
+    {
+      "section": "丁亥屋上土伐執日",
+      "text": "戊子霹〔字形SK3823：未编码〕火制破日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c024:p0004",
+      "sha256": "1609bf66f2aa010640a3b9ce2893511a6f529852d7ed2e6d4ba89a90cc75f90f"
+    },
+    {
+      "section": "丁亥屋上土伐執日",
+      "text": "己丑霹〔字形SK3827：未编码〕火專危日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c024:p0005",
+      "sha256": "e8bd1f0affb2f6c097be9dd20e1bc4359480f433a71a2a5679ddde27b7289dd4"
+    },
+    {
+      "section": "癸亥大海水專執日",
+      "text": "右六十干支從建午者始芒種終夏至其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c024:p0006",
+      "sha256": "98312c47c04135a85b315fd6ac7a7beb5d578042c1081f69be62e0eb56937543"
+    }
+  ]
+}

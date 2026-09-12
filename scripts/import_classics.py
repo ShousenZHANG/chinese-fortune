@@ -18,6 +18,8 @@ from datetime import UTC, datetime
 from functools import lru_cache
 from pathlib import Path
 
+from utils import ensure_utf8_stdio
+
 ROOT = Path(__file__).resolve().parents[1] / 'knowledge'
 API = 'https://zh.wikisource.org/w/api.php'
 AGENT = 'ChineseFortuneClassicalLibrary/2.1 (public-domain transcription archive)'
@@ -377,25 +379,133 @@ def capture_qiongtong() -> None:
     write_json(directory / 'metadata.json', metadata)
 
 
+def supplement_passages(raw: str, title: str) -> list[dict]:
+    """Preserve historical words and notes; explicitly remove modern editor notes.
+
+    Unknown templates and image references remain visible uncertainty markers.
+    This extractor does not assert that unmarked passages are free of later edits.
+    """
+    if '<onlyinclude>' in raw:
+        raw = '\n'.join(re.findall(r'<onlyinclude>(.*?)</onlyinclude>', raw, re.S))
+    raw = re.sub(r'\{\{\*\|原劍按[：:].*?\}\}', '', raw, flags=re.S)
+    raw = re.sub(r'\{\{\*\|([^{}]*)\}\}', r'〔注文〕\1〔/注文〕', raw)
+    raw = re.sub(r'\{\{(?:Header2|Textquality|未排版|Uncategorized|further)\b.*?\}\}',
+                 '', raw, flags=re.S | re.I)
+    raw = re.sub(r'-\{([^{}]+)\}-', r'\1', raw)
+    raw = re.sub(r'\[\[(?:Category|分類|分类):[^\]]+\]\]', '', raw, flags=re.I)
+    # These are source display breaks; keep one line per original paragraph.
+    raw = re.sub(r'<br\s*/?>', '\n', raw, flags=re.I)
+    return paragraphs(raw, title, 'historical_work_transcription')
+
+
+def import_supplements(cache: Path) -> list[dict]:
+    """Import an explicitly captured API batch; keep existing five book IDs intact."""
+    indexes = json.loads((cache / 'indexes.json').read_text(encoding='utf-8'))
+    pages = json.loads((cache / 'pages.json').read_text(encoding='utf-8'))
+    for title in ('遁甲演義 (四庫全書本)', '六壬大全 (四庫全書本)'):
+        indexes.update(json.loads((cache / (title.replace(' ', '_') + '.json')).read_text(encoding='utf-8')))
+    specs = [
+        ('xieji', '协纪辨方书', '欽定協紀辨方書 (四庫全書本)',
+         [f'卷{i:02}' for i in range(1, 37)], '四库全书本网络转录；未逐页校图'),
+        ('xuanze', '选择要略', '選擇要略', list('上中下'),
+         '维基文库上中下三卷转录；具体印本未确认，朝鲜典籍'),
+        ('ziwei', '紫微斗数全书', '紫微斗數全書', ['卷' + x for x in '一二三'],
+         '维基文库三卷转录选本；不代表其他四卷或更多卷版本'),
+        ('meihua', '梅花易数', '梅花易數', ['卷' + x for x in '一二三'],
+         '维基文库三卷转录选本；不代表其他五卷版本'),
+        ('liuren', '六壬大全', '六壬大全 (四庫全書本)',
+         [f'卷{i:02}' for i in range(1, 13)], '四库全书本网络转录；保留该本方法与异议'),
+        ('dunjia', '遁甲演义', '遁甲演義 (四庫全書本)',
+         [f'卷{i}' for i in range(1, 5)], '四库全书本四卷网络转录；不同于缺卷界的普通网页本'),
+    ]
+    books = []
+    for bid, title, source, suffixes, edition in specs:
+        index = indexes[source]
+        chapters = []
+        for number, suffix in enumerate(suffixes, 1):
+            name = source + '/' + suffix
+            if name not in index['raw'] and '[[' + '/' + suffix not in index['raw']:
+                raise ValueError('chapter absent from source directory: ' + name)
+            page = dict(pages[name])
+            page['passages'] = supplement_passages(page['raw'], suffix)
+            chapters.append((f'c{number:03}', suffix, page))
+        book = make_book(bid, title, edition, index, chapters)
+        book['quality_notes'] = ['正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。',
+                                 '目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。']
+        books.append(book)
+
+    # The frozen 增删 index embeds volumes 2–4 but transcludes 31 units in volume 1.
+    index = indexes['增刪卜易']
+    links = re.findall(r'\[\[/([^|\]]+)\|([^\]]+)\]\]', index['raw'])
+    if len(links) != 31 or len({x for x, _ in links}) != 31:
+        raise ValueError('增删卷一目录变化：需要重新核对')
+    chapters = []
+    for number, (suffix, title) in enumerate(links, 1):
+        page = dict(pages['增刪卜易/' + suffix])
+        page['passages'] = supplement_passages(page['raw'], title)
+        chapters.append((f'c{number:03}', title, page))
+    for number, volume in enumerate('二三四', 32):
+        match = re.search(r'== 增刪卜易卷之' + volume + r' ==(.*?)(?=\n== 增刪卜易卷之|\Z)', index['raw'], re.S)
+        if match is None:
+            raise ValueError('增删缺卷：' + volume)
+        title = '卷之' + volume
+        page = dict(index)
+        # Keep the actual complete source revision, not fabricated raw page bytes.
+        page['passages'] = supplement_passages(match.group(1), title)
+        page['extraction_kind'] = 'section_of_frozen_revision_excluding_explicit_modern_notes'
+        chapters.append((f'c{number:03}', title, page))
+    book = make_book('zengshan', '增删卜易',
+                     '维基文库四卷网络整理本；明确现代增订已排除，未标记改写仍待校', index, chapters)
+    book['quality_notes'] = ['原网页录入者声明参照版本有错漏；不能标为忠实古刻。',
+                            '运行正文排除录入者言、原剑增订说明及显式原剑按；原始来源档案保留供复核。',
+                            '卷一31个章单元，卷二至四按整卷保存；不是仅收了34章。']
+    books.append(book)
+    source = '奇門遁甲元靈經'
+    index = json.loads((cache / (source + '.json')).read_text(encoding='utf-8'))[source]
+    # TOC and正文 have distinct headings; split only the latter.
+    parts = list(re.finditer(r'(?m)^(?:==\s*)?奇门遁甲元灵经卷([一二三四五六七八九十]+)(?:\s*==)?\s*$', index['raw']))
+    if len(parts) != 24 or len({m.group(1) for m in parts}) != 24:
+        raise ValueError('元灵经24卷目录变化：需要重新核对')
+    chapters = []
+    for number, match in enumerate(parts, 1):
+        end = parts[number].start() if number < len(parts) else len(index['raw'])
+        title = '卷' + match.group(1)
+        page = dict(index)
+        page['passages'] = supplement_passages(index['raw'][match.end():end], title)
+        page['extraction_kind'] = 'section_of_frozen_revision'
+        chapters.append((f'c{number:03}', title, page))
+    book = make_book('yuanling', '奇门遁甲元灵经', '维基文库24卷网络转录；具体印本未核', index, chapters)
+    book['quality_notes'] = ['沿用已有算法规格所引revision；收录全卷不表示全书算法已经实现。']
+    books.append(book)
+    return books
+
+
 def main() -> int:
+    ensure_utf8_stdio()
     parser = argparse.ArgumentParser(description=__doc__, epilog='Top-level JSON keys: books')
     parser.add_argument('--wikisource', action='store_true')
     parser.add_argument('--capture-qiongtong', action='store_true')
     parser.add_argument('--captured-html', choices=['ziping', 'qiongtong', 'yuanhai'], action='append', default=[])
+    parser.add_argument('--supplements-from', type=Path, help='显式导入已捕获的补充书目 API 批次')
     args = parser.parse_args()
-    if not (args.wikisource or args.capture_qiongtong or args.captured_html):
+    if not (args.wikisource or args.capture_qiongtong or args.captured_html or args.supplements_from):
         parser.error('choose a retrieval/import operation')
     if args.capture_qiongtong:
         capture_qiongtong()
     books = import_wikisource() if args.wikisource else []
     books += [import_captured_html(book_id) for book_id in args.captured_html]
+    if args.supplements_from:
+        supplements = import_supplements(args.supplements_from)
+        for book in supplements:
+            book['retrieval_context_radius'] = 2
+        books += supplements
     manifest_path = ROOT / 'manifest.json'
     existing = json.loads(manifest_path.read_text(encoding='utf-8')) if manifest_path.exists() else {}
     replaced = {book['id'] for book in books}
     books += [b for b in existing.get('books', []) if b['id'] not in replaced]
     manifest = {'schema_version': '2.0', 'distribution_kind': 'source',
-                'library_id': 'bazi-five-classics-v1',
-                'required_books': ['ziping', 'ditian', 'qiongtong', 'sanming', 'yuanhai'],
+                'library_id': 'chinese-classics-v2' if args.supplements_from else existing.get('library_id', 'bazi-five-classics-v1'),
+                'required_books': sorted({'ziping', 'ditian', 'qiongtong', 'sanming', 'yuanhai'} | {b['id'] for b in books}),
                 'retrieval_policy': 'offline; preserve original words; historical text is not personal advice',
                 'books': sorted(books, key=lambda b: b['id'])}
     glyph_path = ROOT / 'sources' / 'skchar.json'

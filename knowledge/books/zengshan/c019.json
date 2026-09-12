@@ -1,0 +1,74 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c019",
+  "title": "六神章第十八",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F18&oldid=2101727",
+  "revision": "2101727",
+  "source_timestamp": "2022-01-30T02:29:09Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c019.wiki",
+  "raw_sha256": "187ce31c14b4a798dd6372abe81b9531fd686ace4e7a319f356670f33177217f",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "六神章第十八",
+      "text": "{| class=\"wikitable\"\n|-\n! !! 甲乙日 !! 丙丁日 !! 戊　日 !! 己　日 !! 庚辛日 !! 壬癸日\n|-\n| 上爻 || 元武 || 靑龍 || 朱雀 || 勾陳 || 滕蛇 || 白虎\n|-\n| 五爻 || 白虎 || 元武 || 靑龍 || 朱雀 || 勾陳 || 滕蛇\n|-\n| 四爻 || 滕蛇 || 白虎 || 元武 || 靑龍 || 朱雀 || 勾陳\n|-\n| 三爻 || 勾陳 || 滕蛇 || 白虎 || 元武 || 靑龍 || 朱雀\n|-\n| 二爻 || 朱雀 || 勾陳 || 滕蛇 || 白虎 || 元武 || 靑龍\n|-\n| 初爻 || 靑龍 || 朱雀 || 勾陳 || 滕蛇 || 白虎 || 元武\n|}",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0001",
+      "sha256": "b2faa8140e9696dd7d42e528c24e20fab28d17e435e7a82bd1c4261338fbf7aa"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "諸書無不以靑龍爲吉，白虎爲凶。天元賦曰：身旺龍持多吉處。碎金賦曰：龍動家有喜，虎動家有喪。卜筮元龜曰：滕蛇白虎憂尊長。卜筮大全曰：畏口禦刀之白虎，喜赴水之靑龍。閱奧章占疾痛滕蛇主死，白虎主喪。此皆不以五行，竟以六神而斷生死。惟千金賦曰：虎興而遇吉神不害其吉，龍動而逢凶曜難掩其凶。此正理也，然則六神而不驗耶乎，乃附合之神也，卦之吉者逢龍而更吉，卦之凶者逢白虎而更凶，且元武主盜賊，朱雀主口舌，無不驗也，至於家宅墳塋不可少也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0002",
+      "sha256": "31a1beba521898fe877c4291140de46d1df6517aa9077cf9b529ea47b08c4c0c"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "如戊子日占生產，得山地剝變風地觀卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0003",
+      "sha256": "20ed0cd5be0ef8ec638a3522cee9512b89a18834ce215369d768f4691ee34602"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "朱雀　妻財寅木⚊　　妻財卯木⚊\n靑龍　子孫子水ㄨ世　官鬼巳火⚊\n元武　父母戌土⚋　　父母未土⚋\n白虎　妻財卯木⚋　　妻財卯木⚋\n勾陳　官鬼巳火⚋應　官鬼巳火⚋\n滕蛇　父母未土⚋　　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0004",
+      "sha256": "d36a656499172ebcd1229a71672cf62c2645d374a8834a4a8abc910dc958bb4f"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "子水子孫化絕變鬼，本日落艸而亡，卻是靑龍臨子孫，亦可謂之喜耶？",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0005",
+      "sha256": "fd28ecc11c7bd410d25952409c0b69a9654d11021c844051f40f2827343c27eb"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "又如申月甲辰日占兄病得屯之震",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0006",
+      "sha256": "4ac489040521d7e2957f40b29bb21dab5bfdff1e76e32fdcc57ad7cee7fa17b4"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "元武　兄弟子水⚋　　官鬼戌土⚋\n白虎　官鬼戌土○應　父母申金⚋\n勾陳　父母申金ㄨ　　妻財午火⚊\n媵蛇　官鬼辰土⚋　　官鬼辰土⚋\n朱雀　子孫寅木⚋世　子孫寅木⚋\n靑龍　兄弟子水⚊　　兄弟子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0007",
+      "sha256": "9787e37a527d394469f5e81ee93b4e9e5792e2fd754a2e33b5ccf9dd8daab191"
+    },
+    {
+      "section": "六神章第十八",
+      "text": "子水兄爻爲用神，卦中忌神、元神同動，土動生申，申金動而生子水，月建又生子水，至戊申日沈屙復起，其可謂之蛇動死，虎動主喪耶？",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c019:p0008",
+      "sha256": "e17c3f5d9670538f073514e742d9126d9f593962bb2600616cacb1acc1c0f268"
+    }
+  ]
+}

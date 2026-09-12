@@ -1,0 +1,872 @@
+{
+  "book_id": "meihua",
+  "chapter_id": "c003",
+  "title": "卷三",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%B8%89&oldid=1441927",
+  "revision": "1441927",
+  "source_timestamp": "2018-05-01T02:59:09Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/meihua/c003.wiki",
+  "raw_sha256": "2320fdff0b05335964a9f0c91d2a9870e11c9fbcddc32aecd822f90999fa45b4",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "觀梅數訣序",
+      "text": "嗟呼，《易》豈易言哉！蓋《易》之為書，至精微，至玄妙。然數者，不外乎易理也。有先後天之殊，有葉音取音之辨，明憂虞得失之機，取互變遲速之應。數有前定，禍福難測。易理灼然可察，予求得先天、玄黃、靈應諸篇，外采《易辭》，曰：「觀梅數訣，列圖明五行生克衰旺之理，分例指避凶趨吉之道。後學群子幸鑒焉。」《易辭》曰：「易有太極，是生兩儀，兩儀生四象，四象生八卦，八卦生萬物。」邵子曰：「一分為二，二分為四，四分為八也。」《說卦傳》曰：「易逆數也。」邵子曰：「乾一、兌二、離三、震四、巽五、坎六、艮七、坤八，自乾至坤，皆得未生之卦，若逆推四時之比也。後天六十四卦仿此。」",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0001",
+      "sha256": "14dbb4d4babdb0eaad1d4ae9695ad480bba1fc0e6678065d7f27eb0586156088"
+    },
+    {
+      "section": "八卦定陰陽次序",
+      "text": "乾為父，震長男，坎中男，艮少男；",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0002",
+      "sha256": "c12a2b67ba83272fcb58a0d31ac44968e517b51238727c37f8ea4a34d7fb6037"
+    },
+    {
+      "section": "八卦定陰陽次序",
+      "text": "坤為母，巽長女，離中女，兌少女。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0003",
+      "sha256": "a516e9765a6cc95167f3c6728feb64a08bbd2cf82a1876f4741e4934ca93a5af"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "澤火革體金，互巽木變澤山鹹",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0004",
+      "sha256": "d8e8b2341a7cabf1a990916d341582f2d36b908af2cad7342c37872ad46e4149"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "離卦初爻，陽動變陰，變艮卦兌金，為少女，離火克之。巽為股，乾金克之，曰：傷股。得艮土生，入兌金，斷曰：不至於死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0005",
+      "sha256": "5b660bc417f35d21e983cf13e014df8578ebf26f4558c73df35832bf971d0707"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "體用於變爻，作動靜取之。動者為用，靜者為體。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0006",
+      "sha256": "381b3f0c264d9f40cd9c5f5f94ac62313f535d909ff7acb7b00f8ef080150a52"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "地雷複體土、用金，變地澤臨",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0007",
+      "sha256": "ce6e484343367c638f98df59306191824b83453df9f9aa479f48ef66a690ff7e"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "木是用爻，斷出軟物，文章之體也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0008",
+      "sha256": "f35ea32e55c27a09641b700cbfa704ce83f3717738822b31a05a01128c51ff87"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "天澤履體金、用金，互卦木火變乾卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0009",
+      "sha256": "f7539cfa511e97f1031feda66b177006723f9fb9e498ec3fde8307279c7b21af"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "此卦斷出是鐵器之物",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0010",
+      "sha256": "864529b47fb341c5a127e961e1d519b865e8349438cb5047ddff4405e14d08ea"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "澤火革用金、體火，互卦金木變火雷噬嗑",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0011",
+      "sha256": "59730053cc70b358315b23a38a91d0b49fc3560e548f9269a8962abc934f649d"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "此卦乃用金體火，夏火得旺，能出土，必是土物也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0012",
+      "sha256": "9ce077eaa380f599edf4213fb3836f65de09f230280ee558c159d37338935309"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "雷澤歸妹用木、體金，互卦水火變火澤睽",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0013",
+      "sha256": "64d0e7d942fdada64a5cb79b1fcf2c88281802320f5d93ea846ce06c64be8854"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "用爻屬木變火，體卦屬金。四爻變卦成艮，土能生金，斷出是鐵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0014",
+      "sha256": "37c47ca4d6bcb4b168ae98cdfe8b2803aae91431d3306a315d3e0cc247cfd5a2"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "澤天夬體金、用金，互卦金變兌卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0015",
+      "sha256": "1dfe55815a2dbcf3b38cd49800c7a81bb4b1a48081396be072b53bf230d72095"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "此卦非金是石，斷是破磁碟也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0016",
+      "sha256": "56883493fcab2bca292a6aad315b07ab2431dc0ae43fbb8427e59d8dcd75e1b0"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "澤火革互卦金木變艮卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0017",
+      "sha256": "cc8874ac57b2754dade7428d3f33334bd990e4e870af9603cb6ff7bad5ba589f"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "本卦得澤火革，為少女，近物為口，遠取羊。內離為中女，近日，遠取雉。初爻變艮卦為土，土能生金，則扶起兌金之妹。次除去初爻，移上四爻，又成巽木，斷得傷股之災。得初爻變艮土生兌金，是故有救而不至於死也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0018",
+      "sha256": "80d931428373793a3f813d4677c1a2f59edce1303912758ebf6ccb3290db7314"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "「近取諸身」，乾頭、坤腹、震足、巽股、坎耳、離目、兌口、艮手，人身；「遠取諸物」，乾馬、坤牛、震龍、巽雞、坎豕、離雉、艮狗、兌羊，畜道。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0019",
+      "sha256": "97ddc7d2651ce76a2c639a2b97f3cdfb60bb2da19eac05058bebc4fea32498ca"
+    },
+    {
+      "section": "變卦式八則",
+      "text": "天水訟卦變兌，欲要求財。蓋卦是體生，而乃泄已之氣，其財空望。次得離卦屬火，能克金。其日午時，客來食去酒，返自消耗也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0020",
+      "sha256": "eedfde7251440e6d8962c533656869b6ce921908a32bb89c8bf2114c699fb4f2"
+    },
+    {
+      "section": "占卦訣",
+      "text": "又如占卦問吉事，則看卦中有生體之卦，則吉事應之必速。便看生體之卦，於八卦時序類決其日時。如生體是用卦，則事即成。生體是互卦，則漸成。生體是變卦，則稍遲耳。若有生體之卦，又有克體之卦，則事有阻節，好中不足產。便看克體卦氣阻於幾日，若乾克體，阻一日，兌克體，阻二日之類推之。如占吉事，無生體之卦，有克體之卦，則事不諧矣。無克體之卦。則吉事必可成就矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0021",
+      "sha256": "5151b73fbd51a594c260404712f028068d168963de8c330adb69c99498069c4e"
+    },
+    {
+      "section": "占卦訣",
+      "text": "又如占不吉之事，卦中有生體之卦，則有救無害；如無生體之卦，事必不吉矣。若以日期而論，看卦中有生體之卦，則事應於生體卦氣之日；有克體之卦，則事敗於克體卦氣之日。要在活法取用也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0022",
+      "sha256": "486cbb88b382cebbce09351b71405fb848dcb3276b59e0c5c8a3043a73e0e88d"
+    },
+    {
+      "section": "體用互變之訣",
+      "text": "大凡占卜，以體為其主，互用變皆為應。卦用最緊，互次之，變卦又次之。故曰用為占之即應，互為中間之應，變為事占之終應。然互卦則分其有體之互，有用之互。如體在上，則上互為體之互，下互為用之互，體卦在下，則下互為體之互，上互為用之互。體互最緊，用互次之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0023",
+      "sha256": "33be860e8fe4b8cc881cd8c0a2ad9436bb683379d3e9d0f192204ffe4a8b23b9"
+    },
+    {
+      "section": "體用互變之訣",
+      "text": "例如觀梅恒卦，互兌、乾，兌為體，互見女子折花。若乾為體，互則老人折花矣。蓋兌、乾皆克體，但取兌而不取乾，此體互用之分。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0024",
+      "sha256": "42540a0f9c2bf8a6934906e6a9fbfdee1a604f18fd1e954d76d01573dcbb3623"
+    },
+    {
+      "section": "體用互變之訣",
+      "text": "大凡占卦，變卦克體，事於末後，必有不吉。變生體及比和，則事事臨終有吉利。此用互變之訣也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0025",
+      "sha256": "1b35997e7fdaf225f98a067325bccad2b884bffd86c3de3bd1eb69b48e7bed64"
+    },
+    {
+      "section": "體用生克之訣",
+      "text": "占卦即以卦分體用互變，即以五行之理斷其吉凶。然生克之理，於內卦體用互變，一定之生克。若外卦，則須明其真生真克之五行，以分輕重，則禍福立應。何也？假如乾、兌之金為體，見火則克，然有真火之體，有火之形色。真火能克金，形色則不能克。能克則不吉，不能克則不順而已。蓋見爐中火，窯灶之火，真火也。烈焰巨炷，真火也。乾、兌為體，遇之不吉。若色之紅紫，形之中虛，槁木之離，日火之火，則灶之形色，非真火也，乾、兌之體，不為深忌。又若一盞之燈，一炬之燭，雖曰真火，微細而輕，小不利耳。又若震、巽之木體，遇金則克，然釵釧之金，金鉑之金，成錠之銀，杯盤之銀，與器之錫，瑣屑之鋼鐵皆金也。此等之金，豈能克木？木之所忌者，快刀銳刃，巨斧大鋸。震、巽之體，值之必有不吉。又若離火為體，見真水能克。然但見色之黑者，見體之濕者，與夫血之類，皆坎之屬，終忌而不深害也。餘卦為體，所值外應，克者皆以輕重斷之。若夫生體之卦，亦當分辨。土與瓦器皆坤土，金遇之，土能生金，瓦不能生也。樹木柴薪，皆木也。離火值之，柴薪生火之捷，樹木之末伐者，生炎之遲也。木為體，真水生木之福重，如豕如血雖坎之屬，生木之類輕也。其餘五行生克，並以類而推之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0026",
+      "sha256": "59385f6314b8dd068faa7cb3de5b29ec7509483fb767cbdab6022ab96b69415e"
+    },
+    {
+      "section": "體用衰旺之訣",
+      "text": "凡體卦宜乘旺，克體之卦宜衰。蓋體卦之氣，如春木、夏火、秋金、冬水、四季之月土，此得令之卦，乘旺之氣，雖有他卦克之，亦無大害。用互變卦，乘旺皆吉，但不要克體之卦氣旺。而體卦氣衰是不吉之占。占者有此，若問病必死，問訟必敗。若非問訟與病而常占，則防有官病之事。末臨其期，在於克體卦氣之月日也。若卦體旺而複有生體之卦，吉事之來，可刻期而至矣。若內卦外卦有生體者，體卦雖衰，亦無大害也。內外並也生體，雖體之卦黨多，皆是衰卦，終不吉也。故體用之卦，必須詳其盛衰也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0027",
+      "sha256": "a141a4258645cb52d10a11a3e73a173171f91c95e5c47d1987f21a80f2ef7b2f"
+    },
+    {
+      "section": "體用動靜之訣",
+      "text": "占卦體用互變既分，必以內外之卦察其動不動。不動不占，亦不斷。其吉凶悔吝，生乎動也。夫體卦為靜，互卦為靜，用卦變卦則動也，此內卦之動靜也。以外卦言之，方應之卦，天地地理之卦，應皆靜，若人事之應，器物之類，則有動者矣。器物本靜，人持其器物而來，則動矣。若乾馬、坤牛，皆動者矣。蓋水之井沼，土之山岩石，皆靜者矣。人汲水擔水而前，水之動也。又人持石負土而前，土之動也。於外卦之應，觀其動靜而審其吉凶，動而吉者，應吉之速；動而凶者，應凶之速；不動而應者，吉凶之末見也。此則外卦體用之動靜也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0028",
+      "sha256": "9429597aa0507809a59026575c061039061db58d1092bbed2c7f0b549c85213f"
+    },
+    {
+      "section": "體用動靜之訣",
+      "text": "若夫起卦之動靜，亦以我之中靜而觀其動者而占之。如雀之爭墜，如牛雞之衰鳴，如枯木之墜，皆物之動者，我以靜而占之也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0029",
+      "sha256": "7ef45510aaf46259b0a52a9bc402056e66b199b271e8aeafc439c63e46f4868d"
+    },
+    {
+      "section": "體用動靜之訣",
+      "text": "又若我坐，則事應之遲；我行而事應之速；我立而半遲半速，此皆動靜之理也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0030",
+      "sha256": "75ae65f6b78c2d2e28be26707e6b4ef72041e9c33b3b9b116812085c438d621f"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "坐端之訣，以我之所坐為中，八位列于八方，占卦決斷之。須虛心待應，坐而端之，察其八卦八方應兆，以為占卜事端之應。隨其方卦有生克之應者，以定所占之家吉凶也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0031",
+      "sha256": "5a7d393291afd8500520115a4ff6a52a68121410a84955b5ed7ebcb499acfeac"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "如乾上有土生之，或乾宮有諸吉兆，則尊長老人分上，見吉慶大事。若乾上有火克之，或有凶兆，則主長上老人有憂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0032",
+      "sha256": "97b05e130092aab4880ae157bebcfc624640bade765766c485948027c1fb30c1"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "坤有火生之，或坤上有吉兆，則主母親分上或主陰人有吉利之喜。坤宮見克，或有凶兆，則主老母陰人有災厄。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0033",
+      "sha256": "654beeec73fe7a99a68b9094a6da5f60e5107dfdaed2a7ffe750cae692387261"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "震宮有水生之，及東方震宮有吉兆，則喜在長子長孫；見克而或見凶，則長子長孫不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0034",
+      "sha256": "69f6d565674862c2b3a3ad50db9216407a4a8ef81927283e9d7cd4de30accd6c"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "坎宮宜見五金及有吉利之讖，則喜在中男之位；若土克，若見凶，則憂在中男矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0035",
+      "sha256": "0fd046e9794c16d40b5b499e69415556889812d3dcebca6f2971065e80c66fc8"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "離宮喜木生之，或有可喜之應，則中女有喜；若遇克或見凶，則中女有厄矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0036",
+      "sha256": "04d86fdb1e6c519d8829e8799963f8a5f4bfd9a4864c6851e267f2fbe07a396f"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "艮為少男之位，宜火生之，見吉則少男之喜；若遇克，或見凶，則災及少男。問產必不育矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0037",
+      "sha256": "701a2e88462e1ca5e274b7cafaf26a9161624ea6e3adac161ddb651ae11d7a06"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "兌為少女，土宜生之，見吉則少女有喜，或有歡悅之事。若問病，如乾卦受克，病在頭。坤宮見克，病在腹，推之震足、巽股、離目、坎耳及血、艮手指、兌口齒，於其克者定見其病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0038",
+      "sha256": "92bbc5cd5512fcde8f0714b40ec82230b5af5dae5f36ce0e4c67fd86f71e088a"
+    },
+    {
+      "section": "占卜坐端之訣",
+      "text": "至於八端之中，有奇占巧卜者，則在乎人。此引其端為之例也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0039",
+      "sha256": "748b233cd2566c82115aa5bd00a4f50bbed7fe2dc64d797db94e333c534b5d9e"
+    },
+    {
+      "section": "占卜克應之訣",
+      "text": "克應者，所謂克期應驗也。占卜之道，無此訣，則吉凶成敗之事不知應於何時。故克應為卦之切要也。然克則最難，有以數而克之者，有以理而克之者，皆要論也。以數而刻期，必詳其理，如算屋宅之初創，男女之始婚，墳之方葬，器物之新置，俱以年月日時加事物之數而起卦。卦成，則於體用互變之中，視全卦之數，以為約定之期，審其事端之遲速而刻之，如屋宅墳墓永久者也。屋宅則以全卦之數刻其期。如屋宅之終應，蓋屋宅有朽壞之期也。墳墓亦有損壞，然占墓但占吉凶，不計成敗也。男女之婚，遠亦不過數年。年內之事，全卦之數可決，又不如屋宅之久也。然婚姻亦不過卜其吉凶，不必刻其期也。若吉凶之期，但以生體及比和之年月為吉期，克體之年月為不吉之期也。器物之占，則金石之質終遠，草木之質終不久也。遠者，以全卦之數為年期；近者，以全卦之數為月期。又近者，以全卦為日期也。如置硯，則全卦之數為歲。計筆墨亦可以全卦為歲計。筆墨之小者，以日卦之數可也。此器物刻期之占也。如先天觀梅與牡丹二花，俱旦夕之事，故以卦理推，則不必決其遠日也。如後天老年、少年、雞牛之占，以方卦物卦之數合而計之。老少、雞牛之占，以方卦物卦之數合而計之。老少、雞牛之占，亦只可以日計也。若永遠之占，則以日為月，以月為年矣。占者詳吉，必又尋常之占事刻期，則于全卦中細觀生體之卦為吉，應決期克體之卦為凶。應之期遠，則以年，近則以月，又近則以日也。如問求名則乾為體，看卦中有坤、艮，則斷其辰、戌、丑、未之土月日。蓋乾、兌，金體也。此為吉事生體之應。若問病而乾卦為體，則看卦中有離，又看卦中無坤、艮，及有兇犯，則其體死於巳午火日，此克體為凶事之期也。又若問行人，以生體之日為歸期，無生體比和之日，則歸必遲。若此例者，具難盡載，學者審焉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0040",
+      "sha256": "a5a8caa3a88f58b9ee52e785ee7c13c770ada5a0b5669d3188dada47b513de23"
+    },
+    {
+      "section": "萬物賦",
+      "text": "人稟陰陽，卦分先後。達時務者，近取諸身，遠取諸物。觀物理者，靜則乎地，動則乎天。原夫萬物有數，易數無窮。動靜可知，不出於玄天之外。吉凶必見，莫逃乎爻象之中。未成卦以前，必虛心而求應；既成卦以後，複觀刻應以為斷。聲音言語，傍人讖兆，當遇形影往來，我心指實皆是，及其六爻以定，三天既生，始尋卦象之端，終測刻應之理。是以逢吉兆而終知有喜，見凶識而不免乎凶。故欲知他人家之事，必須憑我耳目之聞見。未成卦而聞見之，乃已生之事。既定卦而觀察之，乃未來之機。或聞何處喧鬧，主有鬥爭；或聽此間笑語，必逢吉慶；見婦啼歎，其家陰小有災；東至軍來，必有官司詞訟；或逢枷鎖而枷鎖臨身；倘遇鞭杖而鞭杖必至。若屠而負肉，此為骨肉有災；倘逢血光，而又恐災於孳畜。師巫樂餌，病患臨門。見詖則有犯家先，逢酒則欠神願。陰人至則女子有厄，陽人至則男子當災。又須八卦中分，不可一例而論。卦吉而爻象又吉，禍患終無；卦凶而識兆又凶，災殃難免。披麻帶孝，必然孝服臨頭；持杖而號，定主號泣滿室。其人憂終是為憂，其人喜還須有喜。故當觀色察形，以為決意斷心。其或鼓樂聲喧，又見酒杯器皿，若不迎婚嫁娶，定須會客宴酣。欲知應在何日，須觀爻象值數。巽五日而坤八日，離三朝而坎六朝。又觀遠近克應，以斷得買之相期。應遠，則全卦相同；應近，而各時同斷。假如天地否卦，上天一而下地八；設若澤火革卦，上兌二而下離三。依此推之，萬無一失。此人物之兆，察之可推也。及其鳥獸之應，仍驗之有准。鵲噪而喜色已動，鴉鳴而禍事將來。牛羊豬犬，日晨不見，金日遇之，六畜有損。木日見豬養豬，必成。庚日見雞鳴，丁日見羊過，此乃凶刃之殺。己日值馬來，壬日豬過，此皆食祿之兆。見吉兆而百事亨通，逢凶讖而諸事阻滯。或若求財問利，須憑克應。以言櫃箱為藏財之用，繩索為穿錢之物。逢金帛寶貨之類，理必有成。遇刀刃劍具之器，損而無益。又看原卦，不可執一。逢財而有財，無財而無益。凡物成器，方系得全，缺損破碎，有之不足。或問婚姻，理亦相似。物團圓，指日而成；物破損，中逢阻折。此又是一家，聞奧理明，萬事昭然。逢柴炭主憂，折麥主悲。米必奇，豆必傷。末與鞋，萬事和諧；棋與藥，與人期約。斧鋸必有修造，糧儲必有遠行。聞禽鳴，謀事虛說。聽鼓聲，交易空虛。拭目潤睫，內有哭泣之事；持刃見血，外有蟲毒之講。克應既明，飲食同斷。見水為飲食酒湯，遇火為煎炮烤炙。見米為一飯之得，提壺為酌杯之禮。水乃魚暇水中物味，土乃牛羊土內菜蔬。姜面為辛味辣羹，刀砧乃董腥美味。此三天之克應，萬物之樞機。能達此者尚其秘之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0041",
+      "sha256": "fe611695e3eb3453ee5608d2d26fa6a8e5be12afca0a74aee076c4dfbe681678"
+    },
+    {
+      "section": "飲食篇",
+      "text": "夫乾之為象也，圓堅而味辛，取象乎卯，為牲之首，為馬為豬，秋得之而食祿盛，夏得之而食祿衰。春為時新之物，水果蔬菜之屬；冬為冷物，隔宿之食。有坎乃江湖海味，有水而蔬果珍羞。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0042",
+      "sha256": "a0bee22d3b19ac2fcec58f392b8443a47d10fe76eb2a04104e9c208b5973acef"
+    },
+    {
+      "section": "飲食篇",
+      "text": "艮為土物同烹，離乃火邊煎炙。秋為蟹，春為馬。凡內必多肉，其味必辛，盛有瓦器，伴有金樽。其於菜也為芹，其於物也帶羽。克生生回，食必鵝鴨。生出克入，野菜無名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0043",
+      "sha256": "5bee9c9ce716192ec964ec0ace040c799093924290e830f5611681513f2be635"
+    },
+    {
+      "section": "飲食篇",
+      "text": "坤其於坤也，遠客至，故人來，所用必瓦器，所食米果之味。靜則梨棗茄芋，動則魚蝦鮮羊。無骨肉脯，殺亦為藏，藏亦為肚腸。遇客必婦人，克此必主口舌。克出生回，乃牲之味；克入生物，乃集物之烹。見乾、兌，細切薄披；見震、巽而新生舊煮，其色黑黃，其味甘甜，水火並之，蒸炊而已。四時皆為米麥之味，必帶麻薑。仔細推詳必有驗也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0044",
+      "sha256": "fcae3a2c693a67dbc3ab3667839519b1dc937d6d88490626f3d4d4da30c9653b"
+    },
+    {
+      "section": "飲食篇",
+      "text": "巽之為卦，主文書柬約之間，講論之際，外客婚姻，故人舊交。或主遠信近期，其色白青，其性曲直，其味酸，其象長。桃李木瓜，齋辣素食，為魚為雞，其豆其面，非濟執而得之，必鋤掘而得之。有乾、兌，食之而致病，有坤，得之非難。炊為炒菜蔬，離為炒茶，帶坎於中，酒湯其食。其無生，半齋半葷。其在艮也，會鄰裏，有貴人。食物不多，適口而已。其桔油菜果蔬，斫伐於山林帶節，虎狗兔鹿，漁捕網羅，米麻面麥。克入集食，克出羊肉。克入口舌，是非陰災，極不可食。其味甘甜，其色玄黃。坎為水象也，水近信至海內，味香有細鱗，或四足。凡曰水族，必可飲食也。或聞簫鼓之聲，或在禮樂之所，其色黑，其味鹹。克出飲酒，回食魚。為豕為目，為耳為血。羹湯物味，酒食水醬。遇離而說文書，逢乾而為海味。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0045",
+      "sha256": "4fb5229b87cb5c42eb816f971f738c04cb7bfa3339b8825e0103568d6496bfce"
+    },
+    {
+      "section": "飲食篇",
+      "text": "震之為卦，木屬也。酒友疏狂，虛輕怪異。大樹之果，園林之蔬，其色青而味酸，其數多，會客少。或有膻臭之氣，或有異香之肴。同離多，主鹽茶；見坎或為鹽醋。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0046",
+      "sha256": "d7672fbbd1a575cb31f13cca0b26f39333ea87684d0a2781ab58d09c35842e90"
+    },
+    {
+      "section": "飲食篇",
+      "text": "離則文書交易，親戚師儒，坐中多禮貌之人，筵上總英才之士。其物乃煎烤炙燒，其間或茶鹽。白日之夕，雖之以燭，春夏之際。凡物帶花，老人莫食。心事不寧，少者宜之。宜講論，即有益。為雞為雉，為蟹為蛇，色赤味苦，性熱而氣香。逢坎而酒請之爭，逢巽則炒菜而已。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0047",
+      "sha256": "9cb2bc0aba4afa5ed48f978eba5153e88307b018992472e759aab8cc9ec17dcc"
+    },
+    {
+      "section": "飲食篇",
+      "text": "兌之為卦，其屬白金，其味辛而色白。或遠客暴至，或近交爭來。凡動物刀砧，凡味必有辛辣，凡包裏醃藏。其於暴也，為菲為菱；其於菜也，為蔥為韭。盛而有腥臭，旺而有羊鵝。坐間有潛越之人，或有歌娼之女。單則必然口舌，重則必然歡喜。生出多食，克出好事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0048",
+      "sha256": "72e8136b33a63d084a69d06d6cc01bf7dd07b732a727ab7436c24894932809e3"
+    },
+    {
+      "section": "飲食篇",
+      "text": "夫算其飲食，必須察其動靜。故動則有，靜則無。以體卦下卦為己卦，上為人卦。下為變為客，互之上為酒，下為食物。取象體之下為食何物，變為客體，下食之不終，生體下吉。互克體之不得食。他人克應亦難食。他人生，他人請，己生體生下，己請人。互受生後不計杯杓。上體受生客不計數。變生互，客有後至者；互生克，有先去者。取其日時，以互卦用矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0049",
+      "sha256": "7208e6ef576531ad08f07bf0501efa37cee2f2bd6f5a88ad6c06270afc68af12"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "觀物戲驗者，雖雲無益於世，學者以此驗數，而知聖人作《易》之靈耳。物之於世，必有數焉。故天圓地方，物之形也；天玄地黃，物之色也；天動地靜，物之性也；天上地下，物之位也；乾剛坤柔，物之體也。故乾之為卦，剛而圓，貴而堅，為金為玉，為赤為圓，為大為首，為上之果物。見兌為毀拆，逢坎而沉溺，見離為煉煆之金，震為有動之物，巽為木果為圓，坤、艮土中之石，得火而成器。兌為劍鋒之銳，秋得而價高，夏得之而衰矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0050",
+      "sha256": "e6ae3474ee2d9eb870ed710e31e4f6dcf6e3613719c10090ca6caa6e7c9310de"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "坤之為卦，其形直而方，其色黑而黃。為文為布，為輿為金。其物象牛，其性惡動。得乾乃可圓可方，可貴可賤。震、巽為長器，離為文章，兌為土中出之金，艮為帶剛之土石也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0051",
+      "sha256": "b28662dd74c10cd6fe39304f0ad0c8e7f718759c6b768bac8a64dc20f3e0d27c"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "震之為卦，其色玄黃而多青，為木為聲，為竹為萑葦，為蕃鮮及生形。上柔下剛，是性震動而可驚。得乾乃為聲價之物，得兌為無用之木，見艮山林間之石，見坎有氣之類，巽為有枝葉，見離為帶花。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0052",
+      "sha256": "e28fc899f3e0cc9dfb293d2f40b14f4cea45e19db741350e550291c86c4a9f37"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "巽之為卦，其色白，其氣香。為草木，為剛為柔。見離為文書，見兌、乾為不用，乃遇金刀之物。坤、艮為草木之類，坎、兌為可食之物。為長為直，並震而春生夏長，草木之果蔬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0053",
+      "sha256": "d7e9d316e3477f16cfba840866ecb1b702cbd676ed5d76c2b31a3f268be20367"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "坎之為卦，其色黑，亦可圓可方物。為柔為腐，內則剛物。得之卑濕之所，多為水中之物。見乾亦圓，見兌亦毀。又乃汙濕，得震、巽而可食；離、水火既濟，假水而出，假火而成。又為滯於物，兌為帶口也。震、巽為帶枝葉，為帶花也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0054",
+      "sha256": "74248ddd96c417bf23b02e64e67db40d4829abcfbbd38ba6ec223cc97b69cddd"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "離之為卦也，其色黃而青，體燥，其性則上剛下柔。為山石之物，土瓦之類，小石於大山，為門途之處。為物見乾而剛，兌而毀折，坤而土塊，巽為草之物，而震為木物類也。坎並為河岸之物，離並為瓦器，震、巽並見籬壁之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0055",
+      "sha256": "34478534a864ea55bf51849b5d4427b0b0fd5607508a2ab9603795287f16831b"
+    },
+    {
+      "section": "觀物玄妙歌訣",
+      "text": "兌之為卦，其色白，其性少柔多剛。為毀折而下，全帶口而圓。見乾先圓後缺，見艮則金石廢器，見震、巽為剝削之物，見坎為水之類。得乾而多剛，得坤而多柔，長於凱撒之內。于水中之類，得柔而成器也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0056",
+      "sha256": "7548e5782c1613c626602d4129aeec2dd5c8268fb5c9ee945c84184acbaf55ec"
+    },
+    {
+      "section": "諸事響應歌",
+      "text": "混沌開闢立人極，吉凶回應尤難避。\n先賢遺下預知音，《皇極》《觀梅》出《周易》。\n玄微浩瀚總無涯，各述繁言人莫記。\n大抵體宜用卦生，旺相謀為終有益。\n比和為吉克為凶，生用亦為凶兆矣。\n問雨天晴無坎兌，亢旱言之終則是。\n天時連雨問晴明，艮離賁卦回應耳。\n乾明坤晦巽多風，震主雷霆定莫疑。\n凡占人事體克用，諸事亨通須有幸。\n比和為妙克為凶，又看其中體卦證。\n乾主公門是老人，坤遇陰人曰土應。\n震為東方或山林，巽亦山林蔬果品。\n坎為北方並水姓，酒貨魚鹽才取定。\n離言文書爐冶利，亦日南方顏色亦。\n艮為東北山林材，兌曰西方喜悅是。\n生體克體亦同方，編記以為諸事應。\n凡問家宅體為主，旺相須知進田土。\n生用須雲耗散財，比和家世安居處。\n克體為凶決斷之，生產以體為其母。\n兩宜生旺不宜衰，奇偶之中察男女。\n乾卦為陽坤為陰，又有來人爻內取。\n陰多生女陽生男，此數分明具易理。\n婚姻生用必難成，比和克用大吉利。\n若問飲食和生體，必知肴饌豐厚喜。\n生用克體飲食難，克用必無比和美。\n坎兌為酒震為魚，八卦推求衰旺取。\n求謀稱意是比和，克用謀為遲可已。\n求名克用名可求，生體比和俱可取。\n求財克用日有財，生體比和俱稱意。\n交易生體及比和，有利必成無後慮。\n出行克用用生體，所至其方多得意。\n坎則乘舟離旱途，乾震動則坤艮止。\n行人克用必來遲，生體比和人即至。\n成遠恒遲升不回，艮阻坎險君須記。\n若去謁人體克用，速可追尋依卦斷。\n相生比和終可尋，兌臨殘缺並井畔。\n離為冶所及南方，坤主方器憑推看。\n疾病最宜體旺相，克用易安藥有效。\n比和凶則有救星，體卦受克為凶兆。\n離宜服熱坎服冷，卦見坤土溫補亨。\n亦把鬼神卦象推，震主嬌怪為狀貌。\n巽為自縊井鎖枷，坤艮落水及血刃。\n凡占公訟用宜克，體卦旺相終得理。\n比和助解最為奇，非止全仗他人力。\n若問墓穴在何地，坤則平陽巽林裏。\n乾宜高葬艮臨山，離近人煙兌興廢。\n比和生體宜葬之，克用尤為大吉利。\n若人臨問聽傍言，笑語雞鳴亦吉美。\n美物是為祥端推，略舉片言通萬類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0057",
+      "sha256": "1fd0f0afb880f18b01793a64cda9abf4fbb37cb68324fc76144a8c017e6008b3"
+    },
+    {
+      "section": "諸卦反對性情",
+      "text": "乾剛坤柔反其義，比卦歡欣困憂慮。\n臨逢百物觀求之，蒙卦難明屯不失。\n大畜其卦福之生，無妄若遇禍之始。\n升者去而不復回，萃者聚而終不去。\n謙卦自尊豫怠人，震則動而艮則止。\n兌主外遇禍之藏，隨前坎後偷安矣。\n剝體消爛複自生，蠱改前非而已矣。\n明夷內朗又逢傷，晉主外明並通理。\n益擬茂盛損象衰，鹹速恒遲渙遠遁。\n同人內親睽外疏，解卦從容蹇難啟。\n離文美麗艮光明，遁退回身姤相遇。\n大有曰眾豐曰多，坎卦履險震卦起。\n需不進兮訟不寧，既濟一定無後慮。\n未濟之卦男之終，歸妹之辭歸之始。\n否遭大往而小來，泰卦大來而小去。\n革去舊故鼎從新，小畜曰寡噬嗑食。\n旅羈其外大過顛，夬卦分明曰快利。\n要將字字考精詳，雜卦性情反對是。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0058",
+      "sha256": "b35050be3f5af44c845dcb9b56bf5fae897a11d00c7f7bc577f87894d2083449"
+    },
+    {
+      "section": "占物類例",
+      "text": "凡看物數，看其成卦，觀其爻辭。如得乾，曰「潛龍勿用」，乃曰不可用之物；「見龍在田」，乃曰田中之物；「或躍在淵」，乃曰水中之物；「亢龍有悔」，乃廢物也。如得坤之「直、方、大」，乃曰直而方大之器物：「括囊無咎」，乃曰包裹之物；「黃裳元吉」，乃曰黃色衣服之物；「其血玄黃」，乃石物或逢石而破；「困于株林」，乃曰木物。又言爻辭，不言物類，而不能決者，須以八卦所屬之象察之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0059",
+      "sha256": "b0c8dc4218f6db44e12e6f003614e1ab29b1b38a3aef4467fb09b6fc5fcee427"
+    },
+    {
+      "section": "占物類例",
+      "text": "又訣，體用斷物之妙，生克制化之妙，於諸訣中此極為美驗。其所以生體者，為可食之物；克體者，為可近人之穢物。體生者，為不成之器；體克者，為破碎損折之物；比和者，乃有用成器之物，又生體象者為貴物，克體象者為賤物，所泄為廢物也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0060",
+      "sha256": "db645696e90019523ce3a96ef1c7cc8c50f76ae8e880d4945ec752c38a16598b"
+    },
+    {
+      "section": "占物類例",
+      "text": "又訣，凡算此數，以體卦為主，看其剛柔。用卦看其有用無用。體生方圓曲直，可作可用，如用生體，乃可食。用變互卦，看其色與數目。此互卦決其物之數目也。如互見乾、兌，決為一二之數。互見艮、坤，為七八之數也。但互卦重乾、重艮、重坤、重坎、重離之屬，皆是兩件。物乘旺，物數多，衰而物少。離為中虛之物，或空手無物。又決物之數者，如互艮卦，先天七數，後天亦不出八數之外。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0061",
+      "sha256": "349f6c89cacc2ce96a5498637ed0118d994dab8dd51aa1c703c2cd8fc7369153"
+    },
+    {
+      "section": "物數為體訣",
+      "text": "凡算物數者，不但以體卦為體，凡卦之多者，皆可為體。如乾金多，以金為體，則多剛；坤多以土為體，多柔。乾卦體卦乾而互又是乾。固曰：金為體而剛矣，便是圓健剛硬之物。非金非石，此為體矣。觀物有體互變卦，並無生旺之氣者，為不入五行物。觀物觀爻，如八卦中陽爻多，乃多剛之物；陰爻多，乃多柔之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0062",
+      "sha256": "eba1d3b0f75e3113b53132265a2c4d77d6462d51c812a60594f6297f06648553"
+    },
+    {
+      "section": "物數為體訣",
+      "text": "又訣，觀物變在五六爻，多是能飛動之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0063",
+      "sha256": "5ab61f36dc4b3c92268c6b6be4955815d1fedd1aeb21393d58db8d9d19e9d30d"
+    },
+    {
+      "section": "觀物看變爻為主",
+      "text": "凡觀物，以變卦為主，應用之應驗也。如得乾，初爻變為巽，金刀削過之木物。二爻動，變為離，乃火中鍛煉之金。三爻動，變為兌，乃毀折五金之器，雖圓而破處多也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0064",
+      "sha256": "d699e9a7cbde48a632417da069009b4b13c24d79b33f15a6decf1b280b7c5de0"
+    },
+    {
+      "section": "觀物克應法",
+      "text": "凡算物之成敗，又看體卦克應如何。成卦未決之際，有見圓物相遇，即斷圓物。見有負土者過，即斷為土中之物。見剛健之物，即言是剛健之物。見有柔腐之物，即言是柔腐之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0065",
+      "sha256": "f08900dac35cd204da0f78431efe61d9957ef62ff895e55932290facb54e59fa"
+    },
+    {
+      "section": "觀物趣時訣",
+      "text": "凡算物，趣時察理，無有不驗。以春得震、離為花，夏得震為有聲之物，秋得兌為毀折成器之物，冬得坤為無用土物也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0066",
+      "sha256": "815f7cbbe4c702168cfc29b47b6894daa4370646d0fd9f03282d714864fbb38c"
+    },
+    {
+      "section": "觀物用易例",
+      "text": "有人以籠盛物者，算得地天泰之初變升，互見震、兌，曰此必是草木類而生土中也。色青根黃，當連根之草木也。蓋爻辭曰：「拔茅茹，以其彙。」乃曰：此乃幹根之草木也，視之乃草木連根，新采於土中也。互震為清色，兌為黃根也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0067",
+      "sha256": "070f8c6bb02dfda406730f8a1f5b2044ba8d0e4fe3db4dc49f287ea94cce89c1"
+    },
+    {
+      "section": "觀物用易例",
+      "text": "又有以鍾覆物者，令占之，得火風鼎之雷風恒。乃曰：此有聲價氣勢之物，雖圓而今毀缺矣。其色白而可用。蓋其辭曰：「鼎玉鉉，大吉。」互見乾、兌，雖圓面毀也。開視之，乃玉絛環，果破矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0068",
+      "sha256": "200d17286e00b6a3a1c996b560fd839785223a737dbd90826ef11266bbfd9de3"
+    },
+    {
+      "section": "萬物戲驗",
+      "text": "凡猜手中物，乾金為圓白之物。其色白，其性剛，為寶貨之物，有氣為無價物。坎為黑色，性柔，近水之物。又艮為土中之物，瓦石之類，有氣為成器之物，其色黃。逢兌克，無氣，折傷之物。又巽、震為竹木，有氣為有用之物，為可食之物；無氣為竹木之屬。遇兌之屬可食，當時之果物，色青。有氣柔，無氣剛。震、巽遇坎為汙濕物，或有氣；如無氣，為爛朽之木。離色亦，性柔，有水有木，而火焚之，必炭之類。有氣，為價值可貨之物。坤為土中之物，色黃而性溫。兌為毀折之物，帶口。凡占物，以春震巽、夏離、秋乾兌、冬坎皆當以為可用之物，成器之物。否則為無用之物。值六虛衝破，則必無物而空手矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0069",
+      "sha256": "756dee1b949e67cab285a96f3409736eacb0d52aeb7894e4994d52b2e86497fd"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "凡占卜，以體卦為主，用為事應，固然矣。但體卦既為主，用互卦相應，參看禍福。然今日得此一卦，體用互變中決之如此；明日複得此卦，體用一般，豈可又複以此決之？然則若何而可？必得十應之說而後可也。蓋十應之說，有正應、互應、變應、日應、刻應、外應、天時應、地理應、人事應、所謂十應也。夫正應者，正卦之應也。互應者，互卦之應也。變應者，變卦之應也。此二卦之訣也。占者俱用之以斷吉凶矣。至於諸應之理，人有不知者，故必得諸用之訣，卦無不驗。不得其訣而占卜吉凶，或驗或不驗矣。得此訣者，宜秘之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0070",
+      "sha256": "90e86c59f169526bf7dd0643de85c904109d7651dcafc8dca719b04c453b4367"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "正應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0071",
+      "sha256": "6c1f6ac7b0b3d6fd6dc750acbb6afc9975d0166018bd738f4673b6389161edfb"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "正應者，即體用二卦決吉凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0072",
+      "sha256": "957f3ac6406c25cdc6121ca2190c380b140643c78fb6a72338a45164b5725f0b"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "互應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0073",
+      "sha256": "14a99347ef0f88efe67b394d6faca1e865558d335640f66d285803000a999635"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "互應者，即互卦中決吉凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0074",
+      "sha256": "2ae45ae9847a3564df9cc9ab5b798ade273e2ea9f061f7c4bbe51a45dfa52f18"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "變應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0075",
+      "sha256": "693434526f50fac4734446d3677f810140f6d730c4f68a52dbab6b9bdb2655cc"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "變應者，即變卦中決吉凶",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0076",
+      "sha256": "659e3fdebc028e5e1b4d3c106c30a59b60f711196dc9ce6265269cf7a0c287f1"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "方應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0077",
+      "sha256": "5c978ce7b1c090de7deba0a994683ad450bf51b622c6c01f83537704d6a8a3dd"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "方應者，以體為主，看來占之人在何方位上，即看其所坐立之方位。宜生體卦，又宜與體比和，則吉；如克體卦則凶，如體卦生之，亦不吉矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0078",
+      "sha256": "a68c8694990b7199a224557e1c7db96a50e2b09689bc1db6deda39d9bf11d502"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "日應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0079",
+      "sha256": "a7d8aa11afe4920aefd2729e9876b1c099a8bdaab2165e7903540a5d0796d16a"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "日應者，以體卦為主，看所占屬何卦，及體卦與本日衰旺如何。蓋卦宜生體，宜比和；不宜克體，亦不宜體卦生之也。本日所屬卦氣如寅卯木、巳午火、申酉金、亥子水、辰戌丑未土也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0080",
+      "sha256": "1e97562cac1287af48fd2db5bc2d90f52b09509dbab69f1108fd71c5df7d17b3"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "刻應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0081",
+      "sha256": "8141b38fe2be347f9daf501ca19e15a4e143f8d81d2cb6fb075b75ac74a1d6f3"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "刻應者，即三要之訣也。占卜之頃，隨所聞所見吉凶之兆以為吉凶之應。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0082",
+      "sha256": "a7638c59c06601c0fb4552f1f4261c09533a888befb73806fa648fa7da7b37ad"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "外應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0083",
+      "sha256": "9ca47f377949cc063fe4fc58e26890ac346ae1a73229d72802b9a599265ea256"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "外應者，外卦之應也。占卜之際，偶見外物之來者，即看其物屬何卦。如火得離、水得坎之類。如見老人、馬、金玉圓物，得乾。見老婦、牛、土瓦物，得坤之類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0084",
+      "sha256": "806e9ff6fc102606e9f74aa6a871432988b822d0dc03e926f23477bf6a34c869"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "又如見此者，為外應之卦。並看其卦與體卦生克比和之理，以決吉凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0085",
+      "sha256": "10782aa2e5a79acfb725ae1a41190f50c9f11d313bfbd1781874538aa694eb4a"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "天時應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0086",
+      "sha256": "e8b2d5e951de635a3903e16afdb19f920cbf2ad00eaf2b598d5315f3e0378ebf"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "天時之應，占卜之際，晴明為離，雨雪為坎，風為巽，雷為震。如離為體，宜晴。坎為體，宜雨。巽為體，宜風。震為體，宜雷。火見雷為比和，參之生克，以定吉凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0087",
+      "sha256": "9d6657f3391bf940e52681ea5efb4ea81cea1a844387de7df86543427c19649e"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "地理應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0088",
+      "sha256": "9482d64d09621a3df80b3fc4f4ffc5b6beb446ac05e2f501d48de08c68d768ad"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "地理之應，占卜之時，在竹林間，為震、巽之地；在江河溪澗池沼之上為坎；在五金之處為乾、兌之鄉；在窯灶爐火之所為離；在土瓦之所為坤、艮，並為體卦，論生克比和之理以訣之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0089",
+      "sha256": "3e1618b4c3c1b4765ab274ad4f67dce0476a6c6d87be1023eae7df081bb8ec70"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "人事應",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0090",
+      "sha256": "e86780e587fc78f564c0ed3702ed12fe8101666493cf161f502aeeb8238a9092"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "人事之應，即三要中人事之克應也。蓋占卜之際，偶遇人事之吉為吉，偶遇人事之凶為凶。如聞笑語，主有吉慶之事；遇哭泣，主有悲愁之事，又以人事之屬於卦者論之：老人為乾，老婦為坤，少男為艮，少女為兌。並看此人事之卦與體卦生克比和，以決吉凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0091",
+      "sha256": "fb2d10930c04fc9f605f211c29c29996fa8b2d7afb9e9c64bfb0b8cde943edf9"
+    },
+    {
+      "section": "占卜十應訣",
+      "text": "此十應之理，凡占卜之際，耳聞目見以決吉凶，並以體卦為主，而詳見生克比和之理。如占病症，互變中俱有克體之卦，而本卦中又無生體之卦者，斷不吉也。又看體衰旺，若體旺則庶幾有望，體衰則無複生理。如是，又看諸應有生體者，險中有救；有克體則不可望安矣。其餘占卜，並以類推之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0092",
+      "sha256": "82eff311830257987fa291bc992108232b448c0d24dbc76077b222c779eff637"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "一行：問官事，屬木，旺木有文書；屬火，有官司；財金，財有至。有客至問病，人火潮熱，金水米漿。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0093",
+      "sha256": "4c9c2868708ffee2b71077122c1f689e1d1927f552868e36175e4060919d7a4f"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "二立：官司不發，木土無金，大小口舌，病不凶。財水土，有貴人至，文書發動。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0094",
+      "sha256": "6883bae3ed6d6ac142fb9697cf624c5bfa8d667cde435c1883e176bff1e56c12"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "三坐：問官司，有訟不成。主財屬火，主和勸。金敗財，木得財。病卻月，又有犯林木神，有禍不凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0095",
+      "sha256": "1617ced0b67371a8d842adc466cb07b6c2774b5cb8dc19ebce2737427e94df52"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "四臥：問官司側睡者，欲起必作，主陰人事。金有財，火事發破財。土水無財難就。土木有財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0096",
+      "sha256": "e0121b6711037a476a161bfefc0ec780c6439532161f62f755d96e13704f525b"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "五擔：官司被人自驚，與面說人成口舌。問信見水土得財。金木客至。病有犯，四肢沉重不能起。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0097",
+      "sha256": "ad8b8923f15a601e0485e650f11fd66554b5a4c509b16aa1d72ed68f1695f904"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "六券：官司不成，火有財，水土有災。心下不安，有貴人，主口舌，不凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0098",
+      "sha256": "efbe9632dd8b918acd615b8237d34e29682e15fd0aba08553eb46175926033b9"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "七裹頭：官司立見口舌。火，大官司；水土比和。財無，小人分上。口舌嘔氣。病主陰人小口災。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0099",
+      "sha256": "f175abd7f7e75bd01e5a4ceb01f3ea82e7198d5a0b1ce645951b470dce5d4e3e"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "八跣足：官司破財，外人欺，心下驚慌。火主破財，土不凶。病有孝至。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0100",
+      "sha256": "c0034acb9651d0d2111d6022bf34b1770dae6d7d0df974b1fd22f0e672ad1800"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "九喜：官司自己無主，外人有請，勸官司。有酒肉，別人事。口舌紛紛，求財不許。不凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0101",
+      "sha256": "53f0af5579289e8f3758c8ca0bfc8bc8268f4676637c092308f6a4828def2581"
+    },
+    {
+      "section": "論事十大應（論日辰秘文）",
+      "text": "十怒：官司主外人欺淩，不見官，主破財。倚人脫卸，火驚病凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0102",
+      "sha256": "b9832e49ca5ca15d46bc5dc6dda5416b727a86320c473f6cff236a40d02c3152"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "乾為天、為圓、為君、為父、為首、為金、為玉、為寒、為冰、為大赤、為良馬、為老馬、為瘠馬、為駁馬、為木果。《九家易》雲：「為龍、為直、為衣、為言。」如姤、遁、否、履、無妄、訟、同人七卦，乾在上，剛在外。如大有、泰、大壯、夬、需、大畜、小畜七卦，乾在下，剛於內。乾坤剛柔，四發變八，惟六動隨時有異，不拘於一。乾性溫而剛直，位西北，不居子午而居戌亥。附于禮王，則為剛善，為明；不附于禮法，則為剛惡，為兇暴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0103",
+      "sha256": "32fe18156f8e522927ac74bdcc8d830df872c07b28d7bc132abe63ae8b584811"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "天文：雪、老陽。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0104",
+      "sha256": "45cd342a70b2d478afb548462848a473baae8e4c28f6613e75945c35c6706d03"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "天气：寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0105",
+      "sha256": "3124d90cf8e316ed8f6c21e1cc70798fdbb80d5451fe120d5bc213bfe6029038"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "凶盗：军弓手、贼、强横、停尸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0106",
+      "sha256": "076b64d4a0cb4567c80078504a48501e08591592def08909b6573c006aebcaa9"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "官贵：朝贵、盐司、大守、座主。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0107",
+      "sha256": "bf88fd9c41ab62a38c1738a3a4354401220d2eab9c625b5ab57ec15c41e128c9"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "身体：顶、面颊、頄辅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0108",
+      "sha256": "870def9152fb235abbb92eaf15eb8a98db025e401d6f58e6cfae9d4f63ce9558"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "性情：刚健正直、尊重、好高、战吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0109",
+      "sha256": "5a748d91fd70756319102ffb4950d33235601523540ff6e42d96b34e508fcc20"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "声音：正、清、商。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0110",
+      "sha256": "804bc57c477551c7f10fd96e995892f288709c1e3fbd15aba85830c687f270d6"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "信音：朝信改、召命、荐举、关升、义亲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0111",
+      "sha256": "fb1311d0b898b6097dba3d8c747b20037e62dd9cdac516afb939b0ee4320996f"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "事意：上卦为形象之家，下卦为强横之辈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0112",
+      "sha256": "0cde585aaeb33e760a41b7d9a6034a16bf5bdd35b107cfdbabb38e5c50aa9f9f"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "疾病：于太阳脉弦紧，天威所罚、上壅目熟、寒热。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0113",
+      "sha256": "ff23143e13d4503582b91caeff9819aea755c225155c75e0038279b783159f10"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "附药：丸子。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0114",
+      "sha256": "c6db7e750ed7919e2f755fab1ef10f9cd53b20259e730e304cab7f1962858a49"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "坤為地、為母、為布、為釜、為吝嗇、為均、為子母牛、為大輿、為文、為眾、為柄、其於地也為黑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0115",
+      "sha256": "d619fe83899a9222804b1c97dc2c623da3606ea0019697bcb402015c48681e66"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "震為雷、為龍、為玄黃、為旉、為大塗、為長子、為決躁、為蒼筤竹、為萑葦、其於馬也、為善鳴、為＄足、為作足、為的顙、其於稼也、為反生、其究為健、為蕃鮮。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0116",
+      "sha256": "01df2c1df5c3b4df4af11e4488e47370a4ec657d744298f2093c32982ad56f45"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "巽為木、為風、為長女、為繩直、為工、為白、為長、為高、為進退、為不果、為臭、其於人也、為寡發、為廣顙、為多白眼、為近利市三位、其究為躁卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0117",
+      "sha256": "abd8b41cb0641288f4fa6039e22c851b76372aa33c4a2bef322cd22ea26e9ea3"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "坎為水、為溝瀆、為隱伏、為矯輮、為弓輪、其於人也、為加憂、為心病、為耳痛、為血卦、為赤、其於馬也、為美脊、為亟心、為下首、為薄蹄、為曳、其於輿也、為多眚、為通、為月、為盜、其於木也、為堅多心。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0118",
+      "sha256": "7d2fb15d42c99cafc293d9d0166d44fa4b7fe06fd057fd67421404935b6f0535"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "離為火、為日、為電、為中女、為甲胄、為戈兵、其於人也、為大腹、為乾卦、為鱉、為蟹、為蠃、為蚌、為龜、其於木也、為科上槁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0119",
+      "sha256": "af1c50ccc3ac02792b6c7b918e87e091def68e97a5e2658383f09ec22151dadc"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "艮為山、為徑路、為小石、為門闕、為果蓏、為閽寺、為指、為狗、為鼠、為黔喙之屬、其於木也、為",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0120",
+      "sha256": "4dee924f4c4a93d08f363d7e202a6ca13588d7ec15b24c99b2bd15777514bbf9"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "堅多節。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0121",
+      "sha256": "942c83330ffeed47cce709d8154871ab910462735e79a9e355ebb2fe64df164d"
+    },
+    {
+      "section": "卦應（與前八卦類象，大同小異，觀者可以互參）",
+      "text": "兌為澤、為少女、為巫、為口舌、為毀折、為附決、其於地也、為剛鹵、為妾、為羊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c003:p0122",
+      "sha256": "3be661d60cb3a69f0b96fcd6365f3d5535ec3ccfcc8e5d2a0a68e329f0ffe9b5"
+    }
+  ]
+}

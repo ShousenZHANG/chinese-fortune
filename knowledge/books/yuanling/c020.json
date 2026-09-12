@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c020",
+  "title": "卷二十",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c020.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷二十",
+      "text": "占烧丹成否\n其法以坎水为真铅，休门主之；以震为真汞，伤门主之；离为真砂，景门主之；兑为真金，惊门主之。其余艮土、巽木为杂气。又以将加本时子为真铅，午为真砂，卯为真汞，酉为真金，其寅申巳亥为杂气。贵神以六合为真铅，朱雀为真砂，太阴为真金，玄武为真汞，其余天后、白虎、腾蛇、青龙为杂气。又天蓬为真铅，天冲为真汞，天英为真砂，天柱为真金，其余心任辅英俱为杂气。凡此俱会中五宫，单看地盘，得丙丁二火，天盘得壬癸之水，水火既济，定可成丹。推得真金铅砂汞者，成；内杂气者不成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c020:p0001",
+      "sha256": "a73c285e04c767243cc91b61db315ea1fdf470d9d41aa228ffe9723f1b93192d"
+    },
+    {
+      "section": "卷二十",
+      "text": "占祷祀\n当看天禽所得在下，得风、云、龙、鬼、神五遁方得效验。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c020:p0002",
+      "sha256": "e6241bc8003c87852b033af24ed642c7f24283f48ff9d4b729f3fc9e7f496ca2"
+    },
+    {
+      "section": "卷二十",
+      "text": "占饮食\n此时天上奇仪门生合地下星，或比和而得旺气，饮食极丰；诸星门若克宫，主饮食不丰；逢衰气主见而不得食；若地盘星仪克天盘，亦无。若水星休门生宫，有饮食酒肴；又如土星生宫，有饭并饼果亦不定；如金门生宫，有饮食重重；如火星生宫，饮食如常。若遇水星生宫，应鱼蟹海味、水中之味、羹汤羹味；如火星生宫，主带壳梗物，苦味或煎炒雉鸡、腌饼、酥馒头、尖物；如木星生宫，有新味、佳味、时果、腥酸美味；如金星生宫，主多骨之味、豕犬鹅鸭鸡鸟肺蹄之物；如土星生宫，有野兽，或虎、山羊、牛肉、山药、土物味甘、肚子；如火土乘旺气，主鹿獐野兽之物。大抵旺气之主饮食多餐，衰而逢克食必艰难。若逢凶格、门迫，因门生非；若主逢旺，口舌自散；若衰墓，遭伤惊非不免。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c020:p0003",
+      "sha256": "222b7b5c43adf12c49116a941cab2b93b71db2f90229eaa0475da183f924298c"
+    },
+    {
+      "section": "卷二十",
+      "text": "占牛羊马骡牲畜\n以天芮为病神，以艮八宫为牛，丑者牛也；坤二宫为羊，未者羊也；离九宫为马，午者马也，骡驴亦九宫主之。六畜等类，各以其方占之。如牛病看艮八宫，得生门者生，遇死门又凶格及天盘星宿来克者，必死。即得他门，而有凶格被克，亦主缠绵甚重，尚不致死。以天芮休囚之月为愈为期，以内之干为日期而定之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c020:p0004",
+      "sha256": "4192ebe24b7b828dd84c29f973a7d54ecf82b303f2fd987facbb69c560e4f828"
+    },
+    {
+      "section": "卷二十",
+      "text": "占渔猎\n以伤门主之。甲戌己为犬，甲午辛为鹰，甲寅癸为网。如天盘星克伤门宫，得物；伤门克天盘星，不得物；天盘生伤门宫，得物走脱；伤门宫生天盘星，易得。上盘有甲戌，用犬；见甲午，用鹰；见甲寅，用网。若地盘休囚，天盘生旺，获物必多，反此不获。捕鱼用甲寅癸，落宫克伤门则亦易得。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c020:p0005",
+      "sha256": "df1eff6c2a6d8baeaa456da8b0058314f7979fbf5e7cd108d5a689e06f0e7a5a"
+    },
+    {
+      "section": "卷二十",
+      "text": "又法占渔猎\n此时遇伤、惊、死门，合乙、丙、丁、六仪加临生旺有气之宫，如地盘逢墓衰宫，或上克下干、门克宫，必获多兽；若天盘诸星或在墓绝，宫克门，兽难见而必不得；若门克宫或宫生门，或干支相合、相比，则无所得。若下干克上干，宫见门星加于死绝之宫，必被兽所伤，切不可出猎。所得之兽被主克者，如所克寅为虎、亥猪、戌犬、丑牛、未羊牛獐鹿、酉鸡之类。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c020:p0006",
+      "sha256": "f4c4a96f750e5f26e52631e5556411ad00fa4b0ad1a17d4851d2a2fa1a3719b6"
+    }
+  ]
+}

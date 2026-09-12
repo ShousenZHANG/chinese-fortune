@@ -19,7 +19,7 @@ from liuren_cast import (  # noqa: E402
     fa_yong,
     fa_yong_yao_ke,
 )
-from qimen_cast import earth_plate, men_plate  # noqa: E402
+from qimen_cast import build_palaces, earth_plate, men_plate, source_core  # noqa: E402
 from qimen_dingju import (  # noqa: E402
     determine_ju,
     futou,
@@ -107,9 +107,48 @@ def test_qimen_end_to_end_original_pattern_and_no_direction_score():
     assert got["ganzhi"]["hour"] == "丙辰"
     assert (got["jieqi"], got["san_yuan"], got["ju_number"]) == ("芒种", "下元", 9)
     assert (got["zhi_fu_origin_palace"], got["zhi_shi_palace"], got["zhi_shi_men"]) == (5, 7, "死门")
+    assert (got['zhi_fu_star'], got['zhi_fu_palace']) == ('天禽', 7)
+    assert got['method_profile']['plate_method'] == 'yuanling-core'
+    assert got['completion_status'] == 'partial'
+    assert got['palaces'][6]['star'] == '天禽'
+    assert got['palaces'][4]['star'] is None
+    assert sum(p['star'] is not None for p in got['palaces']) == 1
     assert "auspicious_directions" not in got and "inauspicious_directions" not in got
     assert all(p["interpretation_status"] == "trigger_only_pending_rule_verification"
                for p in got["patterns"])
+
+
+@pytest.mark.parametrize('dun,number,hour,star,palace,door,door_palace', [
+    ('阳遁', 9, '丙辰', '天禽', 7, '死门', 7),  # 卷一：天禽加兑。
+    ('阴遁', 8, '辛未', '天任', 5, '生门', 1),  # 卷一：天任加中。
+    ('阴遁', 2, '丙子', '天蓬', 4, '休门', 8),  # 卷八会试：天蓬值符四宫。
+    ('阳遁', 8, '乙未', '天芮', 7, '死门', 3),  # 卷八殿试：芮七死三。
+])
+def test_source_anchor_cross_chapter_examples(dun, number, hour, star, palace, door, door_palace):
+    core = source_core(dun, number, hour)
+    assert (core['zhi_fu']['star'], core['zhi_fu']['palace']) == (star, palace)
+    assert (core['zhi_shi']['door'], core['zhi_shi']['palace']) == (door, door_palace)
+
+
+def test_unresolved_centres_cannot_borrow_a_door_or_destination_silently():
+    core = source_core('阴遁', 1, '辛酉')  # 甲寅癸在五；阴遁借门异文未决。
+    assert core['zhi_shi']['door'] is None
+    assert core['zhi_shi']['unresolved']
+    core = source_core('阳遁', 4, '乙丑')
+    assert core['zhi_shi']['raw_palace'] == 5
+    assert core['zhi_shi']['palace'] is None
+    assert core['zhi_shi']['door'] == '杜门'
+    assert source_core('阳遁', 1, '甲子')['zhi_fu']['palace'] == 1
+
+
+def test_compatibility_plate_requires_explicit_choice_and_keeps_source_result_separate():
+    got = run('qimen_cast.py', '--date', '2026-06-18', '--time', '08:00',
+              '--target-timezone', 'Asia/Shanghai', '--plate-method', 'rotating-compat')
+    assert got['zhi_fu_star'] == '天芮'
+    assert got['source_core']['zhi_fu']['star'] == '天禽'
+    assert got['method_profile']['plate_method'] == 'rotating-compat'
+    assert all('天芮+天禽' not in p['notes'] for p in got['palaces'])
+    assert len(build_palaces({}, {}, {}, {7: '天禽'}, {})) == 9
 
 
 def test_legacy_days_is_explicit_and_only_covers_dingju():

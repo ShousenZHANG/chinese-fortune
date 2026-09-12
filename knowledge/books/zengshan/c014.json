@@ -1,0 +1,67 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c014",
+  "title": "動靜生克章第十四",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F14&oldid=2100320",
+  "revision": "2100320",
+  "source_timestamp": "2022-01-20T03:16:49Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c014.wiki",
+  "raw_sha256": "504e79efe8093e13b40e6b9a0a55ff662e6094c70e7f3cb44d0e367251c330c8",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "動靜生克章第十四",
+      "text": "六爻安靜旺相之爻，可以生得休囚之爻，亦可以克得休囚之爻，蓋旺相者有力之人也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0001",
+      "sha256": "711dc6a1e52d67dcea5415ab55b1210863c32711e9415d48922f34a5be82de5a"
+    },
+    {
+      "section": "動靜生克章第十四",
+      "text": "例：令春天寅卯月占得坤卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0002",
+      "sha256": "f7f1d894d4a3156b281a7fef1d2bb9b0bb988e4ea1c18cde10e0c8b1c15df45f"
+    },
+    {
+      "section": "動靜生克章第十四",
+      "text": "子孫酉金⚋世\n妻財亥水⚋\n兄弟丑土⚋\n官鬼卯木⚋應\n父母巳火⚋\n兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0003",
+      "sha256": "68027f0549386ce89b29bb4b0f3c8589a4b729084d03544c28c531cd5c36291d"
+    },
+    {
+      "section": "動靜生克章第十四",
+      "text": "如占父母巳火爲父母，三爻之卯木當春旺相能生巳火，父母旣逢春，木相生，父旺能克子孫。如占子孫，子孫衰矣。春木當令能克丑未，二土臨兄弟，如占兄弟謂之休囚無气，餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0004",
+      "sha256": "8cdc0b27d0fc2206db57ea7a0fc3f3dad7eb00b7fecdce3671e58a129d033fec"
+    },
+    {
+      "section": "動靜生克章第十四",
+      "text": "例：令春占得兌卦變歸妹卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0005",
+      "sha256": "959fc78d245066546e9bbf5d1571704c6aeb180b5152a865b44aac1c39f9f74b"
+    },
+    {
+      "section": "動靜生克章第十四",
+      "text": "父母未土⚋世　父母戌土⚋\n兄弟酉金○　　兄弟申金⚋\n子孫亥水⚊　　官鬼午火⚊\n父母丑土⚋應　父母丑土⚋\n妻財卯木⚊　　妻財卯木⚊\n官鬼巳火⚊　　官鬼巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0006",
+      "sha256": "d915c17e88ca3aab9e7cdeb2b77a422a60d12807475e0e5b418f5c22dc4cb4a3"
+    },
+    {
+      "section": "動靜生克章第十四",
+      "text": "酉金發動𨿽則休囚，動而能克旺相之卯木，卯木當令能克丑未二土，今旣木被金傷，亦難克土，餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c014:p0007",
+      "sha256": "0ec0b6fdbd8e443a06acc9ba9110822c231740692ff040ce9784668fcc5cfde2"
+    }
+  ]
+}

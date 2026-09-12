@@ -1,0 +1,1336 @@
+{
+  "book_id": "liuren",
+  "chapter_id": "c001",
+  "title": "卷01",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B701&oldid=763659",
+  "revision": "763659",
+  "source_timestamp": "2016-10-24T18:36:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/liuren/c001.wiki",
+  "raw_sha256": "599e81da7496c7564dfbd10f99b9e759faf058b94ac0e2052e56d4b1c846924e",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "liuren:c001:p0007",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0010",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0014",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0041",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0050",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0117",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0149",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0152",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "liuren:c001:p0156",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷01",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "六壬大全巻一",
+      "text": "入手法",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0002",
+      "sha256": "efbff3614cfa7b85b32bb562119a49d784550961b4b2cf60c1c008fcc420db05"
+    },
+    {
+      "section": "十干寄宫",
+      "text": "甲課寅兮乙課辰丙戊課己不須論丁巳課未庚申土辛戌壬亥是其真癸課原来丑宮坐分眀不用四正神",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0003",
+      "sha256": "94fed5f190de19cc8b08c6a8e3653c4004c661a9c2c063a74333de133d3fbe8c"
+    },
+    {
+      "section": "一賊尅法",
+      "text": "〔注文〕一下尅上曰重審一上尅下曰元首〔/注文〕\n取課先從下賊呼如無下賊上尅初初傳之上名中次中上加臨是末居三傳既定天盤将此是入式法第一",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0004",
+      "sha256": "36496f652da61bcc256c3f726ad329181af3debaa19dd55885d2ccf9257fae62"
+    },
+    {
+      "section": "二比用法",
+      "text": "〔注文〕即知一也〔/注文〕\n下賊或三二四侵若逢上尅亦同云常将天日比神用陽日用陽隂用隂若或俱比俱不比立法别有渉害陳",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0005",
+      "sha256": "6a374321ab0784c454aa5a2eb49147d78438fda9e39171e36e9d10ac029fa85b"
+    },
+    {
+      "section": "三渉害法",
+      "text": "渉害行来本家止路逢多尅為用取孟深仲淺季當休復等柔辰剛日宜",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0006",
+      "sha256": "2b8d4c64f8de5846a73c66938c7dbfa866331a9fcd7e6a639e13a26c53662479"
+    },
+    {
+      "section": "四遙尅法",
+      "text": "〔注文〕神遙尅日曰蒿矢日遙尅神曰彈射〔/注文〕\n四課無尅號為遥日與神兮逓互招先取神遥尅其日如無方取日来遥或有日尅乎兩神復有兩神来尅日擇與日干比者用陽日用陽隂用隂\n五〔字形SK3100：未编码〕星法\n無遙無尅昴星窮陽仰隂俯酉位中〔注文〕論初𫝊也〔/注文〕剛日先辰而後日柔日先日而後辰〔注文〕論中末也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0007",
+      "sha256": "aabb16f045ac4411dc5e1cd5aae3ed895cca739a2dd4b3549fce460772a5831c"
+    },
+    {
+      "section": "六别責法",
+      "text": "〔注文〕戊辰戊午丙辰三剛日各一課辛未二課辛丑二課丁酉　辛酉各一課〔/注文〕\n四課不全三課備無遥無尅别責例剛日干合上頭神柔日支前三合取皆以天上作初𫝊隂陽中末干中寄剛三柔六共九課此課先賢俱隠秘戊午戊辰與丙辰干上皆午是為親辛丑辛未各二日下上皆是丑未真丁酉當為己丁是辛酉原来是酉辛",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0008",
+      "sha256": "6af757b5f61967a5174a8209d5e436b9f813c3a06e7104860bc9ab867678cd99"
+    },
+    {
+      "section": "七八專法",
+      "text": "〔注文〕論尅不論遥〔/注文〕\n兩課無尅號八專陽日日陽順行三〔注文〕連本位數〔/注文〕隂日辰隂逆三位中末總向日上眠",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0009",
+      "sha256": "618e8ae6d892535cf7711f121a2a471c3496946480ad643d1f5ede0409889fc2"
+    },
+    {
+      "section": "八伏吟法",
+      "text": "伏吟有尅還為用無尅剛干柔取辰迤邐刑之作中末〔字形SK2971：未编码〕兹玉厯職其真若也自刑為發用次傳顛倒日辰併〔注文〕陽日用辰隂日用日〔/注文〕次傳更復自刑者冲取末傳不論刑",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0010",
+      "sha256": "60f7feea87261417131e69252a96b6cfca6cb40850f19dbb8044c3e377ec1771"
+    },
+    {
+      "section": "九返吟法",
+      "text": "返吟有尅亦為用無尅别有井欄名若知六日該無尅丑未同干丁巳辛丑日登眀未太乙辰申日未識原因〔注文〕辰上作申日上作未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0011",
+      "sha256": "f43e2dbad8b5e75513d46e226ad1a725839a3c822be09b290b50c7da23e14093"
+    },
+    {
+      "section": "神煞",
+      "text": "嵗神煞\n嵗君　甲見甲之類年中天子之象統攝諸位神煞入占尊長部官之事占官有面君之喜不宜受尅\n太嵗　子年見子之類利仕人不利常人受尅尊長㓙如六月以前見舊年太嵗舊年事七月以後見来年太嵗来年事",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0012",
+      "sha256": "c4c91e5cb6e31ff761370d889c4c034496d8840fb42fad95865d67a64cb2d493"
+    },
+    {
+      "section": "太嵗神煞",
+      "text": "太嵗排輪十二宫嵗破大耗與年冲前五死符併小耗病符後一不離宗後二太隂併弔客後四白虎是㐫神嵗前二辰䘮門㐫前四畜官官符神太嵗前維力士位對冲蠶室有災星奏書後維冲博士五鬼逆行子加辰黄幡只向三合末對冲豹尾不虚云金神之殺随年干納音金位同庚辛三合中冲兩邊干便是伏兵大禍神亥子丑年将軍酉三年一移順仲神",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0013",
+      "sha256": "03a518a33c44077cc50e801be0c054871874fa16a7357ad5c3d31ee77711f4d4"
+    },
+    {
+      "section": "子丑寅夘辰巳午未申酉戌亥",
+      "text": "将軍　酉酉子子子夘夘夘午午午酉〔注文〕占行人用〔/注文〕嵗刑　夘戌己子辰申午丑寅酉未亥\n嵗破　午未申酉戌亥子丑寅夘辰巳〔注文〕即嵗冲也〔/注文〕嵗煞　未辰丑戌未辰丑戌未辰丑戌\n大耗　午未申酉戌亥子丑寅夘辰巳〔注文〕嵗建前破也〔/注文〕小耗　己午未申酉戌亥子丑寅夘辰〔注文〕嵗建前執也〔/注文〕䘮門　嵗前二辰\n弔客　嵗後二辰\n嵗墓　嵗後五位如子年見未\n嵗徳　即嵗君隂年〔字形SK2971：未编码〕陽如已年見甲之例\n嵗合　即甲年見已\n〔注文〕年月三煞〔/注文〕　未辰丑戌未辰丑戌未辰丑戌\n金神　酉巳丑酉己丑酉巳丑酉已丑〔注文〕即破碎〔/注文〕\n嵗宅　嵗前五位如子年見已〔注文〕即小耗〔/注文〕\n病符　嵗後一辰\n嵗虎　嵗後四辰",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0014",
+      "sha256": "6cdc1507452ce61ad6eb60517b61bf18bd06cd23d2dd807f64339480626011df"
+    },
+    {
+      "section": "十天干神煞",
+      "text": "甲乙丙丁戊巳庚辛壬癸\n福星　子丑子子未未丑丑巳巳\n日徳　寅申巳亥巳寅申己亥已\n日禄　寅夘己午己午申酉亥子\n日醫　夘亥丑未己夘亥丑未巳\n直符　己辰夘寅丑午未申酉戌\n儀神　午巳辰夘寅丑未申酉戌\n遊都　丑子寅巳申丑子寅巳申\n天盗　子亥夘申己子亥夘申巳\n天賊　辰午申亥寅辰午申亥寅\n稼穡　丑丑辰辰未未戌戌戌戌\n羊刃　夘辰午未午未酉戌子丑\n天羅　夘巳午申午申酉亥子寅〔注文〕日前一位〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0015",
+      "sha256": "1a05ad9117dd6ee0a4cde7a7f01cc5de3ff8c4eabc52c2bf0a2d6c7983ea2d67"
+    },
+    {
+      "section": "天",
+      "text": "〔注文〕闕〔/注文〕　亥申未丑酉亥申未丑酉\n三竒　乙丙丁\n三竒　甲戊庚\n三竒　辛壬癸\n十二地支神煞",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0016",
+      "sha256": "a54606d39e0f9c16099f89aeb575df1aa5a8950e77a404baa638befe0dbb7499"
+    },
+    {
+      "section": "子丑寅夘辰巳午未申酉戌亥",
+      "text": "支徳　己午未申酉戌亥子丑寅夘辰〔注文〕支前五辰〔/注文〕支馬　寅亥申己寅亥申己寅亥申己\n支刑　夘戌己子辰申午丑寅酉未亥\n支破　酉辰亥午丑申夘戌己子未寅〔注文〕陽日後三辰隂日前三辰〔/注文〕支冲　即對宮\n支害　未子己辰夘寅丑子亥戌酉申\n〔注文〕闕〔/注文〕　　己寅亥申己寅亥申己寅亥申\n支儀　午巳辰夘寅丑未申酉戌亥子\n金神　己丑酉巳丑酉己丑酉巳丑酉\n〔注文〕闕〔/注文〕魂　凢墓神為元武皆是\n馬倒　驛馬前一位\n劫殺灾殺嵗殺知天殺月殺地殺齊亡神将星扳鞍是驛馬六厄華蓋馳",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0017",
+      "sha256": "94504348269f2fb98b0742f400fee9ab9b2cf043c69a040d32456d294e9da2ca"
+    },
+    {
+      "section": "内天罡行十二經絡",
+      "text": "每日寅罡在肺經夘時流入大腸中辰胃已脾午心上未時却入小腸行申在膀胱酉在腎戊在胞絡亥三焦子膽丑肝循環轉晝夜週流十二遭\n今年某月初一日赶来年某月初一日\n有閏前加二十五無閏後退六爻神\n今年某月初一日赶去年某月初一日\n有閏後退二十五無閏前加六爻神",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0018",
+      "sha256": "a7cd32351987bf722d6f1239237d007be03918bce1c901f30397a8329515bbf1"
+    },
+    {
+      "section": "天徳",
+      "text": "〔注文〕丁坤壬辛亥甲癸寅丙乙己庚〔/注文〕月徳〔注文〕己寅亥申○○○○○○○○〔/注文〕月合〔注文〕辛巳丁乙○○○○○○○○〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0019",
+      "sha256": "dd9a76d1888420ff6451603654d69a0429fbccc328cbcf1ab1b617cc563bbd5c"
+    },
+    {
+      "section": "天馬",
+      "text": "〔注文〕午順六陽〔/注文〕　　天喜〔注文〕春戌夏丑秋辰天詔亥順十二冬未　　　　遊䰟〔/注文〕天赦〔注文〕春戊寅夏甲午天醫子夘午酉○○秋戊申冬甲子天獄○○○○○○〔/注文〕天書〔注文〕戌順十二〔/注文〕皇恩〔注文〕戌丑辰未夘酉子午亥寅巳申〔/注文〕聖心〔注文〕亥己子午丑未寅申夘酉辰戌〔/注文〕進爵〔注文〕申亥己申亥巳申亥己申亥巳〔/注文〕鳯輦〔注文〕戌丑辰未○○○○○○○○〔/注文〕鑾輿〔注文〕辰未戊丑○○　　未戌寅亥酉子○○○○○○　　丑午己夘申辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0020",
+      "sha256": "edc8f25e114ce8375ca75b1b85a23306e4b004102099538f612e98739ac3d09a"
+    },
+    {
+      "section": "天解",
+      "text": "〔注文〕申戌子寅辰午申戌子寅辰午〔/注文〕皇書〔注文〕春寅夏巳秋申　　申申酉酉戌戌冬亥　　　　　　亥亥午午未未\n天巫辰順十二　　生氣子順十二　　　　春巳夏申秋亥雌虎　　　　　　地醫　　　　　　　　冬寅酉逆十二　　雨煞子酉午夘○○灾煞○○○○○○〔/注文〕風煞〔注文〕申逆十二〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0021",
+      "sha256": "ef0eac132070eb3d1ea900df3a6a5c485b98570f31da02f0cf2d1d6df25e03c1"
+    },
+    {
+      "section": "逰神",
+      "text": "〔注文〕春丑夏子秋戌冬亥〔/注文〕戲神〔注文〕春巳夏子秋酉逰煞夘順十二冬神　　　　轉煞主行人至〔/注文〕信煞〔注文〕酉順十二主逺信至〔/注文〕　　信神〔注文〕申戌寅丑亥辰己未己未申戌〔/注文〕成神〔注文〕己申亥寅○○○○○○○○〔/注文〕福星〔注文〕甲丙丁在子乙庚辛在天目春辰夏未秋戌丑戊巳在未壬癸在巳月符冬丑〔/注文〕天耳〔注文〕春戌夏丑秋辰冬未春丑夏辰秋未冬戌〔/注文〕天坑〔注文〕丑順十二　　天鬼酉午夘子○○天呪○○○○○○〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0022",
+      "sha256": "144e74d0f52058543f51bb5f47c129228c15986a23716b8232c37eed1427ba0e"
+    },
+    {
+      "section": "天轉",
+      "text": "〔注文〕春乙夘夏丙午秋辛酉冬壬子〔/注文〕地轉〔注文〕春辛夘夏戊午　　寅巳申亥○○秋癸酉冬丙子　　○○○○○○〔/注文〕天盗〔注文〕春丙夏午秋酉冬子〔/注文〕天煞〔注文〕正月丑逆行四季見之　　戌逆十二併朱雀克日主怪異〔/注文〕月冲〔注文〕申順十二〔/注文〕　　月破〔注文〕亥午丑申夘戌己子未寅酉辰〔/注文〕月刑〔注文〕己子辰申午丑寅酉未亥夘戌〔/注文〕月害〔注文〕已逆十二　　　未辰丑戌○○○○○○○○〔/注文〕井煞〔注文〕未順十二飛㢘戌巳午未申酉天煞辰亥子丑〔/注文〕小煞〔注文〕寅夘夘巳未酉亥丑夘巳未酉〔/注文〕煞神〔注文〕亥丑春申夏亥秋寅〔/注文〕大時〔注文〕冬巳夘子酉午○○○○○○〔/注文〕小時〔注文〕○○即　　　月建死氣午順十二〔/注文〕地獄〔注文〕漫語春辰夏午秋戊〔/注文〕受死〔注文〕冬子戌辰亥巳子午丑未寅申〔/注文〕市曹〔注文〕夘酉辰亥子丑申酉戌巳午未\n寅夘死神己順　　十二遊禍巳逆　　十二墓門亥申己寅○　　　　　　○火　　　　　　燭隂煞女灾○○〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0023",
+      "sha256": "eac2ab5f88737c2c35154228df0d526e5873572500fe57700f39624bd054e616"
+    },
+    {
+      "section": "飛禍",
+      "text": "〔注文〕○○○○春申夏寅〔/注文〕賊神〔注文〕秋巳冬亥春夘夏午秋酉時盗春巳夏　　　　夘秋酉冬子五盗冬子咸池夘子酉午○○懸〔/注文〕繩索〔注文〕索○○○○○○午夘未酉午〔/注文〕長繩〔注文〕夘未酉午〔/注文〕絞神〔注文〕夘未酉亥逆十二酉辰亥午丑〔/注文〕勾神〔注文〕申夘戌己子未寅夘戌己子未〔/注文〕奸門〔注文〕寅酉辰亥午辰申申亥寅巳○\n○○○○○○○邪〔/注文〕　　奸神〔注文〕神未逆十二月鬼春寅夏亥秋申火神　　　　春丑夏子〔/注文〕火鬼〔注文〕秋戌冬巳憂神冬亥〔/注文〕火怪〔注文〕春午夏酉秋　　子冬夘戌未辰丑○○〔/注文〕血忌〔注文〕丑順十二○○○○○○丑未〔/注文〕飛横〔注文〕寅申夘酉〔/注文〕　　黄旗〔注文〕辰戌己亥午子亥順十二戌未〔/注文〕豹尾〔注文〕辰丑戌未辰丑戌未辰丑辰丑〔/注文〕産煞〔注文〕戌未辰丑戌　　未辰丑戌未寅巳申亥○○　　亥寅己申○○○○○○○○○○○○○○〔/注文〕往亡〔注文〕寅亥申巳○○○○○○○○〔/注文〕白浪〔注文〕寅巳申亥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0024",
+      "sha256": "665345ae027622f8216e6229e17293b3f53a4ad41d468851c5a0bbee8f541140"
+    },
+    {
+      "section": "覆舟",
+      "text": "〔注文〕夘午酉子〔/注文〕　　旬盗〔注文〕辰未戌丑寅順〔/注文〕日盗〔注文〕十二申順十二旬　前一辰是也甲巳子〔/注文〕䘮魂〔注文〕乙庚亥丙辛夘丁壬〔/注文〕天車〔注文〕申戊癸巳未辰丑戌〔/注文〕嵗虎〔注文〕周而復始〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0025",
+      "sha256": "07b677d20335140c52dec0810f0068b68a4e8f1088de77b0a336145e31299b68"
+    },
+    {
+      "section": "逐月神煞",
+      "text": "正子〔注文〕生氣　天醫　地醫　灾煞　弔客外解　雨煞　　　天獄〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0026",
+      "sha256": "67c1327fc162e3548059be04299095a7737d9c2abc311b5a232f811cf50516be"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕逰神　　　　　　天煞　月煞　憂神　三邱　天牢　勾陳　天機天師　　　　　　寡宿　天車　血支　血忌　火神　迷惑　闗神〔/注文〕寅〔注文〕皇書　戰雄　　　往亡　天厠天耳　風煞　　　奸神　吏神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0027",
+      "sha256": "4ecdb856439d926eb0d724aa40f7c303b69fa73b2177073f3d996fec38306cef"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕遊煞　　　　　　小煞　日煞　盗神　賊神　咸池懸索　勾陳　天盗　大時〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0028",
+      "sha256": "372d5e087bfe9d2fd025ba7c5e91b974928694a428afbc7e34cdce7678d1b029"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕天巫　　　　　　時煞　雌虎　浴盆　上䘮　市曹天醫　　　　　　地獄　月符　豹尾　天目〔/注文〕巳〔注文〕月徳　籥神成　　神逰　禍死　神來　雀隂　煞時　盗亡神戯　神喝　　　散孤　辰螣　蛇雷　煞天　目大〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0029",
+      "sha256": "19ab88ac525fe3ac4972a1cbc101959212a66fcaf44225944d3144d169640b38"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕禍天　　　　　　馬死　氣謾語繩　索火〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0030",
+      "sha256": "c0a5c10e384b073ebfe0b275ebd86e553197e24aaaf8e7f076cad37fd3a40094"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕鬼天　徳㑹　　　　神嵗　然天　空哭　神月　鬼五墓天　　　　　　　赦䘮　魂下　䘮枯　骨獄　神邪〔/注文〕申〔注文〕神驛　馬信　神解　　神月　破伏　殃殺　神白　虎奸淫天　解内　解風　　伯天　猴風　煞飛　禍戰　雌天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0031",
+      "sha256": "575b8650d254fbfe631c0e0a63b45621a8e3d114a19d6cfe4a0501763c04196a"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕呑信　　　　　　　煞破　碎金　神天　鬼四廢天　　　　　　　鷄四　神䘮　車天　刑絞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0032",
+      "sha256": "29524e4621dd2febe86798bab99dde03ec75f7af2121445583806042dea06ef8"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕神皇　恩天　　　　喜飛　㢘大　殺地　獄受　死月　厭神嚎天　　　　　　　書火　怪天　火黄　幡昏　迷刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0033",
+      "sha256": "33aeca399a2e03bc402df3c8d00144e061a86c35171efe4c841620c012f13313"
+    },
+    {
+      "section": "亥",
+      "text": "〔注文〕亡天　　　　　　　詔遊　魂病　殺墓　門陽　殺𤣥　武刼殺聖　　　　　　　心女　灾長　繩飛　横血　腥滅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0034",
+      "sha256": "2c66439dbe79bde9b03a8c10fa1e64a7475ae4863e079c0f46ffa5c98efa5b7f"
+    },
+    {
+      "section": "二子",
+      "text": "〔注文〕門天　　　　　　　詔日　煞逰　魂病　殺天　機𤣥　武咸也懸　索飛　横大　時血　腥大〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0035",
+      "sha256": "cbb8b06c5823f8772b0ee4d14b356efc882c421e2e2743735dbd2d0a5c0d1fc3"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕禍皇　恩逰　神生　　氣時　煞憂　神三　邱弔　客天車地　醫風　　　　煞寡　宿火　神豹　尾闗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0036",
+      "sha256": "5ae0fd39975190b2d56f55e0f004af817d9bccbfcffb28070cfe5676d4ae78cf"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕神皇　書天　　　　師天　牢勾　陳陽　煞亡神天　耳戰　　　　雄奸　神血　支吏〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0037",
+      "sha256": "e6f96458cb0927ef54d1cae74fbd3a8ae2e0e99d15e2beb7429a54d39a0c9dd4"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕天醫　　　　　　　　天獄　賊神繩索　天盗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0038",
+      "sha256": "d96b2041bf819d0e08620d8f39843f157972cb6cc48126734879a979c3270bc1"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕遊煞　　　　　　　　嵗煞　逰禍　受死　浴盆　䘮魂　下䘮地獄　隂煞　月符　絞神　天目〔/注文〕已〔注文〕驛馬　聖心　籥神戲神往　亡飛　亷破　碎金　神小煞天　巫外　解喝　　散雌　虎時　盗天　厠天　猴孤〔/注文〕\n午　　　　　　　　　　〔注文〕辰天　鬼死　神月　鬼朱　雀盗神邪　神螣　蛇雷　煞火　鬼㓕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0039",
+      "sha256": "4a199305155a883def9b1b230d6a9d62c69d8bf8f1db9ae780bd24c5d07ea3e0"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕門風　　　　　　　　伯死　氣哭　神五　墓上䘮謾　語血　忌火　怪風〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0040",
+      "sha256": "ad1b3c3c05ef3c57b9bd9394a3e7c074d44b517223695acc538e8e62722e39b1"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕煞天　馬□　神天　　　鷄煞　神枯　骨墓　門刧煞解　神内　　　　　解女　灾飛　禍戰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0041",
+      "sha256": "c2e731b9df3c7b8b1b2fbf7848e40b91997162ab5e4f785e7706096cc345ce5a"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕雌雨　　　　　　　　煞月　破大　殺灾　煞四　廢伏　殃月厭白　虎門　伸䘮　車天　刑天　火昏〔/注文〕戌〔注文〕迷天　喜信　神㑹　　　神天　煞天　空天　獄勾神信　煞天　解天　　　赦長　繩黄　幡月　殺迷〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0042",
+      "sha256": "7d48b078832c9ab89e227dbbe5e797b3f070e2b90cd5f0c01a8343411c068c6c"
+    },
+    {
+      "section": "亥",
+      "text": "〔注文〕惑天　　　　　　　　書神　嚎市　曹奸淫刑　亡天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0043",
+      "sha256": "031c0d8010b73db277e9d7fde49beb2045bfaa17bdaaf50b36a433cc5225f284"
+    },
+    {
+      "section": "三子",
+      "text": "〔注文〕吞天　書聖　　　　　心神　嚎市曹天　解風　　　　　煞刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0044",
+      "sha256": "8eaffa26027d7b114f77938495ba0d9617483980d13245eed9d66527637355db"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕亡天　詔管　　　　　神天　空逰　魂憂　神病　煞三　邱下　䘮破　碎金神逰　神天　　　　　赦嵗　煞䘮　魂獄　神𤣥　武寡　宿天　車火〔/注文〕寅〔注文〕神皇　　書驛　　　馬信　神生　氣弔　客奸　淫奸　神天猴地　醫㑹　神外　解戰　碓天　耳血　忌吏　神天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0045",
+      "sha256": "4a56cc73a1aea1e72aa7003ff8be9e3b9d95ddc93ed53b4a32945704f0822760"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕吞天　　　　　　　　師天　鬼逰　禍天　牢勾陳隂　煞賊　神血　支天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0046",
+      "sha256": "e364571f984fdc79b6b54ef171e90c8ca8b24dd0d06a60bb4f45dc5f55769b38"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕盗皇　　　　　　　　恩浴　盆地　獄月符火　怪黄　幡天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0047",
+      "sha256": "dc8f017b7cd82d34adad7afd3cfc81c749944ea10f6455a908e500bc9aee1794"
+    },
+    {
+      "section": "巳",
+      "text": "〔注文〕目籥　神戯　　　　　神月　鬼墓　門陽　煞刼　煞時盛逰　煞喝　　　　　散女　灾邢　神孤　辰勾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0048",
+      "sha256": "2a109c8fb760c9f6b85d47af7745ae5b754995066beebafdb0046551024c458f"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕神天　醫天　　　　　巫飛　㢘灾　煞雌虎風　伯雨　　　　　煞天　獄風　煞火〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0049",
+      "sha256": "bd0c8a035937b10d66df0f3373071192a2af8b52b51476ffa81ad83a723ecd0a"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕天　　　　　鷄　天　煞　月　煞　小煞　死　神　哭　神　五〔/注文〕\n申　　　　　　〔注文〕墓　朱　雀　螣　蛇　雷煞　繩　索　迷　□〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0050",
+      "sha256": "7a523b61cde45cc48e6aca6e4ffbf6e333ead2714e6a0213b7b959325ea92092"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕大　　　　　禍　往　亡　大　煞　死氣　　　　　殺　神　月　厭　謾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0051",
+      "sha256": "b43a0face0acb0cdaab4562690bde40f9514b412a24da1affa53af96be803884"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕語　　　　　天　厠　天火　　　　　昏　迷　飛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0052",
+      "sha256": "d9452676326d2f94553c76e6dda3d55e140a631fe63a125e6b8a52a475bfb07e"
+    },
+    {
+      "section": "亥",
+      "text": "〔注文〕禍　　　　　戰　雌解　　　　　神　日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0053",
+      "sha256": "8e0f0dd054278cd30bb16fbc133535ada030a29782200c5f92fe1353fe4d0d20"
+    },
+    {
+      "section": "四子",
+      "text": "〔注文〕煞　四　　　廢　門　神　䘮　車枯　骨　　　天　刑　内　解〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0054",
+      "sha256": "3448fe837135c330f2615fd0baa67e0021b9723cd23759bea2af6622bde0f004"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕盗　神　　　咸　池　懸　索長　　　　　繩　大　時〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0055",
+      "sha256": "ccfe91a6172d98c13d57c8bfec001d1be44effda34af6d3b493926aea37cebfe"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕天　喜　　　月　破　時　煞　伏　殃天　　　　　馬　白　虎　上　䘮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0056",
+      "sha256": "683efd68a57294d61ee5209936f3f3ed0a2ef09a73b87671f8f6b23b3fa10638"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕豹　　　　　尾　信煞　　　　　受　死〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0057",
+      "sha256": "e8586dc5ae95fc7a89f982fc1d3af541d2e78586d5f2bc3daa2c0c9a9f3e255a"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕天　機　　　成　神　亡　神　絞　神　天馬　　　　　逰　神　天　鬼　四　廢〔/注文〕巳〔注文〕憂　神　　　門　神　䘮車　戯　　　神　信〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0058",
+      "sha256": "03e038670e4eea6c1f48880ff89507455b09f4f640e0fd2c233c93809312bda4"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕煞　天　　　刑　盗　神　火神　　　　　勾　神　天　喜〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0059",
+      "sha256": "3659e5aa6a82f6847512352f9babd3799d86eec170491d0edbb2dd53b504d7a0"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕天　　　　　書　神　嚎　市　曹　上䘮女　　　　　灾　信　神　火　怪〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0060",
+      "sha256": "6b4800a06cfd4a53a917058173c996d41146277b91f8f88e2a20f9b396821743"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕黄　幡　　　刑　亡　天　詔　成神　　　　　逰　魂　逰　禍　病〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0061",
+      "sha256": "eacead9c987accd009267526ed6ab8e3ce6d2fb080d0737251ff2dfa44ea60ba"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕煞　墓　　　門　隂　煞　𤣥武　　　　　天　解　刼　殺〔/注文〕\n戌　　　　　　〔注文〕飛　横　飛　禍血　腥　大〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0062",
+      "sha256": "5494dac3093785c88a3f78d30a2425f557173e5fddb3548c7e6435fc1759c1dd"
+    },
+    {
+      "section": "亥",
+      "text": "〔注文〕驛　馬　　　　㑹　神　往　亡　月破　　　　　　　煞　神　伏　殃〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0063",
+      "sha256": "d34d5556ee9eb5a4b29aaaeab80a93790ef4b6628d3198ab3c40559577881874"
+    },
+    {
+      "section": "五子",
+      "text": "〔注文〕白　虎　風　　煞　天　厠　天　猴　奸神　戰　　　　雌　逰　神　戯　神　天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0064",
+      "sha256": "50d2da37516aa3a1b24a6127f6157b63f49c244e95b020f2b8c53a65a66d88e9"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕醫　月　　　　破　灾　煞四　　　　　　　廢　伏　殃〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0065",
+      "sha256": "e58f6d41705287e5efa5bf983c5f4a7e5aae7c64a13ae5c1c0732bd385ba5f5b"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕憂　　　　　　　神　受死　　　　　　　外〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0066",
+      "sha256": "f846067312fdcab29fe4ec7b89d6f9bac46a0fa60ee36aabeeacd565d4d525f3"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕解　　　　　　　雨　煞　白　虎　門　神　䘮　車天　　　　　　　獄　天　刑　火　神　天　喜　聖〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0067",
+      "sha256": "b4a48b36c7aeb6312b544da49c5e524813605c6237b220a03f8a0b431f8b0ab3"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕心　月　煞　　天　煞　逰　禍信　煞　　　　隂　煞　絞　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0068",
+      "sha256": "0dc57f1256b7a2afaa7d89da4160af44e0c3ee8ae5c4e459450ec61689edf4ed"
+    },
+    {
+      "section": "已",
+      "text": "〔注文〕迷　惑　天　　書　神　嚎　天厠　天　馬　　飛　禍　天〔/注文〕\n午　　　　　　　　〔注文〕詔　往　亡　日煞　逰　魂　病〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0069",
+      "sha256": "238dbf4b3c01b2bf00051968df0a050601afc34ea054731cbc13d89cd5d10745"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕煞　　　　　　　月　鬼　時　盗　盗神血　　　　　　　腥　皇　恩　𤣥　武〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0070",
+      "sha256": "2dd344b19010d682ab6e6685fa7318fe3558c8ddfef84181f34d6a482a7a1ce7"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕咸　池　邪　　神　血　忌　懸索　飛　　　　横　大　時　滅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0071",
+      "sha256": "e0701ed6d41096da2945ba722b5ba87a03bc29b2021de711dd0a1f727679cc06"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕門　　　　　　　管　神　生　氣地　醫　時　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0072",
+      "sha256": "5c996f89735e5590a669ef2de70110938e7088b5fd027eee68d3c6f572effe90"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕三　邱　　　　弔　客　上䘮　　　　　　　天　解　風〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0073",
+      "sha256": "66e40eef2bad60caec25eff4c378a79a982018a009d0e69767c3d5229fdfa4e2"
+    },
+    {
+      "section": "亥",
+      "text": "〔注文〕伯　　　　　　　風　煞　天　車　寡宿　豹　尾　皇〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0074",
+      "sha256": "167a0b3d1bbfcb59c016d5f9b8a857697c8cc8bf910aff147cd53de81f5b2250"
+    },
+    {
+      "section": "六子",
+      "text": "〔注文〕書　天　　　　師　天　鷄　破　碎　金神　　　　　　　天　牢　亡　神　成　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0075",
+      "sha256": "e16a728bd42b46f1ac3a5f9d5e8d894e193dfb77aba46a13c4c13d6acc0d42e4"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕戰　　　　　　　雄　天　耳　勾陳　血　支　吏〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0076",
+      "sha256": "d7568b7115ae1f1ac146e406a873e7bb56708ea937a3cf139737d17794039a68"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕神　　　　　　　大　煞　月厭　地　獄〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0077",
+      "sha256": "f10ed63ef1838467f6d224bf5eeaa1cd10d51d5cf2a362efa6f8bb4c0df9f901"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕天　書　　　　天　醫　神嚎　　　　　　天　獄〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0078",
+      "sha256": "91a0864536c1e290c62d8792b7a429363e69eb839964a148c66e8a53a52cd692"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕時　盗　　　　風　伯　風　煞　繩　索　天詔　天　　　　馬　嵗　煞　遊　魂　病〔/注文〕已〔注文〕煞　三　邱　䘮　魂　干　𤣥　𤣥武　信　神　　　天　鷄　寡　宿〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0079",
+      "sha256": "d838d3d35f6b490b706d386eaddd071f4561322ec42f92e5b833369c0de23a6a"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕天　　　　　　車　飛　横　闗　神　血腥　　　　　　　大　禍　皇　書　地〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0080",
+      "sha256": "2b09f502a1acf2be1d23aaf127c8a1b50301f220e8c3b2b699e85c3565275969"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕醫　　　　　　生氣　驛　馬大　煞　月〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0081",
+      "sha256": "d2af7bb99eafea28ea40ed23424d878d0c52c133cb49d4632fe50596fe2a7855"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕厭　弔　　　　客　天　厠　外解　戰　雄〔/注文〕\n酉　　　　　　　　〔注文〕天　耳　天　火　天猴　昏　迷　吏〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0082",
+      "sha256": "359c7ef031a7c28eb5060d3db5d41dfcfb235490045d3b7d60d7ea1ce2e844bb"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕神　　　　　　天　師　往　亡　受死　天　鬼〔/注文〕\n亥　　　　　　　　〔注文〕天　牢　地　獄賊　神　天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0083",
+      "sha256": "62573fcf5aaec6423bb13d4f7f3505b2e0582ad20601ae4e3db87d01d0e3db4a"
+    },
+    {
+      "section": "七子",
+      "text": "〔注文〕盗　　　　　　神　天盗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0084",
+      "sha256": "7c3f479bb7d8d889c47778420c7a3e977fa5b67c1f05cdb9e11659cd5684ebef"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕勾　　　　　　陳　血　攴　長　繩　聖心　　　　　　浴　盆　上　䘮　火〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0085",
+      "sha256": "3b56227cd71d255e5824c8e1db740809b7f7418db41f3b96aa3dab220fd60ad5"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕怪　月　　　　符　黄　幡　天　目籥　神　　　　成　神　逰　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0086",
+      "sha256": "6da157bee42095ed7aea9ea06662fd0a86d8f7d9b4cb701be297235ab9682107"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕墓　　　　　　門　天　機刼　　　　　　殺　女　灾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0087",
+      "sha256": "df1a39adff52c4e6fca3bb3ebed67d9a74fc03105d0c034e60d3b0e6b5d15c2d"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕孤　　　　　　辰　絞　神　飛　㢘災　　　　　　殺　雌　虎　市　曹〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0088",
+      "sha256": "bc4f8e0f99362421485d9e829f98f863dc3876b05022976d8a728b384d6cafe2"
+    },
+    {
+      "section": "已",
+      "text": "〔注文〕獄　　　　　　神　朱　雀　血　忌　刑亡　　　　　　火　鬼　内　解　天　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0089",
+      "sha256": "c745789d99432c8cc67376310b1b26ac7f86161ae273f11163f1b66378ff77ba"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕天　空　死　　神　哭神　五　　　　墓　螣〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0090",
+      "sha256": "737ac4c037306db4c9d7ff5ac922a5884a1562451f09774ae5ac5c15ec727acd"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕天　　　　　　師　關　神　天　煞　月煞　三　邱　天　牢　勾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0091",
+      "sha256": "ebb52ecbba117e080f90b8538c5c1acdfd6fafce113af2089642463c6647f2be"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕陳　天　機　　寡　宿天　車　　　　血〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0092",
+      "sha256": "a4551a461cb89932232bec2d17289ae2105ca2a50a1ec486b237cd33eafe91d0"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕支　　　　　　繩　索　迷　惑　皇　書　天解　戰　雄　天　厠　奸〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0093",
+      "sha256": "2018fe2bd009a77893074490b941ea1a74e88781b34870f878a34f472c8079c1"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕神　　　　　　天　耳　風　煞　吏神　戯神　　　　　　往　亡　逰　煞　破　碎〔/注文〕亥〔注文〕金　神　日　　煞　天　盗　時盗　盗　神　　賊　神　咸　池〔/注文〕\n八子　　　　　　　〔注文〕懸　索　勾　神　大　時天　巫　時　煞　逰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0094",
+      "sha256": "34f77ce15273799a31e4a15418b5456ac24a9adee96c853a6acdb9f85f7bf0d0"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕禍　　　　　　雌　虎　憂　神浴　盆　上　䘮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0095",
+      "sha256": "6b0613d4d5c3d2c7ca5bdd03949936d00ea2ee29895c8ab4ae2e1e4986174ece"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕天　　　　　　醫　市　曺地　　　　　　獄　月　符〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0096",
+      "sha256": "95b16b4aeb71e72c34fb7cb718c9508a9cbd03f2861adf3b822e88fd1c4a2fd7"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕火　　　　　　　神　豹　尾　天　目　籥神　成　神　逰　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0097",
+      "sha256": "1e9e7814f132f8dac0f475f1b14fbb34b99d533b9db3ef9d7e6ae9bf132bc33d"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕死　神　　　　　朱　雀　隂　煞亡　　　　　　　神　解　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0098",
+      "sha256": "22f5c18cccbba49bd03aae601128d057be29ae38748792e5fbd22ab063e76344"
+    },
+    {
+      "section": "已",
+      "text": "〔注文〕内　　　　　　　解　喝　散　孤　辰螣　蛇　雷　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0099",
+      "sha256": "6aecbe42338cd73186314a9cc52473a5173858203ad8da9c6f2336fd142b6fdb"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕大　禍　　　　　往　亡　天　鬼　死　神月　　　　　　　鬼　朱　雀　盗　神　邪〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0100",
+      "sha256": "e2f132a3be8eda9c399ff6e779d1009a1c2e9831647d241961ebf1f42db7daee"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕神　螣　　　　　蛇　雷　煞　火鬼　滅　　　　　門　風　伯　死〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0101",
+      "sha256": "d188a5a73446eae3da93f51204baa5c227fb19fffaa315a8993aa2578a5df741"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕氣　哭　神　五　墓　上　䘮　謾語　火　怪　　　風　煞　黄〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0102",
+      "sha256": "21e5a5bb53029b0cc7b81df3ad768e5f1a3565cd84bcf673d15296684c3647d1"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕幡　　　　　　　成　神　殺神　　　　　　　枯　骨〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0103",
+      "sha256": "d4322292b73d2d27e226b3d12fa048a2ee80b846d030f5c4c276867d6704c5b7"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕墓　　　　　　　門　天　鷄刼　殺　女　灾戰　　　　　　　雌　雨　煞　月　破　大〔/注文〕亥〔注文〕驛　馬　籥　神　逰　神　天巫　飛　亷　　　逰　禍　雌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0104",
+      "sha256": "310b834eee35f679f321f0449f575a5ea8ae3f3d7b23c7e98796bcfbefcdb920"
+    },
+    {
+      "section": "九子",
+      "text": "〔注文〕虎　解　神　　　内　解　喝散　天　厠　　　孤　辰　天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0105",
+      "sha256": "e894a816dad6575145180cb439ca2f52a7641deb8ca1fadb311e1adde0d4cf5a"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕猴　　　　　　　天　醫　天　巫　天　解飛　㢘　災　煞　雌　虎〔/注文〕\n寅　　　　　　　　〔注文〕外　解　風　伯　雨煞　天　獄　風　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0106",
+      "sha256": "0f9828b2a9b8c02a6d358ddb9c7bacdbab0755b77b0f8be878d7389ed9956d07"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕火　　　　　　　鬼　天　鷄　金　煞破　碎　天　煞　月〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0107",
+      "sha256": "74c74b97cb9d7b5d9c86a7b9bcbd7fb666e88f31d606643c13eb5f1a425430a5"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕煞　　　　　　　死　神　哭　神五　墓　朱〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0108",
+      "sha256": "0df35c759cd67439807ddcf333d53b762815856fda299687439b5b5e5d601883"
+    },
+    {
+      "section": "已",
+      "text": "〔注文〕雀　螣　　　　　蛇　雷　煞迷　惑　　　　　天　禍〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0109",
+      "sha256": "f704e30b728457ac334e18958548420edc75330047245586dd4754533f2aa468"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕火　煞　　　　　死　氣　月厭　月　　　　　鬼　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0110",
+      "sha256": "4fb7a1c0c7bd094d0c8197609caa5e87de240f1138a8b30bf82cc54e3ab20395"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕神　　　　　　　謾　語　天　厠　天　火　昏　迷戰　　　　　　　雌　聖　心　日　煞　四　廢　門〔/注文〕申〔注文〕神　䘮　車　　　枯　骨　盗神　咸　池　　　懸　索　長〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0111",
+      "sha256": "56ecf92938d2e02d91d5492c9d065abefd92f31409292ed9ad3100f05615f6a3"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕繩　　　　　　　大　時　天　喜　往亡　　　　　　　月　破　時　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0112",
+      "sha256": "fed50b7a18af92833eee0bd48e4f21c4a0fd2f16aeeff4d917e3a4edb47c33ad"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕㐲　　　　　　　殃　白　虎上　䘮豹　尾　成　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0113",
+      "sha256": "4a4fa0741bb0477182b06c695e280d3eef67b36324d949e737ebdd6f1f8be498"
+    },
+    {
+      "section": "亥",
+      "text": "〔注文〕信　神　天　　　機　亡　神　血忌　㑹　　　　　神　信　煞　絞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0114",
+      "sha256": "0c15658e22f6c3e2a6a969ad0f5d5b65ece692dc46f9930bfb21148af4ccaa7e"
+    },
+    {
+      "section": "十子",
+      "text": "〔注文〕神　飛　　　　　禍　天　書　解　神神　　　　　　　嚎　市　曺　天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0115",
+      "sha256": "363d98de5be9fb6ceb868a317cb2f03bd9d6ef0b663ee5445e21dbf9842e37a9"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕刑　　　　　　　内　解　風　煞　繩　索刑亡　　　　　　　天　詔　管　神　小〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0116",
+      "sha256": "6bcc098bf475d079be37d4e2e026c54b019087d29eeda30c64e52935c05a1529"
+    },
+    {
+      "section": "寅",
+      "text": "〔注文〕煞　嵗　　　　　煞　天　空　三　□逰　魂　　　　　病　煞　血　腥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0117",
+      "sha256": "5b57e153742507a2416940ae8c0b617be2bf77d9049d3e95717c3cae231c55ac"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕㑹　　　　　　神　死　氣天　　　　　　獄　天　刑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0118",
+      "sha256": "5270ab4c9a1899b2b45d10cbe807f0487fe39f33859bc58d2b41584ff7dd3df4"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕天　　　　　　醫　謾　語　繩索　火　魁〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0119",
+      "sha256": "408bcbbaef966748ae82909a321ccb58dcfc3d8d729257187962ec62973a61db"
+    },
+    {
+      "section": "巳",
+      "text": "〔注文〕戯　神　　　嵗　煞　哭　神五　　　　　　墓　下　䘮　枯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0120",
+      "sha256": "db2d4cc59b552898f023404c1df9389bf4e611568bc0060ecc84954c8559269d"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕骨　䘮　　　魂　天　機驛　　　　　　馬　外　解〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0121",
+      "sha256": "0820c14b3e01938ef6e508f76a4a0ffca66cb7350dbe89834c1e2e8b1106a582"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕月　破　　　伏　殃　煞　神白　　　　　　虎　風　煞〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0122",
+      "sha256": "ddd6c08996d5c40c0a6647b930952f2ebdd4997333d2e2a236ca43f261815757"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕天　　　　　　厠　奸　神　天　猴　戰雌　　　　　　信　煞　解　神　天　鬼〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0123",
+      "sha256": "a0226e1dddb49cef0b64584fefc367d7f5aa605dc774eb1828335e2032e50119"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕四　廢　　　門　神　内解　　　　　　䘮　車　盗〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0124",
+      "sha256": "332b3247a3d58ee04d1954881f7ef6a95227e4dd5cb96fbb8671f3de6d2360bf"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕神　勾　　　神　天　書　天　喜　往　亡神　　　　　　嚎　上　䘮　市　曹　信　神〔/注文〕亥〔注文〕火　怪　　　黄　幡　刑　亡天　詔　　　逰　魂　遊〔/注文〕\n十一子　　　　　　〔注文〕禍　病　煞　受死　墓　門　女〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0125",
+      "sha256": "a4406c18224da7487b99205020e0398b81956e35264352b3fb0a197cad3d4acb"
+    },
+    {
+      "section": "月丑",
+      "text": "〔注文〕灾　　　　　　成　神　刼　殺　隂煞　𤣥武　飛　横　血　腥〔/注文〕寅〔注文〕大　禍　聖　心　生　氣　破碎　金　神　小　煞　地　醫〔/注文〕\n夘　　　　　　　〔注文〕災　煞　吊　客　雨煞　逰　神　天　師〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0126",
+      "sha256": "357de9ae577d62c90bcbed2f25981fd639a47047c5e2b0d4cab044b9d37f4f1f"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕管　神　　　天　煞　天空　　　　　　月　鬼　三〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0127",
+      "sha256": "3d259ba8c8c54ac476c031d80f51416b0d1233a9ef324f3257be5ddb9edffdb0"
+    },
+    {
+      "section": "己",
+      "text": "〔注文〕邱　　　　　　天　牢　獄　神　天赦　勾　陳　邪　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0128",
+      "sha256": "a609161feeef9f5187540c410fb05a6c3de5152c1d0bba0b87ec9fd7d3c2b85c"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕寡　　　　　　宿　天　車　血　支月　　　　　　煞　迷　惑　皇〔/注文〕未〔注文〕天　喜　　　信　煞　天　煞月　煞　　　逰　禍　隂〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0129",
+      "sha256": "098a9b0b0bcff6eb215a50be60b9a34a386e0e6a558f6c21e0813e25ee51585d"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕灾　解　　　神内　　　　　　解〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0130",
+      "sha256": "51c67602d53237a7f2363ffa9cc85aefbcaa8e047eb9e913939e05fb76827a1c"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕繩　　　　　　索　絞　神　迷　惑　天　書㑹　神　神　嚎　信　神〔/注文〕戌〔注文〕天　厠　　　天　詔　日　煞　月鬼　病　　　煞　逰　魂　盗　神〔/注文〕亥〔注文〕𤣥　武　咸　池　邪　神　懸　索飛　横　大　時　血　腥　滅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0131",
+      "sha256": "36dae39f7d1f6357f1c7ed1ee3e101267f8f80d737d6cbf4a7d2075e816e0287"
+    },
+    {
+      "section": "十二子",
+      "text": "〔注文〕門　　　　　生　氣　地　醫　闗　神往　亡　時　煞　三〔/注文〕\n月丑　　　　　　　〔注文〕邱　弔　客　遊　神風伯　上　䘮　風　煞〔/注文〕寅〔注文〕天　車　　　寡　宿　豹尾　皇　　　書　成　神〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0132",
+      "sha256": "5ac3154cb07edfc391caaf92dcc671a6f8622ae22d0d82723b98012964745c93"
+    },
+    {
+      "section": "夘",
+      "text": "〔注文〕天　鷄　　　小　煞　憂　神天　牢　　　吏　神　勾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0133",
+      "sha256": "eff61cfd1632668bcf16d01bde6f291f333fdb8ebb106d7a4df3f1ae019c72ed"
+    },
+    {
+      "section": "辰",
+      "text": "〔注文〕陳　天　師　戰　雄　天　耳　亡　神血支　火　　　神　飛　禍　天　師〔/注文〕\n已　　　　　　　〔注文〕月　鬼　天　牢地　獄　勾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0134",
+      "sha256": "0d7e04ec247d9ff5ba3678e67d9422587cd42a9f6f2fab63afe15ec8331bb00e"
+    },
+    {
+      "section": "午",
+      "text": "〔注文〕陳　　　　　　天　盗　時　盗　賊神　盗　神　血　支〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0135",
+      "sha256": "344a15ea43ea102175c6a7d218609156408ddfc9b489de9ee652c97cd2181e43"
+    },
+    {
+      "section": "未",
+      "text": "〔注文〕血　忌　　　長　繩　往亡　　　　　　破　破〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0136",
+      "sha256": "a0c6373ced6b1dab4629379ae61b563e98854e67fd96ab9b5d13f0c9d23a2663"
+    },
+    {
+      "section": "申",
+      "text": "〔注文〕金　神　　　小　煞　浴盆　　　　　　上　䘮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0137",
+      "sha256": "8a76a18863394456451481d9eac3f3000e7105cf8543555f6e7aeac94840528c"
+    },
+    {
+      "section": "酉",
+      "text": "〔注文〕火　怪　　　月　符黄　　　　　　幡　天〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0138",
+      "sha256": "1eb2cf5a380c253302844ccbfa07bf3d3b43f192842cef91bd7ee8f14d887c41"
+    },
+    {
+      "section": "戌",
+      "text": "〔注文〕目　籥　神　成　神　墓　門　天　機女　灾　　　逰　煞　喝　散　刼　煞〔/注文〕亥〔注文〕皇書　地醫　生氣　大煞　月厭　憂神　吏神　弔客　天厠驛馬　戰雄　天耳　昏迷　天猴　天火　火神　飛禍〔/注文〕徳煞",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0139",
+      "sha256": "e92c1129e4da3aab6b014da7e66919ca9f7ddcf4d2794c5dc49537ed51ac1088"
+    },
+    {
+      "section": "徳",
+      "text": "徳者福祐之神也凡臨日入𫝊能轉凶為吉其名有四凡四徳入𫝊皆吉日徳尤吉俱宜生旺不宜休囚凡徳入傳忌逢空落空及神将外戰\n凡徳加干發用為鬼仍作徳斷不可作鬼斷盖徳神能化鬼為吉也〔注文〕惟寅巳申乙己辛亥丁四課〔/注文〕\n凡徳下賊發用得貴神生扶仍作全吉斷若無生扶又見尅洩主喜處生憂〔注文〕如乙未日申加午發用申為乙徳受制於午但陰陽貴神屬土脱午生申仍作全吉之例〔/注文〕\n凡徳神歸日又㑹合帶貴主有意外之喜惟不宜占病訟〔注文〕如丁酉日陽貴干上亥之例〔/注文〕\n凡徳臨死絶又值凶神減力十之七\n凡日徳發用又同下神尅日名鬼徳格主邪正同途〔注文〕如乙酉日遥克申加酉發用申為酉挾化徳為鬼之例〔/注文〕\n凡徳作官星又臨朱雀名文徳格主應舉得官在官得薦〔注文〕如己巳日寅加己發用作官星順貴朱臨寅之例〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0140",
+      "sha256": "823de22e8ce192c2083f1a8c2b7971cecf509c7315a0837474775b417331b31d"
+    },
+    {
+      "section": "合",
+      "text": "合者和順之神也凡臨日入傳主有和合成就之喜盖隂陽配合竒偶交逑故凡事皆成也其名有三〔注文〕闕〔/注文〕行合即三合也亥夘未木合主繁宂駁雜寅午戌火合主侶黨不正己酉丑金合主矯革離異申子辰水合主流動無滯\n凡三合入傳主事闗牽連必過月方能了結又主親識朋儕衆多之應",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0141",
+      "sha256": "a02836cdb986e6d8c2adff897ec811636cf91c6cad6bcc003af0a2a6de468f99"
+    },
+    {
+      "section": "凡取成合之期以三合决之",
+      "text": "〔注文〕如寅午戌日見天空則發若不見天空主戌月戌日成就之例〔/注文〕\n凡三合入傳缺一神名折腰格占事必待缺神值日方能成就亦名虚一待用格\n凡三合入傳缺一神若日辰偶足之名凑合格主有意外和合之事以所凑乘神决之〔注文〕如凑足者是貴人即主貴人提携之例〔/注文〕\n一干合即五合也甲巳為中正合乙庚為仁義合丙辛為威權合丁壬為淫泆合戊癸為無情合\n凡中正合乘貴人主貴人成就見貴得喜與徳神併能解諸凶若與隂后𤣥六相乗於夘酉主有貴入奸邪不正之事\n凡仁義合乗吉神主内外和合作事端肅若乗陰六𤣥后臨夘酉主假仁義以行奸邪之事\n凡威權合乗吉神主施威徳佈號令觀兵耀武若乗凶神主挾令凌下卑幼勉强承順\n凡淫泆合乗吉神主陰謀成事若乗隂后𤣥六臨夘酉主女子淫奔家門醜行\n凡無情合乗吉神占事半實半虛若乗凶神主外合中離百凡承順皆是假意\n一支合即六合也子與丑合寅與亥合夘與戌合辰與酉合己與申合午與未合\n凡合與徳同入傳百事皆吉即㑹凶神亦主凶中和合凡合入傳視其進退傳進利進傳退利退百事如意凡寅合亥為破合巳合申為刑合主謀事合而不合成而不成若得貴青徳祿乗之仍主順利\n凡合入傳謀事皆成但不能即時了結不宜占病占訟凡暗中三合六合主失脱藏匿難獲\n凡天后神后作合占婚立成二后與陰合同\n凡刑破二合發用主内吉外凶占事須費力然終有濟凡合逢空落空又見刑害主和中藏禍有徳可觧凡合帶刑害雖乗吉神其力亦減但可宛轉小用凡合尅日或乗蛇虎朱雀主合中有害不可托人謀幹恐以直信人反招不足\n右三等合神以干合為主支合次之行合又次之要與徳神祿喜臨併方為全吉可制諸凶若乗凶神全無吉助則又與凶合返為凶矣凡占宜詳之\n凡三合在課中作干支上神交尅干支者主外合中離各懐疑忌或為人挑激以致不和〔注文〕如甲子日干上戌支上申干支三合申尅日戌尅神之例〔/注文〕\n凡支干互合名同心格主一切謀望皆同契齊心成就若見刑害又主同心之中暗生妬忌〔注文〕如乙酉丙申戊申辛夘壬寅五日返吟干支相合上神亦相合此五日支加干或干加支皆干支㑹合○又如甲申日亥加干上神與支干合乙亥日夘加干上神自相合壬午日未加干干上神與支合支上神與干合之例〔/注文〕\n凡支加干上神隣近相合主彼此變換共相謀事皆有成就〔注文〕惟壬子戊午丙午三日有之〔/注文〕\n凡支加干上神相合或干加支上神相合亦可共謀成事〔注文〕惟丙寅丙戌戊戌三日有之〔/注文〕\n凡支干上神相合又相破而支干自相害者主謀事外面假意相成中心百方暗毒〔注文〕惟壬申戊寅丙寅日六課〔/注文〕\n凡干支相害上神相合無刑破者主外合中離凡相成皆是假意若逢空仍主暗害〔注文〕乙夘辛酉二日四課〔/注文〕\n凡日干與支上神相合支辰與干上神相合名交車格主交闗交易交加交換成合之事凡值此課惟利合謀不利解散此例除甲寅庚申丁未己未癸丑五日支干同處交車不合餘則一日一課有十種分别占用各随所宜",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0142",
+      "sha256": "49d5668fd6a3df96a741aa1523d98b38442ebd9a20a8d8fdb0b3738968473f78"
+    },
+    {
+      "section": "一長生合宜合本營為",
+      "text": "〔注文〕加甲申日干上已為支長生與支合支上亥為干長生與干合之例〔/注文〕\n二財合宜交闗取財或財相交渉〔注文〕如辛丑日干上子為支財與支合支上夘為干財與干合之例〔/注文〕\n三脱合不宜交渉主彼此各懐相脱之意〔注文〕如戊辰日干上酉脱支與支合支上申脱干與干合之例〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0143",
+      "sha256": "153bd09748021c0f6b1184dc91d687910ba4e1d9beb00c48b2f90220d06e81f1"
+    },
+    {
+      "section": "四害合主彼此合謀暗中相害",
+      "text": "〔注文〕如丁丑日干上午害干與支合支上午害支與干合之例〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0144",
+      "sha256": "7f23a4bf34c0db199b4ed24f60d124c9b5be200c6908365f9391387f635f61d3"
+    },
+    {
+      "section": "五空合主先好後惡有初無終",
+      "text": "〔注文〕如辛亥日干上寅空與支合支上夘空與干合之例〔/注文〕\n六刑合主和羙中生出争競及彼此各不狥理〔注文〕如癸夘日干上戌刑干與支合己亥寅申又相冲之例〔/注文〕\n七冲合主先合後離不論親踈五倫皆然〔注文〕如甲申日干上巳與支合支上亥與干合己亥寅申又相冲之例〔/注文〕\n八尅合主交渉中生出爭訟或匿怨相友笑裏藏刀〔注文〕如庚子日干上丑尅支與支合支上巳尅干與干合之例〔/注文〕\n九三交合凡交闗用事必有奸私或相交渉二三事〔注文〕三交者孟仲季各臨孟仲季也惟己酉日辰加干丁夘日戌加干二課〔/注文〕\n十交㑹合主内外相合或世代義門更有外人相助凡占事事有成惟忌空亡〔注文〕如乙丑日干上子與支合支上酉與干合三傳己丑酉又三合之例〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0145",
+      "sha256": "c063d0cd35b0331b56da6abaefa20f542aeaa1ca7a0e582af41295b65851438b"
+    },
+    {
+      "section": "鬼",
+      "text": "鬼者賊害之神也干支之中陽尅陽為鬼隂尅隂為鬼經曰傳中多鬼事事不羙謀望不成㐫災及已凡晝鬼主公訟是非夜鬼主神袛妖祟\n凡鬼入傳若日干旺相及傳中命上見子孫亦不為㐫凡占訟占病忌鬼入傳臨日見子孫為救神減㐫凡占盗鬼入傳自相冲或與盗神相冲其盗自敗若落空帶合返難捕捉\n凡干上鬼發事多不羙若用見徳合猶可望事求官凡傳鬼帶合又尅日之上神主求事返覆進退而後成凡鬼宜衰敗不宜生旺若鬼當時亦不為㐫〔注文〕如甲為戊鬼若在仲春木貪生發返不制圡之例防過時為㐫〔/注文〕\n凡鬼發用又臨尅日之鄉名攅眉格占事主有兩重不羙即遇救神惟解其一〔注文〕如庚辰日午加己發用之例〔/注文〕\n凡辰上神發用為日鬼占事主自家人暗害\n凡鬼多有制返不為㐫占事未免先值驚危終乃無畏若聞人謀害但是商量不能為禍惟白虎發用大有畏忌要年命上有制虎之神〔注文〕如壬辰日遥尅戊加未發用三傳戌丑辰上下六鬼午上寅木制之之例〔/注文〕\n凡鬼發用是支上神又引中末入鬼鄉謂之家鬼弄家神有救無禍無救有禍〔注文〕如己丑日支上寅發用作鬼三傳寅夘辰皆歸木鄉之例此課干上申制鬼有救〔/注文〕\n凡鬼臨日干得支上神救者主一切事自外来要家内人解救〔注文〕如癸亥日辰加干發用為鬼支上寅制之之例〔/注文〕\n凡鬼發用生末傳作干長生名鬼脱生格主一切先㐫後吉〔注文〕如丙子日干上子發用為鬼生末傳寅之例〔/注文〕\n凡三傳入局為鬼返生起干上神生干者主一切返㐫為吉〔注文〕如庚午日干上辰三傳戌午寅火局為鬼生起辰土以生干之例庚寅午戌乙巳酉丑己巳七日同〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0146",
+      "sha256": "182cfd29aa6989447618cefe82b269c484be2377c3090263a1de28850d7a882a"
+    },
+    {
+      "section": "凡貴徳臨身制鬼者返吉",
+      "text": "〔注文〕如乙丑乙巳二日酉加己發用三傳酉丑己金局為鬼申加干為徳為貴初傳螣蛇火制破其局末傳巳返作救神之例〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0147",
+      "sha256": "a319556d2e59c1ed879811dffd960aeee70524c179d49b42a7e516966932ac7c"
+    },
+    {
+      "section": "凡傳鬼為貴人盗氣亦能免禍",
+      "text": "〔注文〕如辛巳日午加辛發用三傳火局順逆貴皆貴勾常盗火氣不能為鬼之例〔/注文〕\n凡傳雖脱干能制暗鬼各借益格猶有人来賺我恰值我有禍患欲借其力姑遂其意用之反有益也〔注文〕暗鬼者貴神尅干也其㐫甚於眀鬼如壬子日未加夘發用三傳木局脱干夜貴貴勾常為鬼木反制例之例〔/注文〕\n同類受尅絶以神而言甲乙日寅夘臨申酉丙丁日以己午臨亥子庚辛日申酉臨寅夘壬癸日亥子臨己午\n同類受尅絶以将而言甲乙日青龍六合乗申酉丙丁日朱雀螣蛇乗亥子戌巳日貴人太常勾陳乗寅夘庚辛日白虎太陰乗己午壬癸日𤣥武天后乗辰戌丑未",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0148",
+      "sha256": "b1fabd22d199dfe0c0c2a7cdf22de70c4129622f21e8d0b1a908829e2c3d3844"
+    },
+    {
+      "section": "墓",
+      "text": "墓者伏沒之神也五行墓於四季有隂陽生死之分陽干死地即隂干生地故未為甲癸之墓戌為丙戊乙之墓丑為庚丁己之墓辰為壬辛之墓此蓋戊巳從丙丁分順逆以子依母以生金也未為木墓戌為火墓丑為金墓辰為水圡墓此蓋單論五行土寄坤不以干之隂陽分順逆也壬課重在日惟従十干墓不〔字形SK2971：未编码〕五行墓\n凡墓入傳臨日主一切閉塞暗昧壅蔽不通\n凡辰未為日墓戌丑為夜墓日墓剛速夜墓柔延凡墓朦昧昏暗若夜墓臨日自暗投眀諸事尚有觧救如日墓臨夜自眀投暗一切愈見糢糊\n凡寅加戌巳加丑申加辰亥加未自生入墓如人墜井中呼天不應占病必死占賊難獲占行人不来\n日之長生處乗墓如甲乙日未臨亥丙丁日戌臨寅戊己壬癸日辰臨申庚辛日丑臨己是也主舊事再發\n長生處自乗墓主新事廢如甲乙日辰加亥丙丁日未加寅戊巳壬癸日丑加申庚辛日戌加巳是也\n天上長生坐墓如甲乙日亥臨辰丙丁日寅臨未戊己壬癸日申臨丑庚辛日己臨戌是也主不能生\n以身入墓如甲乙日末傳遇未丙丁日末傳遇戌之類以魂入墓即墓神覆日如甲乙日未加寅辰丙丁日戌加己未之類\n以日入墓即坐墓如甲乙日寅辰臨未丙丁日己未臨戌戊己日己未臨辰庚辛日申戌臨丑壬癸日亥丑臨辰\n以支戴墓坐墓戴墓如辰加亥子并辰戌丑未未加寅夘丑加申酉戌加己午坐墓如亥子并辰戌丑未臨辰寅夘臨未申酉臨丑巳午臨戌\n行年化氣入墓如行年立寅午戌化氣屬火火墓戌加戌是也\n年命乗墓坐墓如年命在子辰加子為乗墓天上子臨辰為坐墓\n以鬼入墓如甲乙日申酉加丑丙丁日亥子加辰之類凡生旺入墓成而後敗墓入生旺敗而復成\n凡墓主暗昧憂鬰若自墓傳生㐫中變吉\n凡墓發用宜日干有氣若無氣占病防死占訟防屈凡中傳見墓百事不順進退有悔",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0149",
+      "sha256": "c0d585c99d57ae4537c8e3d83edc9d565b89bd799ccbde59ee5da7ba5bc9d5c1"
+    },
+    {
+      "section": "凡末傳見墓百事終無成就",
+      "text": "凡墓逢冲則吉逢合則㐫若年命上神能尅制之亦可為救",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0150",
+      "sha256": "23a298e735cec747598a177be73933dada43226e15295b05b9a597a98cab474d"
+    },
+    {
+      "section": "破",
+      "text": "破者散也移也其法以十二支環列陽日破後四辰隂日破前四辰凡破臨日入傳惟宜散㐫事不宜成吉事\n凡破占事多中輟有更改一切主不完全\n凡午破夘主門户破敗辰破丑主墻墓頽圮酉破子主隂小災悔戌破未主人物刑傷亥破寅申破巳破中有合敗而復成六反皆然〔注文〕六反如夘破午丑破辰之例〔/注文〕\n凡四孟見酉四仲見己四季見丑名破碎煞主凡物破損不完\n凡破冲主人情暗中不順占婚雖强成難久占産胎動難生若乗喜神吉神凡事艱難後遂若逢空落空有聲無形",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0151",
+      "sha256": "fd5607bb125f041f18c9b82ebbf474efe806d70f5c8ba501fd6bfb9cacf6d5e7"
+    },
+    {
+      "section": "凡年命上見破主有傷損",
+      "text": "害\n害者阻也鬬也其法以十二攴〔字形SK2971：未编码〕辰戌兩分自戌至夘横列於下自酉至辰横加其上上下相交即為六害凡害臨日入傳事多阻隔\n凡子加未主事無終始官非口舌未加子主營謀阻滯暗裏生災　丑加午主公訟不利夫妻不和午加丑主事不分明終難成就　寅加己主出行改動退利進阻己加寅主謀事阻難口舌憂疑　夘加辰主事有虛争好中生鬬辰加夘主求謀多阻幹事無終酉加戌主門户損傷隂小災疾戌加酉主暗中不羙奴婢邪謀　申加亥主先阻後得事必有終亥加申主圖謀未遂事必無始\n凡害必無和氣只宜守舊動即有失",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0152",
+      "sha256": "b81d36e7f9055ece4ec9c01baa69e594acfc659c366293b5406a31c789ac1e9e"
+    },
+    {
+      "section": "刑",
+      "text": "刑者傷也殘也其法以十二支環列以丑寅向下兩分隔四刑之始分而刑三冲中者自刑終交而刑二冲首者自刑故丑刑戌戌刑未未刑辰辰冲戌為自刑寅刑己巳刑申申刑亥亥冲己為自刑子刑夘夘刑午午冲子為自刑夘刑子子刑酉酉冲夘為自刑是以辰亥午酉為自刑子夘夘子為互刑丑戌未寅己申為朋刑故曰三刑也凡朋刑惟丑能刑戌戌能刑未未不能刑戌戌不能刑丑惟寅能刑巳巳能刑申申不能刑己己不能刑寅而世本有以未刑丑申刑寅者蓋未考冲首為自刑而誤以冲為刑也凡刑入𫝊臨日必主傷殘自刑主自逞自作以致落敗事非順成死非正命\n凡互刑主無禮無義大蕩小淫子刑夘死敗相刑門户不正尊卑不睦夘刑子明入晦出子息不律水陸不通\n凡朋刑主無情無恩威凌勢挾寅刑己刑中有害舉動艱難災訟駢至丑刑戌刑中有鬼貴賤相侮病獄交臻己刑申戌刑未刑中有破長幼不和身家零落\n凡刑發用必見刑傷刑干憂男刑支憂女刑時憂事凡時刑日憂小人日刑時憂君子\n凡旺刑衰則福過死刑旺則禍起\n凡發用刑月建不可對訟行日隂不可逺行刑干支諸事不安干刑應在外速支刑應在内遅\n凡上下相刑發用又作日鬼主返復乖戾公私兩憂",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0153",
+      "sha256": "db5359f96d04bb458ff6022d921e8bcf24585fc83f45865243d371737a08829b"
+    },
+    {
+      "section": "冲",
+      "text": "冲者動也格也其法以十二支環列隂陽各相對為冲即返吟之例凡冲日主身有攸往冲辰主宅有動移\n凡冲主動移返復不寜子午相加道路驅逐男女争交謀為變遷舉動差失夘酉相加分異失脱更改門户乗隂臨合淫泆奸私寅申相加邪鬼作祟夫妻異心己亥相加順去逆来重求輕得丑未相加弟兄兩意謀望無成辰戌相加悲喜不眀奴僕逃走",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0154",
+      "sha256": "e97a8aca8f6790d00bcb1953e257f73fb0e3c3ce3d6bde4c128a944a9994fd08"
+    },
+    {
+      "section": "凡嵗月日干支皆不宜冲",
+      "text": "〔注文〕如甲子嵗干上申攴上午之例月日倣此〔/注文〕冲嵗嵗中不足冲月月中不足\n凡吉神不宜冲冲則不吉㐫神宜冲冲則不㐫",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0155",
+      "sha256": "56e6c52d290a5b1a515e3fe74d6f7b4d8c96e975e577ce560530b0a0bb6a62df"
+    },
+    {
+      "section": "課目",
+      "text": "元首一上尅其下　天地得位品物亨〔注文〕第一〔/注文〕\n重審一下賊乎上　以臣諍君詳審行〔注文〕第二〔/注文〕\n知一上下二相尅　擇比而用允執中〔注文〕第三〔/注文〕\n渉害俱比俱不比　度難歸家深淺逢〔注文〕第四〔/注文〕\n遙尅神日互相尅　蒿矢彈射勢為輕〔注文〕第五〔/注文〕\n昴宿四課无尅遙　隂伏掩目陽轉蓬〔注文〕第六〔/注文〕\n别責旡尅三課備　剛三柔六九為宗〔注文〕第七〔/注文〕\n八專二課俱无尅　日陽辰隂順逆從〔注文〕第八〔/注文〕\n伏吟天地俱不動　乙癸有尅法不同〔注文〕第九〔/注文〕\n返吟有尅往来取　井欄丑未丁己辛〔注文〕第十〔/注文〕\n三光用神與日辰　時旺将吉萬事通〔注文〕十一〔/注文〕\n三陽日辰與用旺　日辰貴前貴順登〔注文〕十　四二　順〔/注文〕三竒子戌尋大吉　申午辰寅子亥承〔注文〕十三〔/注文〕\n六儀六甲旬頭發　日儀午逆未順宫〔注文〕十四〔/注文〕\n時太發用嵗月方　龍合財徳最為强〔注文〕十　天五　恩〔/注文〕龍徳太嵗與月将　天乙發用致福祥〔注文〕十六〔/注文〕\n官爵嵗月與年命　驛馬魁常發用香〔注文〕十七〔/注文〕\n富貴天乙乗旺氣　日辰年命相生良〔注文〕十八〔/注文〕\n軒蓋三傳午夘子　正七兩月正相當〔注文〕十九〔/注文〕\n鑄印發用戌加己　戌印已爐綬太常〔注文〕二十〔/注文〕\n斵輪太冲申上傳　夘輪庚斧乙庚歡\n引〔字形SK2971：未编码〕三傳引干攴　又有貴引干年言\n亨通三傳逓生日　天生地生有兩般\n繁昌夫妻年為用　徳合旺相卦應咸　　〔注文〕徳孕旺孕〔/注文〕榮華貴旺禄馬發　干支年命吉将傳\n徳慶天徳與月徳　干支二徳用為先\n合歡日上遁干合　吉将三六合用兼\n和羙專言四課事　各合互合皆為歡\n斬闗魁罡日辰用　重土塞門斬闗行\n閉口旬尾加旬首　又有武隂逆四〔字形SK2971：未编码〕〔注文〕三　刑十　徳〔/注文〕逰子季用又乗丁　再遇天馬走西東〔注文〕三一〔/注文〕\n三交四仲来加仲　三傳皆仲隂合逢〔注文〕三二〔/注文〕\n亂首支加干尅干　干加支上被尅同〔注文〕三三〔/注文〕\n贅壻支臨干被尅　干加支上尅支通〔注文〕三四〔/注文〕\n冲破日辰冲為用　更兼嵗月破神併〔注文〕三五〔/注文〕\n淫佚后合乗夘酉　狡童泆女此中情〔注文〕三六〔/注文〕\n旡淫三課有尅取　交車尅下男女争〔注文〕三七〔/注文〕\n解離日辰互尅上　年命互尅亦同稱〔注文〕三八〔/注文〕\n孤寡四季之前後　如春已孤丑寡星〔注文〕三九〔/注文〕\n地盤為孤天盤寡　陽孤隂寡三般呈〔注文〕四十〔/注文〕\n度厄三課上下尅　上下相尅長幼驚〔注文〕四一〔/注文〕\n無祿四上来臨下　以尊制卑臣子㐫〔注文〕四二〔/注文〕\n絶嗣四下賊乎上　小人無禮肆縦横〔注文〕四三〔/注文〕\n迍福八迍兼五福　吉㐫叅駁此為名〔注文〕四四〔/注文〕\n侵害日辰六害兼　年命發用最㐫殘〔注文〕四　凌五　犯〔/注文〕\n刑傷干支三刑用　又兼本命與行年〔注文〕四六〔/注文〕\n二煩日月加四仲　斗擊丑未此為言〔注文〕四七〔/注文〕\n天禍四立絶神用　昨日之干加今干〔注文〕四八〔/注文〕\n天獄墓作死囚用　天罡日本之宫躔〔注文〕四九〔/注文〕\n天寇分至前一日　月加离辰發用先〔注文〕五十〔/注文〕\n天網時用俱尅日　物孕有損病纒綿〔注文〕五　羅一　網〔/注文〕\n〔字形SK3379：未编码〕化死囚帶白虎　干支年用㐫禍連〔注文〕五　䘮〔字形SK3379：未编码〕飛魂二　䘮門〔/注文〕三隂貴逆日辰後　死囚𤣥虎時尅年〔注文〕五　四三　逆〔/注文〕\n龍戰夘酉日兼用　年立夘酉事迍邅〔注文〕五四〔/注文〕\n死竒月躔天罡用　再遇鬼墓事熬煎〔注文〕五　死五　絶〔/注文〕灾厄䘮弔逰魂用　邱墓嵗虎伏殃邉〔注文〕五六〔/注文〕\n殃咎三傳克日因　神将尅戰乗墓真〔注文〕五　伏七　殃〔/注文〕九醜子午與夘酉　配合乙戊己辛壬〔注文〕五八〔/注文〕\n鬼墓日辰鬼作墓　鬼尅墓覆禍宅身〔注文〕五　鬼呼　䘮門九　五墳四煞〔/注文〕勵徳日辰看前後　天乙立在二八門〔注文〕六十〔/注文〕\n盤珠嵗月與日時　傳課俱全此為云〔注文〕六　即天心格一　回還格〔/注文〕全局三合之課是　　水火木金圡中存〔注文〕六二〔/注文〕\n𤣥胎三傳皆四孟　　𤣥中有胎名義深〔注文〕六三〔/注文〕\n連珠聮茹兼進退　　間𫝊順逆此中論〔注文〕六　間𫝊撞干四　撞支〔/注文〕六純十雜兼物類　　三課之説最紛紜〔注文〕六　新故始終五　拘檢〔/注文〕\n凢干支相害犯外好裏芽槎者止五日",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0156",
+      "sha256": "a5da049c5c46d9b90c663b7792491bfd67e7d8098c96d3dc2d51e543612695d3"
+    },
+    {
+      "section": "丙寅",
+      "text": "〔注文〕申丙寅丙〔/注文〕壬申〔注文〕寅壬申壬〔/注文〕乙夘〔注文〕丑乙未乙〔/注文〕辛酉〔注文〕丑辛未辛〔/注文〕戊寅〔注文〕申戊寅戊〔/注文〕\n凢上神作合支加干隣近相㑹止三日",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0157",
+      "sha256": "a177f9bdce817121dd3d76da32c8f99b7dde795296b34f53fee4d7524d886c65"
+    },
+    {
+      "section": "壬子",
+      "text": "〔注文〕子壬〔/注文〕丙午〔注文〕午丙〔/注文〕戊午〔注文〕午戊〔/注文〕\n凡萬事喜忻三六合止八日九課",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0158",
+      "sha256": "3cde79b65ab291b77c8fbc5c07da765b1c4628d0285a7c817042689e68eb5334"
+    },
+    {
+      "section": "壬寅",
+      "text": "〔注文〕未壬〔/注文〕乙酉〔注文〕申乙〔/注文〕壬午〔注文〕夘壬未壬〔/注文〕丙申〔注文〕丑丙〔/注文〕丙辰〔注文〕丑丙〔/注文〕丙子〔注文〕丑丙〔/注文〕戊辰〔注文〕丑戊〔/注文〕戊申〔注文〕丑戊〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0159",
+      "sha256": "5da2a33d3fa10770cff39593d29562402723a235f3de0d74305a01bad801d795"
+    },
+    {
+      "section": "凡源消根斷課止四日四課",
+      "text": "癸未〔注文〕夘癸〔/注文〕癸己〔注文〕夘癸〔/注文〕癸夘〔注文〕夘癸〔/注文〕辛夘〔注文〕子辛〔/注文〕\n凡六庚日己加申皆丁神臨宅人灾宅動旦将反生凡六辛日午加辛亦丁神臨宅〔注文〕辛亥日未加亥夜作白虎更㐫〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0160",
+      "sha256": "686711f6b3dee13bd1ff3ae37480606f6e4ca87f8751492899ebaab738f637a4"
+    },
+    {
+      "section": "凡昴星止十六課",
+      "text": "甲子旬中己庚辛　巳己　〔注文〕巳〔/注文〕庚午〔注文〕酉庚〔/注文〕辛未〔注文〕亥〔/注文〕甲戌丁戊癸為真　丁丑〔注文〕辰丁戊丁〔/注文〕戊寅〔注文〕酉戊〔/注文〕癸未〔注文〕寅癸〔/注文〕甲申丁戊己辛是　丁亥〔注文〕戊丁〔/注文〕戊子〔注文〕丑戊〔/注文〕己丑〔注文〕辰巳戊巳〔/注文〕辛夘〔注文〕未辛〔/注文〕\n午乙甲辰戊巳尋　乙未〔注文〕夘乙寅乙〔/注文〕戊申〔注文〕午戊〔/注文〕己酉〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0161",
+      "sha256": "9384177c49317db6a0046de78f38741ec241fdc006a1b487880125bab7b769c3"
+    },
+    {
+      "section": "凡䘮弔全逢惟十日",
+      "text": "甲午丁亥己亥庚子癸巳乃干上乘弔客支上乘䘮門甲戌丁夘己夘庚辰癸酉五日乃干上䘮門支上弔客",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0162",
+      "sha256": "cef39cb87a4f02320108aae8a3712c65207f9cee19d856c104bbf3302a58d54a"
+    },
+    {
+      "section": "凡䘮弔全逢惟十日",
+      "text": "此貴神晝順行夜逆行不坐辰戌牢獄之地各取喜其合處不喜其刑害之方如晝貴甲從子起為諸千之首且貴人之前不敢有對冲坐者故午上無寄干癸無所處特寄在别宫故晝寄丑宫夜寄未宫今内干係晝外干係夜互相取合今畫其晝貴夜貴倣此其説其有理而近不用",
+      "layer": "historical_work_transcription",
+      "passage_id": "liuren:c001:p0163",
+      "sha256": "6aaef608b7685cf12cb790423c776dfe98b126a8f75a0863807e7283712d72ed"
+    },
+    {
+      "section": "貴神",
+      "text": "〔注文〕無處不臨〔/注文〕\n子上解息用童僕丑上升堂名利途寅上按凡可干謁夘上登車宜奔囑辰戌入獄多憂懼己午受貢君臣福未上列席申求幹酉入私室亥操笏\n貴人在申願神動丑巳圡地及皂神酉上逢之多呪詛須防午上貴人嗔\n貴神當權神藏煞没天乙入獄諸事不治貴登天門為當權到辰戌上為入獄",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0164",
+      "sha256": "ab6dfac9c01387ec46ec64caa7505b99dce13f9a58e9e7222c466db782097394"
+    },
+    {
+      "section": "螣蛇",
+      "text": "〔注文〕不臨戌亥〔/注文〕\n子上墜水可消憂丑上盤龜福善儔寅上生角宜進用夘上當門主官愁辰上化龍利科甲巳上入穴〔注文〕又云乗霧〔/注文〕不出頭午上飛空才官利未上入林防暗幽申上銜刀酉露齒戌眠亥掩目無咎\n螣蛇在酉他多妬隂人不足怒嗔心若是男兒傷風病夘中門户閙時臨\n螣蛇交戰毒氣凌遲螣蛇當卧鬼怪傷夷交戰者正夘二酉三子四午周而復始逢之則㐫當卧者春亥夏子秋己冬酉遇之皆吉",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0165",
+      "sha256": "d37db7c5678e5df523d272b83242a585c6e8a4b3b7aa20da9fdfb21e1d68ac26"
+    },
+    {
+      "section": "朱雀",
+      "text": "〔注文〕不臨酉戌亥子〔/注文〕\n損羽投江子丑為寅夘安巢文書遅辰上投網巳翶翔午銜符㐫未喙食申上厲嘴主怪異酉上夜鳴官降職戌上無毛亥入水朱雀行宫須細推\n朱雀来飛申酉位傳言妄説酉申㸔談天論地戌呪詛要之酉上是為端\n朱雀銜物婚姻財物朱雀開口争鬬填塞銜物者〔注文〕正酉二己三丑四子五申六辰七夘八亥九未十午十一寅十二戌宜求財婚事〔/注文〕開口者〔注文〕正巳二辰三午四未五夘六寅七申八酉九丑十子十一戌十二亥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0166",
+      "sha256": "5336ec548dbe977fb806974f3ebd4a96c615dc6e83799851c3e983b1273ecd73"
+    },
+    {
+      "section": "六合",
+      "text": "〔注文〕不臨申酉戌亥子丑〔/注文〕\n反目嚴粧子丑是寅上乗軒夘入室辰上違禮〔注文〕又云不諧驚悖〔/注文〕己賀書升堂納彩午未居申上結髮成歡好酉上私竄走隂私戌上亡羞加罪過亥上待命便為吉六合失利申酉鄉消灾折本業将亡辰上大小生唇吻戌上姑姐也難康",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0167",
+      "sha256": "5e034deee3a680162270ee384216692ca63d710c9265ec4823cb9c6d0bd4df08"
+    },
+    {
+      "section": "六合不合隂陽相雜",
+      "text": "〔注文〕不合者是六合乗子午夘酉又或入四仲之辰為之相雜主隂私不明事㐫〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0168",
+      "sha256": "8ed96ecf5cacc39d2b2a0758412a20b988576107bfbcacb2c4d0d81da4d56d56"
+    },
+    {
+      "section": "勾陳",
+      "text": "〔注文〕不臨酉戌亥子〔/注文〕\n子丑之宫皆被辱寅夘受制官事起〔注文〕在寅遭囚宜上書在夘臨門家不寜〔/注文〕辰上陞堂獄勾連已上捧印官職喜午上反目未入驛申上佩劍酉病足戌上入獄亥遺冠勾陳方鄉無好處勾陳尅日禍殃纒公私牽連不暫閒日尅勾陳宜幹事寅方公吏有災連亥上見之多不測子逢出入更難平己午只是遲延勢辰戌二位更難陳勾陳交㑹連綿禍深勾陳仗劍疾病傷殘〔注文〕勾陳本㐫将又值天罡是神将俱㐫故主連綿之禍也伏劍者正月起已逆行十二支是也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0169",
+      "sha256": "d673340a881cd7301ed77abfc7c99b80020ec0f929bc3056e2571e87416183ee"
+    },
+    {
+      "section": "青龍",
+      "text": "〔注文〕不臨戌亥〔/注文〕\n子上入海丑盤泥寅上乗雲夘戲珠辰上閉目巳飛空午上損尾折角未申上無鱗酉伏路登途逰江戌亥是\n青龍開眼萬事相宜青龍若臥人灾禍随〔注文〕開眼者孟月寅仲月酉季月戌逢㐫皆吉卧者春丑夏寅秋辰冬已是也〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0170",
+      "sha256": "d74835362a6a10b0c7c9145be3e0bfb6c929cc8443aa36c28793d8ac1c4abd6a"
+    },
+    {
+      "section": "天空",
+      "text": "〔注文〕無處不臨〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0171",
+      "sha256": "1c7f3acb7480528d32f2481b2bda12155557c4b644ea6fb4a363e684bf6fb030"
+    },
+    {
+      "section": "子上溺水",
+      "text": "〔注文〕主患在婦女〔/注文〕丑虚詐寅上受制夘被刑辰上入獄巳控〔注文〕闕〔/注文〕午上識字未得食申上鼓舌酉巧説居家誣詞戌亥〔注文〕闕〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0172",
+      "sha256": "098f4fea8fc78ceeb9c5bb56c9c6d4c628d3b63d121d650262a826a04d17184c"
+    },
+    {
+      "section": "天空下淚哀聲䀨起",
+      "text": "〔注文〕天空㐫将而又臨壬癸故曰下淚主哭泣之事凢六甲旬中壬癸日是也如甲子旬中𫝊出申酉二字即是下淚〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0173",
+      "sha256": "083172112e15cd8c332acae76fe0dd55e9c6e26d5801d0378409d6e0cc178469"
+    },
+    {
+      "section": "白虎",
+      "text": "〔注文〕不臨辰巳〔/注文〕\n子上渡江丑臨欄寅上登山夘門前辰上咥〔注文〕闕〔/注文〕午上斷尾未逰田申上啣書酉當户戌為落井亥\n〔注文〕闕〔/注文〕\n白虎遭擒已免㐫惡白虎仰視㐫咎大作〔注文〕白虎㐫将若　　午\n為　　　　　災仰視者正申二寅三巳四亥周而復始逢之主咥人之㐫〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0174",
+      "sha256": "42c57cbdf788cd91a0d35453283fc6059fd784217871914670552dd7a96517b6"
+    },
+    {
+      "section": "太常",
+      "text": "〔注文〕不臨夘辰巳午〔/注文〕\n子上遭枷丑受官寅上側目夘遺冠辰上捧綬己〔注文〕闕〔/注文〕午上乗軒未列筵申上捧爵酉作劵戌上持印〔注文〕又云〔/注文〕\n〔注文〕逆命〔/注文〕亥詔宣",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0175",
+      "sha256": "857127ea5ea20ddd3320aaf6b60f9160d403480c178883545cd7f63a0029ce7c"
+    },
+    {
+      "section": "太常被剥百事銷鑠",
+      "text": "〔注文〕銷鑠者春辰夏酉秋夘冬已得之亦㐫〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0176",
+      "sha256": "28386268e9271da04b5fb21535c8c7b140d6ac7a217500b5a04a2d08669545bc"
+    },
+    {
+      "section": "𤣥武",
+      "text": "〔注文〕不臨寅夘辰巳午未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0177",
+      "sha256": "f63e0052f184e264b6afecbfac2d2417b509493f3da799c970d975d4fbc2d12a"
+    },
+    {
+      "section": "子上散髮",
+      "text": "〔注文〕又云升堂〔/注文〕丑虚詐寅上入林夘窺室辰上入獄己反顧午上截路未不治申上折足酉㧞刀戌上遭囚亥藏匿",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0178",
+      "sha256": "faae5049a2dcf83f044f31ea2180a2501f1faf432bd978edc7dc240e03af8b82"
+    },
+    {
+      "section": "𤣥武横絶盗賊發兵",
+      "text": "〔注文〕𤣥武㐫将若臨辰戌丑上主盗賊侵凌事〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0179",
+      "sha256": "d4faceb0acad5521a5e0c40d26c67f8374cb20b663736cdaab2dcd92d20c10e0"
+    },
+    {
+      "section": "太隂",
+      "text": "〔注文〕不臨夘辰己午〔/注文〕\n子上垂簾丑入内寅上跌足夘徵行辰上理冠巳伏枕午上披髮未書通申上執正酉閉户戌上刺綉〔注文〕又云被察〔/注文〕亥裸形",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0180",
+      "sha256": "6325f3a0b0fa3a5ece8ce45b17fe9b131d9d9d32ee6b7627eb513a72278bc1f0"
+    },
+    {
+      "section": "太隂㧞刀隂謀害之",
+      "text": "〔注文〕太隂乗申上主小人暗害吉中有㐫臨申酉亦是〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0181",
+      "sha256": "d64fa0fd173052b737b6a13e3fbac8910f6d78538c1c33cff65ec2dea26cb86e"
+    },
+    {
+      "section": "天后",
+      "text": "〔注文〕不臨辰巳〔/注文〕\n子上守閨丑窺人寅上脩容夘倚門辰上毁粧巳裸體伏枕沐浴午未存申上理粧酉把鏡居帷治事戌亥真",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0182",
+      "sha256": "22ade6632851dafe4af0e758991d4fec6e9886e985c24fc21290aad73577fc5d"
+    },
+    {
+      "section": "天后淫亂女喜他人",
+      "text": "〔注文〕若隂月臨申陽月臨酉為犯淫亂浴盆煞也〔/注文〕\n十二天将惟貴神天空不乗辰戌\n𤣥武六合不乗丑未　其餘無神不乗",
+      "layer": "base_text_with_commentary",
+      "passage_id": "liuren:c001:p0183",
+      "sha256": "80ca98c0cc10e1ad8b0e804d1459a682c2144abc090d1d5fc3676766c0a13b50"
+    }
+  ]
+}

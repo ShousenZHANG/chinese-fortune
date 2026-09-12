@@ -1,0 +1,81 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c012",
+  "title": "五行相克章第十二",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F12&oldid=2100316",
+  "revision": "2100316",
+  "source_timestamp": "2022-01-20T03:09:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c012.wiki",
+  "raw_sha256": "679b1ca9af73d2f809a829d2449325fb2e79bce081e16b991afeaab5c01945c5",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "五行相克章第十二",
+      "text": "金克木，木克土，土克水，水克火，火克金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0001",
+      "sha256": "5011854bf9f62ec39558a250e5262e0e5b61f56710d07a3282b485b24f9063ae"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "凡忌神、仇宜於逢克，月克、日克、動爻克用神、化回頭克，此四者用神、元神俱逢一克，他處不見生扶者，則爲凶兆。占吉事樂極生悲，占凶事須宜急急回避。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0002",
+      "sha256": "cea0114ea45ddb3f139f9e5425e72ccf10505f6efb923d0df27e16be04cc2325"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "如卯月戊寅日占父官事已擬重罪得澤地萃卦變天火同人",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0003",
+      "sha256": "83b462993f039b37ac8a5a4fea95b68840f48b8ec55219ffb4f0f13b2a015161"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "父母未土ㄨ　　父母戌土⚊\n兄弟酉金⚊應　兄弟申金⚊\n子孫亥水⚊　　官鬼午火⚊\n妻財卯木ㄨ　　子孫亥水⚊\n官鬼巳火⚋世　父母丑土⚋\n父母未土ㄨ　　妻財卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0004",
+      "sha256": "24aa660c87fd5f5f6565653f11f850bb93990727beedf42360fda48c3a709aab"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "外卦未土父母，卯月克之，內卦亥卯未合成木局又相克制，月克日刑全無助，果至重刑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0005",
+      "sha256": "4dbe8adc3c6f49d5f6c702418c774936050b10f524487ec470cbf2ec30142459"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "同日妹占兄官事同此一案亦擬重罪得天地否變天水訟",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0006",
+      "sha256": "ae73be115946709d31b77acd0941205420ecc12376221838aa3c54a34489e8c8"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "父母戌土⚊應　父母戌土⚊\n兄弟申金⚊　　兄弟申金⚊\n官鬼午火⚊　　官鬼午火⚊\n妻財卯木⚋世　官鬼午火⚋\n官鬼巳火ㄨ　　父母辰土⚊\n父母未土⚋　　妻財寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0007",
+      "sha256": "dded1aaa1c33fd5dd12d3a0fe7ee3cfce0e901e4b0a4c792a258d232f6efe1f0"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "申金兄爻爲用神，巳火鬼動，刑克申金，重罪定矣。幸喜辰日沖動戌土父母暗動生申，克處逢生，若有父母可以救之，後因父年八十，援例恩畱免死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0008",
+      "sha256": "1b41560b0a72fe8b5912a99f02738852ccf58a22e5841da5bdbfc0544bc08eac"
+    },
+    {
+      "section": "五行相克章第十二",
+      "text": "聖人作易，令人趨吉避凶，未卜而不知者，是大數也，卜之而神不告，亦大數也，旣已卜之，神已先吿之，明知故犯者，亦不可盡委之於數也、命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c012:p0009",
+      "sha256": "1ecf6cabad462a5f7496c2f90a81245b76c4fcaaa3fdebd2ac7db51f254a4f06"
+    }
+  ]
+}

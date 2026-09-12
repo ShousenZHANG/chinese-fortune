@@ -1,0 +1,88 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c028",
+  "title": "生旺墓絕章第又二十六",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%881&oldid=2100461",
+  "revision": "2100461",
+  "source_timestamp": "2022-01-20T19:31:02Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c028.wiki",
+  "raw_sha256": "630f38b037ae720e90e55faff10a1c044f7edf9e3a85ce7dc645b8693ada2008",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "長生、沐浴、冠帶、臨官、帝旺、衰、病、死、墓、絕、胎、養。予得驗者，只驗生旺墓絕，其餘不驗，不必用之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0001",
+      "sha256": "021bca382c01c59ee235f1af74f625af7031737f3ec5762c1db212361c409953"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "金長生在巳，旺在酉，墓在丑，絕在寅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0002",
+      "sha256": "4864646141b282cbfd9829c983780337e89ba2acd1b0230e1c309aa9e6ca87b7"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "木長生在亥，旺在卯，墓在未，絕在申。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0003",
+      "sha256": "1b579e9e27c746bca15751a98b3017ac84215f21a070abfc325263ece8e4b464"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "土水長生在申，旺在子，墓在辰，絕在巳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0004",
+      "sha256": "e2460df8ca5884ee1516ccb1cf0ccbd447a65f9b002090ceb6bbcdd86d28f446"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "且如主事爻屬木，若在亥日占卦卽主事爻長生於亥日。若在卯日占卦，木旺於卯。若在未日占卦，木墓於未。若在申日占卦，木絕於申，其餘仿此。又如主事爻屬木，動而變出亥水者，謂之化長生，動而變出卯木者謂之化旺，動而變出未土者謂之化墓，動而變出申金者謂之化絕，餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0005",
+      "sha256": "3691277aefa25e2a7e76b10b8d690a9deeb427174d23e4bd8e543430d0825ad9"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "覺子曰：金𨿽長生在巳，且宜金爻旺相，或日月動爻生扶，再遇巳日占卦，或是卦中動出巳爻，或是金爻動而化出巳火，皆謂長生。倘若金爻休囚無气，再遇巳午火多者，烈火煎金，論克不論生也。金爻𨿽墓於丑土，若得未土沖動，或卦中土多生金，論生不論墓也。土爻𨿽絕於巳，必須休囚無气，又逢巳爻謂之絕。若土爻旺相，或得日月動爻生扶，再遇巳爻，巳火反能生土，論生不論絕也。巳爻𨿽長生於寅，倘日月動爻及變出之爻又逢申金者，謂之三刑，論刑不論生也。古以土爻長生在申，又曰土長生在寅，無處考證，予以天時考之，常見土臨父母。有申日雨者，亦有子日雨者；又見土臨子孫，有申日晴者，亦有子日晴者。故知土長生於申，旺於子，實知土寄生於申而無疑也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0006",
+      "sha256": "7e8fe1873ad292e09595e887342e50e6111daff5675a12f1b7a988e72e993e8e"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "曾於午月己卯日占妻病得震之豐",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0007",
+      "sha256": "0c46dce8b466a7158face97259cc392cb62809b29dd3545d26866f43769268f9"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "妻財戌土ㄨ世　子孫巳火⚊\n官鬼申金⚋　　妻財未土⚋\n子孫午火⚊　　官鬼酉金⚊\n妻財辰土⚋應　妻財辰土⚋\n兄弟寅木⚋　　兄弟寅木⚋\n父母子水⚊　　父母子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0008",
+      "sha256": "f27c935f7ddc69fa8f83ee5932fc90274abd9c6c5409886f4d278e20db314d56"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "辰土財爻爲用神，近病逢沖卽愈，許之當愈於辰日，不然酉日必愈，後因連日昏沈，竟於子日起牀，許辰日愈者，辰土逢值之日也。許酉日者，辰與酉合動而逢合之日也，今愈子日辰土財爻旺於子也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0009",
+      "sha256": "0c993099a58885bc85f8948ef2b3344cab362f7e9d7b8c513a29513ffa87d663"
+    },
+    {
+      "section": "生旺墓絕章第又二十六",
+      "text": "李我平曰：生旺墓絕之論，金生在巳，木生在亥，水生在申，火生在寅，四大長生，理之正也。惟土寄生，未得關入。法云：火土長生在寅。知子上是胞胎，此卽土寄生於寅。今五行家戌土生寅己土生酉。易冒𨿽曰：惟土之長生不一，山中有坤土生於申，若分陰陽，則戌土生寅己土生寅，實未得其據。此專以天時考證者土長生於申，萬古之不易也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c028:p0010",
+      "sha256": "07a68568e3849a82b5b0dbfa87852376e8004c5805d488a4091edefa2cb437f0"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c019",
+  "title": "卷十九",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c019.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十九",
+      "text": "占寻师访友\n以天芮为明师，时干为自己。如所往之方上得天芮，可遇明师；来生门干，传道无疑；若来克时干，必不投合。又时干克天芮，亦主无用。必天芮方上有三奇、吉门及诸吉格者，方为明师。否则亦非明师也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0001",
+      "sha256": "12be933b1090f41b7f46d8c1faebcb7ed1d0f619c1148925bd17fe44cd0a2d7d"
+    },
+    {
+      "section": "卷十九",
+      "text": "占访友\n访友看所访之方，以地盘一宫为主，以天盘为客。要相生合，再得吉门，去必相遇；若相克又无吉门，则不遇。逢庚加年月日时格，亦不遇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0002",
+      "sha256": "05027eea8131014669bfb03f11e6dcd76b49db045bea9c01a161a6771bbfaf09"
+    },
+    {
+      "section": "卷十九",
+      "text": "占访人\n如所访人在东北，则看八宫。所得地盘原主之星生对冲宫所乘之星，及受对冲宫所乘星之克，皆主相遇。如东北、西南方中一有吉格者，所求皆遂；凶则不遂；格则相拒而不纳；丙则相见而不相得。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0003",
+      "sha256": "9224f07ce2dfc16fd72894130d3de459305df29e84697751ae18f6f24fdc8157"
+    },
+    {
+      "section": "卷十九",
+      "text": "占见贵人\n以休生为主，与三奇合则吉；与日干相合，则贵人喜悦而有酒食财物；开门亦利于求见。余门不取。\n干谒以休门宫为所见之人，时干为所住之人。休门宫生时干宫，而时干再临三奇，必遂意。若三奇相克，不得见，干求亦不如意。又要彼此旺相则吉，一处休囚不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0004",
+      "sha256": "85431238749a7c17fce8668b92cba441b09a093378edfaf18dd43668a77f734e"
+    },
+    {
+      "section": "卷十九",
+      "text": "占谒见\n此时干支相生，门宫亦然而合吉格在于生气之宫，则见而有益。若求我之人生我者，则称意美满；如我生彼，见则艰难，因求而反退财帛；如逢克我又合凶格者，因求而招非或自取辱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0005",
+      "sha256": "f9f1d83a32cb638ab1d999ac936ce7381d18742e0f58cefb2a91b4b3e7832f3b"
+    },
+    {
+      "section": "卷十九",
+      "text": "占请人远近来否\n占法当分方向，看本宫地盘得何干，必上克天盘干，又要地盘干转到内界则来。如下不克上，及上克下，地盘仍在本宫，主不来。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0006",
+      "sha256": "ccc1980d7551c329d5111572cfa9b27129975759853eb9007e00a13808299b18"
+    },
+    {
+      "section": "卷十九",
+      "text": "占远客来意\n以值符为主，以天乙为远客，各看落宫。相生者无关系，克值符者有求，克天乙者求不遂，相比者求可遂及。甲落阳干为求财之事，丁落阳干为嘱托之事，景门落阳干为文书之事。阳甲乙丙丁戊，阴己庚辛壬癸也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0007",
+      "sha256": "24cc5337c694533e1795bfeedfe6705b1ab88f88d64026bd7716cd3fef228507"
+    },
+    {
+      "section": "卷十九",
+      "text": "占期约\n看系何人，年为尊长，月为同类，时为卑幼，日为自己。在值符前者，先至；在值符后者，后至。所落宫相比生，至；相克者，不至。如值符伏吟，虽有阳星加之，亦主不至。五不遇及悖格，皆同此也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0008",
+      "sha256": "0da9f51610b0368c35e9048dccf52b301839378b224d4d18f553156319791353"
+    },
+    {
+      "section": "卷十九",
+      "text": "占访馆\n以天辅为己身，值符为馆主，天芮为子弟。若值符生天辅宫，再看三奇、吉门及诸吉格者，成；其余俱不能成，各以落宫论之。又看天芮在旺相之宫，子弟多；在休囚，子弟少。如有所往而谋者，又当以所往之方占之。如得三奇、吉门及诸吉格者，有馆；无吉格、吉门，无馆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c019:p0009",
+      "sha256": "6d5b11511fc01eeac96b3d14a6d3a90fdb5498c589a67328e0e8c3be557f084b"
+    }
+  ]
+}

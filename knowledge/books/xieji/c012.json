@@ -1,0 +1,478 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c012",
+  "title": "卷12",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B712&oldid=787355",
+  "revision": "787355",
+  "source_timestamp": "2016-10-27T11:56:36Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c012.wiki",
+  "raw_sha256": "4a80025dc13f7108fab35a70db3335200b6181272aa2ba53b87e8f60285af985",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "xieji:c012:p0057",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷12",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷十二",
+      "text": "公規一\n司天之職首重氣候推晝夜永短以辨寒暑之進退察經緯躔舍以識中星之推移皆所以奉天而為協紀之本至於致祭迎春尤關鉅典載諸掌故昭舊職也作公規",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0002",
+      "sha256": "2d69119aa5b34da9c2edd6927059c621a1b29f6a30ae2dd013b75f77ff0cac49"
+    },
+    {
+      "section": "祀典",
+      "text": "春牛經",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0003",
+      "sha256": "1e278036a6412d4868b43f9a41a237de1d4d6d069aee542444c40b4c4c6036f0"
+    },
+    {
+      "section": "歲時紀事",
+      "text": "氣候",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0004",
+      "sha256": "0ee91010c3b54ff434afeb14cfb61012982c9f29f991b1c5ccf38e6a3a65daf6"
+    },
+    {
+      "section": "日躔過宮",
+      "text": "日出入晝夜時刻",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0005",
+      "sha256": "70aa13eb9befd91509a3a9d5dc58f2d8040d7848d3ea834115615c54d26bc366"
+    },
+    {
+      "section": "日出入方位",
+      "text": "朦影限",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0006",
+      "sha256": "e8977d4eb974f2ab3bd625f37cff3ac83e8f2b1a8b3a0b3fed669e9e28f48199"
+    },
+    {
+      "section": "祀典",
+      "text": "正月上辛日祈穀於",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0007",
+      "sha256": "e91e380c5991edce553b47a73eed669e57198a60ee278967dcaae6bc29fcf84f"
+    },
+    {
+      "section": "上帝",
+      "text": "冬至大祀",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0008",
+      "sha256": "ed62a0675ed887fbabd5e458310387bdda629a8d7618dddc51b83887072a04c0"
+    },
+    {
+      "section": "天於",
+      "text": "圜丘",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0009",
+      "sha256": "f9af84f3d7f7a8fd20bb9f3bfbddf1c0a3d30f08d506c18b4ba4397e04b038a9"
+    },
+    {
+      "section": "夏至大祀",
+      "text": "地於",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0010",
+      "sha256": "b7154d3dee37eaa04ba05651d352aeba763d89d912b5951db9694728057ccd1e"
+    },
+    {
+      "section": "方澤",
+      "text": "春分卯時祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0011",
+      "sha256": "2e9a6111824a9c4b34d5df3571f5cf4cb022a31a4bb74cc6f10b28c6d2be2285"
+    },
+    {
+      "section": "大明於朝日壇",
+      "text": "秋分酉時祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0012",
+      "sha256": "cae0ce0644ea05c7ae36b4273e02c0a36aa6ab472dd8c3bd20b887e8336b7158"
+    },
+    {
+      "section": "夜明於夕月壇",
+      "text": "四孟月朔時享",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0013",
+      "sha256": "f5cb2ec9b562a4a8a8d49b43bec0db212ff738ccac5a66a18467b620ac4d776d"
+    },
+    {
+      "section": "太廟",
+      "text": "孟春同日祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0014",
+      "sha256": "c5b74d6e81c1344343e3bda1ad24d76762449ca27a4a4a71aee643094c0a5b5b"
+    },
+    {
+      "section": "太歲月將之神",
+      "text": "歲暮祫祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0015",
+      "sha256": "6e45577dfa422114d184491adab41ca851b2533fd966b58514413c9963b3caa0"
+    },
+    {
+      "section": "太廟",
+      "text": "同日祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0016",
+      "sha256": "e14a6d1c2f6aba3033e37501f106548b6f9b1d91a0d6bcdb4d18823dd3b9566a"
+    },
+    {
+      "section": "太歲月將之神",
+      "text": "仲春仲秋上丁日祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0017",
+      "sha256": "0c910338900a70575dd077d258861057e4bd54475026493b2e64f81140988a7f"
+    },
+    {
+      "section": "先師孔子",
+      "text": "仲春仲秋上戊日祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0018",
+      "sha256": "ef656186330d243482f75eeb8ba006a4cf941516b12f2ed937188cbe69927e04"
+    },
+    {
+      "section": "社稷壇",
+      "text": "仲春仲秋擇日祭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0019",
+      "sha256": "5ad1f47d190f7f737ca17fcd84d5b89eb35ee35686b178839a274f1fed163192"
+    },
+    {
+      "section": "關帝廟",
+      "text": "黒龍潭龍神",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0020",
+      "sha256": "67b93ab31963aa44fb88a2feb19647c0d30eeb991c3d58f23c497e1dca9b20de"
+    },
+    {
+      "section": "昭忠寺",
+      "text": "定南武莊王",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0021",
+      "sha256": "82216baeba86333523392ca1b4110253333e2552174b4eb596686b1629f505ac"
+    },
+    {
+      "section": "恪禧公",
+      "text": "勤襄公",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0022",
+      "sha256": "b8d6df54db97ba7dc66c815f243eeef47fe2da4922825a21e1be06b3db7e5792"
+    },
+    {
+      "section": "文襄公",
+      "text": "賢良祠",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0023",
+      "sha256": "c081521dd5e7c41134377b443dcaa66f454f201bd00acfea96f132d669994904"
+    },
+    {
+      "section": "仲春仲冬上甲日祭",
+      "text": "三皇廟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0024",
+      "sha256": "404141f13f9f49a503dd91d5e9edbd7aefaeec5bb5f2568f878bd4e264cd62c6"
+    },
+    {
+      "section": "季春己日祭",
+      "text": "先蠶祠",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0025",
+      "sha256": "c22e1bb5981ea71b4bc7857f78aa4b95a47563f84648623619d860492f695cbb"
+    },
+    {
+      "section": "季春亥日祭",
+      "text": "先農壇",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0026",
+      "sha256": "b925d3a6d00a5bef7170f9a3a96ebb806f82cb34994309233d3ac21d2dfc61ce"
+    },
+    {
+      "section": "清明霜降前祭",
+      "text": "歴代帝王廟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0027",
+      "sha256": "c2af0e43414d14e3374bd193dc2c12185c1f5a7ea31d5a72b66b938760b42cc1"
+    },
+    {
+      "section": "六月二十三日祭",
+      "text": "火神廟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0028",
+      "sha256": "17a190e6c1004c4f4ed09c7ab3419ac4bdc3b005c9f84f78eb928e129c21e264"
+    },
+    {
+      "section": "季秋擇日祭",
+      "text": "都城隍廟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0029",
+      "sha256": "c06eb956b134aedf760af75917b4558640597e911fd9726b487460f086a2258c"
+    },
+    {
+      "section": "春牛經",
+      "text": "造春牛芒神用冬至後辰日於歲徳方取水土成造用桑柘木為胎骨\n牛身高四尺象四時頭至尾樁長八尺象八節",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0030",
+      "sha256": "5e5197c6f2360c85ac698b9b436d5304af39e7374b027cea4ac37fba185497f5"
+    },
+    {
+      "section": "牛頭色視年干",
+      "text": "甲乙年青色　丙丁年紅色　戊巳年黄色庚辛年白色　壬癸年黒色",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0031",
+      "sha256": "c38975b54daea9a9dc5d53acce540f2c17cb428c7dd18c9f61bd362c6dbb4ddc"
+    },
+    {
+      "section": "牛身色視年支",
+      "text": "亥子年黒色　寅卯年青色　己午年紅色申酉年白色　辰戌丑未年黄色",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0032",
+      "sha256": "54f2fc9303649d5335b3d3be341fdc91743d0face3a1404803b81d69a6b77de1"
+    },
+    {
+      "section": "牛腹色視年納音",
+      "text": "金年白色　　木年青色　　水年黒色\n火年紅色　　土年黄色\n牛角耳尾色視立春日干\n甲乙日青色　丙丁日紅色　戊巳日黄色庚辛日白色　壬癸日黒色",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0033",
+      "sha256": "3990b4321f01bcdfd4bfac165916429573ce6cbc7faf815da31b60129d26627e"
+    },
+    {
+      "section": "牛脛色視立春日支",
+      "text": "亥子日黒色　寅卯日青色　己午日紅色申酉日白色　辰戌丑未日黄色",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0034",
+      "sha256": "f04a72d8a2e1f92c65ae103ac269fbb7be58d5a7d64d7d9392dccb9fe2c17543"
+    },
+    {
+      "section": "牛蹄色視立春日納音",
+      "text": "金日白色　　木日青色　　水日黒色\n火日紅色　　土日黄色\n牛尾長一尺二寸象十二月左右繳視年隂陽\n陽年左繳　　隂年右繳\n牛口開合視年隂陽\n陽年口開　　隂年口合\n牛籠頭拘繩視立春日支干\n寅申己亥日用蔴繩　子午卯酉日用苧繩辰戌丑未日用絲繩　拘子俱用桑柘木\n甲乙日白色　丙丁日黒色　戊巳日青色庚辛日紅色　壬癸日黄色",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0035",
+      "sha256": "cc0367597ed28200b6cf6f2474959276582eb88b40387b8fbfa92f176f52c7d2"
+    },
+    {
+      "section": "牛踏板視年隂陽",
+      "text": "陽年用縣門左扇　　隂年用縣門右扇\n芒神身高三尺六寸五分象三百六十五日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0036",
+      "sha256": "4621df996e54342ef3beb19814d197e2b070ff609fd272b8f0230397e7c57017"
+    },
+    {
+      "section": "芒神老少視年支",
+      "text": "寅申己亥年面如老人像",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0037",
+      "sha256": "21c2d04f107d29c1f8c00b28f69b790e71fbe150f6c702c074485dd4b98657f5"
+    },
+    {
+      "section": "子午卯酉年面如少壯像",
+      "text": "辰戌丑未年面如童子像",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0038",
+      "sha256": "c6bac11dd02be1d6fdfbf03617801e9351a96b3d022f781d9d95932770bf7da0"
+    },
+    {
+      "section": "芒神衣帶色視立春日支",
+      "text": "〔注文〕剋支者為衣色支生者為帶色〔/注文〕\n亥子日黄衣青腰帶　寅卯日白衣紅腰帶己午日黑衣黄腰帶　申酉日紅衣黒腰帶辰戌丑未日青衣白腰帶",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c012:p0039",
+      "sha256": "cee6743c49a38e500c8535e92f5194854a7fb3487500f36bad5c5b88355666ac"
+    },
+    {
+      "section": "芒神髻視立春日納音",
+      "text": "金日平梳兩髻在耳前",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0040",
+      "sha256": "c7a778aa5255886214506e318f7802cc8405f6cdecdb9c178786687b536fbad4"
+    },
+    {
+      "section": "木日平梳兩髻在耳後",
+      "text": "水日平梳兩髻右髻在耳後左髻在耳前\n火日平梳兩髻右髻在耳前左髻在耳後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0041",
+      "sha256": "da75fe85147fa22cd241774e3a2b5d7ea9a102e5a70e89e3dfabcaf6f11af9f0"
+    },
+    {
+      "section": "土日平梳兩髻在頂直上",
+      "text": "芒神罨耳視立春時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0042",
+      "sha256": "bf5d8f63cf9cd0fefc1d6c0aabfc9f65d62a95aaf612e82b9c8db703d8a05057"
+    },
+    {
+      "section": "子丑時全戴",
+      "text": "寅時全戴揭起左邊",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0043",
+      "sha256": "bf236f98326e674f10e15abd3af188d0d8fb712cd934a0953b46f20f4131d5f0"
+    },
+    {
+      "section": "亥時全戴揭起右邊",
+      "text": "卯巳未酉時用右手提",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0044",
+      "sha256": "b386c6a85f3d14f2306cbe62dd39853ea9d90a3c873e53583eda6193d671f734"
+    },
+    {
+      "section": "辰午申戌時用左手提",
+      "text": "芒神行纒鞋袴視立春日納音\n金日行纒鞋袴俱全左行纒懸於腰\n木日行纒鞋袴俱全右行纒懸於腰",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0045",
+      "sha256": "ea9959e3725ca3c7f56b5ae8b44e8bb44ef8c68003abd34f6651f657e786fe91"
+    },
+    {
+      "section": "水日行纒鞋袴俱全",
+      "text": "火日行纒鞋袴俱無",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0046",
+      "sha256": "93af5a4c24a10eb183b18fbf59a55fcb1803909a84bada96fe0d243f9e5a80e9"
+    },
+    {
+      "section": "土日著袴無行纒鞋子",
+      "text": "芒神鞭杖用柳枝長二尺四寸象二十四氣鞭結視立春日支\n寅申巳亥日用蔴結　子午卯酉日用苧結辰戌丑未日用絲結　俱用五色醮染\n芒神忙閒立牛前後視立春距正旦前後遠近\n立春距正旦前後五日内芒神忙與牛並立立春距正旦前五日外芒神早忙立於牛前邊立春距正旦後五日外芒神晚閒立於牛後邊",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0047",
+      "sha256": "d9b11ee4cb6679e03d99f43846b4c71ba211375d7362abe7040dce6858f8cea0"
+    },
+    {
+      "section": "芒神立牛左右視年隂陽",
+      "text": "陽年立於牛左　　隂年立於牛右",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0048",
+      "sha256": "adfb6ff050f2fbb8a80b95faa85ec31cd4b2d46b237c4e434412145ea7b1df9c"
+    },
+    {
+      "section": "歲時紀事",
+      "text": "迎春\n先設春牛勾芒神於東郊牛頭東向立春先一日府州縣官吏綵仗鼔樂迎春於東郊祭拜勾芒神迎春牛勾芒神安置各衙門頭門内至立春本日用綵仗鞭春牛蓋即出土牛送寒氣之遺意也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0049",
+      "sha256": "a85131bdf11e73924dac2a24d6f83d39a8c643f68634a3f3c261fcf65e9b0820"
+    },
+    {
+      "section": "龍治水",
+      "text": "視元旦後第幾日得辰即為幾龍治水也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0050",
+      "sha256": "8cdfef00004d0a80cf8a91580b0f6efadcfffafd76121ed5ffc4845e70e5c427"
+    },
+    {
+      "section": "得辛",
+      "text": "視正月上旬第幾日值辛即為幾日得辛也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0051",
+      "sha256": "08a1d2eeed9f9105026399ba7c86152b40c69e14ea2a7559a7dfde85ceb4dc5d"
+    },
+    {
+      "section": "二社",
+      "text": "歴例曰二分前後近戊為社",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0052",
+      "sha256": "dcec7bcb9fe192c7306371727c147c60b718b1c123b88f75b275033945a9d974"
+    },
+    {
+      "section": "三伏",
+      "text": "夏至後三庚為初伏四庚為中伏立秋後初庚為末伏如庚日夏至即為初庚庚日立秋即為末伏",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0053",
+      "sha256": "e08c99da7c06203a47acdf9f5ec6403ef9fd770cf574389b513b48c38e70ea15"
+    },
+    {
+      "section": "霉天",
+      "text": "通書曰神樞經芒種後逢丙入小暑後逢未出碎金云芒種後逢壬入夏至後逢庚出謂之霉天",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0054",
+      "sha256": "d2e4108d39c794ae370c93faa690f285947579fba0a5d88aee10b46cf9290419"
+    },
+    {
+      "section": "氣候",
+      "text": "立春　東風解凍　蟄蟲始振　魚陟負冰\n雨水　獺祭魚　候鴈北　草木萌動\n驚蟄　桃始華　倉庚鳴　鷹化為鳩\n春分　𤣥鳥至　雷乃發聲　始電\n清明　桐始華　田䑕化為鴽　虹始見\n穀雨　萍始生　鳴鳩拂其羽　戴勝降於桑\n立夏　螻蟈鳴　蚯蚓出　王𤓰生\n小滿　苦菜秀　靡草死　麥秋至\n芒種　螳螂生　鵙始鳴　反舌無聲\n夏至　鹿角解　蜩始鳴　半夏生\n小暑　溫風至　蟋蟀居壁　鷹始摰\n大暑　腐草為螢　土潤溽暑　大雨時行\n立秋　凉風至　白露降　寒蟬鳴\n處暑　鷹乃祭鳥　天地始肅　禾乃登\n白露　鴻鴈來　𤣥鳥歸　羣鳥養羞\n秋分　雷始收聲　蟄蟲坯戸　水始涸\n寒露　鴻鴈來賔　雀入大水為蛤　菊有黄華\n霜降　豺乃祭獸　草木黄落　蟄蟲咸俯\n立冬　水始冰　地始凍　雉入大水為蜃\n小雪　虹藏不見　天氣上升地氣下降　閉塞而成冬大雪　鶡鴠不鳴　虎始交　荔挺出\n冬至　蚯蚓結　麋角解　水泉動\n小寒　鴈北鄉　鵲始巢　雉雊\n大寒　雞乳　征鳥厲疾　水澤腹堅",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0055",
+      "sha256": "00c90a4260a80386fdd6beab74557f89d21977e56593b0237e7958b3d1f9ee72"
+    },
+    {
+      "section": "氣候",
+      "text": "日躔每月中氣過宮雨水日躔亥宮初度是為娵訾之次春分日躔戌宮初度是為降婁之次穀雨日躔酉宮初度是為大梁之次小滿日躔申宮初度是為實沈之次夏至日躔未宮初度是為鶉首之次大暑日躔午宮初度是為鶉火之次處暑日躔巳宮初度是為鶉尾之次秋分日躔辰宮初度是為壽星之次霜降日躔卯宮初度是為大火之次小雪日躔寅宮初度是為析木之次冬至日躔丑宮初度是為星紀之次大寒日躔子宮初度是為元枵之次故月將正月在亥二月在戌三月在酉四月在申五月在未六月在午七月在巳八月在辰九月在卯十月在寅十一月在丑十二月在子月建視節氣斗杓也月將視中氣太陽也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0056",
+      "sha256": "7ed9a8f73754f0d894741f6c4c3535d3135f58ca882598d37d8987ba7e0a69eb"
+    },
+    {
+      "section": "氣候",
+      "text": "日出入之早晚晝夜永短所由分也而早晚之故有二一由於日行之内外一由於人居之南北蓋日行黄道與赤道斜交春秋分日行正當交〔字形SK3295：㸃〕與地平交於卯酉地平上下之度相等故晝夜適均所謂日中宵中也春分以後日行赤道内至夏至而極其距等圏與地平交於寅戌地平上下之度上多下少故晝長夜短所謂日永也秋分以後日行赤道外至冬至而極其距等圏與地平交於辰申地平上下之度上少下多故晝短夜長所謂日短也二分前後距交不遠黄道勢斜則緯行疾故數日而差一刻二至前後黄道勢平則緯行遲故半月而差一刻此永短由日行之内外而生者也至於人居有南北則北極出地有高下於是見日之出入早晚隨地不同中國在赤道北北極出地上南極入地下故夏晝長冬晝短自京而北北極愈高則永短之差愈多至於北極之下則赤道當地平夏則有晝而無夜冬則有夜而無晝蓋以半年為晝半年為夜矣所居之地愈南北極漸低則永短之差漸少至於赤道之下則兩極當地平而晝夜常均矣赤道以南與北相反此永短由人居之南北而生者也今按京師北極出地三十九度五十五分推得各節氣日出入晝夜時刻如左至各省日出入時刻不同俱以各省北極出地及太陽赤道緯度立算法見考成上編\n春分戌宮初度　日出卯正初刻　　　晝四十八刻\n日入酉正初刻　　　夜四十八刻\n五度　　日出卯初三刻八分　　晝四十八刻十四分\n日入酉正初刻七分　　夜四十七刻一分\n十度　　日出卯初三刻二分　　晝四十九刻十一分\n日入酉正初刻十三分　夜四十六刻四分\n清明　十五度　日出卯初二刻十分　　晝五十刻十分\n日入酉正一刻五分　　夜四十五刻五分\n二十度　日出卯初二刻四分　　晝五十一刻七分\n日入酉正一刻十一分　夜四十四刻八分\n二十五度　日出卯初一刻十二分　晝五十二刻六分\n日入酉正二刻三分　　夜四十三刻九分\n穀雨酉宮初度　　日出卯初一刻六分　　晝五十三刻三分\n日入酉正二刻九分　　夜四十二刻十二分\n五度　　　日出卯初一刻　　　　晝五十四刻\n日入酉正三刻　　　　夜四十二刻\n十度　　　日出卯初初刻九分　　晝五十四刻十二分\n日入酉正三刻六分　　夜四十一刻三分\n立夏　十五度　　日出卯初初刻三分　　晝五十五刻九分\n日入酉正三刻十二分　夜四十刻六分\n二十二度　日出寅正三刻十一分　晝五十六刻八分\n日入戌初初刻四分　　夜三十九刻七分\n小滿申宮初度　　日出寅正三刻三分　　晝五十七刻九分\n日入戌初初刻十二分　夜三十八刻六分\n七度　　　日出寅正二刻十三分　晝五十八刻四分\n日入戌初一刻二分　　夜三十七刻十一分\n芒種　十五度　　日出寅正二刻八分　　晝五十八刻十四分\n日入戌初一刻七分　　夜三十七刻一分\n夏至未宮初度　　日出寅正二刻五分　　晝五十九刻五分\n日入戌初一刻十分　　夜三十六刻十分\n小暑　十五度　　日出寅正二刻八分　　晝五十八刻十四分\n日入戌初一刻七分　　夜三十七刻一分\n二十三度　日出寅正二刻十三分　晝五十八刻四分\n日入戌初一刻二分　　夜三十七刻十一分\n大暑午宮初度　日出寅正三刻三分　　晝五十七刻九分\n日入戌初初刻十二分　夜三十八刻六分\n八度　　日出寅正三刻十一分　晝五十六刻八分\n日入戌初初刻四分　　夜三十九刻七分\n立秋　十五度　日出卯初初刻三分　　晝五十五刻九分\n日入酉正三刻十二分　夜四十刻六分\n二十度　日出卯初初刻九分　　晝五十四刻十二分\n日入酉正三刻六分　　夜四十一刻三分\n二十五度　日出卯初一刻　　　晝五十四刻\n日入酉正三刻　　　　夜四十二刻\n處暑己宮初度　日出卯初一刻六分　　晝五十三刻三分\n日入酉正二刻九分　　夜四十二刻十二分\n五度　　日出卯初一刻十二分　晝五十二刻六分\n日入酉正二刻三分　　夜四十三刻九分\n十度　　日出卯初二刻四分　　晝五十一刻七分\n日入酉正一刻十一分　夜四十四刻八分\n白露　十五度　　日出卯初二刻十分　　晝五十刻十分\n日入酉正一刻五分　　夜四十五刻五分\n二十度　　日出卯初三刻二分　　晝四十九刻十一分\n日入酉正初刻十三分　夜四十六刻四分\n二十五度　日出卯初三刻八分　　晝四十八刻十四分\n日入酉正初刻七分　　夜四十七刻一分\n秋分辰宮初度　　日出卯正初刻　　　　晝四十八刻\n日入酉正初刻　　　　夜四十八刻\n五度　　日出卯正初刻七分　　晝四十七刻一分\n日入酉初三刻八分　　夜四十八刻十四分\n十度　　日出卯正初刻十三分　晝四十六刻四分\n日入酉初三刻二分　　夜四十九刻十一分\n寒露　十五度　日出卯正一刻五分　　晝四十五刻五分\n日入酉初二刻十分　　夜五十刻十分\n二十度　日出卯正一刻十一分　晝四十四刻八分\n日入酉初二刻四分　　夜五十一刻七分\n二十五度　日出卯正二刻三分　　晝四十三刻九分\n日入酉初一刻十二分　夜五十二刻六分\n霜降卯宮初度　　日出卯正二刻九分　　晝四十二刻十二分\n日入酉初一刻六分　　夜五十三刻三分\n五度　　　日出卯正三刻　　　　晝四十二刻\n日入酉初一刻　　　　夜五十四刻\n十度　　　日出卯正三刻六分　　晝四十一刻三分\n日入酉初初刻九分　　夜五十四刻十二分\n立冬　十五度　　日出卯正三刻十二分　晝四十刻六分\n日入酉初初刻三分　　夜五十五刻九分\n二十二度　日出辰初初刻四分　　晝三十九刻七分\n日入申正三刻十一分　夜五十六刻八分\n小雪寅宮初度　　日出辰初初刻十二分　晝三十八刻六分\n日入申正三刻三分　　夜五十七刻九分\n七度　　　日出辰初一刻二分　　晝三十七刻十一分\n日入申正二刻十三分　夜五十八刻四分\n大雪　十五度　　日出辰初一刻七分　　晝三十七刻一分\n日入申正二刻八分　　夜五十八刻十四分\n冬至丑宮初度　　日出辰初一刻十分　　晝三十六刻十分\n日入申正二刻五分　　夜五十九刻五分\n小寒　十五度　　日出辰初一刻七分　　晝三十七刻一分\n日入申正二刻八分　　夜五十八刻十四分\n二十三度　日出辰初一刻二分　　晝三十七刻十一分\n日入申正二刻十三分　夜五十八刻四分\n大寒子宮初度　日出辰初初刻十二分　晝三十八刻六分\n日入申正三刻三分　　夜五十七刻九分\n八度　　日出辰初初刻四分　　晝三十九刻七分\n日入申正三刻十一分　夜五十六刻八分\n立春　十五度　日出卯正三刻十二分　晝四十刻六分\n日入酉初初刻三分　　夜五十五刻九分\n二十度　日出卯正三刻六分　　晝四十一刻三分\n日入酉初初刻九分　　夜五十四刻十二分\n二十五度　日出卯正三刻　　　　晝四十二刻\n日入酉初一刻　　　　夜五十四刻\n雨水亥宮初度　　日出卯正二刻九分　　晝四十二刻十二分\n日入酉初一刻六分　　夜五十三刻三分\n五度　　　日出卯正二刻三分　　晝四十三刻九分\n日入酉初一刻十二分　夜五十二刻六分\n十度　　　日出卯正一刻十一分　晝四十四刻八分\n日入酉初二刻四分　　夜五十一刻七分\n驚蟄　十五度　　日出卯正一刻五分　　晝四十五刻五分\n日入酉初二刻十分　　夜五十刻十分\n二十度　　日出卯正初刻十三分　晝四十六刻四分\n日入酉初三刻二分　　夜四十九刻十一分\n二十五度　日出卯正初刻七分　　晝四十七刻一分\n日入酉初三刻八分　　夜四十八刻十四分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0057",
+      "sha256": "dd72cd5dfc815d14313effcfe7655c4e19aeb40ecc3af90a5e02f60de5deb186"
+    },
+    {
+      "section": "氣候",
+      "text": "日出入方位者乃各節氣日出入地平時距正東西之度也蓋日行黄道與赤道斜交惟春秋分正當赤道故其出入地平也正當卯酉為正東正西自春分至秋分日行赤道北其出入地平也亦在卯酉北自秋分至春分日行赤道南其出入地平也亦在卯酉南而冬夏至距赤道南北極遠故其出入地平也距正卯酉亦極遠冬至出辰入申夏至出寅入戌此方位之遠近由於天行者也而人居有南北其度亦有不同蓋愈北則北極愈高其距東西之度愈多漸南則北極漸低其距東西之度漸少皆以北極高度為準今按京師北極高三十九度五十五分推得各節氣日出入方位如左\n冬至　　日出辰方正東偏南三十一度十八分日入申方正西偏南三十一度十八分\n小寒大雪日出辰方正東偏南三十度八分\n日入申方正西偏南三十度八分\n大寒小雪日出辰方正東偏南二十六度四十五分日入申方正西偏南二十六度四十五分\n立春立冬日出乙方正東偏南二十一度三十三分日入庚方正西偏南二十一度三十三分\n雨水霜降日出乙方正東偏南十五度三分\n日入庚方正西偏南十五度三分\n驚蟄寒露日出乙方正東偏南七度四十四分\n日入庚方正西偏南七度四十四分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0058",
+      "sha256": "511ce95b25b5be7b028c010288baccbed686e4d093e07d8f155db846401a8015"
+    },
+    {
+      "section": "春分秋分日出正東卯方",
+      "text": "日入正西酉方\n清明白露日出甲方正東偏北七度四十四分\n日入辛方正西偏北七度四十四分\n穀雨處暑日出甲方正東偏北十五度三分\n日入辛方正西偏北十五度三分\n立夏立秋日出甲方正東偏北二十一度三十三分日入辛方正西偏北二十一度三十三分\n小滿大暑日出寅方正東偏北二十六度四十五分日入戌方正西偏北二十六度四十五分\n芒種小暑日出寅方正東偏北三十度八分\n日入戌方正西偏北三十度八分\n夏至　　日出寅方正東偏北三十一度十八分日入戌方正西偏北三十一度十八分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0059",
+      "sha256": "a0fe7489f11f123f7dba4af75e3d0b05007f01239baff2f1016e9e40d059b237"
+    },
+    {
+      "section": "春分秋分日出正東卯方",
+      "text": "朦影者古所謂晨昏分也太陽未出之先已入之後距地平下一十八度皆有光故以十八度為朦影限然十八度同也而時刻則隨時隨地不同隨時不同者天度使然也蓋十八度者大圏之度也赤道亦為大圏其度濶自赤道而南北皆距等圏其度狹近二分者以濶度當濶度故刻分少近二至者以狹度當濶度故刻分多也隨地不同者地南則赤道距天頂近太陽正升正降其度徑地北則赤道距天頂遠太陽斜升斜降其度紆故愈北則朦影之刻分愈多愈南則朦影之刻分愈少也若夫北極出地四十八度半以上則夏至之夜半猶有光愈北則愈不夜矣南至赤道下則二分之刻分極少而二至之刻分相等赤道以南反是詳考成上編今按京師北極出地三十九度五十五分推得各節氣朦影刻分如左\n冬至　　六刻十二分\n小寒大雪六刻十二分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0060",
+      "sha256": "edf96af252663f0e4720c7ee08933bd56a392fbecd8261ae053acb5ef5fb5d27"
+    },
+    {
+      "section": "大寒小雪六刻十分",
+      "text": "立春立冬六刻七分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0061",
+      "sha256": "ba9f2fd9586fb7fa0c68df63dadffe9ffcf05c4ab7c90ea35b6fb0c7a81e193c"
+    },
+    {
+      "section": "雨水霜降六刻五分",
+      "text": "驚蟄寒露六刻四分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0062",
+      "sha256": "e5783427f99201bd20348920db76e0bf759b3f9071df969c842d0520bcb836cf"
+    },
+    {
+      "section": "春分秋分六刻五分",
+      "text": "清明白露六刻八分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0063",
+      "sha256": "9250c476548b551edbaa92f3c56fb8bcee895adcdbe59ffe8b5aa0ebb7b47302"
+    },
+    {
+      "section": "穀雨處暑六刻十三分",
+      "text": "立夏立秋七刻五分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0064",
+      "sha256": "035f9bda188af01fb8e272b3aa77a62a7e337824fc17d9ea6779ed5d9b32dda3"
+    },
+    {
+      "section": "小滿大暑七刻十三分",
+      "text": "芒種小暑八刻五分\n夏至　　八刻九分",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c012:p0065",
+      "sha256": "003a9833dc09aa9f698faa18f536a140c04f8a38b73c65f92d70a4d082266c53"
+    }
+  ]
+}

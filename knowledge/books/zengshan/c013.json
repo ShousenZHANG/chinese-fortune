@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c013",
+  "title": "克處逢生章第十三",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F13&oldid=2100319",
+  "revision": "2100319",
+  "source_timestamp": "2022-01-20T03:14:03Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c013.wiki",
+  "raw_sha256": "f47373bea9791fe971f13342d405b8f8ba35ff90d01bf4713e26ba4eb3a59bce",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "克處逢生章第十三",
+      "text": "受此處之克，得他處之生，卽爲克處逢生。大凡用神、元神克少生多爲吉。忌神者以克少生多爲凶，所以忌神宜克不宜生也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c013:p0001",
+      "sha256": "e9eab9abee4f92a44d53c7b7ab45415eef4faea03b3e4ae4cbea2fdb86e184aa"
+    },
+    {
+      "section": "克處逢生章第十三",
+      "text": "如辰月丙申日占弟癌癥業已臨危得旣濟卦變革卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c013:p0002",
+      "sha256": "2b107a9489123120e3b57d58c4da7566e58e090426ca54696f155ffa6ac1f0bc"
+    },
+    {
+      "section": "克處逢生章第十三",
+      "text": "兄弟子水⚋應　官鬼未土⚋\n官鬼戌土⚊　　父母酉金⚊\n父母申金ㄨ　　兄弟亥水⚊\n兄弟亥水⚊世　兄弟亥水⚊\n官鬼丑土⚋　　官鬼丑土⚋\n子孫卯木⚊　　子孫卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c013:p0003",
+      "sha256": "986c559b5bc9918f601d17c5307c3f632a5bf7ab1c26b87155c6e292abb118a3"
+    },
+    {
+      "section": "克處逢生章第十三",
+      "text": "斷曰：月建辰土𨿽克亥水，兄弟賴申日以生之，又得動爻相生，臨危有救，果於本日酉時遇名醫救活也，至己亥日以全生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c013:p0004",
+      "sha256": "7467a39cf996525e89db9f4caec0ab2a808e556cc4cbcb6b9336713e70f40f0e"
+    }
+  ]
+}

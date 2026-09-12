@@ -1,0 +1,32 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c001",
+  "title": "八卦章第一",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F1&oldid=2100473",
+  "revision": "2100473",
+  "source_timestamp": "2022-01-20T19:46:10Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c001.wiki",
+  "raw_sha256": "1ec812e2f7c841c34ef5d1f2e6fcc8ef1de617395d56eaad2efd0dbc9a777811",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "八卦章第一",
+      "text": "乾爲父、震爲長男、坎爲中男、艮爲少男。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c001:p0001",
+      "sha256": "ae6db56f53b49de38704081d01295fbcb548dbae6d9d3e2aad8f1cf9e9fdc877"
+    },
+    {
+      "section": "八卦章第一",
+      "text": "坤爲母、巽爲長女、離爲中女、兌爲少女。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c001:p0002",
+      "sha256": "e3e5d10eac887b055f5649ba018ac70252aa23aa7d0bfd68460285f562226d07"
+    }
+  ]
+}

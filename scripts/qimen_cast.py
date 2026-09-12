@@ -1,21 +1,7 @@
-"""奇门遁甲 时家盘 (Hourly Qi Men Dun Jia chart).
+"""奇门时家：默认《元灵经》已核地盘与值符值使，未核单元留空。
 
-Implements 转盘 (rotating-plate) 时家奇门 — the most widely used
-flavor of 奇门遁甲. Output covers:
-
-  * 局数 (1..9) determination via 节气 + 三元 (上/中/下)
-  * 地盘 三奇六仪 (固定 9 宫)
-  * 天盘 (rotated by 值符 to align with 时干 落宫)
-  * 八门 (rotated by 值使 to align with 旬首 落宫)
-  * 九星 (天蓬…天禽, 天禽 寄坤二宫)
-  * 八神 (值符 螣蛇 太阴 六合 白虎 玄武 九地 九天, 阳顺阴逆)
-  * 兼容格名触发 detection (青龙返首, 飞鸟跌穴, 三诈, 天/地/人遁,
-                    击刑, 入墓, 五不遇时, 等)
-
-References:
-  * 《奇门遁甲秘笈大全》    (明)
-  * 《奇门遁甲统宗》        (明·程道生)
-  * docs/QIMEN-LIUREN-METHODS.md (verified scope and conventions)
+旧全盘由 --plate-method rotating-compat 显式调用供比较，不声称与
+元灵经同法。来源范围、异文及现代历法约定见 docs/QIMEN-LIUREN-METHODS.md。
 
 CLI:
     python qimen_cast.py --date 2026-05-16 --time 14:30 [--longitude 120]
@@ -126,13 +112,49 @@ def xun_head(stem: str, branch: str) -> tuple[str, str]:
     return XUN_HEADS[head_idx // 10]
 
 
+def source_core(ju_type: str, ju_number: int, hour_ganzhi: str) -> dict:
+    """Only the hourly anchors supported by Yuanling vol. 1; no guessed full plate.
+
+    The vol. 8 examples do not validate extending the two opening examples
+    into a complete star/door algorithm. Centre borrowing remains conditional.
+    """
+    earth = earth_plate(ju_type, ju_number)
+    if len(hour_ganzhi) != 2:
+        raise ValueError('时干支须为两个字')
+    head, yi = xun_head(*hour_ganzhi)
+    origin = next(p for p, stem in earth.items() if stem == yi)
+    effective = yi if hour_ganzhi[0] == '甲' else hour_ganzhi[0]
+    target = next(p for p, stem in earth.items() if stem == effective)
+    star = next(name for name, palace in STAR_HOME_PALACE.items() if palace == origin)
+    raw, _ = zhi_shi_position(origin, hour_ganzhi, ju_type)
+    door_origin = 2 if origin == 5 and ju_type == '阳遁' else origin
+    door = next((name for name, palace in MEN_HOME_PALACE.items() if palace == door_origin), None)
+    unresolved = []
+    if door is None:
+        unresolved.append('阴遁旬首在中五时借门的转录异文尚未核清')
+    if raw == 5:
+        unresolved.append('值使数到中五，原落宫保留；寄宫去向尚未核清')
+    return {'method': 'yuanling-core', 'completion_status': 'partial',
+            'source_url': SOURCE_URL,
+            'source_passage_ids': ['yuanling:c001:p0001', 'yuanling:c001:p0006',
+                                   'yuanling:c001:p0008', 'yuanling:c001:p0009'],
+            'verification': 'transcription_checked_not_facsimile',
+            'earth': earth, 'xun_head': head, 'xun_yi': yi,
+            'zhi_fu': {'origin_palace': origin, 'palace': target, 'star': star,
+                       'heaven_stem': yi},
+            'zhi_shi': {'raw_palace': raw, 'palace': None if raw == 5 else raw,
+                        'door': door, 'unresolved': unresolved},
+            'remaining': ['九星与奇仪全盘的跨卷例式差异', '八门全盘与中宫寄法',
+                          '吉星、奇墓、门克及刑迫的完整适用条件']}
+
+
 # --------------------------------------------------------------------------- #
 # Heaven plate — rotate earth plate by 值符
 # --------------------------------------------------------------------------- #
 
 # --------------------------------------------------------------------------- #
 # 八宫环 (8-palace ring excluding 中5) — used for rotating 八门 / 九星.
-# Order: 1→8→3→4→9→2→7→6 (洛书 飞行顺序 - 顺九宫 path skipping 5).
+# Order: 1→8→3→4→9→2→7→6 (八宫环；不是一至九宫飞布顺序).
 # 阳遁 顺布 / 阴遁 逆布 — both use the same ring but traverse in
 # opposite direction.
 # --------------------------------------------------------------------------- #
@@ -151,16 +173,10 @@ def _resolve_ring_palace(palace: int) -> int:
 # --------------------------------------------------------------------------- #
 
 def star_plate(zhi_fu_palace: int, shi_gan_palace: int, ju_type: str) -> dict[int, str]:
-    """Rotate 九星 so that 值符星 (the star native to zhi_fu_palace) 飞到 时干宫.
-
-    Stars at home positions (1=天蓬, 8=天任, 3=天冲, 4=天辅, 9=天英, 2=天芮,
-    7=天柱, 6=天心, 5=天禽 寄 2). Rotates along 8-palace ring (中5 stays
-    blank but 天禽 is shown as 寄于 the same palace as 天芮).
-    """
+    """Legacy eight-ring stars with 天禽 stored at 5; not Yuanling's method."""
     ring = EIGHT_RING_YANG if ju_type == "阳遁" else EIGHT_RING_YIN
 
-    # Home map within ring (天禽 寄于 2 — but 天芮 also lives in 2;
-    # in 转盘式 they share. We track 天禽 separately and overlay).
+    # Compatibility map. Actual co-location of 天禽 is not implemented here.
     home_ring: dict[int, str] = {
         1: "天蓬", 8: "天任", 3: "天冲", 4: "天辅",
         9: "天英", 2: "天芮", 7: "天柱", 6: "天心",
@@ -177,7 +193,7 @@ def star_plate(zhi_fu_palace: int, shi_gan_palace: int, ju_type: str) -> dict[in
         target = ring[(k + shift) % 8]
         star_result[target] = home_ring[palace]
 
-    # 天禽 always sits with 天芮 in 转盘式 — co-locate them.
+    # Legacy storage: this is NOT an implemented co-location with 天芮.
     star_result[5] = "天禽"
     return star_result
 
@@ -411,11 +427,7 @@ def build_palaces(
         info = PALACE_INFO[p]
         notes: list[str] = []
         if p == 5:
-            notes.append("中宫: 天禽寄坤二宫, 无门")
-        if star.get(p) == "天禽":
-            notes.append("天禽 寄此宫")
-        if p == 2 and star.get(2) is not None:
-            notes.append("坤宫: 天芮+天禽 同宫")
+            notes.append("中宫；寄宫须按所选方法另核，不能固定称天芮天禽同宫")
         out.append({
             "index": p,
             "palace": info["palace"],
@@ -475,7 +487,7 @@ On error: {"error": ..., "message": ...} and exit 1."""
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        description="奇门遁甲 时家盘 (转盘式) — 计算九宫天地人神四盘 + 格局",
+        description="奇门时家 — 元灵经已核地盘及值符值使；旧全盘可显式对照",
         epilog=EPILOG,
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
@@ -492,6 +504,9 @@ def build_parser() -> argparse.ArgumentParser:
                    help="手动指定 局数 1..9 (与 --ju-type 配合)")
     p.add_argument("--ju-method", choices=["futou", "legacy-days"], default="futou",
                    help="定局口径: 默认符头三元+实交节; legacy-days仅复现旧节气日数法")
+    p.add_argument('--plate-method', choices=['yuanling-core', 'rotating-compat'],
+                   default='yuanling-core',
+                   help='默认输出元灵经已核地盘及值符值使；旧全盘仅用 rotating-compat 显式对照')
     return p
 
 
@@ -582,38 +597,34 @@ def main(argv: list[str] | None = None) -> int:
     zhi_fu_palace = next(p for p, yq in earth.items() if yq == head_yi)
     shi_gan_palace = next(p for p, yq in earth.items() if yq == effective_shi_gan)
 
-    # heaven
-    full_seq = YANG_PALACE_SEQ if ju_type == "阳遁" else YIN_PALACE_SEQ
-    from_idx = full_seq.index(zhi_fu_palace)
-    to_idx = full_seq.index(shi_gan_palace)
-    shift = (to_idx - from_idx) % 9
-    heaven: dict[int, str] = {}
-    for k, palace in enumerate(full_seq):
-        target = full_seq[(k + shift) % 9]
-        heaven[target] = earth[palace]
-
-    # 4. 九星 (rotates with 值符)
-    star = star_plate(zhi_fu_palace, shi_gan_palace, ju_type)
-    # 值符星: 时干宫 (5 寄 2) 上 当前 九星
-    zhi_fu_star = star.get(_resolve_ring_palace(shi_gan_palace), "?")
-
-    # 5. 值使按九宫数序行旬时；《元灵经》卷一两个起例可独立复核。
-    zhi_shi_raw, zhi_shi_palace = zhi_shi_position(zhi_fu_palace, hour_gz, ju_type)
-    men = men_plate(zhi_fu_palace, zhi_shi_palace, ju_type)
-    zhi_shi_men = men.get(_resolve_ring_palace(zhi_shi_palace), "?")
-
-    # 6. 八神 — 值符 起于 时干宫 (即 当前 值符 所在)
-    shen = shen_plate(shi_gan_palace, ju_type)
-
-    # 7. Build palace records
-    palaces = build_palaces(earth, heaven, men, star, shen)
-
-    # 8. 格局 detection
-    patterns = detect_patterns(
-        earth, heaven, men, shen, star,
-        hour_stem, hour_branch, day_stem,
-        zhi_fu_palace, shi_gan_palace,
-    )
+    core = source_core(ju_type, ju_number, hour_gz)
+    zhi_shi_raw = core['zhi_shi']['raw_palace']
+    if args.plate_method == 'yuanling-core':
+        # Never fill unsupported cells with another method's arrangement.
+        zhi_fu_star = core['zhi_fu']['star']
+        zhi_shi_men = core['zhi_shi']['door']
+        zhi_shi_palace = core['zhi_shi']['palace']
+        heaven = {shi_gan_palace: head_yi}
+        star = {shi_gan_palace: zhi_fu_star}
+        men = ({zhi_shi_palace: zhi_shi_men}
+               if zhi_shi_palace is not None and zhi_shi_men is not None else {})
+        palaces = build_palaces(earth, heaven, men, star, {})
+        patterns = []
+    else:
+        # Explicit legacy comparison only; never used by personal selection.
+        full_seq = YANG_PALACE_SEQ if ju_type == "阳遁" else YIN_PALACE_SEQ
+        shift = (full_seq.index(shi_gan_palace) - full_seq.index(zhi_fu_palace)) % 9
+        heaven = {full_seq[(k + shift) % 9]: earth[p] for k, p in enumerate(full_seq)}
+        star = star_plate(zhi_fu_palace, shi_gan_palace, ju_type)
+        zhi_fu_star = star[_resolve_ring_palace(shi_gan_palace)]
+        _, zhi_shi_palace = zhi_shi_position(zhi_fu_palace, hour_gz, ju_type)
+        men = men_plate(zhi_fu_palace, zhi_shi_palace, ju_type)
+        zhi_shi_men = men[_resolve_ring_palace(zhi_shi_palace)]
+        shen = shen_plate(shi_gan_palace, ju_type)
+        palaces = build_palaces(earth, heaven, men, star, shen)
+        patterns = detect_patterns(earth, heaven, men, shen, star,
+                                   hour_stem, hour_branch, day_stem,
+                                   zhi_fu_palace, shi_gan_palace)
 
     # 10. Summary
     summary_parts = [
@@ -621,7 +632,7 @@ def main(argv: list[str] | None = None) -> int:
         f"节气: {jq_name}",
         f"时干 {hour_stem} 落于 {shi_gan_palace}宫({PALACE_INFO[shi_gan_palace]['palace']})",
         f"值符 {zhi_fu_star} 居 {shi_gan_palace}宫",
-        f"值使 {zhi_shi_men}",
+        f"值使 {zhi_shi_men or '借门待核'}，原数至{zhi_shi_raw}宫",
     ]
     if patterns:
         names = ", ".join(pp["name"] for pp in patterns)
@@ -632,7 +643,10 @@ def main(argv: list[str] | None = None) -> int:
         "tool": "qimen",
         "version": __version__,
         "time_context": time_context,
+        "completion_status": "partial",
+        "source_core": core,
         "method_profile": {
+            "plate_method": args.plate_method,
             "ding_ju": "manual" if args.ju_type else args.ju_method,
             "source": SOURCE_URL,
             "verification": "transcription_checked_not_facsimile",
@@ -640,7 +654,9 @@ def main(argv: list[str] | None = None) -> int:
             "solar_term": term_context,
             "day_boundary": "当地有效钟面00:00换日；23:00小时干支按历库晚子时规则",
             "intercalation": "none",
-            "scope": "符头、局数和九宫值使已核；转盘其余组件与格名为待逐项核验的兼容实现",
+            "scope": ("已核地盘、旬首、值符原星及落宫、值使计数；空值为待核，不表示无星无门"
+                      if args.plate_method == 'yuanling-core' else
+                      "旧转盘仅供对照，不与元灵经原例混作同一盘；source_core单列已核结果"),
             "legacy_note": "legacy-days只兼容旧定局，其他已修正组件不回退旧错误",
         },
         "input": {
@@ -668,7 +684,9 @@ def main(argv: list[str] | None = None) -> int:
         "zhi_shi_men": zhi_shi_men,
         "zhi_shi_palace": zhi_shi_palace,
         "zhi_shi_raw_palace": zhi_shi_raw,
-        "zhi_shi_basis": "自旬首六仪原宫沿一至九宫阳顺阴逆数旬时，数完中五寄坤二；元灵经卷一",
+        "zhi_shi_basis": ("元灵经卷一：旬首原宫沿一至九宫阳顺阴逆数旬时；中五寄法未决时不填目的宫"
+                          if args.plate_method == 'yuanling-core' else
+                          "兼容方法：九宫数旬时，数完中五寄坤二；寄二不代表已核原典通则"),
         "palaces": palaces,
         "patterns": patterns,
         "summary": "; ".join(summary_parts),

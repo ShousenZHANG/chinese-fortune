@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c030",
+  "title": "卷30",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B730&oldid=787373",
+  "revision": "787373",
+  "source_timestamp": "2016-10-27T11:59:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c030.wiki",
+  "raw_sha256": "ce1a3508c4acb30c31b048d241c4055613e5624cee5cb9d485ff5b9a2339a328",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷30",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c030:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷三十",
+      "text": "月表十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c030:p0002",
+      "sha256": "7262cecc2add96998ba71e98fa8568c81073ec70bea160fb6a9051d4aeaf7044"
+    },
+    {
+      "section": "十一月",
+      "text": "大雪十一月節天道東南行宜向東南行宜修造東南維天徳在巽月徳在壬月徳合在丁月空在丙宜修造取土\n月建在子月破在午月厭在子月刑在夘月害在未劫煞在巳災煞在午月煞在未忌修造取土\n十二日長星　二十二日短星\n大雪後二十日往亡　冬至前一日四離\n冬至十一月中日躔在丑宫為十一月将宜用艮巽坤乾時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c030:p0003",
+      "sha256": "09e1de165dbcd9600c56cfed51e9c58646f185d6c748ac7ce1b256e41b0651ba"
+    },
+    {
+      "section": "癸亥大海水専閉日",
+      "text": "右六十干支從建子者始大雪終冬至其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c030:p0004",
+      "sha256": "238f5056f34bc74846bf81d51869578c28937fbfba80bf0950b4f1e60d4bf4ef"
+    }
+  ]
+}

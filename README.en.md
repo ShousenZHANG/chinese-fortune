@@ -1,18 +1,36 @@
 # Chinese Fortune
 
-Calculate a chart, check classical conditions, and explain the result in plain language.
+Calculate a chart, check classical conditions, and answer in plain language first. Each short classical quotation must be followed immediately by its plain meaning and its relevance to the person's actual conditions.
 
 BaZi follows the month-structure approach in Zi Ping Zhen Quan. Four other classical works provide separately attributed comparisons; differences remain visible.
 
 ## Capabilities
 
 - BaZi calculations with birth timezone, DST, true solar time, day boundaries and unknown-hour handling.
-- Offline retrieval from five frozen transcriptions: 416 chapter/volume units and 8,385 paragraphs, with provenance and context.
+- Offline retrieval from 13 frozen transcriptions: 535 chapter/volume units and 18,982 paragraphs, with provenance and context.
 - Eight BaZi rule families and 25 review paths. Observable conditions are computed; interpretive conditions require explicit reasoning from the chart and full passages.
 - Current time in the user's present location, captured once per request.
 - Zi Wei, Liu Yao and other methods when requested, within their documented scope.
 
 A complete transcription, implemented rules, image collation and predictive validity are separate claims. Tests do not establish predictive accuracy.
+
+## Personal periods and appointment windows
+
+The new `python scripts/fortune_reading.py --stdin` entry point accepts confirmed people, the current location, a target period, event location, available windows, duration and busy intervals. It resolves relative dates, calculates natal and target facts separately, checks active ten-year cycles, and filters real scheduling conflicts. Birth, current and event time zones remain distinct. Identical pillar facts are referenced through a per-person catalog to avoid repeating the full chart.
+
+Candidate comparisons cover the entire event, including changes during it, and show the earliest and latest feasible start. Selection requests default to hour facts only inside feasible windows, merging overlaps; the rest of the period retains month and active-cycle background. Independent missing conditions remain visible together. These scheduling limits are not auspicious-time recommendations.
+
+Interview and exam requests also calculate Yuanling's verified earth plate and chief star/door anchors throughout each candidate window, with a separate birth-year-stem lookup for each person. Unknown cells remain unknown; year-stem lookup is not full-BaZi ranking.
+
+Ordered multi-event requests now check each event’s windows, duration, time zone and explicit travel/preparation buffer together. Each natal chart is calculated and transmitted once. Returned plans are feasibility witnesses, not auspiciousness rankings.
+
+Two specific examples from Zi Ping Zhen Quan now check actual natal antecedents against the active ten-year cycle. Their observations distinguish same-element support, branch opposition and stem combination, with quotations and plain explanations. These are structural checks, not overall fortune or event predictions; the full chapter's exceptions remain available.
+
+**Personal daily fortunes and an optimal interview slot are only partially implemented.** Calendar relationships and feasible windows are available; a fully sourced personal ranking algorithm is not. The host must finish applicable classical interpretation and research missing sources rather than reject the whole question or turn generic almanac entries into personal rankings. Unsupported conclusions remain unavailable. `--markdown` is a factual draft, not a completed prediction.
+
+See the [request schema, coverage and research workflow](references/24-personalized-forecast.md). Long periods default to month facts; day/hour detail is limited to 31 local days per request. Missing event longitude retains year/month facts and marks solar day/hour data incomplete. Approximate birth times use conservative whole-date comparisons rather than an assumed exact hour.
+
+Optional, explicitly confirmed profiles support revisioned updates, inspection and deletion outside the repository and installed skill. The default is `~/.local/share/chinese-fortune`. Calculations do not automatically persist conversations or profiles.
 
 ## Start
 
@@ -69,3 +87,9 @@ python -X utf8 evals/package_smoke.py
 Release builds use a full commit SHA, clean-install checks and the exact CI artifact. See [release process](docs/RELEASE-PROCESS.md). Recorded model-answer reviews remain separate from deterministic tests.
 
 Code is [MIT](LICENSE); third-party texts retain their recorded licensing. For cultural study, with real-world medical, legal and investment decisions based on appropriate professional information.
+
+## Scenario-specific classical research
+
+Eight additional transcriptions cover almanac selection, Liu Yao, Zi Wei, Mei Hua, Qi Men and Liu Ren. `classical_guidance.py --scenario interview --retrieve --limit 1` retrieves relevant originals; `--family 伤官` returns the complete luck chapter and conditions for a confirmed natal structure. Chapter pagination preserves later exceptions. Sixteen scenario routes expose available sources and unresolved needs, including naming lexicography and full residential Feng Shui. Source acquisition does not certify a personal ranking algorithm. See [the research workflow](references/25-classical-research.md).
+
+Retrieval also verifies and returns selected non-adjacent shared prohibitions for arrival, exams, travel, billing, business, moving and marriage. Remaining textual problems and unreviewed conditions are explicit. Add `include_research:true` to a future-period request to retrieve this material in the same call without another natal calculation.

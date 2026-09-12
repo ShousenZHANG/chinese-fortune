@@ -1,0 +1,69 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c023",
+  "title": "卷23",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B723&oldid=787365",
+  "revision": "787365",
+  "source_timestamp": "2016-10-27T11:58:16Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c023.wiki",
+  "raw_sha256": "52c8e9a05e4900c84a91c050b0ffffd4870374982f2a97a2d97e4788d9344405",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "xieji:c023:p0004",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "xieji:c023:p0005",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷23",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c023:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十三",
+      "text": "月表四",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c023:p0002",
+      "sha256": "abbeb9e93bc113a356b2cfc24b754966122d2a9cf6858dcd622b7f78fd2f7bad"
+    },
+    {
+      "section": "四月",
+      "text": "立夏四月節天道西行宜向西行宜修造西方\n天徳在辛天徳合在丙月徳在庚月徳合在乙月空在甲宜修造取土\n月建在己月破在亥月厭在未月刑在申月害在寅劫煞在寅災煞在夘月煞在辰忌修造取土\n初九日長星　二十五日短星\n立夏前一日四絶　後八日徃亡\n小滿四月中日躔在申宫為四月將宜用甲丙庚壬時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c023:p0003",
+      "sha256": "3a8195898b653891a3edf971a59b31621e9bc5c0d32414bf5220262a8e0a5012"
+    },
+    {
+      "section": "丁亥屋上土伐破日",
+      "text": "戊子霹〔字形SK3823：未编码〕火制危日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c023:p0004",
+      "sha256": "67e753a5bfdb07dbbe4d662badb48d6c6e2ac92264e84f9e159249cfa9c3557d"
+    },
+    {
+      "section": "丁亥屋上土伐破日",
+      "text": "己丑霹〔字形SK3823：未编码〕火專成日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c023:p0005",
+      "sha256": "f71cd36689aa283a6e4986217d5b5956026f96600ff79f51a7fcd3893e8634ef"
+    },
+    {
+      "section": "癸亥大海水專破日",
+      "text": "右六十干支從建巳者始立夏終小滿其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c023:p0006",
+      "sha256": "998626b87392fda1e857022ced8f8e03d9b9f7bb518d10eec909fbac87ed67df"
+    }
+  ]
+}

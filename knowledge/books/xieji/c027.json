@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c027",
+  "title": "卷27",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B727&oldid=748645",
+  "revision": "748645",
+  "source_timestamp": "2016-10-19T19:13:05Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c027.wiki",
+  "raw_sha256": "0270f15ddf3769e3d9101844564ee48109a8c694d0aa9005caf7bfd0426d973b",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷27",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c027:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定恊紀辨方書卷二十七",
+      "text": "月表八",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c027:p0002",
+      "sha256": "9c03e32de55cb415ee88bc4582941867d709a7c2d4762ca7873f11ec910c5a3a"
+    },
+    {
+      "section": "八月",
+      "text": "白露八月節天道東北行宜向東北行宜修造東北維天德在艮月德在庚月德合在乙月空在甲宜修造取土\n月建在酉月破在卯月厭在卯月刑在酉月害在戌刼煞在寅災煞在卯月煞在辰忌修造取土\n二日五日長星　十八日十九日短星\n白露後十八日往亡　秋分前一日四離\n秋分八月中日躔在辰宫為八月將宜用艮巽坤乾時孟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c027:p0003",
+      "sha256": "952241870042565c2dcbab4dfe6bde2944a41b9f5c6e816a541c29ef0a7bba13"
+    },
+    {
+      "section": "癸亥大海水專滿日",
+      "text": "右六十干支從建酉者始白露終秋分其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c027:p0004",
+      "sha256": "14004f1ec5a3945e0cb69dc4645b9028fc25e2d6f02190e643d2889e6816c8b7"
+    }
+  ]
+}

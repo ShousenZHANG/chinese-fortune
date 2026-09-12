@@ -1,0 +1,9 @@
+{{Header2
+ | title = [[增刪卜易]]
+ | author = 野鶴老人
+ | section = 八卦章第一
+}}{{Textquality|50%}}
+<onlyinclude>
+乾爲父、震爲長男、坎爲中男、艮爲少男。<br>
+坤爲母、巽爲長女、離爲中女、兌爲少女。</onlyinclude>
+{{PD-old}}

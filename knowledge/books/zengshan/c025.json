@@ -1,0 +1,53 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c025",
+  "title": "卦變生克墓絕章第二十四",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F24&oldid=2100456",
+  "revision": "2100456",
+  "source_timestamp": "2022-01-20T19:22:18Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c025.wiki",
+  "raw_sha256": "ad746ef57988962474f4b58561fade3736772c67c6c6234be679f775ac7b380a",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卦變生克墓絕章第二十四",
+      "text": "卦變者：變生、變克、變墓、變絕、比和。予得驗者，凡遇卦化克者，不論用神之衰旺皆以凶推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c025:p0001",
+      "sha256": "15550a7f141213e45c7ce615c9207e59edd3ccf721913b3aa59c7dd2d3cb9914"
+    },
+    {
+      "section": "卦變生克墓絕章第二十四",
+      "text": "此乃巽卦變坎卦，巽木變坎水謂之化生，水回頭以生木，也卽以吉斷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c025:p0002",
+      "sha256": "6cf5ce1744273a4c28f118a7f642231e76bb5c9a666b5a916f2ea00b53684c65"
+    },
+    {
+      "section": "卦變生克墓絕章第二十四",
+      "text": "此乃震卦化乾卦，震木變乾金謂之化克，金回頭以克木，也卽以凶推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c025:p0003",
+      "sha256": "a5f272758f29ab1ea0144d5e125c89c6503e24a8b29e8e26b95c0e816893e5cd"
+    },
+    {
+      "section": "卦變生克墓絕章第二十四",
+      "text": "卯月辛巳日來人不言所事。占得巽卦變乾卦。問之所占何事？伊曰：代卜長輩功名。予曰：功名須要親占，代占難取用神，從不敢斷，幸此卦而易見，巽木化乾金，卽爲化回頭克，爲絕卦也，不必問名，壽命不長，果於削職後七月而終。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c025:p0004",
+      "sha256": "20fcd5708f67b6812756d633331952bc3b4ee06bbef5b713a2d545cff552b1bf"
+    },
+    {
+      "section": "卦變生克墓絕章第二十四",
+      "text": "又如午月丙寅日占主病，得離卦變坎卦，離火變坎水，回頭來克，但因午月火旺，許之冬令必危。果卒於九月丁亥日。此皆不看用神之衰旺也。李我平曰：易冒墓絕章云，日月當令非眞，卻不知凶事將來，神機早兆，日月當時𨿽旺，過時則有消，卽如此篇，占主病午月得離變坎，目今夏火𨿽旺，冬來火衰命絕。易冒反伏章云：「日月非空破，徒往則重。又曰：半徒往徒未半凶吉」，種種疑論，皆非經驗。卦體如人之根本，卦變刑克絕，如樹連根出土，目前枝葉𨿽靑，能保長不朽乎？當時旺，過時而衰，空破𨿽虛，塡實則應，且半凶半吉之論，難作後人法，此書只以回頭克者爲凶，見易胃反伏章中之占驗，明是回頭之克，誤作反復休囚。如寅月癸酉日占長子病。得震之兌，此非震木化兌金回頭之克耶？此二卦竟未看出，土遭木克，木被金傷，以震爲長男，占長子所以不吉。殊不知卦變回頭之克，少女亦難保也，今以彼之占驗而謂彼之錯誤，無他說也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c025:p0005",
+      "sha256": "57048afad010032069b3205650636c151d16f8401bea2c66040be6c2fd43c8b7"
+    }
+  ]
+}

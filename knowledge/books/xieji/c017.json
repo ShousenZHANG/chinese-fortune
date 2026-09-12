@@ -1,0 +1,1194 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c017",
+  "title": "卷17",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B717&oldid=627123",
+  "revision": "627123",
+  "source_timestamp": "2016-10-14T03:23:44Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c017.wiki",
+  "raw_sha256": "6e27b5d8b9acd6d2bbc3387def669a3285a591a4c66a27e84bec11e8e886778c",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷17",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷十七",
+      "text": "年表四",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0002",
+      "sha256": "0109c9f3fb9c638179e911047ce939fcc09b53cb41d4fe29455f8fc6bd326e5b"
+    },
+    {
+      "section": "太歲甲午幹木枝火納音屬金",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0003",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕甲〔/注文〕　　歲徳合〔注文〕巳〔/注文〕　歲枝徳〔注文〕亥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0004",
+      "sha256": "b735c80e9757dc7cff3f4a2da076148a6615d001d4b76050e46b2f21f783c506"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕未〔/注文〕　隂貴人〔注文〕丑〔/注文〕　歲禄〔注文〕寅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0005",
+      "sha256": "9d9344ceb05c0cba0afb0765347291bcf6824ff9030760227c4b4656495eb672"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕申〔/注文〕　　奏書〔注文〕巽〔/注文〕　　博士〔注文〕乾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0006",
+      "sha256": "a09983e3729f95f2a946dcf95c12f4f8fd0f4a71e0c131603a181a05854181d7"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白艮　六白巽　八白乾　九紫兌中元　一白中　六白坎　八白震　九紫巽下元　一白坤　六白兌　八白離　九紫坎",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0007",
+      "sha256": "43334a4317283dbadfaac0ec8ae76bd4a6e12414f456473fbbc6b0c8395e297c"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕巽辛〔/注文〕　巨門〔注文〕艮丙〔/注文〕　武曲〔注文〕震庚亥未〔/注文〕文曲〔注文〕乾甲〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0008",
+      "sha256": "5741d44b507323c41b589e38816468056711793d507f977561e381a976521afa"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕坤申　庚酉　辛戌〔/注文〕三合後方〔注文〕艮寅　甲卯　乙辰〔/注文〕十二吉山宜寅午戌申子辰年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0009",
+      "sha256": "0f5eb028e02684538b5f5fa81dee3c53914d711ff1a4cad0c847380a4125a6ef"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕丙午〔/注文〕　　功曹〔注文〕坤申〔/注文〕　天罡〔注文〕辛戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0010",
+      "sha256": "df7ae7cdea5b6d56d44f964af3e1376eb7e541710c81fd0bfdf84700f9217671"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕壬子〔/注文〕　　𫝊送〔注文〕艮寅〔/注文〕　河魁〔注文〕乙辰〔/注文〕\n十二吉山宜寅午戌申子辰年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0011",
+      "sha256": "85799adcb0a50ed9179e328f2bb69cf2d02c1b5ae28630c788c359ff627ce4dc"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕未〔/注文〕　太隂〔注文〕酉〔/注文〕　龍徳〔注文〕丑〔/注文〕　福徳〔注文〕卯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0012",
+      "sha256": "957ddd4dd474878865e997fa5e3bef714aae45f345c7e21256d8e7a5ebc95078"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕午〔/注文〕　　歲破〔注文〕子〔/注文〕　　三煞〔注文〕亥子丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0013",
+      "sha256": "7c7fa4cbf3d20e3f072f5ddc3c4062507ec4f22c34e564e0cb4d6f01d0f5ceb7"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕壬癸　丙丁〔/注文〕　　浮天空亡〔注文〕離壬〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0014",
+      "sha256": "393d78e39995c188ef1a7da2bddc5fbee076022ba2c06b1b90c6821c31c67622"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕甲寅辰巽戌坎辛申丑癸坤庚未山〔/注文〕隂府太歲〔注文〕艮巽〔/注文〕　六害〔注文〕丑〔/注文〕　　死符〔注文〕亥〔/注文〕　　灸退〔注文〕酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0015",
+      "sha256": "7ce6b8ed7633308cb50a327f8977368a8fe14419164d48aed6c84a6f4552ab34"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕丁〔/注文〕　　病符〔注文〕巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0016",
+      "sha256": "0cd886f31f7025ee2feec76986c9a3dd8cba2cf29739d6b5e0eb3e1cbe4fa37e"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕巳〔/注文〕　地官符〔注文〕戌〔/注文〕　大煞〔注文〕午〔/注文〕　　大將軍〔注文〕卯〔/注文〕力士〔注文〕坤〔/注文〕　　蠶室〔注文〕艮〔/注文〕　　蠶官〔注文〕丑〔/注文〕　　蠶命〔注文〕寅〔/注文〕歲刑〔注文〕午〔/注文〕　　黄幡〔注文〕戌〔/注文〕　　豹尾〔注文〕辰〔/注文〕　　飛亷〔注文〕寅〔/注文〕喪門〔注文〕申〔/注文〕　　弔客〔注文〕辰〔/注文〕　　白虎〔注文〕寅〔/注文〕　　金神〔注文〕午未申酉〔/注文〕獨火〔注文〕兑〔/注文〕　　五鬼〔注文〕戌〔/注文〕　　破敗五鬼〔注文〕巽〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0017",
+      "sha256": "f47da0f2000f395833f7a8039b5b95b5f259aa48e8b4b54ef54e0aefc509b69c"
+    },
+    {
+      "section": "太歲乙未幹木枝土納音屬金",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0018",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕庚〔/注文〕　　歲徳合〔注文〕乙〔/注文〕　　歲枝徳〔注文〕子〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0019",
+      "sha256": "1fbb3804cd3e6f436a6a2dd37bd4f3bcba4a883f2f55a25269c015be53a9c914"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕申〔/注文〕　隂貴人〔注文〕子〔/注文〕　　歲禄〔注文〕卯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0020",
+      "sha256": "bf1311d5b74a518bad11d79a4add69bc338ab13d87a370f6ee50b8f183631d87"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕巳〔/注文〕　　奏書〔注文〕巽〔/注文〕　　　博士〔注文〕乾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0021",
+      "sha256": "859730def950cf80ca4e05a0820f676d879ad0c61bdbf10a47d5d9af52a773cd"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白離　六白中　八白兌　九紫艮中元　一白乾　六白坤　八白巽　九紫中下元　一白震　六白艮　八白坎　九紫坤",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0022",
+      "sha256": "51a1dc14acff25b928ae9f909bacb25fb9783a3bfcd1122784ec489723d5799b"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕坤乙〔/注文〕　巨門〔注文〕坎癸申辰〔/注文〕武曲〔注文〕乾甲〔/注文〕　文曲〔注文〕震庚亥未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0023",
+      "sha256": "1e87881fe16511d771a89e7068d61021a9626c8c2ae3cc65ae4ae9a5bb10e67f"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕巽巳　丙午　丁未〔/注文〕三合後方〔注文〕乾亥　壬子　癸丑〔/注文〕十二吉山宜亥卯未巳酉丑年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0024",
+      "sha256": "70a275192b6415481614a5eea4d9187bb459617f150993b1c27fa41b22045a71"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕巽巳〔/注文〕　功曹〔注文〕丁未〔/注文〕　天罡〔注文〕庚酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0025",
+      "sha256": "3b9abf0a92abc7a3c94348b6ef305c81993c42a3fb29a4cc0c11c55c42a6521a"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕乾亥〔/注文〕　𫝊送〔注文〕癸丑〔/注文〕　河魁〔注文〕甲卯〔/注文〕\n十二吉山宜亥卯未巳酉丑年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0026",
+      "sha256": "c4059599601252de0adcb47fa0216839332f50c582b99db4e13dd01a9fa6b600"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕申〔/注文〕　太隂〔注文〕戌〔/注文〕　龍徳〔注文〕寅〔/注文〕　福徳〔注文〕辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0027",
+      "sha256": "eefd2edaf395f79a323fbdcb23574588c5cb31edcb3dff027900b32218725339"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕未〔/注文〕　　歲破〔注文〕丑〔/注文〕　　　三煞〔注文〕申酉戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0028",
+      "sha256": "cd15985aa8b68570c39db2633bb11105a6c1b22525148e592419ce22bfed9fc6"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕庚辛　甲乙〔/注文〕　　浮天空亡〔注文〕坎癸〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0029",
+      "sha256": "269f9f762bacdd6431d721a7ddf5e2c35bd04a5c608313b9f32e57c047d65e54"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕震艮巳山〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0030",
+      "sha256": "bd5a5386f86179feca0c0781940096eb491e268655d06340261138d50f98931c"
+    },
+    {
+      "section": "隂府太歲",
+      "text": "〔注文〕兌乾〔/注文〕　六害〔注文〕子〔/注文〕　　死符〔注文〕子〔/注文〕　　灸退〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0031",
+      "sha256": "0885a282be9f8840618fcd75d765be26e839b646bed708f487faf4721d2d2064"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕坤〔/注文〕　　病符〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0032",
+      "sha256": "24b996b6f3559b13780f656b6355df8e53715a81245b4af654d16d773b68fe65"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕寅〔/注文〕　地官符〔注文〕亥〔/注文〕　大煞〔注文〕卯〔/注文〕　　大將軍〔注文〕卯〔/注文〕力士〔注文〕坤〔/注文〕　　蠶室〔注文〕艮〔/注文〕　　蠶官〔注文〕丑〔/注文〕　　蠶命〔注文〕寅〔/注文〕歲刑〔注文〕丑〔/注文〕　　黄幡〔注文〕未〔/注文〕　　豹尾〔注文〕丑〔/注文〕　　飛亷〔注文〕卯〔/注文〕喪門〔注文〕酉〔/注文〕　　弔客〔注文〕巳〔/注文〕　　白虎〔注文〕卯〔/注文〕　　金神〔注文〕辰巳〔/注文〕獨火〔注文〕離〔/注文〕　　五鬼〔注文〕酉〔/注文〕　　破敗五鬼〔注文〕艮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0033",
+      "sha256": "6f1d38682bf6624cc32fbb7a8e12ec52d7c59bdc33188c526b3958e24491e472"
+    },
+    {
+      "section": "太歲丙申幹火枝金納音屬火",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0034",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕丙〔/注文〕　　歲徳合〔注文〕辛〔/注文〕　歲枝徳〔注文〕丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0035",
+      "sha256": "e9df69a7dd979052e42b0fe81606e37ec87e7b3a2cde09793eb6860f0e9ff541"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕酉〔/注文〕　隂貴人〔注文〕亥〔/注文〕　歲禄〔注文〕巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0036",
+      "sha256": "91ef7961bb8e1bae6642dd9109724e2f9da5c31a9298a12be68792b5fa8ec7d1"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕寅〔/注文〕　　奏書〔注文〕坤〔/注文〕　　博士〔注文〕艮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0037",
+      "sha256": "837aaffedfc692d85aa326280a4ffaad375c619ee0792a2caa347447b1ade5b8"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白坎　六白乾　八白艮　九紫離中元　一白兑　六白震　八白中　九紫乾下元　一白巽　六白離　八白坤　九紫震",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0038",
+      "sha256": "27d42f794b77c2eeed4f899a95952797275a74c3d4687a5c80cfea1729af9e07"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕坤乙〔/注文〕　巨門〔注文〕坎癸申辰〔/注文〕武曲〔注文〕乾甲〔/注文〕　文曲〔注文〕震庚亥未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0039",
+      "sha256": "1e87881fe16511d771a89e7068d61021a9626c8c2ae3cc65ae4ae9a5bb10e67f"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕艮寅　甲卯　乙辰〔/注文〕三合後方〔注文〕坤申　庚酉　辛戌〔/注文〕十二吉山宜申子辰寅午戌年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0040",
+      "sha256": "0450150fa393ad2e09cd83dbb91280de9448881bf1f59661a7e9c98c5042e419"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕乙辰〔/注文〕　功曹〔注文〕丙午〔/注文〕　天罡〔注文〕坤申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0041",
+      "sha256": "de3d90dca3126c7a68148b635de2bd6ccd47a09313dfdac495db54b0ee029ba5"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕辛戌〔/注文〕　𫝊送〔注文〕壬子〔/注文〕　河魁〔注文〕艮寅〔/注文〕\n十二吉山宜申子辰寅午戌年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0042",
+      "sha256": "ddd7dad07343c6920a96c0f7a1a9e03bfaca369844cb43870e341b68fd1cee82"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕酉〔/注文〕　太隂〔注文〕亥〔/注文〕　龍徳〔注文〕卯〔/注文〕　福徳〔注文〕巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0043",
+      "sha256": "2902bee8bb374a8a03bce413d3cc173681f9773400b870785aed3c4a223653b4"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕申〔/注文〕　　歲破〔注文〕寅〔/注文〕　　三煞〔注文〕巳午未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0044",
+      "sha256": "bce700e52edd04b1f5a635c7c50cea9bdf463074fb935a672308ca6b3782f643"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕丙丁　壬癸〔/注文〕　　浮天空亡〔注文〕巽辛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0045",
+      "sha256": "79f91f2c9dfb576306fd4764180f1c88d90d7abc475263c3dfd1df65403f3ba8"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕震艮巳山〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0046",
+      "sha256": "bd5a5386f86179feca0c0781940096eb491e268655d06340261138d50f98931c"
+    },
+    {
+      "section": "隂府太歲",
+      "text": "〔注文〕坎坤〔/注文〕　六害〔注文〕亥〔/注文〕　　死符〔注文〕丑〔/注文〕　　灸退〔注文〕卯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0047",
+      "sha256": "20062143300880ca1bca01ded5252d9f33cce9a9972f960db44de34393147881"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕庚〔/注文〕　　病符〔注文〕未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0048",
+      "sha256": "3523e88664869a220c73e56247b07ce25fe828d5894c2d979504d12dfe5ba4ed"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕亥〔/注文〕　地官符〔注文〕子〔/注文〕　大煞〔注文〕子〔/注文〕　　大將軍〔注文〕午〔/注文〕力士〔注文〕乾〔/注文〕　　蠶室〔注文〕巽〔/注文〕　　蠶官〔注文〕辰〔/注文〕　　蠶命〔注文〕巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0049",
+      "sha256": "2d3ba30137c0e359237f6a732597ecd760d4108c3e7192c1a7bf9ae3c5e8a848"
+    },
+    {
+      "section": "歲刑",
+      "text": "〔注文〕寅〔/注文〕　　黄幡〔注文〕辰〔/注文〕　　豹尾〔注文〕戌〔/注文〕　　飛亷〔注文〕辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0050",
+      "sha256": "08b7ae3f38f8ebadaf356c5d0f6d37663286f9a9259e716941c2016fac08fcdb"
+    },
+    {
+      "section": "喪門",
+      "text": "〔注文〕戌〔/注文〕　　弔客〔注文〕午〔/注文〕　　白虎〔注文〕辰〔/注文〕　　金神〔注文〕寅卯午未子丑〔/注文〕獨火〔注文〕離〔/注文〕　　五鬼〔注文〕申〔/注文〕　　破敗五鬼〔注文〕坤〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0051",
+      "sha256": "1b17bf605c6711ffbea57735e46b2081a16da0a93243b376f4287fef2c49969e"
+    },
+    {
+      "section": "太歲丁酉幹火枝金納音屬火",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0052",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕壬〔/注文〕　　歲徳合〔注文〕丁〔/注文〕　歲枝徳〔注文〕寅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0053",
+      "sha256": "81b8b6e5833c145c510c3762c7d8be6a91811fb08fbf052be341765df98fc1ae"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕亥〔/注文〕　隂貴人〔注文〕酉〔/注文〕　歲禄〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0054",
+      "sha256": "40dba91747d76fabed94316f40e81c32c742c44dacf4d0978e6ba2199e06992b"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕亥〔/注文〕　　奏書〔注文〕坤〔/注文〕　　博士〔注文〕艮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0055",
+      "sha256": "68cc3c7c8da26cd7b3e8de04c941c15c7368d750a22129da0504e7c6f9b94d68"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白坤　六白兌　八白離　九紫坎中元　一白艮　六白巽　八白乾　九紫兌下元　一白中　六白坎　八白震　九紫巽",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0056",
+      "sha256": "9d22822ec561b7fb17bd2fd6d88134e1a4337cde2efc615cd4feee8c66384e8c"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕離壬寅戌〔/注文〕巨門〔注文〕乾甲〔/注文〕　武曲〔注文〕坎癸申辰〔/注文〕文曲〔注文〕艮丙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0057",
+      "sha256": "e1ff99567da95ebe776a32bd8295c9dc4c3fc6a5940e600a98c864d6a817c9cd"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕乾亥　壬子　癸丑〔/注文〕三合後方〔注文〕巽巳　丙午　丁未〔/注文〕十二吉山宜巳酉丑亥卯未年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0058",
+      "sha256": "c290327d2342959a695e5f16c5a132ad08ed09ebf9610a0d1e7d1d7f1b48c022"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕甲卯〔/注文〕　　功曹〔注文〕巽巳〔/注文〕　天罡〔注文〕丁未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0059",
+      "sha256": "0a059c41d3d967265eca39ff37ce20e94438d03d62c76a998be16f62cb09a5d9"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕庚酉〔/注文〕　　𫝊送〔注文〕乾亥〔/注文〕　河魁〔注文〕癸丑〔/注文〕\n十二吉山宜巳酉丑亥卯未年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0060",
+      "sha256": "5534b97087f0abcdf9fc070afe6a4973b525264d875d02ddc683d6eec942f2ff"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕戌〔/注文〕　太隂〔注文〕子〔/注文〕　龍徳〔注文〕辰〔/注文〕　福徳〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0061",
+      "sha256": "8d844a5529a6ee4a569a8b26590a59e4b359e4c9b731e21082cbd5afff67fc18"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕酉〔/注文〕　歲破〔注文〕卯〔/注文〕　　　三煞〔注文〕寅卯辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0062",
+      "sha256": "e4266ee67cea62fbf108a5c4b6008c6131c96935fd7fa05c4397c9f2a2c9fe7a"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕甲乙庚辛〔/注文〕　　浮天空亡〔注文〕震庚〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0063",
+      "sha256": "44c51fe2580198e4784aaef35dffaa21af9a03f6cd84e679f7e1447bd96dfd31"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕離壬丙乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0064",
+      "sha256": "c87c9d95e900a146631932b68fc7c7ac9d3d1b2de364f371c6bfad707fe058e8"
+    },
+    {
+      "section": "隂府太歲",
+      "text": "〔注文〕山乾〔/注文〕　六害〔注文〕離〔/注文〕　　死符〔注文〕戌〔/注文〕　灸退〔注文〕寅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0065",
+      "sha256": "9d9a5be6787828efee0ce5513e1d96698f0ccbd458f58f2e79437a1a26c0f717"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕子〔/注文〕　　病符〔注文〕辛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0066",
+      "sha256": "d3883c69b15fb1d78ac8f31f7907efca35c88f65058ae68619befb98526cec54"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕申〔/注文〕　地官符〔注文〕申〔/注文〕　大煞〔注文〕丑〔/注文〕　　大將軍〔注文〕酉〔/注文〕力士〔注文〕午〔/注文〕　　蠶室〔注文〕乾〔/注文〕　　蠶官〔注文〕巽〔/注文〕　　蠶命〔注文〕辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0067",
+      "sha256": "bacf65557fcf18e508334a6c0f1ecbcd205a974438e4247ec5135d9af02d8b8a"
+    },
+    {
+      "section": "歲刑",
+      "text": "〔注文〕已〔/注文〕　　黄幡〔注文〕酉〔/注文〕　　豹尾〔注文〕丑〔/注文〕　　飛亷〔注文〕未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0068",
+      "sha256": "46a22f63707df03833e8f5924e681d9234a071ddbeebe2fb783f65f8c6bfaf11"
+    },
+    {
+      "section": "喪門",
+      "text": "〔注文〕亥〔/注文〕　　弔客〔注文〕亥〔/注文〕　　白虎〔注文〕未〔/注文〕　　金神〔注文〕巳寅卯戌〔/注文〕獨火〔注文〕亥〔/注文〕　　五鬼〔注文〕坤〔/注文〕　　破敗五鬼〔注文〕未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0069",
+      "sha256": "dffae8a6a0ff99928e2db1ac6e5c5732c6be1a1e55ba361fed27d344c40f99af"
+    },
+    {
+      "section": "太歲戊戌幹土枝土納音屬木",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0070",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕戊〔/注文〕　　歲徳合〔注文〕癸〔/注文〕　歲枝徳〔注文〕卯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0071",
+      "sha256": "294fac668792f368839074775bdb6c19dc60ee89c517f16b46980258af4cc0cd"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕丑〔/注文〕　隂貴人〔注文〕未〔/注文〕　歲禄〔注文〕巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0072",
+      "sha256": "8de39033a9205aa437a4d9d50d2fceab0a4e718d4da0623e9d9172dde6a62ac4"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕申〔/注文〕　　奏書〔注文〕坤〔/注文〕　　博士〔注文〕艮〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0073",
+      "sha256": "d25c0ae2a88af96515f8b8a4444c171d73ca37fc25dcc9806e548701a0b6803e"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白震　　六白艮　八白坎　九紫坤中元　一白離　　六白中　八白兌　九紫艮下元　一白乾　　六白坤　八白巽　九紫中",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0074",
+      "sha256": "bd19ec6fa26f19a60f263a3f68fdd5377e01a33b78c059024921035f631fb0cc"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕坎癸申辰〔/注文〕巨門〔注文〕坤乙〔/注文〕　武曲〔注文〕離壬寅戌〔/注文〕文曲〔注文〕兌丁巳丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0075",
+      "sha256": "34832eee31fadf0b5d07f54f2e67a9eb60fa3709a93374e0b25491f377977440"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕坤申　庚酉　辛戌〔/注文〕三合後方〔注文〕艮寅　甲卯　乙辰〔/注文〕十二吉山宜寅午戌申子辰年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0076",
+      "sha256": "0f5eb028e02684538b5f5fa81dee3c53914d711ff1a4cad0c847380a4125a6ef"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕艮寅〔/注文〕　功曹〔注文〕乙辰〔/注文〕　天罡〔注文〕丙午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0077",
+      "sha256": "8f2aa7108a3a2e131c9cc860752fdaafba3717ed130d083d23429f9b21c64507"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕坤申〔/注文〕　傳送〔注文〕辛戊〔/注文〕　河魁〔注文〕壬子〔/注文〕\n十二吉山宜寅午戌申子辰年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0078",
+      "sha256": "05f9fff928423694b8a01afcd8df197f24ce8edb76a6fdaf1a154525c3726aa9"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕亥〔/注文〕　太隂〔注文〕丑〔/注文〕　龍徳〔注文〕巳〔/注文〕　福徳〔注文〕未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0079",
+      "sha256": "ea529908f98b268648dda8a4d71771a571fe352b961be8ee10d39a0d68917fcd"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕戌〔/注文〕　　歲破〔注文〕辰〔/注文〕　　　三煞〔注文〕亥子丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0080",
+      "sha256": "c21ec2f69ea5888f53578224917c6a92cfe5c6b579bb0fe1f30c2b3239bc5e4a"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕壬癸　丙丁〔/注文〕　　浮天空亡〔注文〕坤乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0081",
+      "sha256": "f7163cad2fae1ffeb703fd58315fb8c7fec4f57571330cdfc443ef8be605363e"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕甲寅辰巽戌坎辛申丑癸坤庚未山〔/注文〕隂府太歲〔注文〕坤震〔/注文〕　六害〔注文〕酉〔/注文〕　　死符〔注文〕卯〔/注文〕　　灸退〔注文〕酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0082",
+      "sha256": "758e1e95624cfcd0af1c49d5b63ddacc37f8caee65a6e2fc48b70336bab81498"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕乾〔/注文〕　　病符〔注文〕酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0083",
+      "sha256": "95819cb52d215a2f4991e1aa292d9dfe73a56a38818371cd5bd2a831d19c1239"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕己〔/注文〕　地官符〔注文〕寅〔/注文〕　大煞〔注文〕午〔/注文〕　　大將軍〔注文〕午〔/注文〕力士〔注文〕乾〔/注文〕　　蠶室〔注文〕巽〔/注文〕　　蠶官〔注文〕辰〔/注文〕　　蠶命〔注文〕巳〔/注文〕歲刑〔注文〕未〔/注文〕　　黄幡〔注文〕戌〔/注文〕　　豹尾〔注文〕辰〔/注文〕　　飛亷〔注文〕子〔/注文〕喪門〔注文〕子〔/注文〕　　弔客〔注文〕申〔/注文〕　　白虎〔注文〕午〔/注文〕　　金神〔注文〕申酉子丑〔/注文〕獨火〔注文〕乾〔/注文〕　　五鬼〔注文〕午〔/注文〕　　破敗五鬼〔注文〕離〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0084",
+      "sha256": "4806ab7201cca67b875373406c145b16d718d7758f0d253d2c7a0d70106510f2"
+    },
+    {
+      "section": "太歲巳亥幹土枝水納音屬木",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0085",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕甲〔/注文〕　　歲徳合〔注文〕巳〔/注文〕　歲枝徳〔注文〕辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0086",
+      "sha256": "bf7fa3b5c667123278f322da78e08661803e9879786f06ea4912281179121736"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕子〔/注文〕　隂貴人〔注文〕申〔/注文〕　歲禄〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0087",
+      "sha256": "f144b35643214ed840b459e9246524c85856a4bb5d1ce02b6195d43df90e3788"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕巳〔/注文〕　　奏書〔注文〕乾〔/注文〕　　博士〔注文〕巽〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0088",
+      "sha256": "82717aff5a802381407b8b0c574f949238da23aaaac1dc587c5a62a13752dbe3"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白巽　　六白離　八白坤　九紫震中元　一白坎　　六白乾　八白艮　九紫離下元　一白兌　　六白震　八白中　九紫乾",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0089",
+      "sha256": "769fddf2895eb46620591bd9bc2b43ce90cc053b5526857be3074a234a240f4f"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕坎癸申辰〔/注文〕巨門〔注文〕坤乙〔/注文〕　　武曲〔注文〕離壬寅戌〔/注文〕文曲〔注文〕兌丁己丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0090",
+      "sha256": "b135d7ca4f28b49603f2b2c904123901b7d44d7235617746e87be008ed2ea592"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕巽巳　丙午　丁未〔/注文〕三合後方〔注文〕乾亥　壬子　癸丑〔/注文〕十二吉山宜亥卯未巳酉丑年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0091",
+      "sha256": "70a275192b6415481614a5eea4d9187bb459617f150993b1c27fa41b22045a71"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕癸丑〔/注文〕　　功曹〔注文〕甲卯〔/注文〕　天罡〔注文〕巽巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0092",
+      "sha256": "464aa45d7b75c13c60d8e1a90e0c69b01ff44d6a170ca505f1ee4001f20f68b8"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕丁未〔/注文〕　　傳送〔注文〕庚酉〔/注文〕　河魁〔注文〕乾亥〔/注文〕\n十二吉山宜亥卯未巳酉丑年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0093",
+      "sha256": "6df021ef3a0db263474ea87b86363a83b7e0b929645887a4a235814d15540a5c"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕子〔/注文〕　太隂〔注文〕寅〔/注文〕　龍徳〔注文〕午〔/注文〕　福徳〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0094",
+      "sha256": "3f8618c6f9f34c4848544369130686d1d145c045af37ebb0e6c86c2dfe13006b"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕亥〔/注文〕　　歲破〔注文〕巳〔/注文〕　　三煞〔注文〕申酉戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0095",
+      "sha256": "db676cca49e89e4f605b38004aabaca2b6eff6c284f4a6c01df17cb795b6c17a"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕庚辛　甲乙〔/注文〕　　浮天空亡〔注文〕乾甲〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0096",
+      "sha256": "60bc1dfcc95bb73d95c33ecdd1afe0a66bdedfff84e2a0afa26fdaa354589524"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕震艮巳山〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0097",
+      "sha256": "bd5a5386f86179feca0c0781940096eb491e268655d06340261138d50f98931c"
+    },
+    {
+      "section": "隂府太歲",
+      "text": "〔注文〕巽艮〔/注文〕　六害〔注文〕申〔/注文〕　　死符〔注文〕辰〔/注文〕　　灸退〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0098",
+      "sha256": "f173ccafaa5c0483fc97ad7f6fca6319c7e7ebe1ca55a3dadb6725009f31f33f"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕壬〔/注文〕　　病符〔注文〕戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0099",
+      "sha256": "6b8c37b5575b13e6f804ca2eaeb2cdd17979680b81c8333fe180e158d8b99dcb"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕寅〔/注文〕　地官符〔注文〕卯〔/注文〕　大煞〔注文〕卯〔/注文〕　　大將軍〔注文〕酉〔/注文〕力士〔注文〕艮〔/注文〕　　蠶室〔注文〕坤〔/注文〕　　蠶官〔注文〕未〔/注文〕　　蠶命〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0100",
+      "sha256": "207b7c0e8dffecb3f2438415109644813632058b1ce56b23cb8fb45d57141897"
+    },
+    {
+      "section": "歲刑",
+      "text": "〔注文〕亥〔/注文〕　　黄幡〔注文〕未〔/注文〕　　豹尾〔注文〕丑〔/注文〕　　飛亷〔注文〕丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0101",
+      "sha256": "5bf648ab4e5b02d6000941f05cc13ccbc641886ccec8cd0d18a97dae73305cc4"
+    },
+    {
+      "section": "喪門",
+      "text": "〔注文〕丑〔/注文〕　　弔客〔注文〕酉〔/注文〕　　白虎〔注文〕未〔/注文〕　　金神〔注文〕午未申酉〔/注文〕獨火〔注文〕乾〔/注文〕　　五鬼〔注文〕巳〔/注文〕　　破敗五鬼〔注文〕坎〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0102",
+      "sha256": "42db808ee085ef0adc0ce7463c781dfac09efdf3550ee5bd9fd6aca61d802b72"
+    },
+    {
+      "section": "太歲庚子幹金枝水納音屬土",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0103",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕庚〔/注文〕　　歲徳合〔注文〕乙〔/注文〕　歲枝徳〔注文〕巳〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0104",
+      "sha256": "9a55f3781dae2ccc4a0f73a9b391628f520ba49402ab4fabb13dd5b98e260be0"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕丑〔/注文〕　隂貴人〔注文〕未〔/注文〕　歲禄〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0105",
+      "sha256": "39cad074fe95c41f1fc10229e0fc274d86ba06c4a4dc77cf7047b61f0ef9b422"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕寅〔/注文〕　　奏書〔注文〕乾〔/注文〕　　博士〔注文〕巽〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0106",
+      "sha256": "90a240d53a1fc3f733b7d539107675d74468831408b15b0bc38f6d6d70d4934f"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白中　　六白坎　八白震　九紫巽中元　一白坤　　六白兌　八白離　九紫坎下元　一白艮　　六白巽　八白乾　九紫兌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0107",
+      "sha256": "1367954a01129351bd4a1df4038601349795fbb8df2e07ac44a9f9b4f74dbe53"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕震庚亥未〔/注文〕巨門〔注文〕兌丁巳丑〔/注文〕武曲〔注文〕巽辛〔/注文〕　文曲〔注文〕坤乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0108",
+      "sha256": "9b00f0def7dd5255752daadddf9b4048e90d77a23c99961b1bdbb5a0a1562e41"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕艮寅　甲卯　乙辰〔/注文〕三合後方〔注文〕坤申　庚酉　辛戌〔/注文〕十二吉山宜申子辰寅午戌年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0109",
+      "sha256": "0450150fa393ad2e09cd83dbb91280de9448881bf1f59661a7e9c98c5042e419"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕壬子〔/注文〕　　功曹〔注文〕艮寅〔/注文〕　天罡〔注文〕乙辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0110",
+      "sha256": "d8ac73ff77e358fe912ce0419ded08da2f29b51008263c2401d7b46c8d005594"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕丙午〔/注文〕　　𫝊送〔注文〕坤申〔/注文〕　河魁〔注文〕辛戌〔/注文〕\n十二吉山宜申子辰寅午戌年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0111",
+      "sha256": "4cf1fd8409e16d2dfab66f50d111316ad3e6cc5e434c578cd0b2344754d41251"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕丑〔/注文〕　太隂〔注文〕卯〔/注文〕　龍徳〔注文〕未〔/注文〕　福徳〔注文〕酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0112",
+      "sha256": "30a69ae24b8eb0dc525f12785bba960cffcfcd6d8681df16bae1f2fc5151c055"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕子〔/注文〕　　歲破〔注文〕午〔/注文〕　　　三煞〔注文〕巳午未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0113",
+      "sha256": "36d8925efa715534e1f0e8116cbf2962931c23f3cd81d5171c2a384aa53f2e3c"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕丙丁　壬癸〔/注文〕　　浮天空亡〔注文〕兌丁〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0114",
+      "sha256": "0ec8f4dec7d32c9d5070a916813dcf705c0c964a60a24d0048c97e96b1ca6812"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕乾亥兌丁山〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0115",
+      "sha256": "23651311b53bcea0a3fc67e7264a8dd34207bbd40b1501158ebf4e8b26a1fbc1"
+    },
+    {
+      "section": "隂府太歲",
+      "text": "〔注文〕乾兌〔/注文〕　六害〔注文〕未〔/注文〕　　死符〔注文〕巳〔/注文〕　　灸退〔注文〕卯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0116",
+      "sha256": "8533fdf431fd0984571b9074d2955dbe7e04388431962363c26d30ed40f58af2"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕癸〔/注文〕　　病符〔注文〕亥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0117",
+      "sha256": "78257b267d59e91c69266ed4c4a37ad29790e04f7521e9fc2ac43f368ea108ae"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕亥〔/注文〕地官符〔注文〕辰〔/注文〕　大煞〔注文〕子〔/注文〕　　大將軍〔注文〕酉〔/注文〕力士〔注文〕艮〔/注文〕　蠶室〔注文〕坤〔/注文〕　　蠶官〔注文〕未〔/注文〕　　蠶命〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0118",
+      "sha256": "93b2fb6c111f21b7e44aed5e1d79d4917e37a88aec63766566d37e9ce7ed27ed"
+    },
+    {
+      "section": "歲刑",
+      "text": "〔注文〕卯〔/注文〕　黄幡〔注文〕辰〔/注文〕　　豹尾〔注文〕戌〔/注文〕　　飛亷〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0119",
+      "sha256": "bb72d5a364ef6ccb204361a12092a905037c0842d16cd25e7f0c724163d5dc90"
+    },
+    {
+      "section": "喪門",
+      "text": "〔注文〕寅〔/注文〕　弔客〔注文〕戌〔/注文〕　　白虎〔注文〕申〔/注文〕　　金神〔注文〕辰巳〔/注文〕獨火〔注文〕艮〔/注文〕　五鬼〔注文〕辰〔/注文〕　　破敗五鬼〔注文〕兌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0120",
+      "sha256": "878a94323974f78a4890a6cedc1551a9aa058de72d33794a77081010b873f4d3"
+    },
+    {
+      "section": "太歲辛丑幹金枝土納音屬土",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0121",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕丙〔/注文〕　　歲徳合〔注文〕辛〔/注文〕　歲枝徳〔注文〕午〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0122",
+      "sha256": "d1f77fde5a55284156a8a63f6dba11e26e47071d02db1ab15e43177e383f53f2"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕寅〔/注文〕　隂貴人〔注文〕午〔/注文〕　歲禄〔注文〕酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0123",
+      "sha256": "244139d328b0211a5de56fbf3ff07d086f434672089bd8faabdf9bfdb095fc06"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕亥〔/注文〕　　奏書〔注文〕乾〔/注文〕　　博士〔注文〕巽〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0124",
+      "sha256": "b1804a59d064e0dd61b71e36ba569046269ad0c3d98a1fe863e694e172ad0e47"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白乾　六白坤　八白巽　九紫中中元　一白震　六白艮　八白坎　九紫坤下元　一白離　六白中　八白兌　九紫艮",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0125",
+      "sha256": "9297b850ca958e1d8bfe390954a43c300457977ce974acfa09831b2cff79d0f3"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕艮丙〔/注文〕　巨門〔注文〕巽辛〔/注文〕　武曲〔注文〕兌丁巳丑〔/注文〕文曲〔注文〕離壬寅戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0126",
+      "sha256": "52980c3eb4a1ee271c493a438b1eaf04f2fccce6b055be16a23e167a0aa96069"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕乾亥　壬子　癸丑〔/注文〕　三合後方〔注文〕巽巳　丙午　丁未〔/注文〕十二吉山宜巳酉丑亥卯未年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0127",
+      "sha256": "97b59cd7bbb894671700f973b5fd306b9e499dce2b599bf636ec5cb4e7ec2e14"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕乾亥〔/注文〕　　功曹〔注文〕癸丑〔/注文〕　天罡〔注文〕甲卯〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0128",
+      "sha256": "b9b4fe819e7eafe842ac072d23aa8a074f3ed4022efd44612286e4762975ac3f"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕巽巳〔/注文〕　　傳送〔注文〕丁未〔/注文〕　河魁〔注文〕庚酉〔/注文〕\n十二吉山宜巳酉丑亥卯未年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0129",
+      "sha256": "541845b1aa477046b6f44db88a5753e7282216fd4bc2c5889c9b2cf90331a171"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕寅〔/注文〕　太隂〔注文〕辰〔/注文〕龍徳〔注文〕申〔/注文〕　福徳〔注文〕戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0130",
+      "sha256": "2908d141090e8521c4d807be7144d04e760f2f4e7e22f56b2147ca91fc3f8cc1"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕丑〔/注文〕　　歲破〔注文〕未〔/注文〕　　　三煞〔注文〕寅卯辰〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0131",
+      "sha256": "874fe79a1493c6afeb33f69798fdb730a6a4a2fa75c4165866ae7c4c294ed3cc"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕甲乙　庚辛〔/注文〕　　浮天空亡〔注文〕艮丙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0132",
+      "sha256": "d93916dbdb429de920edeb7ecc09afc2b2fdc1a7b19cf71c4c37e245414d139a"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕甲寅辰巽戌坎辛申丑癸坤庚未山〔/注文〕隂府太歲〔注文〕坤坎〔/注文〕　六害〔注文〕午〔/注文〕　　死符〔注文〕午〔/注文〕　灸退〔注文〕子〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0133",
+      "sha256": "edbf297d9e08629fe188cd8b17e29b17accc8a88601aee2a45190c4722e83c37"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕艮〔/注文〕　　病符〔注文〕子〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0134",
+      "sha256": "3df4db6aac1f16cc62b843792dd424bbc46fca0bbb8fe8b349cf3cf379d13334"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕申〔/注文〕　地官符〔注文〕巳〔/注文〕　大煞〔注文〕酉〔/注文〕　　大將軍〔注文〕酉〔/注文〕力士〔注文〕艮〔/注文〕　　蠶室〔注文〕坤〔/注文〕　　蠶官〔注文〕未〔/注文〕　　蠶命〔注文〕申〔/注文〕歲刑〔注文〕戌〔/注文〕　　黄幡〔注文〕丑〔/注文〕　　豹尾〔注文〕未〔/注文〕　　飛亷〔注文〕酉〔/注文〕喪門〔注文〕卯〔/注文〕　　弔客〔注文〕亥〔/注文〕　　白虎〔注文〕酉〔/注文〕　　金神〔注文〕寅卯午未子丑〔/注文〕獨火〔注文〕震〔/注文〕　　五鬼〔注文〕卯〔/注文〕　　破敗五鬼〔注文〕乾〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0135",
+      "sha256": "108546dc313735113e718653d352d5ca2f21d04d188891a7273ebf41cee16a54"
+    },
+    {
+      "section": "太歲壬寅幹水枝木納音屬金",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0136",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕壬〔/注文〕　　歲徳合〔注文〕丁〔/注文〕　歲枝徳〔注文〕未〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0137",
+      "sha256": "ff19b6916d7cd5b6900fd7009671627b72a926af401b3a9bfbdb4e93708258ca"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕卯〔/注文〕　隂貴人〔注文〕巳〔/注文〕　歲禄〔注文〕亥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0138",
+      "sha256": "56ea115c3990fba2a509ce85fcb35caa9dc6af8bce57486dce16903c92dda23c"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕申〔/注文〕　　奏書〔注文〕艮〔/注文〕　　博士〔注文〕坤〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0139",
+      "sha256": "2d1737072a6ffbceca4d2d5d0ed00ab7c866a584ff9a5390734d9860b6a4c39c"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白兌　　六白震　八白中　九紫乾中元　一白巽　　六白離　八白坤　九紫震下元　一白坎　　六白乾　八白艮　九紫離",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0140",
+      "sha256": "9a9c967e3548d998a693f25a95b300525e24698f6ca0998d54bd1066496da8f1"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕艮丙〔/注文〕　巨門〔注文〕巽辛〔/注文〕　武曲〔注文〕兌丁巳丑〔/注文〕文曲〔注文〕離壬寅戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0141",
+      "sha256": "52980c3eb4a1ee271c493a438b1eaf04f2fccce6b055be16a23e167a0aa96069"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕坤申　庚酉　辛戌〔/注文〕三合後方〔注文〕艮寅　甲卯　乙辰〔/注文〕十二吉山宜寅午戌申子辰年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0142",
+      "sha256": "0f5eb028e02684538b5f5fa81dee3c53914d711ff1a4cad0c847380a4125a6ef"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕辛戌〔/注文〕　　功曹〔注文〕壬子〔/注文〕　天罡〔注文〕艮寅〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0143",
+      "sha256": "5f35b5356582bd42283787a2b39ae39331f9e268808158de9a855e40ec966e71"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕乙辰〔/注文〕　　傳送〔注文〕丙午〔/注文〕　河魁〔注文〕坤申〔/注文〕\n十二吉山宜寅午戌申子辰年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0144",
+      "sha256": "280d705c3ab03e25e9a4d43305fc252df4c925157e1eb9ff2df4bf1617b7a127"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕卯〔/注文〕　太隂〔注文〕巳〔/注文〕　龍徳〔注文〕酉〔/注文〕　福徳〔注文〕亥〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0145",
+      "sha256": "cf5c4aa3f98ea6c3e6a7c20348bd0423a8e622b249ee5045cbc5221d06d2e4a6"
+    },
+    {
+      "section": "開山立向修方凶",
+      "text": "太歲〔注文〕寅〔/注文〕　　歲破〔注文〕申〔/注文〕　　　三煞〔注文〕亥子丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0146",
+      "sha256": "4b9e6326c9935e68af647e162896d2e5a2b50a57fe2da0f5adfb15eb3b031a66"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕壬癸　丙丁〔/注文〕　　浮天空亡〔注文〕乾甲〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0147",
+      "sha256": "5127a22602ab72e41710ccfedc597178b5dffb17ec6b0a9aabbc96bac1e9cf28"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕二十四山並無尅冬至後尅乾亥兌丁山〔/注文〕隂府太歲〔注文〕離乾〔/注文〕　六害〔注文〕已〔/注文〕　　死符〔注文〕未〔/注文〕　　灸退〔注文〕酉〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0148",
+      "sha256": "2ec17c9aaebeff64568a35fa78514db566cf861875d20b0dfdc9d12dbd09c8e2"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕甲〔/注文〕　　病符〔注文〕丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0149",
+      "sha256": "5bf34552aac25ab9cebc83daca31d6f12203419a92802368c70531225cc5934e"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕巳〔/注文〕　地官符〔注文〕午〔/注文〕　大煞〔注文〕午〔/注文〕　　大將軍〔注文〕子〔/注文〕力士〔注文〕巽〔/注文〕　　蠶室〔注文〕乾〔/注文〕　　蠶官〔注文〕戌〔/注文〕　　蠶命〔注文〕亥〔/注文〕歲刑〔注文〕巳〔/注文〕　　黄幡〔注文〕戌〔/注文〕　　豹尾〔注文〕辰〔/注文〕　　飛亷〔注文〕戌〔/注文〕喪門〔注文〕辰〔/注文〕　　弔客〔注文〕子〔/注文〕　　白虎〔注文〕戌〔/注文〕　　金神〔注文〕寅卯戌亥〔/注文〕獨火〔注文〕震〔/注文〕　　五鬼〔注文〕寅〔/注文〕　　破敗五鬼〔注文〕巽〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0150",
+      "sha256": "b12fe09326a783f2d649b394d38746be0ef4d1664f30706df351360e1a62514c"
+    },
+    {
+      "section": "太歲癸卯幹水枝木納音屬金",
+      "text": "開山立向修方吉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0151",
+      "sha256": "e797e614394e10bffe65f3498da892f5c7f470de14dd862823dd39f51d439abd"
+    },
+    {
+      "section": "歲徳",
+      "text": "〔注文〕戊〔/注文〕　　歲徳合〔注文〕癸〔/注文〕　歲枝徳〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0152",
+      "sha256": "e0d76bc518c7ad59246089b3305df34f5ad4d53a53d6e7dd4bd219d671d5a247"
+    },
+    {
+      "section": "陽貴人",
+      "text": "〔注文〕巳〔/注文〕　隂貴人〔注文〕卯〔/注文〕　歲禄〔注文〕子〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0153",
+      "sha256": "b4f31a35cc6cc51d4c6135743b89d13a363d33ac11e5b99c11a56d12e7326f92"
+    },
+    {
+      "section": "歲馬",
+      "text": "〔注文〕巳〔/注文〕　　奏書〔注文〕艮〔/注文〕　　博士〔注文〕坤〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0154",
+      "sha256": "1bb92a84bdb24ed5e2bf72b6bde29b1d968daf52c084abcbb2b63c4ad5ce14fa"
+    },
+    {
+      "section": "三元紫白",
+      "text": "上元　一白艮　六白巽　八白乾　九紫兌中元　一白中　六白坎　八白震　九紫巽下元　一白坤　六白兌　八白離　九紫坎",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c017:p0155",
+      "sha256": "43334a4317283dbadfaac0ec8ae76bd4a6e12414f456473fbbc6b0c8395e297c"
+    },
+    {
+      "section": "蓋山黄道",
+      "text": "貪狼〔注文〕乾甲〔/注文〕　巨門〔注文〕離壬寅戌〔/注文〕武曲〔注文〕坤乙〔/注文〕　文曲〔注文〕巽辛〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0156",
+      "sha256": "2e953156e5c1ff0f75d801125c1fe59e54d0aadc5c5ef0b5665e0d6db8ee2bf2"
+    },
+    {
+      "section": "通天竅",
+      "text": "三合前方〔注文〕巽巳　丙午　丁未〔/注文〕　三合後方〔注文〕乾亥　壬子　癸丑〔/注文〕\n十二吉山宜亥卯未巳酉丑年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0157",
+      "sha256": "80c567c6fe56ef69f58bf0d1c8b0ff2731832ef1fe8964bffd72cc4384def99c"
+    },
+    {
+      "section": "走馬六壬",
+      "text": "神后〔注文〕庚酉〔/注文〕　功曹〔注文〕乾亥〔/注文〕　天罡〔注文〕癸丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0158",
+      "sha256": "faf735cf9887b389a4da553475a31c147715cd86641793bcd0d20ff905a340b7"
+    },
+    {
+      "section": "勝光",
+      "text": "〔注文〕甲卯〔/注文〕　傳送〔注文〕巽巳〔/注文〕　河魁〔注文〕丁未〔/注文〕\n十二吉山宜亥卯未巳酉丑年月日時",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0159",
+      "sha256": "fa30fc59538783044c063a852e6c5dea9c35435cf0ff29817504cee8d1dd6493"
+    },
+    {
+      "section": "四利三元",
+      "text": "太陽〔注文〕辰〔/注文〕　太隂〔注文〕午〔/注文〕　龍徳〔注文〕戌〔/注文〕　福徳〔注文〕子〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0160",
+      "sha256": "7b7c169248f3907dfe3684ce798173665edda8af64a2401e069c76ce86cc03ed"
+    },
+    {
+      "section": "䦕山立向修方凶",
+      "text": "太歲〔注文〕卯〔/注文〕　　歲破〔注文〕酉〔/注文〕　　　三煞〔注文〕申酉戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0161",
+      "sha256": "a975456b3b1299c6d6770a12d8e479eae8beb6bee6b6770b8745a163731496ff"
+    },
+    {
+      "section": "坐煞向煞",
+      "text": "〔注文〕庚辛　甲乙〔/注文〕　　浮天空亡〔注文〕坤乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0162",
+      "sha256": "94b3cbf3507e8267424d8dc893b61acabf418397c3295b272eb0d3d30bf22b6c"
+    },
+    {
+      "section": "開山凶",
+      "text": "年尅山家〔注文〕乾亥兌丁〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0163",
+      "sha256": "674349acbabdeb776c9778d105ad578cccc1fc7ed30d96a2826727c7ad706cea"
+    },
+    {
+      "section": "隂府太歲",
+      "text": "〔注文〕山震〔/注文〕六害〔注文〕坤〔/注文〕　　死符〔注文〕辰〔/注文〕　　灸退〔注文〕申〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0164",
+      "sha256": "8329321c1ecbfa0031b53ab27cbb7cb28961f950319c15bd75aec01ec3a2786e"
+    },
+    {
+      "section": "立向凶",
+      "text": "巡山羅㬋〔注文〕午〔/注文〕　　病符〔注文〕乙〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0165",
+      "sha256": "6d914f8bc389b835417ac81960fb13a3bbf2fc049d57535e8bc546b3f4d50050"
+    },
+    {
+      "section": "修方凶",
+      "text": "天官符〔注文〕寅〔/注文〕　地官符〔注文〕寅〔/注文〕　大煞〔注文〕未〔/注文〕　　大將軍〔注文〕卯〔/注文〕力士〔注文〕子〔/注文〕　　蠶室〔注文〕巽〔/注文〕　　蠶官〔注文〕乾〔/注文〕　　蠶命〔注文〕戌〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0166",
+      "sha256": "9487466c0521fcf87b9663069edeac9c7a09382a19d00554afbfa5b95d2cf173"
+    },
+    {
+      "section": "歲刑",
+      "text": "〔注文〕亥〔/注文〕　　黄幡〔注文〕子〔/注文〕　　豹尾〔注文〕未〔/注文〕　　飛亷〔注文〕丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0167",
+      "sha256": "febdb90ad2450d8430e405ffe0abbd5a54b02d99ecac94f3132264c0aa648a2b"
+    },
+    {
+      "section": "喪門",
+      "text": "〔注文〕巳〔/注文〕　　弔客〔注文〕巳〔/注文〕　　白虎〔注文〕丑〔/注文〕　　金神〔注文〕亥申酉子〔/注文〕獨火〔注文〕丑〔/注文〕　　五鬼〔注文〕坎〔/注文〕　　破敗五鬼〔注文〕丑〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c017:p0168",
+      "sha256": "f5ecf043646f7342d6117fc412ecc4b506c3fc7f157c7e8e4480bdf3823df9ee"
+    }
+  ]
+}

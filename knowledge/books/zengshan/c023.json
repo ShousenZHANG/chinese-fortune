@@ -1,0 +1,53 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c023",
+  "title": "暗動章第二十二",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F22&oldid=2100453",
+  "revision": "2100453",
+  "source_timestamp": "2022-01-20T19:19:50Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c023.wiki",
+  "raw_sha256": "c8d2e339a0bf86b1e09e290ff191eac06c6c0bfce190c3d1e7942cc3fab874d5",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "暗動章第二十二",
+      "text": "靜爻旺相日辰沖之爲暗動，靜爻休囚日辰沖之爲破，暗動者有喜有忌。用神休囚得元神暗動以相生；忌神明動於卦中，得元神暗動而生用神，此皆謂之喜也。用神休囚無助，若遇忌神克害用神，此皆謂之忌也。占以暗動福來而不知，禍來而不覺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c023:p0001",
+      "sha256": "d6fb30b1718228ed614d029e8b2d9b475d8eaa2d073a225a4cfa9da59aa15219"
+    },
+    {
+      "section": "暗動章第二十二",
+      "text": "又曰：吉凶之應於動，有急緩之應，則緩非此論，何當不知不覺，報應亦非緩也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c023:p0002",
+      "sha256": "1225258b56e4ae125ce571bede18ce5aee15800f39678990bf7a8de58d1212fb"
+    },
+    {
+      "section": "暗動章第二十二",
+      "text": "卽如寅月已未日占女痘得坤之師卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c023:p0003",
+      "sha256": "d8e118dfad6fff982acad61206d45965f8eb94ee77e8f7610e2745192273bc3f"
+    },
+    {
+      "section": "暗動章第二十二",
+      "text": "子孫酉金⚋世　子孫酉金⚋\n妻財亥水⚋　　妻財亥水⚋\n兄弟丑土⚋　　兄弟丑土⚋\n官鬼卯木⚋應　父母午火⚋\n父母巳火ㄨ　　兄弟辰土⚊\n兄弟未土⚋　　官鬼寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c023:p0004",
+      "sha256": "ab1183f82a73de892a7dffa0d3e107e7e01bb75cab2704492989d43e40b61b3b"
+    },
+    {
+      "section": "暗動章第二十二",
+      "text": "酉金子孫，𨿽則春令休囚，得日辰生之，二爻巳火動而克金，得未日沖動丑土，土動生金，花𨿽密以全生。彼曰：目下甚危。予曰：不妨，今日未申時有救，果於申時遇明醫救治，何當緩也？",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c023:p0005",
+      "sha256": "36629550ac83205c63559827033c259ed042eb8b316b5160fd2abbc1d50c8e7f"
+    }
+  ]
+}

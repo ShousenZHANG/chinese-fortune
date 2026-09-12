@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c012",
+  "title": "卷十二",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c012.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十二",
+      "text": "占疾病\n以天芮为病神，以生死二门看。再审病者本命年干落宫，得生门不死，死门难愈。若年干休囚废没，再有凶星、凶格，大凶。即得其余六门，亦主缠绵。再以天芮废没之月为愈。斯如占父母病，或儿女同类病，得本月日干入墓者大凶。又凶星、凶门加病人地盘年庚无救神亦凶。若凶星加奇门，上下二干相救，可死中求活；或三奇、吉门、吉格，更上下二干有合，虽不服药亦可愈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c012:p0001",
+      "sha256": "dce7a88cef1e03842382d0c62b31e6807681887d78a917d7262aeaba974f47f6"
+    },
+    {
+      "section": "卷十二",
+      "text": "占患眼疾\n以离宫主之，离为目，看九宫得何吉星、吉格，则愈速；而凶则痊迟。若吉凶不分，则缠绵，亦不重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c012:p0002",
+      "sha256": "fda193747fbe6db789bbf8bec01910f83493844831622341148d5f5ea50d284c"
+    },
+    {
+      "section": "卷十二",
+      "text": "占寿数\n凡占寿数修短，以天冲、死门决之。盖天冲乃三宫之神，为生气也；又五为死气也。又以九十岁为率九宫，每宫十年，看天冲所落之宫远近以定其数。如天冲带旺相，一生无患；若休囚废没，一生常有坎坷。占者自天冲落宫数起，阳遁顺行九宫，阴遁逆行九宫，数至死门落宫止。将自己经过寿数除讫，以所得余岁论断。如年至三旬而得四数，则除三十尚有十年之寿，余仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c012:p0003",
+      "sha256": "af8c1bbc3fb412e5490a7bb927cead30d5ef37650aca9ffae6214e6fea3d7862"
+    }
+  ]
+}

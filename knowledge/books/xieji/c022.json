@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c022",
+  "title": "卷22",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B722&oldid=627139",
+  "revision": "627139",
+  "source_timestamp": "2016-10-14T03:23:46Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c022.wiki",
+  "raw_sha256": "7654579341f0fd90bd543632bf9f4176c232b294901812913b2dd247a4b91284",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷22",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c022:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十二",
+      "text": "月表三",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c022:p0002",
+      "sha256": "167f2a8ac718267f22c215577e12293f5f5e2db16377e8e8962f046da747ee33"
+    },
+    {
+      "section": "三月",
+      "text": "清明三月節天道北行宜向北行宜修造北方\n天德在壬天德合在丁月德在壬月德合在丁月空在丙宜修造取土\n月建在辰月破在戌月厭在申月刑在辰月害在卯劫煞在巳災煞在午月煞在未忌修造取土\n初一日長星　十六日短星清明後二十一日往亡土王用事後忌修造動土巳午日添母倉\n穀雨三月中日躔在酉宮爲三月將宜用癸乙丁辛時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c022:p0003",
+      "sha256": "2a92731c4e1631263c019a7d0d230e64101a8799a9dab445c4b6f47f84478b93"
+    },
+    {
+      "section": "癸亥大海水專危日",
+      "text": "右六十干支從建辰者始清明終穀雨其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c022:p0004",
+      "sha256": "b729c0fc3c4ca02a1bd2ae8c928fbfca14b2ad415f8d487ccc3ac0ed002177c5"
+    }
+  ]
+}

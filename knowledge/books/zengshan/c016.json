@@ -1,0 +1,25 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c016",
+  "title": "四時旺相章第又十五",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F15%E5%8F%88&oldid=2100323",
+  "revision": "2100323",
+  "source_timestamp": "2022-01-20T03:22:37Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c016.wiki",
+  "raw_sha256": "f47fbd8f2afbbf5d85a2b77e62d8b93837aa6018c54afc2db833dcb922348bce",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "四時旺相章第又十五",
+      "text": "* 正月寅爲月建，寅木旺，卯木次之。\n* 二月卯當月建，卯木旺，寅木次之。\n* 正二月木爲旺、火爲相，其餘金火土作休囚。\n* 三月辰爲月建辰土旺，丑未之土次之，土生金，金爲相，相𨿽不旺，還有餘气，其餘俱作休囚。\n* 四月巳爲月建，巳火旺、午火次之。\n* 五月午爲月建，午火旺，巳火次之，四五月火爲旺，土相其餘俱作休囚。\n* 六月未爲月建，未土旺，辰戌次之，土生金，金爲相，火𨿽衰，但有餘气，其餘俱作休囚。\n* 七月申爲月建，申金旺，酉金次之。八月酉爲月建，酉金旺，申金次之。\n* 七八月金旺，金生水，水爲相，其餘俱作休囚。\n* 九月戌爲月建，戌土旺，丑未次之，土生金，金爲相，其餘俱作休囚。\n* 十月亥爲月建，亥水旺、子水次之。十一月爲月建子水旺、亥水次之。\n* 十月十一月水旺，水生木，木爲相，其餘俱作休囚。\n* 十二月丑爲月建，丑土旺，辰戌之土次之，土生金，金爲相，水𨿽衰，還有餘气，其餘俱作休囚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c016:p0001",
+      "sha256": "149da7405a5d18e75c56c6adc07611fe8aa446fb7af12cbd0500208dd929fb95"
+    }
+  ]
+}

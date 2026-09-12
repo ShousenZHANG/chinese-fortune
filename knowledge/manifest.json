@@ -1,12 +1,21 @@
 {
   "schema_version": "2.0",
-  "library_id": "bazi-five-classics-v1",
+  "distribution_kind": "source",
+  "library_id": "chinese-classics-v2",
   "required_books": [
-    "ziping",
     "ditian",
+    "dunjia",
+    "liuren",
+    "meihua",
     "qiongtong",
     "sanming",
-    "yuanhai"
+    "xieji",
+    "xuanze",
+    "yuanhai",
+    "yuanling",
+    "zengshan",
+    "ziping",
+    "ziwei"
   ],
   "retrieval_policy": "offline; preserve original words; historical text is not personal advice",
   "books": [
@@ -505,6 +514,326 @@
       }
     },
     {
+      "id": "dunjia",
+      "title": "遁甲演义",
+      "edition": "四库全书本四卷网络转录；不同于缺卷界的普通网页本",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%81%E7%94%B2%E6%BC%94%E7%BE%A9+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29&oldid=625948",
+      "revision": "625948",
+      "source_timestamp": "2016-10-14T03:21:22Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003",
+        "c004"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "卷1",
+          "path": "books/dunjia/c001.json",
+          "sha256": "9ce15f8663e810c872bec61a99f43f1e207f31e8367316187a4a8f7aee5b0e68",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%81%E7%94%B2%E6%BC%94%E7%BE%A9+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B71&oldid=625938",
+          "revision": "625938",
+          "passage_count": 17,
+          "issue_count": 3
+        },
+        {
+          "id": "c002",
+          "title": "卷2",
+          "path": "books/dunjia/c002.json",
+          "sha256": "3af4ca08afb9559a6d2265f99cd2f850515b382d2727d624efc3a55daecf6b76",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%81%E7%94%B2%E6%BC%94%E7%BE%A9+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B72&oldid=625940",
+          "revision": "625940",
+          "passage_count": 47,
+          "issue_count": 4
+        },
+        {
+          "id": "c003",
+          "title": "卷3",
+          "path": "books/dunjia/c003.json",
+          "sha256": "ef65bd75d32914321ceb8fcbc26c1dfc63903095b8d753eb7d65721ed04f2ff9",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%81%E7%94%B2%E6%BC%94%E7%BE%A9+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B73&oldid=793649",
+          "revision": "793649",
+          "passage_count": 45,
+          "issue_count": 3
+        },
+        {
+          "id": "c004",
+          "title": "卷4",
+          "path": "books/dunjia/c004.json",
+          "sha256": "739328ae0c6f654415af0b7ae85f0a4465b945fca9d841f8fd4db8472ed06731",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%81%E7%94%B2%E6%BC%94%E7%BE%A9+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B74&oldid=625944",
+          "revision": "625944",
+          "passage_count": 16,
+          "issue_count": 1
+        }
+      ],
+      "index_path": "sources/dunjia/_index.wiki",
+      "index_sha256": "905d0d6ae89f7e84844235fd9e5ccba768272fda70ca085991ef252f53f8ef95",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 4,
+        "acquired_count": 4,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。",
+        "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
+      ],
+      "retrieval_context_radius": 2
+    },
+    {
+      "id": "liuren",
+      "title": "六壬大全",
+      "edition": "四库全书本网络转录；保留该本方法与异议",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29&oldid=1788462",
+      "revision": "1788462",
+      "source_timestamp": "2020-04-05T09:13:46Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003",
+        "c004",
+        "c005",
+        "c006",
+        "c007",
+        "c008",
+        "c009",
+        "c010",
+        "c011",
+        "c012"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "卷01",
+          "path": "books/liuren/c001.json",
+          "sha256": "aded10dace21957bc0beb9c585d4568bc314e4cc4c8b8ff1f45110501a4781bc",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B701&oldid=763659",
+          "revision": "763659",
+          "passage_count": 183,
+          "issue_count": 9
+        },
+        {
+          "id": "c002",
+          "title": "卷02",
+          "path": "books/liuren/c002.json",
+          "sha256": "6143b0a980c7bcee84663a75542b181c4838d91464512615f9d4d9fa0a902cfc",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B702&oldid=763663",
+          "revision": "763663",
+          "passage_count": 112,
+          "issue_count": 9
+        },
+        {
+          "id": "c003",
+          "title": "卷03",
+          "path": "books/liuren/c003.json",
+          "sha256": "3acb907aea2af22c58d53c0d974543d48d94a3854dd029873816d996f4d55969",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=763667",
+          "revision": "763667",
+          "passage_count": 105,
+          "issue_count": 8
+        },
+        {
+          "id": "c004",
+          "title": "卷04",
+          "path": "books/liuren/c004.json",
+          "sha256": "3c80a0ad5c45650963a5bc6b75511d5d82e693ff14bbde85269bbab01c443303",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B704&oldid=763671",
+          "revision": "763671",
+          "passage_count": 94,
+          "issue_count": 0
+        },
+        {
+          "id": "c005",
+          "title": "卷05",
+          "path": "books/liuren/c005.json",
+          "sha256": "3fcb941114897fc5000c59982ce43f4db76ac9ff3c0f132254314ebb498ac816",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B705&oldid=763675",
+          "revision": "763675",
+          "passage_count": 138,
+          "issue_count": 7
+        },
+        {
+          "id": "c006",
+          "title": "卷06",
+          "path": "books/liuren/c006.json",
+          "sha256": "389e8229886342a7f5769b3dae9ab2f276704e17a11aed6e26a42a9adb59a008",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B706&oldid=763679",
+          "revision": "763679",
+          "passage_count": 126,
+          "issue_count": 14
+        },
+        {
+          "id": "c007",
+          "title": "卷07",
+          "path": "books/liuren/c007.json",
+          "sha256": "76d7bbbc4f00daaf4062d3b2c7b3f5bfd223633040da2da3b13243e96d5120e2",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B707&oldid=763683",
+          "revision": "763683",
+          "passage_count": 120,
+          "issue_count": 25
+        },
+        {
+          "id": "c008",
+          "title": "卷08",
+          "path": "books/liuren/c008.json",
+          "sha256": "33a0427183294f3cef8845ea199d00f4981d2c73be156c6d703e1e04ad11c639",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B708&oldid=763688",
+          "revision": "763688",
+          "passage_count": 129,
+          "issue_count": 8
+        },
+        {
+          "id": "c009",
+          "title": "卷09",
+          "path": "books/liuren/c009.json",
+          "sha256": "db0240de2c59acf4788984ce5b18a4d1b3d5b278b3c0159e6e8c6ff28c8452cc",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B709&oldid=763692",
+          "revision": "763692",
+          "passage_count": 86,
+          "issue_count": 24
+        },
+        {
+          "id": "c010",
+          "title": "卷10",
+          "path": "books/liuren/c010.json",
+          "sha256": "31c4fe9bfa9c20cbbf6d35529620010070ed0bfe68bc2538d140e898d4bc27e5",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B710&oldid=763695",
+          "revision": "763695",
+          "passage_count": 96,
+          "issue_count": 10
+        },
+        {
+          "id": "c011",
+          "title": "卷11",
+          "path": "books/liuren/c011.json",
+          "sha256": "1db7add9e12cb5047b09a3909da66dea8b10f92ae716f26be3721f6d2df4aa5b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B711&oldid=763699",
+          "revision": "763699",
+          "passage_count": 340,
+          "issue_count": 12
+        },
+        {
+          "id": "c012",
+          "title": "卷12",
+          "path": "books/liuren/c012.json",
+          "sha256": "9c89e3c0121aa7b7aedc1545db2c5e8d388b9349b52c25b87eb1cc6034cdf7b2",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%85%AD%E5%A3%AC%E5%A4%A7%E5%85%A8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B712&oldid=763703",
+          "revision": "763703",
+          "passage_count": 302,
+          "issue_count": 21
+        }
+      ],
+      "index_path": "sources/liuren/_index.wiki",
+      "index_sha256": "fc8838973c88239b514d92d9ea9962a5e4b9fe7a853e8ed59d11a25c86cbfacb",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 12,
+        "acquired_count": 12,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。",
+        "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
+      ],
+      "retrieval_context_radius": 2
+    },
+    {
+      "id": "meihua",
+      "title": "梅花易数",
+      "edition": "维基文库三卷转录选本；不代表其他五卷版本",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8&oldid=2188971",
+      "revision": "2188971",
+      "source_timestamp": "2022-10-28T14:04:44Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "卷一",
+          "path": "books/meihua/c001.json",
+          "sha256": "6a43dd730ad4037d2796207c359e39918f8fbb62625de9bc6e9634f407389991",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%B8%80&oldid=2690596",
+          "revision": "2690596",
+          "passage_count": 339,
+          "issue_count": 0
+        },
+        {
+          "id": "c002",
+          "title": "卷二",
+          "path": "books/meihua/c002.json",
+          "sha256": "1899fb97f0c3fb8be36baaa195f6593a77fdd6939580f3a94bcc2dee0adf8c14",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%BA%8C&oldid=1441921",
+          "revision": "1441921",
+          "passage_count": 136,
+          "issue_count": 0
+        },
+        {
+          "id": "c003",
+          "title": "卷三",
+          "path": "books/meihua/c003.json",
+          "sha256": "961d6135f6ea4585bf74610c79c6c66ddfc50c631e7ca5edff8e13697d3d3b64",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%B8%89&oldid=1441927",
+          "revision": "1441927",
+          "passage_count": 122,
+          "issue_count": 0
+        }
+      ],
+      "index_path": "sources/meihua/_index.wiki",
+      "index_sha256": "a0406030222ac8aadbbb47398ee219dae24cc08b452a8e46533c3343b8d91359",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 3,
+        "acquired_count": 3,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。",
+        "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
+      ],
+      "retrieval_context_radius": 2
+    },
+    {
       "id": "qiongtong",
       "title": "穷通宝鉴",
       "edition": "古文岛六卷网络转录，具体印本未注明",
@@ -784,6 +1113,509 @@
         "missing_facsimile_pages": "not_assessed",
         "historical_edition_verified": false
       }
+    },
+    {
+      "id": "xieji",
+      "title": "协纪辨方书",
+      "edition": "四库全书本网络转录；未逐页校图",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29&oldid=627189",
+      "revision": "627189",
+      "source_timestamp": "2016-10-14T03:23:52Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003",
+        "c004",
+        "c005",
+        "c006",
+        "c007",
+        "c008",
+        "c009",
+        "c010",
+        "c011",
+        "c012",
+        "c013",
+        "c014",
+        "c015",
+        "c016",
+        "c017",
+        "c018",
+        "c019",
+        "c020",
+        "c021",
+        "c022",
+        "c023",
+        "c024",
+        "c025",
+        "c026",
+        "c027",
+        "c028",
+        "c029",
+        "c030",
+        "c031",
+        "c032",
+        "c033",
+        "c034",
+        "c035",
+        "c036"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "卷01",
+          "path": "books/xieji/c001.json",
+          "sha256": "01f4314c372f0f863e622aa0b098d97ded4c1455d5afe4f0a14816a9c0df92c2",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B701&oldid=787334",
+          "revision": "787334",
+          "passage_count": 62,
+          "issue_count": 3
+        },
+        {
+          "id": "c002",
+          "title": "卷02",
+          "path": "books/xieji/c002.json",
+          "sha256": "da51fa77b03e4aefb14bab48c46106d21aa80d0c965c2b57c11f80ea10e7d8eb",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B702&oldid=787335",
+          "revision": "787335",
+          "passage_count": 38,
+          "issue_count": 1
+        },
+        {
+          "id": "c003",
+          "title": "卷03",
+          "path": "books/xieji/c003.json",
+          "sha256": "66fbb561ac053f43e1669fbfd7baba66618b80198d6492b2357f8b879bd498d5",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B703&oldid=787338",
+          "revision": "787338",
+          "passage_count": 62,
+          "issue_count": 6
+        },
+        {
+          "id": "c004",
+          "title": "卷04",
+          "path": "books/xieji/c004.json",
+          "sha256": "f8fb8eb81fdab21e7d12136e7ece37e33d6eb99fc7e9928b9f06df35258a23cc",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B704&oldid=787340",
+          "revision": "787340",
+          "passage_count": 82,
+          "issue_count": 0
+        },
+        {
+          "id": "c005",
+          "title": "卷05",
+          "path": "books/xieji/c005.json",
+          "sha256": "9dd594e45677deb2ca059d8ab9a0c5b0608bf3ee18bc5766a159cb2540344a22",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B705&oldid=787341",
+          "revision": "787341",
+          "passage_count": 47,
+          "issue_count": 0
+        },
+        {
+          "id": "c006",
+          "title": "卷06",
+          "path": "books/xieji/c006.json",
+          "sha256": "6019cb130f41c720b3c27ec936aa037a6f531e649614b9d9972c5fe37de86398",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B706&oldid=787343",
+          "revision": "787343",
+          "passage_count": 64,
+          "issue_count": 0
+        },
+        {
+          "id": "c007",
+          "title": "卷07",
+          "path": "books/xieji/c007.json",
+          "sha256": "049bccbc6621daf46b8f2d75bd7438cba3ae396c2cd06a320f7074fc5a6e049b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B707&oldid=787345",
+          "revision": "787345",
+          "passage_count": 36,
+          "issue_count": 0
+        },
+        {
+          "id": "c008",
+          "title": "卷08",
+          "path": "books/xieji/c008.json",
+          "sha256": "5dfb08d883e09cbaa4699d7fb40caf689236109ea11949659002a1f23477bdb0",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B708&oldid=787347",
+          "revision": "787347",
+          "passage_count": 40,
+          "issue_count": 0
+        },
+        {
+          "id": "c009",
+          "title": "卷09",
+          "path": "books/xieji/c009.json",
+          "sha256": "ea2ba5478e12d0f03354a2dbd5f5aab907b12353c8f073a8077d5c96f6c0d983",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B709&oldid=787349",
+          "revision": "787349",
+          "passage_count": 41,
+          "issue_count": 0
+        },
+        {
+          "id": "c010",
+          "title": "卷10",
+          "path": "books/xieji/c010.json",
+          "sha256": "b31e5e7bbff7460f58b03fb789a9a8896fadca801e21288ee62f6c743be3347b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B710&oldid=787351",
+          "revision": "787351",
+          "passage_count": 177,
+          "issue_count": 3
+        },
+        {
+          "id": "c011",
+          "title": "卷11",
+          "path": "books/xieji/c011.json",
+          "sha256": "327940de38b945d5d8fce7b8e05f874704e35b1ca22368a1bc9e7ffcf44699f7",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B711&oldid=787353",
+          "revision": "787353",
+          "passage_count": 85,
+          "issue_count": 2
+        },
+        {
+          "id": "c012",
+          "title": "卷12",
+          "path": "books/xieji/c012.json",
+          "sha256": "497f635840da9248197e4eeb488ebaafab5c3af756618b68195d24f288548f2a",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B712&oldid=787355",
+          "revision": "787355",
+          "passage_count": 65,
+          "issue_count": 1
+        },
+        {
+          "id": "c013",
+          "title": "卷13",
+          "path": "books/xieji/c013.json",
+          "sha256": "3bfd09e36cb8fad7b350bcc455a29c468afd831ebe432fa4f73c42dc72125225",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B713&oldid=787358",
+          "revision": "787358",
+          "passage_count": 36,
+          "issue_count": 27
+        },
+        {
+          "id": "c014",
+          "title": "卷14",
+          "path": "books/xieji/c014.json",
+          "sha256": "cfd9b9e3e7739c292baa507f945879ff7b45400ab47cfd79cc5ed981fae287a0",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B714&oldid=627109",
+          "revision": "627109",
+          "passage_count": 175,
+          "issue_count": 2
+        },
+        {
+          "id": "c015",
+          "title": "卷15",
+          "path": "books/xieji/c015.json",
+          "sha256": "588f46aff71c68f35c0b525b89d57b49e6aaaef11defb993853f8210c0ecae6e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B715&oldid=787360",
+          "revision": "787360",
+          "passage_count": 177,
+          "issue_count": 0
+        },
+        {
+          "id": "c016",
+          "title": "卷16",
+          "path": "books/xieji/c016.json",
+          "sha256": "e5ce81f18a8981fa2d11f86f5229c951ccb9ab854e33fcce17d4a2157330a93d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B716&oldid=627119",
+          "revision": "627119",
+          "passage_count": 172,
+          "issue_count": 0
+        },
+        {
+          "id": "c017",
+          "title": "卷17",
+          "path": "books/xieji/c017.json",
+          "sha256": "71b84df04aeff5e8fcbb6fe3fc1b3446558d365e489b33264a0ac2cc1f907217",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B717&oldid=627123",
+          "revision": "627123",
+          "passage_count": 168,
+          "issue_count": 0
+        },
+        {
+          "id": "c018",
+          "title": "卷18",
+          "path": "books/xieji/c018.json",
+          "sha256": "853f419b9cfcca9e8e9bb035422a1cf339210ff5675a26ac61ba462fb85e32d0",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B718&oldid=627127",
+          "revision": "627127",
+          "passage_count": 180,
+          "issue_count": 5
+        },
+        {
+          "id": "c019",
+          "title": "卷19",
+          "path": "books/xieji/c019.json",
+          "sha256": "bb2f7617b0942df567b9040452c6d6a020938ba29413e1bf350ee0ad82b132aa",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B719&oldid=627131",
+          "revision": "627131",
+          "passage_count": 165,
+          "issue_count": 6
+        },
+        {
+          "id": "c020",
+          "title": "卷20",
+          "path": "books/xieji/c020.json",
+          "sha256": "92c4e2172268a2ce3c952580ed8bdf8081af64d6f2ae23e4e643c880a456426b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B720&oldid=787361",
+          "revision": "787361",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c021",
+          "title": "卷21",
+          "path": "books/xieji/c021.json",
+          "sha256": "01f5328a8b67c1b8ee90c053b0d6472fa354b6e3e4f20d9129e846c6c19ea55b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B721&oldid=787363",
+          "revision": "787363",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c022",
+          "title": "卷22",
+          "path": "books/xieji/c022.json",
+          "sha256": "93869a45fec5584b012e7432d8a20c19e55ec88e2c1a7880448b41e0d30c849f",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B722&oldid=627139",
+          "revision": "627139",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c023",
+          "title": "卷23",
+          "path": "books/xieji/c023.json",
+          "sha256": "5e53d52434a18ea39a519b7cda861c045b2f6b29207e7cbd54e39b53750a533a",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B723&oldid=787365",
+          "revision": "787365",
+          "passage_count": 6,
+          "issue_count": 2
+        },
+        {
+          "id": "c024",
+          "title": "卷24",
+          "path": "books/xieji/c024.json",
+          "sha256": "aaa6b5fa67c209c6946108aa7d948454cb9bffa2f7d87c819aee54af428b8021",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B724&oldid=787367",
+          "revision": "787367",
+          "passage_count": 6,
+          "issue_count": 2
+        },
+        {
+          "id": "c025",
+          "title": "卷25",
+          "path": "books/xieji/c025.json",
+          "sha256": "9a66adebb844064cd65398c1163195cb133f6d904bf6ff9cdd32741aa52a36da",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B725&oldid=627147",
+          "revision": "627147",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c026",
+          "title": "卷26",
+          "path": "books/xieji/c026.json",
+          "sha256": "abbc272779e126e34e4dc3a3f44ed057503bcd1b76a17c08e655d8dd5ed7af35",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B726&oldid=787369",
+          "revision": "787369",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c027",
+          "title": "卷27",
+          "path": "books/xieji/c027.json",
+          "sha256": "f8eb47dc7f0c58d8698f502ec9be0c3fb073182e5dbe631604a5d7e6acb16414",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B727&oldid=748645",
+          "revision": "748645",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c028",
+          "title": "卷28",
+          "path": "books/xieji/c028.json",
+          "sha256": "8ec1ded3e8d91384009b56027bd427b93bddb2ef1c9dc8f6fb8d7cc97108a66b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B728&oldid=748648",
+          "revision": "748648",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c029",
+          "title": "卷29",
+          "path": "books/xieji/c029.json",
+          "sha256": "26280f736e80535baa1d0cde937eef10b5ec3609b1676164b075c0bce71eb7bb",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B729&oldid=787371",
+          "revision": "787371",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c030",
+          "title": "卷30",
+          "path": "books/xieji/c030.json",
+          "sha256": "53181b3c1d5f9da0218ed89a3cbfaa3e63dab6750dc589081b5521a5ef4ab93d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B730&oldid=787373",
+          "revision": "787373",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c031",
+          "title": "卷31",
+          "path": "books/xieji/c031.json",
+          "sha256": "3f820355c7d09473d8881a8271e0d39d119449cf8d89ec6d21f28b8abd6b0717",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B731&oldid=787376",
+          "revision": "787376",
+          "passage_count": 6,
+          "issue_count": 2
+        },
+        {
+          "id": "c032",
+          "title": "卷32",
+          "path": "books/xieji/c032.json",
+          "sha256": "00ffc8f2f8c9bff656ec4b36218f5a3b3e4956c57c33fd774a138287fbcf7a1f",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B732&oldid=787378",
+          "revision": "787378",
+          "passage_count": 281,
+          "issue_count": 0
+        },
+        {
+          "id": "c033",
+          "title": "卷33",
+          "path": "books/xieji/c033.json",
+          "sha256": "4e18aeb43ba59594c1027f6ac05a385f3d57799b5487b41f19b90306953b2266",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B733&oldid=787380",
+          "revision": "787380",
+          "passage_count": 26,
+          "issue_count": 9
+        },
+        {
+          "id": "c034",
+          "title": "卷34",
+          "path": "books/xieji/c034.json",
+          "sha256": "71ad7976a422b059776a3ce50ed59d8f886ad6cb936bc180a2462aaf794e3842",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B734&oldid=787382",
+          "revision": "787382",
+          "passage_count": 24,
+          "issue_count": 14
+        },
+        {
+          "id": "c035",
+          "title": "卷35",
+          "path": "books/xieji/c035.json",
+          "sha256": "ca70c0f88381d03447a63e44e3808a91f32471823d0c765bcd5b64ec18e8e79b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B735&oldid=787383",
+          "revision": "787383",
+          "passage_count": 82,
+          "issue_count": 3
+        },
+        {
+          "id": "c036",
+          "title": "卷36",
+          "path": "books/xieji/c036.json",
+          "sha256": "1ff25ca9f2196d0ad4ca77cdb73ce905243ef6c8144a186c8e25c7ec38115fb4",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B736&oldid=627179",
+          "revision": "627179",
+          "passage_count": 56,
+          "issue_count": 1
+        }
+      ],
+      "index_path": "sources/xieji/_index.wiki",
+      "index_sha256": "e7874c995c8c7db9e174f7d3baaf3d599e199cdcc026a329806c733ee618eb18",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 36,
+        "acquired_count": 36,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。",
+        "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
+      ],
+      "retrieval_context_radius": 2
+    },
+    {
+      "id": "xuanze",
+      "title": "选择要略",
+      "edition": "维基文库上中下三卷转录；具体印本未确认，朝鲜典籍",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%B8%E6%93%87%E8%A6%81%E7%95%A5&oldid=2414024",
+      "revision": "2414024",
+      "source_timestamp": "2024-05-28T15:35:54Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "上",
+          "path": "books/xuanze/c001.json",
+          "sha256": "488fca7dd762935ce74ef952e931452728df8e8e8c4302165b2fbfe6b1c2be64",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%B8%E6%93%87%E8%A6%81%E7%95%A5%2F%E4%B8%8A&oldid=2413684",
+          "revision": "2413684",
+          "passage_count": 331,
+          "issue_count": 17
+        },
+        {
+          "id": "c002",
+          "title": "中",
+          "path": "books/xuanze/c002.json",
+          "sha256": "6a64be97a89d3aa02e658a496d016b6be129c951ddc3394f85886babec81e2ec",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%B8%E6%93%87%E8%A6%81%E7%95%A5%2F%E4%B8%AD&oldid=2413687",
+          "revision": "2413687",
+          "passage_count": 716,
+          "issue_count": 24
+        },
+        {
+          "id": "c003",
+          "title": "下",
+          "path": "books/xuanze/c003.json",
+          "sha256": "8e6abc8c575885746fe5e069bf2dc156f146a0cddd9b471b17fcc5a70afb2529",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E9%81%B8%E6%93%87%E8%A6%81%E7%95%A5%2F%E4%B8%8B&oldid=2413694",
+          "revision": "2413694",
+          "passage_count": 717,
+          "issue_count": 12
+        }
+      ],
+      "index_path": "sources/xuanze/_index.wiki",
+      "index_sha256": "00b2939b8de29abcb18b9cb6d04f28d8d19cfbd447034ae00a97ee3097665635",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 3,
+        "acquired_count": 3,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。",
+        "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
+      ],
+      "retrieval_context_radius": 2
     },
     {
       "id": "yuanhai",
@@ -4172,6 +5004,718 @@
       "source_metadata_sha256": "1840545838694f093f1b72139cf3e20d9c4b6c1a76c0a2ddfcf4a434f60f9cca"
     },
     {
+      "id": "yuanling",
+      "title": "奇门遁甲元灵经",
+      "edition": "维基文库24卷网络转录；具体印本未核",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+      "revision": "8259389",
+      "source_timestamp": "2026-08-12T07:37:15Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003",
+        "c004",
+        "c005",
+        "c006",
+        "c007",
+        "c008",
+        "c009",
+        "c010",
+        "c011",
+        "c012",
+        "c013",
+        "c014",
+        "c015",
+        "c016",
+        "c017",
+        "c018",
+        "c019",
+        "c020",
+        "c021",
+        "c022",
+        "c023",
+        "c024"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "卷一",
+          "path": "books/yuanling/c001.json",
+          "sha256": "2ccdf232fe145d64c6ad38701af0c04ae3f1b36cc34d3f1b0576f9d37c57b58e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 18,
+          "issue_count": 0
+        },
+        {
+          "id": "c002",
+          "title": "卷二",
+          "path": "books/yuanling/c002.json",
+          "sha256": "a6e1ae3fcbb88f1cb334a9862c5899b1052e24416705faab3e3f2bc97f46a67c",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 5,
+          "issue_count": 0
+        },
+        {
+          "id": "c003",
+          "title": "卷三",
+          "path": "books/yuanling/c003.json",
+          "sha256": "c1e09b459cd9c465dcb5520eb9b0a15f8f45b1fd96c8886c4575cbfed23d8c05",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 3,
+          "issue_count": 0
+        },
+        {
+          "id": "c004",
+          "title": "卷四",
+          "path": "books/yuanling/c004.json",
+          "sha256": "656b2fd21c450b503327d39466090d678addf288b356a3535836606401142b90",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 6,
+          "issue_count": 0
+        },
+        {
+          "id": "c005",
+          "title": "卷五",
+          "path": "books/yuanling/c005.json",
+          "sha256": "c7dd23a49426f1d52be4b693b8517a3e8934f3bd14b805d13eb24c4d3e740a27",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 14,
+          "issue_count": 0
+        },
+        {
+          "id": "c006",
+          "title": "卷六",
+          "path": "books/yuanling/c006.json",
+          "sha256": "7138ee2a8c57775231827e547ec0e7da53f24a3a88c5b49b23454639007a9ab1",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c007",
+          "title": "卷七",
+          "path": "books/yuanling/c007.json",
+          "sha256": "1305749e6202710dc569c77078d3c6eb17b0bafb60b78099d46ac7885186d3e6",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 6,
+          "issue_count": 0
+        },
+        {
+          "id": "c008",
+          "title": "卷八",
+          "path": "books/yuanling/c008.json",
+          "sha256": "6905fdf1092ddbac0e4667d51ba728ecab87ad724d4a578a368230abedb403a4",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 7,
+          "issue_count": 0
+        },
+        {
+          "id": "c009",
+          "title": "卷九",
+          "path": "books/yuanling/c009.json",
+          "sha256": "18d3e1332a03d0e6322a80cd27b1feb7469d31fcd18a86f313a3bb6d03a9f512",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 9,
+          "issue_count": 0
+        },
+        {
+          "id": "c010",
+          "title": "卷十",
+          "path": "books/yuanling/c010.json",
+          "sha256": "20aff245fe26aa52aeb5409b3db7c7dba6a1146845ac42ea13009d6ecd696947",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 3,
+          "issue_count": 0
+        },
+        {
+          "id": "c011",
+          "title": "卷十一",
+          "path": "books/yuanling/c011.json",
+          "sha256": "55f3b5ac3fa9706ae8e6776718c94ee939537f0a344c556aead66bd84101b566",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c012",
+          "title": "卷十二",
+          "path": "books/yuanling/c012.json",
+          "sha256": "ecacab55bfa6c40dcf42ad52431c45be7062d3d09b81bfb60383c4cdb4edf2e6",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 3,
+          "issue_count": 0
+        },
+        {
+          "id": "c013",
+          "title": "卷十三",
+          "path": "books/yuanling/c013.json",
+          "sha256": "c240b731b1fbeaf303980dd092e2093d290f423b885379d2e728a338524df119",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 11,
+          "issue_count": 0
+        },
+        {
+          "id": "c014",
+          "title": "卷十四",
+          "path": "books/yuanling/c014.json",
+          "sha256": "5ad0a7bcd223b0fc80e3fbd9b10261ca5b98686ffb94c0c91457c2da206e6758",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 9,
+          "issue_count": 0
+        },
+        {
+          "id": "c015",
+          "title": "卷十五",
+          "path": "books/yuanling/c015.json",
+          "sha256": "18e962fbc322cb7382e3f1fd476c9442d3b4b1351ee710f0d1659f46a00a760b",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 6,
+          "issue_count": 0
+        },
+        {
+          "id": "c016",
+          "title": "卷十六",
+          "path": "books/yuanling/c016.json",
+          "sha256": "2f53f8c24ea5dd885ccbff244c25a39dcbef077365787f847374da1536c17050",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 8,
+          "issue_count": 0
+        },
+        {
+          "id": "c017",
+          "title": "卷十七",
+          "path": "books/yuanling/c017.json",
+          "sha256": "c1ca50d071968abdad307116df1149b38467fc739ef5127805a9b96ea15dfa8e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 6,
+          "issue_count": 0
+        },
+        {
+          "id": "c018",
+          "title": "卷十八",
+          "path": "books/yuanling/c018.json",
+          "sha256": "f3883ec3c8312fa4886120043a7a0d76eea5a44b8cf31a89e31a4d8f076bc808",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 11,
+          "issue_count": 0
+        },
+        {
+          "id": "c019",
+          "title": "卷十九",
+          "path": "books/yuanling/c019.json",
+          "sha256": "6639fe56019edb4375fc3054c9b24bce83b8570ddd511c2565257b6d5629321d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 9,
+          "issue_count": 0
+        },
+        {
+          "id": "c020",
+          "title": "卷二十",
+          "path": "books/yuanling/c020.json",
+          "sha256": "73dff8b4afbc5e4085b3dbb9663c941ad1c5ecba68a5aefa8179d0038e154cae",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 6,
+          "issue_count": 0
+        },
+        {
+          "id": "c021",
+          "title": "卷二十一",
+          "path": "books/yuanling/c021.json",
+          "sha256": "d9f547aefb4d07735d0273e116fd7f0db4add741028233ce45632a8e26a419bc",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 5,
+          "issue_count": 0
+        },
+        {
+          "id": "c022",
+          "title": "卷二十二",
+          "path": "books/yuanling/c022.json",
+          "sha256": "e83750979bd94f5e5623d62185e6b01518b4df28c01eb8dba04cd7eabaac022e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c023",
+          "title": "卷二十三",
+          "path": "books/yuanling/c023.json",
+          "sha256": "db3ca548cff597325c9a23ee421c63e8880cb815e8a9aca44c3ef184e378dbee",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c024",
+          "title": "卷二十四",
+          "path": "books/yuanling/c024.json",
+          "sha256": "80982d4f51bd426c44fff15e3bc11d2cd1a5a82b1cb940f6ef670f2b7c1c9b53",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+          "revision": "8259389",
+          "passage_count": 19,
+          "issue_count": 0
+        }
+      ],
+      "index_path": "sources/yuanling/_index.wiki",
+      "index_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 24,
+        "acquired_count": 24,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "沿用已有算法规格所引revision；收录全卷不表示全书算法已经实现。"
+      ],
+      "retrieval_context_radius": 2
+    },
+    {
+      "id": "zengshan",
+      "title": "增删卜易",
+      "edition": "维基文库四卷网络整理本；明确现代增订已排除，未标记改写仍待校",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93&oldid=2572918",
+      "revision": "2572918",
+      "source_timestamp": "2025-06-25T11:25:59Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003",
+        "c004",
+        "c005",
+        "c006",
+        "c007",
+        "c008",
+        "c009",
+        "c010",
+        "c011",
+        "c012",
+        "c013",
+        "c014",
+        "c015",
+        "c016",
+        "c017",
+        "c018",
+        "c019",
+        "c020",
+        "c021",
+        "c022",
+        "c023",
+        "c024",
+        "c025",
+        "c026",
+        "c027",
+        "c028",
+        "c029",
+        "c030",
+        "c031",
+        "c032",
+        "c033",
+        "c034"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "八卦章第一",
+          "path": "books/zengshan/c001.json",
+          "sha256": "e739b981d2b1bff56f6eb85e395cf8d2211129859138ddb571b096086e29ff89",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F1&oldid=2100473",
+          "revision": "2100473",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c002",
+          "title": "卦象圖第二",
+          "path": "books/zengshan/c002.json",
+          "sha256": "539255d6724c70e2c82ba3d2ca8c81ff7f537c42295e1d285caa80e07082a275",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F2&oldid=2100494",
+          "revision": "2100494",
+          "passage_count": 1,
+          "issue_count": 0
+        },
+        {
+          "id": "c003",
+          "title": "八宮圖第三",
+          "path": "books/zengshan/c003.json",
+          "sha256": "2c9fe6ca325ba3319bd8aa1f29fca3df61f84589c9473c1449b635eddb5cab2e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F3&oldid=2100295",
+          "revision": "2100295",
+          "passage_count": 40,
+          "issue_count": 0
+        },
+        {
+          "id": "c004",
+          "title": "渾天甲子章第四",
+          "path": "books/zengshan/c004.json",
+          "sha256": "059f23b4765faeb29aa918a10b277debfa4e6bb2b0c6ffece665322a9a5de072",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F4&oldid=2100293",
+          "revision": "2100293",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c005",
+          "title": "六親歌章第五",
+          "path": "books/zengshan/c005.json",
+          "sha256": "1ada1482d019237e70d6d866a01129d000242865b6a76beaeadb1c5d9a29bbc7",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F5&oldid=2100292",
+          "revision": "2100292",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c006",
+          "title": "世應章第六",
+          "path": "books/zengshan/c006.json",
+          "sha256": "ac8fd1ce99a4a34bf7cce1051f582efe1f0659bb3b35203ade03eabaa84e1ee7",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F6&oldid=2100291",
+          "revision": "2100291",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c007",
+          "title": "動變章第七",
+          "path": "books/zengshan/c007.json",
+          "sha256": "8a06f3ce0032e8aeb9eecc280aef806d68a8a84b6993c041404ecbbc64b63e6e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F7&oldid=2100290",
+          "revision": "2100290",
+          "passage_count": 11,
+          "issue_count": 0
+        },
+        {
+          "id": "c008",
+          "title": "用神章第八",
+          "path": "books/zengshan/c008.json",
+          "sha256": "84e339a5de8fd538e43623b722c0d3d4c237cfb0fb5857ec59b6ddf4de264b2d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F8&oldid=2100700",
+          "revision": "2100700",
+          "passage_count": 1,
+          "issue_count": 0
+        },
+        {
+          "id": "c009",
+          "title": "用神元神忌神仇神章第九",
+          "path": "books/zengshan/c009.json",
+          "sha256": "798bc140ffa6b5f1a9ce2a7d5ade9580db78d073cd84e7a10d18a1d5cdd35d0d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F9&oldid=2100299",
+          "revision": "2100299",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c010",
+          "title": "元神忌神衰旺章第十",
+          "path": "books/zengshan/c010.json",
+          "sha256": "619f0e7957ce065c4f94c263dd56375e587fbacec6300d30e2f35b1369fbc98a",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F10&oldid=2100301",
+          "revision": "2100301",
+          "passage_count": 11,
+          "issue_count": 0
+        },
+        {
+          "id": "c011",
+          "title": "五行相生章第十一",
+          "path": "books/zengshan/c011.json",
+          "sha256": "6b68b63dd428dd0638c1d97ca7278998405cae268d6a2f034ae6422a8f120d5d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F11&oldid=2100315",
+          "revision": "2100315",
+          "passage_count": 5,
+          "issue_count": 0
+        },
+        {
+          "id": "c012",
+          "title": "五行相克章第十二",
+          "path": "books/zengshan/c012.json",
+          "sha256": "236f0abb6c6085508c494334ddfe7f933bbe9c8ce3bcc038dfdf702caa153cac",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F12&oldid=2100316",
+          "revision": "2100316",
+          "passage_count": 9,
+          "issue_count": 0
+        },
+        {
+          "id": "c013",
+          "title": "克處逢生章第十三",
+          "path": "books/zengshan/c013.json",
+          "sha256": "3fa3bb5985c8cb1eadaab627cd81dcf2ecc1bc9368c1a83d8dd9b0a3d6b2ff1d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F13&oldid=2100319",
+          "revision": "2100319",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c014",
+          "title": "動靜生克章第十四",
+          "path": "books/zengshan/c014.json",
+          "sha256": "c4212d362d9df97dc9e10f63ae810fe155e7a1b7e6345c73c68f85859eda5f71",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F14&oldid=2100320",
+          "revision": "2100320",
+          "passage_count": 7,
+          "issue_count": 0
+        },
+        {
+          "id": "c015",
+          "title": "動變生克沖合章第十五",
+          "path": "books/zengshan/c015.json",
+          "sha256": "dd4d2d275ab175c89e8166b8ef297d9c861d8f18366fd7d5e0906699c2b4975a",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F15&oldid=2100321",
+          "revision": "2100321",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c016",
+          "title": "四時旺相章第又十五",
+          "path": "books/zengshan/c016.json",
+          "sha256": "01a0653880541d9ed485b8d805285da931485f874341863ea2beb26b9b429207",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F15%E5%8F%88&oldid=2100323",
+          "revision": "2100323",
+          "passage_count": 1,
+          "issue_count": 0
+        },
+        {
+          "id": "c017",
+          "title": "月將章第十六",
+          "path": "books/zengshan/c017.json",
+          "sha256": "6fb75ac7628309d58539d1b90093aaceb5c84ce1b8423bbd0fa2972f0fb7c8da",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F16&oldid=2100331",
+          "revision": "2100331",
+          "passage_count": 26,
+          "issue_count": 0
+        },
+        {
+          "id": "c018",
+          "title": "日辰章第十七",
+          "path": "books/zengshan/c018.json",
+          "sha256": "b40bfa682cfeb67e633de24a69d10e1e583ba359ed143e370d4ac796ddf78630",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F17&oldid=2100338",
+          "revision": "2100338",
+          "passage_count": 10,
+          "issue_count": 0
+        },
+        {
+          "id": "c019",
+          "title": "六神章第十八",
+          "path": "books/zengshan/c019.json",
+          "sha256": "7da803518a05b0cf55a22c7d8402595f52ee7a1adc31761be3f8434acd062784",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F18&oldid=2101727",
+          "revision": "2101727",
+          "passage_count": 8,
+          "issue_count": 0
+        },
+        {
+          "id": "c020",
+          "title": "六合章第十九",
+          "path": "books/zengshan/c020.json",
+          "sha256": "acae5cfe9169826ed858ccc3988c8cc4265c2133e1197a74c62471e6bea42c98",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F19&oldid=2100447",
+          "revision": "2100447",
+          "passage_count": 20,
+          "issue_count": 0
+        },
+        {
+          "id": "c021",
+          "title": "六沖章第二十",
+          "path": "books/zengshan/c021.json",
+          "sha256": "68776330e2e0cd7dcd55af78cb8f51fa0129f6d5276be0aafd15caba81bfffde",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F20&oldid=2100449",
+          "revision": "2100449",
+          "passage_count": 19,
+          "issue_count": 0
+        },
+        {
+          "id": "c022",
+          "title": "三刑章第二十一",
+          "path": "books/zengshan/c022.json",
+          "sha256": "9cffc07fb30aefef569c70cbe8e53e3f7f0ce7c65367219fe56a1cc52b83225d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F21&oldid=2100450",
+          "revision": "2100450",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c023",
+          "title": "暗動章第二十二",
+          "path": "books/zengshan/c023.json",
+          "sha256": "0d9c127ef87a1864f151cd8cd2411f3ab1fa2f9c4d45e47b357008db2dd2fb57",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F22&oldid=2100453",
+          "revision": "2100453",
+          "passage_count": 5,
+          "issue_count": 0
+        },
+        {
+          "id": "c024",
+          "title": "動散章第二十三",
+          "path": "books/zengshan/c024.json",
+          "sha256": "5335d4da3bffdbf6d12b2da2b0e4a5f8a87e263b351e43ad1b16f10bf4b26bbe",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F23&oldid=2100454",
+          "revision": "2100454",
+          "passage_count": 4,
+          "issue_count": 0
+        },
+        {
+          "id": "c025",
+          "title": "卦變生克墓絕章第二十四",
+          "path": "books/zengshan/c025.json",
+          "sha256": "0b0584ba6953976b9d100d6ec8379eff55b421a88d64dde9169b8f2222808323",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F24&oldid=2100456",
+          "revision": "2100456",
+          "passage_count": 5,
+          "issue_count": 0
+        },
+        {
+          "id": "c026",
+          "title": "反伏章第二十五",
+          "path": "books/zengshan/c026.json",
+          "sha256": "fc340ac8aabedc01149c1a30285f44004a5db894194ccdad943358bab380e2e3",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F25&oldid=2100458",
+          "revision": "2100458",
+          "passage_count": 15,
+          "issue_count": 0
+        },
+        {
+          "id": "c027",
+          "title": "旬空章第二十六",
+          "path": "books/zengshan/c027.json",
+          "sha256": "45354fe9dd1914d8f7c524f7ebf6397a8d0a6b04972030866350b5511c7bbe7c",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26&oldid=2100460",
+          "revision": "2100460",
+          "passage_count": 18,
+          "issue_count": 0
+        },
+        {
+          "id": "c028",
+          "title": "生旺墓絕章第又二十六",
+          "path": "books/zengshan/c028.json",
+          "sha256": "9e825c933617aa3ff22e7fc6c3891abc84ec02cdeeaaffa725dbd8043b7308db",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%881&oldid=2100461",
+          "revision": "2100461",
+          "passage_count": 10,
+          "issue_count": 0
+        },
+        {
+          "id": "c029",
+          "title": "各門類題頭總注章第又二十六",
+          "path": "books/zengshan/c029.json",
+          "sha256": "a43f70e634c99d650b0b9013df7b23a6d248937ae26cc59993c728863777a21d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%882&oldid=2100463",
+          "revision": "2100463",
+          "passage_count": 2,
+          "issue_count": 0
+        },
+        {
+          "id": "c030",
+          "title": "各門類應期總注章第又二十六",
+          "path": "books/zengshan/c030.json",
+          "sha256": "dc954b96c45008e8201514f39db454c438ad8ffd486f2584f9ac2df8c30ee8a6",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%883&oldid=2100495",
+          "revision": "2100495",
+          "passage_count": 1,
+          "issue_count": 0
+        },
+        {
+          "id": "c031",
+          "title": "歸魂遊魂章第又二十六",
+          "path": "books/zengshan/c031.json",
+          "sha256": "e5fb0060f2f6e645cb5fb7b111393fd4dc0340f573031f6c2f5430750cd675a9",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26%E5%8F%884&oldid=2100467",
+          "revision": "2100467",
+          "passage_count": 6,
+          "issue_count": 0
+        },
+        {
+          "id": "c032",
+          "title": "卷之二",
+          "path": "books/zengshan/c032.json",
+          "sha256": "4f5618f1d2ea0ac2edae35027fd313f74ef6dc295849a52d07067dbab5e9ca14",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93&oldid=2572918",
+          "revision": "2572918",
+          "passage_count": 1236,
+          "issue_count": 0
+        },
+        {
+          "id": "c033",
+          "title": "卷之三",
+          "path": "books/zengshan/c033.json",
+          "sha256": "c72821e6c32bc0f2769f47a96dd6b3bc5928fef1dc82ffd5446df24f475fb53d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93&oldid=2572918",
+          "revision": "2572918",
+          "passage_count": 847,
+          "issue_count": 0
+        },
+        {
+          "id": "c034",
+          "title": "卷之四",
+          "path": "books/zengshan/c034.json",
+          "sha256": "c7b761031c44930501cc125a655a19ed8eade334129dff8c4507555f91ffd654",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93&oldid=2572918",
+          "revision": "2572918",
+          "passage_count": 650,
+          "issue_count": 0
+        }
+      ],
+      "index_path": "sources/zengshan/_index.wiki",
+      "index_sha256": "897f963b938ec4582bc892465301b831a6439216f317841f44b888117704ca07",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 34,
+        "acquired_count": 34,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "原网页录入者声明参照版本有错漏；不能标为忠实古刻。",
+        "运行正文排除录入者言、原剑增订说明及显式原剑按；原始来源档案保留供复核。",
+        "卷一31个章单元，卷二至四按整卷保存；不是仅收了34章。"
+      ],
+      "retrieval_context_radius": 2
+    },
+    {
       "id": "ziping",
       "title": "子平真詮",
       "edition": "东里书斋网络整理本：1923年绍兴育新书局本为底本，中州本参校；采用整理者择字，非底本忠实影像转录",
@@ -4772,6 +6316,76 @@
       "extraction_note": "Local HTTP requests timed out; source text was retrieved through web.open/click. HTML article nodes are reconstructed from returned source paragraphs, not original page HTML. Extraction requires observed heading and source word-count/footer boundaries; source characters retained except explicit modern notes and citation UI.",
       "source_metadata_path": "sources/ziping/metadata.json",
       "source_metadata_sha256": "5e5a5b668f12e1aa837a5eaf57d512a8452c2be29c7beb88acfdd3bbd5806875"
+    },
+    {
+      "id": "ziwei",
+      "title": "紫微斗数全书",
+      "edition": "维基文库三卷转录选本；不代表其他四卷或更多卷版本",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8&oldid=850736",
+      "revision": "850736",
+      "source_timestamp": "2017-04-05T15:11:29Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c001",
+        "c002",
+        "c003"
+      ],
+      "chapters": [
+        {
+          "id": "c001",
+          "title": "卷一",
+          "path": "books/ziwei/c001.json",
+          "sha256": "0201d99f83d99a92a0b6de5dcdcbe0777be80c2e695ce1aca0eac2d551db0579",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8%2F%E5%8D%B7%E4%B8%80&oldid=7913704",
+          "revision": "7913704",
+          "passage_count": 156,
+          "issue_count": 0
+        },
+        {
+          "id": "c002",
+          "title": "卷二",
+          "path": "books/ziwei/c002.json",
+          "sha256": "523ac9cba749b813f031cd933d95d764032ac4ca73cba3e86f01fe0589328bc6",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8%2F%E5%8D%B7%E4%BA%8C&oldid=1963110",
+          "revision": "1963110",
+          "passage_count": 371,
+          "issue_count": 0
+        },
+        {
+          "id": "c003",
+          "title": "卷三",
+          "path": "books/ziwei/c003.json",
+          "sha256": "6d75f324ba4321fe5fca7fe3a6aedddc5a47a43d96380a993ceb1c961be4a1a6",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%B4%AB%E5%BE%AE%E6%96%97%E6%95%B8%E5%85%A8%E6%9B%B8%2F%E5%8D%B7%E4%B8%89&oldid=2268626",
+          "revision": "2268626",
+          "passage_count": 190,
+          "issue_count": 0
+        }
+      ],
+      "index_path": "sources/ziwei/_index.wiki",
+      "index_sha256": "d9ad732fc3e86c21e945ecfce4e8d24b1ad6d00ae464a377b0419a7b0b73d818",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 3,
+        "acquired_count": 3,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false
+      },
+      "quality_notes": [
+        "正文与注释未经全书逐字校勘；图表、缺字和未解析模板逐段标识。",
+        "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
+      ],
+      "retrieval_context_radius": 2
     }
   ],
   "supporting_sources": [
@@ -4782,6 +6396,5 @@
       "revision": "9013306",
       "license": "CC BY-SA 4.0; Wikisource contributors"
     }
-  ],
-  "distribution_kind": "source"
+  ]
 }

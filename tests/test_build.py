@@ -275,7 +275,7 @@ def test_runtime_and_source_archives_have_explicit_different_scopes(package, tmp
     assert not any("/knowledge/sources/" in name for name in names)
     expected = json.loads((ROOT / "knowledge/manifest.json").read_text(encoding="utf-8"))
     chapters = {"chinese-fortune/knowledge/" + c["path"] for b in expected["books"] for c in b["chapters"]}
-    assert len(chapters) == 416 and chapters <= names
+    assert len(chapters) == 535 and chapters <= names
     assert set(manifest["runtime_files"]) == {n.removeprefix("chinese-fortune/") for n in names} - {"knowledge/manifest.json"}
     assert manifest["source_archive"]["sha256"] == hashlib.sha256(source_out_path.read_bytes()).hexdigest()
     with zipfile.ZipFile(source_out_path) as archive:

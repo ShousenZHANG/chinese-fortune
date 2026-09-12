@@ -1,0 +1,60 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c017",
+  "title": "卷十七",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c017.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十七",
+      "text": "占贸易\n看生门落宫旺相，再得吉星及三奇、飞鸟跌穴等格，主买卖兴隆；如不全者，平常；若落空休囚，凶星，再有庚加己等凶格，主大不利。凡得天冲，宜于春夏得；天禽，宜于秋冬；余星不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c017:p0001",
+      "sha256": "675aaa5e1c87eaa3244aab7631f9cddba8aa98eb68f127aaf5ee90f419b2fa6a"
+    },
+    {
+      "section": "卷十七",
+      "text": "又法占贸易\n以值符为买物之人，以生门为所卖之物，以生门落宫为物主。如门来生值符，其物得买，有利益；如门与本落宫相生，为物主相恋，其物难买；相克则双方难以成交。如值符得旺相来生生门宫，利卖者；或生门宫来生值符宫，利买者。凡欲买物，看卖主之方得吉格者有利，得凶格者其物不堪。看买主之方，得吉格者相安，得凶格者尚有烦恼。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c017:p0002",
+      "sha256": "a2f5249dd9e5b6add92460f65025b2e3670ba336a219973b3af5b2b46d56899d"
+    },
+    {
+      "section": "卷十七",
+      "text": "占合伙\n以生门（地盘）为财主，以天乙（天盘生门）落宫为伙计。地盘克天盘，天盘克地盘，及天盘生地盘，俱不利。地盘生天盘方，其益利。此看生门宫天盘、地盘也。一说生门为地盘，天乙为天盘。\n一云如地盘合天盘，主合不成；天盘合地盘，彼必陷我财，彼此不善经营，以致消耗；他来生我，彼此大利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c017:p0003",
+      "sha256": "8e209decde4ef1dfe2a4618111bc6ae3ef2261e65fbb7204e846ce8aad0f0a08"
+    },
+    {
+      "section": "卷十七",
+      "text": "占生意兴隆否\n看生门所落宫定之。其宫旺相，再有吉星及三奇、飞鸟跌穴等吉格，主兴隆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c017:p0004",
+      "sha256": "242cdbd2ee9509382f0a60c44ab1ad90e58260c696e554692d682cf4a1eb7cd3"
+    },
+    {
+      "section": "卷十七",
+      "text": "占贸易利息\n看生门所临之宫旺相何如。旺则利多，相则利平，休囚则利微。如休囚又有凶格，则折本。若生门居旺相，再看甲子戊上乘何干，以决其利数多少。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c017:p0005",
+      "sha256": "70c5b6c3b104918bb0e061c69389f7e82fa75c8e91298e6adfd36896cd6c2faf"
+    },
+    {
+      "section": "卷十七",
+      "text": "占赎物产\n以值符、天乙、值使论之。值符主动，天乙主静，值使为中人。如我向人回赎，我为值符，彼为天乙；若人向我回赎，彼为值符，我为天乙，再看生克旺相休囚决之。如值符生天乙及天乙生值符，定准赎回；值符克天乙，虽可赎，其中不美；天乙克值符，不准赎。如值使生两家，得；克两家，不得。若内有朱雀同宫，必有争竞；勾陈同同，定主经官。如人向我赎，我为天乙，彼值符，其生克旺相休囚同前论。如我为物主，望人来回赎，以生我则赎，克我则不赎。若不欲人来赎，克我为来赎，生我为不赎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c017:p0006",
+      "sha256": "f57f646c5e02654b3b43005b9ea103be811ddbaed6026efd489658fdfad68963"
+    }
+  ]
+}

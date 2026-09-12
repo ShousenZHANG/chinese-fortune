@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c029",
+  "title": "卷29",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B729&oldid=787371",
+  "revision": "787371",
+  "source_timestamp": "2016-10-27T11:59:16Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c029.wiki",
+  "raw_sha256": "096ab797d0b4af0e2612d66b10f3966087314d977a1a69d72900ed28f85bd31f",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷29",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c029:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十九",
+      "text": "月表十",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c029:p0002",
+      "sha256": "104fd8fe8ca2616e1b197501f8630b3045b3798f8e8029c6e0cdf348b28870b0"
+    },
+    {
+      "section": "十月",
+      "text": "十　月\n立冬十月節天道東行宜向東行宜修造東方\n天徳在乙天徳合在庚月徳在甲月徳合在巳月空在庚宜修造取土\n月建在亥月破在巳月厭在丑月刑在亥月害在申劫煞在申災煞在酉月煞在戌忌修造取土\n初一日長星　十四日短星\n立冬前一日四絶　後十日往亡\n小雪十月中躔在寅宫為十月將宜用甲丙庚壬時孟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c029:p0003",
+      "sha256": "e7cbce8878d95ab784ee03d8fef652c5ea2bbb0bc6b4cde67bc0e2b89abba7ec"
+    },
+    {
+      "section": "癸亥大海水專建日",
+      "text": "右六十干支從建亥者始立冬終小雪其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c029:p0004",
+      "sha256": "10ea15a01e0bb1547de113dd42e37560b88e0a3c797286b90d9b4346f86c4015"
+    }
+  ]
+}

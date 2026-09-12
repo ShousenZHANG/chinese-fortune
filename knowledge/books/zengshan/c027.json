@@ -1,0 +1,144 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c027",
+  "title": "旬空章第二十六",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F26&oldid=2100460",
+  "revision": "2100460",
+  "source_timestamp": "2022-01-20T19:29:25Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c027.wiki",
+  "raw_sha256": "29213289bfd323be3206860ee2904f61c05f6f9941313745ae5e8b2bc6620d41",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "旬空章第二十六",
+      "text": "* 甲子旬中戌亥空\n* 甲戌旬中申酉空\n* 甲申旬中午未空\n* 甲午旬中辰巳空\n* 甲辰旬中寅卯空\n* 甲寅旬中子丑空",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0001",
+      "sha256": "7b2b48ce1abe0c8c7233005570fa4434b3c281c58357586a949ac81a5ea443b6"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "何謂旬空？如甲子至癸酉日爲一旬，此十日之內，並無戌亥，以爻逢戌亥爲空亡，又名旬空，餘仿此。旬空之法，諸書論太煩，有眞空、假空、動空、沖空、塡空、無故自空、有散而空、墓空、絕空、害空、安空、破空。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0002",
+      "sha256": "48bce82bcdf90f0a2a0397cd4cea37922c9c11fc5e17f4a5bc697634a25d97b2"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "野鶴曰：旺不爲空，動不爲空，有日建動爻生扶者不爲空，動而化空、伏而旺相皆不爲空。月破爲空。有卦不動爲空，爻反伏而被克爲空，眞空爲空，眞空卽春土、夏金、秋木、三冬逢火是眞空。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0003",
+      "sha256": "af73e2a6620ba737886486900dd0b751a149286483b2d4848a0f34c45b7c09f8"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "夫予初學卜，凡遇旬空，無法而斷，欲以之爲到底全空，卻又應乎塡實之日，而不空以之爲不空，卻有到底全空。後得多占之法，凡遇旬空，命之再占，卦吉者許之出旬而不空，卦得凶者許之空矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0004",
+      "sha256": "c5fcd903228c99978a890a51ae5c066b81a2dcc1ba9b26afba18748f5f6c9115"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "如辰月乙卯日占求財得家人之賁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0005",
+      "sha256": "9d4b9ffb7545e944ae4a29b678b568826bde5e5b8b0a7abaa2dbbf4821de9c63"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "兄弟卯木⚊　　兄弟寅木⚊\n子孫巳火○應　父母子水⚋\n妻財未土⚋　　妻財戌土⚋\n父母亥水⚊　　父母亥水⚊\n妻財丑土⚋世　妻財丑土⚋\n兄弟卯木⚊　　兄弟卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0006",
+      "sha256": "843b35093057a18d5fe315ba090d4471f2a6efcf64796ff135129d367403d999"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "斷曰：丑財持世遇旬空，𨿽有巳火之生，巳火又化回頭之克，不能生丑土之財，此財旣無生扶當主難求。或又因三月之丑土財爻有气，古法有气不爲空，不敢竟斷，命之再占。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0007",
+      "sha256": "931b2e0a3b14bb289c73887d6aac4d3e01aa1c6252d5dfe83f07da1536f901fe"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "又得暌之損",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0008",
+      "sha256": "db7ec737748e04aa5f13043ce5cd14e5f94d295c7aeaa7840f22ac804c7b9c71"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "父母巳火⚊　　官鬼寅木⚊\n兄弟未土⚋　　妻財子水⚋\n子孫酉金○世　兄弟戌土⚋\n兄弟丑土⚋　　兄弟丑土⚋\n官鬼卯木⚊　　官鬼卯木⚊\n父母巳火⚊應　父母巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0009",
+      "sha256": "bc2b1e95d9ebd4fddceec31017df02dd6f79462ca62b36b93d71fdf30478f8dc"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "因得此卦合前卦而決之，竟斷曰：財無气矣，不必勞心。彼問：何故？予曰：前卦丑則𨿽則空而有气，後卦子水財空伏於五爻未土之下，伏而又空，空而被克，知其無財而無疑也，後果全無。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0010",
+      "sha256": "1dbb97a65497f67bdf8dbeb3b650f462b68208ab621af43afb631f173e986fd9"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "又如子月辛亥日占遠行求財得大畜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0011",
+      "sha256": "4b71ae865cff350bc98bdd5e663e1390f7634854d1a14ff85804dfd6447b09e2"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "官鬼寅木⚊\n妻財子水⚋應\n兄弟戌土⚋\n兄弟辰土⚊\n官鬼寅木⚊世\n妻財子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0012",
+      "sha256": "95be34f08e4bd4970cacf557998f99c44e938562ea9b4265881e4d864cabd34f"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "斷曰：世逢寅木，子月亥日俱作財神而生世，有喜。應爻爲地頭，世應相生，乃全美之卦，獨因世值旬空，若依古法斷者，無故自空大凶之兆，故許之而遠去始能求財耶，命之再占。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0013",
+      "sha256": "abc2ff4608edc6260ce46a979c722082a9a78c3f2e37aaf295436074d42683b4"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "又得明夷之豐",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0014",
+      "sha256": "43e5a626755ea169918c90a5384f6776e0cd954b475ba7d516502a961ad0ab3d"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "父母酉金⚋　　官鬼戌土⚋\n兄弟亥水⚋　　父母申金⚋\n官鬼丑土ㄨ世　妻財午火⚊\n兄弟亥水⚊　　兄弟亥水⚊\n官鬼丑土⚋　　官鬼丑土⚋\n子孫卯木⚊應　子孫卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0015",
+      "sha256": "161b02db9d9eb9ef2c5a61882951abf020cbd0d95311472081ced0f3faf78b5c"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "斷曰：此卦與前卦相同，此行大有財發。斷得世爻丑土化午火回頭相生，目下月破，行到此頭已出月矣，出月而不爲破，開春寅卯月，以前卦決者乃世爻出空之月也，逢子亥財生，滿心如願。彼曰：去得成否？予曰：甲寅日世爻出空之日，準行無疑，果於乙卯日起程，後到彼地，寅卯月間，諸事順心，滿載而歸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0016",
+      "sha256": "b7f64b144da750a829d858b175948702df22db4827f65a4abe34c465b05ddf25"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "野鶴曰：多占之法，能消許多疑惑，不然只以前卦決斷者，無故自空，如入深淵大凶。實則旺財生世，腰纏萬貫之徵。許之去耶？阻之勿去耶？",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0017",
+      "sha256": "7d2fbae07624d2473a7cf8e4a2cfb2e6723a775824c1415bdfd74cce815d8f26"
+    },
+    {
+      "section": "旬空章第二十六",
+      "text": "李我平曰：空亡之說，鬼神不測之妙，似有又無，似無又有，實有到底全空，又有塡實不空，此以多占兩卦合而決之。眞爲泄盡鬼神之機也，天地這理論，皆從空而生。謂之懸空以待用，凡占遇空，不可卽以爲空也，然又有中空之日，實空之時，事在一旬之外，許其出空之日而應之，若占遠之大事，尙無定期，非旬可以定者，大象不吉，乃可謂到底空也。大象若吉，太歲月建又可塡之，然又不如多占兩卦，實爲妙法。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c027:p0018",
+      "sha256": "f02cbd35c8961e9a2131651f0a737b7a34f9dfb6bb6ce50aa2808505fc85c650"
+    }
+  ]
+}

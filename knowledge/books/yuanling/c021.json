@@ -1,0 +1,53 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c021",
+  "title": "卷二十一",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c021.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷二十一",
+      "text": "占鸦鸣\n凡见鸦鸣，急看景门。值符前一急迫来临，前二口舌，前三婚姻或急讲门庭，前四斗殴、财利相争。值符后一事涉女，后二之位期蔽*淫，后三之位亡失衣物。更寻六丙下值何神：河魁在下，细细推寻，贵人有灾，六畜有伤；从魁在下，寡妇藏音，上有吉将，酒食邀迎；传送在下，人来觅物；小吉在下，妇人喜成；胜光在下，征召欢欣；太乙在下，大吏相寻；天罡在下，争斗讼亡；太冲在下，亲戚得遇；神后在下，事主*淫；功曹在下，庆贺维吉；登明在下，索吏公文。听声遏何方隅，吉门在吉，凶门在凶，宜出入远行、宴乐，不宜嫁娶、出兵、移徙、入官、商贾，寻室凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c021:p0001",
+      "sha256": "686ed332eb0874f2292270f8e10e8e3443e44db5b7f9001ed546142de9b36d44"
+    },
+    {
+      "section": "卷二十一",
+      "text": "占雀噪\n看朱雀所临方得何门、奇以决之。得开门又得奇，主亲朋至，或行人远来，或酒食；得休门又得奇，主喜事、喜信及婚姻事；得生门又得奇，主田宅、财物、畜事。不得三奇、吉门，及门迫、奇墓，俱主无所关系。更看景门临宫，有吉格有喜信，凶格凶信。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c021:p0002",
+      "sha256": "0bc811f869aec8f638e9b18f31ae49a08308afbd242b45fe0f45bd84481b6dc4"
+    },
+    {
+      "section": "卷二十一",
+      "text": "占犬吠、釜鸣、火笑、牝鸡鸣等类\n当以时干所加下得何门星决之。如得三奇、吉星门、吉格者，为平安；如无奇、无门兼星凶、格凶者，主有祸事。若吉处多，凶处少，有祸无妨；若凶多吉少，定多凶险，终亦无碍。在内者为上半年，在外者为后半年，亦以八卦定期。\n如阳二局甲己日庚午时，此六庚在四宫，得杜门，有天英凶星，又六庚加丙为太白入荧，主失亡被…。 又星、门俱不吉，主有官事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c021:p0003",
+      "sha256": "9e14b8f88683f9159745b43430d1eb4ba20789f540060f697ab395173eefa5e7"
+    },
+    {
+      "section": "卷二十一",
+      "text": "占梦兆\n以时干为主，看上有何星、门加之。门星俱凶，而得三奇吉格，或无三奇吉格而星门俱吉者，其梦吉凶两无。如得星得门又得三奇吉格者，梦吉即吉，梦凶亦吉。不得星门及三奇吉格者，梦凶应凶，梦吉亦凶。若时是六甲旬中空亡，即属幻影，无所虑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c021:p0004",
+      "sha256": "7ed3ea16b0c4b7ab925ff898026e39a2b4e60c813749bcc08e13731e59be6a70"
+    },
+    {
+      "section": "卷二十一",
+      "text": "占四体动吉凶眼跳、耳热、唇蠕、肉跳\n眼属肝，为木为震；耳属肾，为水为坎；唇属土，为坤；左臂属巽，右臂属坤，左腿属艮，右腿属乾，左肋属巽，右肋属震，背腹属中。如有跳动，以本方上得何奇、门、星格决之，得奇、门吉，不得奇、门平平，有凶格者不吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c021:p0005",
+      "sha256": "ed5180d688fa4258419bc845e9d52fad7c63633413bfced0e92597d23d5640d9"
+    }
+  ]
+}

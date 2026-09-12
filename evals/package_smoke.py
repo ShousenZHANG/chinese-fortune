@@ -145,10 +145,73 @@ def main(argv: list[str] | None = None) -> int:
                               '--minute', '30', '--gender', 'male', '--timezone', 'Australia/Sydney'],
                              work, expected=1))
         assert not gap['ok'] and '不存在' in gap['message']
+        person = {'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10,
+                            'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 120}}
+        query = {'current_timezone': 'Australia/Sydney', 'request_time': '2026-09-12T00:00:00Z',
+                 'period': '下周', 'event': {'scenario': 'interview', 'longitude': 151.2},
+                 'participants': [{'id': 'sample', 'person': person, 'confirmed': True}],
+                 'duration_minutes': 60,
+                 'candidates': [{'start': '2026-09-15T09:00', 'end': '2026-09-15T12:00'}]}
+        future = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/fortune_reading.py'),
+                                 '--stdin'], work, data=json.dumps(query)))
+        assert future['ok'] and future['status'] == 'partial'
+        assert future['window']['start'].startswith('2026-09-14')
+        assert future['availability'][0]['available'] and future['recommendation']['first_choice'] is None
+        comparison = future['candidate_comparison'][0]['windows'][0]
+        assert comparison['allowed_start']['latest'] == '2026-09-15T11:00:00+10:00'
+        assert comparison['participants'][0]['participant_id'] == 'sample'
+        assert future['participants'][0]['target']['granularity'] == 'hour'
+        assert future['event_method']['method'] == 'yuanling-core'
+        assert comparison['event_segments']
+        assert future['event_method']['charts'][0]['participants'][0]['participant_id'] == 'sample'
+        qimen = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/qimen_cast.py'),
+                                '--date', '2026-06-18', '--time', '08:00',
+                                '--target-timezone', 'Asia/Shanghai'], work))
+        assert qimen['zhi_fu_star'] == '天禽' and qimen['zhi_fu_palace'] == 7
+        assert qimen['palaces'][4]['star'] is None
+        itinerary_query = {k: v for k, v in query.items() if k not in ('candidates', 'duration_minutes')}
+        itinerary_query['event'] = {'scenario': 'multiple_events', 'time_standard': 'clock'}
+        itinerary_query['events'] = [
+            {'id': 'interview', 'event': {'scenario': 'interview'}, 'duration_minutes': 60,
+             'candidates': [{'start': '2026-09-15T09:00', 'end': '2026-09-15T10:00'}]},
+            {'id': 'travel', 'event': {'scenario': 'travel'}, 'duration_minutes': 30,
+             'travel_minutes_from_previous': 45,
+             'candidates': [{'start': '2026-09-15T10:30', 'end': '2026-09-15T12:00'}]}]
+        itinerary = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/fortune_reading.py'),
+                                    '--stdin'], work, data=json.dumps(itinerary_query)))
+        assert itinerary['itinerary']['plans'][0][1]['start'] == '2026-09-15T10:45:00+10:00'
+        assert len(itinerary['natal_catalog']) == 1
+        audit = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/fortune_rules.py'),
+                                '--evidence'], work))
+        assert len(audit['scope_audit']) == 2
+        guidance = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/classical_guidance.py'),
+                                   '--scenario', 'exam', '--retrieve', '--limit', '1'], work))
+        assert guidance['ok'] and all(group['results'] for group in guidance['groups'])
+        exam = next(group for group in guidance['groups'] if group['book'] == 'xuanze')['results'][0]
+        assert any(p['passage_id'] == 'xuanze:c003:p0024' for p in exam['context'])
+        billing = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/classical_guidance.py'),
+                                  '--scenario', 'billing', '--retrieve', '--limit', '1'], work))
+        shared = next(group for group in billing['groups'] if group['book'] == 'xuanze')
+        assert any(p['passage_id'] == 'xuanze:c003:p0327' for p in shared['required_context'])
+        family = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/classical_guidance.py'),
+                                 '--family', '印'], work))
+        assert family['ok'] and '印輕者' in family['evidence'][-1]['text']
+        profile_command = [str(python), '-X', 'utf8', str(skill / 'scripts/personal_profiles.py')]
+        profile_dir = work / 'profiles'
+        saved = json.loads(run([*profile_command, 'save', '--profile-id', 'sample', '--confirmed',
+                                '--data-dir', str(profile_dir)], work, data=json.dumps(person)))
+        assert saved['ok'] and saved['revision'] == 1
+        deleted = json.loads(run([*profile_command, 'delete', '--profile-id', 'sample',
+                                  '--expected-revision', '1', '--data-dir', str(profile_dir)], work))
+        assert deleted['ok'] and not list(profile_dir.iterdir())
         installed = json.loads(run([str(python), '-m', 'pip', 'list', '--format=json'], work))
         print(json.dumps({'ok': True, 'platform': sys.platform, 'python': sys.version.split()[0],
                           'checks': ['bazi', 'ziwei', 'classical_library', 'current_time',
-                                     'bazi_reading', 'shared_time', 'reading_review', 'yijing', 'dst_gap'],
+                                     'bazi_reading', 'shared_time', 'reading_review', 'yijing', 'dst_gap',
+                                     'personal_forecast', 'source_scope_audit', 'profile_save_delete',
+                                     'classical_scenario_retrieval', 'complete_luck_chapter',
+                                     'candidate_personal_timeline', 'nonadjacent_source_conditions',
+                                     'qimen_source_anchor', 'personal_event_method', 'joint_itinerary'],
                           'dependencies': installed, 'artifact': artifact}, ensure_ascii=False, indent=2))
     return 0
 

@@ -621,7 +621,7 @@
     {
       "id": 22,
       "name": "full-classical-library",
-      "prompt": "检查已声明的五书目录和全部段落。",
+      "prompt": "检查已声明的十三书目录和全部段落。",
       "expected_output": "完整性检查须核实际文件摘要，版本与影像状态分别记录。",
       "assertions": [
         {
@@ -634,7 +634,7 @@
             "books"
           ],
           "count": {
-            "books": 5
+            "books": 13
           }
         }
       ]

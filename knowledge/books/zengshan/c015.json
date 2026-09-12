@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c015",
+  "title": "動變生克沖合章第十五",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F15&oldid=2100321",
+  "revision": "2100321",
+  "source_timestamp": "2022-01-20T03:20:03Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c015.wiki",
+  "raw_sha256": "0df8223b0c65616826c8caf86b592526b46b1dee51332e0c2707486f2d7ee4e5",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "動變生克沖合章第十五",
+      "text": "卦有動爻，動而必變，夫變出之爻能生克沖合本位之動爻，不能生克他爻，而他爻與本位之動爻，亦不能生克變爻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c015:p0001",
+      "sha256": "34cae53d45a6aadce35658e40b6c82548a14e857e11500a289f21f0fc6ddb068"
+    },
+    {
+      "section": "動變生克沖合章第十五",
+      "text": "例：令子月卯日占得坤卦變火地晉",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c015:p0002",
+      "sha256": "6f787a42e2fb66638086aef63d4fec6a5c975ba2a0be9957cbfca9d5185028fa"
+    },
+    {
+      "section": "動變生克沖合章第十五",
+      "text": "子孫酉金ㄨ世　父母巳火⚊\n妻財亥水⚋　　兄弟未土⚋\n兄弟丑土ㄨ　　子孫酉金⚊\n官鬼卯木⚋應　官鬼卯木⚋\n父母巳火⚋　　父母巳火⚋\n兄弟未土⚋　　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c015:p0003",
+      "sha256": "36235f6971989be79df571ff4231194ce41d5140c1b3615ce8491aa5b8274151"
+    },
+    {
+      "section": "動變生克沖合章第十五",
+      "text": "酉金發動，酉爲動爻，變出巳火，巳爲變爻，變爻之巳火能回頭克本位之酉金，並不能克生他爻。四爻之丑土能動而生世爻之酉金，不能生變出之酉金，而變出之酉金亦不能生克他爻。然則變爻誰能制之？惟日月能生之、克之、沖之、令之何也？日月如天，能生克動爻、靜爻、變爻、飛爻、伏爻、而諸爻不能傷日月。黃金策曰：爻傷日月，徒受其名。旣如此卦子水月建能克世爻變出之巳火。卯爲日建能沖變出之酉金是也，餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c015:p0004",
+      "sha256": "4495e303a75286b4750f42241f70b997daa57dadb083ba7c716086a9180d5132"
+    }
+  ]
+}

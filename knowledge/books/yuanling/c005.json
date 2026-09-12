@@ -1,0 +1,116 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c005",
+  "title": "卷五",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c005.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷五",
+      "text": "占岁时丰歉年遁中宫一星",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0001",
+      "sha256": "22550fc965289ffec99cb8750f72f2820a69f10890eefc8b0bef3593c1b76e3f"
+    },
+    {
+      "section": "卷五",
+      "text": "一白居中半多雨雪霜露，五谷丰登，人民无灾，国泰民安。\n二黑年交阴雨风烟雾，人口有灾，国家有患物，西南方主荒。\n三碧年多风雷，物歉，东南熟，西北荒，民有风寒之灾，多盗贼。\n四绿之年有雨水，江南熟，江北荒，人民有小灾。\n五黄之年雨阳不时，人多瘟疫，荒熟各地不均。\n六白年雨阳时若，国泰民安。\n七赤年民遭旱焊，五谷不熟，西方荒，北方安，江南不利。\n八白年雨水多，五谷熟，八方宁静，国泰民安。\n九紫年风调雨顺，国泰民安，江南小旱。\n若三白在巽、离、坤，南方熟；在乾、坎、艮，北方丰；在震、兑、中宫，天下俱美。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0002",
+      "sha256": "929269affa3d504386bfa09d2693b72fa83aac4426efcfc839136a5dd819a46e"
+    },
+    {
+      "section": "卷五",
+      "text": "占岁内丰歉",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0003",
+      "sha256": "ddeee8d81825bfbc5cd75bb8089c39240125290362fadbe8624832c0790f96d7"
+    },
+    {
+      "section": "卷五",
+      "text": "立春日某时交春，看九宫以分九州，见九州有何星、奇，即知之。坎一冀州，晋魏分；艮八兖州，韩郑分；震三青州，齐分；巽四徐州，鲁分；离九梁州，吴越分；坤二荆州，楚分；兑七梁益州，卫分；乾六雍州，秦分；中五豫州，宋分。\n天蓬所临之方，主瘟瘴春作，百姓流离；夏水漂没。奇、神救之减半。\n天芮所临之方，奇、神加之人不为灾，七分收成。若加凶宿，人瘟物死，五谷不登。\n天冲所临之方吉，奇加之五谷半丰，惟宜果实。春夏人物灾伤。\n天辅所临之方，在吉处五谷大成，人民安乐。若加凶宿，主大风溢损伤。\n天禽所临之方，在吉处者，主五谷大丰，人物蕃盛。若加凶宿，主长吏不宁，贵人移动，夏初瘟灾。\n天心所临之方，有吉宿者，主秋禾熟，长吏贵人频受恩喜。凶星加之，春种离多，夏秋水涝。\n天柱所临之方，在吉处半熟，人民瘟瘴。加凶宿，有蝗虎流火为灾，秋冬尤甚。若有三奇德有余庆。\n天任所临之方，大有吉庆，奇神加之主生芝草祥瑞，及贵人在位。加凶处，五谷半熟，人离灾而无死。\n天英所临之方，亦有祥瑞，得生旺地五谷熟，人民安庆。在克处或凶宿加临，主旱涸灾殃，春种夏枯。凡天乙所在之处，其岁事吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0004",
+      "sha256": "bcd53ab2c7a92d8a5f7a8be670b9b8d3070b7c4633ea5eeadd493bcfdba62acf"
+    },
+    {
+      "section": "卷五",
+      "text": "占田禾",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0005",
+      "sha256": "b29fd4670e7d386979e95053f7e39e6d58607a928abc463be22997727783412b"
+    },
+    {
+      "section": "卷五",
+      "text": "凡占田禾，以休门合于木土之上为吉，更得三奇及干见合则有利。年景丰啬专看天任，如天任落艮震宫主年丰，再得青龙、六合、功曹、太冲，主四民乐业；若天任不落艮震二宫，主歉收，再以贵神月将分旱涝。天任所在有传送、天后主涝。又生门主麦，伤门主谷。看三奇、太常、功曹、贵人在生门宫则收麦，在伤门宫则收谷。占栽植死生，以天冲为花草，天辅为树木，各看所落之宫。旺相主生，休囚主死；生为生，克为死；吉格为生，凶格为死。旺相吉格生，草木茂盛；休囚凶格克，草木焦枯。吉凶相半，先后荣枯。壬癸戊己来生者为活，不生者死，又三为生五为死也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0006",
+      "sha256": "51efb98e5ea12e7212243085408a8e6fe227b693ff7633970babddb3aa6150b7"
+    },
+    {
+      "section": "卷五",
+      "text": "又法占田禾",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0007",
+      "sha256": "d3ee186c1d926975117ef9d39a15b18c35b2bcea4615da9a16327404a4f013f8"
+    },
+    {
+      "section": "卷五",
+      "text": "此时合生、休二门与乙丙丁，并六仪临长生、旺、禄之乡而合吉格，其年大熟。如合景、英、心、开，加于土木之宫，或门克宫，或上干克下干，必然无收。如木星克宫，多虫并风灾；如火星、金星克宫，多旱灾，或金风所伤；如水星多壬癸，或日时皆水，或阴星、阴门加于阴宫，必多雨水，连绵水灾；如诸星克制或生死二门宫者，其年未熟；如门克宫，或逢庚辛相制，虽收必有贼盗；若合凶格于命宫，如墓绝或朱雀者，因田生非破财官事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0008",
+      "sha256": "52827a015e7ee222a317927b13754fc4c304de48a11724031f4fda83684a551c"
+    },
+    {
+      "section": "卷五",
+      "text": "占蝗蝻",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0009",
+      "sha256": "6c6de25e00402aa570449b7324836924f7f34edbcc837b760916d1936db0e95e"
+    },
+    {
+      "section": "卷五",
+      "text": "死、惊、杜、伤临日干则来，非此则不至。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0010",
+      "sha256": "1c0efdb4b03d74d30ae9389b9b59c0db2201987e9a235c207b3f548b45f5ca29"
+    },
+    {
+      "section": "卷五",
+      "text": "占蚕利",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0011",
+      "sha256": "a497224009011cb074a18c18d56cf102fb10a5fcd3c506db2a08d8f956eec051"
+    },
+    {
+      "section": "卷五",
+      "text": "此时得吉星，干支、门、宫相生，加临金木之宫而合吉格，下不克上者，有十分之利。若遇凶格、门迫加于金木宫，上下相克，是必无利。如合凶格得门生宫，或合吉格得门克宫，只有五分之利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0012",
+      "sha256": "f2ae590b6ad28cf1dc759a71cac4e4c6487eb0b4420f24e9e6149cc3d8de6dbe"
+    },
+    {
+      "section": "卷五",
+      "text": "又法占蚕利",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0013",
+      "sha256": "176b28acfc0c1b5cde97faae6440814af21c0bb5a2238b4bc673da0757fec6b7"
+    },
+    {
+      "section": "卷五",
+      "text": "三奇、吉门、吉宿全于金木之宫为吉，须要不克上宫及门为良。若吉门、星、奇皆不至金木宫，更克正宫星与门，收获寡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c005:p0014",
+      "sha256": "a4de6dcf48fe3c72d3fcacb6bb2de35926437893d26bdf55ae3880485fcfeb4b"
+    }
+  ]
+}

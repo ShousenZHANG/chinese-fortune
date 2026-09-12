@@ -1,0 +1,53 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c011",
+  "title": "五行相生章第十一",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F11&oldid=2100315",
+  "revision": "2100315",
+  "source_timestamp": "2022-01-20T03:07:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c011.wiki",
+  "raw_sha256": "f1b4bdd6c8a59ea835845f3eabe314601bb8e0150c421bbe82f1db97764cad0c",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "五行相生章第十一",
+      "text": "金生水，水生木，木生火，火生土，土生金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c011:p0001",
+      "sha256": "f5df4a266e9dcb06380ff45fc1c0d1d7e1809e7bb7d378ce9cb57a798f468cf1"
+    },
+    {
+      "section": "五行相生章第十一",
+      "text": "凡用神、元神宜於逢生，月建生、日建生，動爻生、動化回頭生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c011:p0002",
+      "sha256": "adbab233e2bed168a0a1ab1153d158e3f265499f4f0318d17a28c5bad6ec1423"
+    },
+    {
+      "section": "五行相生章第十一",
+      "text": "如卯月己卯日弟占兄已得重罪，叩問能救否。得復之震",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c011:p0003",
+      "sha256": "dfabaf1b33c9f28d2621a480811fdd4b79455bfc00dd11edc062846b366319d9"
+    },
+    {
+      "section": "五行相生章第十一",
+      "text": "子孫酉金⚋　　兄弟戌土⚋\n妻財亥水⚋　　子孫申金⚋\n兄弟丑土ㄨ應　父母午火⚊\n兄弟辰土⚋　　兄弟辰土⚋\n官鬼寅木⚋　　官鬼寅木⚋\n妻財子水⚊世　妻財子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c011:p0004",
+      "sha256": "20948b629d13692474f68474f732900eada5535321181e75f10ddffdde08a3c1"
+    },
+    {
+      "section": "五行相生章第十一",
+      "text": "兄弟爻爲用神，丑土兄動日月克之，明現大罪難脫，幸得兄爻丑土化午火父母回頭相生，斷曰：速速行之。父母化兄爻相生爲吉，後蒙恩免死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c011:p0005",
+      "sha256": "87a5294d5c07ff276f83c5078a5197c8c644fbe15b63f99b589a9cd70bece52a"
+    }
+  ]
+}

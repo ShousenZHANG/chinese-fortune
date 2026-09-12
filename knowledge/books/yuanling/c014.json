@@ -1,0 +1,81 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c014",
+  "title": "卷十四",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c014.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十四",
+      "text": "占出行期\n占行期，或有牵缠不能摆脱，或有节制不能自由，或本人犹豫不定，以时干为起行之人，日干为牵缠、节制之人，以开门为起行之期。如日干克时干，不能行；时干克日干，即行；日干宫上下皆来克日干，彼自受制无暇制我者，即行。若本人自犹豫不能决者，看时干宫在外为去，在内为不去。俱看开门落宫下得何干，以定其期。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0001",
+      "sha256": "59c93d8419d10b8d1d0c5fe9e56282d23d081e679ef456a07635ffd260a908d8"
+    },
+    {
+      "section": "卷十四",
+      "text": "占道途吉凶\n以时干所落前一宫看之。如得天蓬为贼盗，乃时干所落宫前一宫，阳顺阴逆。即得天蓬，为贼盗，如无者不遇。再看时干所加本宫，得生旺相并得三奇吉门吉格者不妨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0002",
+      "sha256": "cd2c0fbd4ef228a281056e4b9c2db63c66ce70138f6a759293f8fce6585ad4a7"
+    },
+    {
+      "section": "卷十四",
+      "text": "占同伴善恶\n凡途中遇人同伴，占以地盘时干为己身，看何星临之。如得禽心冲辅任为善人，得蓬芮英柱为恶人，再得旺相，而时干又居废没之地，主有侵害。时干旺相，凶星废没，亦不能害。如凶星有害，时干而得生休开及三奇吉门吉格，主被害中有救。若时干旺相而得刑格并一切凶格，虽有侵害亦无妨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0003",
+      "sha256": "7fa678943f53d1d1cb0108953bc224a107d4a45b34e0649ac7c59428bc51743b"
+    },
+    {
+      "section": "卷十四",
+      "text": "占店主善恶看时干加宫所落之宫得何星宿以定善恶\n看时干，若遇蓬芮（二大凶）英柱（二小凶）凶星，俱主恶人；遇辅禽心冲任吉星，俱主善人。如落宫克时干，主有侵害。若时干落宫有三奇、吉门、吉格者，虽有恶亦不敢害。如无吉格，但乘旺相，亦无害。如时干得休废没并凶星格者，当有侵害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0004",
+      "sha256": "5cc37d678722cc91ff8d9a1f9d1903aab05b48ddf9ddb8abc1f349af802feda7"
+    },
+    {
+      "section": "卷十四",
+      "text": "占出行\n此时出行，欲得三奇六仪临于旺禄之宫，或行年合吉格而上下相生本日时，官贵禄马俱临，此时而去，逢贵人接引，财帛广进，求名亨达，且为皆顺。如本命行年并此时合凶格，门克宫，必多虚惊。如开门克宫，为贵人见贵之类。如逢凶格相冲相干墓之乡，出则不归。若遇壬癸，恐有水厄之忧。如遇辰戌，虑有牢狱之苦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0005",
+      "sha256": "17c100eef927c4a3196fb4a8817aa139757cb71079ad63d7f96606366c08acbc"
+    },
+    {
+      "section": "卷十四",
+      "text": "占未出先定归期\n看天蓬星落宫。如阳局，天蓬在内四宫，上半年回；在外四宫，下半年回。阴局亦然。冬至后自坎至巽为内，自离至乾为外；阴遁夏至后自离至乾为内，自坎至巽为外。又看所落何宫，即以本宫所得十二支位以定其期。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0006",
+      "sha256": "ce5063cd8e3656a075997277c16025cdd4bc1f6df0bbf33c1f4e53a4aaad544d"
+    },
+    {
+      "section": "卷十四",
+      "text": "占登舟\n以震三宫为船，以天盘所得之星为船户之善恶，得辅禽心三星上吉，任冲二星为中吉，芮英柱蓬为大凶，其船不可登。凡占水，看休门之下，见申酉为江河，见小吉为井，太冲为池塘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0007",
+      "sha256": "f59a78243fe5f7b1b9d40edf5d3ce781fe5b72f5d16abec7603e729e3781ca81"
+    },
+    {
+      "section": "卷十四",
+      "text": "占水陆以值使定之，不取坤宫者，死门也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0008",
+      "sha256": "87577242f9b906d91c16d1132fd412db788825cbd02d768064eaa7beafcee5d7"
+    },
+    {
+      "section": "卷十四",
+      "text": "以坎为水路，艮为陆路，看值使落宫。如水陆二路有一生则吉，被克则不吉。又看休生二门所落之方，亦可出行。\n如惊蜇中元阳七局甲己日丁卯时，惊门值使加坎宫，休门到震，生门到巽，为水木相生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c014:p0009",
+      "sha256": "a8dbab2b8b4ed5bc88b5651ed6420b2f8d06819eefc71fd118d4f06edeea4313"
+    }
+  ]
+}

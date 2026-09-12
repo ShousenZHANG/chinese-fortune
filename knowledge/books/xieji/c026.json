@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c026",
+  "title": "卷26",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B726&oldid=787369",
+  "revision": "787369",
+  "source_timestamp": "2016-10-27T11:58:56Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c026.wiki",
+  "raw_sha256": "f478d4c2cb8407877187fdeec5e65e89eb5d14629da7036a2514fc63a02326a8",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷26",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c026:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定恊紀辨方書卷二十六",
+      "text": "月表七",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c026:p0002",
+      "sha256": "65578532f13e7de1f533f315d18ef6d55a5479511b943151e6f1070985c010a6"
+    },
+    {
+      "section": "七月",
+      "text": "立秋七月節天道北行宜向北行宜修造北方\n天德在癸天德合在戊月德在壬月德合在丁月空在丙宜修造取土\n月建在申月破在寅月厭在辰月刑在寅月害在亥刼煞在巳災煞在午月煞在未忌修造取土\n初八日長星　二十二日短星\n立秋前一日四絶　後九日往亡\n處暑七月中日躔在巳宫為七月將宜用甲丙庚壬時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c026:p0003",
+      "sha256": "e5eff5ba33acdef4c18e558bed5b004ba57ea7ea1009ce3eeb3b0e5ed154346a"
+    },
+    {
+      "section": "癸亥大海水專平日",
+      "text": "右六十干支從建申者始立秋終處暑其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c026:p0004",
+      "sha256": "c1a3156a0f5747c7817c285d26c40c63ea9b8c1ef11af01fc4ccd88bd406c629"
+    }
+  ]
+}

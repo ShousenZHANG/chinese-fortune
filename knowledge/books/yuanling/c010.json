@@ -1,0 +1,39 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c010",
+  "title": "卷十",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c010.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷十",
+      "text": "占婚姻\n凡占婚姻，以乙为女，以庚为夫。如二家落宫相生合，说之则成；相刑克，则不成矣。又以顶盘六合为媒人。六合宫生乙宫，向女家；生庚宫，向男家。庚宫克乙宫，女家畏而不嫁；乙宫克庚宫，男家嫌而不娶；乙宫带击刑，主女性凶恶者；生合，主女性温良。庚宫带凶神，主夫性暴烈；带生合，主夫性温良。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c010:p0001",
+      "sha256": "25ce44529ef878b732ffdfe090bc56c0fad554bf86cb178a9d6dbc435bcbf279"
+    },
+    {
+      "section": "卷十",
+      "text": "又法占婚姻\n如男家问婚姻，此时即以地盘诸星为男家。逢门生宫，或上干生下干合吉格，而干支日时逢生合，其婚必成。若门克宫，或上干克下干，或门迫相冲，必不能成。又如比和相，善言之即成。凡九星、六仪、三奇、八门在旺禄之时，主富贵之家；若衰墓逢生为渐发之家；旺而受克为时退之家。若论女相貌、人品，以八门、九星、地将推之。若逢生主人品清奇；逢克为不正或醮妇残婚之类。若女家问就以女为主，照前法反而推之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c010:p0002",
+      "sha256": "a48f5607abe710afe5a93c1dc52c7c83346c7a413f610889bd98d94e528c5ec5"
+    },
+    {
+      "section": "卷十",
+      "text": "占招赘\n看合星，专以乙庚论之。如女求夫，谓之坐山招夫，当用天盘六庚宫来生地盘六乙宫。庚上得吉星，主夫性温良；得凶星主欺骗财物，或心性*险。如男求女，谓之到踏门，宜地盘六乙宫生天盘六庚宫，亦主成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c010:p0003",
+      "sha256": "08054059158aaab4f2ce9d411edd772d10abe3baace9123ef5fd8ecc673a6250"
+    }
+  ]
+}

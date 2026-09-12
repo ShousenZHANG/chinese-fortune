@@ -1,0 +1,144 @@
+{
+  "book_id": "yuanling",
+  "chapter_id": "c001",
+  "title": "卷一",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A5%87%E9%96%80%E9%81%81%E7%94%B2%E5%85%83%E9%9D%88%E7%B6%93&oldid=8259389",
+  "revision": "8259389",
+  "source_timestamp": "2026-08-12T07:37:15Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yuanling/c001.wiki",
+  "raw_sha256": "8545734d2a9332dc8b5ff1e8ae9c0eaa8d254701013eda2582385fdf1d6e3550",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷一",
+      "text": "奇门起例\n其法先分阴阳，次详节气，次察符头，乃以阴阳顺逆分布仪奇，而得地盘。然后以符头加用时干上，如前法分布仪奇，察其符头在何宫，即以何星为值符。又从符头宫起数至用时止，即以何门加于此宫为值使，而得天盘。设例如左。\n假如芒种后癸亥日丙辰时，芒种在夏至前、冬至后，为阳遁。癸亥系芒种下元，是阳九局，顺布六仪（甲子戊在离，甲戌己在坎，甲申庚在坤，甲午辛在震，甲辰壬在巽，甲寅癸在中宫），逆布三奇（乙奇在艮，丙奇在兑，丁奇在乾），是为地盘。丙辰系甲寅符头，故以中宫之癸加兑宫丙上为值符，依次顺布。又以天禽加兑，顺布心、柱，亦如上法。又自中宫甲寅顺数至丙辰，亦在兑宫，即借坤宫死门加于兑宫，为值使，是为天盘。又如霜降后甲寅日辛未时，为阴遁八局，逆布六仪（戊在艮，己在兑，庚在乾，辛在中，壬在巽，癸在震），顺布三奇（乙在离，丙在坎，丁在坤），为地盘。辛未系甲子符头，故以艮宫戊加中宫辛为值符，依次逆布，又以天任加中，逆布英、蓬。又自艮宫甲子逆数至辛未，在坎，即以艮宫生门加于坎为值使，是为天盘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0001",
+      "sha256": "856f01f7dcf86a2f854210db0c8a32fad938d1dafd1b6e8930f71d32f9885dd5"
+    },
+    {
+      "section": "卷一",
+      "text": "阴阳遁\n冬至后用阳遁，夏至后用阴遁。\n阴阳各局 附一卦管三节\n冬至一七四 小寒二八五 大寒三九六 卦属坎\n立春八五二 雨水九六三 惊蜇一七四 卦属艮\n春分三九六 清明四一七 谷雨五二八 卦属震\n立夏四一七 小满五二八 芒种六三九 卦属巽\n夏至九三六 小暑八二五 大暑七一四 卦属离\n立秋二五八 处暑一四七 白露九三六 卦属坤\n秋分七一四 寒露六九三 霜降五八二 卦属兑\n立冬六九三 小雪五八二 大雪四七一 卦属乾",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0002",
+      "sha256": "09dead82f270021e489d9d594f5a70f62fee66375204fcd203d30d69ea4dc198"
+    },
+    {
+      "section": "卷一",
+      "text": "三元符头\n甲己干加子午卯酉为上元，加寅申巳亥为中元，加辰戌丑未为下元。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0003",
+      "sha256": "282b4973ffaaf2fcf49d66e5c2624153fff9641ec0cf00e73499ad9deac2efd7"
+    },
+    {
+      "section": "卷一",
+      "text": "三奇\n乙为日奇，丙为月奇，丁为星奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0004",
+      "sha256": "e5cf458a1959035f2e85658b5a801384d01c907ff64b981e82c116f807b1cc7f"
+    },
+    {
+      "section": "卷一",
+      "text": "六仪\n甲子戊、甲戌己、甲申庚、甲午辛、甲辰壬、甲寅癸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0005",
+      "sha256": "40ade19bc10711d96a2159d2128c9bb56d90804d3e45667c4926a5e2c9df5eaa"
+    },
+    {
+      "section": "卷一",
+      "text": "九星\n一天蓬、二天芮、三天冲、四天辅、五天禽、六天心、七天柱、八天任、九天英。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0006",
+      "sha256": "8708a9adc4ff93b8a6efd13b9b45c988b1371b3cb22936d4216cd89bf66cc2ed"
+    },
+    {
+      "section": "卷一",
+      "text": "奇仪顺逆\n阳局顺布六仪逆布三奇，阴遁逆布六仪顺布三奇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0007",
+      "sha256": "f02b242741b1d9856f80271e27a9011b7b70be3be75a7ad92282fbc846d2a08f"
+    },
+    {
+      "section": "卷一",
+      "text": "值符\n察用时系何宫仪所辖，即以何宫之仪及星加时干上，为值符。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0008",
+      "sha256": "0f7abef1e0163240a2c8aa17f65a22a3fe38712e899e3ba8ce0cfecf86539d81"
+    },
+    {
+      "section": "卷一",
+      "text": "值使\n察用时系何宫何仪所辖，从何宫数至用时得几宫，即以何宫地盘之门加于几宫，为值使，阳遁顺数，阴遁逆数。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0009",
+      "sha256": "eda8059de8db16ab4b23e1d51b6d9b5edcd218528a981f0ca29d6b7d1d287b6c"
+    },
+    {
+      "section": "卷一",
+      "text": "定用神诀\n以数少者为先，数多者为后，不必分时先时后。占官以数多者为先，数少者为后。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0010",
+      "sha256": "e085d456a9695621034fc822f49ee7d3d626274f0b35afa2f675939facedb9a9"
+    },
+    {
+      "section": "卷一",
+      "text": "诀曰\n身居之宫发动时，时先时后任君推。\n时先过去宜再运，时后将来应有期。\n若遇日辰须作主，相逢月建亦同之。\n年月日时皆有用，事凭远近定相宜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0011",
+      "sha256": "ee02fbde1ed0477869d61b303422989ad0f5e6b3229a22275bca923cad358b12"
+    },
+    {
+      "section": "卷一",
+      "text": "伏身诀\n己占己事即己身，若问他人便有因。\n与我有因即是我，与我无涉即他身。\n一白入中身在六，二黑入中身在七。\n三碧入中身在八，四绿入中身在九。\n五黄入中身在一，依次顺推知其机。\n但得飞身颠倒诀，未来过去明如月。\n惟有酉居坎不同，一白入中身在五。\n戌亥之时机甚微，今将用法传古今。\n五为戊己大煞，常人不用。酉亥戌皆系一白入中，身居五。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0012",
+      "sha256": "fe9a114fc59e446fb59eb922e4146332bfd2cc31b32ef40d427ed216b18e8f1f"
+    },
+    {
+      "section": "卷一",
+      "text": "先天定六亲诀\n青龙发动定求财，田宅明堂父母排。\n词讼天刑官鬼事，文书朱雀远人回。\n天财金匮成交易，天德恩星官禄来。\n白虎武名主口舌，功名定是玉堂栽。\n天牢奴仆同六畜，玄武阴宫妻妾陪。\n司命子孙为福德，勾陈疾病不须猜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0013",
+      "sha256": "7305ff4eba99732253cb44a639c0ba790fd275b36ae8d2c7561335fa7b7b5143"
+    },
+    {
+      "section": "卷一",
+      "text": "演数七要\n一曰数宫，二曰数主，三曰飞星，四曰入门，五曰直日星，六曰日干，七曰时支。\n凡看数，遁至本时之星即为数主。看他落在何宫，最为紧要。又看临到本宫之星善恶如何，门宫吉凶如何，其值日星符并日干、时支俱要细推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0014",
+      "sha256": "f8fcf3d871d97c490512478e509269c489b71b0345cd64ddfeb912841580b550"
+    },
+    {
+      "section": "卷一",
+      "text": "数主吉凶歌诀\n演数先将数主看，主居生地事无难。\n若居难地非容易，得遇和同更喜欢。\n假如数在乾宫，黑星为主，遁于离为生，遁于震巽为难，遁于艮坤为和。数宫虽好，数主受难则事难成，若数宫虽凶，数主居于吉地，虽凶无害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0015",
+      "sha256": "04dcb0df64ac041851a1317b679722e7f1faf028ceac609e99ce8d9697346886"
+    },
+    {
+      "section": "卷一",
+      "text": "日奇门\n甲子乙丑丙寅一宫起休 丁卯戊辰己巳二宫起休 庚午辛未壬申三宫起休 癸酉甲戌乙亥四宫起休\n丙子丁丑戊寅六宫起休 己卯庚辰辛巳七宫起休 壬午癸未甲申八宫起休 乙酉丙戌丁亥九宫起休\n戊子己丑庚寅又一宫 辛卯壬辰癸巳又二宫 甲午乙未丙申三宫 丁酉戊戌己亥四宫\n庚子辛丑壬寅六宫 癸卯甲辰乙巳七宫 丙午丁未戊申八宫 己酉庚戌辛亥九宫\n壬子癸丑甲寅还一宫起休乙卯丙辰丁巳还二宫 戊午己未庚申还三宫 辛酉壬戌癸亥仍还四宫\n其法亦以本节三元定局作地盘，再以本甲旬头加本日干上论数，视三奇方。本甲旬头即值符也，值符之上星加本日干穿宫数去，阴遁奇直皆逆，星门皆顺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0016",
+      "sha256": "8b32c2d70fcf6fab7f49f73580db682bdbc7149623f920c43f4ec57cec28c885"
+    },
+    {
+      "section": "卷一",
+      "text": "截路空亡：此时忌出行\n甲己申酉空，乙庚午未中。\n丙辛辰巳上，丁壬寅卯同。\n惟有戊癸日，子丑永无踪。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0017",
+      "sha256": "97efcde0caa6168333a83411da1db030b555e6a285e17d18ed8c093134a36442"
+    },
+    {
+      "section": "卷一",
+      "text": "八卦源流\n奇门一宫乃坤，老阴之位。阴气至此而极，阳气至此而生。卦起于子，为阴阳来复之地，天一生水之宫。其卦为坎，其事为陷，占事如在半途。合洛书之一数，故坎一。\n二宫乃巽，阴气自下而生，阳极而阴渐长也。卦起于申，为万物致养之时，炎凉相接之位。其象至柔，其卦为坤，占人凡事宜顺。取河图之一数加一倍而补西南，合洛书之二数，故坤二。\n三宫乃离，而阳二间一阴，阴阳乃相半也。卦起于卯，为天地鼓动之时，万物发明之会，震雷阴中。其卦为震，占人有谋动之功。天三居东，合洛书之三数，故震三。\n四宫乃兑，阳气盛长于内，阴气退消于外。卦起于巳，万物洁齐。已立者生荣，未萌者不长。其象为八，其卦为巽，占事先达后塞。折河图之天七，除四十五而补东南，合洛书之四数，故巽四。\n五宫位中，寄生西南，阴寄东北，为阴阳休息之地，天地归宿之方。占事不能伸理，故曰中五。\n六宫乃艮，阴气盛长于内，阳气渐退于外，阴多而阳少也。卦起于亥，为天气凛冽之时，万物惕息之会。其象为战，其卦为乾，占人凡事当慎。取河图北方之成数，而补西北，合洛书之六数，故曰乾六。\n七宫乃坎，二阴而间一阳，阴阳相半。卦起于酉，为月入之门，万物至此而锐，赏罚至此而断。其象为泽，其卦为兑，占事主口舌、官讼、阴谋外泄。合洛书之七数，故兑七。\n八宫乃震，阳气自下生，阴极而阳长。卦起于寅，地气至此而尽，人事至此而兴，为万物成始成终之会。其象为止，其卦为艮，占人进退不离其居。以河图东方之数而补东北，用四倍八，合洛书八数，故艮八。\n九宫乃乾，老阳之位，阳气至此而极，阴气至此而生。卦起于午，为地二生火之宫，万物相见之时。其卦为离，其义为丽，占事有不正之义。取天一地二之数，三三而得九，合洛书之九数，故离九。",
+      "layer": "historical_work_transcription",
+      "passage_id": "yuanling:c001:p0018",
+      "sha256": "11cbcc30b677c5acc24003c99178f93a1acabd294ebf893b7006d5df4639f50c"
+    }
+  ]
+}

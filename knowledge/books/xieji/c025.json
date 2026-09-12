@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c025",
+  "title": "卷25",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B725&oldid=627147",
+  "revision": "627147",
+  "source_timestamp": "2016-10-14T03:23:47Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c025.wiki",
+  "raw_sha256": "e35d18f7039d29a120d00f62e1172bd5413ceba2be53ea4e8210502a07911e9d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷25",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c025:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十五",
+      "text": "月表六",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c025:p0002",
+      "sha256": "9303cd8f579184d89ec6825905619cb364e4457575405c570a8a0f34a9a9bc52"
+    },
+    {
+      "section": "六月",
+      "text": "小暑六月節天道東行宜向東行宜修造東方\n天徳在甲天徳合在巳月徳在甲月徳合在巳月空在庚宜修造取土\n月建在未月破在丑月厭在巳月刑在丑月害在子劫煞在申災煞在酉月煞在戌忌修造取土\n初十日長星　二十日短星　小暑後二十四日徃亡土王用事後忌修造動土巳午日添母倉\n大暑六月中日躔在午宫為六月將宜用癸乙丁辛時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c025:p0003",
+      "sha256": "427cc32d1e7a74a6b6949a29db5ff90d7cb548df3c5248c4e8b4f8e57fe38144"
+    },
+    {
+      "section": "癸亥大海水專定日",
+      "text": "右六十干支從建未者始小暑終大暑其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c025:p0004",
+      "sha256": "8575cdd17b664c6a4f4d0b6b448aa5e83551a777adb9707f3a5ba88837ab2b39"
+    }
+  ]
+}

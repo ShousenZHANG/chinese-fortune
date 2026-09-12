@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c021",
+  "title": "卷21",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B721&oldid=787363",
+  "revision": "787363",
+  "source_timestamp": "2016-10-27T11:57:56Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c021.wiki",
+  "raw_sha256": "1aefbe39b660d1de0f0fe0b26d030456b6be8117e54aacc92bc4da610bd0b16d",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷21",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c021:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十一",
+      "text": "月表二",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c021:p0002",
+      "sha256": "01a232353ba428f615999e376d41b83959361df101f1015ee0ec0267cfa1b7dd"
+    },
+    {
+      "section": "二月",
+      "text": "驚蟄二月節天道西南行宜向西南行宜修造西南維天徳在坤月徳在甲月徳合在己月空在庚宜修造取土\n月建在夘月破在酉月厭在酉月刑在子月害在辰劫煞在申災煞在酉月煞在戌忌修造取土\n初四日長星　十九日短星\n驚蟄後十四日往亡　春分前一日四離\n春分二月中日躔在戌宫為二月將宜用艮巽坤乾時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c021:p0003",
+      "sha256": "99aebead6d2ee911a2eb2139f6d79ec332a8e41852fd9af06dd4132c8a5fe7b0"
+    },
+    {
+      "section": "癸亥大海水専成日",
+      "text": "右六十干支從建夘者始驚蟄終春分其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c021:p0004",
+      "sha256": "6db35ac5d01d560d5a917bb946ed093132edb783493f2d81f561f64de4b1f1a1"
+    }
+  ]
+}

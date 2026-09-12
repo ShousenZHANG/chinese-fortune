@@ -1,0 +1,88 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c018",
+  "title": "日辰章第十七",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F17&oldid=2100338",
+  "revision": "2100338",
+  "source_timestamp": "2022-01-20T03:40:05Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c018.wiki",
+  "raw_sha256": "e70bfbed847449facf08d1801c5cfe37c3655761ad635b484d7c24e5a4361623",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "日辰章第十七",
+      "text": "子水，丑土，寅木，卯木，辰土，巳火，午火，未土，申金，酉金，戌土，亥水。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0001",
+      "sha256": "35de3541a201341b21b5a1deeae4a11619de991f59340e6cec79356cd0ed74a9"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "日辰爲六爻之主宰，司四時之旺相。前章言：月令司三旬之令，令於春則生，令於秋則殺，春夏秋冬各令其時，獨日辰不然，四時俱旺，操生殺大權與月建同功。沖旺相之靜爻，旣爲暗動，沖衰弱之靜爻爲日破，爻之旺而靜者沖之則爲暗動，愈得其力，爻之衰而靜者，沖之則爲日破，愈加無用。沖空卽起，沖合卽開，爻之衰弱，能生扶合拱，如時雨以滋苗，爻之彊旺，能克害刑沖，似秋霜殺艸。爻遇旬空，日辰沖起而有用，謂之沖空則實。逢合住遇日建以沖開，謂之沖合則散。他書有云，爻逢月建日沖而不散，是明知當令，不畏日沖，及至講論禍福不拘旺相休囚，一槪俱以散論，最重要者散，獨予屢試不驗，偏不應乎散，「神兆機於動，動則必驗」，不見其散也，旺相者沖之愈彊，休囚無气者，間乎有散，亦百中僅一二也。逢月破而不破，遇沖克而無傷，似與月建同權，中天日麗，旺相之機。生多克少錦上添花，生少克多，寡不敵眾。旣如酉月卯日占卦，爻臨卯木謂之逢破不破，假使爻中有動出申酉之金或卯爻動化申酉，此謂之寡不敵眾，破亦爲破，傷亦爲傷。餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0002",
+      "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "如申月戊午日占病得天山遁變天風姤",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0003",
+      "sha256": "c05ae3a8e9d4d2912be7bda9e8dec53861033f6d402a94d1decd00f0cbe83815"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "父母戌土⚊　　父母戌土⚊\n兄弟申金⚊應　兄弟申金⚊\n官鬼午火⚊　　官鬼午火⚊\n兄弟申金⚊　　兄弟酉金⚊\n官鬼午火ㄨ世　子孫亥水⚊\n父母辰土⚋　　父母丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0004",
+      "sha256": "c2095274cf08fee181c4e3cc0b7e7192f8f8cb071a5deedce006a1256bac1957"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "世爻午火臨日辰，本主旺相，不宜申金月建生亥水回頭克世，卒於亥月。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0005",
+      "sha256": "092ad2f9e67a6c76cdaabc17020031516796cbd89604c11bfa056562490ae6b4"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "又如：巳月亥日占僕何日回得夬卦變履卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0006",
+      "sha256": "04014e702d84e76c54610ceb73f1d7ecf655ae86180691e3717123d4f061e22f"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "兄弟未土ㄨ　　兄弟戌土⚊\n子孫酉金⚊世　子孫申金⚊\n妻財亥水⚊　　父母午火⚊\n兄弟辰土○　　兄弟丑土⚋\n官鬼寅木⚊應　官鬼卯木⚊\n妻財子水⚊　　父母巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0007",
+      "sha256": "9ac8920176fe812d7c71aa8b52211ce3e7ab96eb36bfadaf764f0e9c864ba52c"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "亥水財爻爲用神，亥爲月破，臨日建而不破，不宜重疊四重土動以傷之，諺云：雙拳不敵四手，不獨難望歸期，預防不測，果於午月卯日得信中途已遭害矣。此章當與月建章參看。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0008",
+      "sha256": "e8e8fb3c6135b9aeeea89d573c40601e3b01e8cff480f727e39328fd7bf3310b"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "總注：旺之者，爻之帝旺於日月也；比之者，爻與日月同也；扶之、拱之者爻與日、月同類也；墓之、絕之者爻墓絕於日月也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0009",
+      "sha256": "f8eea1e099bb28cb2f273c263f96968d52942844a913be057ef80d5bde49ccae"
+    },
+    {
+      "section": "日辰章第十七",
+      "text": "李我平曰：易以爻臨日辰莫能散之、莫能空之，謂逢空而不空也，然動逢日沖謂散，旣作日辰又有日辰來沖乎？旬空者乃旬內之所無也，旣是旬空其又有臨日辰之事？故知讀書之不足如此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c018:p0010",
+      "sha256": "9c481cf69a17b98612ecae1a45697d54f2d05478593eb8bd668d0bbc986742ba"
+    }
+  ]
+}

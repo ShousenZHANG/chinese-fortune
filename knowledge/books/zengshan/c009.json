@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c009",
+  "title": "用神元神忌神仇神章第九",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F9&oldid=2100299",
+  "revision": "2100299",
+  "source_timestamp": "2022-01-19T23:31:54Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c009.wiki",
+  "raw_sha256": "e84db11ae9a316ba00cb301e4e25c71496b32d9fcc495f16e09a575eb2159412",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "用神元神忌神仇神章第九",
+      "text": "用神，卽前各類之用神也。元神，生用神之神卽爲元神。忌神克用神之爻也。仇神者克元神而生忌神也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c009:p0001",
+      "sha256": "99d4a2405548d1f3fbbf0027f204455e4cba317f2037c57ac08a1c53316ef9b5"
+    },
+    {
+      "section": "用神元神忌神仇神章第九",
+      "text": "例：辰月戊申日占父近病，得乾爲天變風天小畜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c009:p0002",
+      "sha256": "2e9e2cfd0dd3e38727c6e829aa89406ade449766009e61c0b4b33b7826cde414"
+    },
+    {
+      "section": "用神元神忌神仇神章第九",
+      "text": "父母戌土⚊世　妻財卯木⚊\n兄弟申金⚊　　官鬼巳火⚊\n官鬼午火○　　父母未土⚋\n父母辰土⚊應　父母辰土⚊\n妻財寅木⚊　　妻財寅木⚊\n子孫子水⚊　　子孫子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c009:p0003",
+      "sha256": "e2eae592ac38c18593792ec57e97ecfd8368b2b569d9579e807b33d6ffc86e6b"
+    },
+    {
+      "section": "用神元神忌神仇神章第九",
+      "text": "一人持此卦而問予曰：近病逢沖卽愈。此卦乃系六沖，但父病之甚，再爾看愈於何日？予說此卦辰土⚊未土⚊戌土⚊三重父母爻，當擇其旺者而用之，今辰土父母臨月建，卽用辰土爲用神，目下病重者，乃因申日沖寅木而暗動，木動以克辰土。彼問：卦中午火發動，寅木𨿽動，不克辰土。予曰：午火𨿽動化出未土，午與未合，午未相合不生辰土，所以此辰土單受寅木之克，不得午火之生，故此病體沈重，須待丑日沖去未土而午火無合，其土災退。果於丑日起牀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c009:p0004",
+      "sha256": "387cbcae9a866b78a95d41c85de556ee70b558b7a4932d97c58078f71e354221"
+    }
+  ]
+}

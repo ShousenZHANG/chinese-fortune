@@ -1,0 +1,4568 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c034",
+  "title": "卷之四",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93&oldid=2572918",
+  "revision": "2572918",
+  "source_timestamp": "2025-06-25T11:25:59Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c034.wiki",
+  "raw_sha256": "897f963b938ec4582bc892465301b831a6439216f317841f44b888117704ca07",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "section_of_frozen_revision_excluding_explicit_modern_notes",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷之四",
+      "text": "野鶴老人著﹐楚江李坦我鑑定",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0001",
+      "sha256": "0c9ad1746da1e84f4723c8741028f64f56c13231f106bb5324f35e1ad0624c15"
+    },
+    {
+      "section": "卷之四",
+      "text": "湖南李文輝覺子增刪",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0002",
+      "sha256": "79af44c9b304f76a660b43bce2da45350fa4d52c72f04b55d59752fc2b846e94"
+    },
+    {
+      "section": "卷之四",
+      "text": "婿陣之吉茂生男茹芝山秀",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0003",
+      "sha256": "c5c219abcd47bfefb627eb2d652c25552a1f3cbd550ac8cfc4ca272e48aa5ab7"
+    },
+    {
+      "section": "卷之四",
+      "text": "謁貴求財章第六十九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0004",
+      "sha256": "984377586c0489479bf66636fd12a1c4456db03a5c39855df4359f08662ecf30"
+    },
+    {
+      "section": "卷之四",
+      "text": "世克官﹐官生世﹐須宜謁見﹔財臨破﹐鬼克世﹐枉費奔馳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0005",
+      "sha256": "717740485fa6080f9c26db17804c6a19cd4d7c55a46635b12b3d9c0dbe1d5d57"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕見貴有兩間也﹐爲名者用官﹐爲利者用財﹐皆宜持世及生合世爻爲吉﹐如逢空破﹐墓絕及動而變凶者﹐徒勞奔馳之力耳。倘若世爻化鬼化克及隨墓助傷者﹐更不宜行﹐若非到彼之凶﹐定在中途遇禍﹐凡謁貴者同斷。世動遇空﹐身興遇破﹐世動化空破者﹐勿曰不吉﹐乃應到彼之月日也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0006",
+      "sha256": "1d3050c0979743e3c29945641ee4bd703f6a25bce329d423178e2791371b1c59"
+    },
+    {
+      "section": "卷之四",
+      "text": "如申月丁卯日占出行謁見貴人得同人",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0007",
+      "sha256": "7e32f785a87ede7f10037701b0de5b0c38ba4cdc7703fa6fd38e3f92a7d39b6b"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫戌土⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0008",
+      "sha256": "5155113c3fbe26ffddbb576a261efc22ce3eb23a28855a91e82d3361fb10fa26"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0009",
+      "sha256": "dde24e69652f65ecdbca7a01c17c81d967b286d9c7e299dcb5c2d225d6c720ae"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0010",
+      "sha256": "a211b7b6e9e19bc07cf11fc516fdb690680478da2370ff2f133c61649226cc5e"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼亥水⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0011",
+      "sha256": "fe12a85f7944cb4de7117c811746d9af15fa1640dd94e2328f085b30d5e0bc9c"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0012",
+      "sha256": "428111d12a341d3ae014aebfb0b34c75474c375ea3849b76dd8e67f77389b818"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0013",
+      "sha256": "f0b3b697302c4432596e616ea04ef7e554d2a538678056861c377987e5ea0ee1"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕官星持世而空﹐出亥日得見﹐官府財利如心﹐果於出空之日見官﹐財利得意﹐月建財爻生世之故耳﹐官世相合﹐財動相生﹐財持世﹐官無缺陷﹐再得日月照臨﹐彼此緣投有幸。日月照臨者﹐日月生世生財﹐或世爻財爻而臨日月是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0014",
+      "sha256": "b887b07a57ee1b36cc1083ebd98f577105381ec56613c235ce68adfeaf280fbd"
+    },
+    {
+      "section": "卷之四",
+      "text": "爲名宜父動﹐因利忌兄興。凡與謁貴旣得世與官星相合相生﹐必然得見﹐若爲名利﹐須宜另占﹐不可此卦而斷之﹐爲名者宜父官兩旺﹐爲利者宜財福兩旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0015",
+      "sha256": "dfb2f571c170cbacb154583f9361bd962eb26384ca8915cf11a883a5defda28a"
+    },
+    {
+      "section": "卷之四",
+      "text": "六合六沖須看用﹐反吟化退枉奔馳。爻逢六合亦要用神旺相﹐世與財官相合乃爲吉兆﹐卦逢六沖必須用神受克失陷始作凶徵。卦得反吟及世動化退多見難於行動﹐勉彊而去﹐空返而歸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0016",
+      "sha256": "23c6af87afd458c8aad9841628b9e1e5a04390f3604599055f6821b3cba03ce4"
+    },
+    {
+      "section": "卷之四",
+      "text": "貴人謁貴宜世應以相生﹐平人見貴宜官貴而相合。貴人謁貴人﹐宜於世應相合相生﹐平人見貴人﹐宜官貴相合相生及官星持世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0017",
+      "sha256": "843702ebf18f54b35c548830f99386fdb70fb4f5ad2659d1440b0c20d7387ea1"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕有心而問見貴求名者﹐官星持世生世必得官。有心問謁貴者﹐官星生世合世而得見﹐切勿以此得見貴人之官星換作成名而斷也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0018",
+      "sha256": "dda36d05e67f449f977565cf436854112ec8063fb583e08b68e13c410b4c21b2"
+    },
+    {
+      "section": "卷之四",
+      "text": "貴人謁貴﹐世應若相沖克﹐財伏而空﹐去之何益﹖",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0019",
+      "sha256": "2c55d7b8ac6ab62c118c2917959e9ca8ba431267b56ed17cb51e60c2c5b2872f"
+    },
+    {
+      "section": "卷之四",
+      "text": "平人見貴﹐官克世世變鬼變克更凶。平人見貴﹐官克世變鬼變克勿去﹐去則須防不測﹐財官生世合世爲吉。凡出行求財謁貴出行章參看。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0020",
+      "sha256": "096df7090fcd5bcf8580a038e0442ab9b67f9ddc531505cab63ed1cfea40d33c"
+    },
+    {
+      "section": "卷之四",
+      "text": "爲貴人奔走效力財章第七十",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0021",
+      "sha256": "907eb10b3de78fea13d988943cd538121eb3b4791d59180388babe6357efb27b"
+    },
+    {
+      "section": "卷之四",
+      "text": "最重財官兩旺﹐不宜世應皆空。世遇財應臨福﹐我益他損﹔應臨官世逢破﹐他益我損。兄爻持世﹐不如閒處安身﹔應克世爻﹐防慮他人反目。世遇財官臨應﹐無不遂也。世逢空破墓及動而變凶﹐皆非吉也。應克世兄克世﹐見災還淺。鬼克世世化鬼﹐得禍不輕。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0022",
+      "sha256": "69a258281bc9e686801478da30183260b018f75382f5835e69c9c6c1d434b5b6"
+    },
+    {
+      "section": "卷之四",
+      "text": "開行開店及各色鋪面章第七十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0023",
+      "sha256": "3708157d7985b58d30e376ca84b7baf6f3ec7116e34b56af0889b553faf3781d"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爲己﹐應爲人﹐大宜相合。財爲本﹐福爲基﹐最喜同興。古法應爲夥計﹐又爲下顧之客。黃金策曰﹕開行定主有人投。覺子曰﹕須在來人之念﹔有心而問夥計﹐應爲夥計﹐若得世應相生相合﹐彼此同心。應生世﹐他益於我。世生應﹐我益於他。相克相沖而情有變﹐應爻克世﹐我被他瞞﹔世克應爻﹐他從我願﹔應臨元武兄爻﹐暗中盜騙﹔應臨官鬼克世﹐明降災非﹔世財應兄﹐受他之累﹔世財應子﹐得他之力。世應空合﹐彼此有虛詐之心也。來人之念重在買賣者﹐須以應爻爲下顧之客﹐應爻生合於世﹐生客來交成故舊﹔世應相沖相克﹐熟人終久變成仇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0024",
+      "sha256": "41c20d2975f8ac4139b29ac210180f003a8d73a37a52013855f222d9d547035d"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬼作災非須忌動﹐財爲活計畏刑沖。鬼動招非克世最忌﹐古云﹕鬼現爻中見非﹐日有鬼搖克世災禍連系﹐須看鬼值何神克世﹐須於家室章內詳之。財爲資本﹐忌衰墓空破及動而變凶﹐或日月刑沖克﹐更忌世與財空﹐俱開不成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0025",
+      "sha256": "5c8aed6f2637bbf25f246f738bbb83378d85d653c45cc6547836b4c3fbd0b8c1"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬼兄發動有制何妨﹐隨墓助傷多凶少吉。鬼動招非﹐若得子孫制鬼﹐或日月沖克鬼爻﹐謂之有制。覺子曰﹕凡遇兄鬼同動者﹐不可曰鬼動招非﹐以鬼能制兄爻﹐不劫財也。兄弟又爲陰隔破耗之小人﹐得此鬼動可以制服﹐獨不宜乃爲助鬼以傷身也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0026",
+      "sha256": "cccb70e7ec19ba17c9bd442dffb7a347988f63bd808b29f61aaf3bfc18e5fbdc"
+    },
+    {
+      "section": "卷之四",
+      "text": "卦得反吟多反復。卦得反吟﹐欲行不行﹐行而又止。才開而又剪﹐剪而又開﹐倘店開久矣﹐遇此一定更遷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0027",
+      "sha256": "4b95c2663938048cb88aefdec2e8d53b293aa3b17d8bd2781a6df4fd6e9340bb"
+    },
+    {
+      "section": "卷之四",
+      "text": "沖中變合再重興。爻逢六合及六沖卦變六合或世財爻子孫共成三合﹐定是前後重興﹐惟六合變沖則不宜也﹐眼前熱鬧﹐終久蕭條。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0028",
+      "sha256": "a5c538ad839f374bb72080737b79a260c3bf883a210155b14451bebd94d514d3"
+    },
+    {
+      "section": "卷之四",
+      "text": "合夥不嫌兄弟﹐蝕本內外無財。世應臨兄不吉﹐兄爻發動不吉﹐倘若世臨兄爻﹐日月作財星沖克世者﹐反爲吉也。內外無財伏而又空﹐必然之蝕本﹐屢驗。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0029",
+      "sha256": "7c1d5ac6bb9895290c4eb8b9e53b00e7caea46498292916eedb25d1ff7970324"
+    },
+    {
+      "section": "卷之四",
+      "text": "投行損益章第七十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0030",
+      "sha256": "b9607a12bc921ed3854e497e30444d7e78b04df25bbffb01ac950266499e2cbd"
+    },
+    {
+      "section": "卷之四",
+      "text": "官若興隆﹐行主可千金之托﹔應如空破﹐牙人無毫忽之能﹔官旺應旺﹐生合世爻﹐其人可托﹐如靜衰空破﹐卽是姦險小人。倘若交財﹐定遭欺騙。世被應傷﹐遭他陷害﹐財逢兄克﹐慮彼相瞞﹔應克世爻﹐帳目難淸﹐兄克財爻已入套矣。兄動貨難脫卸﹐子興物宜交共﹔兄雀並搖﹐難逃口舌﹐武鬼同發﹐須慮盜賊﹔",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0031",
+      "sha256": "0c63ba64f7dde1acffe2522d2cefdc078e273c7f30302e98853a47c8b5ad985b"
+    },
+    {
+      "section": "卷之四",
+      "text": "囤貨賣貨章第七十三",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0032",
+      "sha256": "6276815b0292a6b8acb1242b7f9814686028672fa736e6ff686d9c7fb4bf2a62"
+    },
+    {
+      "section": "卷之四",
+      "text": "財爻衰者須停脫﹐妻旺當時可脫之﹔積貨賣貨皆不宜財逢空破及動而變克﹔財衰宜囤﹐財旺宜脫﹔如春天占得財爻屬木﹐謂之旺﹐宜速發賣﹔若臨金水土者﹐宜堆積也。臨火爲旺﹐亦不宜堆﹔此論四時之衰旺也。覺子曰﹕衰𨿽可買﹐須查其根底﹐𨿽衰宜有根﹐將來再發﹐若無根底﹐終久難於出脫﹐不可不知。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0033",
+      "sha256": "6d66e88e427cac75715b3bb12242f2aef64296a4f15608175632dce614cf43f8"
+    },
+    {
+      "section": "卷之四",
+      "text": "如寅月己亥日占收貨得頤卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0034",
+      "sha256": "954519bad0828abbe6ae8c3ef70de6a3fb7e4b72767e26b623d999434af48ec5"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0035",
+      "sha256": "8a7f22806f99f9bfe14cc5a3b3dd3bcd6f5b3c12d7e6e3d30444de0a58e8f90e"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0036",
+      "sha256": "a73da7a68e17229a691def6363f8abbb99d31677034dc0bd2aff06e2c7c62c9b"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土⚋世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0037",
+      "sha256": "d0ec64ab15de41c0a1652c453f0c5ba37c1b85c1a164c61aeb9ce27fc220401b"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0038",
+      "sha256": "159ba0db781ae9530a5c67a637da22fa892c129c2f1972abd9accaf2f439566c"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0039",
+      "sha256": "b3260934c454a24e1fb1b285972718d1a5035902b8b1e1afd0e157afc7942f0d"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0040",
+      "sha256": "d6b53e5824b1e48f2f988f4c9eb9fc5a31855050393b00d262272d4a56d7cc11"
+    },
+    {
+      "section": "卷之四",
+      "text": "古以財爻衰者宜收貨﹐此卦辰戌之財衰而不遇生扶﹐謂之無根﹐將來終不得價﹐不可收買﹐但求問者不聽﹐後來存貨堆積四年﹐朽壞大半﹐大虧其本。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0041",
+      "sha256": "882ab6b6979329b694b094c74a7191cc91f772b10ba1798679273b29da73b06d"
+    },
+    {
+      "section": "卷之四",
+      "text": "貨有定時﹐須憑時令﹐物無定者﹐指利而占。定時者有貴賤之時也﹐比之麻葛得價於夏令﹐棉花得價於冬天﹐又如木料綢緞無定時也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0042",
+      "sha256": "ea44d2b6f8d1861b75c525f6149d96a1412cc2e6d0c3536283827955f46b3e75"
+    },
+    {
+      "section": "卷之四",
+      "text": "財化進神不可收積﹐化退者﹐其價將落﹐有貨速宜出脫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0043",
+      "sha256": "821dae6a43e7a86ce48164960f0897db4a4e1d146ad03ffbe9b6e4ee0704252d"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄爻持世﹐破敗之端﹔覺子曰﹕算甚命﹐問甚卜﹐虧人是禍﹐財將義取者﹐神告顯然。財之不義者﹐神不告矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0044",
+      "sha256": "1a77895dd998ef0cf9ded9b7070e6611c67cb0baeab28c3de5dbc9918072298d"
+    },
+    {
+      "section": "卷之四",
+      "text": "財值旺衰墓絕﹐自有得令之秋﹐妻逢沖破伏空﹐豈無乘除之日。財爻太旺旺者得利於墓庫之月﹐休囚者出脫於生旺之時﹐入墓必待沖開﹐逢絕當逢生旺﹐月破者塡實之﹐被克者沖去克神之秋﹐伏藏者得價於出現之時﹐旬空者沖空實空之月﹐如逢合住亦待沖開。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0045",
+      "sha256": "e5d13533b331e3d084a6d2e6cab664c6760b6d1723a14ca2a8b6e1254ebfe410"
+    },
+    {
+      "section": "卷之四",
+      "text": "如子月己丑日占何時得價得歸妹之兌",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0046",
+      "sha256": "52b38bb72166391c7e290edde5377b5745b5a5622849c3c596d9c9063c2fc0a6"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母戌土⚋應　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0047",
+      "sha256": "dc479a8552495ecbb11bceda8953a4e7c7530941db44e937472673d5df8a9d28"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金ㄨ　　兄弟酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0048",
+      "sha256": "6caa5124c0fe8154cc964ef3c7d84c0becec661bf7577f640e6fe9621cb6e6a0"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚊　　子孫亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0049",
+      "sha256": "2bb4d073c2e28d2336e9d65c335bcc2997cb11f3a863f96c53cf1bdb1ee7bdb2"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母丑土⚋世　父母丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0050",
+      "sha256": "a4b53898c29a45c55d8311d4c4e6cfe1365ba77a76faa090471ed7a5dcdfce53"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財卯木⚊　　妻財卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0051",
+      "sha256": "e72c8804bca226f90a78e159a4a90cea1905f287cb1ce928b236a9171b7b8d4d"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火⚊　　官鬼巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0052",
+      "sha256": "0c1781ba304ead42ff975eace6ff217ec5be1fde79e61b1edc2814e42f482485"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕卯木財爻子月生之﹐財有根蒂﹐目下不得價者﹐被申金動而克制﹐待寅月沖去申金﹐其價必漲﹐果於正月勃然大長﹐此乃財爻被克待沖去克神之月。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0053",
+      "sha256": "d0d0493bb342ff8b3f3a2c3fa10a811945038e4e01b9eef86c26c46a94eda4ed"
+    },
+    {
+      "section": "卷之四",
+      "text": "財逢合而當令。遇合者有應動而逢合之月而得價也。亦有財爻衰靜﹐占時得遇日月生合者﹐其價目下正及時也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0054",
+      "sha256": "a54eea7221885ae4d10efa4315216a220679c945068b349b80d50545aea953c6"
+    },
+    {
+      "section": "卷之四",
+      "text": "如寅月己酉日占脫貨於何時得賁卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0055",
+      "sha256": "9fea86e0753b040ceb4b8881f26bd81351aed19b73c8b4478c41402e0cd4bf96"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0056",
+      "sha256": "9e2427913f34fcbf81bd6958392367cb43137e4aec0c7bfece5c2edbb4c50d89"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0057",
+      "sha256": "2811e6b1c152aab71763b2fd4a8b45b7617752c80654cc15cd8b618c2d3cca43"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0058",
+      "sha256": "8fa0701d3b0270349e4956062ec4c8c46bd7ba86d1415e02007267560f9406e9"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0059",
+      "sha256": "1c0da6f47d395ff76e5a046db95e151587cd2b5a9a8824de265b103ff73e04e4"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0060",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0061",
+      "sha256": "b6b4cef4d69051801414745c9c246499b69db1f67d751331f20d549c55f033eb"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕亥水財爻﹐酉日生之﹐寅月合之﹐目下正及時也。但因世爻暗動﹐身動方可出脫。彼曰﹕我聞某處得價﹐欲移貨去賣﹐不知可否﹖予曰﹕卦已明現﹐速宜行之﹐果去﹐不數日﹐得價出脫。此乃爻逢六合﹐財逢月合﹐及時脫貨也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0062",
+      "sha256": "102619376e632d07799abd548ee0ce13ec89dab2bf5d7fbc5bfa31d58ccb6b98"
+    },
+    {
+      "section": "卷之四",
+      "text": "財逢沖而當起﹔財旺而靜或旺而空得今日之日神沖者﹐其價漸漸漲矣﹔倘若靜而休囚﹐日沖爲破﹐勿以此斷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0063",
+      "sha256": "0320077e8470be0ba9efc4b75f5c34d943a459ebfb8cf352d04b967aa2f76bc2"
+    },
+    {
+      "section": "卷之四",
+      "text": "賣貨宜守宜動章第七十四",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0064",
+      "sha256": "7594c16360065c0e029b243ecff654feb298dbe396f52bb1632171f0a9c1b7a5"
+    },
+    {
+      "section": "卷之四",
+      "text": "內財衰而外財旺﹐往他鄕。外卦財旺生合世爻者﹐持世者﹐宜往他鄕﹔倘若財不生合世爻及世動化凶者﹐他鄕花如錦﹐我去不逢春。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0065",
+      "sha256": "9e939171e8aae9ae819ace73376fbdb747f8b448f81c2cb9ba366cd5924da371"
+    },
+    {
+      "section": "卷之四",
+      "text": "應財外而世財內﹐須查動靜﹔應爻以外財爻持世者﹐最好收財﹐必須待應爻發動而與世爻相生相合﹐不然的話﹐應財再旺﹐我也收不到好處。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0066",
+      "sha256": "5a5967b61b05bf929548e4d087d01a9ab934f8f8c5d772eaf83cca2d2c9929cc"
+    },
+    {
+      "section": "卷之四",
+      "text": "六沖須宜別圖﹐六合還宜坐守。卦得六沖﹐𨿽宜改圖﹐予屢試之財旺者何須更改﹐財衰者改亦無益。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0067",
+      "sha256": "b857fd2a39e363d09b1a6dd81f2a844663211b6e999ac845456c251d4a53c80e"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹐凡得此象﹐須令本人再占﹐占問更改何如﹖卦得財世兩旺﹐許之改圖﹐再逢衰者還須耐守。卦得六合﹐亦看財爻衰旺﹐財持世而動者﹐不可坐守﹐衰而靜者﹐守待旺時可也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0068",
+      "sha256": "fe3b0975971c490ef850190d12147801b3636fedd892a5969d0e4feb10838301"
+    },
+    {
+      "section": "卷之四",
+      "text": "財衰變旺﹐先屈後生﹐財旺變衰﹐先金後土。謂財爻動而變也﹐財衰變旺﹐目下𨿽賤﹐將來必長。財旺而變衰絕﹐如若賣貨宜於急賣﹐倘若收貨﹐切不可收。買貨與賣貨相反﹐財爻旺而可賣﹐衰者宜買﹐內卦財衰﹐宜於外賣﹐世爻財旺﹐近地相宜﹐財化進神﹐宜往外方發賣﹐世爻化退﹐宜回近地出脫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0069",
+      "sha256": "44d4043541e2ad7029db9f5f28ff09c9dbc267fb405fa0c785fd212f3843abe7"
+    },
+    {
+      "section": "卷之四",
+      "text": "往何方買賣章第七十五",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0070",
+      "sha256": "d828a1a5c90a9388501077839e5634cd1723d12a9be60292d24c5ddd21a6e4a4"
+    },
+    {
+      "section": "卷之四",
+      "text": "屢次試驗都須指明方向才能占卜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0071",
+      "sha256": "0da0c023885f7bd25891c8bc80076dc3d03c6b20ac2938ce908e421158f20add"
+    },
+    {
+      "section": "卷之四",
+      "text": "如午月戊子日占往楚買豆得臨卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0072",
+      "sha256": "9209bd933c0efc46301140416116a2434ce818b6b1899e0f4e11676e5ae00884"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0073",
+      "sha256": "40a9a6deb9c6b8ff585d9f44c1a994e9dd818149955b522d32831beace684d01"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0074",
+      "sha256": "b72df58b85ce6ca0d0b14c85e5bdd86818a2f934e355eb259e3b3d98ec8b3053"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0075",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0076",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0077",
+      "sha256": "b6b4cef4d69051801414745c9c246499b69db1f67d751331f20d549c55f033eb"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0078",
+      "sha256": "c933b3c35dc7e7f29caa5fd95f662af981e097db5a662d2d6892c59d79f522f0"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷﹕亥水財爻休囚於外﹐所以楚地豆子必賤﹐子水日建而生世爻﹐必能得厚利。但閒間爻兄弟月生日合﹐耗費的錢一定多。後果中間人作獘﹐告到官府﹐誤了一个月。幸好到地頭上價格上漲﹐果然得了厚利。此乃指其地而占者無不驗也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0079",
+      "sha256": "29bd7aa67c76b45394b7bb0c37da155843eed24c5b3c7b26758fcf024b09e584"
+    },
+    {
+      "section": "卷之四",
+      "text": "買何貨爲吉章第七十六",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0080",
+      "sha256": "b3a4e5572e6970fdc4cdc5ef6acd7eb691d4a94d4b8e17af77889ddf119a61a4"
+    },
+    {
+      "section": "卷之四",
+      "text": "古以金財而像珠寶玉石﹐水財以類魚鹽﹐火財陶冶東品﹐五穀爲土財﹐靑龍水利又兼喜慶之用﹐白虎金財﹐喪儀屠宰之物﹐元武水利﹐朱雀火宜﹐蛇利於出入﹐勾陳利於農工。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0081",
+      "sha256": "71d3899dc8d3ee6f28d467a1e2305e05595b6f5d89eb0c7c51074b8f2d06c512"
+    },
+    {
+      "section": "卷之四",
+      "text": "如未月戊申日占往粵東探親可帶何貨歸來得利得旅卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0082",
+      "sha256": "6e80886dff34d4d906ede1a21759f6c3c804976b9408f1768456d7daa72e71f9"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0083",
+      "sha256": "361a181d5813941c8ce7214e1827d10a20274ecd650fb85cb65424214607b75b"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0084",
+      "sha256": "b8a5f907a1aae12b748e2a9f33ae5eafdd72d702c826b2d2edc564ab4ca087dd"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財酉金⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0085",
+      "sha256": "81749c96f12040941cd89b0a7c2be61dc52a78f1ea6f2acc30f5bf950290cb45"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0086",
+      "sha256": "dde24e69652f65ecdbca7a01c17c81d967b286d9c7e299dcb5c2d225d6c720ae"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟午火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0087",
+      "sha256": "17c124f6f40f6679cc7669da9fbf706a32ff5e8602397c997ac5b08c8e849c5d"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫辰土⚋世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0088",
+      "sha256": "6a05dedad6958c46c506192e0b4fbb36cac08cee6c1ab5ba9edc04c87a31a454"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕爻逢六合﹐世應相生﹐此行遂意﹐如問置實何貨﹐予無此法﹐不敢相誤﹐但喜旣得吉卦﹐任爾冬天買扇﹐夏天買氈亦得厚利。後此人買攢香翠毛而歸﹐俱得大利。若執古法斷者﹐此卦酉金爲財可買珠寶玉石耶﹖財臨元武﹐可買水利魚鹽耶﹖",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0089",
+      "sha256": "3e0c34df5f8488aff103419dbbbb14307d24b3c4ca66875caaba9b34cc176caa"
+    },
+    {
+      "section": "卷之四",
+      "text": "借貸章第七十七",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0090",
+      "sha256": "f3ed76681da92831f0e50ec13f7ed3bc29f1cd409c0aed419ec715e34357bb1a"
+    },
+    {
+      "section": "卷之四",
+      "text": "世逢兄﹐何須開口﹐應空破﹐難遂我心﹐財若空破﹐休指望。子興財發可相求﹐世應兩爻皆不宜月破旬空﹐兄弟一爻切不可臨身及動。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0091",
+      "sha256": "39d26275512303794531172bd902d0b94d3cab048377afb5c3110dbd5efe06b6"
+    },
+    {
+      "section": "卷之四",
+      "text": "如未月丁卯日占借貸得兌之震",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0092",
+      "sha256": "b8888d3677dfbdf47b2e174a21922c69ba3ce51f9514a98b1a5470a0284f34a9"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土⚋世　父母戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0093",
+      "sha256": "ce0227bb2cd37dba733186c0be184754d90c49f7419d7147cebdc0b633d946c2"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟酉金○　　兄弟申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0094",
+      "sha256": "6919bba5d92c810dba19d54815825449213904785fa732fd20061eec688f1b3a"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫亥水⚊　　官鬼午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0095",
+      "sha256": "307852878f1e7ffc098ec9cb34da9d471acf589f1cf4e04fd3db7553174c4e51"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母丑土⚋應　父母辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0096",
+      "sha256": "21b188f05fce6a638f40ef1acf2544238677452830f22dd4b7f85ce94072cb6c"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財卯木○　　妻財寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0097",
+      "sha256": "b74b6c08393c983ddaceb99a5eac12a477f49353cacd133062a24fd92f4b9528"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火⚊　　子孫子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0098",
+      "sha256": "b2e21424cfa91c75ff846a27624c3216ea31922f1de6c119218b8eb28cf0772c"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕兌卦屬金變震卦屬木﹐金克木爲財﹐卯木財爻化退神酉金兄動亦化退神﹐幸得財臨日辰旺而不退﹐明日辰日合住酉爻必得﹐果於辰日。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0099",
+      "sha256": "02bbaaaadc13045ada129f34b797d863b25a9a0cdad95f8f06722a5dcc3bc1b7"
+    },
+    {
+      "section": "卷之四",
+      "text": "放債索債章第七十八",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0100",
+      "sha256": "4b11a6e62d8f83df7e02449df15fd9c69e14cea64c14a2b227dda56657024d08"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄臨世﹐放則無歸。兄弟爻持世﹐索財不予。應鬼克身﹐防負義。應財生世﹐定懷忠。古以世應同人﹐放債必然連本折﹐謂不獨世臨兄弟忌之﹐應臨兄者亦忌。官鬼克身﹐美意終成惡意。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0101",
+      "sha256": "7692299d01e7d5cf6bcd0d48a3ca94435cf45a2d7776cf9e277e03ebdc11c661"
+    },
+    {
+      "section": "卷之四",
+      "text": "買賣六畜章第七十九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0102",
+      "sha256": "4e781392c76af74534c1103bc84662c164dda55399a82f5d756d418cfe170ff9"
+    },
+    {
+      "section": "卷之四",
+      "text": "山野獸禽﹐須尋福德。六畜牛犬﹐亦看子孫。不拘家禽野獸皆以子孫爲用神﹐末看財爻持世﹐子動生之﹐或日月動爻生財或財動化子孫﹐乃吉象也。不拘買賣畜禽﹐多多益善﹐大有利息。子孫持世﹐財爻合世﹐亦有利益。獨防鬼變子孫﹐子孫變鬼﹐父化子﹐子化父﹐父兄持世﹐財臨空破﹐不可行之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0103",
+      "sha256": "cefb1a28db53bdff566f45aad92aeecf7de342311dfd6021f6a801d7c78e0f52"
+    },
+    {
+      "section": "卷之四",
+      "text": "如丑月丁卯日買馬往南發賣得鼎之大有",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0104",
+      "sha256": "a04bd15a4ee79e49f1c148d9f029b1d5af3fa844141b69fe77c1d68f65799402"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟巳火⚊　　兄弟巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0105",
+      "sha256": "2ff0cc1a788c890379f9701d76e78569ef42d991cfaafcd81b520772a7f1928b"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫未土⚋應　子孫未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0106",
+      "sha256": "b772f00eefd90d0820db0e90b4ffca5fd6e4080cbba291d90d0737e029e831d8"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財酉金⚊　　妻財酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0107",
+      "sha256": "87817d37762c62268829fe40d684afef11be794e9f408ede5c52cde76dbd3745"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財酉金⚊　　子孫辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0108",
+      "sha256": "f1267f41267ad1cdb93d062ad8082b5b9733677e8588ebadba19f1b3a571de9f"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼亥水⚊世　父母寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0109",
+      "sha256": "7e3d0eca37c59d0d5ed032120782dcd594b6b719f05065e93efcee0577478435"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫丑土ㄨ　　官鬼子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0110",
+      "sha256": "7e866d9b796864bb3e78aec8217836bfe744759fb813cf74f1d280304e3218a1"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕內卦子孫𨿽臨月建﹐不宜動而變鬼﹐外卦未土子孫﹐又臨月破﹐不宜買﹐幸而間爻酉財暗動生世﹐馬𨿽多死﹐財不致於大耗﹐後果買馬七十餘匹﹐一路多死﹐僅存二十八匹﹐幸而得價不然大虧其本。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0111",
+      "sha256": "55d18ed0ea8a2539dc368eb56b060f1214c2edb888001730cab39be3d2339fd9"
+    },
+    {
+      "section": "卷之四",
+      "text": "博戲章第八十",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0112",
+      "sha256": "7689c9e5aa171269d180f8387e565e1ec89c72207b7883dec8839769cbd91e8c"
+    },
+    {
+      "section": "卷之四",
+      "text": "有技力﹐首重世應﹐若勝以得財者﹐兼用財。又世喜臨於日月﹐財宜日月生扶﹐世爻動而化吉﹐應帶財而生世﹐皆我勝。世財休囚空破或被刑沖克害﹐及卦中父動者﹐多破其財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0113",
+      "sha256": "10b2d79eb20f5fedba337ce7ae58044a90616023c3928b05bbf7e4b57c9855b0"
+    },
+    {
+      "section": "卷之四",
+      "text": "如巳月戊申日占鵪鶉得漸之巽卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0114",
+      "sha256": "9e97609beed334389078bc142481a96725f553e83ad8b12c76f501ba27e1c543"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木⚊應　官鬼卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0115",
+      "sha256": "b95eab091763aab8e2ab2218ad46183a6bd531cb0b73f17da6c962340d94e9c6"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火⚊　　父母巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0116",
+      "sha256": "3b78032a252ee2f575d8ccd53e1b3895535afe06f3d8ffdbac5c134c879c7c30"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟未土⚋　　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0117",
+      "sha256": "5c254e850c2c7b6c5fb25c2377a28a32511342761834d51bc0ff9f02bbdd5131"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫申金⚊世　子孫酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0118",
+      "sha256": "5650a73ee3f6cd705cc7edd4d67d1ddc05711804d081a763ebbdc7d21a48aea3"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母午火ㄨ　　妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0119",
+      "sha256": "8a7bda7c7b67aaa1c9c73b0fe9eec2ee7d4be9743a934a93ab403030c1dbe088"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚋　　兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0120",
+      "sha256": "f17c13a46814d28c58b5b09a269708e529491063fc529ddfdb04de369db89871"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕子孫持世以臨日辰﹐父爻𨿽動﹐亥水制之﹐獨不宜亥爲月破﹐𨿽可制火﹐今日巳午時切不可斗。彼曰﹕何也﹖予曰﹕巳午時午火父母得令﹐必克子孫﹐果於早勝﹐午時又大敗破財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0121",
+      "sha256": "8ae7c449959ac6b78d5961479d8a3b5a162dece64d1db1f15fdc01a240b95484"
+    },
+    {
+      "section": "卷之四",
+      "text": "請會搖會章第八十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0122",
+      "sha256": "c7a53f2b13090227aaa7c76fc7a4fa99eaff7e45e24aa9ef2baa12746dab77be"
+    },
+    {
+      "section": "卷之四",
+      "text": "請會須宜財旺﹐更宜世應相生。卦遇六沖﹐財𨿽旺而不久。六沖變合﹐世應相克亦成。六合變沖﹐有始無終。財逢絕破﹐速宜止之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0123",
+      "sha256": "92a4eb79309ec37ba7d31b11ed7a72830c6ea74ba5c9e14661d9f3d94b2dbdf9"
+    },
+    {
+      "section": "卷之四",
+      "text": "搖會得否﹐旺財持世必得。如占何時可得﹐財破財空塡實之日﹐財若伏藏﹐出現之日。財太旺者﹐逢墓之日。財衰絕者﹐逢相生之日。倘得財化回頭之克及衰靜而逢空破又土遇六沖者﹐會場必散﹐終無得會之日矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0124",
+      "sha256": "c10047197af8606eb41b1b57fd66b14d05df764d9135ee577e3e7c3edb8348e5"
+    },
+    {
+      "section": "卷之四",
+      "text": "行險求財章第八十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0125",
+      "sha256": "34d78cfb06ecbbd983297b1333dc57afd123a8429e438b63f20e74d6495782d3"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕古以靑龍財爻爲吉﹐予以此非營生之本﹐乃喪心之事也。行此喪心之事﹐亦敢告之於神耶﹖旣告之於神而神若以吉凶而報者﹐乃神之教人而作喪心之事也﹐可謂之大道之易卦耶﹖可謂之伏羲之大神耶﹖然不獨此﹐凡占非禮非義之事﹐不忠不孝之謀﹐一念之惡﹐神隨知之﹐卽不告之於神﹐亦遭天譴。書曰﹕惠迪吉﹐從逆凶﹐何須問卜﹖",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0126",
+      "sha256": "4a825bfb12de5ecd32215634021f846da9ea34f7487c5edcee42c572afaebcc0"
+    },
+    {
+      "section": "卷之四",
+      "text": "婚姻章第八十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0127",
+      "sha256": "f13a31ebb369c350f09648820e6bcf2b9b32a32b6d4cb2da067f3e3e999751b6"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕男家占女﹐不拘父母親朋而代占者﹐無不以財爲用。女家占男﹐皆以官爲用。用官者﹐官有生扶。用財者﹐財爻旺相﹐卽許婚。今見古今諸書文﹐以財旺傷克父母爻﹐不知宜財之旺而爲吉也﹖宜財不旺而爲吉也﹖或曰﹕黃金策云﹐翁姑不睦﹐皆因妻位交重。海底眼曰﹕財動喪雙親。易冒亦曰﹕妻財動父母參商。俱以財動傷克父母﹐未說旺也。予曰﹕動能傷父母﹐旺則不能傷耶﹖假令春天占卦﹐財爻屬木﹐謂之女命旺而可取﹐但父母爻定然屬土﹐如此當權得令之財爻不克休囚之父母耶﹖何必曰動﹖殊不知者人言動而不言旺者﹐正恐後人駁論﹐所以不言其旺﹐不得己而言動也﹐豈知亦被看破。或曰﹕據爾之論﹐何以爲法﹖予曰﹕分占之法也。先要財官旺相﹐旣得吉卦﹐再占妨克父母﹐是其法也。黃金策專以應爲妻位﹐易冒亦以應爲妻﹐欲其旺相乃爲賢良發福之女﹐又以應爲女家父母﹐謂之應爻旺相﹐必是富貴之家﹐若休囚必宅貧寒之宅。執此論﹐則旺相賢良之女皆出於富貴之家﹖種種悖謬﹐予不知何以千百年來竟無一人道破。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0128",
+      "sha256": "e686690da87b573fc5f2d576b846704cde8fe3ff892b58dd421d351940db7f51"
+    },
+    {
+      "section": "卷之四",
+      "text": "男卜女﹐姻財要旺。女占男﹐配鬼宜興。男家代占女﹐專以財爲用神﹐以應爻爲女家﹐財宜旺相動而化吉﹐應爻不宜空破又克世爻。女家代占男﹐專以官爲用神﹐以應爻爲男家﹐宜官生旺相動而化吉﹐應爻不宜空破墓絕﹐不宜克世。男人自占妻者﹐亦以財爻爲用神﹐以應爻爲女身﹐財與應爻皆宜生世持世合世﹐必忌破墓絕空。財旺生身﹐應值破空當取﹐應爻生世﹐財爻破絕勿求。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0129",
+      "sha256": "0f59aebf4a92e68187d5f5bcdff325dd1c0c2faf95fbb0a8bfdd00ddbf2dcf3f"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕財爻應爻同來生合世爻者更吉﹐大抵以財爻爲重﹐他爻爲附和耳。黃金策曰﹕應爲白髮之妻﹐重應而又重財﹐謬也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0130",
+      "sha256": "d5f5c92b98382b28323419115464d1f972e970d7daa98202b04bfd6cbe1adf9e"
+    },
+    {
+      "section": "卷之四",
+      "text": "子月癸酉日自占婚得恆變鼎",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0131",
+      "sha256": "530f04d12514e6906b403dc1b119d877f262315e6afff0659c11f9f5128dda45"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土ㄨ應　子孫巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0132",
+      "sha256": "1af56394f467f9961b0672f328f92f91a28acd7c85e86313d10f2c5506454a07"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼申金⚋　　妻財未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0133",
+      "sha256": "fe4b1752efdb2eff61b093a3dd7286ade2fa7266002067b42a1974e93c5c8227"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫午火⚊　　官鬼酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0134",
+      "sha256": "f2750ab659bc4240fa3e8ea7a8d69dedbef4e6bd9cc44850a89eda9ef3b8e82e"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼酉金⚊世　官鬼酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0135",
+      "sha256": "ee8e10a9ee9597a4518bdd6962c46ede13e03f99164b355e8deaef57c619925a"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母亥水⚊　　父母亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0136",
+      "sha256": "1abd297d3135603c186496241160f098bd9c82f4042ecd6cd8c5438709cb1c55"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財丑土⚋　　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0137",
+      "sha256": "e1a15af745709f17443a6ab8ae7a30efdf831df5683441b5636733fb8fd54a32"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕酉官持世﹐戌土財爻動而生世﹐又得世應相生﹐戌土𨿽值旬空﹐動不爲空﹐明日出空之日﹐求之必允﹐果於次日巳時允婚﹐夫妻白頭相守﹐兒女成行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0138",
+      "sha256": "3edb47570c3e846b9643b566d52802fa1175784811270685c5118755c2d21b30"
+    },
+    {
+      "section": "卷之四",
+      "text": "又如寅月丙午日女家代占婚得臨之旣濟卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0139",
+      "sha256": "577abbd863df28049bea6dcf6c96b23ecc0748b8a6206373201c9927c3cb23db"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋　　妻財子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0140",
+      "sha256": "356603172ab95264c3227fc5a17dce5f914aaecf52b75b9e592c48da04d7441b"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水ㄨ應　兄弟戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0141",
+      "sha256": "898194bcd364627790d98ce85ce947c9d1f03c6e1799e46e1aa3939d3deaf32b"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋　　子孫申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0142",
+      "sha256": "ffdf89efb2c07e7525753b236c664ab51d14fd906819ad96e44d6ad8552a1635"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土ㄨ　　妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0143",
+      "sha256": "1092128c244595b6e06101097ecf34e79d332499acc4afd27cb1f07e3136ec1b"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木○世　兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0144",
+      "sha256": "9d87c5a40e9e4e7616c6b11442ea3ac3da5dbadf2e6780fbdd4bbafa83cb40dc"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火⚊　　官鬼卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0145",
+      "sha256": "66677cea275347aceedd55a351e87f29901bb9d7fd84d97e27e4a1ef90cdb581"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕女家占男﹐以官爲用﹐以應爻爲男家﹐此古法也﹐亦死法也﹐斷卦之時﹐須要人之活變﹐未必全得顯而易見者﹐卽如此卦﹐女家占男﹐卯木旺官持世﹐其婚必成﹐而應爻受克﹐又爲男家不允﹐似此何以決之﹐要知財官爲重﹐世應爲輕﹐𨿽是女家占男﹐亦要財爻不致於換陷﹐此—卦也﹐男女二人財被回頭克又逢丑土之克﹐如何能生卯木之官﹖男女不能相合相生﹐婚𨿽成終有他變﹐後果聘定於四月﹐未及成婚被賊兵劫去﹐應巳月者亥水逢月破也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0146",
+      "sha256": "e9c450534d9ce276e5d99802a9ab5bf672800278b87a44068b599e751eaffe38"
+    },
+    {
+      "section": "卷之四",
+      "text": "財值休囚破散﹐終非舉案之姻。官逢衰墓絕空﹐難遂齊眉之願。財爻官爻不宜墓絕空破﹐又不宜動而化破化散化克化鬼﹐乃夭折貧寒之合。男占忌財爻犯之﹐女占忌官爻犯之。男女自占﹐世爻忌犯﹐參商難免。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0147",
+      "sha256": "a93df27c3b0edae051f78e0ff2c5a641d5a472e66d7de0c996688884abe7410e"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爻空亡﹐動化退﹐終須失望。動而空者實空之月日必成﹐靜而空者終不成也。世動化進神﹐事在必成。若化退神﹐終須難就。應爻靜而空破及化退神﹐亦同此推。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0148",
+      "sha256": "95d0ce1e55e480866e0b91f06158ac1c6d78a92c6e81c7c3ed72b412cfc0107e"
+    },
+    {
+      "section": "卷之四",
+      "text": "應𨿽空﹐財化進﹐夙有良緣。應空他人不實﹐若動化退神﹐必有退悔之心﹐若得財爻動化進神而生世者﹐𨿽見退悔﹐終是良緣。若世應動而破者。亦應實破之時﹑",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0149",
+      "sha256": "2249c1b140a508914a19502306887668b3c2ff37a9319ddc0025831c5777777e"
+    },
+    {
+      "section": "卷之四",
+      "text": "世應皆空多費力﹐反吟多變事難成。世應俱空﹐皆無準實﹐反吟卦變﹐反覆難成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0150",
+      "sha256": "9fb1986c43830d378bf9cf6fe79254be32b120fa7459f659c3797c4fe1dfd859"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕倘得空而逢旺財鬼相生﹐先𨿽不允﹐後終還成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0151",
+      "sha256": "ffca955c292226749d6a0ab46143a810dc068b8aa329efd1b93107a96aaf48c1"
+    },
+    {
+      "section": "卷之四",
+      "text": "男占兮兄動﹐卦中非配偶。兄爻持世或兄動﹐乃傷妻阻隔之神﹐此婚必難成﹐已成者﹐遇此不免刑傷。覺子曰﹕兄爻持世﹐若得財爻動來相合﹐此婚必成。世兄爻化出財爻﹐此婚亦能成。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0152",
+      "sha256": "c1b488b1a4ad2417610de9479308b945a44791a150d0114ea4293b8b91787e9c"
+    },
+    {
+      "section": "卷之四",
+      "text": "女占兮官爻持世是良緣。女占男不宜子孫持世發動﹐子孫乃傷夫之神﹐未成者不成﹐已成者傷夫再嫁。惟官星持世合世生世旺相者﹐不獨姻緣必就﹐可期舉案齊眉。卦中官鬼重疊亦主再嫁。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0153",
+      "sha256": "27efa45f7f1d52091bb956c118f5f218fb43d8596f2621c6a6df85d0c2c04599"
+    },
+    {
+      "section": "卷之四",
+      "text": "財官世應刑世夫妻反目。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0154",
+      "sha256": "3b3be6fe6e47fcb7f5f5e5aaaf984aa0c66291c87774793b6689163ced124353"
+    },
+    {
+      "section": "卷之四",
+      "text": "如巳月己亥日占夫妻不和將來如好否﹖得需之大過卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0155",
+      "sha256": "a810d3111b289ca19cd2cc7d3e944a67b84129ce0eb5e9379da43ce1529bef07"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚋　　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0156",
+      "sha256": "dc81557c8307fe24c11e3e0dbccdfd7e34b216ae38fe39c8953393d9ef561e0d"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚊　　子孫酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0157",
+      "sha256": "e0493a66c43fca3cd3a187bf6e5920b206b4e7c23f35d649108d99c10dfa1ae5"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫申金ㄨ世　妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0158",
+      "sha256": "58e0bf655c5543b11440579bfded80c206559a6a7b129d062d3ad6b9541b2272"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚊　　子孫酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0159",
+      "sha256": "63b6d9e2c7491ab5db4b52900d9ca0b5642bce8fd835f6b13a0b59c5f1d938c1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊　　妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0160",
+      "sha256": "64aaa0d3f51bd7ba8a16e1dc4152fa468c570a7e39c8f1da41a42f3a37a3a39d"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水○應　兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0161",
+      "sha256": "2664f594f6646321934408e85b2b1a312273faf2695956906834a9e00a30b11e"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕女占夫﹐不宜子孫持世﹐乃克夫之象﹐幸寅木子水相生﹐不能傷之﹐所以不和﹐今兼應爻爲夫﹐應逢子丑作合﹐夫已有外遇﹐水木相生﹐兩人情密。彼曰﹕果然。後如何﹖予曰﹕兩人不是姻緣﹐𨿽則不能死別﹐必有生離﹐果於次年寅月休妻﹐此人六月再取彼婦﹐應寅月者﹐夫臨寅木而沖世也﹐應六月者未土沖開初爻丑土﹐子水來生其寅木也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0162",
+      "sha256": "0efa7f097b4700ba616ad768ebbfa9a2ebb38ee9ef721000e85e25bcdd835433"
+    },
+    {
+      "section": "卷之四",
+      "text": "旺相爻逢六合彼此同心。爻逢六合占婚最宜﹐更要財官旺相爲吉﹐男忌財逢破墓﹐女防官位克絕﹐六沖變六合者更吉﹐眼下不允﹐日後必成。已成婚不和睦者﹐終究和美。忌六沖﹐卦無財官﹐主婚不成﹐勉彊成之﹐若非死別﹐定是生離。六合變六沖﹐𨿽許允後必更張﹐已成者終須折枕。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0163",
+      "sha256": "030745c0b4e622c66f90df64ac039dadad4824f18202b7261bc0b92c2df91573"
+    },
+    {
+      "section": "卷之四",
+      "text": "占用咸臨節泰﹐忌逢暌革解離。覺子曰﹕易冒有云﹐卦得咸臨節泰﹐若不遇合沖變﹐𨿽財官衰陷隨墓助傷﹐皆不爲凶。暌革解離﹐則爲凶兆﹐𨿽用神全備而化合﹐亦不爲吉﹐此言用神不騰於卦﹐驗也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0164",
+      "sha256": "34e343c0579eb267c91e20ce29c28a7c6d21e8622805d51b5616f7eb6e070215"
+    },
+    {
+      "section": "卷之四",
+      "text": "曾於巳月丁卯日占婚於何時得泰卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0165",
+      "sha256": "361cbf01cd9af86bb5d61676d450d74ca9cf9d41f1d6ce5157a4f3737f21a8a4"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0166",
+      "sha256": "d56e62cfc58f47e0cd985dc9d8b6c03c0f5b0adc124ba9b5f466d5c41108473d"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0167",
+      "sha256": "72100c772b4afc12580ff6b632f538502a269d09eac2f160714ed1c3f57d6972"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0168",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0169",
+      "sha256": "9324afad33bdf12f26aa934c317b93a87e44701184397b0ac18675e4e749ed29"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0170",
+      "sha256": "9e2427913f34fcbf81bd6958392367cb43137e4aec0c7bfece5c2edbb4c50d89"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0171",
+      "sha256": "33ca6ea6105269c35c356e99bc9102d18ff1e2382b623116d36da0fd13c40f2a"
+    },
+    {
+      "section": "卷之四",
+      "text": "予見此卦﹐兄爻持世﹐亥財臨月破旬空﹐子水之財﹐世爻克之﹐日辰刑之﹐古𨿽以泰卦爲吉﹐予焉敢以爲之婚姻大事而試卦耶﹐命之再占",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0172",
+      "sha256": "52dff25a929d4a6c897687f627af782cfcf116388af9313468816b3cfe787884"
+    },
+    {
+      "section": "卷之四",
+      "text": "又得坤卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0173",
+      "sha256": "7aadff39eedf1630fc2395c4714d3f3d64269dc4d0d4d09c65e0dc5e4b05cbcf"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0174",
+      "sha256": "84deb212e372f960e5ad101aa9edbbefd3b9a76e9d4870da1f665ada1dea44b8"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0175",
+      "sha256": "72100c772b4afc12580ff6b632f538502a269d09eac2f160714ed1c3f57d6972"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0176",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0177",
+      "sha256": "42bdb1e7c1a696c186c10ae147c8ef6df49e94a842a235a9232454c954913eaa"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0178",
+      "sha256": "a495fbdda1c4ba5976bd9daa2c7941b28fcabbc61f446a5a3a60a36db716bb29"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0179",
+      "sha256": "97f327defad4592785a7b0c415559c382ba3c5c67423b45c787c6cf82d5ec5b1"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爻休囚爲日破﹐亥水財爻臨月破﹐卦遇六沖﹐大凶之兆﹐故知前得泰卦﹐非爲吉也﹐仍用財官世應者爲是﹐然亦不可竟以爲是﹐凡有所疑﹐勿執古法而斷﹐須以再占之卦而決之﹐後卦若吉卽以吉斷﹐後卦凶者則以凶推﹐神不欺人﹐彼此兩無誤矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0180",
+      "sha256": "a2cf52cba47e86b1ca8f7e7e816bde20c4d34d624cc48407e7ddb1681916aba2"
+    },
+    {
+      "section": "卷之四",
+      "text": "財化財未必婚姻兩度﹐鬼化鬼難曰相守百年。黃金策曰﹕財爻重疊﹐重作新人﹐予屢試之﹐男家占女家﹐財爻重疊旺相生合世爻者﹐多主賢妻美妾﹐財化財﹐或應雙娶﹑或應婢妾同來﹑或應妻妾之多﹑或應收妝奩甚厚﹐惟忌爻中兄動及日月沖克財爻﹐花燭重重亦不免耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0181",
+      "sha256": "c0686e6691fefb21d9eaa97d93e8fc7f4cac76ff94bc2dc65b44e7e37bc075e7"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄臨元武﹐防劫騙。鬼臨白虎﹐遇凶喪。兄鬼動臨元武﹐防局中姦詐騙財﹐縱使世應相生﹐財官無害﹐必須大費﹐鬼臨虎動或不來過門或遇門不久﹐必見喪事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0182",
+      "sha256": "fb726cfa02fa9ad182513f8ac476d5b3694bc1849eab328a519439a603992263"
+    },
+    {
+      "section": "卷之四",
+      "text": "應財世鬼﹐夫唱婦隨。應鬼世財﹐夫權妻奪。世持鬼應持財﹐謂之陰陽得位﹐必然鸞鳳和鳴。鬼臨應財持世﹐牡雞司晨﹐妻奪夫權﹐惟贅婿得之反吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0183",
+      "sha256": "ef7fe83ec6133d331a619e5b85bc46d824ff53097fd84d20051bebe304c4c22d"
+    },
+    {
+      "section": "卷之四",
+      "text": "此婚子嗣有無章第八十三",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0184",
+      "sha256": "52665a5ecdfaf572d13d6789f04335f912fe6271e7159af4c7f215fead507a4d"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫旺相或休囚而動及動而化吉﹐皆主有子。子化進神化回頭生﹐有子必多。如逢子孫墓絕動而變鬼鬼變子孫父化子子化父父動克子﹐皆因我命無兒﹐不成此婚亦無子也﹐惟多積陰德以培之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0185",
+      "sha256": "81566306017a2e5164daffe5cc2f6d1674385a4f2284afebc883544f0425f813"
+    },
+    {
+      "section": "卷之四",
+      "text": "如申月丁丑日因有妾多占何命者有子得革之夬卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0186",
+      "sha256": "906c997e61e844b63e3b933813db409f1fbaed78b1c3bf5ea9a3bb04f164111c"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼未土⚋　　官鬼未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0187",
+      "sha256": "796ab063c81994a6ac2dcccc197b9d5b025973608ef1a9cbc610311d4e4124b3"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母酉金⚊　　父母酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0188",
+      "sha256": "7a8a67b0a4036ae7e07252f4d50176ce6d41dde3a4d180547c2865f38e6f59f8"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟亥水⚊世　兄弟亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0189",
+      "sha256": "19983e66237e5f56bd8ebfefc9c990d6fc5b6efe7af1d1a039ca5bb702cb44ac"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟亥水⚊　　官鬼辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0190",
+      "sha256": "fbdeb6b71c2e7d1ffd24804745c86fec006f00243fb4e781c6370e6f09ec7c91"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼丑土ㄨ　　子孫寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0191",
+      "sha256": "440af76e49c15fbd3bfa450b45437e6ac941a9fefe418357ddd9d3191499bcd2"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫卯木⚊應　兄弟子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0192",
+      "sha256": "35216f9c95100e65c52f3fdfd19ae641d88d03b521a874c45bc410f8aecb93b9"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕卯木子孫絕於申月﹐鬼變子孫又逢月破﹐公命無子﹐與女命何干﹖卽出八字看之﹐甲寅甲戌甲子戊辰﹐予曰﹕八字𨿽有純陽包陰﹐兵權顯赫﹐但嫌並頭重重疊疊克罡﹐亦主無子。公曰﹕有何法耶﹖予曰﹕多積陰德以培之。公曰﹕不孝有三﹐無後爲大。嗣後施濟貧寒﹐全人夫婦﹐修橋砌路﹐施藥施棺﹐連生二子﹐臨終囑其子曰﹕我非陰功﹐不能有爾﹐爾皆成人﹐多宜積德。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0193",
+      "sha256": "242b47fd480e5eb30c9c08d5cfdb906ff1ea887ef29eaf3529bce2303e44602e"
+    },
+    {
+      "section": "卷之四",
+      "text": "此婚有宜於父母否章第八十四",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0194",
+      "sha256": "3a52761f9c320758b3d4b045f12b5ff5abb7e2544cc05a1196add61c549c65ce"
+    },
+    {
+      "section": "卷之四",
+      "text": "專以父母爲用神﹐父母爻或旺或衰﹐皆不忌也。所忌者財爻發動﹐必此婚之有妨。如財化父母﹐父母動化墓絕空破及回頭克﹐動而破散或日月克父母﹐乃桑楡暮景之秋﹐不成此婚亦難免耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0195",
+      "sha256": "8c8c67c5e663bfe4f49fadebabd5dde6e86e953c19928dbe8d348ddd8e07bcf0"
+    },
+    {
+      "section": "卷之四",
+      "text": "納寵章第八十五",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0196",
+      "sha256": "47fc46341cce14f3921e7ad798b2684d0a10e313edc6ff396f54dfa1f81150cc"
+    },
+    {
+      "section": "卷之四",
+      "text": "爲子嗣故﹐以子孫爲用神﹐與前段同斷﹐否則專看財爻﹐亦與占子同斷。占配僕﹐以財爻爲用﹐財爻持世﹐或動而生合世爻﹐動而化進﹑化生﹑化財﹐皆得忠誠效力﹔散破空絕﹐非懶惰卽疾病。財爻克世沖世﹐負義忘恩之徒也。財化鬼化絕化墓化克及鬼化財爻﹐貧窮壽夭。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0197",
+      "sha256": "18dd6773365197867bd19ea353b208bd0f387f0e77f848138d88f3c63767a50d"
+    },
+    {
+      "section": "卷之四",
+      "text": "取離婦跳娼婦章第八十六",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0198",
+      "sha256": "308ef74a1ff915c8b6726642d72b5304385bb091289be3eac2e0b7d012d3e644"
+    },
+    {
+      "section": "卷之四",
+      "text": "防患者﹐用子孫。子孫持世﹐子孫發動﹐皆無憂也。財爻持世﹐子動相生者﹐更吉。鬼兄克世隨助傷﹐鬼爻持世﹐婚姻𨿽就﹐病患隨之。財克世﹐兄持世﹐落人之局﹐必人財兩失。防攔阻者﹐鬼動有禍﹐兄爻持世﹐到底難成﹐財動相生﹐不謀而就﹐六沖變沖爲凶。三合六合者吉。六合變沖﹐成而不久。六沖變合﹐終必有成。彊奪婚﹑遂私約﹐非祥非義﹐勿告於神。出妾休妻﹐原非所欲﹐有不得己而出者﹐必去難畱。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0199",
+      "sha256": "16125d584f70fe038c2d4071ab8186c02cd7f44f0d0eeb1c8a92228b8609a4be"
+    },
+    {
+      "section": "卷之四",
+      "text": "胎孕章第八十七",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0200",
+      "sha256": "d4abc665e1b5c33d549c84f091834058eee7d673883468d8dbbbfa5ab405aec0"
+    },
+    {
+      "section": "卷之四",
+      "text": "卜胎之虛實﹐占孕之安危﹐問產婦之吉凶﹐測胎中之男女﹐各宜分占﹐親占代占﹐皆用子孫﹐惟子占母孕﹐以弟兄爻爲用神也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0201",
+      "sha256": "ef9370ec510ac0c62732a44fef7b947e38dbe1e01893fedf9fc7439fd4b1a789"
+    },
+    {
+      "section": "卷之四",
+      "text": "福神旺相遇生扶﹐麟捶兆瑞。子孫休囚逢破衰﹐泡孕空虛。子孫臨日月﹑或遇日月動爻生扶﹑或動而化吉﹐皆許成孕。若臨空破衰絕﹑或被刑沖克害﹑或動而變鬼化絕化破﹑或鬼變子﹑父變子﹑子化父﹐水泡空燈﹐惟動而空者不防。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0202",
+      "sha256": "61cfc832417231c8fc65a15c5708a0ccb19b70c86c45b256001c4ce162dae285"
+    },
+    {
+      "section": "卷之四",
+      "text": "子化子雙生有準。子動化子孫﹑或卦中子孫動﹑或已有旺相之子孫動者他爻又變出旺之子孫﹐皆主雙胎。卜筮元龜云﹕子孫兩旺﹐定是雙胎。覺子曰﹕兩動兩旺者﹐此斷是也。內有一衰﹐一死一生﹐一陰一陽者一女一男。兩現一不動者﹐非也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0203",
+      "sha256": "3d1e55e39f50522332a030ebe890a882c3295fba80bdb84a07e18baee13fa05a"
+    },
+    {
+      "section": "卷之四",
+      "text": "陽變陰男女可辧。六爻靜﹐先看卦包，陰包陽生女，陽包陰生男。陰包陽﹐坎卦﹑大過﹑小過﹑咸﹑恆卦是也；陽包陰﹐離卦﹑中孚﹑頤﹑損卦是也﹐其餘非也。六爻旣靜，若無包﹐須看子孫，值陽爲男﹐值陰爲女。卦有動爻，𨿽有子包而不用，神兆機於動﹐先看動爻。一爻動者﹐陽動爲女﹐陰動爲男﹔兩爻動者﹐看上爻﹔若有三爻發動﹐看中爻﹔卦中多動者﹐來心不誠﹐改日再占。卽刻連占亦不驗也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0204",
+      "sha256": "d2972c92aa892c6895716f2f533916a4c22cd488fbf6bdb857c369c048f3ea4f"
+    },
+    {
+      "section": "卷之四",
+      "text": "如辰月戊辰日占孕男女得小過之豫卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0205",
+      "sha256": "03450c1ffa9f3776558e5d1916c4e8e30836fd8309ac9646f86d7f9625149356"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母戌土⚋　　父母戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0206",
+      "sha256": "d9649d4b5c3587577be162d8d9e344d93cc414e6db5d897c81080174bd2e9345"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚋　　兄弟申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0207",
+      "sha256": "a5423db41720a64c02963c8a1ffe3b0bb995e12ab6159a6ec3f0e298dca300e5"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚊世　官鬼午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0208",
+      "sha256": "8e3dc2d3dc08003c31dbc132b9c7c506cf8da8a27718e1b4b093491b949a777a"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金○　　妻財卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0209",
+      "sha256": "67380f945d9e766730633ee2dfab0c0750058fa2150802d5b96c898d6f082898"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚋　　官鬼巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0210",
+      "sha256": "579be94ea553688cc2e61a259a4b075aa813fa699f3a3620460361871d92a0e6"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚋應　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0211",
+      "sha256": "219baf7e5654641794f35f4de7b6675c7b43a60dfb9d6d9a43f22d5a232f683a"
+    },
+    {
+      "section": "卷之四",
+      "text": "予曰﹕爾之來意﹐還是問妻孕平安﹖還是問孕之男女﹖彼曰﹕兩事俱問。予曰﹕日後須宜分占﹐不可同問。幸此卦兩事俱現﹐兄爻𨿽動﹐不克變出之財爻﹐艸正坐艸無虞﹐卦中陽動變陰﹐必然主女。彼曰﹕小過卦謂之陰包陽﹐如何生女﹖予曰﹕神兆機於動﹐先重動爻。果於壬申日生女﹐產母平安。覺子曰﹕占妻平安及占男女﹐原宜分占﹐彼若閒時而問兼問者﹐還可同斷﹐若在臨產危急時而問者﹐切不可以男女而斷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0212",
+      "sha256": "7185d13475b42b070410d42236eb3f66515e9303ab61c63c13a10becadc9f12e"
+    },
+    {
+      "section": "卷之四",
+      "text": "問產婦安否章第八十八",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0213",
+      "sha256": "affe0aa250655a9abeff1624e2bca7e1b8d99a45612b60b0bfc6536f791ba7ca"
+    },
+    {
+      "section": "卷之四",
+      "text": "坐艸臨盆嫌鬼動﹐胎前產後忌兄搖。財臨絕破妻難保﹐鬼化妻財命不牢。問產婦夫占代占﹐皆以財爲用神。𨿽則不宜鬼動﹐倘若兄動克財﹐又宜鬼動制服兄爻。不宜財變鬼﹑鬼變財﹑兄化財﹑財化兄﹐及妻逢月破休囚破絕化墓化絕﹐或日月沖克﹐皆爲凶兆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0214",
+      "sha256": "1063dfd324f23a449091b28fe4693bb50e2187799b58eb9df985a6e9abe73fdd"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕問胎產婦﹐𨿽宜分占﹐另有不待分占﹐而卦中先現者﹐須宜畱心。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0215",
+      "sha256": "32aaa26bd9bf84845bb60e6a065678799c164f1fc715f2ca5933a51ea2546739"
+    },
+    {
+      "section": "卷之四",
+      "text": "如子月乙亥日占妻孕平安否得豐之小過卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0216",
+      "sha256": "79e3900f18133cf5903ad50acc07a4b3893a21e5451a6269fcd2dc867aac07e2"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼戌土⚋　　官鬼戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0217",
+      "sha256": "fa9bb1fe20dff84ea567873b8a0e95cc8d5254f7116909fee249b77906f66e7e"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母申金⚋世　父母申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0218",
+      "sha256": "954aa98755c76d24dbe2c3e3b610738fe05f3a71e26ede3b4200d4fe7548371f"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財午火⚊　　妻財午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0219",
+      "sha256": "a443ec072efba12c77c5ed3b21a0db52a18f7d626d42edb1fe300185efa32334"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟亥水⚊　　父母申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0220",
+      "sha256": "b1fab0e188b3972ff2f38d8a3a34d24b327a8a6930deb78a589ae166e7341704"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼丑土⚋應　妻財午火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0221",
+      "sha256": "f1c4c4e854d61dea7247897b91bc83e8289083a23a4041d23b9b9471a7823c8d"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫卯木○　　官鬼辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0222",
+      "sha256": "0b8d7d6acac01798ef3f3c18ed26837b3b14acd2f93693829be57b47e49a493b"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕午火妻財臨月破﹐又被亥日克之﹐冬天之火囚被克﹐全無生扶﹐命之難保。彼曰﹕卯木子孫﹐動而生火﹐何謂全無生扶﹖予曰﹕卯木子孫動而變鬼﹐神曰﹕母子皆喪。非生火之卯木也。斷卦者須以知機﹐會神之意。彼又曰﹕財𨿽不旺﹐卯木子孫得子月亥日以生之﹐何謂子亦難保。予曰﹕變鬼之子孫﹐縱臨日月亦無益矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0223",
+      "sha256": "dfbdb4fb1e89e822d03e758127f4d98330e7cc61b409cb814f784139221f04af"
+    },
+    {
+      "section": "卷之四",
+      "text": "卦得六沖﹐子旺財彊終是喜。爻逢六合﹐財空子破亦爲憂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0224",
+      "sha256": "f5d2222f1296225e47842948eb543f3515753fb482c1cad4b1e3d3a1f8ba9719"
+    },
+    {
+      "section": "卷之四",
+      "text": "產期章第八十九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0225",
+      "sha256": "4efb53159e398107bc0fa6aa379596adb1644609a46ac2043649e23e37380474"
+    },
+    {
+      "section": "卷之四",
+      "text": "產期有遠近之分﹐遠則應月﹐近則應日。子孫動者逢合逢值﹐靜者逢值逢沖﹐空者沖空實空之日﹐破者實破逢合之期。白虎兄弟而動﹐值日而生。子孫臨絕﹐待生旺之日。又有子遇長生胎養之日。伏藏者出現之日而生也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0226",
+      "sha256": "19dda9d46222e7be3537cb261a70f7e7d4aa8a210a0a2fba1e95384f904e07bb"
+    },
+    {
+      "section": "卷之四",
+      "text": "嬰章否泰章第九十",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0227",
+      "sha256": "50cc6f28abd1858ca46be144d5fe7a6b0cd5a268f99ac097388d1a4811b03ea3"
+    },
+    {
+      "section": "卷之四",
+      "text": "身命子孫章同斷",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0228",
+      "sha256": "6b2fdbf78ce8324e247df0fd62600b1905648c2efba9a6b9e0761688f5e07e0b"
+    },
+    {
+      "section": "卷之四",
+      "text": "出行章第九十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0229",
+      "sha256": "a3e3494417ab4826caa1697eba20c4196258d4879485f6d7b0ef6a62d3330aca"
+    },
+    {
+      "section": "卷之四",
+      "text": "人爲利名﹐奔馳道路﹐風波不測。占卜應以世爻爲先﹐旺相宜行﹐空亡宜止。世爲出行人﹐生旺有气則吉﹐動而化吉﹐及化子孫者更吉。如若休囚空破﹐動而化凶者不宜行也。應爲地頭﹐又爲傍倚人﹐他若空破墓絕或動而化絕化回頭克者﹐去之無益。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0230",
+      "sha256": "90cec801c6f841d2c5c2782318f8f075b23a3ab530fc046a67cc9331e75c589b"
+    },
+    {
+      "section": "卷之四",
+      "text": "世傷應位﹐不拘遠近相宜。應克世爻﹐公私皆主不利。我去克他﹐所向通達。應來刑沖克世﹐不可行之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0231",
+      "sha256": "d5ff87f7961408f993305dc07c4450a5c482643b2b7ba0b5bce506a9a24de865"
+    },
+    {
+      "section": "卷之四",
+      "text": "八純亂動﹐在處皆凶。兩間齊空﹐獨行則吉。六沖卦及動而變沖﹐世爻休囚被克者﹐終去不成﹐有始無終﹐去亦諸般不就。兩間爻者﹐乃同行附載之人﹐動而克世﹐必遭其害﹐動臨兄爻﹐破我之財﹐生合我者爲吉﹐倘兩間齊空﹐若非中途梗阻﹐定然無伴孤行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0232",
+      "sha256": "d4d1d7226258a2aae1aa5cff907767d31462c055b37bd3e1b0989d1f05413a85"
+    },
+    {
+      "section": "卷之四",
+      "text": "靜遇日沖必動﹐動逢合住而畱。世爻暗動者必去﹐世爻旺靜逢沖之日必去﹐世爻動而化合或被日月動爻合者﹐必有事故﹐阻滯不行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0233",
+      "sha256": "f48f4f197221507b75c61dcac944ae7ffd8185ebaf1c78b4a88b16588c3de9ea"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕予常得驗﹐亦有應在沖開之日而行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0234",
+      "sha256": "e3f47b57b4ff21b3cb753f844397e6e8555e0c01ca6ed6dc2328b46511acb5e9"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼交重災禍重。武鬼動憂盜賊﹐雀鬼發防訟非﹐虎鬼疾病纏綿﹐蛇鬼風波警驗﹐勾陳鬼動﹐事有勾連。鬼動逢龍﹐戒於嫖賭。鬼發震乾車馬患﹐鬼發兌坎慮風波。坤艮之鬼﹐山間道野逢殃。巽離之官﹐炎廠林窖罹難。予在趨避章中詳之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0235",
+      "sha256": "a905784433102ec274860db2d7147788fc6c6d3efba35fa184038796a268db5a"
+    },
+    {
+      "section": "卷之四",
+      "text": "福神發動患殃消。出行得子孫發動﹐子孫持世﹑世化子孫﹐程途萬里﹐百禍潛消﹐子孫克世者亦吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0236",
+      "sha256": "5db886e55dfc77fea3be61d3c3e9a9616ab05a57f31d742cff1738d0cb966096"
+    },
+    {
+      "section": "卷之四",
+      "text": "父克世爻﹐風雨舟車行李。父母持世而動或被父動沖克世爻﹐予得驗者﹐有應舟車行李之累﹐有應風雨淋漓。世爻旺者無妨﹐最怕休囚而爲凶也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0237",
+      "sha256": "cabe61de90c8bd81a3b9aa2fd5f6094147e0adbf5f33b778701110f66362bc0a"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄沖世位﹐花月散耗災非。財爻持世﹐兄爻沖克﹐有應在花朝月夕﹐無端浪費﹐有應小輩明欺暗騙﹐致成災非﹐破耗百出。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0238",
+      "sha256": "a1ae5a1ba4402231269f9847ada05d92e22a2de3a536fa0e0f8b5744333ee6e2"
+    },
+    {
+      "section": "卷之四",
+      "text": "反吟化退中途返﹐六沖隨墓始終凶。卦得伏吟世動者﹐沖開之日月成行。卦得反吟可到中途亦返﹐世逢沖克大凶﹐六沖卦世靜世空必不能行。隨鬼入墓﹐世若休囚﹐不返之兆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0239",
+      "sha256": "06ffbc1980a5b8a7d14954f0657ea4a7583b4bb803b51ad3cf187d024949ed13"
+    },
+    {
+      "section": "卷之四",
+      "text": "六合化沖不吉﹐六沖化合方亨。六合卦變六沖﹐及卦變克絕者﹐坐家亦恐凶危。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0240",
+      "sha256": "0f96894a95fed95137ed5b7acdce7f67888b7aeb9359e8dda111058791e3ce56"
+    },
+    {
+      "section": "卷之四",
+      "text": "舟行章第九十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0241",
+      "sha256": "b113a1fd9633a93972bc0dd70855db7e66f93a4c099f492a3f5275058ce81e68"
+    },
+    {
+      "section": "卷之四",
+      "text": "登舟問何日至﹐世爻發動﹐合日值日而到。若得子孫持世及子孫他爻發動者﹐值日而到。世化退及反吟卦﹐中途而返。問舟行平安否﹖子孫持世克世生世合世﹐一路平安。官鬼持世憂鬱驚恐﹐官鬼沖克世爻災非必見﹐兄動破財。風阻者勿以兄弟爲風雲﹐乃以子孫爲順風﹐動而逢合逢值﹐靜而逢沖之日﹐空逢沖實之日﹐與天時章陰晴同斷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0242",
+      "sha256": "3be77f33ab4342eb7395c960fc20149e60424e84748ff15cefec425cec64fd3c"
+    },
+    {
+      "section": "卷之四",
+      "text": "同舟共行章第九十三",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0243",
+      "sha256": "06c406e959e57d14f7f7f612d177cddd74705793fb6c4a4991e05f43925e90a8"
+    },
+    {
+      "section": "卷之四",
+      "text": "同行共處應爲尊﹐南路同舟一樣論。應傷世位遭他害﹐墓絕空破見吾恩﹐只宜生合相扶助﹐永賴維持如至親。三合同途皆遂意﹐六沖半路便灰心。起居爲害搖兄鬼﹐水睦淸平動子孫。占他人以應爲用﹐占親戚必看用神﹐不宜兄鬼動而克世﹐最宜相合相生。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0244",
+      "sha256": "5139abe13b91e0c56d374c9c0cb3787c49fbc4c06ce14d4b5ee1d3e372bd1ae1"
+    },
+    {
+      "section": "卷之四",
+      "text": "行人章第九十四",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0245",
+      "sha256": "f71df4d69893427a9e9725ab4382b5bf7a8614b0a5300ca46ff3357f114a88a7"
+    },
+    {
+      "section": "卷之四",
+      "text": "問行人之歸期﹐有遠有近﹐遠則應月﹐近則應日﹐亦有去久﹐若在日下當歸﹐又可以日斷也。問行人之否泰﹐另占一卦﹐不可一卦而兼斷也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0246",
+      "sha256": "724fd89ab888d7f56c003593af6d2dc6164c95601830ee70f465c5f034eb6e41"
+    },
+    {
+      "section": "卷之四",
+      "text": "世克用兮人未動﹐用爻克世必然歸。占親人在用神章中求之﹐疏者以應爻爲用神﹐世克用神且無歸志﹐用神克世近日回家。予試果驗。墓絕空破﹐歸信杳然﹐明搖暗動﹐歸鞭發矣。伏藏才出現之日﹐動而逢合之日﹐動化進神不返﹐用神化退而歸﹐動逢合有事阻隔﹐動化鬼在外危災﹐最怕動而化克﹐還防卦變反吟。世爻空者行人卽至﹐用神靜逢休囚空破者且不思歸﹐動空旺空者實空沖空之月日必歸﹐惟恐卦變克絕及反吟卦﹐用神被克被沖者﹐皆難望其歸也。用神三合﹐沖開之月日而來。卦逢六沖﹐行人無定而不返。用爻墓者開墓之日﹐用爻無病可斷歸期﹐用爻有病在外不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0247",
+      "sha256": "f104f54347d109393569b5c8dab1de822445b3ccd56ea058a7e61320a31ee92a"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕用神墓絕空破受傷﹐謂之有病。來人問行人在外平安否﹐須看有病無病。若問歸期﹐只可看卦象來與不來而斷也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0248",
+      "sha256": "34e2f80bd6132ba96fd26c4af211bb40289987529170c3a23663e248eb60b5b0"
+    },
+    {
+      "section": "卷之四",
+      "text": "如酉月戊申日占母在外何時來得旅之艮卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0249",
+      "sha256": "72023e487ebc1a808b1b9a0b452839a0682d8243a210cb0b1b50582975c8dae1"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟巳火⚊　　父母寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0250",
+      "sha256": "050a2b471a799f1cac6e9e6e4cfac2b279b0809ec9af21a06f723c4656b522f5"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫未土⚋　　官鬼子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0251",
+      "sha256": "4a0e1cb938b2317f62f761ca451c20b55aa2f870d23c7f8a5fd1dc5f100b8a54"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財酉金○應　子孫戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0252",
+      "sha256": "809b68c7fdca633bf006d80f8b336867def6f0f4f37fe5bdfb910ed0972dc4f9"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財申金⚊　　妻財申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0253",
+      "sha256": "5facae482192ca0b060ff1cd18af67a7091a3fc9b1a68fafba49245457acd983"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟午火⚋　　兄弟午火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0254",
+      "sha256": "43938ae8c19e7254c99f96faeade41a3e15c3c6f8e60b4ddac031676e05a6cf2"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫辰土⚋世　子孫辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0255",
+      "sha256": "96c4f49fac5805ebde7759cb27b36582af22c3ff8475ab6aa95b0a0a1f55a832"
+    },
+    {
+      "section": "卷之四",
+      "text": "此卦若問父母平安否﹐父母卯木日月動爻沖克﹐必不安矣。今問其來否﹐不以此斷﹐只可斷用神伏藏也﹐克而不來﹐六合沖亦不來﹐後果在外平安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0256",
+      "sha256": "c3c383b0f7717c116fcbad0097ba3f6f46937be3e4744522ab00c6fc12b6468e"
+    },
+    {
+      "section": "卷之四",
+      "text": "又如亥月甲子日占僕人何日回得革之夬卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0257",
+      "sha256": "445818f7a587344942ea4f5c758a9f4da2a17a7604c907dd0f6bcff7576ec0e6"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼未土⚋　　官鬼未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0258",
+      "sha256": "796ab063c81994a6ac2dcccc197b9d5b025973608ef1a9cbc610311d4e4124b3"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母酉金⚊　　父母酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0259",
+      "sha256": "7a8a67b0a4036ae7e07252f4d50176ce6d41dde3a4d180547c2865f38e6f59f8"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟亥水⚊世　兄弟亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0260",
+      "sha256": "19983e66237e5f56bd8ebfefc9c990d6fc5b6efe7af1d1a039ca5bb702cb44ac"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟亥水⚊　　官鬼辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0261",
+      "sha256": "fbdeb6b71c2e7d1ffd24804745c86fec006f00243fb4e781c6370e6f09ec7c91"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼丑土ㄨ　　子孫寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0262",
+      "sha256": "440af76e49c15fbd3bfa450b45437e6ac941a9fefe418357ddd9d3191499bcd2"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫卯木⚊應　兄弟子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0263",
+      "sha256": "35216f9c95100e65c52f3fdfd19ae641d88d03b521a874c45bc410f8aecb93b9"
+    },
+    {
+      "section": "卷之四",
+      "text": "此卦若問僕人在外之吉凶者﹐必不歸矣﹐何也﹖午火財爻伏而破日月之克﹐今問何日可到﹐不以此斷﹐世空者速至﹐此人來矣﹐巳日必到﹐應巳日者﹐沖空之日也﹐巳火又是財爻﹐果於巳日到。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0264",
+      "sha256": "847eedd4439650d4a8829e3277305187b6bd9fe7cab0625a7f6c8e561f8829e9"
+    },
+    {
+      "section": "卷之四",
+      "text": "未月戊戌日占伯何日來得屯之隨卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0265",
+      "sha256": "c3c016aeeb2a97965647636673c4ac8aa5332f1a1a5485a80d78044c2a2b376c"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟子水⚋　　官鬼未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0266",
+      "sha256": "8be3b51d36f5d33a8c89b4a0209f3bb4de8a9cc0af98258b1458bcf10b0757c2"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼戌土⚊應　父母酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0267",
+      "sha256": "53bd2dfa69e5dec8561f7f3e572498910fd5351ee92b6ee1afa9bab3ef14436c"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母申金ㄨ　　兄弟亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0268",
+      "sha256": "4cde28a7a161285489874d8f92ebf93076c2d2a6df64853e19bc268e7e963875"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼辰土⚋　　官鬼辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0269",
+      "sha256": "008e861eaa9c1acc08dec8fbdc9c854a7a54481475f608002002bb1c090b84a3"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫寅木⚋世　子孫寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0270",
+      "sha256": "cb696604f49422727f831477a4f62bd148803303499e493bbc00aaea6d0e37ec"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟子水⚊　　兄弟子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0271",
+      "sha256": "28b8a7fca7d8794f0b2e4a5ce5cbf4f26d5d1d5beb3c303e6861db86f5a9bbd5"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母爲用神﹐克世者速至﹐七月必到﹐後於亥月方到﹐應亥月者父母化出之爻也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0272",
+      "sha256": "58ee0a3aea13a5abb6efb14549c4ac0f6a2d443350aa09a9ecb1d8ef153811cd"
+    },
+    {
+      "section": "卷之四",
+      "text": "如丑月庚午日占父遠去何日回得履卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0273",
+      "sha256": "d98d74310986de3e3215597dbe227b502473cb547a571b30c0b55e8671a1b241"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0274",
+      "sha256": "3bdfa47395e5678fad37d94c872836a3a6dbe7bd2d5331ce9b24bad0f3325957"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫申金⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0275",
+      "sha256": "c29a126b49584cb1c87f0e8d0cbb0337471ee2623e7e53dcbdb97fa24eff8b4b"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0276",
+      "sha256": "7c7ee9e03c2da0c590cd04d5e0e5ffe20c2c28148efafa04df632964e0f084ab"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0277",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0278",
+      "sha256": "16b5f32640911a1e388f17692bc4a89f91401fa96a98c7d5d45f8a14c4133280"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0279",
+      "sha256": "c933b3c35dc7e7f29caa5fd95f662af981e097db5a662d2d6892c59d79f522f0"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕今日乃是午日﹐午火父爻克世爻﹐今日必到。果於申時到。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0280",
+      "sha256": "ed2473ff19368cbd4cd28da6f44ef6abfaca66a61c881ac25b10d93e3ec679b3"
+    },
+    {
+      "section": "卷之四",
+      "text": "寅月亥日占主人何時回﹐以父母爲用。得大畜之益",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0281",
+      "sha256": "684f78c1e55c74951eaa23132b5ece34f855863e252102322b4a0ba8c071e12c"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊　　官鬼卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0282",
+      "sha256": "d47249903a5db548a770e18c8c8802755fdf79c71a85d9f7fe2512cdab6417f0"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水ㄨ應　父母巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0283",
+      "sha256": "f6d5908f3c6ce612cee67edc10485a7c0b22723b6a17311674db8cae0f579dd6"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚋　　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0284",
+      "sha256": "e26de6bd4a9078d1dcf8fbb153f672d90f5e044271b798c18594cf5b45508c00"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土○　　兄弟辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0285",
+      "sha256": "0aed1c4ebe094833b27558d3b2b5036b0adf240a7bad21d1c444f831174e9228"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木○世　官鬼寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0286",
+      "sha256": "809652c150e8445f8e9a7b1aec4bdf9f184debc70e292509acbbf832d582364a"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚊　　妻財子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0287",
+      "sha256": "e8fd7b8644926914f510973a87de3e42d502a197138eab9fdca53fd91d904ca9"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕子水財爻化出巳火父爻﹐動爻不克變爻﹐巳日必到﹐果於巳日到。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0288",
+      "sha256": "0dbb795070fa2f885f37b32d59e9da1f368d22e1b148df4f8270b602f0e5c2a7"
+    },
+    {
+      "section": "卷之四",
+      "text": "亥月甲子日占夫在外還往他省去否得大壯之大過",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0289",
+      "sha256": "645aea14339e7458644edfb604d9567568ea02f84e260c4e79c7714251e6ea45"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚋　　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0290",
+      "sha256": "e26de6bd4a9078d1dcf8fbb153f672d90f5e044271b798c18594cf5b45508c00"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫申金ㄨ　　子孫酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0291",
+      "sha256": "ef2c80e38cbdc9456807c2b4903ccfb0e2b5fb1c6c1cd21cf4cc7a28fbce87ef"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母午火⚊世　妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0292",
+      "sha256": "8b160daca44ff31ca5f8db2120bb08bfd733c2160bfd5ab993a13cc9e7d20e13"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚊　　子孫酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0293",
+      "sha256": "63b6d9e2c7491ab5db4b52900d9ca0b5642bce8fd835f6b13a0b59c5f1d938c1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊　　妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0294",
+      "sha256": "64aaa0d3f51bd7ba8a16e1dc4152fa468c570a7e39c8f1da41a42f3a37a3a39d"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水○應　兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0295",
+      "sha256": "2664f594f6646321934408e85b2b1a312273faf2695956906834a9e00a30b11e"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕妻占夫官爲用神﹐申動克之﹐寅木夫爻受克不往他處去矣。不日必回。彼曰﹕何以其回也。予曰﹕日月生扶﹐夫生世爻必有歸志。問曰﹕何日可到。予曰﹕巳日必到﹐應巳日者﹐合住申金之日也。果於巳日到。或曰﹕用爻有病﹐莫問歸期﹐此卦申金化進神以克寅木﹐如何許回﹖予曰﹕彼問夫之平安﹐卽以不利斷之﹐今加往他處去否﹐夫爻受到制﹐不往他鄕﹐斷卦者各有取用耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0296",
+      "sha256": "365293fbd3efe3939837f4f347f0eb02f8fa8cfe8b33c5c7d10a4097bf42c5da"
+    },
+    {
+      "section": "卷之四",
+      "text": "予於戌月丙戌日由江右登舟占一路平安否得蠱之巽",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0297",
+      "sha256": "5c4e2970c23a1fc001a2fd1803ed41a845483ae0dab45b31db2f8a3c74ba1a59"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚊應　兄弟卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0298",
+      "sha256": "0246016bd9afbdae426f4f05cbb73e4492846ac983ea4df5a280dd62d199121c"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水ㄨ　　子孫巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0299",
+      "sha256": "6f03c176234246cf801240931c97a3306cb32fdb6fe04a51ed245ec938d45aef"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土⚋　　妻財未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0300",
+      "sha256": "348b74eeaad0a664831f17bf577a6d72a0190129bf9b9b71c12df8ce89f4789f"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼酉金⚊世　官鬼酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0301",
+      "sha256": "ee8e10a9ee9597a4518bdd6962c46ede13e03f99164b355e8deaef57c619925a"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母亥水⚊　　父母亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0302",
+      "sha256": "1abd297d3135603c186496241160f098bd9c82f4042ecd6cd8c5438709cb1c55"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財丑土⚋　　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0303",
+      "sha256": "e1a15af745709f17443a6ab8ae7a30efdf831df5683441b5636733fb8fd54a32"
+    },
+    {
+      "section": "卷之四",
+      "text": "予疑酉金鬼爻持世﹐一路憂疑之象﹐初不知風阻之說也﹐及至戊子日﹐風雨大作﹐舟泊南康﹐始悟此卦﹐子水父動﹐子日之風雨也﹐見其化出巳火子孫﹐卽知巳日方晴﹐果泊五日﹐巳日天晴得風順矣﹐自此始悟子孫乃行舟之順風也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0304",
+      "sha256": "4b1d3331477555a1f2bb2745e72df3a7bc35452608de256e391e885279e6e709"
+    },
+    {
+      "section": "卷之四",
+      "text": "防非避訟章第九十五",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0305",
+      "sha256": "ca2ed447f680a7b4221ea6cdb0f49ae4d79e95ebeb7cb84500cd5dba7de91b1b"
+    },
+    {
+      "section": "卷之四",
+      "text": "憂慮官可邦﹐喜官居空破﹐最宜子動﹐子若持世無非﹐鬼雀同興口舌不免﹐蛇鬼克世災患相侵﹐武鬼必凶盜賊陰人﹐白虎鬼定有傷痕見血﹐世動克應我興詞﹐應克世爻他有訟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0306",
+      "sha256": "34b43d423394352fe0bf3bc7a0bb977fc7e166a2da74712ec653763369f2eb02"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫動子孫持世必不成非﹐鬼持世鬼克世應動克世定然成訟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0307",
+      "sha256": "b02cd9a8ab3fe8b301de5d13605d5808f849f7916b5cbec261f089508ba807f6"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬥毆爭競章第九十六",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0308",
+      "sha256": "1e2a13175dfe2b0c4cffafe14366b47c0c2426745e8137d5263d3ce492357de8"
+    },
+    {
+      "section": "卷之四",
+      "text": "彼此相爭尋世應﹐不宜沖克喜相生﹐日月克身我必受辱﹐動爻克應他必遭刑﹐應克世者他勝﹐世克應者我贏﹐世空破世動化退我心怯焉﹐應動應旺化進神他得勢耳﹐卦遇六沖必散﹐卦逢六合必成。亦不離乎子孫爻﹐子孫發動子孫持世爭不成﹐日月動爻宜於克應不宜克世﹐世宜旺動克應﹐及動而化吉官事必贏。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0309",
+      "sha256": "149ccc5cc228673abfc027225bca6591672c3f2af6540fa2c4a2e3f23805a38f"
+    },
+    {
+      "section": "卷之四",
+      "text": "興詞舉訟章第九十七",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0310",
+      "sha256": "03525f7062aa337d86d9698d4a137fb0ab020460f51b1fa3ec7a3974fa4e5982"
+    },
+    {
+      "section": "卷之四",
+      "text": "官父同興公庭有理﹐父官克世受屈含冤。世化退神世空世破﹐卦變六沖﹐世被刑沖﹐終不成訟。財與子孫發動克破文書官鬼亦不成之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0311",
+      "sha256": "07375e5536e56b35fd0e3cca3f52b80d1882684e5a5cc43ea8b3facfd475e0dd"
+    },
+    {
+      "section": "卷之四",
+      "text": "已定重罪章第九十八",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0312",
+      "sha256": "0a301d3d55fcc2957fb78c81d30aed5dc9b855ab10e0e42620b64781ee925b31"
+    },
+    {
+      "section": "卷之四",
+      "text": "福宜旺相最忌官興。子孫持世子孫發動已到法場終必赦免。官鬼克世或官鬼持世﹐又被日月動爻沖克或世動化凶﹐𨿽定輕罪疑改重。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0313",
+      "sha256": "087f699bbbda7029b278874d3b3b6f3ca581a7f820599b3a5f1775da2a266c38"
+    },
+    {
+      "section": "卷之四",
+      "text": "疾病章第九十九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0314",
+      "sha256": "716fe6fc3b89994e7bc3dd17499b0f3f3baa4960c190b2df5addd20911ff6c2d"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕人有七情﹐致生百病﹐急於問卜﹐以慰其心﹐柰何卜筮諸書舛錯悖謬﹐柰人反無定見﹐旣取用卦身世身﹐兼用本命﹐又有不看身命用神﹐單看卦驗﹐卦得明夷﹑大過﹑觀﹐賁﹑蠱﹑夬﹑豐﹑同人﹑大畜﹑需卦﹐斷之必死。又云﹕死气喪門臨本命﹐早備衾棺。又云﹕蛇動主死﹐虎動主喪﹐以星煞六神而斷生死﹐獨不思假使惡煞凶神臨身守舍﹐若得用神二身旺相﹐斷之生耶﹖死耶﹖予試多年或生或死﹐全憑用神﹐予皆不驗﹐人有不看用神而斷生死者﹐卦變爲六沖是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0315",
+      "sha256": "f3b5d312fb3c1cff583b90eb91e4924858968f15accfbd6c41f42c1ce466e3f8"
+    },
+    {
+      "section": "卷之四",
+      "text": "六沖變沖﹐久病難於調治。久病者﹐卦逢六沖﹐卦變六沖﹐不論用神之衰旺﹐乃不治之疾也﹐近病逢之﹐不藥而愈。卦變克新病亦主危亡。卦變者﹐亦六沖而變六沖﹐何其近病亦危﹖乃因化回頭之克也。如巽木變乾金﹐艮坤化震巽﹐皆謂之回頭相克﹐𨿽非墓絕﹐亦主危亡﹐若化比和﹑化克去﹑及化回頭相生﹐近病吉久病凶﹐六沖之故耳。除此沖克之外﹐必看用神。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0316",
+      "sha256": "2ea714e3d83467080ece2147872109c78cb85c9afdff987aba97dfb68583b929"
+    },
+    {
+      "section": "卷之四",
+      "text": "用遇旬空﹐近病何須憂慮﹐用逢月破﹐久病難許安寧。自占病﹐世爲用神﹐占父母弟兄取用神者皆在用神章內詳之﹐用神動靜而值旬空﹐及化空者﹐若無日月動爻沖克﹐許之沖空實空之日卽愈﹐倘逢沖克病𨿽重而不死﹐若值月破須看用神之衰旺﹐旺則愈於實破之日及出月而愈﹐衰而受克者必危。久病用神值旬空月破者﹐卽使用神旺相﹐亦無法以治之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0317",
+      "sha256": "1a9b417ef7fdd87afd8d481d7fa2f6e4a1ab2142ecf85584b8aebe0d9421af8a"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕海底眼黃金策皆云﹐主空無救中殂﹐不分近病久病﹐非經驗也。覺子曰﹕予得驗者﹐近病值旬空﹐若逢三合六合者必成久病而終。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0318",
+      "sha256": "1a51ad2a1120d8c518283c0ae6e2dd0c52146db237d31675ec5f32814371d1d4"
+    },
+    {
+      "section": "卷之四",
+      "text": "用化鬼鬼化用愼防不測﹐忌化用用化忌最難調醫。自占病﹐不宜世爻變鬼及化回頭克﹐占兄弟妻子皆不宜鬼變弟兄妻子及弟兄妻子而變鬼﹐又不宜兄變財財化兄﹐父化子子化父。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0319",
+      "sha256": "044bc02e051c0f3f38ca043e14eb7071bd884a285270ae7b8d063532e4826f49"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕鬼乃父母之元神﹐父動化鬼乃爲化生﹐輕病者卽愈﹐久病者鬼化父﹐父化鬼皆主危亡﹐或曰﹕用神化鬼卽爲凶兆﹐假使又值旬空﹐近病者何以斷之﹖予曰﹕曾有占驗請試詳",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0320",
+      "sha256": "e8e4d41f104e1c045e0b2da2e72633e95b472e3eebd5dbf5be161bb3b8d8aeb8"
+    },
+    {
+      "section": "卷之四",
+      "text": "申月庚寅日占子近病得恆之解卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0321",
+      "sha256": "b1533d5b5b2ca39c36a6b5b84d92445527552f2466530aca4f6e71d4701a9616"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土⚋應　妻財戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0322",
+      "sha256": "6b80629a076d0122269faa021df64ee33b467021378bd7dd4c2c2fb017c25ebe"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼申金⚋　　官鬼申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0323",
+      "sha256": "22afd68c34f2785c2e2b253bade8a4d2890a0cde0d17a5f0004f28f84fc4fcbb"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫午火⚊　　子孫午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0324",
+      "sha256": "f38526cc32e3b013440ec661365f5bc2a29844cb35786c6e028dc3a017bb39c6"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼酉金○世　子孫午火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0325",
+      "sha256": "bad64771e2548997b7e4c13be26f3a63cf79b004d579e9d537142e0befb7ab8a"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母亥水⚊　　妻財辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0326",
+      "sha256": "371de3c1504efeeeb79f07a6d2dc79a96dbd88e404c7828c08284bd6c374e52a"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財丑土⚋　　兄弟寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0327",
+      "sha256": "994f295b340160cd3b6c146e0176033e6efc0d57101f3b7bc4beef9ef24bfd17"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕鬼變子孫﹐夭折之兆﹐幸得子孫值旬空﹐近病卽愈﹐恐其難過午年﹐果在出空之日而愈﹐辰年占卦至午年出花而死。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0328",
+      "sha256": "f85ecadf35d87408f33ade63ea48cbbb0eec889b41f0a2d3ddd8acc34ad7b7f6"
+    },
+    {
+      "section": "卷之四",
+      "text": "動墓絕化墓絕須忌生旺﹐日月克動爻克最怕休囚。用神逢墓絕及動而化墓化絕全看衰旺﹐用神旺者何須慮﹐用神衰者實堪優。日月動爻沖克者亦須看用神旺衰﹐旺相者沖去克神之日而愈﹐休囚者生助克神之日而危。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0329",
+      "sha256": "043fd179d6bd54baecf561c744e8feb24fa8eef5317918be0c944ae695e97b37"
+    },
+    {
+      "section": "卷之四",
+      "text": "散破無援脫气﹐忌搖元動仇興。用神臨散遇破乃全無生扶﹐或脫气休囚者﹐皆無根蒂﹐少吉多凶﹐忌神動克用神﹐若有元神發動許之有救﹐只恐仇神又動﹐當許凶危﹐須於元神章內詳之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0330",
+      "sha256": "c38c4ef62d543d11ddd523c69044111aa93bb07240ea9f34b6da86bcad486ca3"
+    },
+    {
+      "section": "卷之四",
+      "text": "世持鬼病𨿽輕而難療。此有兩說﹐自占病﹐官鬼持世﹐其病難痊﹐𨿽得子動克去身邊之鬼﹐目下𨿽愈﹐終不斷根﹐不然遲遲又生他病﹐此之謂病不離身﹐身不離藥﹐世臨官鬼以臨帝旺長生﹐必得久遠疾病。代占六親之病﹐若見官鬼持世﹐爲憂疑之狀﹐惟喜子孫發動克去我之憂疑﹐卽使用神衰弱﹐管許平安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0331",
+      "sha256": "0c5bf058139ba731d81ddcf0bf766282ea1dbe638ff17272ab0eb59a0d2b1784"
+    },
+    {
+      "section": "卷之四",
+      "text": "如申月壬子日占子病得遁卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0332",
+      "sha256": "8a725b770a523f1d2b0f394909b3d0c1803ca52d41a6212045092927a7e77bf5"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0333",
+      "sha256": "c5aca7f85b3353b7e3d044e53c04fea297b73bec2caeab2453e18ba66dcb48d2"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0334",
+      "sha256": "099dc3b4f6945f604926865c142cb88191864dae8fe90e918aaab888798164d0"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0335",
+      "sha256": "8b9e26e6346c8a1dfe365eba94e6a6dd86c7cc45b29124e61ad83bb8eead63fc"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0336",
+      "sha256": "3ecf30d59bad41e5f22e5207adb54ac6c133e7d6d59b2c66d80eb28dd5c7c104"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚋世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0337",
+      "sha256": "e7317f9b82bd06e7594aa249c1976fca3c72d220361df12fc434425a94d3b017"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0338",
+      "sha256": "0d023d4b93d948d1818ead0fd40c63acaa5f85aba69f953e0050180c74c4af1c"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕令郎今日卽愈。何以知之﹖予曰﹕官鬼持世﹐憂也﹐今日子日沖去憂心﹐管許立愈﹐果於本日愈。覺子曰﹕如占自身及兄弟妻兒者﹐此法是也﹐若占父母之災﹐官鬼爲父母之元神﹐豈宜子動而傷耶﹖妻占夫宜鬼爲用神﹐又豈子動以傷官耶﹖不惟不能解憂反添優也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0339",
+      "sha256": "b56e0e534a1c4e92261b135f5b8c5a20c3cb04154525facc5e9d8e8db5eee5d8"
+    },
+    {
+      "section": "卷之四",
+      "text": "身臨福德﹐勢𨿽險以堪醫。亦有兩說﹐自占病子孫持世不藥而痊﹐臨應破者空實破之日而愈。代占六親之病不必看用神之衰旺﹐卽知其安。何也﹖子孫乃喜悅之神﹐只要旺相﹐若動於卦中者亦爲吉慶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0340",
+      "sha256": "1ccd9a392c07dee8177538246cf70126423c60e7b9f9f45b33384d21470235a7"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬼化長生﹐忌化進﹐須慮添災。鬼爻發動病勢必重﹐若長生﹐病勢必輕﹐克用神者爲忌神﹐若動化進神﹐亦同此意。忌神化退﹐其疾病漸減。覺子曰﹕鬼爲父母之元神﹐占父母者﹐其病卽愈。亦爲女人占夫之用神﹐占夫者亦卽愈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0341",
+      "sha256": "e4c13cc0a85fd6fd6d1136ef46621af47b222d74e779810f0f6033a123859058"
+    },
+    {
+      "section": "卷之四",
+      "text": "福搖化克卦反吟﹐病必反復。自占病及占兄弟病﹐得子孫動者﹐制服官鬼﹐其病卽愈。倘子孫動而化克﹐卽使病愈後還發﹐反復之象﹐卦得反吟者亦同上意。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0342",
+      "sha256": "b7b7c21bbd84fc2fef0f18be1eb717c7d61ae30fc87a94610ecc93b1c9f5b038"
+    },
+    {
+      "section": "卷之四",
+      "text": "用絕逢生危而有救﹐主人得助﹐重亦何妨。用爻受刑沖克害﹐但得日月動爻有一而生扶者﹐乃爲絕處逢生﹐臨危有救。用神不宜太弱﹐弱則體虛﹐卒難痊愈﹐但得生扶拱合﹐𨿽得重病亦不至死﹐覺子曰﹕用神亦不宜於太旺﹐易理貴乎中庸﹐過猶不及。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0343",
+      "sha256": "65cc92605c02677b53a1956d99407a9b77a3f436333c7953e26c22ee93fca53c"
+    },
+    {
+      "section": "卷之四",
+      "text": "用臨日月休尋伏。凡用神不現再占。卦前卷伏神章中注解明白。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0344",
+      "sha256": "6bb3b4840592e0a6aa216d3d8d00e59fb15471e9f636c16e83a0cf083fdff4d3"
+    },
+    {
+      "section": "卷之四",
+      "text": "痘疹章第一百",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0345",
+      "sha256": "ea174227cbf16a1f5149b721357bb4e2b1fa5e2d99d0ac32e60a2b8ca4b92585"
+    },
+    {
+      "section": "卷之四",
+      "text": "平時而問男女何時出花鬼﹐鬼爻爲用﹐鬼爻靜者逢值逢沖﹐鬼爻動者逢值逢合﹐鬼衰逢生旺之年﹐鬼旺鬼多逢墓庫之歲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0346",
+      "sha256": "15514fac637d0f41249fb01de1497c2c1f559953ade8000a0582c30b4d22f949"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬼空鬼破塡實之時﹐鬼若伏藏出現之歲。出花而問吉凶﹐卦忌六沖兼忌子孫化鬼及鬼化子孫﹐父化子孫﹑子孫化父﹑子孫伏而空破﹐皆非吉兆。問花之密者﹐鬼動而臨日月及動爻生扶﹐花必稠密﹐如值空破休囚墓絕﹐痘必來朗。鬼動乾宮﹐多生頭上。鬼搖坤卦﹐腹上多叢。艮宮多於手﹐兌宮多於口﹐坎離上身﹐震巽下身。火鬼其色紅紫﹐金鬼其色虛白﹐水鬼頌防痘﹐木鬼雜細﹐土鬼腫大。以上四條﹐分占四卦﹐不可一卦而斷之﹐大抵全在子孫爻也。子孫臨日月及日月動爻相生﹐動而化吉不受刑傷沖克﹐爻不亂動﹐花中密以全生﹐痘𨿽暗仍收功。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0347",
+      "sha256": "6bfc90dc26500907805730a47859811124d4b2cb7ff849fa17bf37d7bb49365e"
+    },
+    {
+      "section": "卷之四",
+      "text": "病源章第一百零一",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0348",
+      "sha256": "cac6e4cff05e5a1603894c217a9075436d9300c7dd3ae0f36c6e5a2f7b285191"
+    },
+    {
+      "section": "卷之四",
+      "text": "火屬心經﹐發熱咽漧口燥。水歸腎部﹐惡寒盜汗遺精。金肺﹑木肝﹑土爲病歸脾胃。衰輕旺重﹐動則牽連身軀﹐騰蛇心驚﹐靑龍則酒色過度﹐勾陳腫脹﹐朱雀則言語顚狂﹐白虎有損傷﹐女子則血崩血暈。元武憂鬱﹐男人則陰癥臨虛。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0349",
+      "sha256": "c8e52d1f79aa8395465271567954d51e5cae61693f4e986f5f3759828c1e07b4"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕此乃黃金策占疾病之首論也﹐予以爲之撞門槌﹐對俗人而言﹐不得不以此而斷之。若知分占之法﹐另占一卦以定吉凶﹐庶有後驗﹐若卽以此卦﹐兼斷其生死者﹐如若有靈﹐吾不信也。要知來人而問病﹐有何所犯﹖何以治愈﹖及問吉凶何如﹖我且以發寒發熱而妄猜﹐而病人不得趨避之旨﹐問卦何益﹖今見此章﹐單言病癥﹐並不言及何法治之﹐如果心經發熱﹐來人豈不知也﹖請問治其熱者是何法也﹖無益之論﹐故書刪之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0350",
+      "sha256": "9697fd29e76296842d5388d6f717fc488d3582d7ebe85e23a6b0219e3b7d7b4b"
+    },
+    {
+      "section": "卷之四",
+      "text": "予嘗以來人問病﹐先命占其吉凶﹐卦得吉者﹐許之調理卽愈﹐不必服藥求神﹐卦得凶者﹐命之延醫﹐卦得鬼動克用神者﹐命之再占﹐或占家宅﹑或占墳墓﹑務必求其是何所犯﹖何法治之﹖庶不負來人之問也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0351",
+      "sha256": "773060e0b2f8aed029a5c8b1ac8ce7295ddc7c2b0f7e0d1dc245181ce5d89214"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬼神章一百零二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0352",
+      "sha256": "fd2091e61313ef55848c03f709a8511ff3d4bdef6e752d09446e7fd5db54b8be"
+    },
+    {
+      "section": "卷之四",
+      "text": "凡占鬼神﹐卦中鬼值休囚及空破墓絕﹐非鬼神之害也。官鬼屬金旺相者﹐武神及西方之神。休囚者﹐刀劍身之鬼。鬼臨木者﹐旺則文神及東方之神。衰則倚艸附木之妖﹐或是刑杖懸梁之鬼。水爲河海及北方之神﹐休囚者池井江湖水死之鬼。火鬼火神及雷公電母窯之神﹐休囚者湯火焚燒之鬼也。土鬼土神及中央之朝及掌管山川社稷之神﹐休囚者墻倒屋塌土死之鬼。古以金木水火土各有其神﹐卽如金官者﹐謂之天將辟公金剛伍公嶽公等神﹐予以爲非武神者不可﹐書斷之神也有敕卦者有來卦者﹐各方土俗不同﹐書之未載者更多﹐何得各朝而祭之﹖須問病人或於某武神朝中許願信而未還﹖或於何朝城穢污作踐﹖心有所疑者﹐指其神而占之﹐鬼爻或旺或動﹐是此神也。如不上卦﹐再占他處之神可也。鬼值木火水土者﹐皆用此法﹐得罪於正神者﹐香花紙馬祭之。勾惹邪祟之鬼者﹐用漿紙錢夜靜之時金鬼者向西送之﹐水鬼者向北送之﹐餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0353",
+      "sha256": "7ab24710825eb8843f0ddf2c8d67d305bdf154206e37446bc0ca34326ae268d8"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕凡得時災瘟癖﹐照此法而祭送者﹐予屢驗之。倘系瘋癆气蠱﹐旣失調於前﹐酒色傷身﹐又失愼重於後﹐與鬼神何干﹖發之送之皆無益矣﹐惟節飽食﹑遠色欲﹑息气養神﹐其病自減。予遊徧江湖﹐曾至黔蜀粵﹐見其病不服藥﹐專祭祀鬼神﹐先用三牲五牲﹐後至殺牛宰馬一次不愈﹐甚至二三十次﹐因病致窮者多矣﹐殊不知害他命而救命﹐其罪愈彰﹐所以屢見割性命之多者﹐終不能救其死﹐可不戒與﹖今下路讀書人亦信此邪神者﹐予實不解。神農嘗百艸遺救生靈﹐未聞有何聖賢﹐教人宰牲命以救命也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0354",
+      "sha256": "ff8f51d836089b144a6548cc06e89c4f41a7436650a9d02c68e64c20c9b94e1a"
+    },
+    {
+      "section": "卷之四",
+      "text": "李我平曰﹕易冒以鬼臨金者爲關公﹐嶽王補遺﹐又以靑龍神爲寺亭候第﹐不知關公之前﹐金鬼與靑龍﹐是何神也﹖又曰祭者降之以福﹐不祭者降災﹐豈非邪神與﹖正直之神豈能爲此事﹖此書前後無一不合於理﹐獨此疾病章中﹐亦言鬼神之事﹐予實不服﹐因今人問病﹐開口先問鬼神﹐不得不從俗耳﹐智者察之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0355",
+      "sha256": "566a938956e495d65d251b55351c95142fb9ddc81e6e4a9f1110d9088224c38a"
+    },
+    {
+      "section": "卷之四",
+      "text": "延醫章第一百零三",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0356",
+      "sha256": "4b89b2b09d2a3f2315c933c9508dee38eb0739ad0f9e61ed4756592a6a087760"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕有人而問予曰﹐問卜以求神延醫而服藥﹐有是理乎﹖予曰﹕若無此理﹐伏羲書卦﹐神農嘗藥﹐作何事耶﹖彼曰﹕然則又有不能救者﹐何也﹖予曰﹕有根者可以救之﹐無根者則不能也。人之星辰過宮或是交運脫運﹐謂之移花接木之年﹐移其有根之花木者﹐上則遮蓋﹐下宜澆漑則活矣﹐不澆不漑﹐見日則枯﹐服藥求神者卽此意也。若使無根之木無蒂之花﹐𨿽澆𨿽蓋﹐亦無用矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0357",
+      "sha256": "d27d96f94eb38c7faca9448f809e37cbb2346f735d74abb72a2759ac2ff83927"
+    },
+    {
+      "section": "卷之四",
+      "text": "自占求醫﹐應爻爲醫人﹐代六親而求醫者﹐亦以應爲醫人。鬼作憂神休妄動﹐福爲喜悅而生扶。自占代占﹐鬼𨿽憂疑之神也﹐若持世及動於卦中﹐得子孫動而制之﹐此醫可請﹐手到成功。若得子孫臨應爻者乃明醫也﹐其故何也﹖子孫乃制鬼之神﹐非眞正能制法魔之鬼也﹐乃先去憂神﹐我無優也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0358",
+      "sha256": "2b399822af740bb94773cc5d3886470db7772b90a2185e05c0561342b7ac6e53"
+    },
+    {
+      "section": "卷之四",
+      "text": "應作醫人﹐不宜空破墓絕。應爻空破墓絕休囚衰弱﹐或旺相而被日月動爻沖克﹐或動而化鬼化絕化回頭克﹐藥不見效。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0359",
+      "sha256": "698f71b50b5f2b929730b6b44a705a75c129e3390327742d7d3ee037e7b83973"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫制鬼﹐最喜旺相生扶。子孫臨在應或發動於卦中亦要旺相﹐不受刑沖克害破墓絕空﹐藥必見效。子動化鬼化克﹐其藥不精﹐子動化空實空之日有效。子動化生化旺化進神者﹐其藥更靈。古以子動化子孫﹐其藥必雜﹐非也﹐子動化子孫而旺相者另改藥品﹐卽比仙丹。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0360",
+      "sha256": "ae1c3a0f2ed271bf8030b703ee3b179288b99272ce8a483289feb6346e6cbf7f"
+    },
+    {
+      "section": "卷之四",
+      "text": "醫克用爻近病卽愈。自占病﹐應爻克世者制我之病也﹐應爻克用神亦如此斷。惟不宜乎久病及體弱之人﹐非得克病身亦受其傷矣。應爻臨兄鬼而克用神及克世爻者不拘久病近病必遭其殃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0361",
+      "sha256": "413284576636ae775c62a93785af4bb8e56794c3b74f83b4b5d21820aae31d20"
+    },
+    {
+      "section": "卷之四",
+      "text": "父爻持世妙藥難調。自占病﹐父持世藥不見功﹐宜於靜養﹐遠色欲息气惱可也。兄弟持世有子孫動於卦中者﹐醫再延之﹐惟嫌鬼旺鬼興誤服藥餌。財爻持世切莫誤食肥甘﹐旺相遇生扶良醫有見﹐休囚逢沖克無藥可醫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0362",
+      "sha256": "87b88704ededc21c42b32ec8233cc7b2b29b5a4df3c46202e46d469b479f007a"
+    },
+    {
+      "section": "卷之四",
+      "text": "子不代父以占藥﹐妻不代夫而卜醫。子占父宜父爻旺相﹐占藥占醫又以子孫爲用神﹐父旺以傷子也﹐一爻不能兩用。妻占夫宜官鬼旺相占醫占藥亦以子孫爲用神﹐子旺又能傷夫﹐所以不能代占醫也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0363",
+      "sha256": "351c4ad6342ac861ccae214ec55178613b8f14cd6f66159ac7008c91a7e06fbf"
+    },
+    {
+      "section": "卷之四",
+      "text": "延醫於子孫方﹐治病以應爻定。卦中子孫爻旺者﹐延醫於子孫之方。且如午火子孫或旺或動﹐請南方之醫﹐餘仿此。卦中子孫休囚空破者又看應爻旺否﹐若得應爻旺相生合用神卽於應爻之方請之。且如應爻臨申金﹐延醫必在西南﹐餘仿此。如卦中有一爻獨發而生用神者又以此方而延醫。以五行而定名姓﹐水爻動黠水之姓﹐火爻動姓名像火﹐木爻艸頭木﹐傍土爻姓氏有土。且如占妻病﹐妻爻屬水﹐得申金發動以相生﹐請錢姓之醫以治之﹐予仿比。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0364",
+      "sha256": "7bb23bd53cb3d5c9798333e48c2f10ed0525e53c3ecf09a0e5c6c8dbc2f7e968"
+    },
+    {
+      "section": "卷之四",
+      "text": "不起之病﹐卦中不現其醫。立愈之災﹐爻中不見服藥。屢見占醫之卦﹐無藥可醫之病者﹐神不現其醫矣。若非用神化鬼﹑鬼化用神﹐卽是忌神化六親﹑六親化忌神﹐及用神化絕﹑化克﹑化墓﹐久病逢沖﹑逢空﹑隨鬼入墓﹐此皆無藥而醫也。病之卽愈﹐神亦不現其醫。近病者﹐若非卦得六沖﹐卽觀用值旬空﹐或用神化回頭生。自占者﹐子孫持世﹐此皆不藥而愈也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0365",
+      "sha256": "77cd62dc3160f48a1958ea1bd7d9dd85ff31275a3bcf9fb23c4e248cc182db6d"
+    },
+    {
+      "section": "卷之四",
+      "text": "醫卜往治章第一百零四",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0366",
+      "sha256": "f274678900dc4dc9c77b3d16906e06493b9bdb3062ec5ef1c276c23deef07ab2"
+    },
+    {
+      "section": "卷之四",
+      "text": "大抵與醫卜相仿。世爲己﹐應爻爲病人﹐若得世爻旺相﹐子孫財爻持世﹐世生應爻﹐世爻動化進神﹐化回頭生﹐日月動爻臨財星子孫而生﹐在此皆手到病除。近病者應值旬空﹐或動而化空﹑化回頭生﹑化旺﹑化退﹐日月動爻生應爻﹐及卦逢六沖﹑卦變六沖﹐此皆速宜往救﹐莫令他人先到以成功也。久病者應爻旺相﹐或逢日月動爻相生﹐或動而化生化旺﹐應臨子孫﹐應臨財動生世﹐𨿽然久病﹐我必除根﹐除此之外﹐皆不宜往﹐徒累盛名。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0367",
+      "sha256": "dfa01ab74c13c5e204d0c224ebda86a2ee81c030734d117dc1f3ce266532328d"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕諸書無不以官爲鬼爲病﹐應爲醫人﹐子孫爲藥﹐理固然也﹐但此宜鬼者非鬼非病﹐乃憂神耳。占子病者﹐父母愛子之心﹐未病憂疾﹐況已病乎﹖自占病者﹐性命在呼吸之間﹐且一人不起﹐舉室驚惶﹐誰不憂乎﹖此官鬼者﹐卽一家之憂神也﹐惟除此憂者﹐乃賴子孫爻也。如午月甲寅日一人病在危篤﹐醫家不治﹐迎予到宅﹐見有三十餘人至親﹐淚眼不幹﹐密友愁容可掬﹐此非一家之憂乎﹖",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0368",
+      "sha256": "59e3c92460c68f59df581a0fcf7ff508a5c4343d97bf8f8cbfaca7ddf78afe40"
+    },
+    {
+      "section": "卷之四",
+      "text": "及至弟占兄病得屯之中孚卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0369",
+      "sha256": "17a004e2b430b4c5a4b216fba2dd7cc0ee2a9bd37ee3b10cd09288783003606d"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟子水ㄨ　　子孫卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0370",
+      "sha256": "f2dbf90b36ba145f80d5a0e6a75b478eedf1acb7ae970d25ae635d9e68f2822f"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼戌土⚊應　妻財巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0371",
+      "sha256": "6c26e420e3515dd2a0815e720ab6bbdc7430db2207a9ad0ee513e1d910652742"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母申金⚋　　官鬼未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0372",
+      "sha256": "43d08230ebe6094f27e27360b327d19e5f591ad4566d8a3bb5ca1f290913ee8b"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼辰土⚋　　官鬼丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0373",
+      "sha256": "02790d1da70a82843936a3a57ad08cf9a0c2d813889df73949e2878b0ec9b1d4"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫寅木ㄨ世　子孫卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0374",
+      "sha256": "7aaed398464b073d6f17581a7e56f0218c2e44f004131a6a3a36ee3fcb2ca52a"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟子水⚊　　妻財巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0375",
+      "sha256": "824b68d66c26bb143fcaa8dbf83b1ac45b79a5d4b7eee2efbb67f23ee7cd85de"
+    },
+    {
+      "section": "卷之四",
+      "text": "予卽笑而言曰﹕列位放心﹐今日半夜退災﹐明日卯日卽起牀。只見大小一門愁容變喜﹐此卦中之子孫爻者﹐是藥耶﹖是解之神耶﹖許卽愈者何也﹖此人𨿽是險痘﹐其實近病﹐子水兄爻值旬空﹐近病逢空好﹐值半夜子時而不空也。或曰﹕近病逢空﹐何不許沖空之午日﹐實空之子日﹖予曰﹕因子水化卯木子孫﹐世爻又臨寅木子孫動化卯木子孫﹐次日卽是卯日﹐正一家解憂疑之時﹐所以許半夜實空之時也﹐果於子時退災﹐次日起牀﹐此何嘗用藥而制鬼耶﹖",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0376",
+      "sha256": "3068807c49d8bd551e86f8d10d828b66bc24abdad8b2ce00147287c81837beac"
+    },
+    {
+      "section": "卷之四",
+      "text": "又如一日時值初更叩門入曰﹕家小主有病相迎占卜。予問得病源自山東回後頃刻得病﹐予卽自占一卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0377",
+      "sha256": "c66684cf0307572c67fe6daeb502bfc7b55ca3b56d84a92d498ee3f44a6ae39c"
+    },
+    {
+      "section": "卷之四",
+      "text": "未月壬子日得節之比卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0378",
+      "sha256": "36030012152b05ef0374a294bba098b96fdc636d630a410673d2313263437657"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟子水⚋　　兄弟子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0379",
+      "sha256": "c33369c1a0a2e736c5f593c2a2430b9fb5ceef349e5d81981c07b1f2a7cd1db4"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼戌土⚊　　官鬼戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0380",
+      "sha256": "16694ef631db6638295af4630d319e3e8552274d4751ac0603b513ffe9fd66a7"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母申金⚋應　父母申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0381",
+      "sha256": "f6ffff0bdf51520f451d0278370160e4751a8c1849c8372882ad08ca5559f34a"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼丑土⚋　　子孫卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0382",
+      "sha256": "b50e8467398cccfcf7fdc971b8867e9e4905a5b116b0c17110722feb30411234"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫卯木○　　妻財巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0383",
+      "sha256": "fbe8357095a734e137804481963708208cbb6f60adfbae8fa8cd85ec06d338d4"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財巳火○世　官鬼未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0384",
+      "sha256": "7449fe2e3945fe9f0099977ace34628771ebf23587a35c0ac4dcfcce3f0e8ab8"
+    },
+    {
+      "section": "卷之四",
+      "text": "巳火財爻持世﹐子動生世﹐子孫乃喜悅之神﹐此行有益。及到達伊家﹐值醫檢藥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0385",
+      "sha256": "e4744f647e7539cece37668a96a26d3a374c89d95a763c7ffd849d37363350a5"
+    },
+    {
+      "section": "卷之四",
+      "text": "壬子日占子病得解之坎卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0386",
+      "sha256": "9585b643deca765cee09cbabd0c50526a1ad30b6451700d305a095fe0ecd3d3a"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土⚋　　父母子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0387",
+      "sha256": "03abd41fa1216c3cdd03c8bedde7638ea9dbf2a9794b2b70ee97c950bdbd6974"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼申金ㄨ應　妻財戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0388",
+      "sha256": "74d9b2767ccaf212231e6441db3b214736fd536ba4dfebfba7a2401dbe9e2ece"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫午火○　　官鬼申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0389",
+      "sha256": "37911b10077a38d36d07bc0dbd388650ec73427f813042d48edf7de6d9a286ec"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫午火⚋　　子孫午火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0390",
+      "sha256": "05e58dbc3397a63abc1d9ef6ff354de0a1911c3c4dd4d1d85c369b01f40c5a9e"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財辰土⚊世　妻財辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0391",
+      "sha256": "f56ed53f57181fdb30a415f50608f24a8a26623881ae8c93ecc00dc96974a72c"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚋　　兄弟寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0392",
+      "sha256": "70173c1289be47b2268d7c798d181f29b2f457e4a3bc4763a115c74ce0b0a80e"
+    },
+    {
+      "section": "卷之四",
+      "text": "予見此卦生疑﹐近病得六沖不死之癥耶﹖是子孫變鬼必死之病耶﹖不敢斷之﹐再請親人卜之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0393",
+      "sha256": "33d10b6dc7d4020d82817a2df390cb7ee1834a0fafc19ff3185c8de05b7f105b"
+    },
+    {
+      "section": "卷之四",
+      "text": "叔占侄病得坤卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0394",
+      "sha256": "a6f5fc16d458b255bac024f132f8d00276fa6c2d99a991b2bddbc136fd16e488"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0395",
+      "sha256": "84deb212e372f960e5ad101aa9edbbefd3b9a76e9d4870da1f665ada1dea44b8"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0396",
+      "sha256": "72100c772b4afc12580ff6b632f538502a269d09eac2f160714ed1c3f57d6972"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0397",
+      "sha256": "59cffa28aaef17380656dfadfa5e046ad5c93c4c75b3821ccf646a75ca96deb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0398",
+      "sha256": "42bdb1e7c1a696c186c10ae147c8ef6df49e94a842a235a9232454c954913eaa"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0399",
+      "sha256": "a495fbdda1c4ba5976bd9daa2c7941b28fcabbc61f446a5a3a60a36db716bb29"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0400",
+      "sha256": "97f327defad4592785a7b0c415559c382ba3c5c67423b45c787c6cf82d5ec5b1"
+    },
+    {
+      "section": "卷之四",
+      "text": "又見六沖﹐知不死矣。問有舊病否﹖彼曰﹕從無病根﹐便自山東一路而來﹐亦無病起﹐適間日落之時﹐忽而滿牀亂滚﹐口不能言。予曰﹕旣無舊病﹐予敢保之卽愈﹐再請醫者卜之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0401",
+      "sha256": "2d74b37b94d2ee2e9f4a7d784d1152d551ee75844daa755d0d3712611b17c42c"
+    },
+    {
+      "section": "卷之四",
+      "text": "得井之明夷卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0402",
+      "sha256": "98e33eb54657919ba588aba96825976a3f5478d31ccf4f5bac9dd5d03af3f9b9"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水⚋　　官鬼酉金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0403",
+      "sha256": "f05f97fb62cdba702126e21940ddaa9ffa271c462bcf5b7896914478219dc29f"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土○世　父母亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0404",
+      "sha256": "2dbe23320cd42bdd824eeeea855ffc46ef62ec17adb3fd8c998cc5fc1d74142c"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼申金⚋　　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0405",
+      "sha256": "2532059fccbe51bc69bb31d8b282f300ebbcc10aa23f63366b2609a07ae35055"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼酉金⚊　　父母亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0406",
+      "sha256": "17763a22c94a515454a2974f2617e4b7461f5c4ee86367f8228f6c3c27aace6c"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母亥水○應　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0407",
+      "sha256": "064f6cbc34dfbeabdf7aa27fa204082b397192626ca2aea0987d619bb0c7adfe"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財丑土ㄨ　　兄弟卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0408",
+      "sha256": "d86a6a41397e0941e25e03a815cf3a290e5776c303b57c126ca32e7d3ae836f1"
+    },
+    {
+      "section": "卷之四",
+      "text": "應爲病人﹐世克應爻還不妨﹐乃是克制病人之病也﹐但不宜應爻化回頭克﹐定用藥有誤。予問東家﹕藥曾喫否﹖答曰﹕未熱。問醫者曰﹕所得何病﹖所下何藥﹖伊曰﹕三伏之天中受暑﹐不過解暑之涼藥耳。予私對東家曰﹕令郎不死﹐卻得必死之卦﹐恐此藥未必對癥者﹐再請復看。醫者曰﹕牀上亂滚﹐不能把脈﹐隨以家人問途中何如﹐家人言曰﹕到家熱極﹐移牀於此有風之處﹐再用大冰二塊﹐安於涼牀之下﹐命侄女掌扇﹐一覺睡熟﹐忽然醒來呼喚幾聲﹐卽不言矣。予想熱極之人﹐臥冰臨風﹐空曠之場﹐使人掌扇﹐其病可知﹐醫者亦曰﹕適看病已扶入喜矣﹐不知此節﹐看來寒藥實不可服。予曰﹕竟用附子肉桂﹐方可治之﹐更命伊父占之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0409",
+      "sha256": "cf93ff3f3a22f616e829f42471385e77fbf6d7be26ac3de2da6d0a9cc769807c"
+    },
+    {
+      "section": "卷之四",
+      "text": "壬子日占用附子可否得大有之大畜",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0410",
+      "sha256": "ae72ec7fda6de877a38c610cacd639fe3ed2a6fac482e7561ef08c24ffe87253"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火⚊應　妻財寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0411",
+      "sha256": "11560792c8bc9b1ab15eb16d1c6d9f8b09bf4f092f74bb447b07d2c5ead9d82a"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土⚋　　子孫子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0412",
+      "sha256": "c82248ed7bb528209ce5ed9d1070078e146b3a485bd8516f798f9cd4ec5d62ae"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟酉金○　　父母戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0413",
+      "sha256": "738e5c5b6bc283abf63bb24b943099d34c9a25e853d0331c34244ad98dc3f397"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚊世　父母辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0414",
+      "sha256": "18c44b62ca8a416aae81ffc01dad5bcc8a96a846256fa0bcd8945493a110e783"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財寅木⚊　　妻財寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0415",
+      "sha256": "f7e6bf4a05550924277519809817c67441b4fbc55aafe276cc51f103b18a2cfe"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫子水⚊　　子孫子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0416",
+      "sha256": "8c36131ad4bd388928b96ce587955ef62049ed2c9d9a53b975a70aeb0bd79e37"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫臨日辰﹐酉金兄動以相生﹐服用一劑﹐保管立愈。醫家先用漧薑湯試之﹐少刻開言肚疼之甚。予曰﹕何如快服此藥。醫家加減調理一夜﹐次日曰愈﹐此人之不死也。因我出門子孫發動一卦而斷定矣。厥後連占數卦﹐皆合前象﹐方敢用大熱之劑﹐起死回生﹐不然一劑涼藥﹐寒上加寒﹐能於治耶﹖覺子曰﹕此卦酉金兄動以生子孫﹐服此熱藥而病愈者。使前賢見之﹐又以酉金兄爻而爲藥也。凡卜藥亦有當卜之道﹐或醫家看臨危之癥﹐欲投此藥﹐可以起死回生﹐惟恐一失﹐系不少得子孫動者必喜悅也﹐卽可用之﹐用而必效﹐或泛詢行用﹐或長途穹旅﹐無處得寺醫﹐有人傳一奇方占得子孫動者其方必效﹐或半夜更深﹐延醫不及﹐檢黠古方﹐及家藏凡藥﹐實對此癥﹐不敢擅用﹐不可不占﹐皆以子孫爲用神﹐但得子孫持世﹐子孫發動﹐服之立可解憂﹐此諸占之子孫者﹐不拘金木水火土也﹐或旺或動﹐卽爲喜悅之神。用此方而見效不爻﹐何喜之有。切不可又以金臨子孫而用鍼﹐火屬子孫而用炙﹐錯也誤也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0417",
+      "sha256": "87b62063f98a15bcad1b2dc045c9ba5f1ef060da2435eb0e92a94d6d73caa922"
+    },
+    {
+      "section": "卷之四",
+      "text": "一日到一府中﹐眾客告曰﹕老先生昨日在後園僕倒﹐扶起出狂言﹐至今不知人事﹐諸位醫者內有曰﹕不服人參不能提气。有曰﹕幸無痰上﹐若喫人參﹐痰上則難治矣。予曰﹕就卜人參喫得否。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0418",
+      "sha256": "cfd59b93af5721af370a4f77bfef53ab3f9dfd72716ca39678c4cbb839670abc"
+    },
+    {
+      "section": "卷之四",
+      "text": "寅月丁卯日子占父病喫人參好否。得萃之否卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0419",
+      "sha256": "22bbdaa3a419edd22363e7816da86812b6cf8dfa9cc727e27499aa35ffc853a5"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土ㄨ　　父母戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0420",
+      "sha256": "a16a8cb5ef427914d778a0e92b88b0dc6987cbbabc5017925101cc1b9bac024f"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟酉金⚊應　兄弟申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0421",
+      "sha256": "d6e99b9fd19bba300c4f69c9ce15cb4b139faf89f7ec680b7a42e3025c2a433a"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫亥水⚊　　官鬼午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0422",
+      "sha256": "307852878f1e7ffc098ec9cb34da9d471acf589f1cf4e04fd3db7553174c4e51"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財卯木⚋　　妻財卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0423",
+      "sha256": "84abacdc18355f16c66be693418234f00e8b1ca98fcc4fb28e227a0aca1b71d7"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火⚋世　官鬼巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0424",
+      "sha256": "eefdfdbd095b00550e16a3509f344b4f8afc1b99f2973f72c34decb77b50be8a"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土⚋　　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0425",
+      "sha256": "e965c6987ef0ec7f4862d429089ad9c6e5e0a9bb8c5bf3b38883074b15abd2e6"
+    },
+    {
+      "section": "卷之四",
+      "text": "占人參必以子孫爲用神﹐若不通變﹐見卦中父動克子孫不過曰人參不可服也。予非此斷﹐子占父病﹐父爻爲用神﹐未動化戌﹐父戌旬空﹐人參莫用﹐藥亦莫服﹐明日辰日沖空卽愈﹐果於雞鳴蘇醒﹐次日不藥而愈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0426",
+      "sha256": "fc1f4e6e5b36e429178eec906e23efbea0536aa672c6422ed101268c5496ca52"
+    },
+    {
+      "section": "卷之四",
+      "text": "又如一日在席間﹐見東翁口歪眼斜痰涎長流﹐予亦在座﹐乃卽問曰﹕家有牛黃﹐但不知可服否﹖予命占之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0427",
+      "sha256": "8e06280ca9362ded91f7fcc4aa6bbdf7d5d499cb2338fc3750ad6a3aa3a5b5c7"
+    },
+    {
+      "section": "卷之四",
+      "text": "亥日辛酉日子占父病喫牛黃丸可否得夬卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0428",
+      "sha256": "9d05e759c8963a0174f7614e33df400952cc55c8c0bdcd6a87d95c26db3b57f6"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0429",
+      "sha256": "97f327defad4592785a7b0c415559c382ba3c5c67423b45c787c6cf82d5ec5b1"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0430",
+      "sha256": "05cfaf78ba03057ce0ff7f7c73456fc9740cff90001a4efae05d2de73695643c"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0431",
+      "sha256": "1c0da6f47d395ff76e5a046db95e151587cd2b5a9a8824de265b103ff73e04e4"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0432",
+      "sha256": "ab399aa482756b07b39379686cce0107863828a2ee615609ceff31458b144dc6"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0433",
+      "sha256": "e15c5ddc9a76a77f5a9e4180fc03103b64db51b10b18e1eca14f182065acb6a2"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0434",
+      "sha256": "33ca6ea6105269c35c356e99bc9102d18ff1e2382b623116d36da0fd13c40f2a"
+    },
+    {
+      "section": "卷之四",
+      "text": "予曰﹕灌服此丸可保立愈﹐服之便醒﹐喜子孫持世也。或曰﹕同是子占父藥﹐一卦看父爻﹐一卦看子孫﹐其故何也﹖予曰﹕前卦父爻發動﹐神兆機於動﹐以父母斷之﹐後卦子孫持世值日﹐子孫乃喜悅之神﹐父病卽安則喜悅矣﹐卦無不靈﹐在人通變。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0435",
+      "sha256": "8bc1dfc885fa9117d460502be4ba8977ea3015666157bddcc298c0d755311f4a"
+    },
+    {
+      "section": "卷之四",
+      "text": "又如申月癸卯日因楊梅瘡占醫好否。得履之否卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0436",
+      "sha256": "394e3f03ca0796d94a1c637a0ebd7f63ba852d07572a4ed0c298c0f6e5993462"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚊　　兄弟戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0437",
+      "sha256": "086830735a0d9838706bc64099215e7e192d04a2addd4379ab16a6121f7ad0bd"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫申金⚊世　子孫申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0438",
+      "sha256": "7e707e313793eddafd02b1b40edfb382f5d3958d5f04e93a273e19b40544d005"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母午火⚊　　父母午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0439",
+      "sha256": "1f3f0d1e5466023b1d10414308efd9b5d6f1293e1b42ae1774556ee27e7c604d"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋　　官鬼卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0440",
+      "sha256": "89c269a8dbcb4dc03edc372ae1af80c47e11b0b1b236270c6cfed9b9b9e03f41"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼卯木○應　父母巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0441",
+      "sha256": "83b2d7c0ac5d1105e95e0c8070bba6ebabc190c740270ca70bf3f224889f4565"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母巳火○　　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0442",
+      "sha256": "24c0bdcf75a929fed7ba182c66c78e431f6513df15c46dc446cc807c0be87ed3"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕此醫不可用之﹐𨿽系子孫持世﹐應爲醫人﹐不宜應爻與巳火克申金﹐又有卯木生火﹐世爻𨿽旺﹐巳日一定添災﹐不聽﹐竟延此醫治之﹐卯辰日服藥還保平常﹐巳日忽然變癥﹐徧身疼痛難當﹐病人著急而問予曰﹕可傷命否﹖予曰﹕世值日建﹐何如傷命﹖快服解藥﹐過此巳午日則止疼矣﹐卽服解藥至申日其病如常。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0443",
+      "sha256": "435d190683886c1cb3493cb368b3aad84576ba5e364a9084aab0e7b06b293f26"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕前篇俱言子孫持世﹐其病卽愈﹐必要子孫不受克可也﹐後賢不可不知。李我平曰﹕此論官鬼爲憂神﹐子孫爲喜悅解憂之神﹐𨿽系古法﹐用之得當﹐非合鬼神之機﹐不能幻想至此﹐然又有不以鬼作憂神者﹐全在來人念之所指﹐彼問病之吉凶﹐若得鬼爻持世﹐鬼動卦中﹐豈爲憂神﹖子孫持世﹐子孫發動則爲解憂喜悅之神是也。彼問犯何鬼神者﹐卦現金鬼﹐必沖犯於武神。水鬼者犯罪於河神也。彼問病原﹐火鬼必屬心經﹐水鬼必腎部﹐子孫旺而動者不藥而愈﹐非教人以此子孫爻爲治病之藥﹐金爲子孫而用鍼﹐火持子孫而用炙﹐殊不知子孫若旺﹐其病自痊﹐何用鍼炙﹖子孫者值空破﹐用鍼炙而何益﹖諸書皆曰﹕土鬼忌熱﹐水鬼忌寒﹐水鬼若生旺之地﹐須用大熱之藥以治之。水鬼寒者﹐宜大寒之藥以功之﹐予不知從何見此。假使用神屬土及子占父病﹐父爻臨土﹐若得火爻發動﹐乃生用爻之元神也﹐豈可以大寒之藥而治元神耶﹖又如妻占夫病﹐鬼爲用神﹐假令夫臨水鬼﹐又可以大熱之藥以攻夫爻之用神耶﹖常見窮鄕僻壤﹐無處覓醫﹐只謂周易乃大聖大賢之書﹐遵之必靈﹐以此大寒大熱之藥﹐不知坑陷如許之命﹐言及發指﹐此書一出﹐寒熱之藥不可輕用﹐從此泉下無冤鬼矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0444",
+      "sha256": "eae3662c6acddeb787ae524194d5caa1b47df0957f7079ebd4313c009af3b339"
+    },
+    {
+      "section": "卷之四",
+      "text": "家宅章第一百零五",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0445",
+      "sha256": "41b133c59d8919e7881d75932d4ddac470ddf0f650333dae3f39b02889307bc3"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕諸書皆曰﹐一卦之中﹐可決一家休咎﹐六爻之內﹐能分六事吉凶﹐以卦中之父母爻爲屋﹐又以父母爻爲雙親﹐旣爲二親﹐又以五爻爲父﹐四爻爲母﹐如此悖謬糊塗﹐尙有刊傳爲法﹐予實不解。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0446",
+      "sha256": "2a58d82965813e62b2a3dc2346a53454cade489ba745a2defc96ced8c7121025"
+    },
+    {
+      "section": "卷之四",
+      "text": "如戌月丙午日占得乾之小畜",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0447",
+      "sha256": "36d43825e99a6fd42d2e855e6b0907039100de23fe8ab1b634da2556b5ec5408"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母戌土⚊世　妻財卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0448",
+      "sha256": "13efbcd4627a28a8452164ecef1a5bcd228f22777d89895a5dacce08f51d8eab"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚊　　官鬼巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0449",
+      "sha256": "fb1bb49091e0a19a1222cbc46c5ab3a76780e5189fbdc7df26f554747d327e9e"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火○　　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0450",
+      "sha256": "e64a7ab9d794f5d99251010554c5e65033a337a302a8a8ccc69d872b5eb9baa0"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚊應　父母辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0451",
+      "sha256": "5a20496644f2c29954abc63d7af106c4dc98b3cbf4b7e44cc7805a310e29d473"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財寅木⚊　　妻財寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0452",
+      "sha256": "f7e6bf4a05550924277519809817c67441b4fbc55aafe276cc51f103b18a2cfe"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫子水⚊　　子孫子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0453",
+      "sha256": "8c36131ad4bd388928b96ce587955ef62049ed2c9d9a53b975a70aeb0bd79e37"
+    },
+    {
+      "section": "卷之四",
+      "text": "古法有出卦無父母﹐不免堂上之憂。此卦不獨有父母戌土臨月建﹐午火官動以相生﹐卽父母雙慶之祥也。若又以五爻爲父四爻爲母斷者﹐鬼臨四位﹐老母多災﹐執此問之﹐老母多災卽堂上無憂耶﹖又曰﹕好爻受克卽此逢傷﹐今五爻申金被午火鬼克﹐此又老父以生災耶﹖又曰﹕鬼動乾宮老父之咎﹐此卦鬼發乾宮又爲老父之咎﹖又云﹕火鬼動以防回祿﹐白虎鬼爲喪服之憂。又云﹕世逢生旺﹐宅旺家安。此卦世已旺矣﹐柰因火鬼臨於虎動﹐可謂之回祿乎﹖喪服乎﹖家興宅旺乎﹖又以官鬼爲廳堂﹐謂之官旺屋宇軒昂。又云﹕鬼旺鬼興﹐爲災爲咎。此卦鬼臨日辰旺動﹐屋宇軒昂乎﹖爲災爲咎乎﹖又云﹕財官旺相﹐熱鬧門庭。又曰﹕財爻發動﹐父母遭傷﹐豈門庭熱鬧之家﹐皆無父母之家耶﹖又云﹕兄爻旺相﹐紫荊並茂於堂前。又云﹕兄弟持世﹐絲弦再理。豈雁行隊隊者皆失履遺之宅耶﹖種種悖謬﹐難以枚舉﹐予不得已而正之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0454",
+      "sha256": "a407acc5aa52f33f89a033e10ba51fa0f9c5c3474b0dbba8dc035006102e0950"
+    },
+    {
+      "section": "卷之四",
+      "text": "蓋造買宅賃宅第一百零六",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0455",
+      "sha256": "13214bc34e9fd660792220bb587f0627243583f46ee8666228f6c6bea087c2d4"
+    },
+    {
+      "section": "卷之四",
+      "text": "父旺持世﹐此處淸安宜久住。父爻旺相持世﹑生世﹑合世﹑及世爻動而化父相生﹐或得日月作父母生合世爻﹐皆爲發福之兆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0456",
+      "sha256": "d7e836d6faf1c96c23e8b207ca3bc937b6e8ce805e4c6cc7af2e7cc8f26e9ec4"
+    },
+    {
+      "section": "卷之四",
+      "text": "財爻發動﹐他方仁里另宜求。財動以克父爻﹐另於他處圖之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0457",
+      "sha256": "cffc8618e7f5c6198ca304b03d95493ea0f1cd7604e149d5091801b246ee1b23"
+    },
+    {
+      "section": "卷之四",
+      "text": "爻逢六合﹐終見享通。卦遇反吟﹐多於愁嘆。世爻父爻旺相﹐又得六合卦者事之必成﹐成而久遠﹐但不喜其六沖﹐六沖不久之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0458",
+      "sha256": "74fb4fcf67786a442fa5a0c895fcc2d56f5837339de98f1fc99289d03674fbb1"
+    },
+    {
+      "section": "卷之四",
+      "text": "卦遇反吟﹐倘加世破﹐沖克大凶之兆。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0459",
+      "sha256": "f4f25f8847f30a963c60ad3b1549b6c92322901930b8b77c6eaf52abbed3bd3a"
+    },
+    {
+      "section": "卷之四",
+      "text": "世動而化進﹐綿長百代﹐父興不化退﹐增置千間。世動化退﹐勉彊成之﹐終須退悔。世動而化進神者﹐成後長遠興隆﹐名高利厚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0460",
+      "sha256": "50e9383d705f87b9134c21ad5db465e0118673697aa368375e29b888950a7c63"
+    },
+    {
+      "section": "卷之四",
+      "text": "父動化退神﹐成後凋零破敗﹐倘得化進﹐此後再置千間。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0461",
+      "sha256": "5aa5205b09b3fad50f53476d268a990c9b89f22d4da7d570500ffb5933b951b9"
+    },
+    {
+      "section": "卷之四",
+      "text": "最忌隨官入墓﹐須防鬼動傷身。世爻隨鬼入墓﹐財爻助鬼克世﹐及世爻動而變凶﹐或日月動爻克世﹐皆不宜行。父動克世及世爻父爻空破墓絕者﹐亦不宜行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0462",
+      "sha256": "df12d6067ed1792aeaaf25d4b458e3ecc5c285a01a2f0ff6db7694ef301cd383"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕凡蓋造買宅賃宅﹐世與父爻旺相不犯沖克者卽宜成之﹐自是榮華昌盛。如問一家之吉凶﹐𨿽則須宜分占﹐亦待遷居入火之時﹐擇其吉日而占之﹐告於神曰﹕今某日遷居﹐有礙於父母妻子否﹖若有妨礙﹐須另擇一時以入門者可也。朝遷以便民間之用者此也。如若蓋造買造占問一家俱宜吉慶﹐假令家有百口﹐欲使人人合其吉者百年買不成矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0463",
+      "sha256": "994653657755b6ec53088af6911b503c939c9ab2cc903400d34af0a2a17b2ba0"
+    },
+    {
+      "section": "卷之四",
+      "text": "創造宮室章第一百零七",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0464",
+      "sha256": "87805887340c653e30401a7fec8ecac441e8c05db069e72155f63c870b001568"
+    },
+    {
+      "section": "卷之四",
+      "text": "創造興工﹐卦忌六沖﹐鬼動克世最凶﹐隨鬼入墓﹐禍事多逢。父爻旺相﹐世位興隆﹐世父兩爻發動化吉大安宅盛﹐事事享通。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0465",
+      "sha256": "a06ce7a46d20ac2fc5b8f252f8b83ce823f2b74c2dfd670ac900541216775482"
+    },
+    {
+      "section": "卷之四",
+      "text": "修方動土章第一百零八",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0466",
+      "sha256": "cabb7fd7a2ee1963a7f9a2b047781a836814be7d27f0094976fc094590e62f9b"
+    },
+    {
+      "section": "卷之四",
+      "text": "世臨福德最相宜﹐官鬼交重有禍基。世旺逢生宜化吉﹐世衰受克且停工。子孫之方宜起手﹐官鬼之位莫挑泥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0467",
+      "sha256": "d7642cc8095be1136e2443cc107b81950a3914d97fdeff2cba21f286f640ed2c"
+    },
+    {
+      "section": "卷之四",
+      "text": "譬如子孫屬水﹐起手動工宜於北方。官鬼屬火﹐不可動土於南方。鬼在辰戌丑未﹐此方切忌動土。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0468",
+      "sha256": "871b57df5cc3078a789ddb4270d9109b1718e477aa7249f277ec935c5d05c453"
+    },
+    {
+      "section": "卷之四",
+      "text": "豈嫌子象發﹐偏忌父爻虛﹐造成屋宇憂沖散﹐父爻旺相久長居。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0469",
+      "sha256": "046f4552f6aa4de6033bbde43112bf0997d19a25bd5b8be9b4fc03030f138b80"
+    },
+    {
+      "section": "卷之四",
+      "text": "遷居過火章第一百零九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0470",
+      "sha256": "9ae4425ca7565cdde102a67e28bbfadd212e90e7daef8b5fce0a5b6244ca52bc"
+    },
+    {
+      "section": "卷之四",
+      "text": "占以內三爻爲久居之宅﹐外三爻爲未居之房。內克外者外宅不利﹐不宜遷之﹐內生外者﹐外宅興隆﹐過遷爲吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0471",
+      "sha256": "fa85d21a341d095643d90f4a0b3c4c838d4cac1a78ee50cb4f7bf329ff1d4e32"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕予以此法不善﹐宅已蓋造買成﹐今欲入火﹐假使占得外宅不吉而不遷耶﹖旣有新宅成﹐舊宅或已棄矣﹐倘若占得內卦吉者﹐豈可仍居舊宅耶﹖覺子曰﹕此法亦有使處﹐來人有問欲棄舊宅而買新宅可乎﹖用此法者宜也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0472",
+      "sha256": "e2058d414a83398ba3d024f372b2b7a10bc311886d1d196bd9de03683f336c1b"
+    },
+    {
+      "section": "卷之四",
+      "text": "歸宅入火章第一百一十",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0473",
+      "sha256": "76c4e94d128715d936f2c5bf952d006d2fd6cdd2a41bab6fe0b9f95d8e7a06a9"
+    },
+    {
+      "section": "卷之四",
+      "text": "宅之吉凶﹐已於蓋造買宅卦中卜就之矣﹐今占入火之日﹐須將父母兄弟妻兒各爲分占﹐宜於此日者用之﹐不宜此日者改之﹐或改日﹐或另擇一時以入門﹐皆可化凶爲吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0474",
+      "sha256": "28ee063d3d8ff38fd45b4b404b26e5063c0acd89ec22b2815cc7bb6f6796d03d"
+    },
+    {
+      "section": "卷之四",
+      "text": "入宅六親凶吉章第一百十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0475",
+      "sha256": "d57c54f39b3ce9ef56d2ecefddfd87bfab91f51528e19505a3e2fc190189f03c"
+    },
+    {
+      "section": "卷之四",
+      "text": "擇於某日入宅﹐宜於父母否﹖再占一卦﹐宜於兄弟否﹖再占一卦﹐宜於妻兒否﹖占父母﹐父母宜於旺相。占兄弟妻兒﹐皆宜旺相而遇生扶﹐不宜變動而化鬼﹐及刑沖克害。或兄弟或妻子內有一卦不利者卽令另擇一日或另擇一時俱可。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0476",
+      "sha256": "39f19bd494c4ae8afc4156cedcd23d820c45381d97bb65478dc0b52f0ce1197a"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕予得周公克制之法﹐凡六親所犯之神﹐令之趨避﹐無一不驗。且如木臨父母命爻﹐財動以傷之父母﹐入宅須擇克制金爻之日﹐安父母之牀榻宜克制金爻之方﹐屢試屢驗。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0477",
+      "sha256": "7302fb2212c05bd1f7065de06631569faef75f17de264ee6f5163afa77d63d0a"
+    },
+    {
+      "section": "卷之四",
+      "text": "子月丁酉日占擇某日入宅是否有礙父母得萃卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0478",
+      "sha256": "8d938a8eee989832f84eae21bc69dd84be0d0bffefa678a9dc15d5648abfd679"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0479",
+      "sha256": "fc76a4d717508ce5a4a1f8632217a998a1da155ca4477c9e906692821f9314d3"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟酉金⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0480",
+      "sha256": "e1da58b0ab42f6293bc8eba506180afb2c1b721bf9636607e1fc4eb7cf28fbfa"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0481",
+      "sha256": "025da28d7b3ca8ffa7fea2ae000a0802ea5114af362b7262ded7ea0b2ccc63e5"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0482",
+      "sha256": "c2c2dfff4be76623166392eff165bfd3b52d96b9e1d8568095ca8d74f57c9496"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火⚋世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0483",
+      "sha256": "c6869855e8910a6b213c76d4011db4fee34fac44d335be30b85f3ae6cfa01616"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0484",
+      "sha256": "fc76a4d717508ce5a4a1f8632217a998a1da155ca4477c9e906692821f9314d3"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕此日入宅﹐卯木暗動以克父母。彼曰﹕卽煩另改一日。予曰﹕不必改日﹐此日寅卯時吉﹐申月亦吉﹐保爾淸靜吉祥。彼曰﹕何也﹖予曰﹕申時卯木絕於申也。父母未土及長生於申是以吉也。入宅之時宜父母安牀於西南﹐後照此行﹐予目其平安一十七載。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0485",
+      "sha256": "aac153107e13a64688b77930b288c4d4a7a6ee090656c0cde321eed7cadcfaf0"
+    },
+    {
+      "section": "卷之四",
+      "text": "馬房豬圈章一百十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0486",
+      "sha256": "58c5f18acae3048aace9d224a0c6fd134b4bcdc3efdabe611ea9f791774e1c57"
+    },
+    {
+      "section": "卷之四",
+      "text": "凡作牛棚馬房雞窩羊欄﹐亦宜分占。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0487",
+      "sha256": "82a6dad8fea2eedf0955bb01ed2c2313cea43db7841b66d1d1eb190b1aefa738"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫須宜旺動﹐父母切忌興隆。凡占一切六畜﹐皆以子孫爲用神﹐不拘豬羊牛馬﹐皆忌父母發動﹐動則六畜受傷﹐亦忌子孫空破墓絕﹐及被日月動爻刑沖克害﹐及子孫動而化空破墓絕﹑化鬼﹑化父回頭克﹐皆主刑傷﹐此地不宜用之﹐或更擇地方﹐或另改一日﹐改日改地方者另占。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0488",
+      "sha256": "8bd59bd33be2b15243c2b38f5e1a5c869ad182b972c3d32a5e45d01a29239309"
+    },
+    {
+      "section": "卷之四",
+      "text": "生相必須兼看﹐日月更喜相生。六畜𨿽以子孫爲用神﹐又宜兼看生相。假令作馬房﹐子孫不被沖克爲吉也﹐不宜午爻﹐亦不宜臨鬼﹐不宜動而化鬼﹐餘仿此。凡占六畜﹐最宜日月生扶﹐謂之卦得日月生扶﹐六畜必然繁盛﹐倘受日月沖克﹐牲口絕種無根。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0489",
+      "sha256": "2014af129ae3c69cfb0ebccdba3f62d865def2a974eb0ba94fdd5c7ec74d09ff"
+    },
+    {
+      "section": "卷之四",
+      "text": "舊宅章第一百十三",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0490",
+      "sha256": "2e0d2606613905aab259773b81600defe4fd636a0339e1f04b504c7247ea861c"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕以前之卜宅者乃卜蓋造買宅之新居也。常見來人而占久住之家宅﹐古法亦以一卦兼斷諸般之吉凶﹐先論官鬼次論八宮﹐以十二生相定六畜之災﹐午鬼而夭良馬﹐丑鬼而傷耕牛。又以之定人口之匹﹐午爻臨鬼馬命者夭﹐巳鬼爻興蛇命有難。假使午爻臨鬼馬之人不祿耶﹖悖謬不堪﹐難以數說﹐予不知昔人其何以回復來人之問也﹐要知彼之來意﹐或因連年破耗﹐疑家宅之不安﹐或因屢科之不第﹐或因有子求名﹐疑此宅能興旺子孫否﹐必用子孫親卜﹐或因官不升轉﹐或因子女不孝﹐或因官災火盜﹐或因父母六親多病﹐或因前後左右他人造疑其沖犯﹐或因家有響動﹐邪崇鬼形。須問來人而判﹐曾因官府十載不升﹐疑其家宅有礙。予曰﹕若以一卦而斷全家之事者予則不能﹐須指其所疑之事而占之﹐其應如是。公曰﹕何也﹖予曰﹕卦中不過干支五行𨿽有現出﹐難以直指一處﹐卽如火鬼發動爲竈神﹐府上二百餘間﹐其竈不少﹐誰知何竈而不安。又如卯木鬼﹐門戶不安﹐古以四爻爲門﹐尊府門戶不少﹐卽以六爻全爲門戶﹐不過定得六重﹐難知何門而不利﹐所以指其所疑之處而占之﹐無不響應﹐公曰﹕予疑院內不宜有井﹐占問是否。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0491",
+      "sha256": "6428337cbc1869bf407a5f4c4d3168180e172f3bd8a936f699554d64fcd70c0f"
+    },
+    {
+      "section": "卷之四",
+      "text": "酉日戊寅日占得師之臨",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0492",
+      "sha256": "6d160f17bc646960e5406d189335f18ea5f7b5615319357f75658c263119fba5"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母酉金⚋應　父母酉金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0493",
+      "sha256": "3a16c41b2d220d7ddb63df8227c8a43232c6ad078251db7738dc1f334785ff1c"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟亥水⚋　　兄弟亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0494",
+      "sha256": "f275d72474ae3e630068967e0745f440504834b262cb2bb07408d67732612bf1"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼丑土⚋　　官鬼丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0495",
+      "sha256": "674fcc343b85b5999b1849b00a5cd0f4b17676490b2daa237e7237d9a9350276"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財午火⚋世　官鬼丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0496",
+      "sha256": "f345c6e18e76b559061aa57911f5fbe55e473989253ee06826c759a2e6173383"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼辰土⚊　　子孫卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0497",
+      "sha256": "0c8188cc619eabe03b35d924a6646d5d7e9dacc7451e618944908a623018f614"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫寅木ㄨ　　妻財巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0498",
+      "sha256": "6fd5070d86190edf28c6ee978a8005dcf0aab53c2ca2faddb7a96fb9d9aca431"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕子孫發動非此井也。公曰﹕大門對向不利﹐意欲改之﹐可否﹖又占一卦又得同人卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0499",
+      "sha256": "e8e957483a930f3ae6dabaafdc6fb40d04a22b7d14105beed54ddb5a62b46627"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫戌土⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0500",
+      "sha256": "5155113c3fbe26ffddbb576a261efc22ce3eb23a28855a91e82d3361fb10fa26"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0501",
+      "sha256": "dde24e69652f65ecdbca7a01c17c81d967b286d9c7e299dcb5c2d225d6c720ae"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0502",
+      "sha256": "a211b7b6e9e19bc07cf11fc516fdb690680478da2370ff2f133c61649226cc5e"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼亥水⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0503",
+      "sha256": "fe12a85f7944cb4de7117c811746d9af15fa1640dd94e2328f085b30d5e0bc9c"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0504",
+      "sha256": "428111d12a341d3ae014aebfb0b34c75474c375ea3849b76dd8e67f77389b818"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母卯木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0505",
+      "sha256": "f0b3b697302c4432596e616ea04ef7e554d2a538678056861c377987e5ea0ee1"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕官持世是此門也﹐速宜遷改﹐須再占一卦﹐改門之後功名何如又得小過之剝",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0506",
+      "sha256": "f7f4526d2f1257dd3511e0c3eab35db3145a33cf1f040732eea2ac3ead7a3ef7"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母戌土ㄨ　　妻財寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0507",
+      "sha256": "6bd5cd914216a2ad24bed07499d2bf7516d8ba9b7c582821bb9ce4c5dcfded73"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚋　　子孫子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0508",
+      "sha256": "7b761ee4899228b2dc7f455d56cdf57c6ac4a9109d24f2d0a75f29ca31425840"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火○世　父母戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0509",
+      "sha256": "f8612f38e96b2499b914bdf3a6dd02bd4246e1840f51aaa4a15414fe47a8f810"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金○　　妻財卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0510",
+      "sha256": "67380f945d9e766730633ee2dfab0c0750058fa2150802d5b96c898d6f082898"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚋　　官鬼巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0511",
+      "sha256": "579be94ea553688cc2e61a259a4b075aa813fa699f3a3620460361871d92a0e6"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚋應　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0512",
+      "sha256": "219baf7e5654641794f35f4de7b6675c7b43a60dfb9d6d9a43f22d5a232f683a"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕午火官鬼持世﹐寅日生之﹐外卦巳合官局﹐明年﹑巳年﹑午年連升大位﹐果於次年一歲兩升﹐午年又升官至二品。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0513",
+      "sha256": "c4169096766656fd2e02b0316fa5319b5deb6dd7b27b5c34a915fdd5973ded85"
+    },
+    {
+      "section": "卷之四",
+      "text": "福德動搖﹐不是此方之禍。子孫持世﹐或動於卦中﹐或官鬼不動﹐及六爻安寧﹐非此處也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0514",
+      "sha256": "a06882b4c59db8bf17d321e2de764559ccebd0d06d17e1ecf129837db2e8edd2"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼發動﹐的於此處興妖。官鬼持世克世﹐官鬼動爻﹐實因此處有害。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0515",
+      "sha256": "051dfce212e06543fb1adf1f3ef529cd11d5e91adac6eefbdd40fa5936143401"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕占得果是此處不利﹐卽是修補﹐再占一卦﹐修補之後何如﹖問功名功名章內斷之﹐求財者求財章內斷之﹐防患者防患章內斷之﹐疾病者災病章內斷之。曾有士子才重當時﹐屢科不第﹐卜家宅何如。予曰﹕𨿽則爲名而占貴宅﹐有疑相犯之處否﹖彼曰﹕疑宅後有廟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0516",
+      "sha256": "4bdfb22e49ccb2cbac4afd8852b994464eacd44f430fba6883fca675e96b9742"
+    },
+    {
+      "section": "卷之四",
+      "text": "巳月己丑日占得大有之乾卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0517",
+      "sha256": "e425f7ca7786c54f7860f7a2f753a396e31b895e3e526645396b2e8984bf2162"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火⚊應　父母戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0518",
+      "sha256": "a7b6f05ff5c1f66012348dce8f8d6f6d51828059a817b2bb16800dcbdaa46aa6"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土ㄨ　　兄弟申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0519",
+      "sha256": "4609dd7ccd1336564a58f751ed6af60867706ae78e87365d0e0acd41944fe817"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟酉金⚊　　官鬼午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0520",
+      "sha256": "58f705d5b2aeb0c7a7811370b2c36d38d59ec577dec7867309e2aa39b58393ad"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚊世　父母辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0521",
+      "sha256": "18c44b62ca8a416aae81ffc01dad5bcc8a96a846256fa0bcd8945493a110e783"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財寅木⚊　　妻財寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0522",
+      "sha256": "f7e6bf4a05550924277519809817c67441b4fbc55aafe276cc51f103b18a2cfe"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫子水⚊　　子孫子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0523",
+      "sha256": "8c36131ad4bd388928b96ce587955ef62049ed2c9d9a53b975a70aeb0bd79e37"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕世爲本宅﹐廟爲應﹐世應相生如何有犯﹖廟前另有一物﹐未土發動刑世﹐乃此故耳。彼曰﹕廟前有一照壁﹐照壁之後有一株大樹﹐數百年矣。予曰﹕卽此物也。爾用大獸頭安於尾脊﹐張口對樹則吉。再一卦修補之後如何得歸妹之豫卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0524",
+      "sha256": "badf0cac7c26eef2be99ebe3386be1551f09190a744d1aff066c371c17159e27"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母戌土⚋應　父母戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0525",
+      "sha256": "cf46614efe4bb13157d9efbe6ac0d9b6de53221c484f3737079b2ef371169e54"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚋　　兄弟申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0526",
+      "sha256": "a5423db41720a64c02963c8a1ffe3b0bb995e12ab6159a6ec3f0e298dca300e5"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚊　　官鬼午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0527",
+      "sha256": "5af8e437b0d9fba99a234bd6a98bdb22524d2dcce101b6f6893e850b3d323279"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母丑土⚋世　妻財卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0528",
+      "sha256": "71461bc3c3473a61c3e49afe30c5ad5b7bacbbff8ab0ad7f5b53bcd8ac1c0b7b"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財卯木○　　官鬼巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0529",
+      "sha256": "172576d02f576a74d36d8b7018be4b7970670788f310696f72d1efa4adaf7e59"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼巳火○　　父母未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0530",
+      "sha256": "5916ac4de6855a91b65b7d66ea66d3bb398ba1e106bf159a177c4f373c969831"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕修補之後﹐包爾今科必中﹐財動生官﹐官動生世﹐大吉之兆。果中經魁﹐下科胞弟又發。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0531",
+      "sha256": "477124df7956282de3a00281570c2a5d0970d024e487d6a49bb45048aec28b6e"
+    },
+    {
+      "section": "卷之四",
+      "text": "福德臨身﹐轉災爲福。旺財持世﹐寶藏興焉。子孫持世﹐子孫發動者﹐鬼祟潛行﹐卽有活鬼出現﹐可保平安。子動無憂﹐神藏兔沒。旺相之財持世﹐財動生世合世﹐必有古窖。若問在於何方﹐財來尋我﹐我莫尋他﹐是我之財﹐自然出現。若問何時可得﹐卽以此財爻應期章內斷之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0532",
+      "sha256": "c3f6a2fbe8da9d77d631e94ce843c197f9bea8f5848c63c953a6e8958091185d"
+    },
+    {
+      "section": "卷之四",
+      "text": "鬼動爻中眞祟眞妖。鬼臨白虎﹐必有伏屍。鬼臨元武﹐水怪山魑。蛇主虫蛇爲妖。雀是官非火盜。勾陳鬼牢獄羈身。靑龍鬼色欲而喪。亥子鬼投河溺井之魂﹐或因水溝池塘之患。辰戌丑未之鬼墻倒屋塌﹐或因墻垣獸頭之犯。寅卯鬼懸梁自縊﹐又爲門戶棟梁。巳午鬼火傷窯死﹐兼爲鑪竈不安。鬼臨申酉之鄕﹐刀劍之身之魄﹐或因金錢爲怪﹐又爲狐貍爲精。鬼在變爻冤家債主﹐鬼臨日月供養正神﹐受克者必受其殃﹐生世者反得其濟。古法制鬼於庚申日甲子日﹐或於除夕日﹐黃錢數張﹐漿水一碗﹐卦現金鬼者向西送之﹐水鬼者向北送之﹐在人靜處送。屢驗平安﹐餘仿此。覺子曰﹕予有泊云之法﹐一正可奪百邪﹐見怪不怪﹐其怪自滅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0533",
+      "sha256": "32f46e060e4594f14921e924ef57c8db70232f9e5be31f99cfc5d4ff0beaf880"
+    },
+    {
+      "section": "卷之四",
+      "text": "官克在位﹐爲災爲禍。鬼動克世﹐或世爻隨鬼入墓﹐及世動變鬼克世﹐乃是冤家債主﹐難免禍殃﹐宜修德作福﹐自然改禍爲祥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0534",
+      "sha256": "f3eaa38e41db6e8520d88e91ebf7eb02918d33ee5c1b1d5624c9eb999374d682"
+    },
+    {
+      "section": "卷之四",
+      "text": "財動克父﹐財化父﹐父化財﹐堂上之憂。父動克子﹐鬼化子﹐子化鬼﹐膝前有損。兄弟變鬼﹐鬼變兄弟﹐鬼動克兄﹐妻財變鬼﹐鬼變妻財﹐兄動化財﹐財化兄弟﹐旣防手足刑傷﹐又主分衾折枕。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0535",
+      "sha256": "4d6b6be35c9159ebabc2b02069b1147b280645001baa1487f353847c84e90d7b"
+    },
+    {
+      "section": "卷之四",
+      "text": "同居章第一百十四",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0536",
+      "sha256": "9f7239831c4ae964542cf3a8ecae1ab899d10481c399a221854759f639292bdd"
+    },
+    {
+      "section": "卷之四",
+      "text": "與六親同居用六親﹐與外人同居看應爻。世爲己﹐應爲人﹐世應相合相生﹐日月動爻生合世應者﹐彼此俱祥。克世我遭喪﹐克應他遭害﹐世克應﹐他畏於我﹐應克世我被他欺﹐刑沖者同。與六親同居﹐宜於財興用神相生﹐不宜相沖相克。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0537",
+      "sha256": "a622227df0ac9c96e087855a0ad6a1e69cfdf5b96c7772721351bcf203f4baa9"
+    },
+    {
+      "section": "卷之四",
+      "text": "蓋造官衙章第一百十五",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0538",
+      "sha256": "d259973f429761d8ab352f5a5152d86d8b3f404ff407dd4530ff7e782ddbcec5"
+    },
+    {
+      "section": "卷之四",
+      "text": "官府自占﹐世與官星皆宜旺相﹐子孫持世及子孫動者且勿行﹐變克變絕反招奇禍﹐六沖化合﹐必獲奇祥。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0539",
+      "sha256": "47bf99552933b72a216892d6c0635b0b2ed07ffb0884b0a3011a69dc9604b635"
+    },
+    {
+      "section": "卷之四",
+      "text": "占衙宇章第一百十六",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0540",
+      "sha256": "dcf0b398d33b38f0f7412b8c3bab7ceb88d7af54f3859a14ac5ae48dd8dc8693"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕凡占舊衙署者﹐與占舊家宅者同斷﹐有因人口多病﹐有因連任不得升遷﹐有因鬼祟顯見其形﹐皆可指其疑者而占。曾有一官因連任不得升遷﹐疑官衙有不利﹐迎於府中﹐卜過半月﹐但有所疑﹐俱曾占過﹐皆不現爻﹐又卜後溝從後流宜否。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0541",
+      "sha256": "f3bbe0110ff250e042db1a8b4bf22d5b36166e3c5dbb3eaeaff5073450b743fb"
+    },
+    {
+      "section": "卷之四",
+      "text": "如戌月己亥日占得鼎卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0542",
+      "sha256": "a0d289618ac97d6b9eef3b56e410c4bfce5562683f6f058591e2623b13ee4ce4"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟巳火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0543",
+      "sha256": "361a181d5813941c8ce7214e1827d10a20274ecd650fb85cb65424214607b75b"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫未土⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0544",
+      "sha256": "f5feae6d64f4756194621cbdb6d572bb2a838ca59ba93edddb72d0ad7b77737d"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0545",
+      "sha256": "3b435872cbbd7d796f95a49a01253f9367b314b7cc9f8cee379fcce621b31570"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0546",
+      "sha256": "3b435872cbbd7d796f95a49a01253f9367b314b7cc9f8cee379fcce621b31570"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼亥水⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0547",
+      "sha256": "fe12a85f7944cb4de7117c811746d9af15fa1640dd94e2328f085b30d5e0bc9c"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0548",
+      "sha256": "428111d12a341d3ae014aebfb0b34c75474c375ea3849b76dd8e67f77389b818"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕卽此處違也﹐宜改往東流﹐後開溝見許多屍體白骨﹐予始悟曰﹕虎鬼持世﹐是以有之﹐再請占一卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0549",
+      "sha256": "0e33a70917e1fc2860be3d52559147de438d83c69f96085d032d2e2bf08da611"
+    },
+    {
+      "section": "卷之四",
+      "text": "修溝之後何如得噬嗑之無妄",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0550",
+      "sha256": "ee244792494967cde947be211c70c0870e97e4bbaf4920c54db90ff88f8a5fb9"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫巳火⚊　　妻財戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0551",
+      "sha256": "94a45036cbc561e18582515c34fb130fb106b41e6c4a88747a6e9b70977c198c"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財未土ㄨ世　官鬼申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0552",
+      "sha256": "a85dff4172149e8494cb608ffe127a607d0fc397dd3b928c3296bdcf4ce734fb"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼酉金⚊　　子孫午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0553",
+      "sha256": "b3043a5d3eee5767f9599f42a8d1e1d43c55b4f5c5b7817381b9310ab6c62982"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財辰土⚋　　妻財辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0554",
+      "sha256": "7b38c1b598f1ddaa8dc3a5b41b2484178a3d1922bc7ee7ca80ee26c6c91291c4"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚋應　兄弟寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0555",
+      "sha256": "8e16e1e57dd75d89967f86bbc8b14d9e46ef305610501338a3fe76af43fb4845"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水⚊　　父母子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0556",
+      "sha256": "7093dac4e132982703ba763d0284caaa1d9ea34d0dda52bb317b23ff4d3061e0"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕未土財化申金官﹐未年一定高升﹐後於申年升任﹐應申年者﹐值官之年也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0557",
+      "sha256": "eaf0841eb78008f45827a0ad79511d6926ae325e41589aaecee21763b8abf3ba"
+    },
+    {
+      "section": "卷之四",
+      "text": "蓋造寺院章第一百十七",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0558",
+      "sha256": "a8a88491ddf8c5d9fb1703f5a3e187c11d65c61ad658755c89719ed2a11ec6be"
+    },
+    {
+      "section": "卷之四",
+      "text": "大抵與家宅同推﹐不宜六沖﹑卦變墓絕及反吟﹐住持或山主占者皆宜世旺日月動爻相生﹐宜子孫爻動﹐忌官鬼爻與兄爻持世﹐多費無益之事。官鬼持世疾病災殃之累﹐兄爻動而克世者欲造福反成禍胎﹐財官生世者𨿽錢少自有增助﹐子孫旺相而化進神﹐多招徒弟﹐財爻休囚而化退者﹐有始無終。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0559",
+      "sha256": "0e293087f3a13e98d2da05bed51040a4e72225444db9f63f1c9d3a8096395f11"
+    },
+    {
+      "section": "卷之四",
+      "text": "李我平曰﹕卜筮諸書﹐二十餘種﹐所論家宅﹐理不歸一﹐不知昔賢是何宅見。卜筮大全﹕初井二竈三牀四門五爻爲人六爻棟宇。黃金策﹕初爻是宅二爻宅捨三爻爲門四爲父母五兄弟六妻財。易冒以初爻爲幼二爻爲妻三弟四母五爻爲父上爻爲老。他書俱各不同﹐不暇細具。易冒又云﹕鬼動於內﹐宅室之災。鬼動於外﹐人口之咎。旣以二爻爲妻﹐三爻爲弟﹐假令內爻鬼動﹐宅室之災乎﹖弟妻之咎乎﹖至於五行之鬼﹐八宮之鬼﹐旣以之定禍災炎盜﹐又以之定頭目﹐定病災﹐彼謂炎鬼主回祿﹐鬼在乾宮主頭目之患﹐若以一卦而兼斷﹐豈失火盜之家﹐必染頭目之病耶﹖有曰﹕合爲門﹐沖爲路﹐不論卦內之有無﹐但有暗沖與暗合﹐也應作數。假使有沖無合﹐有合無沖﹐豈有門無路之家耶﹖殊不知占家宅之趨避﹐願人口以爲安﹐財福旺﹐而宅與鬼安靜而家寧﹐於斯而已﹐何必多生枝條﹐以亂後人耳目。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0560",
+      "sha256": "88defca0d248564243e07b2aaabb0205b9568581fa24b096e799c8a8c74528dd"
+    },
+    {
+      "section": "卷之四",
+      "text": "墓葬章第一百十八",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0561",
+      "sha256": "2846ba3b8c470a056b2f49f999a947235ab95c9560fb06654badb64aee3f36cc"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕卜墓卜穴﹐古法之謬與家宅相同﹐後賢放諸書而自曉﹐予因求驗之法﹐每遇拜掃之時﹐到各家﹐命伊占之﹐或知人覓地而占之﹐如此多年﹐始得其祕。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0562",
+      "sha256": "415f24f5ecfd61ce1687080b29b8db88d1dac6f5443281f1f753228b70d0d730"
+    },
+    {
+      "section": "卷之四",
+      "text": "尋地章第一百十九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0563",
+      "sha256": "d35ba79017dd1218ec002282ab17e3f48c21bd85bf2444a0bf710dc6c0394a04"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爻旺相﹐祖父魂安。福德興隆﹐兒孫縮杞。古以二爻爲穴﹐內卦爲穴﹐騰蛇爲穴﹐屢試不驗﹐所驗者﹐世爲穴也﹐世宜旺相﹐或臨日月﹐或日月動爻生扶﹐乃吉地也。兒孫乃祭杞之裔﹐宜於持世﹐或在他爻旺相﹐振振螽斯。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0564",
+      "sha256": "c9fae73cf85d16d7c15457280e0f44fe285d5397acd951ff8fdd650b8aabcd48"
+    },
+    {
+      "section": "卷之四",
+      "text": "三合六合﹐聚气藏風。世沖六沖﹐飛砂走石。卦逢六合或世與子孫爻作六合﹐乃藏風吉穴﹐代代興隆。若得六沖卦﹐或六沖變六沖﹐或世應相沖﹐沖者散也﹐必無气耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0565",
+      "sha256": "5902b1363e5ae216bc50949234274f030210b13821d44e2e68ba7c3c09877bcb"
+    },
+    {
+      "section": "卷之四",
+      "text": "六沖變六合﹐吉地失而復得﹔六合變六沖﹐吉地得而復失﹔此亦有二說﹕六沖變六合﹐尋得吉地﹐先欲買而不成﹐後又買成﹐或是地運已衰﹐眞龍去後今復重來﹐凡得此者﹐再得世遇子孫旺相﹐急宜用之。曾驗數占﹐綿綿科甲。六合變六沖者﹐或是已得之地而復失﹐或是地運將衰﹐龍將去矣﹐不宜用之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0566",
+      "sha256": "3fa31bb18967aac161129794370b8fc8165c2909c69ba07b6ccf9acf16493a2e"
+    },
+    {
+      "section": "卷之四",
+      "text": "世旺而化絕破﹐吉處藏凶。世衰而化生合﹐凶中有吉。世爻𨿽旺不宜化破及化墓絕化回頭克﹐主先得吉地﹐後有破綻﹐若非將來下葬﹐不得吉日﹐定因葬後被人傷根﹐吉變爲凶之象。世若衰弱﹐動而化回頭相生化長生帝旺化日月化合化進神者﹐先否後喜之兆﹐目下觀其形勢﹐𨿽是不宜下葬之地﹐將來地運興隆﹐變成富貴之大地也﹔",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0567",
+      "sha256": "12c87cdee08960fdcf849605224ff801a6724df57e6e901caccb2686487cedb0"
+    },
+    {
+      "section": "卷之四",
+      "text": "寅月戊午日占地得頤變無妄卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0568",
+      "sha256": "b9591adb2b55f369a5463021336dd19e3fb949173a7e344f638acc398677b13b"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚊　　妻財戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0569",
+      "sha256": "e07ae46349499aaecf851b66f6ba2e8b4de641f5e6bd3f7407f7ba77b3c84e6e"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水ㄨ　　官鬼申金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0570",
+      "sha256": "8645bc416b13c33251f93358060b06f87c9b77563d335c1e5a894ab5a1556aa9"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財戌土ㄨ世　子孫午火⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0571",
+      "sha256": "2c4b79107c0c40bb8fca510cb926237ac52f59e0ed703bb34eb5442144998384"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財辰土⚋　　妻財辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0572",
+      "sha256": "7b38c1b598f1ddaa8dc3a5b41b2484178a3d1922bc7ee7ca80ee26c6c91291c4"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟寅木⚋　　兄弟寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0573",
+      "sha256": "70173c1289be47b2268d7c798d181f29b2f457e4a3bc4763a115c74ce0b0a80e"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母子水⚊應　父母子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0574",
+      "sha256": "c63057a188277c4f75077495a2292fca7ac584682a9a6461db51f0874be1bcb3"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕世爻戌土﹐春天休囚﹐化出午火子孫回頭生世﹐日月世爻其成三合﹐靑龍戲水﹐以化長生﹐水源極遠﹐只因申爲月破﹐戌土克子水﹐又被日神沖散﹐春夏有水﹐秋冬必動。彼曰﹕正是如此。予曰﹕不妨﹐不可求全責備﹐卦中日月世與子孫共成三合﹐死者安而生者樂﹐子孫昌盛﹐何愁不發﹐後竟葬之﹐辰年下葬﹐酉年孫中亞魁﹐及至子年﹐次孫又登鄕榜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0575",
+      "sha256": "2a2916401a72a46f5e9aa31940aa9cf71ed76618fe97056ba7b476910ebad7af"
+    },
+    {
+      "section": "卷之四",
+      "text": "世化進神﹐千秋綿遠。福德化進﹐百代興旺﹐世宜旺相化進神﹑化日月﹑化回頭生﹑化合﹑化長生帝旺﹐龍安水源地脈長。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0576",
+      "sha256": "1cab7728b09392ddab553b8e725e5bb801646284aa35fe755e286e10f0c192bc"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫旺相化進神﹑或化吉﹑化生﹑化日月﹐賢孫貴子布滿朝堂。世化退神﹐終須遷改﹐子孫化退﹐代代不如。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0577",
+      "sha256": "8f92d3f60affdd5fdd017c26a0a21b80153dd6621cf3503e5e77545563c36acf"
+    },
+    {
+      "section": "卷之四",
+      "text": "日月宜生福德﹐動爻不可傷身。世與子孫爻宜日月動爻生扶﹐不宜日月沖克。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0578",
+      "sha256": "87c7ee4051f5263bdd4defec3554bc421fefb5e988d14f8e7ee7246de8bece94"
+    },
+    {
+      "section": "卷之四",
+      "text": "旺世臨虎﹐棺上加棺。旺福逢龍﹐寅葬卯發。世臨白虎鬼爻﹐或是隨鬼入墓﹐皆主地有伏屍。世爻旺相又遇生扶﹐乃爲棺上加棺。曾見兩人葬者後竟大發。休囚者則不可耳。子孫旺相又遇日月生扶又遇靑龍﹐卽爲吉地﹐寅年葬而卯年發也﹐皆言其發旺之速。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0579",
+      "sha256": "a58c9aab33351608dc29c22f735ce901f5faf0c17b059224758432663bd615fc"
+    },
+    {
+      "section": "卷之四",
+      "text": "散絕墓空﹐世與子孫勿見。化克化鬼﹐弟兄妻子休逢。世爻子孫爻﹐不宜休囚墓絕空破﹐不宜動逢破散及化破散﹑化絕﹑化墓﹑化鬼﹑化退神﹑化回頭克﹐但逢一者皆非吉地。六親不宜化鬼﹑父化子﹐子化父﹐鬼化子﹐子化鬼﹐兄化鬼﹐鬼化兄﹐兄化財﹐財化兄﹐財化鬼﹐鬼化財﹐此不宜於兄弟妻子。有父母在堂亦不宜鬼化父﹑父化財﹑財化父。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0580",
+      "sha256": "e3b8fb6f48e294b49710031a9aa2e24cc659dc2c062c2986f84d9dc0611d18c1"
+    },
+    {
+      "section": "卷之四",
+      "text": "應沖世合處逢沖﹐流移遷徒。反伏卦變化克﹐洪泛陵墓。擇地不但不喜六沖卦﹐應沖世者亦非吉也﹐倘應世相合﹐爻逢六合﹐世應子孫三合成局﹐卽爲美地。卦得反吟﹐遇沖開之年月必遷。卦得反吟﹐遇沖年沖月必變。內外反吟者乃卦變也﹐如巽變乾﹐坤變震之類﹐名爲化絕化克得此卦者﹐重則沖決﹐輕則遷徙。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0581",
+      "sha256": "3ea5b62517529c24084ec3f2207fce1bf57a5a7319584a6aee23974073b3a03f"
+    },
+    {
+      "section": "卷之四",
+      "text": "如卯月戊子日占地得巽之升",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0582",
+      "sha256": "ba6d57261dc14a2a01576df22bea2af259bdbcced7f8a72a040022ecd6f30321"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟卯木○世　官鬼酉金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0583",
+      "sha256": "cad4fe967c81b09644240f6f66feccb367a24998f2dd968aea1afd7c2acdc76f"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫巳火○　　父母亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0584",
+      "sha256": "ad4049209dc7a2200aebd679fd9e83d4541900608067aade975281bf91379fed"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財未土⚋　　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0585",
+      "sha256": "f56b5eaf7c51c250a2e16b0a54a179dd295203f35c6ad00ccb80f39535af480f"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼酉金⚊應　官鬼酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0586",
+      "sha256": "d927647e787ead7a895a3b36839a9515a5f5ca538d16208062e0e02bda849a56"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母亥水⚊　　父母亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0587",
+      "sha256": "1abd297d3135603c186496241160f098bd9c82f4042ecd6cd8c5438709cb1c55"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財丑土⚋　　妻財丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0588",
+      "sha256": "e1a15af745709f17443a6ab8ae7a30efdf831df5683441b5636733fb8fd54a32"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爲穴﹐世臨月建﹐日辰生之﹐是爲吉也﹐但不宜外卦反吟﹐世被酉金沖克﹐子孫被亥水沖克﹐不宜用之。彼曰﹕已買成矣。予曰﹕不葬何妨。又曰﹕地師言爲美地﹐後竟葬之。四年之內﹐二男一女﹐相繼而亡﹐自身又得半身不遂之疾﹐愚人不怨於已﹐反怨祖父棺材暴露﹐竟至二年後沒﹐應酉年者﹐謂之再沖之年。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0589",
+      "sha256": "584e2da477ed186497b69ccfed400778a83e13acdaed39fb230ae2f0fc4100ae"
+    },
+    {
+      "section": "卷之四",
+      "text": "父化父﹐兒孫夭折。子化子﹐子女成行。卦中不宜父動﹐父動化父更凶。子孫化子孫不遇傷克﹐代代兒女成行﹐決非單傳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0590",
+      "sha256": "f8145ebd53ac0262f5a3f964fb22c5cf49306d8c67bc4f5f14ccf7deab981308"
+    },
+    {
+      "section": "卷之四",
+      "text": "占地形勢章第一百二十",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0591",
+      "sha256": "ede8f53a00f056f69da2ba24bbce37de58209f9008f4714b50f043ac95eb4556"
+    },
+    {
+      "section": "卷之四",
+      "text": "世旺遇長生﹐來龍甚遠。世衰逢應克﹐對案山欺。兩間旺而明堂寬﹐龍虎衰而左右陷﹐左山旺頭角崢嶸﹐右山衰爪牙埋伏。朱雀遇刑沖前山雜亂﹐元武逢破散後脈空虛﹐龍虎世爻合局﹐虎踞龍蟠之地。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0592",
+      "sha256": "203f51a36ccec53ffd022125b703cc909987a59825d3c1003deb27a02d7585cb"
+    },
+    {
+      "section": "卷之四",
+      "text": "世應相合﹐山環水繞。水口不固﹐上爻一定逢空。道路參差﹐騰蛇必然破散。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0593",
+      "sha256": "a8ee79be4a1a6283ca0444d968b8a29f2bed359a8fd31fd37603fb88de2b27d7"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爻當令又長生帝旺於日辰﹐來龍遠大。倘若應爻沖克世爻者﹐必因對山高聳﹐或因臨葬錯對向山﹐如應爻受克者無礙﹐改向可也。世爻應爻中間兩間爻以爲明堂﹐旺相者明堂寬大﹐休囚者明堂下陷﹐近世之爻而爲案山﹐亦不可克世。龍爲左山﹐虎爲右山﹐兩山旺者﹐有環抱之勢。俱衰者﹐不能環抱。大抵靑龍宜旺扶頭角軒昂﹐虎山宜衰宜克爪牙埋伏﹐朱雀遇刑克沖散及破墓絕空者﹐前山雜亂。元武逢破散後脈空虛。若得世應龍虎子孫共成三合者乃虎踞龍蟠之大地也。第六爻爲上爻﹐若逢空破﹐水口不固﹐逢絕者水涸泉枯。看河道之水者﹐非論水口﹐須看卦中之水爻休囚被克﹐漲退不長。逢生化生長流源遠﹐再遇靑龍源長。看騰蛇爲路﹐如逢沖散小路必多﹐旺相者必有官道。勾陳爲田坡﹐旺相則有﹐衰破則無。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0594",
+      "sha256": "6cb18b78a266b4679e54881530408738e465b7d6aa322fcf14d58ab1dd367376"
+    },
+    {
+      "section": "卷之四",
+      "text": "丑月庚申日占地形勢得咸卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0595",
+      "sha256": "5d88f2f1400e2cd68ec3d9078ea22bea7ed6228767de2de5bc2abc7fa8a4af0b"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母未土⚋應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0596",
+      "sha256": "4b42777a8295f54060df6f10a39cb37657a28dbe506c82dee983f0399832117f"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟酉金⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0597",
+      "sha256": "89d0fb1adac8010878767769bb50444e76a048436ab2788b169a62c8319d082e"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫亥水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0598",
+      "sha256": "025da28d7b3ca8ffa7fea2ae000a0802ea5114af362b7262ded7ea0b2ccc63e5"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟申金⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0599",
+      "sha256": "f8a6fc4034e7e9f2626268f5b12f5dbc70ffc019d2935a3fccb28e5f821f3efd"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼午火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0600",
+      "sha256": "074071fec12c7fdf0a0280f720b3e5cf4c78db5517d75c499c5e5ff8361e2e6a"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0601",
+      "sha256": "0d023d4b93d948d1818ead0fd40c63acaa5f85aba69f953e0050180c74c4af1c"
+    },
+    {
+      "section": "卷之四",
+      "text": "靑龍持世﹐日辰臨世﹐來龍由左而至﹐旺而有气﹐左右皆無傷克﹐龍虎環抱﹐向山未土𨿽臨月破﹐朱雀亥水爲前山﹐申日生之必有朝水﹐或是帶水﹐水有其源。騰蛇爲路﹐上爻爲水口﹐俱臨月破﹐道路參差﹐水口散亂﹐兩間爻旺相﹐明堂寬大﹐彼曰﹕果一一無錯﹐此地吉否﹖予曰﹕此乃占地穴之形勢耳﹐非關吉凶禍福﹐予笑前賢以一卦而斷父子弟兄妻財官祿﹐予豈效顰耶。若問功名﹐再占一卦﹐禱於神曰﹕安葬此地﹐我名成否﹖以官祿章中斷之。發財否﹖以求財章內斷之。子孫旺否﹖傷克父母兄弟妻妾否﹖皆在身命章中父母兄弟章內斷之。若以占形勢之卦兼斷六親及名利者﹐卽如此卦﹐兄弟持世乃貧乏艱難無衣而短食矣﹐請試思之﹐旣得如此吉地﹐若使家徒壁立﹐抱衾孤眠﹐亦可謂之吉地耶﹖所以予得分占之法﹐實則可以醒世﹐作千古不易之法也。或曰﹕前說父不宜旺﹐不宜父動化父﹐是何說也﹖予曰﹕占地以世爻子孫爻爲主﹐父動克子﹐如何不忌﹖或又問曰﹕前說化克化鬼兄弟妻子休逢﹐又何說也﹖予曰﹕凡占地者﹐世與子孫爻旺﹐卽可用之﹐至於父母兄弟妻財功名﹐須宜另占一卦﹐不可兼斷﹐倘若得地之凶﹐不待另占﹐卽此占地之卦而先現出六親化鬼﹑鬼化六親﹐卽是刑傷之地耳。只看六親動而化克化鬼﹐不必看衰旺空破刑沖﹐神兆機於動﹐動而化凶﹐願益而告我也﹐我豈能不看又另占耶﹖",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0602",
+      "sha256": "797d43650d2e5d6edb8f4216a18a611186c8278177b6198fb0c95f86130e8da4"
+    },
+    {
+      "section": "卷之四",
+      "text": "卜得地於何時章第一百二十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0603",
+      "sha256": "cf544e2f49e4310c7d78378af477f591112f9637e0a746e5c307d9d15b94917f"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爲用神﹐靜者逢沖逢值﹐動者逢值逢合﹐世空者沖實之秋﹐世破者塡實之候﹐逢合入墓﹐須待沖開﹐獨靜獨發值之而遇﹐世若休囚須旺相﹐若逢旺相待休囚。世爲墳地﹐靜者逢沖逢值之年月。卽如世值子水﹐靜者應在於午年月﹐動者應在丑年月亦有應子年﹐餘仿此。世空者沖空實空之年﹐世破者實破之年﹐世逢三合六合﹐或世爻化合﹐或墓於日辰或化墓﹐皆應沖開之日。卦中一爻獨發﹐一爻獨靜﹐亦應逢值之動逢合靜逢沖﹐卽如卦中子爻獨動﹐應在於丑年﹐如子爻獨靜﹐應在於午年﹐餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0604",
+      "sha256": "adb4235bf3494f74e14e0aa2505b6edf35f868d36bd03c6d942d3f9a26519c27"
+    },
+    {
+      "section": "卷之四",
+      "text": "又如辰月乙卯日占何時得地得復之屯卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0605",
+      "sha256": "28ccc3bd94a4ec0f1d38e09c180db7e113401ac054269144675b90564d7e1dc1"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋　　妻財子水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0606",
+      "sha256": "356603172ab95264c3227fc5a17dce5f914aaecf52b75b9e592c48da04d7441b"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水ㄨ　　兄弟戌土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0607",
+      "sha256": "05af450724e8764cf42fe42b6d27eb9474925e555419db367155ed09e55cbd51"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋應　子孫申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0608",
+      "sha256": "ed4a56481f4a9cab1ea39e1d832b67bf8eb69461d0c7708c433fd44f45e3d5e8"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚋　　兄弟辰土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0609",
+      "sha256": "50fcd69637c43e79a7b8185912d5abde1cc7553121825a156833637971dbd0fd"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚋　　官鬼寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0610",
+      "sha256": "2f21e4f2143a4892d64ace630fb7ecfb3a4c10e4e09ed0a49e4c90d189374574"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚊世　妻財子水⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0611",
+      "sha256": "a1becd332cd672cec27feba00bdff58950a2ef5bf385fa92f07ef45c792a1b0d"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕亥水財爻獨發﹐拱扶世爻﹐被戌土回頭克制﹐今爲月破﹐九月實破﹐戌土更旺﹐交冬水旺而得矣。彼曰﹕得在何方﹖予曰﹕占此應此﹐占彼應彼﹐如問何方再占一卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0612",
+      "sha256": "3aff193b2846890538546d82db40f5b737d9e02281dec825b6a94b9251a4b1a6"
+    },
+    {
+      "section": "卷之四",
+      "text": "得地於何方章第一百二十二",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0613",
+      "sha256": "a211fb1877b4a1c160bb9b8ee3f53ce28747121ea33eacfca6f17d65d0ac07a2"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕卜得地於何時﹐還以世爻爲用﹐卜得地於何方﹐當以父爻爲用也。已葬之後﹐皆以父爻爲用可也。父值亥子﹐北方自有吉穴。父臨巳午﹐東南必獲牛眼。父值土爻﹐得地於辰戌丑未之方。父爻臨木﹐東北寅卯堪壽。夫臨申酉地在西南。間有驗於墓方者卽如父母爻屬木得地於未方﹐父母爻屬金得地於丑方﹐餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0614",
+      "sha256": "327e558d7738dbe57fe53e282959e47d988521c0ed47f857fc5a535ccce7c8f6"
+    },
+    {
+      "section": "卷之四",
+      "text": "占地師章第一百二十三",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0615",
+      "sha256": "d9b3d03548f24625eaf304cb24bd9c4e961a5e384433ce42cc16975c1155c7df"
+    },
+    {
+      "section": "卷之四",
+      "text": "應爲用神﹐旺相生合世爻﹐𨿽愚亦用。休囚沖克世爻﹐賢亦不宜。世應俱空莫用﹐應臨空破非奇。應爻旺相與世爻相生相合﹐或與世爻作三合﹐不論應臨才鬼兄父﹐人惡之而無才﹐我喜之而有緣。休囚沖克世爻者﹐曾使應臨官父﹐他有博學﹐我被他愚。世應皆空﹐彼此無緣。應逢空破﹐無大無從。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0616",
+      "sha256": "5332d2dc1846234d165c8ce2b94444486a875a7f6ec703a30515d710e0937c94"
+    },
+    {
+      "section": "卷之四",
+      "text": "點穴章第一百二十四",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0617",
+      "sha256": "359569eeee40b6b5fed2186483df01599895c5d0de05c9398a52781465c93d9b"
+    },
+    {
+      "section": "卷之四",
+      "text": "世在初二爻穴宜下﹐在五六爻穴在上﹐三四爻穴宜於中。水持世爻穴近於水﹐或是坑高之地。世臨土者﹐卽於高堆點穴。世臨寅木﹐從木盛艸之方。申酉持世﹐有塊石堆。火乃枯焦﹐紅泥焦土及艸木枯焦之處是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0618",
+      "sha256": "62fa52f46e80b0dcced6c7a993bcf85f6115745a228e0543a07c6cdd203e2b00"
+    },
+    {
+      "section": "卷之四",
+      "text": "如未月乙巳日占穴得大壯卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0619",
+      "sha256": "d19da462e88cf21f47741ca09717d380b19c5d0c739ee65ddd14c562323b587a"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟戌土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0620",
+      "sha256": "e25872370364fc1bef20b6ca3ad1aca71ab783e03bec0b37ea285bf246f17fa6"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫申金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0621",
+      "sha256": "d21dc353a607e4a91b3791e63d31c1356a715822f0ca791f9324661a1bb41e52"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母午火⚊世",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0622",
+      "sha256": "c95bbb3906210e466a12587e6d5cd9e65f015e80eafca0a12509f2579fa2219c"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0623",
+      "sha256": "ab399aa482756b07b39379686cce0107863828a2ee615609ceff31458b144dc6"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚊",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0624",
+      "sha256": "9e2427913f34fcbf81bd6958392367cb43137e4aec0c7bfece5c2edbb4c50d89"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水⚊應",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0625",
+      "sha256": "4b4a0946e55ed2bb38169063e10b87bdd0936b1e5afaa8dead2be3a885410e53"
+    },
+    {
+      "section": "卷之四",
+      "text": "此地經過法眼﹐皆言其吉﹐久占此地﹐亦許其吉﹐因屢掘逢石﹐無處導穴﹐央予到冢下﹐得此卦。予曰﹕世在四爻﹐穴在中段﹐因午火持世﹐卽往中段觀看﹐有一處艸木枯焦﹐有幾朵野花紅色﹐別處皆無。予曰﹕卽此穴也﹐掘之必逢土穴。東家尙疑。予曰﹕我有一法﹐將錢一丈點記紅原乳﹐入數百錢內﹐公可設下香案﹐禱告於天﹐得紅原錢者﹐卽其穴也﹐令人徧地灑之﹐果得原錢於紅花之下﹐掘之周圍僅有丈予﹐皆泥土也﹐予皆石塊﹐此公次年開府﹐兩公郎五年之內俱登甲榜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0626",
+      "sha256": "79d7f05a3a99f93010048d7e2cc2d8b8dbe87f471d72e5a00170edd116560b71"
+    },
+    {
+      "section": "卷之四",
+      "text": "謀地偸葬章第一百二十五",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0627",
+      "sha256": "8f37b657eda5bb392a095b00c6a43ff3b1c4ab00f1d06393e08de3f0c1a2a0fc"
+    },
+    {
+      "section": "卷之四",
+      "text": "覺子曰﹕謀地偸葬﹐乃損人利己之事﹐以此喪心之爲﹐而問於神﹐卦若有靈﹐是神教人而作喪心之事也﹐殊不知先有心地而後得遇陽地﹐昔有人恃財倚勢﹐期陷貧人﹐謀奪其地以葬親﹐後遇識者而曰﹕此地不發﹐必無地理﹐此地若發﹐必無天理﹐旣有天理循環之報﹐能久遠昌盛者﹐未之有也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0628",
+      "sha256": "a92cbfbf1f2b270dcea5038ad531dc056e8bd0a1a1c336feb0d42b1a2d0bdd14"
+    },
+    {
+      "section": "卷之四",
+      "text": "祖塋舊家章第一百二十六",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0629",
+      "sha256": "df6d843d75f2593b43b602126570242fe0e5c91205865d0f9eeb9aa5f7c96a3e"
+    },
+    {
+      "section": "卷之四",
+      "text": "祖父之墓或葬多年或未久﹐如來卜者必有其因﹐須宜悉明﹐方可決斷。有因連年困苦疑﹐墳塋之不利。有因屢科不發﹐或有子入場﹐疑此風水可能發科否﹖爲己者須宜自占﹐爲子孫者命子孫來占﹐有因仕途蹭蹬連歲不升﹐疑其風水有礙。有因子孫不存﹐疑其風水相關。有因六親中父母兄弟妻兒或自身多生疾病﹐疑因風水所致。有因連年官非火盜。有因風水被傷﹐卜其何法而修補。有因閒問祖塋有地脈否。有問祖塋有傷損否。皆以父母爲用神。卦遇六沖全無地脈﹐卦變化絕﹐勢若倒懸﹐爻遇伏吟﹐欲遷不遂﹐反吟卦現﹐不遷亦遷﹐卦變六沖龍已去﹐於孫有陵替之危。沖中變合運將來﹐後代有興隆之象。正卦六沖﹐變卦六沖﹐全無脈气﹐卦變化克﹐如倒懸之熱﹐危之急矣﹐凶災立至﹐伏吟卦地脈全無﹐𨿽有遷意而不能遷。卦得反吟﹐心不欲遷而終遷矣。卦變六沖有龍已去﹐子孫從此衰頹。六沖變合﹐先無地脈﹐目今地運將興﹐後代從此發矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0630",
+      "sha256": "79c1b77508b3cf76b67b5a72248bb37716e204ea9f026cc69eb553b69be368f4"
+    },
+    {
+      "section": "卷之四",
+      "text": "父母旺相祖墳安然﹐墓絕休囚後裔零落。已葬之地﹐父母爲用神﹐宜旺相﹐或日月動爻生扶﹐或動而化生日月化比助化進神乃吉地也﹐兒孫興發之象﹐亡者安而生者樂。旺而又遇帝旺長生者﹐來龍久遠﹐世代興隆﹐不宜墓絕空破﹐及動而破散化退神化絕墓化回頭克化旬空化破散﹐乃凶象也﹐亡者不安﹐生者寥落。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0631",
+      "sha256": "68c6dea0d574f70fa59b76a9fcd6db9ac51d902036f0dac54441fb75103fe161"
+    },
+    {
+      "section": "卷之四",
+      "text": "世爻變鬼﹐占者不祥﹐鬼化六親﹐各屬不吉。世爻變鬼及隨墓助傷﹐所占之人不吉﹐兄弟妻子動而化鬼﹑鬼化兄弟父母妻子者﹐查其所犯而斷也。又有子命化鬼﹐鼠命者殃。午命變鬼﹐馬命不利﹐餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0632",
+      "sha256": "fce78a7afa1f69ea32b8ce26736b4e426c2b5ada51b290d920a99214d5bd152c"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕古以父爻不宜旺相﹐父旺父動子孫不安﹐予以爲謬也。占舊冢以父爲用神﹐父母旺及動而化吉祖父安﹐然又扯到傷克子孫者是宜旺耶﹖不宜旺耶﹖惟子孫動而化父及父動化子孫﹐不利於子孫者是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0633",
+      "sha256": "d7f94337cf3a05a929a0a57531350953cd950f2f3f32c1757fc70870ce3e6d42"
+    },
+    {
+      "section": "卷之四",
+      "text": "因何事所傷章第一百二十七",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0634",
+      "sha256": "1ebe9e2de4b05c9733e6bff131dccad42aa057d83378a3f075630e1fa6b8a33d"
+    },
+    {
+      "section": "卷之四",
+      "text": "野鶴曰﹕須宜另占﹐不可以前卦兼斷﹐專看沖克父母之爻爲忌神﹐如得六爻安靜﹐父母有气﹐久後自安﹐不必補修。克神臨火或臨朱雀﹐禍必起於窯竈。倘臨土動或兼元武﹐定因偸葬相傷。金虎因受其驚。木龍有蟠根之礙。克神以帶騰蛇﹐蛇蟻爲巢。土鬼勾陳挖掘動土。元武臨水水浸衾棺。克神臨火恐近處開窯作竈或因火燭之事。土克父母兼元武者必有偸葬。臨勾陳騰蛇者築墻蓋屋以致相傷。金虎地震山搖。木虎砍伐樹木。木逢龍動﹐穴下有竹木根傷。火與蛇興﹐冢內有蟻蛇爲害。元武水爻克父母﹐穴中黑水相侵。父母被沖﹐地風水漫。金克父母﹐石塊山罔。水沖克者﹐低窪水湧。木爻克父﹐樹木相傷。火克者﹐穴藏蛇蟻。土動者﹐蓋造墻垣。父母爻被日月動爻沖克及卦動化沖﹐如在艮坤之宮﹐卦得亥卯未合成木局克父﹐必有地風衝歪棺槨。如在離宮﹐卦得申子辰水局克父者﹐穴中水湧﹐水泛棺歪。如在震巽之宮﹐金局沖克者﹐山罔石塊。如在乾兌之宮逢火局沖克父母者﹐定因窯火雷驚。爻中水動﹐地窪水浸。卦得木動﹐竹木根滕。火主虫蛇﹐土因動土﹐果有犯之﹐速宜修補。爻無亂動﹐須觀五行之有無﹐卦若安逸﹐又看地支之缺陷。六爻安靜並無沖克父母之爻者﹐又看五行之所少也﹐卦中無土﹐須築墻垣。卦無金星﹐石碑可立。六爻火星缺陷﹐可立煙竈﹐或安看守墳塋之宅捨。水爻不現﹐可作池塘及開河道。木爻不現﹐多栽樹木。此言五行之所少者﹐非獨不上卦也﹐有現於爻空破墓絕無气者亦如無也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0635",
+      "sha256": "5cb6222b17fc914196a60585841d66b25398476179593d2345bd0107bb4965f3"
+    },
+    {
+      "section": "卷之四",
+      "text": "修補祕法章第一百二十八",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0636",
+      "sha256": "239b58c5ebf7bf9b37b29591b938dc19c41897b2c5b8b3b39c9d1a4b07dc35c9"
+    },
+    {
+      "section": "卷之四",
+      "text": "因窯竈而傷者﹐命道祭火神設火醮而安之。偸葬及動土相傷﹐命道設蘸以安土神。因受驚恐而傷者﹐命道設醮而安墳。或因有竹木蟠根及石塊相傷者﹐須於墳旁挖坑三尺以探之﹐輕輕去其竹木石塊﹐仍命道安墳則吉。倘因蛇蟻爲巢者﹐多栽苦楝樹其蛇蟻自散﹐勿信人以焚之其巢穴﹐傷損性命﹐予曾親見兩家見蛇爲巢﹐用火焚之﹐後子孫衰敗不堪。倘穴中因水淹沒者﹐若有消水之法﹐設法以消之﹐倘因地窪終無消水之法﹐不得不選地而遷也。或因地風吹歪棺木者﹐前得挖坑二三尺﹐以探之﹐後果歪者仍歸於正向﹐命道安墳則吉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0637",
+      "sha256": "6427494a24b29b01c950f4ddf375e222d5eb2322aad99b67b7290e47d3a207f6"
+    },
+    {
+      "section": "卷之四",
+      "text": "再占修補吉凶章第一百二十九",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0638",
+      "sha256": "d1bbc33a76d23ee54d7364424cbc494e3476fc719f07988369979508fc5f5932"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫持世﹐子孫動搖﹐修之則吉。旣問修補之吉凶﹐則認世爻爲用﹐子孫持世﹐子孫發動﹐修之必獲淸安。宜鬼世父爻空﹐遷則獲福。鬼克世﹐我必有害﹐父空破墓絕再被日月動爻傷克者﹐乃因傷者重﹐培補亦無益矣﹐當宜遷之。覺子曰﹕古以遷塋之說﹐謂父母之墓受傷﹐兒孫一體之感﹐致生災禍﹐理之有也。遷塋改葬不得不行﹐觀世人富者不貴﹐改祖墓以求榮﹐有子不富遷父冢以求富﹐將父母之遺體爲市井之貸利﹐不意天理難容﹐身之未榮家產蕩盡﹐財之未發絕減兒孫。予之見者不可勝數﹐附此戒之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0639",
+      "sha256": "bd60149fc3212e9c625da712aae81bf30ad63d76b3ba8c59b81e9db027cafe04"
+    },
+    {
+      "section": "卷之四",
+      "text": "新亡附葬祖塋章第一百三十",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0640",
+      "sha256": "05dd2de34fc5bb7ae9a093e806eef83ed3f64fbc924a69937f72dc5b3069e0b9"
+    },
+    {
+      "section": "卷之四",
+      "text": "六沖變沖﹐卦變絕克﹐父母受傷﹐內外反吟﹐且宜他葬。世爻受克隨墓助傷﹐世動化克化鬼﹐附葬不宜。父母兄弟妻兒動而化鬼化克﹐俱有刑沖傷重﹐惟喜世及六親不逢變克﹐隨卦靜六合﹐必得存亡之安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0641",
+      "sha256": "e5d8fad98c0e2f00c49b2cce4b81e3636f1393d442dbbdb481a5d4736b791fe6"
+    },
+    {
+      "section": "卷之四",
+      "text": "如子月丙申日占以父柩附葬祖苗得復之坤卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0642",
+      "sha256": "c426ab64851bb60d86b23911ed519d2ebe429711ec8fe41c6ab88455f03cc278"
+    },
+    {
+      "section": "卷之四",
+      "text": "子孫酉金⚋　　子孫酉金⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0643",
+      "sha256": "ec1aa31e37602b81f9f0e17b39a2ed639b545c50dfaec25dcad7623d9638bbd7"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財亥水⚋　　妻財亥水⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0644",
+      "sha256": "97871bf9c94eaa769878be6c2c2d2ba088b4be7e012051e1ddefb46f2c831b79"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟丑土⚋應　兄弟丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0645",
+      "sha256": "37ae41050e69b69cc4010dbe99f133796adbcc5843573205a2a0d8920d252cc7"
+    },
+    {
+      "section": "卷之四",
+      "text": "兄弟辰土⚋　　官鬼卯木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0646",
+      "sha256": "6fdaef303ff7c2814e2d5744769fd0ca6c5abeef62ea514a8d30e7f2506fe015"
+    },
+    {
+      "section": "卷之四",
+      "text": "官鬼寅木⚋　　父母巳火⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0647",
+      "sha256": "f4c5005c752be62472f8a6b1fefdf10e60c32f53ba7e2ba06a1857c520fc973c"
+    },
+    {
+      "section": "卷之四",
+      "text": "妻財子水○世　兄弟未土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0648",
+      "sha256": "137decb5d0c653acbaa09dcddf7acc32f2a96e0eb4241f8057cf1ea102c40858"
+    },
+    {
+      "section": "卷之四",
+      "text": "斷曰﹕世爻被克﹐不宜附葬之。後仍附葬。數月後不斷曰﹕腰疼欲死﹐欲遷其墳。予曰﹕墳不必遷﹐卦中世爻被克﹐幸而旺相﹐土來克水﹐命道安土神則吉﹐果於安墳而愈。予曰﹕目下𨿽不遷改﹐終有遷改。彼曰﹕何也﹖予曰﹕化六沖不久之象。果於子年死母﹐起此冢合葬於他處也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0649",
+      "sha256": "0753a0b2cfde4efdbd1bd493c55c97e851a643f1a35ae8e231a4ce648d8bcf83"
+    },
+    {
+      "section": "卷之四",
+      "text": "增刪卜易卷之四終。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c034:p0650",
+      "sha256": "7fec45826b746fd76228ef43454e86931859738b9aea1600b49ee03e54136e98"
+    }
+  ]
+}

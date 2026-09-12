@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "sources": [
+    {
+      "id": "xieji-siku-33-scope",
+      "title": "钦定协纪辨方书",
+      "edition": "四库全书本（维基文库转录）",
+      "chapter": "卷33",
+      "revision": "787380",
+      "source_url": "https://zh.wikisource.org/w/index.php?oldid=787380",
+      "text": "相主者何以四柱八字輔相主人之命也從來皆論生年不論生日有論生日者非古法也\n修造以宅長一人之命為主𦵏以亡命為主祭主止忌冲壓餘可勿拘\n古人皆論生年之天干或合官或合財或比肩或印綬或四長生或取禄馬貴人不衝命尅命而又補龍扶山則上上吉課也\n昔楊筠松為俞侍御修陽宅俞係乙亥生用庚寅年庚辰月庚寅日庚辰時取乙與庚合合官格也乙禄到夘寅辰拱之拱禄格也四柱又名天干一氣兩支不雜上吉格也課曰行年七十六嵗自乙亥至庚寅年正七十六歳此論生年不論生日之證也",
+      "sha256": "f5130bf95b407b2db37fd1e567c60bb9390bbba9ee0763028b50fbcca8d6b109",
+      "transcription_status": "context_checked",
+      "facsimile_status": "not_checked",
+      "scope": "修造与造葬的相主，生年为主",
+      "plain_meaning": "这里的四柱指所选日课；下文限定宅长、亡命和龙山。不能改成以完整出生八字选面试时间。",
+      "allowed_use": "scope_audit_only",
+      "not_supported": [
+        "full_bazi_interview_ranking",
+        "minute_optimum",
+        "guaranteed_outcome"
+      ],
+      "license": "古籍原文公版；维基文库转录按页面 CC BY-SA 条款署名，详见来源链接",
+      "checked_on": "2026-09-12"
+    },
+    {
+      "id": "xieji-siku-34-scope",
+      "title": "钦定协纪辨方书",
+      "edition": "四库全书本（维基文库转录）",
+      "chapter": "卷34",
+      "revision": "787382",
+      "source_url": "https://zh.wikisource.org/w/index.php?oldid=787382",
+      "text": "時者日之用也全在幇扶日辰或與日支干比和或與日支三合六合即吉時家吉凶神不必盡拘惟貴人禄馬為吉如甲戊庚日以丑未時為貴人甲日禄到寅時子辰日馬到寅時是也\n時衝月令衝歳君皆凶大事則忌小事可勿論\n時破大凶日支衝時支也如子日午時之類\n時刑次凶日支刑時支也如子日夘時之類\n五不遇時次凶時干尅日干也如甲日庚午時之類三元歌曰縱得三竒與三門五不遇兮損光明可知其凶切忌之\n旬中空亡截路空亡忌出行不忌𦵏事\n時建吉與日比和也凡犯五不遇則凶古人多用建時決不用破時用五不遇者亦少楊筠松𦵏丁巳亡命子山午向用壬申戊申壬申戊申建時五不遇然取兩干不雜地支一氣又戊禄到己申與已合且戊壬同生扵申故不以不遇為嫌也凡用時小修則只取幇扶日主大修與埋𦵏則要幇扶四柱使四柱純粹以補龍山相主命乃千古不二之法也\n孟月甲丙庚壬時仲月艮巽坤乾時季月乙辛丁癸時謂之四大吉時又為神藏煞沒但學者不明歸垣入局之理以取吉耳如正月雨水後亥将用事用子時上四刻作壬子山向則為神藏煞沒其他甲庚丙山向亦倣此推每一日只有一時諸星歸垣入局如太陽在子則壬子時吉太陽在午則丙午時吉此即歸垣入局之妙也吉莫大焉元經云善用時者常令朱雀鎩羽勾陳登陛白虎焼身元武折足螣蛇落水天空投匭所謂六神悉伏也如不得六神悉伏則得吉将加時亦吉",
+      "sha256": "4354be14a03435684bb13dba0d1196b1dfa7a3295a20f49137cf0fca88c05731",
+      "transcription_status": "context_checked",
+      "facsimile_status": "not_checked",
+      "scope": "用时法，并保留时破、五不遇、空亡及小修大修的例外",
+      "plain_meaning": "这里先比较所选日与时，再连同修造条件判断。其日干不是求问者的出生日干；原文也保留例外。",
+      "allowed_use": "scope_audit_only",
+      "not_supported": [
+        "full_bazi_interview_ranking",
+        "minute_optimum",
+        "guaranteed_outcome"
+      ],
+      "license": "古籍原文公版；维基文库转录按页面 CC BY-SA 条款署名，详见来源链接",
+      "checked_on": "2026-09-12"
+    }
+  ]
+}

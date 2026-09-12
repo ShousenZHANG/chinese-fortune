@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c020",
+  "title": "卷20",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B720&oldid=787361",
+  "revision": "787361",
+  "source_timestamp": "2016-10-27T11:57:36Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c020.wiki",
+  "raw_sha256": "4078918a64fee759ab7b02087dbf14115878a994c32725a5c62d702924cc5644",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷20",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c020:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十",
+      "text": "月表一\n嵗有十二月月有六十日神煞隨月轉換葢月三十日者朔㑹之常期而章蔀既周則日法必得六十甲子也今逐月逐日推排吉凶神而分列宜忌於下隨事選用展卷瞭然作月表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c020:p0002",
+      "sha256": "cd46ab72fd1adaee25682f1683234fb17b1c97dc138995a74b49ee43a8ba7e36"
+    },
+    {
+      "section": "正月",
+      "text": "立春正月節天道南行宜向南行宜修造南方\n天徳在丁天徳合在壬月徳在丙月徳合在辛月空在壬宜修造取土\n月建在寅月破在申月厭在戌月刑在巳月害在巳劫煞在亥災煞在子月煞在丑忌修造取土\n初七日長星　二十一日短星\n立春前一日四絶　後七日往亡\n雨水正月中日躔在亥宫為正月將宜用甲丙庚壬時",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c020:p0003",
+      "sha256": "cecff32257c40c73978498aeeaac16cd4425789d6139a64b9fdbb54f53ffa461"
+    },
+    {
+      "section": "癸亥大海水專收日",
+      "text": "右六十干支從建寅者始立春終雨水其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c020:p0004",
+      "sha256": "504852c3401e727f09c43e3699e4f16b1d3079234461daa015724cc49c02a87b"
+    }
+  ]
+}

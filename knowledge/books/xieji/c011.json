@@ -1,0 +1,622 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c011",
+  "title": "卷11",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B711&oldid=787353",
+  "revision": "787353",
+  "source_timestamp": "2016-10-27T11:56:16Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c011.wiki",
+  "raw_sha256": "4344610085a487d89ac6aeffa88c543a52b73415f87740bce589d85bf8ace64e",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [
+    {
+      "passage_id": "xieji:c011:p0015",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "xieji:c011:p0044",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "卷11",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷十一",
+      "text": "用事\n選擇用事宜忌備矣然鋪註萬年書則以事為經以神為緯選擇吉日時則以神為目以事為綱蓋鋪註以事序而選擇由事起也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0002",
+      "sha256": "b9af9f7e8039c869d42d7f65b3d893f49bca61cc1de20631c5c7812469bab3ea"
+    },
+    {
+      "section": "大清會典載萬年書",
+      "text": "御用六十七事民用三十七事通書載選擇六十事今以次合為一編而分列宜忌於事下依事之次第察其所宜忌之日而分註之則輕重去取可辨矣作用事",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0003",
+      "sha256": "cb7b8ca91b820931649cd6925e4a2a61a3fb67dd0801e4188ae7add3d0aca55c"
+    },
+    {
+      "section": "御用六十七事",
+      "text": "祭祀　　　　祈福　　　　求嗣\n上冊進表章　頒詔　　　　覃恩\n肆赦　　　　施恩封拜　　詔命公卿\n招賢　　　　舉正直　　　施恩惠\n恤孤惸　　　宣政事　　　布政事\n行惠愛　　　雪寃枉　　　緩刑獄\n慶賜　　　　賞賀　　　　宴會\n入學　　　　冠帶　　　　行幸\n遣使　　　　安撫邊境　　選將訓兵\n出師　　　　上官赴任　　臨政親民\n結婚姻　　　納采問名　　嫁娶\n進人口　　　般移　　　　安牀\n解除　　　　沐浴　　　　整容剃頭\n整手足甲　　求醫療病　　裁製\n營建宮室　　修宮室　　　繕城郭\n築隄防　　　興造動土　　豎柱上梁\n經絡　　　　開市　　　　立券\n交易　　　　納財　　　　修置産室\n開渠穿井　　安碓磑　　　補垣\n掃舍宇　　　修飾垣墻　　平治道塗\n伐木　　　　捕捉　　　　畋獵\n取魚　　　　栽種　　　　牧養",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0004",
+      "sha256": "0d7b7e592b9d755567769f820e92cfdde118d949ca2f999b5e9e3d2a06ecade7"
+    },
+    {
+      "section": "納畜",
+      "text": "民用三十七事\n祭祀　　　　上表章　　　上官\n入學　　　　冠帶　　　　結婚姻\n會親友　　　嫁娶　　　　進人口\n出行　　　　移徙　　　　安牀\n沐浴　　　　剃頭　　　　療病\n裁衣　　　　修造動土　　豎柱上梁\n經絡　　　　開市　　　　立券\n交易　　　　納財　　　　修置産室\n開渠穿井　　安碓磑　　　掃舍宇\n平治道塗　　破屋壊垣　　伐木\n捕捉　　　　畋獵　　　　栽種\n牧養　　　　破土　　　　安葬",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0005",
+      "sha256": "f79cc8567b258814eee63605f26f7fb4c4921134a53ad9913f8b9fd04226f4b8"
+    },
+    {
+      "section": "啓攢",
+      "text": "通書選擇六十事\n祭祀　　　　祈福　　　　求嗣\n上冊受封　　上表章　　　襲爵受封\n會親友　　　入學　　　　冠帶\n出行　　　　上官赴任　　臨政親民\n結婚姻　　　納采問名　　嫁娶\n進人口　　　移徙　　　　遠迴\n安牀　　　　解除　　　　沐浴\n剃頭　　　　整手足甲　　求醫療病\n療目　　　　針刺　　　　裁衣\n築隄防　　　修造動土　　豎柱上梁\n修倉庫　　　鼓鑄　　　　苫蓋\n經絡　　　　醞釀　　　　開市\n立券　　　　交易　　　　納財\n開倉庫　　　出貨財　　　修置産室\n開渠穿井　　安碓磑　　　補垣塞穴\n掃舍宇　　　修飾垣墻　　平治道塗\n破屋壊垣　　伐木　　　　捕捉\n畋獵　　　　取魚　　　　乘船渡水\n栽種　　　　牧養　　　　納畜\n破土　　　　安葬　　　　啓攢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0006",
+      "sha256": "0cccbdb4a39dbd0565ce60d0544d250ccbccae0b1e9c72d00f2d6989195213f2"
+    },
+    {
+      "section": "祭祀",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0007",
+      "sha256": "b484d2d0060b8506e7fbde8f28da3968db0ab19d5380752fcd605943b0d485dd"
+    },
+    {
+      "section": "忌天狗寅日",
+      "text": "祈福\n宜天徳月徳天徳合月徳合天赦天願月恩四相時徳天巫開日普護福生聖心益後續世\n忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢〔注文〕又忌禄空上朔等日見鋪註條例餘倣此〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0008",
+      "sha256": "31debf10a833219edc0098812a463e71b1c85f53a9413d2c0f9e948e0fab310d"
+    },
+    {
+      "section": "求嗣",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳開日益後續世\n忌月建月破平日收日劫煞災煞月煞月刑月害月厭大時遊禍天吏四廢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0009",
+      "sha256": "dd526828c562bb0fce76a9e96fe7d6efadc7ab09f33461e22fd3be01df136c97"
+    },
+    {
+      "section": "上冊進表章",
+      "text": "〔注文〕上冊受封同〔/注文〕\n宜天徳月徳天徳合月徳合天赦天願臨日福徳開日\n忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0010",
+      "sha256": "eeb689cbe44f75f5160526709a50eba2e24b57a2743d04388c3866de01753e0a"
+    },
+    {
+      "section": "上表章",
+      "text": "宜天徳月徳天徳合月徳合月空天赦天願臨日福徳開日解神\n忌月建月破平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0011",
+      "sha256": "83b4d7be893c5de64daa4910f884f243c7b2d19ef4d7ebafed93faff3d4a1c86"
+    },
+    {
+      "section": "頒詔",
+      "text": "宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0012",
+      "sha256": "0cffa01c2e39494edb539600887b8eb1590004180d1ef0f69739801faa37a64c"
+    },
+    {
+      "section": "覃恩肆赦",
+      "text": "宜天徳月徳天徳合月徳合天恩天赦天願王日開日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0013",
+      "sha256": "82103a297763d66d4cf81a6a0dc6e30c8a4ad627394d37c5cea7f82390df6878"
+    },
+    {
+      "section": "忌無",
+      "text": "施恩封拜〔注文〕襲爵受封同〔/注文〕\n宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0014",
+      "sha256": "85bc4429eea6dcb95d0638c5f61acb93805b69f88befac23f743710529a75593"
+    },
+    {
+      "section": "官日守日相日止宜襲爵受封",
+      "text": "忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢\n詔命公〔字形SK2721：未编码〕招賢\n宜天徳月徳天徳合月徳合天赦天願王日建日開日\n又月恩四相時徳吉期天喜與驛馬天馬併者\n忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0015",
+      "sha256": "361bc8e3b481b89f32e782b7490a74f418873bad5df9ccd58f9b035f4b3b0008"
+    },
+    {
+      "section": "舉正直",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日建日吉期天喜開日\n忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0016",
+      "sha256": "4faffc12f73469b29fc7ed81b863c48c6f330ff3d18b21d0cea87cebcc9cfb60"
+    },
+    {
+      "section": "施恩惠恤孤惸",
+      "text": "宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0017",
+      "sha256": "abddc59bbb9341341accc1f4cc307a747e825165e01064c5dd57b5da9ff0e80c"
+    },
+    {
+      "section": "忌無",
+      "text": "宣政事\n宜天徳月徳天徳合月徳合天赦天願王日開日又天恩與驛馬天馬建日併者\n忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0018",
+      "sha256": "83d870ab53f1f33853a490e2868a3c1561e879902411160098a47d28cf5dc351"
+    },
+    {
+      "section": "布政事",
+      "text": "宜天恩\n忌月破平日收日閉日劫煞災煞月煞月刑月厭四廢",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0019",
+      "sha256": "23a6366545c2de9a191c7de26a5070fe8575223fb23b713e8433bb4ecfee89a9"
+    },
+    {
+      "section": "行惠愛雪寃枉緩刑獄",
+      "text": "宜天徳月徳天徳合月徳合天恩天赦天願陽徳隂徳王日開日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0020",
+      "sha256": "abddc59bbb9341341accc1f4cc307a747e825165e01064c5dd57b5da9ff0e80c"
+    },
+    {
+      "section": "忌無",
+      "text": "慶賜賞賀\n宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日三合福徳天喜開日\n忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0021",
+      "sha256": "3d8462b978870cc6d6a870d8ee6cf2b2ce1d042a91b2aa3bbf232dcf89bd76be"
+    },
+    {
+      "section": "宴會",
+      "text": "〔注文〕㑹親友同〔/注文〕\n宜天徳月徳天徳合月徳合天恩天赦天願月恩四相時徳王日民日三合福徳天喜開日六合五合\n忌月破平日收日閉日劫煞災煞月煞月刑月害月厭四廢五離酉日",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0022",
+      "sha256": "6758ff9b5860b320e7701939db335de12dd8bda5a32446a79545401cf5dea8d8"
+    },
+    {
+      "section": "入學",
+      "text": "宜成日開日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0023",
+      "sha256": "2d49ca2a72dbfbff7ef80acd0f8cfa5f4356f0611b3d889560593e5f97c609fc"
+    },
+    {
+      "section": "忌無",
+      "text": "冠帶",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0024",
+      "sha256": "3e32b80a9d197504ac23e111b90455737b9c24b86c8376725da99a26ee03d040"
+    },
+    {
+      "section": "宜定日",
+      "text": "忌月破平日收日劫煞災煞月煞月刑月厭大時天吏四廢五墓丑日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0025",
+      "sha256": "ce20eea0ce1326a427806f0548ff607a9d4231561ac55aae402452070ae5ac8a"
+    },
+    {
+      "section": "行幸遣使",
+      "text": "〔注文〕出行同〔/注文〕\n宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日驛馬天馬建日吉期天喜開日\n忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏天賊四廢五墓往亡巳日",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0026",
+      "sha256": "cba5b2a9d4d1a4c6baf2433cc92a3a572fbcab49b7471e025aa4eeffb07f3d0f"
+    },
+    {
+      "section": "安撫邊境",
+      "text": "宜天徳月徳天徳合月徳合天赦天願王日守日兵福兵寶兵吉危日成日\n忌月破平日死神收日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0027",
+      "sha256": "3cd7ab2023b2f538b1996d7d9b13a01676ca4cc34073bf9e7b13bfdc6dcc8edc"
+    },
+    {
+      "section": "選將訓兵",
+      "text": "宜天徳月徳天徳合月徳合天赦天願王日兵福兵寶兵吉危日\n忌月破平日死神收日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0028",
+      "sha256": "d013aef6bf3b7f5ff4098f28ca6795620cecba701a6a0e0499b3af05146f8674"
+    },
+    {
+      "section": "出師",
+      "text": "宜天徳月徳天徳合月徳合兵福兵寶兵吉\n忌月破平日死神收日閉日劫煞災煞月煞月刑月害月厭大時天吏死氣四擊四耗四廢四忌四窮五墓兵禁大煞往亡八專專日伐日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0029",
+      "sha256": "ecbf307c41b4c57939bed5f892fc1995662850564d3450c9ff1d1571f265a20d"
+    },
+    {
+      "section": "上官赴任",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日\n忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0030",
+      "sha256": "548a55871812e1cf0cdbc626d18d65568d224b511d4fea3a040af1799f5237c0"
+    },
+    {
+      "section": "臨政親民",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日官日守日相日臨日建日吉期天喜開日六儀\n忌月破平日收日滿日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0031",
+      "sha256": "1cd795204d3a5e73490e9fd9cc083302bc8ea1a3402c2277a5e2738ccb03d9f2"
+    },
+    {
+      "section": "結婚姻",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜六合五合\n忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0032",
+      "sha256": "8efec12584ded9420fe10c7eea2e471c7b3f45a94241ba08f6d1058be4c611ae"
+    },
+    {
+      "section": "納采問名",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日三合天喜\n忌月建月破平日收日滿日閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四忌四窮五墓五離八專",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0033",
+      "sha256": "911f5fc3aa5076ccc91e99373162eb0d89c7201d5b3b8cc00f142f3e25e37d41"
+    },
+    {
+      "section": "嫁娶",
+      "text": "宜天徳月徳天徳合月徳合天赦天願三合天喜六合不將\n忌月破平日收日閉日劫煞災煞月煞月刑月害月厭厭對大時天吏四廢四忌四窮五墓往亡八專亥日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0034",
+      "sha256": "46b284f1feb38eda29e4965d48c3e9353725e6b281e5f275735739b128c3715e"
+    },
+    {
+      "section": "進人口",
+      "text": "宜天願民日三合滿日收日六合天倉\n忌月破平日死神閉日劫煞災煞月煞月刑月害月厭大時天吏四廢四窮五墓九空往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0035",
+      "sha256": "8f9bca2525abbfd03e8bab82ee1664c5e55ad4f16730240515d540b6ce252496"
+    },
+    {
+      "section": "般移",
+      "text": "〔注文〕移徙同〔/注文〕\n宜天徳月徳天徳合月徳合天赦天願月恩四相時徳民日驛馬天馬成日開日\n忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓歸忌往亡",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0036",
+      "sha256": "602976cfd34679158e53cf623cc69f1c7f6ce8bcf0aeb6489019175f64bc379b"
+    },
+    {
+      "section": "遠迴",
+      "text": "忌月厭歸忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0037",
+      "sha256": "c3a0c3ac7292f589dddd8e193aae78ac95fdacd58b8e5ea833953e4017bb5ce0"
+    },
+    {
+      "section": "安牀",
+      "text": "宜危日\n忌月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓申日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0038",
+      "sha256": "80582ec54e307a38b41eab2953b0cca24cefb8b76967955bd565be20e75436f9"
+    },
+    {
+      "section": "解除",
+      "text": "宜天徳月徳天徳合月徳合天赦月恩四相時徳除日開日解神除神\n忌月建平日死神收日劫煞災煞月煞月刑月厭大時遊禍天吏死氣四廢五墓",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0039",
+      "sha256": "43905c102ac4ec3f5449da8b4c852f1951f8e1f51139b090643b7845e8b1f87c"
+    },
+    {
+      "section": "沐浴",
+      "text": "宜除日解神除神亥子日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0040",
+      "sha256": "ffbc9e842aeddf5e4e194c7e1a4c005f4e1c6269564e3ec4a084547798082e85"
+    },
+    {
+      "section": "忌伏社日",
+      "text": "整容剃頭",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0041",
+      "sha256": "8120bc4514364b3439299b2218b7b212dd77845654e2a3169b2121558530ae43"
+    },
+    {
+      "section": "宜除日解神除神",
+      "text": "忌月建月破劫煞災煞月煞月刑月厭丁日每月十二日十五日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0042",
+      "sha256": "399dcec0f1eb70bec3ca29f680903ee7d24ad84e922c2a90dbe39e551370c974"
+    },
+    {
+      "section": "整手足甲",
+      "text": "宜除日解神除神\n忌月建月破劫煞災煞月煞月刑月厭每月一日六日十五日十九日二十一日二十三日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0043",
+      "sha256": "96e7e2f085eeac141deafaaae812836303e78c7a51663dd40008e1241edf91ec"
+    },
+    {
+      "section": "求醫療病",
+      "text": "宜天徳月徳天徳合月徳合天赦月恩四相時徳天后除日破日天醫開日解神除神\n忌月建平日死神收日滿日閉日劫煞災煞月煞月刑月害月厭大時遊禍天吏死氣四廢五墓往亡未日每月十五日朔〔字形SK2959：弦〕望日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0044",
+      "sha256": "eea8866f87b02cee1473bd4de2ab980df0088f65c6833258c2c53850f89c9a68"
+    },
+    {
+      "section": "療目",
+      "text": "忌閉日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0045",
+      "sha256": "327563413ea685798af618f2f1b693adac3f9dd442a70fae09b0e798838cd985"
+    },
+    {
+      "section": "針刺",
+      "text": "忌血支血忌",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0046",
+      "sha256": "e8bc778d480d3cb50feecef98acf87a84b71443071e36ef0f699af8c202de098"
+    },
+    {
+      "section": "裁製",
+      "text": "〔注文〕裁衣同〔/注文〕\n宜天徳月徳天徳合月徳合天赦天願月恩四相時徳王日三合滿日開日復日\n忌月破平日收日劫煞災煞月煞月刑月厭四廢",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0047",
+      "sha256": "b09245ae54c69ae16f1d91ddca9bba45d2bb299462bf4c5bd95451db85283586"
+    },
+    {
+      "section": "營建宮室",
+      "text": "宜天徳月徳天徳合月徳合天赦天願\n忌月建土府月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0048",
+      "sha256": "f47f8f3ee455c51557217d938a7ed53ab88be0d85b419e5e3915aa385c846540"
+    },
+    {
+      "section": "修宮室",
+      "text": "宜月恩四相時徳三合福徳開日\n忌月建土府月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0049",
+      "sha256": "041f540e8b93f26eb2507e50f04560749516854eef780729d2e7831a1522d0ce"
+    },
+    {
+      "section": "繕城郭",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳三合福徳開日\n忌月建土府月破平日收日劫煞災煞月煞月刑月厭大時天吏四廢五墓土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0050",
+      "sha256": "3490a5d42fc6921e72a9f9fa3d1491cbd1d2ba5d7dbaccf8909a67517e0607c1"
+    },
+    {
+      "section": "築隄防",
+      "text": "宜成日閉日\n忌土府月破平日收日劫煞災煞月煞月刑月厭大時天吏四廢土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0051",
+      "sha256": "a4654d151df0baccb6b33e44f38f9c7e1df536480a0f31fe514ceab0716b9c65"
+    },
+    {
+      "section": "興造動土",
+      "text": "〔注文〕修造同〔/注文〕\n宜天徳月徳天徳合月徳合天赦天願月恩四相時徳三合開日\n忌月建土府月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓土符地囊土王用事後",
+      "layer": "base_text_with_commentary",
+      "passage_id": "xieji:c011:p0052",
+      "sha256": "076c0d1bd98f658e72e66b49ecbbe33155ea260e131da00231ede93741fef9da"
+    },
+    {
+      "section": "豎柱上梁",
+      "text": "宜天徳月徳天徳合月徳合天赦天願月恩四相時徳三合開日\n忌月建月破平日收日閉日劫煞災煞月煞月刑月厭大時天吏四廢五墓",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0053",
+      "sha256": "e9d2e938d88ca8e2425806f4fcb50134921131bfa6d3506985e020cc4b66ac82"
+    },
+    {
+      "section": "修倉庫",
+      "text": "宜天徳月徳天徳合月徳合天赦天願三合滿日又收日母倉六合五富天倉與月徳四相時徳開日併者\n忌月建土府月破大耗平日劫煞災煞月煞月虚月刑月害月厭大時天吏小耗天賊四耗四廢四窮五虚九空土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0054",
+      "sha256": "a3c5198c03f6743c479d715d401e7031f8d50f893ef07f5a2d7076a7b483ac24"
+    },
+    {
+      "section": "鼓鑄",
+      "text": "忌月破平日收日劫煞災煞月煞月刑月厭四廢九焦",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0055",
+      "sha256": "4da2a7303e39f2dfda3f37ef5fa44bfdaa4387c1204b79786eaa2dff1f93530c"
+    },
+    {
+      "section": "苫蓋",
+      "text": "忌天火午日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0056",
+      "sha256": "601bcec94f4a875af383ea12cf369efeacd922a43feebf0626bd5742fd130403"
+    },
+    {
+      "section": "經絡",
+      "text": "宜天願三合滿日六合五富\n忌月破平日收日劫煞災煞月煞月刑月害月厭四廢庚日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0057",
+      "sha256": "1ae2787e28888c8ea55b83d99e23f0d3228e86b6091e50d497fe71642a4368b4"
+    },
+    {
+      "section": "醞釀",
+      "text": "宜天願三合六合五富\n忌月破平日收日劫煞災煞月煞月刑月害月厭四廢辛日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0058",
+      "sha256": "a4ddb1fbe7959659c1ee31b1ff5b50f802947d669d041d5ddc728066461d34b7"
+    },
+    {
+      "section": "開市",
+      "text": "宜天願民日滿日成日開日五富\n忌月破大耗平日收日閉日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮五墓九空",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0059",
+      "sha256": "6004bf3c897b46e6eba3ac5cd4a0572833fc5086d2aeadbaa598f68d28eb2034"
+    },
+    {
+      "section": "立劵交易",
+      "text": "宜天願民日三合滿日六合五富五合\n忌月破大耗平日收日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮五墓九空五離",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0060",
+      "sha256": "ac261c5d35950a99c54485a88fa033ab6ea92116b3f2798c752919c6ca787c10"
+    },
+    {
+      "section": "納財",
+      "text": "宜母倉天願月恩四相時徳民日三合滿日收日六合五富天倉\n忌月破大耗平日劫煞災煞月煞月刑月害月厭大時天吏小耗四耗四廢四窮九空",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0061",
+      "sha256": "5ec675388bc0bb0ba294c3f5be6eaa356dd8e01f0cc7f7de16b401d6354f3b52"
+    },
+    {
+      "section": "開倉庫出貨財",
+      "text": "宜月恩四相時徳滿日五富\n忌月建月破大耗平日收日閉日劫煞災煞月煞月虚月刑月害月厭大時天吏小耗天賊四耗四廢四窮五虚九空甲日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0062",
+      "sha256": "be34eca826fcf9e75c1280968e496635bb3b37821a3b948a8788553572c09dc8"
+    },
+    {
+      "section": "修置産室",
+      "text": "宜開日\n忌月建土府月破平日死神收日閉日劫煞災煞月煞月刑月害月厭大時天吏死氣四廢五墓土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0063",
+      "sha256": "abd407cde2a5c4ae49cb93ece833d5248a9a38fa203ed89210aec5b1b2c90bf0"
+    },
+    {
+      "section": "開渠穿井",
+      "text": "宜開日\n忌土府月破平日收日閉日劫煞災煞月煞月刑月厭四廢土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0064",
+      "sha256": "a913dab1ab8ae209e30cc1b494b20c7d92fafe8433259fc469781389673f6dfa"
+    },
+    {
+      "section": "壬日止忌開渠卯日止忌穿井",
+      "text": "安碓磑",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0065",
+      "sha256": "383199711f5432c126846833497e0e4a30f1b57ebbf3edc298a14dd36a9f1be7"
+    },
+    {
+      "section": "宜三合開日",
+      "text": "忌土府月破劫煞災煞月煞月刑月厭四廢土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0066",
+      "sha256": "696232d96938c1b0e0ca618c17c790c8196ce09b6eb675a3b1a55bfd95a122ae"
+    },
+    {
+      "section": "補垣塞穴",
+      "text": "宜滿日閉日\n忌月破劫煞災煞月煞月刑月厭四廢九坎\n土府土符地囊土王用事後止忌補垣",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0067",
+      "sha256": "762f2470c1e414336b772154664f909ca1d59257596f31e26b69f663a122bed7"
+    },
+    {
+      "section": "掃舍宇",
+      "text": "宜除日除神",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0068",
+      "sha256": "9ba18d28f910cf50694a7cde79d36af7fa26393f51e3bda1696d2e057fe051dd"
+    },
+    {
+      "section": "忌無",
+      "text": "修飾垣墻",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0069",
+      "sha256": "9b159e23a5202b813f4970799d710baafaad6ce49c1156160d4115b18f6f1b46"
+    },
+    {
+      "section": "宜平日",
+      "text": "忌土府月破劫煞災煞月煞月刑月厭四廢土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0070",
+      "sha256": "696232d96938c1b0e0ca618c17c790c8196ce09b6eb675a3b1a55bfd95a122ae"
+    },
+    {
+      "section": "平治道塗",
+      "text": "宜平日\n忌土府月厭土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0071",
+      "sha256": "25a2cbb739500de0d320de7e541edd7db740ea81a6b25b935bd89053e46baba5"
+    },
+    {
+      "section": "破屋壊垣",
+      "text": "宜月破\n忌月建土府劫煞災煞月煞月刑月厭土符地囊土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0072",
+      "sha256": "ea9e3f848919cc8d9cb316bb2f6e1bbd4760e6b7fe5f59b1c9cbe833442a46d0"
+    },
+    {
+      "section": "伐木",
+      "text": "宜立冬後立春前危日午日申日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0073",
+      "sha256": "b6b955c1069a9ddf59394ed5a40a77448a7ddaeaca0223a2d74926cbc717d812"
+    },
+    {
+      "section": "忌月建月破月厭生氣",
+      "text": "捕捉",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0074",
+      "sha256": "999ead4dd564cde2f11fb3d290509f2f61570a19857457aabe641a76afd8f4b0"
+    },
+    {
+      "section": "宜執日收日",
+      "text": "忌往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0075",
+      "sha256": "37dd909364fec9c754cb26d244c9d6dccb08582673002751a2ae77eba9ac29fb"
+    },
+    {
+      "section": "畋獵",
+      "text": "宜霜降後立春前執日危日收日\n忌天徳月徳天徳合月徳合天赦生氣往亡",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0076",
+      "sha256": "964e681d36567aeed7871fdbc8eef6e45ae1ca5cea903b4339fb0920a6ffac89"
+    },
+    {
+      "section": "取魚",
+      "text": "宜雨水後立夏前執日危日收日\n忌天徳月徳天徳合月徳合天赦生氣招搖咸池八風九坎往亡觸水龍",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0077",
+      "sha256": "99924b9cb206337cb6911410c791ad1dd117e28da1bca8c4380bcd2b13d19ce8"
+    },
+    {
+      "section": "乘船渡水",
+      "text": "忌招搖咸池八風九坎觸水龍",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0078",
+      "sha256": "aaef0666b705ed0b07756e65cbf84e5b9464aff30a1963222b3bac8785f05f11"
+    },
+    {
+      "section": "栽種",
+      "text": "宜天徳月徳天徳合月徳合天赦母倉天願月恩四相時徳民日開日五富\n忌月建土府月破平日死神劫煞災煞月煞月刑月厭地火大時天吏死氣四廢五墓九焦土符地囊乙日土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0079",
+      "sha256": "f8fde5ea67c20c9158c0644ef16c2067a2c9d0630433137cb6ee00af77ac34c1"
+    },
+    {
+      "section": "牧養",
+      "text": "宜天徳月徳天徳合月徳合天赦母倉天願月恩四相時徳民日開日五富\n忌月破平日死神劫煞災煞月煞月刑月害月厭大時天吏四廢五墓",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0080",
+      "sha256": "c724e0c158dac24a137d82f0ee10c143fa00b0323639350037087af7ed6c052f"
+    },
+    {
+      "section": "納畜",
+      "text": "宜天徳月徳天徳合月徳合天赦母倉天願民日三合收日六合五富天倉\n忌月破平日死神劫煞災煞月煞月刑月害月厭大時天吏四廢五墓",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0081",
+      "sha256": "462841f13124d56edc78f16a434ead59276f37e7e7ed67c2bda33d68d6ac9483"
+    },
+    {
+      "section": "破土",
+      "text": "宜鳴吠鳴吠對\n忌月建土府月破平日收日劫煞災煞月煞月刑月害月厭四廢五墓土符地囊復日重日土王用事後",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0082",
+      "sha256": "54cb5a08c1da1eb3681fe17f46f6e4017a1f9ba192bb6b5ece8ec6ab3926d6ff"
+    },
+    {
+      "section": "安葬",
+      "text": "宜天徳月徳天徳合月徳合天赦天願六合鳴吠忌月建月破平日收日劫煞災煞月煞月刑月害月厭四廢四忌四窮五墓復日重日",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0083",
+      "sha256": "51d5a26754f8cce4a8842911cbd4f1a29053ecf80d6439755d200d0fa9bd24e9"
+    },
+    {
+      "section": "啓攢",
+      "text": "宜鳴吠對\n忌月建月破平日收日劫煞災煞月煞月刑月害月厭四廢五墓復日重日\n右用事與宜忌相為經緯療目針刺無宜日與療病同也鼓鑄苫蓋無宜日與修造同也遠迴乘船渡水無宜日除所忌之外無日不宜也",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0084",
+      "sha256": "1fc4eba0af6447ab50fe2a3875ad3f3e24b04ee8d23547fbb5015d36ba8b1810"
+    },
+    {
+      "section": "啓攢",
+      "text": "欽定協紀辨方書卷十一",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c011:p0085",
+      "sha256": "7f0b181d2c2e921093fb9756409431a3d5349e5937f173be35dc62a98e78b615"
+    }
+  ]
+}

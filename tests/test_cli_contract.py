@@ -36,12 +36,19 @@ pytestmark = pytest.mark.skipif(not HAS_LUNAR, reason="lunar_python not installe
 def run(script: str, *args) -> subprocess.CompletedProcess:
     return subprocess.run(
         [sys.executable, str(SCRIPTS / script), *map(str, args)],
-        capture_output=True, text=True, encoding="utf-8", errors="replace",
+        capture_output=True, text=True, encoding="utf-8", errors="replace", input='',
     )
 
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
+    ('classical_guidance.py', ['--scenario', 'missing'], '不存在的古籍场景'),
+    ('classical_search.py', ['--chapter-id', 'ziping:c026', '--offset', -1], '分页不能负偏移'),
+    ('fortune_reading.py', ['--stdin'], '空 JSON 请求'),
+    ('fortune_rules.py', ['--scenario', 'not-a-scenario'], '不存在的场景'),
+    ('fortune_rules.py', ['--scenario', ''], '空场景不是通配符'),
+    ('personal_profiles.py', ['show', '--profile-id', '../escape'], '档案 id 越界'),
+    ('personal_profiles.py', ['delete', '--profile-id', 'sample', '--expected-revision', '-1'], '非法修订号'),
     ('bazi_reading.py', ['--year', 1990, '--month', 2, '--day', 31, '--gender', 'male'], '无效生日'),
     ('classical_search.py', ['--passage-id', 'missing:chapter:p0001'], '未知古籍段落'),
     ("request_time.py", ["--current-timezone", "Invalid/Zone"], "不存在时区"),
@@ -120,6 +127,9 @@ def test_impossible_input_is_refused_not_fabricated(script, argv, why):
 
 # 合法输入必须依旧 ok —— 否则上面的契约可以靠"一律拒绝"作弊满足。
 VALID_INPUTS = [
+    ('classical_guidance.py', ['--scenario', 'interview', '--retrieve', '--limit', 1]),
+    ('classical_guidance.py', ['--family', '伤官']),
+    ('fortune_rules.py', ['--capabilities', '--scenario', 'interview']),
     ('method_rules.py', ['--method', 'ziwei']),
     ('tiaohou_provenance.py', ['--key', '甲|寅']),
     ("bazi_calc.py", ["--year", 1990, "--month", 5, "--day", 10, "--hour", 14,

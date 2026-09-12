@@ -141,7 +141,8 @@ def test_path_escape_is_rejected(mini_library: Path) -> None:
 def test_actual_five_classics_have_frozen_source_complete_inventories() -> None:
     result = validate_library()
     assert result['ok'], result['errors']
-    assert {b['id'] for b in result['books']} == {'ziping', 'ditian', 'qiongtong', 'sanming', 'yuanhai'}
+    assert {b['id'] for b in result['books']} == {'ziping', 'ditian', 'qiongtong', 'sanming', 'yuanhai',
+        'xieji', 'xuanze', 'ziwei', 'meihua', 'liuren', 'dunjia', 'zengshan', 'yuanling'}
     assert all(b['complete_acquisition'] and not b['facsimile_verified'] for b in result['books'])
     assert all(b['passages'] > 20 for b in result['books'])
     counts = {b['id']: b['chapters'] for b in result['books']}

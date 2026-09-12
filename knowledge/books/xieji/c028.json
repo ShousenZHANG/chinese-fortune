@@ -1,0 +1,46 @@
+{
+  "book_id": "xieji",
+  "chapter_id": "c028",
+  "title": "卷28",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%AC%BD%E5%AE%9A%E5%8D%94%E7%B4%80%E8%BE%A8%E6%96%B9%E6%9B%B8+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B728&oldid=748648",
+  "revision": "748648",
+  "source_timestamp": "2016-10-19T19:13:35Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/xieji/c028.wiki",
+  "raw_sha256": "3a8fb8c7fbfe89916ef2f202a375060a930dc42e01ec08c6cdf9ce6b1fa4ff90",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "卷28",
+      "text": "欽定四庫全書",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c028:p0001",
+      "sha256": "64d9ff2e7643d8cd3464e7f4c9e75c7d6d85eb6ee80c540d6dcbeeab187b9ddc"
+    },
+    {
+      "section": "欽定協紀辨方書卷二十八",
+      "text": "月表九",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c028:p0002",
+      "sha256": "6103a17448681b47d776b7b968804cfaa9cba81d55ab38fd51d35aff30eeb385"
+    },
+    {
+      "section": "九月",
+      "text": "寒露九月節天道南行宜向南行宜修造南方\n天德在丙天德合在辛月德在丙月德合在辛月空在壬宜修造取土\n月建在戌月破在辰月厭在寅月刑在未月害在酉刼煞在亥災煞在子月煞在丑忌修造取土\n三日四日長星　十六日十七日短星　寒露後二十七日往亡　土王用事後忌修造動土己午日添母倉霜降九月中日躔在卯宫為九月將宜用癸乙丁辛時孟",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c028:p0003",
+      "sha256": "914b79ce5bcf909a62da97de58d901a174f240e33d44a8251cc893b486587114"
+    },
+    {
+      "section": "癸亥大海水專除日",
+      "text": "右六十干支從建戌者始寒露終霜降其神煞吉凶用事宜忌具於表",
+      "layer": "historical_work_transcription",
+      "passage_id": "xieji:c028:p0004",
+      "sha256": "f9e34ecd7702b1b4e860fe3b6775cd2c116143306695f1561c7680a1b065b428"
+    }
+  ]
+}

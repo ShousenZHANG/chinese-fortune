@@ -1,0 +1,830 @@
+{
+  "schema_version": "1.0",
+  "scope": "研究入口覆盖当前16类需求；书目收录、规则核验、个人适用与经验效度分别记录。未列入不等于不存在，已收录不等于全部支持。",
+  "scenarios": {
+    "outlook": {
+      "label": "阶段运势",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "sanming",
+          "query": "太岁",
+          "purpose": "核查岁运作用范围，不将生日生时混成流日流时"
+        }
+      ],
+      "boundary": "年、月、日、时分别找依据；短窗口可说明仍生效的大运背景",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "interview": {
+      "label": "面试",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "xuanze",
+          "query": "上官赴任",
+          "purpose": "对照古代赴任，面试属于现代类比，不能直接等同",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0003",
+            "sha256": "92185c5ab3ed93192b0f04399553227145b42e86013a38fa471a97f168b336d1"
+          },
+          "context_section": "arrival"
+        },
+        {
+          "book": "dunjia",
+          "query": "本命行年",
+          "purpose": "核查个人年命与时局的连接、排局方法及例外",
+          "anchor": {
+            "passage_id": "dunjia:c001:p0016",
+            "sha256": "08aa5613c174fc7d504663bfa5702ecf5e4b73482898b49f9a5f36d2cf2bd4e3"
+          }
+        },
+        {
+          "book": "yuanling",
+          "query": "占功名",
+          "purpose": "核同一主本的科名、本人年干与奇墓门克刑迫；属于年干接入，不能冒充完整八字或已验证面试排名",
+          "anchor": {
+            "passage_id": "yuanling:c008:p0001",
+            "sha256": "e4751464bdec56de6d1443785dd6b884741c4118c596eccf53b3c26ec1767cb0"
+          }
+        }
+      ],
+      "boundary": "完整出生八字、事件时局与古法年命分开；比较候选前补全连接规则",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "work_conversation": {
+      "label": "工作沟通、谈薪、转岗",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "dunjia",
+          "query": "謁貴",
+          "purpose": "核查会见事项的历史语境"
+        }
+      ],
+      "boundary": "与古代谒贵的差别须说明，普通同事沟通不能直接等同",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "exam": {
+      "label": "学习考试",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "xuanze",
+          "query": "赴举",
+          "purpose": "核查赴举日宜忌及上下文",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0022",
+            "sha256": "11f6859c2a078b03bca329a13e2bcd60acb72ab202c9d7eb3945bffc7f13462a"
+          },
+          "context_section": "exam"
+        },
+        {
+          "book": "zengshan",
+          "query": "功名",
+          "purpose": "仅在使用六爻时核查用神、动变和例外"
+        },
+        {
+          "book": "yuanling",
+          "query": "占功名",
+          "purpose": "核同一主本的科名、本人年干与奇墓门克刑迫；属于年干接入，不能冒充完整八字或已验证面试排名",
+          "anchor": {
+            "passage_id": "yuanling:c008:p0001",
+            "sha256": "e4751464bdec56de6d1443785dd6b884741c4118c596eccf53b3c26ec1767cb0"
+          }
+        }
+      ],
+      "boundary": "科举与现代笔试面试区分；六爻所问事项不能冒充完整出生八字分析",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "relationship_conversation": {
+      "label": "约会与感情沟通",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        }
+      ],
+      "boundary": "没有直接核实的现代约会日时规则；不借婚嫁表推断对方感情或忠诚",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "wedding": {
+      "label": "订婚领证婚礼",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "xieji",
+          "query": "嫁娶",
+          "purpose": "区分纳采、婚姻与具体仪式"
+        },
+        {
+          "book": "xuanze",
+          "query": "嫁娶",
+          "purpose": "核对双方适用条件与异说",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0107",
+            "sha256": "6ce9de8dd7a41600559f3b1e5303e20e67e6e9eee02d0425559c13e10f4fc4ba"
+          },
+          "context_section": "wedding"
+        }
+      ],
+      "boundary": "两位参与者同等审查；传统性别角色不能静默变成现代优先权",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "travel": {
+      "label": "出行",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "xuanze",
+          "query": "出行",
+          "purpose": "核查出行择日和完整禁宜",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0328",
+            "sha256": "2c6047842a9b58d88e56c529b996c28770f5cdaa23adaf55b7d6900a3231f1c0"
+          },
+          "context_section": "travel"
+        },
+        {
+          "book": "dunjia",
+          "query": "出行",
+          "purpose": "核查出发时间、方向、年命与方法"
+        }
+      ],
+      "boundary": "出发地和到达地分开，现实班次优先过滤；不推断事故",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "moving": {
+      "label": "搬家入住",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "xieji",
+          "query": "般移",
+          "purpose": "区分搬家、入住和修造"
+        },
+        {
+          "book": "xuanze",
+          "query": "移徙",
+          "purpose": "对照同类事项与不同口径",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0350",
+            "sha256": "b6f61993f24a4c729b9b9ba39f6bc2c68d7fc396cb91d0de98e94574cdf369a7"
+          },
+          "context_section": "moving"
+        }
+      ],
+      "boundary": "修造相主不自动适用于现代租房入住；朝向与主事者须明确",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "business": {
+      "label": "开业与发布",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "xieji",
+          "query": "开市",
+          "purpose": "核查开业用事"
+        },
+        {
+          "book": "xuanze",
+          "query": "交易",
+          "purpose": "核查交易事项，不能推出投资收益",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0325",
+            "sha256": "57cd3fbf4f08d7cad992ce389959a78a1cf974730855978965a4ed67ca632201"
+          },
+          "context_section": "trade"
+        }
+      ],
+      "boundary": "软件、作品发布是现代解释；开市规则不是直接的发布成功保证",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "billing": {
+      "label": "报价与催款",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "ziping",
+          "query": "取运",
+          "purpose": "先核完整出生盘与大运背景；不能据此排列每天或小时",
+          "anchor": {
+            "passage_id": "ziping:c025:p0001",
+            "sha256": "8cc8d27b85a4a144596566d3a1d612b5e19baca0e8864aacc5c58b6cc3bf5af9"
+          }
+        },
+        {
+          "book": "xuanze",
+          "query": "纳财",
+          "purpose": "原文纳财注明取债同；仍须核全宜忌及个人适用条件，不代表必然收款",
+          "anchor": {
+            "passage_id": "xuanze:c003:p0321",
+            "sha256": "bf555057f7533e822564373b6769f390b480701a690af589893f3b76565e8759"
+          },
+          "context_section": "billing"
+        }
+      ],
+      "boundary": "不从纳财吉日直接断言对方付款或投资获利",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "multiple_events": {
+      "label": "连续行程",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "xieji",
+          "query": "用事",
+          "purpose": "核查事项定义、宜忌条件及例外"
+        }
+      ],
+      "boundary": "逐项使用各自事项规则，再核交通、准备、时长和参与者冲突",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "compatibility": {
+      "label": "关系匹配",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "xieji",
+          "query": "婚姻",
+          "purpose": "核查婚姻论述与编者的辨伪"
+        }
+      ],
+      "boundary": "双方资料与现实相处分开；不得据性别、刑克或古代断语指控个人",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "naming": {
+      "label": "起名改名",
+      "source_status": "separate_sources_or_records_required",
+      "routes": [],
+      "boundary": "需另补字义、训诂、音韵及所引诗文的具体版本；现有术数书不替代字源文献",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "location": {
+      "label": "城市与场所比较",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "dunjia",
+          "query": "本命行年",
+          "purpose": "查年命与方位的原义，不直接推出移民城市优劣",
+          "anchor": {
+            "passage_id": "dunjia:c001:p0016",
+            "sha256": "08aa5613c174fc7d504663bfa5702ecf5e4b73482898b49f9a5f36d2cf2bd4e3"
+          }
+        }
+      ],
+      "boundary": "需真实候选、方向和现实限制；永久居住选择与某次出行分开",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "fengshui": {
+      "label": "环境风水",
+      "source_status": "research_material_available",
+      "routes": [
+        {
+          "book": "xieji",
+          "query": "修造",
+          "purpose": "只支持相关修造择时语境"
+        }
+      ],
+      "boundary": "尚需阳宅、布局、朝向各自的完整来源；择日书不是完整阳宅知识库",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    },
+    "review": {
+      "label": "复盘纠错",
+      "source_status": "separate_sources_or_records_required",
+      "routes": [],
+      "boundary": "引用原始记录与当时冻结出处，不倒改原判断；没有记录时不能补造历史预测",
+      "required_personal_review": [
+        "本人输入是否已确认",
+        "所用方法与原文是否一致",
+        "出生与目标时间字段是否区分",
+        "前提、例外和关键异文是否核清",
+        "现代事项类比理由",
+        "候选冲突、并列及无法判断的部分"
+      ]
+    }
+  },
+  "luck_families": {
+    "正官": {
+      "chapter": "ziping:c032",
+      "plain_meaning": "先确认财印、食伤、官杀怎样配合，再区分需要扶自己还是扶官；同一种运不能对所有正官格作同样解释。",
+      "condition_checklist": [
+        "正官取格与所用财印",
+        "身与官的轻重",
+        "官是否透出、被合或混杀",
+        "食伤有无印制及印是否重复"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c032:p0001": "9f9c956fb36263fc2867662244f9d94e41ddb50e13068f038c0228c9b7b431a2",
+        "ziping:c032:p0002": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
+        "ziping:c032:p0003": "3641b09d75fbfe429ae32007dd9aa98fd5e3209b099b95e11792175c0883eb40",
+        "ziping:c032:p0004": "866e02bd3da73b43f80328352d84a7999d1d127f415ff701e25364f1fe68fa4a",
+        "ziping:c032:p0005": "eef97b8568e8013b5be0d5733d140d50877005f15e7759575b5ad048d9cb0d36",
+        "ziping:c032:p0006": "95525be664592a71fa4925037263b4af6fde653dfe82ca0493251f78b62498e1",
+        "ziping:c032:p0007": "9ea830ec0597d43e78028f5fe0fa37e091372e89489551b25411fa3ab7256452"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "财": {
+      "chapter": "ziping:c034",
+      "plain_meaning": "先分财生官、食生财、财配印等不同组合，再看哪一边不足；财运并不天然意味着收入增加。",
+      "condition_checklist": [
+        "财格所成之局",
+        "财食与日主的轻重",
+        "官印食伤是否透出",
+        "合杀、制杀及印是否受损"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c034:p0001": "45720ad545bc92c90acea80ae0f5cb3d7cd7464fb1a3a70fa11a10a82d9c6699",
+        "ziping:c034:p0002": "b769ad6fd1d9f75d913e4457172bc497b09ef1dfa5bb2a9840138ba0d924290c",
+        "ziping:c034:p0003": "c1a384aef29c12376b4bebeb1299eb809705833652a640d91b19ad6492e4b61d",
+        "ziping:c034:p0004": "2b2a268cbf66bdb1e72c129f276ca8a8ace00c2fa2b38ead9132dd641ec38fa4",
+        "ziping:c034:p0005": "655795ed5ea0854bd80a8738edcb095a3e0bbad40940fb3f953b7a5cf87a6c9f",
+        "ziping:c034:p0006": "3ba319c8e5096ae7055d499401f43de85fcc136fa159280009c540032e8b8552",
+        "ziping:c034:p0007": "781f3318f98a0decc353d11d51caea2769b110e0f6812b5e5f6beebc07eb23ce",
+        "ziping:c034:p0008": "5aacc4f01b39a24b75c44b6b9f2124bec3f148f6c22ec740d2cb25c4e3069d25"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "印": {
+      "chapter": "ziping:c036",
+      "plain_meaning": "印格用官、用食伤、用七杀时，适合的运不同；最后一段还补充了印轻时不宜见财的例外。",
+      "condition_checklist": [
+        "印格用官、杀或食伤",
+        "官露印重是否成立",
+        "兼带食伤与否",
+        "印轻和逢财的例外"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c036:p0001": "3c6a7f4dfd11994369c05af3f645787506e7469e3fdfdd8278899c73be25207d",
+        "ziping:c036:p0002": "2418903d0e303e2d1d8c7aa99d31efa5f4a5b924d6241eab32e3bc77ac2a9dc8",
+        "ziping:c036:p0003": "b3f7e7e0e12a840bfa21c78192f96e1e98258757e6dbf3a722f1519a9f95ab5d",
+        "ziping:c036:p0004": "ae950fd6b163edb52ed007edb4b9a166cabf0457e2f36f1300397559bf05da9b",
+        "ziping:c036:p0005": "783dac376774012565ca29a707b79a4e4c362e242eb907979b2a8c06c6c6e0bd",
+        "ziping:c036:p0006": "c4cd4c7a13c1226b0ea3fc66c9ac81560b6e32295f8220efcad89be1f684913c",
+        "ziping:c036:p0007": "6cd05035b7918411af03c7c79f40c42797915b190d4ada77ee10dd5c606922f3",
+        "ziping:c036:p0008": "af8ca450dc51ec0a69c108f8a04d937c2a61fed27834d8588df7f9412f2b8b8f",
+        "ziping:c036:p0009": "1b5ab11c6b109f183c91a9357cbc2cf7609da38f9c5b900edc1456d21e1c48e6"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "食神": {
+      "chapter": "ziping:c038",
+      "plain_meaning": "先分食神生财、带杀或带印，再比较轻重；原文有逢财从忌转喜的条件，不能漏掉。",
+      "condition_checklist": [
+        "食生财或带杀印的分支",
+        "食财与自身轻重",
+        "杀轻食重与否",
+        "印与财的解救关系"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c038:p0001": "2a9879a833428a97a40b89f990e1b3bf8cca5c5c18b586216bce0a9f03a44a41",
+        "ziping:c038:p0002": "bda9397f7338b0da261909ba719d4b1b5fb122d8eec44aee56ac935388e666fe",
+        "ziping:c038:p0003": "31fafdac0b2a38bb5f398aa791cdb9d97ccd7fd36776542a5ca3786c10dfb79e",
+        "ziping:c038:p0004": "584cfce0937390d9d81c9cbeb2aa834307611647f5dbeb2a7b5cdf64419ce659",
+        "ziping:c038:p0005": "dd478f221f17fc0f87a03073cc0a6835207b54d085e7a9386292ed81f1e75758",
+        "ziping:c038:p0006": "3567f61a37326b8087c4ceb2dc1392a16c2b44d4636ef3df6fbca9db3a5e2be0"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "七杀": {
+      "chapter": "ziping:c040",
+      "plain_meaning": "先看用什么制约或转化七杀，再看两边谁强谁弱；七杀这个名称本身不等于危险。",
+      "condition_checklist": [
+        "食制、印化、伤官或刃当的分支",
+        "杀食或杀刃的轻重",
+        "官杀混杂和取清之物",
+        "印夺食及财去印的条件"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c040:p0001": "eb223034c8d868b06d767e0a94aa481a6c56098580c07a528d30cf5da9e0c33c",
+        "ziping:c040:p0002": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+        "ziping:c040:p0003": "d8440f502a8fe9f9ad1948480831b519f01df15018b76b79cf522e3838d17dc3",
+        "ziping:c040:p0004": "bf6d3b36e51e5d9216e1fc53791193119173c89ef0c9fd4a866ac8788ca668cd",
+        "ziping:c040:p0005": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+        "ziping:c040:p0006": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+        "ziping:c040:p0007": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "伤官": {
+      "chapter": "ziping:c042",
+      "plain_meaning": "伤官用财、佩印、带杀的处理不同；先确认组合和轻重，再判断某步运怎样改变它。",
+      "condition_checklist": [
+        "伤官所成之局",
+        "财旺身轻或身强财浅",
+        "财印何者较多",
+        "杀根轻重及官露财印两旺的例外"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c042:p0001": "bd9b105d712d810a3da352d9461bac586113f614d28121a302d9c26dc0d235b9",
+        "ziping:c042:p0002": "cc5619ac438cc0c994f1e20ee70d24909f54c3cd801e44ebfa3ce7800ad51f5b",
+        "ziping:c042:p0003": "597bf7271bcb9d941efc7bb147dbeeae61a93fad42ff8467061697d14db74dbe",
+        "ziping:c042:p0004": "5fe3c9964a0c57a6d25213f651e244d1aae668d9630babb0ff9224704934887f",
+        "ziping:c042:p0005": "eb7f84368aa07c156e9713904eedc10b698c76c2500e3a414101db61eb145b8c",
+        "ziping:c042:p0006": "9b85865e31e665b063994dae25645be9dd317aa3bccdc01dd1fbda909e3a7569",
+        "ziping:c042:p0007": "9d518c6be13ef470cb72632f336be550f84533165e9a364ef41e883c1da43050"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "阳刃": {
+      "chapter": "ziping:c044",
+      "plain_meaning": "阳刃用官和用杀分别判断；所用之神过重时，继续增强它反而不是原文建议。",
+      "condition_checklist": [
+        "阳刃取格",
+        "用官或用杀",
+        "官根与杀刃轻重",
+        "食伤合官及官杀并出的条件"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c044:p0001": "3f4117e8c7ce75ff887a73cd3590bb5d1c33677114b2b220423535701e315ad6",
+        "ziping:c044:p0002": "cb4319c27b3b15a04a9adf53c6fbfa217c5183682a6a905adaae165c2f2ab1cb",
+        "ziping:c044:p0003": "81581eac2180f00e8d012cc8195a1285586691c33c85415cff383ce95fa93709"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    },
+    "禄劫": {
+      "chapter": "ziping:c046",
+      "plain_meaning": "建禄月劫还要看它配官、财、杀还是食伤，不能见比劫就断破财。",
+      "condition_checklist": [
+        "印护官或财生官",
+        "财食轻重",
+        "合杀存财或合财存杀",
+        "食伤太重时印运例外"
+      ],
+      "prerequisite_chapters": [
+        "ziping:c008",
+        "ziping:c009",
+        "ziping:c025",
+        "ziping:c026",
+        "ziping:c027",
+        "ziping:c028"
+      ],
+      "passage_hashes": {
+        "ziping:c046:p0001": "2dd43d42176e4de032d1e2be5670556472e77c5edec284708918e9fc70250416",
+        "ziping:c046:p0002": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b",
+        "ziping:c046:p0003": "f083a1b6f7b4d6aee498014574bccfa67dfafea60dfee605c08b723035dbe386",
+        "ziping:c046:p0004": "d4164213f7e586de0fb913698dcf3eeda6f614627a66e48b0a9922d1a9afa546",
+        "ziping:c046:p0005": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+        "ziping:c046:p0006": "a390d570c6956c2835a2071971d379fa8b7abf4fc8ee5754ba2eaa3efd72d72b",
+        "ziping:c046:p0007": "efb4db0b911a89d233be7799a52d3f20ebc76a7189678920102b36550bc4457e"
+      },
+      "modern_application": "先解释个人盘面作用，再说明其对本题的传统解读；古代财官不直接等于工资或录用。"
+    }
+  },
+  "source_cards": {
+    "whole_chart": {
+      "passage_id": "ziping:c028:p0004",
+      "sha256": "03f092aa62659432b89f67237521846ec24a3b691bcac951163a049f214ec3d5",
+      "quote": "必須逐干逐支，上下統看。",
+      "plain_meaning": "每个天干都要连同地支一起看，不能孤立拿一个字断运。",
+      "scope": "大运；不能单凭此句扩展日时",
+      "status": "text_and_context_reviewed_not_facsimile_collated"
+    },
+    "exceptions": {
+      "passage_id": "ziping:c026:p0005",
+      "sha256": "5e8deb2698ec2e32fc25c473675c76e0f9b3fec409304b32c56ee79db839c274",
+      "quote": "又有逢變格而不忌者",
+      "plain_meaning": "出现格局变化不一定不利，还要核对原局是否有原文所说的解救条件。",
+      "scope": "需读本章正反例",
+      "status": "text_and_context_reviewed_not_facsimile_collated"
+    },
+    "personal_time": {
+      "passage_id": "dunjia:c001:p0016",
+      "sha256": "08aa5613c174fc7d504663bfa5702ecf5e4b73482898b49f9a5f36d2cf2bd4e3",
+      "quote": "夫用遁之法不推本命行年未見精妙",
+      "plain_meaning": "这段古法把个人的出生年命、行年与所选时局一起看，也要求检查其他宫位和例外。",
+      "scope": "年命不是完整出生八字；置闰、行年、纳音等算法未据此全部实现",
+      "status": "text_and_context_reviewed_not_facsimile_collated"
+    },
+    "exam_category": {
+      "passage_id": "xuanze:c003:p0022",
+      "sha256": "11f6859c2a078b03bca329a13e2bcd60acb72ab202c9d7eb3945bffc7f13462a",
+      "quote": "赴擧",
+      "plain_meaning": "这里谈赴举这一类活动；现代考试可以研究其关联，但先核完整宜忌及个人连接依据。",
+      "scope": "此段仅为事项标题；须读后续宜与忌，不能单引标题作吉日规则",
+      "status": "text_and_context_reviewed_not_facsimile_collated"
+    }
+  },
+  "context_sections": {
+    "arrival": {
+      "label": "上官赴任及前二条共同禁忌",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0001": "49f0e0d8d87028bdbc4f8db95d9daac9c9ea82c91f60de7b9daea32649260614",
+        "xuanze:c003:p0002": "f59bf6df8378c56bb97265f37957b38faed11f51f65978c227e1995ecf6bd2b6",
+        "xuanze:c003:p0003": "92185c5ab3ed93192b0f04399553227145b42e86013a38fa471a97f168b336d1",
+        "xuanze:c003:p0004": "4afafcfa3845192226c8d33d245ab00d6562d0563e59a566c110d10d87d8f688",
+        "xuanze:c003:p0005": "7c89ab58a010f8a33b25744f773529fe1e0f67c90417f86746de633289b15ab5"
+      },
+      "remaining_review": "后面的各月图表尚需逐项核对；p0005「日本，命日」断句待校，不能自行改成生日禁忌。"
+    },
+    "exam": {
+      "label": "赴举标题、宜、忌",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0022": "11f6859c2a078b03bca329a13e2bcd60acb72ab202c9d7eb3945bffc7f13462a",
+        "xuanze:c003:p0023": "15ece3849fe6e207421b761c62ffd8e711271f9d0382efd2d3ef0a90b3df0613",
+        "xuanze:c003:p0024": "4df1436c85184af75fe479d1f152cfc8a3d1beedaf57c54f3e4c3adf10b66f44"
+      },
+      "remaining_review": "神煞起例和现代考试映射仍需核对；三段不是完整个人排名规则。"
+    },
+    "billing": {
+      "label": "前五条用事及共享禁忌",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0319": "02e4c641f6538a677793327c64f12eb45ceb686b961a5929ded64e3aab0c5b15",
+        "xuanze:c003:p0320": "60f1d0dbe0fb45d6af5d7575d82eabdac548c485ba1834332afd5b4377f0c6bf",
+        "xuanze:c003:p0321": "bf555057f7533e822564373b6769f390b480701a690af589893f3b76565e8759",
+        "xuanze:c003:p0322": "87ac2f6fc441e6f57e6e8ec94130fb1c1d77fa7f03006fa379cd38ac825eda55",
+        "xuanze:c003:p0323": "c53fb4d834a85c13d918821a441b6465275a49bd88f55c5bf336961a771ab176",
+        "xuanze:c003:p0324": "fd18ed73d0389bb965945de26e172a4a5b1137a9d932d49a7d84c4e0ae2cf2e3",
+        "xuanze:c003:p0325": "57cd3fbf4f08d7cad992ce389959a78a1cf974730855978965a4ed67ca632201",
+        "xuanze:c003:p0326": "1a42983380dfa442f02a7b5b908fd2d7e66e87f0191b8494c23415c27653f736",
+        "xuanze:c003:p0327": "8faaf5810b5303facccab8a48679e051fbd7bbddd2ec1cbdc925f9ea0c781274"
+      },
+      "remaining_review": "纳财含取债；不得扩展成借贷或投资指令。起例与个人适用仍待核。"
+    },
+    "trade": {
+      "label": "交易所在的五条用事与共用禁忌",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0319": "02e4c641f6538a677793327c64f12eb45ceb686b961a5929ded64e3aab0c5b15",
+        "xuanze:c003:p0320": "60f1d0dbe0fb45d6af5d7575d82eabdac548c485ba1834332afd5b4377f0c6bf",
+        "xuanze:c003:p0321": "bf555057f7533e822564373b6769f390b480701a690af589893f3b76565e8759",
+        "xuanze:c003:p0322": "87ac2f6fc441e6f57e6e8ec94130fb1c1d77fa7f03006fa379cd38ac825eda55",
+        "xuanze:c003:p0323": "c53fb4d834a85c13d918821a441b6465275a49bd88f55c5bf336961a771ab176",
+        "xuanze:c003:p0324": "fd18ed73d0389bb965945de26e172a4a5b1137a9d932d49a7d84c4e0ae2cf2e3",
+        "xuanze:c003:p0325": "57cd3fbf4f08d7cad992ce389959a78a1cf974730855978965a4ed67ca632201",
+        "xuanze:c003:p0326": "1a42983380dfa442f02a7b5b908fd2d7e66e87f0191b8494c23415c27653f736",
+        "xuanze:c003:p0327": "8faaf5810b5303facccab8a48679e051fbd7bbddd2ec1cbdc925f9ea0c781274"
+      },
+      "remaining_review": "开市与立券交易不同；现代产品发布另需说明，不能只换事件名称。"
+    },
+    "travel": {
+      "label": "出行、远回及两组禁宜",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0328": "2c6047842a9b58d88e56c529b996c28770f5cdaa23adaf55b7d6900a3231f1c0",
+        "xuanze:c003:p0329": "20b3b66428b83a3593d73b763373fd8192b7fd6c5fa95404858c8b7cffc9e85e",
+        "xuanze:c003:p0330": "e8a82d26fad0b94a3e0761cb1bd1bfdc526a749d0334dd84c779c63a17929ba3",
+        "xuanze:c003:p0331": "1fd278420fdea0b0ee767e34bf02a114a9406075defb53d3edac783a233d07bb",
+        "xuanze:c003:p0332": "ed3cbc8a11a7b0d76b744d4ca9c890ca7b55aadbfca53fc3c4d2ea1bdb38fee1",
+        "xuanze:c003:p0333": "4d900ec979ced86cf3a31e0e0a2e2b8077197cb5c4ebbcadfb4ed8a475548979"
+      },
+      "remaining_review": "p0333另列出行忌九丑，不能只读p0330；班次、方向及个人条件仍待核。"
+    },
+    "moving": {
+      "label": "出火、归火、移居及共享禁忌",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0345": "b5def51ffabf15ef78214ad885f7b08530233ac6994aed900a503dc4f6de3801",
+        "xuanze:c003:p0346": "9b18955a2591667246dcd805b9b47690a81a8b93437000950c9dc5f83f3980bc",
+        "xuanze:c003:p0347": "8b7382474f7848327e70e1a70cb811277f53e978539956906c5dd32da322738b",
+        "xuanze:c003:p0348": "91d439683a9adee6fee8a72390d3a8a1d109f00e282faa6f0e5ed9e320acd697",
+        "xuanze:c003:p0349": "c6de6429b78600a3440c09ca8a1b82db0bb371d47c94da6fbfe63ea8524697af",
+        "xuanze:c003:p0350": "b6f61993f24a4c729b9b9ba39f6bc2c68d7fc396cb91d0de98e94574cdf369a7",
+        "xuanze:c003:p0351": "857e49174bace47eded9e14a08f7b01ad530789e69928904cd6c0ed9298020bd",
+        "xuanze:c003:p0352": "ac7faca6c0d0b20b5f11ef941c7bed8f76039f8caaba898ec5becfac310b0e7f"
+      },
+      "remaining_review": "原文涉及祖先香火，现代搬家类比需说明；本命、对冲等起例未齐。"
+    },
+    "wedding": {
+      "label": "嫁娶禁宜与年命表入口",
+      "scope": "selected_context_only_not_complete_ranking_rules",
+      "passage_hashes": {
+        "xuanze:c003:p0107": "6ce9de8dd7a41600559f3b1e5303e20e67e6e9eee02d0425559c13e10f4fc4ba",
+        "xuanze:c003:p0108": "883ba007a69a8f2d60fb7e410b4bce42552f288676cd9af5f06829a8294a33c9",
+        "xuanze:c003:p0109": "5afbddac6f26f3a1b4471c82505c96d30cf37d9e95bbeaf9fa9dfc8ebfffaa6b",
+        "xuanze:c003:p0110": "a8613733eaaabdebb7ef698f26cd9880841cf29ba798b8d267d8d1108c94e3d7",
+        "xuanze:c003:p0111": "a7b588186fc255b8347ac1bc468d1a8c1161f9e0ac5188207b14567886a0f0f9",
+        "xuanze:c003:p0112": "b48e908071bf1ee78bced4886651331990af1821c494404942038dcab0ae3d78",
+        "xuanze:c003:p0113": "9e25d871446dd9b48f775b2d1a69eb418f813db95e5c8eabb1b84177df8e6e02",
+        "xuanze:c003:p0114": "0dd8b0ce223947edbb448616406fe655f24d3f091d3ffbad68e9faaa4b5ddff2",
+        "xuanze:c003:p0115": "93ae3ef0e77ad64313eafa46e15bc1c25d106c16d1c9af50b05285805395aa6c"
+      },
+      "remaining_review": "p0110「辰，戊，己，亥」等关键字待校；后续表格及例外须从offset=115继续读全相关章节。"
+    }
+  }
+}

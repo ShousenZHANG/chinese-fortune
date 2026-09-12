@@ -88,7 +88,7 @@ def test_real_protocol_records_sequential_followups_in_one_ephemeral_thread(tmp_
         'fixture answer: first only', 'fixture answer: follow-up only']
     assert {turn['thread_id'] for turn in row['turns']} == {'fixture-thread'}
     assert len({turn['turn_id'] for turn in row['turns']}) == 2
-    requests = [json.loads(line) for line in (args.output / 'T-fixture-run1/requests.jsonl').read_text().splitlines()]
+    requests = [json.loads(line) for line in (args.output / 'T-fixture-run1/requests.jsonl').read_text(encoding='utf-8').splitlines()]
     starts = [r['params'] for r in requests if r['method'] == 'turn/start']
     assert [r['input'] for r in starts] == [[{'type': 'text', 'text': 'first only'}],
                                           [{'type': 'text', 'text': 'follow-up only'}]]
@@ -145,7 +145,7 @@ def test_cli_retry_preserves_original_repetition_numbers_and_prior_failure(
         '--cases', str(cases_file), '--case-id', case['id'], '--output', str(output),
         '--repetitions', str(count), '--repetition-start', str(start), '--workers', '1'])
     assert runner.main() == 0
-    metadata = json.loads((output / 'run.json').read_text())
+    metadata = json.loads((output / 'run.json').read_text(encoding='utf-8'))
     assert metadata['repetition_start'] == start
     assert metadata['selected_case_ids'] == ['T-fixture']
     assert metadata['snapshot_unchanged'] is True
@@ -153,7 +153,7 @@ def test_cli_retry_preserves_original_repetition_numbers_and_prior_failure(
     assert sorted(path.name for path in output.glob('recording-run*.json')) == [
         f'recording-run{rep}.json' for rep in expected]
     for repetition in expected:
-        recording = json.loads((output / f'recording-run{repetition}.json').read_text())
+        recording = json.loads((output / f'recording-run{repetition}.json').read_text(encoding='utf-8'))
         row, = recording['responses']
         assert row['repetition'] == repetition
         assert [turn['prompt'] for turn in row['turns']] == ['first', 'second']

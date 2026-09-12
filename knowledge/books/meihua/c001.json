@@ -1,0 +1,2391 @@
+{
+  "book_id": "meihua",
+  "chapter_id": "c001",
+  "title": "卷一",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%A2%85%E8%8A%B1%E6%98%93%E6%95%B8%2F%E5%8D%B7%E4%B8%80&oldid=2690596",
+  "revision": "2690596",
+  "source_timestamp": "2026-04-09T04:31:29Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/meihua/c001.wiki",
+  "raw_sha256": "f5245837e94bf82420e619fa61644cac1a1242cc59e1c5da5f776dcfd985ac99",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "周易卦數",
+      "text": "乾，一；兌，二；離，三；震，四；巽，五；坎，六；艮，七；坤，八。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0001",
+      "sha256": "0bdf2d6a0aada475763b81db67ab2c48fdd4e2666981c4cf4d49a62cf3ef3ed0"
+    },
+    {
+      "section": "五行生克",
+      "text": "金生水，水生木，木生火，火生土，土生金；",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0002",
+      "sha256": "535b4fb8dc815132fa01409a0e3762d0cc20f74e71be15aa795172e1fef4e090"
+    },
+    {
+      "section": "五行生克",
+      "text": "金克木，木克土，土克水，水克火，火克金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0003",
+      "sha256": "5011854bf9f62ec39558a250e5262e0e5b61f56710d07a3282b485b24f9063ae"
+    },
+    {
+      "section": "八宮所屬五行",
+      "text": "乾、兌，金；坤、艮，土；震、巽，木；坎，水；離，火。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0004",
+      "sha256": "f4792485f86ce827f1b8a67a546f853884cbd5b8ab5105c5f4fe7508a6b78584"
+    },
+    {
+      "section": "卦氣旺",
+      "text": "震、巽木旺於春，離火旺于夏，乾、兌金旺於秋，坎水旺於冬，坤、艮土旺於辰戌丑未月。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0005",
+      "sha256": "b40d220dca51f4aab8bc7f4714ef988c0469f59b6c94db7c3410fc24f28361e2"
+    },
+    {
+      "section": "卦氣衰",
+      "text": "春坤、艮，夏乾、兌，秋震、巽，冬離，辰戌丑未坎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0006",
+      "sha256": "d36f73b7dfaeed2cfd660f92dce21d32b7f24b03f8d5bba79f0c3ad870784ef2"
+    },
+    {
+      "section": "十天干",
+      "text": "甲乙東方木，丙丁南方火，戊己中央土，庚辛西方金，壬癸北方水。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0007",
+      "sha256": "57e577ee95fb5ea6d390668cd5e76ea2ad8f6ce99fae15efb40ec9cd893b0675"
+    },
+    {
+      "section": "十二地支",
+      "text": "子水鼠，丑土牛，寅木虎，卯木兔，辰土龍，巳火蛇，午火馬，未土羊，申金猴，酉金雞，戌土犬，亥水豬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0008",
+      "sha256": "b7de159268a0c719cffd8d6687dda11bcf0a958460dfba1e95439a71ed3d0476"
+    },
+    {
+      "section": "八卦象例",
+      "text": "乾三連，坤六斷，震仰盂，艮覆碗，離中虛，坎中滿，兌上缺，巽下斷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0009",
+      "sha256": "01768241c640f9088e4a1fb012eb87d55b6770847238006ec7074e89f24c1de7"
+    },
+    {
+      "section": "占法",
+      "text": "《易》中秘密窮天地，造化天機泄未然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0010",
+      "sha256": "a0dcdda0ea138648e9c492407a98ca990605226796f7a0d76557a96253da51fd"
+    },
+    {
+      "section": "占法",
+      "text": "中有神明司禍福，從來切莫教輕傳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0011",
+      "sha256": "209ad3d444f6ac337f223f2636f2d999869cbd4b089f2b9e4ea3218d26f4727b"
+    },
+    {
+      "section": "玩法",
+      "text": "一物從來有一身，一身還有一乾坤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0012",
+      "sha256": "3fd9cada0448d357301a2837c87533ac32248a377498438133c449db27ee9ac5"
+    },
+    {
+      "section": "玩法",
+      "text": "能知萬物備於我，肯把三才別立根。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0013",
+      "sha256": "df8524e8fe6efdc22d4c2fe6bee164c21133110a50ab1f9076b3178854e05d29"
+    },
+    {
+      "section": "玩法",
+      "text": "天向一中分造化，人於心上起經綸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0014",
+      "sha256": "7297d951f6813bb9cef66123735f01e747f07e9437ea541826ecabd5b4cbbfd4"
+    },
+    {
+      "section": "玩法",
+      "text": "仙人亦有兩般話，道不虛傳只在人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0015",
+      "sha256": "bdbc9bf1a00840734332d1fe70c679fae1e00af6dabc8cb6f23fe4499cbce47f"
+    },
+    {
+      "section": "卦以八除",
+      "text": "凡起卦不問數多少，即以此數作卦數，過八數即以八數遞除。一八除不盡，再除二八，三八，直至除盡，以餘數作卦。如得八數整，即坤卦，更不必除也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0016",
+      "sha256": "19760b81b3f109af40f836af6cb48de400b42d1612de28ba4926715fc7cdb411"
+    },
+    {
+      "section": "爻以六除",
+      "text": "凡起動爻，以重卦總數除六，以餘數作動爻。如不滿六，止用此數為動爻，不必再除。如過六數，則除之一六，不盡再除二六、三六，直至除盡，以餘數作動爻。若一爻動，則看此一爻，是陽爻則變陰爻，陰爻則變陽爻。取爻當以時加之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0017",
+      "sha256": "d28e34c208e5525cb2b7a35c114b6823c049e799eba3b8e77170e27069bd3067"
+    },
+    {
+      "section": "互卦起例",
+      "text": "互卦只用八卦，不必取六十四卦名。互卦以重卦去了初爻及第六爻，以中間四爻分作兩卦，看得何卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0018",
+      "sha256": "ca33cba0e5cc86dfaccd3b12f0913adad1399767a0c0fbabdf84ecb8e297c1df"
+    },
+    {
+      "section": "互卦起例",
+      "text": "又云：乾坤無互，互其變卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0019",
+      "sha256": "61a826763e35251991ed3ef9a3b7601a8132357f08d29608a881d3854c0d2fc5"
+    },
+    {
+      "section": "年月日時起例",
+      "text": "年月日為上卦。年月日加時總數為下卦。又以年月日時總數取爻。如子年一數，丑年二數，直至亥年十二數。月如正月一數，直至十二月，亦作十二數。日數如初一一數，直至三十日，為三十數。以上年月日共計幾數，以八除之，以餘數作卦。如子時一數直至亥時十二數，就將年月日數加時之數，總計幾數，以八除之，餘數作下卦；以六除，餘數作動爻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0020",
+      "sha256": "c3868cf205f9da0ade27fdfb1cb2298912f64b52b32b85f28eb3fc8a045ba416"
+    },
+    {
+      "section": "物數占例",
+      "text": "凡見有可數之物，即以此數起作上卦，以時數配作下卦。即以卦數並時數總除六取動爻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0021",
+      "sha256": "524c5572932c1abe4690cdd46ef6b5e78c87051ec3f62da933ebbb993f49225c"
+    },
+    {
+      "section": "聲音占例",
+      "text": "凡聞聲音，數得幾數，起作上卦，加時數配作下卦。又以聲音，如聞動物鳴叫之聲，或聞人敲擊之聲，皆可作數起卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0022",
+      "sha256": "e78a7255037fd77dec155f4f54c933f9a68ec29eb573bbd627fe1b98a165a396"
+    },
+    {
+      "section": "字占",
+      "text": "凡見字數如停勻，即平分一半為上卦，一半為下卦。如字數不勻，即少一字為上卦，取天輕清之義，以多一字為下卦，取地重濁之義。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0023",
+      "sha256": "39db01d1ed17586f14736cba359877128982ca965f94b059f8f3e9f754da394c"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "一字為太極未判。如草書，混沌不明，不可得卦。如楷書，則取其字畫，以左為陽畫，右為陰畫。居左者看幾數，取為上卦。居右者看幾數，取為下卦。又以一字之陰陽，全畫取爻。「彳」、「丿」，此為左者；「一」、「乙」、「、」此為右者。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0024",
+      "sha256": "b96e7e2089bd8f6fd665400472b29e46ff13a356c4cfa732c9e0dad0d9ea9a94"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "二字為兩儀平分。以一字為上卦，一字為下卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0025",
+      "sha256": "41e1f6bb62cf43368350d7a15309ae93c27dc48404aec579dfbe4fc045abfa3b"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "三字為三才。以一字為上卦，二字為下卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0026",
+      "sha256": "d0830bdfe31ed90c41ea7682ab42810f1ca8a8e3c3fa62377c6aab20e00d8d10"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "四字為四象。平分上下為卦。又四字以上，不必數畫數，只以平仄聲音調之。平聲為一數，上聲為二數，去聲為三數，入聲為四數。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0027",
+      "sha256": "9be564429ed62595150d08572b7c6a2b063066476ddc13172aca077e247cf456"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "五字為五行。以二字為上卦，三字為下卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0028",
+      "sha256": "bc92fb7b006ac26c885c7272bbda42b3f8ac75202a9994a5736627438fe1c3cd"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "六字為六爻之集。平分上下為卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0029",
+      "sha256": "c9c99887dc42f5864139dcd75d93b3af7a9daba101646bb230d1c1c0bb0d453b"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "七字為齊七政。以三字為上卦，四字為下卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0030",
+      "sha256": "45bf154bbe158745debcf09114fd85f25ba52af2671c6ca68d0c4af05541b92f"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "八字為八卦定位。平分上下為卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0031",
+      "sha256": "9c1e3e7c9c7ad4df09a5162304fc2d85d280c50473f4fb72b5a34db9db880836"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "九字為九疇之義。以四字為上卦，五字為下卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0032",
+      "sha256": "6df3fa954f20af98b5d32508c57066ddeb02d5c394cecdb4652b959dedf94280"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "十字為成數。平分上下為卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0033",
+      "sha256": "8b1f280f3f9f716c0541229dfeed7b96bab2dee1c175978b5010de0a6fc82fbd"
+    },
+    {
+      "section": "一字占至十一字占",
+      "text": "十一字以上至於百字，皆可起卦。但十一字以上，又不用平仄聲音調之，止用字數。如字數均平，則以半為上卦，以半為下卦。又合二卦總數取爻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0034",
+      "sha256": "7f4277113988df71a9a5b8f8c8740475a244a78dbb672a2f0b42d375b8209385"
+    },
+    {
+      "section": "丈尺占",
+      "text": "丈尺之物，以丈數為上卦，尺數為下卦。合丈尺之數取爻。寸數不用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0035",
+      "sha256": "32796d67186aed8ff2dfb48d982fa788aa359e9ee62f5538edaf737326dc615e"
+    },
+    {
+      "section": "尺寸占",
+      "text": "以尺數為上卦，寸數為下卦。合尺寸之數加時取爻。分數不用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0036",
+      "sha256": "2d3bee01053f1d214f2286bb12504d15178c8bc8e47a3d745501f5ea35c6b79b"
+    },
+    {
+      "section": "為人占",
+      "text": "凡為人占，其例不一。或聽語聲起卦，或觀其人品，或取諸身，或取諸物，或因其服色，觸其外物，或以年月日時，或以書寫來意。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0037",
+      "sha256": "4511dae8c1a98793a638937468885745509c43dbfc3d079f84cbef42fff776e4"
+    },
+    {
+      "section": "為人占",
+      "text": "又聽其語聲者，如或一句，即如其字數分之起卦，如說兩句，即用先一句為上卦，後一句為下卦。語多，則但用初聽一句，或末後所聞一句。餘句不用。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0038",
+      "sha256": "9b4e0dcdf7dde632600247a2754b2c32a20d95cc3748daa29c259984d067f4c8"
+    },
+    {
+      "section": "為人占",
+      "text": "觀其人品者，如老人為乾，少女為兌之類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0039",
+      "sha256": "05d44a69cb23bc4a51f521ed9376baf64282375405868f8c6eedf915f72d8098"
+    },
+    {
+      "section": "為人占",
+      "text": "取諸其身者，如頭動為乾，足動為震，目動為離之類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0040",
+      "sha256": "382d6f8399ac7cbdef14496fa28ac1bcc0235349641aaca8632a4fab9c859604"
+    },
+    {
+      "section": "為人占",
+      "text": "取諸其物者，如人手中偶有何物，如金玉及圓物之屬為乾，土瓦及方物之屬為坤之類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0041",
+      "sha256": "35dda6b5ab177e38f7a8770118937f5de23694891f9756644cbd6633b03c6480"
+    },
+    {
+      "section": "為人占",
+      "text": "因其服色者，如其人青衣為震，赤衣為離之類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0042",
+      "sha256": "f6d4761cd1c569f435135b61dc948ccbd95840e8aaa2d549c1d9c7fa6d4a9cdc"
+    },
+    {
+      "section": "為人占",
+      "text": "觸其外物者，起卦之時見水為坎卦，見火為離卦之類。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0043",
+      "sha256": "ab56752e9a79b433619abf4a17057893e26c302311d01dfdb76b16cfd258dd0e"
+    },
+    {
+      "section": "為人占",
+      "text": "年月日時，如觀梅之類推之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0044",
+      "sha256": "c30c9b95b33d56b9b49f970a37e11cd3320aee0f9ab2f1f711b7a3e18bc307b7"
+    },
+    {
+      "section": "為人占",
+      "text": "書寫來意者。其人來占，或寫來意，則以其字占之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0045",
+      "sha256": "00de3dd9b5c9d7f84aeca9de9df736df9a55c8177cdc0d262ac08c0a36167727"
+    },
+    {
+      "section": "自己占",
+      "text": "凡自己欲占，以年月日時或聞有聲音，或觀當時有所觸之外物，皆可起卦。以上三例，與前章為人占類法同。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0046",
+      "sha256": "406fae50ff548032b56687b9f37ebd3f43113a30874816ebff7d0180a0b9bf7a"
+    },
+    {
+      "section": "占動物",
+      "text": "凡占群物之動，不可起卦。如見一物，則就以此物為上卦，物來之方位為下卦。合物卦數及方位卦數，加時數取爻，以此數總斷其物，如後天占牛鳴雞叫之類。又凡牛馬犬豕之類，初生，則以初生年月日時占之。又可置買此物，亦可以初置買之時推之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0047",
+      "sha256": "cc1d09c22e43dd20546f60da2819e3b15e1ac7372fc9fbfbc60db6579a44066c"
+    },
+    {
+      "section": "占靜物",
+      "text": "凡占靜物，有如江河山石，不可起卦。若至屋宅、樹木之類，則屋宅初創之時，樹木初置之時，皆可起卦。至於器物，則置成之時可占，如枕、椅之類是矣。餘則無故不占。若觀梅，則見雀爭枝墜地而占。牡丹，則見有問而占。茂樹，則枝枯自墜而後占也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0048",
+      "sha256": "cae9d5473b64953f3c6a206b22ad1962b8cf7a572619d248a940b8d5ebe68b9d"
+    },
+    {
+      "section": "物卦起例（端法後天起卦）",
+      "text": "後天端法：以物為上卦，方位為下卦，合物卦之數與方卦之數加時數以取動爻。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0049",
+      "sha256": "a6e7d389d55a1cfc5ec8cf0d889d2ff8a6cf45475a8ac651546e90931be886e2"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "乾：天、父、老人、官貴、頭、骨、馬、金寶、珠玉、水果、圓物、冠、鏡、剛物、大赤色、水寒。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0050",
+      "sha256": "ef394d9e17b3b0b81f3fd1311c74becc4532c9e83c857d292d5a42d953ea577e"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "坤：地、母、老婦、土、牛、金、布帛、文章、輿輦、方物、柄、黃色、瓦器、腹、裳、黑色、黍稷、書、米、穀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0051",
+      "sha256": "37d7d9974c1df58b6dfb0a618605e4410ad3c0626b006dd7339cb574117b125d"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "震：雷、長男、足、髮、龍、百蟲、蹄、竹、萑葦、馬鳴、馵足、顙、稼、樂器之類、草木、青碧綠色、樹、木核、柴、蛇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0052",
+      "sha256": "9ef978f0a0df15c0dde366ec731be585906a1de4a1e257aca6dd8f0b2c59a09e"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "巽：風、長女、僧尼、雞、股、百禽、百草、臼、香氣、臭、繩、眼、羽毛、帆、扇、枝葉之類、仙道工匠、直物、工巧之器。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0053",
+      "sha256": "0f350641adbd9d394ca053ad352966c1ebde83fbb41fd0013477da356662cd54"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "坎：水、雨、雪、工、豕、中男、溝瀆、弓輪、耳、血、月、盜、宮律、棟、叢棘、狐、蒺藜、桎梏、水族、魚、鹽、酒、醢、有核之物、黑色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0054",
+      "sha256": "8ef82820b4e55123192a5086bf56cd9097595b26110e2a3aa25d1d9e9e96808e"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "離：火、雉、日、目、電、霓霞、中女、甲胄、戈兵、文書、槁木、爐、獸、鱷龜蟹蚌、凡有殼之物、紅赤紫色、花、文人、乾燥物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0055",
+      "sha256": "6a086e8cd6dbd74b7f5e3b10af86f27ff8bc8f751684fff40170df34ab97108a"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "艮：山、土、少男、童子、狗、手指、徑路、門闕、果、蓏、閽寺、鼠、虎、狐、黔喙之屬、木生之物、藤生之物、爪、鼻。黃色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0056",
+      "sha256": "e978e9aa5703c63596021fcba47b6060615d9b9b47e1a49c3d21ae322fa2db24"
+    },
+    {
+      "section": "八卦萬物屬類（並為上卦）",
+      "text": "兌：澤、少女、巫、舌、妾、肺、羊、毀折之物、帶口之器、屬金者、廢缺之物、奴僕、婢。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0057",
+      "sha256": "64c28584ef2110b57651116d04273e863075b408ec361ab95364ca196b3c228d"
+    },
+    {
+      "section": "八卦方位圖",
+      "text": "離南坎北，震東兌西，人則介乎其中。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0058",
+      "sha256": "e4c079fcba567ecc7af262dbded35b331a4eff7dbb2afa2a3e5fb8f41a583837"
+    },
+    {
+      "section": "觀梅占",
+      "text": "辰年十二月十七日申時，康節先生偶觀梅，見二雀爭枝墜地。先生曰：「不動不占，不因事不占。今二雀爭枝墜地，怪也。」因占之，辰年五數，十二月十二數，十七日十七數，共三十四數，除四八三十二，餘二，屬兌，為上卦，加申時九數，總得四十三數，五八除四十，餘得三數，為離，作下卦。又上下總四十三數，以六除，六七四十二，餘一為動爻，是為澤火革。初爻變咸，互見乾巽。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0059",
+      "sha256": "d84f8e7059ceeaf09269ab5ccde93c7d50b4934e669abf329d015d0a8958f6ab"
+    },
+    {
+      "section": "觀梅占",
+      "text": "斷之曰：「詳此卦，明晚當有女子折花，園丁不知而逐之，女子失驚墜地，逐傷其股。右兌金為體，離火克之。互中巽木，複三起離火，則克體之卦氣盛。兌為少女，因知女子之被傷，而互中巽木，又逢乾金兌金克之，則巽木被傷，而巽為股，故有傷股之應。幸變為艮土，兌金得生，知女子但被傷，而不至凶危也。」（年月日時占例）",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0060",
+      "sha256": "b47512d616c60aa2cd6c93dc3a06e16d54db626f9aec7fb8eebfaeb8965f7a29"
+    },
+    {
+      "section": "牡丹占",
+      "text": "巳年三月十六日卯時，先生與客往司馬公家共觀牡丹。時值花開甚盛，客曰：「花盛如此，亦有數乎？」先生曰：「莫不有數。且因問而可占矣。」逐占之。以巳年六數，三月三數，十六日十六數，總得二十五數，除三八二十四數，餘一數為乾，為上卦。卯時四數，共得二十九數，又除三八二十四數，餘五為巽卦，作下卦，得天風姤。又以總計二十九數，以六除之，四六除二十四，得五爻動，變鼎卦，互見重乾。逐與客曰：「怪哉，此花明日午時，當為馬所踐毀。」眾客愕然不信，次日午時，果有貴官觀牡丹，二馬相齧，群至花間馳驟，花盡為之踐毀。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0061",
+      "sha256": "09262e54ca9c6e2735fe23070d3845cc7ce99732c8596abcfaf49c1b9757fc55"
+    },
+    {
+      "section": "牡丹占",
+      "text": "斷之曰：「巽木為體，乾金克之，互卦又見重乾，克體之卦多矣，卦中無生意，固知牡丹必為踐毀。所謂馬者，乾為馬也。午時者，離明之象，是以知之也。」",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0062",
+      "sha256": "fc90c5933a7b271e8c153e8955dff6f1794c862b208317e5fcf19344ea846a03"
+    },
+    {
+      "section": "鄰夜扣門借物占",
+      "text": "冬夕酉時，先生方擁爐，有扣門者，初扣一聲而止，繼而又扣五聲，且雲借物。先生令勿言，令其子占之所借何物。以一聲屬乾為上卦，以五聲屬巽為下卦，又以一乾五巽共六數，加酉時數共得十六數，以六除之，二六一十二，得天風姤。第四爻變巽卦，互見重乾。卦中三乾金，二巽木，為金木之物也，又以乾金短，而巽木長，是借斧也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0063",
+      "sha256": "91198190a7df131806e623acde7a1ab38b8c98d32c6cb4e727de15a09c78eceb"
+    },
+    {
+      "section": "鄰夜扣門借物占",
+      "text": "子乃斷曰：「金短木長者，器也，所借鋤也。」先生曰：「非也。必斧也。」聞之，果借斧，其子問何故？先生曰：「起數又須明理。以卦推之，斧亦可也，鋤亦可也；以理推之，夕晚安用鋤？必借斧。蓋斧切於劈柴之用耳。推數又須明理，為卜占之切要也。推數不推理，是不得也。學數者志之！」（系聞聲占例）",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0064",
+      "sha256": "fe0a62cd5e8b267ee0aed74e3aa50afa0c9e77361a95107b84e647a4466579ff"
+    },
+    {
+      "section": "今日動靜如何",
+      "text": "有客問曰：「今日動靜如何？」逐將此六字占之。以乎分「今日動」三字為上卦。「今」平聲，一數；「日」入聲，四數；「動」去聲，三數，共八數，得坤為上卦。以「靜如何」為下卦，「靜」去聲，三數；「如」平聲，一數；「何」平聲，一數，共五數，得巽，為下卦。又以八五總為十三數，除二六一十二，餘得一數，為地風升。初爻動，變泰卦，互見震、兌。逐為客曰：「今日有人相請，客不多，酒不醉，味至黍雞而已。」至晚果然。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0065",
+      "sha256": "4e5d5e213fb024d9108250770068c27e18186adb460d27bdf258e8dbdb351ae7"
+    },
+    {
+      "section": "今日動靜如何",
+      "text": "斷曰：「升者，有升階之義，互震、兌，有東西席之分。卦中兌為口，坤為腹，為口腹之事，故知有人相請。客不多者，坤土獨立，無同類之卦氣也。酒不醉，卦中無坎。味止黍雞者，坤為黍稷耳。蓋卦無相生之義，故知酒不多，食品不豐也。」（系聲音占例）",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0066",
+      "sha256": "4a8eb3af9e783398aea7224977fdf391807d5694eb500352f8f15229b0837c3f"
+    },
+    {
+      "section": "西林寺牌額占",
+      "text": "先生偶見西林寺之額，「林」字無兩勾，因占之，以西字七畫為艮，作上卦；以林八畫為坤，作下卦。以上七畫下八畫總十五畫，除二六一十二，餘數得三，是山地剝卦。第三爻動，變艮，互見重坤。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0067",
+      "sha256": "0844f5a98f34b3a516826978e988dd0b3a1ee276412de90d8f7e41bb3fb843ea"
+    },
+    {
+      "section": "西林寺牌額占",
+      "text": "斷曰：寺者，純陽之所居，今卦得重陰之爻，而又有群陰剝陽之兆。詳此，則寺中當有陰人之禍。詢之果然，逐謂寺僧曰：「何不添‘林’字兩勾，則自然無陰人之禍矣。」僧信然，即添‘林’字兩勾，寺果無事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0068",
+      "sha256": "c87ca924913186c81700840eb3d7918b5bd21d14416effe05769c7b07d90d982"
+    },
+    {
+      "section": "西林寺牌額占",
+      "text": "又，純陽之人，所居得純陰之卦，故不吉。又有群陰剝陽之義，故有陰人之禍。若添「林」字兩勾，則十畫，除八得二為兌卦，合上艮，是為山澤損。第五爻變，動為中孚卦，互卦見坤、震，損者益之，用互俱生體，為吉卦。可以得安矣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0069",
+      "sha256": "6bc6c8db6d24f93ce7aefddbc124b94a3ad7863c65491317289d8dd6aadf3470"
+    },
+    {
+      "section": "西林寺牌額占",
+      "text": "以上並是先得數，以數起卦，所謂先天之數也。（系字畫占例）",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0070",
+      "sha256": "9a92e329e939434d2cbbd4e43c37f98dc242f15ad9c822daa6928dacf46b778e"
+    },
+    {
+      "section": "老人有憂色占",
+      "text": "己丑日卯時，偶在途行，有老人往巽方，有憂色。問其何以有憂，曰無。怪而占之，以老人屬乾為上卦，巽方為下卦，是天風姤；又以乾一巽五之數，加卯時四數，總十數，除六得四為動爻，是為天風姤之九四。《易》曰：「包無魚，起凶。」是易辭不吉矣。以卦論之，巽木為體，乾金克之，互卦又見重乾，俱是克體，並無生氣，且時在途行，其應速。逐以成卦之數中分而取其半，謂老人蟲：「汝於五日內謹慎出入，恐有重禍。」果五日，此老赴吉席，因魚骨鯁而終。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0071",
+      "sha256": "7b073fc80db4e6a6a0bf17b44d7dd453f49982657ed9d41f72289862cefa5c83"
+    },
+    {
+      "section": "老人有憂色占",
+      "text": "又凡占卜，克應之期看自己之動靜，以決事之遲速，故行則應速，以逐成卦之數，中分而取其半也。坐則事應遲，當倍其成卦之數而定之也。立則半遲半速，止以成卦之數定之可也。雖然如是，又在變通，如占牡丹及觀梅之類，則二日花皆朝夕之故，豈特成數之久也。（端法占例）",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0072",
+      "sha256": "a1ad63848e2f2d98628fe765e1a09449cb42bebc0b8a524b3712dfdf6bc52674"
+    },
+    {
+      "section": "少年有喜色占",
+      "text": "壬申日午時，有少年從離方來，喜形於色，問有何喜，曰無。逐占之，以少年屬艮為上卦，離為下卦，得山火賁。以艮七離三加午時七，總十七數，除十二，餘五為動爻，賁之六五爻曰：「賁於丘園，束帛戔戔，吝，終吉。」易辭已吉矣。卦則賁之家人，互見震、坎，離為體，互變俱生之。斷曰：子於十七日內必有聘幣之喜。至期，果然定親。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0073",
+      "sha256": "23994cee56ce7b6e6b69bb00fdd57bab4ce6d0c889eab07e86b2233f952dfb20"
+    },
+    {
+      "section": "牛哀鳴占",
+      "text": "癸卯日午時，有牛鳴于坎方，聲極悲，因占之。牛屬坤，為上卦，坎方為下卦。坎六坤八，加午時七，共二十一數，除三六一十八，三爻動得地水師之三爻。《易辭》曰：「師或輿屍，凶。」卦則師變升，互坤、震，乃坤為體，互變俱克之，並無生氣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0074",
+      "sha256": "cfe120d8b89b7bbbdd8e8d24912056bde18a449ae4f34a7645d7e9d7951535fc"
+    },
+    {
+      "section": "牛哀鳴占",
+      "text": "斷曰：此牛二十一日內必遭屠殺。後二十日，人果買此牛，殺以犒眾，悉皆異之。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0075",
+      "sha256": "2299683d23cc206316a6d86e8675837600b4b88e3a573fbc3141ad5b9c00a19c"
+    },
+    {
+      "section": "雞悲鳴占",
+      "text": "甲申日卯時，有雞鳴于乾方，聲極悲愴，因占之。雞屬巽，為上卦，乾方為下卦，得風天小畜。以巽五乾一共六數，加卯時四數，總十數，除六得四，爻動變乾，是為小畜之六四。《易》曰：「有孚，血去惕出，無咎。」推之，割雞之義。卦則小畜之乾，互見離、兌。乾金為體，離火克之。卦中巽木離火，有烹飪之象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0076",
+      "sha256": "a450db8c439d70256ddd5621945ca1673c9b2d5318090b9b588353d0d9300a38"
+    },
+    {
+      "section": "雞悲鳴占",
+      "text": "斷曰：此雞十日當烹。果十日客至，有烹雞之驗。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0077",
+      "sha256": "0a3712ce2d535193fbddeac4f72154ce5f499a0bcbbdfb350451967f37287c01"
+    },
+    {
+      "section": "枯枝墜地占",
+      "text": "戊子日辰時，偶行至中途，有樹蔚然，無風，枯枝自墜地于兌方。占之，槁木為離，作上卦，兌方為下卦，得火澤睽。以兌二離三，加辰時五數，總十數，去六餘四，變山澤損，是睽之九四。《易》曰：「睽孤，遇元夫。」卦火澤睽變損，互見坎、離，兌金為體，離火克之，且睽損卦名，俱有傷殘之義。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0078",
+      "sha256": "c2065996caf762c2e1eba5f2bd58f031a47c66e2157546b06710f154abf87a6b"
+    },
+    {
+      "section": "枯枝墜地占",
+      "text": "斷曰：此樹十日當伐。果十日，伐樹起公榭，而匠者適字「元夫」也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0079",
+      "sha256": "d072c079923c44edfadaf28a115ede6bda8c9bcf1284e3a65479a65cfc2714ca"
+    },
+    {
+      "section": "枯枝墜地占",
+      "text": "以上諸占例，並是先得卦，以卦起數，所謂後天之數也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0080",
+      "sha256": "f1f53206ffa90cfc051edf5f4fa56e0fc97b26e16f6671d4d72255db87089bfe"
+    },
+    {
+      "section": "風覺鳥占",
+      "text": "風覺鳥占者，謂見風而覺，見鳥而占也，然非風鳥而占，而謂風覺鳥占也。凡卦之寓物者，皆謂之風覺鳥占。如易數，總謂之觀梅之數也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0081",
+      "sha256": "0787b3c7d4c0ba65e0f4989d283f9789938de080391e1ddbc2f69276acdbc6f7"
+    },
+    {
+      "section": "風覺占",
+      "text": "風覺占者，謂其見風而覺也，見鳥而占也。凡見風起而欲占之，便是風從何方而來，以之起卦。又須審其時，察其色，以推其聲勢，然後可斷其吉凶。風從南方來者，為家人，南方屬離火，得風火家人卦（南方屬離火，合得風火家人卦）。東來者，為益卦之類。審其時者，春為發生和暢之風；夏為長養之風；秋為肅殺；冬為凜冽之類。察其色者，帶埃煙雲氣，可見其色黃者，祥瑞之氣；青者，半凶半吉；白主刃，氣黑昏者凶，赤色者災，紅紫者吉。辨其聲勢者，其風聲如陣馬，主鬥爭；如波濤者，有驚險；如悲咽者，有憂慮；如奏樂者，有喜事；如喧呼者，主鬧哄；如烈焰者，主火驚。其聲洋洋而來，徐徐而去者，吉慶之兆也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0082",
+      "sha256": "4138f77c82371aa022822de3b0cf18231be2439327b825e1da0d35b6a05bab81"
+    },
+    {
+      "section": "鳥占",
+      "text": "鳥占者，見鳥可占也。凡見鳥群，數其只數，看其方所，聽其聲音，辨其毛羽色，皆可起數。又須審其名義，察其鳴叫，取其吉凶。見鳥而占，數其只數者，如一只屬乾，二隻屬兌，三隻屬離。看其方所者，即離南、坎北之數；聽其聲音者，如鳥叫一聲屬乾，二聲屬兌，三聲屬離之類，皆可起卦。聽聲音者，若夫鳴叫之喧啾者，主口舌；鳴叫悲咽者，主悲愁；鳴叫嘹亮者，主吉慶。此取斷吉凶之聲音也。察其名義者，如鴉報災，鵲報喜，鸞鶴為祥瑞，鶚鵬為妖孽之類是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0083",
+      "sha256": "9022a171902af87344e9e955d4d593a1ae1131e120b22b9118ad0f731f743792"
+    },
+    {
+      "section": "聽聲音占",
+      "text": "聲音者，如靜室無所見，但於耳中所聞起卦，或數其數，驗其方所；或辨其物聲，詳其所屬，皆可起卦。察其悲喜，助斷吉凶。數其數目者，如一聲屬乾，二聲屬兌。驗其方所者，離南、坎北之類是也。如人語聲，及動物鳴叫之聲，聲自口出者屬兌。而靜物扣擊屬震，鼓拍槌敲、板木之聲是也；金聲屬乾，鍾馨鉦鐸之聲是也；火聲屬離，烈焰爆竹等聲是也；土聲屬坤，築基、杵垣、坡崩、山裂是也。此辨其物聲，詳其所屬也。察其悲喜，助斷吉凶者，如聞人語笑聲，又說吉語，娛笑者，有喜也；人悲泣聲與怨聲，愁語及罵詈窮歎等聲，不吉也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0084",
+      "sha256": "6a38861d018bbbc7c282ad89d43d393d7a2ce93c856463204e4c6bcc024b2f44"
+    },
+    {
+      "section": "形物占",
+      "text": "形物占者，凡見物形，可以起卦。如物之圓者屬乾，剛者屬兌，方者屬坤，柔者屬巽，仰者屬震，覆者屬艮，長者屬巽，中剛外柔者屬坎，內柔外剛者屬離，乾燥枯槁者屬離，有文彩者亦屬離，用障礙之勢、物之破者屬兌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0085",
+      "sha256": "8cd523730058bd051065ccdd46172fe00cad053ba9407b9bb66d48c5da9e0f76"
+    },
+    {
+      "section": "驗色占",
+      "text": "凡占色之青者屬震，紅紫赤者屬離，黃色者屬坤，白色屬兌，黑色屬坎之類是也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0086",
+      "sha256": "e8cebe842738841d0bfd44a3bdb2645928f0926292aa640462acd575d0a0dc65"
+    },
+    {
+      "section": "八卦類象",
+      "text": "乾：玄黃、大赤色、金玉、寶珠、鏡、獅、圓物、木果、貴物、冠、象、馬、天鵝、剛物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0087",
+      "sha256": "8cd4bcf46ab9a349c7af02cc5c3f1653e842c69611f3e2e53bb1fe770dfd610f"
+    },
+    {
+      "section": "八卦類象",
+      "text": "坎：水、帶子帶核之物、豕魚、弓輪、水具、水中之屋、鹽、酒、黑色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0088",
+      "sha256": "0d3d5e60f59e917d945633396974377cd7832c995ccf7fa50122eba8b7eed384"
+    },
+    {
+      "section": "八卦類象",
+      "text": "艮：土石、黃色、虎、狗、土中之物、瓜果、百禽、鼠、黔喙之屬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0089",
+      "sha256": "4b3dc9629498f1e3edf2b594bb99d16a264c5d44a749cf16bc87274b0ec45822"
+    },
+    {
+      "section": "八卦類象",
+      "text": "震：竹木、青碧綠色、龍、蛇、 葦、竹木樂器、草、蕃鮮之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0090",
+      "sha256": "96598e26aff14e106356767850075fcfd047202456673956cf9695c37e33b9cf"
+    },
+    {
+      "section": "八卦類象",
+      "text": "巽：木、蛇、長物、青碧綠色、山木之禽鳥、、香、雞、直物、竹木之器、工巧之器。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0091",
+      "sha256": "f7ae886a7115dfd34424530a35eefcad1ed6ce6c181eff9f5ad69a9e481c24c4"
+    },
+    {
+      "section": "八卦類象",
+      "text": "離：火、文書、干戈、雉、龜、蟹、槁木、甲胄、螺、蚌、鱉、赤色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0092",
+      "sha256": "ec2caab840b3c5611c18215e59555a3579d5714168917660fef9f574bd9c8d23"
+    },
+    {
+      "section": "八卦類象",
+      "text": "坤：土、方物、五穀、柔物、絲綿、百禽、牛、布帛、輿、金、瓦器、黃色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0093",
+      "sha256": "af0c3e690f9a109f64a229dbaca031aeb021c1db451ce8ec41ae1a0d25e72bd0"
+    },
+    {
+      "section": "八卦類象",
+      "text": "兌：金刃、金器、樂器、澤中之物、白色、有口缺之物、羊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0094",
+      "sha256": "32253e7cd7c60c88b0cd61d8f815f99e87e4ddc00e956a8ff0891e4bffd4931e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "乾卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0095",
+      "sha256": "8986306146704ce4ac0f06ae3696655ee93dfa5b1c1a07e1d8cba93af213f10a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "一 金",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0096",
+      "sha256": "a1685e1c4b6e58d3812587d354e34fe039d46f7039f6a8f15b8ff9c5b4faaa49"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "乾為天 天風姤 天山遁 天地否",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0097",
+      "sha256": "cb19c108e303567825885ee92209dd75ccacf312e9738b5e6f6b7a773ea3db87"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "風地觀 山地剝 火地晉 火天大有",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0098",
+      "sha256": "996106958eacbf5af48cd1916a61795d63b911a8b3e7be0c51f1d92795468eff"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：天、冰、雹、霰。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0099",
+      "sha256": "6b688cf83cea6eca99b11edf1bbec862b66b6968efc644e8bfc47dc0b0474f47"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：西北方、京都、大郡、形勝之地、高亢之所。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0100",
+      "sha256": "e34b9da74001d03af4731ed4a3132e2a44c3196539750e31566fd1485dc6fe28"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：君、父、大人、老人、長者、官宦、名人、公門人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0101",
+      "sha256": "10a21f3549d180a4bf1260c00f8a2d9d1561d0f7cf1d75cf59fb3aada445eba6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：剛健武勇、果決、多動少靜、高上下屈。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0102",
+      "sha256": "cdd91e1f67ce935530fda7ae2d1dc5e7cbe9238e2c265e4c25317f1cb1027049"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：首、骨、肺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0103",
+      "sha256": "929c0cdbfa8f43ea2926d957211554e605774ea95ead91548a0e871b526fe739"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：秋、九十月之交、戌亥年月日時、一四九年月日時。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0104",
+      "sha256": "c2bbca0879caa4e25e1ca9e7fec7444da2487815cd340b085d8cdc6f7fd3c642"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "動物：馬、天鵝、獅、象。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0105",
+      "sha256": "fe4ef3ec4b155362c04ad5808d867cb783d9098f9520f8582bf915d07ab3146c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：金玉、寶珠、圓物、水果、剛物、冠、鏡。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0106",
+      "sha256": "a780eab356c1e2e67a3e50aaf5ab67e5d939be364278256ebbbf4904ac631357"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：公廨、樓臺、高堂、大廈、驛舍、西北向之居。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0107",
+      "sha256": "38d61fd0287376ab83582a00f7a2949cbdef9fcccb45e792004fcad5e809604f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：秋占宅興隆、夏佔有禍、冬占冷落、春占吉利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0108",
+      "sha256": "457b0b01acd080f9d567e42761302ab9368904602a5edb800e5dfa7188aba9a6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：貴官之眷、有聲名之家、秋占宜成、冬夏占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0109",
+      "sha256": "e3b4c3f4e6347b61f20889ddbceb962fbe76db1a5b81524f2a58dc2bcfcfd3c8"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：馬肉、珍味、多骨、肝肺、幹肉、水果、諸物之首、圓物、辛辣之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0110",
+      "sha256": "21252012ca2ed540133e22113187b73d2ddec59cece06be37120464860daaa3b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：易生、秋占生貴子，夏佔有損，坐宜向西北。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0111",
+      "sha256": "6f28ca386fe6de9e3bfcf0d4f158658a549e93ff619a7e33c30103bbe8ece597"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：有名、宜隨朝內任、刑官、武職、掌權、天使、驛官、宜西北方之任。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0112",
+      "sha256": "2184a5aaada2ab3e9c529801f98c48092c937792f031a9e4f0242511bbfbfd46"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：有成、利公門、宜動中有財、夏占不成、冬占多謀少遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0113",
+      "sha256": "baf7e631382c3e15bd09ef834513e7efe44bb0883a3fe29e709ecddbdce9347b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：宜金、玉珍寶珠貴貨、易成、夏占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0114",
+      "sha256": "caab0cea792823793e77f19b083d33a8b6ba1e5abf8c667ad4a1f8c6a122a59e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：有財、金、玉之利、公門中得財、秋占大利、夏占損財、冬占無財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0115",
+      "sha256": "c8e776712502d288330389cc3bd09a0c345cc7df01bf09b679a9febbb041771d"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：利於出行、宜入京師、利西北之行、夏占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0116",
+      "sha256": "9d0965fd575a5ed99a442833a7dac03b149b5921e6e89f60b6515ddf2fedb78a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：利見大人、有德行之人、宜見官貴、可見。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0117",
+      "sha256": "0daab029401d6eef3579e2ad7a48d63b80c7556fbc336fdcfac2a3dc145b5788"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：頭面之疾、肺疾、筋骨疾、上焦疾、夏占不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0118",
+      "sha256": "643755c02d44f032afa5a4b38d2aa58fbedbec2f01056858e2d8a3392c6baad2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：健訟、有貴人助、秋占得勝、夏占失理。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0119",
+      "sha256": "c2948e9ead93ea4eda82c8ec88ce73a30a46a020740cc5f1659b6cad3814f13e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：宜向西北、宜乾山氣脈、宜天穴、宜高、秋占出貴、夏占大凶。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0120",
+      "sha256": "b51b29e72580444be031b801e24901f88a12db9548087c2f929d425bd952c2bf"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：西北。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0121",
+      "sha256": "aae775b5ac127e00ae5114cdefeb160d9ca36e5c5b3450af3e552fae27913b2a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：大赤色、玄色。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0122",
+      "sha256": "c51f6b7a8fcc09b772daf4ed31285f0564d2038f24475ddaaa386f7bc0674add"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：帶金旁者、商音、行位一四九。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0123",
+      "sha256": "6836aae5d76a4f4ec321c015c7fcd9e1c45f1bda7d9b51062ecea81eb2e7825e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：一、四、九。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0124",
+      "sha256": "c2fc052060390c32f6c08cd9247aa235a4264c18005330868f7dcdedf4e2378a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：辛、辣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0125",
+      "sha256": "79b6ce32fc35f43e343bdb72e5012a1709e25eb61db27b26090a777b3ad12aa5"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "坤卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0126",
+      "sha256": "b25079fa13d904d617b37a73d8f53ed25e53e7a4e30bc3185ebe43eb7ab0b951"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "八 土",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0127",
+      "sha256": "b45308761860d843410da78d715e939d3e7286f9076e37386c5d9ab2566517d1"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "坤為地 地雷複 地澤臨 地天泰",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0128",
+      "sha256": "14c73659539cc81e23a40013336d0b18802fdd2d624935ec0123a9d083411f2f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "雷天大壯 澤天決 水天需 水地比",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0129",
+      "sha256": "68973c31c974a2b5338d8a6585ed6f2829e88b74e6e0141f3ab14ddeb518b007"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：雲陰、霧氣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0130",
+      "sha256": "cd1c222e98ad13b44bb2fde1ad7f31f6fe625bc6aabf7f3683a72b3f2d731fb3"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：田野、鄉裏、平地、西南方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0131",
+      "sha256": "b7e13003c2fde5052d3c54565b8c653c284be9e23fbf9b790c685e36139d08a3"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：老母、後母、農夫、鄉人、眾人、大腹人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0132",
+      "sha256": "50855a037ea5c3edecb4f72416dd2aacb065ba53e5b7d6432d05582a8ad3d48d"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：吝嗇、柔順、懦弱、眾多。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0133",
+      "sha256": "1a8b959d193c42a27ba8479dff40debce5672b8ee63f6adf3abd06f10d5b9bbb"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：腹、脾、胃、肉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0134",
+      "sha256": "55c62a7990ce7883c635a69f17ad9f9d13e486e25745c49f688df1c46651c4da"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：辰戌丑未月、未申年月日時、八五十月日。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0135",
+      "sha256": "9469b9d30aa8c85e3b9dedef0e66d8745acef595e7f2de1fe26effb0b6f80baf"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：方物、柔物、布帛、絲綿、五穀、輿釜、瓦器。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0136",
+      "sha256": "3acfba6eb1641ab785e34917db2a6d3066e94ee0cad7d7eebe238aa47fc8ae55"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "動物：牛、百獸、牝馬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0137",
+      "sha256": "7b685964c42c0788d418eef3ca8f54e9f314546b343de123ef1db77e3e464829"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：西南向、村居、田舍、矮屋、土階、倉庫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0138",
+      "sha256": "fb0fb47771b65b30ab20758b66a68f726ac1ba266cc5dc7edf56bef08caea48f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：安穩、多陰氣、春占宅舍不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0139",
+      "sha256": "5265ab8dd464d2edceeae995655b476e6e137a8a006d3ca1eaf10a4ad399c266"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：牛肉、土中之物、甘味、野味、五穀之味、芋筍之物、腹髒之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0140",
+      "sha256": "5fd6f6f51ef221953b5e59642f935abfe1ae1b2679cd95d0515d3c7827275b93"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：利於婚姻、宜稅產之家、鄉村之家、或寡婦之家、春占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0141",
+      "sha256": "a2c18cd0fb96152cfeced8cad16cf75b7d41dcb521fd619c953c9c0751027817"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：易產、春占難產、有損、或不利於母、坐宜西南方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0142",
+      "sha256": "4f3ca51045c1e5c21a669ddd7b7f7f8653c938def61dce557602ed99b42587b9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：有名、宜西南方或教官、農官守土之職、春占虛名。\n交易：宜利交易、宜田土交易、宜五穀、利賤貨、重物、布帛、靜中有財、春占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0143",
+      "sha256": "8b034f41e84c61a9677885f5d82a82074f19fefaf182debbae4a250df9abcf70"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：有利、宜土中之利、賤貨重物之利、靜中得財、春占無財、多中取利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0144",
+      "sha256": "5d7c134541bd18bb2f9a6c00d908c10dd98eeefc992e39e68a79cafcd753241c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：利求謀、鄉裏求謀、靜中求謀、春占少遂、或謀於婦人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0145",
+      "sha256": "745cac56489f8d6873e90cd46be98651834c2b765d8bf68359dc2df169f6dd24"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：可行、宜西南行、宜往鄉裏行、宜陸行、春占不宜行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0146",
+      "sha256": "bc0891314646429a37fa8d655b3f0f83eb9ee974ce877ecb16ef1f27e02d44cb"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：可見、利見鄉人、宜見親朋或陰人、春不宜見。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0147",
+      "sha256": "f9bb4f0b3fb31550e59ea91df516975460090e0d715b295b6173ca124264e26b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：腹疾、脾胃之疾、飲食停傷、穀食不化。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0148",
+      "sha256": "fcba74a86676b6baf1b4b2622d37d611bb3a7fee4267d086a80299b56e4f6613"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：理順、得眾情、訟當解散。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0149",
+      "sha256": "e72b83fa42d812442da0a2e6f179d5d9f021acdd110ec6f60d4840b12885210c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：宜向西南之穴、平陽之地、近田野、宜低葬、春不可葬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0150",
+      "sha256": "66173cb2b53213fd30829b49e6a20e7c4c66e6e0d085683c7a5d67509891a8e6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：宮音、帶土姓人、行位八五十。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0151",
+      "sha256": "0b1d5afad85884d4b8c21b1517b1119ab57a78e86112b0981074bd3f6824ba80"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：八、五、十。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0152",
+      "sha256": "0b68eb46d25c97f71d9b3ff181d694cd26c718cbdfe2bb1f2cc3f7fe39b8ef2f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：西南。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0153",
+      "sha256": "e3b544475157d8f64dbf38faa6a245ff92cb6afc26927b76b5bf99eab2f47d90"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：甘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0154",
+      "sha256": "882a65d8dd4d9c322c8703b68d08a81187552311b09c58b4e71f977e1840d215"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：黃、黑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0155",
+      "sha256": "324895cd275bab306ef5bb0d3a01d1535471908240962cd3becedf967ed29231"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "震卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0156",
+      "sha256": "403539e5b45508c2c37f418214341f0661a978cc90fddcc80ff573ae74ce9178"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "四 木",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0157",
+      "sha256": "e4ba5cafcce1e0d8685fbf61e2b89b8f787f2e5a195b8ff4e265d1373c18e1da"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "震為雷 雷地豫 雷水解 雷風恒",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0158",
+      "sha256": "f25f6b852ffe0edc03488bd0da92e41acea8e90bbffad70c3daf474251a9de40"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地風升 水風井 澤風大過 澤雷隨",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0159",
+      "sha256": "c9378e61374fc4d2f2efaf1fd7a503ae336758eb41bed707b6bb7caf93fcc474"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：雷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0160",
+      "sha256": "6b0d8ce7075ae7fb372f190acd425d890ca0a33829b047192aafa8543f0eaf31"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：東方、樹木、鬧市、大途、竹林、草木茂盛之所。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0161",
+      "sha256": "aed6b3a29a418a08b07caabbfc1c833eb20df556de054e982e5ef75c4bfa3ab4"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：長男。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0162",
+      "sha256": "ea76a78e484599c94f213ee047d4e97578eb5379cc0a97ec5c6d22f13870bf9b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：起動、怒、虛驚、鼓動噪、多動少靜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0163",
+      "sha256": "a6464b90ffeb083b2fd680aa27d660075daa830512188e9d83c36f24767d49a3"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：足、肝、發、聲音。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0164",
+      "sha256": "a5e5bd3815c0b197b862e80366d5590d4e21ca534875839b158a572fe8dc77c9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：春三月、卯年月日時、四三八月日。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0165",
+      "sha256": "60a137f6621194ae0517892d20087fccd19efc68377a560e2f92a95ed1f0d128"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：木竹、萑葦、樂器（屬竹木者）、花草繁鮮之物。\n動物：龍、蛇。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0166",
+      "sha256": "415b001dce4f4a74dbd97b6279297c975c30953c71b0c79550bb1c9a2e7455d6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：東向之居、山林之處、樓閣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0167",
+      "sha256": "74334bc5ef77a33ec4aba4d28cf5d4caa2ba0fd3707b26d61ad47aa8631298e6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：宅中不時有虛驚、春冬吉、秋占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0168",
+      "sha256": "3e263161d6a28f49d0a1f62cf1c1e15d2a4a0da843e9a7f20f48bbd5bb82a5d1"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：蹄、肉、山林野味、鮮肉、果酸味、菜蔬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0169",
+      "sha256": "1e766729fc6a1741a7e82ded5aead66c6da605834dc70896c16e504f92d56c4f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：可、有成、聲名之家、得長男之婚、秋占不宜婚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0170",
+      "sha256": "7c4adac7170ba4fa7c5429d3457049ce542f0fe3b371baaf0a14268c797bfe03"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：山林竹木之財、動處求財、或山林、竹木茶貨之利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0171",
+      "sha256": "512fdb01ddeebf70a2b39d32be067d770ae29d70720cb28617d025eed8762fe7"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：有名、宜東方之任、施號發令之職、掌刑獄之官、竹茶木稅課之任、或鬧市司貨之職。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0172",
+      "sha256": "a92b02e50f8cc52347116996d003bb176d9ffb434d1be2b91f61726ac39cd12c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：虛驚、胎動不安、頭胎必生男、坐宜東向、秋占必有損。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0173",
+      "sha256": "b693b09b466e1bea27eb44d6ae4761341dda78de6ad1f36ddaeb07a289601d15"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：足疾、肝經之疾、驚怖不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0174",
+      "sha256": "849cd6068c1e80da71985ad7ff7c4f994e325ab44230c77e3cf97542019cd27b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：可旺、可求、宜動中謀、秋占不遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0175",
+      "sha256": "1fcebcb8f3aff491d9d4ac91ddc016296371394aac956ef9974d6695c14e49f3"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：利於成交、秋占難成、動而可成、山林、木竹茶貨之利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0176",
+      "sha256": "019f8f7ffde6e1a1ddcef32adf7768ae7958f5654269442e54edd2b3ef85ce96"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：健訟、有虛驚、行移取甚反復。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0177",
+      "sha256": "f29e2cf79126a6ad311757235b61a2c46fd3a2f55aed3e9cef04cc2023b1e404"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：可見、在山林之人、利見宜有聲名之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0178",
+      "sha256": "68b326f40a15c0de3dfb8349d6bc02be12ae84f3ad22ad7560271c7d654ffdbc"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：宜行、利於東方、利山林之人、秋占不宜行、但恐虛驚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0179",
+      "sha256": "66529c3d23c2e25708f222724da189f6b110615591c1839d83cb000e43ed902a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：利於東向、山林中穴、秋不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0180",
+      "sha256": "8a87cbda731b5666bb99ecf805a45519c40fc15e3adf8f056bfd426a51b4148d"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：角音、帶木姓人、行位四八三。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0181",
+      "sha256": "4e8d70dcf2e05b0d46298f1e597dab901a02e2cab3f976a101b5c81c413b8255"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：四、八、三。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0182",
+      "sha256": "da67db6d25e5a90ebeefd58780b48a59e4936e8d87dc401a4dbce5ef201c98c3"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：東。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0183",
+      "sha256": "ad3d103287ddc7519be6289743dca031790382066ffdaa4ce17035c2f9021f64"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：甘、酸味。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0184",
+      "sha256": "cffabfc03f7e2ae0e1ece1eba4cd62b91202ec9c58f5b6f255e8f7fa8ec8d9df"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：青、綠、碧",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0185",
+      "sha256": "1502eaa76687d0bbdd2f172c70436cfe522be383efdeba5c80c767d454dd5d53"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "巽卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0186",
+      "sha256": "c81fb6e2c36d003fa43668f1d1a6969a71fe720268a0c492f69de268fc131960"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五 木",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0187",
+      "sha256": "3ed6a318f0094591a804262187fbac876b790de799858c338d8817787e6a7d3b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "巽為風 風天小畜 風火家人 風雷益",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0188",
+      "sha256": "d3fcba575ba3d0756fdbb403192f003658146ada6967e4bcc3d69e16c04e45e5"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天雷無妄 火雷噬嗑 山雷頤 山風蠱",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0189",
+      "sha256": "5cdfe9fa729afc1f01878770e2989c9b984e3b1729732f060db325081823c744"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：風。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0190",
+      "sha256": "e9162f2e778496532aaed430759af2fd492b3cfe4025c8945ddd7b4bf88b53d4"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：東南方之地、草木茂秀之所、花果菜園。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0191",
+      "sha256": "d64883c4e9d42ecaef9826d1c0f4c8e9f931e6c7d85ae735c7ccda6359b1334c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：長女、秀士、寡婦之人、山林仙道之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0192",
+      "sha256": "eefabcc5127d7e6a3fe2535deb23cf67d6ce9815ed73c8d29cbc57c6707d11af"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：柔和、不定、鼓舞、利市三倍、進退不果。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0193",
+      "sha256": "fc4e29c3ca9b8d71430668c82c1783620c9ee194441b97fab965939d315ed2bd"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：肱、股、氣、風疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0194",
+      "sha256": "0f2f2ad611fc63c03e263bb94e41e3e313832c7b224e71d0ad69b485bf71af2b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：春夏之交、三五八之時月日、辰巳月日時。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0195",
+      "sha256": "d26264e42e360f0a385ae498d3f4ee1035096339e8bfd049e816dd88cfa9a53f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：木香、繩、直物、長物、竹木、工巧之器。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0196",
+      "sha256": "eb4b0548ebaad118435d4f874fc518d706cae8bf61154c4ac529db0aedc38fae"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "動物：雞、百禽、山林中之禽、蟲。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0197",
+      "sha256": "dbffd89e13b82fcf7efbfa02de9f374d656248f85078fa409af9204ca2b29e5b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：東南向之居、寺觀樓臺、山林之居。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0198",
+      "sha256": "436030ec4a84b21e1677ae296f4ceac98421f88af555acfcdfbf2fe3af0eaf65"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：安穩利市、春占吉、秋占不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0199",
+      "sha256": "efc0f391a3177aff56a0fd3aa915eb355b24c7eb827b5c12ff92c5a189c11eb2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：雞肉、山林之味、蔬果酸味。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0200",
+      "sha256": "c41c73ed0e4b071d183c1c2d80e67725bf29ac73edbe9a72548c290904409d26"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：可成、宜長女之婚、秋占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0201",
+      "sha256": "13fb319eeb775810e853d654312d097478131f9e02eee2948374a7ac756d693a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：易生、頭胎產女、秋占損胎、宜向東南坐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0202",
+      "sha256": "0ce426b985be7e3330b60c96e7cd2fe08ff0d4ac02a39c77695ac7d61b25cb9b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：有名、宜文職有風憲之力、宜為風憲、宜茶果竹木稅貨之職、宜東南之任。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0203",
+      "sha256": "e7145b9e46670fea08fa4e753854f7d17c299c43d931a631f3d6f3809a7455f9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：有利三倍、宜山林之利、秋占不利、竹貨木貨之利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0204",
+      "sha256": "b3d3f3785f20b1f39dbeb78e02c085c97a4e4824bcecaba13bfd11b91ae13a8a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：可成、進退不一、利山林交易、山林木茶之利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0205",
+      "sha256": "4b67982230fe5eeadd23ab50006b7b28710d3efdd86db67ba2a974fa72981aab"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：可謀旺、有財可成、秋占多謀少遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0206",
+      "sha256": "1897588e9ae10f66763ba6c3e2478a4c59a7e109f45b429606ff80fbba5073ed"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：可行、有出入之利、宜向東南行、秋占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0207",
+      "sha256": "9c1090620fda0ac22d9d6870dd7b7693980de98f645a0efe6db53605efe95c60"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：可見、利見山林之人、利見文人秀士。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0208",
+      "sha256": "beafc7cbfc195a7110da1a2c11404b92f92f1b2a71b25e51a21facb043f72114"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：股肱之疾、風疾、腸疾、中風、寒邪、氣疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0209",
+      "sha256": "87188ed60f51a3c8b5541c2802a74d86ef3cb28e85dcd16710f9444d93df2c17"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：角音、草木旁姓氏、行位五三八。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0210",
+      "sha256": "ad05e50422a3b7a3105920e024dc45b614ed23447706628812d063369a3f65bc"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：宜和、恐遭風憲之責。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0211",
+      "sha256": "68e0edaeca1731d9284313dbcc0ff523a32497db53b14363f4e82fcd969968e1"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：宜東南方向、山林之穴、多樹木、秋占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0212",
+      "sha256": "72eb9c92639a6036805fd009a06487a8026fb5e39f12509f3c095ff95583fbf9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：五、三、八。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0213",
+      "sha256": "651e2d01a68b051cb8fe17aaffc18063d8a2aec647fafe67c9b5932d66830141"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：東南。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0214",
+      "sha256": "324e3c655eb183406264bfa10b5c099651edd46ca30d629ad04e6622bd1276b9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：酸味。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0215",
+      "sha256": "ea78854e30d503226f6418f21e0b08b3cd7f0dae8eaf1a007afd5403c57cf9dd"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：青、綠、碧、潔白。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0216",
+      "sha256": "9268be02991cfa1577d0a435c15196efb2624fa486dc86f23b4d50db3e599f0c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "坎卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0217",
+      "sha256": "f634d2843fb82e45574e2aba1ec659bfc8a9af7d7b48d935f97f056ea7d48992"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "六 水",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0218",
+      "sha256": "c77ac9485f21b7e9698c3ef7df142a46351599ee959977e0400b57c5b98853c9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "坎為水 水澤節 水雷屯 水火既濟",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0219",
+      "sha256": "37449693e327de76e23e0dd138d3d7a4defb24530566aa2a7a6454563b199cd0"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "澤火革 雷火豐 地火明夷 地水師",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0220",
+      "sha256": "2a1104ff1b9e512fe3588bbdab8f60129b1303e95cafe4f7c7c0f1d8021b2afe"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：月、雨、雪、霜、露。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0221",
+      "sha256": "b04bc292fc1a84b958ee30fe2e67c61215210e18eff07d238ebcc7a3d749a027"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：北方、江湖、溪澗、泉井、卑濕之地（溝瀆、池沼、凡有水處）。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0222",
+      "sha256": "2342749674d60f7d30c15a598111c8f444b1ed4dffda7f86806a9d2446b65dbd"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：中男、江湖之人、舟人、資賊。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0223",
+      "sha256": "8fe741c57c4d2aba59487475bc19116ba75ac380aef6d2f25444edf7b72bb64b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：險陷卑下、外示以柔、內序以利、漂泊不成、隨波逐流。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0224",
+      "sha256": "be5adeb082f3bd068758375587360bd286c2ae40303fdb5645c6782ff49502e0"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：耳、血、腎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0225",
+      "sha256": "8f550f7fe5100c8fdce62af890b922d6837deefadaa2ecaaac09e419ee6438e6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：冬十一月、子年月日時、一六月日。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0226",
+      "sha256": "18e5edec3b8224daa735ccd40a42e0414d881a5971b2ca3454d29424e9d324c7"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：水帶子、帶核之物、弓輪、矯揉之物、酒器、水具。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0227",
+      "sha256": "ecc606fae239eb89411fcb4e7a529e819fa52e133d1161d5d637a0ff9d0964ed"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：向北之居、近水、水閣、江樓、花酒長器、宅中混地之處。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0228",
+      "sha256": "30dff54e496bb2708f51033ed011f2283e326e2735bafe64153d4df10b3ccd4c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：豕肉、酒、冷味、海味、湯、酸味、宿食、魚、帶血、掩藏、有帶核之物、水中之物、多骨之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0229",
+      "sha256": "a8fc10bd75f0ba3ef096b60aa6043d4b22cc4de9cd38ecaca015225302f5d50a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：不安、暗昧、防盜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0230",
+      "sha256": "39b8a603fe68717476bfddf354db1ddc70981289e9645c3dfe99c92e0c00b1df"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：利中男之婚、宜北方之婚、辰戌丑未月婚不可。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0231",
+      "sha256": "44998430ea4c13130a7fb35d445ebe9072776e082299972cfcf47acf0372e22b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：難產有險、宜次胎、中男、辰戌丑未月有損、宜北向。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0232",
+      "sha256": "53edb2de71bc6ddbc8f024933ca01d38034327a2c6a217bdc664a56cab3f0a94"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：艱難、恐有災險、宜北方之任、魚鹽河泊之職。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0233",
+      "sha256": "147ec2b0f71c98b3ed32906f8f454dc2f34b4e9af421d64f5fd79c28c5321fcc"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：有財失、宜水邊財、恐有失陷、宜魚鹽酒貨之利、防遺失、防盜。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0234",
+      "sha256": "b2f30e17c5229b5c20fcd8f5fdad1d7586e173159e96d162d61c77f28c66d620"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：不利成交、恐防失陷、宜水邊交易、宜魚鹽貨之交易、或點水人之交易。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0235",
+      "sha256": "7a16463346cdee947e8223b2a9eeb12e89e6f733e48a47da79a391cfa897b3dc"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：不宜謀旺、不能成就、秋冬占可謀旺。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0236",
+      "sha256": "655c44208c935d0d290651e8eefabbc40803adc53ba5730e97c812146b53d465"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：不宜遠行、宜涉舟、宜北方之行、防盜、恐遇險陷溺之事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0237",
+      "sha256": "c9aca949b077ca6b055bbf698fcb7025828a0807df6f86eb0efa14233cef1dbb"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：難見、宜見江湖之人、或有水旁姓氏之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0238",
+      "sha256": "4a6beb2c1c0854577634ba012c2ef49764b4cc29750254d8727baa9b2e9a1643"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：耳痛、心疾、感寒、腎疾、胃冷、水瀉、痼冷之病、血病。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0239",
+      "sha256": "f33c0eb6e75ee83c768a883d138cbdc1bfd6d9da85e6532e1b766e66b71a91ff"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：不利、有陰險、有失、因訟、失陷。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0240",
+      "sha256": "b33ab64b0fd3db8270e69d699f7f47c08b6a23e290fa27c6a93fd5b56831eea2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：宜北向之穴、近水傍之墓、不利葬。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0241",
+      "sha256": "181bc3a002a59993d5ecf99f6c6a50caa1d9d831d190b2e9af814fae89c63e64"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：羽音、點水旁之姓氏、行位一六。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0242",
+      "sha256": "59d70fd0ef399bbdeff38204fa2e6b079c0743d425d1ae5c224f648501fa41cd"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：一、六。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0243",
+      "sha256": "972174286c2686e0a161f98381a79442bcbae2e5684aa2cd3a03105d27573005"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：北方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0244",
+      "sha256": "2e7ef76e749c52c66a25d829dca2c113b02b825909cbc2054fa6069d062ab8a1"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：鹹、酸。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0245",
+      "sha256": "6417c25f0fab5d5efac41f36f02270d446e514d4ce07df68c9126013765bfc3e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：黑。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0246",
+      "sha256": "1a7c2c5e6df58885cc14e2315ce5d26abfa5229d1e58442a7bab6e68ae8484d7"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "離卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0247",
+      "sha256": "fc3dc5bc40f960f66767edda6ccd791c0df60120da3cbabdcf355dd84e3f133f"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "三 火",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0248",
+      "sha256": "fde4ef3eea2646696aa39a6aad999bc66efdefe706ba395498d2948ee700a145"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "離為火 火山旅 火風鼎 火水末濟",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0249",
+      "sha256": "4775f01af9e8343693821fffc2c0f569f20b84250cd9ce95c1f2616c83c26174"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "山水蒙 風水渙 天水訟 天火同人",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0250",
+      "sha256": "ea557fc4c3a8e5575b0a7cf23744726a1e90c180df332c53d29241b206879f38"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：日、電、虹、霓、霞。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0251",
+      "sha256": "168c262eb5dddd62ad953f0e183f08b247282bb0ee8fa63912663532c0d4e37c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：南方、幹亢之地、窖灶、爐冶之所、剛燥厥地、其地面陽。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0252",
+      "sha256": "2d01a5e70c74a1b304820276e982427a9281ccbe8398a94062e72727f6b37353"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：中女、文人、大腹、目疾人、甲胄之士。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0253",
+      "sha256": "79e98b0338db547061d59ca252e087fd505aa4a1d091d3b68ba32f4ca133e32e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：文畫之所、聰明才學、相見虛心、書事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0254",
+      "sha256": "d2466fa992b6f586f5d832323a33559daab8b3347f6b4ec312ddc0785329ebf6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：目、心、上焦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0255",
+      "sha256": "cea92be4667ee58802e927843b479bb98775fa9c69e96b47f037a54fb24f003b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：夏五月、午火年月日時、三二七日。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0256",
+      "sha256": "a113a659ce5b29b394a3a1d28dc7457e83506bcdc8e3c91d09a8629963be613c"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：火、書、文、甲胄、干戈、槁衣、乾燥之物、赤色之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0257",
+      "sha256": "74aefd87b3bf30c98f8f19fb9c26caf9cfefcbad8aaa834e575b7b76f30963b3"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "動物：雉、龜、鱉、蟹、螺、蚌。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0258",
+      "sha256": "0ac21012a918f51f97d0074be3829089e89dd01520dfae9f46284bb424638694"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：南舍之居、陽明之宅、明窗、虛室。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0259",
+      "sha256": "7f742d6b85b34eb2b8c3e1b7015e2a2308a3509b35964d9e20b316d1e46c7fce"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：安穩、平善、冬占不安、克體主火災。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0260",
+      "sha256": "3f13b33bb871a6c2f9d10c033181107d02a4bf56ae7dc9152a84be6feb810cbf"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：雉肉、煎炒、燒炙之物、幹脯之體、熱肉。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0261",
+      "sha256": "fe5f0eefd1e809a6ffba13d44b25f206fd999c0b0f66ae04bf8da5c5825faccd"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：不成、利中女之婚、夏占可成、冬占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0262",
+      "sha256": "00cdbc22084e838be6fc7b5a025a8f3b6f4c2c564ee1fab23daa3cf05f75d528"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：易生、產中女、冬佔有損、坐宜向南。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0263",
+      "sha256": "ac1019c49fd6496df8b04efde7bd5361b2582b6b2834ebb0a9606af019b67c53"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：有名、宜南方之職、文官之任、宜爐冶亢場之職。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0264",
+      "sha256": "f56ee887b4169ae8230682154ecde48132da1a6e2d396224f738247b636ea778"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：有財宜南方求、有文書之財、冬占有失。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0265",
+      "sha256": "06d4a4a7bbde793ffe70f29544ae9f4a40669633875b192503b73d6860860a8a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：可以謀旺、宜文書之事。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0266",
+      "sha256": "2c52561eb2cb26d5bcb93e97bf52719b7d0a6fbac73a73d6e435dfb6b3522605"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：可成、宜有文書之交易。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0267",
+      "sha256": "2c16667c41f5ab3750580b00e261bb85ebff79f2b89110e5c4585068f1d11bde"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：可行、宜向南方、就文書之行、冬占不宜行、不宜行舟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0268",
+      "sha256": "eb57042dc48ef330283b341a2f70935c27f304bfdbb3befdc22d6789d9cfc173"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：可見南方人、冬占不順、秋見文書考案之士。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0269",
+      "sha256": "dfe6c210cf0fa9de93720d3480e26977f815eadd9ac87859f5e70840fd35d569"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：易散、文書動、辭訟明辨。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0270",
+      "sha256": "00de83c7afcebd73177dca815d6322bacfaf5b0f0075e46bd0f15baed0c39984"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：目疾、心疾、上焦熱病、夏占伏暑、時疫。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0271",
+      "sha256": "1e918eafa43d9001af44232724c8bdc0933f00b66f96015e8e7b8ac09db93e50"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：南向之幕、無樹木之所、陽穴。夏占出文人、冬占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0272",
+      "sha256": "a822162bbd94c34477b5dba1a769515b7404dabfc3b9f571c412cc922e3e1104"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：徵音、立人旁士姓氏、行位三二七。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0273",
+      "sha256": "875692512d18f589db8028bbd90407dd2c3ff12667d1880ea9337df579685353"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：三、二、七。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0274",
+      "sha256": "6cf98099ee70ae00639204548b6b34f15bccec3053396fd3f9cc3a764a2dc46e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：南。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0275",
+      "sha256": "8ed24ec612e69bcfe23031933f4eeb879c439994416199fbed93984bad2f85c5"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：赤、紫、紅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0276",
+      "sha256": "7ad3919820e7aa59d8c18edaa4bd134df939dee165eadb1dbe7ee0e606158eb1"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：苦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0277",
+      "sha256": "3fb63c5524da83a62e50aa1c820a8171869c05c3233a2739c4675e17a1144f49"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "艮卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0278",
+      "sha256": "f863610fe9d1b23e4979117b1ed92eadab0559f5d15294207bff68b8236f1b90"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "七 土",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0279",
+      "sha256": "446af1279e3f5b4ad1d293d57d10c9c3f01500bc1f7b61389f27cc2aabde009d"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "艮為山 山火賁 山天大畜 山澤損",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0280",
+      "sha256": "2d93eaaef42aafdd0976f1316dd17b19796c113dae6a5131fa08b02a54ede646"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "火澤睽 天澤履 風澤中孚 風山漸",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0281",
+      "sha256": "dfbece6e5741e592cb5f82ce0980bb82a9820757d02cb357d32a9a681d187bf9"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：雲、霧、山嵐。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0282",
+      "sha256": "d58b31a26a6162df8cac39734cbf97191e0821dea73aa248fe687dc6f17ba0a2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：山徑路、近山城、丘陵、墳墓、東北方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0283",
+      "sha256": "fdc576b1da9efaacf4fbcda2d5694afa8c7f1b12db57aa4caf3b0eddeeb8f2e2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：少男、閒人、山中人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0284",
+      "sha256": "b1104b8a672cfff47bc5e1408babfddb07e4aee540e93e986eef71ff9d1babb2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：阻隔、守靜、進退不決、反背、止住、不見。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0285",
+      "sha256": "6cd2ac0f9070809d8ab8a472840c5e26b19633749fda2bfba1be3c84601f32ca"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：手指、骨、鼻、背。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0286",
+      "sha256": "73de56237bd4e14a380ee596a2f4f28a034bd6d7ab1ce70c9e7d42341056d1f6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：冬春之月、十二月丑寅年月日時、七五十數月日、土年月日時。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0287",
+      "sha256": "07daf3668df5a868b32e7e15182941a4283dca1c33edb9d4a4a60df98febb3d8"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：土石、瓜果、黃物、土中之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0288",
+      "sha256": "cb57888d168a98df4a4b3601f3b4ba3eba7d3f239140529cd77896d063a88f76"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "動物：虎、狗、鼠、百獸、黔啄之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0289",
+      "sha256": "3c77e4bbd7fa383f1ce9761669539714228ef23704e62efb1e835eaba0026874"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：安穩、諸事有阻、家人不睦、春占不安。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0290",
+      "sha256": "2b86ad38efb7d99013bdabb6195bea573b50cf267523a2a01bba5bf25331da28"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：東北方之居、山居近石、近路之宅。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0291",
+      "sha256": "278a9fe9455f6e7fd0d66412a2345bc9d5fafda0e02a51eaa98654da29ab3ef4"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：土中物味、諸獸之肉、墓畔竹筍之屬、野味。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0292",
+      "sha256": "f36fd160182cf8c66b0da7f3aef79f68c44da33549ba1f8747c5e231154fd4ed"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：阻隔難成、成亦遲、利少男之婚、春占不利、宜對鄉裏婚。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0293",
+      "sha256": "35514f8fa2c5a0ec528b8ca24f35ea7bf474174015fa6554bbfeefce64da0053"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：阻隔無名、宜東北方之任、宜土官山城之職。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0294",
+      "sha256": "742e15c192e31c2df47cedd5e04ff840bed9e9f38634d08433de28d46b42af17"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：求財阻隔、宜山林中取財、春占不利、有損失。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0295",
+      "sha256": "8d7675493fd072f8dbe49eda6afa436ff8b63b1d1f522bc4a4e99fe5cee3f7ec"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：難生、有險阻之厄、宜向東北、春佔有損。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0296",
+      "sha256": "bc1ce3d8ba8ac49de5b4092c6002afe15e1682c4355dac7653506af83eb9d760"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：難成、有山林田土之交易、春占有失。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0297",
+      "sha256": "2678321e63251910ca580a83e1c1246205d5b662ee8fb6c07dbb2ccf7b847caa"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：阻隔難成、進退不決。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0298",
+      "sha256": "5710dfc0681b9e8a0850f15db1a35247b90f2de4cca81dffa5c233697d971bcf"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：不宜遠行、有阻、宜近陸行。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0299",
+      "sha256": "f99a7600ba5397705e095614263e8f5f8112588a11e9cb271b387ee2589a320e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：不可見、有阻、宜見山林之人。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0300",
+      "sha256": "8239ea4a0308218b4a7d5a87028739862071ddf4b6ba471be655cacace869009"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：手指之疾、脾胃之疾。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0301",
+      "sha256": "e92116e2e2a8536d88296ed4dfe235460f45fadbcbf5c65a478c82013ed50f5e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：貴人阻滯、官訟未解、牽連不決。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0302",
+      "sha256": "ca4f3e2e7b5bc4de58c23aa1def6981431cb452c1bb2aa4a16942f66749ef45b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：東北之穴、山中之穴、春占不利、近路旁有石。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0303",
+      "sha256": "0e241de37a956cfc02d2af7846b9a8f397fec03167f359424f997c6ea53363f0"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：五、七、十。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0304",
+      "sha256": "3067b8cdfffba3c0e3830803f9c40f12415efff5b08c28656dd0b2ca14ea58b8"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：東北方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0305",
+      "sha256": "88d9cda92932d1212b49495543c17e8e3cf62b7dd18ef1b25874703a52a3e7f6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：黃。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0306",
+      "sha256": "ad173637ed4354eb79a9f81284826bf71c672d4e7254e0ff1234f497249e038e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：甘。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0307",
+      "sha256": "882a65d8dd4d9c322c8703b68d08a81187552311b09c58b4e71f977e1840d215"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "兌卦",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0308",
+      "sha256": "b4b051933439ce43de6eac572aa5975abb14b46aedd11d3c268c9daabbed1f40"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "二 金",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0309",
+      "sha256": "42e3f15e1cb5c31cd7ee9facf17a382270c0e370e852e0d6ff38d62af76fc5d7"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "兌為金 澤水困 澤地萃 澤山鹹",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0310",
+      "sha256": "e9fde08525ec326333299d1b5f3ed66fdee1fcde28c9d358b3339c038fdaf9f6"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "水山蹇 地山謙 雷山小過 雷澤歸妹",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0311",
+      "sha256": "183b24d5a26ed0e0da2f847fdd0c5eea99268a4e45ccc161bb05901099cbea10"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "天時：雨澤、新月、星。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0312",
+      "sha256": "d75916fb42bb4aee564660c72e76d69196d7061b35ecbf14acddd9e0f138552e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "地理：澤、水際、缺池、廢井、山崩破裂之地、其地為剛鹵。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0313",
+      "sha256": "67efecea0964188c9333408bb2841dc31934d107557223a284f9cc468ff3ce51"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人物：少女、妾、歌妓、伶人、譯人、巫師。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0314",
+      "sha256": "558becaa61b6048e9aaf154cf228e1c21587254ae67eaab1c8fa4e9d45babc78"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "人事：喜悅、口、讒毀、謗說、飲食。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0315",
+      "sha256": "85fbd4b59ad16bd739f0e999296524af93f21088a421e24ef930bc5ab5cf144a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "身體：舌、口喉、肺、痰、涎。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0316",
+      "sha256": "ce5f9408192c6c30043289020977eb74be194d12c35f33ccd25d711e6e8d88bf"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "時序：秋八月、酉年月日時、二四九月日。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0317",
+      "sha256": "773cc28b6c4a42b6ed80ba6562f91d0df77dba3596765da292ceb443cc798949"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "靜物：金刀、金類、樂器、廢物、缺器。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0318",
+      "sha256": "beadc5d530135564691c50f78e4ad8e916bc5ba9f182102347c86d35231a3eb1"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "動物：羊、澤中之物。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0319",
+      "sha256": "55613178ca4db0391b9b52b5a9fd50c9c4be90af4c5aa1e5ffa8621b54389731"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "屋舍：西向之居、近澤之居、敗牆壁宅、戶有損。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0320",
+      "sha256": "a15b959a46a191f1a87a0cf473be7524664e7d20c6c01854075ba243b5435189"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "家宅：不安、防口舌、秋占喜悅、夏占家宅有禍。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0321",
+      "sha256": "f7e21b8d101ac55c7ef92b897b90e82d141c2919040b628da45746070ce6c6aa"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "飲食：羊肉、澤中之物、宿味、辛辣之味。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0322",
+      "sha256": "9095773458bca947dd8f75db68a6aa76a81fcce9e65149ac258d7af8b3ec3c4a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "婚姻：不成、秋占可成、有喜、主成婚之吉、利婚少女、夏占不利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0323",
+      "sha256": "e9317a443939a6591281e30b80ea523385178a05fae71c13665648b7436ea78e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "生產：不利、恐有損胎或則生女、夏占不利、宜坐向西。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0324",
+      "sha256": "825e05254d046604e142447fd436b1c82567e3dc8439f738b132228d9ed743bc"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求名：難成、因名有損、利西之任、宜刑官、武職、伶官、譯官。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0325",
+      "sha256": "2ef8fab309e4b919b7658fe55835b267bd0f4834170918ca167e4844d69aec43"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "求利：無利、有損、財利、主口舌、秋佔有財喜、夏占破財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0326",
+      "sha256": "eeba32e0206fa7f68949d35f968ec8640ac2cda8261dd6182d716ed28069ca22"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "出行：不宜遠行、防口舌、或損失、宜西行、秋占宜行有利。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0327",
+      "sha256": "7ad919b5b255b81acea6a6b2c135fb31b9dd9ccb6059bf325ca9bfc52cd9d91e"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "交易：難利、防口舌、有爭競、夏占不利、秋佔有交易之財。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0328",
+      "sha256": "5743ecfa6c0cb1155e64d79e2c1060d248d3212d87446ef1b062101b55e2f43a"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謀旺：難成、謀中有損、秋占有喜、夏占不遂。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0329",
+      "sha256": "863321225f5d17cf3462275f9e4f358ccb9c23128bb3ac1b35bb26379bc221ce"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "謁見：利行西方、見有咒詛。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0330",
+      "sha256": "164900f3a2a4b7ae59229e42f12a3239edd91db9703b1583f8e68e3944c82091"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "疾病：口舌、咽喉之疾、氣逆喘疾、飲食不飧。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0331",
+      "sha256": "563ff7df9572c07a95a6f1d97b9ad99287b7223c893d4e9a50f86f741bbbd80d"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "墳墓：宜西向、防穴中有水、近澤之墓、夏占不宜、或葬廢穴。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0332",
+      "sha256": "6622fee2c0121b768d6fb0561301c1295b0e85f966cdd8bad2a22b4d36261d64"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "官訟：爭訟不已、曲直未決、因訟有損、防刑、秋占為體得理勝訟。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0333",
+      "sha256": "3ee2ce183d7924b23f5af5bd4dbb23ceccc76a5399b109b2b09d7ffabaf61907"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "姓字：商音、帶口帶金字旁姓氏、行位四二九。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0334",
+      "sha256": "0f40047f1ecce604ece2bd743739ea7f740a758a40cf55e67295a4840738b25b"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "數目：四、二、九。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0335",
+      "sha256": "90f5cf3d5682581128320f20fd14dd6341b82d2eca31b90a2d3023e5d6435fa2"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "方道：西方。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0336",
+      "sha256": "95893b303abe13cbd6103a16e79c7c7ef1de827244bcede13dd4108225277b9d"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五色：白。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0337",
+      "sha256": "13fc9090295b8ab4694ec902a50438fdc8eac676eac38fcd90a60d02a74a03cf"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "五味：辛、辣。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0338",
+      "sha256": "79b6ce32fc35f43e343bdb72e5012a1709e25eb61db27b26090a777b3ad12aa5"
+    },
+    {
+      "section": "八卦萬物屬類",
+      "text": "右萬物之象，庶事之多不止於此。占者宜各以其類而推之耳。",
+      "layer": "historical_work_transcription",
+      "passage_id": "meihua:c001:p0339",
+      "sha256": "7e5c3327470839e6afab959e4366919e52aed98c9183214fd1732c85022cbaa2"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c024",
+  "title": "動散章第二十三",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F23&oldid=2100454",
+  "revision": "2100454",
+  "source_timestamp": "2022-01-20T19:20:41Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c024.wiki",
+  "raw_sha256": "5a178e3b65cc35def1a74452cacbc5f925b9f0968d1855e3da8cd70735b9f0e5",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "動散章第二十三",
+      "text": "占以日辰而沖動爻，謂之沖散，又以爻動沖爻，亦能沖散，予屢試之，旺相者沖之不散，有气者沖之不散，休囚者間有沖散，亦千百中之一二也，其故何也？神兆機於動，動必有因。𨿽則今日受制，後逢值日而不散也。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c024:p0001",
+      "sha256": "f7791bfb263092309c13b643b0792a1d9584406c4bb6960526216730e9a604e0"
+    },
+    {
+      "section": "動散章第二十三",
+      "text": "如丑月丁酉日占父出外一載無音得風水渙變坎卦。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c024:p0002",
+      "sha256": "de3c79b39d11b41908cb5c7f62ba8b0242c5906d10a65ac9dacadf35bfa0554c"
+    },
+    {
+      "section": "動散章第二十三",
+      "text": "父母卯木○　　官鬼子水⚋\n兄弟巳火⚊世　子孫戌土⚊\n子孫未土⚋　　妻財申金⚋\n兄弟午火⚋　　兄弟午火⚋\n子孫辰土⚊應　子孫辰土⚊\n父母寅木⚋　　父母寅木⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c024:p0003",
+      "sha256": "61ea759925345f6892abd3bbf9db653a7340e3f95dbe070633b9b6949bc18dfc"
+    },
+    {
+      "section": "動散章第二十三",
+      "text": "卯木父爻發動而生世，又化子水回頭生許之，在外平安。世空者還至交春卽歸，果於二月得意而回。此非卯動酉日沖之？何當散也？李我平曰：黃金策以空亡爲重，沖散爲輕。易冒最重沖散，細閱占驗多因錯課。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c024:p0004",
+      "sha256": "93a01c41c26a8cebe80879fb8602af8381b02b25493d3344b618d3372989df26"
+    }
+  ]
+}

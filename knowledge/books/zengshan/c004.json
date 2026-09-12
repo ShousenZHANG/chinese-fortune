@@ -1,0 +1,46 @@
+{
+  "book_id": "zengshan",
+  "chapter_id": "c004",
+  "title": "渾天甲子章第四",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E5%A2%9E%E5%88%AA%E5%8D%9C%E6%98%93%2F4&oldid=2100293",
+  "revision": "2100293",
+  "source_timestamp": "2022-01-19T23:24:55Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/zengshan/c004.wiki",
+  "raw_sha256": "e5f02e6c0958b9daf5296b1b688a8b6484e191e9417b91ac1fd0ef550757228c",
+  "raw_kind": "source_wikitext",
+  "extraction_kind": "frozen_mediawiki_revision",
+  "issues": [],
+  "passages": [
+    {
+      "section": "渾天甲子章第四",
+      "text": "* 乾在內：子水寅木辰土。乾在外：午火申金戌土。\n* 坎在內：寅木辰土午火。坎在外：申金戌土子水。\n* 辰在內：辰土午火申金。辰在外：戌土子水寅木。\n* 震在內：子水寅木辰土。震在外；午火申金戌土。\n* 巽在內：丑土亥水酉金。巽在外：未土巳火卯木。\n* 離在內：卯木丑土亥水。離在外：酉金未土巳火。\n* 坤在內：未土巳火卯木。坤在外：丑土亥水酉金。\n* 兌在內：巳火卯木丑土。兌在外：亥水酉金未土。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c004:p0001",
+      "sha256": "3d2ddb729a0f8e20e02fd3be0f1a42e5030cfc3f3087750242c50dcc938df05a"
+    },
+    {
+      "section": "渾天甲子章第四",
+      "text": "如得天風姤卦，上三爻是乾卦。卽乾在外：午火申金戌土。\n下三爻是巽卦。卽巽在內：丑土亥水酉金。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c004:p0002",
+      "sha256": "f5dbd2164e45b1275348c9d403d3913f56c5410cf6a5e064c4e8a7bf5f7f61e3"
+    },
+    {
+      "section": "渾天甲子章第四",
+      "text": "戌土⚊\n申金⚊\n午火⚊\n酉金⚊\n亥水⚊\n丑土⚋",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c004:p0003",
+      "sha256": "af510301a441156cab33239745b8d113800e607a0154b70dc27fd966a02ab4bd"
+    },
+    {
+      "section": "渾天甲子章第四",
+      "text": "點卦由下而上，故裝五行也由下而上，餘仿此。",
+      "layer": "historical_work_transcription",
+      "passage_id": "zengshan:c004:p0004",
+      "sha256": "41d949e25d138e03723c38de011c503d16dc92292206708ba4ef63cf7cb55982"
+    }
+  ]
+}
