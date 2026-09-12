@@ -1,6 +1,6 @@
 ---
 name: chinese-fortune
-description: 中国传统术数研习与算命：八字/四柱/用神、短期运势、下周运势、面试择时、古籍查询、紫微斗数、周易/易经、六爻、梅花、奇门遁甲、大六壬、黄历择日、风水、起名、合婚、生肖、神煞、五行、天干地支。BaZi, Four Pillars, personal forecasts, interview scheduling, Zi Wei Dou Shu, I Ching, Feng Shui, Chinese zodiac, naming, compatibility, auspicious dates and Chinese fortune-telling. 塔罗 Tarot、星座 astrology、解梦 dream interpretation、面相 physiognomy、手相 palmistry、测字和随机寻访仅在明确点名时使用。
+description: 中国传统术数研习与算命：八字/四柱/用神、短期运势、下周运势、面试择时、连续行程、古籍查询、紫微斗数、周易/易经、六爻、梅花、奇门遁甲、大六壬、黄历择日、风水、起名、合婚、生肖、神煞、五行、天干地支。BaZi, Four Pillars, personal forecasts, interview scheduling, Zi Wei Dou Shu, I Ching, Feng Shui, Chinese zodiac, naming, compatibility, auspicious dates and Chinese fortune-telling. 塔罗 Tarot、星座 astrology、解梦 dream interpretation、面相 physiognomy、手相 palmistry、测字和随机寻访仅在明确点名时使用。
 ---
 
 # 中国传统术数研习
@@ -24,7 +24,7 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 
 采用 Caveman 的简洁原则，清楚优先：自然短句，一句一件事，保留原因、条件、否定和时间范围。
 
-- 开头一至三句用普通话直答，让没学过术数的人也能独立看懂结论及限制。默认最多三条主判断；要求详解时展开。不要把“甲官当令、财印相助、救应未成”这样的术语串当白话结论。
+- 开头一至三句用普通话直答，让没学过术数的人也能独立看懂结论及限制。即使用户问“月令格局”，第一段也先解释哪些作用互相支持、哪些互相牵制，以及还不能确定什么；不要先给“杂气正官、透干有根、财伤俱透、救应未成”等标签再到后面翻译。默认最多三条主判断；要求详解时展开。
 - 术语首次出现就解释，不能用另一串术语解释它。“透干”就是“这个字出现在天干一排”；“正官”先说明是相对于日主的一种克制关系，再谈本题作用，不能直接等同职业或性格。
 - 每条按“白话结论 → 必要盘面 → 短原文与出处 → 紧跟白话解释”写成自然段。每段古文后解释它本来的意思、本人的哪些条件符合、为什么用于本题；现代场景解释单独标明。正文、注文、项目归纳分开，古文不占主体。
 - 说明已核实的结果，候选不当定论，模糊“可能”不能替代条件检查。
