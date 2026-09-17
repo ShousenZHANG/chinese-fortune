@@ -13,6 +13,7 @@ from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
 from classical_guidance import research_sources
 from fortune_calendar import period_facts
+from fortune_ranking import rank_candidates
 from fortune_rules import capabilities, evidence, luck_observations, research_request
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
@@ -162,6 +163,32 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
         result['event_method'] = event_basis(result['candidate_comparison'], result['participants'],
             scenario=scenario, timezone=window['timezone'], standard=standard,
             longitude=event.get('longitude'))
+        # Ranking runs only where fortune_rules declares rule_based; every tier
+        # it produces cites a passage. See references/26-precedence.md.
+        if capability['personal_ranking'] == 'rule_based':
+            subject = next((p for p in result['participants'] if p['id'] == priority),
+                           result['participants'][0])
+            ranking = rank_candidates(result['candidate_comparison'], subject, scenario=scenario)
+            ranking['subject_participant_id'] = subject['id']
+            result['ranking'] = ranking
+            for row in result['candidate_comparison']:
+                verdicts = {e['candidate_id'] for e in ranking['excluded']}
+                tiers = {t['candidate_id']: t['tier'] for t in ranking['tiers']}
+                if row['candidate_id'] in verdicts:
+                    row['judgment'] = 'excluded_by_clause'
+                elif row['candidate_id'] in tiers:
+                    row['judgment'] = f"tier_{tiers[row['candidate_id']]}"
+            # Ties are the honest outcome when no clause separates the survivors.
+            survivors = [t['candidate_id'] for t in ranking['tiers']]
+            if survivors and not ranking['ties']:
+                result['recommendation'] = {'status': 'ranked', 'first_choice': survivors[0],
+                                            'backup': None,
+                                            'precedence_version': ranking['precedence_version']}
+            elif survivors:
+                result['recommendation'] = {'status': 'tied_no_clause_separates',
+                                            'first_choice': None, 'backup': None,
+                                            'tied': survivors,
+                                            'precedence_version': ranking['precedence_version']}
     if include_research:
         result['research']['source_bundle'] = research_sources(scenario, limit=1)
     result['decision_blockers'] = decision_blockers(result)

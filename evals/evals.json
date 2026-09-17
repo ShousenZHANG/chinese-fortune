@@ -679,6 +679,76 @@
           ]
         }
       ]
+    },
+    {
+      "id": 24,
+      "name": "ranking-requires-a-citation",
+      "prompt": "我想在 2026-10-13 到 10-15 之间从悉尼出发，哪天合适？我是 1997-12-24 晚上 7 点半生，江苏吴江，男。",
+      "expected_output": "出行属 rule_based 场景：10-14 辛酉为秋季天转日，按《渊海子平·论天地转杀》排除并给出原文；其余两天条款上并列，不编首选。忌时按截路空亡以日干取，只提示窗口实际覆盖到的那些。冲生肖无条款支撑，只作民俗层背景。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/fortune_rules.py",
+            "--capabilities",
+            "--scenario",
+            "travel"
+          ],
+          "paths": {
+            "ok": true,
+            "capabilities.0.personal_ranking": "rule_based",
+            "capabilities.0.precedence_version": "precedence-v1",
+            "capabilities.0.ranking_reference": "references/26-precedence.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "unimplemented-scenarios-stay-unranked",
+      "prompt": "下周三面试，上午还是下午好？",
+      "expected_output": "面试的 personal_ranking 仍是 not_implemented：协纪辨方书卷33/34 只作范围审计，不得成为面试排名依据。给可行档期与缺口，不给首选。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/fortune_rules.py",
+            "--capabilities",
+            "--scenario",
+            "interview"
+          ],
+          "paths": {
+            "ok": true,
+            "capabilities.0.personal_ranking": "not_implemented"
+          }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "direct-answer-and-precedence-are-reachable",
+      "prompt": "回答要直接一点，别绕。",
+      "expected_output": "首行按问句类型给结论／动作／是否；摘要含答案、一句依据、本题独有的限制。套话删（换一题还成立即套话），输家条款与本题限制不可删。",
+      "assertions": [
+        {
+          "kind": "file_contains",
+          "file": "references/27-direct-answer.md",
+          "needles": [
+            "这句话换到别的卦、别的年、别的颜色上，还成立吗",
+            "甲类 · 禁用",
+            "乙类 · 限位"
+          ]
+        },
+        {
+          "kind": "file_contains",
+          "file": "references/26-precedence.md",
+          "needles": [
+            "precedence-v1",
+            "第三层：自洽者胜",
+            "另说：《X》作 Y"
+          ]
+        }
+      ]
     }
   ]
 }

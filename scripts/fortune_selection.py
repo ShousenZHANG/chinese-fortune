@@ -165,6 +165,12 @@ def decision_blockers(result: dict) -> list[dict]:
         blockers.append({'code': 'event_longitude_required', 'message': '事件真太阳时仍缺地点经度，尚未起奇门盘。'})
     if method.get('status') == 'candidate_span_too_long':
         blockers.append({'code': 'candidate_span_too_long', 'message': method['remaining'][0]})
-    blockers.append({'code': 'ranking_rules_required' if result['capability']['route'] == 'selection'
-                    else 'interpretation_review_required', 'message': result['research']['missing']})
+    # A scenario whose ranking is rule_based already produced cited tiers;
+    # reporting the rules as missing there would contradict fortune_rules.
+    if result['capability'].get('personal_ranking') != 'rule_based':
+        blockers.append({'code': 'ranking_rules_required' if result['capability']['route'] == 'selection'
+                        else 'interpretation_review_required', 'message': result['research']['missing']})
+    elif result.get('ranking', {}).get('unrankable'):
+        blockers.append({'code': 'day_granularity_required',
+                         'message': '部分候选窗口未细算到日柱，忌日条款无法套用。'})
     return blockers

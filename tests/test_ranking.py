@@ -98,11 +98,21 @@ def test_september_window_has_no_clause_ordering():
 
 
 def test_a_real_autumn_prohibition_day_is_excluded():
-    """辛酉 in autumn is the天转 day the clause names."""
-    result = rank_travel_days([_autumn('2026-10-03', '辛酉'), _autumn('2026-10-04', '壬戌')])
-    assert [e['date'] for e in result['excluded']] == ['2026-10-03']
-    assert result['excluded'][0]['excluded_by'][0]['passage_id'] == TIANDI_SOURCE
-    assert [t['date'] for t in result['tiers']] == ['2026-10-04']
+    """辛酉 in autumn is the 天转 day the clause names.
+
+    Dates are the real calendar ones: 2026-10-14 is 辛酉 and 2026-10-26 is 癸酉,
+    the only two prohibition days in that autumn.
+    """
+    result = rank_travel_days([
+        _autumn('2026-10-13', '庚申'),
+        _autumn('2026-10-14', '辛酉'),
+        _autumn('2026-10-26', '癸酉'),
+    ])
+    assert [e['date'] for e in result['excluded']] == ['2026-10-14', '2026-10-26']
+    kinds = [e['excluded_by'][0]['kind'] for e in result['excluded']]
+    assert kinds == ['天转', '地转']
+    assert all(e['excluded_by'][0]['passage_id'] == TIANDI_SOURCE for e in result['excluded'])
+    assert [t['date'] for t in result['tiers']] == ['2026-10-13']
 
 
 def test_every_tier_carries_a_resolvable_source():
@@ -125,6 +135,97 @@ def test_ranking_declares_the_precedence_version_it_used():
     travel = next(c for c in capabilities('travel'))
     assert travel['personal_ranking'] == 'rule_based'
     assert travel['precedence_version'] == PRECEDENCE_VERSION
+
+
+def _travel_request(candidates: list[dict], period: dict) -> dict:
+    return {
+        'current_timezone': 'Australia/Sydney', 'request_time': '2026-09-17T02:00:00Z',
+        'period': period,
+        'event': {'scenario': 'travel', 'timezone': 'Australia/Sydney',
+                  'longitude': 151.2, 'time_standard': 'true-solar'},
+        'participants': [{'id': 'me', 'confirmed': True, 'person': {
+            'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30,
+                      'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 120.64},
+            'time_certainty': 'exact'}}],
+        'duration_minutes': 120, 'candidates': candidates, 'granularity': 'hour',
+    }
+
+
+def test_ranking_reaches_the_reading_output():
+    """A rule_based scenario must actually rank; declaring it is not enough."""
+    from fortune_reading import read_request
+    result = read_request(_travel_request(
+        [{'id': 'oct13', 'start': '2026-10-13T09:00', 'end': '2026-10-13T13:00'},
+         {'id': 'oct14', 'start': '2026-10-14T09:00', 'end': '2026-10-14T13:00'},
+         {'id': 'oct15', 'start': '2026-10-15T09:00', 'end': '2026-10-15T13:00'}],
+        {'start': '2026-10-13', 'end': '2026-10-16'}))
+    ranking = result['ranking']
+    # 2026-10-14 is 辛酉 — the autumn 天转 day the clause names.
+    assert [e['candidate_id'] for e in ranking['excluded']] == ['oct14']
+    excluded = ranking['excluded'][0]['excluded_by'][0]
+    assert excluded['passage_id'] == TIANDI_SOURCE
+    assert '出行商贾' in excluded['quote']
+    judgments = {c['candidate_id']: c['judgment'] for c in result['candidate_comparison']}
+    assert judgments == {'oct13': 'tier_1', 'oct14': 'excluded_by_clause', 'oct15': 'tier_1'}
+    # 庚日忌午未; the 09:00-13:00 window covers 午.
+    covered = next(t for t in ranking['tiers'] if t['candidate_id'] == 'oct13')
+    assert covered['forbidden_hours_in_window'] == ['午']
+    uncovered = next(t for t in ranking['tiers'] if t['candidate_id'] == 'oct15')
+    assert uncovered['forbidden_hours_in_window'] == []
+
+
+def test_survivors_tie_instead_of_getting_an_invented_first_choice():
+    from fortune_reading import read_request
+    result = read_request(_travel_request(
+        [{'id': 'd21', 'start': '2026-09-21T08:00', 'end': '2026-09-21T12:00'},
+         {'id': 'd22', 'start': '2026-09-22T08:00', 'end': '2026-09-22T12:00'}],
+        {'start': '2026-09-21', 'end': '2026-09-24'}))
+    rec = result['recommendation']
+    assert rec['status'] == 'tied_no_clause_separates'
+    assert rec['first_choice'] is None
+    assert sorted(rec['tied']) == ['d21', 'd22']
+    assert rec['precedence_version'] == PRECEDENCE_VERSION
+
+
+def test_rule_based_scenario_drops_the_missing_rules_blocker():
+    from fortune_reading import read_request
+    result = read_request(_travel_request(
+        [{'id': 'd22', 'start': '2026-09-22T08:00', 'end': '2026-09-22T12:00'}],
+        {'start': '2026-09-21', 'end': '2026-09-24'}))
+    codes = [b['code'] for b in result['decision_blockers']]
+    assert 'ranking_rules_required' not in codes
+
+
+def test_climate_colors_name_every_stem_the_clause_takes():
+    """庚 born in 子 month: the clause takes 丁 and 甲, then 丙 conditionally.
+
+    An earlier answer reported only the fire colour and dropped 甲 (wood)
+    entirely, which narrowed a two-phase clause to one.
+    """
+    from fortune_ranking import climate_colors
+    result = climate_colors('庚', '子')
+    general = {row['wuxing']: row for row in result['general']}
+    assert set(general) == {'火', '木'}
+    assert general['火']['color'] == '红' and general['火']['from_stems'] == ['丁']
+    assert general['木']['color'] == '青/绿' and general['木']['from_stems'] == ['甲']
+    assert [r['wuxing'] for r in result['conditional']] == ['火']
+    assert 'qiongtong:c005:p0114' in result['sources']
+
+
+def test_climate_colors_carry_the_clauses_own_warning():
+    """The audit already warns against turning the table into advice."""
+    from fortune_ranking import climate_colors
+    result = climate_colors('庚', '子')
+    assert '不把表名直接变成喜火的现实建议' in result['clause_note']
+    assert '不证明方位、颜色能改变结果' in result['color_table']['caveat']
+    assert '没有任何出处' in result['broken_link']
+    assert result['facsimile_status'] == 'not_checked'
+
+
+def test_every_cited_climate_passage_resolves():
+    from fortune_ranking import climate_colors
+    for pid in climate_colors('庚', '子')['sources']:
+        assert get_passage(pid)['text']
 
 
 def test_result_states_what_it_does_not_cover():
