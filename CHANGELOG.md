@@ -4,6 +4,26 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
+## [4.2.0]
+
+### 条款冲突裁决与有出处的候选排名
+
+- 新增 `references/26-precedence.md`：同一体系内两条条款相反时的裁决顺序（类型优先 → 同体系书序 → 自洽者胜），带 `precedence-v1` 版本号。跨体系、跨方法仍列分歧不排序；输家条款必须在层 2 保留一行。已知未决分歧列表随实测增补。
+- 新增 `scripts/fortune_ranking.py`：出行场景的候选排名。层级为布尔条件，不含权重；每个 tier 必须带可回查的 `passage_id`。天地转杀按季节排除忌日，截路空亡给出忌时并保留两书分歧。冲生肖等无条款支撑的民俗项标 `passage_id: null`，只作背景，不进 tier。
+- `fortune_rules.py` 的 `SCENARIOS` 增加第四列 ranking 状态；`travel` 转为 `rule_based` 并声明 `precedence_version` 与 `ranking_reference`，其余十五个场景保持 `not_implemented`。门禁改为「已实现排名必须声明裁决表版本」，同时继续锁死协纪辨方书卷33/34 不得成为面试排名依据。
+
+### 直接回答
+
+- 新增 `references/27-direct-answer.md`：摘要层的首行规则（按问句类型给结论／动作／是否）、三段模板、甲类禁用词与乙类限位词、限制句判据（换一题还成立即套话）。本题独有的限制、输家条款、前提不成立的说明明确列为不可删。
+- `22-output-contract.md` 第 4 节与第 47 行、`24-personalized-forecast.md` 排名政策行、`25-classical-research.md` 取舍句、`SKILL.md` 工作流第 1 步分别接入新篇。
+
+### 验证
+
+- 新增 `tests/test_ranking.py` 11 项：引文可回查且含所引字句、天地转杀只命中当季两日、截路空亡为时辰规则、戊癸分歧必须携带、冲生肖不得带 passage_id、未映射场景拒绝借用条款、排名须声明裁决表版本。
+- 回归用例 `test_september_window_has_no_clause_ordering` 固化一次实测纠错：2026-09-11 至 09-30 的出行窗口在条款下全部并列、零排除；此前按黄历宜忌排出的首选属无授权排名。
+
+仅新增与文档接线，未改动既有算法、知识库与输出 schema。
+
 ## [4.1.0] - 2026-09-12
 
 - 新增13部固定转录材料与个人时段流程：当前取时、出生与目标分别计算、独立档案和白话说明。

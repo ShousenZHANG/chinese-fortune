@@ -11,23 +11,28 @@ from classical_search import get_passage
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
 SCENARIOS = {
-    'outlook': ('阶段运势', 'period', '八字岁运与目标窗口；日时吉凶条款待核'),
-    'interview': ('面试', 'selection', '现代面试与古法事项的映射、完整八字及日时优先关系'),
-    'work_conversation': ('工作沟通、谈薪、转岗', 'selection', '本事项与个人八字结合的日时条款'),
-    'exam': ('学习考试', 'selection', '赴举与现代考试的适用差别、本人条件及完整取舍规则'),
-    'relationship_conversation': ('约会、感情沟通', 'selection', '该事项适用的本人命盘及日时规则'),
-    'travel': ('出行', 'selection', '出行择时与本人八字的衔接、班次及两地时区'),
-    'wedding': ('订婚、领证、婚礼', 'selection', '具体仪式、双方同等考虑及各条禁宜的完整优先关系'),
-    'moving': ('搬家、入住', 'selection', '区别修造与入住、宅长、朝向等条件及完整规则'),
-    'business': ('开业、产品与作品发布', 'selection', '负责人角色、现代事项映射及个人条件的完整规则'),
-    'billing': ('报价、催款', 'selection', '日常事项的个人择时依据，不能借用买卖投资判断'),
-    'multiple_events': ('连续行程', 'itinerary', '现实联合可行性已实现；命理排名仍须每项事件各自的完整依据'),
-    'compatibility': ('关系匹配', 'specialist', '双方资料；合婚独立规则，不借用择时完成状态'),
-    'naming': ('起名改名', 'specialist', '字义、读音和使用限制；独立字词证据'),
-    'location': ('城市与场所比较', 'specialist', '实际候选及本人、方位条件的独立依据'),
-    'fengshui': ('环境与风水', 'specialist', '实际布局、朝向、测量口径及本法依据'),
-    'review': ('复盘纠错', 'specialist', '原始判断、当时输入与版本、已发生事实；不倒改为命中'),
+    # (label, route, gap, ranking)
+    # ranking: 'not_implemented' | 'rule_based' —— rule_based 表示该场景的候选排名
+    # 由 references/26-precedence.md 的布尔层级产出，每层带 passage_id，不含自造权重。
+    'outlook': ('阶段运势', 'period', '八字岁运与目标窗口；日时吉凶条款待核', 'not_implemented'),
+    'interview': ('面试', 'selection', '现代面试与古法事项的映射、完整八字及日时优先关系', 'not_implemented'),
+    'work_conversation': ('工作沟通、谈薪、转岗', 'selection', '本事项与个人八字结合的日时条款', 'not_implemented'),
+    'exam': ('学习考试', 'selection', '赴举与现代考试的适用差别、本人条件及完整取舍规则', 'not_implemented'),
+    'relationship_conversation': ('约会、感情沟通', 'selection', '该事项适用的本人命盘及日时规则', 'not_implemented'),
+    'travel': ('出行', 'selection', '跨时区班次与多段行程仍待实现；单一时区的出行忌日与忌时已按裁决表排名', 'rule_based'),
+    'wedding': ('订婚、领证、婚礼', 'selection', '具体仪式、双方同等考虑及各条禁宜的完整优先关系', 'not_implemented'),
+    'moving': ('搬家、入住', 'selection', '区别修造与入住、宅长、朝向等条件及完整规则', 'not_implemented'),
+    'business': ('开业、产品与作品发布', 'selection', '负责人角色、现代事项映射及个人条件的完整规则', 'not_implemented'),
+    'billing': ('报价、催款', 'selection', '日常事项的个人择时依据，不能借用买卖投资判断', 'not_implemented'),
+    'multiple_events': ('连续行程', 'itinerary', '现实联合可行性已实现；命理排名仍须每项事件各自的完整依据', 'not_implemented'),
+    'compatibility': ('关系匹配', 'specialist', '双方资料；合婚独立规则，不借用择时完成状态', 'not_implemented'),
+    'naming': ('起名改名', 'specialist', '字义、读音和使用限制；独立字词证据', 'not_implemented'),
+    'location': ('城市与场所比较', 'specialist', '实际候选及本人、方位条件的独立依据', 'not_implemented'),
+    'fengshui': ('环境与风水', 'specialist', '实际布局、朝向、测量口径及本法依据', 'not_implemented'),
+    'review': ('复盘纠错', 'specialist', '原始判断、当时输入与版本、已发生事实；不倒改为命中', 'not_implemented'),
 }
+PRECEDENCE_VERSION = 'precedence-v1'
+
 SOURCE_FILE = Path(__file__).resolve().parents[1] / 'references' / 'forecast-source-audit.json'
 EXAMPLE_HASHES = {
     'ziping:c025:p0006': 'c66eb4f99356afdb9874419f5f184192cc55c1de61b3980de93e7492f19b9025',
@@ -38,14 +43,27 @@ EXAMPLE_HASHES = {
 def capabilities(scenario: str | None = None) -> list[dict]:
     if scenario is not None and scenario not in SCENARIOS:
         raise ValueError('未知 scenario；用 fortune_rules.py --capabilities 查看')
-    return [{'scenario': key, 'label': label, 'route': route,
-             'status': 'partial' if route != 'specialist' else 'use_specialist_workflow',
-             'available': ['confirmed_birth_chart', 'target_calendar', 'personal_relations', 'two_classical_luck_examples']
-                          + (['availability_filter'] if route == 'selection' else [])
-                          + (['joint_feasibility', 'explicit_travel_buffers', 'shared_natal_catalog'] if route == 'itinerary' else [])
-                          if route != 'specialist' else [],
-             'personal_ranking': 'not_implemented', 'missing': gap}
-            for key, (label, route, gap) in SCENARIOS.items() if scenario is None or key == scenario]
+    result = []
+    for key, (label, route, gap, ranking) in SCENARIOS.items():
+        if scenario is not None and key != scenario:
+            continue
+        entry = {
+            'scenario': key, 'label': label, 'route': route,
+            'status': 'partial' if route != 'specialist' else 'use_specialist_workflow',
+            'available': ['confirmed_birth_chart', 'target_calendar', 'personal_relations',
+                          'two_classical_luck_examples']
+                         + (['availability_filter'] if route == 'selection' else [])
+                         + (['joint_feasibility', 'explicit_travel_buffers', 'shared_natal_catalog']
+                            if route == 'itinerary' else [])
+                         if route != 'specialist' else [],
+            'personal_ranking': ranking, 'missing': gap,
+        }
+        if ranking == 'rule_based':
+            # 排名来自冻结的布尔层级，不是权重；宿主据此判断能否给首选。
+            entry['precedence_version'] = PRECEDENCE_VERSION
+            entry['ranking_reference'] = 'references/26-precedence.md'
+        result.append(entry)
+    return result
 
 
 def source_audit() -> list[dict]:

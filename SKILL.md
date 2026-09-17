@@ -11,7 +11,7 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 
 ## 工作流程
 
-1. 先读 [输出契约](references/22-output-contract.md)。生辰或时间问题再读 [输入采集](references/00-intake.md)，只问影响本题的缺项。
+1. 先读 [输出契约](references/22-output-contract.md) 与 [直接回答](references/27-direct-answer.md)；条款相反时按 [裁决顺序](references/26-precedence.md)。生辰或时间问题再读 [输入采集](references/00-intake.md)，只问影响本题的缺项。
 2. 每次算之前确定用户当前所在地的 IANA 时区。未来时段入口自行取时；其他入口先运行 `scripts/request_time.py --current-timezone <时区>`。已有 utc 时，同请求复用为 `--request-time`（JSON 入口为 `request_time`），不重复取时。古籍查询与证据审核不需要取时。现居地未知时先问，期间仍可完成不依赖“现在”的原局核查。
 3. 出生钟表时间用出生地时区；“现在”用现居地；历史或未来问题用明确目标时间。不得给历史日期拼上当前时分。重新要求“现在再算”时重新取时，同请求跨午夜仍沿用首次时刻。
 4. 按路由排盘，检查 exit code 和 `ok`。失败就处理真实错误，不凭记忆补造成功结果。

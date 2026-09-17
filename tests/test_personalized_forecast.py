@@ -285,7 +285,17 @@ def test_scope_audit_quotes_valid_but_not_interview_rules():
     assert '修造以宅長一人之命為主' in audit[0]['text']
     assert '日支衝時支' in audit[1]['text']
     assert '五不遇' in audit[1]['text']
-    assert all(c['personal_ranking'] == 'not_implemented' for c in capabilities())
+    # 卷33/34 只作范围审计，不得成为面试排名依据 —— interview 必须仍是未实现。
+    by_key = {c['scenario']: c for c in capabilities()}
+    assert by_key['interview']['personal_ranking'] == 'not_implemented'
+    # 已实现排名的场景必须声明裁决表版本与出处，否则就是无授权排名。
+    for cap in capabilities():
+        if cap['personal_ranking'] == 'rule_based':
+            assert cap['precedence_version'], f"{cap['scenario']} 排名未声明裁决表版本"
+            assert cap['ranking_reference'] == 'references/26-precedence.md'
+        else:
+            assert cap['personal_ranking'] == 'not_implemented'
+            assert 'precedence_version' not in cap
     assert len(evidence(full_audit=True)['scope_audit'][0]['text']) > 0
 
 
