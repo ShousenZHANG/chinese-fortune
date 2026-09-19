@@ -13,7 +13,7 @@ from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
 from classical_guidance import research_sources
 from fortune_calendar import period_facts
-from fortune_ranking import rank_candidates
+from fortune_ranking import JIELU_METHOD_SOURCE, TIANDI_SOURCE, rank_candidates
 from fortune_rules import capabilities, evidence, luck_observations, research_request
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
@@ -179,16 +179,29 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                 elif row['candidate_id'] in tiers:
                     row['judgment'] = f"tier_{tiers[row['candidate_id']]}"
             # Ties are the honest outcome when no clause separates the survivors.
-            survivors = [t['candidate_id'] for t in ranking['tiers']]
-            if survivors and not ranking['ties']:
+            # A busy block splits one candidate into several windows, so count
+            # candidates, not rows.
+            # A candidate with one clear window and one excluded window is not a
+            # survivor: recommending it would send the reader into the very
+            # window a clause ruled out.
+            struck = {e['candidate_id'] for e in ranking['excluded']}
+            survivors = [c for c in dict.fromkeys(t['candidate_id'] for t in ranking['tiers'])
+                         if c not in struck]
+            version = ranking['precedence_version']
+            if len(survivors) == 1:
                 result['recommendation'] = {'status': 'ranked', 'first_choice': survivors[0],
-                                            'backup': None,
-                                            'precedence_version': ranking['precedence_version']}
+                                            'backup': None, 'precedence_version': version}
             elif survivors:
                 result['recommendation'] = {'status': 'tied_no_clause_separates',
                                             'first_choice': None, 'backup': None,
-                                            'tied': survivors,
-                                            'precedence_version': ranking['precedence_version']}
+                                            'tied': survivors, 'precedence_version': version}
+            elif ranking['excluded']:
+                # The clause answered outright. Leaving the initial
+                # evidence_needed here asked for evidence already in hand.
+                result['recommendation'] = {
+                    'status': 'excluded_by_clause', 'first_choice': None, 'backup': None,
+                    'excluded': list(dict.fromkeys(e['candidate_id'] for e in ranking['excluded'])),
+                    'precedence_version': version}
     if include_research:
         result['research']['source_bundle'] = research_sources(scenario, limit=1)
     result['decision_blockers'] = decision_blockers(result)
@@ -229,6 +242,137 @@ def _candidate_description(candidate: dict, interval: dict) -> str:
     return f"- {candidate['candidate_id']}：{first} 至 {later(latest)} 之间开始，持续 {candidate['duration_minutes']} 分钟；最迟 {later(end)} 结束。"
 
 
+def _hour_caveat(rows: list[dict], *, name_candidates: bool = False) -> str:
+    """The one limitation specific to this window: covered 忌时 and unsettled days.
+
+    ``rows`` arrives in time order and stays that way — sorting the branch names
+    would put 卯 before 寅. Wording avoids 两书相反 and the other 乙类 terms:
+    references/27-direct-answer.md keeps those out of the summary paragraph, and
+    this string is the summary's limitation clause.
+    """
+    covered: list[str] = []
+    unsettled: list[str] = []
+    for row in rows:
+        hours = [f"{hit['day_ganzhi']}日的{hit['hour_branch']}时"
+                 for hit in row.get('forbidden_hours_in_window', [])]
+        if hours:
+            who = f"{row['candidate_id']} 的" if name_candidates else ''
+            phrase = f"{who}窗口压到 " + '、'.join(dict.fromkeys(hours))
+            if phrase not in covered:
+                covered.append(phrase)
+        for ganzhi in row.get('unresolved_hour_rules', []):
+            if ganzhi not in unsettled:
+                unsettled.append(ganzhi)
+    parts = []
+    if covered:
+        parts.append('；'.join(covered) + '（截路空亡忌时），条款只说忌，没说这会不会改变整日的判断')
+    if unsettled:
+        parts.append('、'.join(unsettled) + '日这一条，两本古籍给的忌时不是同一组，本次不据以判断，'
+                                            '两说与出处列在下面')
+    return ('；'.join(parts) + '。') if parts else ''
+
+
+def _ranking_verdicts(result: dict) -> dict[str, str]:
+    """Plain-language leads for the statuses the clause ranking produces.
+
+    Each one has to name an action or a verdict, the clause behind it, and the
+    limitation belonging to this window — see references/27-direct-answer.md.
+    """
+    ranking = result.get('ranking')
+    if not ranking:
+        return {}
+    rec = result['recommendation']
+    tiers = ranking['tiers']
+    excluded = ranking['excluded']
+    verdicts = {}
+    if excluded:
+        named = '、'.join(dict.fromkeys(row['candidate_id'] for row in excluded))
+        kinds = '、'.join(dict.fromkeys(hit['kind'] for row in excluded
+                                        for hit in row['excluded_by']))
+        days = '、'.join(dict.fromkeys(hit['day_ganzhi'] for row in excluded
+                                       for hit in row['excluded_by']))
+        # A candidate can hold one clear window and one struck window; saying
+        # nothing about the clear part would hide why it is still not the answer.
+        partial = [row['candidate_id'] for row in tiers
+                   if row['candidate_id'] in {e['candidate_id'] for e in excluded}]
+        tail = ('这个窗口里没有别的时间剩下，要走得另挑日子。' if not partial else
+                f'{"、".join(dict.fromkeys(partial))} 另有一段不在忌日上，但本工具按整个候选判，'
+                '不替你把它拆成两段——要用那一段就单独作为一个候选再问一次。')
+        verdicts['excluded_by_clause'] = (
+            f'这些时间不要用：{named} 覆盖到 {days} 日，命中出行忌日条款（{kinds}）。{tail}')
+    if rec['status'] == 'ranked':
+        chosen = rec['first_choice']
+        rows = [row for row in tiers if row['candidate_id'] == chosen]
+        days = '、'.join(dict.fromkeys(day['day_ganzhi'] for row in rows
+                                       for day in row['days']))
+        others = [row['candidate_id'] for row in excluded if row['candidate_id'] != chosen]
+        # Candidates the calendar dropped never reach the ranking, so "you gave
+        # me only one" was false whenever the others failed on availability.
+        unavailable = sum(1 for row in result.get('candidate_comparison', [])
+                          if not row.get('available'))
+        if others:
+            why = (f'{"、".join(dict.fromkeys(others))} 覆盖的日子命中出行忌日条款，'
+                   f'{chosen} 覆盖的 {days} 日没有')
+            fallback = '剩下的候选只有它一个，所以这是唯一没被排除的，不是最好的。'
+        else:
+            why = f'它覆盖的 {days} 日都不是出行忌日（天地转杀）'
+            fallback = (f'另外 {unavailable} 个窗口是排不下这件事，属档期问题不是条款问题，'
+                        '所以这是唯一能安排的，不是比别的吉。' if unavailable else
+                        '你只给了这一个候选，所以这是「可以走」，不是「比别的好」。')
+        verdicts['ranked'] = f'就定 {chosen}：{why}。{_hour_caveat(rows) or fallback}'
+    if rec['status'] == 'tied_no_clause_separates':
+        named = '、'.join(rec['tied'])
+        rows = [row for row in tiers if row['candidate_id'] in set(rec['tied'])]
+        verdicts['tied_no_clause_separates'] = (
+            f'{named} 挑哪个都行：忌日条款一个都没命中，古籍里没有第二条能在它们之间分高下，'
+            '强排一个就是我自己编的。' + _hour_caveat(rows, name_candidates=True))
+    return verdicts
+
+
+def _clause_evidence(result: dict) -> list[str]:
+    """Layer 2: the passage behind every verdict, and both sides of every split.
+
+    references/27-direct-answer.md keeps the losing clause 「另说：《X》作 Y」 as
+    a line that may not be dropped, and its checklist asks 「排名有没有
+    passage_id」. The summary above names clauses by nickname only, so without
+    this block a reader is told a rule decided their date and given no way to
+    re-read it.
+    """
+    ranking = result.get('ranking')
+    if not ranking:
+        return []
+    lines: list[str] = []
+    for row in ranking['excluded']:
+        for hit in row['excluded_by']:
+            lines.append(f"- {row['candidate_id']} 排除：{hit['day_ganzhi']}日为{hit['kind']}日，"
+                         f"《渊海子平》「{hit['quote']}」（{hit['passage_id']}）")
+    for row in ranking['tiers']:
+        for hit in row.get('forbidden_hours_in_window', []):
+            lines.append(f"- {row['candidate_id']} 忌时：{hit['derivation']}"
+                         f"（{hit['passage_id']}）；忌时不改变该日是否可行")
+    seen: set[str] = set()
+    for row in ranking['tiers'] + ranking['excluded']:
+        for day in row.get('days', []):
+            rule = day['hour_rule']
+            if rule['resolved'] or day['day_ganzhi'] in seen:
+                continue
+            seen.add(day['day_ganzhi'])
+            both = '；'.join(f"《{'渊海子平' if r['passage_id'].startswith('yuanhai') else '三命通会'}》"
+                             f"作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
+            lines.append(f"- {day['day_ganzhi']}日忌时两说并列，本次都不取：{both}。"
+                         f"判据 {JIELU_METHOD_SOURCE} 两组都满足，"
+                         f"裁决顺序见 references/26-precedence.md「判不出来的，回到列分歧」")
+    if not (ranking['tiers'] or ranking['excluded']):
+        return []
+    # Always present, even when nothing was excluded: a verdict of 「就定 X」 is
+    # still a ranking, and the checklist forbids ranking without a citation.
+    lines.insert(0, f"条款依据（裁决表 {ranking['precedence_version']}）：")
+    lines.append(f'- 出行忌日条款：《渊海子平》论天地转杀（{TIANDI_SOURCE}）；'
+                 f'忌时条款：截路空亡（{JIELU_METHOD_SOURCE}）。'
+                 '黄历宜忌与干支相生不参与判断。')
+    return lines
+
+
 def render_answer(result: dict) -> str:
     if result.get('capability', {}).get('route') == 'itinerary':
         from fortune_itinerary import render_itinerary
@@ -250,6 +394,11 @@ def render_answer(result: dict) -> str:
     }
     if result['capability']['route'] == 'period':
         reasons['evidence_needed'] = '整体顺不顺，还需要核清整张盘和对应的古籍条件；下面先说明已经能核实的部分。'
+    # A clause ranking produces its own statuses; without these the lookup below
+    # raised KeyError, which main() printed as 「目前还算不了这一部分」.
+    reasons.update(_ranking_verdicts(result))
+    if state not in reasons:
+        raise AssertionError(f'recommendation.status {state!r} 没有对应的白话说明')
     window = result['window']
     lines = [lead + reasons[state], '', _window_description(window)]
     comparisons = result.get('candidate_comparison', [])
@@ -265,6 +414,10 @@ def render_answer(result: dict) -> str:
     if state == 'no_feasible_slot':
         lines.extend(['', '先调整可选窗口或已占用的行程，再比较择时依据。'])
         return '\n'.join(lines)
+    evidence_lines = _clause_evidence(result)
+    if evidence_lines:
+        lines.append('')
+        lines.extend(evidence_lines)
     method = result.get('event_method')
     if method and method['charts']:
         lines.extend(['', '这些候选时间也已按《元灵经》的已核方法计算地盘、值符和值使，'

@@ -19,10 +19,39 @@ def test_no_generated_python_cache_is_tracked():
     assert not [p for p in result.stdout.split("\0") if p.endswith(".pyc") or "__pycache__" in p]
 
 
-def _script_assertions():
+def _assertions(kind: str):
     spec = json.loads((ROOT / "evals/evals.json").read_text(encoding="utf-8"))
     return [(f"eval-{case['id']}-{index}", assertion) for case in spec["evals"]
-            for index, assertion in enumerate(case["assertions"]) if assertion["kind"] == "script"]
+            for index, assertion in enumerate(case["assertions"]) if assertion["kind"] == kind]
+
+
+def _script_assertions():
+    return _assertions("script")
+
+
+def test_every_assertion_kind_in_the_goldens_has_a_runner():
+    """A kind nobody executes is a golden that silently stopped guarding.
+
+    ``file_contains`` was implemented in the deleted ``evals/run_checks.py``;
+    the migration to pytest carried only the ``script`` branch and filtered the
+    rest out instead of failing on it, so eight assertions went three weeks
+    without running and seven of their needles rotted unnoticed. Filtering is
+    what hid it, so this test refuses unknown kinds outright.
+    """
+    spec = json.loads((ROOT / "evals/evals.json").read_text(encoding="utf-8"))
+    kinds = {assertion["kind"] for case in spec["evals"] for assertion in case["assertions"]}
+    assert kinds <= {"script", "file_contains"}, f"新增了没有 runner 的断言类型: {kinds}"
+
+
+@pytest.mark.parametrize("case_id,assertion", _assertions("file_contains"),
+                         ids=lambda value: value if isinstance(value, str) else None)
+def test_reference_goldens_still_contain_their_required_text(case_id, assertion):
+    """Each golden names text a reference must keep; a rename must fail loudly."""
+    target = ROOT / assertion["file"]
+    assert target.exists(), (case_id, assertion["file"])
+    text = target.read_text(encoding="utf-8")
+    missing = [needle for needle in assertion["needles"] if needle not in text]
+    assert not missing, (case_id, assertion["file"], missing)
 
 
 def _resolve(data, dotted):

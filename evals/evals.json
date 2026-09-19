@@ -203,10 +203,11 @@
           "kind": "file_contains",
           "file": "references/20-disclaimer.md",
           "needles": [
-            "预测死亡",
-            "婉拒",
-            "红线"
-          ]
+            "死亡",
+            "不能推断",
+            "不是要求把所有请求拒绝"
+          ],
+          "needle_note": "v4 改写后原词已不在文中；针头改钉当前承诺的行为而非旧措辞。"
         },
         {
           "kind": "file_contains",
@@ -262,9 +263,11 @@
           "kind": "file_contains",
           "file": "references/08-fengshui.md",
           "needles": [
-            "床头",
-            "八宅"
-          ]
+            "床或桌",
+            "八宅",
+            "建议只建立在实际空间资料上"
+          ],
+          "needle_note": "v4 改写后原词已不在文中；针头改钉当前承诺的行为而非旧措辞。"
         }
       ]
     },
@@ -359,11 +362,13 @@
           "kind": "file_contains",
           "file": "references/06-qimen.md",
           "needles": [
-            "流派注",
             "符头",
-            "拆补置闰",
-            "不妄断"
-          ]
+            "--ju-method futou",
+            "且不置闰",
+            "不能把任何甲己日都当上元",
+            "仅用于结果对比，不是默认古法"
+          ],
+          "needle_note": "v4 改写后原词已不在文中；针头改钉当前承诺的行为而非旧措辞。"
         }
       ]
     },

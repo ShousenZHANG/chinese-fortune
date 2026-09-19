@@ -27,23 +27,29 @@ TIANDI_ZHUAN = {
 }
 TIANDI_SOURCE = 'yuanhai:c052:p0004'
 
-# 截路空亡：以日干取时，非以年。两书前四组一致，戊癸组分歧。
-# 渊海子平 c048:p0003 作「戊癸子丑」；三命通会 c003:p0035 作「戊癸見戌亥」。
-# 26-precedence.md 第三层「自洽者胜」判归渊海：两书共用判据是「二时上俱遇壬癸为水」，
-# 戊癸日五鼠遁起壬子 —— 子时壬子、丑时癸丑，只有子丑符合该判据。
+# 截路空亡：以日干取时，非以年。判据在 yuanhai:c048:p0004 —— 日干起五鼠遁，
+# 十二时中「见壬癸为水」的那两个时辰即是。该段只举甲己见申酉一例，后接「余皆仿此」，
+# 所以每条都随附本干的五鼠遁推演，读者可自行复算，不必接受一张无从核对的表。
+JIELU_FIRST_HOUR_STEM = {
+    '甲': '甲', '己': '甲', '乙': '丙', '庚': '丙', '丙': '戊',
+    '辛': '戊', '丁': '庚', '壬': '庚', '戊': '壬', '癸': '壬',
+}
 JIELU_HOURS = {
     '甲': ('申', '酉'), '己': ('申', '酉'),
     '乙': ('午', '未'), '庚': ('午', '未'),
     '丙': ('辰', '巳'), '辛': ('辰', '巳'),
     '丁': ('寅', '卯'), '壬': ('寅', '卯'),
-    '戊': ('子', '丑'), '癸': ('子', '丑'),
 }
-JIELU_SOURCE = 'yuanhai:c048:p0004'
-JIELU_DISSENT = {
-    'passage_id': 'sanming:c003:p0035',
-    'text': '戊癸見戌亥',
-    'note': '《三命通会》戊癸作戌亥；本表按 26-precedence.md 第三层「自洽者胜」取《渊海子平》子丑。',
-}
+JIELU_METHOD_SOURCE = 'yuanhai:c048:p0004'
+
+# 戊、癸两日的五鼠遁起壬子，壬癸时因此有 壬子癸丑 与 壬戌癸亥 两组——十干里仅此一例。
+# 两书共用的判据「二时上俱遇壬癸为水」两组都满足，分不出高下，故按
+# references/26-precedence.md「判不出来的，回到列分歧」：两说并列，都不进 tier 计算。
+JIELU_UNRESOLVED_STEMS = ('戊', '癸')
+JIELU_READINGS = (
+    {'passage_id': 'yuanhai:c048:p0003', 'text': '戊癸子丑君须记', 'hours': ['子', '丑']},
+    {'passage_id': 'sanming:c003:p0035', 'text': '戊癸見戌亥', 'hours': ['戌', '亥']},
+)
 
 # 事项 -> 条款所列的古法名目。天地转杀原文写「上官受职、出行商贾、造作、嫁娶」；
 # 截路空亡原文写「出入求財交易上官嫁娶百事皆忌」。现代事项映射到古法名目须显式，
@@ -86,15 +92,42 @@ def tiandi_zhuan(day_stem: str, day_branch: str, season: str) -> dict | None:
     return None
 
 
+def _wu_zi_dun(day_stem: str) -> dict[str, str]:
+    """五鼠遁: the stem each of the twelve hour branches takes on this day."""
+    stems = '甲乙丙丁戊己庚辛壬癸'
+    branches = '子丑寅卯辰巳午未申酉戌亥'
+    start = stems.index(JIELU_FIRST_HOUR_STEM[day_stem])
+    return {branches[i]: stems[(start + i) % 10] for i in range(12)}
+
+
 def jielu_kongwang(day_stem: str) -> dict:
-    """Hour-level prohibition derived from the day stem."""
+    """Hour-level prohibition derived from the day stem.
+
+    Returns ``resolved: False`` with both readings for 戊 and 癸, where the
+    clause's own criterion admits two answers; those days contribute no
+    forbidden hour rather than borrowing one book's reading.
+    """
+    entry: dict = {'rule': 'jielu_kongwang', 'day_stem': day_stem,
+                   'quote': '此空亡非但命中见之不美，以至百事，求财主官皆不利也'}
+    if day_stem in JIELU_UNRESOLVED_STEMS:
+        entry.update({
+            'resolved': False, 'forbidden_hours': [],
+            'readings': [dict(reading) for reading in JIELU_READINGS],
+            'reason': f'{day_stem}日五鼠遁起壬子，壬癸时得 壬子癸丑 与 壬戌癸亥 两组，'
+                      '「二时上俱遇壬癸为水」两组都满足，判据分不出高下',
+            'note': '按 references/26-precedence.md「判不出来的，回到列分歧」；'
+                    '两说并列，本日不产出忌时，也不进 tier 计算。',
+        })
+        return entry
     hours = JIELU_HOURS[day_stem]
-    entry: dict = {'rule': 'jielu_kongwang', 'forbidden_hours': list(hours),
-                   'passage_id': JIELU_SOURCE,
-                   'quote': '此空亡非但命中见之不美，以至百事，求财主官皆不利也',
-                   'reason': f'{day_stem}日忌 {hours[0]}{hours[1]} 两时辰'}
-    if day_stem in ('戊', '癸'):
-        entry['dissent'] = JIELU_DISSENT
+    dun = _wu_zi_dun(day_stem)
+    entry.update({
+        'resolved': True, 'forbidden_hours': list(hours),
+        'passage_id': JIELU_METHOD_SOURCE,
+        'derivation': f'{day_stem}日遁 {dun[hours[0]]}{hours[0]}、{dun[hours[1]]}{hours[1]}，'
+                      '二时上俱遇壬癸为水',
+        'reason': f'{day_stem}日忌 {hours[0]}{hours[1]} 两时辰',
+    })
     return entry
 
 
@@ -190,28 +223,59 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                                    'start': window['start'],
                                    'reason': '该窗口未细算到日柱，无法套用忌日条款'})
                 continue
-            day = dated[0]['day']
-            season = season_of(dated[0]['month'][1])
             entry = {'candidate_id': candidate['candidate_id'], 'start': window['start'],
-                     'end': window['end'], 'day_ganzhi': day}
-            blocked = tiandi_zhuan(day[0], day[1], season) if season else None
-            forbidden = jielu_kongwang(day[0])
-            # The forbidden hours are branch names; flag only the ones this
-            # window actually covers, so a clear window is not penalised for a
-            # prohibited hour it never touches.
-            covered = {p['hour'][1] for p in pillars if 'hour' in p}
-            entry['forbidden_hours'] = forbidden
-            entry['forbidden_hours_in_window'] = sorted(covered & set(forbidden['forbidden_hours']))
-            folk = zodiac_clash(day[1], natal_year_branch)
-            entry['folk_context'] = [f for f in (folk,) if f]
+                     'end': window['end'], 'day_ganzhi': dated[0]['day']}
+            # Judge every day the window touches, not just the one it starts on.
+            # An overnight departure clears its first day and can still spend
+            # most of its length on a prohibition day.
+            # Keyed on (day, month), not day alone: a solar term can turn inside
+            # a day, so one day pillar can sit in two months and therefore two
+            # seasons. Keying on the day and taking the first month made the
+            # verdict depend on where the window happened to start.
+            days, blocked, unresolved, folk = [], [], [], []
+            for ganzhi, month in dict.fromkeys((p['day'], p['month']) for p in dated):
+                season = season_of(month[1])
+                hit = tiandi_zhuan(ganzhi[0], ganzhi[1], season) if season else None
+                rule = jielu_kongwang(ganzhi[0])
+                days.append({'day_ganzhi': ganzhi, 'month_ganzhi': month, 'season': season,
+                             'resolved': rule['resolved'], 'hour_rule': rule})
+                if hit:
+                    blocked.append({**hit, 'day_ganzhi': ganzhi})
+                if not rule['resolved'] and ganzhi not in unresolved:
+                    unresolved.append(ganzhi)
+                clash = zodiac_clash(ganzhi[1], natal_year_branch)
+                if clash and clash not in folk:
+                    folk.append(clash)
+            entry['days'] = days
+            # Each covered hour is tested against the stem of the day it falls
+            # in; a window is not penalised for a prohibited hour it never
+            # touches, nor cleared by the wrong day's table.
+            # ``pillars`` is already in time order and dict preserves insertion
+            # order, so the hits come out chronological. Sorting the keys would
+            # order the branches by code point (卯 before 寅).
+            hits: dict[tuple[str, str], dict] = {}
+            for pillar in pillars:
+                if 'hour' not in pillar or 'day' not in pillar:
+                    continue
+                rule = jielu_kongwang(pillar['day'][0])
+                if pillar['hour'][1] in rule['forbidden_hours']:
+                    hits[(pillar['day'], pillar['hour'][1])] = {
+                        'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
+                        'passage_id': rule['passage_id'], 'derivation': rule['derivation']}
+            entry['forbidden_hours_in_window'] = list(hits.values())
+            entry['unresolved_hour_rules'] = unresolved
+            entry['folk_context'] = folk
             if blocked:
-                entry['excluded_by'] = [blocked]
+                entry['excluded_by'] = blocked
                 excluded.append(entry)
             else:
                 entry['tier'] = 1
-                entry['sources'] = [TIANDI_SOURCE, JIELU_SOURCE]
+                # Only 天地转杀 gates the tier. 截路空亡 is an hour note that never
+                # changes the tier, so it is cited beside the note it supports
+                # rather than dressed up as a tier basis.
+                entry['sources'] = [TIANDI_SOURCE]
+                entry['context_sources'] = [JIELU_METHOD_SOURCE]
                 ranked.append(entry)
-    clear = [r for r in ranked if not r['forbidden_hours_in_window']]
     return {
         'scenario': scenario,
         'mapped_terms': list(SCENARIO_TERMS[scenario]),
@@ -221,11 +285,13 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
         'excluded': excluded,
         'unrankable': unrankable,
         'tier_count': 1 if ranked else 0,
-        'ties': len(ranked) > 1,
-        'hour_clear': [r['candidate_id'] for r in clear],
+        # One candidate split by a busy block yields two windows, not two
+        # candidates; counting rows made a lone candidate tie with itself.
+        'ties': len({r['candidate_id'] for r in ranked}) > 1,
         'scope': ('忌型条款只排除，不在未被排除的候选之间分高下；同 tier 内并列。'
-                  'forbidden_hours_in_window 指该窗口实际覆盖到的忌时，仅作提示，'
-                  '不改变 tier。黄历宜忌与干支相生不参与。'),
+                  'forbidden_hours_in_window 指该窗口实际覆盖到的忌时，按各时辰所在日的'
+                  '日干取表，仅作层 2 提示，不改变 tier，也不据以在并列候选之间挑选。'
+                  '黄历宜忌与干支相生不参与。'),
         'not_covered': ['跨时区班次', '多段行程的联合择时', '日内时辰的优劣排序（仅给忌时）'],
     }
 
@@ -257,7 +323,8 @@ def rank_travel_days(days: list[dict], *, natal_year_branch: str | None = None,
             # Tier 1: no dated prohibition hits. There is no clause ordering
             # clear days against each other, so every clear day shares tier 1.
             entry['tier'] = 1
-            entry['sources'] = [TIANDI_SOURCE, JIELU_SOURCE]
+            entry['sources'] = [TIANDI_SOURCE]
+            entry['context_sources'] = [JIELU_METHOD_SOURCE]
             ranked.append(entry)
     return {
         'scenario': scenario,
