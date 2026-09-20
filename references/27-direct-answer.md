@@ -109,7 +109,9 @@ transcription_status | facsimile_status
 
 ## 配色一类的问题怎么答
 
-「哪个颜色对我有利」这类问题，用 `fortune_ranking.climate_colors(日主, 月支)`。它按当月调候专段给出条款所取的五行及其对应颜色，带 `passage_id` 与哈希。
+「哪个颜色对我有利」这类问题，先按 [八字](01-bazi.md) 正常排盘取日主与月支，再查当月专段所取的天干、折成五行与颜色。查条款用 `python scripts/classical_search.py --book qiongtong --query <日主><月支>`，出处与转录状态随结果返回。
+
+**没有一条命令会直接吐出「你该买什么颜色」**，因为链条第三段没有出处（见下）。`scripts/fortune_ranking.py` 里的 `climate_colors` 是给测试和维护用的内部函数，没有命令行入口，不要在回答流程里调它。
 
 **它不是择时场景，没有进 `fortune_rules.py` 的 `SCENARIOS`。** 原因：没有候选窗口可排，登记成 scenario 会让人误以为它能给排名。
 

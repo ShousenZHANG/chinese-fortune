@@ -1,0 +1,2 @@
+# 维护工具依赖，不进运行包。
+opencc-python-reimplemented==0.1.7

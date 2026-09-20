@@ -4,6 +4,33 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
+## [4.4.0]
+
+### 简体查询不再被静默漏掉
+
+检索把库内繁体正文与用户查询折到同一形再匹配，而这个折叠表原先是两条手写字符串——没人想到的字就检索不到。实测：`聋哑` 零命中，`聾啞` 26 条；`痈` 1 条，`癰` 5 条；`肿` 3 条，`腫` 5 条。
+
+后果不止是少召回。**空结果正是本技能宣布「古籍没有这条」时的依据**，而漏字造成的空和真的没有，输出一模一样——`聋哑` 与 `染发` 返回同一个信封。于是一个有二十多条段落的主题，可能被答成古籍从未提及。
+
+- 新增 `scripts/build_han_variants.py`（维护工具，不进运行包，依赖见 `scripts/requirements-dev.txt`）：离线遍历 `knowledge/` 全部汉字，用 opencc 生成 `assets/han-variants.json`。当前 6276 字、1577 条折叠。运行时只读这份 JSON，发行包依赖仍是 `lunar_python` 与 `tzdata` 两个。
+- `classical_search.normalized` 改读该表，保留六条手写别名作为库外字的兜底。返回的正文与引文仍是各版本原字，折叠只作用于匹配键。
+- 新增门禁：库内每个汉字都必须能从它的简体形检索到。删掉表里任意一条折叠，`tests/test_classical_library.py` 变红（已实测）。加书后跑 `python scripts/build_han_variants.py`，`--check` 只比对不写文件。
+
+### 零命中现在带着自己的依据
+
+`search_with_scope()` 与 CLI 的检索响应新增三个键，命中与否形状一致：
+
+- `searched` —— 读了哪 13 部书、多少章、多少段（当前 535 章 / 18982 段），以及折叠表的位置
+- `normalized_query` —— 实际用于匹配的词形
+- `total_matches` —— 命中总数，区别于 `limit` 截断后的 `results`
+
+`references/27-direct-answer.md` 例三要求层 2 写「查了 X、Y、Z，零命中」；在此之前工具层没有任何字段支撑这句话。`search_classics()` 签名与返回不变。
+
+### 其他
+
+- `27-direct-answer.md` 配色一节原先让模型调 `fortune_ranking.climate_colors(日主, 月支)`，而该模块没有命令行入口，照做必然失败。改为走 `classical_search.py --book qiongtong`，并写明没有任何命令会直接给出「该买什么颜色」——链条第三段无出处这件事本来就写在同一节。
+- `build_skill.py` 的 `SCRIPT_EXCLUDE` 成为「哪些是维护工具」的唯一清单；`test_cli_contract`、`test_harness_gates` 改为从它派生豁免，不再各自维护一份。三份副本已经漂开过，新增工具时三处都要改才不报错。
+
 ## [4.3.0]
 
 ### 修复 v4.2.0 排名的六处阻断缺陷

@@ -11,6 +11,7 @@ from classical_search import (
     get_witnesses,
     normalized,
     search_classics,
+    search_with_scope,
     validate_library,
 )
 from import_classics import clean_wiki, html_paragraphs
@@ -92,6 +93,57 @@ def test_simplified_query_preserves_original_text_and_attribution(mini_library: 
 
 def test_common_technical_aliases() -> None:
     assert normalized('傷官 調候 成敗救應 財官 氣候') == normalized('伤官 调候 成败救应 财官 气候')
+
+
+def test_every_character_in_the_library_is_reachable_from_its_simplified_form() -> None:
+    """A character missing from the fold table is silently unsearchable.
+
+    The fold used to be two hand-written strings, so recall depended on whether
+    anyone had happened to type that character before. 聋哑 returned nothing
+    while 聾啞 returned matches — and an empty result is exactly what this skill
+    reports when the books really say nothing, so the gap could turn into the
+    sentence 「古籍没有这条」 about a subject with dozens of passages.
+
+    Regenerate with ``python scripts/build_han_variants.py`` after adding a book.
+    """
+    import json
+    import unicodedata
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    table = json.loads((root / 'assets' / 'han-variants.json').read_text(encoding='utf-8'))
+    folds = table['mapping']
+    corpus: set[str] = set()
+    for path in sorted((root / 'knowledge').rglob('*.json')):
+        for char in path.read_text(encoding='utf-8'):
+            if unicodedata.category(char) == 'Lo' and '㐀' <= char <= '鿿':
+                corpus.add(char)
+    assert len(corpus) == table['corpus_characters'], '表已过期，重新生成'
+    unreachable = [c for c in sorted(corpus) if normalized(folds.get(c, c)) != normalized(c)]
+    assert not unreachable, unreachable[:20]
+
+
+@pytest.mark.parametrize('simplified,traditional', [
+    ('聋哑', '聾啞'), ('痈', '癰'), ('肿', '腫'), ('头发', '頭髮'), ('伤官', '傷官'),
+])
+def test_a_simplified_query_finds_what_the_traditional_one_finds(simplified, traditional) -> None:
+    """Regression: each of these once returned strictly fewer hits in simplified."""
+    assert normalized(simplified) == normalized(traditional)
+    assert (search_with_scope(simplified)['total_matches']
+            == search_with_scope(traditional)['total_matches'])
+
+
+def test_a_zero_hit_answer_ships_the_evidence_for_itself() -> None:
+    """「古籍没有这条」 needs to say what was read, not just return nothing."""
+    empty = search_with_scope('染发')
+    assert empty['results'] == [] and empty['total_matches'] == 0
+    assert empty['normalized_query'] == ['染发']
+    scope = empty['searched']
+    assert len(scope['books']) == 13
+    assert scope['chapters'] > 500 and scope['passages'] > 18000
+    assert 'assets/han-variants.json' in scope['folding']
+    # Same shape when there are hits, so a caller cannot tell them apart by keys.
+    assert set(search_with_scope('伤官')) == set(empty)
 
 
 def test_image_witness_lookup_preserves_default_edition_status() -> None:

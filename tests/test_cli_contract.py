@@ -20,6 +20,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from build_skill import SCRIPT_EXCLUDE
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "scripts"
@@ -162,8 +163,9 @@ def test_every_engine_entry_point_is_covered_by_the_contract():
     import ast
     entry_points = set()
     for f in sorted(SCRIPTS.glob("*.py")):
-        if f.name in ("utils.py", "build_skill.py", "import_classics.py"):
-            # import_classics is a maintenance importer, excluded from the runtime package.
+        if f.name == "utils.py" or f.name in SCRIPT_EXCLUDE:
+            # Maintenance tools ship with the source, not the runtime package;
+            # SCRIPT_EXCLUDE in build_skill.py is the one list that decides that.
             continue
         tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
         has_main = any(isinstance(n, ast.FunctionDef) and n.name == "main"

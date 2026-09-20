@@ -15,23 +15,30 @@ from pathlib import Path
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
 
 LIBRARY_ROOT = Path(__file__).resolve().parents[1] / 'knowledge'
-# Common book names and technical queries. Original source words are untouched.
-# This is deliberately a documented query alias table, not a general converter.
-_TRAD = '詮淵窮寶鑑會髓傷財殺煞調氣候敗救應論強弱體歲運時陰陽從與為無見後先根透藏純雜順逆取捨輕濁清寒暖貴賤祿祿長養虛實隱顯眾寡進退剋沖衝無印綬臺門書經傳徵變剛柔母親姻類祇神總說節錄萬歸於東裡細賦斷機關榮壽興濕燥亙異劫祿學命實驗獲錯緩緣該當選數項規則檢查兩個陰間風險運勢轉暫未暫時條'
-_SIMP = '诠渊穷宝鉴会髓伤财杀煞调气候败救应论强弱体岁运时阴阳从与为无见后先根透藏纯杂顺逆取舍轻浊清寒暖贵贱禄禄长养虚实隐显众寡进退克冲冲无印绶台门书经传征变刚柔母亲姻类祇神总说节录万归于东里细赋断机关荣寿兴湿燥亘异劫禄学命实验获错缓缘该当选数项规则检查两个阴间风险运势转暂未暂时条'
-_ALIASES = str.maketrans(_TRAD, _SIMP)
-_ALIASES.update({ord(k): ord(v) for k, v in {'專': '专', '爲': '为', '尅': '克', '須': '须',
-                                          '補': '补', '護': '护', '洩': '泄', '幹': '干',
-                                          '驛': '驿', '馬': '马', '蓋': '盖', '葢': '盖',
-                                          '詞': '词', '館': '馆', '貴': '贵', '華': '华'}.items()})
-_ALIASES.update({ord(k): ord(v) for k, v in {'擧': '举', '舉': '举', '試': '试',
-    '業': '业', '遷': '迁', '開': '开', '進': '进', '遊': '游', '隨': '随',
-    '納': '纳', '帳': '帐', '約': '约', '擇': '择', '辦': '办', '觀': '观',
-    '談': '谈', '價': '价', '財': '财', '學': '学', '祿': '禄',
-    '盤': '盘', '儀': '仪', '輔': '辅', '飛': '飞', '臨': '临',
-    '墳': '坟', '靜': '静', '動': '动', '歿': '殁',
-    '將': '将', '權': '权', '顆': '颗', '謁': '谒',
-    '遞': '递', '晝': '昼', '啟': '启', '訣': '诀', '龍': '龙', '絕': '绝'}.items()})
+VARIANTS_TABLE = Path(__file__).resolve().parents[1] / 'assets' / 'han-variants.json'
+
+# Folding traditional text and the query to one form is what lets a simplified
+# query reach the frozen traditional corpus. This used to be two hand-written
+# strings covering whatever anyone had run into; a character nobody listed was
+# simply unreachable, and that miss was indistinguishable from a subject the
+# books never discuss —— 聋哑 returned nothing while 聾啞 returned matches, so
+# 「古籍没有这条」 could be said about a topic with dozens of passages.
+#
+# The table now covers every Han character in the library, generated offline by
+# scripts/build_han_variants.py. Returned text and quotations keep each
+# edition's own characters; this map is only ever applied to the match key.
+_HAND_ALIASES = {'祇': '祇', '葢': '盖', '擧': '举', '歿': '殁', '衝': '冲', '尅': '克'}
+
+
+def _load_variants() -> dict[int, int]:
+    table = json.loads(VARIANTS_TABLE.read_text(encoding='utf-8'))
+    folds = {ord(k): ord(v) for k, v in table['mapping'].items()}
+    for k, v in _HAND_ALIASES.items():
+        folds.setdefault(ord(k), ord(v))
+    return folds
+
+
+_ALIASES = _load_variants()
 
 
 def normalized(text: str) -> str:
@@ -269,21 +276,40 @@ def get_chapter(chapter_id: str, *, offset: int = 0, limit: int = 5,
 def search_classics(query: str, book: str | None = None, chapter: str | None = None,
                     limit: int = 5, library_root: Path | str | None = None) -> list[dict]:
     """Return whole matching paragraphs plus neighbors, never invented snippets."""
+    return search_with_scope(query, book, chapter, limit, library_root)['results']
+
+
+def search_with_scope(query: str, book: str | None = None, chapter: str | None = None,
+                      limit: int = 5, library_root: Path | str | None = None) -> dict:
+    """Search, and say what was searched and in what form.
+
+    A zero-hit response used to be indistinguishable from a topic the books
+    never cover: the same empty ``results`` either way, with no record of which
+    books were read or what the query became after folding. 「古籍没有这条」 is a
+    real answer this skill is expected to give, so the evidence for it has to
+    ship with it — see references/27-direct-answer.md.
+    """
     if not query.strip() or not 1 <= limit <= 50:
         raise ValueError('query required; limit must be 1..50')
     root = _root(library_root)
     terms = [normalized(term) for term in query.split()]
+    scanned_books: list[dict] = []
+    chapters_scanned = passages_scanned = 0
     found = []
     for entry in _selected_books(root, book):
+        scanned_books.append({'id': entry['id'], 'title': entry['title'],
+                              'chapters': len(entry['chapters'])})
         for row in entry['chapters']:
             chapter_matches = not chapter or normalized(chapter) in normalized(row['id'] + row['title'])
             path = _path(root, row['path'])
             if _hash(path) != row['sha256']:
                 raise ValueError('chapter hash mismatch: ' + row['path'])
             data = _read(path)
+            chapters_scanned += 1
             for i, item in enumerate(data['passages']):
                 if not chapter_matches and normalized(chapter or '') not in normalized(item['section']):
                     continue
+                passages_scanned += 1
                 text = normalized(item['text'])
                 searchable = text + normalized(data['title']) + normalized(item['section'])
                 if all(term in searchable for term in terms):
@@ -302,7 +328,15 @@ def search_classics(query: str, book: str | None = None, chapter: str | None = N
                     score = (title_score, layer_score, frequency_score)
                     found.append((score, _result(entry, data, i)))
     found.sort(key=lambda pair: (*(-v for v in pair[0]), pair[1]['passage_id']))
-    return [item for _, item in found[:limit]]
+    return {
+        'results': [item for _, item in found[:limit]],
+        'total_matches': len(found),
+        'normalized_query': terms,
+        'searched': {'books': scanned_books, 'chapters': chapters_scanned,
+                     'passages': passages_scanned,
+                     'folding': '繁简折叠后匹配，出处与引文仍用各版本原字；'
+                                '折叠表 assets/han-variants.json'},
+    }
 
 
 def get_witnesses(passage_id: str | None = None) -> dict:
@@ -362,7 +396,7 @@ def main(argv: list[str] | None = None) -> int:
         elif args.chapter_id:
             result.update(get_chapter(args.chapter_id, offset=args.offset, limit=args.limit))
         else:
-            result['results'] = search_classics(args.query, args.book, args.chapter, args.limit)
+            result.update(search_with_scope(args.query, args.book, args.chapter, args.limit))
         json_print(result)
         return 0 if result['ok'] else 1
     except (OSError, ValueError, KeyError, TypeError) as exc:
