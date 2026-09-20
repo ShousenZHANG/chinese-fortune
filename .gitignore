@@ -90,3 +90,6 @@ evals/feedback.json
 NOTES.md
 TODO.md
 SCRATCH.md
+
+# 发布核对用的下载目录，按 docs/RELEASE-PROCESS.md 每次新建，不入库
+release-download/
