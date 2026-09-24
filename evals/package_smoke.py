@@ -156,7 +156,11 @@ def main(argv: list[str] | None = None) -> int:
                                  '--stdin'], work, data=json.dumps(query)))
         assert future['ok'] and future['status'] == 'partial'
         assert future['window']['start'].startswith('2026-09-14')
-        assert future['availability'][0]['available'] and future['recommendation']['first_choice'] is None
+        assert future['availability'][0]['available']
+        assert future['recommendation']['basis'] == 'practical_constraints'
+        assert future['conclusion']['traditional_personal_ranking'] == 'not_established'
+        assert future['practical_choice']['first_choice']['start'] == '2026-09-15T09:00:00+10:00'
+        assert future['practical_choice']['first_choice']['end'] == '2026-09-15T10:00:00+10:00'
         comparison = future['candidate_comparison'][0]['windows'][0]
         assert comparison['allowed_start']['latest'] == '2026-09-15T11:00:00+10:00'
         assert comparison['participants'][0]['participant_id'] == 'sample'
