@@ -15,6 +15,9 @@ Two rules the tiers must not break, both inherited from the reference set:
 """
 from __future__ import annotations
 
+from copy import deepcopy
+from datetime import UTC, datetime, timedelta
+
 from fortune_rules import PRECEDENCE_VERSION
 
 # 天地转杀（yuanhai:c052:p0004）：秋见辛酉为天转、癸酉为地转；其日最忌「出行商贾」。
@@ -199,6 +202,44 @@ def season_of(month_branch: str) -> str | None:
             '亥': 'winter', '子': 'winter', '丑': 'winter'}.get(month_branch)
 
 
+def split_eligible_windows(availability: list[dict], participant: dict, duration: int) -> tuple[list[dict], list[dict]]:
+    """Retain complete-event subwindows when a flexible interval crosses a barred day.
+
+    Only the implemented day exclusion splits availability; disputed hour rules
+    remain explicit cautions. Every omitted segment retains its source.
+    """
+    result = deepcopy(availability)
+    omitted = []
+    for candidate in result:
+        pieces: list[dict] = []
+        for window in candidate['intervals']:
+            start, end = (datetime.fromisoformat(window[k]).astimezone(UTC) for k in ('start', 'end'))
+            runs: list[tuple[datetime, datetime]] = []
+            for segment in participant['target']['segments']:
+                lo = max(start, datetime.fromisoformat(segment['start']).astimezone(UTC))
+                hi = min(end, datetime.fromisoformat(segment['end']).astimezone(UTC))
+                if lo >= hi:
+                    continue
+                p = segment['facts']['pillars']
+                season = season_of(p['month'][1])
+                hit = tiandi_zhuan(p['day'][0], p['day'][1], season) if 'day' in p and season else None
+                if hit:
+                    omitted.append({'candidate_id': candidate['id'], 'start': lo.isoformat(),
+                                    'end': hi.isoformat(), 'day_ganzhi': p['day'], **hit})
+                elif runs and runs[-1][1] == lo:
+                    runs[-1] = (runs[-1][0], hi)
+                else:
+                    runs.append((lo, hi))
+            zone = datetime.fromisoformat(window['start']).tzinfo
+            pieces.extend({'start': a.astimezone(zone).isoformat(), 'end': b.astimezone(zone).isoformat()}
+                          for a, b in runs if b - a >= timedelta(minutes=duration))
+        candidate['intervals'] = pieces
+        candidate['available'] = bool(pieces)
+        if not pieces and candidate.get('reason') is None:
+            candidate['reason'] = '按已核出行忌日条款筛选后，没有能容纳完整事件的时间'
+    return result, omitted
+
+
 def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str) -> dict:
     """Rank ``candidate_comparison`` rows against the clause tiers.
 
@@ -208,7 +249,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
     lacks day granularity are reported as unrankable rather than assumed clear.
     """
     segments = participant['target']['segments']
-    natal_year_branch = participant['natal']['four_pillars']['year']['branch']
+    natal_year_branch = participant['natal']['four_pillars']['year'].get('branch')
     ranked, excluded, unrankable = [], [], []
     for candidate in comparison:
         if not candidate.get('available'):
@@ -243,7 +284,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                     blocked.append({**hit, 'day_ganzhi': ganzhi})
                 if not rule['resolved'] and ganzhi not in unresolved:
                     unresolved.append(ganzhi)
-                clash = zodiac_clash(ganzhi[1], natal_year_branch)
+                clash = zodiac_clash(ganzhi[1], natal_year_branch) if natal_year_branch else None
                 if clash and clash not in folk:
                     folk.append(clash)
             entry['days'] = days
@@ -278,6 +319,8 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                 ranked.append(entry)
     return {
         'scenario': scenario,
+        'rule_scope': 'generic_calendar_filter',
+        'uses_complete_natal_chart': False,
         'mapped_terms': list(SCENARIO_TERMS[scenario]),
         'precedence_version': PRECEDENCE_VERSION,
         'ranking_reference': 'references/26-precedence.md',

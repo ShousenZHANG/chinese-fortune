@@ -161,7 +161,7 @@ def record_case(args: argparse.Namespace, case: dict, repetition: int) -> dict:
     host = None
     failure = None
     try:
-        server = AppServer([str(args.cli), 'app-server', '--stdio'], args.snapshot, folder, args.timeout)
+        server = AppServer([str(args.cli), 'app-server', '--listen', 'stdio://'], args.snapshot, folder, args.timeout)
         initialization = server.request('initialize', {
             'clientInfo': {'name': 'fortune_eval', 'title': 'Frozen skill comparison', 'version': '1.0'},
             'capabilities': {'experimentalApi': True}})

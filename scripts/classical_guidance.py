@@ -22,7 +22,11 @@ def research_plan(scenario: str, *, compact: bool = False) -> dict:
     """A source map is not a declaration of implemented prediction coverage."""
     data = _catalog()
     if scenario not in data['scenarios']:
-        raise ValueError('unknown research scenario: ' + scenario)
+        if not isinstance(scenario, str) or not scenario.strip() or len(scenario) > 80:
+            raise ValueError('事项名称须为 1–80 字符')
+        return {'scenario': scenario, 'source_status': 'scenario_mapping_required', 'routes': [],
+                'personal_ranking': 'not_certified_by_source_inventory',
+                'next_step': '先确认本题古今事项对应，按适用体系补查正文与上下文；不借用其他事项的吉凶规则。'}
     plan = data['scenarios'][scenario]
     if compact:
         return {'scenario': scenario, 'source_status': plan['source_status'],

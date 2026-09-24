@@ -15,7 +15,7 @@
 | 个人逐日吉凶、面试等事项首选时段 | 尚无完整可执行的古籍规则，不自动排名；需按下述补查流程继续工作 |
 | 合婚、起名、择地、风水 | 转专项资料核查，不将本工具的时间处理称为这些方法已经完成 |
 
-`python scripts/fortune_rules.py --capabilities` 是场景覆盖目录。目录覆盖请求类型，不表示每类都具备排名算法。没有已验证规则时，不能把候选的自然顺序、是否相生或黄历宜忌改成首选。已实现排名的场景，其条款优先关系按 [裁决顺序](26-precedence.md) 判定，每个 tier 须带 `passage_id`；输出措辞按 [直接回答](27-direct-answer.md)。
+`python scripts/fortune_rules.py --capabilities` 是场景覆盖目录。目录覆盖请求类型，不表示每类都具备排名算法。没有已验证规则时，不能把候选的自然顺序、是否相生或黄历宜忌改成首选。通用出行筛选的条款优先关系按 [裁决顺序](26-precedence.md) 判定，每个 tier 须带 `passage_id`；输出措辞按 [直接回答](27-direct-answer.md)。
 
 ## 一次完成输入与计算
 
@@ -69,7 +69,7 @@
 - 日时按指定当地钟表／真太阳时，年月交节按同一 UTC 瞬间换算固定 UTC+08:00 历表。真太阳时沿用现有均时差、分钟取整算法；不能声称秒级天文或择时精度。`event.sect` 为 2（默认子正换日）或 1（子初换日）。
 - 每个候选可带 `fold/end_fold` 解决夏令时重复时间，或使用与事件时区匹配的带 offset 时间。不存在的钟面时间会报错；时长按实际经过分钟算。
 - `event.priority` 可为某参与者 id 或 `equal`。婚嫁默认 equal；多人的共同首选尚未实现，不偷加权。
-- `person.time_certainty` 为 exact/approximate/unknown。未知时省略 hour；约数目前保守按全天共同部分分析，不把该约数当精确时柱与起运时刻。精确推荐仍需补齐区间处理与对应规则。
+- `person.time_certainty` 为 exact/approximate/unknown。未知时省略 hour；约数有上下界时给 birth_time_range，逐分钟比较范围共同部分；无上下界才保守按全天分析。保持时柱不变不代表出生瞬间精确。
 - 需要本命的完整条件和证据时，首次调用加 `"include_natal_reading":true`，从 `natal_interpretation` 继续核查；不要再跑 `bazi_calc` 寻找旧诊断字段。
 - 首次分析具体事项时可加 `"include_research":true`，同一次调用返回该场景的原文及必读跨段禁忌。已有资料时省略，复用 `research.source_bundle`，不重复调用检索。
 - `candidate_comparison[].windows[].allowed_start` 给出最早和最晚可开始时间，最晚值包含在内；它保证能排下持续时长，不是古法最佳分钟。`participants[].segments` 保留期间所有盘面变化；跨时辰的事件不会因为其中一段不足全程时长就被误删。
@@ -128,3 +128,15 @@ python scripts/personal_profiles.py delete --profile-id applicant --expected-rev
 save 从 stdin 读上例中的 `person` 对象，首次 revision 为 1。修改先读当前 revision，确认更正后用该值作为 `expected-revision` 保存；旧版本保留在同一个档案的 history。删除同时删除该档案历史；不同步删除宿主聊天记录。
 
 计算引用已确认档案时，将参与者改为 `{"id":"applicant","profile_id":"applicant"}`。输出带当时修订号及输入指纹；当次当前位置仍独立传入，不能默认用户一直住在档案地点。普通计算、候选和整段问答不自动落盘。
+
+## 通用请求与明确时间
+
+顶层可给 `question`（本题原话）、`intent`（period/selection/natal/event/research）以及 `preferences`。新事项直接用 `event.scenario` 的名称，不借其他场景规则。`intent=selection` 需要可选日期、时段和持续时间；缺项一次问齐。`natal/research` 可省 period，此时当天只是计算参照，不赋予未来判断。
+
+`preferences` 只接受一种已由用户给定的实际偏好：`{"prefer":"earliest"}`、`{"prefer":"latest"}` 或 `{"candidate_order":["A","B"]}`。不能由宿主自行填写默认偏好。`practical_choice` 返回首选和备选的精确 start/end/timezone、选择原因以及是否仅为现实安排；多个候选仍同档则保留并列。出生资料缺项不妨碍独立的档期事实，但必须说明缺项对传统判断的影响。
+
+出生范围放在 person 中，例如 `"time_certainty":"approximate","birth_time_range":{"start":"19:00","end":"20:00"}`。范围终点包含在内，分辨率为钟面分钟；夏令时重复区间未给 fold 时两次均比较。跨出生日期范围先确认日期。输出的 `birth_time_uncertainty` 列出受到影响的柱，不选择“更像本人”的一个盘当作事实。运程起点不一致时不伪造精确大运。
+
+出行会保留原始 `availability`、条款筛选后的 `practical_comparison` 与 `excluded_segments`。宽窗口可缩成仍容纳完整事件的子窗口；首选只指返回的 start/end，不代表整个原窗口都适合。通用规则由 `calendar_screening` 声明；`personal_ranking` 仍单独反映完整个人排名状态。
+
+`conclusion` 是宿主与白话草稿共用的结果记录。期间分析默认含 `natal_interpretation`，用于一次完成相关原局条件和证据核查；只需历法事实可显式 `include_natal_reading:false`。`--markdown` 负责忠实呈现可计算结果，宿主继续完成解释与限时补查，不能将草稿视为已搜索过外部材料。

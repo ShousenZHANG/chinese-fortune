@@ -200,7 +200,8 @@ def evidence_bundle(assessment: dict, question: str = '', *, getter: Any = None,
         books.setdefault(bid, {k: p[k] for k in
                               ('book_title', 'edition', 'license', 'transcription_status', 'facsimile_status')})
         chapters.setdefault(cid, {k: p[k] for k in ('chapter_title', 'source_url', 'revision')})
-        passages.append({k: p[k] for k in ('passage_id', 'section', 'layer', 'text', 'issues')})
+        passages.append({**{k: p[k] for k in ('passage_id', 'section', 'layer', 'text', 'issues')},
+                         'witnesses': p.get('witnesses', []), 'quality_notes': p.get('quality_notes', [])})
     return {'schema_version': '2.0', 'books': books, 'chapters': chapters, 'passages': passages,
             'scope': '本次规则所需完整段落及例外；书章信息复用，原文字句未删减'}
 

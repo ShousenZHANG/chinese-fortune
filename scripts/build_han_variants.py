@@ -55,9 +55,15 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     chars = corpus_characters()
+    digest = hashlib.sha256(''.join(sorted(chars)).encode('utf-8')).hexdigest()
     if args.check:
+        from opencc import OpenCC
         table = json.loads(TABLE.read_text(encoding='utf-8'))
-        stale = table['corpus_characters'] != len(chars)
+        convert = OpenCC('t2s').convert
+        regenerated = {c: convert(c) for c in chars}
+        regenerated = {k: v for k, v in regenerated.items() if len(v) == 1 and v != k}
+        stale = (table['corpus_characters'] != len(chars) or
+                 table['corpus_character_sha256'] != digest or table['mapping'] != regenerated)
         print(f'表内 {table["corpus_characters"]} 字，库内 {len(chars)} 字：'
               + ('过期，请重新生成' if stale else '一致'))
         return 1 if stale else 0

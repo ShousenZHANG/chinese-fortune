@@ -4,6 +4,14 @@ Calculate a chart, check classical conditions, and answer in plain language firs
 
 BaZi follows the month-structure approach in Zi Ping Zhen Quan. Four other classical works provide separately attributed comparisons; differences remain visible.
 
+## General requests and clear answers
+
+Job searches, interviews, travel, relationship conversations and new everyday scenarios share a request workflow. A scenario being accepted does not establish a complete classical prediction method for it. Confirmed birth ranges are compared at minute resolution instead of guessing one instant.
+
+Answers use natural Chinese, normally 300–600 characters: the useful conclusion first, then a necessary short quotation and an immediate explanation of its meaning and personal applicability. Supported parts are answered first; missing sources trigger a recorded five-minute research budget using the host's available search tools. Candidate material stays outside the package and is never automatically registered as an executable rule.
+
+Explicit practical preferences can select a first and backup appointment with dates, start/end times and time zones. These are practical choices, distinct from personal auspiciousness ranking, which remains incomplete. Travel has a generic day-exclusion filter; it does not use the full natal chart to establish personal suitability. Known textual variants now follow normal passage retrieval.
+
 ## Capabilities
 
 - BaZi calculations with birth timezone, DST, true solar time, day boundaries and unknown-hour handling.

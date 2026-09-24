@@ -19,7 +19,7 @@ BIRTH_FIELDS = {'year', 'month', 'day', 'hour', 'minute', 'gender', 'timezone', 
 
 def validate_person(person: dict, *, check_calendar: bool = True) -> dict:
     """Reject ambiguous provenance and silently ignored input fields."""
-    if not isinstance(person, dict) or set(person) - {'birth', 'current_timezone', 'label', 'time_certainty'}:
+    if not isinstance(person, dict) or set(person) - {'birth', 'current_timezone', 'label', 'time_certainty', 'birth_time_range'}:
         raise ValueError('档案只接受 birth、current_timezone、label、time_certainty')
     birth = person.get('birth')
     if not isinstance(birth, dict) or set(birth) - BIRTH_FIELDS:
@@ -49,6 +49,11 @@ def validate_person(person: dict, *, check_calendar: bool = True) -> dict:
     if person.get('current_timezone'):
         ZoneInfo(person['current_timezone'])
     certainty = person.get('time_certainty', 'exact' if birth.get('hour') is not None else 'unknown')
+    if 'birth_time_range' in person:
+        from birth_interval import interval_minutes
+        interval_minutes(person['birth_time_range'])
+        if certainty != 'approximate':
+            raise ValueError('birth_time_range 须配 time_certainty=approximate')
     if certainty not in ('exact', 'approximate', 'unknown'):
         raise ValueError('time_certainty 必须为 exact / approximate / unknown')
     if certainty == 'exact' and birth.get('hour') is None:
@@ -63,7 +68,12 @@ def validate_person(person: dict, *, check_calendar: bool = True) -> dict:
     from bazi_calc import build_parser, calculate_bazi
     argv = birth_arguments(birth)
     if check_calendar:
-        chart = calculate_bazi(build_parser(diagnostics=False).parse_args(argv))
+        args = build_parser(diagnostics=False).parse_args(argv)
+        if 'birth_time_range' in person:
+            from birth_interval import calculate_interval
+            chart = calculate_interval(args, person['birth_time_range'])
+        else:
+            chart = calculate_bazi(args)
         if not chart['ok']:
             raise ValueError(chart['message'])
     return {**person, 'birth': dict(birth), 'time_certainty': certainty}

@@ -170,7 +170,11 @@ def decision_blockers(result: dict) -> list[dict]:
     if result['capability'].get('personal_ranking') != 'rule_based':
         blockers.append({'code': 'ranking_rules_required' if result['capability']['route'] == 'selection'
                         else 'interpretation_review_required', 'message': result['research']['missing']})
-    elif result.get('ranking', {}).get('unrankable'):
+    if result.get('ranking', {}).get('unrankable'):
         blockers.append({'code': 'day_granularity_required',
                          'message': '部分候选窗口未细算到日柱，忌日条款无法套用。'})
+    ranking = result.get('ranking', {})
+    if any(r.get('forbidden_hours_in_window') or r.get('unresolved_hour_rules') for r in ranking.get('tiers', [])):
+        blockers.append({'code': 'clause_conflict',
+                         'message': '部分窗口涉及忌时或版本分歧；未被忌日排除不能作为整体推荐。'})
     return blockers

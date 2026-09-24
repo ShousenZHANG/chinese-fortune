@@ -151,6 +151,8 @@ def _probes_cover_minutes(chart: dict, probes: list[dict]) -> bool:
 def _without_unknown_hour_precision(chart: dict) -> dict:
     """Keep only verified stable observations; sampled noon is never a known birth time."""
     clean = deepcopy(chart)
+    if clean.get('birth_time_uncertainty', {}).get('status') == 'interval_verified':
+        return clean
     if clean['hour_known']:
         return clean
     probes: list[dict] = []

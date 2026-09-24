@@ -224,8 +224,8 @@ def test_engines_really_do_not_write_files():
     root = Path(__file__).resolve().parent.parent
     writers = []
     for f in sorted((root / "scripts").glob("*.py")):
-        if f.name in SCRIPT_EXCLUDE or f.name == "personal_profiles.py":
-            # User-authorized profile CRUD is a separate, explicit command.
+        if f.name in SCRIPT_EXCLUDE or f.name in {"personal_profiles.py", "research_session.py"}:
+            # Profile CRUD and source-only research records are explicit commands.
             # test_personalized_forecast checks confirmation, revision conflicts,
             # external paths and that ordinary calculations never auto-save.
             continue

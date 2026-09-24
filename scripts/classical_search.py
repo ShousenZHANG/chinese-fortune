@@ -211,6 +211,7 @@ def _selected_books(root: Path, book: str | None) -> list[dict]:
 
 def _result(book: dict, chapter: dict, index: int) -> dict:
     passage = chapter['passages'][index]
+    witnesses = _linked_witnesses(passage)
     radius = book.get('retrieval_context_radius', 1)
     context = chapter['passages'][max(0, index - radius):index + radius + 1]
     return {**passage, 'book_id': book['id'], 'book_title': book['title'],
@@ -220,13 +221,41 @@ def _result(book: dict, chapter: dict, index: int) -> dict:
             'transcription_status': chapter['transcription_status'],
             'facsimile_status': chapter['facsimile_status'],
             'issues': [issue for issue in chapter.get('issues', []) if issue['passage_id'] == passage['passage_id']],
-            'quality_notes': book.get('quality_notes', []),
+            'quality_notes': [*book.get('quality_notes', []),
+                              *(['本段存在已记录的异版用字；解释前请核对 witnesses，不合并为无争议正文。']
+                                if any(w.get('variants') for w in witnesses) else [])],
+            'witnesses': witnesses,
             'chapter_locator': book['id'] + ':' + chapter['chapter_id'],
             'chapter_passages': len(chapter['passages']),
             'context_scope': 'neighboring_paragraphs_not_necessarily_all_conditions',
             'context': [{'passage_id': p['passage_id'], 'text': p['text'], 'layer': p['layer']}
                         for p in context],
             'use_limit': '原文查阅；不自动构成个人判断或已满足规则条件'}
+
+
+def _linked_witnesses(passage: dict) -> list[dict]:
+    """Attach scoped witnesses without recursive passage lookups or changing the edition."""
+    data = _read(Path(__file__).resolve().parents[1] / 'assets/facsimile_witnesses.json')
+    editions = {e['id']: e for e in data['editions']}
+    rows = []
+    for record in data['witnesses']:
+        if record['passage_id'] != passage['passage_id']:
+            continue
+        if hashlib.sha256(passage['text'].encode('utf-8')).hexdigest() != record['passage_sha256']:
+            continue  # A different library/edition may reuse the same locator.
+        if record['corpus_text'] not in re.sub(r'[^\w]', '', passage['text']):
+            raise ValueError('witness corpus excerpt differs from frozen text')
+        rows.append({**record, 'edition': editions[record['edition_id']], 'scope': data['scope']})
+    return rows
+
+
+def climate_passages(key: str) -> dict:
+    """Resolve day-master/month fields through the audited locator, not lexical guesses."""
+    from tiaohou_provenance import get_tiaohou_audit
+    audit = get_tiaohou_audit(key)
+    return {'key': key, 'audit': audit,
+            'results': [get_passage(ref['passage_id']) for ref in audit.get('source_refs', [])],
+            'scope': '当月专段与已审计定位；原文命中不等于个人条件成立'}
 
 
 def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict:
@@ -368,6 +397,7 @@ def main(argv: list[str] | None = None) -> int:
                                      epilog='Top-level JSON keys: ok tool version results errors books; errors: error message')
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument('--query')
+    mode.add_argument('--climate-key', help='按日主和月支定位调候专段，如 庚|子')
     mode.add_argument('--passage-id')
     mode.add_argument('--chapter-id', help='分页读全章及例外，例如 ziping:c032')
     mode.add_argument('--validate', action='store_true')
@@ -393,6 +423,8 @@ def main(argv: list[str] | None = None) -> int:
                                for b in _selected_books(LIBRARY_ROOT, args.book)]
         elif args.passage_id:
             result['results'] = [get_passage(args.passage_id)]
+        elif args.climate_key:
+            result.update(climate_passages(args.climate_key))
         elif args.chapter_id:
             result.update(get_chapter(args.chapter_id, offset=args.offset, limit=args.limit))
         else:

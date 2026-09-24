@@ -129,7 +129,7 @@ def test_availability_intersection_busy_cut_and_past(query):
                                     {'start': '2026-09-15T11:00:00+10:00', 'end': '2026-09-15T12:00:00+10:00'}]
     assert not afternoon['available']
     # One available input is not falsely promoted to a classical optimum.
-    assert result['recommendation'] == {'status': 'evidence_needed', 'first_choice': None, 'backup': None}
+    assert result['recommendation'] == {'status': 'preferences_required', 'first_choice': None, 'backup': None}
     query['request_time'] = '2026-09-20T00:00:00Z'
     query['period'] = {'start': '2026-09-14', 'end': '2026-09-21'}
     assert read_request(query)['recommendation']['status'] == 'no_feasible_slot'
@@ -290,7 +290,7 @@ def test_scope_audit_quotes_valid_but_not_interview_rules():
     assert by_key['interview']['personal_ranking'] == 'not_implemented'
     # 已实现排名的场景必须声明裁决表版本与出处，否则就是无授权排名。
     for cap in capabilities():
-        if cap['personal_ranking'] == 'rule_based':
+        if cap['calendar_screening'] == 'rule_based':
             assert cap['precedence_version'], f"{cap['scenario']} 排名未声明裁决表版本"
             assert cap['ranking_reference'] == 'references/26-precedence.md'
         else:
@@ -303,12 +303,12 @@ def test_plain_answer_quote_then_plain_explanation(query):
     result = read_request(query)
     text = render_answer(result)
     first = text.splitlines()[0]
-    assert '能排下' in first and '还不足' in first and '《' not in first
+    assert '现有古法' in first and '还没有分出个人优劣' in first and '《' not in first
     quote = text.index('《子平真诠')
-    explanation = text.index('白话说：')
+    explanation = text.index('白话说')
     source = text.index('出处：')
     assert quote < explanation < source
-    assert '本次已分别算出' in text[explanation:source]
+    assert '本次已经算出' in text[explanation:source]
     assert '首选：' not in text and '成功率' not in text
 
 

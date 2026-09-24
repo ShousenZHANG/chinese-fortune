@@ -1,5 +1,6 @@
 # Dev / CI dependencies. Runtime deps live in scripts/requirements.txt.
 -r scripts/requirements.txt
+-r scripts/requirements-dev.txt
 pytest>=8,<10
 pytest-cov>=7
 coverage>=7.10.6

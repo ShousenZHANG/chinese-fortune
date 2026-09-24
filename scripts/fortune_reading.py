@@ -11,9 +11,16 @@ from pathlib import Path
 
 from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
+from birth_interval import calculate_interval
 from classical_guidance import research_sources
 from fortune_calendar import period_facts
-from fortune_ranking import JIELU_METHOD_SOURCE, TIANDI_SOURCE, rank_candidates
+from fortune_decision import choose_practical, conclusion_packet, route_request
+from fortune_ranking import (
+    JIELU_METHOD_SOURCE,
+    TIANDI_SOURCE,
+    rank_candidates,
+    split_eligible_windows,
+)
 from fortune_rules import capabilities, evidence, luck_observations, research_request
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
@@ -22,7 +29,8 @@ from request_time import capture_request_time
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
 FIELDS = {'current_timezone', 'request_time', 'period', 'event', 'events', 'participants',
-          'candidates', 'duration_minutes', 'busy', 'granularity', 'include_natal_reading', 'include_research'}
+          'candidates', 'duration_minutes', 'busy', 'granularity', 'include_natal_reading', 'include_research',
+          'question', 'intent', 'preferences'}
 EVENT_FIELDS = {'scenario', 'timezone', 'longitude', 'time_standard', 'sect', 'priority'}
 
 
@@ -70,11 +78,14 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
         return read_itinerary(payload, now, data_dir=data_dir)
     if 'events' in payload:
         raise ValueError('events仅用于 multiple_events 连续行程')
-    capability = capabilities(scenario)[0]
+    capability = route_request(payload, capabilities(scenario)[0])
     if capability['route'] == 'specialist':
         return ok_envelope('fortune_reading', {'schema_version': '1.0', 'status': 'specialist_required',
                             'request_time': now, 'capability': capability,
                             'message': capability['missing']})
+    if 'period' not in payload and capability.get('intent') in ('natal', 'research'):
+        local_date = datetime.fromisoformat(now['local']).date()
+        payload = {**payload, 'period': {'start': str(local_date), 'end': str(local_date + timedelta(days=1))}}
     if 'period' not in payload:
         raise ValueError('请提供 period，例如 下周 或明确 start/end；不能猜目标日期')
     window = resolve_window(payload['period'], now, event.get('timezone') or now['timezone'])
@@ -90,7 +101,8 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                         'month' if length > 31 else 'day')
     standard = event.get('time_standard', 'true-solar')
     sect = event.get('sect', 2)
-    result: dict = {'schema_version': '1.0', 'status': 'partial', 'request_time': now,
+    result: dict = {'schema_version': '1.1', 'status': 'partial', 'request_time': now,
+              'question': payload.get('question', ''),
               'window': window, 'capability': capability, 'priority': priority,
               'method': {'primary': 'bazi', 'ranking_rules': [],
                          'chosen_before_calculation': True, 'supplementary_methods': []},
@@ -113,7 +125,7 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                 result['recommendation']['status'] = 'no_feasible_slot'
     elif any(key in payload for key in ('candidates', 'busy', 'duration_minutes')):
         raise ValueError('比较档期请给出具体事件 scenario，不能把运势查询当择时')
-    include = payload.get('include_natal_reading', False)
+    include = payload.get('include_natal_reading', capability['route'] == 'period')
     include_research = payload.get('include_research', False)
     if type(include) is not bool or type(include_research) is not bool:
         raise ValueError('include_natal_reading / include_research 必须为布尔值')
@@ -131,11 +143,12 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
             '--years', '120', '--current-timezone', now['timezone'], '--request-time', now['utc']])
         cache = _shared['natal_charts'] if _shared is not None else {}
         if person['input_fingerprint'] not in cache:
-            cache[person['input_fingerprint']] = calculate_bazi(args)
+            interval = person['person'].get('birth_time_range')
+            cache[person['input_fingerprint']] = calculate_interval(args, interval) if interval else calculate_bazi(args)
         chart = cache[person['input_fingerprint']]
         if not chart.get('ok'):
             raise ValueError(person['id'] + '：' + chart['message'])
-        natal_reading = prepare_reading(chart) if include else None
+        natal_reading = prepare_reading(chart, payload.get('question', '')) if include else None
         natal = natal_reading['chart_facts'] if natal_reading else chart_facts(chart)
         # Annual reference samples are not active target-year facts.
         natal = {k: v for k, v in natal.items() if k not in ('liu_nian', 'liu_nian_scope', 'liu_nian_note')}
@@ -152,12 +165,19 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                'input_fingerprint': person['input_fingerprint'], 'natal': natal, 'target': target}
         row['traditional_observations'] = luck_observations(natal, target)
         if approximate:
-            row['time_note'] = '出生时分仅约数；本次保守核对全天共同部分，不以约数确定时柱与大运'
+            interval = person['person'].get('birth_time_range')
+            row['time_note'] = (f"已比较出生当天 {interval['start']}–{interval['end']} 范围，只保留各可能时间一致的结论"
+                                if interval else '出生时分仅约数；未给上下界，本次保守核对全天共同部分，不以约数确定时柱与大运')
         if natal_reading:
             row['natal_interpretation'] = {k: v for k, v in natal_reading.items() if k != 'chart_facts'}
         result['participants'].append(row)
     result['evidence'] = evidence()
     if capability['route'] == 'selection':
+        screened = result['availability']
+        if capability.get('calendar_screening') == 'rule_based':
+            # Keep the original calendar-only availability; expose excluded parts separately.
+            screened, result['excluded_segments'] = split_eligible_windows(
+                screened, result['participants'][0], payload.get('duration_minutes', 60))
         result['candidate_comparison'] = compare_candidates(result['availability'], result['participants'],
             duration_minutes=payload.get('duration_minutes', 60), timezone=window['timezone'])
         result['event_method'] = event_basis(result['candidate_comparison'], result['participants'],
@@ -165,12 +185,14 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
             longitude=event.get('longitude'))
         # Ranking runs only where fortune_rules declares rule_based; every tier
         # it produces cites a passage. See references/26-precedence.md.
-        if capability['personal_ranking'] == 'rule_based':
+        if capability.get('calendar_screening') == 'rule_based':
             subject = next((p for p in result['participants'] if p['id'] == priority),
                            result['participants'][0])
             ranking = rank_candidates(result['candidate_comparison'], subject, scenario=scenario)
-            ranking['subject_participant_id'] = subject['id']
+            ranking['calendar_participant_id'] = subject['id']
             result['ranking'] = ranking
+            result['practical_comparison'] = compare_candidates(screened, result['participants'],
+                duration_minutes=payload.get('duration_minutes', 60), timezone=window['timezone'])
             for row in result['candidate_comparison']:
                 verdicts = {e['candidate_id'] for e in ranking['excluded']}
                 tiers = {t['candidate_id']: t['tier'] for t in ranking['tiers']}
@@ -189,7 +211,8 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                          if c not in struck]
             version = ranking['precedence_version']
             if len(survivors) == 1:
-                result['recommendation'] = {'status': 'ranked', 'first_choice': survivors[0],
+                result['recommendation'] = {'status': 'screened_only', 'first_choice': None,
+                                            'remaining': survivors,
                                             'backup': None, 'precedence_version': version}
             elif survivors:
                 result['recommendation'] = {'status': 'tied_no_clause_separates',
@@ -202,9 +225,27 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                     'status': 'excluded_by_clause', 'first_choice': None, 'backup': None,
                     'excluded': list(dict.fromkeys(e['candidate_id'] for e in ranking['excluded'])),
                     'precedence_version': version}
+            # Screen the exact subwindows, not their original broader input windows.
+            result['practical_screening'] = rank_candidates(result['practical_comparison'], subject, scenario=scenario)
     if include_research:
         result['research']['source_bundle'] = research_sources(scenario, limit=1)
     result['decision_blockers'] = decision_blockers(result)
+    if capability['route'] == 'selection':
+        practical = choose_practical(result, payload.get('preferences'))
+        result['practical_choice'] = practical
+        if result['priority'] is None:
+            result['recommendation'] = {'status': 'participant_priority_required', 'first_choice': None, 'backup': None}
+        elif practical['status'] == 'practical_choice':
+            result['recommendation'] = {'status': 'practical_choice',
+                                       'first_choice': practical['first_choice']['candidate_id'],
+                                       'backup': practical['backup']['candidate_id'] if practical['backup'] else None,
+                                       'basis': 'practical_constraints'}
+            result['decision_blockers'] = [b for b in result['decision_blockers'] if b['code'] != 'clause_conflict']
+        elif practical['status'] == 'clause_conflict':
+            result['recommendation'] = {'status': 'clause_conflict', 'first_choice': None, 'backup': None}
+        elif practical['status'] in ('preferences_required', 'practical_tie'):
+            result['recommendation'] = {'status': practical['status'], 'first_choice': None, 'backup': None}
+    result['conclusion'] = conclusion_packet(result)
     return ok_envelope('fortune_reading', result)
 
 
@@ -242,220 +283,82 @@ def _candidate_description(candidate: dict, interval: dict) -> str:
     return f"- {candidate['candidate_id']}：{first} 至 {later(latest)} 之间开始，持续 {candidate['duration_minutes']} 分钟；最迟 {later(end)} 结束。"
 
 
-def _hour_caveat(rows: list[dict], *, name_candidates: bool = False) -> str:
-    """The one limitation specific to this window: covered 忌时 and unsettled days.
-
-    ``rows`` arrives in time order and stays that way — sorting the branch names
-    would put 卯 before 寅. Wording avoids 两书相反 and the other 乙类 terms:
-    references/27-direct-answer.md keeps those out of the summary paragraph, and
-    this string is the summary's limitation clause.
-    """
-    covered: list[str] = []
-    unsettled: list[str] = []
-    for row in rows:
-        hours = [f"{hit['day_ganzhi']}日的{hit['hour_branch']}时"
-                 for hit in row.get('forbidden_hours_in_window', [])]
-        if hours:
-            who = f"{row['candidate_id']} 的" if name_candidates else ''
-            phrase = f"{who}窗口压到 " + '、'.join(dict.fromkeys(hours))
-            if phrase not in covered:
-                covered.append(phrase)
-        for ganzhi in row.get('unresolved_hour_rules', []):
-            if ganzhi not in unsettled:
-                unsettled.append(ganzhi)
-    parts = []
-    if covered:
-        parts.append('；'.join(covered) + '（截路空亡忌时），条款只说忌，没说这会不会改变整日的判断')
-    if unsettled:
-        parts.append('、'.join(unsettled) + '日这一条，两本古籍给的忌时不是同一组，本次不据以判断，'
-                                            '两说与出处列在下面')
-    return ('；'.join(parts) + '。') if parts else ''
-
-
-def _ranking_verdicts(result: dict) -> dict[str, str]:
-    """Plain-language leads for the statuses the clause ranking produces.
-
-    Each one has to name an action or a verdict, the clause behind it, and the
-    limitation belonging to this window — see references/27-direct-answer.md.
-    """
-    ranking = result.get('ranking')
-    if not ranking:
-        return {}
-    rec = result['recommendation']
-    tiers = ranking['tiers']
-    excluded = ranking['excluded']
-    verdicts = {}
-    if excluded:
-        named = '、'.join(dict.fromkeys(row['candidate_id'] for row in excluded))
-        kinds = '、'.join(dict.fromkeys(hit['kind'] for row in excluded
-                                        for hit in row['excluded_by']))
-        days = '、'.join(dict.fromkeys(hit['day_ganzhi'] for row in excluded
-                                       for hit in row['excluded_by']))
-        # A candidate can hold one clear window and one struck window; saying
-        # nothing about the clear part would hide why it is still not the answer.
-        partial = [row['candidate_id'] for row in tiers
-                   if row['candidate_id'] in {e['candidate_id'] for e in excluded}]
-        tail = ('这个窗口里没有别的时间剩下，要走得另挑日子。' if not partial else
-                f'{"、".join(dict.fromkeys(partial))} 另有一段不在忌日上，但本工具按整个候选判，'
-                '不替你把它拆成两段——要用那一段就单独作为一个候选再问一次。')
-        verdicts['excluded_by_clause'] = (
-            f'这些时间不要用：{named} 覆盖到 {days} 日，命中出行忌日条款（{kinds}）。{tail}')
-    if rec['status'] == 'ranked':
-        chosen = rec['first_choice']
-        rows = [row for row in tiers if row['candidate_id'] == chosen]
-        days = '、'.join(dict.fromkeys(day['day_ganzhi'] for row in rows
-                                       for day in row['days']))
-        others = [row['candidate_id'] for row in excluded if row['candidate_id'] != chosen]
-        # Candidates the calendar dropped never reach the ranking, so "you gave
-        # me only one" was false whenever the others failed on availability.
-        unavailable = sum(1 for row in result.get('candidate_comparison', [])
-                          if not row.get('available'))
-        if others:
-            why = (f'{"、".join(dict.fromkeys(others))} 覆盖的日子命中出行忌日条款，'
-                   f'{chosen} 覆盖的 {days} 日没有')
-            fallback = '剩下的候选只有它一个，所以这是唯一没被排除的，不是最好的。'
-        else:
-            why = f'它覆盖的 {days} 日都不是出行忌日（天地转杀）'
-            fallback = (f'另外 {unavailable} 个窗口是排不下这件事，属档期问题不是条款问题，'
-                        '所以这是唯一能安排的，不是比别的吉。' if unavailable else
-                        '你只给了这一个候选，所以这是「可以走」，不是「比别的好」。')
-        verdicts['ranked'] = f'就定 {chosen}：{why}。{_hour_caveat(rows) or fallback}'
-    if rec['status'] == 'tied_no_clause_separates':
-        named = '、'.join(rec['tied'])
-        rows = [row for row in tiers if row['candidate_id'] in set(rec['tied'])]
-        verdicts['tied_no_clause_separates'] = (
-            f'{named} 挑哪个都行：忌日条款一个都没命中，古籍里没有第二条能在它们之间分高下，'
-            '强排一个就是我自己编的。' + _hour_caveat(rows, name_candidates=True))
-    return verdicts
-
-
-def _clause_evidence(result: dict) -> list[str]:
-    """Layer 2: the passage behind every verdict, and both sides of every split.
-
-    references/27-direct-answer.md keeps the losing clause 「另说：《X》作 Y」 as
-    a line that may not be dropped, and its checklist asks 「排名有没有
-    passage_id」. The summary above names clauses by nickname only, so without
-    this block a reader is told a rule decided their date and given no way to
-    re-read it.
-    """
-    ranking = result.get('ranking')
-    if not ranking:
-        return []
-    lines: list[str] = []
-    for row in ranking['excluded']:
-        for hit in row['excluded_by']:
-            lines.append(f"- {row['candidate_id']} 排除：{hit['day_ganzhi']}日为{hit['kind']}日，"
-                         f"《渊海子平》「{hit['quote']}」（{hit['passage_id']}）")
-    for row in ranking['tiers']:
-        for hit in row.get('forbidden_hours_in_window', []):
-            lines.append(f"- {row['candidate_id']} 忌时：{hit['derivation']}"
-                         f"（{hit['passage_id']}）；忌时不改变该日是否可行")
-    seen: set[str] = set()
-    for row in ranking['tiers'] + ranking['excluded']:
-        for day in row.get('days', []):
-            rule = day['hour_rule']
-            if rule['resolved'] or day['day_ganzhi'] in seen:
-                continue
-            seen.add(day['day_ganzhi'])
-            both = '；'.join(f"《{'渊海子平' if r['passage_id'].startswith('yuanhai') else '三命通会'}》"
-                             f"作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
-            lines.append(f"- {day['day_ganzhi']}日忌时两说并列，本次都不取：{both}。"
-                         f"判据 {JIELU_METHOD_SOURCE} 两组都满足，"
-                         f"裁决顺序见 references/26-precedence.md「判不出来的，回到列分歧」")
-    if not (ranking['tiers'] or ranking['excluded']):
-        return []
-    # Always present, even when nothing was excluded: a verdict of 「就定 X」 is
-    # still a ranking, and the checklist forbids ranking without a citation.
-    lines.insert(0, f"条款依据（裁决表 {ranking['precedence_version']}）：")
-    lines.append(f'- 出行忌日条款：《渊海子平》论天地转杀（{TIANDI_SOURCE}）；'
-                 f'忌时条款：截路空亡（{JIELU_METHOD_SOURCE}）。'
-                 '黄历宜忌与干支相生不参与判断。')
-    return lines
-
-
 def render_answer(result: dict) -> str:
+    """Render the same conclusion packet consumed by the host, in everyday Chinese."""
     if result.get('capability', {}).get('route') == 'itinerary':
         from fortune_itinerary import render_itinerary
         return render_itinerary(result)
     if not result.get('ok') or result.get('status') == 'specialist_required':
         return result['message']
-    state = result['recommendation']['status']
-    choices = result['availability']
-    if choices:
-        count = sum(item['available'] for item in choices)
-        lead = f'你给的 {len(choices)} 个时间窗口中，{count} 个能排下这件事。'
-    else:
-        lead = '这段时间的日期、你的出生盘，以及两者对应的关系已经算出。'
-    reasons = {
-        'evidence_needed': '目前核实的古籍条款还不足以据此断定这段时间的吉凶，或选出最适合你的日期和时段。',
-        'availability_required': '还需要你能参加的时间窗口和事情要持续多久，才能比较安排。',
-        'participant_priority_required': '还需要确认这次主要为谁安排；不能默认替其中一人优先。',
-        'no_feasible_slot': '目前没有能排下这件事的时间，需调整可选窗口或占用安排。',
+    state = result['conclusion']['status']
+    practical = result.get('practical_choice', {})
+    leads = {
+        'evidence_needed': '目前有依据的分析见下文；现有规则还不能判断这段时间会发生哪些具体事情。',
+        'availability_required': '请一次告诉我可用日期、每天能参加的时段，以及事情需要多久，我就能继续比较具体安排。',
+        'participant_priority_required': '这次安排主要考虑谁，还是同等考虑所有人？已有的档期和通用条款核对可以先看。',
+        'no_feasible_slot': '目前没有能排下这件事的时间，需要调整可选窗口或已经占用的行程。',
+        'screened_only': '这个窗口没有命中本次检查的出行忌日条款，但这一项检查还不能说明它整体适合你。',
+        'tied_no_clause_separates': '现有条款没有分出这些时间的个人优劣。你更看重尽早、尽晚，还是某个候选？明确这一点后可以给出实用首选和备选。',
+        'excluded_by_clause': '按本次核对的出行忌日条款，这些窗口需要避开；具体命中的日期和依据在下面。',
+        'clause_conflict': '这个窗口虽没有命中已查的忌日，但涉及另一条忌时或版本分歧，目前不能把它当作整体合适的时间来推荐。',
+        'preferences_required': '这些窗口都排得下这件事，现有古法还没有分出个人优劣。你更想尽早、尽晚，还是优先某个候选？明确这个偏好后就能给出实用首选和备选。',
+        'practical_tie': '按你给的条件，这些安排仍然并列。需要再补一个实际偏好，才能选出首选；现有依据不支持硬分高下。',
     }
-    if result['capability']['route'] == 'period':
-        reasons['evidence_needed'] = '整体顺不顺，还需要核清整张盘和对应的古籍条件；下面先说明已经能核实的部分。'
-    # A clause ranking produces its own statuses; without these the lookup below
-    # raised KeyError, which main() printed as 「目前还算不了这一部分」.
-    reasons.update(_ranking_verdicts(result))
-    if state not in reasons:
-        raise AssertionError(f'recommendation.status {state!r} 没有对应的白话说明')
-    window = result['window']
-    lines = [lead + reasons[state], '', _window_description(window)]
-    comparisons = result.get('candidate_comparison', [])
-    if comparisons:
-        lines.extend(['', '档期核对如下；可安排不等于吉利。', ''])
-        for candidate in comparisons:
-            if not candidate['available']:
-                lines.append(f"- {candidate['candidate_id']}：{candidate['reason']}。")
-            for interval in candidate['windows']:
-                lines.append(_candidate_description(candidate, interval))
-        if result['priority'] is None and state != 'participant_priority_required':
-            lines.append('还需要确认这次主要为谁安排。')
+    if state == 'practical_choice':
+        first = practical['first_choice']
+        lead = f"按你的实际安排，首选 {first['candidate_id']}：{_display_time(first['start'])} 至 {_display_time(first['end'])}（{first['timezone']}）。" + practical['reason'] + '。这是档期选择，现有古法尚未分出个人吉凶高下。'
+        if practical.get('backup'):
+            backup = practical['backup']
+            lead += f"备选 {backup['candidate_id']}：{_display_time(backup['start'])} 至 {_display_time(backup['end'])}（{backup['timezone']}）。"
+    else:
+        lead = leads[state]
+    lines = [lead, _window_description(result['window'])]
+    comparison = result.get('candidate_comparison', [])
+    for candidate in comparison:
+        if not candidate['available']:
+            lines.append(f"{candidate['candidate_id']}：{candidate['reason']}。")
+        elif state != 'practical_choice':
+            lines.extend(_candidate_description(candidate, w) for w in candidate['windows'][:3])
     if state == 'no_feasible_slot':
-        lines.extend(['', '先调整可选窗口或已占用的行程，再比较择时依据。'])
-        return '\n'.join(lines)
-    evidence_lines = _clause_evidence(result)
-    if evidence_lines:
-        lines.append('')
-        lines.extend(evidence_lines)
-    method = result.get('event_method')
-    if method and method['charts']:
-        lines.extend(['', '这些候选时间也已按《元灵经》的已核方法计算地盘、值符和值使，'
-                      '并核对每个人的出生年干落在哪里。年干只是出生八字的一部分；'
-                      '星门的其余条件尚未核全，因此这一步还不能给候选时间排吉凶顺序。'])
-    for p in result['participants']:
-        natal = p['natal']
-        first = p['target']['segments'][0]['facts']
-        day = natal.get('day_master', {}).get('stem')
-        lines.extend(['', f"{p['id']}：出生盘里代表你自身的日干是{day or '待确认'}；"
-                      f"这段时间开始时对应{first['pillars']['year']}年、{first['pillars']['month']}月。"
-                      '这些是计算结果，单凭这些字还不能确定事情顺不顺。'])
-        if p['target'].get('missing_input'):
-            lines.append('还缺：' + p['target']['missing_input'] + '。')
-        if p.get('time_note'):
-            lines.append(p['time_note'] + '。')
-        elif not natal.get('hour_known'):
-            lines.append('出生时段尚未确定，完整时柱与起运时间仍需核清。')
-        if p['traditional_observations']:
-            lines.append('下面解释目标时间内的长期背景。古法把十年划为一段，称为“大运”。')
-        for observation in p['traditional_observations'][:3]:
+        return '\n\n'.join(lines)
+    ranking = result.get('ranking', {})
+    if ranking.get('tiers') or ranking.get('excluded'):
+        lines.append('《渊海子平·论天地转杀》说：“其日最忌，上官受职、出行商贾、造作、嫁娶。”（' + TIANDI_SOURCE + '）白话说，这条是在指出特定季节需要避开的日子；没有碰到它，不等于其他条件都合适。这项检查按出行日期计算，没有用完整八字给你排名。')
+        if state == 'practical_choice' and any(row.get('excluded_by') or row.get('forbidden_hours_in_window') or row.get('unresolved_hour_rules') for row in ranking.get('tiers', []) + ranking.get('excluded', [])):
+            lines.append('下面说明原可选大窗口里需要避开的部分。上面的安排仅指已另行核查的具体子时段，不包含这些部分。')
+        for row in ranking.get('excluded', []):
+            for hit in row['excluded_by']:
+                lines.append(f"{row['candidate_id']} 原可选窗口覆盖到 {hit['day_ganzhi']} 日，命中这条忌日规则。")
+        seen = set()
+        for row in ranking.get('tiers', []) + ranking.get('excluded', []):
+            hits = row.get('forbidden_hours_in_window', [])
+            if hits:
+                text = '、'.join(dict.fromkeys(f"{h['day_ganzhi']}日的{h['hour_branch']}时" for h in hits))
+                lines.append(f"{row['candidate_id']} 涉及 {text} 的忌时说法（{JIELU_METHOD_SOURCE}）。也就是说，单看日期未触犯一条规则，并不能消除时段上的疑问；该段‘正犯’的限定仍需连同上下文核对。")
+            for day in row.get('days', []):
+                rule = day['hour_rule']
+                if rule['resolved'] or day['day_ganzhi'] in seen:
+                    continue
+                seen.add(day['day_ganzhi'])
+                both = '；'.join(f"《{'渊海子平' if r['passage_id'].startswith('yuanhai') else '三命通会'}》作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
+                lines.append(f"{day['day_ganzhi']}日忌时两说并列：{both}。白话说，两本书指向不同时间，目前无法据此选出更好的时段。")
+    for person in result['participants']:
+        if person.get('time_note'):
+            lines.append(person['time_note'] + '。')
+        for observation in person['traditional_observations'][:2]:
             source = observation['source']
-            lines.extend(['', observation['plain_observation'], '',
-                          '《子平真诠·论行运》（东里书斋整理本）正文：“' + source['text'] + '”',
-                          '白话说：' + observation['plain_meaning'] + observation['plain_application']
-                          + observation['limit'], '', '出处：' + source['source_url']])
-    quote = '而取運則又以運之干支，配八字之喜忌。'
-    if quote not in result['evidence']['principle'][0]['text']:
-        raise ValueError('白话示例所引原文与当前固定版本不一致')
-    detail_limit = ('但这段原文没有给出本次事项的逐日、逐时排名办法。' if result['capability']['route'] == 'selection'
-                    else '这段原文讲的是较长运程，还不足以判断窗口内每天、每个小时怎样。')
-    lines.extend(['', '《子平真诠·论行运》（东里书斋整理本）正文：“' + quote + '”', '',
-                  '白话说：分析一段运程，要把它与本人的整张出生盘放在一起看，先查清什么条件起作用。'
-                  '本次已分别算出每个人的出生盘与目标时间；' + detail_limit +
-                  '因此还要补查对应条款，不能把日历上的生克关系直接翻成“这天最好”。', '',
-                  '出处：' + result['evidence']['principle'][0]['source_url'], '',
-                  '下一步需核对：' + result['research']['missing'] + '。'])
-    return '\n'.join(lines)
+            lines.append(observation['plain_observation'])
+            lines.append('《子平真诠·论行运》：“' + source['text'] + '”\n白话说：' + observation['plain_meaning'] + observation['plain_application'] + observation['limit'] + '\n出处：' + source['source_url'])
+    if not ranking and not any(p['traditional_observations'] for p in result['participants']):
+        quote = '而取運則又以運之干支，配八字之喜忌。'
+        source = result['evidence']['principle'][0]
+        if quote not in source['text']:
+            raise ValueError('引文与冻结原文不一致')
+        lines.append('《子平真诠·论行运》：“' + quote + '”\n白话说，要看一段运程怎样作用于一个人，得把这段运程和他的整张出生盘一起分析。本次已经算出相关盘面，但已实现的两条运程例式没有给出本题的完整结论；不能只看到“财”“官”就认定会收到钱或录用。\n出处：' + source['source_url'])
+    missing = [b['message'] for b in result['decision_blockers'] if b['code'] == 'event_longitude_required']
+    lines.extend(dict.fromkeys(missing))
+    lines.append('以上是已有依据支持的部分。还缺的本题条款可继续补查约5分钟；这份计算结果尚未执行外部检索，不代表古籍里不存在相关内容。')
+    return '\n\n'.join(lines)
 
 
 def main(argv: list[str] | None = None) -> int:

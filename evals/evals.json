@@ -687,9 +687,9 @@
     },
     {
       "id": 24,
-      "name": "ranking-requires-a-citation",
+      "name": "travel-capability-scope",
       "prompt": "我想在 2026-10-13 到 10-15 之间从悉尼出发，哪天合适？我是 1997-12-24 晚上 7 点半生，江苏吴江，男。",
-      "expected_output": "出行属 rule_based 场景：10-14 辛酉为秋季天转日，按《渊海子平·论天地转杀》排除并给出原文；其余两天条款上并列，不编首选。忌时按截路空亡以日干取，只提示窗口实际覆盖到的那些。冲生肖无条款支撑，只作民俗层背景。",
+      "expected_output": "接口声明：出行支持通用日历条款筛选，完整个人排名仍未实现。具体请求及正文语义另由 test_general_workflow 与真实宿主案例验证。",
       "assertions": [
         {
           "kind": "script",
@@ -701,18 +701,19 @@
           ],
           "paths": {
             "ok": true,
-            "capabilities.0.personal_ranking": "rule_based",
+            "capabilities.0.personal_ranking": "not_implemented",
             "capabilities.0.precedence_version": "precedence-v1",
-            "capabilities.0.ranking_reference": "references/26-precedence.md"
+            "capabilities.0.ranking_reference": "references/26-precedence.md",
+            "capabilities.0.calendar_screening": "rule_based"
           }
         }
       ]
     },
     {
       "id": 25,
-      "name": "unimplemented-scenarios-stay-unranked",
+      "name": "interview-personal-ranking-capability",
       "prompt": "下周三面试，上午还是下午好？",
-      "expected_output": "面试的 personal_ranking 仍是 not_implemented：协纪辨方书卷33/34 只作范围审计，不得成为面试排名依据。给可行档期与缺口，不给首选。",
+      "expected_output": "接口声明：面试个人古法排名未实现；有明确现实偏好时可另给具体的实际档期选择。此接口测试不代表完整回答验收。",
       "assertions": [
         {
           "kind": "script",
@@ -733,15 +734,17 @@
       "id": 26,
       "name": "direct-answer-and-precedence-are-reachable",
       "prompt": "回答要直接一点，别绕。",
-      "expected_output": "首行按问句类型给结论／动作／是否；摘要含答案、一句依据、本题独有的限制。套话删（换一题还成立即套话），输家条款与本题限制不可删。",
+      "expected_output": "文档入口可达性检查；实际白话与依据一致性另由完整请求与宿主首答验收。",
       "assertions": [
         {
           "kind": "file_contains",
           "file": "references/27-direct-answer.md",
           "needles": [
-            "这句话换到别的卦、别的年、别的颜色上，还成立吗",
-            "甲类 · 禁用",
-            "乙类 · 限位"
+            "自然白话",
+            "300–600",
+            "clause_conflict",
+            "conclusion",
+            "候选顺序"
           ]
         },
         {

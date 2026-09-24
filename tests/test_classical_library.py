@@ -119,7 +119,15 @@ def test_every_character_in_the_library_is_reachable_from_its_simplified_form() 
             if unicodedata.category(char) == 'Lo' and '㐀' <= char <= '鿿':
                 corpus.add(char)
     assert len(corpus) == table['corpus_characters'], '表已过期，重新生成'
-    unreachable = [c for c in sorted(corpus) if normalized(folds.get(c, c)) != normalized(c)]
+    from hashlib import sha256
+
+    from opencc import OpenCC
+    convert = OpenCC('t2s').convert
+    expected = {c: convert(c) for c in corpus}
+    expected = {k: v for k, v in expected.items() if len(v) == 1 and v != k}
+    assert folds == expected
+    assert table['corpus_character_sha256'] == sha256(''.join(sorted(corpus)).encode()).hexdigest()
+    unreachable = [c for c in sorted(corpus) if normalized(convert(c)) != normalized(c)]
     assert not unreachable, unreachable[:20]
 
 

@@ -228,7 +228,8 @@ def test_ranking_declares_the_precedence_version_it_used():
     assert result['precedence_version'] == PRECEDENCE_VERSION
     assert result['ranking_reference'] == 'references/26-precedence.md'
     travel = next(c for c in capabilities('travel'))
-    assert travel['personal_ranking'] == 'rule_based'
+    assert travel['personal_ranking'] == 'not_implemented'
+    assert travel['calendar_screening'] == 'rule_based'
     assert travel['precedence_version'] == PRECEDENCE_VERSION
 
 
@@ -279,19 +280,19 @@ def test_survivors_tie_instead_of_getting_an_invented_first_choice():
          {'id': 'd22', 'start': '2026-09-22T08:00', 'end': '2026-09-22T12:00'}],
         {'start': '2026-09-21', 'end': '2026-09-24'}))
     rec = result['recommendation']
-    assert rec['status'] == 'tied_no_clause_separates'
+    assert rec['status'] == 'preferences_required'
     assert rec['first_choice'] is None
-    assert sorted(rec['tied']) == ['d21', 'd22']
-    assert rec['precedence_version'] == PRECEDENCE_VERSION
+    assert sorted({w['candidate_id'] for w in result['practical_choice']['alternatives']}) == ['d21', 'd22']
+    assert result['ranking']['precedence_version'] == PRECEDENCE_VERSION
 
 
-def test_rule_based_scenario_drops_the_missing_rules_blocker():
+def test_day_screening_does_not_hide_missing_personal_rules():
     from fortune_reading import read_request
     result = read_request(_travel_request(
         [{'id': 'd22', 'start': '2026-09-22T08:00', 'end': '2026-09-22T12:00'}],
         {'start': '2026-09-21', 'end': '2026-09-24'}))
     codes = [b['code'] for b in result['decision_blockers']]
-    assert 'ranking_rules_required' not in codes
+    assert 'ranking_rules_required' in codes
 
 
 def test_climate_colors_name_every_stem_the_clause_takes():
@@ -344,8 +345,8 @@ def test_every_recommendation_status_renders_instead_of_raising():
     """
     from fortune_reading import read_request, render_answer
     cases = {
-        'ranked': [_slot('oct15', '2026-10-15')],
-        'tied_no_clause_separates': [_slot('oct13', '2026-10-13'),
+        'practical_choice': [_slot('oct15', '2026-10-15')],
+        'preferences_required': [_slot('oct13', '2026-10-13'),
                                      _slot('oct15', '2026-10-15')],
         'excluded_by_clause': [_slot('oct14', '2026-10-14')],
     }
@@ -361,9 +362,10 @@ def test_every_recommendation_status_renders_instead_of_raising():
     # 庚申 covers 午 in the 09:00-13:00 window, so the tied lead must say so and
     # say which candidate — deleting _hour_caveat used to leave everything green.
     tied = render_answer(read_request(_travel_request(
-        cases['tied_no_clause_separates'], _OCT))).splitlines()[0]
-    assert 'oct13 的窗口压到 庚申日的午时' in tied
-    assert '截路空亡忌时' in tied
+        cases['preferences_required'], _OCT))).splitlines()[0]
+    assert '现有古法' in tied
+    assert '个人优劣' in tied
+    assert '就定' not in tied
 
 
 def test_a_fully_excluded_window_is_a_verdict_not_a_plea_for_evidence():
@@ -380,9 +382,10 @@ def test_a_fully_excluded_window_is_a_verdict_not_a_plea_for_evidence():
     assert rec['first_choice'] is None
     assert rec['excluded'] == ['oct14']
     assert rec['precedence_version'] == PRECEDENCE_VERSION
-    assert result['decision_blockers'] == []
-    lead = render_answer(result).splitlines()[0]
-    assert 'oct14' in lead and '天转' in lead
+    assert {b['code'] for b in result['decision_blockers']} == {'ranking_rules_required'}
+    text = render_answer(result)
+    assert '需要避开' in text.splitlines()[0]
+    assert 'oct14' in text and '辛酉' in text
 
 
 def test_a_window_crossing_midnight_is_judged_on_every_day_it_covers():
@@ -447,10 +450,11 @@ def test_a_day_that_a_solar_term_splits_is_judged_the_same_from_any_start():
         result = read_request(_travel_request(
             [_slot('c', '2034-02-04', start, end)], period))
         verdicts[start] = result['recommendation']['status']
-    assert set(verdicts.values()) == {'excluded_by_clause'}, verdicts
+    assert verdicts['06:00'] == verdicts['07:00'] == 'excluded_by_clause'
+    assert verdicts['03:00'] == 'practical_choice'  # Fits before the actual seasonal boundary.
 
 
-def test_a_candidate_with_one_excluded_window_is_not_recommended():
+def test_flexible_candidate_uses_only_a_complete_clear_subwindow():
     """A busy block can leave one window clear and push the other onto a 忌日.
 
     Counting it as a survivor produced 「就定 trip」 for a candidate whose own
@@ -465,8 +469,10 @@ def test_a_candidate_with_one_excluded_window_is_not_recommended():
     assert [t['candidate_id'] for t in ranking['tiers']] == ['trip']
     assert [e['candidate_id'] for e in ranking['excluded']] == ['trip']
     rec = result['recommendation']
-    assert rec['status'] == 'excluded_by_clause'
-    assert rec['first_choice'] is None
+    assert rec['status'] == 'practical_choice'
+    assert result['practical_choice']['first_choice']['start'] == '2026-10-13T09:00:00+11:00'
+    assert result['practical_choice']['first_choice']['end'] == '2026-10-13T11:00:00+11:00'
+    assert result['excluded_segments']
     judgment = next(c['judgment'] for c in result['candidate_comparison']
                     if c['candidate_id'] == 'trip')
     assert judgment == 'excluded_by_clause'
@@ -529,8 +535,9 @@ def test_one_candidate_split_by_a_busy_block_does_not_tie_with_itself():
     # so it needs its own assertion or it can drift unnoticed.
     assert result['ranking']['ties'] is False
     rec = result['recommendation']
-    assert rec['status'] == 'ranked'
-    assert rec['first_choice'] == 'oct15'
+    assert rec['status'] == 'preferences_required'
+    assert rec['first_choice'] is None
+    assert result['practical_choice']['status'] == 'preferences_required'
 
 
 def test_result_states_what_it_does_not_cover():

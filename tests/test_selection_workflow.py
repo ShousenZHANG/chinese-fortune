@@ -41,7 +41,8 @@ def test_starts_allow_full_duration_and_keep_mid_event_calendar_change(query):
         assert 'hour' in facts['pillars']
         hour = person['target']['pillar_catalog'][facts['pillars']['hour']]
         assert {r['pillar'] for r in hour['natal_stem_relations']} == {'year', 'month', 'day', 'hour'}
-    assert result['recommendation']['first_choice'] is None
+    assert result['recommendation']['basis'] == 'practical_constraints'
+    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
 
 
 def test_personal_qimen_basis_covers_whole_candidate_without_claiming_a_ranking(query):
@@ -57,7 +58,8 @@ def test_personal_qimen_basis_covers_whole_candidate_without_claiming_a_ranking(
         assert person['birth_year_stem'] == stem
         assert chart['core']['earth'][person['earth_palace']] == stem
         assert person['verdict'] == 'not_evaluated'
-    assert result['recommendation']['first_choice'] is None
+    assert result['recommendation']['basis'] == 'practical_constraints'
+    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
 
 
 def test_qimen_retains_middle_solar_term_even_when_bazi_month_does_not_change(query):
@@ -97,7 +99,8 @@ def test_qimen_uses_each_person_year_and_does_not_invent_hidden_jia_mapping(quer
     assert people[1]['birth_year_stem'] == '甲'
     assert people[1]['earth_palace'] is None
     assert people[1]['status'] == 'year_stem_mapping_required'
-    assert result['recommendation']['first_choice'] is None
+    assert result['recommendation']['basis'] == 'practical_constraints'
+    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
 
 
 def test_qimen_true_solar_basis_agrees_with_explicit_cli_clock_correction(query):
@@ -183,7 +186,8 @@ def test_latest_start_uses_elapsed_minutes_across_dst_jump(query):
 def test_display_does_not_round_start_before_actual_availability(query):
     query['candidates'] = [{'start': '2026-09-15T09:00:59', 'end': '2026-09-15T10:00:59'}]
     result = read_request(query)
-    assert '09:00:59 开始' in render_answer(result)
+    assert '09:00:59+10:00' in render_answer(result)
+    assert result['practical_choice']['first_choice']['start'].endswith('09:00:59+10:00')
 
 
 def test_blockers_do_not_hide_each_other(query):
@@ -199,7 +203,7 @@ def test_blockers_do_not_hide_each_other(query):
     assert {b['code'] for b in result['decision_blockers']} == {
         'participant_priority_required', 'event_longitude_required', 'birth_time_required',
         'ranking_rules_required', 'no_feasible_slot'}
-    assert '确认这次主要为谁安排' in render_answer(result)
+    assert '主要考虑谁' in render_answer(result)
 
 
 def test_same_request_is_stable_and_personal_catalogs_do_not_mix(query):
