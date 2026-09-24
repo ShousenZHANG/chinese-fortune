@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from datetime import UTC, datetime, timedelta
+from zoneinfo import ZoneInfo
 
 INTENTS = {'period', 'selection', 'natal', 'event', 'research'}
 
@@ -14,7 +15,9 @@ def route_request(payload: dict, capability: dict) -> dict:
     if not isinstance(question, str) or len(question) > 2000:
         raise ValueError('question 必须为不超过 2000 字符的文本')
     result = dict(capability)
-    if intent:
+    if intent == 'event' and 'candidates' in payload:
+        result['route'] = 'selection'
+    elif intent:
         result['route'] = 'selection' if intent == 'selection' else 'period'
     elif result.get('custom'):
         result['route'] = 'selection' if 'candidates' in payload else 'period'
@@ -59,7 +62,7 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
                 continue
             edge = 'latest' if prefer == 'latest' else 'earliest'
             start = datetime.fromisoformat(window['allowed_start'][edge])
-            end = (start.astimezone(UTC) + timedelta(minutes=candidate['duration_minutes'])).astimezone(start.tzinfo)
+            end = (start.astimezone(UTC) + timedelta(minutes=candidate['duration_minutes'])).astimezone(ZoneInfo(result['window']['timezone']))
             windows.append({'candidate_id': candidate['candidate_id'], 'start': start.isoformat(),
                             'end': end.isoformat(), 'timezone': result['window']['timezone'],
                             'start_is_practical_boundary': True})

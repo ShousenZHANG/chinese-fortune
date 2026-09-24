@@ -6,7 +6,7 @@ import hashlib
 import json
 import sys
 from collections.abc import Callable
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from bazi_calc import build_parser, calculate_bazi
@@ -78,6 +78,20 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
         return read_itinerary(payload, now, data_dir=data_dir)
     if 'events' in payload:
         raise ValueError('events仅用于 multiple_events 连续行程')
+    # An explicitly bounded event is its whole interval, not a flexible start.
+    # Date-only periods remain periods: do not invent a duration or appointment.
+    event_period = payload.get('period')
+    if payload.get('intent') == 'event' and 'candidates' not in payload and isinstance(event_period, dict) and all(
+            isinstance(event_period.get(k), str) and 'T' in event_period[k] for k in ('start', 'end')):
+        exact_window = resolve_window(event_period, now, event.get('timezone') or now['timezone'])
+        start, end = (datetime.fromisoformat(exact_window[k]).astimezone(UTC) for k in ('start', 'end'))
+        minutes = (end - start).total_seconds() / 60
+        if minutes != int(minutes):
+            raise ValueError('整段事件请提供分钟分辨率的起止时间')
+        if 'duration_minutes' in payload and payload['duration_minutes'] != minutes:
+            raise ValueError('整段事件的持续时间与明确起止时间不一致；灵活安排请使用 candidates')
+        payload = {**payload, 'duration_minutes': int(minutes),
+                   'candidates': [{'id': 'event', 'start': exact_window['start'], 'end': exact_window['end']}]}
     capability = route_request(payload, capabilities(scenario)[0])
     if capability['route'] == 'specialist':
         return ok_envelope('fortune_reading', {'schema_version': '1.0', 'status': 'specialist_required',
@@ -124,7 +138,7 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
             if not any(p['available'] for p in result['availability']):
                 result['recommendation']['status'] = 'no_feasible_slot'
     elif any(key in payload for key in ('candidates', 'busy', 'duration_minutes')):
-        raise ValueError('比较档期请给出具体事件 scenario，不能把运势查询当择时')
+        raise ValueError('比较档期请使用 intent=selection 或带候选的 intent=event，不能把期间查询当择时')
     include = payload.get('include_natal_reading', capability['route'] == 'period')
     include_research = payload.get('include_research', False)
     if type(include) is not bool or type(include_research) is not bool:

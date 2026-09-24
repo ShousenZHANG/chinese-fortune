@@ -43,10 +43,12 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
-    ('classical_guidance.py', ['--scenario', 'missing'], '不存在的古籍场景'),
+    ('classical_guidance.py', ['--family', 'missing'], '不存在的命局类别'),
     ('classical_search.py', ['--chapter-id', 'ziping:c026', '--offset', -1], '分页不能负偏移'),
     ('fortune_reading.py', ['--stdin'], '空 JSON 请求'),
-    ('fortune_rules.py', ['--scenario', 'not-a-scenario'], '不存在的场景'),
+    ('fortune_rules.py', ['--scenario', 'x' * 81], '场景超出长度边界'),
+    ('research_session.py', ['begin', '--stdin'], '空 JSON 请求'),
+    ('research_session.py', ['status', '--stdin'], '缺少研究会话标识'),
     ('fortune_rules.py', ['--scenario', ''], '空场景不是通配符'),
     ('personal_profiles.py', ['show', '--profile-id', '../escape'], '档案 id 越界'),
     ('personal_profiles.py', ['delete', '--profile-id', 'sample', '--expected-revision', '-1'], '非法修订号'),

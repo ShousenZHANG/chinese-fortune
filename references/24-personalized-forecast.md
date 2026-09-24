@@ -131,6 +131,8 @@ save 从 stdin 读上例中的 `person` 对象，首次 revision 为 1。修改�
 
 ## 通用请求与明确时间
 
+`intent=event` 带候选时按完整事件核查；没有候选但 period 明确给出带 `T` 的起止时间时，整个区间就是这次事件，自动核查全程。只给日期时不猜持续时间。提供 candidates 时仍须给 period（宿主可用已明确的候选起止范围填写，不需向用户重复追问）。
+
 顶层可给 `question`（本题原话）、`intent`（period/selection/natal/event/research）以及 `preferences`。新事项直接用 `event.scenario` 的名称，不借其他场景规则。`intent=selection` 需要可选日期、时段和持续时间；缺项一次问齐。`natal/research` 可省 period，此时当天只是计算参照，不赋予未来判断。
 
 `preferences` 只接受一种已由用户给定的实际偏好：`{"prefer":"earliest"}`、`{"prefer":"latest"}` 或 `{"candidate_order":["A","B"]}`。不能由宿主自行填写默认偏好。`practical_choice` 返回首选和备选的精确 start/end/timezone、选择原因以及是否仅为现实安排；多个候选仍同档则保留并列。出生资料缺项不妨碍独立的档期事实，但必须说明缺项对传统判断的影响。

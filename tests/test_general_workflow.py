@@ -32,6 +32,20 @@ def test_entire_event_in_conflicting_hours_never_becomes_recommendation(request_
     assert '就定' not in lead
 
 
+def test_single_event_checks_existing_calendar_rules_for_the_whole_interval(request_data):
+    request_data['intent'] = 'event'
+    by_candidate = read_request(request_data)
+    request_data.pop('candidates')
+    request_data['period'] = {'start': '2026-10-13T12:00', 'end': '2026-10-13T14:00'}
+    by_interval = read_request(request_data)
+    for result in (by_candidate, by_interval):
+        assert result['recommendation']['status'] == 'clause_conflict'
+        assert result['conclusion']['calendar_screening_scope'] == 'generic_calendar_filter'
+    request_data['duration_minutes'] = 60
+    with pytest.raises(ValueError, match='不一致'):
+        read_request(request_data)
+
+
 def test_unknown_lichun_birth_retains_year_candidates_without_crashing(request_data):
     person = request_data['participants'][0]['person']
     person['birth'].update(month=2, day=4)
@@ -89,6 +103,17 @@ def test_two_available_windows_without_preference_do_not_get_arbitrary_choice(re
     assert result['conclusion']['status'] == 'preferences_required'
     assert '偏好' in render_answer(result).splitlines()[0]
     assert result['recommendation']['first_choice'] is None
+
+
+def test_practical_event_end_uses_actual_dst_offset(request_data):
+    request_data['event'].update(scenario='讨论社团活动', timezone='Australia/Sydney')
+    request_data['intent'] = 'selection'
+    request_data['period'] = {'start': '2026-10-04', 'end': '2026-10-05'}
+    request_data['candidates'] = [{'id': 'dst', 'start': '2026-10-04T01:30', 'end': '2026-10-04T04:30'}]
+    result = read_request(request_data)
+    choice = result['practical_choice']['first_choice']
+    assert choice['start'] == '2026-10-04T01:30:00+10:00'
+    assert choice['end'] == '2026-10-04T04:30:00+11:00'
 
 
 def test_birth_range_keeps_stable_hour_instead_of_discarding_whole_day(request_data):
