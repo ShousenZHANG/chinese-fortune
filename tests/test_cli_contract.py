@@ -43,6 +43,8 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
+    ('prediction_log.py', ['begin', '--stdin'], '空记录请求'),
+    ('prediction_log.py', ['show', '--stdin'], '缺少记录标识'),
     ('classical_guidance.py', ['--family', 'missing'], '不存在的命局类别'),
     ('classical_search.py', ['--chapter-id', 'ziping:c026', '--offset', -1], '分页不能负偏移'),
     ('fortune_reading.py', ['--stdin'], '空 JSON 请求'),

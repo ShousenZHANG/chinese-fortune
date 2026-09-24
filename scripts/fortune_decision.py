@@ -117,6 +117,13 @@ def conclusion_packet(result: dict) -> dict:
             'status': result['recommendation']['status'],
             'personal_facts_used': [p['id'] for p in result['participants']],
             'traditional_personal_ranking': 'not_established',
+            'interpretation_contract': {
+                'method_selection': 'fix_before_interpretation',
+                'claim_requirements': ['actual_personal_fields', 'source_conditions',
+                                       'exceptions_checked', 'matching_time_scope'],
+                'unresolved_conflict': 'state_conflict_do_not_vote_or_recast',
+                'certainty_scope': 'supported_conclusion_not_guaranteed_event',
+                'validation_record': 'explicit_consent_external_prediction_log'},
             'calendar_screening_scope': result.get('ranking', {}).get('rule_scope'),
             'traditional_observations': observations,
             'practical_choice': result.get('practical_choice'),

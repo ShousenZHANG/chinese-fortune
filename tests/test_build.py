@@ -39,6 +39,8 @@ def test_runtime_files_present(package):
         "chinese-fortune/scripts/bazi_calc.py",
         "chinese-fortune/scripts/bazi_reading.py",
         "chinese-fortune/scripts/request_time.py",
+        "chinese-fortune/scripts/prediction_log.py",
+        "chinese-fortune/references/28-prospective-validation.md",
         "chinese-fortune/scripts/classical_search.py",
         "chinese-fortune/knowledge/manifest.json",
         "chinese-fortune/docs/CLASSICAL-SOURCES.md",
