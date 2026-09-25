@@ -18,8 +18,17 @@ from __future__ import annotations
 from copy import deepcopy
 from datetime import UTC, datetime, timedelta
 
+import xiangzhu
 import xieji_days
-from contracts import ContestedHourHit, DayRuleHit, HourHit, Ranking, RankingRow, Unrankable
+from contracts import (
+    ContestedHourHit,
+    DayRuleHit,
+    HourHit,
+    PersonalAssessment,
+    Ranking,
+    RankingRow,
+    Unrankable,
+)
 from fortune_rules import PRECEDENCE_VERSION
 
 # 天地转杀（yuanhai:c052:p0004）：秋见辛酉为天转、癸酉为地转；其日最忌「出行商贾」。
@@ -254,12 +263,34 @@ def season_of(month_branch: str) -> str | None:
             '亥': 'winter', '子': 'winter', '丑': 'winter'}.get(month_branch)
 
 
+def personal_people(participants: list[dict]) -> list[tuple[str, str]]:
+    """(participant_id, 生年干支) for everyone, once per birth year the chart allows.
+
+    A birth near 立春 without the deciding time allows two years; both are
+    graded and the worse grade stands, the conservative reading used for any
+    unknown birth time.
+    """
+    return [(person['id'], birth) for person in participants
+            for birth in xiangzhu.birth_years_of(person['natal'])]
+
+
+def personal_hits(people: list[tuple[str, str]],
+                  pillars: dict[str, str] | list[dict[str, str]]) -> tuple[PersonalAssessment | None, list[DayRuleHit]]:
+    """相主 for one span of days: the assessment and the hits that exclude it."""
+    if not people:
+        return None, []
+    assessed = xiangzhu.assess_people(people, [pillars] if isinstance(pillars, dict) else pillars)
+    return assessed, xiangzhu.prohibitions(assessed)
+
+
 def split_eligible_windows(availability: list[dict], participant: dict, duration: int,
-                           scenario: str = 'travel') -> tuple[list[dict], list[dict]]:
+                           scenario: str = 'travel',
+                           people: list[tuple[str, str]] | None = None) -> tuple[list[dict], list[dict]]:
     """Retain complete-event subwindows when a flexible interval crosses a barred day.
 
-    Only the implemented day exclusion splits availability; disputed hour rules
-    remain explicit cautions. Every omitted segment retains its source.
+    Day rules for the event and the person's own 相主 prohibitions split
+    availability; disputed hour rules remain explicit cautions. Every omitted
+    segment retains its source.
     """
     result = deepcopy(availability)
     omitted = []
@@ -274,7 +305,9 @@ def split_eligible_windows(availability: list[dict], participant: dict, duration
                 if lo >= hi:
                     continue
                 p = segment['facts']['pillars']
-                hits = day_prohibitions(scenario, p['day'], p['month'][1]) if 'day' in p else []
+                hits = (day_prohibitions(scenario, p['day'], p['month'][1])
+                        + personal_hits(people or [], {'year': p['year'], 'month': p['month'], 'day': p['day']})[1]
+                        if 'day' in p else [])
                 if hits:
                     # The first hit keeps the old flat shape; ``excluded_by`` has them all.
                     omitted.append({'candidate_id': candidate['id'], 'start': lo.isoformat(),
@@ -290,20 +323,25 @@ def split_eligible_windows(availability: list[dict], participant: dict, duration
         candidate['intervals'] = pieces
         candidate['available'] = bool(pieces)
         if not pieces and candidate.get('reason') is None:
-            candidate['reason'] = f'按已核{EVENT_WORDS[scenario]}忌日条款筛选后，没有能容纳完整事件的时间'
+            candidate['reason'] = f'按已核{EVENT_WORDS.get(scenario, "")}忌日条款筛选后，没有能容纳完整事件的时间'
     return result, omitted
 
 
-def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str) -> Ranking:
+def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str,
+                    people: list[tuple[str, str]] | None = None) -> Ranking:
     """Rank ``candidate_comparison`` rows against the clause tiers.
 
     Reads day and hour pillars straight from the participant's own segments via
     ``target_segment_ref``; nothing is recomputed here, so a candidate can never
     be judged on a pillar the calendar did not produce. Candidates whose window
     lacks day granularity are reported as unrankable rather than assumed clear.
+
+    Day rules apply only where the scenario maps to a 用事 the clauses name.
+    相主 (xiangzhu.py) applies to every scenario: it grades the day for the
+    person, not the event. A 凶 or 大凶 day excludes the window like a day rule;
+    the grades of the rest become the tiers, best first.
     """
-    if scenario not in SCENARIO_TERMS:
-        raise ValueError(f'{scenario} 未映射到古法名目；不得套用择日条款')
+    people = personal_people([participant]) if people is None else people
     segments = participant['target']['segments']
     natal_year_branch = participant['natal']['four_pillars']['year'].get('branch')
     ranked: list[RankingRow] = []
@@ -384,6 +422,14 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                             'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
                             'rule_stem': stem, 'readings': readings,
                             'segment_start': ref['start'], 'segment_end': ref['end']}
+            # 相主: every touched day, for everyone the choice is made for.
+            spans = [{'year': y, 'month': m, 'day': d}
+                     for y, m, d in dict.fromkeys((p['year'], p['month'], p['day']) for p in dated)]
+            assessed, personal = personal_hits(people, spans)
+            for hit in personal:
+                if not any((b['rule'], b['day_ganzhi'], b.get('participant_id')) ==
+                           (hit['rule'], hit['day_ganzhi'], hit.get('participant_id')) for b in blocked):
+                    blocked.append(hit)
             entry: RankingRow = {
                 'candidate_id': candidate['candidate_id'], 'start': window['start'],
                 'end': window['end'], 'day_ganzhi': dated[0]['day'], 'days': days,
@@ -393,33 +439,42 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                 # at all. Gating reads ``contested_hours_in_window``.
                 'unresolved_hour_rules': unresolved,
                 'folk_context': folk}
+            if assessed:
+                entry['personal'] = assessed
             if blocked:
                 entry['excluded_by'] = blocked
                 excluded.append(entry)
             else:
-                entry['tier'] = 1
-                # Only the day rules gate the tier. 截路空亡 is an hour note that
-                # never changes the tier, so it is cited beside the note it
-                # supports rather than dressed up as a tier basis.
-                entry['sources'] = day_rule_sources(scenario)
+                # The 相主 grade orders what the day rules left; without a
+                # settled birth year every survivor shares tier 1 as before.
+                # 截路空亡 is an hour note that never changes the tier, so it is
+                # cited beside the note it supports rather than dressed up as a
+                # tier basis.
+                entry['tier'] = xiangzhu.TIER[assessed['grade']] if assessed else 1
+                entry['sources'] = day_rule_sources(scenario) + ([xiangzhu.PASSAGE] if assessed else [])
                 entry['context_sources'] = [JIELU_METHOD_SOURCE]
                 ranked.append(entry)
     return {
         'scenario': scenario,
         'rule_scope': 'generic_calendar_filter',
         'uses_complete_natal_chart': False,
-        'mapped_terms': list(SCENARIO_TERMS[scenario]),
+        'mapped_terms': list(SCENARIO_TERMS.get(scenario, ())),
         'precedence_version': PRECEDENCE_VERSION,
         'ranking_reference': 'references/26-precedence.md',
         'tiers': ranked,
         'excluded': excluded,
         'unrankable': unrankable,
-        'tier_count': 1 if ranked else 0,
+        'tier_count': len({r['tier'] for r in ranked if 'tier' in r}),
         # One candidate split by a busy block yields two windows, not two
         # candidates; counting rows made a lone candidate tie with itself.
-        'ties': len({r['candidate_id'] for r in ranked}) > 1,
-        'scope': ('忌型条款只排除，不在未被排除的候选之间分高下；同 tier 内并列。'
-                  '日级条款为《渊海子平》天地转杀（事项在原文所列时）与《协纪辨方书》自称吉神不能化解的忌日；'
+        'ties': len({r['candidate_id'] for r in ranked
+                     if r.get('tier') == min((x.get('tier', 1) for x in ranked), default=1)}) > 1,
+        'personal_participant_ids': list(dict.fromkeys(pid for pid, _ in people)),
+        'personal_basis': {'passage_id': xiangzhu.PASSAGE, 'quote': xiangzhu.QUOTES['method'],
+                           'method': '相主：按本人出生年的干支看日子，不按日主'},
+        'scope': ('日级条款只排除：《渊海子平》天地转杀（事项在原文所列时）与《协纪辨方书》自称吉神不能化解的忌日。'
+                  '相主（协纪卷三十三，按本人生年干支）对每个人再排除天克地冲、天比地冲、纳音克冲、'
+                  '冲命（凶莫堪者）与七杀重见的日子，其余按大吉、吉、平、小凶分 tier；同 tier 内并列。'
                   '协纪按吉凶轻重取舍的宜忌（六等）未实现，不据以排除也不据以推荐。'
                   'forbidden_hours_in_window 指该窗口实际覆盖到的忌时，按各时辰所在日的'
                   '日干取表；contested_hours_in_window 指戊、癸日里窗口实际覆盖、且某一说'

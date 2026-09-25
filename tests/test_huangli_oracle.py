@@ -177,8 +177,10 @@ def test_markdown_answers_the_asked_event_first():
     lead = run_markdown(date(2026, 10, 29), "10月29日搬家可以吗？").split("\n\n")[0]
     assert lead.startswith("不行。2026-10-29（农历九月二十，丙子日）搬家需要避开：是歸忌日")
     assert "通书宜忌表却把「移徙」列为宜，与上面的条款不一致" in lead
-    lead = run_markdown(date(2020, 6, 2), "那天结婚好不好").split("\n\n")[0]
-    assert lead.startswith("2020-06-02") and "四忌日（夏季丙子）" in lead and "忌嫁娶" in lead
+    lead = run_markdown(date(2020, 6, 2), "那天结婚好不好").split("\n\n")[0]  # 好不好 asks yes or no
+    assert lead.startswith("不行。2020-06-02") and "四忌日（夏季丙子）" in lead and "忌嫁娶" in lead
+    lead = run_markdown(date(2020, 6, 2), "那天结婚怎么样").split("\n\n")[0]
+    assert lead.startswith("2020-06-02") and "四忌日（夏季丙子）" in lead
     lead = run_markdown(date(2026, 10, 30), "这天出门可以吗").split("\n\n")[0]
     assert lead.startswith("已查条款不忌。2026-10-30") and "通书宜忌表没有列「出行」" in lead
 

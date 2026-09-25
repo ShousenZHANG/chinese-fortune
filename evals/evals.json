@@ -701,8 +701,8 @@
           ],
           "paths": {
             "ok": true,
-            "capabilities.0.personal_ranking": "not_implemented",
-            "capabilities.0.precedence_version": "precedence-v2",
+            "capabilities.0.personal_ranking": "rule_based",
+            "capabilities.0.precedence_version": "precedence-v3",
             "capabilities.0.ranking_reference": "references/26-precedence.md",
             "capabilities.0.calendar_screening": "rule_based"
           }
@@ -713,7 +713,7 @@
       "id": 25,
       "name": "interview-personal-ranking-capability",
       "prompt": "下周三面试，上午还是下午好？",
-      "expected_output": "接口声明：面试个人古法排名未实现；有明确现实偏好时可另给具体的实际档期选择。此接口测试不代表完整回答验收。",
+      "expected_output": "接口声明：面试的个人日子吉凶按协纪相主（出生年干支）已实现；同一天上午、下午的相主等级相同，分上下午仍看忌时与实际偏好。此接口测试不代表完整回答验收。",
       "assertions": [
         {
           "kind": "script",
@@ -725,7 +725,8 @@
           ],
           "paths": {
             "ok": true,
-            "capabilities.0.personal_ranking": "not_implemented"
+            "capabilities.0.personal_ranking": "rule_based",
+            "capabilities.0.calendar_screening": "not_implemented"
           }
         }
       ]
@@ -758,9 +759,136 @@
           "kind": "file_contains",
           "file": "references/26-precedence.md",
           "needles": [
-            "precedence-v2",
+            "precedence-v3",
             "第三层：自洽者胜",
             "另说：《X》作 Y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "personal-days-by-birth-year",
+      "prompt": "下个月哪几天对我好，哪几天要避开？",
+      "expected_output": "按《协纪辨方书》卷三十三相主，用出生那一年的干支给每一天分大吉到大凶；首句列最好和要避开的日子，各带理由名；层 2 附原文与出处，并说明原文例子是修造、安葬，补龙扶山未实现。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/fortune_rules.py",
+            "--capabilities",
+            "--scenario",
+            "outlook"
+          ],
+          "paths": {
+            "ok": true,
+            "capabilities.0.personal_ranking": "rule_based",
+            "capabilities.0.precedence_version": "precedence-v3"
+          }
+        },
+        {
+          "kind": "file_contains",
+          "file": "references/26-precedence.md",
+          "needles": [
+            "个人相主",
+            "從來皆論生年不論生日",
+            "天克地冲",
+            "略輕",
+            "庚干上不同"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "clothing-colours-from-tiaohou",
+      "prompt": "结合我的八字，穿什么颜色、戴什么对我有利？",
+      "expected_output": "首句直接给首选、其次与少穿的颜色及饰物；依据只用《穷通宝鉴》调候：本日主本月令原文 → 五行 → 《三命通会》卷七配色、《梅花易数》物象；说明一次古籍没说穿颜色能改变遭遇。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/bazi_reading.py",
+            "--year",
+            "1997",
+            "--month",
+            "12",
+            "--day",
+            "24",
+            "--hour",
+            "19",
+            "--minute",
+            "30",
+            "--gender",
+            "male",
+            "--city",
+            "苏州",
+            "--current-timezone",
+            "Asia/Shanghai",
+            "--question",
+            "我穿什么颜色的衣服对自己有利？"
+          ],
+          "paths": {
+            "ok": true,
+            "colour_advice.status": "ok",
+            "colour_advice.key": "庚|子",
+            "colour_advice.wear.0.wuxing": "火",
+            "colour_advice.avoid.0.wuxing": "水",
+            "colour_advice.tiaohou.passage_id": "qiongtong:c005:p0114"
+          }
+        },
+        {
+          "kind": "file_contains",
+          "file": "references/27-direct-answer.md",
+          "needles": [
+            "问穿什么颜色、戴什么对自己有利时",
+            "没说穿某种颜色就能改变遭遇"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "question-phrasings-reach-their-flow",
+      "prompt": "下个月哪天搬家好？",
+      "expected_output": "路由到 personal_days：intent period、period 下个月、事项 moving；先排搬家忌日，再按出生年相主分吉凶，首句列最好和要避开的日子。",
+      "assertions": [
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/question_router.py",
+            "--question",
+            "下个月哪天搬家好？"
+          ],
+          "paths": {
+            "ok": true,
+            "flow": "personal_days",
+            "request.intent": "period",
+            "request.period": "下个月",
+            "request.event.scenario": "moving"
+          }
+        },
+        {
+          "kind": "script",
+          "cmd": [
+            "scripts/question_router.py",
+            "--question",
+            "我的幸运数字是几"
+          ],
+          "paths": {
+            "ok": true,
+            "flow": "wear_advice",
+            "aspects.0": "number"
+          }
+        },
+        {
+          "kind": "file_contains",
+          "file": "SKILL.md",
+          "needles": [
+            "question_router.py",
+            "personal_days",
+            "wear_advice",
+            "五行缺什么"
           ]
         }
       ]

@@ -4,7 +4,7 @@ from __future__ import annotations
 from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
 
-from contracts import Placement, PracticalChoice, Ranking
+from contracts import PassedOver, Placement, PracticalChoice, Ranking
 
 INTENTS = {'period', 'selection', 'natal', 'event', 'research'}
 
@@ -53,9 +53,10 @@ def clean_starts(window: dict, length: timedelta, row: dict | None) -> list[tupl
 def choose_practical(result: dict, preferences: dict | None) -> PracticalChoice:
     """Return a dated arrangement only from feasible windows and explicit priorities.
 
-    Exclusion screening does not establish equal personal auspiciousness. With no
-    preference, several feasible alternatives remain unordered. Equal instants
-    are not broken by input order.
+    Windows are taken best 相主 tier first (大吉, 吉, 平, 小凶; see xiangzhu.py);
+    a stated preference orders windows inside a tier, never across tiers. With
+    no preference, several windows sharing the best tier remain unordered.
+    Equal instants are not broken by input order.
     """
     preferences = {} if preferences is None else preferences
     if not isinstance(preferences, dict) or set(preferences) - {'prefer', 'candidate_order'}:
@@ -88,9 +89,14 @@ def choose_practical(result: dict, preferences: dict | None) -> PracticalChoice:
             key = (candidate['candidate_id'], window['start'], window['end'])
             if key in excluded:
                 continue
-            for lo, hi in clean_starts(window, length, screened.get(key)):
+            row = screened.get(key)
+            tier = row.get('tier', 1) if row else 1
+            grade = row['personal']['grade'] if row and 'personal' in row else None
+            for lo, hi in clean_starts(window, length, row):
                 ranges.append({'candidate_id': candidate['candidate_id'], 'lo': lo, 'hi': hi,
-                               'length': length})
+                               'length': length, 'tier': tier, 'grade': grade, 'key': key})
+    graded = any(r['grade'] for r in ranges)
+    base['personal_auspicious_ranking'] = graded
 
     def placement(option: dict, at: datetime) -> Placement:
         # Without a stated time preference a start is only a boundary, not a
@@ -102,40 +108,72 @@ def choose_practical(result: dict, preferences: dict | None) -> PracticalChoice:
             chosen['flexible_start'] = {'earliest': option['lo'].astimezone(zone).isoformat(),
                                         'latest': option['hi'].astimezone(zone).isoformat(),
                                         'latest_inclusive': True}
+        if option['grade']:
+            chosen['grade'] = option['grade']
         return chosen
 
     if not ranges:
         return {**base, 'status': 'clause_conflict' if cautions else 'no_practical_choice'}
+    best = min(r['tier'] for r in ranges)
     if order is not None:
         ranges = [r for r in ranges if r['candidate_id'] in order]
-        ranges.sort(key=lambda r: (order.index(r['candidate_id']), r['lo']))
+        ranges.sort(key=lambda r: (r['tier'], order.index(r['candidate_id']), r['lo']))
         windows = [placement(r, r['lo']) for r in ranges]
-        reason = '按你指定的候选优先顺序，选择能容纳完整事件的时间'
+        decided = len({r['candidate_id'] for r in ranges if r['tier'] == ranges[0]['tier']}) > 1
+        reason = (('先按协纪相主排吉凶，同等的再按你指定的候选顺序' if decided else
+                    '按协纪相主，这是能排下的时间里对你最吉的') if graded else
+                  '按你指定的候选优先顺序，选择能容纳完整事件的时间')
     elif prefer:
         # The earliest (latest) start that keeps the whole event clear, not the
         # window's edge: an edge that runs into a named hour used to end the
         # search with a conflict while a clear start sat minutes later.
         edge = 'hi' if prefer == 'latest' else 'lo'
-        ranges.sort(key=lambda r: r[edge], reverse=prefer == 'latest')
+        sign = -1 if prefer == 'latest' else 1
+        ranges.sort(key=lambda r: (r['tier'], sign * r[edge].timestamp()))
         windows = [placement(r, r[edge]) for r in ranges]
-        reason = '按你希望' + ('尽早' if prefer == 'earliest' else '尽晚') + '安排的条件选择'
-        if len(windows) > 1 and datetime.fromisoformat(windows[0]['start']) == datetime.fromisoformat(windows[1]['start']):
+        word = '尽早' if prefer == 'earliest' else '尽晚'
+        # Name the preference only where it chose between windows of one grade.
+        decided = sum(r['tier'] == ranges[0]['tier'] for r in ranges) > 1
+        reason = ((f'先按协纪相主排吉凶，同等的再按你希望{word}' if decided else
+                   '按协纪相主，这是能排下的时间里对你最吉的') if graded else f'按你希望{word}安排的条件选择')
+        if (len(windows) > 1 and ranges[0]['tier'] == ranges[1]['tier']
+                and datetime.fromisoformat(windows[0]['start']) == datetime.fromisoformat(windows[1]['start'])):
             return {**base, 'status': 'practical_tie', 'alternatives': windows}
-    elif len(ranges) == 1:
-        windows = [placement(ranges[0], ranges[0]['lo'])]
-        reason = ('这是目前唯一能容纳完整事件、且未被已查条款排除的时段' if ranking else
-                  '这是你提供的档期中唯一能容纳完整事件的窗口')
     else:
-        return {**base, 'status': 'preferences_required',
-                'alternatives': [placement(r, r['lo']) for r in ranges]}
+        top = [r for r in ranges if r['tier'] == best]
+        if len(top) > 1:
+            return {**base, 'status': 'preferences_required',
+                    'alternatives': [placement(r, r['lo']) for r in top]}
+        windows = [placement(top[0], top[0]['lo'])]
+        # A backup only when one window alone holds the next tier; several
+        # there would need the preference this request did not give.
+        rest = [r for r in ranges if r['candidate_id'] != top[0]['candidate_id']]
+        runner = min((r['tier'] for r in rest), default=None)
+        if runner is not None and sum(r['tier'] == runner for r in rest) == 1:
+            nxt = next(r for r in rest if r['tier'] == runner)
+            windows.append(placement(nxt, nxt['lo']))
+        if graded and len(ranges) > 1:
+            reason = '按协纪相主，这是候选里对你最吉的时间'
+        else:
+            reason = ('这是目前唯一能容纳完整事件、且未被已查条款排除的时段' if ranking else
+                      '这是你提供的档期中唯一能容纳完整事件的窗口')
     if not windows:
         return base
     first = windows[0]
+    # Windows graded above the choice that no clean start could use: say which.
+    used = {r['key'] for r in ranges}
+    first_tier = next(r['tier'] for r in ranges if r['candidate_id'] == first['candidate_id'])
+    passed_over: list[PassedOver] = [{'candidate_id': row['candidate_id'], 'start': row['start'], 'end': row['end'],
+                    'grade': row['personal']['grade']}
+                   for key, row in screened.items()
+                   if key not in used and 'personal' in row and row.get('tier', first_tier) < first_tier]
     backup = next((w for w in windows[1:] if w['candidate_id'] != first['candidate_id']), None)
     checked: list[Ranking] = []
     if ranking:
-        from fortune_ranking import rank_candidates
+        from fortune_ranking import personal_people, rank_candidates
         from fortune_selection import compare_candidates
+        people = personal_people([p for p in result['participants']
+                                  if p['id'] in ranking.get('personal_participant_ids', [])])
         for option in (first, backup):
             if option is None:
                 continue
@@ -151,7 +189,8 @@ def choose_practical(result: dict, preferences: dict | None) -> PracticalChoice:
                                         'intervals': [{'start': span_start, 'end': span_end}]}],
                                        result['participants'], duration_minutes=int((end - start).total_seconds() / 60),
                                        timezone=result['window']['timezone'])
-            screen = rank_candidates(exact, result['participants'][0], scenario=result['capability']['scenario'])
+            screen = rank_candidates(exact, result['participants'][0], scenario=result['capability']['scenario'],
+                                     people=people)
             checked.append(screen)
             conflict = screen['excluded'] or any(
                 r['forbidden_hours_in_window'] or r['contested_hours_in_window'] for r in screen['tiers'])
@@ -162,9 +201,13 @@ def choose_practical(result: dict, preferences: dict | None) -> PracticalChoice:
                     return {**base, 'status': 'clause_conflict' if conflict else 'screening_incomplete',
                             'checked_options': checked}
                 backup = None
-    return {**base, 'status': 'practical_choice', 'first_choice': first, 'backup': backup, 'reason': reason,
-            'checked_options': checked,
-            'scope': '具体分钟来自可用档期与实际偏好；现有古法未完成个人吉凶排序。'}
+    chosen: PracticalChoice = {**base, 'status': 'practical_choice', 'first_choice': first, 'backup': backup,
+                               'reason': reason, 'checked_options': checked,
+            'scope': ('日子先按协纪相主（本人出生年干支）排吉凶；具体分钟来自可用档期与实际偏好。' if graded else
+                      '具体分钟来自可用档期与实际偏好；这次没有可用的出生年，未按相主排吉凶。')}
+    if passed_over:
+        chosen['passed_over'] = passed_over
+    return chosen
 
 
 def conclusion_packet(result: dict) -> dict:
@@ -173,7 +216,8 @@ def conclusion_packet(result: dict) -> dict:
     return {'schema_version': '1.0', 'question': result.get('question', ''),
             'status': result['recommendation']['status'],
             'personal_facts_used': [p['id'] for p in result['participants']],
-            'traditional_personal_ranking': 'not_established',
+            'traditional_personal_ranking': ('xiangzhu_birth_year' if result.get('ranking', {}).get('personal_participant_ids')
+                                             or result.get('personal_calendar') else 'not_established'),
             'interpretation_contract': {
                 'method_selection': 'fix_before_interpretation',
                 'claim_requirements': ['actual_personal_fields', 'source_conditions',

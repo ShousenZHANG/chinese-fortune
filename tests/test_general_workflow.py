@@ -77,27 +77,44 @@ def test_new_scenario_and_explicit_real_preference_produce_dated_choices(request
     result = read_request(request_data)
     assert result['capability']['custom']
     assert result['recommendation']['basis'] == 'practical_constraints'
-    assert result['practical_choice']['first_choice']['start'] == '2026-10-13T12:00:00+08:00'
-    assert result['practical_choice']['backup']['end'] == '2026-10-15T14:00:00+08:00'
-    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
+    # 己卯 (2000-01-15): 庚申 is 大吉 (命贵人) but 12:00-14:00 on a 庚 day is all 午未,
+    # the 截路空亡 hours 「以至百事…皆不利」; so the 吉 壬戌 window is chosen and
+    # the better day is named with the hours that stopped it.
+    assert result['practical_choice']['first_choice']['start'] == '2026-10-15T12:00:00+08:00'
+    assert result['practical_choice']['passed_over'] == [
+        {'candidate_id': 'oct13', 'start': '2026-10-13T12:00:00+08:00', 'end': '2026-10-13T14:00:00+08:00',
+         'grade': '大吉'}]
+    assert result['conclusion']['traditional_personal_ranking'] == 'xiangzhu_birth_year'
     lead = render_answer(result).splitlines()[0]
-    assert 'Asia/Shanghai' in lead and '档期' in lead and '备选' in lead
+    assert 'Asia/Shanghai' in lead and '这天对你是吉：财官、六合' in lead
+    assert 'oct13 对你更吉（大吉），但 2026-10-13 12:00–14:00 整段碰到' in lead
+    assert '同等的再按' not in lead  # no window of the same grade was there to order
 
 
-def test_natal_change_cannot_turn_generic_screen_into_personal_ranking(request_data):
+def test_personal_tiers_follow_the_birth_year_and_nothing_else(request_data):
+    """相主 reads only the year pillar: 「從來皆論生年不論生日」."""
+    request_data['candidates'] = [{'id': 'oct15', 'start': '2026-10-15T09:00', 'end': '2026-10-15T11:00'}]
     first = read_request(request_data)
-    request_data['participants'][0]['person']['birth'].update(year=1990, month=5, day=10)
-    second = read_request(request_data)
-    assert first['ranking']['tiers'] == second['ranking']['tiers']
-    for result in (first, second):
+    request_data['participants'][0]['person']['birth'].update(hour=3, minute=5)   # same 己卯 year
+    same_year = read_request(request_data)
+    assert [t['personal'] for t in first['ranking']['tiers']] == [t['personal'] for t in same_year['ranking']['tiers']]
+    request_data['participants'][0]['person']['birth'].update(year=1988, month=5, day=10)  # 戊辰
+    other_year = read_request(request_data)
+    assert other_year['ranking']['tiers'][0]['personal']['people'][0]['birth_year'] == '戊辰'
+    # 戌 clashes 辰: 土冲土, which the passage calls 略輕.
+    assert (first['ranking']['tiers'][0]['personal']['grade'], other_year['ranking']['tiers'][0]['personal']['grade']) \
+        == ('吉', '小凶')
+    for result in (first, other_year):
         assert result['ranking']['uses_complete_natal_chart'] is False
-        assert '没有用完整八字' in render_answer(result)
+        assert '看的是出生那一年的干支，不是日主' in render_answer(result)
 
 
 def test_two_available_windows_without_preference_do_not_get_arbitrary_choice(request_data):
     request_data['event']['scenario'] = '讨论社团活动'
     request_data['intent'] = 'selection'
-    request_data['candidates'].append({'id': 'B', 'start': '2026-10-15T12:00', 'end': '2026-10-15T15:00'})
+    # Same day, so the same 相主 grade: nothing classical separates them.
+    request_data['candidates'] = [{'id': 'A', 'start': '2026-10-15T09:00', 'end': '2026-10-15T11:00'},
+                                  {'id': 'B', 'start': '2026-10-15T15:00', 'end': '2026-10-15T17:00'}]
     result = read_request(request_data)
     assert result['practical_choice']['status'] == 'preferences_required'
     assert result['conclusion']['status'] == 'preferences_required'

@@ -19,6 +19,7 @@ from utils import (
     normalize_birth_time,
     shi_shen,
 )
+from wuxing_colours import asks_colour, colour_advice, colour_lead, colour_lines
 
 PILLARS = {'year': '年柱', 'month': '月柱', 'day': '日柱', 'hour': '时柱'}
 PROFILE = {
@@ -257,7 +258,8 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
                        'meaning': '日干或月令未固定，先比较候选盘；不拿占位柱选调候'}
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     claims = _observations(clean, structure)
-    return {'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
+    extra: dict = {'colour_advice': colour_advice(clean, question)} if asks_colour(question) else {}
+    return {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,
             'reading_support': {'schema_version': '1.0', 'claims': claims,
@@ -334,6 +336,10 @@ def render_facts(result: dict) -> str:
     """A concise chart explanation, explicitly separate from a host's personal interpretation."""
     lead = _lead(result)
     parts = ([lead] if lead else []) + [claim['text'] for claim in result['reading_support']['claims']]
+    advice = result.get('colour_advice')
+    if advice:
+        # A colour question is answered first; the chart facts follow as background.
+        parts = [colour_lead(advice), *colour_lines(advice), *parts]
     terms = _role_terms(result)
     if terms:
         parts.append(terms)

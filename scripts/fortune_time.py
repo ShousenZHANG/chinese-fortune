@@ -44,6 +44,7 @@ def resolve_window(period: str | dict, request: dict, event_timezone: str) -> di
     month = today.replace(day=1)
     values = {'今天': (today, today + timedelta(days=1)),
               '明天': (today + timedelta(days=1), today + timedelta(days=2)),
+              '后天': (today + timedelta(days=2), today + timedelta(days=3)),
               '这两天': (today, today + timedelta(days=2)),
               '未来七天': (today, today + timedelta(days=7)),
               '本周': (monday, monday + timedelta(days=7)),
@@ -55,7 +56,10 @@ def resolve_window(period: str | dict, request: dict, event_timezone: str) -> di
               '明年': (date(today.year + 1, 1, 1), date(today.year + 2, 1, 1)),
               '月底前': (today, _next_month(month))}
     aliases = {'today': '今天', 'tomorrow': '明天', 'next_week': '下周',
-               'next_seven_days': '未来七天', 'next_month': '下个月', 'this_year': '今年'}
+               'next_seven_days': '未来七天', 'next_month': '下个月', 'this_year': '今年',
+               # The everyday words for the same spans.
+               '这周': '本周', '这个星期': '本周', '下个星期': '下周', '周末': '这周末',
+               '这个月': '本月', '下月': '下个月', '最近一周': '未来七天'}
     if isinstance(period, str):
         label = aliases.get(period, period)
         if label not in values:

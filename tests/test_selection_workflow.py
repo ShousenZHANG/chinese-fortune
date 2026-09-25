@@ -42,7 +42,8 @@ def test_starts_allow_full_duration_and_keep_mid_event_calendar_change(query):
         hour = person['target']['pillar_catalog'][facts['pillars']['hour']]
         assert {r['pillar'] for r in hour['natal_stem_relations']} == {'year', 'month', 'day', 'hour'}
     assert result['recommendation']['basis'] == 'practical_constraints'
-    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
+    # The personal grade comes from 相主 (birth year), not from these pillar relations.
+    assert result['conclusion']['traditional_personal_ranking'] == 'xiangzhu_birth_year'
 
 
 def test_personal_qimen_basis_covers_whole_candidate_without_claiming_a_ranking(query):
@@ -57,9 +58,10 @@ def test_personal_qimen_basis_covers_whole_candidate_without_claiming_a_ranking(
         person = chart['participants'][0]
         assert person['birth_year_stem'] == stem
         assert chart['core']['earth'][person['earth_palace']] == stem
-        assert person['verdict'] == 'not_evaluated'
+        assert person['verdict'] == 'not_evaluated'  # 奇门 still grades nothing
     assert result['recommendation']['basis'] == 'practical_constraints'
-    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
+    assert result['conclusion']['traditional_personal_ranking'] == 'xiangzhu_birth_year'
+    assert result['ranking']['personal_basis']['passage_id'] == 'xieji:c033:p0020'
 
 
 def test_qimen_retains_middle_solar_term_even_when_bazi_month_does_not_change(query):
@@ -99,8 +101,11 @@ def test_qimen_uses_each_person_year_and_does_not_invent_hidden_jia_mapping(quer
     assert people[1]['birth_year_stem'] == '甲'
     assert people[1]['earth_palace'] is None
     assert people[1]['status'] == 'year_stem_mapping_required'
-    assert result['recommendation']['basis'] == 'practical_constraints'
-    assert result['conclusion']['traditional_personal_ranking'] == 'not_established'
+    # 相主 weighs both people: 2026-09-15 壬辰 is in 协纪's 納音 table against 甲戌 (1994).
+    assert result['recommendation']['status'] == 'excluded_by_clause'
+    (hit,) = result['ranking']['excluded'][0]['excluded_by']
+    assert (hit['participant_id'], hit['birth_year'], hit['label']) == ('second', '甲戌', '纳音克冲')
+    assert result['conclusion']['traditional_personal_ranking'] == 'xiangzhu_birth_year'
 
 
 def test_qimen_true_solar_basis_agrees_with_explicit_cli_clock_correction(query):
@@ -202,7 +207,7 @@ def test_blockers_do_not_hide_each_other(query):
     result = read_request(query)
     assert {b['code'] for b in result['decision_blockers']} == {
         'participant_priority_required', 'event_longitude_required', 'birth_time_required',
-        'ranking_rules_required', 'no_feasible_slot'}
+        'no_feasible_slot'}
     assert '主要考虑谁' in render_answer(result)
 
 

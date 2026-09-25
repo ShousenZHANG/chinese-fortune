@@ -21,9 +21,12 @@ from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
     EVENT_WORDS,
     JIELU_METHOD_SOURCE,
+    SCENARIO_TERMS,
     TIANDI_EVENTS,
     TIANDI_SOURCE,
+    day_prohibitions,
     jielu_kongwang,
+    personal_people,
     rank_candidates,
     split_eligible_windows,
 )
@@ -33,6 +36,9 @@ from fortune_time import candidate_windows, resolve_window
 from personal_profiles import birth_arguments, load_profile, validate_person
 from request_time import capture_request_time
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from wuxing_colours import asks_colour, colour_lead, colour_lines
+from xiangzhu import PASSAGE as XIANGZHU_PASSAGE
+from xiangzhu import birth_years_of, personal_calendar
 from xieji_days import RULES as XIEJI_RULES
 from xieji_days import SCENARIO_TERMS as XIEJI_TERMS
 
@@ -189,26 +195,34 @@ def _screen_selection(result: dict, payload: dict, event: dict, scenario: str) -
     capability, window = result['capability'], result['window']
     duration = payload.get('duration_minutes', 60)
     screened = result['availability']
-    rule_based = capability.get('calendar_screening') == 'rule_based'
-    if rule_based:
+    people = personal_people(chosen_for(result))
+    # Day rules exist for some scenarios; 相主 exists for anyone whose birth year is settled.
+    screens = capability.get('calendar_screening') == 'rule_based' or bool(people)
+    if screens:
         # Keep the original calendar-only availability; expose excluded parts separately.
         screened, result['excluded_segments'] = split_eligible_windows(
-            screened, result['participants'][0], duration, scenario)
+            screened, result['participants'][0], duration, scenario, people)
     result['candidate_comparison'] = compare_candidates(result['availability'], result['participants'],
         duration_minutes=duration, timezone=window['timezone'])
     result['event_method'] = event_basis(result['candidate_comparison'], result['participants'],
         scenario=scenario, timezone=window['timezone'], standard=event.get('time_standard', 'true-solar'),
         longitude=event.get('longitude'))
-    # Ranking runs only where fortune_rules declares rule_based; every tier
-    # it produces cites a passage. See references/26-precedence.md.
-    if rule_based:
-        _rank_selection(result, screened, duration, scenario)
+    # Every exclusion and tier cites a passage. See references/26-precedence.md.
+    if screens:
+        _rank_selection(result, screened, duration, scenario, people)
 
 
-def _rank_selection(result: dict, screened: list[dict], duration: int, scenario: str) -> None:
+def chosen_for(result: dict) -> list[dict]:
+    """The people a day is chosen for: the priority person, or everyone when equal."""
+    subject = [p for p in result['participants'] if p['id'] == result['priority']]
+    return subject or result['participants']
+
+
+def _rank_selection(result: dict, screened: list[dict], duration: int, scenario: str,
+                    people: list[tuple[str, str]]) -> None:
     subject = next((p for p in result['participants'] if p['id'] == result['priority']),
                    result['participants'][0])
-    ranking = rank_candidates(result['candidate_comparison'], subject, scenario=scenario)
+    ranking = rank_candidates(result['candidate_comparison'], subject, scenario=scenario, people=people)
     ranking['calendar_participant_id'] = subject['id']
     result['ranking'] = ranking
     result['practical_comparison'] = compare_candidates(screened, result['participants'],
@@ -226,8 +240,10 @@ def _rank_selection(result: dict, screened: list[dict], duration: int, scenario:
     # A candidate with one clear window and one excluded window is not a
     # survivor: recommending it would send the reader into the very
     # window a clause ruled out.
+    # Only the best tier survives the ranking; lower tiers are backups.
     struck = {e['candidate_id'] for e in ranking['excluded']}
-    survivors = [c for c in dict.fromkeys(t['candidate_id'] for t in ranking['tiers'])
+    best = min((t['tier'] for t in ranking['tiers'] if t['candidate_id'] not in struck), default=None)
+    survivors = [c for c in dict.fromkeys(t['candidate_id'] for t in ranking['tiers'] if t['tier'] == best)
                  if c not in struck]
     version = ranking['precedence_version']
     if len(survivors) == 1:
@@ -246,7 +262,37 @@ def _rank_selection(result: dict, screened: list[dict], duration: int, scenario:
             'excluded': list(dict.fromkeys(e['candidate_id'] for e in ranking['excluded'])),
             'precedence_version': version}
     # Screen the exact subwindows, not their original broader input windows.
-    result['practical_screening'] = rank_candidates(result['practical_comparison'], subject, scenario=scenario)
+    result['practical_screening'] = rank_candidates(result['practical_comparison'], subject, scenario=scenario,
+                                                    people=people)
+
+
+DAY_QUESTION_WORDS = ('哪天', '哪几天', '哪一天', '几号', '吉日', '好日子', '日子')
+
+
+def _personal_period(result: dict, grain: str) -> None:
+    """Which days (or months) of the period are good or bad for the person: 相主."""
+    people = personal_people(chosen_for(result))
+    if not people:
+        result['personal_calendar'] = {'status': 'birth_year_unknown', 'entries': [], 'people': []}
+        return
+    window = result['window']
+    # A question about days gets days even over a long window (up to a year);
+    # otherwise a window longer than a month is answered month by month.
+    days_asked = any(word in (result.get('question') or '') for word in DAY_QUESTION_WORDS)
+    long_ok = (datetime.fromisoformat(window['end']) - datetime.fromisoformat(window['start'])).days <= 366
+    unit = 'day' if grain in ('day', 'hour') or (days_asked and long_ok) else 'month'
+    calendar = personal_calendar(people, window['start'], window['end'], window['timezone'], unit)
+    # 「下个月哪天搬家好」: the event's own day rules bar days before 相主 grades them.
+    scenario = result['capability']['scenario']
+    if calendar['unit'] == 'day' and scenario in SCENARIO_TERMS:
+        calendar['event'] = EVENT_WORDS[scenario]
+        for entry in calendar['entries']:
+            hits = day_prohibitions(scenario, entry['pillars']['day'], entry['pillars']['month'][1])
+            if hits:
+                entry['event_hits'] = hits
+    result['personal_calendar'] = calendar
+    if result['recommendation']['status'] == 'evidence_needed':
+        result['recommendation'] = {'status': 'personal_calendar', 'first_choice': None, 'backup': None}
 
 
 def _settle_practical(result: dict, preferences: dict | None) -> None:
@@ -312,6 +358,8 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     result['evidence'] = evidence()
     if capability['route'] == 'selection':
         _screen_selection(result, payload, event, scenario)
+    elif capability['route'] == 'period' and capability.get('intent') not in ('natal', 'research'):
+        _personal_period(result, grain)
     if include_research:
         result['research']['source_bundle'] = research_sources(scenario, limit=1)
     result['decision_blockers'] = decision_blockers(result)
@@ -582,8 +630,226 @@ def _placement(choice: dict) -> str:
     return _clock_range(choice['start'], choice['end'], choice['timezone'])
 
 
+GRADE_ANSWER = {'大吉': '好', '吉': '好', '平': '一般', '小凶': '不太好', '凶': '不好', '大凶': '很不好'}
+BAD_GRADES = ('小凶', '凶', '大凶')
+
+
+def _who(people: list[dict]) -> str:
+    return '你' if len({p['participant_id'] for p in people}) <= 1 else '你们'
+
+
+def _births(people: list[dict]) -> str:
+    """「丁丑」, 「己卯或庚辰，按较差的算」 when the year is unsettled, or one per person."""
+    years: dict[str, list[str]] = {}
+    for p in people:
+        years.setdefault(p['participant_id'], []).append(p['birth_year'])
+    def one(found: list[str]) -> str:
+        return found[0] if len(found) == 1 else '或'.join(found) + '，生在立春前后，按较差的算'
+    if len(years) == 1:
+        return one(next(iter(years.values())))
+    return '；'.join(f'{pid} {one(found)}' for pid, found in years.items())
+
+
+def _labels(factor_lists: list[list[dict]], grade: str) -> str:
+    """The labels that set a grade: the bad ones for a bad grade, else the good."""
+    polarity = 'bad' if grade in BAD_GRADES else 'good'
+    labels = [f['label'] for factors in factor_lists for f in factors if f['polarity'] == polarity]
+    return '、'.join(dict.fromkeys(labels))
+
+
+def _row_labels(row: dict) -> str:
+    personal = row.get('personal')
+    if not personal:
+        return ''
+    return _labels([d['factors'] for p in personal['people'] for d in p['days']], personal['grade'])
+
+
+def _placement_row(result: dict, option: dict) -> dict | None:
+    """The screened window a placement sits in."""
+    at = datetime.fromisoformat(option['start'])
+    rows = [r for r in result.get('practical_screening', result.get('ranking', {})).get('tiers', [])
+            if r['candidate_id'] == option['candidate_id']]
+    inside = [r for r in rows if datetime.fromisoformat(r['start']) <= at < datetime.fromisoformat(r['end'])]
+    return (inside or rows or [None])[0]
+
+
+def _graded(result: dict, option: dict) -> str:
+    """「大吉：命贵人、三合」 for a placement, or '' when no grade was given."""
+    grade = option.get('grade')
+    if not grade:
+        return ''
+    row = _placement_row(result, option)
+    why = _row_labels(row) if row else ''
+    return grade + (f'：{why}' if why else '')
+
+
+def _personal_people_of(result: dict) -> list[dict]:
+    ids = result.get('ranking', {}).get('personal_participant_ids', [])
+    return [{'participant_id': p['id'], 'birth_year': year} for p in result['participants'] if p['id'] in ids
+            for year in birth_years_of(p['natal'])]
+
+
+def _entry_list(entries: list[dict], limit: int = 6, event: str = '') -> str:
+    shown = []
+    for entry in entries[:limit]:
+        why = _labels([p['days'][0]['factors'] if 'days' in p else p['factors'] for p in entry['people']],
+                      entry['grade'])
+        if entry.get('event_hits'):
+            why = '、'.join(dict.fromkeys(h['label'] for h in entry['event_hits'])) + '，忌' + event
+        shown.append(f"{entry['label']}（{entry.get('span', entry['ganzhi'])}" + (f'，{why}' if why else '') + '）')
+    return '、'.join(shown) + (f'等 {len(entries)} 个' if len(entries) > limit else '')
+
+
+def _context_sentence(calendar: dict, who: str) -> str:
+    """Year and month pillars against the person, which the passage weighs above the day."""
+    said, parts = set(), []
+    for entry in calendar['entries']:
+        for person in entry['people']:
+            for day in person.get('days', []):
+                for key, context in day['context'].items():
+                    if context['grade'] in BAD_GRADES and (key, context['ganzhi']) not in said:
+                        said.add((key, context['ganzhi']))
+                        word = '这一年' if key == 'year' else '这个月'
+                        parts.append(f"{word}（{context['ganzhi']}）本身对{who}是{context['grade']}"
+                                     f"（{_labels([context['factors']], context['grade'])}），"
+                                     + ('协纪说太岁冲命最凶' if key == 'year' else '协纪说月次于年、重于日'))
+    return ('另外，' + '；'.join(parts) + '。') if parts else ''
+
+
+def _calendar_sentence(result: dict, kind: str) -> str:
+    """Period answer: the best and the worst days (or months) for the person."""
+    calendar = result['personal_calendar']
+    entries, people = calendar['entries'], calendar['people']
+    who = _who(people)
+    event = calendar.get('event', '')
+    basis = f"按{who}出生那年的干支（{_births(people)}）看"
+    if len(entries) == 1 and entries[0].get('event_hits'):
+        entry = entries[0]
+        head = '不行。' if kind == 'yes_no' else ''
+        return (f"{head}{entry['label']}（{entry['ganzhi']}）{event}需要避开：是"
+                + '；也是'.join(h['plain'] for h in entry['event_hits'])
+                + f"。这天对{who}本人是{entry['grade']}。" + _context_sentence(calendar, who))
+    if len(entries) == 1:
+        entry = entries[0]
+        why = _labels([p['days'][0]['factors'] if 'days' in p else p['factors'] for p in entry['people']],
+                      entry['grade'])
+        head = GRADE_ANSWER[entry['grade']] + '。' if kind == 'yes_no' else ''
+        return (f"{head}{basis}，{entry['label']}（{entry.get('span', entry['ganzhi'])}）对{who}是{entry['grade']}"
+                + (f"：{why}" if why else '，没有碰到相主里的吉凶条目') + '。'
+                + _context_sentence(calendar, who))
+    unit = {'day': '日子', 'month': '月份', 'year': '年份'}[calendar['unit']]
+    open_days = [e for e in entries if not e.get('event_hits')]
+    best = min((e['grade'] for e in open_days), key=('大吉', '吉', '平', '小凶', '凶', '大凶').index, default='平')
+    good = [e for e in open_days if e['grade'] == best] if best in ('大吉', '吉') else []
+    barred = [e for e in entries if e.get('event_hits')]
+    bad = [e for e in open_days if e['grade'] in ('凶', '大凶')]
+    light = [e for e in open_days if e['grade'] == '小凶']
+    parts = [f"{basis}，这段时间{event}对{who}最好的{unit}是{_entry_list(good)}，{'都' if len(good) > 1 else ''}是{best}" if good
+             else f"{basis}，这段时间没有{event}对{who}吉的{unit}"]
+    if barred:
+        parts.append(f"{event}要避开{_entry_list(barred, event=event)}")
+    if bad:
+        parts.append(('另外' if barred else '') + f"要避开{_entry_list(bad)}")
+    if light and len(entries) > 31:
+        parts.append(f"另有 {len(light)} 天略差（冲{who}生年，协纪说略轻）")
+    elif light:
+        parts.append(f"{_entry_list(light)}略差，协纪说这种冲主要是口舌是非")
+    if not bad and not light and not barred:
+        parts.append(f"没有冲{who}生年的{unit}")
+    return '；'.join(parts) + '。' + _context_sentence(calendar, who)
+
+
+def _factor_lines(head: str, grade: str, factors: list[dict], quoted: set[str]) -> str:
+    """One layer-2 line: the grade, each factor in plain words, each quote once."""
+    if not factors:
+        return f'{head}：{grade}，没有碰到相主里的吉凶条目。'
+    line = f"{head}：{grade}。" + '；'.join(f['plain'] for f in factors) + '。'
+    new = [f['quote'] for f in factors if f['quote'] not in quoted]
+    quoted.update(new)
+    if new:
+        line += '原文：' + '、'.join(f'「{q}」' for q in dict.fromkeys(new)) + f'（{XIANGZHU_PASSAGE}）。'
+    return line
+
+
+def _personal_lines(result: dict) -> list[str]:
+    """Layer 2 for 相主: the method in the passage's words, then every graded day."""
+    calendar = result.get('personal_calendar') or {}
+    ranking = result.get('ranking', {})
+    if not calendar.get('entries') and not ranking.get('personal_participant_ids'):
+        return []
+    lines = ['择日看人，《协纪辨方书》卷三十三说「從來皆論生年不論生日有論生日者非古法也」'
+             f'（{XIANGZHU_PASSAGE}）。白话说，挑日子看的是出生那一年的干支，不是日主。'
+             '禄、贵人、驿马、长生各用一张古表，出处随条列出；吉凶等级按原文用词：天克地冲最凶，'
+             '冲命按方向分凶与略轻，命禄、命贵人、食禄最吉，合官贵、合财富，其余为吉。'
+             '原文的例子是修造（以宅长之命为主）和安葬（以亡命为主），天克地冲、天比地冲写明是选择家对一切用事的通忌；'
+             '这里把同一套相主规则用在这件事上。原文另讲的「补龙扶山」看房屋坐山，没有实现。']
+    quoted: set[str] = set()
+    rows = calendar.get('people') or [{'participant_id': pid} for pid in ranking.get('personal_participant_ids', [])]
+    ids = [p['participant_id'] for p in rows]
+
+    def label(person: dict) -> str:
+        # Several people are named; one person with two possible years names the year.
+        if len(set(ids)) > 1:
+            return f"{person['participant_id']} "
+        return f"按{person['birth_year']}年：" if len(ids) > 1 else ''
+    entries = calendar.get('entries', [])
+    if len(entries) > 31:
+        # A long list keeps what the answer turns on: the best days and the days to avoid.
+        order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
+        best = min((e['grade'] for e in entries if not e.get('event_hits')), key=order.index, default='平')
+        entries = [e for e in entries if e.get('event_hits') or e['grade'] in (best, '凶', '大凶')][:60]
+    for entry in entries:
+        for hit in entry.get('event_hits', []):
+            lines.append(f"{entry['label']}（{entry['ganzhi']}）{calendar['event']}：{rule_detail(hit)}。")
+        for person in entry['people']:
+            who = label(person)
+            if 'days' in person:
+                lines.append(_factor_lines(f"{who}{entry['label']}（{entry['ganzhi']}）", person['days'][0]['grade'],
+                                           person['days'][0]['factors'], quoted))
+            else:
+                lines.append(_factor_lines(f"{who}{entry['label']}（{entry['span']}）", person['grade'],
+                                           person['factors'], quoted))
+    for row in ranking.get('tiers', []) + ranking.get('excluded', []):
+        for person in row.get('personal', {}).get('people', []):
+            who = label(person)
+            for day in person['days']:
+                lines.append(_factor_lines(f"{row['candidate_id']} {who}覆盖的{day['day_ganzhi']}日",
+                                           day['grade'], day['factors'], quoted))
+    return list(dict.fromkeys(lines))
+
+
+def _passed_over_sentence(result: dict) -> str:
+    """A better-graded window left out because every start ran into a named hour."""
+    practical = result.get('practical_choice', {})
+    rows = result.get('practical_screening', result.get('ranking', {})).get('tiers', [])
+    minutes = next((c['duration_minutes'] for c in result.get('candidate_comparison', [])), None)
+    parts = []
+    for item in practical.get('passed_over', []):
+        row = next((r for r in rows if (r['candidate_id'], r['start']) == (item['candidate_id'], item['start'])), None)
+        hits = _hour_hits(row) if row else []
+        if not hits:
+            continue
+        on = str(datetime.fromisoformat(item['start']).date())
+        fits = f'放不下完整的 {minutes} 分钟' if minutes else '排不进去'
+        parts.append(f"{item['candidate_id']} 对{_who(_personal_people_of(result))}更吉（{item['grade']}），"
+                     f"但 {_span(item['start'], item['end'])} 整段碰到 {'、'.join(_hour_span(h, on) for h in hits)}，"
+                     f"{_hour_reason(hits)}，{fits}")
+    return '；'.join(parts) + '。' if parts else ''
+
+
+def _colour_advice(result: dict) -> dict | None:
+    """Colour advice for a colour question, from the first person's natal reading."""
+    if not asks_colour(result.get('question')):
+        return None
+    return next((p['natal_interpretation']['colour_advice'] for p in result['participants']
+                 if 'colour_advice' in p.get('natal_interpretation', {})), None)
+
+
 def _lead_sentence(result: dict) -> str:
     """The summary paragraph: the answer first, built from what was computed."""
+    advice = _colour_advice(result)
+    if advice:
+        return colour_lead(advice)
     state = result['conclusion']['status']
     kind = _question_kind(result.get('question', ''))
     excluded = _excluded_sentence(result)
@@ -592,16 +858,23 @@ def _lead_sentence(result: dict) -> str:
         first, backup = practical['first_choice'], practical.get('backup')
         head = (f"可以：{first['candidate_id']}，{_placement(first)}。" if kind == 'yes_no'
                 else f"首选 {first['candidate_id']}：{_placement(first)}。")
+        graded = _graded(result, first)
+        if graded:
+            people = _personal_people_of(result)
+            who = _who(people)
+            basis = f"按协纪相主（看{who}出生那年的干支 {_births(people)}），这天对{who}是{graded}。"
+            if '同等的再按' in practical['reason']:
+                basis += practical['reason'].split('，', 1)[1] + '。'
         # A stated preference ordered these; say so rather than let the order
         # pass for a classical one. A lone window was not ordered at all.
-        if practical['reason'].startswith('按你'):
+        elif practical['reason'].startswith('按你'):
             basis = practical['reason'] + '；这是按档期排的，不是古法排序。'
         else:
-            screened = '已查条款只排除忌日忌时，不评个人吉凶。' if result.get('ranking') else '现有古法没有为它评个人吉凶。'
-            basis = practical['reason'] + '；' + screened
-        lead = head + basis
+            basis = practical['reason'] + '；这次没有可用的出生年，没有按相主排吉凶。'
+        lead = head + basis + _passed_over_sentence(result)
         if backup:
-            lead += f"备选 {backup['candidate_id']}：{_placement(backup)}。"
+            lead += (f"备选 {backup['candidate_id']}" + (f"（{_graded(result, backup)}）" if backup.get('grade') else '')
+                     + f"：{_placement(backup)}。")
         return lead + excluded + _avoid_sentence(result, first)
     if state == 'excluded_by_clause':
         return ('不行。' if kind == 'yes_no' else '') + excluded + '需要换到其他日子再比。'
@@ -609,6 +882,13 @@ def _lead_sentence(result: dict) -> str:
         return ('不建议。' if kind == 'yes_no' else '') + _conflict_sentence(result, kind) + excluded
     if state == 'screening_incomplete':
         return _incomplete_sentence(result) + excluded
+    if state == 'personal_calendar':
+        return _calendar_sentence(result, kind)
+    options = result.get('practical_choice', {}).get('alternatives') or []
+    if state in ('preferences_required', 'practical_tie') and options and options[0].get('grade'):
+        who = _who(_personal_people_of(result))
+        return (f"这几个时间按协纪相主对{who}同样是{options[0]['grade']}，古法分不出先后，要看{who}的偏好："
+                f"更想尽早、尽晚，还是优先某个候选？" + _alternatives_sentence(result) + excluded)
     if state in ('preferences_required', 'practical_tie'):
         return ASK_LEADS[state] + _alternatives_sentence(result) + excluded
     if state in ASK_LEADS:
@@ -630,6 +910,9 @@ def _lead_sentence(result: dict) -> str:
         lead = '这次是查古籍依据，不下个人吉凶结论。'
     elif capability.get('route') != 'period':
         lead = '这些候选时间，本库现有条款还没有分出个人吉凶。'
+    elif result.get('personal_calendar', {}).get('status') == 'birth_year_unknown':
+        lead = ('哪天对你好坏要按你出生那一年的干支看，但你的出生年柱还没定下来，也没有可比较的候选；'
+                '补上出生时刻（立春前后尤其要紧）就能逐日给出。')
     elif grain in ('day', 'hour'):
         lead = '按日给个人算整体吉凶，本库现有条款里没有这一类，所以不给哪天好、哪天坏的结论。'
     else:
@@ -649,7 +932,9 @@ def render_answer(result: dict) -> str:
     if not result.get('ok') or result.get('status') == 'specialist_required':
         return result['message']
     state = result['conclusion']['status']
-    lines = [_lead_sentence(result), _window_description(result['window'])]
+    advice = _colour_advice(result)
+    lines = [_lead_sentence(result), *(colour_lines(advice) if advice else []),
+             _window_description(result['window'])]
     comparison = result.get('candidate_comparison', [])
     for candidate in comparison:
         if not candidate['available']:
@@ -663,7 +948,7 @@ def render_answer(result: dict) -> str:
         scenario = ranking.get('scenario', result['capability']['scenario'])
         event = EVENT_WORDS.get(scenario, '')
         if scenario in TIANDI_EVENTS:
-            lines.append('《渊海子平·论天地转杀》说：“其日最忌，上官受职、出行商贾、造作、嫁娶。”（' + TIANDI_SOURCE + f'）白话说，这条是在指出特定季节需要避开的日子；没有碰到它，不等于其他条件都合适。这项检查按{event}日期计算，没有用完整八字给你排名。')
+            lines.append('《渊海子平·论天地转杀》说：“其日最忌，上官受职、出行商贾、造作、嫁娶。”（' + TIANDI_SOURCE + f'）白话说，这条是在指出特定季节需要避开的日子；没有碰到它，不等于其他条件都合适。这项检查只看{event}日期本身；对你个人的吉凶另按相主看，见下文。')
         checked = [r for r in XIEJI_RULES if any(XIEJI_TERMS.get(scenario, '\0') in a['quote'] for a in r['avoid'])]
         if checked:
             names = '、'.join(r['label'] for r in checked)
@@ -697,6 +982,7 @@ def render_answer(result: dict) -> str:
                 both = '；'.join(f"《{BOOK_NAMES[r['passage_id'].split(':')[0]]}》作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
                 spans = '、'.join(_hour_span(h) for h in group)
                 lines.append(f"{label}忌时两说并列：{both}。白话说，{row['candidate_id']} 覆盖到的 {spans} 只在其中一本书里算忌时，两本书指向不同时间，目前无法据此定下这段能不能用。")
+    lines.extend(_personal_lines(result))
     for person in result['participants']:
         if person.get('time_note'):
             lines.append(person['time_note'] + '。')

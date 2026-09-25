@@ -13,12 +13,13 @@
       "transcription_status": "context_checked",
       "facsimile_status": "not_checked",
       "scope": "修造与造葬的相主，生年为主",
-      "plain_meaning": "这里的四柱指所选日课；下文限定宅长、亡命和龙山。不能改成以完整出生八字选面试时间。",
-      "allowed_use": "scope_audit_only",
+      "plain_meaning": "这里的四柱指所选日课，拿它去比本人出生那一年的干支（相主），不看完整出生八字。原文的例子是修造（以宅长之命为主）与安葬（以亡命为主），天克地冲、天比地冲则写明是选择家对一切用事的通忌；本库把同一套相主规则用于其他事情时会在回答里说明。下文「补龙扶山」看的是房屋坐山，本库没有实现。",
+      "allowed_use": "xiangzhu_birth_year",
       "not_supported": [
         "full_bazi_interview_ranking",
         "minute_optimum",
-        "guaranteed_outcome"
+        "guaranteed_outcome",
+        "bu_long_fu_shan"
       ],
       "license": "古籍原文公版；维基文库转录按页面 CC BY-SA 条款署名，详见来源链接",
       "checked_on": "2026-09-12"

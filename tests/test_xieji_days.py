@@ -121,17 +121,23 @@ def test_wedding_moving_and_business_are_now_screened():
     from fortune_rules import capabilities
     for scenario in ('wedding', 'moving', 'business'):
         cap = capabilities(scenario)[0]
-        assert cap['calendar_screening'] == 'rule_based' and cap['personal_ranking'] == 'not_implemented'
+        assert cap['calendar_screening'] == 'rule_based' and cap['personal_ranking'] == 'rule_based'
     wedding = read_request(_request('wedding', [_slot('oct21', '2026-10-21', '10:00', '14:00'),
-                                                _slot('oct24', '2026-10-24', '10:00', '14:00')],
+                                                _slot('oct25', '2026-10-25', '10:00', '14:00')],
                                     '婚礼定哪天好？', preferences={'prefer': 'earliest'}))
     (row,) = wedding['ranking']['excluded']
     assert row['candidate_id'] == 'oct21'
     assert [(h['label'], h['passage_id']) for h in row['excluded_by']] == [
         ('月破', 'xieji:c010:p0108'), ('往亡', 'xieji:c010:p0154')]
-    assert wedding['recommendation']['first_choice'] == 'oct24'
+    assert wedding['recommendation']['first_choice'] == 'oct25'
     lead = render_answer(wedding).split('\n\n')[0]
     assert '是月破日（九月月建在戌，所衝為辰），《协纪辨方书》说这天忌嫁娶，遇到吉神也照样忌' in lead
+    assert '这天对你是大吉：合官' in lead  # 壬 joins 丁 (1997, 丁丑)
+    # The day rules pass 辛未, but 協紀's own table bars it for someone born in 丁丑.
+    own = read_request(_request('wedding', [_slot('oct24', '2026-10-24', '10:00', '14:00')], '10月24日结婚可以吗？'))
+    (hit,) = own['ranking']['excluded'][0]['excluded_by']
+    assert (hit['rule'], hit['birth_year'], hit['passage_id']) == ('xiangzhu_na_yin_chong', '丁丑', 'xieji:c033:p0020')
+    assert render_answer(own).startswith('不行。oct24 需要避开：覆盖到辛未日，是你（丁丑年生）的纳音克冲日')
     moving = read_request(_request('moving', [_slot('oct17', '2026-10-17')], '10月17日搬家可以吗？'))
     assert moving['recommendation']['status'] == 'excluded_by_clause'
     assert render_answer(moving).startswith('不行。oct17 需要避开：覆盖到甲子日，是歸忌日（季月歸忌在子）')

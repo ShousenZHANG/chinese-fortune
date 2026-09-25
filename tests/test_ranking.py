@@ -232,7 +232,7 @@ def test_ranking_declares_the_precedence_version_it_used():
     assert result['precedence_version'] == PRECEDENCE_VERSION
     assert result['ranking_reference'] == 'references/26-precedence.md'
     travel = next(c for c in capabilities('travel'))
-    assert travel['personal_ranking'] == 'not_implemented'
+    assert travel['personal_ranking'] == 'rule_based'  # 相主, by the birth year
     assert travel['calendar_screening'] == 'rule_based'
     assert travel['precedence_version'] == PRECEDENCE_VERSION
 
@@ -266,7 +266,8 @@ def test_ranking_reaches_the_reading_output():
     assert excluded['passage_id'] == TIANDI_SOURCE
     assert '出行商贾' in excluded['quote']
     judgments = {c['candidate_id']: c['judgment'] for c in result['candidate_comparison']}
-    assert judgments == {'oct13': 'tier_1', 'oct14': 'excluded_by_clause', 'oct15': 'tier_1'}
+    # 相主 for 丁丑: 庚申 is 吉 (庚 is 丁's 正财), 壬戌 大吉 (丁壬合官).
+    assert judgments == {'oct13': 'tier_2', 'oct14': 'excluded_by_clause', 'oct15': 'tier_1'}
     # 庚日忌午未; the 09:00-13:00 window covers 午. Each hit names the day whose
     # stem produced the rule, so a multi-day window cannot borrow the wrong one.
     covered = next(t for t in ranking['tiers'] if t['candidate_id'] == 'oct13')
@@ -278,25 +279,32 @@ def test_ranking_reaches_the_reading_output():
 
 
 def test_survivors_tie_instead_of_getting_an_invented_first_choice():
+    """Survivors sharing the best 相主 tier tie; a better tier is not a tie."""
     from fortune_reading import read_request
     result = read_request(_travel_request(
-        [{'id': 'd21', 'start': '2026-09-21T08:00', 'end': '2026-09-21T12:00'},
-         {'id': 'd22', 'start': '2026-09-22T08:00', 'end': '2026-09-22T12:00'}],
-        {'start': '2026-09-21', 'end': '2026-09-24'}))
+        [{'id': 'oct13', 'start': '2026-10-13T08:00', 'end': '2026-10-13T12:00'},
+         {'id': 'oct16', 'start': '2026-10-16T08:00', 'end': '2026-10-16T12:00'}], _OCT))
     rec = result['recommendation']
-    assert rec['status'] == 'preferences_required'
+    assert rec['status'] == 'preferences_required'  # both 吉 for 丁丑
     assert rec['first_choice'] is None
-    assert sorted({w['candidate_id'] for w in result['practical_choice']['alternatives']}) == ['d21', 'd22']
+    assert sorted({w['candidate_id'] for w in result['practical_choice']['alternatives']}) == ['oct13', 'oct16']
+    assert {w['grade'] for w in result['practical_choice']['alternatives']} == {'吉'}
     assert result['ranking']['precedence_version'] == PRECEDENCE_VERSION
+    better = read_request(_travel_request(
+        [{'id': 'oct13', 'start': '2026-10-13T08:00', 'end': '2026-10-13T12:00'},
+         {'id': 'oct15', 'start': '2026-10-15T08:00', 'end': '2026-10-15T12:00'}], _OCT))
+    assert better['recommendation']['first_choice'] == 'oct15'  # 大吉 over 吉
+    assert better['practical_choice']['backup']['candidate_id'] == 'oct13'
 
 
-def test_day_screening_does_not_hide_missing_personal_rules():
+def test_day_screening_names_whose_birth_year_graded_it():
     from fortune_reading import read_request
     result = read_request(_travel_request(
         [{'id': 'd22', 'start': '2026-09-22T08:00', 'end': '2026-09-22T12:00'}],
         {'start': '2026-09-21', 'end': '2026-09-24'}))
-    codes = [b['code'] for b in result['decision_blockers']]
-    assert 'ranking_rules_required' in codes
+    assert result['ranking']['personal_participant_ids'] == ['me']
+    assert result['ranking']['personal_basis']['passage_id'] == 'xieji:c033:p0020'
+    assert 'ranking_rules_required' not in [b['code'] for b in result['decision_blockers']]
 
 
 def test_climate_colors_name_every_stem_the_clause_takes():
@@ -351,7 +359,7 @@ def test_every_recommendation_status_renders_instead_of_raising():
     cases = {
         'practical_choice': [_slot('oct15', '2026-10-15')],
         'preferences_required': [_slot('oct13', '2026-10-13'),
-                                     _slot('oct15', '2026-10-15')],
+                                     _slot('oct16', '2026-10-16')],
         'excluded_by_clause': [_slot('oct14', '2026-10-14')],
     }
     for expected, candidates in cases.items():
@@ -367,8 +375,7 @@ def test_every_recommendation_status_renders_instead_of_raising():
     # say which candidate — deleting _hour_caveat used to leave everything green.
     tied = render_answer(read_request(_travel_request(
         cases['preferences_required'], _OCT))).splitlines()[0]
-    assert '现有古法' in tied
-    assert '个人优劣' in tied
+    assert '按协纪相主对你同样是吉' in tied and '古法分不出先后' in tied
     assert '就定' not in tied
 
 
@@ -386,7 +393,7 @@ def test_a_fully_excluded_window_is_a_verdict_not_a_plea_for_evidence():
     assert rec['first_choice'] is None
     assert rec['excluded'] == ['oct14']
     assert rec['precedence_version'] == PRECEDENCE_VERSION
-    assert {b['code'] for b in result['decision_blockers']} == {'ranking_rules_required'}
+    assert {b['code'] for b in result['decision_blockers']} == set()
     text = render_answer(result)
     assert '需要避开' in text.splitlines()[0]
     assert 'oct14' in text and '辛酉' in text
@@ -626,24 +633,24 @@ def test_an_unresolved_day_does_not_block_a_window_that_avoids_both_readings():
     assert d21['unresolved_hour_rules'] == ['戊戌']  # still reported
     assert d21['contested_hours_in_window'] == []    # but nothing is contested
     assert result['recommendation']['status'] == 'practical_choice'
-    assert result['recommendation']['first_choice'] == 'd21'
+    # 相主 puts 己亥 (命贵人、驿马) above 戊戌 (平) for 丁丑; 戊戌 stays usable as the backup.
+    assert result['recommendation']['first_choice'] == 'd22'
+    assert result['recommendation']['backup'] == 'd21'
     assert 'clause_conflict' not in {b['code'] for b in result['decision_blockers']}
     lead, body = _render(result)
-    assert lead.startswith('首选 d21：2026-09-21 08:00')
-    assert '备选 d22' in lead and '不是古法排序' in lead
+    assert lead.startswith('首选 d22：2026-09-22 08:00')
+    assert '备选 d21（平）' in lead and '按协纪相主' in lead
     assert '版本分歧' not in lead
-    # Without a preference the answer asks for one; the blocker list must not
-    # still carry a clause conflict that a practical choice would have hidden.
-    open_question = _read([_slot('d21', '2026-09-21', '08:00', '12:00'),
-                           _slot('d22', '2026-09-22', '08:00', '12:00')], _SEP)
-    assert open_question['recommendation']['status'] == 'preferences_required'
-    assert 'clause_conflict' not in {b['code'] for b in open_question['decision_blockers']}
+    # Alone, 戊戌 is still recommended: the unsettled day does not block it.
+    alone = _read([_slot('d21', '2026-09-21', '08:00', '12:00')], _SEP)
+    assert alone['recommendation']['status'] == 'practical_choice'
+    assert 'clause_conflict' not in {b['code'] for b in alone['decision_blockers']}
 
 
 def test_an_unresolved_day_is_only_mentioned_where_the_window_reaches_a_named_hour():
     lead, body = _render(_sep21_early())
-    assert '戊戌' not in lead + body
-    assert '两说并列' not in body
+    assert '戊戌' not in lead
+    assert '戊戌日忌时' not in body and '两说并列' not in body
     assert '下面说明原可选大窗口里需要避开的部分' not in body
 
 
@@ -674,7 +681,7 @@ def test_an_excluded_candidate_is_named_in_the_first_sentence():
     result = _read([_slot('oct13', '2026-10-13'), _slot('oct14', '2026-10-14'),
                     _slot('oct15', '2026-10-15')], _OCT, '哪天出发？', preferences={'prefer': 'earliest'})
     lead, _ = _render(result)
-    assert lead.startswith('首选 oct13：')
+    assert lead.startswith('首选 oct15：')  # 大吉 before 尽早
     assert 'oct14 需要避开：覆盖到辛酉日，是秋季的天转日，《渊海子平》说这天忌出行。' in lead
 
 
@@ -728,7 +735,8 @@ def test_an_excluded_row_does_not_claim_its_date_broke_no_rule():
     assert 'oct14 原可选窗口覆盖到 辛酉 日' in body
 
 
-def test_a_daily_outlook_says_plainly_that_no_clause_covers_it():
+def test_a_daily_outlook_answers_by_the_birth_year():
+    """「明天运势怎么样」 used to get 「本库现有条款里没有这一类」. 相主 answers it."""
     from fortune_reading import read_request
     request = _travel_request([], _OCT)
     for key in ('candidates', 'duration_minutes', 'granularity'):
@@ -736,10 +744,12 @@ def test_a_daily_outlook_says_plainly_that_no_clause_covers_it():
     request.update(event={'scenario': 'outlook', 'timezone': 'Australia/Sydney', 'longitude': 151.2},
                    period={'start': '2026-09-18', 'end': '2026-09-19'}, question='明天运势怎么样？')
     result = read_request(request)
-    assert result['recommendation']['status'] == 'evidence_needed'
+    assert result['recommendation']['status'] == 'personal_calendar'
+    (entry,) = result['personal_calendar']['entries']
+    assert (entry['date'], entry['ganzhi']) == ('2026-09-18', entry['pillars']['day'])
     lead, body = _render(result)
-    assert lead.startswith('按日给个人算整体吉凶，本库现有条款里没有这一类')
-    assert '补查约5分钟' in body  # evidence_needed still offers the timed search
+    assert lead.startswith(f"按你出生那年的干支（丁丑）看，9月18日（{entry['ganzhi']}）对你是{entry['grade']}")
+    assert 'xieji:c033:p0020' in body and '补查约5分钟' not in body
     # A natal question defaults to a one-day period too; it is not a daily outlook.
     natal = read_request({**request, 'intent': 'natal', 'question': '我的命局怎么样'})
     lead, _ = _render(natal)
@@ -797,13 +807,17 @@ def test_a_clear_wu_gui_window_keeps_its_flexible_start():
 
 
 def test_preferences_are_applied_as_stated_and_never_combined():
-    two = [_slot('oct15', '2026-10-15'), _slot('oct16', '2026-10-16')]
+    two = [_slot('oct13', '2026-10-13'), _slot('oct16', '2026-10-16')]  # both 吉 for 丁丑
     latest = _read(two, _OCT, preferences={'prefer': 'latest'})['practical_choice']
     assert latest['first_choice']['candidate_id'] == 'oct16'
     assert latest['first_choice']['start'] == '2026-10-16T11:00:00+11:00'  # the latest start
-    assert latest['backup']['candidate_id'] == 'oct15'
+    assert latest['backup']['candidate_id'] == 'oct13'
+    # A preference orders windows inside a tier, never across: 壬戌 is 大吉.
+    across = _read([_slot('oct15', '2026-10-15'), _slot('oct16', '2026-10-16')], _OCT,
+                   preferences={'prefer': 'latest'})['practical_choice']
+    assert across['first_choice']['candidate_id'] == 'oct15'
     with pytest.raises(ValueError, match='只指定一种'):
-        _read(two, _OCT, preferences={'prefer': 'earliest', 'candidate_order': ['oct15']})
+        _read(two, _OCT, preferences={'prefer': 'earliest', 'candidate_order': ['oct13']})
 
 
 def test_equal_starts_are_a_tie_not_an_input_order_pick():
@@ -927,7 +941,7 @@ def test_times_read_as_a_local_clock_with_one_offset():
     # Local mean time carries seconds; slicing the ISO string used to misread it.
     assert _utc_offset(datetime.fromisoformat('1900-01-01T00:00:00+08:05:43')) == 'UTC+8:05'
     lead = _render(_sep21_early())[0]
-    assert lead.startswith('首选 d21：2026-09-21 08:00–10:00（Australia/Sydney，UTC+10）。')
+    assert lead.startswith('首选 d22：2026-09-22 08:00–10:00（Australia/Sydney，UTC+10）。')
 
 
 def test_a_window_without_a_day_pillar_asks_for_the_place_not_a_verdict():
@@ -944,3 +958,27 @@ def test_a_window_without_a_day_pillar_asks_for_the_place_not_a_verdict():
     lead = render_answer(result).split('\n\n')[0]
     assert lead == ('现在判断不了，因为还不知道活动地点：日柱按当地真太阳时定，缺经度就定不了，'
                     '所以 a 的 2026-10-13 09:00–13:00 还没有套用忌日条款。告诉我在哪个城市或经度，就能接着核。')
+
+
+def test_personal_answers_keep_to_the_word_lists():
+    """Every new answer shape: a period, a single day, months, a graded choice,
+    a preference among equals and a better window passed over."""
+    from answer_style import style_violations
+    from fortune_reading import read_request, render_answer
+    request = _travel_request([], _OCT)
+    for key in ('candidates', 'duration_minutes', 'granularity'):
+        request.pop(key)
+    outlook = {**request, 'event': {'scenario': 'outlook', 'timezone': 'Australia/Sydney', 'longitude': 151.2}}
+    results = [read_request({**outlook, 'period': period, 'question': question}) for period, question in (
+        ({'start': '2026-10-12', 'end': '2026-10-26'}, '这两周哪天对我好？'),
+        ({'start': '2026-10-24', 'end': '2026-10-25'}, '10月24日对我好不好？'),
+        ({'start': '2026-10-01', 'end': '2027-10-01'}, '明年哪几个月好？'))]
+    results += [_read([_slot('oct13', '2026-10-13'), _slot('oct15', '2026-10-15')], _OCT, '哪天出发好？'),
+                _read([_slot('oct13', '2026-10-13'), _slot('oct16', '2026-10-16')], _OCT),
+                _read([_slot('a', '2026-10-13', '11:41', '13:00'), _slot('b', '2026-10-16')], _OCT,
+                      preferences={'prefer': 'earliest'})]
+    for result in results:
+        text = render_answer(result)
+        assert not style_violations(text), text.split('\n\n')[0]
+    assert results[1]['personal_calendar']['entries'][0]['grade'] == '凶'
+    assert render_answer(results[1]).startswith('不好。按你出生那年的干支（丁丑）看，10月24日（辛未）对你是凶：纳音克冲。')

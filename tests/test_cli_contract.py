@@ -43,6 +43,8 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
+    ('question_router.py', ['--question', '   '], '空问句'),
+    ('question_router.py', ['--question', '问' * 2001], '超长问句'),
     ('prediction_log.py', ['begin', '--stdin'], '空记录请求'),
     ('prediction_log.py', ['show', '--stdin'], '缺少记录标识'),
     ('classical_guidance.py', ['--family', 'missing'], '不存在的命局类别'),

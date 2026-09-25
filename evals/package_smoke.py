@@ -158,7 +158,8 @@ def main(argv: list[str] | None = None) -> int:
         assert future['window']['start'].startswith('2026-09-14')
         assert future['availability'][0]['available']
         assert future['recommendation']['basis'] == 'practical_constraints'
-        assert future['conclusion']['traditional_personal_ranking'] == 'not_established'
+        assert future['conclusion']['traditional_personal_ranking'] == 'xiangzhu_birth_year'
+        assert future['ranking']['personal_basis']['passage_id'] == 'xieji:c033:p0020'
         assert future['practical_choice']['first_choice']['start'] == '2026-09-15T09:00:00+10:00'
         assert future['practical_choice']['first_choice']['end'] == '2026-09-15T10:00:00+10:00'
         comparison = future['candidate_comparison'][0]['windows'][0]
@@ -168,6 +169,21 @@ def main(argv: list[str] | None = None) -> int:
         assert future['event_method']['method'] == 'yuanling-core'
         assert comparison['event_segments']
         assert future['event_method']['charts'][0]['participants'][0]['participant_id'] == 'sample'
+        # 5.0.0 flows, from the installed copy: route a question, grade days, answer colours.
+        routed = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/question_router.py'),
+                                 '--question', '下个月哪天搬家好？'], work))
+        assert routed['flow'] == 'personal_days' and routed['request']['event'] == {'scenario': 'moving'}
+        days = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/fortune_reading.py'), '--stdin'],
+                              work, data=json.dumps({**{k: v for k, v in query.items()
+                                                        if k not in ('candidates', 'duration_minutes')},
+                                                     **routed['request']}, ensure_ascii=False)))
+        assert days['recommendation']['status'] == 'personal_calendar'
+        assert days['personal_calendar']['entries'] and days['personal_calendar']['event'] == '搬家'
+        colours = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/bazi_reading.py'),
+                                  '--year', '2000', '--month', '1', '--day', '15', '--hour', '10', '--gender', 'male',
+                                  '--timezone', 'Asia/Shanghai', '--longitude', '120',
+                                  '--current-timezone', 'Australia/Sydney', '--question', '我穿什么颜色旺我'], work))
+        assert colours['colour_advice']['status'] == 'ok' and colours['colour_advice']['wear']
         qimen = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/qimen_cast.py'),
                                 '--date', '2026-06-18', '--time', '08:00',
                                 '--target-timezone', 'Asia/Shanghai'], work))

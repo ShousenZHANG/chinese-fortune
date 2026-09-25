@@ -4,6 +4,7 @@ from __future__ import annotations
 from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
 
+import xiangzhu
 from contracts import Blocker
 from fortune_calendar import solar_wall, term_boundaries
 from fortune_time import civil_boundaries
@@ -162,6 +163,10 @@ def decision_blockers(result: dict) -> list[Blocker]:
         if not person['natal'].get('hour_known'):
             blockers.append({'code': 'birth_time_required', 'participant_id': person['id'],
                              'message': '出生时段尚未确定；完整时柱与起运仍需核清。'})
+        if (result['capability'].get('personal_ranking') == 'rule_based'
+                and not xiangzhu.birth_years_of(person['natal'])):
+            blockers.append({'code': 'birth_year_required', 'participant_id': person['id'],
+                             'message': '出生年柱还没定（多是生在立春前后又缺时刻），个人吉凶（相主）按出生年看，暂时排不了。'})
     if method.get('status') == 'event_longitude_required' and not any(b['code'] == 'event_longitude_required' for b in blockers):
         blockers.append({'code': 'event_longitude_required', 'message': '事件真太阳时仍缺地点经度，尚未起奇门盘。'})
     if method.get('status') == 'candidate_span_too_long':

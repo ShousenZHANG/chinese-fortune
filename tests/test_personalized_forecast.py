@@ -280,21 +280,25 @@ def test_half_hour_dst_transition_cut():
 def test_scope_audit_quotes_valid_but_not_interview_rules():
     audit = source_audit()
     assert {r['chapter'] for r in audit} == {'卷33', '卷34'}
-    assert all(r['allowed_use'] == 'scope_audit_only' for r in audit)
+    # 卷33 is now the 相主 basis (birth year only); 卷34 (the hour method) stays an audit.
+    assert [r['allowed_use'] for r in audit] == ['xiangzhu_birth_year', 'scope_audit_only']
+    assert 'full_bazi_interview_ranking' in audit[0]['not_supported']
+    assert '不看完整出生八字' in audit[0]['plain_meaning'] and '补龙扶山' in audit[0]['plain_meaning']
     assert all(r['facsimile_status'] == 'not_checked' for r in audit)
     assert '修造以宅長一人之命為主' in audit[0]['text']
     assert '日支衝時支' in audit[1]['text']
     assert '五不遇' in audit[1]['text']
-    # 卷33/34 只作范围审计，不得成为面试排名依据 —— interview 必须仍是未实现。
     by_key = {c['scenario']: c for c in capabilities()}
-    assert by_key['interview']['personal_ranking'] == 'not_implemented'
+    # 面试没有事项本身的日级条款，个人吉凶按相主（出生年干支）排。
+    assert by_key['interview']['personal_ranking'] == 'rule_based'
+    assert by_key['interview']['calendar_screening'] == 'not_implemented'
     # 已实现排名的场景必须声明裁决表版本与出处，否则就是无授权排名。
     for cap in capabilities():
-        if cap['calendar_screening'] == 'rule_based':
+        if 'rule_based' in (cap['calendar_screening'], cap['personal_ranking']):
             assert cap['precedence_version'], f"{cap['scenario']} 排名未声明裁决表版本"
             assert cap['ranking_reference'] == 'references/26-precedence.md'
         else:
-            assert cap['personal_ranking'] == 'not_implemented'
+            assert cap['route'] in ('specialist', 'itinerary'), cap['scenario']
             assert 'precedence_version' not in cap
     assert len(evidence(full_audit=True)['scope_audit'][0]['text']) > 0
 
@@ -303,12 +307,11 @@ def test_plain_answer_quote_then_plain_explanation(query):
     result = read_request(query)
     text = render_answer(result)
     first = text.splitlines()[0]
-    assert '现有古法' in first and '还没有分出个人优劣' in first and '《' not in first
-    quote = text.index('《子平真诠')
-    explanation = text.index('白话说')
-    source = text.index('出处：')
-    assert quote < explanation < source
-    assert '本次已经算出' in text[explanation:source]
+    # Same day, so the same 相主 grade: the answer asks for a preference, no book title up front.
+    assert '同样是' in first and '偏好' in first and '《' not in first
+    method = next(p for p in text.split('\n\n') if p.startswith('择日看人'))
+    assert method.index('《协纪辨方书》卷三十三') < method.index('（xieji:c033:p0020）') < method.index('白话说')
+    assert '补龙扶山' in method  # the part of 相主 that is not implemented is named
     assert '首选：' not in text and '成功率' not in text
 
 
@@ -387,7 +390,10 @@ def test_granularity_limits_and_naive_instant(natal):
 
 
 def test_source_quote_change_fails_instead_of_citing_old_text(query):
-    result = read_request(query)
+    # A natal question still cites 论行运; a changed frozen text must stop it.
+    natal = {k: v for k, v in query.items() if k not in ('candidates', 'duration_minutes')}
+    result = read_request({**natal, 'intent': 'natal', 'question': '我的命局怎么样'})
+    assert '而取運則又以運之干支' in render_answer(result)
     result['evidence']['principle'][0]['text'] = 'changed text'
     with pytest.raises(ValueError, match='原文'):
         render_answer(result)

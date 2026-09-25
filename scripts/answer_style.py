@@ -46,7 +46,8 @@ def question_kind(question: str) -> str:
     """``choice``, ``yes_no`` or ``verdict`` by the words that ask."""
     if any(word in question for word in ('哪天', '哪个', '几点')):
         return 'choice'
-    if any(word in question for word in ('吗', '嗎', '行不行', '可以吗', '是不是', '有没有', '能不能')):
+    if any(word in question for word in ('吗', '嗎', '行不行', '可以吗', '是不是', '有没有', '能不能',
+                                         '好不好', '吉不吉', '宜不宜', '顺不顺')):
         return 'yes_no'
     return 'verdict'
 

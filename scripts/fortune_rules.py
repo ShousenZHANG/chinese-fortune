@@ -12,18 +12,19 @@ from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
 SCENARIOS = {
     # (label, route, gap, ranking)
-    # ranking: 'not_implemented' | 'rule_based' —— rule_based 表示该场景的候选排名
-    # 由 references/26-precedence.md 的布尔层级产出，每层带 passage_id，不含自造权重。
-    'outlook': ('阶段运势', 'period', '八字岁运与目标窗口；日时吉凶条款待核', 'not_implemented'),
-    'interview': ('面试', 'selection', '现代面试与古法事项的映射、完整八字及日时优先关系', 'not_implemented'),
-    'work_conversation': ('工作沟通、谈薪、转岗', 'selection', '本事项与个人八字结合的日时条款', 'not_implemented'),
-    'exam': ('学习考试', 'selection', '赴举与现代考试的适用差别、本人条件及完整取舍规则', 'not_implemented'),
-    'relationship_conversation': ('约会、感情沟通', 'selection', '该事项适用的本人命盘及日时规则', 'not_implemented'),
-    'travel': ('出行', 'selection', '通用忌日筛选已实现（天地转杀与协纪不受吉神化解的忌日）；协纪按轻重取舍的宜忌、完整个人吉凶排序和忌时取舍仍缺依据', 'rule_based'),
-    'wedding': ('订婚、领证、婚礼', 'selection', '通用嫁娶忌日筛选已实现；具体仪式与古法名目的对应、双方同等考虑及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
-    'moving': ('搬家、入住', 'selection', '通用般移（移徙）忌日筛选已实现；入宅与修造的区别、宅长、朝向及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
-    'business': ('开业、产品与作品发布', 'selection', '通用开市忌日筛选已实现；产品与作品发布是否算开市、负责人角色及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
-    'billing': ('报价、催款', 'selection', '日常事项的个人择时依据，不能借用买卖投资判断', 'not_implemented'),
+    # ranking: 'not_implemented' | 'rule_based' —— 事项本身的日级条款（天地转杀、协纪忌日）
+    # 是否已实现。个人吉凶（协纪卷三十三相主，按出生年干支）对 selection 与 period 都已实现，
+    # 由 capabilities() 另行声明；层级见 references/26-precedence.md，不含自造权重。
+    'outlook': ('阶段运势', 'period', '个人日子吉凶按协纪相主（出生年干支）已实现；大运流年与原局喜忌的合参只有两条运程例式', 'not_implemented'),
+    'interview': ('面试', 'selection', '个人日子吉凶按相主已实现；现代面试与古法事项的映射未核，没有事项本身的日级条款', 'not_implemented'),
+    'work_conversation': ('工作沟通、谈薪、转岗', 'selection', '个人日子吉凶按相主已实现；本事项没有核过的日级条款', 'not_implemented'),
+    'exam': ('学习考试', 'selection', '个人日子吉凶按相主已实现；赴举与现代考试的适用差别未核', 'not_implemented'),
+    'relationship_conversation': ('约会、感情沟通', 'selection', '个人日子吉凶按相主已实现；本事项没有核过的日级条款', 'not_implemented'),
+    'travel': ('出行', 'selection', '通用忌日筛选（天地转杀与协纪不受吉神化解的忌日）与个人相主已实现；协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
+    'wedding': ('订婚、领证、婚礼', 'selection', '通用嫁娶忌日与双方相主已实现；具体仪式与古法名目的对应及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
+    'moving': ('搬家、入住', 'selection', '通用般移（移徙）忌日与个人相主已实现；入宅与修造的区别、宅长、朝向及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
+    'business': ('开业、产品与作品发布', 'selection', '通用开市忌日与个人相主已实现；产品与作品发布是否算开市及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
+    'billing': ('报价、催款', 'selection', '个人日子吉凶按相主已实现；本事项没有核过的日级条款，不能借用买卖投资判断', 'not_implemented'),
     'multiple_events': ('连续行程', 'itinerary', '现实联合可行性已实现；命理排名仍须每项事件各自的完整依据', 'not_implemented'),
     'compatibility': ('关系匹配', 'specialist', '双方资料；合婚独立规则，不借用择时完成状态', 'not_implemented'),
     'naming': ('起名改名', 'specialist', '字义、读音和使用限制；独立字词证据', 'not_implemented'),
@@ -31,7 +32,8 @@ SCENARIOS = {
     'fengshui': ('环境与风水', 'specialist', '实际布局、朝向、测量口径及本法依据', 'not_implemented'),
     'review': ('复盘纠错', 'specialist', '原始判断、当时输入与版本、已发生事实；不倒改为命中', 'not_implemented'),
 }
-PRECEDENCE_VERSION = 'precedence-v2'
+PRECEDENCE_VERSION = 'precedence-v3'
+PERSONAL_ROUTES = ('selection', 'period')
 
 SOURCE_FILE = Path(__file__).resolve().parents[1] / 'references' / 'forecast-source-audit.json'
 EXAMPLE_HASHES = {
@@ -45,9 +47,10 @@ def capabilities(scenario: str | None = None) -> list[dict]:
         if not isinstance(scenario, str) or not scenario.strip() or len(scenario) > 80:
             raise ValueError('scenario 须为 1–80 字符的事项名称')
         return [{'scenario': scenario, 'label': scenario, 'route': 'period', 'custom': True,
-                 'status': 'requires_scenario_research', 'personal_ranking': 'not_implemented',
+                 'status': 'requires_scenario_research', 'personal_ranking': 'rule_based',
+                 'precedence_version': PRECEDENCE_VERSION, 'ranking_reference': 'references/26-precedence.md',
                  'available': ['confirmed_birth_chart', 'target_calendar'],
-                 'missing': '本事项与古法名目的对应、适用条件和目标时间粒度尚待核对'}]
+                 'missing': '个人日子吉凶按相主已实现；本事项与古法名目的对应、适用条件尚待核对'}]
     result = []
     for key, (label, route, gap, ranking) in SCENARIOS.items():
         if scenario is not None and key != scenario:
@@ -61,10 +64,11 @@ def capabilities(scenario: str | None = None) -> list[dict]:
                          + (['joint_feasibility', 'explicit_travel_buffers', 'shared_natal_catalog']
                             if route == 'itinerary' else [])
                          if route != 'specialist' else [],
-            'personal_ranking': 'not_implemented', 'missing': gap,
+            'personal_ranking': 'rule_based' if route in PERSONAL_ROUTES else 'not_implemented',
+            'missing': gap,
             'calendar_screening': 'rule_based' if ranking == 'rule_based' else 'not_implemented',
         }
-        if ranking == 'rule_based':
+        if ranking == 'rule_based' or route in PERSONAL_ROUTES:
             # 排名来自冻结的布尔层级，不是权重；宿主据此判断能否给首选。
             entry['precedence_version'] = PRECEDENCE_VERSION
             entry['ranking_reference'] = 'references/26-precedence.md'
