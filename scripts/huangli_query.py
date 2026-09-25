@@ -37,14 +37,15 @@ def _safe(fn: Callable[[], Any], default: Any = None) -> Any:
 # 那张表逐项一致 (tests/test_reference_consistency.py 强制)。
 # --------------------------------------------------------------------------- #
 #
-# 注意这**不是** yi/ji 的替代品。lunar_python 的 getDayYi/getDayJi 是通书系的结论
-# —— 建除、神煞、二十八宿、彭祖百忌 等一并权衡之后的结果; 建除表只是其中一条规则
-# 的一般倾向。二者在 2026 上半年 181 天里有 117 天字面冲突 (58 天引擎宜含表忌、
-# 59 天引擎忌含表宜), 但这多半不是矛盾, 而是「单条规则的倾向」被更强的神煞盖过。
+# 注意这**不是** yi/ji 的替代品, yi/ji 也不是它的上级。lunar_python 的
+# getDayYi/getDayJi 是按 (月干支, 日干支) 查一张内置通书表; 表里各条规则怎样取舍,
+# 本库没有核到出处。二者在 2026 上半年 181 天里有 117 天字面冲突 (58 天引擎宜含
+# 表忌、59 天引擎忌含表宜)。从前的提示说「通书结论已把神煞/宿/干支一并权衡」「遇冲突
+# 以 yi/ji 为准」, 这两句都没有出处, 已删除。
 #
 # 从前引擎只发 yi/ji 且不注出处, 而 SKILL.md:51 声明黄历择日「为纲之典」是
 # 《钦定协纪辨方书》、12-huangli.md:180 称建除是「黄历最核心的择日体系」——
-# 读者会以为看到的就是建除的结论。现在两者并列, 冲突显式列出, 由解读方裁决。
+# 读者会以为看到的就是建除的结论。现在两者并列, 冲突显式列出, 本工具不裁决。
 JIAN_CHU_TENDENCY: dict[str, dict[str, list[str]]] = {
     "建": {"yi": ["上任", "入学", "求职", "出行"], "ji": ["动土", "破土"]},
     "除": {"yi": ["扫除", "求医", "祭祀", "解除"], "ji": ["嫁娶", "入宅"]},
@@ -68,6 +69,27 @@ def _safe_method(obj: Any, name: str, default: Any = None) -> Any:
     except AttributeError:
         return default
     return _safe(fn, default)
+
+
+def _tiandi_conflicts(lunar: Any, day_yi: list[str] | None) -> list[dict]:
+    """通书宜项里, 被天地转杀条款原文点名为「最忌」的那几项。
+
+    只标出**原样**出现在条款原文里的宜项: 2026-10-14 辛酉 (秋季天转) 标出
+    嫁娶, 不标动土 —— 把动土归入「造作」是本工具的解读, 不是条款的原话。
+    与 jian_chu_conflicts 一样只并列两说, 不裁决。普通日子返回 []。
+    """
+    from fortune_ranking import season_of, tiandi_zhuan
+    day = lunar.getDayInGanZhiExact()
+    season = season_of(lunar.getMonthZhiExact())
+    hit = tiandi_zhuan(day[0], day[1], season) if season else None
+    if hit is None:
+        return []
+    named = [item for item in day_yi or [] if item in hit['quote']]
+    if not named:
+        return []
+    return [{**hit, 'day_ganzhi': day, 'season': season, 'yi_named_in_clause': named,
+             'note': '通书宜忌表把上列事项列为宜, 天地转杀条款原文把它们列为最忌。'
+                     '两者是不同的体系; 本工具不裁决, 两说并列。'}]
 
 
 def _hour_pillars(lunar: Any) -> list[dict]:
@@ -129,8 +151,12 @@ def _hour_pillars(lunar: Any) -> list[dict]:
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   input solar_date lunar_date ganzhi zhi_shen_12jianchu xiu_28 yi ji
+  yi_ji_source jian_chu_tendency jian_chu_conflicts clause_conflicts
   ji_shi xiong_shi shichen_detail directions peng_zu_bai_ji
   tai_shen_fang_wei chong_sha jieqi
+
+clause_conflicts: [] on most days. On a 天地转杀 day, the 宜 items the
+  clause itself names as 最忌, with passage_id; side by side, not adjudicated.
 
 shichen_detail: 13 rows, 早子 00:00-01:00 ... 亥 ... 夜子 23:00-24:00.
   Each row: shichen branch hour_range ganzhi tian_shen huang_hei_dao
@@ -184,9 +210,8 @@ def main(argv: list[str] | None = None) -> int:
             conflicts["engine_ji_but_jianchu_yi"] = both_ji
         if conflicts:
             conflicts["note"] = [
-                f"值神「{zhi_xing}」的建除倾向与通书结论在上列项目上相左。",
-                "建除是单条规则的一般倾向; 通书结论已把神煞/宿/干支一并权衡。",
-                "遇冲突以 yi/ji (通书结论) 为准, 并向用户说明存在分歧。",
+                f"值神「{zhi_xing}」的建除倾向与通书宜忌表在上列项目上相左。",
+                "两者是不同的体系; 本工具不裁决哪一方优先, 两说并列, 并向用户说明存在分歧。",
             ]
     xiu = _safe_method(lunar, "getXiu", None)
     zheng = _safe_method(lunar, "getZheng", None)
@@ -244,11 +269,12 @@ def main(argv: list[str] | None = None) -> int:
         "yi": day_yi,
         "ji": day_ji,
         "yi_ji_source": (
-            "lunar_python getDayYi/getDayJi — 通书系综合结论 "
-            "(建除 + 神煞 + 二十八宿 + 彭祖百忌 等一并权衡后的结果)"
+            "lunar_python getDayYi/getDayJi — 通书系内置宜忌表, 按月干支与日干支查表; "
+            "表内各条规则如何取舍, 本库未核出处"
         ),
         "jian_chu_tendency": jian_chu,
         "jian_chu_conflicts": conflicts,
+        "clause_conflicts": _tiandi_conflicts(lunar, day_yi),
         "ji_shi": ji_shi,
         "xiong_shi": xiong_shi,
         "shichen_detail": ji_xiong_shichen,

@@ -119,6 +119,44 @@ def test_jianchu_conflicts_are_surfaced_not_hidden(d):
         assert c, f"{d} 有冲突却没有列出: {真冲突}"
         assert c.get("engine_yi_but_jianchu_ji", []) == 真冲突[0]
         assert c.get("engine_ji_but_jianchu_yi", []) == 真冲突[1]
-        assert "以 yi/ji (通书结论) 为准" in "".join(c["note"])
+        # 旧提示「遇冲突以 yi/ji (通书结论) 为准」「通书结论已把神煞/宿/干支
+        # 一并权衡」都没有出处。两套体系并列, 工具不替用户裁决。
+        note = "".join(c["note"])
+        assert "为准" not in note and "一并权衡" not in note
+        assert "不裁决" in note
     else:
         assert not r["jian_chu_conflicts"], (d, r["jian_chu_conflicts"])
+
+
+def test_yi_ji_source_claims_only_what_the_engine_does():
+    r = run_day(date(2026, 6, 1))
+    assert "查表" in r["yi_ji_source"]
+    assert "一并权衡" not in r["yi_ji_source"]
+
+
+def test_clause_conflicts_flag_only_yi_items_the_clause_names_verbatim():
+    """2026-10-14 辛酉 是秋季天转日, 通书表却列 嫁娶、动土 为宜。
+
+    条款原文「上官受职、出行商贾、造作、嫁娶」点名了嫁娶; 动土要靠「造作」
+    去归类, 那是本工具的解读, 不是原文, 所以不标。
+    """
+    r = run_day(date(2026, 10, 14))
+    assert r["ganzhi"]["day"] == "辛酉"
+    assert {"嫁娶", "动土"} <= set(r["yi"]), "前提变了: 通书表不再同时列这两项"
+    (hit,) = r["clause_conflicts"]
+    assert hit["passage_id"] == "yuanhai:c052:p0004" and hit["kind"] == "天转"
+    assert hit["yi_named_in_clause"] == ["嫁娶"]
+    assert "不裁决" in hit["note"]
+    # 地转日同理, 出行 也是原文点名的。
+    later = run_day(date(2026, 10, 26))
+    assert later["ganzhi"]["day"] == "癸酉"
+    assert set(later["clause_conflicts"][0]["yi_named_in_clause"]) == {"嫁娶", "出行"}
+    # 夏季天转丙午: 2026-06-01。
+    summer = run_day(date(2026, 6, 1))
+    assert summer["ganzhi"]["day"] == "丙午" and summer["clause_conflicts"][0]["kind"] == "天转"
+
+
+@pytest.mark.parametrize("d", [date(2026, 10, 13), date(2026, 3, 10), date(2026, 6, 2)],
+                         ids=lambda d: d.isoformat())
+def test_clause_conflicts_are_empty_on_an_ordinary_day(d):
+    assert run_day(d)["clause_conflicts"] == []
