@@ -101,7 +101,7 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 # echoes it in its JSON envelope.
 # --------------------------------------------------------------------------- #
 
-__version__ = "4.6.0"
+__version__ = "4.7.0"
 
 
 # --------------------------------------------------------------------------- #
@@ -300,18 +300,6 @@ def jiazi_index(stem: str, branch: str) -> int:
 # --------------------------------------------------------------------------- #
 # JSON / IO helpers
 # --------------------------------------------------------------------------- #
-
-def parse_datetime_arg(value: str | None, *, current_timezone: str | None = None,
-                       request_time: str | None = None, target_timezone: str | None = None,
-                       fold: int | None = None) -> _datetime:
-    """Compatibility helper using the same explicit request-time boundary."""
-    import argparse
-
-    from request_time import resolve_time
-    args = argparse.Namespace(current_timezone=current_timezone, request_time=request_time,
-                              target_timezone=target_timezone, fold=fold)
-    return resolve_time(args, datetime_value=value)[0]
-
 
 def ensure_utf8_stdio() -> None:
     """Force stdout/stderr to UTF-8 before argparse can write to them.

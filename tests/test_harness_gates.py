@@ -169,6 +169,40 @@ def test_version_is_consistent_across_all_four_sources():
         f"{'.'.join(map(str, newest))} 新 —— 这是漏打 tag, 不是待发布")
 
 
+# 4.5.0 went out on main but was never tagged or released on GitHub. Tagging
+# it now would invent a release that did not happen (see the docstring above),
+# so it is recorded here and in CHANGELOG 4.7.0 instead. Nothing else may join.
+UNTAGGED_RELEASES = {
+    "4.5.0": "合入 main 后未打 tag、未发 Release；不追溯补 tag，事由记在 CHANGELOG 4.7.0",
+}
+
+
+def test_every_release_after_4_3_has_a_tag():
+    """The gate above checks only the current version, so a skipped tag is
+    invisible as soon as the next version lands: 4.5.0 went unnoticed that way.
+    Every CHANGELOG version after 4.3.0, other than the one in progress, must
+    have its tag or a named entry in ``UNTAGGED_RELEASES``."""
+    import re
+    import subprocess
+    tags = set(subprocess.run(["git", "tag", "-l"], cwd=ROOT,
+                              capture_output=True, text=True).stdout.split())
+    if not tags:
+        pytest.skip("浅 clone / 无 tag 的环境无从核对")
+    from utils import __version__ as current
+
+    def key(v: str) -> tuple:
+        return tuple(int(x) for x in v.split("."))
+
+    versions = re.findall(r"^## \[([0-9.]+)\]", (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"), re.M)
+    released = [v for v in versions if key(v) > (4, 3, 0) and v != current]
+    missing = [v for v in released if f"v{v}" not in tags and v not in UNTAGGED_RELEASES]
+    assert not missing, f"这些版本既无 tag 也未登记原因: {missing}"
+    assert set(UNTAGGED_RELEASES) == {"4.5.0"}, "允许清单只为 4.5.0 存在，不得再加"
+    for version in UNTAGGED_RELEASES:
+        assert version in released, version
+        assert f"v{version}" not in tags, f"v{version} 已有 tag，请从允许清单移除"
+
+
 def test_evals_do_not_pin_the_timezone_less_longitude_path():
     """evals 是「黄金基准」—— 把一条错误的调用方式钉进去, 等于把它变成标准。
 
