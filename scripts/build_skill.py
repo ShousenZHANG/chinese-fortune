@@ -31,7 +31,10 @@ INCLUDE_DIRS = ["references", "assets", "agents"]
 # Maintenance tools: they run from a checkout, never from the installed
 # package. Tests derive their own exemptions from this set rather than
 # keeping parallel lists -- three copies had already drifted apart.
-SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py"}
+# requirements-dev.txt pins build_han_variants' opencc; its own first line says
+# it stays out of the runtime package, yet it had been shipping.
+SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py",
+                  "requirements-dev.txt"}
 EXCLUDE_RE = re.compile(
     r"(__pycache__|\.pyc$|\.pyo$|\.bak|\.bak-|/\.git/|\.pytest_cache|"
     r"\.DS_Store|Thumbs\.db|\.original\.md$)"

@@ -212,3 +212,38 @@ def test_research_cli_rejects_path_escape_without_creating_files(tmp_path):
     assert json.loads(proc.stdout)['error'] == 'invalid_research'
     assert 'Traceback' not in proc.stderr
     assert not list(tmp_path.iterdir())
+
+
+def _source(**change):
+    source = {'title': '测试古籍', 'edition': '独立测试版本', 'source_url': 'https://example.org/scan',
+              'locator': '卷一页一', 'quote': '某条件', 'context': '前文某条件后文',
+              'conditions': '须核某条件', 'exceptions': '', 'modern_mapping': '',
+              'verification_notes': '测试夹具，不是真实古籍核验'}
+    return {**source, **change}
+
+
+def test_research_cannot_claim_sufficient_sources_without_one(tmp_path):
+    r = begin('出行', root=tmp_path)
+    record(r['research_id'], '出行', root=tmp_path)  # a search that found nothing
+    with pytest.raises(ValueError, match='没有候选来源'):
+        finish(r['research_id'], 'sufficient_sources', root=tmp_path)
+    assert load(r['research_id'], root=tmp_path)['status'] == 'in_progress'
+
+
+def test_research_source_url_may_not_carry_credentials(tmp_path):
+    r = begin('出行', root=tmp_path)
+    for url in ('https://user:secret@example.org/scan', 'ftp://example.org/scan', 'https:///scan'):
+        with pytest.raises(ValueError, match='无凭据'):
+            record(r['research_id'], '出行', source=_source(source_url=url), root=tmp_path)
+    assert load(r['research_id'], root=tmp_path)['candidates'] == []
+
+
+def test_research_stopped_after_the_deadline_is_recorded_as_expired(tmp_path):
+    """A late 「no applicable source」 would hide that the five minutes ran out."""
+    now = datetime(2026, 9, 24, tzinfo=UTC)
+    r = begin('出行', root=tmp_path, clock=now)
+    result = finish(r['research_id'], 'no_applicable_source', root=tmp_path, clock=now + timedelta(seconds=301))
+    assert result['stop_reason'] == 'budget_expired'
+    early = begin('出行', root=tmp_path, clock=now)
+    assert finish(early['research_id'], 'no_applicable_source', root=tmp_path,
+                  clock=now + timedelta(seconds=10))['stop_reason'] == 'no_applicable_source'

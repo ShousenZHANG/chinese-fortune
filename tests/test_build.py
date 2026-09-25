@@ -65,6 +65,20 @@ def test_no_dev_cruft_leaked(package):
     assert leaks == [], f"dev cruft leaked into package: {leaks}"
 
 
+def test_every_maintenance_file_stays_out_of_the_package(package):
+    """The hand list above named two of the excluded tools; derive it instead.
+
+    ``scripts/requirements-dev.txt`` opens with 「不进运行包」 and shipped anyway.
+    """
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from build_skill import SCRIPT_EXCLUDE
+    names = set(zipfile.ZipFile(package).namelist())
+    assert "requirements-dev.txt" in SCRIPT_EXCLUDE
+    for name in SCRIPT_EXCLUDE:
+        assert (ROOT / "scripts" / name).is_file(), f"stale exclusion: {name}"
+        assert f"chinese-fortune/scripts/{name}" not in names, name
+
+
 def test_extracted_package_runs(package, tmp_path):
     """A freshly extracted package must be self-contained and runnable."""
     zipfile.ZipFile(package).extractall(tmp_path)

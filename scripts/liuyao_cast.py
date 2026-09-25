@@ -372,7 +372,8 @@ def dress_chart(lines: list[int], day_stem: str, day_branch: str,
 # --------------------------------------------------------------------------- #
 
 QUESTION_KEYWORDS = {
-    "感情": "妻财 (问情, 男以妻财为用神)",
+    "面试": "官鬼",
+    "感情": "妻财 / 官鬼 (男看妻财, 女看官鬼)",
     "婚姻": "妻财 / 官鬼 (男看妻财, 女看官鬼)",
     "财运": "妻财",
     "事业": "官鬼",
@@ -388,6 +389,37 @@ QUESTION_KEYWORDS = {
     "诉讼": "官鬼",
 }
 
+# Where each row above comes from. ``quote`` is verbatim from the frozen
+# passage (tests check it); ``mapping`` names the modern-to-classical step the
+# quote does not itself make. A row absent here has no located source yet and
+# says so in the output rather than borrowing one.
+_GONGMING = {"passage_id": "zengshan:c008:p0001",
+             "quote": "占功名、官府、雷霆鬼神、妻占夫皆以官鬼爻爲用神"}
+_HUNYIN = {"passage_id": "zengshan:c034:p0129", "quote": "男卜女﹐姻財要旺。女占男﹐配鬼宜興。"}
+_CAI = {"passage_id": "zengshan:c008:p0001", "quote": "占貨財、珠寶、倉庫一切使用之財物亦以妻財爻爲用神"}
+YONGSHEN_SOURCES: dict[str, dict] = {
+    "面试": {**_GONGMING, "mapping": "面试对应「功名」属现代类比，原文没有面试"},
+    "事业": {**_GONGMING, "mapping": "事业对应「功名」属现代类比"},
+    "工作": {**_GONGMING, "mapping": "工作对应「功名」属现代类比；问合同、待遇时对象不同"},
+    "求名": {**_GONGMING, "mapping": "求名即功名"},
+    "婚姻": {**_HUNYIN, "mapping": "原文即婚姻占"},
+    "感情": {**_HUNYIN, "mapping": "感情对应婚姻占属现代类比"},
+    "财运": {**_CAI, "mapping": "财运对应财物占属现代类比"},
+    "求财": {**_CAI, "mapping": "原文即财物占"},
+    "考试": {"passage_id": "zengshan:c033:p0574",
+             "quote": "予見占功名必中者﹐卦象一成﹐若非旺父生身﹐定是旺官持世",
+             "mapping": "考试对应科举功名属现代类比"},
+    "学业": {"passage_id": "zengshan:c008:p0001", "quote": "文書及書館文契也以父母爻爲用神",
+             "mapping": "学业对应文书、书馆属现代类比"},
+    "求子": {"passage_id": "zengshan:c008:p0001",
+             "quote": "占子孫、占女、女婿、侄、甥、門生凡在我子孫輩中皆以子孫爻爲用神",
+             "mapping": "原文即子孙占"},
+    "健康": {"passage_id": "zengshan:c008:p0001", "quote": "占忠臣、良將、醫藥、僧、道、兵卒皆以子孫爻爲用神",
+             "mapping": "原文只说医药取子孙；不据此判断病情"},
+    "病": {"passage_id": "zengshan:c034:p0368", "quote": "諸書無不以官爲鬼爲病﹐應爲醫人﹐子孫爲藥",
+           "mapping": "同段野鶴随即反驳「此宜鬼者非鬼非病﹐乃憂神耳」；两说并列，不据此判断病情"},
+}
+
 
 def yongshen_hint(question: str | None) -> str | None:
     if not question:
@@ -398,12 +430,25 @@ def yongshen_hint(question: str | None) -> str | None:
     return None
 
 
+def yongshen_source(question: str | None) -> dict | None:
+    """The passage behind ``yongshen_hint``, or an explicit statement that none is located."""
+    if not question:
+        return None
+    for k in QUESTION_KEYWORDS:
+        if k in question:
+            found = YONGSHEN_SOURCES.get(k)
+            return ({"keyword": k, **found} if found else
+                    {"keyword": k, "passage_id": None,
+                     "note": "本表这一行尚未核到古籍出处，只是通行取法"})
+    return None
+
+
 # --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  method question entropy yongshen_hint cast_time raw_lines main_chart
+  method question entropy yongshen_hint yongshen_hint_source cast_time raw_lines main_chart
   changed_chart nuclear_chart active_lines main_judgment main_image
   active_line_text
 
@@ -488,6 +533,7 @@ def main(argv: list[str] | None = None) -> int:
         "question": args.question,
         "entropy": entropy.describe(rng, args.entropy, args.seed),
         "yongshen_hint": yongshen_hint(args.question),
+        "yongshen_hint_source": yongshen_source(args.question),
         "time_context": time_context,
         "cast_time": {
             "solar": f"{y:04d}-{m:02d}-{d:02d} {h:02d}:{mi:02d}",

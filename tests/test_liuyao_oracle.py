@@ -229,3 +229,22 @@ def test_standalone_bi_keeps_its_own_palace_relatives():
     }
     assert chart['lines'][2]['branch'] == '亥'
     assert chart['lines'][2]['liu_qin'] == '妻财'
+
+
+def test_yongshen_hints_cite_their_passage_or_say_they_have_none():
+    """The keyword table carried no sources and no 面试 row. 面试 now maps to
+    官鬼 on 《增删卜易·用神章》「占功名、官府……皆以官鬼爻爲用神」, with the
+    modern analogy named rather than hidden."""
+    from classical_search import get_passage
+    from liuyao_cast import QUESTION_KEYWORDS, YONGSHEN_SOURCES, yongshen_hint, yongshen_source
+    assert set(YONGSHEN_SOURCES) <= set(QUESTION_KEYWORDS)
+    for keyword, source in YONGSHEN_SOURCES.items():
+        assert source["quote"] in get_passage(source["passage_id"])["text"], keyword
+        assert source["mapping"], keyword
+    interview = yongshen_source("下周二面试能过吗")
+    assert yongshen_hint("下周二面试能过吗") == "参考用神: 官鬼"
+    assert interview["passage_id"] == "zengshan:c008:p0001" and "现代类比" in interview["mapping"]
+    # A row with no located source says so instead of borrowing one.
+    unsourced = yongshen_source("下月出行顺不顺")
+    assert unsourced["keyword"] == "出行" and unsourced["passage_id"] is None
+    assert yongshen_source("随便问问") is None and yongshen_source(None) is None

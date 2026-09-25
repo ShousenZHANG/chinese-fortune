@@ -257,3 +257,36 @@ def test_january_year_list_is_not_claimed_to_be_the_active_lichun_year():
     assert result['liu_nian'][0]['year'] == 2027
     assert result['liu_nian_scope'] == 'calendar_year_reference_list'
     assert '立春' in result['liu_nian_note']
+
+
+def test_markdown_opens_on_the_question_and_the_month_check(chart):
+    """The first line used to be the four-pillar string whatever was asked, and
+    十神 names such as 七杀 appeared with no explanation at all."""
+    text = render_facts(prepare_reading(chart, '我适合做什么工作'))
+    lead = text.split('\n\n')[0]
+    assert lead.startswith('就「我适合做什么工作」来说')
+    assert '日主是壬（日柱的天干，代表你本人），按月令丑' in lead
+    assert '已可固定的柱为' not in lead
+    assert '现在不成立' in lead or '还有条件没核完' in lead
+    terms = next(p for p in text.split('\n\n') if p.startswith('括号里的名称是十神'))
+    result = prepare_reading(chart)
+    roles = {i['role'] for i in result['observed_structure']['month_hidden_stems']
+             + result['observed_structure']['exposed_stems']}
+    assert roles and all(f'{role}是' in terms for role in roles), (roles, terms)
+    # Without a question the lead still gives the structure, not the pillars.
+    assert render_facts(result).startswith('日主是壬')
+
+
+def test_shi_shen_explanations_match_the_relation_that_defines_them():
+    from bazi_reading import SHI_SHEN_PLAIN
+    from utils import shi_shen
+    # 甲 (阳木) against each stem: the table must describe what shi_shen computes.
+    expected = {'甲': '比肩', '乙': '劫财', '丙': '食神', '丁': '伤官', '戊': '偏财',
+                '己': '正财', '庚': '七杀', '辛': '正官', '壬': '偏印', '癸': '正印'}
+    for stem, role in expected.items():
+        assert shi_shen('甲', stem) == role
+    relation = {'比肩': '同一五行', '食神': '生出', '偏财': '所克', '七杀': '克制日主', '偏印': '生扶'}
+    for role, phrase in relation.items():
+        assert phrase in SHI_SHEN_PLAIN[role] and '阴阳相同' in SHI_SHEN_PLAIN[role]
+    for role in ('劫财', '伤官', '正财', '正官', '正印'):
+        assert '阴阳相反' in SHI_SHEN_PLAIN[role]

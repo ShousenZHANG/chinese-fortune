@@ -270,9 +270,73 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
             'boundary': '检索到原文不等于条款适用；透藏位置不等于旺衰或人生吉凶'}
 
 
+# 十神 names, explained by the relation that defines them (utils.shi_shen).
+SHI_SHEN_PLAIN = {
+    '比肩': '和日主同一五行、阴阳相同', '劫财': '和日主同一五行、阴阳相反',
+    '食神': '由日主生出、阴阳相同', '伤官': '由日主生出、阴阳相反',
+    '偏财': '被日主所克、阴阳相同', '正财': '被日主所克、阴阳相反',
+    '七杀': '克制日主、阴阳相同', '正官': '克制日主、阴阳相反',
+    '偏印': '生扶日主、阴阳相同', '正印': '生扶日主、阴阳相反',
+}
+
+
+def _routes_summary(routes: list[dict]) -> str:
+    """Open routes by name, closed ones by name or, when many, by count."""
+    def name(route: dict) -> str:
+        return route['title'].split('：')[0]
+    closed = [r for r in routes if any(c['state'] == 'not_met' for c in r['conditions'])]
+    pending = [r for r in routes if r not in closed
+               and any(c['state'] == 'unknown' for c in r['conditions'])]
+    settled = [r for r in routes if r not in closed and r not in pending]
+    parts = []
+    if settled:
+        parts.append('、'.join(map(name, settled)) + '的条件都已核到')
+    if pending:
+        parts.append('、'.join(map(name, pending)) + '的前提已见到，还有条件没核完')
+    if closed:
+        parts.append(('、'.join(map(name, closed)) if len(closed) <= 2 else f'其余{len(closed)}条路线')
+                     + '现在不成立' if pending or settled else
+                     f'查到的{len(closed)}条取用路线现在都不成立')
+    return '；'.join(parts)
+
+
+def _lead(result: dict) -> str | None:
+    """Answer first: the question, then what the month-branch check found.
+
+    The first line used to be the four-pillar string whatever was asked.
+    """
+    families = result['rule_assessment']['families']
+    day = result['chart_facts'].get('day_master', {}).get('stem')
+    branch = result['observed_structure'].get('month_branch')
+    if not families or not day or not branch:
+        return None
+    question = (result.get('question') or '').strip()
+    ask = f'就「{question}」来说，先要看月令格局。' if question else ''
+    titles = '、'.join(f['title'] for f in families)
+    routes = _routes_summary(result['rule_assessment']['routes'])
+    head = f'{ask}日主是{day}（日柱的天干，代表你本人），按月令{branch}，本次从{titles}的条款入手'
+    return f'{head}：{routes}。' if routes else head + '。'
+
+
+def _role_terms(result: dict) -> str:
+    structure = result['observed_structure']
+    roles = [item['role'] for item in structure.get('month_hidden_stems', []) + structure.get('exposed_stems', [])]
+    roles += [f['title'] for f in result['rule_assessment']['families']]
+    named = [r for r in dict.fromkeys(roles) if r in SHI_SHEN_PLAIN]
+    if not named:
+        return ''
+    return ('括号里的名称是十神，指某个天干和日主的关系：' +
+            '；'.join(f'{r}是{SHI_SHEN_PLAIN[r]}的那个字' for r in named) +
+            '。它们只是关系名称，不直接等于职业、性格或好坏。')
+
+
 def render_facts(result: dict) -> str:
     """A concise chart explanation, explicitly separate from a host's personal interpretation."""
-    parts = [claim['text'] for claim in result['reading_support']['claims']]
+    lead = _lead(result)
+    parts = ([lead] if lead else []) + [claim['text'] for claim in result['reading_support']['claims']]
+    terms = _role_terms(result)
+    if terms:
+        parts.append(terms)
     parts.append('这里的“藏”指地支包含的天干，“透”指它也出现在天干一排。' +
                  ('日柱待定时，暂不把十神或透藏作用当作已核事实。'
                   if result['observed_structure'].get('status') == 'birth_time_required' else
