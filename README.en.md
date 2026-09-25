@@ -67,6 +67,8 @@ python scripts/classical_search.py --book ziping --query 用神
 python scripts/classical_search.py --passage-id ziping:c008:p0001
 ```
 
+`huangli_query.py --question … --markdown` answers the asked event (travel, wedding, moving, opening) first from the sourced day rules and names where the almanac table disagrees; `liuyao_cast.py … --markdown` places the 用神 with its source and gives no verdict.
+
 Markdown provides a chart-and-conditions draft. The host completes the relevant interpretive checks and answers the question. JSON returns chart_facts, rule_assessment and a deduplicated evidence_bundle with complete paragraphs and exceptions. Do not call the diagnostic engine again to fetch absent legacy ge_ju or yong_shen fields.
 
 Keep birth timezone, present-location timezone and target time separate. Reuse request_time.py's utc as --request-time within a request.

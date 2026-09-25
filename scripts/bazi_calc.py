@@ -26,7 +26,8 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import UTC, datetime, timedelta, timezone
+from dataclasses import dataclass
+from datetime import UTC, date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -197,10 +198,10 @@ def detect_interactions(pillars: dict[str, dict]) -> dict:
                 "branches": present,
                 "type": "三刑" if len(present) == 3 else "半刑",
             })
-    for pair in SAN_XING_PAIRS:
-        if pair.issubset(bset):
+    for xing_pair in SAN_XING_PAIRS:
+        if set(xing_pair) <= bset:
             out["dizhi_xing"].append({
-                "branches": list(pair),
+                "branches": list(xing_pair),
                 "type": "互刑",
             })
     for self_b in SAN_XING_SELF:
@@ -373,20 +374,32 @@ def build_parser(*, diagnostics: bool = True) -> argparse.ArgumentParser:
 # Main
 # --------------------------------------------------------------------------- #
 
-def calculate_bazi(request: argparse.Namespace) -> dict:
-    """Compute a chart without stdout; accepts arguments from build_parser()."""
-    args = argparse.Namespace(**vars(request))
+class _ChartError(Exception):
+    """A stage cannot continue; ``envelope`` is the result calculate_bazi returns."""
 
-    err = validate_birth_input(args.year, args.month, args.day,
-                               args.hour, args.minute, lunar=args.lunar)
-    if err:
-        return error_envelope("bazi", "invalid_input", err, input=vars(args))
+    def __init__(self, envelope: dict) -> None:
+        super().__init__(envelope.get('message'))
+        self.envelope = envelope
 
-    try:
-        from lunar_python import Lunar, Solar  # type: ignore
-    except ImportError:
-        return error_envelope("bazi", "missing_dependency", "pip install -r scripts/requirements.txt")
 
+def _date_error(args: argparse.Namespace, error: str, exc: Exception) -> _ChartError:
+    return _ChartError({"ok": False, "tool": "bazi", "version": VERSION, "error": error,
+                        "message": str(exc), "input": vars(args)})
+
+
+@dataclass(frozen=True)
+class _Calendar:
+    """The chosen clock face (日/时) and the UTC+8 term calendar (年/月)."""
+    solar: Any
+    lunar: Any
+    birth_clock: datetime
+    calendar_clock: datetime
+    calendar_lunar: Any
+    calendar_eight: Any
+    eight: Any
+
+
+def _apply_birthplace(args: argparse.Namespace) -> dict | None:
     # 真太阳时 info (informational + applied)
     # 钟表时间 != 标准时. 时辰边界在整点, 而中国的钟表并非一直是 UTC+8:
     # tzdata 记录 Asia/Shanghai 1900-1995 间 30 次偏移变化, 其中 14 段为 UTC+9
@@ -398,9 +411,9 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     if args.city:
         row = lookup_city(args.city)
         if row is None:
-            return error_envelope(
+            raise _ChartError(error_envelope(
                 "bazi", "unknown_city",
-                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone")
+                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
         lon_explicit = args.longitude is not None
         if not lon_explicit:
             args.longitude = row["lon"]
@@ -412,13 +425,11 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
 
     if args.longitude is None:
         args.longitude = 120.0  # GMT+8 reference meridian
+    return birthplace
 
-    # Unknown hours use provisional noon internally. The reading layer compares
-    # the civil date's endpoints and suppresses pillars that cross a boundary.
-    hour_known = args.hour is not None
-    eff_hour = args.hour if hour_known else 12
-    eff_minute = args.minute if hour_known else 0
 
+def _base_solar_date(args: argparse.Namespace, lunar_cls: Any,
+                     eff_hour: int, eff_minute: int) -> tuple[int, int, int]:
     # 农历输入必须**先**转公历, 再交给任何按公历日期取值的东西。本文件有三个这样的
     # 消费者: resolve_timezone_offset (历史夏令时按日期查表)、true_solar_time_info 与
     # longitude_correction (均时差按 day_of_year 求)。
@@ -430,77 +441,47 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     #
     # Solar.fromYmdHms 不校验日期真实性 (1990-02-31 会被接受并给出一个农历转换),
     # 所以公历分支要自己用 date() 验一次。
-    from datetime import date as _cal_date
     try:
         if args.lunar:
             # 农历日→公历日的映射与时辰无关; 时辰在下面校正后才参与排盘。
-            _bs = Lunar.fromYmdHms(
+            _bs = lunar_cls.fromYmdHms(
                 args.year, args.month, args.day, eff_hour, eff_minute, 0
             ).getSolar()
             base_y, base_m, base_d = _bs.getYear(), _bs.getMonth(), _bs.getDay()
         else:
             base_y, base_m, base_d = args.year, args.month, args.day
-        _cal_date(base_y, base_m, base_d)
+        date(base_y, base_m, base_d)
     except Exception as e:
-        return {
-            "ok": False,
-            "tool": "bazi",
-            "version": VERSION,
-            "error": "invalid_date",
-            "message": str(e),
-            "input": vars(args),
-        }
+        raise _date_error(args, "invalid_date", e) from e
+    return base_y, base_m, base_d
 
-    try:
-        normalized = normalize_birth_time(
-            base_y, base_m, base_d, args.hour, args.minute, args.longitude,
-            args.tz, args.timezone, args.fold, args.time_standard)
-    except ValueError as exc:
-        return error_envelope("bazi", "invalid_time", str(exc))
+
+def _calendar(args: argparse.Namespace, solar_cls: Any, base: tuple[int, int, int],
+              normalized: dict, eff_hour: int, eff_minute: int) -> _Calendar:
     tz_info = normalized['timezone']
-    tst_info = normalized['true_solar_time']
     sd = normalized['solar_date']
-    corr_year, corr_month, corr_day = sd['year'], sd['month'], sd['day']
-    corr_hour, corr_minute = sd['hour'], sd['minute']
-
     try:
-        solar = Solar.fromYmdHms(
-            corr_year, corr_month, corr_day, corr_hour, corr_minute, 0
-        )
+        solar = solar_cls.fromYmdHms(sd['year'], sd['month'], sd['day'], sd['hour'], sd['minute'], 0)
         lunar = solar.getLunar()
         # Solar-term tables are in fixed UTC+8. Local clock and true-solar
         # corrections select day/hour; they cannot move an astronomical event.
         offset = tz_info['offset_hours'] if tz_info else args.tz
-        birth_clock = datetime(base_y, base_m, base_d, eff_hour, eff_minute,
+        birth_clock = datetime(*base, eff_hour, eff_minute,
                                tzinfo=timezone(timedelta(hours=offset)))
         calendar_clock = birth_clock.astimezone(CALENDAR_ZONE)
-        calendar_solar = Solar.fromYmdHms(
+        calendar_solar = solar_cls.fromYmdHms(
             calendar_clock.year, calendar_clock.month, calendar_clock.day,
             calendar_clock.hour, calendar_clock.minute, calendar_clock.second)
         calendar_lunar = calendar_solar.getLunar()
         calendar_eight = calendar_lunar.getEightChar()
         calendar_eight.setSect(args.sect)
     except Exception as e:
-        return {
-            "ok": False,
-            "tool": "bazi",
-            "version": VERSION,
-            "error": "invalid_date",
-            "message": str(e),
-            "input": vars(args),
-        }
+        raise _date_error(args, "invalid_date", e) from e
 
     try:
         eight = lunar.getEightChar()
     except Exception as e:
-        return {
-            "ok": False,
-            "tool": "bazi",
-            "version": VERSION,
-            "error": "bazi_failed",
-            "message": str(e),
-            "input": vars(args),
-        }
+        raise _date_error(args, "bazi_failed", e) from e
 
     # 晚子时取日 — 00-intake.md:34 names both schools and promises the default is
     # stated. lunar_python: sect 2 keeps the day pillar and takes the hour stem
@@ -509,61 +490,51 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         eight.setSect(args.sect)
     except Exception:
         pass
-    sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
+    return _Calendar(solar, lunar, birth_clock, calendar_clock, calendar_lunar, calendar_eight, eight)
 
-    year_gz = (calendar_eight.getYearGan(), calendar_eight.getYearZhi())
-    month_gz = (calendar_eight.getMonthGan(), calendar_eight.getMonthZhi())
-    day_gz = (eight.getDayGan(), eight.getDayZhi())
-    hour_gz = (eight.getTimeGan(), eight.getTimeZhi())
 
-    year_nayin = calendar_eight.getYearNaYin()
-    month_nayin = calendar_eight.getMonthNaYin()
-    day_nayin = eight.getDayNaYin()
-    hour_nayin = eight.getTimeNaYin()
-
+def _pillars(cal: _Calendar, hour_known: bool) -> tuple[dict, dict]:
+    """(pillars, 纳音): 年/月 from the term calendar, 日/时 from the clock face."""
+    term, face = cal.calendar_eight, cal.eight
+    na_yin = {"year": term.getYearNaYin(), "month": term.getMonthNaYin(),
+              "day": face.getDayNaYin(), "hour": face.getTimeNaYin()}
     pillars = {
-        "year":  pillar_dict(*year_gz,  year_nayin),
-        "month": pillar_dict(*month_gz, month_nayin),
-        "day":   pillar_dict(*day_gz,   day_nayin),
+        "year":  pillar_dict(term.getYearGan(), term.getYearZhi(), na_yin["year"]),
+        "month": pillar_dict(term.getMonthGan(), term.getMonthZhi(), na_yin["month"]),
+        "day":   pillar_dict(face.getDayGan(), face.getDayZhi(), na_yin["day"]),
     }
     if hour_known:
-        pillars["hour"] = pillar_dict(*hour_gz, hour_nayin)
+        pillars["hour"] = pillar_dict(face.getTimeGan(), face.getTimeZhi(), na_yin["hour"])
+    return pillars, na_yin
 
-    day_stem = day_gz[0]
-    day_branch = day_gz[1]
-    day_ganzhi = day_stem + day_branch
-    year_stem = year_gz[0]
-    year_branch = year_gz[1]
-    month_branch = month_gz[1]
 
+def _si_ling(cal: _Calendar, month_branch: str) -> dict | None:
+    # 距本月「节」的整日数 —— 司令按节令起算, 不按农历月。
+    try:
+        _pj = cal.calendar_lunar.getPrevJie().getSolar()
+        _days_since_jie = (
+            cal.calendar_clock.date()
+            - date(_pj.getYear(), _pj.getMonth(), _pj.getDay())
+        ).days
+        si_ling_info = si_ling(month_branch, _days_since_jie)
+        if si_ling_info:
+            si_ling_info["jie"] = cal.calendar_lunar.getPrevJie().getName()
+            si_ling_info["days_since_jie"] = _days_since_jie
+            si_ling_info["calendar_zone"] = "UTC+08:00"
+        return si_ling_info
+    except Exception as exc:                      # pragma: no cover - 防御
+        warn(f"si_ling failed: {exc}")
+        return None
+
+
+def _diagnostics(args: argparse.Namespace, pillars: dict, weighted_counts: dict,
+                 strength: dict) -> dict[str, Any]:
+    """神煞, 干支互动, 用神/喜神/忌神 and 格局; --no-* skips each."""
     active = [p for p in PILLAR_ORDER if p in pillars]
     stems_map = {p: pillars[p]["stem"] for p in active}
     branches_map = {p: pillars[p]["branch"] for p in active}
-
-    # 十神
-    ten_gods = ten_gods_per_pillar(day_stem, pillars)
-
-    # Weighted 五行
-    weighted_counts, root_bonus = weighted_wuxing(pillars, day_stem)
-
-    # Day-master strength
-    # 距本月「节」的整日数 —— 司令按节令起算, 不按农历月。
-    try:
-        _pj = calendar_lunar.getPrevJie().getSolar()
-        _days_since_jie = (
-            calendar_clock.date()
-            - _cal_date(_pj.getYear(), _pj.getMonth(), _pj.getDay())
-        ).days
-        si_ling_info = si_ling(month_gz[1], _days_since_jie)
-        if si_ling_info:
-            si_ling_info["jie"] = calendar_lunar.getPrevJie().getName()
-            si_ling_info["days_since_jie"] = _days_since_jie
-            si_ling_info["calendar_zone"] = "UTC+08:00"
-    except Exception as exc:                      # pragma: no cover - 防御
-        warn(f"si_ling failed: {exc}")
-        si_ling_info = None
-
-    strength = day_master_strength(day_stem, month_branch, weighted_counts, pillars)
+    day_stem, day_branch = pillars["day"]["stem"], pillars["day"]["branch"]
+    month_branch = pillars["month"]["branch"]
 
     # 神煞
     shensha_list: list[dict] = []
@@ -574,16 +545,16 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
                 shensha_data,
                 day_stem=day_stem,
                 day_branch=day_branch,
-                day_ganzhi=day_ganzhi,
-                year_stem=year_stem,
-                year_branch=year_branch,
+                day_ganzhi=day_stem + day_branch,
+                year_stem=pillars["year"]["stem"],
+                year_branch=pillars["year"]["branch"],
                 month_branch=month_branch,
                 stems_map=stems_map,
                 branches_map=branches_map,
                 gender=args.gender,
             )
         except ValueError as exc:
-            return error_envelope("bazi", "unavailable_reference", str(exc))
+            raise _ChartError(error_envelope("bazi", "unavailable_reference", str(exc))) from exc
 
     # 干支 互动
     interactions = detect_interactions(pillars)
@@ -607,17 +578,13 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         ge_ju['source_ids'] = ['ziping-month', 'ziping-rescue']
         ge_ju['notes'] = ('格名及纯破标记为程序候选; 须逐条核验成败救应, '
                          '不得直接推断财富、婚姻或应期。')
+    return {"interactions": interactions, "shen_sha": shensha_list, "yong_shen": yong_shen,
+            "xi_shen": xi_shen, "ji_shen": ji_shen, "ge_ju": ge_ju}
 
-    # Unknown birth hours cannot establish an exact start date or duration.
-    da_yun_list: list[dict] = []
-    qi_yun: dict | None = None
-    if hour_known:
-        try:
-            da_yun_list, qi_yun = _luck_from_instant(
-                calendar_eight, birth_clock, args.timezone, day_stem, args)
-        except Exception as exc:
-            warn(f"da_yun unavailable: {exc}")
 
+def _liu_nian(args: argparse.Namespace, solar_cls: Any,
+              day_stem: str) -> tuple[list[dict], dict | None, int | None]:
+    """(流年 reference list, current_time_context, the year it starts from)."""
     # The current residence's year is independent from the birth timezone.
     liu_nian: list[dict] = []
     current_time_context = None
@@ -628,10 +595,10 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
             if now_year is None:
                 now_year = current_dt.year
         except ValueError as exc:
-            return error_envelope('bazi', 'invalid_time_context', str(exc))
+            raise _ChartError(error_envelope('bazi', 'invalid_time_context', str(exc))) from exc
     try:
         for y in range(now_year, now_year + 6) if now_year is not None else []:
-            ly = Solar.fromYmdHms(y, 6, 1, 12, 0, 0).getLunar()
+            ly = solar_cls.fromYmdHms(y, 6, 1, 12, 0, 0).getLunar()
             gz = ly.getYearInGanZhi()
             year_stem_y = gz[0] if gz else ""
             liu_nian.append({
@@ -642,7 +609,10 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
             })
     except Exception as e:
         warn(f"liu_nian failed: {e}")
+    return liu_nian, current_time_context, now_year
 
+
+def _calendar_context(args: argparse.Namespace, cal: _Calendar, hour_known: bool) -> dict[str, Any]:
     calendar_context: dict[str, Any] = {
         'status': 'known_instant' if hour_known else 'birth_time_required',
         'term_calendar_zone': 'UTC+08:00',
@@ -652,11 +622,11 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         'precision': '出生输入精确到分钟；交节表采用固定依赖版本的秒值，非观测误差保证',
     }
     if hour_known:
-        previous_jie = calendar_lunar.getPrevJie()
-        next_jie = calendar_lunar.getNextJie()
+        previous_jie = cal.calendar_lunar.getPrevJie()
+        next_jie = cal.calendar_lunar.getNextJie()
         calendar_context.update({
-            'birth_instant_utc': birth_clock.astimezone(UTC).isoformat(),
-            'birth_calendar_datetime': calendar_clock.isoformat(),
+            'birth_instant_utc': cal.birth_clock.astimezone(UTC).isoformat(),
+            'birth_calendar_datetime': cal.calendar_clock.isoformat(),
             'previous_jie': {
                 'name': previous_jie.getName(),
                 'calendar_datetime': datetime.fromisoformat(previous_jie.getSolar().toYmdHms())
@@ -670,13 +640,78 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         })
     else:
         calendar_context['note'] = '内部正午仅作临时计算；解读须核对当地全天候选及覆盖范围，不将正午当作生时'
+    return calendar_context
 
+
+def calculate_bazi(request: argparse.Namespace) -> dict:
+    """Compute a chart without stdout; accepts arguments from build_parser()."""
+    args = argparse.Namespace(**vars(request))
+
+    err = validate_birth_input(args.year, args.month, args.day,
+                               args.hour, args.minute, lunar=args.lunar)
+    if err:
+        return error_envelope("bazi", "invalid_input", err, input=vars(args))
+
+    try:
+        from lunar_python import Lunar, Solar  # type: ignore
+    except ImportError:
+        return error_envelope("bazi", "missing_dependency", "pip install -r scripts/requirements.txt")
+    try:
+        return _chart(args, Lunar, Solar)
+    except _ChartError as exc:
+        return exc.envelope
+
+
+def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
+    birthplace = _apply_birthplace(args)
+
+    # Unknown hours use provisional noon internally. The reading layer compares
+    # the civil date's endpoints and suppresses pillars that cross a boundary.
+    hour_known = args.hour is not None
+    eff_hour = args.hour if hour_known else 12
+    eff_minute = args.minute if hour_known else 0
+
+    base = _base_solar_date(args, lunar_cls, eff_hour, eff_minute)
+    try:
+        normalized = normalize_birth_time(
+            *base, args.hour, args.minute, args.longitude,
+            args.tz, args.timezone, args.fold, args.time_standard)
+    except ValueError as exc:
+        return error_envelope("bazi", "invalid_time", str(exc))
+    tz_info = normalized['timezone']
+    cal = _calendar(args, solar_cls, base, normalized, eff_hour, eff_minute)
+    sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
+
+    pillars, na_yin = _pillars(cal, hour_known)
+    day_stem = pillars["day"]["stem"]
+    month_branch = pillars["month"]["branch"]
+
+    # 十神
+    ten_gods = ten_gods_per_pillar(day_stem, pillars)
+    # Weighted 五行
+    weighted_counts, root_bonus = weighted_wuxing(pillars, day_stem)
+    si_ling_info = _si_ling(cal, month_branch)
+    strength = day_master_strength(day_stem, month_branch, weighted_counts, pillars)
+    diagnostics = _diagnostics(args, pillars, weighted_counts, strength)
+
+    # Unknown birth hours cannot establish an exact start date or duration.
+    da_yun_list: list[dict] = []
+    qi_yun: dict | None = None
+    if hour_known:
+        try:
+            da_yun_list, qi_yun = _luck_from_instant(
+                cal.calendar_eight, cal.birth_clock, args.timezone, day_stem, args)
+        except Exception as exc:
+            warn(f"da_yun unavailable: {exc}")
+
+    liu_nian, current_time_context, now_year = _liu_nian(args, solar_cls, day_stem)
+    solar, lunar = cal.solar, cal.lunar
     result: dict[str, Any] = {
         "ok": True,
         "tool": "bazi",
         "version": VERSION,
         "input": vars(args),
-        "true_solar_time": tst_info,
+        "true_solar_time": normalized['true_solar_time'],
         "solar_date": {
             "year": solar.getYear(), "month": solar.getMonth(),
             "day": solar.getDay(), "hour": solar.getHour(),
@@ -699,7 +734,7 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         "sect": sect_info,
         "birthplace": birthplace,
         "timezone": tz_info,
-        "calendar_context": calendar_context,
+        "calendar_context": _calendar_context(args, cal, hour_known),
         "notes": (([] if hour_known else
                   ["时柱待补: 内部正午的年/月/日柱与工程诊断为临时结果；"
                    "须经解读入口的当地全天候选核对，不能保证总能固定三柱；不输出精确起运。"])
@@ -721,17 +756,13 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
         # 01-bazi.md:74 与 01-bazi-paipan.md:3 都断言「脚本已自动完成」—— 而在
         # v1.7.3 之前输出里「司令」二字一次都不出现, 全库也没有一份分野表。
         "yue_ling_si_ling": si_ling_info,
-        "interactions": interactions,
-        "shen_sha": shensha_list,
-        "yong_shen": yong_shen,
-        "xi_shen": xi_shen,
-        "ji_shen": ji_shen,
-        "ge_ju": ge_ju,
-        "na_yin": {
-            "year": year_nayin, "month": month_nayin,
-            "day": day_nayin,
-            "hour": hour_nayin if hour_known else None,
-        },
+        "interactions": diagnostics["interactions"],
+        "shen_sha": diagnostics["shen_sha"],
+        "yong_shen": diagnostics["yong_shen"],
+        "xi_shen": diagnostics["xi_shen"],
+        "ji_shen": diagnostics["ji_shen"],
+        "ge_ju": diagnostics["ge_ju"],
+        "na_yin": {**na_yin, "hour": na_yin["hour"] if hour_known else None},
         "qi_yun": qi_yun,
         "qi_yun_status": ('computed' if qi_yun else
                           'birth_time_required' if not hour_known else 'unavailable'),

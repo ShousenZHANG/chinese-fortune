@@ -290,3 +290,18 @@ def test_shi_shen_explanations_match_the_relation_that_defines_them():
         assert phrase in SHI_SHEN_PLAIN[role] and '阴阳相同' in SHI_SHEN_PLAIN[role]
     for role in ('劫财', '伤官', '正财', '正官', '正印'):
         assert '阴阳相反' in SHI_SHEN_PLAIN[role]
+
+
+@pytest.mark.parametrize('birth', [
+    ('2000', '1', '15', '10', 'male'), ('1997', '12', '24', '20', 'female'),
+    ('1984', '2', '4', '23', 'male'), ('2010', '7', '7', '0', 'female')])
+@pytest.mark.parametrize('question', ['', '我适合做什么工作', '今年财运怎么样？'])
+def test_markdown_keeps_to_the_direct_answer_word_lists(birth, question):
+    from answer_style import style_violations
+    year, month, day, hour, gender = birth
+    chart = calculate_bazi(build_parser().parse_args([
+        '--year', year, '--month', month, '--day', day, '--hour', hour,
+        '--gender', gender, '--as-of-year', '2026']))
+    for result in (prepare_reading(chart, question), prepare_reading(_unknown_chart(), question)):
+        text = render_facts(result)
+        assert not style_violations(text), text.split('\n\n')[0]

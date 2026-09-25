@@ -78,16 +78,17 @@ def _tiandi_conflicts(lunar: Any, day_yi: list[str] | None) -> list[dict]:
     嫁娶, 不标动土 —— 把动土归入「造作」是本工具的解读, 不是条款的原话。
     与 jian_chu_conflicts 一样只并列两说, 不裁决。普通日子返回 []。
     """
-    from fortune_ranking import season_of, tiandi_zhuan
+    from fortune_ranking import SEASON_NAMES, season_of, tiandi_zhuan
     day = lunar.getDayInGanZhiExact()
     season = season_of(lunar.getMonthZhiExact())
     hit = tiandi_zhuan(day[0], day[1], season) if season else None
-    if hit is None:
+    if hit is None or season is None:
         return []
     named = [item for item in day_yi or [] if item in hit['quote']]
     if not named:
         return []
-    return [{**hit, 'day_ganzhi': day, 'season': season, 'yi_named_in_clause': named,
+    return [{**hit, 'label': hit['kind'], 'day_ganzhi': day, 'season': season, 'yi_named_in_clause': named,
+             'plain': f"{SEASON_NAMES[season]}的{hit['kind']}日，《渊海子平》说这天最忌{'、'.join(named)}",
              'note': '通书宜忌表把上列事项列为宜, 天地转杀条款原文把它们列为最忌。'
                      '两者是不同的体系; 本工具不裁决, 两说并列。'}]
 
@@ -114,6 +115,78 @@ def _xieji_conflicts(lunar: Any, day_yi: list[str] | None) -> list[dict]:
                           'note': f'通书宜忌表列「{item}」为宜；《协纪辨方书》卷十把它列在{hit["label"]}的所忌里，'
                                   '并写明与吉神并仍忌。两者是不同的体系; 本工具不裁决, 两说并列。'})
     return found
+
+
+# 事项 -> (通书表用字, 白话名). 通书表把搬家写作「移徙」, 与协纪注「移徙同」一致。
+DAY_RULE_EVENTS = {'travel': ('出行', '出行'), 'wedding': ('嫁娶', '结婚'),
+                   'moving': ('移徙', '搬家'), 'business': ('开市', '开业')}
+
+
+def _asked_event(out: dict, scenario: str, kind: str, date: str) -> str:
+    """The first sentence when the question names an event the rules know."""
+    word, name = DAY_RULE_EVENTS[scenario]
+    hits = out['day_prohibitions'][scenario]
+    if hits:
+        lead = (('不行。' if kind == 'yes_no' else '') + f'{date}{name}需要避开：是'
+                + '；也是'.join(h['plain'] for h in hits) + '。')
+        if word in (out['yi'] or []):
+            lead += f'通书宜忌表却把「{word}」列为宜，与上面的条款不一致。'
+        return lead
+    listed = ('列为宜' if word in (out['yi'] or []) else '列为忌' if word in (out['ji'] or []) else '')
+    table = f'通书宜忌表把「{word}」{listed}' if listed else f'通书宜忌表没有列「{word}」'
+    opener = ('不建议。' if word in (out['ji'] or []) else '已查条款不忌。') if kind == 'yes_no' else ''
+    return (f'{opener}{date}没有碰到本库已核的{name}忌日（天地转杀与《协纪辨方书》吉神化解不了的几种忌日）；'
+            f'{table}。')
+
+
+def _clash_items(clash: dict) -> list[str]:
+    """The 宜 items one clause_conflicts entry flags."""
+    return [clash['yi_item']] if 'yi_item' in clash else list(clash['yi_named_in_clause'])
+
+
+def render_huangli(out: dict, question: str = '') -> str:
+    """Plain-language 黄历 answer: the asked event first, then the day's facts."""
+    from answer_style import event_of, question_kind, rule_detail
+    lunar, gz = out['lunar_date'], out['ganzhi']
+    date = (f"{out['solar_date']['iso']}（农历{lunar['month_chinese']}月{lunar['day_chinese']}，"
+            f"{gz['day']}日）")
+    scenario = event_of(question) if question else None
+    yi, ji = '、'.join(out['yi'] or []) or '无', '、'.join(out['ji'] or []) or '无'
+    if scenario:
+        lead = _asked_event(out, scenario, question_kind(question), date)
+    else:
+        # A yes/no about an event the rules do not cover gets told so; a general
+        # 「今天适合做什么」 is answered by the table itself.
+        unknown = ('这件事不在本库核过条款的事项里（只核了出行、结婚、搬家、开业），只能看通书宜忌表：'
+                   if question and question_kind(question) == 'yes_no' else '')
+        lead = f"{unknown}{date}，值神「{out['zhi_shen_12jianchu']}」。通书宜忌表宜：{yi}；忌：{ji}。"
+        barred = list(dict.fromkeys(item for clash in out['clause_conflicts'] for item in _clash_items(clash)))
+        if barred:
+            lead += f"其中「{'、'.join(barred)}」，已核条款说这天忌，见下文。"
+    lines = [lead]
+    if scenario:
+        lines.append(f'通书宜忌表宜：{yi}；忌：{ji}。')
+        for hit in out['day_prohibitions'][scenario]:
+            lines.append(f"{DAY_RULE_EVENTS[scenario][1]}：{rule_detail(hit)}。")
+    lines.append(f"通书宜忌表的来历：{out['yi_ji_source']}。表里的字按传统标签转述，不代表会发生什么。")
+    zs, tendency = out['zhi_shen_12jianchu'], out['jian_chu_tendency']
+    if tendency:
+        lines.append(f"值神「{zs}」是十二建除之一，按本库建除表的一般倾向，宜：{'、'.join(tendency['yi'])}；"
+                     f"忌：{'、'.join(tendency['ji'])}。")
+    conflicts = out['jian_chu_conflicts']
+    if conflicts:
+        both = '、'.join(conflicts.get('engine_yi_but_jianchu_ji', []) + conflicts.get('engine_ji_but_jianchu_yi', []))
+        lines.append(f'建除倾向与通书宜忌表在「{both}」上相反；两者是不同体系，本工具不裁决。')
+    asked = DAY_RULE_EVENTS[scenario][0] if scenario else None
+    for clash in out['clause_conflicts']:
+        items = _clash_items(clash)
+        if items == [asked]:
+            continue  # the lead has already said it
+        lines.append(f"通书宜忌表列「{'、'.join(items)}」为宜，而{rule_detail(clash)}。两者不一致，并列备查。")
+    good = '、'.join(f"{s['shichen']}（{s['hour_range']}）" for s in out['ji_shi'])
+    if good:
+        lines.append(f'黄道时辰：{good}。这是时辰的传统分类，不是事故概率。')
+    return '\n\n'.join(lines)
 
 
 def _hour_pillars(lunar: Any) -> list[dict]:
@@ -176,8 +249,15 @@ def _hour_pillars(lunar: Any) -> list[dict]:
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   input solar_date lunar_date ganzhi zhi_shen_12jianchu xiu_28 yi ji
   yi_ji_source jian_chu_tendency jian_chu_conflicts clause_conflicts
-  ji_shi xiong_shi shichen_detail directions peng_zu_bai_ji
+  day_prohibitions ji_shi xiong_shi shichen_detail directions peng_zu_bai_ji
   tai_shen_fang_wei chong_sha jieqi
+
+day_prohibitions: {travel, wedding, moving, business} -> the sourced day rules
+  that bar that event today (天地转杀 where it names it; 协纪 rules no 吉神
+  lifts). [] means none of those rules applies, not that the day suits it.
+
+--markdown prints a plain-language answer; with --question it answers that
+  question first (出行/结婚/搬家/开业).
 
 clause_conflicts: [] on most days. 宜 items that 天地转杀 names as 最忌, or that
   《协纪辨方书》卷十 forbids even beside 吉神 (月破/四廢/四忌/四窮/往亡/歸忌),
@@ -200,6 +280,10 @@ def build_parser() -> argparse.ArgumentParser:
     add_request_arguments(p)
     p.add_argument("--date", type=str, default=None,
                    help="日期 YYYY-MM-DD (默认今日)")
+    p.add_argument("--question", type=str, default="",
+                   help="所问之事, 例如「这天搬家可以吗」; 用于 --markdown 的首句")
+    p.add_argument("--markdown", action="store_true",
+                   help="输出白话回答而非 JSON")
     return p
 
 
@@ -328,7 +412,14 @@ def main(argv: list[str] | None = None) -> int:
         },
     }
 
-    json_print(ok_envelope("huangli", out))
+    from fortune_ranking import day_prohibitions
+    exact_day, exact_month = lunar.getDayInGanZhiExact(), lunar.getMonthZhiExact()
+    out["day_prohibitions"] = {scenario: day_prohibitions(scenario, exact_day, exact_month)
+                               for scenario in DAY_RULE_EVENTS}
+    if args.markdown:
+        print(render_huangli(ok_envelope("huangli", out), args.question))
+    else:
+        json_print(ok_envelope("huangli", out))
     return 0
 
 

@@ -42,6 +42,12 @@ Python 输出使用 utils 的 JSON 信封；失败包含 ok、tool、version、e
 
 JSON 使用 UTF-8、两空格缩进。代码需类型注解。测试应证明输入边界、来源完整性或实际行为，不能只搜索提示词或机械复制实现。
 
+择日各阶段之间传递的结构（忌日命中、排序行、实际选择、推荐状态、阻断项）定义在 `scripts/contracts.py`。生产函数以这些 TypedDict 为返回类型，mypy 核对写入的每个键；`tests/test_contracts.py` 再用真实输出逐键核对，多出或缺少的键都会失败。新增字段时先改契约。
+
+同一输入在每个进程里必须输出相同字节。Python 每个进程的字符串哈希不同，遍历 set 的顺序因此会变；输出里的列表不要从 set 或 frozenset 直接转来。`tests/test_determinism.py` 在多个 `PYTHONHASHSEED` 下比较 CLI 输出。
+
+只改结构、不改行为的重构，要先录下改动前的输出，改完逐字节比对：用改动前的代码跑一遍输入集，保存 JSON（保持原键序）和白话文本，再用改动后的代码对比。
+
 ## 发布记录
 
 记录提交、测试、包内验证与远端 CI。工程测试、实际模型回答评审和现实预测验证分别报告。30 个用例清单不是 30 次模型运行；协作 agent 的试跑也不是多个独立宿主的基准。
@@ -59,5 +65,7 @@ Every quotation needs an edition, chapter, passage and text layer. New interpret
 Keep both READMEs, skill routing, CLI help, fixtures and migration notes aligned. Run the commands above. A local `-m "not slow"` run is only a quick subset; CI and releases require all tests. Verify the exact built archive in a fresh environment and publish the tested CI bytes, including their checksums and source archive.
 
 Obtain request time once, using the user's present time zone; keep it separate from birth and target time zones. Preserve failures as explicit errors rather than fabricating successful charts.
+
+The shapes passed between selection stages live in `scripts/contracts.py`; producers return those TypedDicts and `tests/test_contracts.py` checks real outputs key by key. Output must not depend on `PYTHONHASHSEED`: never turn a set into an output list. A structure-only refactor is verified by recording outputs before the change and comparing them byte for byte afterwards.
 
 Report code tests, actual model-response reviews and predictive validation separately. Preserve attribution and edition boundaries when importing texts. Respect the scope in [the output contract](references/22-output-contract.md) and [sensitive-topic guidance](references/20-disclaimer.md).

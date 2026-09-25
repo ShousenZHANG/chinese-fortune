@@ -4,6 +4,7 @@ from __future__ import annotations
 from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
 
+from contracts import Blocker
 from fortune_calendar import solar_wall, term_boundaries
 from fortune_time import civil_boundaries
 from qimen_cast import determine_ju, source_core
@@ -142,9 +143,9 @@ def compare_candidates(availability: list[dict], participants: list[dict], *,
     return result
 
 
-def decision_blockers(result: dict) -> list[dict]:
+def decision_blockers(result: dict) -> list[Blocker]:
     """Keep independent missing conditions visible instead of overwriting them."""
-    blockers = []
+    blockers: list[Blocker] = []
     method = result.get('event_method') or {}
     if result['priority'] is None:
         blockers.append({'code': 'participant_priority_required', 'message': '需要确认这次主要为谁安排。'})

@@ -248,3 +248,44 @@ def test_yongshen_hints_cite_their_passage_or_say_they_have_none():
     unsourced = yongshen_source("下月出行顺不顺")
     assert unsourced["keyword"] == "出行" and unsourced["passage_id"] is None
     assert yongshen_source("随便问问") is None and yongshen_source(None) is None
+
+
+def _cast(question: str, *extra: str) -> str:
+    import subprocess
+    proc = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "scripts" / "liuyao_cast.py"), "coins",
+                           "--seed", "7", "--question", question, "--date", "2026-09-25", "--time", "10:00",
+                           "--target-timezone", "Asia/Shanghai", "--current-timezone", "Asia/Shanghai", *extra],
+                          capture_output=True, text=True, encoding="utf-8")
+    assert proc.returncode == 0, proc.stderr[-300:]
+    return proc.stdout
+
+
+def test_markdown_places_the_yongshen_with_its_source_and_gives_no_verdict():
+    lead = _cast("下周二面试能过吗", "--markdown").split("\n\n")[0]
+    assert lead.startswith("本卦天山遁（乾宫，二世），二爻动，变为天风姤。")
+    assert "用神取官鬼（《增删卜易》「占功名、官府" in lead and "zengshan:c008:p0001" in lead
+    assert "官鬼在二爻丙午火，囚，持世；四爻壬午火，囚" in lead
+    assert lead.endswith("卦上没有现成的断语。")  # a yes/no question gets told what decides it
+    for word in ("必过", "能过", "大吉", "仅供参考"):
+        assert word not in lead
+
+
+def test_markdown_says_when_the_yongshen_is_absent_or_unsourced():
+    import json
+
+    from liuyao_cast import render_liuyao
+    out = json.loads(_cast("下周二面试能过吗"))
+    for line in out["main_chart"]["lines"]:
+        if line["liu_qin"] == "官鬼":
+            line["liu_qin"] = "兄弟"
+    assert "本卦没有官鬼爻出现，伏神本工具尚未计算" in render_liuyao(out)
+    travel = _cast("这次出行顺利吗", "--markdown").split("\n\n")[0]
+    assert "这一行是通行取法，本库尚未核到古籍出处" in travel
+    assert "没有对应到本库的用神取法表" in _cast("随便问问", "--markdown")
+
+
+@pytest.mark.parametrize("question", ["下周二面试能过吗", "这次出行顺利吗", "随便问问", "今年财运如何"])
+def test_markdown_keeps_to_the_direct_answer_word_lists(question):
+    from answer_style import style_violations
+    text = _cast(question, "--markdown")
+    assert not style_violations(text), text.split("\n\n")[0]

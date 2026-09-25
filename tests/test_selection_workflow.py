@@ -186,7 +186,7 @@ def test_latest_start_uses_elapsed_minutes_across_dst_jump(query):
 def test_display_does_not_round_start_before_actual_availability(query):
     query['candidates'] = [{'start': '2026-09-15T09:00:59', 'end': '2026-09-15T10:00:59'}]
     result = read_request(query)
-    assert '09:00:59+10:00' in render_answer(result)
+    assert '2026-09-15 09:00:59–10:00:59' in render_answer(result)  # seconds kept, not rounded
     assert result['practical_choice']['first_choice']['start'].endswith('09:00:59+10:00')
 
 

@@ -444,6 +444,61 @@ def yongshen_source(question: str | None) -> dict | None:
 
 
 # --------------------------------------------------------------------------- #
+# Plain-language layer
+# --------------------------------------------------------------------------- #
+
+LIU_QIN = ("父母", "兄弟", "子孙", "妻财", "官鬼")
+POSITIONS = {1: "初爻", 2: "二爻", 3: "三爻", 4: "四爻", 5: "五爻", 6: "上爻"}
+
+
+def _line_facts(line: dict, *, relative: bool = True) -> str:
+    roles = [label for flag, label in ((line["is_shi"], "持世"), (line["is_ying"], "临应")) if flag]
+    extras = roles + [m for m in line["markers"] if m != "动爻"]
+    return (f"{POSITIONS[line['position']]}{line['stem']}{line['branch']}{line['wuxing']}，"
+            + (f"{line['liu_qin']}，" if relative else "") + line["state"]
+            + ("，" + "，".join(extras) if extras else ""))
+
+
+def render_liuyao(out: dict) -> str:
+    """Plain-language layer: which hexagram, where the 用神 sits, and why.
+
+    No 吉凶 verdict: the tool does not weigh 旺衰, 日月生克 and 动变 into one
+    (references/04-liuyao.md). The first sentence therefore answers what the
+    cast can support -- where the thing asked about sits -- and says so.
+    """
+    from answer_style import question_kind
+    main, changed = out["main_chart"], out["changed_chart"]
+    moving = out["active_lines"]
+    move = ("、".join(POSITIONS[p] for p in moving) + "动，变为" + changed["hex_name"]
+            if moving and changed else "六爻都不动")
+    lead = f"本卦{main['hex_name']}（{main['palace']}，{main['palace_role']}），{move}。"
+    hint, source = out.get("yongshen_hint"), out.get("yongshen_hint_source")
+    if hint and source:
+        relatives = [q for q in LIU_QIN if q in hint]
+        places = []
+        for relative in relatives:
+            found = [line for line in main["lines"] if line["liu_qin"] == relative]
+            places.append(f"{relative}在" + "；".join(_line_facts(line, relative=False) for line in found)
+                          if found else f"本卦没有{relative}爻出现，伏神本工具尚未计算")
+        why = (f"《增删卜易》「{source['quote']}」，{source['passage_id']}；{source['mapping']}"
+               if source.get("passage_id") else "这一行是通行取法，本库尚未核到古籍出处")
+        lead += f"按你问的「{source['keyword']}」，用神取{'、'.join(relatives)}（{why}）：" + "。".join(places) + "。"
+        if question_kind(out.get("question") or "") == "yes_no":
+            lead += "成不成要再看用神的旺衰、日月生克和动变，卦上没有现成的断语。"
+    elif out.get("question"):
+        lead += "你问的事没有对应到本库的用神取法表，用神要按所问的对象另行确定。"
+    lines = [lead]
+    lines.append("卦中各爻（自下而上）：" + "；".join(_line_facts(line) for line in main["lines"]) + "。")
+    lines.append("白话说：用神是所问之事对应的那一爻；世爻代表问卦的一方，应爻代表对方或所对之事。"
+                 "旺相休囚是这一爻在当月的强弱；月破、日破指爻支与月建、日辰相冲，旬空指落在本旬空亡。"
+                 "这些是盘面事实；能不能成，还要按用神的旺衰、日月生克与动变逐项核对，本工具不自动下断语。")
+    t = out["cast_time"]
+    lines.append(f"起卦时间：{t['solar']}，{t['month_ganzhi']}月{t['day_ganzhi']}日；月建{t['month_branch']}，日辰{t['day_branch']}。")
+    lines.append(f"卦辞：{out['main_judgment']}" + "".join(f"\n动爻：{a['text']}" for a in out["active_line_text"]))
+    return "\n\n".join(lines)
+
+
+# --------------------------------------------------------------------------- #
 # CLI
 # --------------------------------------------------------------------------- #
 
@@ -473,6 +528,8 @@ def build_parser() -> argparse.ArgumentParser:
                     help="所问之事 (用于推断用神)")
     pc.add_argument("--entropy", choices=["system", "quantum"], default="system",
                     help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
+    pc.add_argument("--markdown", action="store_true",
+                    help="输出白话说明而非 JSON; 不代替按用神、日月、动变逐项核对的完整解读")
     return p
 
 
@@ -562,7 +619,10 @@ def main(argv: list[str] | None = None) -> int:
         "active_line_text": active_line_texts,
     }
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
-    json_print(ok_envelope("liuyao", out))
+    if args.markdown:
+        print(render_liuyao(ok_envelope("liuyao", out)))
+    else:
+        json_print(ok_envelope("liuyao", out))
     return 0
 
 

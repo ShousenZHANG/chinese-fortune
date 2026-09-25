@@ -14,6 +14,8 @@ the 所忌 quotation itself; nothing is mapped by analogy inside this module.
 """
 from __future__ import annotations
 
+from contracts import DayRuleHit
+
 BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 SEASONS = {'寅': '春', '卯': '春', '辰': '春', '巳': '夏', '午': '夏', '未': '夏',
            '申': '秋', '酉': '秋', '戌': '秋', '亥': '冬', '子': '冬', '丑': '冬'}
@@ -110,7 +112,7 @@ def _derivation(rule: str, day: str, month_branch: str) -> str | None:
     raise ValueError(rule)
 
 
-def prohibitions(scenario: str, day: str, month_branch: str) -> list[dict]:
+def prohibitions(scenario: str, day: str, month_branch: str) -> list[DayRuleHit]:
     """The rules above that forbid ``scenario`` on day pillar ``day``.
 
     ``month_branch`` is the solar-term month (月建), as the 起例 are counted
@@ -119,7 +121,7 @@ def prohibitions(scenario: str, day: str, month_branch: str) -> list[dict]:
     term = SCENARIO_TERMS.get(scenario)
     if term is None:
         return []
-    hits = []
+    hits: list[DayRuleHit] = []
     for rule in RULES:
         quotes = [a for a in rule['avoid'] if term in a['quote']]
         if not quotes:

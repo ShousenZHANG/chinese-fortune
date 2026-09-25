@@ -506,9 +506,8 @@ def test_an_unresolved_day_publishes_both_readings_with_their_passages():
 def test_the_summary_paragraph_keeps_layer_two_vocabulary_out():
     """The hook that enforces this lives outside the repo and fires after the
     fact; these are the same words, checked before shipping."""
+    from answer_style import style_violations
     from fortune_reading import read_request, render_answer
-    banned = ['两书相反', '起法分歧', '两说并列', 'passage_id', 'precedence_version',
-              'transcription_status', 'facsimile_status', '算不了', '排不出来']
     windows = [
         [_slot('a', '2026-10-15')],
         [_slot('a', '2026-10-13'), _slot('b', '2026-10-15')],
@@ -517,26 +516,45 @@ def test_the_summary_paragraph_keeps_layer_two_vocabulary_out():
         [{'id': 'dawn', 'start': '2026-10-15T03:00', 'end': '2026-10-15T08:00'}],
     ]
     for candidates in windows:
-        summary = render_answer(read_request(_travel_request(candidates, _OCT))).split('\n\n')[0]
-        assert not [w for w in banned if w in summary], (candidates[0]['id'], summary)
+        text = render_answer(read_request(_travel_request(candidates, _OCT)))
+        assert not style_violations(text), (candidates[0]['id'], text.split('\n\n')[0])
+
+
+def test_the_style_lists_match_the_reference():
+    """answer_style carries 27-direct-answer.md's lists verbatim, not a subset."""
+    import re
+
+    from answer_style import CLASS_A, CLASS_B, CLASS_B_NEEDS_REASON, style_violations
+    md = (ROOT / 'references' / '27-direct-answer.md').read_text(encoding='utf-8')
+
+    def block(title: str) -> set[str]:
+        body = re.search(rf'### {title}.*?```\n(.*?)```', md, re.S)
+        assert body, title
+        words = set()
+        for line in body.group(1).splitlines():
+            words |= {w.strip() for w in line.split('←')[0].split('|') if w.strip()}
+        return words
+
+    assert block('甲类') == set(CLASS_A) | {'我看到的不是……是'}
+    assert block('乙类') == set(CLASS_B) | set(CLASS_B_NEEDS_REASON)
+    assert style_violations('结论。\n\n两书相反') == []
+    assert style_violations('两书相反。\n\n层二') == ['两书相反']
+    assert style_violations('算不了因为缺时辰。') == []
+    assert style_violations('算不了。') == ['算不了']
+    assert style_violations('首句。\n\n我看到的不是运气，是选择') == ['我看到的不是运气，是']
 
 
 def test_no_class_a_phrase_anywhere_in_a_rendered_answer():
     """27-direct-answer.md 甲类: deleting these loses no information, anywhere."""
-    import re
-
+    from answer_style import style_violations
     from fortune_reading import render_answer
-    class_a = ['仅供参考', '只能当参考', '参考而已', '姑且听之', '信不信由你', '要说清楚的是',
-               '必须说清', '先说清楚', '说句实在的', '老实说', '说点真的', '好不等于',
-               '不等于保证', '不会自己变好', '不会改变什么', '我理解你想听什么']
     results = [_sep21_early(), _read([_slot('oct14', '2026-10-14')], _OCT, '可以吗？'),
                _read([_slot('oct13', '2026-10-13'), _slot('oct14', '2026-10-14')], _OCT,
                      preferences={'prefer': 'earliest'}),
                _read([{'id': 'cross', 'start': '2026-10-15T20:00', 'end': '2026-10-16T12:00'}], _OCT)]
     for result in results:
         text = render_answer(result)
-        assert not [w for w in class_a if w in text], text.split('\n\n')[0]
-        assert not re.search(r'我看到的不是[^。！？]{0,24}[，,]\s*是', text)
+        assert not style_violations(text), text.split('\n\n')[0]
 
 
 def test_forbidden_hours_read_in_time_order_not_code_point_order():
@@ -736,7 +754,7 @@ def test_no_minute_is_invented_when_the_person_gave_no_preference():
     window = clear['practical_comparison'][0]['windows'][0]
     assert choice['flexible_start'] == window['allowed_start']
     lead, _ = _render(clear)
-    assert '09:00+11:00 至 2026-10-15 11:00+11:00 之间开始都行' in lead
+    assert '2026-10-15 09:00–11:00 之间开始都行，持续 120 分钟（Australia/Sydney，UTC+11）' in lead
     # A stated preference does fix the minute.
     early = _read([_slot('oct15', '2026-10-15')], _OCT, preferences={'prefer': 'earliest'})
     assert 'flexible_start' not in early['practical_choice']['first_choice']
@@ -752,7 +770,7 @@ def test_a_window_with_a_named_hour_offers_only_its_clear_starts():
                                         'latest': '2026-10-13T09:41:00+11:00', 'latest_inclusive': True}
     assert (choice['start'], choice['end']) == ('2026-10-13T09:00:00+11:00', '2026-10-13T11:00:00+11:00')
     lead, _ = _render(result)
-    assert '09:00+11:00 至 2026-10-13 09:41+11:00 之间开始都行' in lead
+    assert '2026-10-13 09:00–09:41 之间开始都行' in lead
     assert '别把时间挪进 11:41–13:00（午时），这个时辰是庚申日截路空亡的忌时' in lead
 
 
@@ -888,3 +906,41 @@ def test_two_clear_ranges_in_one_window_are_offered_not_picked():
     assert [r['earliest'][:16] for r in ranges] == ['2026-10-15T20:00', '2026-10-16T03:40']
     lead, _ = _render(result)
     assert '可选：cross 2026-10-15 20:00–21:40 之间开始；cross 2026-10-16 03:40–10:00 之间开始。' in lead
+
+
+def test_times_read_as_a_local_clock_with_one_offset():
+    """ISO pairs like 「2026-09-21 08:00+10:00 至 2026-09-21 10:00+10:00」 were
+    exact but hard to read; the date and offset now appear once. Across a
+    daylight-saving change each end keeps its own offset."""
+    from datetime import datetime
+
+    from fortune_reading import _clock_range, _utc_offset
+    assert _clock_range('2026-09-21T08:00:00+10:00', '2026-09-21T10:00:00+10:00', 'Australia/Sydney') == \
+        '2026-09-21 08:00–10:00（Australia/Sydney，UTC+10）'
+    assert _clock_range('2026-10-04T01:30:00+10:00', '2026-10-04T04:30:00+11:00', 'Australia/Sydney') == \
+        '2026-10-04 01:30（UTC+10）至 04:30（UTC+11）（Australia/Sydney）'
+    assert _clock_range('2026-10-15T20:00:00+11:00', '2026-10-16T02:00:00+11:00', 'Australia/Sydney') == \
+        '2026-10-15 20:00–2026-10-16 02:00（Australia/Sydney，UTC+11）'
+    assert _utc_offset(datetime.fromisoformat('2026-01-01T00:00:00+05:30')) == 'UTC+5:30'
+    assert _utc_offset(datetime.fromisoformat('2026-01-01T00:00:00-03:00')) == 'UTC-3'
+    assert _utc_offset(datetime.fromisoformat('2026-01-01T00:00:00-03:30')) == 'UTC-3:30'
+    # Local mean time carries seconds; slicing the ISO string used to misread it.
+    assert _utc_offset(datetime.fromisoformat('1900-01-01T00:00:00+08:05:43')) == 'UTC+8:05'
+    lead = _render(_sep21_early())[0]
+    assert lead.startswith('首选 d21：2026-09-21 08:00–10:00（Australia/Sydney，UTC+10）。')
+
+
+def test_a_window_without_a_day_pillar_asks_for_the_place_not_a_verdict():
+    """Without the event's longitude a true-solar request keeps only year and
+    month pillars. The practical choice then reported ``clause_conflict``, the
+    answer opened 「不建议」, and the renderer crashed on the row's missing end."""
+    request = _travel_request([_slot('a', '2026-10-13')], _OCT)
+    del request['event']['longitude']
+    from fortune_reading import read_request, render_answer
+    result = read_request({**request, 'question': '下周出行可以吗'})
+    assert result['ranking']['unrankable'][0]['end'] == '2026-10-13T13:00:00+11:00'
+    assert result['practical_choice']['status'] == 'screening_incomplete'
+    assert result['conclusion']['status'] == 'screening_incomplete'
+    lead = render_answer(result).split('\n\n')[0]
+    assert lead == ('现在判断不了，因为还不知道活动地点：日柱按当地真太阳时定，缺经度就定不了，'
+                    '所以 a 的 2026-10-13 09:00–13:00 还没有套用忌日条款。告诉我在哪个城市或经度，就能接着核。')

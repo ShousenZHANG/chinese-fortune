@@ -66,8 +66,10 @@ SAN_XING_TRIPLES: list[tuple[str, str, str]] = [
     ("寅", "巳", "申"),
     ("丑", "戌", "未"),
 ]
-SAN_XING_PAIRS: list[frozenset[str]] = [
-    frozenset(["子", "卯"]),  # 无礼之刑
+# Ordered as the texts say it (子刑卯). A frozenset here once leaked hash order
+# into the output: the same chart printed 卯子 or 子卯 depending on the process.
+SAN_XING_PAIRS: list[tuple[str, str]] = [
+    ("子", "卯"),  # 无礼之刑
 ]
 SAN_XING_SELF: list[str] = ["辰", "午", "酉", "亥"]  # 自刑
 

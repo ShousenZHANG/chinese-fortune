@@ -10,10 +10,12 @@ from datetime import UTC, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from answer_style import question_kind, rule_detail
 from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
 from birth_interval import calculate_interval
 from classical_guidance import research_sources
+from contracts import Recommendation
 from fortune_calendar import period_facts
 from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
@@ -68,59 +70,49 @@ def _people(values: list[dict], data_dir: Path | None) -> list[dict]:
     return result
 
 
-def read_request(payload: dict, *, data_dir: Path | None = None,
-                 clock: Callable[[], datetime] | None = None, _shared: dict | None = None) -> dict:
-    if not isinstance(payload, dict) or set(payload) - FIELDS:
-        raise ValueError('请求包含未知字段；见 references/24-personalized-forecast.md')
-    # One clock sample before calculations, reused in every natal chart.
-    now = (_shared['request_time'] if _shared is not None else
-           capture_request_time(payload.get('current_timezone'), payload.get('request_time'), clock=clock))
-    event = payload.get('event', {'scenario': 'outlook'})
-    if not isinstance(event, dict) or set(event) - EVENT_FIELDS:
-        raise ValueError('event 字段无效')
-    scenario = event.get('scenario', 'outlook')
-    if scenario == 'multiple_events':
-        from fortune_itinerary import read_itinerary
-        return read_itinerary(payload, now, data_dir=data_dir)
-    if 'events' in payload:
-        raise ValueError('events仅用于 multiple_events 连续行程')
-    # An explicitly bounded event is its whole interval, not a flexible start.
-    # Date-only periods remain periods: do not invent a duration or appointment.
+def _bounded_event(payload: dict, event: dict, now: dict) -> dict:
+    """An explicitly bounded event is its whole interval, not a flexible start.
+
+    Date-only periods remain periods: do not invent a duration or appointment.
+    """
     event_period = payload.get('period')
-    if payload.get('intent') == 'event' and 'candidates' not in payload and isinstance(event_period, dict) and all(
-            isinstance(event_period.get(k), str) and 'T' in event_period[k] for k in ('start', 'end')):
-        exact_window = resolve_window(event_period, now, event.get('timezone') or now['timezone'])
-        start, end = (datetime.fromisoformat(exact_window[k]).astimezone(UTC) for k in ('start', 'end'))
-        minutes = (end - start).total_seconds() / 60
-        if minutes != int(minutes):
-            raise ValueError('整段事件请提供分钟分辨率的起止时间')
-        if 'duration_minutes' in payload and payload['duration_minutes'] != minutes:
-            raise ValueError('整段事件的持续时间与明确起止时间不一致；灵活安排请使用 candidates')
-        payload = {**payload, 'duration_minutes': int(minutes),
-                   'candidates': [{'id': 'event', 'start': exact_window['start'], 'end': exact_window['end']}]}
-    capability = route_request(payload, capabilities(scenario)[0])
-    if capability['route'] == 'specialist':
-        return ok_envelope('fortune_reading', {'schema_version': '1.0', 'status': 'specialist_required',
-                            'request_time': now, 'capability': capability,
-                            'message': capability['missing']})
+    if not (payload.get('intent') == 'event' and 'candidates' not in payload and isinstance(event_period, dict)
+            and all(isinstance(event_period.get(k), str) and 'T' in event_period[k] for k in ('start', 'end'))):
+        return payload
+    exact_window = resolve_window(event_period, now, event.get('timezone') or now['timezone'])
+    start, end = (datetime.fromisoformat(exact_window[k]).astimezone(UTC) for k in ('start', 'end'))
+    minutes = (end - start).total_seconds() / 60
+    if minutes != int(minutes):
+        raise ValueError('整段事件请提供分钟分辨率的起止时间')
+    if 'duration_minutes' in payload and payload['duration_minutes'] != minutes:
+        raise ValueError('整段事件的持续时间与明确起止时间不一致；灵活安排请使用 candidates')
+    return {**payload, 'duration_minutes': int(minutes),
+            'candidates': [{'id': 'event', 'start': exact_window['start'], 'end': exact_window['end']}]}
+
+
+def _with_period(payload: dict, capability: dict, now: dict) -> dict:
+    """A natal or research question may omit the period; nothing else may."""
     if 'period' not in payload and capability.get('intent') in ('natal', 'research'):
         local_date = datetime.fromisoformat(now['local']).date()
         payload = {**payload, 'period': {'start': str(local_date), 'end': str(local_date + timedelta(days=1))}}
     if 'period' not in payload:
         raise ValueError('请提供 period，例如 下周 或明确 start/end；不能猜目标日期')
-    window = resolve_window(payload['period'], now, event.get('timezone') or now['timezone'])
-    people = _people(payload.get('participants', []), data_dir)
+    return payload
+
+
+def _priority(event: dict, people: list[dict], scenario: str) -> str | None:
     priority = event.get('priority')
     ids = {p['id'] for p in people}
     if priority is not None and priority != 'equal' and priority not in ids:
         raise ValueError('priority 须为 equal 或一位参与者 id')
     if priority is None:
         priority = 'equal' if scenario == 'wedding' else people[0]['id'] if len(people) == 1 else None
-    length = (datetime.fromisoformat(window['end']) - datetime.fromisoformat(window['start'])).days
-    grain = payload.get('granularity', 'hour' if capability['route'] == 'selection' else
-                        'month' if length > 31 else 'day')
-    standard = event.get('time_standard', 'true-solar')
-    sect = event.get('sect', 2)
+    return priority
+
+
+def _skeleton(payload: dict, now: dict, window: dict, capability: dict, priority: str | None,
+              scenario: str, grain: str, people: list[dict]) -> dict:
+    """The result before any person is calculated, with the starting status."""
     result: dict = {'schema_version': '1.1', 'status': 'partial', 'request_time': now,
               'question': payload.get('question', ''),
               'window': window, 'capability': capability, 'priority': priority,
@@ -145,126 +137,186 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
                 result['recommendation']['status'] = 'no_feasible_slot'
     elif any(key in payload for key in ('candidates', 'busy', 'duration_minutes')):
         raise ValueError('比较档期请使用 intent=selection 或带候选的 intent=event，不能把期间查询当择时')
+    return result
+
+
+def _participant(person: dict, payload: dict, event: dict, now: dict, window: dict, *,
+                 grain: str, focus: list | None, include: bool, cache: dict) -> dict:
+    """One person's natal facts and target-period facts."""
+    standard = event.get('time_standard', 'true-solar')
+    birth = dict(person['person']['birth'])
+    approximate = person['person']['time_certainty'] == 'approximate'
+    if approximate:
+        # A guessed point is not an uncertainty interval. Reuse the existing
+        # whole-date candidate check until a real interval is supplied.
+        birth.pop('hour', None)
+        birth.pop('minute', None)
+    args = build_parser(diagnostics=False).parse_args(birth_arguments(birth) + [
+        '--years', '120', '--current-timezone', now['timezone'], '--request-time', now['utc']])
+    if person['input_fingerprint'] not in cache:
+        interval = person['person'].get('birth_time_range')
+        cache[person['input_fingerprint']] = calculate_interval(args, interval) if interval else calculate_bazi(args)
+    chart = cache[person['input_fingerprint']]
+    if not chart.get('ok'):
+        raise ValueError(person['id'] + '：' + chart['message'])
+    natal_reading = prepare_reading(chart, payload.get('question', '')) if include else None
+    natal = natal_reading['chart_facts'] if natal_reading else chart_facts(chart)
+    # Annual reference samples are not active target-year facts.
+    natal = {k: v for k, v in natal.items() if k not in ('liu_nian', 'liu_nian_scope', 'liu_nian_note')}
+    actual_grain = grain
+    missing_event_longitude = standard == 'true-solar' and event.get('longitude') is None and grain in ('day', 'hour')
+    if missing_event_longitude:
+        actual_grain = 'month'
+    target = period_facts(window, natal, granularity=actual_grain, standard=standard,
+                          longitude=event.get('longitude'), sect=event.get('sect', 2), focus=focus)
+    if missing_event_longitude:
+        target['requested_granularity'] = grain
+        target['missing_input'] = '事件地点经度；已保留不依赖经度的年、月事实，日时仍待补'
+    row = {'id': person['id'], 'profile_revision': person['profile_revision'],
+           'input_fingerprint': person['input_fingerprint'], 'natal': natal, 'target': target}
+    row['traditional_observations'] = luck_observations(natal, target)
+    if approximate:
+        interval = person['person'].get('birth_time_range')
+        row['time_note'] = (f"已比较出生当天 {interval['start']}–{interval['end']} 范围，只保留各可能时间一致的结论"
+                            if interval else '出生时分仅约数；未给上下界，本次保守核对全天共同部分，不以约数确定时柱与大运')
+    if natal_reading:
+        row['natal_interpretation'] = {k: v for k, v in natal_reading.items() if k != 'chart_facts'}
+    return row
+
+
+def _screen_selection(result: dict, payload: dict, event: dict, scenario: str) -> None:
+    """Compare the candidate windows and, where rules exist, screen them."""
+    capability, window = result['capability'], result['window']
+    duration = payload.get('duration_minutes', 60)
+    screened = result['availability']
+    rule_based = capability.get('calendar_screening') == 'rule_based'
+    if rule_based:
+        # Keep the original calendar-only availability; expose excluded parts separately.
+        screened, result['excluded_segments'] = split_eligible_windows(
+            screened, result['participants'][0], duration, scenario)
+    result['candidate_comparison'] = compare_candidates(result['availability'], result['participants'],
+        duration_minutes=duration, timezone=window['timezone'])
+    result['event_method'] = event_basis(result['candidate_comparison'], result['participants'],
+        scenario=scenario, timezone=window['timezone'], standard=event.get('time_standard', 'true-solar'),
+        longitude=event.get('longitude'))
+    # Ranking runs only where fortune_rules declares rule_based; every tier
+    # it produces cites a passage. See references/26-precedence.md.
+    if rule_based:
+        _rank_selection(result, screened, duration, scenario)
+
+
+def _rank_selection(result: dict, screened: list[dict], duration: int, scenario: str) -> None:
+    subject = next((p for p in result['participants'] if p['id'] == result['priority']),
+                   result['participants'][0])
+    ranking = rank_candidates(result['candidate_comparison'], subject, scenario=scenario)
+    ranking['calendar_participant_id'] = subject['id']
+    result['ranking'] = ranking
+    result['practical_comparison'] = compare_candidates(screened, result['participants'],
+        duration_minutes=duration, timezone=result['window']['timezone'])
+    for row in result['candidate_comparison']:
+        verdicts = {e['candidate_id'] for e in ranking['excluded']}
+        tiers = {t['candidate_id']: t['tier'] for t in ranking['tiers']}
+        if row['candidate_id'] in verdicts:
+            row['judgment'] = 'excluded_by_clause'
+        elif row['candidate_id'] in tiers:
+            row['judgment'] = f"tier_{tiers[row['candidate_id']]}"
+    # Ties are the honest outcome when no clause separates the survivors.
+    # A busy block splits one candidate into several windows, so count
+    # candidates, not rows.
+    # A candidate with one clear window and one excluded window is not a
+    # survivor: recommending it would send the reader into the very
+    # window a clause ruled out.
+    struck = {e['candidate_id'] for e in ranking['excluded']}
+    survivors = [c for c in dict.fromkeys(t['candidate_id'] for t in ranking['tiers'])
+                 if c not in struck]
+    version = ranking['precedence_version']
+    if len(survivors) == 1:
+        result['recommendation'] = {'status': 'screened_only', 'first_choice': None,
+                                    'remaining': survivors,
+                                    'backup': None, 'precedence_version': version}
+    elif survivors:
+        result['recommendation'] = {'status': 'tied_no_clause_separates',
+                                    'first_choice': None, 'backup': None,
+                                    'tied': survivors, 'precedence_version': version}
+    elif ranking['excluded']:
+        # The clause answered outright. Leaving the initial
+        # evidence_needed here asked for evidence already in hand.
+        result['recommendation'] = {
+            'status': 'excluded_by_clause', 'first_choice': None, 'backup': None,
+            'excluded': list(dict.fromkeys(e['candidate_id'] for e in ranking['excluded'])),
+            'precedence_version': version}
+    # Screen the exact subwindows, not their original broader input windows.
+    result['practical_screening'] = rank_candidates(result['practical_comparison'], subject, scenario=scenario)
+
+
+def _settle_practical(result: dict, preferences: dict | None) -> None:
+    """The practical choice decides the recommendation where it can."""
+    practical = choose_practical(result, preferences)
+    result['practical_choice'] = practical
+    status, first, backup = practical['status'], practical['first_choice'], practical['backup']
+    recommendation: Recommendation | None = None
+    if result['priority'] is None:
+        recommendation = {'status': 'participant_priority_required', 'first_choice': None, 'backup': None}
+    elif status == 'practical_choice' and first is not None:
+        recommendation = {'status': 'practical_choice', 'first_choice': first['candidate_id'],
+                          'backup': backup['candidate_id'] if backup else None,
+                          'basis': 'practical_constraints'}
+        result['decision_blockers'] = [b for b in result['decision_blockers'] if b['code'] != 'clause_conflict']
+    elif status in ('clause_conflict', 'screening_incomplete', 'preferences_required', 'practical_tie'):
+        recommendation = {'status': status, 'first_choice': None, 'backup': None}
+    if recommendation is not None:
+        result['recommendation'] = recommendation
+
+
+def read_request(payload: dict, *, data_dir: Path | None = None,
+                 clock: Callable[[], datetime] | None = None, _shared: dict | None = None) -> dict:
+    """Validate, calculate each person, screen any candidates, then settle."""
+    if not isinstance(payload, dict) or set(payload) - FIELDS:
+        raise ValueError('请求包含未知字段；见 references/24-personalized-forecast.md')
+    # One clock sample before calculations, reused in every natal chart.
+    now = (_shared['request_time'] if _shared is not None else
+           capture_request_time(payload.get('current_timezone'), payload.get('request_time'), clock=clock))
+    event = payload.get('event', {'scenario': 'outlook'})
+    if not isinstance(event, dict) or set(event) - EVENT_FIELDS:
+        raise ValueError('event 字段无效')
+    scenario = event.get('scenario', 'outlook')
+    if scenario == 'multiple_events':
+        from fortune_itinerary import read_itinerary
+        return read_itinerary(payload, now, data_dir=data_dir)
+    if 'events' in payload:
+        raise ValueError('events仅用于 multiple_events 连续行程')
+    payload = _bounded_event(payload, event, now)
+    capability = route_request(payload, capabilities(scenario)[0])
+    if capability['route'] == 'specialist':
+        return ok_envelope('fortune_reading', {'schema_version': '1.0', 'status': 'specialist_required',
+                            'request_time': now, 'capability': capability,
+                            'message': capability['missing']})
+    payload = _with_period(payload, capability, now)
+    window = resolve_window(payload['period'], now, event.get('timezone') or now['timezone'])
+    people = _people(payload.get('participants', []), data_dir)
+    priority = _priority(event, people, scenario)
+    length = (datetime.fromisoformat(window['end']) - datetime.fromisoformat(window['start'])).days
+    grain = payload.get('granularity', 'hour' if capability['route'] == 'selection' else
+                        'month' if length > 31 else 'day')
+    result = _skeleton(payload, now, window, capability, priority, scenario, grain, people)
     include = payload.get('include_natal_reading', capability['route'] == 'period')
     include_research = payload.get('include_research', False)
     if type(include) is not bool or type(include_research) is not bool:
         raise ValueError('include_natal_reading / include_research 必须为布尔值')
     focus = ([interval for c in result['availability'] for interval in c['intervals']]
              if capability['route'] == 'selection' else None)
+    cache = _shared['natal_charts'] if _shared is not None else {}
     for person in people:
-        birth = dict(person['person']['birth'])
-        approximate = person['person']['time_certainty'] == 'approximate'
-        if approximate:
-            # A guessed point is not an uncertainty interval. Reuse the existing
-            # whole-date candidate check until a real interval is supplied.
-            birth.pop('hour', None)
-            birth.pop('minute', None)
-        args = build_parser(diagnostics=False).parse_args(birth_arguments(birth) + [
-            '--years', '120', '--current-timezone', now['timezone'], '--request-time', now['utc']])
-        cache = _shared['natal_charts'] if _shared is not None else {}
-        if person['input_fingerprint'] not in cache:
-            interval = person['person'].get('birth_time_range')
-            cache[person['input_fingerprint']] = calculate_interval(args, interval) if interval else calculate_bazi(args)
-        chart = cache[person['input_fingerprint']]
-        if not chart.get('ok'):
-            raise ValueError(person['id'] + '：' + chart['message'])
-        natal_reading = prepare_reading(chart, payload.get('question', '')) if include else None
-        natal = natal_reading['chart_facts'] if natal_reading else chart_facts(chart)
-        # Annual reference samples are not active target-year facts.
-        natal = {k: v for k, v in natal.items() if k not in ('liu_nian', 'liu_nian_scope', 'liu_nian_note')}
-        actual_grain = grain
-        missing_event_longitude = standard == 'true-solar' and event.get('longitude') is None and grain in ('day', 'hour')
-        if missing_event_longitude:
-            actual_grain = 'month'
-        target = period_facts(window, natal, granularity=actual_grain, standard=standard,
-                              longitude=event.get('longitude'), sect=sect, focus=focus)
-        if missing_event_longitude:
-            target['requested_granularity'] = grain
-            target['missing_input'] = '事件地点经度；已保留不依赖经度的年、月事实，日时仍待补'
-        row = {'id': person['id'], 'profile_revision': person['profile_revision'],
-               'input_fingerprint': person['input_fingerprint'], 'natal': natal, 'target': target}
-        row['traditional_observations'] = luck_observations(natal, target)
-        if approximate:
-            interval = person['person'].get('birth_time_range')
-            row['time_note'] = (f"已比较出生当天 {interval['start']}–{interval['end']} 范围，只保留各可能时间一致的结论"
-                                if interval else '出生时分仅约数；未给上下界，本次保守核对全天共同部分，不以约数确定时柱与大运')
-        if natal_reading:
-            row['natal_interpretation'] = {k: v for k, v in natal_reading.items() if k != 'chart_facts'}
-        result['participants'].append(row)
+        result['participants'].append(_participant(person, payload, event, now, window, grain=grain,
+                                                   focus=focus, include=include, cache=cache))
     result['evidence'] = evidence()
     if capability['route'] == 'selection':
-        screened = result['availability']
-        if capability.get('calendar_screening') == 'rule_based':
-            # Keep the original calendar-only availability; expose excluded parts separately.
-            screened, result['excluded_segments'] = split_eligible_windows(
-                screened, result['participants'][0], payload.get('duration_minutes', 60), scenario)
-        result['candidate_comparison'] = compare_candidates(result['availability'], result['participants'],
-            duration_minutes=payload.get('duration_minutes', 60), timezone=window['timezone'])
-        result['event_method'] = event_basis(result['candidate_comparison'], result['participants'],
-            scenario=scenario, timezone=window['timezone'], standard=standard,
-            longitude=event.get('longitude'))
-        # Ranking runs only where fortune_rules declares rule_based; every tier
-        # it produces cites a passage. See references/26-precedence.md.
-        if capability.get('calendar_screening') == 'rule_based':
-            subject = next((p for p in result['participants'] if p['id'] == priority),
-                           result['participants'][0])
-            ranking = rank_candidates(result['candidate_comparison'], subject, scenario=scenario)
-            ranking['calendar_participant_id'] = subject['id']
-            result['ranking'] = ranking
-            result['practical_comparison'] = compare_candidates(screened, result['participants'],
-                duration_minutes=payload.get('duration_minutes', 60), timezone=window['timezone'])
-            for row in result['candidate_comparison']:
-                verdicts = {e['candidate_id'] for e in ranking['excluded']}
-                tiers = {t['candidate_id']: t['tier'] for t in ranking['tiers']}
-                if row['candidate_id'] in verdicts:
-                    row['judgment'] = 'excluded_by_clause'
-                elif row['candidate_id'] in tiers:
-                    row['judgment'] = f"tier_{tiers[row['candidate_id']]}"
-            # Ties are the honest outcome when no clause separates the survivors.
-            # A busy block splits one candidate into several windows, so count
-            # candidates, not rows.
-            # A candidate with one clear window and one excluded window is not a
-            # survivor: recommending it would send the reader into the very
-            # window a clause ruled out.
-            struck = {e['candidate_id'] for e in ranking['excluded']}
-            survivors = [c for c in dict.fromkeys(t['candidate_id'] for t in ranking['tiers'])
-                         if c not in struck]
-            version = ranking['precedence_version']
-            if len(survivors) == 1:
-                result['recommendation'] = {'status': 'screened_only', 'first_choice': None,
-                                            'remaining': survivors,
-                                            'backup': None, 'precedence_version': version}
-            elif survivors:
-                result['recommendation'] = {'status': 'tied_no_clause_separates',
-                                            'first_choice': None, 'backup': None,
-                                            'tied': survivors, 'precedence_version': version}
-            elif ranking['excluded']:
-                # The clause answered outright. Leaving the initial
-                # evidence_needed here asked for evidence already in hand.
-                result['recommendation'] = {
-                    'status': 'excluded_by_clause', 'first_choice': None, 'backup': None,
-                    'excluded': list(dict.fromkeys(e['candidate_id'] for e in ranking['excluded'])),
-                    'precedence_version': version}
-            # Screen the exact subwindows, not their original broader input windows.
-            result['practical_screening'] = rank_candidates(result['practical_comparison'], subject, scenario=scenario)
+        _screen_selection(result, payload, event, scenario)
     if include_research:
         result['research']['source_bundle'] = research_sources(scenario, limit=1)
     result['decision_blockers'] = decision_blockers(result)
     if capability['route'] == 'selection':
-        practical = choose_practical(result, payload.get('preferences'))
-        result['practical_choice'] = practical
-        if result['priority'] is None:
-            result['recommendation'] = {'status': 'participant_priority_required', 'first_choice': None, 'backup': None}
-        elif practical['status'] == 'practical_choice':
-            result['recommendation'] = {'status': 'practical_choice',
-                                       'first_choice': practical['first_choice']['candidate_id'],
-                                       'backup': practical['backup']['candidate_id'] if practical['backup'] else None,
-                                       'basis': 'practical_constraints'}
-            result['decision_blockers'] = [b for b in result['decision_blockers'] if b['code'] != 'clause_conflict']
-        elif practical['status'] == 'clause_conflict':
-            result['recommendation'] = {'status': 'clause_conflict', 'first_choice': None, 'backup': None}
-        elif practical['status'] in ('preferences_required', 'practical_tie'):
-            result['recommendation'] = {'status': practical['status'], 'first_choice': None, 'backup': None}
+        _settle_practical(result, payload.get('preferences'))
     result['conclusion'] = conclusion_packet(result)
     return ok_envelope('fortune_reading', result)
 
@@ -319,13 +371,8 @@ BOOK_NAMES = {'yuanhai': '渊海子平', 'sanming': '三命通会'}
 RESEARCH_STATES = ('evidence_needed', 'screened_only')
 
 
-def _question_kind(question: str) -> str:
-    """27-direct-answer.md: the first sentence follows the kind of question."""
-    if any(word in question for word in ('哪天', '哪个', '几点')):
-        return 'choice'
-    if any(word in question for word in ('吗', '嗎', '行不行', '可以吗', '是不是', '有没有', '能不能')):
-        return 'yes_no'
-    return 'verdict'
+# Kept under the old name; tests and callers import it from here.
+_question_kind = question_kind
 
 
 def _clock(value: str) -> str:
@@ -468,10 +515,19 @@ def _conflict_sentence(result: dict, kind: str) -> str:
             continue
         subject = f"{row['candidate_id']} 的 {_span(row['start'], row['end'])}"
         parts.append(f'{subject} {detail}' if kind == 'yes_no' else f'{subject} 目前不能推荐：它{detail}')
-    if not parts:
-        parts = [f"{row['candidate_id']} 的 {_span(row['start'], row['end'])} 目前不能推荐：部分时段未细算到日柱，忌日条款无法套用"
-                 for row in (checked[-1]['unrankable'] if checked else [])]
     return '；'.join(parts) + '。' if parts else '已查条款在这些时间上有冲突，目前不能推荐。'
+
+
+def _incomplete_sentence(result: dict) -> str:
+    """A window the day rules never reached: name it and the input that would."""
+    checked = result.get('practical_choice', {}).get('checked_options') or []
+    rows = checked[-1]['unrankable'] if checked else result.get('ranking', {}).get('unrankable', [])
+    spans = '、'.join(dict.fromkeys(f"{row['candidate_id']} 的 {_span(row['start'], row['end'])}" for row in rows))
+    if any(b['code'] == 'event_longitude_required' for b in result['decision_blockers']):
+        why, ask = '还不知道活动地点：日柱按当地真太阳时定，缺经度就定不了', '告诉我在哪个城市或经度，就能接着核。'
+    else:
+        why, ask = '这次只算到月，没有细算到日柱', '按日或按时细算后就能接着核。'
+    return f'现在判断不了，因为{why}，所以 {spans} 还没有套用忌日条款。{ask}'
 
 
 def _alternatives_sentence(result: dict, limit: int = 4) -> str:
@@ -492,21 +548,38 @@ def _alternatives_sentence(result: dict, limit: int = 4) -> str:
 def _day_rule_line(candidate_id: str, hit: dict) -> str:
     """Layer-2 line for one excluded day: the rule, its derivation, its passages."""
     head = f"{candidate_id} 原可选窗口覆盖到 {hit['day_ganzhi']} 日"
-    if 'sources' not in hit:  # 天地转杀
-        return f"{head}，是{hit['plain']}（{hit['passage_id']}）。"
-    qili, *avoid, binding = hit['sources']
-    return (f"{head}：{hit['label']}，{hit['derivation']}（起例 {qili['passage_id']}）；"
-            f"所忌作「……{hit['quote']}……」（{hit['passage_id']}）；"
-            f"「{binding['quote']}」（{binding['passage_id']}）。")
+    return f"{head}{'，是' if 'sources' not in hit else '：'}{rule_detail(hit)}。"
+
+
+def _utc_offset(stamp: datetime) -> str:
+    """``UTC+10``, ``UTC+5:30``, ``UTC-3``: the offset as people say it."""
+    offset = stamp.utcoffset()
+    total = int(offset.total_seconds() // 60) if offset is not None else 0
+    hours, minutes = divmod(abs(total), 60)
+    return f"UTC{'-' if total < 0 else '+'}{hours}" + (f':{minutes:02d}' if minutes else '')
+
+
+def _clock_range(start: str, end: str, zone: str, middle: str = '') -> str:
+    """``2026-09-21 08:00–10:00（Australia/Sydney，UTC+10）``.
+
+    The date is written once and the offset once, since readers plan by the
+    local clock. When a daylight-saving change falls between the two ends,
+    each end keeps its own offset so the arithmetic still shows.
+    """
+    lo, hi = datetime.fromisoformat(start), datetime.fromisoformat(end)
+    later = ('' if hi.date() == lo.date() else f'{hi.date()} ') + _clock(end)
+    if lo.utcoffset() == hi.utcoffset():
+        return f'{lo.date()} {_clock(start)}–{later}{middle}（{zone}，{_utc_offset(lo)}）'
+    return f'{lo.date()} {_clock(start)}（{_utc_offset(lo)}）至 {later}（{_utc_offset(hi)}）{middle}（{zone}）'
 
 
 def _placement(choice: dict) -> str:
     flexible = choice.get('flexible_start')
     if flexible:
         minutes = int((datetime.fromisoformat(choice['end']) - datetime.fromisoformat(choice['start'])).total_seconds() // 60)
-        return (f"{_display_time(flexible['earliest'])} 至 {_display_time(flexible['latest'])} 之间开始都行，"
-                f"持续 {minutes} 分钟（{choice['timezone']}）")
-    return f"{_display_time(choice['start'])} 至 {_display_time(choice['end'])}（{choice['timezone']}）"
+        return _clock_range(flexible['earliest'], flexible['latest'], choice['timezone'],
+                            f' 之间开始都行，持续 {minutes} 分钟')
+    return _clock_range(choice['start'], choice['end'], choice['timezone'])
 
 
 def _lead_sentence(result: dict) -> str:
@@ -534,6 +607,8 @@ def _lead_sentence(result: dict) -> str:
         return ('不行。' if kind == 'yes_no' else '') + excluded + '需要换到其他日子再比。'
     if state == 'clause_conflict':
         return ('不建议。' if kind == 'yes_no' else '') + _conflict_sentence(result, kind) + excluded
+    if state == 'screening_incomplete':
+        return _incomplete_sentence(result) + excluded
     if state in ('preferences_required', 'practical_tie'):
         return ASK_LEADS[state] + _alternatives_sentence(result) + excluded
     if state in ASK_LEADS:

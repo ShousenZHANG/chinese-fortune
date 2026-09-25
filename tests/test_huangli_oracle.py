@@ -160,3 +160,70 @@ def test_clause_conflicts_flag_only_yi_items_the_clause_names_verbatim():
                          ids=lambda d: d.isoformat())
 def test_clause_conflicts_are_empty_on_an_ordinary_day(d):
     assert run_day(d)["clause_conflicts"] == []
+
+
+def run_markdown(d: date, question: str) -> str:
+    proc = subprocess.run(
+        [sys.executable, "-X", "utf8", str(ROOT / "scripts" / "huangli_query.py"),
+         "--date", d.isoformat(), "--question", question, "--markdown"],
+        capture_output=True, text=True, encoding="utf-8")
+    assert proc.returncode == 0, proc.stderr[-400:]
+    return proc.stdout
+
+
+def test_markdown_answers_the_asked_event_first():
+    """A 黄历 question used to get only JSON. The first sentence now answers it,
+    from the sourced day rules, and says where the almanac table disagrees."""
+    lead = run_markdown(date(2026, 10, 29), "10月29日搬家可以吗？").split("\n\n")[0]
+    assert lead.startswith("不行。2026-10-29（农历九月二十，丙子日）搬家需要避开：是歸忌日")
+    assert "通书宜忌表却把「移徙」列为宜，与上面的条款不一致" in lead
+    lead = run_markdown(date(2020, 6, 2), "那天结婚好不好").split("\n\n")[0]
+    assert lead.startswith("2020-06-02") and "四忌日（夏季丙子）" in lead and "忌嫁娶" in lead
+    lead = run_markdown(date(2026, 10, 30), "这天出门可以吗").split("\n\n")[0]
+    assert lead.startswith("已查条款不忌。2026-10-30") and "通书宜忌表没有列「出行」" in lead
+
+
+def test_markdown_does_not_stretch_the_rules_to_other_events():
+    lead = run_markdown(date(2026, 10, 29), "今天装修可以吗").split("\n\n")[0]
+    assert lead.startswith("这件事不在本库核过条款的事项里（只核了出行、结婚、搬家、开业）")
+    general = run_markdown(date(2026, 10, 29), "今天适合干什么")
+    assert general.startswith("2026-10-29（农历九月二十，丙子日），值神「满」。通书宜忌表宜：")
+    assert "本库未核出处" in general  # the table's own standing, in layer 2
+    for banned in ("仅供参考", "两书相反", "passage_id", "算不了"):
+        assert banned not in general.split("\n\n")[0]
+
+
+def test_day_prohibitions_are_published_per_event():
+    r = run_day(date(2026, 10, 29))
+    rules = {s: [h["label"] for h in hits] for s, hits in r["day_prohibitions"].items()}
+    assert rules == {"travel": [], "wedding": [], "moving": ["歸忌"], "business": []}
+
+
+def test_the_question_classifier_is_shared_and_strict():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from answer_style import event_of, question_kind
+    assert event_of("下周三搬家行不行") == "moving"
+    assert event_of("先结婚再搬家") is None      # two events: do not guess
+    assert event_of("订婚选哪天") is None         # 納采問名 is another 用事
+    assert question_kind("可以吗") == "yes_no" and question_kind("哪天好") == "choice"
+
+
+@pytest.mark.parametrize("d", [date(2026, 10, 29), date(2026, 10, 14), date(2020, 6, 2), date(2026, 3, 10)],
+                         ids=lambda d: d.isoformat())
+def test_markdown_keeps_to_the_direct_answer_word_lists(d):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from answer_style import style_violations
+    for question in ("", "这天搬家可以吗", "哪天结婚好", "开业行不行", "今天装修可以吗"):
+        text = run_markdown(d, question) if question else run_markdown(d, "今天适合干什么")
+        assert not style_violations(text), (question, text.split("\n\n")[0])
+
+
+def test_markdown_on_a_tiandi_day_names_the_clause_once():
+    """A 天转 day crashed --markdown: its clause_conflicts entry had no reader
+    sentence. The asked event is stated in the lead, not repeated below."""
+    text = run_markdown(date(2026, 10, 14), "这天结婚可以吗")
+    assert text.startswith("不行。2026-10-14（农历九月初五，辛酉日）结婚需要避开：是秋季的天转日")
+    assert "并列备查" not in text
+    general = run_markdown(date(2026, 10, 26), "今天适合干什么").split("\n\n")
+    assert general[0].endswith("其中「嫁娶、出行」，已核条款说这天忌，见下文。")
+    assert any("而秋季的地转日，《渊海子平》说这天最忌嫁娶、出行（yuanhai:c052:p0004）" in p for p in general[1:])

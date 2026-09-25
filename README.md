@@ -86,6 +86,13 @@ python scripts/bazi_reading.py --year 2000 --month 1 --day 15 --hour 10 --minute
 
 `--markdown` 输出盘面和条件核查草稿。完整解读由宿主继续检查本题相关解释条件，再回答问题。省略该参数可取得结构化盘面、规则条件和完整证据组。
 
+黄历与六爻也有白话输出。黄历带 `--question` 时首句先回答所问之事（出行、结婚、搬家、开业），依据有出处的忌日条款，并指出通书宜忌表与条款不一致之处；六爻说明用神取哪一爻、出处和旺衰，不下成败断语。
+
+```sh
+python scripts/huangli_query.py --date 2026-10-29 --question 这天搬家可以吗 --markdown
+python scripts/liuyao_cast.py coins --question 下周二面试能过吗 --current-timezone Asia/Shanghai --markdown
+```
+
 查书与原文：
 
 ```sh

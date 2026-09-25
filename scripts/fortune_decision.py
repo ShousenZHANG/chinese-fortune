@@ -4,6 +4,8 @@ from __future__ import annotations
 from datetime import UTC, datetime, timedelta
 from zoneinfo import ZoneInfo
 
+from contracts import Placement, PracticalChoice, Ranking
+
 INTENTS = {'period', 'selection', 'natal', 'event', 'research'}
 
 
@@ -48,7 +50,7 @@ def clean_starts(window: dict, length: timedelta, row: dict | None) -> list[tupl
     return [(x, y) for x, y in ranges if x <= y]
 
 
-def choose_practical(result: dict, preferences: dict | None) -> dict:
+def choose_practical(result: dict, preferences: dict | None) -> PracticalChoice:
     """Return a dated arrangement only from feasible windows and explicit priorities.
 
     Exclusion screening does not establish equal personal auspiciousness. With no
@@ -69,7 +71,7 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
     if order is not None and (not isinstance(order, list) or not order or
             any(not isinstance(k, str) or k not in ids for k in order) or len(set(order)) != len(order)):
         raise ValueError('candidate_order 必须为不重复的现有候选 id 列表')
-    base = {'status': 'no_practical_choice', 'first_choice': None, 'backup': None,
+    base: PracticalChoice = {'status': 'no_practical_choice', 'first_choice': None, 'backup': None,
             'basis': 'practical_constraints', 'personal_auspicious_ranking': False}
     if result['priority'] is None:
         return {**base, 'status': 'participant_priority_required'}
@@ -90,10 +92,10 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
                 ranges.append({'candidate_id': candidate['candidate_id'], 'lo': lo, 'hi': hi,
                                'length': length})
 
-    def placement(option: dict, at: datetime) -> dict:
+    def placement(option: dict, at: datetime) -> Placement:
         # Without a stated time preference a start is only a boundary, not a
         # minute the person chose; offer the whole clean start range instead.
-        chosen = {'candidate_id': option['candidate_id'], 'start': at.astimezone(zone).isoformat(),
+        chosen: Placement = {'candidate_id': option['candidate_id'], 'start': at.astimezone(zone).isoformat(),
                   'end': (at + option['length']).astimezone(zone).isoformat(),
                   'timezone': result['window']['timezone'], 'start_is_practical_boundary': True}
         if prefer is None and option['lo'] != option['hi']:
@@ -130,7 +132,7 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
         return base
     first = windows[0]
     backup = next((w for w in windows[1:] if w['candidate_id'] != first['candidate_id']), None)
-    checked = []
+    checked: list[Ranking] = []
     if ranking:
         from fortune_ranking import rank_candidates
         from fortune_selection import compare_candidates
@@ -151,10 +153,14 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
                                        timezone=result['window']['timezone'])
             screen = rank_candidates(exact, result['participants'][0], scenario=result['capability']['scenario'])
             checked.append(screen)
-            if screen['excluded'] or screen['unrankable'] or any(
-                    r['forbidden_hours_in_window'] or r['contested_hours_in_window'] for r in screen['tiers']):
+            conflict = screen['excluded'] or any(
+                r['forbidden_hours_in_window'] or r['contested_hours_in_window'] for r in screen['tiers'])
+            if conflict or screen['unrankable']:
                 if option is first:
-                    return {**base, 'status': 'clause_conflict', 'checked_options': checked}
+                    # A window never screened (no day pillar yet) is missing
+                    # input, not a clause that ruled it out.
+                    return {**base, 'status': 'clause_conflict' if conflict else 'screening_incomplete',
+                            'checked_options': checked}
                 backup = None
     return {**base, 'status': 'practical_choice', 'first_choice': first, 'backup': backup, 'reason': reason,
             'checked_options': checked,

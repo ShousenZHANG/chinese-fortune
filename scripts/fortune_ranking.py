@@ -19,6 +19,7 @@ from copy import deepcopy
 from datetime import UTC, datetime, timedelta
 
 import xieji_days
+from contracts import ContestedHourHit, DayRuleHit, HourHit, Ranking, RankingRow, Unrankable
 from fortune_rules import PRECEDENCE_VERSION
 
 # 天地转杀（yuanhai:c052:p0004）：秋见辛酉为天转、癸酉为地转；其日最忌「出行商贾」。
@@ -71,19 +72,21 @@ EVENT_WORDS = {'travel': '出行', 'wedding': '嫁娶', 'moving': '搬家', 'bus
 SEASON_NAMES = {'spring': '春季', 'summer': '夏季', 'autumn': '秋季', 'winter': '冬季'}
 
 
-def day_prohibitions(scenario: str, ganzhi: str, month_branch: str) -> list[dict]:
+def day_prohibitions(scenario: str, ganzhi: str, month_branch: str) -> list[DayRuleHit]:
     """Every sourced day rule that bars ``scenario`` on this day, in rule order.
 
     天地转杀 (《渊海子平》) where the scenario is named in it, then the
     《协纪辨方书》 prohibitions no 吉神 can lift. Each hit carries ``plain``, the
     reader's sentence for it.
     """
-    hits = []
+    hits: list[DayRuleHit] = []
     season = season_of(month_branch)
     if scenario in TIANDI_EVENTS and season:
         hit = tiandi_zhuan(ganzhi[0], ganzhi[1], season)
         if hit:
-            hits.append({**hit, 'label': hit['kind'], 'day_ganzhi': ganzhi,
+            hits.append({'rule': hit['rule'], 'kind': hit['kind'], 'passage_id': hit['passage_id'],
+                         'quote': hit['quote'], 'reason': hit['reason'], 'label': hit['kind'],
+                         'day_ganzhi': ganzhi,
                          'plain': f"{SEASON_NAMES[season]}的{hit['kind']}日，《渊海子平》说这天忌{TIANDI_EVENTS[scenario]}"})
     hits.extend(xieji_days.prohibitions(scenario, ganzhi, month_branch))
     return hits
@@ -291,7 +294,7 @@ def split_eligible_windows(availability: list[dict], participant: dict, duration
     return result, omitted
 
 
-def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str) -> dict:
+def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str) -> Ranking:
     """Rank ``candidate_comparison`` rows against the clause tiers.
 
     Reads day and hour pillars straight from the participant's own segments via
@@ -303,7 +306,9 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
         raise ValueError(f'{scenario} 未映射到古法名目；不得套用择日条款')
     segments = participant['target']['segments']
     natal_year_branch = participant['natal']['four_pillars']['year'].get('branch')
-    ranked, excluded, unrankable = [], [], []
+    ranked: list[RankingRow] = []
+    excluded: list[RankingRow] = []
+    unrankable: list[Unrankable] = []
     for candidate in comparison:
         if not candidate.get('available'):
             continue
@@ -315,11 +320,9 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
             dated = [p for p in pillars if 'day' in p]
             if not dated:
                 unrankable.append({'candidate_id': candidate['candidate_id'],
-                                   'start': window['start'],
+                                   'start': window['start'], 'end': window['end'],
                                    'reason': '该窗口未细算到日柱，无法套用忌日条款'})
                 continue
-            entry = {'candidate_id': candidate['candidate_id'], 'start': window['start'],
-                     'end': window['end'], 'day_ganzhi': dated[0]['day']}
             # Judge every day the window touches, not just the one it starts on.
             # An overnight departure clears its first day and can still spend
             # most of its length on a prohibition day.
@@ -328,7 +331,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
             # seasons. Keying on the day and taking the first month made the
             # verdict depend on where the window happened to start.
             days: list[dict] = []
-            blocked: list[dict] = []
+            blocked: list[DayRuleHit] = []
             unresolved: list[str] = []
             folk: list[dict] = []
             for ganzhi, month in dict.fromkeys((p['day'], p['month']) for p in dated):
@@ -345,7 +348,6 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                 clash = zodiac_clash(ganzhi[1], natal_year_branch) if natal_year_branch else None
                 if clash and clash not in folk:
                     folk.append(clash)
-            entry['days'] = days
             # Each covered hour is tested against the stem of the day it falls
             # in; a window is not penalised for a prohibited hour it never
             # touches, nor cleared by the wrong day's table.
@@ -356,8 +358,8 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
             # readings names. A window that touches none of them is as clear of
             # this rule as any other day; naming the day alone blocked every
             # 戊/癸 morning, about a fifth of all days.
-            hits: dict[tuple[str, str], dict] = {}
-            contested: dict[tuple[str, str], dict] = {}
+            hits: dict[tuple[str, str], HourHit] = {}
+            contested: dict[tuple[str, str], ContestedHourHit] = {}
             for ref, pillar in zip(refs, pillars, strict=True):
                 if 'hour' not in pillar or 'day' not in pillar:
                     continue
@@ -382,12 +384,15 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                             'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
                             'rule_stem': stem, 'readings': readings,
                             'segment_start': ref['start'], 'segment_end': ref['end']}
-            entry['forbidden_hours_in_window'] = list(hits.values())
-            entry['contested_hours_in_window'] = list(contested.values())
-            # Informational only: which covered days have an unsettled rule at
-            # all. Gating reads ``contested_hours_in_window``.
-            entry['unresolved_hour_rules'] = unresolved
-            entry['folk_context'] = folk
+            entry: RankingRow = {
+                'candidate_id': candidate['candidate_id'], 'start': window['start'],
+                'end': window['end'], 'day_ganzhi': dated[0]['day'], 'days': days,
+                'forbidden_hours_in_window': list(hits.values()),
+                'contested_hours_in_window': list(contested.values()),
+                # Informational only: which covered days have an unsettled rule
+                # at all. Gating reads ``contested_hours_in_window``.
+                'unresolved_hour_rules': unresolved,
+                'folk_context': folk}
             if blocked:
                 entry['excluded_by'] = blocked
                 excluded.append(entry)
