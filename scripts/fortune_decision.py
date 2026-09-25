@@ -25,6 +25,29 @@ def route_request(payload: dict, capability: dict) -> dict:
     return result
 
 
+def clean_starts(window: dict, length: timedelta, row: dict | None) -> list[tuple[datetime, datetime]]:
+    """Start-time ranges in ``window`` whose whole event avoids every named hour.
+
+    ``row`` is the screened window; each forbidden or contested hour it lists
+    is a half-open [segment_start, segment_end) block. A start s is clean when
+    [s, s + length) meets no block, i.e. s + length <= a or s >= b. Ranges are
+    inclusive at both ends, like ``allowed_start``.
+    """
+    lo = datetime.fromisoformat(window['allowed_start']['earliest']).astimezone(UTC)
+    hi = datetime.fromisoformat(window['allowed_start']['latest']).astimezone(UTC)
+    hits = (row.get('forbidden_hours_in_window', []) + row.get('contested_hours_in_window', [])) if row else []
+    blocks = sorted((datetime.fromisoformat(h['segment_start']).astimezone(UTC),
+                     datetime.fromisoformat(h['segment_end']).astimezone(UTC)) for h in hits)
+    ranges, cursor = [], lo
+    for a, b in blocks:
+        if a - length >= cursor:
+            ranges.append((cursor, min(hi, a - length)))
+        cursor = max(cursor, b)
+    if cursor <= hi:
+        ranges.append((cursor, hi))
+    return [(x, y) for x, y in ranges if x <= y]
+
+
 def choose_practical(result: dict, preferences: dict | None) -> dict:
     """Return a dated arrangement only from feasible windows and explicit priorities.
 
@@ -52,44 +75,57 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
         return {**base, 'status': 'participant_priority_required'}
     ranking = result.get('practical_screening', result.get('ranking', {}))
     excluded = {(e['candidate_id'], e['start'], e['end']) for e in ranking.get('excluded', [])}
-    cautions = {(e['candidate_id'], e['start'], e['end']) for e in ranking.get('tiers', [])
+    screened = {(e['candidate_id'], e['start'], e['end']): e for e in ranking.get('tiers', [])}
+    cautions = {key for key, e in screened.items()
                 if e.get('forbidden_hours_in_window') or e.get('contested_hours_in_window')}
-    windows = []
+    zone = ZoneInfo(result['window']['timezone'])
+    ranges = []
     for candidate in comparison:
+        length = timedelta(minutes=candidate['duration_minutes'])
         for window in candidate['windows']:
             key = (candidate['candidate_id'], window['start'], window['end'])
             if key in excluded:
                 continue
-            edge = 'latest' if prefer == 'latest' else 'earliest'
-            start = datetime.fromisoformat(window['allowed_start'][edge])
-            end = (start.astimezone(UTC) + timedelta(minutes=candidate['duration_minutes'])).astimezone(ZoneInfo(result['window']['timezone']))
-            placement = {'candidate_id': candidate['candidate_id'], 'start': start.isoformat(),
-                         'end': end.isoformat(), 'timezone': result['window']['timezone'],
-                         'start_is_practical_boundary': True}
-            # With no stated time preference the earliest start is only a
-            # boundary, not a minute the person chose. Offer the whole start
-            # range instead, but only when the entire window passed the screen:
-            # otherwise a later start could land in the very hour a clause names.
-            if (prefer is None and key not in cautions
-                    and window['allowed_start']['earliest'] != window['allowed_start']['latest']):
-                placement['flexible_start'] = dict(window['allowed_start'])
-            windows.append(placement)
-    if not windows:
+            for lo, hi in clean_starts(window, length, screened.get(key)):
+                ranges.append({'candidate_id': candidate['candidate_id'], 'lo': lo, 'hi': hi,
+                               'length': length})
+
+    def placement(option: dict, at: datetime) -> dict:
+        # Without a stated time preference a start is only a boundary, not a
+        # minute the person chose; offer the whole clean start range instead.
+        chosen = {'candidate_id': option['candidate_id'], 'start': at.astimezone(zone).isoformat(),
+                  'end': (at + option['length']).astimezone(zone).isoformat(),
+                  'timezone': result['window']['timezone'], 'start_is_practical_boundary': True}
+        if prefer is None and option['lo'] != option['hi']:
+            chosen['flexible_start'] = {'earliest': option['lo'].astimezone(zone).isoformat(),
+                                        'latest': option['hi'].astimezone(zone).isoformat(),
+                                        'latest_inclusive': True}
+        return chosen
+
+    if not ranges:
         return {**base, 'status': 'clause_conflict' if cautions else 'no_practical_choice'}
     if order is not None:
-        windows = [w for w in windows if w['candidate_id'] in order]
-        windows.sort(key=lambda w: (order.index(w['candidate_id']), datetime.fromisoformat(w['start']).astimezone(UTC)))
+        ranges = [r for r in ranges if r['candidate_id'] in order]
+        ranges.sort(key=lambda r: (order.index(r['candidate_id']), r['lo']))
+        windows = [placement(r, r['lo']) for r in ranges]
         reason = '按你指定的候选优先顺序，选择能容纳完整事件的时间'
     elif prefer:
-        windows.sort(key=lambda w: datetime.fromisoformat(w['start']).astimezone(UTC), reverse=prefer == 'latest')
+        # The earliest (latest) start that keeps the whole event clear, not the
+        # window's edge: an edge that runs into a named hour used to end the
+        # search with a conflict while a clear start sat minutes later.
+        edge = 'hi' if prefer == 'latest' else 'lo'
+        ranges.sort(key=lambda r: r[edge], reverse=prefer == 'latest')
+        windows = [placement(r, r[edge]) for r in ranges]
         reason = '按你希望' + ('尽早' if prefer == 'earliest' else '尽晚') + '安排的条件选择'
         if len(windows) > 1 and datetime.fromisoformat(windows[0]['start']) == datetime.fromisoformat(windows[1]['start']):
             return {**base, 'status': 'practical_tie', 'alternatives': windows}
-    elif len(windows) == 1:
-        reason = ('这是目前唯一能容纳完整事件、且未被已查条款排除的窗口' if ranking else
+    elif len(ranges) == 1:
+        windows = [placement(ranges[0], ranges[0]['lo'])]
+        reason = ('这是目前唯一能容纳完整事件、且未被已查条款排除的时段' if ranking else
                   '这是你提供的档期中唯一能容纳完整事件的窗口')
     else:
-        return {**base, 'status': 'preferences_required', 'alternatives': windows}
+        return {**base, 'status': 'preferences_required',
+                'alternatives': [placement(r, r['lo']) for r in ranges]}
     if not windows:
         return base
     first = windows[0]
@@ -101,9 +137,16 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
         for option in (first, backup):
             if option is None:
                 continue
-            start, end = (datetime.fromisoformat(option[k]).astimezone(UTC) for k in ('start', 'end'))
+            # Re-screen everything the placement allows: the fixed slot, or every
+            # start in a flexible range together with the event that follows it.
+            flexible = option.get('flexible_start')
+            span_start = flexible['earliest'] if flexible else option['start']
+            start = datetime.fromisoformat(option['start']).astimezone(UTC)
+            end = datetime.fromisoformat(option['end']).astimezone(UTC)
+            span_end = ((datetime.fromisoformat(flexible['latest']).astimezone(UTC) + (end - start))
+                        .astimezone(zone).isoformat() if flexible else option['end'])
             exact = compare_candidates([{'id': option['candidate_id'], 'available': True, 'reason': None,
-                                        'intervals': [{'start': option['start'], 'end': option['end']}]}],
+                                        'intervals': [{'start': span_start, 'end': span_end}]}],
                                        result['participants'], duration_minutes=int((end - start).total_seconds() / 60),
                                        timezone=result['window']['timezone'])
             screen = rank_candidates(exact, result['participants'][0], scenario=result['capability']['scenario'])

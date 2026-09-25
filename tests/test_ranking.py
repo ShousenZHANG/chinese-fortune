@@ -433,9 +433,11 @@ def test_forbidden_hours_are_keyed_to_the_day_each_hour_falls_in():
     # unsettled, so it is named as unsettled instead of borrowing one reading.
     assert entry['forbidden_hours_in_window'] == []
     assert entry['unresolved_hour_rules'] == ['癸亥']
-    # The window does reach 癸亥's 子 and 丑, which one reading names.
+    # The window does reach 壬子 and 癸丑, which one reading names. Under 晚子时
+    # the 壬子 hour is 壬戌's night but 癸's 遁, so it is judged as 癸's.
     contested = entry['contested_hours_in_window']
-    assert [(h['day_ganzhi'], h['hour_branch']) for h in contested] == [('癸亥', '子'), ('癸亥', '丑')]
+    assert [(h['day_ganzhi'], h['hour_branch'], h['rule_stem']) for h in contested] == [
+        ('壬戌', '子', '癸'), ('癸亥', '子', '癸'), ('癸亥', '丑', '癸')]
     assert all(h['readings'] == ['yuanhai:c048:p0003'] for h in contested)
 
 
@@ -666,7 +668,7 @@ def test_a_yes_no_question_gets_yes_or_no_first():
     assert _render(_read([_slot('oct15', '2026-10-15')], _OCT, asked))[0].startswith('可以：oct15，')
     assert _render(_read([_slot('oct14', '2026-10-14')], _OCT, asked))[0].startswith('不行。oct14 需要避开')
     dawn = [{'id': 'dawn', 'start': '2026-10-15T03:00', 'end': '2026-10-15T08:00'}]
-    assert _render(_read(dawn, _OCT, asked))[0].startswith('不建议。dawn 的 2026-10-15 03:00–05:00')
+    assert _render(_read(dawn, _OCT, asked))[0].startswith('不建议。dawn 的 2026-10-15 03:00–08:00 放不下完整的 120 分钟')
     # The same requests without a yes/no question do not open with one.
     assert not _render(_read([_slot('oct14', '2026-10-14')], _OCT))[0].startswith('不行')
 
@@ -736,14 +738,17 @@ def test_no_minute_is_invented_when_the_person_gave_no_preference():
     assert 'flexible_start' not in early['practical_choice']['first_choice']
 
 
-def test_a_window_with_a_named_hour_gets_a_fixed_slot_and_a_warning():
+def test_a_window_with_a_named_hour_offers_only_its_clear_starts():
     """oct13 09:00-13:00 reaches 庚申's 午 at 11:41. Offering 「09:00-11:00
-    之间开始都行」 would let an 11:00 start run into it."""
+    之间开始都行」 would let an 11:00 start run into it; a 120-minute event
+    stays clear only if it starts by 09:41."""
     result = _read([_slot('oct13', '2026-10-13')], _OCT)
     choice = result['practical_choice']['first_choice']
-    assert 'flexible_start' not in choice
+    assert choice['flexible_start'] == {'earliest': '2026-10-13T09:00:00+11:00',
+                                        'latest': '2026-10-13T09:41:00+11:00', 'latest_inclusive': True}
     assert (choice['start'], choice['end']) == ('2026-10-13T09:00:00+11:00', '2026-10-13T11:00:00+11:00')
     lead, _ = _render(result)
+    assert '09:00+11:00 至 2026-10-13 09:41+11:00 之间开始都行' in lead
     assert '别把时间挪进 11:41–13:00（午时），这个时辰是庚申日截路空亡的忌时' in lead
 
 
@@ -809,3 +814,73 @@ def test_no_practical_choice_is_made_before_knowing_whom_it_is_for():
     result = read_request(request)
     assert result['practical_choice']['status'] == 'participant_priority_required'
     assert result['practical_choice']['first_choice'] is None
+
+
+def test_a_night_zi_hour_is_judged_by_the_day_whose_series_gave_its_stem():
+    """截路空亡 is read 「以日取时」. Under 晚子时 the 23:00 hour keeps the civil
+    day's pillar but takes the next day's stem: 戊戌日夜子 is 甲子 (己's series),
+    丁酉日夜子 is 壬子 (戊's). Judging by the civil day flagged the first and
+    missed the second."""
+    from fortune_ranking import rule_stem
+    assert rule_stem('戊', '甲子') == '己' and rule_stem('丁', '壬子') == '戊'
+    assert rule_stem('戊', '壬子') == '戊' and rule_stem('庚', '壬午') == '庚'
+    with pytest.raises(ValueError):
+        rule_stem('甲', '壬子')
+    period = {'start': '2026-09-19', 'end': '2026-09-24'}
+    nights = {}
+    for cid, day in (('wu', '2026-09-21'), ('ding', '2026-09-20')):
+        result = _read([_slot(cid, day, '22:50', '23:40')], period, duration_minutes=30)
+        nights[cid] = result
+    wu = nights['wu']['ranking']['tiers'][0]
+    assert wu['day_ganzhi'] == '戊戌' and wu['contested_hours_in_window'] == []
+    assert nights['wu']['recommendation']['status'] == 'practical_choice'
+    (ding,) = nights['ding']['ranking']['tiers'][0]['contested_hours_in_window']
+    assert (ding['day_ganzhi'], ding['rule_stem'], ding['readings']) == ('丁酉', '戊', ['yuanhai:c048:p0003'])
+    assert nights['ding']['recommendation']['status'] == 'clause_conflict'
+    lead, body = _render(nights['ding'])
+    assert '丁酉日夜子（时干按次日戊日起）' in lead
+    assert '丁酉日夜子（时干按次日戊日起）忌时两说并列' in body
+
+
+def test_clean_starts_leave_out_every_start_that_would_touch_a_block():
+    from datetime import timedelta
+
+    from fortune_decision import clean_starts
+    window = {'allowed_start': {'earliest': '2026-10-13T09:00:00+11:00', 'latest': '2026-10-13T16:00:00+11:00'}}
+    row = {'forbidden_hours_in_window': [
+        {'segment_start': '2026-10-13T11:00:00+11:00', 'segment_end': '2026-10-13T12:00:00+11:00'}],
+        'contested_hours_in_window': [
+        {'segment_start': '2026-10-13T12:00:00+11:00', 'segment_end': '2026-10-13T13:00:00+11:00'}]}
+    got = [(a.isoformat(), b.isoformat()) for a, b in clean_starts(window, timedelta(hours=1), row)]
+    # Ending exactly at a block and starting exactly at its end are both clear.
+    assert got == [('2026-10-12T22:00:00+00:00', '2026-10-12T23:00:00+00:00'),
+                   ('2026-10-13T02:00:00+00:00', '2026-10-13T05:00:00+00:00')]
+    # A three-hour event cannot end before 11:00 when it starts at 09:00 or later.
+    assert [(a.isoformat(), b.isoformat()) for a, b in clean_starts(window, timedelta(hours=3), row)] == [
+        ('2026-10-13T02:00:00+00:00', '2026-10-13T05:00:00+00:00')]
+    assert len(clean_starts(window, timedelta(hours=1), None)) == 1
+
+
+def test_earliest_moves_past_a_named_hour_instead_of_giving_up():
+    """A window whose first slot runs into 庚申's 午未 used to end as a conflict
+    even though a clear start existed later the same afternoon."""
+    result = _read([_slot('oct13', '2026-10-13', '10:30', '18:30')], _OCT, preferences={'prefer': 'earliest'})
+    blocks = result['practical_screening']['tiers'][0]['forbidden_hours_in_window']
+    assert [h['hour_branch'] for h in blocks] == ['午', '未']
+    choice = result['practical_choice']
+    assert choice['status'] == 'practical_choice'
+    assert choice['first_choice']['start'] == blocks[-1]['segment_end']  # right after 未 ends
+    assert 'flexible_start' not in choice['first_choice']
+    lead, _ = _render(result)
+    assert lead.startswith('首选 oct13：2026-10-13 15:4')
+    assert '别把时间挪进' in lead
+
+
+def test_two_clear_ranges_in_one_window_are_offered_not_picked():
+    """cross runs 20:00-12:00 over 壬子癸丑; the clear starts fall on either side."""
+    result = _read([{'id': 'cross', 'start': '2026-10-15T20:00', 'end': '2026-10-16T12:00'}], _OCT)
+    assert result['recommendation']['status'] == 'preferences_required'
+    ranges = [a['flexible_start'] for a in result['practical_choice']['alternatives']]
+    assert [r['earliest'][:16] for r in ranges] == ['2026-10-15T20:00', '2026-10-16T03:40']
+    lead, _ = _render(result)
+    assert '可选：cross 2026-10-15 20:00–21:40 之间开始；cross 2026-10-16 03:40–10:00 之间开始。' in lead

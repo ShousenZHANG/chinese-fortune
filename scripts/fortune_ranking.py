@@ -103,6 +103,24 @@ def _wu_zi_dun(day_stem: str) -> dict[str, str]:
     return {branches[i]: stems[(start + i) % 10] for i in range(12)}
 
 
+def rule_stem(day_stem: str, hour_pillar: str) -> str:
+    """The day stem whose 五鼠遁 produced ``hour_pillar``.
+
+    截路空亡 is read 「以日取时」: an hour belongs to the day whose 遁 gave it its
+    stem. Under 晚子时 (sect 2) the 23:00-24:00 hour keeps the civil day's pillar
+    but takes the next day's stem, so 壬戌日夜子 is 壬子 -- one of 癸日's hours,
+    not 壬日's 庚子. Judging it by the civil day read 戊/癸 nights as disputed
+    and missed the 丁/壬 nights that really carry 壬子.
+    """
+    if _wu_zi_dun(day_stem)[hour_pillar[1]] == hour_pillar[0]:
+        return day_stem
+    stems = '甲乙丙丁戊己庚辛壬癸'
+    following = stems[(stems.index(day_stem) + 1) % 10]
+    if _wu_zi_dun(following)[hour_pillar[1]] != hour_pillar[0]:
+        raise ValueError(f'时柱 {hour_pillar} 既不属 {day_stem} 日也不属次日的五鼠遁')
+    return following
+
+
 def jielu_kongwang(day_stem: str) -> dict:
     """Hour-level prohibition derived from the day stem.
 
@@ -304,7 +322,8 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
             for ref, pillar in zip(refs, pillars, strict=True):
                 if 'hour' not in pillar or 'day' not in pillar:
                     continue
-                rule = jielu_kongwang(pillar['day'][0])
+                stem = rule_stem(pillar['day'][0], pillar['hour'])
+                rule = jielu_kongwang(stem)
                 key = (pillar['day'], pillar['hour'][1])
                 # A solar term or midnight can cut one hour into two segments.
                 if key in hits or key in contested:
@@ -313,6 +332,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                 if pillar['hour'][1] in rule['forbidden_hours']:
                     hits[key] = {
                         'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
+                        'rule_stem': stem,
                         'passage_id': rule['passage_id'], 'derivation': rule['derivation'],
                         'segment_start': ref['start'], 'segment_end': ref['end']}
                 elif not rule['resolved']:
@@ -321,7 +341,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                     if readings:
                         contested[key] = {
                             'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
-                            'readings': readings,
+                            'rule_stem': stem, 'readings': readings,
                             'segment_start': ref['start'], 'segment_end': ref['end']}
             entry['forbidden_hours_in_window'] = list(hits.values())
             entry['contested_hours_in_window'] = list(contested.values())

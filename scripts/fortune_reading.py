@@ -18,6 +18,7 @@ from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
     JIELU_METHOD_SOURCE,
     TIANDI_SOURCE,
+    jielu_kongwang,
     rank_candidates,
     split_eligible_windows,
 )
@@ -352,25 +353,32 @@ def _hour_hits(row: dict) -> list[dict]:
     return row.get('forbidden_hours_in_window', []) + row.get('contested_hours_in_window', [])
 
 
+def _day_label(hit: dict) -> str:
+    """「庚申日」, or for a 夜子 hour the day whose 五鼠遁 it belongs to."""
+    day = hit['day_ganzhi']
+    stem = hit.get('rule_stem', day[0])
+    return f'{day}日' if stem == day[0] else f'{day}日夜子（时干按次日{stem}日起）'
+
+
 def _hour_reason(hits: list[dict]) -> str:
     """Why the listed hours matter, without layer-2 vocabulary."""
     parts = []
     settled = [h for h in hits if 'passage_id' in h]
     if settled:
-        days = '、'.join(dict.fromkeys(h['day_ganzhi'] for h in settled))
+        days = '、'.join(dict.fromkeys(_day_label(h) for h in settled))
         which = '这个时辰' if len(settled) == 1 else '这些时辰'
-        parts.append(f'{which}是{days}日截路空亡的忌时，《渊海子平》说这时百事不利')
+        parts.append(f'{which}是{days}截路空亡的忌时，《渊海子平》说这时百事不利')
     contested: dict[str, list[dict]] = {}
     for hit in hits:
         if 'readings' in hit:
-            contested.setdefault(hit['day_ganzhi'], []).append(hit)
+            contested.setdefault(_day_label(hit), []).append(hit)
     for day, rows in contested.items():
         books = {BOOK_NAMES[pid.split(':')[0]] for h in rows for pid in h['readings']}
         others = [b for b in BOOK_NAMES.values() if b not in books]
         which = '这个时辰' if len(rows) == 1 else '这些时辰'
         named = '、'.join(f'《{b}》' for b in BOOK_NAMES.values() if b in books)
         rest = ('，' + '、'.join(f'《{b}》' for b in others) + '不算') if others else ''
-        parts.append(f'{day}日的{which}只有{named}算作忌时{rest}')
+        parts.append(f'{day}的{which}只有{named}算作忌时{rest}')
     return '；'.join(parts)
 
 
@@ -431,12 +439,15 @@ def _conflict_sentence(result: dict, kind: str) -> str:
     checked = practical.get('checked_options') or []
     rows = (checked[-1]['tiers'] + checked[-1]['excluded']) if checked else [
         row for row in result.get('practical_screening', {}).get('tiers', []) if _hour_hits(row)]
+    minutes = next((c['duration_minutes'] for c in result.get('candidate_comparison', [])), None)
     parts = []
     for row in rows:
         on = str(datetime.fromisoformat(row['start']).date())
         hits = _hour_hits(row)
         if hits:
-            detail = f"碰到 {'、'.join(_hour_span(h, on) for h in hits)}，{_hour_reason(hits)}"
+            # Without a checked slot, no start in this window stayed clear.
+            fits = '' if checked or minutes is None else f'放不下完整的 {minutes} 分钟而不'
+            detail = f"{fits}碰到 {'、'.join(_hour_span(h, on) for h in hits)}，{_hour_reason(hits)}"
         elif row.get('excluded_by'):
             detail = '覆盖到' + '、'.join(h['day_ganzhi'] for h in row['excluded_by']) + '日，《渊海子平》说这天忌出行'
         else:
@@ -447,6 +458,21 @@ def _conflict_sentence(result: dict, kind: str) -> str:
         parts = [f"{row['candidate_id']} 的 {_span(row['start'], row['end'])} 目前不能推荐：部分时段未细算到日柱，忌日条款无法套用"
                  for row in (checked[-1]['unrankable'] if checked else [])]
     return '；'.join(parts) + '。' if parts else '已查条款在这些时间上有冲突，目前不能推荐。'
+
+
+def _alternatives_sentence(result: dict, limit: int = 4) -> str:
+    """The clear start ranges a preference would choose between."""
+    options = result.get('practical_choice', {}).get('alternatives') or []
+    if not options:
+        return ''
+    shown = []
+    for option in options[:limit]:
+        flexible = option.get('flexible_start')
+        span = (_span(flexible['earliest'], flexible['latest']) + ' 之间开始' if flexible
+                else _span(option['start'], option['end']))
+        shown.append(f"{option['candidate_id']} {span}")
+    more = f'，另有 {len(options) - limit} 个' if len(options) > limit else ''
+    return '可选：' + '；'.join(shown) + more + '。'
 
 
 def _placement(choice: dict) -> str:
@@ -483,6 +509,8 @@ def _lead_sentence(result: dict) -> str:
         return ('不行。' if kind == 'yes_no' else '') + excluded + '需要换到其他日子再比。'
     if state == 'clause_conflict':
         return ('不建议。' if kind == 'yes_no' else '') + _conflict_sentence(result, kind) + excluded
+    if state in ('preferences_required', 'practical_tie'):
+        return ASK_LEADS[state] + _alternatives_sentence(result) + excluded
     if state in ASK_LEADS:
         return ASK_LEADS[state] + excluded
     if state == 'screened_only':
@@ -541,22 +569,24 @@ def render_answer(result: dict) -> str:
         for row in ranking.get('tiers', []) + ranking.get('excluded', []):
             hits = row.get('forbidden_hours_in_window', [])
             if hits:
-                text = '、'.join(f"{h['day_ganzhi']}日 {_hour_span(h)}" for h in hits)
+                text = '、'.join(f"{_day_label(h)} {_hour_span(h)}" for h in hits)
                 how = '；'.join(dict.fromkeys(h['derivation'] for h in hits))
                 lines.append(f"{row['candidate_id']} 的窗口覆盖到 {text}，是截路空亡的忌时（{JIELU_METHOD_SOURCE}：{how}）。该段‘正犯’的限定仍需连同上下文核对。")
             # An unsettled day is worth a line only where the window reaches an
             # hour one of its readings names; elsewhere both books agree it is clear.
+            # Keyed by the day whose 遁 gave the hour, which a 夜子 hour does not share
+            # with its civil day.
             touched: dict[str, list[dict]] = {}
             for hit in row.get('contested_hours_in_window', []):
-                touched.setdefault(hit['day_ganzhi'], []).append(hit)
-            for day in row.get('days', []):
-                rule = day['hour_rule']
-                if rule['resolved'] or day['day_ganzhi'] in seen or day['day_ganzhi'] not in touched:
+                touched.setdefault(_day_label(hit), []).append(hit)
+            for label, group in touched.items():
+                if label in seen:
                     continue
-                seen.add(day['day_ganzhi'])
+                seen.add(label)
+                rule = jielu_kongwang(group[0]['rule_stem'])
                 both = '；'.join(f"《{BOOK_NAMES[r['passage_id'].split(':')[0]]}》作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
-                spans = '、'.join(_hour_span(h) for h in touched[day['day_ganzhi']])
-                lines.append(f"{day['day_ganzhi']}日忌时两说并列：{both}。白话说，{row['candidate_id']} 覆盖到的 {spans} 只在其中一本书里算忌时，两本书指向不同时间，目前无法据此定下这段能不能用。")
+                spans = '、'.join(_hour_span(h) for h in group)
+                lines.append(f"{label}忌时两说并列：{both}。白话说，{row['candidate_id']} 覆盖到的 {spans} 只在其中一本书里算忌时，两本书指向不同时间，目前无法据此定下这段能不能用。")
     for person in result['participants']:
         if person.get('time_note'):
             lines.append(person['time_note'] + '。')
