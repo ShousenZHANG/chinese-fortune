@@ -702,7 +702,7 @@
           "paths": {
             "ok": true,
             "capabilities.0.personal_ranking": "not_implemented",
-            "capabilities.0.precedence_version": "precedence-v1",
+            "capabilities.0.precedence_version": "precedence-v2",
             "capabilities.0.ranking_reference": "references/26-precedence.md",
             "capabilities.0.calendar_screening": "rule_based"
           }
@@ -758,7 +758,7 @@
           "kind": "file_contains",
           "file": "references/26-precedence.md",
           "needles": [
-            "precedence-v1",
+            "precedence-v2",
             "第三层：自洽者胜",
             "另说：《X》作 Y"
           ]

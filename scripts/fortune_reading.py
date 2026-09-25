@@ -8,6 +8,7 @@ import sys
 from collections.abc import Callable
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
@@ -16,7 +17,9 @@ from classical_guidance import research_sources
 from fortune_calendar import period_facts
 from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
+    EVENT_WORDS,
     JIELU_METHOD_SOURCE,
+    TIANDI_EVENTS,
     TIANDI_SOURCE,
     jielu_kongwang,
     rank_candidates,
@@ -28,6 +31,8 @@ from fortune_time import candidate_windows, resolve_window
 from personal_profiles import birth_arguments, load_profile, validate_person
 from request_time import capture_request_time
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from xieji_days import RULES as XIEJI_RULES
+from xieji_days import SCENARIO_TERMS as XIEJI_TERMS
 
 FIELDS = {'current_timezone', 'request_time', 'period', 'event', 'events', 'participants',
           'candidates', 'duration_minutes', 'busy', 'granularity', 'include_natal_reading', 'include_research',
@@ -192,7 +197,7 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
         if capability.get('calendar_screening') == 'rule_based':
             # Keep the original calendar-only availability; expose excluded parts separately.
             screened, result['excluded_segments'] = split_eligible_windows(
-                screened, result['participants'][0], payload.get('duration_minutes', 60))
+                screened, result['participants'][0], payload.get('duration_minutes', 60), scenario)
         result['candidate_comparison'] = compare_candidates(result['availability'], result['participants'],
             duration_minutes=payload.get('duration_minutes', 60), timezone=window['timezone'])
         result['event_method'] = event_basis(result['candidate_comparison'], result['participants'],
@@ -308,7 +313,6 @@ ASK_LEADS = {
     'preferences_required': '这些窗口都排得下这件事，现有古法还没有分出个人优劣。你更想尽早、尽晚，还是优先某个候选？明确这个偏好后就能给出实用首选和备选。',
     'practical_tie': '按你给的条件，这些安排仍然并列。需要再补一个实际偏好，才能选出首选；现有依据不支持硬分高下。',
 }
-SEASON_NAMES = {'spring': '春季', 'summer': '夏季', 'autumn': '秋季', 'winter': '冬季'}
 BOOK_NAMES = {'yuanhai': '渊海子平', 'sanming': '三命通会'}
 # Only these two states still have evidence worth a timed search; a settled
 # answer that ends on 「还可补查」 reads as if it were not settled.
@@ -408,28 +412,38 @@ def _avoid_sentence(result: dict, choice: dict) -> str:
 def _excluded_sentence(result: dict) -> str:
     """Name each candidate a day clause ruled out, with the day and why."""
     ranking = result.get('ranking', {})
+    # A candidate keeps a usable part if a whole window survived, or if the
+    # practical split kept a piece of an excluded window (a multi-day window
+    # that crosses one barred day).
     survivors = {row['candidate_id'] for row in ranking.get('tiers', [])}
+    survivors |= {c['candidate_id'] for c in result.get('practical_comparison', []) if c['windows']}
     counts: dict[str, int] = {}
     for row in ranking.get('excluded', []):
         counts[row['candidate_id']] = counts.get(row['candidate_id'], 0) + 1
+    # The barred stretch of each (candidate, day), from the practical split.
+    # Pieces are stored in UTC; the reader gets the event's own clock.
+    zone = ZoneInfo(result['window']['timezone'])
+    cut: dict[tuple[str, str], tuple[str, str]] = {}
+    for piece in result.get('excluded_segments', []):
+        key = (piece['candidate_id'], piece['day_ganzhi'])
+        start, end = (datetime.fromisoformat(piece[k]).astimezone(zone).isoformat() for k in ('start', 'end'))
+        lo, hi = cut.get(key, (start, end))
+        cut[key] = (min(lo, start, key=datetime.fromisoformat), max(hi, end, key=datetime.fromisoformat))
     sentences = []
     for row in ranking.get('excluded', []):
-        seasons = {d['day_ganzhi']: d['season'] for d in row.get('days', [])}
-        hits = list({h['day_ganzhi']: h for h in row['excluded_by']}.values())
-        if len(hits) == 1:
-            hit = hits[0]
-            what = f"覆盖到{hit['day_ganzhi']}日，是{SEASON_NAMES.get(seasons.get(hit['day_ganzhi']) or '', '')}的{hit['kind']}日"
-            which = '这天'
-        else:
-            what = '覆盖到' + '、'.join(
-                f"{h['day_ganzhi']}日（{SEASON_NAMES.get(seasons.get(h['day_ganzhi']) or '', '')}的{h['kind']}日）"
-                for h in hits)
-            which = '这几天'
+        by_day: dict[str, list[str]] = {}
+        for hit in row['excluded_by']:
+            by_day.setdefault(hit['day_ganzhi'], []).append(hit['plain'])
+        what = '；'.join(f"覆盖到{day}日，是" + '；也是'.join(plains) for day, plains in by_day.items())
         name = row['candidate_id'] + ' '
-        # A candidate that keeps another window must say which part is out.
+        # A candidate that keeps another part must say which part is out.
         if row['candidate_id'] in survivors or counts[row['candidate_id']] > 1:
-            name += f"的 {_span(row['start'], row['end'])} 这段"
-        sentences.append(f'{name}需要避开：{what}，《渊海子平》说{which}忌出行。')
+            spans = [cut[(row['candidate_id'], day)] for day in by_day if (row['candidate_id'], day) in cut]
+            lo, hi = ((min((s[0] for s in spans), key=datetime.fromisoformat),
+                       max((s[1] for s in spans), key=datetime.fromisoformat)) if spans
+                      else (row['start'], row['end']))
+            name += f"的 {_span(lo, hi)} 这段"
+        sentences.append(f'{name}需要避开：{what}。')
     return ''.join(sentences)
 
 
@@ -449,7 +463,7 @@ def _conflict_sentence(result: dict, kind: str) -> str:
             fits = '' if checked or minutes is None else f'放不下完整的 {minutes} 分钟而不'
             detail = f"{fits}碰到 {'、'.join(_hour_span(h, on) for h in hits)}，{_hour_reason(hits)}"
         elif row.get('excluded_by'):
-            detail = '覆盖到' + '、'.join(h['day_ganzhi'] for h in row['excluded_by']) + '日，《渊海子平》说这天忌出行'
+            detail = '；'.join(f"覆盖到{h['day_ganzhi']}日，是{h['plain']}" for h in row['excluded_by'])
         else:
             continue
         subject = f"{row['candidate_id']} 的 {_span(row['start'], row['end'])}"
@@ -473,6 +487,17 @@ def _alternatives_sentence(result: dict, limit: int = 4) -> str:
         shown.append(f"{option['candidate_id']} {span}")
     more = f'，另有 {len(options) - limit} 个' if len(options) > limit else ''
     return '可选：' + '；'.join(shown) + more + '。'
+
+
+def _day_rule_line(candidate_id: str, hit: dict) -> str:
+    """Layer-2 line for one excluded day: the rule, its derivation, its passages."""
+    head = f"{candidate_id} 原可选窗口覆盖到 {hit['day_ganzhi']} 日"
+    if 'sources' not in hit:  # 天地转杀
+        return f"{head}，是{hit['plain']}（{hit['passage_id']}）。"
+    qili, *avoid, binding = hit['sources']
+    return (f"{head}：{hit['label']}，{hit['derivation']}（起例 {qili['passage_id']}）；"
+            f"所忌作「……{hit['quote']}……」（{hit['passage_id']}）；"
+            f"「{binding['quote']}」（{binding['passage_id']}）。")
 
 
 def _placement(choice: dict) -> str:
@@ -515,7 +540,8 @@ def _lead_sentence(result: dict) -> str:
         return ASK_LEADS[state] + excluded
     if state == 'screened_only':
         remaining = '、'.join(result['recommendation'].get('remaining', []))
-        return (f'{remaining} 没有碰到本次检查的出行忌日，但这一项检查还不能说明它整体适合你。' + excluded)
+        event = EVENT_WORDS.get(result['capability']['scenario'], '')
+        return (f'{remaining} 没有碰到本次检查的{event}忌日，但这一项检查还不能说明它整体适合你。' + excluded)
     # evidence_needed: a period or custom question with no dated verdict.
     capability = result['capability']
     observations = [o for p in result['participants'] for o in p['traditional_observations']]
@@ -559,12 +585,21 @@ def render_answer(result: dict) -> str:
         return '\n\n'.join(lines)
     ranking = result.get('ranking', {})
     if ranking.get('tiers') or ranking.get('excluded'):
-        lines.append('《渊海子平·论天地转杀》说：“其日最忌，上官受职、出行商贾、造作、嫁娶。”（' + TIANDI_SOURCE + '）白话说，这条是在指出特定季节需要避开的日子；没有碰到它，不等于其他条件都合适。这项检查按出行日期计算，没有用完整八字给你排名。')
+        scenario = ranking.get('scenario', result['capability']['scenario'])
+        event = EVENT_WORDS.get(scenario, '')
+        if scenario in TIANDI_EVENTS:
+            lines.append('《渊海子平·论天地转杀》说：“其日最忌，上官受职、出行商贾、造作、嫁娶。”（' + TIANDI_SOURCE + f'）白话说，这条是在指出特定季节需要避开的日子；没有碰到它，不等于其他条件都合适。这项检查按{event}日期计算，没有用完整八字给你排名。')
+        checked = [r for r in XIEJI_RULES if any(XIEJI_TERMS.get(scenario, '\0') in a['quote'] for a in r['avoid'])]
+        if checked:
+            names = '、'.join(r['label'] for r in checked)
+            ids = '、'.join(dict.fromkeys(a['passage_id'] for r in checked for a in r['avoid']))
+            lines.append(f'本次还按《协纪辨方书》卷十核了{names}（{ids}）：书里把{event}列在这几种日子的所忌里，并写明遇到吉神也照样忌。'
+                         f'协纪其余按吉凶轻重取舍的宜忌没有实现，所以没碰到这几种日子，不等于这天宜{event}。')
         if state == 'practical_choice' and any(row.get('excluded_by') or _hour_hits(row) for row in ranking.get('tiers', []) + ranking.get('excluded', [])):
             lines.append('下面说明原可选大窗口里需要避开的部分。上面的安排仅指已另行核查的具体子时段，不包含这些部分。')
         for row in ranking.get('excluded', []):
             for hit in row['excluded_by']:
-                lines.append(f"{row['candidate_id']} 原可选窗口覆盖到 {hit['day_ganzhi']} 日，命中这条忌日规则。")
+                lines.append(_day_rule_line(row['candidate_id'], hit))
         seen = set()
         for row in ranking.get('tiers', []) + ranking.get('excluded', []):
             hits = row.get('forbidden_hours_in_window', [])

@@ -19,10 +19,10 @@ SCENARIOS = {
     'work_conversation': ('工作沟通、谈薪、转岗', 'selection', '本事项与个人八字结合的日时条款', 'not_implemented'),
     'exam': ('学习考试', 'selection', '赴举与现代考试的适用差别、本人条件及完整取舍规则', 'not_implemented'),
     'relationship_conversation': ('约会、感情沟通', 'selection', '该事项适用的本人命盘及日时规则', 'not_implemented'),
-    'travel': ('出行', 'selection', '通用忌日筛选已实现；完整个人吉凶排序和忌时取舍仍缺依据', 'rule_based'),
-    'wedding': ('订婚、领证、婚礼', 'selection', '具体仪式、双方同等考虑及各条禁宜的完整优先关系', 'not_implemented'),
-    'moving': ('搬家、入住', 'selection', '区别修造与入住、宅长、朝向等条件及完整规则', 'not_implemented'),
-    'business': ('开业、产品与作品发布', 'selection', '负责人角色、现代事项映射及个人条件的完整规则', 'not_implemented'),
+    'travel': ('出行', 'selection', '通用忌日筛选已实现（天地转杀与协纪不受吉神化解的忌日）；协纪按轻重取舍的宜忌、完整个人吉凶排序和忌时取舍仍缺依据', 'rule_based'),
+    'wedding': ('订婚、领证、婚礼', 'selection', '通用嫁娶忌日筛选已实现；具体仪式与古法名目的对应、双方同等考虑及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
+    'moving': ('搬家、入住', 'selection', '通用般移（移徙）忌日筛选已实现；入宅与修造的区别、宅长、朝向及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
+    'business': ('开业、产品与作品发布', 'selection', '通用开市忌日筛选已实现；产品与作品发布是否算开市、负责人角色及协纪按轻重取舍的宜忌仍缺依据', 'rule_based'),
     'billing': ('报价、催款', 'selection', '日常事项的个人择时依据，不能借用买卖投资判断', 'not_implemented'),
     'multiple_events': ('连续行程', 'itinerary', '现实联合可行性已实现；命理排名仍须每项事件各自的完整依据', 'not_implemented'),
     'compatibility': ('关系匹配', 'specialist', '双方资料；合婚独立规则，不借用择时完成状态', 'not_implemented'),
@@ -31,7 +31,7 @@ SCENARIOS = {
     'fengshui': ('环境与风水', 'specialist', '实际布局、朝向、测量口径及本法依据', 'not_implemented'),
     'review': ('复盘纠错', 'specialist', '原始判断、当时输入与版本、已发生事实；不倒改为命中', 'not_implemented'),
 }
-PRECEDENCE_VERSION = 'precedence-v1'
+PRECEDENCE_VERSION = 'precedence-v2'
 
 SOURCE_FILE = Path(__file__).resolve().parents[1] / 'references' / 'forecast-source-audit.json'
 EXAMPLE_HASHES = {

@@ -18,6 +18,7 @@ from __future__ import annotations
 from copy import deepcopy
 from datetime import UTC, datetime, timedelta
 
+import xieji_days
 from fortune_rules import PRECEDENCE_VERSION
 
 # 天地转杀（yuanhai:c052:p0004）：秋见辛酉为天转、癸酉为地转；其日最忌「出行商贾」。
@@ -55,11 +56,41 @@ JIELU_READINGS = (
 )
 
 # 事项 -> 条款所列的古法名目。天地转杀原文写「上官受职、出行商贾、造作、嫁娶」；
-# 截路空亡原文写「出入求財交易上官嫁娶百事皆忌」。现代事项映射到古法名目须显式，
-# 不在此表内的事项不套用这两条。
+# 截路空亡原文写「出入求財交易上官嫁娶百事皆忌」；《协纪辨方书》各条所忌用卷十一
+# 的用事名（见 xieji_days）。现代事项映射到古法名目须显式，不在此表内的事项不套用。
 SCENARIO_TERMS = {
-    'travel': ('出行商贾', '出入'),
+    'travel': ('出行商贾', '出入', '行幸'),
+    'wedding': ('嫁娶',),
+    'moving': ('般移',),
+    'business': ('開市', '交易'),
 }
+# The word in the 天地转杀 quote each scenario falls under. 搬家 and 开市 are
+# not named there (造作 is building work), so the clause does not screen them.
+TIANDI_EVENTS = {'travel': '出行', 'wedding': '嫁娶'}
+EVENT_WORDS = {'travel': '出行', 'wedding': '嫁娶', 'moving': '搬家', 'business': '开市'}
+SEASON_NAMES = {'spring': '春季', 'summer': '夏季', 'autumn': '秋季', 'winter': '冬季'}
+
+
+def day_prohibitions(scenario: str, ganzhi: str, month_branch: str) -> list[dict]:
+    """Every sourced day rule that bars ``scenario`` on this day, in rule order.
+
+    天地转杀 (《渊海子平》) where the scenario is named in it, then the
+    《协纪辨方书》 prohibitions no 吉神 can lift. Each hit carries ``plain``, the
+    reader's sentence for it.
+    """
+    hits = []
+    season = season_of(month_branch)
+    if scenario in TIANDI_EVENTS and season:
+        hit = tiandi_zhuan(ganzhi[0], ganzhi[1], season)
+        if hit:
+            hits.append({**hit, 'label': hit['kind'], 'day_ganzhi': ganzhi,
+                         'plain': f"{SEASON_NAMES[season]}的{hit['kind']}日，《渊海子平》说这天忌{TIANDI_EVENTS[scenario]}"})
+    hits.extend(xieji_days.prohibitions(scenario, ganzhi, month_branch))
+    return hits
+
+
+def day_rule_sources(scenario: str) -> list[str]:
+    return ([TIANDI_SOURCE] if scenario in TIANDI_EVENTS else []) + xieji_days.rule_sources(scenario)
 
 # 五行 -> 颜色。来自 references/00-foundations.md 的传统属性映射表；该表的表头
 # 自带一句「不证明方位、颜色能改变结果」，所以本表只用于命名五行对应的颜色，
@@ -82,7 +113,7 @@ def _clash_branch(branch: str) -> str:
 
 
 def tiandi_zhuan(day_stem: str, day_branch: str, season: str) -> dict | None:
-    """Day-level travel prohibition. Returns the hit, or None when clear."""
+    """天地转杀 for the day; which 用事 it bars is the caller's mapping. None when clear."""
     pair = TIANDI_ZHUAN.get(season)
     if pair is None:
         return None
@@ -220,7 +251,8 @@ def season_of(month_branch: str) -> str | None:
             '亥': 'winter', '子': 'winter', '丑': 'winter'}.get(month_branch)
 
 
-def split_eligible_windows(availability: list[dict], participant: dict, duration: int) -> tuple[list[dict], list[dict]]:
+def split_eligible_windows(availability: list[dict], participant: dict, duration: int,
+                           scenario: str = 'travel') -> tuple[list[dict], list[dict]]:
     """Retain complete-event subwindows when a flexible interval crosses a barred day.
 
     Only the implemented day exclusion splits availability; disputed hour rules
@@ -239,11 +271,12 @@ def split_eligible_windows(availability: list[dict], participant: dict, duration
                 if lo >= hi:
                     continue
                 p = segment['facts']['pillars']
-                season = season_of(p['month'][1])
-                hit = tiandi_zhuan(p['day'][0], p['day'][1], season) if 'day' in p and season else None
-                if hit:
+                hits = day_prohibitions(scenario, p['day'], p['month'][1]) if 'day' in p else []
+                if hits:
+                    # The first hit keeps the old flat shape; ``excluded_by`` has them all.
                     omitted.append({'candidate_id': candidate['id'], 'start': lo.isoformat(),
-                                    'end': hi.isoformat(), 'day_ganzhi': p['day'], **hit})
+                                    'end': hi.isoformat(), 'day_ganzhi': p['day'], **hits[0],
+                                    'excluded_by': hits})
                 elif runs and runs[-1][1] == lo:
                     runs[-1] = (runs[-1][0], hi)
                 else:
@@ -254,7 +287,7 @@ def split_eligible_windows(availability: list[dict], participant: dict, duration
         candidate['intervals'] = pieces
         candidate['available'] = bool(pieces)
         if not pieces and candidate.get('reason') is None:
-            candidate['reason'] = '按已核出行忌日条款筛选后，没有能容纳完整事件的时间'
+            candidate['reason'] = f'按已核{EVENT_WORDS[scenario]}忌日条款筛选后，没有能容纳完整事件的时间'
     return result, omitted
 
 
@@ -266,6 +299,8 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
     be judged on a pillar the calendar did not produce. Candidates whose window
     lacks day granularity are reported as unrankable rather than assumed clear.
     """
+    if scenario not in SCENARIO_TERMS:
+        raise ValueError(f'{scenario} 未映射到古法名目；不得套用择日条款')
     segments = participant['target']['segments']
     natal_year_branch = participant['natal']['four_pillars']['year'].get('branch')
     ranked, excluded, unrankable = [], [], []
@@ -292,15 +327,19 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
             # a day, so one day pillar can sit in two months and therefore two
             # seasons. Keying on the day and taking the first month made the
             # verdict depend on where the window happened to start.
-            days, blocked, unresolved, folk = [], [], [], []
+            days: list[dict] = []
+            blocked: list[dict] = []
+            unresolved: list[str] = []
+            folk: list[dict] = []
             for ganzhi, month in dict.fromkeys((p['day'], p['month']) for p in dated):
                 season = season_of(month[1])
-                hit = tiandi_zhuan(ganzhi[0], ganzhi[1], season) if season else None
                 rule = jielu_kongwang(ganzhi[0])
                 days.append({'day_ganzhi': ganzhi, 'month_ganzhi': month, 'season': season,
                              'resolved': rule['resolved'], 'hour_rule': rule})
-                if hit:
-                    blocked.append({**hit, 'day_ganzhi': ganzhi})
+                # A term can put one day pillar in two months; report each rule once.
+                for hit in day_prohibitions(scenario, ganzhi, month[1]):
+                    if not any((b['rule'], b['day_ganzhi']) == (hit['rule'], ganzhi) for b in blocked):
+                        blocked.append(hit)
                 if not rule['resolved'] and ganzhi not in unresolved:
                     unresolved.append(ganzhi)
                 clash = zodiac_clash(ganzhi[1], natal_year_branch) if natal_year_branch else None
@@ -354,10 +393,10 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
                 excluded.append(entry)
             else:
                 entry['tier'] = 1
-                # Only 天地转杀 gates the tier. 截路空亡 is an hour note that never
-                # changes the tier, so it is cited beside the note it supports
-                # rather than dressed up as a tier basis.
-                entry['sources'] = [TIANDI_SOURCE]
+                # Only the day rules gate the tier. 截路空亡 is an hour note that
+                # never changes the tier, so it is cited beside the note it
+                # supports rather than dressed up as a tier basis.
+                entry['sources'] = day_rule_sources(scenario)
                 entry['context_sources'] = [JIELU_METHOD_SOURCE]
                 ranked.append(entry)
     return {
@@ -375,6 +414,8 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
         # candidates; counting rows made a lone candidate tie with itself.
         'ties': len({r['candidate_id'] for r in ranked}) > 1,
         'scope': ('忌型条款只排除，不在未被排除的候选之间分高下；同 tier 内并列。'
+                  '日级条款为《渊海子平》天地转杀（事项在原文所列时）与《协纪辨方书》自称吉神不能化解的忌日；'
+                  '协纪按吉凶轻重取舍的宜忌（六等）未实现，不据以排除也不据以推荐。'
                   'forbidden_hours_in_window 指该窗口实际覆盖到的忌时，按各时辰所在日的'
                   '日干取表；contested_hours_in_window 指戊、癸日里窗口实际覆盖、且某一说'
                   '点名的时辰。两者仅作层 2 提示，不改变 tier，也不据以在并列候选之间挑选；'
@@ -386,20 +427,18 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
 
 def rank_travel_days(days: list[dict], *, natal_year_branch: str | None = None,
                      scenario: str = 'travel') -> dict:
-    """Rank candidate days for a single-timezone journey.
+    """Rank candidate days for a single-timezone event.
 
-    ``days`` items need ``date``, ``day_stem``, ``day_branch``, ``season``.
-    Returns tiers plus the excluded set; ties keep the input order and are
-    reported as ties rather than broken by an invented rule.
+    ``days`` items need ``date``, ``day_stem``, ``day_branch`` and
+    ``month_branch`` (the solar-term month the 起例 count from). Returns tiers
+    plus the excluded set; ties keep the input order and are reported as ties
+    rather than broken by an invented rule.
     """
     if scenario not in SCENARIO_TERMS:
-        raise ValueError(f'{scenario} 未映射到古法名目；不得套用出行条款')
+        raise ValueError(f'{scenario} 未映射到古法名目；不得套用择日条款')
     ranked, excluded = [], []
     for day in days:
-        hits = []
-        blocked = tiandi_zhuan(day['day_stem'], day['day_branch'], day['season'])
-        if blocked:
-            hits.append(blocked)
+        hits = day_prohibitions(scenario, day['day_stem'] + day['day_branch'], day['month_branch'])
         folk = zodiac_clash(day['day_branch'], natal_year_branch) if natal_year_branch else None
         entry = {'date': day['date'], 'ganzhi': day['day_stem'] + day['day_branch'],
                  'forbidden_hours': jielu_kongwang(day['day_stem']),
@@ -411,7 +450,7 @@ def rank_travel_days(days: list[dict], *, natal_year_branch: str | None = None,
             # Tier 1: no dated prohibition hits. There is no clause ordering
             # clear days against each other, so every clear day shares tier 1.
             entry['tier'] = 1
-            entry['sources'] = [TIANDI_SOURCE]
+            entry['sources'] = day_rule_sources(scenario)
             entry['context_sources'] = [JIELU_METHOD_SOURCE]
             ranked.append(entry)
     return {

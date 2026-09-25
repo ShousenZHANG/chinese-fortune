@@ -22,8 +22,9 @@ from fortune_ranking import (  # noqa: E402
 from fortune_rules import PRECEDENCE_VERSION, capabilities  # noqa: E402
 
 
-def _autumn(date: str, ganzhi: str) -> dict:
-    return {'date': date, 'day_stem': ganzhi[0], 'day_branch': ganzhi[1], 'season': 'autumn'}
+def _autumn(date: str, ganzhi: str, month_branch: str = '酉') -> dict:
+    """An autumn day; 酉 month runs 白露 (09-07) to 寒露 (10-08) in 2026."""
+    return {'date': date, 'day_stem': ganzhi[0], 'day_branch': ganzhi[1], 'month_branch': month_branch}
 
 
 def test_cited_passages_resolve_and_contain_the_quoted_words():
@@ -168,7 +169,9 @@ def test_september_window_has_no_clause_ordering():
     A 2026-09-11..09-30 Sydney departure window was once ranked 09-22 first and
     09-27 second, with 09-18 and 09-30 excluded. That order came from almanac
     verdicts, which 24-personalized-forecast.md forbids as a ranking input.
-    Under the clause tiers the whole window ties.
+    Under the clause tiers only sourced prohibitions exclude and the rest tie:
+    in 酉 month 往亡 falls on 子 days (09-11 戊子, 09-23 庚子) and 月破 on 卯
+    days (09-14 辛卯, 09-26 癸卯), each unlifted by any 吉神 per 《协纪辨方书》 卷十.
     """
     window = [
         _autumn('2026-09-11', '戊子'), _autumn('2026-09-12', '己丑'),
@@ -183,8 +186,9 @@ def test_september_window_has_no_clause_ordering():
         _autumn('2026-09-29', '丙午'), _autumn('2026-09-30', '丁未'),
     ]
     result = rank_travel_days(window, natal_year_branch='丑')
-    assert result['excluded'] == []
-    assert len(result['tiers']) == 20
+    assert {e['date']: [h['label'] for h in e['excluded_by']] for e in result['excluded']} == {
+        '2026-09-11': ['往亡'], '2026-09-14': ['月破'], '2026-09-23': ['往亡'], '2026-09-26': ['月破']}
+    assert len(result['tiers']) == 16
     assert {t['tier'] for t in result['tiers']} == {1}
     assert result['ties'] is True
     # The two clash days stay in tier 1; they surface only as folk context.
@@ -199,9 +203,9 @@ def test_a_real_autumn_prohibition_day_is_excluded():
     the only two prohibition days in that autumn.
     """
     result = rank_travel_days([
-        _autumn('2026-10-13', '庚申'),
-        _autumn('2026-10-14', '辛酉'),
-        _autumn('2026-10-26', '癸酉'),
+        _autumn('2026-10-13', '庚申', '戌'),
+        _autumn('2026-10-14', '辛酉', '戌'),
+        _autumn('2026-10-26', '癸酉', '戌'),
     ])
     assert [e['date'] for e in result['excluded']] == ['2026-10-14', '2026-10-26']
     kinds = [e['excluded_by'][0]['kind'] for e in result['excluded']]
@@ -220,7 +224,7 @@ def test_every_tier_carries_a_resolvable_source():
 
 def test_unmapped_scenario_refuses_to_borrow_travel_clauses():
     with pytest.raises(ValueError, match='未映射到古法名目'):
-        rank_travel_days([_autumn('2026-09-22', '己亥')], scenario='wedding')
+        rank_travel_days([_autumn('2026-09-22', '己亥')], scenario='interview')
 
 
 def test_ranking_declares_the_precedence_version_it_used():

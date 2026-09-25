@@ -10,7 +10,7 @@ Job searches, interviews, travel, relationship conversations and new everyday sc
 
 Answers use natural Chinese, normally 300–600 characters: the useful conclusion first, then a necessary short quotation and an immediate explanation of its meaning and personal applicability. Supported parts are answered first; missing sources trigger a recorded five-minute research budget using the host's available search tools. Candidate material stays outside the package and is never automatically registered as an executable rule.
 
-Explicit practical preferences can select a first and backup appointment with dates, start/end times and time zones. These are practical choices, distinct from personal auspiciousness ranking, which remains incomplete. Travel has a generic day-exclusion filter; it does not use the full natal chart to establish personal suitability. Known textual variants now follow normal passage retrieval.
+Explicit practical preferences can select a first and backup appointment with dates, start/end times and time zones. These are practical choices, distinct from personal auspiciousness ranking, which remains incomplete. Travel, weddings, moving and business openings have a generic day-exclusion filter (天地转杀 from Yuanhai Ziping, and the Xieji Bianfang Shu prohibitions it says no auspicious spirit can lift); it does not use the full natal chart to establish personal suitability. Known textual variants now follow normal passage retrieval.
 
 ## Capabilities
 

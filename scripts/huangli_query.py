@@ -92,6 +92,30 @@ def _tiandi_conflicts(lunar: Any, day_yi: list[str] | None) -> list[dict]:
                      '两者是不同的体系; 本工具不裁决, 两说并列。'}]
 
 
+# 通书宜项 -> the scenario whose 协纪 用事 name it is. 出行/移徙 rest on 卷十一's
+# own notes 「出行同」「移徙同」 (see xieji_days.TERM_EQUIVALENCE).
+_XIEJI_YI = {'出行': 'travel', '嫁娶': 'wedding', '移徙': 'moving', '开市': 'business'}
+
+
+def _xieji_conflicts(lunar: Any, day_yi: list[str] | None) -> list[dict]:
+    """通书宜项里, 《协纪辨方书》卷十写明「与吉神并仍忌」的那几项。
+
+    例如 2020-06-02 丙子是夏季四忌, 协纪列嫁娶为所忌且「德神不能化解」,
+    通书表却列嫁娶为宜。协纪自言「舊本無四忌今依起例補之」, 分歧由此而来。
+    同样只并列, 不裁决。按正午所在的节气月判断; 交节当天上下午可能分属两月。
+    """
+    from xieji_days import prohibitions
+    day, month = lunar.getDayInGanZhiExact(), lunar.getMonthZhiExact()
+    found = []
+    for item in day_yi or []:
+        scenario = _XIEJI_YI.get(item)
+        for hit in prohibitions(scenario, day, month) if scenario else []:
+            found.append({**hit, 'yi_item': item,
+                          'note': f'通书宜忌表列「{item}」为宜；《协纪辨方书》卷十把它列在{hit["label"]}的所忌里，'
+                                  '并写明与吉神并仍忌。两者是不同的体系; 本工具不裁决, 两说并列。'})
+    return found
+
+
 def _hour_pillars(lunar: Any) -> list[dict]:
     """Return the queried day's 13 时辰 blocks: 早子 … 亥 … 夜子.
 
@@ -155,8 +179,9 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   ji_shi xiong_shi shichen_detail directions peng_zu_bai_ji
   tai_shen_fang_wei chong_sha jieqi
 
-clause_conflicts: [] on most days. On a 天地转杀 day, the 宜 items the
-  clause itself names as 最忌, with passage_id; side by side, not adjudicated.
+clause_conflicts: [] on most days. 宜 items that 天地转杀 names as 最忌, or that
+  《协纪辨方书》卷十 forbids even beside 吉神 (月破/四廢/四忌/四窮/往亡/歸忌),
+  with passage_id; side by side, not adjudicated.
 
 shichen_detail: 13 rows, 早子 00:00-01:00 ... 亥 ... 夜子 23:00-24:00.
   Each row: shichen branch hour_range ganzhi tian_shen huang_hei_dao
@@ -274,7 +299,7 @@ def main(argv: list[str] | None = None) -> int:
         ),
         "jian_chu_tendency": jian_chu,
         "jian_chu_conflicts": conflicts,
-        "clause_conflicts": _tiandi_conflicts(lunar, day_yi),
+        "clause_conflicts": _tiandi_conflicts(lunar, day_yi) + _xieji_conflicts(lunar, day_yi),
         "ji_shi": ji_shi,
         "xiong_shi": xiong_shi,
         "shichen_detail": ji_xiong_shichen,
