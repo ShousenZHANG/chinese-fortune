@@ -52,6 +52,8 @@ if ($LASTEXITCODE -ne 0) { throw 'Artifact verification failed' }
 
 发布后把公开附件下载到另一个新目录，再执行相同的 `--verify-only --expected-commit` 检查，并将公开 SHA256SUMS 与受测下载目录逐字节比较。记录远端 release URL、tag/commit、CI run、运行包和来源包 SHA256；本地重新构建成功不能替代这一步公开附件核对。
 
+`.github/workflows/release.yml` 在 GitHub 上执行同一套步骤，手动触发时只需给出 main 上一次成功 CI 的 run ID。它核对 run 的工作流名、分支、结论和提交是否在 main 上；下载该 run 的 artifact，核对 CI-PROVENANCE.json、SHA256SUMS 与 `--verify-only`；标签已存在就停止；先建草稿并逐字节比对附件，再发布，随后核对标签指向受测提交，并把 GitHub 实际提供的附件重新下载、逐字节比对和校验。它不重新构建，发布说明取自该提交 CHANGELOG 的最新条目。发布者仍应在本机另行下载公开附件复核一次。
+
 ## 检查入口与保护力
 
 原 `run_checks.py` 独有的 CLI 黄金断言迁入 pytest，失败输入契约、Markdown 可达性、包完整性和新环境安装仍保留。重复启动 pytest 的 harness、固定措辞/欠账数量/脚本行数断言已移除。源码原地变异器及会写入真实 utils.py 的守卫已删除；变异只能在内存或临时副本进行。

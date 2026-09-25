@@ -1,0 +1,161 @@
+name: Release
+
+# Publishes exactly what one successful CI run on main uploaded, following
+# docs/RELEASE-PROCESS.md: check the run's identity and conclusion, the
+# artifact's provenance and checksums, verify the runtime ZIP, create the tag
+# on that tested commit only, then download what GitHub serves and compare it
+# byte for byte. Nothing is rebuilt here.
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "ID of a successful CI run on main whose artifact is released"
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      RUN_ID: ${{ inputs.run_id }}
+    steps:
+      - name: Check the CI run's identity and conclusion
+        id: run
+        run: |
+          set -euo pipefail
+          [[ "$RUN_ID" =~ ^[0-9]+$ ]] || { echo "::error::run_id must be a number"; exit 1; }
+          gh run view "$RUN_ID" --json headSha,headBranch,conclusion,workflowName,event > run.json
+          python3 - <<'PY'
+          import json, os
+          run = json.load(open('run.json', encoding='utf-8'))
+          problems = [f'{key}={run[key]!r}, expected {want!r}' for key, want in
+                      (('workflowName', 'CI'), ('headBranch', 'main'), ('conclusion', 'success'))
+                      if run[key] != want]
+          if run['event'] not in ('push', 'workflow_dispatch'):
+              problems.append(f"event={run['event']!r}")
+          if problems:
+              raise SystemExit('CI run not releasable: ' + '; '.join(problems))
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
+              out.write(f"sha={run['headSha']}\n")
+          PY
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ steps.run.outputs.sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Download and verify the CI artifact
+        id: artifact
+        env:
+          SHA: ${{ steps.run.outputs.sha }}
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor "$SHA" origin/main || { echo "::error::$SHA is not on main"; exit 1; }
+          gh run download "$RUN_ID" -n chinese-fortune-skill -D artifact
+          python - <<'PY'
+          import hashlib, json, os, zipfile
+          from pathlib import Path
+          d = Path('artifact')
+          provenance = json.loads((d / 'CI-PROVENANCE.json').read_text(encoding='utf-8'))
+          sums = (d / 'SHA256SUMS').read_text(encoding='utf-8')
+          assert provenance['commit'] == os.environ['SHA'], 'provenance commit mismatch'
+          assert str(provenance['ci_run_id']) == os.environ['RUN_ID'], 'provenance run mismatch'
+          assert provenance['checksums'] == sums, 'CI checksum record mismatch'
+          zips = sorted(d.glob('*.zip'))
+          runtime = [z for z in zips if not z.name.endswith('-sources.zip')]
+          assert len(zips) == 2 and len(runtime) == 1, [z.name for z in zips]
+          listed = dict(reversed(line.split('  ', 1)) for line in sums.splitlines())
+          assert set(listed) == {z.name for z in zips}, 'SHA256SUMS lists other files'
+          for z in zips:
+              assert listed[z.name] == hashlib.sha256(z.read_bytes()).hexdigest(), z.name
+          with zipfile.ZipFile(runtime[0]) as package:
+              version = json.loads(package.read('chinese-fortune/RELEASE.json'))['version']
+          assert runtime[0].name == f'chinese-fortune-v{version}.zip', runtime[0].name
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
+              out.write(f'version={version}\nruntime={runtime[0]}\n')
+          PY
+
+      - name: Verify the runtime ZIP against the tested commit
+        env:
+          SHA: ${{ steps.run.outputs.sha }}
+          RUNTIME: ${{ steps.artifact.outputs.runtime }}
+        run: python -X utf8 evals/package_smoke.py --archive "$RUNTIME" --expected-commit "$SHA" --verify-only
+
+      - name: Prepare notes; refuse an existing tag
+        env:
+          SHA: ${{ steps.run.outputs.sha }}
+          VERSION: ${{ steps.artifact.outputs.version }}
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --tags origin "refs/tags/v$VERSION" >/dev/null; then
+            echo "::error::tag v$VERSION already exists; tags are never overwritten"; exit 1
+          fi
+          python - <<'PY'
+          import os, re
+          from pathlib import Path
+          version, sha, run = os.environ['VERSION'], os.environ['SHA'], os.environ['RUN_ID']
+          text = Path('CHANGELOG.md').read_text(encoding='utf-8')
+          heads = list(re.finditer(r'^## \[([0-9.]+)\].*$', text, re.M))
+          assert heads and heads[0].group(1) == version, 'CHANGELOG latest entry is not ' + version
+          end = heads[1].start() if len(heads) > 1 else len(text)
+          body = text[heads[0].end():end].strip()
+          # Relative repository links would resolve against the release page.
+          base = f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/blob/v{version}/"
+          body = re.sub(r'\]\((?!https?://|#)([^)]+)\)', lambda m: f'](' + base + m.group(1) + ')', body)
+          body += (f'\n\n验证：附件来自提交 `{sha}` 的完整 CI（run {run}：Python 3.11/3.12、覆盖率门槛、'
+                   'Windows 检查和独立安装验证），由 Release 工作流原样转发，未重新构建。'
+                   'CI run 与校验信息见附件 `CI-PROVENANCE.json` 和 `SHA256SUMS`。\n\n'
+                   f'运行包为 `chinese-fortune-v{version}.zip`；原始来源材料单独提供在 `-sources.zip`。'
+                   '本版本不代表现实预测准确率已经得到验证。\n')
+          Path('notes.md').write_text(body, encoding='utf-8')
+          PY
+
+      - name: Create a draft and check its attachments
+        env:
+          SHA: ${{ steps.run.outputs.sha }}
+          VERSION: ${{ steps.artifact.outputs.version }}
+        run: |
+          set -euo pipefail
+          gh release create "v$VERSION" --draft --target "$SHA" --title "v$VERSION" \
+            --notes-file notes.md artifact/*.zip artifact/SHA256SUMS artifact/CI-PROVENANCE.json
+          gh release download "v$VERSION" -D draft
+          for f in artifact/*; do cmp "$f" "draft/$(basename "$f")"; done
+          [ "$(ls draft | wc -l)" -eq "$(ls artifact | wc -l)" ]
+
+      - name: Publish, then check the tag and the served bytes
+        env:
+          SHA: ${{ steps.run.outputs.sha }}
+          VERSION: ${{ steps.artifact.outputs.version }}
+        run: |
+          set -euo pipefail
+          gh release edit "v$VERSION" --draft=false
+          tagged=$(git ls-remote origin "refs/tags/v$VERSION" | cut -f1)
+          [ "$tagged" = "$SHA" ] || { echo "::error::tag v$VERSION points to $tagged, not $SHA"; exit 1; }
+          gh release download "v$VERSION" -D public
+          for f in artifact/*; do cmp "$f" "public/$(basename "$f")"; done
+          [ "$(ls public | wc -l)" -eq "$(ls artifact | wc -l)" ]
+          python -X utf8 evals/package_smoke.py --archive "public/chinese-fortune-v$VERSION.zip" \
+            --expected-commit "$SHA" --verify-only
+          {
+            echo "### v$VERSION"
+            echo "- release: $(gh release view "v$VERSION" --json url --jq .url)"
+            echo "- commit: \`$SHA\`, CI run: $RUN_ID"
+            echo '```'
+            cat public/SHA256SUMS
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -41,6 +41,7 @@ a9b291f 把 `references/27-direct-answer.md` 从 133 行删到 54 行，首句�
 - 发行包不再带 `scripts/requirements-dev.txt`：该文件首行写着「不进运行包」，此前却一直随包发布。门禁改为从 `SCRIPT_EXCLUDE` 推导。
 - `fortune_reading.py` 的白话渲染移出输入错误的 `except`：渲染阶段的 KeyError 是缺陷，不能再报成「目前还算不了这一部分」。
 - 删除无人调用的 `utils.parse_datetime_arg`。
+- 新增手动触发的 `.github/workflows/release.yml`：按 [发布流程](docs/RELEASE-PROCESS.md) 把一次成功的 main CI 产物原样发布，核对 run 身份、来源与校验和，拒绝覆盖已有标签，先草稿后发布，并逐字节核对 GitHub 实际提供的附件。门禁覆盖全部工作流的 Actions 固定版本。
 
 ### 发布记录缺口
 

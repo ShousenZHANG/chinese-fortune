@@ -299,15 +299,30 @@ def test_actions_are_pinned_and_dependency_pr_creation_is_paused():
     import re
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    ci = (root / '.github/workflows/ci.yml').read_text(encoding='utf-8')
-    actions = re.findall(r'uses:\s+([^\s#]+)', ci)
-    assert actions and all(re.fullmatch(r'[\w.-]+/[\w.-]+@[0-9a-f]{40}', a) for a in actions)
+    for workflow in sorted((root / '.github/workflows').glob('*.yml')):
+        actions = re.findall(r'uses:\s+([^\s#]+)', workflow.read_text(encoding='utf-8'))
+        assert actions and all(re.fullmatch(r'[\w.-]+/[\w.-]+@[0-9a-f]{40}', a) for a in actions), workflow.name
     dep = root / ".github" / "dependabot.yml"
     assert dep.exists()
     text = dep.read_text(encoding="utf-8")
     blocks = text.split('- package-ecosystem:')[1:]
     assert {block.splitlines()[0].strip() for block in blocks} == {'github-actions', 'pip'}
     assert all(re.search(r'^\s+open-pull-requests-limit:\s*0\s*$', block, re.M) for block in blocks)
+
+
+def test_release_workflow_only_forwards_a_successful_main_ci_artifact():
+    """RELEASE-PROCESS.md: publish CI's own bytes, tag only the tested commit,
+    never overwrite a tag, and check what GitHub serves afterwards."""
+    text = (ROOT / ".github/workflows/release.yml").read_text(encoding="utf-8")
+    trigger = text.split("\non:\n", 1)[1].split("\npermissions:", 1)[0]
+    assert "workflow_dispatch:" in trigger and "push:" not in trigger and "release:" not in trigger
+    top = text.split("\njobs:", 1)[0]
+    assert "contents: read" in top and "write" not in top, "write access belongs to the job only"
+    for needle in ("('headBranch', 'main')", "('conclusion', 'success')", "('workflowName', 'CI')",
+                   "gh run download", "--verify-only", "git ls-remote --exit-code --tags",
+                   "--draft", "--target \"$SHA\"", "gh release edit", "cmp \"$f\" \"public/"):
+        assert needle in text, needle
+    assert "build_skill" not in text, "the release must not rebuild the package"
 
 
 def test_ci_coverage_does_not_override_the_config_source():
