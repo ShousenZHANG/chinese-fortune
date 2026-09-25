@@ -53,7 +53,7 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
     ranking = result.get('practical_screening', result.get('ranking', {}))
     excluded = {(e['candidate_id'], e['start'], e['end']) for e in ranking.get('excluded', [])}
     cautions = {(e['candidate_id'], e['start'], e['end']) for e in ranking.get('tiers', [])
-                if e.get('forbidden_hours_in_window') or e.get('unresolved_hour_rules')}
+                if e.get('forbidden_hours_in_window') or e.get('contested_hours_in_window')}
     windows = []
     for candidate in comparison:
         for window in candidate['windows']:
@@ -63,9 +63,17 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
             edge = 'latest' if prefer == 'latest' else 'earliest'
             start = datetime.fromisoformat(window['allowed_start'][edge])
             end = (start.astimezone(UTC) + timedelta(minutes=candidate['duration_minutes'])).astimezone(ZoneInfo(result['window']['timezone']))
-            windows.append({'candidate_id': candidate['candidate_id'], 'start': start.isoformat(),
-                            'end': end.isoformat(), 'timezone': result['window']['timezone'],
-                            'start_is_practical_boundary': True})
+            placement = {'candidate_id': candidate['candidate_id'], 'start': start.isoformat(),
+                         'end': end.isoformat(), 'timezone': result['window']['timezone'],
+                         'start_is_practical_boundary': True}
+            # With no stated time preference the earliest start is only a
+            # boundary, not a minute the person chose. Offer the whole start
+            # range instead, but only when the entire window passed the screen:
+            # otherwise a later start could land in the very hour a clause names.
+            if (prefer is None and key not in cautions
+                    and window['allowed_start']['earliest'] != window['allowed_start']['latest']):
+                placement['flexible_start'] = dict(window['allowed_start'])
+            windows.append(placement)
     if not windows:
         return {**base, 'status': 'clause_conflict' if cautions else 'no_practical_choice'}
     if order is not None:
@@ -101,7 +109,7 @@ def choose_practical(result: dict, preferences: dict | None) -> dict:
             screen = rank_candidates(exact, result['participants'][0], scenario=result['capability']['scenario'])
             checked.append(screen)
             if screen['excluded'] or screen['unrankable'] or any(
-                    r['forbidden_hours_in_window'] or r['unresolved_hour_rules'] for r in screen['tiers']):
+                    r['forbidden_hours_in_window'] or r['contested_hours_in_window'] for r in screen['tiers']):
                 if option is first:
                     return {**base, 'status': 'clause_conflict', 'checked_options': checked}
                 backup = None

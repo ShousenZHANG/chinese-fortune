@@ -255,9 +255,10 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
         if not candidate.get('available'):
             continue
         for window in candidate['windows']:
-            refs = [s['target_segment_ref'] for p in window['participants']
+            # The window's own clipped segments, already in time order.
+            refs = [s for p in window['participants']
                     if p['participant_id'] == participant['id'] for s in p['segments']]
-            pillars = [segments[i]['facts']['pillars'] for i in refs]
+            pillars = [segments[s['target_segment_ref']]['facts']['pillars'] for s in refs]
             dated = [p for p in pillars if 'day' in p]
             if not dated:
                 unrankable.append({'candidate_id': candidate['candidate_id'],
@@ -291,19 +292,41 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
             # Each covered hour is tested against the stem of the day it falls
             # in; a window is not penalised for a prohibited hour it never
             # touches, nor cleared by the wrong day's table.
-            # ``pillars`` is already in time order and dict preserves insertion
+            # ``refs`` is already in time order and dict preserves insertion
             # order, so the hits come out chronological. Sorting the keys would
             # order the branches by code point (卯 before 寅).
+            # An unsettled day (戊/癸) contests only the hours one of its
+            # readings names. A window that touches none of them is as clear of
+            # this rule as any other day; naming the day alone blocked every
+            # 戊/癸 morning, about a fifth of all days.
             hits: dict[tuple[str, str], dict] = {}
-            for pillar in pillars:
+            contested: dict[tuple[str, str], dict] = {}
+            for ref, pillar in zip(refs, pillars, strict=True):
                 if 'hour' not in pillar or 'day' not in pillar:
                     continue
                 rule = jielu_kongwang(pillar['day'][0])
+                key = (pillar['day'], pillar['hour'][1])
+                # A solar term or midnight can cut one hour into two segments.
+                if key in hits or key in contested:
+                    (hits.get(key) or contested[key])['segment_end'] = ref['end']
+                    continue
                 if pillar['hour'][1] in rule['forbidden_hours']:
-                    hits[(pillar['day'], pillar['hour'][1])] = {
+                    hits[key] = {
                         'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
-                        'passage_id': rule['passage_id'], 'derivation': rule['derivation']}
+                        'passage_id': rule['passage_id'], 'derivation': rule['derivation'],
+                        'segment_start': ref['start'], 'segment_end': ref['end']}
+                elif not rule['resolved']:
+                    readings = [r['passage_id'] for r in rule['readings']
+                                if pillar['hour'][1] in r['hours']]
+                    if readings:
+                        contested[key] = {
+                            'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
+                            'readings': readings,
+                            'segment_start': ref['start'], 'segment_end': ref['end']}
             entry['forbidden_hours_in_window'] = list(hits.values())
+            entry['contested_hours_in_window'] = list(contested.values())
+            # Informational only: which covered days have an unsettled rule at
+            # all. Gating reads ``contested_hours_in_window``.
             entry['unresolved_hour_rules'] = unresolved
             entry['folk_context'] = folk
             if blocked:
@@ -333,7 +356,9 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str)
         'ties': len({r['candidate_id'] for r in ranked}) > 1,
         'scope': ('忌型条款只排除，不在未被排除的候选之间分高下；同 tier 内并列。'
                   'forbidden_hours_in_window 指该窗口实际覆盖到的忌时，按各时辰所在日的'
-                  '日干取表，仅作层 2 提示，不改变 tier，也不据以在并列候选之间挑选。'
+                  '日干取表；contested_hours_in_window 指戊、癸日里窗口实际覆盖、且某一说'
+                  '点名的时辰。两者仅作层 2 提示，不改变 tier，也不据以在并列候选之间挑选；'
+                  'unresolved_hour_rules 只列出窗口所在的未决日，本身不构成冲突。'
                   '黄历宜忌与干支相生不参与。'),
         'not_covered': ['跨时区班次', '多段行程的联合择时', '日内时辰的优劣排序（仅给忌时）'],
     }

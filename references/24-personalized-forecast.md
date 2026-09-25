@@ -135,7 +135,7 @@ save 从 stdin 读上例中的 `person` 对象，首次 revision 为 1。修改�
 
 顶层可给 `question`（本题原话）、`intent`（period/selection/natal/event/research）以及 `preferences`。新事项直接用 `event.scenario` 的名称，不借其他场景规则。`intent=selection` 需要可选日期、时段和持续时间；缺项一次问齐。`natal/research` 可省 period，此时当天只是计算参照，不赋予未来判断。
 
-`preferences` 只接受一种已由用户给定的实际偏好：`{"prefer":"earliest"}`、`{"prefer":"latest"}` 或 `{"candidate_order":["A","B"]}`。不能由宿主自行填写默认偏好。`practical_choice` 返回首选和备选的精确 start/end/timezone、选择原因以及是否仅为现实安排；多个候选仍同档则保留并列。出生资料缺项不妨碍独立的档期事实，但必须说明缺项对传统判断的影响。
+`preferences` 只接受一种已由用户给定的实际偏好：`{"prefer":"earliest"}`、`{"prefer":"latest"}` 或 `{"candidate_order":["A","B"]}`。不能由宿主自行填写默认偏好。`practical_choice` 返回首选和备选的精确 start/end/timezone、选择原因以及是否仅为现实安排；多个候选仍同档则保留并列。用户没给时间偏好时，start 只是窗口边界，不是替用户挑的分钟：整个窗口都通过筛查才另带 `flexible_start`（可开始的时刻区间）；窗口里有忌时或争议时辰时不带它，只给最早一段，并在首句提示不要挪进哪些钟点。出生资料缺项不妨碍独立的档期事实，但必须说明缺项对传统判断的影响。
 
 出生范围放在 person 中，例如 `"time_certainty":"approximate","birth_time_range":{"start":"19:00","end":"20:00"}`。范围终点包含在内，分辨率为钟面分钟；夏令时重复区间未给 fold 时两次均比较。跨出生日期范围先确认日期。输出的 `birth_time_uncertainty` 列出受到影响的柱，不选择“更像本人”的一个盘当作事实。运程起点不一致时不伪造精确大运。
 

@@ -363,7 +363,9 @@ def test_missing_event_longitude_keeps_month_facts(query):
     assert '经度' in target['missing_input']
     assert 'hour' not in target['segments'][0]['facts']['pillars']
     assert result['availability'][0]['available']
-    assert '还缺' in render_answer(result)
+    # The missing input itself must reach the reader. This used to assert
+    # '还缺', which only matched the generic research tail on every answer.
+    assert '经度' in render_answer(result)
 
 
 @pytest.mark.parametrize('value,fold', [('2026-04-05T02:30+11:00', 1),

@@ -433,6 +433,10 @@ def test_forbidden_hours_are_keyed_to_the_day_each_hour_falls_in():
     # unsettled, so it is named as unsettled instead of borrowing one reading.
     assert entry['forbidden_hours_in_window'] == []
     assert entry['unresolved_hour_rules'] == ['癸亥']
+    # The window does reach 癸亥's 子 and 丑, which one reading names.
+    contested = entry['contested_hours_in_window']
+    assert [(h['day_ganzhi'], h['hour_branch']) for h in contested] == [('癸亥', '子'), ('癸亥', '丑')]
+    assert all(h['readings'] == ['yuanhai:c048:p0003'] for h in contested)
 
 
 def test_a_day_that_a_solar_term_splits_is_judged_the_same_from_any_start():
@@ -511,6 +515,24 @@ def test_the_summary_paragraph_keeps_layer_two_vocabulary_out():
         assert not [w for w in banned if w in summary], (candidates[0]['id'], summary)
 
 
+def test_no_class_a_phrase_anywhere_in_a_rendered_answer():
+    """27-direct-answer.md 甲类: deleting these loses no information, anywhere."""
+    import re
+
+    from fortune_reading import render_answer
+    class_a = ['仅供参考', '只能当参考', '参考而已', '姑且听之', '信不信由你', '要说清楚的是',
+               '必须说清', '先说清楚', '说句实在的', '老实说', '说点真的', '好不等于',
+               '不等于保证', '不会自己变好', '不会改变什么', '我理解你想听什么']
+    results = [_sep21_early(), _read([_slot('oct14', '2026-10-14')], _OCT, '可以吗？'),
+               _read([_slot('oct13', '2026-10-13'), _slot('oct14', '2026-10-14')], _OCT,
+                     preferences={'prefer': 'earliest'}),
+               _read([{'id': 'cross', 'start': '2026-10-15T20:00', 'end': '2026-10-16T12:00'}], _OCT)]
+    for result in results:
+        text = render_answer(result)
+        assert not [w for w in class_a if w in text], text.split('\n\n')[0]
+        assert not re.search(r'我看到的不是[^。！？]{0,24}[，,]\s*是', text)
+
+
 def test_forbidden_hours_read_in_time_order_not_code_point_order():
     """壬戌 forbids 寅 and 卯; 卯 sorts before 寅 by code point."""
     from fortune_reading import read_request
@@ -544,3 +566,246 @@ def test_result_states_what_it_does_not_cover():
     result = rank_travel_days([_autumn('2026-09-22', '己亥')])
     assert '跨时区班次' in result['not_covered']
     assert any('黄历' in result['scope'] for _ in (0,))
+
+
+# --- v4.6 audit: 戊癸 windows, the first sentence, and no invented minutes ---
+
+_SEP = {'start': '2026-09-21', 'end': '2026-09-24'}
+
+
+def _read(candidates: list[dict], period: dict, question: str = '', **extra) -> dict:
+    from fortune_reading import read_request
+    return read_request({**_travel_request(candidates, period), 'question': question, **extra})
+
+
+def _render(result: dict) -> tuple[str, str]:
+    """(summary paragraph, everything after it)."""
+    from fortune_reading import render_answer
+    lead, _, body = render_answer(result).partition('\n\n')
+    return lead, body
+
+
+def _sep21_early() -> dict:
+    return _read([_slot('d21', '2026-09-21', '08:00', '12:00'), _slot('d22', '2026-09-22', '08:00', '12:00')],
+                 _SEP, '哪天出发好？', preferences={'prefer': 'earliest'})
+
+
+def test_an_unresolved_day_does_not_block_a_window_that_avoids_both_readings():
+    """2026-09-21 is 戊戌; its 08:00-12:00 window covers 辰巳午 only.
+
+    Both readings of 截路空亡 on a 戊 day name hours outside it (子丑 or 戌亥),
+    yet the answer used to say the window 「涉及另一条忌时或版本分歧」 and
+    refused to recommend it. That hit every 戊 and 癸 day, about a fifth of all.
+    """
+    result = _sep21_early()
+    d21 = next(t for t in result['ranking']['tiers'] if t['candidate_id'] == 'd21')
+    assert d21['unresolved_hour_rules'] == ['戊戌']  # still reported
+    assert d21['contested_hours_in_window'] == []    # but nothing is contested
+    assert result['recommendation']['status'] == 'practical_choice'
+    assert result['recommendation']['first_choice'] == 'd21'
+    assert 'clause_conflict' not in {b['code'] for b in result['decision_blockers']}
+    lead, body = _render(result)
+    assert lead.startswith('首选 d21：2026-09-21 08:00')
+    assert '备选 d22' in lead and '不是古法排序' in lead
+    assert '版本分歧' not in lead
+    # Without a preference the answer asks for one; the blocker list must not
+    # still carry a clause conflict that a practical choice would have hidden.
+    open_question = _read([_slot('d21', '2026-09-21', '08:00', '12:00'),
+                           _slot('d22', '2026-09-22', '08:00', '12:00')], _SEP)
+    assert open_question['recommendation']['status'] == 'preferences_required'
+    assert 'clause_conflict' not in {b['code'] for b in open_question['decision_blockers']}
+
+
+def test_an_unresolved_day_is_only_mentioned_where_the_window_reaches_a_named_hour():
+    lead, body = _render(_sep21_early())
+    assert '戊戌' not in lead + body
+    assert '两说并列' not in body
+    assert '下面说明原可选大窗口里需要避开的部分' not in body
+
+
+def test_a_window_inside_one_reading_is_still_blocked():
+    """癸亥 00:45-03:40 sits in 子丑, which 《渊海子平》 names; 19:45-22:30 sits in
+    戌亥, which 《三命通会》 names. Neither reading may be dropped."""
+    for cid, start, end, book, pid in (('gui', '00:45', '03:40', '《渊海子平》', 'yuanhai:c048:p0003'),
+                                       ('eve', '19:45', '22:30', '《三命通会》', 'sanming:c003:p0035')):
+        result = _read([_slot(cid, '2026-10-16', start, end)], _OCT)
+        assert result['recommendation']['status'] == 'clause_conflict', cid
+        contested = result['ranking']['tiers'][0]['contested_hours_in_window']
+        assert contested and all(h['readings'] == [pid] for h in contested), cid
+        assert all(h['day_ganzhi'] == '癸亥' for h in contested), cid
+        lead, body = _render(result)
+        assert f'只有{book}算作忌时' in lead, cid
+        assert '癸亥日忌时两说并列' in body, cid
+
+
+def test_hour_hits_carry_the_clock_span_the_window_covers():
+    result = _read([_slot('oct13', '2026-10-13')], _OCT)
+    hit = result['ranking']['tiers'][0]['forbidden_hours_in_window'][0]
+    assert (hit['day_ganzhi'], hit['hour_branch']) == ('庚申', '午')
+    assert hit['segment_start'] == '2026-10-13T11:41:00+11:00'
+    assert hit['segment_end'] == '2026-10-13T13:00:00+11:00'  # clipped to the window
+
+
+def test_an_excluded_candidate_is_named_in_the_first_sentence():
+    result = _read([_slot('oct13', '2026-10-13'), _slot('oct14', '2026-10-14'),
+                    _slot('oct15', '2026-10-15')], _OCT, '哪天出发？', preferences={'prefer': 'earliest'})
+    lead, _ = _render(result)
+    assert lead.startswith('首选 oct13：')
+    assert 'oct14 需要避开：覆盖到辛酉日，是秋季的天转日，《渊海子平》说这天忌出行。' in lead
+
+
+def test_a_yes_no_question_gets_yes_or_no_first():
+    from fortune_reading import _question_kind
+    assert _question_kind('10月14日出发可以吗？') == 'yes_no'
+    assert _question_kind('这样行不行') == 'yes_no'
+    assert _question_kind('哪天出发好吗？') == 'choice'
+    assert _question_kind('几点出发') == 'choice'
+    assert _question_kind('这天怎么样') == 'verdict'
+    assert _question_kind('10月14日是不是忌日') == 'yes_no'
+    asked = '这天出发可以吗？'
+    assert _render(_read([_slot('oct15', '2026-10-15')], _OCT, asked))[0].startswith('可以：oct15，')
+    assert _render(_read([_slot('oct14', '2026-10-14')], _OCT, asked))[0].startswith('不行。oct14 需要避开')
+    dawn = [{'id': 'dawn', 'start': '2026-10-15T03:00', 'end': '2026-10-15T08:00'}]
+    assert _render(_read(dawn, _OCT, asked))[0].startswith('不建议。dawn 的 2026-10-15 03:00–05:00')
+    # The same requests without a yes/no question do not open with one.
+    assert not _render(_read([_slot('oct14', '2026-10-14')], _OCT))[0].startswith('不行')
+
+
+def test_a_conflict_names_the_window_and_the_clock_time():
+    """「涉及另一条忌时」 told the reader nothing they could act on."""
+    from fortune_reading import read_request
+    request = {'current_timezone': 'Asia/Shanghai', 'request_time': '2026-09-24T01:00:00Z',
+               'period': {'start': '2026-10-13', 'end': '2026-10-16'},
+               'event': {'scenario': 'travel', 'timezone': 'Asia/Shanghai', 'time_standard': 'clock'},
+               'participants': _travel_request([], _OCT)['participants'],
+               'duration_minutes': 120, 'granularity': 'hour',
+               'candidates': [{'id': 'oct13', 'start': '2026-10-13T12:00', 'end': '2026-10-13T14:00'}]}
+    result = read_request(request)
+    assert result['recommendation']['status'] == 'clause_conflict'
+    lead, _ = _render(result)
+    assert lead.startswith('oct13 的 2026-10-13 12:00–14:00 目前不能推荐')
+    assert '12:00–13:00（午时）' in lead and '13:00–14:00（未时）' in lead
+    assert '庚申日截路空亡' in lead
+
+
+def test_the_body_gives_clock_times_for_every_named_hour():
+    import re
+    _, body = _render(_read([_slot('oct13', '2026-10-13'), _slot('oct15', '2026-10-15')], _OCT))
+    line = next(x for x in body.split('\n\n') if x.startswith('oct13 的窗口覆盖到'))
+    assert re.search(r'庚申日 2026-10-13 \d{2}:\d{2}–\d{2}:\d{2}（午时）', line), line
+    assert 'yuanhai:c048:p0004' in line and '庚日遁 壬午、癸未' in line
+
+
+def test_an_excluded_row_does_not_claim_its_date_broke_no_rule():
+    """The hour line on an excluded window said 「单看日期未触犯一条规则」 —
+    two paragraphs after saying the date broke one."""
+    lead, body = _render(_read([_slot('oct14', '2026-10-14')], _OCT))
+    assert '未触犯' not in lead + body
+    assert 'oct14 原可选窗口覆盖到 辛酉 日' in body
+
+
+def test_a_daily_outlook_says_plainly_that_no_clause_covers_it():
+    from fortune_reading import read_request
+    request = _travel_request([], _OCT)
+    for key in ('candidates', 'duration_minutes', 'granularity'):
+        request.pop(key)
+    request.update(event={'scenario': 'outlook', 'timezone': 'Australia/Sydney', 'longitude': 151.2},
+                   period={'start': '2026-09-18', 'end': '2026-09-19'}, question='明天运势怎么样？')
+    result = read_request(request)
+    assert result['recommendation']['status'] == 'evidence_needed'
+    lead, body = _render(result)
+    assert lead.startswith('按日给个人算整体吉凶，本库现有条款里没有这一类')
+    assert '补查约5分钟' in body  # evidence_needed still offers the timed search
+    # A natal question defaults to a one-day period too; it is not a daily outlook.
+    natal = read_request({**request, 'intent': 'natal', 'question': '我的命局怎么样'})
+    lead, _ = _render(natal)
+    assert lead.startswith('这次按出生盘本身看') and '按日' not in lead
+
+
+def test_no_minute_is_invented_when_the_person_gave_no_preference():
+    """A lone window with no stated preference used to come back as a fixed
+    09:00 start the person never chose."""
+    clear = _read([_slot('oct15', '2026-10-15')], _OCT)
+    choice = clear['practical_choice']['first_choice']
+    window = clear['practical_comparison'][0]['windows'][0]
+    assert choice['flexible_start'] == window['allowed_start']
+    lead, _ = _render(clear)
+    assert '09:00+11:00 至 2026-10-15 11:00+11:00 之间开始都行' in lead
+    # A stated preference does fix the minute.
+    early = _read([_slot('oct15', '2026-10-15')], _OCT, preferences={'prefer': 'earliest'})
+    assert 'flexible_start' not in early['practical_choice']['first_choice']
+
+
+def test_a_window_with_a_named_hour_gets_a_fixed_slot_and_a_warning():
+    """oct13 09:00-13:00 reaches 庚申's 午 at 11:41. Offering 「09:00-11:00
+    之间开始都行」 would let an 11:00 start run into it."""
+    result = _read([_slot('oct13', '2026-10-13')], _OCT)
+    choice = result['practical_choice']['first_choice']
+    assert 'flexible_start' not in choice
+    assert (choice['start'], choice['end']) == ('2026-10-13T09:00:00+11:00', '2026-10-13T11:00:00+11:00')
+    lead, _ = _render(result)
+    assert '别把时间挪进 11:41–13:00（午时），这个时辰是庚申日截路空亡的忌时' in lead
+
+
+def test_a_settled_answer_does_not_end_by_offering_more_research():
+    cases = [[_slot('oct15', '2026-10-15')], [_slot('oct14', '2026-10-14')],
+             [{'id': 'dawn', 'start': '2026-10-15T03:00', 'end': '2026-10-15T08:00'}],
+             [_slot('oct13', '2026-10-13'), _slot('oct15', '2026-10-15')]]
+    for candidates in cases:
+        result = _read(candidates, _OCT)
+        assert result['recommendation']['status'] not in ('evidence_needed', 'screened_only')
+        lead, body = _render(result)
+        assert '补查约5分钟' not in body, candidates[0]['id']
+        assert '收到钱或录用' not in body
+
+
+def test_a_clear_wu_gui_window_keeps_its_flexible_start():
+    """Gating ``flexible_start`` on the day being unsettled, instead of on the
+    hours the window reaches, would re-create the 戊癸 bug in a quieter form."""
+    result = _read([_slot('d21', '2026-09-21', '08:00', '12:00')], _SEP)
+    assert result['ranking']['tiers'][0]['unresolved_hour_rules'] == ['戊戌']
+    choice = result['practical_choice']['first_choice']
+    assert choice['flexible_start']['earliest'] == '2026-09-21T08:00:00+10:00'
+    assert choice['flexible_start']['latest'] == '2026-09-21T10:00:00+10:00'
+
+
+def test_preferences_are_applied_as_stated_and_never_combined():
+    two = [_slot('oct15', '2026-10-15'), _slot('oct16', '2026-10-16')]
+    latest = _read(two, _OCT, preferences={'prefer': 'latest'})['practical_choice']
+    assert latest['first_choice']['candidate_id'] == 'oct16'
+    assert latest['first_choice']['start'] == '2026-10-16T11:00:00+11:00'  # the latest start
+    assert latest['backup']['candidate_id'] == 'oct15'
+    with pytest.raises(ValueError, match='只指定一种'):
+        _read(two, _OCT, preferences={'prefer': 'earliest', 'candidate_order': ['oct15']})
+
+
+def test_equal_starts_are_a_tie_not_an_input_order_pick():
+    same = [_slot('a', '2026-10-15'), _slot('b', '2026-10-15')]
+    result = _read(same, _OCT, preferences={'prefer': 'earliest'})
+    assert result['practical_choice']['status'] == 'practical_tie'
+    assert result['recommendation']['status'] == 'practical_tie'
+    assert result['recommendation']['first_choice'] is None
+
+
+def test_the_backup_is_another_candidate_not_the_same_one_later():
+    """A busy hour splits oct15 into two windows; the backup must be oct16."""
+    request = _travel_request([_slot('oct15', '2026-10-15', '09:00', '18:00'),
+                               _slot('oct16', '2026-10-16', '09:00', '13:00')], _OCT)
+    request.update(busy=[{'start': '2026-10-15T12:00', 'end': '2026-10-15T13:00'}],
+                   preferences={'prefer': 'earliest'})
+    from fortune_reading import read_request
+    practical = read_request(request)['practical_choice']
+    assert practical['first_choice']['candidate_id'] == 'oct15'
+    assert practical['backup']['candidate_id'] == 'oct16'
+
+
+def test_no_practical_choice_is_made_before_knowing_whom_it_is_for():
+    from copy import deepcopy
+    request = _travel_request([_slot('oct15', '2026-10-15')], _OCT)
+    other = deepcopy(request['participants'][0])
+    other['id'] = 'partner'
+    request['participants'].append(other)
+    from fortune_reading import read_request
+    result = read_request(request)
+    assert result['practical_choice']['status'] == 'participant_priority_required'
+    assert result['practical_choice']['first_choice'] is None
