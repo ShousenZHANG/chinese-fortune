@@ -12,9 +12,10 @@ Every link but the last is a passage:
 
 Step 1 is the cell's general choice, not a verdict on this chart: every cell
 of the registry is ``requires_chart_conditions``, and its review note names
-the exceptions (「丙丁过多与水局另论」) that only the whole chart settles. They
-are written as free text and are not checked here, so the answer says it is
-the general choice and names them, and the note is shown whole. No colour is
+the exceptions (「丙丁过多与水局另论」) that only the whole chart settles. The
+ones the branches settle — a 三合 or 三会 frame, 「X局」 — are read off the
+chart (``exception_checks``); 「过多」 has no stated threshold and stays
+undecided; everything else in the note is shown whole and not claimed. No colour is
 named to avoid: nothing in these passages makes the 五行 that overcomes the
 first stem this person's 忌神.
 No classical sentence says that wearing a colour changes what happens; the
@@ -22,6 +23,7 @@ answer says so once, as a limit of this question, not as a disclaimer.
 """
 from __future__ import annotations
 
+import re
 from collections.abc import Callable
 
 from classical_search import get_passage
@@ -62,6 +64,13 @@ ASPECT_WORDS = {
 LIMIT = ('古籍讲的是八字需要哪种五行，没有一句说穿某种颜色、戴某样东西、用某个数字或往某个方向就能改变遭遇；'
          '按喜用五行换算这些是后来的通行做法，这里按这个做法换算。')
 
+# 「X局」 in a review note: a 三合 or 三会 frame. Only a full set of three counts;
+# a half frame is not 成局. 土 has no single agreed frame, so it is not judged.
+FRAMES = {'水': (('申', '子', '辰'), ('亥', '子', '丑')), '火': (('寅', '午', '戌'), ('巳', '午', '未')),
+          '木': (('亥', '卯', '未'), ('寅', '卯', '辰')), '金': (('巳', '酉', '丑'), ('申', '酉', '戌'))}
+FRAME_RE = re.compile(r'([水火木金土])局')
+EXCESS_RE = re.compile(r'([甲乙丙丁戊己庚辛壬癸]+)(过多|太多)')
+
 CELL_STATUS = {'supported_with_conditions': '原文支持，但有条件', 'partially_supported': '原文只部分支持',
                'conflicts_with_text': '旧表与原文不合，这里按原文', 'seasonal_only': '这一月没有专段，只按季节总论'}
 
@@ -84,6 +93,40 @@ def _excerpt(passage_id: str, stem: str) -> str:
     clauses = sentence.strip().split('，')
     at = next(i for i, c in enumerate(clauses) if stem in c) if stem in sentence else 0
     return '，'.join(clauses[:at + 2])
+
+
+def _frame_check(wuxing: str, branches: list[str]) -> dict:
+    name = f'{wuxing}局'
+    if wuxing == '土':
+        return {'condition': name, 'status': 'unknown', 'reason': '土局的成局口径各书不一，本工具不判'}
+    have = set(branches)
+    sets = FRAMES[wuxing]
+    shown = '、'.join(branches)
+    full = next((s for s in sets if set(s) <= have), None)
+    if full:
+        return {'condition': name, 'status': 'met', 'basis': f"地支{''.join(full)}齐全，你的地支是{shown}"}
+    # Each unknown pillar can supply at most one missing branch.
+    unknown_pillars = 4 - len(branches)
+    if unknown_pillars and any(len(set(s) - have) <= unknown_pillars for s in sets):
+        why = '时辰未知，差一支就凑齐' if unknown_pillars == 1 else f'还有{unknown_pillars}柱地支未知，可能凑齐'
+        return {'condition': name, 'status': 'unknown', 'reason': f"{why}，你的地支是{shown or '无'}"}
+    return {'condition': name, 'status': 'not_met',
+            'basis': f"三合{''.join(sets[0])}、三会{''.join(sets[1])}都不齐，你的地支是{shown}"}
+
+
+def exception_checks(chart: dict, note: str) -> list[dict]:
+    """The note's exceptions the chart's own branches can settle, and the ones it cannot.
+
+    Facts only: whether a frame stands, with the branches that show it. Whether
+    that frame changes the choice is the note's business, and it is shown whole.
+    """
+    pillars = chart.get('four_pillars') or {}
+    branches = [pillars[p]['branch'] for p in ('year', 'month', 'day', 'hour')
+                if (pillars.get(p) or {}).get('branch')]
+    checks = [_frame_check(w, branches) for w in dict.fromkeys(FRAME_RE.findall(note or ''))]
+    checks += [{'condition': f'{stems}{word}', 'status': 'unknown', 'reason': '原文没说多少算多'}
+               for stems, word in dict.fromkeys(EXCESS_RE.findall(note or ''))]
+    return checks
 
 
 def colour_advice(chart: dict, question: str | None = None) -> dict:
@@ -124,7 +167,10 @@ def _advice(chart: dict) -> dict:
         # The cell's general choice; the note's exceptions are not checked against this chart.
         'scope': 'general_choice_for_cell',
         'individual_application': audit.get('individual_application', 'requires_chart_conditions'),
+        # Frames the branches settle are checked; the rest of the note is not,
+        # so the chart as a whole is still not claimed as checked.
         'chart_conditions_checked': False,
+        'exception_checks': exception_checks(chart, audit['review_note']),
         'tiaohou': {'passage_id': ref, 'quote': _excerpt(ref, first['stem']),
                     'review_note': audit['review_note'],
                     'conditional_stems': list(audit.get('source_conditional_candidates') or []),
@@ -162,7 +208,26 @@ def colour_lead(advice: dict, aspects: list[str] | None = None) -> str:
     head = f"按《穷通宝鉴》调候，{_cell(advice)}，这一格一般先取{needed}"
     if parts:
         head += '。照这个换算：' + '；'.join(parts)
-    return head + '。这是这一格的一般取法，你的盘是不是原文说的例外（见下）还没有逐条核对。'
+    return head + '。' + _exception_sentence(advice)
+
+
+def _exception_sentence(advice: dict) -> str:
+    """What the chart's branches settle about the cell's exceptions, in one or two sentences."""
+    checks = advice.get('exception_checks') or []
+    if not checks:
+        return '这是这一格的一般取法，你的盘是不是原文说的例外（见下）还没有逐条核对。'
+    said = []
+    for c in checks:
+        if c['status'] == 'met':
+            said.append(f"{c['condition']}成立（{c['basis']}）")
+        elif c['status'] == 'not_met':
+            said.append(f"{c['condition']}不成立（{c['basis']}）")
+        else:
+            said.append(f"{c['condition']}没判（{c['reason']}）")
+    text = '这是这一格的一般取法。这一格另论的例外，按你的盘：' + '；'.join(said) + '。'
+    if any(c['status'] == 'met' for c in checks):
+        text += '成立的这一条原文另有取法，所以上面的一般取法不能直接套到你身上。'
+    return text
 
 
 def colour_lines(advice: dict, aspects: list[str] | None = None) -> list[str]:
@@ -178,8 +243,10 @@ def colour_lines(advice: dict, aspects: list[str] | None = None) -> list[str]:
         f"为什么：你是{advice['day_master']}日主，生在{advice['month_branch']}月{season}。《穷通宝鉴》这一格先要"
         f"{needed}，原文「{tiaohou['quote']}」（{tiaohou['passage_id']}）。{conditional}",
         f"这一格的核对状态：{CELL_STATUS.get(advice['cell_status'], advice['cell_status'])}。"
-        f"审校说明：{tiaohou['review_note']}这些例外要看整张盘（透干、藏支、合化、旺衰），本工具没有逐条核对，"
-        '所以上面是这一格的一般取法，不是按你的全盘定的。',
+        f"审校说明：{tiaohou['review_note']}"
+        + ('其中能由地支判定的局已在上面核对；' if advice.get('exception_checks') else '')
+        + '其余例外要看整张盘（透干、藏支、合化、旺衰），本工具没有逐条核对，所以上面是这一格的一般取法，'
+        '不是按你的全盘定的。',
         '五行配色：《三命通会》卷七「' + '」「'.join(COLOUR_QUOTES[w['wuxing']] for w in advice['wear'])
         + f"」（{COLOUR_SOURCE}）；《梅花易数》卷二「{SHADE_QUOTE}」（{SHADE_SOURCE}）。",
         '佩戴物的五行：《梅花易数》' + '；'.join(f"「{w['thing_quote']}」（{w['thing_source']}）"

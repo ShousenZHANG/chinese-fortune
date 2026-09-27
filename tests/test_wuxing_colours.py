@@ -53,7 +53,15 @@ def test_every_cell_follows_its_own_clause(stem):
         assert advice['chart_conditions_checked'] is False and 'avoid' not in advice
         lead = colour_lead(advice)
         assert lead.startswith('按《穷通宝鉴》调候，') and '这一格一般先取' in lead
-        assert lead.endswith('这是这一格的一般取法，你的盘是不是原文说的例外（见下）还没有逐条核对。')
+        # Every cell reads as the general choice. Cells whose note names a frame or
+        # an excess report what the known branches settle; the rest say nothing was checked.
+        assert '这是这一格的一般取法' in lead
+        if advice['exception_checks']:
+            assert '这一格另论的例外，按你的盘：' in lead
+        else:
+            assert lead.endswith('这是这一格的一般取法，你的盘是不是原文说的例外（见下）还没有逐条核对。')
+        # A chart with only a month branch cannot rule a frame out.
+        assert all(c['status'] != 'not_met' for c in advice['exception_checks']), (stem, branch)
         assert '按你的八字' not in lead and '少穿' not in lead
         lines = colour_lines(advice)
         assert any(tiaohou['review_note'] in line for line in lines), (stem, branch)
@@ -92,10 +100,10 @@ def test_the_review_note_is_shown_whole():
     assert '有条件才取：丙。' in lines
 
 
-def test_charts_that_share_the_cell_get_the_same_general_answer_and_the_same_caveat():
-    """Two 庚-in-子 charts, one with 丙丁 everywhere and a 申子辰 water frame: the
-    cell's exceptions (「丙丁过多与水局另论」) are not evaluated, so neither answer
-    may read as settled for its chart."""
+def test_charts_that_share_the_cell_differ_where_the_branches_decide():
+    """Two 庚-in-子 charts, one with a 申子辰 water frame. 水局 is read off the
+    branches, so the two answers must now differ on it; 丙丁过多 has no stated
+    threshold and stays undecided in both, so neither may read as settled."""
     plain = {'day_master': {'stem': '庚'}, 'four_pillars': {
         'year': {'stem': '甲', 'branch': '辰'}, 'month': {'stem': '丙', 'branch': '子'},
         'day': {'stem': '庚', 'branch': '寅'}, 'hour': {'stem': '戊', 'branch': '寅'}}}
@@ -103,8 +111,11 @@ def test_charts_that_share_the_cell_get_the_same_general_answer_and_the_same_cav
         'year': {'stem': '丙', 'branch': '申'}, 'month': {'stem': '丙', 'branch': '子'},
         'day': {'stem': '庚', 'branch': '辰'}, 'hour': {'stem': '丁', 'branch': '亥'}}}
     leads = [colour_lead(colour_advice(chart, '我穿什么颜色好')) for chart in (plain, fiery)]
-    assert leads[0] == leads[1]
-    assert '一般取法' in leads[0] and '还没有逐条核对' in leads[0]
+    assert leads[0] != leads[1]
+    assert '水局不成立' in leads[0] and '水局成立' in leads[1]
+    assert '不能直接套' in leads[1] and '不能直接套' not in leads[0]
+    for lead in leads:
+        assert '一般取法' in lead and '丙丁过多' in lead and '没判' in lead
     # 甲 in 未 month: 「無癸亦可」, and the old table put 癸 first. Nothing says avoid water.
     jia_wei = colour_lead(colour_advice(_chart('甲', '未')))
     assert '黑色' not in jia_wei and '少穿' not in jia_wei
@@ -178,3 +189,46 @@ def test_each_aspect_gets_its_own_first_sentence(question, lead):
         assert HETU_QUOTE in lines and HETU_SOURCE in lines
     if advice['aspects'] == ['element']:
         assert '古法不数哪种五行少' in lines and '《子平真诠》' in lines
+
+
+def _four(year: str, month: str, day: str, hour: str | None) -> dict:
+    pillars = {'year': {'stem': year[0], 'branch': year[1]}, 'month': {'stem': month[0], 'branch': month[1]},
+               'day': {'stem': day[0], 'branch': day[1]}}
+    if hour:
+        pillars['hour'] = {'stem': hour[0], 'branch': hour[1]}
+    return {'day_master': {'stem': day[0]}, 'four_pillars': pillars}
+
+
+def test_the_water_frame_is_decided_from_the_branches():
+    """丁丑 壬子 庚子 丙戌: branches 丑子子戌 complete neither 申子辰 nor 亥子丑."""
+    advice = colour_advice(_four('丁丑', '壬子', '庚子', '丙戌'))
+    checks = {c['condition']: c for c in advice['exception_checks']}
+    assert checks['水局']['status'] == 'not_met'
+    assert '申子辰' in checks['水局']['basis'] and '亥子丑' in checks['水局']['basis']
+    assert checks['丙丁过多']['status'] == 'unknown'
+    assert '多少算多' in checks['丙丁过多']['reason']
+    lead = colour_lead(advice)
+    assert '水局不成立' in lead and '丙丁过多' in lead and '没判' in lead
+
+
+def test_a_complete_frame_says_the_general_choice_may_not_apply():
+    advice = colour_advice(_four('丙申', '丙子', '庚辰', '丁亥'))
+    checks = {c['condition']: c for c in advice['exception_checks']}
+    assert checks['水局']['status'] == 'met' and '申子辰' in checks['水局']['basis']
+    assert '不能直接套' in colour_lead(advice)
+
+
+def test_a_missing_hour_leaves_a_frame_one_branch_short_undecided():
+    """申 子 plus an unknown hour: 辰 could still arrive in the hour pillar."""
+    short = colour_advice(_four('丙申', '丙子', '庚寅', None))
+    assert {c['condition']: c for c in short['exception_checks']}['水局']['status'] == 'unknown'
+    # Two branches short cannot be completed by one hour pillar.
+    far = colour_advice(_four('丙午', '丙子', '庚寅', None))
+    assert {c['condition']: c for c in far['exception_checks']}['水局']['status'] == 'not_met'
+
+
+def test_a_cell_without_a_checkable_exception_keeps_the_plain_caveat():
+    """甲 in 未 month: its note names no 局 and no 过多."""
+    advice = colour_advice(_four('甲子', '辛未', '甲寅', '甲子'))
+    assert advice['exception_checks'] == []
+    assert '还没有逐条核对' in colour_lead(advice)
