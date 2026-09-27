@@ -33,6 +33,35 @@ SCENARIOS = {
     'review': ('复盘纠错', 'specialist', '原始判断、当时输入与版本、已发生事实；不倒改为命中', 'not_implemented'),
 }
 PRECEDENCE_VERSION = 'precedence-v4'
+
+# 相主 chooses a time for the principal of an undertaking (「選擇之道……合局相主」,
+# xieji:c033:p0002). The undertakings 协纪 chooses for commoners are its
+# 「民用三十七事」; a modern event on that list is licensed by it, anything
+# else borrows the method. Borrowing is allowed — the method is general — but
+# the answer has to say so rather than read as if the book covered the event.
+YONGSHI_PASSAGE = 'xieji:c011:p0005'
+XIANGZHU_METHOD_PASSAGE = 'xieji:c033:p0002'
+XIANGZHU_AUTHORITY = {
+    'travel': ('passage', '出行', '出行在协纪民用三十七事之列'),
+    'wedding': ('passage', '嫁娶', '嫁娶在协纪民用三十七事之列'),
+    'moving': ('passage', '移徙', '移徙在协纪民用三十七事之列'),
+    'business': ('passage', '開市', '开业即开市，在协纪民用三十七事之列；产品、作品发布是否算开市未核'),
+    'interview': ('borrowed', '上官', '面试不是上官赴任；民用三十七事里最接近的是上官'),
+    'exam': ('borrowed', '入學', '考试不是入学；民用三十七事里最接近的是入學'),
+    'relationship_conversation': ('borrowed', '會親友', '约会、感情沟通不在民用三十七事里；最接近的是會親友'),
+    'work_conversation': ('borrowed', None, '工作沟通、谈薪、转岗在民用三十七事里没有对应名目'),
+    'billing': ('borrowed', None, '报价、催款在民用三十七事里没有对应名目'),
+    'outlook': ('borrowed', None, '相主是为某件事挑时间的方法；不做具体事、只问某天好不好，不在民用三十七事里'),
+}
+CUSTOM_AUTHORITY = ('borrowed', None, '自定义事项，没有对应到民用三十七事')
+
+
+def _authority(scenario: str) -> dict:
+    kind, term, reason = XIANGZHU_AUTHORITY.get(scenario, CUSTOM_AUTHORITY)
+    entry = {'kind': kind, 'reason': reason, 'method_passage_id': XIANGZHU_METHOD_PASSAGE}
+    if term:
+        entry.update(term=term, passage_id=YONGSHI_PASSAGE)
+    return entry
 PERSONAL_ROUTES = ('selection', 'period')
 
 SOURCE_FILE = Path(__file__).resolve().parents[1] / 'references' / 'forecast-source-audit.json'
@@ -50,12 +79,13 @@ def capabilities(scenario: str | None = None) -> list[dict]:
                  'status': 'requires_scenario_research', 'personal_ranking': 'rule_based',
                  'precedence_version': PRECEDENCE_VERSION, 'ranking_reference': 'references/26-precedence.md',
                  'available': ['confirmed_birth_chart', 'target_calendar'],
+                 'authority': _authority(scenario),
                  'missing': '个人日子吉凶按相主已实现；本事项与古法名目的对应、适用条件尚待核对'}]
     result = []
     for key, (label, route, gap, ranking) in SCENARIOS.items():
         if scenario is not None and key != scenario:
             continue
-        entry = {
+        entry: dict = {
             'scenario': key, 'label': label, 'route': route,
             'status': 'partial' if route != 'specialist' else 'use_specialist_workflow',
             'available': ['confirmed_birth_chart', 'target_calendar', 'personal_relations',
@@ -68,6 +98,8 @@ def capabilities(scenario: str | None = None) -> list[dict]:
             'missing': gap,
             'calendar_screening': 'rule_based' if ranking == 'rule_based' else 'not_implemented',
         }
+        if route in PERSONAL_ROUTES:
+            entry['authority'] = _authority(key)
         if ranking == 'rule_based' or route in PERSONAL_ROUTES:
             # 排名来自冻结的布尔层级，不是权重；宿主据此判断能否给首选。
             entry['precedence_version'] = PRECEDENCE_VERSION

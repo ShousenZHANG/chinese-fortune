@@ -900,6 +900,19 @@ def _factor_lines(head: str, grade: str, factors: list[dict], quoted: set[str]) 
     return line
 
 
+def _authority_sentence(result: dict) -> str:
+    """Whether 协纪 lists this undertaking, or the method is borrowed for it."""
+    capability = result.get('capability') or {}
+    authority = capability.get('authority') or {}
+    label = capability.get('label') or '这件事'
+    listed = '协纪「民用三十七事」（xieji:c011:p0005）'
+    if authority.get('kind') == 'passage':
+        return f"{label}对应{listed}里的「{authority['term']}」，相主正是给这类用事挑时间的方法。"
+    nearest = f"，最接近的是「{authority['term']}」" if authority.get('term') else ''
+    return (f"{label}不在{listed}里{nearest}；这里是把相主借用到这件事上，"
+            '原文没有专门为它写过。')
+
+
 def _personal_lines(result: dict) -> list[str]:
     """Layer 2 for 相主: the method in the passage's words, then every graded time.
 
@@ -918,8 +931,8 @@ def _personal_lines(result: dict) -> list[str]:
              '禄、贵人、驿马、长生各用一张古表，出处随条列出；吉凶等级按原文用词：天克地冲最凶，'
              '冲命按方向分凶与略轻（太岁冲命一律为凶，时辰的冲为轻），命禄、命贵人、食禄最吉，合官贵、合财富，其余为吉；'
              '吉的条目只看日柱，年、月的吉条目列出但不计。'
-             '原文的例子是修造（以宅长之命为主）和安葬（以亡命为主），天克地冲、天比地冲写明是选择家对一切用事的通忌；'
-             '这里把同一套相主规则用在这件事上。原文另讲的「补龙扶山」看房屋坐山，没有实现。']
+             '原文的例子是修造（以宅长之命为主）和安葬（以亡命为主），天克地冲、天比地冲写明是选择家对一切用事的通忌。'
+             + _authority_sentence(result) + '原文另讲的「补龙扶山」看房屋坐山，没有实现。']
     quoted: set[str] = set()
     said: set[tuple[str, str, str]] = set()
     rows = calendar.get('people') or [{'participant_id': pid} for pid in ranking.get('personal_participant_ids', [])]
