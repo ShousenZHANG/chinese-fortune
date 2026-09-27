@@ -43,6 +43,8 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
+    ('life_guide.py', ['--entry', '99:999'], '不存在的条目'),
+    ('life_guide.py', ['--scenario', 'travel', '--current-timezone', 'Mars/Base'], '无效时区'),
     ('question_router.py', ['--question', '   '], '空问句'),
     ('question_router.py', ['--question', '问' * 2001], '超长问句'),
     ('prediction_log.py', ['begin', '--stdin'], '空记录请求'),
