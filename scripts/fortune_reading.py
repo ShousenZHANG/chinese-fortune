@@ -513,6 +513,21 @@ def _avoid_sentence(result: dict, choice: dict) -> str:
     return f'别把时间挪进 {spans}，{_hour_reason(hits)}。'
 
 
+def _unsettled_day_sentence(result: dict, choice: dict) -> str:
+    """The review point of a 戊 or 癸 day whose window avoids both readings.
+
+    Nothing is wrong with the slot as given, which is why no other sentence
+    mentions it; but moving it into 子丑 or 戌亥 would land on hours one of the
+    two books forbids, so the answer says what change would need a new check.
+    """
+    row = _window_row(result.get('practical_screening', {}), choice)
+    if not row or row.get('contested_hours_in_window') or not row.get('unresolved_hour_rules'):
+        return ''
+    days = '、'.join(row['unresolved_hour_rules'])
+    return (f'{days}日的截路空亡，两本书说的时辰不同（一说子丑，一说戌亥）；'
+            '时间要是挪进这两段，得重新查。')
+
+
 def _excluded_sentence(result: dict) -> str:
     """Name each candidate a day clause ruled out, with the day and why."""
     ranking = result.get('ranking', {})
@@ -1048,7 +1063,7 @@ def _lead_sentence(result: dict) -> str:
         if backup:
             lead += (f"备选 {backup['candidate_id']}" + (f"（{_graded(result, backup)}）" if backup.get('grade') else '')
                      + f"：{_placement(backup)}。")
-        return lead + excluded + _avoid_sentence(result, first)
+        return lead + excluded + _avoid_sentence(result, first) + _unsettled_day_sentence(result, first)
     if state == 'excluded_by_clause':
         return ('不行。' if kind == 'yes_no' else '') + excluded + _elsewhere(result)
     if state == 'clause_conflict':

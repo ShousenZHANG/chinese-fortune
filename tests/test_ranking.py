@@ -991,3 +991,23 @@ def test_personal_answers_keep_to_the_word_lists():
         assert not style_violations(text), text.split('\n\n')[0]
     assert results[1]['personal_calendar']['entries'][0]['grade'] == '凶'
     assert render_answer(results[1]).startswith('不好。按你出生那年的干支（丁丑）看，10月24日（辛未）对你是凶：纳音克冲。')
+
+
+def test_a_wu_or_gui_day_warns_what_moving_the_time_would_change():
+    """2026-10-11 is 戊午. A 09:00-13:00 window touches neither reading, so
+    nothing is wrong with it as given — but moving it into 子丑 or 戌亥 would
+    land on hours one of the two books forbids. That is this answer's own
+    review point and belongs in the summary."""
+    from fortune_reading import read_request, render_answer
+    lead = render_answer(read_request(_travel_request(
+        [_slot('d11', '2026-10-11', '09:00', '13:00')],
+        {'start': '2026-10-10', 'end': '2026-10-13'}))).split('\n\n')[0]
+    assert '戊午' in lead and '子丑' in lead and '戌亥' in lead and '重新查' in lead, lead
+    assert '两说并列' not in lead   # a 乙类 term; the summary says it in plain words
+
+
+def test_a_day_with_a_settled_hour_rule_gets_no_such_warning():
+    from fortune_reading import read_request, render_answer
+    lead = render_answer(read_request(_travel_request(
+        [_slot('d15', '2026-10-15', '09:00', '13:00')], _OCT))).split('\n\n')[0]
+    assert '重新查' not in lead
