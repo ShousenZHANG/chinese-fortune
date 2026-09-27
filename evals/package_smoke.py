@@ -145,7 +145,9 @@ def main(argv: list[str] | None = None) -> int:
                               '--minute', '30', '--gender', 'male', '--timezone', 'Australia/Sydney'],
                              work, expected=1))
         assert not gap['ok'] and '不存在' in gap['message']
-        person = {'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10,
+        # 1998-01-15 is 丁丑. A 己卯 person is barred for all of 2026-09 by 相主 (the 丁酉
+        # month clashes 卯, 「凶莫堪」), which would leave no choice to check here.
+        person = {'birth': {'year': 1998, 'month': 1, 'day': 15, 'hour': 10,
                             'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 120}}
         query = {'current_timezone': 'Australia/Sydney', 'request_time': '2026-09-12T00:00:00Z',
                  'period': '下周', 'event': {'scenario': 'interview', 'longitude': 151.2},
