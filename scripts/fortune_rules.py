@@ -108,6 +108,32 @@ def capabilities(scenario: str | None = None) -> list[dict]:
     return result
 
 
+ROUTE_WORDS = {'period': '期间', 'selection': '择时', 'itinerary': '连续行程', 'specialist': '专项'}
+
+
+def _authority_cell(cap: dict) -> str:
+    authority = cap.get('authority')
+    if not authority:
+        return '—'
+    if authority['kind'] == 'passage':
+        return f"协纪民用事「{authority['term']}」"
+    return f"借用（最接近「{authority['term']}」）" if authority.get('term') else '借用'
+
+
+def capability_markdown() -> str:
+    """The README coverage table, from the same data the tools use."""
+    from life_guide import SCENARIO_ENTRIES
+    rows = ['| 事项 | 流程 | 个人吉凶（相主） | 原文授权 | 事项忌日 | 现实参考 |',
+            '|---|---|---|---|---|---|']
+    for cap in capabilities():
+        mapped = SCENARIO_ENTRIES.get(cap['scenario'], [])
+        sections = '、'.join(f'第{s}节' for s in dict.fromkeys(s for s, _ in mapped)) or '—'
+        rows.append(f"| {cap['label']}（`{cap['scenario']}`） | {ROUTE_WORDS[cap['route']]} | "
+                    f"{'已实现' if cap['personal_ranking'] == 'rule_based' else '—'} | {_authority_cell(cap)} | "
+                    f"{'已实现' if cap.get('calendar_screening') == 'rule_based' else '—'} | {sections} |")
+    return '\n'.join(rows)
+
+
 def source_audit() -> list[dict]:
     rows = json.loads(SOURCE_FILE.read_text(encoding='utf-8'))['sources']
     for row in rows:
@@ -219,7 +245,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--capabilities', action='store_true')
     parser.add_argument('--scenario', help='场景 id；省略时列出全部')
     parser.add_argument('--evidence', action='store_true')
+    parser.add_argument('--capabilities-markdown', action='store_true',
+                        help='打印 README 的覆盖表（Markdown），供维护者粘贴到标记之间')
     args = parser.parse_args(argv)
+    if args.capabilities_markdown:
+        print(capability_markdown())
+        return 0
     try:
         result = evidence(full_audit=True) if args.evidence else {'capabilities': capabilities(args.scenario)}
         json_print(ok_envelope('fortune_rules', result))
