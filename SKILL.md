@@ -42,7 +42,7 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 
 先给已获依据支持的部分，再按 [限时补查](references/25-classical-research.md#限时补查与候选库) 使用 `research_session.py` 和宿主检索工具完成约5分钟查证，记录实际来源、停止原因及候选资料。工具没有搜索能力时如实记录，不能称已查全网。
 
-拿不准一句话该走哪条流程时，先运行 `python scripts/question_router.py --question "<原话>"`：它按问法返回流程（`personal_days`、`event_slots`、`wear_advice`、`almanac`、`natal`、`specialist`、`boundary`）、命令、请求骨架和还缺的资料，只做路由，不算命盘。常见问法：
+拿不准一句话该走哪条流程时，先运行 `python scripts/question_router.py --question "<原话>"`：它按问法返回流程（`personal_days`、`event_slots`、`wear_advice`、`almanac`、`natal`、`specialist`、`boundary`、`life_guide`）、命令、请求骨架和还缺的资料，只做路由，不算命盘。常见问法：
 
 | 问法（举例） | 流程 | 怎么算 |
 |---|---|---|
@@ -52,6 +52,7 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 | 穿什么颜色旺我、幸运色、适合什么颜色的车、戴什么首饰、戴金还是戴银、幸运数字、手机号选什么数字、往哪个方位发展、五行缺什么、喜什么五行 | `wear_advice` | `bazi_reading.py --question "<原话>" --markdown`；按《穷通宝鉴》这一格调候的一般取法换算颜色、饰物、方位、数字，并说明这一格的例外未按本人盘面核对 |
 | 今天黄历宜什么、这天老黄历忌什么 | `almanac` | `huangli_query.py --date … --question "<原话>" --markdown`（不针对个人） |
 | 办公桌朝哪、床头朝向、户型风水 | `specialist` | 风水专项，不用上面的方位换算 |
+| 租房押金要注意什么、试用期工资、出国领事保护、借钱写借条 | `life_guide` | `life_guide.py --query … --current-timezone …`；《高性价比人生指南》冻结条目，按所在地筛选，不当术数结论 |
 
 问今天、这两天、下周、下个月的个人运势，或面试、考试、出行等候选档期：先读 [个人未来时段与择时](references/24-personalized-forecast.md)，使用 `fortune_reading.py --stdin`。它先取得当前时间，再计算出生盘和目标时间，输出实际档期与证据缺口；已有结果直接复用，不重复排出生盘。首次具体事项分析可加 `include_research:true` 一并取古籍上下文；根据 `candidate_comparison` 核整件事期间的个人事实，逐项处理 `decision_blockers`。状态为部分可用时继续核已有依据及补查，不把“尚未自动排名”当成整题拒答的理由。问某段时间哪天好、哪天不好：发期间请求，`personal_calendar` 逐日给出大吉到大凶（超过一个月时按节气月；原话问「哪天」的仍逐日，最长一年），首句直接说最好和要避开的日子；候选档期则按同一等级先排吉凶，再按用户偏好排。纯本命问题仍按下表。
 

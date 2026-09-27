@@ -146,3 +146,11 @@ save 从 stdin 读上例中的 `person` 对象，首次 revision 为 1。修改�
 已实现通用忌日筛选的事项（出行、婚嫁、搬家、开业）会保留原始 `availability`、条款筛选后的 `practical_comparison` 与 `excluded_segments`。宽窗口可缩成仍容纳完整事件的子窗口；首选只指返回的 start/end，不代表整个原窗口都适合。事项忌日由 `calendar_screening` 声明；`personal_ranking: rule_based` 表示候选再按本人相主分层（`ranking.personal_participant_ids` 记录用了谁的生年）。出生年柱未定时出 `birth_year_required`，不按相主分层。
 
 `conclusion` 是宿主与白话草稿共用的结果记录。期间分析默认含 `natal_interpretation`，用于一次完成相关原局条件和证据核查；只需历法事实可显式 `include_natal_reading:false`。`--markdown` 负责忠实呈现可计算结果，宿主继续完成解释与限时补查，不能将草稿视为已搜索过外部材料。
+
+## 现实参考
+
+`fortune_reading.py` 的结果带 `life_reference`：来自《高性价比人生指南》冻结快照（`assets/life_guide.json`，提交 `8276caec`，Unlicense），在术数结论全部算完之后才取，不参与择日、配色或任何排序。渲染时作为最后一段，标题写明「与上面的术数结论无关」，每条照抄书中标题，附节号、条号和证据等级，最多三条。
+
+哪些条目会附上：只附人工映射到本事项的条目（`scripts/life_guide.py` 的 `SCENARIO_ENTRIES`）；书里标 TODO 或待核实的不附；按 `scripts/region.py` 判定地区后，只附适用于这件事发生地的条目。地区依次看：搬家、工作、开业、报价、婚嫁、考试这类有地点的事看 `event.timezone`，其余看 `current_timezone`，再看档案里确认过的所在地；都没有时判为未知，不附任何有地区限制的条目，也不默认中国大陆。港澳台单独成一类。出境安全一节只在 `event.destination_timezone` 判为境外时附上。
+
+第 6 节第 15、22 两条（评价付费算命与转运物件的有效性）按产品范围不收录，导入时就已剔除。用户直接问现实层面的问题时，路由返回 `life_guide` 流程，用 `life_guide.py --query` 取整条原文；条目的地区和用户不符时标注「这是中国大陆的规定」。

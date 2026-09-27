@@ -76,6 +76,28 @@ def test_other_questions_are_not_pulled_into_the_new_flows(question, flow):
     assert route(question)['flow'] == flow
 
 
+@pytest.mark.parametrize('question', ['租房押金要注意什么', '试用期工资最低多少', '出国前领事保护能做什么',
+                                      '借钱给朋友要写借条吗'])
+def test_practical_questions_reach_the_reference_library(question):
+    result = route(question)
+    assert result['flow'] == 'life_guide'
+    assert 'life_guide.py' in result['command']
+    assert any('现居地' in need for need in result['needs'])
+
+
+@pytest.mark.parametrize('question,flow', [
+    ('下个月哪天搬家好', 'personal_days'),      # divination first, even with a practical word nearby
+    ('租房那天是吉日吗', 'personal_days'),
+])
+def test_divination_questions_are_never_taken_by_the_reference_flow(question, flow):
+    assert route(question)['flow'] == flow
+
+
+def test_a_trip_question_asks_for_the_destination():
+    needs = route('下周哪天出发去新加坡好')['needs']
+    assert any('destination_timezone' in need for need in needs)
+
+
 def test_the_router_names_what_is_still_needed():
     dated = route('10月29日搬家可以吗')
     assert any('period' in need for need in dated['needs'])

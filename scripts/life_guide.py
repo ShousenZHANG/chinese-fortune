@@ -51,6 +51,12 @@ def _index() -> dict[tuple[int, int], dict]:
     return {(e['section'], e['number']): e for e in _data()['entries']}
 
 
+def library_source() -> dict:
+    """Where the frozen text comes from, for citing beside the references."""
+    source = _data()['source']
+    return {k: source[k] for k in ('repo', 'commit', 'snapshot_date', 'license')}
+
+
 def _applies(entry: dict, payload: dict) -> bool:
     if entry['region'] == '通用':
         return True

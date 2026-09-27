@@ -36,6 +36,10 @@ DATE = re.compile(r'(?:(\d{4})[年-])?(\d{1,2})[月-](\d{1,2})[日号]?')
 # Events the day rules or 相主 are asked about; mapped ones reuse EVENT_KEYWORDS.
 OTHER_EVENTS = {'interview': ('面试',), 'exam': ('考试', '高考', '考研', '考证')}
 MEDICAL_WORDS = ('手术', '开刀', '住院', '治疗')
+# Practical questions the frozen 《高性价比人生指南》 answers. Checked only after
+# every divination flow, so a question about a date is never taken by it.
+LIFE_WORDS = ('押金', '租房合同', '试用期', '加班费', '辞退', '裁员', '领事保护', '12308', '借条', '定金',
+              '订金', '彩礼', '旅行保险', '要注意什么', '注意些什么')
 
 
 def _event(question: str) -> str | None:
@@ -85,6 +89,8 @@ def route(question: str) -> dict:
             needs.append('时间范围：原话没说就问一次，或用「未来七天」')
         if slots:
             needs.append('候选时段 candidates 与所需时长 duration_minutes')
+        if event == 'travel':
+            needs.append('出境时给目的地时区 event.destination_timezone（决定是否附出境安全参考）')
         if event in EVENT_KEYWORDS:
             why = '问这件事哪天好：先排这件事的忌日，再按出生年相主给每天分吉凶'
         else:
@@ -97,6 +103,11 @@ def route(question: str) -> dict:
                 'command': ('python scripts/bazi_reading.py --year Y --month M --day D [--hour H --minute m] '
                             '--gender G --city 出生地 --current-timezone 现居地时区 --question "<原话>" --markdown'),
                 'needs': [BIRTH]}
+    if any(word in text for word in LIFE_WORDS):
+        return {'flow': 'life_guide',
+                'why': '问现实层面怎么做：查《高性价比人生指南》冻结快照，按所在地筛选适用条目',
+                'command': 'python scripts/life_guide.py --query "<关键词>" --current-timezone 现居地时区',
+                'needs': ['现居地时区（决定适用哪里的规定；事情发生在别处时另给那里的时区）']}
     return {'flow': 'other', 'why': '不是这几类常见个人问题，按 SKILL.md 路由表选工具', 'needs': []}
 
 

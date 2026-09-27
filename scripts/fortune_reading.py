@@ -33,7 +33,10 @@ from fortune_ranking import (
 from fortune_rules import capabilities, evidence, luck_observations, research_request
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
+from life_guide import LIMIT as LIFE_LIMIT
+from life_guide import entries_for, library_source
 from personal_profiles import birth_arguments, load_profile, validate_person
+from region import resolve_region
 from request_time import capture_request_time
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import asks_colour, colour_lead, colour_lines
@@ -45,7 +48,7 @@ from xieji_days import SCENARIO_TERMS as XIEJI_TERMS
 FIELDS = {'current_timezone', 'request_time', 'period', 'event', 'events', 'participants',
           'candidates', 'duration_minutes', 'busy', 'granularity', 'include_natal_reading', 'include_research',
           'question', 'intent', 'preferences'}
-EVENT_FIELDS = {'scenario', 'timezone', 'longitude', 'time_standard', 'sect', 'priority'}
+EVENT_FIELDS = {'scenario', 'timezone', 'longitude', 'time_standard', 'sect', 'priority', 'destination_timezone'}
 
 
 def _people(values: list[dict], data_dir: Path | None) -> list[dict]:
@@ -325,6 +328,8 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     event = payload.get('event', {'scenario': 'outlook'})
     if not isinstance(event, dict) or set(event) - EVENT_FIELDS:
         raise ValueError('event 字段无效')
+    if event.get('destination_timezone'):
+        ZoneInfo(event['destination_timezone'])   # an unknown zone must not count as 境外
     scenario = event.get('scenario', 'outlook')
     if scenario == 'multiple_events':
         from fortune_itinerary import read_itinerary
@@ -366,6 +371,10 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     if capability['route'] == 'selection':
         _settle_practical(result, payload.get('preferences'))
     result['conclusion'] = conclusion_packet(result)
+    # Computed from the request only, after the divination answer is settled,
+    # so it cannot feed back into any ranking.
+    result['life_reference'] = {'source': library_source(), 'region': resolve_region(payload),
+                                'entries': entries_for(payload)}
     return ok_envelope('fortune_reading', result)
 
 
@@ -1088,6 +1097,29 @@ def _lead_sentence(result: dict) -> str:
     return lead
 
 
+def _life_lines(result: dict) -> list[str]:
+    """The last section: book titles verbatim, with where each comes from.
+
+    Titles are quoted as written, so no number or condition is paraphrased
+    into something the entry does not say.
+    """
+    ref = result.get('life_reference') or {}
+    entries = (ref.get('entries') or [])[:LIFE_LIMIT]
+    if not entries:
+        return []
+    rows = [f"现实参考（《高性价比人生指南》快照 {ref['source']['snapshot_date']}，与上面的术数结论无关）"]
+    for entry in entries:
+        notes = []
+        if entry['disputed']:
+            notes.append('这条有争议，见原文备注')
+        if entry['region'] != '通用':
+            notes.append('以官方最新规定为准')
+        tail = ('；' + '；'.join(notes)) if notes else ''
+        rows.append(f"- {entry['title']}（第 {entry['section']} 节第 {entry['number']} 条，"
+                    f"证据等级 {entry['grade']}{tail}）")
+    return ['\n'.join(rows)]
+
+
 def render_answer(result: dict) -> str:
     """Render the same conclusion packet consumed by the host, in everyday Chinese."""
     if result.get('capability', {}).get('route') == 'itinerary':
@@ -1165,6 +1197,7 @@ def render_answer(result: dict) -> str:
     lines.extend(dict.fromkeys(missing))
     if state in RESEARCH_STATES:
         lines.append('以上是已有依据支持的部分。还缺的本题条款可继续补查约5分钟；这份计算结果尚未执行外部检索，不代表古籍里不存在相关内容。')
+    lines.extend(_life_lines(result))
     return '\n\n'.join(lines)
 
 
