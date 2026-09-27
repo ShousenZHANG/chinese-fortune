@@ -237,14 +237,17 @@ def test_ranking_declares_the_precedence_version_it_used():
     assert travel['precedence_version'] == PRECEDENCE_VERSION
 
 
-def _travel_request(candidates: list[dict], period: dict) -> dict:
+def _travel_request(candidates: list[dict], period: dict, born: int = 1997) -> dict:
+    # 1997-12-24 is 丁丑. Tests of the hour rules on 庚申 and 癸亥 days pass
+    # born=2005 (乙酉), whose 相主 touches none of those hours: for 丁丑, 癸未 is
+    # 天克地冲 and a 癸 hour on a 癸 day is 七杀 twice, which would bar them first.
     return {
         'current_timezone': 'Australia/Sydney', 'request_time': '2026-09-17T02:00:00Z',
         'period': period,
         'event': {'scenario': 'travel', 'timezone': 'Australia/Sydney',
                   'longitude': 151.2, 'time_standard': 'true-solar'},
         'participants': [{'id': 'me', 'confirmed': True, 'person': {
-            'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30,
+            'birth': {'year': born, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30,
                       'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 120.64},
             'time_certainty': 'exact'}}],
         'duration_minutes': 120, 'candidates': candidates, 'granularity': 'hour',
@@ -429,7 +432,10 @@ def test_forbidden_hours_are_keyed_to_the_day_each_hour_falls_in():
     from fortune_reading import read_request
     result = read_request(_travel_request(
         [{'id': 'cross', 'start': '2026-10-15T20:00', 'end': '2026-10-16T12:00'}], _OCT))
-    entry = result['ranking']['tiers'][0]
+    # 相主 bars the whole window for 丁丑: the 癸丑 hour on the 癸亥 day is 七杀 twice.
+    (entry,) = result['ranking']['excluded']
+    assert [(h['label'], h['day_ganzhi'], h['pillar_ganzhi']) for h in entry['excluded_by']] == [
+        ('七杀重见', '癸亥', '癸丑')]
     assert [d['day_ganzhi'] for d in entry['days']] == ['壬戌', '癸亥']
     assert [d['resolved'] for d in entry['days']] == [True, False]
     # Guard against the assertion below going vacuous if the calendar shifts:
@@ -580,8 +586,10 @@ def test_one_candidate_split_by_a_busy_block_does_not_tie_with_itself():
     came back as 「没有条款能分出高下」 with itself listed twice.
     """
     from fortune_reading import read_request
-    request = _travel_request([_slot('oct15', '2026-10-15', '09:00', '18:00')], _OCT)
-    request['busy'] = [{'start': '2026-10-15T12:00', 'end': '2026-10-15T13:00'}]
+    # 08:00-13:30 stays in 辰巳午: for 丁丑 the 丁未 hour (13:41-15:41 by true solar
+    # time here) is 天比地冲, and 壬's 截路空亡 hours are 寅卯.
+    request = _travel_request([_slot('oct15', '2026-10-15', '08:00', '13:30')], _OCT)
+    request['busy'] = [{'start': '2026-10-15T10:00', 'end': '2026-10-15T11:00'}]
     result = read_request(request)
     assert len(result['ranking']['tiers']) == 2
     # ``ties`` is published in the JSON and no longer gates the recommendation,
@@ -604,9 +612,9 @@ def test_result_states_what_it_does_not_cover():
 _SEP = {'start': '2026-09-21', 'end': '2026-09-24'}
 
 
-def _read(candidates: list[dict], period: dict, question: str = '', **extra) -> dict:
+def _read(candidates: list[dict], period: dict, question: str = '', born: int = 1997, **extra) -> dict:
     from fortune_reading import read_request
-    return read_request({**_travel_request(candidates, period), 'question': question, **extra})
+    return read_request({**_travel_request(candidates, period, born), 'question': question, **extra})
 
 
 def _render(result: dict) -> tuple[str, str]:
@@ -659,7 +667,7 @@ def test_a_window_inside_one_reading_is_still_blocked():
     戌亥, which 《三命通会》 names. Neither reading may be dropped."""
     for cid, start, end, book, pid in (('gui', '00:45', '03:40', '《渊海子平》', 'yuanhai:c048:p0003'),
                                        ('eve', '19:45', '22:30', '《三命通会》', 'sanming:c003:p0035')):
-        result = _read([_slot(cid, '2026-10-16', start, end)], _OCT)
+        result = _read([_slot(cid, '2026-10-16', start, end)], _OCT, born=2005)
         assert result['recommendation']['status'] == 'clause_conflict', cid
         contested = result['ranking']['tiers'][0]['contested_hours_in_window']
         assert contested and all(h['readings'] == [pid] for h in contested), cid
@@ -708,7 +716,7 @@ def test_a_conflict_names_the_window_and_the_clock_time():
     request = {'current_timezone': 'Asia/Shanghai', 'request_time': '2026-09-24T01:00:00Z',
                'period': {'start': '2026-10-13', 'end': '2026-10-16'},
                'event': {'scenario': 'travel', 'timezone': 'Asia/Shanghai', 'time_standard': 'clock'},
-               'participants': _travel_request([], _OCT)['participants'],
+               'participants': _travel_request([], _OCT, born=2005)['participants'],
                'duration_minutes': 120, 'granularity': 'hour',
                'candidates': [{'id': 'oct13', 'start': '2026-10-13T12:00', 'end': '2026-10-13T14:00'}]}
     result = read_request(request)
@@ -900,7 +908,8 @@ def test_clean_starts_leave_out_every_start_that_would_touch_a_block():
 def test_earliest_moves_past_a_named_hour_instead_of_giving_up():
     """A window whose first slot runs into 庚申's 午未 used to end as a conflict
     even though a clear start existed later the same afternoon."""
-    result = _read([_slot('oct13', '2026-10-13', '10:30', '18:30')], _OCT, preferences={'prefer': 'earliest'})
+    result = _read([_slot('oct13', '2026-10-13', '10:30', '18:30')], _OCT, born=2005,
+                   preferences={'prefer': 'earliest'})
     blocks = result['practical_screening']['tiers'][0]['forbidden_hours_in_window']
     assert [h['hour_branch'] for h in blocks] == ['午', '未']
     choice = result['practical_choice']

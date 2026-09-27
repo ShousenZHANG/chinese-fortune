@@ -32,7 +32,7 @@ SCENARIOS = {
     'fengshui': ('环境与风水', 'specialist', '实际布局、朝向、测量口径及本法依据', 'not_implemented'),
     'review': ('复盘纠错', 'specialist', '原始判断、当时输入与版本、已发生事实；不倒改为命中', 'not_implemented'),
 }
-PRECEDENCE_VERSION = 'precedence-v3'
+PRECEDENCE_VERSION = 'precedence-v4'
 PERSONAL_ROUTES = ('selection', 'period')
 
 SOURCE_FILE = Path(__file__).resolve().parents[1] / 'references' / 'forecast-source-audit.json'

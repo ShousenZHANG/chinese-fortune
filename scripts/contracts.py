@@ -40,6 +40,8 @@ class PersonalFactor(TypedDict):
     passage_id: str
     table: NotRequired[str]             # the passage that defines a positional table
     other: NotRequired[str]             # another book's contrary rule, named not followed
+    pillar: NotRequired[str]            # year, month, day, hour, or 'set': counted over several
+    counted: NotRequired[list[str]]     # for 'set': the pillars whose points were counted
 
 
 class PillarContext(TypedDict):
@@ -51,10 +53,11 @@ class PillarContext(TypedDict):
 class PersonalDay(TypedDict):
     birth_year: str
     day_ganzhi: str
-    grade: Grade
-    factors: list[PersonalFactor]
-    context: dict[str, PillarContext]   # 'year', 'month': weighed apart from the day
-    repeats_without_day: list[PersonalFactor]
+    grade: Grade                        # every known pillar: a 凶 year or hour is not hidden by a good day
+    pillar_grade: Grade                 # the day pillar alone, a 分项 never used to rank
+    factors: list[PersonalFactor]       # what sets ``grade``: the day's own, and the bad ones above and within it
+    context: dict[str, PillarContext]   # 'year', 'month' in full, good factors included
+    hour_ganzhi: NotRequired[str]       # when a clock time was chosen
 
 
 class PersonalPerson(TypedDict):
@@ -79,6 +82,9 @@ class DayRuleHit(TypedDict):
     quote: str
     reason: str
     plain: str                          # the reader's sentence for it
+    # 相主 only: which pillar of the chosen time carries it, and that pillar.
+    pillar: NotRequired[str]
+    pillar_ganzhi: NotRequired[str]
     # 协纪 only: the 用事 name, how the day was derived, and every passage used.
     term: NotRequired[str]
     derivation: NotRequired[str]

@@ -63,7 +63,7 @@ def route(question: str) -> dict:
     aspects = aspects_asked(text)
     if aspects:
         return {'flow': 'wear_advice', 'aspects': aspects,
-                'why': '问穿戴、颜色、数字、方位或五行喜用：按《穷通宝鉴》调候用神换算',
+                'why': '问穿戴、颜色、数字、方位或五行喜用：按《穷通宝鉴》这一格调候的一般取法换算（例外未逐盘核对）',
                 'command': ('python scripts/bazi_reading.py --year Y --month M --day D [--hour H --minute m] '
                             '--gender G --city 出生地 --current-timezone 现居地时区 --question "<原话>" --markdown'),
                 'needs': [BIRTH]}

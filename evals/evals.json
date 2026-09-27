@@ -702,7 +702,7 @@
           "paths": {
             "ok": true,
             "capabilities.0.personal_ranking": "rule_based",
-            "capabilities.0.precedence_version": "precedence-v3",
+            "capabilities.0.precedence_version": "precedence-v4",
             "capabilities.0.ranking_reference": "references/26-precedence.md",
             "capabilities.0.calendar_screening": "rule_based"
           }
@@ -759,7 +759,7 @@
           "kind": "file_contains",
           "file": "references/26-precedence.md",
           "needles": [
-            "precedence-v3",
+            "precedence-v4",
             "第三层：自洽者胜",
             "另说：《X》作 Y"
           ]
@@ -770,7 +770,7 @@
       "id": 27,
       "name": "personal-days-by-birth-year",
       "prompt": "下个月哪几天对我好，哪几天要避开？",
-      "expected_output": "按《协纪辨方书》卷三十三相主，用出生那一年的干支给每一天分大吉到大凶；首句列最好和要避开的日子，各带理由名；层 2 附原文与出处，并说明原文例子是修造、安葬，补龙扶山未实现。",
+      "expected_output": "按《协纪辨方书》卷三十三相主，用出生那一年的干支比所选时间的年、月、日（有时刻时加时）四柱，给每一天分大吉到大凶；首句列最好和要避开的日子，各带理由名；整段落在冲命的年或月里时，首句先说这一条、说明换日子避不开；层 2 附原文与出处，并说明原文例子是修造、安葬，补龙扶山未实现。",
       "assertions": [
         {
           "kind": "script",
@@ -783,7 +783,7 @@
           "paths": {
             "ok": true,
             "capabilities.0.personal_ranking": "rule_based",
-            "capabilities.0.precedence_version": "precedence-v3"
+            "capabilities.0.precedence_version": "precedence-v4"
           }
         },
         {
@@ -794,7 +794,9 @@
             "從來皆論生年不論生日",
             "天克地冲",
             "略輕",
-            "庚干上不同"
+            "庚干上不同",
+            "時為輕",
+            "pillar_grade"
           ]
         }
       ]
@@ -803,7 +805,7 @@
       "id": 28,
       "name": "clothing-colours-from-tiaohou",
       "prompt": "结合我的八字，穿什么颜色、戴什么对我有利？",
-      "expected_output": "首句直接给首选、其次与少穿的颜色及饰物；依据只用《穷通宝鉴》调候：本日主本月令原文 → 五行 → 《三命通会》卷七配色、《梅花易数》物象；说明一次古籍没说穿颜色能改变遭遇。",
+      "expected_output": "首句给这一格调候的一般取法：首选、其次的颜色及饰物，并说明这一格的例外没按本人的盘核对；不给少穿的颜色；依据只用《穷通宝鉴》调候：本日主本月令原文 → 审校说明原文 → 五行 → 《三命通会》卷七配色、《梅花易数》物象；说明一次古籍没说穿颜色能改变遭遇。",
       "assertions": [
         {
           "kind": "script",
@@ -833,7 +835,8 @@
             "colour_advice.status": "ok",
             "colour_advice.key": "庚|子",
             "colour_advice.wear.0.wuxing": "火",
-            "colour_advice.avoid.0.wuxing": "水",
+            "colour_advice.scope": "general_choice_for_cell",
+            "colour_advice.chart_conditions_checked": false,
             "colour_advice.tiaohou.passage_id": "qiongtong:c005:p0114"
           }
         },
@@ -842,6 +845,7 @@
           "file": "references/27-direct-answer.md",
           "needles": [
             "问穿什么颜色、戴什么对自己有利时",
+            "这一格一般先取",
             "没说穿某种颜色就能改变遭遇"
           ]
         }

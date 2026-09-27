@@ -169,7 +169,7 @@ def main(argv: list[str] | None = None) -> int:
         assert future['event_method']['method'] == 'yuanling-core'
         assert comparison['event_segments']
         assert future['event_method']['charts'][0]['participants'][0]['participant_id'] == 'sample'
-        # 5.0.0 flows, from the installed copy: route a question, grade days, answer colours.
+        # 5.0.0/5.1.0 flows, from the installed copy: route a question, grade days, answer colours.
         routed = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/question_router.py'),
                                  '--question', '下个月哪天搬家好？'], work))
         assert routed['flow'] == 'personal_days' and routed['request']['event'] == {'scenario': 'moving'}
@@ -184,6 +184,7 @@ def main(argv: list[str] | None = None) -> int:
                                   '--timezone', 'Asia/Shanghai', '--longitude', '120',
                                   '--current-timezone', 'Australia/Sydney', '--question', '我穿什么颜色旺我'], work))
         assert colours['colour_advice']['status'] == 'ok' and colours['colour_advice']['wear']
+        assert colours['colour_advice']['chart_conditions_checked'] is False and 'avoid' not in colours['colour_advice']
         qimen = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/qimen_cast.py'),
                                 '--date', '2026-06-18', '--time', '08:00',
                                 '--target-timezone', 'Asia/Shanghai'], work))

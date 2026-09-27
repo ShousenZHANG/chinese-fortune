@@ -15,9 +15,12 @@ from xiangzhu import (
     QUOTES,
     TABLES,
     assess_day,
+    assess_people,
     birth_year_of,
     date_pillars,
+    personal_calendar,
     pillar_factors,
+    prohibitions,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -102,8 +105,13 @@ def test_the_passage_examples_come_out_as_it_says():
     # already hold two points; a 辛 day is a third.
     sha = assess_day('乙卯', {'year': '辛丑', 'month': '辛卯', 'day': '辛巳'})
     assert sha['grade'] == '凶' and 'qi_sha_two' in {f['rule'] for f in sha['factors']}
-    assert [f['rule'] for f in assess_day('乙卯', {'year': '辛丑', 'month': '辛卯', 'day': '丙子'})
-            ['repeats_without_day']] == ['qi_sha_two']
+    # The year and month alone make it 「後大不吉」, even on a 命貴人 day.
+    other = assess_day('乙卯', {'year': '辛丑', 'month': '辛卯', 'day': '丙子'})
+    assert other['grade'] == '凶' and other['pillar_grade'] == '大吉'
+    assert [f['rule'] for f in other['factors'] if f['polarity'] == 'bad'] == ['qi_sha_two']
+    # A 辛卯 day is 命禄 (大吉) and one 七煞: alone it is 吉 at best, whatever else counts.
+    lu_day = assess_day('乙卯', {'year': '辛丑', 'month': '戊子', 'day': '辛卯'})
+    assert (lu_day['grade'], lu_day['pillar_grade']) == ('凶', '吉')
     # 「馬有必不可用者如寅以申為馬…衝寅命凶」
     horse = assess_day('甲寅', {'day': '壬申'})
     assert 'yi_ma' not in {f['rule'] for f in horse['factors']} and horse['grade'] == '凶'
@@ -128,9 +136,12 @@ def test_clash_weight_follows_the_direction(birth, day, grade):
 
 def test_a_light_clash_is_still_bad_when_the_year_makes_it():
     """「如辰戌丑未命遇衝…略輕…然太嵗衝之亦凶」"""
-    context = assess_day('己丑', {'year': '辛未', 'month': '戊戌', 'day': '甲子'})['context']
+    day = assess_day('己丑', {'year': '辛未', 'month': '戊戌', 'day': '甲子'})
+    context = day['context']
     assert context['year']['grade'] == '凶'
     assert context['year']['factors'][0]['quote'] == QUOTES['year_tu']
+    # 甲子 is 己's 合官 (大吉) as a day, but the year's clash stands over it.
+    assert day['pillar_grade'] == '大吉' and day['grade'] == '凶'
     assert assess_day('己丑', {'day': '辛未'})['grade'] == '小凶'
 
 
@@ -146,11 +157,13 @@ def test_one_seven_killing_is_tolerable_only_beside_a_good_year_and_month():
     good = assess_day('丁丑', {'year': '丙午', 'month': '戊戌', 'day': '癸亥'})
     assert good['grade'] == '吉' and 'qi_sha_one' in {f['rule'] for f in good['factors']}
     # 乙未 clashes 丑 (略輕) without being a 七煞 itself: the month is against the
-    # person, so the one 七煞 day is only 平.
+    # person, so the time is no better than the month.
     bad_month = assess_day('丁丑', {'year': '丙午', 'month': '乙未', 'day': '癸亥'})
-    assert bad_month['context']['month']['grade'] == '小凶' and bad_month['grade'] == '平'
+    assert bad_month['context']['month']['grade'] == '小凶' and bad_month['grade'] == '小凶'
     # A 七煞 month makes the 七煞 day a second point: 「若至二㸃必凶」.
-    assert assess_day('丁丑', {'year': '丙午', 'month': '癸未', 'day': '癸亥'})['grade'] == '凶'
+    assert assess_day('丁丑', {'year': '丙午', 'month': '癸巳', 'day': '癸亥'})['grade'] == '凶'
+    # 癸未 is also 天尅地衝 for 丁丑, which is 最凶 in the month as in the day.
+    assert assess_day('丁丑', {'year': '丙午', 'month': '癸未', 'day': '癸亥'})['grade'] == '大凶'
 
 
 def test_repeats_the_passage_allows_once_or_twice():
@@ -244,3 +257,124 @@ def test_no_birth_year_at_all_says_what_is_missing(monkeypatch):
     lead = render_answer(result).split('\n\n')[0]
     assert lead.startswith('哪天对你好坏要按你出生那一年的干支看，但你的出生年柱还没定下来')
     assert '没有这一类' not in lead
+
+
+def test_a_bad_year_is_not_hidden_by_a_good_day():
+    """The audit case: 丁丑 on 2027-03-31 is a 命貴人 day in a 丁未 year. The
+    passage bars 天比地衝 in 「年月日時」 and weighs 「太歳衝命最凶」."""
+    pillars = date_pillars(date(2027, 3, 31), 'Asia/Shanghai')
+    assert pillars == {'year': '丁未', 'month': '癸卯', 'day': '己酉'}
+    assessed = assess_people([('me', '丁丑')], [pillars])
+    day = assessed['people'][0]['days'][0]
+    assert (day['grade'], day['pillar_grade'], assessed['grade']) == ('凶', '大吉', '凶')
+    hits = prohibitions(assessed)
+    assert [(h['rule'], h['pillar'], h['pillar_ganzhi']) for h in hits] == [
+        ('xiangzhu_tian_bi_di_chong', 'year', '丁未')]
+    assert hits[0]['label'] == '年柱天比地冲' and '这一年（丁未）' in hits[0]['plain']
+
+
+def test_the_hour_is_read_when_the_time_has_one():
+    """「今選擇家通忌天尅地衝年月日時…並忌天比地衝年月日時」, and 「時為輕」."""
+    # The audit's case: a 丁未 hour is 天比地衝 for 丁丑.
+    assessed = assess_people([('me', '丁丑')], [{'year': '丙午', 'month': '壬辰', 'day': '丁酉', 'hour': '丁未'}])
+    assert assessed['grade'] == '凶'
+    assert [(h['rule'], h['pillar'], h['pillar_ganzhi']) for h in prohibitions(assessed)] == [
+        ('xiangzhu_tian_bi_di_chong', 'hour', '丁未')]
+    # 丁丑忌辛未 is a table of days (「日納音尅化命納音」); in the hour a plain clash
+    # is lighter than a day's 略輕 one, so it is said and does not grade.
+    light = assess_day('丁丑', {'year': '丙午', 'month': '壬辰', 'day': '己酉', 'hour': '辛未'})
+    assert light['grade'] == '大吉' and light['pillar_grade'] == '大吉' and light['hour_ganzhi'] == '辛未'
+    hour = [f for f in light['factors'] if f['pillar'] == 'hour']
+    assert [(f['rule'], f['polarity'], f['quote']) for f in hour] == [('chong_hour', 'note', QUOTES['weight'])]
+    assert '只作提示' in hour[0]['plain']
+    assert not prohibitions(assess_people([('me', '丁丑')], [{'year': '丙午', 'month': '壬辰', 'day': '己酉',
+                                                            'hour': '辛未'}]))
+    # 天尅地衝 stays 最凶 in any pillar.
+    assert assess_day('甲子', {'day': '丙寅', 'hour': '庚午'})['grade'] == '大凶'
+    # Points are counted over the hour too: 七煞 in the month and the hour.
+    two = assess_day('乙卯', {'year': '丙午', 'month': '辛卯', 'day': '丙子', 'hour': '辛卯'})
+    assert two['grade'] == '凶' and 'qi_sha_two' in {f['rule'] for f in two['factors']}
+    # Without an hour nothing is read from one.
+    assert 'hour_ganzhi' not in assess_day('丁丑', {'day': '己酉'})
+
+
+def test_a_month_is_graded_with_its_year():
+    calendar = personal_calendar([('me', '丁丑')], '2027-03-01', '2027-06-01', 'Asia/Shanghai', 'month')
+    assert calendar['unit'] == 'month' and calendar['entries']
+    for entry in calendar['entries']:
+        person = entry['people'][0]
+        assert person['context']['year']['ganzhi'] == '丁未'
+        assert entry['grade'] in ('凶', '大凶'), entry['label']
+    years = personal_calendar([('me', '丁丑')], '2026-01-01', '2029-01-01', 'Asia/Shanghai', 'year')
+    assert {e['ganzhi']: e['grade'] for e in years['entries']}['丁未'] == '凶'
+
+
+def _period_1997(start: str, end: str, question: str = '这几天哪天对我好？') -> dict:
+    from fortune_reading import read_request
+    return read_request({
+        'current_timezone': 'Asia/Shanghai', 'request_time': '2027-03-20T02:00:00Z', 'intent': 'period',
+        'period': {'start': start, 'end': end}, 'event': {'scenario': 'outlook', 'longitude': 121.47},
+        'question': question,
+        'participants': [{'id': 'me', 'confirmed': True, 'person': {
+            'birth': {'year': 1997, 'month': 6, 'day': 15, 'hour': 10, 'minute': 0, 'gender': 'male',
+                      'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}}]})
+
+
+def test_the_answer_says_the_year_first_and_calls_no_day_good():
+    from fortune_reading import render_answer
+    text = render_answer(_period_1997('2027-03-29', '2027-04-03'))
+    lead = text.split('\n\n')[0]
+    assert lead.startswith('按你出生那年的干支（丁丑）看，这段时间没有对你好的日子：这一年（丁未）冲你的生年')
+    assert '太岁冲命最凶' in lead and '换哪天都避不开' in lead
+    assert '大吉' not in lead and '3月29日（丁未，天比地冲）本身也冲你' in lead
+    # Layer 2 keeps the day pillar as a part, said as such.
+    assert '3月31日（己酉）：凶（只看日柱是大吉，被年、月或时辰拉低）' in text
+    assert text.count('这一年（丁未）：凶') == 1
+
+
+def test_a_selection_in_a_clashing_year_says_the_day_cannot_avoid_it():
+    from fortune_reading import read_request, render_answer
+    result = read_request({
+        'current_timezone': 'Asia/Shanghai', 'request_time': '2027-03-20T02:00:00Z', 'intent': 'selection',
+        'question': '签合同选哪个时间？', 'period': {'start': '2027-03-29', 'end': '2027-04-03'},
+        'event': {'scenario': 'signing', 'timezone': 'Asia/Shanghai', 'longitude': 121.47},
+        'duration_minutes': 120, 'granularity': 'hour',
+        'candidates': [{'id': 'a', 'start': '2027-03-31T13:00', 'end': '2027-03-31T15:00'},
+                       {'id': 'b', 'start': '2027-03-30T09:00', 'end': '2027-03-30T11:00'}],
+        'participants': [{'id': 'me', 'confirmed': True, 'person': {
+            'birth': {'year': 1997, 'month': 6, 'day': 15, 'hour': 10, 'minute': 0, 'gender': 'male',
+                      'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}}]})
+    assert result['conclusion']['status'] == 'excluded_by_clause'
+    rows = result['ranking']['excluded']
+    assert {r['candidate_id'] for r in rows} == {'a', 'b'}
+    assert all(any(h.get('pillar') == 'year' for h in r['excluded_by']) for r in rows)
+    lead = render_answer(result).split('\n\n')[0]
+    assert lead.startswith('a、b 都需要避开：你（丁丑年生）的年柱天比地冲')
+    assert lead.count('年柱天比地冲') == 1 and lead.endswith('这一年里换哪天都避不开，要换就得换出这一年。')
+    # The 辛未 hour of a is read, and is light.
+    hours = {d.get('hour_ganzhi') for p in rows[0]['personal']['people'] for d in p['days']}
+    assert '辛未' in hours
+
+
+def test_a_clashing_month_inside_the_period_is_said_once_with_its_dates():
+    """己卯 (2000-01-15): the 丁酉 month runs to 寒露 (2026-10-08) and clashes 卯
+    (「凶莫堪」). Its days are named as one stretch, not one by one; a day that
+    also clashes on its own is still named."""
+    from fortune_reading import read_request, render_answer
+    result = read_request({
+        'current_timezone': 'Asia/Shanghai', 'request_time': '2026-09-01T02:00:00Z', 'intent': 'period',
+        'period': {'start': '2026-09-28', 'end': '2026-10-13'}, 'event': {'scenario': 'outlook', 'longitude': 121.47},
+        'question': '这两周哪天对我好？',
+        'participants': [{'id': 'me', 'confirmed': True, 'person': {
+            'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10, 'minute': 30, 'gender': 'male',
+                      'timezone': 'Asia/Shanghai', 'longitude': 120}, 'time_certainty': 'exact'}}]})
+    lead = render_answer(result).split('\n\n')[0]
+    assert lead == ('按你出生那年的干支（己卯）看，这段时间对你最好的日子是10月11日（戊午，命禄），是大吉；'
+                    '9月28日至10月8日在丁酉月里，这个月冲你的生年（月柱冲命，凶），协纪说月次于太岁、重于日，'
+                    '这些日子都要避开；另外要避开10月2日（己酉，天比地冲）。')
+    months = personal_calendar([('me', '丁丑')], '2027-01-01T00:00:00+08:00', '2028-01-01T00:00:00+08:00',
+                               'Asia/Shanghai', 'month')
+    first = months['entries'][0]
+    assert first['ganzhi'] == '庚子' and first['grade'] == '吉'  # 丙午 year, before 立春 2027
+    from fortune_reading import _entry_list
+    assert _entry_list([first], unit='month') == '庚子月（1月1日至1月5日，财官、六合）'

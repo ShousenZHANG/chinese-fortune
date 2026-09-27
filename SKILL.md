@@ -49,7 +49,7 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 | 这周哪天对我好、今天运气怎么样、明天是吉日吗、下个月哪几天要避开、明年哪几个月好 | `personal_days` | `fortune_reading.py --stdin`，`intent: period`，`period` 用原话的时间词（今天、明天、后天、这周、下周、周末、这个月、下个月、今年、明年，或明确日期）；按出生年相主逐日（或逐月）分大吉到大凶 |
 | 下个月哪天搬家好、今年哪天结婚好、本月哪天开业、10月29日搬家可以吗、下周面试哪天好 | `personal_days`（带事项） | 同上，`event.scenario` 填事项（moving、wedding、business、travel、interview）；先排这件事的忌日，再按相主分吉凶 |
 | 明天9点出发还是14点出发好、下周三上午十点和下午两点面试哪个好 | `event_slots` | `intent: selection`，给 `candidates` 与 `duration_minutes`；先排忌日忌时，再按相主分层，同层再按偏好 |
-| 穿什么颜色旺我、幸运色、适合什么颜色的车、戴什么首饰、戴金还是戴银、幸运数字、手机号选什么数字、往哪个方位发展、五行缺什么、喜什么五行 | `wear_advice` | `bazi_reading.py --question "<原话>" --markdown`；按《穷通宝鉴》调候用神换算颜色、饰物、方位、数字 |
+| 穿什么颜色旺我、幸运色、适合什么颜色的车、戴什么首饰、戴金还是戴银、幸运数字、手机号选什么数字、往哪个方位发展、五行缺什么、喜什么五行 | `wear_advice` | `bazi_reading.py --question "<原话>" --markdown`；按《穷通宝鉴》这一格调候的一般取法换算颜色、饰物、方位、数字，并说明这一格的例外未按本人盘面核对 |
 | 今天黄历宜什么、这天老黄历忌什么 | `almanac` | `huangli_query.py --date … --question "<原话>" --markdown`（不针对个人） |
 | 办公桌朝哪、床头朝向、户型风水 | `specialist` | 风水专项，不用上面的方位换算 |
 
@@ -65,7 +65,7 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 |---|---|---|
 | 短期运势 / 面试择时 | [个人未来时段](references/24-personalized-forecast.md) | fortune_reading.py |
 | 八字 / 四柱 / 用神 | [八字](references/01-bazi.md) | bazi_reading.py |
-| 穿什么颜色、戴什么对自己有利 | [八字](references/01-bazi.md)（颜色按《穷通宝鉴》调候用神换算） | bazi_reading.py --question … --markdown |
+| 穿什么颜色、戴什么对自己有利 | [八字](references/01-bazi.md)（颜色按《穷通宝鉴》这一格调候的一般取法换算，例外未逐盘核对） | bazi_reading.py --question … --markdown |
 | 紫微 | [紫微](references/02-ziwei.md) | ziwei_calc.py |
 | 周易 / 易经 | [周易](references/03-yijing.md) | yijing_cast.py |
 | 六爻 | [六爻](references/04-liuyao.md) | liuyao_cast.py |

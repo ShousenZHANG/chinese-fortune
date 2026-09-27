@@ -121,6 +121,9 @@ def test_dst_gap_fold_offset_and_duration():
 
 
 def test_availability_intersection_busy_cut_and_past(query):
+    # 1998-01-15 is 丁丑. For the fixture's 己卯 the 丁酉 month (to 2026-10-08) clashes 卯,
+    # 「凶莫堪」, so 相主 would bar every candidate before this test's point is reached.
+    query['participants'][0]['person']['birth']['year'] = 1998
     query['busy'] = [{'start': '2026-09-15T10:00', 'end': '2026-09-15T11:00'},
                        {'start': '2026-09-15T14:00', 'end': '2026-09-15T15:00'}]
     result = read_request(query)
@@ -304,6 +307,9 @@ def test_scope_audit_quotes_valid_but_not_interview_rules():
 
 
 def test_plain_answer_quote_then_plain_explanation(query):
+    # 1999-01-15 is 戊寅: both windows are 吉 for it. The fixture's 己卯 is barred for all of
+    # 2026-09 (the 丁酉 month clashes 卯, 「凶莫堪」), and for 丁丑 the afternoon's 丁未 hour is 天比地冲.
+    query['participants'][0]['person']['birth']['year'] = 1999
     result = read_request(query)
     text = render_answer(result)
     first = text.splitlines()[0]

@@ -306,7 +306,7 @@ def split_eligible_windows(availability: list[dict], participant: dict, duration
                     continue
                 p = segment['facts']['pillars']
                 hits = (day_prohibitions(scenario, p['day'], p['month'][1])
-                        + personal_hits(people or [], {'year': p['year'], 'month': p['month'], 'day': p['day']})[1]
+                        + personal_hits(people or [], {k: p[k] for k in xiangzhu.PILLARS if k in p})[1]
                         if 'day' in p else [])
                 if hits:
                     # The first hit keeps the old flat shape; ``excluded_by`` has them all.
@@ -337,8 +337,9 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str,
     lacks day granularity are reported as unrankable rather than assumed clear.
 
     Day rules apply only where the scenario maps to a 用事 the clauses name.
-    相主 (xiangzhu.py) applies to every scenario: it grades the day for the
-    person, not the event. A 凶 or 大凶 day excludes the window like a day rule;
+    相主 (xiangzhu.py) applies to every scenario: it grades the time for the
+    person, not the event, by its year, month, day and (when clock times are
+    known) hour pillars. A time graded 凶 or 大凶 is excluded like a day rule;
     the grades of the rest become the tiers, best first.
     """
     people = personal_people([participant]) if people is None else people
@@ -422,13 +423,16 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str,
                             'day_ganzhi': pillar['day'], 'hour_branch': pillar['hour'][1],
                             'rule_stem': stem, 'readings': readings,
                             'segment_start': ref['start'], 'segment_end': ref['end']}
-            # 相主: every touched day, for everyone the choice is made for.
-            spans = [{'year': y, 'month': m, 'day': d}
-                     for y, m, d in dict.fromkeys((p['year'], p['month'], p['day']) for p in dated)]
+            # 相主: every touched day, and every touched hour when the window
+            # has clock times, for everyone the choice is made for. The
+            # passage bars 「天尅地衝…年月日時」, so the hour is read too.
+            keys = [k for k in xiangzhu.PILLARS if all(k in p for p in dated)]
+            spans = [dict(zip(keys, found, strict=True))
+                     for found in dict.fromkeys(tuple(p[k] for k in keys) for p in dated)]
             assessed, personal = personal_hits(people, spans)
             for hit in personal:
-                if not any((b['rule'], b['day_ganzhi'], b.get('participant_id')) ==
-                           (hit['rule'], hit['day_ganzhi'], hit.get('participant_id')) for b in blocked):
+                same = ('rule', 'day_ganzhi', 'participant_id', 'pillar', 'pillar_ganzhi')
+                if not any(tuple(b.get(k) for k in same) == tuple(hit.get(k) for k in same) for b in blocked):
                     blocked.append(hit)
             entry: RankingRow = {
                 'candidate_id': candidate['candidate_id'], 'start': window['start'],
@@ -473,8 +477,10 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str,
         'personal_basis': {'passage_id': xiangzhu.PASSAGE, 'quote': xiangzhu.QUOTES['method'],
                            'method': '相主：按本人出生年的干支看日子，不按日主'},
         'scope': ('日级条款只排除：《渊海子平》天地转杀（事项在原文所列时）与《协纪辨方书》自称吉神不能化解的忌日。'
-                  '相主（协纪卷三十三，按本人生年干支）对每个人再排除天克地冲、天比地冲、纳音克冲、'
-                  '冲命（凶莫堪者）与七杀重见的日子，其余按大吉、吉、平、小凶分 tier；同 tier 内并列。'
+                  '相主（协纪卷三十三，按本人生年干支）按所选时间的年、月、日、时四柱一起看（时柱仅在有具体时刻时），'
+                  '对每个人再排除任一柱的天克地冲、天比地冲，日柱的纳音克冲，年、月、日柱的冲命（凶莫堪者；太岁冲命一律为凶），'
+                  '时柱其余的冲命按「時為輕」只作提示，'
+                  '以及四柱合计七杀重见或多见的时间；其余按大吉、吉、平、小凶分 tier，吉的条目只看日柱；同 tier 内并列。'
                   '协纪按吉凶轻重取舍的宜忌（六等）未实现，不据以排除也不据以推荐。'
                   'forbidden_hours_in_window 指该窗口实际覆盖到的忌时，按各时辰所在日的'
                   '日干取表；contested_hours_in_window 指戊、癸日里窗口实际覆盖、且某一说'

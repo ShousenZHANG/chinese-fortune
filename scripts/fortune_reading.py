@@ -15,7 +15,7 @@ from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
 from birth_interval import calculate_interval
 from classical_guidance import research_sources
-from contracts import Recommendation
+from contracts import Grade, Recommendation
 from fortune_calendar import period_facts
 from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
@@ -38,7 +38,7 @@ from request_time import capture_request_time
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import asks_colour, colour_lead, colour_lines
 from xiangzhu import PASSAGE as XIANGZHU_PASSAGE
-from xiangzhu import birth_years_of, personal_calendar
+from xiangzhu import birth_years_of, grade_of, label_of, personal_calendar, worst
 from xieji_days import RULES as XIEJI_RULES
 from xieji_days import SCENARIO_TERMS as XIEJI_TERMS
 
@@ -515,31 +515,74 @@ def _excluded_sentence(result: dict) -> str:
     counts: dict[str, int] = {}
     for row in ranking.get('excluded', []):
         counts[row['candidate_id']] = counts.get(row['candidate_id'], 0) + 1
-    # The barred stretch of each (candidate, day), from the practical split.
-    # Pieces are stored in UTC; the reader gets the event's own clock.
+    # The barred stretches of each candidate, from the practical split, each
+    # with its own reasons. Pieces are stored in UTC; the reader gets the
+    # event's own clock. Two stretches (two days, or two hours of one day) are
+    # never joined into one span that would swallow the usable part between.
     zone = ZoneInfo(result['window']['timezone'])
-    cut: dict[tuple[str, str], tuple[str, str]] = {}
-    for piece in result.get('excluded_segments', []):
-        key = (piece['candidate_id'], piece['day_ganzhi'])
-        start, end = (datetime.fromisoformat(piece[k]).astimezone(zone).isoformat() for k in ('start', 'end'))
-        lo, hi = cut.get(key, (start, end))
-        cut[key] = (min(lo, start, key=datetime.fromisoformat), max(hi, end, key=datetime.fromisoformat))
     sentences = []
-    for row in ranking.get('excluded', []):
+    rows = ranking.get('excluded', [])
+    # A 相主 year or month that barred every candidate is said once, not per candidate.
+    def span_key(hit: dict) -> tuple:
+        return (hit.get('participant_id'), hit['rule'], hit.get('pillar'), hit.get('pillar_ganzhi'))
+    common = [h for h in (rows[0]['excluded_by'] if len(rows) > 1 else [])
+              if h.get('pillar') in ('year', 'month')
+              and all(any(span_key(b) == span_key(h) for b in r['excluded_by']) for r in rows)]
+    common = list({span_key(h): h for h in common}.values())
+    if common:
+        names = '、'.join(dict.fromkeys(r['candidate_id'] for r in rows))
+        sentences.append(f'{names} 都需要避开：' + '；也是'.join(h['plain'] for h in common) + '。')
+
+    def own(hits: list[dict]) -> list[dict]:
+        return [h for h in hits if not any(span_key(h) == span_key(c) for c in common)]
+    said: set[tuple[str, str, str]] = set()
+    for row in rows:
         by_day: dict[str, list[str]] = {}
-        for hit in row['excluded_by']:
+        for hit in own(row['excluded_by']):
             by_day.setdefault(hit['day_ganzhi'], []).append(hit['plain'])
+        if not by_day:
+            continue
         what = '；'.join(f"覆盖到{day}日，是" + '；也是'.join(plains) for day, plains in by_day.items())
         name = row['candidate_id'] + ' '
         # A candidate that keeps another part must say which part is out.
         if row['candidate_id'] in survivors or counts[row['candidate_id']] > 1:
-            spans = [cut[(row['candidate_id'], day)] for day in by_day if (row['candidate_id'], day) in cut]
-            lo, hi = ((min((s[0] for s in spans), key=datetime.fromisoformat),
-                       max((s[1] for s in spans), key=datetime.fromisoformat)) if spans
-                      else (row['start'], row['end']))
-            name += f"的 {_span(lo, hi)} 这段"
-        sentences.append(f'{name}需要避开：{what}。')
+            lo_row, hi_row = (datetime.fromisoformat(row[k]) for k in ('start', 'end'))
+            stretches: list[dict] = []
+            for piece in sorted((p for p in result.get('excluded_segments', [])
+                                 if p['candidate_id'] == row['candidate_id']),
+                                key=lambda p: datetime.fromisoformat(p['start'])):
+                lo, hi = (datetime.fromisoformat(piece[k]) for k in ('start', 'end'))
+                plains = tuple(dict.fromkeys(h['plain'] for h in own(piece['excluded_by'])))
+                if hi <= lo_row or lo >= hi_row or not plains:
+                    continue
+                last = stretches[-1] if stretches else None
+                if last and last['end'] == lo and (last['day'], last['plains']) == (piece['day_ganzhi'], plains):
+                    last['end'] = hi
+                else:
+                    stretches.append({'start': lo, 'end': hi, 'day': piece['day_ganzhi'], 'plains': plains})
+            for part in stretches:
+                lo_text, hi_text = (part[k].astimezone(zone).isoformat() for k in ('start', 'end'))
+                key = (row['candidate_id'], lo_text, hi_text)
+                if key not in said:
+                    said.add(key)
+                    sentences.append(f"{row['candidate_id']} 的 {_span(lo_text, hi_text)} 这段"
+                                     f"{'另外还要' if common else '需要'}避开：覆盖到{part['day']}日，是"
+                                     + '；也是'.join(part['plains']) + '。')
+            if stretches:
+                continue
+            name += f"的 {_span(row['start'], row['end'])} 这段"
+        sentences.append(f"{name}{'另外还要' if common else '需要'}避开：{what}。")
     return ''.join(sentences)
+
+
+def _elsewhere(result: dict) -> str:
+    """Where to look next: a year or month that barred every candidate cannot be
+    left by moving the day."""
+    rows = result.get('ranking', {}).get('excluded', [])
+    for key, word in (('year', '这一年'), ('month', '这个节气月')):
+        if rows and all(any(h.get('pillar') == key for h in r['excluded_by']) for r in rows):
+            return f'这一条跟着{word}走，{word}里换哪天都避不开，要换就得换出{word}。'
+    return '需要换到其他日子再比。'
 
 
 def _conflict_sentence(result: dict, kind: str) -> str:
@@ -650,10 +693,16 @@ def _births(people: list[dict]) -> str:
     return '；'.join(f'{pid} {one(found)}' for pid, found in years.items())
 
 
-def _labels(factor_lists: list[list[dict]], grade: str) -> str:
-    """The labels that set a grade: the bad ones for a bad grade, else the good."""
+def _labels(factor_lists: list[list[dict]], grade: str, skip: tuple[str, ...] = (), unit: str = 'day') -> str:
+    """The labels that set a grade: the bad ones for a bad grade, else the good.
+
+    ``skip`` leaves out pillars already said once for the whole answer (a
+    year or month every entry shares). The unit's own pillar keeps the bare
+    label: a month's own 财官 is not 「月柱财官」.
+    """
     polarity = 'bad' if grade in BAD_GRADES else 'good'
-    labels = [f['label'] for factors in factor_lists for f in factors if f['polarity'] == polarity]
+    labels = [f['label'] if f.get('pillar', 'day') == unit else label_of(f) for factors in factor_lists for f in factors
+              if f['polarity'] == polarity and f.get('pillar', 'day') not in skip]
     return '、'.join(dict.fromkeys(labels))
 
 
@@ -689,74 +738,154 @@ def _personal_people_of(result: dict) -> list[dict]:
             for year in birth_years_of(p['natal'])]
 
 
-def _entry_list(entries: list[dict], limit: int = 6, event: str = '') -> str:
+def _entry_factors(entry: dict) -> list[list[dict]]:
+    return [p['days'][0]['factors'] if 'days' in p else p['factors'] for p in entry['people']]
+
+
+def _entry_contexts(entry: dict) -> list[dict]:
+    return [p['days'][0]['context'] if 'days' in p else p.get('context', {}) for p in entry['people']]
+
+
+def _entry_list(entries: list[dict], limit: int = 6, event: str = '', skip: tuple[str, ...] = (),
+                unit: str = 'day') -> str:
     shown = []
     for entry in entries[:limit]:
-        why = _labels([p['days'][0]['factors'] if 'days' in p else p['factors'] for p in entry['people']],
-                      entry['grade'])
+        grade = entry['grade']
+        if skip:
+            # What the entry has beyond the shared year or month.
+            grade = worst([grade_of([f for f in fs if f.get('pillar', 'day') not in skip])
+                           for fs in _entry_factors(entry)])
+        why = _labels(_entry_factors(entry), grade, skip, unit)
         if entry.get('event_hits'):
             why = '、'.join(dict.fromkeys(h['label'] for h in entry['event_hits'])) + '，忌' + event
         shown.append(f"{entry['label']}（{entry.get('span', entry['ganzhi'])}" + (f'，{why}' if why else '') + '）')
     return '、'.join(shown) + (f'等 {len(entries)} 个' if len(entries) > limit else '')
 
 
-def _context_sentence(calendar: dict, who: str) -> str:
-    """Year and month pillars against the person, which the passage weighs above the day."""
+WEIGHT = {'year': '协纪说太岁冲命最凶', 'month': '协纪说月次于太岁、重于日'}
+
+
+def _bad_contexts(entry: dict) -> set[tuple[str, str, Grade, str]]:
+    """(pillar, 干支, grade, labels) of each year or month against someone on this entry."""
+    found: set[tuple[str, str, Grade, str]] = set()
+    for contexts in _entry_contexts(entry):
+        for key, context in contexts.items():
+            bad = [f for f in context['factors'] if f['polarity'] == 'bad']
+            if bad:
+                found.add((key, context['ganzhi'], grade_of(bad), _labels([bad], grade_of(bad))))
+    return found
+
+
+def _shared_contexts(entries: list[dict]) -> list[tuple[str, str, Grade, str]]:
+    """The bad years and months every entry sits in: no choice of day avoids them."""
+    if not entries:
+        return []
+    shared = set.intersection(*(_bad_contexts(e) for e in entries))
+    return sorted(shared, key=lambda c: ('year', 'month').index(c[0]))
+
+
+def _context_phrase(context: tuple[str, str, Grade, str], who: str) -> str:
+    key, ganzhi, grade, labels = context
+    word = '这一年' if key == 'year' else '这个月'
+    return f"{word}（{ganzhi}）冲{who}的生年（{labels}，{grade}），{WEIGHT[key]}"
+
+
+def _context_sentence(calendar: dict, who: str, skip: tuple[str, ...] = ()) -> str:
+    """Years and months against the person that the lead has not yet said."""
     said, parts = set(), []
     for entry in calendar['entries']:
-        for person in entry['people']:
-            for day in person.get('days', []):
-                for key, context in day['context'].items():
-                    if context['grade'] in BAD_GRADES and (key, context['ganzhi']) not in said:
-                        said.add((key, context['ganzhi']))
-                        word = '这一年' if key == 'year' else '这个月'
-                        parts.append(f"{word}（{context['ganzhi']}）本身对{who}是{context['grade']}"
-                                     f"（{_labels([context['factors']], context['grade'])}），"
-                                     + ('协纪说太岁冲命最凶' if key == 'year' else '协纪说月次于年、重于日'))
-    return ('另外，' + '；'.join(parts) + '。') if parts else ''
+        for context in sorted(_bad_contexts(entry)):
+            if context[0] not in skip and context[:2] not in said:
+                said.add(context[:2])
+                parts.append(_context_phrase(context, who))
+    return ('其中' + '；'.join(parts) + '，落在这段里的日子都受影响。') if parts else ''
 
 
 def _calendar_sentence(result: dict, kind: str) -> str:
-    """Period answer: the best and the worst days (or months) for the person."""
+    """Period answer: the best and the worst days (or months) for the person.
+
+    A 凶 year or month that every entry sits in is said first: the passage
+    weighs it above the day, and no choice of day inside the period avoids it.
+    """
     calendar = result['personal_calendar']
     entries, people = calendar['entries'], calendar['people']
     who = _who(people)
     event = calendar.get('event', '')
     basis = f"按{who}出生那年的干支（{_births(people)}）看"
+    shared = _shared_contexts(entries)
+    skip = tuple(c[0] for c in shared)
     if len(entries) == 1 and entries[0].get('event_hits'):
         entry = entries[0]
         head = '不行。' if kind == 'yes_no' else ''
+        why = _labels(_entry_factors(entry), entry['grade'])
         return (f"{head}{entry['label']}（{entry['ganzhi']}）{event}需要避开：是"
                 + '；也是'.join(h['plain'] for h in entry['event_hits'])
-                + f"。这天对{who}本人是{entry['grade']}。" + _context_sentence(calendar, who))
+                + f"。这天对{who}本人是{entry['grade']}" + (f"（{why}）" if why else '') + '。'
+                + _context_sentence(calendar, who))
     if len(entries) == 1:
         entry = entries[0]
-        why = _labels([p['days'][0]['factors'] if 'days' in p else p['factors'] for p in entry['people']],
-                      entry['grade'])
+        why = _labels(_entry_factors(entry), entry['grade'])
         head = GRADE_ANSWER[entry['grade']] + '。' if kind == 'yes_no' else ''
         return (f"{head}{basis}，{entry['label']}（{entry.get('span', entry['ganzhi'])}）对{who}是{entry['grade']}"
                 + (f"：{why}" if why else '，没有碰到相主里的吉凶条目') + '。'
                 + _context_sentence(calendar, who))
     unit = {'day': '日子', 'month': '月份', 'year': '年份'}[calendar['unit']]
+    change = {'day': '哪天', 'month': '哪个月', 'year': '哪年'}[calendar['unit']]
+    order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
     open_days = [e for e in entries if not e.get('event_hits')]
-    best = min((e['grade'] for e in open_days), key=('大吉', '吉', '平', '小凶', '凶', '大凶').index, default='平')
-    good = [e for e in open_days if e['grade'] == best] if best in ('大吉', '吉') else []
     barred = [e for e in entries if e.get('event_hits')]
-    bad = [e for e in open_days if e['grade'] in ('凶', '大凶')]
-    light = [e for e in open_days if e['grade'] == '小凶']
-    parts = [f"{basis}，这段时间{event}对{who}最好的{unit}是{_entry_list(good)}，{'都' if len(good) > 1 else ''}是{best}" if good
+    if shared:
+        worst_shared = worst([c[2] for c in shared])
+        good_word = '好' if worst_shared in ('凶', '大凶') else '吉'
+        parts = [f"{basis}，这段时间没有{event}对{who}{good_word}的{unit}："
+                 + '；'.join(_context_phrase(c, who) for c in shared)
+                 + f"，这段时间里换{change}都避不开"]
+        # What some entries add on top of the shared year or month.
+        extra = [e for e in open_days
+                 if any(f['polarity'] == 'bad' and f.get('pillar', 'day') not in skip
+                        for fs in _entry_factors(e) for f in fs)]
+        if barred:
+            parts.append(f"{event}还要避开{_entry_list(barred, event=event)}")
+        if extra:
+            parts.append(f"{_entry_list(extra, skip=skip, unit=calendar['unit'])}本身也冲{who}，更要避开")
+        return '；'.join(parts) + '。' + _context_sentence(calendar, who, skip)
+    best = min((e['grade'] for e in open_days), key=order.index, default='平')
+    good = [e for e in open_days if e['grade'] == best] if best in ('大吉', '吉') else []
+    # A year or month against the person covering part of the period is said
+    # once, with its dates, instead of being repeated on every day inside it.
+    groups: dict[tuple[str, str, Grade, str], list[dict]] = {}
+    for e in open_days:
+        for context in _bad_contexts(e):
+            groups.setdefault(context, []).append(e)
+    skip = tuple(dict.fromkeys(c[0] for c in groups))
+
+    def own_bad(e: dict, grades: tuple[str, ...]) -> bool:
+        return any(f['polarity'] == 'bad' and f['grade'] in grades and f.get('pillar', 'day') not in skip
+                   for fs in _entry_factors(e) for f in fs)
+    bad = [e for e in open_days if own_bad(e, ('凶', '大凶'))]
+    light = [e for e in open_days if not own_bad(e, ('凶', '大凶')) and own_bad(e, ('小凶',))]
+    parts = [f"{basis}，这段时间{event}对{who}最好的{unit}是{_entry_list(good, unit=calendar['unit'])}，{'都' if len(good) > 1 else ''}是{best}" if good
              else f"{basis}，这段时间没有{event}对{who}吉的{unit}"]
     if barred:
         parts.append(f"{event}要避开{_entry_list(barred, event=event)}")
+    for context in sorted(groups, key=lambda c: (('year', 'month').index(c[0]), c[1])):
+        inside = groups[context]
+        span = inside[0]['label'] + (f"至{inside[-1]['label']}" if len(inside) > 1 else '')
+        key, ganzhi, grade, labels = context
+        word = '一年' if key == 'year' else '个月'
+        these = ('这些' + unit) if len(inside) > 1 else ('这' + ('天' if unit == '日子' else '个' + unit[:1]))
+        verdict = '要避开' if grade in ('凶', '大凶') else '略差'
+        parts.append(f"{span}在{ganzhi}{'年' if key == 'year' else '月'}里，这{word}冲{who}的生年（{labels}，{grade}），"
+                     f"{WEIGHT[key]}，{these}{'都' if len(inside) > 1 else ''}{verdict}")
     if bad:
-        parts.append(('另外' if barred else '') + f"要避开{_entry_list(bad)}")
+        parts.append(('另外' if barred or groups else '') + f"要避开{_entry_list(bad, skip=skip, unit=calendar['unit'])}")
     if light and len(entries) > 31:
-        parts.append(f"另有 {len(light)} 天略差（冲{who}生年，协纪说略轻）")
+        parts.append(f"另有 {len(light)} 个{unit}略差（冲{who}生年，协纪说略轻）")
     elif light:
-        parts.append(f"{_entry_list(light)}略差，协纪说这种冲主要是口舌是非")
-    if not bad and not light and not barred:
+        parts.append(f"{_entry_list(light, skip=skip, unit=calendar['unit'])}略差，协纪说这种冲略轻")
+    if not bad and not light and not barred and not groups:
         parts.append(f"没有冲{who}生年的{unit}")
-    return '；'.join(parts) + '。' + _context_sentence(calendar, who)
+    return '；'.join(parts) + '。'
 
 
 def _factor_lines(head: str, grade: str, factors: list[dict], quoted: set[str]) -> str:
@@ -772,18 +901,27 @@ def _factor_lines(head: str, grade: str, factors: list[dict], quoted: set[str]) 
 
 
 def _personal_lines(result: dict) -> list[str]:
-    """Layer 2 for 相主: the method in the passage's words, then every graded day."""
+    """Layer 2 for 相主: the method in the passage's words, then every graded time.
+
+    Each year and month is described once, before the first day in it; a
+    day's line then gives its own factors and, when the year, month or hour
+    changes the verdict, what the day pillar alone would have been.
+    """
     calendar = result.get('personal_calendar') or {}
     ranking = result.get('ranking', {})
     if not calendar.get('entries') and not ranking.get('personal_participant_ids'):
         return []
     lines = ['择日看人，《协纪辨方书》卷三十三说「從來皆論生年不論生日有論生日者非古法也」'
              f'（{XIANGZHU_PASSAGE}）。白话说，挑日子看的是出生那一年的干支，不是日主。'
+             '原文把所选时间的年、月、日、时四柱合起来看：「一太歳衝命最凶月次之日又次之時為輕」，'
+             '天克地冲、天比地冲「年月日時」都忌；所以年或月冲你，挑哪天都避不开，这里照实算进每一天。'
              '禄、贵人、驿马、长生各用一张古表，出处随条列出；吉凶等级按原文用词：天克地冲最凶，'
-             '冲命按方向分凶与略轻，命禄、命贵人、食禄最吉，合官贵、合财富，其余为吉。'
+             '冲命按方向分凶与略轻（太岁冲命一律为凶，时辰的冲为轻），命禄、命贵人、食禄最吉，合官贵、合财富，其余为吉；'
+             '吉的条目只看日柱，年、月的吉条目列出但不计。'
              '原文的例子是修造（以宅长之命为主）和安葬（以亡命为主），天克地冲、天比地冲写明是选择家对一切用事的通忌；'
              '这里把同一套相主规则用在这件事上。原文另讲的「补龙扶山」看房屋坐山，没有实现。']
     quoted: set[str] = set()
+    said: set[tuple[str, str, str]] = set()
     rows = calendar.get('people') or [{'participant_id': pid} for pid in ranking.get('personal_participant_ids', [])]
     ids = [p['participant_id'] for p in rows]
 
@@ -792,6 +930,20 @@ def _personal_lines(result: dict) -> list[str]:
         if len(set(ids)) > 1:
             return f"{person['participant_id']} "
         return f"按{person['birth_year']}年：" if len(ids) > 1 else ''
+
+    def graded(head: str, assessed: dict, who: str, unit: str = '日') -> None:
+        for key in ('year', 'month'):
+            context = assessed.get('context', {}).get(key)
+            if context and (who, key, context['ganzhi']) not in said:
+                said.add((who, key, context['ganzhi']))
+                word = '这一年' if key == 'year' else '这个月'
+                lines.append(_factor_lines(f"{who}{word}（{context['ganzhi']}）", context['grade'],
+                                           context['factors'], quoted))
+        own = [f for f in assessed['factors'] if f.get('pillar', 'day') not in ('year', 'month')]
+        grade = assessed['grade']
+        if assessed.get('pillar_grade', grade) != grade:
+            grade += f"（只看{unit}柱是{assessed['pillar_grade']}，被{'年、月或时辰' if unit == '日' else '年'}拉低）"
+        lines.append(_factor_lines(head, grade, own, quoted))
     entries = calendar.get('entries', [])
     if len(entries) > 31:
         # A long list keeps what the answer turns on: the best days and the days to avoid.
@@ -804,17 +956,16 @@ def _personal_lines(result: dict) -> list[str]:
         for person in entry['people']:
             who = label(person)
             if 'days' in person:
-                lines.append(_factor_lines(f"{who}{entry['label']}（{entry['ganzhi']}）", person['days'][0]['grade'],
-                                           person['days'][0]['factors'], quoted))
+                graded(f"{who}{entry['label']}（{entry['ganzhi']}）", person['days'][0], who)
             else:
-                lines.append(_factor_lines(f"{who}{entry['label']}（{entry['span']}）", person['grade'],
-                                           person['factors'], quoted))
+                graded(f"{who}{entry['label']}（{entry['span']}）", person, who,
+                       '月' if calendar['unit'] == 'month' else '年')
     for row in ranking.get('tiers', []) + ranking.get('excluded', []):
         for person in row.get('personal', {}).get('people', []):
             who = label(person)
             for day in person['days']:
-                lines.append(_factor_lines(f"{row['candidate_id']} {who}覆盖的{day['day_ganzhi']}日",
-                                           day['grade'], day['factors'], quoted))
+                hour = f"{day['hour_ganzhi']}时" if 'hour_ganzhi' in day else ''
+                graded(f"{row['candidate_id']} {who}覆盖的{day['day_ganzhi']}日{hour}", day, who)
     return list(dict.fromkeys(lines))
 
 
@@ -877,7 +1028,7 @@ def _lead_sentence(result: dict) -> str:
                      + f"：{_placement(backup)}。")
         return lead + excluded + _avoid_sentence(result, first)
     if state == 'excluded_by_clause':
-        return ('不行。' if kind == 'yes_no' else '') + excluded + '需要换到其他日子再比。'
+        return ('不行。' if kind == 'yes_no' else '') + excluded + _elsewhere(result)
     if state == 'clause_conflict':
         return ('不建议。' if kind == 'yes_no' else '') + _conflict_sentence(result, kind) + excluded
     if state == 'screening_incomplete':

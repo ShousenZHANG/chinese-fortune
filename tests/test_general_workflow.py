@@ -100,10 +100,15 @@ def test_personal_tiers_follow_the_birth_year_and_nothing_else(request_data):
     assert [t['personal'] for t in first['ranking']['tiers']] == [t['personal'] for t in same_year['ranking']['tiers']]
     request_data['participants'][0]['person']['birth'].update(year=1988, month=5, day=10)  # 戊辰
     other_year = read_request(request_data)
-    assert other_year['ranking']['tiers'][0]['personal']['people'][0]['birth_year'] == '戊辰'
-    # 戌 clashes 辰: 土冲土, which the passage calls 略輕.
-    assert (first['ranking']['tiers'][0]['personal']['grade'], other_year['ranking']['tiers'][0]['personal']['grade']) \
-        == ('吉', '小凶')
+    (barred,) = other_year['ranking']['excluded']
+    assert barred['personal']['people'][0]['birth_year'] == '戊辰'
+    # The 戊戌 month is 天比地冲 for 戊辰 (「通忌…天比地衝年月日時」); the 壬戌 day's own
+    # 戌-辰 clash is only 土冲土, 略輕. The month bars the window, whatever the day.
+    assert [(h['label'], h['pillar'], h.get('pillar_ganzhi')) for h in barred['excluded_by']] == [
+        ('月柱天比地冲', 'month', '戊戌')]
+    day = barred['personal']['people'][0]['days'][0]
+    assert (day['pillar_grade'], day['grade']) == ('小凶', '凶')
+    assert first['ranking']['tiers'][0]['personal']['grade'] == '吉'
     for result in (first, other_year):
         assert result['ranking']['uses_complete_natal_chart'] is False
         assert '看的是出生那一年的干支，不是日主' in render_answer(result)
@@ -123,6 +128,9 @@ def test_two_available_windows_without_preference_do_not_get_arbitrary_choice(re
 
 
 def test_practical_event_end_uses_actual_dst_offset(request_data):
+    # 1998-01-15 is 丁丑. For the fixture's 己卯 the 丁酉 month (to 2026-10-08) clashes 卯,
+    # 「凶莫堪」, so 相主 would bar every candidate before this test's point is reached.
+    request_data['participants'][0]['person']['birth']['year'] = 1998
     request_data['event'].update(scenario='讨论社团活动', timezone='Australia/Sydney')
     request_data['intent'] = 'selection'
     request_data['period'] = {'start': '2026-10-04', 'end': '2026-10-05'}

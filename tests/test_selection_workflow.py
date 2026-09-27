@@ -17,8 +17,10 @@ from fortune_selection import compare_candidates
 def query():
     return {'current_timezone': 'Australia/Sydney', 'request_time': '2026-09-12T00:00:00Z',
             'period': '下周', 'event': {'scenario': 'interview', 'time_standard': 'clock'},
+            # 1998-01-15 is still 丁丑 (before 立春). A 己卯 applicant would be barred for
+            # all of 2026-09 by 相主: the 丁酉 month clashes 卯 (「凶莫堪」, 「月次之」).
             'participants': [{'id': 'applicant', 'confirmed': True, 'person': {
-                'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10, 'minute': 30,
+                'birth': {'year': 1998, 'month': 1, 'day': 15, 'hour': 10, 'minute': 30,
                           'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 120},
                 'time_certainty': 'exact'}}],
             'duration_minutes': 60, 'candidates': [
@@ -101,10 +103,13 @@ def test_qimen_uses_each_person_year_and_does_not_invent_hidden_jia_mapping(quer
     assert people[1]['birth_year_stem'] == '甲'
     assert people[1]['earth_palace'] is None
     assert people[1]['status'] == 'year_stem_mapping_required'
-    # 相主 weighs both people: 2026-09-15 壬辰 is in 协纪's 納音 table against 甲戌 (1994).
+    # 相主 weighs both people: 2026-09-15 壬辰 is in 协纪's 納音 table against 甲戌 (1994),
+    # and the 丙午 year, 丁酉 month and 丙午 hour are three 食伤 for 甲 (「多見則忌」).
     assert result['recommendation']['status'] == 'excluded_by_clause'
-    (hit,) = result['ranking']['excluded'][0]['excluded_by']
-    assert (hit['participant_id'], hit['birth_year'], hit['label']) == ('second', '甲戌', '纳音克冲')
+    hits = result['ranking']['excluded'][0]['excluded_by']
+    assert [(h['participant_id'], h['birth_year'], h['label'], h['pillar']) for h in hits] == [
+        ('second', '甲戌', '纳音克冲', 'day'), ('second', '甲戌', '食伤多见', 'set')]
+    assert '年（丙午）、月（丁酉）、时（丙午）' in hits[1]['plain']
     assert result['conclusion']['traditional_personal_ranking'] == 'xiangzhu_birth_year'
 
 

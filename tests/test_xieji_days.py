@@ -125,14 +125,20 @@ def test_wedding_moving_and_business_are_now_screened():
     wedding = read_request(_request('wedding', [_slot('oct21', '2026-10-21', '10:00', '14:00'),
                                                 _slot('oct25', '2026-10-25', '10:00', '14:00')],
                                     '婚礼定哪天好？', preferences={'prefer': 'earliest'}))
-    (row,) = wedding['ranking']['excluded']
+    row, late = wedding['ranking']['excluded']
     assert row['candidate_id'] == 'oct21'
-    assert [(h['label'], h['passage_id']) for h in row['excluded_by']] == [
+    assert [(h['label'], h['passage_id']) for h in row['excluded_by']][:2] == [
         ('月破', 'xieji:c010:p0108'), ('往亡', 'xieji:c010:p0154')]
+    # 相主 reads the hours too: 戊戌 month, 戊辰 day and a 戊午 or 己未 hour are three 食伤 for 丁.
+    assert {h['label'] for h in row['excluded_by'][2:]} == {'食伤多见'}
+    # oct25 keeps 10:00-13:39; its last minutes fall in the 丁未 hour, 天比地冲 for 丁丑.
+    assert (late['candidate_id'], [(h['label'], h['pillar_ganzhi']) for h in late['excluded_by']]) == (
+        'oct25', [('时柱天比地冲', '丁未')])
     assert wedding['recommendation']['first_choice'] == 'oct25'
     lead = render_answer(wedding).split('\n\n')[0]
     assert '是月破日（九月月建在戌，所衝為辰），《协纪辨方书》说这天忌嫁娶，遇到吉神也照样忌' in lead
     assert '这天对你是大吉：合官' in lead  # 壬 joins 丁 (1997, 丁丑)
+    assert 'oct25 的 2026-10-25 13:39–14:00 这段需要避开：覆盖到壬申日，是你（丁丑年生）的时柱天比地冲' in lead
     # The day rules pass 辛未, but 協紀's own table bars it for someone born in 丁丑.
     own = read_request(_request('wedding', [_slot('oct24', '2026-10-24', '10:00', '14:00')], '10月24日结婚可以吗？'))
     (hit,) = own['ranking']['excluded'][0]['excluded_by']
@@ -174,3 +180,7 @@ def test_a_window_crossing_one_barred_day_names_only_that_part():
     lead = render_answer(result).split('\n\n')[0]
     assert '可选：span 2026-10-18' in lead
     assert 'span 的 2026-10-17 09:00 至 2026-10-18 00:40 这段需要避开：覆盖到甲子日，是歸忌日' in lead
+    # The 癸未 hour of 乙丑 (天克地冲 for 丁丑) is its own stretch: joining the two
+    # would have told the reader to avoid the 10-18 morning the lead offers.
+    assert 'span 的 2026-10-18 13:40–15:40 这段需要避开：覆盖到乙丑日，是你（丁丑年生）的时柱天克地冲' in lead
+    assert '至 2026-10-18 15:40' not in lead
