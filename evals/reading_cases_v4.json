@@ -33,7 +33,12 @@
       "completion",
       "readability",
       "relevance",
-      "correction_honesty"
+      "correction_honesty",
+      "drift_new_number",
+      "drift_new_fact",
+      "drift_invented_mechanism",
+      "drift_not_self_contained",
+      "drift_scope_flipped"
     ],
     "dispositions": [
       "answered",
@@ -47,7 +52,8 @@
     "readability": "独立评审用自己的话复述主结论、原因和关键限制；不以字数少、术语少代替理解质量。",
     "binding": "每条评审绑定完整回答UTF-8字节及有序工具轨迹的SHA256，正文或轨迹变动后旧标签失效；格式检查通过不等于语义通过。",
     "cost": "记录实际usage/tokenizer标识、输入/工具输出UTF-8字节、调用次数与耗时；同任务完整程度才比较成本，缺项或退答不能冒充节省。",
-    "failure_policy": "盘面/引文/时间错误如实记录并先修复后新开实验。八类方向不强制输出某个格名，规则允许变化就核完整条件。不得用总体通过率掩盖错误样本。"
+    "failure_policy": "盘面/引文/时间错误如实记录并先修复后新开实验。八类方向不强制输出某个格名，规则允许变化就核完整条件。不得用总体通过率掩盖错误样本。",
+    "drift_rubric": "五项白话偏离逐项判 pass/fail，校准例见 evals/drift_examples.json；其中列了六类不算问题的写法，防止把正常的通俗化判成偏离。降级（原文上吉、白话说吉）允许，升级不允许。"
   },
   "cases": [
     {
@@ -1033,7 +1039,12 @@
     "completion",
     "readability",
     "relevance",
-    "correction_honesty"
+    "correction_honesty",
+    "drift_new_number",
+    "drift_new_fact",
+    "drift_invented_mechanism",
+    "drift_not_self_contained",
+    "drift_scope_flipped"
   ],
   "dispositions": [
     "answered",
@@ -1041,5 +1052,12 @@
     "justified_clarification",
     "incorrect_refusal",
     "failed"
-  ]
+  ],
+  "criteria_definitions": {
+    "drift_new_number": "白话里的数字在所引原文与本题计算里都找不到",
+    "drift_new_fact": "白话提到原文没有的后果、事件或事实断言",
+    "drift_invented_mechanism": "白话给原文加上原文没讲的因果或机制",
+    "drift_not_self_contained": "白话引用读者没见过的说法再去评价它",
+    "drift_scope_flipped": "口径写反或写窄：可→必、亦可→一定、次取→首选、另论→越多越好"
+  }
 }

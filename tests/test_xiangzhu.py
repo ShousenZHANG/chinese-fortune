@@ -18,6 +18,7 @@ from xiangzhu import (
     assess_people,
     birth_year_of,
     date_pillars,
+    na_yin_row,
     personal_calendar,
     pillar_factors,
     prohibitions,
@@ -191,7 +192,11 @@ def test_every_factor_explains_itself_with_a_real_passage():
                     '丙子', '丁丑', '戊寅', '己卯', '庚辰', '辛巳', '壬午', '癸未'):
             for factor in pillar_factors(birth, day):
                 seen.add(factor['rule'])
-                assert factor['quote'] in QUOTES.values()
+                # The 纳音 prohibition quotes its own table row, which carries the 忌
+                # the rule's sentence loses to an unencoded glyph; it is checked verbatim
+                # for every birth year in test_answer_fidelity.
+                assert factor['quote'] in QUOTES.values() or (
+                    factor['rule'] == 'na_yin_chong' and factor['quote'] == na_yin_row(birth, day))
                 # A disputed table names the two books instead of 协纪.
                 assert factor['plain'] and ('协纪' in factor['plain'] or factor['rule'] == 'ming_gui_contested')
                 if 'table' in factor:

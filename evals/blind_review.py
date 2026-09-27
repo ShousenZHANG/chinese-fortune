@@ -125,6 +125,15 @@ def export_packets(spec: dict, sources: list[tuple[str, Path]], public: Path,
                 'criteria': spec['criteria'], 'dispositions': spec['dispositions'],
                 'instructions': 'Read every turn and relevant tool evidence. Restate the main conclusion, supporting evidence and limitation in your own words. Do not score readability by length, string matching or jargon count. Record incomplete answers and errors; do not infer semantic correctness from execution success. Do not inspect the private mapping or tested worktrees before submitting reviews.',
                 'review_scope': 'version-masked in-session review, not an external blind study'}
+    # Reviewers need what each criterion means, not only its name; the drift
+    # criteria also come with worked pass/fail examples so a paraphrase is not
+    # scored as drift.
+    if spec.get('criteria_definitions'):
+        manifest['criteria_definitions'] = {k: v for k, v in spec['criteria_definitions'].items()
+                                            if k in spec['criteria']}
+    if any(key.startswith('drift_') for key in spec['criteria']):
+        manifest['calibration'] = json.loads((Path(__file__).parent / 'drift_examples.json')
+                                             .read_text(encoding='utf-8'))
     write_new(public / 'manifest.json', manifest)
     write_new(public / 'reviews-template.json', {'reviews': reviews})
     write_new(private / 'mapping.json', {'seed': seed, 'entries': mapping,

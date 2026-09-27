@@ -161,6 +161,11 @@ PILLAR_NAME = {'year': '年', 'month': '月', 'day': '日', 'hour': '时'}
 COARSER = {'year': (), 'month': ('year',), 'day': ('year', 'month')}
 
 
+def na_yin_row(birth: str, pillar: str) -> str:
+    """The attached table's row for this pair, in the transcription's own characters (夘 for 卯)."""
+    return f'{birth}忌{pillar}'.replace('卯', '夘')
+
+
 def chong(a: str, b: str) -> bool:
     return (BRANCHES.index(a) - BRANCHES.index(b)) % 12 == 6
 
@@ -202,9 +207,12 @@ def _clash(birth: str, pillar: str, who: str, at: str = 'day') -> PersonalFactor
                        f'{who}的天干和你出生年的天干同为{y}，地支{b}却冲你的年支{z}（天比地冲），协纪说这是选择家通忌',
                        QUOTES['tong_ji'])
     if at == 'day' and NA_YIN_CLASH.get(birth) == pillar:
+        # Quote the table row itself: the rule's own sentence opens 「又忌」 before an
+        # unencoded glyph, so an excerpt after the glyph loses the word that says
+        # 忌. The row names this very pair and is verbatim in the passage.
         return _factor('na_yin_chong', 'bad', '凶',
                        f'协纪附表写明{birth}年生的人忌{pillar}日：纳音克你的纳音，地支又相冲，是选择家通忌',
-                       QUOTES['na_yin'])
+                       na_yin_row(birth, pillar))
     if at == 'hour':
         # Lighter than a day's 略輕 clash, which is already the lightest bad
         # grade: said, not graded. 天尅地衝 and 天比地衝 above still bar the hour.
@@ -468,7 +476,11 @@ def _year_clash(factor: PersonalFactor, birth: str) -> PersonalFactor:
     """A clash the passage calls light is still 凶 when the year itself makes it."""
     if factor['rule'] != 'chong_light':
         return factor
-    quote = QUOTES['year_tu'] if birth[1] in '辰戌丑未' else QUOTES['year_weight']
+    # The grade has to rest on words that say 凶. For 辰戌丑未 the passage says
+    # so outright (「然太嵗衝之亦凶」). For the others the sentence that carries it
+    # is 「一太歳衝命最凶……」; 「然亦以太嵗為重月次之」 only ranks year above
+    # month and names no grade, so it cannot license 凶 on its own.
+    quote = QUOTES['year_tu'] if birth[1] in '辰戌丑未' else QUOTES['weight']
     return {**factor, 'grade': '凶', 'quote': quote,
             'plain': factor['plain'].replace('协纪说这种冲略轻，主要是口舌是非',
                                              '协纪说这种冲平时略轻，但由太岁来冲仍然是凶')}
