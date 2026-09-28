@@ -546,17 +546,27 @@ SEASON_RULES = frozenset({'xieji_si_fei', 'xieji_si_ji', 'xieji_si_qiong'})
 SEASON_TERMS = frozenset({'立春', '立夏', '立秋', '立冬'})
 
 
-def _month_bound(hits: list[dict], term: str) -> bool:
-    """Whether crossing ``term`` could change any of these exclusions."""
-    for hit in hits:
-        rule, pillar = hit.get('rule', ''), hit.get('pillar')
-        if rule in MONTH_RULES or pillar in ('month', 'set'):
-            return True
-        if (rule in SEASON_RULES or rule.startswith('tiandi_zhuan')) and term in SEASON_TERMS:
-            return True
-        if pillar == 'year' and term == '立春':
-            return True
+def _reason_moves(hit: dict, term: str) -> bool:
+    """Whether crossing ``term`` could change this one exclusion."""
+    rule, pillar = hit.get('rule', ''), hit.get('pillar')
+    if rule in MONTH_RULES or pillar == 'month':
+        return True
+    if (rule in SEASON_RULES or rule.startswith('tiandi_zhuan')) and term in SEASON_TERMS:
+        return True
+    if pillar == 'year':
+        return term == '立春'
+    if pillar == 'set':
+        # A count moves only if it took in the month (or, at 立春, the year).
+        counted = hit.get('counted') or []
+        return 'month' in counted or (term == '立春' and 'year' in counted)
     return False
+
+
+def _month_bound(hits: list[dict], term: str) -> bool:
+    """Whether crossing ``term`` could lift the exclusion: every reason must
+    move with it. A day-pillar clash beside a 月破 keeps the window out on
+    either side, so the term changes nothing the reader can act on."""
+    return bool(hits) and all(_reason_moves(hit, term) for hit in hits)
 
 
 Span = tuple[datetime, datetime, list[dict] | None]

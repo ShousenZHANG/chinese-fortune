@@ -1052,11 +1052,30 @@ def test_a_term_change_later_on_the_chosen_day_is_a_review_point():
 
 
 def test_a_term_change_on_an_excluded_day_is_a_review_point_too():
-    """2026-10-08 乙卯 is 月破 only until 寒露 at 17:29; 四废 holds on both sides."""
+    """For 乙酉 (born 2005), 2027-02-04 20:00 is barred only by 往亡, counted
+    from the month; 立春 at 12:46 that day turns the month."""
+    status, lead = _lead([_slot('x', '2027-02-04', '20:00', '22:00')], {'start': '2027-02-03', 'end': '2027-02-06'},
+                         '这天出发可以吗', born=2005)
+    assert status == 'excluded_by_clause'
+    assert '2月4日 12:46 交立春' in lead and '重查' in lead, lead
+
+
+def test_no_term_sentence_when_another_reason_holds_on_both_sides():
+    """2026-10-08 乙卯 is 月破 until 寒露 at 17:29, but also 四废, a season
+    rule 寒露 does not turn: moving the time keeps it barred."""
     status, lead = _lead([_slot('x', '2026-10-08', '09:00', '13:00')], {'start': '2026-10-07', 'end': '2026-10-10'},
                          '这天出发可以吗')
-    assert status == 'excluded_by_clause'
-    assert '10月8日 17:29 交寒露' in lead and '重查' in lead, lead
+    assert status == 'excluded_by_clause' and '月破' in lead and '四廢' in lead
+    assert '交寒露' not in lead, lead
+
+
+def test_a_count_that_took_in_no_month_does_not_move_with_the_term():
+    """Born 1950: 2026-11-07 21:30 has 七杀 twice, in the year (丙午) and the
+    hour (丙戌). 立冬 at 20:52 turns neither."""
+    status, lead = _lead([_slot('x', '2026-11-07', '21:30', '23:30')], {'start': '2026-11-06', 'end': '2026-11-09'},
+                         '这天出发可以吗', born=1950)
+    assert status == 'excluded_by_clause' and '七杀' in lead, lead
+    assert '交立冬' not in lead, lead
 
 
 def test_no_term_sentence_when_the_exclusion_does_not_depend_on_the_month():
@@ -1077,6 +1096,10 @@ def test_a_season_rule_is_only_reopened_by_a_term_that_turns_the_season():
     assert not _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'day'}], '立春')
     assert _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'year'}], '立春')
     assert not _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'year'}], '寒露')
+    assert not _month_bound([{'rule': 'xiangzhu_qi_sha_two', 'pillar': 'set', 'counted': ['year', 'hour']}], '立冬')
+    assert _month_bound([{'rule': 'xiangzhu_qi_sha_two', 'pillar': 'set', 'counted': ['month', 'day']}], '立冬')
+    assert not _month_bound([{'rule': 'xieji_yue_po'}, {'rule': 'xiangzhu_chong', 'pillar': 'day'}], '寒露')
+    assert not _month_bound([], '寒露')
 
 
 def test_no_term_sentence_when_the_window_already_spans_the_change_or_there_is_none():

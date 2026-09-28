@@ -462,6 +462,8 @@ def prohibitions(assessed: PersonalAssessment) -> list[DayRuleHit]:
                         'plain': f"{who}（{row['birth_year']}年生）的{label}{'日' if pillar == 'day' else ''}：{f['plain']}",
                         'participant_id': row['participant_id'], 'birth_year': row['birth_year'],
                         'pillar': pillar}
+                    if f.get('counted'):
+                        hit['counted'] = list(f['counted'])
                     if pillar in ('year', 'month'):
                         hit['pillar_ganzhi'] = day['context'][pillar]['ganzhi']
                     elif 'hour_ganzhi' in day and (pillar == 'hour' or 'hour' in f.get('counted', [])):

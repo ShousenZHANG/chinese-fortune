@@ -85,6 +85,8 @@ class DayRuleHit(TypedDict):
     # 相主 only: which pillar of the chosen time carries it, and that pillar.
     pillar: NotRequired[str]
     pillar_ganzhi: NotRequired[str]
+    # 相主 'set' only: the pillars a count (七杀 twice, 劫财 three times) took in.
+    counted: NotRequired[list[str]]
     # 协纪 only: the 用事 name, how the day was derived, and every passage used.
     term: NotRequired[str]
     derivation: NotRequired[str]
