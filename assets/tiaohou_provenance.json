@@ -1785,10 +1785,10 @@
       "scope": "candidate_selection_against_frozen_transcription",
       "review_note": "不宜乱用甲；火局壬庚及不贪合条件，无火局水透才用甲庚。旧表只保留其中部分路径。",
       "source_general_candidates": [
-        "壬",
-        "庚"
+        "壬"
       ],
       "source_conditional_candidates": [
+        "庚",
         "癸",
         "甲"
       ],

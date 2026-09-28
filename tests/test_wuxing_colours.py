@@ -1,5 +1,7 @@
 """Colours and things to wear come from the 调候 cell's general choice, every
 link cited, and say that the cell's exceptions were not checked on the chart."""
+import re
+
 import pytest
 from answer_style import style_violations
 from classical_search import get_passage
@@ -55,7 +57,11 @@ def test_every_cell_follows_its_own_clause(stem):
         lead = colour_lead(advice)
         assert lead.startswith('按《穷通宝鉴》调候，')
         # 「兼用」 cells (辛午) use their stems together; every other cell names a first.
-        assert ('兼用' in lead) if advice['jointly'] else ('这一格一般先取' in lead), (stem, branch)
+        # Cells whose note takes the stems in no order say so; every other cell names a first.
+        if advice['order'] == 'ranked':
+            assert '这一格一般先取' in lead, (stem, branch)
+        else:
+            assert '先取' not in lead and '其次' not in lead.split('这是这一格')[0], (stem, branch)
         # Every cell reads as the general choice. Cells whose note names a frame or
         # an excess report what the known branches settle; the rest say nothing was checked.
         assert '这是这一格的一般取法' in lead
@@ -282,3 +288,47 @@ def test_the_modality_check_catches_both_kinds_of_drift():
     conditional = colour_advice(_chart('甲', '未'))          # 「无癸亦可」: 癸 is conditional
     assert modality_violations(conditional, '这一格一般先取癸（水）。')
     assert modality_violations(conditional, '这一格一般先取丁（火），其次癸（水）。')
+
+
+def test_every_note_that_frees_the_order_is_reviewed():
+    """A note saying 兼用, 并用, 皆用 or 不拘先后 about two or more general stems
+    must be in the reviewed table, as unordered or as ordered despite the word."""
+    from tiaohou_provenance import get_tiaohou_audit
+    from wuxing_colours import ORDERED_DESPITE, UNORDERED
+    for stem in STEMS:
+        for branch in BRANCHES:
+            key = f'{stem}|{branch}'
+            audit = get_tiaohou_audit(key)
+            note = audit['review_note']
+            if len(audit['source_general_candidates']) > 1 and re.search(r'兼用|并用|皆用|同用|先后', note):
+                assert key in UNORDERED or key in ORDERED_DESPITE, key
+    for key, (_kind, word) in UNORDERED.items():
+        assert word in get_tiaohou_audit(key)['review_note'], key
+    for key, reason in ORDERED_DESPITE.items():
+        assert reason in get_tiaohou_audit(key)['review_note'], key
+
+
+def test_all_three_used_together_in_ding_you():
+    """丁 in 酉: 「八月甲丙庚皆用」 (qiongtong:c003:p0249)."""
+    lead = colour_lead(colour_advice(_four('甲寅', '癸酉', '丁卯', '壬寅')))
+    assert '甲（木）、丙（火）、庚（金）并用' in lead and '不分先后' in lead and '其次' not in lead, lead
+    # Wearables list all three: keeping the first two would rank them after all.
+    wearing = lead.split('佩戴')[1].split('；')[0]
+    assert all(f'（{w}）' in wearing for w in '木火金'), wearing
+
+
+def test_geng_si_is_chosen_by_the_charts_trouble_not_in_order():
+    """庚 in 巳: 「須用壬丙戊，但非拘执先後，宜分病用药」 (qiongtong:c005:p0051)."""
+    advice = colour_advice(_four('甲寅', '己巳', '庚辰', '丙子'))
+    lead = colour_lead(advice)
+    assert '不拘先后' in lead and '先取' not in lead and '其次戊' not in lead, lead
+    assert modality_violations(advice, '这一格一般先取壬（水），其次戊（土）。')
+
+
+def test_ding_wu_takes_geng_only_on_a_condition():
+    """丁 in 午: 庚 comes with a 火局 (「得庚壬两透」) or with 甲 when water shows
+    and there is no 火局 (「须用甲木，又要庚劈甲」); neither is the general case."""
+    advice = colour_advice(_four('甲寅', '庚午', '丁卯', '庚子'))
+    assert [n['stem'] for n in advice['needed']] == ['壬']
+    assert '庚' in advice['tiaohou']['conditional_stems']
+    assert modality_violations(advice, '这一格一般先取壬（水），其次庚（金）。')
