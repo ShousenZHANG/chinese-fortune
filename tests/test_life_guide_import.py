@@ -126,6 +126,11 @@ def test_every_region_override_names_a_kept_entry():
     ((5, 17), '这个结论可能下得过重了'),
     ((6, 1), '吃的人得癌症的比例低约 8%'),
     ((1, 19), '肠镜对死亡率的好处以前被高估过'),
+    ((2, 9), '吃太少和吃太多都不好'),
+    ((2, 16), '它仍然只是跟踪记录'),
+    ((2, 29), '三是按通行的证据打分法'),
+    ((5, 14), '会短暂失守'),
+    ((13, 30), '符合抗震设防要求的建筑内'),
 ])
 def test_a_lead_in_dispute_is_quoted_until_it_states_the_other_side(key, reaches):
     dispute = ENTRIES[key]['dispute']

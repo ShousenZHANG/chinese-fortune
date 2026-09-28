@@ -85,7 +85,10 @@ _TO_MAINLAND = {2: (5, 6), 3: (19, 20, 23, 25), 4: (13,), 22: (1, 2, 3, 4, 5, 6)
 # Disputes whose first sentence after the mark is only a lead-in or a cross
 # reference, read by hand: how many sentences after the mark to keep so the
 # quote reaches the other side.
-DISPUTE_SENTENCES: dict[tuple[int, int], int] = {(1, 19): 4, (3, 9): 2, (5, 17): 4, (6, 1): 2, (16, 1): 3}
+DISPUTE_SENTENCES: dict[tuple[int, int], int] = {
+    (1, 19): 4, (2, 9): 4, (2, 16): 2, (2, 29): 3, (3, 9): 2, (5, 14): 2, (5, 17): 4, (6, 1): 2,
+    (13, 30): 2, (16, 1): 3,
+}
 REGION_OVERRIDES: dict[tuple[int, int], str] = {
     **{(s, n): '通用' for s, ns in _TO_UNIVERSAL.items() for n in ns},
     **{(s, n): '中国大陆' for s, ns in _TO_MAINLAND.items() for n in ns},
