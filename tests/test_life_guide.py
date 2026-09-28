@@ -188,11 +188,35 @@ def test_the_cli_returns_the_long_article_whole():
     ('interview', '体制内干了十年想跳槽去私企，面试哪天好', 'Asia/Shanghai', (31, 7)),
     ('travel', '去黄土高原看窑洞哪天出发好', 'Asia/Shanghai', (13, 33)),           # about 1,000 m
     ('billing', '我欠款三万还不上，哪天去还款好', 'Asia/Shanghai', (9, 15)),        # 9:15 is for the one collecting
+    ('billing', '我被催款了，哪天去还款', 'Asia/Shanghai', (9, 15)),
+    ('billing', '被人要债，哪天去谈好', 'Asia/Shanghai', (9, 15)),
+    ('exam', '下个月考公共英语哪天好', 'Asia/Shanghai', (31, 7)),
+    ('exam', '考公司内部晋升哪天好', 'Asia/Shanghai', (31, 7)),
+    ('exam', '考公安大学哪天报名好', 'Asia/Shanghai', (31, 7)),
+    ('exam', '考编程二级哪天好', 'Asia/Shanghai', (31, 7)),
+    ('exam', '艺考编导哪天好', 'Asia/Shanghai', (31, 7)),
+    ('exam', '我是事业编，考驾照哪天好', 'Asia/Shanghai', (31, 7)),
+    ('travel', '下周去青海西宁哪天出发好', 'Asia/Shanghai', (13, 33)),          # about 2,260 m
+    ('travel', '从高原回上海哪天出发好', 'Asia/Shanghai', (13, 33)),
+    ('travel', '那边海拔低，哪天去好', 'Asia/Shanghai', (13, 33)),
+    ('work_conversation', '哪天跟海外客户开会好', 'Asia/Shanghai', (31, 15)),
+    ('interview', '我有海外工作经验，面试哪天好', 'Asia/Shanghai', (31, 14)),
 ])
 def test_a_word_that_only_looks_like_the_part_does_not_attach_it(scenario, question, current, key):
     assert key not in _ids(entries_for({**_req(scenario, current=current), 'question': question}))
 
 
-def test_high_places_named_without_the_word_plateau_still_count():
-    payload = {**_req('travel', current='Asia/Shanghai'), 'question': '下个月去青海湖和香格里拉哪天出发好'}
-    assert (13, 33) in _ids(entries_for(payload))
+@pytest.mark.parametrize('scenario,question,key', [
+    ('travel', '下个月去青海湖和香格里拉哪天出发好', (13, 33)),
+    ('travel', '去林芝哪天出发好', (13, 33)),
+    ('travel', '去色达、理塘哪天出发好', (13, 33)),
+    ('exam', '国考哪天报名好', (31, 7)),
+    ('exam', '省考哪天报名好', (31, 7)),
+    ('interview', '公务员面试哪天好', (31, 7)),
+    ('interview', '想去国外打工，面试哪天好', (31, 14)),
+    ('billing', '哪天去催收货款好', (9, 15)),
+    ('work_conversation', '哪天跟境外公司谈远程合同好', (31, 15)),
+])
+def test_the_part_named_in_other_words_still_counts(scenario, question, key):
+    payload = {**_req(scenario, current='Asia/Shanghai'), 'question': question}
+    assert key in _ids(entries_for(payload)), question

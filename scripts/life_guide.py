@@ -41,9 +41,8 @@ SCENARIO_ENTRIES: dict[str, list[Ref]] = {
     'relationship_conversation': [(10, 3), (10, 5), (10, 2)],
     # 合婚 is a specialist workflow with no fortune_reading answer to ride
     # after; references/14-hehun.md has it call ``--scenario compatibility``.
-    # 10:1, 10:4 and the long article (「相处几个月才看得出来。光看条件清单
-    # 看不出来。」) say compatibility cannot be told beforehand, a verdict on
-    # the method itself, so none of them rides with it.
+    # 10:1, 10:4 and the long article comment on 合婚 itself, so none of
+    # them rides with it.
     'compatibility': [(10, 18), (10, 17)],
     'business': [(12, 1), (12, 3), (12, 7)],
     'billing': [(9, 15), (12, 15), (8, 18)],
@@ -54,17 +53,28 @@ SCENARIO_ENTRIES: dict[str, list[Ref]] = {
 # 准考证 is an exam ticket and 毕业证书 a diploma, neither a course to pay for.
 QUESTION_PATTERNS: dict[tuple[int, int], re.Pattern] = {
     (23, 8): re.compile(r'(?<!准)考证|考个证|资格证|职业证书|技能证书|证书培训'),
-    # Sleeping above about 2,450 m: 黄土、云贵、内蒙古高原 are far lower.
-    (13, 33): re.compile(r'(?<!黄土)(?<!云贵)(?<!蒙古)高原|西藏|拉萨|青藏|青海|海拔|川西|稻城|香格里拉|玉树|珠峰|高反'),
+    # Sleeping above about 2,450 m: 黄土、云贵、内蒙古高原 and 西宁 are lower.
+    (13, 33): re.compile(r'(?<!黄土)(?<!云贵)(?<!蒙古)高原|西藏|拉萨|林芝|日喀则|阿里地区|冈仁波齐|青藏|青海湖|玉树|果洛|'
+                         r'格尔木|色达|理塘|稻城|川西|香格里拉|珠峰|高反|海拔\s*[3-5]\d{3}'),
     (13, 35): re.compile(r'野外|徒步|露营|户外|登山|爬山'),
-    # Working abroad, not a 劳务派遣 agency at home.
-    (31, 14): re.compile(r'出国打工|出国务工|出国劳务|对外劳务|海外务工|海外工作|出国工作|境外工作'),
-    # Getting into 体制, not already being in it.
-    (31, 7): re.compile(r'考公|考编|考公务员|报考公务员|公务员考试|事业编|进体制'),
-    # Income from a company abroad, not a remote meeting.
-    (31, 15): re.compile(r'(?:境外|国外|海外|外国)(?:公司|企业|客户|雇主)'),
-    # For the one collecting, not the one who owes.
-    (9, 15): re.compile(r'催款|要债|讨债|追债|讨薪|要账|收账|追讨'),
+    # Working abroad, not a 劳务派遣 agency at home or experience abroad.
+    (31, 14): re.compile(r'出国打工|出国务工|出国劳务|对外劳务|海外务工|劳务输出|去(?:国外|海外|境外)打工|出国工作|外派出国'),
+    # Getting into 体制: not 考公共英语, 考公司, 考公安大学, 考编程, 艺考编导,
+    # nor someone already in it taking another exam.
+    (31, 7): re.compile(r'考公(?![共司安交])|考编(?![程导辑制])|考公务员|报考公务员|公务员(?:考试|面试)|'
+                        r'(?<![中美英法德日韩俄泰澳加新])国考|(?<!节)省考|考事业编|事业编考试|考进体制|进体制'),
+    # Income from a company abroad, not a remote meeting or a foreign client call.
+    (31, 15): re.compile(r'(?:给|替|帮|接)(?:境外|国外|海外|外国)(?:公司|企业|雇主|客户)|'
+                         r'(?:境外|国外|海外|外国)(?:公司|企业|雇主|客户)[^，。]{0,8}(?:远程|报酬|收入|工资|个税|收汇|接单)|'
+                         r'远程[^，。]{0,8}(?:境外|国外|海外|外国)'),
+    (9, 15): re.compile(r'催款|催收|要债|讨债|追债|讨薪|要账|收账|追讨'),
+}
+# A question that names the part but from the other side vetoes the entry:
+# 9:15 is for the one collecting, not the one being chased or who owes;
+# 13:33 is for going up, not coming back down.
+QUESTION_VETOES: dict[tuple[int, int], re.Pattern] = {
+    (9, 15): re.compile(r'被[^，。]{0,4}(?:催|要债|讨债|追债|追讨|要账)|(?:我|自己)欠'),
+    (13, 33): re.compile(r'从[^，。]{0,6}(?:高原|西藏|拉萨|青藏)回|海拔(?:低|不高)'),
 }
 FOREIGN_NOTE = '中国大陆口径：你所在地的规定、机构和电话可能不同'
 TODO_NOTE = '原书把这条标为待核实（TODO），按原书的规矩不能当结论用'
@@ -108,8 +118,11 @@ def _applies(entry: dict, payload: dict) -> bool:
 
 
 def _asked(key: Ref, payload: dict) -> bool:
-    pattern = QUESTION_PATTERNS.get(key) if isinstance(key, tuple) else None
-    return not pattern or bool(pattern.search(str(payload.get('question') or '')))
+    if not isinstance(key, tuple) or key not in QUESTION_PATTERNS:
+        return True
+    question = str(payload.get('question') or '')
+    veto = QUESTION_VETOES.get(key)
+    return bool(QUESTION_PATTERNS[key].search(question)) and not (veto and veto.search(question))
 
 
 def entries_for(payload: dict) -> list[dict]:
