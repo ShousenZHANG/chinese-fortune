@@ -226,9 +226,10 @@ def _exception_sentence(advice: dict) -> str:
             said.append(f"{c['condition']}没判（{c['reason']}）")
     text = '这是这一格的一般取法。这一格另论的例外，按你的盘：' + '；'.join(said) + '。'
     if any(c['status'] == 'met' for c in checks):
-        # Only the note says what the condition does: in 戊午 and 辛午 a fire
-        # frame weakens 癸 and keeps 壬 first, i.e. confirms the general choice.
-        text += '成立的这一条对取法有什么影响，原文写在下面的审校说明里，这里没有替你判断。'
+        # What a met condition does differs by cell: in 戊午 and 辛午 a fire
+        # frame weakens 癸 and keeps 壬 first; in 庚子 the note only says
+        # 「另论」. The note is the reviewer's paraphrase, not the passage.
+        text += '成立的这一条会不会改变上面的取法，这里没有判断：审校说明只作提示，要对照这一格的原文（出处见下）来看。'
     return text
 
 

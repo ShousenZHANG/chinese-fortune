@@ -65,6 +65,17 @@ def test_a_listed_term_licenses_only_the_part_it_names():
         sentence = _sentence(scenario)
         assert sentence.startswith(f'{covered}对应'), sentence
         assert f'{rest}算不算' in sentence and '原文没说' in sentence, sentence
+    # 結婚姻 is on the same list; a reader could take it for 订婚, and the book does not say.
+    assert '「結婚姻」' in _sentence('wedding')
+
+
+def test_every_nearby_term_is_verbatim_and_no_reason_says_the_list_has_nothing():
+    """「没有对应名目」 was too narrow for billing; the same wording elsewhere is too."""
+    text = get_passage(YONGSHI_PASSAGE)['text']
+    for cap in _personal():
+        authority = cap['authority']
+        assert all(t in text for t in authority.get('nearby', [])), cap['scenario']
+        assert '没有对应名目' not in authority['reason'], cap['scenario']
 
 
 def test_billing_names_the_nearby_terms_instead_of_saying_there_are_none():

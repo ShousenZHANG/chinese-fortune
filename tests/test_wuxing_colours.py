@@ -217,6 +217,9 @@ def test_a_complete_frame_points_to_the_note_without_deciding_its_effect():
     assert checks['水局']['status'] == 'met' and '申子辰' in checks['水局']['basis']
     lead = colour_lead(advice)
     assert '水局成立' in lead and '审校说明' in lead and '不能直接套' not in lead
+    # The note is the reviewer's paraphrase, and here it says nothing about the
+    # effect («丙丁过多与水局另论»): it may not be called the passage.
+    assert '原文写在' not in lead and '对照这一格的原文' in lead
 
 
 @pytest.mark.parametrize('pillars,frame', [

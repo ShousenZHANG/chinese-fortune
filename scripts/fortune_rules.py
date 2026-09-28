@@ -49,7 +49,7 @@ XIANGZHU_AUTHORITY = {
     'interview': ('borrowed', '上官', '面试不是上官赴任；民用三十七事里最接近的是上官'),
     'exam': ('borrowed', '入學', '考试不是入学；民用三十七事里最接近的是入學'),
     'relationship_conversation': ('borrowed', '會親友', '约会、感情沟通不在民用三十七事里；最接近的是會親友'),
-    'work_conversation': ('borrowed', None, '工作沟通、谈薪、转岗在民用三十七事里没有对应名目'),
+    'work_conversation': ('borrowed', None, '民用三十七事里没有写工作沟通、谈薪、转岗；它们算不算单子上哪一件，原文没说'),
     'billing': ('borrowed', None, '民用三十七事里有納財、交易、立券，但报价、催款算不算其中哪一件，原文没说'),
     'outlook': ('borrowed', None, '相主是为某件事挑时间的方法；不做具体事、只问某天好不好，不在民用三十七事里'),
 }
@@ -57,8 +57,10 @@ CUSTOM_AUTHORITY = ('borrowed', None, '自定义事项，没有对应到民用�
 # A label naming several undertakings when the list names only one of them:
 # (the part the term covers, the rest it does not name).
 AUTHORITY_SCOPE = {'wedding': ('婚礼', '订婚、领证'), 'business': ('开业', '产品与作品发布')}
-# Terms on the list near a borrowed undertaking, none of them claimed for it.
-AUTHORITY_NEARBY = {'billing': ['納財', '交易', '立券']}
+# Terms on the list near an undertaking (or near the part a listed term does
+# not cover), none of them claimed for it. 結婚姻 reads like betrothal, but no
+# passage says 订婚 or 领证 is it.
+AUTHORITY_NEARBY = {'billing': ['納財', '交易', '立券'], 'wedding': ['結婚姻']}
 
 
 def _authority(scenario: str) -> dict:

@@ -956,8 +956,10 @@ def _authority_sentence(result: dict) -> str:
     if authority.get('kind') == 'passage':
         term = authority['term']
         if authority.get('covers'):
+            also = ''.join(f'「{t}」' for t in authority.get('nearby', []))
+            other = f'或单子上的{also}' if also else ''
             return (f"{authority['covers']}对应{listed}里的「{term}」，相主正是给这类用事挑时间的方法；"
-                    f"{authority['not_covered']}算不算{term}，原文没说，用在这些事上是借用。")
+                    f"{authority['not_covered']}算不算{term}{other}，原文没说，用在这些事上是借用。")
         return f"{label}对应{listed}里的「{term}」，相主正是给这类用事挑时间的方法。"
     if authority.get('nearby'):
         terms = ''.join(f'「{t}」' for t in authority['nearby'])
