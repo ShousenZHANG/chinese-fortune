@@ -85,8 +85,19 @@ def test_practical_questions_reach_the_reference_library(question):
     assert any('现居地' in need for need in result['needs'])
 
 
+@pytest.mark.parametrize('question', ['15号交定金可以吗', '周三签租房合同可以吗', '初八送彩礼好不好',
+                                      '国庆节交定金行不行', '星期六签租房合同好不好'])
+def test_a_named_day_keeps_a_practical_question_a_day_question(question):
+    """A weekday, 「N号」, a lunar day or a festival is a date the question names."""
+    result = route(question)
+    assert result['flow'] == 'personal_days', question
+    assert any('period' in need for need in result['needs'])
+
+
 @pytest.mark.parametrize('question', ['帮我起一卦，押金能要回来吗', '用六爻看看试用期能不能转正',
-                                      '塔罗牌看裁员会不会轮到我', '奇门遁甲看租房合同签不签', '紫微斗数看明年运势'])
+                                      '塔罗牌看裁员会不会轮到我', '奇门遁甲看租房合同签不签', '紫微斗数看明年运势',
+                                      '用周易算算押金能不能要回来', '摇个卦看看试用期能不能转正', '问卦：押金能要回来吗',
+                                      '求个签看裁员会不会轮到我', '星座看试用期能不能转正', '测字看看借条'])
 def test_a_named_divination_method_goes_to_that_method_not_a_new_flow(question):
     """The asker chose the method; neither the reference library nor 相主 answers it."""
     assert route(question)['flow'] == 'other'
@@ -102,6 +113,7 @@ def test_a_practical_yes_no_question_is_not_a_day_question(question):
     ('下个月哪天搬家好', 'personal_days'),      # divination first, even with a practical word nearby
     ('租房那天是吉日吗', 'personal_days'),
     ('明天去要押金可以吗', 'personal_days'),    # a period still makes it a day question
+    ('下周去洛阳紫微城哪天好', 'personal_days'),  # a place name, not 紫微斗数
 ])
 def test_divination_questions_are_never_taken_by_the_reference_flow(question, flow):
     assert route(question)['flow'] == flow

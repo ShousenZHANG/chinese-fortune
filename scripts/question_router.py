@@ -34,13 +34,21 @@ PERIOD_WORDS = ('未来七天', '最近一周', '这两天', '这周末', '下�
                 '今天', '明天', '后天', '本周', '这周', '下周', '周末', '本月', '下月', '今年', '明年')
 CLOCK = re.compile(r'\d{1,2}[点:：]|上午|下午|晚上|中午|早上|小时|分钟')
 DATE = re.compile(r'(?:(\d{4})[年-])?(\d{1,2})[月-](\d{1,2})[日号]?')
+# Days named without a month: a weekday, 「15号」, a lunar 「初八」, a festival.
+# 「初一」 as a school year (初一学生) is not a day.
+NAMED_DAY = re.compile(r'(?:周|星期|礼拜)[一二三四五六日天]|\d{1,2}号|[一二三四五六七八九十廿]{1,3}号'
+                       r'|初[一二三四五六七八九十](?![学生中年])|除夕|春节|元旦|元宵|清明|端午|七夕|中秋|重阳|国庆'
+                       r'|腊八|小年|五一|劳动节|情人节|圣诞')
 # Events the day rules or 相主 are asked about; mapped ones reuse EVENT_KEYWORDS.
 OTHER_EVENTS = {'interview': ('面试',), 'exam': ('考试', '高考', '考研', '考证')}
 MEDICAL_WORDS = ('手术', '开刀', '住院', '治疗')
-# A method the asker named. Its own workflow answers, never 相主 or the
-# reference library, whatever else the question mentions.
-METHOD_WORDS = ('起卦', '起个卦', '一卦', '卜卦', '占卜', '占卦', '六爻', '梅花易', '奇门', '六壬', '紫微',
-                '斗数', '塔罗')
+# A method the asker named (SKILL.md's own list and the folk ones its
+# description names). Its own workflow answers, never 相主 or the reference
+# library, whatever else the question mentions. Bare 紫微 is also a place
+# name (洛阳紫微城), so only 紫微斗数 / 紫微命盘 / 紫微盘 count.
+METHOD_WORDS = ('起卦', '起个卦', '一卦', '卜卦', '占卜', '占卦', '摇卦', '摇个卦', '问卦', '六爻', '周易', '易经',
+                '梅花易', '奇门', '六壬', '斗数', '紫微命', '紫微盘', '塔罗', '星座', '测字', '求签', '求个签',
+                '抽签', '解签')
 # Practical questions the frozen 《高性价比人生指南》 answers. Checked only after
 # every divination flow, so a question about a date is never taken by it.
 LIFE_WORDS = ('押金', '租房合同', '试用期', '加班费', '辞退', '裁员', '领事保护', '12308', '借条', '定金',
@@ -85,7 +93,8 @@ def route(question: str) -> dict:
         return {'flow': 'almanac', 'why': '问黄历宜忌（不针对个人）',
                 'command': 'python scripts/huangli_query.py --date YYYY-MM-DD --question "<原话>" --markdown',
                 'needs': ['日期']}
-    period, dates, event = _period(text), DATE.findall(text), _event(text)
+    period, event = _period(text), _event(text)
+    dates = DATE.findall(text) + NAMED_DAY.findall(text)
     practical = any(word in text for word in LIFE_WORDS)
     day_words = [w for w in DAY_WORDS if w in text and not (practical and w in YES_NO_WORDS)]
     if period or dates or day_words:
