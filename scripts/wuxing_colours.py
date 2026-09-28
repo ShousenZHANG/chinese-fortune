@@ -70,6 +70,7 @@ FRAMES = {'水': (('申', '子', '辰'), ('亥', '子', '丑')), '火': (('寅',
           '木': (('亥', '卯', '未'), ('寅', '卯', '辰')), '金': (('巳', '酉', '丑'), ('申', '酉', '戌'))}
 FRAME_RE = re.compile(r'([水火木金土])局')
 EXCESS_RE = re.compile(r'([甲乙丙丁戊己庚辛壬癸]+)(过多|太多)')
+JOINT_RE = re.compile(r'([甲乙丙丁戊己庚辛壬癸]{2,})兼用')
 
 CELL_STATUS = {'supported_with_conditions': '原文支持，但有条件', 'partially_supported': '原文只部分支持',
                'conflicts_with_text': '旧表与原文不合，这里按原文', 'seasonal_only': '这一月没有专段，只按季节总论'}
@@ -164,6 +165,7 @@ def _advice(chart: dict) -> dict:
         'seasonal_only': audit['status'] == 'seasonal_only',
         'day_master': stem, 'month_branch': month,
         'needed': needed, 'wear': wear,
+        'jointly': _joint(audit['review_note'], [n['stem'] for n in needed]),
         # The cell's general choice; the note's exceptions are not checked against this chart.
         'scope': 'general_choice_for_cell',
         'individual_application': audit.get('individual_application', 'requires_chart_conditions'),
@@ -180,8 +182,34 @@ def _advice(chart: dict) -> dict:
     }
 
 
-def _ordered(wear: list[dict], name: Callable[[dict], str]) -> str:
-    return '，其次'.join(f"{name(w)}（{w['wuxing']}）" for w in wear)
+def _ordered(wear: list[dict], name: Callable[[dict], str], joint: bool = False) -> str:
+    items = [f"{name(w)}（{w['wuxing']}）" for w in wear]
+    if joint and len(items) > 1:
+        return '和'.join(items) + '，不分先后'
+    return '，其次'.join(items)
+
+
+def _joint(note: str, stems: list[str]) -> bool:
+    """「壬己兼用」: the note uses the general stems together, not in order."""
+    return len(stems) > 1 and any(set(stems) <= set(group) for group in JOINT_RE.findall(note))
+
+
+def modality_violations(advice: dict, text: str) -> list[str]:
+    """Where the rendered text is stronger or weaker than the cell's note.
+
+    A conditional stem (「有条件」「酌用」「亦可」「……才用」) may not be
+    written as a general choice, and stems the note uses together (「兼用」)
+    may not be put in order.
+    """
+    found = []
+    for stem in advice['tiaohou']['conditional_stems']:
+        if re.search(rf'(?:先取|其次){stem}（', text):
+            found.append(f'有条件的{stem}写成了一般取法')
+    if advice.get('jointly'):
+        for n in advice['needed'][1:]:
+            if f"其次{n['stem']}（" in text:
+                found.append(f"原文兼用，{n['stem']}被排成了其次")
+    return found
 
 
 def _cell(advice: dict) -> str:
@@ -195,20 +223,29 @@ def colour_lead(advice: dict, aspects: list[str] | None = None) -> str:
         return f"这一问现在给不出，因为{advice['reason']}。"
     aspects = aspects or advice.get('aspects') or ['colour']
     wear = advice['wear']
-    needed = '，其次'.join(f"{n['stem']}（{n['wuxing']}）" for n in advice['needed'])
+    joint = bool(advice.get('jointly'))
+    stems = [f"{n['stem']}（{n['wuxing']}）" for n in advice['needed']]
+    needed = '、'.join(stems) + '兼用' if joint else '先取' + '，其次'.join(stems)
+    first = '' if joint else '首选'
     parts = []
     if 'colour' in aspects:
-        parts.append(f"衣服首选{_ordered(wear, lambda w: '、'.join(w['colours']))}")
+        parts.append(f"衣服{first}{_ordered(wear, lambda w: '、'.join(w['colours']), joint)}")
     if 'colour' in aspects or 'things' in aspects:
-        parts.append(f"佩戴首选{_ordered(wear[:2], lambda w: w['things'])}")
+        parts.append(f"佩戴{first}{_ordered(wear[:2], lambda w: w['things'], joint)}")
     if 'direction' in aspects:
-        parts.append(f"方位是{_ordered(wear, lambda w: HETU[w['wuxing']][0])}")
+        parts.append(f"方位是{_ordered(wear, lambda w: HETU[w['wuxing']][0], joint)}")
     if 'number' in aspects:
-        parts.append(f"数字是{_ordered(wear, lambda w: HETU[w['wuxing']][1])}")
-    head = f"按《穷通宝鉴》调候，{_cell(advice)}，这一格一般先取{needed}"
+        parts.append(f"数字是{_ordered(wear, lambda w: HETU[w['wuxing']][1], joint)}")
+    head = f"按《穷通宝鉴》调候，{_cell(advice)}，这一格一般{needed}"
     if parts:
         head += '。照这个换算：' + '；'.join(parts)
-    return head + '。' + _exception_sentence(advice)
+    text = head + '。' + _exception_sentence(advice)
+    drift = modality_violations(advice, text)
+    if drift:
+        # A deterministic guard, not a style note: refuse rather than say more
+        # (or less) than the note does.
+        raise RuntimeError('渲染的情态与审校说明不符：' + '；'.join(drift))
+    return text
 
 
 def _exception_sentence(advice: dict) -> str:

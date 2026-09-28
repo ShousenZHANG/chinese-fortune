@@ -18,6 +18,7 @@ from wuxing_colours import (
     colour_advice,
     colour_lead,
     colour_lines,
+    modality_violations,
 )
 
 STEMS = '甲乙丙丁戊己庚辛壬癸'
@@ -52,7 +53,9 @@ def test_every_cell_follows_its_own_clause(stem):
         assert advice['individual_application'] == 'requires_chart_conditions'
         assert advice['chart_conditions_checked'] is False and 'avoid' not in advice
         lead = colour_lead(advice)
-        assert lead.startswith('按《穷通宝鉴》调候，') and '这一格一般先取' in lead
+        assert lead.startswith('按《穷通宝鉴》调候，')
+        # 「兼用」 cells (辛午) use their stems together; every other cell names a first.
+        assert ('兼用' in lead) if advice['jointly'] else ('这一格一般先取' in lead), (stem, branch)
         # Every cell reads as the general choice. Cells whose note names a frame or
         # an excess report what the known branches settle; the rest say nothing was checked.
         assert '这是这一格的一般取法' in lead
@@ -251,3 +254,31 @@ def test_a_cell_without_a_checkable_exception_keeps_the_plain_caveat():
     advice = colour_advice(_four('甲子', '辛未', '甲寅', '甲子'))
     assert advice['exception_checks'] == []
     assert '还没有逐条核对' in colour_lead(advice)
+
+
+def test_stems_the_passage_uses_together_are_not_ranked():
+    """辛 in 午: 「壬己兼用」. 「先取壬，其次己」 would demote 己 to second."""
+    advice = colour_advice(_four('甲寅', '庚午', '辛卯', '戊戌'))
+    lead = colour_lead(advice, ['colour', 'direction'])
+    assert '壬（水）、己（土）兼用' in lead and '其次己' not in lead, lead
+    assert '不分先后' in lead and '首选' not in lead
+
+
+def test_no_cell_renders_a_modal_word_stronger_or_weaker_than_its_note():
+    """All 120 cells, every aspect: a conditional stem is never a general
+    choice, and stems used together are never put in order."""
+    aspects = ['colour', 'things', 'direction', 'number']
+    for stem in STEMS:
+        for branch in BRANCHES:
+            advice = colour_advice(_chart(stem, branch))
+            if advice['status'] != 'ok':
+                continue
+            assert modality_violations(advice, colour_lead(advice, aspects)) == [], (stem, branch)
+
+
+def test_the_modality_check_catches_both_kinds_of_drift():
+    joint = colour_advice(_four('甲寅', '庚午', '辛卯', '戊戌'))
+    assert modality_violations(joint, '这一格一般先取壬（水），其次己（土）。')
+    conditional = colour_advice(_chart('甲', '未'))          # 「无癸亦可」: 癸 is conditional
+    assert modality_violations(conditional, '这一格一般先取癸（水）。')
+    assert modality_violations(conditional, '这一格一般先取丁（火），其次癸（水）。')
