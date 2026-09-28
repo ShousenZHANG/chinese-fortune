@@ -2,6 +2,7 @@
 
 Built on small synthetic ZIPs so it runs without the real snapshot.
 """
+import json
 import zipfile
 
 import pytest
@@ -15,12 +16,17 @@ def _entry(number: int, title: str, note: str = '无') -> str:
             f'- 备注：{note}\n')
 
 
-def _zip(tmp_path, files: dict[str, str], comment: str = COMMIT):
+ARTICLE = '# 一篇长文\n\n正文。\n'
+
+
+def _zip(tmp_path, files: dict[str, str], comment: str = COMMIT, article: str | None = ARTICLE):
     path = tmp_path / 'hltb.zip'
     with zipfile.ZipFile(path, 'w') as archive:
         archive.comment = comment.encode('ascii')
         for name, text in files.items():
             archive.writestr(f'HowToLiveBetter-main/book/{name}', text)
+        if article is not None:
+            archive.writestr('HowToLiveBetter-main/docs/结婚划不划算.md', article)
     return path
 
 
@@ -38,8 +44,31 @@ def _files(six: str | None = None, extra29: str = '') -> dict[str, str]:
 def test_a_well_formed_snapshot_drops_exactly_the_excluded_entries(tmp_path):
     data = build(_zip(tmp_path, _files()))
     assert [(e['section'], e['number']) for e in data['entries']] == [(6, 1)]
-    assert {(x['section'], x['number']) for x in data['excluded']} == {(6, 15), (6, 22), (29, 12)}
-    assert data['source']['commit'] == COMMIT and len(data['source']['files']) == 2
+    assert '被排除' not in json.dumps(data, ensure_ascii=False)     # not even the titles
+    assert data['source']['commit'] == COMMIT and len(data['source']['files']) == 3
+    assert data['articles'][0]['title'] == '一篇长文'
+
+
+def test_a_snapshot_without_the_long_article_is_refused(tmp_path):
+    with pytest.raises(ValueError, match='没有长文'):
+        build(_zip(tmp_path, _files(), article=None))
+
+
+def test_the_long_article_goes_through_the_same_checks(tmp_path):
+    with pytest.raises(ValueError, match='须先人工审定'):
+        build(_zip(tmp_path, _files(), article='# 一篇长文\n\n见第 6 节第 15 条。\n'))
+
+
+@pytest.mark.parametrize('note,dispute', [
+    ('争议。另一派认为正好相反。其余不论。', '争议。另一派认为正好相反。'),
+    ('前文。争议在于：样本太小。', '争议在于：样本太小。'),
+    ('按劳动争议走仲裁。', None),
+    ('这件事本身没有争议。', None),
+])
+def test_a_dispute_is_read_from_the_books_mark_only(tmp_path, note, dispute):
+    six = _six('\n' + _entry(30, '另一条', note=note))
+    entry = next(e for e in build(_zip(tmp_path, _files(six)))['entries'] if e['number'] == 30)
+    assert entry['dispute'] == dispute and entry['disputed'] is (dispute is not None)
 
 
 def test_a_zip_from_another_commit_is_refused(tmp_path):
