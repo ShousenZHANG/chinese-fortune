@@ -5,7 +5,7 @@ set to China Standard Time while living in Sydney, and a cloud session reports
 UTC. Unknown stays unknown: region-bound entries are then simply not attached.
 """
 import pytest
-from region import region_of, resolve_destination, resolve_region
+from region import country_of, region_of, resolve_destination, resolve_region
 
 
 @pytest.mark.parametrize('zone,region', [
@@ -15,9 +15,22 @@ from region import region_of, resolve_destination, resolve_region
     ('Australia/Sydney', '境外'), ('Asia/Singapore', '境外'), ('America/New_York', '境外'),
     ('UTC', '未知'), ('Etc/UTC', '未知'), ('Etc/GMT+8', '未知'), ('GMT', '未知'),
     (None, '未知'), ('', '未知'),
+    # Windows' zoneinfo opens these files, but they are not zone names; an
+    # unrecognised string must not quietly count as 境外.
+    ('Asia/Shanghai ', '未知'), ('Asia\\Shanghai', '未知'), ('asia/shanghai', '未知'), ('Mars/Base', '未知'),
 ])
 def test_zone_to_region(zone, region):
     assert region_of(zone) == region
+
+
+@pytest.mark.parametrize('zone,country', [
+    ('Australia/Sydney', 'AU'), ('Australia/Melbourne', 'AU'), ('Asia/Singapore', 'SG'),
+    ('Asia/Shanghai', 'CN'), ('Asia/Urumqi', 'CN'), ('PRC', 'CN'), ('Asia/Hong_Kong', 'HK'),
+    ('America/New_York', 'US'), ('America/Toronto', 'CA'),
+    ('UTC', None), ('Etc/GMT+8', None), ('Asia/Shanghai ', None), (None, None),
+])
+def test_zone_to_country(zone, country):
+    assert country_of(zone) == country
 
 
 def _payload(scenario='moving', event_tz=None, current='Australia/Sydney', **event):

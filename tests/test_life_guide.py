@@ -4,7 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from life_guide import SCENARIO_ENTRIES, entries_for, get_entry, search
+from life_guide import FOREIGN_NOTE, SCENARIO_ENTRIES, entries_for, get_entry, search
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
@@ -23,6 +23,15 @@ def test_every_mapped_entry_exists_in_the_snapshot():
     for scenario, ids in SCENARIO_ENTRIES.items():
         for key in ids:
             assert key in PRESENT, (scenario, key)
+
+
+def test_the_cli_query_takes_the_users_region():
+    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'scripts' / 'life_guide.py'),
+                           '--query', '押金', '--current-timezone', 'Australia/Sydney'],
+                          capture_output=True, text=True, encoding='utf-8')
+    assert proc.returncode == 0, proc.stderr
+    rows = json.loads(proc.stdout)['entries']
+    assert rows and all(r.get('region_note') == FOREIGN_NOTE for r in rows if r['region'] == '中国大陆')
 
 
 def test_mainland_rental_rules_are_not_attached_in_sydney():
@@ -63,10 +72,38 @@ def test_an_explicit_lookup_says_when_the_rules_are_not_the_users():
 
 
 def test_the_excluded_entries_cannot_be_reached_by_any_route():
-    assert get_entry(6, 15, _req('outlook')) is None
-    assert get_entry(6, 22, _req('outlook')) is None
-    hits = _ids(search('算命'))
-    assert (6, 15) not in hits and (6, 22) not in hits
+    for key in ((6, 15), (6, 22), (29, 12)):
+        assert get_entry(*key, _req('outlook')) is None, key
+    assert search('算命', {}) == []
+
+
+def test_search_gives_the_same_region_note_as_an_explicit_lookup():
+    rows = search('押金', _req('outlook'))
+    mainland = [r for r in rows if r['region'] == '中国大陆']
+    assert mainland and all(r['region_note'] == FOREIGN_NOTE for r in mainland)
+    assert all('region_note' not in r for r in search('押金', _req('outlook', current='Asia/Shanghai')))
+
+
+def test_search_leaves_out_entries_the_book_marks_unverified():
+    """21:4 carries a TODO; the book's own rule is not to use those as conclusions."""
+    assert (21, 4) not in _ids(search('医疗转运', _req('outlook')))
+    assert get_entry(21, 4, _req('outlook'))['todo_note']
+
+
+def test_a_trip_inside_one_country_gets_no_border_crossing_advice():
+    assert entries_for(_req('travel', destination_timezone='Australia/Melbourne')) == []
+    assert entries_for(_req('travel', current='Asia/Shanghai', destination_timezone='Asia/Urumqi')) == []
+    # Crossing a border still does, from anywhere.
+    assert entries_for(_req('travel', current='Asia/Shanghai', destination_timezone='Asia/Singapore'))
+    # Where the trip starts is unknown: whether it crosses a border is unknown too.
+    assert entries_for(_req('travel', current=None, destination_timezone='Asia/Singapore')) == []
+
+
+def test_the_certificate_entry_is_only_for_questions_about_certificates():
+    """23:8 is about paying for a 考证 course, not about 高考 or 考研."""
+    exam = _req('exam', current='Asia/Shanghai')
+    assert entries_for({**exam, 'question': '下周高考哪天好'}) == []
+    assert _ids(entries_for({**exam, 'question': '下个月考证哪天报名好'})) == [(23, 8)]
 
 
 def test_the_cli_returns_an_envelope_with_whole_entries():
