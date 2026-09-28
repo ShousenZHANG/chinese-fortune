@@ -141,7 +141,8 @@ def capability_markdown() -> str:
             '|---|---|---|---|---|---|']
     for cap in capabilities():
         mapped = SCENARIO_ENTRIES.get(cap['scenario'], [])
-        sections = '、'.join(f'第{s}节' for s in dict.fromkeys(s for s, _ in mapped)) or '—'
+        parts = ['长文' if isinstance(ref, str) else f'第{ref[0]}节' for ref in mapped]
+        sections = '、'.join(dict.fromkeys(parts)) or '—'
         rows.append(f"| {cap['label']}（`{cap['scenario']}`） | {ROUTE_WORDS[cap['route']]} | "
                     f"{'已实现' if cap['personal_ranking'] == 'rule_based' else '—'} | {_authority_cell(cap)} | "
                     f"{'已实现' if cap.get('calendar_screening') == 'rule_based' else '—'} | {sections} |")

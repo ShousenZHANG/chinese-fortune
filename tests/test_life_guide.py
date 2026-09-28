@@ -4,7 +4,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from life_guide import FOREIGN_NOTE, SCENARIO_ENTRIES, entries_for, get_entry, search
+import pytest
+from life_guide import FOREIGN_NOTE, SCENARIO_ENTRIES, entries_for, get_article, get_entry, search
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
@@ -12,7 +13,7 @@ PRESENT = {(e['section'], e['number']) for e in DATA['entries']}
 
 
 def _ids(rows):
-    return [(r['section'], r['number']) for r in rows]
+    return [r['id'] if r.get('kind') == 'article' else (r['section'], r['number']) for r in rows]
 
 
 def _req(scenario, current='Australia/Sydney', **event):
@@ -20,9 +21,55 @@ def _req(scenario, current='Australia/Sydney', **event):
 
 
 def test_every_mapped_entry_exists_in_the_snapshot():
+    articles = {a['id'] for a in DATA['articles']}
     for scenario, ids in SCENARIO_ENTRIES.items():
         for key in ids:
-            assert key in PRESENT, (scenario, key)
+            assert key in (articles if isinstance(key, str) else PRESENT), (scenario, key)
+
+
+def test_every_question_gated_entry_is_mapped_and_comes_before_the_limit_can_cut_it():
+    from life_guide import LIMIT, QUESTION_PATTERNS
+    for key in QUESTION_PATTERNS:
+        homes = [ids for ids in SCENARIO_ENTRIES.values() if key in ids]
+        assert homes, key
+        for ids in homes:
+            # Only another gated entry, or fewer than LIMIT ungated ones, may precede it.
+            before = [k for k in ids[:ids.index(key)] if k not in QUESTION_PATTERNS]
+            assert len(before) < LIMIT, (key, ids)
+
+
+def test_the_long_article_rides_with_a_wedding_on_the_mainland_only():
+    mainland = entries_for(_req('wedding', current='Asia/Shanghai'))
+    assert mainland[0].get('kind') == 'article' and mainland[0]['title'].startswith('结婚划不划算')
+    sydney = entries_for(_req('wedding'))
+    assert all(r.get('kind') != 'article' for r in sydney)
+    assert _ids(sydney) == [(10, 9)]         # reviewed as 通用: time accounting holds anywhere
+
+
+@pytest.mark.parametrize('scenario,question,current,key', [
+    ('travel', '下个月去西藏哪天出发好', 'Asia/Shanghai', (13, 33)),
+    ('travel', '周末去野外徒步哪天好', 'Australia/Sydney', (13, 35)),
+    ('billing', '下周哪天去催款好', 'Asia/Shanghai', (9, 15)),
+    ('interview', '出国打工的面试哪天好', 'Asia/Shanghai', (31, 14)),
+    ('interview', '考公面试哪天好', 'Asia/Shanghai', (31, 7)),
+    ('work_conversation', '哪天跟境外公司谈远程合同好', 'Asia/Shanghai', (31, 15)),
+    ('exam', '下个月考公哪天报名好', 'Asia/Shanghai', (31, 7)),
+])
+def test_an_entry_for_part_of_the_matter_comes_when_the_question_names_that_part(scenario, question, current, key):
+    payload = {**_req(scenario, current=current), 'question': question}
+    assert key in _ids(entries_for(payload))
+    assert key not in _ids(entries_for(_req(scenario, current=current)))
+
+
+def test_relationship_advice_reviewed_as_universal_reaches_sydney():
+    """10:3 and 10:5 rest on experiments, not Chinese law; 10:2 cites 治安 law."""
+    assert _ids(entries_for(_req('relationship_conversation'))) == [(10, 3), (10, 5)]
+
+
+def test_the_compatibility_workflow_can_ask_for_its_references():
+    rows = entries_for(_req('compatibility', current='Asia/Shanghai'))
+    assert rows[0].get('kind') == 'article'
+    assert not {(10, 1), (10, 4)} & set(_ids(rows))   # verdicts that compatibility is unpredictable
 
 
 def test_the_cli_query_takes_the_users_region():
@@ -68,7 +115,7 @@ def test_unmapped_scenarios_attach_nothing():
 def test_an_explicit_lookup_says_when_the_rules_are_not_the_users():
     row = get_entry(15, 1, _req('moving'))
     assert row['fields']['说人话']
-    assert row['region_note'] == '这是中国大陆的规定；你所在地的规定可能不同'
+    assert row['region_note'] == FOREIGN_NOTE and FOREIGN_NOTE.startswith('中国大陆口径')
 
 
 def test_the_excluded_entries_cannot_be_reached_by_any_route():
@@ -119,3 +166,13 @@ def test_the_cli_returns_an_envelope_with_whole_entries():
     assert data['ok'] and data['region']['region'] == '境外'
     assert data['source']['commit'].startswith('8276caec')
     assert all(set(r['fields']) >= {'说人话', '备注', '来源'} for r in data['entries'])
+
+
+def test_the_cli_returns_the_long_article_whole():
+    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'scripts' / 'life_guide.py'),
+                           '--article', 'marriage', '--current-timezone', 'Australia/Sydney'],
+                          capture_output=True, text=True, encoding='utf-8')
+    assert proc.returncode == 0, proc.stderr
+    article = json.loads(proc.stdout)['entries'][0]
+    assert article['text'] == DATA['articles'][0]['text'] and article['region_note'] == FOREIGN_NOTE
+    assert get_article('nope', {}) is None
