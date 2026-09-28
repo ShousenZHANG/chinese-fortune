@@ -12,6 +12,13 @@
 
 五书版本与收录范围见 [来源记录](docs/CLASSICAL-SOURCES.md)。采集工具 scripts/import_classics.py 仅供维护；重新采集后审核差异和授权，不能用网络新内容静默覆盖已经冻结的段落。
 
+现实参考库《高性价比人生指南》（`assets/life_guide.json`）的政策条目会过期，每季度换到上游新提交重新导入一次：
+
+1. 下载新提交的 codeload ZIP，把 `scripts/import_life_guide.py` 里的 `COMMIT` 和 `SNAPSHOT_DATE` 改成新值，运行 `python scripts/import_life_guide.py --zip <zip>`。
+2. 导入失败时逐条处理：排除清单编号对不上、保留条目提到算命一类的词、引用了被排除条目（整节、条号、列举、区间或标题），都要人工审定后再记进脚本，不能放宽检查。
+3. 对比新旧 JSON：新增或改动的条目逐条审定地区（`REGION_OVERRIDES`），重看 `scripts/life_guide.py` 的场景映射与只适合部分问法的条目，TODO 条目不附。
+4. 在 `docs/核实记录/` 留一份记录，照常跑全套测试和独立复核后发布。
+
 可选解梦、姓名和生肖材料不得恢复无出处的人生断语。神煞只保留起法命中，不凭单一标签断吉凶。
 
 ## 开发与验收
