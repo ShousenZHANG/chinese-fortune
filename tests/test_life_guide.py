@@ -68,8 +68,11 @@ def test_relationship_advice_reviewed_as_universal_reaches_sydney():
 
 def test_the_compatibility_workflow_can_ask_for_its_references():
     rows = entries_for(_req('compatibility', current='Asia/Shanghai'))
-    assert rows[0].get('kind') == 'article'
-    assert not {(10, 1), (10, 4)} & set(_ids(rows))   # verdicts that compatibility is unpredictable
+    # 10:1, 10:4 and the long article say compatibility cannot be told
+    # beforehand: a verdict on 合婚 itself, so none rides with it.
+    assert _ids(rows) == [(10, 18), (10, 17)]
+    hehun = (ROOT / 'references' / '14-hehun.md').read_text(encoding='utf-8')
+    assert 'life_guide.py --scenario compatibility' in hehun
 
 
 def test_the_cli_query_takes_the_users_region():
@@ -176,3 +179,20 @@ def test_the_cli_returns_the_long_article_whole():
     article = json.loads(proc.stdout)['entries'][0]
     assert article['text'] == DATA['articles'][0]['text'] and article['region_note'] == FOREIGN_NOTE
     assert get_article('nope', {}) is None
+
+
+@pytest.mark.parametrize('scenario,question,current,key', [
+    ('work_conversation', '周五远程会议跟老板谈加薪', 'Asia/Shanghai', (31, 15)),   # not income from abroad
+    ('interview', '劳务派遣公司面试哪天好', 'Asia/Shanghai', (31, 14)),             # not working abroad
+    ('exam', '我是公务员，考驾照科目二哪天好', 'Asia/Shanghai', (31, 7)),
+    ('interview', '体制内干了十年想跳槽去私企，面试哪天好', 'Asia/Shanghai', (31, 7)),
+    ('travel', '去黄土高原看窑洞哪天出发好', 'Asia/Shanghai', (13, 33)),           # about 1,000 m
+    ('billing', '我欠款三万还不上，哪天去还款好', 'Asia/Shanghai', (9, 15)),        # 9:15 is for the one collecting
+])
+def test_a_word_that_only_looks_like_the_part_does_not_attach_it(scenario, question, current, key):
+    assert key not in _ids(entries_for({**_req(scenario, current=current), 'question': question}))
+
+
+def test_high_places_named_without_the_word_plateau_still_count():
+    payload = {**_req('travel', current='Asia/Shanghai'), 'question': '下个月去青海湖和香格里拉哪天出发好'}
+    assert (13, 33) in _ids(entries_for(payload))

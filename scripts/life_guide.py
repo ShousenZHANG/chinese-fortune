@@ -40,10 +40,11 @@ SCENARIO_ENTRIES: dict[str, list[Ref]] = {
     'wedding': ['marriage', (10, 9), (10, 10), (10, 11)],
     'relationship_conversation': [(10, 3), (10, 5), (10, 2)],
     # 合婚 is a specialist workflow with no fortune_reading answer to ride
-    # after; its own flow calls ``--scenario compatibility``. 10:1 and 10:4
-    # say compatibility cannot be predicted beforehand, a verdict on the
-    # method itself, so they are not attached to it.
-    'compatibility': ['marriage', (10, 18), (10, 17)],
+    # after; references/14-hehun.md has it call ``--scenario compatibility``.
+    # 10:1, 10:4 and the long article (「相处几个月才看得出来。光看条件清单
+    # 看不出来。」) say compatibility cannot be told beforehand, a verdict on
+    # the method itself, so none of them rides with it.
+    'compatibility': [(10, 18), (10, 17)],
     'business': [(12, 1), (12, 3), (12, 7)],
     'billing': [(9, 15), (12, 15), (8, 18)],
     'exam': [(23, 8), (31, 7)],
@@ -53,12 +54,17 @@ SCENARIO_ENTRIES: dict[str, list[Ref]] = {
 # 准考证 is an exam ticket and 毕业证书 a diploma, neither a course to pay for.
 QUESTION_PATTERNS: dict[tuple[int, int], re.Pattern] = {
     (23, 8): re.compile(r'(?<!准)考证|考个证|资格证|职业证书|技能证书|证书培训'),
-    (13, 33): re.compile(r'高原|西藏|拉萨|青藏|海拔|川西|稻城|珠峰'),
+    # Sleeping above about 2,450 m: 黄土、云贵、内蒙古高原 are far lower.
+    (13, 33): re.compile(r'(?<!黄土)(?<!云贵)(?<!蒙古)高原|西藏|拉萨|青藏|青海|海拔|川西|稻城|香格里拉|玉树|珠峰|高反'),
     (13, 35): re.compile(r'野外|徒步|露营|户外|登山|爬山'),
-    (31, 14): re.compile(r'出国打工|劳务|海外工作|出国工作|境外工作'),
-    (31, 7): re.compile(r'考公|公务员|考编|事业编|体制内'),
-    (31, 15): re.compile(r'境外公司|外国公司|海外公司|远程'),
-    (9, 15): re.compile(r'催款|要债|讨债|追债|欠款|欠钱|讨薪'),
+    # Working abroad, not a 劳务派遣 agency at home.
+    (31, 14): re.compile(r'出国打工|出国务工|出国劳务|对外劳务|海外务工|海外工作|出国工作|境外工作'),
+    # Getting into 体制, not already being in it.
+    (31, 7): re.compile(r'考公|考编|考公务员|报考公务员|公务员考试|事业编|进体制'),
+    # Income from a company abroad, not a remote meeting.
+    (31, 15): re.compile(r'(?:境外|国外|海外|外国)(?:公司|企业|客户|雇主)'),
+    # For the one collecting, not the one who owes.
+    (9, 15): re.compile(r'催款|要债|讨债|追债|讨薪|要账|收账|追讨'),
 }
 FOREIGN_NOTE = '中国大陆口径：你所在地的规定、机构和电话可能不同'
 TODO_NOTE = '原书把这条标为待核实（TODO），按原书的规矩不能当结论用'

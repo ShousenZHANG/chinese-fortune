@@ -1059,6 +1059,26 @@ def test_a_term_change_on_an_excluded_day_is_a_review_point_too():
     assert '10月8日 17:29 交寒露' in lead and '重查' in lead, lead
 
 
+def test_no_term_sentence_when_the_exclusion_does_not_depend_on_the_month():
+    """For 乙酉 (born 2005), 2026-12-07 乙卯 is 天比地冲 by its day pillar alone.
+    Moving the time before 大雪 at 13:52 is still 乙卯: the verdict cannot change."""
+    status, lead = _lead([_slot('w', '2026-12-07', '15:00', '19:00')], {'start': '2026-12-06', 'end': '2026-12-09'},
+                         '这天出发可以吗', born=2005)
+    assert status == 'excluded_by_clause' and '天比地冲' in lead
+    assert '交大雪' not in lead, lead
+
+
+def test_a_season_rule_is_only_reopened_by_a_term_that_turns_the_season():
+    from fortune_reading import _month_bound
+    si_fei = [{'rule': 'xieji_si_fei'}]
+    assert not _month_bound(si_fei, '寒露') and _month_bound(si_fei, '立冬')
+    assert _month_bound([{'rule': 'xieji_yue_po'}], '寒露')
+    assert _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'month'}], '寒露')
+    assert not _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'day'}], '立春')
+    assert _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'year'}], '立春')
+    assert not _month_bound([{'rule': 'xiangzhu_chong', 'pillar': 'year'}], '寒露')
+
+
 def test_no_term_sentence_when_the_window_already_spans_the_change_or_there_is_none():
     # 大雪 at 13:52 on 2026-12-07 lies inside this window: both months were read.
     # (For 乙丑 the whole window survives screening; for 丁丑 a 天克地冲 hour

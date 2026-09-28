@@ -538,24 +538,49 @@ JIE = frozenset({'立春', '惊蛰', '清明', '立夏', '芒种', '小暑', '�
 JIE_ALIASES = {'LI_CHUN': '立春', 'JING_ZHE': '惊蛰', 'DA_XUE': '大雪', 'XIAO_HAN': '小寒'}
 
 
-def _term_sentence(result: dict, spans: list[tuple[datetime, datetime]]) -> str:
+# Which exclusions a 节 can reopen. 月破, 往亡 and 归忌 are counted from the
+# month; 四废, 四忌, 四穷 and 天地转杀 from the season, which only 四立 turn;
+# 相主's year pillar only at 立春. A day or hour pillar does not move.
+MONTH_RULES = frozenset({'xieji_yue_po', 'xieji_wang_wang', 'xieji_gui_ji'})
+SEASON_RULES = frozenset({'xieji_si_fei', 'xieji_si_ji', 'xieji_si_qiong'})
+SEASON_TERMS = frozenset({'立春', '立夏', '立秋', '立冬'})
+
+
+def _month_bound(hits: list[dict], term: str) -> bool:
+    """Whether crossing ``term`` could change any of these exclusions."""
+    for hit in hits:
+        rule, pillar = hit.get('rule', ''), hit.get('pillar')
+        if rule in MONTH_RULES or pillar in ('month', 'set'):
+            return True
+        if (rule in SEASON_RULES or rule.startswith('tiandi_zhuan')) and term in SEASON_TERMS:
+            return True
+        if pillar == 'year' and term == '立春':
+            return True
+    return False
+
+
+Span = tuple[datetime, datetime, list[dict] | None]
+
+
+def _term_sentence(result: dict, spans: list[Span]) -> str:
     """A 节 later or earlier on the same local day as a judged window.
 
     月破, 往亡, 四废 and the month pillar of 相主 were read for the month the
     window is in. A window that already spans the change was read on both
     sides, so it gets nothing; one that stops short would land in another
-    month if the time moved past it.
+    month if the time moved past it. For an excluded window the reasons are
+    given, and the term is named only when it could change one of them.
     """
     if not spans:
         return ''
     zone = ZoneInfo(result['window']['timezone'])
     found: dict[datetime, str] = {}
-    for start, end in spans:
+    for start, end, hits in spans:
         first = start.astimezone(zone).replace(hour=0, minute=0, second=0, microsecond=0)
         last = (end - timedelta(microseconds=1)).astimezone(zone).replace(hour=0, minute=0, second=0, microsecond=0)
         for moment, name in term_boundaries(first, last + timedelta(days=1)).items():
             name = JIE_ALIASES.get(name, name)
-            if name in JIE and not start <= moment < end:
+            if name in JIE and not start <= moment < end and (hits is None or _month_bound(hits, name)):
                 found[moment] = name
     if not found:
         return ''
@@ -1129,11 +1154,11 @@ def _lead_sentence(result: dict) -> str:
             lead += (f"备选 {backup['candidate_id']}" + (f"（{_graded(result, backup)}）" if backup.get('grade') else '')
                      + f"：{_placement(backup)}。")
         row = _window_row(result.get('practical_screening', {}), first)
-        spans = [(datetime.fromisoformat(row['start']), datetime.fromisoformat(row['end']))] if row else []
+        spans: list[Span] = [(datetime.fromisoformat(row['start']), datetime.fromisoformat(row['end']), None)] if row else []
         return (lead + excluded + _avoid_sentence(result, first) + _unsettled_day_sentence(result, first)
                 + _term_sentence(result, spans))
     if state == 'excluded_by_clause':
-        spans = [(datetime.fromisoformat(r['start']), datetime.fromisoformat(r['end']))
+        spans = [(datetime.fromisoformat(r['start']), datetime.fromisoformat(r['end']), r.get('excluded_by', []))
                  for r in result.get('ranking', {}).get('excluded', [])]
         return ('不行。' if kind == 'yes_no' else '') + excluded + _term_sentence(result, spans) + _elsewhere(result)
     if state == 'clause_conflict':
