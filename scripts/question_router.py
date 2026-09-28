@@ -6,9 +6,10 @@ computes them instead of on a generic reading. It computes nothing about the
 person and never guesses a birth time; it names what the flow still needs.
 
 Order matters, most specific first: 风水 (furniture, rooms) is a specialist
-question even when it says 方位; wearing, colours, numbers, directions and 五行
-go to the 调候 answer; 黄历 words go to the almanac; a time or a day word goes
-to the personal day grades; the rest are natal or other.
+question even when it says 方位; a named method (六爻, 塔罗…) goes to its own
+workflow; wearing, colours, numbers, directions and 五行 go to the 调候 answer;
+黄历 words go to the almanac; a time or a day word goes to the personal day
+grades; the rest are natal, practical (the reference library) or other.
 """
 from __future__ import annotations
 
@@ -36,10 +37,17 @@ DATE = re.compile(r'(?:(\d{4})[年-])?(\d{1,2})[月-](\d{1,2})[日号]?')
 # Events the day rules or 相主 are asked about; mapped ones reuse EVENT_KEYWORDS.
 OTHER_EVENTS = {'interview': ('面试',), 'exam': ('考试', '高考', '考研', '考证')}
 MEDICAL_WORDS = ('手术', '开刀', '住院', '治疗')
+# A method the asker named. Its own workflow answers, never 相主 or the
+# reference library, whatever else the question mentions.
+METHOD_WORDS = ('起卦', '起个卦', '一卦', '卜卦', '占卜', '占卦', '六爻', '梅花易', '奇门', '六壬', '紫微',
+                '斗数', '塔罗')
 # Practical questions the frozen 《高性价比人生指南》 answers. Checked only after
 # every divination flow, so a question about a date is never taken by it.
 LIFE_WORDS = ('押金', '租房合同', '试用期', '加班费', '辞退', '裁员', '领事保护', '12308', '借条', '定金',
               '订金', '彩礼', '旅行保险', '要注意什么', '注意些什么')
+# DAY_WORDS that only ask yes or no. With a practical word and no date they ask
+# whether something is allowed (「押金不退可以吗」), not which day is good.
+YES_NO_WORDS = ('可以吗', '行不行', '合适吗', '适合吗', '好不好')
 
 
 def _event(question: str) -> str | None:
@@ -64,6 +72,8 @@ def route(question: str) -> dict:
     if any(word in text for word in FENGSHUI_WORDS):
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
                 'reference': 'references/24-personalized-forecast.md', 'needs': ['实际布局与测量']}
+    if any(word in text for word in METHOD_WORDS):
+        return {'flow': 'other', 'why': '点名了某种占法，按 SKILL.md 路由表用那一法的流程', 'needs': []}
     aspects = aspects_asked(text)
     if aspects:
         return {'flow': 'wear_advice', 'aspects': aspects,
@@ -76,7 +86,9 @@ def route(question: str) -> dict:
                 'command': 'python scripts/huangli_query.py --date YYYY-MM-DD --question "<原话>" --markdown',
                 'needs': ['日期']}
     period, dates, event = _period(text), DATE.findall(text), _event(text)
-    if period or dates or any(word in text for word in DAY_WORDS):
+    practical = any(word in text for word in LIFE_WORDS)
+    day_words = [w for w in DAY_WORDS if w in text and not (practical and w in YES_NO_WORDS)]
+    if period or dates or day_words:
         slots = bool(CLOCK.search(text))
         request: dict = {'intent': 'selection' if slots else 'period', 'question': text,
                          'event': {'scenario': event or 'outlook'}}
@@ -103,7 +115,7 @@ def route(question: str) -> dict:
                 'command': ('python scripts/bazi_reading.py --year Y --month M --day D [--hour H --minute m] '
                             '--gender G --city 出生地 --current-timezone 现居地时区 --question "<原话>" --markdown'),
                 'needs': [BIRTH]}
-    if any(word in text for word in LIFE_WORDS):
+    if practical:
         return {'flow': 'life_guide',
                 'why': '问现实层面怎么做：查《高性价比人生指南》冻结快照，按所在地筛选适用条目',
                 'command': 'python scripts/life_guide.py --query "<关键词>" --current-timezone 现居地时区',
