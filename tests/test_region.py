@@ -27,6 +27,11 @@ def test_zone_to_region(zone, region):
     ('Australia/Sydney', 'AU'), ('Australia/Melbourne', 'AU'), ('Asia/Singapore', 'SG'),
     ('Asia/Shanghai', 'CN'), ('Asia/Urumqi', 'CN'), ('PRC', 'CN'), ('Asia/Hong_Kong', 'HK'),
     ('America/New_York', 'US'), ('America/Toronto', 'CA'),
+    # Old names are links, absent from zone.tab; CLDR-based clients still emit them.
+    ('Asia/Calcutta', 'IN'), ('Asia/Saigon', 'VN'), ('US/Eastern', 'US'), ('Europe/Kiev', 'UA'),
+    ('Australia/ACT', 'AU'), ('Singapore', 'SG'), ('Japan', 'JP'), ('GB', 'GB'),
+    # Listed in zone.tab under its own country even though tzdata links it elsewhere.
+    ('Europe/Amsterdam', 'NL'), ('Europe/Oslo', 'NO'),
     ('UTC', None), ('Etc/GMT+8', None), ('Asia/Shanghai ', None), (None, None),
 ])
 def test_zone_to_country(zone, country):

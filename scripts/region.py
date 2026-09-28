@@ -39,29 +39,53 @@ def is_zone(zone: object) -> bool:
     return isinstance(zone, str) and zone in _known_zones()
 
 
-@cache
-def _zone_countries() -> dict[str, str]:
-    """zone.tab from wherever zoneinfo reads its zones: TZPATH, then tzdata."""
-    sources: list = [Path(p) / 'zone.tab' for p in zoneinfo.TZPATH]
+def _tz_text(name: str) -> str:
+    """A tz data file from wherever zoneinfo reads its zones: TZPATH, then tzdata."""
+    sources: list = [Path(p) / name for p in zoneinfo.TZPATH]
     try:
-        sources.append(resources.files('tzdata').joinpath('zoneinfo', 'zone.tab'))
+        sources.append(resources.files('tzdata').joinpath('zoneinfo', name))
     except ModuleNotFoundError:
         pass
     for source in sources:
         try:
-            text = source.read_text(encoding='utf-8')
+            return source.read_text(encoding='utf-8')
         except OSError:
             continue
-        rows = (line.split('\t') for line in text.splitlines() if line and not line.startswith('#'))
-        return {cols[2]: cols[0] for cols in rows if len(cols) >= 3}
-    return {}
+    return ''
+
+
+@cache
+def _zone_countries() -> dict[str, str]:
+    rows = (line.split('\t') for line in _tz_text('zone.tab').splitlines() if line and not line.startswith('#'))
+    return {cols[2]: cols[0] for cols in rows if len(cols) >= 3}
+
+
+@cache
+def _links() -> dict[str, str]:
+    """Old name → target from tzdata.zi's 「L target link」 lines (Asia/Calcutta → Asia/Kolkata)."""
+    rows = (line.split() for line in _tz_text('tzdata.zi').splitlines() if line.startswith('L '))
+    return {cols[2]: cols[1] for cols in rows if len(cols) == 3}
 
 
 def country_of(zone: str | None) -> str | None:
-    """ISO country code of a zone, or None when it names no country or is unknown."""
+    """ISO country code of a zone, or None when it names no country or is unknown.
+
+    zone.tab lists canonical zones only, so an old name is followed through
+    its links. zone.tab is read first: it keeps Europe/Amsterdam under NL
+    although tzdata now links it to Brussels. A few remote links still land
+    in another country (Atlantic/Jan_Mayen → Europe/Berlin → DE).
+    """
     if zone is None or not is_zone(zone):
         return None
-    return OWN_COUNTRIES.get(zone) or _zone_countries().get(zone)
+    name: str | None = zone
+    for _ in range(4):   # links are one hop in practice; bound it anyway
+        if name is None:
+            return None
+        found = OWN_COUNTRIES.get(name) or _zone_countries().get(name)
+        if found:
+            return found
+        name = _links().get(name)
+    return None
 
 
 # Matters whose rules follow where they take place: the flat, the job, the

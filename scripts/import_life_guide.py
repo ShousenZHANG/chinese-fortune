@@ -63,10 +63,28 @@ REVIEWED_CROSS_REFS: dict[tuple[int, int, int, int], str] = {
 ENTRY_RE = re.compile(r'^### (\d+)\. (.+)$', re.M)
 TAG_RE = re.compile(r'<!--\s*成本标签:\s*(.*?)\s*-->')
 # 「第 9 节第 20 条」, 「第 6 节」 (a whole section), 「本节第 24 条」 and a bare
-# 「第 22 条」 (this section's entry 22). Chinese-numeral law articles such as
-# 「第二十六条」 do not match; an Arabic one in a section with an excluded
-# entry does, and then needs review — a false alarm fails safe.
-REF_RE = re.compile(r'第\s*(\d+)\s*节(?:第\s*(\d+)\s*条)?|本节第\s*(\d+)\s*条|第\s*(\d+)\s*条')
+# 「第 22 条」 (this section's entry 22), each with lists and ranges as the
+# book writes them: 「第 29、30 条」, 「第 1 节第 17 到 19 条」. Chinese-numeral
+# law articles such as 「第二十六条」 do not match; an Arabic one in a section
+# with an excluded entry does, and then needs review — a false alarm fails safe.
+LIST_SEP = r'\s*(?:、|和|及|与|或)\s*'
+RANGE_SEP = r'\s*(?:至|到|-|—|–|~|～)\s*'
+NUMS = rf'\d+(?:(?:{LIST_SEP}|{RANGE_SEP})\d+)*'
+REF_RE = re.compile(rf'第\s*(\d+)\s*节(?:\s*第\s*({NUMS})\s*条)?|本节\s*第\s*({NUMS})\s*条|第\s*({NUMS})\s*条')
+# 「本节「…」那条」: a reference by title, compared with the excluded titles.
+QUOTE_RE = re.compile(r'「([^」]{4,60})」')
+
+
+def _numbers(spec: str) -> list[int]:
+    """「14、15」 → [14, 15]; 「17 到 19」 → [17, 18, 19]."""
+    found: list[int] = []
+    for part in re.split(LIST_SEP, spec):
+        bounds = [int(n) for n in re.split(RANGE_SEP, part) if n]
+        if len(bounds) == 2 and 0 <= bounds[1] - bounds[0] <= 50:
+            found += range(bounds[0], bounds[1] + 1)
+        else:
+            found += bounds
+    return found
 
 
 def _region(section: int, number: int) -> str:
@@ -101,7 +119,7 @@ def _entry(section: int, section_title: str, block: str) -> dict:
             'region': _region(section, number)}
 
 
-def _cross_refs(entry: dict) -> list[dict]:
+def _cross_refs(entry: dict, excluded_titles: dict[tuple[int, int], str]) -> list[dict]:
     text = '\n'.join(entry['fields'].values())
     excluded_sections = {s for s, _ in EXCLUDED}
     flags = []
@@ -113,12 +131,18 @@ def _cross_refs(entry: dict) -> list[dict]:
 
     for match in REF_RE.finditer(text):
         section = int(match.group(1)) if match.group(1) else entry['section']
-        number = match.group(2) or match.group(3) or match.group(4)
-        if number is None:
+        spec = match.group(2) or match.group(3) or match.group(4)
+        if spec is None:
             if section in excluded_sections:
                 flag(section, 0, match.group(0))
-        elif (section, int(number)) in EXCLUDED:
-            flag(section, int(number), match.group(0))
+            continue
+        for number in _numbers(spec):
+            if (section, number) in EXCLUDED:
+                flag(section, number, match.group(0))
+    for quoted in QUOTE_RE.findall(text):
+        for (section, number), title in excluded_titles.items():
+            if quoted in title or title in quoted:
+                flag(section, number, f'「{quoted}」')
     for word in DIVINATION_WORDS:
         if word in entry['title'] or word in text:
             flag(0, 0, word)
@@ -149,7 +173,8 @@ def build(zip_path: Path) -> dict:
                 entries.append(entry)
     if {(x['section'], x['number']) for x in excluded} != set(EXCLUDED):
         raise ValueError('排除清单里有条目在快照中找不到，编号可能已变化')
-    cross = [flag for entry in entries for flag in _cross_refs(entry)]
+    titles = {(x['section'], x['number']): x['title'] for x in excluded}
+    cross = [flag for entry in entries for flag in _cross_refs(entry, titles)]
     unreviewed = [flag for flag in cross if not flag['resolution']]
     if unreviewed:
         raise ValueError('保留条目引用了被排除条目，须先人工审定：' + json.dumps(unreviewed, ensure_ascii=False))

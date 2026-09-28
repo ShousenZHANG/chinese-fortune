@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from functools import cache
 from pathlib import Path
 
@@ -38,8 +39,10 @@ SCENARIO_ENTRIES: dict[str, list[tuple[int, int]]] = {
     'exam': [(23, 8)],
 }
 # Entries that fit only part of their scenario: attached when the question
-# names that part. 23:8 is about paying for a 考证 course, not 高考 or 考研.
-QUESTION_WORDS: dict[tuple[int, int], tuple[str, ...]] = {(23, 8): ('考证', '证书', '资格证')}
+# names that part. 23:8 is about paying for a 考证 course, not 高考 or 考研;
+# 准考证 is an exam ticket and 毕业证书 a diploma, neither a course to pay for.
+QUESTION_PATTERNS: dict[tuple[int, int], re.Pattern] = {
+    (23, 8): re.compile(r'(?<!准)考证|考个证|资格证|职业证书|技能证书|证书培训')}
 FOREIGN_NOTE = '这是中国大陆的规定；你所在地的规定可能不同'
 TODO_NOTE = '原书把这条标为待核实（TODO），按原书的规矩不能当结论用'
 
@@ -71,8 +74,8 @@ def _applies(entry: dict, payload: dict) -> bool:
 
 
 def _asked(key: tuple[int, int], payload: dict) -> bool:
-    words = QUESTION_WORDS.get(key)
-    return not words or any(w in str(payload.get('question') or '') for w in words)
+    pattern = QUESTION_PATTERNS.get(key)
+    return not pattern or bool(pattern.search(str(payload.get('question') or '')))
 
 
 def entries_for(payload: dict) -> list[dict]:

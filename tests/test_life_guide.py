@@ -103,7 +103,10 @@ def test_the_certificate_entry_is_only_for_questions_about_certificates():
     """23:8 is about paying for a 考证 course, not about 高考 or 考研."""
     exam = _req('exam', current='Asia/Shanghai')
     assert entries_for({**exam, 'question': '下周高考哪天好'}) == []
+    assert entries_for({**exam, 'question': '下周考研哪天好？准考证还没下载'}) == []
+    assert entries_for({**exam, 'question': '考研要带毕业证书吗'}) == []
     assert _ids(entries_for({**exam, 'question': '下个月考证哪天报名好'})) == [(23, 8)]
+    assert _ids(entries_for({**exam, 'question': '想考个资格证，哪天报名好'})) == [(23, 8)]
 
 
 def test_the_cli_returns_an_envelope_with_whole_entries():

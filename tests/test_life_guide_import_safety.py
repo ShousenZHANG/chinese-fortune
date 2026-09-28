@@ -69,6 +69,25 @@ def test_a_reference_to_a_whole_section_or_a_bare_entry_number_is_caught_too(tmp
         build(_zip(tmp_path, _files(_six(extra))))
 
 
+@pytest.mark.parametrize('six_note,note29', [
+    ('见本节第 14、15 条', None),          # a list
+    ('见第 20 到 22 条', None),            # a range
+    ('见第 6 节第 14—16 条', None),
+    (None, '见第 11 到 13 条'),
+    (None, '同「被排除的第三条」那条'),     # by title
+])
+def test_listed_ranged_and_titled_references_are_caught(tmp_path, six_note, note29):
+    six = _six('\n' + _entry(30, '另一条', note=six_note)) if six_note else None
+    extra29 = '\n' + _entry(30, '另一条', note=note29) if note29 else ''
+    with pytest.raises(ValueError, match='须先人工审定'):
+        build(_zip(tmp_path, _files(six, extra29)))
+
+
+def test_a_list_that_misses_the_excluded_numbers_passes(tmp_path):
+    extra = '\n' + _entry(30, '另一条', note='见本节第 1、16 条和第 23 到 25 条')
+    build(_zip(tmp_path, _files(_six(extra))))
+
+
 @pytest.mark.parametrize('word', ['算命', '塔罗', '风水'])
 def test_a_kept_entry_that_mentions_divination_is_refused_until_reviewed(tmp_path, word):
     """The product decision: nothing that passes judgement on divination is shipped."""
