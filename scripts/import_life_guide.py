@@ -39,7 +39,7 @@ FIELDS = ('成本', '说人话', '收益', '证据等级', '来源', '备注')
 EXCLUDED = {
     (6, 15): '产品范围：本技能不收录评价付费算命、塔罗、星座有效性的条目',
     (6, 22): '产品范围：本技能不收录评价转运、招财物件有效性的条目',
-    (29, 12): '产品范围：备注把算命列为针对丧亲者和老人的骗局（指向第 6 节第 15 条），同样不收录',
+    (29, 12): '产品范围：备注里有一句评价占卜的话（指向第 6 节第 15 条），同样不收录',
 }
 # Words that mark an entry as passing judgement on divination. The run fails
 # on any kept entry containing one until it is excluded or reviewed. Not 转运:
@@ -57,28 +57,35 @@ ABROAD_SECTIONS = {21, 32}
 # does. 通用 means the advice rests on research or physical fact; Chinese
 # statistics cited as background do not make it 中国大陆. An entry whose
 # argument cites a Chinese rule (按规定, 监管要求, 交强险限额, 七日无理由,
-# 2001 年以后的抗震规范, 国家免疫规划) stays 中国大陆 even when its title
-# reads universal.
+# 2001 年以后的抗震规范, 国家免疫规划, a 12356 hotline, carrier numbers,
+# 《新生儿疾病筛查管理办法》) stays 中国大陆 even when its title reads
+# universal. A passing mention the argument does not rest on (国内在卖的
+# 戒烟药, 去县级残联问) does not count. Second pass after review: 1:26, 6:18,
+# 14:4 and 27:13 back to 中国大陆; 2:6, 3:20, 3:23, 3:25, 4:13, 28:4-6 too.
 _TO_UNIVERSAL = {
-    1: (2, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29, 34),
+    1: (2, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 29, 34),
     5: (11, 15, 17, 18, 19, 21, 28, 37, 38),
-    6: (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 18, 19, 20, 21, 23, 24, 25, 26),
+    6: (1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 19, 20, 21, 23, 24, 25, 26),
     7: (14,),
     10: (1, 3, 4, 5, 6, 8, 9, 15, 17, 18),
     12: (18,),
     13: (5, 6, 9, 10, 14, 19, 32, 33, 34, 35, 41),
-    14: (1, 3, 4),
+    14: (1, 3),
     16: (1, 3, 4, 7, 8, 9),
     17: (3, 4, 8),
     18: (4, 6),
     20: (1, 2, 5, 7, 8, 9, 11),
     23: (2, 7, 10, 14, 15, 16, 17, 18, 19),
-    27: (1, 4, 5, 6, 7, 10, 13),
+    27: (1, 4, 5, 6, 7, 10),
     29: (2, 4, 5, 7, 8, 9),
     30: (1, 6),
     33: (5, 16),
 }
-_TO_MAINLAND = {2: (5,), 3: (19,), 22: (1, 2, 3, 4, 5, 6), 28: (2,)}
+_TO_MAINLAND = {2: (5, 6), 3: (19, 20, 23, 25), 4: (13,), 22: (1, 2, 3, 4, 5, 6), 28: (2, 4, 5, 6)}
+# Disputes whose first sentence after the mark is only a lead-in or a cross
+# reference, read by hand: how many sentences after the mark to keep so the
+# quote reaches the other side.
+DISPUTE_SENTENCES: dict[tuple[int, int], int] = {(1, 19): 4, (3, 9): 2, (5, 17): 4, (6, 1): 2, (16, 1): 3}
 REGION_OVERRIDES: dict[tuple[int, int], str] = {
     **{(s, n): '通用' for s, ns in _TO_UNIVERSAL.items() for n in ns},
     **{(s, n): '中国大陆' for s, ns in _TO_MAINLAND.items() for n in ns},
@@ -152,24 +159,29 @@ def _entry(section: int, section_title: str, block: str) -> dict:
     grade = fields['证据等级'][:1]
     if grade not in 'ABC':
         raise ValueError(f'第 {section} 节第 {number} 条证据等级不是 A/B/C：{fields["证据等级"]!r}')
-    dispute = _dispute(fields['备注'])
+    dispute = _dispute(fields['备注'], DISPUTE_SENTENCES.get((section, number), 1))
     return {'section': section, 'section_title': section_title, 'number': number, 'title': title,
             'cost_tags': cost_tags, 'fields': fields, 'grade': grade,
             'todo': bool(re.search(r'TODO|待核实', block)), 'disputed': dispute is not None,
             'dispute': dispute, 'region': _region(section, number)}
 
 
-def _dispute(note: str) -> str | None:
-    """The other side, verbatim: the sentence the mark opens, or the next one
-    when the mark is only a short label (「争议。」, 「争议在无糖那一侧。」)."""
+def _dispute(note: str, sentences: int = 1) -> str | None:
+    """The other side, verbatim: the sentence the mark opens, the next one when
+    the mark is only a short label (「争议。」, 「争议在无糖那一侧。」), and as
+    many more as DISPUTE_SENTENCES says for a lead-in."""
     found = DISPUTE_RE.search(note)
     if not found:
         return None
     text = found.group(1).strip()
-    if len(text) <= 10:
-        following = re.match(r'\s*([^。！？]+[。！？]?)', note[found.end():])
-        if following:
-            text += following.group(1).strip()
+    rest = note[found.end():]
+    wanted = sentences + (1 if len(text) <= 10 else 0)
+    for _ in range(wanted - 1):
+        following = re.match(r'\s*([^。！？]+[。！？]?)', rest)
+        if not following:
+            break
+        text += following.group(1).strip()
+        rest = rest[following.end():]
     return text
 
 

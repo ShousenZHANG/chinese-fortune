@@ -57,7 +57,7 @@
    32
   ],
   "default": "中国大陆",
-  "overrides": 134
+  "overrides": 138
  },
  "articles": [
   {
@@ -560,7 +560,7 @@
    "grade": "A",
    "todo": false,
    "disputed": true,
-   "dispute": "争议。NordICC 是按「被邀请去做肠镜」的人来算的。",
+   "dispute": "争议。NordICC 是按「被邀请去做肠镜」的人来算的。结直肠癌死亡 0.28% 对 0.31%（RR 0.90，95% CI 0.64 到 1.16）。这点差别还在误差范围内。也就是说，肠镜对死亡率的好处以前被高估过。",
    "region": "通用"
   },
   {
@@ -743,7 +743,7 @@
    "todo": false,
    "disputed": true,
    "dispute": "争议。同一份 Cochrane 汇总里，不发装备的那一类干预，受伤率低约两成。",
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 1,
@@ -1159,7 +1159,7 @@
    "todo": false,
    "disputed": true,
    "dispute": "争议。世界卫生组织不推荐把电子烟当戒烟手段。",
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 2,
@@ -2276,7 +2276,7 @@
    "grade": "B",
    "todo": true,
    "disputed": true,
-   "dispute": "争议。熬夜本身的代价见本节第 3 条（每晚睡够 7 到 8 小时）。",
+   "dispute": "争议。熬夜本身的代价见本节第 3 条（每晚睡够 7 到 8 小时）。色情内容对普通人的精力和脑力有什么影响，目前没有可靠证据说得清是不是它造成的。",
    "region": "通用"
   },
   {
@@ -2563,7 +2563,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 3,
@@ -2641,7 +2641,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 3,
@@ -2693,7 +2693,7 @@
    "todo": false,
    "disputed": true,
    "dispute": "争议。支持的一方是 146 项研究的汇总，效果为正但很小。",
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 4,
@@ -3031,7 +3031,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 4,
@@ -3602,7 +3602,7 @@
    "grade": "B",
    "todo": true,
    "disputed": true,
-   "dispute": "争议：有一篇文章重新检验过这个结论。",
+   "dispute": "争议：有一篇文章重新检验过这个结论。它指出，Fama-French 那套反复重抽样本的检验方法抽得不够。照它的算法，就算一只基金多赚的那部分确实很明显，也可能被判成「和运气分不出区别」。所以「几乎没有基金有技能」这个结论可能下得过重了。",
    "region": "通用"
   },
   {
@@ -4174,7 +4174,7 @@
    "grade": "A",
    "todo": false,
    "disputed": true,
-   "dispute": "争议：同一批男医生里还看过癌症。",
+   "dispute": "争议：同一批男医生里还看过癌症。吃的人得癌症的比例低约 8%（0.86–0.998，P=0.04，勉强够上「不像碰巧」的线）。",
    "region": "通用"
   },
   {
@@ -4591,7 +4591,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 6,
@@ -9713,7 +9713,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 14,
@@ -10076,7 +10076,7 @@
    "grade": "A",
    "todo": false,
    "disputed": true,
-   "dispute": "争议。这也是这本书里最需要打折看的一个数字。",
+   "dispute": "争议。这也是这本书里最需要打折看的一个数字。同一项汇总分析里，连安慰剂（假药）都吃满的人死亡率也低（0.56，0.43–0.74）。这说明相当一部分好处来自「能坚持吃药的人本来就更注意健康」。",
    "region": "通用"
   },
   {
@@ -13665,7 +13665,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 27,
@@ -13847,7 +13847,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 28,
@@ -13873,7 +13873,7 @@
    "todo": false,
    "disputed": true,
    "dispute": "争议：这是跟踪一群人看结果的研究，不是随机分组试验。",
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 28,
@@ -13899,7 +13899,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用"
+   "region": "中国大陆"
   },
   {
    "section": 28,

@@ -104,6 +104,11 @@ def test_region_defaults_are_conservative():
     # The argument cites a Chinese rule, institution or hotline.
     ((5, 26), '中国大陆'), ((13, 30), '中国大陆'), ((20, 3), '中国大陆'), ((12, 1), '中国大陆'),
     ((2, 5), '中国大陆'), ((3, 19), '中国大陆'), ((22, 5), '中国大陆'),
+    # Second pass: carrier numbers, a screening regulation, 12356, drug rules.
+    ((14, 4), '中国大陆'), ((27, 13), '中国大陆'), ((3, 23), '中国大陆'), ((28, 6), '中国大陆'),
+    ((1, 26), '中国大陆'), ((6, 18), '中国大陆'),
+    # A passing mention the argument does not rest on keeps it universal.
+    ((2, 3), '通用'), ((33, 5), '通用'),
 ])
 def test_regions_were_reviewed_entry_by_entry(key, region):
     assert ENTRIES[key]['region'] == region
@@ -113,3 +118,15 @@ def test_every_region_override_names_a_kept_entry():
     from import_life_guide import REGION_OVERRIDES
     assert not set(REGION_OVERRIDES) - set(ENTRIES)
     assert DATA['region_policy']['overrides'] == len(REGION_OVERRIDES)
+
+
+@pytest.mark.parametrize('key,reaches', [
+    ((3, 9), '目前没有可靠证据说得清'),            # past a cross reference
+    ((16, 1), '连安慰剂（假药）都吃满的人死亡率也低'),
+    ((5, 17), '这个结论可能下得过重了'),
+    ((6, 1), '吃的人得癌症的比例低约 8%'),
+    ((1, 19), '肠镜对死亡率的好处以前被高估过'),
+])
+def test_a_lead_in_dispute_is_quoted_until_it_states_the_other_side(key, reaches):
+    dispute = ENTRIES[key]['dispute']
+    assert reaches in dispute and dispute in ENTRIES[key]['fields']['备注'], dispute
