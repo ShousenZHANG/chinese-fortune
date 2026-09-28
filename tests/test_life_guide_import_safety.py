@@ -29,38 +29,61 @@ def _six(extra: str = '') -> str:
         + _entry(22, '被排除的另一条') + extra
 
 
+def _files(six: str | None = None, extra29: str = '') -> dict[str, str]:
+    """Every file holding an excluded entry, so the exclusion list is satisfied."""
+    return {'06-反面清单.md': _six() if six is None else six,
+            '29-变故.md': '# 变故\n\n' + _entry(12, '被排除的第三条') + extra29}
+
+
 def test_a_well_formed_snapshot_drops_exactly_the_excluded_entries(tmp_path):
-    data = build(_zip(tmp_path, {'06-反面清单.md': _six()}))
+    data = build(_zip(tmp_path, _files()))
     assert [(e['section'], e['number']) for e in data['entries']] == [(6, 1)]
-    assert {(x['section'], x['number']) for x in data['excluded']} == {(6, 15), (6, 22)}
-    assert data['source']['commit'] == COMMIT and len(data['source']['files']) == 1
+    assert {(x['section'], x['number']) for x in data['excluded']} == {(6, 15), (6, 22), (29, 12)}
+    assert data['source']['commit'] == COMMIT and len(data['source']['files']) == 2
 
 
 def test_a_zip_from_another_commit_is_refused(tmp_path):
     with pytest.raises(ValueError, match='不是固定的'):
-        build(_zip(tmp_path, {'06-反面清单.md': _six()}, comment='0' * 40))
+        build(_zip(tmp_path, _files(), comment='0' * 40))
 
 
 def test_a_snapshot_missing_an_excluded_entry_is_refused(tmp_path):
     """If the numbering shifted, the exclusion list would silently guard nothing."""
     text = '# 反面清单\n\n' + _entry(1, '普通一条') + '\n' + _entry(15, '被排除的一条')
     with pytest.raises(ValueError, match='排除清单'):
-        build(_zip(tmp_path, {'06-反面清单.md': text}))
+        build(_zip(tmp_path, _files(text)))
 
 
 def test_a_kept_entry_pointing_at_an_excluded_one_is_refused_until_reviewed(tmp_path):
     extra = '\n' + _entry(30, '另一条', note='理由同本节第 15 条')
     with pytest.raises(ValueError, match='须先人工审定'):
-        build(_zip(tmp_path, {'06-反面清单.md': _six(extra)}))
+        build(_zip(tmp_path, _files(_six(extra))))
+
+
+@pytest.mark.parametrize('note', ['常见骗局见第 6 节（算命）', '同类问题见第 29 节', '理由同第 22 条'])
+def test_a_reference_to_a_whole_section_or_a_bare_entry_number_is_caught_too(tmp_path, note):
+    """「第 6 节」 with no entry number points at a section that holds excluded
+    entries; 「第 22 条」 with no section is this section's entry 22."""
+    extra = '\n' + _entry(30, '另一条', note=note)
+    with pytest.raises(ValueError, match='须先人工审定'):
+        build(_zip(tmp_path, _files(_six(extra))))
+
+
+@pytest.mark.parametrize('word', ['算命', '塔罗', '风水'])
+def test_a_kept_entry_that_mentions_divination_is_refused_until_reviewed(tmp_path, word):
+    """The product decision: nothing that passes judgement on divination is shipped."""
+    extra = '\n' + _entry(30, '另一条', note=f'针对老人的骗局包括{word}')
+    with pytest.raises(ValueError, match='须先人工审定'):
+        build(_zip(tmp_path, _files(_six(extra))))
 
 
 def test_an_entry_missing_a_field_is_refused(tmp_path):
     broken = _six().replace('- 来源：某文献\n', '', 1)
     with pytest.raises(ValueError, match='缺「来源」栏'):
-        build(_zip(tmp_path, {'06-反面清单.md': broken}))
+        build(_zip(tmp_path, _files(broken)))
 
 
 def test_a_grade_outside_abc_is_refused(tmp_path):
     broken = _six().replace('- 证据等级：A', '- 证据等级：D', 1)
     with pytest.raises(ValueError, match='不是 A/B/C'):
-        build(_zip(tmp_path, {'06-反面清单.md': broken}))
+        build(_zip(tmp_path, _files(broken)))

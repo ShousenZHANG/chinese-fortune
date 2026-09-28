@@ -21,11 +21,19 @@ def test_the_snapshot_is_pinned_to_a_commit_and_every_file_is_hashed():
     assert all(len(sha) == 64 for sha in source['files'].values())
 
 
-def test_all_entries_but_the_excluded_two_are_present():
-    assert len(DATA['entries']) == 606
-    assert (6, 15) not in ENTRIES and (6, 22) not in ENTRIES
-    assert {(x['section'], x['number']) for x in DATA['excluded']} == {(6, 15), (6, 22)}
+def test_all_entries_but_the_excluded_three_are_present():
+    """6:15 and 6:22 judge divination; 29:12's note lists 算命 among scams."""
+    assert len(DATA['entries']) == 605
+    assert {(x['section'], x['number']) for x in DATA['excluded']} == {(6, 15), (6, 22), (29, 12)}
+    assert not {(6, 15), (6, 22), (29, 12)} & set(ENTRIES)
     assert all(x['reason'] for x in DATA['excluded'])
+
+
+def test_no_kept_entry_mentions_divination():
+    from import_life_guide import DIVINATION_WORDS
+    for key, entry in ENTRIES.items():
+        text = entry['title'] + ''.join(entry['fields'].values())
+        assert not any(w in text for w in DIVINATION_WORDS), key
 
 
 def test_a_keyword_that_merely_resembles_the_excluded_topic_is_kept():

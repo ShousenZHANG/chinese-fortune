@@ -36,7 +36,12 @@ FIELDS = ('成本', '说人话', '收益', '证据等级', '来源', '备注')
 EXCLUDED = {
     (6, 15): '产品范围：本技能不收录评价付费算命、塔罗、星座有效性的条目',
     (6, 22): '产品范围：本技能不收录评价转运、招财物件有效性的条目',
+    (29, 12): '产品范围：备注把算命列为针对丧亲者和老人的骗局（指向第 6 节第 15 条），同样不收录',
 }
+# Words that mark an entry as passing judgement on divination. The run fails
+# on any kept entry containing one until it is excluded or reviewed. Not 转运:
+# the book uses it for 医疗转运.
+DIVINATION_WORDS = ('算命', '占卜', '塔罗', '星座', '风水', '招财', '开光', '命理', '玄学', '八字')
 
 # Conservative: a section with any law, policy or hotline content is 中国大陆
 # until an entry is individually reviewed as universal. Only plainly
@@ -46,12 +51,22 @@ ABROAD_SECTIONS = {21, 32}
 REGION_OVERRIDES: dict[tuple[int, int], str] = {}
 
 # Kept entries that mention an excluded one, once reviewed. The run fails on
-# any new mention that is not listed here.
-REVIEWED_CROSS_REFS: dict[tuple[int, int, int, int], str] = {}
+# any new mention that is not listed here. A reference to a whole section is
+# keyed with entry number 0; a divination word with (0, 0).
+REVIEWED_CROSS_REFS: dict[tuple[int, int, int, int], str] = {
+    (6, 23, 29, 0): '指向第 29 节里情绪低落时的做法，不是被排除的第 12 条',
+    (16, 4, 6, 0): '指向第 6 节里偏方、补充剂一类的无效花费，不是被排除的两条',
+    (30, 8, 29, 0): '指向第 29 节里家人的应对，不是被排除的第 12 条',
+    (30, 9, 6, 0): '指向第 6 节里防蓝光眼镜一条，不是被排除的两条',
+}
 
 ENTRY_RE = re.compile(r'^### (\d+)\. (.+)$', re.M)
 TAG_RE = re.compile(r'<!--\s*成本标签:\s*(.*?)\s*-->')
-REF_RE = re.compile(r'第\s*(\d+)\s*节第\s*(\d+)\s*条|本节第\s*(\d+)\s*条')
+# 「第 9 节第 20 条」, 「第 6 节」 (a whole section), 「本节第 24 条」 and a bare
+# 「第 22 条」 (this section's entry 22). Chinese-numeral law articles such as
+# 「第二十六条」 do not match; an Arabic one in a section with an excluded
+# entry does, and then needs review — a false alarm fails safe.
+REF_RE = re.compile(r'第\s*(\d+)\s*节(?:第\s*(\d+)\s*条)?|本节第\s*(\d+)\s*条|第\s*(\d+)\s*条')
 
 
 def _region(section: int, number: int) -> str:
@@ -88,14 +103,25 @@ def _entry(section: int, section_title: str, block: str) -> dict:
 
 def _cross_refs(entry: dict) -> list[dict]:
     text = '\n'.join(entry['fields'].values())
+    excluded_sections = {s for s, _ in EXCLUDED}
     flags = []
+
+    def flag(section: int, number: int, found: str) -> None:
+        key = (entry['section'], entry['number'], section, number)
+        flags.append({'from': [entry['section'], entry['number']], 'to': [section, number],
+                      'text': found, 'resolution': REVIEWED_CROSS_REFS.get(key)})
+
     for match in REF_RE.finditer(text):
         section = int(match.group(1)) if match.group(1) else entry['section']
-        number = int(match.group(2) or match.group(3))
-        if (section, number) in EXCLUDED:
-            key = (entry['section'], entry['number'], section, number)
-            flags.append({'from': [entry['section'], entry['number']], 'to': [section, number],
-                          'text': match.group(0), 'resolution': REVIEWED_CROSS_REFS.get(key)})
+        number = match.group(2) or match.group(3) or match.group(4)
+        if number is None:
+            if section in excluded_sections:
+                flag(section, 0, match.group(0))
+        elif (section, int(number)) in EXCLUDED:
+            flag(section, int(number), match.group(0))
+    for word in DIVINATION_WORDS:
+        if word in entry['title'] or word in text:
+            flag(0, 0, word)
     return flags
 
 
