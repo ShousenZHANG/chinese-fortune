@@ -53,6 +53,31 @@ def test_a_borrowed_nearest_term_is_really_on_the_list():
             assert term in text, (cap['scenario'], term)
 
 
+def _sentence(scenario: str) -> str:
+    from fortune_reading import _authority_sentence
+    return _authority_sentence({'capability': capabilities(scenario)[0]})
+
+
+def test_a_listed_term_licenses_only_the_part_it_names():
+    """嫁娶 is the wedding, 開市 the opening; 订婚、领证 and a product launch
+    are not named on the list, so the answer may not claim them."""
+    for scenario, covered, rest in (('wedding', '婚礼', '订婚、领证'), ('business', '开业', '产品与作品发布')):
+        sentence = _sentence(scenario)
+        assert sentence.startswith(f'{covered}对应'), sentence
+        assert f'{rest}算不算' in sentence and '原文没说' in sentence, sentence
+
+
+def test_billing_names_the_nearby_terms_instead_of_saying_there_are_none():
+    """納財、交易、立券 are on the list; whether a quote or a dunning letter is
+    one of them the book does not say."""
+    text = get_passage(YONGSHI_PASSAGE)['text']
+    authority = capabilities('billing')[0]['authority']
+    assert authority['kind'] == 'borrowed' and '没有对应名目' not in authority['reason']
+    assert authority['nearby'] == ['納財', '交易', '立券'] and all(t in text for t in authority['nearby'])
+    sentence = _sentence('billing')
+    assert all(t in sentence for t in authority['nearby']) and '借用' in sentence, sentence
+
+
 def _markdown(scenario: str) -> str:
     from fortune_reading import read_request, render_answer
     request = _travel_request([{'id': 'a', 'start': '2026-10-15T09:00', 'end': '2026-10-15T13:00'}],

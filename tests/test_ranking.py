@@ -1006,6 +1006,33 @@ def test_a_wu_or_gui_day_warns_what_moving_the_time_would_change():
     assert '两说并列' not in lead   # a 乙类 term; the summary says it in plain words
 
 
+def test_without_hour_pillars_the_unsettled_hours_are_not_said_to_be_clear():
+    """At day granularity no hour was checked, so 「挪进这两段得重新查」 would
+    imply the given time is already clear of them. Say nothing instead."""
+    from fortune_reading import read_request, render_answer
+    request = _travel_request([_slot('d11', '2026-10-11', '09:00', '13:00')],
+                              {'start': '2026-10-10', 'end': '2026-10-13'})
+    request['granularity'] = 'day'
+    result = read_request(request)
+    assert result['participants'][0]['target']['granularity'] == 'day'
+    assert '重新查' not in render_answer(result).split('\n\n')[0]
+
+
+def test_the_warning_names_only_the_day_the_chosen_time_is_on():
+    from fortune_reading import _unsettled_day_sentence
+    row = {'candidate_id': 'a', 'start': '2026-10-10T09:00:00+11:00', 'end': '2026-10-12T09:00:00+11:00',
+           'contested_hours_in_window': [], 'unresolved_hour_rules': ['戊午']}
+    def seg(start, end, day):
+        return {'start': start, 'end': end, 'facts': {'pillars': {'day': day, 'hour': '辛巳'}}}
+    result = {'practical_screening': {'tiers': [row]}, 'participants': [{'target': {'segments': [
+        seg('2026-10-10T09:00:00+11:00', '2026-10-11T00:00:00+11:00', '丁巳'),
+        seg('2026-10-11T00:00:00+11:00', '2026-10-12T09:00:00+11:00', '戊午')]}}]}
+    on_ding = {'candidate_id': 'a', 'start': '2026-10-10T10:00:00+11:00', 'end': '2026-10-10T12:00:00+11:00'}
+    on_wu = {'candidate_id': 'a', 'start': '2026-10-11T10:00:00+11:00', 'end': '2026-10-11T12:00:00+11:00'}
+    assert _unsettled_day_sentence(result, on_ding) == ''
+    assert '戊午' in _unsettled_day_sentence(result, on_wu)
+
+
 def test_a_day_with_a_settled_hour_rule_gets_no_such_warning():
     from fortune_reading import read_request, render_answer
     lead = render_answer(read_request(_travel_request(

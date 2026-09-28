@@ -36,7 +36,7 @@ from fortune_time import candidate_windows, resolve_window
 from life_guide import LIMIT as LIFE_LIMIT
 from life_guide import entries_for, library_source
 from personal_profiles import birth_arguments, load_profile, validate_person
-from region import resolve_region
+from region import is_zone, resolve_region
 from request_time import capture_request_time
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import asks_colour, colour_lead, colour_lines
@@ -328,8 +328,9 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     event = payload.get('event', {'scenario': 'outlook'})
     if not isinstance(event, dict) or set(event) - EVENT_FIELDS:
         raise ValueError('event 字段无效')
-    if event.get('destination_timezone'):
-        ZoneInfo(event['destination_timezone'])   # an unknown zone must not count as 境外
+    if event.get('destination_timezone') and not is_zone(event['destination_timezone']):
+        # An unknown zone must not count as 境外.
+        raise ValueError('event.destination_timezone 须为 IANA 时区名，例如 Asia/Singapore')
     scenario = event.get('scenario', 'outlook')
     if scenario == 'multiple_events':
         from fortune_itinerary import read_itinerary
@@ -523,9 +524,31 @@ def _unsettled_day_sentence(result: dict, choice: dict) -> str:
     row = _window_row(result.get('practical_screening', {}), choice)
     if not row or row.get('contested_hours_in_window') or not row.get('unresolved_hour_rules'):
         return ''
-    days = '、'.join(row['unresolved_hour_rules'])
-    return (f'{days}日的截路空亡，两本书说的时辰不同（一说子丑，一说戌亥）；'
+    on = _placement_days(result, choice)
+    days = [d for d in row['unresolved_hour_rules'] if d in (on or [])]
+    if not days:
+        return ''
+    return (f"{'、'.join(days)}日的截路空亡，两本书说的时辰不同（一说子丑，一说戌亥）；"
             '时间要是挪进这两段，得重新查。')
+
+
+def _placement_days(result: dict, choice: dict) -> list[str] | None:
+    """Day pillars the chosen time itself covers, or None unless read to the hour.
+
+    Without hour pillars no hour was tested at all, so a window can hold
+    子丑 or 戌亥 unnoticed; saying 「挪进去才要重查」 would call it clear.
+    """
+    start, end = datetime.fromisoformat(choice['start']), datetime.fromisoformat(choice['end'])
+    days: list[str] = []
+    for person in result.get('participants', []):
+        for segment in person.get('target', {}).get('segments', []):
+            if not (datetime.fromisoformat(segment['start']) < end and start < datetime.fromisoformat(segment['end'])):
+                continue
+            pillars = segment['facts']['pillars']
+            if 'hour' not in pillars or 'day' not in pillars:
+                return None
+            days.append(pillars['day'])
+    return list(dict.fromkeys(days)) or None
 
 
 def _excluded_sentence(result: dict) -> str:
@@ -931,7 +954,15 @@ def _authority_sentence(result: dict) -> str:
     label = capability.get('label') or '这件事'
     listed = '协纪「民用三十七事」（xieji:c011:p0005）'
     if authority.get('kind') == 'passage':
-        return f"{label}对应{listed}里的「{authority['term']}」，相主正是给这类用事挑时间的方法。"
+        term = authority['term']
+        if authority.get('covers'):
+            return (f"{authority['covers']}对应{listed}里的「{term}」，相主正是给这类用事挑时间的方法；"
+                    f"{authority['not_covered']}算不算{term}，原文没说，用在这些事上是借用。")
+        return f"{label}对应{listed}里的「{term}」，相主正是给这类用事挑时间的方法。"
+    if authority.get('nearby'):
+        terms = ''.join(f'「{t}」' for t in authority['nearby'])
+        return (f"{label}不在{listed}里；名目里有{terms}，但原文没说{label}算不算其中哪一件。"
+                '这里是把相主借用到这件事上，原文没有专门为它写过。')
     nearest = f"，最接近的是「{authority['term']}」" if authority.get('term') else ''
     return (f"{label}不在{listed}里{nearest}；这里是把相主借用到这件事上，"
             '原文没有专门为它写过。')

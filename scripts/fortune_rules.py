@@ -43,24 +43,33 @@ YONGSHI_PASSAGE = 'xieji:c011:p0005'
 XIANGZHU_METHOD_PASSAGE = 'xieji:c033:p0002'
 XIANGZHU_AUTHORITY = {
     'travel': ('passage', '出行', '出行在协纪民用三十七事之列'),
-    'wedding': ('passage', '嫁娶', '嫁娶在协纪民用三十七事之列'),
+    'wedding': ('passage', '嫁娶', '婚礼即嫁娶，在协纪民用三十七事之列；订婚、领证算不算嫁娶，原文没说'),
     'moving': ('passage', '移徙', '移徙在协纪民用三十七事之列'),
-    'business': ('passage', '開市', '开业即开市，在协纪民用三十七事之列；产品、作品发布是否算开市未核'),
+    'business': ('passage', '開市', '开业即开市，在协纪民用三十七事之列；产品与作品发布算不算开市，原文没说'),
     'interview': ('borrowed', '上官', '面试不是上官赴任；民用三十七事里最接近的是上官'),
     'exam': ('borrowed', '入學', '考试不是入学；民用三十七事里最接近的是入學'),
     'relationship_conversation': ('borrowed', '會親友', '约会、感情沟通不在民用三十七事里；最接近的是會親友'),
     'work_conversation': ('borrowed', None, '工作沟通、谈薪、转岗在民用三十七事里没有对应名目'),
-    'billing': ('borrowed', None, '报价、催款在民用三十七事里没有对应名目'),
+    'billing': ('borrowed', None, '民用三十七事里有納財、交易、立券，但报价、催款算不算其中哪一件，原文没说'),
     'outlook': ('borrowed', None, '相主是为某件事挑时间的方法；不做具体事、只问某天好不好，不在民用三十七事里'),
 }
 CUSTOM_AUTHORITY = ('borrowed', None, '自定义事项，没有对应到民用三十七事')
+# A label naming several undertakings when the list names only one of them:
+# (the part the term covers, the rest it does not name).
+AUTHORITY_SCOPE = {'wedding': ('婚礼', '订婚、领证'), 'business': ('开业', '产品与作品发布')}
+# Terms on the list near a borrowed undertaking, none of them claimed for it.
+AUTHORITY_NEARBY = {'billing': ['納財', '交易', '立券']}
 
 
 def _authority(scenario: str) -> dict:
     kind, term, reason = XIANGZHU_AUTHORITY.get(scenario, CUSTOM_AUTHORITY)
-    entry = {'kind': kind, 'reason': reason, 'method_passage_id': XIANGZHU_METHOD_PASSAGE}
+    entry: dict = {'kind': kind, 'reason': reason, 'method_passage_id': XIANGZHU_METHOD_PASSAGE}
     if term:
         entry.update(term=term, passage_id=YONGSHI_PASSAGE)
+    if scenario in AUTHORITY_SCOPE:
+        entry['covers'], entry['not_covered'] = AUTHORITY_SCOPE[scenario]
+    if scenario in AUTHORITY_NEARBY:
+        entry.update(nearby=AUTHORITY_NEARBY[scenario], passage_id=YONGSHI_PASSAGE)
     return entry
 PERSONAL_ROUTES = ('selection', 'period')
 
@@ -116,7 +125,10 @@ def _authority_cell(cap: dict) -> str:
     if not authority:
         return '—'
     if authority['kind'] == 'passage':
-        return f"协纪民用事「{authority['term']}」"
+        scope = f"（只含{authority['covers']}）" if authority.get('covers') else ''
+        return f"协纪民用事「{authority['term']}」{scope}"
+    if authority.get('nearby'):
+        return f"借用（名目有{'、'.join(authority['nearby'])}，未核是否对应）"
     return f"借用（最接近「{authority['term']}」）" if authority.get('term') else '借用'
 
 
