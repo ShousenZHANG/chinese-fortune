@@ -70,16 +70,31 @@ FRAMES = {'水': (('申', '子', '辰'), ('亥', '子', '丑')), '火': (('寅',
           '木': (('亥', '卯', '未'), ('寅', '卯', '辰')), '金': (('巳', '酉', '丑'), ('申', '酉', '戌'))}
 FRAME_RE = re.compile(r'([水火木金土])局')
 EXCESS_RE = re.compile(r'([甲乙丙丁戊己庚辛壬癸]+)(过多|太多)')
-# Cells whose note takes the general stems in no order, read by hand against
-# the passage: (kind, the note's own word). joint: used together; by_trouble:
-# chosen by what the chart lacks, 「非拘执先後，宜分病用药」 (c005:p0051).
-UNORDERED: dict[str, tuple[str, str]] = {
-    '辛|午': ('joint', '兼用'),            # 「壬己兼用」
-    '丁|酉': ('joint', '并用'),            # 「八月甲丙庚皆用」 (c003:p0249)
-    '庚|巳': ('by_trouble', '非拘执先后'),
+STEM_CHARS = '甲乙丙丁戊己庚辛壬癸'
+# Every cell whose general stems span two or more elements and whose note or
+# cited passage says 兼用, 并用, 皆用, 并论, 参酌, 随宜, 酌用 or 不拘先后 was
+# read by hand against the passage; a test keeps the list complete.
+# UNORDERED: (kind, the words that decide it, how the lead says it). joint:
+# used together; by_trouble: chosen by what the chart shows.
+UNORDERED: dict[str, tuple[str, str, str]] = {
+    '辛|午': ('joint', '兼用', '{stems}兼用'),                         # 「壬己兼用」 (c005:p0178)
+    '丁|酉': ('joint', '皆用', '{stems}并用'),                         # 「八月甲丙庚皆用」 (c003:p0249)
+    '庚|巳': ('by_trouble', '非拘执先後',                               # 「須用壬丙戊，但非拘执先後」 (c005:p0051)
+             '须用{stems}，原文说不拘先后，要看盘上具体缺什么来取'),
+    '丙|亥': ('by_trouble', '随宜酌用',                                 # 「木旺宜庚，水旺宜戊……随宜酌用可也」 (c003:p0133)
+             '{stems}要看盘上哪样旺来取，原文说随宜酌用'),
 }
-# Notes that say 并用 yet keep an order the passage states.
-ORDERED_DESPITE: dict[str, str] = {'壬|子': '戊先丙后'}
+# The word appears, but the passage still gives the general stems an order
+# (the 酌用 there is about the conditional stems).
+ORDERED_DESPITE: dict[str, str] = {
+    '壬|子': '戊先丙后',
+    '丁|戌': '仍分优劣',                                  # 「三秋甲庚丙并用，仍分优劣……九月端用甲庚」
+    '丁|亥': '甲木为尊，庚金佐之', '丁|子': '甲木为尊，庚金佐之', '丁|丑': '甲木为尊，庚金佐之',
+    '戊|午': '先看壬水，次取甲木',
+    '己|申': '先癸後丙', '己|酉': '先癸後丙', '己|戌': '先癸後丙',
+    '甲|寅': '癸藏丙透',                                  # 「得丙癸逢……癸藏丙透，名寒木向阳」
+    '庚|酉': '用丁甲',                                    # 「用丁甲，丙不可少」
+}
 
 CELL_STATUS = {'supported_with_conditions': '原文支持，但有条件', 'partially_supported': '原文只部分支持',
                'conflicts_with_text': '旧表与原文不合，这里按原文', 'seasonal_only': '这一月没有专段，只按季节总论'}
@@ -160,8 +175,12 @@ def _advice(chart: dict) -> dict:
     needed: list[dict] = []
     for stem_needed in stems:
         wuxing = TIANGAN_WUXING[stem_needed]
-        if wuxing not in [n['wuxing'] for n in needed]:
-            needed.append({'stem': stem_needed, 'wuxing': wuxing})
+        same = next((n for n in needed if n['wuxing'] == wuxing), None)
+        if same:
+            # 「庚辛」: both metal, one colour, but both named.
+            same['stems'].append(stem_needed)
+        else:
+            needed.append({'stem': stem_needed, 'stems': [stem_needed], 'wuxing': wuxing})
     first = needed[0]
     # Quote the passage that names the stem, not merely the cell's first one.
     refs = [r['passage_id'] for r in audit['source_refs']]
@@ -212,13 +231,13 @@ def modality_violations(advice: dict, text: str) -> list[str]:
     """
     found = []
     for stem in advice['tiaohou']['conditional_stems']:
-        if re.search(rf'(?:先取|其次){stem}（', text):
+        if re.search(rf'(?:先取|其次)[{STEM_CHARS}、]*{stem}[{STEM_CHARS}、]*（', text):
             found.append(f'有条件的{stem}写成了一般取法')
     if advice.get('order', 'ranked') != 'ranked':
         if re.search(r'先取|首选', text):
             found.append('原文不分先后，却写了先取或首选')
         for n in advice['needed'][1:]:
-            if f"其次{n['stem']}（" in text:
+            if re.search(rf"其次[{STEM_CHARS}、]*{n['stem']}", text):
                 found.append(f"原文不分先后，{n['stem']}被排成了其次")
     return found
 
@@ -236,11 +255,11 @@ def colour_lead(advice: dict, aspects: list[str] | None = None) -> str:
     wear = advice['wear']
     order = advice.get('order', 'ranked')
     joint = order != 'ranked'
-    stems = [f"{n['stem']}（{n['wuxing']}）" for n in advice['needed']]
+    stems = [f"{'、'.join(n.get('stems', [n['stem']]))}（{n['wuxing']}）" for n in advice['needed']]
     if order == 'joint':
-        needed = '、'.join(stems) + UNORDERED[advice['key']][1]
+        needed = UNORDERED[advice['key']][2].format(stems='、'.join(stems))
     elif order == 'by_trouble':
-        needed = '、'.join(stems) + '都可用，要看盘上具体缺什么来取，原文说不拘先后'
+        needed = UNORDERED[advice['key']][2].format(stems='、'.join(stems))
     else:
         needed = '先取' + '，其次'.join(stems)
     first = '' if joint else '首选'
@@ -309,7 +328,8 @@ def colour_lines(advice: dict, aspects: list[str] | None = None) -> list[str]:
         '五行配色：《三命通会》卷七「' + '」「'.join(COLOUR_QUOTES[w['wuxing']] for w in advice['wear'])
         + f"」（{COLOUR_SOURCE}）；《梅花易数》卷二「{SHADE_QUOTE}」（{SHADE_SOURCE}）。",
         '佩戴物的五行：《梅花易数》' + '；'.join(f"「{w['thing_quote']}」（{w['thing_source']}）"
-                                              for w in advice['wear'][:2]) + '。',
+                                              for w in (advice['wear'] if advice.get('order', 'ranked') != 'ranked'
+                                                        else advice['wear'][:2])) + '。',
     ]
     if 'direction' in aspects or 'number' in aspects:
         lines.append(f"方位与数字：《协纪辨方书》卷一「{HETU_QUOTE}」（{HETU_SOURCE}）。")

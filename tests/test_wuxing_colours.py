@@ -290,22 +290,47 @@ def test_the_modality_check_catches_both_kinds_of_drift():
     assert modality_violations(conditional, '这一格一般先取丁（火），其次癸（水）。')
 
 
-def test_every_note_that_frees_the_order_is_reviewed():
-    """A note saying 兼用, 并用, 皆用 or 不拘先后 about two or more general stems
-    must be in the reviewed table, as unordered or as ordered despite the word."""
+ORDER_WORDS = r'兼用|並用|并用|皆用|同用|並論|并论|並配|并配|參酌|参酌|隨宜|随宜|酌用|不拘|非拘|先後|先后'
+
+
+def _cell_texts(key: str) -> str:
+    from tiaohou_provenance import get_tiaohou_audit
+    audit = get_tiaohou_audit(key)
+    return audit['review_note'] + '\n' + '\n'.join(get_passage(r['passage_id'])['text'] for r in audit['source_refs'])
+
+
+def test_every_cell_whose_note_or_passage_frees_the_order_is_reviewed():
+    """Any cell with two or more general stems whose note or cited passage says
+    兼用, 并用, 皆用, 并论, 参酌, 随宜, 酌用 or 不拘先后 must be in the reviewed
+    table, as unordered or as ordered despite the word, with its evidence
+    quoted from the note or the passage."""
     from tiaohou_provenance import get_tiaohou_audit
     from wuxing_colours import ORDERED_DESPITE, UNORDERED
     for stem in STEMS:
         for branch in BRANCHES:
             key = f'{stem}|{branch}'
-            audit = get_tiaohou_audit(key)
-            note = audit['review_note']
-            if len(audit['source_general_candidates']) > 1 and re.search(r'兼用|并用|皆用|同用|先后', note):
+            general = get_tiaohou_audit(key)['source_general_candidates']
+            # One element (庚辛, 丁丙) has one colour: there is no order to get wrong.
+            if len({TIANGAN_WUXING[g] for g in general}) > 1 and re.search(ORDER_WORDS, _cell_texts(key)):
                 assert key in UNORDERED or key in ORDERED_DESPITE, key
-    for key, (_kind, word) in UNORDERED.items():
-        assert word in get_tiaohou_audit(key)['review_note'], key
-    for key, reason in ORDERED_DESPITE.items():
-        assert reason in get_tiaohou_audit(key)['review_note'], key
+    for key, (_kind, evidence, _phrase) in UNORDERED.items():
+        assert evidence in _cell_texts(key), key
+    for key, evidence in ORDERED_DESPITE.items():
+        assert evidence in _cell_texts(key), key
+
+
+def test_bing_hai_is_chosen_by_what_is_strong():
+    """丙 in 亥: 「木旺宜庚，水旺宜戊，火旺用壬，随宜酌用可也」 (qiongtong:c003:p0133)."""
+    lead = colour_lead(colour_advice(_four('甲寅', '乙亥', '丙寅', '戊子')))
+    assert '随宜酌用' in lead and '先取' not in lead and '其次' not in lead.split('这是这一格')[0], lead
+
+
+def test_stems_of_one_element_are_all_named():
+    """癸 in 午: 「庚辛壬参酌并用」. 庚 and 辛 are both metal; naming only 庚 drops 辛."""
+    lead = colour_lead(colour_advice(_chart('癸', '午')))
+    assert '庚、辛（金）' in lead, lead
+    jia_you = colour_lead(colour_advice(_chart('甲', '酉')))       # 「丁先、丙次、庚再次」
+    assert '先取丁、丙（火），其次庚（金）' in jia_you, jia_you
 
 
 def test_all_three_used_together_in_ding_you():
@@ -315,6 +340,9 @@ def test_all_three_used_together_in_ding_you():
     # Wearables list all three: keeping the first two would rank them after all.
     wearing = lead.split('佩戴')[1].split('；')[0]
     assert all(f'（{w}）' in wearing for w in '木火金'), wearing
+    # Layer 2 quotes a source for every wearable it names.
+    lines = '\n'.join(colour_lines(colour_advice(_four('甲寅', '癸酉', '丁卯', '壬寅'))))
+    assert all(THINGS[w][1] in lines for w in '木火金'), lines
 
 
 def test_geng_si_is_chosen_by_the_charts_trouble_not_in_order():
@@ -322,6 +350,7 @@ def test_geng_si_is_chosen_by_the_charts_trouble_not_in_order():
     advice = colour_advice(_four('甲寅', '己巳', '庚辰', '丙子'))
     lead = colour_lead(advice)
     assert '不拘先后' in lead and '先取' not in lead and '其次戊' not in lead, lead
+    assert '须用壬（水）、戊（土）' in lead and '都可用' not in lead, lead   # 「须用」, not weaker
     assert modality_violations(advice, '这一格一般先取壬（水），其次戊（土）。')
 
 
