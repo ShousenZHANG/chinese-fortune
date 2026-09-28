@@ -113,7 +113,7 @@ def test_charts_that_share_the_cell_differ_where_the_branches_decide():
     leads = [colour_lead(colour_advice(chart, '我穿什么颜色好')) for chart in (plain, fiery)]
     assert leads[0] != leads[1]
     assert '水局不成立' in leads[0] and '水局成立' in leads[1]
-    assert '不能直接套' in leads[1] and '不能直接套' not in leads[0]
+    assert '审校说明' in leads[1] and '审校说明' not in leads[0]
     for lead in leads:
         assert '一般取法' in lead and '丙丁过多' in lead and '没判' in lead
     # 甲 in 未 month: 「無癸亦可」, and the old table put 癸 first. Nothing says avoid water.
@@ -211,11 +211,27 @@ def test_the_water_frame_is_decided_from_the_branches():
     assert '水局不成立' in lead and '丙丁过多' in lead and '没判' in lead
 
 
-def test_a_complete_frame_says_the_general_choice_may_not_apply():
+def test_a_complete_frame_points_to_the_note_without_deciding_its_effect():
     advice = colour_advice(_four('丙申', '丙子', '庚辰', '丁亥'))
     checks = {c['condition']: c for c in advice['exception_checks']}
     assert checks['水局']['status'] == 'met' and '申子辰' in checks['水局']['basis']
-    assert '不能直接套' in colour_lead(advice)
+    lead = colour_lead(advice)
+    assert '水局成立' in lead and '审校说明' in lead and '不能直接套' not in lead
+
+
+@pytest.mark.parametrize('pillars,frame', [
+    # 戊 in 午: 「先壬次甲…癸力微，火局不能等同壬的作用」 — the frame keeps 壬 first.
+    (('甲寅', '庚午', '戊戌', '丙辰'), '火局'),
+    # 辛 in 午: 「壬己兼用…火局癸可能无力」 — again the general choice itself.
+    (('甲寅', '庚午', '辛卯', '戊戌'), '火局'),
+])
+def test_a_met_frame_that_confirms_the_general_choice_is_not_called_an_override(pillars, frame):
+    """The note of these cells says what the frame does to 癸, not that 壬 is
+    wrong. Saying 「一般取法不能直接套」 would contradict the passage."""
+    advice = colour_advice(_four(*pillars))
+    assert {c['condition']: c for c in advice['exception_checks']}[frame]['status'] == 'met'
+    lead = colour_lead(advice)
+    assert f'{frame}成立' in lead and '不能直接套' not in lead and '另有取法' not in lead
 
 
 def test_a_missing_hour_leaves_a_frame_one_branch_short_undecided():
