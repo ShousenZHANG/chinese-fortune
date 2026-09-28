@@ -1033,6 +1033,43 @@ def test_the_warning_names_only_the_day_the_chosen_time_is_on():
     assert '戊午' in _unsettled_day_sentence(result, on_wu)
 
 
+def _lead(candidates, period, question=None, born=1997):
+    from fortune_reading import read_request, render_answer
+    request = _travel_request(candidates, period, born=born)
+    if question:
+        request['question'] = question
+    result = read_request(request)
+    return result['conclusion']['status'], render_answer(result).split('\n\n')[0]
+
+
+def test_a_term_change_later_on_the_chosen_day_is_a_review_point():
+    """立冬 falls at 20:52 Sydney time on 2026-11-07. The month-bound rules
+    (月破, 往亡, 四废, the month pillar of 相主) were read for the month before
+    it; a time moved past it needs a new check."""
+    status, lead = _lead([_slot('d7', '2026-11-07', '09:00', '13:00')], {'start': '2026-11-06', 'end': '2026-11-09'})
+    assert status == 'practical_choice'
+    assert '11月7日 20:52 交立冬' in lead and '重查' in lead, lead
+
+
+def test_a_term_change_on_an_excluded_day_is_a_review_point_too():
+    """2026-10-08 乙卯 is 月破 only until 寒露 at 17:29; 四废 holds on both sides."""
+    status, lead = _lead([_slot('x', '2026-10-08', '09:00', '13:00')], {'start': '2026-10-07', 'end': '2026-10-10'},
+                         '这天出发可以吗')
+    assert status == 'excluded_by_clause'
+    assert '10月8日 17:29 交寒露' in lead and '重查' in lead, lead
+
+
+def test_no_term_sentence_when_the_window_already_spans_the_change_or_there_is_none():
+    # 大雪 at 13:52 on 2026-12-07 lies inside this window: both months were read.
+    # (For 乙丑 the whole window survives screening; for 丁丑 a 天克地冲 hour
+    # cuts it, and the piece left after 15:47 does stop short of the change.)
+    status, inside = _lead([_slot('w', '2026-12-07', '12:00', '18:00')], {'start': '2026-12-06', 'end': '2026-12-09'},
+                           born=1985)
+    assert status == 'practical_choice' and '交大雪' not in inside, inside
+    _, plain = _lead([_slot('d15', '2026-10-15', '09:00', '13:00')], _OCT)
+    assert '前后属于两个月' not in plain
+
+
 def test_a_day_with_a_settled_hour_rule_gets_no_such_warning():
     from fortune_reading import read_request, render_answer
     lead = render_answer(read_request(_travel_request(

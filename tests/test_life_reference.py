@@ -27,7 +27,7 @@ def test_a_trip_abroad_carries_section_21_after_the_answer():
     text = render_answer(result)
     assert HEADER in text
     assert text.index(HEADER) > text.index('\n\n'), 'the references must not be in the first paragraph'
-    assert '（第 21 节第 1 条，证据等级 A；以官方最新规定为准）' in text
+    assert '（第 21 节第 1 条，证据等级 A；面向中国公民；以官方最新规定为准）' in text
 
 
 def test_the_references_change_nothing_in_the_divination_answer():
@@ -61,3 +61,21 @@ def test_mainland_rules_are_not_attached_for_a_move_in_sydney():
 
 def test_the_rendered_answer_still_passes_the_style_rules():
     assert not style_violations(render_answer(read_request(_trip('Asia/Singapore'))))
+
+
+def test_a_disputed_entry_carries_the_books_other_side_verbatim():
+    """10:3's 备注 opens 「争议。另有研究认为……」; the answer quotes it, never paraphrases."""
+    from life_guide import _index
+    request = _trip(scenario='relationship_conversation')
+    text = render_answer(read_request(request))
+    dispute = _index()[(10, 3)]['dispute']
+    assert f'原书备注：「{dispute}」' in text
+    assert text.index(dispute) > text.index(HEADER)
+
+
+def test_a_wedding_on_the_mainland_names_the_long_article():
+    request = _trip(scenario='wedding')
+    request['event']['timezone'] = 'Asia/Shanghai'
+    request['event']['longitude'] = 121.47
+    text = render_answer(read_request(request))
+    assert '- 长文《结婚划不划算：把一笔糊涂账拆成五笔清楚账》（书里另附的一篇长文；以官方最新规定为准）' in text

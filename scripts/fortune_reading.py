@@ -16,7 +16,7 @@ from bazi_reading import chart_facts, prepare_reading
 from birth_interval import calculate_interval
 from classical_guidance import research_sources
 from contracts import Grade, Recommendation
-from fortune_calendar import period_facts
+from fortune_calendar import period_facts, term_boundaries
 from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
     EVENT_WORDS,
@@ -530,6 +530,38 @@ def _unsettled_day_sentence(result: dict, choice: dict) -> str:
         return ''
     return (f"{'、'.join(days)}日的截路空亡，两本书说的时辰不同（一说子丑，一说戌亥）；"
             '时间要是挪进这两段，得重新查。')
+
+
+# The twelve 节 that turn the month pillar; the library names a few of next
+# year's in pinyin.
+JIE = frozenset({'立春', '惊蛰', '清明', '立夏', '芒种', '小暑', '立秋', '白露', '寒露', '立冬', '大雪', '小寒'})
+JIE_ALIASES = {'LI_CHUN': '立春', 'JING_ZHE': '惊蛰', 'DA_XUE': '大雪', 'XIAO_HAN': '小寒'}
+
+
+def _term_sentence(result: dict, spans: list[tuple[datetime, datetime]]) -> str:
+    """A 节 later or earlier on the same local day as a judged window.
+
+    月破, 往亡, 四废 and the month pillar of 相主 were read for the month the
+    window is in. A window that already spans the change was read on both
+    sides, so it gets nothing; one that stops short would land in another
+    month if the time moved past it.
+    """
+    if not spans:
+        return ''
+    zone = ZoneInfo(result['window']['timezone'])
+    found: dict[datetime, str] = {}
+    for start, end in spans:
+        first = start.astimezone(zone).replace(hour=0, minute=0, second=0, microsecond=0)
+        last = (end - timedelta(microseconds=1)).astimezone(zone).replace(hour=0, minute=0, second=0, microsecond=0)
+        for moment, name in term_boundaries(first, last + timedelta(days=1)).items():
+            name = JIE_ALIASES.get(name, name)
+            if name in JIE and not start <= moment < end:
+                found[moment] = name
+    if not found:
+        return ''
+    said = '；'.join(f"{m.astimezone(zone).month}月{m.astimezone(zone).day}日 {m.astimezone(zone):%H:%M} 交{name}"
+                    for m, name in sorted(found.items()))
+    return f'{said}，这一刻前后属于两个月；时间挪过它，按月份定的忌日和吉凶都要重查。'
 
 
 def _placement_days(result: dict, choice: dict) -> list[str] | None:
@@ -1096,9 +1128,14 @@ def _lead_sentence(result: dict) -> str:
         if backup:
             lead += (f"备选 {backup['candidate_id']}" + (f"（{_graded(result, backup)}）" if backup.get('grade') else '')
                      + f"：{_placement(backup)}。")
-        return lead + excluded + _avoid_sentence(result, first) + _unsettled_day_sentence(result, first)
+        row = _window_row(result.get('practical_screening', {}), first)
+        spans = [(datetime.fromisoformat(row['start']), datetime.fromisoformat(row['end']))] if row else []
+        return (lead + excluded + _avoid_sentence(result, first) + _unsettled_day_sentence(result, first)
+                + _term_sentence(result, spans))
     if state == 'excluded_by_clause':
-        return ('不行。' if kind == 'yes_no' else '') + excluded + _elsewhere(result)
+        spans = [(datetime.fromisoformat(r['start']), datetime.fromisoformat(r['end']))
+                 for r in result.get('ranking', {}).get('excluded', [])]
+        return ('不行。' if kind == 'yes_no' else '') + excluded + _term_sentence(result, spans) + _elsewhere(result)
     if state == 'clause_conflict':
         return ('不建议。' if kind == 'yes_no' else '') + _conflict_sentence(result, kind) + excluded
     if state == 'screening_incomplete':
@@ -1158,13 +1195,19 @@ def _life_lines(result: dict) -> list[str]:
     rows = [f"现实参考（《高性价比人生指南》快照 {ref['source']['snapshot_date']}，与上面的术数结论无关）"]
     for entry in entries:
         notes = []
-        if entry['disputed']:
-            notes.append('这条有争议，见原文备注')
+        if entry['region'] == '中国公民在境外':
+            notes.append('面向中国公民')
         if entry['region'] != '通用':
             notes.append('以官方最新规定为准')
+        if entry.get('dispute'):
+            # The other side, as the book's 备注 words it; never paraphrased.
+            notes.append(f"原书备注：「{entry['dispute']}」")
         tail = ('；' + '；'.join(notes)) if notes else ''
-        rows.append(f"- {entry['title']}（第 {entry['section']} 节第 {entry['number']} 条，"
-                    f"证据等级 {entry['grade']}{tail}）")
+        if entry.get('kind') == 'article':
+            rows.append(f"- 长文《{entry['title']}》（书里另附的一篇长文{tail}）")
+        else:
+            rows.append(f"- {entry['title']}（第 {entry['section']} 节第 {entry['number']} 条，"
+                        f"证据等级 {entry['grade']}{tail}）")
     return ['\n'.join(rows)]
 
 
