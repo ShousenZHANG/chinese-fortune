@@ -266,3 +266,60 @@ def test_the_cli_decides_and_lists():
     assert len(json.loads(run('--term', 'all'))['glossary']) == 41
     rows = json.loads(run('--query', '保险', '--grade', 'A', '--ratio', '极高', '--sort', 'ratio', '--limit', '20'))['entries']
     assert rows and all(r['grade'] == 'A' and r['ratio'] == '极高' for r in rows)
+
+
+# --- 5.3.1: what the audit of v5.3.0 found ----------------------------------
+
+@pytest.mark.parametrize('question,kind', [
+    ('我胸痛喘不上气，很危险，怎么办', 'emergency'),             # 「危险」 is not insurance
+    ('同事触电昏迷了，我有保险怎么办', 'emergency'),             # another clause's background
+    ('我现在胸痛喘不上气，帮我起卦看一下', 'emergency'),          # safety before divination
+    ('厨房燃气泄漏了', 'emergency'), ('闻到煤气味', 'emergency'),
+    ('他没有呼吸了', 'emergency'), ('怕不是心梗吧，胸口压着疼', 'emergency'),
+    ('我没有胸痛也没有呼吸困难，想买保险', None), ('去年中风过，现在怎么康复', None),
+    ('中风险理财值不值得买', None), ('我没被起诉', None), ('如果被起诉了怎么办', None),
+])
+def test_a_stop_is_judged_clause_by_clause(question, kind):
+    from life_decision import stop_kind
+    assert stop_kind(question) == kind
+
+
+def test_a_gas_leak_gets_out_first_as_the_book_says():
+    stop = decide('家里燃气泄漏了，怎么办', SHANGHAI)['stop']
+    assert stop['first_action'].startswith('先把人都带到室外') and '别回去关阀门' in stop['first_action']
+    assert _ids(stop['entries']) == [(13, 19)]
+    away = decide('家里燃气泄漏了，怎么办', SYDNEY)['stop']['first_action']
+    assert '119' not in away and '所在地' in away
+
+
+@pytest.mark.parametrize('question,zone,expected', [
+    ('房东不退押金，我要起诉怎么办', SHANGHAI, '第 152、164 条'),
+    ('公司欠薪，我想申请劳动仲裁怎么办', SHANGHAI, '45 日内结案'),
+    ('公司拖欠工资，我要起诉怎么办', SYDNEY, '有管辖权的地方'),
+])
+def test_the_process_note_fits_the_matter_and_the_place(question, zone, expected):
+    notes = ''.join(decide(question, zone)['notes'])
+    assert expected in notes and '6 个月起' not in notes
+
+
+def test_an_erratum_reaches_the_row_and_the_draft():
+    from life_decision import _row, render
+    index = {(e['section'], e['number']): e for e in DATA['entries']}
+    row = _row(ENTRIES[(19, 17)], index, '中国大陆')
+    assert row['errata'][0]['note'].startswith('本库勘误（原文未改）')
+    text = render({'question': '', 'do': [{'lens': '换钱', 'entries': [row]}], 'dont': [], 'articles': [],
+                   'not_in_book': False, 'notes': [], 'terms': [], 'source': '出处'})
+    assert '本库勘误（原文未改）' in text
+
+
+def test_a_what_first_question_brings_the_articles_own_first_steps():
+    result = decide('2026年10月8日被裁了，第一步做什么', SHANGHAI)
+    article = next(a for a in result['articles'] if a['id'] == 'laid_off')
+    assert article['first_steps']['heading'].startswith('当天')
+    assert '主动辞职' in article['first_steps']['items'][0]
+    assert 'first_steps' not in next(a for a in decide('被裁了能拿多少补偿', SHANGHAI)['articles'])
+
+
+def test_dates_and_time_words_are_not_topics():
+    assert ls.pieces('2026年10月8日被裁了，第一步做什么') == ['被裁']
+    assert ls.pieces('我明天签租房合同，押金要注意什么') == ['签租房合同', '押金']

@@ -31,11 +31,22 @@ LIMIT = 7
 # An emergency in progress, described the way people describe it.
 EMERGENCY = re.compile(r'倒地|没呼吸|没有呼吸|心跳停|大出血|血止不住|流血不止|着火|火灾|失火|溺水|落水|触电|中毒|误服|'
                        r'喝了农药|吃错药|卒中|中风|嘴歪|半边身子|半身不能动|一侧没劲|心梗|胸口压着疼|胸口剧痛|胸痛|'
-                       r'抽搐|噎住|喘不上气|呼吸困难|昏迷|叫不醒|过敏性休克|一氧化碳')
-# What turns those words into something else: insurance, prevention, a
-# hypothetical, a forecast. 「中风险理财」「火灾险」「怎么预防心梗」「六爻看我会不会中风」.
-NOT_NOW = re.compile(r'险|预防|防止|防溺|怎么防|会不会|可能会|以后|将来|如果|万一|'
+                       r'抽搐|噎住|喘不上气|呼吸困难|昏迷|叫不醒|过敏性休克|一氧化碳|'
+                       r'燃气泄漏|煤气泄漏|天然气泄漏|燃气漏了|煤气漏了|闻到煤气|闻到燃气|煤气味|燃气味')
+GAS = re.compile(r'燃气|煤气|天然气')
+# What turns those words into something else, within the clause that holds
+# them: insurance, prevention, a hypothetical, the past, a forecast
+# (「中风险理财」「火灾险」「怎么预防心梗」「去年中风过」「六爻看我会不会中风」).
+# 「很危险」 is not insurance.
+NOT_NOW = re.compile(r'保险|[灾外疾疗寿]险|险种|投保|理赔|风险|预防|防止|防溺|怎么防|防范|'
+                     r'会不会|可能会|以后|将来|如果|万一|假如|要是|假设|'
+                     r'去年|前年|上个月|以前|曾经|小时候|后遗症|康复|恢复期|'
                      r'八字|命里|命理|命盘|运势|流年|大运|紫微|斗数|六爻|起卦|算一|算算|卦|塔罗|星座|风水')
+# A background word in one clause says nothing about the next: 「我有保险」 does
+# not cancel 「同事触电昏迷了」, 「如果以后……？但我现在喘不上气」 is now.
+CLAUSE = re.compile(r'[，,。!！?？；;、\s]+|但是|可是|不过|而且|但')
+# 「没有胸痛」 denies the symptom; 「怕不是心梗」「是不是心梗」 do not.
+NEGATED = re.compile(r'(?<![怕莫是])(?:不是|没有|没|并非|不)$')
 CRISIS = re.compile(r'自杀|不想活|活不下去|活着没意思|活着没意义|想去死|想死(?!在)|死了算了|不如死了|轻生|结束生命|'
                     r'割腕|跳楼|了结自己')
 LEGAL = re.compile(r'被传唤|传唤我|被公安传唤|被拘留|被刑拘|被起诉|收到起诉书|收到了起诉书|起诉状|被抓|被立案|被逮捕|'
@@ -49,11 +60,14 @@ LAWSUIT_TITLE = re.compile(r'仲裁|起诉|诉讼|法院|官司')
 # Sections whose amounts, time limits and lists carry a cut-off date.
 POLICY_SECTIONS = frozenset({7, 19, 21, 24, 31, 32})
 DONT_SECTION = 6
+# Asking what to do first: a long article that lays the steps out in order is
+# the book's own answer (《被裁了之后先做什么》), so its first steps come along.
+FIRST_STEP = re.compile(r'先做什么|第一步|第一件事|怎么办|先干什么|当天')
 # Reviewed entries for each stop, by what is happening. Tests check that each
 # number still holds the expected title, so a renumbering cannot slip through.
 EMERGENCY_ENTRIES: list[tuple[re.Pattern, list[tuple[int, int]]]] = [
     (re.compile(r'着火|火灾|失火'), [(13, 24)]),
-    (re.compile(r'一氧化碳|煤气'), [(13, 19)]),
+    (re.compile(r'一氧化碳|燃气|煤气|天然气'), [(13, 19)]),
     (re.compile(r'嘴歪|一侧没劲|半边身子|半身不能动|说话说不清|中风|卒中'), [(13, 3), (13, 4)]),
     (re.compile(r'胸口压着疼|胸口剧痛|胸痛|心梗'), [(13, 7), (13, 8)]),
     (re.compile(r'大出血|血止不住|流血不止'), [(13, 12)]),
@@ -69,6 +83,10 @@ EMERGENCY_ENTRIES: list[tuple[re.Pattern, list[tuple[int, int]]]] = [
 CRISIS_ENTRIES = [(1, 25), (1, 32), (29, 11)]
 LEGAL_ENTRIES = [(8, 5), (8, 20)]
 FIRST_ACTION = {
+    # 第 13 节第 19 条: out first, then the phone; not back in for the valve.
+    ('gas', True): '先把人都带到室外，再打 119；别留在屋里找原因，也别回去关阀门。照下面第 13 节的条目做，别先讲性价比。',
+    ('gas', False): '先把人都带到室外，再打你所在地的急救或消防电话；别留在屋里找原因，也别回去关阀门。'
+                    '照下面第 13 节的条目做，别先讲性价比。',
     ('emergency', True): '先打 120（着火打 119），照下面第 13 节的条目做现场第一个动作，别先讲性价比。',
     ('emergency', False): '先打你所在地的急救电话，照下面第 13 节的条目做现场第一个动作，别先讲性价比；条目里的 120 是中国大陆的号码。',
     ('crisis', True): '先打全国心理援助热线 12356（未成年人 12355），再看下面第 1 节和第 29 节的条目；不做劝导式分析，不评价动机。',
@@ -79,9 +97,24 @@ FIRST_ACTION = {
 }
 BENEFICIARY_NOTE = ('这件事的好处落在第 ④ 档（陌生人，或替人担保、帮人转账）：好处和风险要一起写——'
                     '被讹、被卷进案子、被报复，不能只写好处，也不能写成一律别管。')
-# The workflow's own rule for 「法律支持你」 (skills/life-decision-guide).
-PROCESS_NOTE = ('「法律支持你」的事连过程成本一起说：要不要打官司、大概多久（一审普通程序 6 个月起、可延长，'
-                '简易程序 3 个月）、律师费谁掏（律师费不在诉讼费用里，败诉方负担不包括它）。')
+# The workflow's own rule for 「法律支持你」 (skills/life-decision-guide): the
+# process cost goes with it. The workflow wrote 「一审普通程序 6 个月起」; the law
+# sets a limit, not a minimum (《民事诉讼法》2023 年修正第 152、164 条), so the
+# durations are stated as the law states them, and only for mainland China.
+PROCESS_NOTE = ('「法律支持你」的事连过程成本一起说：要不要打官司、大概多久、律师费谁掏。'
+                '时长按中国大陆《民事诉讼法》（2023 年修正）第 152、164 条：一审普通程序应当在立案后 6 个月内审结，'
+                '特殊情况经院长批准可延长 6 个月，还要延长的报上级法院批准；简易程序 3 个月内审结，可延长 1 个月。'
+                '这是审限的上限，不是起点，也不含立案前、管辖异议、鉴定和上诉的时间；事情不归中国大陆法院管的，按当地程序。'
+                '律师费不在诉讼费用里，败诉方负担的诉讼费用不包括它（合同另有约定或法律另有规定的除外）。')
+# A labour dispute goes to arbitration before any court (book 7:2, 19:17).
+LABOUR_NOTE = ('「法律支持你」的事连过程成本一起说。劳动争议先走劳动仲裁，不服裁决再去法院：'
+               '书里写仲裁受理后 45 日内结案，复杂的最多再延 15 日，投诉和仲裁都不收费（第 7 节第 2 条、第 19 节第 17 条）；'
+               '请律师的律师费一般自己出。「结案」不等于「到账」，公司没财产、老板跑了，赢了也可能拿不到钱。')
+ABROAD_PROCESS_NOTE = ('「法律支持你」的事连过程成本一起说：要不要打官司、大概多久、律师费谁掏。'
+                       '书里的时长、收费和仲裁规则是中国大陆的，不能直接套用：按事情发生地、有管辖权的地方的程序来，'
+                       '问当地律师或官方法律援助。')
+LABOUR = re.compile(r'欠薪|拖欠工资|欠工资|欠了工钱|不发工资|工资不发|讨薪|工伤|辞退|裁员|被裁|加班费|劳动仲裁|'
+                    r'劳动合同|经济补偿|赔偿金|劳动监察')
 POLICY_NOTE = '政策会变：这一节的金额、时限、名单写了截至日期，答复里带上日期，并提醒去官方渠道自查。'
 
 
@@ -94,20 +127,37 @@ def citation(entry: dict) -> str:
     return f"第 {entry['section']} 节第 {entry['number']} 条（{clause}）"
 
 
+def _states(clause: str, pattern: re.Pattern) -> bool:
+    """Whether the clause says the thing is so, not that it is not."""
+    for m in pattern.finditer(clause):
+        if m.group(0).startswith('没'):
+            # 「没有呼吸困难」 denies a symptom; 「他没有呼吸了」 is one.
+            if not re.match(r'困难|急促|不畅|问题', clause[m.end():]):
+                return True
+        elif not NEGATED.search(clause[max(0, m.start() - 4):m.start()]):
+            return True
+    return False
+
+
+def _now(question: str, pattern: re.Pattern) -> list[str]:
+    """The clauses that describe the thing as happening now."""
+    return [c for c in CLAUSE.split(question) if c and not NOT_NOW.search(c) and _states(c, pattern)]
+
+
 def stop_kind(question: str) -> str | None:
     """'crisis', 'emergency' or 'legal' when the question describes one now.
 
-    A suicidal thought always counts. An emergency or a legal process does
-    not when the question is about insurance, prevention, a hypothetical or
-    a forecast (「火灾险」「会不会被起诉」「六爻看我会不会中风」).
+    A suicidal thought always counts. An emergency or a legal process counts
+    when some clause states it as happening: a clause about insurance,
+    prevention, a hypothetical, the past or a forecast does not (「火灾险」
+    「会不会被起诉」「六爻看我会不会中风」), and it does not cancel another clause
+    that does (「同事触电昏迷了，我有保险」「我现在胸痛，帮我起一卦」).
     """
     if CRISIS.search(question):
         return 'crisis'
-    if NOT_NOW.search(question):
-        return None
-    if EMERGENCY.search(question):
+    if _now(question, EMERGENCY):
         return 'emergency'
-    if LEGAL.search(question):
+    if _now(question, LEGAL):
         return 'legal'
     return None
 
@@ -117,11 +167,31 @@ def _stop_entries(kind: str, question: str) -> list[tuple[int, int]]:
         return CRISIS_ENTRIES
     if kind == 'legal':
         return LEGAL_ENTRIES
+    live = '，'.join(_now(question, EMERGENCY))
     found: list[tuple[int, int]] = []
     for pattern, keys in EMERGENCY_ENTRIES:
-        if pattern.search(question):
+        if pattern.search(live):
             found += [k for k in keys if k not in found]
     return found[:3] or [(13, 1)]
+
+
+def _first_action(kind: str, question: str, mainland: bool) -> str:
+    live = '，'.join(_now(question, EMERGENCY)) if kind == 'emergency' else ''
+    if GAS.search(live) and not re.search(r'着火|火灾|失火', live):
+        return FIRST_ACTION[('gas', mainland)]
+    return FIRST_ACTION[(kind, mainland)]
+
+
+def _process_note(question: str, chosen: list[dict], region: str) -> str | None:
+    """The 「法律支持你」 note for this matter, or None when nothing goes to law."""
+    legal = [e for e in chosen if e['section'] in (7, 8, 9, 19) and LAWSUIT_TITLE.search(e['title'])]
+    if not (LAWSUIT.search(question) or legal):
+        return None
+    if region != '中国大陆':
+        return ABROAD_PROCESS_NOTE
+    labour = LABOUR.search(question) or (not LAWSUIT.search(question)
+                                         and all(e['section'] in (7, 19) and LABOUR.search(e['title']) for e in legal))
+    return LABOUR_NOTE if labour else PROCESS_NOTE
 
 
 def _row(entry: dict, index: dict, region: str) -> dict:
@@ -133,6 +203,8 @@ def _row(entry: dict, index: dict, region: str) -> dict:
         row['region_note'] = '中国大陆口径：你所在地的规定、机构和电话可能不同'
     if entry['disputed']:
         row['dispute'] = entry['dispute']
+    if entry.get('errata'):
+        row['errata'] = entry['errata']
     if entry['section'] in POLICY_SECTIONS:
         row['policy_note'] = POLICY_NOTE
     related = [index[tuple(r)] for r in entry.get('refs', []) if tuple(r) in index][:3]
@@ -153,7 +225,7 @@ def decide(data: dict, question: str, payload: dict | None = None, limit: int = 
     if kind:
         # Hotlines are mainland numbers: say them only to someone there.
         mainland = region == '中国大陆'
-        result['stop'] = {'kind': kind, 'first_action': FIRST_ACTION[(kind, mainland)],
+        result['stop'] = {'kind': kind, 'first_action': _first_action(kind, question, mainland),
                           'entries': [_row(index[k], index, region) for k in _stop_entries(kind, question) if k in index]}
         result['not_in_book'] = False
         result['match'] = 'stop'
@@ -181,15 +253,36 @@ def decide(data: dict, question: str, payload: dict | None = None, limit: int = 
     result['uncovered'] = [p for p in ls.pieces(question) if shown and not _covered(p, shown)]
     keys = ls.pieces(question) + ls.book_words(ls.pieces(question))
     articles = [a for a in data['articles'] if any(k in a['title'].lower() for k in keys)]
-    result['articles'] = [{'id': a['id'], 'title': a['title'], 'region': a['region']} for a in articles[:2]]
+    result['articles'] = [_article_row(a, question, region) for a in articles[:2]]
     if FOURTH_TIER.search(question):
         result['notes'].append(BENEFICIARY_NOTE)
-    if LAWSUIT.search(question) or any(e['section'] in (7, 8, 9, 19) and LAWSUIT_TITLE.search(e['title'])
-                                       for e, _, _ in chosen):
-        result['notes'].append(PROCESS_NOTE)
+    process = _process_note(question, [e for e, _, _ in chosen], region)
+    if process:
+        result['notes'].append(process)
     texts = [r['fields']['说人话'] + r['fields']['收益'] for g in result['do'] for r in g['entries']]
     result['terms'] = ls.glossary_terms(data['guide']['glossary'], texts)
     return result
+
+
+def _first_steps(text: str, limit: int = 3) -> dict | None:
+    """The article's first section of numbered steps: its heading and first items."""
+    for block in re.split(r'\n(?=## )', text):
+        if not block.startswith('## '):
+            continue
+        items = re.findall(r'^\d+\.\s*(.+)$', block, re.M)
+        if items:
+            return {'heading': block.split('\n', 1)[0][3:].strip(), 'items': items[:limit]}
+    return None
+
+
+def _article_row(article: dict, question: str, region: str) -> dict:
+    row = {'id': article['id'], 'title': article['title'], 'region': article['region']}
+    steps = _first_steps(article['text']) if FIRST_STEP.search(question) else None
+    if steps:
+        row['first_steps'] = steps
+    if article['region'] == '中国大陆' and region != '中国大陆':
+        row['region_note'] = '中国大陆口径：你所在地的规定、机构和电话可能不同'
+    return row
 
 
 def _covered(piece: str, shown: list[dict]) -> bool:
@@ -209,7 +302,8 @@ def render(result: dict) -> str:
     lines: list[str] = []
     stop = result.get('stop')
     if stop:
-        lines.append('先停下：' + stop['first_action'])
+        # The first action is the first line: nothing above it.
+        lines.append(stop['first_action'])
         lines += [f"- {r['citation']}：{r['fields']['说人话']}" for r in stop['entries']]
     for group in result['do']:
         lines.append(f"先做（{group['lens']}；先看贴合程度，再按性价比和证据等级排）：")
@@ -221,6 +315,7 @@ def render(result: dict) -> str:
             lines.append(f"  {r['fields']['说人话']}")
             if r.get('dispute'):
                 lines.append(f"  原书备注：「{r['dispute']}」")
+            lines += [f"  {e['note']}" for e in r.get('errata', [])]
             if r.get('policy_note'):
                 lines.append(f"  {r['policy_note']}")
     if result['dont']:
@@ -228,6 +323,12 @@ def render(result: dict) -> str:
         lines += [f"- {r['title']}——{r['citation']}，证据等级 {r['grade']}。" for r in result['dont']]
     if result['articles']:
         lines.append('相关长文：' + '；'.join(f"《{a['title']}》" for a in result['articles']))
+        for a in result['articles']:
+            if a.get('first_steps'):
+                steps = a['first_steps']
+                note = f"（{a['region_note']}）" if a.get('region_note') else ''
+                lines.append(f"《{a['title']}》按时间排好了先后，第一段「{steps['heading']}」{note}：")
+                lines += [f"  {i}. {item}" for i, item in enumerate(steps['items'], 1)]
     if result['not_in_book']:
         lines.append('书里没写：本库没有对得上的条目；可以给常识判断，但要标明那是常识，不是书里的内容。')
     elif result.get('uncovered'):
