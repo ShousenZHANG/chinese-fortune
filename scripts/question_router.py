@@ -83,6 +83,12 @@ DECISION_WORDS = ('该不该', '值不值', '要不要', '划不划算', '划算
 # DAY_WORDS that only ask yes or no. With a practical word and no date they ask
 # whether something is allowed (「押金不退可以吗」), not which day is good.
 YES_NO_WORDS = ('可以吗', '行不行', '合适吗', '适合吗', '好不好')
+# DAY_WORDS that ask whether a time is good: these keep a question a day question.
+LUCK_WORDS = tuple(w for w in DAY_WORDS if w not in YES_NO_WORDS)
+# Asking how to do a real thing. With a practical word, a date in the question
+# says when it happens (「我明天签租房合同，押金要注意什么」), not which day is good.
+HOW_WORDS = ('怎么', '注意', '先做什么', '第一步', '能领', '申请', '要带', '带什么', '流程', '手续', '材料', '检查什么',
+             '准备什么', '要不要', '该不该', '值不值')
 
 
 def _event(question: str) -> str | None:
@@ -131,7 +137,10 @@ def route(question: str) -> dict:
     dates = DATE.findall(text) + NAMED_DAY.findall(text)
     practical = any(word in text for word in LIFE_WORDS)
     day_words = [w for w in DAY_WORDS if w in text and not (practical and w in YES_NO_WORDS)]
-    if period or dates or day_words:
+    # 「我今天被裁了，怎么申请失业保险金」 asks how, not whether today is good.
+    happens_then = (practical and any(w in text for w in HOW_WORDS)
+                    and not any(w in text for w in LUCK_WORDS))
+    if (period or dates or day_words) and not happens_then:
         slots = bool(CLOCK.search(text))
         request: dict = {'intent': 'selection' if slots else 'period', 'question': text,
                          'event': {'scenario': event or 'outlook'}}

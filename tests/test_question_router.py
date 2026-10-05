@@ -249,3 +249,15 @@ def test_a_day_question_over_a_year_is_answered_by_day_and_a_month_question_by_m
     months = read_request({**base, **route('明年哪几个月好')['request']})
     assert months['personal_calendar']['unit'] == 'month'
     assert render_answer(months).startswith('按你出生那年的干支（丁丑）看，这段时间对你最好的月份是')
+
+
+@pytest.mark.parametrize('question,flow', [
+    ('我今天被裁了，怎么申请失业保险金', 'life_guide'),   # the date says when, not which day is good
+    ('下周去医院体检要注意什么', 'life_guide'),
+    ('10月8日被公司辞退了怎么办', 'life_guide'),
+    ('我下周哪天面试运气最好', 'personal_days'),           # asks which day is good
+    ('明天签合同运气好吗', 'personal_days'),
+    ('15号交定金可以吗', 'personal_days'),
+])
+def test_a_date_in_a_how_question_does_not_make_it_a_day_question(question, flow):
+    assert route(question)['flow'] == flow
