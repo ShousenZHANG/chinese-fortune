@@ -385,7 +385,7 @@ def test_a_clashing_month_inside_the_period_is_said_once_with_its_dates():
     assert _entry_list([first], unit='month') == '庚子月（1月1日至1月5日，财官、六合）'
 
 
-# --- 5.3.1: the pillars of the time asked about, split at a 节 ---------------
+# --- 5.4.0: the pillars of the time asked about, split at a 节 ---------------
 # 寒露 2026 falls at 2026-10-08 14:29:17 Beijing time.
 
 def _cal(start: str, end: str, zone: str = 'Asia/Shanghai') -> list[dict]:

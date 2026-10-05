@@ -270,7 +270,7 @@ def test_the_cli_decides_and_lists():
     assert rows and all(r['grade'] == 'A' and r['ratio'] == '极高' for r in rows)
 
 
-# --- 5.3.1: what the audit of v5.3.0 found ----------------------------------
+# --- 5.4.0: what the audit of v5.3.0 found ----------------------------------
 
 @pytest.mark.parametrize('question,kind', [
     ('我胸痛喘不上气，很危险，怎么办', 'emergency'),             # 「危险」 is not insurance
