@@ -10,6 +10,8 @@ question even when it says 方位; a named method (六爻, 塔罗…) goes to it
 workflow; wearing, colours, numbers, directions and 五行 go to the 调候 answer;
 黄历 words go to the almanac; a time or a day word goes to the personal day
 grades; the rest are natal, practical (the reference library) or other.
+An emergency in progress or a suicidal thought comes before all of it: the
+decision flow's first step gives the first action.
 """
 from __future__ import annotations
 
@@ -18,6 +20,7 @@ import re
 import sys
 
 from answer_style import EVENT_KEYWORDS, question_kind
+from life_decision import CRISIS, EMERGENCY
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import aspects_asked
 
@@ -51,8 +54,19 @@ METHOD_WORDS = ('起卦', '起个卦', '一卦', '卜卦', '占卜', '占卦', '
                 '抽签', '解签')
 # Practical questions the frozen 《高性价比人生指南》 answers. Checked only after
 # every divination flow, so a question about a date is never taken by it.
-LIFE_WORDS = ('押金', '租房合同', '试用期', '加班费', '辞退', '裁员', '领事保护', '12308', '借条', '定金',
-              '订金', '彩礼', '旅行保险', '要注意什么', '注意些什么')
+# Topic words follow the book's 34 sections; the day flows' event words
+# (结婚, 搬家, 出行, 开业, 面试) are left out so 「结婚可以吗」 keeps its route.
+LIFE_WORDS = ('押金', '租房', '房东', '租房合同', '试用期', '加班费', '辞退', '裁员', '被裁', '失业', '工伤', '欠薪',
+              '讨薪', '离职', '辞职', '劳动合同', '仲裁', '社保', '医保', '公积金', '养老金', '保险', '领事保护',
+              '12308', '借条', '借钱', '网贷', '信用卡', '房贷', '担保', '定金', '订金', '彩礼', '离婚', '家暴',
+              '诈骗', '被骗', '旅行保险', '体检', '保健品', '戒烟', '戒酒', '熬夜', '通勤', '理财', '基金', '股票',
+              '急救', '心肺复苏', '感冒药', '止痛药', '慢性病', '高血压', '糖尿病', '怀孕', '坐月子', '新生儿',
+              '养老院', '遗嘱', '继承', '留学', '残疾', '近视', '职称', '个体户', '营业执照', '要注意什么',
+              '注意些什么')
+# A real-life decision, asked the way the book's own workflow is triggered.
+DECISION_WORDS = ('该不该', '值不值', '要不要', '划不划算', '划算吗', '值得吗', '怎么选', '帮我决定', '犯法吗',
+                  '犯不犯法', '违法吗', '能领什么', '能领多少', '先做什么', '签不签', '性价比', '怎么赔',
+                  '赔多少', '能拿多少')
 # DAY_WORDS that only ask yes or no. With a practical word and no date they ask
 # whether something is allowed (「押金不退可以吗」), not which day is good.
 YES_NO_WORDS = ('可以吗', '行不行', '合适吗', '适合吗', '好不好')
@@ -74,6 +88,13 @@ def route(question: str) -> dict:
     """The flow, the command, the request skeleton and what is still needed."""
     text = question.strip()
     kind = question_kind(text)
+    stop = 'emergency' if EMERGENCY.search(text) else ('crisis' if CRISIS.search(text) else None)
+    if stop:
+        return {'flow': 'life_guide', 'stop': stop,
+                'why': '正在发生的急症或自伤念头：先给第一个动作（急救或求助电话），不做术数解释、不排性价比',
+                'command': 'python scripts/life_guide.py --decide "<原话>" --current-timezone 现居地时区 --markdown',
+                'reference': 'references/20-disclaimer.md',
+                'needs': ['现居地时区（求助电话按所在地给）']}
     if any(word in text for word in MEDICAL_WORDS):
         return {'flow': 'boundary', 'why': '涉及医疗，先按边界说明提供现实帮助',
                 'reference': 'references/20-disclaimer.md', 'needs': []}
@@ -124,10 +145,12 @@ def route(question: str) -> dict:
                 'command': ('python scripts/bazi_reading.py --year Y --month M --day D [--hour H --minute m] '
                             '--gender G --city 出生地 --current-timezone 现居地时区 --question "<原话>" --markdown'),
                 'needs': [BIRTH]}
-    if practical:
+    if practical or any(word in text for word in DECISION_WORDS):
         return {'flow': 'life_guide',
-                'why': '问现实层面怎么做：查《高性价比人生指南》冻结快照，按所在地筛选适用条目',
-                'command': 'python scripts/life_guide.py --query "<关键词>" --current-timezone 现居地时区',
+                'why': '问现实层面怎么做：按《高性价比人生指南》的决策流程查条目、按性价比和证据等级排序，'
+                       '分先做和别做，每条注明出处',
+                'command': 'python scripts/life_guide.py --decide "<原话>" --current-timezone 现居地时区 --markdown',
+                'reference': 'references/29-life-decision.md',
                 'needs': ['现居地时区（决定适用哪里的规定；事情发生在别处时另给那里的时区）']}
     return {'flow': 'other', 'why': '不是这几类常见个人问题，按 SKILL.md 路由表选工具', 'needs': []}
 
@@ -137,7 +160,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description='把一句问话对到计算流程；只做路由，不算命盘',
         epilog='Top-level JSON keys: ok tool version flow why needs [aspects command request kind reference]. '
-               'flow: wear_advice personal_days event_slots almanac natal specialist boundary other.')
+               'flow: wear_advice personal_days event_slots almanac natal specialist boundary life_guide other.')
     parser.add_argument('--question', required=True, help='用户原话')
     args = parser.parse_args(argv)
     if not args.question.strip() or len(args.question) > 2000:

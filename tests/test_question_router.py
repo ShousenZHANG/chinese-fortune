@@ -76,6 +76,36 @@ def test_other_questions_are_not_pulled_into_the_new_flows(question, flow):
     assert route(question)['flow'] == flow
 
 
+@pytest.mark.parametrize('question', ['失业了先做什么', '工伤怎么赔偿', '替朋友担保签不签', '每天通勤两小时值不值',
+                                      '保健品值不值得买', '公司欠薪要不要去仲裁', '买基金划不划算'])
+def test_a_real_life_decision_goes_to_the_books_decision_workflow(question):
+    """The questions the book's own workflow is triggered by; GPT's audit found
+    失业、工伤、担保 returning 'other'."""
+    result = route(question)
+    assert result['flow'] == 'life_guide' and '--decide' in result['command'], question
+    assert result['reference'] == 'references/29-life-decision.md'
+
+
+@pytest.mark.parametrize('question,flow', [
+    ('我下周哪天出行好', 'personal_days'),        # a day question stays a day question
+    ('我的婚姻怎么样', 'natal'),                  # 命理优先
+    ('八字缺火怎么办', 'natal'),
+    ('结婚可以吗', 'personal_days'),              # the day flows' event words are not life words
+    ('穿什么颜色旺我', 'wear_advice'),
+    ('用六爻看看试用期能不能转正', 'other'),       # a named method still wins
+])
+def test_divination_keeps_priority_over_the_decision_workflow(question, flow):
+    assert route(question)['flow'] == flow
+
+
+@pytest.mark.parametrize('question,stop', [('有人倒地没呼吸怎么办', 'emergency'), ('我不想活了', 'crisis'),
+                                           ('下周哪天搬家好，我真的不想活了', 'crisis')])
+def test_an_emergency_or_a_crisis_comes_before_everything(question, stop):
+    result = route(question)
+    assert result['flow'] == 'life_guide' and result['stop'] == stop
+    assert result['reference'] == 'references/20-disclaimer.md'
+
+
 @pytest.mark.parametrize('question', ['租房押金要注意什么', '试用期工资最低多少', '出国前领事保护能做什么',
                                       '借钱给朋友要写借条吗'])
 def test_practical_questions_reach_the_reference_library(question):

@@ -1,6 +1,6 @@
 ---
 name: chinese-fortune
-description: 中国传统术数研习与算命：八字/四柱/用神、短期运势、下周运势、今天运气、哪天对我好/吉日/好日子、个人择日（搬家、结婚、开业、出行、面试哪天好）、幸运色/穿什么颜色、佩戴首饰、幸运数字、有利方位、五行缺什么/喜用神、面试择时、连续行程、古籍查询、紫微斗数、周易/易经、六爻、梅花、奇门遁甲、大六壬、黄历择日、风水、起名、合婚、生肖、神煞、五行、天干地支。BaZi, Four Pillars, personal forecasts, interview scheduling, Zi Wei Dou Shu, I Ching, Feng Shui, Chinese zodiac, naming, compatibility, auspicious dates and Chinese fortune-telling. 塔罗 Tarot、星座 astrology、解梦 dream interpretation、面相 physiognomy、手相 palmistry、测字和随机寻访仅在明确点名时使用。
+description: 中国传统术数研习与算命：八字/四柱/用神、短期运势、下周运势、今天运气、哪天对我好/吉日/好日子、个人择日（搬家、结婚、开业、出行、面试哪天好）、幸运色/穿什么颜色、佩戴首饰、幸运数字、有利方位、五行缺什么/喜用神、面试择时、连续行程、古籍查询、紫微斗数、周易/易经、六爻、梅花、奇门遁甲、大六壬、黄历择日、风水、起名、合婚、生肖、神煞、五行、天干地支；现实生活决策（该不该、值不值、划不划算、出事了先做什么、能领什么、犯不犯法、失业了先做什么、替朋友担保签不签、押金不退怎么办，按《高性价比人生指南》条目排序作答，命理问题优先）。BaZi, Four Pillars, personal forecasts, interview scheduling, Zi Wei Dou Shu, I Ching, Feng Shui, Chinese zodiac, naming, compatibility, auspicious dates and Chinese fortune-telling. 塔罗 Tarot、星座 astrology、解梦 dream interpretation、面相 physiognomy、手相 palmistry、测字和随机寻访仅在明确点名时使用。
 ---
 
 # 中国传统术数研习
@@ -52,11 +52,13 @@ description: 中国传统术数研习与算命：八字/四柱/用神、短期�
 | 穿什么颜色旺我、幸运色、适合什么颜色的车、戴什么首饰、戴金还是戴银、幸运数字、手机号选什么数字、往哪个方位发展、五行缺什么、喜什么五行 | `wear_advice` | `bazi_reading.py --question "<原话>" --markdown`；按《穷通宝鉴》这一格调候的一般取法换算颜色、饰物、方位、数字，并说明这一格的例外未按本人盘面核对 |
 | 今天黄历宜什么、这天老黄历忌什么 | `almanac` | `huangli_query.py --date … --question "<原话>" --markdown`（不针对个人） |
 | 办公桌朝哪、床头朝向、户型风水 | `specialist` | 风水专项，不用上面的方位换算 |
-| 租房押金要注意什么、试用期工资、出国领事保护、借钱写借条 | `life_guide` | `life_guide.py --query … --current-timezone …`；《高性价比人生指南》冻结条目，按所在地筛选，不当术数结论 |
+| 失业了先做什么、工伤怎么赔、替朋友担保签不签、通勤两小时值不值、保健品值不值得买、押金不退怎么办 | `life_guide` | `life_guide.py --decide "<原话>" --current-timezone … --markdown`；按 [人生决策](references/29-life-decision.md) 的流程：急症和自伤念头先给第一个动作，再按性价比和证据等级分先做、别做，每条注明第几节第几条；不当术数结论 |
 
 问今天、这两天、下周、下个月的个人运势，或面试、考试、出行等候选档期：先读 [个人未来时段与择时](references/24-personalized-forecast.md)，使用 `fortune_reading.py --stdin`。它先取得当前时间，再计算出生盘和目标时间，输出实际档期与证据缺口；已有结果直接复用，不重复排出生盘。首次具体事项分析可加 `include_research:true` 一并取古籍上下文；根据 `candidate_comparison` 核整件事期间的个人事实，逐项处理 `decision_blockers`。状态为部分可用时继续核已有依据及补查，不把“尚未自动排名”当成整题拒答的理由。问某段时间哪天好、哪天不好：发期间请求，`personal_calendar` 逐日给出大吉到大凶（超过一个月时按节气月；原话问「哪天」的仍逐日，最长一年），首句直接说最好和要避开的日子；候选档期则按同一等级先排吉凶，再按用户偏好排。纯本命问题仍按下表。
 
 补查个人运势、具体事项或其他方法的古籍时，按 [古籍适配与补查](references/25-classical-research.md) 使用 `classical_guidance.py --scenario <场景> --retrieve`。已确认原局格局后，用 `--family <格局>` 取得对应取运章全文、例外和条件清单；不把资料入口当成已自动满足条件。长章用 `classical_search.py --chapter-id <书:章>` 分页继续读取。
+
+纯现实问题（不带命理成分）按 [人生决策](references/29-life-decision.md) 作答：《高性价比人生指南》除 3 条外全书冻结在 `assets/life_guide.json`（34 节、8 篇长文、导读、术语表、交叉引用），`life_guide.py` 提供决策、检索筛选、性价比排序、长文和术语查询。术数结论后的现实参考仍按原规则单独成段。
 
 用户授权跟踪预测及反馈时，读 [前瞻验证](references/28-prospective-validation.md)，使用 `prediction_log.py` 在分析前固定方法与事件，事前冻结原判断，事后仅保存用户确认的结果。沿用已有授权；普通问答不自动保存。
 
