@@ -1,5 +1,6 @@
 """The book's search, ranking and decision workflow, ported onto the frozen library."""
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -12,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
 SHANGHAI = {'current_timezone': 'Asia/Shanghai'}
 SYDNEY = {'current_timezone': 'Australia/Sydney'}
+ENTRIES = {(e['section'], e['number']): e for e in DATA['entries']}
 
 
 def _ids(rows):
@@ -62,6 +64,19 @@ def test_a_plain_chinese_question_finds_the_entry_it_is_about(question, expected
     assert expected in _ids(rows), [(r['section'], r['number'], r['title'][:12]) for r in rows]
 
 
+def test_latin_words_and_numbers_are_searched_apart_and_whole():
+    assert ls.pieces('换iPhone还是安卓') == ['iphone', '安卓']
+    assert ls.pieces('孩子发烧39度') == ['孩子发烧']                 # 39 度 is a quantity
+    assert ls.pieces('出国留学要准备什么') == ['出国留学']
+    assert not ls._holds('iphone 手机', 'phone')                     # a Latin word counts only whole
+
+
+def test_the_books_escaped_asterisk_is_searched_as_written():
+    """The book writes HLA-B\\*5801; its search page unescapes it, so does this."""
+    rows = search('HLA-B*5801', SHANGHAI, limit=5)
+    assert (16, 9) in _ids(rows) and all(r.get('match') != 'partial' for r in rows)
+
+
 def test_a_partial_hit_is_marked_so_the_host_reads_the_whole_entry():
     rows = search('押金不退', SHANGHAI)
     assert rows and all(r.get('match') == 'partial' for r in rows)
@@ -108,11 +123,46 @@ def test_an_emergency_crisis_or_legal_process_stops_first(question, kind, sectio
     assert '性价比' not in result['stop']['first_action'] or kind == 'emergency'
 
 
-def test_hotlines_are_mainland_numbers_and_say_so_elsewhere():
-    here = decide('我不想活了', SHANGHAI)['stop']
-    away = decide('我不想活了', SYDNEY)['stop']
-    assert '12356' in here['first_action'] and 'region_note' not in here
-    assert '所在地' in away['region_note']
+# Each reviewed stop number with a word its title must still hold.
+STOP_TITLES = {(1, 25): '自杀念头', (1, 32): '自杀念头', (29, 11): '12356', (8, 5): '传唤', (8, 20): '被起诉',
+               (13, 1): '倒地没呼吸', (13, 2): '倒地', (13, 3): '嘴歪', (13, 4): '卒中', (13, 7): '胸口压着疼',
+               (13, 8): '剧痛', (13, 11): '喘不上气', (13, 12): '大出血', (13, 15): '过敏性休克', (13, 16): '抽搐',
+               (13, 18): '触电', (13, 19): '一氧化碳', (13, 20): '误服', (13, 24): '火灾', (13, 25): '溺水',
+               (13, 26): '噎住', (13, 43): '噎住'}
+
+
+def test_every_reviewed_stop_number_still_holds_its_entry():
+    from life_decision import CRISIS_ENTRIES, EMERGENCY_ENTRIES, LEGAL_ENTRIES
+    used = {k for _, keys in EMERGENCY_ENTRIES for k in keys} | set(CRISIS_ENTRIES) | set(LEGAL_ENTRIES)
+    assert used == set(STOP_TITLES)
+    for key, word in STOP_TITLES.items():
+        assert word in ENTRIES[key]['title'], key
+
+
+@pytest.mark.parametrize('question,expected', [
+    ('家里着火了', [(13, 24)]),
+    ('我爸突然嘴歪说话说不清', [(13, 3), (13, 4)]),
+    ('孩子误服了洗衣液', [(13, 20)]),
+    ('我想去死', [(1, 25), (1, 32), (29, 11)]),
+    ('收到法院传票了', [(8, 5), (8, 20)]),
+])
+def test_a_stop_gives_only_the_entries_reviewed_for_that_situation(question, expected):
+    result = decide(question, SHANGHAI)
+    assert _ids(result['stop']['entries']) == expected
+    assert not result['do'] and not result['dont']
+
+
+@pytest.mark.parametrize('question', ['中风险理财值不值得买', '火灾险要不要买', '怎么预防心梗', '如果被起诉了怎么办'])
+def test_insurance_prevention_and_hypotheticals_do_not_stop(question):
+    assert 'stop' not in decide(question, SHANGHAI)
+
+
+@pytest.mark.parametrize('question', ['我不想活了', '有人倒地没呼吸怎么办'])
+def test_hotlines_are_given_only_to_someone_in_mainland_china(question):
+    here = decide(question, SHANGHAI)['stop']['first_action']
+    away = decide(question, SYDNEY)['stop']['first_action']
+    assert re.search(r'先打(全国心理援助热线 12356| 120)', here)
+    assert '所在地' in away and '12356' not in away and '先打 120' not in away
 
 
 def test_rows_are_ranked_within_each_lens_and_never_across():
@@ -147,11 +197,20 @@ def test_a_citation_names_the_section_entry_and_title_words():
     assert row['fields']['说人话'] and row['ratio'] and row['grade']
 
 
-def test_the_fourth_tier_and_process_cost_notes_are_attached():
-    surety = decide('替朋友担保签不签', SHANGHAI)['notes']
-    assert any('第 ④ 档' in n for n in surety)
-    lawsuit = decide('公司欠薪要不要去仲裁', SHANGHAI)['notes']
-    assert any('律师费' in n for n in lawsuit)
+@pytest.mark.parametrize('question,word', [
+    ('替朋友担保签不签', '第 ④ 档'), ('路上看到老人摔倒要不要扶', '第 ④ 档'),
+    ('公司欠薪要不要去仲裁', '律师费'), ('公司拖欠工资三个月怎么办', '律师费'),
+])
+def test_the_fourth_tier_and_process_cost_notes_are_attached(question, word):
+    assert any(word in n for n in decide(question, SHANGHAI)['notes'])
+
+
+def test_a_citation_keeps_the_first_clause_whole():
+    from life_decision import citation
+    for entry in DATA['entries']:
+        inside = citation(entry).split('（', 1)[1][:-1]
+        assert inside and inside.count('（') == inside.count('）') and inside.count('(') == inside.count(')'), entry['title']
+        assert entry['title'].startswith(inside) or len(inside) < len(entry['title'])
 
 
 def test_policy_sections_carry_the_date_reminder():
@@ -167,6 +226,23 @@ def test_mainland_rules_say_so_for_someone_elsewhere():
 def test_nothing_in_the_book_says_so():
     result = decide('火星上种土豆要注意什么', SHANGHAI)
     assert result['not_in_book'] and not result['do'] and not result['dont']
+
+
+def test_the_part_the_book_does_not_cover_is_named():
+    from life_decision import render
+    result = decide('换iPhone还是安卓', SHANGHAI)
+    assert result['uncovered'] == ['iphone'] and not result['not_in_book']
+    assert '「iphone」这部分本库没有对得上的条目' in render(result)
+    assert decide('失业了先做什么', SHANGHAI)['uncovered'] == []
+
+
+def test_the_source_and_both_licences_travel_with_the_data():
+    from life_guide import library_source
+    src = library_source()
+    assert src['license'] == 'CC BY 4.0' and src['license_url'].startswith('https://creativecommons.org/')
+    assert src['code_license'].startswith('MIT')
+    assert DATA['source']['license_detail']['code_notice'].startswith('MIT License')
+    assert decide('失业了先做什么', SHANGHAI)['source'].startswith('出处：《高性价比人生指南》，eternity4719')
 
 
 def test_the_markdown_draft_cites_every_row_and_leaves_the_conclusion_to_the_host():

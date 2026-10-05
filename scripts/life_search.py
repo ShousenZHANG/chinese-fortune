@@ -28,9 +28,9 @@ TAG_LABEL = {'钱': {'0': '不花钱', '少': '花少量钱', '多': '花不少�
 STOP = re.compile(r'怎么办|怎么样|怎么|如何|为什么|什么|哪些|哪个|哪里|是不是|要不要|该不该|值不值|能不能|可不可以|'
                   r'可以吗|行不行|划不划算|划算吗|值得吗|犯不犯法|犯法吗|违法吗|先做什么|签不签|还是|应该|需要|'
                   r'帮我|请问|一下|有没有|会不会|算不算|多少|几天|不上|不起|不了|不到|不出|不动|不行|不好|'
-                  r'注意事项|注意|问题|事情|情况|东西|办法|建议|有关|关于|'
+                  r'注意事项|注意|问题|事情|情况|东西|办法|建议|有关|关于|准备|需要什么|'
                   # Quantities say how much, not what about: 「每天」「两小时」「三万」.
-                  r'每[天周月年次]|[一二两三四五六七八九十百千万几半\d]+个?(?:小时|分钟|天|周|个月|月|年|次|岁|万|千|元|块)|'
+                  r'每[天周月年次]|[一二两三四五六七八九十百千万几半\d.]+个?(?:小时|分钟|天|周|个月|月|年|次|岁|万|千|元|块|度|公斤|斤)|'
                   r'[吗呢吧啊呀了的得地着过我你他她它这那就都也还又很太更最能会要想该去来做个些种次]')
 # Everyday word → the words the book uses for exactly the same thing. Only
 # pairs with one meaning; nothing broader than the word itself.
@@ -46,17 +46,20 @@ def hay(entry: dict) -> str:
     """The text the book's search page looks in, lowercased."""
     f = entry['fields']
     text = '\n'.join([entry['title'], f['说人话'], f['成本'], f['收益'], f['备注'], f['来源'], entry['grade']])
-    return text.replace('**', '').lower()
+    # index.html: drop ** and unescape \* and \_ (「HLA-B\*5801」 is searched as HLA-B*5801).
+    return re.sub(r'\\([*_])', r'\1', text.replace('**', '')).lower()
 
 
 def pieces(query: str) -> list[str]:
-    """The topic words of a plain question: 「押金不退怎么办」 → ['押金不退']."""
+    """The topic words of a plain question: 「押金不退怎么办」 → ['押金不退'].
+    Latin words and numbers are their own pieces (「换iPhone」 → ['iphone'])."""
     found: list[str] = []
     for chunk in PUNCT.split(query):
         for piece in STOP.split(chunk):
-            piece = piece.strip().lower()
-            if len(piece) >= 2 and piece not in found:
-                found.append(piece)
+            for part in re.split(r'([A-Za-z0-9][A-Za-z0-9+.*-]*)', piece.strip().lower()):
+                part = part.strip()
+                if len(part) >= 2 and part not in found and not part.isdigit():
+                    found.append(part)
     return found
 
 
@@ -73,7 +76,7 @@ def coverage(entry: dict, piece: str) -> float:
     """How much of a topic piece the entry holds, by two-character windows;
     whom it concerns (朋友, 孩子…) is left out of the count."""
     text = hay(entry)
-    if piece in text:
+    if _holds(text, piece):
         return 1.0
     if len(piece) <= 2 or LATIN.fullmatch(piece):
         return 0.0
@@ -97,6 +100,13 @@ def _windows(piece: str) -> list[str]:
     return [piece] + [piece[i:i + 2] for i in range(len(piece) - 1)]
 
 
+def _holds(text: str, window: str) -> bool:
+    """A Latin word counts only whole (「one」 is not in 「phone」)."""
+    if LATIN.fullmatch(window):
+        return re.search(rf'(?<![a-z0-9]){re.escape(window)}(?![a-z0-9])', text) is not None
+    return window in text
+
+
 def score(entry: dict, keys: list[str], weight: dict[str, float] | None = None,
           extra: list[str] | None = None) -> float:
     """Pieces and windows found, each weighted by how rare it is in the book
@@ -108,7 +118,7 @@ def score(entry: dict, keys: list[str], weight: dict[str, float] | None = None,
     for key in keys + (extra or []):
         whole = key in keys
         for window in dict.fromkeys(_windows(key) if whole else [key]):
-            if window in text:
+            if _holds(text, window):
                 rare = (weight or {}).get(window, 1.0)
                 total += rare * (2 if window in title else 1) * (2 if whole and window == key else 1)
     return total
@@ -119,7 +129,7 @@ def _rarity(pool: list[dict], keys: list[str]) -> dict[str, float]:
     weight = {}
     for key in keys:
         for window in _windows(key) + [key]:
-            df = sum(window in t for t in texts)
+            df = sum(_holds(t, window) for t in texts)
             rare = math.log((len(texts) + 1) / (df + 1)) + 1 if df else 0.0
             # Whom it concerns is not what it is about: in 「替朋友担保」 the
             # matter is 担保, not 朋友.
