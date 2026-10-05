@@ -34,7 +34,8 @@ INCLUDE_DIRS = ["references", "assets", "agents"]
 # requirements-dev.txt pins build_han_variants' opencc; its own first line says
 # it stays out of the runtime package, yet it had been shipping.
 SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py",
-                  "import_life_guide.py", "requirements-dev.txt"}
+                  "import_life_guide.py", "life_guide_refs.py", "life_guide_review.py",
+                  "requirements-dev.txt"}
 EXCLUDE_RE = re.compile(
     r"(__pycache__|\.pyc$|\.pyo$|\.bak|\.bak-|/\.git/|\.pytest_cache|"
     r"\.DS_Store|Thumbs\.db|\.original\.md$)"
