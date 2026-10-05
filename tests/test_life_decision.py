@@ -128,12 +128,14 @@ STOP_TITLES = {(1, 25): '自杀念头', (1, 32): '自杀念头', (29, 11): '1235
                (13, 1): '倒地没呼吸', (13, 2): '倒地', (13, 3): '嘴歪', (13, 4): '卒中', (13, 7): '胸口压着疼',
                (13, 8): '剧痛', (13, 11): '喘不上气', (13, 12): '大出血', (13, 15): '过敏性休克', (13, 16): '抽搐',
                (13, 18): '触电', (13, 19): '一氧化碳', (13, 20): '误服', (13, 24): '火灾', (13, 25): '溺水',
-               (13, 26): '噎住', (13, 43): '噎住'}
+               (13, 26): '噎住', (13, 43): '噎住', (13, 5): '一只眼睛突然', (13, 9): '头痛', (13, 14): '烫伤',
+               (13, 21): '化学品', (13, 22): '高温', (13, 23): '中暑', (13, 29): '蛇咬', (13, 40): '扎进身体',
+               (13, 41): '骨折', (13, 42): '性侵', (13, 44): '婴儿'}
 
 
 def test_every_reviewed_stop_number_still_holds_its_entry():
     from life_decision import CRISIS_ENTRIES, EMERGENCY_ENTRIES, LEGAL_ENTRIES
-    used = {k for _, keys in EMERGENCY_ENTRIES for k in keys} | set(CRISIS_ENTRIES) | set(LEGAL_ENTRIES)
+    used = {k for _, keys, _ in EMERGENCY_ENTRIES for k in keys} | set(CRISIS_ENTRIES) | set(LEGAL_ENTRIES)
     assert used == set(STOP_TITLES)
     for key, word in STOP_TITLES.items():
         assert word in ENTRIES[key]['title'], key
@@ -335,3 +337,27 @@ def test_rows_are_chosen_within_each_lens_not_across():
     assert any(r[0]['lens'] == '换寿命' for r in picked)       # not crowded out by 7 极高 in 换钱
     lenses = [r[0]['lens'] for r in picked]
     assert lenses == sorted(lenses, key=lenses.index)           # each 口径's rows together
+
+
+@pytest.mark.parametrize('question,entries,first', [
+    ('孩子误吞了电池', [(13, 20)], '先打 120'),
+    ('老婆说胸口很闷喘不过气', [(13, 7), (13, 8), (13, 15)], '先打 120'),
+    ('有人掉河里了', [(13, 25)], '先打 120'),
+    ('煤气灶漏气了', [(13, 19)], '先把人都带到室外'),
+    ('我手被割了血一直流', [(13, 12)], '先打 120'),
+    ('喘不过气', [(13, 15), (13, 11)], '先打 120'),             # 「不过」 is not a clause break here
+    ('宝宝噎住哭不出声', [(13, 43), (13, 26)], '先打 120'),
+    ('孩子烫伤了', [(13, 14)], '先照下面第 13 节的条目做现场处置'),   # 13:14: cool it first
+    ('硫酸溅到眼睛了', [(13, 21)], '先照下面第 13 节的条目做现场处置'),
+    ('我被性侵了', [(13, 42)], '先到安全的地方打 110'),            # 13:42
+])
+def test_the_books_section_13_situations_stop_with_their_own_first_action(question, entries, first):
+    stop = decide(question, SHANGHAI)['stop']
+    assert _ids(stop['entries']) == entries and stop['first_action'].startswith(first)
+
+
+@pytest.mark.parametrize('question', ['手机没反应怎么办', '最近有点胸闷要不要做检查', '经常喘不过气是什么病',
+                                      '烫伤膏哪个牌子好', '轮胎漏气了', '煤气费怎么交', '孩子掉水里怎么预防'])
+def test_chronic_product_and_lookalike_questions_do_not_stop(question):
+    from life_decision import stop_kind
+    assert stop_kind(question) is None
