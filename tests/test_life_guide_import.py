@@ -32,7 +32,7 @@ def test_the_snapshot_is_pinned_to_a_commit_and_every_file_is_hashed():
 def test_the_whole_book_is_kept_but_the_three_excluded_entries():
     from import_life_guide import EXCLUDED
     assert set(EXCLUDED) == {(6, 15), (6, 22), (29, 12)}
-    assert DATA['coverage'] == {'entries': 660, 'excluded': 3, 'sections': 34, 'articles': 8}
+    assert DATA['coverage'] == {'entries': 660, 'excluded': 3, 'sections': 34, 'articles': 8, 'errata': 9}
     assert not set(EXCLUDED) & set(ENTRIES)
     assert {e['section'] for e in DATA['entries']} == set(range(1, 35))
 
@@ -204,3 +204,25 @@ def test_every_review_names_a_kept_title():
 def test_a_lead_in_dispute_is_quoted_until_it_states_the_other_side(key, reaches):
     dispute = ENTRIES[key]['dispute']
     assert reaches in dispute and dispute in ENTRIES[key]['fields']['备注'], dispute
+
+
+def test_an_erratum_sits_beside_the_entry_and_leaves_its_text_alone():
+    """「一审普通程序 6 个月起」 against 民事诉讼法 第 152 条 (a limit, not a start)."""
+    marked = [e for e in DATA['entries'] if e.get('errata')]
+    assert len(marked) == 9
+    for entry in marked:
+        erratum = entry['errata'][0]
+        assert all('6 个月起' in entry['fields'][f] for f in erratum['fields'])   # the book's words stay
+        assert '6 个月内审结' in erratum['note'] and '6 个月起' not in erratum['note']
+        assert '第 152、164 条' in erratum['source'] and erratum['source'].count('https://') == 1
+    assert any('6 个月内审结' in v for v in ENTRIES[(8, 45)]['fields'].values()) and not ENTRIES[(8, 45)].get('errata')
+
+
+def test_an_erratum_whose_wrong_words_are_gone_must_be_reviewed_again():
+    import pytest
+    from import_life_guide import _attach_errata
+    from life_guide_review import ERRATA
+    title = next(iter(ERRATA))
+    fields = dict.fromkeys(('成本', '说人话', '收益', '证据等级', '来源', '备注'), '')
+    with pytest.raises(ValueError, match='须重审'):
+        _attach_errata([{'title': title, 'fields': fields}], check_reviews=True)

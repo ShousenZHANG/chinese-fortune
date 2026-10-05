@@ -34,7 +34,7 @@ import zipfile
 from pathlib import Path
 
 from life_guide_refs import scan
-from life_guide_review import DISPUTE_SENTENCES, REGION
+from life_guide_review import DISPUTE_SENTENCES, ERRATA, REGION
 from utils import ensure_utf8_stdio
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -48,7 +48,7 @@ LICENSE = {
             '决策流程移植自 skills/life-decision-guide；许可原文见 code_notice）',
     'attribution': '《高性价比人生指南》，eternity4719，https://github.com/eternity4719/HowToLiveBetter',
     'changes': '按提交 842e11c9 冻结并转成 JSON；按产品范围略去 3 条条目和第 6 节导读里转述它们的一段；'
-               '其余条目、导读与长文的文字未改动',
+               '其余条目、导读与长文的文字未改动；与所引法律不符处另附勘误（errata 字段），原文不改',
 }
 FIELDS = ('成本', '说人话', '收益', '证据等级', '来源', '备注')
 
@@ -255,6 +255,18 @@ def _check_trace(source: str, text: str, excluded_titles: dict[tuple[int, int], 
     return found
 
 
+def _attach_errata(entries: list[dict], check_reviews: bool) -> None:
+    """Each reviewed erratum beside its entry; the wrong words must still be there."""
+    for entry in entries:
+        erratum = ERRATA.get(entry['title'])
+        if erratum is None:
+            continue
+        missing = [f for f in erratum['fields'] if erratum['wrong'] not in entry['fields'][f]]
+        if missing and check_reviews:
+            raise ValueError(f'勘误「{entry["title"]}」的 {missing} 里已经没有「{erratum["wrong"]}」：上游改过，须重审')
+        entry['errata'] = [{'fields': list(erratum['fields']), 'note': erratum['note'], 'source': erratum['source']}]
+
+
 def build(zip_path: Path, check_reviews: bool = True) -> dict:
     """``check_reviews=False`` only for synthetic snapshots in tests, which
     cannot hold the reviewed titles of the real book."""
@@ -319,9 +331,10 @@ def build(zip_path: Path, check_reviews: bool = True) -> dict:
     if set(excluded_titles) != set(EXCLUDED):
         raise ValueError('排除清单里有条目在快照中找不到，编号可能已变化')
     titles = {e['title'] for e in entries}
-    stale = sorted(set(REGION) - titles) + sorted(set(DISPUTE_SENTENCES) - titles)
+    stale = sorted(set(REGION) - titles) + sorted(set(DISPUTE_SENTENCES) - titles) + sorted(set(ERRATA) - titles)
     if stale and check_reviews:
         raise ValueError('审定数据里的标题在快照中找不到，须重审：' + json.dumps(stale, ensure_ascii=False))
+    _attach_errata(entries, check_reviews)
     _attach_refs(books, docs, sections, entries)
     articles = [{'id': ARTICLES[base][0], 'path': 'docs/' + base, 'title': _doc_title(base, text),
                  'region': ARTICLES[base][1], 'text': text} for base, text in sorted(docs.items())]
@@ -345,7 +358,7 @@ def build(zip_path: Path, check_reviews: bool = True) -> dict:
                    'license': LICENSE['text'], 'license_detail': {**LICENSE, 'code_notice': code_notice},
                    'files': files},
         'coverage': {'entries': len(entries), 'excluded': len(EXCLUDED), 'sections': len(sections),
-                     'articles': len(articles)},
+                     'articles': len(articles), 'errata': len(ERRATA)},
         'region_policy': {'universal_sections': sorted(UNIVERSAL_SECTIONS),
                           'abroad_sections': sorted(ABROAD_SECTIONS),
                           'default': '中国大陆', 'overrides': len(REGION)},
