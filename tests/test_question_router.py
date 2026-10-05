@@ -243,7 +243,10 @@ def test_a_day_question_over_a_year_is_answered_by_day_and_a_month_question_by_m
                   'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}}]
     base = {'current_timezone': 'Asia/Shanghai', 'request_time': '2026-09-17T02:00:00Z', 'participants': person}
     days = read_request({**base, **route('明年哪天结婚好？')['request']})
-    assert days['personal_calendar']['unit'] == 'day' and len(days['personal_calendar']['entries']) == 365
+    entries = days['personal_calendar']['entries']
+    # 365 dates; the twelve days a 节 falls on come in two pieces, before and after it.
+    assert days['personal_calendar']['unit'] == 'day' and len({e['date'] for e in entries}) == 365
+    assert len(entries) == 365 + sum(1 for e in entries if e.get('term', {}).get('side') == 'after')
     lead = render_answer(days).split('\n\n')[0]
     assert lead.startswith('按你出生那年的干支（丁丑）看，这段时间嫁娶对你最好的日子是') and '嫁娶要避开' in lead
     months = read_request({**base, **route('明年哪几个月好')['request']})

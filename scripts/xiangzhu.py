@@ -503,6 +503,66 @@ def date_pillars(day: date, zone: str) -> dict[str, str]:
             'day': face.getDayInGanZhiExact()}
 
 
+def instant_pillars(moment: datetime, zone: str) -> dict[str, str]:
+    """Year, month and day pillars that hold at one instant.
+
+    Year and month change at the solar term itself (tables in UTC+8), not at
+    local noon; the day pillar follows the local date, as in ``date_pillars``.
+    """
+    from lunar_python import Solar  # type: ignore
+    beijing = moment.astimezone(CALENDAR_ZONE)
+    term = Solar.fromYmdHms(beijing.year, beijing.month, beijing.day,
+                            beijing.hour, beijing.minute, beijing.second).getLunar()
+    local = moment.astimezone(ZoneInfo(zone))
+    face = Solar.fromYmdHms(local.year, local.month, local.day, 12, 0, 0).getLunar()
+    return {'year': term.getYearInGanZhiExact(), 'month': term.getMonthInGanZhiExact(),
+            'day': face.getDayInGanZhiExact()}
+
+
+def _next_term(moment: datetime) -> tuple[str, datetime]:
+    """The next 节 (the term that starts a month) after an instant, and when."""
+    from lunar_python import Solar  # type: ignore
+    beijing = moment.astimezone(CALENDAR_ZONE)
+    jie = Solar.fromYmdHms(beijing.year, beijing.month, beijing.day,
+                           beijing.hour, beijing.minute, beijing.second).getLunar().getNextJie()
+    at = jie.getSolar()
+    return jie.getName(), datetime(at.getYear(), at.getMonth(), at.getDay(), at.getHour(), at.getMinute(),
+                                   at.getSecond(), tzinfo=CALENDAR_ZONE)
+
+
+def day_pieces(start: str, end: str, zone: str) -> list[tuple[date, dict[str, str], dict | None]]:
+    """Each local date of the window with the pillars of the part it covers.
+
+    A date whose covered part crosses a 节 gives two pieces, before and after,
+    each with its own year and month: on 10月8日 2026 寒露 falls at 14:29, so
+    19:00–20:00 is 戊戌月, not the 丁酉 of the morning (or of a noon reading).
+    """
+    tz = ZoneInfo(zone)
+    lo = datetime.fromisoformat(start).astimezone(tz)
+    hi = datetime.fromisoformat(end).astimezone(tz)
+    pieces: list[tuple[date, dict[str, str], dict | None]] = []
+    for d in _local_dates(start, end, zone):
+        following = d + timedelta(days=1)
+        a = max(lo, datetime(d.year, d.month, d.day, tzinfo=tz))
+        b = min(hi, datetime(following.year, following.month, following.day, tzinfo=tz))
+        name, at = _next_term(a)
+        if a < at < b:
+            local = at.astimezone(tz)
+            pieces.append((d, instant_pillars(a, zone), {'term': name, 'at': local.isoformat(), 'side': 'before'}))
+            pieces.append((d, instant_pillars(at, zone), {'term': name, 'at': local.isoformat(), 'side': 'after'}))
+        else:
+            pieces.append((d, instant_pillars(a, zone), None))
+    return pieces
+
+
+def _piece_label(d: date, part: dict | None) -> str:
+    label = f'{d.month}月{d.day}日'
+    if not part:
+        return label
+    clock = datetime.fromisoformat(part['at']).strftime('%H:%M')
+    return label + (f"{part['term']}前（{clock} 以前）" if part['side'] == 'before' else f"{part['term']}后（{clock} 起）")
+
+
 def birth_years_of(natal: dict) -> list[str]:
     """The 生年干支 the chart allows: one when settled, the candidates when a
     birth near 立春 lacks the time that decides it, none otherwise."""
@@ -543,13 +603,20 @@ def personal_calendar(people: list[tuple[str, str]], start: str, end: str, zone:
     dates = _local_dates(start, end, zone)
     if unit == 'year' or len(dates) > 1100:
         unit, dates = 'year', [date(y, 7, 1) for y in sorted({d.year for d in dates})]
-    rows = [(d, date_pillars(d, zone)) for d in dates]
+        rows = [(d, date_pillars(d, zone)) for d in dates]
+    else:
+        # The pillars of the part of each date the window covers, split at a 节.
+        pieces = day_pieces(start, end, zone)
+        rows = [(d, pillars) for d, pillars, _ in pieces]
     entries: list[dict] = []
     if unit == 'day':
-        for d, pillars in rows:
+        for d, pillars, part in pieces:
             assessed = assess_people(people, [pillars])
-            entries.append({'date': d.isoformat(), 'label': f'{d.month}月{d.day}日', 'ganzhi': pillars['day'],
-                            'pillars': pillars, 'grade': assessed['grade'], 'people': assessed['people']})
+            entry = {'date': d.isoformat(), 'label': _piece_label(d, part), 'ganzhi': pillars['day'],
+                     'pillars': pillars, 'grade': assessed['grade'], 'people': assessed['people']}
+            if part:
+                entry['term'] = part
+            entries.append(entry)
     else:
         key = 'month' if unit == 'month' else 'year'
         groups: dict[str, list[date]] = {}

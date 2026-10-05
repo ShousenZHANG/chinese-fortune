@@ -375,7 +375,7 @@ def test_a_clashing_month_inside_the_period_is_said_once_with_its_dates():
                       'timezone': 'Asia/Shanghai', 'longitude': 120}, 'time_certainty': 'exact'}}]})
     lead = render_answer(result).split('\n\n')[0]
     assert lead == ('按你出生那年的干支（己卯）看，这段时间对你最好的日子是10月11日（戊午，命禄），是大吉；'
-                    '9月28日至10月8日在丁酉月里，这个月冲你的生年（月柱冲命，凶），协纪说月次于太岁、重于日，'
+                    '9月28日至10月8日寒露前（14:29 以前）在丁酉月里，这个月冲你的生年（月柱冲命，凶），协纪说月次于太岁、重于日，'
                     '这些日子都要避开；另外要避开10月2日（己酉，天比地冲）。')
     months = personal_calendar([('me', '丁丑')], '2027-01-01T00:00:00+08:00', '2028-01-01T00:00:00+08:00',
                                'Asia/Shanghai', 'month')
@@ -383,3 +383,48 @@ def test_a_clashing_month_inside_the_period_is_said_once_with_its_dates():
     assert first['ganzhi'] == '庚子' and first['grade'] == '吉'  # 丙午 year, before 立春 2027
     from fortune_reading import _entry_list
     assert _entry_list([first], unit='month') == '庚子月（1月1日至1月5日，财官、六合）'
+
+
+# --- 5.3.1: the pillars of the time asked about, split at a 节 ---------------
+# 寒露 2026 falls at 2026-10-08 14:29:17 Beijing time.
+
+def _cal(start: str, end: str, zone: str = 'Asia/Shanghai') -> list[dict]:
+    from xiangzhu import personal_calendar
+    return personal_calendar([('me', '丁卯')], start, end, zone, 'day')['entries']
+
+
+@pytest.mark.parametrize('start,end,month', [
+    ('2026-10-08T14:28:00+08:00', '2026-10-08T14:29:00+08:00', '丁酉'),   # the minute before
+    ('2026-10-08T14:30:00+08:00', '2026-10-08T14:31:00+08:00', '戊戌'),   # the minute after
+    ('2026-10-08T19:00:00+08:00', '2026-10-08T20:00:00+08:00', '戊戌'),   # the audit's case
+    ('2026-10-08T00:00:00+08:00', '2026-10-08T12:00:00+08:00', '丁酉'),   # a morning, not noon's month
+])
+def test_a_window_inside_one_side_of_the_term_takes_that_sides_month(start, end, month):
+    entries = _cal(start, end)
+    assert [e['pillars']['month'] for e in entries] == [month] and 'term' not in entries[0]
+
+
+def test_a_whole_day_across_the_term_is_split_before_and_after():
+    before, after = _cal('2026-10-08T00:00:00+08:00', '2026-10-09T00:00:00+08:00')
+    assert (before['pillars']['month'], after['pillars']['month']) == ('丁酉', '戊戌')
+    assert before['date'] == after['date'] == '2026-10-08' and before['ganzhi'] == after['ganzhi']
+    assert before['label'] == '10月8日寒露前（14:29 以前）' and after['label'] == '10月8日寒露后（14:29 起）'
+    assert (before['grade'], after['grade']) == ('凶', '平')     # 丁酉 clashes 丁卯; 戊戌 does not
+
+
+def test_the_split_is_at_the_terms_local_time_elsewhere():
+    """Sydney is on daylight time (UTC+11) from 4 October 2026: 寒露 is 17:29 there."""
+    before, after = _cal('2026-10-08T00:00:00+11:00', '2026-10-09T00:00:00+11:00', 'Australia/Sydney')
+    assert after['label'] == '10月8日寒露后（17:29 起）' and after['term']['at'].startswith('2026-10-08T17:29')
+
+
+def test_a_window_across_midnight_gives_each_date_its_own_piece():
+    entries = _cal('2026-10-07T22:00:00+08:00', '2026-10-08T02:00:00+08:00')
+    assert [e['date'] for e in entries] == ['2026-10-07', '2026-10-08']
+    assert {e['pillars']['month'] for e in entries} == {'丁酉'}
+
+
+def test_the_day_daylight_time_starts_is_one_day():
+    """Sydney skips 02:00–03:00 on 4 October 2026; the date is still one entry."""
+    entries = _cal('2026-10-03T00:00:00+10:00', '2026-10-06T00:00:00+11:00', 'Australia/Sydney')
+    assert [e['date'] for e in entries] == ['2026-10-03', '2026-10-04', '2026-10-05']
