@@ -86,6 +86,29 @@ def test_a_real_life_decision_goes_to_the_books_decision_workflow(question):
     assert result['reference'] == 'references/29-life-decision.md'
 
 
+def test_every_question_the_book_says_it_answers_reaches_the_workflow():
+    """The 34 questions of the book's README, verbatim."""
+    import json
+    from pathlib import Path
+    data = json.loads((Path(__file__).resolve().parents[1] / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
+    missed = [q['question'] for q in data['guide']['questions'] if route(q['question'])['flow'] != 'life_guide']
+    assert not missed
+
+
+@pytest.mark.parametrize('question', ['公司拖欠工资三个月怎么办', '孩子发烧怎么办', '老板不发工资', '被车撞了对方不赔',
+                                      '网购退款不给退', '邻居噪音太大怎么办', '老人摔倒了扶不扶', '手机丢了怎么办',
+                                      '怎么戒掉拖延', '被网暴了怎么办'])
+def test_everyday_wording_of_the_books_topics_reaches_the_workflow(question):
+    assert route(question)['flow'] == 'life_guide', question
+
+
+@pytest.mark.parametrize('question', ['我和他合不合', '本命年要注意什么', '桃花什么时候来', '帮我解梦梦见蛇',
+                                      '面相看我能不能发财', '帮孩子取个名字', '解释一下这个卦', '属龙和属狗配吗',
+                                      '我的正缘什么时候出现', '姻缘在哪里'])
+def test_folk_divination_without_a_method_name_stays_out_of_the_workflow(question):
+    assert route(question)['flow'] != 'life_guide', question
+
+
 @pytest.mark.parametrize('question,flow', [
     ('我下周哪天出行好', 'personal_days'),        # a day question stays a day question
     ('我的婚姻怎么样', 'natal'),                  # 命理优先
@@ -99,11 +122,24 @@ def test_divination_keeps_priority_over_the_decision_workflow(question, flow):
 
 
 @pytest.mark.parametrize('question,stop', [('有人倒地没呼吸怎么办', 'emergency'), ('我不想活了', 'crisis'),
-                                           ('下周哪天搬家好，我真的不想活了', 'crisis')])
-def test_an_emergency_or_a_crisis_comes_before_everything(question, stop):
+                                           ('下周哪天搬家好，我真的不想活了', 'crisis'), ('我想去死', 'crisis'),
+                                           ('家里着火了', 'emergency'), ('收到法院传票了', 'legal')])
+def test_an_emergency_a_crisis_or_a_legal_process_comes_before_everything(question, stop):
     result = route(question)
     assert result['flow'] == 'life_guide' and result['stop'] == stop
     assert result['reference'] == 'references/20-disclaimer.md'
+
+
+@pytest.mark.parametrize('question', ['中风险理财值不值得买', '火灾险要不要买', '怎么预防心梗', '如果被起诉了怎么办'])
+def test_insurance_prevention_and_hypotheticals_are_not_a_stop(question):
+    assert 'stop' not in route(question)
+
+
+@pytest.mark.parametrize('question', ['算一下我该不该辞职', '流年看我该不该离婚', '我命里适合创业吗',
+                                      '六爻看我会不会中风', '帮我算算要不要换工作'])
+def test_a_divination_question_phrased_as_a_decision_stays_with_divination(question):
+    result = route(question)
+    assert result['flow'] != 'life_guide' and 'stop' not in result, question
 
 
 @pytest.mark.parametrize('question', ['租房押金要注意什么', '试用期工资最低多少', '出国前领事保护能做什么',

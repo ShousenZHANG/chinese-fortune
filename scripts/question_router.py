@@ -20,7 +20,7 @@ import re
 import sys
 
 from answer_style import EVENT_KEYWORDS, question_kind
-from life_decision import CRISIS, EMERGENCY
+from life_decision import stop_kind
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import aspects_asked
 
@@ -62,11 +62,24 @@ LIFE_WORDS = ('押金', '租房', '房东', '租房合同', '试用期', '加班
               '诈骗', '被骗', '旅行保险', '体检', '保健品', '戒烟', '戒酒', '熬夜', '通勤', '理财', '基金', '股票',
               '急救', '心肺复苏', '感冒药', '止痛药', '慢性病', '高血压', '糖尿病', '怀孕', '坐月子', '新生儿',
               '养老院', '遗嘱', '继承', '留学', '残疾', '近视', '职称', '个体户', '营业执照', '要注意什么',
-              '注意些什么')
+              '注意些什么',
+              # The rest of the book's 34 README questions and the everyday ways
+              # of asking them (「老板不发工资」「手机丢了」).
+              '早死', '折寿', '精力', '拖延', '利息', '费率', '骗局', '兼职', '刑事', '判刑', '坐牢', '追人', '异地恋',
+              '领证', '代码', '接单', '账号被盗', '被盗', '手机丢', '刚出生', '使领馆', '大使馆', '出国', 'KTV', 'ktv',
+              '网吧', '密室', '压力大', '网站', '服务器', '减肥', '变好看', '上学', '读书', '打工', '十八岁', '工资',
+              '拖欠', '赔偿', '不赔', '退款', '噪音', '邻居', '摔倒', '扶不扶', '网暴', '发烧', '退烧', '吃药',
+              '重疾险', '律师', '起诉', '打官司', '维权')
+# A divination question phrased as a decision (「算一下我该不该辞职」「流年看我该不该
+# 离婚」): it stays with the divination methods, before the decision words.
+FORTUNE_CUES = ('命里', '命理', '命中', '命格', '命数', '算算', '算一下', '算一算', '帮我算', '测一下', '流年', '大运',
+                '偏财', '正财', '紫微', '运程', '卦', '本命年', '太岁', '桃花', '正缘', '姻缘', '贵人', '财位', '发财',
+                '解梦', '梦见', '手相', '面相', '取名', '起名', '改名', '名字', '属相', '生肖', '合不合', '合婚',
+                '配不配', '五行')
 # A real-life decision, asked the way the book's own workflow is triggered.
 DECISION_WORDS = ('该不该', '值不值', '要不要', '划不划算', '划算吗', '值得吗', '怎么选', '帮我决定', '犯法吗',
                   '犯不犯法', '违法吗', '能领什么', '能领多少', '先做什么', '签不签', '性价比', '怎么赔',
-                  '赔多少', '能拿多少')
+                  '赔多少', '能拿多少', '怎么办', '第一步', '做什么', '怎么改', '怎么治', '怎么戒', '怎么做')
 # DAY_WORDS that only ask yes or no. With a practical word and no date they ask
 # whether something is allowed (「押金不退可以吗」), not which day is good.
 YES_NO_WORDS = ('可以吗', '行不行', '合适吗', '适合吗', '好不好')
@@ -88,13 +101,13 @@ def route(question: str) -> dict:
     """The flow, the command, the request skeleton and what is still needed."""
     text = question.strip()
     kind = question_kind(text)
-    stop = 'emergency' if EMERGENCY.search(text) else ('crisis' if CRISIS.search(text) else None)
+    stop = stop_kind(text)
     if stop:
         return {'flow': 'life_guide', 'stop': stop,
-                'why': '正在发生的急症或自伤念头：先给第一个动作（急救或求助电话），不做术数解释、不排性价比',
+                'why': '正在发生的急症、自伤念头或法律程序：先给第一个动作，不做术数解释、不排性价比',
                 'command': 'python scripts/life_guide.py --decide "<原话>" --current-timezone 现居地时区 --markdown',
                 'reference': 'references/20-disclaimer.md',
-                'needs': ['现居地时区（求助电话按所在地给）']}
+                'needs': ['现居地时区（求助电话和法律口径按所在地给）']}
     if any(word in text for word in MEDICAL_WORDS):
         return {'flow': 'boundary', 'why': '涉及医疗，先按边界说明提供现实帮助',
                 'reference': 'references/20-disclaimer.md', 'needs': []}
@@ -145,6 +158,8 @@ def route(question: str) -> dict:
                 'command': ('python scripts/bazi_reading.py --year Y --month M --day D [--hour H --minute m] '
                             '--gender G --city 出生地 --current-timezone 现居地时区 --question "<原话>" --markdown'),
                 'needs': [BIRTH]}
+    if any(word in text for word in FORTUNE_CUES):
+        return {'flow': 'other', 'why': '带命理说法的问题，按 SKILL.md 路由表选术数方法；现实决策流程不接', 'needs': []}
     if practical or any(word in text for word in DECISION_WORDS):
         return {'flow': 'life_guide',
                 'why': '问现实层面怎么做：按《高性价比人生指南》的决策流程查条目、按性价比和证据等级排序，'
