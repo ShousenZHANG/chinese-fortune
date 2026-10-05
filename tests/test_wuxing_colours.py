@@ -122,7 +122,8 @@ def test_charts_that_share_the_cell_differ_where_the_branches_decide():
     leads = [colour_lead(colour_advice(chart, '我穿什么颜色好')) for chart in (plain, fiery)]
     assert leads[0] != leads[1]
     assert '水局不成立' in leads[0] and '水局成立' in leads[1]
-    assert '审校说明' in leads[1] and '审校说明' not in leads[0]
+    # 「或支成水局，不见丙丁者」: this chart shows 丙 and 丁, so that sentence does not apply.
+    assert '要不见丙丁' in leads[1] and '不适用' in leads[1] and '要不见丙丁' not in leads[0]
     for lead in leads:
         assert '一般取法' in lead and '丙丁过多' in lead and '没判' in lead
     # 甲 in 未 month: 「無癸亦可」, and the old table put 癸 first. Nothing says avoid water.
@@ -220,15 +221,51 @@ def test_the_water_frame_is_decided_from_the_branches():
     assert '水局不成立' in lead and '丙丁过多' in lead and '没判' in lead
 
 
-def test_a_complete_frame_points_to_the_note_without_deciding_its_effect():
+def test_a_complete_frame_whose_condition_fails_keeps_the_general_choice():
+    """庚 in 子: 「或支成水局，不见丙丁者，此乃伤官格」 (qiongtong:c005:p0116).
+    With 丙 and 丁 in the stems the sentence does not apply; the v5.3.0 audit's
+    example (丙申 庚子 庚辰 丙子) is this case."""
     advice = colour_advice(_four('丙申', '丙子', '庚辰', '丁亥'))
     checks = {c['condition']: c for c in advice['exception_checks']}
-    assert checks['水局']['status'] == 'met' and '申子辰' in checks['水局']['basis']
+    assert checks['水局']['status'] == 'met' and checks['水局']['effect'] == 'not_applicable'
+    assert advice['personal_choice'] is True
     lead = colour_lead(advice)
-    assert '水局成立' in lead and '审校说明' in lead and '不能直接套' not in lead
-    # The note is the reviewer's paraphrase, and here it says nothing about the
-    # effect («丙丁过多与水局另论»): it may not be called the passage.
-    assert '原文写在' not in lead and '对照这一格的原文' in lead
+    assert '衣服首选红色、紫色（火）' in lead and '你的盘天干有丙、丁' in lead
+
+
+def test_a_complete_frame_whose_condition_holds_withholds_the_personal_choice():
+    """The same frame with no 丙丁 among the stems: the passage turns to 伤官格."""
+    advice = colour_advice(_four('甲申', '壬子', '庚辰', '戊子'))
+    assert advice['personal_choice'] is False and advice['individual_application'] == 'exception_met'
+    lead = colour_lead(advice)
+    assert lead.startswith('按你的盘，这一问给不出个人首选的颜色')
+    assert '首选红色' not in lead and '「或支成水局，不见丙丁者，此乃伤官格' in lead
+    assert 'qiongtong:c005:p0116' in lead
+
+
+def test_a_frame_that_takes_another_stem_withholds_the_personal_choice():
+    """甲 in 寅 with 亥卯未: 「支成木局，得庚为贵」 (qiongtong:c002:p0012)."""
+    advice = colour_advice(_four('丙亥', '庚寅', '甲卯', '丙未'))
+    lead = colour_lead(advice)
+    assert advice['personal_choice'] is False and '「支成木局，得庚为贵' in lead and '衣服首选' not in lead
+
+
+def test_every_frame_a_note_names_has_a_reviewed_effect():
+    import re
+
+    from tiaohou_provenance import _registry
+    from wuxing_colours import FRAME_RE, FRAME_REVIEW
+    pairs = {(k, w) for k, c in _registry()['cells'].items() for w in FRAME_RE.findall(c.get('review_note') or '')
+             if w != '土'}
+    assert set(FRAME_REVIEW) == pairs
+    for (key, wuxing), (effect, condition, stems, passage) in FRAME_REVIEW.items():
+        assert effect in ('confirms', 'changes') and condition in ('', 'absent', 'present')
+        assert bool(condition) == bool(stems) and all(st in '甲乙丙丁戊己庚辛壬癸' for st in stems)
+        text = get_passage(passage)['text']
+        # The reviewed sentence speaks of this frame (or of 炎局 for fire), except
+        # 庚卯 and 庚亥, whose passages name the branches instead of the frame.
+        if key not in ('庚|卯', '庚|亥'):
+            assert re.search(f'{wuxing}局' + ('|炎局' if wuxing == '火' else ''), text), (key, wuxing)
 
 
 @pytest.mark.parametrize('pillars,frame', [
