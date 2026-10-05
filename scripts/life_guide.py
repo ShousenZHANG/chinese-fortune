@@ -1,16 +1,22 @@
 #!/usr/bin/env python
 """Real-world references from the frozen 《高性价比人生指南》, gated by region.
 
-Attached only after a divination answer, in its own section, never used to
-rank dates or colours. An entry is attached when it is mapped to the matter,
+Two uses. After a divination answer, in its own section and never used to
+rank dates or colours: an entry is attached when it is mapped to the matter,
 is not marked TODO (the book's own rule: do not use those as conclusions),
 and applies where the matter takes place — see ``region.py``. At most three.
+For a real-life question: ``--decide`` runs the book's decision workflow
+(life_decision.py), ``--query`` searches with the book's filters and ranking
+(life_search.py), and ``--sections``, ``--term``, ``--articles`` read its
+question table, glossary and long articles.
 
     python scripts/life_guide.py --scenario travel --current-timezone Australia/Sydney \\
         --destination-timezone Asia/Singapore
     python scripts/life_guide.py --entry 15:1 --current-timezone Australia/Sydney
     python scripts/life_guide.py --query 押金 --current-timezone Australia/Sydney
     python scripts/life_guide.py --article marriage --current-timezone Asia/Shanghai
+    python scripts/life_guide.py --decide "替朋友担保签不签" --current-timezone Asia/Shanghai --markdown
+    python scripts/life_guide.py --query 保险 --grade A --ratio 极高 --sort ratio
 """
 from __future__ import annotations
 
@@ -20,6 +26,8 @@ import re
 from functools import cache
 from pathlib import Path
 
+import life_decision
+import life_search
 from region import crosses_border, is_zone, resolve_destination, resolve_region
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
@@ -42,8 +50,8 @@ SCENARIO_ENTRIES: dict[str, list[Ref]] = {
     # 合婚 is a specialist workflow with no fortune_reading answer to ride
     # after; references/14-hehun.md has it call ``--scenario compatibility``.
     # 10:1, 10:4 and the long article comment on 合婚 itself, so none of
-    # them rides with it.
-    'compatibility': [(10, 18), (10, 17)],
+    # them rides with it. (842e11c9 moved the two kept ones from 10:17/10:18.)
+    'compatibility': [(10, 17), (10, 16)],
     'business': [(12, 1), (12, 3), (12, 7)],
     'billing': [(9, 15), (12, 15), (8, 18)],
     'exam': [(23, 8), (31, 7)],
@@ -102,9 +110,11 @@ def _lookup(ref: Ref) -> dict | None:
 
 
 def library_source() -> dict:
-    """Where the frozen text comes from, for citing beside the references."""
+    """Where the frozen text comes from and how it may be reused, for citing beside it."""
     source = _data()['source']
-    return {k: source[k] for k in ('repo', 'commit', 'snapshot_date', 'license')}
+    detail = source.get('license_detail') or {}
+    return {**{k: source[k] for k in ('repo', 'commit', 'snapshot_date', 'license')},
+            'attribution': detail.get('attribution'), 'changes': detail.get('changes')}
 
 
 def _applies(entry: dict, payload: dict) -> bool:
@@ -158,70 +168,149 @@ def get_article(key: str, payload: dict) -> dict | None:
     return None if article is None else _annotated(article, payload)
 
 
-def search(query: str, payload: dict | None = None, limit: int = 5) -> list[dict]:
-    """Whole entries whose title or text contains every word of the query.
+def search(query: str, payload: dict | None = None, limit: int = 5, filters: dict | None = None,
+           sort: str = 'book', applicable: bool = False) -> list[dict]:
+    """Whole entries matching the query and the book's filters.
 
-    TODO entries are left out, as in ``entries_for``: a search is how the
-    host answers a practical question, and the book says not to conclude
-    from those. Each hit carries the same notes as an explicit lookup.
+    TODO entries are left out unless asked for, as in ``entries_for``: the
+    book says not to conclude from those. Each hit carries the same notes as
+    an explicit lookup. By default an entry for another region is returned
+    with a 中国大陆口径 note (asking about another place is legitimate);
+    ``applicable`` keeps only the entries that apply where the user is.
     """
-    words = [w for w in query.split() if w]
-    if not words:
+    if not query.strip() and not filters:
         return []
-    hits = [e for e in _data()['entries'] if not e['todo']
-            and all(w in e['title'] or any(w in v for v in e['fields'].values()) for w in words)]
-    return [_annotated(e, payload or {}) for e in hits[:limit]]
+    rows = life_search.search(_data()['entries'], query, filters, sort=sort)
+    if applicable:
+        where = resolve_region(payload or {})['region']
+        rows = [r for r in rows if r[0]['region'] in ('通用', where)
+                or (r[0]['region'] == '中国公民在境外' and where == '境外')]
+    out = []
+    for entry, match, _ in rows[:limit]:
+        row = _annotated(entry, payload or {})
+        out.append({**row, 'match': match} if match == 'partial' else row)
+    return out
 
 
-def main(argv: list[str] | None = None) -> int:
-    ensure_utf8_stdio()
+def sections() -> list[dict]:
+    """Each section with the question it answers (README) and its intro."""
+    questions = {q['section']: q['question'] for q in _data()['guide']['questions']}
+    return [{'section': s['section'], 'title': s['title'], 'question': questions.get(s['section']),
+             'intro': s['intro']} for s in _data()['sections']]
+
+
+def glossary(term: str | None = None) -> list[dict]:
+    rows = _data()['guide']['glossary']
+    if term is None:
+        return rows
+    return [r for r in rows if term.lower() in r['term'].lower() or r['term'].lower() in term.lower()]
+
+
+def decide(question: str, payload: dict | None = None) -> dict:
+    return life_decision.decide(_data(), question, payload)
+
+
+def _split(value: str | None) -> set[str] | None:
+    return set(value.split(',')) if value else None
+
+
+def _filters(args: argparse.Namespace) -> dict:
+    filters = {'section': {int(x) for x in args.section.split(',')} if args.section else None,
+               'grade': _split(args.grade), 'ratio': _split(args.ratio), 'lens': _split(args.lens),
+               'money': _split(args.money), 'time': _split(args.time), 'will': _split(args.will),
+               'disputed': args.disputed, 'include_todo': args.include_todo}
+    return {k: v for k, v in filters.items() if v}
+
+
+def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description='按事项与地区取《高性价比人生指南》的现实参考条目（整条原文，不参与术数排序）',
-        epilog='Top-level JSON keys: ok tool version source region entries. '
-               'entries[]: section number title fields grade cost_tags todo disputed dispute region region_note '
-               'todo_note; an article row has kind id path title text region instead of section/number/fields')
+        description='《高性价比人生指南》冻结快照：术数回答后的现实参考、人生决策、检索筛选（不参与术数排序）',
+        epilog='Top-level JSON keys: ok tool version source region and one of entries, decision, sections, '
+               'glossary, articles. entries[]: section number title fields grade cost_tags cost_score ratio lens '
+               'todo disputed dispute region refs [region_note todo_note match]; an article row has kind id path '
+               'title text region refs. decision: question region stop sections do dont not_in_book match '
+               'articles notes terms.')
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument('--scenario')
     mode.add_argument('--entry', help='节:条，例如 15:1')
-    mode.add_argument('--query')
+    mode.add_argument('--query', help='关键词；空格分开的每个词都要命中，整句中文自动拆词兜底')
+    mode.add_argument('--decide', help='用户原话；按书里的决策流程查条目、排序、分先做和别做')
     mode.add_argument('--article', help='长文编号，例如 marriage')
+    mode.add_argument('--articles', action='store_true', help='列出全部长文')
+    mode.add_argument('--sections', action='store_true', help='列出各节回答的问题和导读')
+    mode.add_argument('--term', help='查术语表；给 all 列出全部')
     parser.add_argument('--current-timezone')
     parser.add_argument('--event-timezone')
     parser.add_argument('--destination-timezone')
     parser.add_argument('--question', help='用户原话；只适合一部分问法的条目要靠它判断')
-    args = parser.parse_args(argv)
+    group = parser.add_argument_group('筛选（照书里检索页的维度，逗号分隔多选）')
+    group.add_argument('--section', help='节号，例如 7,19')
+    group.add_argument('--grade', help='A,B,C')
+    group.add_argument('--ratio', help='极高,高,一般')
+    group.add_argument('--lens', help='换寿命,换钱,换时间精力,换人身自由')
+    group.add_argument('--money', help='0,少,多')
+    group.add_argument('--time', help='少,中,多')
+    group.add_argument('--will', help='否,些,是')
+    group.add_argument('--disputed', action='store_true', help='只要标了争议的')
+    group.add_argument('--include-todo', action='store_true', help='连待核实的一起返回（不能当结论用）')
+    parser.add_argument('--sort', choices=('book', 'ratio', 'relevance'), default='book',
+                        help='book 原书顺序；ratio 性价比再证据等级；relevance 命中程度')
+    parser.add_argument('--limit', type=int, default=5)
+    parser.add_argument('--applicable', action='store_true', help='只要适用于所在地的条目（默认标注地区不符，不筛掉）')
+    parser.add_argument('--markdown', action='store_true', help='--decide 时输出带出处的白话草稿')
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    ensure_utf8_stdio()
+    args = _parser().parse_args(argv)
     event = {k: v for k, v in {'scenario': args.scenario, 'timezone': args.event_timezone,
                                'destination_timezone': args.destination_timezone}.items() if v}
     payload = {'current_timezone': args.current_timezone, 'event': event, 'question': args.question}
+    body: dict = {}
     try:
         # An unknown zone name must not quietly count as 境外.
         for zone in (args.current_timezone, args.event_timezone, args.destination_timezone):
             if zone and not is_zone(zone):
                 raise ValueError(f'不是 IANA 时区名：{zone!r}（例如 Australia/Sydney）')
+        if not 1 <= args.limit <= 100:
+            raise ValueError('--limit 须在 1 到 100 之间')
         if args.entry:
             parts = args.entry.split(':')
-            if len(parts) != 2 or not all(p.isdigit() for p in parts):
+            if len(parts) != 2 or not all(x.isdigit() for x in parts):
                 raise ValueError('--entry 须为「节:条」，例如 15:1')
             found = get_entry(int(parts[0]), int(parts[1]), payload)
             if found is None:
                 raise ValueError(f'本库没有第 {parts[0]} 节第 {parts[1]} 条')
-            rows = [found]
-        elif args.query:
-            rows = search(args.query, payload)
+            body['entries'] = [found]
+        elif args.query is not None:
+            if not args.query.strip() and not _filters(args):
+                raise ValueError('--query 不能为空（只想筛选时给一个筛选条件）')
+            body['entries'] = search(args.query, payload, args.limit, _filters(args), args.sort, args.applicable)
+        elif args.decide is not None:
+            if not args.decide.strip() or len(args.decide) > 2000:
+                raise ValueError('--decide 须为 1–2000 字符的原话')
+            body['decision'] = decide(args.decide, payload)
+            if args.markdown:
+                print(life_decision.render(body['decision']))
+                return 0
         elif args.article:
             article = get_article(args.article, payload)
             if article is None:
                 raise ValueError(f'本库没有长文 {args.article!r}')
-            rows = [article]
+            body['entries'] = [article]
+        elif args.articles:
+            body['articles'] = [{k: a[k] for k in ('id', 'path', 'title', 'region')} for a in _data()['articles']]
+        elif args.sections:
+            body['sections'] = sections()
+        elif args.term:
+            body['glossary'] = glossary(None if args.term == 'all' else args.term)
         else:
-            rows = entries_for(payload)
+            body['entries'] = entries_for(payload)
     except (ValueError, OSError) as exc:
         json_print(error_envelope('life_guide', 'invalid_input', str(exc)))
         return 1
-    source = _data()['source']
-    json_print(ok_envelope('life_guide', {
-        'source': {k: source[k] for k in ('repo', 'commit', 'snapshot_date', 'license')},
-        'region': resolve_region(payload), 'entries': rows}))
+    json_print(ok_envelope('life_guide', {'source': library_source(), 'region': resolve_region(payload), **body}))
     return 0
 
 

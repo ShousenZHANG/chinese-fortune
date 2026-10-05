@@ -5,7 +5,7 @@ from answer_style import style_violations
 from fortune_reading import read_request, render_answer
 from test_ranking import _slot, _travel_request
 
-HEADER = '现实参考（《高性价比人生指南》快照 2026-09-27，与上面的术数结论无关）'
+HEADER = '现实参考（《高性价比人生指南》快照 2026-10-05，与上面的术数结论无关）'
 
 
 def _trip(destination=None, scenario='travel'):
@@ -23,11 +23,11 @@ def test_a_trip_abroad_carries_section_21_after_the_answer():
     result = read_request(_trip('Asia/Singapore'))
     ref = result['life_reference']
     assert [(e['section'], e['number']) for e in ref['entries']][:2] == [(21, 1), (21, 2)]
-    assert ref['region']['region'] == '境外' and ref['source']['commit'].startswith('8276caec')
+    assert ref['region']['region'] == '境外' and ref['source']['commit'].startswith('842e11c9')
     text = render_answer(result)
     assert HEADER in text
     assert text.index(HEADER) > text.index('\n\n'), 'the references must not be in the first paragraph'
-    assert '（第 21 节第 1 条，证据等级 A；面向中国公民；以官方最新规定为准）' in text
+    assert '（第 21 节第 1 条，证据等级 A，性价比极高；面向中国公民；以官方最新规定为准）' in text
 
 
 def test_the_references_change_nothing_in_the_divination_answer():

@@ -70,7 +70,8 @@ def test_the_compatibility_workflow_can_ask_for_its_references():
     rows = entries_for(_req('compatibility', current='Asia/Shanghai'))
     # 10:1, 10:4 and the long article say compatibility cannot be told
     # beforehand: a verdict on 合婚 itself, so none rides with it.
-    assert _ids(rows) == [(10, 18), (10, 17)]
+    assert _ids(rows) == [(10, 17), (10, 16)]       # 842e11c9 moved them from 10:18 and 10:17
+    assert '健康账' in rows[0]['title'] and '为长辈结婚' in rows[1]['title']
     hehun = (ROOT / 'references' / '14-hehun.md').read_text(encoding='utf-8')
     assert 'life_guide.py --scenario compatibility' in hehun
 
@@ -135,9 +136,12 @@ def test_search_gives_the_same_region_note_as_an_explicit_lookup():
 
 
 def test_search_leaves_out_entries_the_book_marks_unverified():
-    """21:4 carries a TODO; the book's own rule is not to use those as conclusions."""
-    assert (21, 4) not in _ids(search('医疗转运', _req('outlook')))
-    assert get_entry(21, 4, _req('outlook'))['todo_note']
+    """31:6 carries a TODO; the book's own rule is not to use those as conclusions."""
+    assert (31, 6) not in _ids(search('退役金', _req('outlook')))
+    assert (31, 6) in _ids(search('退役金', _req('outlook'), filters={'include_todo': True}))
+    assert get_entry(31, 6, _req('outlook'))['todo_note']
+    # 21:4 was TODO at 8276caec and is resolved upstream: it is usable now.
+    assert (21, 4) in _ids(search('医疗转运', _req('outlook')))
 
 
 def test_a_trip_inside_one_country_gets_no_border_crossing_advice():
@@ -167,7 +171,7 @@ def test_the_cli_returns_an_envelope_with_whole_entries():
     assert proc.returncode == 0, proc.stderr
     data = json.loads(proc.stdout)
     assert data['ok'] and data['region']['region'] == '境外'
-    assert data['source']['commit'].startswith('8276caec')
+    assert data['source']['commit'].startswith('842e11c9') and data['source']['license'] == 'CC BY 4.0'
     assert all(set(r['fields']) >= {'说人话', '备注', '来源'} for r in data['entries'])
 
 
@@ -177,7 +181,8 @@ def test_the_cli_returns_the_long_article_whole():
                           capture_output=True, text=True, encoding='utf-8')
     assert proc.returncode == 0, proc.stderr
     article = json.loads(proc.stdout)['entries'][0]
-    assert article['text'] == DATA['articles'][0]['text'] and article['region_note'] == FOREIGN_NOTE
+    marriage = next(a for a in DATA['articles'] if a['id'] == 'marriage')
+    assert article['text'] == marriage['text'] and article['region_note'] == FOREIGN_NOTE
     assert get_article('nope', {}) is None
 
 

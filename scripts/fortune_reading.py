@@ -1241,8 +1241,9 @@ def _life_lines(result: dict) -> list[str]:
         if entry.get('kind') == 'article':
             rows.append(f"- 长文《{entry['title']}》（书里另附的一篇长文{tail}）")
         else:
+            ratio = f"，性价比{entry['ratio']}" if entry.get('ratio') else ''
             rows.append(f"- {entry['title']}（第 {entry['section']} 节第 {entry['number']} 条，"
-                        f"证据等级 {entry['grade']}{tail}）")
+                        f"证据等级 {entry['grade']}{ratio}{tail}）")
     return ['\n'.join(rows)]
 
 
