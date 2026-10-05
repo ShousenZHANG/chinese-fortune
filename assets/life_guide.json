@@ -10,9 +10,10 @@
   "license_detail": {
    "text": "CC BY 4.0",
    "text_url": "https://creativecommons.org/licenses/by/4.0/",
-   "code": "MIT（检索排序与引用检查的算法移植自其 index.html 与 tools/check-refs.mjs）",
+   "code": "MIT（检索排序与引用检查的算法移植自其 index.html 与 tools/check-refs.mjs，决策流程移植自 skills/life-decision-guide；许可原文见 code_notice）",
    "attribution": "《高性价比人生指南》，eternity4719，https://github.com/eternity4719/HowToLiveBetter",
-   "changes": "按提交 842e11c9 冻结并转成 JSON；按产品范围略去 3 条条目和第 6 节导读里转述它们的一段；其余条目、导读与长文的文字未改动"
+   "changes": "按提交 842e11c9 冻结并转成 JSON；按产品范围略去 3 条条目和第 6 节导读里转述它们的一段；其余条目、导读与长文的文字未改动",
+   "code_notice": "MIT License\n\nCopyright (c) 2026 eternity4719\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
   },
   "files": {
    "book/01-不要早死.md": "72fa2bb8ca10d8cca78e556bb8145350e7f9e2b9e2e515aea1bbfabcd29ec426",
@@ -79,7 +80,7 @@
    32
   ],
   "default": "中国大陆",
-  "overrides": 155
+  "overrides": 151
  },
  "guide": {
   "questions": [
@@ -6652,7 +6653,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "中国大陆",
+   "region": "通用",
    "refs": [
     [
      1,
@@ -6746,7 +6747,7 @@
    "todo": false,
    "disputed": true,
    "dispute": "争议。支持的一方是 146 项研究的汇总，效果为正但很小。",
-   "region": "中国大陆",
+   "region": "通用",
    "refs": [
     [
      1,
@@ -7174,7 +7175,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "中国大陆",
+   "region": "通用",
    "refs": [
     [
      3,
@@ -7699,7 +7700,7 @@
    "todo": false,
    "disputed": false,
    "dispute": null,
-   "region": "通用",
+   "region": "中国大陆",
    "refs": []
   },
   {

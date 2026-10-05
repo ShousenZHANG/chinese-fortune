@@ -44,7 +44,8 @@ COMMIT = '842e11c9d51fac7943e5abb4e332e29b460b5061'
 SNAPSHOT_DATE = '2026-10-05'
 LICENSE = {
     'text': 'CC BY 4.0', 'text_url': 'https://creativecommons.org/licenses/by/4.0/',
-    'code': 'MIT（检索排序与引用检查的算法移植自其 index.html 与 tools/check-refs.mjs）',
+    'code': 'MIT（检索排序与引用检查的算法移植自其 index.html 与 tools/check-refs.mjs，'
+            '决策流程移植自 skills/life-decision-guide；许可原文见 code_notice）',
     'attribution': '《高性价比人生指南》，eternity4719，https://github.com/eternity4719/HowToLiveBetter',
     'changes': '按提交 842e11c9 冻结并转成 JSON；按产品范围略去 3 条条目和第 6 节导读里转述它们的一段；'
                '其余条目、导读与长文的文字未改动',
@@ -287,6 +288,14 @@ def build(zip_path: Path, check_reviews: bool = True) -> dict:
         readme_raw = archive.read(readme_name)
         files['README.md'] = hashlib.sha256(readme_raw).hexdigest()
         readme = readme_raw.decode('utf-8').replace('\r\n', '\n')
+        # The MIT notice must travel with the ported code (index.html,
+        # tools/, skills/): ship it verbatim.
+        code_license_name = _member(archive, '/LICENSE-CODE')
+        if code_license_name is None:
+            raise ValueError('快照里没有 LICENSE-CODE（代码部分的 MIT 许可）')
+        code_notice = archive.read(code_license_name).decode('utf-8').replace('\r\n', '\n').strip()
+        if not code_notice.startswith('MIT License'):
+            raise ValueError('LICENSE-CODE 不再是 MIT 许可：先复核移植代码能否继续使用')
 
     sections: list[dict] = []
     entries: list[dict] = []
@@ -317,7 +326,8 @@ def build(zip_path: Path, check_reviews: bool = True) -> dict:
     articles = [{'id': ARTICLES[base][0], 'path': 'docs/' + base, 'title': _doc_title(base, text),
                  'region': ARTICLES[base][1], 'text': text} for base, text in sorted(docs.items())]
     _attach_article_refs(books, docs, articles)
-    problems = []
+    guide = _guide(readme)
+    problems = _check_trace('README', json.dumps(guide, ensure_ascii=False), excluded_titles)
     for e in entries:
         problems += _check_trace(e['title'], e['title'] + '\n' + '\n'.join(e['fields'].values()), excluded_titles)
     for s in sections:
@@ -332,13 +342,14 @@ def build(zip_path: Path, check_reviews: bool = True) -> dict:
         'purpose': '现实参考资料库：除按产品范围略去的 3 条外完整收录。术数回答之后单独成段，'
                    '或回答人生决策问题；不参与择日、配色等术数排序。',
         'source': {'repo': REPO, 'commit': COMMIT, 'snapshot_date': SNAPSHOT_DATE,
-                   'license': LICENSE['text'], 'license_detail': LICENSE, 'files': files},
+                   'license': LICENSE['text'], 'license_detail': {**LICENSE, 'code_notice': code_notice},
+                   'files': files},
         'coverage': {'entries': len(entries), 'excluded': len(EXCLUDED), 'sections': len(sections),
                      'articles': len(articles)},
         'region_policy': {'universal_sections': sorted(UNIVERSAL_SECTIONS),
                           'abroad_sections': sorted(ABROAD_SECTIONS),
                           'default': '中国大陆', 'overrides': len(REGION)},
-        'guide': _guide(readme),
+        'guide': guide,
         'sections': sections,
         'articles': articles,
         'entries': entries,

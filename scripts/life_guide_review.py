@@ -9,7 +9,9 @@ Rule: 通用 when the advice rests on research or physical fact, even with
 Chinese statistics as background; 中国大陆 when its argument cites a Chinese
 rule, institution, platform, hotline or price rule (按规定, 交强险限额, 七日无理由,
 12356, 120, 国内说明书的剂量, SC 编号). A passing mention the argument does not
-rest on (国内在卖的戒烟药, 去县级残联问) does not count.
+rest on (国内在卖的戒烟药, 去县级残联问) does not count: 3:18 is 中国大陆 because
+calling 12356 is the advice itself, while 3:22, 3:24 and 4:13 only point to it in
+their 备注 and stay 通用. 5:11 (延保) rests on the national 三包 rule: 中国大陆.
 """
 
 REGION: dict[str, str] = {
@@ -45,10 +47,6 @@ REGION: dict[str, str] = {
     '买预包装、有 SC 编号的食用油，不买小作坊散装自榨花生油': '中国大陆',  # 2:40
     '情绪低落时先做性价比最高的几件事：动起来、晒太阳、按时睡、找人说、打 12356': '中国大陆',  # 3:18
     '把警察、医生、柜员当成按规则上班的人，别当成角色：能推动事情的是文书和期限，不是情绪': '中国大陆',  # 3:19
-    '把「别人要求我做到完美」当症状看，不当事实看': '中国大陆',  # 3:22
-    '心里压着一件事，可以连着几天把想法和感受写下来，但别指望它治病': '中国大陆',  # 3:24
-    '拖延已经影响生活的，用有随机试验支持的自助材料，不用非找治疗师': '中国大陆',  # 4:13
-    '拒绝电子产品的延长保修（延保）': '通用',  # 5:11
     '不频繁交易股票，行情暴涨暴跌的时候更要少动手': '通用',  # 5:15
     '用宽基指数基金替代主动管理基金作为长期底仓（长期拿着不动的那部分钱）': '通用',  # 5:17
     '同类基金优先选费率低的': '通用',  # 5:18

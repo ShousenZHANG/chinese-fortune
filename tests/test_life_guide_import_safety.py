@@ -25,6 +25,7 @@ README = '\n'.join([
     '## 性价比档', '', '不同口径之间不做比较。', '',
     '## 读懂数字（术语表）', '', '| 术语 | 意思 |', '| --- | --- |', '| HR | 风险比 |', '',
     '## 目录', '', '略', ''])
+MIT = 'MIT License\n\nCopyright (c) 2026 eternity4719\n\nPermission is hereby granted...\n'
 SIX_INTRO = '本节收的是看起来有效的东西。\n\n**保健品和补剂**：第 1 条。\n\n**花钱买运气和心情**：第 15 条，第 22 条。\n\n'
 SIX_ENTRIES = [(1, '普通一条'), (14, '第十四条'), (15, '不要花钱算命的一条'), (16, '第十六条'), (20, '第二十条'),
                (21, '第二十一条'), (22, '不要为了转运买东西'), (23, '第二十三条'), (24, '第二十四条'), (25, '第二十五条')]
@@ -43,7 +44,7 @@ def _files(six: str | None = None, extra29: str = '') -> dict[str, str]:
 
 
 def _zip(tmp_path, files: dict[str, str], comment: str = COMMIT, articles: dict[str, str] | None = None,
-         readme: str | None = README):
+         readme: str | None = README, code_license: str | None = MIT):
     path = tmp_path / 'hltb.zip'
     docs = {base: f'# {base[:-3]}\n\n正文。\n' for base in ARTICLES} if articles is None else articles
     with zipfile.ZipFile(path, 'w') as archive:
@@ -54,6 +55,8 @@ def _zip(tmp_path, files: dict[str, str], comment: str = COMMIT, articles: dict[
             archive.writestr(f'HowToLiveBetter-main/docs/{base}', text)
         if readme is not None:
             archive.writestr('HowToLiveBetter-main/README.md', readme)
+        if code_license is not None:
+            archive.writestr('HowToLiveBetter-main/LICENSE-CODE', code_license)
     return path
 
 
@@ -98,6 +101,25 @@ def test_a_missing_or_unreviewed_long_article_is_refused(tmp_path):
 def test_a_snapshot_without_the_readme_is_refused(tmp_path):
     with pytest.raises(ValueError, match='README'):
         _build(tmp_path, files=_files(), readme=None)
+
+
+def test_the_mit_notice_of_the_ported_code_ships_with_the_data(tmp_path):
+    detail = _build(tmp_path, files=_files())['source']['license_detail']
+    assert detail['code_notice'].startswith('MIT License')
+    assert 'eternity4719' in detail['code_notice']
+    assert detail['text'] == 'CC BY 4.0' and detail['text_url'].startswith('https://creativecommons.org/')
+
+
+@pytest.mark.parametrize('code_license, message', [(None, 'LICENSE-CODE'), ('Apache License 2.0\n', '不再是 MIT')])
+def test_a_snapshot_without_the_mit_code_license_is_refused(tmp_path, code_license, message):
+    with pytest.raises(ValueError, match=message):
+        _build(tmp_path, files=_files(), code_license=code_license)
+
+
+def test_the_readme_texts_go_through_the_same_checks(tmp_path):
+    readme = README.replace('| HR | 风险比 |', '| HR | 风险比，和算命无关 |')
+    with pytest.raises(ValueError, match='README 含「算命」'):
+        _build(tmp_path, files=_files(), readme=readme)
 
 
 def test_the_long_articles_go_through_the_same_checks(tmp_path):

@@ -114,6 +114,7 @@ def library_source() -> dict:
     source = _data()['source']
     detail = source.get('license_detail') or {}
     return {**{k: source[k] for k in ('repo', 'commit', 'snapshot_date', 'license')},
+            'license_url': detail.get('text_url'), 'code_license': detail.get('code'),
             'attribution': detail.get('attribution'), 'changes': detail.get('changes')}
 
 
