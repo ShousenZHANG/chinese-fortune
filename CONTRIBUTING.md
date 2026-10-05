@@ -14,9 +14,9 @@
 
 现实参考库《高性价比人生指南》（`assets/life_guide.json`）的政策条目会过期，每季度换到上游新提交重新导入一次：
 
-1. 下载新提交的 codeload ZIP，把 `scripts/import_life_guide.py` 里的 `COMMIT` 和 `SNAPSHOT_DATE` 改成新值，运行 `python scripts/import_life_guide.py --zip <zip>`。
+1. 下载新提交的 codeload ZIP，把 `scripts/import_life_guide.py` 里的 `COMMIT` 和 `SNAPSHOT_DATE` 改成新值，运行 `python scripts/import_life_guide.py --zip <zip>`。核对许可：正文现为 CC BY 4.0、代码 MIT，变了要同步 `LICENSE` 字典和署名。
 2. 导入失败时逐条处理：排除清单编号对不上、保留条目提到算命一类的词、引用了被排除条目（整节、条号、列举、区间或标题），都要人工审定后再记进脚本，不能放宽检查。
-3. 对比新旧 JSON：新增或改动的条目逐条审定地区（`REGION_OVERRIDES`），重看 `scripts/life_guide.py` 的场景映射与只适合部分问法的条目，TODO 条目不附。
+3. 对比新旧 JSON：新增或改动的条目逐条审定地区（`scripts/life_guide_review.py`，按标题记录；书里改了标题的，导入会报「审定数据里的标题在快照中找不到」），新增长文在 `ARTICLES` 里定编号和地区；上游插条会让编号整体顺延，重看 `scripts/life_guide.py` 的场景映射（`test_life_guide.py` 核对映射条目的标题）与只适合部分问法的条目，TODO 条目不附。
 4. 在 `docs/核实记录/` 留一份记录，照常跑全套测试和独立复核后发布。
 
 可选解梦、姓名和生肖材料不得恢复无出处的人生断语。神煞只保留起法命中，不凭单一标签断吉凶。
