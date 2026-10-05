@@ -323,3 +323,15 @@ def test_a_what_first_question_brings_the_articles_own_first_steps():
 def test_dates_and_time_words_are_not_topics():
     assert ls.pieces('2026年10月8日被裁了，第一步做什么') == ['被裁']
     assert ls.pieces('我明天签租房合同，押金要注意什么') == ['签租房合同', '押金']
+
+
+def test_rows_are_chosen_within_each_lens_not_across():
+    """A tier in one 口径 never decides which rows of another get in."""
+    from life_decision import _pick
+    def row(lens, ratio, relevance, n):
+        return ({'lens': lens, 'ratio': ratio, 'grade': 'A', 'section': 1, 'number': n}, 'partial', relevance)
+    rows = [row('换钱', '极高', 10, n) for n in range(1, 8)] + [row('换寿命', '一般', 10, 20)]
+    picked = _pick(rows, 7)
+    assert any(r[0]['lens'] == '换寿命' for r in picked)       # not crowded out by 7 极高 in 换钱
+    lenses = [r[0]['lens'] for r in picked]
+    assert lenses == sorted(lenses, key=lenses.index)           # each 口径's rows together

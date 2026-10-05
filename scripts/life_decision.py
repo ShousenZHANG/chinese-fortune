@@ -239,9 +239,7 @@ def decide(data: dict, question: str, payload: dict | None = None, limit: int = 
     candidates = hits[:20]
     do = [r for r in candidates if r[0]['section'] != DONT_SECTION]
     dont = [r for r in candidates if r[0]['section'] == DONT_SECTION]
-    best = max((r[2] for r in do), default=0)
-    do.sort(key=lambda r: (0 if r[2] >= 0.75 * best else 1, *ls.rank_key(r[0], r[2])))
-    chosen = do[:limit]
+    chosen = _pick(do, limit)
     by_lens: dict[str, list[dict]] = {}
     for e, _, _ in chosen:
         by_lens.setdefault(e['lens'], []).append(_row(e, index, region))
@@ -262,6 +260,30 @@ def decide(data: dict, question: str, payload: dict | None = None, limit: int = 
     texts = [r['fields']['说人话'] + r['fields']['收益'] for g in result['do'] for r in g['entries']]
     result['terms'] = ls.glossary_terms(data['guide']['glossary'], texts)
     return result
+
+
+def _pick(rows: list[tuple[dict, str, float]], limit: int) -> list[tuple[dict, str, float]]:
+    """Up to ``limit`` rows, chosen within each 口径 and never across them.
+
+    Inside a 口径: fit first in two bands, then the book's tier and grade. The
+    口径 take turns, best fit first, so a 极高 in 换钱 never pushes out the
+    best-fitting 换寿命 row (「总死亡率降 12%」 and 「每年省 500 元」 are not on one scale).
+    """
+    best = max((r[2] for r in rows), default=0)
+
+    def band(r: tuple[dict, str, float]) -> int:
+        return 0 if r[2] >= 0.75 * best else 1
+    lenses: dict[str, list[tuple[dict, str, float]]] = {}
+    for r in sorted(rows, key=lambda r: (band(r), *ls.rank_key(r[0], r[2]))):
+        lenses.setdefault(r[0]['lens'], []).append(r)
+    order = sorted(lenses, key=lambda lens: (band(lenses[lens][0]), -max(r[2] for r in lenses[lens])))
+    chosen: list[tuple[dict, str, float]] = []
+    while len(chosen) < limit and any(lenses[lens] for lens in order):
+        for lens in order:
+            if lenses[lens] and len(chosen) < limit:
+                chosen.append(lenses[lens].pop(0))
+    # Rows of one 口径 stay together, in that 口径's own order.
+    return sorted(chosen, key=lambda r: order.index(r[0]['lens']))
 
 
 def _first_steps(text: str, limit: int = 3) -> dict | None:
