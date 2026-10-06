@@ -187,6 +187,11 @@ def main(argv: list[str] | None = None) -> int:
                                   '--current-timezone', 'Australia/Sydney', '--question', '我穿什么颜色旺我'], work))
         assert colours['colour_advice']['status'] == 'ok' and colours['colour_advice']['wear']
         assert colours['colour_advice']['chart_conditions_checked'] is False and 'avoid' not in colours['colour_advice']
+        luck = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/bazi_reading.py'),
+                               '--year', '1997', '--month', '12', '--day', '24', '--hour', '19', '--minute', '30',
+                               '--gender', 'male', '--timezone', 'Asia/Shanghai', '--longitude', '120',
+                               '--as-of-year', '2026', '--question', '我这几年运势怎么样'], work))
+        assert luck['luck_reading'][0]['status'] == 'assessed' and luck['luck_reading'][0]['luck']['ganzhi'] == '己酉'
         # 5.3 flows: a real-life decision, a stop, a dated how-question, the mainland trial limit.
         life = [str(python), '-X', 'utf8', str(skill / 'scripts/life_guide.py')]
         decided = json.loads(run([*life, '--decide', '失业了先做什么', '--current-timezone', 'Asia/Shanghai'], work))

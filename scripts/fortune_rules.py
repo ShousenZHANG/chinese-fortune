@@ -15,7 +15,7 @@ SCENARIOS = {
     # ranking: 'not_implemented' | 'rule_based' —— 事项本身的日级条款（天地转杀、协纪忌日）
     # 是否已实现。个人吉凶（协纪卷三十三相主，按出生年干支）对 selection 与 period 都已实现，
     # 由 capabilities() 另行声明；层级见 references/26-precedence.md，不含自造权重。
-    'outlook': ('阶段运势', 'period', '个人日子吉凶按协纪相主（出生年干支）已实现；大运流年与原局喜忌的合参只有两条运程例式', 'not_implemented'),
+    'outlook': ('阶段运势', 'period', '个人日子吉凶按协纪相主（出生年干支）已实现；大运按《子平真诠》正官、财、伤官三章取运给十年一个喜忌（其余五格未接），与逐日分开；流年未做', 'not_implemented'),
     'interview': ('面试', 'selection', '个人日子吉凶按相主已实现；现代面试与古法事项的映射未核，没有事项本身的日级条款', 'not_implemented'),
     'work_conversation': ('工作沟通、谈薪、转岗', 'selection', '个人日子吉凶按相主已实现；本事项没有核过的日级条款', 'not_implemented'),
     'exam': ('学习考试', 'selection', '个人日子吉凶按相主已实现；赴举与现代考试的适用差别未核', 'not_implemented'),

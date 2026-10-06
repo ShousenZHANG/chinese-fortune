@@ -1328,7 +1328,7 @@ def render_answer(result: dict) -> str:
         source = result['evidence']['principle'][0]
         if quote not in source['text']:
             raise ValueError('引文与冻结原文不一致')
-        lines.append('《子平真诠·论行运》：“' + quote + '”\n白话说，要看一段运程怎样作用于一个人，得把这段运程和他的整张出生盘一起分析。本次已经算出相关盘面，但已实现的两条运程例式没有给出本题的完整结论。\n出处：' + source['source_url'])
+        lines.append('《子平真诠·论行运》：“' + quote + '”\n白话说，要看一段运程怎样作用于一个人，得把这段运程和本人的整张出生盘一起分析。本次已经算出相关盘面，但已实现的两条运程例式没有给出本题的完整结论。\n出处：' + source['source_url'])
     missing = [b['message'] for b in result['decision_blockers'] if b['code'] == 'event_longitude_required']
     lines.extend(dict.fromkeys(missing))
     if state in RESEARCH_STATES:
