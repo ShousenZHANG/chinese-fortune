@@ -207,3 +207,13 @@ def test_a_chart_question_about_the_coming_years_gets_this_and_the_next_cycle():
     assert [r['luck']['ganzhi'] for r in result['luck_reading']] == ['己酉', '戊申']
     assert '你现在走的己酉运' in render_facts(result)
     assert 'luck_reading' not in prepare_reading(chart, '我适合做什么工作')
+
+
+@pytest.mark.parametrize('scenario_id,words', [
+    ('officer-wealth', '運喜印綬身旺之地'), ('officer-hurt-seal', '運喜官旺印旺之鄉'),
+    ('wealth-officer', '運喜身旺印緩'), ('wealth-kill', '運喜食傷身旺之方'),
+])
+def test_a_phrase_that_names_two_kinds_is_quoted_whole(scenario_id, words):
+    """「運喜身旺印緩」 is one phrase: quoting 「印緩」 alone reads as nothing."""
+    scenario = next(s for s in _scenarios() if s['id'] == scenario_id)
+    assert words in [e['words'] for e in scenario['effects']]

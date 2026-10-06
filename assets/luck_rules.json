@@ -148,18 +148,12 @@
       {
        "roles": [
         "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "運喜印綬"
-      },
-      {
-       "roles": [
+        "偏印",
         "比肩",
         "劫财"
        ],
        "verdict": "favoured",
-       "words": "身旺之地"
+       "words": "運喜印綬身旺之地"
       },
       {
        "roles": [
@@ -288,18 +282,12 @@
      "effects": [
       {
        "roles": [
-        "正官"
-       ],
-       "verdict": "favoured",
-       "words": "官旺"
-      },
-      {
-       "roles": [
+        "正官",
         "正印",
         "偏印"
        ],
        "verdict": "favoured",
-       "words": "印旺之鄉"
+       "words": "運喜官旺印旺之鄉"
       },
       {
        "roles": [
@@ -490,18 +478,12 @@
       {
        "roles": [
         "比肩",
-        "劫财"
-       ],
-       "verdict": "favoured",
-       "words": "身旺"
-      },
-      {
-       "roles": [
+        "劫财",
         "正印",
         "偏印"
        ],
        "verdict": "favoured",
-       "words": "印緩"
+       "words": "運喜身旺印緩"
       },
       {
        "roles": [
@@ -845,18 +827,12 @@
       {
        "roles": [
         "食神",
-        "伤官"
-       ],
-       "verdict": "favoured",
-       "words": "運喜食傷"
-      },
-      {
-       "roles": [
+        "伤官",
         "比肩",
         "劫财"
        ],
        "verdict": "favoured",
-       "words": "身旺之方"
+       "words": "運喜食傷身旺之方"
       }
      ]
     },
