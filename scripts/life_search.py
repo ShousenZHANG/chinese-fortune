@@ -65,9 +65,15 @@ def pieces(query: str) -> list[str]:
     return found
 
 
-def book_words(keys: list[str]) -> list[str]:
-    """The book's own word where everyday speech uses another (发烧 → 体温)."""
+# A kind of insurance: 「火灾险」 asks about the policy, not about fires.
+INSURANCE = re.compile(r'(?:火灾|意外|重疾|医疗|寿|车|财产|家财|旅行|旅游|养老|失业|定期|终身|责任|雇主)险|保险')
+
+
+def book_words(keys: list[str], query: str = '') -> list[str]:
+    """The book's own word where everyday speech uses another (发烧 → 体温; 火灾险 → 保险)."""
     extra: list[str] = []
+    if any(INSURANCE.search(k) for k in keys):
+        extra += [] if '保险' in keys else ['保险']
     for word, words in SAME_MEANING.items():
         if any(word in k for k in keys):
             extra += [w for w in words if w not in keys and w not in extra]
@@ -172,11 +178,13 @@ def search(entries: Iterable[dict], query: str = '', filters: dict | None = None
         rows = [(e, 'all', score(e, terms)) for e in pool if all(t in hay(e) for t in terms)]
         if not rows:
             keys = pieces(query)
-            extra = book_words(keys)
+            extra = book_words(keys, query)
             weight = _rarity(pool, keys + extra)
             # An entry fits when it holds at least half of some topic piece, or
             # the book's own word for it: a lone 「土豆」 in 「火星上种土豆」 does not.
-            fits = [e for e in pool if any(coverage(e, k) >= 0.5 for k in keys) or any(w in hay(e) for w in extra)]
+            # An insurance piece fits only an entry about insurance (「火灾险」 is not 「火灾」).
+            fits = [e for e in pool if any(coverage(e, k) >= 0.5 and (not INSURANCE.search(k) or '险' in hay(e))
+                                           for k in keys) or any(w in hay(e) for w in extra)]
             scored = [(e, 'partial', score(e, keys, weight, extra)) for e in fits] if keys else []
             best = max((s for _, _, s in scored), default=0)
             # Keep the strong part: at least half the best score, or the book's
