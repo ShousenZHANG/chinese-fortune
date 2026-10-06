@@ -332,9 +332,9 @@ def test_the_answer_says_the_year_first_and_calls_no_day_good():
     assert lead.startswith('按你出生那年的干支（丁丑）看，这段时间没有对你好的日子：这一年（丁未）冲你的生年')
     assert '太岁冲命最凶' in lead and '换哪天都避不开' in lead
     assert '大吉' not in lead and '3月29日（丁未，天比地冲）本身也冲你' in lead
-    # Layer 2 keeps the day pillar as a part, said as such.
-    assert '3月31日（己酉）：凶（只看日柱是大吉，被年、月或时辰拉低）' in text
-    assert text.count('这一年（丁未）：凶') == 1
+    # Layer 2 keeps the day pillar as a part, said as such; the year once.
+    assert '3月31日、4月2日只看日柱是大吉，被年、月拉低到凶' in text
+    assert text.count('这一年（丁未）凶') == 1
 
 
 def test_a_selection_in_a_clashing_year_says_the_day_cannot_avoid_it():

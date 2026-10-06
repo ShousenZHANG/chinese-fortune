@@ -4,9 +4,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import sys
 from collections.abc import Callable
-from datetime import UTC, datetime, timedelta
+from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -864,6 +865,40 @@ def _entry_contexts(entry: dict) -> list[dict]:
     return [p['days'][0]['context'] if 'days' in p else p.get('context', {}) for p in entry['people']]
 
 
+def _same_day(a: dict, b: dict) -> bool:
+    """Both pieces of a day a 节 splits, saying the same thing."""
+    return bool(a.get('term') and b.get('term') and a.get('date') == b.get('date') and a['grade'] == b['grade']
+                and _labels(_entry_factors(a), a['grade']) == _labels(_entry_factors(b), b['grade'])
+                and _bad_contexts(a) == _bad_contexts(b)
+                and [h['label'] for h in a.get('event_hits', [])] == [h['label'] for h in b.get('event_hits', [])])
+
+
+def _merged(entries: list[dict]) -> list[dict]:
+    """A day a 节 splits in two is said once when both sides say the same."""
+    out: list[dict] = []
+    for entry in entries:
+        if out and _same_day(out[-1], entry):
+            day = date.fromisoformat(entry['date'])
+            out[-1] = {**out[-1], 'label': f'{day.month}月{day.day}日', 'term': None}
+        else:
+            out.append(entry)
+    return out
+
+
+def _dates(entries: list[dict]) -> str:
+    """「11月4日、9日、12月1日」: the month only where it changes."""
+    parts: list[str] = []
+    month = None
+    for entry in entries:
+        found = re.match(r'(\d+)月(.+)', entry['label'])
+        if found and found.group(1) == month:
+            parts.append(found.group(2))
+        else:
+            parts.append(entry['label'])
+            month = found.group(1) if found else None
+    return '、'.join(parts)
+
+
 def _entry_list(entries: list[dict], limit: int = 6, event: str = '', skip: tuple[str, ...] = (),
                 unit: str = 'day') -> str:
     shown = []
@@ -926,7 +961,7 @@ def _calendar_sentence(result: dict, kind: str) -> str:
     weighs it above the day, and no choice of day inside the period avoids it.
     """
     calendar = result['personal_calendar']
-    entries, people = calendar['entries'], calendar['people']
+    entries, people = _merged(calendar['entries']), calendar['people']
     who = _who(people)
     event = calendar.get('event', '')
     basis = f"按{who}出生那年的干支（{_births(people)}）看"
@@ -1041,25 +1076,95 @@ def _authority_sentence(result: dict) -> str:
             '原文没有专门为它写过。')
 
 
-def _personal_lines(result: dict) -> list[str]:
-    """Layer 2 for 相主: the method in the passage's words, then every graded time.
+METHOD_DETAIL = ('原文把所选时间的年、月、日、时四柱合起来看：「一太歳衝命最凶月次之日又次之時為輕」，'
+                 '天克地冲、天比地冲「年月日時」都忌。禄、贵人、驿马、长生各用一张古表，出处随条列出；吉凶等级按原文用词：'
+                 '天克地冲最凶，冲命按方向分凶与略轻（太岁冲命一律为凶，时辰的冲为轻），命禄、命贵人、食禄最吉，合官贵、合财富，'
+                 '其余为吉；吉的条目只看日柱，年、月的吉条目列出但不计。原文的例子是修造（以宅长之命为主）和安葬（以亡命为主），'
+                 '天克地冲、天比地冲写明是选择家对一切用事的通忌。')
 
-    Each year and month is described once, before the first day in it; a
-    day's line then gives its own factors and, when the year, month or hour
-    changes the verdict, what the day pillar alone would have been.
+
+def _clause(plain: str) -> str:
+    """What 协纪 says of a factor: the clause of its plain text that names the book."""
+    return next((c for c in plain.split('，') if c.startswith('协纪')), plain)
+
+
+def _grouped_lines(calendar: dict, entries: list[dict], quoted: set[str], detail: bool) -> list[str]:
+    """A period of days, said by grade: each reason once with its days, each passage once.
+
+    Without ``detail`` the reasons are those of the days the answer turns on
+    (the best grade and the bad ones); the packet keeps every day's factors.
+    """
+    lines: list[str] = []
+    days = [(e, e['people'][0]['days'][0]) for e in entries]
+    contexts: dict[tuple[str, str], tuple[str, str]] = {}
+    for _, assessed in days:
+        for key in ('year', 'month'):
+            context = assessed.get('context', {}).get(key)
+            if context:
+                labels = _labels([context['factors']], context['grade'], unit=key)
+                contexts.setdefault((key, context['ganzhi']), (context['grade'], labels))
+    if contexts:
+        lines.append('；'.join(f"{'这一年' if key == 'year' else '这个月'}（{ganzhi}）{grade}" + (f"，{labels}" if labels else '')
+                              for (key, ganzhi), (grade, labels) in contexts.items()) + '。')
+    order = ('大吉', '吉', '小凶', '凶', '大凶')
+    graded = [(g, [e for e in entries if e['grade'] == g]) for g in order]
+    lines.append('逐日：' + '；'.join(f'{g} {_dates(es)}' for g, es in graded if es)
+                 + ('；其余是平' if any(e['grade'] == '平' for e in entries) else '') + '。')
+    # A day whose own pillar is better than its grade: the year or month pulled it down.
+    lowered: dict[tuple[str, str], list[dict]] = {}
+    for entry, assessed in days:
+        if assessed.get('pillar_grade', entry['grade']) != entry['grade']:
+            lowered.setdefault((assessed['pillar_grade'], entry['grade']), []).append(entry)
+    lines += [f"{_dates(es)}只看日柱是{pillar}，被年、月拉低到{grade}。" for (pillar, grade), es in lowered.items()]
+    best = next((g for g, es in graded if es), '平')
+    keep = entries if detail else [e for e in entries if e['grade'] in (best, '小凶', '凶', '大凶')]
+    reasons: dict[str, tuple[dict, list[dict]]] = {}
+    for entry, assessed in days:
+        if entry not in keep:
+            continue
+        # The day's own pillar: a year's or month's factor is said once in the line above.
+        factors = [f for f in assessed['factors'] if f.get('pillar', 'day') not in ('year', 'month')]
+        for factor in factors:
+            if factor['polarity'] == ('bad' if entry['grade'] in BAD_GRADES else 'good'):
+                group = reasons.setdefault(factor['label'], (factor, []))[1]
+                if entry not in group:
+                    group.append(entry)
+    for label, (factor, members) in reasons.items():
+        line = f"{label}：{_dates(members)}（{_clause(factor['plain'])}）。"
+        if factor['quote'] not in quoted:
+            quoted.add(factor['quote'])
+            line += f"原文「{factor['quote']}」（{factor['passage_id']}）。"
+        lines.append(line)
+    hits: dict[str, list[tuple[dict, dict]]] = {}
+    for entry in entries:
+        for hit in entry.get('event_hits', []):
+            hits.setdefault(hit['label'], []).append((entry, hit))
+    for label, pairs in hits.items():
+        hit = pairs[0][1]
+        if 'sources' in hit:
+            binding = hit['sources'][-1]
+            source = (f"所忌作「……{hit['quote']}……」（{hit['passage_id']}），"
+                      f"遇到吉神也照样忌（{binding['passage_id']}）")
+        else:
+            source = f"{hit['plain']}（{hit['passage_id']}）"
+        lines.append(f"{calendar['event']}避开{label}：{_dates([e for e, _ in pairs])}。{source}。")
+    return lines
+
+
+def _personal_lines(result: dict, detail: bool = False) -> list[str]:
+    """Layer 2 for 相主: the method in a sentence, then the graded times.
+
+    A few days are said one by one: each year and month once, before the first
+    day in it, then each day's own factors. A longer period is said by grade
+    (``_grouped_lines``). ``detail`` adds the grading rules in full.
     """
     calendar = result.get('personal_calendar') or {}
     ranking = result.get('ranking', {})
     if not calendar.get('entries') and not ranking.get('personal_participant_ids'):
         return []
-    lines = ['择日看人，《协纪辨方书》卷三十三说「從來皆論生年不論生日有論生日者非古法也」'
-             f'（{XIANGZHU_PASSAGE}）。白话说，挑日子看的是出生那一年的干支，不是日主。'
-             '原文把所选时间的年、月、日、时四柱合起来看：「一太歳衝命最凶月次之日又次之時為輕」，'
-             '天克地冲、天比地冲「年月日時」都忌；所以年或月冲你，挑哪天都避不开，这里照实算进每一天。'
-             '禄、贵人、驿马、长生各用一张古表，出处随条列出；吉凶等级按原文用词：天克地冲最凶，'
-             '冲命按方向分凶与略轻（太岁冲命一律为凶，时辰的冲为轻），命禄、命贵人、食禄最吉，合官贵、合财富，其余为吉；'
-             '吉的条目只看日柱，年、月的吉条目列出但不计。'
-             '原文的例子是修造（以宅长之命为主）和安葬（以亡命为主），天克地冲、天比地冲写明是选择家对一切用事的通忌。'
+    lines = ['择日看人，《协纪辨方书》卷三十三说「從來皆論生年不論生日」'
+             f'（{XIANGZHU_PASSAGE}）。白话说，挑日子看的是出生那一年的干支，不是日主；年或月冲你，挑哪天都避不开。'
+             + (METHOD_DETAIL if detail else '')
              + _authority_sentence(result) + '原文另讲的「补龙扶山」看房屋坐山，没有实现。']
     quoted: set[str] = set()
     said: set[tuple[str, str, str]] = set()
@@ -1085,7 +1190,9 @@ def _personal_lines(result: dict) -> list[str]:
         if assessed.get('pillar_grade', grade) != grade:
             grade += f"（只看{unit}柱是{assessed['pillar_grade']}，被{'年、月或时辰' if unit == '日' else '年'}拉低）"
         lines.append(_factor_lines(head, grade, own, quoted))
-    entries = calendar.get('entries', [])
+    entries = _merged(calendar.get('entries', []))
+    if calendar.get('unit') == 'day' and len(entries) > 3 and len(set(ids)) == 1 and len(ids) == 1:
+        return list(dict.fromkeys(lines + _grouped_lines(calendar, entries, quoted, detail)))
     if len(entries) > 31:
         # A long list keeps what the answer turns on: the best days and the days to avoid.
         order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
@@ -1251,8 +1358,11 @@ def _life_lines(result: dict) -> list[str]:
     return ['\n'.join(rows)]
 
 
-def render_answer(result: dict) -> str:
-    """Render the same conclusion packet consumed by the host, in everyday Chinese."""
+def render_answer(result: dict, detail: bool = False) -> str:
+    """Render the same conclusion packet consumed by the host, in everyday Chinese.
+
+    ``detail`` adds the full grading method and every day's reasons.
+    """
     if result.get('capability', {}).get('route') == 'itinerary':
         from fortune_itinerary import render_itinerary
         return render_itinerary(result)
@@ -1309,7 +1419,7 @@ def render_answer(result: dict) -> str:
                 both = '；'.join(f"《{BOOK_NAMES[r['passage_id'].split(':')[0]]}》作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
                 spans = '、'.join(_hour_span(h) for h in group)
                 lines.append(f"{label}忌时两说并列：{both}。白话说，{row['candidate_id']} 覆盖到的 {spans} 只在其中一本书里算忌时，两本书指向不同时间，目前无法据此定下这段能不能用。")
-    lines.extend(_personal_lines(result))
+    lines.extend(_personal_lines(result, detail))
     for person in result['participants']:
         if person.get('time_note'):
             lines.append(person['time_note'] + '。')
@@ -1349,6 +1459,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--stdin', action='store_true', required=True)
     parser.add_argument('--markdown', action='store_true', help='输出白话事实说明；不代替补查后的完整解读')
     parser.add_argument('--data-dir', type=Path)
+    parser.add_argument('--detail', action='store_true', help='附完整相主评级说明和每天的理由')
     args = parser.parse_args(argv)
     try:
         result = read_request(json.load(sys.stdin), data_dir=args.data_dir)
@@ -1363,7 +1474,7 @@ def main(argv: list[str] | None = None) -> int:
     # defect. Inside the try above, a renderer KeyError once came out as
     # 「目前还算不了这一部分」 on a request that had been answered.
     if args.markdown:
-        print(render_answer(result))
+        print(render_answer(result, detail=args.detail))
     else:
         json_print(result)
     return 0

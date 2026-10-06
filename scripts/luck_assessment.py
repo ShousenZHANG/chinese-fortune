@@ -106,8 +106,9 @@ def _summarise(definite: list[list[str]], conditional: list[list[str]]) -> str:
 def _years(luck: dict) -> tuple[int | None, int | None]:
     if 'start_year' in luck:
         return luck.get('start_year'), luck.get('end_year')
-    start, end = luck.get('start'), luck.get('end')
-    return (int(start[:4]) if start else None, int(end[:4]) if end else None)
+    # An ISO end is when the next cycle starts; da_yun counts the cycle as start + 9.
+    start = int(luck['start'][:4]) if luck.get('start') else None
+    return start, (start + 9 if start is not None else None)
 
 
 def _unavailable(reason: str, luck: dict) -> dict:
