@@ -199,3 +199,52 @@ def _notes(chart: dict, reading: dict, registry: dict) -> list[dict]:
         if weight:
             notes.append(_note(registry, 'N4', f'这步运的地支按上面的说法{weight}'))
     return notes
+
+
+WORD = {'favoured': '喜', 'avoided': '忌', 'harmless': '不碍', 'unpromising': '未见其美'}
+
+
+def _part(reading: dict, part: str) -> str:
+    """One sentence about the cycle's stem or branch across the candidate 配法."""
+    scenarios = reading['scenarios']
+    first = scenarios[0][part]
+    label = f"「{first['char']}」（{first['role']}" + (f"，按{first['via']}）" if part == 'branch' else '）')
+    summary = reading['summary'][part]
+    quotes = '、'.join(dict.fromkeys(f"「{v['words']}」" for s in scenarios for v in s[part]['verdicts']
+                                    if v['state'] == 'met'))
+    if summary in WORD:
+        lead = '几种可能的配法都算' if len(scenarios) > 1 else '算'
+        return f"对{label}{lead}{WORD[summary]}（{quotes}）"
+    if summary == 'mixed':
+        each = '；'.join(f"{s['title']}算{WORD[v['verdict']]}「{v['words']}」" for s in scenarios
+                        for v in s[part]['verdicts'] if v['state'] == 'met')
+        return f"对{label}几种配法说法不一：{each}"
+    if summary == 'conditional':
+        each = '；'.join(f"{s['title']}在「{v['condition']}」时算{WORD[v['verdict']]}「{v['words']}」"
+                        for s in scenarios for v in s[part]['verdicts'] if v['state'] == 'interpretive')
+        return f"对{label}要看条件：{each}，这些条件原文没给可计算的标准，这里没判"
+    return f"对{label}这几种配法的取运句子都没提"
+
+
+def luck_paragraph(reading: dict, who: str = '你') -> str:
+    """Layer 2 of a period or chart answer: one ten-year cycle, cited."""
+    luck = reading['luck']
+    if reading['status'] != 'assessed':
+        return f"这步大运的喜忌这次给不出：{reading['reason']}。"
+    span = f"（{luck['start_year']}–{luck['end_year']}）" if luck.get('start_year') else ''
+    head = f"{who}现在走的{luck['ganzhi']}运{span}。"
+    pending = [f['title'] for f in reading['families'] if not f['connected']]
+    if not reading['scenarios']:
+        connected = [f['title'] for f in reading['families'] if f['connected']]
+        body = (f"按月令{who}的盘是{'、'.join(connected)}格候选，但不属于已接入的配法。" if connected else
+                f"按月令{who}的盘是{'、'.join(pending)}格候选，这一格的取运章还没接入，这步运的喜忌这次不判。")
+        return head + body
+    titles = '、'.join(s['title'] for s in reading['scenarios'])
+    family = '、'.join(dict.fromkeys(f['title'] for f in reading['families'] if f['connected']))
+    text = (head + f"按《子平真诠》{family}取运：{who}的盘按能算的透藏有{len(reading['scenarios'])}种可能的配法——{titles}。"
+            + _part(reading, 'stem') + '；' + _part(reading, 'branch') + '。')
+    text += ''.join(f"{n['text']}（原文「{n['quote']}」，{n['passage_id']}）。" for n in reading.get('notes', []))
+    if pending:
+        text += f"月令另有{'、'.join(pending)}格候选，取运章还没接入。"
+    return text + (f"{who}的盘到底按哪种配法成立，还要看位置和合克，这里没判。"
+                   '这是十年一个说法，不细到每天；逐日吉凶仍按出生年相主。')

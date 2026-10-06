@@ -575,7 +575,7 @@ def luck_paragraph(reading: dict, who: str = '你') -> str:
     text += ''.join(n['text'] + '。' for n in reading.get('notes', []))
     if pending:
         text += f"月令另有{'、'.join(pending)}格候选，取运章还没接入。"
-    return text + (f"{who}的盘到底按哪种配法成立，还要看位置和合克，原文没给可计算的标准。"
+    return text + (f"{who}的盘到底按哪种配法成立，还要看位置和合克，这里没判。"
                    '这是十年一个说法，不细到每天；逐日吉凶仍按出生年相主。')
 ```
 

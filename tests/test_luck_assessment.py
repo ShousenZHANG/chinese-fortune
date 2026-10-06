@@ -156,3 +156,20 @@ def test_a_note_quotes_the_frozen_text_not_a_paraphrase():
     reading = assess_luck(chart, {'ganzhi': '丁巳', 'start_year': 2020, 'end_year': 2029})
     for note in reading['notes']:
         assert note['quote'] in get_passage(note['passage_id'])['text'] and '原文' not in note['text'][:2]
+
+
+def test_the_paragraph_says_the_cycle_the_agreement_and_the_limits():
+    from luck_assessment import luck_paragraph
+    text = luck_paragraph(assess_luck(USER, JI_YOU))
+    assert text.startswith('你现在走的己酉运（2023–2032）')
+    assert '几种可能的配法都算喜' in text and '「印運亦吉」' in text
+    assert '看条件' in text and '按本气辛' in text
+    assert '十年一个说法，不细到每天' in text and '逐日吉凶仍按出生年相主' in text
+
+
+def test_the_paragraph_for_an_unconnected_family_or_missing_hour():
+    from luck_assessment import luck_paragraph
+    seal = assess_luck(_chart('甲子', '丙子', '甲寅', '甲子'), {'ganzhi': '丁丑', 'start_year': 2020, 'end_year': 2029})
+    assert '取运章还没接入' in luck_paragraph(seal)
+    gone = assess_luck(_chart('丁丑', '壬子', '庚子', '丙戌', hour_known=False), JI_YOU)
+    assert luck_paragraph(gone).startswith('这步大运的喜忌这次给不出：出生时辰未知')
