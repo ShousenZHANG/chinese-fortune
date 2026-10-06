@@ -589,7 +589,22 @@ def _liu_nian(args: argparse.Namespace, solar_cls: Any,
     liu_nian: list[dict] = []
     current_time_context = None
     now_year = args.as_of_year
-    if args.current_timezone or args.request_time:
+    if args.request_time and not args.current_timezone:
+        # A replayed absolute instant fixes which year it is without knowing
+        # where the user lives; it is not used for a local date or hour.
+        try:
+            instant = datetime.fromisoformat(args.request_time.replace('Z', '+00:00'))
+        except ValueError as exc:
+            raise _ChartError(error_envelope('bazi', 'invalid_time_context', str(exc))) from exc
+        if instant.tzinfo is None or instant.utcoffset() is None:
+            raise _ChartError(error_envelope('bazi', 'invalid_time_context',
+                                             '--request-time 必须含 Z 或 UTC offset；不接受无时区时刻'))
+        instant = instant.astimezone(UTC)
+        now_year = now_year if now_year is not None else instant.year
+        current_time_context = {'source': 'provided_instant', 'utc': instant.isoformat(), 'local': instant.isoformat(),
+                                'timezone': None, 'year_only': True,
+                                'note': '现居地未给：这个时刻只用来定今年是哪一年（按 UTC），不作当地日期或时辰'}
+    elif args.current_timezone or args.request_time:
         try:
             current_dt, current_time_context = resolve_time(args)
             if now_year is None:
@@ -770,6 +785,7 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
         "liu_nian": liu_nian,
         "current_time_context": current_time_context,
         "liu_nian_status": ('explicit_year' if args.as_of_year is not None else
+                            'instant_year_utc' if (current_time_context or {}).get('year_only') else
                             'current_location_year' if now_year is not None else 'needs_current_timezone'),
         "liu_nian_scope": 'calendar_year_reference_list',
         "liu_nian_note": '按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻',
