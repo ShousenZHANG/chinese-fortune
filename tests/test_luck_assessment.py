@@ -195,3 +195,15 @@ def test_a_period_answer_carries_the_cycle_and_keeps_the_daily_grades():
     assert '已实现的两条运程例式没有给出本题的完整结论' not in text
     assert grades == [e['grade'] for e in read_request(_period('2026-10-06T00:00:00+08:00',
                                                                '2026-10-13T00:00:00+08:00'))['personal_calendar']['entries']]
+
+
+def test_a_chart_question_about_the_coming_years_gets_this_and_the_next_cycle():
+    from bazi_calc import build_parser, calculate_bazi
+    from bazi_reading import prepare_reading, render_facts
+    chart = calculate_bazi(build_parser().parse_args([
+        '--year', '1997', '--month', '12', '--day', '24', '--hour', '19', '--minute', '30',
+        '--gender', 'male', '--as-of-year', '2026']))
+    result = prepare_reading(chart, '我这几年运势怎么样')
+    assert [r['luck']['ganzhi'] for r in result['luck_reading']] == ['己酉', '戊申']
+    assert '你现在走的己酉运' in render_facts(result)
+    assert 'luck_reading' not in prepare_reading(chart, '我适合做什么工作')

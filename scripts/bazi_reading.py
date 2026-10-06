@@ -10,6 +10,7 @@ from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
+from luck_assessment import assess_luck, luck_paragraph
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
     __version__,
@@ -259,6 +260,8 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     claims = _observations(clean, structure)
     extra: dict = {'colour_advice': colour_advice(clean, question)} if asks_colour(question) else {}
+    if any(word in question for word in LUCK_WORDS):
+        extra['luck_reading'] = [assess_luck(clean, cycle) for cycle in _cycles_now(clean)]
     return {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,
@@ -270,6 +273,22 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
                             '调候和岁运问题分别检索对应条款，不把原局规则外推到具体日期'],
             'output_policy': '先白话回答，最多三条主判断；短引文附出处，条件和否定不可省略',
             'boundary': '检索到原文不等于条款适用；透藏位置不等于旺衰或人生吉凶'}
+
+
+# Questions about the coming years: answer with this and the next ten-year cycle.
+LUCK_WORDS = ('大运', '运势', '这几年', '今年', '明年', '这十年', '走什么运', '运程', '行运')
+
+
+def _cycles_now(clean: dict) -> list[dict]:
+    """This and the next ten-year cycle, by the chart's own reference year."""
+    context = clean.get('current_time_context') or {}
+    year = int(context['local'][:4]) if context.get('local') else (
+        (clean.get('liu_nian') or [{}])[0].get('year'))
+    cycles = clean.get('da_yun') or []
+    if not year or not cycles:
+        return []
+    at = next((i for i, c in enumerate(cycles) if c['start_year'] <= year <= c['end_year']), None)
+    return [] if at is None else cycles[at:at + 2]
 
 
 # 十神 names, explained by the relation that defines them (utils.shi_shen).
@@ -364,6 +383,9 @@ def render_facts(result: dict) -> str:
                 if unknown:
                     explanation += '还影响结论的条件：' + '；'.join(unknown) + '。'
             parts.append(route['title'] + '：' + explanation)
+    for index, reading in enumerate(result.get('luck_reading', [])):
+        text = luck_paragraph(reading)
+        parts.append(text if index == 0 else text.replace('你现在走的', '下一步是', 1))
     parts.append('上述检查用于传统原局分析；完整回答还需结合本题核完解释条件。')
     return '\n\n'.join(parts)
 
