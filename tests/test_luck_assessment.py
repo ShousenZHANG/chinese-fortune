@@ -149,3 +149,10 @@ def test_an_officer_cycle_of_hurt_with_a_seal_exposed_seems_bad_but_is_not():
 def test_no_note_when_nothing_clashes():
     reading = assess_luck(USER, JI_YOU)        # 酉 clashes 卯; the user's branches are 丑子子戌
     assert not any(n['id'] == 'N3' for n in reading['notes'])
+
+
+def test_a_note_quotes_the_frozen_text_not_a_paraphrase():
+    chart = _chart('辛亥', '庚子', '丙寅', '戊戌')
+    reading = assess_luck(chart, {'ganzhi': '丁巳', 'start_year': 2020, 'end_year': 2029})
+    for note in reading['notes']:
+        assert note['quote'] in get_passage(note['passage_id'])['text'] and '原文' not in note['text'][:2]

@@ -458,23 +458,23 @@ def _notes(chart: dict, reading: dict, registry: dict) -> list[dict]:
     roles = {r for _, r in exposed}
     officer_exposed = [s for s, r in exposed if r == '正官']
     if 'officer' in connected and officer_exposed and frozenset((branch, pillars['month']['branch'])) in DIZHI_CHONG:
-        notes.append(_note(registry, 'N0', f"官露时原文说「地支刑沖」不利；这步运的{branch}冲你的月支{pillars['month']['branch']}，"
+        notes.append(_note(registry, 'N0', f"官露时，原文把地支刑冲算作不利；这步运的{branch}冲你的月支{pillars['month']['branch']}，"
                                            '原文没写冲哪一支才算，这里只提示，不判', 'conditional'))
     if ('officer' in connected and stem_role in ('正印', '偏印') and any(
             frozenset((o, s)) in TIANGAN_HE for o in officer_exposed for s, _ in exposed if s != o)):
-        notes.append(_note(registry, 'N1', '原文说官逢印运而本命官星被合，是似喜实忌：你的盘里透出的官被另一干合住'))
+        notes.append(_note(registry, 'N1', '这步是印运，看起来对官格是喜；但你的盘里透出的官被另一干合住，原文把这种情况算作似喜实忌'))
     if ('officer' in connected and stem_role == '伤官' and roles & {'正印', '偏印'}) or (
             'wealth' in connected and stem_role == '七杀' and '食神' in roles):
-        notes.append(_note(registry, 'N2', '原文说这种情况似忌实喜：'
-                           + ('官逢伤运而命里透印' if stem_role == '伤官' else '财逢煞运而命里透食')))
+        notes.append(_note(registry, 'N2', ('官格逢伤官运、命里又透印' if stem_role == '伤官' else '财格逢七杀运、命里又透食')
+                           + '，原文把这种情况算作似忌实喜'))
     clashes = [(p, pillars[p]['branch']) for p in PILLARS
                if frozenset((branch, (pillars.get(p) or {}).get('branch'))) in DIZHI_CHONG]
     if clashes:
         parts = [f"冲{PILLAR_NAMES[p]}{b}（{'急' if p in ('year', 'month') else '缓'}）" for p, b in clashes]
-        notes.append(_note(registry, 'N3', f"这步运的{branch}" + '、'.join(parts) + '；原文：冲年月则急，冲时日则缓'))
-        weight = {'favoured': '运本美而逢冲则轻', 'avoided': '运既忌而又冲则重'}.get(reading['summary']['branch'])
+        notes.append(_note(registry, 'N3', f"这步运的{branch}" + '、'.join(parts)))
+        weight = {'favoured': '算喜，逢冲伤得轻', 'avoided': '算忌，逢冲伤得重'}.get(reading['summary']['branch'])
         if weight:
-            notes.append(_note(registry, 'N4', f'这步运的地支按上面的说法{"算喜" if "美" in weight else "算忌"}，原文：{weight}'))
+            notes.append(_note(registry, 'N4', f'这步运的地支按上面的说法{weight}'))
     return notes
 ```
 
