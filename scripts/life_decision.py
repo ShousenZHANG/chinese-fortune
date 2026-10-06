@@ -347,6 +347,21 @@ def _source_line(data: dict) -> str:
             f"{source['snapshot_date']}），正文按 {source['license']} 使用")
 
 
+TERMS_SHOWN = 3
+
+
+def _gist(row: dict, sentences: int = 2) -> str:
+    """The first sentences of 说人话 as the book has them, and where the rest is.
+
+    Cut only at a sentence end, so no number is split or changed.
+    """
+    text = row['fields']['说人话']
+    parts = [p for p in text.split('。') if p]
+    if len(parts) <= sentences:
+        return text
+    return '。'.join(parts[:sentences]) + f"。（全文见{row['citation'].split('（')[0]}）"
+
+
 def render(result: dict) -> str:
     """Layer 2 of the answer: the rows, cited. The host writes the conclusion above it."""
     lines: list[str] = []
@@ -355,19 +370,19 @@ def render(result: dict) -> str:
         # The first action is the first line: nothing above it.
         lines.append(stop['first_action'])
         lines += [f"- {r['citation']}：{r['fields']['说人话']}" for r in stop['entries']]
+    if result['do']:
+        lines.append('先做（每个口径内先看贴合程度，再按性价比和证据等级排）：')
     for group in result['do']:
-        lines.append(f"先做（{group['lens']}；先看贴合程度，再按性价比和证据等级排）：")
+        lines.append(f"{group['lens']}：")
         for r in group['entries']:
             tail = [f"性价比{r['ratio']}", f"证据等级 {r['grade']}", '、'.join(r['costs'])]
             if r.get('region_note'):
                 tail.append(r['region_note'])
             lines.append(f"- {r['title']}——{r['citation']}，{'，'.join(t for t in tail if t)}。")
-            lines.append(f"  {r['fields']['说人话']}")
+            lines.append(f"  {_gist(r)}")
             if r.get('dispute'):
                 lines.append(f"  原书备注：「{r['dispute']}」")
             lines += [f"  {e['note']}" for e in r.get('errata', [])]
-            if r.get('policy_note'):
-                lines.append(f"  {r['policy_note']}")
     if result['dont']:
         lines.append('别做 / 不用做（书里的反面清单）：')
         lines += [f"- {r['title']}——{r['citation']}，证据等级 {r['grade']}。" for r in result['dont']]
@@ -384,8 +399,15 @@ def render(result: dict) -> str:
     elif result.get('uncovered'):
         lines.append('书里没写：' + '、'.join(f'「{p}」' for p in result['uncovered'])
                      + '这部分本库没有对得上的条目，上面的条目只管其余部分；这部分只能给常识判断并标明。')
+    dated = [r['citation'].split('（')[0] for g in result['do'] for r in g['entries'] if r.get('policy_note')]
+    if dated:
+        # Said once for every row it concerns, not after each.
+        lines.append(f"{'、'.join(dated)}：{POLICY_NOTE}")
     lines += result['notes']
-    if result['terms']:
-        lines.append('术语：' + '；'.join(f"{t['term']}——{t['meaning']}" for t in result['terms']))
+    shown = '\n'.join(lines)
+    terms = [t for t in result['terms'] if t['term'] in shown][:TERMS_SHOWN]
+    if terms:
+        # Only the terms the draft itself uses; the packet keeps them all.
+        lines.append('术语：' + '；'.join(f"{t['term']}——{t['meaning']}" for t in terms))
     lines.append(result['source'])
     return '\n'.join(lines)
