@@ -265,7 +265,7 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
         extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
                                  [{'status': 'unavailable', 'luck': {'ganzhi': None},
                                    'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
-    return {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
+    result = {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,
             'reading_support': {'schema_version': '1.0', 'claims': claims,
@@ -276,6 +276,9 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
                             '调候和岁运问题分别检索对应条款，不把原局规则外推到具体日期'],
             'output_policy': '先白话回答，最多三条主判断；短引文附出处，条件和否定不可省略',
             'boundary': '检索到原文不等于条款适用；透藏位置不等于旺衰或人生吉凶'}
+    # Most hosts read the JSON, not the Markdown draft: the notes travel in both.
+    result['host_notes'] = host_notes(result)
+    return result
 
 
 # Questions about the coming years: answer with this and the next ten-year cycle.
@@ -410,7 +413,7 @@ def render_facts(result: dict) -> str:
         text = luck_paragraph(reading)
         parts.append(text if index == 0 else text.replace('你现在走的', '下一步是', 1))
     parts.append('上述检查用于传统原局分析；完整回答还需结合本题核完解释条件。')
-    parts.append('写回答时：' + ''.join(host_notes(result)))
+    parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
     return '\n\n'.join(parts)
 
 

@@ -76,6 +76,14 @@ def test_a_zodiac_question_is_answered_from_the_lunar_year():
     assert any('属马' in n for n in host_notes(result))
 
 
+def test_the_json_of_a_chart_and_a_decision_carries_the_notes():
+    """39 of 61 bazi_reading calls in the second evaluation run read the JSON, not the draft."""
+    from life_guide import decide
+    result = prepare_reading(_chart(1980, 1, 8, 2, '--as-of-year', '2026'), '我现在这步大运是喜是忌？')
+    assert any('大运工具没判喜忌' in n for n in result['host_notes'])
+    assert decide('失业了先做什么', {'current_timezone': 'Asia/Shanghai'})['host_notes']
+
+
 def test_a_decision_draft_closes_with_the_number_rule():
     from life_decision import render
     from life_guide import decide

@@ -247,7 +247,7 @@ def decide(data: dict, question: str, payload: dict | None = None, limit: int = 
     region = resolve_region(payload)['region']
     entries = data['entries']
     index = {(e['section'], e['number']): e for e in entries}
-    result: dict = {'question': question, 'region': region, 'source': _source_line(data),
+    result: dict = {'question': question, 'region': region, 'source': _source_line(data), 'host_notes': [HOST_NOTE],
                     'do': [], 'dont': [], 'articles': [], 'notes': [], 'terms': [], 'sections': []}
     kind = stop_kind(question)
     if kind:
@@ -348,6 +348,7 @@ def _source_line(data: dict) -> str:
 
 
 TERMS_SHOWN = 3
+HOST_NOTE = '数字照抄条目，不改写成「大部分」之类；条目没写的不要说成书里的；书里没写的部分标明是常识。'
 
 
 def _gist(row: dict, sentences: int = 2) -> str:
@@ -410,5 +411,5 @@ def render(result: dict) -> str:
         # Only the terms the draft itself uses; the packet keeps them all.
         lines.append('术语：' + '；'.join(f"{t['term']}——{t['meaning']}" for t in terms))
     lines.append(result['source'])
-    lines.append('写回答时：数字照抄条目，不改写成「大部分」之类；条目没写的不要说成书里的；书里没写的部分标明是常识。')
+    lines.append('写回答时：' + HOST_NOTE)
     return '\n'.join(lines)
