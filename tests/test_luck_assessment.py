@@ -126,3 +126,26 @@ def test_conflicting_candidates_are_mixed_not_chosen():
     assert _summarise([['favoured'], ['favoured']], [['avoided']]) == 'favoured'
     assert _summarise([], [['favoured']]) == 'conditional'
     assert _summarise([], []) == 'not_mentioned'
+
+
+def test_a_clash_with_the_year_or_month_is_urgent_with_the_day_or_hour_mild():
+    """《论行运》p0006 丙生子月亥年：巳 clashes 亥 (year), 午 clashes 子 (month); p0010 年月则急。"""
+    chart = _chart('辛亥', '庚子', '丙寅', '戊戌')
+    si = assess_luck(chart, {'ganzhi': '丁巳', 'start_year': 2020, 'end_year': 2029})
+    n3 = next(n for n in si['notes'] if n['id'] == 'N3')
+    assert '冲年支亥' in n3['text'] and '急' in n3['text']
+    shen = assess_luck(chart, {'ganzhi': '丙申', 'start_year': 2030, 'end_year': 2039})
+    assert '冲日支寅' in next(n for n in shen['notes'] if n['id'] == 'N3')['text']
+    assert '缓' in next(n for n in shen['notes'] if n['id'] == 'N3')['text']
+
+
+def test_an_officer_cycle_of_hurt_with_a_seal_exposed_seems_bad_but_is_not():
+    """p0005 「官逢傷運，而命透印」."""
+    chart = _chart('癸酉', '辛酉', '甲子', '癸酉')     # 甲 in 酉: 辛 正官 本气; 癸 正印 exposed
+    reading = assess_luck(chart, {'ganzhi': '丁卯', 'start_year': 2020, 'end_year': 2029})
+    assert any(n['id'] == 'N2' for n in reading['notes'])
+
+
+def test_no_note_when_nothing_clashes():
+    reading = assess_luck(USER, JI_YOU)        # 酉 clashes 卯; the user's branches are 丑子子戌
+    assert not any(n['id'] == 'N3' for n in reading['notes'])
