@@ -410,4 +410,5 @@ def render(result: dict) -> str:
         # Only the terms the draft itself uses; the packet keeps them all.
         lines.append('术语：' + '；'.join(f"{t['term']}——{t['meaning']}" for t in terms))
     lines.append(result['source'])
+    lines.append('写回答时：数字照抄条目，不改写成「大部分」之类；条目没写的不要说成书里的；书里没写的部分标明是常识。')
     return '\n'.join(lines)

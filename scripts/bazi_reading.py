@@ -261,7 +261,10 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     claims = _observations(clean, structure)
     extra: dict = {'colour_advice': colour_advice(clean, question)} if asks_colour(question) else {}
     if any(word in question for word in LUCK_WORDS):
-        extra['luck_reading'] = [assess_luck(clean, cycle) for cycle in _cycles_now(clean)]
+        cycles = _cycles_now(clean)
+        extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
+                                 [{'status': 'unavailable', 'luck': {'ganzhi': None},
+                                   'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
     return {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,
@@ -277,6 +280,26 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
 
 # Questions about the coming years: answer with this and the next ten-year cycle.
 LUCK_WORDS = ('大运', '运势', '这几年', '今年', '明年', '这十年', '走什么运', '运程', '行运')
+
+
+def host_notes(result: dict) -> list[str]:
+    """What the host must say as the tool says it (evals/v56/REPORT.md 3.1)."""
+    notes = ['十神、生肖、旺衰只用上面给的；十神只是关系名称，不直接等于职业、性格或好坏；不要自己写代码另算。']
+    question = result.get('question') or ''
+    if any(w in question for w in ('属', '生肖')):
+        lunar = (result['chart_facts'].get('lunar_date') or {})
+        zodiac = lunar.get('zodiac') if isinstance(lunar, dict) else None
+        if zodiac:
+            notes.append(f"生肖按工具算的农历年说：属{zodiac}；不要按公历年份自己推。")
+    advice = result.get('colour_advice')
+    if advice and advice.get('personal_choice') is False:
+        notes.append('这一格的例外在你的盘里成立，原文改取别的：不要把一般取法说成个人建议，也不要另推颜色或饰物。')
+    if 'luck_reading' in result:
+        for reading in result['luck_reading']:
+            if reading['status'] != 'assessed' or not reading.get('scenarios'):
+                notes.append(f"{reading['luck'].get('ganzhi') or '这步'}大运工具没判喜忌：不要自己判，照上面的原因说。")
+        notes.append('每一年（流年）的喜忌工具没做：只能说大运，不要给逐年判断。')
+    return list(dict.fromkeys(notes))
 
 
 def _cycles_now(clean: dict) -> list[dict]:
@@ -387,6 +410,7 @@ def render_facts(result: dict) -> str:
         text = luck_paragraph(reading)
         parts.append(text if index == 0 else text.replace('你现在走的', '下一步是', 1))
     parts.append('上述检查用于传统原局分析；完整回答还需结合本题核完解释条件。')
+    parts.append('写回答时：' + ''.join(host_notes(result)))
     return '\n\n'.join(parts)
 
 

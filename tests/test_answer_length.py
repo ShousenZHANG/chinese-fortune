@@ -26,18 +26,24 @@ def _classical_quotes(text: str) -> list[str]:
     return [q for q in re.findall(r'「([^」]+)」', text) if len(q) >= 8]
 
 
+def _for_the_user(text: str) -> str:
+    """The draft without its closing notes to the host (「写回答时」), which the user never sees."""
+    return '\n'.join(line for line in text.split('\n') if not line.startswith('写回答时：')).rstrip()
+
+
 @pytest.fixture(scope='module')
 def moving():
-    return render_answer(read_request(MOVING))
+    return _for_the_user(render_answer(read_request(MOVING)))
 
 
 @pytest.fixture(scope='module')
 def week():
-    return render_answer(read_request(WEEK))
+    return _for_the_user(render_answer(read_request(WEEK)))
 
 
-def test_a_month_of_dates_fits_in_two_thousand_characters(moving):
-    assert len(moving) <= 2000, len(moving)
+def test_a_month_of_dates_fits_in_about_two_thousand_characters(moving):
+    """2000 before the v5.6 evaluation; the terms line it asked for (术语当场解释) adds about 130."""
+    assert len(moving) <= 2150, len(moving)
     assert moving.startswith('按你出生那年的干支（丁丑）看，这段时间搬家对你最好的日子是')
 
 
@@ -84,7 +90,7 @@ def test_the_cycle_years_match_the_chart_answer(week):
 
 def test_a_decision_draft_quotes_two_sentences_and_points_to_the_rest():
     result = decide('失业了先做什么', {'current_timezone': 'Asia/Shanghai'})
-    text = render(result)
+    text = _for_the_user(render(result))
     assert len(text) <= 1500, len(text)
     rows = [r for g in result['do'] for r in g['entries']]
     long_row = next(r for r in rows if r['fields']['说人话'].count('。') > 2)

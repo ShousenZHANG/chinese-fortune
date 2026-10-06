@@ -1358,6 +1358,53 @@ def _life_lines(result: dict) -> list[str]:
     return ['\n'.join(rows)]
 
 
+# Plain words for the labels the draft uses, said once at the end.
+TERMS = {
+    '命禄': '当天地支是出生年天干的禄位（古表，如丁禄在午）',
+    '命贵人': '当天地支是出生年天干在古表里的天乙贵人',
+    '食禄': '当天地支是出生年天干所生那一行（食神）的禄位',
+    '驿马': '按出生年地支查古表得到的地支，传统上主走动',
+    '合官': '当天天干和出生年天干相合，而这个天干又是它的正官',
+    '比肩': '和出生年天干相同的天干',
+    '三合': '三个地支合成一局（如申子辰合水），这里指当天地支和出生年地支属同一局',
+    '六合': '两个地支配成一对（如子丑），这里指当天地支和出生年地支是这一对',
+    '天克地冲': '天干相克，地支又在十二支里正好相对',
+    '天比地冲': '天干相同，地支却正好相对',
+    '冲命': '当天（或当年、当月）地支和出生年地支在十二支里正好相对',
+    '月破': '当月月建地支被冲的那天',
+    '往亡': '协纪列出的一种忌日，按月份固定在某个地支',
+    '歸忌': '协纪列出的一种忌日（归忌），按季节固定在某个地支',
+    '四廢': '协纪列出的一种忌日（四废），每季固定两天',
+    '相主': '《协纪辨方书》挑日子的方法：按出生那一年的干支看，不看日主',
+}
+TERMS_SHOWN = 4
+
+
+def _terms_line(text: str) -> str:
+    """术语：…, for the labels this draft actually uses."""
+    used = [t for t in TERMS if t in text][:TERMS_SHOWN]
+    return ('术语：' + '；'.join(f'{t}——{TERMS[t]}' for t in used) + '。') if used else ''
+
+
+def host_notes(result: dict) -> list[str]:
+    """What the host must say as the tool says it (evals/v56/REPORT.md 3.1)."""
+    notes = ['等级、干支和理由只用上面的结果；不要自己写代码另算干支、十神或等级。']
+    calendar = result.get('personal_calendar') or {}
+    entries = [e for e in _merged(calendar.get('entries', [])) if not e.get('event_hits')]
+    order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
+    best = min((e['grade'] for e in entries), key=order.index, default=None)
+    tied = [e for e in entries if e['grade'] == best] if best in ('大吉', '吉') else []
+    if len(tied) > 1:
+        notes.append(f"最好的几天等级相同（{_dates(tied)}都是{best}），工具没排先后：不要说其中哪天最好，按用户的安排或偏好选。")
+    if result.get('recommendation', {}).get('status') in ('practical_tie', 'preferences_required'):
+        notes.append('候选时段之间工具没有给出首选，同一等级的按用户偏好选，不要说哪段最合适。')
+    for person in result.get('participants', []):
+        for reading in person.get('luck_reading', []):
+            if reading['status'] != 'assessed' or not reading.get('scenarios'):
+                notes.append(f"{reading['luck'].get('ganzhi') or '这步'}大运工具没判喜忌：不要自己判，照上面的原因说。")
+    return list(dict.fromkeys(notes))
+
+
 def render_answer(result: dict, detail: bool = False) -> str:
     """Render the same conclusion packet consumed by the host, in everyday Chinese.
 
@@ -1444,6 +1491,11 @@ def render_answer(result: dict, detail: bool = False) -> str:
     if state in RESEARCH_STATES:
         lines.append('以上是已有依据支持的部分。还缺的本题条款可继续补查约5分钟；这份计算结果尚未执行外部检索，不代表古籍里不存在相关内容。')
     lines.extend(_life_lines(result))
+    terms = _terms_line('\n'.join(lines))
+    if terms:
+        lines.append(terms)
+    if result.get('personal_calendar') or result.get('ranking'):
+        lines.append('写回答时：' + ''.join(host_notes(result)))
     return '\n\n'.join(lines)
 
 
@@ -1476,7 +1528,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.markdown:
         print(render_answer(result, detail=args.detail))
     else:
-        json_print(result)
+        json_print({**result, 'host_notes': host_notes(result)} if result.get('ok') else result)
     return 0
 
 
