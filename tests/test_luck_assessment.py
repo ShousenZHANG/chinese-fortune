@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pytest
 from classical_search import get_passage
+from luck_assessment import assess_luck
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = json.loads((ROOT / 'assets' / 'luck_rules.json').read_text(encoding='utf-8'))
@@ -55,3 +56,73 @@ def test_every_luck_paragraph_of_the_three_chapters_has_a_scenario():
 def test_every_general_note_is_the_frozen_text(note):
     passage = get_passage(note['passage_id'])
     assert passage['sha256'] == note['sha256'] and note['quote'] in passage['text']
+
+
+
+def _chart(year, month, day, hour, hour_known=True):
+    pillars = {'year': {'stem': year[0], 'branch': year[1]}, 'month': {'stem': month[0], 'branch': month[1]},
+               'day': {'stem': day[0], 'branch': day[1]}, 'hour': {'stem': hour[0], 'branch': hour[1]}}
+    return {'day_master': {'stem': day[0]}, 'four_pillars': pillars, 'hour_known': hour_known}
+
+
+USER = _chart('丁丑', '壬子', '庚子', '丙戌')
+JI_YOU = {'ganzhi': '己酉', 'start_year': 2023, 'end_year': 2032}
+
+
+def test_the_users_own_chart_in_the_ji_you_cycle():
+    """庚 in 子 (伤官): 佩印, 用煞印, 带煞, 用官 all stand by the stems and storage."""
+    reading = assess_luck(USER, JI_YOU)
+    assert reading['status'] == 'assessed'
+    assert {s['id'] for s in reading['scenarios']} == {'hurt-seal', 'hurt-kill-seal', 'hurt-kill', 'hurt-officer'}
+    assert reading['summary'] == {'stem': 'favoured', 'branch': 'conditional'}
+    assert reading['scenarios'][0]['branch']['via'] == '本气辛'
+    assert {f['family_id']: f['connected'] for f in reading['families']} == {'hurt': True}
+
+
+def test_a_missing_hour_or_cycle_gives_no_verdict():
+    assert assess_luck(_chart('丁丑', '壬子', '庚子', '丙戌', hour_known=False), JI_YOU)['status'] == 'unavailable'
+    assert assess_luck(USER, {'status': 'birth_time_required'})['status'] == 'unavailable'
+
+
+def test_a_family_not_yet_connected_is_said_so():
+    """甲 in 子: 癸 is 正印, the seal family, whose chapter is not in this batch."""
+    reading = assess_luck(_chart('甲子', '丙子', '甲寅', '甲子'), {'ganzhi': '丁丑', 'start_year': 2020, 'end_year': 2029})
+    assert reading['status'] == 'assessed' and not reading['scenarios']
+    assert reading['families'][0]['connected'] is False
+
+
+def test_a_computed_branch_overrides_the_general_sentence():
+    """财旺生官带食破局: 「逢煞反吉」 replaces 「不利七煞」 (c034 p0002)."""
+    # 甲 in 辰 (戊 偏财 本气), 辛 正官 exposed, 丙 食神 exposed; 七杀 庚 cycle.
+    chart = _chart('辛酉', '丙辰', '甲子', '丙寅')
+    reading = assess_luck(chart, {'ganzhi': '庚午', 'start_year': 2020, 'end_year': 2029})
+    w1 = next(s for s in reading['scenarios'] if s['id'] == 'wealth-officer')
+    assert [v['verdict'] for v in w1['stem']['verdicts']] == ['favoured']
+    assert w1['stem']['verdicts'][0]['words'] == '逢煞反吉'
+
+
+def test_a_cycle_stem_combining_the_exposed_officer_is_avoided():
+    """《论行运》p0008 「丁生亥月，而年透壬官……逢丁則合官」: 丁 combines the 壬 officer, 「不可逢合」 (c032 p0002)."""
+    chart = _chart('壬寅', '辛亥', '丁卯', '庚子')
+    reading = assess_luck(chart, {'ganzhi': '丁未', 'start_year': 2020, 'end_year': 2029})
+    general = next(s for s in reading['scenarios'] if s['id'] == 'officer-exposed')
+    assert [v['words'] for v in general['stem']['verdicts']] == ['不可逢合']
+
+
+def test_robbery_combining_the_killer_is_computed():
+    """正官带煞, 用劫合煞 (c032 p0006): 乙 劫财 and 庚 七杀 both exposed for 甲, 乙庚 combine."""
+    chart = _chart('乙卯', '辛酉', '甲子', '庚午')
+    reading = assess_luck(chart, {'ganzhi': '戊申', 'start_year': 2020, 'end_year': 2029})
+    o5 = next(s for s in reading['scenarios'] if s['id'] == 'officer-kill')
+    assert any(v['words'] == '財運可行' and v['state'] == 'met' for v in o5['stem']['verdicts'])
+
+
+def test_conflicting_candidates_are_mixed_not_chosen():
+    """伤官佩印 says 「財地則凶」, 伤官用财's strong-body branch 「喜財運」: a wealth cycle is
+    avoided in one and only conditional in the other, so the summary keeps the definite one;
+    two definite opposite verdicts would be mixed."""
+    from luck_assessment import _summarise
+    assert _summarise([['favoured'], ['avoided']], []) == 'mixed'
+    assert _summarise([['favoured'], ['favoured']], [['avoided']]) == 'favoured'
+    assert _summarise([], [['favoured']]) == 'conditional'
+    assert _summarise([], []) == 'not_mentioned'

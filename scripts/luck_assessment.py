@@ -1,0 +1,166 @@
+
+"""Ten-year luck cycles judged by 《子平真诠》's own 取运 chapters (first batch: 正官, 财, 伤官).
+
+A cycle's stem and branch are matched against the sentences of each 配法 the
+chart's stems and storage allow (``assets/luck_rules.json``). Nothing here
+settles the 格局: every 配法 is a candidate, interpretive conditions (身轻,
+身旺, 财多…) stay open with both sides shown, and the verdict covers the ten
+years, never a single day (spec: docs/superpowers/specs/2026-10-06-luck-assessment-design.md).
+"""
+from __future__ import annotations
+
+import json
+from functools import cache
+from pathlib import Path
+
+from bazi_rules import evaluate_condition, family_candidates
+from bazi_tables import TIANGAN_HE
+from utils import HIDDEN_STEMS, TIANGAN_WUXING, shi_shen
+
+RULES_PATH = Path(__file__).resolve().parents[1] / 'assets' / 'luck_rules.json'
+PILLARS = ('year', 'month', 'day', 'hour')
+LIMIT = ('配法按可计算的透藏列为候选；位置、合克、成败是否成立没判；'
+         '十年一个结论，不细到每天。')
+
+
+@cache
+def load_luck_rules() -> dict:
+    return json.loads(RULES_PATH.read_text(encoding='utf-8'))
+
+
+def _stems(chart: dict) -> list[tuple[str, str]]:
+    """(pillar, stem) of the exposed stems other than the day master's."""
+    pillars = chart.get('four_pillars') or {}
+    return [(p, pillars[p]['stem']) for p in ('year', 'month', 'hour')
+            if (pillars.get(p) or {}).get('stem') in TIANGAN_WUXING]
+
+
+def _exposed_roles(chart: dict) -> list[tuple[str, str]]:
+    day = chart['day_master']['stem']
+    return [(stem, shi_shen(day, stem)) for _, stem in _stems(chart)]
+
+
+def _premise(chart: dict, premise: dict) -> str:
+    """'met', 'not_met' or 'unknown' for one premise."""
+    predicate = premise['predicate']
+    if predicate in ('present_any', 'exposed_any', 'exposed_none'):
+        return evaluate_condition(chart, {'id': 'luck', 'label': premise.get('label', ''), 'kind': 'computed',
+                                          'predicate': predicate, 'roles': premise['roles']})['state']
+    exposed = _exposed_roles(chart)
+    if predicate == 'exposed_count_at_least':
+        return 'met' if sum(role in premise['roles'] for _, role in exposed) >= premise['count'] else 'not_met'
+    if predicate == 'combines':
+        left = [s for s, role in exposed if role in premise['roles']]
+        right = [s for s, role in exposed if role in premise['with']]
+        return 'met' if any(frozenset((a, b)) in TIANGAN_HE for a in left for b in right) else 'not_met'
+    raise ValueError('unknown luck premise: ' + predicate)
+
+
+def _applies(effect: dict, role: str, char: str, chart: dict) -> bool:
+    if role in effect.get('roles', []):
+        return True
+    natal = [s for s, r in _exposed_roles(chart) if r in effect.get('combines_natal', [])]
+    return bool(natal) and any(frozenset((char, s)) in TIANGAN_HE for s in natal)
+
+
+def _verdicts(scenario: dict, role: str, char: str, chart: dict, is_stem: bool) -> list[dict]:
+    """The scenario's sentences about this character: base effects, then branches.
+
+    A computed branch that holds replaces the base verdict for the roles it
+    names (「至於……則……」); an interpretive branch is listed beside it, open.
+    """
+    found: list[dict] = []
+    overridden: set[str] = set()
+    for branch in scenario.get('branches', []):
+        state = _premise(chart, branch) if branch.get('predicate') else 'unknown'
+        if branch['kind'] == 'computed' and state != 'met':
+            continue
+        if branch['kind'] == 'interpretive' and branch.get('predicate') and state != 'met':
+            continue
+        for effect in branch['effects']:
+            if (is_stem or not effect.get('combines_natal')) and _applies(effect, role, char, chart):
+                kind = 'met' if branch['kind'] == 'computed' else 'interpretive'
+                found.append({'verdict': effect['verdict'], 'words': effect['words'],
+                              'condition': branch['condition'], 'state': kind})
+                if kind == 'met':
+                    overridden.add(role)
+    for effect in scenario.get('effects', []):
+        if effect.get('combines_natal') and not is_stem:
+            continue
+        if _applies(effect, role, char, chart) and role not in overridden:
+            found.insert(0, {'verdict': effect['verdict'], 'words': effect['words'], 'condition': None,
+                             'state': 'met'})
+    return found
+
+
+def _summarise(definite: list[list[str]], conditional: list[list[str]]) -> str:
+    """One word for a character across all candidate scenarios."""
+    verdicts = {v for group in definite for v in group}
+    if len(verdicts) == 1:
+        return verdicts.pop()
+    if verdicts:
+        return 'mixed'
+    return 'conditional' if any(conditional) else 'not_mentioned'
+
+
+def _years(luck: dict) -> tuple[int | None, int | None]:
+    if 'start_year' in luck:
+        return luck.get('start_year'), luck.get('end_year')
+    start, end = luck.get('start'), luck.get('end')
+    return (int(start[:4]) if start else None, int(end[:4]) if end else None)
+
+
+def _unavailable(reason: str, luck: dict) -> dict:
+    return {'status': 'unavailable', 'reason': reason, 'luck': {'ganzhi': luck.get('ganzhi')},
+            'granularity': 'ten_year_cycle', 'limit': LIMIT}
+
+
+def assess_luck(chart: dict, luck: dict, registry: dict | None = None) -> dict:
+    """What one ten-year cycle does under each candidate 配法 of the connected 格."""
+    registry = registry or load_luck_rules()
+    ganzhi = luck.get('ganzhi')
+    if not ganzhi or luck.get('status', 'calculated') != 'calculated':
+        return _unavailable('大运没算出来（起运资料不全）', luck)
+    if not chart.get('hour_known'):
+        return _unavailable('出生时辰未知，透干藏支判不全', luck)
+    month = (chart.get('four_pillars') or {}).get('month') or {}
+    if month.get('branch') not in HIDDEN_STEMS or month.get('candidate_ganzhi'):
+        return _unavailable('月令没定（生在交节附近）', luck)
+    day = chart['day_master']['stem']
+    stem, branch = ganzhi[0], ganzhi[1]
+    main = HIDDEN_STEMS[branch][0]
+    stem_role, branch_role = shi_shen(day, stem), shi_shen(day, main)
+    connected = {f['family_id']: f for f in registry['families']}
+    families = [{'family_id': c['family_id'], 'title': c['title'], 'basis': c['basis'],
+                 'connected': c['family_id'] in connected} for c in family_candidates(chart)]
+    scenarios: list[dict] = []
+    for family in families:
+        if not family['connected']:
+            continue
+        for scenario in connected[family['family_id']]['scenarios']:
+            premises = [{'label': p['label'], 'state': _premise(chart, p)} for p in scenario['premises']]
+            if any(p['state'] != 'met' for p in premises):
+                continue
+            scenarios.append({
+                'id': scenario['id'], 'title': scenario['title'], 'family_id': family['family_id'],
+                'passage_id': scenario['passage_id'], 'quote': scenario['quote'], 'premises': premises,
+                'stem': {'char': stem, 'role': stem_role,
+                         'verdicts': _verdicts(scenario, stem_role, stem, chart, True)},
+                'branch': {'char': branch, 'via': f'本气{main}', 'role': branch_role,
+                           'verdicts': _verdicts(scenario, branch_role, branch, chart, False)}})
+    summary = {}
+    for part in ('stem', 'branch'):
+        definite = [[v['verdict'] for v in s[part]['verdicts'] if v['state'] == 'met'] for s in scenarios]
+        open_ = [[v['verdict'] for v in s[part]['verdicts'] if v['state'] == 'interpretive'] for s in scenarios]
+        summary[part] = _summarise([d for d in definite if d], open_)
+    start, end = _years(luck)
+    reading = {'status': 'assessed', 'luck': {'ganzhi': ganzhi, 'start_year': start, 'end_year': end},
+               'families': families, 'scenarios': scenarios, 'summary': summary,
+               'granularity': 'ten_year_cycle', 'limit': LIMIT}
+    reading['notes'] = _notes(chart, reading, registry)
+    return reading
+
+
+def _notes(chart: dict, reading: dict, registry: dict) -> list[dict]:
+    """Filled in by Task 3."""
+    return []
