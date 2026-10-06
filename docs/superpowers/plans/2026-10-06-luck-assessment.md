@@ -666,7 +666,8 @@ from luck_assessment import assess_luck, luck_paragraph
 改为
 
 ```python
-    assessed = any(r['status'] == 'assessed' for p in result['participants'] for r in p.get('luck_reading', []))
+    assessed = bool(result.get('personal_calendar')) and any(
+        r['status'] == 'assessed' for p in result['participants'] for r in p.get('luck_reading', []))
     if not ranking and not assessed and not any(p['traditional_observations'] for p in result['participants']):
 ```
 

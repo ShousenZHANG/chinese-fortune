@@ -173,3 +173,25 @@ def test_the_paragraph_for_an_unconnected_family_or_missing_hour():
     assert '取运章还没接入' in luck_paragraph(seal)
     gone = assess_luck(_chart('丁丑', '壬子', '庚子', '丙戌', hour_known=False), JI_YOU)
     assert luck_paragraph(gone).startswith('这步大运的喜忌这次给不出：出生时辰未知')
+
+
+def _period(start, end):
+    return {'current_timezone': 'Asia/Shanghai', 'request_time': '2026-10-05T10:00:00Z',
+            'question': '未来七天哪天对我好', 'intent': 'period', 'period': {'start': start, 'end': end},
+            'event': {'scenario': 'outlook', 'timezone': 'Asia/Shanghai', 'longitude': 120.64},
+            'participants': [{'id': 'me', 'confirmed': True, 'person': {
+                'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30, 'gender': 'male',
+                          'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}}]}
+
+
+def test_a_period_answer_carries_the_cycle_and_keeps_the_daily_grades():
+    from fortune_reading import read_request, render_answer
+    result = read_request(_period('2026-10-06T00:00:00+08:00', '2026-10-13T00:00:00+08:00'))
+    readings = result['participants'][0]['luck_reading']
+    assert [r['luck']['ganzhi'] for r in readings] == ['己酉'] and readings[0]['status'] == 'assessed'
+    grades = [e['grade'] for e in result['personal_calendar']['entries']]
+    text = render_answer(result)
+    assert '你现在走的己酉运' in text and '逐日吉凶仍按出生年相主' in text
+    assert '已实现的两条运程例式没有给出本题的完整结论' not in text
+    assert grades == [e['grade'] for e in read_request(_period('2026-10-06T00:00:00+08:00',
+                                                               '2026-10-13T00:00:00+08:00'))['personal_calendar']['entries']]

@@ -35,6 +35,7 @@ from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
 from life_guide import LIMIT as LIFE_LIMIT
 from life_guide import entries_for, library_source
+from luck_assessment import assess_luck, luck_paragraph
 from personal_profiles import birth_arguments, load_profile, validate_person
 from region import is_zone, resolve_region
 from request_time import capture_request_time
@@ -184,6 +185,9 @@ def _participant(person: dict, payload: dict, event: dict, now: dict, window: di
     row = {'id': person['id'], 'profile_revision': person['profile_revision'],
            'input_fingerprint': person['input_fingerprint'], 'natal': natal, 'target': target}
     row['traditional_observations'] = luck_observations(natal, target)
+    # 《子平真诠》取运 for each ten-year cycle the window touches: ten years per verdict.
+    row['luck_reading'] = [assess_luck(natal, luck) for luck in target['luck_catalog'][:2]
+                           if luck.get('status') == 'calculated']
     if approximate:
         interval = person['person'].get('birth_time_range')
         row['time_note'] = (f"已比较出生当天 {interval['start']}–{interval['end']} 范围，只保留各可能时间一致的结论"
@@ -1314,7 +1318,12 @@ def render_answer(result: dict) -> str:
             if observation['plain_observation'] not in lines[0]:
                 lines.append(observation['plain_observation'])
             lines.append('《子平真诠·论行运》：“' + source['text'] + '”\n白话说：' + observation['plain_meaning'] + observation['plain_application'] + observation['limit'] + '\n出处：' + source['source_url'])
-    if not ranking and not any(p['traditional_observations'] for p in result['participants']):
+        if result.get('personal_calendar'):
+            who = '你' if len(result['participants']) == 1 else person['id']
+            lines.extend(luck_paragraph(r, who) for r in person.get('luck_reading', []))
+    assessed = bool(result.get('personal_calendar')) and any(
+        r['status'] == 'assessed' for p in result['participants'] for r in p.get('luck_reading', []))
+    if not ranking and not assessed and not any(p['traditional_observations'] for p in result['participants']):
         quote = '而取運則又以運之干支，配八字之喜忌。'
         source = result['evidence']['principle'][0]
         if quote not in source['text']:
