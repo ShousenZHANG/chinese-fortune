@@ -10,6 +10,7 @@ from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
+from annual_assessment import ANNUAL_WORDS, annual_paragraph, annual_readings, unknown_year, years_asked
 from luck_assessment import assess_luck, luck_paragraph
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
@@ -265,6 +266,11 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
         extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
                                  [{'status': 'unavailable', 'luck': {'ganzhi': None},
                                    'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
+    years = years_asked(question, _reference_year(clean))
+    if years:
+        extra['annual_reading'] = annual_readings(clean, years)
+    elif any(word in question for word in ANNUAL_WORDS):
+        extra['annual_reading'] = [unknown_year('不知道今年是哪一年：先问用户现在住在哪里（时区），或者直接问哪一年')]
     result = {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,
@@ -301,15 +307,22 @@ def host_notes(result: dict) -> list[str]:
         for reading in result['luck_reading']:
             if reading['status'] != 'assessed' or not reading.get('scenarios'):
                 notes.append(f"{reading['luck'].get('ganzhi') or '这步'}大运工具没判喜忌：不要自己判，照上面的原因说。")
-        notes.append('每一年（流年）的喜忌工具没做：只能说大运，不要给逐年判断。')
+    if 'annual_reading' in result:
+        notes.append('流年只列原文说的冲、克、合关系和原文的说法，不合成总分，也不细到月份；「看救助」「看喜忌」的照说没判。')
+    elif 'luck_reading' in result:
+        notes.append('这里只说大运；要问某一年，请用户说出年份。')
     return list(dict.fromkeys(notes))
+
+
+def _reference_year(clean: dict) -> int | None:
+    """Which year it is for this request: the replayed or current instant, or the explicit year."""
+    context = clean.get('current_time_context') or {}
+    return int(context['local'][:4]) if context.get('local') else (clean.get('liu_nian') or [{}])[0].get('year')
 
 
 def _cycles_now(clean: dict) -> list[dict]:
     """This and the next ten-year cycle, by the chart's own reference year."""
-    context = clean.get('current_time_context') or {}
-    year = int(context['local'][:4]) if context.get('local') else (
-        (clean.get('liu_nian') or [{}])[0].get('year'))
+    year = _reference_year(clean)
     cycles = clean.get('da_yun') or []
     if not year or not cycles:
         return []
@@ -412,6 +425,7 @@ def render_facts(result: dict) -> str:
     for index, reading in enumerate(result.get('luck_reading', [])):
         text = luck_paragraph(reading)
         parts.append(text if index == 0 else text.replace('你现在走的', '下一步是', 1))
+    parts += [annual_paragraph(r) for r in result.get('annual_reading', [])]
     parts.append('上述检查用于传统原局分析；完整回答还需结合本题核完解释条件。')
     parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
     return '\n\n'.join(parts)

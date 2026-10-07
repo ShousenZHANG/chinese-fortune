@@ -48,12 +48,12 @@ def test_a_withheld_colour_tells_the_host_not_to_recommend_it():
     assert '写回答时：' in render_facts(result)
 
 
-def test_an_unconnected_cycle_and_the_missing_annual_layer_are_said():
+def test_an_unconnected_cycle_and_the_year_question_are_said():
     from bazi_reading import host_notes
     result = prepare_reading(_chart(1980, 1, 8, 2, '--as-of-year', '2026'), '我现在这步大运是喜是忌？')
     notes = host_notes(result)
     assert any('大运工具没判喜忌' in n for n in notes)
-    assert any('流年' in n and '不要给逐年判断' in n for n in notes)
+    assert any('要问某一年，请用户说出年份' in n for n in notes)
 
 
 def test_a_replay_instant_alone_fixes_the_year_for_the_cycle():

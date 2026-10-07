@@ -36,6 +36,7 @@ from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
 from life_guide import LIMIT as LIFE_LIMIT
 from life_guide import entries_for, library_source
+from annual_assessment import annual_paragraph, annual_readings, years_asked
 from luck_assessment import assess_luck, luck_paragraph
 from personal_profiles import birth_arguments, load_profile, validate_person
 from region import is_zone, resolve_region
@@ -189,6 +190,12 @@ def _participant(person: dict, payload: dict, event: dict, now: dict, window: di
     # 《子平真诠》取运 for each ten-year cycle the window touches: ten years per verdict.
     row['luck_reading'] = [assess_luck(natal, luck) for luck in target['luck_catalog'][:2]
                            if luck.get('status') == 'calculated']
+    # 流年 for the years the question names, or a window as long as a year.
+    start, end = (datetime.fromisoformat(window[k]) for k in ('start', 'end'))
+    years = years_asked(payload.get('question', ''), start.year) or (
+        list(range(start.year, end.year + 1))[:3] if (end - start).days >= 360 else [])
+    if years and natal.get('hour_known') is not None:
+        row['annual_reading'] = annual_readings(natal, years)
     if approximate:
         interval = person['person'].get('birth_time_range')
         row['time_note'] = (f"已比较出生当天 {interval['start']}–{interval['end']} 范围，只保留各可能时间一致的结论"
@@ -1478,6 +1485,7 @@ def render_answer(result: dict, detail: bool = False) -> str:
         if result.get('personal_calendar'):
             who = '你' if len(result['participants']) == 1 else person['id']
             lines.extend(luck_paragraph(r, who) for r in person.get('luck_reading', []))
+        lines.extend(annual_paragraph(r) for r in person.get('annual_reading', []))
     assessed = bool(result.get('personal_calendar')) and any(
         r['status'] == 'assessed' for p in result['participants'] for r in p.get('luck_reading', []))
     if not ranking and not assessed and not any(p['traditional_observations'] for p in result['participants']):
