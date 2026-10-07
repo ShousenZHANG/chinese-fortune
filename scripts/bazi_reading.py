@@ -376,11 +376,10 @@ def _lead(result: dict) -> str | None:
     branch = result['observed_structure'].get('month_branch')
     if not families or not day or not branch:
         return None
-    question = (result.get('question') or '').strip()
-    ask = f'就「{question}」来说，先要看月令格局。' if question else ''
+    # No echo of the question: the v5.6 evaluation counted 「就……来说」 as filler.
     titles = '、'.join(f['title'] for f in families)
     routes = _routes_summary(result['rule_assessment']['routes'])
-    head = f'{ask}日主是{day}（日柱的天干，代表你本人），按月令{branch}，本次从{titles}的条款入手'
+    head = f'日主是{day}（日柱的天干，代表你本人），按月令{branch}，本次从{titles}的条款入手'
     return f'{head}：{routes}。' if routes else head + '。'
 
 
@@ -396,14 +395,39 @@ def _role_terms(result: dict) -> str:
             '。它们只是关系名称，不直接等于职业、性格或好坏。')
 
 
+def _route_lines(assessment: dict) -> list[str]:
+    """The routes in two groups, each condition said once (v5.6: every route repeated
+    「不等于已发挥作用」 and the month-resolution condition)."""
+    lines: list[str] = []
+    closed = [r for r in assessment['routes'] if any(c['state'] == 'not_met' for c in r['conditions'])]
+    if closed:
+        lines.append('现在不成立：' + '；'.join(
+            f"{r['title']}（缺：{'、'.join(c['label'] for c in r['conditions'] if c['state'] == 'not_met')}）"
+            for r in closed) + '。')
+    pending = [r for r in assessment['routes'] if r not in closed]
+    for route in pending:
+        left = [c['label'] for c in route['conditions'] if c['state'] == 'unknown' and c['id'] != 'month_resolution']
+        lines.append(f"{route['title']}：前提已见到" + (f"，还要核：{'；'.join(left)}。" if left else '。'))
+    if pending:
+        lines.append('以上每条还都要核：这条属于月令本格，还是可成立的变格、兼格；只是检索到条款不算格局成立。'
+                     '「可见」只说这个字在盘里，不等于它已发挥作用。')
+    return lines
+
+
 def render_facts(result: dict) -> str:
     """A concise chart explanation, explicitly separate from a host's personal interpretation."""
     lead = _lead(result)
-    parts = ([lead] if lead else []) + [claim['text'] for claim in result['reading_support']['claims']]
+    claims = [claim['text'] for claim in result['reading_support']['claims']]
     advice = result.get('colour_advice')
     if advice:
-        # A colour question is answered first; the chart facts follow as background.
-        parts = [colour_lead(advice), *colour_lines(advice), *parts]
+        # A colour question is answered by the colour; the pillars are its background,
+        # the route checklist belongs to a chart question (v5.6: 1707 characters).
+        pillars = [c for c in claims if c.startswith('已可固定的柱')]
+        parts = [colour_lead(advice), *colour_lines(advice), *pillars]
+        parts += _cycle_parts(result)
+        parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
+        return '\n\n'.join(parts)
+    parts = ([lead] if lead else []) + claims
     terms = _role_terms(result)
     if terms:
         parts.append(terms)
@@ -411,30 +435,19 @@ def render_facts(result: dict) -> str:
                  ('日柱待定时，暂不把十神或透藏作用当作已核事实。'
                   if result['observed_structure'].get('status') == 'birth_time_required' else
                   '上述位置已经核实；格局是否成立，还要对照原文检查其他干支的作用。'))
-    assessment = result['rule_assessment']
-    families = assessment['families']
-    if families:
-        parts.append('按月令，本次从' + '、'.join(f['title'] for f in families) +
-                     '的条款入手；以下是具体条件检查，尚不代表格局成立。')
-        for route in assessment['routes']:
-            unmet = [c['label'] for c in route['conditions'] if c['state'] == 'not_met']
-            met = [c['label'] for c in route['conditions']
-                   if c['state'] == 'met' and c['id'] != 'full_chart']
-            unknown = [c['label'] for c in route['conditions'] if c['state'] == 'unknown']
-            if unmet:
-                explanation = '未满足：' + '、'.join(unmet) + '。这条路径现在不能直接成立。'
-            else:
-                explanation = ('已核实：' + '、'.join(met) + '。') if met else ''
-                if unknown:
-                    explanation += '还影响结论的条件：' + '；'.join(unknown) + '。'
-            parts.append(route['title'] + '：' + explanation)
+    parts += _route_lines(result['rule_assessment'])
+    parts += _cycle_parts(result)
+    parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
+    return '\n\n'.join(parts)
+
+
+def _cycle_parts(result: dict) -> list[str]:
+    """The luck cycles and the years asked about, when the question asks."""
+    parts = []
     for index, reading in enumerate(result.get('luck_reading', [])):
         text = luck_paragraph(reading)
         parts.append(text if index == 0 else text.replace('你现在走的', '下一步是', 1))
-    parts += [annual_paragraph(r) for r in result.get('annual_reading', [])]
-    parts.append('上述检查用于传统原局分析；完整回答还需结合本题核完解释条件。')
-    parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
-    return '\n\n'.join(parts)
+    return parts + [annual_paragraph(r) for r in result.get('annual_reading', [])]
 
 
 def build_parser() -> argparse.ArgumentParser:

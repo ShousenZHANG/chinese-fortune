@@ -1190,8 +1190,10 @@ def _personal_lines(result: dict, detail: bool = False) -> list[str]:
             if context and (who, key, context['ganzhi']) not in said:
                 said.add((who, key, context['ganzhi']))
                 word = '这一年' if key == 'year' else '这个月'
-                lines.append(_factor_lines(f"{who}{word}（{context['ganzhi']}）", context['grade'],
-                                           context['factors'], quoted))
+                # 「这一年（丙午）」 once, at the head, not again inside each factor.
+                prefix = f"{word}（{context['ganzhi']}）的"
+                factors = [{**f, 'plain': f['plain'].replace(prefix, '')} for f in context['factors']]
+                lines.append(_factor_lines(f"{who}{word}（{context['ganzhi']}）", context['grade'], factors, quoted))
         own = [f for f in assessed['factors'] if f.get('pillar', 'day') not in ('year', 'month')]
         grade = assessed['grade']
         if assessed.get('pillar_grade', grade) != grade:
@@ -1218,9 +1220,16 @@ def _personal_lines(result: dict, detail: bool = False) -> list[str]:
     for row in ranking.get('tiers', []) + ranking.get('excluded', []):
         for person in row.get('personal', {}).get('people', []):
             who = label(person)
+            # Hours of one day that say the same thing are one line: 「庚申日辛巳、壬午时」.
+            same: dict[tuple, list[dict]] = {}
             for day in person['days']:
-                hour = f"{day['hour_ganzhi']}时" if 'hour_ganzhi' in day else ''
-                graded(f"{row['candidate_id']} {who}覆盖的{day['day_ganzhi']}日{hour}", day, who)
+                key = (day['day_ganzhi'], day['grade'], day.get('pillar_grade'),
+                       tuple(f['plain'] for f in day['factors']))
+                same.setdefault(key, []).append(day)
+            for days in same.values():
+                hours = '、'.join(d['hour_ganzhi'] for d in days if 'hour_ganzhi' in d)
+                graded(f"{row['candidate_id']} {who}覆盖的{days[0]['day_ganzhi']}日" + (f'{hours}时' if hours else ''),
+                       days[0], who)
     return list(dict.fromkeys(lines))
 
 
@@ -1409,6 +1418,8 @@ def host_notes(result: dict) -> list[str]:
         for reading in person.get('luck_reading', []):
             if reading['status'] != 'assessed' or not reading.get('scenarios'):
                 notes.append(f"{reading['luck'].get('ganzhi') or '这步'}大运工具没判喜忌：不要自己判，照上面的原因说。")
+        if person.get('annual_reading'):
+            notes.append('流年只列原文说的冲、克、合关系和原文的说法，不合成总分，也不细到月份；「看救助」「看喜忌」的照说没判。')
     return list(dict.fromkeys(notes))
 
 

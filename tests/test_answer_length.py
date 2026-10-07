@@ -98,3 +98,43 @@ def test_a_decision_draft_quotes_two_sentences_and_points_to_the_rest():
     first_two = '。'.join(long_row['fields']['说人话'].split('。')[:2]) + '。'
     assert first_two in text                      # the words and numbers as the book has them
     assert text.count('——') <= 7 and text.count('术语：') <= 1
+
+
+# --- 5.8.0: chart, colour and slot answers (v5.6 evaluation: readable 0/12 for A and D) ---
+
+def _chart_text(question: str) -> str:
+    from bazi_calc import build_parser, calculate_bazi
+    from bazi_reading import prepare_reading, render_facts
+    chart = calculate_bazi(build_parser().parse_args(
+        ['--year', '1990', '--month', '5', '--day', '10', '--hour', '14', '--minute', '0', '--gender', 'male',
+         '--timezone', 'Asia/Shanghai', '--as-of-year', '2026']))
+    return _for_the_user(render_facts(prepare_reading(chart, question)))
+
+
+def test_a_chart_answer_states_each_route_condition_once():
+    """1138 characters before: every route repeated the same two conditions."""
+    text = _chart_text('帮我看看八字命局')
+    assert len(text) <= 850, len(text)
+    assert text.count('不等于它已发挥作用') == 1 and text.count('月令本格') == 1
+    assert not text.startswith('就「')
+
+
+def test_a_colour_answer_leaves_out_the_route_checklist():
+    """1707 characters before: the whole chart checklist followed the colours."""
+    text = _chart_text('我穿什么颜色的衣服对自己有利？')
+    assert len(text) <= 700, len(text)
+    assert text.startswith('按《穷通宝鉴》调候') and '前提已见到' not in text and '已可固定的柱' in text
+
+
+def test_a_slot_answer_merges_hours_that_say_the_same():
+    PERSON_1990 = {'birth': {'year': 1990, 'month': 5, 'day': 10, 'hour': 14, 'minute': 0, 'gender': 'male',
+                             'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}
+    request = {'current_timezone': 'Australia/Sydney', 'request_time': '2026-10-06T01:00:00Z',
+               'question': '下周二10点到12点或周三14点到16点能面试，每次60分钟，帮我选首选和备选。', 'period': '下周',
+               'event': {'scenario': 'interview', 'longitude': 151.2}, 'duration_minutes': 60,
+               'candidates': [{'id': 'tue', 'start': '2026-10-13T10:00', 'end': '2026-10-13T12:00'},
+                              {'id': 'wed', 'start': '2026-10-14T14:00', 'end': '2026-10-14T16:00'}],
+               'participants': [{'id': 'me', 'confirmed': True, 'person': PERSON_1990}]}
+    text = _for_the_user(render_answer(read_request(request)))
+    assert len(text) <= 1550, len(text)
+    assert '庚申日辛巳、壬午时' in text and text.count('这一年（丙午）') == 1

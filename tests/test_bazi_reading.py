@@ -60,7 +60,7 @@ def test_bad_chart_and_missing_primary_source_fail_closed(chart, monkeypatch):
 def test_reader_text_explains_terms_and_specific_route_conditions(chart):
     text = render_facts(prepare_reading(chart))
     assert '这里的“藏”' in text and '“透”' in text
-    assert '遇伤检查佩印' in text and '未满足' in text
+    assert '遇伤检查佩印' in text and '现在不成立：' in text and '（缺：' in text
     assert all(word not in text for word in ('必定', '事业天花板', '富贵', '分数', 'JSON'))
 
 
@@ -264,8 +264,8 @@ def test_markdown_opens_on_the_question_and_the_month_check(chart):
     十神 names such as 七杀 appeared with no explanation at all."""
     text = render_facts(prepare_reading(chart, '我适合做什么工作'))
     lead = text.split('\n\n')[0]
-    assert lead.startswith('就「我适合做什么工作」来说')
-    assert '日主是壬（日柱的天干，代表你本人），按月令丑' in lead
+    # Opens on the chart itself: echoing the question was counted as filler in v5.6.
+    assert lead.startswith('日主是壬（日柱的天干，代表你本人），按月令丑')
     assert '已可固定的柱为' not in lead
     assert '现在不成立' in lead or '还有条件没核完' in lead
     terms = next(p for p in text.split('\n\n') if p.startswith('括号里的名称是十神'))
