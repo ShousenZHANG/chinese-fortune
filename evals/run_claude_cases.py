@@ -14,6 +14,7 @@ import hashlib
 import json
 import os
 import subprocess
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, datetime
@@ -22,6 +23,9 @@ from pathlib import Path
 ALLOWED = ['Bash', 'Read', 'Glob', 'Grep', 'Skill']
 DENIED = ['Write', 'Edit', 'NotebookEdit', 'WebFetch', 'WebSearch']
 RETRY_WAITS = (60, 180, 420)
+# An account usage limit stops the run: later cases would only record the same refusal.
+STOP = threading.Event()
+LIMIT_WORDS = ('session limit', 'usage limit', 'hit your limit')
 
 
 def _command(prompt: str, model: str, session: str | None) -> list[str]:
@@ -64,8 +68,15 @@ def _overloaded(turn: dict) -> bool:
     return bool(result.get('is_error')) and any(w in (result.get('result') or '') for w in ('529', 'Overloaded', 'overloaded'))
 
 
+def _limited(turn: dict) -> bool:
+    text = ((turn.get('result') or {}).get('result') or '').lower()
+    return bool((turn.get('result') or {}).get('is_error')) and any(w in text for w in LIMIT_WORDS)
+
+
 def run_case(case: dict, workspace: Path, out: Path, model: str, timeout: int) -> dict:
     folder = out / case['id']
+    if STOP.is_set():
+        return {'id': case['id'], 'turns': [], 'attempts': [], 'complete': False, 'skipped': 'usage_limit'}
     folder.mkdir(parents=True)
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'CHINESE_FORTUNE_DATA_DIR': str(out.parent / 'profiles')}
     record: dict = {'id': case['id'], 'turns': [], 'attempts': []}
@@ -87,6 +98,9 @@ def run_case(case: dict, workspace: Path, out: Path, model: str, timeout: int) -
             turn.update(turn=index, attempt=attempt, exit=code, seconds=round(time.time() - started, 1),
                         raw=path.name, raw_sha256=hashlib.sha256(stdout.encode('utf-8')).hexdigest())
             record['attempts'].append(turn)
+            if _limited(turn):
+                STOP.set()
+                break
             if not _overloaded(turn) and code != 'timeout':
                 break
         record['turns'].append(turn)
@@ -134,9 +148,11 @@ def main() -> int:
             record = future.result()
             records.append(record)
             cost = sum((t.get('result') or {}).get('total_cost_usd') or 0 for t in record['attempts'])
-            print(f"{record['id']}: {'ok' if record['complete'] else 'INCOMPLETE'}  ${cost:.2f}", flush=True)
+            state = 'ok' if record['complete'] else ('SKIPPED (usage limit)' if record.get('skipped') else 'INCOMPLETE')
+            print(f"{record['id']}: {state}  ${cost:.2f}", flush=True)
     run['finished'] = datetime.now(UTC).isoformat()
     run['complete'] = sum(r['complete'] for r in records)
+    run['stopped_by_usage_limit'] = STOP.is_set()
     (args.out / 'run.json').write_text(json.dumps(run, ensure_ascii=False, indent=1), encoding='utf-8')
     return 0
 
