@@ -11,6 +11,7 @@ from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from annual_assessment import annual_paragraph, annual_readings, years_asked
 from answer_style import question_kind, rule_detail
 from bazi_calc import build_parser, calculate_bazi
 from bazi_reading import chart_facts, prepare_reading
@@ -36,7 +37,6 @@ from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
 from life_guide import LIMIT as LIFE_LIMIT
 from life_guide import entries_for, library_source
-from annual_assessment import annual_paragraph, annual_readings, years_asked
 from luck_assessment import assess_luck, luck_paragraph
 from personal_profiles import birth_arguments, load_profile, validate_person
 from region import is_zone, resolve_region

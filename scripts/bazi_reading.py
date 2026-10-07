@@ -6,11 +6,17 @@ from copy import deepcopy
 from datetime import date, datetime, timedelta, timezone
 from typing import Any
 
+from annual_assessment import (
+    ANNUAL_WORDS,
+    annual_paragraph,
+    annual_readings,
+    unknown_year,
+    years_asked,
+)
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
-from annual_assessment import ANNUAL_WORDS, annual_paragraph, annual_readings, unknown_year, years_asked
 from luck_assessment import assess_luck, luck_paragraph
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (

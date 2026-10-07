@@ -5,7 +5,7 @@ the verdict word of the passage, and conditions the passage leaves open stay
 open. No total grade is made up from the hits.
 """
 import pytest
-from annual_assessment import RULES, assess_year, annual_paragraph, years_asked
+from annual_assessment import RULES, annual_paragraph, assess_year, years_asked
 from classical_search import get_passage
 
 
