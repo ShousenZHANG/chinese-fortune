@@ -10,6 +10,8 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 - **Python 3.9 起**：macOS 命令行工具自带的 python3 到 macOS 26 仍是 3.9.6。改了 3.10/3.11 专有写法：`datetime.UTC`（14 个文件改用 `utils.UTC`）、`zip(strict=True)`（新 `utils.zip_exact`，长度不同照样报错）、`typing.NotRequired`（`contracts.py` 拆成必填基类加 `total=False` 子类，必填、选填键不变）、两处运行时 `X | Y` 类型别名。3.9/3.10 的 `fromisoformat` 不认结尾的 `Z`、非 3/6 位小数秒和不带冒号的时区（`+0530`），宿主传 `request_time` 常带 `Z`：新 `utils.parse_iso` 在 3.9 到 3.12 上读法一致，接收调用方时间的四处（`request_time`、`bazi_calc`、`fortune_time`、`prediction_log`）都改用它。黄历的时辰柱在 3.9 上会因 `zip(strict=)` 报错，被异常处理吞掉后整段为空，现已修好。CI 新增 3.9 任务跑全部测试和零安装冒烟检查；ruff 目标改为 py39，mypy 改为 3.10（mypy 2.x 不再支持 3.9 目标）。
 - **Claude Code 插件市场**：新增 `.claude-plugin/marketplace.json`，`/plugin marketplace add ShousenZHANG/chinese-fortune` 后 `/plugin install chinese-fortune@chinese-fortune`。仓库根目录的 SKILL.md 按单个 Skill 加载（`claude plugin details` 实测：Skills (1)，常驻约 183 token），目录结构不变；插件版本跟 `__version__` 一致，由测试锁定。
 - **安装说明**：README 先给「把这句话发给你的 AI」，再按 Claude Code、Codex/Cursor/Copilot/Gemini（`npx skills add`）、claude.ai、ChatGPT、Claude API 各列一行；另有「给 AI 的安装说明」：放哪个目录、不要 pip、怎么找 Python、怎么自检。SKILL.md 加 `license`、`compatibility`（Agent Skills 规范字段），「安装与诊断」改为「运行环境与诊断」：`python` 指 `python3`、`python` 或 `py -3` 中能用的那个，一个都没有时先征得用户同意再装。
+- **README 按热门 Skill 项目的写法重排**：标题下是徽章（skills.sh 安装数、CI、版本、Python 3.9+、MIT）和一句话介绍，第二节就是安装，接着是「装好后这样问」示例表、回答节选、能力表、为什么可信、隐私与数据、更新与卸载；原有说明全部保留在「详细说明」里。英文版同样重排，并改正两处与代码不符的旧说法（个人吉凶排序「仍未完成」、出生时间约数「按整日比较」）。
+- **参考文件一层直达**：SKILL.md 直接链接全部 33 篇参考，可选方法和排盘口径不再只能经由二层索引找到。
 - **打包**：写 zip 时不再把二进制文件里的 0D 0A 当换行改写（时区数据是二进制）；随包依赖逐字节核对。
 
 ## [5.8.0] — 流年；八字、颜色、择时回答缩短

@@ -78,9 +78,9 @@ v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是
 | 用户点名 | 资料 | 脚本 |
 |---|---|---|
 | 短期运势 / 面试择时 | [个人未来时段](references/24-personalized-forecast.md) | fortune_reading.py |
-| 八字 / 四柱 / 用神 | [八字](references/01-bazi.md) | bazi_reading.py |
+| 八字 / 四柱 / 用神 | [八字](references/01-bazi.md)；排盘口径 [复核](references/01-bazi-paipan.md) | bazi_reading.py |
 | 穿什么颜色、戴什么对自己有利 | [八字](references/01-bazi.md)（颜色按《穷通宝鉴》这一格调候的一般取法换算，例外未逐盘核对） | bazi_reading.py --question … --markdown |
-| 紫微 | [紫微](references/02-ziwei.md) | ziwei_calc.py |
+| 紫微 | [紫微](references/02-ziwei.md)；排盘推导 [口径](references/02-ziwei-paipan.md) | ziwei_calc.py |
 | 周易 / 易经 | [周易](references/03-yijing.md) | yijing_cast.py |
 | 六爻 | [六爻](references/04-liuyao.md) | liuyao_cast.py |
 | 梅花 | [梅花](references/05-meihua.md) | meihua_cast.py |
@@ -91,7 +91,7 @@ v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是
 | 五行 / 天干地支 | [基础](references/00-foundations.md) | 按需查表 |
 | 神煞 | [神煞](references/19-shensha.md) | 解释起法和实际位置 |
 
-其他点名方法见 [可选方法](references/23-optional-methods.md)，纯八字不加载。无完整工具或条款时按实际覆盖回答，不编造盘面。各书收录以所选转录目录为界；紫微、六爻等解释规则仍未达到全书覆盖。
+其他点名方法见 [可选方法](references/23-optional-methods.md)，纯八字不加载；点名时直接读对应一篇：[风水](references/08-fengshui.md)、[起名](references/13-qiming.md)、[合婚](references/14-hehun.md)、[生肖](references/16-shengxiao.md)、[扩展术数](references/21-extended-methods.md)、[面相](references/09-mianxiang.md)、[手相](references/10-shouxiang.md)、[测字](references/11-cezi.md)、[解梦](references/15-jiemeng.md)、[星座](references/17-xingzuo.md)、[塔罗](references/18-tarot.md)。无完整工具或条款时按实际覆盖回答，不编造盘面。各书收录以所选转录目录为界；紫微、六爻等解释规则仍未达到全书覆盖。
 
 ## 运行环境与诊断
 
