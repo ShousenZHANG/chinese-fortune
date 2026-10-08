@@ -1,6 +1,8 @@
 """Cross-event constraints, shared birth inputs, truthful search completeness."""
 from copy import deepcopy
-from datetime import UTC, datetime
+from datetime import datetime, timezone
+
+UTC = timezone.utc   # datetime.UTC is 3.11+
 
 import fortune_reading
 import pytest

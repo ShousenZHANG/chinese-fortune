@@ -45,7 +45,10 @@ def test_runtime_files_present(package):
         "chinese-fortune/knowledge/manifest.json",
         "chinese-fortune/docs/CLASSICAL-SOURCES.md",
         "chinese-fortune/scripts/utils.py",
-        "chinese-fortune/scripts/requirements.txt",
+        "chinese-fortune/scripts/lunar_python/__init__.py",
+        "chinese-fortune/scripts/lunar_python-1.4.8.dist-info/LICENSE",
+        "chinese-fortune/scripts/tzdata/zoneinfo/Asia/Shanghai",
+        "chinese-fortune/scripts/tzdata-2026.3.dist-info/licenses/LICENSE",
         "chinese-fortune/assets/64hex.json",
         "chinese-fortune/references/00-foundations.md",
         "chinese-fortune/agents/openai.yaml",
@@ -91,6 +94,28 @@ def test_extracted_package_runs(package, tmp_path):
     )
     assert proc.returncode == 0
     assert "乙亥" in proc.stdout  # day pillar of the canonical test chart
+
+
+def test_the_writer_keeps_binary_bytes_and_normalises_text(tmp_path):
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from build_skill import _file_bytes
+    binary, text = tmp_path / "zone", tmp_path / "note.md"
+    binary.write_bytes(b"TZif\0\0\r\n\x01")
+    text.write_bytes(b"a\r\nb\r\n")
+    assert _file_bytes(binary) == b"TZif\0\0\r\n\x01" and _file_bytes(text) == b"a\nb\n"
+
+
+def test_vendored_files_ship_byte_for_byte(package):
+    """The writer turns CRLF into LF for text; a binary zoneinfo file holding the
+    bytes 0D 0A would be corrupted by that, and every chart in that zone with it.
+    tzdata 2026.3 happens to have none; a later release may."""
+    names = set(zipfile.ZipFile(package).namelist())
+    vendored = [p for d in ("lunar_python", "tzdata") for p in (ROOT / "scripts" / d).rglob("*")
+                if p.is_file() and "__pycache__" not in p.parts]
+    with zipfile.ZipFile(package) as archive:
+        for path in vendored:
+            name = "chinese-fortune/" + path.relative_to(ROOT).as_posix()
+            assert name in names and archive.read(name) == path.read_bytes(), name
 
 
 # --------------------------------------------------------------------------- #

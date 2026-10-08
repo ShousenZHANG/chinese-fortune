@@ -12,6 +12,11 @@
 # recorded hashes must not change merely to satisfy code-format whitespace checks.
 knowledge/sources/** whitespace=-blank-at-eof
 
+# 随包依赖 (5.9.0): 原样保存, 字节须与各自 dist-info/RECORD 的哈希一致。
+# tzdata 的时区文件是二进制, 其中可能出现 0D 0A 字节。
+scripts/lunar_python/** -text
+scripts/tzdata/** -text
+
 # 二进制: 不做任何行尾转换。
 *.zip  binary
 *.png  binary

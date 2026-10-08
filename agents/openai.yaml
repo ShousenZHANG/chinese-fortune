@@ -1,6 +1,6 @@
 interface:
   display_name: "Chinese Fortune"
-  short_description: "八字排盘、古籍条件核查与白话解读。"
+  short_description: "八字、择日、紫微、六爻等古籍白话解读；也答现实生活问题。"
   default_prompt: >-
     Use $chinese-fortune。先读输出契约，每次计算先取得用户现居地时间并在同请求复用。
     出生、当前和目标时间分开。默认调用 bazi_reading.py，读取 chart_facts、

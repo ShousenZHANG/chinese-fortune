@@ -2,10 +2,10 @@
 from __future__ import annotations
 
 import re
-from datetime import UTC, date, datetime, time, timedelta
+from datetime import date, datetime, time, timedelta
 from zoneinfo import ZoneInfo
 
-from utils import resolve_timezone_offset
+from utils import UTC, parse_iso, resolve_timezone_offset
 
 
 def local_instant(value: str, zone_name: str, fold: int | None = None) -> datetime:
@@ -13,7 +13,7 @@ def local_instant(value: str, zone_name: str, fold: int | None = None) -> dateti
         raise ValueError('时间必须为 ISO 日期和时分，例如 2026-09-15T09:00')
     if fold is not None and (type(fold) is not int or fold not in (0, 1)):
         raise ValueError('fold 必须为 0 或 1')
-    stamp = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    stamp = parse_iso(value)
     zone = ZoneInfo(zone_name)
     if stamp.tzinfo is not None:
         converted = stamp.astimezone(zone)

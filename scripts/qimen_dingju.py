@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 
 from qimen_tables import YANG_JIE_QI, YIN_JIE_QI
-from utils import jiazi_index, require_lunar
+from utils import UTC, jiazi_index, require_lunar
 
 SOURCE_URL = "https://zh.wikisource.org/w/index.php?oldid=8259389"
 CALENDAR_ZONE = timezone(timedelta(hours=8))

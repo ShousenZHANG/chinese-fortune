@@ -23,9 +23,9 @@ python scripts/build_skill.py --commit $releaseCommit --dist-dir dist
 
 `--commit` 必须是完整提交 SHA。构建器用 Git archive 创建临时快照，运行该提交自带的构建器和校验器，不读取未提交的运行文件，也不删除或移动工作树中的笔记。快照内包标为 `commit_snapshot`，记录完整 SHA。老版本若不支持该接口会失败，不能用现在的构建逻辑冒充旧版本的受测构建。快照子进程还会按 Git 对象格式重算全部文件的 blob/tree 摘要，与提交对象中绑定的 tree 比较，并校验提交对象 SHA；仅传入内部参数或伪造 commit 标签不会变成正式包。
 
-CI 在 Python 3.11/3.12 跑完整 pytest、lint 和类型检查。覆盖率总门槛保持 80%，包含 scripts 与 evals，构建器也计入；运行时代码和维护工具的分组报告使用同一份数据。Windows 另跑包安装、UTF-8 和时间边界检查。`slow` 只允许用于本地明确选择的快速集，CI 不排除。
+CI 在 Python 3.11/3.12 跑完整 pytest、lint 和类型检查，在 3.9（运行下限）跑完整 pytest 和零安装冒烟检查。覆盖率总门槛保持 80%，包含 scripts 与 evals，构建器也计入；运行时代码和维护工具的分组报告使用同一份数据。Windows 另跑零安装、UTF-8 和时间边界检查。`slow` 只允许用于本地明确选择的快速集，CI 不排除。
 
-Python 3.12 的 CI 使用 `${{ github.sha }}` 构建，然后通过 `package_smoke.py --archive ... --expected-commit ...` 安装和执行这一份 ZIP。成功后上传 `chinese-fortune-skill` artifact，包含两个 ZIP、SHA256SUMS、CI-PROVENANCE.json。构建后不再次生成发布 ZIP。只有整个 workflow conclusion 为 success 才能发布，不能仅凭 artifact 已上传或其中自述的 run_id 判定成功。
+Python 3.12 的 CI 使用 `${{ github.sha }}` 构建，然后通过 `package_smoke.py --archive ... --expected-commit ...` 在不装任何包的干净虚拟环境里解压并执行这一份 ZIP。成功后上传 `chinese-fortune-skill` artifact，包含两个 ZIP、SHA256SUMS、CI-PROVENANCE.json。构建后不再次生成发布 ZIP。只有整个 workflow conclusion 为 success 才能发布，不能仅凭 artifact 已上传或其中自述的 run_id 判定成功。
 
 ## 下载与发布核对
 

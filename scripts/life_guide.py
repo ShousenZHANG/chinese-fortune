@@ -25,6 +25,7 @@ import json
 import re
 from functools import cache
 from pathlib import Path
+from typing import Union
 
 import life_decision
 import life_search
@@ -39,7 +40,7 @@ LIMIT = 3
 # one of the book's long articles. Entries in QUESTION_PATTERNS fit only
 # part of the matter and come first, so the limit does not cut them when the
 # question does ask about that part.
-Ref = tuple[int, int] | str
+Ref = Union[tuple[int, int], str]   # Union: evaluated at runtime on 3.9
 SCENARIO_ENTRIES: dict[str, list[Ref]] = {
     'travel': [(13, 33), (13, 35), (21, 1), (21, 2), (21, 3), (21, 4)],
     'moving': [(15, 1), (15, 3), (15, 5)],

@@ -15,11 +15,51 @@ from __future__ import annotations
 import calendar
 import json
 import math
+import re
 import sys
-from datetime import UTC
+from collections.abc import Iterable, Iterator
 from datetime import date as _date
 from datetime import datetime as _datetime
 from datetime import timedelta as _timedelta
+from datetime import timezone as _timezone
+from typing import Any
+
+# datetime.UTC is 3.11+; the tools run on 3.9 (macOS Command Line Tools python3).
+UTC = _timezone.utc
+# lunar_python and tzdata ship in scripts/ (5.9.0); nothing is pip installed.
+VENDORED_MISSING = ("scripts/ 里随包的 lunar_python 不见了：请重新下载完整的 chinese-fortune "
+                    "发布包或仓库，不需要 pip 安装")
+
+
+def zip_exact(*iterables: Iterable[Any]) -> Iterator[tuple[Any, ...]]:
+    """``zip(..., strict=True)`` for Python 3.9: equal lengths, or ValueError."""
+    items = [tuple(it) for it in iterables]
+    if len({len(it) for it in items}) > 1:
+        raise ValueError("zip_exact: lengths differ: " + ", ".join(str(len(it)) for it in items))
+    return zip(*items)
+
+
+def parse_iso(value: str) -> _datetime:
+    """``datetime.fromisoformat`` for the forms hosts send, the same on 3.9 to 3.12.
+
+    Before 3.11 it refuses a trailing ``Z``, fractions other than 3 or 6 digits
+    (Go and Java print 9; the extra digits are dropped, as 3.11 drops them) and
+    offsets without a colon (``+0530``, ``-05``). Only the extended date form
+    ``YYYY-MM-DD`` is read; an ISO week or basic-format date is still refused.
+    """
+    text = value.strip()
+    date_part, sep, time_part = text[:10], text[10:11], text[11:]
+    if sep not in ("T", "t", " "):
+        return _datetime.fromisoformat(text)
+    if time_part[-1:] in ("Z", "z"):
+        time_part = time_part[:-1] + "+00:00"
+    sign = re.search(r"[+-]", time_part)
+    clock, offset = (time_part[:sign.start()], time_part[sign.start():]) if sign else (time_part, "")
+    clock = re.sub(r"[.,](\d+)$", lambda m: "." + m.group(1)[:6].ljust(6, "0"), clock)
+    parts = re.fullmatch(r"([+-])(\d{2}):?(\d{2})?(?::?(\d{2}))?", offset)
+    if parts:
+        offset = f"{parts[1]}{parts[2]}:{parts[3] or '00'}" + (f":{parts[4]}" if parts[4] else "")
+    return _datetime.fromisoformat(f"{date_part}{sep}{clock}{offset}")
 
 # --------------------------------------------------------------------------- #
 # Core cycles
@@ -101,7 +141,7 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 # echoes it in its JSON envelope.
 # --------------------------------------------------------------------------- #
 
-__version__ = "5.8.0"
+__version__ = "5.9.0"
 
 
 # --------------------------------------------------------------------------- #
@@ -433,7 +473,7 @@ def warn(msg: str) -> None:
         sys.stderr.buffer.write(f"[warn] {msg}\n".encode("utf-8", errors="replace"))
 
 
-def require_lunar() -> None:
+def require_lunar() -> Any:
     """Import ``lunar_python``. On failure, print JSON error & exit 1."""
     try:
         import lunar_python  # noqa: F401
@@ -442,11 +482,7 @@ def require_lunar() -> None:
         err = {
             "error": "missing_dependency",
             "package": "lunar_python",
-            "install_hint": "pip install lunar_python>=1.4.4",
-            "message": (
-                "本脚本依赖 lunar_python 处理农历/八字/节气, 未检测到该模块。"
-                "请执行 'pip install lunar_python' 后重试。"
-            ),
+            "message": VENDORED_MISSING,
         }
         json_print(err)
         sys.exit(1)

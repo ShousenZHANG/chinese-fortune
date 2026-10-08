@@ -43,7 +43,7 @@ def _tz_text(name: str) -> str:
     """A tz data file from wherever zoneinfo reads its zones: TZPATH, then tzdata."""
     sources: list = [Path(p) / name for p in zoneinfo.TZPATH]
     try:
-        sources.append(resources.files('tzdata').joinpath('zoneinfo', name))
+        sources.append(resources.files('tzdata').joinpath('zoneinfo').joinpath(name))
     except ModuleNotFoundError:
         pass
     for source in sources:

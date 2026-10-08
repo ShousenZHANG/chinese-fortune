@@ -1,7 +1,7 @@
 """Bind feasible event windows to personal facts without inventing a ranking."""
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 import xiangzhu
@@ -10,7 +10,7 @@ from fortune_calendar import solar_wall, term_boundaries
 from fortune_time import civil_boundaries
 from qimen_cast import determine_ju, source_core
 from qimen_dingju import seasonal_context
-from utils import require_lunar
+from utils import UTC, require_lunar
 
 
 def event_basis(comparisons: list[dict], participants: list[dict], *, scenario: str,
@@ -67,7 +67,7 @@ def event_basis(comparisons: list[dict], participants: list[dict], *, scenario: 
                     cursor = cursor.replace(second=0, microsecond=0) + timedelta(minutes=1)
             interval['event_segments'] = []
             ordered = sorted(cuts)
-            for start, end in zip(ordered, ordered[1:], strict=False):
+            for start, end in zip(ordered, ordered[1:]):
                 wall = solar_wall(start.astimezone(zone), standard, longitude)
                 lunar = Solar.fromYmdHms(wall.year, wall.month, wall.day,
                                         wall.hour, wall.minute, wall.second).getLunar()

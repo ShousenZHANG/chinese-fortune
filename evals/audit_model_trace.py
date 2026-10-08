@@ -132,7 +132,7 @@ def audit(record: dict, events: list[tuple[int, dict]]) -> dict:
                 (line, value if isinstance(value, dict) else {}))
 
     for key in started.keys() | completed.keys():
-        identity = dict(zip(('thread_id', 'turn_id', 'item_id'), key, strict=True))
+        identity = dict(zip(('thread_id', 'turn_id', 'item_id'), key))   # key: (*turn_key, item_id)
         if key not in completed:
             note('started_without_completion', **identity, lines=started[key])
         elif key not in started:

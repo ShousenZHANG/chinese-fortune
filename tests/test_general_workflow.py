@@ -1,6 +1,8 @@
 """Independent regression scenarios for the agreed common workflow."""
 from copy import deepcopy
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta, timezone
+
+UTC = timezone.utc   # datetime.UTC is 3.11+
 
 import pytest
 from classical_search import climate_passages, get_passage

@@ -11,13 +11,13 @@ import json
 import os
 import re
 import tempfile
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 from pathlib import Path
 from urllib.parse import urlsplit
 from uuid import uuid4
 
 from personal_profiles import data_root
-from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from utils import UTC, ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
 SOURCE_FIELDS = {'title', 'edition', 'source_url', 'locator', 'quote', 'context',
                  'conditions', 'exceptions', 'modern_mapping', 'verification_notes'}

@@ -1,7 +1,9 @@
 [tool.ruff]
 line-length = 100
-target-version = "py311"
-extend-exclude = ["dist", "_competitors"]
+# The tools run on 3.9 (macOS Command Line Tools python3); see tests/test_zero_install.py.
+target-version = "py39"
+# lunar_python and tzdata are shipped as published (5.9.0); not ours to lint.
+extend-exclude = ["dist", "_competitors", "scripts/lunar_python", "scripts/tzdata"]
 
 [tool.ruff.lint]
 # Pyflakes (F), pycodestyle errors (E), warnings (W), isort (I), bugbear (B),
@@ -28,6 +30,7 @@ parallel = true
 # Keep runtime and retained evaluation/build tools in the combined denominator.
 # Group reports describe the same run; they do not substitute for this gate.
 source = ["scripts", "evals"]
+omit = ["scripts/lunar_python/*", "scripts/tzdata/*"]
 sigterm = true
 
 [tool.coverage.report]
@@ -39,6 +42,14 @@ precision = 1
 # `mypy scripts/ --disallow-untyped-defs` 有 22 处违反, 分布在 8 个文件里。
 # 现已全部补齐并把它变成门禁。lunar_python 无类型存根, 其对象一律标 Any。
 disallow_untyped_defs = true
-python_version = "3.11"
+# The tools run on 3.9, but mypy 2.x checks 3.10 at the lowest: it still catches
+# 3.11-only calls (datetime.UTC, NotRequired); the CI py3.9 job runs the rest for real.
+python_version = "3.10"
+exclude = ["^scripts/lunar_python/", "^scripts/tzdata/"]
 ignore_missing_imports = true
 warn_unused_ignores = false
+
+[[tool.mypy.overrides]]
+# Shipped as published, untyped: callers see Any, exactly as before it was vendored.
+module = ["lunar_python", "lunar_python.*", "tzdata", "tzdata.*"]
+follow_imports = "skip"

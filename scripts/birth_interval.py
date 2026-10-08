@@ -5,6 +5,7 @@ import argparse
 from copy import deepcopy
 
 from bazi_calc import calculate_bazi
+from utils import zip_exact
 
 
 def interval_minutes(value: dict) -> tuple[int, int]:
@@ -53,9 +54,9 @@ def calculate_interval(args: argparse.Namespace, interval: dict) -> dict:
         clean['day_master'] = {'status': 'birth_time_range'}
     for key in ('solar_date', 'lunar_date'):
         dates = sorted({tuple(c[key][k] for k in ('year', 'month', 'day')) for c in probes})
-        clean[key] = (dict(zip(('year', 'month', 'day'), dates[0], strict=True)) if len(dates) == 1 else
+        clean[key] = (dict(zip_exact(('year', 'month', 'day'), dates[0])) if len(dates) == 1 else
                       {'status': 'birth_time_range', 'candidate_dates':
-                       [dict(zip(('year', 'month', 'day'), d, strict=True)) for d in dates]})
+                       [dict(zip_exact(('year', 'month', 'day'), d)) for d in dates]})
     # An invariant pillar does not establish an exact physical birth instant.
     clean['calendar_context'] = {'status': 'birth_time_range', 'birth_instant_utc': None}
     clean['true_solar_time'] = {'status': 'birth_time_range', 'time_standard': args.time_standard,

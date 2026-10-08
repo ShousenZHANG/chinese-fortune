@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: lunar-python
+Version: 1.4.8
+Summary: lunar is a calendar library for Solar and Chinese Lunar.
+Home-page: https://github.com/6tail/lunar-python
+Author: 6tail
+Author-email: 6tail@6tail.cn
+License: MIT
+Keywords: solar lunar
+License-File: LICENSE
+
+lunar is a calendar library for Solar and Chinese Lunar.

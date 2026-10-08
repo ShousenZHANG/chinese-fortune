@@ -1,5 +1,7 @@
 """Colours and things to wear come from the 调候 cell's general choice, every
 link cited, and say that the cell's exceptions were not checked on the chart."""
+from __future__ import annotations
+
 import re
 
 import pytest

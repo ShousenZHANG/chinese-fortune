@@ -14,11 +14,11 @@ import re
 import time
 import urllib.parse
 import urllib.request
-from datetime import UTC, datetime
+from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
 
-from utils import ensure_utf8_stdio
+from utils import UTC, ensure_utf8_stdio
 
 ROOT = Path(__file__).resolve().parents[1] / 'knowledge'
 API = 'https://zh.wikisource.org/w/api.php'

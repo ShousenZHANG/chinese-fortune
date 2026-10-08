@@ -5,6 +5,8 @@ gives a different order each run. detect_interactions once printed the 子卯
 互刑 pair as 卯子 or 子卯 depending on the process; nothing in a single test
 run could see it. Each CLI here runs under several fixed hash seeds.
 """
+from __future__ import annotations
+
 import json
 import os
 import subprocess

@@ -6,11 +6,11 @@ complete for feasibility: delaying it cannot help a later event in this model.
 """
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from utils import ok_envelope
+from utils import UTC, ok_envelope
 
 EVENT_KEYS = {'id', 'event', 'candidates', 'duration_minutes', 'busy', 'period',
               'participant_ids', 'travel_minutes_from_previous'}

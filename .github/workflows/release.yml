@@ -117,7 +117,7 @@ jobs:
           # Relative repository links would resolve against the release page.
           base = f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/blob/v{version}/"
           body = re.sub(r'\]\((?!https?://|#)([^)]+)\)', lambda m: f'](' + base + m.group(1) + ')', body)
-          body += (f'\n\n验证：附件来自提交 `{sha}` 的完整 CI（run {run}：Python 3.11/3.12、覆盖率门槛、'
+          body += (f'\n\n验证：附件来自提交 `{sha}` 的完整 CI（run {run}：Python 3.9/3.11/3.12、覆盖率门槛、'
                    'Windows 检查和独立安装验证），由 Release 工作流原样转发，未重新构建。'
                    'CI run 与校验信息见附件 `CI-PROVENANCE.json` 和 `SHA256SUMS`。\n\n'
                    f'运行包为 `chinese-fortune-v{version}.zip`；原始来源材料单独提供在 `-sources.zip`。'

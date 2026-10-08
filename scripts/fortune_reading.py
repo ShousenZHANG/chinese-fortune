@@ -7,8 +7,9 @@ import json
 import re
 import sys
 from collections.abc import Callable
-from datetime import UTC, date, datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
+from typing import Optional
 from zoneinfo import ZoneInfo
 
 from annual_assessment import annual_paragraph, annual_readings, years_asked
@@ -41,7 +42,7 @@ from luck_assessment import assess_luck, luck_paragraph
 from personal_profiles import birth_arguments, load_profile, validate_person
 from region import is_zone, resolve_region
 from request_time import capture_request_time
-from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from utils import UTC, ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import asks_colour, colour_lead, colour_lines
 from xiangzhu import PASSAGE as XIANGZHU_PASSAGE
 from xiangzhu import birth_years_of, grade_of, label_of, personal_calendar, worst
@@ -581,7 +582,7 @@ def _month_bound(hits: list[dict], term: str) -> bool:
     return bool(hits) and all(_reason_moves(hit, term) for hit in hits)
 
 
-Span = tuple[datetime, datetime, list[dict] | None]
+Span = tuple[datetime, datetime, Optional[list[dict]]]   # Optional: evaluated at runtime on 3.9
 
 
 def _term_sentence(result: dict, spans: list[Span]) -> str:

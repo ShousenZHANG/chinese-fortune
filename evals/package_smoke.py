@@ -1,4 +1,4 @@
-"""Build, install runtime dependencies in a fresh venv, and exercise the ZIP.
+"""Build, then exercise the ZIP in a fresh venv with nothing installed (5.9.0: deps ship inside).
 
 No globally installed packages or source-checkout imports are used by smoke commands.
 """
@@ -103,10 +103,13 @@ def main(argv: list[str] | None = None) -> int:
                     raise RuntimeError('unsafe archive member')
             package.extractall(work)
         skill = work / 'chinese-fortune'
-        venv.EnvBuilder(with_pip=True).create(work / 'venv')
+        # No pip, no packages: lunar_python and tzdata must come from the skill itself.
+        venv.EnvBuilder(with_pip=False).create(work / 'venv')
         python = work / 'venv' / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
-        run([str(python), '-m', 'pip', 'install', '-r', str(skill / 'scripts/requirements.txt'),
-             '-c', str(skill / 'scripts/constraints-runtime.txt')], work)
+        origin = run([str(python), '-c', 'import sys; sys.path.insert(0, sys.argv[1]); import lunar_python, tzdata; '
+                      'print(lunar_python.__file__); print(tzdata.__file__)', str(skill / 'scripts')], work)
+        vendored = [Path(line).resolve() for line in origin.splitlines() if line.strip()]
+        assert all(path.is_relative_to(skill.resolve()) for path in vendored), vendored
         common = ['--year', '2000', '--month', '1', '--day', '15', '--hour', '10',
                   '--gender', 'male', '--timezone', 'Asia/Shanghai']
         outputs = {}
@@ -245,15 +248,15 @@ def main(argv: list[str] | None = None) -> int:
         deleted = json.loads(run([*profile_command, 'delete', '--profile-id', 'sample',
                                   '--expected-revision', '1', '--data-dir', str(profile_dir)], work))
         assert deleted['ok'] and not list(profile_dir.iterdir())
-        installed = json.loads(run([str(python), '-m', 'pip', 'list', '--format=json'], work))
         print(json.dumps({'ok': True, 'platform': sys.platform, 'python': sys.version.split()[0],
-                          'checks': ['bazi', 'ziwei', 'classical_library', 'current_time',
+                          'checks': ['zero_install', 'bazi', 'ziwei', 'classical_library', 'current_time',
                                      'bazi_reading', 'shared_time', 'reading_review', 'yijing', 'dst_gap',
                                      'personal_forecast', 'source_scope_audit', 'profile_save_delete',
                                      'classical_scenario_retrieval', 'complete_luck_chapter',
                                      'candidate_personal_timeline', 'nonadjacent_source_conditions',
                                      'qimen_source_anchor', 'personal_event_method', 'joint_itinerary'],
-                          'dependencies': installed, 'artifact': artifact}, ensure_ascii=False, indent=2))
+                          'dependencies': 'none installed; vendored: ' + ', '.join(str(p) for p in vendored),
+                          'artifact': artifact}, ensure_ascii=False, indent=2))
     return 0
 
 

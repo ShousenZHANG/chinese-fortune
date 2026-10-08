@@ -16,7 +16,7 @@ Two rules the tiers must not break, both inherited from the reference set:
 from __future__ import annotations
 
 from copy import deepcopy
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 
 import xiangzhu
 import xieji_days
@@ -30,6 +30,7 @@ from contracts import (
     Unrankable,
 )
 from fortune_rules import PRECEDENCE_VERSION
+from utils import UTC, zip_exact
 
 # 天地转杀（yuanhai:c052:p0004）：秋见辛酉为天转、癸酉为地转；其日最忌「出行商贾」。
 # 四季各自两日，键为节气季节，值为该季的 (天转, 地转)。
@@ -129,7 +130,7 @@ def tiandi_zhuan(day_stem: str, day_branch: str, season: str) -> dict | None:
     pair = TIANDI_ZHUAN.get(season)
     if pair is None:
         return None
-    for label, (stem, branch) in zip(('天转', '地转'), pair, strict=True):
+    for label, (stem, branch) in zip_exact(('天转', '地转'), pair):
         if (day_stem, day_branch) == (stem, branch):
             return {'rule': 'tiandi_zhuan', 'kind': label,
                     'passage_id': TIANDI_SOURCE,
@@ -399,7 +400,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str,
             # 戊/癸 morning, about a fifth of all days.
             hits: dict[tuple[str, str], HourHit] = {}
             contested: dict[tuple[str, str], ContestedHourHit] = {}
-            for ref, pillar in zip(refs, pillars, strict=True):
+            for ref, pillar in zip_exact(refs, pillars):
                 if 'hour' not in pillar or 'day' not in pillar:
                     continue
                 stem = rule_stem(pillar['day'][0], pillar['hour'])
@@ -427,7 +428,7 @@ def rank_candidates(comparison: list[dict], participant: dict, *, scenario: str,
             # has clock times, for everyone the choice is made for. The
             # passage bars 「天尅地衝…年月日時」, so the hour is read too.
             keys = [k for k in xiangzhu.PILLARS if all(k in p for p in dated)]
-            spans = [dict(zip(keys, found, strict=True))
+            spans = [dict(zip_exact(keys, found))
                      for found in dict.fromkeys(tuple(p[k] for k in keys) for p in dated)]
             assessed, personal = personal_hits(people, spans)
             for hit in personal:

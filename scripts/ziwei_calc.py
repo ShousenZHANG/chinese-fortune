@@ -38,6 +38,7 @@ from method_rules import method_reading_packet
 # --------------------------------------------------------------------------- #
 from utils import (
     DIZHI,
+    VENDORED_MISSING,
     __version__,
     ensure_utf8_stdio,
     error_envelope,
@@ -179,7 +180,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     try:
         from lunar_python import Lunar, Solar  # type: ignore
     except ImportError:
-        return error_envelope("ziwei", "missing_dependency", "pip install -r scripts/requirements.txt")
+        return error_envelope("ziwei", "missing_dependency", VENDORED_MISSING)
 
     try:
         if args.lunar:

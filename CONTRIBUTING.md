@@ -23,7 +23,7 @@
 
 ## 开发与验收
 
-需要 Python 3.11+；CI 使用 3.11 / 3.12。上游维护 main，依赖由维护者核查后更新。外部贡献可在自己的 fork 中建立分支并提交 PR。
+开发需要 Python 3.11+（开发工具的锁定版本要求）；技能本身在 3.9+ 上运行，CI 另有 3.9 任务跑全部测试和零安装冒烟检查。上游维护 main，依赖由维护者核查后更新。外部贡献可在自己的 fork 中建立分支并提交 PR。
 
 ```sh
 python -m pip install -r requirements-dev.txt -c constraints-dev.txt
@@ -35,7 +35,17 @@ python scripts/build_skill.py --dist-dir dist
 python -X utf8 evals/package_smoke.py --archive dist/chinese-fortune-v<VERSION>.zip
 ```
 
-日常定位问题可先运行 `python -X utf8 -m pytest tests/ -q -m "not slow"`。这只是一组明确排除长网格测试的快速检查，不能替代完整 CI/发布验收。CI 不排除 slow，Python 3.11/3.12 完整运行，Windows 另做安装、UTF-8 与历史时区检查。
+日常定位问题可先运行 `python -X utf8 -m pytest tests/ -q -m "not slow"`。这只是一组明确排除长网格测试的快速检查，不能替代完整 CI/发布验收。CI 不排除 slow，Python 3.9/3.11/3.12 完整运行，Windows 另做零安装、UTF-8 与历史时区检查。
+
+### 随包依赖
+
+运行时唯二的第三方包 lunar_python、tzdata 原样放在 `scripts/`，连同各自的 `.dist-info`（版本、许可证、RECORD 哈希）。用户不需要 pip；`tests/test_zero_install.py` 按 RECORD 逐个核对文件哈希。升级时在新目录装好、整体替换，不手改其中文件：
+
+```sh
+python -m pip install --no-deps --no-compile --target /tmp/vend lunar_python==<版本> tzdata==<版本>
+```
+
+再把 `/tmp/vend` 里的两个包目录和两个 `.dist-info` 换进 `scripts/`，`.dist-info` 里 Windows 写出的 CRLF 改成 LF。版本号写在三处，一起改：`tests/test_zero_install.py` 的 `VENDORED`、`tests/test_build.py` 里的 `.dist-info` 路径、`constraints-dev.txt`。然后跑全套测试。
 
 唯一的测试入口是 pytest；原 `evals/run_checks.py` 的独有命令行黄金断言、Markdown 可达性和发行检查已迁入 `tests/test_harness_gates.py`，不再二次启动同一套检查。坏输入契约在 `test_cli_contract.py`，全库/安装验证分别在古籍测试与 `package_smoke.py`。
 

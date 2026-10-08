@@ -1,6 +1,8 @@
 """Current residence, birth time and explicit replay must not share a clock by accident."""
 import argparse
-from datetime import UTC, datetime
+from datetime import datetime, timezone
+
+UTC = timezone.utc   # datetime.UTC is 3.11+
 
 import pytest
 import request_time

@@ -8,14 +8,16 @@ from __future__ import annotations
 import argparse
 import re
 from collections.abc import Callable
-from datetime import UTC, datetime
+from datetime import datetime
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from utils import (
+    UTC,
     ensure_utf8_stdio,
     error_envelope,
     json_print,
     ok_envelope,
+    parse_iso,
     resolve_timezone_offset,
 )
 
@@ -33,7 +35,7 @@ def _iso(value: str) -> datetime:
     try:
         if not re.match(r'^\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}', value):
             raise ValueError('缺少时分')
-        return datetime.fromisoformat(value)
+        return parse_iso(value)
     except ValueError as exc:
         raise ValueError(f'时间需完整 ISO 日期和时分: {value}') from exc
 

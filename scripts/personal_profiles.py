@@ -6,11 +6,11 @@ import json
 import os
 import re
 import tempfile
-from datetime import UTC, datetime
+from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from utils import UTC, ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
 ROOT = Path(__file__).resolve().parents[1]
 BIRTH_FIELDS = {'year', 'month', 'day', 'hour', 'minute', 'gender', 'timezone', 'city',

@@ -4,7 +4,9 @@ import json
 import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta, timezone
+
+UTC = timezone.utc   # datetime.UTC is 3.11+
 from pathlib import Path
 
 import prediction_log as log

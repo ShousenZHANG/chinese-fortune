@@ -1,5 +1,4 @@
-# Dev / CI dependencies. Runtime deps live in scripts/requirements.txt.
--r scripts/requirements.txt
+# Dev / CI dependencies. The runtime needs none: lunar_python and tzdata ship in scripts/.
 -r scripts/requirements-dev.txt
 pytest>=8,<10
 pytest-cov>=7

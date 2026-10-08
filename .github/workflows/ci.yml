@@ -62,7 +62,7 @@ jobs:
         if: matrix.python == '3.12'
         run: python -X utf8 scripts/build_skill.py --commit "${{ github.sha }}"
 
-      - name: Clean runtime installation and exact artifact smoke
+      - name: Zero-install exact artifact smoke
         if: matrix.python == '3.12'
         run: |
           archive=$(find dist -maxdepth 1 -name '*.zip' ! -name '*-sources.zip' -print)
@@ -97,6 +97,24 @@ jobs:
             dist/CI-PROVENANCE.json
           if-no-files-found: error
 
+  test-py39:
+    # The tools' floor (5.9.0): macOS Command Line Tools still ship python3 3.9.
+    # The dev pins need 3.10+, so this job installs only the test runner and the
+    # differential engines, then runs every test and the zero-install smoke.
+    name: test (py3.9, floor)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.9"
+      - name: Install the test runner only (the skill itself needs nothing)
+        run: python -m pip install "pytest>=8,<9" sxtwl==2.0.7 iztro-py==0.5.0 -r scripts/requirements-dev.txt
+      - name: Full tests on the floor
+        run: python -X utf8 -m pytest tests/ -q
+      - name: Zero-install package smoke on the floor
+        run: python -X utf8 evals/package_smoke.py
+
   windows-smoke:
     runs-on: windows-latest
     steps:
@@ -107,5 +125,5 @@ jobs:
       - run: python -m pip install -r requirements-dev.txt -c constraints-dev.txt
       - name: Installed package, UTF-8 and historical timezone tests
         run: python -X utf8 -m pytest tests/test_build.py tests/test_time_contract.py tests/test_request_time.py tests/test_reading_support.py tests/test_bazi_reading.py tests/test_classical_library.py tests/test_classical_guidance.py tests/test_personalized_forecast.py tests/test_selection_workflow.py tests/test_itinerary.py -q
-      - name: Clean runtime installation and extracted package smoke
+      - name: Zero-install extracted package smoke
         run: python -X utf8 evals/package_smoke.py

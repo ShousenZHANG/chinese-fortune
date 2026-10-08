@@ -48,7 +48,7 @@ from contracts import (
     PersonalFactor,
     PillarContext,
 )
-from utils import TIANGAN_WUXING, shi_shen
+from utils import TIANGAN_WUXING, shi_shen, zip_exact
 
 PASSAGE = 'xieji:c033:p0020'
 STEMS = '甲乙丙丁戊己庚辛壬癸'
@@ -112,7 +112,7 @@ NA_YIN_CLASH = {
 # Positional tables, each with the passage that states it.
 TABLES = {
     # 「甲禄在寅，乙禄在卯，丙戊禄在巳，丁己禄在午，庚禄在申，辛禄在酉，壬禄在亥，癸禄在子。」
-    'lu': ('yuanhai:c034:p0003', dict(zip(STEMS, '寅卯巳午巳午申酉亥子', strict=True))),
+    'lu': ('yuanhai:c034:p0003', dict(zip_exact(STEMS, '寅卯巳午巳午申酉亥子'))),
     # 三命通会「甲戊庚牛羊…六辛逢馬虎」, as reviewed in assets/shensha.json. 庚
     # is read two ways (see GUI_REN_CONTESTED) and is left out of this table.
     'gui_ren': ('sanming:c003:p0008', {'甲': '丑未', '戊': '丑未', '乙': '子申', '己': '子申',

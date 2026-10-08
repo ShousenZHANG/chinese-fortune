@@ -1,4 +1,6 @@
 """Audit regressions through real request/CLI inputs and the final Markdown answer."""
+from __future__ import annotations
+
 import json
 import os
 import subprocess

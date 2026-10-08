@@ -5,7 +5,9 @@ import json
 import subprocess
 import sys
 from copy import deepcopy
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta, timezone
+
+UTC = timezone.utc   # datetime.UTC is 3.11+
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -257,7 +259,7 @@ def test_segments_cover_entire_dst_day_with_stable_pillars(natal, standard, long
     result = period_facts(window, natal, granularity='hour', standard=standard, longitude=longitude)
     segments = result['segments']
     assert segments[0]['start'] == window['start'] and segments[-1]['end'] == window['end']
-    for left, right in zip(segments, segments[1:], strict=False):
+    for left, right in zip(segments, segments[1:]):
         assert left['end'] == right['start']
     elapsed = 0
     for segment in segments:

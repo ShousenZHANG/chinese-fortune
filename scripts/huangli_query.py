@@ -22,6 +22,7 @@ from utils import (
     ok_envelope,
     require_lunar,
     warn,
+    zip_exact,
 )
 
 
@@ -221,9 +222,8 @@ def _hour_pillars(lunar: Any) -> list[dict]:
         solar = lunar.getSolar()
         # (label, 时辰, sample hour, displayed range) in clock order.
         blocks = [("早子", "子", 0, "00:00-01:00")]
-        blocks += [(b, b, h, f"{h:02d}:00-{h + 2:02d}:00") for b, h in zip(
-            "丑寅卯辰巳午未申酉戌亥", [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21],
-            strict=True)]
+        blocks += [(b, b, h, f"{h:02d}:00-{h + 2:02d}:00") for b, h in zip_exact(
+            "丑寅卯辰巳午未申酉戌亥", [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21])]
         blocks.append(("夜子", "子", 23, "23:00-24:00"))
         for label, branch, start, rng in blocks:
             s = Solar.fromYmdHms(solar.getYear(), solar.getMonth(),

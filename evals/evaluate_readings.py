@@ -33,7 +33,7 @@ def _conversation_errors(case: dict, row: dict) -> list[str]:
         return ['actual turn count does not match the case conversation']
     errors = []
     thread_ids, turn_ids = set(), set()
-    for index, (turn, request) in enumerate(zip(turns, expected, strict=True), 1):
+    for index, (turn, request) in enumerate(zip(turns, expected), 1):
         if not isinstance(turn, dict):
             errors.append(f'turn {index}: invalid turn record')
             continue

@@ -2,6 +2,8 @@
 
 Built on small synthetic ZIPs so it runs without the real snapshot.
 """
+from __future__ import annotations
+
 import json
 import zipfile
 

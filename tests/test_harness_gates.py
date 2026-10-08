@@ -333,8 +333,9 @@ def test_ci_coverage_does_not_override_the_config_source():
     3303 vs 3595 (差 292 条 evals 语句), fail_under=80 对 发布工具没有约束。CHANGELOG 里「86.6%, 分母现含发布链路代码」当时也是错的。
     """
     import re
-    import tomllib
     from pathlib import Path
+
+    tomllib = pytest.importorskip("tomllib")   # 3.11+; the 3.9 job runs the tools, not this config check
     root = Path(__file__).resolve().parent.parent
     ci = (root / ".github" / "workflows" / "ci.yml").read_text(encoding="utf-8")
     # 只看真正的 run: 行, 不看解释这条规则的注释本身

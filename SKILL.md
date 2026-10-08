@@ -1,6 +1,8 @@
 ---
 name: chinese-fortune
 description: 中国传统术数研习与算命，也按《高性价比人生指南》回答现实生活问题（命理问题优先）。现实生活：胸痛、倒地、燃气泄漏、不想活了等正在发生的急症和自伤念头先给第一个动作；收到传票、被起诉；该不该、值不值、划不划算、出事了先做什么、能领什么、犯不犯法、失业了先做什么、替朋友担保签不签、押金不退怎么办、拖欠工资、保险要不要买、留学签证。术数：八字/四柱/用神、短期运势、下周运势、今天运气、哪天对我好/吉日/好日子、个人择日（搬家、结婚、开业、出行、面试哪天好）、大运、幸运色/穿什么颜色、佩戴首饰、幸运数字、有利方位、五行缺什么/喜用神、面试择时、连续行程、古籍查询、紫微斗数、周易/易经、六爻、梅花、奇门遁甲、大六壬、黄历择日、风水、起名、合婚、生肖、神煞、五行、天干地支。Also answers everyday life questions (emergencies first) from a frozen life-advice book; BaZi, Four Pillars, personal forecasts, interview scheduling, Zi Wei Dou Shu, I Ching, Feng Shui, Chinese zodiac, naming, compatibility, auspicious dates and Chinese fortune-telling. 塔罗 Tarot、星座 astrology、解梦 dream interpretation、面相 physiognomy、手相 palmistry、测字和随机寻访仅在明确点名时使用。
+license: MIT
+compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to install and no network needed for calculations; lunar_python and tzdata ship in scripts/.
 ---
 
 # 中国传统术数研习
@@ -91,13 +93,11 @@ v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是
 
 其他点名方法见 [可选方法](references/23-optional-methods.md)，纯八字不加载。无完整工具或条款时按实际覆盖回答，不编造盘面。各书收录以所选转录目录为界；紫微、六爻等解释规则仍未达到全书覆盖。
 
-## 安装与诊断
+## 运行环境与诊断
 
-在技能目录运行：
+只需 Python 3.9 或以上，不用安装任何包，计算不联网：排盘用的 lunar_python 和时区数据 tzdata 已随包放在 `scripts/`。本文命令里的 `python` 指本机能用的那一个：依次试 `python3`、`python`、Windows 的 `py -3`，用 `--version` 确认是 3.9 以上。
 
-```sh
-python -m pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
-```
+一个都没有时，先征得用户同意再装 Python：Windows `winget install -e --id Python.Python.3.12`；macOS `xcode-select --install`（命令行工具自带 python3）；Linux 用发行版的包管理器装 `python3`。不要往用户的 Python 里用 pip 装任何东西。装好后自检一次：`python scripts/classical_search.py --validate`。
 
 `ok=false` 时处理 message。`reliable=false`、`boundary`、`missing_in_table`、`*_granularity` 等仅解释会改变本题的限制。`hour_known=false` 不能使用内部占位时辰，其他柱也可能因边界待定。
 

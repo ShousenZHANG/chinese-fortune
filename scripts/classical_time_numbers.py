@@ -8,7 +8,7 @@ from __future__ import annotations
 import argparse
 from datetime import datetime
 
-from utils import shichen_number
+from utils import VENDORED_MISSING, shichen_number
 
 SOURCE = 'https://zh.wikisource.org/w/index.php?oldid=2690596&title=梅花易數/卷一'
 
@@ -31,7 +31,7 @@ def time_numbers(dt: datetime, profile: str = 'classical', leap_policy: str | No
         try:
             from lunar_python import Solar
         except ImportError as exc:
-            raise ValueError('古法历数需要 lunar_python；请安装 scripts/requirements.txt') from exc
+            raise ValueError('古法历数需要 lunar_python；' + VENDORED_MISSING) from exc
         lunar = Solar.fromYmdHms(dt.year, dt.month, dt.day, dt.hour, dt.minute, 0).getLunar()
         y = (lunar.getYear() - 4) % 12 + 1
         raw_month = lunar.getMonth()

@@ -1,10 +1,11 @@
 """Request routing and practical choices, separate from traditional interpretation."""
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
 from contracts import PassedOver, Placement, PracticalChoice, Ranking
+from utils import UTC
 
 INTENTS = {'period', 'selection', 'natal', 'event', 'research'}
 

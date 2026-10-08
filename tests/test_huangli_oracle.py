@@ -15,6 +15,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
+from utils import zip_exact
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -74,8 +75,8 @@ def test_zhi_shen_cycles_without_gap_across_a_month():
     days = _grid(date(2026, 3, 1), 45)
     seq = [run_day(d)["zhi_shen_12jianchu"] for d in days]
     steps = [(JIAN_CHU.index(b) - JIAN_CHU.index(a)) % 12
-             for a, b in zip(seq, seq[1:], strict=False)]
-    assert set(steps) <= {0, 1}, f"值神跳位: {sorted(set(steps))}\n{list(zip(days, seq, strict=True))}"
+             for a, b in zip(seq, seq[1:])]
+    assert set(steps) <= {0, 1}, f"值神跳位: {sorted(set(steps))}\n{list(zip_exact(days, seq))}"
     assert steps.count(0) <= 2, f"45 天内重复 {steps.count(0)} 次, 交节至多 2 次"
     assert set(seq) == set(JIAN_CHU), f"45 天未走满十二值神: {sorted(set(seq))}"
 

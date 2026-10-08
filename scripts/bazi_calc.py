@@ -27,7 +27,7 @@ import argparse
 import json
 import sys
 from dataclasses import dataclass
-from datetime import UTC, date, datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
@@ -57,12 +57,15 @@ from utils import (
     HIDDEN_STEMS,
     TIANGAN_WUXING,
     TIANGAN_YIN_YANG,
+    UTC,
+    VENDORED_MISSING,
     __version__,
     ensure_utf8_stdio,
     error_envelope,
     json_print,
     lookup_city,
     normalize_birth_time,
+    parse_iso,
     validate_birth_input,
     warn,
 )
@@ -593,7 +596,7 @@ def _liu_nian(args: argparse.Namespace, solar_cls: Any,
         # A replayed absolute instant fixes which year it is without knowing
         # where the user lives; it is not used for a local date or hour.
         try:
-            instant = datetime.fromisoformat(args.request_time.replace('Z', '+00:00'))
+            instant = parse_iso(args.request_time)
         except ValueError as exc:
             raise _ChartError(error_envelope('bazi', 'invalid_time_context', str(exc))) from exc
         if instant.tzinfo is None or instant.utcoffset() is None:
@@ -670,7 +673,7 @@ def calculate_bazi(request: argparse.Namespace) -> dict:
     try:
         from lunar_python import Lunar, Solar  # type: ignore
     except ImportError:
-        return error_envelope("bazi", "missing_dependency", "pip install -r scripts/requirements.txt")
+        return error_envelope("bazi", "missing_dependency", VENDORED_MISSING)
     try:
         return _chart(args, Lunar, Solar)
     except _ChartError as exc:

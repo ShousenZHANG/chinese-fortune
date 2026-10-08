@@ -15,12 +15,13 @@ the 所忌 quotation itself; nothing is mapped by analogy inside this module.
 from __future__ import annotations
 
 from contracts import DayRuleHit
+from utils import zip_exact
 
 BRANCHES = '子丑寅卯辰巳午未申酉戌亥'
 SEASONS = {'寅': '春', '卯': '春', '辰': '春', '巳': '夏', '午': '夏', '未': '夏',
            '申': '秋', '酉': '秋', '戌': '秋', '亥': '冬', '子': '冬', '丑': '冬'}
-MONTH_NAMES = dict(zip('寅卯辰巳午未申酉戌亥子丑',
-                       ('正', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二'), strict=True))
+MONTH_NAMES = dict(zip_exact('寅卯辰巳午未申酉戌亥子丑',
+                       ('正', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一', '十二')))
 
 # 用事 name in 卷十 lists for each scenario. 卷十 uses the court list of 卷十一
 # (御用六十七事); the common 出行/移徙 are given there as equal to 行幸/般移.
@@ -89,7 +90,7 @@ _SI_DAYS = {  # (四廢, 四忌, 四窮) per season, from the 起例 quoted in R
     '秋': (('甲寅', '乙卯'), ('庚子',), ('辛亥',)),
     '冬': (('丙午', '丁巳'), ('壬子',), ('癸亥',)),
 }
-_WANG_WANG = dict(zip('寅卯辰巳午未申酉戌亥子丑', '寅巳申亥卯午酉子辰未戌丑', strict=True))
+_WANG_WANG = dict(zip_exact('寅卯辰巳午未申酉戌亥子丑', '寅巳申亥卯午酉子辰未戌丑'))
 _GUI_JI = {**dict.fromkeys('寅巳申亥', '丑'), **dict.fromkeys('卯午酉子', '寅'),
            **dict.fromkeys('辰未戌丑', '子')}
 

@@ -82,18 +82,33 @@
 
 ## 开始使用
 
-需要 Python 3.11 或以上，以及能读取技能并运行 Python 的宿主。CI 验证 Python 3.11、3.12。
+只需 Python 3.9 或以上（macOS 自带的 `python3` 就够），不用 pip 安装任何包，计算不联网：排盘库 lunar_python 和时区数据 tzdata 已随包附带。CI 在 Python 3.9、3.11、3.12 上验证。
 
-1. 从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载 `chinese-fortune-v版本号.zip`，解压。
-2. 进入 chinese-fortune 文件夹，安装并检查：
+**最省事：把这句话发给你的 AI**
+
+> 安装这个 Skill：https://github.com/ShousenZHANG/chinese-fortune
+
+AI 照下面「给 AI 的安装说明」就能装好。也可以自己选一种：
+
+| 你用的是 | 安装 |
+|---|---|
+| Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`，再 `/plugin install chinese-fortune@chinese-fortune` |
+| Codex、Cursor、GitHub Copilot、Gemini CLI 等 | `npx skills add ShousenZHANG/chinese-fortune` |
+| Gemini CLI 自带命令 | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune` |
+| claude.ai | 从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载 `chinese-fortune-v版本号.zip`，在 Settings > Features 上传 |
+| ChatGPT（Business、Enterprise、Edu） | 同一个 zip，在 Plugins > Skills 上传 |
+| Claude API | 同一个 zip，用 Skills API 上传 |
+
+### 给 AI 的安装说明
+
+1. 按用户用的宿主选上表一种方式。拿不准时用 Release 里的 zip，解压到宿主的技能目录（Claude Code `~/.claude/skills/`，Codex `~/.codex/skills/`，Gemini CLI `~/.gemini/skills/`），应得到 `chinese-fortune/SKILL.md`。
+2. 不要运行 pip。依次试 `python3`、`python`、`py -3`，找一个 3.9 以上的；都没有时征得用户同意再装 Python（命令见 SKILL.md「运行环境与诊断」）。
+3. 在 chinese-fortune 文件夹里自检，两条都返回 `"ok": true` 就装好了：
 
 ```sh
-python -m pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
 python scripts/classical_search.py --validate
-python scripts/request_time.py --current-timezone Australia/Sydney
+python scripts/request_time.py --current-timezone Asia/Shanghai
 ```
-
-3. 按宿主的技能安装方式导入文件夹。宿主需读取 SKILL.md，并用安装依赖的同一个 Python 运行工具。
 
 可以这样问：
 

@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from utils import zip_exact
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
 
@@ -560,7 +561,7 @@ def test_meihua_wangshuai_matches_its_own_reference_table():
         months = [int(x) for x in re.findall(r"\d+", cells[1])]
         assert months, line
         rows += 1
-        for state, cell in zip(states, cells[2:], strict=True):
+        for state, cell in zip_exact(states, cells[2:]):
             for tri in BAGUA:
                 if tri in cell:
                     for mo in months:

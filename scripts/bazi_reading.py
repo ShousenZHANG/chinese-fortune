@@ -26,6 +26,7 @@ from utils import (
     json_print,
     normalize_birth_time,
     shi_shen,
+    zip_exact,
 )
 from wuxing_colours import asks_colour, colour_advice, colour_lead, colour_lines
 
@@ -215,7 +216,7 @@ def _without_unknown_hour_precision(chart: dict) -> dict:
         dates = sorted({tuple(p[field][part] for part in ('year', 'month', 'day')) for p in probes})
         if not complete or len(dates) != 1:
             clean[field] = {'status': 'birth_time_required',
-                            'candidate_dates': [dict(zip(('year', 'month', 'day'), value, strict=True))
+                            'candidate_dates': [dict(zip_exact(('year', 'month', 'day'), value))
                                                 for value in dates],
                             'basis': '所选日时口径的日期也可能跨界；不把内部正午日期当确定事实'}
         else:

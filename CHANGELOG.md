@@ -4,6 +4,14 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
+## [5.9.0] — 零安装：不用 pip，Python 3.9 起；Claude Code 插件市场
+
+- **依赖随包**：运行时只用到的两个第三方包 lunar_python 1.4.8（MIT）和 tzdata 2026.3（Apache-2.0）原样放进 `scripts/`，连同各自的 `.dist-info`（版本、许可证、RECORD 哈希）。Python 运行 `scripts/xxx.py` 时先在脚本目录找包，所以脚本代码不用改。用户不再 pip 安装任何东西；不能联网、不能装包的沙盒（Claude API 的 Skill 容器）也能算全部盘面。`scripts/requirements.txt` 和 `constraints-runtime.txt` 删除，免得 AI 看到又去装。缺包时的报错改成「请重新下载完整发布包」。
+- **Python 3.9 起**：macOS 命令行工具自带的 python3 到 macOS 26 仍是 3.9.6。改了 3.10/3.11 专有写法：`datetime.UTC`（14 个文件改用 `utils.UTC`）、`zip(strict=True)`（新 `utils.zip_exact`，长度不同照样报错）、`typing.NotRequired`（`contracts.py` 拆成必填基类加 `total=False` 子类，必填、选填键不变）、两处运行时 `X | Y` 类型别名。3.9/3.10 的 `fromisoformat` 不认结尾的 `Z`、非 3/6 位小数秒和不带冒号的时区（`+0530`），宿主传 `request_time` 常带 `Z`：新 `utils.parse_iso` 在 3.9 到 3.12 上读法一致，接收调用方时间的四处（`request_time`、`bazi_calc`、`fortune_time`、`prediction_log`）都改用它。黄历的时辰柱在 3.9 上会因 `zip(strict=)` 报错，被异常处理吞掉后整段为空，现已修好。CI 新增 3.9 任务跑全部测试和零安装冒烟检查；ruff 目标改为 py39，mypy 改为 3.10（mypy 2.x 不再支持 3.9 目标）。
+- **Claude Code 插件市场**：新增 `.claude-plugin/marketplace.json`，`/plugin marketplace add ShousenZHANG/chinese-fortune` 后 `/plugin install chinese-fortune@chinese-fortune`。仓库根目录的 SKILL.md 按单个 Skill 加载（`claude plugin details` 实测：Skills (1)，常驻约 183 token），目录结构不变；插件版本跟 `__version__` 一致，由测试锁定。
+- **安装说明**：README 先给「把这句话发给你的 AI」，再按 Claude Code、Codex/Cursor/Copilot/Gemini（`npx skills add`）、claude.ai、ChatGPT、Claude API 各列一行；另有「给 AI 的安装说明」：放哪个目录、不要 pip、怎么找 Python、怎么自检。SKILL.md 加 `license`、`compatibility`（Agent Skills 规范字段），「安装与诊断」改为「运行环境与诊断」：`python` 指 `python3`、`python` 或 `py -3` 中能用的那个，一个都没有时先征得用户同意再装。
+- **打包**：写 zip 时不再把二进制文件里的 0D 0A 当换行改写（时区数据是二进制）；随包依赖逐字节核对。
+
 ## [5.8.0] — 流年；八字、颜色、择时回答缩短
 
 - **流年**：问到某年、今年、明年、这几年或流年时，给出那几年（最多 3 年）太岁与本人日柱、月柱、当步大运的关系，每条带原句和原文的说法：《渊海子平》论太岁吉凶的日犯岁君（「日犯岁君，灾殃必重，五行有救，其年反必招财」，有无救按天干能否制住、合住日干和地支成局判定）与论征太岁的晦气、征；《三命通会》总论岁运的岁伤日干（「歲傷日干有禍必輕」）、伏吟、返吟、冲月、运岁相克（「嵗衝尅運者吉，運衝尅嵗者凶」）与相生，以及行好运祸轻、行不好运祸重（好坏用大运取运判断）；《滴天髓》岁运论的岁运相冲、相合标为看喜忌。不合成总分，不细到月份。八字回答（`annual_reading`）和一年以上的期间回答都带；只说「今年」又不知道是哪一年时先问现居地。

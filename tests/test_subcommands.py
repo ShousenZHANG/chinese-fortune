@@ -13,6 +13,7 @@ from pathlib import Path
 
 import pytest
 from conftest import run_cli
+from utils import zip_exact
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
 
@@ -181,7 +182,7 @@ def test_active_lines_equal_positions_where_main_and_changed_differ():
             for change in range(1, 7):
                 lines = yj.from_numbers(upper, lower, change)
                 changed = yj.changed_lines(lines)
-                diff = [i + 1 for i, (a, b) in enumerate(zip(_yy(lines), _yy(changed), strict=True))
+                diff = [i + 1 for i, (a, b) in enumerate(zip_exact(_yy(lines), _yy(changed)))
                         if a != b]
                 assert diff == [change], (
                     f"上{upper}/下{lower}/动{change}: 相异爻位 {diff} != [{change}]"
@@ -216,7 +217,7 @@ def test_huangli_shichen_pillars_follow_wushu_dun():
     # 早子 → 亥 连续 60 甲子
     run12 = detail[:12]
     idxs = [jiazi_index(r["ganzhi"][0], r["ganzhi"][1]) for r in run12]
-    for a, b in zip(idxs, idxs[1:], strict=False):
+    for a, b in zip(idxs, idxs[1:]):
         assert (a + 1) % 60 == b, f"时柱非连续六十甲子: {idxs}"
     # 夜子 天干 = 五鼠遁(次日干), 即比早子晚一轮
     nxt = run_cli("huangli_query.py", "--date", "2026-06-25")

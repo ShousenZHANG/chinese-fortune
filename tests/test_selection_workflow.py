@@ -2,7 +2,9 @@
 from __future__ import annotations
 
 from copy import deepcopy
-from datetime import UTC, datetime
+from datetime import datetime, timezone
+
+UTC = timezone.utc   # datetime.UTC is 3.11+
 
 import classical_guidance as guidance
 import fortune_calendar

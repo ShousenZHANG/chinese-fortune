@@ -6,7 +6,8 @@ but never written, fails here instead of in a host's parser.
 """
 import itertools
 import types
-from typing import Any, Literal, NotRequired, Union, get_args, get_origin, get_type_hints
+import typing
+from typing import Any, Literal, Union, get_args, get_origin, get_type_hints
 
 import contracts
 import pytest
@@ -22,12 +23,12 @@ def check(value: Any, expected: Any, path: str = '$') -> None:
     origin = get_origin(expected)
     if expected is Any:
         return
-    if origin is NotRequired:
+    if origin is getattr(typing, 'NotRequired', object()):
         return check(value, get_args(expected)[0], path)
     if origin is Literal:
         assert value in get_args(expected), f'{path}: {value!r} not in {get_args(expected)}'
         return
-    if origin in (Union, types.UnionType):
+    if origin in (Union, getattr(types, 'UnionType', Union)):   # UnionType: 3.10+
         errors = []
         for option in get_args(expected):
             try:

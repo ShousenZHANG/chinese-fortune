@@ -278,7 +278,7 @@ def draw_cards(rng: random.Random, n: int, deck: list[dict]) -> list[dict]:
 
 def position_summary(positions: list[str], cards: list[dict]) -> str:
     parts = []
-    for pos, c in zip(positions, cards, strict=False):
+    for pos, c in zip(positions, cards):
         orient_cn = "正位" if c["orientation"] == "upright" else "逆位"
         parts.append(f"【{pos}】{c['zh']}({orient_cn})")
     return " / ".join(parts)
@@ -344,7 +344,7 @@ def main(argv: list[str] | None = None) -> int:
     cards = draw_cards(rng, len(positions), deck)
 
     out_cards = []
-    for pos, c in zip(positions, cards, strict=False):
+    for pos, c in zip(positions, cards):
         out_cards.append({
             "position_name": pos,
             "card_name_zh": c.get("zh"),

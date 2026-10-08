@@ -1,7 +1,7 @@
 """Target-period calendar facts; no natal verdict is projected onto a future day."""
 from __future__ import annotations
 
-from datetime import UTC, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 from fortune_time import civil_boundaries
@@ -9,6 +9,7 @@ from lunar_python import Solar
 from utils import (
     HIDDEN_STEMS,
     TIANGAN_WUXING,
+    UTC,
     WUXING_GEN,
     WUXING_KE,
     longitude_correction,
@@ -183,7 +184,7 @@ def period_facts(window: dict, natal: dict, *, granularity: str = 'day',
     pillar_catalog: dict[str, dict] = {}
     luck_catalog: list[dict] = []
     ordered = sorted(cuts)
-    for lo, hi in zip(ordered, ordered[1:], strict=False):
+    for lo, hi in zip(ordered, ordered[1:]):
         detail_grain = granularity if any(x <= lo < y for x, y in ranges) else 'month'
         facts = target_facts(lo.astimezone(zone), natal, granularity=detail_grain,
                              standard=standard, longitude=longitude, sect=sect)

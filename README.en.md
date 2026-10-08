@@ -48,17 +48,33 @@ Optional, explicitly confirmed profiles support revisioned updates, inspection a
 
 ## Start
 
-Use Python 3.11 or later and a host that reads skill files and executes Python. CI checks Python 3.11 and 3.12.
+Python 3.9 or later is all it needs (the `python3` that ships with macOS will do): nothing to pip install, and calculations need no network, because lunar_python and the tzdata time-zone data ship inside `scripts/`. CI checks Python 3.9, 3.11 and 3.12.
 
-Download the runtime ZIP from [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases), extract it, enter the chinese-fortune directory and run:
+**Easiest: send your AI this line**
+
+> Install this skill: https://github.com/ShousenZHANG/chinese-fortune
+
+It follows “Install notes for AI agents” below. Or pick one yourself:
+
+| Host | Install |
+|---|---|
+| Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`, then `/plugin install chinese-fortune@chinese-fortune` |
+| Codex, Cursor, GitHub Copilot, Gemini CLI and others | `npx skills add ShousenZHANG/chinese-fortune` |
+| Gemini CLI, built in | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune` |
+| claude.ai | Download `chinese-fortune-v<version>.zip` from [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) and upload it in Settings > Features |
+| ChatGPT (Business, Enterprise, Edu) | Upload the same zip in Plugins > Skills |
+| Claude API | Upload the same zip through the Skills API |
+
+### Install notes for AI agents
+
+1. Use the row above for the user's host. When unsure, extract the Release zip into the host's skills directory (Claude Code `~/.claude/skills/`, Codex `~/.codex/skills/`, Gemini CLI `~/.gemini/skills/`) so that `chinese-fortune/SKILL.md` exists.
+2. Do not run pip. Try `python3`, `python`, then `py -3` for one that is 3.9 or later; if none exists, ask the user before installing Python (commands in SKILL.md, “运行环境与诊断”).
+3. Self-check inside the chinese-fortune folder; both print `"ok": true` when it is ready:
 
 ```sh
-python -m pip install -r scripts/requirements.txt -c scripts/constraints-runtime.txt
 python scripts/classical_search.py --validate
-python scripts/request_time.py --current-timezone Australia/Sydney
+python scripts/request_time.py --current-timezone Asia/Shanghai
 ```
-
-Import the folder into your host. Use the same Python environment for installation and execution.
 
 Example: “Born 1990-05-10 at 14:30, male, Beijing; currently in Sydney. Explain the main BaZi structure in plain language, including applicable conditions and exceptions.”
 

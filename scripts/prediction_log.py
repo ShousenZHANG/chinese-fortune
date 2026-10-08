@@ -13,14 +13,14 @@ import sqlite3
 import sys
 from collections.abc import Iterator
 from contextlib import contextmanager
-from datetime import UTC, datetime
+from datetime import datetime
 from pathlib import Path
 from uuid import uuid4
 from zoneinfo import ZoneInfo
 
 from classical_search import get_passage
 from personal_profiles import data_root
-from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from utils import UTC, ensure_utf8_stdio, error_envelope, json_print, ok_envelope, parse_iso
 
 
 def _now(clock: datetime | None) -> datetime:
@@ -37,7 +37,7 @@ def _text(value: object, name: str, limit: int = 1200) -> str:
 
 
 def _time(value: object) -> datetime:
-    return _now(datetime.fromisoformat(_text(value, '日期时间', 80)))
+    return _now(parse_iso(_text(value, '日期时间', 80)))   # caller input: a Z or +0800 on 3.9 too
 
 
 def _id(value: str) -> str:

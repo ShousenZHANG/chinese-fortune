@@ -13,7 +13,7 @@ from bazi_rules import (
 )
 from classical_search import get_passage
 from reading_support import review_claims
-from utils import HIDDEN_STEMS
+from utils import HIDDEN_STEMS, zip_exact
 
 
 def structure(month, stems, day='甲'):
@@ -22,7 +22,7 @@ def structure(month, stems, day='甲'):
     return {'hour_known': True, 'day_master': {'stem': day}, 'four_pillars': {
         key: {'stem': stem, 'branch': branch, 'ganzhi': stem + branch,
               'hidden_stems': HIDDEN_STEMS[branch]}
-        for key, stem, branch in zip(('year', 'month', 'day', 'hour'), values, branches, strict=True)}}
+        for key, stem, branch in zip_exact(('year', 'month', 'day', 'hour'), values, branches)}}
 
 
 @pytest.mark.parametrize('family,month,stems', [
@@ -161,7 +161,7 @@ def source_chart(pillars):
     return {'hour_known': True, 'day_master': {'stem': pillars[2][0]}, 'four_pillars': {
         key: {'stem': value[0], 'branch': value[1], 'ganzhi': value,
               'hidden_stems': HIDDEN_STEMS[value[1]]}
-        for key, value in zip(('year', 'month', 'day', 'hour'), pillars, strict=True)}}
+        for key, value in zip_exact(('year', 'month', 'day', 'hour'), pillars)}}
 
 
 # Independent examples transcribed from each frozen paragraph, including cases

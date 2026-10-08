@@ -45,7 +45,7 @@ def test_najia_branches_follow_the_generating_rule():
         assert len(lo) == 3 and len(up) == 3, tri
         step = 2 if tri in yang else -2
         for seq in (lo, up):
-            for a, b in zip(seq, seq[1:], strict=False):
+            for a, b in zip(seq, seq[1:]):
                 got = (DIZHI.index(b) - DIZHI.index(a)) % 12
                 assert got == step % 12, (
                     f"{tri} {seq}: {a}->{b} 隔 {got} 位, 阳顺阴逆应隔 {step % 12}")

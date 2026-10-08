@@ -76,6 +76,9 @@ def validate_skill_md() -> None:
         sys.exit("FATAL: SKILL.md description empty")
     if len(desc) > 1024:
         sys.exit(f"FATAL: SKILL.md description {len(desc)} > 1024 chars")
+    # agentskills.io: optional, 1-500 characters when present.
+    if len(meta.get("compatibility", "")) > 500:
+        sys.exit("FATAL: SKILL.md compatibility > 500 chars")
 
 
 def _json_bytes(value: dict) -> bytes:
@@ -88,8 +91,11 @@ def _digest(data: bytes) -> str:
 
 def _file_bytes(path: Path) -> bytes:
     # The frozen corpus is already hash-bound: do not rewrite its raw sources.
+    # Binary files (the vendored zoneinfo data) keep their bytes: 0D 0A there is data.
     data = path.read_bytes()
-    return data if path.is_relative_to(ROOT / "knowledge") else data.replace(b"\r\n", b"\n")
+    if path.is_relative_to(ROOT / "knowledge") or b"\0" in data:
+        return data
+    return data.replace(b"\r\n", b"\n")
 
 
 def _source_manifest() -> dict:
