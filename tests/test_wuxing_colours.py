@@ -149,11 +149,11 @@ def test_bazi_markdown_leads_with_colours_for_a_colour_question():
     from bazi_calc import build_parser, calculate_bazi
     from bazi_reading import prepare_reading, render_facts
     chart = calculate_bazi(build_parser().parse_args([
-        '--year', '1997', '--month', '12', '--day', '24', '--hour', '19', '--minute', '30',
+        '--year', '1997', '--month', '8', '--day', '20', '--hour', '10', '--minute', '15',
         '--gender', 'male', '--as-of-year', '2026']))
     text = render_facts(prepare_reading(chart, '我穿什么颜色的衣服对自己有利？'))
     assert text.startswith('按《穷通宝鉴》调候，')
-    assert '衣服首选红色、紫色（火），其次绿色、青色（木）' in text.split('\n')[0]
+    assert '衣服首选红色、紫色（火），其次白色、金银色（金）' in text.split('\n')[0]
     assert not style_violations(text)
     plain = prepare_reading(chart, '我适合做什么工作')
     assert 'colour_advice' not in plain and not render_facts(plain).startswith('按《穷通宝鉴》调候')
@@ -212,8 +212,8 @@ def _four(year: str, month: str, day: str, hour: str | None) -> dict:
 
 
 def test_the_water_frame_is_decided_from_the_branches():
-    """丁丑 壬子 庚子 丙戌: branches 丑子子戌 complete neither 申子辰 nor 亥子丑."""
-    advice = colour_advice(_four('丁丑', '壬子', '庚子', '丙戌'))
+    """丁丑 壬子 庚午 丙子: branches 丑子午子 complete neither 申子辰 nor 亥子丑."""
+    advice = colour_advice(_four('丁丑', '壬子', '庚午', '丙子'))
     checks = {c['condition']: c for c in advice['exception_checks']}
     assert checks['水局']['status'] == 'not_met'
     assert '申子辰' in checks['水局']['basis'] and '亥子丑' in checks['水局']['basis']
@@ -226,7 +226,7 @@ def test_the_water_frame_is_decided_from_the_branches():
 def test_a_complete_frame_whose_condition_fails_keeps_the_general_choice():
     """庚 in 子: 「或支成水局，不见丙丁者，此乃伤官格」 (qiongtong:c005:p0116).
     With 丙 and 丁 in the stems the sentence does not apply; the v5.3.0 audit's
-    example (丙申 庚子 庚辰 丙子) is this case."""
+    example (丙申 庚子 庚午 丙子) is this case."""
     advice = colour_advice(_four('丙申', '丙子', '庚辰', '丁亥'))
     checks = {c['condition']: c for c in advice['exception_checks']}
     assert checks['水局']['status'] == 'met' and checks['水局']['effect'] == 'not_applicable'
@@ -386,7 +386,7 @@ def test_all_three_used_together_in_ding_you():
 
 def test_geng_si_is_chosen_by_the_charts_trouble_not_in_order():
     """庚 in 巳: 「須用壬丙戊，但非拘执先後，宜分病用药」 (qiongtong:c005:p0051)."""
-    advice = colour_advice(_four('甲寅', '己巳', '庚辰', '丙子'))
+    advice = colour_advice(_four('甲寅', '己巳', '庚午', '丙子'))
     lead = colour_lead(advice)
     assert '不拘先后' in lead and '先取' not in lead and '其次戊' not in lead, lead
     assert '须用壬（水）、戊（土）' in lead and '都可用' not in lead, lead   # 「须用」, not weaker

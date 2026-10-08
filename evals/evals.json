@@ -688,7 +688,7 @@
     {
       "id": 24,
       "name": "travel-capability-scope",
-      "prompt": "我想在 2026-10-13 到 10-15 之间从悉尼出发，哪天合适？我是 1997-12-24 晚上 7 点半生，江苏吴江，男。",
+      "prompt": "我想在 2026-10-13 到 10-15 之间从悉尼出发，哪天合适？我是 1997-08-20 上午 10 点 15 分生，上海，男。",
       "expected_output": "接口声明：出行支持通用日历条款筛选，完整个人排名仍未实现。具体请求及正文语义另由 test_general_workflow 与真实宿主案例验证。",
       "assertions": [
         {
@@ -814,17 +814,17 @@
             "--year",
             "1997",
             "--month",
-            "12",
+            "8",
             "--day",
-            "24",
+            "20",
             "--hour",
-            "19",
+            "10",
             "--minute",
-            "30",
+            "15",
             "--gender",
             "male",
             "--city",
-            "苏州",
+            "上海",
             "--current-timezone",
             "Asia/Shanghai",
             "--question",
@@ -833,11 +833,11 @@
           "paths": {
             "ok": true,
             "colour_advice.status": "ok",
-            "colour_advice.key": "庚|子",
+            "colour_advice.key": "甲|申",
             "colour_advice.wear.0.wuxing": "火",
             "colour_advice.scope": "general_choice_for_cell",
             "colour_advice.chart_conditions_checked": false,
-            "colour_advice.tiaohou.passage_id": "qiongtong:c005:p0114"
+            "colour_advice.tiaohou.passage_id": "qiongtong:c002:p0040"
           }
         },
         {

@@ -205,23 +205,34 @@ def _notes(chart: dict, reading: dict, registry: dict) -> list[dict]:
 WORD = {'favoured': '喜', 'avoided': '忌', 'harmless': '不碍', 'unpromising': '未见其美'}
 
 
-def _part(reading: dict, part: str) -> str:
+def _quoted(words: str, seen: set[str]) -> str:
+    """Quote a sentence the first time; after that say it is the one above (each passage once)."""
+    if words in seen:
+        return '（同上句）'
+    seen.add(words)
+    return f"「{words}」"
+
+
+def _part(reading: dict, part: str, seen: set[str]) -> str:
     """One sentence about the cycle's stem or branch across the candidate 配法."""
     scenarios = reading['scenarios']
     first = scenarios[0][part]
     label = f"「{first['char']}」（{first['role']}" + (f"，按{first['via']}）" if part == 'branch' else '）')
     summary = reading['summary'][part]
-    quotes = '、'.join(dict.fromkeys(f"「{v['words']}」" for s in scenarios for v in s[part]['verdicts']
-                                    if v['state'] == 'met'))
     if summary in WORD:
         lead = '几种可能的配法都算' if len(scenarios) > 1 else '算'
-        return f"对{label}{lead}{WORD[summary]}（{quotes}）"
+        words = list(dict.fromkeys(v['words'] for s in scenarios for v in s[part]['verdicts'] if v['state'] == 'met'))
+        fresh = [w for w in words if w not in seen]
+        shown = '、'.join(_quoted(w, seen) for w in fresh)
+        if len(fresh) < len(words):
+            shown = f"理由同上，另有{shown}" if fresh else '理由同上'
+        return f"对{label}{lead}{WORD[summary]}（{shown}）"
     if summary == 'mixed':
-        each = '；'.join(f"{s['title']}算{WORD[v['verdict']]}「{v['words']}」" for s in scenarios
+        each = '；'.join(f"{s['title']}算{WORD[v['verdict']]}{_quoted(v['words'], seen)}" for s in scenarios
                         for v in s[part]['verdicts'] if v['state'] == 'met')
         return f"对{label}几种配法说法不一：{each}"
     if summary == 'conditional':
-        each = '；'.join(f"{s['title']}在「{v['condition']}」时算{WORD[v['verdict']]}「{v['words']}」"
+        each = '；'.join(f"{s['title']}在「{v['condition']}」时算{WORD[v['verdict']]}{_quoted(v['words'], seen)}"
                         for s in scenarios for v in s[part]['verdicts'] if v['state'] == 'interpretive')
         return f"对{label}要看条件：{each}，这些条件原文没给可计算的标准，这里没判"
     return f"对{label}这几种配法的取运句子都没提"
@@ -242,8 +253,9 @@ def luck_paragraph(reading: dict, who: str = '你') -> str:
         return head + body
     titles = '、'.join(s['title'] for s in reading['scenarios'])
     family = '、'.join(dict.fromkeys(f['title'] for f in reading['families'] if f['connected']))
+    seen: set[str] = set()
     text = (head + f"按《子平真诠》{family}取运：{who}的盘按能算的透藏有{len(reading['scenarios'])}种可能的配法——{titles}。"
-            + _part(reading, 'stem') + '；' + _part(reading, 'branch') + '。')
+            + _part(reading, 'stem', seen) + '；' + _part(reading, 'branch', seen) + '。')
     text += ''.join(f"{n['text']}（原文「{n['quote']}」，{n['passage_id']}）。" for n in reading.get('notes', []))
     if pending:
         text += f"月令另有{'、'.join(pending)}格候选，取运章还没接入。"

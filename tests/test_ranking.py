@@ -238,7 +238,7 @@ def test_ranking_declares_the_precedence_version_it_used():
 
 
 def _travel_request(candidates: list[dict], period: dict, born: int = 1997) -> dict:
-    # 1997-12-24 is 丁丑. Tests of the hour rules on 庚申 and 癸亥 days pass
+    # A 1997 birth after 立春 is 丁丑. Tests of the hour rules on 庚申 and 癸亥 days pass
     # born=2005 (乙酉), whose 相主 touches none of those hours: for 丁丑, 癸未 is
     # 天克地冲 and a 癸 hour on a 癸 day is 七杀 twice, which would bar them first.
     return {
@@ -247,8 +247,8 @@ def _travel_request(candidates: list[dict], period: dict, born: int = 1997) -> d
         'event': {'scenario': 'travel', 'timezone': 'Australia/Sydney',
                   'longitude': 151.2, 'time_standard': 'true-solar'},
         'participants': [{'id': 'me', 'confirmed': True, 'person': {
-            'birth': {'year': born, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30,
-                      'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 120.64},
+            'birth': {'year': born, 'month': 8, 'day': 20, 'hour': 10, 'minute': 15,
+                      'gender': 'male', 'timezone': 'Asia/Shanghai', 'longitude': 121.47},
             'time_certainty': 'exact'}}],
         'duration_minutes': 120, 'candidates': candidates, 'granularity': 'hour',
     }

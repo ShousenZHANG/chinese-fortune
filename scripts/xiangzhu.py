@@ -601,13 +601,14 @@ def personal_calendar(people: list[tuple[str, str]], start: str, end: str, zone:
     the passage weighs 「太歳衝命最凶，月次之，日又次之」.
     """
     dates = _local_dates(start, end, zone)
+    rows: list[tuple[date, dict[str, str], dict | None]]
     if unit == 'year' or len(dates) > 1100:
         unit, dates = 'year', [date(y, 7, 1) for y in sorted({d.year for d in dates})]
-        rows = [(d, date_pillars(d, zone)) for d in dates]
+        rows = [(d, date_pillars(d, zone), None) for d in dates]
     else:
         # The pillars of the part of each date the window covers, split at a 节.
         pieces = day_pieces(start, end, zone)
-        rows = [(d, pillars) for d, pillars, _ in pieces]
+        rows = list(pieces)
     entries: list[dict] = []
     if unit == 'day':
         for d, pillars, part in pieces:
@@ -620,9 +621,11 @@ def personal_calendar(people: list[tuple[str, str]], start: str, end: str, zone:
     else:
         key = 'month' if unit == 'month' else 'year'
         groups: dict[str, list[date]] = {}
+        parts: dict[str, list[dict | None]] = {}
         above: dict[str, dict[str, str]] = {}
-        for d, pillars in rows:
+        for d, pillars, part in rows:
             groups.setdefault(pillars[key], []).append(d)
+            parts.setdefault(pillars[key], []).append(part)
             above.setdefault(pillars[key], {k: pillars[k] for k in (*COARSER[key], key)})
         several_years = len({d.year for d in dates}) > 1
         for ganzhi, members in groups.items():
@@ -638,8 +641,17 @@ def personal_calendar(people: list[tuple[str, str]], start: str, end: str, zone:
             closing = (f'{last.year}年' if several_years and last.year != first.year else '') + f'{last.month}月{last.day}日'
             label, span = ((f'{first.year}年', f'{ganzhi}年') if key == 'year' else
                            (f'{ganzhi}月', f'{opening}至{closing}'))
-            entries.append({'start': first.isoformat(), 'end': last.isoformat(), 'label': label, 'span': span,
-                            'ganzhi': ganzhi, 'grade': worst(grades), 'people': per_person})
+            # A month that is only the hours before or after a 节 on one date of the window.
+            part = parts[ganzhi][0] if key == 'month' and len(members) == 1 else None
+            if part is not None:
+                clock = datetime.fromisoformat(part['at']).strftime('%H:%M')
+                hours = f'00:00–{clock}' if part['side'] == 'before' else f'{clock}–24:00'
+                span = f"{opening} {hours}（{part['term']}{'前' if part['side'] == 'before' else '后'}）"
+            month_entry: dict[str, Any] = {'start': first.isoformat(), 'end': last.isoformat(), 'label': label,
+                                           'span': span, 'ganzhi': ganzhi, 'grade': worst(grades), 'people': per_person}
+            if part is not None:
+                month_entry['partial'] = True
+            entries.append(month_entry)
     return {'unit': unit, 'timezone': zone, 'entries': entries,
             'people': [{'participant_id': pid, 'birth_year': birth} for pid, birth in people],
             'basis': {'passage_id': PASSAGE, 'quote': QUOTES['method'],

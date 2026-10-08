@@ -45,8 +45,8 @@
       "id": "C01",
       "group": "adapted_legacy",
       "legacy_source": {"file": "evals/reading_cases.json", "case_id": "R12-false_quote", "adaptation": "补足成人研究背景与统一请求时刻，要求给出有用的核查结果，不能只拒绝。"},
-      "prompt": "我是32岁的在世成人，当前在悉尼Australia/Sydney。本轮可复现请求时刻2026-09-06T03:15:00Z。我在做古籍读书笔记，网上有人把“今年三月入职大公司”写成《滴天髓》原文。请帮我核对，并给出处；如果不是原文，就清楚说明能查到什么、不能查到什么，不要为了凑引文改写成近似古文。顺带用白话解释原文为什么不能直接等同现代入职日期。",
-      "input": {"adult_age": 32, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "quoted_claim": "今年三月入职大公司", "attributed_book": "滴天髓"},
+      "prompt": "我是32岁的在世成人，当前在悉尼Australia/Sydney。本轮可复现请求时刻2026-09-06T03:15:00Z。我在做古籍读书笔记，网上有人把“今年换了新工作”写成《滴天髓》原文。请帮我核对，并给出处；如果不是原文，就清楚说明能查到什么、不能查到什么，不要为了凑引文改写成近似古文。顺带用白话解释原文为什么不能直接等同现代入职日期。",
+      "input": {"adult_age": 32, "request_time": {"utc": "2026-09-06T03:15:00Z", "current_timezone": "Australia/Sydney", "source": "injected_for_reproducible_comparison"}, "quoted_claim": "今年换了新工作", "attributed_book": "滴天髓"},
       "coverage_targets": ["伪引文", "检索未命中与不存在的区别", "古文和现代事件的范围"],
       "acceptance": {
         "must_complete": ["实际查询对应古籍并如实说明核查范围，不编造段落、页码、作者或书句", "不因检索一次未命中就声称所有版本绝不含某字；能判定的现代措辞与现有转录结果分别解释", "给出简短且有内容的白话说明，不用无关的吉凶段落替代回答"],

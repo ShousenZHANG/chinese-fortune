@@ -19,7 +19,7 @@ from bazi_reading import chart_facts, prepare_reading
 from birth_interval import calculate_interval
 from classical_guidance import research_sources
 from contracts import Grade, Recommendation
-from fortune_calendar import period_facts, term_boundaries
+from fortune_calendar import TERM_ALIASES, period_facts, term_boundaries
 from fortune_decision import choose_practical, conclusion_packet, route_request
 from fortune_ranking import (
     EVENT_WORDS,
@@ -548,7 +548,7 @@ def _unsettled_day_sentence(result: dict, choice: dict) -> str:
 # The twelve 节 that turn the month pillar; the library names a few of next
 # year's in pinyin.
 JIE = frozenset({'立春', '惊蛰', '清明', '立夏', '芒种', '小暑', '立秋', '白露', '寒露', '立冬', '大雪', '小寒'})
-JIE_ALIASES = {'LI_CHUN': '立春', 'JING_ZHE': '惊蛰', 'DA_XUE': '大雪', 'XIAO_HAN': '小寒'}
+JIE_ALIASES = TERM_ALIASES
 
 
 # Which exclusions a 节 can reopen. 月破, 往亡 and 归忌 are counted from the
@@ -893,6 +893,12 @@ def _merged(entries: list[dict]) -> list[dict]:
     return out
 
 
+def _ranked(entries: list[dict]) -> list[dict]:
+    """Entries a lead may call best or worst: not a few hours of a month at the window's edge."""
+    whole = [e for e in entries if not e.get('partial')]
+    return whole or entries
+
+
 def _dates(entries: list[dict]) -> str:
     """「11月4日、9日、12月1日」: the month only where it changes."""
     parts: list[str] = []
@@ -969,7 +975,7 @@ def _calendar_sentence(result: dict, kind: str) -> str:
     weighs it above the day, and no choice of day inside the period avoids it.
     """
     calendar = result['personal_calendar']
-    entries, people = _merged(calendar['entries']), calendar['people']
+    entries, people = _ranked(_merged(calendar['entries'])), calendar['people']
     who = _who(people)
     event = calendar.get('event', '')
     basis = f"按{who}出生那年的干支（{_births(people)}）看"
@@ -1407,7 +1413,7 @@ def host_notes(result: dict) -> list[str]:
     """What the host must say as the tool says it (evals/v56/REPORT.md 3.1)."""
     notes = ['等级、干支和理由只用上面的结果；不要自己写代码另算干支、十神或等级。']
     calendar = result.get('personal_calendar') or {}
-    entries = [e for e in _merged(calendar.get('entries', [])) if not e.get('event_hits')]
+    entries = [e for e in _ranked(_merged(calendar.get('entries', []))) if not e.get('event_hits')]
     order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
     best = min((e['grade'] for e in entries), key=order.index, default=None)
     tied = [e for e in entries if e['grade'] == best] if best in ('大吉', '吉') else []

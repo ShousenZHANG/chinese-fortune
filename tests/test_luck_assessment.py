@@ -65,13 +65,13 @@ def _chart(year, month, day, hour, hour_known=True):
     return {'day_master': {'stem': day[0]}, 'four_pillars': pillars, 'hour_known': hour_known}
 
 
-USER = _chart('丁丑', '壬子', '庚子', '丙戌')
-JI_YOU = {'ganzhi': '己酉', 'start_year': 2023, 'end_year': 2032}
+HURT_CHART = _chart('丁丑', '壬子', '庚午', '丙子')
+JI_YOU = {'ganzhi': '己酉', 'start_year': 2020, 'end_year': 2029}
 
 
-def test_the_users_own_chart_in_the_ji_you_cycle():
+def test_a_hurt_officer_chart_in_the_ji_you_cycle():
     """庚 in 子 (伤官): 佩印, 用煞印, 带煞, 用官 all stand by the stems and storage."""
-    reading = assess_luck(USER, JI_YOU)
+    reading = assess_luck(HURT_CHART, JI_YOU)
     assert reading['status'] == 'assessed'
     assert {s['id'] for s in reading['scenarios']} == {'hurt-seal', 'hurt-kill-seal', 'hurt-kill', 'hurt-officer'}
     assert reading['summary'] == {'stem': 'favoured', 'branch': 'conditional'}
@@ -80,8 +80,8 @@ def test_the_users_own_chart_in_the_ji_you_cycle():
 
 
 def test_a_missing_hour_or_cycle_gives_no_verdict():
-    assert assess_luck(_chart('丁丑', '壬子', '庚子', '丙戌', hour_known=False), JI_YOU)['status'] == 'unavailable'
-    assert assess_luck(USER, {'status': 'birth_time_required'})['status'] == 'unavailable'
+    assert assess_luck(_chart('丁丑', '壬子', '庚午', '丙子', hour_known=False), JI_YOU)['status'] == 'unavailable'
+    assert assess_luck(HURT_CHART, {'status': 'birth_time_required'})['status'] == 'unavailable'
 
 
 def test_a_family_not_yet_connected_is_said_so():
@@ -147,7 +147,7 @@ def test_an_officer_cycle_of_hurt_with_a_seal_exposed_seems_bad_but_is_not():
 
 
 def test_no_note_when_nothing_clashes():
-    reading = assess_luck(USER, JI_YOU)        # 酉 clashes 卯; the user's branches are 丑子子戌
+    reading = assess_luck(HURT_CHART, JI_YOU)        # 酉 clashes 卯; the user's branches are 丑子子戌
     assert not any(n['id'] == 'N3' for n in reading['notes'])
 
 
@@ -160,38 +160,46 @@ def test_a_note_quotes_the_frozen_text_not_a_paraphrase():
 
 def test_the_paragraph_says_the_cycle_the_agreement_and_the_limits():
     from luck_assessment import luck_paragraph
-    text = luck_paragraph(assess_luck(USER, JI_YOU))
-    assert text.startswith('你现在走的己酉运（2023–2032）')
+    text = luck_paragraph(assess_luck(HURT_CHART, JI_YOU))
+    assert text.startswith('你现在走的己酉运（2020–2029）')
     assert '几种可能的配法都算喜' in text and '「印運亦吉」' in text
     assert '看条件' in text and '按本气辛' in text
     assert '十年一个说法，不细到每天' in text and '逐日吉凶仍按出生年相主' in text
+
+
+def test_a_sentence_shared_by_the_stem_and_the_branch_is_quoted_once():
+    """乙巳 for 甲 in 申 (财): 「運喜食傷身旺之方」 holds for 乙 and for 巳; the second time it is 「理由同上」."""
+    from luck_assessment import luck_paragraph
+    reading = assess_luck(_chart('丁丑', '戊申', '甲午', '己巳'), {'ganzhi': '乙巳', 'start_year': 2021, 'end_year': 2030})
+    text = luck_paragraph(reading)
+    assert text.count('「運喜食傷身旺之方」') == 1 and '理由同上，另有「亦順意」' in text
 
 
 def test_the_paragraph_for_an_unconnected_family_or_missing_hour():
     from luck_assessment import luck_paragraph
     seal = assess_luck(_chart('甲子', '丙子', '甲寅', '甲子'), {'ganzhi': '丁丑', 'start_year': 2020, 'end_year': 2029})
     assert '取运章还没接入' in luck_paragraph(seal)
-    gone = assess_luck(_chart('丁丑', '壬子', '庚子', '丙戌', hour_known=False), JI_YOU)
+    gone = assess_luck(_chart('丁丑', '壬子', '庚午', '丙子', hour_known=False), JI_YOU)
     assert luck_paragraph(gone).startswith('这步大运的喜忌这次给不出：出生时辰未知')
 
 
 def _period(start, end):
     return {'current_timezone': 'Asia/Shanghai', 'request_time': '2026-10-05T10:00:00Z',
             'question': '未来七天哪天对我好', 'intent': 'period', 'period': {'start': start, 'end': end},
-            'event': {'scenario': 'outlook', 'timezone': 'Asia/Shanghai', 'longitude': 120.64},
+            'event': {'scenario': 'outlook', 'timezone': 'Asia/Shanghai', 'longitude': 121.47},
             'participants': [{'id': 'me', 'confirmed': True, 'person': {
-                'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30, 'gender': 'male',
-                          'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}}]}
+                'birth': {'year': 1997, 'month': 8, 'day': 20, 'hour': 10, 'minute': 15, 'gender': 'male',
+                          'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}}]}
 
 
 def test_a_period_answer_carries_the_cycle_and_keeps_the_daily_grades():
     from fortune_reading import read_request, render_answer
     result = read_request(_period('2026-10-06T00:00:00+08:00', '2026-10-13T00:00:00+08:00'))
     readings = result['participants'][0]['luck_reading']
-    assert [r['luck']['ganzhi'] for r in readings] == ['己酉'] and readings[0]['status'] == 'assessed'
+    assert [r['luck']['ganzhi'] for r in readings] == ['乙巳'] and readings[0]['status'] == 'assessed'
     grades = [e['grade'] for e in result['personal_calendar']['entries']]
     text = render_answer(result)
-    assert '你现在走的己酉运' in text and '逐日吉凶仍按出生年相主' in text
+    assert '你现在走的乙巳运' in text and '逐日吉凶仍按出生年相主' in text
     assert '已实现的两条运程例式没有给出本题的完整结论' not in text
     assert grades == [e['grade'] for e in read_request(_period('2026-10-06T00:00:00+08:00',
                                                                '2026-10-13T00:00:00+08:00'))['personal_calendar']['entries']]
@@ -201,11 +209,11 @@ def test_a_chart_question_about_the_coming_years_gets_this_and_the_next_cycle():
     from bazi_calc import build_parser, calculate_bazi
     from bazi_reading import prepare_reading, render_facts
     chart = calculate_bazi(build_parser().parse_args([
-        '--year', '1997', '--month', '12', '--day', '24', '--hour', '19', '--minute', '30',
+        '--year', '1997', '--month', '8', '--day', '20', '--hour', '10', '--minute', '15',
         '--gender', 'male', '--as-of-year', '2026']))
     result = prepare_reading(chart, '我这几年运势怎么样')
-    assert [r['luck']['ganzhi'] for r in result['luck_reading']] == ['己酉', '戊申']
-    assert '你现在走的己酉运' in render_facts(result)
+    assert [r['luck']['ganzhi'] for r in result['luck_reading']] == ['乙巳', '甲辰']
+    assert '你现在走的乙巳运' in render_facts(result)
     assert 'luck_reading' not in prepare_reading(chart, '我适合做什么工作')
 
 

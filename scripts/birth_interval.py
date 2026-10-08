@@ -63,7 +63,20 @@ def calculate_interval(args: argparse.Namespace, interval: dict) -> dict:
                                'longitude': args.longitude}
     clean['timezone'] = {'tz_name': args.timezone, 'status': 'birth_time_range'}
     luck_stable = all(c['qi_yun'] == probes[0]['qi_yun'] and c['da_yun'] == probes[0]['da_yun'] for c in probes)
-    if not luck_stable:
+    sequence = [cycle['ganzhi'] for cycle in probes[0]['da_yun']]
+    sequence_stable = bool(sequence) and all(c.get('qi_yun') for c in probes) and all(
+        [cycle['ganzhi'] for cycle in c['da_yun']] == sequence for c in probes)
+    if not luck_stable and sequence_stable:
+        # The 起运 moment moves with the minute, the cycles do not: keep them, with
+        # the earliest and latest 起运 so a date near a change is left open.
+        starts = sorted(c['qi_yun']['start_calendar_datetime'] for c in probes)
+        clean['qi_yun'] = {'status': 'birth_time_range', 'start_calendar_datetime': starts[0],
+                           'start_calendar_datetime_latest': starts[-1], 'source': probes[0]['qi_yun']['source']}
+        clean['da_yun'] = [{k: v for k, v in cycle.items()
+                            if all(c['da_yun'][i].get(k) == v for c in probes)}
+                           for i, cycle in enumerate(probes[0]['da_yun'])]
+        clean['qi_yun_status'] = 'birth_time_range'
+    elif not luck_stable:
         clean['qi_yun'] = None
         clean['da_yun'] = []
         clean['qi_yun_status'] = 'birth_time_range'
@@ -72,5 +85,6 @@ def calculate_interval(args: argparse.Namespace, interval: dict) -> dict:
         'status': 'interval_verified', 'range': dict(interval), 'end_inclusive': True,
         'candidate_coverage': 'every_valid_clock_minute_and_fold',
         'valid_probes': len(probes), 'affected_pillars': affected, 'luck_stable': luck_stable,
+        'luck_sequence_stable': luck_stable or sequence_stable,
         'meaning': '范围内每个有效钟面分钟均核对；只保留一致的柱和运程，不把端点当作精确生时。'}
     return clean

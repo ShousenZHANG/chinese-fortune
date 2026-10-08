@@ -14,8 +14,8 @@ import pytest
 from fortune_ranking import day_prohibitions
 from fortune_reading import read_request
 
-_PERSON = {'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30, 'gender': 'male',
-                     'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}
+_PERSON = {'birth': {'year': 1997, 'month': 8, 'day': 20, 'hour': 10, 'minute': 15, 'gender': 'male',
+                     'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}
 
 
 def check(value: Any, expected: Any, path: str = '$') -> None:

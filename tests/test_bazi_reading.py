@@ -293,7 +293,7 @@ def test_shi_shen_explanations_match_the_relation_that_defines_them():
 
 
 @pytest.mark.parametrize('birth', [
-    ('2000', '1', '15', '10', 'male'), ('1997', '12', '24', '20', 'female'),
+    ('2000', '1', '15', '10', 'male'), ('1997', '8', '20', '10', 'female'),
     ('1984', '2', '4', '23', 'male'), ('2010', '7', '7', '0', 'female')])
 @pytest.mark.parametrize('question', ['', '我适合做什么工作', '今年财运怎么样？'])
 def test_markdown_keeps_to_the_direct_answer_word_lists(birth, question):

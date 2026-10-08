@@ -504,22 +504,22 @@
     "observed_result": "All 11 reviewed answers used in this comparison passed their eight assigned criteria; this is a small selected sample, not a whole-version quality rate.",
     "review_summaries": [
       {
-        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches\\ability-001\\reviewed-dual-20260908\\summary.json",
+        "path": "<local>\\validation-next-eb65d70e\\model-review-batches\\ability-001\\reviewed-dual-20260908\\summary.json",
         "sha256": "62b3f7edfb595811268366830f46c58f30e9d465f87809b66c36857ad3958c51",
         "imported": 6
       },
       {
-        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches\\challenge-001\\reviewed-dual-20260908\\summary.json",
+        "path": "<local>\\validation-next-eb65d70e\\model-review-batches\\challenge-001\\reviewed-dual-20260908\\summary.json",
         "sha256": "20f7fa59ae0a836a6621e9eb4174cf4348b6445ac8f22d1a6fe7ef0272d3ed74",
         "imported": 6
       },
       {
-        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches-20260908\\ability-001\\reviewed-dual-20260908\\summary.json",
+        "path": "<local>\\validation-next-eb65d70e\\model-review-batches-20260908\\ability-001\\reviewed-dual-20260908\\summary.json",
         "sha256": "81e4313f97ceb5d697a3c5f6d95ca378bf3f9a6ccd4b5cc85066ac14ab19b669",
         "imported": 2
       },
       {
-        "path": "D:\\suanming\\validation-next-eb65d70e\\model-review-batches-20260908\\ability-002\\reviewed-dual-20260908\\summary.json",
+        "path": "<local>\\validation-next-eb65d70e\\model-review-batches-20260908\\ability-002\\reviewed-dual-20260908\\summary.json",
         "sha256": "37865c47f7552ff41208880c222036541431f6438c0ee5e3c5a2307bb8c266f9",
         "imported": 3
       }
@@ -527,7 +527,7 @@
   },
   "operational_reviews": {
     "manual_sidecars": 7,
-    "source_directory": "D:\\suanming\\validation-next-eb65d70e\\operational-reviews-20260908",
+    "source_directory": "<local>\\validation-next-eb65d70e\\operational-reviews-20260908",
     "known_external_chart_counts": {
       "baseline_B01_run1": 2,
       "baseline_B02_run1": 2,
@@ -545,13 +545,13 @@
     "change": "Added repetition-start bookkeeping; no model, prompt or fixed replay timestamp change.",
     "time_caveat": "Initial baseline sessions ran September 6; continuation and new snapshot ran September 8. Explicit replay UTC remained September 6 03:15. Cache order and backend weights are not controlled."
   },
-  "evidence_external_root": "D:\\suanming\\validation-next-eb65d70e",
+  "evidence_external_root": "<local>\\validation-next-eb65d70e",
   "new_recording_bindings": [
     {
       "version": "baseline",
       "case_id": "C06",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep1-batch01-20260908\\C06-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-challenge-rep1-batch01-20260908\\C06-run1\\record.json",
       "record_sha256": "151bd10615139dfe181357d755f75db0b6952457dc3760c0c9bf35317f7cbe74",
       "complete": true
     },
@@ -559,7 +559,7 @@
       "version": "baseline",
       "case_id": "C08",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep1-batch01-20260908\\C08-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-challenge-rep1-batch01-20260908\\C08-run1\\record.json",
       "record_sha256": "2e7a5fd3bfd704eadf00b7484b1df80a94ace0391f0794bfe73999fd61530b96",
       "complete": true
     },
@@ -567,7 +567,7 @@
       "version": "baseline",
       "case_id": "Z02",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch01-20260908\\Z02-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch01-20260908\\Z02-run1\\record.json",
       "record_sha256": "7e82cef85ab9299f54c30e16c2b9475c6845407826c8448eb41d4d4a37db10a0",
       "complete": true
     },
@@ -575,7 +575,7 @@
       "version": "baseline",
       "case_id": "Z03",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch01-20260908\\Z03-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch01-20260908\\Z03-run1\\record.json",
       "record_sha256": "f21ec6becbafd88e7e0b73c0dc81c33f74973d48dc7f27e6073521ede5d6ec66",
       "complete": true
     },
@@ -583,7 +583,7 @@
       "version": "baseline",
       "case_id": "Z04",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch02-20260908-guarded\\Z04-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch02-20260908-guarded\\Z04-run1\\record.json",
       "record_sha256": "2db7750d6a886076766242d19bef2bf0eb550b98227b6bf771623239696efce5",
       "complete": true
     },
@@ -591,7 +591,7 @@
       "version": "baseline",
       "case_id": "L01",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch02-20260908-guarded\\L01-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch02-20260908-guarded\\L01-run1\\record.json",
       "record_sha256": "3ad0abfee358f3fd5a54505eb0c5125190c2682aad8c2f3cb5cd1e44aa7b866b",
       "complete": true
     },
@@ -599,7 +599,7 @@
       "version": "baseline",
       "case_id": "L02",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch03-20260908\\L02-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch03-20260908\\L02-run1\\record.json",
       "record_sha256": "72df9554b3b86913fe681b027d846aeff29483f521e49e88ebebb687cf9c4b06",
       "complete": true
     },
@@ -607,7 +607,7 @@
       "version": "baseline",
       "case_id": "L03",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch03-20260908\\L03-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch03-20260908\\L03-run1\\record.json",
       "record_sha256": "2e2f83e65d6fa047d6a8d3715d4babff05dffb59afacbf16a59396cac5b6c0be",
       "complete": true
     },
@@ -615,7 +615,7 @@
       "version": "baseline",
       "case_id": "L04",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch04-20260908\\L04-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-ability-rep1-batch04-20260908\\L04-run1\\record.json",
       "record_sha256": "152dbde6952159da2ba45e62e8edd7cf6b3a106a7010232ea461cd81c117cb77",
       "complete": true
     },
@@ -623,7 +623,7 @@
       "version": "baseline",
       "case_id": "C01",
       "repetition": 2,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep2-batch01-20260908\\C01-run2\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-challenge-rep2-batch01-20260908\\C01-run2\\record.json",
       "record_sha256": "b9cafa43b8924df31599cd52ca1a2979f1acb688bf7cb6fb96de348b59f9dc4e",
       "complete": true
     },
@@ -631,7 +631,7 @@
       "version": "baseline",
       "case_id": "C02",
       "repetition": 2,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\resume-baseline-challenge-rep2-batch01-20260908\\C02-run2\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\resume-baseline-challenge-rep2-batch01-20260908\\C02-run2\\record.json",
       "record_sha256": "1907e7f7622f160b623a021e2f86b53613295ff3c1992d1036cf273de7b6dfa7",
       "complete": true
     },
@@ -639,7 +639,7 @@
       "version": "updated-bffeae8",
       "case_id": "B01",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch01-20260908\\B01-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch01-20260908\\B01-run1\\record.json",
       "record_sha256": "d508fc63fade16275b6ae5ea4634949184ebff828cf519709b30b3364a6445d6",
       "complete": true
     },
@@ -647,7 +647,7 @@
       "version": "updated-bffeae8",
       "case_id": "B02",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch01-20260908\\B02-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch01-20260908\\B02-run1\\record.json",
       "record_sha256": "634217a6ce8c5038977b5adf7df6ca891cdb8b7941210ed206ae0f68228612c0",
       "complete": true
     },
@@ -655,7 +655,7 @@
       "version": "updated-bffeae8",
       "case_id": "B03",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch02-20260908\\B03-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch02-20260908\\B03-run1\\record.json",
       "record_sha256": "a5963a2676c91317f722f817ac348ede22658737573efc568932a9b497da52f5",
       "complete": true
     },
@@ -663,7 +663,7 @@
       "version": "updated-bffeae8",
       "case_id": "B04",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch02-20260908\\B04-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch02-20260908\\B04-run1\\record.json",
       "record_sha256": "0b6973b5c9563644f413d69ea16930de9b8ad4621422bf9d1be3e7eb70236a6d",
       "complete": true
     },
@@ -671,7 +671,7 @@
       "version": "updated-bffeae8",
       "case_id": "B05",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch03-20260908\\B05-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch03-20260908\\B05-run1\\record.json",
       "record_sha256": "de150329abaf4774a77ea1cfa7be0aec551e5c1c299255ee0ca919d68fac8b1c",
       "complete": true
     },
@@ -679,7 +679,7 @@
       "version": "updated-bffeae8",
       "case_id": "B06",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch03-20260908\\B06-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch03-20260908\\B06-run1\\record.json",
       "record_sha256": "dc33b7da3e31036fb5f696e0b645d45c8644e08e92eedfaaaf5aa4a963026c80",
       "complete": true
     },
@@ -687,7 +687,7 @@
       "version": "updated-bffeae8",
       "case_id": "B07",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch04-20260908\\B07-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch04-20260908\\B07-run1\\record.json",
       "record_sha256": "81cd1fe391d24d39830d8b0ad1294dd021bc885be82b65735b75860f5cbdea07",
       "complete": true
     },
@@ -695,7 +695,7 @@
       "version": "updated-bffeae8",
       "case_id": "B08",
       "repetition": 1,
-      "path": "D:\\suanming\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch04-20260908\\B08-run1\\record.json",
+      "path": "<local>\\validation-next-eb65d70e\\model-updated-bffeae8-ability-rep1-batch04-20260908\\B08-run1\\record.json",
       "record_sha256": "f9a2f8079d7beb6d40780f1d98bc835bc87bcf4f09698c21714b5775324e04f0",
       "complete": true
     }

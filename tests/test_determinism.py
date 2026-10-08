@@ -24,7 +24,7 @@ _READING = {
     "event": {"scenario": "travel", "timezone": "Australia/Sydney", "longitude": 151.2},
     "participants": [{"id": "me", "confirmed": True, "person": {
         "birth": {"year": 1999, "month": 6, "day": 15, "hour": 0, "minute": 30, "gender": "female",
-                  "timezone": "Asia/Shanghai", "longitude": 120.64}, "time_certainty": "exact"}}],
+                  "timezone": "Asia/Shanghai", "longitude": 121.47}, "time_certainty": "exact"}}],
     "duration_minutes": 120, "granularity": "hour", "question": "哪天好？",
     "candidates": [{"id": "a", "start": "2026-10-13T09:00", "end": "2026-10-13T13:00"},
                    {"id": "b", "start": "2026-10-15T20:00", "end": "2026-10-16T12:00"}],

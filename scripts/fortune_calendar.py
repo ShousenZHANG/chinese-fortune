@@ -17,6 +17,9 @@ from utils import (
 )
 
 CALENDAR_ZONE = timezone(timedelta(hours=8))
+# lunar_python's getJieQiTable keys the terms of the neighbouring years in pinyin.
+TERM_ALIASES = {'DA_XUE': '大雪', 'DONG_ZHI': '冬至', 'XIAO_HAN': '小寒', 'DA_HAN': '大寒',
+                'LI_CHUN': '立春', 'YU_SHUI': '雨水', 'JING_ZHE': '惊蛰'}
 
 
 def _solar(moment: datetime) -> Solar:
@@ -46,7 +49,7 @@ def term_boundaries(start: datetime, end: datetime) -> dict[datetime, str]:
         for name, solar in Solar.fromYmd(year, 6, 1).getLunar().getJieQiTable().items():
             moment = datetime.fromisoformat(solar.toYmdHms()).replace(tzinfo=CALENDAR_ZONE).astimezone(UTC)
             if start.astimezone(UTC) < moment < end.astimezone(UTC):
-                terms[moment] = name
+                terms[moment] = TERM_ALIASES.get(name, name)
     return terms
 
 
@@ -91,11 +94,40 @@ def target_facts(moment: datetime, natal: dict, *, granularity: str,
     return result
 
 
+def _cycle_index(origin_text: str, count: int, instant: datetime) -> int | None:
+    origin = _solar(datetime.fromisoformat(origin_text))
+    for i in range(count):
+        start = datetime.fromisoformat(origin.nextYear(i * 10).toYmdHms()).replace(tzinfo=CALENDAR_ZONE)
+        end = datetime.fromisoformat(origin.nextYear((i + 1) * 10).toYmdHms()).replace(tzinfo=CALENDAR_ZONE)
+        if start <= instant < end:
+            return i
+    return None
+
+
 def active_luck(natal: dict, instant: datetime) -> dict:
-    """Resolve an active ten-year cycle with an explicit anniversary convention."""
+    """Resolve an active ten-year cycle with an explicit anniversary convention.
+
+    A birth time given as a range leaves the 起运 moment between an earliest and
+    a latest one; a cycle is named only when both give the same cycle.
+    """
     qi = natal.get('qi_yun')
     if not qi or not natal.get('hour_known'):
         return {'status': 'birth_time_required'}
+    if qi.get('start_calendar_datetime_latest'):
+        cycles = natal['da_yun']
+        ends = [_cycle_index(qi[k], len(cycles), instant)
+                for k in ('start_calendar_datetime', 'start_calendar_datetime_latest')]
+        if ends[0] is None and ends[1] is None:
+            first = datetime.fromisoformat(qi['start_calendar_datetime']).replace(tzinfo=CALENDAR_ZONE)
+            return {'status': 'before_first_cycle' if instant < first else 'outside_calculated_cycles'}
+        if ends[0] != ends[1]:
+            return {'status': 'birth_time_range',
+                    'candidates': [cycles[i]['ganzhi'] for i in sorted(i for i in ends if i is not None)]}
+        cycle = cycles[ends[0]]
+        return {'status': 'calculated', 'ganzhi': cycle['ganzhi'],
+                'start_year': cycle.get('start_year'), 'end_year': cycle.get('end_year'),
+                'convention': '出生时间是范围：起运瞬间取范围内最早和最晚两端，两端给出同一步运才算定下',
+                'source': qi['source']}
     origin = _solar(datetime.fromisoformat(qi['start_calendar_datetime']))
     for i, cycle in enumerate(natal['da_yun']):
         start = datetime.fromisoformat(origin.nextYear(i * 10).toYmdHms()).replace(tzinfo=CALENDAR_ZONE)
@@ -174,8 +206,10 @@ def period_facts(window: dict, natal: dict, *, granularity: str = 'day',
                 cursor = cursor.replace(second=0, microsecond=0) + timedelta(minutes=1)
     # Luck changes can happen inside a day or solar month.
     qi = natal.get('qi_yun')
-    if qi:
-        origin = _solar(datetime.fromisoformat(qi['start_calendar_datetime']))
+    for field in ('start_calendar_datetime', 'start_calendar_datetime_latest'):
+        if not qi or not qi.get(field):
+            continue
+        origin = _solar(datetime.fromisoformat(qi[field]))
         for i in range(len(natal['da_yun']) + 1):
             boundary = datetime.fromisoformat(origin.nextYear(i * 10).toYmdHms()).replace(tzinfo=CALENDAR_ZONE).astimezone(UTC)
             if a < boundary < b:

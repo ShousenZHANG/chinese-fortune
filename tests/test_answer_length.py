@@ -11,8 +11,8 @@ from fortune_reading import read_request, render_answer
 from life_decision import render
 from life_guide import decide
 
-PERSON = {'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30, 'gender': 'male',
-                    'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}
+PERSON = {'birth': {'year': 1997, 'month': 8, 'day': 20, 'hour': 10, 'minute': 15, 'gender': 'male',
+                    'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}
 BASE = {'current_timezone': 'Australia/Sydney', 'request_time': '2026-10-06T00:00:00Z',
         'participants': [{'id': 'me', 'confirmed': True, 'person': PERSON}]}
 MOVING = {**BASE, 'question': '下个月哪天搬家好', 'intent': 'period', 'period': '下个月',
@@ -84,8 +84,8 @@ def test_the_detail_flag_brings_back_the_full_method():
 
 
 def test_the_cycle_years_match_the_chart_answer(week):
-    """2023–2032, as the chart answer's da_yun says; 2033 is when the next one starts."""
-    assert '己酉运（2023–2032）' in week
+    """2021–2030, as the chart answer's da_yun says; 2031 is when the next one starts."""
+    assert '乙巳运（2021–2030）' in week
 
 
 def test_a_decision_draft_quotes_two_sentences_and_points_to_the_rest():

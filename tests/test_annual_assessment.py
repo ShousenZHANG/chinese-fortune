@@ -37,7 +37,7 @@ def test_a_rescue_turns_it_into_wealth():
 
 
 def test_the_year_overcoming_the_day_stem_is_light():
-    chart = _chart('丁丑', '壬子', '庚子', '丙戌')        # 庚日, 丁 year overcomes 庚
+    chart = _chart('丁丑', '壬子', '庚午', '丙子')        # 庚日, 丁 year overcomes 庚
     hits = {h['id']: h for h in assess_year(chart, 2027, '丁未')['hits']}
     assert hits['year_hurts_day']['verdict'] == '祸轻'
 
@@ -85,7 +85,7 @@ def test_a_missing_hour_still_reads_the_day_pillar_but_says_so():
 
 
 def test_the_paragraph_names_the_year_the_hits_and_the_limits():
-    text = annual_paragraph(assess_year(_chart('丁丑', '壬子', '庚子', '丙戌'), 2027, '丁未'))
+    text = annual_paragraph(assess_year(_chart('丁丑', '壬子', '庚午', '丙子'), 2027, '丁未'))
     assert text.startswith('2027年（丁未）')
     assert '「歲傷日干有禍必輕」' in text and '一年一个说法' in text
 

@@ -107,6 +107,8 @@ A complete transcription, implemented rules, image collation and predictive vali
 
 ## Privacy
 
+Birth details in this repository's examples, tests and evaluations are fictional; none belongs to a real person.
+
 Charts, date selection and text lookup run in the bundled scripts on your computer (or the host's sandbox), offline, and do not save your birth details or questions; your conversation with the AI still goes through whichever AI service you use. The one network call is the optional quantum randomness source for divination casts: it fetches random bytes only, carries no personal data, and falls back to local randomness.
 
 Optional, explicitly confirmed profiles support revisioned updates, inspection and deletion outside the repository and installed skill. The default is `~/.local/share/chinese-fortune`. Calculations do not automatically persist conversations or profiles.

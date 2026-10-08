@@ -231,7 +231,7 @@ def _unknown_near_lichun(**extra):
         'question': '下周哪天对我好？', **extra,
         'participants': [{'id': 'me', 'confirmed': True, 'person': {
             'birth': {'year': 2000, 'month': 2, 'day': 4, 'gender': 'male', 'timezone': 'Asia/Shanghai',
-                      'longitude': 120.64}, 'time_certainty': 'unknown'}}]})
+                      'longitude': 121.47}, 'time_certainty': 'unknown'}}]})
 
 
 def test_an_unsettled_birth_year_is_graded_both_ways_and_the_worse_stands():

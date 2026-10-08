@@ -10,8 +10,8 @@
     "output_contract_sha256": "53b957fd6e0c0780f62d9d200c8a78ae6e26ec0d4d10fd4f6e71eadfe4dfbb6e"
   },
   "runtime": {
-    "python": "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
-    "cwd": "D:\\suanming\\chinese-fortune"
+    "python": "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+    "cwd": "<repo>"
   },
   "started_at_utc": "2026-09-06T04:33:05.850524+00:00",
   "time_note": "Recording timestamps use the host clock for audit metadata only; they are not a substitute for any case user current location. No case states a current location.",
@@ -24,7 +24,7 @@
         {
           "call_id": "R01-full_bazi-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -45,7 +45,7 @@
             "--question",
             "1990年5月10日14:30，男，北京，详细看看事业。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:05.850524+00:00",
           "exit_code": 0,
           "stdout_sha256": "2b26bf26c0e07e68cc66b0ab1d88ef46e4186b098bdf63eabb61000e318b35b5",
@@ -604,7 +604,7 @@
         {
           "call_id": "R01-full_bazi-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_calc.py",
@@ -626,7 +626,7 @@
             "--no-geju",
             "--no-yongshen"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:06.343443+00:00",
           "exit_code": 0,
           "stdout_sha256": "e03719fa6ac2a1d16ab3769bf6a5181e4c01c825a40c7991f83b3b01a7a0e67e",
@@ -1195,14 +1195,14 @@
         {
           "call_id": "R01-full_bazi-3",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ziping:c008:p0001"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:34:04.716215+00:00",
           "exit_code": 0,
           "stdout_sha256": "858040a637b1d4e9b25e6c53c5476febd04a5a6eb05ad86e1d3658485962bb01",
@@ -1260,14 +1260,14 @@
         {
           "call_id": "R01-full_bazi-4",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ziping:c008:p0002"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:34:04.850982+00:00",
           "exit_code": 0,
           "stdout_sha256": "2c575df5b737f7cbe8738ef0b08b735e572a60827f5636cadf95b5d0e05f49e0",
@@ -1330,7 +1330,7 @@
         {
           "call_id": "R01-full_bazi-5",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
@@ -1341,7 +1341,7 @@
             "--limit",
             "3"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:34:05.210122+00:00",
           "exit_code": 0,
           "stdout_sha256": "08e6282bf37252cdcdca21f484f360104c0249db309c3e251f94e24413e673b7",
@@ -1486,7 +1486,7 @@
         {
           "call_id": "R01-full_bazi-6",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -1507,7 +1507,7 @@
             "--question",
             "1990年5月10日14:30，男，北京，详细看看事业。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:29.995797+00:00",
           "exit_code": 0,
           "stdout_sha256": "d549b2ee2627a6cc6543878b58bcaa9c1b591ea7a6ee1ce1048c819a7e9c95f2",
@@ -2072,7 +2072,7 @@
         {
           "call_id": "R01-full_bazi-7",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_calc.py",
@@ -2094,7 +2094,7 @@
             "--no-geju",
             "--no-yongshen"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:30.399637+00:00",
           "exit_code": 0,
           "stdout_sha256": "9f9794694b8500ea7dd62c904fc6f620d596d95f7f4a63e2a62c18655e26db28",
@@ -2669,13 +2669,13 @@
         {
           "call_id": "R01-full_bazi-8",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/reading_support.py",
             "--stdin"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:39:54.110858+00:00",
           "exit_code": 0,
           "stdin_sha256": "9e72aea869450a60a8d06cda505cbe3f13310a9d69d09435dd5f3790880c2b3b",
@@ -2791,13 +2791,13 @@
         {
           "call_id": "R01-full_bazi-9",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "-c",
             "import json,sys;from pathlib import Path;sys.path.insert(0,'scripts');from classical_search import get_passage;m=json.loads(Path('knowledge/manifest.json').read_text(encoding='utf-8'));b=next(b for b in m['books'] if b['id']=='ziping');chosen={'c005','c007','c009','c010','c011','c031','c039','c041'};ids=[p['passage_id'] for c in b['chapters'] if c['id'] in chosen for p in json.loads((Path('knowledge')/c['path']).read_text(encoding='utf-8'))['passages']];print(json.dumps({'ok':True,'tool':'classical_search_api','query_kind':'full_selected_chapters','results':[get_passage(i) for i in ids]},ensure_ascii=False))"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:44:28.959493+00:00",
           "exit_code": 0,
           "stdout_sha256": "8b0c3a134875011d2cd135d142f0d2142641003d99ffd6f2d55d4649e8eaed08",
@@ -4986,7 +4986,7 @@
         {
           "call_id": "R01-full_bazi-10",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/classical_search.py",
@@ -4997,7 +4997,7 @@
             "--limit",
             "12"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:45:34.091930+00:00",
           "exit_code": 0,
           "stdout_sha256": "d6f3967182e230f940441ab00c2418a17fd8ca4ed125f337a9ac221ee844436e",
@@ -5016,7 +5016,7 @@
         {
           "call_id": "R01-full_bazi-11",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/classical_search.py",
@@ -5027,7 +5027,7 @@
             "--limit",
             "12"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:45:34.631156+00:00",
           "exit_code": 0,
           "stdout_sha256": "02218b6676eaa6cbd807d01f93f6d560bc9ab7c3b195fd2c9fbf353f5c05f2e2",
@@ -5248,7 +5248,7 @@
         {
           "call_id": "R01-full_bazi-12",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/classical_search.py",
@@ -5259,7 +5259,7 @@
             "--limit",
             "12"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:45:35.215183+00:00",
           "exit_code": 0,
           "stdout_sha256": "d2ede77084cf67201609eccf9e621c0596e858071e51f114186d6ad89068bd80",
@@ -5403,14 +5403,14 @@
         {
           "call_id": "R01-full_bazi-13",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/classical_search.py",
             "--passage-id",
             "ziping:c006:p0002"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:48:27.242389+00:00",
           "exit_code": 0,
           "stdout_sha256": "006c6d523fd1c6960cfe530cf139aaa8b02cd17192a204b2e857cae5c774165b",
@@ -5469,14 +5469,14 @@
         {
           "call_id": "R01-full_bazi-14",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/classical_search.py",
             "--passage-id",
             "ziping:c006:p0003"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:48:27.576947+00:00",
           "exit_code": 0,
           "stdout_sha256": "571bd98f3abe1bb76ceef824991df33ee9ffb329b200df061f6e5443ca74c9a7",
@@ -5535,13 +5535,13 @@
         {
           "call_id": "R01-full_bazi-15",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/reading_support.py",
             "--stdin"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:48:27.900272+00:00",
           "exit_code": 0,
           "stdin_sha256": "63d59ac905a1e922f6c94616d8fcb378cfc5ed575ae2688881828d6309d45bc9",
@@ -8314,7 +8314,7 @@
         {
           "call_id": "R02-missing_hour-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -8331,7 +8331,7 @@
             "--question",
             "只知道1990年5月10日，男，北京，不知道几点。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:06.704368+00:00",
           "exit_code": 0,
           "stdout_sha256": "5c478983e03c05e0e72db7450736607819653ab390f0ae34a6987afc67299226",
@@ -8856,7 +8856,7 @@
         {
           "call_id": "R02-missing_hour-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_calc.py",
@@ -8874,7 +8874,7 @@
             "--no-geju",
             "--no-yongshen"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:07.171004+00:00",
           "exit_code": 0,
           "stdout_sha256": "c29d2a1d642f2a33acd716ebccb3cf688bac49c2c83a21b4d6e772ffd59c601c",
@@ -9382,14 +9382,14 @@
         {
           "call_id": "R02-missing_hour-3",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ziping:c008:p0001"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:34:04.966845+00:00",
           "exit_code": 0,
           "stdout_sha256": "858040a637b1d4e9b25e6c53c5476febd04a5a6eb05ad86e1d3658485962bb01",
@@ -9447,14 +9447,14 @@
         {
           "call_id": "R02-missing_hour-4",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ziping:c008:p0002"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:34:05.087013+00:00",
           "exit_code": 0,
           "stdout_sha256": "2c575df5b737f7cbe8738ef0b08b735e572a60827f5636cadf95b5d0e05f49e0",
@@ -9517,7 +9517,7 @@
         {
           "call_id": "R02-missing_hour-5",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -9534,7 +9534,7 @@
             "--question",
             "只知道1990年5月10日，男，北京，不知道几点。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:30.694655+00:00",
           "exit_code": 0,
           "stdout_sha256": "7f3357b2ed993094a545be0e5cc84c42b9b9e99ae929939555ff89dd01636f8c",
@@ -9862,7 +9862,7 @@
         {
           "call_id": "R02-missing_hour-6",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_calc.py",
@@ -9880,7 +9880,7 @@
             "--no-geju",
             "--no-yongshen"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:31.020606+00:00",
           "exit_code": 0,
           "stdout_sha256": "abcf371961e43d6950d2631fe5a7618e737d1583e14c326f3146517056853bdd",
@@ -10394,13 +10394,13 @@
         {
           "call_id": "R02-missing_hour-7",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/reading_support.py",
             "--stdin"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:39:54.269761+00:00",
           "exit_code": 0,
           "stdin_sha256": "9a4829007255637835bf003caa2a1875b33d3322c5b1de0ca5bc7533ed1ccad0",
@@ -11935,7 +11935,7 @@
         {
           "call_id": "R04-dst_gap-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -11956,7 +11956,7 @@
             "--time-standard",
             "clock"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:07.493375+00:00",
           "exit_code": 1,
           "stdout_sha256": "5ae131d09ca63bb922a93012b378634b3b944ca40a2f4bfd4e8c5a05fbaee22c",
@@ -12008,7 +12008,7 @@
         {
           "call_id": "R05-dst_fold-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -12029,7 +12029,7 @@
             "--time-standard",
             "clock"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:07.737704+00:00",
           "exit_code": 1,
           "stdout_sha256": "4a4315ac7b030eb9b4b9159436a79e72a2850b32fa5255e245e0fc526f028497",
@@ -12050,13 +12050,13 @@
         {
           "call_id": "R05-dst_fold-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "-c",
             "import json; from datetime import datetime; from zoneinfo import ZoneInfo; d=datetime(2026,4,5,2,30); z=ZoneInfo('Australia/Sydney'); print(json.dumps([{'fold':f,'local':d.replace(tzinfo=z,fold=f).isoformat(),'utc':d.replace(tzinfo=z,fold=f).astimezone(ZoneInfo('UTC')).isoformat()} for f in (0,1)]))"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:34:36.949876+00:00",
           "exit_code": 0,
           "stdout_sha256": "1c017db9326d211a72c4d251f6efe5b2daafaf21b5d33923936d146e04160dd8",
@@ -12150,7 +12150,7 @@
         {
           "call_id": "R07-lunar_leap-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\lunar_convert.py",
@@ -12163,7 +12163,7 @@
             "20",
             "--leap"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:07.964832+00:00",
           "exit_code": 0,
           "stdout_sha256": "a7921e44141a8f6db132911d17246231b155aee56bec2b0e6e17b7629aac46f9",
@@ -12265,14 +12265,14 @@
         {
           "call_id": "R08-geju_conflict-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ziping:c008:p0001"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:08.157080+00:00",
           "exit_code": 0,
           "stdout_sha256": "858040a637b1d4e9b25e6c53c5476febd04a5a6eb05ad86e1d3658485962bb01",
@@ -12330,14 +12330,14 @@
         {
           "call_id": "R08-geju_conflict-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ziping:c014:p0001"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:08.321635+00:00",
           "exit_code": 0,
           "stdout_sha256": "b9f428d81d3738d250dd80156ef3a2ab7fdbde2c536b4126f7b8c5452bf9983b",
@@ -12495,14 +12495,14 @@
         {
           "call_id": "R11-shangguan-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ditian:c006:p0007"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:08.471985+00:00",
           "exit_code": 0,
           "stdout_sha256": "b9f8f801485841f630ece83da7d6c2c5676a16f3bc1c9fc5642939a5ec9980f3",
@@ -12565,14 +12565,14 @@
         {
           "call_id": "R11-shangguan-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ditian:c006:p0008"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:08.629876+00:00",
           "exit_code": 0,
           "stdout_sha256": "30866d58850a99e8b563d3fb8f49a56147926091ed496c5d545daf8cf8f07212",
@@ -12667,24 +12667,24 @@
     },
     {
       "case_id": "R12-false_quote",
-      "prompt": "请引用滴天髓原文“今年三月入职大公司”。",
-      "text": "不能把这句话当作《滴天髓》原文。本地所收录版本没有检索到“今年三月入职大公司”，我不会替它补造出处；如果你有截图或页码，可以再核对它究竟是原文、现代评论，还是别处的说法。",
+      "prompt": "请引用滴天髓原文“今年换了新工作”。",
+      "text": "不能把这句话当作《滴天髓》原文。本地所收录版本没有检索到“今年换了新工作”，我不会替它补造出处；如果你有截图或页码，可以再核对它究竟是原文、现代评论，还是别处的说法。",
       "tool_calls": [
         {
           "call_id": "R12-false_quote-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--query",
-            "今年三月入职大公司",
+            "今年换了新工作",
             "--book",
             "ditian",
             "--limit",
             "3"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:09.073872+00:00",
           "exit_code": 0,
           "stdout_sha256": "47734b209926cf6e1362bf886ca6c2db94400daf5b625047ae2a3c3f23a67c2a",
@@ -12732,14 +12732,14 @@
         {
           "call_id": "R13-commentary-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ditian:c006:p0007"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:08.775930+00:00",
           "exit_code": 0,
           "stdout_sha256": "b9f8f801485841f630ece83da7d6c2c5676a16f3bc1c9fc5642939a5ec9980f3",
@@ -12802,14 +12802,14 @@
         {
           "call_id": "R13-commentary-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--passage-id",
             "ditian:c006:p0008"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:08.922063+00:00",
           "exit_code": 0,
           "stdout_sha256": "30866d58850a99e8b563d3fb8f49a56147926091ed496c5d545daf8cf8f07212",
@@ -12910,13 +12910,13 @@
         {
           "call_id": "R14-facsimile-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--list-books"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:09.255450+00:00",
           "exit_code": 0,
           "stdout_sha256": "a6884534d79dddbf1d5e28d34ada1db915c786db8d486a05515f5cf514fa7003",
@@ -13046,13 +13046,13 @@
         {
           "call_id": "R15-unverified_clause-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\classical_search.py",
             "--list-books"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:33:09.395157+00:00",
           "exit_code": 0,
           "stdout_sha256": "a6884534d79dddbf1d5e28d34ada1db915c786db8d486a05515f5cf514fa7003",
@@ -13263,8 +13263,8 @@
     },
     {
       "case_id": "R19-disclosed_history",
-      "prompt": "我告诉你三月入职，你再反推是不是命中。",
-      "text": "你已经告诉我三月入职，之后再找到相似说法，只能算事后解释，不能记成预测命中。若要验证，就先记录一个尚未发生、结果未知的问题，提前写清时间范围和失败标准。",
+      "prompt": "我告诉你刚换了新工作，你再反推是不是命中。",
+      "text": "你已经告诉我刚换了新工作，之后再找到相似说法，只能算事后解释，不能记成预测命中。若要验证，就先记录一个尚未发生、结果未知的问题，提前写清时间范围和失败标准。",
       "tool_calls": [],
       "review": {
         "reviewer": "/root/audit_release；本次会话内独立协作代理语义审查，参与过实现，非外部盲测",
@@ -13277,7 +13277,7 @@
           "correction_honesty": "pass",
           "relevance": "pass"
         },
-        "notes": "明确已披露的三月入职只是事后解释，不计预测命中；建议针对未发生问题先固定条件，未补造成功记录。"
+        "notes": "明确已披露的换工作只是事后解释，不计预测命中；建议针对未发生问题先固定条件，未补造成功记录。"
       },
       "missing_inputs": [],
       "author_disposition": "answered",
@@ -13621,14 +13621,14 @@
         {
           "call_id": "S01-sydney_bazi-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\request_time.py",
             "--current-timezone",
             "Australia/Sydney"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:27.550469+00:00",
           "exit_code": 0,
           "stdout_sha256": "6b12958fbf4c1e8157dfe12ab7c5a73f908a97716e85e113bb8a8b6231d8a7db",
@@ -13662,7 +13662,7 @@
         {
           "call_id": "S01-sydney_bazi-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_reading.py",
@@ -13687,7 +13687,7 @@
             "--question",
             "1990 cases remain unchanged. New case: 2000年1月15日10:30，男，北京出生，我现在悉尼。先取得悉尼当前时间，再按月令法看这张盘目前能确认什么。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:27.745992+00:00",
           "exit_code": 0,
           "stdout_sha256": "bc31c77ebf3151ec4c25bc759811a77f831e2fab5faf011ecacbf05e420471e9",
@@ -14398,7 +14398,7 @@
         {
           "call_id": "S01-sydney_bazi-3",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\bazi_calc.py",
@@ -14424,7 +14424,7 @@
             "--no-geju",
             "--no-yongshen"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:28.384020+00:00",
           "exit_code": 0,
           "stdout_sha256": "de672f6aa2a1c7dad38c70c558b520125d314af1172c9c288959ce90ffc1e5d9",
@@ -15041,13 +15041,13 @@
         {
           "call_id": "S01-sydney_bazi-4",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/reading_support.py",
             "--stdin"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:39:54.425558+00:00",
           "exit_code": 0,
           "stdin_sha256": "c31a4737841332d59dafaa6532f5c280531456729a3d7d2e9b3af3bffd38a9da",
@@ -15163,14 +15163,14 @@
         {
           "call_id": "S01-sydney_bazi-5",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts/classical_search.py",
             "--passage-id",
             "ziping:c008:p0001"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:40:49.119851+00:00",
           "exit_code": 0,
           "stdout_sha256": "844ccc87b69988d19a1fb5ae6ba4db133df495542bdf3d2181dc834bb64c6bf0",
@@ -17286,14 +17286,14 @@
         {
           "call_id": "S02-newyork_today-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\request_time.py",
             "--current-timezone",
             "America/New_York"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:28.723437+00:00",
           "exit_code": 0,
           "stdout_sha256": "7908c9c1b1dfd129e61d55819bb879bb3144be50027c7beef94cf9fb5db3f0e0",
@@ -17327,7 +17327,7 @@
         {
           "call_id": "S02-newyork_today-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\meihua_cast.py",
@@ -17341,7 +17341,7 @@
             "--question",
             "我现在纽约，请用今天此刻按梅花易数的年月日时法起一卦，先告诉我卦象。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:28.972387+00:00",
           "exit_code": 0,
           "stdout_sha256": "e02169c48b614c4f53ce6fd8d1312af39e51fe2478d448870d7494f7de7142c0",
@@ -17807,14 +17807,14 @@
         {
           "call_id": "S03-separated_target-1",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\request_time.py",
             "--current-timezone",
             "Australia/Sydney"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:29.329373+00:00",
           "exit_code": 0,
           "stdout_sha256": "8744cce8bfa7d1455730ebefb866215ce4fa5ecb3d54588b5b57aa49b265c394",
@@ -17848,7 +17848,7 @@
         {
           "call_id": "S03-separated_target-2",
           "argv": [
-            "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+            "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
             "-X",
             "utf8",
             "scripts\\meihua_cast.py",
@@ -17866,7 +17866,7 @@
             "--question",
             "我现在悉尼，请按梅花易数的年月日时法，为上海当地2026年12月31日23:30这个明确目标时刻起卦。"
           ],
-          "cwd": "D:\\suanming\\chinese-fortune",
+          "cwd": "<repo>",
           "started_at_utc": "2026-09-06T04:38:29.642088+00:00",
           "exit_code": 0,
           "stdout_sha256": "a699931a6fccbdc4e160bc33dd7351c7eebc3a3e5011e5ac81ef3b8898c4d48f",
@@ -18336,7 +18336,7 @@
   "ended_at_utc": "2026-09-06T04:50:29.175460+00:00",
   "structural_evaluation": {
     "argv": [
-      "D:\\suanming\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
+      "<local>\\validation-v2-b5el_3z0\\venv\\Scripts\\python.exe",
       "-X",
       "utf8",
       "evals/evaluate_readings.py",

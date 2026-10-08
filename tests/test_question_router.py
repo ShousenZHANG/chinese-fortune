@@ -228,8 +228,8 @@ def test_a_routed_request_answers_first(question, lead):
     request = {**route(question)['request'], 'current_timezone': 'Asia/Shanghai',
                'request_time': '2026-09-17T02:00:00Z',
                'participants': [{'id': 'me', 'confirmed': True, 'person': {
-                   'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30, 'gender': 'male',
-                             'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}}]}
+                   'birth': {'year': 1997, 'month': 8, 'day': 20, 'hour': 10, 'minute': 15, 'gender': 'male',
+                             'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}}]}
     request['event'] = {**request['event'], 'longitude': 121.47}
     text = render_answer(read_request(request))
     assert text.startswith(lead), text.split('\n\n')[0]
@@ -239,8 +239,8 @@ def test_a_routed_request_answers_first(question, lead):
 def test_a_day_question_over_a_year_is_answered_by_day_and_a_month_question_by_month():
     from fortune_reading import read_request, render_answer
     person = [{'id': 'me', 'confirmed': True, 'person': {
-        'birth': {'year': 1997, 'month': 12, 'day': 24, 'hour': 19, 'minute': 30, 'gender': 'male',
-                  'timezone': 'Asia/Shanghai', 'longitude': 120.64}, 'time_certainty': 'exact'}}]
+        'birth': {'year': 1997, 'month': 8, 'day': 20, 'hour': 10, 'minute': 15, 'gender': 'male',
+                  'timezone': 'Asia/Shanghai', 'longitude': 121.47}, 'time_certainty': 'exact'}}]
     base = {'current_timezone': 'Asia/Shanghai', 'request_time': '2026-09-17T02:00:00Z', 'participants': person}
     days = read_request({**base, **route('明年哪天结婚好？')['request']})
     entries = days['personal_calendar']['entries']
