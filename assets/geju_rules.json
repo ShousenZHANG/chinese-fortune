@@ -1,0 +1,2951 @@
+{
+  "schema_version": "1.0",
+  "source_book": "ziping",
+  "verification": "frozen_quotes_and_observation_scope_reviewed_2026-10-26",
+  "scope": "成败救应与变化的事实核对；不自动定格",
+  "source_quality": {
+    "layer": "base_text",
+    "transcription_status": "acquired_not_collated",
+    "facsimile_status": "not_checked",
+    "edition_note": "东里书斋整理本择字；非影印逐字校勘，冻结完整性不等于版本校勘"
+  },
+  "rules": [
+    {
+      "id": "G00",
+      "kind": "transformation_clue",
+      "day": null,
+      "month": "寅",
+      "conditions": [
+        {
+          "id": "not_exposed_甲",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "不透甲",
+          "stem": "甲",
+          "expected_presence": false
+        },
+        {
+          "id": "exposed_丙",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透丙",
+          "stem": "丙",
+          "expected_presence": true
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "day_specific_family",
+          "label": "日主与变化的十神类别",
+          "state": "unknown",
+          "reason": "原句为一般月令机理，没有指定日主；不能直接定格名"
+        }
+      ],
+      "passage_id": "ziping:c010:p0001",
+      "quote": "不透甲而透丙",
+      "sha256": "28f59ecacd67eb360a59075e43561dab59eb2d1468e084e578b6f99d463ccce2",
+      "passage_sha256": "30cc0cf1ec3ec582fb50268c65527d834a9549d0f2e0e2abbab2ca8643c9e1cc"
+    },
+    {
+      "id": "G01",
+      "kind": "transformation_clue",
+      "day": "丁",
+      "month": "亥",
+      "from_family_id": "officer",
+      "target_family_ids": [
+        "seal"
+      ],
+      "conditions": [
+        {
+          "id": "branches_亥卯未",
+          "predicate": "observe_branch_group_members",
+          "source_fragment": "支全卯未",
+          "group": [
+            "亥",
+            "卯",
+            "未"
+          ],
+          "source_explicitly_requires_all": true,
+          "semantic_limit": "成员与全/部分支事实，不是会化有效性；隐去的时支不证明缺失"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "combination_effect",
+          "label": "是否实际化印",
+          "state": "unknown",
+          "reason": "支全是可观察条件，合化/取用作用仍需复核"
+        }
+      ],
+      "passage_id": "ziping:c010:p0002",
+      "quote": "丁生亥月，本爲正官，支全卯未，則化爲印",
+      "sha256": "cf139f2c4faeabe46991dc635a3fc02e6b69fd6c86cfd87baefce31786db1623",
+      "passage_sha256": "5b6a84ea2c20f3018d76703af7ebbc4a33cb3411908c3fdc9e02445c4973b884"
+    },
+    {
+      "id": "G02",
+      "kind": "transformation_clue",
+      "day": "己",
+      "month": "申",
+      "from_family_id": "hurt",
+      "target_family_ids": [
+        "wealth"
+      ],
+      "conditions": [
+        {
+          "id": "hidden_month_庚",
+          "predicate": "observe_month_hidden_stem",
+          "source_fragment": "藏庚",
+          "stem": "庚"
+        },
+        {
+          "id": "exposed_壬",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透壬",
+          "stem": "壬",
+          "expected_presence": true
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "geng_also_exposed",
+          "label": "庚也透时如何处理主次",
+          "state": "unknown",
+          "reason": "藏庚不等于原文明确禁止全局庚透；不得擅加否定条件"
+        }
+      ],
+      "passage_id": "ziping:c010:p0002",
+      "quote": "己生申月，本屬傷官，藏庚透壬，則化爲財",
+      "sha256": "3a00d1d21cfd756d5dec32ced65c0b09a724a0a39d49b4f7a8d160a5313c14dd",
+      "passage_sha256": "5b6a84ea2c20f3018d76703af7ebbc4a33cb3411908c3fdc9e02445c4973b884"
+    },
+    {
+      "id": "G03",
+      "kind": "transformation_clue",
+      "day": "辛",
+      "month": "寅",
+      "from_family_id": "wealth",
+      "target_family_ids": [
+        "officer"
+      ],
+      "conditions": [
+        {
+          "id": "presence_丙",
+          "predicate": "observe_stem_locations",
+          "source_fragment": "逢丙",
+          "stem": "丙",
+          "semantic_limit": "逢字未操作化为仅透或所有藏干；分别展示，不据月藏存在自动满足变化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "feng_bing_scope",
+          "label": "逢丙的有效作用口径",
+          "state": "unknown",
+          "reason": "寅本来藏丙，不能仅凭藏干恒在让所有辛寅自动化官"
+        },
+        {
+          "id": "retention_R01",
+          "label": "甲又透时保留本格",
+          "state": "unknown",
+          "reason": "必须联合 R01；不能首命中即只保留官格"
+        }
+      ],
+      "passage_id": "ziping:c010:p0004",
+      "quote": "辛生寅月，逢丙而化財爲官",
+      "sha256": "566662d933f5d54157d829d24b1fc963aa2766155d6c6ed5ed9d57e0c0ffd871",
+      "passage_sha256": "0d36a31547d6a10d140a4f11f4c45f6eaa619f6c125cd5c59fe249a4f2a0facc"
+    },
+    {
+      "id": "G04",
+      "kind": "transformation_clue",
+      "day": "壬",
+      "month": "戌",
+      "from_family_id": "kill",
+      "target_family_ids": [
+        "seal"
+      ],
+      "conditions": [
+        {
+          "id": "presence_辛",
+          "predicate": "observe_stem_locations",
+          "source_fragment": "逢辛",
+          "stem": "辛",
+          "semantic_limit": "逢字未操作化为仅透或所有藏干；分别展示，不据月藏存在自动满足变化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "feng_xin_scope",
+          "label": "逢辛的有效作用口径",
+          "state": "unknown",
+          "reason": "戌本来藏辛，不能按藏干存在令所有壬戌化印"
+        }
+      ],
+      "passage_id": "ziping:c010:p0004",
+      "quote": "壬生戌月，逢辛而化煞爲印",
+      "sha256": "bd5369c15cc6806c0e6d648c3897461f2cb6711c7c56cc683be917fddb99d305",
+      "passage_sha256": "0d36a31547d6a10d140a4f11f4c45f6eaa619f6c125cd5c59fe249a4f2a0facc"
+    },
+    {
+      "id": "G05",
+      "kind": "transformation_clue",
+      "day": "癸",
+      "month": "寅",
+      "from_family_id": "hurt",
+      "target_family_ids": [
+        "wealth"
+      ],
+      "conditions": [
+        {
+          "id": "hidden_month_甲",
+          "predicate": "observe_month_hidden_stem",
+          "source_fragment": "藏甲",
+          "stem": "甲"
+        },
+        {
+          "id": "exposed_丙",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透丙",
+          "stem": "丙",
+          "expected_presence": true
+        },
+        {
+          "id": "branches_寅午戌",
+          "predicate": "observe_branch_group_members",
+          "source_fragment": "會午會戌",
+          "group": [
+            "寅",
+            "午",
+            "戌"
+          ],
+          "source_explicitly_requires_all": false,
+          "semantic_limit": "成员与全/部分支事实，不是会化有效性；隐去的时支不证明缺失"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "hui_scope",
+          "label": "会午会戌是否要求全支/如何处理部分支",
+          "state": "unknown",
+          "reason": "措辞不等于支全；全三支可标形态子集，部分不得自动判不适用或已化"
+        },
+        {
+          "id": "retention_R03",
+          "label": "甲又透时的本格保留",
+          "state": "unknown",
+          "reason": "需同时核 R03，再讨论官星"
+        }
+      ],
+      "passage_id": "ziping:c010:p0004",
+      "quote": "癸生寅月，藏甲透丙，會午會戌，而化傷爲財",
+      "sha256": "1c08b7323b10a1ed4c45d2b40cb4921febbf1162603f72af4657200346087c14",
+      "passage_sha256": "0d36a31547d6a10d140a4f11f4c45f6eaa619f6c125cd5c59fe249a4f2a0facc"
+    },
+    {
+      "id": "G06",
+      "kind": "transformation_clue",
+      "day": "乙",
+      "month": "寅",
+      "from_family_id": "salary",
+      "target_family_ids": [
+        "food",
+        "hurt"
+      ],
+      "conditions": [
+        {
+          "id": "exposed_戊",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透戊",
+          "stem": "戊",
+          "expected_presence": true
+        },
+        {
+          "id": "branches_寅午戌",
+          "predicate": "observe_branch_group_members",
+          "source_fragment": "會午會戌",
+          "group": [
+            "寅",
+            "午",
+            "戌"
+          ],
+          "source_explicitly_requires_all": false,
+          "semantic_limit": "成员与全/部分支事实，不是会化有效性；隐去的时支不证明缺失"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "hui_scope",
+          "label": "会支作用与食伤主次",
+          "state": "unknown",
+          "reason": "只记录支与戊透，不能直接移除月劫或财候选"
+        }
+      ],
+      "passage_id": "ziping:c010:p0004",
+      "quote": "乙生寅月，透戊爲財，會午會戌，則月劫化爲食傷",
+      "sha256": "fddfaea7518a0ba884d68f8ad67a458458c1de2ceb28e4973f3a7fc9695ed9fd",
+      "passage_sha256": "0d36a31547d6a10d140a4f11f4c45f6eaa619f6c125cd5c59fe249a4f2a0facc"
+    },
+    {
+      "id": "G07",
+      "kind": "transformation_clue",
+      "day": "丙",
+      "month": "寅",
+      "from_family_id": "seal",
+      "conditions": [
+        {
+          "id": "not_exposed_甲",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "甲不透干",
+          "stem": "甲",
+          "expected_presence": false
+        },
+        {
+          "id": "branches_寅午戌",
+          "predicate": "observe_branch_group_members",
+          "source_fragment": "會午會戌",
+          "group": [
+            "寅",
+            "午",
+            "戌"
+          ],
+          "source_explicitly_requires_all": false,
+          "semantic_limit": "成员与全/部分支事实，不是会化有效性；隐去的时支不证明缺失"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "hui_scope",
+          "label": "会劫作用",
+          "state": "unknown",
+          "reason": "部分/全支观察与有效会劫分开"
+        },
+        {
+          "id": "retention_R04",
+          "label": "甲或壬透时仍保留印",
+          "state": "unknown",
+          "reason": "未知时辰不能证明甲不透；须核 R04 的 OR 分支"
+        }
+      ],
+      "passage_id": "ziping:c010:p0005",
+      "quote": "丙生寅月，本爲印綬，甲不透干，而會午會戌，則化爲劫",
+      "sha256": "3edb23c8e3f8e28431602728dd41c1caf366509e13e4bfec06c7aa5c80319ebd",
+      "passage_sha256": "72266269ae450fc4ab6f522e65a1d89fcaeb57e45d0bade89101ade8a09af827"
+    },
+    {
+      "id": "G08",
+      "kind": "transformation_clue",
+      "day": "丙",
+      "month": "申",
+      "from_family_id": "wealth",
+      "target_family_ids": [
+        "kill"
+      ],
+      "conditions": [
+        {
+          "id": "hidden_month_庚",
+          "predicate": "observe_month_hidden_stem",
+          "source_fragment": "藏庚",
+          "stem": "庚"
+        },
+        {
+          "id": "exposed_壬",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透壬",
+          "stem": "壬",
+          "expected_presence": true
+        },
+        {
+          "id": "branches_申子辰",
+          "predicate": "observe_branch_group_members",
+          "source_fragment": "會子會辰",
+          "group": [
+            "申",
+            "子",
+            "辰"
+          ],
+          "source_explicitly_requires_all": false,
+          "semantic_limit": "成员与全/部分支事实，不是会化有效性；隐去的时支不证明缺失"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "hui_scope",
+          "label": "会水与化杀作用",
+          "state": "unknown",
+          "reason": "支出现不是合化已定"
+        },
+        {
+          "id": "retention_R05",
+          "label": "戊透制杀生财的本格保留",
+          "state": "unknown",
+          "reason": "须同时核 R05，不可只报变杀"
+        }
+      ],
+      "passage_id": "ziping:c010:p0005",
+      "quote": "丙生申月，本屬偏財，藏庚透壬，會子會辰，則化爲煞",
+      "sha256": "d717134ab928f79bab5f9a7cf5a9d1599b159ebab803caf43382e987d9155afe",
+      "passage_sha256": "72266269ae450fc4ab6f522e65a1d89fcaeb57e45d0bade89101ade8a09af827"
+    },
+    {
+      "id": "R01",
+      "kind": "preserves_original",
+      "day": "辛",
+      "month": "寅",
+      "explicit_observation_logic": {
+        "all": [
+          "exposed_丙",
+          "exposed_甲"
+        ]
+      },
+      "conditions": [
+        {
+          "id": "exposed_丙",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透丙",
+          "stem": "丙",
+          "expected_presence": true
+        },
+        {
+          "id": "exposed_甲",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透甲",
+          "stem": "甲",
+          "expected_presence": true
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "original_primary_and_secondary",
+          "label": "财本格/官兼格的实际取用是否成立",
+          "state": "unknown",
+          "reason": "保留本格例式形态可见，但仍需核取用与成败救应"
+        }
+      ],
+      "passage_id": "ziping:c010:p0006",
+      "quote": "辛生寅月，透丙化官，而又透甲，格成正財，正官乃其兼格也",
+      "sha256": "93b0f66c462149a7a5ae66c0e9a3ad8441ee4c213f6bf8e123c8a24efc225305",
+      "passage_sha256": "cb7743ed881091ba21691e8102140c5f34eb57d66279e02a589c276848dff4de"
+    },
+    {
+      "id": "R02",
+      "kind": "preserves_original",
+      "day": "乙",
+      "month": "申",
+      "explicit_observation_logic": {
+        "all": [
+          "exposed_壬",
+          "exposed_戊"
+        ]
+      },
+      "conditions": [
+        {
+          "id": "exposed_壬",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透壬",
+          "stem": "壬",
+          "expected_presence": true
+        },
+        {
+          "id": "exposed_戊",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透戊",
+          "stem": "戊",
+          "expected_presence": true
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "wealth_supports_officer",
+          "label": "财生官与印退位的实际作用",
+          "state": "unknown",
+          "reason": "有壬戊不证明作用；财印位置仍核 c031:p0002，官在申藏庚不必透才召回"
+        }
+      ],
+      "passage_id": "ziping:c010:p0006",
+      "quote": "乙生申月，透壬化印，而又透戊，則財能生官，印逢財而退位，難通月氣，格成正官，而印爲兼格",
+      "sha256": "406e26b7b12e13acb92b020e9450f8cbe8a75a8bc25e84fb0b0062deb55cfe8e",
+      "passage_sha256": "cb7743ed881091ba21691e8102140c5f34eb57d66279e02a589c276848dff4de"
+    },
+    {
+      "id": "R03",
+      "kind": "preserves_original",
+      "day": "癸",
+      "month": "寅",
+      "explicit_observation_logic": {
+        "all": [
+          "exposed_丙",
+          "exposed_甲"
+        ],
+        "additional_observation": [
+          "presence_戊"
+        ]
+      },
+      "conditions": [
+        {
+          "id": "exposed_丙",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透丙",
+          "stem": "丙",
+          "expected_presence": true
+        },
+        {
+          "id": "exposed_甲",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透甲",
+          "stem": "甲",
+          "expected_presence": true
+        },
+        {
+          "id": "presence_戊",
+          "predicate": "observe_stem_locations",
+          "source_fragment": "戊官忌見",
+          "stem": "戊",
+          "semantic_limit": "逢字未操作化为仅透或所有藏干；分别展示，不据月藏存在自动满足变化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "officer_consequence",
+          "label": "戊官是何种作用及反例",
+          "state": "unknown",
+          "reason": "保留原文忌见语义，不输出个人灾祸；不跨过甲透套用 G05 的财旺生官"
+        }
+      ],
+      "passage_id": "ziping:c010:p0006",
+      "quote": "癸生寅月，透丙化財，而又透甲，格成傷官，而戊官忌見",
+      "sha256": "066b4ce1589098ffbd23351d97590074b5dea02ad71eb57de68aa06dcb0e3492",
+      "passage_sha256": "cb7743ed881091ba21691e8102140c5f34eb57d66279e02a589c276848dff4de"
+    },
+    {
+      "id": "R04",
+      "kind": "preserves_original",
+      "day": "丙",
+      "month": "寅",
+      "explicit_observation_logic": {
+        "any": [
+          "exposed_甲",
+          "exposed_壬"
+        ],
+        "separate_combination_observation": "branches_寅午戌"
+      },
+      "conditions": [
+        {
+          "id": "branches_寅午戌",
+          "predicate": "observe_branch_group_members",
+          "source_fragment": "午戌會劫",
+          "group": [
+            "寅",
+            "午",
+            "戌"
+          ],
+          "source_explicitly_requires_all": false,
+          "semantic_limit": "成员与全/部分支事实，不是会化有效性；隐去的时支不证明缺失"
+        },
+        {
+          "id": "exposed_甲",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透甲",
+          "stem": "甲",
+          "expected_presence": true
+        },
+        {
+          "id": "exposed_壬",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透壬",
+          "stem": "壬",
+          "expected_presence": true
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "seal_retention_effect",
+          "label": "仍为印与格不破是否成立",
+          "state": "unknown",
+          "reason": "甲透或壬透为明确 OR；全局作用仍待解释，不能直接输出格不破"
+        }
+      ],
+      "passage_id": "ziping:c010:p0006",
+      "quote": "丙生寅月，午戌會劫，而又或透甲，或透壬，則仍爲印而格不破",
+      "sha256": "1c0ddeee4e9875020c13aedc3f0c8d432446cd797eef3b061c40f02ba7b03e1f",
+      "passage_sha256": "cb7743ed881091ba21691e8102140c5f34eb57d66279e02a589c276848dff4de"
+    },
+    {
+      "id": "R05",
+      "kind": "preserves_original",
+      "day": "丙",
+      "month": "申",
+      "conditions": [
+        {
+          "id": "presence_壬",
+          "predicate": "observe_stem_locations",
+          "source_fragment": "逢壬",
+          "stem": "壬",
+          "semantic_limit": "逢字未操作化为仅透或所有藏干；分别展示，不据月藏存在自动满足变化"
+        },
+        {
+          "id": "exposed_戊",
+          "predicate": "observe_exposed_stem",
+          "source_fragment": "透戊",
+          "stem": "戊",
+          "expected_presence": true
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "food_controls_kill_generates_wealth",
+          "label": "食神制杀生财的作用是否有效",
+          "state": "unknown",
+          "reason": "壬/戊出现只证结构，不证制杀生财；不失富贵不能转为现实预测"
+        }
+      ],
+      "passage_id": "ziping:c010:p0006",
+      "quote": "丙生申月，逢壬化煞，而又透戊，則食神能制煞生財，仍爲財格，不失富貴",
+      "sha256": "a4952fa1b304a9ba0e6e7baa9c6622a6665975b58876e13633e11950ada2159c",
+      "passage_sha256": "cb7743ed881091ba21691e8102140c5f34eb57d66279e02a589c276848dff4de"
+    },
+    {
+      "id": "officer-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "officer",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "官逢財印，又無刑沖破害",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "无刑冲破害的完整作用范围，财印是否生护官",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "官逢財印，又無刑沖破害",
+      "sha256": "0545e9a268f90879d15c744ba8fb71d418d1915d3a4c066081c0a5395c91d96b",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "officer-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "officer",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "官逢傷尅刑沖",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "伤官"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "伤克刑冲是否有效、是否被救",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "官逢傷尅刑沖",
+      "sha256": "ea16e77f9ddce7390369f02f8243aea57bb0bbff4ece7c05205c7e72190f53bd",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "officer-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "officer",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "如正官逢財而又逢傷，透官而又逢合",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "伤官"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透官",
+          "roles": [
+            "正官"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "伤官/合官是否实际损官，日主自身合不作合去",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "如正官逢財而又逢傷，透官而又逢合",
+      "sha256": "aa7c778a2610cb7fd0c4179110a16652d8b3c9b847502c1609b9b12fed4728a8",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "officer-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "officer",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "如官逢傷，而透印以解之；雜煞，而合煞以清之；刑沖，而會合以解之",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "伤官"
+            ],
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透印",
+          "roles": [
+            "正印",
+            "偏印"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "印解伤、合杀清官、会合解刑冲是否有效",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "如官逢傷，而透印以解之；雜煞，而合煞以清之；刑沖，而會合以解之",
+      "sha256": "af608212609f2e95f40010c32ca8244a50e4964bf9019f80bc679a10fa34058d",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "wealth-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "wealth",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "財生官旺，或財逢食生而身强帶比，或財格透印而位置妥貼，兩不相尅",
+          "role_groups": [
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正官"
+            ],
+            [
+              "食神"
+            ],
+            [
+              "比肩"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透印",
+          "roles": [
+            "正印",
+            "偏印"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "官旺、身强、比的作用与财印位置妥帖；各或分支不可混成AND",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "財生官旺，或財逢食生而身强帶比，或財格透印而位置妥貼，兩不相尅",
+      "sha256": "2f61c7fbb3a81c73baba58de0e9843e30173315554f04ac2a52e65df8f522152",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "wealth-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "wealth",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "財輕比重，財透七煞",
+          "role_groups": [
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "比肩"
+            ],
+            [
+              "劫财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透七煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "财轻比重与财透杀的语义/制救；见财杀不等于必败",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "財輕比重，財透七煞",
+      "sha256": "56c1cb5003c565c896b75e7be6d2a2aefc9723b613e7413bd52897416eb48987",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "wealth-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "wealth",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "財旺生官，而官又逢傷逢合",
+          "role_groups": [
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正官"
+            ],
+            [
+              "伤官"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "财旺生官与官被伤合的有效性",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "財旺生官，而官又逢傷逢合",
+      "sha256": "6e9b4186edba33ca8272fff3bd3e356c3b4c7058168203b8ee2d6339870cd376",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "wealth-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "wealth",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "財逢劫，而透食以化之、生官以制之；逢煞，而食神制煞以生財、或存財而合煞",
+          "role_groups": [
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "劫财"
+            ],
+            [
+              "食神"
+            ],
+            [
+              "正官"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透食",
+          "roles": [
+            "食神"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "透食化劫、生官制劫、制杀生财或存财合杀须分别解释",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "財逢劫，而透食以化之、生官以制之；逢煞，而食神制煞以生財、或存財而合煞",
+      "sha256": "7492caed5c53ddac8ccb86941a7cba9fc1de248291e940a7728366b8a3ceb371",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "seal-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "seal",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "印輕逢煞，或官印雙全，或身印兩旺而用食傷洩氣，或印多逢財而財透根輕",
+          "role_groups": [
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "七杀"
+            ],
+            [
+              "正官"
+            ],
+            [
+              "食神",
+              "伤官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "財透",
+          "roles": [
+            "正财",
+            "偏财"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "印轻/印多、身印两旺、财根轻不由计数判定；泄气/生印实际作用",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "印輕逢煞，或官印雙全，或身印兩旺而用食傷洩氣，或印多逢財而財透根輕",
+      "sha256": "22a00d63751d7770263d0287ad112f6295c001549b806221dc83599f11a49bea",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "seal-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "seal",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "印輕逢財，或身强印重而透煞",
+          "role_groups": [
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "印轻遇财和身强印重遇杀分支各核",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "印輕逢財，或身强印重而透煞",
+      "sha256": "3201b8522bdffad1a772d573f7e7050399f127fac002866cf6d2837c48148aad",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "seal-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "seal",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "印透食神以洩其氣，而又遇財露；透煞以生印，而又透財以去印存煞",
+          "role_groups": [
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "食神"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透食神",
+          "roles": [
+            "食神"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "財露",
+          "roles": [
+            "正财",
+            "偏财"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_3",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_4",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透財",
+          "roles": [
+            "正财",
+            "偏财"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "财损印存杀是否发生、食泄印作用与位置",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "印透食神以洩其氣，而又遇財露；透煞以生印，而又透財以去印存煞",
+      "sha256": "d9dbe75fdca2086283144393ce73e5640a416e470748c44ec1cf3baeff9500c7",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "seal-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "seal",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "印逢財，而劫財以解之，或合財而存印",
+          "role_groups": [
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "劫财"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "劫解财、合财存印的有效作用与合而不合反例",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "印逢財，而劫財以解之，或合財而存印",
+      "sha256": "d19c201c535dd29e1516d3610f0cc624c774303c88674e365f0e551dd74a2da4",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "food-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "food",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "食神生財，或食帶煞而無財，棄食就煞而透印",
+          "role_groups": [
+            [
+              "食神"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透印",
+          "roles": [
+            "正印",
+            "偏印"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "生财/食制杀或弃食就杀的分支句法；无财口径与印用途；逗号不擅改OR",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "食神生財，或食帶煞而無財，棄食就煞而透印",
+      "sha256": "bcf1ed7ccc31df15afa1778c63aba2887b33a7bbe0c84636cc1d757a73676b5a",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "food-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "food",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "食神逢梟，或生財露煞",
+          "role_groups": [
+            [
+              "食神"
+            ],
+            [
+              "偏印"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "露煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "见偏印不等于夺食，生财露杀的作用要核",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "食神逢梟，或生財露煞",
+      "sha256": "937c262981d2120371112bdbab6fc3271ea163c93fead64ea844b4576f1e60e4",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "food-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "food",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "食神帶煞印而又逢財",
+          "role_groups": [
+            [
+              "食神"
+            ],
+            [
+              "七杀"
+            ],
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "正财",
+              "偏财"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "杀印财共现不证明已带忌，须明确所走路线",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "食神帶煞印而又逢財",
+      "sha256": "7e99194deac3cab5021f4966e368ccb2be13a1e50b288adf53b88c0d6d765e66",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "food-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "food",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "食逢梟，而就煞以成格，或生財以護食",
+          "role_groups": [
+            [
+              "食神"
+            ],
+            [
+              "偏印"
+            ],
+            [
+              "七杀"
+            ],
+            [
+              "正财",
+              "偏财"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "就杀成格或财护食的转用作用、寒木向阳等专章例外",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "食逢梟，而就煞以成格，或生財以護食",
+      "sha256": "cacc4b150150efd7f748e81c040d2a4a7f73dae3dff15aa33811cc57b2b4714b",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "kill-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "kill",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "身强七煞逢制",
+          "role_groups": [
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "身强与制杀是否得力，不按分数或食神出现判断",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "身强七煞逢制",
+      "sha256": "8380e24f9ae64a24729ada9240390444a551398ae9268312be6e1adf76d07747",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "kill-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "kill",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "七煞逢財無制",
+          "role_groups": [
+            [
+              "七杀"
+            ],
+            [
+              "正财",
+              "偏财"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "无制需要确认所有有效制救，不能因未透食就判无制",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "七煞逢財無制",
+      "sha256": "f470d5e385550302f202ff66245a75d1bedfe7fb23fe97610af6d9cae13484f3",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "kill-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "kill",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "七煞逢食制，而又逢印",
+          "role_groups": [
+            [
+              "七杀"
+            ],
+            [
+              "食神"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "印是否实际去食护杀，必须对照原月令用途",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "七煞逢食制，而又逢印",
+      "sha256": "a5f257d7fe886288e4bdb8a5104c3d84237bd8b7c8f848c1139048c517884e70",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "kill-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "kill",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "煞逢食制，印來護煞，而逢財以去印存食",
+          "role_groups": [
+            [
+              "七杀"
+            ],
+            [
+              "食神"
+            ],
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "正财",
+              "偏财"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "财是否去印存食、杀食身平衡和位置是否成立",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "煞逢食制，印來護煞，而逢財以去印存食",
+      "sha256": "8e6bb796aff64ad97b0ff6f6554be952f3c5f2f175346eadb798d5918880bedc",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "hurt-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "hurt",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "傷官生財，或傷官佩印而傷官旺、印有根，或傷官旺、身主弱而透煞印，或傷官帶煞而無財",
+          "role_groups": [
+            [
+              "伤官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞印",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞印",
+          "roles": [
+            "正印",
+            "偏印"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "伤旺/身弱/有效印根/无财作用；生财佩印等是不同或分支",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "傷官生財，或傷官佩印而傷官旺、印有根，或傷官旺、身主弱而透煞印，或傷官帶煞而無財",
+      "sha256": "7b55c15557222d3848a5cc030c9e208667920a41f93a067fae7d674005d85047",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "hurt-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "hurt",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "傷官非金水而見官，或生財而帶煞身輕，或佩印而傷輕身旺",
+          "role_groups": [
+            [
+              "伤官"
+            ],
+            [
+              "正官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "非金水例外不能仅靠日主五行，另核寒暖身轻伤轻",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "傷官非金水而見官，或生財而帶煞身輕，或佩印而傷輕身旺",
+      "sha256": "dc49a9b63b510272ec0c6eaa3ef04e86b9b2950bc03799373d750fcfbff61187",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "hurt-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "hurt",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "傷官生財，而財又逢合；佩印而印又遭傷",
+          "role_groups": [
+            [
+              "伤官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "合财/伤印是否实际损用，不能任意干合就判去",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "傷官生財，而財又逢合；佩印而印又遭傷",
+      "sha256": "4314a6352fddeb6c1f5787e1135812d7dd19212369d29a9788fe0d926773fade",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "hurt-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "hurt",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "傷官生財，透煞而煞逢合",
+          "role_groups": [
+            [
+              "伤官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "合杀是否有效及是否自身合，生财路线是否成立",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "傷官生財，透煞而煞逢合",
+      "sha256": "c9fd426240cbf3a6bd2301bef319d5a90812f27329fe9a0d97753553b9de700a",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "blade-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "blade",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "陽刃透官煞而露財印，不見傷官",
+          "role_groups": [
+            [
+              "正官",
+              "七杀"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "伤官"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透官煞",
+          "roles": [
+            "正官",
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "露財印",
+          "roles": [
+            "正财",
+            "偏财"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_3",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "露財印",
+          "roles": [
+            "正印",
+            "偏印"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "阳刃家族资格与财印官杀实际制护、见伤官的全局作用口径",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "陽刃透官煞而露財印，不見傷官",
+      "sha256": "84c831c50eeaf939de0e208222c0ca6d875b952c6f59d4381c13de983ab1f7c1",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "blade-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "blade",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "陽刃無官煞",
+          "role_groups": [
+            [
+              "正官",
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "无官杀指何层，未知时辰不能证明缺失；专章转用例外",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "陽刃無官煞",
+      "sha256": "2ac816400467b98ac1fae2a21cbdf049acd3209c603454d8d5710d492eee6727",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "blade-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "blade",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "陽刃透官而又被傷，透煞而又被合",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "伤官"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透官",
+          "roles": [
+            "正官"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "官伤/杀合是否损其控制且有无救",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "陽刃透官而又被傷，透煞而又被合",
+      "sha256": "0dc53f4a29477d9e37521ec397af322ce8594d36232352a8ecd407bab1d8637e",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "blade-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "blade",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "陽刃用官煞，帶傷食而重印以護之",
+          "role_groups": [
+            [
+              "正官",
+              "七杀"
+            ],
+            [
+              "食神",
+              "伤官"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "重印不是印个数，护刃/护官杀是否有效",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "陽刃用官煞，帶傷食而重印以護之",
+      "sha256": "2b49bbff7ad167efdadabeac4a1d21604ce2fa06fccb6cf464b7e77632be8d28",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    },
+    {
+      "id": "salary-formation_structure",
+      "kind": "formation_structure",
+      "family_id": "salary",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "建祿月劫，透官而逢財印，透財而逢食傷，透煞而遇制伏",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正印",
+              "偏印"
+            ],
+            [
+              "食神",
+              "伤官"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透官",
+          "roles": [
+            "正官"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透財",
+          "roles": [
+            "正财",
+            "偏财"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_3",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "三个取用分支分别核财印食伤和制伏作用，不是同时必需",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0002",
+      "quote": "建祿月劫，透官而逢財印，透財而逢食傷，透煞而遇制伏",
+      "sha256": "95f20ab42f1520e76fbf6ae9f6c0f3db50d00f3c92131cc34f04cfbcad9bfd89",
+      "passage_sha256": "f90e01e9f4abd8794a0e97f00d92e0241b14998d6b27046613e6428150c9f59f"
+    },
+    {
+      "id": "salary-failure_structure",
+      "kind": "failure_structure",
+      "family_id": "salary",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "建祿月劫，無財官，透煞印",
+          "role_groups": [
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "正官"
+            ],
+            [
+              "七杀"
+            ],
+            [
+              "正印",
+              "偏印"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞印",
+          "roles": [
+            "七杀"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透煞印",
+          "roles": [
+            "正印",
+            "偏印"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "无财官不能只指未透；杀印并见及月令变化须复核",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0003",
+      "quote": "建祿月劫，無財官，透煞印",
+      "sha256": "2cc0ae46d0c9aa810aac9084b1be031c3d992b192a27da3bf1f8843c664acb8a",
+      "passage_sha256": "89b0022ed2af607617193a4ae10ceb1780456c2cc2918d6197df36894416dbd3"
+    },
+    {
+      "id": "salary-taboo_structure",
+      "kind": "taboo_structure",
+      "family_id": "salary",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "建祿月劫，透官而逢傷，透財而逢煞",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "伤官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        },
+        {
+          "id": "explicit_exposure_1",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透官",
+          "roles": [
+            "正官"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        },
+        {
+          "id": "explicit_exposure_2",
+          "predicate": "observe_exposed_role_group",
+          "source_fragment": "透財",
+          "roles": [
+            "正财",
+            "偏财"
+          ],
+          "semantic_limit": "仅记录该透/露字面条件，不据此满足整句作用"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "取官遇伤、取财遇杀是否有实际破坏",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0005",
+      "quote": "建祿月劫，透官而逢傷，透財而逢煞",
+      "sha256": "0c23420a9fa2b243b175f9fd87b7b0c0af4de89c748980338ba7daab2cf49337",
+      "passage_sha256": "f311403f65d19d4e176a47d8b113260dabe08002d3745fa98e0173428c8bc0e9"
+    },
+    {
+      "id": "salary-rescue_structure",
+      "kind": "rescue_structure",
+      "family_id": "salary",
+      "conditions": [
+        {
+          "id": "role_inventory",
+          "predicate": "observe_role_locations",
+          "source_fragment": "建祿月劫，用官遇傷而傷被合，用財帶煞而煞被合",
+          "role_groups": [
+            [
+              "正官"
+            ],
+            [
+              "伤官"
+            ],
+            [
+              "正财",
+              "偏财"
+            ],
+            [
+              "七杀"
+            ]
+          ],
+          "semantic_limit": "逐组记录已见位置；不要求所有组同时存在，不以共现证明成败/制化"
+        }
+      ],
+      "unresolved_conditions": [
+        {
+          "id": "month_resolution",
+          "label": "月令本格、变格与兼格的主次",
+          "state": "unknown",
+          "reason": "候选召回或文字形态匹配不等于该格已成立"
+        },
+        {
+          "id": "effective_interaction",
+          "label": "轻重、位置、有效制化和救应",
+          "state": "unknown",
+          "reason": "本提案只收明示观察，不用五行分数或出现个数替代传统作用判断"
+        },
+        {
+          "id": "whole_chart_exceptions",
+          "label": "全局及同段/专章反例已核",
+          "state": "unknown",
+          "reason": "必须同时核成、败、带忌、救应；一个路线失败不代表全部格局失败"
+        },
+        {
+          "id": "source_clause_semantics",
+          "label": "伤被合/杀被合的实际去留，日主自身合与位置例外",
+          "state": "unknown",
+          "reason": "原句的轻重、作用、否定范围和分支关系需逐条审核；此条只是结构提案"
+        }
+      ],
+      "passage_id": "ziping:c009:p0006",
+      "quote": "建祿月劫，用官遇傷而傷被合，用財帶煞而煞被合",
+      "sha256": "c91d783151107be64f4b418dbed9682137e8cbff64dccdfb84dca5df6a03b186",
+      "passage_sha256": "76fa5d1317839a724959942743000259335843034320d6c924e6658a25db4543"
+    }
+  ]
+}

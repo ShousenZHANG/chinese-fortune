@@ -70,6 +70,8 @@ Text lookup needs no birth data. Unknown birth time remains unknown; near day or
 
 Calculate a chart, check classical conditions, and answer in plain language first. Each short classical quotation must be followed immediately by its plain meaning and its relevance to the person's actual conditions.
 
+The 5.10 development version adds 46 source-backed formation, failure, rescue and transformation checks, including cases that preserve the original structure. A matched literal condition does not establish a pattern. `--view compact` deduplicates conditions and indexes source passages; retrieve their complete text before interpreting. An explicit `--report new-file.md` or `.html` saves an offline verification report without overwriting files. Named methods route to their own scripts; terminology questions require no birth data. See the [output migration notes](docs/MIGRATION-5.10.md).
+
 BaZi follows the month-structure approach in Zi Ping Zhen Quan. Four other classical works provide separately attributed comparisons; differences remain visible.
 
 Answers are written in Chinese; see the [plain-language output example](docs/OUTPUT-EXAMPLE.md), written from a fixed test chart rather than a real person's forecast.
@@ -79,7 +81,7 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 | Method | Answers | Basis |
 |---|---|---|
 | BaZi natal chart | structure, 用神, conditions for success or failure | 《子平真诠》 month structure first; 《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》 compared; 8 families, 25 review paths |
-| Ten-year luck cycle | favourable or not | 《子平真诠》 luck chapters: 正官, 财, 伤官 wired; the other five families not yet |
+| Ten-year luck cycle | conditional readings for each candidate configuration | All eight 《子平真诠》 luck families, 49 scenarios; unresolved conditions and contrary exceptions stay visible |
 | A year (流年) | a named year, this year, next year | 《渊海子平》《三命通会》《滴天髓》 on the year star, listed relation by relation, no total score |
 | Personal good days, periods | which days are good or to avoid | 《协纪辨方书》 vol. 33 相主, graded 大吉 to 大凶 by birth year |
 | Appointment times | interview, exam, travel, moving | 相主 plus event day rules; interviews and exams also 《奇门遁甲元灵经》 |

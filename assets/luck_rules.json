@@ -1,1345 +1,4504 @@
 {
- "schema_version": "1.0",
- "book": "ziping",
- "verification": "transcription_checked_mapping_reviewed_2026-10-06",
- "families": [
-  {
-   "family_id": "officer",
-   "title": "正官",
-   "chapter": "ziping:c032",
-   "scenarios": [
+  "schema_version": "2.0",
+  "book": "ziping",
+  "verification": "frozen_sources_checked_conditional_mapping_2026-10-26",
+  "families": [
     {
-     "id": "officer-exposed",
-     "title": "官露通忌",
-     "passage_id": "ziping:c032:p0002",
-     "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
-     "quote": "若官露而不可逢合、不可雜煞、不可重官與地支刑沖，不問所就何局，皆不利也。",
-     "premises": [
-      {
-       "label": "正官透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正官"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "combines_natal": [
-        "正官"
-       ],
-       "verdict": "avoided",
-       "words": "不可逢合"
-      },
-      {
-       "roles": [
-        "七杀"
-       ],
-       "verdict": "avoided",
-       "words": "不可雜煞"
-      },
-      {
-       "roles": [
-        "正官"
-       ],
-       "verdict": "avoided",
-       "words": "不可重官"
-      }
-     ]
-    },
-    {
-     "id": "officer-wealth-seal",
-     "title": "正官而用财印",
-     "passage_id": "ziping:c032:p0002",
-     "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
-     "quote": "正官而用財印，身稍輕則取助身，官稍輕則助官。",
-     "premises": [
-      {
-       "label": "正官可见",
-       "predicate": "present_any",
-       "roles": [
-        "正官"
-       ]
-      },
-      {
-       "label": "财透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "印透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "身稍輕",
-       "effects": [
+      "family_id": "officer",
+      "title": "正官",
+      "chapter": "ziping:c032",
+      "scenarios": [
         {
-         "roles": [
-          "正印",
-          "偏印",
-          "比肩",
-          "劫财"
-         ],
-         "verdict": "favoured",
-         "words": "取助身"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "官稍輕",
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财",
-          "正官"
-         ],
-         "verdict": "favoured",
-         "words": "助官"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "officer-wealth",
-     "title": "正官用财",
-     "passage_id": "ziping:c032:p0003",
-     "sha256": "3641b09d75fbfe429ae32007dd9aa98fd5e3209b099b95e11792175c0883eb40",
-     "quote": "正官用財，運喜印綬身旺之地，切忌食傷。若身旺而財輕官弱，即仍取財官運可也。",
-     "premises": [
-      {
-       "label": "正官可见",
-       "predicate": "present_any",
-       "roles": [
-        "正官"
-       ]
-      },
-      {
-       "label": "财透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "印不透",
-       "predicate": "exposed_none",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正印",
-        "偏印",
-        "比肩",
-        "劫财"
-       ],
-       "verdict": "favoured",
-       "words": "運喜印綬身旺之地"
-      },
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "avoided",
-       "words": "切忌食傷"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "身旺而財輕官弱",
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财",
-          "正官"
-         ],
-         "verdict": "favoured",
-         "words": "仍取財官運可也"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "officer-seal",
-     "title": "正官佩印",
-     "passage_id": "ziping:c032:p0004",
-     "sha256": "866e02bd3da73b43f80328352d84a7999d1d127f415ff701e25364f1fe68fa4a",
-     "quote": "正官佩印，運喜財鄉，傷食反吉。若官重身輕而佩印，則身旺爲宜，不必財運也。",
-     "premises": [
-      {
-       "label": "正官可见",
-       "predicate": "present_any",
-       "roles": [
-        "正官"
-       ]
-      },
-      {
-       "label": "印透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      },
-      {
-       "label": "财不透",
-       "predicate": "exposed_none",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "favoured",
-       "words": "運喜財鄉"
-      },
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "favoured",
-       "words": "傷食反吉"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "官重身輕而佩印",
-       "effects": [
-        {
-         "roles": [
-          "比肩",
-          "劫财"
-         ],
-         "verdict": "favoured",
-         "words": "身旺爲宜"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "officer-hurt-seal",
-     "title": "正官带伤食而用印制",
-     "passage_id": "ziping:c032:p0005",
-     "sha256": "eef97b8568e8013b5be0d5733d140d50877005f15e7759575b5ad048d9cb0d36",
-     "quote": "正官帶傷食而用印製，運喜官旺印旺之鄉，財運切忌。若印綬疊出，財運亦無害矣。",
-     "premises": [
-      {
-       "label": "正官可见",
-       "predicate": "present_any",
-       "roles": [
-        "正官"
-       ]
-      },
-      {
-       "label": "食伤可见",
-       "predicate": "present_any",
-       "roles": [
-        "食神",
-        "伤官"
-       ]
-      },
-      {
-       "label": "印透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正官",
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "運喜官旺印旺之鄉"
-      },
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "avoided",
-       "words": "財運切忌"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "computed",
-       "condition": "印綬疊出",
-       "predicate": "exposed_count_at_least",
-       "roles": [
-        "正印",
-        "偏印"
-       ],
-       "count": 2,
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财"
-         ],
-         "verdict": "harmless",
-         "words": "財運亦無害"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "officer-kill",
-     "title": "正官带煞",
-     "passage_id": "ziping:c032:p0006",
-     "sha256": "95525be664592a71fa4925037263b4af6fde653dfe82ca0493251f78b62498e1",
-     "quote": "正官而帶煞，傷食反爲不礙。其命中用劫合煞，則財運可行，傷食可行；身旺，印綬亦可行，只不可復露七煞；若命用傷官合煞，則傷食與財俱可行，而不宜逢印矣。",
-     "premises": [
-      {
-       "label": "正官可见",
-       "predicate": "present_any",
-       "roles": [
-        "正官"
-       ]
-      },
-      {
-       "label": "七杀透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "七杀"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "harmless",
-       "words": "傷食反爲不礙"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "computed",
-       "condition": "用劫合煞",
-       "predicate": "combines",
-       "roles": [
-        "劫财"
-       ],
-       "with": [
-        "七杀"
-       ],
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财"
-         ],
-         "verdict": "favoured",
-         "words": "財運可行"
+          "id": "officer-exposed",
+          "title": "官露通忌",
+          "passage_id": "ziping:c032:p0002",
+          "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
+          "quote": "若官露而不可逢合、不可雜煞、不可重官與地支刑沖，不問所就何局，皆不利也。",
+          "premises": [
+            {
+              "label": "正官透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "combines_natal": [
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "不可逢合"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "avoided",
+              "words": "不可雜煞"
+            },
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "不可重官"
+            }
+          ]
         },
         {
-         "roles": [
-          "食神",
-          "伤官"
-         ],
-         "verdict": "favoured",
-         "words": "傷食可行"
+          "id": "officer-wealth-seal",
+          "title": "正官而用财印",
+          "passage_id": "ziping:c032:p0002",
+          "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
+          "quote": "正官而用財印，身稍輕則取助身，官稍輕則助官。",
+          "premises": [
+            {
+              "label": "正官可见",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "财透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "印透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "身稍輕",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印",
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "取助身"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "官稍輕",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财",
+                    "正官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "助官"
+                }
+              ]
+            }
+          ]
         },
         {
-         "roles": [
-          "七杀"
-         ],
-         "verdict": "avoided",
-         "words": "不可復露七煞"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "用劫合煞而身旺",
-       "predicate": "combines",
-       "roles": [
-        "劫财"
-       ],
-       "with": [
-        "七杀"
-       ],
-       "effects": [
-        {
-         "roles": [
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "印綬亦可行"
-        }
-       ]
-      },
-      {
-       "kind": "computed",
-       "condition": "用傷官合煞",
-       "predicate": "combines",
-       "roles": [
-        "伤官"
-       ],
-       "with": [
-        "七杀"
-       ],
-       "effects": [
-        {
-         "roles": [
-          "食神",
-          "伤官",
-          "正财",
-          "偏财"
-         ],
-         "verdict": "favoured",
-         "words": "傷食與財俱可行"
+          "id": "officer-wealth",
+          "title": "正官用财",
+          "passage_id": "ziping:c032:p0003",
+          "sha256": "3641b09d75fbfe429ae32007dd9aa98fd5e3209b099b95e11792175c0883eb40",
+          "quote": "正官用財，運喜印綬身旺之地，切忌食傷。若身旺而財輕官弱，即仍取財官運可也。",
+          "premises": [
+            {
+              "label": "正官可见",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "财透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "印不透",
+              "predicate": "exposed_none",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印",
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "運喜印綬身旺之地"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "avoided",
+              "words": "切忌食傷"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "身旺而財輕官弱",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财",
+                    "正官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "仍取財官運可也"
+                }
+              ]
+            }
+          ]
         },
         {
-         "roles": [
-          "正印",
-          "偏印"
-         ],
-         "verdict": "avoided",
-         "words": "不宜逢印"
+          "id": "officer-seal",
+          "title": "正官佩印",
+          "passage_id": "ziping:c032:p0004",
+          "sha256": "866e02bd3da73b43f80328352d84a7999d1d127f415ff701e25364f1fe68fa4a",
+          "quote": "正官佩印，運喜財鄉，傷食反吉。若官重身輕而佩印，則身旺爲宜，不必財運也。",
+          "premises": [
+            {
+              "label": "正官可见",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "印透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "财不透",
+              "predicate": "exposed_none",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "運喜財鄉"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷食反吉"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "官重身輕而佩印",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "身旺爲宜"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "officer-hurt-seal",
+          "title": "正官带伤食而用印制",
+          "passage_id": "ziping:c032:p0005",
+          "sha256": "eef97b8568e8013b5be0d5733d140d50877005f15e7759575b5ad048d9cb0d36",
+          "quote": "正官帶傷食而用印製，運喜官旺印旺之鄉，財運切忌。若印綬疊出，財運亦無害矣。",
+          "premises": [
+            {
+              "label": "正官可见",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "食伤可见",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            },
+            {
+              "label": "印透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官",
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "運喜官旺印旺之鄉"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "財運切忌"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "computed",
+              "condition": "印綬疊出",
+              "predicate": "exposed_count_at_least",
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "count": 2,
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "harmless",
+                  "words": "財運亦無害"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "officer-kill",
+          "title": "正官带煞",
+          "passage_id": "ziping:c032:p0006",
+          "sha256": "95525be664592a71fa4925037263b4af6fde653dfe82ca0493251f78b62498e1",
+          "quote": "正官而帶煞，傷食反爲不礙。其命中用劫合煞，則財運可行，傷食可行；身旺，印綬亦可行，只不可復露七煞；若命用傷官合煞，則傷食與財俱可行，而不宜逢印矣。",
+          "premises": [
+            {
+              "label": "正官可见",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "七杀透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "harmless",
+              "words": "傷食反爲不礙"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "computed",
+              "condition": "用劫合煞",
+              "predicate": "combines",
+              "roles": [
+                "劫财"
+              ],
+              "with": [
+                "七杀"
+              ],
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "財運可行"
+                },
+                {
+                  "roles": [
+                    "食神",
+                    "伤官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "傷食可行"
+                },
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "avoided",
+                  "words": "不可復露七煞"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "用劫合煞而身旺",
+              "predicate": "combines",
+              "roles": [
+                "劫财"
+              ],
+              "with": [
+                "七杀"
+              ],
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "印綬亦可行"
+                }
+              ]
+            },
+            {
+              "kind": "computed",
+              "condition": "用傷官合煞",
+              "predicate": "combines",
+              "roles": [
+                "伤官"
+              ],
+              "with": [
+                "七杀"
+              ],
+              "effects": [
+                {
+                  "roles": [
+                    "食神",
+                    "伤官",
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "傷食與財俱可行"
+                },
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "avoided",
+                  "words": "不宜逢印"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      }
-     ]
+      ]
+    },
+    {
+      "family_id": "wealth",
+      "title": "财",
+      "chapter": "ziping:c034",
+      "scenarios": [
+        {
+          "id": "wealth-officer",
+          "title": "财旺生官",
+          "passage_id": "ziping:c034:p0002",
+          "sha256": "b769ad6fd1d9f75d913e4457172bc497b09ef1dfa5bb2a9840138ba0d924290c",
+          "quote": "其財旺生官者，運喜身旺印緩，不利七煞傷官；若生官而復透印，傷官之地，不甚有害。至於生官而帶食破局，則運喜印綬，而逢煞反吉矣。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "正官透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "比肩",
+                "劫财",
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "運喜身旺印緩"
+            },
+            {
+              "roles": [
+                "七杀",
+                "伤官"
+              ],
+              "verdict": "avoided",
+              "words": "不利七煞傷官"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "computed",
+              "condition": "生官而復透印",
+              "predicate": "exposed_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "effects": [
+                {
+                  "roles": [
+                    "伤官"
+                  ],
+                  "verdict": "harmless",
+                  "words": "傷官之地，不甚有害"
+                }
+              ]
+            },
+            {
+              "kind": "computed",
+              "condition": "生官而帶食破局",
+              "predicate": "exposed_any",
+              "roles": [
+                "食神"
+              ],
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "運喜印綬"
+                },
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "逢煞反吉"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wealth-food",
+          "title": "财用食生",
+          "passage_id": "ziping:c034:p0003",
+          "sha256": "c1a384aef29c12376b4bebeb1299eb809705833652a640d91b19ad6492e4b61d",
+          "quote": "財用食生，財食重而身輕，則喜助身；財食輕而身重，則仍行財食，煞運不忌，官運反晦矣。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "食神可见",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "正官不透",
+              "predicate": "exposed_none",
+              "roles": [
+                "正官"
+              ]
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財食重而身輕",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财",
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "喜助身"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "財食輕而身重",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财",
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "仍行財食"
+                },
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "harmless",
+                  "words": "煞運不忌"
+                },
+                {
+                  "roles": [
+                    "正官"
+                  ],
+                  "verdict": "avoided",
+                  "words": "官運反晦"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wealth-seal",
+          "title": "财格佩印",
+          "passage_id": "ziping:c034:p0004",
+          "sha256": "2b2a268cbf66bdb1e72c129f276ca8a8ace00c2fa2b38ead9132dd641ec38fa4",
+          "quote": "財格佩印，運喜官鄉；身弱逢之，最喜印旺。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "印可见",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "favoured",
+              "words": "運喜官鄉"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "身弱",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "最喜印旺"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wealth-food-seal",
+          "title": "财用食印",
+          "passage_id": "ziping:c034:p0005",
+          "sha256": "655795ed5ea0854bd80a8738edcb095a3e0bbad40940fb3f953b7a5cf87a6c9f",
+          "quote": "財用食印，財輕則喜財食，身輕則喜比印，官運亦礙，煞反不忌也。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "食神可见",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "印可见",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "官運亦礙"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "harmless",
+              "words": "煞反不忌"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財輕",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财",
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "喜財食"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "身輕",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财",
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "喜比印"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wealth-hurt",
+          "title": "财带伤官",
+          "passage_id": "ziping:c034:p0006",
+          "sha256": "3ba319c8e5096ae7055d499401f43de85fcc136fa159280009c540032e8b8552",
+          "quote": "財帶傷官，財運則亨，煞運不利，運行官印，未見其美矣。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "伤官可见",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "財運則亨"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "avoided",
+              "words": "煞運不利"
+            },
+            {
+              "roles": [
+                "正官",
+                "正印",
+                "偏印"
+              ],
+              "verdict": "unpromising",
+              "words": "未見其美"
+            }
+          ]
+        },
+        {
+          "id": "wealth-kill",
+          "title": "财带七煞",
+          "passage_id": "ziping:c034:p0007",
+          "sha256": "781f3318f98a0decc353d11d51caea2769b110e0f6812b5e5f6beebc07eb23ce",
+          "quote": "財帶七煞，不論合煞制煞，運喜食傷身旺之方。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "七杀可见",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "食神",
+                "伤官",
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "運喜食傷身旺之方"
+            }
+          ]
+        },
+        {
+          "id": "wealth-kill-seal",
+          "title": "财用煞印",
+          "passage_id": "ziping:c034:p0008",
+          "sha256": "5aacc4f01b39a24b75c44b6b9f2124bec3f148f6c22ec740d2cb25c4e3069d25",
+          "quote": "財用煞印，印旺最宜，逢財必忌。傷食之方，亦順意矣。",
+          "premises": [
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "七杀可见",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "印可见",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "印旺最宜"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "逢財必忌"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "亦順意"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family_id": "hurt",
+      "title": "伤官",
+      "chapter": "ziping:c042",
+      "scenarios": [
+        {
+          "id": "hurt-wealth",
+          "title": "伤官用财",
+          "passage_id": "ziping:c042:p0002",
+          "sha256": "cc5619ac438cc0c994f1e20ee70d24909f54c3cd801e44ebfa3ce7800ad51f5b",
+          "quote": "傷官用財，財旺身輕，則利印比；身强財淺，則喜財運，傷官亦宜。",
+          "premises": [
+            {
+              "label": "伤官可见",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財旺身輕",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印",
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "利印比"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "身强財淺",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "喜財運"
+                },
+                {
+                  "roles": [
+                    "伤官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "傷官亦宜"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hurt-seal",
+          "title": "伤官佩印",
+          "passage_id": "ziping:c042:p0003",
+          "sha256": "597bf7271bcb9d941efc7bb147dbeeae61a93fad42ff8467061697d14db74dbe",
+          "quote": "傷官佩印，運行官煞爲宜，印運亦吉，傷食不礙，財地則凶。",
+          "premises": [
+            {
+              "label": "伤官可见",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "label": "印可见",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官",
+                "七杀"
+              ],
+              "verdict": "favoured",
+              "words": "運行官煞爲宜"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "印運亦吉"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "harmless",
+              "words": "傷食不礙"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "財地則凶"
+            }
+          ]
+        },
+        {
+          "id": "hurt-wealth-seal",
+          "title": "伤官兼用财印",
+          "passage_id": "ziping:c042:p0004",
+          "sha256": "5fe3c9964a0c57a6d25213f651e244d1aae668d9630babb0ff9224704934887f",
+          "quote": "傷官兼用財印，其財多而帶印者，運喜助印；印多而帶財者，運喜助財。",
+          "premises": [
+            {
+              "label": "伤官可见",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "label": "财可见",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "印可见",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財多而帶印",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "運喜助印"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "印多而帶財",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "運喜助財"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hurt-kill-seal",
+          "title": "伤官用煞印",
+          "passage_id": "ziping:c042:p0005",
+          "sha256": "eb7f84368aa07c156e9713904eedc10b698c76c2500e3a414101db61eb145b8c",
+          "quote": "傷官而用煞印，印運最利，傷食亦亨，雜官非吉，逢財即危。",
+          "premises": [
+            {
+              "label": "伤官可见",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "label": "七杀可见",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "印可见",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "印運最利"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷食亦亨"
+            },
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "雜官非吉"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "逢財即危"
+            }
+          ]
+        },
+        {
+          "id": "hurt-kill",
+          "title": "伤官带煞",
+          "passage_id": "ziping:c042:p0006",
+          "sha256": "9b85865e31e665b063994dae25645be9dd317aa3bccdc01dd1fbda909e3a7569",
+          "quote": "傷官帶煞，喜印忌財。然傷重煞輕，運喜印而財亦吉。惟七殺根重，則運喜傷食印綬，身旺亦吉，而逢財爲凶矣。",
+          "premises": [
+            {
+              "label": "伤官可见",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            },
+            {
+              "label": "七杀可见",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "喜印"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "忌財"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "傷重煞輕",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "運喜印"
+                },
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "財亦吉"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "七殺根重",
+              "effects": [
+                {
+                  "roles": [
+                    "食神",
+                    "伤官",
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "運喜傷食印綬"
+                },
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "身旺亦吉"
+                },
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "avoided",
+                  "words": "逢財爲凶"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hurt-officer",
+          "title": "伤官用官",
+          "passage_id": "ziping:c042:p0007",
+          "sha256": "9d518c6be13ef470cb72632f336be550f84533165e9a364ef41e883c1da43050",
+          "quote": "傷官用官，運喜財印，不利傷食。若局中官露而財印兩旺，則比劫傷官，未始非吉矣。",
+          "premises": [
+            {
+              "label": "正官透出",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "伤官不透",
+              "predicate": "exposed_none",
+              "roles": [
+                "伤官"
+              ]
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财",
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "運喜財印"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "avoided",
+              "words": "不利傷食"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "局中官露而財印兩旺",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财",
+                    "伤官"
+                  ],
+                  "verdict": "harmless",
+                  "words": "未始非吉"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family_id": "seal",
+      "title": "印",
+      "chapter": "ziping:c036",
+      "scenarios": [
+        {
+          "id": "seal-officer-heavy",
+          "title": "印用官且官露印重",
+          "passage_id": "ziping:c036:p0002",
+          "sha256": "2418903d0e303e2d1d8c7aa99d31efa5f4a5b924d6241eab32e3bc77ac2a9dc8",
+          "quote": "其印綬用官者，官露印重，財運反吉，傷食之方，亦爲最利。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "其印綬用官者",
+            "官露印重",
+            "只要官星清純"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "其印綬用官者",
+              "passage_id": "ziping:c036:p0002",
+              "sha256": "2418903d0e303e2d1d8c7aa99d31efa5f4a5b924d6241eab32e3bc77ac2a9dc8",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "官露印重",
+              "passage_id": "ziping:c036:p0002",
+              "sha256": "2418903d0e303e2d1d8c7aa99d31efa5f4a5b924d6241eab32e3bc77ac2a9dc8",
+              "needed_evidence": "官露可算；印重与官清须另核。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "只要官星清純",
+              "passage_id": "ziping:c035:p0002",
+              "sha256": "787c009b2ea9aee87b05dd7ade554be8ee5435b76ffa57cfe16650b35e4b4197",
+              "needed_evidence": "核官混杂、受制及位置。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "財運反吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0002"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷食之方，亦爲最利",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0002"
+            }
+          ],
+          "branches": []
+        },
+        {
+          "id": "seal-officer-output",
+          "title": "印用官兼带食伤",
+          "passage_id": "ziping:c036:p0003",
+          "sha256": "b3f7e7e0e12a840bfa21c78192f96e1e98258757e6dbf3a722f1519a9f95ab5d",
+          "quote": "若用官而兼帶傷食，運喜官旺印綬之方，傷食爲害，逢煞不忌矣。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神或伤官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "若用官而兼帶傷食"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "若用官而兼帶傷食",
+              "passage_id": "ziping:c036:p0003",
+              "sha256": "b3f7e7e0e12a840bfa21c78192f96e1e98258757e6dbf3a722f1519a9f95ab5d",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官",
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "運喜官旺印綬之方",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0003"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "avoided",
+              "words": "傷食爲害",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0003"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "harmless",
+              "words": "逢煞不忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0003"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c035:p0002"
+          ]
+        },
+        {
+          "id": "seal-output",
+          "title": "印用食伤及印轻见财例外",
+          "passage_id": "ziping:c036:p0004",
+          "sha256": "ae950fd6b163edb52ed007edb4b9a166cabf0457e2f36f1300397559bf05da9b",
+          "quote": "印綬而用傷食，財運反吉，傷食亦利，若行官運，反見其災，煞運則反能爲福矣。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神或伤官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "印綬而用傷食",
+            "身强印旺"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "印綬而用傷食",
+              "passage_id": "ziping:c036:p0004",
+              "sha256": "ae950fd6b163edb52ed007edb4b9a166cabf0457e2f36f1300397559bf05da9b",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "身强印旺",
+              "passage_id": "ziping:c035:p0003",
+              "sha256": "4810a75ad6d7e07149b32891df387ec248cc8affca7def7f75194297088e0de5",
+              "needed_evidence": "本命用食伤泄气成立；不采用数值强弱阈值。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "財運反吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0004"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷食亦利",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0004"
+            },
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "若行官運，反見其災",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0004"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "favoured",
+              "words": "煞運則反能爲福",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0004"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "印輕者",
+              "passage_id": "ziping:c036:p0009",
+              "sha256": "1b5ab11c6b109f183c91a9357cbc2cf7609da38f9c5b900edc1456d21e1c48e6",
+              "quote": "印用食傷，印輕者，亦不利見財也。",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "avoided",
+                  "words": "亦不利見財",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c036:p0009"
+                }
+              ],
+              "id": "seal-output-seal-light",
+              "exception_of": "seal-output",
+              "overrides_roles": [
+                "正财",
+                "偏财"
+              ],
+              "replaces_conditions": [
+                "身强印旺"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "passage_id": "ziping:c036:p0004",
+              "sha256": "ae950fd6b163edb52ed007edb4b9a166cabf0457e2f36f1300397559bf05da9b",
+              "quote": "印綬而用傷食，財運反吉，傷食亦利，若行官運，反見其災，煞運則反能爲福矣。",
+              "purpose": "main"
+            },
+            {
+              "passage_id": "ziping:c036:p0009",
+              "sha256": "1b5ab11c6b109f183c91a9357cbc2cf7609da38f9c5b900edc1456d21e1c48e6",
+              "quote": "印用食傷，印輕者，亦不利見財也。",
+              "purpose": "exception"
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c035:p0003",
+            "ziping:c035:p0007"
+          ]
+        },
+        {
+          "id": "seal-kill",
+          "title": "印用七杀",
+          "passage_id": "ziping:c036:p0005",
+          "sha256": "783dac376774012565ca29a707b79a4e4c362e242eb907979b2a8c06c6c6e0bd",
+          "quote": "印用七煞，運喜傷食，身旺之方，亦爲美地，一見財鄉，其凶立至。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "印用七煞",
+            "故必身重印輕，或身輕印重，有所不足，始爲有情"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "印用七煞",
+              "passage_id": "ziping:c036:p0005",
+              "sha256": "783dac376774012565ca29a707b79a4e4c362e242eb907979b2a8c06c6c6e0bd",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "故必身重印輕，或身輕印重，有所不足，始爲有情",
+              "passage_id": "ziping:c035:p0004",
+              "sha256": "bb004152a6da8fdf99fbb7f08b8321ef9a5d35267bf94ad2c7b3028253d9fe60",
+              "needed_evidence": "核此用杀是否成立，不能只见杀印。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "運喜傷食",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0005"
+            },
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "身旺之方，亦爲美地",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0005",
+              "action_target": "support_self",
+              "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "一見財鄉，其凶立至",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0005"
+            }
+          ],
+          "branches": []
+        },
+        {
+          "id": "seal-kill-output",
+          "title": "印用杀兼带食伤",
+          "passage_id": "ziping:c036:p0006",
+          "sha256": "c4cd4c7a13c1226b0ea3fc66c9ac81560b6e32295f8220efcad89be1f684913c",
+          "quote": "若用煞而兼帶傷食，運喜身旺印綬之方，傷食亦美，逢官遇財，皆不吉也。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神或伤官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "若用煞而兼帶傷食",
+            "則用煞而有制，生身而有洩"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "若用煞而兼帶傷食",
+              "passage_id": "ziping:c036:p0006",
+              "sha256": "c4cd4c7a13c1226b0ea3fc66c9ac81560b6e32295f8220efcad89be1f684913c",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "則用煞而有制，生身而有洩",
+              "passage_id": "ziping:c035:p0005",
+              "sha256": "c8a614f87582316c43fef8d8ec457e1688afc88a2c4dfa386f1729896a3cbd61",
+              "needed_evidence": "核制杀与泄身作用。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "運喜身旺印綬之方",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0006",
+              "action_target": "support_self",
+              "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "運喜身旺印綬之方",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0006"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷食亦美",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0006"
+            },
+            {
+              "roles": [
+                "正官",
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "逢官遇財，皆不吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0006"
+            }
+          ],
+          "branches": []
+        },
+        {
+          "id": "seal-wealth",
+          "title": "印绶遇财",
+          "passage_id": "ziping:c036:p0007",
+          "sha256": "6cd05035b7918411af03c7c79f40c42797915b190d4ada77ee10dd5c606922f3",
+          "quote": "印綬遇財，運喜劫地，官印亦亨，財鄉則忌。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "印綬遇財"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "印綬遇財",
+              "passage_id": "ziping:c036:p0007",
+              "sha256": "6cd05035b7918411af03c7c79f40c42797915b190d4ada77ee10dd5c606922f3",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "運喜劫地",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0007"
+            },
+            {
+              "roles": [
+                "正官",
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "官印亦亨",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0007"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "財鄉則忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0007"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c035:p0006",
+            "ziping:c035:p0007"
+          ],
+          "mapping_notes": [
+            "劫地按劫财保守召回，不默认扩展比肩。"
+          ]
+        },
+        {
+          "id": "seal-mixed",
+          "title": "印格官杀竞透",
+          "passage_id": "ziping:c036:p0008",
+          "sha256": "af8ca450dc51ec0a69c108f8a04d937c2a61fed27834d8588df7f9412f2b8b8f",
+          "quote": "印格而官煞競透，運喜食神傷官，印旺身旺，行之亦利。若再透官煞，行財運，立見其災矣。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "本命明干见七杀（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "印格而官煞競透",
+            "或合煞，或有制"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "印格而官煞競透",
+              "passage_id": "ziping:c036:p0008",
+              "sha256": "af8ca450dc51ec0a69c108f8a04d937c2a61fed27834d8588df7f9412f2b8b8f",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "或合煞，或有制",
+              "passage_id": "ziping:c035:p0008",
+              "sha256": "383a936ebb5173aa9ef303a5cb50ce789ec6b25e243cc1a0fde7f4e25f336c6e",
+              "needed_evidence": "核官杀取清、合或制的实际效果。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "運喜食神傷官",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0008"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "印旺身旺，行之亦利",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0008"
+            },
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "印旺身旺，行之亦利",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c036:p0008",
+              "action_target": "support_self",
+              "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "若再透官煞，行財運",
+              "passage_id": "ziping:c036:p0008",
+              "sha256": "af8ca450dc51ec0a69c108f8a04d937c2a61fed27834d8588df7f9412f2b8b8f",
+              "quote": "印格而官煞競透，運喜食神傷官，印旺身旺，行之亦利。若再透官煞，行財運，立見其災矣。",
+              "effects": [
+                {
+                  "roles": [
+                    "正官",
+                    "七杀"
+                  ],
+                  "verdict": "avoided",
+                  "words": "立見其災",
+                  "applies_to": "stem",
+                  "source_passage_id": "ziping:c036:p0008"
+                },
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "avoided",
+                  "words": "立見其災",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c036:p0008"
+                }
+              ],
+              "id": "seal-mixed-adverse-scope",
+              "scope_interpretation": "unresolved",
+              "needed_evidence": "冻结标点未独立证明并列或合取范围。两个 effect 只是原句涉及方向，未消歧前不能分别作为确定规则。",
+              "combination_semantics": "not_selected"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family_id": "food",
+      "title": "食神",
+      "chapter": "ziping:c038",
+      "scenarios": [
+        {
+          "id": "food-wealth",
+          "title": "食神生财",
+          "passage_id": "ziping:c038:p0002",
+          "sha256": "bda9397f7338b0da261909ba719d4b1b5fb122d8eec44aee56ac935388e666fe",
+          "quote": "食神生財，財食輕則行財食，財食重則喜幫身，官煞之方，俱爲不美。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "食神生財",
+            "財要有根"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "食神生財",
+              "passage_id": "ziping:c038:p0002",
+              "sha256": "bda9397f7338b0da261909ba719d4b1b5fb122d8eec44aee56ac935388e666fe",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "財要有根",
+              "passage_id": "ziping:c037:p0002",
+              "sha256": "eb32b2e325d3845add4e541a470ac2ee30236887bb10113b837bf818648d6168",
+              "needed_evidence": "核财的有效根气和食神生财作用。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官",
+                "七杀"
+              ],
+              "verdict": "unpromising",
+              "words": "官煞之方，俱爲不美",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0002"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財食輕",
+              "passage_id": "ziping:c038:p0002",
+              "sha256": "bda9397f7338b0da261909ba719d4b1b5fb122d8eec44aee56ac935388e666fe",
+              "quote": "食神生財，財食輕則行財食，財食重則喜幫身，官煞之方，俱爲不美。",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财",
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則行財食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0002"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "財食重",
+              "passage_id": "ziping:c038:p0002",
+              "sha256": "bda9397f7338b0da261909ba719d4b1b5fb122d8eec44aee56ac935388e666fe",
+              "quote": "食神生財，財食輕則行財食，財食重則喜幫身，官煞之方，俱爲不美。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜幫身",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0002",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "food-kill-seal",
+          "title": "食神转用杀印",
+          "passage_id": "ziping:c038:p0003",
+          "sha256": "31fafdac0b2a38bb5f398aa791cdb9d97ccd7fd36776542a5ca3786c10dfb79e",
+          "quote": "食用煞印，運喜印旺，切忌財鄉。身旺，食傷亦爲福運，行官行煞，亦爲吉也。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "食用煞印",
+            "若不用財而就煞印"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "食用煞印",
+              "passage_id": "ziping:c038:p0003",
+              "sha256": "31fafdac0b2a38bb5f398aa791cdb9d97ccd7fd36776542a5ca3786c10dfb79e",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "若不用財而就煞印",
+              "passage_id": "ziping:c037:p0003",
+              "sha256": "d252ffe73b957caff9a46a4b95c15ffc7726c2321e02165ee96ba77796ca1dc5",
+              "needed_evidence": "明确本命取用目的，不与食制杀混同。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "運喜印旺",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0003"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "切忌財鄉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0003"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "身旺，食傷亦爲福運，行官行煞，亦爲吉也",
+              "passage_id": "ziping:c038:p0003",
+              "sha256": "31fafdac0b2a38bb5f398aa791cdb9d97ccd7fd36776542a5ca3786c10dfb79e",
+              "quote": "食用煞印，運喜印旺，切忌財鄉。身旺，食傷亦爲福運，行官行煞，亦爲吉也。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "身旺，食傷亦爲福運",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0003",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                },
+                {
+                  "roles": [
+                    "食神",
+                    "伤官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "食傷亦爲福運",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0003"
+                },
+                {
+                  "roles": [
+                    "正官",
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "行官行煞，亦爲吉",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0003"
+                }
+              ],
+              "scope_interpretation": "unresolved",
+              "needed_evidence": "身旺是运方向并列还是本命条件，以及后句范围，未独立校勘；保留原句，不自动判定任一解析。"
+            }
+          ]
+        },
+        {
+          "id": "food-kill",
+          "title": "食神带杀与食重杀轻例外",
+          "passage_id": "ziping:c038:p0004",
+          "sha256": "584cfce0937390d9d81c9cbeb2aa834307611647f5dbeb2a7b5cdf64419ce659",
+          "quote": "食神帶煞，喜行印綬。身旺，食傷亦爲美運，財則最忌。若食太重而煞輕，印運最利，逢財反吉矣。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "食神帶煞"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "食神帶煞",
+              "passage_id": "ziping:c038:p0004",
+              "sha256": "584cfce0937390d9d81c9cbeb2aa834307611647f5dbeb2a7b5cdf64419ce659",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "喜行印綬",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0004"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "財則最忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0004"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "身旺，食傷亦爲美運",
+              "passage_id": "ziping:c038:p0004",
+              "sha256": "584cfce0937390d9d81c9cbeb2aa834307611647f5dbeb2a7b5cdf64419ce659",
+              "quote": "食神帶煞，喜行印綬。身旺，食傷亦爲美運，財則最忌。若食太重而煞輕，印運最利，逢財反吉矣。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "身旺，食傷亦爲美運",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0004",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                },
+                {
+                  "roles": [
+                    "食神",
+                    "伤官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "食傷亦爲美運",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0004"
+                }
+              ],
+              "scope_interpretation": "unresolved",
+              "needed_evidence": "身旺的句法范围未审定。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "若食太重而煞輕",
+              "passage_id": "ziping:c038:p0004",
+              "sha256": "584cfce0937390d9d81c9cbeb2aa834307611647f5dbeb2a7b5cdf64419ce659",
+              "quote": "食神帶煞，喜行印綬。身旺，食傷亦爲美運，財則最忌。若食太重而煞輕，印運最利，逢財反吉矣。",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "印運最利",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0004"
+                },
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "逢財反吉",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c038:p0004"
+                }
+              ],
+              "id": "food-kill-output-heavy",
+              "exception_of": "food-kill",
+              "overrides_roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c037:p0003",
+            "ziping:c037:p0008"
+          ]
+        },
+        {
+          "id": "food-heavy-seal",
+          "title": "食神太旺带印",
+          "passage_id": "ziping:c038:p0005",
+          "sha256": "dd478f221f17fc0f87a03073cc0a6835207b54d085e7a9386292ed81f1e75758",
+          "quote": "食神太旺而帶印，運最利財，食傷亦吉，印則最忌，官煞皆不吉也。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "食神太旺而帶印"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "食神太旺而帶印",
+              "passage_id": "ziping:c038:p0005",
+              "sha256": "dd478f221f17fc0f87a03073cc0a6835207b54d085e7a9386292ed81f1e75758",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "運最利財",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0005"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "食傷亦吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0005"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "avoided",
+              "words": "印則最忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0005"
+            },
+            {
+              "roles": [
+                "正官",
+                "七杀"
+              ],
+              "verdict": "avoided",
+              "words": "官煞皆不吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0005"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c037:p0003",
+            "ziping:c037:p0005"
+          ]
+        },
+        {
+          "id": "food-seal-wealth-rescue",
+          "title": "食神带印透财解",
+          "passage_id": "ziping:c038:p0006",
+          "sha256": "3567f61a37326b8087c4ceb2dc1392a16c2b44d4636ef3df6fbca9db3a5e2be0",
+          "quote": "若食神帶印，而透財以解，運喜財旺，食傷亦吉，印與官煞皆忌矣。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干见正财或偏财（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "若食神帶印，而透財以解",
+            "須就其全局之勢而斷之"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "若食神帶印，而透財以解",
+              "passage_id": "ziping:c038:p0006",
+              "sha256": "3567f61a37326b8087c4ceb2dc1392a16c2b44d4636ef3df6fbca9db3a5e2be0",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "須就其全局之勢而斷之",
+              "passage_id": "ziping:c037:p0005",
+              "sha256": "493f806a35e7de778a252946839ef658c520ccbbc601c6f8a1840d3c436e2e3f",
+              "needed_evidence": "印夺食及财解除该作用须独立核明。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "運喜財旺",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0006"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "食傷亦吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0006"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印",
+                "正官",
+                "七杀"
+              ],
+              "verdict": "avoided",
+              "words": "印與官煞皆忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c038:p0006"
+            }
+          ],
+          "branches": []
+        }
+      ]
+    },
+    {
+      "family_id": "kill",
+      "title": "七杀",
+      "chapter": "ziping:c040",
+      "scenarios": [
+        {
+          "id": "kill-food",
+          "title": "七杀用食制",
+          "passage_id": "ziping:c040:p0002",
+          "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+          "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "煞用食制"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "煞用食制",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "煞重食輕",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002",
+                  "action_target": "support_food",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "煞輕食重",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002",
+                  "action_target": "support_kill",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "煞食均而日主根輕",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助身",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "正官之混雜",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "正官"
+                  ],
+                  "verdict": "avoided",
+                  "words": "忌正官之混雜",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002"
+                }
+              ],
+              "needed_evidence": "不是官角色存在即等于作用混杂。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "印綬之奪食",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "avoided",
+                  "words": "畏印綬之奪食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002"
+                }
+              ],
+              "needed_evidence": "核印是否有效夺食；c039:p0002 印先食后、食太旺用印裁损的例外不得漏掉。"
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c039:p0002",
+            "ziping:c039:p0008"
+          ]
+        },
+        {
+          "id": "kill-seal",
+          "title": "七杀用印绶",
+          "passage_id": "ziping:c040:p0003",
+          "sha256": "d8440f502a8fe9f9ad1948480831b519f01df15018b76b79cf522e3838d17dc3",
+          "quote": "煞用印綬，不利財鄉，傷官爲美，印綬身旺，俱爲福地。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "煞用印綬",
+            "煞印有情"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "煞用印綬",
+              "passage_id": "ziping:c040:p0003",
+              "sha256": "d8440f502a8fe9f9ad1948480831b519f01df15018b76b79cf522e3838d17dc3",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "煞印有情",
+              "passage_id": "ziping:c039:p0003",
+              "sha256": "a2947095228a40647b07dfd23aa109e46fcc1ac739af4454e220e85a8f1fecc0",
+              "needed_evidence": "或杀重身轻转印；有效作用与位置须核。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "avoided",
+              "words": "不利財鄉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0003"
+            },
+            {
+              "roles": [
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷官爲美",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0003"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "印綬身旺，俱爲福地",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0003"
+            },
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "印綬身旺，俱爲福地",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0003",
+              "action_target": "support_self",
+              "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+            }
+          ],
+          "branches": []
+        },
+        {
+          "id": "kill-hurt",
+          "title": "七杀用伤官（继承食制原则）",
+          "passage_id": "ziping:c040:p0004",
+          "sha256": "bf6d3b36e51e5d9216e1fc53791193119173c89ef0c9fd4a866ac8788ca668cd",
+          "quote": "煞用傷官，行運與食同。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见伤官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "伤官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "煞用傷官",
+            "行運與食同"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "煞用傷官",
+              "passage_id": "ziping:c040:p0004",
+              "sha256": "bf6d3b36e51e5d9216e1fc53791193119173c89ef0c9fd4a866ac8788ca668cd",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "行運與食同",
+              "passage_id": "ziping:c040:p0004",
+              "sha256": "bf6d3b36e51e5d9216e1fc53791193119173c89ef0c9fd4a866ac8788ca668cd",
+              "needed_evidence": "继承 p0002 的原则；食轻重字样对应伤官控制者的语义映射需审阅。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "sources": [
+            {
+              "passage_id": "ziping:c040:p0004",
+              "sha256": "bf6d3b36e51e5d9216e1fc53791193119173c89ef0c9fd4a866ac8788ca668cd",
+              "quote": "煞用傷官，行運與食同。",
+              "purpose": "main"
+            },
+            {
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "purpose": "inherited_rule"
+            }
+          ],
+          "inherits": "kill-food",
+          "controller_role": "伤官",
+          "context_passage_ids": [
+            "ziping:c039:p0002",
+            "ziping:c039:p0008"
+          ],
+          "deferred_branches": [
+            {
+              "kind": "interpretive",
+              "condition": "煞重食輕",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "伤官"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002",
+                  "action_target": "support_hurt",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。",
+                  "mapping_review": "pending_controller_role_substitution"
+                }
+              ],
+              "interpretation": "按 c040:p0004 行運與食同继承食制原则；此路线控制者改为伤官。食的字样保留原句，角色替换须人工语义复核。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "煞輕食重",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002",
+                  "action_target": "support_kill",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ],
+              "interpretation": "按 c040:p0004 行運與食同继承食制原则；此路线控制者改为伤官。食的字样保留原句，角色替换须人工语义复核。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "煞食均而日主根輕",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助身",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                }
+              ],
+              "interpretation": "按 c040:p0004 行運與食同继承食制原则；此路线控制者改为伤官。食的字样保留原句，角色替换须人工语义复核。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "正官之混雜",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "正官"
+                  ],
+                  "verdict": "avoided",
+                  "words": "忌正官之混雜",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002"
+                }
+              ],
+              "needed_evidence": "不是官角色存在即等于作用混杂。",
+              "interpretation": "按 c040:p0004 行運與食同继承食制原则；此路线控制者改为伤官。食的字样保留原句，角色替换须人工语义复核。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "印綬之奪食",
+              "passage_id": "ziping:c040:p0002",
+              "sha256": "c280f2ae771ec04392834ad99846956eeccf54db2bc69d08519817369a528bd1",
+              "quote": "煞用食制，煞重食輕則助食，煞輕食重則助煞，煞食均而日主根輕則助身。忌正官之混雜，畏印綬之奪食。",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "avoided",
+                  "words": "畏印綬之奪食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0002"
+                }
+              ],
+              "needed_evidence": "核印是否有效夺食；c039:p0002 印先食后、食太旺用印裁损的例外不得漏掉。",
+              "interpretation": "按 c040:p0004 行運與食同继承食制原则；此路线控制者改为伤官。食的字样保留原句，角色替换须人工语义复核。"
+            }
+          ],
+          "branches": []
+        },
+        {
+          "id": "kill-wealth-preserve-food",
+          "title": "七杀用财去印存食",
+          "passage_id": "ziping:c040:p0005",
+          "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+          "quote": "七煞用財，其以財而去印存食者，不利劫財，傷食皆吉，喜財怕印，透煞亦順。其以財而助煞不及者，財已足則喜食印與幫身，財未足則喜財旺而露煞。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "其以財而去印存食者"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "其以財而去印存食者",
+              "passage_id": "ziping:c040:p0005",
+              "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "劫财"
+              ],
+              "verdict": "avoided",
+              "words": "不利劫財",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0005"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "傷食皆吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0005"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "喜財",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0005"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "avoided",
+              "words": "怕印",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c040:p0005"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "favoured",
+              "words": "透煞亦順",
+              "applies_to": "stem",
+              "source_passage_id": "ziping:c040:p0005"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c039:p0004"
+          ]
+        },
+        {
+          "id": "kill-wealth-support-insufficient",
+          "title": "七杀用财助不足之杀",
+          "passage_id": "ziping:c040:p0005",
+          "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+          "quote": "七煞用財，其以財而去印存食者，不利劫財，傷食皆吉，喜財怕印，透煞亦順。其以財而助煞不及者，財已足則喜食印與幫身，財未足則喜財旺而露煞。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "其以財而助煞不及者"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "其以財而助煞不及者",
+              "passage_id": "ziping:c040:p0005",
+              "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財已足",
+              "passage_id": "ziping:c040:p0005",
+              "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+              "quote": "七煞用財，其以財而去印存食者，不利劫財，傷食皆吉，喜財怕印，透煞亦順。其以財而助煞不及者，財已足則喜食印與幫身，財未足則喜財旺而露煞。",
+              "effects": [
+                {
+                  "roles": [
+                    "食神",
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜食印與幫身",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0005"
+                },
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜食印與幫身",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0005",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "財未足",
+              "passage_id": "ziping:c040:p0005",
+              "sha256": "50d8ce704756cb3feb2073c8c854b988ea104f951f24150cfda94c184718dcba",
+              "quote": "七煞用財，其以財而去印存食者，不利劫財，傷食皆吉，喜財怕印，透煞亦順。其以財而助煞不及者，財已足則喜食印與幫身，財未足則喜財旺而露煞。",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜財旺而露煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0005"
+                },
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜財旺而露煞",
+                  "applies_to": "stem",
+                  "source_passage_id": "ziping:c040:p0005"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c039:p0004"
+          ]
+        },
+        {
+          "id": "kill-mixed",
+          "title": "七杀带官去留取清",
+          "passage_id": "ziping:c040:p0006",
+          "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+          "quote": "煞帶正官，不論去官留煞，去煞留官，身輕則喜助身，食輕則喜助食。莫去取清之物，無傷制煞之神。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "不論去官留煞，去煞留官"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "不論去官留煞，去煞留官",
+              "passage_id": "ziping:c040:p0006",
+              "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "身輕",
+              "passage_id": "ziping:c040:p0006",
+              "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+              "quote": "煞帶正官，不論去官留煞，去煞留官，身輕則喜助身，食輕則喜助食。莫去取清之物，無傷制煞之神。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜助身",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0006",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "食輕",
+              "passage_id": "ziping:c040:p0006",
+              "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+              "quote": "煞帶正官，不論去官留煞，去煞留官，身輕則喜助身，食輕則喜助食。莫去取清之物，無傷制煞之神。",
+              "effects": [
+                {
+                  "roles": [
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜助食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0006",
+                  "action_target": "support_food",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c039:p0006"
+          ],
+          "action_constraints": [
+            {
+              "passage_id": "ziping:c040:p0006",
+              "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+              "quote": "煞帶正官，不論去官留煞，去煞留官，身輕則喜助身，食輕則喜助食。莫去取清之物，無傷制煞之神。",
+              "purpose": "constraint",
+              "words": "莫去取清之物",
+              "target": "purifying_agent",
+              "state": "unknown",
+              "needed_evidence": "先定位原局取清之物，再核运具体干支是否去之；不能用统一十神替代。"
+            },
+            {
+              "passage_id": "ziping:c040:p0006",
+              "sha256": "73435208791e04904d8bc065888bc8a8805c8ef48940318b7db7c1b5308635f3",
+              "quote": "煞帶正官，不論去官留煞，去煞留官，身輕則喜助身，食輕則喜助食。莫去取清之物，無傷制煞之神。",
+              "purpose": "constraint",
+              "words": "無傷制煞之神",
+              "target": "kill_controlling_agent",
+              "state": "unknown",
+              "needed_evidence": "先定位有效制杀的干支，再核伤害作用。"
+            }
+          ]
+        },
+        {
+          "id": "kill-blade",
+          "title": "七杀无食制而用刃当",
+          "passage_id": "ziping:c040:p0007",
+          "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93",
+          "quote": "煞無食制，而用刃當，煞輕刃重，則喜助煞；刃輕煞重，則宜制伏。無食可奪，印運何傷？七煞既純，雜官不利。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "原局至少一支为该阳干的阳刃支（不要求月令阳刃）",
+              "predicate": "yang_blade_present"
+            }
+          ],
+          "unresolved_conditions": [
+            "煞無食制，而用刃當"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "煞無食制，而用刃當",
+              "passage_id": "ziping:c040:p0007",
+              "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "煞輕刃重",
+              "passage_id": "ziping:c040:p0007",
+              "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93",
+              "quote": "煞無食制，而用刃當，煞輕刃重，則喜助煞；刃輕煞重，則宜制伏。無食可奪，印運何傷？七煞既純，雜官不利。",
+              "effects": [
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜助煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0007",
+                  "action_target": "support_kill",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "刃輕煞重",
+              "passage_id": "ziping:c040:p0007",
+              "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93",
+              "quote": "煞無食制，而用刃當，煞輕刃重，則喜助煞；刃輕煞重，則宜制伏。無食可奪，印運何傷？七煞既純，雜官不利。",
+              "effects": [],
+              "action_effects": [
+                {
+                  "roles": [],
+                  "verdict": "favoured",
+                  "words": "則宜制伏",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0007",
+                  "action_target": "control_kill",
+                  "state": "unknown",
+                  "needed_evidence": "确定制伏的具体干支及有效性后才能匹配，未直接展开为全部食伤。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "無食可奪",
+              "passage_id": "ziping:c040:p0007",
+              "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93",
+              "quote": "煞無食制，而用刃當，煞輕刃重，則喜助煞；刃輕煞重，則宜制伏。無食可奪，印運何傷？七煞既純，雜官不利。",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "harmless",
+                  "words": "印運何傷",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0007"
+                }
+              ],
+              "needed_evidence": "无食可夺是作用条件；未透食不证明藏支无食，更不证明制杀/夺食作用。"
+            },
+            {
+              "kind": "interpretive",
+              "condition": "七煞既純",
+              "passage_id": "ziping:c040:p0007",
+              "sha256": "66100b5367719135f8e2b36337a56d6dfde3b9d6f183f39b9f734b515bba1d93",
+              "quote": "煞無食制，而用刃當，煞輕刃重，則喜助煞；刃輕煞重，則宜制伏。無食可奪，印運何傷？七煞既純，雜官不利。",
+              "effects": [
+                {
+                  "roles": [
+                    "正官"
+                  ],
+                  "verdict": "avoided",
+                  "words": "雜官不利",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c040:p0007"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c039:p0007",
+            "ziping:c043:p0001"
+          ],
+          "mapping_notes": [
+            "杀家候选＋原局刃线索，不要求 blade 家候选。"
+          ]
+        }
+      ]
+    },
+    {
+      "family_id": "blade",
+      "title": "阳刃",
+      "chapter": "ziping:c044",
+      "scenarios": [
+        {
+          "id": "blade-officer",
+          "title": "阳刃用官",
+          "passage_id": "ziping:c044:p0001",
+          "sha256": "3f4117e8c7ce75ff887a73cd3590bb5d1c33677114b2b220423535701e315ad6",
+          "quote": "陽刃用官，則運喜助官，然命中官根深，則印綬比劫之方，反爲美運，但不喜傷食合官耳。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "陽刃用官"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "陽刃用官",
+              "passage_id": "ziping:c044:p0001",
+              "sha256": "3f4117e8c7ce75ff887a73cd3590bb5d1c33677114b2b220423535701e315ad6",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "favoured",
+              "words": "運喜助官",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c044:p0001",
+              "action_target": "support_officer",
+              "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "命中官根深",
+              "passage_id": "ziping:c044:p0001",
+              "sha256": "3f4117e8c7ce75ff887a73cd3590bb5d1c33677114b2b220423535701e315ad6",
+              "quote": "陽刃用官，則運喜助官，然命中官根深，則印綬比劫之方，反爲美運，但不喜傷食合官耳。",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印",
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則印綬比劫之方，反爲美運",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c044:p0001"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "但不喜傷食合官耳",
+              "passage_id": "ziping:c044:p0001",
+              "sha256": "3f4117e8c7ce75ff887a73cd3590bb5d1c33677114b2b220423535701e315ad6",
+              "quote": "陽刃用官，則運喜助官，然命中官根深，則印綬比劫之方，反爲美運，但不喜傷食合官耳。",
+              "effects": [
+                {
+                  "roles": [
+                    "食神",
+                    "伤官"
+                  ],
+                  "verdict": "avoided",
+                  "words": "但不喜傷食合官耳",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c044:p0001"
+                },
+                {
+                  "roles": [],
+                  "verdict": "avoided",
+                  "words": "但不喜傷食合官耳",
+                  "applies_to": "stem",
+                  "source_passage_id": "ziping:c044:p0001",
+                  "combines_natal": [
+                    "正官"
+                  ]
+                }
+              ],
+              "scope_interpretation": "unresolved_action",
+              "needed_evidence": "分清伤食伤官与合官的实际机制；食伤出现或五合对本身不足以证明不利作用成立。"
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c043:p0001",
+            "ziping:c043:p0003",
+            "ziping:c043:p0004"
+          ]
+        },
+        {
+          "id": "blade-kill",
+          "title": "阳刃用杀",
+          "passage_id": "ziping:c044:p0002",
+          "sha256": "cb4319c27b3b15a04a9adf53c6fbfa217c5183682a6a905adaae165c2f2ab1cb",
+          "quote": "陽刃用煞，煞不甚旺，則運喜助煞；煞若太重，則運喜身旺印綬，傷食亦不爲忌。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "陽刃用煞"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "陽刃用煞",
+              "passage_id": "ziping:c044:p0002",
+              "sha256": "cb4319c27b3b15a04a9adf53c6fbfa217c5183682a6a905adaae165c2f2ab1cb",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "煞不甚旺",
+              "passage_id": "ziping:c044:p0002",
+              "sha256": "cb4319c27b3b15a04a9adf53c6fbfa217c5183682a6a905adaae165c2f2ab1cb",
+              "quote": "陽刃用煞，煞不甚旺，則運喜助煞；煞若太重，則運喜身旺印綬，傷食亦不爲忌。",
+              "effects": [
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則運喜助煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c044:p0002",
+                  "action_target": "support_kill",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "煞若太重",
+              "passage_id": "ziping:c044:p0002",
+              "sha256": "cb4319c27b3b15a04a9adf53c6fbfa217c5183682a6a905adaae165c2f2ab1cb",
+              "quote": "陽刃用煞，煞不甚旺，則運喜助煞；煞若太重，則運喜身旺印綬，傷食亦不爲忌。",
+              "effects": [
+                {
+                  "roles": [
+                    "比肩",
+                    "劫财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則運喜身旺印綬",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c044:p0002",
+                  "action_target": "support_self",
+                  "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+                },
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則運喜身旺印綬",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c044:p0002"
+                },
+                {
+                  "roles": [
+                    "食神",
+                    "伤官"
+                  ],
+                  "verdict": "harmless",
+                  "words": "傷食亦不爲忌",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c044:p0002"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c043:p0002",
+            "ziping:c043:p0004",
+            "ziping:c043:p0005"
+          ]
+        },
+        {
+          "id": "blade-mixed",
+          "title": "阳刃官杀并出",
+          "passage_id": "ziping:c044:p0003",
+          "sha256": "81581eac2180f00e8d012cc8195a1285586691c33c85415cff383ce95fa93709",
+          "quote": "陽刃而官煞並出，不論去官去煞，運喜制伏，身旺亦利，財地官鄉反爲不吉也。",
+          "premises": [
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "本命明干见七杀（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "陽刃而官煞並出",
+            "不論去官去煞"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "陽刃而官煞並出",
+              "passage_id": "ziping:c044:p0003",
+              "sha256": "81581eac2180f00e8d012cc8195a1285586691c33c85415cff383ce95fa93709",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "不論去官去煞",
+              "passage_id": "ziping:c044:p0003",
+              "sha256": "81581eac2180f00e8d012cc8195a1285586691c33c85415cff383ce95fa93709",
+              "needed_evidence": "官杀去留与具体制伏对象须确定，不能直接同角色相加。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "身旺亦利",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c044:p0003",
+              "action_target": "support_self",
+              "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财",
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "財地官鄉反爲不吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c044:p0003"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c043:p0004",
+            "ziping:c043:p0005"
+          ],
+          "action_effects": [
+            {
+              "roles": [],
+              "verdict": "favoured",
+              "words": "運喜制伏",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c044:p0003",
+              "action_target": "control_mixed_officer_kill",
+              "state": "unknown",
+              "needed_evidence": "需要定位被制者与制伏干支；不直接展开成全部食伤。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family_id": "salary",
+      "title": "建禄月劫",
+      "chapter": "ziping:c046",
+      "scenarios": [
+        {
+          "id": "salary-officer-seal",
+          "title": "禄劫用官而印护",
+          "passage_id": "ziping:c046:p0002",
+          "sha256": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b",
+          "quote": "祿劫用官，印護者喜財，怕官星之逢合，畏七煞之相乘，傷食不能爲害，劫比未即爲凶；財生者喜印，宜官星之植根，畏傷食之相侮，逢財愈見其功，雜煞豈能無礙？",
+          "premises": [
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正印或偏印（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "祿劫用官，印護者"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "祿劫用官，印護者",
+              "passage_id": "ziping:c046:p0002",
+              "sha256": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "喜財",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "avoided",
+              "words": "畏七煞之相乘",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "harmless",
+              "words": "傷食不能爲害",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            },
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "harmless",
+              "words": "劫比未即爲凶",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "官星之逢合",
+              "passage_id": "ziping:c046:p0002",
+              "sha256": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b",
+              "quote": "祿劫用官，印護者喜財，怕官星之逢合，畏七煞之相乘，傷食不能爲害，劫比未即爲凶；財生者喜印，宜官星之植根，畏傷食之相侮，逢財愈見其功，雜煞豈能無礙？",
+              "effects": [
+                {
+                  "roles": [],
+                  "verdict": "avoided",
+                  "words": "怕官星之逢合",
+                  "applies_to": "stem",
+                  "source_passage_id": "ziping:c046:p0002",
+                  "combines_natal": [
+                    "正官"
+                  ]
+                }
+              ],
+              "needed_evidence": "本命正官与运干五合仅是配对，须核是否影响印护用官。"
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c045:p0002"
+          ]
+        },
+        {
+          "id": "salary-officer-wealth",
+          "title": "禄劫用官而财生",
+          "passage_id": "ziping:c046:p0002",
+          "sha256": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b",
+          "quote": "祿劫用官，印護者喜財，怕官星之逢合，畏七煞之相乘，傷食不能爲害，劫比未即爲凶；財生者喜印，宜官星之植根，畏傷食之相侮，逢財愈見其功，雜煞豈能無礙？",
+          "premises": [
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "財生者"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "財生者",
+              "passage_id": "ziping:c046:p0002",
+              "sha256": "0885bfb273eff2ca4f79d21ce2b332fb5721e48d3c56a10d9e5d2555f38c513b",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "favoured",
+              "words": "喜印",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            },
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "avoided",
+              "words": "畏傷食之相侮",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "逢財愈見其功",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "avoided",
+              "words": "雜煞豈能無礙",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0002"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c045:p0002",
+            "ziping:c025:p0007"
+          ],
+          "action_effects": [
+            {
+              "roles": [],
+              "verdict": "favoured",
+              "words": "宜官星之植根",
+              "applies_to": "branch",
+              "source_passage_id": "ziping:c046:p0002",
+              "action_target": "root_officer",
+              "state": "unknown",
+              "needed_evidence": "按具体官干查询运支藏干根气和合冲；运干正官不能替代植根。"
+            }
+          ]
+        },
+        {
+          "id": "salary-wealth-output",
+          "title": "禄劫用财带食伤",
+          "passage_id": "ziping:c046:p0003",
+          "sha256": "f083a1b6f7b4d6aee498014574bccfa67dfafea60dfee605c08b723035dbe386",
+          "quote": "祿劫用財而帶傷食，財食重則喜印綬，而不忌比肩；財食輕則宜助財，而不喜印比。逢煞無傷，遇官非福。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神或伤官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "祿劫用財而帶傷食"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "祿劫用財而帶傷食",
+              "passage_id": "ziping:c046:p0003",
+              "sha256": "f083a1b6f7b4d6aee498014574bccfa67dfafea60dfee605c08b723035dbe386",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "harmless",
+              "words": "逢煞無傷",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0003"
+            },
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "遇官非福",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0003"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "財食重",
+              "passage_id": "ziping:c046:p0003",
+              "sha256": "f083a1b6f7b4d6aee498014574bccfa67dfafea60dfee605c08b723035dbe386",
+              "quote": "祿劫用財而帶傷食，財食重則喜印綬，而不忌比肩；財食輕則宜助財，而不喜印比。逢煞無傷，遇官非福。",
+              "effects": [
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則喜印綬",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0003"
+                },
+                {
+                  "roles": [
+                    "比肩"
+                  ],
+                  "verdict": "harmless",
+                  "words": "而不忌比肩",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0003"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "財食輕",
+              "passage_id": "ziping:c046:p0003",
+              "sha256": "f083a1b6f7b4d6aee498014574bccfa67dfafea60dfee605c08b723035dbe386",
+              "quote": "祿劫用財而帶傷食，財食重則喜印綬，而不忌比肩；財食輕則宜助財，而不喜印比。逢煞無傷，遇官非福。",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則宜助財",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0003",
+                  "action_target": "support_wealth",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                },
+                {
+                  "roles": [
+                    "正印",
+                    "偏印",
+                    "比肩"
+                  ],
+                  "verdict": "avoided",
+                  "words": "而不喜印比",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0003"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c045:p0003",
+            "ziping:c045:p0009"
+          ],
+          "mapping_notes": [
+            "重分支原文只称比肩，轻分支印比的比按比肩保守映射；不自动加入劫财。"
+          ]
+        },
+        {
+          "id": "salary-kill-food",
+          "title": "禄劫用杀以食制",
+          "passage_id": "ziping:c046:p0004",
+          "sha256": "d4164213f7e586de0fb913698dcf3eeda6f614627a66e48b0a9922d1a9afa546",
+          "quote": "祿劫用煞以食制，食重煞輕，則運宜助煞；食輕煞重，則運喜助食。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "祿劫用煞以食制"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "祿劫用煞以食制",
+              "passage_id": "ziping:c046:p0004",
+              "sha256": "d4164213f7e586de0fb913698dcf3eeda6f614627a66e48b0a9922d1a9afa546",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "食重煞輕",
+              "passage_id": "ziping:c046:p0004",
+              "sha256": "d4164213f7e586de0fb913698dcf3eeda6f614627a66e48b0a9922d1a9afa546",
+              "quote": "祿劫用煞以食制，食重煞輕，則運宜助煞；食輕煞重，則運喜助食。",
+              "effects": [
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則運宜助煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0004",
+                  "action_target": "support_kill",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "食輕煞重",
+              "passage_id": "ziping:c046:p0004",
+              "sha256": "d4164213f7e586de0fb913698dcf3eeda6f614627a66e48b0a9922d1a9afa546",
+              "quote": "祿劫用煞以食制，食重煞輕，則運宜助煞；食輕煞重，則運喜助食。",
+              "effects": [
+                {
+                  "roles": [
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則運喜助食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0004",
+                  "action_target": "support_food",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c045:p0004",
+            "ziping:c045:p0010"
+          ]
+        },
+        {
+          "id": "salary-kill-wealth-keep-wealth",
+          "title": "禄劫用杀带财合杀存财",
+          "passage_id": "ziping:c046:p0005",
+          "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+          "quote": "若用煞而帶財，命中合煞存財，則傷食爲宜，財運不忌，透官無慮，身旺亦亨；若命中合財存煞，而用食制，煞輕則助煞，食輕則助食而已。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "若用煞而帶財",
+            "命中合煞存財"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "若用煞而帶財",
+              "passage_id": "ziping:c046:p0005",
+              "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "命中合煞存財",
+              "passage_id": "ziping:c046:p0005",
+              "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+              "needed_evidence": "记录具体合杀对及位置；五合配对不等于有效去杀存财。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "則傷食爲宜",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0005"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "harmless",
+              "words": "財運不忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0005"
+            },
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "harmless",
+              "words": "透官無慮",
+              "applies_to": "stem",
+              "source_passage_id": "ziping:c046:p0005"
+            },
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "身旺亦亨",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0005",
+              "action_target": "support_self",
+              "mapping_note": "比肩/劫财仅作同气方向候选；不自动扩展印，也不证明有效助身。运支须另核刑冲会合。"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c045:p0005"
+          ],
+          "exclusive_with": [
+            "salary-kill-wealth-keep-kill"
+          ]
+        },
+        {
+          "id": "salary-kill-wealth-keep-kill",
+          "title": "禄劫合财存杀而用食制",
+          "passage_id": "ziping:c046:p0005",
+          "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+          "quote": "若用煞而帶財，命中合煞存財，則傷食爲宜，財運不忌，透官無慮，身旺亦亨；若命中合財存煞，而用食制，煞輕則助煞，食輕則助食而已。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见七杀（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "七杀"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见正财或偏财（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "正财",
+                "偏财"
+              ]
+            },
+            {
+              "label": "本命明干或支藏见食神（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "若命中合財存煞，而用食制"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "若命中合財存煞，而用食制",
+              "passage_id": "ziping:c046:p0005",
+              "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "煞輕",
+              "passage_id": "ziping:c046:p0005",
+              "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+              "quote": "若用煞而帶財，命中合煞存財，則傷食爲宜，財運不忌，透官無慮，身旺亦亨；若命中合財存煞，而用食制，煞輕則助煞，食輕則助食而已。",
+              "effects": [
+                {
+                  "roles": [
+                    "七杀"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助煞",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0005",
+                  "action_target": "support_kill",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            },
+            {
+              "kind": "interpretive",
+              "condition": "食輕",
+              "passage_id": "ziping:c046:p0005",
+              "sha256": "d039643c90a259aed70de0d65d6d22d07b21e88f866ad02c64be9e338419728c",
+              "quote": "若用煞而帶財，命中合煞存財，則傷食爲宜，財運不忌，透官無慮，身旺亦亨；若命中合財存煞，而用食制，煞輕則助煞，食輕則助食而已。",
+              "effects": [
+                {
+                  "roles": [
+                    "食神"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則助食",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0005",
+                  "action_target": "support_food",
+                  "mapping_note": "只以同名十神召回助益方向；不递归扩展生助链，不证明作用成立。"
+                }
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c045:p0004"
+          ],
+          "exclusive_with": [
+            "salary-kill-wealth-keep-wealth"
+          ]
+        },
+        {
+          "id": "salary-output",
+          "title": "禄劫用食伤及食伤太重例外",
+          "passage_id": "ziping:c046:p0006",
+          "sha256": "a390d570c6956c2835a2071971d379fa8b7abf4fc8ee5754ba2eaa3efd72d72b",
+          "quote": "祿劫而用傷食，財運最宜，煞亦不忌，行印非吉，透官不美。若命中傷食太重，則財運固利，而印亦不忌矣。",
+          "premises": [
+            {
+              "label": "本命明干或支藏见食神或伤官（事实不等于取用已成立）",
+              "predicate": "present_any",
+              "roles": [
+                "食神",
+                "伤官"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "祿劫而用傷食",
+            "無財官而用傷食，洩其太過"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "祿劫而用傷食",
+              "passage_id": "ziping:c046:p0006",
+              "sha256": "a390d570c6956c2835a2071971d379fa8b7abf4fc8ee5754ba2eaa3efd72d72b",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "無財官而用傷食，洩其太過",
+              "passage_id": "ziping:c045:p0006",
+              "sha256": "144240a9d89cab3c3c965548788e6e01a4a3581130486f7e2f1f1b95bdbb817a",
+              "needed_evidence": "查全局取用、隐藏财官与季节背景；不能只以未透认定全无。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "正财",
+                "偏财"
+              ],
+              "verdict": "favoured",
+              "words": "財運最宜",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0006"
+            },
+            {
+              "roles": [
+                "七杀"
+              ],
+              "verdict": "harmless",
+              "words": "煞亦不忌",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0006"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "avoided",
+              "words": "行印非吉",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0006"
+            },
+            {
+              "roles": [
+                "正官"
+              ],
+              "verdict": "unpromising",
+              "words": "透官不美",
+              "applies_to": "stem",
+              "source_passage_id": "ziping:c046:p0006"
+            }
+          ],
+          "branches": [
+            {
+              "kind": "interpretive",
+              "condition": "若命中傷食太重",
+              "passage_id": "ziping:c046:p0006",
+              "sha256": "a390d570c6956c2835a2071971d379fa8b7abf4fc8ee5754ba2eaa3efd72d72b",
+              "quote": "祿劫而用傷食，財運最宜，煞亦不忌，行印非吉，透官不美。若命中傷食太重，則財運固利，而印亦不忌矣。",
+              "effects": [
+                {
+                  "roles": [
+                    "正财",
+                    "偏财"
+                  ],
+                  "verdict": "favoured",
+                  "words": "則財運固利",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0006"
+                },
+                {
+                  "roles": [
+                    "正印",
+                    "偏印"
+                  ],
+                  "verdict": "harmless",
+                  "words": "而印亦不忌",
+                  "applies_to": "both",
+                  "source_passage_id": "ziping:c046:p0006"
+                }
+              ],
+              "id": "salary-output-heavy",
+              "exception_of": "salary-output",
+              "overrides_roles": [
+                "正印",
+                "偏印"
+              ]
+            }
+          ],
+          "context_passage_ids": [
+            "ziping:c045:p0006"
+          ]
+        },
+        {
+          "id": "salary-mixed",
+          "title": "禄劫官杀并出取清",
+          "passage_id": "ziping:c046:p0007",
+          "sha256": "efb4db0b911a89d233be7799a52d3f20ebc76a7189678920102b36550bc4457e",
+          "quote": "祿劫而官煞並出，不論合煞留官，存官制煞，運喜傷食，比劫亦宜，印綬未爲良圖，財官亦非福運。",
+          "premises": [
+            {
+              "label": "本命明干见正官（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "正官"
+              ]
+            },
+            {
+              "label": "本命明干见七杀（事实不等于取用已成立）",
+              "predicate": "exposed_any",
+              "roles": [
+                "七杀"
+              ]
+            }
+          ],
+          "unresolved_conditions": [
+            "祿劫而官煞並出",
+            "不論合煞留官，存官制煞"
+          ],
+          "unresolved_condition_sources": [
+            {
+              "original_words": "祿劫而官煞並出",
+              "passage_id": "ziping:c046:p0007",
+              "sha256": "efb4db0b911a89d233be7799a52d3f20ebc76a7189678920102b36550bc4457e",
+              "needed_evidence": "结合月令、透藏、位置、成败救应核明实际取用；共现事实不能替代。",
+              "state": "unknown"
+            },
+            {
+              "original_words": "不論合煞留官，存官制煞",
+              "passage_id": "ziping:c046:p0007",
+              "sha256": "efb4db0b911a89d233be7799a52d3f20ebc76a7189678920102b36550bc4457e",
+              "needed_evidence": "具体取清目的、合与制作用均须核；不得用角色共现替代。",
+              "state": "unknown"
+            }
+          ],
+          "effects": [
+            {
+              "roles": [
+                "食神",
+                "伤官"
+              ],
+              "verdict": "favoured",
+              "words": "運喜傷食",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0007"
+            },
+            {
+              "roles": [
+                "比肩",
+                "劫财"
+              ],
+              "verdict": "favoured",
+              "words": "比劫亦宜",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0007"
+            },
+            {
+              "roles": [
+                "正印",
+                "偏印"
+              ],
+              "verdict": "unpromising",
+              "words": "印綬未爲良圖",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0007"
+            },
+            {
+              "roles": [
+                "正财",
+                "偏财",
+                "正官"
+              ],
+              "verdict": "avoided",
+              "words": "財官亦非福運",
+              "applies_to": "both",
+              "source_passage_id": "ziping:c046:p0007"
+            }
+          ],
+          "branches": [],
+          "context_passage_ids": [
+            "ziping:c045:p0007"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "family_id": "wealth",
-   "title": "财",
-   "chapter": "ziping:c034",
-   "scenarios": [
+  ],
+  "notes": [
     {
-     "id": "wealth-officer",
-     "title": "财旺生官",
-     "passage_id": "ziping:c034:p0002",
-     "sha256": "b769ad6fd1d9f75d913e4457172bc497b09ef1dfa5bb2a9840138ba0d924290c",
-     "quote": "其財旺生官者，運喜身旺印緩，不利七煞傷官；若生官而復透印，傷官之地，不甚有害。至於生官而帶食破局，則運喜印綬，而逢煞反吉矣。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "正官透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正官"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "比肩",
-        "劫财",
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "運喜身旺印緩"
-      },
-      {
-       "roles": [
-        "七杀",
-        "伤官"
-       ],
-       "verdict": "avoided",
-       "words": "不利七煞傷官"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "computed",
-       "condition": "生官而復透印",
-       "predicate": "exposed_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ],
-       "effects": [
-        {
-         "roles": [
-          "伤官"
-         ],
-         "verdict": "harmless",
-         "words": "傷官之地，不甚有害"
-        }
-       ]
-      },
-      {
-       "kind": "computed",
-       "condition": "生官而帶食破局",
-       "predicate": "exposed_any",
-       "roles": [
-        "食神"
-       ],
-       "effects": [
-        {
-         "roles": [
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "運喜印綬"
-        },
-        {
-         "roles": [
-          "七杀"
-         ],
-         "verdict": "favoured",
-         "words": "逢煞反吉"
-        }
-       ]
-      }
-     ]
+      "id": "N0",
+      "passage_id": "ziping:c032:p0002",
+      "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
+      "quote": "若官露而不可逢合、不可雜煞、不可重官與地支刑沖，不問所就何局，皆不利也。"
     },
     {
-     "id": "wealth-food",
-     "title": "财用食生",
-     "passage_id": "ziping:c034:p0003",
-     "sha256": "c1a384aef29c12376b4bebeb1299eb809705833652a640d91b19ad6492e4b61d",
-     "quote": "財用食生，財食重而身輕，則喜助身；財食輕而身重，則仍行財食，煞運不忌，官運反晦矣。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "食神可见",
-       "predicate": "present_any",
-       "roles": [
-        "食神"
-       ]
-      },
-      {
-       "label": "正官不透",
-       "predicate": "exposed_none",
-       "roles": [
-        "正官"
-       ]
-      }
-     ],
-     "effects": [],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "財食重而身輕",
-       "effects": [
-        {
-         "roles": [
-          "比肩",
-          "劫财",
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "喜助身"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "財食輕而身重",
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财",
-          "食神"
-         ],
-         "verdict": "favoured",
-         "words": "仍行財食"
-        },
-        {
-         "roles": [
-          "七杀"
-         ],
-         "verdict": "harmless",
-         "words": "煞運不忌"
-        },
-        {
-         "roles": [
-          "正官"
-         ],
-         "verdict": "avoided",
-         "words": "官運反晦"
-        }
-       ]
-      }
-     ]
+      "id": "N1",
+      "passage_id": "ziping:c025:p0004",
+      "sha256": "2d33fafa01d9d585cfd309713f9f134b639349fa14e01868ea274a8737a2a3ed",
+      "quote": "如官逢印運，而本命有合"
     },
     {
-     "id": "wealth-seal",
-     "title": "财格佩印",
-     "passage_id": "ziping:c034:p0004",
-     "sha256": "2b2a268cbf66bdb1e72c129f276ca8a8ace00c2fa2b38ead9132dd641ec38fa4",
-     "quote": "財格佩印，運喜官鄉；身弱逢之，最喜印旺。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "印可见",
-       "predicate": "present_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正官"
-       ],
-       "verdict": "favoured",
-       "words": "運喜官鄉"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "身弱",
-       "effects": [
-        {
-         "roles": [
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "最喜印旺"
-        }
-       ]
-      }
-     ]
+      "id": "N2",
+      "passage_id": "ziping:c025:p0005",
+      "sha256": "01814aa7ff0e0a614b8bb184a8e35bc54a3139b223f6982c9dc65690fbe7d89b",
+      "quote": "如官逢傷運，而命透印；財行煞運，而命透食之類是也。"
     },
     {
-     "id": "wealth-food-seal",
-     "title": "财用食印",
-     "passage_id": "ziping:c034:p0005",
-     "sha256": "655795ed5ea0854bd80a8738edcb095a3e0bbad40940fb3f953b7a5cf87a6c9f",
-     "quote": "財用食印，財輕則喜財食，身輕則喜比印，官運亦礙，煞反不忌也。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "食神可见",
-       "predicate": "present_any",
-       "roles": [
-        "食神"
-       ]
-      },
-      {
-       "label": "印可见",
-       "predicate": "present_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正官"
-       ],
-       "verdict": "avoided",
-       "words": "官運亦礙"
-      },
-      {
-       "roles": [
-        "七杀"
-       ],
-       "verdict": "harmless",
-       "words": "煞反不忌"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "財輕",
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财",
-          "食神"
-         ],
-         "verdict": "favoured",
-         "words": "喜財食"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "身輕",
-       "effects": [
-        {
-         "roles": [
-          "比肩",
-          "劫财",
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "喜比印"
-        }
-       ]
-      }
-     ]
+      "id": "N3",
+      "passage_id": "ziping:c025:p0010",
+      "sha256": "19d31e95c9f3f699587549f7501ae35554f346d7c976f54097df679f2dbc9b95",
+      "quote": "沖年月則急，沖時日則緩也。"
     },
     {
-     "id": "wealth-hurt",
-     "title": "财带伤官",
-     "passage_id": "ziping:c034:p0006",
-     "sha256": "3ba319c8e5096ae7055d499401f43de85fcc136fa159280009c540032e8b8552",
-     "quote": "財帶傷官，財運則亨，煞運不利，運行官印，未見其美矣。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "伤官可见",
-       "predicate": "present_any",
-       "roles": [
-        "伤官"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "favoured",
-       "words": "財運則亨"
-      },
-      {
-       "roles": [
-        "七杀"
-       ],
-       "verdict": "avoided",
-       "words": "煞運不利"
-      },
-      {
-       "roles": [
-        "正官",
-        "正印",
-        "偏印"
-       ],
-       "verdict": "unpromising",
-       "words": "未見其美"
-      }
-     ]
-    },
-    {
-     "id": "wealth-kill",
-     "title": "财带七煞",
-     "passage_id": "ziping:c034:p0007",
-     "sha256": "781f3318f98a0decc353d11d51caea2769b110e0f6812b5e5f6beebc07eb23ce",
-     "quote": "財帶七煞，不論合煞制煞，運喜食傷身旺之方。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "七杀可见",
-       "predicate": "present_any",
-       "roles": [
-        "七杀"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "食神",
-        "伤官",
-        "比肩",
-        "劫财"
-       ],
-       "verdict": "favoured",
-       "words": "運喜食傷身旺之方"
-      }
-     ]
-    },
-    {
-     "id": "wealth-kill-seal",
-     "title": "财用煞印",
-     "passage_id": "ziping:c034:p0008",
-     "sha256": "5aacc4f01b39a24b75c44b6b9f2124bec3f148f6c22ec740d2cb25c4e3069d25",
-     "quote": "財用煞印，印旺最宜，逢財必忌。傷食之方，亦順意矣。",
-     "premises": [
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "七杀可见",
-       "predicate": "present_any",
-       "roles": [
-        "七杀"
-       ]
-      },
-      {
-       "label": "印可见",
-       "predicate": "present_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "印旺最宜"
-      },
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "avoided",
-       "words": "逢財必忌"
-      },
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "favoured",
-       "words": "亦順意"
-      }
-     ]
+      "id": "N4",
+      "passage_id": "ziping:c025:p0011",
+      "sha256": "38dee93e00ac444d7d1d79801cbc14f7c08d9d841d27086c8fca99e36a67d5f1",
+      "quote": "運本美而逢沖則輕，運既忌而又沖則重也。"
     }
-   ]
-  },
-  {
-   "family_id": "hurt",
-   "title": "伤官",
-   "chapter": "ziping:c042",
-   "scenarios": [
+  ],
+  "source_policy": "原句与冻结哈希验证；身强弱、用法、句法分歧和作用去留不自动成立。支仅按本气召回，合冲会化另核。",
+  "introductions": [
     {
-     "id": "hurt-wealth",
-     "title": "伤官用财",
-     "passage_id": "ziping:c042:p0002",
-     "sha256": "cc5619ac438cc0c994f1e20ee70d24909f54c3cd801e44ebfa3ce7800ad51f5b",
-     "quote": "傷官用財，財旺身輕，則利印比；身强財淺，則喜財運，傷官亦宜。",
-     "premises": [
-      {
-       "label": "伤官可见",
-       "predicate": "present_any",
-       "roles": [
-        "伤官"
-       ]
-      },
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      }
-     ],
-     "effects": [],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "財旺身輕",
-       "effects": [
-        {
-         "roles": [
-          "正印",
-          "偏印",
-          "比肩",
-          "劫财"
-         ],
-         "verdict": "favoured",
-         "words": "利印比"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "身强財淺",
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财"
-         ],
-         "verdict": "favoured",
-         "words": "喜財運"
-        },
-        {
-         "roles": [
-          "伤官"
-         ],
-         "verdict": "favoured",
-         "words": "傷官亦宜"
-        }
-       ]
-      }
-     ]
+      "passage_id": "ziping:c036:p0001",
+      "sha256": "3c6a7f4dfd11994369c05af3f645787506e7469e3fdfdd8278899c73be25207d",
+      "quote": "印格取運，即以印格所成之局，分而配之。",
+      "purpose": "method_gate",
+      "handling": "按所成之局分配，约束候选不能当定格；无独立 effect。"
     },
     {
-     "id": "hurt-seal",
-     "title": "伤官佩印",
-     "passage_id": "ziping:c042:p0003",
-     "sha256": "597bf7271bcb9d941efc7bb147dbeeae61a93fad42ff8467061697d14db74dbe",
-     "quote": "傷官佩印，運行官煞爲宜，印運亦吉，傷食不礙，財地則凶。",
-     "premises": [
-      {
-       "label": "伤官可见",
-       "predicate": "present_any",
-       "roles": [
-        "伤官"
-       ]
-      },
-      {
-       "label": "印可见",
-       "predicate": "present_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正官",
-        "七杀"
-       ],
-       "verdict": "favoured",
-       "words": "運行官煞爲宜"
-      },
-      {
-       "roles": [
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "印運亦吉"
-      },
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "harmless",
-       "words": "傷食不礙"
-      },
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "avoided",
-       "words": "財地則凶"
-      }
-     ]
+      "passage_id": "ziping:c038:p0001",
+      "sha256": "2a9879a833428a97a40b89f990e1b3bf8cca5c5c18b586216bce0a9f03a44a41",
+      "quote": "食神取運，即以食神所成之局，分而配之。",
+      "purpose": "method_gate",
+      "handling": "按所成之局分配，约束候选不能当定格；无独立 effect。"
     },
     {
-     "id": "hurt-wealth-seal",
-     "title": "伤官兼用财印",
-     "passage_id": "ziping:c042:p0004",
-     "sha256": "5fe3c9964a0c57a6d25213f651e244d1aae668d9630babb0ff9224704934887f",
-     "quote": "傷官兼用財印，其財多而帶印者，運喜助印；印多而帶財者，運喜助財。",
-     "premises": [
-      {
-       "label": "伤官可见",
-       "predicate": "present_any",
-       "roles": [
-        "伤官"
-       ]
-      },
-      {
-       "label": "财可见",
-       "predicate": "present_any",
-       "roles": [
-        "正财",
-        "偏财"
-       ]
-      },
-      {
-       "label": "印可见",
-       "predicate": "present_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "財多而帶印",
-       "effects": [
-        {
-         "roles": [
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "運喜助印"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "印多而帶財",
-       "effects": [
-        {
-         "roles": [
-          "正财",
-          "偏财"
-         ],
-         "verdict": "favoured",
-         "words": "運喜助財"
-        }
-       ]
-      }
-     ]
+      "passage_id": "ziping:c040:p0001",
+      "sha256": "eb223034c8d868b06d767e0a94aa481a6c56098580c07a528d30cf5da9e0c33c",
+      "quote": "偏官取運，即以偏官所成之局，分而配之。",
+      "purpose": "method_gate",
+      "handling": "按所成之局分配，约束候选不能当定格；无独立 effect。"
     },
     {
-     "id": "hurt-kill-seal",
-     "title": "伤官用煞印",
-     "passage_id": "ziping:c042:p0005",
-     "sha256": "eb7f84368aa07c156e9713904eedc10b698c76c2500e3a414101db61eb145b8c",
-     "quote": "傷官而用煞印，印運最利，傷食亦亨，雜官非吉，逢財即危。",
-     "premises": [
-      {
-       "label": "伤官可见",
-       "predicate": "present_any",
-       "roles": [
-        "伤官"
-       ]
-      },
-      {
-       "label": "七杀可见",
-       "predicate": "present_any",
-       "roles": [
-        "七杀"
-       ]
-      },
-      {
-       "label": "印可见",
-       "predicate": "present_any",
-       "roles": [
-        "正印",
-        "偏印"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "印運最利"
-      },
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "favoured",
-       "words": "傷食亦亨"
-      },
-      {
-       "roles": [
-        "正官"
-       ],
-       "verdict": "avoided",
-       "words": "雜官非吉"
-      },
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "avoided",
-       "words": "逢財即危"
-      }
-     ]
-    },
-    {
-     "id": "hurt-kill",
-     "title": "伤官带煞",
-     "passage_id": "ziping:c042:p0006",
-     "sha256": "9b85865e31e665b063994dae25645be9dd317aa3bccdc01dd1fbda909e3a7569",
-     "quote": "傷官帶煞，喜印忌財。然傷重煞輕，運喜印而財亦吉。惟七殺根重，則運喜傷食印綬，身旺亦吉，而逢財爲凶矣。",
-     "premises": [
-      {
-       "label": "伤官可见",
-       "predicate": "present_any",
-       "roles": [
-        "伤官"
-       ]
-      },
-      {
-       "label": "七杀可见",
-       "predicate": "present_any",
-       "roles": [
-        "七杀"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "喜印"
-      },
-      {
-       "roles": [
-        "正财",
-        "偏财"
-       ],
-       "verdict": "avoided",
-       "words": "忌財"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "傷重煞輕",
-       "effects": [
-        {
-         "roles": [
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "運喜印"
-        },
-        {
-         "roles": [
-          "正财",
-          "偏财"
-         ],
-         "verdict": "favoured",
-         "words": "財亦吉"
-        }
-       ]
-      },
-      {
-       "kind": "interpretive",
-       "condition": "七殺根重",
-       "effects": [
-        {
-         "roles": [
-          "食神",
-          "伤官",
-          "正印",
-          "偏印"
-         ],
-         "verdict": "favoured",
-         "words": "運喜傷食印綬"
-        },
-        {
-         "roles": [
-          "比肩",
-          "劫财"
-         ],
-         "verdict": "favoured",
-         "words": "身旺亦吉"
-        },
-        {
-         "roles": [
-          "正财",
-          "偏财"
-         ],
-         "verdict": "avoided",
-         "words": "逢財爲凶"
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "id": "hurt-officer",
-     "title": "伤官用官",
-     "passage_id": "ziping:c042:p0007",
-     "sha256": "9d518c6be13ef470cb72632f336be550f84533165e9a364ef41e883c1da43050",
-     "quote": "傷官用官，運喜財印，不利傷食。若局中官露而財印兩旺，則比劫傷官，未始非吉矣。",
-     "premises": [
-      {
-       "label": "正官透出",
-       "predicate": "exposed_any",
-       "roles": [
-        "正官"
-       ]
-      },
-      {
-       "label": "伤官不透",
-       "predicate": "exposed_none",
-       "roles": [
-        "伤官"
-       ]
-      }
-     ],
-     "effects": [
-      {
-       "roles": [
-        "正财",
-        "偏财",
-        "正印",
-        "偏印"
-       ],
-       "verdict": "favoured",
-       "words": "運喜財印"
-      },
-      {
-       "roles": [
-        "食神",
-        "伤官"
-       ],
-       "verdict": "avoided",
-       "words": "不利傷食"
-      }
-     ],
-     "branches": [
-      {
-       "kind": "interpretive",
-       "condition": "局中官露而財印兩旺",
-       "effects": [
-        {
-         "roles": [
-          "比肩",
-          "劫财",
-          "伤官"
-         ],
-         "verdict": "harmless",
-         "words": "未始非吉"
-        }
-       ]
-      }
-     ]
+      "passage_id": "ziping:c046:p0001",
+      "sha256": "2dd43d42176e4de032d1e2be5670556472e77c5edec284708918e9fc70250416",
+      "quote": "祿劫取運，即以祿劫所成之局，分而配之。",
+      "purpose": "method_gate",
+      "handling": "按所成之局分配，约束候选不能当定格；无独立 effect。"
     }
-   ]
-  }
- ],
- "notes": [
-  {
-   "id": "N0",
-   "passage_id": "ziping:c032:p0002",
-   "sha256": "53c25c334fd3462afaf04e9de350091d5006cdfd591204374fee330d8dd4294c",
-   "quote": "若官露而不可逢合、不可雜煞、不可重官與地支刑沖，不問所就何局，皆不利也。"
-  },
-  {
-   "id": "N1",
-   "passage_id": "ziping:c025:p0004",
-   "sha256": "2d33fafa01d9d585cfd309713f9f134b639349fa14e01868ea274a8737a2a3ed",
-   "quote": "如官逢印運，而本命有合"
-  },
-  {
-   "id": "N2",
-   "passage_id": "ziping:c025:p0005",
-   "sha256": "01814aa7ff0e0a614b8bb184a8e35bc54a3139b223f6982c9dc65690fbe7d89b",
-   "quote": "如官逢傷運，而命透印；財行煞運，而命透食之類是也。"
-  },
-  {
-   "id": "N3",
-   "passage_id": "ziping:c025:p0010",
-   "sha256": "19d31e95c9f3f699587549f7501ae35554f346d7c976f54097df679f2dbc9b95",
-   "quote": "沖年月則急，沖時日則緩也。"
-  },
-  {
-   "id": "N4",
-   "passage_id": "ziping:c025:p0011",
-   "sha256": "38dee93e00ac444d7d1d79801cbc14f7c08d9d841d27086c8fca99e36a67d5f1",
-   "quote": "運本美而逢沖則輕，運既忌而又沖則重也。"
-  }
- ]
+  ]
 }

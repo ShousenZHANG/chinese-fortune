@@ -141,7 +141,7 @@ HIDDEN_STEMS: dict[str, list[str]] = {
 # echoes it in its JSON envelope.
 # --------------------------------------------------------------------------- #
 
-__version__ = "5.9.1"
+__version__ = "5.10.0"
 
 
 # --------------------------------------------------------------------------- #
@@ -359,14 +359,15 @@ def ensure_utf8_stdio() -> None:
             pass
 
 
-def json_print(obj: object) -> None:
+def json_print(obj: object, *, compact: bool = False) -> None:
     """Pretty-print an object as UTF-8 JSON to stdout.
 
     Forces UTF-8 output regardless of platform console codepage — this lets
     Chinese characters and rare symbols (e.g. trigram lines ✕○) survive
     Windows GBK consoles. Callers can still redirect to files safely.
     """
-    payload = json.dumps(obj, ensure_ascii=False, indent=2, default=str)
+    payload = json.dumps(obj, ensure_ascii=False, indent=None if compact else 2,
+                         separators=(',', ':') if compact else None, default=str)
     # Reconfigure stdout to UTF-8 if possible (Python 3.7+); fall back to
     # writing raw bytes via the underlying buffer.
     try:

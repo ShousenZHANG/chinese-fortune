@@ -34,6 +34,10 @@ omit = ["scripts/lunar_python/*", "scripts/tzdata/*"]
 sigterm = true
 
 [tool.coverage.report]
+# Keep the same vendored exclusions when discovering unexecuted source files
+# for reports, including Windows path/case normalization. Project code and evals
+# remain in the combined denominator; the 80% gate is unchanged.
+omit = ["*/scripts/lunar_python/*", "*/scripts/tzdata/*"]
 fail_under = 80
 precision = 1
 

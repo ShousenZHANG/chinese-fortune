@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RULES = json.loads((ROOT / 'assets' / 'luck_rules.json').read_text(encoding='utf-8'))
 ROLES = {'比肩', '劫财', '食神', '伤官', '偏财', '正财', '七杀', '正官', '偏印', '正印'}
 VERDICTS = {'favoured', 'avoided', 'harmless', 'unpromising'}
-PREDICATES = {'present_any', 'exposed_any', 'exposed_none', 'combines', 'exposed_count_at_least'}
+PREDICATES = {'present_any', 'exposed_any', 'exposed_none', 'combines', 'exposed_count_at_least', 'yang_blade_present'}
 
 
 def _scenarios():
@@ -21,9 +21,9 @@ def _effects(s):
     return s.get('effects', []) + [e for b in s.get('branches', []) for e in b['effects']]
 
 
-def test_only_the_first_batch_is_connected():
-    assert [f['family_id'] for f in RULES['families']] == ['officer', 'wealth', 'hurt']
-    assert [f['chapter'] for f in RULES['families']] == ['ziping:c032', 'ziping:c034', 'ziping:c042']
+def test_all_eight_families_are_connected():
+    assert [f['family_id'] for f in RULES['families']] == ['officer', 'wealth', 'hurt', 'seal', 'food', 'kill', 'blade', 'salary']
+    assert [f['chapter'] for f in RULES['families']] == [f'ziping:c{i:03}' for i in (32, 34, 42, 36, 38, 40, 44, 46)]
 
 
 @pytest.mark.parametrize('scenario', _scenarios(), ids=lambda s: s['id'])
@@ -33,7 +33,9 @@ def test_every_quote_is_the_frozen_text_and_every_verdict_is_in_it(scenario):
     assert scenario['quote'] in passage['text']
     for effect in _effects(scenario):
         assert effect['verdict'] in VERDICTS
-        assert effect['words'] in scenario['quote'], (scenario['id'], effect['words'])
+        effect_source = get_passage(effect.get('source_passage_id', scenario['passage_id']))
+        assert effect['words'] in effect_source['text'], (scenario['id'], effect['words'])
+        assert effect.get('applies_to', 'both') in ('stem', 'branch', 'both')
         assert set(effect.get('roles', [])) <= ROLES and set(effect.get('combines_natal', [])) <= ROLES
         assert effect.get('roles') or effect.get('combines_natal')
     for premise in scenario['premises'] + [b for b in scenario.get('branches', []) if b.get('predicate')]:
@@ -42,13 +44,21 @@ def test_every_quote_is_the_frozen_text_and_every_verdict_is_in_it(scenario):
     for branch in scenario.get('branches', []):
         assert branch['kind'] in ('computed', 'interpretive')
         assert branch['kind'] == 'interpretive' or branch.get('predicate')
+        if 'passage_id' in branch:
+            source = get_passage(branch['passage_id'])
+            assert source['sha256'] == branch['sha256'] and branch['quote'] in source['text']
+    for source in scenario.get('unresolved_condition_sources', []):
+        passage = get_passage(source['passage_id'])
+        assert passage['sha256'] == source['sha256'] and source['original_words'] in passage['text']
 
 
-def test_every_luck_paragraph_of_the_three_chapters_has_a_scenario():
-    """All but each chapter's general remarks (c032 p0001 p0007, c034 p0001, c042 p0001)."""
-    used = {s['passage_id'] for s in _scenarios()}
+def test_every_substantive_paragraph_of_the_eight_chapters_has_a_scenario_or_exception():
+    used = {s['passage_id'] for s in _scenarios()} | {
+        b['passage_id'] for s in _scenarios() for b in s.get('branches', []) if 'passage_id' in b}
     expected = ({f'ziping:c032:p{i:04}' for i in range(2, 7)} | {f'ziping:c034:p{i:04}' for i in range(2, 9)}
                 | {f'ziping:c042:p{i:04}' for i in range(2, 8)})
+    expected |= {f'ziping:c{c:03}:p{i:04}' for c, start, end in
+                 ((36, 2, 10), (38, 2, 7), (40, 2, 8), (44, 1, 4), (46, 2, 8)) for i in range(start, end)}
     assert used == expected
 
 
@@ -74,7 +84,7 @@ def test_a_hurt_officer_chart_in_the_ji_you_cycle():
     reading = assess_luck(HURT_CHART, JI_YOU)
     assert reading['status'] == 'assessed'
     assert {s['id'] for s in reading['scenarios']} == {'hurt-seal', 'hurt-kill-seal', 'hurt-kill', 'hurt-officer'}
-    assert reading['summary'] == {'stem': 'favoured', 'branch': 'conditional'}
+    assert reading['summary'] == {'stem': 'conditional', 'branch': 'conditional'}
     assert reading['scenarios'][0]['branch']['via'] == '本气辛'
     assert {f['family_id']: f['connected'] for f in reading['families']} == {'hurt': True}
 
@@ -84,11 +94,12 @@ def test_a_missing_hour_or_cycle_gives_no_verdict():
     assert assess_luck(HURT_CHART, {'status': 'birth_time_required'})['status'] == 'unavailable'
 
 
-def test_a_family_not_yet_connected_is_said_so():
-    """甲 in 子: 癸 is 正印, the seal family, whose chapter is not in this batch."""
+def test_a_seal_family_now_reaches_its_own_luck_chapter():
+    """甲 in 子: 癸 is 正印; the formerly unconnected family now has source-backed candidates."""
     reading = assess_luck(_chart('甲子', '丙子', '甲寅', '甲子'), {'ganzhi': '丁丑', 'start_year': 2020, 'end_year': 2029})
-    assert reading['status'] == 'assessed' and not reading['scenarios']
-    assert reading['families'][0]['connected'] is False
+    assert reading['status'] == 'assessed' and reading['scenarios']
+    assert reading['families'][0]['connected'] is True
+    assert all(s['passage_id'].startswith('ziping:c036:') for s in reading['scenarios'])
 
 
 def test_a_computed_branch_overrides_the_general_sentence():
@@ -118,14 +129,27 @@ def test_robbery_combining_the_killer_is_computed():
 
 
 def test_conflicting_candidates_are_mixed_not_chosen():
-    """伤官佩印 says 「財地則凶」, 伤官用财's strong-body branch 「喜財運」: a wealth cycle is
-    avoided in one and only conditional in the other, so the summary keeps the definite one;
-    two definite opposite verdicts would be mixed."""
+    """An unresolved contrary exception must survive both JSON and the short answer."""
     from luck_assessment import _summarise
     assert _summarise([['favoured'], ['avoided']], []) == 'mixed'
-    assert _summarise([['favoured'], ['favoured']], [['avoided']]) == 'favoured'
+    assert _summarise([['favoured'], ['favoured']], [['avoided']]) == 'conditional'
     assert _summarise([], [['favoured']]) == 'conditional'
     assert _summarise([], []) == 'not_mentioned'
+
+
+def test_conditional_exception_and_base_both_reach_the_user():
+    from luck_assessment import luck_paragraph
+    chart = _chart('丙寅', '癸子', '甲午', '戊辰')
+    registry = {'families': [{'family_id': 'seal', 'scenarios': [{
+        'id': 'seal-wealth', 'title': '印绶用财', 'passage_id': 'ziping:c036:p0004',
+        'quote': '印綬用財', 'premises': [],
+        'effects': [{'roles': ['正财'], 'verdict': 'favoured', 'words': '印綬用財'}],
+        'branches': [{'kind': 'interpretive', 'condition': '印轻', 'effects': [
+            {'roles': ['正财'], 'verdict': 'avoided', 'words': '印轻不宜财'}]}]}]}], 'notes': []}
+    reading = assess_luck(chart, {'ganzhi': '己酉'}, registry)
+    assert reading['summary']['stem'] == 'conditional'
+    text = luck_paragraph(reading)
+    assert '印轻' in text and '喜' in text and '忌' in text and '没判' in text
 
 
 def test_a_clash_with_the_year_or_month_is_urgent_with_the_day_or_hour_mild():
@@ -162,7 +186,7 @@ def test_the_paragraph_says_the_cycle_the_agreement_and_the_limits():
     from luck_assessment import luck_paragraph
     text = luck_paragraph(assess_luck(HURT_CHART, JI_YOU))
     assert text.startswith('你现在走的己酉运（2020–2029）')
-    assert '几种可能的配法都算喜' in text and '「印運亦吉」' in text
+    assert '几种可能的配法都算喜' not in text and '「印運亦吉」' in text
     assert '看条件' in text and '按本气辛' in text
     assert '十年一个说法，不细到每天' in text and '逐日吉凶仍按出生年相主' in text
 
@@ -172,13 +196,13 @@ def test_a_sentence_shared_by_the_stem_and_the_branch_is_quoted_once():
     from luck_assessment import luck_paragraph
     reading = assess_luck(_chart('丁丑', '戊申', '甲午', '己巳'), {'ganzhi': '乙巳', 'start_year': 2021, 'end_year': 2030})
     text = luck_paragraph(reading)
-    assert text.count('「運喜食傷身旺之方」') == 1 and '理由同上，另有「亦順意」' in text
+    assert text.count('「運喜食傷身旺之方」') == 1 and '「亦順意」' in text and '同上句' in text
 
 
 def test_the_paragraph_for_an_unconnected_family_or_missing_hour():
     from luck_assessment import luck_paragraph
     seal = assess_luck(_chart('甲子', '丙子', '甲寅', '甲子'), {'ganzhi': '丁丑', 'start_year': 2020, 'end_year': 2029})
-    assert '取运章还没接入' in luck_paragraph(seal)
+    assert '取运章还没接入' not in luck_paragraph(seal) and '没判' in luck_paragraph(seal)
     gone = assess_luck(_chart('丁丑', '壬子', '庚午', '丙子', hour_known=False), JI_YOU)
     assert luck_paragraph(gone).startswith('这步大运的喜忌这次给不出：出生时辰未知')
 

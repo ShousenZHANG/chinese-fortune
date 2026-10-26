@@ -26,7 +26,7 @@ from wuxing_colours import aspects_asked
 
 FENGSHUI_WORDS = ('风水', '朝向', '坐向', '摆放', '床头', '办公桌', '大门', '户型', '摆件')
 ALMANAC_WORDS = ('黄历', '皇历', '老黄历', '通书', '宜忌', '宜什么', '忌什么', '黄道吉时')
-NATAL_WORDS = ('命局', '八字', '命盘', '性格', '一生', '命好不好', '格局', '日主', '适合什么', '适合做',
+NATAL_WORDS = ('命局', '八字', '四柱', '命盘', '性格', '一生', '命好不好', '格局', '日主', '适合什么', '适合做',
                '事业', '财运', '婚姻', '感情')
 # Asking which day, month or year is good or bad (for the person).
 DAY_WORDS = ('哪天', '哪几天', '哪一天', '几号', '日子', '吉日', '好日子', '凶日', '黄道吉日', '运势', '运气',
@@ -100,7 +100,100 @@ def _period(question: str) -> str | None:
     return next((word for word in PERIOD_WORDS if word in question), None)
 
 
-BIRTH = '出生年月日与出生地（时辰可缺；立春前后出生需有时刻才能定年柱）'
+BIRTH = '出生年月日、性别与出生地（时辰可缺；立春前后出生需有时刻才能定年柱）'
+
+BAZI_COMMAND = ('python scripts/bazi_reading.py --year Y --month M --day D '
+                '[--hour H --minute m] --gender G --city 出生地 --question "<原话>" --view compact')
+
+
+def _reference_time_needs(text: str) -> list[str]:
+    if any(word in text for word in ('大运', '流年', '今年', '明年', '运势', '这几年')):
+        return ['参考年份，或现居地时区与本次请求时间；已有的直接复用']
+    return []
+
+
+def _named_methods(text: str) -> list[dict]:
+    """Concrete entry points for explicitly requested systems, in mention order."""
+    # Avoid known place names without hiding the bare method names in a list.
+    text = re.sub(r'紫微(?:城|路|街)|梅花(?:山|糕|鹿|园)', '', text)
+    definitions = [
+        (('八字', '四柱'), 'bazi', 'bazi_reading.py', '01-bazi.md', BAZI_COMMAND, [BIRTH]),
+        (('紫微', '斗数'), 'ziwei', 'ziwei_calc.py', '02-ziwei.md',
+         'python scripts/ziwei_calc.py --year Y --month M --day D --hour H --minute m --gender G --city 出生地',
+         ['出生日期、历法、时分、性别和出生地；时辰未知先比较候选，不补子时']),
+        (('梅花',), 'meihua', 'meihua_cast.py', '05-meihua.md',
+         'python scripts/meihua_cast.py --current-timezone 现居地时区 --request-time 本次UTC time --question "<原话>"',
+         ['起卦方式（时间、数字或字数），复用本次请求时刻与现居地时区']),
+        (('六爻',), 'liuyao', 'liuyao_cast.py', '04-liuyao.md',
+         'python scripts/liuyao_cast.py coins --current-timezone 现居地时区 --request-time 本次UTC --question "<原话>"',
+         ['问题、起卦方式与原始投掷（已有结果不重起），占问时刻和时区']),
+        (('周易', '易经'), 'yijing', 'yijing_cast.py', '03-yijing.md',
+         'python scripts/yijing_cast.py time --current-timezone 现居地时区 --request-time 本次UTC --question "<原话>"',
+         ['问题和起卦方式；时间法复用请求时刻，已有卦象直接复用']),
+        (('奇门',), 'qimen', 'qimen_cast.py', '06-qimen.md',
+         'python scripts/qimen_cast.py --current-timezone 现居地时区 --request-time 本次UTC',
+         ['事件、占问时刻/时区和地点；沿用已确认方法']),
+        (('大六壬', '六壬'), 'liuren', 'liuren_cast.py', '07-daliuren.md',
+         'python scripts/liuren_cast.py --current-timezone 现居地时区 --request-time 本次UTC',
+         ['事件、占问时刻/时区和地点']),
+        (('塔罗',), 'tarot', 'tarot_draw.py', '18-tarot.md',
+         'python scripts/tarot_draw.py one --question "<原话>"',
+         ['问题与牌阵；已有抽牌直接复用，不因展开详情重新抽牌']),
+    ]
+    found = []
+    for words, method, script, reference, command, needs in definitions:
+        if method == 'liuren' and '小六壬' in text and '大六壬' not in text:
+            continue
+        positions = [text.index(word) for word in words if word in text]
+        if positions:
+            if method in ('bazi', 'ziwei'):
+                needs = [*needs, *_reference_time_needs(text)]
+            found.append((min(positions), {'method': method, 'script': 'scripts/' + script,
+                                          'reference': 'references/' + reference,
+                                          'command': command, 'needs': needs}))
+    return [item for _, item in sorted(found, key=lambda item: item[0])]
+
+
+def _knowledge_only(text: str) -> bool:
+    terms = ('正官', '伤官', '十神', '日主', '格局', '用神', '八字', '四柱', '大运', '流年', '透干', '藏干',
+             '紫微', '命宫', '身宫', '六爻', '世应', '体用', '梅花', '奇门', '六壬', '塔罗', '周易', '易经')
+    definition = ('解释', '什么意思', '是什么', '定义', '区别', '怎么理解', '术语')
+    without_person = text.replace('不分析我', '').replace('不用分析我', '')
+    without_person = re.sub(r'(?:帮我|给我)(?=解释)', '', without_person)
+    # A concrete chart or a possessor requests analysis, not a glossary entry.
+    if re.search(r'(?:这|那|该)(?:张|个|份|副)?(?:八字|四柱|命盘)', text):
+        return False
+    for possessive in re.finditer(r'的(?=八字|四柱|格局|命宫|身宫|命盘)', text):
+        if not re.search(r'(?:八字|四柱|紫微斗数|紫微|斗数)$', text[:possessive.start()]):
+            return False
+    return (any(word in text for word in terms) and any(word in text for word in definition)
+            and not re.search(r'\d{4}[-年/]', text)
+            and not any(word in without_person for word in ('我', '本人', '我的', '出生', '生日', '孩子', '儿子', '女儿',
+                        '父亲', '母亲', '爸爸', '妈妈', '妻子', '丈夫', '男友', '女友', '朋友', '对象', '他的', '她的')))
+
+
+def _knowledge_route(text: str) -> dict:
+    named = _named_methods(text)
+    if not named and '小六壬' not in text:
+        inferred = ''.join(method for terms, method in (
+            (('命宫', '身宫'), '紫微'), (('世应',), '六爻'), (('体用',), '梅花'),
+            (('正官', '伤官', '十神', '日主', '格局', '用神', '大运', '流年', '透干', '藏干'), '八字'),
+        ) if any(term in text for term in terms))
+        named = _named_methods(inferred)
+    references = [m['reference'] for m in named] or ['references/21-extended-methods.md']
+    books = {'bazi': 'ziping', 'ziwei': 'ziwei', 'meihua': 'meihua',
+             'liuyao': 'zengshan', 'qimen': 'yuanling', 'liuren': 'liuren'}
+    book = books.get(named[0]['method']) if len(named) == 1 else None
+    return {'flow': 'knowledge', 'why': '只解释术语与依据，不需要个人生辰或当前时间',
+            'command': 'python scripts/classical_search.py --query "<所问术语>"' + (f' --book {book}' if book else ''),
+            'reference': references[0], 'references': references, 'needs': []}
+
+
+def _natal_route(text: str) -> dict:
+    needs = [BIRTH, *_reference_time_needs(text)]
+    return {'flow': 'natal', 'why': '问本命、格局或八字岁运，按相应粒度核对',
+            'script': 'scripts/bazi_reading.py', 'reference': 'references/01-bazi.md',
+            'command': BAZI_COMMAND, 'needs': needs}
 
 
 def route(question: str) -> dict:
@@ -117,11 +210,32 @@ def route(question: str) -> dict:
     if any(word in text for word in MEDICAL_WORDS):
         return {'flow': 'boundary', 'why': '涉及医疗，先按边界说明提供现实帮助',
                 'reference': 'references/20-disclaimer.md', 'needs': []}
+    if _knowledge_only(text):
+        return _knowledge_route(text)
     if any(word in text for word in FENGSHUI_WORDS):
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
-                'reference': 'references/24-personalized-forecast.md', 'needs': ['实际布局与测量']}
+                'reference': 'references/08-fengshui.md', 'needs': ['实际布局与测量']}
+    methods = _named_methods(text)
+    relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系'))
+    if relationship and (not methods or all(m['method'] in ('bazi', 'ziwei') for m in methods)):
+        chosen = methods or _named_methods('八字' + text)
+        return {'flow': 'compatibility', 'why': '分别核两方事实，各体系独立核跨盘条款，不混盘或给成功率',
+                'reference': 'references/14-hehun.md', 'combine_verdicts': False,
+                'subjects': ['A', 'B'],
+                'steps': [{'subject': subject, **method} for subject in ('A', 'B') for method in chosen],
+                'needs': ['两方各自已确认的出生资料（各自保留未知时刻）', '关系类型与具体问题',
+                          *_reference_time_needs(text)]}
+    if len(methods) > 1:
+        return {'flow': 'multi_method', 'why': '各方法分别计算和解释，共用已确认资料，不合成命运分数',
+                'steps': methods, 'combine_verdicts': False,
+                'needs': list(dict.fromkeys(need for step in methods for need in step['needs']))}
+    if methods and methods[0]['method'] != 'bazi':
+        return {'flow': 'method', 'why': '按明确点名的方法计算，已有资料复用，只补必要缺项',
+                **methods[0]}
     if any(word in text for word in METHOD_WORDS):
         return {'flow': 'other', 'why': '点名了某种占法，按 SKILL.md 路由表用那一法的流程', 'needs': []}
+    if any(word in text for word in ('大运', '流年', '成格', '变格', '格局', '四柱', '日主')):
+        return _natal_route(text)
     aspects = aspects_asked(text)
     if aspects:
         return {'flow': 'wear_advice', 'aspects': aspects,
@@ -163,10 +277,7 @@ def route(question: str) -> dict:
                 'command': 'python scripts/fortune_reading.py --stdin --markdown', 'request': request,
                 'needs': needs}
     if any(word in text for word in NATAL_WORDS):
-        return {'flow': 'natal', 'why': '问命局本身',
-                'command': ('python scripts/bazi_reading.py --year Y --month M --day D [--hour H --minute m] '
-                            '--gender G --city 出生地 --current-timezone 现居地时区 --question "<原话>" --markdown'),
-                'needs': [BIRTH]}
+        return _natal_route(text)
     if any(word in text for word in FORTUNE_CUES):
         return {'flow': 'other', 'why': '带命理说法的问题，按 SKILL.md 路由表选术数方法；现实决策流程不接', 'needs': []}
     if practical or any(word in text for word in DECISION_WORDS):
@@ -183,8 +294,9 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     parser = argparse.ArgumentParser(
         description='把一句问话对到计算流程；只做路由，不算命盘',
-        epilog='Top-level JSON keys: ok tool version flow why needs [aspects command request kind reference]. '
-               'flow: wear_advice personal_days event_slots almanac natal specialist boundary life_guide other.')
+        epilog='Top-level JSON keys: ok tool version flow why needs [aspects command request kind reference method steps]. '
+               'flow: wear_advice personal_days event_slots almanac natal method multi_method knowledge '
+               'compatibility specialist boundary life_guide other.')
     parser.add_argument('--question', required=True, help='用户原话')
     args = parser.parse_args(argv)
     if not args.question.strip() or len(args.question) > 2000:

@@ -48,11 +48,14 @@ def test_a_withheld_colour_tells_the_host_not_to_recommend_it():
     assert '写回答时：' in render_facts(result)
 
 
-def test_an_unconnected_cycle_and_the_year_question_are_said():
+def test_newly_connected_cycle_stays_conditional_and_retains_the_year_question():
     from bazi_reading import host_notes
     result = prepare_reading(_chart(1980, 1, 8, 2, '--as-of-year', '2026'), '我现在这步大运是喜是忌？')
     notes = host_notes(result)
-    assert any('大运工具没判喜忌' in n for n in notes)
+    # This fixture was unsupported before the five remaining families were added.
+    assert result['luck_reading'][0]['status'] == 'assessed'
+    assert result['luck_reading'][0]['scenarios']
+    assert any('仍是候选' in n and '不能压成总吉凶' in n for n in notes)
     assert any('要问某一年，请用户说出年份' in n for n in notes)
 
 
@@ -80,7 +83,7 @@ def test_the_json_of_a_chart_and_a_decision_carries_the_notes():
     """39 of 61 bazi_reading calls in the second evaluation run read the JSON, not the draft."""
     from life_guide import decide
     result = prepare_reading(_chart(1980, 1, 8, 2, '--as-of-year', '2026'), '我现在这步大运是喜是忌？')
-    assert any('大运工具没判喜忌' in n for n in result['host_notes'])
+    assert any('仍是候选' in n and '不能压成总吉凶' in n for n in result['host_notes'])
     assert decide('失业了先做什么', {'current_timezone': 'Asia/Shanghai'})['host_notes']
 
 
@@ -111,3 +114,10 @@ def test_the_period_draft_explains_its_terms():
     sys.path.insert(0, str(ROOT / 'tests'))
     from test_answer_length import MOVING
     assert '术语：命禄——' in render_answer(read_request(MOVING))
+
+
+def test_hour_filter_scope_cannot_be_promoted_to_a_settled_taboo():
+    from fortune_reading import host_notes
+    result = {'ranking': {'tiers': [{'candidate_id': '周四', 'forbidden_hours_in_window': [{}]}], 'excluded': []}}
+    notes = host_notes(result)
+    assert any('周四' in n and '正犯' in n and '未核完' in n and '不能' in n for n in notes)

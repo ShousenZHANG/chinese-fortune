@@ -26,7 +26,7 @@ INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE",
                  "docs/OPTIONAL-TOOLS.md", "docs/CLASSICAL-SOURCES.md",
                  "docs/QIMEN-LIUREN-METHODS.md", "docs/BAZI-RULES.md", "docs/CONTENT-COVERAGE.md",
                  "docs/RELEASE-PROCESS.md", "docs/FACSIMILE-COLLATION.md",
-                 "docs/FACSIMILE-CANDIDATES.md", "docs/BAZI-TIME-METHOD.md"]
+                 "docs/FACSIMILE-CANDIDATES.md", "docs/BAZI-TIME-METHOD.md", "docs/MIGRATION-5.10.md"]
 INCLUDE_DIRS = ["references", "assets", "agents"]
 # Maintenance tools: they run from a checkout, never from the installed
 # package. Tests derive their own exemptions from this set rather than

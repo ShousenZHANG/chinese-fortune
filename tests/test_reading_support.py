@@ -135,17 +135,20 @@ def test_default_reading_envelope_can_be_reviewed_without_fabricating_a_chart(ch
     assert review_claims(broken, broken['reading_support'])
 
 
-def test_reading_cli_accepts_the_default_envelope(chart):
+@pytest.mark.parametrize('view', ['full', 'compact'])
+def test_reading_cli_accepts_both_envelopes(chart, view):
     import json
     import subprocess
     import sys
     from pathlib import Path
 
     from bazi_reading import prepare_reading
+    from reading_views import compact_reading
     reading = prepare_reading(chart)
+    submitted = compact_reading(reading) if view == 'compact' else reading
     result = subprocess.run([sys.executable, str(Path(__file__).resolve().parents[1] /
                             'scripts/reading_support.py'), '--stdin'],
-                            input=json.dumps({'chart': reading}, ensure_ascii=False),
+                            input=json.dumps({'chart': submitted}, ensure_ascii=False),
                             capture_output=True, text=True, encoding='utf-8')
     assert result.returncode == 0, result.stderr
     assert json.loads(result.stdout)['packet'] == reading['reading_support']

@@ -1421,6 +1421,13 @@ def host_notes(result: dict) -> list[str]:
         notes.append(f"最好的几天等级相同（{_dates(tied)}都是{best}），工具没排先后：不要说其中哪天最好，按用户的安排或偏好选。")
     if result.get('recommendation', {}).get('status') in ('practical_tie', 'preferences_required'):
         notes.append('候选时段之间工具没有给出首选，同一等级的按用户偏好选，不要说哪段最合适。')
+    ranking = result.get('ranking') or {}
+    conditional_hours = [row['candidate_id'] for row in ranking.get('tiers', []) + ranking.get('excluded', [])
+                         if row.get('forbidden_hours_in_window')]
+    if conditional_hours:
+        notes.append('、'.join(dict.fromkeys(conditional_hours))
+                     + '涉及截路空亡：只能说当前工具按表先筛除，并保留“正犯”适用条件未核完；'
+                     '不能省略限定后说这段一定忌用或必须避开。')
     for person in result.get('participants', []):
         for reading in person.get('luck_reading', []):
             if reading['status'] != 'assessed' or not reading.get('scenarios'):
@@ -1502,7 +1509,7 @@ def render_answer(result: dict, detail: bool = False) -> str:
             lines.append('《子平真诠·论行运》：“' + source['text'] + '”\n白话说：' + observation['plain_meaning'] + observation['plain_application'] + observation['limit'] + '\n出处：' + source['source_url'])
         if result.get('personal_calendar'):
             who = '你' if len(result['participants']) == 1 else person['id']
-            lines.extend(luck_paragraph(r, who) for r in person.get('luck_reading', []))
+            lines.extend(luck_paragraph(r, who, detail=detail) for r in person.get('luck_reading', []))
         lines.extend(annual_paragraph(r) for r in person.get('annual_reading', []))
     assessed = bool(result.get('personal_calendar')) and any(
         r['status'] == 'assessed' for p in result['participants'] for r in p.get('luck_reading', []))

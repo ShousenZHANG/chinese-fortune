@@ -115,7 +115,7 @@ def test_folk_divination_without_a_method_name_stays_out_of_the_workflow(questio
     ('八字缺火怎么办', 'natal'),
     ('结婚可以吗', 'personal_days'),              # the day flows' event words are not life words
     ('穿什么颜色旺我', 'wear_advice'),
-    ('用六爻看看试用期能不能转正', 'other'),       # a named method still wins
+    ('用六爻看看试用期能不能转正', 'method'),      # a named method now has a concrete tool
 ])
 def test_divination_keeps_priority_over_the_decision_workflow(question, flow):
     assert route(question)['flow'] == flow
@@ -160,13 +160,16 @@ def test_a_named_day_keeps_a_practical_question_a_day_question(question):
     assert any('period' in need for need in result['needs'])
 
 
-@pytest.mark.parametrize('question', ['帮我起一卦，押金能要回来吗', '用六爻看看试用期能不能转正',
-                                      '塔罗牌看裁员会不会轮到我', '奇门遁甲看租房合同签不签', '紫微斗数看明年运势',
-                                      '用周易算算押金能不能要回来', '摇个卦看看试用期能不能转正', '问卦：押金能要回来吗',
-                                      '求个签看裁员会不会轮到我', '星座看试用期能不能转正', '测字看看借条'])
-def test_a_named_divination_method_goes_to_that_method_not_a_new_flow(question):
+@pytest.mark.parametrize('question,flow', [
+    ('帮我起一卦，押金能要回来吗', 'other'), ('用六爻看看试用期能不能转正', 'method'),
+    ('塔罗牌看裁员会不会轮到我', 'method'), ('奇门遁甲看租房合同签不签', 'method'),
+    ('紫微斗数看明年运势', 'method'), ('用周易算算押金能不能要回来', 'method'),
+    ('摇个卦看看试用期能不能转正', 'other'), ('问卦：押金能要回来吗', 'other'),
+    ('求个签看裁员会不会轮到我', 'other'), ('星座看试用期能不能转正', 'other'), ('测字看看借条', 'other'),
+])
+def test_a_named_divination_method_goes_to_that_method_not_a_new_flow(question, flow):
     """The asker chose the method; neither the reference library nor 相主 answers it."""
-    assert route(question)['flow'] == 'other'
+    assert route(question)['flow'] == flow
 
 
 @pytest.mark.parametrize('question', ['房东不退押金可以吗', '试用期不交社保行不行', '借条这样写合适吗'])

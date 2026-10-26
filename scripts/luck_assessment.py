@@ -1,5 +1,5 @@
 
-"""Ten-year luck cycles judged by 《子平真诠》's own 取运 chapters (first batch: 正官, 财, 伤官).
+"""Ten-year luck candidates from all eight 《子平真诠》 取运 families.
 
 A cycle's stem and branch are matched against the sentences of each 配法 the
 chart's stems and storage allow (``assets/luck_rules.json``). Nothing here
@@ -13,7 +13,7 @@ import json
 from functools import cache
 from pathlib import Path
 
-from bazi_rules import evaluate_condition, family_candidates
+from bazi_rules import BLADE_MONTH, evaluate_condition, family_candidates
 from bazi_tables import DIZHI_CHONG, TIANGAN_HE
 from utils import HIDDEN_STEMS, TIANGAN_WUXING, shi_shen
 
@@ -43,6 +43,9 @@ def _exposed_roles(chart: dict) -> list[tuple[str, str]]:
 def _premise(chart: dict, premise: dict) -> str:
     """'met', 'not_met' or 'unknown' for one premise."""
     predicate = premise['predicate']
+    if predicate == 'yang_blade_present':
+        blade = BLADE_MONTH.get(chart['day_master']['stem'])
+        return 'met' if blade and any(p.get('branch') == blade for p in chart['four_pillars'].values()) else 'not_met'
     if predicate in ('present_any', 'exposed_any', 'exposed_none'):
         return evaluate_condition(chart, {'id': 'luck', 'label': premise.get('label', ''), 'kind': 'computed',
                                           'predicate': predicate, 'roles': premise['roles']})['state']
@@ -63,6 +66,20 @@ def _applies(effect: dict, role: str, char: str, chart: dict) -> bool:
     return bool(natal) and any(frozenset((char, s)) in TIANGAN_HE for s in natal)
 
 
+def _matches(effect: dict, role: str, char: str, chart: dict, is_stem: bool) -> bool:
+    part = 'stem' if is_stem else 'branch'
+    return (effect.get('applies_to', 'both') in ('both', part)
+            and (is_stem or not effect.get('combines_natal'))
+            and _applies(effect, role, char, chart))
+
+
+def _review_notes(effect: dict, branch: dict | None = None) -> dict:
+    notes = {k: v for source in (branch or {}, effect) for k, v in source.items()
+             if k in ('scope_interpretation', 'needed_evidence', 'interpretation', 'mapping_note',
+                      'mapping_review', 'action_target')}
+    return {'review': notes} if notes else {}
+
+
 def _verdicts(scenario: dict, role: str, char: str, chart: dict, is_stem: bool) -> list[dict]:
     """The scenario's sentences about this character: base effects, then branches.
 
@@ -71,6 +88,8 @@ def _verdicts(scenario: dict, role: str, char: str, chart: dict, is_stem: bool) 
     """
     found: list[dict] = []
     overridden: set[str] = set()
+    unresolved = scenario.get('unresolved_conditions', [])
+    base_condition = '；'.join(unresolved) or None
     for branch in scenario.get('branches', []):
         state = _premise(chart, branch) if branch.get('predicate') else 'unknown'
         if branch['kind'] == 'computed' and state != 'met':
@@ -78,29 +97,55 @@ def _verdicts(scenario: dict, role: str, char: str, chart: dict, is_stem: bool) 
         if branch['kind'] == 'interpretive' and branch.get('predicate') and state != 'met':
             continue
         for effect in branch['effects']:
-            if (is_stem or not effect.get('combines_natal')) and _applies(effect, role, char, chart):
-                kind = 'met' if branch['kind'] == 'computed' else 'interpretive'
+            if _matches(effect, role, char, chart, is_stem):
+                kind = 'met' if branch['kind'] == 'computed' and not unresolved else 'interpretive'
+                inherited = [c for c in unresolved if c not in branch.get('replaces_conditions', [])]
                 found.append({'verdict': effect['verdict'], 'words': effect['words'],
-                              'condition': branch['condition'], 'state': kind})
+                              'condition': '；'.join([*inherited, branch['condition']]),
+                              'state': kind,
+                              'passage_id': effect.get('source_passage_id', branch.get('passage_id', scenario['passage_id'])),
+                              **_review_notes(effect, branch)})
                 if kind == 'met':
                     overridden.add(role)
     for effect in scenario.get('effects', []):
-        if effect.get('combines_natal') and not is_stem:
-            continue
-        if _applies(effect, role, char, chart) and role not in overridden:
-            found.insert(0, {'verdict': effect['verdict'], 'words': effect['words'], 'condition': None,
-                             'state': 'met'})
+        if _matches(effect, role, char, chart, is_stem) and role not in overridden:
+            found.insert(0, {'verdict': effect['verdict'], 'words': effect['words'], 'condition': base_condition,
+                             'state': 'interpretive' if unresolved else 'met',
+                             'passage_id': effect.get('source_passage_id', scenario['passage_id']), **_review_notes(effect)})
     return found
+
+
+def _scenario_sources(scenario: dict) -> list[str]:
+    ids = [scenario['passage_id'], *scenario.get('context_passage_ids', [])]
+    ids.extend(s['passage_id'] for s in scenario.get('unresolved_condition_sources', []))
+    for branch in scenario.get('branches', []) + scenario.get('deferred_branches', []):
+        ids.append(branch.get('passage_id', scenario['passage_id']))
+    return list(dict.fromkeys(ids))
+
+
+def _pending_actions(scenario: dict) -> list[dict]:
+    actions = [dict(a) for a in scenario.get('action_effects', []) + scenario.get('action_constraints', [])]
+    for branch in scenario.get('branches', []):
+        actions.extend({**a, 'condition': branch['condition']} for a in branch.get('action_effects', []))
+    if scenario.get('deferred_branches'):
+        actions.append({'state': 'unknown', 'words': scenario['quote'],
+                        'needed_evidence': '原文称行运与食同；食制到伤官的作用映射须逐项复核',
+                        'source_passage_id': scenario['passage_id']})
+    return actions
 
 
 def _summarise(definite: list[list[str]], conditional: list[list[str]]) -> str:
     """One word for a character across all candidate scenarios."""
+    if any(conditional):
+        return 'conditional'
     verdicts = {v for group in definite for v in group}
+    if verdicts and any(not group for group in definite):
+        return 'partial'
     if len(verdicts) == 1:
         return verdicts.pop()
     if verdicts:
         return 'mixed'
-    return 'conditional' if any(conditional) else 'not_mentioned'
+    return 'not_mentioned'
 
 
 def _years(luck: dict) -> tuple[int | None, int | None]:
@@ -145,6 +190,9 @@ def assess_luck(chart: dict, luck: dict, registry: dict | None = None) -> dict:
             scenarios.append({
                 'id': scenario['id'], 'title': scenario['title'], 'family_id': family['family_id'],
                 'passage_id': scenario['passage_id'], 'quote': scenario['quote'], 'premises': premises,
+                'source_passage_ids': _scenario_sources(scenario),
+                'unresolved_conditions': scenario.get('unresolved_conditions', []),
+                'pending_actions': _pending_actions(scenario),
                 'stem': {'char': stem, 'role': stem_role,
                          'verdicts': _verdicts(scenario, stem_role, stem, chart, True)},
                 'branch': {'char': branch, 'via': f'本气{main}', 'role': branch_role,
@@ -153,7 +201,7 @@ def assess_luck(chart: dict, luck: dict, registry: dict | None = None) -> dict:
     for part in ('stem', 'branch'):
         definite = [[v['verdict'] for v in s[part]['verdicts'] if v['state'] == 'met'] for s in scenarios]
         open_ = [[v['verdict'] for v in s[part]['verdicts'] if v['state'] == 'interpretive'] for s in scenarios]
-        summary[part] = _summarise([d for d in definite if d], open_)
+        summary[part] = _summarise(definite, open_)
     start, end = _years(luck)
     reading = {'status': 'assessed', 'luck': {'ganzhi': ganzhi, 'start_year': start, 'end_year': end},
                'families': families, 'scenarios': scenarios, 'summary': summary,
@@ -227,18 +275,21 @@ def _part(reading: dict, part: str, seen: set[str]) -> str:
         if len(fresh) < len(words):
             shown = f"理由同上，另有{shown}" if fresh else '理由同上'
         return f"对{label}{lead}{WORD[summary]}（{shown}）"
-    if summary == 'mixed':
+    if summary in ('mixed', 'partial'):
         each = '；'.join(f"{s['title']}算{WORD[v['verdict']]}{_quoted(v['words'], seen)}" for s in scenarios
                         for v in s[part]['verdicts'] if v['state'] == 'met')
-        return f"对{label}几种配法说法不一：{each}"
+        scope = '几种配法说法不一' if summary == 'mixed' else '只有部分配法提到，不能汇总为共同喜忌'
+        return f"对{label}{scope}：{each}"
     if summary == 'conditional':
-        each = '；'.join(f"{s['title']}在「{v['condition']}」时算{WORD[v['verdict']]}{_quoted(v['words'], seen)}"
-                        for s in scenarios for v in s[part]['verdicts'] if v['state'] == 'interpretive')
+        each = '；'.join(
+            f"{s['title']}" + (f"待核条件（{v['condition']}）成立时" if v['condition'] else '按一般句') +
+            f"算{WORD[v['verdict']]}{_quoted(v['words'], seen)}"
+            for s in scenarios for v in s[part]['verdicts'])
         return f"对{label}要看条件：{each}，这些条件原文没给可计算的标准，这里没判"
     return f"对{label}这几种配法的取运句子都没提"
 
 
-def luck_paragraph(reading: dict, who: str = '你') -> str:
+def luck_paragraph(reading: dict, who: str = '你', *, detail: bool = True) -> str:
     """Layer 2 of a period or chart answer: one ten-year cycle, cited."""
     luck = reading['luck']
     if reading['status'] != 'assessed':
@@ -248,15 +299,33 @@ def luck_paragraph(reading: dict, who: str = '你') -> str:
     pending = [f['title'] for f in reading['families'] if not f['connected']]
     if not reading['scenarios']:
         connected = [f['title'] for f in reading['families'] if f['connected']]
-        body = (f"按月令{who}的盘是{'、'.join(connected)}格候选，但不属于已接入的配法。" if connected else
+        body = (f"按月令{who}的盘是{'、'.join(connected)}格候选，当前可见前提未匹配取运配法，喜忌未判；需核透藏与取用。" if connected else
                 f"按月令{who}的盘是{'、'.join(pending)}格候选，这一格的取运章还没接入，这步运的喜忌这次不判。")
         return head + body
+    if not detail:
+        sources = '、'.join(dict.fromkeys(s['passage_id'] for s in reading['scenarios']))
+        reasons = {'conditional': '解释条件或例外未决', 'mixed': '候选说法不一',
+                   'partial': '只有部分配法提到', 'not_mentioned': '原句未提该方向'}
+        pending_reasons = list(dict.fromkeys(reasons[v] for v in reading['summary'].values() if v in reasons))
+        limit = '、'.join(pending_reasons) or '最终配法尚须核月令、位置与制化'
+        return (head + f"取运核对有{len(reading['scenarios'])}种候选，{limit}，共同喜忌未判。"
+                f'各候选的条件、反向例外和原文可按需展开（《子平真诠》{sources}）。'
+                '这是十年一个说法，不细到每天；逐日吉凶仍按出生年相主。')
     titles = '、'.join(s['title'] for s in reading['scenarios'])
     family = '、'.join(dict.fromkeys(f['title'] for f in reading['families'] if f['connected']))
     seen: set[str] = set()
     text = (head + f"按《子平真诠》{family}取运：{who}的盘按能算的透藏有{len(reading['scenarios'])}种可能的配法——{titles}。"
             + _part(reading, 'stem', seen) + '；' + _part(reading, 'branch', seen) + '。')
     text += ''.join(f"{n['text']}（原文「{n['quote']}」，{n['passage_id']}）。" for n in reading.get('notes', []))
+    pending_actions = [a for s in reading['scenarios'] for a in s.get('pending_actions', [])]
+    if pending_actions:
+        text += '另有作用未判：' + '；'.join(dict.fromkeys(
+            f"{a['words']}（{a.get('needed_evidence', '须核实际制化作用')}）" for a in pending_actions)) + '。'
+    uncertainties = list(dict.fromkeys(v['review']['needed_evidence']
+                         for s in reading['scenarios'] for part in ('stem', 'branch') for v in s[part]['verdicts']
+                         if v.get('review', {}).get('needed_evidence')))
+    if uncertainties:
+        text += '具体未决原因：' + '；'.join(uncertainties) + '。'
     if pending:
         text += f"月令另有{'、'.join(pending)}格候选，取运章还没接入。"
     return text + (f"{who}的盘到底按哪种配法成立，还要看位置和合克，这里没判。"

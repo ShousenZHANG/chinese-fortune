@@ -269,8 +269,12 @@ def main(argv: list[str] | None = None) -> int:
         else:
             if chart.get('tool') not in ('bazi', 'bazi_reading') or not chart.get('ok'):
                 raise ValueError('automatic packet requires a successful bazi chart')
-            packet = (chart['reading_support'] if chart['tool'] == 'bazi_reading'
-                      else bazi_reading_packet(chart))
+            if chart['tool'] == 'bazi_reading' and chart.get('view') == 'compact':
+                from bazi_reading import fact_packet
+                packet = fact_packet(chart['chart_facts'])
+            else:
+                packet = (chart['reading_support'] if chart['tool'] == 'bazi_reading'
+                          else bazi_reading_packet(chart))
         errors = review_claims(chart, packet)
         if args.markdown and not errors:
             ensure_utf8_stdio()

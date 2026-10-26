@@ -195,6 +195,21 @@ def main(argv: list[str] | None = None) -> int:
                                '--gender', 'male', '--timezone', 'Asia/Shanghai', '--longitude', '120',
                                '--as-of-year', '2026', '--question', '我这几年运势怎么样'], work))
         assert luck['luck_reading'][0]['status'] == 'assessed' and luck['luck_reading'][0]['luck']['ganzhi'] == '乙巳'
+        compact = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/bazi_reading.py'),
+                                  '--year', '2000', '--month', '1', '--day', '15', '--hour', '10',
+                                  '--gender', 'male', '--as-of-year', '2026', '--question', '看大运与格局',
+                                  '--view', 'compact', '--report', str(work / 'verification.html')], work))
+        assert compact['view'] == 'compact' and compact['geju_review']['cases']
+        assert compact['geju_review']['verdict'] == 'unresolved' and compact['evidence_index']
+        assert (work / 'verification.html').is_file()
+        reviewed = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/reading_support.py'),
+                                   '--stdin'], work, data=json.dumps({'chart': compact})))
+        assert reviewed['ok'] and reviewed['packet']['claims'] and reviewed['semantic_review'] == 'required'
+        registry = json.loads((skill / 'assets/luck_rules.json').read_text(encoding='utf-8'))
+        assert len(registry['families']) == 8 and sum(len(f['scenarios']) for f in registry['families']) == 49
+        multi = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/question_router.py'),
+                               '--question', '八字、紫微和梅花分别看'], work))
+        assert [s['method'] for s in multi['steps']] == ['bazi', 'ziwei', 'meihua'] and not multi['combine_verdicts']
         # 5.3 flows: a real-life decision, a stop, a dated how-question, the mainland trial limit.
         life = [str(python), '-X', 'utf8', str(skill / 'scripts/life_guide.py')]
         decided = json.loads(run([*life, '--decide', '失业了先做什么', '--current-timezone', 'Asia/Shanghai'], work))
@@ -254,7 +269,9 @@ def main(argv: list[str] | None = None) -> int:
                                      'personal_forecast', 'source_scope_audit', 'profile_save_delete',
                                      'classical_scenario_retrieval', 'complete_luck_chapter',
                                      'candidate_personal_timeline', 'nonadjacent_source_conditions',
-                                     'qimen_source_anchor', 'personal_event_method', 'joint_itinerary'],
+                                     'qimen_source_anchor', 'personal_event_method', 'joint_itinerary',
+                                     'eight_luck_families', 'geju_review', 'compact_offline_report',
+                                     'compact_review', 'explicit_method_routing'],
                           'dependencies': 'none installed; vendored: ' + ', '.join(str(p) for p in vendored),
                           'artifact': artifact}, ensure_ascii=False, indent=2))
     return 0

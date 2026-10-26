@@ -17,7 +17,9 @@ from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
+from geju_assessment import assess_geju, geju_paragraph
 from luck_assessment import assess_luck, luck_paragraph
+from reading_views import compact_reading, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
     __version__,
@@ -246,12 +248,20 @@ def chart_facts(chart: dict) -> dict:
     return {key: chart[key] for key in keys if key in chart}
 
 
+def fact_packet(clean: dict, structure: dict | None = None) -> dict:
+    """Build the same reviewable facts from full or compact chart_facts."""
+    return {'schema_version': '1.0',
+            'claims': _observations(clean, structure if structure is not None else observed_structure(clean)),
+            'review_status': 'facts_checked_interpretation_required'}
+
+
 def prepare_reading(chart: dict, question: str = '') -> dict:
     clean = chart_facts(chart)
     structure = observed_structure(clean)
     assessment = assess_rules(clean)
+    geju = assess_geju(clean)
     climate = None
-    extra_ids: list[str] = []
+    extra_ids: list[str] = list(geju['source_passage_ids'])
     if any(term in question for term in ('调候', '用神', '喜忌', '寒暖', '五行')):
         day = clean['day_master'].get('stem')
         month = clean['four_pillars']['month'].get('branch')
@@ -265,25 +275,27 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
         else:
             climate = {'status': 'birth_time_required',
                        'meaning': '日干或月令未固定，先比较候选盘；不拿占位柱选调候'}
-    bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
-    claims = _observations(clean, structure)
     extra: dict = {'colour_advice': colour_advice(clean, question)} if asks_colour(question) else {}
     if any(word in question for word in LUCK_WORDS):
         cycles = _cycles_now(clean)
         extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
                                  [{'status': 'unavailable', 'luck': {'ganzhi': None},
                                    'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
+        for reading in extra['luck_reading']:
+            for scenario in reading.get('scenarios', []):
+                extra_ids.extend(scenario['source_passage_ids'])
+            extra_ids.extend(n['passage_id'] for n in reading.get('notes', []))
+    bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     years = years_asked(question, _reference_year(clean))
     if years:
         extra['annual_reading'] = annual_readings(clean, years)
     elif any(word in question for word in ANNUAL_WORDS):
         extra['annual_reading'] = [unknown_year('不知道今年是哪一年：先问用户现在住在哪里（时区），或者直接问哪一年')]
-    result = {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.0',
+    result = {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.1',
             'question': question, 'method_profile': PROFILE, 'chart_facts': clean,
             'observed_structure': structure,
-            'reading_support': {'schema_version': '1.0', 'claims': claims,
-                                'review_status': 'facts_checked_interpretation_required'},
-            'rule_assessment': assessment, 'evidence_bundle': bundle, 'climate_review': climate,
+            'reading_support': fact_packet(clean, structure),
+            'rule_assessment': assessment, 'geju_review': geju, 'evidence_bundle': bundle, 'climate_review': climate,
             'next_checks': ['对照证据组完成本题相关路线的解释条件，逐条写明依据和反例',
                             '候选取用还须检查透干合支与兼格，不能把路线命中当格局已成',
                             '调候和岁运问题分别检索对应条款，不把原局规则外推到具体日期'],
@@ -311,6 +323,7 @@ def host_notes(result: dict) -> list[str]:
     if advice and advice.get('personal_choice') is False:
         notes.append('这一格的例外在你的盘里成立，原文改取别的：不要把一般取法说成个人建议，也不要另推颜色或饰物。')
     if 'luck_reading' in result:
+        notes.append('大运配法和格局仍是候选；conditional、partial、mixed 及反向例外须原样说明，不能压成总吉凶。')
         for reading in result['luck_reading']:
             if reading['status'] != 'assessed' or not reading.get('scenarios'):
                 notes.append(f"{reading['luck'].get('ganzhi') or '这步'}大运工具没判喜忌：不要自己判，照上面的原因说。")
@@ -437,6 +450,8 @@ def render_facts(result: dict) -> str:
                   if result['observed_structure'].get('status') == 'birth_time_required' else
                   '上述位置已经核实；格局是否成立，还要对照原文检查其他干支的作用。'))
     parts += _route_lines(result['rule_assessment'])
+    if any(w in result.get('question', '') for w in ('格局', '成格', '败格', '变格', '救应', '用神')):
+        parts.append(geju_paragraph(result['geju_review']))
     parts += _cycle_parts(result)
     parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
     return '\n\n'.join(parts)
@@ -455,10 +470,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser = chart_parser(diagnostics=False)
     parser.description = '八字白话解读准备：盘面事实、固定主体系、可追溯原文'
     parser.epilog = ('Top-level JSON keys: ok tool version schema_version question method_profile '
-                     'chart_facts observed_structure reading_support rule_assessment evidence_bundle climate_review next_checks '
-                     'output_policy boundary; errors: error message')
+                     'chart_facts observed_structure reading_support rule_assessment geju_review evidence_bundle climate_review next_checks '
+                     'output_policy boundary host_notes; optional: luck_reading annual_reading report; compact: view evidence_index observations details; errors: error message')
     parser.add_argument('--question', default='', help='本次最关心的问题')
     parser.add_argument('--markdown', action='store_true', help='输出简短盘面说明，非完整个人判断')
+    parser.add_argument('--view', choices=('full', 'compact'), default='full',
+                        help='JSON 展示层：full 完整资料；compact 去重并以段号索引原文')
+    parser.add_argument('--report', metavar='PATH', help='另存本地 .md/.html 核对报告；不覆盖已有文件')
     return parser
 
 
@@ -474,10 +492,16 @@ def main(argv: list[str] | None = None) -> int:
     except (OSError, ValueError, TypeError, KeyError) as exc:
         json_print(error_envelope('bazi_reading', 'reading_unavailable', str(exc)))
         return 1
+    if args.report:
+        try:
+            result['report'] = write_report(result, render_facts(result), args.report)
+        except (OSError, ValueError) as exc:
+            json_print(error_envelope('bazi_reading', 'report_unavailable', f'{exc}；请指定新的可写文件路径'))
+            return 1
     if args.markdown:
         print(render_facts(result))
     else:
-        json_print(result)
+        json_print(compact_reading(result) if args.view == 'compact' else result, compact=args.view == 'compact')
     return 0
 
 

@@ -6,7 +6,7 @@
 
 八字默认采用《子平真诠》的月令格局主线；其他四书补充对应问题，分歧单独说明。用 `classical_search.py --list-books` 确认固定版本和收录状态，用 `classical_search.py` 获取原文、段落 ID 和上下文。全文已收录、转录已核、影像已校、规则适用是四项不同的事实。
 
-每次先获取当前所在地时间，一次取得、同请求复用。出生资料始终按出生地和历史时区处理；用户明确问的历史或未来时间优先。具体输入规则见 [输入与时间](00-intake.md)。
+问题依赖“现在”时先获取当前所在地时间，一次取得、同请求复用；纯原局、术语解释和明确参考年份无需为现居地停下。出生资料始终按出生地和历史时区处理；用户明确问的历史或未来时间优先。具体输入规则见 [输入与时间](00-intake.md)。
 
 ## 1. 四层内容分开
 
@@ -23,7 +23,7 @@
 
 每条主判断记录：结论性质、盘面字段及值、来源 ID、规则 ID、成立条件、例外、适用时间范围。条件采用 `met / not_met / unknown`；状态采用 `supported / needs_review / disputed / insufficient`。
 
-默认八字 JSON schema 2.0：`chart_facts` 是盘面，`observed_structure` 是透藏位置，`rule_assessment` 是本题相关路径的三态条件，`evidence_bundle` 是完整原文及例外，`reading_support` 是初始事实。没有 `yong_shen`、`ge_ju` 或 `source_passages`，不为取这些旧键再调用诊断工具。
+八字完整 JSON schema 2.1：`chart_facts` 是盘面，`observed_structure` 是透藏位置，`rule_assessment` 是相关路径三态条件，`geju_review` 是成败救应和变化观察，`evidence_bundle` 是完整原文及例外，`reading_support` 是初始事实。Skill 默认调用 `--view compact`，用条件引用与 `evidence_index` 去重；解释前按段号取完整上下文，同一请求已取得的段落复用。详见 [5.10 迁移](../docs/MIGRATION-5.10.md)。没有 `yong_shen`、`ge_ju` 或 `source_passages`，不为取这些旧键再调用诊断工具。
 
 证据组按书、章、段去重。已有段落可直接使用；只有所问范围尚未覆盖才补检索。逐条核完相关解释条件，资料够用就回答，不把所有 `unknown` 原样交给用户。某条前提不满足只能排除该路径，不能说全盘无用或所有解释都不成立。
 
