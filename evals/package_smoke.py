@@ -268,6 +268,11 @@ def main(argv: list[str] | None = None) -> int:
         answer = run([str(python), '-X', 'utf8', str(skill / 'scripts/answer_check.py'), '--answer', '-'], work,
                      data='《子平真诠》说「官逢财印，又无刑冲破害」。')
         assert json.loads(answer)['passed']
+        mcp = run([str(python), '-X', 'utf8', str(skill / 'scripts/mcp_server.py')], work,
+                  data=json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
+                                   'params': {'name': 'doctor', 'arguments': {}}}) + '
+')
+        assert json.loads(json.loads(mcp)['result']['content'][0]['text'])['healthy']
         print(json.dumps({'ok': True, 'platform': sys.platform, 'python': sys.version.split()[0],
                           'checks': ['zero_install', 'bazi', 'ziwei', 'classical_library', 'current_time',
                                      'bazi_reading', 'shared_time', 'reading_review', 'yijing', 'dst_gap',
@@ -276,7 +281,7 @@ def main(argv: list[str] | None = None) -> int:
                                      'candidate_personal_timeline', 'nonadjacent_source_conditions',
                                      'qimen_source_anchor', 'personal_event_method', 'joint_itinerary',
                                      'eight_luck_families', 'geju_review', 'compact_offline_report',
-                                     'compact_review', 'explicit_method_routing', 'doctor', 'answer_check'],
+                                     'compact_review', 'explicit_method_routing', 'doctor', 'answer_check', 'mcp_stdio'],
                           'dependencies': 'none installed; vendored: ' + ', '.join(str(p) for p in vendored),
                           'artifact': artifact}, ensure_ascii=False, indent=2))
     return 0

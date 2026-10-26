@@ -33,6 +33,14 @@ Gemini CLI also has its own command: `gemini skills install https://github.com/S
 
 **claude.ai, ChatGPT, Claude API**: download `chinese-fortune-v<version>.zip` from [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases). Upload it in claude.ai under Settings > Features, in ChatGPT (Business, Enterprise, Edu) under Plugins > Skills, or through the Claude API's Skills API.
 
+**MCP-only hosts (Claude Desktop, Cursor, VS Code and others)**: extract the same zip and add one entry to the host's MCP config; tools are listed automatically, and SKILL.md plus the references are served as resources:
+
+```json
+{"mcpServers": {"chinese-fortune": {"command": "python", "args": ["/path/to/chinese-fortune/scripts/mcp_server.py"]}}}
+```
+
+On Windows use `py` with `"-3"` as the first argument. The two scripts that write personal data (saved profiles, prospective log) are not exposed over MCP.
+
 Python 3.9 or later is all it needs (the `python3` that ships with macOS will do): nothing to pip install, and calculations need no network, because lunar_python and the tzdata time-zone data ship inside `scripts/`. CI checks Python 3.9, 3.11 and 3.12.
 
 <details>

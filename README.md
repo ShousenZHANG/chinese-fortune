@@ -33,6 +33,14 @@ Gemini CLI 也可以用自带命令：`gemini skills install https://github.com/
 
 **claude.ai、ChatGPT、Claude API**：从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载 `chinese-fortune-v版本号.zip`。claude.ai 在 Settings > Features 上传；ChatGPT（Business、Enterprise、Edu）在 Plugins > Skills 上传；Claude API 用 Skills API 上传。
 
+**只支持 MCP 的工具（Claude Desktop、Cursor、VS Code 等）**：解压同一个 zip，在工具的 MCP 配置里加一项，工具名和资源会自动列出（SKILL.md 和参考文档作为资源提供）：
+
+```json
+{"mcpServers": {"chinese-fortune": {"command": "python", "args": ["/解压路径/chinese-fortune/scripts/mcp_server.py"]}}}
+```
+
+Windows 把 `python` 换成 `py`，参数前加 `"-3"`。保存档案和前瞻记录两个会写个人资料的脚本不通过 MCP 开放。
+
 只需 Python 3.9 或以上（macOS 自带的 `python3` 就够），不用 pip 安装任何包，计算不联网：排盘库 lunar_python 和时区数据 tzdata 已随包附带。CI 在 Python 3.9、3.11、3.12 上验证。
 
 <details>
