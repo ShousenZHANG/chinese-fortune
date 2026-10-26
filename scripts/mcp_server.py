@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from utils import __version__
+from utils import __version__, ensure_utf8_stdio
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
@@ -222,15 +222,15 @@ def serve(stdin: Any = None, stdout: Any = None) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     import argparse
+    ensure_utf8_stdio()
     argparse.ArgumentParser(
         description='MCP stdio 服务：随包工具与 SKILL.md/参考文档，供只支持 MCP 的宿主使用',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog='JSON-RPC 2.0, one message per line on stdin/stdout.\n'
                'Top-level JSON keys per reply: jsonrpc id result | error').parse_args(argv)
-    for stream in (sys.stdin, sys.stdout):
-        reconfigure = getattr(stream, 'reconfigure', None)
-        if reconfigure:
-            reconfigure(encoding='utf-8')
+    reconfigure = getattr(sys.stdin, 'reconfigure', None)
+    if reconfigure:
+        reconfigure(encoding='utf-8')
     serve()
     return 0
 
