@@ -270,8 +270,7 @@ def main(argv: list[str] | None = None) -> int:
         assert json.loads(answer)['passed']
         mcp = run([str(python), '-X', 'utf8', str(skill / 'scripts/mcp_server.py')], work,
                   data=json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
-                                   'params': {'name': 'doctor', 'arguments': {}}}) + '
-')
+                                   'params': {'name': 'doctor', 'arguments': {}}}) + chr(10))
         assert json.loads(json.loads(mcp)['result']['content'][0]['text'])['healthy']
         print(json.dumps({'ok': True, 'platform': sys.platform, 'python': sys.version.split()[0],
                           'checks': ['zero_install', 'bazi', 'ziwei', 'classical_library', 'current_time',
