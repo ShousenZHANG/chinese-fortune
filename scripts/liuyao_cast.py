@@ -520,6 +520,9 @@ def build_parser() -> argparse.ArgumentParser:
     pc = sub.add_parser("coins", help="三枚硬币 6 次")
     add_request_arguments(pc)
     pc.add_argument("--seed", type=int, default=None)
+    pc.add_argument("--lines", type=str, default=None,
+                    help="用户自己摇的六次结果, 自下而上逗号分隔: 6=老阴 7=少阳 8=少阴 9=老阳 "
+                         "(三枚硬币: 三背=9, 三字=6, 一背两字=7, 两背一字=8); 给出时不再随机")
     pc.add_argument("--date", type=str, default=None,
                     help="起卦日 YYYY-MM-DD (默认今日)")
     pc.add_argument("--time", type=str, default=None,
@@ -531,6 +534,16 @@ def build_parser() -> argparse.ArgumentParser:
     pc.add_argument("--markdown", action="store_true",
                     help="输出白话说明而非 JSON; 不代替按用神、日月、动变逐项核对的完整解读")
     return p
+
+
+def parse_tosses(text: str, seed: int | None) -> list[int]:
+    """Six user-reported line values, bottom to top; a seed alongside them is a contradiction."""
+    if seed is not None:
+        raise ValueError("--lines 与 --seed 不能同时给: 前者是用户已摇出的结果, 后者是程序随机")
+    parts = [p.strip() for p in text.replace('，', ',').split(',') if p.strip()]
+    if len(parts) != 6 or any(p not in ('6', '7', '8', '9') for p in parts):
+        raise ValueError("--lines 需要 6 个数, 每个是 6/7/8/9, 自下而上, 例如 7,8,9,6,7,7")
+    return [int(p) for p in parts]
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -559,8 +572,18 @@ def main(argv: list[str] | None = None) -> int:
                                   calendar_clock.second).getLunar()
     month_branch = term_lunar.getMonthZhiExact()
 
-    rng = entropy.get_rng(args.seed, args.entropy)
-    lines = cast_coins(rng)
+    if args.lines is not None:
+        try:
+            lines = parse_tosses(args.lines, args.seed)
+        except ValueError as exc:
+            json_print(error_envelope('liuyao', 'invalid_input', str(exc)))
+            return 1
+        provenance = {"source": "user_tosses", "reproducible": True,
+                      "note": "用户自报的六次投掷, 自下而上记录; 同一记录与同一时刻可复放出同一卦"}
+    else:
+        rng = entropy.get_rng(args.seed, args.entropy)
+        lines = cast_coins(rng)
+        provenance = entropy.describe(rng, args.entropy, args.seed)
 
     main_chart = dress_chart(lines, day_stem, day_branch, month_branch)
 
@@ -588,7 +611,7 @@ def main(argv: list[str] | None = None) -> int:
     out = {
         "method": "coins",
         "question": args.question,
-        "entropy": entropy.describe(rng, args.entropy, args.seed),
+        "entropy": provenance,
         "yongshen_hint": yongshen_hint(args.question),
         "yongshen_hint_source": yongshen_source(args.question),
         "time_context": time_context,
