@@ -92,6 +92,8 @@ def test_relationship_route_keeps_two_subjects_and_does_not_invent_a_score():
     assert [step['subject'] for step in result['steps']] == ['A', 'B']
     assert result['reference'] == 'references/14-hehun.md'
     assert result['combine_verdicts'] is False
+    assert result['pair_facts']['command'] == 'python scripts/pair_facts.py --stdin'
+    assert 'pair_facts' not in route('请用紫微斗数给我们合盘')
 
 
 def test_third_person_birth_questions_are_not_pure_definitions():

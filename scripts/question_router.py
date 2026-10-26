@@ -223,6 +223,10 @@ def route(question: str) -> dict:
                 'reference': 'references/14-hehun.md', 'combine_verdicts': False,
                 'subjects': ['A', 'B'],
                 'steps': [{'subject': subject, **method} for subject in ('A', 'B') for method in chosen],
+                **({'pair_facts': {'command': 'python scripts/pair_facts.py --stdin',
+                                   'stdin': '{"a": {A 出生资料}, "b": {B 出生资料}}',
+                                   'why': '两人逐柱合冲刑害与日主互见十神，只列事实不打分'}}
+                   if any(m['method'] == 'bazi' for m in chosen) else {}),
                 'needs': ['两方各自已确认的出生资料（各自保留未知时刻）', '关系类型与具体问题',
                           *_reference_time_needs(text)]}
     if len(methods) > 1:
