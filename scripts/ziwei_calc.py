@@ -48,6 +48,7 @@ from utils import (
     validate_birth_input,
     warn,
 )
+from ziwei_horoscope import horoscope_layers, parse_target
 from ziwei_palaces import (
     MING_ZHU,
     SHEN_ZHU,
@@ -92,8 +93,11 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions twelve_palaces
-  four_transformations_native da_xian liu_nian_sihua patterns notes
+  four_transformations_native da_xian liu_nian_sihua horoscope patterns notes
   dou_jun_basis zhi_shi_basis
+
+--horoscope-date [--horoscope-time] 时 horoscope 给 dou_jun liu_nian liu_yue liu_ri liu_shi
+(各层 ganzhi palace_branch natal_palace transformations) conventions limit; 否则为 null。
 
 --brief-palaces 时 twelve_palaces 只留 name/branch/stem/index/main_stars;
 --no-da-xian 时 da_xian 为 null。两者不改变其余字段的值。
@@ -139,6 +143,10 @@ def build_parser() -> argparse.ArgumentParser:
                    help="农历输入且该月为闰月 (等同传入负月份)")
     p.add_argument("--liu-year", type=int, default=None,
                    help="额外加算指定流年的四化 (公历)")
+    p.add_argument("--horoscope-date", type=str, default=None, metavar="YYYY-MM-DD",
+                   help="按该日 (当地钟表日期) 计算流年斗君、流月、流日所在宫与四化")
+    p.add_argument("--horoscope-time", type=str, default=None, metavar="HH:MM",
+                   help="同时给出流时; 需与 --horoscope-date 一起用")
     p.add_argument("--no-patterns", action="store_true",
                    help="略过 格局 检测以缩减输出")
     p.add_argument("--no-sihua", action="store_true",
@@ -176,6 +184,14 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     )
     if err:
         return error_envelope("ziwei", "invalid_input", err, input=vars(args))
+    if args.horoscope_time and not args.horoscope_date:
+        return error_envelope("ziwei", "invalid_input", "--horoscope-time 需要同时给 --horoscope-date")
+    if args.horoscope_date:
+        try:
+            parse_target(args.horoscope_date, args.horoscope_time)
+        except ValueError as exc:
+            return error_envelope("ziwei", "invalid_input",
+                                  f"运限日期须为 YYYY-MM-DD、时间须为 HH:MM: {exc}")
 
     try:
         from lunar_python import Lunar, Solar  # type: ignore
@@ -397,6 +413,12 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         except Exception as exc:
             warn(f"liu_year compute failed: {exc}")
 
+    horoscope = None
+    if args.horoscope_date:
+        horoscope_at, with_hour = parse_target(args.horoscope_date, args.horoscope_time)
+        horoscope = horoscope_layers(horoscope_at, birth_month=lunar_month, birth_hour=birth_hour,
+                                     palaces=annotated, sect=args.sect, include_hour=with_hour)
+
     # 10. 格局识别.
     patterns: list[dict] = []
     if not args.no_patterns:
@@ -446,6 +468,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         "four_transformations_native": sihua_native,
         "da_xian": None if args.no_da_xian else da_xian,
         "liu_nian_sihua": liu_nian_sihua,
+        "horoscope": horoscope,
         "patterns": patterns,
         "sect": sect_info,
         "birthplace": birthplace,
@@ -455,7 +478,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         + [
             "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
             BRIGHTNESS_NOTE,
-            "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",
+            "流年/流月/流日/流时 用 --horoscope-date [--horoscope-time] 计算; 未传时只给本命斗君锚位。",
             "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。",
         ],
     }
