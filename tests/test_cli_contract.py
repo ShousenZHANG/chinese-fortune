@@ -44,6 +44,9 @@ def run(script: str, *args) -> subprocess.CompletedProcess:
 # (script, argv, 一句话说明这个输入为什么不可能成立)
 IMPOSSIBLE_INPUTS = [
     ('life_guide.py', ['--entry', '99:999'], '不存在的条目'),
+    ('answer_check.py', ['--answer', 'does-not-exist.txt'], '回答文件不存在'),
+    ('answer_check.py', ['--answer', '-', '--facts', 'does-not-exist.json'], '工具结果文件不存在'),
+    ('pair_facts.py', ['--stdin'], '空 JSON 请求'),
     ('life_guide.py', ['--scenario', 'travel', '--current-timezone', 'Mars/Base'], '无效时区'),
     ('life_guide.py', ['--scenario', 'travel', '--current-timezone', 'Asia/Shanghai '], '时区带空格'),
     ('life_guide.py', ['--decide', '   '], '空的决策问句'),
@@ -195,6 +198,8 @@ def test_every_engine_entry_point_is_covered_by_the_contract():
         "lunar_convert.py",     # 同上
         "explore_cast.py",      # 同上
         "liuren_cast.py",       # 已在清单里 (下面断言会确认)
+        "doctor.py",            # 没有输入参数, 只检查本机安装
+        "mcp_server.py",        # JSON-RPC 流服务, 协议错误回 error 对象, 见 test_mcp_server
     }
     missing = entry_points - covered - exempt
     assert not missing, (

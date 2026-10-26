@@ -15,6 +15,7 @@ from annual_assessment import (
 )
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
+from bazi_derivation import asks_derivation, derivation_steps
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
@@ -303,6 +304,7 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
             'boundary': '检索到原文不等于条款适用；透藏位置不等于旺衰或人生吉凶'}
     # Most hosts read the JSON, not the Markdown draft: the notes travel in both.
     result['host_notes'] = host_notes(result)
+    result['derivation'] = derivation_steps(clean)
     return result
 
 
@@ -453,6 +455,9 @@ def render_facts(result: dict) -> str:
     if any(w in result.get('question', '') for w in ('格局', '成格', '败格', '变格', '救应', '用神')):
         parts.append(geju_paragraph(result['geju_review']))
     parts += _cycle_parts(result)
+    if asks_derivation(result.get('question', '')):
+        parts.append('推算过程：' + '；'.join(f"{d['step']}{d['result']}（{d['how']}）"
+                                          for d in result.get('derivation', [])))
     parts.append('写回答时：' + ''.join(result.get('host_notes') or host_notes(result)))
     return '\n\n'.join(parts)
 

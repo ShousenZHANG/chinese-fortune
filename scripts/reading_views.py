@@ -7,6 +7,8 @@ from copy import deepcopy
 from html import escape
 from pathlib import Path
 
+from bazi_derivation import asks_derivation
+
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -28,6 +30,8 @@ def compact_reading(result: dict) -> dict:
         raise ValueError('需要成功的八字解读结果')
     compact = deepcopy(result)
     compact['view'] = 'compact'
+    if not asks_derivation(result.get('question') or ''):
+        compact.pop('derivation', None)
     assessment = compact['rule_assessment']
     pool: dict[str, dict] = {}
     condition_keys: dict[str, str] = {}
