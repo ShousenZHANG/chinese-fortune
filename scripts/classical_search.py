@@ -10,6 +10,7 @@ import hashlib
 import json
 import re
 import unicodedata
+from collections.abc import Iterator
 from pathlib import Path
 
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
@@ -27,7 +28,9 @@ VARIANTS_TABLE = Path(__file__).resolve().parents[1] / 'assets' / 'han-variants.
 # The table now covers every Han character in the library, generated offline by
 # scripts/build_han_variants.py. Returned text and quotations keep each
 # edition's own characters; this map is only ever applied to the match key.
-_HAND_ALIASES = {'祇': '祇', '葢': '盖', '擧': '举', '歿': '殁', '衝': '冲', '尅': '克'}
+_HAND_ALIASES = {'祇': '祇', '葢': '盖', '擧': '举', '歿': '殁', '衝': '冲', '尅': '克',
+                 # Rare glyphs that appear only inside 〔字形…〕 markers, so the generated table skipped them.
+                 '㸃': '点', '滛': '淫', '愽': '博'}
 
 
 def _load_variants() -> dict[int, int]:
@@ -256,6 +259,18 @@ def climate_passages(key: str) -> dict:
     return {'key': key, 'audit': audit,
             'results': [get_passage(ref['passage_id']) for ref in audit.get('source_refs', [])],
             'scope': '当月专段与已审计定位；原文命中不等于个人条件成立'}
+
+
+def iter_passages(library_root: Path | str | None = None) -> Iterator[tuple[dict, dict]]:
+    """Yield (book, passage) for every hash-checked chapter, in manifest order."""
+    root = _root(library_root)
+    for book in _selected_books(root, None):
+        for entry in book['chapters']:
+            path = _path(root, entry['path'])
+            if _hash(path) != entry['sha256']:
+                raise ValueError('chapter hash mismatch: ' + entry['path'])
+            for passage in _read(path)['passages']:
+                yield book, passage
 
 
 def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict:

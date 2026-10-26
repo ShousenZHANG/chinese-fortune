@@ -20,7 +20,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 5. 按路由排盘，检查 exit code 和 `ok`。失败就处理真实错误，不凭记忆补造成功结果。
 6. 纯本命默认只调用 `scripts/bazi_reading.py --view compact`：`chart_facts` 给盘面，`rule_assessment` 给条件，`geju_review` 核成败救应与变化，`evidence_index` 给段号。`condition_refs` 指向同一 assessment 的 `conditions`；`*_refs` 指向同一 review 的同名索引表。引用或解释前按段号取完整原文及上下文；已取段落直接复用。需要全部计算细节时才以同一资料、参考年和请求时间运行 `--view full`，其中 `evidence_bundle` 保留完整段落。未来时段按下方专用路由；期间分析默认含本命条件包；择时需要本命解读时带 `include_natal_reading:true`。不为找 `ge_ju` 或 `yong_shen` 再跑诊断。
 7. 完成本题解释：逐项核对盘面、原文条件、例外与范围。工具已标明不判的项目照说（见下「工具结论优先」）；其余根气、位置或救应需要判断时，写明这是按原文的推理、不是工具结论，并给依据。资料够用就完成解释，不能只列待查清单；确有缺项时说明影响哪条判断，同时回答已能确认的部分。
-8. 原局解读记录使用 `scripts/reading_support.py --stdin` 审核。未来入口的历法事实和两种行运例式已在各自计算中核查；不能塞进仅接受原局规则的审核器。临时补查按专用流程记录依据。最后核对实际正文是否忠实于记录，程序不代替语义审查。其他方法使用自己的原文和规则，不借八字来源 ID。
+8. 原局解读记录使用 `scripts/reading_support.py --stdin` 审核。未来入口的历法事实和两种行运例式已在各自计算中核查；不能塞进仅接受原局规则的审核器。临时补查按专用流程记录依据。成稿发出前，把正文和本次工具 JSON 交给 `scripts/answer_check.py --answer - --facts <JSON>`：它机械核对引文是否在随包古籍里、四柱是否与盘一致、有无工具没给的分数、确定性断言、把未判格局说成定格、把并列说成唯一最好；有 error 先改再发。它通过不等于语义正确，仍要核对正文是否忠实于记录。其他方法使用自己的原文和规则，不借八字来源 ID。
 9. 先白话回答所问，短引文附在对应解释旁。个人择时可在八字背景之外，按事项和已核依据选择一种中国术数作为事件主法，说明选择理由与个人信息如何接入；不必让用户先懂方法名称。多法并列对照按明确要求展开，各自说明结果与分歧。
 
 ## 工具结论优先（硬规则）
@@ -100,7 +100,7 @@ v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是
 
 只需 Python 3.9 或以上，不用安装任何包，计算不联网：排盘用的 lunar_python 和时区数据 tzdata 已随包放在 `scripts/`。本文命令里的 `python` 指本机能用的那一个：依次试 `python3`、`python`、Windows 的 `py -3`，用 `--version` 确认是 3.9 以上。
 
-一个都没有时，先征得用户同意再装 Python：Windows `winget install -e --id Python.Python.3.12`；macOS `xcode-select --install`（命令行工具自带 python3）；Linux 用发行版的包管理器装 `python3`。不要往用户的 Python 里用 pip 装任何东西。装好后自检一次：`python scripts/classical_search.py --validate`。
+一个都没有时，先征得用户同意再装 Python：Windows `winget install -e --id Python.Python.3.12`；macOS `xcode-select --install`（命令行工具自带 python3）；Linux 用发行版的包管理器装 `python3`。不要往用户的 Python 里用 pip 装任何东西。装好后或任何工具报环境错误（缺包、时区、编码、古籍文件）时运行 `python scripts/doctor.py`：`healthy=true` 即可用；否则按 `next_step` 处理第一项失败，不要猜原因。
 
 `ok=false` 时处理 message。`reliable=false`、`boundary`、`missing_in_table`、`*_granularity` 等仅解释会改变本题的限制。`hour_known=false` 不能使用内部占位时辰，其他柱也可能因边界待定。
 

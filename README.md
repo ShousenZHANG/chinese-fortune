@@ -40,11 +40,10 @@ Gemini CLI 也可以用自带命令：`gemini skills install https://github.com/
 
 1. 按用户用的宿主选上面一种安装方式。拿不准时用 Release 里的 zip，解压到宿主的技能目录（Claude Code `~/.claude/skills/`，Codex `~/.codex/skills/`，Gemini CLI `~/.gemini/skills/`），应得到 `chinese-fortune/SKILL.md`。
 2. 不要运行 pip。依次试 `python3`、`python`、`py -3`，找一个 3.9 以上的；都没有时征得用户同意再装 Python（命令见 SKILL.md「运行环境与诊断」）。
-3. 在 chinese-fortune 文件夹里自检，两条都返回 `"ok": true` 就装好了：
+3. 在 chinese-fortune 文件夹里自检，返回 `"healthy": true` 就装好了；否则按 `next_step` 处理：
 
 ```sh
-python scripts/classical_search.py --validate
-python scripts/request_time.py --current-timezone Asia/Shanghai
+python scripts/doctor.py
 ```
 
 </details>
@@ -259,6 +258,8 @@ python scripts/classical_search.py --chapter-id ziping:c026 --limit 10
 ### 怎样检验回答是否可靠
 
 先固定方法和问题范围，再逐条说明你的哪些信息符合哪条依据；依据冲突就说清楚，不靠换算法凑肯定答案。回答仍然先用白话直说，再给短引文和白话解释。
+
+回答发出前由 `scripts/answer_check.py` 机械核对：引文必须能在随包古籍里逐字找到（繁简互通，省略号两侧须在同一段且顺序不变），四柱必须与排盘一致，不得出现工具没给的分数或比例，不得把未判的格局说成定格、把并列说成唯一最好，不得写“肯定录用”一类确定结果。机械核对通过不等于解释正确。
 
 你同意跟踪后，可以在事情发生前保存原判断，之后确认实际结果；支持查看、更正和删除。记录保存在仓库外，不重复保存生辰。统计同时显示未能判断、待确认及删除数量，按相同方法、版本和事件定义分组。这是检验机制，不是已经证明能预测现实事件。操作见 [前瞻验证](references/28-prospective-validation.md)。
 

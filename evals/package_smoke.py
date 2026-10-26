@@ -263,6 +263,11 @@ def main(argv: list[str] | None = None) -> int:
         deleted = json.loads(run([*profile_command, 'delete', '--profile-id', 'sample',
                                   '--expected-revision', '1', '--data-dir', str(profile_dir)], work))
         assert deleted['ok'] and not list(profile_dir.iterdir())
+        doctor = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/doctor.py')], work))
+        assert doctor['healthy'] and all(c['ok'] for c in doctor['checks'])
+        answer = run([str(python), '-X', 'utf8', str(skill / 'scripts/answer_check.py'), '--answer', '-'], work,
+                     data='《子平真诠》说「官逢财印，又无刑冲破害」。')
+        assert json.loads(answer)['passed']
         print(json.dumps({'ok': True, 'platform': sys.platform, 'python': sys.version.split()[0],
                           'checks': ['zero_install', 'bazi', 'ziwei', 'classical_library', 'current_time',
                                      'bazi_reading', 'shared_time', 'reading_review', 'yijing', 'dst_gap',
@@ -271,7 +276,7 @@ def main(argv: list[str] | None = None) -> int:
                                      'candidate_personal_timeline', 'nonadjacent_source_conditions',
                                      'qimen_source_anchor', 'personal_event_method', 'joint_itinerary',
                                      'eight_luck_families', 'geju_review', 'compact_offline_report',
-                                     'compact_review', 'explicit_method_routing'],
+                                     'compact_review', 'explicit_method_routing', 'doctor', 'answer_check'],
                           'dependencies': 'none installed; vendored: ' + ', '.join(str(p) for p in vendored),
                           'artifact': artifact}, ensure_ascii=False, indent=2))
     return 0

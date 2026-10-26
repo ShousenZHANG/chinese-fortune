@@ -8,7 +8,11 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+from answer_check import check_answer  # noqa: E402
 
 DISCLAIMERS = ('仅供参考', '仅作参考', '不构成', '娱乐参考', '文化参考')
 NOT_PROSE = re.compile(r'^\s*(\||```|#|---|\*\*\*|>)')
@@ -37,6 +41,10 @@ def check(case: dict, record: dict, run: Path) -> dict:
         add(f'not_contains:{word}', word not in answer)
     if 'first_line_any' in rules:
         add('first_line_any', any(w in first for w in rules['first_line_any']), first[:60])
+    prose = check_answer(answer, [])
+    for item in prose['findings']:
+        if item['severity'] == 'error':
+            add(f"answer_check:{item['code']}", False, item['excerpt'][:60])
     if 'tool_any' in rules:
         add('tool_any', any(w in commands for w in rules['tool_any']), '/'.join(rules['tool_any']))
     usage = [(t.get('result') or {}) for t in record['attempts']]

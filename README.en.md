@@ -40,11 +40,10 @@ Python 3.9 or later is all it needs (the `python3` that ships with macOS will do
 
 1. Use the install method above for the user's host. When unsure, extract the Release zip into the host's skills directory (Claude Code `~/.claude/skills/`, Codex `~/.codex/skills/`, Gemini CLI `~/.gemini/skills/`) so that `chinese-fortune/SKILL.md` exists.
 2. Do not run pip. Try `python3`, `python`, then `py -3` for one that is 3.9 or later; if none exists, ask the user before installing Python (commands in SKILL.md, “运行环境与诊断”).
-3. Self-check inside the chinese-fortune folder; both print `"ok": true` when it is ready:
+3. Self-check inside the chinese-fortune folder; it prints `"healthy": true` when ready, otherwise follow `next_step`:
 
 ```sh
-python scripts/classical_search.py --validate
-python scripts/request_time.py --current-timezone Asia/Shanghai
+python scripts/doctor.py
 ```
 
 </details>
@@ -190,6 +189,8 @@ Runtime validation has an explicit scope. Missing files do not silently switch v
 ### Prospective validation
 
 Fix the method and scope before interpretation, check personal applicability and exceptions, and disclose unresolved conflicts. With user consent, `prediction_log.py` stores prospective records outside the repository, freezes forecasts, and preserves confirmed outcome corrections. Coverage, unverified outcomes, deletions and method/version/event cohorts accompany observed hit rates. This mechanism does not establish predictive validity. See [the workflow](references/28-prospective-validation.md).
+
+Before an answer is sent, `scripts/answer_check.py` checks the prose mechanically: every quotation must be found verbatim in the bundled classics (simplified and traditional fold together; elided parts must sit in one passage in order), named pillars must match the chart, no score or percentage the tool never produced, no unresolved formation stated as settled, no tie collapsed into one best choice, and no certain outcome such as “you will definitely be hired”. Passing is a floor, not proof the interpretation is right.
 
 ## Development
 
