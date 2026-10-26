@@ -94,7 +94,8 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 | Appointment times | interview, exam, travel, moving | 相主 plus event day rules; interviews and exams also 《奇门遁甲元灵经》 |
 | Colours, accessories | what to wear | 《穷通宝鉴》 general 调候 choice (the cell's exceptions not checked against your chart) |
 | Almanac | a day's dos and don'ts | sourced day rules from 《协纪辨方书》《渊海子平》 |
-| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage |
+| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun, monthly, daily and hourly layers (matching iztro field by field) |
+| Marriage and family pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other; classified, never scored |
 | Classical text lookup | passages, editions, context | 13 frozen transcriptions, 535 units, 18,982 paragraphs, offline |
 | Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
@@ -103,6 +104,8 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 - Eight BaZi rule families and 25 review paths. Observable conditions are computed; interpretive conditions require explicit reasoning from the chart and full passages.
 - Current time in the user's present location, captured once per request.
 - Zi Wei, Liu Yao and other methods when requested, within their documented scope.
+- Step-by-step derivation on request: birth instant, solar-term window, true solar time, day boundary, hour stem and luck start, so a chart can be redone by hand.
+- A mechanical check of every answer's quotations, pillars, scores and certainty before it is sent; MCP-only hosts can connect too.
 
 A complete transcription, implemented rules, image collation and predictive validity are separate claims. Tests do not establish predictive accuracy.
 
