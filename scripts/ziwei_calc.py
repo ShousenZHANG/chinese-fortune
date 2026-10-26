@@ -154,7 +154,7 @@ def build_parser() -> argparse.ArgumentParser:
     # twelve_palaces 与 da_xian 合占载荷 81.5%, 而此前两个开关只覆盖 1.3%+2.2%
     # 的小块 —— 开关造在了不占体积的地方, 实测裁剪只省 0.3%。
     p.add_argument("--no-da-xian", action="store_true",
-                   help="略过 大限 (占载荷约 28%%; 只看本命盘时可关)")
+                   help="略过 大限 (占载荷约 20%%; 只看本命盘时可关)")
     p.add_argument("--brief-palaces", action="store_true",
                    help="十二宫只留 宫名/地支/宫干/主星名 (占载荷约 53%%; "
                         "只需宫位骨架时用)")

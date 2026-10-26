@@ -220,7 +220,13 @@ def serve(stdin: Any = None, stdout: Any = None) -> None:
             stdout.flush()
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    import argparse
+    argparse.ArgumentParser(
+        description='MCP stdio 服务：随包工具与 SKILL.md/参考文档，供只支持 MCP 的宿主使用',
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='JSON-RPC 2.0, one message per line on stdin/stdout.\n'
+               'Top-level JSON keys per reply: jsonrpc id result | error').parse_args(argv)
     for stream in (sys.stdin, sys.stdout):
         reconfigure = getattr(stream, 'reconfigure', None)
         if reconfigure:

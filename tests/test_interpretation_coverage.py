@@ -217,7 +217,8 @@ def test_payload_switches_are_documented_where_claude_can_see_them():
 
 @pytest.mark.parametrize("flags,max_ratio", [
     (["--brief-palaces"], 0.60),
-    (["--no-da-xian"], 0.80),
+    # 大限约占 20%；输出新增 horoscope 等字段后比例从 0.7999 变为 0.801。
+    (["--no-da-xian"], 0.82),
     (["--no-da-xian", "--brief-palaces", "--no-patterns", "--no-sihua"], 0.35),
 ])
 def test_ziwei_switches_actually_cut_the_payload(flags, max_ratio):

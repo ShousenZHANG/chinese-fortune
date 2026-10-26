@@ -140,9 +140,10 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     parser = argparse.ArgumentParser(
         description='两人八字之间逐柱的合冲刑害事实（不打分、不判好坏）',
-        epilog='stdin: {"a": {birth}, "b": {birth}}；birth 键同 bazi_calc：year month day hour minute gender '
-               'timezone longitude city sect lunar，省略 hour 表示时辰未知。'
-               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations notes '
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog='stdin: {"a": {birth}, "b": {birth}}；birth 键同 bazi_calc：year month day hour minute gender\n'
+               'timezone longitude city sect lunar，省略 hour 表示时辰未知。\n'
+               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations notes\n'
                'boundary next_checks; errors: error message')
     parser.add_argument('--stdin', action='store_true', required=True, help='从标准输入读两人出生资料 JSON')
     parser.parse_args(argv)

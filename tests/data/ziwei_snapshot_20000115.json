@@ -18,6 +18,8 @@
     "timezone": null,
     "leap": false,
     "liu_year": null,
+    "horoscope_date": null,
+    "horoscope_time": null,
     "no_patterns": false,
     "no_sihua": false,
     "no_da_xian": false,
@@ -774,6 +776,7 @@
     }
   ],
   "liu_nian_sihua": null,
+  "horoscope": null,
   "patterns": [
     {
       "name": "机月同梁",
@@ -792,7 +795,7 @@
   "notes": [
     "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
     "亮度为项目四级表（庙/旺/平/陷）。对照出处为《紫微斗数全书》卷二「一命宫」的七级记载，七级折四级并非原文所定；仅七杀行曾按转录文字修正，其余各行未逐格核定，全表未校原刻影像。亮度只展示，不参与排盘计算。",
-    "流年/流月/流日 需配合 斗君 起算; 本盘输出 dou_jun 提供锚位。",
+    "流年/流月/流日/流时 用 --horoscope-date [--horoscope-time] 计算; 未传时只给本命斗君锚位。",
     "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。"
   ],
   "schema_version": "2.0",
