@@ -23,6 +23,8 @@ SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
 PROTOCOLS = ('2025-06-18', '2025-03-26', '2024-11-05')
 TIMEOUT = 180
+JSON_TYPES: dict[str, type | tuple[type, ...]] = {'string': str, 'integer': int, 'number': (int, float),
+                                                  'boolean': bool, 'object': dict, 'array': list}
 # Maintenance tools are left out, and so are the two that persist personal data
 # (profiles, prediction log): saving needs the user's explicit say-so in a host
 # that shows what is written, which a generic tool call does not.
@@ -107,6 +109,12 @@ def _command(name: str, arguments: dict) -> tuple[list[str], str | None]:
     missing = [k for k in spec['schema']['required'] if k not in arguments]
     if missing:
         raise ValueError('missing arguments: ' + ', '.join(missing))
+    for key, value in arguments.items():
+        expected = spec['schema']['properties'][key].get('type')
+        if expected and value is not None and not isinstance(value, JSON_TYPES[expected])                 or isinstance(value, bool) and expected in ('integer', 'number'):
+            raise ValueError(f'argument {key} must be {expected}')
+        if expected == 'array' and not all(isinstance(item, (str, dict)) for item in value or []):
+            raise ValueError(f'argument {key} has items of the wrong type')
     if name == 'run_script':
         script = arguments['script']
         args = arguments.get('args', [])
@@ -131,19 +139,23 @@ def _command(name: str, arguments: dict) -> tuple[list[str], str | None]:
 
 def call_tool(name: str, arguments: dict) -> dict:
     """Run one tool; the CLI's JSON (or error) comes back as text content."""
-    if name not in TOOLS:
-        raise ValueError('unknown tool: ' + name)
+    if not isinstance(name, str) or name not in TOOLS:
+        raise ValueError(f'unknown tool: {name}')
+    if not isinstance(arguments, dict):
+        raise ValueError('arguments must be an object')
     command, stdin = _command(name, arguments)
     temp: list[Path] = []
-    if name == 'answer_check':
-        import tempfile
-        for facts in arguments.get('facts', []):
-            handle = tempfile.NamedTemporaryFile('w', suffix='.json', delete=False, encoding='utf-8')
-            with handle:
-                json.dump(facts, handle, ensure_ascii=False)
-            temp.append(Path(handle.name))
-            command += ['--facts', handle.name]
     try:
+        if name == 'answer_check':
+            import tempfile
+            for facts in arguments.get('facts') or []:
+                if not isinstance(facts, dict):
+                    raise ValueError('facts items must be objects')
+                handle = tempfile.NamedTemporaryFile('w', suffix='.json', delete=False, encoding='utf-8')
+                temp.append(Path(handle.name))
+                with handle:
+                    json.dump(facts, handle, ensure_ascii=False)
+                command += ['--facts', handle.name]
         done = subprocess.run([sys.executable, '-X', 'utf8', str(SCRIPTS / command[0]), *command[1:]],
                               cwd=ROOT, input=stdin, capture_output=True, text=True, encoding='utf-8',
                               timeout=TIMEOUT)
@@ -173,6 +185,8 @@ def handle(message: dict) -> dict | None:
     method, params, mid = message.get('method'), message.get('params') or {}, message.get('id')
     if mid is None:
         return None
+    if not isinstance(params, dict):
+        return {'jsonrpc': '2.0', 'id': mid, 'error': {'code': -32602, 'message': 'params must be an object'}}
     try:
         result: Any
         if method == 'initialize':
@@ -188,8 +202,9 @@ def handle(message: dict) -> dict | None:
                                 for n, s in TOOLS.items()]}
         elif method == 'tools/call':
             try:
-                result = call_tool(params.get('name', ''), params.get('arguments') or {})
-            except (ValueError, subprocess.TimeoutExpired) as exc:
+                arguments = params.get('arguments')
+                result = call_tool(params.get('name', ''), {} if arguments is None else arguments)
+            except (ValueError, TypeError, UnicodeError, subprocess.TimeoutExpired) as exc:
                 result = {'content': [{'type': 'text', 'text': str(exc)}], 'isError': True}
         elif method == 'resources/list':
             result = {'resources': resources()}
@@ -197,7 +212,7 @@ def handle(message: dict) -> dict | None:
             result = read_resource(params.get('uri', ''))
         else:
             return {'jsonrpc': '2.0', 'id': mid, 'error': {'code': -32601, 'message': f'method not found: {method}'}}
-    except (ValueError, OSError) as exc:
+    except (ValueError, OSError, TypeError, UnicodeError) as exc:
         return {'jsonrpc': '2.0', 'id': mid, 'error': {'code': -32602, 'message': str(exc)}}
     return {'jsonrpc': '2.0', 'id': mid, 'result': result}
 
@@ -213,8 +228,12 @@ def serve(stdin: Any = None, stdout: Any = None) -> None:
         except ValueError:
             reply: dict | None = {'jsonrpc': '2.0', 'id': None, 'error': {'code': -32700, 'message': 'parse error'}}
         else:
-            reply = handle(message) if isinstance(message, dict) else {
-                'jsonrpc': '2.0', 'id': None, 'error': {'code': -32600, 'message': 'invalid request'}}
+            try:
+                reply = handle(message) if isinstance(message, dict) else {
+                    'jsonrpc': '2.0', 'id': None, 'error': {'code': -32600, 'message': 'invalid request'}}
+            except Exception as exc:  # noqa: BLE001 - one bad request must not end the session
+                reply = {'jsonrpc': '2.0', 'id': message.get('id') if isinstance(message, dict) else None,
+                         'error': {'code': -32603, 'message': f'{type(exc).__name__}: {exc}'}}
         if reply is not None:
             stdout.write(json.dumps(reply, ensure_ascii=False) + '\n')
             stdout.flush()

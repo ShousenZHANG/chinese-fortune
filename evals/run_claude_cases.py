@@ -53,9 +53,20 @@ def _parse(lines: list[str]) -> dict:
             for block in event['message'].get('content', []):
                 if block.get('type') == 'tool_use':
                     tool_input = block.get('input', {})
-                    turn['tools'].append({'name': block.get('name'),
+                    turn['tools'].append({'id': block.get('id'), 'name': block.get('name'),
                                           'command': tool_input.get('command') or tool_input.get('skill')
                                           or tool_input.get('file_path') or tool_input.get('pattern')})
+        elif kind == 'user':
+            # Tool outputs are kept so the answer can be checked against what the tools said.
+            content = (event.get('message') or {}).get('content')
+            for block in content if isinstance(content, list) else []:
+                if isinstance(block, dict) and block.get('type') == 'tool_result':
+                    output = block.get('content')
+                    if isinstance(output, list):
+                        output = ''.join(part.get('text', '') for part in output if isinstance(part, dict))
+                    for tool in turn['tools']:
+                        if tool.get('id') == block.get('tool_use_id'):
+                            tool['output'] = output
         elif kind == 'result':
             turn['result'] = {k: event.get(k) for k in ('subtype', 'is_error', 'result', 'total_cost_usd',
                                                          'num_turns', 'duration_ms', 'usage', 'session_id')}

@@ -14,6 +14,23 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from answer_check import check_answer  # noqa: E402
 
+FACT_TOOLS = re.compile(r'bazi_reading|bazi_calc|ziwei_calc|fortune_reading|pair_facts|liuyao_cast')
+
+
+def tool_facts(record: dict) -> list[dict]:
+    """JSON objects the recorded tool calls printed, for answer_check --facts."""
+    facts = []
+    for turn in record.get('turns', []):
+        for tool in turn.get('tools', []):
+            try:
+                value = json.loads(tool.get('output') or '')
+            except (TypeError, ValueError):
+                continue
+            if isinstance(value, dict) and value.get('tool'):
+                facts.append(value)
+    return facts
+
+
 DISCLAIMERS = ('仅供参考', '仅作参考', '不构成', '娱乐参考', '文化参考')
 NOT_PROSE = re.compile(r'^\s*(\||```|#|---|\*\*\*|>)')
 
@@ -41,7 +58,12 @@ def check(case: dict, record: dict, run: Path) -> dict:
         add(f'not_contains:{word}', word not in answer)
     if 'first_line_any' in rules:
         add('first_line_any', any(w in first for w in rules['first_line_any']), first[:60])
-    prose = check_answer(answer, [])
+    facts = tool_facts(record)
+    if FACT_TOOLS.search(commands):
+        # Pillar, formation and tie checks need the tools' own output; without it
+        # they did not run, and the case must not count as mechanically clean.
+        add('tool_facts_recorded', bool(facts), f'{len(facts)} tool outputs')
+    prose = check_answer(answer, facts)
     for item in prose['findings']:
         if item['severity'] == 'error':
             add(f"answer_check:{item['code']}", False, item['excerpt'][:60])

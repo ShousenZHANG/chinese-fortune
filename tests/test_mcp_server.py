@@ -100,3 +100,29 @@ def test_server_process_over_stdio():
                           capture_output=True, text=True, encoding='utf-8', timeout=60)
     reply = json.loads(done.stdout)
     assert json.loads(reply['result']['content'][0]['text'])['method'] == 'meihua'
+
+
+def test_wrongly_typed_requests_are_errors_and_the_session_continues():
+    bad = [
+        {'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call', 'params': {'name': 'run_script', 'arguments': {'script': 'doctor.py', 'args': None}}},
+        {'jsonrpc': '2.0', 'id': 2, 'method': 'tools/call', 'params': 'oops'},
+        {'jsonrpc': '2.0', 'id': 3, 'method': 'tools/call', 'params': {'name': {'x': 1}, 'arguments': {}}},
+        {'jsonrpc': '2.0', 'id': 4, 'method': 'tools/call', 'params': {'name': 'answer_check', 'arguments': {'answer': 'x', 'facts': 'no'}}},
+        {'jsonrpc': '2.0', 'id': 5, 'method': 'tools/call', 'params': {'name': 'bazi_reading', 'arguments': {**BIRTH, 'year': '2000'}}},
+        {'jsonrpc': '2.0', 'id': 6, 'method': 'ping'},
+    ]
+    out = io.StringIO()
+    mcp_server.serve(io.StringIO('\n'.join(json.dumps(m) for m in bad) + '\n'), out)
+    replies = {r['id']: r for r in map(json.loads, out.getvalue().splitlines())}
+    assert set(replies) == {1, 2, 3, 4, 5, 6}
+    assert replies[2]['error']['code'] == -32602
+    assert all(replies[i]['result']['isError'] for i in (1, 3, 4, 5))
+    assert replies[6]['result'] == {}
+
+
+def test_failed_facts_serialisation_leaves_no_temp_file(tmp_path, monkeypatch):
+    import tempfile
+    monkeypatch.setattr(tempfile, 'tempdir', str(tmp_path))
+    result, text = call('answer_check', {'answer': 'x', 'facts': [{'k': 'SYNTHETIC', 'bad': '\ud800'}]})
+    assert result['isError']
+    assert list(tmp_path.iterdir()) == []

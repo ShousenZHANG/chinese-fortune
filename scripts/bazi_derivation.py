@@ -8,7 +8,9 @@ steps cannot disagree with the chart they explain.
 """
 from __future__ import annotations
 
-from utils import hour_branch
+from datetime import date, datetime, timedelta
+
+from utils import hour_branch, parse_iso
 
 # 五鼠遁: the stem of 子时 for each day stem.
 RAT = {'甲': '甲', '己': '甲', '乙': '丙', '庚': '丙', '丙': '戊', '辛': '戊',
@@ -31,13 +33,41 @@ UNDECIDED = '出生时辰未知，这一柱可能随时辰不同，候选见 bir
 def _clock_step(facts: dict) -> dict:
     tz = facts.get('timezone') or {}
     ctx = facts.get('calendar_context') or {}
-    tst = facts.get('true_solar_time') or {}
     if not ctx.get('birth_instant_utc'):
         return {'step': '出生时刻', 'result': '只知日期',
                 'how': f"没有出生时刻，按出生地时区 {tz.get('tz_name') or '未给'} 的日期计算；依赖时刻的柱保留未定。"}
+    clock = _clock(facts)
+    if tz.get('tz_name'):
+        zone = (f"时区 {tz['tz_name']}，当时偏移 UTC{tz.get('offset_hours', 0):+g}"
+                f"（含夏令时 {tz.get('dst_hours', 0):g} 小时）")
+    else:
+        zone = f"未给 IANA 时区，按固定偏移 UTC{_fixed_offset(facts, clock):+g}（不判断夏令时）"
     return {'step': '出生时刻', 'result': ctx.get('birth_instant_utc'),
-            'how': f"当地钟表 {tst.get('clock_time', '?')}，时区 {tz.get('tz_name', '?')}，"
-                   f"当时偏移 UTC{tz.get('offset_hours', 0):+g}（含夏令时 {tz.get('dst_hours', 0):g} 小时），换成 UTC 瞬间。"}
+            'how': f"当地钟表 {clock}，{zone}，换成 UTC 瞬间。"}
+
+
+def _clock(facts: dict) -> str:
+    """The birth clock time as entered: the raw clock, never the true-solar result."""
+    tst = facts.get('true_solar_time') or {}
+    if tst.get('clock_time'):
+        return str(tst['clock_time'])
+    solar = facts.get('solar_date') or {}
+    return f"{solar.get('hour', 0):02d}:{solar.get('minute', 0):02d}"
+
+
+def _effective_time(facts: dict) -> str:
+    """The time the day and hour pillars were taken from: true solar when applied, else the clock."""
+    tst = facts.get('true_solar_time') or {}
+    return str(tst['true_solar_time']) if tst.get('applied') and tst.get('true_solar_time') else _clock(facts)
+
+
+def _fixed_offset(facts: dict, clock: str) -> float:
+    tst = facts.get('true_solar_time') or {}
+    instant = parse_iso((facts.get('calendar_context') or {})['birth_instant_utc'])
+    day = date.fromisoformat(tst['effective_date']) - timedelta(days=tst.get('day_offset') or 0)
+    hour, minute = (int(x) for x in clock.split(':')[:2])
+    local = datetime(day.year, day.month, day.day, hour, minute)
+    return round((local - instant.replace(tzinfo=None)).total_seconds() / 3600, 2)
 
 
 def _term_step(facts: dict) -> dict:
@@ -56,9 +86,14 @@ def _solar_step(facts: dict) -> dict:
     tst = facts.get('true_solar_time') or {}
     if not tst.get('applied'):
         return {'step': '真太阳时', 'result': '未校正', 'how': '没有经度或选择了钟表时间口径，日柱与时柱直接用钟表时间。'}
+    dst = float((facts.get('timezone') or {}).get('dst_hours') or 0)
+    longitude, meridian = float(tst.get('longitude', 0)), float(tst.get('ref_meridian', 0)) - 15 * dst
+    parts = [f"经度 {longitude:g}° 对标准时经线 {meridian:g}° 差 {round((longitude - meridian) * 4, 2):g} 分钟"]
+    if dst:
+        parts.append(f"出生时行夏令时，钟表快 {dst * 60:g} 分钟，扣回 {-dst * 60:g} 分钟")
+    parts.append(f"均时差 {tst.get('equation_of_time_min')} 分钟")
     return {'step': '真太阳时', 'result': f"{tst.get('effective_date')} {tst.get('true_solar_time')}",
-            'how': f"经度 {tst.get('longitude')}° 对标准经线 {tst.get('ref_meridian')}° 差 {tst.get('longitude_offset_min')} 分钟，"
-                   f"均时差 {tst.get('equation_of_time_min')} 分钟，合计 {tst.get('total_offset_min')} 分钟："
+            'how': '，'.join(parts) + f"，合计 {tst.get('total_offset_min')} 分钟："
                    f"{tst.get('clock_time')} → {tst.get('true_solar_time')}。"}
 
 
@@ -74,9 +109,8 @@ def _day_step(facts: dict) -> dict:
 def _hour_step(facts: dict) -> dict:
     if not facts.get('hour_known', True) or '未定' in (_gz(facts, 'hour'), _gz(facts, 'day')):
         return {'step': '时柱', 'result': '未定', 'how': '出生时辰未知，不用占位时辰排时柱；依赖时柱的结论保留未定。'}
-    tst = facts.get('true_solar_time') or {}
     day_stem = facts['four_pillars']['day']['stem']
-    clock = str(tst.get('true_solar_time') or tst.get('clock_time') or '00:00')
+    clock = _effective_time(facts)
     hour = int(clock.split(':')[0])
     branch = hour_branch(hour)
     return {'step': '时柱', 'result': facts['four_pillars']['hour']['ganzhi'],

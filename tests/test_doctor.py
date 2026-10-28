@@ -38,3 +38,19 @@ def test_a_crashing_check_is_reported_under_its_own_name(monkeypatch):
     monkeypatch.setattr(doctor, 'check_library', boom)
     row = next(c for c in doctor.run_checks() if c['name'] == 'classical_library')
     assert not row['ok'] and 'RuntimeError' in row['detail'] and row['fix']
+
+
+def test_required_assets_match_the_shipped_directory():
+    from pathlib import Path
+    shipped = {p.name for p in (Path(doctor.ROOT) / 'assets').glob('*.json')}
+    assert set(doctor.REQUIRED_ASSETS) == shipped
+
+
+def test_a_missing_rule_asset_makes_the_install_unhealthy(tmp_path, monkeypatch):
+    import shutil
+    assets = tmp_path / 'assets'
+    shutil.copytree(doctor.ROOT / 'assets', assets)
+    (assets / 'geju_rules.json').unlink()
+    monkeypatch.setattr(doctor, 'ROOT', tmp_path)
+    check = doctor.check_assets()
+    assert not check['ok'] and 'geju_rules.json' in check['detail'] and check['fix']

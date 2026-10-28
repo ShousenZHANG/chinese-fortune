@@ -20,6 +20,12 @@ from utils import VENDORED_MISSING, __version__, ensure_utf8_stdio, json_print
 
 SCRIPTS = Path(__file__).resolve().parent
 ROOT = SCRIPTS.parent
+# Every data file under assets/ that some tool loads; tests keep this list equal
+# to the directory, so a new asset cannot ship without doctor checking it.
+REQUIRED_ASSETS = ('64hex.json', 'bazi_rules.json', 'cities_cn.json', 'classical_evidence.json',
+                   'facsimile_witnesses.json', 'geju_rules.json', 'han-variants.json', 'jiemeng.json',
+                   'life_guide.json', 'luck_rules.json', 'method_rules.json', 'name_bihua.json', 'shensha.json',
+                   'tarot78.json', 'tiaohou.json', 'tiaohou_provenance.json')
 # A fictional birth with a published answer: 2000-01-15 10:30 Beijing time.
 REFERENCE = {'args': ['--year', '2000', '--month', '1', '--day', '15', '--hour', '10', '--minute', '30',
                       '--gender', 'male', '--timezone', 'Asia/Shanghai', '--longitude', '116.4'],
@@ -81,15 +87,20 @@ def check_library() -> dict:
 
 
 def check_assets() -> dict:
-    broken = []
-    files = sorted((ROOT / 'assets').glob('*.json'))
-    for path in files:
+    """Every data file the tools load must be present and parse; a missing one is not 'fewer files'."""
+    missing, broken = [], []
+    for name in REQUIRED_ASSETS:
+        path = ROOT / 'assets' / name
+        if not path.is_file():
+            missing.append(name)
+            continue
         try:
             json.loads(path.read_text(encoding='utf-8'))
         except (OSError, ValueError):
-            broken.append(path.name)
-    return _check('assets', bool(files) and not broken,
-                  f'{len(files)} 个数据文件可读' if not broken else '读不出：' + '、'.join(broken),
+            broken.append(name)
+    problems = ([f"缺少：{'、'.join(missing)}"] if missing else []) + ([f"读不出：{'、'.join(broken)}"] if broken else [])
+    return _check('assets', not problems,
+                  f'{len(REQUIRED_ASSETS)} 个数据文件齐全可读' if not problems else '；'.join(problems),
                   '数据文件缺失或损坏：重新下载完整技能包')
 
 
