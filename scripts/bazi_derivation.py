@@ -41,7 +41,9 @@ def _clock_step(facts: dict) -> dict:
         zone = (f"时区 {tz['tz_name']}，当时偏移 UTC{tz.get('offset_hours', 0):+g}"
                 f"（含夏令时 {tz.get('dst_hours', 0):g} 小时）")
     else:
-        zone = f"未给 IANA 时区，按固定偏移 UTC{_fixed_offset(facts, clock):+g}（不判断夏令时）"
+        offset = _fixed_offset(facts, clock)
+        fixed = f' UTC{offset:+g}' if offset is not None else ''
+        zone = f"未给 IANA 时区，按固定偏移{fixed}（不判断夏令时）"
     return {'step': '出生时刻', 'result': ctx.get('birth_instant_utc'),
             'how': f"当地钟表 {clock}，{zone}，换成 UTC 瞬间。"}
 
@@ -61,11 +63,19 @@ def _effective_time(facts: dict) -> str:
     return str(tst['true_solar_time']) if tst.get('applied') and tst.get('true_solar_time') else _clock(facts)
 
 
-def _fixed_offset(facts: dict, clock: str) -> float:
+def _fixed_offset(facts: dict, clock: str) -> float | None:
+    """Hours between the entered clock and the UTC instant; None when the facts cannot show it."""
     tst = facts.get('true_solar_time') or {}
-    instant = parse_iso((facts.get('calendar_context') or {})['birth_instant_utc'])
-    day = date.fromisoformat(tst['effective_date']) - timedelta(days=tst.get('day_offset') or 0)
-    hour, minute = (int(x) for x in clock.split(':')[:2])
+    solar = facts.get('solar_date') or {}
+    try:
+        instant = parse_iso((facts.get('calendar_context') or {})['birth_instant_utc'])
+        if tst.get('effective_date'):
+            day = date.fromisoformat(tst['effective_date']) - timedelta(days=tst.get('day_offset') or 0)
+        else:
+            day = date(solar['year'], solar['month'], solar['day'])
+        hour, minute = (int(x) for x in clock.split(':')[:2])
+    except (KeyError, ValueError, TypeError):
+        return None
     local = datetime(day.year, day.month, day.day, hour, minute)
     return round((local - instant.replace(tzinfo=None)).total_seconds() / 3600, 2)
 
