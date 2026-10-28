@@ -94,7 +94,7 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 | Appointment times | interview, exam, travel, moving | 相主 plus event day rules; interviews and exams also 《奇门遁甲元灵经》 |
 | Colours, accessories | what to wear | 《穷通宝鉴》 general 调候 choice (the cell's exceptions not checked against your chart) |
 | Almanac | a day's dos and don'ts | sourced day rules from 《协纪辨方书》《渊海子平》 |
-| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun, monthly, daily and hourly layers (matching iztro field by field) |
+| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun, monthly, daily and hourly layers (palaces match iztro; the late-zi hour stem follows this project's stated convention) |
 | Marriage and family pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other; classified, never scored |
 | Classical text lookup | passages, editions, context | 13 frozen transcriptions, 535 units, 18,982 paragraphs, offline |
 | Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
