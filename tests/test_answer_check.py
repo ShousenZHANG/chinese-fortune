@@ -151,6 +151,7 @@ def test_tables_of_moments_or_candidates_are_not_the_birth_chart():
 def test_stdin_envelope_carries_answer_and_facts():
     import subprocess
     import sys
+
     from conftest import SCRIPTS
     done = subprocess.run([sys.executable, str(SCRIPTS / 'answer_check.py'), '--stdin'],
                           input=json.dumps({'answer': '日柱甲子。', 'facts': [CHART]}, ensure_ascii=False),

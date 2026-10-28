@@ -23,7 +23,7 @@ ROOT = SCRIPTS.parent
 # Every data file under assets/ that some tool loads; tests keep this list equal
 # to the directory, so a new asset cannot ship without doctor checking it.
 REQUIRED_ASSETS = ('64hex.json', 'bazi_rules.json', 'cities_cn.json', 'classical_evidence.json',
-                   'facsimile_witnesses.json', 'geju_rules.json', 'han-variants.json', 'jiemeng.json',
+                   'facsimile_witnesses.json', 'geju_rules.json', 'han-variants.json', 'hehun_clauses.json', 'jiemeng.json',
                    'life_guide.json', 'luck_rules.json', 'method_rules.json', 'name_bihua.json', 'shensha.json',
                    'tarot78.json', 'tiaohou.json', 'tiaohou_provenance.json')
 # A fictional birth with a published answer: 2000-01-15 10:30 Beijing time.

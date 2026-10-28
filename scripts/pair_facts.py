@@ -15,6 +15,7 @@ import argparse
 import json
 import sys
 from itertools import product
+from pathlib import Path
 
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
@@ -34,6 +35,9 @@ from bazi_tables import (
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
 ORDER = ('year', 'month', 'day', 'hour')
+# 四孟、四仲、四季: the branch classes the 女命/男命 clauses compare (日支 against 年支 or 日支).
+BRANCH_CLASSES = {'四孟': '寅申巳亥', '四仲': '子午卯酉', '四季': '辰戌丑未'}
+CLAUSES = Path(__file__).resolve().parents[1] / 'assets' / 'hehun_clauses.json'
 BIRTH_KEYS = ('year', 'month', 'day', 'hour', 'minute', 'gender', 'timezone', 'longitude', 'city', 'sect', 'lunar',
               'fold', 'time_standard', 'tz')
 BOUNDARY = ('关系分类事实：哪一柱和哪一柱构成合、冲、刑、害。不是婚姻、亲子或合作好坏的判断，'
@@ -106,6 +110,13 @@ def _pair_relations(a: dict, b: dict) -> list[dict]:
         rows.append({'kind': 'tiangan_he', 'a': where['a'] + '干' + a['stem'], 'b': where['b'] + '干' + b['stem'],
                      'transforms_to': TIANGAN_HE[stems]})
     sa, sb = where['a'] + '支' + a['branch'], where['b'] + '支' + b['branch']
+    if a['ganzhi'] == b['ganzhi']:
+        rows.append({'kind': 'same_pillar', 'a': where['a'] + '柱' + a['ganzhi'], 'b': where['b'] + '柱' + b['ganzhi']})
+    if {a['pillar'], b['pillar']} <= {'year', 'day'} and 'day' in (a['pillar'], b['pillar']):
+        group = next((name for name, members in BRANCH_CLASSES.items()
+                      if a['branch'] in members and b['branch'] in members), None)
+        if group:
+            rows.append({'kind': 'same_branch_class', 'a': sa, 'b': sb, 'class': group})
     branches = frozenset((a['branch'], b['branch']))
     if a['branch'] == b['branch']:
         if a['branch'] in SAN_XING_SELF:
@@ -141,9 +152,21 @@ def _full_trios(a_pos: list[dict], b_pos: list[dict]) -> list[dict]:
     return rows
 
 
+def clause_refs(relations: list[dict]) -> dict:
+    """Source clauses on two people that these relations bear on, and the methods the tool cannot compute."""
+    present = {row['kind'] for row in relations}
+    clauses = json.loads(CLAUSES.read_text(encoding='utf-8'))['clauses']
+    brief = [{'id': c['id'], 'passage_id': c['passage_id'], 'positions': c['positions'], 'claim': c['claim'],
+              'not_computed': c['not_computed']} for c in clauses if set(c['pair_facts_kinds']) & present]
+    missing = sorted({m for c in clauses if not c['pair_facts_kinds'] for m in c['not_computed']})
+    return {'matched': brief, 'not_computed_methods': missing,
+            'meaning': '原文条款只列出处与原句结论；适用须按 assets/hehun_clauses.json 的 conditions 与歧义逐条核，'
+                       '用 classical_search.py --passage-id 读全文；不合成婚配分数'}
+
+
 def pair_facts(chart_a: dict, chart_b: dict) -> dict:
     a_pos, b_pos = _positions(chart_a), _positions(chart_b)
-    relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)]
+    relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)] + _full_trios(a_pos, b_pos)
     return {
         'ok': True, 'tool': 'pair_facts', 'version': __version__, 'schema_version': '1.0',
         'subjects': {name: {'four_pillars': {p['pillar']: p['ganzhi'] for p in pos},
@@ -151,7 +174,8 @@ def pair_facts(chart_a: dict, chart_b: dict) -> dict:
                             'hour_known': bool(chart.get('hour_known', True))}
                      for name, chart, pos in (('A', chart_a, a_pos), ('B', chart_b, b_pos))},
         'day_masters': _day_masters(chart_a, chart_b),
-        'relations': relations + _full_trios(a_pos, b_pos),
+        'relations': relations,
+        'classical_clauses': clause_refs(relations),
         'notes': list(NOTES),
         'boundary': BOUNDARY,
         'next_checks': ['按 references/14-hehun.md 查原文是否把该关系用于两人之间，以及适用的柱位与条件',
@@ -166,7 +190,7 @@ def main(argv: list[str] | None = None) -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog='stdin: {"a": {birth}, "b": {birth}}；birth 键同 bazi_calc：year month day hour minute gender\n'
                'timezone longitude city sect lunar，省略 hour 表示时辰未知。\n'
-               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations notes\n'
+               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations classical_clauses notes\n'
                'boundary next_checks; errors: error message')
     parser.add_argument('--stdin', action='store_true', required=True, help='从标准输入读两人出生资料 JSON')
     parser.parse_args(argv)

@@ -89,3 +89,29 @@ def test_answer_check_reads_pair_facts_output():
     from answer_check import check_answer
     result = check_answer('A的日主为甲，年柱己卯。', [facts()])
     assert [f['code'] for f in result['findings']] == ['day_master_mismatch']
+
+
+def test_same_pillar_branch_class_and_matched_clauses():
+    result = facts()
+    kinds = {(r['kind'], r['a'], r['b']) for r in result['relations']}
+    assert ('same_branch_class', '年支卯', '日支卯') in kinds
+    matched = {c['id'] for c in result['classical_clauses']['matched']}
+    assert {'G5-C08', 'G5-C13'} <= matched  # 天干五合/六合 clauses
+    assert '三元男女九宫合卦' in result['classical_clauses']['not_computed_methods']
+    twin = facts(b={**A, 'gender': 'female'})
+    assert any(r['kind'] == 'same_pillar' and r['a'] == '日柱壬申' for r in twin['relations'])
+
+
+def test_every_hehun_clause_quotes_its_hashed_passage():
+    import hashlib
+    from pathlib import Path
+
+    from classical_search import get_passage, normalized
+    data = json.loads((Path(SCRIPTS).parent / 'assets' / 'hehun_clauses.json').read_text(encoding='utf-8'))
+    assert len(data['clauses']) == 17
+    strip = str.maketrans('', '', '，。、；：「」')
+    for clause in data['clauses']:
+        text = get_passage(clause['passage_id'])['text']
+        assert hashlib.sha256(text.encode('utf-8')).hexdigest() == clause['sha256'], clause['id']
+        assert normalized(clause['quote'].translate(strip))[:12] in normalized(text.translate(strip)), clause['id']
+        assert clause['forbidden_inferences']
