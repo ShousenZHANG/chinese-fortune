@@ -351,12 +351,20 @@ def ensure_utf8_stdio() -> None:
     --help, error messages, and warnings in one place.
 
     errors="replace" keeps a degraded console from turning into a crash.
+
+    stdin gets the same treatment: requests piped to --stdin carry Chinese, and
+    on a Chinese Windows locale Python would otherwise decode them as GBK and
+    hand the tools mojibake. Hosts pipe UTF-8 (bash, PowerShell 7).
     """
     for stream in (sys.stdout, sys.stderr):
         try:
             stream.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
         except Exception:  # pragma: no cover - stream without reconfigure
             pass
+    try:
+        sys.stdin.reconfigure(encoding="utf-8")  # type: ignore[union-attr]
+    except Exception:  # pragma: no cover - stdin closed or without reconfigure
+        pass
 
 
 def json_print(obj: object, *, compact: bool = False) -> None:

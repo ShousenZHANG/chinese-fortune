@@ -134,3 +134,28 @@ def test_chapter_titles_term_lists_and_clock_times_are_not_false_alarms():
 
 def test_compressed_quote_of_a_real_passage_is_still_caught():
     assert codes('原文说"命禄最吉"。') == ['unverified_quote']
+
+
+def test_only_a_table_headed_by_pillars_is_read_as_pillars():
+    answer = ('| 年柱 | 月柱 | 日柱 | 时柱 |\n| --- | --- | --- | --- |\n| 庚午 | 辛巳 | 乙亥 | 癸未 |\n\n'
+              '| 大运 | 年份 |\n| --- | --- |\n| 甲戌 | 2023—2032 |\n')
+    assert codes(answer, CHART) == []
+
+
+def test_tables_of_moments_or_candidates_are_not_the_birth_chart():
+    answer = ('| 时刻 | 年柱 | 月柱 |\n| --- | --- | --- |\n| 2026-02-04 04:03 | 丙午 | 庚寅 |\n'
+              '| 2026-02-04 03:00 | 乙巳 | 己丑 |\n')
+    assert codes(answer, CHART) == []
+
+
+def test_stdin_envelope_carries_answer_and_facts():
+    import subprocess
+    import sys
+    from conftest import SCRIPTS
+    done = subprocess.run([sys.executable, str(SCRIPTS / 'answer_check.py'), '--stdin'],
+                          input=json.dumps({'answer': '日柱甲子。', 'facts': [CHART]}, ensure_ascii=False),
+                          capture_output=True, text=True, encoding='utf-8')
+    assert done.returncode == 1 and json.loads(done.stdout)['findings'][0]['code'] == 'pillar_mismatch'
+    bad = subprocess.run([sys.executable, str(SCRIPTS / 'answer_check.py'), '--stdin'], input='[]',
+                         capture_output=True, text=True, encoding='utf-8')
+    assert bad.returncode == 1 and json.loads(bad.stdout)['ok'] is False

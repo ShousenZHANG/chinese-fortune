@@ -18,6 +18,7 @@ GZ = f'[{STEM}][{BRANCH}]'
 SLOTS = {'年': 'year', '月': 'month', '日': 'day', '时': 'hour', '時': 'hour'}
 ORDER = ('year', 'month', 'day', 'hour')
 
+MOMENT_HEADER = re.compile(r'时刻|时间|日期|UTC|钟表|候选|假设|样例')
 SENTENCE = re.compile(r'[^。！？!?；;\n]+')
 QUOTED = re.compile(r'「[^」]*」|『[^』]*』|“[^”]*”|"[^"\n]*"')
 REVERSAL = re.compile(r'但是|但|不过|可是|然而|却')
@@ -106,19 +107,27 @@ def _finding(code: str, excerpt: str, detail: str) -> dict:
 
 
 def _table_pillars(answer: str) -> Iterator[tuple[str, str, str]]:
-    """(slot, 干支, row) from Markdown tables whose header names the pillars."""
-    rows = [line for line in answer.splitlines() if line.strip().startswith('|')]
-    header: list[str | None] = []
-    for row in rows:
-        cells = [c.strip() for c in row.strip().strip('|').split('|')]
-        slots = [next((SLOTS[ch] for ch in SLOTS if c.startswith(ch + '柱')), None) for c in cells]
-        if any(slots):
-            header = slots
-            continue
-        for slot, cell in zip(header, cells):
-            match = re.search(GZ, cell)
-            if slot and match:
-                yield slot, match.group(0), row
+    """(slot, 干支, row) from Markdown tables whose own header row names the pillars."""
+    tables: list[list[str]] = []
+    previous_was_row = False
+    for line in answer.splitlines():
+        is_row = line.strip().startswith('|')
+        if is_row:
+            if previous_was_row:
+                tables[-1].append(line)
+            else:
+                tables.append([line])
+        previous_was_row = is_row
+    for rows in tables:
+        cells = [c.strip() for c in rows[0].strip().strip('|').split('|')]
+        header = [next((SLOTS[ch] for ch in SLOTS if c.startswith(ch + '柱')), None) for c in cells]
+        if not any(header) or any(MOMENT_HEADER.search(c) for c in cells):
+            continue  # a table of moments or candidates compares times, not this birth chart
+        found = [(slot, match.group(0), row) for row in rows[1:]
+                 for slot, cell in zip(header, (c.strip() for c in row.strip().strip('|').split('|')))
+                 if slot and (match := re.search(GZ, cell))]
+        if all(len({gz for s2, gz, _ in found if s2 == slot}) <= 1 for slot in ORDER):
+            yield from found
 
 
 def pillar_findings(answer: str, facts: list[dict], checked: dict) -> list[dict]:

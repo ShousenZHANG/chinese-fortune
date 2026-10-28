@@ -119,7 +119,7 @@ def _named_methods(text: str) -> list[dict]:
     definitions = [
         (('八字', '四柱'), 'bazi', 'bazi_reading.py', '01-bazi.md', BAZI_COMMAND, [BIRTH]),
         (('紫微', '斗数'), 'ziwei', 'ziwei_calc.py', '02-ziwei.md',
-         'python scripts/ziwei_calc.py --year Y --month M --day D --hour H --minute m --gender G --city 出生地',
+         'python scripts/ziwei_calc.py --year Y --month M --day D --hour H --minute m --gender G --city 出生地 --brief-palaces',
          ['出生日期、历法、时分、性别和出生地；时辰未知先比较候选，不补子时']),
         (('梅花',), 'meihua', 'meihua_cast.py', '05-meihua.md',
          'python scripts/meihua_cast.py --current-timezone 现居地时区 --request-time 本次UTC time --question "<原话>"',

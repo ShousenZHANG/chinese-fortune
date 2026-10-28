@@ -183,8 +183,11 @@ def build_parser() -> argparse.ArgumentParser:
         description='发出前机械核对回答正文：引文、四柱、分数、确定性断言、未判格局、并列',
         epilog='Top-level JSON keys: ok tool version passed findings checked boundary; errors: error message. '
                'Exit 0 when no error finding.')
-    parser.add_argument('--answer', required=True, help="回答正文文件；'-' 读标准输入")
-    parser.add_argument('--facts', action='append', default=[], help='本次工具 JSON 输出，可重复')
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument('--answer', help="回答正文文件；'-' 读标准输入")
+    source.add_argument('--stdin', action='store_true',
+                        help='从标准输入读 {"answer": 正文, "facts": [本次工具 JSON 输出, ...]}，不用另存文件')
+    parser.add_argument('--facts', action='append', default=[], help='本次工具 JSON 输出文件，可重复')
     return parser
 
 
@@ -192,10 +195,17 @@ def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
     try:
-        answer = sys.stdin.read() if args.answer == '-' else Path(args.answer).read_text(encoding='utf-8')
         facts = [json.loads(Path(p).read_text(encoding='utf-8')) for p in args.facts]
+        if args.stdin:
+            request = json.loads(sys.stdin.read())
+            if not isinstance(request, dict) or not isinstance(request.get('answer'), str):
+                raise ValueError('需要 {"answer": "正文", "facts": [...]}')
+            answer = request['answer']
+            facts += request.get('facts') or []
+        else:
+            answer = sys.stdin.read() if args.answer == '-' else Path(args.answer).read_text(encoding='utf-8')
         if not all(isinstance(f, dict) for f in facts):
-            raise ValueError('--facts 每个文件须是一个 JSON 对象（工具输出）')
+            raise ValueError('facts 每一项须是一个 JSON 对象（工具输出）')
         result = check_answer(answer, facts)
     except (OSError, ValueError) as exc:
         json_print(error_envelope('answer_check', 'invalid_input', str(exc)))
