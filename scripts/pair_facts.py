@@ -18,6 +18,7 @@ from itertools import product
 
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
+from bazi_reading import chart_facts
 from bazi_tables import (
     DIZHI_CHONG,
     DIZHI_HAI,
@@ -33,16 +34,22 @@ from bazi_tables import (
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
 ORDER = ('year', 'month', 'day', 'hour')
-BIRTH_KEYS = ('year', 'month', 'day', 'hour', 'minute', 'gender', 'timezone', 'longitude', 'city', 'sect', 'lunar')
+BIRTH_KEYS = ('year', 'month', 'day', 'hour', 'minute', 'gender', 'timezone', 'longitude', 'city', 'sect', 'lunar',
+              'fold', 'time_standard', 'tz')
 BOUNDARY = ('关系分类事实：哪一柱和哪一柱构成合、冲、刑、害。不是婚姻、亲子或合作好坏的判断，'
             '也没有分数；跨盘能否这样用、怎样解释，要按原文逐条核对。')
 NOTES = ('canggan_he 列出两支藏干之间的天干五合，常被称为暗合；哪些支算暗合各家取法不同，只作候选事实。',
          '同一对地支可能同时是六合与刑（如巳申），两条都列出，不互相抵消。',
-         '时辰未知的一方不使用时柱；其余三柱照常比较。')
+         '时辰未知的一方不使用时柱；生日正逢交节或日界时，年、月、日柱也可能未定，未定的柱只列候选，不参与关系和日主十神。')
 
 
 def subject_chart(birth: dict) -> dict:
-    """One person's chart from a birth request; unknown hour stays unknown."""
+    """One person's chart facts from a birth request.
+
+    These are the single-chart reading's cleaned facts, so an unknown birth time
+    leaves every pillar it can move undecided with its candidates, instead of
+    the calculator's internal placeholder pillars.
+    """
     unknown = set(birth) - set(BIRTH_KEYS)
     if unknown:
         raise ValueError('unknown birth fields: ' + ', '.join(sorted(unknown)))
@@ -55,13 +62,29 @@ def subject_chart(birth: dict) -> dict:
     chart = calculate_bazi(chart_parser().parse_args(args))
     if not chart.get('ok'):
         raise ValueError(chart.get('message') or chart.get('error') or 'chart failed')
-    return chart
+    return chart_facts(chart)
 
 
 def _positions(chart: dict) -> list[dict]:
+    """Only the pillars the chart has fixed; an undecided pillar has no 干支 to relate."""
     pillars = chart['four_pillars']
-    keep = [k for k in ORDER if k in pillars and (k != 'hour' or chart.get('hour_known', True))]
+    keep = [k for k in ORDER if (pillars.get(k) or {}).get('ganzhi')
+            and (k != 'hour' or chart.get('hour_known', True))]
     return [{'pillar': k, 'label': PILLAR_LABELS_CN[k], **pillars[k]} for k in keep]
+
+
+def _undecided(chart: dict) -> dict:
+    return {k: v.get('candidate_ganzhi', []) for k, v in chart['four_pillars'].items()
+            if isinstance(v, dict) and not v.get('ganzhi')}
+
+
+def _day_masters(chart_a: dict, chart_b: dict) -> dict:
+    dm_a = (chart_a['four_pillars'].get('day') or {}).get('stem')
+    dm_b = (chart_b['four_pillars'].get('day') or {}).get('stem')
+    if isinstance(dm_a, str) and isinstance(dm_b, str):
+        return {'A': dm_a, 'B': dm_b, 'A_sees_B': shi_shen(dm_a, dm_b), 'B_sees_A': shi_shen(dm_b, dm_a)}
+    return {'A': dm_a, 'B': dm_b, 'A_sees_B': None, 'B_sees_A': None, 'status': 'day_pillar_undecided',
+            'meaning': '有一方日柱未定，不给日主互见的十神；补出生时刻后重算'}
 
 
 def _trio_kind(pair: frozenset[str]) -> list[str]:
@@ -121,13 +144,13 @@ def _full_trios(a_pos: list[dict], b_pos: list[dict]) -> list[dict]:
 def pair_facts(chart_a: dict, chart_b: dict) -> dict:
     a_pos, b_pos = _positions(chart_a), _positions(chart_b)
     relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)]
-    dm_a, dm_b = chart_a['four_pillars']['day']['stem'], chart_b['four_pillars']['day']['stem']
     return {
         'ok': True, 'tool': 'pair_facts', 'version': __version__, 'schema_version': '1.0',
         'subjects': {name: {'four_pillars': {p['pillar']: p['ganzhi'] for p in pos},
+                            'undecided_pillars': _undecided(chart),
                             'hour_known': bool(chart.get('hour_known', True))}
                      for name, chart, pos in (('A', chart_a, a_pos), ('B', chart_b, b_pos))},
-        'day_masters': {'A': dm_a, 'B': dm_b, 'A_sees_B': shi_shen(dm_a, dm_b), 'B_sees_A': shi_shen(dm_b, dm_a)},
+        'day_masters': _day_masters(chart_a, chart_b),
         'relations': relations + _full_trios(a_pos, b_pos),
         'notes': list(NOTES),
         'boundary': BOUNDARY,

@@ -261,16 +261,17 @@ def climate_passages(key: str) -> dict:
             'scope': '当月专段与已审计定位；原文命中不等于个人条件成立'}
 
 
-def iter_passages(library_root: Path | str | None = None) -> Iterator[tuple[dict, dict]]:
-    """Yield (book, passage) for every hash-checked chapter, in manifest order."""
+def iter_passages(library_root: Path | str | None = None) -> Iterator[tuple[dict, str, dict]]:
+    """Yield (book, chapter title, passage) for every hash-checked chapter, in manifest order."""
     root = _root(library_root)
     for book in _selected_books(root, None):
         for entry in book['chapters']:
             path = _path(root, entry['path'])
             if _hash(path) != entry['sha256']:
                 raise ValueError('chapter hash mismatch: ' + entry['path'])
-            for passage in _read(path)['passages']:
-                yield book, passage
+            chapter = _read(path)
+            for passage in chapter['passages']:
+                yield book, chapter['title'], passage
 
 
 def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict:

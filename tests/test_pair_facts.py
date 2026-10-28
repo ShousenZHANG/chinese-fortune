@@ -64,3 +64,28 @@ def test_cli_reads_both_subjects_from_stdin():
     bad = subprocess.run([sys.executable, str(SCRIPTS / 'pair_facts.py'), '--stdin'],
                          input=json.dumps({'a': A}), capture_output=True, text=True, encoding='utf-8')
     assert bad.returncode == 1 and json.loads(bad.stdout)['ok'] is False
+
+
+def test_unknown_hour_on_a_term_day_leaves_moving_pillars_undecided():
+    """立春当天、时辰未知：年月日柱都会随时刻变化，不能拿占位柱算关系或日主十神。"""
+    a = {'year': 2000, 'month': 2, 'day': 4, 'gender': 'male', 'timezone': 'Asia/Shanghai'}
+    result = facts(a=a)
+    subject = result['subjects']['A']
+    assert subject['four_pillars'] == {}
+    assert subject['undecided_pillars']['year'] == ['己卯', '庚辰']
+    assert subject['undecided_pillars']['day'] == ['壬辰', '辛卯']
+    assert result['relations'] == []
+    assert result['day_masters']['A'] is None and result['day_masters']['A_sees_B'] is None
+    assert result['day_masters']['status'] == 'day_pillar_undecided'
+
+
+def test_a_repeated_clock_time_can_be_disambiguated_with_fold():
+    a = {'year': 2024, 'month': 11, 'day': 3, 'hour': 1, 'minute': 30, 'gender': 'male',
+         'timezone': 'America/New_York', 'longitude': -74.006, 'fold': 0}
+    assert facts(a=a)['subjects']['A']['four_pillars']['day']
+
+
+def test_answer_check_reads_pair_facts_output():
+    from answer_check import check_answer
+    result = check_answer('A的日主为甲，年柱己卯。', [facts()])
+    assert [f['code'] for f in result['findings']] == ['day_master_mismatch']

@@ -109,3 +109,28 @@ def test_quoted_or_clause_negated_certainty_is_not_an_assertion():
 def test_quote_reads_through_rare_glyph_markers_and_catches_paraphrase():
     assert codes('《协纪辨方书》说七杀「若至二点必凶」。') == []
     assert codes('书中说“财与官一两点都相宜”。') == ['unverified_quote']
+
+
+def test_external_adversarial_set_is_classified_as_labelled():
+    """104 samples from the external review (G1 R4): every label must hold."""
+    from pathlib import Path
+    data = json.loads((Path(__file__).parent / 'data' / 'answer_check_adversarial.json').read_text(encoding='utf-8'))
+    wrong = []
+    for sample in data['samples']:
+        result = check_answer(sample['answer'], [data['facts'][name] for name in sample['facts']])
+        got = {f['code'] for f in result['findings'] if f['severity'] == 'error'}
+        ok = (not result['passed']) == sample['error'] and (
+            not sample['error'] or not sample['codes_any'] or got & set(sample['codes_any']))
+        if not ok:
+            wrong.append((sample['id'], sorted(got)))
+    assert not wrong
+
+
+def test_chapter_titles_term_lists_and_clock_times_are_not_false_alarms():
+    assert codes('《子平真诠》「論用神成敗救應」一章讲成败。') == []
+    assert codes('《协纪辨方书》的相主原本用于“修造、用事”。') == []
+    assert codes('若在 0 点至 0 点 31 分出生，日柱为乙卯；交节前1分08秒。') == []
+
+
+def test_compressed_quote_of_a_real_passage_is_still_caught():
+    assert codes('原文说"命禄最吉"。') == ['unverified_quote']

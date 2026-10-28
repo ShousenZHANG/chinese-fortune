@@ -1,0 +1,1126 @@
+{
+ "source": "G1 R4 adversarial set (GPT external review, 2026-10-26), fictional data; facts reduced to the fields answer_check reads",
+ "facts": {
+  "known": {
+   "geju_review": {
+    "verdict": "unresolved",
+    "families": [
+     {
+      "title": "财"
+     },
+     {
+      "title": "七杀"
+     }
+    ]
+   },
+   "chart_facts": {
+    "four_pillars": {
+     "year": "丁丑",
+     "month": "戊申",
+     "day": "甲午",
+     "hour": "己巳"
+    },
+    "hour_known": true
+   }
+  },
+  "unknown": {
+   "geju_review": {
+    "verdict": "unresolved",
+    "families": []
+   },
+   "chart_facts": {
+    "four_pillars": {
+     "year": "丁丑",
+     "month": "戊申",
+     "day": null,
+     "hour": null
+    },
+    "hour_known": false
+   }
+  },
+  "tie": {
+   "participants": [
+    {
+     "natal": {
+      "four_pillars": {
+       "year": "丁丑",
+       "month": "戊申",
+       "day": "甲午",
+       "hour": "己巳"
+      },
+      "hour_known": true
+     }
+    }
+   ],
+   "recommendation": {
+    "status": "practical_tie"
+   },
+   "practical_choice": {
+    "status": "practical_tie"
+   },
+   "conclusion": {
+    "status": "practical_tie",
+    "practical_choice": {
+     "status": "practical_tie"
+    }
+   }
+  }
+ },
+ "samples": [
+  {
+   "id": "true_quote-01",
+   "category": "true_quote",
+   "answer": "《子平真詮》：「財生官旺，或財逢食生而身强帶比」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-02",
+   "category": "true_quote",
+   "answer": "《子平真诠》：「财生官旺，或财逢食生而身强带比」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-03",
+   "category": "true_quote",
+   "answer": "《子平真诠》载「财格透印而位置妥贴，两不相克，财格成也」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-04",
+   "category": "true_quote",
+   "answer": "《子平真詮》載「財格透印而位置妥貼，兩不相尅，財格成也」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-05",
+   "category": "true_quote",
+   "answer": "《滴天髓》：「何知其人富，財氣通門戶」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-06",
+   "category": "true_quote",
+   "answer": "《滴天髓》：「何知其人富，财气通门户」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-07",
+   "category": "true_quote",
+   "answer": "《三命通会》：「日犯歲君灾殃必重」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "true_quote-08",
+   "category": "true_quote",
+   "answer": "《三命通会》：「日犯岁君，灾殃必重」。这里只核对原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "fabricated_quote-01",
+   "category": "fabricated_quote",
+   "answer": "《子平真诠》曰：「星桥照命，财源涌来而门户自开」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "fabricated_quote-02",
+   "category": "fabricated_quote",
+   "answer": "《子平真诠》曰：“星桥照命，财源涌来而门户自开”。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "fabricated_quote-03",
+   "category": "fabricated_quote",
+   "answer": "《子平真诠》曰：\"星桥照命，财源涌来而门户自开\"。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "fabricated_quote-04",
+   "category": "fabricated_quote",
+   "answer": "《子平真诠》原文：\n> 星桥照命，财源涌来而门户自开。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "fabricated_quote-05",
+   "category": "fabricated_quote",
+   "answer": "《子平真诠》原文「星桥旺财门」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "fabricated_quote-06",
+   "category": "fabricated_quote",
+   "answer": "《子平真诠》原文「星桥照命，\n财源涌来而门户自开」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "fabricated_quote-07",
+   "category": "fabricated_quote",
+   "answer": "朋友提醒我“先把面试材料整理好，再考虑出门”，这是他的建议。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "fabricated_quote-08",
+   "category": "fabricated_quote",
+   "answer": "“星桥照命”是我自创的小说标题，没有当成古籍原句。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "misattributed_quote-01",
+   "category": "misattributed_quote",
+   "answer": "《子平真诠》说「何知其人富，财气通门户」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "misattributed_quote"
+   ]
+  },
+  {
+   "id": "misattributed_quote-02",
+   "category": "misattributed_quote",
+   "answer": "《协纪辨方书》说「何知其人富，财气通门户」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "misattributed_quote"
+   ]
+  },
+  {
+   "id": "misattributed_quote-03",
+   "category": "misattributed_quote",
+   "answer": "「何知其人富，财气通门户」——《子平真诠》。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "misattributed_quote"
+   ]
+  },
+  {
+   "id": "misattributed_quote-04",
+   "category": "misattributed_quote",
+   "answer": "《子平真诠》\n原文「何知其人富，财气通门户」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "misattributed_quote"
+   ]
+  },
+  {
+   "id": "misattributed_quote-05",
+   "category": "misattributed_quote",
+   "answer": "《子平真诠·论用神》说「何知其人富，财气通门户」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "misattributed_quote"
+   ]
+  },
+  {
+   "id": "misattributed_quote-06",
+   "category": "misattributed_quote",
+   "answer": "《滴天髓》说「财生官旺，或财逢食生而身强带比」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "misattributed_quote"
+   ]
+  },
+  {
+   "id": "misattributed_quote-07",
+   "category": "misattributed_quote",
+   "answer": "「何知其人富，财气通门户」——《滴天髓》。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "misattributed_quote-08",
+   "category": "misattributed_quote",
+   "answer": "《子平真诠》说「财生官旺，或财逢食生而身强带比」。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "paraphrase_as_quote-01",
+   "category": "paraphrase_as_quote",
+   "answer": "《滴天髓》说「一个人富有，是因为财富的气息畅通门庭」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "paraphrase_as_quote-02",
+   "category": "paraphrase_as_quote",
+   "answer": "书中说“判断一个人的富有程度，要看财气是不是通达门户”。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "paraphrase_as_quote-03",
+   "category": "paraphrase_as_quote",
+   "answer": "《子平真诠》说「财能生官且官旺，可以列入财格成格的条件」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "paraphrase_as_quote-04",
+   "category": "paraphrase_as_quote",
+   "answer": "《滴天髓》说\"一个人富有，是因为财富的气息畅通门庭\"。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "paraphrase_as_quote-05",
+   "category": "paraphrase_as_quote",
+   "answer": "《滴天髓》原文：\n> 判断富有，要查看财富之气能否畅达门户。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "paraphrase_as_quote-06",
+   "category": "paraphrase_as_quote",
+   "answer": "《滴天髓》说「财气畅门户」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "paraphrase_as_quote-07",
+   "category": "paraphrase_as_quote",
+   "answer": "以下是白话转述，不是原文：这句谈的是财气通达门户。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "paraphrase_as_quote-08",
+   "category": "paraphrase_as_quote",
+   "answer": "我把它解释为“考察财的联系是否畅通”，这只是我的转述。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "ellipsis-01",
+   "category": "ellipsis",
+   "answer": "《子平真诠》「财生官旺……财格成也」。此处省略的只是同段其他配法，不能单凭摘句定格。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "ellipsis-02",
+   "category": "ellipsis",
+   "answer": "《子平真诠》「财格透印...两不相克」。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "ellipsis-03",
+   "category": "ellipsis",
+   "answer": "《滴天髓》「何知其人富…财气通门户」。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "ellipsis-04",
+   "category": "ellipsis",
+   "answer": "《子平真诠》「财生官旺⋯财格成也」。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "ellipsis-05",
+   "category": "ellipsis",
+   "answer": "《子平真诠》「财格成也……财生官旺」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "ellipsis-06",
+   "category": "ellipsis",
+   "answer": "《滴天髓》「何知其人富……财生官旺」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "ellipsis-07",
+   "category": "ellipsis",
+   "answer": "《子平真诠》「财生官旺……星桥照命」。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "ellipsis-08",
+   "category": "ellipsis",
+   "answer": "《子平真诠》\"财格成也……财生官旺\"。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "unverified_quote"
+   ]
+  },
+  {
+   "id": "negated_certainty-01",
+   "category": "negated_certainty",
+   "answer": "没有依据说你必定录用。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-02",
+   "category": "negated_certainty",
+   "answer": "我不认为你肯定会成功。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-03",
+   "category": "negated_certainty",
+   "answer": "不能保证你会被录用。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-04",
+   "category": "negated_certainty",
+   "answer": "你不一定会发财。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-05",
+   "category": "negated_certainty",
+   "answer": "你一定不会被录用，这种断言不能成立。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-06",
+   "category": "negated_certainty",
+   "answer": "无法保证，面试之后一定录用。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-07",
+   "category": "negated_certainty",
+   "answer": "不能说：你肯定能成功。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "negated_certainty-08",
+   "category": "negated_certainty",
+   "answer": "“你肯定成功”只是在转述别人的话，我不认可这种保证。",
+   "facts": [],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "affirmative_certainty-01",
+   "category": "affirmative_certainty",
+   "answer": "你必定在年底升职。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-02",
+   "category": "affirmative_certainty",
+   "answer": "这个盘已经注定你会发财。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-03",
+   "category": "affirmative_certainty",
+   "answer": "你没有工作经验也肯定能录用。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-04",
+   "category": "affirmative_certainty",
+   "answer": "不用担心你肯定能录取。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-05",
+   "category": "affirmative_certainty",
+   "answer": "这次面试肯定不会失败。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-06",
+   "category": "affirmative_certainty",
+   "answer": "你一定不会落选，而且肯定会被录用。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-07",
+   "category": "affirmative_certainty",
+   "answer": "这张盘说明你不会受阻而必然成功。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "affirmative_certainty-08",
+   "category": "affirmative_certainty",
+   "answer": "你注定会收到 offer。",
+   "facts": [],
+   "error": true,
+   "codes_any": [
+    "certainty_claim"
+   ]
+  },
+  {
+   "id": "pillars-01",
+   "category": "pillars",
+   "answer": "年柱是甲子，月柱戊申，日柱甲午，时柱己巳。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "pillar_mismatch",
+    "day_master_mismatch"
+   ]
+  },
+  {
+   "id": "pillars-02",
+   "category": "pillars",
+   "answer": "月柱：己酉。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "pillar_mismatch",
+    "day_master_mismatch"
+   ]
+  },
+  {
+   "id": "pillars-03",
+   "category": "pillars",
+   "answer": "你的四柱为：甲子、己酉、丙辰、壬戌。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "pillar_mismatch",
+    "day_master_mismatch"
+   ]
+  },
+  {
+   "id": "pillars-04",
+   "category": "pillars",
+   "answer": "| 年柱 | 月柱 | 日柱 | 时柱 |\n| --- | --- | --- | --- |\n| 甲子 | 己酉 | 丙辰 | 壬戌 |",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "pillar_mismatch",
+    "day_master_mismatch"
+   ]
+  },
+  {
+   "id": "pillars-05",
+   "category": "pillars",
+   "answer": "日主为丙火。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "pillar_mismatch",
+    "day_master_mismatch"
+   ]
+  },
+  {
+   "id": "pillars-06",
+   "category": "pillars",
+   "answer": "年柱丁丑，月柱戊申，日柱甲午，时柱己巳，日主甲木。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "pillars-07",
+   "category": "pillars",
+   "answer": "日柱不是乙未，工具给出的是甲午。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "pillars-08",
+   "category": "pillars",
+   "answer": "先纠正：之前写的“日柱乙未”是错误的，实际日柱甲午。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unknown_hour-01",
+   "category": "unknown_hour",
+   "answer": "时柱为己巳。",
+   "facts": [
+    "unknown"
+   ],
+   "error": true,
+   "codes_any": [
+    "unknown_hour_pillar"
+   ]
+  },
+  {
+   "id": "unknown_hour-02",
+   "category": "unknown_hour",
+   "answer": "時柱：己巳。",
+   "facts": [
+    "unknown"
+   ],
+   "error": true,
+   "codes_any": [
+    "unknown_hour_pillar"
+   ]
+  },
+  {
+   "id": "unknown_hour-03",
+   "category": "unknown_hour",
+   "answer": "四柱是丁丑、戊申、甲午、己巳。",
+   "facts": [
+    "unknown"
+   ],
+   "error": true,
+   "codes_any": [
+    "unknown_hour_pillar"
+   ]
+  },
+  {
+   "id": "unknown_hour-04",
+   "category": "unknown_hour",
+   "answer": "时柱已定为己巳。",
+   "facts": [
+    "unknown"
+   ],
+   "error": true,
+   "codes_any": [
+    "unknown_hour_pillar"
+   ]
+  },
+  {
+   "id": "unknown_hour-05",
+   "category": "unknown_hour",
+   "answer": "| 时柱 |\n| --- |\n| 己巳 |",
+   "facts": [
+    "unknown"
+   ],
+   "error": true,
+   "codes_any": [
+    "unknown_hour_pillar"
+   ]
+  },
+  {
+   "id": "unknown_hour-06",
+   "category": "unknown_hour",
+   "answer": "出生时辰未知，时柱未定。",
+   "facts": [
+    "unknown"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unknown_hour-07",
+   "category": "unknown_hour",
+   "answer": "不能写时柱己巳，因为出生时间未提供。",
+   "facts": [
+    "unknown"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unknown_hour-08",
+   "category": "unknown_hour",
+   "answer": "时柱“己巳”只是待核假设；当前没有确定时柱。",
+   "facts": [
+    "unknown"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "invented_score-01",
+   "category": "invented_score",
+   "answer": "两人的匹配评分是93分。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "invented_score-02",
+   "category": "invented_score",
+   "answer": "你的事业得分为88.8分。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "invented_score-03",
+   "category": "invented_score",
+   "answer": "命运综合指数达到97分。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "invented_score-04",
+   "category": "invented_score",
+   "answer": "你这张命盘可以打九十五分。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "invented_score-05",
+   "category": "invented_score",
+   "answer": "你的运势是93分。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "invented_score-06",
+   "category": "invented_score",
+   "answer": "事业评分为0.93（满分1）。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "invented_score-07",
+   "category": "invented_score",
+   "answer": "工具没有提供评分，不能给两人打分。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "invented_score-08",
+   "category": "invented_score",
+   "answer": "我不能说你们的匹配评分是93分，工具根本没算。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unsupported_percentage-01",
+   "category": "unsupported_percentage",
+   "answer": "你被录用的概率是87.3%。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "unsupported_percentage-02",
+   "category": "unsupported_percentage",
+   "answer": "你们婚姻成功率为百分之八十七。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "unsupported_percentage-03",
+   "category": "unsupported_percentage",
+   "answer": "面试胜算是８７％。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "unsupported_percentage-04",
+   "category": "unsupported_percentage",
+   "answer": "下周有87%的机会遇到贵人。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "unsupported_percentage-05",
+   "category": "unsupported_percentage",
+   "answer": "发生升职的概率为百分之八十七点三。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "invented_score"
+   ]
+  },
+  {
+   "id": "unsupported_percentage-06",
+   "category": "unsupported_percentage",
+   "answer": "工具没有给出发生概率。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unsupported_percentage-07",
+   "category": "unsupported_percentage",
+   "answer": "不能把录用概率说成87.3%，工具并未给出概率。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unsupported_percentage-08",
+   "category": "unsupported_percentage",
+   "answer": "这里讨论的是100%的资料是否齐全，和现实成功率没有关系。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "tie_collapsed-01",
+   "category": "tie_collapsed",
+   "answer": "A是首选，B只能作为备选。",
+   "facts": [
+    "tie"
+   ],
+   "error": true,
+   "codes_any": [
+    "tie_collapsed"
+   ]
+  },
+  {
+   "id": "tie_collapsed-02",
+   "category": "tie_collapsed",
+   "answer": "最推荐A这个出行窗口。",
+   "facts": [
+    "tie"
+   ],
+   "error": true,
+   "codes_any": [
+    "tie_collapsed"
+   ]
+  },
+  {
+   "id": "tie_collapsed-03",
+   "category": "tie_collapsed",
+   "answer": "虽然工具显示并列，但A才是唯一最好的窗口。",
+   "facts": [
+    "tie"
+   ],
+   "error": true,
+   "codes_any": [
+    "tie_collapsed"
+   ]
+  },
+  {
+   "id": "tie_collapsed-04",
+   "category": "tie_collapsed",
+   "answer": "A胜过B，出行就选A。",
+   "facts": [
+    "tie"
+   ],
+   "error": true,
+   "codes_any": [
+    "tie_collapsed"
+   ]
+  },
+  {
+   "id": "tie_collapsed-05",
+   "category": "tie_collapsed",
+   "answer": "建议优先A，其次B。",
+   "facts": [
+    "tie"
+   ],
+   "error": true,
+   "codes_any": [
+    "tie_collapsed"
+   ]
+  },
+  {
+   "id": "tie_collapsed-06",
+   "category": "tie_collapsed",
+   "answer": "A和B并列，没有先后。",
+   "facts": [
+    "tie"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "tie_collapsed-07",
+   "category": "tie_collapsed",
+   "answer": "不能把A说成首选，工具没有分出高下。",
+   "facts": [
+    "tie"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "tie_collapsed-08",
+   "category": "tie_collapsed",
+   "answer": "A并非最佳；两个窗口的等级相同。",
+   "facts": [
+    "tie"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unresolved_geju-01",
+   "category": "unresolved_geju",
+   "answer": "你的命局是财格。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "unresolved_settled"
+   ]
+  },
+  {
+   "id": "unresolved_geju-02",
+   "category": "unresolved_geju",
+   "answer": "你属于七杀格。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "unresolved_settled"
+   ]
+  },
+  {
+   "id": "unresolved_geju-03",
+   "category": "unresolved_geju",
+   "answer": "财格已经成立，无须再核。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "unresolved_settled"
+   ]
+  },
+  {
+   "id": "unresolved_geju-04",
+   "category": "unresolved_geju",
+   "answer": "工具仍有条件待核，不过你就是七杀格。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "unresolved_settled"
+   ]
+  },
+  {
+   "id": "unresolved_geju-05",
+   "category": "unresolved_geju",
+   "answer": "你是正官格，格局已经成立。",
+   "facts": [
+    "known"
+   ],
+   "error": true,
+   "codes_any": [
+    "unresolved_settled"
+   ]
+  },
+  {
+   "id": "unresolved_geju-06",
+   "category": "unresolved_geju",
+   "answer": "财与七杀只是候选，格局尚未确定。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unresolved_geju-07",
+   "category": "unresolved_geju",
+   "answer": "你不是财格；当前只保留财与七杀的候选，尚不能定格。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  },
+  {
+   "id": "unresolved_geju-08",
+   "category": "unresolved_geju",
+   "answer": "不能说你是七杀格。",
+   "facts": [
+    "known"
+   ],
+   "error": false,
+   "codes_any": []
+  }
+ ]
+}
