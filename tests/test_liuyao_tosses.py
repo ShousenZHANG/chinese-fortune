@@ -21,3 +21,28 @@ def test_bad_or_conflicting_tosses_are_refused():
         assert data['ok'] is False and '6/7/8/9' in data['message']
     data = run_cli('liuyao_cast.py', 'coins', '--lines', '7,7,7,7,7,7', '--seed', '3', *WHEN, expect_rc=1)
     assert '--seed' in data['message']
+
+
+def test_every_cast_indexes_the_reference_rules_and_rules_resolve():
+    data = run_cli('liuyao_cast.py', 'coins', '--lines', '7,8,9,6,7,7', *WHEN)
+    ids = [rule_id for rows in data['rule_index']['topics'].values() for rule_id, _ in rows]
+    assert len(ids) == 47 and 'liuyao-return-restraint' in ids
+    rule = run_cli('liuyao_cast.py', 'rules', '--id', 'liuyao-return-restraint')['rules'][0]
+    assert rule['passage_id'].startswith('zengshan:') and rule['application_status'] == 'reference_only'
+    assert len(run_cli('liuyao_cast.py', 'rules', '--scope', 'timing')['rules']) == 5
+
+
+def test_every_liuyao_rule_quotes_its_hashed_passage():
+    import hashlib
+    import json
+    from pathlib import Path
+
+    from classical_search import get_passage, normalized
+    root = Path(__file__).resolve().parents[1]
+    rules = json.loads((root / 'assets' / 'liuyao_rules.json').read_text(encoding='utf-8'))['rules']
+    strip = str.maketrans('', '', '，。、；：「」')
+    for rule in rules:
+        text = get_passage(rule['passage_id'])['text']
+        assert hashlib.sha256(text.encode('utf-8')).hexdigest() == rule['sha256'], rule['id']
+        assert normalized(rule['quote'].translate(strip)) in normalized(text.translate(strip)), rule['id']
+        assert rule['forbidden_inferences'] and rule['required_conditions']

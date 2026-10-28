@@ -1,0 +1,3218 @@
+{
+ "schema_version": "1.0",
+ "method": "liuyao",
+ "book_id": "zengshan",
+ "source": "External research G4 (2026-10-26) over the bundled 《增删卜易》; quotes are checked against passage hashes by tests. 141 fixtures stay with the research record.",
+ "status": "参考条款库：每条给原文、可由盘面字段判断的条件和须人工判断的条件、例外与冲突。工具不自动判定这些条款是否成立；宿主按条件逐项核对并写明哪些已核、哪些未核。",
+ "scopes": {
+  "chart_structure": "用神取法",
+  "strength": "旺衰（月建日辰）",
+  "movement": "动变（进退、回头生克、化空破墓绝）",
+  "emptiness": "旬空",
+  "hidden": "伏神飞神",
+  "special_hexagram": "六冲六合、反吟伏吟",
+  "timing": "应期"
+ },
+ "rules": [
+  {
+   "id": "liuyao-use-parent",
+   "name": "占父母取父母类",
+   "scope": "chart_structure",
+   "passage_id": "zengshan:c008:p0001",
+   "sha256": "f8ae76908321d3d7ba16c6b5300bf2f202f0665016fa46e3f840d45d6ee73455",
+   "quote": "占父母卽以卦中之父母爻爲神。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c008:p0001",
+    "zengshan:c009:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "对象与原文类别相符",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "由明确的问题关系判断是否属于占父母取父母类；多对象混问不通过自动判定。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].liu_qin"
+     ],
+     "predicate": "本卦有 liu_qin=父母 的爻；这里只提出六亲类别候选，不在同类多爻中擅选一爻。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0049",
+     "description": "本卦无该用神时另审日月与本宫首卦，不据缺类判现实不存在。",
+     "layer": "正文通则或定义",
+     "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "target_relative": "父母",
+   "allowed_interpretation": "原文把该明确对象归入父母类；同类多现、伏藏或时间条件仍待另审。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-use-official",
+   "name": "功名或妻占夫取官鬼类",
+   "scope": "chart_structure",
+   "passage_id": "zengshan:c008:p0001",
+   "sha256": "f8ae76908321d3d7ba16c6b5300bf2f202f0665016fa46e3f840d45d6ee73455",
+   "quote": "占功名、官府、雷霆鬼神、妻占夫皆以官鬼爻爲用神。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c008:p0001",
+    "zengshan:c009:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "对象与原文类别相符",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "由明确的问题关系判断是否属于功名或妻占夫取官鬼类；多对象混问不通过自动判定。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].liu_qin"
+     ],
+     "predicate": "本卦有 liu_qin=官鬼 的爻；这里只提出六亲类别候选，不在同类多爻中擅选一爻。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0049",
+     "description": "本卦无该用神时另审日月与本宫首卦，不据缺类判现实不存在。",
+     "layer": "正文通则或定义",
+     "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "target_relative": "官鬼",
+   "allowed_interpretation": "原文把该明确对象归入官鬼类；同类多现、伏藏或时间条件仍待另审。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-use-sibling",
+   "name": "占兄弟姐妹取兄弟类",
+   "scope": "chart_structure",
+   "passage_id": "zengshan:c008:p0001",
+   "sha256": "f8ae76908321d3d7ba16c6b5300bf2f202f0665016fa46e3f840d45d6ee73455",
+   "quote": "占兄弟、姐妹、族中兄弟、姑姨、妹夫及結拜兄弟都以兄弟爻爲用神。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c008:p0001",
+    "zengshan:c009:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "对象与原文类别相符",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "由明确的问题关系判断是否属于占兄弟姐妹取兄弟类；多对象混问不通过自动判定。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].liu_qin"
+     ],
+     "predicate": "本卦有 liu_qin=兄弟 的爻；这里只提出六亲类别候选，不在同类多爻中擅选一爻。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0049",
+     "description": "本卦无该用神时另审日月与本宫首卦，不据缺类判现实不存在。",
+     "layer": "正文通则或定义",
+     "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c008:p0001",
+     "description": "兄弟条前列妹夫，后又说占姊丈妹夫以世爻；本提案只以亲兄弟姐妹作稳定示例，该称谓分歧不裁决。",
+     "layer": "正文通则或定义",
+     "sha256": "f8ae76908321d3d7ba16c6b5300bf2f202f0665016fa46e3f840d45d6ee73455",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "target_relative": "兄弟",
+   "allowed_interpretation": "原文把该明确对象归入兄弟类；同类多现、伏藏或时间条件仍待另审。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-use-wealth",
+   "name": "财物取妻财类",
+   "scope": "chart_structure",
+   "passage_id": "zengshan:c008:p0001",
+   "sha256": "f8ae76908321d3d7ba16c6b5300bf2f202f0665016fa46e3f840d45d6ee73455",
+   "quote": "占貨財、珠寶、倉庫一切使用之財物亦以妻財爻爲用神。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c008:p0001",
+    "zengshan:c009:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "对象与原文类别相符",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "由明确的问题关系判断是否属于财物取妻财类；多对象混问不通过自动判定。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].liu_qin"
+     ],
+     "predicate": "本卦有 liu_qin=妻财 的爻；这里只提出六亲类别候选，不在同类多爻中擅选一爻。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0049",
+     "description": "本卦无该用神时另审日月与本宫首卦，不据缺类判现实不存在。",
+     "layer": "正文通则或定义",
+     "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "target_relative": "妻财",
+   "allowed_interpretation": "原文把该明确对象归入妻财类；同类多现、伏藏或时间条件仍待另审。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-use-child",
+   "name": "子孙辈取子孙类",
+   "scope": "chart_structure",
+   "passage_id": "zengshan:c008:p0001",
+   "sha256": "f8ae76908321d3d7ba16c6b5300bf2f202f0665016fa46e3f840d45d6ee73455",
+   "quote": "占子孫、占女、女婿、侄、甥、門生凡在我子孫輩中皆以子孫爻爲用神。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c008:p0001",
+    "zengshan:c009:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "对象与原文类别相符",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "由明确的问题关系判断是否属于子孙辈取子孙类；多对象混问不通过自动判定。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].liu_qin"
+     ],
+     "predicate": "本卦有 liu_qin=子孙 的爻；这里只提出六亲类别候选，不在同类多爻中擅选一爻。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0049",
+     "description": "本卦无该用神时另审日月与本宫首卦，不据缺类判现实不存在。",
+     "layer": "正文通则或定义",
+     "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "target_relative": "子孙",
+   "allowed_interpretation": "原文把该明确对象归入子孙类；同类多现、伏藏或时间条件仍待另审。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-use-self-shi",
+   "name": "自占自身吉凶取世爻",
+   "scope": "chart_structure",
+   "passage_id": "zengshan:c003:p0015",
+   "sha256": "5dd9e342bc5a075371d3fe8cf5cd409fc609cecb804ebf87b1497eddbe3e1088",
+   "quote": "自占吉凶者以世爻爲用神",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c003:p0014",
+    "zengshan:c003:p0015",
+    "zengshan:c003:p0016",
+    "zengshan:c003:p0017",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "自占自己",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "问题明确是本人自身吉凶，非仅本人发问但对象是父母、财物等。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.shi_position",
+      "main_chart.lines[].is_shi"
+     ],
+     "predicate": "本卦 is_shi=true 的爻与 shi_position 一致。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c033:p0773",
+     "description": "僧道医家自占道艺另取子孙，自占功名仍看官；不能把所有自问都取世。",
+     "layer": "正文通则或定义",
+     "sha256": "51f7bac9063cf31ff2e4d6d174be3ab2971c78eaa8b82d9e4ed6377cb61baa34",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可把世爻标为本次自占自身的主事爻候选。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-seasonal-strength",
+   "name": "四时旺相休囚按月令分层",
+   "scope": "strength",
+   "passage_id": "zengshan:c016:p0001",
+   "sha256": "149da7405a5d18e75c56c6adc07611fe8aa446fb7af12cbd0500208dd929fb95",
+   "quote": "七八月金旺，金生水，水爲相，其餘俱作休囚。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c016:p0001",
+    "zengshan:c017:p0001",
+    "zengshan:c029:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "cast_time.month_branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state"
+     ],
+     "predicate": "本条窄分支只审申酉月金爻旺：月支为申或酉，主事爻五行为金。水相与其余休囚保留为相邻分支，不把 CLI 休囚死三级当原书原句。"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c016:p0001",
+     "description": "同段正二月先写火为相，后又列其余金火土休囚，疑似转写字误；不改原文，也不据常见表强行补正。",
+     "layer": "正文通则或定义",
+     "sha256": "149da7405a5d18e75c56c6adc07611fe8aa446fb7af12cbd0500208dd929fb95",
+     "citation_role": "context only; not an independently executed proposal rule"
+    },
+    {
+     "passage_id": "zengshan:c029:p0001",
+     "description": "旺还包括日月动变生扶及生旺，不能只用季令 state。",
+     "layer": "正文通则或定义",
+     "sha256": "0d333a005a60cdef9b1a8801220d13660eb03edc8b1657e6d5cff8aab53c2a70",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可以说该申酉月金爻符合书中季令旺的分支；综合有力仍未判。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-month-support",
+   "name": "月建生扶可作旺衰证据",
+   "scope": "strength",
+   "passage_id": "zengshan:c017:p0001",
+   "sha256": "975b54b326727a06a103c5b331b2301d8d14a0d31eb3d36b5b76660e6f65ea13",
+   "quote": "爻之衰弱者能生之合之、比之、拱之、扶之，衰而亦旺。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c017:p0001",
+    "zengshan:c017:p0009",
+    "zengshan:c017:p0010",
+    "zengshan:c017:p0023",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "cast_time.month_branch",
+      "main_chart.lines[].wuxing"
+     ],
+     "predicate": "本提案仅取月建五行生主事爻五行这个明确分支；本身衰弱和最后综合旺衰另审。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0010",
+     "description": "临月建遇日冲克可相敌，仍怕他爻增加克制。",
+     "layer": "正文通则或定义",
+     "sha256": "1d57ee8e1b640acf8db550d4de8c227c06537ab4a3ae104ca55a7a69b3cf121c",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c029:p0001",
+     "description": "季令标签与综合旺可不同，应保留证据层。",
+     "layer": "正文通则或定义",
+     "sha256": "0d333a005a60cdef9b1a8801220d13660eb03edc8b1657e6d5cff8aab53c2a70",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "列为月建相生的一项证据；不能独凭月生就宣告用神无敌。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-month-restraint",
+   "name": "月建克制可作旺衰证据",
+   "scope": "strength",
+   "passage_id": "zengshan:c017:p0001",
+   "sha256": "975b54b326727a06a103c5b331b2301d8d14a0d31eb3d36b5b76660e6f65ea13",
+   "quote": "爻之彊旺者能沖之克之、刑之、破之，旺而亦衰。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c017:p0001",
+    "zengshan:c017:p0023",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "cast_time.month_branch",
+      "main_chart.lines[].wuxing"
+     ],
+     "predicate": "这里只取月建五行克主事爻五行的分支，冲、刑、破另条处理。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0023",
+     "description": "月克日生遇帮而愈旺；不能把月克当唯一裁决。",
+     "layer": "正文通则或定义",
+     "sha256": "9c45416dc6c6a7db3532eca9b508cb02c1fe339085832bb452ef166b7cd5652a",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "列出月建克制证据，需合看日辰及他爻生扶。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-day-support",
+   "name": "日辰生扶不受季节标签替代",
+   "scope": "strength",
+   "passage_id": "zengshan:c018:p0002",
+   "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+   "quote": "爻之衰弱，能生扶合拱，如時雨以滋苗",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c018:p0001",
+    "zengshan:c018:p0002",
+    "zengshan:c018:p0009",
+    "zengshan:c017:p0023",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "cast_time.day_branch",
+      "main_chart.lines[].wuxing"
+     ],
+     "predicate": "这里只核日支五行生主事爻五行这个分支；四时 state 不代替日辰生扶关系。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c018:p0002",
+     "description": "生少克多仍可能寡不敌众。",
+     "layer": "正文通则或定义",
+     "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "说明日辰相生的一项传统有利条件；不是全部旺衰结论。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-day-restraint",
+   "name": "日辰克制须合看其他生扶",
+   "scope": "strength",
+   "passage_id": "zengshan:c018:p0002",
+   "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+   "quote": "爻之彊旺，能克害刑沖，似秋霜殺艸。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c018:p0002",
+    "zengshan:c017:p0010",
+    "zengshan:c017:p0023",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "cast_time.day_branch",
+      "main_chart.lines[].wuxing"
+     ],
+     "predicate": "只审日支五行克主事爻五行；日冲与暗动不在本条合并。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0010",
+     "description": "临月建可与日冲克相敌，有他爻相扶又有不同。",
+     "layer": "正文通则或定义",
+     "sha256": "1d57ee8e1b640acf8db550d4de8c227c06537ab4a3ae104ca55a7a69b3cf121c",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "说明日克证据；月生或动爻生扶必须并列。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-strength-beyond-season",
+   "name": "临日月亦属用神旺的明确分支",
+   "scope": "strength",
+   "passage_id": "zengshan:c029:p0001",
+   "sha256": "0d333a005a60cdef9b1a8801220d13660eb03edc8b1657e6d5cff8aab53c2a70",
+   "quote": "用神宜旺，不可指定旺於四時，但得用神臨日月",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c029:p0001",
+    "zengshan:c018:p0002",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "cast_time.day_branch",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].state"
+     ],
+     "predicate": "只审主事爻地支等于日支这一明确分支；临月、生扶、生旺逐项另核。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c018:p0002",
+     "description": "即使临日仍需防其他动爻及回头克造成寡不敌众。",
+     "layer": "正文通则或定义",
+     "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可指出该爻临日支，属于本书广义旺的来源之一，季令 state 不能覆盖它。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-change-local-effect",
+   "name": "变爻生克只回到本位动爻",
+   "scope": "movement",
+   "passage_id": "zengshan:c015:p0001",
+   "sha256": "34cae53d45a6aadce35658e40b6c82548a14e857e11500a289f21f0fc6ddb068",
+   "quote": "變出之爻能生克沖合本位之動爻，不能生克他爻，而他爻與本位之動爻，亦不能生克變爻。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c015:p0001",
+    "zengshan:c015:p0002",
+    "zengshan:c015:p0003",
+    "zengshan:c015:p0004",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "审查的原爻编号在 active_lines 中，比较 changed_chart 同 position；不可把因三爻纳甲整体改变的静爻当动爻。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c015:p0004",
+     "description": "日月仍可生克冲合变爻，日月非普通他爻。",
+     "layer": "正文通则或定义",
+     "sha256": "4495e303a75286b4750f42241f70b997daa57dadb083ba7c716086a9180d5132",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "仅将本位变爻对该动爻的生克列入，不把变爻横向作用到全卦。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-advance-branches",
+   "name": "动爻化进神按本书七组支对",
+   "scope": "movement",
+   "passage_id": "zengshan:c032:p0137",
+   "sha256": "66334bcba4a7cc116c93d8dc10b036e3b925c3580e2a843cbce2a24b2cb1599a",
+   "quote": "亥化子﹐寅化卯﹐巳化午﹐申化酉﹐丑化辰﹐辰化未﹐未化戌。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0134",
+    "zengshan:c032:p0135",
+    "zengshan:c032:p0136",
+    "zengshan:c032:p0137",
+    "zengshan:c032:p0138",
+    "zengshan:c032:p0139",
+    "zengshan:c032:p0140",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "原爻须动；同位变支恰为原文列出的七组之一。所喜所忌未定时不自动判吉。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0135",
+     "description": "喜者宜进，忌者宜退，进不等于吉。",
+     "layer": "正文通则或定义",
+     "sha256": "d06a2e7270d7eb7d17a7e76192fae0ffb1a1e21cef2b552697877119ea468628",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0158",
+     "description": "作者案例反对化空即不能进。",
+     "layer": "正文通则或定义",
+     "sha256": "3f153c86acdc4913f76f85d403ac32e078936073efa72dafd36cbe933b53c684",
+     "citation_role": "context only; not an independently executed proposal rule"
+    },
+    {
+     "passage_id": "zengshan:c032:p0223",
+     "description": "作者又有丑土化破非化进的个案；不裁决。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "18d0294354e575b4bf29d93210fcbe4228a0d42e0858eb01f8c2de956d3927bc",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "branch_pairs": [
+    [
+     "亥",
+     "子"
+    ],
+    [
+     "寅",
+     "卯"
+    ],
+    [
+     "巳",
+     "午"
+    ],
+    [
+     "申",
+     "酉"
+    ],
+    [
+     "丑",
+     "辰"
+    ],
+    [
+     "辰",
+     "未"
+    ],
+    [
+     "未",
+     "戌"
+    ]
+   ],
+   "allowed_interpretation": "可标为列明的化进关系，并单独审查此爻为用、元还是忌。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "text_gap": "原表未列戌化丑；不得凭外部口诀补入。",
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-retreat-branches",
+   "name": "动爻化退神按本书七组支对",
+   "scope": "movement",
+   "passage_id": "zengshan:c032:p0139",
+   "sha256": "59c244352ef1a6e41106364819ecf67acdc1e4176227d1e396165c706c9354f7",
+   "quote": "子化亥﹐卯化寅﹐午化巳﹐酉化申﹐辰化丑﹐未化辰﹐戌化未。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0135",
+    "zengshan:c032:p0138",
+    "zengshan:c032:p0139",
+    "zengshan:c032:p0140",
+    "zengshan:c032:p0141",
+    "zengshan:c032:p0199",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "原爻须动；同位变支恰为原文列出的七组之一。结构化退与效力已退分开。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0199",
+     "description": "动变皆旺，近事不能即按退，远事待休囚。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "f218a24748018cc36ae0835b3683c317709fab342e4f1006da41871e0d39e1cb",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0239",
+     "description": "作者又以丑土生酉金而旺不退，作为效力分歧保留。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "26041400a37724e73266111f468467b8ab45d297520f4d1d9141bae8ff805f68",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "branch_pairs": [
+    [
+     "子",
+     "亥"
+    ],
+    [
+     "卯",
+     "寅"
+    ],
+    [
+     "午",
+     "巳"
+    ],
+    [
+     "酉",
+     "申"
+    ],
+    [
+     "辰",
+     "丑"
+    ],
+    [
+     "未",
+     "辰"
+    ],
+    [
+     "戌",
+     "未"
+    ]
+   ],
+   "allowed_interpretation": "可标化退的支对，不推出当时已失效。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "text_gap": "原表未列丑化戌；不得凭外部口诀补入。",
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-return-generation",
+   "name": "动变本位回头生",
+   "scope": "movement",
+   "passage_id": "zengshan:c029:p0002",
+   "sha256": "d5eef8d3572dea01b493f3c3931c66d5a95af8cd1db7b042751027e71d4e45d5",
+   "quote": "凡用神元神動化回頭生",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c029:p0002",
+    "zengshan:c015:p0001",
+    "zengshan:c015:p0004",
+    "zengshan:c010:p0008",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "原爻为夹具指定主事爻且发动，变爻五行生原爻五行。其变爻仍需核日月制化。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c010:p0008",
+     "description": "用神无根时元神有力亦难生。",
+     "layer": "正文通则或定义",
+     "sha256": "5e0538c59174c0bc7e409c042612f6903e1e8883a8325dad9324abc4c9c6d64f",
+     "citation_role": "context only; not an independently executed proposal rule"
+    },
+    {
+     "passage_id": "zengshan:c015:p0004",
+     "description": "日月能克变爻。",
+     "layer": "正文通则或定义",
+     "sha256": "4495e303a75286b4750f42241f70b997daa57dadb083ba7c716086a9180d5132",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可记回头生关系，为化吉候选项；不等于整个问题已吉。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-return-restraint",
+   "name": "动变本位回头克",
+   "scope": "movement",
+   "passage_id": "zengshan:c029:p0002",
+   "sha256": "d5eef8d3572dea01b493f3c3931c66d5a95af8cd1db7b042751027e71d4e45d5",
+   "quote": "凡用神元神動化回頭克",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c029:p0002",
+    "zengshan:c015:p0001",
+    "zengshan:c015:p0004",
+    "zengshan:c017:p0008",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "原主事爻发动，变爻五行克原爻五行；只比较同位。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0008",
+     "description": "作者案例以待子日冲去午火后再见为例，显示有待解制情形。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "5987ba0c5c45424eadf9e2b29d7625201d2336943023a5102ddcb340e1aaf823",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可记录回头克及待查日月解制，不据此推断真实疾病伤亡。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-change-empty",
+   "name": "动爻化旬空只登记条件",
+   "scope": "movement",
+   "passage_id": "zengshan:c029:p0002",
+   "sha256": "d5eef8d3572dea01b493f3c3931c66d5a95af8cd1db7b042751027e71d4e45d5",
+   "quote": "動化回頭克、化絕、化墓、化空、化鬼、化退神皆爲化凶。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c029:p0002",
+    "zengshan:c027:p0003",
+    "zengshan:c017:p0005",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "原主事爻发动，changed_chart 同位 markers 含旬空；其他化凶项不得凭本条同时判定。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c010:p0001",
+     "description": "元神旺动临空化空列为能生用神之一。",
+     "layer": "正文通则或定义",
+     "sha256": "5dd43fc5b6be0ec228b064d5f4a25f22c189548065eeca35d4fa8c92d80b0daf",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c027:p0003",
+     "description": "动而化空皆不为空，与题头化空为凶存在条件解释张力。",
+     "layer": "正文通则或定义",
+     "sha256": "af73e2a6620ba737886486900dd0b751a149286483b2d4848a0f34c45b7c09f8",
+     "citation_role": "context only; not an independently executed proposal rule"
+    },
+    {
+     "passage_id": "zengshan:c032:p0231",
+     "description": "作者休囚化空而次日出空的案例另存，不推广为通则。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "3ecc1088232dcd3345ea56a0337f33051517b314345e1f00bd56aa13d5bc1484",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "标记本位化空并并列书内反例，不能直接输出凶。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-change-broken",
+   "name": "动变本位化月破",
+   "scope": "movement",
+   "passage_id": "zengshan:c010:p0006",
+   "sha256": "d0a40cd1484870aa098a2cf38a35f3b5a81ed4a535577b60d8a46a3ccaadbe78",
+   "quote": "元神休囚動而化絕、化克、化破、化散六也。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c010:p0001",
+    "zengshan:c010:p0006",
+    "zengshan:c010:p0008",
+    "zengshan:c032:p0006",
+    "zengshan:c032:p0007",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本条只登记原动爻同位变爻月破；若要套用本段无力元神结论，还需元神身份、休囚和救助审定。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0007",
+     "description": "月破动变仍能作用，出月、实破、逢合后另论。",
+     "layer": "正文通则或定义",
+     "sha256": "d3e79abd7d0b44c07ced9eba81d44ef45e58c948b996d3aa2104d0ca03c573e5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0183",
+     "description": "作者案例称非日月动而化空破亦能进；不能概括化破一律无用。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "a462f737aa92999830ba583724abfa14b6eef0bbe4ccc945304560f20ce37d74",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "化破结构可列出；无力元神及吉凶未判。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "interpretation_boundary": "本条夹具仅覆盖化月破形态，不声称已满足整段元神失效判断。",
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-change-tomb",
+   "name": "木动变未为化墓形态",
+   "scope": "movement",
+   "passage_id": "zengshan:c028:p0005",
+   "sha256": "3691277aefa25e2a7e76b10b8d690a9deeb427174d23e4bd8e543430d0825ad9",
+   "quote": "動而變出未土者謂之化墓",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c028:p0003",
+    "zengshan:c028:p0005",
+    "zengshan:c028:p0006",
+    "zengshan:c029:p0002",
+    "zengshan:c032:p0347",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "只取该句明确的木分支：主事爻属木且发动，同位变支未。其他五行墓位需各自原文，不自动套阴阳长生。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0347",
+     "description": "用神旺相非真；墓神破或被日月动爻冲破亦非真。",
+     "layer": "作者自述案例兼三墓通则（混合段）",
+     "sha256": "191cca13b8d100eb2ebe8c4f0daca4a91e36c3c7b49634a449954ceb9197f728",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c028:p0006",
+     "description": "金得土多或未冲时论生不论墓；不能迁移木的关系为普遍墓凶。",
+     "layer": "署名注文或评论",
+     "sha256": "7e8fe1873ad292e09595e887342e50e6111daff5675a12f1b7a988e72e993e8e",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可标木化未的化墓形态，真入墓须再核旺衰、克制和墓被冲破。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-change-absolute",
+   "name": "木动变申为化绝形态",
+   "scope": "movement",
+   "passage_id": "zengshan:c028:p0005",
+   "sha256": "3691277aefa25e2a7e76b10b8d690a9deeb427174d23e4bd8e543430d0825ad9",
+   "quote": "動而變出申金者謂之化絕",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c028:p0003",
+    "zengshan:c028:p0005",
+    "zengshan:c028:p0006",
+    "zengshan:c017:p0023",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "只取木分支：主事爻五行木且发动，同位变支申。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0023",
+     "description": "月将当权有逢绝不绝之说。",
+     "layer": "正文通则或定义",
+     "sha256": "9c45416dc6c6a7db3532eca9b508cb02c1fe339085832bb452ef166b7cd5652a",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c028:p0006",
+     "description": "土绝巳需休囚无气；旺土遇巳论生不论绝，绝不能跨五行一刀切。",
+     "layer": "署名注文或评论",
+     "sha256": "7e8fe1873ad292e09595e887342e50e6111daff5675a12f1b7a988e72e993e8e",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可以登记木化申，是否真衰绝须并列月日生扶。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-true-empty-seasonal",
+   "name": "真空的季节分支须与救助并列",
+   "scope": "emptiness",
+   "passage_id": "zengshan:c027:p0003",
+   "sha256": "af73e2a6620ba737886486900dd0b751a149286483b2d4848a0f34c45b7c09f8",
+   "quote": "眞空卽春土、夏金、秋木、三冬逢火是眞空。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c027:p0002",
+    "zengshan:c027:p0003",
+    "zengshan:c027:p0004",
+    "zengshan:c017:p0005",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本条仅审春土分支：寅卯月、主事爻土、markers 含旬空；这只是候选，得生扶动变的反向条件不能删。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c027:p0003",
+     "description": "同段旺、动、得日建动爻生扶、动化空、伏旺相均不为空。",
+     "layer": "正文通则或定义",
+     "sha256": "af73e2a6620ba737886486900dd0b751a149286483b2d4848a0f34c45b7c09f8",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c027:p0004",
+     "description": "作者自述依再次占卦吉凶区分出空和全空，单盘时未决。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "c5fcd903228c99978a890a51ae5c066b81a2dcc1ba9b26afba18748f5f6c9115",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可列为该段真空季节条件候选，同时保留旺动生扶争议，不能断到底全空。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-moving-empty-not-final",
+   "name": "动而旬空不直接作全空",
+   "scope": "emptiness",
+   "passage_id": "zengshan:c027:p0003",
+   "sha256": "af73e2a6620ba737886486900dd0b751a149286483b2d4848a0f34c45b7c09f8",
+   "quote": "動不爲空",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c027:p0003",
+    "zengshan:c017:p0001",
+    "zengshan:c017:p0005",
+    "zengshan:c010:p0002",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "主事爻编号在 active_lines 且本卦 markers 含旬空；只核动空这一分支。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0005",
+     "description": "在旬内毕竟为空，出空才不空。",
+     "layer": "正文通则或定义",
+     "sha256": "4fb8f46e3e762ede74e526b486095425ac74de9a248aae656ae5e2872dccabc7",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c029:p0002",
+     "description": "化空列化凶，故不可借动不为空跳过变爻和用神状态。",
+     "layer": "正文通则或定义",
+     "sha256": "d5eef8d3572dea01b493f3c3931c66d5a95af8cd1db7b042751027e71d4e45d5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "说明有不作到底全空的书内依据，当前旬空仍需保留。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-empty-exit",
+   "name": "旬内空与出旬可用分开",
+   "scope": "emptiness",
+   "passage_id": "zengshan:c017:p0005",
+   "sha256": "4fb8f46e3e762ede74e526b486095425ac74de9a248aae656ae5e2872dccabc7",
+   "quote": "此空者乃目下旬內之空也，待至出空之日則不空也。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c017:p0001",
+    "zengshan:c017:p0004",
+    "zengshan:c017:p0005",
+    "zengshan:c027:p0002",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本条窄分支：主事爻临月建且 markers 含旬空；当前旬空登记。未来出旬时间需候选日另排，当前状态不自动取消。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c017:p0005",
+     "description": "休囚真空另论；元忌角色不同，不空不等于吉。",
+     "layer": "正文通则或定义",
+     "sha256": "4fb8f46e3e762ede74e526b486095425ac74de9a248aae656ae5e2872dccabc7",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c017:p0005",
+     "description": "同段作元神者出而不为福与上文待时有用的措辞有转写疑点，原字保留待校。",
+     "layer": "正文通则或定义",
+     "sha256": "4fb8f46e3e762ede74e526b486095425ac74de9a248aae656ae5e2872dccabc7",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可说明本旬仍空与出旬后再审这两个阶段，不能把将来不空说成当前有效。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-empty-clash-filled",
+   "name": "日冲旬空可作冲空填实候选",
+   "scope": "emptiness",
+   "passage_id": "zengshan:c018:p0002",
+   "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+   "quote": "爻遇旬空，日辰沖起而有用，謂之沖空則實。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c018:p0002",
+    "zengshan:c021:p0001",
+    "zengshan:c021:p0006",
+    "zengshan:c027:p0003",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "主事爻 markers 含旬空且地支与日支按六冲配对；CLI 日破标签只说明支冲，不能覆盖冲空条款。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c027:p0003",
+     "description": "真空及被克仍须另核。",
+     "layer": "正文通则或定义",
+     "sha256": "af73e2a6620ba737886486900dd0b751a149286483b2d4848a0f34c45b7c09f8",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c018:p0002",
+     "description": "同段衰静日冲为日破，冲空与休囚冲破重叠时尚无优先级，保留未决。",
+     "layer": "正文通则或定义",
+     "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "同时列旬空与日冲事实以及冲空填实条款，不保证已经发生具体结果。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-month-break",
+   "name": "月支相冲标月破而非永久失效",
+   "scope": "emptiness",
+   "passage_id": "zengshan:c032:p0005",
+   "sha256": "28e518c8c2c33bdea45c8e8c68e2b2bdb9f0317036c5e1002551f692310ea051",
+   "quote": "月建沖之爲月破",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0005",
+    "zengshan:c032:p0006",
+    "zengshan:c032:p0007",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "主事爻支与 cast_time.month_branch 构成六冲；markers 月破作交叉核对。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0007",
+     "description": "动变能作用，出月、实破、合日不破；只有静且无日动生助才说到底破。",
+     "layer": "正文通则或定义",
+     "sha256": "d3e79abd7d0b44c07ced9eba81d44ef45e58c948b996d3aa2104d0ca03c573e5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c017:p0001",
+     "description": "月破无功通句与后章动态有用之论必须连读，不作优先裁决。",
+     "layer": "正文通则或定义",
+     "sha256": "975b54b326727a06a103c5b331b2301d8d14a0d31eb3d36b5b76660e6f65ea13",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可标月破，分别审静而无助与动变、出月、实破、逢合。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-day-break-weak-static",
+   "name": "休囚静爻日冲才是日破分支",
+   "scope": "strength",
+   "passage_id": "zengshan:c023:p0001",
+   "sha256": "d6fb30b1718228ed614d029e8b2d9b475d8eaa2d073a225a4cfa9da59aa15219",
+   "quote": "靜爻休囚日辰沖之爲破",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c023:p0001",
+    "zengshan:c018:p0002",
+    "zengshan:c018:p0009",
+    "zengshan:c029:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "候选：主事爻不动、季令 state 属休囚死、日支相冲。必须再核日月动爻救助；state 仅季令层，综合是否休囚不由 CLI 决定。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c018:p0002",
+     "description": "旺静被日冲属于暗动，旬空被日冲另有冲空。",
+     "layer": "正文通则或定义",
+     "sha256": "1d84a72d78f283a3a0eb0d774651de173e74029803596f568ca8f7a49088e27a",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可列日破候选及反向生扶证据；不把所有日冲都判衰败。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-hidden-motion-strong-static",
+   "name": "旺相静爻日冲为暗动分支",
+   "scope": "movement",
+   "passage_id": "zengshan:c023:p0001",
+   "sha256": "d6fb30b1718228ed614d029e8b2d9b475d8eaa2d073a225a4cfa9da59aa15219",
+   "quote": "靜爻旺相日辰沖之爲暗動",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c023:p0001",
+    "zengshan:c023:p0002",
+    "zengshan:c018:p0002",
+    "zengshan:c029:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "窄而可核的候选：原爻静、季令 state 为旺或相、日支相冲。须保留其他克制；active_lines 是明动列表，没有该爻不等于否定暗动。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c023:p0001",
+     "description": "暗动有喜有忌，取决于元忌关系与用神是否有助。",
+     "layer": "正文通则或定义",
+     "sha256": "d6fb30b1718228ed614d029e8b2d9b475d8eaa2d073a225a4cfa9da59aa15219",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c024:p0001",
+     "description": "动爻日冲与静爻暗动不是一回事，不能同用冲散裁决。",
+     "layer": "正文通则或定义",
+     "sha256": "f7791bfb263092309c13b643b0792a1d9584406c4bb6960526216730e9a604e0",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可提示暗动候选，与 CLI 仅按支冲显示的日破区分。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-hidden-from-palace",
+   "name": "用神不现先日月再本宫首卦",
+   "scope": "hidden",
+   "passage_id": "zengshan:c032:p0049",
+   "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+   "quote": "若用神不現﹐卽以日月爲用神﹐倘日月非用神者﹐則本宮首卦尋之",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0048",
+    "zengshan:c032:p0049",
+    "zengshan:c032:p0056",
+    "zengshan:c032:p0063",
+    "zengshan:c032:p0093",
+    "zengshan:c032:p0094",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.palace",
+      "main_chart.palace_wuxing",
+      "main_chart.lines[].liu_qin",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0049",
+     "description": "日月已具目标用神时先用日月，不直接找伏。",
+     "layer": "正文通则或定义",
+     "sha256": "804fab76ad4db7c8ca07a28bf854fd2e0bcd4b208550fb0f8ba5a746279e180d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0094",
+     "description": "野鹤自述即有伏神亦不用而选择再占，与本章查伏通则并存。",
+     "layer": "作者自述方法立场",
+     "sha256": "18250d7bd5fea488658fd56ba7bde7ba7b2d71e625c89897aa2df109a0bfd33c",
+     "citation_role": "context only; not an independently executed proposal rule"
+    },
+    {
+     "passage_id": "zengshan:c032:p0126",
+     "description": "另有飞爻变爻俱无用神才寻伏的引文，是否优先用变爻未裁决。",
+     "layer": "作者自述案例或案例评论",
+     "sha256": "914680b797f5ddc23adcee6c585016528e8de20ae31d7905fc9281c5acb13d81",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可说明取伏神的查找路径；附带首卦另跑结果才能谈具体伏神。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-hidden-flying-generation",
+   "name": "飞生伏为伏神有用分支",
+   "scope": "hidden",
+   "passage_id": "zengshan:c032:p0071",
+   "sha256": "a17d1d469e0b95263b517315e83512099de587b6875beaecdf9370f3aabf2fb8",
+   "quote": "伏神得飛神生者三也",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0063",
+    "zengshan:c032:p0070",
+    "zengshan:c032:p0071",
+    "zengshan:c032:p0072",
+    "zengshan:c032:p0073",
+    "zengshan:c032:p0074",
+    "zengshan:c032:p0075",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.palace",
+      "main_chart.palace_wuxing",
+      "main_chart.lines[].liu_qin",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.lines[].wuxing",
+      "main_chart.palace"
+     ],
+     "predicate": "从实际另跑的本宫首卦取目标伏爻，与本卦同位飞爻比较五行，飞五行生伏五行；这是外部审查派生，CLI 没有原生伏神字段。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0074",
+     "description": "伏休囚、日月冲克、旺飞克、墓绝、伏囚空破等阻碍仍须并列。",
+     "layer": "正文通则或定义",
+     "sha256": "a2ed627973cf6a8303ce137296b5d1b3158468a6f48e35a013e5b38352a9f016",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0094",
+     "description": "作者自述不用伏神改为再占。",
+     "layer": "作者自述方法立场",
+     "sha256": "18250d7bd5fea488658fd56ba7bde7ba7b2d71e625c89897aa2df109a0bfd33c",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "仅列飞生伏这一支持条件，其他五种支持及五种阻碍附完整上下文。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-hidden-empty-flying-release",
+   "name": "飞神旬空为伏神易出分支",
+   "scope": "hidden",
+   "passage_id": "zengshan:c032:p0072",
+   "sha256": "a35a009851df6f2954764f560a5910d46dcd387e235ac18af37837d19efa5f97",
+   "quote": "飛神逢破墓衰空﹐𨿽有若無﹐所以伏神易於出現。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0071",
+    "zengshan:c032:p0072",
+    "zengshan:c032:p0073",
+    "zengshan:c032:p0074",
+    "zengshan:c032:p0075",
+    "zengshan:c032:p0076",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.palace",
+      "main_chart.palace_wuxing",
+      "main_chart.lines[].liu_qin",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.lines[].markers",
+      "main_chart.palace"
+     ],
+     "predicate": "本条只取飞旬空分支：同位本卦飞爻 markers 含旬空；伏爻来自另跑的本宫首卦。飞破、墓、衰不在此合并。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0074",
+     "description": "伏神自身无气被克墓绝或囚空破仍有不得出条件。",
+     "layer": "正文通则或定义",
+     "sha256": "a2ed627973cf6a8303ce137296b5d1b3158468a6f48e35a013e5b38352a9f016",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0094",
+     "description": "仍有不用伏改再占的作者立场。",
+     "layer": "作者自述方法立场",
+     "sha256": "18250d7bd5fea488658fd56ba7bde7ba7b2d71e625c89897aa2df109a0bfd33c",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可列飞空易出的支持条件；不能把伏神本身休囚受克隐去。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-hidden-strong-flying-restraint",
+   "name": "旺相飞神克伏为不得出分支",
+   "scope": "hidden",
+   "passage_id": "zengshan:c032:p0074",
+   "sha256": "a2ed627973cf6a8303ce137296b5d1b3158468a6f48e35a013e5b38352a9f016",
+   "quote": "伏神被旺相之飛神克者三也",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0070",
+    "zengshan:c032:p0071",
+    "zengshan:c032:p0072",
+    "zengshan:c032:p0074",
+    "zengshan:c032:p0075",
+    "zengshan:c032:p0076",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.palace",
+      "main_chart.palace_wuxing",
+      "main_chart.lines[].liu_qin",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": false,
+     "chart_paths": [
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.palace"
+     ],
+     "predicate": "同位飞爻季令旺相且五行克伏爻；只能确认一个阻碍候选，综合有效旺相仍待审。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0071",
+     "description": "日月动爻冲克飞神为伏神有用的另一分支；不能把冲克飞与旺飞克伏合成一刀切结论。",
+     "layer": "正文通则或定义",
+     "sha256": "a17d1d469e0b95263b517315e83512099de587b6875beaecdf9370f3aabf2fb8",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c032:p0094",
+     "description": "作者有不用伏神的立场。",
+     "layer": "作者自述方法立场",
+     "sha256": "18250d7bd5fea488658fd56ba7bde7ba7b2d71e625c89897aa2df109a0bfd33c",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "列旺飞克伏的阻碍证据，与日月动爻冲克飞神等解救同时保留。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-six-clash",
+   "name": "六冲须兼用神与所问事情",
+   "scope": "special_hexagram",
+   "passage_id": "zengshan:c021:p0003",
+   "sha256": "f8eb75ae791fd0dc18f842a21465bbd01dc50445b6391eb9d5d5ed6880f8be93",
+   "quote": "凡占凶事宜於沖散、占吉事而不宜，必兼用神而言",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c021:p0001",
+    "zengshan:c021:p0002",
+    "zengshan:c021:p0003",
+    "zengshan:c021:p0016",
+    "zengshan:c021:p0019",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].branch"
+     ],
+     "predicate": "按 c021:p0001 支对比较本卦初四、二五、三上是否全部相冲；形态证据成立后，所问喜聚喜散和用神强弱另审。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c021:p0003",
+     "description": "用神旺虽冲不破。",
+     "layer": "正文通则或定义",
+     "sha256": "f8eb75ae791fd0dc18f842a21465bbd01dc50445b6391eb9d5d5ed6880f8be93",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c021:p0019",
+     "description": "官事逢冲通常说散，但此自述案例仍有伤害；末句转写亦待校。",
+     "layer": "正文通则或定义",
+     "sha256": "9d5c36a210d914aec581a0117eae0a9dba99cabbc83dad2879fc1a3554c455f9",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可说卦象三对相冲；其传统解释取决于事情性质和用神，不可统一判凶。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-six-harmony",
+   "name": "六合须用神有气并区分吉凶事",
+   "scope": "special_hexagram",
+   "passage_id": "zengshan:c020:p0003",
+   "sha256": "5e4fe77617110b45734784e50d6adbce873b0a5017042bbbbdbd86bd311d33b0",
+   "quote": "然必用神有气相宜，用若失陷無益。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c020:p0001",
+    "zengshan:c020:p0002",
+    "zengshan:c020:p0003",
+    "zengshan:c020:p0010",
+    "zengshan:c020:p0011",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].branch"
+     ],
+     "predicate": "按 c020:p0001 合对比较初四、二五、三上均合，只认结构。用神是否有气及事情宜合需人工另判。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c020:p0003",
+     "description": "凶事逢合可能难结。",
+     "layer": "正文通则或定义",
+     "sha256": "5e4fe77617110b45734784e50d6adbce873b0a5017042bbbbdbd86bd311d33b0",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c020:p0010",
+     "description": "六冲变六合被称为独不看用神的特例，与一般用神门槛并列未裁决。",
+     "layer": "正文通则或定义",
+     "sha256": "583eff23591c2ae204d56e5dcb6a1ffc81a67ddefe65d54dc8265207f3add609",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可列六合结构以及用神有气的解释门槛，不能自动断成。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-clash-to-harmony",
+   "name": "六冲变六合的书中特例",
+   "scope": "special_hexagram",
+   "passage_id": "zengshan:c020:p0010",
+   "sha256": "583eff23591c2ae204d56e5dcb6a1ffc81a67ddefe65d54dc8265207f3add609",
+   "quote": "獨此六沖卦變六合得不看用神，竟以吉斷。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c020:p0007",
+    "zengshan:c020:p0008",
+    "zengshan:c020:p0009",
+    "zengshan:c020:p0010",
+    "zengshan:c020:p0011",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].branch",
+      "changed_chart.lines[].branch",
+      "active_lines"
+     ],
+     "predicate": "本卦三对支冲，变卦三对支合且 active_lines 非空；本条只识别作者特例适用形态。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c020:p0011",
+     "description": "同章强调宜合吉不宜合凶，诉讼等语境不能机械套吉。",
+     "layer": "正文通则或定义",
+     "sha256": "05882e5c95ddefaa679536cc94387fcb2776415630ec8b9a073dbc122b0b3082",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c020:p0003",
+     "description": "一般诸合必用神有气；本特例宣称不用看，优先级未定。",
+     "layer": "正文通则或定义",
+     "sha256": "5e4fe77617110b45734784e50d6adbce873b0a5017042bbbbdbd86bd311d33b0",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可引用作者散而复聚的特例，但须展示它与通常兼用神的冲突，不输出保证。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-harmony-to-clash",
+   "name": "六合变六冲有始合后离说",
+   "scope": "special_hexagram",
+   "passage_id": "zengshan:c021:p0016",
+   "sha256": "5db0214c11a893d09871a595f21d486158d346a2e88c9baf70c4cb7bab52ddd3",
+   "quote": "凡得六合變六沖者，諸占先合後離、先親後疏",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c021:p0003",
+    "zengshan:c021:p0013",
+    "zengshan:c021:p0015",
+    "zengshan:c021:p0016",
+    "zengshan:c021:p0019",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].branch",
+      "changed_chart.lines[].branch",
+      "active_lines"
+     ],
+     "predicate": "本卦三对支合，变卦三对支冲；仅识别所引形态。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c021:p0016",
+     "description": "官非盗贼事作者谓宜。",
+     "layer": "正文通则或定义",
+     "sha256": "5db0214c11a893d09871a595f21d486158d346a2e88c9baf70c4cb7bab52ddd3",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c021:p0019",
+     "description": "六冲结构并不能越过用神冲克作统一官事吉断。",
+     "layer": "正文通则或定义",
+     "sha256": "9d5c36a210d914aec581a0117eae0a9dba99cabbc83dad2879fc1a3554c455f9",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可描述传统先合后散的象意，事情是否适宜散开须单独说明。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-fanyin-explicit-pattern",
+   "name": "反伏只采原书明确示例形态",
+   "scope": "special_hexagram",
+   "passage_id": "zengshan:c026:p0005",
+   "sha256": "ee2efd42e364224a3171c747ffc7cff978d92bd83fc5d69c0592c3edb9f67574",
+   "quote": "內卦反伏，內則不安。外卦反伏，外則不寧。內外反伏者，內外不寧之象也。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c026:p0001",
+    "zengshan:c026:p0002",
+    "zengshan:c026:p0003",
+    "zengshan:c026:p0004",
+    "zengshan:c026:p0005",
+    "zengshan:c026:p0006",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.hex_number",
+      "changed_chart.hex_number",
+      "active_lines"
+     ],
+     "predicate": "本条仅识别 c026:p0001 明举的乾变坤：本卦号1、变卦号2、六爻皆动。其他一般反吟算法原文未完整枚举，保持未判。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c026:p0006",
+     "description": "用神旺相不变冲克虽反复仍可成，回头冲克另论。",
+     "layer": "正文通则兼案例引入（混合段）",
+     "sha256": "918a4f2d6ae1dc6a3911cba6b48e1f9792555437e9ba8a93dd2d87bdd3c67163",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c026:p0012",
+     "description": "伏吟与反吟文本以呻吟/冲克区分，不能只把两者混作一个标签。",
+     "layer": "正文通则兼案例引入（混合段）",
+     "sha256": "a375cee8a4db2dfcdd317015f6818ac882e20c25d2a89a20ef09928c643f3ed4",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可说符合书中乾变坤的反伏示例；不要把同支支冲自行扩为完整反吟判定器。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-fuyin-explicit-pattern",
+   "name": "伏吟只采姤之恒明确示例",
+   "scope": "special_hexagram",
+   "passage_id": "zengshan:c026:p0012",
+   "sha256": "a375cee8a4db2dfcdd317015f6818ac882e20c25d2a89a20ef09928c643f3ed4",
+   "quote": "內卦動變伏吟，內則呻吟，外卦動變伏吟，外則憂鬱。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c026:p0012",
+    "zengshan:c026:p0013",
+    "zengshan:c026:p0014",
+    "zengshan:c026:p0015",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.hex_number",
+      "changed_chart.hex_number",
+      "active_lines",
+      "main_chart.lines[].branch",
+      "changed_chart.lines[].branch"
+     ],
+     "predicate": "本条仅识别同段及下段所举姤之恒：本卦44、变卦32，上卦第五六爻发动，同位纳支仍申戌；不因本变相同的静卦就判伏吟。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c026:p0012",
+     "description": "用神旺相与休囚在冲开年月的解释不同。",
+     "layer": "正文通则兼案例引入（混合段）",
+     "sha256": "a375cee8a4db2dfcdd317015f6818ac882e20c25d2a89a20ef09928c643f3ed4",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c026:p0015",
+     "description": "李我平评语属注文，不能作另一个正文规则混入。",
+     "layer": "署名注文或评论",
+     "sha256": "d7882ce4f3305d4cb4131a78a9e43b95cf506669efac3ff93274b078d93fa64d",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可说明符合该伏吟示例，其他卦是否伏吟未判。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-timing-static",
+   "name": "静爻应期列值与冲两类候选",
+   "scope": "timing",
+   "passage_id": "zengshan:c030:p0001",
+   "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+   "quote": "靜而逢值逢沖：如主事爻臨子水不動，後逢子日午日而應之",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c030:p0001",
+    "zengshan:c029:p0002",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本条严格使用子水示例：主事爻子且静，候选值支子/冲支午；不把两者合成一个唯一应期。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c030:p0001",
+     "description": "远近当分，但原书又承认占远应近、占近应远。",
+     "layer": "正文通则或定义",
+     "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "分别列值子、冲午两条候选路径，尚未选择日或月、尚未证明事件。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-timing-moving",
+   "name": "动爻应期列合与值两类候选",
+   "scope": "timing",
+   "passage_id": "zengshan:c030:p0001",
+   "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+   "quote": "動而逢合逢值：如主事爻臨子水發動，後遇丑日子日而應之",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c030:p0001",
+    "zengshan:c020:p0001",
+    "zengshan:c020:p0002",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "主事爻子且明动，分别列合丑、值子两个候选条件；未选择唯一日期。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c020:p0002",
+     "description": "动逢合还可能合绊，单有合日不能保证完成。",
+     "layer": "正文通则或定义",
+     "sha256": "8b57a60088c6932bcd9ee7fcba345566f6449142cd5283adcdafe4baa3a0f5b1",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "提出合丑与值子两类候选，不把应期说成事实。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-timing-tomb-release",
+   "name": "火墓戌候选冲开辰",
+   "scope": "timing",
+   "passage_id": "zengshan:c030:p0001",
+   "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+   "quote": "入三墓俱喜沖開：如主事爻臨午火，假使火墓於戌，後逢辰日則應之",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c030:p0001",
+    "zengshan:c029:p0002",
+    "zengshan:c032:p0347",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "本条窄取午火主事爻且日支戌之日墓候选；候选冲开支辰。真墓需另核，不把形态当已失效。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0347",
+     "description": "旺相或墓破时非真墓。",
+     "layer": "作者自述案例兼三墓通则（混合段）",
+     "sha256": "191cca13b8d100eb2ebe8c4f0daca4a91e36c3c7b49634a449954ceb9197f728",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可提出冲戌的辰日候选；真墓与时间尺度未确认时不定日期。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-timing-month-break",
+   "name": "月破应期的逢合与填实分支",
+   "scope": "timing",
+   "passage_id": "zengshan:c030:p0001",
+   "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+   "quote": "月破喜塡：如子月占，主事爻臨午火，乃爲月破。後逢未日應之，謂之破而逢合。又有逢午月應之，塡實之月，則不破矣！",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c030:p0001",
+    "zengshan:c032:p0005",
+    "zengshan:c032:p0007",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "main_chart.lines[].position",
+      "main_chart.lines[].branch",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state",
+      "main_chart.lines[].markers",
+      "active_lines",
+      "changed_chart.lines[]",
+      "cast_time.month_branch",
+      "cast_time.day_branch"
+     ],
+     "predicate": "只用书中子月午爻示例：月支子、主事爻午、月破标记；候选未日（合）和午月（实）须分别列出。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0007",
+     "description": "静而无生助之破与动变月破不同，须回看。",
+     "layer": "正文通则或定义",
+     "sha256": "d3e79abd7d0b44c07ced9eba81d44ef45e58c948b996d3aa2104d0ca03c573e5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "列未日逢合与午月填实两个不同时间尺度的候选，不合并为固定期限。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-timing-horizon",
+   "name": "应期先确认远近且保留不确定",
+   "scope": "timing",
+   "passage_id": "zengshan:c030:p0001",
+   "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+   "quote": "遠事定之以年月，近事應之於日時。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c030:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "时间尺度已明确",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "夹具明确这是远期问题，本条只审远事年月尺度；近事是另一分支。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c030:p0001",
+     "description": "紧接着明说占远应近、占近应远、占月应年、占日应时。",
+     "layer": "正文通则或定义",
+     "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可以先声明远事按年月讨论的尺度；不能由规则独立决定远近或保证应期。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-single-active",
+   "name": "独发不可舍用神断成败",
+   "scope": "movement",
+   "passage_id": "zengshan:c032:p0362",
+   "sha256": "d2c8813ac52c5b8701019ff1bc13102ff109bf19be6aade1a1e6efc1903d3503",
+   "quote": "五爻不動﹐一爻獨動﹐謂之獨發。",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0361",
+    "zengshan:c032:p0362",
+    "zengshan:c032:p0370",
+    "zengshan:c032:p0395",
+    "zengshan:c032:p0411",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "active_lines"
+     ],
+     "predicate": "active_lines 长度恰为1；结构已知后还须明示主事爻和所问范围。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0362",
+     "description": "作者承认有验但多在事后会意，不敢预先执断。",
+     "layer": "正文通则或定义",
+     "sha256": "d2c8813ac52c5b8701019ff1bc13102ff109bf19be6aade1a1e6efc1903d3503",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c030:p0001",
+     "description": "应期总注提独发独静，独发章却限制其可预断性；并列而不裁决。",
+     "layer": "正文通则或定义",
+     "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可标独发，不能舍用神仅据独动爻定吉凶或日期。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-single-static",
+   "name": "独静不可舍用神断成败",
+   "scope": "movement",
+   "passage_id": "zengshan:c032:p0362",
+   "sha256": "d2c8813ac52c5b8701019ff1bc13102ff109bf19be6aade1a1e6efc1903d3503",
+   "quote": "五爻俱動﹐一爻不動﹐謂之獨靜",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c032:p0361",
+    "zengshan:c032:p0362",
+    "zengshan:c032:p0411",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "active_lines"
+     ],
+     "predicate": "active_lines 长度恰为5；剩余位置为独静，只作结构标记。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c032:p0362",
+     "description": "古有验亦有验不构成可先执断的许可。",
+     "layer": "正文通则或定义",
+     "sha256": "d2c8813ac52c5b8701019ff1bc13102ff109bf19be6aade1a1e6efc1903d3503",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c030:p0001",
+     "description": "应期提独静，具体独发章又警戒舍用神。",
+     "layer": "正文通则或定义",
+     "sha256": "c031c319b66e794411ea18da659300f5407880d4bbc70aad99b44e1ba9bad6b5",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可指出独静位置，不能仅凭它定事成败。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-crowded-motion",
+   "name": "内外乱动应保留不定",
+   "scope": "movement",
+   "passage_id": "zengshan:c032:p0487",
+   "sha256": "b863bc833bcef6bede3e5c2ef4d575ff24420ce3ff9329289196029bbfbf4ce0",
+   "quote": "若內卦外卦紛紛亂動﹐則吉凶不定",
+   "layer": "书内赋文解说",
+   "context_passage_ids": [
+    "zengshan:c032:p0484",
+    "zengshan:c032:p0485",
+    "zengshan:c032:p0486",
+    "zengshan:c032:p0487",
+    "zengshan:c032:p0488",
+    "zengshan:c032:p0489",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "active_lines"
+     ],
+     "predicate": "只选无歧义的充分样例：六爻全动，内外皆有多动；原书未给三动或四动门槛，不补数字阈值。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c033:p0539",
+     "description": "科举语境乱动仍分父世旺衰，不能把乱动硬写成通用凶。",
+     "layer": "正文通则或定义",
+     "sha256": "ec12a66cfe797569dfcd26f249ac8be568c418c777bb044f623198b0c6c4b6d9",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "conflicts": [
+    {
+     "passage_id": "zengshan:c033:p0574",
+     "description": "另一科举段说六爻乱动功名必无成，与一般不定及父世旺仍平等有张力。",
+     "layer": "正文通则或定义",
+     "sha256": "77341c25a519c040702c1efd95416773782d2fdd517dd29a5c4e88889a2d29f4",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可提示原书将此视为不定并建议再占合决，当前不得输出确定吉凶。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  },
+  {
+   "id": "liuyao-quiet-strength-effect",
+   "name": "静卦仍按旺衰生克",
+   "scope": "strength",
+   "passage_id": "zengshan:c014:p0001",
+   "sha256": "711dc6a1e52d67dcea5415ab55b1210863c32711e9415d48922f34a5be82de5a",
+   "quote": "六爻安靜旺相之爻，可以生得休囚之爻，亦可以克得休囚之爻",
+   "layer": "正文通则",
+   "context_passage_ids": [
+    "zengshan:c014:p0001",
+    "zengshan:c014:p0002",
+    "zengshan:c014:p0003",
+    "zengshan:c014:p0004",
+    "zengshan:c014:p0007",
+    "zengshan:c029:p0001",
+    "zengshan:c011:p0001",
+    "zengshan:c012:p0001",
+    "zengshan:c018:p0001",
+    "zengshan:c021:p0001",
+    "zengshan:c020:p0001"
+   ],
+   "required_conditions": [
+    {
+     "label": "问题和本条解释对象已确认",
+     "computable": false,
+     "chart_paths": [
+      "question"
+     ],
+     "predicate": "须明确问的是何对象以及本条要审查的主事爻或结构。夹具的人工作业上下文可以指定；关键词 hint 不等于工具完成取用。"
+    },
+    {
+     "label": "指定主事爻的条件",
+     "computable": true,
+     "chart_paths": [
+      "active_lines",
+      "main_chart.lines[].position",
+      "main_chart.lines[].wuxing",
+      "main_chart.lines[].state"
+     ],
+     "predicate": "active_lines 为空；另指定来源爻与目标爻，来源季令旺相、目标季令休囚，且相生或相克只选一支；本夹具只审相克分支。"
+    }
+   ],
+   "exceptions": [
+    {
+     "passage_id": "zengshan:c014:p0007",
+     "description": "有动爻时休囚动金可伤旺木，不能把静卦条件搬给有动卦。",
+     "layer": "正文通则或定义",
+     "sha256": "0ec0b6fdbd8e443a06acc9ba9110822c231740692ff040ce9784668fcc5cfde2",
+     "citation_role": "context only; not an independently executed proposal rule"
+    }
+   ],
+   "allowed_interpretation": "可列静卦中旺爻克衰爻的候选关系；综合有力仍须日月动变条件审查。",
+   "forbidden_inferences": [
+    "不能由本条直接保证现实成败或预测准确率。",
+    "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
+    "应期只列传统候选触发条件，不得承诺指定日期必发生。"
+   ],
+   "rule_status": "transcription_supported_needs_review",
+   "application_status": "reference_only"
+  }
+ ]
+}

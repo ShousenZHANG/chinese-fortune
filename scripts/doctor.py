@@ -24,7 +24,7 @@ ROOT = SCRIPTS.parent
 # to the directory, so a new asset cannot ship without doctor checking it.
 REQUIRED_ASSETS = ('64hex.json', 'bazi_rules.json', 'cities_cn.json', 'classical_evidence.json',
                    'facsimile_witnesses.json', 'geju_rules.json', 'han-variants.json', 'hehun_clauses.json', 'jiemeng.json',
-                   'life_guide.json', 'luck_rules.json', 'method_rules.json', 'name_bihua.json', 'shensha.json',
+                   'life_guide.json', 'liuyao_rules.json', 'luck_rules.json', 'method_rules.json', 'name_bihua.json', 'shensha.json',
                    'tarot78.json', 'tiaohou.json', 'tiaohou_provenance.json')
 # A fictional birth with a published answer: 2000-01-15 10:30 Beijing time.
 REFERENCE = {'args': ['--year', '2000', '--month', '1', '--day', '15', '--hour', '10', '--minute', '30',

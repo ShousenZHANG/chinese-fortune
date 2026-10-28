@@ -11,8 +11,10 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from datetime import timedelta, timezone
+from pathlib import Path
 
 import entropy
 from method_rules import method_reading_packet
@@ -533,7 +535,39 @@ def build_parser() -> argparse.ArgumentParser:
                     help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
     pc.add_argument("--markdown", action="store_true",
                     help="输出白话说明而非 JSON; 不代替按用神、日月、动变逐项核对的完整解读")
+    pr = sub.add_parser("rules", help="查《增删卜易》断卦参考条款 (原文、条件、例外)")
+    pr.add_argument("--id", help="条款 id, 如 liuyao-return-restraint")
+    pr.add_argument("--scope", help="主题: chart_structure strength movement emptiness hidden special_hexagram timing")
     return p
+
+
+RULES_PATH = Path(__file__).resolve().parents[1] / "assets" / "liuyao_rules.json"
+
+
+def load_rules() -> dict:
+    return json.loads(RULES_PATH.read_text(encoding="utf-8"))
+
+
+def rule_index() -> dict:
+    """Ids and names by topic, so a reading can fetch the clauses it needs instead of searching the book."""
+    data = load_rules()
+    index: dict[str, list[list[str]]] = {}
+    for rule in data["rules"]:
+        index.setdefault(data["scopes"][rule["scope"]], []).append([rule["id"], rule["name"]])
+    return {"topics": index,
+            "lookup": "python scripts/liuyao_cast.py rules --id <id> 或 --scope <主题>",
+            "status": "参考条款：给原文、可由盘面字段判断与须人工判断的条件；工具不自动判定成立，逐项核对后再说"}
+
+
+def show_rules(rule_id: str | None, scope: str | None) -> int:
+    data = load_rules()
+    rows = [r for r in data["rules"] if (not rule_id or r["id"] == rule_id) and (not scope or r["scope"] == scope)]
+    if not rows or not (rule_id or scope):
+        json_print(error_envelope("liuyao", "invalid_input",
+                                  "需要 --id 或 --scope；可用主题: " + " ".join(data["scopes"])))
+        return 1
+    json_print(ok_envelope("liuyao", {"rules": rows, "status": data["status"]}))
+    return 0
 
 
 def parse_tosses(text: str, seed: int | None) -> list[int]:
@@ -549,6 +583,8 @@ def parse_tosses(text: str, seed: int | None) -> list[int]:
 def main(argv: list[str] | None = None) -> int:
     ensure_utf8_stdio()
     args = build_parser().parse_args(argv)
+    if args.method == "rules":
+        return show_rules(args.id, args.scope)
     require_lunar()
     from lunar_python import Solar  # type: ignore
 
@@ -642,6 +678,7 @@ def main(argv: list[str] | None = None) -> int:
         "active_line_text": active_line_texts,
     }
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
+    out["rule_index"] = rule_index()
     if args.markdown:
         print(render_liuyao(ok_envelope("liuyao", out)))
     else:
