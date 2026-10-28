@@ -17,9 +17,10 @@ import subprocess
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
+UTC = timezone.utc  # datetime.UTC is 3.11+; the eval tests also run on the 3.9 floor
 ALLOWED = ['Bash', 'Read', 'Glob', 'Grep', 'Skill']
 DENIED = ['Write', 'Edit', 'NotebookEdit', 'WebFetch', 'WebSearch']
 RETRY_WAITS = (60, 180, 420)
