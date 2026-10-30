@@ -101,11 +101,14 @@ def run_case(case: dict, workspace: Path, out: Path, model: str, timeout: int) -
             try:
                 done = subprocess.run(_command(prompt, model, session), cwd=workspace, env=env, capture_output=True,
                                       text=True, encoding='utf-8', errors='replace', timeout=timeout)
-                stdout, code = done.stdout, done.returncode
+                stdout, stderr, code = done.stdout, done.stderr or '', done.returncode
             except subprocess.TimeoutExpired as exc:
                 stdout = exc.stdout if isinstance(exc.stdout, str) else (exc.stdout or b'').decode('utf-8', 'replace')
+                stderr = exc.stderr if isinstance(exc.stderr, str) else (exc.stderr or b'').decode('utf-8', 'replace')
                 code = 'timeout'
             path.write_text(stdout, encoding='utf-8')
+            if stderr:
+                path.with_suffix('.stderr.txt').write_text(stderr, encoding='utf-8')
             turn = _parse(stdout.splitlines())
             turn.update(turn=index, attempt=attempt, exit=code, seconds=round(time.time() - started, 1),
                         raw=path.name, raw_sha256=hashlib.sha256(stdout.encode('utf-8')).hexdigest())
@@ -121,7 +124,9 @@ def run_case(case: dict, workspace: Path, out: Path, model: str, timeout: int) -
         session = turn.get('session_id')
         if not answer or (turn.get('result') or {}).get('is_error'):
             break
+    # A turn that timed out or exited non-zero is not complete even if a result event slipped out.
     record['complete'] = len(record['turns']) == len(case['turns']) and all(
+        t.get('exit') == 0 and
         (t.get('result') or {}).get('subtype') == 'success' and not (t.get('result') or {}).get('is_error')
         for t in record['turns'])
     (folder / 'record.json').write_text(json.dumps(record, ensure_ascii=False, indent=1), encoding='utf-8')

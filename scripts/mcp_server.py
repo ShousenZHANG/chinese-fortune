@@ -225,7 +225,7 @@ def serve(stdin: Any = None, stdout: Any = None) -> None:
             continue
         try:
             message = json.loads(line)
-        except ValueError:
+        except (ValueError, RecursionError):  # bad JSON, or nesting deep enough to exhaust the parser
             reply: dict | None = {'jsonrpc': '2.0', 'id': None, 'error': {'code': -32700, 'message': 'parse error'}}
         else:
             try:
@@ -249,7 +249,8 @@ def main(argv: list[str] | None = None) -> int:
                'Top-level JSON keys per reply: jsonrpc id result | error').parse_args(argv)
     reconfigure = getattr(sys.stdin, 'reconfigure', None)
     if reconfigure:
-        reconfigure(encoding='utf-8')
+        # Undecodable bytes become U+FFFD and fail as a parse error instead of ending the session.
+        reconfigure(encoding='utf-8', errors='replace')
     serve()
     return 0
 

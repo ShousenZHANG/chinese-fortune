@@ -115,3 +115,8 @@ def test_every_hehun_clause_quotes_its_hashed_passage():
         assert hashlib.sha256(text.encode('utf-8')).hexdigest() == clause['sha256'], clause['id']
         assert normalized(clause['quote'].translate(strip))[:12] in normalized(text.translate(strip)), clause['id']
         assert clause['forbidden_inferences']
+
+
+def test_time_standard_field_reaches_the_calculator():
+    result = facts(a={**A, 'time_standard': 'clock'})
+    assert result['subjects']['A']['four_pillars']['day']

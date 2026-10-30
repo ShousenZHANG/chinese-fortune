@@ -25,11 +25,13 @@ def test_bad_or_conflicting_tosses_are_refused():
 
 def test_every_cast_indexes_the_reference_rules_and_rules_resolve():
     data = run_cli('liuyao_cast.py', 'coins', '--lines', '7,8,9,6,7,7', *WHEN)
-    ids = [rule_id for rows in data['rule_index']['topics'].values() for rule_id, _ in rows]
+    ids = [rule_id for topic in data['rule_index']['topics'].values() for rule_id, _ in topic['rules']]
     assert len(ids) == 47 and 'liuyao-return-restraint' in ids
     rule = run_cli('liuyao_cast.py', 'rules', '--id', 'liuyao-return-restraint')['rules'][0]
     assert rule['passage_id'].startswith('zengshan:') and rule['application_status'] == 'reference_only'
     assert len(run_cli('liuyao_cast.py', 'rules', '--scope', 'timing')['rules']) == 5
+    name = data['rule_index']['topics']['strength']['name']
+    assert run_cli('liuyao_cast.py', 'rules', '--scope', name)['rules']  # the shown Chinese name works too
 
 
 def test_every_liuyao_rule_quotes_its_hashed_passage():

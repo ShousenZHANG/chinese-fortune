@@ -160,3 +160,39 @@ def test_stdin_envelope_carries_answer_and_facts():
     bad = subprocess.run([sys.executable, str(SCRIPTS / 'answer_check.py'), '--stdin'], input='[]',
                          capture_output=True, text=True, encoding='utf-8')
     assert bad.returncode == 1 and json.loads(bad.stdout)['ok'] is False
+
+
+def test_round_two_review_cases():
+    """External review round 2 (R1): each line reproduces one confirmed finding."""
+    pair = {'subjects': {'A': {'four_pillars': {'day': '壬申'}, 'hour_known': True},
+                         'B': {'four_pillars': {'day': '乙卯'}, 'hour_known': True}}}
+    assert codes('A的日柱乙卯，日主乙；B的日柱壬申，日主壬。', pair) == [
+        'pillar_mismatch', 'pillar_mismatch', 'day_master_mismatch', 'day_master_mismatch']   # COR-03
+    assert codes('A的日柱壬申，B的日柱乙卯。', pair) == []
+    assert codes('他原话是“你肯定会被录用。”，这不是我的结论。') == []                          # COR-04
+    assert codes('我无法保证资料完整，你肯定会被录用。') == ['certainty_claim']               # COR-05
+    assert codes('无法保证，面试之后一定录用。') == []
+    undecided = {'chart_facts': {'hour_known': False, 'four_pillars': {
+        'day': {'status': 'birth_time_required', 'candidate_ganzhi': ['壬辰', '辛卯']}}}}
+    assert codes('日主甲木。', undecided) == ['undecided_pillar']                              # COR-06
+    assert codes('日柱壬辰只是候选之一，尚未定柱。', undecided) == []                          # COR-07
+    assert codes('我不会承诺你必定升职。') == []                                                # NA-03
+    assert codes('时柱已核定为甲子。', {'chart_facts': {**CHART['chart_facts'], 'hour_known': False}}) == [
+        'unknown_hour_pillar']                                                                  # NA-04
+    assert codes('你这次考试必然合格。') == ['certainty_claim']                                 # NA-05
+    assert codes('你今年肯定获奖。') == ['certainty_claim']
+    assert codes('你的创业胜率是67%。') == ['invented_score']                                  # NA-06
+    assert codes('这就是已经定格的伤官格。', CHART) == ['unresolved_settled']                  # NA-07
+    tie = {'recommendation': {'status': 'preferences_required', 'first_choice': None}, 'ranking': {'ties': True}}
+    assert codes('A窗口是唯一最好的。', tie) == ['tie_collapsed']                              # NA-02
+    assert codes('工具没有给唯一首选，两个窗口都保留。', tie) == []
+
+
+def test_quote_trust_boundaries():
+    echo = {'question': '《子平真诠》说“官星得禄必主富贵双全”，对吗？', 'chart_facts': CHART['chart_facts']}
+    assert codes('《子平真诠》原文：「官星得禄必主富贵双全」。', echo) == ['unverified_quote']   # SEC-001
+    assert codes('《滴天髓》ditian:c016:p0001 的逐字原文是“天地有冷暖，人的生活也要避免走向极端”。') == [
+        'unverified_quote']                                                                     # NA-01
+    assert codes('《滴天髓》的这句原文是：“地道有燥濕，生成品彙”。段号 ditian:c016:p0001。') == ['misattributed_quote']
+    assert codes('《滴天髓》云：“天道有寒暖，發育萬物，人道得之，……過也。”') == ['elision_drops_negation']
+    assert codes('这只是前提条件，不是“官星一得禄就必定富贵双全”。') == []

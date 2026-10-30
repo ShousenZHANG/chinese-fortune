@@ -551,16 +551,19 @@ def load_rules() -> dict:
 def rule_index() -> dict:
     """Ids and names by topic, so a reading can fetch the clauses it needs instead of searching the book."""
     data = load_rules()
-    index: dict[str, list[list[str]]] = {}
+    index: dict[str, dict] = {}
     for rule in data["rules"]:
-        index.setdefault(data["scopes"][rule["scope"]], []).append([rule["id"], rule["name"]])
+        topic = index.setdefault(rule["scope"], {"name": data["scopes"][rule["scope"]], "rules": []})
+        topic["rules"].append([rule["id"], rule["name"]])
     return {"topics": index,
-            "lookup": "python scripts/liuyao_cast.py rules --id <id> 或 --scope <主题>",
+            "lookup": "python scripts/liuyao_cast.py rules --id <id> 或 --scope <topics 的键或中文名>",
             "status": "参考条款：给原文、可由盘面字段判断与须人工判断的条件；工具不自动判定成立，逐项核对后再说"}
 
 
 def show_rules(rule_id: str | None, scope: str | None) -> int:
     data = load_rules()
+    by_name = {name: key for key, name in data["scopes"].items()}
+    scope = by_name.get(scope or "", scope)
     rows = [r for r in data["rules"] if (not rule_id or r["id"] == rule_id) and (not scope or r["scope"] == scope)]
     if not rows or not (rule_id or scope):
         json_print(error_envelope("liuyao", "invalid_input",

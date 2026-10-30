@@ -126,3 +126,15 @@ def test_failed_facts_serialisation_leaves_no_temp_file(tmp_path, monkeypatch):
     result, text = call('answer_check', {'answer': 'x', 'facts': [{'k': 'SYNTHETIC', 'bad': '\ud800'}]})
     assert result['isError']
     assert list(tmp_path.iterdir()) == []
+
+
+def test_deeply_nested_or_undecodable_input_does_not_end_the_session():
+    deep = '{"jsonrpc":"2.0","id":1,"method":"ping","params":{"unused":' + '[' * 1200 + ']' * 1200 + '}}'
+    session = deep + '\n' + json.dumps({'jsonrpc': '2.0', 'id': 999, 'method': 'ping'}) + '\n'
+    done = subprocess.run([sys.executable, str(SCRIPTS / 'mcp_server.py')], input=session.encode('utf-8') + b'\xff\xfe\n'
+                          + json.dumps({'jsonrpc': '2.0', 'id': 1000, 'method': 'ping'}).encode() + b'\n',
+                          capture_output=True, timeout=60)
+    replies = [json.loads(line) for line in done.stdout.decode('utf-8').splitlines()]
+    assert done.returncode == 0
+    assert [r.get('id') for r in replies][-2:] == [999, 1000] or 999 in [r.get('id') for r in replies]
+    assert any(r.get('id') == 1000 for r in replies)

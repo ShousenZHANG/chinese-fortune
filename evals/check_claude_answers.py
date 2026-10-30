@@ -15,20 +15,28 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 from answer_check import check_answer  # noqa: E402
 
 FACT_TOOLS = re.compile(r'bazi_reading|bazi_calc|ziwei_calc|fortune_reading|pair_facts|liuyao_cast')
+CHART_TOOLS = {'bazi_reading', 'bazi', 'ziwei', 'fortune_reading', 'pair_facts', 'liuyao'}
 
 
 def tool_facts(record: dict) -> list[dict]:
-    """JSON objects the recorded tool calls printed, for answer_check --facts."""
-    facts = []
+    """JSON objects the recorded tool calls printed, for answer_check --facts.
+
+    Only the latest turn that ran a chart tool counts: after a user corrects their
+    birth data, the earlier chart is stale and must not vouch for the final answer.
+    """
+    per_turn = []
     for turn in record.get('turns', []):
+        found = []
         for tool in turn.get('tools', []):
             try:
                 value = json.loads(tool.get('output') or '')
             except (TypeError, ValueError):
                 continue
             if isinstance(value, dict) and value.get('tool'):
-                facts.append(value)
-    return facts
+                found.append(value)
+        per_turn.append(found)
+    charted = [found for found in per_turn if any(f.get('tool') in CHART_TOOLS for f in found)]
+    return charted[-1] if charted else [f for found in per_turn for f in found]
 
 
 DISCLAIMERS = ('仅供参考', '仅作参考', '不构成', '娱乐参考', '文化参考')
@@ -62,7 +70,8 @@ def check(case: dict, record: dict, run: Path) -> dict:
     if FACT_TOOLS.search(commands):
         # Pillar, formation and tie checks need the tools' own output; without it
         # they did not run, and the case must not count as mechanically clean.
-        add('tool_facts_recorded', bool(facts), f'{len(facts)} tool outputs')
+        # An unrelated tool's JSON (a router, a search) does not stand in for the chart.
+        add('tool_facts_recorded', any(f.get('tool') in CHART_TOOLS for f in facts), f'{len(facts)} tool outputs')
     prose = check_answer(answer, facts)
     for item in prose['findings']:
         if item['severity'] == 'error':

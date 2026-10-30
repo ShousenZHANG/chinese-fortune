@@ -62,7 +62,8 @@ def subject_chart(birth: dict) -> dict:
         value = birth.get(key)
         if value is None or value is False:
             continue
-        args += [f'--{key}'] if value is True else [f'--{key}', str(value)]
+        flag = '--' + key.replace('_', '-')
+        args += [flag] if value is True else [flag, str(value)]
     chart = calculate_bazi(chart_parser().parse_args(args))
     if not chart.get('ok'):
         raise ValueError(chart.get('message') or chart.get('error') or 'chart failed')
