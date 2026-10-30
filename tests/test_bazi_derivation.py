@@ -52,3 +52,17 @@ def test_summer_time_is_named_as_summer_time_not_as_a_longitude_gap():
     steps = {d['step']: d for d in reading('--hour', '14', '--longitude', '120')['derivation']}
     how = steps['真太阳时']['how']
     assert '标准时经线 120°' in how and '差 0 分钟' in how and '夏令时' in how and '14:00 → 13:04' in how
+
+
+def test_tools_say_offsets_and_candidate_windows_in_words():
+    known = reading('--hour', '10', '--minute', '30', '--longitude', '116.4')
+    assert known['chart_facts']['true_solar_time']['say'].startswith('真太阳时的读数比钟表少')
+    unknown = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2000', '--month', '1', '--day', '15', '--gender', 'male', '--timezone', 'Asia/Shanghai',
+         '--longitude', '116.4'])), '看四柱')
+    day = unknown['chart_facts']['four_pillars']['day']
+    assert [w['ganzhi'] for w in day['candidate_windows']] == ['辛未', '壬申']
+    assert day['say'].startswith('钟表 00:00–00:23 出生为辛未日')
+    term = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2000', '--month', '2', '--day', '4', '--gender', 'male', '--timezone', 'Asia/Shanghai'])), '看四柱')
+    assert '不按农历新年' in term['chart_facts']['four_pillars']['year']['say']

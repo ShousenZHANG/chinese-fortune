@@ -15,7 +15,7 @@ from annual_assessment import (
 )
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
-from bazi_derivation import asks_derivation, derivation_steps
+from bazi_derivation import asks_derivation, derivation_steps, offset_sentence
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
@@ -161,6 +161,38 @@ def _probes_cover_minutes(chart: dict, probes: list[dict]) -> bool:
     return valid_minutes > 0
 
 
+def _pillar_at(original: dict, minute_of_day: int, key: str) -> str | None:
+    hour, minute = divmod(minute_of_day, 60)
+    values = {**original, 'hour': hour, 'minute': minute, 'years': 10, 'no_shensha': True, 'no_geju': True,
+              'no_yongshen': True, 'current_timezone': None, 'request_time': None, 'as_of_year': None}
+    probe = calculate_bazi(argparse.Namespace(**values))
+    return probe['four_pillars'][key]['ganzhi'] if probe.get('ok') else None
+
+
+def candidate_windows(original: dict, key: str, samples: list[tuple[int, str]]) -> list[dict]:
+    """Clock windows of the birth date that give each candidate, found by bisecting between samples.
+
+    A pillar changes at most once a day (the day boundary, or a term instant), so
+    each change between two sampled times is one boundary minute.
+    """
+    cuts = []
+    for (left, left_value), (right, right_value) in zip(samples, samples[1:]):
+        if left_value == right_value:
+            continue
+        low, high = left, right
+        while high - low > 1:
+            middle = (low + high) // 2
+            if _pillar_at(original, middle, key) == left_value:
+                low = middle
+            else:
+                high = middle
+        cuts.append(high)
+    edges = [0, *cuts, 1440]
+    values = [samples[0][1]] + [next(v for m, v in samples if m >= cut) for cut in cuts]
+    return [{'ganzhi': value, 'clock': f'{start // 60:02}:{start % 60:02}–{(end - 1) // 60:02}:{(end - 1) % 60:02}'}
+            for start, end, value in zip(edges, edges[1:], values)]
+
+
 def _without_unknown_hour_precision(chart: dict) -> dict:
     """Keep only verified stable observations; sampled noon is never a known birth time."""
     clean = deepcopy(chart)
@@ -191,6 +223,15 @@ def _without_unknown_hour_precision(chart: dict) -> dict:
             affected.append(key)
             clean['four_pillars'][key] = {'status': 'birth_time_required',
                                            'candidate_ganzhi': possibilities}
+            if complete and isinstance(original, dict):
+                samples = [(m, p['four_pillars'][key]['ganzhi']) for m, p in zip((0, 720, 1439), probes)]
+                windows = candidate_windows(original, key, samples)
+                label = {'year': '年', 'month': '月', 'day': '日'}[key]
+                basis = {'year': '年柱按立春交节分界，不按农历新年', 'month': '月柱按节气交节时刻分界',
+                         'day': '日柱按真太阳时与所选晚子时口径分界'}[key]
+                clean['four_pillars'][key]['candidate_windows'] = windows
+                clean['four_pillars'][key]['say'] = (
+                    '；'.join(f"钟表 {w['clock']} 出生为{w['ganzhi']}{label}" for w in windows) + f'（{basis}）')
         else:
             clean['four_pillars'][key] = deepcopy(probes[0]['four_pillars'][key])
     clean['four_pillars']['hour'] = {'status': '时柱待补'}
@@ -258,6 +299,8 @@ def fact_packet(clean: dict, structure: dict | None = None) -> dict:
 
 def prepare_reading(chart: dict, question: str = '') -> dict:
     clean = chart_facts(chart)
+    if (clean.get('true_solar_time') or {}).get('applied'):
+        clean['true_solar_time']['say'] = offset_sentence(clean['true_solar_time'])
     structure = observed_structure(clean)
     assessment = assess_rules(clean)
     geju = assess_geju(clean)

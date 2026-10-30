@@ -27,6 +27,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 
 v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是宿主在工具结果之外自己补结论。所以：
 
+- 工具给了 `say` 句子（真太阳时比钟表多或少几分钟、未定柱在哪个钟表时段取哪个干支、年柱按立春分界等），照抄这句，不自己把正负号改写成快慢、不重排候选对应。
 - 工具写了「没判」「未接入」「给不出」「不判」，或几个选项等级相同、`first_choice` 为空，回答必须照说：说明并列、说明没判，不补判、不排先后。
 - 大运 `conditional`、`mixed`、`partial` 分别表示条件未决、配法说法冲突、只有部分配法提到；都不能写成共同喜忌。`unresolved_conditions`、反向例外、`pending_actions` 必须保留；取运章已接入不代表配法或格局已成立。格局核对中的 `literal_state:met` 只说明字面条件齐备；`preserves_original` 与变化线索一起核，不能被首条命中覆盖。
 - compact 大运的 `scenario_ref` 指向 `luck_index.scenarios`，干支的 `verdict_refs` 指向 `luck_index.verdicts`；读取引用才能看到完整条件、反例与具体未判原因，不能只看 `summary`。

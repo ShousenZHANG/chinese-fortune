@@ -104,7 +104,17 @@ def _solar_step(facts: dict) -> dict:
     parts.append(f"均时差 {tst.get('equation_of_time_min')} 分钟")
     return {'step': '真太阳时', 'result': f"{tst.get('effective_date')} {tst.get('true_solar_time')}",
             'how': '，'.join(parts) + f"，合计 {tst.get('total_offset_min')} 分钟："
-                   f"{tst.get('clock_time')} → {tst.get('true_solar_time')}。"}
+                   f"{tst.get('clock_time')} → {tst.get('true_solar_time')}。",
+            'say': offset_sentence(tst)}
+
+
+def offset_sentence(tst: dict) -> str:
+    """The direction in words, so nobody has to turn a signed number into 快 or 慢."""
+    total = float(tst.get('total_offset_min') or 0)
+    if total == 0:
+        return f"真太阳时与钟表读数相同（{tst.get('clock_time')}）。"
+    return (f"真太阳时的读数比钟表{'少' if total < 0 else '多'} {abs(total):g} 分钟："
+            f"钟表 {tst.get('clock_time')}，真太阳时 {tst.get('true_solar_time')}。")
 
 
 def _day_step(facts: dict) -> dict:
