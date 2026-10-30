@@ -196,3 +196,31 @@ def test_quote_trust_boundaries():
     assert codes('《滴天髓》的这句原文是：“地道有燥濕，生成品彙”。段号 ditian:c016:p0001。') == ['misattributed_quote']
     assert codes('《滴天髓》云：“天道有寒暖，發育萬物，人道得之，……過也。”') == ['elision_drops_negation']
     assert codes('这只是前提条件，不是“官星一得禄就必定富贵双全”。') == []
+
+
+def test_round_three_review_cases():
+    assert codes('《子平真诠》云「生尅……格局分焉」。') == []                                     # AC01 不同 is not cut
+    assert codes('《子平真詮》云“官星得禄必主富贵双全”。未见日柱变动。') == ['unverified_quote']  # AC02
+    assert codes('段号 ditian:c002:p0001：「格局分焉」。') == ['misattributed_quote']             # AC03
+    year = {'chart_facts': {'hour_known': True, 'four_pillars': {'year': {'ganzhi': '丙子'}}}}
+    assert codes('年柱为甲子而格局待核。', year) == ['pillar_mismatch']                           # AC04
+    assert codes('面试运气92分/100分。') == ['invented_score']                                   # AC05
+    assert codes('按每度4分/度计算。') == []
+    assert codes('你不出门也肯定能录用。') == ['certainty_claim']                                  # AC06
+    assert codes('工具明确不出 0-100 分。') == []
+
+
+def test_round_three_fresh_set_gaps():
+    assert codes('这份盘的月支确为申；不能据此断言未来一定成功。') == []
+    assert codes('没有证据证明你绝对会结婚。') == []
+    assert codes('不能仅凭这一个条件，就断定必定富贵。') == []
+    assert codes('按这个盘，你的婚姻绝对幸福。') == ['certainty_claim']
+    assert codes('你的面试运气是92/100。') == ['invented_score']
+    assert codes('你的婚姻幸福率为91%。') == ['invented_score']
+    assert codes('录用机会是0.87。') == ['invented_score']
+    unknown = {'chart_facts': {**CHART['chart_facts'], 'hour_known': False}}
+    assert codes('你的出生时间就是上午10点25分。', unknown) == ['unknown_hour_pillar']
+    assert codes('此命正官格已经败格。', CHART) == ['unresolved_settled']
+    tie = {'recommendation': {'status': 'practical_tie'}}
+    assert codes('工具已经决定首选B，没有并列。', tie) == ['tie_collapsed']
+    assert codes('两个窗口中A排名第一，B排名第二。', tie) == ['tie_collapsed']

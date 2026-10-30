@@ -93,7 +93,8 @@ def run_case(case: dict, workspace: Path, out: Path, model: str, timeout: int) -
     env = {**os.environ, 'PYTHONIOENCODING': 'utf-8', 'CHINESE_FORTUNE_DATA_DIR': str(out.parent / 'profiles')}
     record: dict = {'id': case['id'], 'turns': [], 'attempts': []}
     session = None
-    for index, prompt in enumerate(case['turns'], 1):
+    for index, turn_spec in enumerate(case['turns'], 1):
+        prompt = turn_spec['prompt'] if isinstance(turn_spec, dict) else turn_spec
         for attempt, wait in enumerate((0, *RETRY_WAITS), 1):
             time.sleep(wait)
             path = folder / f'turn-{index}-attempt-{attempt}.jsonl'

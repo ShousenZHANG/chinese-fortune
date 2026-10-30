@@ -27,7 +27,7 @@ from answer_assertions import (
     tie_findings,
     unresolved_titles,
 )
-from classical_search import iter_passages, normalized
+from classical_search import get_passage, iter_passages, normalized
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
 
 ASSETS = Path(__file__).resolve().parents[1] / 'assets'
@@ -49,6 +49,7 @@ TITLE_BEFORE = re.compile(r'《([^》]{1,16})》[^「『“"。！？]{0,40}$')
 PASSAGE_REF = re.compile(r'([a-z]+:c\d{3}:p\d{4})[^「『“"。！？]{0,24}$')
 PASSAGE_REF_AFTER = re.compile(r'^[^「『“"\n]{0,16}?([a-z]+:c\d{3}:p\d{4})')
 NEGATOR = re.compile(r'[不無无非勿莫未弗毋]')
+MODALS = set('可能得宜必敢會会須须當当應应')
 # A quote the answer itself says the books do not contain is being refuted, not cited.
 QUOTE_DENIED_BEFORE = re.compile(r'(?:不是|并非|而非|并不是|不等于|远不是|而不是)\s*$')
 QUOTE_REFUTED = re.compile(r'找不到|查不到|没查到|搜不到|检索不到|没有这句|并无此|并无这|不是原文|没有找到|未见|不存在')
@@ -124,10 +125,23 @@ def _drops_negator(parts: list[str], text: str) -> bool:
         found = text.find(part, end)
         if found < 0:
             return False
-        if len(part) <= 8 and NEGATOR.search(text[max(end, found - 2):found]):
+        tail = text[max(end, found - 2):found]
+        if len(part) <= 8 and tail and (NEGATOR.fullmatch(tail[-1]) or (
+                len(tail) == 2 and NEGATOR.fullmatch(tail[0]) and tail[1] in MODALS)):
             return True
         end = found + len(part)
     return False
+
+
+def _in_cited_passage(parts: list[str], passage_id: str) -> bool:
+    """The quote is in that passage's text, its section or its chapter title."""
+    try:
+        passage = get_passage(passage_id)
+    except ValueError:
+        return False
+    text = _key(MARKER.sub('', GLYPH.sub(r'\1', passage['text'])))
+    headings = _key(passage.get('section') or '') + _key(passage.get('chapter_title') or '')
+    return _in_order(parts, text) or all(p in headings for p in parts)
 
 
 def _title_matches(cited: str, title: str) -> bool:
@@ -154,7 +168,8 @@ def _quotes(answer: str) -> Iterator[tuple[str, str, str]]:
 def _quote_findings(answer: str, facts_key: str, checked: dict) -> list[dict]:
     findings = []
     for quote, before, after in _quotes(answer):
-        if QUOTE_REFUTED.search(after) or QUOTE_REFUTED.search(before[-20:]) or QUOTE_DENIED_BEFORE.search(before):
+        right_after = re.split(r'[。！？!?\n]', after, maxsplit=1)[0][:16]
+        if QUOTE_REFUTED.search(right_after) or QUOTE_REFUTED.search(before[-20:]) or QUOTE_DENIED_BEFORE.search(before):
             checked['quotes_skipped'] += 1
             continue
         title = TITLE_BEFORE.search(before) or TITLE_AFTER.search(after)
@@ -181,7 +196,7 @@ def _quote_findings(answer: str, facts_key: str, checked: dict) -> list[dict]:
         if hits and cut:
             findings.append(_finding('elision_drops_negation', 'error', quote,
                                      f'省略号删掉了 {cut} 原文紧挨着保留部分的否定字，意思被反过来了'))
-        elif hits and cited_passage and han >= 6 and cited_passage.group(1) not in {loc for _, loc in hits}:
+        elif hits and cited_passage and not _in_cited_passage(parts, cited_passage.group(1)):
             findings.append(_finding('misattributed_quote', 'error', quote,
                                      f'所引段落 {cited_passage.group(1)} 里没有这段原文'))
         elif hits and cited and known and not any(_title_matches(cited, t) for t, _ in hits):

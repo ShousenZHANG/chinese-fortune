@@ -138,3 +138,11 @@ def test_deeply_nested_or_undecodable_input_does_not_end_the_session():
     assert done.returncode == 0
     assert [r.get('id') for r in replies][-2:] == [999, 1000] or 999 in [r.get('id') for r in replies]
     assert any(r.get('id') == 1000 for r in replies)
+
+
+def test_ziwei_tool_accepts_the_school_switches():
+    result, text = call('ziwei_chart', {**BIRTH, 'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong',
+                                        'leap_month': 'next'})
+    assert not result['isError'], text
+    assert json.loads(text)['school'] == {'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong',
+                                          'leap_month': 'next', 'late_zi_sect': 2}

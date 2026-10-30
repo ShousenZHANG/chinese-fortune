@@ -2,8 +2,9 @@
 
 Mainstream charts (iztro, Renhuai's ziwei-doushu) print all four on every
 palace; this chart printed none. 长生十二神 follows 《紫微斗数全书》卷二
-(ziwei:c002:p0056–p0057: 火局寅、木局亥、水局申、金局巳、土局申起长生，阳男阴女顺、
-阴男阳女逆). The bundled transcription does not state the 博士, 将前 or 岁前
+for its starting branches (ziwei:c002:p0057: 火局寅、木局亥、水局申、金局巳、土局申); the
+direction is the modern 阳男阴女顺、阴男阳女逆, which differs from p0056's literal
+男顺女逆, and the output says so. The transcription does not state the 博士, 将前 or 岁前
 rules; those follow the common convention (博士随禄存起, 将前按年支三合起将星,
 岁前从年支起岁建) and are labelled as such. They are labels on palaces, not
 verdicts.
@@ -21,7 +22,8 @@ CHANGSHENG_START = {2: '申', 3: '亥', 4: '巳', 5: '申', 6: '寅'}
 # 将星 by the year branch's 三合 group: 寅午戌午、申子辰子、巳酉丑酉、亥卯未卯.
 JIANGXING = {'寅': '午', '午': '午', '戌': '午', '申': '子', '子': '子', '辰': '子',
              '巳': '酉', '酉': '酉', '丑': '酉', '亥': '卯', '卯': '卯', '未': '卯'}
-SOURCES = {'changsheng': 'ziwei:c002:p0056–p0057',
+SOURCES = {'changsheng': '起点出自 ziwei:c002:p0057（火局寅、木局亥、水局申、金局巳、土局申）；顺逆按现代通行的'
+                         '阳男阴女顺、阴男阳女逆（与 iztro 一致），与 ziwei:c002:p0056 字面的男顺女逆不同',
            'boshi': '现代通行口径（随禄存起，阳男阴女顺、阴男阳女逆）；所选《全书》转录未载',
            'jiangqian': '现代通行口径（按年支三合起将星，顺行）；所选《全书》转录未载',
            'suiqian': '现代通行口径（从年支起岁建，顺行）；转录 ziwei:c002:p0061 只载丧门、吊客、白虎、官府的相对位置'}

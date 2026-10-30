@@ -161,15 +161,17 @@ def _probes_cover_minutes(chart: dict, probes: list[dict]) -> bool:
     return valid_minutes > 0
 
 
-def _pillar_at(original: dict, minute_of_day: int, key: str) -> str | None:
+def _pillar_at(original: dict, minute_of_day: int, key: str, fold: int | None = None) -> str | None:
     hour, minute = divmod(minute_of_day, 60)
     values = {**original, 'hour': hour, 'minute': minute, 'years': 10, 'no_shensha': True, 'no_geju': True,
-              'no_yongshen': True, 'current_timezone': None, 'request_time': None, 'as_of_year': None}
+              'no_yongshen': True, 'current_timezone': None, 'request_time': None, 'as_of_year': None,
+              **({'fold': fold} if fold is not None else {})}
     probe = calculate_bazi(argparse.Namespace(**values))
     return probe['four_pillars'][key]['ganzhi'] if probe.get('ok') else None
 
 
-def candidate_windows(original: dict, key: str, samples: list[tuple[int, str]]) -> list[dict]:
+def candidate_windows(original: dict, key: str, samples: list[tuple[int, str]],
+                      fold: int | None = None) -> list[dict]:
     """Clock windows of the birth date that give each candidate, found by bisecting between samples.
 
     A pillar changes at most once a day (the day boundary, or a term instant), so
@@ -182,7 +184,7 @@ def candidate_windows(original: dict, key: str, samples: list[tuple[int, str]]) 
         low, high = left, right
         while high - low > 1:
             middle = (low + high) // 2
-            if _pillar_at(original, middle, key) == left_value:
+            if _pillar_at(original, middle, key, fold) == left_value:
                 low = middle
             else:
                 high = middle
@@ -191,6 +193,49 @@ def candidate_windows(original: dict, key: str, samples: list[tuple[int, str]]) 
     values = [samples[0][1]] + [next(v for m, v in samples if m >= cut) for cut in cuts]
     return [{'ganzhi': value, 'clock': f'{start // 60:02}:{start % 60:02}–{(end - 1) // 60:02}:{(end - 1) % 60:02}'}
             for start, end, value in zip(edges, edges[1:], values)]
+
+
+def _minutes(windows: list[dict]) -> list[str]:
+    values = []
+    for window in windows:
+        start, end = (int(t[:2]) * 60 + int(t[3:]) for t in window['clock'].split('–'))
+        values += [window['ganzhi']] * (end - start + 1)
+    return values
+
+
+def fold_aware_windows(original: dict, key: str, samples: list[tuple[int, str]]) -> list[dict]:
+    """Windows for both readings of a repeated summer-time clock hour.
+
+    Where the first and second occurrence of the same clock minute give
+    different pillars, the window says so instead of picking one.
+    """
+    if not original.get('timezone') or original.get('fold') is not None:
+        return candidate_windows(original, key, samples)
+    by_fold = []
+    for fold in (0, 1):
+        folded = [(m, _pillar_at(original, m, key, fold) or v) for m, v in samples]
+        by_fold.append(_minutes(candidate_windows(original, key, folded, fold)))
+    rows: list[dict] = []
+    for minute, pair in enumerate(zip(*by_fold)):
+        if rows and rows[-1]['pair'] == pair:
+            rows[-1]['end'] = minute
+        else:
+            rows.append({'pair': pair, 'start': minute, 'end': minute})
+    out = []
+    for row in rows:
+        clock = f"{row['start'] // 60:02}:{row['start'] % 60:02}–{row['end'] // 60:02}:{row['end'] % 60:02}"
+        first, second = row['pair']
+        out.append({'ganzhi': first, 'clock': clock} if first == second else
+                   {'ganzhi': None, 'clock': clock, 'repeated_clock': {'first': first, 'second': second}})
+    return out
+
+
+def _window_text(window: dict, label: str) -> str:
+    if window['ganzhi']:
+        return f"钟表 {window['clock']} 出生为{window['ganzhi']}{label}"
+    pair = window['repeated_clock']
+    return (f"钟表 {window['clock']} 是夏令时回拨的重复时段：第一次为{pair['first']}{label}，"
+            f"第二次为{pair['second']}{label}，要先问清是哪一次")
 
 
 def _without_unknown_hour_precision(chart: dict) -> dict:
@@ -225,13 +270,15 @@ def _without_unknown_hour_precision(chart: dict) -> dict:
                                            'candidate_ganzhi': possibilities}
             if complete and isinstance(original, dict):
                 samples = [(m, p['four_pillars'][key]['ganzhi']) for m, p in zip((0, 720, 1439), probes)]
-                windows = candidate_windows(original, key, samples)
+                windows = fold_aware_windows(original, key, samples)
                 label = {'year': '年', 'month': '月', 'day': '日'}[key]
+                clock_standard = original.get('time_standard') == 'clock'
                 basis = {'year': '年柱按立春交节分界，不按农历新年', 'month': '月柱按节气交节时刻分界',
-                         'day': '日柱按真太阳时与所选晚子时口径分界'}[key]
+                         'day': ('日柱按钟表时间与所选晚子时口径分界' if clock_standard
+                                 else '日柱按真太阳时与所选晚子时口径分界')}[key]
                 clean['four_pillars'][key]['candidate_windows'] = windows
                 clean['four_pillars'][key]['say'] = (
-                    '；'.join(f"钟表 {w['clock']} 出生为{w['ganzhi']}{label}" for w in windows) + f'（{basis}）')
+                    '；'.join(_window_text(w, label) for w in windows) + f'（{basis}）')
         else:
             clean['four_pillars'][key] = deepcopy(probes[0]['four_pillars'][key])
     clean['four_pillars']['hour'] = {'status': '时柱待补'}

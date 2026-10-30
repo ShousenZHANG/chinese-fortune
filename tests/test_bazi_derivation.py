@@ -66,3 +66,30 @@ def test_tools_say_offsets_and_candidate_windows_in_words():
     term = prepare_reading(calculate_bazi(build_parser().parse_args(
         ['--year', '2000', '--month', '2', '--day', '4', '--gender', 'male', '--timezone', 'Asia/Shanghai'])), '看四柱')
     assert '不按农历新年' in term['chart_facts']['four_pillars']['year']['say']
+
+
+def test_repeated_summer_time_hour_keeps_both_folds_and_clock_basis_is_named():
+    chicago = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2024', '--month', '11', '--day', '3', '--gender', 'male', '--timezone', 'America/Chicago',
+         '--longitude', '-102.88'])), '看四柱')
+    day = chicago['chart_facts']['four_pillars']['day']
+    repeated = [w for w in day['candidate_windows'] if not w['ganzhi']]
+    assert repeated == [{'ganzhi': None, 'clock': '01:00–01:34', 'repeated_clock': {'first': '庚午', 'second': '辛未'}}]
+    assert '重复时段' in day['say']
+    clock = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2000', '--month', '1', '--day', '15', '--gender', 'male', '--timezone', 'Asia/Shanghai',
+         '--longitude', '116.4', '--time-standard', 'clock', '--sect', '1'])), '看四柱')
+    say = clock['chart_facts']['four_pillars']['day']['say']
+    assert '钟表时间' in say and '真太阳时' not in say
+
+
+def test_summer_time_hint_says_to_drop_city_as_well():
+    result = calculate_bazi(build_parser().parse_args(
+        ['--year', '1990', '--month', '5', '--day', '10', '--hour', '13', '--minute', '30', '--gender', 'female',
+         '--city', '北京']))
+    note = result['timezone']['note']
+    assert '--city' in note and '--longitude' in note
+    fixed = calculate_bazi(build_parser().parse_args(
+        ['--year', '1990', '--month', '5', '--day', '10', '--hour', '13', '--minute', '30', '--gender', 'female',
+         '--tz', '8', '--longitude', '116.4']))
+    assert fixed['four_pillars']['hour']['ganzhi'] == '癸未'

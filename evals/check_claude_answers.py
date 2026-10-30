@@ -35,8 +35,12 @@ def tool_facts(record: dict) -> list[dict]:
             if isinstance(value, dict) and value.get('tool'):
                 found.append(value)
         per_turn.append(found)
-    charted = [found for found in per_turn if any(f.get('tool') in CHART_TOOLS for f in found)]
-    return charted[-1] if charted else [f for found in per_turn for f in found]
+    ran = [i for i, turn in enumerate(record.get('turns', []))
+           if FACT_TOOLS.search(' '.join(str(t.get('command') or '') for t in turn.get('tools', [])))]
+    if ran:
+        latest = per_turn[ran[-1]]
+        return latest if any(f.get('tool') in CHART_TOOLS for f in latest) else []
+    return [f for found in per_turn for f in found]
 
 
 DISCLAIMERS = ('仅供参考', '仅作参考', '不构成', '娱乐参考', '文化参考')

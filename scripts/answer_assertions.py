@@ -24,30 +24,38 @@ QUOTED = re.compile(r'「[^」]*」|『[^』]*』|“[^”]*”|"[^"\n]*"')
 REVERSAL = re.compile(r'但是|但|不过|可是|然而|却')
 DENIAL = re.compile(r'不能说|不能讲|不能把|不能写|不能断言|不能保证|无法保证|不保证|没法保证|不敢说|不该说|不应说|不要说|别说'
                     r'|不会承诺|不承诺|不能承诺|无法承诺|不敢承诺|不打包票|没有给|没给|未给|没有排出|没排出'
-                    r'|不出|不给出|不打|打不了|编不出|没法打|无法打|没有可以|没有能够|没有办法'
+                    r'|明确不出|工具不出|不出分|给不出|不给出|不打分|打不了|编不出|没法打|无法打|没有可以|没有能够|没有办法'
+                    r'|不能据此断言|不能据此说|没有证据证明|没有证据说|无法证明|不能证明'
                     r'|谈不上|不等于|不代表|并不意味|不是说|没有依据说|没依据说|不认为|不觉得|不认可|不同意|否认|不能直接说')
 NEGATED_BEFORE = re.compile(r'(?:并非|不是|不算|没有|未必|谈不上|无法|不能|没法|[不非没未别])\s*$')
+DENIED_PREMISE = re.compile(r'不能(?:仅|单|只|光)?凭|不能因为|不能由|不能根据')
 RETRACTED_AFTER = re.compile(r'不能成立|不成立|说不得|不能这么说|不能说死|是错误的|是错的|不对')
 
 PILLAR = re.compile(rf'([年月日时時])柱\s*(?:是|为|為|已核定为|核定为|已确定为|确定为|已定为|定为|已定|就是|取|：|:)?\s*({GZ})')
-HEDGED_AFTER = re.compile(r'^[^，,。；;]{0,8}(?:候选|之一|待定|未定|尚未|假设|待核)')
+# A birth hour stated as fact when the tool says the hour is unknown.
+HOUR_CLAIM = re.compile(r'(?:出生时间|出生时刻|生时)\s*(?:就是|是|为|确定为|定为)[^，,。；;]{0,6}\d{1,2}\s*点'
+                        r'|(?:确定|就是|定为)[^，,。；;]{0,2}[子丑寅卯辰巳午未申酉戌亥]时出生')
+HEDGED_AFTER = re.compile(r'^[^，,。；;而但且和与及]{0,6}(?:候选|之一|待定|未定|尚未|假设|待核)')
 SUBJECT = re.compile(r'(?<![A-Za-z])([AB])(?![A-Za-z])')
 SEQUENCE = re.compile(rf'(?:四柱|八字|命盘|排盘)[^。\n{STEM}]{{0,6}}({GZ})[、，,\s]*({GZ})[、，,\s]*({GZ})(?:[、，,\s]*({GZ}))?')
 DAY_MASTER = re.compile(rf'日主\s*(?:是|为|為|：|:)?\s*([{STEM}])')
 
 SCORES = (
+    re.compile(r'(?<![\d.])\d{1,3}(?:\.\d+)?\s*/\s*(?:100|10)(?![\d.])'),
+    re.compile(r'(?:机会|概率|几率|机率|可能性?)\s*(?:是|为|有)?\s*0?\.\d+'),
     re.compile(r'(?<![点时：:\d.])\d+(?:\.\d+)?\s*分(?![钟之])'),
     re.compile(r'(?<=[打得是为給给有评拿])[零一二三四五六七八九十百两]{1,5}分(?![钟之])'),
     re.compile(r'(?:评分|打分|得分|分数|指数)\s*(?:是|为|為|：|:)?\s*\d+(?:\.\d+)?'),
 )
-CLOCK_BEFORE = re.compile(r'(?:[点时]|[×x*÷/])\s*$')
-CLOCK_AFTER = re.compile(r'\s*(?:\d|秒|多钟|多秒|/)')
+CLOCK_BEFORE = re.compile(r'(?:[点时]|[×*÷])\s*$')
+CLOCK_AFTER = re.compile(r'\s*(?:\d|秒|多钟|多秒|/\s*度)')
 PERCENT = re.compile(r'\d+(?:\.\d+)?\s*[%％]|百分之[零一二三四五六七八九十百\d]+')
-CHANCE = re.compile(r'机会|概率|几率|机率|可能|成功率|胜率|赢面|通过率|中签率|把握|准确率|命中率|胜算|匹配|契合|运势|录用|录取')
+CHANCE = re.compile(r'机会|概率|几率|机率|可能|[一-鿿]率|赢面|把握|胜算|匹配|契合|运势|录用|录取')
 
 CERTAIN = re.compile(r'一定|肯定|必然|必定|注定|保证|百分之百|绝对|毫无疑问|必能|必会|稳了|铁定|板上钉钉')
 OUTCOME = re.compile(r'录用|录取|offer|入职|上岸|通过|合格|及格|过关|获批|晋升|加薪|涨薪|痊愈|好转|成功|发财|暴富|结婚|离婚|升职|升官|中奖|考上|怀孕|康复|好运|坏运'
-                     r'|顺利|失败|破财|[吉凶灾]|生病|重病|去世|成格|破格|用神|喜用|应期|一帆风顺|贵人|脱单|复合', re.I)
+                     r'|顺利|失败|破财|[吉凶灾]|生病|重病|去世|成格|破格|用神|喜用|应期|一帆风顺|贵人|脱单|复合'
+                     r'|幸福|美满|顺遂|长寿|平安|富贵', re.I)
 
 GEJU_NAMES = ('正官', '七杀', '偏官', '正财', '偏财', '财', '正印', '偏印', '印绶', '印', '食神', '伤官',
               '阳刃', '羊刃', '建禄', '月劫', '禄劫')
@@ -56,7 +64,7 @@ FUTURE = re.compile(r'\s*(?:会|能|将|可以|得到|拿到|赚到|赚|获得|�
 HEDGE = re.compile(r'候选|待核|未定|尚未|未判|不能确定|无法确定|可能|或许|如果|若|还要核|还需核|倾向|暂')
 TIE_STATUSES = {'tied_no_clause_separates', 'practical_tie', 'preferences_required'}
 TIE_PICK = re.compile(r'最好的一天|最佳|首选|最吉|最好|最合适|最推荐|第一选择|唯一|胜过|优于|好过|强过|优先|其次|更好|更佳|首推|排第一'
-                      r'|先选|次选|排出先后|高一个等级|低一个等级|比.{1,8}?(?:高|好|强|吉|优)')
+                      r'|先选|次选|排出先后|高一个等级|低一个等级|比.{1,8}?(?:高|好|强|吉|优)|排名第[一二]|第一名')
 TIE_KEPT = re.compile(r'并列|都可以|同样|没有先后|不分先后|任选|按你|看你|偏好|都行|等级相同|都保留')
 
 
@@ -81,6 +89,10 @@ def asserted(sentence: str, start: int, end: int) -> bool:
         delim = re.search(r'[，,；;]', gap)
         if delim is None or not gap[:delim.start()].strip(' ：:'):
             return False
+    clauses = re.split(r'[，,；;]', scope)
+    # 不能仅凭这一条，就断定必定富贵: the denied premise governs the 就 clause that follows it.
+    if len(clauses) > 1 and re.match(r'\s*(?:就|便|则|也就)', clauses[-1]) and DENIED_PREMISE.search(clauses[-2]):
+        return False
     after = REVERSAL.split(sentence[end:])[0]
     return not RETRACTED_AFTER.search(after)
 
@@ -179,6 +191,10 @@ def pillar_findings(answer: str, facts: list[dict], checked: dict) -> list[dict]
             if asserted(sentence, match.start(), match.end()):
                 about = _subject_charts(found, sentence[:match.start()])
                 claims += [(slot, gz, match.group(0), about) for slot, gz in zip(ORDER, match.groups()) if gz]
+        if not any(c['hour_known'] for c in found):
+            for match in HOUR_CLAIM.finditer(sentence):
+                if asserted(sentence, match.start(), match.end()):
+                    findings.append(_finding('unknown_hour_pillar', match.group(0), '出生时辰未知，不能把某个时刻说成已定'))
         for match in DAY_MASTER.finditer(sentence):
             checked['pillars_checked'] += 1
             if not asserted(sentence, match.start(), match.end()):
@@ -243,7 +259,9 @@ def geju_findings(sentence: str, titles: list[str]) -> list[dict]:
     names = '|'.join(map(re.escape, sorted(set(titles) | set(GEJU_NAMES), key=len, reverse=True)))
     patterns = (re.compile(rf'(?:是|属于|属|为|為|定为|成|就是|取)\s*(?:{names})格'),
                 re.compile(rf'(?:{names})格\s*(?:已经|已|就)?(?:成立|成格|已成|确定|定了|无疑)'),
-                re.compile(rf'(?:已经|已)?(?:定格|成格|成立|确定)的\s*(?:{names})格'))
+                re.compile(rf'(?:已经|已)?(?:定格|成格|成立|确定)的\s*(?:{names})格'),
+                re.compile(rf'(?:{names})格\s*(?:已经|已)?(?:败格|破格|成格)'),
+                re.compile(r'格局(?:已定|已经确定|确定了|已成)|用神(?:已经|已)?确定为'))
     scope = _last_scope(sentence)
     offset = len(sentence) - len(scope)
     for pattern in patterns:
@@ -265,7 +283,8 @@ def has_tie(facts: list[dict]) -> bool:
 def tie_findings(sentence: str) -> list[dict]:
     scope = _last_scope(sentence)
     offset = len(sentence) - len(scope)
-    if TIE_KEPT.search(scope):
+    # 没有并列 denies the tie; only an affirmed tie keeps the choice open.
+    if any(not NEGATED_BEFORE.search(scope[:m.start()][-3:]) for m in TIE_KEPT.finditer(scope)):
         return []
     for match in TIE_PICK.finditer(scope):
         if asserted(sentence, offset + match.start(), offset + match.end()):
