@@ -622,6 +622,8 @@ def resolve_timezone_offset(
         note = (
             f"出生时该地行夏令时 (UTC{offset_hours:+g}, 快 {dst_hours:g} 小时); "
             "此处仅记录实际时区偏移; 时柱采用的时间口径见 true_solar_time。"
+            "已按钟表读数是夏令时来换算；如果出生证明上的时间已经是标准时间，请用户确认后改用 "
+            f"--tz {offset_hours - dst_hours:g} 并去掉 --timezone 重排。"
         )
     return {
         "tz_name": tz_name,

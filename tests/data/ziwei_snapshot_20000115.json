@@ -18,6 +18,9 @@
     "timezone": null,
     "leap": false,
     "liu_year": null,
+    "brightness": "mainstream7",
+    "geng_sihua": "yang-wu-yin-tong",
+    "leap_month": "split",
     "horoscope_date": null,
     "horoscope_time": null,
     "no_patterns": false,
@@ -136,11 +139,18 @@
           "brightness": "陷"
         }
       ],
+      "aux_brightness": {},
       "lucky_stars": [
         "天钺"
       ],
       "malefic_stars": [],
       "miscellaneous_stars": [],
+      "twelve_gods": {
+        "changsheng": "绝",
+        "boshi": "伏兵",
+        "jiangqian": "劫煞",
+        "suiqian": "小耗"
+      },
       "sihua_native": [
         "化科(天梁)"
       ],
@@ -170,9 +180,12 @@
       "main_stars": [
         {
           "name": "天相",
-          "brightness": "庙"
+          "brightness": "得"
         }
       ],
+      "aux_brightness": {
+        "擎羊": "庙"
+      },
       "lucky_stars": [],
       "malefic_stars": [
         "擎羊"
@@ -181,6 +194,12 @@
         "龙池",
         "凤阁"
       ],
+      "twelve_gods": {
+        "changsheng": "胎",
+        "boshi": "官府",
+        "jiangqian": "华盖",
+        "suiqian": "官符"
+      },
       "sihua_native": [],
       "self_transformations": [],
       "borrowed": false,
@@ -209,6 +228,7 @@
           "brightness": "旺"
         }
       ],
+      "aux_brightness": {},
       "lucky_stars": [],
       "malefic_stars": [
         "禄存",
@@ -217,6 +237,12 @@
       "miscellaneous_stars": [
         "天喜"
       ],
+      "twelve_gods": {
+        "changsheng": "养",
+        "boshi": "博士",
+        "jiangqian": "息神",
+        "suiqian": "贯索"
+      },
       "sihua_native": [],
       "self_transformations": [],
       "borrowed": false,
@@ -249,6 +275,10 @@
           "brightness": "陷"
         }
       ],
+      "aux_brightness": {
+        "文昌": "庙",
+        "陀罗": "陷"
+      },
       "lucky_stars": [
         "文昌"
       ],
@@ -259,6 +289,12 @@
         "天马",
         "孤辰"
       ],
+      "twelve_gods": {
+        "changsheng": "长生",
+        "boshi": "力士",
+        "jiangqian": "岁驿",
+        "suiqian": "丧门"
+      },
       "sihua_native": [
         "化权(贪狼)"
       ],
@@ -291,11 +327,18 @@
           "brightness": "陷"
         }
       ],
+      "aux_brightness": {},
       "lucky_stars": [],
       "malefic_stars": [
         "地劫"
       ],
       "miscellaneous_stars": [],
+      "twelve_gods": {
+        "changsheng": "沐浴",
+        "boshi": "青龙",
+        "jiangqian": "攀鞍",
+        "suiqian": "晦气"
+      },
       "sihua_native": [],
       "self_transformations": [
         "自化权"
@@ -323,9 +366,12 @@
       "main_stars": [
         {
           "name": "天府",
-          "brightness": "旺"
+          "brightness": "得"
         }
       ],
+      "aux_brightness": {
+        "铃星": "利"
+      },
       "lucky_stars": [
         "左辅"
       ],
@@ -335,6 +381,12 @@
       "miscellaneous_stars": [
         "天哭"
       ],
+      "twelve_gods": {
+        "changsheng": "冠带",
+        "boshi": "小耗",
+        "jiangqian": "将星",
+        "suiqian": "岁建"
+      },
       "sihua_native": [],
       "self_transformations": [],
       "borrowed": false,
@@ -358,11 +410,20 @@
       "stem": "丙",
       "ganzhi": "丙寅",
       "main_stars": [],
+      "aux_brightness": {
+        "火星": "庙"
+      },
       "lucky_stars": [],
       "malefic_stars": [
         "火星"
       ],
       "miscellaneous_stars": [],
+      "twelve_gods": {
+        "changsheng": "临官",
+        "boshi": "将军",
+        "jiangqian": "亡神",
+        "suiqian": "病符"
+      },
       "sihua_native": [],
       "self_transformations": [],
       "borrowed": true,
@@ -398,11 +459,18 @@
           "brightness": "旺"
         }
       ],
+      "aux_brightness": {},
       "lucky_stars": [],
       "malefic_stars": [],
       "miscellaneous_stars": [
         "寡宿"
       ],
+      "twelve_gods": {
+        "changsheng": "帝旺",
+        "boshi": "奏书",
+        "jiangqian": "月煞",
+        "suiqian": "吊客"
+      },
       "sihua_native": [],
       "self_transformations": [],
       "borrowed": false,
@@ -431,6 +499,7 @@
           "brightness": "庙"
         }
       ],
+      "aux_brightness": {},
       "lucky_stars": [
         "天魁"
       ],
@@ -438,6 +507,12 @@
       "miscellaneous_stars": [
         "红鸾"
       ],
+      "twelve_gods": {
+        "changsheng": "衰",
+        "boshi": "飞廉",
+        "jiangqian": "咸池",
+        "suiqian": "天德"
+      },
       "sihua_native": [],
       "self_transformations": [
         "自化权"
@@ -463,11 +538,18 @@
       "stem": "乙",
       "ganzhi": "乙亥",
       "main_stars": [],
+      "aux_brightness": {},
       "lucky_stars": [
         "右弼"
       ],
       "malefic_stars": [],
       "miscellaneous_stars": [],
+      "twelve_gods": {
+        "changsheng": "病",
+        "boshi": "喜神",
+        "jiangqian": "指背",
+        "suiqian": "白虎"
+      },
       "sihua_native": [],
       "self_transformations": [],
       "borrowed": true,
@@ -496,12 +578,19 @@
       "main_stars": [
         {
           "name": "太阳",
-          "brightness": "陷"
+          "brightness": "不"
         }
       ],
+      "aux_brightness": {},
       "lucky_stars": [],
       "malefic_stars": [],
       "miscellaneous_stars": [],
+      "twelve_gods": {
+        "changsheng": "死",
+        "boshi": "病符",
+        "jiangqian": "天煞",
+        "suiqian": "龙德"
+      },
       "sihua_native": [],
       "self_transformations": [
         "自化忌"
@@ -529,13 +618,16 @@
       "main_stars": [
         {
           "name": "武曲",
-          "brightness": "旺"
+          "brightness": "利"
         },
         {
           "name": "七杀",
-          "brightness": "旺"
+          "brightness": "庙"
         }
       ],
+      "aux_brightness": {
+        "文曲": "庙"
+      },
       "lucky_stars": [
         "文曲"
       ],
@@ -543,6 +635,12 @@
       "miscellaneous_stars": [
         "天虚"
       ],
+      "twelve_gods": {
+        "changsheng": "墓",
+        "boshi": "大耗",
+        "jiangqian": "灾煞",
+        "suiqian": "大耗"
+      },
       "sihua_native": [
         "化禄(武曲)",
         "化忌(文曲)"
@@ -786,6 +884,19 @@
       "recognition_basis": "project_star_combination"
     }
   ],
+  "twelve_gods_sources": {
+    "changsheng": "ziwei:c002:p0056–p0057",
+    "boshi": "现代通行口径（随禄存起，阳男阴女顺、阴男阳女逆）；所选《全书》转录未载",
+    "jiangqian": "现代通行口径（按年支三合起将星，顺行）；所选《全书》转录未载",
+    "suiqian": "现代通行口径（从年支起岁建，顺行）；转录 ziwei:c002:p0061 只载丧门、吊客、白虎、官府的相对位置"
+  },
+  "leap_month_school": "闰月十五日及以前算本月、以后算下月（默认）",
+  "school": {
+    "brightness": "mainstream7",
+    "geng_sihua": "yang-wu-yin-tong",
+    "leap_month": "split",
+    "late_zi_sect": 2
+  },
   "sect": {
     "value": 2,
     "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
@@ -794,7 +905,7 @@
   "timezone": null,
   "notes": [
     "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
-    "亮度为项目四级表（庙/旺/平/陷）。对照出处为《紫微斗数全书》卷二「一命宫」的七级记载，七级折四级并非原文所定；仅七杀行曾按转录文字修正，其余各行未逐格核定，全表未校原刻影像。亮度只展示，不参与排盘计算。",
+    "亮度为主流排盘通行的七级表（庙/旺/得/利/平/不/陷，与 iztro 默认一致），对应《紫微斗数全书》卷二诸星庙旺记载的通行读法，未逐格校原刻影像；没有标亮度的格表示该星在此宫不论亮度。亮度只展示，不参与排盘计算。旧版四级表可用 --brightness project4。",
     "流年/流月/流日/流时 用 --horoscope-date [--horoscope-time] 计算; 未传时只给本命斗君锚位。",
     "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。"
   ],

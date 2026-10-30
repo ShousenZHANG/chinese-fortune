@@ -43,15 +43,18 @@ def _lunar(target: datetime, sect: int) -> tuple[Any, date]:
     return Solar.fromYmdHms(day.year, day.month, day.day, hour, target.minute, 0).getLunar(), day
 
 
-def _layer(name: str, stem: str, branch: str, palace_branch: str, palaces: dict[str, str]) -> dict:
+def _layer(name: str, stem: str, branch: str, palace_branch: str, palaces: dict[str, str],
+           table: dict[str, dict[str, str]]) -> dict:
     return {'layer': name, 'ganzhi': stem + branch, 'palace_branch': palace_branch,
-            'natal_palace': palaces.get(palace_branch), 'transformations': dict(SI_HUA.get(stem, {}))}
+            'natal_palace': palaces.get(palace_branch), 'transformations': dict(table.get(stem, {}))}
 
 
 def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
-                     palaces: list[dict], sect: int = 2, include_hour: bool = True) -> dict:
+                     palaces: list[dict], sect: int = 2, include_hour: bool = True,
+                     sihua: dict[str, dict[str, str]] | None = None) -> dict:
     """Layers for ``target`` (local clock). ``birth_month`` is the chart's effective lunar month."""
     natal = {p['branch']: p['name'] for p in palaces}
+    table = sihua or SI_HUA
     lunar, civil_day = _lunar(target, sect)
     year_stem, year_branch = lunar.getYearGan(), lunar.getYearZhi()
     raw_month, lunar_day = lunar.getMonth(), lunar.getDay()
@@ -64,15 +67,15 @@ def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
     month_branch = DIZHI[(DIZHI.index('寅') + effective - 1) % 12]
     day_ganzhi = lunar.getDayInGanZhiExact2()
     layers = {
-        'liu_nian': _layer('流年', year_stem, year_branch, year_branch, natal),
-        'liu_yue': {**_layer('流月', month_stem, month_branch, DIZHI[month_at], natal), 'lunar_month': effective},
-        'liu_ri': {**_layer('流日', day_ganzhi[0], day_ganzhi[1], DIZHI[day_at], natal), 'lunar_day': lunar_day},
+        'liu_nian': _layer('流年', year_stem, year_branch, year_branch, natal, table),
+        'liu_yue': {**_layer('流月', month_stem, month_branch, DIZHI[month_at], natal, table), 'lunar_month': effective},
+        'liu_ri': {**_layer('流日', day_ganzhi[0], day_ganzhi[1], DIZHI[day_at], natal, table), 'lunar_day': lunar_day},
         'liu_shi': None,
     }
     if include_hour:
         hour_ganzhi = lunar.getTimeInGanZhi()
         hour_at = DIZHI[(day_at + hour_branch_index(target.hour)) % 12]
-        layers['liu_shi'] = _layer('流时', hour_ganzhi[0], hour_ganzhi[1], hour_at, natal)
+        layers['liu_shi'] = _layer('流时', hour_ganzhi[0], hour_ganzhi[1], hour_at, natal, table)
     return {
         'target': {'clock': target.strftime('%Y-%m-%d %H:%M') if include_hour else target.strftime('%Y-%m-%d'),
                    'calendar_day_used': civil_day.isoformat(),

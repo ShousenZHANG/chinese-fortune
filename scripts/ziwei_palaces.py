@@ -163,10 +163,25 @@ def calc_dou_jun(liu_year_branch: str, lunar_month: int, hour: int) -> str:
 # 向心 = 对宫干 之化忌星 ∈ 本宫星 (对宫飞忌入本宫).
 
 
+# 庚年四化 is the one stem whose 科/忌 the schools disagree on. The default is
+# the mainstream 阳武阴同 (iztro, Renhuai's default); the others are offered,
+# not ranked.
+GENG_SCHOOLS: dict[str, dict[str, str]] = {
+    'yang-wu-yin-tong': {"禄": "太阳", "权": "武曲", "科": "太阴", "忌": "天同"},
+    'yang-wu-tong-yin': {"禄": "太阳", "权": "武曲", "科": "天同", "忌": "太阴"},
+    'yang-wu-fu-tong': {"禄": "太阳", "权": "武曲", "科": "天府", "忌": "天同"},
+}
+
+
+def sihua_table(geng_school: str = 'yang-wu-yin-tong') -> dict[str, dict[str, str]]:
+    """SI_HUA with the chosen 庚 row; a new dict, the module table is never changed."""
+    return {**SI_HUA, '庚': dict(GENG_SCHOOLS[geng_school])}
+
+
 def detect_self_transformations(
-    palace_stem: str, palace_stars: list[str],
+    palace_stem: str, palace_stars: list[str], table: dict[str, dict[str, str]] | None = None,
 ) -> list[str]:
-    hua = SI_HUA.get(palace_stem, {})
+    hua = (table or SI_HUA).get(palace_stem, {})
     out: list[str] = []
     for hua_type, target in hua.items():
         if target in palace_stars:
