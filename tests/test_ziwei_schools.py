@@ -1,6 +1,5 @@
 """Twelve gods, seven-level brightness and school options, checked against iztro-py where it applies."""
 import pytest
-
 import ziwei_calc
 
 BIRTHS = [(1990, 5, 10, 14, 'male'), (1985, 11, 3, 6, 'female'), (2000, 1, 15, 10, 'male'),
