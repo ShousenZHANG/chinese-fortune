@@ -1,8 +1,8 @@
 """Optional methods distinguish observed structures from personal verdicts."""
 from conftest import run_cli
 from tarot_draw import build_full_deck, load_deck
+from ziwei_brightness import NOTE as BRIGHTNESS_SEVEN_NOTE
 from ziwei_patterns import detect_patterns
-from ziwei_stars import BRIGHTNESS_NOTE
 
 
 def test_partial_jiyuetongliang_remains_a_visible_candidate():
@@ -19,7 +19,7 @@ def test_ziwei_candidates_report_actual_position_without_fortune_tier():
     result = run_cli("ziwei_calc.py", "--year", 1977, "--month", 11,
                      "--day", 2, "--hour", 22, "--gender", "male")
     assert result["patterns"]
-    assert BRIGHTNESS_NOTE in result["notes"]
+    assert BRIGHTNESS_SEVEN_NOTE in result["notes"]  # default table since v5.10; project4 keeps the old note
     assert all("形性赋" not in note for note in result["notes"])
     for pattern in result["patterns"]:
         assert pattern["evidence"]
