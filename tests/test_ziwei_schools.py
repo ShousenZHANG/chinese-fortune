@@ -45,7 +45,7 @@ def test_changsheng_follows_the_bureau_and_direction_in_the_book():
     palace = next(p for p in result['twelve_palaces'] if p['branch'] == start)
     assert palace['twelve_gods']['changsheng'] == '长生'
     source = result['twelve_gods_sources']['changsheng']
-    assert 'ziwei:c002:p0057' in source and '男顺女逆不同' in source
+    assert 'ziwei:c002:p0057' in source and '火局命寅起长生' in source and '男命顺数、女命逆数' in source
 
 
 def test_leap_month_school_moves_the_chart_only_when_it_should():

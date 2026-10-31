@@ -65,3 +65,20 @@ def test_a_rerun_chart_without_output_leaves_no_facts_and_dict_turns_are_read(tm
     assert check_claude_answers.tool_facts({'turns': turns}) == []
     import inspect
     assert "turn_spec['prompt']" in inspect.getsource(run_claude_cases.run_case)
+
+
+def test_recorder_sends_the_prompt_text_of_dict_turns(tmp_path, monkeypatch):
+    sent = []
+
+    class Done:
+        stdout = json.dumps({'type': 'result', 'subtype': 'success', 'is_error': False, 'result': '好'}) + '\n'
+        stderr = ''
+        returncode = 0
+
+    def fake_run(command, **kwargs):
+        sent.append(command[command.index('-p') + 1])
+        return Done()
+    monkeypatch.setattr(run_claude_cases.subprocess, 'run', fake_run)
+    case = {'id': 'D1', 'turns': [{'prompt': '第一问'}, '第二问']}
+    record = run_claude_cases.run_case(case, tmp_path, tmp_path / 'out', 'sonnet', 10)
+    assert sent == ['第一问', '第二问'] and record['complete']

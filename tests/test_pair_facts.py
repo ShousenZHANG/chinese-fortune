@@ -120,3 +120,11 @@ def test_every_hehun_clause_quotes_its_hashed_passage():
 def test_time_standard_field_reaches_the_calculator():
     result = facts(a={**A, 'time_standard': 'clock'})
     assert result['subjects']['A']['four_pillars']['day']
+
+
+def test_say_groups_relations_by_family_and_ends_with_day_masters():
+    lines = facts()['say']
+    assert [line.split('：')[0] for line in lines[:7]] == ['合', '冲', '刑', '害', '会', '同柱', '同类地支']
+    assert lines[0].startswith('合：A年干己—B时干甲')
+    assert lines[1] == '冲：无'
+    assert lines[-1] == '日主互见：A 日主壬看 B 日主乙为伤官；B 看 A 为正印'

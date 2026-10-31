@@ -165,6 +165,38 @@ def clause_refs(relations: list[dict]) -> dict:
                        '用 classical_search.py --passage-id 读全文；不合成婚配分数'}
 
 
+GROUPS = (('合', ('tiangan_he', 'dizhi_liu_he', 'san_he', 'ban_san_he')), ('冲', ('dizhi_chong',)),
+          ('刑', ('dizhi_xing', 'san_xing')), ('害', ('dizhi_hai',)), ('会', ('san_hui', 'ban_san_hui')),
+          ('同柱', ('same_pillar',)), ('同类地支', ('same_branch_class',)))
+KIND_NAMES = {'tiangan_he': '天干五合', 'dizhi_liu_he': '地支六合', 'san_he': '跨盘三合', 'ban_san_he': '半合',
+              'dizhi_chong': '六冲', 'dizhi_xing': '刑', 'san_xing': '跨盘三刑', 'dizhi_hai': '六害',
+              'san_hui': '跨盘三会', 'ban_san_hui': '半会', 'same_pillar': '干支相同', 'same_branch_class': '同属'}
+
+
+def _row_text(row: dict) -> str:
+    detail = row.get('transforms_to') and f"合{row['transforms_to']}" or row.get('type') or row.get('class') or ''
+    name = KIND_NAMES.get(row['kind'], row['kind'])
+    if 'from_a' in row:
+        return f"A{'、'.join(row['from_a'])}与B{'、'.join(row['from_b'])}凑成{row['group']}{name}"
+    return f"A{row['a']}—B{row['b']}（{name}{'，' + detail if detail else ''}）"
+
+
+def say_lines(relations: list[dict], masters: dict) -> list[str]:
+    """One line per relation family, A/B positions named, then the day masters; hidden-stem pairs counted apart."""
+    lines = []
+    for title, kinds in GROUPS:
+        rows = [_row_text(r) for r in relations if r['kind'] in kinds]
+        lines.append(f"{title}：{'；'.join(rows) if rows else '无'}")
+    hidden = sum(r['kind'] == 'canggan_he' for r in relations)
+    lines.append(f"藏干相合（暗合候选，各家取法不同）：{hidden} 处，明细见 relations")
+    if masters.get('A_sees_B'):
+        lines.append(f"日主互见：A 日主{masters['A']}看 B 日主{masters['B']}为{masters['A_sees_B']}；"
+                     f"B 看 A 为{masters['B_sees_A']}")
+    else:
+        lines.append('日主互见：有一方日柱未定，暂不给')
+    return lines
+
+
 def pair_facts(chart_a: dict, chart_b: dict) -> dict:
     a_pos, b_pos = _positions(chart_a), _positions(chart_b)
     relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)] + _full_trios(a_pos, b_pos)
@@ -176,6 +208,7 @@ def pair_facts(chart_a: dict, chart_b: dict) -> dict:
                      for name, chart, pos in (('A', chart_a, a_pos), ('B', chart_b, b_pos))},
         'day_masters': _day_masters(chart_a, chart_b),
         'relations': relations,
+        'say': say_lines(relations, _day_masters(chart_a, chart_b)),
         'classical_clauses': clause_refs(relations),
         'notes': list(NOTES),
         'boundary': BOUNDARY,
@@ -191,7 +224,7 @@ def main(argv: list[str] | None = None) -> int:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog='stdin: {"a": {birth}, "b": {birth}}；birth 键同 bazi_calc：year month day hour minute gender\n'
                'timezone longitude city sect lunar，省略 hour 表示时辰未知。\n'
-               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations classical_clauses notes\n'
+               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations say classical_clauses notes\n'
                'boundary next_checks; errors: error message')
     parser.add_argument('--stdin', action='store_true', required=True, help='从标准输入读两人出生资料 JSON')
     parser.parse_args(argv)

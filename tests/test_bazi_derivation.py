@@ -93,3 +93,17 @@ def test_summer_time_hint_says_to_drop_city_as_well():
         ['--year', '1990', '--month', '5', '--day', '10', '--hour', '13', '--minute', '30', '--gender', 'female',
          '--tz', '8', '--longitude', '116.4']))
     assert fixed['four_pillars']['hour']['ganzhi'] == '癸未'
+
+
+def test_day_count_interval_ages_and_verdicts_are_spelled_out():
+    result = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2000', '--month', '1', '--day', '15', '--hour', '10', '--minute', '30', '--gender', 'male',
+         '--timezone', 'Asia/Shanghai', '--longitude', '116.4', '--current-timezone', 'Asia/Shanghai',
+         '--request-time', '2026-10-24T04:00:00Z'])), '日柱怎么算，看大运')
+    steps = {d['step']: d for d in result['derivation']}
+    assert '相隔 36538 天' in steps['日柱']['how'] and '第 9 位壬申' in steps['日柱']['how']
+    assert '3 天折 1 年' in steps['大运方向与起运']['how'] and '得 3 年 0 个月 0 天' in steps['大运方向与起运']['how']
+    assert result['chart_facts']['age_at_request']['full_years'] == 26
+    assert '周岁 23–33' in result['chart_facts']['da_yun'][2]['say']
+    assert '原文判为忌' in result['luck_reading'][0]['scenarios'][0]['say']
+    assert '不能说已成格' in result['geju_review']['say']

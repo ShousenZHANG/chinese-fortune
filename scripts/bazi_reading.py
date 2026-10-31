@@ -344,10 +344,34 @@ def fact_packet(clean: dict, structure: dict | None = None) -> dict:
             'review_status': 'facts_checked_interpretation_required'}
 
 
+def age_at_request(facts: dict) -> dict | None:
+    """周岁 and 虚岁 on the request date, when a local request date is known; hosts got this wrong by hand."""
+    context = facts.get('current_time_context') or {}
+    solar = facts.get('solar_date') or {}
+    if not context.get('timezone') or not solar.get('year'):
+        return None
+    try:
+        today = datetime.fromisoformat(str(context['local'])).date()
+    except (KeyError, ValueError):
+        return None
+    full = today.year - solar['year'] - ((today.month, today.day) < (solar['month'], solar['day']))
+    lunar_year = (facts.get('lunar_date') or {}).get('year') or solar['year']
+    nominal = today.year - lunar_year + 1
+    return {'date': today.isoformat(), 'full_years': full, 'nominal_years': nominal,
+            'say': f"到 {today.isoformat()}，周岁 {full} 岁（虚岁约 {nominal} 岁，按农历年粗算）"}
+
+
 def prepare_reading(chart: dict, question: str = '') -> dict:
     clean = chart_facts(chart)
     if (clean.get('true_solar_time') or {}).get('applied'):
         clean['true_solar_time']['say'] = offset_sentence(clean['true_solar_time'])
+    for cycle in clean.get('da_yun') or []:
+        if cycle.get('ganzhi') and cycle.get('start_year'):
+            cycle['say'] = (f"{cycle['start_year']}–{cycle['end_year']} 年走{cycle['ganzhi']}运"
+                            f"（周岁 {cycle['start_age']}–{cycle['end_age']}，虚岁从 {cycle.get('start_age_xusui', '?')} 起）")
+    age = age_at_request(clean)
+    if age:
+        clean['age_at_request'] = age
     structure = observed_structure(clean)
     assessment = assess_rules(clean)
     geju = assess_geju(clean)

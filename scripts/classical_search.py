@@ -373,9 +373,13 @@ def search_with_scope(query: str, book: str | None = None, chapter: str | None =
                     score = (title_score, layer_score, frequency_score)
                     found.append((score, _result(entry, data, i)))
     found.sort(key=lambda pair: (*(-v for v in pair[0]), pair[1]['passage_id']))
+    books = '、'.join(f"《{b['title']}》" for b in scanned_books)
     return {
         'results': [item for _, item in found[:limit]],
         'total_matches': len(found),
+        # Same keys either way; a zero hit carries the sentence that limits what it proves.
+        'say': (f'在随包转录本{books}里检索不到；这只说明这些转录本里没有，不能说原书所有版本都没有。'
+                if not found else None),
         'normalized_query': terms,
         'searched': {'books': scanned_books, 'chapters': chapters_scanned,
                      'passages': passages_scanned,

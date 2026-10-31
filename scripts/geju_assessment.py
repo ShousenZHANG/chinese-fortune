@@ -128,6 +128,8 @@ def assess_geju(chart: dict, registry: dict | None = None) -> dict:
               'families': [], 'cases': [], 'source_passage_ids': [],
               'meaning': '已见事实、明确不符与未决条件分开；成败救应和变化都不能由字面形态直接定案',
               'next_step': '核月令主次与透藏，再核位置、轻重、有效制化及反例；缺出生时辰时先补资料或分别排候选盘'}
+    result['say'] = ('格局只到候选：成格、败格、救应和变化都还没判定（verdict: unresolved），'
+                     '不能说已成格、已破格或救应未成；只能说哪些字面条件见到了、哪些还要核。')
     if day not in TIANGAN_WUXING or month.get('branch') not in HIDDEN_STEMS or month.get('candidate_ganzhi'):
         result.update(status='birth_time_required', reason='日主或月令未固定，先核出生时间及交节候选盘')
         return result

@@ -161,6 +161,22 @@ def _unavailable(reason: str, luck: dict) -> dict:
             'granularity': 'ten_year_cycle', 'limit': LIMIT}
 
 
+VERDICT_WORDS = {'favoured': '喜', 'avoided': '忌', 'harmless': '无碍', 'unpromising': '不利'}
+
+
+def _scenario_say(scenario: dict) -> str:
+    """Each verdict of one 配法 in words: which character, 喜 or 忌, the book's words, settled or not."""
+    parts = []
+    for side, label in (('stem', '天干'), ('branch', '地支')):
+        info = scenario[side]
+        for verdict in info['verdicts']:
+            settled = '原文字面条件已满足' if verdict['state'] == 'met' else '还要按原文解释条件才能定'
+            parts.append(f"{label}{info['char']}（{info['role']}）原文判为{VERDICT_WORDS.get(verdict['verdict'], verdict['verdict'])}"
+                         f"（「{verdict['words']}」），{settled}")
+    head = f"按「{scenario['title']}」这一配法："
+    return head + ('；'.join(parts) if parts else '这步运的干支在本配法里没有直接判语') + '。整体格局仍待核，配法本身是候选。'
+
+
 def assess_luck(chart: dict, luck: dict, registry: dict | None = None) -> dict:
     """What one ten-year cycle does under each candidate 配法 of the connected 格."""
     registry = registry or load_luck_rules()
@@ -197,6 +213,8 @@ def assess_luck(chart: dict, luck: dict, registry: dict | None = None) -> dict:
                          'verdicts': _verdicts(scenario, stem_role, stem, chart, True)},
                 'branch': {'char': branch, 'via': f'本气{main}', 'role': branch_role,
                            'verdicts': _verdicts(scenario, branch_role, branch, chart, False)}})
+    for scenario in scenarios:
+        scenario['say'] = _scenario_say(scenario)
     summary = {}
     for part in ('stem', 'branch'):
         definite = [[v['verdict'] for v in s[part]['verdicts'] if v['state'] == 'met'] for s in scenarios]

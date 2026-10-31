@@ -10,7 +10,11 @@ from __future__ import annotations
 
 from datetime import date, datetime, timedelta
 
-from utils import hour_branch, parse_iso
+from utils import DIZHI, TIANGAN, hour_branch, jiazi_index, parse_iso
+
+# 1900-01-01 was a 甲戌 day, number 11 (index 10) of the sixty.
+ANCHOR = date(1900, 1, 1)
+ANCHOR_INDEX = 10
 
 # 五鼠遁: the stem of 子时 for each day stem.
 RAT = {'甲': '甲', '己': '甲', '乙': '丙', '庚': '丙', '丙': '戊', '辛': '戊',
@@ -122,8 +126,23 @@ def _day_step(facts: dict) -> dict:
     sect = facts.get('sect') or {}
     if _gz(facts, 'day') == '未定':
         return {'step': '日柱', 'result': '未定', 'how': UNDECIDED}
-    return {'step': '日柱', 'result': _gz(facts, 'day'),
-            'how': f"取 {tst.get('effective_date', '出生日')} 这一天的干支；晚子时口径：{sect.get('label', '默认')}。"}
+    how = f"取 {tst.get('effective_date', '出生日')} 这一天的干支；晚子时口径：{sect.get('label', '默认')}。"
+    return {'step': '日柱', 'result': _gz(facts, 'day'), 'how': how + _day_count(facts, tst.get('effective_date'))}
+
+
+def _day_count(facts: dict, effective: str | None) -> str:
+    """The day pillar by plain arithmetic from a fixed anchor, stated only when it agrees with the chart."""
+    day = facts['four_pillars']['day']
+    try:
+        offset = (date.fromisoformat(str(effective)) - ANCHOR).days
+        index = jiazi_index(day['stem'], day['branch'])
+    except (TypeError, ValueError, KeyError):
+        return ''
+    if (ANCHOR_INDEX + offset) % 60 != index:
+        return ''
+    return (f"手算复核：以 1900-01-01（甲戌日，六十甲子第 11 位）为基准，到 {effective} 相隔 {offset} 天；"
+            f"(10 + {offset}) 除以 60 余 {index}，即第 {index + 1} 位"
+            f"{TIANGAN[index % 10]}{DIZHI[index % 12]}。")
 
 
 def _hour_step(facts: dict) -> dict:
@@ -151,7 +170,24 @@ def _luck_step(facts: dict) -> dict | None:
             'how': f"年干{year['stem']}属{year.get('stem_yin_yang', '?')}：阳年男、阴年女顺排，阴年男、阳年女逆排，"
                    f"本盘{'顺' if forward else '逆'}排，从月柱{_gz(facts, 'month')}"
                    f"{'下一位' if forward else '上一位'}起。起运间隔量到{'下一个' if forward else '上一个'}节，"
-                   f"换算口径：{qi.get('method', '所用算法')}。"}
+                   f"换算口径：{qi.get('method', '所用算法')}。" + _interval_text(facts, forward)}
+
+
+def _interval_text(facts: dict, forward: bool) -> str:
+    """How far the birth is from the governing 节, and the conversion that turns it into the start age."""
+    ctx = facts.get('calendar_context') or {}
+    qi = facts.get('qi_yun') or {}
+    jie = ctx.get('next_jie' if forward else 'previous_jie') or {}
+    try:
+        birth = parse_iso(ctx['birth_calendar_datetime'])
+        boundary = parse_iso(jie['calendar_datetime'])
+    except (KeyError, TypeError, ValueError):
+        return ''
+    hours = abs((boundary - birth).total_seconds()) / 3600
+    return (f"出生到{'下一个' if forward else '上一个'}节（{jie.get('name')} {jie['calendar_datetime'][:16]}）"
+            f"相距约 {int(hours // 24)} 天 {int(hours % 24)} 小时；按 3 天折 1 年、1 天折 4 个月、1 个时辰（2 小时）"
+            f"折 10 天换算（天数取整天，时辰按出生与交节所在时辰计），得 {qi.get('years')} 年 {qi.get('months')} 个月 "
+            f"{qi.get('days')} 天。")
 
 
 def derivation_steps(facts: dict) -> list[dict]:
