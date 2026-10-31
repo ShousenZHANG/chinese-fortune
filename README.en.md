@@ -197,6 +197,10 @@ Runtime validation has an explicit scope. Missing files do not silently switch v
 
 [Rules](docs/BAZI-RULES.md) · [Output contract](references/22-output-contract.md) · [Migration](docs/OUTPUT-VALIDATION.md)
 
+### Ready-to-copy sentences
+
+Where answers used to go wrong, the tools now write the sentence themselves (`say` fields): how many minutes true solar time differs from the clock, which pillar each clock window gives when the birth time is unknown (both readings of a repeated summer-time hour), each luck cycle's full and nominal ages, the age on the request date, each luck verdict in the book's words, formations as candidates only, and compatibility grouped by combination, clash, punishment and harm with both day masters' view. Answers copy them instead of recomputing. Field list: [MIGRATION-5.10](docs/MIGRATION-5.10.md).
+
 ### Prospective validation
 
 Fix the method and scope before interpretation, check personal applicability and exceptions, and disclose unresolved conflicts. With user consent, `prediction_log.py` stores prospective records outside the repository, freezes forecasts, and preserves confirmed outcome corrections. Coverage, unverified outcomes, deletions and method/version/event cohorts accompany observed hit rates. This mechanism does not establish predictive validity. See [the workflow](references/28-prospective-validation.md).

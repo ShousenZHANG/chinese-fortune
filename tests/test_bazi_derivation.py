@@ -107,3 +107,19 @@ def test_day_count_interval_ages_and_verdicts_are_spelled_out():
     assert '周岁 23–33' in result['chart_facts']['da_yun'][2]['say']
     assert '原文判忌' in result['luck_reading'][0]['scenarios'][0]['say']
     assert '不能说已成格' in result['geju_review']['say']
+
+
+def test_round_five_ages_late_zi_count_and_scoped_search():
+    early = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2000', '--month', '1', '--day', '15', '--hour', '0', '--minute', '10', '--gender', 'male',
+         '--timezone', 'Asia/Shanghai', '--longitude', '116.4', '--current-timezone', 'Asia/Shanghai',
+         '--request-time', '2026-01-15T04:00:00Z'])), '看大运')
+    age = early['chart_facts']['age_at_request']
+    assert (age['full_years'], age['nominal_years']) == (26, 27)                           # R5-COR-01/02
+    late = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2000', '--month', '1', '--day', '15', '--hour', '23', '--minute', '30', '--gender', 'male',
+         '--timezone', 'Asia/Shanghai', '--longitude', '120', '--sect', '1'])), '日柱怎么算')
+    day = next(d for d in late['derivation'] if d['step'] == '日柱')
+    assert '取次日' in day['how'] and '2000-01-16 相隔 36539 天' in day['how']               # R5-DER-01
+    from classical_search import search_with_scope
+    assert '限定的「c001」范围' in search_with_scope('染发', chapter='c001')['say']           # R5-SEARCH-01

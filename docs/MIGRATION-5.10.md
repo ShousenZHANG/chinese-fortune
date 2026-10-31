@@ -40,6 +40,22 @@ python scripts/bazi_reading.py --year 2000 --month 1 --day 15 --hour 10 --minute
 
 路由新增 `method`、`multi_method`、`knowledge`、`compatibility`。`needs` 表示输入要求，调用方必须扣除上下文中已有资料。多法按 `steps` 分别执行并保留分歧，不混算总分；合婚只准备各人的盘和核对流程，没有新增合婚分数。已有卦象或抽牌直接复用，命令模板不授权重新随机。
 
+## 新增字段（可照抄的 say 句子与年龄）
+
+均为新增键，旧键不变：
+
+- `chart_facts.true_solar_time.say`：真太阳时比钟表读数多或少几分钟。
+- 时辰未知时未定柱的 `candidate_windows` 与 `say`：各钟表时段对应的干支；夏令时回拨的重复钟点写明第一次、第二次各是哪一柱。
+- `chart_facts.da_yun[].say`：每步大运的年份、周岁与虚岁起点。
+- `chart_facts.age_at_request`：带 `--request-time` 与现居地时区时，请求当天的周岁和虚岁（按出生钟表日期与农历年）。
+- `luck_reading[].scenarios[].say`：每个候选配法逐字判喜判忌，以及字面条件是否已满足。
+- `geju_review.say`：格局只到候选。
+- `classical_search` 结果的 `say`：零命中时说明只代表所查转录本或所限范围；有命中时为 null。
+- `pair_facts.say`：按合、冲、刑、害、会、同柱、同类分组，最后一行日主互见。
+- `derivation`：日柱手算（以 1900-01-01 甲戌日为基准）与起运换算。
+
+宿主遇到 `say` 时照抄，不自行改写方向、对应关系或年龄。
+
 ## 验收边界
 
 以虚构四柱、冻结原文和真实 CLI 验证：源引用、反向例外、作用范围、未知时辰、完整会支、保留本格、详简一致、报告转义及不覆盖。离线包还必须验证新资产和脚本实际可达。完整 pytest（含 slow）、ruff、mypy、原文验证和打包冒烟单列；实际宿主执行与语义审查单列，不继承旧版本成绩。

@@ -347,18 +347,22 @@ def fact_packet(clean: dict, structure: dict | None = None) -> dict:
 def age_at_request(facts: dict) -> dict | None:
     """周岁 and 虚岁 on the request date, when a local request date is known; hosts got this wrong by hand."""
     context = facts.get('current_time_context') or {}
-    solar = facts.get('solar_date') or {}
-    if not context.get('timezone') or not solar.get('year'):
+    tst = facts.get('true_solar_time') or {}
+    if not context.get('timezone') or not tst.get('effective_date'):
         return None
     try:
         today = datetime.fromisoformat(str(context['local'])).date()
+        # The civil birth date, not the true-solar date a late birth may roll into.
+        born = date.fromisoformat(tst['effective_date']) - timedelta(days=tst.get('day_offset') or 0)
     except (KeyError, ValueError):
         return None
-    full = today.year - solar['year'] - ((today.month, today.day) < (solar['month'], solar['day']))
-    lunar_year = (facts.get('lunar_date') or {}).get('year') or solar['year']
-    nominal = today.year - lunar_year + 1
+    full = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+    from lunar_python import Solar
+    birth_lunar_year = (facts.get('lunar_date') or {}).get('year') or born.year
+    today_lunar_year = Solar.fromYmd(today.year, today.month, today.day).getLunar().getYear()
+    nominal = today_lunar_year - birth_lunar_year + 1
     return {'date': today.isoformat(), 'full_years': full, 'nominal_years': nominal,
-            'say': f"到 {today.isoformat()}，周岁 {full} 岁（虚岁约 {nominal} 岁，按农历年粗算）"}
+            'say': f"到 {today.isoformat()}，周岁 {full} 岁，虚岁 {nominal} 岁（虚岁按农历年计）"}
 
 
 def prepare_reading(chart: dict, question: str = '') -> dict:

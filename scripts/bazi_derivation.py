@@ -134,13 +134,20 @@ def _day_count(facts: dict, effective: str | None) -> str:
     """The day pillar by plain arithmetic from a fixed anchor, stated only when it agrees with the chart."""
     day = facts['four_pillars']['day']
     try:
-        offset = (date.fromisoformat(str(effective)) - ANCHOR).days
+        base = date.fromisoformat(str(effective))
         index = jiazi_index(day['stem'], day['branch'])
     except (TypeError, ValueError, KeyError):
         return ''
-    if (ANCHOR_INDEX + offset) % 60 != index:
+    # A late-zi birth under 子初换日 takes the next day's pillar; say so rather than drop the arithmetic.
+    for shift in (0, 1):
+        offset = (base + timedelta(days=shift) - ANCHOR).days
+        if (ANCHOR_INDEX + offset) % 60 == index:
+            break
+    else:
         return ''
-    return (f"手算复核：以 1900-01-01（甲戌日，六十甲子第 11 位）为基准，到 {effective} 相隔 {offset} 天；"
+    note = '（晚子时按子初换日取次日）' if shift else ''
+    pillar_date = (base + timedelta(days=shift)).isoformat()
+    return (f"手算复核{note}：以 1900-01-01（甲戌日，六十甲子第 11 位）为基准，到 {pillar_date} 相隔 {offset} 天；"
             f"(10 + {offset}) 除以 60 余 {index}，即第 {index + 1} 位"
             f"{TIANGAN[index % 10]}{DIZHI[index % 12]}。")
 
