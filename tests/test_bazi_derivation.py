@@ -105,5 +105,5 @@ def test_day_count_interval_ages_and_verdicts_are_spelled_out():
     assert '3 天折 1 年' in steps['大运方向与起运']['how'] and '得 3 年 0 个月 0 天' in steps['大运方向与起运']['how']
     assert result['chart_facts']['age_at_request']['full_years'] == 26
     assert '周岁 23–33' in result['chart_facts']['da_yun'][2]['say']
-    assert '原文判为忌' in result['luck_reading'][0]['scenarios'][0]['say']
+    assert '原文判忌' in result['luck_reading'][0]['scenarios'][0]['say']
     assert '不能说已成格' in result['geju_review']['say']

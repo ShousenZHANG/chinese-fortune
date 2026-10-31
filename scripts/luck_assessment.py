@@ -167,14 +167,14 @@ VERDICT_WORDS = {'favoured': '喜', 'avoided': '忌', 'harmless': '无碍', 'unp
 def _scenario_say(scenario: dict) -> str:
     """Each verdict of one 配法 in words: which character, 喜 or 忌, the book's words, settled or not."""
     parts = []
-    for side, label in (('stem', '天干'), ('branch', '地支')):
+    for side in ('stem', 'branch'):
         info = scenario[side]
         for verdict in info['verdicts']:
-            settled = '原文字面条件已满足' if verdict['state'] == 'met' else '还要按原文解释条件才能定'
-            parts.append(f"{label}{info['char']}（{info['role']}）原文判为{VERDICT_WORDS.get(verdict['verdict'], verdict['verdict'])}"
-                         f"（「{verdict['words']}」），{settled}")
-    head = f"按「{scenario['title']}」这一配法："
-    return head + ('；'.join(parts) if parts else '这步运的干支在本配法里没有直接判语') + '。整体格局仍待核，配法本身是候选。'
+            settled = '字面条件已满足' if verdict['state'] == 'met' else '条件待解释'
+            parts.append(f"{info['char']}（{info['role']}）原文判{VERDICT_WORDS.get(verdict['verdict'], verdict['verdict'])}"
+                         f"「{verdict['words']}」，{settled}")
+    head = f"按「{scenario['title']}」（候选配法）："
+    return head + ('；'.join(parts) if parts else '这步运的干支在本配法里没有直接判语') + '。'
 
 
 def assess_luck(chart: dict, luck: dict, registry: dict | None = None) -> dict:
