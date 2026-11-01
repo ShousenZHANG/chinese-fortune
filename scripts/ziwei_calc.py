@@ -48,6 +48,7 @@ from utils import (
     validate_birth_input,
     warn,
 )
+from ziwei_answer import build_say, focus_palace, palace_name
 from ziwei_brightness import NOTE as BRIGHTNESS_SEVEN_NOTE
 from ziwei_brightness import seven_level
 from ziwei_gods import SOURCES as GOD_SOURCES
@@ -69,6 +70,7 @@ from ziwei_palaces import (
     sihua_table,
 )
 from ziwei_patterns import detect_patterns
+from ziwei_selfcheck import self_check
 from ziwei_stars import (
     BRIGHTNESS_NOTE,
     KUI_YUE_VARIANTS,
@@ -122,13 +124,13 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
   malefic_stars_positions miscellaneous_stars_positions miscellaneous_stars_basis twelve_palaces
   four_transformations_native da_xian liu_nian_sihua horoscope patterns notes
-  dou_jun_basis zhi_shi_basis
+  dou_jun_basis zhi_shi_basis self_check say focus
 
 --horoscope-date [--horoscope-time] 时 horoscope 给 dou_jun da_xian liu_nian liu_yue liu_ri liu_shi
 (各层 ganzhi palace_branch natal_palace transformations stars; liu_nian 另有 twelve_gods,
 da_xian 另有 age_range nominal_age) conventions limit; 否则为 null。
 
---brief-palaces 时 twelve_palaces 只留 name/branch/stem/index/main_stars;
+--brief-palaces 时 twelve_palaces 只留 name/branch/stem/index/main_stars, twelve_gods_sources 为 null;
 --no-da-xian 时 da_xian 为 null。两者不改变其余字段的值。
 
 On error: {"ok": false, "tool": ..., "version": ..., "error": ..., "message": ...}
@@ -204,6 +206,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="同时给出流时; 需与 --horoscope-date 一起用")
     p.add_argument("--no-patterns", action="store_true",
                    help="略过 格局 检测以缩减输出")
+    p.add_argument("--focus-palace", default=None, metavar="宫名",
+                   help="按所问宫位整理 focus 块: 夫妻/婚姻、官禄/事业、财帛/财运、疾厄/健康、迁移、田宅等")
     p.add_argument("--no-sihua", action="store_true",
                    help="略过各宫自化（保留生年及岁限四化）")
     # twelve_palaces 与 da_xian 合占载荷 81.5%, 而此前两个开关只覆盖 1.3%+2.2%
@@ -239,6 +243,10 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     )
     if err:
         return error_envelope("ziwei", "invalid_input", err, input=vars(args))
+    focus_name = palace_name(args.focus_palace) if args.focus_palace else None
+    if args.focus_palace and not focus_name:
+        return error_envelope("ziwei", "invalid_input", f"--focus-palace 不认识「{args.focus_palace}」；"
+                              "可用十二宫名或 夫妻、事业、财运、健康、出行、房产 等说法")
     if args.horoscope_time and not args.horoscope_date:
         return error_envelope("ziwei", "invalid_input", "--horoscope-time 需要同时给 --horoscope-date")
     if args.horoscope_date:
@@ -545,7 +553,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         "liu_nian_sihua": liu_nian_sihua,
         "horoscope": horoscope,
         "patterns": patterns,
-        "twelve_gods_sources": GOD_SOURCES,
+        "twelve_gods_sources": None if args.brief_palaces else GOD_SOURCES,
         "leap_month_school": LEAP_LABELS[leap_school],
         "school": {"preset": args.school, "brightness": args.brightness, "geng_sihua": geng_school,
                    "leap_month": leap_school, "late_zi_sect": args.sect, "kui_yue": args.kui_yue,
@@ -567,6 +575,10 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
             "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。",
         ],
     }
+    out['self_check'] = self_check(out)
+    full = {**out, 'twelve_palaces': annotated}
+    out['say'] = build_say(full)
+    out['focus'] = focus_palace(full, focus_name) if focus_name else None
     out['schema_version'] = '2.0'
     out['reading_support'] = {
         'status': 'requires_semantic_review',

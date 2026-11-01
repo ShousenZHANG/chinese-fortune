@@ -46,9 +46,9 @@ def test_every_cited_passage_states_the_rule_it_backs():
 
 def test_basis_marks_stars_without_a_verse_as_the_common_table():
     basis = chart(1990, 5, 10, 14, 'male')['miscellaneous_stars_basis']
-    assert basis['三台'] == 'ziwei:c002:p0047'
-    assert basis['天巫'] == COMMON_TABLE
-    assert len(basis) == 39
+    assert basis['ziwei:c002:p0047'] == ['三台', '八座']
+    assert '天巫' in basis[COMMON_TABLE]
+    assert sum(map(len, basis.values())) == 39
 
 
 def test_book_rules_by_hand():

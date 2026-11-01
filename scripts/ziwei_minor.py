@@ -110,5 +110,9 @@ def place_minor_stars(*, year_stem: str, year_branch: str, lunar_month: int, lun
     }
 
 
-def sources_for(stars: dict[str, str]) -> dict[str, str]:
-    return {name: SOURCES.get(name, COMMON_TABLE) for name in stars}
+def sources_for(stars: dict[str, str]) -> dict[str, list[str]]:
+    """{passage id or 通行表: [stars]}, grouped so the basis stays short."""
+    grouped: dict[str, list[str]] = {}
+    for name in stars:
+        grouped.setdefault(SOURCES.get(name, COMMON_TABLE), []).append(name)
+    return grouped

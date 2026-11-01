@@ -218,7 +218,8 @@ def test_payload_switches_are_documented_where_claude_can_see_them():
 @pytest.mark.parametrize("flags,max_ratio", [
     (["--brief-palaces"], 0.60),
     # 大限约占 18%：v5.10 加了 horoscope、十二神、辅星亮度后整盘变大，比例由 0.80 升到 0.824。
-    (["--no-da-xian"], 0.85),
+    # v5.11 再加 39 杂曜及出处、say、self_check，大限降到约 15%，裁剪后约 0.851。
+    (["--no-da-xian"], 0.88),
     (["--no-da-xian", "--brief-palaces", "--no-patterns", "--no-sihua"], 0.35),
 ])
 def test_ziwei_switches_actually_cut_the_payload(flags, max_ratio):

@@ -75,6 +75,7 @@ TOOLS: dict[str, dict] = {
     'ziwei_chart': {'script': 'ziwei_calc.py', 'description': '紫微斗数命盘；给 horoscope_date 时加流年斗君、流月、流日、流时',
                     'schema': _schema({**BIRTH, 'horoscope_date': {'type': 'string'}, 'horoscope_time': {'type': 'string'},
                                        'liu_year': {'type': 'integer'}, 'brief_palaces': {'type': 'boolean'},
+                                       'focus_palace': {'type': 'string', 'description': '所问宫位，如 夫妻、事业、财运'},
                                        **ZIWEI_SCHOOLS},
                                       ('year', 'month', 'day', 'hour', 'gender'))},
     'fortune_reading': {'script': 'fortune_reading.py', 'stdin_field': 'request',

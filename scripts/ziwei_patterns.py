@@ -15,7 +15,7 @@ required 成格必须满足的、bonus 原文说更好的、breaking 原文说�
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Callable
+from typing import Callable, Optional
 
 from utils import DIZHI
 from ziwei_brightness import seven_level
@@ -399,7 +399,7 @@ def _kong_jie_jia_ming(c: Chart) -> Result | None:
     return _done(req)
 
 
-Spec = tuple[str, str, str | None, str | None, Callable[[Chart], Result | None]]
+Spec = tuple[str, str, Optional[str], Optional[str], Callable[[Chart], Optional[Result]]]
 QUANSHU, MODERN = 'quanshu_definition', 'modern_convention'
 # (名称, 出处类别, passage id, 原句, 判定)
 SPECS: tuple[Spec, ...] = (
