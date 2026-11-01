@@ -138,3 +138,10 @@ def test_a_slot_answer_merges_hours_that_say_the_same():
     text = _for_the_user(render_answer(read_request(request)))
     assert len(text) <= 1550, len(text)
     assert '庚申日辛巳、壬午时' in text and text.count('这一年（丙午）') == 1
+
+
+def test_bu_shen_me_keeps_tradition_practice_and_no_basis_apart():
+    """B5: 「补什么」 answers say which part is the texts, which is everyday advice, which has no basis."""
+    text = _chart_text('我五行缺什么，该补什么')
+    assert '现实建议（不是古籍说法）' in text and '没有依据、不能说的' in text
+    assert text.index('五行配色') < text.index('现实建议') < text.index('没有依据')
