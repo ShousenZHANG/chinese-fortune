@@ -70,3 +70,83 @@ def test_project_four_level_brightness_is_still_available():
     old = chart(1990, 5, 10, 14, 'male', '--brightness', 'project4')
     assert old['school']['brightness'] == 'project4'
     assert any('四级' in note for note in old['notes'])
+
+
+def test_kui_yue_schools_differ_only_for_geng_xin_ren_gui():
+    for year in range(1984, 1994):   # one of each year stem
+        base = chart(year, 6, 15, 10, 'male')
+        stem = base['year_stem']
+        for school in ('quanshu-1', 'quanshu-2', 'zhong-yiming'):
+            other = chart(year, 6, 15, 10, 'male', '--kui-yue', school)['lucky_stars_positions']
+            same = (other['天魁'], other['天钺']) == (base['lucky_stars_positions']['天魁'],
+                                                    base['lucky_stars_positions']['天钺'])
+            assert same or stem in '庚辛壬癸', (year, school)
+    xin = chart(1991, 6, 15, 10, 'male', '--kui-yue', 'quanshu-1')     # 辛未年: 六辛逢虎马
+    assert (xin['lucky_stars_positions']['天魁'], xin['lucky_stars_positions']['天钺']) == ('寅', '午')
+
+
+def test_month_tian_ma_follows_the_birth_month_branch():
+    result = chart(1990, 5, 10, 14, 'male', '--tian-ma', 'month')    # 四月 = 巳月, 巳酉丑马在亥
+    assert result['lunar_date']['month'] == 4
+    assert result['miscellaneous_stars_positions']['天马'] == '亥'
+    assert chart(1990, 5, 10, 14, 'male')['miscellaneous_stars_positions']['天马'] == '申'  # 午年
+
+
+def test_zhongzhou_swaps_tianshi_and_tianshang_for_yin_male_and_yang_female():
+    yang_male = chart(1990, 5, 10, 14, 'male')                         # 午年阳男: 不换
+    assert chart(1990, 5, 10, 14, 'male', '--tianshi-tianshang', 'zhongzhou')['miscellaneous_stars_positions'] \
+        == yang_male['miscellaneous_stars_positions']
+    default = chart(1990, 5, 10, 14, 'female')['miscellaneous_stars_positions']
+    swapped = chart(1990, 5, 10, 14, 'female', '--tianshi-tianshang', 'zhongzhou')['miscellaneous_stars_positions']
+    assert (swapped['天伤'], swapped['天使']) == (default['天使'], default['天伤'])
+
+
+def test_jie_kong_single_and_zhanyan():
+    single = chart(1990, 5, 10, 14, 'male', '--jie-kong', 'single')['miscellaneous_stars_positions']
+    assert single['截空'] == '未' and '截路' not in single                # 乙庚午未, 庚取阴支
+    gui = chart(1993, 6, 15, 10, 'male', '--jie-kong', 'zhanyan')['miscellaneous_stars_positions']
+    assert gui['截空'] == '亥'                                           # 癸年占验派取亥, 单星取丑
+    assert chart(1993, 6, 15, 10, 'male', '--jie-kong', 'single')['miscellaneous_stars_positions']['截空'] == '丑'
+
+
+def test_changsheng_variants():
+    earth = next(b for b in BIRTHS for r in [chart(*b)] if r['wuxing_ju']['number'] == 5)
+    start = {p['twelve_gods']['changsheng']: p['branch']
+             for p in chart(*earth, '--changsheng', 'huo-tu')['twelve_palaces']}['长生']
+    assert start == '寅'
+    female = chart(1991, 5, 10, 14, 'female', '--changsheng-direction', 'gender')   # 阴女: 通行顺, 字面逆
+    usual = chart(1991, 5, 10, 14, 'female')
+    order = '子丑寅卯辰巳午未申酉戌亥'
+
+    def step(result):
+        gods = {p['twelve_gods']['changsheng']: p['branch'] for p in result['twelve_palaces']}
+        return (order.index(gods['沐浴']) - order.index(gods['长生'])) % 12
+    assert step(usual) == 1 and step(female) == 11
+
+
+def test_geng_variants_with_tianxiang_ji():
+    result = chart(1990, 5, 10, 14, 'male', '--geng-sihua', 'yang-wu-fu-xiang')
+    assert result['four_transformations_native'] == {'禄': '太阳', '权': '武曲', '科': '天府', '忌': '天相'}
+
+
+def test_lichun_year_divide_moves_the_year_between_lichun_and_new_year():
+    # 2021-02-05: 立春 (2/3) 之后、春节 (2/12) 之前 —— 农历仍是庚子年, 立春口径已是辛丑年。
+    lunar_year = chart(2021, 2, 5, 10, 'male')
+    lichun_year = chart(2021, 2, 5, 10, 'male', '--year-divide', 'lichun')
+    assert (lunar_year['year_stem'], lunar_year['year_branch']) == ('庚', '子')
+    assert (lichun_year['year_stem'], lichun_year['year_branch']) == ('辛', '丑')
+    assert lichun_year['four_transformations_native']['禄'] == '巨门'
+    assert any('立春' in note for note in lichun_year['notes'])
+
+
+def test_nihai_preset_and_explicit_override():
+    nihai = chart(2020, 6, 10, 16, 'female', '--school', 'nihai')           # 闰四月十九
+    assert nihai['school']['leap_month'] == 'next' and nihai['school']['preset'] == 'nihai'
+    assert all(not p['self_transformations'] for p in nihai['twelve_palaces'])
+    assert all('transformations' not in step for step in nihai['da_xian'])
+    assert nihai['four_transformations_native']
+    early = chart(2020, 6, 5, 9, 'male', '--school', 'nihai')               # 闰四月十四: 倪派也按五月
+    assert early['lunar_date']['month'] == 5
+    override = chart(2020, 6, 5, 9, 'male', '--school', 'nihai', '--leap-month', 'split')
+    assert override['lunar_date']['month'] == 4
+    assert any('倪海厦' in note for note in nihai['notes'])

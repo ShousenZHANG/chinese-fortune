@@ -24,7 +24,7 @@ SOURCES: dict[str, str] = {
     "年解": "ziwei:c002:p0068",
     "天哭": "ziwei:c002:p0049", "天虚": "ziwei:c002:p0049",
     "龙池": "ziwei:c002:p0051", "凤阁": "ziwei:c002:p0051",
-    "截路": "ziwei:c002:p0073", "空亡": "ziwei:c002:p0073",
+    "截路": "ziwei:c002:p0073", "空亡": "ziwei:c002:p0073", "截空": "ziwei:c002:p0073",
     "天伤": "ziwei:c002:p0040", "天使": "ziwei:c002:p0040",
 }
 COMMON_TABLE = "通行表"
@@ -38,6 +38,10 @@ _TIAN_GUAN = "未辰巳寅卯酉亥酉戌午"
 _TIAN_FU = "酉申子亥卯寅午巳午巳"
 _JIE_LU = "申午辰寅子"               # 甲己 乙庚 丙辛 丁壬 戊癸
 _KONG_WANG = "酉未巳卯丑"
+# 截空单星: 甲乙丙丁戊取对子中的阳支, 己庚辛壬癸取阴支; 占验派戊癸改取戌亥。表取自
+# Renhuai123/ziwei-doushu school-tables.generated.ts JK_ARR1 / JK_ARR3 (MIT)。
+_JIE_KONG_SINGLE = "申午辰寅子酉未巳卯丑"
+_JIE_KONG_ZHANYAN = "申午辰寅戌酉未巳卯亥"
 _PO_SUI = "巳丑酉"
 _FEI_LIAN = "申酉戌巳午未寅卯辰亥子丑"
 _HUA_GAI_XIAN_CHI = {"寅午戌": ("戌", "卯"), "申子辰": ("辰", "酉"),
@@ -59,10 +63,27 @@ def xun_kong(year_stem: str, year_branch: str) -> str:
     return _at(first if first % 2 == yb % 2 else first + 1)
 
 
+def _jie_kong(stem_index: int, school: str) -> dict[str, str]:
+    if school == "split":
+        return {"截路": _JIE_LU[stem_index % 5], "空亡": _KONG_WANG[stem_index % 5]}
+    table = _JIE_KONG_SINGLE if school == "single" else _JIE_KONG_ZHANYAN
+    return {"截空": table[stem_index]}
+
+
+def _shang_shi(ming: int, gender: str, year_branch: int, school: str) -> dict[str, str]:
+    """天伤在奴仆宫 (命宫逆数第 8 宫), 天使在疾厄宫 (第 6 宫)。
+    中州派 (iztro JS algorithm=zhongzhou): 阴男阳女两星对调。"""
+    shang, shi = _at(ming - 7), _at(ming - 5)
+    if school == "zhongzhou" and (year_branch % 2 == 0) != (gender == "male"):
+        shang, shi = shi, shang
+    return {"天伤": shang, "天使": shi}
+
+
 def place_minor_stars(*, year_stem: str, year_branch: str, lunar_month: int, lunar_day: int,
-                      hour: int, ming_branch: str, shen_branch: str,
-                      lucky: dict[str, str]) -> dict[str, str]:
-    """30 颗补全杂曜的地支. lunar_month 为闰月处理后的有效月, lucky 为六吉位置."""
+                      hour: int, ming_branch: str, shen_branch: str, lucky: dict[str, str],
+                      gender: str = "male", tianshi: str = "default",
+                      jie_kong: str = "split") -> dict[str, str]:
+    """补全杂曜的地支. lunar_month 为闰月处理后的有效月, lucky 为六吉位置."""
     m0, d0, t = lunar_month - 1, lunar_day - 1, hour_branch_index(hour)
     yb, ys = _idx(year_branch), TIANGAN.index(year_stem)
     mg = _idx(ming_branch)
@@ -83,10 +104,9 @@ def place_minor_stars(*, year_stem: str, year_branch: str, lunar_month: int, lun
         "天厨": _TIAN_CHU[ys], "天官": _TIAN_GUAN[ys], "天福": _TIAN_FU[ys],
         "破碎": _PO_SUI[yb % 3], "蜚廉": _FEI_LIAN[yb],
         "天德": _at(9 + yb), "月德": _at(5 + yb), "天空": _at(yb + 1),
-        "截路": _JIE_LU[ys % 5], "空亡": _KONG_WANG[ys % 5],
+        **_jie_kong(ys, jie_kong),
         "旬空": xun_kong(year_stem, year_branch), "年解": _at(10 - yb),
-        # 天伤在奴仆宫 (命宫逆数第 8 宫), 天使在疾厄宫 (第 6 宫)
-        "天伤": _at(mg - 7), "天使": _at(mg - 5),
+        **_shang_shi(mg, gender, yb, tianshi),
     }
 
 

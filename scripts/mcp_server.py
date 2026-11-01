@@ -42,6 +42,23 @@ BIRTH = {'year': {'type': 'integer'}, 'month': {'type': 'integer'}, 'day': {'typ
          'lunar': {'type': 'boolean'}, 'sect': {'type': 'integer', 'enum': [1, 2]}}
 
 
+# Mirrors ziwei_calc.SCHOOL_CHOICES (a test keeps them equal); not imported so the
+# server stays a thin stdlib launcher.
+ZIWEI_SCHOOLS = {key: {'type': 'string', 'enum': values} for key, values in {
+    'school': ['default', 'nihai'],
+    'brightness': ['mainstream7', 'project4'],
+    'geng_sihua': ['yang-wu-yin-tong', 'yang-wu-tong-yin', 'yang-wu-fu-tong', 'yang-wu-fu-xiang', 'yang-wu-tong-xiang'],
+    'leap_month': ['split', 'next', 'prev'],
+    'kui_yue': ['tongxing', 'quanshu-1', 'quanshu-2', 'zhong-yiming'],
+    'tian_ma': ['year', 'month'],
+    'tianshi_tianshang': ['default', 'zhongzhou'],
+    'jie_kong': ['split', 'single', 'zhanyan'],
+    'changsheng': ['shui-tu', 'huo-tu'],
+    'changsheng_direction': ['yinyang', 'gender'],
+    'year_divide': ['lunar-new-year', 'lichun'],
+}.items()}
+
+
 def _schema(properties: dict, required: tuple[str, ...] = ()) -> dict:
     return {'type': 'object', 'properties': properties, 'required': list(required), 'additionalProperties': False}
 
@@ -58,10 +75,7 @@ TOOLS: dict[str, dict] = {
     'ziwei_chart': {'script': 'ziwei_calc.py', 'description': '紫微斗数命盘；给 horoscope_date 时加流年斗君、流月、流日、流时',
                     'schema': _schema({**BIRTH, 'horoscope_date': {'type': 'string'}, 'horoscope_time': {'type': 'string'},
                                        'liu_year': {'type': 'integer'}, 'brief_palaces': {'type': 'boolean'},
-                                       'brightness': {'type': 'string', 'enum': ['mainstream7', 'project4']},
-                                       'geng_sihua': {'type': 'string', 'enum': ['yang-wu-yin-tong', 'yang-wu-tong-yin',
-                                                                                  'yang-wu-fu-tong']},
-                                       'leap_month': {'type': 'string', 'enum': ['split', 'next', 'prev']}},
+                                       **ZIWEI_SCHOOLS},
                                       ('year', 'month', 'day', 'hour', 'gender'))},
     'fortune_reading': {'script': 'fortune_reading.py', 'stdin_field': 'request',
                         'description': '个人短期运势、择日择时、行程；request 结构见 references/24-personalized-forecast.md',

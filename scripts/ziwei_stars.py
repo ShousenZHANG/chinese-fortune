@@ -159,16 +159,30 @@ TIAN_YUE: dict[str, str] = {
 }
 
 
-def place_lucky_stars(year_stem: str, lunar_month: int, hour: int) -> dict[str, str]:
+# 魁钺流派只在庚辛壬癸四干有分歧 (其余六干各家相同)。tongxing 即上表;
+# 另三套取自 Renhuai123/ziwei-doushu school-tables.generated.ts KY_ARR1-3 (MIT),
+# 选项名与该项目流派面板对应: 全书理解一 = 末句读作「六辛逢虎马」(辛魁寅钺午),
+# 全书理解二 = 庚辛同取马虎、壬癸取蛇兔, 钟义明 = 庚辛同取虎马、壬癸取蛇兔。
+KUI_YUE_VARIANTS: dict[str, dict[str, tuple[str, str]]] = {
+    "tongxing": {},
+    "quanshu-1": {"辛": ("寅", "午")},
+    "quanshu-2": {"庚": ("午", "寅"), "辛": ("午", "寅"), "壬": ("巳", "卯"), "癸": ("巳", "卯")},
+    "zhong-yiming": {"庚": ("寅", "午"), "辛": ("寅", "午"), "壬": ("巳", "卯"), "癸": ("巳", "卯")},
+}
+
+
+def place_lucky_stars(year_stem: str, lunar_month: int, hour: int,
+                      kui_yue: str = "tongxing") -> dict[str, str]:
     m = lunar_month
     h = hour_branch_index(hour)
+    kui, yue = KUI_YUE_VARIANTS[kui_yue].get(year_stem, (TIAN_KUI[year_stem], TIAN_YUE[year_stem]))
     return {
         "左辅": _branch_offset("辰", m - 1),
         "右弼": _branch_offset("戌", -(m - 1)),
         "文昌": _branch_offset("戌", -h),
         "文曲": _branch_offset("辰", h),
-        "天魁": TIAN_KUI[year_stem],
-        "天钺": TIAN_YUE[year_stem],
+        "天魁": kui,
+        "天钺": yue,
     }
 
 
@@ -248,14 +262,16 @@ GU_GUA: dict[frozenset[str], tuple[str, str]] = {
 }
 
 
-def place_miscellaneous_stars(year_branch: str) -> dict[str, str]:
+def place_miscellaneous_stars(year_branch: str, *, tian_ma: str = "year",
+                              lunar_month: int = 1) -> dict[str, str]:
+    """tian_ma="month" 时天马按生月月支三合起 (正月建寅), 其余照年支."""
     yi = _branch_idx(year_branch)
-    sanhe = _sanhe_set(year_branch)
+    ma_from = year_branch if tian_ma == "year" else DIZHI[(lunar_month + 1) % 12]
     fang = next(s for s in GU_GUA if year_branch in s)
     gu, gua = GU_GUA[fang]
     hong_luan = DIZHI[(3 - yi) % 12]  # 卯=3
     return {
-        "天马": TIAN_MA[sanhe],
+        "天马": TIAN_MA[_sanhe_set(ma_from)],
         "红鸾": hong_luan,
         "天喜": _branch_offset(hong_luan, 6),
         "孤辰": gu,

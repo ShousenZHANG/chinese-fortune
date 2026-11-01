@@ -144,5 +144,14 @@ def test_ziwei_tool_accepts_the_school_switches():
     result, text = call('ziwei_chart', {**BIRTH, 'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong',
                                         'leap_month': 'next'})
     assert not result['isError'], text
-    assert json.loads(text)['school'] == {'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong',
-                                          'leap_month': 'next', 'late_zi_sect': 2}
+    school = json.loads(text)['school']
+    assert {k: school[k] for k in ('brightness', 'geng_sihua', 'leap_month', 'late_zi_sect')} == {
+        'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong', 'leap_month': 'next', 'late_zi_sect': 2}
+    result, text = call('ziwei_chart', {**BIRTH, 'school': 'nihai', 'kui_yue': 'quanshu-1', 'year_divide': 'lichun'})
+    assert not result['isError'], text
+    assert json.loads(text)['school']['preset'] == 'nihai'
+
+
+def test_ziwei_school_enums_match_the_cli():
+    import ziwei_calc
+    assert {k: tuple(v['enum']) for k, v in mcp_server.ZIWEI_SCHOOLS.items()} == ziwei_calc.SCHOOL_CHOICES

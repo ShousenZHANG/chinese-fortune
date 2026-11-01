@@ -206,7 +206,25 @@
 
 亮度默认用主流排盘通行的七级表（庙、旺、得、利、平、不、陷，与 iztro 2.6.3 默认一致），主星在 `main_stars[].brightness`，辅星和煞星在 `aux_brightness`；没标的格表示该星在此宫不论亮度。旧版四级表用 `--brightness project4`。亮度只展示，不参与安星。
 
-会改变盘面的流派设置写在输出的 `school` 里：`--leap-month split|next|prev`（闰月出生按几月排，默认十五日及以前本月、以后下月）、`--geng-sihua yang-wu-yin-tong|yang-wu-tong-yin|yang-wu-fu-tong`（庚年四化，默认阳武阴同）、`--sect 1|2`（晚子时）。用户没说流派就用默认，回答里说明用的是哪一种；不同流派结果不同时并列说明，不挑一个当唯一正确。
+会改变盘面的流派设置写在输出的 `school` 里，第一项是默认：
+
+| 开关 | 选项 | 出处 |
+|---|---|---|
+| `--leap-month` | split 十五日及以前本月、以后下月 / next 整月下月 / prev 整月本月 | 主流排盘口径；next 为倪海厦派 |
+| `--sect` | 2 晚子时日与农历日取当日 / 1 23 点起整体算次日 | 与八字共用 |
+| `--year-divide` | lunar-new-year 正月初一换年 / lichun 立春交节时刻换年 | 紫微通行正月初一；立春只改本命，流年各层仍按正月初一 |
+| `--geng-sihua` | yang-wu-yin-tong 阳武阴同 / yang-wu-tong-yin 阳武同阴 / yang-wu-fu-tong 阳武府同 / yang-wu-fu-xiang 阳武府相 / yang-wu-tong-xiang 阳武同相 | 后两种取自 Renhuai123/ziwei-doushu |
+| `--kui-yue` | tongxing 通行表（辛魁午钺寅）/ quanshu-1 全书读作「六辛逢虎马」（辛魁寅钺午）/ quanshu-2 庚辛马虎、壬癸蛇兔 / zhong-yiming 庚辛虎马、壬癸蛇兔 | 只在庚辛壬癸年不同；后三套取自 Renhuai123/ziwei-doushu |
+| `--tian-ma` | year 按年支三合 / month 按生月月支三合 | |
+| `--tianshi-tianshang` | default 天伤奴仆、天使疾厄（ziwei:c002:p0040）/ zhongzhou 中州派阴男阳女对调 | 中州派取 iztro JS |
+| `--jie-kong` | split 截路（阳支）与空亡（阴支）两星 / single 单星「截空」，甲至戊取阳支、己至癸取阴支 / zhanyan 占验派单星，戊癸改取戌亥 | 对子出自 ziwei:c002:p0073；单星两派取自 Renhuai123/ziwei-doushu |
+| `--changsheng` | shui-tu 土局起申（ziwei:c002:p0057）/ huo-tu 土局起寅 | |
+| `--changsheng-direction` | yinyang 阳男阴女顺 / gender 男顺女逆（ziwei:c002:p0056 字面） | 只影响长生十二神 |
+| `--school` | default / nihai 倪海厦派预设 | 见下 |
+
+`--school nihai` 把闰月改成整月归下月、晚子时算当日，并且不出宫干自化和大限四化（`school.self_transformations`、`school.da_xian_transformations` 为 false），生年四化与流年各层照常。这套取法依 Renhuai123/ziwei-doushu 现行代码；该项目的说明页另有「大限四化与流年四化叠加」的说法，与它的代码不一致，本项目以代码为准。单项开关可以覆盖预设，例如 `--school nihai --leap-month split`。倪师课程原话为 CC BY-NC-SA 授权，本项目不收录，只描述取法。
+
+天空「顺加生时」、闰月「保持闰月」两个选项只见于别家的设置面板，查不到算法，本项目没有实现。用户没说流派就用默认，回答里说明用的是哪一种；不同流派结果不同时并列说明，不挑一个当唯一正确。
 
 ## 七、三方四正与夹宫
 

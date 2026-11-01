@@ -37,7 +37,7 @@ def test_every_miscellaneous_star_sits_where_iztro_puts_it(birth):
 
 def test_every_cited_passage_states_the_rule_it_backs():
     # 全书把年解叫解神 (戌上起子逆数), 截路空亡合为一诀。
-    book_name = {'年解': '解神', '截路': '甲己申酉', '空亡': '甲己申酉'}
+    book_name = {'年解': '解神', '截路': '甲己申酉', '空亡': '甲己申酉', '截空': '甲己申酉'}
     for star, passage_id in SOURCES.items():
         number = int(passage_id[-4:])
         heading = get_passage(f'{passage_id[:-4]}{number - 1:04d}')['text']   # 诀名有时独占上一段

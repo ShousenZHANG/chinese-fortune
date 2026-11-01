@@ -42,11 +42,17 @@ def _place(names: tuple[str, ...], start: str, forward: bool) -> dict[str, str]:
     return {DIZHI[(base + step * i) % 12]: name for i, name in enumerate(names)}
 
 
-def twelve_gods(*, ju_number: int, gender: str, year_branch: str, lu_cun_branch: str) -> dict[str, dict[str, str]]:
-    """{set: {palace branch: god}} for the four sets."""
+def twelve_gods(*, ju_number: int, gender: str, year_branch: str, lu_cun_branch: str,
+                changsheng: str = 'shui-tu', changsheng_direction: str = 'yinyang') -> dict[str, dict[str, str]]:
+    """{set: {palace branch: god}} for the four sets.
+
+    changsheng='huo-tu' 让土五局与火六局同起寅 (火土共长生); 默认按 p0057 土局起申。
+    changsheng_direction='gender' 按 p0056 字面男顺女逆, 只影响长生十二神。"""
     forward = _forward(gender, year_branch)
+    start = '寅' if changsheng == 'huo-tu' and ju_number == 5 else CHANGSHENG_START[ju_number]
+    cs_forward = (gender == 'male') if changsheng_direction == 'gender' else forward
     return {
-        'changsheng': _place(CHANGSHENG, CHANGSHENG_START[ju_number], forward),
+        'changsheng': _place(CHANGSHENG, start, cs_forward),
         'boshi': _place(BOSHI, lu_cun_branch, forward),
         'jiangqian': _place(JIANGQIAN, JIANGXING[year_branch], True),
         'suiqian': _place(SUIQIAN, year_branch, True),

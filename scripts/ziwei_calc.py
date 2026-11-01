@@ -56,6 +56,7 @@ from ziwei_horoscope import horoscope_layers, parse_target
 from ziwei_minor import NOTE as MINOR_NOTE
 from ziwei_minor import place_minor_stars, sources_for
 from ziwei_palaces import (
+    GENG_SCHOOLS,
     MING_ZHU,
     SHEN_ZHU,
     assign_palaces,
@@ -70,6 +71,7 @@ from ziwei_palaces import (
 from ziwei_patterns import detect_patterns
 from ziwei_stars import (
     BRIGHTNESS_NOTE,
+    KUI_YUE_VARIANTS,
     brightness_of,
     place_lucky_stars,
     place_main_stars,
@@ -85,6 +87,24 @@ from ziwei_tables import (
 )
 
 VERSION = __version__
+# 会改变盘面的流派开关; mcp_server 的 ziwei_chart 枚举与此保持一致 (有测试)。
+SCHOOL_CHOICES: dict[str, tuple[str, ...]] = {
+    'school': ('default', 'nihai'),
+    'brightness': ('mainstream7', 'project4'),
+    'geng_sihua': tuple(GENG_SCHOOLS),
+    'leap_month': ('split', 'next', 'prev'),
+    'kui_yue': tuple(KUI_YUE_VARIANTS),
+    'tian_ma': ('year', 'month'),
+    'tianshi_tianshang': ('default', 'zhongzhou'),
+    'jie_kong': ('split', 'single', 'zhanyan'),
+    'changsheng': ('shui-tu', 'huo-tu'),
+    'changsheng_direction': ('yinyang', 'gender'),
+    'year_divide': ('lunar-new-year', 'lichun'),
+}
+NIHAI_NOTE = ("倪海厦派预设 (--school nihai): 闰月整月归下月、晚子时算当日、不出宫干自化与大限四化，"
+              "生年四化与流年各层照常。取法依 Renhuai123/ziwei-doushu 现行代码；单项开关仍可覆盖。")
+YEAR_DIVIDE_NOTE = ("本命年干支按立春交节时刻换年 (--year-divide lichun)：年干支、五行局、生年四化、魁钺禄羊陀"
+                    "与年系杂曜随之；流年各层仍按正月初一换年，见 horoscope.conventions。")
 LEAP_LABELS = {'split': '闰月十五日及以前算本月、以后算下月（默认）', 'next': '闰月整月算下月',
                'prev': '闰月整月算本月'}
 
@@ -151,14 +171,32 @@ def build_parser() -> argparse.ArgumentParser:
                    help="农历输入且该月为闰月 (等同传入负月份)")
     p.add_argument("--liu-year", type=int, default=None,
                    help="额外加算指定流年的四化 (公历)")
-    p.add_argument("--brightness", choices=("mainstream7", "project4"), default="mainstream7",
+    p.add_argument("--school", choices=SCHOOL_CHOICES['school'], default="default",
+                   help="流派预设: nihai=倪海厦派 (闰月整月归下月、晚子算当日、不出宫干自化与大限四化); "
+                        "单项开关仍可覆盖")
+    p.add_argument("--brightness", choices=SCHOOL_CHOICES['brightness'], default="mainstream7",
                    help="星曜亮度表: mainstream7=主流七级表 (默认); project4=旧版项目四级表")
-    p.add_argument("--geng-sihua", choices=("yang-wu-yin-tong", "yang-wu-tong-yin", "yang-wu-fu-tong"),
-                   default="yang-wu-yin-tong",
-                   help="庚年四化: 阳武阴同 (默认, 主流) / 阳武同阴 / 阳武府同")
-    p.add_argument("--leap-month", choices=("split", "next", "prev"), default="split",
+    p.add_argument("--geng-sihua", choices=SCHOOL_CHOICES['geng_sihua'], default="yang-wu-yin-tong",
+                   help="庚年四化: 阳武阴同 (默认, 主流) / 阳武同阴 / 阳武府同 / 阳武府相 / 阳武同相")
+    p.add_argument("--leap-month", choices=SCHOOL_CHOICES['leap_month'], default=None,
                    help="闰月出生按几月排: split=十五日及以前本月、以后下月 (默认, 主流排盘口径); "
-                        "next=整月按下月 (倪海厦派); prev=整月按本月")
+                        "next=整月按下月 (倪海厦派, --school nihai 的默认); prev=整月按本月")
+    p.add_argument("--kui-yue", choices=SCHOOL_CHOICES['kui_yue'], default="tongxing",
+                   help="魁钺 (只在庚辛壬癸年有分歧): tongxing=通行表 (默认, 辛魁午钺寅); quanshu-1=全书读作"
+                        "六辛逢虎马; quanshu-2=庚辛马虎、壬癸蛇兔; zhong-yiming=庚辛虎马、壬癸蛇兔")
+    p.add_argument("--tian-ma", choices=SCHOOL_CHOICES['tian_ma'], default="year",
+                   help="天马: year=按年支三合 (默认); month=按生月月支三合")
+    p.add_argument("--tianshi-tianshang", choices=SCHOOL_CHOICES['tianshi_tianshang'], default="default",
+                   help="天使天伤: default=天伤奴仆、天使疾厄 (全书); zhongzhou=中州派, 阴男阳女对调")
+    p.add_argument("--jie-kong", choices=SCHOOL_CHOICES['jie_kong'], default="split",
+                   help="截空: split=截路(阳支)+空亡(阴支) 两星 (默认, 同 iztro); single=单星, 甲至戊取阳支、己至癸取阴支, "
+                        "名截空; zhanyan=占验派单星, 戊癸年改取戌亥")
+    p.add_argument("--changsheng", choices=SCHOOL_CHOICES['changsheng'], default="shui-tu",
+                   help="长生十二神起点: shui-tu=土局同水局起申 (默认, 全书 p0057); huo-tu=土局同火局起寅")
+    p.add_argument("--changsheng-direction", choices=SCHOOL_CHOICES['changsheng_direction'], default="yinyang",
+                   help="长生十二神顺逆: yinyang=阳男阴女顺 (默认, 通行); gender=男顺女逆 (全书 p0056 字面)")
+    p.add_argument("--year-divide", choices=SCHOOL_CHOICES['year_divide'], default="lunar-new-year",
+                   help="本命年干支换年点: lunar-new-year=正月初一 (默认, 紫微通行); lichun=立春交节时刻")
     p.add_argument("--horoscope-date", type=str, default=None, metavar="YYYY-MM-DD",
                    help="按该日 (当地钟表日期) 计算流年斗君、流月、流日所在宫与四化")
     p.add_argument("--horoscope-time", type=str, default=None, metavar="HH:MM",
@@ -280,8 +318,13 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         sect_note.append("晚子时按子初换日 (--sect 1): 已整体推进至次日 00:00 排盘。")
     sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
 
-    year_stem = lunar.getYearGan()
-    year_branch = lunar.getYearZhi()
+    nihai = args.school == 'nihai'
+    if args.leap_month is None:
+        args.leap_month = 'next' if nihai else 'split'
+    if args.year_divide == 'lichun':
+        year_stem, year_branch = lunar.getYearGanExact(), lunar.getYearZhiExact()
+    else:
+        year_stem, year_branch = lunar.getYearGan(), lunar.getYearZhi()
     # 项目闰月归属：十五日及以前算本月，十五日后算下月；与所引全书转录不同。
     # 紫微 keys 命宫/身宫/斗君/辅星 off the lunar month, so attributing a whole
     # 闰月 to its base month shifted every one of those by a palace for births
@@ -291,7 +334,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     lunar_day = lunar.getDay()
     lunar_month = abs(raw_month)
     leap_note: list[str] = []
-    leap_school = getattr(args, 'leap_month', 'split')
+    leap_school = args.leap_month
     if is_leap_month and (leap_school == 'next' or (leap_school == 'split' and lunar_day > 15)):
         lunar_month = (lunar_month % 12) + 1
     if is_leap_month:
@@ -313,12 +356,14 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     main_pos = place_main_stars(zw_branch)
 
     # 4. 六吉 + 六煞 + 杂曜.
-    lucky_pos = place_lucky_stars(year_stem, lunar_month, birth_hour)
+    lucky_pos = place_lucky_stars(year_stem, lunar_month, birth_hour, args.kui_yue)
     malefic_pos = place_malefic_stars(year_stem, year_branch, birth_hour)
-    misc_pos = {**place_miscellaneous_stars(year_branch),
+    misc_pos = {**place_miscellaneous_stars(year_branch, tian_ma=args.tian_ma, lunar_month=lunar_month),
                 **place_minor_stars(year_stem=year_stem, year_branch=year_branch,
                                     lunar_month=lunar_month, lunar_day=lunar_day, hour=birth_hour,
-                                    ming_branch=mg_branch, shen_branch=sg_branch, lucky=lucky_pos)}
+                                    ming_branch=mg_branch, shen_branch=sg_branch, lucky=lucky_pos,
+                                    gender=args.gender, tianshi=args.tianshi_tianshang,
+                                    jie_kong=args.jie_kong)}
 
     # 5. 命主 / 身主 / 斗君.
     # 安命主诀 keys on the 命宫 branch (子宫贪狼丑亥巨门…); 安身主诀 on the 年支.
@@ -349,15 +394,17 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     }
 
     # 7. 生年四化 lookup.
-    geng_school = getattr(args, 'geng_sihua', 'yang-wu-yin-tong')
+    geng_school = args.geng_sihua
     table = sihua_table(geng_school)
-    bright = seven_level if getattr(args, 'brightness', 'mainstream7') == 'mainstream7' else brightness_of
+    bright = seven_level if args.brightness == 'mainstream7' else brightness_of
     sihua_native = table.get(year_stem, {})
 
     # 8. 12 宫排盘 + 借宫 + 自化.
     palaces = assign_palaces(mg_branch)
     gods = twelve_gods(ju_number=ju_num, gender=args.gender, year_branch=year_branch,
-                       lu_cun_branch=malefic_pos["禄存"])
+                       lu_cun_branch=malefic_pos["禄存"], changsheng=args.changsheng,
+                       changsheng_direction=args.changsheng_direction)
+    show_self_huas = not (args.no_sihua or nihai)
     annotated: list[dict] = []
     for p in palaces:
         b = p["branch"]
@@ -375,7 +422,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
                 sihua_marks.append(f"化{hua_type}({target})")
 
         # 自化.
-        if args.no_sihua:
+        if not show_self_huas:
             self_huas: list[str] = []
         else:
             self_huas = detect_self_transformations(stem, mains + luckies, table)
@@ -417,6 +464,8 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
 
     # 9. 大限 + 流年四化.
     da_xian = da_xian_ranges(ju_num, args.gender, year_stem, palaces, table)
+    if nihai:
+        da_xian = [{k: v for k, v in step.items() if k != 'transformations'} for step in da_xian]
     liu_nian_sihua = None
     if args.liu_year:
         try:
@@ -496,16 +545,21 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         "patterns": patterns,
         "twelve_gods_sources": GOD_SOURCES,
         "leap_month_school": LEAP_LABELS[leap_school],
-        "school": {"brightness": getattr(args, 'brightness', 'mainstream7'), "geng_sihua": geng_school,
-                   "leap_month": leap_school, "late_zi_sect": args.sect},
+        "school": {"preset": args.school, "brightness": args.brightness, "geng_sihua": geng_school,
+                   "leap_month": leap_school, "late_zi_sect": args.sect, "kui_yue": args.kui_yue,
+                   "tian_ma": args.tian_ma, "tianshi_tianshang": args.tianshi_tianshang,
+                   "jie_kong": args.jie_kong, "changsheng": args.changsheng,
+                   "changsheng_direction": args.changsheng_direction, "year_divide": args.year_divide,
+                   "self_transformations": show_self_huas, "da_xian_transformations": not nihai},
         "sect": sect_info,
         "birthplace": birthplace,
         "timezone": tz_info,
-        "notes": sect_note + leap_note
+        "notes": sect_note + leap_note + ([NIHAI_NOTE] if nihai else [])
+        + ([YEAR_DIVIDE_NOTE] if args.year_divide == 'lichun' else [])
         + ([tz_info["note"]] if tz_info and tz_info["note"] else [])
         + [
             "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/39杂曜/12宫/借宫/自化/大限四化/格局识别。",
-            BRIGHTNESS_SEVEN_NOTE if getattr(args, 'brightness', 'mainstream7') == 'mainstream7' else BRIGHTNESS_NOTE,
+            BRIGHTNESS_SEVEN_NOTE if args.brightness == 'mainstream7' else BRIGHTNESS_NOTE,
             MINOR_NOTE,
             "流年/流月/流日/流时 用 --horoscope-date [--horoscope-time] 计算; 未传时只给本命斗君锚位。",
             "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。",
