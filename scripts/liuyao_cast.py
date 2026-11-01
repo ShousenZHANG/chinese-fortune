@@ -17,6 +17,7 @@ from datetime import timedelta, timezone
 from pathlib import Path
 
 import entropy
+from liuyao_judge import judge
 from method_rules import method_reading_packet
 from request_time import add_request_arguments, resolve_time
 from utils import (
@@ -561,7 +562,21 @@ def render_liuyao(out: dict) -> str:
     t = out["cast_time"]
     lines.append(f"起卦时间：{t['solar']}，{t['month_ganzhi']}月{t['day_ganzhi']}日；月建{t['month_branch']}，日辰{t['day_branch']}。")
     lines.append(f"卦辞：{out['main_judgment']}" + "".join(f"\n动爻：{a['text']}" for a in out["active_line_text"]))
+    checks = out.get("rule_checks")
+    if checks:
+        lines.append(_checks_text(checks))
     return "\n\n".join(lines)
+
+
+def _checks_text(checks: dict) -> str:
+    def where(row: dict) -> str:
+        spots = [POSITIONS[x["position"]] for x in row["results"] if x["position"] and x["state"].startswith("met")]
+        return "、".join(spots) if spots else "全卦"
+    hits = [f"{row['name']}（{where(row)}，{row['passage_id']}）" for row in checks["hits"]]
+    target = ("、".join(POSITIONS[p] for p in checks["targets"]) if checks["targets"]
+              else "用神不上卦，逐爻条款无对象")
+    return (f"规则库自动核对（主事爻：{target}）：字面条件齐备的有 " + ("；".join(hits) if hits else "无")
+            + f"。共核 {checks['checked']} 条；「齐备」只说盘上字面条件满足，问题对象、喜忌和救助仍须人工核，未核前不下吉凶。")
 
 
 # --------------------------------------------------------------------------- #
@@ -571,7 +586,7 @@ def render_liuyao(out: dict) -> str:
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   method question entropy yongshen_hint yongshen_hint_source cast_time raw_lines main_chart
   changed_chart nuclear_chart active_lines main_judgment main_image
-  active_line_text fu_shen reading_support rule_index
+  active_line_text fu_shen rule_checks reading_support rule_index
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
@@ -595,6 +610,8 @@ def build_parser() -> argparse.ArgumentParser:
                     help="起卦时 HH:MM (默认现在)")
     pc.add_argument("--question", type=str, default=None,
                     help="所问之事 (用于推断用神)")
+    pc.add_argument("--target-position", type=int, action="append", default=None, metavar="1-6",
+                    help="规则自动判定所看的主事爻位置, 可重复; 省略时取用神六亲所在各爻")
     pc.add_argument("--entropy", choices=["system", "quantum"], default="system",
                     help="熵源: system=OS CSPRNG (默认), quantum=ANU 量子真空真随机")
     pc.add_argument("--markdown", action="store_true",
@@ -746,6 +763,7 @@ def main(argv: list[str] | None = None) -> int:
     }
     hint = out["yongshen_hint"] or ""
     out["fu_shen"] = hidden_spirits(main_chart, [q for q in LIU_QIN if q in hint], month_branch, day_branch)
+    out["rule_checks"] = judge(out, args.target_position)
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     out["rule_index"] = rule_index()
     if args.markdown:
