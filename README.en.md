@@ -109,6 +109,8 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 
 A complete transcription, implemented rules, image collation and predictive validity are separate claims. Tests do not establish predictive accuracy.
 
+Zi Wei patterns now follow the lines of the 紫微斗数全书: each one carries the passage id, the exact line and four condition lists (required, bonus, breaking, to_check); readings the text leaves open are marked `quanshu_reading` with a note. The old `candidate_only` fields are gone; see [MIGRATION-5.11](docs/MIGRATION-5.11.md).
+
 ## Why trust it
 
 - **Scripts compute, the AI explains**: stems, ten gods, day grades and luck verdicts come from the bundled scripts; the AI turns them into plain language and does not recompute them.
