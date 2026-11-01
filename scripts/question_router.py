@@ -195,6 +195,15 @@ UNSURE_WORDS = ('不确定', '记不清', '拿不准', '说不准', '不太清�
 BIRTH_TIME_WORDS = ('出生', '生的', '时辰', '生于')
 
 
+CORRECTION_WORDS = ('说错了', '给错了', '写错了', '记错了', '搞错了', '更正', '纠正一下', '应该是', '其实是')
+
+
+def _corrected_birth(text: str) -> bool:
+    """「刚才时辰给错了，其实是晚上十点」: the user corrects birth data already given."""
+    return any(word in text for word in CORRECTION_WORDS) and (
+        any(word in text for word in BIRTH_TIME_WORDS) or any(word in text for word in ('时辰', '农历', '公历', '阴历')))
+
+
 def _uncertain_birth(text: str) -> bool:
     """「不确定是 5 号晚上还是 6 号凌晨出生」: an unsure birth time, with two moments named."""
     unsure = any(word in text for word in UNSURE_WORDS)
@@ -229,6 +238,12 @@ def route(question: str) -> dict:
     if any(word in text for word in FENGSHUI_WORDS):
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
                 'reference': 'references/08-fengshui.md', 'needs': ['实际布局与测量']}
+    if _corrected_birth(text):
+        return {'flow': 'birth_correction',
+                'why': '更正出生资料：先列改了哪项、哪几柱跟着变、哪些旧结论作废，再用新资料重新解读',
+                'command': 'python scripts/birth_correction.py --stdin',
+                'stdin': '{"before": {原出生资料}, "after": {更正后的出生资料}}',
+                'reference': 'references/22-output-contract.md', 'needs': ['原资料与更正后的资料（已给的直接复用）']}
     if _uncertain_birth(text):
         return {'flow': 'birth_candidates',
                 'why': '出生时间拿不准、可能跨日期：先列各候选哪几柱不变、哪几柱会变，再按候选分别解读',
