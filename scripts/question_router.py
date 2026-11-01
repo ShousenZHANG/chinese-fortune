@@ -34,7 +34,8 @@ DAY_WORDS = ('哪天', '哪几天', '哪一天', '几号', '日子', '吉日', '
              '哪年', '哪一年', '可以吗', '行不行', '合适吗', '适合吗')
 # resolve_window's own words, longest first so 「下个月」 wins over 「下月」.
 PERIOD_WORDS = ('未来七天', '最近一周', '这两天', '这周末', '下个星期', '这个星期', '下个月', '这个月', '月底前',
-                '今天', '明天', '后天', '本周', '这周', '下周', '周末', '本月', '下月', '今年', '明年')
+                '今天', '明天', '后天', '本周', '这周', '下周', '周末', '本月', '下月', '今年', '明年',
+                '年底前', '近期', '最近', '这段时间')
 CLOCK = re.compile(r'\d{1,2}[点:：]|上午|下午|晚上|中午|早上|小时|分钟')
 DATE = re.compile(r'(?:(\d{4})[年-])?(\d{1,2})[月-](\d{1,2})[日号]?')
 # Days named without a month: a weekday, 「15号」, a lunar 「初八」, a festival.
@@ -269,7 +270,8 @@ def route(question: str) -> dict:
         if dates and not period:
             needs.append('把原话里的日期换成 period {"start": "YYYY-MM-DD", "end": 次日}')
         elif not period:
-            needs.append('时间范围：原话没说就问一次，或用「未来七天」')
+            needs.append('时间范围：原话没说也不要追问，用 period "近期"（今天到年底，剩不到一个月时算一个月），'
+                         '回答开头说明这是暂按的范围')
         if slots:
             needs.append('候选时段 candidates 与所需时长 duration_minutes')
         if event == 'travel':

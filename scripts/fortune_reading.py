@@ -1429,6 +1429,8 @@ def outlook_skeleton(result: dict) -> str:
     else:
         span = (f"{start.strftime('%Y-%m-%d %H:%M')} 起、到 {end.strftime('%Y-%m-%d %H:%M')} 为止"
                 f"（{window['timezone']}，终点那一刻不含）")
+    if window.get('label') == '近期':
+        span += '——原话只说「最近」，这是暂按的范围，开头这样说明，不要先反问用户要哪个范围'
     layers = []
     for person in result.get('participants', []):
         for reading in person.get('luck_reading', [])[:1]:

@@ -14,7 +14,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 ## 工作流程
 
 1. 先读 [输出契约](references/22-output-contract.md) 与 [直接回答](references/27-direct-answer.md)；条款相反时按 [裁决顺序](references/26-precedence.md)。生辰或时间问题再读 [输入采集](references/00-intake.md)，只问影响本题的缺项。
-2. 本题依赖“现在”时才确认当前所在地的 IANA 时区：未来时段入口自行取时；其他当前时间入口先运行 `scripts/request_time.py --current-timezone <时区>`。已有 utc 时，同请求复用为 `--request-time`（JSON 入口为 `request_time`），不重复取时。古籍查询、术语解释、纯原局和明确参考年份不必为现居地卡住；只有相对时间未固定时补问。用户已经给出的出生资料、历法、城市、年份和请求时间直接复用，不整表重问。
+2. 本题依赖“现在”时才确认当前所在地的 IANA 时区：未来时段入口自行取时；其他当前时间入口先运行 `scripts/request_time.py --current-timezone <时区>`。已有 utc 时，同请求复用为 `--request-time`（JSON 入口为 `request_time`），不重复取时。古籍查询、术语解释、纯原局和明确参考年份不必为现居地卡住；只有相对时间未固定时补问；「最近」「近期」「这段时间」不补问，按 `period: "近期"`（今天到年底，剩不到一个月时算一个月）算，开头说明这是暂按的范围。用户已经给出的出生资料、历法、城市、年份和请求时间直接复用，不整表重问。
 3. 出生钟表时间用出生地时区；“现在”用现居地；历史或未来问题用明确目标时间。不得给历史日期拼上当前时分。重新要求“现在再算”时重新取时，同请求跨午夜仍沿用首次时刻。
 4. 解读前固定本题主方法、版本、事件定义和时间范围。逐条列明实际个人字段、成立条件、例外及本题影响；未解决的分歧明确保留，不投票、不反复起卦挑答案。同输入与方法应得同结论；相同适用条件允许同结论，不为显得个性化而改答案。确定的是依据支持的判断，不是保证现实事件发生。
 5. 按路由排盘，检查 exit code 和 `ok`。失败就处理真实错误，不凭记忆补造成功结果。
@@ -86,7 +86,7 @@ v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是
 | 穿什么颜色、戴什么对自己有利 | [八字](references/01-bazi.md)（颜色按《穷通宝鉴》这一格调候的一般取法换算，例外未逐盘核对） | bazi_reading.py --question … --markdown |
 | 紫微 | [紫微](references/02-ziwei.md)；排盘推导 [口径](references/02-ziwei-paipan.md) | ziwei_calc.py |
 | 周易 / 易经 | [周易](references/03-yijing.md) | yijing_cast.py |
-| 六爻 | [六爻](references/04-liuyao.md) | liuyao_cast.py |
+| 六爻 | [六爻](references/04-liuyao.md) | liuyao_cast.py（用神不上卦看 `fu_shen`，不另起首卦） |
 | 梅花 | [梅花](references/05-meihua.md) | meihua_cast.py |
 | 连续行程 | [个人时段](references/24-personalized-forecast.md)的连续行程字段 | fortune_reading.py --stdin |
 | 奇门 | [奇门](references/06-qimen.md) | qimen_cast.py（默认已核核心；旧全盘须显式选择） |

@@ -88,3 +88,17 @@ def test_a_window_that_does_not_start_at_midnight_keeps_its_times():
     """R6-OUT-01: a window given with times keeps them, and its end moment is excluded."""
     text = _outlook({'event': {'scenario': 'outlook'}}, {'start': '2026-11-01T10:15', 'end': '2026-11-08T10:15'})
     assert '2026-11-01 10:15 起、到 2026-11-08 10:15 为止（Asia/Shanghai，终点那一刻不含）' in text
+
+
+def test_recent_routes_without_asking_and_resolves_to_the_year_end():
+    """Round 8 T10: the host asked which range 「最近」 meant and lost completion to five rivals."""
+    route = json.loads(run('question_router.py', '--question', '看看我最近的事业运').stdout)
+    assert route['request']['period'] == '最近'
+    assert not any('时间范围' in need for need in route['needs'])
+    text = _outlook({'event': {'scenario': 'outlook'}}, '最近')
+    assert '2026-11-01 至 2026-12-31' in text and '不要先反问' in text
+    from datetime import date
+
+    from fortune_time import resolve_window
+    december = resolve_window('近期', {'utc': '2026-12-20T02:00:00+00:00', 'timezone': 'Asia/Shanghai'}, 'Asia/Shanghai')
+    assert december['start'].startswith('2026-12-20') and december['end'].startswith(str(date(2027, 1, 20)))
