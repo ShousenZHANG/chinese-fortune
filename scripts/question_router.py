@@ -195,6 +195,28 @@ UNSURE_WORDS = ('不确定', '记不清', '拿不准', '说不准', '不太清�
 BIRTH_TIME_WORDS = ('出生', '生的', '时辰', '生于')
 
 
+# Marriage first: 「男朋友」 contains 朋友.
+RELATION_KINDS = (('marriage', ('合婚', '结婚', '婚姻', '对象', '男朋友', '女朋友', '男友', '女友', '老公', '老婆', '恋爱',
+                                '般配', '另一半', '未婚夫', '未婚妻')),
+                  ('parent_child', ('亲子', '父子', '母子', '父女', '母女', '孩子', '儿子', '女儿')),
+                  ('partnership', ('合伙', '合作', '搭档', '同事', '老板', '生意伙伴')),
+                  ('friendship', ('朋友', '闺蜜', '兄弟')))
+
+
+def _relation_kind(text: str) -> str | None:
+    """R1: which relation — it decides which clauses apply; None means ask the user first."""
+    return next((kind for kind, words in RELATION_KINDS if any(w in text for w in words)), None)
+
+
+def _relation_rounds(kind: str | None) -> list[dict]:
+    """R1: collect one person at a time; the relation is settled before any chart is read."""
+    rounds = [] if kind else [{'round': 0, 'ask': '先确认两人是什么关系：婚恋、亲子、合作还是朋友？关系不同，适用的古籍条款不同。'}]
+    return rounds + [
+        {'round': 1, 'ask': '第一位（A）的出生年月日、时辰（不知道可空）、性别与出生地；对话里已给的直接复用。'},
+        {'round': 2, 'ask': '第二位（B）的同样资料；两人资料齐了才算 pair_facts，不拿一个人的盘先下结论。'},
+    ]
+
+
 CORRECTION_WORDS = ('说错了', '给错了', '写错了', '记错了', '搞错了', '更正', '纠正一下', '应该是', '其实是')
 
 
@@ -257,15 +279,20 @@ def route(question: str) -> dict:
                          '"range": {"start": "YYYY-MM-DDTHH:MM", "end": ...} 或 "candidates": [...]}',
                 'reference': 'references/00-intake.md', 'needs': ['性别、出生地、候选时间或时间范围']}
     methods = _named_methods(text)
-    relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系'))
+    relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系', '合不合', '合得来', '合伙',
+                                                 '搭档', '般配'))
     if relationship and (not methods or all(m['method'] in ('bazi', 'ziwei') for m in methods)):
         chosen = methods or _named_methods('八字' + text)
+        pair_kind = _relation_kind(text)
         return {'flow': 'compatibility', 'why': '分别核两方事实，各体系独立核跨盘条款，不混盘或给成功率',
+                'relation': pair_kind,
+                'intake_rounds': _relation_rounds(pair_kind),
                 'reference': 'references/14-hehun.md', 'combine_verdicts': False,
                 'subjects': ['A', 'B'],
                 'steps': [{'subject': subject, **method} for subject in ('A', 'B') for method in chosen],
                 **({'pair_facts': {'command': 'python scripts/pair_facts.py --stdin',
-                                   'stdin': '{"a": {A 出生资料}, "b": {B 出生资料}}',
+                                   'stdin': '{"a": {A 出生资料}, "b": {B 出生资料}, "relation": "'
+                                            + (pair_kind or 'marriage') + '"}',
                                    'why': '两人逐柱合冲刑害与日主互见十神，只列事实不打分'}}
                    if any(m['method'] == 'bazi' for m in chosen) else {}),
                 'needs': ['两方各自已确认的出生资料（各自保留未知时刻）', '关系类型与具体问题',

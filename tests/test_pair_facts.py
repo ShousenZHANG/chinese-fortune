@@ -132,3 +132,30 @@ def test_say_groups_relations_by_family_and_ends_with_day_masters():
     assert lines[0].startswith('合：A年干己—B时干甲')
     assert lines[1] == '冲：无'
     assert lines[-1] == '日主互见：A 日主壬看 B 日主乙为伤官；B 看 A 为正印'
+
+
+def test_relation_type_decides_which_clauses_apply():
+    """R1/R3: marriage clauses and 三元 only for a couple; parent-child gets its one clause; partners get none."""
+    import pair_facts as pf
+    a, b = subject_chart(A), subject_chart(B)
+    parent = pf.pair_facts(a, b, 'parent_child')
+    assert parent['relation']['label'] == '亲子' and parent['sanyuan_jiugong'] is None
+    assert all(c['id'] == 'G5-FR-S06-C01' for c in parent['classical_clauses']['matched'])
+    partner = pf.pair_facts(a, b, 'partnership')
+    assert partner['classical_clauses']['matched'] == [] and '合作' in partner['say'][-1]
+    assert pf.pair_facts(a, b)['relation']['type'] == 'marriage'
+    import pytest
+    with pytest.raises(ValueError):
+        pf.pair_facts(a, b, 'enemies')
+
+
+def test_router_asks_the_relation_first_and_collects_in_rounds():
+    import sys
+    sys.path.insert(0, str(SCRIPTS))
+    from question_router import route
+    assert route('我和男朋友合不合')['relation'] == 'marriage'
+    assert route('我和孩子的八字合不合')['relation'] == 'parent_child'
+    assert route('想和他合伙做生意，看看合盘')['relation'] == 'partnership'
+    unknown = route('我们俩八字合不合')
+    assert unknown['relation'] is None and unknown['intake_rounds'][0]['round'] == 0
+    assert [r['round'] for r in route('我和女朋友合婚')['intake_rounds']] == [1, 2]

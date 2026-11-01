@@ -155,3 +155,9 @@ def test_ziwei_tool_accepts_the_school_switches():
 def test_ziwei_school_enums_match_the_cli():
     import ziwei_calc
     assert {k: tuple(v['enum']) for k, v in mcp_server.ZIWEI_SCHOOLS.items()} == ziwei_calc.SCHOOL_CHOICES
+
+
+def test_pair_facts_relation_passes_through():
+    result, text = call('pair_facts', {'a': BIRTH, 'b': {**BIRTH, 'year': 2001, 'gender': 'female'},
+                                       'relation': 'partnership'})
+    assert not result['isError'] and json.loads(text)['relation']['type'] == 'partnership'

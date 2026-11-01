@@ -82,9 +82,13 @@ TOOLS: dict[str, dict] = {
     'fortune_reading': {'script': 'fortune_reading.py', 'stdin_field': 'request',
                         'description': '个人短期运势、择日择时、行程；request 结构见 references/24-personalized-forecast.md',
                         'schema': _schema({'request': {'type': 'object'}}, ('request',)), 'flags': ['--stdin']},
-    'pair_facts': {'script': 'pair_facts.py', 'description': '两人八字逐柱合冲刑害事实，不打分', 'stdin_fields': ('a', 'b'),
+    'pair_facts': {'script': 'pair_facts.py', 'description': '两人八字逐柱合冲刑害事实，不打分',
+                   'stdin_fields': ('a', 'b', 'relation'),
                    'schema': _schema({'a': {'type': 'object', 'properties': BIRTH},
-                                      'b': {'type': 'object', 'properties': BIRTH}}, ('a', 'b')), 'flags': ['--stdin']},
+                                      'b': {'type': 'object', 'properties': BIRTH},
+                                      'relation': {'type': 'string', 'enum': ['marriage', 'parent_child',
+                                                                              'partnership', 'friendship']}},
+                                     ('a', 'b')), 'flags': ['--stdin']},
     'classical_search': {'script': 'classical_search.py', 'description': '离线检索随包古籍原文、出处与上下文',
                          'schema': _schema({'query': {'type': 'string'}, 'passage_id': {'type': 'string'},
                                             'chapter_id': {'type': 'string'}, 'book': {'type': 'string'},
@@ -149,7 +153,7 @@ def _command(name: str, arguments: dict) -> tuple[list[str], str | None]:
         stdin = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
     if 'stdin_fields' in spec:
         skip = set(spec['stdin_fields'])
-        stdin = json.dumps({k: arguments[k] for k in spec['stdin_fields']}, ensure_ascii=False)
+        stdin = json.dumps({k: arguments[k] for k in spec['stdin_fields'] if k in arguments}, ensure_ascii=False)
     args = list(spec.get('flags', []))
     if name == 'answer_check':
         skip.add('facts')
