@@ -18,6 +18,7 @@ from liuren_cast import (  # noqa: E402
     detect_zei_ke,
     fa_yong,
     fa_yong_yao_ke,
+    she_hai_depth,
 )
 from qimen_cast import build_palaces, earth_plate, men_plate, source_core  # noqa: E402
 from qimen_dingju import (  # noqa: E402
@@ -225,26 +226,53 @@ def test_bazhuan_ignores_remote_control_only_after_checking_direct_control():
     assert cast("甲寅", "丑", "辰")["chu_chuan"] == "丑"
 
 
-@pytest.mark.parametrize("day,general,hour,method", [
-    ("庚寅", "酉", "未", "涉害"),  # 下贼得辰与子，皆阳，不能任选第一。
-    ("戊辰", "丑", "子", "别责"),
-    ("己巳", "丑", "子", "昴星"),
+@pytest.mark.parametrize("day,general,hour,tri,method", [
+    ("丁卯", "亥", "丑", "亥酉未", "涉害深5重"),   # 卷五 c005:p0031/p0032：亥加丑历辰戊未己戌五重
+    ("庚子", "申", "戌", "午辰寅", "涉害深2重"),   # c005:p0032：上克下数所克，午加庚历酉辛二重
+    ("庚戌", "申", "辰", "辰申子", "孟深仲浅"),    # c005:p0031 察微例：深浅相等，辰加子仲胜寅加戌季
+    ("甲午", "午", "辰", "辰午申", "孟深仲浅"),    # c005:p0031 缀瑕例：各一重，辰加寅孟
+    ("甲辰", "亥", "卯", "子申辰", "涉害深4重"),   # c005:p0036：神后加辰四重胜河魁二重
+    ("乙未", "寅", "辰", "亥寅巳", "昴星"),        # c005:p0062 冬蛇掩目例
+    ("丙辰", "辰", "卯", "亥午午", "别责"),        # c005:p0066：丙合辛，辛寄戌，戌上亥
+    ("辛丑", "酉", "子", "巳未未", "别责"),        # 卷九 c009:p0060 辛丑日别责「巳玄加申」
+    ("壬辰", "申", "巳", "戌丑辰", "蒿矢"),        # c005:p0042
+    ("壬申", "亥", "申", "巳申亥", "弹射"),        # c005:p0042「巳加寅为用」
 ])
-def test_unsupported_branches_do_not_invent_transmissions(day, general, hour, method):
+def test_book_examples_for_she_hai_mao_xing_bie_ze_and_yao_ke(day, general, hour, tri, method):
     got = cast(day, general, hour)
-    assert got["status"] == "unsupported" and method in got["method"]
-    assert [got[k] for k in ("chu_chuan", "zhong_chuan", "mo_chuan")] == [None] * 3
-    assert got["reason"]
+    assert got["status"] == "supported"
+    assert "".join(got[k] for k in ("chu_chuan", "zhong_chuan", "mo_chuan")) == tri
+    assert method in got["method"]
 
 
-def test_liuren_partial_cli_preserves_lessons_and_nulls_derived_outputs():
+def test_bie_ze_occurs_on_exactly_the_nine_courses_listed_in_volume_one():
+    # 卷一 c001:p0008「刚三柔六共九课」，原注列戊辰戊午丙辰各一、辛未辛丑各二、丁酉辛酉各一，
+    # 「戊午戊辰与丙辰干上皆午……丁酉当为己丁是辛酉原来是酉辛」。
+    branches = "子丑寅卯辰巳午未申酉戌亥"
+    found = []
+    for day_index in range(60):
+        day = "甲乙丙丁戊己庚辛壬癸"[day_index % 10] + branches[day_index % 12]
+        for general in branches:
+            got = cast(day, general, "子")
+            if "别责" in got["method"]:
+                found.append((day, got["zhong_chuan"]))
+    assert sorted(found) == sorted([("戊辰", "午"), ("戊午", "午"), ("丙辰", "午"), ("辛未", "丑"), ("辛未", "未"),
+                                    ("辛丑", "丑"), ("辛丑", "未"), ("丁酉", "巳"), ("辛酉", "酉")])
+
+
+def test_she_hai_counts_lodged_stems_and_skips_both_ends():
+    assert she_hai_depth("亥", "丑", "zei") == 5   # 辰、巳中戊、未、未中己、戌
+    assert she_hai_depth("丑", "卯", "zei") == 1   # 只历辰中乙木
+    assert she_hai_depth("午", "申", "ke") == 2    # 起处申与庚不计，历酉、戌中辛
+
+
+def test_liuren_cli_completes_a_formerly_unsupported_chart():
     got = run("liuren_cast.py", "--date", "2026-05-16", "--time", "14:30")
-    assert got["ok"] and got["completion_status"] == "partial"
-    assert got["san_chuan"]["status"] == "unsupported"
+    assert got["ok"] and got["completion_status"] == "complete"
+    assert got["san_chuan"]["status"] == "supported"
     assert len(got["si_ke"]) == 4 and len(got["tian_pan"]) == 12
-    assert got["san_chuan"]["chu_chuan_wuxing"] is None
-    assert got["wang_xiang"] is None
-    assert "三传未完成" in got["summary"]
+    assert got["san_chuan"]["chu_chuan_wuxing"] and got["wang_xiang"]
+    assert "涉害" not in got["method_profile"]["unsupported"]
 
 
 def test_all_720_configurations_have_closed_status_and_no_fake_fallback():
