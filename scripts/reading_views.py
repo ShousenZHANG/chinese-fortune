@@ -105,6 +105,33 @@ def compact_reading(result: dict) -> dict:
     return compact
 
 
+def write_facts(path: str, obj: dict) -> str:
+    """Save a tool's JSON for ``answer_check --facts``; only an earlier facts file is replaced.
+
+    Round 5 S18 timed out after a 42.5KB compact reading spilled out of the host's
+    inline output and had to be read back from disk: writing the JSON once and
+    printing the short plain-text draft saves those round trips.
+    """
+    target = Path(path).expanduser()
+    if target.suffix.lower() != '.json':
+        raise ValueError('--facts-out 需要 .json 文件路径')
+    if target.exists():
+        try:
+            previous = json.loads(target.read_text(encoding='utf-8'))
+        except (OSError, ValueError):
+            previous = None
+        if not (isinstance(previous, dict) and 'tool' in previous):
+            raise ValueError(f'{target} 已存在且不是本工具写的 JSON，不覆盖；请换一个路径')
+    with target.open('w', encoding='utf-8', newline='\n') as handle:
+        json.dump(obj, handle, ensure_ascii=False, separators=(',', ':'), default=str)
+    return str(target.resolve())
+
+
+def facts_line(path: str) -> str:
+    return (f'完整 JSON 已存到 {path}；引用段号或细节时按需查这个文件，'
+            f'发出前核对正文：python scripts/answer_check.py --answer - --facts {path}（正文从标准输入给）。')
+
+
 def write_report(result: dict, facts_text: str, destination: str) -> dict:
     """Save an explicitly requested, offline report; never replace an existing file."""
     path = Path(destination).expanduser().resolve()

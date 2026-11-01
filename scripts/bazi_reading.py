@@ -20,7 +20,7 @@ from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
 from luck_assessment import assess_luck, luck_paragraph
-from reading_views import compact_reading, write_report
+from reading_views import compact_reading, facts_line, write_facts, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
     __version__,
@@ -600,6 +600,9 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument('--view', choices=('full', 'compact'), default='full',
                         help='JSON 展示层：full 完整资料；compact 去重并以段号索引原文')
     parser.add_argument('--report', metavar='PATH', help='另存本地 .md/.html 核对报告；不覆盖已有文件')
+    parser.add_argument('--facts-out', metavar='PATH.json',
+                        help='把 --view 选定的 JSON 存到这个文件，屏幕只输出白话草稿和文件路径；'
+                             '供 answer_check --facts 使用，只覆盖本工具以前写的 JSON')
     return parser
 
 
@@ -621,10 +624,18 @@ def main(argv: list[str] | None = None) -> int:
         except (OSError, ValueError) as exc:
             json_print(error_envelope('bazi_reading', 'report_unavailable', f'{exc}；请指定新的可写文件路径'))
             return 1
-    if args.markdown:
+    view = compact_reading(result) if args.view == 'compact' else result
+    if args.facts_out:
+        try:
+            saved = write_facts(args.facts_out, view)
+        except (OSError, ValueError) as exc:
+            json_print(error_envelope('bazi_reading', 'facts_unavailable', str(exc)))
+            return 1
+        print(render_facts(result) + '\n\n' + facts_line(saved))
+    elif args.markdown:
         print(render_facts(result))
     else:
-        json_print(compact_reading(result) if args.view == 'compact' else result, compact=args.view == 'compact')
+        json_print(view, compact=args.view == 'compact')
     return 0
 
 

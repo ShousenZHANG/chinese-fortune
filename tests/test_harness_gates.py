@@ -259,10 +259,13 @@ def test_engines_really_do_not_write_files():
     writers = []
     for f in sorted((root / "scripts").glob("*.py")):
         # Explicit external persistence commands; ordinary engines remain read-only.
-        if f.name in SCRIPT_EXCLUDE or f.name in {"personal_profiles.py", "research_session.py", "prediction_log.py"}:
+        if f.name in SCRIPT_EXCLUDE or f.name in {"personal_profiles.py", "research_session.py", "prediction_log.py",
+                                                  "reading_views.py"}:
             # Profile CRUD and source-only research records are explicit commands.
             # test_personalized_forecast checks confirmation, revision conflicts,
             # external paths and that ordinary calculations never auto-save.
+            # reading_views holds --report and --facts-out: they write only the path
+            # the caller names, never by default (test_facts_out and the --report tests).
             continue
         tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
         for node in ast.walk(tree):
@@ -272,8 +275,9 @@ def test_engines_really_do_not_write_files():
                 if name in ("write_text", "write_bytes", "mkdir", "makedirs"):
                     writers.append(f"{f.name}:{node.lineno} {name}")
                 if name == "open":
-                    for a in list(node.args[1:2]) + [k.value for k in node.keywords
-                                                     if k.arg == "mode"]:
+                    # open(path, mode) and path.open(mode) put the mode in different slots.
+                    slot = node.args[0:1] if isinstance(fn, ast.Attribute) else node.args[1:2]
+                    for a in list(slot) + [k.value for k in node.keywords if k.arg == "mode"]:
                         if isinstance(a, ast.Constant) and isinstance(a.value, str) \
                                 and any(c in a.value for c in "wax+"):
                             writers.append(f"{f.name}:{node.lineno} open({a.value!r})")

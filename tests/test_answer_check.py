@@ -224,3 +224,13 @@ def test_round_three_fresh_set_gaps():
     tie = {'recommendation': {'status': 'practical_tie'}}
     assert codes('工具已经决定首选B，没有并列。', tie) == ['tie_collapsed']
     assert codes('两个窗口中A排名第一，B排名第二。', tie) == ['tie_collapsed']
+
+
+def test_html_table_markup_is_a_warning_not_an_error():
+    from answer_check import check_answer
+    answer = '五行数量如下。\n\n| 五行 | 天干 |\n|---|---|\n| 合计 | colspan="2" 8 |\n'
+    result = check_answer(answer, [])
+    assert [f['code'] for f in result['findings']] == ['table_markup']
+    assert result['passed'] is True
+    fenced = '示例：\n```html\n<td colspan="2">x</td>\n```\n正文没有表。'
+    assert check_answer(fenced, [])['findings'] == []

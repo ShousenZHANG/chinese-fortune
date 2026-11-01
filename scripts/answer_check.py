@@ -222,11 +222,26 @@ def _without_user_echo(value: object) -> object:
     return value
 
 
+# 第五轮 T22 四项易懂度低分都来自 Markdown 表里残留的 HTML 合并单元格写法 (colspan)。
+TABLE_MARKUP = re.compile(r'colspan|rowspan|</?(?:table|tr|td|th)', re.I)
+CODE_FENCE = re.compile(r'```.*?```', re.S)
+
+
+def markup_findings(answer: str) -> list[dict]:
+    match = TABLE_MARKUP.search(CODE_FENCE.sub('', answer))
+    if not match:
+        return []
+    start = max(0, match.start() - 20)
+    return [_finding('table_markup', 'warning', answer[start:match.end() + 20],
+                     '表格里有 HTML 写法（如 colspan）；多数宿主不渲染，改成每行列数相同的 Markdown 表')]
+
+
 def check_answer(answer: str, facts: list[dict]) -> dict:
     checked = dict.fromkeys(('quotes_checked', 'quotes_skipped', 'pillars_checked', 'scores_checked'), 0)
     facts_text = json.dumps(facts, ensure_ascii=False)
     tool_text = json.dumps(_without_user_echo(facts), ensure_ascii=False)
-    findings = [*_quote_findings(answer, _key(tool_text), checked), *pillar_findings(answer, facts, checked)]
+    findings = [*_quote_findings(answer, _key(tool_text), checked), *pillar_findings(answer, facts, checked),
+                *markup_findings(answer)]
     titles = unresolved_titles(facts)
     tie = has_tie(facts)
     for sentence in (s.strip() for s in sentences(answer)):

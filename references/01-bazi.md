@@ -22,7 +22,7 @@
 
 不要再找 `ge_ju.status` 或 `yong_shen.views`，它们只在诊断接口存在。默认工具不接受三个 `--no-*` 诊断开关。输入方式见 [输入采集](00-intake.md)。
 
-Skill 日常先用 `--view compact`：条件和格局观察会去重引用，完整原文变成 `evidence_index`；引用或推断前按段号取完整段及上下文。CLI 不指定 `--view` 仍返回完整结果，供已有调用方兼容。`--report <新文件.md或.html>` 可选保存同一次结果的核对报告，默认不保存、已有文件不覆盖。详见 [5.10 输出迁移](../docs/MIGRATION-5.10.md)。
+Skill 日常先用 `--view compact --facts-out <临时目录>/bazi.json`：JSON 存进文件，屏幕只出白话草稿和路径，`answer_check.py --answer - --facts <该文件>` 直接核对；条件和格局观察会去重引用，完整原文变成 `evidence_index`；引用或推断前按段号取完整段及上下文。CLI 不指定 `--view` 仍返回完整结果，供已有调用方兼容。`--report <新文件.md或.html>` 可选保存同一次结果的核对报告，默认不保存、已有文件不覆盖。详见 [5.10 输出迁移](../docs/MIGRATION-5.10.md)。
 
 `literal_state:met` 不是成格；月令主次、轻重、有效制化、救应和反例仍在 `unresolved_conditions`。有变化线索时还要核 `preserves_original`，不能丢掉保留本格的例式。大运地支按本气召回条款，不等于全部藏干或合冲已判；“透官/透杀”只匹配运干。
 

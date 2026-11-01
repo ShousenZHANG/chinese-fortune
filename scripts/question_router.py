@@ -103,7 +103,8 @@ def _period(question: str) -> str | None:
 BIRTH = '出生年月日、性别与出生地（时辰可缺；立春前后出生需有时刻才能定年柱）'
 
 BAZI_COMMAND = ('python scripts/bazi_reading.py --year Y --month M --day D '
-                '[--hour H --minute m] --gender G --city 出生地 --question "<原话>" --view compact')
+                '[--hour H --minute m] --gender G --city 出生地 --question "<原话>" --view compact '
+                '--facts-out <临时目录>/bazi.json')
 
 
 def _reference_time_needs(text: str) -> list[str]:
@@ -278,7 +279,8 @@ def route(question: str) -> dict:
         else:
             why = '问某段时间哪天（哪个月）对本人好坏：按出生年相主给每天分吉凶'
         return {'flow': 'event_slots' if slots else 'personal_days', 'kind': kind, 'why': why,
-                'command': 'python scripts/fortune_reading.py --stdin --markdown', 'request': request,
+                'command': 'python scripts/fortune_reading.py --stdin --facts-out <临时目录>/fortune.json',
+                'request': request,
                 'needs': needs}
     if any(word in text for word in NATAL_WORDS):
         return _natal_route(text)
