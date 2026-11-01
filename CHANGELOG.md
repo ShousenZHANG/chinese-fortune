@@ -4,6 +4,15 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
+## [Unreleased] — v5.11 候选：紫微按《全书》补全、流派开关、回答骨架
+
+- **紫微杂曜 39 颗**：新增月系、日系、时系、年系 30 颗（`ziwei_minor.py`）。`miscellaneous_stars_basis` 按出处分组：《全书》卷二有安星诀的以段号为键，其余归「通行表」。与 iztro-py 14 例逐格一致。月德取巳宫起子（所引转录作子宫，与天德不成对）。
+- **紫微流派开关**：`--kui-yue`（四套，只在庚辛壬癸年不同；其中 quanshu-1 即《全书》「六辛逢虎马」读法）、`--tian-ma year|month`、`--tianshi-tianshang zhongzhou`、`--jie-kong split|single|zhanyan`、`--changsheng shui-tu|huo-tu`、`--changsheng-direction yinyang|gender`；庚年四化增阳武府相、阳武同相；`--year-divide lichun` 按立春交节换本命年。`--school nihai` 预设倪海厦派：闰月整月归下月、晚子算当日、不出宫干自化与大限四化，单项开关可覆盖。天空「顺加生时」、闰月「保持闰月」查不到算法，未实现。
+- **紫微运限流曜**：`horoscope` 各层加 `stars`（运/流/月/日/时 + 禄羊陀魁钺昌曲马鸾喜），流年加年解与将前、岁前十二神，新增 `horoscope.da_xian`（目标日期所在大限）。与 iztro JS 2.6.1 对照 60 组全同。
+- **紫微格局按《全书》定义重写**：41 格取卷一格局清单、论X格与卷三诸星分论的原文定义，每格给 `passage_id`、`quote` 与 `required` / `bonus` / `breaking` 三组条件；3 格标 `modern_convention`。顺带修正：旧「马头带箭」按天马擎羊同宫判，按安星规则永远不会出现，改用卷三「擎羊在午守命」；府相朝垣改为两星从命宫以外的三方来朝；机月同梁须命在寅申且四星齐会。**字段变化**：`patterns[]` 去掉 `status`、`recognition_basis`，`source_status` 改为 `quanshu_definition` 或 `modern_convention`，新增 `passage_id`、`quote`、`required`、`bonus`、`breaking`；`evidence` 保留为 `required` 的串联。
+- **紫微自检与回答骨架**：`self_check` 用 8 条安星互相约束复核盘面（14 主星、紫府对称、宫序、宫干、命宫公式、身宫六宫、羊陀夹禄、四化星在盘），篡改输出能查出；`say` 给可照抄的命宫、四化落宫、格局与排盘口径句子；`--focus-palace 夫妻|事业|财运…` 给该宫的主星、对宫三合、四化、相关格局与逐星检索词。
+- **回答骨架与往返**：近期运势的「写回答时」给出实际窗口和已算到的层次，按「窗口 → 各层 → 现实动作 → 一次边界」写；阶段运势即使只看一个月也列出所在流年。`bazi_reading.py` 与 `fortune_reading.py` 新增 `--facts-out PATH.json`：JSON 存文件、屏幕只出白话草稿，`answer_check.py --answer - --facts PATH` 直接核对（第五轮 S18 的 42.5KB 输出被宿主转存后多轮往返超时）。`answer_check` 对表格里的 HTML 合并单元格写法给 warning（第五轮 T22 四项易懂度低分）。输出契约加按问题类型的骨架。
+
 ## [5.10.0] — 2026-11-01 — 八家大运、紫微十二神与流派、回答核对、MCP、可照抄句子
 
 - 印、食神、七杀、阳刃、建禄月劫新增 30 个候选取运配法，与原有 19 个合为八家 49 个；保存冻结原句、哈希、解释条件、跨段例外与天干/地支范围。七杀用伤官的继承映射和句法分歧保留待核，不把配对或共现当成有效制化。
