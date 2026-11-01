@@ -45,6 +45,12 @@ class Ctx:
         b = [ln['branch'] for ln in chart['lines']]
         return all(table[b[i]] == b[i + 3] for i in range(3))
 
+    def changed_pairs(self, table: dict) -> bool:
+        return self.changed is not None and self.pairs(self.changed, table)
+
+    def changed_number(self) -> int | None:
+        return self.changed['hex_number'] if self.changed is not None else None
+
 
 LineCheck = Callable[[Ctx, int], bool]
 
@@ -53,21 +59,27 @@ def _moving(c: Ctx, p: int) -> bool:
     return p in c.active
 
 
-def _changed_wx(c: Ctx, p: int) -> str | None:
-    ch = c.change(p)
-    return ch['wuxing'] if ch else None
+ChangeTest = Callable[[dict, dict, 'Ctx'], bool]
+
+
+def _on_change(test: ChangeTest) -> LineCheck:
+    """A moving line's test against its changed line at the same position."""
+    def check(c: Ctx, p: int) -> bool:
+        changed = c.change(p)
+        return changed is not None and test(c.line(p), changed, c)
+    return check
 
 
 LINE: dict[str, LineCheck] = {
     'liuyao-change-local-effect': _moving,
-    'liuyao-advance-branches': lambda c, p: bool(c.change(p)) and (c.line(p)['branch'], c.change(p)['branch']) in ADVANCE,
-    'liuyao-retreat-branches': lambda c, p: bool(c.change(p)) and (c.line(p)['branch'], c.change(p)['branch']) in RETREAT,
-    'liuyao-return-generation': lambda c, p: bool(c.change(p)) and SHENG[_changed_wx(c, p)] == c.line(p)['wuxing'],
-    'liuyao-return-restraint': lambda c, p: bool(c.change(p)) and KE[_changed_wx(c, p)] == c.line(p)['wuxing'],
-    'liuyao-change-empty': lambda c, p: bool(c.change(p)) and '旬空' in c.change(p)['markers'],
-    'liuyao-change-broken': lambda c, p: bool(c.change(p)) and CHONG[c.change(p)['branch']] == c.month,
-    'liuyao-change-tomb': lambda c, p: bool(c.change(p)) and c.line(p)['wuxing'] == '木' and c.change(p)['branch'] == '未',
-    'liuyao-change-absolute': lambda c, p: bool(c.change(p)) and c.line(p)['wuxing'] == '木' and c.change(p)['branch'] == '申',
+    'liuyao-advance-branches': _on_change(lambda ln, ch, c: (ln['branch'], ch['branch']) in ADVANCE),
+    'liuyao-retreat-branches': _on_change(lambda ln, ch, c: (ln['branch'], ch['branch']) in RETREAT),
+    'liuyao-return-generation': _on_change(lambda ln, ch, c: SHENG[ch['wuxing']] == ln['wuxing']),
+    'liuyao-return-restraint': _on_change(lambda ln, ch, c: KE[ch['wuxing']] == ln['wuxing']),
+    'liuyao-change-empty': _on_change(lambda ln, ch, c: '旬空' in ch['markers']),
+    'liuyao-change-broken': _on_change(lambda ln, ch, c: CHONG[ch['branch']] == c.month),
+    'liuyao-change-tomb': _on_change(lambda ln, ch, c: ln['wuxing'] == '木' and ch['branch'] == '未'),
+    'liuyao-change-absolute': _on_change(lambda ln, ch, c: ln['wuxing'] == '木' and ch['branch'] == '申'),
     'liuyao-true-empty-seasonal': lambda c, p: c.month in '寅卯' and c.line(p)['wuxing'] == '土' and '旬空' in c.line(p)['markers'],
     'liuyao-moving-empty-not-final': lambda c, p: _moving(c, p) and '旬空' in c.line(p)['markers'],
     'liuyao-empty-exit': lambda c, p: c.line(p)['branch'] == c.month and '旬空' in c.line(p)['markers'],
@@ -101,13 +113,12 @@ CHART: dict[str, Callable[[Ctx], bool]] = {
     'liuyao-use-self-shi': lambda c: any(ln['is_shi'] and ln['position'] == c.main['shi_position'] for ln in c.main['lines']),
     'liuyao-six-clash': lambda c: c.pairs(c.main, CHONG),
     'liuyao-six-harmony': lambda c: c.pairs(c.main, HE),
-    'liuyao-clash-to-harmony': lambda c: bool(c.active) and c.pairs(c.main, CHONG) and bool(c.changed)
-    and c.pairs(c.changed, HE),
-    'liuyao-harmony-to-clash': lambda c: bool(c.changed) and c.pairs(c.main, HE) and c.pairs(c.changed, CHONG),
-    'liuyao-fanyin-explicit-pattern': lambda c: c.main['hex_number'] == 1 and bool(c.changed)
-    and c.changed['hex_number'] == 2 and len(c.active) == 6,
-    'liuyao-fuyin-explicit-pattern': lambda c: c.main['hex_number'] == 44 and bool(c.changed)
-    and c.changed['hex_number'] == 32 and {5, 6} <= set(c.active),
+    'liuyao-clash-to-harmony': lambda c: bool(c.active) and c.pairs(c.main, CHONG) and c.changed_pairs(HE),
+    'liuyao-harmony-to-clash': lambda c: c.pairs(c.main, HE) and c.changed_pairs(CHONG),
+    'liuyao-fanyin-explicit-pattern': lambda c: c.main['hex_number'] == 1 and c.changed_number() == 2
+    and len(c.active) == 6,
+    'liuyao-fuyin-explicit-pattern': lambda c: c.main['hex_number'] == 44 and c.changed_number() == 32
+    and {5, 6} <= set(c.active),
     'liuyao-single-active': lambda c: len(c.active) == 1,
     'liuyao-single-static': lambda c: len(c.active) == 5,
     'liuyao-crowded-motion': lambda c: len(c.active) == 6,
@@ -143,6 +154,7 @@ def judge(out: dict, positions: list[int] | None = None) -> dict:
     rows = []
     for rule in rules:
         manual = [c['label'] for c in rule['required_conditions'] if not c['computable']]
+        results: list[dict[str, object]]
         if not _applies(rule['id'], hint):
             results = [{'position': None, 'state': 'not_applicable'}]
         elif rule['id'] in CHART:
