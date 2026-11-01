@@ -223,8 +223,9 @@ def _without_user_echo(value: object) -> object:
 
 
 # 第五轮 T22 四项易懂度低分都来自 Markdown 表里残留的 HTML 合并单元格写法 (colspan)。
-TABLE_MARKUP = re.compile(r'colspan|rowspan|</?(?:table|tr|td|th)', re.I)
-CODE_FENCE = re.compile(r'```.*?```', re.S)
+TABLE_MARKUP = re.compile(r'colspan|rowspan|</?(?:table|tr|td|th)(?=[\s>/])', re.I)
+# Fences open with three or more backticks or tildes and close with the same run.
+CODE_FENCE = re.compile(r'^(`{3,}|~{3,})[^\n]*\n.*?^\1[`~]*[ \t]*$', re.S | re.M)
 
 
 def markup_findings(answer: str) -> list[dict]:

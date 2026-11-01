@@ -234,3 +234,12 @@ def test_html_table_markup_is_a_warning_not_an_error():
     assert result['passed'] is True
     fenced = '示例：\n```html\n<td colspan="2">x</td>\n```\n正文没有表。'
     assert check_answer(fenced, [])['findings'] == []
+    tilde = '示例：\n~~~html\n<table><tr><td>x</td></tr></table>\n~~~\n正文没有表。'
+    assert check_answer(tilde, [])['findings'] == []
+
+
+def test_plain_html_table_without_colspan_is_flagged():
+    from answer_check import check_answer
+    answer = '五行数量：\n<table>\n<tr><td>木</td><td>2</td></tr>\n</table>\n'
+    assert [f['code'] for f in check_answer(answer, [])['findings']] == ['table_markup']
+    assert check_answer('写作 <trust> 或 <thx> 不是表格标签。', [])['findings'] == []

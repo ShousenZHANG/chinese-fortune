@@ -105,25 +105,34 @@ def compact_reading(result: dict) -> dict:
     return compact
 
 
+FACTS_WRITER = 'chinese-fortune --facts-out'
+
+
 def write_facts(path: str, obj: dict) -> str:
-    """Save a tool's JSON for ``answer_check --facts``; only an earlier facts file is replaced.
+    """Save a tool's JSON for ``answer_check --facts``.
 
     Round 5 S18 timed out after a 42.5KB compact reading spilled out of the host's
     inline output and had to be read back from disk: writing the JSON once and
-    printing the short plain-text draft saves those round trips.
+    printing the short plain-text draft saves those round trips. The file carries
+    a ``facts_file`` marker; an existing file is replaced only when it bears the
+    same writer and tool, so another program's JSON (even one with a ``tool`` key,
+    round 6 R6-IO-01) is never overwritten.
     """
     target = Path(path).expanduser()
     if target.suffix.lower() != '.json':
         raise ValueError('--facts-out 需要 .json 文件路径')
+    marker = {'written_by': FACTS_WRITER, 'tool': obj.get('tool')}
+    mode = 'x'
     if target.exists():
         try:
             previous = json.loads(target.read_text(encoding='utf-8'))
         except (OSError, ValueError):
             previous = None
-        if not (isinstance(previous, dict) and 'tool' in previous):
-            raise ValueError(f'{target} 已存在且不是本工具写的 JSON，不覆盖；请换一个路径')
-    with target.open('w', encoding='utf-8', newline='\n') as handle:
-        json.dump(obj, handle, ensure_ascii=False, separators=(',', ':'), default=str)
+        if not (isinstance(previous, dict) and previous.get('facts_file') == marker):
+            raise ValueError(f'{target} 已存在且不是本工具上次用 --facts-out 写的文件，不覆盖；请换一个路径')
+        mode = 'w'
+    with target.open(mode, encoding='utf-8', newline='\n') as handle:
+        json.dump({**obj, 'facts_file': marker}, handle, ensure_ascii=False, separators=(',', ':'), default=str)
     return str(target.resolve())
 
 

@@ -29,12 +29,26 @@ def test_bazi_reading_writes_the_view_and_prints_the_draft(tmp_path):
 
 
 def test_facts_out_refuses_other_files_and_non_json_paths(tmp_path):
-    other = tmp_path / 'notes.json'
-    other.write_text('[1, 2]', encoding='utf-8')
-    for path in (other, tmp_path / 'draft.txt'):
+    files = {'notes.json': '[1, 2]', 'export.json': '{"tool":"foreign_export","keep":"preserve"}',
+             'doctor.json': '{"ok":true,"tool":"doctor"}'}
+    for name, text in files.items():
+        (tmp_path / name).write_text(text, encoding='utf-8')
+    for path in [tmp_path / name for name in files] + [tmp_path / 'draft.txt']:
         done = run('bazi_reading.py', *BIRTH, '--facts-out', str(path))
-        assert done.returncode == 1 and json.loads(done.stdout)['error'] == 'facts_unavailable'
-    assert other.read_text(encoding='utf-8') == '[1, 2]'
+        assert done.returncode == 1 and json.loads(done.stdout)['error'] == 'facts_unavailable', path
+    assert {name: (tmp_path / name).read_text(encoding='utf-8') for name in files} == files
+
+
+def test_a_facts_file_from_another_tool_is_not_replaced(tmp_path):
+    out = tmp_path / 'facts.json'
+    assert run('bazi_reading.py', *BIRTH, '--facts-out', str(out)).returncode == 0
+    before = out.read_bytes()
+    request = {'intent': 'natal', 'participants': [{'id': 'me', 'confirmed': True, 'person': {
+        'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10, 'minute': 30, 'gender': 'male',
+                  'timezone': 'Asia/Shanghai', 'longitude': 116.4}, 'time_certainty': 'exact'}}],
+               'current_timezone': 'Asia/Shanghai', 'request_time': '2026-11-01T10:00:00+08:00'}
+    done = run('fortune_reading.py', '--stdin', '--facts-out', str(out), stdin=json.dumps(request))
+    assert done.returncode == 1 and out.read_bytes() == before
 
 
 def test_fortune_reading_facts_out(tmp_path):
