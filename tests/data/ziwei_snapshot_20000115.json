@@ -990,11 +990,31 @@
   "horoscope": null,
   "patterns": [
     {
+      "name": "坐贵向贵",
+      "source_status": "quanshu_definition",
+      "passage_id": "ziwei:c001:p0154",
+      "quote": "坐贵向贵 谓魁钺在命迭相坐拱是也",
+      "required": [
+        "天魁天钺一坐命宫、一在三方四正拱照"
+      ],
+      "bonus": [],
+      "breaking": [],
+      "evidence": "天魁天钺一坐命宫、一在三方四正拱照"
+    },
+    {
       "name": "机月同梁",
-      "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴",
-      "status": "candidate_only",
-      "source_status": "classical_conditions_not_verified",
-      "recognition_basis": "project_star_combination"
+      "source_status": "quanshu_definition",
+      "passage_id": "ziwei:c003:p0129",
+      "quote": "机月同梁作吏人  命在寅申方论",
+      "required": [
+        "命在寅申",
+        "天机太阴天同天梁齐会三方四正"
+      ],
+      "bonus": [],
+      "breaking": [
+        "三方见火星、地劫（原注：凶杀空劫化忌为下格）"
+      ],
+      "evidence": "命在寅申；天机太阴天同天梁齐会三方四正"
     }
   ],
   "twelve_gods_sources": {

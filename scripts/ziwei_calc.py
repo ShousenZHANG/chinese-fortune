@@ -497,8 +497,8 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     patterns: list[dict] = []
     if not args.no_patterns:
         patterns = detect_patterns(
-            mg_branch, branch_to_main, branch_to_all,
-            palaces, sihua_native,
+            ming_branch=mg_branch, shen_branch=sg_branch, branch_to_main_stars=branch_to_main,
+            branch_to_all_stars=branch_to_all, palaces=palaces, sihua=sihua_native, year_stem=year_stem,
         )
 
     out = {

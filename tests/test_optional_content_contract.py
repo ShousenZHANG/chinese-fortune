@@ -2,17 +2,6 @@
 from conftest import run_cli
 from tarot_draw import build_full_deck, load_deck
 from ziwei_brightness import NOTE as BRIGHTNESS_SEVEN_NOTE
-from ziwei_patterns import detect_patterns
-
-
-def test_partial_jiyuetongliang_remains_a_visible_candidate():
-    positions = {"子": ["天机", "太阴", "天同"]}
-    patterns = detect_patterns("子", positions, positions, [], {})
-    candidate = next(p for p in patterns if p["name"] == "机月同梁")
-    assert "3/4" in candidate["evidence"]
-    assert candidate["status"] == "candidate_only"
-    assert candidate["source_status"] == "classical_conditions_not_verified"
-    assert not {"type", "meaning", "score", "personal_verdict"} & candidate.keys()
 
 
 def test_ziwei_candidates_report_actual_position_without_fortune_tier():
@@ -22,9 +11,8 @@ def test_ziwei_candidates_report_actual_position_without_fortune_tier():
     assert BRIGHTNESS_SEVEN_NOTE in result["notes"]  # default table since v5.10; project4 keeps the old note
     assert all("形性赋" not in note for note in result["notes"])
     for pattern in result["patterns"]:
-        assert pattern["evidence"]
-        assert pattern["status"] == "candidate_only"
-        assert pattern["recognition_basis"] == "project_star_combination"
+        assert pattern["evidence"] and pattern["required"]
+        assert pattern["source_status"] in ("quanshu_definition", "modern_convention")
         assert "type" not in pattern and "meaning" not in pattern
 
 
