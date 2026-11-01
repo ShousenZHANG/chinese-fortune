@@ -21,10 +21,37 @@ PALACE_ALIASES = {
 SENTENCE = re.compile(r'[^。；！？\n]+[。；！？]?')
 
 
+STAR_NAMES = ('紫微', '天机', '太阳', '武曲', '天同', '廉贞', '廉真', '天府', '太阴', '贪狼', '巨门', '天相', '天梁',
+              '七杀', '破军', '左辅', '右弼', '辅弼', '文昌', '文曲', '天魁', '天钺', '魁钺', '禄存', '天马', '擎羊',
+              '陀罗', '火星', '铃星', '地空', '地劫')
+SAME_STAR = {'廉贞': ('廉真',)}
+
+
+def _others(star: str) -> list[str]:
+    own = {star, *SAME_STAR.get(star, ())}
+    return [normalized(n) for n in STAR_NAMES if n not in own]
+
+
 def _names_palace(sentence: str, star: str, seat: re.Pattern, essay: bool) -> bool:
     # Clause by clause, so 「太陰合文曲於妻宮…，太陽會文昌於官祿」 is not credited to 太阴 for 官禄.
     return any(seat.search(c) and (essay or normalized(star) in c)
                for c in re.split('[,，、]', normalized(sentence)))   # NFKC turns ， into ,
+
+
+def _essay_sentences(text: str, star: str) -> list[str]:
+    """The sentences still about ``star`` in a paragraph that opens with it.
+
+    Round 7 R7-FOCUS-01: c002:p0103 opens with 紫微 and then lists every star, so
+    「廉真属火…在官禄为官禄主」 was quoted under 紫微. The essay ends at the first
+    sentence that names another star; that sentence and the rest are not credited.
+    """
+    others = _others(star)
+    kept = []
+    for sentence in SENTENCE.findall(text):
+        if any(n in normalized(sentence) for n in others):
+            break
+        kept.append(sentence)
+    return kept
 
 
 def palace_quotes(star: str, short: str, limit: int = 2) -> list[dict]:
@@ -41,8 +68,13 @@ def palace_quotes(star: str, short: str, limit: int = 2) -> list[dict]:
         # palace (在夫妻、於官祿、夫妻宮), not as part of a phrase like 财官禄旺.
         essay = re.match(r'[^，。；]{0,8}?' + normalized(star), normalized(hit['text']).lstrip()) is not None
         seat = re.compile(f'(?:在|居|于|守|临|入|坐){short}|{short}宫')
-        sentence = next((x.strip() for x in SENTENCE.findall(hit['text'])
-                         if _names_palace(x, star, seat, essay)), None)
+        if essay:
+            candidates = _essay_sentences(hit['text'], star)
+        else:   # the sentence names the star itself and no other star shares the clause
+            candidates = [x for x in SENTENCE.findall(hit['text'])
+                          if not any(n in c and seat.search(c) for c in re.split('[,，、]', normalized(x))
+                                     for n in _others(star))]
+        sentence = next((x.strip() for x in candidates if _names_palace(x, star, seat, essay)), None)
         if sentence:
             out.append({'passage_id': hit['passage_id'], 'text': sentence})
         if len(out) >= limit:

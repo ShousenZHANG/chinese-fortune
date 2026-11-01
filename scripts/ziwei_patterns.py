@@ -353,7 +353,10 @@ def _lu_ma_jiao_chi(c: Chart) -> Result | None:
     if req is None or seat is None:
         return None
     bad = [s for s in ('擎羊', '火星') + KONG_WANG if s in c.stars[seat]]
-    return _done(req, breaking=_opt((bool(bad), f'同宫见{"、".join(bad)}（卷三：忌见杀羊火截路空亡）')))
+    # 原注「忌见杀」的「杀」可指七杀，也可泛指诸煞 (R7-PAT-01); 只列同宫见到的, 不替原文定。
+    sha = [s for s in ('七杀', '陀罗', '铃星', '地空', '地劫') if s in c.stars[seat]]
+    return _done(req, breaking=_opt((bool(bad), f'同宫见{"、".join(bad)}（卷三：忌见杀羊火截路空亡）')),
+                 to_check=_opt((bool(sha), f'同宫见{"、".join(sha)}（原注「忌见杀」，「杀」指七杀还是诸煞原文未定）')))
 
 
 def _ke_quan_lu_he(c: Chart) -> Result | None:
