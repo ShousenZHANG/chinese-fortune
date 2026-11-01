@@ -48,6 +48,8 @@ from bazi_tables import (
     TIANGAN_HE,
     si_ling,
 )
+from city_resolver import describe as describe_cities
+from city_resolver import resolve as resolve_city
 from reading_support import bazi_reading_packet
 from request_time import add_request_arguments, resolve_time
 from utils import (
@@ -63,7 +65,6 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,
-    lookup_city,
     normalize_birth_time,
     parse_iso,
     validate_birth_input,
@@ -412,11 +413,17 @@ def _apply_birthplace(args: argparse.Namespace) -> dict | None:
     # fills what the caller left at its default.
     birthplace = None
     if args.city:
-        row = lookup_city(args.city)
+        row, choices = resolve_city(args.city)
+        if row is None and choices and 'suggested_for' not in choices[0]:
+            raise _ChartError(error_envelope(
+                "bazi", "ambiguous_city",
+                f"出生地「{args.city}」有同名：{describe_cities(choices)}；请加上省份或市名再给一次",
+                candidates=choices))
         if row is None:
+            hint = f"；相近的有：{describe_cities(choices)}" if choices else ""
             raise _ChartError(error_envelope(
                 "bazi", "unknown_city",
-                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
+                f"未收录出生地: {args.city}{hint}; 请改传 --longitude 与 --timezone", candidates=choices))
         lon_explicit = args.longitude is not None
         if not lon_explicit:
             args.longitude = row["lon"]
