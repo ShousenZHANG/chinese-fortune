@@ -43,3 +43,16 @@ def test_unknown_focus_palace_is_an_input_error():
     bad = run_cli('ziwei_calc.py', '--year', 1990, '--month', 5, '--day', 10, '--hour', 14, '--gender', 'male',
                   '--focus-palace', '桃花', expect_rc=1)
     assert bad['ok'] is False and '桃花' in bad['message']
+
+
+def test_focus_quotes_come_from_the_star_and_name_the_palace():
+    """Round 6 Z04: the host searched once per star; the matching lines now ride along."""
+    from classical_search import get_passage
+    focus = run_cli('ziwei_calc.py', '--year', 2000, '--month', 1, '--day', 15, '--hour', 10, '--minute', 30,
+                    '--gender', 'male', '--brief-palaces', '--focus-palace', '夫妻')['focus']
+    assert focus['quotes']['巨门'] == [{'passage_id': 'ziwei:c001:p0034',
+                                       'text': '在夫妻主於隔角，生離死別，縱夫妻有對，不免汙名失節；'}]
+    assert focus['quotes']['巨门'][0]['text'] in get_passage('ziwei:c001:p0034')['text']
+    # A line about 太阳 at 官禄 is not credited to 太阴 sitting in the same sentence.
+    career = chart('--focus-palace', '事业')['focus']
+    assert all('官祿金殿' not in q['text'] for q in career['quotes'].get('太阴', []))

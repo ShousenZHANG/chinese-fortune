@@ -5,6 +5,10 @@
 """
 from __future__ import annotations
 
+import re
+
+from classical_search import normalized, search_classics
+
 PALACE_ALIASES = {
     '命': '命宫', '兄弟': '兄弟宫', '夫妻': '夫妻宫', '婚姻': '夫妻宫', '感情': '夫妻宫', '配偶': '夫妻宫',
     '子女': '子女宫', '财帛': '财帛宫', '财运': '财帛宫', '钱财': '财帛宫', '疾厄': '疾厄宫', '健康': '疾厄宫',
@@ -12,6 +16,38 @@ PALACE_ALIASES = {
     '官禄': '官禄宫', '事业': '官禄宫', '工作': '官禄宫', '田宅': '田宅宫', '房产': '田宅宫',
     '福德': '福德宫', '父母': '父母宫',
 }
+
+
+SENTENCE = re.compile(r'[^。；！？\n]+[。；！？]?')
+
+
+def _names_palace(sentence: str, star: str, seat: re.Pattern, essay: bool) -> bool:
+    # Clause by clause, so 「太陰合文曲於妻宮…，太陽會文昌於官祿」 is not credited to 太阴 for 官禄.
+    return any(seat.search(c) and (essay or normalized(star) in c)
+               for c in re.split('[,，、]', normalized(sentence)))   # NFKC turns ， into ,
+
+
+def palace_quotes(star: str, short: str, limit: int = 2) -> list[dict]:
+    """Sentences naming the palace, from 全书 paragraphs that discuss the star, as written.
+
+    Round 6 Z04 timed out after one classical_search call per star; the focus
+    block now carries the matching sentences so the host can quote them directly.
+    A shared sentence is a lead to read, not a verdict about this chart.
+    """
+    out: list[dict] = []
+    for hit in search_classics(f'{star} {short}', book='ziwei', limit=6):
+        # Star essays name the star at the head and then go palace by palace (「在夫妻主於隔角」);
+        # elsewhere the sentence itself must name the star. The palace must be used as a
+        # palace (在夫妻、於官祿、夫妻宮), not as part of a phrase like 财官禄旺.
+        essay = re.match(r'[^，。；]{0,8}?' + normalized(star), normalized(hit['text']).lstrip()) is not None
+        seat = re.compile(f'(?:在|居|于|守|临|入|坐){short}|{short}宫')
+        sentence = next((x.strip() for x in SENTENCE.findall(hit['text'])
+                         if _names_palace(x, star, seat, essay)), None)
+        if sentence:
+            out.append({'passage_id': hit['passage_id'], 'text': sentence})
+        if len(out) >= limit:
+            break
+    return out
 
 
 def palace_name(text: str) -> str | None:
@@ -44,7 +80,10 @@ def build_say(chart: dict) -> list[str]:
     lines.append(f"生年{chart['year_stem']}干四化：{hua}。")
     for pattern in chart.get('patterns', []):
         source = (f"《全书》{pattern['passage_id']}" if pattern['passage_id'] else '现代通行说法，所选《全书》转录未载')
+        if pattern.get('reading_note'):
+            source += '，条件为本项目选读：' + pattern['reading_note'].rstrip('。')
         tail = f"；减力条件：{'、'.join(pattern['breaking'])}" if pattern['breaking'] else ''
+        tail += f"；待核：{'、'.join(pattern['to_check'])}" if pattern.get('to_check') else ''
         lines.append(f"{pattern['name']}：{'、'.join(pattern['required'])}（{source}）{tail}。")
     if not chart.get('patterns'):
         lines.append('本盘没有命中已收录的格局条件。')
@@ -88,7 +127,9 @@ def focus_palace(chart: dict, name: str) -> dict:
                    for t in trines],
         'patterns': patterns,
         'search_queries': [f'{star} {short}' for star in seen] or [f'{short}宫'],
+        'quotes': {star: palace_quotes(star, short) for star in seen} if name != '命宫' else {},
+        'quotes_note': '取自讲这颗星的《全书》段落中提到该宫的那一句，原字照录可直接引用；是否适用于本盘仍要按原文条件解释。',
         'answer_order': ['本宫主星与亮度（空宫说明借对宫）', '对宫与三合会照', '生年四化落入', '吉煞与相关格局',
-                         '每颗星取《全书》原文（search_queries）再白话解释；没有原文的星只说位置'],
+                         '每颗星先用 quotes 里的原句，不够再用 search_queries 查；没有原文的星只说位置'],
         'say': say,
     }
