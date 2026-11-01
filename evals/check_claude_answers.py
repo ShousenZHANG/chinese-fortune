@@ -16,6 +16,15 @@ from answer_check import check_answer  # noqa: E402
 
 FACT_TOOLS = re.compile(r'bazi_reading|bazi_calc|ziwei_calc|fortune_reading|pair_facts|liuyao_cast')
 CHART_TOOLS = {'bazi_reading', 'bazi', 'ziwei', 'fortune_reading', 'pair_facts', 'liuyao'}
+# A chart producer's success envelope carries its chart; an imitation with only a tool
+# key, an error envelope or a nested shell is not a computed chart (R8-EVAL-01).
+CHART_PAYLOAD = {'bazi_reading': 'chart_facts', 'bazi': 'four_pillars', 'ziwei': 'twelve_palaces',
+                 'fortune_reading': 'participants', 'pair_facts': 'relations', 'liuyao': 'main_chart'}
+# Other shipped tools whose output may back a quote; tools that report on the run
+# itself (answer_check, doctor, question_router, request_time) are not facts.
+SOURCE_TOOLS = {'classical_search', 'classical_guidance', 'life_guide', 'huangli', 'meihua', 'qimen', 'daliuren',
+                'yijing', 'xiaoliuren', 'tiaohou_provenance', 'method_rules', 'zodiac', 'name', 'lunar_convert',
+                'explore', 'tarot', 'jiemeng', 'reading_review', 'fortune_rules'}
 
 
 FACTS_OUT = re.compile(r"""--facts-out[ =]+(?:"([^"]+)"|'([^']+)'|(\S+))""")
@@ -25,15 +34,32 @@ REDIRECT = re.compile(r"""(?<![0-9&])>\s*(?:"([^"]+\.json)"|'([^']+\.json)'|(\S+
 LINE_NUMBER = re.compile(r'^\s*\d+(?:\t|→)', re.M)
 
 
+def _is_facts(value: object) -> bool:
+    if not isinstance(value, dict) or value.get('ok') is not True:
+        return False
+    tool = value.get('tool')
+    if tool in CHART_PAYLOAD:
+        return isinstance(value.get(CHART_PAYLOAD[tool]), (dict, list))
+    return tool in SOURCE_TOOLS
+
+
 def _json_object(text: str) -> dict | None:
     for candidate in (text, LINE_NUMBER.sub('', text)):
         try:
             value = json.loads(candidate)
         except (TypeError, ValueError):
             continue
-        if isinstance(value, dict) and value.get('tool'):
+        if _is_facts(value):
             return value
     return None
+
+
+def _native_path(text: str) -> Path:
+    """/d/x from an MSYS shell is D:/x for Windows Python (R8-R2-DIAG-01)."""
+    drive = re.match(r'^/([a-zA-Z])/(.*)$', text)
+    if drive and sys.platform == 'win32':
+        return Path(f'{drive.group(1).upper()}:/{drive.group(2)}')
+    return Path(text)
 
 
 def _saved_facts(command: str) -> list[dict]:
@@ -43,12 +69,12 @@ def _saved_facts(command: str) -> list[dict]:
     if FACT_TOOLS.search(command):
         matches += list(REDIRECT.finditer(command))
     for match in matches:
-        path = Path(next(g for g in match.groups() if g))
+        path = _native_path(next(g for g in match.groups() if g))
         try:
             value = json.loads(path.read_text(encoding='utf-8'))
         except (OSError, ValueError):
             continue
-        if isinstance(value, dict) and value.get('tool'):
+        if _is_facts(value):
             found.append(value)
     return found
 

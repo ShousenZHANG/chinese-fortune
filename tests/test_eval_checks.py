@@ -100,7 +100,7 @@ def test_tool_facts_reads_redirected_json_and_line_numbered_read_output(tmp_path
     import json
 
     import check_claude_answers
-    chart = {'ok': True, 'tool': 'ziwei', 'ming_gong': {'branch': '子'}}
+    chart = {'ok': True, 'tool': 'ziwei', 'ming_gong': {'branch': '子'}, 'twelve_palaces': []}
     saved = tmp_path / 'ziwei.json'
     saved.write_text(json.dumps(chart, ensure_ascii=False), encoding='utf-8')
     redirected = [{'tools': [{'command': f'python scripts/ziwei_calc.py --year 2000 > "{saved}"', 'output': ''}]}]
@@ -109,3 +109,27 @@ def test_tool_facts_reads_redirected_json_and_line_numbered_read_output(tmp_path
     read = [{'tools': [{'command': 'python scripts/ziwei_calc.py --year 2000', 'output': ''},
                        {'command': str(saved), 'output': numbered}]}]
     assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': read})] == ['ziwei']
+
+
+def test_only_real_tool_success_envelopes_count_as_facts(tmp_path):
+    """R8-EVAL-01 and R8-R2-DIAG-01."""
+    import json
+    import sys as _sys
+
+    import check_claude_answers
+    real = {'ok': True, 'tool': 'bazi_reading', 'chart_facts': {'four_pillars': {}}}
+    fakes = [{'tool': 'ziwei', 'note': 'ordinary metadata'}, {'ok': False, 'tool': 'bazi_reading', 'error': 'x'},
+             {'ok': True, 'tool': 'unknown_tool', 'chart_facts': {}}, {'wrapper': real}, {'ok': True, 'a': 1},
+             {'ok': True, 'tool': 'answer_check', 'findings': []}]
+    for value in fakes:
+        turns = [{'tools': [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(value)}]}]
+        assert check_claude_answers.tool_facts({'turns': turns}) == [], value
+    turns = [{'tools': [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(real)}]}]
+    assert check_claude_answers.tool_facts({'turns': turns}) == [real]
+    if _sys.platform == 'win32':
+        saved = tmp_path / 'bazi.json'
+        saved.write_text(json.dumps(real), encoding='utf-8')
+        posix = saved.resolve().as_posix()
+        msys = f'/{posix[0].lower()}{posix[2:]}'                     # D:/x/y -> /d/x/y
+        turns = [{'tools': [{'command': f'python scripts/bazi_reading.py --facts-out {msys}', 'output': '草稿'}]}]
+        assert check_claude_answers.tool_facts({'turns': turns}) == [real]

@@ -272,3 +272,17 @@ def test_round7_diagnostics_clock_lists_and_two_tied_candidates():
     assert check_answer('最好选周二上午或周四。', facts)['findings'] == []
     assert [f['code'] for f in check_answer('最好选周二上午。', facts)['findings']] == ['tie_collapsed']
     assert [f['code'] for f in check_answer('这次打 8/10。', [])['findings']] == ['invented_score']
+
+
+def test_round8_tie_cases():
+    """R8-TIE-01 and R8-R2-DIAG-02."""
+    from answer_check import check_answer
+    facts = [{'tool': 'fortune_reading', 'recommendation': {'status': 'preferences_required'}, 'tied': ['a', 'b']}]
+    flagged = ['这两个里最好选周二上午。', '周二和周四虽然评级相同，但周二更好，应当首选周二。', '候选A是唯一首选，B只能作备选。']
+    for answer in flagged:
+        assert [f['code'] for f in check_answer(answer, facts)['findings']] == ['tie_collapsed'], answer
+    kept = ['候选A是周二上午，候选B是周四。最好选A或B。', '最好选A或B。', '最好选周二上午或周四。',
+            '如果要一个干净落点，我会优先推荐这两个：', '周四9:00-10:38涉及未核完的忌时条件，建议能避开就优先避开。',
+            '周二和周四评级同为大吉，工具没有给出谁更优，按你的偏好选都行。']
+    for answer in kept:
+        assert check_answer(answer, facts)['findings'] == [], answer
