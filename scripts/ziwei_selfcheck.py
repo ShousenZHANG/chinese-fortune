@@ -6,7 +6,7 @@
 from __future__ import annotations
 
 from utils import DIZHI
-from ziwei_stars import LU_CUN, MAIN_STARS, TIANFU_MIRROR
+from ziwei_stars import LU_CUN, MAIN_STARS, TIANFU_MIRROR, place_main_stars
 from ziwei_tables import calc_ming_gong, stem_of_palace
 
 # 身宫只落命、夫妻、财帛、迁移、官禄、福德六宫 (生时子午在命, 丑未在福德, 寅申在官禄,
@@ -33,7 +33,30 @@ def _main_stars(chart: dict) -> list[dict]:
     zw, tf = chart['main_stars_positions'].get('紫微'), chart['main_stars_positions'].get('天府')
     out.append(_check('ziwei_tianfu_mirror', bool(zw) and TIANFU_MIRROR.get(zw or '') == tf,
                       f'紫微{zw}、天府{tf}；天府须与紫微以寅申为轴对称'))
+    # The other twelve stars sit at fixed offsets from 紫微 and 天府, so one star
+    # moved to another palace breaks the layout even with all fourteen present.
+    placed = {s: p['branch'] for p in chart['twelve_palaces'] for s in _names(p)}
+    expected = place_main_stars(placed['紫微']) if '紫微' in placed else {}
+    moved = sorted(s for s in MAIN_STARS if placed.get(s) != expected.get(s))
+    out.append(_check('main_star_layout', not moved,
+                      '其余主星都在紫微、天府系的固定位置' if not moved else f"不在固定位置：{'、'.join(moved)}"))
     return out
+
+
+def _positions(chart: dict) -> list[dict]:
+    """The *_positions maps repeat what the palaces show; the two copies must agree."""
+    palaces = chart['twelve_palaces']
+    views = [('main_stars_positions', lambda p: _names(p))]
+    if 'lucky_stars' in palaces[0]:
+        views += [('lucky_stars_positions', lambda p: p['lucky_stars']),
+                  ('malefic_stars_positions', lambda p: p['malefic_stars']),
+                  ('miscellaneous_stars_positions', lambda p: p['miscellaneous_stars'])]
+    wrong = []
+    for key, stars_of in views:
+        shown = {s: p['branch'] for p in palaces for s in stars_of(p)}
+        wrong += [f'{key}.{s}' for s, b in chart[key].items() if shown.get(s) != b]
+    return [_check('positions_match_palaces', not wrong,
+                   '星位表与各宫星曜一致' if not wrong else f"星位表与各宫不符：{'、'.join(wrong)}")]
 
 
 def _palaces(chart: dict) -> list[dict]:
@@ -74,7 +97,7 @@ def _stars(chart: dict) -> list[dict]:
 
 
 def run_checks(chart: dict) -> list[dict]:
-    return _main_stars(chart) + _palaces(chart) + _stars(chart)
+    return _main_stars(chart) + _positions(chart) + _palaces(chart) + _stars(chart)
 
 
 def self_check(chart: dict) -> dict:

@@ -1014,14 +1014,19 @@
   "patterns": [
     {
       "name": "坐贵向贵",
-      "source_status": "quanshu_definition",
+      "source_status": "quanshu_reading",
       "passage_id": "ziwei:c001:p0154",
       "quote": "坐贵向贵 谓魁钺在命迭相坐拱是也",
+      "extra_passage_ids": [
+        "ziwei:c001:p0056"
+      ],
+      "reading_note": "「迭相坐拱」取一星坐命、另一星在三方四正；ziwei:c001:p0056 另有「魁临命，钺守身」的说法，未收。",
       "required": [
         "天魁天钺一坐命宫、一在三方四正拱照"
       ],
       "bonus": [],
       "breaking": [],
+      "to_check": [],
       "evidence": "天魁天钺一坐命宫、一在三方四正拱照"
     },
     {
@@ -1029,6 +1034,8 @@
       "source_status": "quanshu_definition",
       "passage_id": "ziwei:c003:p0129",
       "quote": "机月同梁作吏人  命在寅申方论",
+      "extra_passage_ids": [],
+      "reading_note": null,
       "required": [
         "命在寅申",
         "天机太阴天同天梁齐会三方四正"
@@ -1037,6 +1044,7 @@
       "breaking": [
         "三方见火星、地劫（原注：凶杀空劫化忌为下格）"
       ],
+      "to_check": [],
       "evidence": "命在寅申；天机太阴天同天梁齐会三方四正"
     }
   ],
@@ -1081,6 +1089,8 @@
     "checked": [
       "main_stars_complete",
       "ziwei_tianfu_mirror",
+      "main_star_layout",
+      "positions_match_palaces",
       "palace_order",
       "palace_stems",
       "ming_gong_formula",
@@ -1095,7 +1105,7 @@
     "命宫在申（壬申），主星天同（旺）、天梁（陷）；身宫在夫妻宫（午）。",
     "金四局；命主廉贞，身主天同。",
     "生年己干四化：武曲化禄在父母宫，贪狼化权在子女宫，天梁化科在命宫，文曲化忌在父母宫。",
-    "坐贵向贵：天魁天钺一坐命宫、一在三方四正拱照（《全书》ziwei:c001:p0154）。",
+    "坐贵向贵：天魁天钺一坐命宫、一在三方四正拱照（《全书》ziwei:c001:p0154，条件为本项目选读：「迭相坐拱」取一星坐命、另一星在三方四正；ziwei:c001:p0056 另有「魁临命，钺守身」的说法，未收）。",
     "机月同梁：命在寅申、天机太阴天同天梁齐会三方四正（《全书》ziwei:c003:p0129）；减力条件：三方见火星、地劫（原注：凶杀空劫化忌为下格）。",
     "排盘口径：闰月十五日前后分月，晚子时日仍算当日，正月初一换年。"
   ],

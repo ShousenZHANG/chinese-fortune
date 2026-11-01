@@ -150,3 +150,19 @@ def test_nihai_preset_and_explicit_override():
     override = chart(2020, 6, 5, 9, 'male', '--school', 'nihai', '--leap-month', 'split')
     assert override['lunar_date']['month'] == 4
     assert any('倪海厦' in note for note in nihai['notes'])
+
+
+def test_sources_follow_the_switches_in_use():
+    """R6-ZW-SRC-01: a switched placement no longer cites the default rule."""
+    earth = next(b for b in BIRTHS for r in [chart(*b)] if r['wuxing_ju']['number'] == 5)
+    text = chart(*earth, '--changsheng', 'huo-tu', '--changsheng-direction', 'gender')['twelve_gods_sources']['changsheng']
+    assert '土局起寅' in text and '男顺女逆' in text and '阳男阴女顺' not in text
+    assert chart(*earth)['twelve_gods_sources']['changsheng'].startswith('起点出自 ziwei:c002:p0057')
+    basis = chart(1990, 5, 10, 14, 'female', '--tianshi-tianshang', 'zhongzhou', '--tian-ma', 'month',
+                  '--jie-kong', 'single')['miscellaneous_stars_basis']
+    assert '天伤' not in basis.get('ziwei:c002:p0040', [])
+    assert any(k.startswith('流派选项：中州派') and v == ['天伤', '天使'] for k, v in basis.items())
+    assert any(k.startswith('流派选项：天马按生月') for k in basis)
+    assert any(k.startswith('流派选项：截空单星') for k in basis)
+    notes = ' '.join(chart(1990, 5, 10, 14, 'male', '--jie-kong', 'single', '--kui-yue', 'quanshu-1')['notes'])
+    assert '只安一颗截空' in notes and '拆作截路' not in notes and '--kui-yue quanshu-1' in notes

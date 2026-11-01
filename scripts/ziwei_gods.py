@@ -30,6 +30,17 @@ SOURCES = {'changsheng': '起点出自 ziwei:c002:p0057，原文：「火局命�
            'suiqian': '现代通行口径（从年支起岁建，顺行）；转录 ziwei:c002:p0061 只载丧门、吊客、白虎、官府的相对位置'}
 
 
+def sources(changsheng: str = 'shui-tu', direction: str = 'yinyang') -> dict[str, str]:
+    """SOURCES with the 长生 entry rewritten for the switches actually used."""
+    if (changsheng, direction) == ('shui-tu', 'yinyang'):
+        return dict(SOURCES)
+    start = ('土局起寅（--changsheng huo-tu，火土共长生；ziwei:c002:p0057 原文作「土局命申起长生」，此处有意不从）'
+             if changsheng == 'huo-tu' else '起点出自 ziwei:c002:p0057（土局申起）')
+    way = ('男顺女逆（--changsheng-direction gender，照 ziwei:c002:p0056 原文「男命顺数、女命逆数」）'
+           if direction == 'gender' else '顺逆按现代通行的阳男阴女顺、阴男阳女逆（与 ziwei:c002:p0056 原文不同）')
+    return {**SOURCES, 'changsheng': f'{start}；{way}；引用时只引原文，不要把概括加引号'}
+
+
 def _forward(gender: str, year_branch: str) -> bool:
     """阳男阴女顺行、阴男阳女逆行; 阳支 are the even-indexed branches from 子."""
     yang = DIZHI.index(year_branch) % 2 == 0

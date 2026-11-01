@@ -19,7 +19,7 @@ def chart(*extra):
 def test_a_fresh_chart_passes(extra):
     check = chart(*extra)['self_check']
     assert check['ok'] and check['failed'] == [], check['failed']
-    assert len(check['checked']) == 8
+    assert len(check['checked']) == 10
 
 
 def failing(result):
@@ -29,9 +29,13 @@ def failing(result):
 def test_moved_main_star_is_caught():
     result = copy.deepcopy(chart())
     palaces = result['twelve_palaces']
-    star = next(p for p in palaces if p['main_stars'])['main_stars'].pop()
-    next(p for p in palaces if not p['main_stars'])['main_stars'].append(star)
+    target = next(p for p in palaces if not p['main_stars'])
+    target['main_stars'].append(next(p for p in palaces if p['main_stars'])['main_stars'].pop())
     assert 'main_stars_complete' not in failing(result)          # still 14, just elsewhere
+    assert {'main_star_layout', 'positions_match_palaces'} <= failing(result)   # R6-SELF-01
+    result = copy.deepcopy(chart())
+    result['main_stars_positions']['太阳'] = '子' if result['main_stars_positions']['太阳'] != '子' else '丑'
+    assert 'positions_match_palaces' in failing(result)
     result['main_stars_positions']['天府'] = '子' if result['main_stars_positions']['天府'] != '子' else '丑'
     assert 'ziwei_tianfu_mirror' in failing(result)
 

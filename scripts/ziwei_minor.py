@@ -15,6 +15,23 @@ from utils import DIZHI, TIANGAN, hour_branch_index
 NOTE = ("杂曜 39 颗: 9 颗旧有 + 30 颗补全。《全书》有诀者照诀; 月德取巳宫起子"
         "(所引转录作子宫, 与天德不成对); 天德/月德原为流年星, 本命盘按生年太岁安; "
         "截路空亡原诀为一星占两宫, 此处按 iztro 拆作截路(阳支)、空亡(阴支)。")
+JIE_KONG_NOTES = {
+    'single': '截路空亡原诀为一星占两宫；本盘按 --jie-kong single 只安一颗截空：甲至戊取对子中的阳支、己至癸取阴支。',
+    'zhanyan': '截路空亡原诀为一星占两宫；本盘按 --jie-kong zhanyan（占验派）只安一颗截空，戊癸两干改取戌亥。',
+}
+# 流派开关改了安法时, basis 的键改成说明这次用的取法, 不再挂默认的原文段号。
+SWITCHED = {
+    'tianshi': ('流派选项：中州派天使天伤（iztro JS algorithm=zhongzhou，阴男阳女对调）', ('天伤', '天使')),
+    'tian_ma': ('流派选项：天马按生月月支三合', ('天马',)),
+    'single': ('流派选项：截空单星（Renhuai JK_ARR1；对子出自 ziwei:c002:p0073）', ('截空',)),
+    'zhanyan': ('流派选项：占验派截空（Renhuai JK_ARR3；对子出自 ziwei:c002:p0073）', ('截空',)),
+}
+
+
+def minor_note(jie_kong: str = 'split') -> str:
+    if jie_kong == 'split':
+        return NOTE
+    return NOTE.replace('截路空亡原诀为一星占两宫, 此处按 iztro 拆作截路(阳支)、空亡(阴支)。', JIE_KONG_NOTES[jie_kong])
 
 SOURCES: dict[str, str] = {
     "天刑": "ziwei:c002:p0046", "天姚": "ziwei:c002:p0046",
@@ -110,9 +127,16 @@ def place_minor_stars(*, year_stem: str, year_branch: str, lunar_month: int, lun
     }
 
 
-def sources_for(stars: dict[str, str]) -> dict[str, list[str]]:
-    """{passage id or 通行表: [stars]}, grouped so the basis stays short."""
+def sources_for(stars: dict[str, str], *, tianshi: str = 'default', tian_ma: str = 'year',
+                jie_kong: str = 'split') -> dict[str, list[str]]:
+    """{passage id, 通行表 or 流派选项: [stars]}, grouped so the basis stays short."""
+    override: dict[str, str] = {}
+    for key, on in (('tianshi', tianshi == 'zhongzhou'), ('tian_ma', tian_ma == 'month'),
+                    (jie_kong, jie_kong in ('single', 'zhanyan'))):
+        if on:
+            label, names = SWITCHED[key]
+            override.update(dict.fromkeys(names, label))
     grouped: dict[str, list[str]] = {}
     for name in stars:
-        grouped.setdefault(SOURCES.get(name, COMMON_TABLE), []).append(name)
+        grouped.setdefault(override.get(name) or SOURCES.get(name, COMMON_TABLE), []).append(name)
     return grouped
