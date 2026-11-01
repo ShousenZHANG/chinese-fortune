@@ -114,6 +114,11 @@ def _reference_time_needs(text: str) -> list[str]:
     return []
 
 
+QIMEN_SELECT_WORDS = ('择时', '哪个时辰', '什么时辰', '挑时辰', '选时辰', '吉时')
+QIMEN_SELECT_COMMAND = ('python scripts/qimen_select.py --from 起始日期 --days 天数 '
+                        '--target-timezone 择时地点时区')
+
+
 def _named_methods(text: str) -> list[dict]:
     """Concrete entry points for explicitly requested systems, in mention order."""
     # Avoid known place names without hiding the bare method names in a list.
@@ -146,6 +151,9 @@ def _named_methods(text: str) -> list[dict]:
     for words, method, script, reference, command, needs in definitions:
         if method == 'liuren' and '小六壬' in text and '大六壬' not in text:
             continue
+        if method == 'qimen' and any(word in text for word in QIMEN_SELECT_WORDS):
+            script, command = 'qimen_select.py', QIMEN_SELECT_COMMAND
+            needs = ['起始日期、天数（最多 31 天）和择时地点时区；要办的事']
         positions = [text.index(word) for word in words if word in text]
         if positions:
             if method in ('bazi', 'ziwei'):

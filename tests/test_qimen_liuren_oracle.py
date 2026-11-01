@@ -114,8 +114,7 @@ def test_qimen_end_to_end_original_pattern_and_no_direction_score():
     assert got['palaces'][4]['star'] is None
     assert sum(p['star'] is not None for p in got['palaces']) == 1
     assert "auspicious_directions" not in got and "inauspicious_directions" not in got
-    assert all(p["interpretation_status"] == "trigger_only_pending_rule_verification"
-               for p in got["patterns"])
+    assert got["patterns"] == []  # 格局只在 dunjia-zhuanpan 全盘上判
 
 
 @pytest.mark.parametrize('dun,number,hour,star,palace,door,door_palace', [
