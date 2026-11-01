@@ -60,7 +60,9 @@ def test_bad_chart_and_missing_primary_source_fail_closed(chart, monkeypatch):
 def test_reader_text_explains_terms_and_specific_route_conditions(chart):
     text = render_facts(prepare_reading(chart))
     assert '这里的“藏”' in text and '“透”' in text
-    assert '遇伤检查佩印' in text and '现在不成立：' in text and '（缺：' in text
+    assert '遇伤检查佩印：现在不成立，这一条缺' in text
+    # Each open route says it has no missing premise, so a closed route's gap is not read into it.
+    assert all('可算的前提都满足，没有缺项' in line for line in text.split('\n') if line.startswith('印用食伤泄气：'))
     assert all(word not in text for word in ('必定', '事业天花板', '富贵', '分数', 'JSON'))
 
 

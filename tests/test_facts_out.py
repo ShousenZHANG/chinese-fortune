@@ -60,6 +60,31 @@ def test_fortune_reading_facts_out(tmp_path):
     out = tmp_path / 'period.json'
     done = run('fortune_reading.py', '--stdin', '--facts-out', str(out), stdin=json.dumps(request))
     assert done.returncode == 0, done.stdout
-    assert '回答按这个顺序：先说这段时间指 2026-11-01 至 2026-11-30' in done.stdout
+    assert '回答按这个顺序：先说这段时间指 2026-11-01 至 2026-11-30（Asia/Shanghai，两端日期都含）' in done.stdout
     assert '2026年（丙午）' in done.stdout          # 阶段运势 lists the year layer even for a month
     assert json.loads(out.read_text(encoding='utf-8'))['host_notes']
+
+
+def _outlook(event_field, period):
+    request = {'intent': 'period', 'question': '最近运势', 'current_timezone': 'Asia/Shanghai',
+               'request_time': '2026-11-01T10:15:00+08:00', 'period': period,
+               'participants': [{'id': 'me', 'confirmed': True, 'person': {
+                   'birth': {'year': 1990, 'month': 5, 'day': 10, 'hour': 14, 'minute': 0, 'gender': 'male',
+                             'timezone': 'Asia/Shanghai', 'longitude': 116.4}, 'time_certainty': 'exact'}}]}
+    request.update(event_field)
+    done = run('fortune_reading.py', '--stdin', '--markdown', stdin=json.dumps(request))
+    assert done.returncode == 0, done.stdout
+    return done.stdout
+
+
+def test_outlook_without_an_event_still_lists_the_year_layer():
+    """R6-OUT-02: event omitted or {} routes as 阶段运势 and gets the same 流年."""
+    for field in ({}, {'event': {}}, {'event': {'scenario': 'outlook'}}):
+        text = _outlook(field, '月底前')
+        assert '2026年（丙午）' in text and '流年（只列冲克合' in text, field
+
+
+def test_a_window_that_does_not_start_at_midnight_keeps_its_times():
+    """R6-OUT-01: a window given with times keeps them, and its end moment is excluded."""
+    text = _outlook({'event': {'scenario': 'outlook'}}, {'start': '2026-11-01T10:15', 'end': '2026-11-08T10:15'})
+    assert '2026-11-01 10:15 起、到 2026-11-08 10:15 为止（Asia/Shanghai，终点那一刻不含）' in text

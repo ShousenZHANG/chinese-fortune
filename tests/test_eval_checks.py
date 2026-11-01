@@ -82,3 +82,14 @@ def test_recorder_sends_the_prompt_text_of_dict_turns(tmp_path, monkeypatch):
     case = {'id': 'D1', 'turns': [{'prompt': '第一问'}, '第二问']}
     record = run_claude_cases.run_case(case, tmp_path, tmp_path / 'out', 'sonnet', 10)
     assert sent == ['第一问', '第二问'] and record['complete']
+
+
+def test_tool_facts_reads_a_facts_out_file(tmp_path):
+    import json
+
+    import check_claude_answers
+    saved = tmp_path / 'bazi.json'
+    saved.write_text(json.dumps({'ok': True, 'tool': 'bazi_reading', 'chart_facts': {}}), encoding='utf-8')
+    turns = [{'tools': [{'command': f'python scripts/bazi_reading.py --year 2000 --facts-out "{saved}"',
+                         'output': '白话草稿……'}]}]
+    assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': turns})] == ['bazi_reading']

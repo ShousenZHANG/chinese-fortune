@@ -18,16 +18,36 @@ FACT_TOOLS = re.compile(r'bazi_reading|bazi_calc|ziwei_calc|fortune_reading|pair
 CHART_TOOLS = {'bazi_reading', 'bazi', 'ziwei', 'fortune_reading', 'pair_facts', 'liuyao'}
 
 
+FACTS_OUT = re.compile(r"""--facts-out[ =]+(?:"([^"]+)"|'([^']+)'|(\S+))""")
+
+
+def _saved_facts(command: str) -> list[dict]:
+    """JSON a call saved with --facts-out instead of printing (round 6: tool_facts_recorded=0)."""
+    found = []
+    for match in FACTS_OUT.finditer(command):
+        path = Path(next(g for g in match.groups() if g))
+        try:
+            value = json.loads(path.read_text(encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        if isinstance(value, dict) and value.get('tool'):
+            found.append(value)
+    return found
+
+
 def tool_facts(record: dict) -> list[dict]:
-    """JSON objects the recorded tool calls printed, for answer_check --facts.
+    """JSON objects the recorded tool calls printed or saved, for answer_check --facts.
 
     Only the latest turn that ran a chart tool counts: after a user corrects their
     birth data, the earlier chart is stale and must not vouch for the final answer.
+    A --facts-out file is read from where the run left it, so check records on the
+    machine that made them.
     """
     per_turn = []
     for turn in record.get('turns', []):
         found = []
         for tool in turn.get('tools', []):
+            found += _saved_facts(str(tool.get('command') or ''))
             try:
                 value = json.loads(tool.get('output') or '')
             except (TypeError, ValueError):

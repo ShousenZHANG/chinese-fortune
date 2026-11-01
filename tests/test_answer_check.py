@@ -243,3 +243,22 @@ def test_plain_html_table_without_colspan_is_flagged():
     answer = '五行数量：\n<table>\n<tr><td>木</td><td>2</td></tr>\n</table>\n'
     assert [f['code'] for f in check_answer(answer, [])['findings']] == ['table_markup']
     assert check_answer('写作 <trust> 或 <thx> 不是表格标签。', [])['findings'] == []
+
+
+def test_reported_classical_rules_and_stated_ties_are_not_tie_collapse():
+    """Round 6 R2 S05: three rewrites over sentences that were correct."""
+    from answer_check import check_answer
+    facts = [{'tool': 'fortune_reading', 'recommendation': {'status': 'practical_tie'}, 'tied': ['a', 'b']}]
+    fine = ['这天的地支子又是己的天乙贵人，书上说命带贵人最吉，所以也是大吉。',
+            '这天地支子是己的天乙贵人，协纪说命贵人最吉。',
+            '周二和周四在这套方法里算同一等级（都是大吉），古法本身分不出谁更好，你可以按自己方便二选一。']
+    for answer in fine:
+        assert check_answer(answer, facts)['findings'] == [], answer
+    for answer in ('协纪说周二最吉。', '周四最好。'):
+        assert [f['code'] for f in check_answer(answer, facts)['findings']] == ['tie_collapsed'], answer
+
+
+def test_variant_glyph_in_a_quote_is_not_a_fake_quote():
+    from answer_check import check_answer
+    facts = [{'tool': 'fortune_reading', 'x': '原文「支干合命愈為竒上上格也」（xieji:c033:p0020）'}]
+    assert check_answer('原文说「支干合命愈为奇，上上格」。', facts)['findings'] == []

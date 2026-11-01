@@ -532,16 +532,18 @@ def _role_terms(result: dict) -> str:
 def _route_lines(assessment: dict) -> list[str]:
     """The routes in two groups, each condition said once (v5.6: every route repeated
     「不等于已发挥作用」 and the month-resolution condition)."""
+    # One line per route, open ones first, each with only its own missing or pending
+    # items: round 6 R2 merged a closed route's 「缺印透出」 into two open routes
+    # that had no such premise.
     lines: list[str] = []
     closed = [r for r in assessment['routes'] if any(c['state'] == 'not_met' for c in r['conditions'])]
-    if closed:
-        lines.append('现在不成立：' + '；'.join(
-            f"{r['title']}（缺：{'、'.join(c['label'] for c in r['conditions'] if c['state'] == 'not_met')}）"
-            for r in closed) + '。')
     pending = [r for r in assessment['routes'] if r not in closed]
     for route in pending:
         left = [c['label'] for c in route['conditions'] if c['state'] == 'unknown' and c['id'] != 'month_resolution']
-        lines.append(f"{route['title']}：前提已见到" + (f"，还要核：{'；'.join(left)}。" if left else '。'))
+        lines.append(f"{route['title']}：可算的前提都满足，没有缺项" + (f"；这一条还要核：{'；'.join(left)}。" if left else '。'))
+    for route in closed:
+        missing = '、'.join(c['label'] for c in route['conditions'] if c['state'] == 'not_met')
+        lines.append(f"{route['title']}：现在不成立，这一条缺{missing}。")
     if pending:
         lines.append('以上每条还都要核：这条属于月令本格，还是可成立的变格、兼格；只是检索到条款不算格局成立。'
                      '「可见」只说这个字在盘里，不等于它已发挥作用。')

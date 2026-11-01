@@ -202,7 +202,7 @@ def _participant(person: dict, payload: dict, event: dict, now: dict, window: di
     # 阶段运势 — the year the window sits in: round 5 lost T10 on answers that never
     # said which year layer applied to 「最近」.
     start, end = (datetime.fromisoformat(window[k]) for k in ('start', 'end'))
-    outlook = (payload.get('event') or {}).get('scenario') == 'outlook'
+    outlook = event.get('scenario', 'outlook') == 'outlook'
     years = years_asked(payload.get('question', ''), start.year) or (
         list(range(start.year, end.year + 1))[:3] if (end - start).days >= 360
         else list(range(start.year, (end - timedelta(seconds=1)).year + 1))[:2] if outlook else [])
@@ -1423,8 +1423,12 @@ def _terms_line(text: str) -> str:
 def outlook_skeleton(result: dict) -> str:
     """阶段运势的回答顺序: 窗口 -> 各层算到了什么 -> 现实动作 -> 一次边界 (第五轮 T10 输题)."""
     window = result['window']
-    start = datetime.fromisoformat(window['start']).date()
-    last = (datetime.fromisoformat(window['end']) - timedelta(seconds=1)).date()
+    start, end = (datetime.fromisoformat(window[k]) for k in ('start', 'end'))
+    if start.time() == end.time() == datetime.min.time():
+        span = f"{start.date()} 至 {(end - timedelta(days=1)).date()}（{window['timezone']}，两端日期都含）"
+    else:
+        span = (f"{start.strftime('%Y-%m-%d %H:%M')} 起、到 {end.strftime('%Y-%m-%d %H:%M')} 为止"
+                f"（{window['timezone']}，终点那一刻不含）")
     layers = []
     for person in result.get('participants', []):
         for reading in person.get('luck_reading', [])[:1]:
@@ -1436,7 +1440,7 @@ def outlook_skeleton(result: dict) -> str:
             layers.append('流年（只列冲克合，不合总分）')
     if result.get('personal_calendar'):
         layers.append('月和日（出生年相主等级）')
-    return (f"回答按这个顺序：先说这段时间指 {start} 至 {last}（{window['timezone']}）；再逐层说本次算到了什么——"
+    return (f"回答按这个顺序：先说这段时间指 {span}；再逐层说本次算到了什么——"
             + '、'.join(layers) + "，没算到的层（如这件事本身的专门条款）直说没有；然后按用户说的实际处境给一两条现实动作，"
             "标明是现实建议、不是命理结论；「不能保证结果」只说一次，不能代替上面已经能确定的部分。")
 

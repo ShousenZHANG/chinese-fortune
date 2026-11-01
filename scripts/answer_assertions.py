@@ -65,7 +65,13 @@ HEDGE = re.compile(r'候选|待核|未定|尚未|未判|不能确定|无法确�
 TIE_STATUSES = {'tied_no_clause_separates', 'practical_tie', 'preferences_required'}
 TIE_PICK = re.compile(r'最好的一天|最佳|首选|最吉|最好|最合适|最推荐|第一选择|唯一|胜过|优于|好过|强过|优先|其次|更好|更佳|首推|排第一'
                       r'|先选|次选|排出先后|高一个等级|低一个等级|比.{1,8}?(?:高|好|强|吉|优)|排名第[一二]|第一名')
-TIE_KEPT = re.compile(r'并列|都可以|同样|没有先后|不分先后|任选|按你|看你|偏好|都行|等级相同|都保留')
+TIE_KEPT = re.compile(r'并列|都可以|同样|没有先后|不分先后|任选|按你|看你|偏好|都行|等级相同|都保留'
+                      r'|同一等级|同一个等级|二选一|分不出|不分高下|按自己')
+# 「书上说命贵人最吉」 reports a classical rule, not a ranking of the tied candidates
+# (round 6 R2 S05 rewrote a correct answer three times over it). The exemption holds
+# only while no date or candidate sits between the reporting verb and the word.
+REPORTED = re.compile(r'(?:书上|书中|书里|原文|原书|协纪|古书|《[^》]{1,12}》)[^，。；！？]{0,4}?(?:说|云|曰|称|讲|写)')
+CANDIDATE = re.compile(r'周[一二三四五六日天]|星期|\d+\s*[月日号点时]|[上下]午|晚上|早上|这天|那天|这一天|候选|时段|窗口')
 
 
 def sentences(answer: str) -> Iterator[str]:
@@ -287,6 +293,9 @@ def tie_findings(sentence: str) -> list[dict]:
     if any(not NEGATED_BEFORE.search(scope[:m.start()][-3:]) for m in TIE_KEPT.finditer(scope)):
         return []
     for match in TIE_PICK.finditer(scope):
+        said = list(REPORTED.finditer(scope[:match.start()]))
+        if said and not CANDIDATE.search(scope[said[-1].end():match.start()]):
+            continue
         if asserted(sentence, offset + match.start(), offset + match.end()):
             return [_finding('tie_collapsed', sentence, '工具结果是并列，没有条款分出先后')]
     return []
