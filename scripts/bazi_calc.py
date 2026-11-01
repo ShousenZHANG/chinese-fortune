@@ -354,6 +354,8 @@ def build_parser(*, diagnostics: bool = True) -> argparse.ArgumentParser:
                    help="若指定, 视输入日期为农历")
     p.add_argument("--years", type=int, default=80,
                    help="大运覆盖年数 (默认 80)")
+    p.add_argument("--death-date", default=None, metavar="YYYY-MM-DD",
+                   help="已故者的卒日: 大运与流年只列到这一年, 之后的不再给")
     if diagnostics:
         p.add_argument("--no-shensha", action="store_true", help="跳过神煞检测")
         p.add_argument("--no-yongshen", action="store_true", help="跳过用神诊断")
@@ -637,6 +639,19 @@ def _liu_nian(args: argparse.Namespace, solar_cls: Any,
     return liu_nian, current_time_context, now_year
 
 
+def _death_cut(text: str | None, birth_year: int) -> dict | None:
+    if not text:
+        return None
+    try:
+        died = date.fromisoformat(text)
+    except ValueError as exc:
+        raise _ChartError(error_envelope('bazi', 'invalid_input', f'--death-date 须为 YYYY-MM-DD：{text}')) from exc
+    if died.year < birth_year:
+        raise _ChartError(error_envelope('bazi', 'invalid_input', '卒日早于出生年'))
+    return {'date': died.isoformat(), 'year': died.year,
+            'note': f'已故（{died.isoformat()}）：大运与流年只列到 {died.year} 年；之后的年份不排、不解读。'}
+
+
 def _calendar_context(args: argparse.Namespace, cal: _Calendar, hour_known: bool) -> dict[str, Any]:
     calendar_context: dict[str, Any] = {
         'status': 'known_instant' if hour_known else 'birth_time_required',
@@ -730,6 +745,14 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
             warn(f"da_yun unavailable: {exc}")
 
     liu_nian, current_time_context, now_year = _liu_nian(args, solar_cls, day_stem)
+    deceased = _death_cut(getattr(args, 'death_date', None), cal.solar.getYear())
+    if deceased:
+        # B6: a luck cycle or annual year after the death date is not a reading
+        # of anything that happened; it is dropped, not shown with a caveat.
+        da_yun_list = [c for c in da_yun_list if c.get('start_year') is None or c['start_year'] <= deceased['year']]
+        if da_yun_list and da_yun_list[-1].get('end_year', 0) > deceased['year']:
+            da_yun_list[-1] = {**da_yun_list[-1], 'cut_at_death_year': deceased['year']}
+        liu_nian = [row for row in liu_nian if row['year'] <= deceased['year']]
     solar, lunar = cal.solar, cal.lunar
     result: dict[str, Any] = {
         "ok": True,
@@ -799,6 +822,7 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
                             'current_location_year' if now_year is not None else 'needs_current_timezone'),
         "liu_nian_scope": 'calendar_year_reference_list',
         "liu_nian_note": '按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻',
+        "deceased": deceased,
     }
 
     result['schema_version'] = '2.0'

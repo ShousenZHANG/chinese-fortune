@@ -333,8 +333,8 @@ def chart_facts(chart: dict) -> dict:
     keys = ('four_pillars', 'day_master', 'hour_known', 'solar_date', 'lunar_date',
             'true_solar_time', 'timezone', 'birthplace', 'sect', 'qi_yun', 'da_yun',
             'liu_nian', 'current_time_context', 'liu_nian_status', 'liu_nian_scope', 'liu_nian_note',
-            'birth_time_uncertainty', 'qi_yun_status', 'calendar_context')
-    return {key: chart[key] for key in keys if key in chart}
+            'birth_time_uncertainty', 'qi_yun_status', 'calendar_context', 'deceased')
+    return {key: chart[key] for key in keys if key in chart and (key != 'deceased' or chart[key])}
 
 
 def fact_packet(clean: dict, structure: dict | None = None) -> dict:
@@ -371,9 +371,19 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
         clean['true_solar_time']['say'] = offset_sentence(clean['true_solar_time'])
     for cycle in clean.get('da_yun') or []:
         if cycle.get('ganzhi') and cycle.get('start_year'):
-            cycle['say'] = (f"{cycle['start_year']}–{cycle['end_year']} 年走{cycle['ganzhi']}运"
-                            f"（周岁 {cycle['start_age']}–{cycle['end_age']}，虚岁从 {cycle.get('start_age_xusui', '?')} 起）")
+            cycle['say'] = (f"{cycle['start_year']}–{cycle.get('cut_at_death_year') or cycle['end_year']} 年走{cycle['ganzhi']}运"
+                            f"（周岁 {cycle['start_age']}–{cycle['end_age']}，虚岁从 {cycle.get('start_age_xusui', '?')} 起）"
+                            + (f"；卒于 {cycle['cut_at_death_year']} 年，这步运只到这里" if cycle.get('cut_at_death_year') else ''))
     age = age_at_request(clean)
+    deceased = clean.get('deceased')
+    if age and deceased:
+        # B6: a dead person has no age today; give the age at death and say so.
+        died = date.fromisoformat(deceased['date'])
+        born = date.fromisoformat(clean['true_solar_time']['effective_date']) - timedelta(
+            days=clean['true_solar_time'].get('day_offset') or 0)
+        full = died.year - born.year - ((died.month, died.day) < (born.month, born.day))
+        age = {'date': deceased['date'], 'full_years': full, 'nominal_years': None, 'deceased': True,
+               'say': f"已于 {deceased['date']} 去世，享年周岁 {full} 岁；不算今天的年龄，卒年之后的大运流年不排。"}
     if age:
         clean['age_at_request'] = age
     structure = observed_structure(clean)

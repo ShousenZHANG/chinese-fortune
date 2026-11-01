@@ -17,6 +17,7 @@
     "longitude": 120.0,
     "lunar": false,
     "years": 80,
+    "death_date": null,
     "no_shensha": false,
     "no_yongshen": false,
     "no_geju": false,
@@ -1164,6 +1165,7 @@
   "liu_nian_status": "explicit_year",
   "liu_nian_scope": "calendar_year_reference_list",
   "liu_nian_note": "按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻",
+  "deceased": null,
   "schema_version": "2.0",
   "reading_support": {
     "schema_version": "1.0",

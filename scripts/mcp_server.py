@@ -39,7 +39,8 @@ BIRTH = {'year': {'type': 'integer'}, 'month': {'type': 'integer'}, 'day': {'typ
          'gender': {'type': 'string', 'enum': ['male', 'female']},
          'timezone': {'type': 'string', 'description': '出生地 IANA 时区，如 Asia/Shanghai'},
          'city': {'type': 'string'}, 'longitude': {'type': 'number'},
-         'lunar': {'type': 'boolean'}, 'sect': {'type': 'integer', 'enum': [1, 2]}}
+         'lunar': {'type': 'boolean'}, 'sect': {'type': 'integer', 'enum': [1, 2]},
+         'death_date': {'type': 'string', 'description': '已故者卒日 YYYY-MM-DD；大运流年只列到这一年'}}
 
 
 # Mirrors ziwei_calc.SCHOOL_CHOICES (a test keeps them equal); not imported so the

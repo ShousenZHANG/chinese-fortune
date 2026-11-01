@@ -61,7 +61,7 @@ def compact_reading(result: dict) -> dict:
     compact['chart_facts'].pop('liu_nian', None)
     compact['chart_facts']['da_yun'] = [
         {key: value for key, value in cycle.items()
-         if key in ('ganzhi', 'start_year', 'end_year', 'start_age', 'end_age', 'status')}
+         if key in ('ganzhi', 'start_year', 'end_year', 'start_age', 'end_age', 'status', 'cut_at_death_year')}
         for cycle in compact['chart_facts'].get('da_yun', [])]
     review = compact['geju_review']
     for field, prefix in (('unresolved_conditions', 'u'), ('groups', 'g')):
