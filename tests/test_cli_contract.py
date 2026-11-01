@@ -49,6 +49,8 @@ IMPOSSIBLE_INPUTS = [
     ('pair_facts.py', ['--stdin'], '空 JSON 请求'),
     ('birth_candidates.py', ['--stdin'], '空 JSON 请求'),
     ('birth_correction.py', ['--stdin'], '空 JSON 请求'),
+    ('pillars_to_dates.py', ['--year-pillar', '甲丑', '--month-pillar', '丁丑', '--day-pillar', '壬申'], '不存在的干支'),
+    ('pillars_to_dates.py', ['--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--from-year', '1000'], '年份越界'),
     ('liuyao_cast.py', ['rules'], '条款查询缺 id 和主题'),
     ('liuyao_cast.py', ['rules', '--id', 'no-such-rule'], '不存在的条款'),
     ('life_guide.py', ['--scenario', 'travel', '--current-timezone', 'Mars/Base'], '无效时区'),

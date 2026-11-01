@@ -238,6 +238,11 @@ def route(question: str) -> dict:
     if any(word in text for word in FENGSHUI_WORDS):
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
                 'reference': 'references/08-fengshui.md', 'needs': ['实际布局与测量']}
+    if any(w in text for w in ('反查', '反推', '倒推', '推出生日')) and any(w in text for w in ('四柱', '八字', '生日', '出生')):
+        return {'flow': 'pillars_to_dates', 'why': '由四柱反查历法上可能的出生日期与真太阳时窗口',
+                'command': 'python scripts/pillars_to_dates.py --year-pillar 年柱 --month-pillar 月柱 '
+                           '--day-pillar 日柱 [--hour-pillar 时柱] [--from-year 1900 --to-year 2100]',
+                'reference': 'references/00-intake.md', 'needs': ['年月日柱（时柱可缺）']}
     if _corrected_birth(text):
         return {'flow': 'birth_correction',
                 'why': '更正出生资料：先列改了哪项、哪几柱跟着变、哪些旧结论作废，再用新资料重新解读',
