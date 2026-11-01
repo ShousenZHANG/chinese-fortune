@@ -16,11 +16,16 @@ from datetime import date, datetime, timedelta
 from typing import Any
 
 from utils import DIZHI, TIANGAN, hour_branch_index
+from ziwei_gods import year_gods
 from ziwei_palaces import SI_HUA, calc_dou_jun
+from ziwei_stars import KUI_YUE_VARIANTS, LU_CUN, TIAN_KUI, TIAN_MA, TIAN_YUE, _sanhe_set
 
 # 五虎遁: the stem of 寅月 for each year stem.
 TIGER = {'甲': '丙', '己': '丙', '乙': '戊', '庚': '戊', '丙': '庚', '辛': '庚',
          '丁': '壬', '壬': '壬', '戊': '甲', '癸': '甲'}
+# 运限流曜的昌曲按该层天干 (iztro 口径), 与本命按时辰安的文昌文曲不同。
+LAYER_CHANG = dict(zip(TIANGAN, '巳午申酉申酉亥子寅卯'))
+LAYER_QU = dict(zip(TIANGAN, '酉申午巳午巳卯寅子亥'))
 DOU_JUN_PASSAGE = 'ziwei:c002:p0064'
 CONVENTIONS = (
     '流年按农历正月初一换年；立春换年的流派会在正月初一与立春之间得到不同流年。',
@@ -30,6 +35,9 @@ CONVENTIONS = (
     '晚子时（23:00 后）按本盘 --sect：1 整体推进到次日；2 流日与宫位仍算当日，流时时干按历法库取次日干'
     '（与八字同一口径；iztro 默认按当日起时干，流时干支与四化会不同）。',
     '原书只直接记载斗君起法（安斗君诀）；流月逐月顺行、流日、流时的起法是现代排盘通行口径，所选《全书》转录未载明。',
+    '各层流曜（运/流/月/日/时 + 禄羊陀魁钺昌曲马鸾喜）：禄羊陀魁钺昌曲按该层天干，马鸾喜按该层地支；流年另有年解与'
+    '将前、岁前十二神。这是 iztro 等排盘软件的通行口径，所选《全书》转录未载。',
+    '大限层按虚岁（目标农历年减出生农历年加一）找当前大限；未到第一个大限的起运岁数时为 null。',
 )
 LIMIT = '只定各层所在宫位与四化星，不解释当月、当日、当时吉凶，也不推出具体事件。'
 
@@ -43,6 +51,29 @@ def _lunar(target: datetime, sect: int) -> tuple[Any, date]:
     return Solar.fromYmdHms(day.year, day.month, day.day, hour, target.minute, 0).getLunar(), day
 
 
+def layer_stars(prefix: str, stem: str, branch: str, kui_yue: str = 'tongxing') -> dict[str, str]:
+    """One layer's 流曜, e.g. prefix '流' gives 流禄 流羊 … 流喜."""
+    lu = DIZHI.index(LU_CUN[stem])
+    kui, yue = KUI_YUE_VARIANTS[kui_yue].get(stem, (TIAN_KUI[stem], TIAN_YUE[stem]))
+    luan = (3 - DIZHI.index(branch)) % 12
+    return {prefix + '禄': DIZHI[lu], prefix + '羊': DIZHI[(lu + 1) % 12], prefix + '陀': DIZHI[(lu - 1) % 12],
+            prefix + '魁': kui, prefix + '钺': yue, prefix + '昌': LAYER_CHANG[stem], prefix + '曲': LAYER_QU[stem],
+            prefix + '马': TIAN_MA[_sanhe_set(branch)], prefix + '鸾': DIZHI[luan],
+            prefix + '喜': DIZHI[(luan + 6) % 12]}
+
+
+def _decade(da_xian: list[dict] | None, age: int, palaces: dict[str, str], kui_yue: str) -> dict | None:
+    step = next((s for s in da_xian or [] if s['start_age'] <= age <= s['end_age']), None)
+    if step is None:
+        return None
+    stem, branch = step['palace_stem'], step['palace_branch']
+    out = {'layer': '大限', 'ganzhi': stem + branch, 'palace_branch': branch, 'natal_palace': palaces.get(branch),
+           'age_range': step['age_range'], 'nominal_age': age, 'stars': layer_stars('运', stem, branch, kui_yue)}
+    if 'transformations' in step:
+        out['transformations'] = dict(step['transformations'])
+    return out
+
+
 def _layer(name: str, stem: str, branch: str, palace_branch: str, palaces: dict[str, str],
            table: dict[str, dict[str, str]]) -> dict:
     return {'layer': name, 'ganzhi': stem + branch, 'palace_branch': palace_branch,
@@ -51,7 +82,8 @@ def _layer(name: str, stem: str, branch: str, palace_branch: str, palaces: dict[
 
 def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
                      palaces: list[dict], sect: int = 2, include_hour: bool = True,
-                     sihua: dict[str, dict[str, str]] | None = None) -> dict:
+                     sihua: dict[str, dict[str, str]] | None = None, da_xian: list[dict] | None = None,
+                     birth_lunar_year: int | None = None, kui_yue: str = 'tongxing') -> dict:
     """Layers for ``target`` (local clock). ``birth_month`` is the chart's effective lunar month."""
     natal = {p['branch']: p['name'] for p in palaces}
     table = sihua or SI_HUA
@@ -66,16 +98,24 @@ def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
     month_stem = TIANGAN[(TIANGAN.index(TIGER[year_stem]) + effective - 1) % 10]
     month_branch = DIZHI[(DIZHI.index('寅') + effective - 1) % 12]
     day_ganzhi = lunar.getDayInGanZhiExact2()
+    age = lunar.getYear() - birth_lunar_year + 1 if birth_lunar_year else 0
+    year_stars = {**layer_stars('流', year_stem, year_branch, kui_yue),
+                  '年解': DIZHI[(10 - DIZHI.index(year_branch)) % 12]}
     layers = {
-        'liu_nian': _layer('流年', year_stem, year_branch, year_branch, natal, table),
-        'liu_yue': {**_layer('流月', month_stem, month_branch, DIZHI[month_at], natal, table), 'lunar_month': effective},
-        'liu_ri': {**_layer('流日', day_ganzhi[0], day_ganzhi[1], DIZHI[day_at], natal, table), 'lunar_day': lunar_day},
+        'da_xian': _decade(da_xian, age, natal, kui_yue),
+        'liu_nian': {**_layer('流年', year_stem, year_branch, year_branch, natal, table),
+                     'stars': year_stars, 'twelve_gods': year_gods(year_branch)},
+        'liu_yue': {**_layer('流月', month_stem, month_branch, DIZHI[month_at], natal, table), 'lunar_month': effective,
+                    'stars': layer_stars('月', month_stem, month_branch, kui_yue)},
+        'liu_ri': {**_layer('流日', day_ganzhi[0], day_ganzhi[1], DIZHI[day_at], natal, table), 'lunar_day': lunar_day,
+                   'stars': layer_stars('日', day_ganzhi[0], day_ganzhi[1], kui_yue)},
         'liu_shi': None,
     }
     if include_hour:
         hour_ganzhi = lunar.getTimeInGanZhi()
         hour_at = DIZHI[(day_at + hour_branch_index(target.hour)) % 12]
-        layers['liu_shi'] = _layer('流时', hour_ganzhi[0], hour_ganzhi[1], hour_at, natal, table)
+        layers['liu_shi'] = {**_layer('流时', hour_ganzhi[0], hour_ganzhi[1], hour_at, natal, table),
+                             'stars': layer_stars('时', hour_ganzhi[0], hour_ganzhi[1], kui_yue)}
     return {
         'target': {'clock': target.strftime('%Y-%m-%d %H:%M') if include_hour else target.strftime('%Y-%m-%d'),
                    'calendar_day_used': civil_day.isoformat(),

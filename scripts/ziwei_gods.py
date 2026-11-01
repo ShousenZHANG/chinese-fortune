@@ -42,6 +42,12 @@ def _place(names: tuple[str, ...], start: str, forward: bool) -> dict[str, str]:
     return {DIZHI[(base + step * i) % 12]: name for i, name in enumerate(names)}
 
 
+def year_gods(year_branch: str) -> dict[str, dict[str, str]]:
+    """将前、岁前两组, 只随年支; 本命用生年支, 流年用流年支。"""
+    return {'jiangqian': _place(JIANGQIAN, JIANGXING[year_branch], True),
+            'suiqian': _place(SUIQIAN, year_branch, True)}
+
+
 def twelve_gods(*, ju_number: int, gender: str, year_branch: str, lu_cun_branch: str,
                 changsheng: str = 'shui-tu', changsheng_direction: str = 'yinyang') -> dict[str, dict[str, str]]:
     """{set: {palace branch: god}} for the four sets.
@@ -54,6 +60,5 @@ def twelve_gods(*, ju_number: int, gender: str, year_branch: str, lu_cun_branch:
     return {
         'changsheng': _place(CHANGSHENG, start, cs_forward),
         'boshi': _place(BOSHI, lu_cun_branch, forward),
-        'jiangqian': _place(JIANGQIAN, JIANGXING[year_branch], True),
-        'suiqian': _place(SUIQIAN, year_branch, True),
+        **year_gods(year_branch),
     }

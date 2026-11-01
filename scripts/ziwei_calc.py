@@ -124,8 +124,9 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   four_transformations_native da_xian liu_nian_sihua horoscope patterns notes
   dou_jun_basis zhi_shi_basis
 
---horoscope-date [--horoscope-time] 时 horoscope 给 dou_jun liu_nian liu_yue liu_ri liu_shi
-(各层 ganzhi palace_branch natal_palace transformations) conventions limit; 否则为 null。
+--horoscope-date [--horoscope-time] 时 horoscope 给 dou_jun da_xian liu_nian liu_yue liu_ri liu_shi
+(各层 ganzhi palace_branch natal_palace transformations stars; liu_nian 另有 twelve_gods,
+da_xian 另有 age_range nominal_age) conventions limit; 否则为 null。
 
 --brief-palaces 时 twelve_palaces 只留 name/branch/stem/index/main_stars;
 --no-da-xian 时 da_xian 为 null。两者不改变其余字段的值。
@@ -489,7 +490,8 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     if args.horoscope_date:
         horoscope_at, with_hour = parse_target(args.horoscope_date, args.horoscope_time)
         horoscope = horoscope_layers(horoscope_at, birth_month=lunar_month, birth_hour=birth_hour,
-                                     palaces=annotated, sect=args.sect, include_hour=with_hour, sihua=table)
+                                     palaces=annotated, sect=args.sect, include_hour=with_hour, sihua=table,
+                                     da_xian=da_xian, birth_lunar_year=lunar.getYear(), kui_yue=args.kui_yue)
 
     # 10. 格局识别.
     patterns: list[dict] = []

@@ -90,3 +90,35 @@ def test_layers_agree_with_iztro(birth):
         expected = _iztro(birth, target)
         got = {k: (ours[k]['ganzhi'], ours[k]['palace_branch']) for k in expected}
         assert got == expected, (birth, target)
+
+
+def test_layer_stars_and_year_gods_agree_with_iztro_js():
+    """Fixture made by iztro (JS) 2.6.1 — iztro-py has no layer stars; see _meta for the generator."""
+    import json
+    from pathlib import Path
+    data = json.loads((Path(__file__).parent / 'data' / 'iztro_js_layer_stars.json').read_text(encoding='utf-8'))
+    compared = 0
+    for case in data['cases']:
+        ty, tm, td, th = case['target']
+        ours = chart(*case['birth'], '--horoscope-date', f'{ty:04d}-{tm:02d}-{td:02d}',
+                     '--horoscope-time', f'{th:02d}:00')['horoscope']
+        for key, theirs in case['layers'].items():
+            if ours[key] is None:
+                assert key == 'da_xian', (case, key)
+                continue
+            assert ours[key]['ganzhi'] == theirs['ganzhi'], (case['birth'], case['target'], key)
+            assert ours[key]['stars'] == theirs['stars'], (case['birth'], case['target'], key)
+            compared += 1
+        assert ours['liu_nian']['twelve_gods'] == case['layers']['liu_nian']['twelve_gods']
+        if ours['da_xian']:
+            assert ours['da_xian']['nominal_age'] == case['age']
+    assert compared >= 290
+
+
+def test_decade_layer_before_the_first_decade_is_null_and_nihai_hides_its_transformations():
+    young = chart(2020, 6, 5, 9, 'male', '--horoscope-date', '2021-03-01')['horoscope']
+    assert young['da_xian'] is None
+    nihai = chart(1990, 5, 10, 14, 'male', '--school', 'nihai', '--horoscope-date', '2026-10-26')['horoscope']
+    assert nihai['da_xian']['age_range'] and 'transformations' not in nihai['da_xian']
+    usual = chart(1990, 5, 10, 14, 'male', '--horoscope-date', '2026-10-26')['horoscope']
+    assert usual['da_xian']['transformations']['禄'] == '武曲'    # 己丑大限
