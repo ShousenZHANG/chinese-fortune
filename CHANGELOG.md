@@ -17,6 +17,13 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
   - `--focus-palace` 附上该宫各主星的《全书》原句（讲这颗星的段落里提到该宫的那一句），宿主不必逐星再查。
   - `evals/check_claude_answers.py` 读取 `--facts-out` 写出的文件。
   - 新增 `docs/MIGRATION-5.11.md`，两份 README 说明格局字段变化。
+- **第七轮外部复核后的修正**：
+  - `focus.quotes` 把 c002:p0103 星表里「廉真属火……在官禄为官禄主」记在紫微名下（R7-FOCUS-01，P1）：以星开头的段落只取到下一颗星出现之前，句子与别的星同处一个分句的不算。
+  - 禄马交驰原注「忌见杀」的「杀」可指七杀或诸煞，同宫见七杀、陀罗、铃星、地空、地劫时列 `to_check`，不替原文定（R7-PAT-01）。
+  - `answer_check`：「9:00/10:00/11:00」不再当成 00/10 分；「优先推荐这两个」「最好选周二上午或周四」保留了并列，不再报（R7-R2-DIAG-02/03）。
+  - 八字白话首段把不成立的路线按各自缺项分组（第七轮 S18 仍把缺七杀透出的一条写成缺印透出）。
+  - 六爻用神不上卦时给 `fu_shen`：按《增删卜易》先看月建日辰（c032:p0049），否则到本宫首卦找伏神并给飞伏生克（c032:p0063、p0070），附野鹤不用伏神的说法（c032:p0094）；第七轮 N12 宿主为补伏神重起两卦而超时。
+  - `evals/check_claude_answers.py` 识别 `> 文件.json` 重定向与 Read 工具带行号的输出（R7-R2-DIAG-01）。
 - **紫微杂曜 39 颗**：新增月系、日系、时系、年系 30 颗（`ziwei_minor.py`）。`miscellaneous_stars_basis` 按出处分组：《全书》卷二有安星诀的以段号为键，其余归「通行表」。与 iztro-py 14 例逐格一致。月德取巳宫起子（所引转录作子宫，与天德不成对）。
 - **紫微流派开关**：`--kui-yue`（四套，只在庚辛壬癸年不同；其中 quanshu-1 即《全书》「六辛逢虎马」读法）、`--tian-ma year|month`、`--tianshi-tianshang zhongzhou`、`--jie-kong split|single|zhanyan`、`--changsheng shui-tu|huo-tu`、`--changsheng-direction yinyang|gender`；庚年四化增阳武府相、阳武同相；`--year-divide lichun` 按立春交节换本命年。`--school nihai` 预设倪海厦派：闰月整月归下月、晚子算当日、不出宫干自化与大限四化，单项开关可覆盖。天空「顺加生时」、闰月「保持闰月」查不到算法，未实现。
 - **紫微运限流曜**：`horoscope` 各层加 `stars`（运/流/月/日/时 + 禄羊陀魁钺昌曲马鸾喜），流年加年解与将前、岁前十二神，新增 `horoscope.da_xian`（目标日期所在大限）。与 iztro JS 2.6.1 对照 60 组全同。
