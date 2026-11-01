@@ -262,3 +262,13 @@ def test_variant_glyph_in_a_quote_is_not_a_fake_quote():
     from answer_check import check_answer
     facts = [{'tool': 'fortune_reading', 'x': '原文「支干合命愈為竒上上格也」（xieji:c033:p0020）'}]
     assert check_answer('原文说「支干合命愈为奇，上上格」。', facts)['findings'] == []
+
+
+def test_round7_diagnostics_clock_lists_and_two_tied_candidates():
+    from answer_check import check_answer
+    facts = [{'tool': 'fortune_reading', 'recommendation': {'status': 'practical_tie'}, 'tied': ['a', 'b']}]
+    assert check_answer('周三可以 9:00/10:00/11:00 开始。', facts)['findings'] == []          # R7-R2-DIAG-02
+    assert check_answer('如果要一个干净落点，我会优先推荐这两个：', facts)['findings'] == []   # R7-R2-DIAG-03
+    assert check_answer('最好选周二上午或周四。', facts)['findings'] == []
+    assert [f['code'] for f in check_answer('最好选周二上午。', facts)['findings']] == ['tie_collapsed']
+    assert [f['code'] for f in check_answer('这次打 8/10。', [])['findings']] == ['invented_score']

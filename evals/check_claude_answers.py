@@ -19,12 +19,30 @@ CHART_TOOLS = {'bazi_reading', 'bazi', 'ziwei', 'fortune_reading', 'pair_facts',
 
 
 FACTS_OUT = re.compile(r"""--facts-out[ =]+(?:"([^"]+)"|'([^']+)'|(\S+))""")
+# `ziwei_calc.py ... > out.json`: the JSON went to a file, not into the record.
+REDIRECT = re.compile(r"""(?<![0-9&])>\s*(?:"([^"]+\.json)"|'([^']+\.json)'|(\S+\.json))""")
+# The Read tool prefixes each line with its number and a tab (round 7 R7-R2-DIAG-01).
+LINE_NUMBER = re.compile(r'^\s*\d+(?:\t|→)', re.M)
+
+
+def _json_object(text: str) -> dict | None:
+    for candidate in (text, LINE_NUMBER.sub('', text)):
+        try:
+            value = json.loads(candidate)
+        except (TypeError, ValueError):
+            continue
+        if isinstance(value, dict) and value.get('tool'):
+            return value
+    return None
 
 
 def _saved_facts(command: str) -> list[dict]:
-    """JSON a call saved with --facts-out instead of printing (round 6: tool_facts_recorded=0)."""
+    """JSON a call saved with --facts-out or a shell redirect instead of printing."""
     found = []
-    for match in FACTS_OUT.finditer(command):
+    matches = list(FACTS_OUT.finditer(command))
+    if FACT_TOOLS.search(command):
+        matches += list(REDIRECT.finditer(command))
+    for match in matches:
         path = Path(next(g for g in match.groups() if g))
         try:
             value = json.loads(path.read_text(encoding='utf-8'))
@@ -48,11 +66,8 @@ def tool_facts(record: dict) -> list[dict]:
         found = []
         for tool in turn.get('tools', []):
             found += _saved_facts(str(tool.get('command') or ''))
-            try:
-                value = json.loads(tool.get('output') or '')
-            except (TypeError, ValueError):
-                continue
-            if isinstance(value, dict) and value.get('tool'):
+            value = _json_object(tool.get('output') or '')
+            if value is not None:
                 found.append(value)
         per_turn.append(found)
     ran = [i for i, turn in enumerate(record.get('turns', []))

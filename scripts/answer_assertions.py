@@ -41,7 +41,8 @@ SEQUENCE = re.compile(rf'(?:四柱|八字|命盘|排盘)[^。\n{STEM}]{{0,6}}({G
 DAY_MASTER = re.compile(rf'日主\s*(?:是|为|為|：|:)?\s*([{STEM}])')
 
 SCORES = (
-    re.compile(r'(?<![\d.])\d{1,3}(?:\.\d+)?\s*/\s*(?:100|10)(?![\d.])'),
+    # Not a clock list: 9:00/10:00/11:00 once matched 00/10 (round 7 R7-R2-DIAG-02).
+    re.compile(r'(?<![\d.:：])\d{1,3}(?:\.\d+)?\s*/\s*(?:100|10)(?![\d.:：])'),
     re.compile(r'(?:机会|概率|几率|机率|可能性?)\s*(?:是|为|有)?\s*0?\.\d+'),
     re.compile(r'(?<![点时：:\d.])\d+(?:\.\d+)?\s*分(?![钟之])'),
     re.compile(r'(?<=[打得是为給给有评拿])[零一二三四五六七八九十百两]{1,5}分(?![钟之])'),
@@ -66,7 +67,9 @@ TIE_STATUSES = {'tied_no_clause_separates', 'practical_tie', 'preferences_requir
 TIE_PICK = re.compile(r'最好的一天|最佳|首选|最吉|最好|最合适|最推荐|第一选择|唯一|胜过|优于|好过|强过|优先|其次|更好|更佳|首推|排第一'
                       r'|先选|次选|排出先后|高一个等级|低一个等级|比.{1,8}?(?:高|好|强|吉|优)|排名第[一二]|第一名')
 TIE_KEPT = re.compile(r'并列|都可以|同样|没有先后|不分先后|任选|按你|看你|偏好|都行|等级相同|都保留'
-                      r'|同一等级|同一个等级|二选一|分不出|不分高下|按自己')
+                      r'|同一等级|同一个等级|二选一|分不出|不分高下|按自己'
+                      # 「优先推荐这两个」 keeps both tied candidates (round 7 R7-R2-DIAG-03).
+                      r'|这两个|这两天|这两段|这两处|两个都|两天都|二者|两者')
 # 「书上说命贵人最吉」 reports a classical rule, not a ranking of the tied candidates
 # (round 6 R2 S05 rewrote a correct answer three times over it). The exemption holds
 # only while no date or candidate sits between the reporting verb and the word.
@@ -295,6 +298,10 @@ def tie_findings(sentence: str) -> list[dict]:
     for match in TIE_PICK.finditer(scope):
         said = list(REPORTED.finditer(scope[:match.start()]))
         if said and not CANDIDATE.search(scope[said[-1].end():match.start()]):
+            continue
+        # 「最好选周二上午或周四」 names two candidates, which is the tie kept, not collapsed.
+        after = scope[match.end():]
+        if len(CANDIDATE.findall(after)) >= 2 and re.search(r'或|和|与|、|及', after):
             continue
         if asserted(sentence, offset + match.start(), offset + match.end()):
             return [_finding('tie_collapsed', sentence, '工具结果是并列，没有条款分出先后')]

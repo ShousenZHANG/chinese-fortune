@@ -93,3 +93,19 @@ def test_tool_facts_reads_a_facts_out_file(tmp_path):
     turns = [{'tools': [{'command': f'python scripts/bazi_reading.py --year 2000 --facts-out "{saved}"',
                          'output': '白话草稿……'}]}]
     assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': turns})] == ['bazi_reading']
+
+
+def test_tool_facts_reads_redirected_json_and_line_numbered_read_output(tmp_path):
+    """Round 7 R7-R2-DIAG-01: Z04 wrote the chart with > and read it back with Read."""
+    import json
+
+    import check_claude_answers
+    chart = {'ok': True, 'tool': 'ziwei', 'ming_gong': {'branch': '子'}}
+    saved = tmp_path / 'ziwei.json'
+    saved.write_text(json.dumps(chart, ensure_ascii=False), encoding='utf-8')
+    redirected = [{'tools': [{'command': f'python scripts/ziwei_calc.py --year 2000 > "{saved}"', 'output': ''}]}]
+    assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': redirected})] == ['ziwei']
+    numbered = '\n'.join(f'{i:>6}\t{line}' for i, line in enumerate(json.dumps(chart, indent=1).split('\n'), 1))
+    read = [{'tools': [{'command': 'python scripts/ziwei_calc.py --year 2000', 'output': ''},
+                       {'command': str(saved), 'output': numbered}]}]
+    assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': read})] == ['ziwei']

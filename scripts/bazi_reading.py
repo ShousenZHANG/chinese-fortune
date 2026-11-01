@@ -492,11 +492,15 @@ def _routes_summary(routes: list[dict]) -> str:
     if settled:
         parts.append('、'.join(map(name, settled)) + '的条件都已核到')
     if pending:
-        parts.append('、'.join(map(name, pending)) + '的前提已见到，还有条件没核完')
+        parts.append('、'.join(map(name, pending)) + '的前提已见到，各自还有不同的条件没核完（逐条见下）')
     if closed:
-        parts.append(('、'.join(map(name, closed)) if len(closed) <= 2 else f'其余{len(closed)}条路线')
-                     + '现在不成立' if pending or settled else
-                     f'查到的{len(closed)}条取用路线现在都不成立')
+        # Grouped by what each lacks: round 7 S18 still wrote three closed routes as
+        # all 「因缺印透出」 when one lacked 七杀透出.
+        by_gap: dict[str, list[str]] = {}
+        for route in closed:
+            gap = '、'.join(c['label'] for c in route['conditions'] if c['state'] == 'not_met')
+            by_gap.setdefault(gap, []).append(name(route))
+        parts.append('现在不成立的：' + '；'.join(f"{'、'.join(names)}缺{gap}" for gap, names in by_gap.items()))
     return '；'.join(parts)
 
 
