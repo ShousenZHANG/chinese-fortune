@@ -53,6 +53,8 @@ from ziwei_brightness import seven_level
 from ziwei_gods import SOURCES as GOD_SOURCES
 from ziwei_gods import twelve_gods
 from ziwei_horoscope import horoscope_layers, parse_target
+from ziwei_minor import NOTE as MINOR_NOTE
+from ziwei_minor import place_minor_stars, sources_for
 from ziwei_palaces import (
     MING_ZHU,
     SHEN_ZHU,
@@ -98,7 +100,7 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   ok tool version input sect birthplace timezone notes true_solar_time_applied solar_date lunar_date
   year_stem year_branch wuxing_ju ming_gong shen_gong ming_zhu shen_zhu
   dou_jun ziwei_position main_stars_positions lucky_stars_positions
-  malefic_stars_positions miscellaneous_stars_positions twelve_palaces
+  malefic_stars_positions miscellaneous_stars_positions miscellaneous_stars_basis twelve_palaces
   four_transformations_native da_xian liu_nian_sihua horoscope patterns notes
   dou_jun_basis zhi_shi_basis
 
@@ -313,7 +315,10 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     # 4. 六吉 + 六煞 + 杂曜.
     lucky_pos = place_lucky_stars(year_stem, lunar_month, birth_hour)
     malefic_pos = place_malefic_stars(year_stem, year_branch, birth_hour)
-    misc_pos = place_miscellaneous_stars(year_branch)
+    misc_pos = {**place_miscellaneous_stars(year_branch),
+                **place_minor_stars(year_stem=year_stem, year_branch=year_branch,
+                                    lunar_month=lunar_month, lunar_day=lunar_day, hour=birth_hour,
+                                    ming_branch=mg_branch, shen_branch=sg_branch, lucky=lucky_pos)}
 
     # 5. 命主 / 身主 / 斗君.
     # 安命主诀 keys on the 命宫 branch (子宫贪狼丑亥巨门…); 安身主诀 on the 年支.
@@ -481,6 +486,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         "lucky_stars_positions": lucky_pos,
         "malefic_stars_positions": malefic_pos,
         "miscellaneous_stars_positions": misc_pos,
+        "miscellaneous_stars_basis": sources_for(misc_pos),
         "twelve_palaces": (brief_palaces(annotated) if args.brief_palaces
                            else annotated),
         "four_transformations_native": sihua_native,
@@ -498,8 +504,9 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         "notes": sect_note + leap_note
         + ([tz_info["note"]] if tz_info and tz_info["note"] else [])
         + [
-            "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
+            "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/39杂曜/12宫/借宫/自化/大限四化/格局识别。",
             BRIGHTNESS_SEVEN_NOTE if getattr(args, 'brightness', 'mainstream7') == 'mainstream7' else BRIGHTNESS_NOTE,
+            MINOR_NOTE,
             "流年/流月/流日/流时 用 --horoscope-date [--horoscope-time] 计算; 未传时只给本命斗君锚位。",
             "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。",
         ],
@@ -511,7 +518,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         'limits': [
             '星曜与宫位为排盘结果; 象征含义不是个人经历或未来事件',
             '格局标签不直接推出富贵贫贱、健康或关系结论',
-            '亮度采用项目简化表, 未完成全表原刻影像校勘',
+            '亮度默认取通行七级表 (与 iztro 2.6.3 一致), 未做原刻影像校勘',
             '自化等分歧规则须标明所用口径, 不冒充全书共识',
         ],
         'method_rules': method_reading_packet('ziwei', out, brief=args.brief_palaces),
