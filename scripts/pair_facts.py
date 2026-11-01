@@ -32,6 +32,7 @@ from bazi_tables import (
     SAN_XING_TRIPLES,
     TIANGAN_HE,
 )
+from sanyuan_hehun import match
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
 ORDER = ('year', 'month', 'day', 'hour')
@@ -67,7 +68,8 @@ def subject_chart(birth: dict) -> dict:
     chart = calculate_bazi(chart_parser().parse_args(args))
     if not chart.get('ok'):
         raise ValueError(chart.get('message') or chart.get('error') or 'chart failed')
-    return chart_facts(chart)
+    # chart_facts drops the input echo; keep gender for the 三元 palace (男逆女顺).
+    return {**chart_facts(chart), 'gender': birth.get('gender')}
 
 
 def _positions(chart: dict) -> list[dict]:
@@ -197,9 +199,33 @@ def say_lines(relations: list[dict], masters: dict) -> list[str]:
     return lines
 
 
+def _sanyuan(chart_a: dict, chart_b: dict) -> dict | None:
+    """三元九宫合卦 for a man and a woman whose year pillars are settled (R2)."""
+    people = {}
+    for chart in (chart_a, chart_b):
+        gender = chart.get('gender') or (chart.get('input') or {}).get('gender')
+        pillar = ((chart.get('four_pillars') or {}).get('year') or {}).get('ganzhi')
+        year = (chart.get('solar_date') or {}).get('year')
+        if gender not in ('male', 'female') or not pillar or not isinstance(year, int):
+            return None
+        people[gender] = {'year_pillar': pillar, 'birth_year': year}
+    if set(people) != {'male', 'female'}:
+        return None
+    return match(people['male'], people['female'])
+
+
 def pair_facts(chart_a: dict, chart_b: dict) -> dict:
     a_pos, b_pos = _positions(chart_a), _positions(chart_b)
     relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)] + _full_trios(a_pos, b_pos)
+    sanyuan = _sanyuan(chart_a, chart_b)
+    clauses = clause_refs(relations)
+    if sanyuan:
+        clauses = {**clauses, 'not_computed_methods': [m for m in clauses['not_computed_methods']
+                                                       if m != sanyuan['method']],
+                   'computed_methods': [sanyuan['method']]}
+    say = say_lines(relations, _day_masters(chart_a, chart_b))
+    if sanyuan:     # before the 日主互见 line, which stays last
+        say = say[:-1] + [sanyuan['say']] + say[-1:]
     return {
         'ok': True, 'tool': 'pair_facts', 'version': __version__, 'schema_version': '1.0',
         'subjects': {name: {'four_pillars': {p['pillar']: p['ganzhi'] for p in pos},
@@ -208,8 +234,9 @@ def pair_facts(chart_a: dict, chart_b: dict) -> dict:
                      for name, chart, pos in (('A', chart_a, a_pos), ('B', chart_b, b_pos))},
         'day_masters': _day_masters(chart_a, chart_b),
         'relations': relations,
-        'say': say_lines(relations, _day_masters(chart_a, chart_b)),
-        'classical_clauses': clause_refs(relations),
+        'say': say,
+        'sanyuan_jiugong': sanyuan,
+        'classical_clauses': clauses,
         'notes': list(NOTES),
         'boundary': BOUNDARY,
         'next_checks': ['按 references/14-hehun.md 查原文是否把该关系用于两人之间，以及适用的柱位与条件',

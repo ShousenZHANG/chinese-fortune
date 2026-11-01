@@ -97,7 +97,11 @@ def test_same_pillar_branch_class_and_matched_clauses():
     assert ('same_branch_class', '年支卯', '日支卯') in kinds
     matched = {c['id'] for c in result['classical_clauses']['matched']}
     assert {'G5-C08', 'G5-C13'} <= matched  # 天干五合/六合 clauses
-    assert '三元男女九宫合卦' in result['classical_clauses']['not_computed_methods']
+    assert '三元男女九宫合卦' not in result['classical_clauses']['not_computed_methods']
+    assert result['classical_clauses']['computed_methods'] == ['三元男女九宫合卦']
+    assert result['sanyuan_jiugong']['relation'] == '归魂'
+    same_sex = facts(b={**B, 'gender': 'male'})
+    assert same_sex['sanyuan_jiugong'] is None and '三元男女九宫合卦' in same_sex['classical_clauses']['not_computed_methods']
     twin = facts(b={**A, 'gender': 'female'})
     assert any(r['kind'] == 'same_pillar' and r['a'] == '日柱壬申' for r in twin['relations'])
 
