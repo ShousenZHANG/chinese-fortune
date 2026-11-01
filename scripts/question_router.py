@@ -191,6 +191,18 @@ def _knowledge_route(text: str) -> dict:
             'reference': references[0], 'references': references, 'needs': []}
 
 
+UNSURE_WORDS = ('不确定', '记不清', '拿不准', '说不准', '不太清楚', '也可能是', '还是')
+BIRTH_TIME_WORDS = ('出生', '生的', '时辰', '生于')
+
+
+def _uncertain_birth(text: str) -> bool:
+    """「不确定是 5 号晚上还是 6 号凌晨出生」: an unsure birth time, with two moments named."""
+    unsure = any(word in text for word in UNSURE_WORDS)
+    about_birth = any(word in text for word in BIRTH_TIME_WORDS)
+    moments = len(re.findall(r'\d{1,2}\s*[号日点]|凌晨|半夜|深夜|晚上|早上|上午|下午|中午', text))
+    return unsure and about_birth and moments >= 2
+
+
 def _natal_route(text: str) -> dict:
     needs = [BIRTH, *_reference_time_needs(text)]
     return {'flow': 'natal', 'why': '问本命、格局或八字岁运，按相应粒度核对',
@@ -217,6 +229,13 @@ def route(question: str) -> dict:
     if any(word in text for word in FENGSHUI_WORDS):
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
                 'reference': 'references/08-fengshui.md', 'needs': ['实际布局与测量']}
+    if _uncertain_birth(text):
+        return {'flow': 'birth_candidates',
+                'why': '出生时间拿不准、可能跨日期：先列各候选哪几柱不变、哪几柱会变，再按候选分别解读',
+                'command': 'python scripts/birth_candidates.py --stdin',
+                'stdin': '{"birth": {"gender", "timezone", "longitude"|"city"}, '
+                         '"range": {"start": "YYYY-MM-DDTHH:MM", "end": ...} 或 "candidates": [...]}',
+                'reference': 'references/00-intake.md', 'needs': ['性别、出生地、候选时间或时间范围']}
     methods = _named_methods(text)
     relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系'))
     if relationship and (not methods or all(m['method'] in ('bazi', 'ziwei') for m in methods)):
