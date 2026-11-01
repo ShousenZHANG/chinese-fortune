@@ -450,6 +450,54 @@ def yongshen_source(question: str | None) -> dict | None:
 # --------------------------------------------------------------------------- #
 
 LIU_QIN = ("父母", "兄弟", "子孙", "妻财", "官鬼")
+SHENG = {"木": "火", "火": "土", "土": "金", "金": "水", "水": "木"}
+KE = {"木": "土", "土": "水", "水": "火", "火": "金", "金": "木"}
+# 《增删卜易》: 用神不现先看日月, 日月非用神才到本宫首卦寻伏神 (c032:p0049);
+# 飞神伏神的名目与生克见 c032:p0063、p0070。野鹤本人不用伏神而主张再占 (c032:p0094)。
+FU_SHEN_SOURCES = ("zengshan:c032:p0049", "zengshan:c032:p0063", "zengshan:c032:p0070", "zengshan:c032:p0094")
+
+
+def _relation(fly: str, hidden: str) -> str:
+    if fly == hidden:
+        return "飞伏比和"
+    if SHENG[fly] == hidden:
+        return "飞神生伏神"
+    if KE[fly] == hidden:
+        return "飞神克伏神"
+    return "伏神生飞神" if SHENG[hidden] == fly else "伏神克飞神"
+
+
+def hidden_spirits(main_chart: dict, relatives: list[str], month_branch: str, day_branch: str) -> list[dict]:
+    """For each 用神 relative absent from the chart: 日月 first, else the 伏神 from the palace's pure hexagram."""
+    palace = main_chart.get("palace")
+    if not palace:
+        return []
+    palace_wx = BAGUA[palace[:-1]]["wuxing"]
+    pure_num = EIGHT_PALACES[palace][0][0]
+    pure = najia(palace[:-1], palace[:-1])
+    out: list[dict] = []
+    for relative in relatives:
+        if any(line["liu_qin"] == relative for line in main_chart["lines"]):
+            continue
+        by_calendar = [f"{name}{b}" for name, b in (("月建", month_branch), ("日辰", day_branch))
+                       if liu_qin(palace_wx, DIZHI_WUXING[b]) == relative]
+        if by_calendar:
+            out.append({"relative": relative, "status": "taken_from_calendar", "calendar": by_calendar,
+                        "fu_shen": [], "source_ids": list(FU_SHEN_SOURCES[:1])})
+            continue
+        found = []
+        for line in pure:
+            if liu_qin(palace_wx, line["wuxing"]) != relative:
+                continue
+            fly = main_chart["lines"][line["position"] - 1]
+            found.append({"position": line["position"], "stem": line["stem"], "branch": line["branch"],
+                          "wuxing": line["wuxing"],
+                          "fei_shen": {"stem": fly["stem"], "branch": fly["branch"], "wuxing": fly["wuxing"],
+                                       "liu_qin": fly["liu_qin"], "markers": fly["markers"]},
+                          "relation": _relation(fly["wuxing"], line["wuxing"])})
+        out.append({"relative": relative, "status": "hidden", "pure_hexagram": pure_num, "fu_shen": found,
+                    "calendar": [], "source_ids": list(FU_SHEN_SOURCES)})
+    return out
 POSITIONS = {1: "初爻", 2: "二爻", 3: "三爻", 4: "四爻", 5: "五爻", 6: "上爻"}
 
 
@@ -459,6 +507,21 @@ def _line_facts(line: dict, *, relative: bool = True) -> str:
     return (f"{POSITIONS[line['position']]}{line['stem']}{line['branch']}{line['wuxing']}，"
             + (f"{line['liu_qin']}，" if relative else "") + line["state"]
             + ("，" + "，".join(extras) if extras else ""))
+
+
+def _hidden_text(relative: str, hidden: list[dict]) -> str:
+    row = next((h for h in hidden if h["relative"] == relative), None)
+    if row is None:
+        return f"本卦没有{relative}爻出现"
+    if row["status"] == "taken_from_calendar":
+        return (f"本卦没有{relative}爻出现，{'、'.join(row['calendar'])}即是{relative}，"
+                f"按《增删卜易》先以日月为用神（zengshan:c032:p0049）")
+    spots = "；".join(f"本宫首卦{POSITIONS[f['position']]}{f['stem']}{f['branch']}{f['wuxing']}伏在本卦"
+                     f"{POSITIONS[f['position']]}{f['fei_shen']['stem']}{f['fei_shen']['branch']}{f['fei_shen']['wuxing']}"
+                     f"（{f['fei_shen']['liu_qin']}）之下，{f['relation']}" for f in row["fu_shen"])
+    return (f"本卦没有{relative}爻出现，日月也不是{relative}，按《增删卜易》到本宫首卦寻伏神（zengshan:c032:p0049）："
+            f"{spots}。伏神能否得用要看日月、旺衰与飞神（c032:p0071、p0074），本工具不判；"
+            f"野鹤本人不用伏神，主张再占（c032:p0094）")
 
 
 def render_liuyao(out: dict) -> str:
@@ -481,7 +544,7 @@ def render_liuyao(out: dict) -> str:
         for relative in relatives:
             found = [line for line in main["lines"] if line["liu_qin"] == relative]
             places.append(f"{relative}在" + "；".join(_line_facts(line, relative=False) for line in found)
-                          if found else f"本卦没有{relative}爻出现，伏神本工具尚未计算")
+                          if found else _hidden_text(relative, out.get("fu_shen", [])))
         why = (f"《增删卜易》「{source['quote']}」，{source['passage_id']}；{source['mapping']}"
                if source.get("passage_id") else "这一行是通行取法，本库尚未核到古籍出处")
         lead += f"按你问的「{source['keyword']}」，用神取{'、'.join(relatives)}（{why}）：" + "。".join(places) + "。"
@@ -507,7 +570,7 @@ def render_liuyao(out: dict) -> str:
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   method question entropy yongshen_hint yongshen_hint_source cast_time raw_lines main_chart
   changed_chart nuclear_chart active_lines main_judgment main_image
-  active_line_text
+  active_line_text fu_shen reading_support rule_index
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
@@ -680,6 +743,8 @@ def main(argv: list[str] | None = None) -> int:
         "main_image": main_text.get("image", "(暂无)"),
         "active_line_text": active_line_texts,
     }
+    hint = out["yongshen_hint"] or ""
+    out["fu_shen"] = hidden_spirits(main_chart, [q for q in LIU_QIN if q in hint], month_branch, day_branch)
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     out["rule_index"] = rule_index()
     if args.markdown:

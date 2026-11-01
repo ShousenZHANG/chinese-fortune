@@ -278,7 +278,8 @@ def test_markdown_says_when_the_yongshen_is_absent_or_unsourced():
     for line in out["main_chart"]["lines"]:
         if line["liu_qin"] == "官鬼":
             line["liu_qin"] = "兄弟"
-    assert "本卦没有官鬼爻出现，伏神本工具尚未计算" in render_liuyao(out)
+    # fu_shen was worked out on the real chart; edited after the fact, the absence is still said.
+    assert "本卦没有官鬼爻出现" in render_liuyao(out) and "伏神本工具尚未计算" not in render_liuyao(out)
     travel = _cast("这次出行顺利吗", "--markdown").split("\n\n")[0]
     assert "这一行是通行取法，本库尚未核到古籍出处" in travel
     assert "没有对应到本库的用神取法表" in _cast("随便问问", "--markdown")
