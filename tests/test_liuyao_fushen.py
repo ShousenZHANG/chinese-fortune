@@ -44,3 +44,21 @@ def test_markdown_states_the_rule_and_the_dissent(lines, question):
 
 def test_present_relative_needs_no_hidden_spirit():
     assert cast('7,7,7,7,7,7', '2026-09-21', '求财')['fu_shen'] == []
+
+
+def test_calendar_branch_markdown_also_states_the_dissent():
+    """R8-LY-01."""
+    text = subprocess.run([sys.executable, str(SCRIPTS / 'liuyao_cast.py'), 'coins', '--lines', '7,8,9,6,7,7',
+                           '--date', '2026-10-26', '--time', '10:00', '--target-timezone', 'Asia/Shanghai',
+                           '--current-timezone', 'Asia/Shanghai', '--question', '下周的面试能不能通过', '--markdown'],
+                          capture_output=True, text=True, encoding='utf-8', check=True).stdout
+    assert '先以日月为用神' in text and 'c032:p0094' in text
+
+
+def test_hidden_rules_point_at_fu_shen_instead_of_a_second_cast():
+    """R8-LY-02."""
+    import json
+    from pathlib import Path
+    rules = json.loads((Path(SCRIPTS).parent / 'assets' / 'liuyao_rules.json').read_text(encoding='utf-8'))['rules']
+    text = json.dumps([r for r in rules if r['id'].startswith('liuyao-hidden')], ensure_ascii=False)
+    assert '另跑' not in text and 'hidden_spirits' not in text and 'fu_shen' in text

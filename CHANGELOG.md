@@ -24,6 +24,12 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
   - 八字白话首段把不成立的路线按各自缺项分组（第七轮 S18 仍把缺七杀透出的一条写成缺印透出）。
   - 六爻用神不上卦时给 `fu_shen`：按《增删卜易》先看月建日辰（c032:p0049），否则到本宫首卦找伏神并给飞伏生克（c032:p0063、p0070），附野鹤不用伏神的说法（c032:p0094）；第七轮 N12 宿主为补伏神重起两卦而超时。
   - `evals/check_claude_answers.py` 识别 `> 文件.json` 重定向与 Read 工具带行号的输出（R7-R2-DIAG-01）。
+- **第八轮外部复核后的修正**（无 P0/P1；7 项 P2 均按核验方给的复现命令本地复验为已修复）：
+  - 「最近」「近期」「这段时间」不再追问时间范围：`period: "近期"` 取今天到年底（剩不到一个月时算一个月），路由和 SKILL 同步，阶段运势骨架提醒开头说明这是暂按的范围（第八轮 T10 完成度仍输五个对手，原因是首轮只反问了范围）。
+  - `answer_check`：「这两个里最好选周二上午」恢复报出；「最好选A或B」与「优先避开」某个未核时段不再报（R8-TIE-01、R8-R2-DIAG-02）。
+  - 评测提取只认已知工具的成功输出（图表类须带各自的盘面字段），仿 `tool` 键、错误信封、嵌套外壳与普通 JSON 不算；Windows 上识别 MSYS 写法的 `/d/…` 路径（R8-EVAL-01、R8-R2-DIAG-01）。
+  - 六爻：日月取用分支也写明野鹤不用伏神、主张再占；伏神规则条文改为直接读 `fu_shen`，不再要求另起首卦（R8-LY-01、R8-LY-02）。
+  - SKILL、两份 README、MIGRATION-5.11 与 02-ziwei 补上 `fu_shen` 两种状态与 `to_check` 两类用途（R8-STD-01）。
 - **紫微杂曜 39 颗**：新增月系、日系、时系、年系 30 颗（`ziwei_minor.py`）。`miscellaneous_stars_basis` 按出处分组：《全书》卷二有安星诀的以段号为键，其余归「通行表」。与 iztro-py 14 例逐格一致。月德取巳宫起子（所引转录作子宫，与天德不成对）。
 - **紫微流派开关**：`--kui-yue`（四套，只在庚辛壬癸年不同；其中 quanshu-1 即《全书》「六辛逢虎马」读法）、`--tian-ma year|month`、`--tianshi-tianshang zhongzhou`、`--jie-kong split|single|zhanyan`、`--changsheng shui-tu|huo-tu`、`--changsheng-direction yinyang|gender`；庚年四化增阳武府相、阳武同相；`--year-divide lichun` 按立春交节换本命年。`--school nihai` 预设倪海厦派：闰月整月归下月、晚子算当日、不出宫干自化与大限四化，单项开关可覆盖。天空「顺加生时」、闰月「保持闰月」查不到算法，未实现。
 - **紫微运限流曜**：`horoscope` 各层加 `stars`（运/流/月/日/时 + 禄羊陀魁钺昌曲马鸾喜），流年加年解与将前、岁前十二神，新增 `horoscope.da_xian`（目标日期所在大限）。与 iztro JS 2.6.1 对照 60 组全同。

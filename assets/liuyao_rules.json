@@ -1988,7 +1988,7 @@
       "cast_time.month_branch",
       "cast_time.day_branch"
      ],
-     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后到本宫首卦同位置比对。coins 输出的 fu_shen 已按此给出（日月是该类时 status=taken_from_calendar，否则 status=hidden 并列伏爻与同位飞爻），直接读取，不必另起首卦。"
     }
    ],
    "exceptions": [
@@ -2016,7 +2016,7 @@
      "citation_role": "context only; not an independently executed proposal rule"
     }
    ],
-   "allowed_interpretation": "可说明取伏神的查找路径；附带首卦另跑结果才能谈具体伏神。",
+   "allowed_interpretation": "可按 fu_shen 说明伏神在哪一爻、伏于哪个飞神之下及两者生克；伏神得不得用工具不判，须按有用、不得出各条人工核。",
    "forbidden_inferences": [
     "不能由本条直接保证现实成败或预测准确率。",
     "不得把官鬼标签直接认定为疾病、坏人或危险事件。",
@@ -2066,7 +2066,7 @@
       "cast_time.month_branch",
       "cast_time.day_branch"
      ],
-     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后到本宫首卦同位置比对。coins 输出的 fu_shen 已按此给出（日月是该类时 status=taken_from_calendar，否则 status=hidden 并列伏爻与同位飞爻），直接读取，不必另起首卦。"
     },
     {
      "label": "指定主事爻的条件",
@@ -2075,7 +2075,7 @@
       "main_chart.lines[].wuxing",
       "main_chart.palace"
      ],
-     "predicate": "从实际另跑的本宫首卦取目标伏爻，与本卦同位飞爻比较五行，飞五行生伏五行；这是外部审查派生，CLI 没有原生伏神字段。"
+     "predicate": "从 fu_shen 取目标伏爻（本宫首卦同位）与本卦同位飞爻，relation 为「飞神生伏神」即飞五行生伏五行；生扶之外伏神是否得用仍须人工核。"
     }
    ],
    "exceptions": [
@@ -2145,7 +2145,7 @@
       "cast_time.month_branch",
       "cast_time.day_branch"
      ],
-     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后到本宫首卦同位置比对。coins 输出的 fu_shen 已按此给出（日月是该类时 status=taken_from_calendar，否则 status=hidden 并列伏爻与同位飞爻），直接读取，不必另起首卦。"
     },
     {
      "label": "指定主事爻的条件",
@@ -2154,7 +2154,7 @@
       "main_chart.lines[].markers",
       "main_chart.palace"
      ],
-     "predicate": "本条只取飞旬空分支：同位本卦飞爻 markers 含旬空；伏爻来自另跑的本宫首卦。飞破、墓、衰不在此合并。"
+     "predicate": "本条只取飞旬空分支：fu_shen 里同位飞爻的 markers 含旬空；伏爻取自 fu_shen（本宫首卦同位）。飞破、墓、衰不在此合并。"
     }
    ],
    "exceptions": [
@@ -2224,7 +2224,7 @@
       "cast_time.month_branch",
       "cast_time.day_branch"
      ],
-     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后另跑本宫首卦以同位置比对。单次 CLI 无 hidden_spirits，故本条件不能靠单次输出自动完成。"
+     "predicate": "本卦不存在明确指定的目标六亲；日月亦不是该类别，然后到本宫首卦同位置比对。coins 输出的 fu_shen 已按此给出（日月是该类时 status=taken_from_calendar，否则 status=hidden 并列伏爻与同位飞爻），直接读取，不必另起首卦。"
     },
     {
      "label": "指定主事爻的条件",

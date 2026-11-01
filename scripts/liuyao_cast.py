@@ -483,7 +483,7 @@ def hidden_spirits(main_chart: dict, relatives: list[str], month_branch: str, da
                        if liu_qin(palace_wx, DIZHI_WUXING[b]) == relative]
         if by_calendar:
             out.append({"relative": relative, "status": "taken_from_calendar", "calendar": by_calendar,
-                        "fu_shen": [], "source_ids": list(FU_SHEN_SOURCES[:1])})
+                        "fu_shen": [], "source_ids": [FU_SHEN_SOURCES[0], FU_SHEN_SOURCES[3]]})
             continue
         found = []
         for line in pure:
@@ -515,7 +515,8 @@ def _hidden_text(relative: str, hidden: list[dict]) -> str:
         return f"本卦没有{relative}爻出现"
     if row["status"] == "taken_from_calendar":
         return (f"本卦没有{relative}爻出现，{'、'.join(row['calendar'])}即是{relative}，"
-                f"按《增删卜易》先以日月为用神（zengshan:c032:p0049）")
+                f"按《增删卜易》先以日月为用神（zengshan:c032:p0049），不再寻伏神；"
+                f"野鹤本人不用伏神，用神不现时主张再占（c032:p0094）")
     spots = "；".join(f"本宫首卦{POSITIONS[f['position']]}{f['stem']}{f['branch']}{f['wuxing']}伏在本卦"
                      f"{POSITIONS[f['position']]}{f['fei_shen']['stem']}{f['fei_shen']['branch']}{f['fei_shen']['wuxing']}"
                      f"（{f['fei_shen']['liu_qin']}）之下，{f['relation']}" for f in row["fu_shen"])

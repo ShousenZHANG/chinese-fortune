@@ -238,7 +238,7 @@
 
 ## 八、格局
 
-`patterns` 每项给 `name`、`source_status`、`passage_id`、`quote`、`extra_passage_ids`、`reading_note`，以及四组条件：`required`（成格必须）、`bonus`（原文说更好的）、`breaking`（原文说减力或破格的）、`to_check`（原文说「吉多」「凶多」而没给数量，工具只列见到的星，多不多不替原文定）。`source_status` 有三种：`quanshu_definition` 条件照《全书》原句拆出，`quote` 可以直接引用；`quanshu_reading` 书中有此格，但原句的范围或读法有歧义，`reading_note` 写明本项目取了哪种读法、没取哪种，回答时要把这句一起说；`modern_convention` 所选转录查不到，只能说是现代通行的说法。`extra_passage_ids` 是加减条件出自的其他段落。格局是盘面结构的名称，不直接推出富贵贫贱、婚姻、健康；`breaking` 或 `to_check` 有内容时要和 `required` 一起说，不能只报成格。
+`patterns` 每项给 `name`、`source_status`、`passage_id`、`quote`、`extra_passage_ids`、`reading_note`，以及四组条件：`required`（成格必须）、`bonus`（原文说更好的）、`breaking`（原文说减力或破格的）、`to_check`（`to_check` 收两类原文没说死的地方：一是「吉多」「凶多」这类没给数量的说法，只列见到的星；二是原文用词范围未定，如禄马交驰「忌见杀」的「杀」可指七杀或诸煞，只列同宫见到的，多不多、算不算都不替原文定）。`source_status` 有三种：`quanshu_definition` 条件照《全书》原句拆出，`quote` 可以直接引用；`quanshu_reading` 书中有此格，但原句的范围或读法有歧义，`reading_note` 写明本项目取了哪种读法、没取哪种，回答时要把这句一起说；`modern_convention` 所选转录查不到，只能说是现代通行的说法。`extra_passage_ids` 是加减条件出自的其他段落。格局是盘面结构的名称，不直接推出富贵贫贱、婚姻、健康；`breaking` 或 `to_check` 有内容时要和 `required` 一起说，不能只报成格。
 
 | 出处 | 格局 |
 |---|---|
