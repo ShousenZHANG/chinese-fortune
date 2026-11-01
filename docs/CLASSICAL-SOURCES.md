@@ -101,3 +101,5 @@ Python 接口为 `search_classics(query, book=None, chapter=None, limit=5)`、`g
 `scripts/import_classics.py` 是维护工具，**不进入 runtime skill 包**。正常检索完全离线；显式 `--wikisource` 会重新请求来源，不可把它当只读验证。已冻结的三个 HTML 来源可用 `--captured-html ziping --captured-html qiongtong --captured-html yuanhai` 离线重建；重建前后仍需审查变化。采集新版本或取得原刻后，应保留新的独立版本与校勘记录，不能静默覆盖既有版本边界。
 
 `tests/test_classical_library.py` 覆盖真实五书目录、固定引用、正文/注文分层、简繁术语、整段上下文、正文排序、字形保留、文件篡改、目录缺项、缺页、支持来源哈希及路径逃逸。测试通过表示这些软件约束成立，不代替五书逐字校勘或宿主输出盲评。
+
+规则与出处的对应由 `scripts/rule_registry.py` 逐条核链：出处段落（或资产自带的外部来源网址）→ 规则 → 实现函数 → 测试 → 授权。规则仍住在原处（`assets/*.json` 的规则表、各模块的 `SPECS`，以及模块源码里引用的每个段落号），登记表只列举并检查：段落取得到、实现能导入、测试文件存在且提到实现模块、授权能从 `knowledge/manifest.json` 对上。`tests/test_rule_registry.py` 要求零断链，并要求每个引用了段落号的模块都已登记；新增引用而未登记会直接失败。

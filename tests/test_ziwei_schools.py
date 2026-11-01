@@ -166,3 +166,16 @@ def test_sources_follow_the_switches_in_use():
     assert any(k.startswith('流派选项：截空单星') for k in basis)
     notes = ' '.join(chart(1990, 5, 10, 14, 'male', '--jie-kong', 'single', '--kui-yue', 'quanshu-1')['notes'])
     assert '只安一颗截空' in notes and '拆作截路' not in notes and '--kui-yue quanshu-1' in notes
+
+
+def test_ziwei_gods_starts_and_directions_follow_the_cited_passages():
+    from ziwei_gods import CHANGSHENG_START, twelve_gods
+    # ziwei:c002:p0057：火局寅、木局亥、水局申、金局巳、土局申。
+    assert CHANGSHENG_START == {6: '寅', 3: '亥', 2: '申', 4: '巳', 5: '申'}
+    yang_male = twelve_gods(ju_number=6, gender='male', year_branch='子', lu_cun_branch='子')
+    assert yang_male['changsheng']['寅'] == '长生' and yang_male['changsheng']['卯'] == '沐浴'
+    yin_male = twelve_gods(ju_number=6, gender='male', year_branch='丑', lu_cun_branch='子')
+    assert yin_male['changsheng']['丑'] == '沐浴'  # 阴男逆行
+    literal = twelve_gods(ju_number=6, gender='male', year_branch='丑', lu_cun_branch='子',
+                          changsheng_direction='gender')
+    assert literal['changsheng']['卯'] == '沐浴'  # p0056 字面男顺
