@@ -18,6 +18,7 @@ from pathlib import Path
 
 import entropy
 from liuyao_judge import judge
+from liuyao_plan import plan
 from method_rules import method_reading_packet
 from request_time import add_request_arguments, resolve_time
 from utils import (
@@ -565,6 +566,7 @@ def render_liuyao(out: dict) -> str:
     checks = out.get("rule_checks")
     if checks:
         lines.append(_checks_text(checks))
+    lines.extend((out.get("reading_plan") or {}).get("say") or [])
     return "\n\n".join(lines)
 
 
@@ -586,7 +588,7 @@ def _checks_text(checks: dict) -> str:
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   method question entropy yongshen_hint yongshen_hint_source cast_time raw_lines main_chart
   changed_chart nuclear_chart active_lines main_judgment main_image
-  active_line_text fu_shen rule_checks reading_support rule_index
+  active_line_text fu_shen rule_checks reading_plan reading_support rule_index
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
@@ -764,6 +766,7 @@ def main(argv: list[str] | None = None) -> int:
     hint = out["yongshen_hint"] or ""
     out["fu_shen"] = hidden_spirits(main_chart, [q for q in LIU_QIN if q in hint], month_branch, day_branch)
     out["rule_checks"] = judge(out, args.target_position)
+    out["reading_plan"] = plan(out)
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     out["rule_index"] = rule_index()
     if args.markdown:
