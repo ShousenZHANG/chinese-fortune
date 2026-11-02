@@ -211,6 +211,41 @@ def _search(value: dict) -> bool:
             or (value.get('errors') == [] and type(value.get('passages')) is int))
 
 
+def _yilin_lin(value: object) -> bool:
+    if not isinstance(value, dict) or not all(isinstance(value.get(k), str) and value[k] for k in ('ben', 'zhi')):
+        return False
+    if value.get('key') != value['ben'] + '之' + value['zhi']:
+        return False
+    versions = value.get('versions')
+    if not isinstance(versions, list) or len(versions) != 2 or not all(isinstance(row, dict) for row in versions):
+        return False
+    if {row.get('book') for row in versions if isinstance(row.get('book'), str)} != {'yilin', 'yilin_siku'}:
+        return False
+    for row in versions:
+        if not isinstance(row.get('edition'), str) or not row['edition']:
+            return False
+        if row.get('text') is None:
+            if row.get('passage_id') is not None or not isinstance(row.get('reason'), str) or not row['reason']:
+                return False
+        elif not (isinstance(row['text'], str) and row['text']
+                  and isinstance(row.get('passage_id'), str) and row['passage_id'].startswith(row['book'] + ':')
+                  and isinstance(row.get('sha256'), str) and re.fullmatch(r'[0-9a-f]{64}', row['sha256'])):
+            return False
+    return True
+
+
+def _yilin(value: dict) -> bool:
+    query = value.get('query')
+    if not isinstance(query, dict) or not isinstance(query.get('from'), str):
+        return False
+    if query.get('to') is not None:
+        lin = value.get('lin')
+        return (isinstance(lin, dict) and _yilin_lin(lin) and lin['ben'] == query['from'] and lin['zhi'] == query['to'])
+    lins = value.get('lins')
+    return (isinstance(lins, list) and len(lins) == 64 and all(_yilin_lin(lin) and lin['ben'] == query['from'] for lin in lins)
+            and len({lin['zhi'] for lin in lins}) == 64)
+
+
 def _guidance(value: dict) -> bool:
     return ((isinstance(value.get('scenario'), str) and isinstance(value.get('routes'), list)
              and isinstance(value.get('source_status'), str))
@@ -274,7 +309,7 @@ def _zodiac(value: dict) -> bool:
 
 
 SOURCE_CHECKS: dict[str, Callable[[dict], bool]] = {
-    'classical_search': _search, 'classical_guidance': _guidance, 'life_guide': _life_guide,
+    'classical_search': _search, 'classical_guidance': _guidance, 'life_guide': _life_guide, 'yilin': _yilin,
     'huangli': _calendar, 'lunar_convert': _calendar, 'method_rules': _method_rules,
     'meihua': lambda v: _hex(v.get('main_hex')) and isinstance(v.get('ti_yong'), dict),
     'yijing': lambda v: _hex(v.get('main_hex')) or _hex(v) or _rows(v, 'hexagrams', {'number': int, 'name': str}, empty=False),

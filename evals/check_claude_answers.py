@@ -30,6 +30,7 @@ SOURCE_COMMANDS = {
     'explore_cast': 'explore', 'tarot_draw': 'tarot', 'jiemeng_lookup': 'jiemeng', 'reading_support': 'reading_review',
     'fortune_rules': 'fortune_rules', 'fengshui_measure': 'fengshui_measure', 'qimen_select': 'qimen_select',
     'birth_candidates': 'birth_candidates', 'birth_correction': 'birth_correction', 'pillars_to_dates': 'pillars_to_dates',
+    'yilin_lookup': 'yilin',
 }
 COMMANDS = {**FACT_COMMANDS, **SOURCE_COMMANDS}
 LINE_NUMBER = re.compile(r'^\s*\d+(?:\t|→)', re.M)
@@ -94,6 +95,7 @@ def _recorded_invocation_parser(script: str) -> argparse.ArgumentParser:
         'method_rules': (('method', 'rule', 'chart', 'applications'), ('audit',)),
         'fortune_rules': (('scenario',), ('capabilities', 'evidence', 'capabilities-markdown')),
         'reading_support': (('chart', 'packet'), ('stdin', 'markdown')),
+        'yilin_lookup': (('from', 'to'), ()),
     }
     if script in main_options:
         parser = argparse.ArgumentParser(add_help=True)
@@ -248,8 +250,8 @@ def _recorded_call(tool: dict) -> RecordedCall:
         if is_read:
             return RecordedCall(command, None, tuple(_json_outputs(output, False)), False, False)
         relevant = any(name + '.py' in command for name in COMMANDS) or bool(_json_outputs(output, False))
-        outputs = (_problem('unverified_command', problem or 'unresolved invocation'),) if relevant else ()
-        return RecordedCall(command, None, outputs, False, False)
+        unverified_outputs = (_problem('unverified_command', problem or 'unresolved invocation'),) if relevant else ()
+        return RecordedCall(command, None, unverified_outputs, False, False)
     outputs = []
     for saved in invocation.saved_paths:
         path = _native_path(saved)
