@@ -6,6 +6,8 @@ with every birth more than nine minutes away. No optional oracle is needed
 at test runtime. Reproduction and raw oracle output are in the natal-year
 implementation evidence for v60-finalization-20261102.
 """
+from __future__ import annotations
+
 from datetime import datetime
 
 import pytest
