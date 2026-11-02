@@ -616,6 +616,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument('--view', choices=('full', 'compact'), default='full',
                         help='JSON 展示层：full 完整资料；compact 去重并以段号索引原文')
     parser.add_argument('--report', metavar='PATH', help='另存本地 .md/.html 核对报告；不覆盖已有文件')
+    parser.add_argument('--report-style', choices=('plain', 'professional'), default='plain',
+                        help='报告写法：plain 白话（默认）；professional 加四柱表、离线命盘图与条款核查表')
+    parser.add_argument('--report-redact', action='store_true',
+                        help='分享预览：隐去四柱干支、出生日期时间地点、问题原话与公历年份，不附完整 JSON')
     parser.add_argument('--facts-out', metavar='PATH.json',
                         help='把 --view 选定的 JSON 存到这个文件，屏幕只输出白话草稿和文件路径；'
                              '供 answer_check --facts 使用，只覆盖本工具以前写的 JSON')
@@ -636,7 +640,8 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     if args.report:
         try:
-            result['report'] = write_report(result, render_facts(result), args.report)
+            result['report'] = write_report(result, render_facts(result), args.report,
+                                            style=args.report_style, redact=args.report_redact)
         except (OSError, ValueError) as exc:
             json_print(error_envelope('bazi_reading', 'report_unavailable', f'{exc}；请指定新的可写文件路径'))
             return 1

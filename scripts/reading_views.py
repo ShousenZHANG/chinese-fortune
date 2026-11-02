@@ -8,6 +8,7 @@ from html import escape
 from pathlib import Path
 
 from bazi_derivation import asks_derivation
+from report_views import professional_html, professional_markdown, redact_text, route_rows
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 
@@ -141,25 +142,43 @@ def facts_line(path: str) -> str:
             f'发出前核对正文：python scripts/answer_check.py --answer - --facts {path}（正文从标准输入给）。')
 
 
-def write_report(result: dict, facts_text: str, destination: str) -> dict:
-    """Save an explicitly requested, offline report; never replace an existing file."""
+REDACTED = ['四柱干支', '出生日期与时间', '出生地、经度与时区', '问题原话', '公历年份', '完整计算资料']
+
+
+def write_report(result: dict, facts_text: str, destination: str, *, style: str = 'plain',
+                 redact: bool = False) -> dict:
+    """Save an explicitly requested, offline report; never replace an existing file.
+
+    style='professional' adds the pillar table, an inline SVG chart and the condition table; redact=True is a
+    share preview with identifying values masked and no full JSON (report_views)."""
     path = Path(destination).expanduser().resolve()
     if path == SKILL_ROOT or SKILL_ROOT in path.parents:
         raise ValueError('个人报告须保存在技能/仓库目录之外，避免混入发行包')
     suffix = path.suffix.lower()
     if suffix not in ('.md', '.html'):
         raise ValueError('报告路径须以 .md 或 .html 结尾')
+    if style not in ('plain', 'professional'):
+        raise ValueError('报告写法只有 plain 或 professional')
     paragraphs = [p for p in facts_text.split('\n\n') if not p.startswith('写回答时：')]
     notice = '这是传统文化的规则读法，不是对未来的预测；未判项目保留，排盘与起运需用排盘软件复核。'
     metadata = f"版本 {result['version']} · 同一次计算结果 · 完整资料与出处见下方"
     full = json.dumps(result, ensure_ascii=False, indent=2)
+    question = result['question']
+    if redact:
+        paragraphs = [redact_text(p, result) for p in paragraphs]
+        question = '（已隐去）'
+        metadata = f"版本 {result['version']} · 分享预览：已隐去{'、'.join(REDACTED)}"
+        cited = sorted({row['passage'] for row in route_rows(result) if row['passage'] != '—'})
+        full = '所引原文段号（可在随包古籍中查）：\n' + '\n'.join(cited)
+    extra_md = professional_markdown(result, redact) + '\n\n' if style == 'professional' else ''
+    extra_html = professional_html(result, redact) if style == 'professional' else ''
     if suffix == '.md':
         # A variable fence prevents user input from closing the evidence block.
         fence = '`' * max(3, max((len(s) for s in re.findall(r'`+', full)), default=0) + 1)
-        question = re.sub(r'([\\`*_{}\[\]()#+.!|>-])', r'\\\1', escape(result['question']))
+        question_md = re.sub(r'([\\`*_{}\[\]()#+.!|>-])', r'\\\1', escape(question))
         content = (f"# 八字核对报告\n\n{metadata}\n\n{notice}\n\n"
-                   f"问题：{question}\n\n" + '\n\n'.join(paragraphs) +
-                   f'\n\n## 完整计算资料与出处\n\n{fence}json\n{full}\n{fence}\n')
+                   f"问题：{question_md}\n\n" + extra_md + '\n\n'.join(paragraphs) +
+                   f'\n\n## 完整计算资料与出处\n\n{fence}{"" if redact else "json"}\n{full}\n{fence}\n')
     else:
         # Keep the answer and fixed pillars visible before the optional detail.
         lead = ''.join(f'<p>{escape(p)}</p>' for p in paragraphs[:2])
@@ -176,15 +195,20 @@ def write_report(result: dict, facts_text: str, destination: str) -> dict:
                    'summary{cursor:pointer;min-height:44px;align-content:center;font-weight:600}'
                    'summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}'
                    'pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.85rem;line-height:1.65}'
+                   'h2{font-size:1.25rem;margin-top:2rem}.scroll{overflow-x:auto}'
+                   'table{border-collapse:collapse;width:100%;margin:1rem 0;font-variant-numeric:tabular-nums}'
+                   'th,td{border:1px solid #cbd5e1;padding:.4rem .6rem;text-align:left;vertical-align:top}'
+                   'th{background:#f1f5f9}'
                    '@media print{body{background:white}main{max-width:none;padding:0}details{break-before:page}}'
                    '</style><main><h1>八字核对报告</h1>'
                    f'<p class="meta">{escape(metadata)}</p><p class="notice">{escape(notice)}</p>'
-                   f'<p><strong>本次问题：</strong>{escape(result["question"])}</p>'
-                   + lead +
+                   f'<p><strong>本次问题：</strong>{escape(question)}</p>'
+                   + extra_html + lead +
                    '<details><summary>展开盘面说明、术语与条件核查</summary>' + body + '</details>'
                    '<details><summary>展开完整计算资料、条件与原文出处</summary>'
                    f'<pre>{escape(full)}</pre></details></main></html>')
     # Exclusive creation is atomic with respect to collisions and symlinks.
     with path.open('x', encoding='utf-8', newline='\n') as handle:
         handle.write(content)
-    return {'path': str(path), 'format': suffix[1:], 'offline': True}
+    return {'path': str(path), 'format': suffix[1:], 'offline': True, 'style': style, 'redacted': redact,
+            **({'removed': REDACTED} if redact else {})}
