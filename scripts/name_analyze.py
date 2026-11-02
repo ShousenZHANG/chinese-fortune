@@ -17,6 +17,7 @@ import argparse
 import json
 import os
 import sys
+from functools import lru_cache
 
 from utils import (
     WUXING_GEN,
@@ -249,6 +250,32 @@ def stroke_count(ch: str, table: dict[str, int]) -> int | None:
     return table.get(ch)
 
 
+@lru_cache(maxsize=1)
+def asset_chars() -> frozenset[str]:
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', 'name_bihua.json')
+    try:
+        with open(path, encoding='utf-8') as f:
+            return frozenset(json.load(f).get('chars', {}))
+    except (OSError, ValueError, AttributeError):
+        return frozenset()
+
+
+def stroke_source(ch: str, table: dict[str, int]) -> str:
+    """Where a count came from: the Kangxi asset, the built-in short list, or the default 8."""
+    if ch not in table:
+        return 'estimated_default_8'
+    return 'kangxi_table' if ch in asset_chars() else 'builtin_list'
+
+
+# 姓名细分：哪些层算了、按什么体系，哪些层没算、为什么。没有资料的层不补造。
+NOT_COMPUTED = [
+    {'aspect': '音韵（声调、平仄、谐音）', 'reason': '本包没有随附读音资料；要做须另取拼音数据并核授权，暂不做'},
+    {'aspect': '字义与出处', 'reason': '没有随包字典，不凭印象解释字义'},
+    {'aspect': '与八字喜用的配合', 'reason': '随包古籍没有以名字补八字的条款；八字喜用另见 bazi_reading'},
+    {'aspect': '生肖用字宜忌', 'reason': '现代民间说法，没有古籍出处'},
+]
+
+
 # --------------------------------------------------------------------------- #
 # 五格 calculations
 # --------------------------------------------------------------------------- #
@@ -386,7 +413,7 @@ def main(argv: list[str] | None = None) -> int:
         if s is None:
             missing.append(ch)
             s = 8  # safe default
-        chars_info.append({"char": ch, "role": "surname", "strokes": s})
+        chars_info.append({"char": ch, "role": "surname", "strokes": s, "stroke_source": stroke_source(ch, table)})
         surname_strokes.append(s)
 
     for ch in given_chars:
@@ -394,7 +421,7 @@ def main(argv: list[str] | None = None) -> int:
         if s is None:
             missing.append(ch)
             s = 8
-        chars_info.append({"char": ch, "role": "given", "strokes": s})
+        chars_info.append({"char": ch, "role": "given", "strokes": s, "stroke_source": stroke_source(ch, table)})
         given_strokes.append(s)
 
     if missing and getattr(args, "strict", False):
@@ -444,6 +471,17 @@ def main(argv: list[str] | None = None) -> int:
         },
         "boundary": ("本工具只算五格数字与三才配置; 音韵、字义、与生辰八字的补益 "
                      "皆不在内。取名请综合考量, 勿单凭数理。"),
+        "layers": {
+            "computed": [{"aspect": "五格数字与三才五行", "system": "熊崎式五格剖象（近代日本，非古籍）",
+                          "fields": ["five_grids", "san_cai"]},
+                         {"aspect": "逐字笔画",
+                          "system": ("assets/name_bihua.json 康熙笔画表" if not missing else
+                                     f"assets/name_bihua.json 康熙笔画表；{'、'.join(missing)} 不在表中，按默认 8 画估算，"
+                                     "五格数字随之待核"),
+                          "estimated": missing,
+                          "fields": ["characters"]}],
+            "not_computed": NOT_COMPUTED,
+        },
         "summary": "; ".join(summary_parts),
     }
     if missing:

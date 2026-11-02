@@ -30,7 +30,9 @@ VARIANTS_TABLE = Path(__file__).resolve().parents[1] / 'assets' / 'han-variants.
 # edition's own characters; this map is only ever applied to the match key.
 _HAND_ALIASES = {'祇': '祇', '葢': '盖', '擧': '举', '歿': '殁', '衝': '冲', '尅': '克',
                  # Rare glyphs that appear only inside 〔字形…〕 markers, so the generated table skipped them.
-                 '㸃': '点', '滛': '淫', '愽': '博'}
+                 '㸃': '点', '滛': '淫', '愽': '博',
+                 # 异体字, not 繁简: 协纪「支干合命愈為竒」 quoted as 「愈为奇」 was reported as a fake quote.
+                 '竒': '奇'}
 
 
 def _load_variants() -> dict[int, int]:
@@ -290,6 +292,20 @@ def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict
                     if passage['passage_id'] == passage_id:
                         return _result(book, chapter, i)
     raise ValueError('unknown passage: ' + passage_id)
+
+
+def chapter_passages(chapter_id: str, library_root: Path | str | None = None) -> list[dict]:
+    """Every passage of one hash-verified chapter, for tools that index a whole book section."""
+    root = _root(library_root)
+    bid, cid = chapter_id.split(':')
+    for book in _selected_books(root, bid):
+        for entry in book['chapters']:
+            if entry['id'] == cid:
+                path = _path(root, entry['path'])
+                if _hash(path) != entry['sha256']:
+                    raise ValueError('chapter hash mismatch')
+                return list(_read(path)['passages'])
+    raise ValueError('unknown chapter: ' + chapter_id)
 
 
 def get_chapter(chapter_id: str, *, offset: int = 0, limit: int = 5,

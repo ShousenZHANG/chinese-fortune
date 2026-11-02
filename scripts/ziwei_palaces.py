@@ -170,6 +170,9 @@ GENG_SCHOOLS: dict[str, dict[str, str]] = {
     'yang-wu-yin-tong': {"禄": "太阳", "权": "武曲", "科": "太阴", "忌": "天同"},
     'yang-wu-tong-yin': {"禄": "太阳", "权": "武曲", "科": "天同", "忌": "太阴"},
     'yang-wu-fu-tong': {"禄": "太阳", "权": "武曲", "科": "天府", "忌": "天同"},
+    # 后两种取自 Renhuai123/ziwei-doushu SCHOOL_SIHUA_GENG_VARIANTS (GYWFX / GYWTX)。
+    'yang-wu-fu-xiang': {"禄": "太阳", "权": "武曲", "科": "天府", "忌": "天相"},
+    'yang-wu-tong-xiang': {"禄": "太阳", "权": "武曲", "科": "天同", "忌": "天相"},
 }
 
 

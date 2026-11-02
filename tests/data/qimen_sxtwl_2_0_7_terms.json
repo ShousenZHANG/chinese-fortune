@@ -1,0 +1,37 @@
+{
+  "source_url": "https://pypi.org/project/sxtwl/2.0.7/",
+  "version": "2.0.7",
+  "wheel_sha256": "78405ee906adf7b36b07c8942da764646cf8a13b6ae4319f62cbb2aa1b765dd7",
+  "sdist_sha256": "38b24472389f7f6f3521c2c99e4b5e86c0184c7d6eb02e5409c239d21f0a6512",
+  "module_sha256": "04ff66502e3019357f9dd1683390110ad2e69481fd6a267fea49cbfeb15a2c5a",
+  "native_module_sha256": "fc5ef22c8e9e3d0777806d66e965b49facb11c045d6fef0d2c84884a45be68d3",
+  "method": "getJieQiByYear(2026); JD2DD; UTC+08 calendar; no product imports",
+  "timescale_diagnosis": {
+    "source": "sxtwl 2.0.7 eph.cpp:100-151 and eph.h:162-165",
+    "official_source": "https://maia.usno.navy.mil/information/eo-values",
+    "tt_minus_utc_seconds": 69.184,
+    "scope": "2026 fixtures only; restore the old predicted delta-T then subtract TT-UTC; not absolute ephemeris proof"
+  },
+  "terms": [
+    {
+      "name": "夏至",
+      "jq_index": 12,
+      "julian_day": 2461213.183477958,
+      "calendar_utc08": "2026-06-21T16:24:12.495575+08:00",
+      "utc": "2026-06-21T08:24:12.495575+00:00",
+      "raw_seconds": 12.495574951171875,
+      "old_delta_t_seconds": 86.58680760775684,
+      "timescale_corrected_utc": "2026-06-21T08:24:29.898383+00:00"
+    },
+    {
+      "name": "立冬",
+      "jq_index": 21,
+      "julian_day": 2461352.2442859015,
+      "calendar_utc08": "2026-11-07T17:51:46.301880+08:00",
+      "utc": "2026-11-07T09:51:46.301880+00:00",
+      "raw_seconds": 46.3018798828125,
+      "old_delta_t_seconds": 87.18458804713777,
+      "timescale_corrected_utc": "2026-11-07T09:52:04.302468+00:00"
+    }
+  ]
+}

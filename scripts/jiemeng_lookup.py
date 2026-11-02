@@ -16,9 +16,11 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,
+    ok_envelope,
 )
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
+  ok tool version envelope
   --symbol S    symbol category traditional modern_psychology common_scenarios
                 interpretation_status source_status
   --search Q    query count matches[]
@@ -66,19 +68,19 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.categories:
         cats = sorted({s.get("category", "") for s in symbols if s.get("category")})
-        json_print({"categories": cats, "total_symbols": len(symbols)})
+        json_print(ok_envelope("jiemeng", {"categories": cats, "total_symbols": len(symbols)}))
         return 0
 
     if args.search:
         q = args.search
         matches = [s for s in symbols
                    if q in s.get("symbol", "") or q in s.get("category", "")]
-        json_print({"query": q, "count": len(matches), "matches": matches})
+        json_print(ok_envelope("jiemeng", {"query": q, "count": len(matches), "matches": matches}))
         return 0
 
     exact = next((s for s in symbols if s.get("symbol") == args.symbol), None)
     if exact:
-        json_print(exact)
+        json_print(ok_envelope("jiemeng", exact))
         return 0
 
     near = [s["symbol"] for s in symbols

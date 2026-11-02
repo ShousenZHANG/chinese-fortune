@@ -756,7 +756,8 @@ def test_a_daily_outlook_answers_by_the_birth_year():
     (entry,) = result['personal_calendar']['entries']
     assert (entry['date'], entry['ganzhi']) == ('2026-09-18', entry['pillars']['day'])
     lead, body = _render(result)
-    assert lead.startswith(f"按你出生那年的干支（丁丑）看，9月18日（{entry['ganzhi']}）对你是{entry['grade']}")
+    # outlook borrows 相主 (not one of the 37 undertakings), so the lead says it is a 相主 comparison.
+    assert lead.startswith(f"按你出生那年的干支（丁丑）、借用协纪相主比较，9月18日（{entry['ganzhi']}）对你是{entry['grade']}")
     assert 'xieji:c033:p0020' in body and '补查约5分钟' not in body
     # A natal question defaults to a one-day period too; it is not a daily outlook.
     natal = read_request({**request, 'intent': 'natal', 'question': '我的命局怎么样'})
@@ -990,7 +991,7 @@ def test_personal_answers_keep_to_the_word_lists():
         text = render_answer(result)
         assert not style_violations(text), text.split('\n\n')[0]
     assert results[1]['personal_calendar']['entries'][0]['grade'] == '凶'
-    assert render_answer(results[1]).startswith('不好。按你出生那年的干支（丁丑）看，10月24日（辛未）对你是凶：纳音克冲。')
+    assert render_answer(results[1]).startswith('不好。按你出生那年的干支（丁丑）、借用协纪相主比较，10月24日（辛未）对你是凶：纳音克冲。')
 
 
 def test_a_wu_or_gui_day_warns_what_moving_the_time_would_change():

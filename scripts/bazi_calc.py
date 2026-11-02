@@ -48,6 +48,8 @@ from bazi_tables import (
     TIANGAN_HE,
     si_ling,
 )
+from city_resolver import describe as describe_cities
+from city_resolver import resolve as resolve_city
 from reading_support import bazi_reading_packet
 from request_time import add_request_arguments, resolve_time
 from utils import (
@@ -63,7 +65,6 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,
-    lookup_city,
     normalize_birth_time,
     parse_iso,
     validate_birth_input,
@@ -325,7 +326,7 @@ def build_parser(*, diagnostics: bool = True) -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--year", type=int, required=True, help="出生年 (公历或农历)")
-    p.add_argument("--month", type=int, required=True, help="出生月 1-12")
+    p.add_argument("--month", type=int, required=True, help="出生月 1-12；--lunar 时负月份表示闰月")
     p.add_argument("--day", type=int, required=True, help="出生日 1-31")
     p.add_argument("--hour", type=int, default=None,
                    help="出生时 0-23; 省略则标记未知，默认解读比较候选并保留不变的柱")
@@ -353,6 +354,8 @@ def build_parser(*, diagnostics: bool = True) -> argparse.ArgumentParser:
                    help="若指定, 视输入日期为农历")
     p.add_argument("--years", type=int, default=80,
                    help="大运覆盖年数 (默认 80)")
+    p.add_argument("--death-date", default=None, metavar="YYYY-MM-DD",
+                   help="已故者的卒日: 大运与流年只列到这一年, 之后的不再给")
     if diagnostics:
         p.add_argument("--no-shensha", action="store_true", help="跳过神煞检测")
         p.add_argument("--no-yongshen", action="store_true", help="跳过用神诊断")
@@ -412,11 +415,17 @@ def _apply_birthplace(args: argparse.Namespace) -> dict | None:
     # fills what the caller left at its default.
     birthplace = None
     if args.city:
-        row = lookup_city(args.city)
+        row, choices = resolve_city(args.city)
+        if row is None and choices and 'suggested_for' not in choices[0]:
+            raise _ChartError(error_envelope(
+                "bazi", "ambiguous_city",
+                f"出生地「{args.city}」有同名：{describe_cities(choices)}；请加上省份或市名再给一次",
+                candidates=choices))
         if row is None:
+            hint = f"；相近的有：{describe_cities(choices)}" if choices else ""
             raise _ChartError(error_envelope(
                 "bazi", "unknown_city",
-                f"未收录出生地: {args.city}; 请改传 --longitude 与 --timezone"))
+                f"未收录出生地: {args.city}{hint}; 请改传 --longitude 与 --timezone", candidates=choices))
         lon_explicit = args.longitude is not None
         if not lon_explicit:
             args.longitude = row["lon"]
@@ -630,6 +639,19 @@ def _liu_nian(args: argparse.Namespace, solar_cls: Any,
     return liu_nian, current_time_context, now_year
 
 
+def _death_cut(text: str | None, born: date) -> dict | None:
+    if not text:
+        return None
+    try:
+        died = date.fromisoformat(text)
+    except ValueError as exc:
+        raise _ChartError(error_envelope('bazi', 'invalid_input', f'--death-date 须为 YYYY-MM-DD：{text}')) from exc
+    if died < born:
+        raise _ChartError(error_envelope('bazi', 'invalid_input', f'卒日 {died.isoformat()} 早于出生日 {born.isoformat()}'))
+    return {'date': died.isoformat(), 'year': died.year, 'birth_date': born.isoformat(),
+            'note': f'已故（{died.isoformat()}）：大运与流年只列到 {died.year} 年；之后的年份不排、不解读。'}
+
+
 def _calendar_context(args: argparse.Namespace, cal: _Calendar, hour_known: bool) -> dict[str, Any]:
     calendar_context: dict[str, Any] = {
         'status': 'known_instant' if hour_known else 'birth_time_required',
@@ -723,6 +745,15 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
             warn(f"da_yun unavailable: {exc}")
 
     liu_nian, current_time_context, now_year = _liu_nian(args, solar_cls, day_stem)
+    # The civil birth date as given (lunar input converted), independent of the hour and the true-solar shift.
+    deceased = _death_cut(getattr(args, 'death_date', None), date(*base))
+    if deceased:
+        # B6: a luck cycle or annual year after the death date is not a reading
+        # of anything that happened; it is dropped, not shown with a caveat.
+        da_yun_list = [c for c in da_yun_list if c.get('start_year') is None or c['start_year'] <= deceased['year']]
+        if da_yun_list and da_yun_list[-1].get('end_year', 0) > deceased['year']:
+            da_yun_list[-1] = {**da_yun_list[-1], 'cut_at_death_year': deceased['year']}
+        liu_nian = [row for row in liu_nian if row['year'] <= deceased['year']]
     solar, lunar = cal.solar, cal.lunar
     result: dict[str, Any] = {
         "ok": True,
@@ -790,8 +821,11 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
         "liu_nian_status": ('explicit_year' if args.as_of_year is not None else
                             'instant_year_utc' if (current_time_context or {}).get('year_only') else
                             'current_location_year' if now_year is not None else 'needs_current_timezone'),
+        # The year the request stands in; kept when a death date empties liu_nian (R9-LAD02).
+        "reference_year": now_year,
         "liu_nian_scope": 'calendar_year_reference_list',
         "liu_nian_note": '按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻',
+        "deceased": deceased,
     }
 
     result['schema_version'] = '2.0'

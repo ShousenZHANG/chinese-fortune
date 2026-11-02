@@ -1,7 +1,8 @@
 """奇门时家：默认《元灵经》已核地盘与值符值使，未核单元留空。
 
-旧全盘由 --plate-method rotating-compat 显式调用供比较，不声称与
-元灵经同法。来源范围、异文及现代历法约定见 docs/QIMEN-LIUREN-METHODS.md。
+--plate-method dunjia-zhuanpan 按《遁甲演义》转盘排全盘并判卷二格局（qimen_zhuanpan、
+qimen_patterns），每条格局与书中「假如」例对照过。旧全盘由 --plate-method rotating-compat
+显式调用供比较，不判格局，不声称与元灵经同法。来源范围、异文及现代历法约定见 docs/QIMEN-LIUREN-METHODS.md。
 
 CLI:
     python qimen_cast.py --date 2026-05-16 --time 14:30 [--longitude 120]
@@ -14,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime
 
 from qimen_dingju import (
     SOURCE_URL,
@@ -22,6 +24,7 @@ from qimen_dingju import (
     seasonal_context,
     zhi_shi_position,
 )
+from qimen_patterns import NOT_COMPUTED, detect
 from qimen_tables import (  # noqa: F401  (re-exported for callers/tests)
     EIGHT_SHEN_ORDER,
     LIU_YI,
@@ -38,10 +41,9 @@ from qimen_tables import (  # noqa: F401  (re-exported for callers/tests)
     YIN_PALACE_SEQ,
     YIQI_ORDER,
 )
+from qimen_zhuanpan import palace_rows, plate
 from request_time import add_request_arguments, resolve_time
 from utils import (
-    TIANGAN_WUXING,
-    WUXING_KE,
     __version__,
     ensure_utf8_stdio,
     error_envelope,
@@ -98,6 +100,24 @@ def earth_plate(ju_type: str, ju_number: int) -> dict[int, str]:
     path = [full_seq[(start_idx + k) % 9] for k in range(9)]
 
     return {palace: YIQI_ORDER[k] for k, palace in enumerate(path)}
+
+
+def dunjia_futou(instant: datetime, effective_clock: datetime | None = None) -> dict:
+    """Automatic Dunjia plate at an actual instant, with a separate local day/hour clock."""
+    require_lunar()
+    from lunar_python import Lunar, Solar
+    clock = effective_clock if effective_clock is not None else instant
+    lunar = Solar.fromYmdHms(clock.year, clock.month, clock.day,
+                            clock.hour, clock.minute, clock.second).getLunar()
+    ganzhi = {'year': lunar.getYearInGanZhi(), 'month': lunar.getMonthInGanZhi(),
+              'day': lunar.getDayInGanZhi(), 'hour': lunar.getTimeInGanZhi(),
+              'month_shuo': Lunar.fromYmd(lunar.getYear(), lunar.getMonth(), 1).getDayInGanZhi()}
+    term = seasonal_context(instant)
+    ju_type, yuan, number = determine_ju(term['name'], ganzhi['day'])
+    pl = plate(earth_plate(ju_type, number), ju_type, ganzhi['hour'])
+    return {'ganzhi': ganzhi, 'solar_term': term, 'ju_type': ju_type,
+            'san_yuan': yuan, 'ju_number': number, 'plate': pl,
+            'patterns': detect(pl, ganzhi)}
 
 
 # --------------------------------------------------------------------------- #
@@ -248,170 +268,6 @@ def shen_plate(shi_gan_palace: int, ju_type: str) -> dict[int, str]:
 
 
 # --------------------------------------------------------------------------- #
-# 格局 detection
-# --------------------------------------------------------------------------- #
-
-# 三吉门
-JI_MEN: set[str] = {"开门", "休门", "生门"}
-# 三刑
-SAN_XING_PAIRS: list[tuple[str, str]] = [
-    ("寅", "巳"), ("巳", "申"), ("申", "寅"),  # 寅巳申 三刑
-    ("丑", "戌"), ("戌", "未"), ("未", "丑"),  # 丑戌未 三刑
-    ("子", "卯"),                              # 子卯相刑
-    ("辰", "辰"), ("午", "午"), ("酉", "酉"), ("亥", "亥"),  # 自刑
-]
-SAN_XING_LOOKUP: dict[str, set[str]] = {}
-for a, b in SAN_XING_PAIRS:
-    SAN_XING_LOOKUP.setdefault(a, set()).add(b)
-    SAN_XING_LOOKUP.setdefault(b, set()).add(a)
-
-# 天干 五行 之 墓库
-MU_KU: dict[str, str] = {
-    "甲": "未", "乙": "未",  # 木墓于未
-    "丙": "戌", "丁": "戌",  # 火墓于戌
-    "戊": "戌", "己": "戌",  # 阳土寄火墓
-    "庚": "丑", "辛": "丑",  # 金墓于丑
-    "壬": "辰", "癸": "辰",  # 水墓于辰
-}
-
-# 地支 -> palace index (after 寄宫 处理)
-DIZHI_TO_PALACE: dict[str, int] = {
-    "子": 1, "丑": 8, "寅": 8, "卯": 3, "辰": 4, "巳": 4,
-    "午": 9, "未": 2, "申": 2, "酉": 7, "戌": 6, "亥": 6,
-}
-
-
-def detect_patterns(
-    earth: dict[int, str],
-    heaven: dict[int, str],
-    men: dict[int, str],
-    shen: dict[int, str],
-    star: dict[int, str],
-    hour_stem: str,
-    hour_branch: str,
-    day_stem: str,
-    zhi_fu_palace: int,
-    shi_gan_palace: int,
-) -> list[dict[str, str]]:
-    """Detect 8+ common 格局, returning list of {name, evidence}."""
-    patterns: list[dict[str, str]] = []
-
-    # Helper: which palaces hold 三奇?
-    qi_palaces = {q: next((p for p, y in heaven.items() if y == q), None)
-                  for q in SAN_QI}
-
-    # 1. 三诈格 (三奇 三个 都 落在 三吉门).
-    qi_with_ji_men = []
-    for q in SAN_QI:
-        p = qi_palaces.get(q)
-        if p is not None and men.get(p) in JI_MEN:
-            qi_with_ji_men.append((q, p, men.get(p)))
-    if len(qi_with_ji_men) >= 3:
-        ev = "; ".join(f"{q} 在 {p}宫 + {m}" for q, p, m in qi_with_ji_men)
-        patterns.append({"name": "三诈格", "evidence": ev})
-
-    # 2. 天遁: 丙奇 + 生门 + 天上九天 (传统: 丙加生临九天).
-    p_bing = qi_palaces.get("丙")
-    if p_bing is not None and men.get(p_bing) == "生门" and shen.get(p_bing) == "九天":
-        patterns.append({
-            "name": "天遁",
-            "evidence": f"丙奇 在 {p_bing}宫 + 生门 + 九天",
-        })
-
-    # 3. 地遁: 乙奇 + 开门 + 太阴.
-    p_yi = qi_palaces.get("乙")
-    if p_yi is not None and men.get(p_yi) == "开门" and shen.get(p_yi) == "太阴":
-        patterns.append({
-            "name": "地遁",
-            "evidence": f"乙奇 在 {p_yi}宫 + 开门 + 太阴",
-        })
-
-    # 4. 人遁: 丁奇 + 休门 + 太阴 (亦取 开/生门, 与太阴合).
-    p_ding = qi_palaces.get("丁")
-    if (p_ding is not None
-            and men.get(p_ding) in {"休门", "生门", "开门"}
-            and shen.get(p_ding) == "太阴"):
-        patterns.append({
-            "name": "人遁",
-            "evidence": f"丁奇 在 {p_ding}宫 + {men.get(p_ding)} + 太阴",
-        })
-
-    # 5. 青龙返首: 丙加甲 (即 天盘 丙 落于 地盘 戊 之上, 因 戊 代 甲子).
-    #    Equivalent: heaven[X] == '丙' and earth[X] == '戊'.
-    for p in range(1, 10):
-        if heaven.get(p) == "丙" and earth.get(p) == "戊":
-            patterns.append({
-                "name": "青龙返首",
-                "evidence": f"{p}宫 天盘丙 加 地盘戊",
-            })
-            break
-
-    # 6. 飞鸟跌穴: 甲加丙 — 天盘 戊(代甲) 落于 地盘 丙 之上.
-    for p in range(1, 10):
-        if heaven.get(p) == "戊" and earth.get(p) == "丙":
-            patterns.append({
-                "name": "飞鸟跌穴",
-                "evidence": f"{p}宫 天盘戊(代甲) 加 地盘丙",
-            })
-            break
-
-    # 7. 击刑: 值符宫 之地支 与 时支 形成 三刑.
-    #    地支 对应 palace via 后天九宫 (子=1, 寅丑=8, ...).
-    p_branch_map: dict[int, list[str]] = {}
-    for branch, pal in DIZHI_TO_PALACE.items():
-        p_branch_map.setdefault(pal, []).append(branch)
-
-    zf_branches = p_branch_map.get(zhi_fu_palace, [])
-    for b in zf_branches:
-        if hour_branch in SAN_XING_LOOKUP.get(b, set()):
-            patterns.append({
-                "name": "击刑",
-                "evidence": f"值符宫 {zhi_fu_palace}宫({b}) 与时支 {hour_branch} 相刑",
-            })
-            break
-
-    # 8. 入墓: 时干 入 该五行 之墓库 — 时干 落宫 包含 时干墓库地支.
-    mu_branch = MU_KU.get(hour_stem)
-    if mu_branch:
-        mu_palace = DIZHI_TO_PALACE.get(mu_branch)
-        if mu_palace == shi_gan_palace:
-            patterns.append({
-                "name": "入墓",
-                "evidence": f"时干 {hour_stem} 入 {mu_branch}({mu_palace}宫) 之墓",
-            })
-
-    # 9. 五不遇时: 时干 克 日干.
-    if (TIANGAN_WUXING.get(hour_stem)
-            and WUXING_KE.get(TIANGAN_WUXING[hour_stem])
-            == TIANGAN_WUXING.get(day_stem)):
-        patterns.append({
-            "name": "五不遇时",
-            "evidence": f"时干 {hour_stem}({TIANGAN_WUXING[hour_stem]}) 克 "
-                        f"日干 {day_stem}({TIANGAN_WUXING[day_stem]})",
-        })
-
-    # 10. 大格 (庚加癸): 天盘庚 加 地盘癸.
-    for p in range(1, 10):
-        if heaven.get(p) == "庚" and earth.get(p) == "癸":
-            patterns.append({
-                "name": "大格",
-                "evidence": f"{p}宫 天盘庚 加 地盘癸",
-            })
-            break
-
-    # 11. 伏吟: 天盘 与 地盘 完全相同.
-    if all(heaven.get(p) == earth.get(p) for p in range(1, 10)):
-        patterns.append({
-            "name": "伏吟",
-            "evidence": "天盘地盘完全相同",
-        })
-
-    for pattern in patterns:
-        pattern["interpretation_status"] = "trigger_only_pending_rule_verification"
-    return patterns
-
-
-# --------------------------------------------------------------------------- #
 # Build palace records
 # --------------------------------------------------------------------------- #
 
@@ -480,7 +336,7 @@ def jieqi_context(solar_year: int, solar_month: int, solar_day: int) -> tuple[st
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   ok tool version input ganzhi jieqi san_yuan ju_type ju_number shi_gan
   shi_zhi xun_head xun_yi zhi_fu_star zhi_fu_palace zhi_fu_origin_palace
-  zhi_shi_men zhi_shi_palace palaces patterns method_profile summary
+  zhi_shi_men zhi_shi_palace palaces patterns patterns_not_computed method_profile summary
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
@@ -504,9 +360,10 @@ def build_parser() -> argparse.ArgumentParser:
                    help="手动指定 局数 1..9 (与 --ju-type 配合)")
     p.add_argument("--ju-method", choices=["futou", "legacy-days"], default="futou",
                    help="定局口径: 默认符头三元+实交节; legacy-days仅复现旧节气日数法")
-    p.add_argument('--plate-method', choices=['yuanling-core', 'rotating-compat'],
+    p.add_argument('--plate-method', choices=['yuanling-core', 'dunjia-zhuanpan', 'rotating-compat'],
                    default='yuanling-core',
-                   help='默认输出元灵经已核地盘及值符值使；旧全盘仅用 rotating-compat 显式对照')
+                   help='默认输出元灵经已核地盘及值符值使；dunjia-zhuanpan 按遁甲演义转盘排全盘并判格局；'
+                        '旧全盘仅用 rotating-compat 显式对照')
     return p
 
 
@@ -551,7 +408,6 @@ def main(argv: list[str] | None = None) -> int:
     month_gz = lunar.getMonthInGanZhi()
     day_gz = lunar.getDayInGanZhi()
     hour_gz = lunar.getTimeInGanZhi()
-    day_stem = lunar.getDayGan()
     hour_stem = lunar.getTimeGan()
     hour_branch = lunar.getTimeZhi()
 
@@ -565,6 +421,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     term_context = None
     day_futou = None
+    automatic_dunjia = None
     if args.ju_type and args.ju_number:
         ju_type = "阳遁" if args.ju_type == "yang" else "阴遁"
         ju_number = args.ju_number
@@ -576,9 +433,16 @@ def main(argv: list[str] | None = None) -> int:
                 jq_name, days_since = jieqi_context(y, m, d)
                 ju_type, san_yuan, ju_number = determine_ju_legacy(jq_name, days_since)
             else:
-                term_context = seasonal_context(dt)
-                jq_name = term_context["name"]
-                ju_type, san_yuan, ju_number = determine_ju(jq_name, day_gz)
+                if args.plate_method == 'dunjia-zhuanpan':
+                    automatic_dunjia = dunjia_futou(dt, datetime(y, m, d, hh, mm, dt.second))
+                    term_context = automatic_dunjia['solar_term']
+                    ju_type = automatic_dunjia['ju_type']
+                    san_yuan = automatic_dunjia['san_yuan']
+                    ju_number = automatic_dunjia['ju_number']
+                else:
+                    term_context = seasonal_context(dt)
+                    ju_type, san_yuan, ju_number = determine_ju(term_context['name'], day_gz)
+                jq_name = term_context['name']
                 day_futou, _ = futou(day_gz)
         except (ValueError, KeyError) as e:
             json_print(error_envelope('qimen', "ju_determination_failed", str(e)))
@@ -599,7 +463,22 @@ def main(argv: list[str] | None = None) -> int:
 
     core = source_core(ju_type, ju_number, hour_gz)
     zhi_shi_raw = core['zhi_shi']['raw_palace']
-    if args.plate_method == 'yuanling-core':
+    zhi_fu_landed = shi_gan_palace
+    not_computed: list[dict] = []
+    if args.plate_method == 'dunjia-zhuanpan':
+        pl = automatic_dunjia['plate'] if automatic_dunjia else plate(earth, ju_type, hour_gz)
+        zhi_fu_star = pl['zhi_fu']['star']
+        zhi_fu_landed = pl['zhi_fu']['palace']
+        zhi_shi_men = pl['zhi_shi']['door']
+        zhi_shi_palace = pl['zhi_shi']['palace']
+        palaces = palace_rows(pl)
+        from lunar_python import Lunar  # type: ignore
+        shuo = Lunar.fromYmd(lunar.getYear(), lunar.getMonth(), 1).getDayInGanZhi()
+        patterns = (automatic_dunjia['patterns'] if automatic_dunjia else
+                    detect(pl, {'year': year_gz, 'month': month_gz, 'month_shuo': shuo,
+                                'day': day_gz, 'hour': hour_gz}))
+        not_computed = NOT_COMPUTED
+    elif args.plate_method == 'yuanling-core':
         # Never fill unsupported cells with another method's arrangement.
         zhi_fu_star = core['zhi_fu']['star']
         zhi_shi_men = core['zhi_shi']['door']
@@ -622,28 +501,27 @@ def main(argv: list[str] | None = None) -> int:
         zhi_shi_men = men[_resolve_ring_palace(zhi_shi_palace)]
         shen = shen_plate(shi_gan_palace, ju_type)
         palaces = build_palaces(earth, heaven, men, star, shen)
-        patterns = detect_patterns(earth, heaven, men, shen, star,
-                                   hour_stem, hour_branch, day_stem,
-                                   zhi_fu_palace, shi_gan_palace)
+        # 旧盘天盘按九宫飞布、星门按八宫转，与遁甲演义书例不合，不在其上判格局。
+        patterns = []
 
     # 10. Summary
     summary_parts = [
         f"{ju_type}{ju_number}局({san_yuan})",
         f"节气: {jq_name}",
         f"时干 {hour_stem} 落于 {shi_gan_palace}宫({PALACE_INFO[shi_gan_palace]['palace']})",
-        f"值符 {zhi_fu_star} 居 {shi_gan_palace}宫",
+        f"值符 {zhi_fu_star} 居 {zhi_fu_landed}宫",
         f"值使 {zhi_shi_men or '借门待核'}，原数至{zhi_shi_raw}宫",
     ]
-    if patterns:
-        names = ", ".join(pp["name"] for pp in patterns)
-        summary_parts.append(f"格局: {names}")
+    named = list(dict.fromkeys(pp["name"] for pp in patterns if pp["category"] != "门迫" and not pp["variant"]))
+    if named:
+        summary_parts.append(f"格局: {', '.join(named)}")
 
     out = {
         "ok": True,
         "tool": "qimen",
         "version": __version__,
         "time_context": time_context,
-        "completion_status": "partial",
+        "completion_status": "complete" if args.plate_method == 'dunjia-zhuanpan' else "partial",
         "source_core": core,
         "method_profile": {
             "plate_method": args.plate_method,
@@ -654,9 +532,11 @@ def main(argv: list[str] | None = None) -> int:
             "solar_term": term_context,
             "day_boundary": "当地有效钟面00:00换日；23:00小时干支按历库晚子时规则",
             "intercalation": "none",
-            "scope": ("已核地盘、旬首、值符原星及落宫、值使计数；空值为待核，不表示无星无门"
-                      if args.plate_method == 'yuanling-core' else
-                      "旧转盘仅供对照，不与元灵经原例混作同一盘；source_core单列已核结果"),
+            "scope": {"yuanling-core": "已核地盘、旬首、值符原星及落宫、值使计数；空值为待核，不表示无星无门",
+                      "dunjia-zhuanpan": ("遁甲演义转盘：八宫环整体转、中五寄坤二、八神阳顺阴逆；格局照卷二原文判，"
+                                          "与元灵经不同书，source_core 单列元灵经结果"),
+                      "rotating-compat": "旧转盘仅供对照，不判格局，不与元灵经原例混作同一盘；source_core单列已核结果",
+                      }[args.plate_method],
             "legacy_note": "legacy-days只兼容旧定局，其他已修正组件不回退旧错误",
         },
         "input": {
@@ -679,16 +559,18 @@ def main(argv: list[str] | None = None) -> int:
         "xun_head": head_name,
         "xun_yi": head_yi,
         "zhi_fu_star": zhi_fu_star,
-        "zhi_fu_palace": shi_gan_palace,
+        "zhi_fu_palace": zhi_fu_landed,
         "zhi_fu_origin_palace": zhi_fu_palace,
         "zhi_shi_men": zhi_shi_men,
         "zhi_shi_palace": zhi_shi_palace,
         "zhi_shi_raw_palace": zhi_shi_raw,
-        "zhi_shi_basis": ("元灵经卷一：旬首原宫沿一至九宫阳顺阴逆数旬时；中五寄法未决时不填目的宫"
-                          if args.plate_method == 'yuanling-core' else
-                          "兼容方法：九宫数旬时，数完中五寄坤二；寄二不代表已核原典通则"),
+        "zhi_shi_basis": {"yuanling-core": "元灵经卷一：旬首原宫沿一至九宫阳顺阴逆数旬时；中五寄法未决时不填目的宫",
+                          "dunjia-zhuanpan": "遁甲演义：九宫数旬时，数到中五寄坤二（dunjia:c002:p0024）",
+                          "rotating-compat": "兼容方法：九宫数旬时，数完中五寄坤二；寄二不代表已核原典通则",
+                          }[args.plate_method],
         "palaces": palaces,
         "patterns": patterns,
+        "patterns_not_computed": not_computed,
         "summary": "; ".join(summary_parts),
     }
     json_print(out)

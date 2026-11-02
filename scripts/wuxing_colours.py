@@ -248,10 +248,31 @@ def exception_checks(chart: dict, note: str, key: str | None = None) -> list[dic
     return checks
 
 
+UNSUPPORTED = ('穿戴某种颜色或饰物能改运、招财、旺桃花、化解灾祸',
+               '补某种五行能治病或改善健康',
+               '用某个数字、往某个方向就能改变结果',
+               '「五行缺什么」等于数哪种五行的字少')
+
+
+def _layers(advice: dict) -> dict:
+    """「补什么」 in three kinds kept apart: what the texts say, what is reasonable to do, what has no basis (B5)."""
+    tiaohou = advice['tiaohou']
+    traditional = [f"《穷通宝鉴》这一格先取{'、'.join(n['stem'] + '（' + n['wuxing'] + '）' for n in advice['needed'])}："
+                   f"「{tiaohou['quote']}」（{tiaohou['passage_id']}）",
+                   '五行配色：' + '；'.join(f"{w['wuxing']}「{w['colour_quote']}」" for w in advice['wear'])
+                   + f"（{COLOUR_SOURCE}）"]
+    colours = '、'.join(dict.fromkeys(c for w in advice['wear'] for c in w['colours']))
+    practical = [f'喜欢的话，在衣物、配饰、日用品里多用{colours}，挑便宜、可随时换掉的；不必为此花大钱或改变正常生活。',
+                 '想改善的是具体处境（工作、关系、健康），要靠对应的现实行动；颜色和饰物只是个人喜好层面的选择。']
+    return {'traditional': traditional, 'practical': practical, 'unsupported': list(UNSUPPORTED)}
+
+
 def colour_advice(chart: dict, question: str | None = None) -> dict:
     """What suits this chart for what the question asks, or why it cannot be given."""
     advice = _advice(chart)
     advice['aspects'] = aspects_asked(question) or ['colour']
+    if advice['status'] == 'ok':
+        advice['layers'] = _layers(advice)
     return advice
 
 
@@ -461,5 +482,9 @@ def colour_lines(advice: dict, aspects: list[str] | None = None) -> list[str]:
         lines.append('问「五行缺什么」时，古法不数哪种五行少，而是看这张八字最需要哪种；上面按《穷通宝鉴》调候回答，'
                      '《子平真诠》按月令格局取用神是另一种方法，结论要另核，这里不合在一起。')
     lines.append('不列「少穿」的颜色：这几段原文没有说克用神的那种五行就是你的忌神，忌什么要看全盘。')
+    layers = advice.get('layers')
+    if layers and 'element' in aspects:     # 「补什么」 gets the three kinds spelled out (B5)
+        lines.append('现实建议（不是古籍说法）：' + ''.join(layers['practical']))
+        lines.append('没有依据、不能说的：' + '；'.join(layers['unsupported']) + '。')
     lines.append(advice['limit'])
     return lines

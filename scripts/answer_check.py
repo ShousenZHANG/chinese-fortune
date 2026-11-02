@@ -27,6 +27,7 @@ from answer_assertions import (
     tie_findings,
     unresolved_titles,
 )
+from answer_evidence import PillarEvidence, assertion_facts, parse_evidence
 from classical_search import get_passage, iter_passages, normalized
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
 
@@ -49,13 +50,12 @@ TITLE_BEFORE = re.compile(r'《([^》]{1,16})》[^「『“"。！？]{0,40}$')
 PASSAGE_REF = re.compile(r'([a-z]+:c\d{3}:p\d{4})[^「『“"。！？]{0,24}$')
 PASSAGE_REF_AFTER = re.compile(r'^[^「『“"\n]{0,16}?([a-z]+:c\d{3}:p\d{4})')
 NEGATOR = re.compile(r'[不無无非勿莫未弗毋]')
-MODALS = set('可能得宜必敢會会須须當当應应')
+MODALS = set('可能得宜必敢會会須须當当應应以')
+# 「最忌見傷」截成「見傷」：删掉忌、畏一类动词，同样把意思反过来。
+AVOID_VERBS = set('忌畏怕嫌惡恶戒禁')
 # A quote the answer itself says the books do not contain is being refuted, not cited.
 QUOTE_DENIED_BEFORE = re.compile(r'(?:不是|并非|而非|并不是|不等于|远不是|而不是)\s*$')
 QUOTE_REFUTED = re.compile(r'找不到|查不到|没查到|搜不到|检索不到|没有这句|并无此|并无这|不是原文|没有找到|未见|不存在')
-# Facts fields that echo the user rather than the tools: a quote found only there
-# is the user's own wording and proves nothing about the books.
-USER_ECHO = frozenset({'question', 'query', 'normalized_query', 'prompt', 'input', 'request', 'answer'})
 TITLE_AFTER = re.compile(r'^[\s—\-－–、，,：:）)]{0,4}(?:出自|见于|见|语出)?\s*《([^》]{1,16})》')
 CUE_BEFORE = re.compile(r'(原文|古籍|古书|书中|書中|书上|书里|有云|云|曰|有言|条文|口诀|卦辞|爻辞|载|記載|记载)'
                         r'(?:里|中|上)?(?:说|讲|道|写|写道|写着|载|记载|是|为)?\s*[:：，,]?\s*$')
@@ -115,6 +115,18 @@ def _in_order(parts: list[str], text: str) -> bool:
     return True
 
 
+def _flips(cut: str) -> bool:
+    """The text cut away right before a kept part ends on 不/無…, 不可/不可以, or 忌/畏."""
+    if not cut:
+        return False
+    if cut[-1] in AVOID_VERBS:
+        return True
+    i = len(cut)
+    while i > 0 and len(cut) - i < 2 and cut[i - 1] in MODALS:
+        i -= 1
+    return i > 0 and bool(NEGATOR.fullmatch(cut[i - 1]))
+
+
 def _drops_negator(parts: list[str], text: str) -> bool:
     """An elision whose cut ends right on 不/無/非…: 「人道得之，……過也」 drops 不可 and reverses the sentence."""
     start = text.find(parts[0])
@@ -125,23 +137,49 @@ def _drops_negator(parts: list[str], text: str) -> bool:
         found = text.find(part, end)
         if found < 0:
             return False
-        tail = text[max(end, found - 2):found]
-        if len(part) <= 8 and tail and (NEGATOR.fullmatch(tail[-1]) or (
-                len(tail) == 2 and NEGATOR.fullmatch(tail[0]) and tail[1] in MODALS)):
+        if _flips(text[max(end, found - 3):found]):
             return True
         end = found + len(part)
     return False
 
 
-def _in_cited_passage(parts: list[str], passage_id: str) -> bool:
-    """The quote is in that passage's text, its section or its chapter title."""
+SHORT_GAP_CONSEQUENCE = re.compile(r'^(?:则|則|便|方|乃|即|始|斯|无不|無不)')
+SENTENCE_END = re.compile(r'[。！？；]')
+
+
+def _drops_short_condition(parts: list[str], text: str) -> bool:
+    start = text.find(parts[0])
+    if start < 0:
+        return False
+    end = start + len(parts[0])
+    for part in parts[1:]:
+        found = text.find(part, end)
+        if found < 0:
+            return False
+        gap = text[end:found]
+        if gap and len(gap) <= 24 and not SENTENCE_END.search(gap) and SHORT_GAP_CONSEQUENCE.match(part):
+            return True
+        end = found + len(part)
+    return False
+
+
+def _truncates_negator(first: str, text: str) -> bool:
+    """「可逢合」 cut from 「不可逢合」: the quote starts on a modal right after a negator, and that is
+    the only place the book has it."""
+    if not first or first[0] not in MODALS:
+        return False
+    spots = [m.start() for m in re.finditer(re.escape(first), text)]
+    return bool(spots) and all(NEGATOR.fullmatch(text[s - 1:s] or ' ') for s in spots)
+
+
+def _passage_corpus(passage_id: str) -> tuple[tuple[str, str, str], ...]:
     try:
         passage = get_passage(passage_id)
     except ValueError:
-        return False
-    text = _key(MARKER.sub('', GLYPH.sub(r'\1', passage['text'])))
-    headings = _key(passage.get('section') or '') + _key(passage.get('chapter_title') or '')
-    return _in_order(parts, text) or all(p in headings for p in parts)
+        return ()
+    title = _key(passage['book_title'])
+    return tuple((title, passage_id, _key(MARKER.sub('', GLYPH.sub(r'\1', text))))
+                 for text in (passage['text'], passage.get('section'), passage.get('chapter_title')) if text)
 
 
 def _title_matches(cited: str, title: str) -> bool:
@@ -165,7 +203,7 @@ def _quotes(answer: str) -> Iterator[tuple[str, str, str]]:
                answer[last.end():last.end() + 24])
 
 
-def _quote_findings(answer: str, facts_key: str, checked: dict) -> list[dict]:
+def _quote_findings(answer: str, checked: dict) -> list[dict]:
     findings = []
     for quote, before, after in _quotes(answer):
         right_after = re.split(r'[。！？!?\n]', after, maxsplit=1)[0][:16]
@@ -180,33 +218,50 @@ def _quote_findings(answer: str, facts_key: str, checked: dict) -> list[dict]:
             checked['quotes_skipped'] += 1
             continue
         checked['quotes_checked'] += 1
+        cited_name = title.group(1) if title else ''
+        cited = _key(cited_name)
+        passage_id = cited_passage.group(1) if cited_passage else ''
+        passage_rows = _passage_corpus(passage_id) if passage_id else ()
+        known = any(_title_matches(cited, t) for t in _library_titles())
+        if cited and not known:
+            if passage_rows:
+                findings.append(_finding('misattributed_quote', 'error', quote,
+                                         f'所引段落 {passage_id} 不属于《{cited_name}》'))
+            else:
+                findings.append(_finding('quote_outside_library', 'warning', quote,
+                                         f'《{cited_name}》不在随包古籍内，无法核对原文'))
+            continue
+        corpus = _corpus() + passage_rows
         terms = [_key(x) for x in quote.split('、')]
         if len(terms) > 1 and all(0 < len(t) <= 4 for t in terms):
             # 「修造、用事」 lists terms the book uses, not one continuous sentence.
-            hits = [(t, loc) for t, loc, text in _corpus() if all(term in text for term in terms)]
+            hits = [(t, loc, text) for t, loc, text in corpus if all(term in text for term in terms)]
             parts = terms
         else:
             parts = [p for p in (_key(x) for x in ELLIPSIS.split(quote)) if p]
-            hits = [(t, loc) for t, loc, text in _corpus() if _in_order(parts, text)]
-        cited_name = title.group(1) if title else ''
-        cited = _key(cited_name)
-        known = any(_title_matches(cited, t) for t in _library_titles())
+            hits = [(t, loc, text) for t, loc, text in corpus if _in_order(parts, text)]
+        sources = [(loc, text) for t, loc, text in hits
+                   if (not cited or _title_matches(cited, t)) and (not passage_id or loc == passage_id)]
         elided = len(parts) > 1 and bool(ELLIPSIS.search(quote))
-        cut = next((loc for _, loc, text in _corpus() if elided and _drops_negator(parts, text)), None)
-        if hits and cut:
+        cut = next((loc for loc, text in sources if elided and _drops_negator(parts, text)), None)
+        condition = next((loc for loc, text in sources if elided and _drops_short_condition(parts, text)), None)
+        truncated = sources and all(_truncates_negator(parts[0], text) for _, text in sources)
+        if cut:
             findings.append(_finding('elision_drops_negation', 'error', quote,
                                      f'省略号删掉了 {cut} 原文紧挨着保留部分的否定字，意思被反过来了'))
-        elif hits and cited_passage and not _in_cited_passage(parts, cited_passage.group(1)):
+        elif truncated:
+            findings.append(_finding('elision_drops_negation', 'error', quote,
+                                     f'引文开头截掉了 {sources[0][0]} 原文紧挨着的否定字，意思被反过来了'))
+        elif condition:
+            findings.append(_finding('elision_drops_condition', 'error', quote,
+                                     f'省略号删掉了 {condition} 原文里结论前的条件，条件句变成了无条件的说法'))
+        elif hits and passage_id and not sources:
             findings.append(_finding('misattributed_quote', 'error', quote,
-                                     f'所引段落 {cited_passage.group(1)} 里没有这段原文'))
-        elif hits and cited and known and not any(_title_matches(cited, t) for t, _ in hits):
+                                     f'所引段落 {passage_id} 与所署书名未能共同核对这段原文'))
+        elif hits and cited and not sources:
             findings.append(_finding('misattributed_quote', 'error', quote, f'原文在 {hits[0][1]}，不在《{cited_name}》'))
-        elif not hits and not (len(parts) == 1 and parts[0] in facts_key):
-            if cited and not known:
-                findings.append(_finding('quote_outside_library', 'warning', quote,
-                                         f'《{cited_name}》不在随包古籍内，无法核对原文'))
-            else:
-                findings.append(_finding('unverified_quote', 'error', quote, '随包古籍和工具结果里都找不到这段原文'))
+        elif not hits:
+            findings.append(_finding('unverified_quote', 'error', quote, '随包古籍内找不到这段原文'))
     return findings
 
 
@@ -214,21 +269,32 @@ def _finding(code: str, severity: str, excerpt: str, detail: str) -> dict:
     return {'code': code, 'severity': severity, 'excerpt': excerpt[:80], 'detail': detail}
 
 
-def _without_user_echo(value: object) -> object:
-    if isinstance(value, dict):
-        return {k: _without_user_echo(v) for k, v in value.items() if k not in USER_ECHO}
-    if isinstance(value, list):
-        return [_without_user_echo(v) for v in value]
-    return value
+# 第五轮 T22 四项易懂度低分都来自 Markdown 表里残留的 HTML 合并单元格写法 (colspan)。
+TABLE_MARKUP = re.compile(r'colspan|rowspan|</?(?:table|tr|td|th)(?=[\s>/])', re.I)
+# Fences open with three or more backticks or tildes and close with the same run.
+CODE_FENCE = re.compile(r'^(`{3,}|~{3,})[^\n]*\n.*?^\1[`~]*[ \t]*$', re.S | re.M)
 
 
-def check_answer(answer: str, facts: list[dict]) -> dict:
+def markup_findings(answer: str) -> list[dict]:
+    match = TABLE_MARKUP.search(CODE_FENCE.sub('', answer))
+    if not match:
+        return []
+    start = max(0, match.start() - 20)
+    return [_finding('table_markup', 'warning', answer[start:match.end() + 20],
+                     '表格里有 HTML 写法（如 colspan）；多数宿主不渲染，改成每行列数相同的 Markdown 表')]
+
+
+def _check_assertions(answer: str, facts: list[dict],
+                      pillars: tuple[PillarEvidence, ...] | None = None,
+                      assertions: list[dict] | None = None) -> dict:
     checked = dict.fromkeys(('quotes_checked', 'quotes_skipped', 'pillars_checked', 'scores_checked'), 0)
-    facts_text = json.dumps(facts, ensure_ascii=False)
-    tool_text = json.dumps(_without_user_echo(facts), ensure_ascii=False)
-    findings = [*_quote_findings(answer, _key(tool_text), checked), *pillar_findings(answer, facts, checked)]
-    titles = unresolved_titles(facts)
-    tie = has_tie(facts)
+    scores = facts if assertions is None else [row['score'] for row in assertions if 'score' in row]
+    facts_text = json.dumps(scores, ensure_ascii=False)
+    assertions = facts if assertions is None else assertions
+    findings = [*_quote_findings(answer, checked), *pillar_findings(answer, facts, checked, pillars),
+                *markup_findings(answer)]
+    titles = unresolved_titles(assertions)
+    tie = has_tie(assertions)
     for sentence in (s.strip() for s in sentences(answer)):
         findings += score_findings(sentence, facts_text, checked)
         findings += certainty_findings(sentence)
@@ -239,6 +305,17 @@ def check_answer(answer: str, facts: list[dict]) -> dict:
     return {'ok': True, 'tool': 'answer_check', 'version': __version__,
             'passed': not any(f['severity'] == 'error' for f in findings),
             'findings': findings, 'checked': {**checked, 'facts_loaded': len(facts)}, 'boundary': BOUNDARY}
+
+
+def check_answer(answer: str, facts: object) -> dict:
+    evidence = parse_evidence(facts)
+    result = _check_assertions(answer, list(evidence.facts), evidence.pillars, assertion_facts(evidence))
+    invalid = [_finding('invalid_facts', 'error', f'facts[{problem.index}]',
+                        f'facts[{problem.index}]: {problem.reason}') for problem in evidence.problems]
+    result['findings'] = invalid + result['findings']
+    result['checked']['chart_facts_loaded'] = evidence.chart_count
+    result['passed'] = result['passed'] and not invalid
+    return result
 
 
 def build_parser() -> argparse.ArgumentParser:

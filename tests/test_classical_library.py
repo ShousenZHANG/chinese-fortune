@@ -147,7 +147,7 @@ def test_a_zero_hit_answer_ships_the_evidence_for_itself() -> None:
     assert empty['results'] == [] and empty['total_matches'] == 0
     assert empty['normalized_query'] == ['染发']
     scope = empty['searched']
-    assert len(scope['books']) == 13
+    assert len(scope['books']) == 15
     assert scope['chapters'] > 500 and scope['passages'] > 18000
     assert 'assets/han-variants.json' in scope['folding']
     # Same shape when there are hits, so a caller cannot tell them apart by keys.
@@ -202,7 +202,7 @@ def test_actual_five_classics_have_frozen_source_complete_inventories() -> None:
     result = validate_library()
     assert result['ok'], result['errors']
     assert {b['id'] for b in result['books']} == {'ziping', 'ditian', 'qiongtong', 'sanming', 'yuanhai',
-        'xieji', 'xuanze', 'ziwei', 'meihua', 'liuren', 'dunjia', 'zengshan', 'yuanling'}
+        'xieji', 'xuanze', 'ziwei', 'meihua', 'liuren', 'dunjia', 'zengshan', 'yuanling', 'yilin', 'yilin_siku'}
     assert all(b['complete_acquisition'] and not b['facsimile_verified'] for b in result['books'])
     assert all(b['passages'] > 20 for b in result['books'])
     counts = {b['id']: b['chapters'] for b in result['books']}

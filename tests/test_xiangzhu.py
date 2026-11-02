@@ -246,7 +246,7 @@ def test_an_unsettled_birth_year_is_graded_both_ways_and_the_worse_stands():
         assert set(years) == {'己卯', '庚辰'}
         assert entry['grade'] == max(years.values(), key=GRADES.index)
     text = render_answer(result)
-    assert text.startswith('按你出生那年的干支（己卯或庚辰，生在立春前后，按较差的算）看')
+    assert text.startswith('按你出生那年的干支（己卯或庚辰，生在立春前后，按较差的算）、借用协纪相主比较，')
     assert '按己卯年：' in text and '按庚辰年：' in text
 
 
@@ -329,7 +329,7 @@ def test_the_answer_says_the_year_first_and_calls_no_day_good():
     from fortune_reading import render_answer
     text = render_answer(_period_1997('2027-03-29', '2027-04-03'))
     lead = text.split('\n\n')[0]
-    assert lead.startswith('按你出生那年的干支（丁丑）看，这段时间没有对你好的日子：这一年（丁未）冲你的生年')
+    assert lead.startswith('按你出生那年的干支（丁丑）、借用协纪相主比较，这段时间没有对你好的日子：这一年（丁未）冲你的生年')
     assert '太岁冲命最凶' in lead and '换哪天都避不开' in lead
     assert '大吉' not in lead and '3月29日（丁未，天比地冲）本身也冲你' in lead
     # Layer 2 keeps the day pillar as a part, said as such; the year once.
@@ -374,9 +374,9 @@ def test_a_clashing_month_inside_the_period_is_said_once_with_its_dates():
             'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10, 'minute': 30, 'gender': 'male',
                       'timezone': 'Asia/Shanghai', 'longitude': 120}, 'time_certainty': 'exact'}}]})
     lead = render_answer(result).split('\n\n')[0]
-    assert lead == ('按你出生那年的干支（己卯）看，这段时间对你最好的日子是10月11日（戊午，命禄），是大吉；'
+    assert lead == ('按你出生那年的干支（己卯）、借用协纪相主比较，这段时间对你相主等级最高的日子是10月11日（戊午，命禄），是大吉；'
                     '9月28日至10月8日寒露前（14:29 以前）在丁酉月里，这个月冲你的生年（月柱冲命，凶），协纪说月次于太岁、重于日，'
-                    '这些日子都要避开；另外要避开10月2日（己酉，天比地冲）。')
+                    '这些日子都要避开；另外要避开10月2日（己酉，天比地冲）。这是相主对本人生年的等级比较；阶段运势和协纪事项的对应没有核过，不等于这件事已证的吉凶或客观上最好的日子。')
     months = personal_calendar([('me', '丁丑')], '2027-01-01T00:00:00+08:00', '2028-01-01T00:00:00+08:00',
                                'Asia/Shanghai', 'month')
     first = months['entries'][0]

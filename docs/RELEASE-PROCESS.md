@@ -1,6 +1,6 @@
 # 发布与来源归档
 
-运行包包含清单中全部13部所选转录材料，共535个章节或卷单元；原五书416章保留。不划分精简版和完整版。原始网页、目录捕获、来源元数据与 SKchar 字形映射保留在源码，以及同次构建的 `*-sources.zip`。正文仍保留原始来源指针；运行清单的 `source_paths_scope=source_archive/knowledge` 明确它们位于来源归档内。
+运行包包含清单中全部15部所选转录材料，共557个章节或卷单元；原五书416章保留。不划分精简版和完整版。原始网页、目录捕获、来源元数据与 SKchar 字形映射保留在源码，以及同次构建的 `*-sources.zip`。正文仍保留原始来源指针；运行清单的 `source_paths_scope=source_archive/knowledge` 明确它们位于来源归档内。
 
 `knowledge/manifest.json` 使用 schema 2.0，必须声明 `distribution_kind`。`source` 校验全部正文、目录、raw 文件和 supporting_sources 的字节摘要；任一缺失都失败。`runtime` 校验全部运行文件、正文、章节清单及来源归档索引，但不声称重新校验未安装的 raw 文件。两种结果的 `validation_scope` 和 `raw_sources_verified` 分别报告。不能根据 sources 目录是否存在决定跳过校验。
 
@@ -48,7 +48,7 @@ python -X utf8 evals/package_smoke.py --archive $runtimeZip[0].FullName --expect
 if ($LASTEXITCODE -ne 0) { throw 'Artifact verification failed' }
 ```
 
-发布时复用该下载目录的原始附件，标签只能指向该受测提交，不能覆盖已有标签。主仓库只维护 main，不为发布新建 PR 或长期分支。若 main 有新提交，等待新提交的完整 CI，或明确发布已核验的旧提交；不要把旧 CI 结果套到新代码。
+发布时复用该下载目录的原始附件，标签只能指向该受测提交，不能覆盖已有标签。修复通过临时 PR 审核并合入 main，主仓库只保留 main 作为长期分支；不为发布产物另开 PR。若 main 有新提交，等待新提交的完整 CI，或明确发布已核验的旧提交；不要把旧 CI 结果套到新代码。
 
 发布后把公开附件下载到另一个新目录，再执行相同的 `--verify-only --expected-commit` 检查，并将公开 SHA256SUMS 与受测下载目录逐字节比较。记录远端 release URL、tag/commit、CI run、运行包和来源包 SHA256；本地重新构建成功不能替代这一步公开附件核对。
 

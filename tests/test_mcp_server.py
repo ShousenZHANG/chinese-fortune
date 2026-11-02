@@ -45,9 +45,19 @@ def test_bazi_reading_defaults_to_compact_and_returns_cli_json():
 def test_stdin_tools_and_answer_check_with_facts():
     result, text = call('pair_facts', {'a': BIRTH, 'b': {**BIRTH, 'year': 2001, 'gender': 'female'}})
     assert not result['isError'] and json.loads(text)['tool'] == 'pair_facts'
+    facts = json.loads(text)
+    day = facts['subjects']['A']['four_pillars']['day']
+    wrong_day = '甲子' if day != '甲子' else '乙丑'
+    result, text = call('answer_check', {'answer': f'A方日柱{wrong_day}。', 'facts': [facts]})
+    assert result['isError'] and any(f['code'] == 'pillar_mismatch' for f in json.loads(text)['findings'])
+    result, text = call('answer_check', {'answer': f'A方日柱{day}。', 'facts': [facts]})
+    assert not result['isError'] and json.loads(text)['passed']
+
+
+def test_answer_check_rejects_anonymous_partial_facts():
     facts = {'chart_facts': {'hour_known': True, 'four_pillars': {'day': {'ganzhi': '壬申'}}}}
-    result, text = call('answer_check', {'answer': '日柱甲子。', 'facts': [facts]})
-    assert result['isError'] and json.loads(text)['findings'][0]['code'] == 'pillar_mismatch'
+    result, text = call('answer_check', {'answer': '日柱壬申。', 'facts': [facts]})
+    assert result['isError'] and any(f['code'] == 'invalid_facts' for f in json.loads(text)['findings'])
 
 
 def test_run_script_only_runs_shipped_runtime_scripts():
@@ -144,5 +154,20 @@ def test_ziwei_tool_accepts_the_school_switches():
     result, text = call('ziwei_chart', {**BIRTH, 'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong',
                                         'leap_month': 'next'})
     assert not result['isError'], text
-    assert json.loads(text)['school'] == {'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong',
-                                          'leap_month': 'next', 'late_zi_sect': 2}
+    school = json.loads(text)['school']
+    assert {k: school[k] for k in ('brightness', 'geng_sihua', 'leap_month', 'late_zi_sect')} == {
+        'brightness': 'project4', 'geng_sihua': 'yang-wu-fu-tong', 'leap_month': 'next', 'late_zi_sect': 2}
+    result, text = call('ziwei_chart', {**BIRTH, 'school': 'nihai', 'kui_yue': 'quanshu-1', 'year_divide': 'lichun'})
+    assert not result['isError'], text
+    assert json.loads(text)['school']['preset'] == 'nihai'
+
+
+def test_ziwei_school_enums_match_the_cli():
+    import ziwei_calc
+    assert {k: tuple(v['enum']) for k, v in mcp_server.ZIWEI_SCHOOLS.items()} == ziwei_calc.SCHOOL_CHOICES
+
+
+def test_pair_facts_relation_passes_through():
+    result, text = call('pair_facts', {'a': BIRTH, 'b': {**BIRTH, 'year': 2001, 'gender': 'female'},
+                                       'relation': 'partnership'})
+    assert not result['isError'] and json.loads(text)['relation']['type'] == 'partnership'

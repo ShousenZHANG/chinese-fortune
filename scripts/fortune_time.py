@@ -54,12 +54,16 @@ def resolve_window(period: str | dict, request: dict, event_timezone: str) -> di
               '下个月': (_next_month(month), _next_month(_next_month(month))),
               '今年': (date(today.year, 1, 1), date(today.year + 1, 1, 1)),
               '明年': (date(today.year + 1, 1, 1), date(today.year + 2, 1, 1)),
-              '月底前': (today, _next_month(month))}
+              '月底前': (today, _next_month(month)),
+              '年底前': (today, date(today.year + 1, 1, 1)),
+              # 「最近」: to the year's end, or a month when December leaves less (round 8 T10:
+              # asking the user to pick a range instead of answering lost completion to five rivals).
+              '近期': (today, max(date(today.year + 1, 1, 1), today + timedelta(days=31)))}
     aliases = {'today': '今天', 'tomorrow': '明天', 'next_week': '下周',
                'next_seven_days': '未来七天', 'next_month': '下个月', 'this_year': '今年',
                # The everyday words for the same spans.
                '这周': '本周', '这个星期': '本周', '下个星期': '下周', '周末': '这周末',
-               '这个月': '本月', '下月': '下个月', '最近一周': '未来七天'}
+               '这个月': '本月', '下月': '下个月', '最近一周': '未来七天', '最近': '近期', '这段时间': '近期'}
     if isinstance(period, str):
         label = aliases.get(period, period)
         if label not in values:

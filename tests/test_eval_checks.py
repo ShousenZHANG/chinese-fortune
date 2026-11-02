@@ -1,14 +1,24 @@
 """The recorder keeps tool outputs and the mechanical check uses them."""
 import json
 import sys
+from copy import deepcopy
 from pathlib import Path
+
+from bazi_reading import chart_facts
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'evals'))
 import check_claude_answers  # noqa: E402
 import run_claude_cases  # noqa: E402
 
-CHART = {'ok': True, 'tool': 'bazi_reading',
-         'chart_facts': {'hour_known': True, 'four_pillars': {'day': {'ganzhi': '壬申', 'stem': '壬'}}}}
+DATA = Path(__file__).parent / 'data'
+CHART = {'ok': True, 'tool': 'bazi_reading', 'chart_facts': chart_facts(
+    json.loads((DATA / 'bazi_snapshot_20000115.json').read_text(encoding='utf-8')))}
+
+
+def _stale_chart():
+    stale = deepcopy(CHART)
+    stale['chart_facts']['four_pillars']['day'] = {'ganzhi': '甲子', 'stem': '甲'}
+    return stale
 
 
 def test_recorder_attaches_tool_results_to_their_calls():
@@ -44,7 +54,7 @@ def test_missing_tool_output_is_reported_not_passed(tmp_path):
 
 
 def test_only_the_latest_chart_vouches_and_unrelated_json_does_not(tmp_path):
-    stale = {**CHART, 'chart_facts': {'hour_known': True, 'four_pillars': {'day': {'ganzhi': '甲子'}}}}
+    stale = _stale_chart()
     tools_t1 = [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(stale)}]
     tools_t2 = [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(CHART)}]
     folder = tmp_path / 'X2'
@@ -59,7 +69,7 @@ def test_only_the_latest_chart_vouches_and_unrelated_json_does_not(tmp_path):
 
 
 def test_a_rerun_chart_without_output_leaves_no_facts_and_dict_turns_are_read(tmp_path):
-    stale = {**CHART, 'chart_facts': {'hour_known': True, 'four_pillars': {'day': {'ganzhi': '甲子'}}}}
+    stale = _stale_chart()
     turns = [{'tools': [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(stale)}]},
              {'tools': [{'command': 'python scripts/bazi_reading.py', 'output': 'not json'}]}]
     assert check_claude_answers.tool_facts({'turns': turns}) == []
@@ -82,3 +92,54 @@ def test_recorder_sends_the_prompt_text_of_dict_turns(tmp_path, monkeypatch):
     case = {'id': 'D1', 'turns': [{'prompt': '第一问'}, '第二问']}
     record = run_claude_cases.run_case(case, tmp_path, tmp_path / 'out', 'sonnet', 10)
     assert sent == ['第一问', '第二问'] and record['complete']
+
+
+def test_tool_facts_reads_a_facts_out_file(tmp_path):
+    import json
+
+    import check_claude_answers
+    saved = tmp_path / 'bazi.json'
+    saved.write_text(json.dumps(CHART), encoding='utf-8')
+    turns = [{'tools': [{'command': f'python scripts/bazi_reading.py --year 2000 --facts-out "{saved}"',
+                         'output': '白话草稿……'}]}]
+    assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': turns})] == ['bazi_reading']
+
+
+def test_tool_facts_reads_redirected_json_and_line_numbered_read_output(tmp_path):
+    """Round 7 R7-R2-DIAG-01: Z04 wrote the chart with > and read it back with Read."""
+    import json
+
+    import check_claude_answers
+    chart = json.loads((DATA / 'ziwei_snapshot_20000115.json').read_text(encoding='utf-8'))
+    saved = tmp_path / 'ziwei.json'
+    saved.write_text(json.dumps(chart, ensure_ascii=False), encoding='utf-8')
+    redirected = [{'tools': [{'command': f'python scripts/ziwei_calc.py --year 2000 > "{saved}"', 'output': ''}]}]
+    assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': redirected})] == ['ziwei']
+    numbered = '\n'.join(f'{i:>6}\t{line}' for i, line in enumerate(json.dumps(chart, indent=1).split('\n'), 1))
+    read = [{'tools': [{'command': 'python scripts/ziwei_calc.py --year 2000', 'output': ''},
+                       {'command': str(saved), 'output': numbered}]}]
+    assert [f['tool'] for f in check_claude_answers.tool_facts({'turns': read})] == ['ziwei']
+
+
+def test_only_real_tool_success_envelopes_count_as_facts(tmp_path):
+    """R8-EVAL-01 and R8-R2-DIAG-01."""
+    import json
+    import sys as _sys
+
+    import check_claude_answers
+    real = CHART
+    fakes = [{'tool': 'ziwei', 'note': 'ordinary metadata'}, {'ok': False, 'tool': 'bazi_reading', 'error': 'x'},
+             {'ok': True, 'tool': 'unknown_tool', 'chart_facts': {}}, {'wrapper': real}, {'ok': True, 'a': 1},
+             {'ok': True, 'tool': 'answer_check', 'findings': []}]
+    for value in fakes:
+        turns = [{'tools': [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(value)}]}]
+        assert check_claude_answers.tool_facts({'turns': turns}) == [], value
+    turns = [{'tools': [{'command': 'python scripts/bazi_reading.py', 'output': json.dumps(real)}]}]
+    assert check_claude_answers.tool_facts({'turns': turns}) == [real]
+    if _sys.platform == 'win32':
+        saved = tmp_path / 'bazi.json'
+        saved.write_text(json.dumps(real), encoding='utf-8')
+        posix = saved.resolve().as_posix()
+        msys = f'/{posix[0].lower()}{posix[2:]}'                     # D:/x/y -> /d/x/y
+        turns = [{'tools': [{'command': f'python scripts/bazi_reading.py --facts-out {msys}', 'output': '草稿'}]}]
+        assert check_claude_answers.tool_facts({'turns': turns}) == [real]

@@ -18,12 +18,21 @@
     "timezone": null,
     "leap": false,
     "liu_year": null,
+    "school": "default",
     "brightness": "mainstream7",
     "geng_sihua": "yang-wu-yin-tong",
     "leap_month": "split",
+    "kui_yue": "tongxing",
+    "tian_ma": "year",
+    "tianshi_tianshang": "default",
+    "jie_kong": "split",
+    "changsheng": "shui-tu",
+    "changsheng_direction": "yinyang",
+    "year_divide": "lunar-new-year",
     "horoscope_date": null,
     "horoscope_time": null,
     "no_patterns": false,
+    "focus_palace": null,
     "no_sihua": false,
     "no_da_xian": false,
     "brief_palaces": false,
@@ -120,7 +129,100 @@
     "天哭": "卯",
     "天虚": "酉",
     "龙池": "未",
-    "凤阁": "未"
+    "凤阁": "未",
+    "天姚": "子",
+    "天刑": "申",
+    "解神": "午",
+    "阴煞": "辰",
+    "天月": "寅",
+    "天巫": "亥",
+    "三台": "亥",
+    "八座": "卯",
+    "恩光": "子",
+    "天贵": "辰",
+    "台辅": "亥",
+    "封诰": "未",
+    "华盖": "未",
+    "咸池": "子",
+    "天才": "亥",
+    "天寿": "酉",
+    "天厨": "申",
+    "天官": "酉",
+    "天福": "寅",
+    "破碎": "巳",
+    "蜚廉": "巳",
+    "天德": "子",
+    "月德": "申",
+    "天空": "辰",
+    "截路": "申",
+    "空亡": "酉",
+    "旬空": "酉",
+    "年解": "未",
+    "天伤": "丑",
+    "天使": "卯"
+  },
+  "miscellaneous_stars_basis": {
+    "通行表": [
+      "天马",
+      "红鸾",
+      "天喜",
+      "孤辰",
+      "寡宿",
+      "解神",
+      "阴煞",
+      "天月",
+      "天巫",
+      "恩光",
+      "天贵",
+      "华盖",
+      "咸池",
+      "天才",
+      "天寿",
+      "天厨",
+      "天官",
+      "天福",
+      "破碎",
+      "蜚廉",
+      "天空",
+      "旬空"
+    ],
+    "ziwei:c002:p0049": [
+      "天哭",
+      "天虚"
+    ],
+    "ziwei:c002:p0051": [
+      "龙池",
+      "凤阁"
+    ],
+    "ziwei:c002:p0046": [
+      "天姚",
+      "天刑"
+    ],
+    "ziwei:c002:p0047": [
+      "三台",
+      "八座"
+    ],
+    "ziwei:c002:p0053": [
+      "台辅"
+    ],
+    "ziwei:c002:p0055": [
+      "封诰"
+    ],
+    "ziwei:c002:p0067": [
+      "天德",
+      "月德"
+    ],
+    "ziwei:c002:p0073": [
+      "截路",
+      "空亡"
+    ],
+    "ziwei:c002:p0068": [
+      "年解"
+    ],
+    "ziwei:c002:p0040": [
+      "天伤",
+      "天使"
+    ]
   },
   "twelve_palaces": [
     {
@@ -144,7 +246,12 @@
         "天钺"
       ],
       "malefic_stars": [],
-      "miscellaneous_stars": [],
+      "miscellaneous_stars": [
+        "天刑",
+        "天厨",
+        "月德",
+        "截路"
+      ],
       "twelve_gods": {
         "changsheng": "绝",
         "boshi": "伏兵",
@@ -192,7 +299,10 @@
       ],
       "miscellaneous_stars": [
         "龙池",
-        "凤阁"
+        "凤阁",
+        "封诰",
+        "华盖",
+        "年解"
       ],
       "twelve_gods": {
         "changsheng": "胎",
@@ -235,7 +345,8 @@
         "地空"
       ],
       "miscellaneous_stars": [
-        "天喜"
+        "天喜",
+        "解神"
       ],
       "twelve_gods": {
         "changsheng": "养",
@@ -287,7 +398,9 @@
       ],
       "miscellaneous_stars": [
         "天马",
-        "孤辰"
+        "孤辰",
+        "破碎",
+        "蜚廉"
       ],
       "twelve_gods": {
         "changsheng": "长生",
@@ -332,7 +445,11 @@
       "malefic_stars": [
         "地劫"
       ],
-      "miscellaneous_stars": [],
+      "miscellaneous_stars": [
+        "阴煞",
+        "天贵",
+        "天空"
+      ],
       "twelve_gods": {
         "changsheng": "沐浴",
         "boshi": "青龙",
@@ -379,7 +496,9 @@
         "铃星"
       ],
       "miscellaneous_stars": [
-        "天哭"
+        "天哭",
+        "八座",
+        "天使"
       ],
       "twelve_gods": {
         "changsheng": "冠带",
@@ -417,7 +536,10 @@
       "malefic_stars": [
         "火星"
       ],
-      "miscellaneous_stars": [],
+      "miscellaneous_stars": [
+        "天月",
+        "天福"
+      ],
       "twelve_gods": {
         "changsheng": "临官",
         "boshi": "将军",
@@ -463,7 +585,8 @@
       "lucky_stars": [],
       "malefic_stars": [],
       "miscellaneous_stars": [
-        "寡宿"
+        "寡宿",
+        "天伤"
       ],
       "twelve_gods": {
         "changsheng": "帝旺",
@@ -505,7 +628,11 @@
       ],
       "malefic_stars": [],
       "miscellaneous_stars": [
-        "红鸾"
+        "红鸾",
+        "天姚",
+        "恩光",
+        "咸池",
+        "天德"
       ],
       "twelve_gods": {
         "changsheng": "衰",
@@ -543,7 +670,12 @@
         "右弼"
       ],
       "malefic_stars": [],
-      "miscellaneous_stars": [],
+      "miscellaneous_stars": [
+        "天巫",
+        "三台",
+        "台辅",
+        "天才"
+      ],
       "twelve_gods": {
         "changsheng": "病",
         "boshi": "喜神",
@@ -633,7 +765,11 @@
       ],
       "malefic_stars": [],
       "miscellaneous_stars": [
-        "天虚"
+        "天虚",
+        "天寿",
+        "天官",
+        "空亡",
+        "旬空"
       ],
       "twelve_gods": {
         "changsheng": "墓",
@@ -877,11 +1013,39 @@
   "horoscope": null,
   "patterns": [
     {
+      "name": "坐贵向贵",
+      "source_status": "quanshu_reading",
+      "passage_id": "ziwei:c001:p0154",
+      "quote": "坐贵向贵 谓魁钺在命迭相坐拱是也",
+      "extra_passage_ids": [
+        "ziwei:c001:p0056"
+      ],
+      "reading_note": "「迭相坐拱」取一星坐命、另一星在三方四正；ziwei:c001:p0056 另有「魁临命，钺守身」的说法，未收。",
+      "required": [
+        "天魁天钺一坐命宫、一在三方四正拱照"
+      ],
+      "bonus": [],
+      "breaking": [],
+      "to_check": [],
+      "evidence": "天魁天钺一坐命宫、一在三方四正拱照"
+    },
+    {
       "name": "机月同梁",
-      "evidence": "三方四正含机月同梁组合 4/4: 天同,天机,天梁,太阴",
-      "status": "candidate_only",
-      "source_status": "classical_conditions_not_verified",
-      "recognition_basis": "project_star_combination"
+      "source_status": "quanshu_definition",
+      "passage_id": "ziwei:c003:p0129",
+      "quote": "机月同梁作吏人  命在寅申方论",
+      "extra_passage_ids": [],
+      "reading_note": null,
+      "required": [
+        "命在寅申",
+        "天机太阴天同天梁齐会三方四正"
+      ],
+      "bonus": [],
+      "breaking": [
+        "三方见火星、地劫（原注：凶杀空劫化忌为下格）"
+      ],
+      "to_check": [],
+      "evidence": "命在寅申；天机太阴天同天梁齐会三方四正"
     }
   ],
   "twelve_gods_sources": {
@@ -892,10 +1056,20 @@
   },
   "leap_month_school": "闰月十五日及以前算本月、以后算下月（默认）",
   "school": {
+    "preset": "default",
     "brightness": "mainstream7",
     "geng_sihua": "yang-wu-yin-tong",
     "leap_month": "split",
-    "late_zi_sect": 2
+    "late_zi_sect": 2,
+    "kui_yue": "tongxing",
+    "tian_ma": "year",
+    "tianshi_tianshang": "default",
+    "jie_kong": "split",
+    "changsheng": "shui-tu",
+    "changsheng_direction": "yinyang",
+    "year_divide": "lunar-new-year",
+    "self_transformations": true,
+    "da_xian_transformations": true
   },
   "sect": {
     "value": 2,
@@ -904,11 +1078,38 @@
   "birthplace": null,
   "timezone": null,
   "notes": [
-    "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/9杂曜/12宫/借宫/自化/大限四化/格局识别。",
+    "本输出含 命宫/身宫/五行局/紫微/14主星/六吉六煞/39杂曜/12宫/借宫/自化/大限四化/格局识别。",
     "亮度为主流排盘通行的七级表（庙/旺/得/利/平/不/陷），与 iztro 2.6.3 默认表一致；这张表与《紫微斗数全书》卷二各星庙旺记载的逐格对应没有核过，不要说成全书原表。没有标亮度的格表示该星在此宫不论亮度。亮度只展示，不参与排盘计算。旧版四级表可用 --brightness project4。",
+    "杂曜 39 颗: 9 颗旧有 + 30 颗补全。《全书》有诀者照诀; 月德取巳宫起子(所引转录作子宫, 与天德不成对); 天德/月德原为流年星, 本命盘按生年太岁安; 截路空亡原诀为一星占两宫, 此处按 iztro 拆作截路(阳支)、空亡(阴支)。",
     "流年/流月/流日/流时 用 --horoscope-date [--horoscope-time] 计算; 未传时只给本命斗君锚位。",
     "安星采用项目所选表；魁钺、部分四化和历法口径与个别《全书》转录存在差异，自化采用后起飞星概念，不能统称全书原法。"
   ],
+  "self_check": {
+    "ok": true,
+    "checked": [
+      "main_stars_complete",
+      "ziwei_tianfu_mirror",
+      "main_star_layout",
+      "positions_match_palaces",
+      "palace_order",
+      "palace_stems",
+      "ming_gong_formula",
+      "shen_gong_palace",
+      "lu_yang_tuo",
+      "sihua_on_chart"
+    ],
+    "failed": [],
+    "scope": "只核安星规则之间的互相约束，不核流派选择本身，也不判吉凶。"
+  },
+  "say": [
+    "命宫在申（壬申），主星天同（旺）、天梁（陷）；身宫在夫妻宫（午）。",
+    "金四局；命主廉贞，身主天同。",
+    "生年己干四化：武曲化禄在父母宫，贪狼化权在子女宫，天梁化科在命宫，文曲化忌在父母宫。",
+    "坐贵向贵：天魁天钺一坐命宫、一在三方四正拱照（《全书》ziwei:c001:p0154，条件为本项目选读：「迭相坐拱」取一星坐命、另一星在三方四正；ziwei:c001:p0056 另有「魁临命，钺守身」的说法，未收）。",
+    "机月同梁：命在寅申、天机太阴天同天梁齐会三方四正（《全书》ziwei:c003:p0129）；减力条件：三方见火星、地劫（原注：凶杀空劫化忌为下格）。",
+    "排盘口径：闰月十五日前后分月，晚子时日仍算当日，正月初一换年。"
+  ],
+  "focus": null,
   "schema_version": "2.0",
   "reading_support": {
     "status": "requires_semantic_review",
@@ -916,7 +1117,7 @@
     "limits": [
       "星曜与宫位为排盘结果; 象征含义不是个人经历或未来事件",
       "格局标签不直接推出富贵贫贱、健康或关系结论",
-      "亮度采用项目简化表, 未完成全表原刻影像校勘",
+      "亮度默认取通行七级表 (与 iztro 2.6.3 一致), 未做原刻影像校勘",
       "自化等分歧规则须标明所用口径, 不冒充全书共识"
     ],
     "method_rules": {
@@ -1141,5 +1342,22 @@
         "条款状态不是现实预测准确率；个人应用须另核盘面条件"
       ]
     }
+  },
+  "envelope": {
+    "version": "cf-result/1",
+    "method": {
+      "school": "default"
+    },
+    "conventions": {
+      "solar_time_standard": "true-solar",
+      "solar_longitude": 120.0,
+      "solar_applied": true
+    },
+    "replay": {
+      "see": [
+        "input"
+      ]
+    },
+    "next_step": null
   }
 }

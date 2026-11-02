@@ -222,7 +222,7 @@ def test_every_period_word_the_router_emits_is_one_the_request_accepts():
 
 @pytest.mark.parametrize('question,lead', [
     ('下个月哪天搬家好？', '按你出生那年的干支（丁丑）看，这段时间搬家对你最好的日子是'),
-    ('这周哪天对我好？', '按你出生那年的干支（丁丑）看，这段时间对你最好的日子是'),
+    ('这周哪天对我好？', '按你出生那年的干支（丁丑）、借用协纪相主比较，这段时间对你相主等级最高的日子是'),
 ])
 def test_a_routed_request_answers_first(question, lead):
     """Follow the route end to end with a real person: the answer opens with days."""
@@ -254,7 +254,7 @@ def test_a_day_question_over_a_year_is_answered_by_day_and_a_month_question_by_m
     assert lead.startswith('按你出生那年的干支（丁丑）看，这段时间嫁娶对你最好的日子是') and '嫁娶要避开' in lead
     months = read_request({**base, **route('明年哪几个月好')['request']})
     assert months['personal_calendar']['unit'] == 'month'
-    assert render_answer(months).startswith('按你出生那年的干支（丁丑）看，这段时间对你最好的月份是')
+    assert render_answer(months).startswith('按你出生那年的干支（丁丑）、借用协纪相主比较，这段时间对你相主等级最高的月份是')
 
 
 @pytest.mark.parametrize('question,flow', [

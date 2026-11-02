@@ -34,7 +34,8 @@ DAY_WORDS = ('哪天', '哪几天', '哪一天', '几号', '日子', '吉日', '
              '哪年', '哪一年', '可以吗', '行不行', '合适吗', '适合吗')
 # resolve_window's own words, longest first so 「下个月」 wins over 「下月」.
 PERIOD_WORDS = ('未来七天', '最近一周', '这两天', '这周末', '下个星期', '这个星期', '下个月', '这个月', '月底前',
-                '今天', '明天', '后天', '本周', '这周', '下周', '周末', '本月', '下月', '今年', '明年')
+                '今天', '明天', '后天', '本周', '这周', '下周', '周末', '本月', '下月', '今年', '明年',
+                '年底前', '近期', '最近', '这段时间')
 CLOCK = re.compile(r'\d{1,2}[点:：]|上午|下午|晚上|中午|早上|小时|分钟')
 DATE = re.compile(r'(?:(\d{4})[年-])?(\d{1,2})[月-](\d{1,2})[日号]?')
 # Days named without a month: a weekday, 「15号」, a lunar 「初八」, a festival.
@@ -103,13 +104,19 @@ def _period(question: str) -> str | None:
 BIRTH = '出生年月日、性别与出生地（时辰可缺；立春前后出生需有时刻才能定年柱）'
 
 BAZI_COMMAND = ('python scripts/bazi_reading.py --year Y --month M --day D '
-                '[--hour H --minute m] --gender G --city 出生地 --question "<原话>" --view compact')
+                '[--hour H --minute m] --gender G --city 出生地 --question "<原话>" --view compact '
+                '--facts-out <临时目录>/bazi.json')
 
 
 def _reference_time_needs(text: str) -> list[str]:
     if any(word in text for word in ('大运', '流年', '今年', '明年', '运势', '这几年')):
         return ['参考年份，或现居地时区与本次请求时间；已有的直接复用']
     return []
+
+
+QIMEN_SELECT_WORDS = ('择时', '哪个时辰', '什么时辰', '挑时辰', '选时辰', '吉时')
+QIMEN_SELECT_COMMAND = ('python scripts/qimen_select.py --from 起始日期 --days 天数 '
+                        '--target-timezone 择时地点时区')
 
 
 def _named_methods(text: str) -> list[dict]:
@@ -127,6 +134,9 @@ def _named_methods(text: str) -> list[dict]:
         (('六爻',), 'liuyao', 'liuyao_cast.py', '04-liuyao.md',
          'python scripts/liuyao_cast.py coins --current-timezone 现居地时区 --request-time 本次UTC --question "<原话>"',
          ['问题、起卦方式与原始投掷（已有结果不重起），占问时刻和时区']),
+        (('焦氏易林', '易林'), 'yilin', 'yilin_lookup.py', '03-yijing.md',
+         'python scripts/yilin_lookup.py --from 本卦 --to 之卦',
+         ['本卦与之卦（已有卦象直接复用，不重起卦）']),
         (('周易', '易经'), 'yijing', 'yijing_cast.py', '03-yijing.md',
          'python scripts/yijing_cast.py time --current-timezone 现居地时区 --request-time 本次UTC --question "<原话>"',
          ['问题和起卦方式；时间法复用请求时刻，已有卦象直接复用']),
@@ -144,6 +154,9 @@ def _named_methods(text: str) -> list[dict]:
     for words, method, script, reference, command, needs in definitions:
         if method == 'liuren' and '小六壬' in text and '大六壬' not in text:
             continue
+        if method == 'qimen' and any(word in text for word in QIMEN_SELECT_WORDS):
+            script, command = 'qimen_select.py', QIMEN_SELECT_COMMAND
+            needs = ['起始日期、天数（最多 31 天）和择时地点时区；要办的事']
         positions = [text.index(word) for word in words if word in text]
         if positions:
             if method in ('bazi', 'ziwei'):
@@ -189,6 +202,49 @@ def _knowledge_route(text: str) -> dict:
             'reference': references[0], 'references': references, 'needs': []}
 
 
+UNSURE_WORDS = ('不确定', '记不清', '拿不准', '说不准', '不太清楚', '也可能是', '还是')
+BIRTH_TIME_WORDS = ('出生', '生的', '时辰', '生于')
+
+
+# Marriage first: 「男朋友」 contains 朋友.
+RELATION_KINDS = (('marriage', ('合婚', '结婚', '婚姻', '对象', '男朋友', '女朋友', '男友', '女友', '老公', '老婆', '恋爱',
+                                '般配', '另一半', '未婚夫', '未婚妻')),
+                  ('parent_child', ('亲子', '父子', '母子', '父女', '母女', '孩子', '儿子', '女儿')),
+                  ('partnership', ('合伙', '合作', '搭档', '同事', '老板', '生意伙伴')),
+                  ('friendship', ('朋友', '闺蜜', '兄弟')))
+
+
+def _relation_kind(text: str) -> str | None:
+    """R1: which relation — it decides which clauses apply; None means ask the user first."""
+    return next((kind for kind, words in RELATION_KINDS if any(w in text for w in words)), None)
+
+
+def _relation_rounds(kind: str | None) -> list[dict]:
+    """R1: collect one person at a time; the relation is settled before any chart is read."""
+    rounds = [] if kind else [{'round': 0, 'ask': '先确认两人是什么关系：婚恋、亲子、合作还是朋友？关系不同，适用的古籍条款不同。'}]
+    return rounds + [
+        {'round': 1, 'ask': '第一位（A）的出生年月日、时辰（不知道可空）、性别与出生地；对话里已给的直接复用。'},
+        {'round': 2, 'ask': '第二位（B）的同样资料；两人资料齐了才算 pair_facts，不拿一个人的盘先下结论。'},
+    ]
+
+
+CORRECTION_WORDS = ('说错了', '给错了', '写错了', '记错了', '搞错了', '更正', '纠正一下', '应该是', '其实是')
+
+
+def _corrected_birth(text: str) -> bool:
+    """「刚才时辰给错了，其实是晚上十点」: the user corrects birth data already given."""
+    return any(word in text for word in CORRECTION_WORDS) and (
+        any(word in text for word in BIRTH_TIME_WORDS) or any(word in text for word in ('时辰', '农历', '公历', '阴历')))
+
+
+def _uncertain_birth(text: str) -> bool:
+    """「不确定是 5 号晚上还是 6 号凌晨出生」: an unsure birth time, with two moments named."""
+    unsure = any(word in text for word in UNSURE_WORDS)
+    about_birth = any(word in text for word in BIRTH_TIME_WORDS)
+    moments = len(re.findall(r'\d{1,2}\s*[号日点]|凌晨|半夜|深夜|晚上|早上|上午|下午|中午', text))
+    return unsure and about_birth and moments >= 2
+
+
 def _natal_route(text: str) -> dict:
     needs = [BIRTH, *_reference_time_needs(text)]
     return {'flow': 'natal', 'why': '问本命、格局或八字岁运，按相应粒度核对',
@@ -213,18 +269,47 @@ def route(question: str) -> dict:
     if _knowledge_only(text):
         return _knowledge_route(text)
     if any(word in text for word in FENGSHUI_WORDS):
+        if re.search(r'\d+(?:\.\d+)?\s*(?:度|°)|罗盘|指南针|几度|坐什么山|哪个山', text):
+            return {'flow': 'specialist', 'why': '有测量角度：先按测量合同换成二十四山坐向，误差跨山不取整',
+                    'command': 'python scripts/fengshui_measure.py --bearing 角度 --of facing|sitting '
+                               '--reference magnetic|true --error 误差度数 [--declination 磁偏角]',
+                    'reference': 'references/08-fengshui.md',
+                    'needs': ['角度是朝向还是坐向', '磁北（罗盘、手机）还是真北（地图）', '大约误差几度']}
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
                 'reference': 'references/08-fengshui.md', 'needs': ['实际布局与测量']}
+    if any(w in text for w in ('反查', '反推', '倒推', '推出生日')) and any(w in text for w in ('四柱', '八字', '生日', '出生')):
+        return {'flow': 'pillars_to_dates', 'why': '由四柱反查历法上可能的出生日期与真太阳时窗口',
+                'command': 'python scripts/pillars_to_dates.py --year-pillar 年柱 --month-pillar 月柱 '
+                           '--day-pillar 日柱 [--hour-pillar 时柱] [--from-year 1900 --to-year 2100]',
+                'reference': 'references/00-intake.md', 'needs': ['年月日柱（时柱可缺）']}
+    if _corrected_birth(text):
+        return {'flow': 'birth_correction',
+                'why': '更正出生资料：先列改了哪项、哪几柱跟着变、哪些旧结论作废，再用新资料重新解读',
+                'command': 'python scripts/birth_correction.py --stdin',
+                'stdin': '{"before": {原出生资料}, "after": {更正后的出生资料}}',
+                'reference': 'references/22-output-contract.md', 'needs': ['原资料与更正后的资料（已给的直接复用）']}
+    if _uncertain_birth(text):
+        return {'flow': 'birth_candidates',
+                'why': '出生时间拿不准、可能跨日期：先列各候选哪几柱不变、哪几柱会变，再按候选分别解读',
+                'command': 'python scripts/birth_candidates.py --stdin',
+                'stdin': '{"birth": {"gender", "timezone", "longitude"|"city"}, '
+                         '"range": {"start": "YYYY-MM-DDTHH:MM", "end": ...} 或 "candidates": [...]}',
+                'reference': 'references/00-intake.md', 'needs': ['性别、出生地、候选时间或时间范围']}
     methods = _named_methods(text)
-    relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系'))
+    relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系', '合不合', '合得来', '合伙',
+                                                 '搭档', '般配'))
     if relationship and (not methods or all(m['method'] in ('bazi', 'ziwei') for m in methods)):
         chosen = methods or _named_methods('八字' + text)
+        pair_kind = _relation_kind(text)
         return {'flow': 'compatibility', 'why': '分别核两方事实，各体系独立核跨盘条款，不混盘或给成功率',
+                'relation': pair_kind,
+                'intake_rounds': _relation_rounds(pair_kind),
                 'reference': 'references/14-hehun.md', 'combine_verdicts': False,
                 'subjects': ['A', 'B'],
                 'steps': [{'subject': subject, **method} for subject in ('A', 'B') for method in chosen],
                 **({'pair_facts': {'command': 'python scripts/pair_facts.py --stdin',
-                                   'stdin': '{"a": {A 出生资料}, "b": {B 出生资料}}',
+                                   'stdin': '{"a": {A 出生资料}, "b": {B 出生资料}, "relation": "'
+                                            + (pair_kind or 'marriage') + '"}',
                                    'why': '两人逐柱合冲刑害与日主互见十神，只列事实不打分'}}
                    if any(m['method'] == 'bazi' for m in chosen) else {}),
                 'needs': ['两方各自已确认的出生资料（各自保留未知时刻）', '关系类型与具体问题',
@@ -268,7 +353,8 @@ def route(question: str) -> dict:
         if dates and not period:
             needs.append('把原话里的日期换成 period {"start": "YYYY-MM-DD", "end": 次日}')
         elif not period:
-            needs.append('时间范围：原话没说就问一次，或用「未来七天」')
+            needs.append('时间范围：原话没说也不要追问，用 period "近期"（今天到年底，剩不到一个月时算一个月），'
+                         '回答开头说明这是暂按的范围')
         if slots:
             needs.append('候选时段 candidates 与所需时长 duration_minutes')
         if event == 'travel':
@@ -278,7 +364,8 @@ def route(question: str) -> dict:
         else:
             why = '问某段时间哪天（哪个月）对本人好坏：按出生年相主给每天分吉凶'
         return {'flow': 'event_slots' if slots else 'personal_days', 'kind': kind, 'why': why,
-                'command': 'python scripts/fortune_reading.py --stdin --markdown', 'request': request,
+                'command': 'python scripts/fortune_reading.py --stdin --facts-out <临时目录>/fortune.json',
+                'request': request,
                 'needs': needs}
     if any(word in text for word in NATAL_WORDS):
         return _natal_route(text)

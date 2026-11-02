@@ -63,6 +63,25 @@ def seasonal_context(instant: datetime) -> dict:
     }
 
 
+def solar_term_boundaries(start: datetime, end: datetime) -> tuple[datetime, ...]:
+    """All term instants strictly inside an aware interval, using the same UTC+08 table."""
+    require_lunar()
+    from lunar_python import Solar
+    terms: set[datetime] = set()
+    required = set(YANG_JIE_QI) | set(YIN_JIE_QI)
+    for year in range(start.astimezone(CALENDAR_ZONE).year, end.astimezone(CALENDAR_ZONE).year + 1):
+        table = Solar.fromYmdHms(year, 7, 1, 12, 0, 0).getLunar().getJieQiTable()
+        if not required.issubset(table):
+            raise ValueError(f'{year} 节气表不完整，不能保证择时区间覆盖')
+        for value in table.values():
+            boundary = datetime(value.getYear(), value.getMonth(), value.getDay(),
+                                value.getHour(), value.getMinute(), value.getSecond(),
+                                tzinfo=CALENDAR_ZONE).astimezone(UTC)
+            if start < boundary < end:
+                terms.add(boundary)
+    return tuple(sorted(terms))
+
+
 def zhi_shi_position(origin: int, hour_ganzhi: str, ju_type: str) -> tuple[int, int]:
     """值使自旬首原宫沿一至九宫顺逆计数；只在数完后将中五寄坤二。"""
     if not 1 <= origin <= 9 or ju_type not in {"阳遁", "阴遁"}:

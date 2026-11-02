@@ -26,7 +26,8 @@ INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE",
                  "docs/OPTIONAL-TOOLS.md", "docs/CLASSICAL-SOURCES.md",
                  "docs/QIMEN-LIUREN-METHODS.md", "docs/BAZI-RULES.md", "docs/CONTENT-COVERAGE.md",
                  "docs/RELEASE-PROCESS.md", "docs/FACSIMILE-COLLATION.md",
-                 "docs/FACSIMILE-CANDIDATES.md", "docs/BAZI-TIME-METHOD.md", "docs/MIGRATION-5.10.md"]
+                 "docs/FACSIMILE-CANDIDATES.md", "docs/BAZI-TIME-METHOD.md", "docs/MIGRATION-5.10.md",
+                 "docs/MIGRATION-5.11.md", "docs/MIGRATION-6.0.md"]
 INCLUDE_DIRS = ["references", "assets", "agents"]
 # Maintenance tools: they run from a checkout, never from the installed
 # package. Tests derive their own exemptions from this set rather than
@@ -34,7 +35,7 @@ INCLUDE_DIRS = ["references", "assets", "agents"]
 # requirements-dev.txt pins build_han_variants' opencc; its own first line says
 # it stays out of the runtime package, yet it had been shipping.
 SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py",
-                  "import_life_guide.py", "life_guide_refs.py", "life_guide_review.py",
+                  "import_life_guide.py", "life_guide_refs.py", "life_guide_review.py", "rule_registry.py",
                   "requirements-dev.txt"}
 EXCLUDE_RE = re.compile(
     r"(__pycache__|\.pyc$|\.pyo$|\.bak|\.bak-|/\.git/|\.pytest_cache|"

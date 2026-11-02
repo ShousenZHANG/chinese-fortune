@@ -17,6 +17,7 @@
     "longitude": 120.0,
     "lunar": false,
     "years": 80,
+    "death_date": null,
     "no_shensha": false,
     "no_yongshen": false,
     "no_geju": false,
@@ -1162,8 +1163,10 @@
   ],
   "current_time_context": null,
   "liu_nian_status": "explicit_year",
+  "reference_year": 2026,
   "liu_nian_scope": "calendar_year_reference_list",
   "liu_nian_note": "按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻",
+  "deceased": null,
   "schema_version": "2.0",
   "reading_support": {
     "schema_version": "1.0",
@@ -1323,5 +1326,23 @@
       "格局与神煞中的旧断语不可直接转述",
       "古籍转录已核部分不等于全书已核"
     ]
+  },
+  "envelope": {
+    "version": "cf-result/1",
+    "method": null,
+    "conventions": {
+      "solar_time_standard": "true-solar",
+      "solar_longitude": 120.0,
+      "solar_applied": true,
+      "status": "known_instant",
+      "term_calendar_zone": "UTC+08:00",
+      "day_hour_basis": "true-solar"
+    },
+    "replay": {
+      "see": [
+        "input"
+      ]
+    },
+    "next_step": null
   }
 }

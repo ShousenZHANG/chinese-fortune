@@ -21,6 +21,7 @@ from pathlib import Path
 
 import pytest
 from build_skill import SCRIPT_EXCLUDE
+from utils import ENVELOPE_VERSION, ERROR_NEXT_STEP
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "scripts"
@@ -47,6 +48,17 @@ IMPOSSIBLE_INPUTS = [
     ('answer_check.py', ['--answer', 'does-not-exist.txt'], '回答文件不存在'),
     ('answer_check.py', ['--answer', '-', '--facts', 'does-not-exist.json'], '工具结果文件不存在'),
     ('pair_facts.py', ['--stdin'], '空 JSON 请求'),
+    ('birth_candidates.py', ['--stdin'], '空 JSON 请求'),
+    ('birth_correction.py', ['--stdin'], '空 JSON 请求'),
+    ('qimen_select.py', ['--from', '2026-13-01', '--target-timezone', 'Asia/Shanghai'], '日期格式错'),
+    ('rule_registry.py', ['--family', 'no-such-family'], '不存在的规则族'),
+    ('yilin_lookup.py', ['--from', '天王'], '不存在的卦名'),
+    ('yilin_lookup.py', ['--from', '乾', '--to', '坤坤'], '不存在的之卦'),
+    ('fengshui_measure.py', ['--bearing', '-5', '--of', 'facing', '--reference', 'magnetic', '--error', '3'], '角度越界'),
+    ('fengshui_measure.py', ['--bearing', '90', '--of', 'facing', '--reference', 'magnetic', '--error', '90'], '误差越界'),
+    ('qimen_select.py', ['--from', '2026-11-02', '--days', '0', '--target-timezone', 'Asia/Shanghai'], '天数越界'),
+    ('pillars_to_dates.py', ['--year-pillar', '甲丑', '--month-pillar', '丁丑', '--day-pillar', '壬申'], '不存在的干支'),
+    ('pillars_to_dates.py', ['--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--from-year', '1000'], '年份越界'),
     ('liuyao_cast.py', ['rules'], '条款查询缺 id 和主题'),
     ('liuyao_cast.py', ['rules', '--id', 'no-such-rule'], '不存在的条款'),
     ('life_guide.py', ['--scenario', 'travel', '--current-timezone', 'Mars/Base'], '无效时区'),
@@ -140,6 +152,8 @@ def test_impossible_input_is_refused_not_fabricated(script, argv, why):
     assert "error" in payload, f"{script} {argv}: 失败信封缺 error 键: {payload}"
     assert payload.get("message") or payload.get("expected"), (
         f"{script} {argv}: 失败信封没有任何人类可读的说明: {payload}")
+    assert payload.get("error_class") in ERROR_NEXT_STEP and payload.get("next_step"), (
+        f"{script} {argv}: 失败信封缺错误分类或下一步: {payload}")
     assert proc.returncode != 0, (
         f"{script} {argv}: 报了错却以 0 退出, 只看退出码的调用方会当成成功")
 
@@ -174,6 +188,20 @@ def test_valid_input_still_succeeds(script, argv):
     assert proc.returncode == 0, f"{script} {argv} rc={proc.returncode}\n{proc.stderr[-400:]}"
     payload = json.loads(proc.stdout)
     assert payload.get("ok") is True, payload
+    envelope = payload.get("envelope")
+    assert envelope and envelope["version"] == ENVELOPE_VERSION, payload.keys()
+    assert set(envelope) == {"version", "method", "conventions", "replay", "next_step"}
+
+
+@pytest.mark.parametrize("script,argv,field", [
+    ("tarot_draw.py", ["one", "--seed", 7], "seed"),
+    ("liuyao_cast.py", ["coins", "--date", "2026-06-01", "--time", "10:00", "--seed", 3], "raw_lines"),
+    ("meihua_cast.py", ["--datetime", "2026-06-01T13:05", "time"], "time_local"),
+    ("bazi_calc.py", ["--year", 1990, "--month", 5, "--day", 10, "--hour", 14, "--gender", "male"], "see"),
+])
+def test_random_and_time_based_results_carry_what_is_needed_to_replay(script, argv, field):
+    envelope = json.loads(run(script, *argv).stdout)["envelope"]
+    assert envelope["replay"] and envelope["replay"].get(field) is not None, envelope
 
 
 def test_every_engine_entry_point_is_covered_by_the_contract():

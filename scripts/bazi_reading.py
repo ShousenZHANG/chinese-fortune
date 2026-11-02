@@ -11,6 +11,7 @@ from annual_assessment import (
     annual_paragraph,
     annual_readings,
     unknown_year,
+    year_pillar,
     years_asked,
 )
 from bazi_calc import build_parser as chart_parser
@@ -20,7 +21,7 @@ from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
 from luck_assessment import assess_luck, luck_paragraph
-from reading_views import compact_reading, write_report
+from reading_views import compact_reading, facts_line, write_facts, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
     __version__,
@@ -332,9 +333,9 @@ def chart_facts(chart: dict) -> dict:
     # Keep the original paths so evidence checking can compare the same facts.
     keys = ('four_pillars', 'day_master', 'hour_known', 'solar_date', 'lunar_date',
             'true_solar_time', 'timezone', 'birthplace', 'sect', 'qi_yun', 'da_yun',
-            'liu_nian', 'current_time_context', 'liu_nian_status', 'liu_nian_scope', 'liu_nian_note',
-            'birth_time_uncertainty', 'qi_yun_status', 'calendar_context')
-    return {key: chart[key] for key in keys if key in chart}
+            'liu_nian', 'current_time_context', 'liu_nian_status', 'reference_year', 'liu_nian_scope', 'liu_nian_note',
+            'birth_time_uncertainty', 'qi_yun_status', 'calendar_context', 'deceased')
+    return {key: chart[key] for key in keys if key in chart and (key != 'deceased' or chart[key])}
 
 
 def fact_packet(clean: dict, structure: dict | None = None) -> dict:
@@ -371,9 +372,19 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
         clean['true_solar_time']['say'] = offset_sentence(clean['true_solar_time'])
     for cycle in clean.get('da_yun') or []:
         if cycle.get('ganzhi') and cycle.get('start_year'):
-            cycle['say'] = (f"{cycle['start_year']}–{cycle['end_year']} 年走{cycle['ganzhi']}运"
-                            f"（周岁 {cycle['start_age']}–{cycle['end_age']}，虚岁从 {cycle.get('start_age_xusui', '?')} 起）")
+            cycle['say'] = (f"{cycle['start_year']}–{cycle.get('cut_at_death_year') or cycle['end_year']} 年走{cycle['ganzhi']}运"
+                            f"（周岁 {cycle['start_age']}–{cycle['end_age']}，虚岁从 {cycle.get('start_age_xusui', '?')} 起）"
+                            + (f"；卒于 {cycle['cut_at_death_year']} 年，这步运只到这里" if cycle.get('cut_at_death_year') else ''))
     age = age_at_request(clean)
+    deceased = clean.get('deceased')
+    died_year = deceased['year'] if deceased else None
+    if deceased:
+        # B6: a dead person has no age today; the age at death needs only the two dates.
+        died = date.fromisoformat(deceased['date'])
+        born = date.fromisoformat(deceased['birth_date'])
+        full = died.year - born.year - ((died.month, died.day) < (born.month, born.day))
+        age = {'date': deceased['date'], 'full_years': full, 'nominal_years': None, 'deceased': True,
+               'say': f"已于 {deceased['date']} 去世，享年周岁 {full} 岁；不算今天的年龄，卒年之后的大运流年不排。"}
     if age:
         clean['age_at_request'] = age
     structure = observed_structure(clean)
@@ -397,9 +408,18 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     extra: dict = {'colour_advice': colour_advice(clean, question)} if asks_colour(question) else {}
     if any(word in question for word in LUCK_WORDS):
         cycles = _cycles_now(clean)
-        extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
-                                 [{'status': 'unavailable', 'luck': {'ganzhi': None},
-                                   'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
+        reference = _reference_year(clean)
+        asked = years_asked(question, reference)
+        # The chart drops 流年 rows after the death, so the reference year can be missing; a dead person has no
+        # current cycle either way, and that is not the same as "which year is it" being unknown (R9-LAD02).
+        if died_year and (reference is None or reference > died_year or any(y > died_year for y in asked)):
+            when = f'{max([reference or 0, *asked])} 年' if (reference or asked) else '现在'
+            extra['luck_reading'] = [{'status': 'after_death', 'luck': {'ganzhi': None},
+                                      'reason': f'已于 {died_year} 年去世，{when}没有在走的大运，不作个人评估'}]
+        else:
+            extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
+                                     [{'status': 'unavailable', 'luck': {'ganzhi': None},
+                                       'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
         for reading in extra['luck_reading']:
             for scenario in reading.get('scenarios', []):
                 extra_ids.extend(scenario['source_passage_ids'])
@@ -407,7 +427,9 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     years = years_asked(question, _reference_year(clean))
     if years:
-        extra['annual_reading'] = annual_readings(clean, years)
+        alive = annual_readings(clean, [y for y in years if not died_year or y <= died_year])
+        by_year = {r['year']: r for r in alive}
+        extra['annual_reading'] = [by_year.get(y) or after_death_year(y, died_year) for y in years]
     elif any(word in question for word in ANNUAL_WORDS):
         extra['annual_reading'] = [unknown_year('不知道今年是哪一年：先问用户现在住在哪里（时区），或者直接问哪一年')]
     result = {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.1',
@@ -456,8 +478,16 @@ def host_notes(result: dict) -> list[str]:
 
 def _reference_year(clean: dict) -> int | None:
     """Which year it is for this request: the replayed or current instant, or the explicit year."""
+    if clean.get('reference_year'):
+        return clean['reference_year']
     context = clean.get('current_time_context') or {}
     return int(context['local'][:4]) if context.get('local') else (clean.get('liu_nian') or [{}])[0].get('year')
+
+
+def after_death_year(year: int, died_year: int | None) -> dict:
+    """A year after the death: not a personal reading, whatever the hour or day pillar."""
+    return {'status': 'after_death', 'year': year, 'ganzhi': year_pillar(year), 'cycle': None, 'hits': [],
+            'reason': f'卒于 {died_year} 年，这一年不作个人评估'}
 
 
 def _cycles_now(clean: dict) -> list[dict]:
@@ -492,11 +522,15 @@ def _routes_summary(routes: list[dict]) -> str:
     if settled:
         parts.append('、'.join(map(name, settled)) + '的条件都已核到')
     if pending:
-        parts.append('、'.join(map(name, pending)) + '的前提已见到，还有条件没核完')
+        parts.append('、'.join(map(name, pending)) + '的前提已见到，各自还有不同的条件没核完（逐条见下）')
     if closed:
-        parts.append(('、'.join(map(name, closed)) if len(closed) <= 2 else f'其余{len(closed)}条路线')
-                     + '现在不成立' if pending or settled else
-                     f'查到的{len(closed)}条取用路线现在都不成立')
+        # Grouped by what each lacks: round 7 S18 still wrote three closed routes as
+        # all 「因缺印透出」 when one lacked 七杀透出.
+        by_gap: dict[str, list[str]] = {}
+        for route in closed:
+            gap = '、'.join(c['label'] for c in route['conditions'] if c['state'] == 'not_met')
+            by_gap.setdefault(gap, []).append(name(route))
+        parts.append('现在不成立的：' + '；'.join(f"{'、'.join(names)}缺{gap}" for gap, names in by_gap.items()))
     return '；'.join(parts)
 
 
@@ -532,16 +566,18 @@ def _role_terms(result: dict) -> str:
 def _route_lines(assessment: dict) -> list[str]:
     """The routes in two groups, each condition said once (v5.6: every route repeated
     「不等于已发挥作用」 and the month-resolution condition)."""
+    # One line per route, open ones first, each with only its own missing or pending
+    # items: round 6 R2 merged a closed route's 「缺印透出」 into two open routes
+    # that had no such premise.
     lines: list[str] = []
     closed = [r for r in assessment['routes'] if any(c['state'] == 'not_met' for c in r['conditions'])]
-    if closed:
-        lines.append('现在不成立：' + '；'.join(
-            f"{r['title']}（缺：{'、'.join(c['label'] for c in r['conditions'] if c['state'] == 'not_met')}）"
-            for r in closed) + '。')
     pending = [r for r in assessment['routes'] if r not in closed]
     for route in pending:
         left = [c['label'] for c in route['conditions'] if c['state'] == 'unknown' and c['id'] != 'month_resolution']
-        lines.append(f"{route['title']}：前提已见到" + (f"，还要核：{'；'.join(left)}。" if left else '。'))
+        lines.append(f"{route['title']}：可算的前提都满足，没有缺项" + (f"；这一条还要核：{'；'.join(left)}。" if left else '。'))
+    for route in closed:
+        missing = '、'.join(c['label'] for c in route['conditions'] if c['state'] == 'not_met')
+        lines.append(f"{route['title']}：现在不成立，这一条缺{missing}。")
     if pending:
         lines.append('以上每条还都要核：这条属于月令本格，还是可成立的变格、兼格；只是检索到条款不算格局成立。'
                      '「可见」只说这个字在盘里，不等于它已发挥作用。')
@@ -600,6 +636,13 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument('--view', choices=('full', 'compact'), default='full',
                         help='JSON 展示层：full 完整资料；compact 去重并以段号索引原文')
     parser.add_argument('--report', metavar='PATH', help='另存本地 .md/.html 核对报告；不覆盖已有文件')
+    parser.add_argument('--report-style', choices=('plain', 'professional'), default='plain',
+                        help='报告写法：plain 白话（默认）；professional 加四柱表、离线命盘图与条款核查表')
+    parser.add_argument('--report-redact', action='store_true',
+                        help='分享预览：隐去四柱干支、出生日期时间地点、问题原话与公历年份，不附完整 JSON')
+    parser.add_argument('--facts-out', metavar='PATH.json',
+                        help='把 --view 选定的 JSON 存到这个文件，屏幕只输出白话草稿和文件路径；'
+                             '供 answer_check --facts 使用，只覆盖本工具以前写的 JSON')
     return parser
 
 
@@ -617,14 +660,23 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     if args.report:
         try:
-            result['report'] = write_report(result, render_facts(result), args.report)
+            result['report'] = write_report(result, render_facts(result), args.report,
+                                            style=args.report_style, redact=args.report_redact)
         except (OSError, ValueError) as exc:
             json_print(error_envelope('bazi_reading', 'report_unavailable', f'{exc}；请指定新的可写文件路径'))
             return 1
-    if args.markdown:
+    view = compact_reading(result) if args.view == 'compact' else result
+    if args.facts_out:
+        try:
+            saved = write_facts(args.facts_out, view)
+        except (OSError, ValueError) as exc:
+            json_print(error_envelope('bazi_reading', 'facts_unavailable', str(exc)))
+            return 1
+        print(render_facts(result) + '\n\n' + facts_line(saved))
+    elif args.markdown:
         print(render_facts(result))
     else:
-        json_print(compact_reading(result) if args.view == 'compact' else result, compact=args.view == 'compact')
+        json_print(view, compact=args.view == 'compact')
     return 0
 
 

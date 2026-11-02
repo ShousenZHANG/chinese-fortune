@@ -32,12 +32,29 @@ from bazi_tables import (
     SAN_XING_TRIPLES,
     TIANGAN_HE,
 )
+from sanyuan_hehun import match
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
 ORDER = ('year', 'month', 'day', 'hour')
 # 四孟、四仲、四季: the branch classes the 女命/男命 clauses compare (日支 against 年支 or 日支).
 BRANCH_CLASSES = {'四孟': '寅申巳亥', '四仲': '子午卯酉', '四季': '辰戌丑未'}
 CLAUSES = Path(__file__).resolve().parents[1] / 'assets' / 'hehun_clauses.json'
+# R1/R3: which relation the two people have decides which clauses apply. The
+# 合婚 clauses were written for a marriage; only one (小儿与父母) is about parents.
+RELATIONS = {
+    'marriage': {'label': '婚恋', 'subjects': ('男', '女', '男女生命', '女命', '所嫁丈夫', '男命', '所娶妻',
+                                             '下元戊辰男', '下元庚午女', '男年与女月', '女年与男月')},
+    'parent_child': {'label': '亲子', 'subjects': ('小儿', '小儿父母')},
+    'partnership': {'label': '合作', 'subjects': ()},
+    'friendship': {'label': '朋友', 'subjects': ()},
+}
+RELATION_NOTES = {
+    'parent_child': '亲子：随包古籍里只有一条两盘并看的条款（小儿四柱带父母四柱一二位，sanming:c007:p0028），'
+                    '讲的是小儿关煞，不是亲子合不合；其余只列两盘关系事实。不判断亲子缘分、孝顺或谁克谁。',
+    'partnership': '合作：随包古籍没有为合伙、同事写的两盘条款；这里只列两盘关系事实，合婚条款与三元合卦都不套用，'
+                   '是否合作看现实条件（分工、资金、协议）。',
+    'friendship': '朋友：随包古籍没有为朋友写的两盘条款；只列两盘关系事实，不套用合婚条款。',
+}
 BIRTH_KEYS = ('year', 'month', 'day', 'hour', 'minute', 'gender', 'timezone', 'longitude', 'city', 'sect', 'lunar',
               'fold', 'time_standard', 'tz')
 BOUNDARY = ('关系分类事实：哪一柱和哪一柱构成合、冲、刑、害。不是婚姻、亲子或合作好坏的判断，'
@@ -67,7 +84,8 @@ def subject_chart(birth: dict) -> dict:
     chart = calculate_bazi(chart_parser().parse_args(args))
     if not chart.get('ok'):
         raise ValueError(chart.get('message') or chart.get('error') or 'chart failed')
-    return chart_facts(chart)
+    # chart_facts drops the input echo; keep gender for the 三元 palace (男逆女顺).
+    return {**chart_facts(chart), 'gender': birth.get('gender')}
 
 
 def _positions(chart: dict) -> list[dict]:
@@ -153,10 +171,12 @@ def _full_trios(a_pos: list[dict], b_pos: list[dict]) -> list[dict]:
     return rows
 
 
-def clause_refs(relations: list[dict]) -> dict:
+def clause_refs(relations: list[dict], relation: str = 'marriage') -> dict:
     """Source clauses on two people that these relations bear on, and the methods the tool cannot compute."""
     present = {row['kind'] for row in relations}
-    clauses = json.loads(CLAUSES.read_text(encoding='utf-8'))['clauses']
+    allowed = set(RELATIONS[relation]['subjects'])
+    clauses = [c for c in json.loads(CLAUSES.read_text(encoding='utf-8'))['clauses']
+               if set(c['subjects']) & allowed]
     brief = [{'id': c['id'], 'passage_id': c['passage_id'], 'positions': c['positions'], 'claim': c['claim'],
               'not_computed': c['not_computed']} for c in clauses if set(c['pair_facts_kinds']) & present]
     missing = sorted({m for c in clauses if not c['pair_facts_kinds'] for m in c['not_computed']})
@@ -197,9 +217,35 @@ def say_lines(relations: list[dict], masters: dict) -> list[str]:
     return lines
 
 
-def pair_facts(chart_a: dict, chart_b: dict) -> dict:
+def _sanyuan(chart_a: dict, chart_b: dict) -> dict | None:
+    """三元九宫合卦 for a man and a woman whose year pillars are settled (R2)."""
+    people = {}
+    for chart in (chart_a, chart_b):
+        gender = chart.get('gender') or (chart.get('input') or {}).get('gender')
+        pillar = ((chart.get('four_pillars') or {}).get('year') or {}).get('ganzhi')
+        year = (chart.get('solar_date') or {}).get('year')
+        if gender not in ('male', 'female') or not pillar or not isinstance(year, int):
+            return None
+        people[gender] = {'year_pillar': pillar, 'birth_year': year}
+    if set(people) != {'male', 'female'}:
+        return None
+    return match(people['male'], people['female'])
+
+
+def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage') -> dict:
+    if relation not in RELATIONS:
+        raise ValueError(f"relation 须为 {'、'.join(RELATIONS)}")
     a_pos, b_pos = _positions(chart_a), _positions(chart_b)
     relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)] + _full_trios(a_pos, b_pos)
+    sanyuan = _sanyuan(chart_a, chart_b) if relation == 'marriage' else None
+    clauses = clause_refs(relations, relation)
+    if sanyuan:
+        clauses = {**clauses, 'not_computed_methods': [m for m in clauses['not_computed_methods']
+                                                       if m != sanyuan['method']],
+                   'computed_methods': [sanyuan['method']]}
+    say = say_lines(relations, _day_masters(chart_a, chart_b))
+    if sanyuan:     # before the 日主互见 line, which stays last
+        say = say[:-1] + [sanyuan['say']] + say[-1:]
     return {
         'ok': True, 'tool': 'pair_facts', 'version': __version__, 'schema_version': '1.0',
         'subjects': {name: {'four_pillars': {p['pillar']: p['ganzhi'] for p in pos},
@@ -208,8 +254,10 @@ def pair_facts(chart_a: dict, chart_b: dict) -> dict:
                      for name, chart, pos in (('A', chart_a, a_pos), ('B', chart_b, b_pos))},
         'day_masters': _day_masters(chart_a, chart_b),
         'relations': relations,
-        'say': say_lines(relations, _day_masters(chart_a, chart_b)),
-        'classical_clauses': clause_refs(relations),
+        'say': say + ([RELATION_NOTES[relation]] if relation in RELATION_NOTES else []),
+        'relation': {'type': relation, 'label': RELATIONS[relation]['label']},
+        'sanyuan_jiugong': sanyuan,
+        'classical_clauses': clauses,
         'notes': list(NOTES),
         'boundary': BOUNDARY,
         'next_checks': ['按 references/14-hehun.md 查原文是否把该关系用于两人之间，以及适用的柱位与条件',
@@ -222,9 +270,11 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description='两人八字之间逐柱的合冲刑害事实（不打分、不判好坏）',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog='stdin: {"a": {birth}, "b": {birth}}；birth 键同 bazi_calc：year month day hour minute gender\n'
+        epilog='stdin: {"a": {birth}, "b": {birth}, "relation": "marriage"|"parent_child"|"partnership"|"friendship"}；'
+               '省略 relation 按婚恋；birth 键同 bazi_calc：year month day hour minute gender\n'
                'timezone longitude city sect lunar，省略 hour 表示时辰未知。\n'
-               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations say classical_clauses notes\n'
+               'Top-level JSON keys: ok tool version schema_version subjects day_masters relations say relation '
+               'sanyuan_jiugong classical_clauses notes\n'
                'boundary next_checks; errors: error message')
     parser.add_argument('--stdin', action='store_true', required=True, help='从标准输入读两人出生资料 JSON')
     parser.parse_args(argv)
@@ -232,7 +282,8 @@ def main(argv: list[str] | None = None) -> int:
         request = json.loads(sys.stdin.read())
         if not isinstance(request, dict) or not all(isinstance(request.get(k), dict) for k in ('a', 'b')):
             raise ValueError('需要 {"a": {...}, "b": {...}} 两人的出生资料')
-        result = pair_facts(subject_chart(request['a']), subject_chart(request['b']))
+        result = pair_facts(subject_chart(request['a']), subject_chart(request['b']),
+                            request.get('relation', 'marriage'))
     except (ValueError, KeyError, TypeError) as exc:
         json_print(error_envelope('pair_facts', 'invalid_input', str(exc)))
         return 1

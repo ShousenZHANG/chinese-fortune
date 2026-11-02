@@ -65,8 +65,9 @@ def test_named_methods_are_actionable(question, method):
 
 @pytest.mark.parametrize('question', ['紫微排盘', '用梅花时间起卦', '六爻起卦', '周易时间起卦',
                                       '奇门起局', '大六壬起局', '塔罗抽一张牌', '八字大运'])
-def test_routed_command_templates_reach_real_clis(question):
+def test_routed_command_templates_reach_real_clis(question, tmp_path):
     command = route(question)['command'].replace('[--hour H --minute m]', '--hour 10 --minute 30')
+    command = command.replace('<临时目录>', tmp_path.as_posix())
     values = {'Y': '2000', 'M': '1', 'D': '15', 'H': '10', 'm': '30', 'G': 'male',
               '出生地': '北京', '现居地时区': 'Asia/Shanghai', '本次UTC': '2026-10-26T00:00:00Z', '<原话>': question}
     args = [values.get(arg, arg) for arg in shlex.split(command)[1:]]
@@ -75,6 +76,11 @@ def test_routed_command_templates_reach_real_clis(question):
     done = subprocess.run([sys.executable, '-X', 'utf8', *args],
                           cwd=Path(__file__).resolve().parents[1], capture_output=True, text=True, encoding='utf-8')
     assert done.returncode == 0, done.stdout + done.stderr
+    if '--facts-out' in args:     # the JSON goes to the file; the screen gets the plain draft
+        saved = Path(args[args.index('--facts-out') + 1])
+        assert saved.name in done.stdout
+        assert json.loads(saved.read_text(encoding='utf-8'))['ok'] is True
+        return
     assert json.loads(done.stdout)['ok'] is True
 
 

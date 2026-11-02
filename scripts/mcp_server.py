@@ -28,8 +28,10 @@ JSON_TYPES: dict[str, type | tuple[type, ...]] = {'string': str, 'integer': int,
 # Maintenance tools are left out, and so are the two that persist personal data
 # (profiles, prediction log): saving needs the user's explicit say-so in a host
 # that shows what is written, which a generic tool call does not.
+PERSONAL_DATA = {'personal_profiles.py', 'prediction_log.py'}
 EXCLUDED = {'mcp_server.py', 'build_skill.py', 'build_han_variants.py', 'import_classics.py',
-            'import_life_guide.py', 'personal_profiles.py', 'prediction_log.py'}
+            'import_life_guide.py', 'life_guide_refs.py', 'life_guide_review.py', 'rule_registry.py',
+            *PERSONAL_DATA}
 INSTRUCTIONS = ('中国术数与现实生活问答工具。先读资源 SKILL.md 的流程：拿不准走哪条流程先调 route_question；'
                 '八字本命用 bazi_reading（默认 view=compact）；回答发出前用 answer_check 核对正文；'
                 '不给分数，不把条件结论说成确定事件，未判的就说未判。')
@@ -39,7 +41,25 @@ BIRTH = {'year': {'type': 'integer'}, 'month': {'type': 'integer'}, 'day': {'typ
          'gender': {'type': 'string', 'enum': ['male', 'female']},
          'timezone': {'type': 'string', 'description': '出生地 IANA 时区，如 Asia/Shanghai'},
          'city': {'type': 'string'}, 'longitude': {'type': 'number'},
-         'lunar': {'type': 'boolean'}, 'sect': {'type': 'integer', 'enum': [1, 2]}}
+         'lunar': {'type': 'boolean'}, 'sect': {'type': 'integer', 'enum': [1, 2]},
+         'death_date': {'type': 'string', 'description': '已故者卒日 YYYY-MM-DD；大运流年只列到这一年'}}
+
+
+# Mirrors ziwei_calc.SCHOOL_CHOICES (a test keeps them equal); not imported so the
+# server stays a thin stdlib launcher.
+ZIWEI_SCHOOLS = {key: {'type': 'string', 'enum': values} for key, values in {
+    'school': ['default', 'nihai'],
+    'brightness': ['mainstream7', 'project4'],
+    'geng_sihua': ['yang-wu-yin-tong', 'yang-wu-tong-yin', 'yang-wu-fu-tong', 'yang-wu-fu-xiang', 'yang-wu-tong-xiang'],
+    'leap_month': ['split', 'next', 'prev'],
+    'kui_yue': ['tongxing', 'quanshu-1', 'quanshu-2', 'zhong-yiming'],
+    'tian_ma': ['year', 'month'],
+    'tianshi_tianshang': ['default', 'zhongzhou'],
+    'jie_kong': ['split', 'single', 'zhanyan'],
+    'changsheng': ['shui-tu', 'huo-tu'],
+    'changsheng_direction': ['yinyang', 'gender'],
+    'year_divide': ['lunar-new-year', 'lichun'],
+}.items()}
 
 
 def _schema(properties: dict, required: tuple[str, ...] = ()) -> dict:
@@ -58,17 +78,19 @@ TOOLS: dict[str, dict] = {
     'ziwei_chart': {'script': 'ziwei_calc.py', 'description': '紫微斗数命盘；给 horoscope_date 时加流年斗君、流月、流日、流时',
                     'schema': _schema({**BIRTH, 'horoscope_date': {'type': 'string'}, 'horoscope_time': {'type': 'string'},
                                        'liu_year': {'type': 'integer'}, 'brief_palaces': {'type': 'boolean'},
-                                       'brightness': {'type': 'string', 'enum': ['mainstream7', 'project4']},
-                                       'geng_sihua': {'type': 'string', 'enum': ['yang-wu-yin-tong', 'yang-wu-tong-yin',
-                                                                                  'yang-wu-fu-tong']},
-                                       'leap_month': {'type': 'string', 'enum': ['split', 'next', 'prev']}},
+                                       'focus_palace': {'type': 'string', 'description': '所问宫位，如 夫妻、事业、财运'},
+                                       **ZIWEI_SCHOOLS},
                                       ('year', 'month', 'day', 'hour', 'gender'))},
     'fortune_reading': {'script': 'fortune_reading.py', 'stdin_field': 'request',
                         'description': '个人短期运势、择日择时、行程；request 结构见 references/24-personalized-forecast.md',
                         'schema': _schema({'request': {'type': 'object'}}, ('request',)), 'flags': ['--stdin']},
-    'pair_facts': {'script': 'pair_facts.py', 'description': '两人八字逐柱合冲刑害事实，不打分', 'stdin_fields': ('a', 'b'),
+    'pair_facts': {'script': 'pair_facts.py', 'description': '两人八字逐柱合冲刑害事实，不打分',
+                   'stdin_fields': ('a', 'b', 'relation'),
                    'schema': _schema({'a': {'type': 'object', 'properties': BIRTH},
-                                      'b': {'type': 'object', 'properties': BIRTH}}, ('a', 'b')), 'flags': ['--stdin']},
+                                      'b': {'type': 'object', 'properties': BIRTH},
+                                      'relation': {'type': 'string', 'enum': ['marriage', 'parent_child',
+                                                                              'partnership', 'friendship']}},
+                                     ('a', 'b')), 'flags': ['--stdin']},
     'classical_search': {'script': 'classical_search.py', 'description': '离线检索随包古籍原文、出处与上下文',
                          'schema': _schema({'query': {'type': 'string'}, 'passage_id': {'type': 'string'},
                                             'chapter_id': {'type': 'string'}, 'book': {'type': 'string'},
@@ -133,7 +155,7 @@ def _command(name: str, arguments: dict) -> tuple[list[str], str | None]:
         stdin = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False)
     if 'stdin_fields' in spec:
         skip = set(spec['stdin_fields'])
-        stdin = json.dumps({k: arguments[k] for k in spec['stdin_fields']}, ensure_ascii=False)
+        stdin = json.dumps({k: arguments[k] for k in spec['stdin_fields'] if k in arguments}, ensure_ascii=False)
     args = list(spec.get('flags', []))
     if name == 'answer_check':
         skip.add('facts')

@@ -40,9 +40,16 @@ from life_guide import LIMIT as LIFE_LIMIT
 from life_guide import entries_for, library_source
 from luck_assessment import assess_luck, luck_paragraph
 from personal_profiles import birth_arguments, load_profile, validate_person
+from reading_views import facts_line, write_facts
 from region import is_zone, resolve_region
 from request_time import capture_request_time
-from utils import UTC, ensure_utf8_stdio, error_envelope, json_print, ok_envelope
+from utils import (
+    UTC,
+    ensure_utf8_stdio,
+    error_envelope,
+    json_print,
+    ok_envelope,
+)
 from wuxing_colours import asks_colour, colour_lead, colour_lines
 from xiangzhu import PASSAGE as XIANGZHU_PASSAGE
 from xiangzhu import birth_years_of, grade_of, label_of, personal_calendar, worst
@@ -191,10 +198,14 @@ def _participant(person: dict, payload: dict, event: dict, now: dict, window: di
     # 《子平真诠》取运 for each ten-year cycle the window touches: ten years per verdict.
     row['luck_reading'] = [assess_luck(natal, luck) for luck in target['luck_catalog'][:2]
                            if luck.get('status') == 'calculated']
-    # 流年 for the years the question names, or a window as long as a year.
+    # 流年 for the years the question names, a window as long as a year, or — for
+    # 阶段运势 — the year the window sits in: round 5 lost T10 on answers that never
+    # said which year layer applied to 「最近」.
     start, end = (datetime.fromisoformat(window[k]) for k in ('start', 'end'))
+    outlook = event.get('scenario', 'outlook') == 'outlook'
     years = years_asked(payload.get('question', ''), start.year) or (
-        list(range(start.year, end.year + 1))[:3] if (end - start).days >= 360 else [])
+        list(range(start.year, end.year + 1))[:3] if (end - start).days >= 360
+        else list(range(start.year, (end - timedelta(seconds=1)).year + 1))[:2] if outlook else [])
     if years and natal.get('hour_known') is not None:
         row['annual_reading'] = annual_readings(natal, years)
     if approximate:
@@ -385,6 +396,12 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     if capability['route'] == 'selection':
         _settle_practical(result, payload.get('preferences'))
     result['conclusion'] = conclusion_packet(result)
+    if _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
+        scope = {'method': 'xiangzhu_borrowed', 'scenario_mapping': 'unverified',
+                 'meaning': BORROWED_MEANING.format(label=_event_label(result))}
+        result['conclusion']['method_scope'] = scope
+        if result.get('ranking'):
+            result['ranking']['method_scope'] = scope
     # Computed from the request only, after the divination answer is settled,
     # so it cannot feed back into any ranking.
     result['life_reference'] = {'source': library_source(), 'region': resolve_region(payload),
@@ -968,7 +985,31 @@ def _context_sentence(calendar: dict, who: str, skip: tuple[str, ...] = ()) -> s
     return ('其中' + '；'.join(parts) + '，落在这段里的日子都受影响。') if parts else ''
 
 
+BORROWED_MEANING = ('相主是给协纪所列事项挑时间的方法，借用到「{label}」上；结果只是本人生年与各日的相主等级，'
+                    '不等于这件事已证的吉凶或客观上最好的日子')
+
+
+def _borrowed(result: dict) -> bool:
+    return ((result.get('capability') or {}).get('authority') or {}).get('kind') == 'borrowed'
+
+
+def _event_label(result: dict) -> str:
+    """The undertaking in the user's words; an internal scenario id (career) is not shown."""
+    label = (result.get('capability') or {}).get('label') or ''
+    return label if label and not label.isascii() else '这件事'
+
+
 def _calendar_sentence(result: dict, kind: str) -> str:
+    """The period lead; with a borrowed method the ranking is said as a 相主 comparison (R9-FORT-SCOPE-01)."""
+    text = _calendar_lead(result, kind)
+    if not _borrowed(result):
+        return text
+    label = _event_label(result)
+    text = text.replace('看，', '、借用协纪相主比较，', 1).replace('最好的', '相主等级最高的')
+    return text + f"这是相主对本人生年的等级比较；{label}和协纪事项的对应没有核过，不等于这件事已证的吉凶或客观上最好的日子。"
+
+
+def _calendar_lead(result: dict, kind: str) -> str:
     """Period answer: the best and the worst days (or months) for the person.
 
     A 凶 year or month that every entry sits in is said first: the passage
@@ -1409,16 +1450,47 @@ def _terms_line(text: str) -> str:
     return ('术语：' + '；'.join(f'{t}——{TERMS[t]}' for t in used) + '。') if used else ''
 
 
+def outlook_skeleton(result: dict) -> str:
+    """阶段运势的回答顺序: 窗口 -> 各层算到了什么 -> 现实动作 -> 一次边界 (第五轮 T10 输题)."""
+    window = result['window']
+    start, end = (datetime.fromisoformat(window[k]) for k in ('start', 'end'))
+    if start.time() == end.time() == datetime.min.time():
+        span = f"{start.date()} 至 {(end - timedelta(days=1)).date()}（{window['timezone']}，两端日期都含）"
+    else:
+        span = (f"{start.strftime('%Y-%m-%d %H:%M')} 起、到 {end.strftime('%Y-%m-%d %H:%M')} 为止"
+                f"（{window['timezone']}，终点那一刻不含）")
+    if window.get('label') == '近期':
+        span += '——原话只说「最近」，这是暂按的范围，开头这样说明，不要先反问用户要哪个范围'
+    layers = []
+    for person in result.get('participants', []):
+        for reading in person.get('luck_reading', [])[:1]:
+            open_ = {'conditional', 'mixed', 'partial', 'not_mentioned'}
+            judged = (reading['status'] == 'assessed' and reading.get('scenarios')
+                      and not open_ & set(reading.get('summary', {}).values()))
+            layers.append(f"{reading['luck'].get('ganzhi') or '当步'}大运（{'有十年喜忌' if judged else '共同喜忌没判'}）")
+        if person.get('annual_reading'):
+            layers.append('流年（只列冲克合，不合总分）')
+    if result.get('personal_calendar'):
+        layers.append('月和日（出生年相主等级）')
+    return (f"回答按这个顺序：先说这段时间指 {span}；再逐层说本次算到了什么——"
+            + '、'.join(layers) + "，没算到的层（如这件事本身的专门条款）直说没有；然后按用户说的实际处境给一两条现实动作，"
+            "标明是现实建议、不是命理结论；「不能保证结果」只说一次，不能代替上面已经能确定的部分。")
+
+
 def host_notes(result: dict) -> list[str]:
     """What the host must say as the tool says it (evals/v56/REPORT.md 3.1)."""
     notes = ['等级、干支和理由只用上面的结果；不要自己写代码另算干支、十神或等级。']
+    if _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
+        label = _event_label(result)
+        notes.append(f"相主是借用到「{label}」上的：首句和结论都要保留「借用相主比较」，只能说相主等级最高的是哪几天，"
+                     "不能说这些是做这件事最好的日子、事业或感情的吉凶已定。")
     calendar = result.get('personal_calendar') or {}
     entries = [e for e in _ranked(_merged(calendar.get('entries', []))) if not e.get('event_hits')]
     order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
     best = min((e['grade'] for e in entries), key=order.index, default=None)
     tied = [e for e in entries if e['grade'] == best] if best in ('大吉', '吉') else []
     if len(tied) > 1:
-        notes.append(f"最好的几天等级相同（{_dates(tied)}都是{best}），工具没排先后：不要说其中哪天最好，按用户的安排或偏好选。")
+        notes.append(f"等级最高的几天相同（{_dates(tied)}都是{best}），工具没排先后：不要说其中哪天最好，按用户的安排或偏好选。")
     if result.get('recommendation', {}).get('status') in ('practical_tie', 'preferences_required'):
         notes.append('候选时段之间工具没有给出首选，同一等级的按用户偏好选，不要说哪段最合适。')
     ranking = result.get('ranking') or {}
@@ -1428,6 +1500,8 @@ def host_notes(result: dict) -> list[str]:
         notes.append('、'.join(dict.fromkeys(conditional_hours))
                      + '涉及截路空亡：只能说当前工具按表先筛除，并保留“正犯”适用条件未核完；'
                      '不能省略限定后说这段一定忌用或必须避开。')
+    if result.get('capability', {}).get('scenario') == 'outlook' and result.get('window'):
+        notes.append(outlook_skeleton(result))
     for person in result.get('participants', []):
         for reading in person.get('luck_reading', []):
             if reading['status'] != 'assessed' or not reading.get('scenarios'):
@@ -1545,6 +1619,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument('--markdown', action='store_true', help='输出白话事实说明；不代替补查后的完整解读')
     parser.add_argument('--data-dir', type=Path)
     parser.add_argument('--detail', action='store_true', help='附完整相主评级说明和每天的理由')
+    parser.add_argument('--facts-out', metavar='PATH.json',
+                        help='JSON 存到这个文件，屏幕只输出白话说明和文件路径；供 answer_check --facts 使用')
     args = parser.parse_args(argv)
     try:
         result = read_request(json.load(sys.stdin), data_dir=args.data_dir)
@@ -1558,10 +1634,18 @@ def main(argv: list[str] | None = None) -> int:
     # Rendering reads only what read_request produced, so an error here is a
     # defect. Inside the try above, a renderer KeyError once came out as
     # 「目前还算不了这一部分」 on a request that had been answered.
-    if args.markdown:
+    payload = {**result, 'host_notes': host_notes(result)} if result.get('ok') else result
+    if args.facts_out:
+        try:
+            saved = write_facts(args.facts_out, payload)
+        except (OSError, ValueError) as exc:
+            json_print(error_envelope('fortune_reading', 'facts_unavailable', str(exc)))
+            return 1
+        print(render_answer(result, detail=args.detail) + '\n\n' + facts_line(saved))
+    elif args.markdown:
         print(render_answer(result, detail=args.detail))
     else:
-        json_print({**result, 'host_notes': host_notes(result)} if result.get('ok') else result)
+        json_print(payload)
     return 0
 
 
