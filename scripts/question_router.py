@@ -266,6 +266,12 @@ def route(question: str) -> dict:
     if _knowledge_only(text):
         return _knowledge_route(text)
     if any(word in text for word in FENGSHUI_WORDS):
+        if re.search(r'\d+(?:\.\d+)?\s*(?:度|°)|罗盘|指南针|几度|坐什么山|哪个山', text):
+            return {'flow': 'specialist', 'why': '有测量角度：先按测量合同换成二十四山坐向，误差跨山不取整',
+                    'command': 'python scripts/fengshui_measure.py --bearing 角度 --of facing|sitting '
+                               '--reference magnetic|true --error 误差度数 [--declination 磁偏角]',
+                    'reference': 'references/08-fengshui.md',
+                    'needs': ['角度是朝向还是坐向', '磁北（罗盘、手机）还是真北（地图）', '大约误差几度']}
         return {'flow': 'specialist', 'why': '问的是房间、家具的朝向或摆放，属风水专项',
                 'reference': 'references/08-fengshui.md', 'needs': ['实际布局与测量']}
     if any(w in text for w in ('反查', '反推', '倒推', '推出生日')) and any(w in text for w in ('四柱', '八字', '生日', '出生')):

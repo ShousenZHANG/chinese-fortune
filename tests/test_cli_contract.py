@@ -52,6 +52,8 @@ IMPOSSIBLE_INPUTS = [
     ('birth_correction.py', ['--stdin'], '空 JSON 请求'),
     ('qimen_select.py', ['--from', '2026-13-01', '--target-timezone', 'Asia/Shanghai'], '日期格式错'),
     ('rule_registry.py', ['--family', 'no-such-family'], '不存在的规则族'),
+    ('fengshui_measure.py', ['--bearing', '-5', '--of', 'facing', '--reference', 'magnetic', '--error', '3'], '角度越界'),
+    ('fengshui_measure.py', ['--bearing', '90', '--of', 'facing', '--reference', 'magnetic', '--error', '90'], '误差越界'),
     ('qimen_select.py', ['--from', '2026-11-02', '--days', '0', '--target-timezone', 'Asia/Shanghai'], '天数越界'),
     ('pillars_to_dates.py', ['--year-pillar', '甲丑', '--month-pillar', '丁丑', '--day-pillar', '壬申'], '不存在的干支'),
     ('pillars_to_dates.py', ['--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--from-year', '1000'], '年份越界'),
