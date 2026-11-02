@@ -98,11 +98,11 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 | Marriage, family and partnership pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other, clauses filtered by relationship type; classified, never scored; marriage also gets the 《选择要略》 three-yuan nine-palace match with its recorded objection |
 | Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
 | Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
-| Classical text lookup | passages, editions, context | 13 frozen transcriptions, 535 units, 18,982 paragraphs, offline |
+| Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,597 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
 | Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
 - BaZi calculations with birth timezone, DST, true solar time, day boundaries and unknown-hour handling.
-- Offline retrieval from 13 frozen transcriptions: 535 chapter/volume units and 18,982 paragraphs, with provenance and context.
+- Offline retrieval from 15 frozen transcriptions: 557 chapter/volume units and 29,597 paragraphs, with provenance and context.
 - Eight BaZi rule families and 25 review paths. Observable conditions are computed; interpretive conditions require explicit reasoning from the chart and full passages.
 - Current time in the user's present location, captured once per request.
 - Zi Wei, Liu Yao and other methods when requested, within their documented scope.

@@ -1,0 +1,655 @@
+{
+  "book_id": "yilin",
+  "chapter_id": "c000",
+  "title": "序",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%BA%8F&oldid=2658157",
+  "revision": "2658157",
+  "source_timestamp": "2026-02-27T07:42:29Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yilin/c000.json",
+  "raw_sha256": "7b37a0a6e70a1de1c35cacb3b4644f09bc1bf8095931f44074a1b1cb4f64feb3",
+  "raw_kind": "proofread_page_revisions_for_this_volume",
+  "extraction_kind": "volume_assembled_from_frozen_page_revisions",
+  "issues": [
+    {
+      "passage_id": "yilin:c000:p0011",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0013",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0015",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0016",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0020",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0022",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0033",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0040",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0044",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0045",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0055",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c000:p0059",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "序",
+      "text": "焦氏易林序",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0001",
+      "sha256": "4fdd4e4c9e46edf4520d20a7001b7cb2449695f58cf76dc58bd73d9e75024c30"
+    },
+    {
+      "section": "序",
+      "text": "東萊人費直字長翁",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0002",
+      "sha256": "48ef9bf8460a50c72a5c64b2ec581f1b29fc63e23d0a5c3e8668c19166b46999"
+    },
+    {
+      "section": "序",
+      "text": "六十四卦變者占王莽時建信天水焦",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0003",
+      "sha256": "a2873e5b38e68311998efee13f2a02dfd414c5758982d56bbaf00bd9ccf62c93"
+    },
+    {
+      "section": "序",
+      "text": "延夀之撰也夫易者廣矣大矣以言乎",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0004",
+      "sha256": "5ff80fcad775b7608b5300e0e6286e119a40b52858ce1802e473f7af4f2fab44"
+    },
+    {
+      "section": "序",
+      "text": "逺則不禦以言乎邇則静而正以言乎",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0005",
+      "sha256": "524b2357c878ae7a656f62938292e585cec3e4a8165f403a18accfed25cc3c92"
+    },
+    {
+      "section": "序",
+      "text": "天地之間則備矣然易者謂六十四卦",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0006",
+      "sha256": "ba1f092ba22a3b46249353e0fc77084a86b11c57f5c3f10c1d0bc54032ff69e5"
+    },
+    {
+      "section": "序",
+      "text": "也推此言之則繇文說卦之所未盡也",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0007",
+      "sha256": "b51ca248c20117902bbafa66606a8fe6efed9818bcf57d179573222b48115333"
+    },
+    {
+      "section": "序",
+      "text": "故連山歸藏周易皆異辭而共卦雖三",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0008",
+      "sha256": "01d0ce8de71729cacc5972784372e7dc7859aba6d67a38ed34e2150628152430"
+    },
+    {
+      "section": "序",
+      "text": "家並行猶舉一隅耳贛善於隂陽復造",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0009",
+      "sha256": "70c1aa2ee5b5fadfce0258bf3854d4e0fc1eaaa4016cf980b3e14b63daf5940c"
+    },
+    {
+      "section": "序",
+      "text": "此以致易未見者其射存亡吉凶遇其",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0010",
+      "sha256": "f2373d9a93ad005b86cadacf1d06eda2f0238ddb8dd1aa4830eb09bec7dcdfaf"
+    },
+    {
+      "section": "序",
+      "text": "事〔字形SK3892：未编码〕則多中至於糜碎小事非其事〔字形SK3892：未编码〕",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0011",
+      "sha256": "5ef194713c380047d1a1bd5e74a0334f20ffc49b4f7115f2f7cc192116cdfb4a"
+    },
+    {
+      "section": "序",
+      "text": "則亦否矣贛云通逹隱幾聖人之一隅",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0012",
+      "sha256": "170f25b4bbf4e1263b685d772f7be644341117177b69a12e97737e8f480bf714"
+    },
+    {
+      "section": "序",
+      "text": "也延夀獨得隱士之〔字形SK3664：未编码〕後漢書京房傳",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0013",
+      "sha256": "70ab15e423db1ca4018b20a8d9ed9d96927645d1ff2ea037072ef7f1754914a6"
+    },
+    {
+      "section": "序",
+      "text": "云房明治易事梁人焦延夀字贛",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0014",
+      "sha256": "d1dfc46627dce88dbd025188e642523f05a01dbcb792c6ad4cec098383dfa91a"
+    },
+    {
+      "section": "序",
+      "text": "貧少以好學得幸梁王王供其資令〔字形SK3044：未编码〕",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0015",
+      "sha256": "cc95f3cc8527d35e059c34e6ef467cd3aaedfc4046cb4656381d6aa458cb8fce"
+    },
+    {
+      "section": "序",
+      "text": "意學旣成爲郡吏察舉〔字形SK3429：未编码〕小黄令以伺",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0016",
+      "sha256": "7c67a8eef6b2d1acad9c7f20d3c821c3a861aa333a64b2190f21744b286addeb"
+    },
+    {
+      "section": "序",
+      "text": "候先知姧邪盜賊不得發愛飬吏民化",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0017",
+      "sha256": "4bdfb846d54cc207cb0c34c597c140ea728e6c48ffdcbd3285f1dc1ff09ef150"
+    },
+    {
+      "section": "序",
+      "text": "行縣中舉最當遷三老官属上書願留",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0018",
+      "sha256": "f6a41ee7089e9fc5eb023c67d40736cc999e6a80e0b6b136d28754c6e0c06193"
+    },
+    {
+      "section": "序",
+      "text": "贛有詔許増秩留卒於小黄令贛甞曰",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0019",
+      "sha256": "640e8cc65d9ef3177f7620479152451fc6c66eeb0e43429974d7c7d1d2d5c440"
+    },
+    {
+      "section": "序",
+      "text": "得我道以亡身者京生也其〔字形SK3664：未编码〕長於災",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0020",
+      "sha256": "3ba394be8db49c12f62106d2ddeb10af877d5585e138458eabf25db37b3b243f"
+    },
+    {
+      "section": "序",
+      "text": "變分六十四卦更直日用事以風雨寒",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0021",
+      "sha256": "0a065d9340f07fe5b3963dbdf562c00897323ff9327389defc56a2ff0a57d641"
+    },
+    {
+      "section": "序",
+      "text": "温爲候各有占驗房用之〔字形SK2879：未编码〕精孟康曰",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0022",
+      "sha256": "4baeea2ecf297a98dcbc1da6bb5713a72cd053eea200ef7dcdf552421dffc474"
+    },
+    {
+      "section": "序",
+      "text": "分卦直日法一爻主一日六十卦爲三",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0023",
+      "sha256": "0428511e6b428559ce78174aa5ffdb72c0d5f86ee4f2f59beb6f6936bb44d465"
+    },
+    {
+      "section": "序",
+      "text": "百六十日餘四卦震離兊坎爲方伯監",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0024",
+      "sha256": "5fe49826bb26eb807b5c5da2050cf82f88194521147988b455542b545976b89d"
+    },
+    {
+      "section": "序",
+      "text": "司之官所以用震離兊坎者是二至二",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0025",
+      "sha256": "fc909de5dbfccd1f490d63b4d2af1c2c86de44e795a669ed971ac36a4c1783d1"
+    },
+    {
+      "section": "序",
+      "text": "分用事之日又是四時各專主之氣各",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0026",
+      "sha256": "2a1200bd94d034108869097594cb6efc6af5a84ac3e433fa4ddd13c79a1b099f"
+    },
+    {
+      "section": "序",
+      "text": "卦上一日其占法各以其日觀善惡也",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0027",
+      "sha256": "862fa07f263485580abdc41e8fb87e1c6a4eeed9002da0e33eb007fa6daccd9c"
+    },
+    {
+      "section": "序",
+      "text": "漢焦小黄周易變卦筮敘",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0028",
+      "sha256": "6836bc97aa079af6d6b4ae1e6747d2c9d1599d1a8b837b85aabeeeae9871bc19"
+    },
+    {
+      "section": "序",
+      "text": "靈越五雲谿王俞",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0029",
+      "sha256": "f059015a10adc07a3a775a0a9ec14851097592bf9a2243a72f9ccbd7c2715fbd"
+    },
+    {
+      "section": "序",
+      "text": "大凡在變化象數之中者莫逃乎易唯",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0030",
+      "sha256": "d5adfbf442d44a32dff1ad0d4de2f9231e1884e1cb1dde59d7355e73964b5e1b"
+    },
+    {
+      "section": "序",
+      "text": "人之情僞㝡曰難知繫稱卜筮尚占憂",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0031",
+      "sha256": "e6ceaf76d89a9fcdcc8961ea14f5719ed04d7d16836de9ca3ccb133339ca6cb3"
+    },
+    {
+      "section": "序",
+      "text": "患興慮彼山上有火明入地中周孔之",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0032",
+      "sha256": "b49b199d238bfc2dd0a9d3b50c9c7ee55265373d33b7c17cb0d7f92265534768"
+    },
+    {
+      "section": "序",
+      "text": "情繇是觀變自三古以降雜〔字形SK3664：未编码〕歧分矧",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0033",
+      "sha256": "0d307599afd3bafad0a8fa2bea32f13e9af8aa66a81527275ac4f42297ca0de9"
+    },
+    {
+      "section": "序",
+      "text": "卜筮多門亡羊殆盡雖京郭中竒然皆",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0034",
+      "sha256": "ca530040e869c6bb83fdedb0b33bac0574ee2cce3ec79183ebe010ed6d006eb9"
+    },
+    {
+      "section": "序",
+      "text": "不免其身夫自知知人乃曰明哲則隗",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0035",
+      "sha256": "3b2d7ba0e62c8054a757667594ab2d0707dd169090100312b86f6b33d216d7eb"
+    },
+    {
+      "section": "序",
+      "text": "炤易數於龔使焦贛發誡於君明炤旣",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0036",
+      "sha256": "fff58195c06ba285868263a9ba124655c6fb1a80c51fe4e4b4b7c2e2ba01c545"
+    },
+    {
+      "section": "序",
+      "text": "没不顯其占贛明且哲乃留其術俞巖",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0037",
+      "sha256": "18dfc07eee200acc5aeedb3a2ece85d775a514e0f029f366979205fa1f16bd6d"
+    },
+    {
+      "section": "序",
+      "text": "耕東鄙自前困𫎇客有枉駕蓬廬以焦",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0038",
+      "sha256": "6314b9628e337eaa7b5cc5cc5095ee4c78cfb91afd15bb6c5a4e15c6cd281a1c"
+    },
+    {
+      "section": "序",
+      "text": "辭數軸相示俞甞讀班史列傳及歷代",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0039",
+      "sha256": "556632e96e4b24f1635a7e668b265f5d023c9f1d2cac9e4053e66bb5e87a78a0"
+    },
+    {
+      "section": "序",
+      "text": "名儒系譜諸家雜〔字形SK3664：未编码〕之文咸稱自夫子",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0040",
+      "sha256": "9c4e91b461a4efed2dd1a69ab4be45b738f1c005969f70871a252a6109d98cc3"
+    },
+    {
+      "section": "序",
+      "text": "授易於商瞿僅逾十輩延夀傳經於孟",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0041",
+      "sha256": "95c2897a801ecbec7dd1d6db2673ac41286378f8fe83c54e55eb56e9f0c82cb1"
+    },
+    {
+      "section": "序",
+      "text": "喜固是同時當西漢元成之間凌夷厥",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0042",
+      "sha256": "84f02b504c14ddc47525cc5f99ffd4b557a9f8e09980b1ba3a15bb9ba157e4f6"
+    },
+    {
+      "section": "序",
+      "text": "政先生乃或出或處外比苞𫎇輙以易",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0043",
+      "sha256": "4ad762f345f76db5868431ceb0ef860a216f2a9827929b93945ed12ac6826da6"
+    },
+    {
+      "section": "序",
+      "text": "道上干梁王遂爲郡察舉詔〔字形SK3429：未编码〕小黄令",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0044",
+      "sha256": "abdcc01f67a7c4a3539c0ec54e83983e91961c336e25c43712de6ba7cc6e1af7"
+    },
+    {
+      "section": "序",
+      "text": "而邑中隱伏之事皆預知其情得以〔字形SK2879：未编码〕",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0045",
+      "sha256": "d069c6105a74675337111ce97401b2930d23b1ea33dfa6bdae07c4293b714ecf"
+    },
+    {
+      "section": "序",
+      "text": "異當遷㝷亦卒於官次所著大易通變",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0046",
+      "sha256": "a20744598e7ab20b1ce1d58dcea226e3d1151179e87239cd40ddb7e1eca45377"
+    },
+    {
+      "section": "序",
+      "text": "其卦揔四千九十六題事本彌綸同歸",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0047",
+      "sha256": "b4baa994a19026abe06de51a64e921e86036f5dcf40c42fd4801c761055d3df9"
+    },
+    {
+      "section": "序",
+      "text": "簡易其辭假出於經史其意雅合於神",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0048",
+      "sha256": "58d9dcc997f5fa994003472c6a94b5eb25585360898e8e5697776ef4094da949"
+    },
+    {
+      "section": "序",
+      "text": "祗但率㓗精專事無不中而言近意逺",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0049",
+      "sha256": "18dccb57fd813ef331c890884182ae7bdaf9a4c276e274e3bea82bd73486ad48"
+    },
+    {
+      "section": "序",
+      "text": "易識難詳不可瀆𫎇以爲辭費後之好",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0050",
+      "sha256": "659e8a92908d2c77d4a3acfb62d82ee838a3dd00c287f4918332900ba2675df1"
+    },
+    {
+      "section": "序",
+      "text": "事如君山者則子雲之書爲不朽矣以",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0051",
+      "sha256": "72e120ab6cb75cef9a52a5b0de82ae3dcb810852f468094759c2b2c8eedddc08"
+    },
+    {
+      "section": "序",
+      "text": "聖唐㑹昌景寅嵗周正五日敘",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0052",
+      "sha256": "fa8a6230353b0d229ab61d94e26b8b3b7f3b28bed2e175eac6409b9862108d79"
+    },
+    {
+      "section": "序",
+      "text": "焦林直日",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0053",
+      "sha256": "910fef87dbdb4adb0c77766150a23e1006792fbca64db53da027d7f75fd6a68f"
+    },
+    {
+      "section": "序",
+      "text": "六十卦每卦直六日共直三百六十",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0054",
+      "sha256": "aee94d38d22e3c5e6933861f8cd3e1f0fc56436b48237663783b53cc850f6eca"
+    },
+    {
+      "section": "序",
+      "text": "日餘四卦各〔字形SK2867：未编码〕直一日",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0055",
+      "sha256": "37e1af3dc520fc46046b9146ebc134f56485ceac4417d4bdc4b970e0a4a37750"
+    },
+    {
+      "section": "序",
+      "text": "立春　雨水〔注文〕三十日五卦　每卦直六日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "yilin:c000:p0056",
+      "sha256": "b1167c5c5473dd53302b74332d32ac340bf79ca210895e3e72ee6dc144131eea"
+    },
+    {
+      "section": "序",
+      "text": "小過　　𫎇　　益　　漸　　泰",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0057",
+      "sha256": "1573d7d402ae619d5b30d3dff55f375b205cf0ab989412eaf97becaf5a4f8a9c"
+    },
+    {
+      "section": "序",
+      "text": "驚蟄　　春分〔注文〕春分震卦　直一日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "yilin:c000:p0058",
+      "sha256": "c2e7619baedd8ae3065aa6ad5077c5bb69347649052dee80328250699d707411"
+    },
+    {
+      "section": "序",
+      "text": "需　　隨　　〔字形SK3089：未编码〕　　解　大壯",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0059",
+      "sha256": "1f081e8f4401a726ce88f8744eff21a80f05634b0f76f499274f3c1a58988a0e"
+    },
+    {
+      "section": "序",
+      "text": "清明　　榖雨",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0060",
+      "sha256": "f2cb33047989168fdf792961a52c97c9d4bce696f798b0d657e06fe84f22e3ba"
+    },
+    {
+      "section": "序",
+      "text": "豫　　訟　　蠱　　革　夬",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0061",
+      "sha256": "089a341f849e5505b680fb89ef344866147affcbf4b8e8c111e36914ab4efacb"
+    },
+    {
+      "section": "序",
+      "text": "立夏　　小滿",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0062",
+      "sha256": "b894fb94a53d3a76c5d85d20edf5b42fb3327c8dbcd1b23d96afb98937835d7b"
+    },
+    {
+      "section": "序",
+      "text": "旅　　師　比　　小畜　　乾",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0063",
+      "sha256": "ba8566b96e49aaca2651e5545bfbef5faae430f5a55697138e607f857ecd0209"
+    },
+    {
+      "section": "序",
+      "text": "芒種　　夏至〔注文〕夏至离卦　直一日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "yilin:c000:p0064",
+      "sha256": "b3a9b8858e36df4530d5de67545e443d94eec7659c4f360e9de7abcb563453ef"
+    },
+    {
+      "section": "序",
+      "text": "大有　家人　井　咸　姤",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0065",
+      "sha256": "0bc3b96b483a2b3e2d928ed9fbb1901dde1cd91ea412ee02fdbf1292a01ecc91"
+    },
+    {
+      "section": "序",
+      "text": "小暑　大暑",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0066",
+      "sha256": "61c79939d16ffe46304d07677fefce3335a6637c7bc9144bc3e3bcd1daa72571"
+    },
+    {
+      "section": "序",
+      "text": "鼎豐　渙　履　遯",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0067",
+      "sha256": "32f16be875c1725465b6868c54f012e1a6587f75216784c91dd9716d31199213"
+    },
+    {
+      "section": "序",
+      "text": "立秋　處暑",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0068",
+      "sha256": "1bd6a1249693ff0f90ef07e246c827cf305d4734561d20da56298eb0672af1ae"
+    },
+    {
+      "section": "序",
+      "text": "𢘆　節　同人　損　否",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0069",
+      "sha256": "4e390f9fe06fde5ea92e8171690625ee8fc209c4e3eed911d804042dd989b466"
+    },
+    {
+      "section": "序",
+      "text": "白露　秋分〔注文〕秋分兊卦　直一日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "yilin:c000:p0070",
+      "sha256": "b1edc819f6ba76eed8257174c2600d88d09d78b3ecc851041add07251ca81168"
+    },
+    {
+      "section": "序",
+      "text": "巽　萃　大畜　賁　觀",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0071",
+      "sha256": "dc919f720cc9d673dc361cd09cda41267a8c86b15e0c3c5cb05c4a48398a89a9"
+    },
+    {
+      "section": "序",
+      "text": "寒露　霜降",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0072",
+      "sha256": "b034484d77633d88f987ff3d2342d07b44efc9ba502ed2cdd84952cd0f953ef8"
+    },
+    {
+      "section": "序",
+      "text": "歸妹　無妄　明夷　困　　剥",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0073",
+      "sha256": "663b7f21a1b2d8d814108d49f139a2841531eb1833c52f3831807a88909df61f"
+    },
+    {
+      "section": "序",
+      "text": "立冬　小雪",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0074",
+      "sha256": "dd6606c5b0ba2efe0fc77002a1097e684982eab76503d292c3cbefb14db13660"
+    },
+    {
+      "section": "序",
+      "text": "艮　旣濟　噬嗑　大過　坤",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0075",
+      "sha256": "40c9cd50f768c57624c5e4bc93b7d7e0852a81306d4dda7a888f8640c154b7d0"
+    },
+    {
+      "section": "序",
+      "text": "大雪　冬至〔注文〕冬至坎卦　直一日〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "yilin:c000:p0076",
+      "sha256": "a17a38672b6ca07b473e76ded20c87113bf96581614d10c5958e97391deb73b6"
+    },
+    {
+      "section": "序",
+      "text": "未濟　蹇　頥　中孚　復",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0077",
+      "sha256": "29976bdd3e54eebdff384ddd8e28aab838c30e46234f80dbed59f066d6f916e1"
+    },
+    {
+      "section": "序",
+      "text": "〔注文〕從大雪後將坎卦入數断從立　冬後四十五日係王相不断〔/注文〕",
+      "layer": "base_text_with_commentary",
+      "passage_id": "yilin:c000:p0078",
+      "sha256": "6cc1a42c6141dbff8ef44ed60b8158605cb4ca1387be16a66316a4594a46b163"
+    },
+    {
+      "section": "序",
+      "text": "小寒　大寒",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0079",
+      "sha256": "ef9efab5698ea89d4ae18a46e7476ea39bd15410d67e4be183c0c0ea85fb77fe"
+    },
+    {
+      "section": "序",
+      "text": "屯　　謙　睽　　升　臨",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0080",
+      "sha256": "01eedeca97f14d0982493d9028e28c5ab45fcd5a993b30726eaa0397efc75e99"
+    },
+    {
+      "section": "序",
+      "text": "每兩節氣共三十日管五卦逐日終而",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0081",
+      "sha256": "63e4b67efd610f97f61a8947d52d83024e0904f275fc362d702df190ac9e524c"
+    },
+    {
+      "section": "序",
+      "text": "復始排定一卦相次管六日凡卜看本",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0082",
+      "sha256": "29d8d2a76090f6f24f8d5bed020acf2abcb39c8bcd8140b4d2075c5d22207a0b"
+    },
+    {
+      "section": "序",
+      "text": "日得何卦便於本日卦内㝷所卜得卦",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0083",
+      "sha256": "b0be96c5d046a43c70508ddd4233dffb51339563bea8a45c9a41cf8856c352aa"
+    },
+    {
+      "section": "序",
+      "text": "看凶𠮷",
+      "layer": "paratext",
+      "passage_id": "yilin:c000:p0084",
+      "sha256": "1895d78c2dceae3d097c8194e02128ba1f2e50bcc23c283944e81ae6970d3a60"
+    }
+  ]
+}

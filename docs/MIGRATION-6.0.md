@@ -42,6 +42,10 @@
 
 - 新增 `fengshui_measure.py`：测量角度换二十四山坐向；`measurement`（测量事实）与 `tradition`（二十四山分类）分开，误差跨山时 `ambiguous: true`，要求复测。
 
+## 焦氏易林
+
+- 新增 `yilin_lookup.py --from 本卦 [--to 之卦]`：返回 `versions[]`（`yilin` 四部叢刊本、`yilin_siku` 四库本）的原文、`passage_id`、`sha256` 和注文；某本缺这一林时 `text` 为 null 并给 `reason`。古籍库多了 `yilin`、`yilin_siku` 两部书，`search_with_scope` 的检索范围随之变为 15 部。
+
 ## 姓名
 
 - `characters[].stroke_source` 标出笔画来自康熙表、内置简表还是默认估算；`layers` 列出算了的层与没算的层及原因。

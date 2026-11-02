@@ -1,0 +1,2720 @@
+{
+  "book_id": "yilin",
+  "chapter_id": "c003",
+  "title": "卷第三",
+  "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%B8%89&oldid=2658160",
+  "revision": "2658160",
+  "source_timestamp": "2026-02-27T07:42:40Z",
+  "layer": "historical_work_transcription",
+  "facsimile_status": "not_checked",
+  "transcription_status": "acquired_not_collated",
+  "raw_path": "sources/yilin/c003.json",
+  "raw_sha256": "994fb1bb06ae2f3f2ec92e411da9ae69de474dc1bb5acdab932dee3b905f8573",
+  "raw_kind": "proofread_page_revisions_for_this_volume",
+  "extraction_kind": "volume_assembled_from_frozen_page_revisions",
+  "issues": [
+    {
+      "passage_id": "yilin:c003:p0004",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0023",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0024",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0038",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0040",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0041",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0042",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0047",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0053",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0054",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0062",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0065",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0079",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0080",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0087",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0105",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0106",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0135",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0137",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0138",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0156",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0167",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0170",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0173",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0182",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0191",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0197",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0202",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0205",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0206",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0223",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0231",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0245",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0246",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0251",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0252",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0255",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0258",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0269",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0283",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0287",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0288",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0291",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0296",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0303",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0304",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0305",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0314",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0330",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0332",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0338",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0346",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0347",
+      "kind": "source_uncertainty_marker"
+    },
+    {
+      "passage_id": "yilin:c003:p0354",
+      "kind": "source_uncertainty_marker"
+    }
+  ],
+  "passages": [
+    {
+      "section": "小畜之小畜",
+      "text": "白鳥㗸餌鳴呼其子斡枝張翅来從其母伯仲叔季尤賀舉手",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0001",
+      "sha256": "d2df33e6376f70707444dd9ce97982451660e99492dc763edc9f2d47b478768d"
+    },
+    {
+      "section": "小畜之乾",
+      "text": "東過虎地牛馬奔驚道絶不通南困無功",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0002",
+      "sha256": "b5d1f5e4a3c40a274c4fb07a5bd7f97117be707c6e3a02fcf0d6854a5872286b"
+    },
+    {
+      "section": "小畜之坤",
+      "text": "子鉏執麟春秋作元隂將以終尼父悲心",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0003",
+      "sha256": "1fbc585003ec7e56a1cd94ec98ec5a65c302310a5058cc016c1d267eabe0f070"
+    },
+    {
+      "section": "小畜之坤",
+      "text": "左傳哀公十四年春西狩於大野叔孫氏之車子鉏商〔字形SK3598：未编码〕麟孔子作春秋",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0004",
+      "sha256": "f91b3dc4fe4b9b979135db858a41e99679504ec291da89ca3741cdfec6e4824b"
+    },
+    {
+      "section": "小畜之屯",
+      "text": "取火泉源釣魴山巔魚不可得火不可燃",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0005",
+      "sha256": "7a08d81e12c70b490a847d80a515cf77ec0e5ba134e4b8b57be01983144f8b47"
+    },
+    {
+      "section": "小畜之蒙",
+      "text": "機關不便不能出言精誠不通爲人所𡨚",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0006",
+      "sha256": "bac68947f1f6d55da84b5aff76890221afd4fb58c3908ff8e3fd6e0e678332bf"
+    },
+    {
+      "section": "小畜之需",
+      "text": "故室舊廬稍弊且除不如新巢可治樂居",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0007",
+      "sha256": "5959dc1b7bc9df5eab3dd59370cab01358fa2e0a3835a654826ac82f0a537749"
+    },
+    {
+      "section": "小畜之訟",
+      "text": "蜲𧉮循流東求大魚預且舉網庖人謌謳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0008",
+      "sha256": "0725147ea4fa416d58e84a96af6ac1ae5cf06bbe68cf135f1b96ecc1533a0e2d"
+    },
+    {
+      "section": "小畜之師",
+      "text": "鑿山通道南至嘉國周公祝祖襄適荆楚",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0009",
+      "sha256": "a44f121fac52a4583a5e0aac7a70469668dbd1d6a066af81bf14acb436b1007a"
+    },
+    {
+      "section": "小畜之師",
+      "text": "春秋魯昭公將徃楚子服惠伯曰先君未甞適楚故周公祖以道之襄公適楚而祖以道君不行何之",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0010",
+      "sha256": "71267b853073da4ecfac526d523642742a746d272a58805f64ace2510940beaf"
+    },
+    {
+      "section": "小畜之比",
+      "text": "鵲近郤縮不見頭目日以困急不能自復",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0011",
+      "sha256": "abbcfc0fe001d26ac34cba1ae3297c2eab2c6a2e06d8e9813ca6b97a71285f14"
+    },
+    {
+      "section": "小畜之履",
+      "text": "五舌啄難各自有言異國殊俗使心迷惑所求不得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0012",
+      "sha256": "daa99250bc69aa3f95be3dd9609de154d0643db80645559dfc4948523393e278"
+    },
+    {
+      "section": "小畜之泰",
+      "text": "天門開闢牢户寥廓桎梏解脫拘囚縱釋",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0013",
+      "sha256": "b6eb8c4c5d5c748981594d5ac277e61700d53e7f2712c2a181705cd202056c2d"
+    },
+    {
+      "section": "小畜之否",
+      "text": "堅氷黄鳥當哀悲秋數驚鷙鳥雛爲我憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0014",
+      "sha256": "64d9c5b7f36e97978699372ccda0214755022c867b688cfa5badc4bb132d5d24"
+    },
+    {
+      "section": "小畜之同人",
+      "text": "日走月歩趨不同舎夫妻反目主君失居",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0015",
+      "sha256": "8224ddcccb061202908d62adb2572f0ccb495e84bc23fed6f9cf7523ad804a6a"
+    },
+    {
+      "section": "小畜之同人",
+      "text": "易小畜卦輿脫輹夫妻反目",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0016",
+      "sha256": "a55ace6993ae3ce93cb27bfabab251d4892f3fbd5fba5cc58c141597b0fc9a24"
+    },
+    {
+      "section": "小畜之大有",
+      "text": "金牙鐡齒西王母子無有患殃扶舎渉道到来不乆",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0017",
+      "sha256": "7a738965bc67957b5bee6b4baec216f12ff122f16c41a293e7d9d1cfd7c1b8fd"
+    },
+    {
+      "section": "小畜之大有",
+      "text": "王母神仙以東華至真之氣化生",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0018",
+      "sha256": "89d9aa815c9b72a62ccd3702fe410245d758c94df05f148173edce5132d83a0a"
+    },
+    {
+      "section": "小畜之謙",
+      "text": "拭牧拭牧憂禍相半隔以巖山室家分散",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0019",
+      "sha256": "4cf21d2bafd2cf2375b13dbac56eb2168ec1e1dab5957f2eaa391d80b2da1f0a"
+    },
+    {
+      "section": "小畜之豫",
+      "text": "衆神聚集相與議語南國虚亂百姓勞苦興師征伐更立賢主",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0020",
+      "sha256": "e50bec37da9c25ccc65e8527ba472dad8b455d33b425a45ddffe9ad5b32d2388"
+    },
+    {
+      "section": "小畜之豫",
+      "text": "虚當作虐",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0021",
+      "sha256": "7431eaa19148a6beb1796f0c920012d71d3d8547396d2a0fd021cba48e3516d2"
+    },
+    {
+      "section": "小畜之隨",
+      "text": "狼虎争食禮義不行兼吞其國齊魯無主",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0022",
+      "sha256": "2b1cf386875375f45e80c5bc9270da453d234d12a0b800c07398a3fac8c30092"
+    },
+    {
+      "section": "小畜之隨",
+      "text": "春秋自齊桓〔字形SK3089：未编码〕文失覇中國無主",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0023",
+      "sha256": "5a99f8a35c482e85f5c5cde855184c52f7f26509fa0e7fba256172cd54044e4d"
+    },
+    {
+      "section": "小畜之蠱",
+      "text": "〔字形SK2867：未编码〕生無根如過浮雲立本不固斯須落去更爲枯樹",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0024",
+      "sha256": "08e41e117ddfe80ae5d10e0491d4a2f587f09aba3c62347d4099a20aded3f0a9"
+    },
+    {
+      "section": "小畜之臨",
+      "text": "子啼索哺母行求食反見空巢長息訾弋",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0025",
+      "sha256": "a872e9ca2bc99c704c138fc2fceb6732f227cf0b70659cfc5cd22c096ef24562"
+    },
+    {
+      "section": "小畜之觀",
+      "text": "駕駟逐狐輪挂荆𣗥車不結轍公子無得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0026",
+      "sha256": "4fda43465cdd7753f40501d69cb666081e49de4ee99e4a924968f07aa0d0030b"
+    },
+    {
+      "section": "小畜之噬嗑",
+      "text": "方喙廣口仁智聖厚釋解倒懸唐國大安",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0027",
+      "sha256": "3c897c3caf1b5324385c22dcba2a8832203917056f3ceb23bbd4bd761e54f4a9"
+    },
+    {
+      "section": "小畜之噬嗑",
+      "text": "按莭之睽方啄宣口此卦作方喙廣口義通唐國即陶唐",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0028",
+      "sha256": "08008a912aed26e53137a164e40f062171fb5b4ddcf8d0e8439d57ba4411aba8"
+    },
+    {
+      "section": "小畜之賁",
+      "text": "駕福乗喜来至家國戴慶南行離我安居",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0029",
+      "sha256": "facc7acc0e3d21e6bf678d49ccc23bbc8112731059a3449709111530f8da256d"
+    },
+    {
+      "section": "小畜之剝",
+      "text": "孔鯉伯魚北至髙奴乗馬金車駕遊大都王毋送我來牝字駒",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0030",
+      "sha256": "ad6881361cb9c0e08c09e91486568afd2f2daf33575c11cbf020ea353e29d594"
+    },
+    {
+      "section": "小畜之剝",
+      "text": "髙奴漢上郡",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0031",
+      "sha256": "be7b23e1968bd840cb32d36f48041f756fb8d2c20b203a94a33624ba6a287e43"
+    },
+    {
+      "section": "小畜之復",
+      "text": "三足無頭不知所之心狂精傷莫使爲明不見日光",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0032",
+      "sha256": "5b4679a28aa52e9e3b7847ed7b5a9618904a3816665e3c5da2bd07598208a9a0"
+    },
+    {
+      "section": "小畜之復",
+      "text": "未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0033",
+      "sha256": "94ed3a2beb1c6b319dc0ecccdc81a19799a3ea15187d2cc5808ba61c334b5c4c"
+    },
+    {
+      "section": "小畜之無妄",
+      "text": "獹牝龍身刄取三千南止蒼梧與福爲婚道里夷易安全無患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0034",
+      "sha256": "461d612dd6e2f59b6878b1a82e24121343aa3ddbd3e3af062043c0a85ff4e31c"
+    },
+    {
+      "section": "小畜之無妄",
+      "text": "詩定之方中騋牝三千蒼梧地名",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0035",
+      "sha256": "e7211a86c815c9c999ab44a5e2e0bcedab37490a8601d67a30028fb390000e76"
+    },
+    {
+      "section": "小畜之大畜",
+      "text": "辰次降婁王駕廵時廣祐施恵安國無憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0036",
+      "sha256": "fc654a7db84958b57f589ac37f3780a4a66818f84fec45415611750dd6bbc478"
+    },
+    {
+      "section": "小畜之大畜",
+      "text": "降婁宿名戌分",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0037",
+      "sha256": "56b2ef635bb30b8f9b5bf823d2e238bea683d74372910e3f5e3f77db477ae705"
+    },
+    {
+      "section": "小畜之頤",
+      "text": "望幸不到文章未〔字形SK2880：未编码〕王子逐走馬〔字形SK3853：未编码〕衘傷昳迹不得〔字形SK3086：未编码〕其有常",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0038",
+      "sha256": "c3bb6f63d19165bde3129965ba9e9267f96b360f015c065e615bf27a6fbdd3eb"
+    },
+    {
+      "section": "小畜之大過",
+      "text": "中原有菽以待饔食飲御諸友所求大得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0039",
+      "sha256": "4ce157c5ed8c539025ee2718b5ff8ae872fa918409e589b24e683662cab9342b"
+    },
+    {
+      "section": "小畜之坎",
+      "text": "亂茅縮酒靈巫拜禱神怒不許瘁愁憂苦楚有三脊茅〔字形SK3427：未编码〕則用以縮酒也",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0040",
+      "sha256": "ee2605b6e19e8a30203b7849b72cdf0782c79b8a7d64d12860a24b2d02ce0b81"
+    },
+    {
+      "section": "小畜之離",
+      "text": "李花再實鴻〔字形SK2815：未编码〕降集仁哲以興〔字形SK2941：未编码〕國受福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0041",
+      "sha256": "7ff783a45a0e7f240df22edf8a1396818601e3975559f850fcc5fff35eee469b"
+    },
+    {
+      "section": "小畜之咸",
+      "text": "源出陵足行於山趾不爲〔字形SK3093：未编码〕害民得安處",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0042",
+      "sha256": "9c0e206722a9bf2f19fb64df086adfd561ec082a9a0b69c3f4508320664c8b8e"
+    },
+    {
+      "section": "小畜之恆",
+      "text": "客入其門奔走東西童女不織士弃耕畒暴骨千里𡻕寒無年",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0043",
+      "sha256": "148e2fc44b6ae04ac2c422415195633c2bf03e9f705b9e015a060db679b8c8e7"
+    },
+    {
+      "section": "小畜之遯",
+      "text": "天之所子福禄常在以永康寧不憂危殆",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0044",
+      "sha256": "4cf91310ff75d85953c1c4e632bcc94ca4abedf90283c9630048010353b6256b"
+    },
+    {
+      "section": "小畜之大壯",
+      "text": "蝗食我稻驅不可去實穂無有但見空藳蝗䖝屬腹下有𣑽字魚子在水化",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0045",
+      "sha256": "a9e16222a8e1a149bff879eb5bd550e4eaff9fc4eb448bc0eb12d61c01bf6709"
+    },
+    {
+      "section": "小畜之大壯",
+      "text": "成食苗之虫也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0046",
+      "sha256": "9bc8d0918a78c60f39148c24d685595a43d3f53c36378ef98b638744f2d789c9"
+    },
+    {
+      "section": "小畜之晉",
+      "text": "牛〔字形SK3858：未编码〕同堂郭氏巳亡國破空虗君奔走逃",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0047",
+      "sha256": "770c254e082df5bd3899e17efc2b8769d7840ca89daf789579af738b79ac9152"
+    },
+    {
+      "section": "小畜之晉",
+      "text": "按胡傳荘公二十四年齊桓公問郭父老曰郭何以亡父老曰見善而不能舉惡惡而不能去所以亡",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0048",
+      "sha256": "bedd878aa0d9bab39d6683826c9170afbb493f19f42822858fb2f5638f382459"
+    },
+    {
+      "section": "小畜之明夷",
+      "text": "狗無前足隂謀其北爲身害賊何以安息",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0049",
+      "sha256": "4c1cde499fee9cfd5bef4cab6f38bfa95222c840ce984a8821926ae159bbcf5b"
+    },
+    {
+      "section": "小畜之家人",
+      "text": "两輪自轉南上大阪四馬共轅無有屯難與禹𥬇言鶴鳴竅穴不離其室",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0050",
+      "sha256": "1df3182cae2a1e3cb68f2b9485d12f31428671acd6b07fe08d531a3d90ba0cef"
+    },
+    {
+      "section": "小畜之家人",
+      "text": "禹夏禹竅苦弔㓛",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0051",
+      "sha256": "b4f1c7bb67d0791cb7482332bd1240c96d8b040426ea196e1ba332c912d9dbc4"
+    },
+    {
+      "section": "小畜之睽",
+      "text": "牙孽生逹陽昌於外左手執籥公言錫爵",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0052",
+      "sha256": "2b6990b41b1dd79e2b6b49472949563700af6c5708b7a9c47a4651791df10fe3"
+    },
+    {
+      "section": "小畜之睽",
+      "text": "詩云左手執籥右手秉翟赫如渥赭公言錫爵按詩傳籥如〔字形SK3471：未编码〕而六孔或三孔翟雉羽也執籥秉翟者文舞也公言錫爵即儀禮燕飲而獻工之禮也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0053",
+      "sha256": "0e4960bafec4f75440917ae3194f605819e7fa2027c76bbcfed9a6d476f3b7e3"
+    },
+    {
+      "section": "小畜之蹇",
+      "text": "秋華冬蕚〔字形SK3074：未编码〕〔字形SK3425：未编码〕嚴霜甲兵當庭萬物不生雄犬夜鳴民擾大驚",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0054",
+      "sha256": "84fb831a34dbc4cc409559a29b973611d8fd76460e59f875dc08ea16dcee371a"
+    },
+    {
+      "section": "小畜之解",
+      "text": "霜降閉户蟄虫隠處不見日月與死爲伍",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0055",
+      "sha256": "fd586c739ac69c289823094cdabb4693244fe44b13b93a71c894c93ee121729e"
+    },
+    {
+      "section": "小畜之損",
+      "text": "身載百里功如四海爲文開基武立大柱",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0056",
+      "sha256": "884d0124c40db03b0dcf7c480ce73913f08e6b8d4dfd80749285dcf0df99e456"
+    },
+    {
+      "section": "小畜之損",
+      "text": "文王以百里之國脩徳行仁至武王遂有天下",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0057",
+      "sha256": "372f2057f2759efd34c6c99f8e08d8d1e2c5319190f99d0c8f3e459e832a439e"
+    },
+    {
+      "section": "小畜之益",
+      "text": "禹作神鼎伯益衘指斧斤髙閣憧位獨坐賣庸不讎苦困爲禍",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0058",
+      "sha256": "f6f95f0e0ba938604896c3b29369057edeb1762f794af064f233030573f8d6d3"
+    },
+    {
+      "section": "小畜之益",
+      "text": "禹分九州收天下羙銅鑄爲九鼎以象九州伯益舜之虞官禹嘗薦益於天後益避位箕山天下之人不歸益而歸啓",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0059",
+      "sha256": "71096427c8a562272abc56cee7e0d54b0b3e0ce13415387c38f68e0d6c473a29"
+    },
+    {
+      "section": "小畜之夬",
+      "text": "福祚之家喜至憂除如風兼雨出車入魚　又云　如魚逢水長樂受喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0060",
+      "sha256": "0d25c2a7c4613deffed9330b3c64eae13e615f0416f461aae9878d11e61a54f6"
+    },
+    {
+      "section": "小畜之姤",
+      "text": "倉龍隠伏麟鳯逺匿冠履同處未得安息",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0061",
+      "sha256": "db7cf700aec63ef40903049f4eca44ce530ca58a2a9b603b9de4e1d05b7e7a60"
+    },
+    {
+      "section": "小畜之萃",
+      "text": "旦生夕死名曰嬰〔字形SK3932：未编码〕不可得視",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0062",
+      "sha256": "24e0410f75b25d82ac831568c5f4bd053d9b5bef60624f3b1f996395fb494193"
+    },
+    {
+      "section": "小畜之升",
+      "text": "白鶴衘珠夜食爲明懷安徳音身受光榮",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0063",
+      "sha256": "d2c7bc36735a429aa33ccc708927e123369fd3ff28be30b2f476cf3468740672"
+    },
+    {
+      "section": "小畜之升",
+      "text": "搜神記云有鶴爲弋人所射窮而歸噲參參收飬療治瘡愈而放之後鶴夜到門外參執燭視之鶴雌䧺雙至各衘明珠以報參焉",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0064",
+      "sha256": "5da907c30f10c2df2bbbfb97e4f9f5e98d7f0b2a318ed715060db4d267414b09"
+    },
+    {
+      "section": "小畜之困",
+      "text": "役行未巳新事復起〔字形SK2840：未编码〕姜勞苦不得休息",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0065",
+      "sha256": "a80d11b31ad59a1e3f5f5173984a9e2d79e0bc9a75a7a1de0631a127235f08f6"
+    },
+    {
+      "section": "小畜之井",
+      "text": "憂患解除喜至慶來坐立懽忻與樂爲隣",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0066",
+      "sha256": "1f9193e39a512aa0b5491ef8f5c4a401cdaa68414a2de135cbf65c8f02f8f22a"
+    },
+    {
+      "section": "小畜之革",
+      "text": "晨風之翰大舉就温昧過我邑羿無所得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0067",
+      "sha256": "0a44040cc5445598fe2cdcd9210d98ed87c87f481c424d451a4d8cf610f97e16"
+    },
+    {
+      "section": "小畜之革",
+      "text": "晨風鸇也詩鴥彼晨風昧暗也羿古之善射者",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0068",
+      "sha256": "950b220f4ad5f9b1ea92396e0dafa4931822745ba914ff2016ca985a76a46f74"
+    },
+    {
+      "section": "小畜之鼎",
+      "text": "下田稷黍方華生齒大雨集降紛澇滿甕",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0069",
+      "sha256": "c59215ec90e0a3d6cfdd4a4bf533c9f7e734290d387f04d612a7839203f12dd5"
+    },
+    {
+      "section": "小畜之震",
+      "text": "君子碌碌鳥庇茂木見春百榖心勞願徳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0070",
+      "sha256": "93d121f6faaaa79aa6894ce6af75cb121189183dd81931a47afceff44aa2838f"
+    },
+    {
+      "section": "小畜之艮",
+      "text": "折臂踒足不能進酒祠祀曠開神怒不喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0071",
+      "sha256": "8e2303c6f771dbdffab3d0956828373f44b27b40cec255acbb6e518ead314e4e"
+    },
+    {
+      "section": "小畜之漸",
+      "text": "學靈三年聖且神明光見喜祥吉喜福慶鳴鳩飛來告我無憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0072",
+      "sha256": "543cd238a29970991314865fbc1e0ec974fd90b72c5729eb9a53cdecd9e2e5b4"
+    },
+    {
+      "section": "小畜之歸妹",
+      "text": "三婦同夫忽不相思心懷不平志常愁悲",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0073",
+      "sha256": "7307638341a3af5899bba278a43836da2e9038974b45a5846b209a14483ce723"
+    },
+    {
+      "section": "小畜之豐",
+      "text": "中田膏黍以享王母受福千億所求大得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0074",
+      "sha256": "f00469074aabc5f7f0789959517c937a9c673cc648bbe85f8f5ab4ec3816304b"
+    },
+    {
+      "section": "小畜之豐",
+      "text": "王母神仙以東華至真之氣化生",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0075",
+      "sha256": "89d9aa815c9b72a62ccd3702fe410245d758c94df05f148173edce5132d83a0a"
+    },
+    {
+      "section": "小畜之旅",
+      "text": "陽火不災喜至慶來降福送喜鼓琴歌謳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0076",
+      "sha256": "65b4efe4f927d0e35ee6dce29bcc9663f68ee74a91c1f6c83efcbee1682c8b16"
+    },
+    {
+      "section": "小畜之巽",
+      "text": "陽明不甘君無恩徳伯氏失利農䘮其力",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0077",
+      "sha256": "fe213e860d1dbfd4bce4c782fa83212cd0093a1c56ba05bd04d63fe29ad8eedc"
+    },
+    {
+      "section": "小畜之兌",
+      "text": "鷰雀衘茅以生孚乳兄弟六人姣好悌孝各得其願和恱相樂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0078",
+      "sha256": "7856516ed4a8bf2b09694f1bd739efc012c56cb9744159b470898b36b3110979"
+    },
+    {
+      "section": "小畜之渙",
+      "text": "鶉尾奔奔火中成軍〔字形SK3621：未编码〕叔出奔下失其君",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0079",
+      "sha256": "696f7737ced37d3e1201d350561d09594fddb91db70c0176a71e4f2e43f818c5"
+    },
+    {
+      "section": "小畜之渙",
+      "text": "僖公五年童謡云鶉之賁賁天䇿焞焞火中成軍虢公其奔冬十二月虞伐〔字形SK3621：未编码〕〔字形SK3621：未编码〕公醜奔京師",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0080",
+      "sha256": "2ec589dc37fc0fe399e7207fa075226d665003312627578cdd5f2399ee7a234e"
+    },
+    {
+      "section": "小畜之節",
+      "text": "两人相距止不同舎夫妻離散衛侯失居",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0081",
+      "sha256": "65859797f04f60ab54e0106dced328095a63f06fbeeb3498f825b6e12cca985f"
+    },
+    {
+      "section": "小畜之節",
+      "text": "春秋成公十四年夏四月巳未衛侯出奔齊註諸侯之䇿書孫寗逐衛侯春秋以其自取奔亡之禍故不書逐君之賊也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0082",
+      "sha256": "6cf3c40b2264f4b7caf2b88cef78a0dcb3dfd868dfbe72d21a3f069c2f1ed42d"
+    },
+    {
+      "section": "小畜之中孚",
+      "text": "魁爲畨虎風推雲郤欲上不得反歸其宅",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0083",
+      "sha256": "0ae4208c82b3d7692e1d5d84f7a93005c4b321fa200b5ee8407812b867c64be3"
+    },
+    {
+      "section": "小畜之小過",
+      "text": "關雎淑女配我君子少妻在門君子嘉喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0084",
+      "sha256": "6016783bd75f80e01cc334bb48ff1d2524fa5106afc7a3aa20d381adb8b1ed19"
+    },
+    {
+      "section": "小畜之小過",
+      "text": "周南關雎后妃之徳也關關雎鳩在河之洲窈窕淑女君子好逑",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0085",
+      "sha256": "7680e5c0a140fca690904d720f40d043c4a309656a6cb4d60494a5c15ce51808"
+    },
+    {
+      "section": "小畜之既濟",
+      "text": "慈母赤子饗賜得士襄夷服除以安王家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0086",
+      "sha256": "dc2033c0a1caa6f5b40eb353e7e4294cdc0200e0df04dd86b3d1baa4528c598d"
+    },
+    {
+      "section": "小畜之未濟",
+      "text": "三足〔字形SK2854：未编码〕烏靈鳴督郵伺過討惡自賊其家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0087",
+      "sha256": "3abf57c41bde2b67a203b1d3cf801750d1d70f65157eea060453eac444252ec3"
+    },
+    {
+      "section": "小畜之未濟",
+      "text": "漢天文志日中有三足烏",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0088",
+      "sha256": "2900b42ab092a978e515ee0ddcc917ce11fa68d0c793a4f1c408815ebbd22a1b"
+    },
+    {
+      "section": "履之履",
+      "text": "十烏俱飛羿得九雌雄雖得全且驚不危",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0089",
+      "sha256": "4ffee8dcce7c2da0cfee3b370d077f3bcee12f85b185e1de76681a38c0c27bbb"
+    },
+    {
+      "section": "履之履",
+      "text": "堯時十日並出草木焦枯命羿射其九日九烏皆死墮其羽翼留其一日",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0090",
+      "sha256": "10bf256367100c6ef13641d4489d163bebc1d59794d9e7e7c531107b39e893e0"
+    },
+    {
+      "section": "履之乾",
+      "text": "東嚮藩垣相與𥬇言子般執鞭圉人作患魯莊公三十二年雩講于梁氏女",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0091",
+      "sha256": "537593bb391f4a1fa90b04ca6ffc829f57b9ad55d251051dc7da26184e05ef94"
+    },
+    {
+      "section": "履之乾",
+      "text": "公子觀之圉人犖自牆外與之戯子般怒使鞭之公曰不如殺之是不可鞭犖有力焉能投盖于稷門十月圉人犖賊子般于黨氏",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0092",
+      "sha256": "16209b1f32a61d040de417c2165c83340913e26b9f803722e65e5d63a53ebb91"
+    },
+    {
+      "section": "履之坤",
+      "text": "循河摘舟旁淮東游漁父舉網先得大鰌",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0093",
+      "sha256": "d78dccc62e6657c9438738050c0d971ff31060bc58ee10731b6a6bbe76e3c770"
+    },
+    {
+      "section": "履之屯",
+      "text": "轅折輪破馬𠋣僕卧後旅先宿右足跌踒",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0094",
+      "sha256": "83191c6dcfa5e95dd622148f740555a48eda7110e85f3c3fb60c1164d2475f08"
+    },
+    {
+      "section": "履之蒙",
+      "text": "两人相絆相與悖戾心不同争訟忷忷然",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0095",
+      "sha256": "4b01f22af66a69e339b1b72721d1db732eea1039cafec9ddca198721e2e6e7a3"
+    },
+    {
+      "section": "履之需",
+      "text": "北辰紫宫衣冠立中含和建徳常受天福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0096",
+      "sha256": "33ebe7341f2858e21cac80b8c864b7f42a3e614891f43ce88084bf31aa01d69f"
+    },
+    {
+      "section": "履之需",
+      "text": "北辰北極天之樞也紫宫爲皇極之居出漢天文志",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0097",
+      "sha256": "1ed51db37d8ba92d77407b631288496d3c28398cea88bbf56f0ef9ae833f73b2"
+    },
+    {
+      "section": "履之訟",
+      "text": "遊居石門禄身安全受福西鄰歸飲玉泉",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0098",
+      "sha256": "fb435d97ad508b1fae902b8bc4f0ce276848247b538c2dfbe8185ea6f42e0270"
+    },
+    {
+      "section": "履之師",
+      "text": "羊腸九縈相推併前止須王孫乃能上天",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0099",
+      "sha256": "799edec1bbdd21ae024cec20a0fb4aa4d3cddc8ab7f522f4ce9987a90a1e2945"
+    },
+    {
+      "section": "履之師",
+      "text": "羊腸山名其形屈辟如羊腸",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0100",
+      "sha256": "e46c13afdd85b9da07804a75021a360e2a8eb0348e18d2ef19b27b799252f7d4"
+    },
+    {
+      "section": "履之比",
+      "text": "争訟相倍和氣不處隂陽俱否榖風母子",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0101",
+      "sha256": "6ab81bb54c53f9838cb4808a6c9baf9e256f86d28f88f951eed6ba399ea570b7"
+    },
+    {
+      "section": "履之小畜",
+      "text": "郭叔距頥爲𣗥所拘龍額重顙禍不成殃復歸其郷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0102",
+      "sha256": "c0ec5eb0397ed869948b02738a7a09f95e4b4c94267e2d009e2da95bd44179c0"
+    },
+    {
+      "section": "履之小畜",
+      "text": "未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0103",
+      "sha256": "94ed3a2beb1c6b319dc0ecccdc81a19799a3ea15187d2cc5808ba61c334b5c4c"
+    },
+    {
+      "section": "履之泰",
+      "text": "蠆室蜂户螫我手足不得進止爲吾害咎",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0104",
+      "sha256": "2dbc13e005fa76beff9574922814c5e615d4f56d17a95c50ab51193b941fe915"
+    },
+    {
+      "section": "履之泰",
+      "text": "蠆丑邁切螫音〔字形SK3496：未编码〕",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0105",
+      "sha256": "bd26e00ccc26dbad65ddca7c8362a307054c24662675ece99436579f5b300e54"
+    },
+    {
+      "section": "履之否",
+      "text": "怒非其怨因拘有遷貪垢腐䑕而呼鴞鳶失反〔字形SK3425：未编码〕困",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0106",
+      "sha256": "207fe36714c077f4f34591fa0005ef0bdac27a9d405a77e5e03e5ddc7fc97d0a"
+    },
+    {
+      "section": "履之同人",
+      "text": "嬰孩求乳母歸其子黄麑恱喜自樂甘餌",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0107",
+      "sha256": "a7db3c8602450d525be9094655c32c3dabd0b9206854fba36be7c680734f6b56"
+    },
+    {
+      "section": "履之同人",
+      "text": "麑五兮切鹿子也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0108",
+      "sha256": "8342a1c39649fa3f6aef85e7dbc40387d4bbd46ee0b7a9f5132c1ebde8e344aa"
+    },
+    {
+      "section": "履之大有",
+      "text": "鍼縷勝服錦繡不成鷹逐雉兎爪折不得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0109",
+      "sha256": "ad0876abb2e972213a5dd6a014fbc73893a475195c4c6e45d3d090a3c1b92bea"
+    },
+    {
+      "section": "履之謙",
+      "text": "雨潦集降河梁不通鄒魯閉塞破費市空",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0110",
+      "sha256": "3769d4db46f334a03a4d6c89cb72d06630187aa26dc1628585e7b514a1b60523"
+    },
+    {
+      "section": "履之謙",
+      "text": "鄒魯二國名",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0111",
+      "sha256": "88b35164094feebbbd8fb273be940c19ef27352687368d75d72ff295f06f6cd0"
+    },
+    {
+      "section": "履之豫",
+      "text": "封豕溝瀆水潦空谷客止舎宿泥塗至腹處無黍稷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0112",
+      "sha256": "3a2eab7d7b6475787f259d3f12697483fb86cce2790d8dfebff831f526195093"
+    },
+    {
+      "section": "履之隨",
+      "text": "三姦相擾桀跖爲交上下騷離隔絶天道",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0113",
+      "sha256": "e0a78a944a407a28703c1634d726f8fc95828b7e9fa8bf3341fa50b741bdb18a"
+    },
+    {
+      "section": "履之隨",
+      "text": "桀夏桀跖盗跖",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0114",
+      "sha256": "c715a76aeef87e751ccd386a1d05cf06f168e582695dbce0feb9206731b99dba"
+    },
+    {
+      "section": "履之蠱",
+      "text": "齊景惑疑爲孺子牛嫡庶不明賊孽爲患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0115",
+      "sha256": "1b49bf4cee3b1290e80a5bd5daaf7bab009154bf0469c0f71d0c01f5a19435a4"
+    },
+    {
+      "section": "履之蠱",
+      "text": "按春秋傳孺子名荼齊景公妾鬻姒所生景公嘗衘繩爲牛使荼牽之故曰爲孺子牛哀公五年景公疾使國恵子髙昭子立荼寘群公子於萊六年僖子使召公子陽生遂殺荼",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0116",
+      "sha256": "83813de8ab23fa89f6de5059d4a182178ef962089dad895c8f6c596781eb180b"
+    },
+    {
+      "section": "履之臨",
+      "text": "三羊俱亡走奔南行㑹暮失迹不知所蔵",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0117",
+      "sha256": "db2b187bca5a63153076c5deb1450ceaa8f54d7f8453f9edb92d8e97ac065b98"
+    },
+    {
+      "section": "履之觀",
+      "text": "請伯行賈代山之野夜歴險阻不逢危殆利如澆酒",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0118",
+      "sha256": "e08ec042a5cb042bcf78eac433281aaee13987f1bb6412b6d423f368ea85d6a1"
+    },
+    {
+      "section": "履之噬嗑",
+      "text": "葉之將落隕其黄葉失勢傾側而無所立",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0119",
+      "sha256": "b3d541148f83100de031452098519bddc2df76d278ae9f726c6a67c4255f2aa3"
+    },
+    {
+      "section": "履之噬嗑",
+      "text": "葉當作桑詩桑之落矣其黄而隕",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0120",
+      "sha256": "879aa762d91ce311cf17a8e3408e72657ca371df9175f4b264f96a364bfb6647"
+    },
+    {
+      "section": "履之賁",
+      "text": "上山求魚入水捕狸市非其歸自令乆留",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0121",
+      "sha256": "b44d36105e8c27671ebb9dda5c4247b58e317fc22807d05c4888eca09bf52076"
+    },
+    {
+      "section": "履之剝",
+      "text": "名成徳就項領不試景公耋老尼父逝去",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0122",
+      "sha256": "35069e9ac92580ae86820e61b2d16df5a5047d836afe24e24ca72ae52fe8eb79"
+    },
+    {
+      "section": "履之剝",
+      "text": "論語齊景公欲用孔子孔子曰吾老矣不能用也孔子行",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0123",
+      "sha256": "100d5b5be2eeb83cb2d126d202ec33b5ecf21fc8267771a49e26bc51f7cdd50a"
+    },
+    {
+      "section": "履之復",
+      "text": "天之奥隅堯舜所居以存保身爲我國家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0124",
+      "sha256": "414cfe0ceef5a597be44ee6ac50c0182533bcaab92a045ca7fd61461bd365fb6"
+    },
+    {
+      "section": "履之復",
+      "text": "堯舜唐虞二帝也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0125",
+      "sha256": "90eff13e8916b123b6a372aa6f59f5921d265de56a348ac2bffea0564341a0fa"
+    },
+    {
+      "section": "履之無妄",
+      "text": "雎鳩淑女賢聖配偶冝家夀福吉慶長乆",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0126",
+      "sha256": "48eebbb7e7ac4f043e76395879e3651b550b78d96e9cb37d9d0fdf836352ffba"
+    },
+    {
+      "section": "履之無妄",
+      "text": "關雎詩云關關雎鳩在河之洲窈窕淑女君子好逑言周文王生有聖徳又得聖女姒氏以爲之配",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0127",
+      "sha256": "6e93eef2a51771975c15d6aac3665f60368a5760989a348bff88af13ab4f8a39"
+    },
+    {
+      "section": "履之大畜",
+      "text": "兩人俱争莫能有定心乖不同訟言起凶",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0128",
+      "sha256": "8fccae38e58b2ae01c2c67f720d0447a0ad59815bf2c6794944bde45cebf72e1"
+    },
+    {
+      "section": "履之頤",
+      "text": "渉伯徇名弃禮誅身不得其道成子奔燕",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0129",
+      "sha256": "16d42ae875e6684942e2b9d659814938f8daf802e3c48421c43ddfb879db36c4"
+    },
+    {
+      "section": "履之頤",
+      "text": "魯定公九年晋趙鞅圍衛討衛之叛曰由渉佗成何遂殺渉佗成何奔燕君子曰此之謂弃禮詩曰人而無禮胡不遄死渉佗然矣哉",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0130",
+      "sha256": "3d65296f58243830bfda8005a8278ab2dd0f21881129c67948af4e1dd10e33ef"
+    },
+    {
+      "section": "履之大過",
+      "text": "踰江求橘并得大栗烹羊食肉飲酒歌𥬇",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0131",
+      "sha256": "adb5e21f9c459490a6e2fda0ab95e2f2c073dc6239a9ca414891b766eeccf081"
+    },
+    {
+      "section": "履之坎",
+      "text": "山險難升澗中多石車馳轊擊重傷載軸擔負善躓跌踒右足",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0132",
+      "sha256": "f0d8cde85df44ac609248a660f4fc500d967bf6235a50d17e4b204b896d07ae6"
+    },
+    {
+      "section": "履之坎",
+      "text": "轊音遂躓音致踒音渦",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0133",
+      "sha256": "24a965ee94ffa71d2df94a4b530fe359e83065225a23e17990a168705df37c02"
+    },
+    {
+      "section": "履之離",
+      "text": "元利孔福神所子畜般樂無苦得其歡欲",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0134",
+      "sha256": "fe2e7f93db4f576ec1433f20dfa064543da6bcee15b8721f26eb0d28b2184f2e"
+    },
+    {
+      "section": "履之咸",
+      "text": "烏鵲食榖張口受哺蒙〔字形SK3425：未编码〕恩福長大成就柔順利貞君臣合好",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0135",
+      "sha256": "a71be35e627362445df6072c49433d3b123d61aa45f4316c55cfa5b29572e167"
+    },
+    {
+      "section": "履之恆",
+      "text": "潼滃蔚薈膚寸來㑹津液下降流潦滂沛",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0136",
+      "sha256": "05f727fe75582dadf69487b367302a5a118ae24d3cf249c84748e306ecd1e5d0"
+    },
+    {
+      "section": "履之恆",
+      "text": "滃上聲薈音〔字形SK3452：未编码〕",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0137",
+      "sha256": "a40ef2b0e3f861ea7c04c533ef4806f9506fb375757127a5933c9b3cde85c4b6"
+    },
+    {
+      "section": "履之遯",
+      "text": "路多枳〔字形SK3140：未编码〕步刺我足不利旅客爲心作毒",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0138",
+      "sha256": "969305d74ca88d206ca95f28d47185cb13313be3826224d2b0777af0ac2c5374"
+    },
+    {
+      "section": "履之大壯",
+      "text": "虺蝮所聚難以居處毒螫痛甚瘡不可愈",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0139",
+      "sha256": "a363ca65cdb9b0c285317ad5c838b5dcaf06b018ec6e186d9fd61f1f3daa0e18"
+    },
+    {
+      "section": "履之大壯",
+      "text": "虺音卉螫音釋",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0140",
+      "sha256": "5290fac49a3e38910ba9a6ffd7ad4a4ba79b0e269064a093146d7e6fa02e1582"
+    },
+    {
+      "section": "履之晉",
+      "text": "麟鳯相隨觀察安危東郭聖人后稷周公共和政令君子攸同利以居止長无憂凶麟仁獸鳯靈鳥能知安危故世治則出周自后稷始封於邰積功累仁至於周公制禮作樂以成文武",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0141",
+      "sha256": "ed0108db9bbc472a6e5f49e5b52a87a3fb1b5350759b09cf02f6e6d3e9069838"
+    },
+    {
+      "section": "履之晉",
+      "text": "之烈",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0142",
+      "sha256": "c190ba431f251ba70b8823f24c4ed5f5bead787ab372e4db537801d67dbac07d"
+    },
+    {
+      "section": "履之明夷",
+      "text": "築亂不時使民恨憂立趾爲𥬇君危臣騷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0143",
+      "sha256": "4216f224fc89fba1c07fa0f41817c67f4e2fc39d36726eb2ea789128494478f0"
+    },
+    {
+      "section": "履之家人",
+      "text": "黄帝所生伏羲之宅兵刃不至利以居止",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0144",
+      "sha256": "717c764b884f9905060ab6bbb912099c90b5e1e244d6a11215abf9d8931d2a5f"
+    },
+    {
+      "section": "履之家人",
+      "text": "大昊伏犧氏黄帝軒轅氏黄帝造五兵以征不享",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0145",
+      "sha256": "b99cb7752ee55bb39d29569cc34fd8c341c7fc7fffe636feac8328cd460d4997"
+    },
+    {
+      "section": "履之睽",
+      "text": "雀行求食暮歸屋宿及其室舎安寧無故",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0146",
+      "sha256": "9fbb63ef9bddd465717873e81dd37c43c46e704a7422b914606747e874073734"
+    },
+    {
+      "section": "履之蹇",
+      "text": "大倉積榖天下饒食隂陽和調年𡻕時熟",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0147",
+      "sha256": "7477003b6eba73c968e1a7b6c5e0737e4808c78f83f50d6efe683e95e044cb7d"
+    },
+    {
+      "section": "履之解",
+      "text": "履機蹈顛墮入寒淵行不能前足踒不便",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0148",
+      "sha256": "7e7488c9314765aeb7eae22882da600d846ccc9f5417d86c6f72dfe899959361"
+    },
+    {
+      "section": "履之損",
+      "text": "竿旄旌旗執幟在郊雖有寳珠無路致之",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0149",
+      "sha256": "e61fe5a970eb63c5af5880755f928fbbd1c7a1847a76162479b3a57ddb89a61d"
+    },
+    {
+      "section": "履之損",
+      "text": "詩干旄篇云孑孑干旄在浚之郊又孑孑干旌在浚之城",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0150",
+      "sha256": "62c6709a88090169314c2fdb89fa0155e113eb992a7b6e896fff485f037f0843"
+    },
+    {
+      "section": "履之益",
+      "text": "衘命上車和合两家蛾眉皓齒二國率殭",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0151",
+      "sha256": "3c6cbcf818c7e818baf9c79ca015aa128b1e47f3e2cc96835e66f6436375eebd"
+    },
+    {
+      "section": "履之夬",
+      "text": "吉日車攻田弋獲禽宣王飲酒以告嘉功吉日車攻皆宣王詩言田獵之事",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0152",
+      "sha256": "7d455789b3c02884f9d80149b93b7d9c69e8812875f5eecfd4ce5a4be2c87f01"
+    },
+    {
+      "section": "履之姤",
+      "text": "重伯黄寳冝以我市嫁娶有息利得過毋",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0153",
+      "sha256": "3a5e1f0495c61ff9f7c7023fd359797bf96c57835b567e449ecb1ed0515d7d51"
+    },
+    {
+      "section": "履之萃",
+      "text": "延頸望酒不入我口深以自喜利得無有",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0154",
+      "sha256": "c135dd498c7d85e0f78f1bd3ff45186683e9b44544160853c57a65ab8cdf0f08"
+    },
+    {
+      "section": "履之升",
+      "text": "牧爲代守饗食甘賜得吏士意戰大破胡長安國家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0155",
+      "sha256": "506f212269b0b3eb2bd5e76c2b544a13e3995462d22fad4640e72d09001624b7"
+    },
+    {
+      "section": "履之升",
+      "text": "按史李牧爲趙將居代鴈門俻匈奴以便冝置吏市租皆輸入幕府爲士卒費日擊數牛饗士習〔字形SK3853：未编码〕射謹烽火約曰匈奴即入冦急入収保敢有捕虜者斬匈奴毎入不戰以爲怯〔字形SK3768：未编码〕士日得賞賜而不用皆願一戰於是大破匈奴十餘〔字形SK2902：未编码〕不敢近趙〔字形SK3768：未编码〕",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0156",
+      "sha256": "cb7978ceb64f93cc1fd2605df649b8c37e987de96c190747f9996f957c919a25"
+    },
+    {
+      "section": "履之困",
+      "text": "日出温谷臨照萬國髙明淑仁虞夏配徳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0157",
+      "sha256": "6aa7f6f2127ff091e996baca058d2d03f114b1983d389c24294ff5d6e63fbc9a"
+    },
+    {
+      "section": "履之困",
+      "text": "虞舜有天下之號也夏禹有天下之號也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0158",
+      "sha256": "e59db3dedb5d9cb982752a3f8f7f6ca9e4038b10b0c5327cd0c3c54e4c0192dd"
+    },
+    {
+      "section": "履之井",
+      "text": "逐兎索鳥破我弓車日暮不及失利後時",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0159",
+      "sha256": "f0cffdaf7115f23a5284a4c6fa8a52ed0f48ec2d90d9315406126befd6e84567"
+    },
+    {
+      "section": "履之革",
+      "text": "譌言妄語傳相詿誤道左失迹不知所處",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0160",
+      "sha256": "1994a8625c88be7cc344cce4d415d05c2a98d9881e3ba627edca66f8c46e38b9"
+    },
+    {
+      "section": "履之鼎",
+      "text": "履虎躡蛇貶損我威君子失車去其國家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0161",
+      "sha256": "d57a47f6e60319f94534aee3c9e6326371fd0db62884f380a275e95028aa51fd"
+    },
+    {
+      "section": "履之震",
+      "text": "本根不固花葉落去更爲孤嫗不得相親",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0162",
+      "sha256": "9929f5722c1c8a8706b7eab0c9c8a34ef453ef237c8b0df2c80942873c856fe1"
+    },
+    {
+      "section": "履之艮",
+      "text": "五軛四軏優得饒有陳力就列騶虞喜恱",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0163",
+      "sha256": "5f64ea1a9383b24d0fa01aff346c615cd389aa4a515163f9f0150ccbbf4b6bf0"
+    },
+    {
+      "section": "履之艮",
+      "text": "騶虞獸名白虎黒文不食生物者",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0164",
+      "sha256": "0b05a4465193f8f024dc2bc3cae7782499fe3387dd4d5178ac0f0c53f4069842"
+    },
+    {
+      "section": "履之漸",
+      "text": "黄帝紫雲聖且神明光見福祥告我无殃",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0165",
+      "sha256": "1bc8dab5399374a2b9c6549a34d14562b0f6c5b31d7b5c249c188f6742cfedbd"
+    },
+    {
+      "section": "履之漸",
+      "text": "史記黄帝生而神靈長而聦明應邵曰受命有雲瑞故以雲紀事",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0166",
+      "sha256": "6f559642e5d1d54c6df886676b8c7601684bddd91186eb7d554a46536c1ebdce"
+    },
+    {
+      "section": "履之歸妹",
+      "text": "五利四福俱佃髙邑黍稷盛茂多〔字形SK3598：未编码〕藳稻",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0167",
+      "sha256": "a066e58a6d7e94c4c587e9c20eb5ec8600ffef055e7ae28b82e26cf2c700f2c3"
+    },
+    {
+      "section": "履之豐",
+      "text": "群虎入邑求索肉食大人衛守君不失國",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0168",
+      "sha256": "fe082e66def6f53f9fea854b25b73bef8a0458ee9bb06dc048afbe3b58ed9c5b"
+    },
+    {
+      "section": "履之旅",
+      "text": "烏子鵲雛甞與母居顧慕群侣不離其巢",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0169",
+      "sha256": "d79ddccd15334052305ba162a042c826711dda86a28ab4cd8dd7ac5329390361"
+    },
+    {
+      "section": "履之巽",
+      "text": "蹇驢不材駿〔字形SK3858：未编码〕失時筋勞力盡罷於沙丘",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0170",
+      "sha256": "12d8f4f0cd49b1b9e6b07c2e218ad0e1e5663e54328c23b71dfb6d5bb11d673f"
+    },
+    {
+      "section": "履之兌",
+      "text": "玄鬛黒顙東歸髙郷朱鳥道引靈龜載荘遂抵天門見我貞君",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0171",
+      "sha256": "fefe20eca6eb45b5fa32b120e36bf30c5b4d66d6fff5b158693d3d9640849484"
+    },
+    {
+      "section": "履之渙",
+      "text": "探巢得雛鳩鵲來俱使我音娱",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0172",
+      "sha256": "ef5afa299e01ea2a3cf82bd7c540f4ee1b356ae6790799294aae2cd466b6a5b7"
+    },
+    {
+      "section": "履之節",
+      "text": "安上冝官一日九遷升擢超等牧養常山君臣〔字形SK3598：未编码〕安",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0173",
+      "sha256": "a751d8bc81ff36b584beb257c66c91419aae3bfdfb2acc8b69d277861630c3ef"
+    },
+    {
+      "section": "履之節",
+      "text": "漢車千秋一日九遷其官",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0174",
+      "sha256": "cbb8430c79374dd007965f8f6d5e67cbb05379e2aecc567cb23105a78dbab9ea"
+    },
+    {
+      "section": "履之中孚",
+      "text": "大頭目明戴受嘉福三雀飛來與禄相得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0175",
+      "sha256": "b3e3e249f646e6e155161a52fe5c79fb4e8e1438aa22c8b7a6377525454238f9"
+    },
+    {
+      "section": "履之小過",
+      "text": "遠視千里不見黒子離婁之明无益於光",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0176",
+      "sha256": "7bd826a061ae931f44776665f732c12618e8c0c261576cbe37d7c9872a875b36"
+    },
+    {
+      "section": "履之小過",
+      "text": "離婁古之明目者",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0177",
+      "sha256": "0c3fd82b1a649d22ac16282912273f7053a255a79725605cb9d2b80172778238"
+    },
+    {
+      "section": "履之既濟",
+      "text": "三女爲姦俱遊髙園倍室夜行與伯𥬇言不忍主母失禮酒𡨚皇天誰告",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0178",
+      "sha256": "92b16a653ebfe83f2bd8196f3aee524c630c1743ebfc0c9361713d73f439d8f6"
+    },
+    {
+      "section": "履之未濟",
+      "text": "日辰不和強弱相振一雌两雄客勝主人",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0179",
+      "sha256": "f37746337388ac5ca04bac20af9410102662c35f4cadc47f75b7848c9242ea55"
+    },
+    {
+      "section": "泰之泰",
+      "text": "求玉陳國留連東域須我王孫四日来復主君有徳蒙恩受福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0180",
+      "sha256": "bb753e5f166a91b81c74a465e658982d1b9220c4477fe158349906b71c148b58"
+    },
+    {
+      "section": "泰之乾",
+      "text": "伯夷叔齊貞㢘之師以徳防患憂禍不存",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0181",
+      "sha256": "091a2a60525144f62d54d624b8a8860c3f5d608ac05821f07d2a0562c2cbb227"
+    },
+    {
+      "section": "泰之乾",
+      "text": "伯夷叔齊孤竹君之二子武王伐紂諌之不食周粟又語云伯夷叔齊餓於首陽之下民到于今〔字形SK3447：未编码〕之",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0182",
+      "sha256": "2ab4ea54363d7a7418ef1c402efcda2768c46893e121c6f35f74030512cecda6"
+    },
+    {
+      "section": "泰之坤",
+      "text": "濟深難渡濡我衣袴五子善櫂脫無他故",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0183",
+      "sha256": "61c7eb459faf80e51552a9d8d3a86edb097ddc69d241c9f541a5838d45c60b8a"
+    },
+    {
+      "section": "泰之屯",
+      "text": "倚立相望適得道通驅駕犇馳比目同床",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0184",
+      "sha256": "7f89bff76cb86d780d5648b97ea527f7a2ed52c265d7e9551c58333af5d87aed"
+    },
+    {
+      "section": "泰之蒙",
+      "text": "葛藟蒙𣗥花不得實䜛佞爲政使恩壅塞葛藟詩篇名蒙𣗥詩葛生篇云葛",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0185",
+      "sha256": "57216ea743d48d11b61cae88f56c6409ca9e4e6a0e841736b102c29416f32d61"
+    },
+    {
+      "section": "泰之蒙",
+      "text": "生蒙𣗥蘝蔓于域予羙亡此誰與獨息",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0186",
+      "sha256": "82d274dd347bd48effa89c18d06d23cd98e4c154d571bc96e3337a80e1c327d0"
+    },
+    {
+      "section": "泰之需",
+      "text": "四足無角君子所服南征述職與福相得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0187",
+      "sha256": "2191addf5407d323db5be016381723b7178cacf6afc1043fb71f91f25de9f1fe"
+    },
+    {
+      "section": "泰之需",
+      "text": "征者上伐下也諸侯朝王曰述職",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0188",
+      "sha256": "525654ceadaa14a0697a1ec69edd8c181661627dc6e10c7672044342c9294921"
+    },
+    {
+      "section": "泰之訟",
+      "text": "踝踵之傷左指病癰失旅後時利走不來",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0189",
+      "sha256": "fdddf08154184840339e238068d9a0fbe1f51ac659498fcdbc1171dcd2cabff5"
+    },
+    {
+      "section": "泰之師",
+      "text": "春城夏國生長之域可以服食保全家國",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0190",
+      "sha256": "7316dfe4b26e83df7b7c02a88af13653c10a6cb940c202662e160e12f97e116d"
+    },
+    {
+      "section": "泰之比",
+      "text": "望〔字形SK3858：未编码〕不來駒蹇爲憂雨驚我心風撼我肌",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0191",
+      "sha256": "802c86459ff7050a882deafeb680f79db6e83064fd7712bc0d0c9e2249fd243b"
+    },
+    {
+      "section": "泰之小畜",
+      "text": "乆客無床思歸我郷雷雨涌盈道不得通",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0192",
+      "sha256": "a1e76a06714ffb846a873df4b11dedec9dcaf51865be7d0b5669173e99b065dc"
+    },
+    {
+      "section": "泰之小畜",
+      "text": "涌當作滿易屯卦雷雨之動滿盈",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0193",
+      "sha256": "a016e7579d841e2598ea595f22ff53372a6e1023ff38a75e07270b3c3ccf12bc"
+    },
+    {
+      "section": "泰之履",
+      "text": "舫船備水旁可燃火積善有徴終身無禍",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0194",
+      "sha256": "4a1300addf4cba51b2c08413f4b7b4f848d84055d676edfd66e64990e8e49258"
+    },
+    {
+      "section": "泰之否",
+      "text": "陟岵望母役事未巳王政無盬不得相保",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0195",
+      "sha256": "5fff8b1e08e2ad8ac68cc567bbcdd1f8d6bf015e0834cf67f20d334e61f52940"
+    },
+    {
+      "section": "泰之否",
+      "text": "陟岵國風齊詩篇名旣云望毋岵當作屺詩云陟彼岵兮瞻望父兮陟彼屺𠔃瞻望母兮",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0196",
+      "sha256": "638abbe50aeb457bfe2b0868decf6791c7a80c0b95246703f3461efcbe75fe80"
+    },
+    {
+      "section": "泰之同人",
+      "text": "多載重〔字形SK3688：未编码〕〔字形SK3037：未编码〕棄於野子母誰子但自勞苦",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0197",
+      "sha256": "b8362ba821e5f84edf5c2b068956f8dea6f2ced44f5f28d82bbad0fa9fa12629"
+    },
+    {
+      "section": "泰之大有",
+      "text": "生直地乳上皇大喜賜我福祉受命無極",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0198",
+      "sha256": "ec2798b2ea45e2ab24b6c0e32efccbb8c49e4f35bba4c6778402a2bcb6b9f091"
+    },
+    {
+      "section": "泰之謙",
+      "text": "翕翕䡘䡘稍墮崩顛滅其今名長没不全",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0199",
+      "sha256": "c3fc286d73ba0c15faf12aa1b90dd923699d497139fb9b9cc4394047a21da77c"
+    },
+    {
+      "section": "泰之謙",
+      "text": "翕音吸䡘音田",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0200",
+      "sha256": "0c784eeddf505218da94b3c967cd209ec9f2fd39889d15c6962a8240ebb2accb"
+    },
+    {
+      "section": "泰之豫",
+      "text": "東鄰嫁女爲王妃后莊公築館以尊王母歸于京師季姜恱喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0201",
+      "sha256": "38ae7fbf3e162aa6480872366bffcc0b7052e523fac030c48d1bd2dc1a4624bc"
+    },
+    {
+      "section": "泰之豫",
+      "text": "春秋魯莊公元年王〔字形SK2840：未编码〕下嫁於齊命同姓諸侯主之魯以〔字形SK2840：未编码〕姓故築館而迎之冬王〔字形SK2840：未编码〕歸于齊桓公九年春紀季姜歸于京師爲桓王后",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0202",
+      "sha256": "623d45c1347955359cb47ab092d54c080960d6cc001bf8e31fc002cb76bde26b"
+    },
+    {
+      "section": "泰之隨",
+      "text": "伯虎仲熊徳義淵閎使布五榖隂陽順敘",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0203",
+      "sha256": "5395635dc4aeff2167e7979301b9e69178eb0104134adbff893d481edfe98f9c"
+    },
+    {
+      "section": "泰之隨",
+      "text": "按史髙辛氏之子有曰伯虎仲熊舜舉八愷使主后土爲伯益之佐",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0204",
+      "sha256": "35d51128b4907fcafd1c05a3ac812cc9996cde587fa51033919dab430b778db1"
+    },
+    {
+      "section": "泰之蠱",
+      "text": "敏捷敬疾如猨升木彤弓雖調終不能〔字形SK3598：未编码〕",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0205",
+      "sha256": "82c299e7332f48d5a4675a4ed75df05235cbb2b0c207d17edc299f43b0d94cce"
+    },
+    {
+      "section": "泰之臨",
+      "text": "舉〔字形SK3425：未编码〕覆目不見日月衣裘蕈床就長夜室",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0206",
+      "sha256": "bb88d4bf9143f7556ecf20afe60f2432cefe181bf4024dfc3cf181040ae5e305"
+    },
+    {
+      "section": "泰之臨",
+      "text": "按史記越伐呉呉三戰三北夫差上姑蘇亦請成於越范蠡不可夫差曰吾無以見子胥爲幎冐乃死",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0207",
+      "sha256": "c793998c89c38e3c949aa6e5eff651fc7f3e6b9a7af5a5038257fd43f124f0fa"
+    },
+    {
+      "section": "泰之觀",
+      "text": "忍醜少羞無面有頭虗日以弊消寡耗减",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0208",
+      "sha256": "8f1e3aa6c39f5099ba88f4500ae435a449a46fbe66b3f96f05f20145f09f60bf"
+    },
+    {
+      "section": "泰之觀",
+      "text": "未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0209",
+      "sha256": "94ed3a2beb1c6b319dc0ecccdc81a19799a3ea15187d2cc5808ba61c334b5c4c"
+    },
+    {
+      "section": "泰之噬嗑",
+      "text": "涸隂冱寒常氷不温凌人墮怠雹大爲菑",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0210",
+      "sha256": "96aa2579e713e41bdf4384c843bba3cc6eca4022c8fd0364c1bc3357aff72b39"
+    },
+    {
+      "section": "泰之噬嗑",
+      "text": "淩人氷人也按詩傳蘇氏曰古有藏氷發氷以節陽氣之盛是以無灾霜雹也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0211",
+      "sha256": "c5c4f29f14602ade64884f3c4014ace17f411f82b65e50dcd820834c8ec0a050"
+    },
+    {
+      "section": "泰之賁",
+      "text": "夏麥麩䵃霜擊其芒疾君敗國使民夭傷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0212",
+      "sha256": "c3249a3ae794b0e46247feff8f944d5032d16780d5ec7b25d29859e50b30a902"
+    },
+    {
+      "section": "泰之剝",
+      "text": "淵涸龍憂箕子爲奴午叔殞命殷破其家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0213",
+      "sha256": "75146792a1474a3d950e5006904d8fc9a01972adfe86561b3085630af7e7d637"
+    },
+    {
+      "section": "泰之剝",
+      "text": "箕子紂親戚諌紂不聴佯狂爲奴午叔當作干叔紂之諸父比干也直言諫紂紂怒殺之刳視其心",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0214",
+      "sha256": "bd5638bf06b00edf9c847f842f36d301c29b97003419b56962edd790aebea814"
+    },
+    {
+      "section": "泰之復",
+      "text": "跛踦相隨日暮牛罷陵遅後旅失利亡雌",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0215",
+      "sha256": "7aa18ae803adc12fd9982cf3dd64cec648bcd802bc6a2423c772adfb15634260"
+    },
+    {
+      "section": "泰之無妄",
+      "text": "桑之將落隕其黄葉失勢傾側如無所立",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0216",
+      "sha256": "5911745cb181e60f5a21a124ecb433ba6bf307fdc9352b675055ef4c9102b766"
+    },
+    {
+      "section": "泰之無妄",
+      "text": "詩氓篇云桑之落矣其黄而隕又云女也不爽士貳其行",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0217",
+      "sha256": "92e58dfb5e18e881043270c368d84bcac080156b66070f84516ff9c34bd0b123"
+    },
+    {
+      "section": "泰之大畜",
+      "text": "生長以時長育根本隂陽和徳𡻕樂無憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0218",
+      "sha256": "930c6c1e808dc8d93df515e6f9c936b9209a7e3122a85d524c11ef54940844af"
+    },
+    {
+      "section": "泰之頤",
+      "text": "童女無夫未有匹配隂陽不和空坐獨宿",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0219",
+      "sha256": "1e5e75cbc83d619c565de482136ce3947bc5916b631ceb931f54771e14e60dc2"
+    },
+    {
+      "section": "泰之大過",
+      "text": "春令原宥仁徳不合三聖攸同周國茂興",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0220",
+      "sha256": "6f130542b0d1d4b25f6fa444804fb2b9e6f81c94f15976979285e45cf8a4d0ea"
+    },
+    {
+      "section": "泰之大過",
+      "text": "三聖大王王季文王也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0221",
+      "sha256": "c33ecd7d8cfe5067639a76a4212906a7549a2f8f37bb841a2e5c10e384d0d416"
+    },
+    {
+      "section": "泰之坎",
+      "text": "金精耀怒帶劒過午两虎相距雖驚无咎",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0222",
+      "sha256": "56baae94bb528154fb306b19802fdc8fa896d43498d9dda020c27cb87ce4a3a8"
+    },
+    {
+      "section": "泰之離",
+      "text": "危坐至暮請求不得膏澤不降政戾民〔字形SK3023：未编码〕",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0223",
+      "sha256": "6356321df17b30965ea925fd4ed44f87002ff2cb8d76c3cdf26dea4207015d07"
+    },
+    {
+      "section": "泰之咸",
+      "text": "老楊日衰條多枯枝爵級不進日下摧隤",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0224",
+      "sha256": "f18bb8525af440ed9f9d0581f36cc1b4794f886134be6f7de3fab7eb80d0924d"
+    },
+    {
+      "section": "泰之恆",
+      "text": "蔡侯適楚留連江濵踰時歴月思其君后魯定公三年冬蔡昭侯適楚獻佩裘於昭王昭王服之以享蔡侯蔡侯亦服其一子常欲之弗與三年",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0225",
+      "sha256": "689f348a3d66647a6c9c292515c2081348647099b43f41c7bf35b6cbb53527c9"
+    },
+    {
+      "section": "泰之恆",
+      "text": "止之",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0226",
+      "sha256": "f12fb46352fcf91ed1e6b3db78d25d009ac7df9dba77f2d002e7383fa1d30a38"
+    },
+    {
+      "section": "泰之遯",
+      "text": "右撫劒頭左受鈎帶凶訟不止相與争戾失利市肆",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0227",
+      "sha256": "ed3bdb66fff2981ae2a4d513b5de7246d46ebb66ad56009e9fa51025600dcd90"
+    },
+    {
+      "section": "泰之大壯",
+      "text": "水流趨下逺至東海求我所有買鮪與鯉",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0228",
+      "sha256": "501f70affc8645cd457db1417582392e7489968214e3a1a3b3233a37c33b0e51"
+    },
+    {
+      "section": "泰之晉",
+      "text": "登几上輿駕駟南遊合從散衡燕秦以強蘇秦主從張儀主衡秦事燕儀事秦按禮部韻毛居正曰以六攻一爲從以一離六爲横合之曰從衡",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0229",
+      "sha256": "78dd0383b0093e85435422fc8eb796f35d5ecc96dae9bc40a7fa2b5ce254b543"
+    },
+    {
+      "section": "泰之明夷",
+      "text": "求兎得獐過其所望懽以相迎髙位夷傷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0230",
+      "sha256": "d35c58d55a61354d8e1467e72a223f8023f891bafdaa77183410fa3e80137820"
+    },
+    {
+      "section": "泰之家人",
+      "text": "過時不歸道逺且迷旅人心悲使我徘〔字形SK2975：未编码〕",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0231",
+      "sha256": "58f3c61852c1a7abf0d4b5a1294f4ace28026e437b7b21dbdca8d16c341fd3b8"
+    },
+    {
+      "section": "泰之睽",
+      "text": "魂孤無室衘指含食盗張民饋見敵失肉",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0232",
+      "sha256": "65588f0dd4d4086b2833ceb1df91e4ca648add1581bf2665e15a837fd1cdb34f"
+    },
+    {
+      "section": "泰之蹇",
+      "text": "居如轉丸危不得安東西不寧動生憂患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0233",
+      "sha256": "0d4074295197ccb7dafa125169d9e781efb19f479887ffe7d0af381428db1c05"
+    },
+    {
+      "section": "泰之解",
+      "text": "坤厚地徳庶物蕃息平康正直以綏大福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0234",
+      "sha256": "9122c5c7f49bf5215b8399e8578ae744208b189a441aafd3b96f6b59bdff3ddc"
+    },
+    {
+      "section": "泰之解",
+      "text": "易曰地勢坤君子以厚徳載物",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0235",
+      "sha256": "9975a65833a2d011594c9736cd61e3a163846798e277701ea4fc2de6e1c96656"
+    },
+    {
+      "section": "泰之損",
+      "text": "挒蔽牡荆生賢山旁仇敵背憎孰肯相迎",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0236",
+      "sha256": "7d0267c4cd0eb3aafbd8353f91ca79adbc01f1be993bc148bfa741857a921b41"
+    },
+    {
+      "section": "泰之益",
+      "text": "鳯凰衘書賜我玄珪封爲晉侯",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0237",
+      "sha256": "615a9ceaf5e2b2b8f4829fe656e1e8b4dc246d4c141ec86c86ff5e37c8435b80"
+    },
+    {
+      "section": "泰之益",
+      "text": "成王與叔虞戯削桐葉爲珪以與叔虞曰以此封若史佚曰天子無戯言請擇日成之遂封叔虞於唐唐叔子爕改唐爲晉",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0238",
+      "sha256": "9d41d36841ceec140ccd78fb8e9963cadfc3e4ca296276d7c109f2bfd2c7fb3c"
+    },
+    {
+      "section": "泰之夬",
+      "text": "作凶不善相牽入井溺䧟辜罪禍至憂有",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0239",
+      "sha256": "e6a78620118cf2219a7dbab66273c3969e98dd10995c61b68fbef195b18b0cdd"
+    },
+    {
+      "section": "泰之姤",
+      "text": "悲鳴北行失其長兄伯仲不幸骸骨散亡",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0240",
+      "sha256": "67145de37c5040e84aae9ff338776313bcc5b9bd08a89068e9482b9b32e8daa8"
+    },
+    {
+      "section": "泰之萃",
+      "text": "羔衣豹裘髙易我家君子惟好",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0241",
+      "sha256": "90b039cf3661806c75d62ed59c1f50a3db5f0c1b64692635da549cfdb657a9f4"
+    },
+    {
+      "section": "泰之萃",
+      "text": "詩羔裘篇云羔裘豹飾孔武且力",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0242",
+      "sha256": "8fd5fd54ebeb60f7e06f77433db8a6fd239e463343d8035fc2c21fbad2362fd2"
+    },
+    {
+      "section": "泰之升",
+      "text": "日中爲市各抱所有交易資貨貪珠懐寳心恱懽喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0243",
+      "sha256": "eb432e24b635a75261520a54c9007927b2eb843dd5ee67e2cde8f4ca8add35f4"
+    },
+    {
+      "section": "泰之升",
+      "text": "周易繫辭云日中爲市致天下之民聚天下之貨交易而退",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0244",
+      "sha256": "2c3e97b09b8195a7650bd5152b14006175b4ee279195766e82981fd02c39f897"
+    },
+    {
+      "section": "泰之困",
+      "text": "振急〔字形SK3502：未编码〕理常陽不雨物病焦乾華實無有",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0245",
+      "sha256": "1f2dc4860ee2dd9535863bfc06a59f64244614cbea24504e79026422a0a7c7a5"
+    },
+    {
+      "section": "泰之井",
+      "text": "狐貉載剥徙温厚蓐寒〔字形SK3140：未编码〕爲疾有所不足",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0246",
+      "sha256": "f55a0bc76a5922fb3b95c9215a6c1c6d7a90402c595282f6a2fb8c46e12a5f4b"
+    },
+    {
+      "section": "泰之革",
+      "text": "履踐危難脫執去患入福喜門見誨大君",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0247",
+      "sha256": "10b35dcad05c26ff5efc9d94a47c181c4459278b7565b387f556f572a40d13a5"
+    },
+    {
+      "section": "泰之鼎",
+      "text": "四亂不安東西為患退止我足毋出國城乃得全完頼其生福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0248",
+      "sha256": "e2f82d386f4e9b3305fe458ed6977096dff74aacda2790bff9404504e855b1e5"
+    },
+    {
+      "section": "泰之震",
+      "text": "南國少子才略羙好求我長女賤薄不與反得醜惡後乃大悔",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0249",
+      "sha256": "6e729883626ec6dc9b606298a6dbfa6f0315149afad55b8607493419e7211b9e"
+    },
+    {
+      "section": "泰之震",
+      "text": "良妄怒失理陽孤無輔物病焦枯年飢於黍",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0250",
+      "sha256": "540fd5b4790bfc98d43477ae4d04dbe983dedae46f81bbf9fdb3ac05553f07dc"
+    },
+    {
+      "section": "泰之漸",
+      "text": "倬然逺咎避患害早田〔字形SK3598：未编码〕三狐見民爲寳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0251",
+      "sha256": "cfb90bdf0edca43e56f0dbc5aeabe0ea725013a39c88fda3f1e8459a8ab2ec24"
+    },
+    {
+      "section": "泰之漸",
+      "text": "周易解九二田〔字形SK3598：未编码〕三狐狐者邪媚之獸三狐指卦之三隂時之小人也〔字形SK3598：未编码〕如能變化除去之如田之〔字形SK3598：未编码〕狐也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0252",
+      "sha256": "e9932edef7f2dc78058f86005f031196afd430a8ed284a64e2a643284560d6c5"
+    },
+    {
+      "section": "泰之歸妹",
+      "text": "逐鹿山顛利去我西維邪南北無所不得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0253",
+      "sha256": "fa573a882f64a7abec6371330a8a287a1cfe8bf6cf0eea0f83fd8a5df5f87fa3"
+    },
+    {
+      "section": "泰之豐",
+      "text": "龍蛇所聚大水來處滑滑泲泲使我無頼",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0254",
+      "sha256": "d7985031d41b845b0d1f0bfe1c87ce989557c3c136d2c2afaee188f81a8dd221"
+    },
+    {
+      "section": "泰之旅",
+      "text": "從風吹火牽騏〔字形SK3858：未编码〕尾易爲功力因催受福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0255",
+      "sha256": "4627e3d167dc788dbbbea984cf5018c387ecafcec4b25fcf8a47c0cf1b36b0a2"
+    },
+    {
+      "section": "泰之巽",
+      "text": "澤狗水鳬難畜少雛不爲家饒心其函憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0256",
+      "sha256": "d9e99141ac1a2c6eaf8036da2886b2af97e5b3d90319e199a37050fe866295e3"
+    },
+    {
+      "section": "泰之巽",
+      "text": "未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0257",
+      "sha256": "94ed3a2beb1c6b319dc0ecccdc81a19799a3ea15187d2cc5808ba61c334b5c4c"
+    },
+    {
+      "section": "泰之兌",
+      "text": "水壊我里東流爲海龜鳬讙囂不覩〔字形SK3584：未编码〕母",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0258",
+      "sha256": "a0074b778a536d3d634b5022c267d07b4423faa7da02654d2f5e6f0cc5cdd135"
+    },
+    {
+      "section": "泰之渙",
+      "text": "褰衣渉行水深漬多頼幸舟子濟脫無他",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0259",
+      "sha256": "fceb9b6a0421cb56324856b03c2ab18231ebc30b1ea21e118eb70f2792d18402"
+    },
+    {
+      "section": "泰之節",
+      "text": "龜厭河海陸行不止自令枯槁失其都市憂悔爲咎亦無及巳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0260",
+      "sha256": "7038187c117f937d2b13fec092fa650a872347eeb6ba8bca5843cf970d99aed3"
+    },
+    {
+      "section": "泰之中孚",
+      "text": "同本異業樂仁政徳東鄰慕義來興我國",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0261",
+      "sha256": "c348472576f6a336a379ad88e0f9413a806b269069f1751e74e023cc6fa86637"
+    },
+    {
+      "section": "泰之小過",
+      "text": "桃李花實累累日息長大成熟甘羙可食爲我利福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0262",
+      "sha256": "801c42c382260325d2f1337ae0bb2595894820cc78edc4562f1e7f01cbc0cfe1"
+    },
+    {
+      "section": "泰之既濟",
+      "text": "重瞳四乳聦明順理無隠不形微視千里灾害不作君子集聚",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0263",
+      "sha256": "d29bf660653e5c446e43ce3b32c1c3fe91d88008a81d346e310def46082564ad"
+    },
+    {
+      "section": "泰之既濟",
+      "text": "淮南子云舜目重瞳文王四乳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0264",
+      "sha256": "8b939334fca40adc26123d3f29ce08e361122d826a230c48de41bf88d49bc33c"
+    },
+    {
+      "section": "泰之未濟",
+      "text": "實沈參墟以義討尤次止結盟以成覇功",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0265",
+      "sha256": "7c0c96efa7df015d565b7001e3a2ce32d5ac6791d80a6292e6ddc79aae02b267"
+    },
+    {
+      "section": "泰之未濟",
+      "text": "實沈參神參虚晋地也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0266",
+      "sha256": "e3fca3e2a3feb8a66b7246cf240cfdfd81487338cd60f56af6f92aa08c6f58d7"
+    },
+    {
+      "section": "否之否",
+      "text": "秦爲虎狼與晉争強併吞其國號曰始皇秦號爲虎狼之國并六國號始皇",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0267",
+      "sha256": "f601da95400586a3464bffe79f50851aa715689ea0e622eebda4169b84cb16fc"
+    },
+    {
+      "section": "否之乾",
+      "text": "天之奥府衆利所聚可以饒有樂我君子",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0268",
+      "sha256": "df3b672f8e52a1f1a8993471e8d425ad252928c4c01fbe875c6c6f97f01a9fb3"
+    },
+    {
+      "section": "否之坤",
+      "text": "天之所菑凶不可居轉徙〔字形SK3598：未编码〕福留止危憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0269",
+      "sha256": "8f390b02004ce303ad8f9cf274bfa2d591c55a90d0d0993edd65bab4bc7c42d3"
+    },
+    {
+      "section": "否之屯",
+      "text": "名成徳就項領不試景公耋老尼父逝去",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0270",
+      "sha256": "35069e9ac92580ae86820e61b2d16df5a5047d836afe24e24ca72ae52fe8eb79"
+    },
+    {
+      "section": "否之屯",
+      "text": "論語齊景公欲用孔子孔子曰吾老矣不能用也孔子行",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0271",
+      "sha256": "100d5b5be2eeb83cb2d126d202ec33b5ecf21fc8267771a49e26bc51f7cdd50a"
+    },
+    {
+      "section": "否之蒙",
+      "text": "特善避患福禄長存雖有犲虎不能危患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0272",
+      "sha256": "31c1d66f91ccff7e34b910505ddd8fc0ea5de6cef52cd0f04eedbad2aeb52059"
+    },
+    {
+      "section": "否之需",
+      "text": "避患東西反入禍門糟糠不属憂動我心",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0273",
+      "sha256": "3ea499e275a3ffece55123cdd23c37f7b773396186377a54a120ea0f2bc3e557"
+    },
+    {
+      "section": "否之訟",
+      "text": "珪璧琮璋執贄見王百里寗越應聘齊秦",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0274",
+      "sha256": "d5f22016bf0bdb7180521187f067abc9c27ef36a2540f4456911adcef9068548"
+    },
+    {
+      "section": "否之訟",
+      "text": "百里奚事秦寗越事齊",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0275",
+      "sha256": "cf018c5d92ea7c1ffbb74692a527dd6c01e58b1025facb1d64a92ffc57a0c4df"
+    },
+    {
+      "section": "否之師",
+      "text": "揚水潜鑿使君㓗白衣素朱表遊戯臯沷得君所願心志娯樂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0276",
+      "sha256": "8a8e80c6c03736646dba2a425ad0191be3daea1b5d0cfc0a7157ef7991852a1f"
+    },
+    {
+      "section": "否之師",
+      "text": "詩揚之水刺晉昭公也昭公分國以封沃曰揚之水白石鑿鑿素衣朱襮從子于沃旣見君子云胡不樂沷當作沷",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0277",
+      "sha256": "73877817accbd28f2f1e8be2eb96993c77a91095193160e63e45f11992f01aa6"
+    },
+    {
+      "section": "否之比",
+      "text": "官爵相保居之无咎求兎不得怕使恨悔",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0278",
+      "sha256": "56a76779f03eb7d29719e8032df3259973a675cba10aa8fb92fc880048dcc66b"
+    },
+    {
+      "section": "否之小畜",
+      "text": "戴元無褌臝䄇出門小兒作𥬇君爲憂患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0279",
+      "sha256": "b1d646992cb732a85ce59d00d17c8b42648bcfd8be5794eed850bd425c408e2a"
+    },
+    {
+      "section": "否之小畜",
+      "text": "未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0280",
+      "sha256": "94ed3a2beb1c6b319dc0ecccdc81a19799a3ea15187d2cc5808ba61c334b5c4c"
+    },
+    {
+      "section": "否之履",
+      "text": "把珠入口爲我利寳得吾所有欣然嘉喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0281",
+      "sha256": "84e991cc6ca94332939ffd0c5ef2d0d4d75e7e871fd15ac1e3fd6d046312d069"
+    },
+    {
+      "section": "否之泰",
+      "text": "行不如還直不如屈進不若退可以安吉",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0282",
+      "sha256": "1ebb5a85c004af7f35ac0c2ec8513e34b1a9bcae6966cf44cc572783e386be68"
+    },
+    {
+      "section": "否之同人",
+      "text": "衆〔字形SK3932：未编码〕凢聚還生大怪九身無頭魂驚魄去不可以居",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0283",
+      "sha256": "99d512755cb66d236d3692bcc5f0216068938379f928ef95538b6f558eec595b"
+    },
+    {
+      "section": "否之同人",
+      "text": "未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0284",
+      "sha256": "94ed3a2beb1c6b319dc0ecccdc81a19799a3ea15187d2cc5808ba61c334b5c4c"
+    },
+    {
+      "section": "否之大有",
+      "text": "家給人足訟聲並作四夷賔服干戈囊閣",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0285",
+      "sha256": "ce14bea0eda45e91b1a07f674999e66308e23efa55c3fefb5c14bb9f2b98b033"
+    },
+    {
+      "section": "否之大有",
+      "text": "此言武成偃干戈振兵釋旅之事",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0286",
+      "sha256": "b2e54c6b1f1d465296691c5caa9791b66a5ac896b8c85f4486e85479dfa9c969"
+    },
+    {
+      "section": "否之謙",
+      "text": "人面〔字形SK3932：未编码〕口長舌爲斧斵破瑚璉殷商〔字形SK3502：未编码〕祀",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0287",
+      "sha256": "f6021a5d2855cb5a664c457948d20b33e173645fae07c095c18ae0bdd4eaa9cf"
+    },
+    {
+      "section": "否之謙",
+      "text": "商紂無道微子抱〔字形SK3427：未编码〕噐奔周其後武王伐紂遂㓕商焉",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0288",
+      "sha256": "5a37e36e862b105082207d1e34f5fab34a70524944f3919ce1d8485aea7c1562"
+    },
+    {
+      "section": "否之豫",
+      "text": "南山之峻真人所在徳配唐虞天命爲子保祐飲享身受大慶",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0289",
+      "sha256": "850394821219fc08d6536bc96c016ec68fbdcc83ef991bd418a54c65694bdaf4"
+    },
+    {
+      "section": "否之豫",
+      "text": "唐虞尭舜有天下之號也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0290",
+      "sha256": "b89b27b40c159f200041173696509376ba89c11d46468062ab8684f727e0625e"
+    },
+    {
+      "section": "否之隨",
+      "text": "春桃生花季女冝家受福多年男爲〔字形SK3771：未编码〕君詩桃夭后妃之所致也桃之夭夭",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0291",
+      "sha256": "b8540032b116c33b2c8badc45dbf185918dbfbfe1c9e8e4940e58610fae4808a"
+    },
+    {
+      "section": "否之隨",
+      "text": "灼灼其華之子于歸冝其室家",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0292",
+      "sha256": "e5790d5da074e8e049337a8684085eef490dce309df9776bd348760c80c561bb"
+    },
+    {
+      "section": "否之蠱",
+      "text": "鴟鴞破斧冲人危殆頼其忠徳轉禍爲福傾危復立",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0293",
+      "sha256": "3c92e8b303f898c185a71e75a909c56c47c1fc18b052b87d8d1c2ec1edf4ce21"
+    },
+    {
+      "section": "否之蠱",
+      "text": "鴟鴞破斧皆詩𡺳風篇名言周公之事誅管蔡以安周室",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0294",
+      "sha256": "bc6b1168eeff4564868557ab713fa99711506f6425be7723de3288120af16815"
+    },
+    {
+      "section": "否之臨",
+      "text": "猿墮髙木不踒手足保我金玉還歸其室",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0295",
+      "sha256": "5b6b118f90eeb73268b002e9e8811e26e827016de6156cb18f5d16d86a9814e4"
+    },
+    {
+      "section": "否之觀",
+      "text": "天之奥隅尭舜所居可以存身保我〔字形SK3771：未编码〕家",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0296",
+      "sha256": "74638f65368114c0dcf849305d45748042703eeb8ee533429c0e6d0a4602b5b0"
+    },
+    {
+      "section": "否之觀",
+      "text": "堯舜唐虞二帝也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0297",
+      "sha256": "90eff13e8916b123b6a372aa6f59f5921d265de56a348ac2bffea0564341a0fa"
+    },
+    {
+      "section": "否之噬嗑",
+      "text": "伯蹇叔盲足病難行終日至暮不離其郷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0298",
+      "sha256": "218c19b16a224e800dbfbcf1acfc33202af87c40cd0e67401c6a26b3f690f0d1"
+    },
+    {
+      "section": "否之賁",
+      "text": "日月相望光明盛昌三聖茂㓛仁徳大隆",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0299",
+      "sha256": "7cec09a221084a5e35fb29aeecf986962c74bdbafdd674ab626bcd7826f1627a"
+    },
+    {
+      "section": "否之賁",
+      "text": "三聖尭舜禹也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0300",
+      "sha256": "0a2ff7e9b04ce7a0357031fccb52d4746e0a47938aaf49f4e02e26b5a2e51523"
+    },
+    {
+      "section": "否之剝",
+      "text": "桃李花實累累日息長大成就甘羙可食",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0301",
+      "sha256": "41f090b20a1858620cc466f34344de321c298a6ea3e68ed920ee865e38e3baa6"
+    },
+    {
+      "section": "否之復",
+      "text": "入和出明動作有光運轉休息動作尤康",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0302",
+      "sha256": "24b594c5bd800e9c164cfd2aea135599cbb38dccf1024767d32ca1c33e04868a"
+    },
+    {
+      "section": "否之無妄",
+      "text": "隂〔字形SK2682：未编码〕老極陽建其徳履離載光天下昭明功業不長蝦蟇代王",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0303",
+      "sha256": "161c5eae8cb5217d3b6563c76340d15d7ec137c064bfb5dc631bfac537d3124b"
+    },
+    {
+      "section": "否之無妄",
+      "text": "〔字形SK2682：未编码〕一作衰見坤之未濟未詳",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0304",
+      "sha256": "a1a6c7de747f8ee80816dc4e5377259edb6dfdacb7ec3f6c534c9f1a6367dbb0"
+    },
+    {
+      "section": "否之大畜",
+      "text": "行役未巳新事復起〔字形SK2840：未编码〕姜勞苦不得休息",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0305",
+      "sha256": "5b9e7c2b8d501c7f81d9206c9d4f8844e94036dfec9afa08d350a88bebdadffc"
+    },
+    {
+      "section": "否之大畜",
+      "text": "詩陟岵篇云父曰嗟予子行役夙夜无巳上慎旃㢤猶来无止頣狐鳴𫟍北飢無所食困於空丘莫與同力",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0306",
+      "sha256": "6e870313076e54311ce217b44bca30e778d6563748168f72658f8a6cadc5df20"
+    },
+    {
+      "section": "否之大過",
+      "text": "雄聖伏名人匿麟逺走鳯飛北櫌亂未息",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0307",
+      "sha256": "0b3928fae633f3f048947aae4da184c3b7547b1e222e1d55fa8cf1611dbdc3c1"
+    },
+    {
+      "section": "否之坎",
+      "text": "病貧望幸使伯行販開牢擇羊多得大牂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0308",
+      "sha256": "dae9c1dff0d2322fee984444754586da1dbdadf20d17f659c98ce0e2cb5be1fd"
+    },
+    {
+      "section": "否之離",
+      "text": "翕翕䡘䡘稍稍崩顛㓕其令名長没不存",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0309",
+      "sha256": "efdbacc3efa0e14c6ade1499e2609d07676ca1970b3c49db8e1d2c184605157f"
+    },
+    {
+      "section": "否之離",
+      "text": "翕音吸䡘音田",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0310",
+      "sha256": "0c784eeddf505218da94b3c967cd209ec9f2fd39889d15c6962a8240ebb2accb"
+    },
+    {
+      "section": "否之咸",
+      "text": "花落實槁衣弊如絡女功不成絲布如玉",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0311",
+      "sha256": "5439d432e01e0022460d25c16c50c89dfdf02fbce1524b0950509724e554c17b"
+    },
+    {
+      "section": "否之恆",
+      "text": "温山松栢常茂不落鸑鳯所止得以歡樂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0312",
+      "sha256": "56cd375c110dc715f1a2d2d32b2145bf1ce8ca7dbc7dac457e22ed977d21d2a3"
+    },
+    {
+      "section": "否之遯",
+      "text": "失恃母友嘉偶出走玃如失兎傫如虐狗",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0313",
+      "sha256": "5e32f871855d52051ef4e10f1e1e9db43f4357cff457f62e9b3f5dd240763cdd"
+    },
+    {
+      "section": "否之遯",
+      "text": "虐作䘮孔子去魯傫〔字形SK2-590：未编码〕䘮家之狗",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0314",
+      "sha256": "d0efdc86b0626d83ef28472cbfbb747f7630f1118ea84d2096230b0aa7aa3e29"
+    },
+    {
+      "section": "否之大壯",
+      "text": "太一駕騮從天上求徴我叔季封爲魯侯",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0315",
+      "sha256": "9a64c1461185fb1b79784840e60034c67127a504df207d91fb726ff718e23ca5"
+    },
+    {
+      "section": "否之大壯",
+      "text": "太乙星名成王封周公之子伯禽於魯",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0316",
+      "sha256": "25a965977f576697b43139b41f1e454b860cf4d7b36f54a82302d75cf03ba99e"
+    },
+    {
+      "section": "否之晉",
+      "text": "雙鳬俱飛欲歸稻池經渉雚澤爲矢所射傷我𦙄臆",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0317",
+      "sha256": "b335750d97abfb1eb5302ce081c1f5a6c8ca055f9872c7165ba789109c106f60"
+    },
+    {
+      "section": "否之明夷",
+      "text": "深坑復平天下安寧意娯心樂頼福長生",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0318",
+      "sha256": "30b7713d24621a640b61e512dc8b11bfe23d28735e62a433555aaad2807ed471"
+    },
+    {
+      "section": "否之家人",
+      "text": "俱爲天民雲過吾西風伯雨師與我無恩",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0319",
+      "sha256": "78bc28af8b274258ff868dec5c2fe99f95f3e9905faf8d51add75661f0534b82"
+    },
+    {
+      "section": "否之睽",
+      "text": "野鳥山鵲来集六愽三鳥四散主人勝客",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0320",
+      "sha256": "6db9caec16a05b0e553567416375417ebfd070632103db72ece79e8902c0d53a"
+    },
+    {
+      "section": "否之睽",
+      "text": "六愽古者象棋有六愽",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0321",
+      "sha256": "a69f8e5c83f839c334d7f1c74c7024c94aeb2e0b8f1df702fe51b1d0f81ac181"
+    },
+    {
+      "section": "否之蹇",
+      "text": "北隂司寒堅氷不温凌人情怠大雹爲灾",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0322",
+      "sha256": "9831017ddbef0ea88486725c065530a0e95f90483a214db594c0fe447c5c99d5"
+    },
+    {
+      "section": "否之蹇",
+      "text": "凌人氷人也按詩傳蘇民曰古有蔵氷發氷以節陽氣之盛是以無灾霜雹也",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0323",
+      "sha256": "37fd52bc9b150eba71239ac4e3b76aefffb11024cecda9806832dc4ea610efd6"
+    },
+    {
+      "section": "否之解",
+      "text": "伊尹智士去桀耕野執順以傳反和无咎",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0324",
+      "sha256": "4f442a74251a94920b05f651f4dd56cdfcc342d2f75082e7e5e3d0b583827b5d"
+    },
+    {
+      "section": "否之解",
+      "text": "伊尹耕于有莘之野湯三使往聘之使五就桀桀不能用復歸于湯遂相湯伐桀",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0325",
+      "sha256": "d9dfa811b2a8d49d0f132b08f12e5156dc16ac2601e2ce4c11ca561ce0d243aa"
+    },
+    {
+      "section": "否之損",
+      "text": "北風牽手相從𥬇語伯歌季舞讌樂以喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0326",
+      "sha256": "cd949fd2f8c19bacf7e0bfb5f8e68c2bc454bbfce73a0c852b25ac0cd19a9d4e"
+    },
+    {
+      "section": "否之損",
+      "text": "詩北風篇云北風其涼雨雪其雱恵而好我𢹂手同行",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0327",
+      "sha256": "269fe7996e4f700060b787caef91a4f606b1ba8fec2a224d2f371daed4edbb84"
+    },
+    {
+      "section": "否之益",
+      "text": "從巢去家南過白馬東西受福與母相得",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0328",
+      "sha256": "4f125df71b87ffbe23eaab1ab75bd94bc8c775a9cd5a7a273d3fb5c313133290"
+    },
+    {
+      "section": "否之夬",
+      "text": "鳥飛跌跛两两相和不病四支但去莫疑",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0329",
+      "sha256": "bdca6b210328d4d64b082ce1b2a064ae4a87b75e0fc2821e01a9e3dd9e97de8d"
+    },
+    {
+      "section": "否之姤",
+      "text": "三馬生駒以戍爲母荆夷上侵〔字形SK2840：未编码〕伯出走",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0330",
+      "sha256": "9801576469db494cc7dc01dfdf37b883db6c0c267993583e5fd2299098082072"
+    },
+    {
+      "section": "否之姤",
+      "text": "三年一作二牛見需之訟一作三年生狗見坤之震",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0331",
+      "sha256": "71d5219f055141edb84efedb8c92de9671f886f61a2046016d991af1cd04eb09"
+    },
+    {
+      "section": "否之萃",
+      "text": "破筐弊筥棄〔字形SK3037：未编码〕於道壊落穿敗不復爲寳",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0332",
+      "sha256": "20e2947d7fb5ce6748f7a34c502e9f0d74ded2a0c1c2ef3234f9ba1c054a3c1a"
+    },
+    {
+      "section": "否之升",
+      "text": "結紐得解憂不爲禍食利供家受福安坐",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0333",
+      "sha256": "a4c8176be504e6844e7d5bb2579941668d1f4869049d527bf5f9f769ae00fb97"
+    },
+    {
+      "section": "否之困",
+      "text": "白日陽光雷車避蔵雲雨不行各自止郷",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0334",
+      "sha256": "e14f5a696c63f88db643e01bea554be6b8f0785137d059d998affe70a1aa8c4f"
+    },
+    {
+      "section": "否之井",
+      "text": "杜口結舌心中怫鬱凶災生患無所告𡨚",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0335",
+      "sha256": "562ca7da5a3b9a17491de8fa640c02c90dd41fd64cb9193bcbef213ee78fb6b3"
+    },
+    {
+      "section": "否之革",
+      "text": "齎貝贖狸不聴我辝繫於虎髯牽不得來",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0336",
+      "sha256": "0e4d19961256558559f54088059d42834227babac604293f966607e0feb9682b"
+    },
+    {
+      "section": "否之鼎",
+      "text": "持鶴抱子見蛇何咎室家俱在不失其所",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0337",
+      "sha256": "d1c4248ab2753e9582296d41d72a34f6eee0cc294c298e036c3e0b12033d910f"
+    },
+    {
+      "section": "否之震",
+      "text": "逐兎山西利走入門頼我仁徳〔字形SK3598：未编码〕爲我福",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0338",
+      "sha256": "44006fb6ada6a2591f6c41a606305d25860832ec33bdc9fffcf7bbd5bbf43570"
+    },
+    {
+      "section": "否之艮",
+      "text": "興役不休與民争時牛生五趾行危爲憂",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0339",
+      "sha256": "736d363523b59fd9c67caa6eb480f6bd27368ddaedb2855bbdb39d1878c9c9c2"
+    },
+    {
+      "section": "否之漸",
+      "text": "春粟夏梨少鮮希有斗千石萬貴不可販",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0340",
+      "sha256": "dabc67c5c8e8f4fecbb3381ffa68d8090f35743e64912b35c71a19c4c17e27c2"
+    },
+    {
+      "section": "否之歸妹",
+      "text": "悲號北行失其長兄伯仲不幸骸骨散亡",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0341",
+      "sha256": "cbc6f456c6e4ca89a9dda7f8a4ce223c7141cda638810bce0690a4279781065b"
+    },
+    {
+      "section": "否之豐",
+      "text": "賦歛重數政爲民賊杼軸空盡家去其室",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0342",
+      "sha256": "f71fe5017dc0e217a6984976aca9894dff7a1c9221dc2dc29d0d3a928d48d300"
+    },
+    {
+      "section": "否之豐",
+      "text": "詩大東篇云小東大東杼軸其空",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0343",
+      "sha256": "f389af7bb1c205da1b151b84a4070e21c1ec308a0a2df16a217b49f10bf67ab6"
+    },
+    {
+      "section": "否之旅",
+      "text": "履服白縞殃咎並到憂不敢𥬇",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0344",
+      "sha256": "c02ecc0973633f0f79853828ba97668804ed96ccba8792520a1a6b25c8aea4f3"
+    },
+    {
+      "section": "否之巽",
+      "text": "杜口結舌言爲禍母代伯受患無所禱𡨚",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0345",
+      "sha256": "fa61cb416f098e0e8f8629b74f766ff7d1ebfc86dfccf1fe3a89297ca42553f9"
+    },
+    {
+      "section": "否之兌",
+      "text": "免〔字形SK2861：未编码〕進賢歩行出朝門體不正賊孽爲患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0346",
+      "sha256": "4cf3c7a840bb9c65d20e1fe3833288e6318050c0cb2abb588a707327944e3245"
+    },
+    {
+      "section": "否之兌",
+      "text": "漢書貢禹爲河南令以賊事爲府官見責免冠謝輿服志進賢古緇布〔字形SK2861：未编码〕文儒者之服",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0347",
+      "sha256": "9c41ef372e1fc73a5935b1d3ad254eeee334dfa1ae1c1f2123e33e11eb4a3b88"
+    },
+    {
+      "section": "否之渙",
+      "text": "娶於姜女駕迎新婦少齊在門夫子恱喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0348",
+      "sha256": "2946f43a28e42b4efe39eb546549f3940a3f8778f02c380bf0845e1b7848dbd0"
+    },
+    {
+      "section": "否之渙",
+      "text": "按春秋昭公二年夏四月韓須如齊逆女齊陳無宇送女致少姜少姜有寵於晋侯晋侯謂之少齊姜齊姓",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0349",
+      "sha256": "93d7dbfd636f7370d4ddd7c4be54291cc0b84610bc10c83ad75f1b71e9d9dad9"
+    },
+    {
+      "section": "否之節",
+      "text": "牧羊稻園聞虎喧嚾思恐悚息終無禍患",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0350",
+      "sha256": "1b4c09ec29b10733639663a27cb942c668d68366e290edfbc8054e8782f75e0d"
+    },
+    {
+      "section": "否之中孚",
+      "text": "老妾据機緯絶不知女功不成冬寒無衣",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0351",
+      "sha256": "e167a3773556424bea4cee1dec4e8c2dca91136d85ad186d8bdf77ec93c65271"
+    },
+    {
+      "section": "否之小過",
+      "text": "乗龍吐光使隂復明燎獵載聖六師以昌",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0352",
+      "sha256": "619300f1c8b3426ab8d6fdb8f5dfdc04fa6d51796a43e9e6b046fec2e462359f"
+    },
+    {
+      "section": "否之既濟",
+      "text": "東鄰嫁女爲王妃后莊公築館以尊王母歸于京師季姜恱喜",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0353",
+      "sha256": "38ae7fbf3e162aa6480872366bffcc0b7052e523fac030c48d1bd2dc1a4624bc"
+    },
+    {
+      "section": "否之既濟",
+      "text": "春秋魯莊公元年王〔字形SK2840：未编码〕下嫁於齊命同姓諸侯主之魯以〔字形SK2840：未编码〕姓故築館而迎之冬王〔字形SK2840：未编码〕歸于齊桓公九年春紀季姜歸于京師爲桓王后",
+      "layer": "commentary",
+      "passage_id": "yilin:c003:p0354",
+      "sha256": "623d45c1347955359cb47ab092d54c080960d6cc001bf8e31fc002cb76bde26b"
+    },
+    {
+      "section": "否之未濟",
+      "text": "灌鴶東從道頓趺跱日食不退病爲身禍",
+      "layer": "base_text",
+      "passage_id": "yilin:c003:p0355",
+      "sha256": "65f37405d9b723125a39340f6a12efaead759fe3f88273257b42476e4827b8d2"
+    }
+  ]
+}

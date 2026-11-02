@@ -20,7 +20,8 @@ def test_new_inventory_and_every_scenario_route_are_real() -> None:
     report = validate_library()
     assert report['ok'], report['errors']
     assert {b['id']: b['chapters'] for b in report['books'] if b['id'] in EXPECTED} == EXPECTED
-    assert sum(b['passages'] for b in report['books']) == 18982
+    assert {b['id']: b['chapters'] for b in report['books'] if b['id'].startswith('yilin')} == {'yilin': 17, 'yilin_siku': 5}
+    assert sum(b['passages'] for b in report['books']) == 29597
     assert guidance.audit_guidance()['ok']
     assert set(guidance._catalog()['scenarios']) == set(SCENARIOS)
     for scenario in SCENARIOS:

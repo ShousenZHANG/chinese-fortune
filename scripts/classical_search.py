@@ -294,6 +294,20 @@ def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict
     raise ValueError('unknown passage: ' + passage_id)
 
 
+def chapter_passages(chapter_id: str, library_root: Path | str | None = None) -> list[dict]:
+    """Every passage of one hash-verified chapter, for tools that index a whole book section."""
+    root = _root(library_root)
+    bid, cid = chapter_id.split(':')
+    for book in _selected_books(root, bid):
+        for entry in book['chapters']:
+            if entry['id'] == cid:
+                path = _path(root, entry['path'])
+                if _hash(path) != entry['sha256']:
+                    raise ValueError('chapter hash mismatch')
+                return list(_read(path)['passages'])
+    raise ValueError('unknown chapter: ' + chapter_id)
+
+
 def get_chapter(chapter_id: str, *, offset: int = 0, limit: int = 5,
                 library_root: Path | str | None = None) -> dict:
     """Page through an entire chapter without silently cutting conditions short."""

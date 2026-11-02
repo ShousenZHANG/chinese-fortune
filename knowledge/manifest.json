@@ -11,6 +11,8 @@
     "sanming",
     "xieji",
     "xuanze",
+    "yilin",
+    "yilin_siku",
     "yuanhai",
     "yuanling",
     "zengshan",
@@ -1616,6 +1618,737 @@
         "目录收齐不代表规则全部实现；不得据历史断语直接预测个人疾病、死亡或交易。"
       ],
       "retrieval_context_radius": 2
+    },
+    {
+      "id": "yilin",
+      "title": "焦氏易林",
+      "edition": "四部叢刊景北京圖書館藏元刊本，十六卷附闕名注；维基文库逐页录入，校对等级多为1（未校对）",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29&oldid=1398264",
+      "revision": "1398264",
+      "source_timestamp": "2018-04-03T09:18:09Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c000",
+        "c001",
+        "c002",
+        "c003",
+        "c004",
+        "c005",
+        "c006",
+        "c007",
+        "c008",
+        "c009",
+        "c010",
+        "c011",
+        "c012",
+        "c013",
+        "c014",
+        "c015",
+        "c016"
+      ],
+      "chapters": [
+        {
+          "id": "c000",
+          "title": "序",
+          "path": "books/yilin/c000.json",
+          "sha256": "37ca0547ded20a27a449345649aa1dbaec8931d6b4dcd9e9eddbfa4832fcc545",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%BA%8F&oldid=2658157",
+          "revision": "2658157",
+          "passage_count": 84,
+          "issue_count": 12
+        },
+        {
+          "id": "c001",
+          "title": "卷第一",
+          "path": "books/yilin/c001.json",
+          "sha256": "b4565c61191f072d20dab023ecbf0afe40c9a9b4a7ff1a5e8a0e42e05f5705a0",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%B8%80&oldid=2658158",
+          "revision": "2658158",
+          "passage_count": 381,
+          "issue_count": 90
+        },
+        {
+          "id": "c002",
+          "title": "卷第二",
+          "path": "books/yilin/c002.json",
+          "sha256": "092c8be099fb53a902eb2b3613e6fe1d98be498dbbdc4a6e847c4c6cf9d4c0c1",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%BA%8C&oldid=2658159",
+          "revision": "2658159",
+          "passage_count": 369,
+          "issue_count": 83
+        },
+        {
+          "id": "c003",
+          "title": "卷第三",
+          "path": "books/yilin/c003.json",
+          "sha256": "7c54a03e06ffa1509264e55dfaf6fa3c42eab7a5b61f1853940f0481d5bf39a7",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%B8%89&oldid=2658160",
+          "revision": "2658160",
+          "passage_count": 355,
+          "issue_count": 54
+        },
+        {
+          "id": "c004",
+          "title": "卷第四",
+          "path": "books/yilin/c004.json",
+          "sha256": "24126704dd3215f219a853342ba65b9b8506096490fa2d03e67ad923379f0589",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%9B%9B&oldid=2658161",
+          "revision": "2658161",
+          "passage_count": 377,
+          "issue_count": 64
+        },
+        {
+          "id": "c005",
+          "title": "卷第五",
+          "path": "books/yilin/c005.json",
+          "sha256": "cbb769cd4fdc0435b36b34243ffcf9f9d8b2a40ebfe297b538549a0f50663bae",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%BA%94&oldid=2658162",
+          "revision": "2658162",
+          "passage_count": 364,
+          "issue_count": 71
+        },
+        {
+          "id": "c006",
+          "title": "卷第六",
+          "path": "books/yilin/c006.json",
+          "sha256": "c0a98ce82303310a9d6d9b339063d2caebff9cfc35cb23934bca7970527c995f",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%85%AD&oldid=2658163",
+          "revision": "2658163",
+          "passage_count": 355,
+          "issue_count": 54
+        },
+        {
+          "id": "c007",
+          "title": "卷第七",
+          "path": "books/yilin/c007.json",
+          "sha256": "a8a8ddf0c42c64247c7f757ebd9d36cb3bef34b98f278b2826952d770ae6c3e6",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%B8%83&oldid=2658164",
+          "revision": "2658164",
+          "passage_count": 359,
+          "issue_count": 66
+        },
+        {
+          "id": "c008",
+          "title": "卷第八",
+          "path": "books/yilin/c008.json",
+          "sha256": "d1cc52caac9fabbdc9e48c6bc4bffac0d01f08d5b1d0a991c69aa7aada2cf9ee",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%85%AB&oldid=2658165",
+          "revision": "2658165",
+          "passage_count": 349,
+          "issue_count": 66
+        },
+        {
+          "id": "c009",
+          "title": "卷第九",
+          "path": "books/yilin/c009.json",
+          "sha256": "412bccc127dee0e4703480769981540e20495a79415319ec040ef03f8f9c3234",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E4%B9%9D&oldid=2658166",
+          "revision": "2658166",
+          "passage_count": 352,
+          "issue_count": 53
+        },
+        {
+          "id": "c010",
+          "title": "卷第十",
+          "path": "books/yilin/c010.json",
+          "sha256": "6365875c772bc275ceb98fb9b7e7c2f2b032c5cfb96be295db9b11a89d8be00a",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81&oldid=2658167",
+          "revision": "2658167",
+          "passage_count": 346,
+          "issue_count": 71
+        },
+        {
+          "id": "c011",
+          "title": "卷第十一",
+          "path": "books/yilin/c011.json",
+          "sha256": "9384d262207346caaf3612be4acb76c9b4ad7020de0f96dd1a088bf1c6b9cd81",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81%E4%B8%80&oldid=2658168",
+          "revision": "2658168",
+          "passage_count": 341,
+          "issue_count": 66
+        },
+        {
+          "id": "c012",
+          "title": "卷第十二",
+          "path": "books/yilin/c012.json",
+          "sha256": "17d1917e2bcdf6bcdb8bd2dcfcc1d7e698ac6dcb70baacdb0e91dde5f5921a2c",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81%E4%BA%8C&oldid=2658169",
+          "revision": "2658169",
+          "passage_count": 357,
+          "issue_count": 62
+        },
+        {
+          "id": "c013",
+          "title": "卷第十三",
+          "path": "books/yilin/c013.json",
+          "sha256": "e08ea1715e46b8a6325999f032b2b6170cb5d729a573f3c40fb3b06fdfa5ac9e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81%E4%B8%89&oldid=2658170",
+          "revision": "2658170",
+          "passage_count": 361,
+          "issue_count": 93
+        },
+        {
+          "id": "c014",
+          "title": "卷第十四",
+          "path": "books/yilin/c014.json",
+          "sha256": "6e6b732b22a64d77dff2b15ae472e6fb881fa5ed8823eec9e84ce82fa8a1b464",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%9B%9B&oldid=2658171",
+          "revision": "2658171",
+          "passage_count": 353,
+          "issue_count": 61
+        },
+        {
+          "id": "c015",
+          "title": "卷第十五",
+          "path": "books/yilin/c015.json",
+          "sha256": "ef00249c04fe73494e86ab6253e423ca9efe5613820c5cf78e735a9778750b9a",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81%E4%BA%94&oldid=2658172",
+          "revision": "2658172",
+          "passage_count": 355,
+          "issue_count": 71
+        },
+        {
+          "id": "c016",
+          "title": "卷第十六",
+          "path": "books/yilin/c016.json",
+          "sha256": "181a395f30a3e5510f781f78cdd1894baf398376a95c54fb60e73ea6b066d71e",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E7%84%A6%E6%B0%8F%E6%98%93%E6%9E%97+%28%E5%9B%9B%E9%83%A8%E5%8F%A2%E5%88%8A%E6%9C%AC%29%2F%E5%8D%B7%E7%AC%AC%E5%8D%81%E5%85%AD&oldid=2658173",
+          "revision": "2658173",
+          "passage_count": 370,
+          "issue_count": 79
+        }
+      ],
+      "index_path": "sources/yilin/_index.wiki",
+      "index_sha256": "c7f6d746566217240776ecb366986dc988a9368be2a8e56a0b2a8bb80025e7af",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 17,
+        "acquired_count": 17,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false,
+        "lins": {
+          "expected_lins": 4096,
+          "found_lins": 4080,
+          "missing": [
+            "屯之睽",
+            "泰之艮",
+            "否之頤",
+            "復之鼎",
+            "復之震",
+            "大畜之節",
+            "頤之家人",
+            "坎之夬",
+            "遯之夬",
+            "大壯之睽",
+            "姤之艮",
+            "井之渙",
+            "豐之明夷",
+            "豐之家人",
+            "豐之睽",
+            "渙之大過"
+          ]
+        }
+      },
+      "split_problems": [
+        {
+          "section": "屯之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "屯之睽",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "比之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "履之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "泰之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "泰之艮",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "否之頤",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "大有之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "隨之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "觀之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "噬嗑之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "無妄之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "大畜之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "大畜之節",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "頤之家人",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "坎之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "坎之夬",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "離之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "遯之夬",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "大壯之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "大壯之睽",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "晉之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "家人之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "睽之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "蹇之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "損之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "益之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "姤之艮",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "升之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "困之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "井之渙",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "革之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "鼎之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "艮之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "艮之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "漸之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "豐之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "豐之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "豐之明夷",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "豐之家人",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "豐之睽",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "旅之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "旅之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "巽之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "兌之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "兌之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "渙之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "渙之大過",
+          "kind": "lin_missing_in_transcription"
+        },
+        {
+          "section": "節之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "中孚之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "中孚之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "小過之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "既濟之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "既濟之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        },
+        {
+          "section": "未濟之觀",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3657：未编码〕"
+        },
+        {
+          "section": "未濟之恆",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK2989：未编码〕"
+        },
+        {
+          "section": "未濟之晉",
+          "kind": "label_glyph_taken_as_next_in_order",
+          "line": "〔字形SK3089：未编码〕"
+        }
+      ],
+      "quality_notes": [
+        "维基文库四部叢刊扫描页校对等级：2329页为1（未校对）、3页为3、4页为空白；文本未经本项目对图校核。",
+        "「無註」标记不收为注文段；□为原录入标记的不可辨字。",
+        "每林按本卦、之卦切分；版本缺页或切分不出的林列在 completeness.lins.missing。"
+      ]
+    },
+    {
+      "id": "yilin_siku",
+      "title": "焦氏易林（四库本）",
+      "edition": "文淵閣四庫全書本，维基文库分四卷录入，六十四卦齐全；未逐页校图",
+      "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%98%93%E6%9E%97+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29&oldid=657341",
+      "revision": "657341",
+      "source_timestamp": "2016-10-15T11:18:57Z",
+      "license": {
+        "original": "Public domain: historical work",
+        "transcription": "Wikisource attribution retained; CC BY-SA 4.0 where applicable",
+        "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+      },
+      "layer": "historical_work_transcription",
+      "facsimile_status": "not_checked",
+      "transcription_status": "acquired_not_collated",
+      "source_flags": [],
+      "expected_chapters": [
+        "c000",
+        "c001",
+        "c002",
+        "c003",
+        "c004"
+      ],
+      "chapters": [
+        {
+          "id": "c000",
+          "title": "提要",
+          "path": "books/yilin_siku/c000.json",
+          "sha256": "fb09036076917b7e943e7d4ac553ef8bf0cb5c48ccfc7edaa9ee0feaa2e78e58",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%98%93%E6%9E%97+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29&oldid=657341",
+          "revision": "657341",
+          "passage_count": 3,
+          "issue_count": 0
+        },
+        {
+          "id": "c001",
+          "title": "卷1",
+          "path": "books/yilin_siku/c001.json",
+          "sha256": "cd41b8454f78498f309a3a890a17c16e331c5c07749225b294f2d05e64594337",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%98%93%E6%9E%97+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B71&oldid=784348",
+          "revision": "784348",
+          "passage_count": 1417,
+          "issue_count": 35
+        },
+        {
+          "id": "c002",
+          "title": "卷2",
+          "path": "books/yilin_siku/c002.json",
+          "sha256": "11e0ef935f04a24924a1b839a6c96d1a244c9e349086a819af40bbe12be4915d",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%98%93%E6%9E%97+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B72&oldid=784351",
+          "revision": "784351",
+          "passage_count": 776,
+          "issue_count": 10
+        },
+        {
+          "id": "c003",
+          "title": "卷3",
+          "path": "books/yilin_siku/c003.json",
+          "sha256": "2e53f971282c2649c7eb63018d4271a7f5ad171be3764b94205f5ed70efd997f",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%98%93%E6%9E%97+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B73&oldid=784354",
+          "revision": "784354",
+          "passage_count": 904,
+          "issue_count": 10
+        },
+        {
+          "id": "c004",
+          "title": "卷4",
+          "path": "books/yilin_siku/c004.json",
+          "sha256": "aa73f1b8daf75e1fc345a978a00f88e88cae779a2c1750f9432419922ccb0c56",
+          "source_url": "https://zh.wikisource.org/w/index.php?title=%E6%98%93%E6%9E%97+%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29%2F%E5%8D%B74&oldid=784357",
+          "revision": "784357",
+          "passage_count": 1687,
+          "issue_count": 22
+        }
+      ],
+      "index_path": "sources/yilin_siku/_index.wiki",
+      "index_sha256": "2af63a4d16612d28501ce4b30b5091d34ae448542359777a47aeb354bcdf057e",
+      "completeness": {
+        "acquisition": "complete",
+        "scope": "declared source edition and frozen chapter inventory only",
+        "expected_count": 5,
+        "acquired_count": 5,
+        "missing_chapters": [],
+        "missing_facsimile_pages": "not_assessed",
+        "historical_edition_verified": false,
+        "lins": {
+          "expected_lins": 4096,
+          "found_lins": 4091,
+          "missing": [
+            "乾之兌",
+            "否之兌",
+            "大有之兌",
+            "蠱之兌",
+            "艮之小畜"
+          ]
+        }
+      },
+      "split_problems": [
+        {
+          "section": "需之革",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "師之隨",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "比之離",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "小畜之復",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "隨之大有",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "隨之革",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "蠱之離",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "觀之復",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "噬嗑之豐",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "噬嗑之革",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "賁之離",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "咸之離",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "遯之革",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "大壯之訟",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "晉之復",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "晉之復",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "明夷之革",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "夬之大有",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "井之泰",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "漸之解",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "歸妹之頤",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "旅之困",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "渙之解",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "節之復",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "節之益",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "節之訟",
+          "kind": "verse_missing_in_transcription"
+        },
+        {
+          "section": "既濟之旅",
+          "kind": "verse_missing_in_transcription"
+        }
+      ],
+      "quality_notes": [
+        "维基文库把全书分四卷录入，六十四卦都在；个别林转录缺失，见 completeness.lins.missing。",
+        "四库本录文把多林连写，按「卦名＋全角空格」切分。"
+      ]
     },
     {
       "id": "yuanhai",
