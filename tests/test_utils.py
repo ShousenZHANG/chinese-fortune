@@ -246,7 +246,7 @@ def test_resolve_timezone_offset_rejects_unknown_zone():
 def _cities():
     import json
     from pathlib import Path
-    p = Path(__file__).resolve().parent.parent / "assets" / "cities_cn.json"
+    p = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/assets" / "cities_cn.json"
     return json.loads(p.read_text(encoding="utf-8"))["cities"]
 
 

@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 @pytest.fixture
 def asset():
-    return json.loads((ROOT / 'assets/shensha.json').read_text(encoding='utf-8'))
+    return json.loads((ROOT / 'skills/chinese-fortune/assets/shensha.json').read_text(encoding='utf-8'))
 
 
 def rows(asset):

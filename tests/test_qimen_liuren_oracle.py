@@ -9,7 +9,7 @@ from zoneinfo import ZoneInfo
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
 pytest.importorskip("lunar_python")
 
 from liuren_cast import (  # noqa: E402
@@ -30,7 +30,7 @@ from qimen_dingju import (  # noqa: E402
 
 
 def run(script, *args):
-    proc = subprocess.run([sys.executable, str(ROOT / "scripts" / script), *args],
+    proc = subprocess.run([sys.executable, str(ROOT / "skills/chinese-fortune/scripts" / script), *args],
                           capture_output=True, encoding="utf-8")
     assert proc.returncode == 0, proc.stdout + proc.stderr
     return json.loads(proc.stdout)
@@ -183,7 +183,7 @@ def test_solar_clock_correction_cannot_move_the_actual_solstice():
     ["--ju-type", "yang", "--ju-number", "0"],
 ])
 def test_incomplete_or_zero_manual_ju_cannot_silently_revert_to_automatic(manual_args):
-    proc = subprocess.run([sys.executable, str(ROOT / "scripts/qimen_cast.py"),
+    proc = subprocess.run([sys.executable, str(ROOT / "skills/chinese-fortune/scripts/qimen_cast.py"),
                            "--date", "2026-06-18", "--time", "08:00", *manual_args],
                           capture_output=True, encoding="utf-8")
     assert proc.returncode == 1

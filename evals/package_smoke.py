@@ -92,7 +92,7 @@ def main(argv: list[str] | None = None) -> int:
             raise RuntimeError('unexpected temporary workspace')
         archive = args.archive.resolve() if args.archive else work / 'skill.zip'
         if not args.archive:
-            run([sys.executable, str(ROOT / 'scripts/build_skill.py'), '--out', str(archive)], work)
+            run([sys.executable, str(ROOT / 'skills/chinese-fortune/scripts/build_skill.py'), '--out', str(archive)], work)
         artifact = verify_archive(archive, expected_commit=args.expected_commit)
         if args.verify_only:
             print(json.dumps({"ok": True, "validation": "archive_only", "artifact": artifact}, indent=2))

@@ -34,7 +34,7 @@ def test_tied_best_days_are_said_to_be_tied():
 def test_the_json_packet_carries_the_notes():
     sys.path.insert(0, str(ROOT / 'tests'))
     from test_answer_length import WEEK
-    run = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'scripts' / 'fortune_reading.py'), '--stdin'],
+    run = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / 'fortune_reading.py'), '--stdin'],
                          input=json.dumps(WEEK, ensure_ascii=False), capture_output=True, encoding='utf-8')
     assert run.returncode == 0, run.stderr
     assert json.loads(run.stdout)['host_notes']
@@ -103,7 +103,7 @@ def test_an_insurance_question_is_not_about_the_hazard(question):
 
 
 def test_the_skill_says_tool_conclusions_come_first_and_takes_life_questions():
-    text = (ROOT / 'SKILL.md').read_text(encoding='utf-8')
+    text = (ROOT / 'skills/chinese-fortune/SKILL.md').read_text(encoding='utf-8')
     assert '## 工具结论优先（硬规则）' in text and '不写 `python -c`' in text
     description = next(line for line in text.splitlines() if line.startswith('description: '))
     assert '燃气泄漏' in description and '收到传票' in description and len(description) <= 1024 + len('description: ')

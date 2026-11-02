@@ -6,7 +6,7 @@ from pathlib import Path
 
 import name_analyze as na
 
-SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
+SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
 NAME = SCRIPTS / "name_analyze.py"
 
 

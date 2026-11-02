@@ -27,6 +27,8 @@ from classical_search import get_passage
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
 
 ROOT = Path(__file__).resolve().parents[1]
+# Tests live at the repository root, two levels above the skill folder.
+REPO = ROOT.parents[1]
 MODERN = 'modern_convention'
 
 
@@ -209,7 +211,7 @@ def _tests_ok(family: Family) -> list[str]:
     module = family.implementer.partition(':')[0]
     missing = []
     for test in family.tests:
-        path = ROOT / test
+        path = REPO / test
         if not path.is_file() or module not in path.read_text(encoding='utf-8'):
             missing.append(test)
     return missing

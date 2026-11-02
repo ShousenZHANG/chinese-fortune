@@ -57,7 +57,7 @@ def test_cli_can_save_an_offline_report_from_the_same_result_without_overwrite(t
                '--year', '2000', '--month', '1', '--day', '15', '--hour', '10',
                '--gender', 'male', '--as-of-year', '2026', '--question', '<script>不是可执行内容</script>',
                '--view', 'compact', '--report', str(report)]
-    done = subprocess.run(command, cwd=Path(__file__).resolve().parents[1],
+    done = subprocess.run(command, cwd=Path(__file__).resolve().parents[1] / 'skills/chinese-fortune',
                           capture_output=True, text=True, encoding='utf-8')
     assert done.returncode == 0, done.stderr or done.stdout
     result = json.loads(done.stdout)
@@ -69,7 +69,7 @@ def test_cli_can_save_an_offline_report_from_the_same_result_without_overwrite(t
     assert '<script src=' not in html and '@import' not in html
     assert result['chart_facts']['four_pillars']['day']['ganzhi'] in html
     assert '已可固定的柱' in html.split('<details>', 1)[0]
-    again = subprocess.run(command, cwd=Path(__file__).resolve().parents[1],
+    again = subprocess.run(command, cwd=Path(__file__).resolve().parents[1] / 'skills/chinese-fortune',
                            capture_output=True, text=True, encoding='utf-8')
     assert again.returncode != 0
     assert json.loads(again.stdout)['error'] == 'report_unavailable'

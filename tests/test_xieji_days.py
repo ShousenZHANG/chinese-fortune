@@ -10,7 +10,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(ROOT / 'skills/chinese-fortune/scripts'))
 
 from classical_search import get_passage  # noqa: E402
 from xieji_days import (  # noqa: E402
@@ -159,7 +159,7 @@ def test_wedding_moving_and_business_are_now_screened():
 
 def test_the_almanac_table_is_flagged_where_it_contradicts_the_book():
     def run(date: str) -> dict:
-        proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'scripts/huangli_query.py'),
+        proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts/huangli_query.py'),
                                '--date', date], capture_output=True, text=True, encoding='utf-8')
         return json.loads(proc.stdout)
     wedding = run('2020-06-02')  # 丙子, summer 四忌; the table still lists 嫁娶

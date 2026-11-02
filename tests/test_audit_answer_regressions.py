@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def _cli(script: str, *args: str, payload: dict | None = None) -> str:
     run = subprocess.run(
-        [sys.executable, '-X', 'utf8', str(ROOT / 'scripts' / script), *args],
+        [sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / script), *args],
         input=json.dumps(payload, ensure_ascii=False) if payload is not None else None,
         capture_output=True, encoding='utf-8', cwd=ROOT,
         env={**os.environ, 'PYTHONTZPATH': ''}, timeout=30,

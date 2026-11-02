@@ -36,7 +36,7 @@ def test_major_arcana_report_astro_not_element():
 
 
 def test_asset_majors_are_astrological_not_elemental():
-    d = json.loads((ROOT / "assets" / "tarot78.json").read_text(encoding="utf-8"))
+    d = json.loads((ROOT / "skills/chinese-fortune/assets" / "tarot78.json").read_text(encoding="utf-8"))
     majors = d.get("major_arcana") or []
     assert len(majors) == 22
     elements = {"火", "水", "风", "土"}
@@ -76,7 +76,7 @@ def test_embedded_fallback_marks_itself_as_placeholder():
     be violated by narrating the filler as the card's meaning.
     """
     import sys
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     import tarot_draw
 
     deck = tarot_draw.build_full_deck()

@@ -147,7 +147,7 @@ def test_reading_cli_accepts_both_envelopes(chart, view):
     reading = prepare_reading(chart)
     submitted = compact_reading(reading) if view == 'compact' else reading
     result = subprocess.run([sys.executable, str(Path(__file__).resolve().parents[1] /
-                            'scripts/reading_support.py'), '--stdin'],
+                            'skills/chinese-fortune/scripts/reading_support.py'), '--stdin'],
                             input=json.dumps({'chart': submitted}, ensure_ascii=False),
                             capture_output=True, text=True, encoding='utf-8')
     assert result.returncode == 0, result.stderr

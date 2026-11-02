@@ -6,7 +6,7 @@ import rule_registry
 from conftest import run_cli
 from rule_registry import CODE_CITED, FAMILIES, MODERN, Family, _rule, build, chain
 
-SCRIPTS = Path(__file__).resolve().parents[1] / 'scripts'
+SCRIPTS = Path(__file__).resolve().parents[1] / 'skills/chinese-fortune/scripts'
 # 这些模块的出处走 JSON 资产或 SPECS 表，由对应的族登记。
 SPEC_BACKED = {'liuren_cast', 'liuyao_plan', 'qimen_patterns', 'qimen_zhuanpan', 'sanyuan_hehun', 'ziwei_patterns'}
 

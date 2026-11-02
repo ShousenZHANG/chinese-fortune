@@ -68,7 +68,7 @@ def test_the_positional_tables_are_their_passages():
     order = '子丑寅卯辰巳午未申酉戌亥'
     assert all(order[(order.index(lu[s]) + 1) % 12] == b for s, b in blade.items())
     gui_id, gui = TABLES['gui_ren']
-    shensha = json.loads((ROOT / 'assets' / 'shensha.json').read_text(encoding='utf-8'))
+    shensha = json.loads((ROOT / 'skills/chinese-fortune/assets' / 'shensha.json').read_text(encoding='utf-8'))
     reviewed = next(x for x in shensha['ji_shen'] if x['name'] == '天乙贵人')
     assert {s: ''.join(b) for s, b in reviewed['qi_fa_table'].items() if s != '庚'} == gui
     assert gui_id in {p['passage_id'] for p in reviewed['source_review']['passages']}
@@ -76,7 +76,7 @@ def test_the_positional_tables_are_their_passages():
     for passage_id, _branches, quote in GUI_REN_CONTESTED["庚"]:
         assert quote in _text(passage_id)
     assert '甲戊兼牛羊' in _text('yuanhai:c024:p0003')
-    precedence = (ROOT / 'references' / '26-precedence.md').read_text(encoding='utf-8')
+    precedence = (ROOT / 'skills/chinese-fortune/references' / '26-precedence.md').read_text(encoding='utf-8')
     assert '天乙贵人起法' in precedence and '并列' in precedence
 
 

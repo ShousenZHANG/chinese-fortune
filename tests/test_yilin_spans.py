@@ -10,7 +10,7 @@ import pytest
 from yilin_lookup import lin
 
 ROOT = Path(__file__).resolve().parents[1]
-KNOWLEDGE = ROOT / 'knowledge'
+KNOWLEDGE = ROOT / 'skills/chinese-fortune/knowledge'
 FROZEN = json.loads((Path(__file__).parent / 'data/yilin_siku_truncations.json').read_text(encoding='utf-8'))
 
 

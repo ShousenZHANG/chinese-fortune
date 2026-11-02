@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = json.loads((ROOT / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
+DATA = json.loads((ROOT / 'skills/chinese-fortune/assets' / 'life_guide.json').read_text(encoding='utf-8'))
 ENTRIES = {(e['section'], e['number']): e for e in DATA['entries']}
 FIELDS = ('成本', '说人话', '收益', '证据等级', '来源', '备注')
 # The three excluded entries: grade, tier, disputed (read from the book).
@@ -68,7 +68,7 @@ def test_the_tier_is_the_books_algorithm(tags, score, tier):
 
 def test_the_shipped_file_holds_no_trace_of_the_excluded_entries():
     """Not their titles, not section 6's overview line that lists them."""
-    text = (ROOT / 'assets' / 'life_guide.json').read_text(encoding='utf-8')
+    text = (ROOT / 'skills/chinese-fortune/assets' / 'life_guide.json').read_text(encoding='utf-8')
     for fragment in ('不要花钱算命、看塔罗、看星座来做决定', '为了「转运」「招财」「养人」买水晶',
                      '变故后的头三个月，凡是不可逆的大决定一律往后推', '花钱买运气和心情', '花钱算命看星座'):
         assert fragment not in text, fragment

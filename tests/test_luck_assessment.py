@@ -7,7 +7,7 @@ from classical_search import get_passage
 from luck_assessment import assess_luck
 
 ROOT = Path(__file__).resolve().parents[1]
-RULES = json.loads((ROOT / 'assets' / 'luck_rules.json').read_text(encoding='utf-8'))
+RULES = json.loads((ROOT / 'skills/chinese-fortune/assets' / 'luck_rules.json').read_text(encoding='utf-8'))
 ROLES = {'比肩', '劫财', '食神', '伤官', '偏财', '正财', '七杀', '正官', '偏印', '正印'}
 VERDICTS = {'favoured', 'avoided', 'harmless', 'unpromising'}
 PREDICATES = {'present_any', 'exposed_any', 'exposed_none', 'combines', 'exposed_count_at_least', 'yang_blade_present'}

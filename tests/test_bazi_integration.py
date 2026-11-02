@@ -10,7 +10,7 @@ from pathlib import Path
 
 import pytest
 
-SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
+SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
 BAZI = SCRIPTS / "bazi_calc.py"
 
 try:
@@ -222,7 +222,7 @@ def test_shensha_asset_contains_rules_without_personal_fortune_verdicts():
     import json
     from pathlib import Path
 
-    assets = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+    assets = json.loads((Path(__file__).resolve().parent.parent / "skills/chinese-fortune/assets" /
                          "shensha.json").read_text(encoding="utf-8"))
     by_name = {e["name"]: e for grp in ("ji_shen", "xiong_sha")
                for e in assets.get(grp, [])}
@@ -416,7 +416,7 @@ def test_unknown_city_is_a_clean_error():
 def _tiaohou(key):
     import json
     from pathlib import Path
-    p = Path(__file__).resolve().parent.parent / "assets" / "tiaohou.json"
+    p = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/assets" / "tiaohou.json"
     return json.loads(p.read_text(encoding="utf-8"))["tiaohou"][key]
 
 
@@ -455,7 +455,7 @@ def test_tiaohou_records_its_audit_state():
     partially audited table reads as a fully audited one."""
     import json
     from pathlib import Path
-    p = Path(__file__).resolve().parent.parent / "assets" / "tiaohou.json"
+    p = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/assets" / "tiaohou.json"
     data = json.loads(p.read_text(encoding="utf-8"))
     audit = data["audit"]
     assert audit['status'] == 'superseded_by_cell_provenance'
@@ -469,7 +469,7 @@ def test_no_jishen_sits_in_secondary_yongshen():
     """Conditional remedies must not become an unconditional global 忌神 list."""
     import json
     from pathlib import Path
-    th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+    th = json.loads((Path(__file__).resolve().parent.parent / "skills/chinese-fortune/assets" /
                      "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
     assert all('ji_shen' not in cell for cell in th.values())
     from tiaohou_provenance import get_tiaohou_audit
@@ -483,7 +483,7 @@ def test_verified_cells_carry_their_source_clause():
     """Do not promote old mixed-edition quotations into blanket verification."""
     import json
     from pathlib import Path
-    th = json.loads((Path(__file__).resolve().parent.parent / "assets" /
+    th = json.loads((Path(__file__).resolve().parent.parent / "skills/chinese-fortune/assets" /
                      "tiaohou.json").read_text(encoding="utf-8"))["tiaohou"]
     from tiaohou_provenance import audit_tiaohou, get_tiaohou_audit
     assert not audit_tiaohou()
@@ -516,8 +516,8 @@ def test_cimu_and_xuetang_match_their_own_reference():
     import re
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    md = (root / "references" / "19-shensha.md").read_text(encoding="utf-8")
-    assets = json.loads((root / "assets" / "shensha.json").read_text(encoding="utf-8"))
+    md = (root / "skills/chinese-fortune/references" / "19-shensha.md").read_text(encoding="utf-8")
+    assets = json.loads((root / "skills/chinese-fortune/assets" / "shensha.json").read_text(encoding="utf-8"))
     table = {e["name"]: e.get("qi_fa_table", {})
              for grp in ("ji_shen", "xiong_sha") for e in assets.get(grp, [])}
 
@@ -550,7 +550,7 @@ def test_fuxing_guiren_is_the_day_stem_shishen_under_wushu_dun():
     import json
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    assets = json.loads((root / "assets" / "shensha.json").read_text(encoding="utf-8"))
+    assets = json.loads((root / "skills/chinese-fortune/assets" / "shensha.json").read_text(encoding="utf-8"))
     got = next(e for e in assets["ji_shen"] if e["name"] == "福星贵人")
 
     gan = "甲乙丙丁戊己庚辛壬癸"
@@ -579,7 +579,7 @@ def _run_bazi(*args):
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
     proc = subprocess.run(
-        [sys.executable, str(root / "scripts" / "bazi_calc.py"), *map(str, args)],
+        [sys.executable, str(root / "skills/chinese-fortune/scripts" / "bazi_calc.py"), *map(str, args)],
         capture_output=True, text=True, encoding="utf-8", errors="replace",
     )
     assert proc.stdout.strip(), (
@@ -701,7 +701,7 @@ def test_tiaohou_primary_yongshen_table_is_locked():
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
     data = json.loads(
-        (root / "assets" / "tiaohou.json").read_text(encoding="utf-8"))
+        (root / "skills/chinese-fortune/assets" / "tiaohou.json").read_text(encoding="utf-8"))
     cells = data["tiaohou"]
     assert len(cells) == 120, len(cells)
 
@@ -733,7 +733,7 @@ def _strength(state, rooted, party):
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from bazi_strength import strength_score
     return strength_score(state, rooted, party)
 
@@ -824,7 +824,7 @@ def test_hua_qi_ge_requires_all_five_classical_conditions():
     import inspect
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     import bazi_geju
     src = inspect.getsource(bazi_geju.detect_ge_ju)
     hua = src.split("--- 化气格 ---")[1].split("--- 2. 正格")[0]
@@ -844,7 +844,7 @@ def test_si_ling_is_actually_computed_not_just_claimed():
     import sys
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    sys.path.insert(0, str(root / "scripts"))
+    sys.path.insert(0, str(root / "skills/chinese-fortune/scripts"))
     from bazi_tables import REN_YUAN_SI_LING, si_ling
 
     # 每月分野日数必须合计 30 日, 且藏干须与该支的藏干一致

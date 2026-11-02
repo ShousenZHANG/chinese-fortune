@@ -48,7 +48,7 @@ def test_every_assertion_kind_in_the_goldens_has_a_runner():
                          ids=lambda value: value if isinstance(value, str) else None)
 def test_reference_goldens_still_contain_their_required_text(case_id, assertion):
     """Each golden names text a reference must keep; a rename must fail loudly."""
-    target = ROOT / assertion["file"]
+    target = ROOT / "skills/chinese-fortune" / assertion["file"]
     assert target.exists(), (case_id, assertion["file"])
     text = target.read_text(encoding="utf-8")
     missing = [needle for needle in assertion["needles"] if needle not in text]
@@ -64,7 +64,9 @@ def _resolve(data, dotted):
 @pytest.mark.parametrize("case_id,assertion", _script_assertions(), ids=lambda value: value if isinstance(value, str) else None)
 def test_cli_release_examples(case_id, assertion):
     """Migrated deterministic goldens: each command executes once under pytest."""
-    proc = subprocess.run([sys.executable, "-X", "utf8", *assertion["cmd"]], cwd=ROOT,
+    # Commands run from the skill folder as installed; fixtures they read stay in the repository's tests/.
+    cmd = [str(ROOT / arg) if arg.startswith(("tests/", "evals/")) else arg for arg in assertion["cmd"]]
+    proc = subprocess.run([sys.executable, "-X", "utf8", *cmd], cwd=ROOT / "skills/chinese-fortune",
                           capture_output=True, text=True, encoding="utf-8", timeout=60)
     assert proc.returncode == 0, (case_id, proc.stdout[-1000:], proc.stderr[-1000:])
     data = json.loads(proc.stdout)
@@ -90,9 +92,9 @@ def test_moved_reference_files_all_exist_and_are_linked():
     改为真的走链接图: 从 SKILL.md 出发做 BFS, 未被访问到的即不可达。
     """
     import re
-    skill_text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    skill_text = (ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8")
     refs = {f.name: f.read_text(encoding="utf-8")
-            for f in sorted((ROOT / "references").glob("*.md"))}
+            for f in sorted((ROOT / "skills/chinese-fortune/references").glob("*.md"))}
 
     def links_in(text: str) -> set:
         # 只认真正的 markdown 链接目标, 不认正文里顺口提到的文件名
@@ -122,8 +124,8 @@ def test_every_asset_is_reachable_from_a_script():
     jiemeng_lookup.py was added — this test is what should have caught it.
     """
     scripts = "".join(
-        f.read_text(encoding="utf-8") for f in (ROOT / "scripts").glob("*.py"))
-    orphans = [f.name for f in sorted((ROOT / "assets").glob("*.json"))
+        f.read_text(encoding="utf-8") for f in (ROOT / "skills/chinese-fortune/scripts").glob("*.py"))
+    orphans = [f.name for f in sorted((ROOT / "skills/chinese-fortune/assets").glob("*.json"))
                if f.name not in scripts]
     assert not orphans, f"assets no script reads: {orphans}"
 
@@ -143,7 +145,7 @@ def test_version_is_consistent_across_all_four_sources():
     import sys
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    sys.path.insert(0, str(root / "scripts"))
+    sys.path.insert(0, str(root / "skills/chinese-fortune/scripts"))
     from utils import __version__ as code_version
 
     cl = (root / "CHANGELOG.md").read_text(encoding="utf-8")
@@ -241,7 +243,7 @@ def test_intake_declares_how_personal_data_is_handled():
     """
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    md = (root / "references" / "00-intake.md").read_text(encoding="utf-8")
+    md = (root / "skills/chinese-fortune/references" / "00-intake.md").read_text(encoding="utf-8")
     assert "数据处理声明" in md
     assert "不落盘" in md or "零文件写入" in md
     assert "对话记录" in md, "必须说明 skill 管不到宿主对话的留存"
@@ -257,7 +259,7 @@ def test_engines_really_do_not_write_files():
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
     writers = []
-    for f in sorted((root / "scripts").glob("*.py")):
+    for f in sorted((root / "skills/chinese-fortune/scripts").glob("*.py")):
         # Explicit external persistence commands; ordinary engines remain read-only.
         if f.name in SCRIPT_EXCLUDE or f.name in {"personal_profiles.py", "research_session.py", "prediction_log.py",
                                                   "reading_views.py"}:

@@ -18,7 +18,7 @@ from pathlib import Path
 
 import pytest
 
-SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
+SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
 
 sxtwl = pytest.importorskip("sxtwl")
 pytest.importorskip("lunar_python")

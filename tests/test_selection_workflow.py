@@ -124,7 +124,7 @@ def test_qimen_true_solar_basis_agrees_with_explicit_cli_clock_correction(query)
     query['event'].update(time_standard='true-solar', longitude=140)
     result = read_request(query)
     chart = result['event_method']['charts'][0]
-    proc = subprocess.run([sys.executable, str(Path(__file__).parents[1] / 'scripts/qimen_cast.py'),
+    proc = subprocess.run([sys.executable, str(Path(__file__).parents[1] / 'skills/chinese-fortune/scripts/qimen_cast.py'),
                            '--date', '2026-09-15', '--time', '09:00', '--longitude', '140',
                            '--target-timezone', 'Australia/Sydney'], capture_output=True, encoding='utf-8')
     assert proc.returncode == 0, proc.stderr

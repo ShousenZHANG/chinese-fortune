@@ -9,7 +9,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
 
 try:
     import lunar_python  # noqa: F401
@@ -125,7 +125,7 @@ def test_liu_qin_is_derived_from_palace_wuxing_not_guessed():
 
     for seed in range(12):
         proc = subprocess.run(
-            [sys.executable, str(ROOT / "scripts" / "liuyao_cast.py"), "coins",
+            [sys.executable, str(ROOT / "skills/chinese-fortune/scripts" / "liuyao_cast.py"), "coins",
              "--seed", str(seed), "--date", "2026-06-01", "--time", "10:00"],
             capture_output=True, text=True, encoding="utf-8")
         c = json.loads(proc.stdout)["main_chart"]
@@ -165,7 +165,7 @@ def test_liu_shen_starts_from_the_day_stem():
     covered = set()
     for day in days:
         proc = subprocess.run(
-            [sys.executable, str(ROOT / "scripts" / "liuyao_cast.py"), "coins",
+            [sys.executable, str(ROOT / "skills/chinese-fortune/scripts" / "liuyao_cast.py"), "coins",
              "--seed", "3", "--date", day, "--time", "10:00"],
             capture_output=True, text=True, encoding="utf-8")
         d = json.loads(proc.stdout)
@@ -252,7 +252,7 @@ def test_yongshen_hints_cite_their_passage_or_say_they_have_none():
 
 def _cast(question: str, *extra: str) -> str:
     import subprocess
-    proc = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "scripts" / "liuyao_cast.py"), "coins",
+    proc = subprocess.run([sys.executable, "-X", "utf8", str(ROOT / "skills/chinese-fortune/scripts" / "liuyao_cast.py"), "coins",
                            "--seed", "7", "--question", question, "--date", "2026-09-25", "--time", "10:00",
                            "--target-timezone", "Asia/Shanghai", "--current-timezone", "Asia/Shanghai", *extra],
                           capture_output=True, text=True, encoding="utf-8")

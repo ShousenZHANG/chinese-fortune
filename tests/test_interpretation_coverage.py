@@ -80,7 +80,7 @@ EXEMPT_PATTERNS: list[tuple[str, str, str]] = [
 
 def _run(script: str, args) -> dict:
     proc = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / script), *map(str, args)],
+        [sys.executable, str(ROOT / "skills/chinese-fortune/scripts" / script), *map(str, args)],
         capture_output=True, text=True, encoding="utf-8", errors="replace")
     assert proc.returncode == 0, f"{script}: {proc.stderr[-300:]}"
     return json.loads(proc.stdout)
@@ -100,8 +100,8 @@ def _terms(obj, out: set) -> None:
 
 @pytest.fixture(scope="module")
 def corpus() -> str:
-    parts = [p.read_text(encoding="utf-8") for p in (ROOT / "references").glob("*.md")]
-    parts.append((ROOT / "SKILL.md").read_text(encoding="utf-8"))
+    parts = [p.read_text(encoding="utf-8") for p in (ROOT / "skills/chinese-fortune/references").glob("*.md")]
+    parts.append((ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8"))
     return "\n".join(parts)
 
 
@@ -139,7 +139,7 @@ def test_huangli_vocabulary_categories_are_documented(corpus):
     一张表 —— 它们来自 lunar_python 的通书词汇。逐条写进文档不现实, 但**类别**
     必须交代出处与解读原则, 否则 Claude 拿到「造车器」「斋醮」只能自行演绎。
     """
-    md = (ROOT / "references" / "12-huangli.md").read_text(encoding="utf-8")
+    md = (ROOT / "skills/chinese-fortune/references" / "12-huangli.md").read_text(encoding="utf-8")
     assert "lunar_python" in md, "宜忌词表的来源未交代"
     assert "照字面转述" in md, "缺少解读原则 —— 不要替这些词编造吉凶推演"
     for shen in ("青龙", "明堂", "金匮", "天刑", "天牢", "勾陈"):
@@ -151,7 +151,7 @@ def test_huangli_vocabulary_categories_are_documented(corpus):
 def test_zihua_declares_it_is_not_from_the_classic(corpus):
     """Disclose the adopted flying-transformation concept without claiming a
     new exhaustive search of every edition of the classic."""
-    md = (ROOT / "references" / "02-ziwei.md").read_text(encoding="utf-8")
+    md = (ROOT / "skills/chinese-fortune/references" / "02-ziwei.md").read_text(encoding="utf-8")
     assert "自化" in md, "引擎输出自化, 文档却没有它"
     seg = md.split("自化")[0][-400:] + md[md.index("自化"):md.index("自化") + 1200]
     assert "飞星派" in seg or "飞星" in seg, "必须说明它属飞星派"
@@ -167,7 +167,7 @@ def test_every_routing_trigger_is_reachable_from_the_description():
     「五行/天干地支/阴阳/八卦(理论)」(00-foundations.md, 366 行)、
     「随机寻访/今日探索点/…/QRNG 探索」。
     """
-    md = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    md = (ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8")
     desc = re.search(r"^description: (.*)$", md, re.M).group(1)
 
     # 只看路由表: 行内含 references/xx.md 链接的那些
@@ -191,7 +191,7 @@ def test_skill_md_documents_the_json_contract():
     却没有任何文字要求它去看, 于是 Claude 照着 summary 讲, 而 summary 本身不带
     保留。
     """
-    md = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    md = (ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8")
     for field in ("`ok`", "reliable", "missing_in_table", "boundary",
                   "hour_known", "_granularity", "exit code"):
         assert field in md, f"SKILL.md 未交代 {field}"
@@ -205,11 +205,11 @@ def test_payload_switches_are_documented_where_claude_can_see_them():
     twelve_palaces + da_xian 合占载荷 81.5%, 而原有两个开关只覆盖 3.5%,
     实测裁剪只省 0.3%。
     """
-    md = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    md = (ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8")
     # Method-specific flags can live on the routed page; keep them out of the
     # default BaZi prompt while ensuring users can actually find them.
     assert "references/02-ziwei.md" in md
-    md += (ROOT / "references/02-ziwei.md").read_text(encoding="utf-8")
+    md += (ROOT / "skills/chinese-fortune/references/02-ziwei.md").read_text(encoding="utf-8")
     for flag in ("--no-shensha", "--no-geju", "--no-yongshen",
                  "--brief-palaces", "--no-da-xian", "--as-of-year"):
         assert flag in md, f"SKILL.md 未提及 {flag}"
