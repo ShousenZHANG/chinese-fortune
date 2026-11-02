@@ -21,6 +21,7 @@ from pathlib import Path
 
 import pytest
 from build_skill import SCRIPT_EXCLUDE
+from utils import ENVELOPE_VERSION, ERROR_NEXT_STEP
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "scripts"
@@ -147,6 +148,8 @@ def test_impossible_input_is_refused_not_fabricated(script, argv, why):
     assert "error" in payload, f"{script} {argv}: 失败信封缺 error 键: {payload}"
     assert payload.get("message") or payload.get("expected"), (
         f"{script} {argv}: 失败信封没有任何人类可读的说明: {payload}")
+    assert payload.get("error_class") in ERROR_NEXT_STEP and payload.get("next_step"), (
+        f"{script} {argv}: 失败信封缺错误分类或下一步: {payload}")
     assert proc.returncode != 0, (
         f"{script} {argv}: 报了错却以 0 退出, 只看退出码的调用方会当成成功")
 
@@ -181,6 +184,20 @@ def test_valid_input_still_succeeds(script, argv):
     assert proc.returncode == 0, f"{script} {argv} rc={proc.returncode}\n{proc.stderr[-400:]}"
     payload = json.loads(proc.stdout)
     assert payload.get("ok") is True, payload
+    envelope = payload.get("envelope")
+    assert envelope and envelope["version"] == ENVELOPE_VERSION, payload.keys()
+    assert set(envelope) == {"version", "method", "conventions", "replay", "next_step"}
+
+
+@pytest.mark.parametrize("script,argv,field", [
+    ("tarot_draw.py", ["one", "--seed", 7], "seed"),
+    ("liuyao_cast.py", ["coins", "--date", "2026-06-01", "--time", "10:00", "--seed", 3], "raw_lines"),
+    ("meihua_cast.py", ["--datetime", "2026-06-01T13:05", "time"], "time_local"),
+    ("bazi_calc.py", ["--year", 1990, "--month", 5, "--day", 10, "--hour", 14, "--gender", "male"], "see"),
+])
+def test_random_and_time_based_results_carry_what_is_needed_to_replay(script, argv, field):
+    envelope = json.loads(run(script, *argv).stdout)["envelope"]
+    assert envelope["replay"] and envelope["replay"].get(field) is not None, envelope
 
 
 def test_every_engine_entry_point_is_covered_by_the_contract():

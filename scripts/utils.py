@@ -374,6 +374,8 @@ def json_print(obj: object, *, compact: bool = False) -> None:
     Chinese characters and rare symbols (e.g. trigram lines ✕○) survive
     Windows GBK consoles. Callers can still redirect to files safely.
     """
+    if isinstance(obj, dict) and obj.get('ok') is True and 'tool' in obj and 'envelope' not in obj:
+        obj = {**obj, 'envelope': result_envelope(obj)}
     payload = json.dumps(obj, ensure_ascii=False, indent=None if compact else 2,
                          separators=(',', ':') if compact else None, default=str)
     # Reconfigure stdout to UTF-8 if possible (Python 3.7+); fall back to
@@ -406,20 +408,98 @@ def json_print(obj: object, *, compact: bool = False) -> None:
 YEAR_MIN, YEAR_MAX = 1900, 2100
 
 
+ENVELOPE_VERSION = 'cf-result/1'
+# 错误分类与下一步：调用方按 error_class 决定是改输入、补语境、选候选、如实说不支持，还是查环境。
+ERROR_NEXT_STEP = {
+    'input': '按 message 改正这一项输入后重试；不要猜一个值替用户补上',
+    'context': '补齐时区、请求时刻等时间语境后重试；不能拿主机时区或出生地代替',
+    'choice': '把 candidates 列给用户选定一个，再用选定值重试',
+    'unsupported': '如实告诉用户这一项本版不支持或资料不足，不要补造结果',
+    'environment': '运行 python scripts/doctor.py 检查依赖和资料文件',
+}
+_CONTEXT_ERRORS = {'missing_timezone', 'invalid_time_context', 'invalid_timezone'}
+_CHOICE_ERRORS = {'ambiguous_city', 'unknown_city'}
+_UNSUPPORTED_ERRORS = {'unavailable_reference', 'reading_unavailable', 'report_unavailable', 'facts_unavailable',
+                       'ju_determination_failed', 'symbol_not_found'}
+_ENVIRONMENT_ERRORS = {'missing_dependency', 'asset_missing', 'calendar_unavailable', 'invalid_registry'}
+
+
+def error_class(error: str) -> str:
+    if error in _CONTEXT_ERRORS:
+        return 'context'
+    if error in _CHOICE_ERRORS:
+        return 'choice'
+    if error in _UNSUPPORTED_ERRORS:
+        return 'unsupported'
+    if error in _ENVIRONMENT_ERRORS:
+        return 'environment'
+    return 'input'
+
+
 def error_envelope(tool: str, error: str, message: str, **extra: object) -> dict:
     """所有 CLI 的统一失败信封。
 
-    ok/tool/version/error/message 五个键恒定存在, 调用方可无条件读取。
+    ok/tool/version/error/message/error_class/next_step 七个键恒定存在, 调用方可无条件读取。
     """
+    kind = error_class(error)
     out = {
         "ok": False,
         "tool": tool,
         "version": __version__,
         "error": error,
         "message": message,
+        "error_class": kind,
+        "next_step": ERROR_NEXT_STEP[kind],
+        "envelope": {"version": ENVELOPE_VERSION},
     }
     out.update(extra)
     return out
+
+
+_METHOD_KEYS = ('id', 'plate_method', 'ding_ju', 'ju_method', 'school', 'basis', 'source', 'source_url', 'verification')
+_CONVENTION_KEYS = ('timezone', 'offset_hours', 'timezone_status', 'time_standard', 'precision', 'effective_local')
+_REPLAY_TIME_KEYS = ('source', 'local', 'utc', 'request_time')
+
+
+def _block(out: dict, key: str) -> dict:
+    value = out.get(key)
+    return value if isinstance(value, dict) else {}
+
+
+def result_envelope(out: dict) -> dict:
+    """成功结果的统一信封：方法快照、时间约定、复现所需字段、下一步。
+
+    只从结果已有字段摘出，不新算任何东西；缺的项为 null，表示该工具没有这一维。
+    """
+    profile = _block(out, 'method_profile')
+    method = {k: profile[k] for k in _METHOD_KEYS if isinstance(profile.get(k), (str, int, float, bool))}
+    if isinstance(out.get('method'), str):
+        method.setdefault('id', out['method'])
+    if isinstance(out.get('school'), dict) and isinstance(out['school'].get('preset'), str):
+        method['school'] = out['school']['preset']  # 全部开关见顶层 school
+    context = _block(out, 'time_context')
+    conventions = {k: context[k] for k in _CONVENTION_KEYS if context.get(k) is not None}
+    if isinstance(profile.get('day_boundary'), str):
+        conventions['day_boundary'] = profile['day_boundary']
+    solar = _block(out, 'true_solar_time')
+    for key in ('time_standard', 'longitude', 'applied'):
+        if solar.get(key) is not None:
+            conventions[f'solar_{key}'] = solar[key]
+    for block in ('calendar_context', 'calendar_basis'):
+        calendar = _block(out, block)
+        for key in ('status', 'term_calendar_zone', 'day_hour_basis', 'day_boundary', 'year_month_yue_jiang'):
+            if isinstance(calendar.get(key), str):
+                conventions.setdefault(key, calendar[key])
+    replay = {f'time_{k}': context[k] for k in _REPLAY_TIME_KEYS if context.get(k) is not None}
+    if isinstance(out.get('input'), dict):
+        replay['see'] = ['input']  # 复现所需的原始输入就在顶层 input，不在信封里重抄
+    for key in ('seed', 'raw_lines'):
+        if out.get(key) is not None:
+            replay[key] = out[key]
+    if isinstance(out.get('entropy'), dict):
+        replay['entropy'] = {k: out['entropy'][k] for k in ('source', 'seed', 'reproducible') if k in out['entropy']}
+    return {'version': ENVELOPE_VERSION, 'method': method or None, 'conventions': conventions or None,
+            'replay': replay or None, 'next_step': out.get('next_step')}
 
 
 def ok_envelope(tool: str, payload: dict) -> dict:

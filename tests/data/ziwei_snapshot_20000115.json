@@ -1342,5 +1342,22 @@
         "条款状态不是现实预测准确率；个人应用须另核盘面条件"
       ]
     }
+  },
+  "envelope": {
+    "version": "cf-result/1",
+    "method": {
+      "school": "default"
+    },
+    "conventions": {
+      "solar_time_standard": "true-solar",
+      "solar_longitude": 120.0,
+      "solar_applied": true
+    },
+    "replay": {
+      "see": [
+        "input"
+      ]
+    },
+    "next_step": null
   }
 }

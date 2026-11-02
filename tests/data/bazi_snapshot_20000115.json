@@ -1325,5 +1325,23 @@
       "格局与神煞中的旧断语不可直接转述",
       "古籍转录已核部分不等于全书已核"
     ]
+  },
+  "envelope": {
+    "version": "cf-result/1",
+    "method": null,
+    "conventions": {
+      "solar_time_standard": "true-solar",
+      "solar_longitude": 120.0,
+      "solar_applied": true,
+      "status": "known_instant",
+      "term_calendar_zone": "UTC+08:00",
+      "day_hour_basis": "true-solar"
+    },
+    "replay": {
+      "see": [
+        "input"
+      ]
+    },
+    "next_step": null
   }
 }
