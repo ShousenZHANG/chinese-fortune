@@ -94,3 +94,15 @@ def test_numerology_retains_categories_without_fate_or_rename_advice():
             assert removed not in output
         assert "凶" not in d["summary"] and "吉" not in d["summary"]
         assert all("comment" not in g for g in d["five_grids"].values())
+
+
+def test_name_breakdown_says_where_each_count_came_from_and_what_is_not_computed():
+    from conftest import run_cli
+    got = run_cli('name_analyze.py', '--name', '张子䶮')
+    sources = {c['char']: c['stroke_source'] for c in got['characters']}
+    assert sources == {'张': 'kangxi_table', '子': 'kangxi_table', '䶮': 'estimated_default_8'}
+    computed = {layer['aspect'] for layer in got['layers']['computed']}
+    assert '五格数字与三才五行' in computed
+    missing = {layer['aspect'] for layer in got['layers']['not_computed']}
+    assert any('音韵' in a for a in missing) and any('八字' in a for a in missing)
+    assert all(layer['reason'] for layer in got['layers']['not_computed'])
