@@ -49,7 +49,9 @@ TITLE_BEFORE = re.compile(r'《([^》]{1,16})》[^「『“"。！？]{0,40}$')
 PASSAGE_REF = re.compile(r'([a-z]+:c\d{3}:p\d{4})[^「『“"。！？]{0,24}$')
 PASSAGE_REF_AFTER = re.compile(r'^[^「『“"\n]{0,16}?([a-z]+:c\d{3}:p\d{4})')
 NEGATOR = re.compile(r'[不無无非勿莫未弗毋]')
-MODALS = set('可能得宜必敢會会須须當当應应')
+MODALS = set('可能得宜必敢會会須须當当應应以')
+# 「最忌見傷」截成「見傷」：删掉忌、畏一类动词，同样把意思反过来。
+AVOID_VERBS = set('忌畏怕嫌惡恶戒禁')
 # A quote the answer itself says the books do not contain is being refuted, not cited.
 QUOTE_DENIED_BEFORE = re.compile(r'(?:不是|并非|而非|并不是|不等于|远不是|而不是)\s*$')
 QUOTE_REFUTED = re.compile(r'找不到|查不到|没查到|搜不到|检索不到|没有这句|并无此|并无这|不是原文|没有找到|未见|不存在')
@@ -115,6 +117,18 @@ def _in_order(parts: list[str], text: str) -> bool:
     return True
 
 
+def _flips(cut: str) -> bool:
+    """The text cut away right before a kept part ends on 不/無…, 不可/不可以, or 忌/畏."""
+    if not cut:
+        return False
+    if cut[-1] in AVOID_VERBS:
+        return True
+    i = len(cut)
+    while i > 0 and len(cut) - i < 2 and cut[i - 1] in MODALS:
+        i -= 1
+    return i > 0 and bool(NEGATOR.fullmatch(cut[i - 1]))
+
+
 def _drops_negator(parts: list[str], text: str) -> bool:
     """An elision whose cut ends right on 不/無/非…: 「人道得之，……過也」 drops 不可 and reverses the sentence."""
     start = text.find(parts[0])
@@ -125,12 +139,19 @@ def _drops_negator(parts: list[str], text: str) -> bool:
         found = text.find(part, end)
         if found < 0:
             return False
-        tail = text[max(end, found - 2):found]
-        if len(part) <= 8 and tail and (NEGATOR.fullmatch(tail[-1]) or (
-                len(tail) == 2 and NEGATOR.fullmatch(tail[0]) and tail[1] in MODALS)):
+        if len(part) <= 8 and _flips(text[max(end, found - 3):found]):
             return True
         end = found + len(part)
     return False
+
+
+def _truncates_negator(first: str, text: str) -> bool:
+    """「可逢合」 cut from 「不可逢合」: the quote starts on a modal right after a negator, and that is
+    the only place the book has it."""
+    if not first or first[0] not in MODALS:
+        return False
+    spots = [m.start() for m in re.finditer(re.escape(first), text)]
+    return bool(spots) and all(NEGATOR.fullmatch(text[s - 1:s] or ' ') for s in spots)
 
 
 def _in_cited_passage(parts: list[str], passage_id: str) -> bool:
@@ -193,9 +214,14 @@ def _quote_findings(answer: str, facts_key: str, checked: dict) -> list[dict]:
         known = any(_title_matches(cited, t) for t in _library_titles())
         elided = len(parts) > 1 and bool(ELLIPSIS.search(quote))
         cut = next((loc for _, loc, text in _corpus() if elided and _drops_negator(parts, text)), None)
+        sources = [(loc, text) for _, loc, text in _corpus() if hits and _in_order(parts, text)]
+        truncated = sources and all(_truncates_negator(parts[0], text) for _, text in sources)
         if hits and cut:
             findings.append(_finding('elision_drops_negation', 'error', quote,
                                      f'省略号删掉了 {cut} 原文紧挨着保留部分的否定字，意思被反过来了'))
+        elif truncated:
+            findings.append(_finding('elision_drops_negation', 'error', quote,
+                                     f'引文开头截掉了 {sources[0][0]} 原文紧挨着的否定字，意思被反过来了'))
         elif hits and cited_passage and not _in_cited_passage(parts, cited_passage.group(1)):
             findings.append(_finding('misattributed_quote', 'error', quote,
                                      f'所引段落 {cited_passage.group(1)} 里没有这段原文'))
