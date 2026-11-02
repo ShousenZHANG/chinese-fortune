@@ -33,8 +33,10 @@ CHAR_VARIANTS = str.maketrans({
     '旣': '既', '𢘆': '恆', '𫎇': '蒙', '遘': '姤', '𣈆': '晉', '㤗': '泰', '妺': '妹', '暌': '睽',
 })
 # 四库本、四部叢刊本里实际出现的异写卦名（切分时当作卦名）。
-SOURCE_SPELLINGS = frozenset({'乹', '无妄', '旡妄', '恒', '遁', '晋', '頥', '觧', '㢲', '兊', '剥', '离',
+SOURCE_SPELLINGS = frozenset({'乹', '无妄', '旡妄', '恒', '遁', '晋', '頥', '觧', '㢲', '兊', '兑', '剥', '离',
                               '𫎇', '旣濟', '𢘆', '遘', '𣈆', '㤗', '歸妺', '暌'})
+# Section name for a lin whose page label conflicts with the order (pages out of order in the transcription).
+UNPLACED = '（标题与卦序冲突，归属未定）'
 EDITIONS = {'yilin': '四部叢刊景元刊本（附闕名注）', 'yilin_siku': '文淵閣四庫全書本'}
 SBCK_CHAPTERS = tuple(f'c{i:03}' for i in range(1, 17))
 SIKU_CHAPTERS = tuple(f'c{i:03}' for i in range(1, 5))
@@ -53,7 +55,8 @@ def _index(book: str) -> dict[str, dict]:
     for chapter in chapters:
         for passage in chapter_passages(f'{book}:{chapter}'):
             entry = index.setdefault(passage['section'], {'verse': None, 'notes': [], 'also': []})
-            record = {'passage_id': passage['passage_id'], 'sha256': passage['sha256'], 'text': passage['text']}
+            record = {'passage_id': passage['passage_id'], 'sha256': passage['sha256'], 'text': passage['text'],
+                      **({'attribution': passage['attribution']} if passage.get('attribution') else {})}
             if passage['layer'] == 'commentary':
                 entry['notes'].append(record)
             elif entry['verse'] is None:
@@ -72,8 +75,18 @@ def lin(ben: str, zhi: str) -> dict:
             versions.append({'book': book, 'edition': edition, **entry['verse'], 'notes': entry['notes'],
                              **({'same_label_also': entry['also']} if entry['also'] else {})})
         else:
-            versions.append({'book': book, 'edition': edition, 'passage_id': None, 'text': None,
-                             'reason': '这个版本的转录缺这一林，或未能切分'})
+            unplaced = _index(book).get(f'{ben}{"之"}{UNPLACED}')
+            row: dict = {'book': book, 'edition': edition, 'passage_id': None, 'text': None,
+                         'reason': '这个版本的转录缺这一林，或未能切分'}
+            if unplaced:
+                found = [unplaced['verse'], *unplaced['also']]
+                row['reason'] = (f'这一林在本版转录中没有确定位置：本卦另有 {len(found)} 段林辞的原页标题与卦序冲突'
+                                 '（页序错乱），归属未定，见 unplaced_in_this_ben，不替原文指定')
+                row['unplaced_in_this_ben'] = found
+            versions.append(row)
+    for v in versions:
+        if v.get('attribution'):
+            v['attribution_note'] = v['attribution']['note']
     texts = {v['text'] for v in versions if v['text']}
     return {'ben': ben, 'zhi': zhi, 'key': key, 'versions': versions,
             'same_text': len(texts) == 1 and all(v['text'] for v in versions)}

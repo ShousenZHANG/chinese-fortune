@@ -17,6 +17,12 @@ CHANGSHENG = ('长生', '沐浴', '冠带', '临官', '帝旺', '衰', '病', '�
 BOSHI = ('博士', '力士', '青龙', '小耗', '将军', '奏书', '飞廉', '喜神', '病符', '大耗', '伏兵', '官府')
 JIANGQIAN = ('将星', '攀鞍', '岁驿', '息神', '华盖', '劫煞', '灾煞', '天煞', '指背', '咸池', '月煞', '亡神')
 SUIQIAN = ('岁建', '晦气', '丧门', '贯索', '官符', '小耗', '大耗', '龙德', '白虎', '天德', '吊客', '病符')
+LAYER_SOURCE = {
+    'repository': 'https://github.com/Renhuai123/ziwei-doushu',
+    'commit': '495b79ecb3524b20b2edc026067d7d0b0f407319',
+    'file': 'lib/ziwei/shier-shen.ts',
+    'lines': '21-34,67-103',
+}
 # 五行局 number -> branch where 长生 starts (全书卷二).
 CHANGSHENG_START = {2: '申', 3: '亥', 4: '巳', 5: '申', 6: '寅'}
 # 将星 by the year branch's 三合 group: 寅午戌午、申子辰子、巳酉丑酉、亥卯未卯.
@@ -54,9 +60,23 @@ def _place(names: tuple[str, ...], start: str, forward: bool) -> dict[str, str]:
 
 
 def year_gods(year_branch: str) -> dict[str, dict[str, str]]:
-    """将前、岁前两组, 只随年支; 本命用生年支, 流年用流年支。"""
+    """将前、岁前两组，本命传生年支；运限按已披露的现代口径传该层支。"""
     return {'jiangqian': _place(JIANGQIAN, JIANGXING[year_branch], True),
             'suiqian': _place(SUIQIAN, year_branch, True)}
+
+
+def layer_gods_basis(branch: str) -> dict:
+    """State the layer anchor and the source's positional label difference."""
+    return {
+        'anchor': 'layer_ganzhi_branch', 'branch': branch,
+        'sets': ['jiangqian', 'suiqian'],
+        'convention': 'Renhuai 固定版本的现代软件口径，两组十二神跟随该运限地支；不是《全书》安斗君诀原文',
+        'source': dict(LAYER_SOURCE),
+        'naming_difference': {
+            'set': 'suiqian', 'position': 7, 'project': '大耗', 'source': '岁破',
+            'note': '仅对照第七位的位置和序列；保留本项目旧标签，不把岁破与大耗视为各体系的通用同义词。',
+        },
+    }
 
 
 def twelve_gods(*, ju_number: int, gender: str, year_branch: str, lu_cun_branch: str,

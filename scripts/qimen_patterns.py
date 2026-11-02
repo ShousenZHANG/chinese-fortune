@@ -154,9 +154,13 @@ def _good_hits(pl: dict) -> list[dict]:
     for qi, yi_stem in USE_PAIRS:
         for p in _over(pl, qi, yi_stem):
             flawed = (qi, yi_stem) in FLAWED_USE and p != pl['zhi_fu']['palace']
-            hits.append(_hit('三奇得使', '吉格', P + 'p0009', '乙為使者乙竒加甲戌甲午丙為使者丙竒加甲子甲申也',
-                             p, _cell(pl, p),
-                             note='同时成凶格，原文称「尚有㣲疵不吉」，本旬直符未同临' if flawed else None))
+            row = _hit('三奇得使', '吉格', P + 'p0009', '乙為使者乙竒加甲戌甲午丙為使者丙竒加甲子甲申也',
+                       p, _cell(pl, p),
+                       note='同时成凶格，原文称「尚有㣲疵不吉」，本旬直符未同临' if flawed else None)
+            if flawed:
+                # 「如遇本旬直符同臨其上方可用之而吉也」：直符不同临，这一格不能当吉格用。
+                row['usable'] = False
+            hits.append(row)
     return hits
 
 

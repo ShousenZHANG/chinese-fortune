@@ -31,6 +31,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime, timedelta, timezone
 
 # Section 17 — CLI / main
 # --------------------------------------------------------------------------- #
@@ -104,8 +105,8 @@ SCHOOL_CHOICES: dict[str, tuple[str, ...]] = {
 }
 NIHAI_NOTE = ("倪海厦派预设 (--school nihai): 闰月整月归下月、晚子时算当日、不出宫干自化与大限四化，"
               "生年四化与流年各层照常。取法依 Renhuai123/ziwei-doushu 现行代码；单项开关仍可覆盖。")
-YEAR_DIVIDE_NOTE = ("本命年干支按立春交节时刻换年 (--year-divide lichun)：年干支、五行局、生年四化、魁钺禄羊陀"
-                    "与年系杂曜随之；流年各层仍按正月初一换年，见 horoscope.conventions。")
+YEAR_DIVIDE_NOTE = ("本命及目标流年干支按立春交节时刻换年 (--year-divide lichun)：本命年干支、五行局、生年四化、魁钺禄羊陀"
+                    "与年系杂曜随之；目标流年相关字段和流月五虎遁采用选定年干支，实际农历日期与虚岁仍按农历年，见 horoscope.conventions。")
 KUI_YUE_NOTE = ("魁钺按 --kui-yue {school}：庚辛壬癸年与通行表不同。表取自 Renhuai123/ziwei-doushu，"
                 "选项名是该软件的流派标签，不等于原书已如此定；默认通行表见 references/02-ziwei.md。")
 LEAP_LABELS = {'split': '闰月十五日及以前算本月、以后算下月（默认）', 'next': '闰月整月算下月',
@@ -128,8 +129,9 @@ EPILOG = """Top-level JSON keys on stdout (UTF-8):
   dou_jun_basis zhi_shi_basis self_check say focus
 
 --horoscope-date [--horoscope-time] 时 horoscope 给 dou_jun da_xian liu_nian liu_yue liu_ri liu_shi
-(各层 ganzhi palace_branch natal_palace transformations stars; liu_nian 另有 twelve_gods,
-da_xian 另有 age_range nominal_age) conventions limit; 否则为 null。
+(各活动层 ganzhi palace_branch natal_palace transformations stars twelve_gods twelve_gods_basis;
+da_xian 另有 age_range nominal_age age_basis) conventions limit; 否则为 null。
+目标年界同 --year-divide；实际农历日期与虚岁保留农历年口径；仅给日期时以当地 12:00 代表。
 
 --brief-palaces 时 twelve_palaces 只留 name/branch/stem/index/main_stars, twelve_gods_sources 为 null;
 --no-da-xian 时 da_xian 为 null。两者不改变其余字段的值。
@@ -200,7 +202,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--changsheng-direction", choices=SCHOOL_CHOICES['changsheng_direction'], default="yinyang",
                    help="长生十二神顺逆: yinyang=阳男阴女顺 (默认, 通行); gender=男顺女逆 (全书 p0056 字面)")
     p.add_argument("--year-divide", choices=SCHOOL_CHOICES['year_divide'], default="lunar-new-year",
-                   help="本命年干支换年点: lunar-new-year=正月初一 (默认, 紫微通行); lichun=立春交节时刻")
+                   help="本命及目标流年干支换年点: lunar-new-year=正月初一 (默认, 紫微通行); lichun=立春交节时刻；虚岁仍按农历年")
     p.add_argument("--horoscope-date", type=str, default=None, metavar="YYYY-MM-DD",
                    help="按该日 (当地钟表日期) 计算流年斗君、流月、流日所在宫与四化")
     p.add_argument("--horoscope-time", type=str, default=None, metavar="HH:MM",
@@ -304,9 +306,10 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     if args.longitude is None:
         args.longitude = 120.0  # GMT+8 reference meridian
 
+    birth_date = (solar.getYear(), solar.getMonth(), solar.getDay())
     try:
         normalized = normalize_birth_time(
-            solar.getYear(), solar.getMonth(), solar.getDay(), args.hour,
+            *birth_date, args.hour,
             args.minute, args.longitude, args.tz, args.timezone, args.fold,
             args.time_standard)
     except ValueError as exc:
@@ -338,7 +341,15 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     if args.leap_month is None:
         args.leap_month = 'next' if nihai else 'split'
     if args.year_divide == 'lichun':
-        year_stem, year_branch = lunar.getYearGanExact(), lunar.getYearZhiExact()
+        # Solar terms use fixed UTC+8; day/hour conventions cannot move the birth instant.
+        offset = tz_info['offset_hours'] if tz_info else args.tz
+        birth_clock = datetime(*birth_date, args.hour, args.minute,
+                               tzinfo=timezone(timedelta(hours=offset)))
+        calendar_clock = birth_clock.astimezone(timezone(timedelta(hours=8)))
+        calendar_lunar = Solar.fromYmdHms(
+            calendar_clock.year, calendar_clock.month, calendar_clock.day,
+            calendar_clock.hour, calendar_clock.minute, calendar_clock.second).getLunar()
+        year_stem, year_branch = calendar_lunar.getYearGanExact(), calendar_lunar.getYearZhiExact()
     else:
         year_stem, year_branch = lunar.getYearGan(), lunar.getYearZhi()
     # 项目闰月归属：十五日及以前算本月，十五日后算下月；与所引全书转录不同。
@@ -506,7 +517,8 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         horoscope_at, with_hour = parse_target(args.horoscope_date, args.horoscope_time)
         horoscope = horoscope_layers(horoscope_at, birth_month=lunar_month, birth_hour=birth_hour,
                                      palaces=annotated, sect=args.sect, include_hour=with_hour, sihua=table,
-                                     da_xian=da_xian, birth_lunar_year=lunar.getYear(), kui_yue=args.kui_yue)
+                                     da_xian=da_xian, birth_lunar_year=lunar.getYear(), kui_yue=args.kui_yue,
+                                     year_divide=args.year_divide)
 
     # 10. 格局识别.
     patterns: list[dict] = []

@@ -29,6 +29,8 @@ Your AI reads BaZi, picks dates and answers fortune questions from the classical
 npx skills add ShousenZHANG/chinese-fortune
 ```
 
+After installation, run `python scripts/doctor.py` from the skill directory and confirm `healthy: true`. Version 6.0 uses `capture-metadata.json` for captured-source metadata so the skills installer's file filter preserves it. The release ZIP also contains the complete runtime data.
+
 Gemini CLI also has its own command: `gemini skills install https://github.com/ShousenZHANG/chinese-fortune`.
 
 **claude.ai, ChatGPT, Claude API**: download `chinese-fortune-v<version>.zip` from [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases). Upload it in claude.ai under Settings > Features, in ChatGPT (Business, Enterprise, Edu) under Plugins > Skills, or through the Claude API's Skills API.
@@ -77,7 +79,7 @@ Text lookup needs no birth data. Unknown birth time remains unknown; near day or
 
 Calculate a chart, check classical conditions, and answer in plain language first. Each short classical quotation must be followed immediately by its plain meaning and its relevance to the person's actual conditions.
 
-The 5.10 development version adds 46 source-backed formation, failure, rescue and transformation checks, including cases that preserve the original structure. A matched literal condition does not establish a pattern. `--view compact` deduplicates conditions and indexes source passages; retrieve their complete text before interpreting. An explicit `--report new-file.md` or `.html` saves an offline verification report without overwriting files. Named methods route to their own scripts; terminology questions require no birth data. See the [output migration notes](docs/MIGRATION-5.10.md).
+Version 6.0 retains the eight luck-cycle approaches and 46 pattern-condition checks, and adds birth alternatives across dates, corrections, relationship workflows, Liu Yao condition checks, Qimen time intervals and two Jiaoshi Yilin editions. A matched literal condition does not establish a pattern. `--view compact` deduplicates conditions and indexes source passages; retrieve their complete text before interpreting. An explicit `--report new-file.md` or `.html` saves an offline verification report without overwriting files. Named methods route to their own scripts; terminology questions require no birth data. See the [6.0 migration notes](docs/MIGRATION-6.0.md) for input changes and supported conventions. Missing transcriptions, unsupported schools and manual conditions remain explicit.
 
 BaZi follows the month-structure approach in Zi Ping Zhen Quan. Four other classical works provide separately attributed comparisons; differences remain visible.
 
@@ -98,11 +100,11 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 | Marriage, family and partnership pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other, clauses filtered by relationship type; classified, never scored; marriage also gets the 《选择要略》 three-yuan nine-palace match with its recorded objection |
 | Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
 | Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
-| Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,597 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
+| Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,685 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
 | Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
 - BaZi calculations with birth timezone, DST, true solar time, day boundaries and unknown-hour handling.
-- Offline retrieval from 15 frozen transcriptions: 557 chapter/volume units and 29,597 paragraphs, with provenance and context.
+- Offline retrieval from 15 frozen transcriptions: 557 chapter/volume units and 29,685 paragraphs, with provenance and context.
 - Eight BaZi rule families and 25 review paths. Observable conditions are computed; interpretive conditions require explicit reasoning from the chart and full passages.
 - Current time in the user's present location, captured once per request.
 - Zi Wei, Liu Yao and other methods when requested, within their documented scope.

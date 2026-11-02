@@ -416,12 +416,14 @@ ERROR_NEXT_STEP = {
     'choice': '把 candidates 列给用户选定一个，再用选定值重试',
     'unsupported': '如实告诉用户这一项本版不支持或资料不足，不要补造结果',
     'environment': '运行 python scripts/doctor.py 检查依赖和资料文件',
+    'integrity': '按 broken 明细修复资料、实现或登记，再重跑；这是维护问题，不是用户输入问题',
 }
 _CONTEXT_ERRORS = {'missing_timezone', 'invalid_time_context', 'invalid_timezone'}
 _CHOICE_ERRORS = {'ambiguous_city', 'unknown_city'}
 _UNSUPPORTED_ERRORS = {'unavailable_reference', 'reading_unavailable', 'report_unavailable', 'facts_unavailable',
                        'ju_determination_failed', 'symbol_not_found'}
 _ENVIRONMENT_ERRORS = {'missing_dependency', 'asset_missing', 'calendar_unavailable', 'invalid_registry'}
+_INTEGRITY_ERRORS = {'broken_chain'}
 
 
 def error_class(error: str) -> str:
@@ -433,6 +435,8 @@ def error_class(error: str) -> str:
         return 'unsupported'
     if error in _ENVIRONMENT_ERRORS:
         return 'environment'
+    if error in _INTEGRITY_ERRORS:
+        return 'integrity'
     return 'input'
 
 
@@ -534,8 +538,8 @@ def validate_birth_input(
     lo, hi = year_range
     if year is not None and not lo <= year <= hi:
         return f"year 超出支持范围 {lo}-{hi}, 收到 {year}"
-    if month is not None and not 1 <= month <= 12:
-        return f"month 必须在 1-12, 收到 {month}"
+    if month is not None and not 1 <= (abs(month) if lunar else month) <= 12:
+        return f"month 必须在 1-12{'，农历闰月用负数' if lunar else ''}, 收到 {month}"
     if day is not None and not 1 <= day <= 31:
         return f"day 必须在 1-31, 收到 {day}"
     if hour is not None and not 0 <= hour <= 23:

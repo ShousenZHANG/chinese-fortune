@@ -182,6 +182,8 @@ def make_book(book_id: str, title: str, edition: str, index: dict,
                    'raw_kind': page.get('raw_kind', 'source_wikitext'),
                    'extraction_kind': page.get('extraction_kind', 'frozen_mediawiki_revision'),
                    'issues': issues, 'passages': items}
+        if 'extraction_version' in page:
+            chapter['extraction_version'] = page['extraction_version']
         path = f'books/{book_id}/{chapter_id}.json'
         sha = write_json(ROOT / path, chapter)
         book['chapters'].append({'id': chapter_id, 'title': chapter_title, 'path': path,
@@ -287,7 +289,7 @@ def html_paragraphs(raw: str, title: str, default_layer: str = 'base_text') -> l
 
 def import_captured_html(book_id: str) -> dict:
     directory = ROOT / 'sources' / book_id
-    metadata = json.loads((directory / 'metadata.json').read_text(encoding='utf-8'))
+    metadata = json.loads((directory / 'capture-metadata.json').read_text(encoding='utf-8'))
     raw_index = (directory / metadata.get('index_file', 'directory.html')).read_text(encoding='utf-8')
     index = {'title': metadata['book'], 'revision': 'sha256:' + digest(raw_index.encode('utf-8')),
              'timestamp': metadata['retrieved_at'], 'raw': raw_index, 'format': 'html',
@@ -329,8 +331,8 @@ def import_captured_html(book_id: str) -> dict:
     metadata['index_file'] = '_index.html'
     for row in metadata['chapters']:
         row['file'] = 'c' + row['chapter_id'].zfill(3) + '.html'
-    book['source_metadata_path'] = f'sources/{book_id}/metadata.json'
-    book['source_metadata_sha256'] = write_json(directory / 'metadata.json', metadata)
+    book['source_metadata_path'] = f'sources/{book_id}/capture-metadata.json'
+    book['source_metadata_sha256'] = write_json(directory / 'capture-metadata.json', metadata)
     return book
 
 
@@ -376,7 +378,7 @@ def capture_qiongtong() -> None:
                                     'html_sha256': digest(original.encode('utf-8')),
                                     'retrieved_at': datetime.now(UTC).isoformat()})
     metadata['captured_chapters'] = len(metadata['chapters'])
-    write_json(directory / 'metadata.json', metadata)
+    write_json(directory / 'capture-metadata.json', metadata)
 
 
 def supplement_passages(raw: str, title: str) -> list[dict]:
@@ -489,6 +491,9 @@ HEX_SYMBOL = re.compile(r'[\u4dc0-\u4dff]')
 GLYPH_ONLY = re.compile(r'\u3014\u5b57\u5f62[^\u3015]*\u3015')
 # Ben headers carry the trigrams as a double-line note (\u4e7e\u4e0b\u3000\u574e\u4e0a); the hexagram symbol itself is
 # sometimes an unencoded glyph, so the note is the reliable mark.
+# Unencoded glyphs the transcription uses as zhi labels, identified where every other occurrence sits in
+# that zhi's place in order (SK2989 29 times as 恆, SK3089 12 times as 晉, SK3657 once as 觀).
+GLYPH_GUA = {'〔字形SK2989：未编码〕': '恆', '〔字形SK3089：未编码〕': '晉', '〔字形SK3657：未编码〕': '觀'}
 TRIGRAM_NOTE = re.compile(r'\u3014\u6ce8\u6587\u3015[^\u3014]{1,4}[\u4e0a\u4e0b][\u3000 ]*[^\u3014]{1,4}[\u4e0a\u4e0b]\u3014/\u6ce8\u6587\u3015')
 
 
@@ -523,6 +528,41 @@ def _sequence(ben: str) -> list[str]:
     """One ben's 64 lins in the book's order: its own lin first, then the rest in King Wen order."""
     from yilin_lookup import GUA
     return [ben] + [g for g in GUA if g != ben]
+
+
+VERSE_LINE = 14
+
+
+def _width(text: str) -> int:
+    return len(GLYPH_ONLY.sub('X', text))
+
+
+def _ends_verse(verse: list[str]) -> bool:
+    """The print sets a verse fourteen characters to the line in four-character phrases: a short last line
+    that completes whole phrases ends it. A page break can also leave a short line, but mid-phrase."""
+    return bool(verse) and _width(verse[-1]) < VERSE_LINE and _width(''.join(verse)) % 4 == 0
+
+
+# The anonymous commentary's variant readings often run on from the verse's last line: 「……亡羊失羔一本云亡羝
+#失羊」. A marker that falls on a phrase boundary after at least two phrases starts the note.
+INLINE_NOTE = re.compile('\u3000|一本|一云|又云|一作|末句|無註|按')
+
+
+def _inline_note(verse: str) -> tuple[str, str]:
+    for mark in INLINE_NOTE.finditer(verse):
+        width = _width(verse[:mark.start()])
+        if width >= 8 and width % 4 == 0:
+            return verse[:mark.start()], verse[mark.start():].strip('\u3000')
+    return verse, ''
+
+
+def _note_line(indent: int, verse_indent: int | None, verse: list[str]) -> bool:
+    """Indents in this transcription drift, so only a clear step marks the note: two deeper than the verse's
+    first line, or a two-space line after a verse that filled its last line with whole phrases."""
+    if verse_indent is None or not verse:
+        return False
+    full = _width(verse[-1]) == VERSE_LINE and _width(''.join(verse)) % 4 == 0
+    return indent >= verse_indent + 2 or (indent >= 2 and full)
 
 
 class _Ben:
@@ -568,12 +608,21 @@ def sbck_lins(text: str, state: _Ben | None = None) -> tuple[list[dict], list[di
     ben = state or _Ben(None)
     verse: list[str] = []
     notes: list[str] = []
+    # The current lin's attribution note (when its label was inferred) and the indent of its label line:
+    # some pages are shifted one space right, and the verse/note split is relative to the label.
+    attribution: list[dict | None] = [None]
+    verse_indent: list[int | None] = [None]
+    note_indent = [2]
 
     def flush() -> None:
         if ben.name and ben.zhi and verse:
             section = f'{ben.name}之{ben.zhi}'
-            passages.append({'section': section, 'text': ''.join(verse), 'layer': 'base_text'})
-            note = ''.join(n for n in notes if n != '無註')
+            text, inline = _inline_note(''.join(verse))
+            passage: dict = {'section': section, 'text': text, 'layer': 'base_text'}
+            if attribution[0]:
+                passage['attribution'] = attribution[0]
+            passages.append(passage)
+            note = ''.join(n for n in [inline, *notes] if n and n != '無註')
             if note:
                 passages.append({'section': section, 'text': note, 'layer': 'commentary'})
         verse.clear()
@@ -598,8 +647,22 @@ def sbck_lins(text: str, state: _Ben | None = None) -> tuple[list[dict], list[di
             if ben.name:
                 close(ben)
             ben = _Ben(named)
+            attribution[0], verse_indent[0] = None, None
             continue
-        label = canon(body[1:] if body.startswith('之') else body) if indent <= 1 else None
+        # A label is never deeper than the current lin's verse; a lone name at note depth (「見需之／兊」)
+        # continues the note.
+        if verse_indent[0] is None:
+            depth = 1
+        elif notes:
+            # After the note has begun a label sits shallower than the note (「　節」 after a two-space note),
+            # while a lone name at the note's own depth continues it.
+            depth = min(max(verse_indent[0], 1), note_indent[0] - 1)
+        else:
+            depth = min(1, verse_indent[0])
+        label_depth = indent <= depth
+        label = canon(body[1:] if body.startswith('之') else body) if label_depth else None
+        if label is None and label_depth and GLYPH_ONLY.fullmatch(body):
+            label = GLYPH_GUA.get(body)
         settled = bool(notes)
         if body.startswith('之') and label and ben.name and ben.pos >= 40 and GUA.index(ben.name) + 1 < len(GUA):
             following = GUA[GUA.index(ben.name) + 1]
@@ -610,58 +673,178 @@ def sbck_lins(text: str, state: _Ben | None = None) -> tuple[list[dict], list[di
                                  'after': f'{ben.name}之{ben.zhi}'})
                 ben = _Ben(following)
                 ben.take(label)
+                attribution[0], verse_indent[0] = None, None
                 continue
-        if label is None and indent == 0 and ben.name and settled and GLYPH_ONLY.fullmatch(body):
-            label = next((z for z in _sequence(ben.name)[ben.pos + 1:] if z not in ben.used), None)
-            if label:
-                problems.append({'section': f'{ben.name}之{label}', 'kind': 'label_glyph_taken_as_next_in_order',
-                                 'line': body})
+        if ben.name and settled and label_depth and (label in ben.used or (label is None and GLYPH_ONLY.fullmatch(body))):
+            # The page names a zhi already taken (pages out of order) or an unknown glyph. The lin is kept, but
+            # under an unplaced section: order alone does not prove which zhi it belongs to (R1-YILIN-04).
+            flush()
+            would = next((z for z in _sequence(ben.name)[ben.pos + 1:] if z not in ben.used), None)
+            conflict = {'label_on_page': body, 'label_reads_as': label, 'order_would_give': would,
+                        'note': (f"原页这里的标题是「{body}」" + (f"，读作{label}，但本卦的{label}林已在前面" if label else '（未编码字形）')
+                                 + f"；按卦序该是{would}，但页序错乱，归属未定")}
+            attribution[0] = conflict
+            problems.append({'ben': ben.name, 'kind': 'lin_unplaced_label_conflicts_with_order', **conflict})
+            from yilin_lookup import UNPLACED
+            ben.zhi = UNPLACED
+            verse_indent[0] = None
+            continue
         if label and ben.can_take(label, settled):
             flush()
             ben.take(label)
+            attribution[0] = None
+            verse_indent[0] = None
             continue
-        (notes if indent >= 2 or body == '無註' or settled else verse).append(body)
+        if verse_indent[0] is None and body != '無註' and not verse and not notes:
+            verse_indent[0] = indent
+        if body == '無註' or settled or _ends_verse(verse) or _note_line(indent, verse_indent[0], verse):
+            if not notes:
+                note_indent[0] = indent
+            notes.append(body)
+        else:
+            verse.append(body)
     flush()
     return passages, problems, ben
 
 
+SIKU_EXTRACTION_VERSION = 'siku-heading-spans-2'
+
+
+def _siku_text(text: str) -> str:
+    return re.sub(r'[ \t\r\n]+', '', text).strip('\u3000')
+
+
 def siku_lins(text: str) -> tuple[list[dict], list[dict]]:
-    """四库本 runs entries together: 「小畜　……並居履　空拳……」. Split on each name followed by a
-    full-width space; 「X之第N」 starts a ben."""
+    """四库本 runs entries together: 「小畜　……並居履　空拳……」. 「X之第N」 starts a ben; a hexagram
+    name followed by a full-width space starts a zhi only when it is one of the next three in that ben's
+    order (or one passed over), because a verse can end on a hexagram character — 「……安泰　」 must not
+    cut 泰 off the verse (R1-YILIN-01)."""
     from yilin_lookup import GUA, SOURCE_SPELLINGS, canon
     names = sorted(set(GUA) | SOURCE_SPELLINGS, key=len, reverse=True)
     token = re.compile(r'(?P<head>(' + '|'.join(map(re.escape, names)) + r')之第[一二三四五六七八九十]+)'
                        r'|(?P<zhi>' + '|'.join(map(re.escape, names)) + r')\u3000')
     passages: list[dict] = []
     problems: list[dict] = []
-    # clean_wiki leaves the volume headings as 「==焦氏易林卷一==」 and bare 「==」; neither is text.
-    flat = re.sub(r'==[^=]*卷[一二三四五六七八九十]+==|==', '', re.sub(r'[ \t\r\n]+', '', text))
-    marks = list(token.finditer(flat))
-    ben = None
+    # Mask wiki headings without shifting clean_wiki's character coordinates.
+    source = re.sub(r'==[^=]*卷[一二三四五六七八九十]+[ \t\r\n\u3000]*==|==',
+                    lambda match: ' ' * len(match.group()), text)
+    ben = _Ben(None)
+    body_from: int | None = None
+    heading_span: list[int] | None = None
+    pending_from = 0
+    siku_attribution: list[dict | None] = [None]
+
+    def close(upto: int) -> None:
+        if ben.name is None or ben.zhi is None or body_from is None:
+            return
+        body = source[body_from:upto]
+        section = f'{ben.name}之{ben.zhi}'
+        notes = '；'.join(_siku_text(note) for note in YILIN_NOTE.findall(body))
+        verse = _siku_text(YILIN_NOTE.sub('', body))
+        span = {'basis': 'clean_wiki_onlyinclude_codepoints', 'start': body_from, 'end': upto}
+        if not verse:
+            problems.append({'section': section, 'kind': 'verse_missing_in_transcription',
+                             'source_span': span})
+            return
+        passage: dict = {'section': section, 'text': verse, 'layer': 'base_text',
+                         'source_span': span, 'source_heading_span': heading_span}
+        if siku_attribution[0]:
+            passage['attribution'] = siku_attribution[0]
+        passages.append(passage)
+        if notes:
+            passages.append({'section': section, 'text': notes, 'layer': 'commentary',
+                             'source_span': span})
+
+    def unclassified(start: int, end: int) -> None:
+        if source[start:end].strip():
+            problems.append({'kind': 'unclassified_source_text', 'text': source[start:end],
+                             'source_span': {'basis': 'clean_wiki_onlyinclude_codepoints',
+                                             'start': start, 'end': end}})
+
+    marks = list(token.finditer(source))
     for i, match in enumerate(marks):
-        end = marks[i + 1].start() if i + 1 < len(marks) else len(flat)
         if match.group('head'):
-            ben = canon(match.group(2))
+            close(match.start())
+            if body_from is None:
+                unclassified(pending_from, match.start())
+            if ben.name:
+                problems.extend({'section': f'{ben.name}之{z}', 'kind': 'lin_missing_in_transcription'}
+                                for z in ben.missing())
+            ben, body_from = _Ben(canon(match.group(2))), None
+            ben.zhi = None
+            pending_from = match.end()
             continue
         zhi = canon(match.group('zhi'))
-        body = flat[match.end():end].strip('\u3000')
-        if not ben or not zhi:
-            problems.append({'text': body[:20], 'kind': 'entry_without_ben'})
+        if zhi is None or ben.name is None:
             continue
-        notes = '；'.join(YILIN_NOTE.findall(body))
-        verse = YILIN_NOTE.sub('', body).strip('\u3000')
-        if not verse:
-            problems.append({'section': f'{ben}之{zhi}', 'kind': 'verse_missing_in_transcription'})
-            continue
-        passages.append({'section': f'{ben}之{zhi}', 'text': verse, 'layer': 'base_text'})
-        if notes:
-            passages.append({'section': f'{ben}之{zhi}', 'text': notes, 'layer': 'commentary'})
+        first = body_from is None and zhi == ben.name
+        mislabel = None
+        if not first and not ben.can_take(zhi, settled=False):
+            # Out of order. A hexagram character ending a verse is followed straight by the next label
+            # (「……安泰　遯　」); a mislabeled lin (「小過」 where 小畜 is due) is followed by a whole verse.
+            following = marks[i + 1].start() if i + 1 < len(marks) else len(source)
+            due = next((z for z in _sequence(ben.name)[ben.pos + 1:ben.pos + 2] if z not in ben.used), None)
+            if zhi in ben.used or due is None or len(_siku_text(YILIN_NOTE.sub('', source[match.end():following]))) < 8:
+                continue
+            mislabel = {'label_on_page': match.group('zhi'), 'label_reads_as': zhi, 'attributed_by_order': due,
+                        'note': (f"原页这里的标题是「{match.group('zhi')}」，但位置正是{due}该在处，{zhi}林另在本卦后面；"
+                                 f"按卦序推定归{due}，原本标题与位置不合")}
+            problems.append({'section': f'{ben.name}之{due}', 'kind': 'attribution_inferred_from_order', **mislabel})
+            zhi = due
+        close(match.start())
+        if first:
+            unclassified(pending_from, match.start())
+            ben.zhi = zhi
+        else:
+            ben.take(zhi)
+        siku_attribution[0] = mislabel
+        body_from = match.end()
+        heading_span = [match.start(), match.end()]
+    close(len(source))
+    if body_from is None:
+        unclassified(pending_from, len(source))
+    if ben.name:
+        problems.extend({'section': f'{ben.name}之{z}', 'kind': 'lin_missing_in_transcription'} for z in ben.missing())
     return passages, problems
+
+
+def rebuild_yilin_siku(source: Path, destination: Path) -> dict:
+    """Rebuild only this edition from its frozen source files, without retrieval."""
+    manifest = json.loads((source / 'manifest.json').read_text(encoding='utf-8'))
+    book = next(b for b in manifest['books'] if b['id'] == 'yilin_siku')
+    all_passages: list[dict] = []
+    all_problems: list[dict] = []
+    for entry in book['chapters']:
+        if entry['id'] == 'c000':
+            continue
+        chapter = json.loads((source / entry['path']).read_text(encoding='utf-8'))
+        raw_bytes = (source / chapter['raw_path']).read_bytes()
+        if digest(raw_bytes) != chapter['raw_sha256']:
+            raise ValueError(f"frozen raw hash mismatch: {chapter['raw_path']}")
+        raw = raw_bytes.decode('utf-8')
+        body = '\n'.join(re.findall(r'<onlyinclude>(.*?)</onlyinclude>', raw, re.S)) or raw
+        passages, problems = siku_lins(clean_wiki(body))
+        for position, item in enumerate(passages, 1):
+            item.update({'passage_id': f"yilin_siku:{chapter['chapter_id']}:p{position:04}",
+                         'sha256': digest(item['text'].encode('utf-8'))})
+        chapter['passages'] = passages
+        chapter['extraction_version'] = SIKU_EXTRACTION_VERSION
+        entry['sha256'] = write_json(destination / entry['path'], chapter)
+        entry['passage_count'] = len(passages)
+        all_passages.extend(passages)
+        all_problems.extend(dict(problem, chapter_id=chapter['chapter_id']) for problem in problems)
+    from yilin_lookup import GUA
+    book['completeness']['lins'] = _completeness(all_passages, list(GUA))
+    book['split_problems'] = all_problems
+    book['extraction_version'] = SIKU_EXTRACTION_VERSION
+    write_json(destination / 'manifest.json', manifest)
+    return book
 
 
 def _completeness(passages: list[dict], bens: list[str]) -> dict:
     from yilin_lookup import GUA
-    have = {p['section'] for p in passages if p['layer'] == 'base_text'}
+    pairs = {f'{b}之{z}' for b in bens for z in GUA}
+    have = {p['section'] for p in passages if p['layer'] == 'base_text'} & pairs
     missing = [f'{b}之{z}' for b in bens for z in GUA if f'{b}之{z}' not in have]
     return {'expected_lins': 64 * len(bens), 'found_lins': len(have), 'missing': missing}
 
@@ -709,12 +892,15 @@ def import_yilin(cache: Path) -> list[dict]:
             body = '\n'.join(re.findall(r'<onlyinclude>(.*?)</onlyinclude>', body, re.S))
         text = clean_wiki(body.replace('{{SK notes|', '{{sk notes|'))
         page['passages'], page['split_problems'] = siku_lins(text)
+        page['extraction_version'] = SIKU_EXTRACTION_VERSION
         schapters.append((f'c{i:03}', f'卷{i}', page))
     sk = make_book('yilin_siku', '焦氏易林（四库本）', '文淵閣四庫全書本，维基文库分四卷录入，六十四卦齐全；未逐页校图',
                    sindex, schapters)
     slins = [p for _, _, page in schapters[1:] for p in page['passages']]
     sk['completeness']['lins'] = _completeness(slins, list(GUA))
-    sk['split_problems'] = [x for _, _, page in schapters[1:] for x in page.get('split_problems', [])]
+    sk['split_problems'] = [dict(x, chapter_id=cid) for cid, _, page in schapters[1:]
+                            for x in page.get('split_problems', [])]
+    sk['extraction_version'] = SIKU_EXTRACTION_VERSION
     sk['quality_notes'] = ['维基文库把全书分四卷录入，六十四卦都在；个别林转录缺失，见 completeness.lins.missing。',
                            '四库本录文把多林连写，按「卦名＋全角空格」切分。']
     return [sbck, sk]
@@ -728,7 +914,22 @@ def main() -> int:
     parser.add_argument('--captured-html', choices=['ziping', 'qiongtong', 'yuanhai'], action='append', default=[])
     parser.add_argument('--supplements-from', type=Path, help='显式导入已捕获的补充书目 API 批次')
     parser.add_argument('--yilin-from', type=Path, help='显式导入已捕获的焦氏易林两版本 API 批次')
+    parser.add_argument('--yilin-siku-frozen-from', type=Path,
+                        help='仅从指定 knowledge 目录的冻结四库 raw 重建；核对原始哈希，不联网')
+    parser.add_argument('--output-dir', type=Path,
+                        help='四库冻结重建的独立输出目录；与 --yilin-siku-frozen-from 同用')
     args = parser.parse_args()
+    if args.yilin_siku_frozen_from:
+        if not args.output_dir or any((args.wikisource, args.capture_qiongtong, args.captured_html,
+                                       args.supplements_from, args.yilin_from)):
+            parser.error('frozen siku rebuild requires --output-dir and cannot mix other imports')
+        if args.output_dir.resolve() == args.yilin_siku_frozen_from.resolve():
+            parser.error('frozen siku rebuild requires a separate output directory for review')
+        book = rebuild_yilin_siku(args.yilin_siku_frozen_from, args.output_dir)
+        print(json.dumps({'books': [(book['id'], len(book['chapters']))]}, ensure_ascii=False))
+        return 0
+    if args.output_dir:
+        parser.error('--output-dir requires --yilin-siku-frozen-from')
     if not (args.wikisource or args.capture_qiongtong or args.captured_html or args.supplements_from
             or args.yilin_from):
         parser.error('choose a retrieval/import operation')

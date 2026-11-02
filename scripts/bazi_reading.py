@@ -11,6 +11,7 @@ from annual_assessment import (
     annual_paragraph,
     annual_readings,
     unknown_year,
+    year_pillar,
     years_asked,
 )
 from bazi_calc import build_parser as chart_parser
@@ -332,7 +333,7 @@ def chart_facts(chart: dict) -> dict:
     # Keep the original paths so evidence checking can compare the same facts.
     keys = ('four_pillars', 'day_master', 'hour_known', 'solar_date', 'lunar_date',
             'true_solar_time', 'timezone', 'birthplace', 'sect', 'qi_yun', 'da_yun',
-            'liu_nian', 'current_time_context', 'liu_nian_status', 'liu_nian_scope', 'liu_nian_note',
+            'liu_nian', 'current_time_context', 'liu_nian_status', 'reference_year', 'liu_nian_scope', 'liu_nian_note',
             'birth_time_uncertainty', 'qi_yun_status', 'calendar_context', 'deceased')
     return {key: chart[key] for key in keys if key in chart and (key != 'deceased' or chart[key])}
 
@@ -376,11 +377,11 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
                             + (f"；卒于 {cycle['cut_at_death_year']} 年，这步运只到这里" if cycle.get('cut_at_death_year') else ''))
     age = age_at_request(clean)
     deceased = clean.get('deceased')
-    if age and deceased:
-        # B6: a dead person has no age today; give the age at death and say so.
+    died_year = deceased['year'] if deceased else None
+    if deceased:
+        # B6: a dead person has no age today; the age at death needs only the two dates.
         died = date.fromisoformat(deceased['date'])
-        born = date.fromisoformat(clean['true_solar_time']['effective_date']) - timedelta(
-            days=clean['true_solar_time'].get('day_offset') or 0)
+        born = date.fromisoformat(deceased['birth_date'])
         full = died.year - born.year - ((died.month, died.day) < (born.month, born.day))
         age = {'date': deceased['date'], 'full_years': full, 'nominal_years': None, 'deceased': True,
                'say': f"已于 {deceased['date']} 去世，享年周岁 {full} 岁；不算今天的年龄，卒年之后的大运流年不排。"}
@@ -407,9 +408,18 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     extra: dict = {'colour_advice': colour_advice(clean, question)} if asks_colour(question) else {}
     if any(word in question for word in LUCK_WORDS):
         cycles = _cycles_now(clean)
-        extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
-                                 [{'status': 'unavailable', 'luck': {'ganzhi': None},
-                                   'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
+        reference = _reference_year(clean)
+        asked = years_asked(question, reference)
+        # The chart drops 流年 rows after the death, so the reference year can be missing; a dead person has no
+        # current cycle either way, and that is not the same as "which year is it" being unknown (R9-LAD02).
+        if died_year and (reference is None or reference > died_year or any(y > died_year for y in asked)):
+            when = f'{max([reference or 0, *asked])} 年' if (reference or asked) else '现在'
+            extra['luck_reading'] = [{'status': 'after_death', 'luck': {'ganzhi': None},
+                                      'reason': f'已于 {died_year} 年去世，{when}没有在走的大运，不作个人评估'}]
+        else:
+            extra['luck_reading'] = ([assess_luck(clean, cycle) for cycle in cycles] if cycles else
+                                     [{'status': 'unavailable', 'luck': {'ganzhi': None},
+                                       'reason': '不知道今年是哪一年，选不出当前大运：先问用户现在住在哪里（时区），再算'}])
         for reading in extra['luck_reading']:
             for scenario in reading.get('scenarios', []):
                 extra_ids.extend(scenario['source_passage_ids'])
@@ -417,7 +427,9 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     years = years_asked(question, _reference_year(clean))
     if years:
-        extra['annual_reading'] = annual_readings(clean, years)
+        alive = annual_readings(clean, [y for y in years if not died_year or y <= died_year])
+        by_year = {r['year']: r for r in alive}
+        extra['annual_reading'] = [by_year.get(y) or after_death_year(y, died_year) for y in years]
     elif any(word in question for word in ANNUAL_WORDS):
         extra['annual_reading'] = [unknown_year('不知道今年是哪一年：先问用户现在住在哪里（时区），或者直接问哪一年')]
     result = {**extra, 'ok': True, 'tool': 'bazi_reading', 'version': __version__, 'schema_version': '2.1',
@@ -466,8 +478,16 @@ def host_notes(result: dict) -> list[str]:
 
 def _reference_year(clean: dict) -> int | None:
     """Which year it is for this request: the replayed or current instant, or the explicit year."""
+    if clean.get('reference_year'):
+        return clean['reference_year']
     context = clean.get('current_time_context') or {}
     return int(context['local'][:4]) if context.get('local') else (clean.get('liu_nian') or [{}])[0].get('year')
+
+
+def after_death_year(year: int, died_year: int | None) -> dict:
+    """A year after the death: not a personal reading, whatever the hour or day pillar."""
+    return {'status': 'after_death', 'year': year, 'ganzhi': year_pillar(year), 'cycle': None, 'hits': [],
+            'reason': f'卒于 {died_year} 年，这一年不作个人评估'}
 
 
 def _cycles_now(clean: dict) -> list[dict]:

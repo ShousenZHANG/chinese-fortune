@@ -15,19 +15,40 @@ def test_known_chart_is_found_with_its_sixty_year_twin():
     assert out['candidates'][1]['true_solar_from'] == '2000-01-15 09:00'
 
 
-def test_window_cut_by_lichun_to_the_minute():
-    out = lookup('--year-pillar', '庚辰', '--month-pillar', '戊寅', '--day-pillar', '壬辰', '--hour-pillar', '庚戌')
-    cut = next(c for c in out['candidates'] if c['date'] == '2000-02-04')
-    assert cut['cut_by_solar_term'] and cut['true_solar_from'] == '2000-02-04 20:41'
+def test_lichun_cut_needs_the_longitude_because_terms_are_utc8_instants():
+    args = ('--year-pillar', '庚辰', '--month-pillar', '戊寅', '--day-pillar', '壬辰', '--hour-pillar', '庚戌',
+            '--from-year', '2000', '--to-year', '2000')
+    open_ = lookup(*args)['candidates'][0]
+    assert open_['depends_on_longitude'] and open_['true_solar_from'] == '2000-02-04 19:00'
+    assert open_['term_cut_utc8'] == '2000-02-04 20:41' and open_['term_side'] == 'after'
+    # 北京经度 116.4：交节 UTC+8 20:40 换成真太阳时约 20:12，真太阳时 20:16 出生必须在窗口内（R9-LAD01）。
+    cut = lookup(*args, '--longitude', '116.4')['candidates'][0]
+    assert cut['cut_by_solar_term'] and cut['true_solar_from'] == '2000-02-04 20:12'
+    assert cut['true_solar_from'] <= '2000-02-04 20:16' < cut['true_solar_to']
 
 
-def test_zi_hour_lists_early_and_late_windows_and_no_hour_gives_the_day():
-    out = lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--hour-pillar', '庚子',
-                 '--from-year', '1990', '--to-year', '2010')
-    assert [c['window_label'] for c in out['candidates']] == ['早子时', '晚子时']
+def test_zi_hour_keeps_only_the_window_its_stem_belongs_to():
+    # 壬申日：早子按本日五鼠遁为庚子，晚子时干取次日癸 → 壬子（R9-LBH-01）。
+    early = lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--hour-pillar', '庚子',
+                   '--from-year', '1990', '--to-year', '2010')
+    assert [c['window_label'] for c in early['candidates']] == ['早子时']
+    late = lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--hour-pillar', '壬子',
+                  '--from-year', '1990', '--to-year', '2010')
+    assert [c['window_label'] for c in late['candidates']] == ['晚子时']
     whole = lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申',
                    '--from-year', '1990', '--to-year', '2010')
     assert whole['candidates'][0]['window_label'] == '全天'
+
+
+def test_reverse_windows_contain_the_forward_chart_at_late_and_early_zi():
+    for hour, want in ((23, '晚子时'), (0, '早子时')):
+        chart = run_cli('bazi_calc.py', '--year', 2000, '--month', 1, '--day', 1, '--hour', hour, '--minute', 30,
+                        '--gender', 'male', '--time-standard', 'clock', '--timezone', 'Asia/Shanghai',
+                        '--no-shensha', '--no-yongshen', '--no-geju')
+        p = {k: chart['four_pillars'][k]['ganzhi'] for k in ('year', 'month', 'day', 'hour')}
+        out = lookup('--year-pillar', p['year'], '--month-pillar', p['month'], '--day-pillar', p['day'],
+                     '--hour-pillar', p['hour'], '--from-year', '1999', '--to-year', '2000')
+        assert [c['window_label'] for c in out['candidates'] if c['date'] == '2000-01-01'] == [want], p
 
 
 def test_inconsistent_or_malformed_pillars_are_refused():
@@ -35,6 +56,8 @@ def test_inconsistent_or_malformed_pillars_are_refused():
     assert '五虎遁' in bad['message']
     assert '五鼠遁' in lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申',
                              '--hour-pillar', '甲子', rc=1)['message']
+    assert '五鼠遁' in lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申',
+                             '--hour-pillar', '丙辰', rc=1)['message']
     assert lookup('--year-pillar', '甲丑', '--month-pillar', '丁丑', '--day-pillar', '壬申', rc=1)['ok'] is False
     assert lookup('--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申',
                   '--from-year', '1000', rc=1)['ok'] is False

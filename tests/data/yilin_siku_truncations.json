@@ -1,0 +1,245 @@
+[
+  {
+    "section": "井之恆",
+    "expected": "方喙宣口聖智仁厚解釋倒懸歴國安泰",
+    "actual": "方喙宣口聖智仁厚解釋倒懸歴國安",
+    "removed": "泰",
+    "passage_id": "yilin_siku:c004:p0307",
+    "sha256": "b3a27901e5ba027132c5b6b0ac33d4d4a4fd0f03ed4d0133343c01fcbb18b46b",
+    "chapter": "c004"
+  },
+  {
+    "section": "咸之遯",
+    "expected": "過時不歸雌雄苦悲徘徊外國與母分離",
+    "actual": "過時不歸雌雄苦悲徘徊外國與母分",
+    "removed": "離",
+    "passage_id": "yilin_siku:c003:p0036",
+    "sha256": "bd8816f8ca8eee0a76b53f1c32f43f613020773afdf887f07e7e4c3c625fb3d0",
+    "chapter": "c003"
+  },
+  {
+    "section": "噬嗑之井",
+    "expected": "陽城太室神明所息仁者之君獨無兵革",
+    "actual": "陽城太室神明所息仁者之君獨無兵",
+    "removed": "革",
+    "passage_id": "yilin_siku:c002:p0119",
+    "sha256": "c4d53d48cd3ba404c15a6a6cf1cc469bf11a7e5fce3282115458ffac9f505d18",
+    "chapter": "c002"
+  },
+  {
+    "section": "噬嗑之恆",
+    "expected": "白鶴銜珠夜食為明膏潤優渥國嵗年豐",
+    "actual": "白鶴銜珠夜食為明膏潤優渥國嵗年",
+    "removed": "豐",
+    "passage_id": "yilin_siku:c002:p0103",
+    "sha256": "2a311f4a2d66e20beadcb9b646a9eb10205bd9709f0df2c47153f7b1931b9dab",
+    "chapter": "c002"
+  },
+  {
+    "section": "大壯之姤",
+    "expected": "婚禮不明男女失常行路有言出爭我訟",
+    "actual": "婚禮不明男女失常行路有言出爭我",
+    "removed": "訟",
+    "passage_id": "yilin_siku:c003:p0261",
+    "sha256": "853485447aeef096f64803ef138a2c01f50704150412654652b97758285e96aa",
+    "chapter": "c003"
+  },
+  {
+    "section": "夬之困",
+    "expected": "五龍俱起強者敗走露我苗稼年嵗大有",
+    "actual": "五龍俱起強者敗走露我苗稼年嵗",
+    "removed": "大有",
+    "passage_id": "yilin_siku:c003:p0886",
+    "sha256": "02b721e73cfa8eb82aa9ea5b3d87a7c7051110fef64e29d3540f4b236ca38aca",
+    "chapter": "c003"
+  },
+  {
+    "section": "小畜之比",
+    "expected": "鵲足却縮不見頭目日久困急不能自復",
+    "actual": "鵲足却縮不見頭目日久困急不能自",
+    "removed": "復",
+    "passage_id": "yilin_siku:c001:p0622",
+    "sha256": "bd0db3ed570282554e2cb1a47b5f1e118aa12c89ca392664f2186d9c683dbd25",
+    "chapter": "c001"
+  },
+  {
+    "section": "師之艮",
+    "expected": "鶴鳴九臯避世隱居抱朴守貞竟不相隨",
+    "actual": "鶴鳴九臯避世隱居抱朴守貞竟不相",
+    "removed": "隨",
+    "passage_id": "yilin_siku:c001:p0516",
+    "sha256": "44871138a5a26f59efa6e6004683d28b148d1813ce3de24a1ba14a706a3ee076",
+    "chapter": "c001"
+  },
+  {
+    "section": "旅之坤",
+    "expected": "人無定法綬降牛出蛇雄走趨陽不制隂宜其家困",
+    "actual": "人無定法綬降牛出蛇雄走趨陽不制隂宜其家",
+    "removed": "困",
+    "passage_id": "yilin_siku:c004:p0898",
+    "sha256": "0047d89694dc448c981c668ab15b4ffd3ca1e3b5266bb6fb908c63e148c4688b",
+    "chapter": "c004"
+  },
+  {
+    "section": "既濟之大畜",
+    "expected": "弱水之右有西王母生不知老與天相保不利行旅",
+    "actual": "弱水之右有西王母生不知老與天相保不利行",
+    "removed": "旅",
+    "passage_id": "yilin_siku:c004:p1560",
+    "sha256": "4b3bff411ff5006242838adf891838e20c6466ec1486c87c3b38ce1dae99f6c0",
+    "chapter": "c004"
+  },
+  {
+    "section": "明夷之震",
+    "expected": "三塗五岳陽城太室神明所扶獨無兵革",
+    "actual": "三塗五岳陽城太室神明所扶獨無兵",
+    "removed": "革",
+    "passage_id": "yilin_siku:c003:p0410",
+    "sha256": "d8555d229a19229c2a9333d670c7de44923b7f05d337f6d14a62370df188726f",
+    "chapter": "c003"
+  },
+  {
+    "section": "晉之訟",
+    "expected": "君明有徳登天大禄布政施惠以成恩福中子南遊翺翔未復",
+    "actual": "君明有徳登天大禄布政施惠以成恩福中子南遊翺翔未",
+    "removed": "復",
+    "passage_id": "yilin_siku:c003:p0291",
+    "sha256": "e4fd88397cbb49b08e534ee7ff5c066e575f0482c25c2e54c59f82213764d5a8",
+    "chapter": "c003"
+  },
+  {
+    "section": "晉之離",
+    "expected": "雖汚不辱因何跣足童子褰衣五步平復",
+    "actual": "雖汚不辱因何跣足童子褰衣五步平",
+    "removed": "復",
+    "passage_id": "yilin_siku:c003:p0319",
+    "sha256": "de4c68a41a5a6531d7ed1af42315308f5e89e005a661ae617a8f9be1425ce40f",
+    "chapter": "c003"
+  },
+  {
+    "section": "歸妹之巽",
+    "expected": "作新初陵爛焰難登三駒推車躓頓傷頤",
+    "actual": "作新初陵爛焰難登三駒推車躓頓傷",
+    "removed": "頤",
+    "passage_id": "yilin_siku:c004:p0786",
+    "sha256": "9927a212d2c6c3998bba7baab976fdac6c588ce9126ab6033911efc624e9b93d",
+    "chapter": "c004"
+  },
+  {
+    "section": "比之隨",
+    "expected": "過時不歸雌雄苦悲徘徊外國與母分離",
+    "actual": "過時不歸雌雄苦悲徘徊外國與母分",
+    "removed": "離",
+    "passage_id": "yilin_siku:c001:p0553",
+    "sha256": "bd8816f8ca8eee0a76b53f1c32f43f613020773afdf887f07e7e4c3c625fb3d0",
+    "chapter": "c001"
+  },
+  {
+    "section": "渙之漸",
+    "expected": "孽蔑徙靡空無誰是言季不明樂減少解",
+    "actual": "孽蔑徙靡空無誰是言季不明樂減少",
+    "removed": "解",
+    "passage_id": "yilin_siku:c004:p1254",
+    "sha256": "ad24a4b9256ab604d197eb0ce584d8701bf787804580ce8c958968d567377fce",
+    "chapter": "c004"
+  },
+  {
+    "section": "漸之震",
+    "expected": "凶重憂慮身受誅罪神不能解",
+    "actual": "凶重憂慮身受誅罪神不能",
+    "removed": "解",
+    "passage_id": "yilin_siku:c004:p0700",
+    "sha256": "ebfbd2c94638b0717d28c0cef7e7c2f38e42903b2d737015f37474be2c194cd1",
+    "chapter": "c004"
+  },
+  {
+    "section": "節之巽",
+    "expected": "六目俱視各欲有志一言不同乖戾生訟",
+    "actual": "六目俱視各欲有志一言不同乖戾生",
+    "removed": "訟",
+    "passage_id": "yilin_siku:c004:p1353",
+    "sha256": "e83587935014ab30c7824089dae470f90b43743aba3db5c773f533a2e6da5da2",
+    "chapter": "c004"
+  },
+  {
+    "section": "節之蒙",
+    "expected": "良馬疾走千里一宿離逃他鄉誰能追復",
+    "actual": "良馬疾走千里一宿離逃他鄉誰能追",
+    "removed": "復",
+    "passage_id": "yilin_siku:c004:p1278",
+    "sha256": "06bbef50d4fd5d956167e3080df4b6c6f28ca2a1cc87fb27c4f5e311ea451b72",
+    "chapter": "c004"
+  },
+  {
+    "section": "節之賁",
+    "expected": "喜樂踴躍来迎歡客鵲巢百兩以成嘉福多獲利益",
+    "actual": "喜樂踴躍来迎歡客鵲巢百兩以成嘉福多獲利",
+    "removed": "益",
+    "passage_id": "yilin_siku:c004:p1304",
+    "sha256": "db16dd9672c8e915e03bdbd6c50a2751d1d5ebc699b3210922279e8a4dc01148",
+    "chapter": "c004"
+  },
+  {
+    "section": "蠱之坎",
+    "expected": "褒后生蛇經老育㣲側跌哀公酒減黄離",
+    "actual": "褒后生蛇經老育㣲側跌哀公酒減黄",
+    "removed": "離",
+    "passage_id": "yilin_siku:c001:p1318",
+    "sha256": "86488e4a7c2e7dcd44afb315f42f8ab47bbd4bd5ad6d4f80eead5e44f6fe4d23",
+    "chapter": "c001"
+  },
+  {
+    "section": "觀之同人",
+    "expected": "有頭無目赫赫粟粟消耗為疾三年不復",
+    "actual": "有頭無目赫赫粟粟消耗為疾三年不",
+    "removed": "復",
+    "passage_id": "yilin_siku:c002:p0017",
+    "sha256": "25886d5f5abfe24bfe1c8bb2f3eebf84275f688d3220a25b365ae1cc25c6cc1e",
+    "chapter": "c002"
+  },
+  {
+    "section": "賁之巽",
+    "expected": "懐璧越鄉不可逺行蔡侯兩裘久苦流離",
+    "actual": "懐璧越鄉不可逺行蔡侯兩裘久苦流",
+    "removed": "離",
+    "passage_id": "yilin_siku:c002:p0203",
+    "sha256": "84dea190edab4f54254515fb5dd98b300cc42f60e34481cdae95052e5f3e9b2e",
+    "chapter": "c002"
+  },
+  {
+    "section": "遯之遯",
+    "expected": "三塗五岳陽城太室神明所住獨無兵革",
+    "actual": "三塗五岳陽城太室神明所住獨無兵",
+    "removed": "革",
+    "passage_id": "yilin_siku:c003:p0141",
+    "sha256": "4a678371fbc467122e076f91ff482c3d9f203ad4af2b7db105581ec6b0179401",
+    "chapter": "c003"
+  },
+  {
+    "section": "隨之旅",
+    "expected": "初雖無輿後得載車頼幸逢福得離兵革",
+    "actual": "初雖無輿後得載車頼幸逢福得離兵",
+    "removed": "革",
+    "passage_id": "yilin_siku:c001:p1279",
+    "sha256": "56e34b70c3e7cbd82ebd2cee213b214445077b994fe4ec3a243b3650f70b46c4",
+    "chapter": "c001"
+  },
+  {
+    "section": "隨之蠱",
+    "expected": "邊鄙不寜民狎於野嗇人成功年歲大有",
+    "actual": "邊鄙不寜民狎於野嗇人成功年歲",
+    "removed": "大有",
+    "passage_id": "yilin_siku:c001:p1235",
+    "sha256": "2fd4260f87e4c21b8433dab1ff1095e8328bcf667d18cf2b899e91d0c1871dc1",
+    "chapter": "c001"
+  },
+  {
+    "section": "需之蒙",
+    "expected": "三塗五岳陽城大室神明之保獨無兵革",
+    "actual": "三塗五岳陽城大室神明之保獨無兵",
+    "removed": "革",
+    "passage_id": "yilin_siku:c001:p0313",
+    "sha256": "78e7ee7903ae2a2db2f2e361ac3c3d56877f0699c6ec4a3d064c3c0a0d8d47d1",
+    "chapter": "c001"
+  }
+]

@@ -45,9 +45,19 @@ def test_bazi_reading_defaults_to_compact_and_returns_cli_json():
 def test_stdin_tools_and_answer_check_with_facts():
     result, text = call('pair_facts', {'a': BIRTH, 'b': {**BIRTH, 'year': 2001, 'gender': 'female'}})
     assert not result['isError'] and json.loads(text)['tool'] == 'pair_facts'
+    facts = json.loads(text)
+    day = facts['subjects']['A']['four_pillars']['day']
+    wrong_day = '甲子' if day != '甲子' else '乙丑'
+    result, text = call('answer_check', {'answer': f'A方日柱{wrong_day}。', 'facts': [facts]})
+    assert result['isError'] and any(f['code'] == 'pillar_mismatch' for f in json.loads(text)['findings'])
+    result, text = call('answer_check', {'answer': f'A方日柱{day}。', 'facts': [facts]})
+    assert not result['isError'] and json.loads(text)['passed']
+
+
+def test_answer_check_rejects_anonymous_partial_facts():
     facts = {'chart_facts': {'hour_known': True, 'four_pillars': {'day': {'ganzhi': '壬申'}}}}
-    result, text = call('answer_check', {'answer': '日柱甲子。', 'facts': [facts]})
-    assert result['isError'] and json.loads(text)['findings'][0]['code'] == 'pillar_mismatch'
+    result, text = call('answer_check', {'answer': '日柱壬申。', 'facts': [facts]})
+    assert result['isError'] and any(f['code'] == 'invalid_facts' for f in json.loads(text)['findings'])
 
 
 def test_run_script_only_runs_shipped_runtime_scripts():

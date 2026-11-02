@@ -8,7 +8,13 @@ from html import escape
 from pathlib import Path
 
 from bazi_derivation import asks_derivation
-from report_views import professional_html, professional_markdown, redact_text, route_rows
+from report_views import (
+    professional_html,
+    professional_markdown,
+    redact_text,
+    route_rows,
+    shareable,
+)
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
 
@@ -142,7 +148,8 @@ def facts_line(path: str) -> str:
             f'发出前核对正文：python scripts/answer_check.py --answer - --facts {path}（正文从标准输入给）。')
 
 
-REDACTED = ['四柱干支', '出生日期与时间', '出生地、经度与时区', '问题原话', '公历年份', '完整计算资料']
+REDACTED = ['四柱干支', '出生日期与时间', '出生地、经度与时区', '问题原话', '公历年份', '出生时刻的推算过程',
+            '完整计算资料']
 
 
 def write_report(result: dict, facts_text: str, destination: str, *, style: str = 'plain',
@@ -165,7 +172,7 @@ def write_report(result: dict, facts_text: str, destination: str, *, style: str 
     full = json.dumps(result, ensure_ascii=False, indent=2)
     question = result['question']
     if redact:
-        paragraphs = [redact_text(p, result) for p in paragraphs]
+        paragraphs = [redact_text(p, result) for p in paragraphs if shareable(p)]
         question = '（已隐去）'
         metadata = f"版本 {result['version']} · 分享预览：已隐去{'、'.join(REDACTED)}"
         cited = sorted({row['passage'] for row in route_rows(result) if row['passage'] != '—'})

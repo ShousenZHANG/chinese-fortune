@@ -41,7 +41,7 @@ def test_siku_volumes_resplit_from_the_frozen_revision():
 
 def test_coverage_is_recorded_and_nearly_complete():
     books = {b['id']: b for b in json.loads((KNOWLEDGE / 'manifest.json').read_text(encoding='utf-8'))['books']}
-    for book, floor in (('yilin', 4080), ('yilin_siku', 4091)):
+    for book, floor in (('yilin', 4081), ('yilin_siku', 4096)):
         lins = books[book]['completeness']['lins']
         assert lins['expected_lins'] == 4096 and lins['found_lins'] >= floor
         assert lins['found_lins'] + len(lins['missing']) == 4096

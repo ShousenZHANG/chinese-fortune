@@ -396,6 +396,12 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     if capability['route'] == 'selection':
         _settle_practical(result, payload.get('preferences'))
     result['conclusion'] = conclusion_packet(result)
+    if _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
+        scope = {'method': 'xiangzhu_borrowed', 'scenario_mapping': 'unverified',
+                 'meaning': BORROWED_MEANING.format(label=_event_label(result))}
+        result['conclusion']['method_scope'] = scope
+        if result.get('ranking'):
+            result['ranking']['method_scope'] = scope
     # Computed from the request only, after the divination answer is settled,
     # so it cannot feed back into any ranking.
     result['life_reference'] = {'source': library_source(), 'region': resolve_region(payload),
@@ -979,7 +985,31 @@ def _context_sentence(calendar: dict, who: str, skip: tuple[str, ...] = ()) -> s
     return ('其中' + '；'.join(parts) + '，落在这段里的日子都受影响。') if parts else ''
 
 
+BORROWED_MEANING = ('相主是给协纪所列事项挑时间的方法，借用到「{label}」上；结果只是本人生年与各日的相主等级，'
+                    '不等于这件事已证的吉凶或客观上最好的日子')
+
+
+def _borrowed(result: dict) -> bool:
+    return ((result.get('capability') or {}).get('authority') or {}).get('kind') == 'borrowed'
+
+
+def _event_label(result: dict) -> str:
+    """The undertaking in the user's words; an internal scenario id (career) is not shown."""
+    label = (result.get('capability') or {}).get('label') or ''
+    return label if label and not label.isascii() else '这件事'
+
+
 def _calendar_sentence(result: dict, kind: str) -> str:
+    """The period lead; with a borrowed method the ranking is said as a 相主 comparison (R9-FORT-SCOPE-01)."""
+    text = _calendar_lead(result, kind)
+    if not _borrowed(result):
+        return text
+    label = _event_label(result)
+    text = text.replace('看，', '、借用协纪相主比较，', 1).replace('最好的', '相主等级最高的')
+    return text + f"这是相主对本人生年的等级比较；{label}和协纪事项的对应没有核过，不等于这件事已证的吉凶或客观上最好的日子。"
+
+
+def _calendar_lead(result: dict, kind: str) -> str:
     """Period answer: the best and the worst days (or months) for the person.
 
     A 凶 year or month that every entry sits in is said first: the passage
@@ -1450,13 +1480,17 @@ def outlook_skeleton(result: dict) -> str:
 def host_notes(result: dict) -> list[str]:
     """What the host must say as the tool says it (evals/v56/REPORT.md 3.1)."""
     notes = ['等级、干支和理由只用上面的结果；不要自己写代码另算干支、十神或等级。']
+    if _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
+        label = _event_label(result)
+        notes.append(f"相主是借用到「{label}」上的：首句和结论都要保留「借用相主比较」，只能说相主等级最高的是哪几天，"
+                     "不能说这些是做这件事最好的日子、事业或感情的吉凶已定。")
     calendar = result.get('personal_calendar') or {}
     entries = [e for e in _ranked(_merged(calendar.get('entries', []))) if not e.get('event_hits')]
     order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
     best = min((e['grade'] for e in entries), key=order.index, default=None)
     tied = [e for e in entries if e['grade'] == best] if best in ('大吉', '吉') else []
     if len(tied) > 1:
-        notes.append(f"最好的几天等级相同（{_dates(tied)}都是{best}），工具没排先后：不要说其中哪天最好，按用户的安排或偏好选。")
+        notes.append(f"等级最高的几天相同（{_dates(tied)}都是{best}），工具没排先后：不要说其中哪天最好，按用户的安排或偏好选。")
     if result.get('recommendation', {}).get('status') in ('practical_tie', 'preferences_required'):
         notes.append('候选时段之间工具没有给出首选，同一等级的按用户偏好选，不要说哪段最合适。')
     ranking = result.get('ranking') or {}

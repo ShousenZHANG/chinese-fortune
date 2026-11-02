@@ -326,7 +326,7 @@ def build_parser(*, diagnostics: bool = True) -> argparse.ArgumentParser:
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     p.add_argument("--year", type=int, required=True, help="出生年 (公历或农历)")
-    p.add_argument("--month", type=int, required=True, help="出生月 1-12")
+    p.add_argument("--month", type=int, required=True, help="出生月 1-12；--lunar 时负月份表示闰月")
     p.add_argument("--day", type=int, required=True, help="出生日 1-31")
     p.add_argument("--hour", type=int, default=None,
                    help="出生时 0-23; 省略则标记未知，默认解读比较候选并保留不变的柱")
@@ -639,16 +639,16 @@ def _liu_nian(args: argparse.Namespace, solar_cls: Any,
     return liu_nian, current_time_context, now_year
 
 
-def _death_cut(text: str | None, birth_year: int) -> dict | None:
+def _death_cut(text: str | None, born: date) -> dict | None:
     if not text:
         return None
     try:
         died = date.fromisoformat(text)
     except ValueError as exc:
         raise _ChartError(error_envelope('bazi', 'invalid_input', f'--death-date 须为 YYYY-MM-DD：{text}')) from exc
-    if died.year < birth_year:
-        raise _ChartError(error_envelope('bazi', 'invalid_input', '卒日早于出生年'))
-    return {'date': died.isoformat(), 'year': died.year,
+    if died < born:
+        raise _ChartError(error_envelope('bazi', 'invalid_input', f'卒日 {died.isoformat()} 早于出生日 {born.isoformat()}'))
+    return {'date': died.isoformat(), 'year': died.year, 'birth_date': born.isoformat(),
             'note': f'已故（{died.isoformat()}）：大运与流年只列到 {died.year} 年；之后的年份不排、不解读。'}
 
 
@@ -745,7 +745,8 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
             warn(f"da_yun unavailable: {exc}")
 
     liu_nian, current_time_context, now_year = _liu_nian(args, solar_cls, day_stem)
-    deceased = _death_cut(getattr(args, 'death_date', None), cal.solar.getYear())
+    # The civil birth date as given (lunar input converted), independent of the hour and the true-solar shift.
+    deceased = _death_cut(getattr(args, 'death_date', None), date(*base))
     if deceased:
         # B6: a luck cycle or annual year after the death date is not a reading
         # of anything that happened; it is dropped, not shown with a caveat.
@@ -820,6 +821,8 @@ def _chart(args: argparse.Namespace, lunar_cls: Any, solar_cls: Any) -> dict:
         "liu_nian_status": ('explicit_year' if args.as_of_year is not None else
                             'instant_year_utc' if (current_time_context or {}).get('year_only') else
                             'current_location_year' if now_year is not None else 'needs_current_timezone'),
+        # The year the request stands in; kept when a death date empties liu_nian (R9-LAD02).
+        "reference_year": now_year,
         "liu_nian_scope": 'calendar_year_reference_list',
         "liu_nian_note": '按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻',
         "deceased": deceased,

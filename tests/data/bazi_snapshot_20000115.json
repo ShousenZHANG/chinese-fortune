@@ -1163,6 +1163,7 @@
   ],
   "current_time_context": null,
   "liu_nian_status": "explicit_year",
+  "reference_year": 2026,
   "liu_nian_scope": "calendar_year_reference_list",
   "liu_nian_note": "按公历年份列出年度参考；不是当前时刻已生效的年柱，立春前后须另核目标时刻",
   "deceased": null,

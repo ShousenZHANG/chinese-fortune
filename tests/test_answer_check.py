@@ -1,10 +1,10 @@
-"""Prose checks against the frozen books and the tool output behind an answer."""
+"""Partial fixtures test private assertions; CLI tests exercise public admission."""
 import json
 
-from answer_check import check_answer, main
+from answer_check import _check_assertions, main
 from conftest import run_cli
 
-CHART = {'chart_facts': {
+CHART = {'ok': True, 'tool': 'bazi_reading', 'chart_facts': {
     'hour_known': True,
     'day_master': {'stem': '乙'},
     'four_pillars': {'year': {'ganzhi': '庚午'}, 'month': {'ganzhi': '辛巳'},
@@ -13,11 +13,11 @@ CHART = {'chart_facts': {
 
 
 def codes(answer: str, *facts: dict) -> list[str]:
-    return [f['code'] for f in check_answer(answer, list(facts))['findings']]
+    return [f['code'] for f in _check_assertions(answer, list(facts))['findings']]
 
 
 def test_quote_found_in_named_book_passes_across_simplified_and_traditional_forms():
-    result = check_answer('《子平真诠》说「官逢财印，又无刑冲破害」，这是成格条件。', [])
+    result = _check_assertions('《子平真诠》说「官逢财印，又无刑冲破害」，这是成格条件。', [])
     assert result['passed'] and result['checked']['quotes_checked'] == 1
 
 
@@ -35,12 +35,12 @@ def test_elided_quote_needs_every_part_in_one_passage_in_order():
 
 
 def test_modern_speech_without_a_source_cue_is_not_checked():
-    result = check_answer('朋友说“这周先投简历再说吧”，可以照做。', [])
+    result = _check_assertions('朋友说“这周先投简历再说吧”，可以照做。', [])
     assert result['passed'] and result['checked']['quotes_skipped'] == 1
 
 
 def test_book_outside_the_library_is_a_warning_not_a_pass():
-    result = check_answer('《神峰通考》云「财官双美者一生衣禄丰盈无忧」。', [])
+    result = _check_assertions('《神峰通考》云「财官双美者一生衣禄丰盈无忧」。', [])
     assert [f['code'] for f in result['findings']] == ['quote_outside_library']
     assert result['passed']
 
@@ -117,7 +117,7 @@ def test_external_adversarial_set_is_classified_as_labelled():
     data = json.loads((Path(__file__).parent / 'data' / 'answer_check_adversarial.json').read_text(encoding='utf-8'))
     wrong = []
     for sample in data['samples']:
-        result = check_answer(sample['answer'], [data['facts'][name] for name in sample['facts']])
+        result = _check_assertions(sample['answer'], [data['facts'][name] for name in sample['facts']])
         got = {f['code'] for f in result['findings'] if f['severity'] == 'error'}
         ok = (not result['passed']) == sample['error'] and (
             not sample['error'] or not sample['codes_any'] or got & set(sample['codes_any']))
@@ -227,62 +227,62 @@ def test_round_three_fresh_set_gaps():
 
 
 def test_html_table_markup_is_a_warning_not_an_error():
-    from answer_check import check_answer
+    from answer_check import _check_assertions
     answer = '五行数量如下。\n\n| 五行 | 天干 |\n|---|---|\n| 合计 | colspan="2" 8 |\n'
-    result = check_answer(answer, [])
+    result = _check_assertions(answer, [])
     assert [f['code'] for f in result['findings']] == ['table_markup']
     assert result['passed'] is True
     fenced = '示例：\n```html\n<td colspan="2">x</td>\n```\n正文没有表。'
-    assert check_answer(fenced, [])['findings'] == []
+    assert _check_assertions(fenced, [])['findings'] == []
     tilde = '示例：\n~~~html\n<table><tr><td>x</td></tr></table>\n~~~\n正文没有表。'
-    assert check_answer(tilde, [])['findings'] == []
+    assert _check_assertions(tilde, [])['findings'] == []
 
 
 def test_plain_html_table_without_colspan_is_flagged():
-    from answer_check import check_answer
+    from answer_check import _check_assertions
     answer = '五行数量：\n<table>\n<tr><td>木</td><td>2</td></tr>\n</table>\n'
-    assert [f['code'] for f in check_answer(answer, [])['findings']] == ['table_markup']
-    assert check_answer('写作 <trust> 或 <thx> 不是表格标签。', [])['findings'] == []
+    assert [f['code'] for f in _check_assertions(answer, [])['findings']] == ['table_markup']
+    assert _check_assertions('写作 <trust> 或 <thx> 不是表格标签。', [])['findings'] == []
 
 
 def test_reported_classical_rules_and_stated_ties_are_not_tie_collapse():
     """Round 6 R2 S05: three rewrites over sentences that were correct."""
-    from answer_check import check_answer
+    from answer_check import _check_assertions
     facts = [{'tool': 'fortune_reading', 'recommendation': {'status': 'practical_tie'}, 'tied': ['a', 'b']}]
     fine = ['这天的地支子又是己的天乙贵人，书上说命带贵人最吉，所以也是大吉。',
             '这天地支子是己的天乙贵人，协纪说命贵人最吉。',
             '周二和周四在这套方法里算同一等级（都是大吉），古法本身分不出谁更好，你可以按自己方便二选一。']
     for answer in fine:
-        assert check_answer(answer, facts)['findings'] == [], answer
+        assert _check_assertions(answer, facts)['findings'] == [], answer
     for answer in ('协纪说周二最吉。', '周四最好。'):
-        assert [f['code'] for f in check_answer(answer, facts)['findings']] == ['tie_collapsed'], answer
+        assert [f['code'] for f in _check_assertions(answer, facts)['findings']] == ['tie_collapsed'], answer
 
 
 def test_variant_glyph_in_a_quote_is_not_a_fake_quote():
-    from answer_check import check_answer
+    from answer_check import _check_assertions
     facts = [{'tool': 'fortune_reading', 'x': '原文「支干合命愈為竒上上格也」（xieji:c033:p0020）'}]
-    assert check_answer('原文说「支干合命愈为奇，上上格」。', facts)['findings'] == []
+    assert _check_assertions('原文说「支干合命愈为奇，上上格」。', facts)['findings'] == []
 
 
 def test_round7_diagnostics_clock_lists_and_two_tied_candidates():
-    from answer_check import check_answer
+    from answer_check import _check_assertions
     facts = [{'tool': 'fortune_reading', 'recommendation': {'status': 'practical_tie'}, 'tied': ['a', 'b']}]
-    assert check_answer('周三可以 9:00/10:00/11:00 开始。', facts)['findings'] == []          # R7-R2-DIAG-02
-    assert check_answer('如果要一个干净落点，我会优先推荐这两个：', facts)['findings'] == []   # R7-R2-DIAG-03
-    assert check_answer('最好选周二上午或周四。', facts)['findings'] == []
-    assert [f['code'] for f in check_answer('最好选周二上午。', facts)['findings']] == ['tie_collapsed']
-    assert [f['code'] for f in check_answer('这次打 8/10。', [])['findings']] == ['invented_score']
+    assert _check_assertions('周三可以 9:00/10:00/11:00 开始。', facts)['findings'] == []          # R7-R2-DIAG-02
+    assert _check_assertions('如果要一个干净落点，我会优先推荐这两个：', facts)['findings'] == []   # R7-R2-DIAG-03
+    assert _check_assertions('最好选周二上午或周四。', facts)['findings'] == []
+    assert [f['code'] for f in _check_assertions('最好选周二上午。', facts)['findings']] == ['tie_collapsed']
+    assert [f['code'] for f in _check_assertions('这次打 8/10。', [])['findings']] == ['invented_score']
 
 
 def test_round8_tie_cases():
     """R8-TIE-01 and R8-R2-DIAG-02."""
-    from answer_check import check_answer
+    from answer_check import _check_assertions
     facts = [{'tool': 'fortune_reading', 'recommendation': {'status': 'preferences_required'}, 'tied': ['a', 'b']}]
     flagged = ['这两个里最好选周二上午。', '周二和周四虽然评级相同，但周二更好，应当首选周二。', '候选A是唯一首选，B只能作备选。']
     for answer in flagged:
-        assert [f['code'] for f in check_answer(answer, facts)['findings']] == ['tie_collapsed'], answer
+        assert [f['code'] for f in _check_assertions(answer, facts)['findings']] == ['tie_collapsed'], answer
     kept = ['候选A是周二上午，候选B是周四。最好选A或B。', '最好选A或B。', '最好选周二上午或周四。',
             '如果要一个干净落点，我会优先推荐这两个：', '周四9:00-10:38涉及未核完的忌时条件，建议能避开就优先避开。',
             '周二和周四评级同为大吉，工具没有给出谁更优，按你的偏好选都行。']
     for answer in kept:
-        assert check_answer(answer, facts)['findings'] == [], answer
+        assert _check_assertions(answer, facts)['findings'] == [], answer

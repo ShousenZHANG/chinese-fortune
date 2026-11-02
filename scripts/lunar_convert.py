@@ -19,7 +19,9 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,
+    ok_envelope,
     require_lunar,
+    validate_birth_input,
 )
 
 WEEKDAY_CN = ["星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"]
@@ -114,6 +116,9 @@ def _serialize(solar: Any, lunar: Any, hour_known: bool = True) -> dict:
 
 def cmd_solar2lunar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
     try:
+        problem = validate_birth_input(args.year, args.month, args.day, args.hour, args.minute)
+        if problem:
+            raise ValueError(problem)
         solar = Solar.fromYmdHms(
             args.year, args.month, args.day,
             args.hour or 0, args.minute or 0, 0,
@@ -123,8 +128,8 @@ def cmd_solar2lunar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
         json_print(error_envelope('lunar_convert', "invalid_date", str(e), input=vars(args)))
         return 1
 
-    json_print({"mode": "solar2lunar", "input": vars(args),
-                **_serialize(solar, lunar, hour_known=args.hour is not None)})
+    json_print(ok_envelope("lunar_convert", {"mode": "solar2lunar", "input": vars(args),
+                **_serialize(solar, lunar, hour_known=args.hour is not None)}))
     return 0
 
 
@@ -142,8 +147,8 @@ def cmd_lunar2solar(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
         json_print(error_envelope('lunar_convert', "invalid_date", str(e), input=vars(args)))
         return 1
 
-    json_print({"mode": "lunar2solar", "input": vars(args),
-                **_serialize(solar, lunar, hour_known=args.hour is not None)})
+    json_print(ok_envelope("lunar_convert", {"mode": "lunar2solar", "input": vars(args),
+                **_serialize(solar, lunar, hour_known=args.hour is not None)}))
     return 0
 
 
@@ -155,8 +160,8 @@ def cmd_today(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
         return 1
     solar = Solar.fromYmdHms(now.year, now.month, now.day, now.hour, now.minute, 0)
     lunar = solar.getLunar()
-    json_print({"mode": "today", "now_iso": now.isoformat(), "time_context": time_context,
-                **_serialize(solar, lunar, hour_known=True)})
+    json_print(ok_envelope("lunar_convert", {"mode": "today", "now_iso": now.isoformat(), "time_context": time_context,
+                **_serialize(solar, lunar, hour_known=True)}))
     return 0
 
 
@@ -165,7 +170,7 @@ def cmd_today(args: argparse.Namespace, Solar: Any, Lunar: Any) -> int:
 # --------------------------------------------------------------------------- #
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
-  mode input solar_date lunar_date ganzhi jieqi xiu_28
+  ok tool version mode input solar_date lunar_date ganzhi jieqi xiu_28 envelope
 
   time_in_ganzhi / ganzhi.hour are null when --hour is omitted;
   lunar_date.time_note then reads 时柱待补 (不揣测时辰).
@@ -181,7 +186,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="cmd", required=True)
 
     p1 = sub.add_parser("solar2lunar", help="公历转农历")
-    p1.add_argument("--year", type=int, required=True)
+    p1.add_argument("--year", type=int, required=True, help="公历年，支持1900至2100年")
     p1.add_argument("--month", type=int, required=True)
     p1.add_argument("--day", type=int, required=True)
     p1.add_argument("--hour", type=int, default=None,

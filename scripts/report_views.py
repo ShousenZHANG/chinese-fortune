@@ -37,8 +37,11 @@ def pillar_rows(result: dict, redact: bool = False) -> list[dict]:
     rows = []
     for key, label in ORDER:
         p = pillars.get(key)
-        if not p:
-            rows.append({'label': label, 'role': '未定', 'stem': '', 'branch': '', 'hidden': '', 'nayin': ''})
+        if not p or 'stem' not in p:
+            # Unknown birth time: keep the candidates, never a placeholder pillar.
+            candidates = '/'.join((p or {}).get('candidate_ganzhi') or [])
+            shown = ('候选（已隐去）' if candidates else '未定') if redact else (f'候选 {candidates}' if candidates else '未定')
+            rows.append({'label': label, 'role': '未定', 'stem': shown, 'branch': '', 'hidden': '', 'nayin': ''})
             continue
         rows.append({'label': label, 'role': roles.get(key, '—'),
                      'stem': MASK[0] if redact else p['stem'], 'branch': MASK[0] if redact else p['branch'],
@@ -78,15 +81,26 @@ def route_rows(result: dict) -> list[dict]:
 
 
 def luck_rows(result: dict) -> list[dict]:
-    return [{'ganzhi': row['ganzhi'], 'role': row.get('shi_shen', ''), 'ages': f"{row['start_age']}–{row['end_age']}",
-             'years': f"{row['start_year']}–{row['end_year']}"}
-            for row in result['chart_facts'].get('da_yun') or []]
+    rows = []
+    for row in result['chart_facts'].get('da_yun') or []:
+        cut = row.get('cut_at_death_year')
+        if cut:
+            last_age = row['start_age'] + cut - row['start_year']
+            ages = f"{row['start_age']}–{last_age}（卒年截止；原周期至 {row['end_age']}）"
+            years = f"{row['start_year']}–{cut}（卒年截止；原周期至 {row['end_year']}）"
+        else:
+            ages, years = f"{row['start_age']}–{row['end_age']}", f"{row['start_year']}–{row['end_year']}"
+        rows.append({'ganzhi': row['ganzhi'], 'role': row.get('shi_shen', ''), 'ages': ages, 'years': years})
+    return rows
 
 
 def sensitive_values(result: dict) -> list[str]:
     """Strings that identify the person or the birth moment."""
     facts = result['chart_facts']
-    values = [p['ganzhi'] for p in facts['four_pillars'].values() if p]
+    values: list[str] = []
+    for p in facts['four_pillars'].values():
+        if p:
+            values += [p['ganzhi']] if p.get('ganzhi') else list(p.get('candidate_ganzhi') or [])
     values += [result.get('question') or '']
     for block in ('solar_date', 'lunar_date', 'true_solar_time', 'timezone', 'birthplace', 'calendar_context'):
         value = facts.get(block)
@@ -94,7 +108,9 @@ def sensitive_values(result: dict) -> list[str]:
             values += [str(v) for v in value.values() if isinstance(v, (str, int, float)) and len(str(v)) >= 2]
         elif isinstance(value, str):
             values.append(value)
-    return sorted({v for v in values if _identifying(v)}, key=len, reverse=True)
+    # Longest first so a value inside another is not replaced first; ties broken by the text itself, so the
+    # result never depends on set order (R9-ST03).
+    return sorted({v for v in values if _identifying(v)}, key=lambda v: (-len(v), v))
 
 
 def _identifying(value: str) -> bool:
@@ -106,10 +122,29 @@ def _mask_ganzhi(text: str) -> str:
     return ''.join('□' if GANZHI_CHAR.fullmatch(ch) and i not in kept else ch for i, ch in enumerate(text))
 
 
+# A paragraph that walks through the birth moment (time zone, true solar time, day count from a public
+# anchor date) re-identifies the person even with every value masked, so a share preview drops it whole.
+BIRTH_WALKTHROUGH = ('推算过程', '真太阳时', '出生时刻')
+ZONE = re.compile(r'\b[A-Z][A-Za-z]+/[A-Za-z_]+(?:/[A-Za-z_]+)?\b|UTC\s*[+-]\s*\d{1,2}(?::?\d{2})?|GMT\s*[+-]\s*\d{1,2}')
+LONG_NUMBER = re.compile(r'\d{3,}')
+# A passage id names a public paragraph of a bundled book, not the person; its digits stay readable.
+PASSAGE_ID = re.compile(r'([a-z_]+:c\d{3}:p\d{4})')
+
+
+def shareable(paragraph: str) -> bool:
+    return not paragraph.startswith(BIRTH_WALKTHROUGH)
+
+
 def redact_text(text: str, result: dict) -> str:
+    pieces = PASSAGE_ID.split(text)
+    return ''.join(piece if i % 2 else _redact_piece(piece, result) for i, piece in enumerate(pieces))
+
+
+def _redact_piece(text: str, result: dict) -> str:
     for value in sensitive_values(result):
         text = text.replace(value, MASK)
-    return _mask_ganzhi(DATE_TIME.sub(MASK, YEAR.sub(MASK, text)))
+    text = ZONE.sub(MASK, DATE_TIME.sub(MASK, YEAR.sub(MASK, text)))
+    return _mask_ganzhi(LONG_NUMBER.sub(MASK, text))
 
 
 def professional_markdown(result: dict, redact: bool) -> str:

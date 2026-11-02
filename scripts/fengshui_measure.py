@@ -91,8 +91,10 @@ def measure(bearing: float, of: str, reference: str, error: float, declination: 
                  'division': '二十四位等分，每山 15°（原文只说二十四方位，度数为等分推出）',
                  'scope': '只做坐向分类，不判吉凶，不排宅盘'}
     what = '朝向' if of == 'facing' else '坐向'
-    north = '真北' if used == 'true' else '磁北'
-    head = f"测得{what} {bearing:g}°（按{north}，误差 ±{error:g}°）"
+    north_in = '磁北' if reference == 'magnetic' else '真北'
+    head = f"测得{what} {bearing:g}°（按{north_in}，误差 ±{error:g}°）"
+    if reference == 'magnetic' and used == 'true':
+        head += f"，加磁偏角 {declination:+g}° 换成真北 {converted:g}°"
     if face['ambiguous']:
         names = '、'.join(c['mountain'] for c in face['candidates'])
         say = f"{head}：误差范围跨{names}几山，坐向要复测，不能取整定成一山。"

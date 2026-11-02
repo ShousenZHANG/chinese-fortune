@@ -12,6 +12,8 @@ from __future__ import annotations
 import re
 from collections.abc import Iterator
 
+from answer_evidence import PillarEvidence
+
 STEM = '甲乙丙丁戊己庚辛壬癸'
 BRANCH = '子丑寅卯辰巳午未申酉戌亥'
 GZ = f'[{STEM}][{BRANCH}]'
@@ -27,7 +29,8 @@ DENIAL = re.compile(r'不能说|不能讲|不能把|不能写|不能断言|不�
                     r'|明确不出|工具不出|不出分|给不出|不给出|不打分|打不了|编不出|没法打|无法打|没有可以|没有能够|没有办法'
                     r'|不能据此断言|不能据此说|没有证据证明|没有证据说|无法证明|不能证明'
                     r'|谈不上|不等于|不代表|并不意味|不是说|没有依据说|没依据说|不认为|不觉得|不认可|不同意|否认|不能直接说'
-                    r'|不要把|别把|不应把|不该把|不能当成|不要当成|不要理解成|别理解成|不要看成|别看成')
+                    r'|不要把|别把|不应把|不该把|不能当成|不要当成|不要理解成|别理解成|不要看成|别看成'
+                    r'|并没有|并未|没有作出|没有做出|未作出|不作任何|没有任何')
 NEGATED_BEFORE = re.compile(r'(?:并非|不是|不算|没有|未必|谈不上|无法|不能|没法|[不非没未别])\s*$')
 DENIED_PREMISE = re.compile(r'不能(?:仅|单|只|光)?凭|不能因为|不能由|不能根据')
 RETRACTED_AFTER = re.compile(r'不能成立|不成立|说不得|不能这么说|不能说死|是错误的|是错的|不对')
@@ -38,6 +41,7 @@ HOUR_CLAIM = re.compile(r'(?:出生时间|出生时刻|生时)\s*(?:就是|是|�
                         r'|(?:确定|就是|定为)[^，,。；;]{0,2}[子丑寅卯辰巳午未申酉戌亥]时出生')
 HEDGED_AFTER = re.compile(r'^[^，,。；;而但且和与及]{0,6}(?:候选|之一|待定|未定|尚未|假设|待核)')
 SUBJECT = re.compile(r'(?<![A-Za-z])([AB])(?![A-Za-z])')
+CORRECTION_PHASE = re.compile(r'更正前|原来|更正后|当前|现在|目前|最新')
 SEQUENCE = re.compile(rf'(?:四柱|八字|命盘|排盘)[^。\n{STEM}]{{0,6}}({GZ})[、，,\s]*({GZ})[、，,\s]*({GZ})(?:[、，,\s]*({GZ}))?')
 DAY_MASTER = re.compile(rf'日主\s*(?:是|为|為|：|:)?\s*([{STEM}])')
 
@@ -146,7 +150,10 @@ def charts(facts: list[dict]) -> list[dict]:
                 found.append({**{slot: _ganzhi(pillars.get(slot)) for slot in ORDER},
                               'hour_known': value.get('hour_known', True) is not False, 'label': label})
             for key, item in value.items():
-                visit(item, key if key in ('A', 'B') else label)
+                if value.get('tool') == 'birth_correction' and key in ('before', 'after'):
+                    visit(item, f'birth_correction:{key}')
+                else:
+                    visit(item, key if key in ('A', 'B') else label)
         elif isinstance(value, list):
             for item in value:
                 visit(item, label)
@@ -155,18 +162,22 @@ def charts(facts: list[dict]) -> list[dict]:
 
 
 def _subject_charts(found: list[dict], prefix: str) -> list[dict]:
-    """The charts a claim is about: the last A/B named before it, else every chart."""
+    """Bind A/B claims, or a correction phase with the last admitted after as current."""
     named = SUBJECT.findall(prefix)
     chosen = [c for c in found if named and c['label'] == named[-1]]
-    return chosen or found
+    if chosen:
+        return chosen
+    phases = CORRECTION_PHASE.findall(prefix)
+    phase = 'before' if phases and phases[-1] in ('更正前', '原来') else 'after'
+    chosen = [c for c in found if c['label'] == f'birth_correction:{phase}']
+    return chosen[-1:] or found
 
 
 def _finding(code: str, excerpt: str, detail: str) -> dict:
     return {'code': code, 'severity': 'error', 'excerpt': excerpt[:80], 'detail': detail}
 
 
-def _table_pillars(answer: str) -> Iterator[tuple[str, str, str]]:
-    """(slot, 干支, row) from Markdown tables whose own header row names the pillars."""
+def _table_pillars(answer: str) -> Iterator[tuple[str, str, str, str | None]]:
     tables: list[list[str]] = []
     previous_was_row = False
     for line in answer.splitlines():
@@ -182,18 +193,37 @@ def _table_pillars(answer: str) -> Iterator[tuple[str, str, str]]:
         header = [next((SLOTS[ch] for ch in SLOTS if c.startswith(ch + '柱')), None) for c in cells]
         if not any(header) or any(MOMENT_HEADER.search(c) for c in cells):
             continue  # a table of moments or candidates compares times, not this birth chart
-        found = [(slot, match.group(0), row) for row in rows[1:]
-                 for slot, cell in zip(header, (c.strip() for c in row.strip().strip('|').split('|')))
-                 if slot and (match := re.search(GZ, cell))]
-        if all(len({gz for s2, gz, _ in found if s2 == slot}) <= 1 for slot in ORDER):
-            yield from found
+        subject_column = next((i for i, c in enumerate(cells)
+                               if c in ('人', '人物', '对象', '主体', '身份', '参与者', '阶段', '更正阶段')), None)
+        found: list[tuple[str, str, str, str | None]] = []
+        values: dict[tuple[str | None, str], set[str]] = {}
+        for row in rows[1:]:
+            row_cells = [c.strip() for c in row.strip().strip('|').split('|')]
+            scope = (row_cells[subject_column]
+                     if subject_column is not None and subject_column < len(row_cells) else '')
+            subject = re.fullmatch(r'([AB])(?:方)?', scope)
+            phase = CORRECTION_PHASE.search(scope)
+            label = subject.group(1) if subject else phase.group(0) if phase else None
+            for slot, cell in zip(header, row_cells):
+                if slot:
+                    for ganzhi in re.findall(GZ, cell):
+                        found.append((slot, ganzhi, row, label))
+                        values.setdefault((label, slot), set()).add(ganzhi)
+        for slot, ganzhi, row, label in found:
+            if len(values[label, slot]) == 1:
+                yield slot, ganzhi, row, label
 
 
-def pillar_findings(answer: str, facts: list[dict], checked: dict) -> list[dict]:
-    found = charts(facts)
+def pillar_findings(answer: str, facts: list[dict], checked: dict,
+                    pillars: tuple[PillarEvidence, ...] | None = None) -> list[dict]:
+    found = charts(facts) if pillars is None else [
+        {**{slot: _ganzhi(chart.four_pillars.get(slot)) for slot in ORDER},
+         'hour_known': chart.hour_known, 'label': chart.label} for chart in pillars]
     if not found:
         return []
-    claims: list[tuple[str, str, str, list[dict]]] = [(slot, gz, row, found) for slot, gz, row in _table_pillars(answer)]
+    claims: list[tuple[str, str, str, list[dict]]] = [
+        (slot, gz, row, _subject_charts(found, label or ''))
+        for slot, gz, row, label in _table_pillars(answer)]
     findings: list[dict] = []
     master_findings: list[dict] = []
     for sentence in sentences(answer):
@@ -205,10 +235,10 @@ def pillar_findings(answer: str, facts: list[dict], checked: dict) -> list[dict]
             if asserted(sentence, match.start(), match.end()):
                 about = _subject_charts(found, sentence[:match.start()])
                 claims += [(slot, gz, match.group(0), about) for slot, gz in zip(ORDER, match.groups()) if gz]
-        if not any(c['hour_known'] for c in found):
-            for match in HOUR_CLAIM.finditer(sentence):
-                if asserted(sentence, match.start(), match.end()):
-                    findings.append(_finding('unknown_hour_pillar', match.group(0), '出生时辰未知，不能把某个时刻说成已定'))
+        for match in HOUR_CLAIM.finditer(sentence):
+            about = _subject_charts(found, sentence[:match.start()])
+            if not any(c['hour_known'] for c in about) and asserted(sentence, match.start(), match.end()):
+                findings.append(_finding('unknown_hour_pillar', match.group(0), '出生时辰未知，不能把某个时刻说成已定'))
         for match in DAY_MASTER.finditer(sentence):
             checked['pillars_checked'] += 1
             if not asserted(sentence, match.start(), match.end()):

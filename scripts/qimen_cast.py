@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime
 
 from qimen_dingju import (
     SOURCE_URL,
@@ -99,6 +100,24 @@ def earth_plate(ju_type: str, ju_number: int) -> dict[int, str]:
     path = [full_seq[(start_idx + k) % 9] for k in range(9)]
 
     return {palace: YIQI_ORDER[k] for k, palace in enumerate(path)}
+
+
+def dunjia_futou(instant: datetime, effective_clock: datetime | None = None) -> dict:
+    """Automatic Dunjia plate at an actual instant, with a separate local day/hour clock."""
+    require_lunar()
+    from lunar_python import Lunar, Solar
+    clock = effective_clock if effective_clock is not None else instant
+    lunar = Solar.fromYmdHms(clock.year, clock.month, clock.day,
+                            clock.hour, clock.minute, clock.second).getLunar()
+    ganzhi = {'year': lunar.getYearInGanZhi(), 'month': lunar.getMonthInGanZhi(),
+              'day': lunar.getDayInGanZhi(), 'hour': lunar.getTimeInGanZhi(),
+              'month_shuo': Lunar.fromYmd(lunar.getYear(), lunar.getMonth(), 1).getDayInGanZhi()}
+    term = seasonal_context(instant)
+    ju_type, yuan, number = determine_ju(term['name'], ganzhi['day'])
+    pl = plate(earth_plate(ju_type, number), ju_type, ganzhi['hour'])
+    return {'ganzhi': ganzhi, 'solar_term': term, 'ju_type': ju_type,
+            'san_yuan': yuan, 'ju_number': number, 'plate': pl,
+            'patterns': detect(pl, ganzhi)}
 
 
 # --------------------------------------------------------------------------- #
@@ -402,6 +421,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     term_context = None
     day_futou = None
+    automatic_dunjia = None
     if args.ju_type and args.ju_number:
         ju_type = "阳遁" if args.ju_type == "yang" else "阴遁"
         ju_number = args.ju_number
@@ -413,9 +433,16 @@ def main(argv: list[str] | None = None) -> int:
                 jq_name, days_since = jieqi_context(y, m, d)
                 ju_type, san_yuan, ju_number = determine_ju_legacy(jq_name, days_since)
             else:
-                term_context = seasonal_context(dt)
-                jq_name = term_context["name"]
-                ju_type, san_yuan, ju_number = determine_ju(jq_name, day_gz)
+                if args.plate_method == 'dunjia-zhuanpan':
+                    automatic_dunjia = dunjia_futou(dt, datetime(y, m, d, hh, mm, dt.second))
+                    term_context = automatic_dunjia['solar_term']
+                    ju_type = automatic_dunjia['ju_type']
+                    san_yuan = automatic_dunjia['san_yuan']
+                    ju_number = automatic_dunjia['ju_number']
+                else:
+                    term_context = seasonal_context(dt)
+                    ju_type, san_yuan, ju_number = determine_ju(term_context['name'], day_gz)
+                jq_name = term_context['name']
                 day_futou, _ = futou(day_gz)
         except (ValueError, KeyError) as e:
             json_print(error_envelope('qimen', "ju_determination_failed", str(e)))
@@ -439,7 +466,7 @@ def main(argv: list[str] | None = None) -> int:
     zhi_fu_landed = shi_gan_palace
     not_computed: list[dict] = []
     if args.plate_method == 'dunjia-zhuanpan':
-        pl = plate(earth, ju_type, hour_gz)
+        pl = automatic_dunjia['plate'] if automatic_dunjia else plate(earth, ju_type, hour_gz)
         zhi_fu_star = pl['zhi_fu']['star']
         zhi_fu_landed = pl['zhi_fu']['palace']
         zhi_shi_men = pl['zhi_shi']['door']
@@ -447,8 +474,9 @@ def main(argv: list[str] | None = None) -> int:
         palaces = palace_rows(pl)
         from lunar_python import Lunar  # type: ignore
         shuo = Lunar.fromYmd(lunar.getYear(), lunar.getMonth(), 1).getDayInGanZhi()
-        patterns = detect(pl, {'year': year_gz, 'month': month_gz, 'month_shuo': shuo,
-                               'day': day_gz, 'hour': hour_gz})
+        patterns = (automatic_dunjia['patterns'] if automatic_dunjia else
+                    detect(pl, {'year': year_gz, 'month': month_gz, 'month_shuo': shuo,
+                                'day': day_gz, 'hour': hour_gz}))
         not_computed = NOT_COMPUTED
     elif args.plate_method == 'yuanling-core':
         # Never fill unsupported cells with another method's arrangement.

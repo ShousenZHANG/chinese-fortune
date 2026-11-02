@@ -278,12 +278,14 @@ def main(argv: list[str] | None = None) -> int:
     except ValueError as exc:
         json_print(error_envelope('rule_registry', 'unknown_family', str(exc)))
         return 1
-    out = {'ok': not result['broken'], 'tool': 'rule_registry', 'version': __version__,
-           'families': result['families'], 'total_rules': result['total_rules'], 'broken': result['broken']}
+    detail = {'families': result['families'], 'total_rules': result['total_rules'], 'broken': result['broken']}
     if args.family:
-        out['rules'] = result['rules']
-    json_print(out)
-    return 0 if out['ok'] else 1
+        detail['rules'] = result['rules']
+    if result['broken']:
+        json_print(error_envelope('rule_registry', 'broken_chain', f"{len(result['broken'])} 处断链，明细见 broken", **detail))
+        return 1
+    json_print({'ok': True, 'tool': 'rule_registry', 'version': __version__, **detail})
+    return 0
 
 
 if __name__ == '__main__':

@@ -132,7 +132,7 @@ def test_cast_cli_full_plate_and_old_plate_no_longer_judges_patterns():
 
 def test_selection_never_keeps_a_vetoed_hour():
     got = run_cli('qimen_select.py', '--from', '2026-11-02', '--days', '3', '--target-timezone', 'Asia/Shanghai')
-    assert got['candidates'] and sum(got['excluded'].values()) + len(got['candidates']) == 36
+    assert got['candidates'] and sum(got['excluded'].values()) + len(got['candidates']) == 39
     keys = [(c['date'], c['sampled_at']) for c in got['candidates']]
     assert keys == sorted(keys)
     assert '不分高下' in got['say']

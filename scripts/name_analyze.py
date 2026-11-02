@@ -474,7 +474,11 @@ def main(argv: list[str] | None = None) -> int:
         "layers": {
             "computed": [{"aspect": "五格数字与三才五行", "system": "熊崎式五格剖象（近代日本，非古籍）",
                           "fields": ["five_grids", "san_cai"]},
-                         {"aspect": "逐字康熙笔画", "system": "assets/name_bihua.json 康熙笔画表",
+                         {"aspect": "逐字笔画",
+                          "system": ("assets/name_bihua.json 康熙笔画表" if not missing else
+                                     f"assets/name_bihua.json 康熙笔画表；{'、'.join(missing)} 不在表中，按默认 8 画估算，"
+                                     "五格数字随之待核"),
+                          "estimated": missing,
                           "fields": ["characters"]}],
             "not_computed": NOT_COMPUTED,
         },
