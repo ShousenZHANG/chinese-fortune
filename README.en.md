@@ -94,8 +94,10 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 | Appointment times | interview, exam, travel, moving | 相主 plus event day rules; interviews and exams also 《奇门遁甲元灵经》 |
 | Colours, accessories | what to wear | 《穷通宝鉴》 general 调候 choice (the cell's exceptions not checked against your chart) |
 | Almanac | a day's dos and don'ts | sourced day rules from 《协纪辨方书》《渊海子平》 |
-| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun, monthly, daily and hourly layers (palaces match iztro; the late-zi hour stem follows this project's stated convention) |
-| Marriage and family pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other; classified, never scored |
+| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun, monthly, daily and hourly layers (palaces match iztro; the late-zi hour stem follows this project's stated convention); Liu Yao judges the rule-library conditions the chart decides; Qi Men offers the 《遁甲演义》 full rotating plate with its volume-two patterns and hour selection; Liu Ren covers all nine transmission methods |
+| Marriage, family and partnership pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other, clauses filtered by relationship type; classified, never scored; marriage also gets the 《选择要略》 three-yuan nine-palace match with its recorded objection |
+| Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
+| Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
 | Classical text lookup | passages, editions, context | 13 frozen transcriptions, 535 units, 18,982 paragraphs, offline |
 | Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
@@ -109,7 +111,7 @@ Answers are written in Chinese; see the [plain-language output example](docs/OUT
 
 A complete transcription, implemented rules, image collation and predictive validity are separate claims. Tests do not establish predictive accuracy.
 
-When the 用神 is not on a Liu Yao hexagram, `fu_shen` follows the 增删卜易: the month or day branch first, otherwise the hidden line from the palace's pure hexagram, with its flying line and their 生克; whether it can be used is not judged. Zi Wei patterns now follow the lines of the 紫微斗数全书: each one carries the passage id, the exact line and four condition lists (required, bonus, breaking, to_check); readings the text leaves open are marked `quanshu_reading` with a note. The old `candidate_only` fields are gone; see [MIGRATION-5.11](docs/MIGRATION-5.11.md).
+When the 用神 is not on a Liu Yao hexagram, `fu_shen` follows the 增删卜易: the month or day branch first, otherwise the hidden line from the palace's pure hexagram, with its flying line and their 生克; whether it can be used is not judged. Zi Wei patterns now follow the lines of the 紫微斗数全书: each one carries the passage id, the exact line and four condition lists (required, bonus, breaking, to_check); readings the text leaves open are marked `quanshu_reading` with a note. The old `candidate_only` fields are gone; see [MIGRATION-5.11](docs/MIGRATION-5.11.md). All 6.0 interface changes (result envelope, error classes, new entry points) are in [MIGRATION-6.0](docs/MIGRATION-6.0.md).
 
 ## Why trust it
 
