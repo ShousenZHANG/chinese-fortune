@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
+sys.path.insert(0, str(ROOT / 'skills/chinese-fortune/scripts'))
 
 from classical_search import get_passage  # noqa: E402
 from fortune_ranking import (  # noqa: E402
@@ -120,7 +120,7 @@ def test_a_settled_stem_cites_a_passage_that_backs_the_hours_it_names():
 
 
 def test_precedence_moved_the_wu_gui_case_into_the_unresolved_table():
-    text = (ROOT / 'references' / '26-precedence.md').read_text(encoding='utf-8')
+    text = (ROOT / 'skills/chinese-fortune/references' / '26-precedence.md').read_text(encoding='utf-8')
     assert '只有《渊海》的子丑符合该判据' not in text
     unresolved = text.split('## 已知的未决分歧')[1]
     assert '截路空亡戊癸' in unresolved
@@ -538,7 +538,7 @@ def test_the_style_lists_match_the_reference():
     import re
 
     from answer_style import CLASS_A, CLASS_B, CLASS_B_NEEDS_REASON, style_violations
-    md = (ROOT / 'references' / '27-direct-answer.md').read_text(encoding='utf-8')
+    md = (ROOT / 'skills/chinese-fortune/references' / '27-direct-answer.md').read_text(encoding='utf-8')
 
     def block(title: str) -> set[str]:
         body = re.search(rf'### {title}.*?```\n(.*?)```', md, re.S)

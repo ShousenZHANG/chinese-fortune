@@ -24,7 +24,7 @@ from build_skill import SCRIPT_EXCLUDE
 from utils import ENVELOPE_VERSION, ERROR_NEXT_STEP
 
 ROOT = Path(__file__).resolve().parent.parent
-SCRIPTS = ROOT / "scripts"
+SCRIPTS = ROOT / "skills/chinese-fortune/scripts"
 
 try:
     import lunar_python  # noqa: F401
@@ -247,7 +247,7 @@ def test_no_engine_hand_rolls_an_error_envelope():
     """
     import ast
     offenders = []
-    for f in sorted((ROOT / "scripts").glob("*.py")):
+    for f in sorted((ROOT / "skills/chinese-fortune/scripts").glob("*.py")):
         tree = ast.parse(f.read_text(encoding="utf-8"), filename=str(f))
         for node in ast.walk(tree):
             if not (isinstance(node, ast.Call)

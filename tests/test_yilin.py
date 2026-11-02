@@ -9,7 +9,7 @@ from conftest import run_cli
 from yilin_lookup import GUA, canon, lin
 
 ROOT = Path(__file__).resolve().parents[1]
-KNOWLEDGE = ROOT / 'knowledge'
+KNOWLEDGE = ROOT / 'skills/chinese-fortune/knowledge'
 
 
 def _chapter(book: str, cid: str) -> dict:

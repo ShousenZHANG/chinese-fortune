@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
     ('2.12', '金舆'), ('3.1', '羊刃'), ('3.6', '红艳煞'),
 ])
 def test_day_stem_reference_tables_match_selected_asset(section: str, name: str) -> None:
-    md = (ROOT / 'references/19-shensha.md').read_text(encoding='utf-8')
+    md = (ROOT / 'skills/chinese-fortune/references/19-shensha.md').read_text(encoding='utf-8')
     body = md.split('### ' + section + ' ', 1)[1].split('\n### ', 1)[0]
     parsed = {}
     for stems, branches in re.findall(
@@ -22,7 +22,7 @@ def test_day_stem_reference_tables_match_selected_asset(section: str, name: str)
         for stem in stems.split('、'):
             assert stem not in parsed, (name, stem)
             parsed[stem] = set(branches.split('、'))
-    data = json.loads((ROOT / 'assets/shensha.json').read_text(encoding='utf-8'))
+    data = json.loads((ROOT / 'skills/chinese-fortune/assets/shensha.json').read_text(encoding='utf-8'))
     asset = next(row['qi_fa_table'] for group in ('ji_shen', 'xiong_sha')
                  for row in data[group] if row['name'] == name)
     assert set(parsed) == set('甲乙丙丁戊己庚辛壬癸')

@@ -33,7 +33,7 @@ JIAN_CHU = ["建", "除", "满", "平", "定", "执", "破", "危", "成", "收"
 
 def run_day(d: date) -> dict:
     proc = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "huangli_query.py"),
+        [sys.executable, str(ROOT / "skills/chinese-fortune/scripts" / "huangli_query.py"),
          "--date", d.isoformat()],
         capture_output=True, text=True, encoding="utf-8", errors="replace")
     assert proc.returncode == 0, proc.stderr[-400:]
@@ -83,7 +83,7 @@ def test_zhi_shen_cycles_without_gap_across_a_month():
 
 def test_huangdao_heidao_split_matches_the_reference():
     """黄道/黑道 六六分, 且十二值神不重不漏。"""
-    md = (ROOT / "references" / "12-huangli.md").read_text(encoding="utf-8")
+    md = (ROOT / "skills/chinese-fortune/references" / "12-huangli.md").read_text(encoding="utf-8")
     import re
     rows = {}
     for category in ('黄道类', '黑道类'):
@@ -165,7 +165,7 @@ def test_clause_conflicts_are_empty_on_an_ordinary_day(d):
 
 def run_markdown(d: date, question: str) -> str:
     proc = subprocess.run(
-        [sys.executable, "-X", "utf8", str(ROOT / "scripts" / "huangli_query.py"),
+        [sys.executable, "-X", "utf8", str(ROOT / "skills/chinese-fortune/scripts" / "huangli_query.py"),
          "--date", d.isoformat(), "--question", question, "--markdown"],
         capture_output=True, text=True, encoding="utf-8")
     assert proc.returncode == 0, proc.stderr[-400:]
@@ -203,7 +203,7 @@ def test_day_prohibitions_are_published_per_event():
 
 
 def test_the_question_classifier_is_shared_and_strict():
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     from answer_style import event_of, question_kind
     assert event_of("下周三搬家行不行") == "moving"
     assert event_of("先结婚再搬家") is None      # two events: do not guess
@@ -214,7 +214,7 @@ def test_the_question_classifier_is_shared_and_strict():
 @pytest.mark.parametrize("d", [date(2026, 10, 29), date(2026, 10, 14), date(2020, 6, 2), date(2026, 3, 10)],
                          ids=lambda d: d.isoformat())
 def test_markdown_keeps_to_the_direct_answer_word_lists(d):
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     from answer_style import style_violations
     for question in ("", "这天搬家可以吗", "哪天结婚好", "开业行不行", "今天装修可以吗"):
         text = run_markdown(d, question) if question else run_markdown(d, "今天适合干什么")

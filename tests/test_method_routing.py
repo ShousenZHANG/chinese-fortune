@@ -74,7 +74,7 @@ def test_routed_command_templates_reach_real_clis(question, tmp_path):
     if 'tarot_draw.py' in args[0] or 'liuyao_cast.py' in args[0]:
         args += ['--seed', '7']
     done = subprocess.run([sys.executable, '-X', 'utf8', *args],
-                          cwd=Path(__file__).resolve().parents[1], capture_output=True, text=True, encoding='utf-8')
+                          cwd=Path(__file__).resolve().parents[1] / 'skills/chinese-fortune', capture_output=True, text=True, encoding='utf-8')
     assert done.returncode == 0, done.stdout + done.stderr
     if '--facts-out' in args:     # the JSON goes to the file; the screen gets the plain draft
         saved = Path(args[args.index('--facts-out') + 1])

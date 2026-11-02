@@ -10,7 +10,7 @@ import pytest
 from life_guide import decide, glossary, search, sections
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = json.loads((ROOT / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
+DATA = json.loads((ROOT / 'skills/chinese-fortune/assets' / 'life_guide.json').read_text(encoding='utf-8'))
 SHANGHAI = {'current_timezone': 'Asia/Shanghai'}
 SYDNEY = {'current_timezone': 'Australia/Sydney'}
 ENTRIES = {(e['section'], e['number']): e for e in DATA['entries']}
@@ -256,7 +256,7 @@ def test_the_markdown_draft_cites_every_row_and_leaves_the_conclusion_to_the_hos
 
 def test_the_cli_decides_and_lists():
     def run(*argv):
-        proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'scripts' / 'life_guide.py'), *argv],
+        proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / 'life_guide.py'), *argv],
                               capture_output=True, text=True, encoding='utf-8')
         assert proc.returncode == 0, proc.stderr
         return proc.stdout

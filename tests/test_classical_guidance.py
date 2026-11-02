@@ -101,19 +101,19 @@ def test_extractor_preserves_unknowns_and_separates_explicit_modern_notes() -> N
 
 def test_frozen_source_archive_can_rebuild_added_chapters(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
     """Reconstruct API capture from tracked provenance, with no network/cache dependency."""
-    manifest = json.loads((ROOT / 'knowledge/manifest.json').read_text(encoding='utf-8'))
+    manifest = json.loads((ROOT / 'skills/chinese-fortune/knowledge/manifest.json').read_text(encoding='utf-8'))
     indexes, pages = {}, {}
     for book in manifest['books']:
         if book['id'] not in EXPECTED:
             continue
         title = parse_qs(urlsplit(book['source_url']).query)['title'][0]
         indexes[title] = {'title': title, 'revision': book['revision'], 'timestamp': book['source_timestamp'],
-                          'raw': (ROOT / 'knowledge' / book['index_path']).read_text(encoding='utf-8')}
+                          'raw': (ROOT / 'skills/chinese-fortune/knowledge' / book['index_path']).read_text(encoding='utf-8')}
         for row in book['chapters']:
-            ch = json.loads((ROOT / 'knowledge' / row['path']).read_text(encoding='utf-8'))
+            ch = json.loads((ROOT / 'skills/chinese-fortune/knowledge' / row['path']).read_text(encoding='utf-8'))
             page_title = parse_qs(urlsplit(ch['source_url']).query)['title'][0]
             pages[page_title] = {'title': page_title, 'revision': ch['revision'], 'timestamp': ch['source_timestamp'],
-                                'raw': (ROOT / 'knowledge' / ch['raw_path']).read_text(encoding='utf-8')}
+                                'raw': (ROOT / 'skills/chinese-fortune/knowledge' / ch['raw_path']).read_text(encoding='utf-8')}
     (tmp_path / 'indexes.json').write_text(json.dumps(indexes, ensure_ascii=False), encoding='utf-8')
     (tmp_path / 'pages.json').write_text(json.dumps(pages, ensure_ascii=False), encoding='utf-8')
     for title in ['遁甲演義 (四庫全書本)', '六壬大全 (四庫全書本)', '奇門遁甲元靈經']:
@@ -127,7 +127,7 @@ def test_frozen_source_archive_can_rebuild_added_chapters(tmp_path: Path, monkey
     assert {b['id']: len(b['chapters']) for b in books} == EXPECTED
     for book in books:
         for chapter in book['chapters']:
-            assert (tmp_path / 'rebuilt' / chapter['path']).read_bytes() == (ROOT / 'knowledge' / chapter['path']).read_bytes()
+            assert (tmp_path / 'rebuilt' / chapter['path']).read_bytes() == (ROOT / 'skills/chinese-fortune/knowledge' / chapter['path']).read_bytes()
 
 
 def test_cli_errors_are_machine_readable(capsys: pytest.CaptureFixture) -> None:

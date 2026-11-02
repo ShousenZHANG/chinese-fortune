@@ -18,7 +18,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / "scripts"
+SCRIPTS = ROOT / "skills/chinese-fortune/scripts"
 VENDORED = {"lunar_python": "1.4.8", "tzdata": "2026.3"}
 LICENCES = {"lunar_python": ["LICENSE"], "tzdata": ["licenses/LICENSE", "licenses/licenses/LICENSE_APACHE"]}
 BARE = {**os.environ, "PYTHONTZPATH": ""}      # no system zoneinfo: tzdata must come from scripts/
@@ -104,7 +104,7 @@ def test_no_runtime_requirement_file_invites_a_pip_install():
 
 
 def _frontmatter() -> dict:
-    head = (ROOT / "SKILL.md").read_text(encoding="utf-8").split("---", 2)[1]
+    head = (ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8").split("---", 2)[1]
     return dict(line.split(": ", 1) for line in head.strip().splitlines())
 
 
@@ -112,7 +112,7 @@ def test_the_skill_states_what_it_needs_and_never_asks_for_pip():
     meta = _frontmatter()
     assert "Python 3.9" in meta["compatibility"] and len(meta["compatibility"]) <= 500
     assert meta["license"] == "MIT"
-    skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    skill = (ROOT / "skills/chinese-fortune/SKILL.md").read_text(encoding="utf-8")
     assert "pip install" not in skill and "python3" in skill and "py -3" in skill
     for readme in ("README.md", "README.en.md"):
         text = (ROOT / readme).read_text(encoding="utf-8")
@@ -126,6 +126,8 @@ def test_the_plugin_marketplace_installs_this_skill_at_this_version():
     market = json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
     assert market["name"] == "chinese-fortune" and market["owner"]["name"]
     (plugin,) = market["plugins"]
-    assert plugin["name"] == "chinese-fortune" and plugin["source"] == "./"
+    assert plugin["name"] == "chinese-fortune" and plugin["source"] == "./skills/chinese-fortune"
     assert plugin["version"] == __version__
-    assert (ROOT / "SKILL.md").is_file() and not (ROOT / "skills").exists()   # root SKILL.md = one skill
+    # The plugin root is the skill folder, which holds SKILL.md directly (one skill). No SKILL.md at the
+    # repository root: the skills CLI would take the whole repository as the skill and shadow this one.
+    assert (ROOT / plugin["source"] / "SKILL.md").is_file() and not (ROOT / "SKILL.md").exists()

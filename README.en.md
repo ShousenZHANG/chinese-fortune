@@ -6,61 +6,50 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](#install)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Your AI reads BaZi, picks dates and answers fortune questions from the classical Chinese texts themselves: the answer comes first in plain language, every quotation carries its source and a plain explanation, and stems, branches, day grades and luck-cycle verdicts are computed by scripts, not recalled by the model. It also answers everyday questions from the life guide 《高性价比人生指南》.
+**Chinese fortune-telling for your AI, read from the classical texts themselves: plain-language answers, and every quotation traceable to its passage.**
 
-[中文](README.md) · [Install](#install) · [Ask](#what-to-ask) · [Capabilities](#capabilities) · [Update and remove](#update-and-remove)
+An [Agent Skill](https://agentskills.io): stems, branches, day grades and luck-cycle verdicts are computed by bundled scripts, and the AI explains them instead of recalling them. Fifteen frozen classical transcriptions are searchable offline, and everyday questions are answered from the life guide 《高性价比人生指南》. Works with Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, claude.ai and MCP-only hosts.
+
+[中文](README.md) · [Install](#install) · [What to ask](#what-to-ask) · [Capabilities](#capabilities) · [Why trust it](#why-trust-it) · [Update and remove](#update-and-remove)
 
 ## Install
 
-**Easiest: send your AI this line**
+The easiest way is to send your AI this line:
 
 > Install this skill: https://github.com/ShousenZHANG/chinese-fortune
 
-**Claude Code**
-
-```text
-/plugin marketplace add ShousenZHANG/chinese-fortune
-/plugin install chinese-fortune@chinese-fortune
-```
-
-**Codex, Cursor, GitHub Copilot, Gemini CLI and others**
-
-```sh
-npx skills add ShousenZHANG/chinese-fortune
-```
-
-After installation, run `python scripts/doctor.py` from the skill directory and confirm `healthy: true`. Version 6.0 uses `capture-metadata.json` for captured-source metadata so the skills installer's file filter preserves it. The release ZIP also contains the complete runtime data.
-
-Gemini CLI also has its own command: `gemini skills install https://github.com/ShousenZHANG/chinese-fortune`.
-
-**claude.ai, ChatGPT, Claude API**: download `chinese-fortune-v<version>.zip` from [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases). Upload it in claude.ai under Settings > Features, in ChatGPT (Business, Enterprise, Edu) under Plugins > Skills, or through the Claude API's Skills API.
-
-**MCP-only hosts (Claude Desktop, Cursor, VS Code and others)**: extract the same zip and add one entry to the host's MCP config; tools are listed automatically, and SKILL.md plus the references are served as resources:
+| Host | Command |
+|---|---|
+| Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`, then `/plugin install chinese-fortune@chinese-fortune` |
+| Codex, Cursor, GitHub Copilot, Gemini CLI and others | `npx skills add ShousenZHANG/chinese-fortune` |
+| Gemini CLI (built-in command) | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune --path skills/chinese-fortune` |
+| claude.ai, ChatGPT, Claude API | Download `chinese-fortune-v<version>.zip` from [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases): upload it in claude.ai under Settings > Features, in ChatGPT (Business, Enterprise, Edu) under Plugins > Skills, or through the Claude API's Skills API |
+| MCP-only hosts (Claude Desktop, Cursor, VS Code and others) | Extract the same zip and add the entry below |
 
 ```json
 {"mcpServers": {"chinese-fortune": {"command": "python", "args": ["/path/to/chinese-fortune/scripts/mcp_server.py"]}}}
 ```
 
-On Windows use `py` with `"-3"` as the first argument. The two scripts that write personal data (saved profiles, prospective log) are not exposed over MCP.
+For MCP on Windows, use `py` with `"-3"` as the first argument. Tools are listed automatically, and SKILL.md plus the references are served as resources. The two scripts that write personal data (saved profiles, prospective log) are not exposed over MCP.
 
-Python 3.9 or later is all it needs (the `python3` that ships with macOS will do): nothing to pip install, and calculations need no network, because lunar_python and the tzdata time-zone data ship inside `scripts/`. CI checks Python 3.9, 3.11 and 3.12.
+Python 3.9 or later is all it needs (the `python3` that ships with macOS will do): nothing to pip install, and calculations need no network, because lunar_python and the tzdata time-zone data ship inside `scripts/`. CI checks Python 3.9, 3.11, 3.12 and Windows. After installing, run the self-check from the skill directory and look for `"healthy": true`:
+
+```sh
+python scripts/doctor.py
+```
 
 <details>
 <summary>Install notes for AI agents</summary>
 
 1. Use the install method above for the user's host. When unsure, extract the Release zip into the host's skills directory (Claude Code `~/.claude/skills/`, Codex `~/.codex/skills/`, Gemini CLI `~/.gemini/skills/`) so that `chinese-fortune/SKILL.md` exists.
 2. Do not run pip. Try `python3`, `python`, then `py -3` for one that is 3.9 or later; if none exists, ask the user before installing Python (commands in SKILL.md, “运行环境与诊断”).
-3. Self-check inside the chinese-fortune folder; it prints `"healthy": true` when ready, otherwise follow `next_step`:
-
-```sh
-python scripts/doctor.py
-```
+3. Run `python scripts/doctor.py` inside the chinese-fortune folder; it prints `"healthy": true` when ready, otherwise follow `next_step`.
 
 </details>
 
 ## What to ask
 
-For a fortune question the AI first asks for the birth details that question needs (date, time, birthplace, sex) and the city you live in now; a time you only remember roughly can be a range, such as 19:00–20:00.
+For a fortune question the AI first asks for the birth details that question needs (date, time, birthplace, sex) and the city you live in now. A time you only remember roughly can be a range, such as 19:00–20:00; text lookup needs no birth data.
 
 | You want | Ask |
 |---|---|
@@ -69,51 +58,31 @@ For a fortune question the AI first asks for the birth details that question nee
 | An interview slot | I can interview Tuesday morning or Thursday afternoon next week, one hour each. Which one? |
 | Luck cycle, a year | Is my current ten-year cycle favourable? How does 2027 look? |
 | Colours to wear | Which colours and accessories suit me? |
-| Almanac, Liu Yao | Can I move house on 29 October? Cast Liu Yao for next Tuesday's interview. |
+| Almanac, Liu Yao, Qi Men | Can I move house on 29 October? Cast Liu Yao for next Tuesday's interview. Which hour next week suits travel? |
 | A classical text | How does Zi Ping Zhen Quan understand 用神? Explain, then give the passage. |
 | Everyday life | I lost my job: what first? Should I stand surety for a friend? |
 
-Text lookup needs no birth data. Unknown birth time remains unknown; near day or solar-term boundaries, other pillars may also need alternatives.
-
-## What an answer looks like
-
-Calculate a chart, check classical conditions, and answer in plain language first. Each short classical quotation must be followed immediately by its plain meaning and its relevance to the person's actual conditions.
-
-Version 6.0 retains the eight luck-cycle approaches and 46 pattern-condition checks, and adds birth alternatives across dates, corrections, relationship workflows, Liu Yao condition checks, Qimen time intervals and two Jiaoshi Yilin editions. A matched literal condition does not establish a pattern. `--view compact` deduplicates conditions and indexes source passages; retrieve their complete text before interpreting. An explicit `--report new-file.md` or `.html` saves an offline verification report without overwriting files. Named methods route to their own scripts; terminology questions require no birth data. See the [6.0 migration notes](docs/MIGRATION-6.0.md) for input changes and supported conventions. Missing transcriptions, unsupported schools and manual conditions remain explicit.
-
-BaZi follows the month-structure approach in Zi Ping Zhen Quan. Four other classical works provide separately attributed comparisons; differences remain visible.
-
-Answers are written in Chinese; see the [plain-language output example](docs/OUTPUT-EXAMPLE.md), written from a fixed test chart rather than a real person's forecast.
+Answers come in Chinese: the conclusion first in plain language, then short quotations, each followed at once by its meaning and why it applies to you. See the [plain-language output example](skills/chinese-fortune/docs/OUTPUT-EXAMPLE.md), written from a fixed test chart rather than a real person's forecast.
 
 ## Capabilities
 
 | Method | Answers | Basis |
 |---|---|---|
-| BaZi natal chart | structure, 用神, conditions for success or failure | 《子平真诠》 month structure first; 《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》 compared; 8 families, 25 review paths |
+| BaZi natal chart | structure, 用神, conditions for success or failure | 《子平真诠》 month structure first; 《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》 compared; 8 families, 25 review paths, 46 pattern conditions |
 | Ten-year luck cycle | conditional readings for each candidate configuration | All eight 《子平真诠》 luck families, 49 scenarios; unresolved conditions and contrary exceptions stay visible |
 | A year (流年) | a named year, this year, next year | 《渊海子平》《三命通会》《滴天髓》 on the year star, listed relation by relation, no total score |
 | Personal good days, periods | which days are good or to avoid | 《协纪辨方书》 vol. 33 相主, graded 大吉 to 大凶 by birth year |
 | Appointment times | interview, exam, travel, moving | 相主 plus event day rules; interviews and exams also 《奇门遁甲元灵经》 |
 | Colours, accessories | what to wear | 《穷通宝鉴》 general 调候 choice (the cell's exceptions not checked against your chart) |
 | Almanac | a day's dos and don'ts | sourced day rules from 《协纪辨方书》《渊海子平》 |
-| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun, monthly, daily and hourly layers (palaces match iztro; the late-zi hour stem follows this project's stated convention); Liu Yao judges the rule-library conditions the chart decides; Qi Men offers the 《遁甲演义》 full rotating plate with its volume-two patterns and hour selection; Liu Ren covers all nine transmission methods |
+| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun down to hourly layers; Liu Yao judges the rule-library conditions the chart decides; Qi Men offers the 《遁甲演义》 rotating plate, its volume-two patterns and hour selection; Liu Ren covers all nine transmission methods |
 | Marriage, family and partnership pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other, clauses filtered by relationship type; classified, never scored; marriage also gets the 《选择要略》 three-yuan nine-palace match with its recorded objection |
 | Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
 | Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
 | Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,685 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
 | Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
-- BaZi calculations with birth timezone, DST, true solar time, day boundaries and unknown-hour handling.
-- Offline retrieval from 15 frozen transcriptions: 557 chapter/volume units and 29,685 paragraphs, with provenance and context.
-- Eight BaZi rule families and 25 review paths. Observable conditions are computed; interpretive conditions require explicit reasoning from the chart and full passages.
-- Current time in the user's present location, captured once per request.
-- Zi Wei, Liu Yao and other methods when requested, within their documented scope.
-- Step-by-step derivation on request: birth instant, solar-term window, true solar time, day boundary, hour stem and luck start, so a chart can be redone by hand.
-- A mechanical check of every answer's quotations, pillars, scores and certainty before it is sent; MCP-only hosts can connect too.
-
-A complete transcription, implemented rules, image collation and predictive validity are separate claims. Tests do not establish predictive accuracy.
-
-When the 用神 is not on a Liu Yao hexagram, `fu_shen` follows the 增删卜易: the month or day branch first, otherwise the hidden line from the palace's pure hexagram, with its flying line and their 生克; whether it can be used is not judged. Zi Wei patterns now follow the lines of the 紫微斗数全书: each one carries the passage id, the exact line and four condition lists (required, bonus, breaking, to_check); readings the text leaves open are marked `quanshu_reading` with a note. The old `candidate_only` fields are gone; see [MIGRATION-5.11](docs/MIGRATION-5.11.md). All 6.0 interface changes (result envelope, error classes, new entry points) are in [MIGRATION-6.0](docs/MIGRATION-6.0.md).
+A complete transcription, implemented rules, image collation and predictive validity are separate claims: computable conditions are checked by the scripts, while strength, cooperation and rescue are argued by the AI from the full passages. Tests do not establish predictive accuracy. Supported conventions and input changes are in the [6.0 migration notes](skills/chinese-fortune/docs/MIGRATION-6.0.md).
 
 ## Why trust it
 
@@ -121,7 +90,8 @@ When the 用神 is not on a Liu Yao hexagram, `fu_shen` follows the 增删卜易
 - **Every quotation is traceable**: book and paragraph id, retrievable verbatim with `classical_search.py --passage-id`.
 - **Unclear stays unclear**: tied options, unchecked conditions and books that disagree are said as such; nothing is picked for you and sources are never counted as votes.
 - **Time done properly**: birth time zone, DST, true solar time, day boundaries and solar terms are handled separately; a remembered range is compared minute by minute.
-- **Checkable afterwards**: with your consent a forecast is frozen beforehand and the outcome recorded later, see [prospective validation](references/28-prospective-validation.md).
+- **Checked before sending**: `answer_check.py` verifies that quotations exist verbatim in the bundled classics, that named pillars match the chart, and that no unproduced score or certain outcome slipped in.
+- **Checkable afterwards**: with your consent a forecast is frozen beforehand and the outcome recorded later, see [prospective validation](skills/chinese-fortune/references/28-prospective-validation.md).
 
 ## Privacy
 
@@ -129,7 +99,7 @@ Birth details in this repository's examples, tests and evaluations are fictional
 
 Charts, date selection and text lookup run in the bundled scripts on your computer (or the host's sandbox), offline, and do not save your birth details or questions; your conversation with the AI still goes through whichever AI service you use. The one network call is the optional quantum randomness source for divination casts: it fetches random bytes only, carries no personal data, and falls back to local randomness.
 
-Optional, explicitly confirmed profiles support revisioned updates, inspection and deletion outside the repository and installed skill. The default is `~/.local/share/chinese-fortune`. Calculations do not automatically persist conversations or profiles.
+Optional, explicitly confirmed profiles support updates, inspection and deletion outside the repository and installed skill. The default is `~/.local/share/chinese-fortune`.
 
 ## Update and remove
 
@@ -142,94 +112,99 @@ Optional, explicitly confirmed profiles support revisioned updates, inspection a
 
 Changes per version are in the [CHANGELOG](CHANGELOG.md).
 
+## Repository layout
+
+```text
+skills/chinese-fortune/     the installed skill (npx skills, Claude Code plugin, release zip)
+├── SKILL.md                workflow and method routing for the AI
+├── scripts/                charting, date selection, lookup and checks; lunar_python and tzdata bundled
+├── references/             per-method rules, read on demand
+├── knowledge/              the fifteen frozen transcriptions and their source indexes
+├── assets/                 rule libraries, clauses and the life guide
+└── docs/                   methods, sources, migration and release notes
+tests/  evals/  docs/       development tests and evaluation records, not installed
+```
+
 ## Details
 
-### General requests and clear answers
+<details>
+<summary>How personal day grades work, and which undertakings are covered</summary>
 
-Job searches, interviews, travel, relationship conversations and new everyday scenarios share a request workflow. A scenario being accepted does not establish a complete classical prediction method for it. Confirmed birth ranges are compared at minute resolution instead of guessing one instant.
+Which days are good or bad for you is answered by 相主 from 《协纪辨方书》 volume 33, which judges the chosen time's year, month, day and hour pillars against the stem and branch of the year you were born (「從來皆論生年不論生日」). A year or month that clashes your birth year is said first and no day inside it is called good, since changing the day does not avoid it. Each day is graded 大吉 to 大凶 with its reasons and passages; a period gets its best and worst days, and candidate slots are ordered by grade first, then by your stated preference. Travel, weddings, moving and business openings first exclude event days (天地转杀 from 《渊海子平》, and the prohibitions 协纪 says no auspicious spirit can lift).
 
-Answers use natural Chinese, normally 300–600 characters: the useful conclusion first, then a necessary short quotation and an immediate explanation of its meaning and personal applicability. Supported parts are answered first; missing sources trigger a recorded five-minute research budget using the host's available search tools. Candidate material stays outside the package and is never automatically registered as an executable rule.
+This is not a whole-chart reading. Travel, weddings, moving and opening a business are on 协纪's list of commoners' undertakings (民用三十七事, `xieji:c011:p0005`); interviews, exams, dates, salary talks and quotes are not, so for those the method is borrowed and the answer says it is a 相主 grade comparison. The generated coverage table is in the Chinese README.
 
-Explicit practical preferences can select a first and backup appointment with dates, start/end times and time zones, after the 相主 grade (below) has ordered the candidates; the answer keeps the classical grade and the practical reason apart. Travel, weddings, moving and business openings have a generic day-exclusion filter (天地转杀 from Yuanhai Ziping, and the Xieji Bianfang Shu prohibitions it says no auspicious spirit can lift); it does not use the full natal chart to establish personal suitability. Known textual variants now follow normal passage retrieval.
+</details>
 
-### Personal periods and appointment windows
+<details>
+<summary>Periods, interviews and appointment windows</summary>
 
-The new `python scripts/fortune_reading.py --stdin` entry point accepts confirmed people, the current location, a target period, event location, available windows, duration and busy intervals. It resolves relative dates, calculates natal and target facts separately, checks active ten-year cycles, and filters real scheduling conflicts. Birth, current and event time zones remain distinct. Identical pillar facts are referenced through a per-person catalog to avoid repeating the full chart.
+`python scripts/fortune_reading.py --stdin` accepts confirmed people, the current location, a target period, the event location, available windows, duration and busy intervals. It resolves relative dates, calculates natal and target facts separately, checks active ten-year cycles and filters real scheduling conflicts. Birth, current and event time zones stay distinct.
 
-Candidate comparisons cover the entire event, including changes during it, and show the earliest and latest feasible start. Selection requests default to hour facts only inside feasible windows, merging overlaps; the rest of the period retains month and active-cycle background. Independent missing conditions remain visible together. These scheduling limits are not auspicious-time recommendations.
+Candidate comparisons cover the entire event, including changes during it, and show the earliest and latest feasible start. Interview and exam requests also calculate the verified earth plate and chief star and door anchors of 《奇门遁甲元灵经》 across each window, with each person's birth-year stem; unknown cells remain unknown. Ordered multi-event requests check windows, durations, time zones and travel buffers together, and the plans returned are feasibility witnesses, not auspiciousness rankings. See the [request schema and research workflow](skills/chinese-fortune/references/24-personalized-forecast.md).
 
-Interview and exam requests also calculate Yuanling's verified earth plate and chief star/door anchors throughout each candidate window, with a separate birth-year-stem lookup for each person. Unknown cells remain unknown; year-stem lookup is not full-BaZi ranking.
+</details>
 
-Ordered multi-event requests now check each event’s windows, duration, time zone and explicit travel/preparation buffer together. Each natal chart is calculated and transmitted once. Returned plans are feasibility witnesses, not auspiciousness rankings.
+<details>
+<summary>Everyday life questions</summary>
 
-Two specific examples from Zi Ping Zhen Quan now check actual natal antecedents against the active ten-year cycle. Their observations distinguish same-element support, branch opposition and stem combination, with quotations and plain explanations. These are structural checks, not overall fortune or event predictions; the full chapter's exceptions remain available.
+Plain real-life questions (what to do first after a layoff, whether to stand surety for a friend, whether a two-hour commute is worth it) go to the book's own decision workflow: `life_guide.py --decide` finds the entries, ranks them by fit and then by the book's cost-effectiveness tier and evidence grade, splits "do" from the book's "don't" list, cites section and entry for each, and names what the book does not cover. An emergency, a suicidal thought or a legal process already under way gets the first action before anything else, with hotline numbers only for someone in mainland China. The snapshot is eternity4719/HowToLiveBetter at commit `842e11c9` (text CC BY 4.0, ported search and workflow code MIT): the whole book except three entries, 660 entries in 34 sections, 8 long articles, section intros, the glossary and resolved cross references. Divination questions keep priority. See [life decisions](skills/chinese-fortune/references/29-life-decision.md).
 
-**Which days are good or bad for you is answered by 相主 from 《协纪辨方书》 volume 33**, which judges the chosen time's year, month, day and hour pillars against the stem and branch of the year you were born (「從來皆論生年不論生日」). A year or month that clashes your birth year is said first and no day inside it is called good, since changing the day does not avoid it. Each day is graded 大吉 to 大凶 with its reasons and passages; a period gets its best and worst days, and candidate slots are ordered by grade first, then by your stated preference. Event day rules (天地转杀 and 协纪's unliftable prohibitions) still exclude first. Clothing colours and things to wear follow the general 调候 choice of your chart's cell in 《穷通宝鉴》, each link cited; the cell's exceptions (for example 「丙丁过多与水局另论」) are not yet checked against your chart, the answer says so, and no colour is named to avoid. Weighing the whole chart's 喜忌 against a period is still not implemented. `--markdown` is a factual draft, not a completed prediction.
+</details>
 
-相主 is 协纪's method for choosing a time for an undertaking. Travel, weddings, moving and opening a business are on its list of commoners' undertakings (民用三十七事, `xieji:c011:p0005`); interviews, exams, dates, salary talks and quotes are not, so for those the method is borrowed and the answer says so. The generated coverage table is in the Chinese README.
+<details>
+<summary>Running the scripts directly</summary>
 
-An answer may end with a separate **real-world reference** section drawn from a frozen snapshot of 《高性价比人生指南》 (eternity4719/HowToLiveBetter, commit `842e11c9`, CC BY 4.0): book titles quoted verbatim with section, entry, grade and cost-effectiveness tier, filtered by where the matter takes place (never by the computer's clock zone), and never used in any divination ranking.
-
-Plain real-life questions (what to do first after a layoff, whether to stand surety for a friend, whether a two-hour commute is worth it) go to the book's own decision workflow: `life_guide.py --decide` finds the entries, ranks them by fit and then by the book's cost-effectiveness tier and evidence grade within one outcome type, splits "do" from the book's "don't" list, cites section and entry for each, and names what the book does not cover; an emergency, a suicidal thought or a legal process already under way gets the first action before anything else, with hotline numbers only for someone in mainland China. The ported search and workflow code is MIT; the text is CC BY 4.0. The library holds the whole book except three entries left out by product scope: 660 entries in 34 sections, 8 long articles, section intros, the glossary and resolved cross references. Divination questions keep priority. See [life decisions](references/29-life-decision.md).
-
-See the [request schema, coverage and research workflow](references/24-personalized-forecast.md). Long periods default to month facts; day/hour detail is limited to 31 local days per request. Missing event longitude retains year/month facts and marks solar day/hour data incomplete. An approximate birth time with a range is compared minute by minute across the range; without bounds the whole date is compared conservatively, never an assumed exact hour.
-
-### Direct use
+Run these from the skill directory (`chinese-fortune/`):
 
 ```sh
 python scripts/bazi_reading.py --year 2000 --month 1 --day 15 --hour 10 --minute 30 --gender male --city 北京 --current-timezone Australia/Sydney --markdown
+python scripts/huangli_query.py --date 2026-10-29 --question 这天搬家可以吗 --markdown
+python scripts/liuyao_cast.py coins --question 下周二面试能过吗 --current-timezone Asia/Shanghai --markdown
 python scripts/classical_search.py --list-books
-python scripts/classical_search.py --book ziping --query 用神
 python scripts/classical_search.py --passage-id ziping:c008:p0001
+python scripts/classical_guidance.py --scenario interview --retrieve --limit 1
 ```
 
-`huangli_query.py --question … --markdown` answers the asked event (travel, wedding, moving, opening) first from the sourced day rules and names where the almanac table disagrees; `liuyao_cast.py … --markdown` places the 用神 with its source and gives no verdict.
+`--markdown` gives a chart-and-conditions draft; the AI completes the interpretive checks the question needs. Keep the birth time zone, the present-location time zone and the target time separate, and reuse `request_time.py`'s utc as `--request-time` within one request. Each script documents its options under `--help`.
 
-Markdown provides a chart-and-conditions draft. The host completes the relevant interpretive checks and answers the question. JSON returns chart_facts, rule_assessment and a deduplicated evidence_bundle with complete paragraphs and exceptions. Do not call the diagnostic engine again to fetch absent legacy ge_ju or yong_shen fields.
+</details>
 
-Keep birth timezone, present-location timezone and target time separate. Reuse request_time.py's utc as --request-time within a request.
+<details>
+<summary>Reading the results</summary>
 
-### Scenario-specific classical research
+An answer should say what is on the chart, why a clause applies and which exceptions would change the judgement. Where answers used to go wrong, the tools write the sentence themselves (`say` fields): how many minutes true solar time differs from the clock, which pillar each clock window gives when the birth time is unknown, each luck cycle's full and nominal ages, each luck verdict in the book's words, formations as candidates only, and compatibility grouped by combination, clash, punishment and harm. Answers copy them instead of recomputing. Field list: [MIGRATION-5.10](skills/chinese-fortune/docs/MIGRATION-5.10.md); 6.0 interface changes (result envelope, error classes, new entry points): [MIGRATION-6.0](skills/chinese-fortune/docs/MIGRATION-6.0.md).
 
-Eight additional transcriptions cover almanac selection, Liu Yao, Zi Wei, Mei Hua, Qi Men and Liu Ren. `classical_guidance.py --scenario interview --retrieve --limit 1` retrieves relevant originals; `--family 伤官` returns the complete luck chapter and conditions for a confirmed natal structure. Chapter pagination preserves later exceptions. Sixteen scenario routes expose available sources and unresolved needs, including naming lexicography and full residential Feng Shui. Source acquisition does not certify a personal ranking algorithm. See [the research workflow](references/25-classical-research.md).
+When the 用神 is not on a Liu Yao hexagram, `fu_shen` follows 《增删卜易》. Zi Wei patterns follow the lines of 《紫微斗数全书》, each with its passage id, the exact line and four condition lists (required, bonus, breaking, to_check).
 
-Retrieval also verifies and returns selected non-adjacent shared prohibitions for arrival, exams, travel, billing, business, moving and marriage. Remaining textual problems and unreviewed conditions are explicit. Add `include_research:true` to a future-period request to retrieve this material in the same call without another natal calculation.
+[Rules](skills/chinese-fortune/docs/BAZI-RULES.md) · [Output contract](skills/chinese-fortune/references/22-output-contract.md) · [Migration and validation](skills/chinese-fortune/docs/OUTPUT-VALIDATION.md)
 
-### Sources and distribution
+</details>
 
-The runtime archive retains every selected chapter and index. Raw HTML/wiki provenance is in a separate sources ZIP; ordinary users need only the runtime ZIP. SHA256SUMS covers both.
+<details>
+<summary>Classical sources and the release archives</summary>
 
-Runtime validation has an explicit scope. Missing files do not silently switch validation modes. [Sources](docs/CLASSICAL-SOURCES.md) explain edition and licensing limits; [coverage](docs/CONTENT-COVERAGE.md) distinguishes verified clauses, partial support and gaps.
+The library holds 《子平真诠》《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》《协纪辨方书》《选择要略》《增删卜易》《紫微斗数全书》《梅花易数》《六壬大全》《遁甲演义》《奇门遁甲元灵经》 and two editions of 《焦氏易林》. "Complete" means the selected edition's chapter inventory is collected, not that every edition is compiled, every page collated against images or every rule implemented. [Sources](skills/chinese-fortune/docs/CLASSICAL-SOURCES.md) explain edition and licensing limits; [coverage](skills/chinese-fortune/docs/CONTENT-COVERAGE.md) separates verified clauses, partial support and gaps.
 
-[Rules](docs/BAZI-RULES.md) · [Output contract](references/22-output-contract.md) · [Migration](docs/OUTPUT-VALIDATION.md)
+The runtime archive keeps every selected chapter and index; raw HTML/wiki provenance is in a separate `*-sources.zip` that ordinary users do not need. SHA256SUMS covers both.
 
-### Ready-to-copy sentences
-
-Where answers used to go wrong, the tools now write the sentence themselves (`say` fields): how many minutes true solar time differs from the clock, which pillar each clock window gives when the birth time is unknown (both readings of a repeated summer-time hour), each luck cycle's full and nominal ages, the age on the request date, each luck verdict in the book's words, formations as candidates only, and compatibility grouped by combination, clash, punishment and harm with both day masters' view. Answers copy them instead of recomputing. Field list: [MIGRATION-5.10](docs/MIGRATION-5.10.md).
-
-### Prospective validation
-
-Fix the method and scope before interpretation, check personal applicability and exceptions, and disclose unresolved conflicts. With user consent, `prediction_log.py` stores prospective records outside the repository, freezes forecasts, and preserves confirmed outcome corrections. Coverage, unverified outcomes, deletions and method/version/event cohorts accompany observed hit rates. This mechanism does not establish predictive validity. See [the workflow](references/28-prospective-validation.md).
-
-Before an answer is sent, `scripts/answer_check.py` checks the prose mechanically: every quotation must be found verbatim in the bundled classics (simplified and traditional fold together; elided parts must sit in one passage in order), named pillars must match the chart, no score or percentage the tool never produced, no unresolved formation stated as settled, no tie collapsed into one best choice, and no certain outcome such as “you will definitely be hired”. Passing is a floor, not proof the interpretation is right.
+</details>
 
 ## Development
 
-Issues and pull requests are welcome; see [CONTRIBUTING](CONTRIBUTING.md) for the workflow and checks.
-
-In the source checkout:
+Issues and pull requests are welcome; see [CONTRIBUTING](CONTRIBUTING.md) for the workflow and checks. From the repository root:
 
 ```sh
 python -m pip install -r requirements-dev.txt -c constraints-dev.txt
 python -m ruff check .
-python -m mypy scripts/
+python -m mypy skills/chinese-fortune/scripts/
 python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
-python scripts/build_skill.py
+python skills/chinese-fortune/scripts/build_skill.py
 python -X utf8 evals/package_smoke.py
 ```
 
-Release builds use a full commit SHA, clean-install checks and the exact CI artifact. See [release process](docs/RELEASE-PROCESS.md). Recorded model-answer reviews remain separate from deterministic tests.
+Release builds use a full commit SHA, clean-install checks and the exact CI artifact; see the [release process](skills/chinese-fortune/docs/RELEASE-PROCESS.md). Recorded model-answer reviews stay separate from deterministic tests.
 
 ## License
 
-Code is [MIT](LICENSE); third-party texts retain their recorded licensing. For cultural study, with real-world medical, legal and investment decisions based on appropriate professional information.
+Code is [MIT](LICENSE); third-party texts keep their recorded licensing. For cultural study; real-world medical, legal and investment decisions belong with appropriate professional information.

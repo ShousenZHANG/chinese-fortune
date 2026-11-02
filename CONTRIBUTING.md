@@ -8,15 +8,15 @@
 - 新增条款须写明适用条件、例外和盘面证据。取到原文不等于已经证明条款适用。
 - 不把工程评分当古籍规则，不用无校准的百分比表达预测把握。
 - 先用自然中文回答问题，术语随文解释，古文只作必要依据。
-- 改动输入、输出或默认取法时，同步更新 SKILL.md、README 中英文版、参数帮助、用例和迁移说明。
+- 改动输入、输出或默认取法时，同步更新 skills/chinese-fortune/SKILL.md、README 中英文版、参数帮助、用例和迁移说明。
 
-五书版本与收录范围见 [来源记录](docs/CLASSICAL-SOURCES.md)。采集工具 scripts/import_classics.py 仅供维护；重新采集后审核差异和授权，不能用网络新内容静默覆盖已经冻结的段落。
+五书版本与收录范围见 [来源记录](skills/chinese-fortune/docs/CLASSICAL-SOURCES.md)。采集工具 skills/chinese-fortune/scripts/import_classics.py 仅供维护；重新采集后审核差异和授权，不能用网络新内容静默覆盖已经冻结的段落。
 
-现实参考库《高性价比人生指南》（`assets/life_guide.json`）的政策条目会过期，每季度换到上游新提交重新导入一次：
+现实参考库《高性价比人生指南》（`skills/chinese-fortune/assets/life_guide.json`）的政策条目会过期，每季度换到上游新提交重新导入一次：
 
-1. 下载新提交的 codeload ZIP，把 `scripts/import_life_guide.py` 里的 `COMMIT` 和 `SNAPSHOT_DATE` 改成新值，运行 `python scripts/import_life_guide.py --zip <zip>`。核对许可：正文现为 CC BY 4.0、代码 MIT，变了要同步 `LICENSE` 字典和署名。
+1. 下载新提交的 codeload ZIP，把 `skills/chinese-fortune/scripts/import_life_guide.py` 里的 `COMMIT` 和 `SNAPSHOT_DATE` 改成新值，运行 `python skills/chinese-fortune/scripts/import_life_guide.py --zip <zip>`。核对许可：正文现为 CC BY 4.0、代码 MIT，变了要同步 `LICENSE` 字典和署名。
 2. 导入失败时逐条处理：排除清单编号对不上、保留条目提到算命一类的词、引用了被排除条目（整节、条号、列举、区间或标题），都要人工审定后再记进脚本，不能放宽检查。
-3. 对比新旧 JSON：新增或改动的条目逐条审定地区（`scripts/life_guide_review.py`，按标题记录；书里改了标题的，导入会报「审定数据里的标题在快照中找不到」），新增长文在 `ARTICLES` 里定编号和地区；上游插条会让编号整体顺延，重看 `scripts/life_guide.py` 的场景映射（`test_life_guide.py` 核对映射条目的标题）与只适合部分问法的条目，TODO 条目不附。
+3. 对比新旧 JSON：新增或改动的条目逐条审定地区（`skills/chinese-fortune/scripts/life_guide_review.py`，按标题记录；书里改了标题的，导入会报「审定数据里的标题在快照中找不到」），新增长文在 `ARTICLES` 里定编号和地区；上游插条会让编号整体顺延，重看 `skills/chinese-fortune/scripts/life_guide.py` 的场景映射（`test_life_guide.py` 核对映射条目的标题）与只适合部分问法的条目，TODO 条目不附。
 4. 在 `docs/核实记录/` 留一份记录，照常跑全套测试和独立复核后发布。
 
 可选解梦、姓名和生肖材料不得恢复无出处的人生断语。神煞只保留起法命中，不凭单一标签断吉凶。
@@ -28,10 +28,10 @@
 ```sh
 python -m pip install -r requirements-dev.txt -c constraints-dev.txt
 python -m ruff check .
-python -m mypy scripts/
+python -m mypy skills/chinese-fortune/scripts/
 python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
-python scripts/classical_search.py --validate
-python scripts/build_skill.py --dist-dir dist
+python skills/chinese-fortune/scripts/classical_search.py --validate
+python skills/chinese-fortune/scripts/build_skill.py --dist-dir dist
 python -X utf8 evals/package_smoke.py --archive dist/chinese-fortune-v<VERSION>.zip
 ```
 
@@ -39,13 +39,13 @@ python -X utf8 evals/package_smoke.py --archive dist/chinese-fortune-v<VERSION>.
 
 ### 随包依赖
 
-运行时唯二的第三方包 lunar_python、tzdata 原样放在 `scripts/`，连同各自的 `.dist-info`（版本、许可证、RECORD 哈希）。用户不需要 pip；`tests/test_zero_install.py` 按 RECORD 逐个核对文件哈希。升级时在新目录装好、整体替换，不手改其中文件：
+运行时唯二的第三方包 lunar_python、tzdata 原样放在 `skills/chinese-fortune/scripts/`，连同各自的 `.dist-info`（版本、许可证、RECORD 哈希）。用户不需要 pip；`tests/test_zero_install.py` 按 RECORD 逐个核对文件哈希。升级时在新目录装好、整体替换，不手改其中文件：
 
 ```sh
 python -m pip install --no-deps --no-compile --target /tmp/vend lunar_python==<版本> tzdata==<版本>
 ```
 
-再把 `/tmp/vend` 里的两个包目录和两个 `.dist-info` 换进 `scripts/`，`.dist-info` 里 Windows 写出的 CRLF 改成 LF。版本号写在三处，一起改：`tests/test_zero_install.py` 的 `VENDORED`、`tests/test_build.py` 里的 `.dist-info` 路径、`constraints-dev.txt`。然后跑全套测试。
+再把 `/tmp/vend` 里的两个包目录和两个 `.dist-info` 换进 `skills/chinese-fortune/scripts/`，`.dist-info` 里 Windows 写出的 CRLF 改成 LF。版本号写在三处，一起改：`tests/test_zero_install.py` 的 `VENDORED`、`tests/test_build.py` 里的 `.dist-info` 路径、`constraints-dev.txt`。然后跑全套测试。
 
 唯一的测试入口是 pytest；原 `evals/run_checks.py` 的独有命令行黄金断言、Markdown 可达性和发行检查已迁入 `tests/test_harness_gates.py`，不再二次启动同一套检查。坏输入契约在 `test_cli_contract.py`，全库/安装验证分别在古籍测试与 `package_smoke.py`。
 
@@ -59,7 +59,7 @@ Python 输出使用 utils 的 JSON 信封；失败包含 ok、tool、version、e
 
 JSON 使用 UTF-8、两空格缩进。代码需类型注解。测试应证明输入边界、来源完整性或实际行为，不能只搜索提示词或机械复制实现。
 
-择日各阶段之间传递的结构（忌日命中、排序行、实际选择、推荐状态、阻断项）定义在 `scripts/contracts.py`。生产函数以这些 TypedDict 为返回类型，mypy 核对写入的每个键；`tests/test_contracts.py` 再用真实输出逐键核对，多出或缺少的键都会失败。新增字段时先改契约。
+择日各阶段之间传递的结构（忌日命中、排序行、实际选择、推荐状态、阻断项）定义在 `skills/chinese-fortune/scripts/contracts.py`。生产函数以这些 TypedDict 为返回类型，mypy 核对写入的每个键；`tests/test_contracts.py` 再用真实输出逐键核对，多出或缺少的键都会失败。新增字段时先改契约。
 
 同一输入在每个进程里必须输出相同字节。Python 每个进程的字符串哈希不同，遍历 set 的顺序因此会变；输出里的列表不要从 set 或 frozenset 直接转来。`tests/test_determinism.py` 在多个 `PYTHONHASHSEED` 下比较 CLI 输出。
 
@@ -69,7 +69,7 @@ JSON 使用 UTF-8、两空格缩进。代码需类型注解。测试应证明输
 
 记录提交、测试、包内验证与远端 CI。工程测试、实际模型回答评审和现实预测验证分别报告。30 个用例清单不是 30 次模型运行；协作 agent 的试跑也不是多个独立宿主的基准。
 
-正式发布使用固定提交构建和受测 CI 的原始产物，不在发布步骤重新打包。流程见 [发布与来源归档](docs/RELEASE-PROCESS.md)。开发包会标明 development/dirty，不因无关未跟踪文档阻止构建。
+正式发布使用固定提交构建和受测 CI 的原始产物，不在发布步骤重新打包。流程见 [发布与来源归档](skills/chinese-fortune/docs/RELEASE-PROCESS.md)。开发包会标明 development/dirty，不因无关未跟踪文档阻止构建。
 
 提交说明写清具体问题、改后行为、验证结果和仍有限制。古籍原作与转录页面授权分别处理，代码 MIT 不覆盖所有第三方资料。
 
@@ -83,6 +83,6 @@ Keep both READMEs, skill routing, CLI help, fixtures and migration notes aligned
 
 Obtain request time once, using the user's present time zone; keep it separate from birth and target time zones. Preserve failures as explicit errors rather than fabricating successful charts.
 
-The shapes passed between selection stages live in `scripts/contracts.py`; producers return those TypedDicts and `tests/test_contracts.py` checks real outputs key by key. Output must not depend on `PYTHONHASHSEED`: never turn a set into an output list. A structure-only refactor is verified by recording outputs before the change and comparing them byte for byte afterwards.
+The shapes passed between selection stages live in `skills/chinese-fortune/scripts/contracts.py`; producers return those TypedDicts and `tests/test_contracts.py` checks real outputs key by key. Output must not depend on `PYTHONHASHSEED`: never turn a set into an output list. A structure-only refactor is verified by recording outputs before the change and comparing them byte for byte afterwards.
 
-Report code tests, actual model-response reviews and predictive validation separately. Preserve attribution and edition boundaries when importing texts. Respect the scope in [the output contract](references/22-output-contract.md) and [sensitive-topic guidance](references/20-disclaimer.md).
+Report code tests, actual model-response reviews and predictive validation separately. Preserve attribution and edition boundaries when importing texts. Respect the scope in [the output contract](skills/chinese-fortune/references/22-output-contract.md) and [sensitive-topic guidance](skills/chinese-fortune/references/20-disclaimer.md).

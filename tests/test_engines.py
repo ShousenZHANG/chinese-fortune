@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 from utils import zip_exact
 
-SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
+SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
 
 try:
     import lunar_python  # noqa: F401
@@ -457,7 +457,7 @@ def test_dou_jun_is_not_a_copy_of_ming_gong():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from utils import DIZHI
     from ziwei_palaces import calc_dou_jun
     from ziwei_tables import calc_ming_gong
@@ -494,7 +494,7 @@ def test_qisha_brightness_follows_the_classic():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from ziwei_stars import BRIGHTNESS
 
     want = {"子": "旺", "午": "旺", "卯": "旺", "酉": "旺",
@@ -518,7 +518,7 @@ def test_tiankui_tianyue_xin_row_is_ma_hu_not_hu_ma():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from ziwei_stars import TIAN_KUI, TIAN_YUE
 
     assert TIAN_KUI["辛"] == "午" and TIAN_YUE["辛"] == "寅"
@@ -543,11 +543,11 @@ def test_meihua_wangshuai_matches_its_own_reference_table():
     import sys
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    sys.path.insert(0, str(root / "scripts"))
+    sys.path.insert(0, str(root / "skills/chinese-fortune/scripts"))
     import meihua_cast
     from utils import BAGUA
 
-    md = (root / "references" / "05-meihua.md").read_text(encoding="utf-8")
+    md = (root / "skills/chinese-fortune/references" / "05-meihua.md").read_text(encoding="utf-8")
     body = md.split("### 5.2")[1].split("### 5.3")[0]
 
     # | 月令 | 公历约当 | 旺卦 | 相卦 | 休卦 | 囚卦 | 死卦 |
@@ -580,7 +580,7 @@ def test_meihua_season_table_covers_every_month_exactly_once():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     import meihua_cast
 
     assert set(meihua_cast.SEASON_WX_BY_MONTH) == set(range(1, 13))
@@ -598,7 +598,7 @@ def test_meihua_tiyong_labels_are_not_interchangeable():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from meihua_cast import ti_yong_relation
     from utils import BAGUA
 

@@ -90,7 +90,7 @@ def test_every_question_the_book_says_it_answers_reaches_the_workflow():
     """The 34 questions of the book's README, verbatim."""
     import json
     from pathlib import Path
-    data = json.loads((Path(__file__).resolve().parents[1] / 'assets' / 'life_guide.json').read_text(encoding='utf-8'))
+    data = json.loads((Path(__file__).resolve().parents[1] / 'skills/chinese-fortune/assets' / 'life_guide.json').read_text(encoding='utf-8'))
     missed = [q['question'] for q in data['guide']['questions'] if route(q['question'])['flow'] != 'life_guide']
     assert not missed
 
@@ -203,7 +203,7 @@ def test_the_router_names_what_is_still_needed():
 
 
 def test_the_cli_prints_the_route_as_json():
-    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'scripts' / 'question_router.py'),
+    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / 'question_router.py'),
                            '--question', '下个月哪天搬家好？'], capture_output=True, text=True, encoding='utf-8')
     assert proc.returncode == 0, proc.stderr
     out = json.loads(proc.stdout)

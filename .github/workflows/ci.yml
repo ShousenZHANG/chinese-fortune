@@ -46,7 +46,7 @@ jobs:
         run: python -m ruff check .
 
       - name: Type check (mypy)
-        run: python -m mypy scripts/ --ignore-missing-imports --disallow-untyped-defs
+        run: python -m mypy skills/chinese-fortune/scripts/ --ignore-missing-imports --disallow-untyped-defs
 
       - name: Full tests and combined coverage gate
         # No marker exclusion in CI. The local quick selection is not a release gate.
@@ -55,12 +55,12 @@ jobs:
       - name: Coverage groups (same collected data; combined threshold already enforced)
         # Diagnostic reports do not replace or weaken the combined 80% gate.
         run: |
-          python -m coverage report --include='scripts/*' --omit='scripts/build_skill.py,scripts/import_classics.py' --fail-under=0
-          python -m coverage report --include='evals/*,scripts/build_skill.py,scripts/import_classics.py' --fail-under=0
+          python -m coverage report --include='skills/chinese-fortune/scripts/*' --omit='skills/chinese-fortune/scripts/build_skill.py,skills/chinese-fortune/scripts/import_classics.py' --fail-under=0
+          python -m coverage report --include='evals/*,skills/chinese-fortune/scripts/build_skill.py,skills/chinese-fortune/scripts/import_classics.py' --fail-under=0
 
       - name: Build fixed commit skill and source archives
         if: matrix.python == '3.12'
-        run: python -X utf8 scripts/build_skill.py --commit "${{ github.sha }}"
+        run: python -X utf8 skills/chinese-fortune/scripts/build_skill.py --commit "${{ github.sha }}"
 
       - name: Zero-install exact artifact smoke
         if: matrix.python == '3.12'
@@ -109,7 +109,7 @@ jobs:
         with:
           python-version: "3.9"
       - name: Install the test runner only (the skill itself needs nothing)
-        run: python -m pip install "pytest>=8,<9" sxtwl==2.0.7 iztro-py==0.5.0 -r scripts/requirements-dev.txt
+        run: python -m pip install "pytest>=8,<9" sxtwl==2.0.7 iztro-py==0.5.0 -r skills/chinese-fortune/scripts/requirements-dev.txt
       - name: Full tests on the floor
         run: python -X utf8 -m pytest tests/ -q
       - name: Zero-install package smoke on the floor

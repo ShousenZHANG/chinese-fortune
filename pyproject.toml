@@ -3,7 +3,7 @@ line-length = 100
 # The tools run on 3.9 (macOS Command Line Tools python3); see tests/test_zero_install.py.
 target-version = "py39"
 # lunar_python and tzdata are shipped as published (5.9.0); not ours to lint.
-extend-exclude = ["dist", "_competitors", "scripts/lunar_python", "scripts/tzdata"]
+extend-exclude = ["dist", "_competitors", "skills/chinese-fortune/scripts/lunar_python", "skills/chinese-fortune/scripts/tzdata"]
 
 [tool.ruff.lint]
 # Pyflakes (F), pycodestyle errors (E), warnings (W), isort (I), bugbear (B),
@@ -16,7 +16,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*" = ["E402"]  # tests insert scripts/ onto sys.path before importing
+"tests/*" = ["E402"]  # tests insert skills/chinese-fortune/scripts/ onto sys.path before importing
 
 [tool.pytest.ini_options]
 markers = [
@@ -29,8 +29,8 @@ patch = ["subprocess"]
 parallel = true
 # Keep runtime and retained evaluation/build tools in the combined denominator.
 # Group reports describe the same run; they do not substitute for this gate.
-source = ["scripts", "evals"]
-omit = ["scripts/lunar_python/*", "scripts/tzdata/*"]
+source = ["skills/chinese-fortune/scripts", "evals"]
+omit = ["skills/chinese-fortune/scripts/lunar_python/*", "skills/chinese-fortune/scripts/tzdata/*"]
 sigterm = true
 
 [tool.coverage.report]
@@ -49,7 +49,7 @@ disallow_untyped_defs = true
 # The tools run on 3.9, but mypy 2.x checks 3.10 at the lowest: it still catches
 # 3.11-only calls (datetime.UTC, NotRequired); the CI py3.9 job runs the rest for real.
 python_version = "3.10"
-exclude = ["^scripts/lunar_python/", "^scripts/tzdata/"]
+exclude = ["^skills/chinese-fortune/scripts/lunar_python/", "^skills/chinese-fortune/scripts/tzdata/"]
 ignore_missing_imports = true
 warn_unused_ignores = false
 

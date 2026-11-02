@@ -15,7 +15,7 @@ import pytest
 from conftest import run_cli
 from utils import zip_exact
 
-SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
+SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
 
 pytest.importorskip("lunar_python")
 
@@ -367,7 +367,7 @@ def test_64hex_binary_field_is_derivable_from_lines_and_trigrams():
     import json
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    d = json.loads((root / "assets" / "64hex.json").read_text(encoding="utf-8"))
+    d = json.loads((root / "skills/chinese-fortune/assets" / "64hex.json").read_text(encoding="utf-8"))
     items = list(d["hexagrams"].values()) if isinstance(d.get("hexagrams"), dict) \
         else (d.get("hexagrams") or d)
     assert len(items) == 64
@@ -404,7 +404,7 @@ def test_meihua_reference_worked_example_matches_the_engine():
     import sys
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    md = (root / "references" / "05-meihua.md").read_text(encoding="utf-8")
+    md = (root / "skills/chinese-fortune/references" / "05-meihua.md").read_text(encoding="utf-8")
 
     # 从文档里抓出算例的两个数, 不写死 —— 文档改数字, 测试跟着改。
     m = re.search(r'例如\s+(\d+)、(\d+)：([^\n]+)', md)
@@ -412,7 +412,7 @@ def test_meihua_reference_worked_example_matches_the_engine():
     upper, lower = m.group(1), m.group(2)
 
     proc = subprocess.run(
-        [sys.executable, str(root / "scripts" / "meihua_cast.py"), "--datetime", "2026-06-24T13:05", "numbers",
+        [sys.executable, str(root / "skills/chinese-fortune/scripts" / "meihua_cast.py"), "--datetime", "2026-06-24T13:05", "numbers",
          "--upper", upper, "--lower", lower, "--question", "x"],
         capture_output=True, text=True, encoding="utf-8",
     )
@@ -437,7 +437,7 @@ def test_liuyao_najia_pins_every_line_branch():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from liuyao_cast import NAJIA_TABLE
 
     # 先锁整张表 —— 端到端断言只覆盖某一次起卦碰到的那一宫, 而缺陷可以落在
@@ -482,7 +482,7 @@ def test_64hex_judgments_are_pinned_per_hexagram():
     import json
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    d = json.loads((root / "assets" / "64hex.json").read_text(encoding="utf-8"))
+    d = json.loads((root / "skills/chinese-fortune/assets" / "64hex.json").read_text(encoding="utf-8"))
     items = list(d["hexagrams"].values()) if isinstance(d.get("hexagrams"), dict) \
         else d["hexagrams"]
     by_num = {h["number"]: h for h in items}
@@ -518,7 +518,7 @@ def test_xiaoliuren_closed_form_matches_the_step_by_step_walk():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from xiaoliuren_cast import PALACES, cast
 
     names = [p["name"] for p in PALACES]
@@ -547,7 +547,7 @@ def test_xiaoliuren_intermediate_palaces_are_consistent():
     """
     import sys
     from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"))
     from xiaoliuren_cast import PALACES, cast
 
     names = [p["name"] for p in PALACES]
@@ -572,7 +572,7 @@ def test_64hex_line_texts_are_pinned_not_just_judgments():
     import json
     from pathlib import Path
     root = Path(__file__).resolve().parent.parent
-    d = json.loads((root / "assets" / "64hex.json").read_text(encoding="utf-8"))
+    d = json.loads((root / "skills/chinese-fortune/assets" / "64hex.json").read_text(encoding="utf-8"))
     items = list(d["hexagrams"].values()) if isinstance(d.get("hexagrams"), dict) \
         else d["hexagrams"]
     by_num = {h["number"]: h for h in items}

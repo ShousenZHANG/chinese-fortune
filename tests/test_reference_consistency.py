@@ -22,13 +22,13 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
 
 DIZHI = "子丑寅卯辰巳午未申酉戌亥"
 
 
 def _read(rel: str) -> str:
-    return (ROOT / rel).read_text(encoding="utf-8")
+    return (ROOT / "skills/chinese-fortune" / rel).read_text(encoding="utf-8")
 
 
 # --------------------------------------------------------------------------- #
@@ -116,7 +116,7 @@ def test_jianchu_tendency_matches_its_own_reference():
         )
     assert len(doc) == 12, f"§6 建除表应有 12 行, 解析到 {len(doc)}: {sorted(doc)}"
 
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     from huangli_query import JIAN_CHU_TENDENCY as eng
 
     assert set(eng) == set(doc), set(eng) ^ set(doc)
@@ -153,7 +153,7 @@ def _parse_stem_branch_table(md: str, section: str) -> dict[str, set]:
 def test_tianyi_guiren_agrees_across_the_retained_reference_and_asset():
     """Compare the two retained tables; the removed inline/overview copies are not required."""
     import json
-    data = json.loads((ROOT / "assets/shensha.json").read_text(encoding="utf-8"))
+    data = json.loads((ROOT / "skills/chinese-fortune/assets/shensha.json").read_text(encoding="utf-8"))
     asset = next(e["qi_fa_table"] for group in ("ji_shen", "xiong_sha")
                  for e in data[group] if e["name"] == "天乙贵人")
     reference = _parse_stem_branch_table(_read("references/19-shensha.md"), "### 2.1 天乙贵人")
@@ -161,4 +161,4 @@ def test_tianyi_guiren_agrees_across_the_retained_reference_and_asset():
     assert {stem: set(branches) for stem, branches in asset.items()} == reference
     assert reference["辛"] == {"午", "寅"}
     targets = re.findall(r"\]\(([^)]+)\)", _read("references/01-bazi.md"))
-    assert any((ROOT / "references" / target).resolve() == (ROOT / "references/19-shensha.md").resolve() for target in targets)
+    assert any((ROOT / "skills/chinese-fortune/references" / target).resolve() == (ROOT / "skills/chinese-fortune/references/19-shensha.md").resolve() for target in targets)

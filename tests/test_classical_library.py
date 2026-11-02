@@ -111,10 +111,10 @@ def test_every_character_in_the_library_is_reachable_from_its_simplified_form() 
     from pathlib import Path
 
     root = Path(__file__).resolve().parents[1]
-    table = json.loads((root / 'assets' / 'han-variants.json').read_text(encoding='utf-8'))
+    table = json.loads((root / 'skills/chinese-fortune/assets' / 'han-variants.json').read_text(encoding='utf-8'))
     folds = table['mapping']
     corpus: set[str] = set()
-    for path in sorted((root / 'knowledge').rglob('*.json')):
+    for path in sorted((root / 'skills/chinese-fortune/knowledge').rglob('*.json')):
         for char in path.read_text(encoding='utf-8'):
             if unicodedata.category(char) == 'Lo' and '㐀' <= char <= '鿿':
                 corpus.add(char)

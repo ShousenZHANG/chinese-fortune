@@ -231,7 +231,7 @@ def test_research_cli_rejects_path_escape_without_creating_files(tmp_path):
     from pathlib import Path
 
     proc = subprocess.run([sys.executable, '-X', 'utf8',
-                           str(Path(__file__).parents[1] / 'scripts/research_session.py'),
+                           str(Path(__file__).parents[1] / 'skills/chinese-fortune/scripts/research_session.py'),
                            'status', '--stdin', '--data-dir', str(tmp_path)],
                           input=json.dumps({'research_id': '../outside'}),
                           capture_output=True, text=True, encoding='utf-8')

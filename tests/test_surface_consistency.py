@@ -9,9 +9,10 @@ from build_skill import SCRIPT_EXCLUDE
 from classical_search import get_passage
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'scripts'
-SKILL = (ROOT / 'SKILL.md').read_text(encoding='utf-8')
-REFERENCES = {p.name: p.read_text(encoding='utf-8') for p in (ROOT / 'references').glob('*.md')}
+SCRIPTS = ROOT / 'skills/chinese-fortune/scripts'
+SKILL_DIR = ROOT / 'skills/chinese-fortune'
+SKILL = (SKILL_DIR / 'SKILL.md').read_text(encoding='utf-8')
+REFERENCES = {p.name: p.read_text(encoding='utf-8') for p in (ROOT / 'skills/chinese-fortune/references').glob('*.md')}
 ROUTER = (SCRIPTS / 'question_router.py').read_text(encoding='utf-8')
 
 
@@ -72,7 +73,7 @@ def test_router_method_references_mention_their_scripts():
 
 def test_skill_links_resolve():
     for target in re.findall(r'\]\(((?:references|docs)/[^)#]+)', SKILL):
-        assert (ROOT / target).is_file(), target
+        assert (SKILL_DIR / target).is_file(), target
     for name in re.findall(r'scripts/([a-z_]+\.py)', SKILL):
         assert (SCRIPTS / name).is_file() and name not in SCRIPT_EXCLUDE, name
 
@@ -81,7 +82,7 @@ def test_capability_table_points_at_real_passages_and_references():
     for row in fortune_rules.capabilities():
         ref = row.get('ranking_reference')
         if ref:
-            assert (ROOT / ref).is_file(), (row['scenario'], ref)
+            assert (SKILL_DIR / ref).is_file(), (row['scenario'], ref)
         authority = row.get('authority') or {}
         for key in ('method_passage_id', 'passage_id'):
             if authority.get(key):

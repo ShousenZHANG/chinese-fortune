@@ -41,7 +41,7 @@ def test_every_liuyao_rule_quotes_its_hashed_passage():
 
     from classical_search import get_passage, normalized
     root = Path(__file__).resolve().parents[1]
-    rules = json.loads((root / 'assets' / 'liuyao_rules.json').read_text(encoding='utf-8'))['rules']
+    rules = json.loads((root / 'skills/chinese-fortune/assets' / 'liuyao_rules.json').read_text(encoding='utf-8'))['rules']
     strip = str.maketrans('', '', '，。、；：「」')
     for rule in rules:
         text = get_passage(rule['passage_id'])['text']

@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 ROOT = Path(__file__).resolve().parent.parent
-BUILD = ROOT / "scripts" / "build_skill.py"
+BUILD = ROOT / "skills/chinese-fortune/scripts" / "build_skill.py"
 
 
 @pytest.fixture(scope="module")
@@ -73,12 +73,12 @@ def test_every_maintenance_file_stays_out_of_the_package(package):
 
     ``scripts/requirements-dev.txt`` opens with 「不进运行包」 and shipped anyway.
     """
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     from build_skill import SCRIPT_EXCLUDE
     names = set(zipfile.ZipFile(package).namelist())
     assert "requirements-dev.txt" in SCRIPT_EXCLUDE
     for name in SCRIPT_EXCLUDE:
-        assert (ROOT / "scripts" / name).is_file(), f"stale exclusion: {name}"
+        assert (ROOT / "skills/chinese-fortune/scripts" / name).is_file(), f"stale exclusion: {name}"
         assert f"chinese-fortune/scripts/{name}" not in names, name
 
 
@@ -97,7 +97,7 @@ def test_extracted_package_runs(package, tmp_path):
 
 
 def test_the_writer_keeps_binary_bytes_and_normalises_text(tmp_path):
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     from build_skill import _file_bytes
     binary, text = tmp_path / "zone", tmp_path / "note.md"
     binary.write_bytes(b"TZif\0\0\r\n\x01")
@@ -110,11 +110,11 @@ def test_vendored_files_ship_byte_for_byte(package):
     bytes 0D 0A would be corrupted by that, and every chart in that zone with it.
     tzdata 2026.3 happens to have none; a later release may."""
     names = set(zipfile.ZipFile(package).namelist())
-    vendored = [p for d in ("lunar_python", "tzdata") for p in (ROOT / "scripts" / d).rglob("*")
+    vendored = [p for d in ("lunar_python", "tzdata") for p in (ROOT / "skills/chinese-fortune/scripts" / d).rglob("*")
                 if p.is_file() and "__pycache__" not in p.parts]
     with zipfile.ZipFile(package) as archive:
         for path in vendored:
-            name = "chinese-fortune/" + path.relative_to(ROOT).as_posix()
+            name = "chinese-fortune/" + path.relative_to(ROOT / "skills/chinese-fortune").as_posix()
             assert name in names and archive.read(name) == path.read_bytes(), name
 
 
@@ -123,7 +123,7 @@ def test_vendored_files_ship_byte_for_byte(package):
 # --------------------------------------------------------------------------- #
 
 def test_read_version_matches_the_shipped_constant():
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     import bazi_calc
     import build_skill
 
@@ -133,7 +133,7 @@ def test_read_version_matches_the_shipped_constant():
 def test_read_version_fails_loudly_when_absent(monkeypatch):
     """A missing VERSION used to yield "0.0.0" silently, so a refactor that
     moved the constant would have shipped a misnamed zip with nothing red."""
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     import build_skill
 
     monkeypatch.setattr(Path, "read_text", lambda self, *a, **kw: "# no version here")
@@ -153,7 +153,7 @@ def test_default_output_name_carries_the_version(tmp_path):
     passed. It now builds into tmp_path via --dist-dir and asserts the file the
     run actually produced.
     """
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     import build_skill
 
     dist = tmp_path / "dist"
@@ -237,7 +237,7 @@ def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout(
     differ in 59 of 63 files, and are byte-identical once line endings are
     normalised. build() now forces LF, and .gitattributes keeps the tree LF too.
     """
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     import build_skill
     out_path = tmp_path / "lf_check.zip"          # 绝不写进仓库的 dist/
     build_skill.build(out_path, build_skill.collect())
@@ -258,7 +258,7 @@ def test_gitattributes_pins_line_endings():
 
 def test_zip_creator_metadata_is_independent_of_host(tmp_path, monkeypatch):
     """Windows and Unix ZipInfo defaults must produce the same release bytes."""
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     import build_skill
 
     source = tmp_path / "sample.md"
@@ -300,7 +300,7 @@ def test_changelog_ships_with_the_package(package):
     assert "chinese-fortune/CHANGELOG.md" in names, sorted(
         n for n in names if "/" not in n.split("/", 1)[1])
     body = zipfile.ZipFile(package).read("chinese-fortune/CHANGELOG.md").decode("utf-8")
-    sys.path.insert(0, str(ROOT / "scripts"))
+    sys.path.insert(0, str(ROOT / "skills/chinese-fortune/scripts"))
     from utils import __version__
     assert f"## [{__version__}]" in body, "包内 CHANGELOG 没有当前版本的条目"
 
@@ -314,7 +314,7 @@ def test_runtime_and_source_archives_have_explicit_different_scopes(package, tmp
     source_out_path = package.with_name(package.stem + "-sources.zip")
     assert manifest["schema_version"] == "2.0" and manifest["distribution_kind"] == "runtime"
     assert not any("/knowledge/sources/" in name for name in names)
-    expected = json.loads((ROOT / "knowledge/manifest.json").read_text(encoding="utf-8"))
+    expected = json.loads((ROOT / "skills/chinese-fortune/knowledge/manifest.json").read_text(encoding="utf-8"))
     chapters = {"chinese-fortune/knowledge/" + c["path"] for b in expected["books"] for c in b["chapters"]}
     assert len(chapters) == 557 and chapters <= names
     assert set(manifest["runtime_files"]) == {n.removeprefix("chinese-fortune/") for n in names} - {"knowledge/manifest.json"}
@@ -362,30 +362,35 @@ def test_working_tree_provenance_ignores_unrelated_untracked_notes(tmp_path, mon
                 ["git", "-C", str(tmp_path), "config", "user.email", "fixture@example.invalid"],
                 ["git", "-C", str(tmp_path), "config", "user.name", "Fixture"]):
         subprocess.run(cmd, check=True, capture_output=True)
-    (tmp_path / "SKILL.md").write_text("tracked", encoding="utf-8")
-    subprocess.run(["git", "-C", str(tmp_path), "add", "SKILL.md"], check=True, capture_output=True)
+    skill = tmp_path / "skills/chinese-fortune"
+    skill.mkdir(parents=True)
+    (skill / "SKILL.md").write_text("tracked", encoding="utf-8")
+    subprocess.run(["git", "-C", str(tmp_path), "add", "skills/chinese-fortune/SKILL.md"], check=True, capture_output=True)
     subprocess.run(["git", "-C", str(tmp_path), "commit", "-qm", "fixture"], check=True, capture_output=True)
     monkeypatch.setattr(build_skill, "ROOT", tmp_path)
+    monkeypatch.setattr(build_skill, "SKILL", skill)
     (tmp_path / "user-notes.md").write_text("unrelated", encoding="utf-8")
     assert build_skill._provenance(None)["dirty"] is False
-    (tmp_path / "SKILL.md").write_text("changed", encoding="utf-8")
+    (skill / "SKILL.md").write_text("changed", encoding="utf-8")
     assert build_skill._provenance(None)["dirty"] is True
 
 
 def test_fixed_commit_executes_its_builder_not_dirty_local_script(tmp_path, monkeypatch):
     import build_skill
     repo = tmp_path / "repo"
-    (repo / "scripts").mkdir(parents=True)
+    skill = repo / "skills/chinese-fortune"
+    (skill / "scripts").mkdir(parents=True)
     fixture = "import argparse\np=argparse.ArgumentParser()\np.add_argument('--out')\np.add_argument('--snapshot-commit')\np.add_argument('--snapshot-archive')\np.add_argument('--snapshot-commit-object')\na=p.parse_args()\nfrom pathlib import Path\nPath(a.out).write_text(a.snapshot_commit)\n"
-    (repo / "scripts/build_skill.py").write_text(fixture, encoding="utf-8")
+    (skill / "scripts/build_skill.py").write_text(fixture, encoding="utf-8")
     for cmd in (["git", "init", "-q"], ["git", "config", "user.email", "fixture@example.invalid"],
                 ["git", "config", "user.name", "Fixture"], ["git", "add", "."],
                 ["git", "commit", "-qm", "fixture"]):
         subprocess.run(cmd, cwd=repo, check=True, capture_output=True)
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=repo, text=True).strip()
-    (repo / "scripts/build_skill.py").write_text("raise SystemExit('dirty builder ran')", encoding="utf-8")
+    (skill / "scripts/build_skill.py").write_text("raise SystemExit('dirty builder ran')", encoding="utf-8")
     (repo / "untracked-user-plan.md").write_text("keep", encoding="utf-8")
     monkeypatch.setattr(build_skill, "ROOT", repo)
+    monkeypatch.setattr(build_skill, "SKILL", skill)
     out_path = tmp_path / "fixed.txt"
     assert build_skill._build_snapshot(commit, out_path) == 0
     assert out_path.read_text(encoding="utf-8") == commit

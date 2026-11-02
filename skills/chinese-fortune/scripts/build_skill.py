@@ -19,16 +19,14 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+# The installable skill lives in skills/chinese-fortune/ (what `npx skills add` and plugin hosts copy);
+# READMEs, docs and the changelog stay at the repository root and are added to the release ZIP beside it.
+SKILL = Path(__file__).resolve().parents[1]
+ROOT = SKILL.parents[1]
 SKILL_FOLDER = "chinese-fortune"
-INCLUDE_FILES = ["SKILL.md", "README.md", "README.en.md", "LICENSE",
-                 "CHANGELOG.md", "docs/OUTPUT-VALIDATION.md", "docs/OUTPUT-EXAMPLE.md",
-                 "docs/OPTIONAL-TOOLS.md", "docs/CLASSICAL-SOURCES.md",
-                 "docs/QIMEN-LIUREN-METHODS.md", "docs/BAZI-RULES.md", "docs/CONTENT-COVERAGE.md",
-                 "docs/RELEASE-PROCESS.md", "docs/FACSIMILE-COLLATION.md",
-                 "docs/FACSIMILE-CANDIDATES.md", "docs/BAZI-TIME-METHOD.md", "docs/MIGRATION-5.10.md",
-                 "docs/MIGRATION-5.11.md", "docs/MIGRATION-6.0.md"]
-INCLUDE_DIRS = ["references", "assets", "agents"]
+SKILL_FILES = ["SKILL.md", "LICENSE"]
+INCLUDE_FILES = ["README.md", "README.en.md", "CHANGELOG.md"]
+INCLUDE_DIRS = ["references", "assets", "agents", "docs"]
 # Maintenance tools: they run from a checkout, never from the installed
 # package. Tests derive their own exemptions from this set rather than
 # keeping parallel lists -- three copies had already drifted apart.
@@ -49,7 +47,7 @@ def read_version() -> str:
     Fails hard rather than falling back to "0.0.0": a silent fallback would
     ship a misnamed release zip, and nothing downstream would go red.
     """
-    source = ROOT / "scripts" / "utils.py"
+    source = SKILL / "scripts" / "utils.py"
     text = source.read_text(encoding="utf-8")
     m = re.search(r'__version__\s*=\s*"([^"]+)"', text)
     if not m:
@@ -61,7 +59,7 @@ def read_version() -> str:
 
 
 def validate_skill_md() -> None:
-    md = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+    md = (SKILL / "SKILL.md").read_text(encoding="utf-8")
     if not md.startswith("---\n"):
         sys.exit("FATAL: SKILL.md missing YAML frontmatter")
     _, fm, _ = md.split("---", 2)
@@ -94,14 +92,18 @@ def _file_bytes(path: Path) -> bytes:
     # The frozen corpus is already hash-bound: do not rewrite its raw sources.
     # Binary files (the vendored zoneinfo data) keep their bytes: 0D 0A there is data.
     data = path.read_bytes()
-    if path.is_relative_to(ROOT / "knowledge") or b"\0" in data:
+    if path.is_relative_to(SKILL / "knowledge") or b"\0" in data:
         return data
-    return data.replace(b"\r\n", b"\n")
+    data = data.replace(b"\r\n", b"\n")
+    if path.suffix == ".md" and not path.is_relative_to(SKILL):
+        # The root READMEs link into skills/chinese-fortune/; in the package those files sit beside them.
+        data = data.replace(b"](skills/chinese-fortune/", b"](")
+    return data
 
 
 def _source_manifest() -> dict:
     from classical_search import validate_library
-    library = ROOT / "knowledge"
+    library = SKILL / "knowledge"
     report = validate_library(library_root=library)
     if not report["ok"] or report.get("distribution_kind") != "source":
         raise ValueError("full source validation failed: " + str(report))
@@ -112,24 +114,34 @@ def collect() -> list[Path]:
     """Validate full sources, then select every declared book's runtime chapters."""
     manifest = _source_manifest()
     picked = []
-    for name in INCLUDE_FILES:
-        path = ROOT / name
-        if not path.is_file():
-            raise ValueError("required file missing: " + name)
-        picked.append(path)
+    for base_dir, names in ((SKILL, SKILL_FILES), (ROOT, INCLUDE_FILES)):
+        for name in names:
+            path = base_dir / name
+            if not path.is_file():
+                raise ValueError("required file missing: " + name)
+            picked.append(path)
     for name in INCLUDE_DIRS:
-        base = ROOT / name
+        base = SKILL / name
         if not base.is_dir():
             raise ValueError("required dir missing: " + name)
         picked.extend(p for p in base.rglob("*") if p.is_file())
-    picked.extend(ROOT / "knowledge" / c["path"]
+    picked.extend(SKILL / "knowledge" / c["path"]
                   for b in manifest["books"] for c in b["chapters"])
-    picked.extend(p for p in (ROOT / "scripts").rglob("*")
+    picked.extend(p for p in (SKILL / "scripts").rglob("*")
                   if p.is_file() and p.name not in SCRIPT_EXCLUDE)
     if any(not p.resolve().is_relative_to(ROOT.resolve()) for p in picked):
         raise ValueError("runtime path escapes the project root")
-    return sorted({p for p in picked if not EXCLUDE_RE.search("/" + p.relative_to(ROOT).as_posix())},
-                  key=lambda p: p.relative_to(ROOT).as_posix())
+    kept = {p for p in picked if not EXCLUDE_RE.search("/" + _arcname(p))}
+    by_name = {_arcname(p): p for p in kept}
+    if len(by_name) != len(kept):
+        raise ValueError("two files map to the same archive path")
+    return [by_name[name] for name in sorted(by_name)]
+
+
+def _arcname(path: Path) -> str:
+    """Path inside chinese-fortune/: skill files by their place in the skill, root docs by theirs."""
+    base = SKILL if path.is_relative_to(SKILL) else ROOT
+    return path.relative_to(base).as_posix()
 
 
 def compile_check(files: list[Path]) -> None:
@@ -155,7 +167,7 @@ def _zip_bytes(entries: dict[str, bytes]) -> bytes:
 def build(out_path: Path, files: list[Path]) -> None:
     """Low-level deterministic ZIP writer; distribution creation uses build_distribution."""
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_bytes(_zip_bytes({p.relative_to(ROOT).as_posix(): _file_bytes(p) for p in files}))
+    out_path.write_bytes(_zip_bytes({_arcname(p): _file_bytes(p) for p in files}))
 
 
 def _git(*args: str) -> str:
@@ -175,7 +187,7 @@ def _provenance(commit: str | None) -> dict:
         sha = _git("rev-parse", "HEAD")
         # Unrelated untracked notes do not prevent or dirty the runtime inputs.
         changed = _git("status", "--porcelain", "--untracked-files=all", "--",
-                       "scripts", "knowledge", *INCLUDE_FILES, *INCLUDE_DIRS)
+                       SKILL.relative_to(ROOT).as_posix(), *INCLUDE_FILES)
         return {"mode": "development", "commit": sha, "dirty": bool(changed)}
     except ValueError:
         return {"mode": "development", "commit": None, "dirty": True}
@@ -189,12 +201,12 @@ def build_distribution(out_path: Path, *, commit: str | None = None) -> dict:
     compile_check(files)
     manifest = _source_manifest()
     version, provenance = read_version(), _provenance(commit)
-    entries = {p.relative_to(ROOT).as_posix(): _file_bytes(p) for p in files}
+    entries = {_arcname(p): _file_bytes(p) for p in files}
     release = {"schema_version": "1.0", "version": version, "build": provenance,
                "license": "LICENSE; chapter transcription licenses in knowledge/manifest.json",
                "validation_scope": "frozen text inventory and bytes, not image collation or prediction validity"}
     entries["RELEASE.json"] = _json_bytes(release)
-    source_entries = {"knowledge/manifest.json": (ROOT / "knowledge/manifest.json").read_bytes(),
+    source_entries = {"knowledge/manifest.json": (SKILL / "knowledge/manifest.json").read_bytes(),
                       "LICENSE": entries["LICENSE"], "RELEASE.json": entries["RELEASE.json"]}
     archived = {}
     for book in manifest["books"]:
@@ -202,13 +214,13 @@ def build_distribution(out_path: Path, *, commit: str | None = None) -> dict:
         if book.get("source_metadata_path"):
             archived[book["source_metadata_path"]] = book["source_metadata_sha256"]
         for row in book["chapters"]:
-            chapter = json.loads((ROOT / "knowledge" / row["path"]).read_text(encoding="utf-8"))
+            chapter = json.loads((SKILL / "knowledge" / row["path"]).read_text(encoding="utf-8"))
             archived[chapter["raw_path"]] = chapter["raw_sha256"]
-            source_entries["knowledge/" + row["path"]] = (ROOT / "knowledge" / row["path"]).read_bytes()
+            source_entries["knowledge/" + row["path"]] = (SKILL / "knowledge" / row["path"]).read_bytes()
     for source in manifest.get("supporting_sources", []):
         archived[source["path"]] = source["sha256"]
     for name in archived:
-        source_entries["knowledge/" + name] = (ROOT / "knowledge" / name).read_bytes()
+        source_entries["knowledge/" + name] = (SKILL / "knowledge" / name).read_bytes()
     with tempfile.TemporaryDirectory(prefix="fortune-source-validation-") as directory:
         source_root = Path(directory)
         for name, data in source_entries.items():
@@ -329,7 +341,7 @@ def _build_snapshot(commit: str, out_path: Path) -> int:
                         raise ValueError("missing commit file")
                     target.write_bytes(stream.read())
         # Run the builder and validator from the selected commit, not dirty local code.
-        command = [sys.executable, str(snapshot / "scripts/build_skill.py"),
+        command = [sys.executable, str(snapshot / SKILL.relative_to(ROOT) / "scripts/build_skill.py"),
                    "--out", str(out_path), "--snapshot-commit", resolved,
                    "--snapshot-archive", str(archive_path), "--snapshot-commit-object", str(commit_object_path)]
         return subprocess.run(command, cwd=snapshot, timeout=180).returncode
@@ -355,7 +367,7 @@ def main(argv: list[str] | None = None) -> int:
                 raise ValueError("snapshot mode requires a complete commit proof")
             _verify_snapshot(args.snapshot_commit, args.snapshot_archive, args.snapshot_commit_object)
         if args.commit:
-            text = _git("show", args.commit + ":scripts/utils.py")
+            text = _git("show", f"{args.commit}:{SKILL.relative_to(ROOT).as_posix()}/scripts/utils.py")
             match = re.search(r'__version__\s*=\s*"([^"]+)"', text)
             if not match:
                 raise ValueError("selected commit has no version")

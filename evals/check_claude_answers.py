@@ -16,7 +16,7 @@ from functools import cache
 from pathlib import Path
 from typing import Optional, Union
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'skills/chinese-fortune/scripts'))
 from answer_check import check_answer  # noqa: E402
 from answer_evidence import PRODUCERS, parse_evidence
 
