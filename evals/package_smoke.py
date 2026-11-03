@@ -18,6 +18,30 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _checked_members(package: zipfile.ZipFile) -> set[str]:
+    names = package.namelist()
+    if len(names) != len(set(names)) or package.testzip() is not None:
+        raise ValueError('duplicate or corrupt ZIP members')
+    for info in package.infolist():
+        parts = info.filename.split('/')
+        if parts[0] != 'chinese-fortune' or any(p in ('', '.', '..') or ':' in p for p in parts):
+            raise ValueError('unsafe archive member')
+        if "\\" in info.filename or (info.external_attr >> 16) & 0o170000 == 0o120000:
+            raise ValueError('unsafe archive member')
+    return set(names)
+
+
+def _verify_legal_members(package: zipfile.ZipFile) -> None:
+    sys.path.insert(0, str(ROOT / 'skills/chinese-fortune/scripts'))
+    from build_skill import LEGAL_FILES, validate_legal_bundle
+
+    names = set(package.namelist())
+    entries = {name: package.read('chinese-fortune/' + name)
+               for name in (*LEGAL_FILES, 'knowledge/manifest.json')
+               if 'chinese-fortune/' + name in names}
+    validate_legal_bundle(entries)
+
+
 def run(command: list[str], cwd: Path, *, expected: int = 0, data: str | None = None) -> str:
     env = os.environ.copy()
     env.pop("PYTHONPATH", None)
@@ -43,15 +67,8 @@ def verify_archive(archive: Path, *, expected_commit: str | None = None) -> dict
     if sums.get(archive.name) != actual:
         raise ValueError('runtime ZIP checksum mismatch')
     with zipfile.ZipFile(archive) as package:
-        names = package.namelist()
-        if len(names) != len(set(names)) or package.testzip() is not None:
-            raise ValueError('duplicate or corrupt ZIP members')
-        for info in package.infolist():
-            parts = info.filename.split('/')
-            if parts[0] != 'chinese-fortune' or any(p in ('', '.', '..') or ':' in p for p in parts):
-                raise ValueError('unsafe archive member')
-            if "\\" in info.filename or (info.external_attr >> 16) & 0o170000 == 0o120000:
-                raise ValueError('unsafe archive member')
+        names = _checked_members(package)
+        _verify_legal_members(package)
         manifest = json.loads(package.read('chinese-fortune/knowledge/manifest.json'))
         required = {'chinese-fortune/' + name for name in manifest['runtime_files']}
         required.add('chinese-fortune/knowledge/manifest.json')
@@ -68,11 +85,24 @@ def verify_archive(archive: Path, *, expected_commit: str | None = None) -> dict
         source = manifest['source_archive']
         if Path(source['filename']).name != source['filename'] or '/' in source['filename'] or "\\" in source['filename']:
             raise ValueError('unsafe source archive filename')
-        source_sha = hashlib.sha256((archive.parent / source['filename']).read_bytes()).hexdigest()
+        source_path = archive.parent / source['filename']
+        source_sha = hashlib.sha256(source_path.read_bytes()).hexdigest()
         if sums.get(source['filename']) != source_sha or source['sha256'] != source_sha:
             raise ValueError('source archive checksum mismatch')
         if source['build'] != release['build']:
             raise ValueError('source and runtime commit provenance differs')
+    with zipfile.ZipFile(source_path) as source_package:
+        _checked_members(source_package)
+        _verify_legal_members(source_package)
+        source_release = json.loads(source_package.read('chinese-fortune/RELEASE.json'))
+        if source_release != release:
+            raise ValueError('source and runtime release metadata differs')
+        source_manifest = json.loads(source_package.read('chinese-fortune/knowledge/manifest.json'))
+        if source_manifest.get('distribution_kind') != 'source':
+            raise ValueError('expected source distribution')
+        for key in ('books', 'supporting_sources'):
+            if source_manifest[key] != manifest[key]:
+                raise ValueError('source and runtime provenance index differs')
     return {'sha256': actual, 'source_sha256': source_sha, 'version': release['version'], 'build': release['build']}
 
 

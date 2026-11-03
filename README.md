@@ -244,4 +244,4 @@ python -X utf8 evals/package_smoke.py
 
 ## 许可证
 
-代码采用 [MIT](LICENSE)，第三方古籍转录保留各自授权。用于传统文化研习；现实医疗、法律和投资决定依据相应专业信息。
+项目代码采用标准 [MIT](LICENSE)。随包依赖、移植代码、古籍转录及现实参考正文保留各自条款和署名，见 [第三方声明与许可全文](skills/chinese-fortune/THIRD_PARTY_NOTICES.md)。[产品免责声明](skills/chinese-fortune/DISCLAIMER.md) 单独列出，不增加许可限制。这些文件随安装目录、运行包和古籍来源包分发。

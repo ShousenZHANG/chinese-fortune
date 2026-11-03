@@ -207,4 +207,4 @@ Release builds use a full commit SHA, clean-install checks and the exact CI arti
 
 ## License
 
-Code is [MIT](LICENSE); third-party texts keep their recorded licensing. For cultural study; real-world medical, legal and investment decisions belong with appropriate professional information.
+Project code uses the standard [MIT license](LICENSE). Bundled dependencies, adapted code, corpus transcriptions, and life-guide text retain their own terms and attribution in [Third-party notices and full license texts](skills/chinese-fortune/THIRD_PARTY_NOTICES.md). The separate [product disclaimer](skills/chinese-fortune/DISCLAIMER.md) adds no license restrictions. These documents accompany the installed folder, runtime ZIP, and corpus-source ZIP.

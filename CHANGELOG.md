@@ -6,6 +6,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 ## [Unreleased] — 安装目录
 
+- 标准 MIT 全文与产品免责声明分开。补齐依赖、移植代码、古籍转录、现实参考和 OpenCC 字典派生数据的第三方署名及许可全文，安装目录、运行包和来源包均自带声明。构建与归档验证拒绝缺失、空白或丢失署名的法律文件，即使包内清单和校验值被一致重算。
 - **可安装的 skill 移到 `skills/chinese-fortune/`**：`SKILL.md`、`scripts/`、`references/`、`knowledge/`、`assets/`、`agents/` 和随包文档都在这个目录里；测试、评测和内部文档留在仓库根目录。此前 `SKILL.md` 在仓库根目录：`npx skills add` 走克隆安装时会把整个仓库（含测试、评测和 10MB 原始来源）拷进用户目录，走 skills.sh 缓存安装时又只装 `SKILL.md` 一个文件；skills.sh 也一直没有生成这个 skill 的缓存副本，页面显示不出 SKILL.md。
 - Claude Code 插件清单的 `source` 改为 `./skills/chinese-fortune`；Gemini CLI 自带命令需加 `--path skills/chinese-fortune`。发行 zip 的内部结构不变（仍是 `chinese-fortune/SKILL.md`、`chinese-fortune/scripts/` 等）。
 - README 中英文版按安装、提问、能力、可信依据、隐私、更新卸载、项目结构的顺序重写，长说明收进可展开段落。

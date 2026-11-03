@@ -5,6 +5,8 @@ carry SKILL.md + runtime files, and leak NO dev/test cruft.
 """
 import hashlib
 import json
+import re
+import shutil
 import subprocess
 import sys
 import zipfile
@@ -244,7 +246,7 @@ def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout(
     offenders = []
     with zipfile.ZipFile(out_path) as zf:
         for name in zf.namelist():
-            if b"\r\n" in zf.read(name):
+            if b"\r\n" in zf.read(name) and "/licenses/" not in name:
                 offenders.append(name)
     assert not offenders, f"CRLF in packaged files: {offenders[:10]}"
 
@@ -451,3 +453,164 @@ def test_snapshot_proof_binds_the_tree_not_only_a_commit_label(tmp_path, monkeyp
         build_skill._verify_snapshot(commit, archive_out_path, proof_out_path)
     with pytest.raises(ValueError, match="does not match its SHA"):
         build_skill._verify_snapshot("0" * 40, archive_out_path, proof_out_path)
+
+
+def test_legal_bundle_survives_both_archives_and_a_direct_folder_copy(package, tmp_path):
+    import build_skill
+
+    skill = ROOT / "skills/chinese-fortune"
+    copied = tmp_path / "installed"
+    shutil.copytree(skill, copied, ignore=shutil.ignore_patterns("__pycache__"))
+    assert (ROOT / "LICENSE").read_bytes() == (copied / "LICENSE").read_bytes()
+    assert (copied / "LICENSE").read_text(encoding="utf-8").endswith("SOFTWARE.\n")
+    assert "ADDITIONAL DISCLAIMER" not in (copied / "LICENSE").read_text(encoding="utf-8")
+    for path in (package, package.with_name(package.stem + "-sources.zip")):
+        with zipfile.ZipFile(path) as archive:
+            for name in build_skill.LEGAL_FILES:
+                assert archive.read("chinese-fortune/" + name) == (copied / name).read_bytes()
+            for name in ("DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licenses/README.md"):
+                for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", (copied / name).read_text(encoding="utf-8")):
+                    if not target.startswith(("http://", "https://", "#")):
+                        assert (copied / name).parent.joinpath(target).is_file()
+                        relative = (Path(name).parent / target).as_posix()
+                        assert "chinese-fortune/" + relative in archive.namelist()
+    for standalone, original in (
+        ("lunar-python-MIT.txt", "lunar_python-1.4.8.dist-info/LICENSE"),
+        ("tzdata-NOTICE.txt", "tzdata-2026.3.dist-info/licenses/LICENSE"),
+        ("tzdata-Apache-2.0.txt", "tzdata-2026.3.dist-info/licenses/licenses/LICENSE_APACHE"),
+    ):
+        assert (copied / "licenses" / standalone).read_bytes() == (skill / "scripts" / original).read_bytes()
+    life = json.loads((copied / "assets/life_guide.json").read_text(encoding="utf-8"))
+    assert (copied / "licenses/HowToLiveBetter-MIT.txt").read_text(encoding="utf-8").strip() == life["source"]["license_detail"]["code_notice"]
+
+
+@pytest.mark.parametrize("name", [
+    "LICENSE", "DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licenses/README.md",
+    "licenses/Renhuai-MIT.txt", "licenses/iztro-MIT.txt", "licenses/HowToLiveBetter-MIT.txt",
+    "licenses/CC-BY-4.0.txt", "licenses/CC-BY-SA-4.0.txt",
+    "licenses/OpenCC-Python-NOTICE.txt", "licenses/OpenCC-Python-Apache-2.0.txt",
+    "licenses/lunar-python-MIT.txt", "licenses/tzdata-NOTICE.txt", "licenses/tzdata-Apache-2.0.txt",
+])
+@pytest.mark.parametrize("damage", ["missing", "blank"])
+def test_builder_rejects_incomplete_legal_inputs_before_writing(tmp_path, monkeypatch, name, damage):
+    import build_skill
+
+    origin = ROOT / "skills/chinese-fortune"
+    skill = tmp_path / "skills/chinese-fortune"
+    for relative in (*build_skill.LEGAL_FILES, "SKILL.md", "knowledge/manifest.json"):
+        target = skill / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(origin / relative, target)
+    shutil.copyfile(ROOT / "LICENSE", tmp_path / "LICENSE")
+    if damage == "missing":
+        (skill / name).unlink()
+    else:
+        (skill / name).write_bytes(b" \n")
+    monkeypatch.setattr(build_skill, "ROOT", tmp_path)
+    monkeypatch.setattr(build_skill, "SKILL", skill)
+    out_path = tmp_path / "output/package.zip"
+    with pytest.raises(ValueError, match="required legal file"):
+        build_skill.build_distribution(out_path)
+    assert not out_path.parent.exists()
+
+
+def _repack_legal_damage(package, directory, changes):
+    import build_skill
+
+    directory.mkdir()
+    with zipfile.ZipFile(package) as archive:
+        runtime = {n.removeprefix("chinese-fortune/"): archive.read(n) for n in archive.namelist()}
+    source_name = package.stem + "-sources.zip"
+    with zipfile.ZipFile(package.parent / source_name) as archive:
+        sources = {n.removeprefix("chinese-fortune/"): archive.read(n) for n in archive.namelist()}
+    for distribution, name, replacement in changes:
+        damaged = runtime if distribution == "runtime" else sources
+        if replacement is None:
+            del damaged[name]
+        else:
+            damaged[name] = replacement(damaged[name])
+    source_bytes = build_skill._zip_bytes(sources)
+    (directory / source_name).write_bytes(source_bytes)
+    manifest = json.loads(runtime["knowledge/manifest.json"])
+    manifest["source_archive"]["sha256"] = hashlib.sha256(source_bytes).hexdigest()
+    manifest["runtime_files"] = {n: hashlib.sha256(data).hexdigest() for n, data in runtime.items()
+                                 if n != "knowledge/manifest.json"}
+    runtime["knowledge/manifest.json"] = json.dumps(manifest, ensure_ascii=False).encode("utf-8")
+    out_path = directory / package.name
+    out_path.write_bytes(build_skill._zip_bytes(runtime))
+    (directory / "SHA256SUMS").write_text(
+        f"{hashlib.sha256(out_path.read_bytes()).hexdigest()}  {out_path.name}\n"
+        f"{hashlib.sha256(source_bytes).hexdigest()}  {source_name}\n", encoding="utf-8")
+    return out_path
+
+
+@pytest.mark.parametrize("distribution", ["runtime", "source"])
+@pytest.mark.parametrize("name", [
+    "LICENSE", "DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licenses/README.md",
+    "licenses/Renhuai-MIT.txt", "licenses/iztro-MIT.txt", "licenses/HowToLiveBetter-MIT.txt",
+    "licenses/CC-BY-4.0.txt", "licenses/CC-BY-SA-4.0.txt",
+    "licenses/OpenCC-Python-NOTICE.txt", "licenses/OpenCC-Python-Apache-2.0.txt",
+    "licenses/lunar-python-MIT.txt", "licenses/tzdata-NOTICE.txt", "licenses/tzdata-Apache-2.0.txt",
+])
+def test_archive_legal_omission_is_rejected_with_coherent_inventories(package, tmp_path, distribution, name):
+    sys.path.insert(0, str(ROOT / "evals"))
+    import package_smoke
+
+    out_path = _repack_legal_damage(package, tmp_path / "damaged", [(distribution, name, None)])
+    with pytest.raises(ValueError, match="required legal file"):
+        package_smoke.verify_archive(out_path)
+
+
+@pytest.mark.parametrize("distribution", ["runtime", "source"])
+@pytest.mark.parametrize("damage", ["blank", "attribution", "book", "fulltext", "link"])
+def test_archive_legal_content_is_checked_after_rehashing(package, tmp_path, distribution, damage):
+    sys.path.insert(0, str(ROOT / "evals"))
+    import package_smoke
+
+    changes = {
+        "blank": ("DISCLAIMER.md", lambda data: b" \n"),
+        "attribution": ("THIRD_PARTY_NOTICES.md", lambda data: data.replace(b"Copyright (c) 2023 All Contributors", b"unattributed")),
+        "book": ("THIRD_PARTY_NOTICES.md", lambda data: data.replace(b"| `yilin_siku` |", b"| `omitted` |")),
+        "fulltext": ("licenses/OpenCC-Python-NOTICE.txt", lambda data: data.replace(b"Copyright 2016", b"Copyright unknown")),
+        "link": ("THIRD_PARTY_NOTICES.md", lambda data: data.replace(b"](licenses/iztro-MIT.txt)", b"](absent.txt)")),
+    }
+    name, replacement = changes[damage]
+    out_path = _repack_legal_damage(package, tmp_path / "damaged", [(distribution, name, replacement)])
+    with pytest.raises(ValueError, match="legal|attribution|coverage"):
+        package_smoke.verify_archive(out_path)
+
+
+def test_archive_rejects_coordinated_book_and_notice_deletion(package, tmp_path):
+    sys.path.insert(0, str(ROOT / "evals"))
+    import package_smoke
+
+    def remove_book(data):
+        manifest = json.loads(data)
+        manifest["books"] = [book for book in manifest["books"] if book["id"] != "yilin_siku"]
+        return json.dumps(manifest, ensure_ascii=False).encode("utf-8")
+
+    def remove_notice(data):
+        return b"".join(line for line in data.splitlines(keepends=True)
+                        if not line.startswith(b"| `yilin_siku` |"))
+
+    changes = [(distribution, name, replacement)
+               for distribution in ("runtime", "source")
+               for name, replacement in (("knowledge/manifest.json", remove_book),
+                                         ("THIRD_PARTY_NOTICES.md", remove_notice))]
+    out_path = _repack_legal_damage(package, tmp_path / "damaged", changes)
+    sums = {name: digest for digest, name in
+            (line.split("  ", 1) for line in
+             (out_path.parent / "SHA256SUMS").read_text(encoding="utf-8").splitlines())}
+    for name, digest in sums.items():
+        assert hashlib.sha256((out_path.parent / name).read_bytes()).hexdigest() == digest
+    with zipfile.ZipFile(out_path) as archive:
+        manifest = json.loads(archive.read("chinese-fortune/knowledge/manifest.json"))
+        assert manifest["source_archive"]["sha256"] == sums[manifest["source_archive"]["filename"]]
+        for name, digest in manifest["runtime_files"].items():
+            assert hashlib.sha256(archive.read("chinese-fortune/" + name)).hexdigest() == digest
+        expected = json.loads((ROOT / "skills/chinese-fortune/knowledge/manifest.json").read_bytes())
+        omitted = next(book for book in expected["books"] if book["id"] == "yilin_siku")
+        assert all("chinese-fortune/knowledge/" + chapter["path"] in archive.namelist()
+                   for chapter in omitted["chapters"])
+    with pytest.raises(ValueError, match="legal provenance index differs from trusted checkout: books"):
+        package_smoke.verify_archive(out_path)

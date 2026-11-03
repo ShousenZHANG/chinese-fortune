@@ -17,6 +17,8 @@ skills/chinese-fortune/knowledge/sources/** whitespace=-blank-at-eof
 skills/chinese-fortune/scripts/lunar_python/** -text
 skills/chinese-fortune/scripts/tzdata/** -text
 
+skills/chinese-fortune/licenses/*.txt -text whitespace=-blank-at-eol,-blank-at-eof,cr-at-eol
+
 # 二进制: 不做任何行尾转换。
 *.zip  binary
 *.png  binary

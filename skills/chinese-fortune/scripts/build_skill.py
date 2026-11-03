@@ -11,6 +11,7 @@ import copy
 import hashlib
 import io
 import json
+import posixpath
 import re
 import subprocess
 import sys
@@ -24,7 +25,7 @@ from pathlib import Path
 SKILL = Path(__file__).resolve().parents[1]
 ROOT = SKILL.parents[1]
 SKILL_FOLDER = "chinese-fortune"
-SKILL_FILES = ["SKILL.md", "LICENSE"]
+SKILL_FILES = ["SKILL.md"]
 INCLUDE_FILES = ["README.md", "README.en.md", "CHANGELOG.md"]
 INCLUDE_DIRS = ["references", "assets", "agents", "docs"]
 # Maintenance tools: they run from a checkout, never from the installed
@@ -39,6 +40,81 @@ EXCLUDE_RE = re.compile(
     r"(__pycache__|\.pyc$|\.pyo$|\.bak|\.bak-|/\.git/|\.pytest_cache|"
     r"\.DS_Store|Thumbs\.db|\.original\.md$)"
 )
+LEGAL_DIGESTS = {
+    "LICENSE": "3eee53bd84945816dd771de205a605833bcd009dd0cf8666580caec9d88274e5",
+    "licenses/Renhuai-MIT.txt": "c0214b387494be5b7a6d3e7bf62897e43dd425c2b77f42e20925029252275be4",
+    "licenses/iztro-MIT.txt": "e6c7b6e313cbda3135b41bccc66c98be132cb8319d0d465903d17e669e748b36",
+    "licenses/HowToLiveBetter-MIT.txt": "b5637b996d72e74dac01e8799701ff6440b5a979cd15a29ac120e7ae57963c67",
+    "licenses/CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "licenses/CC-BY-SA-4.0.txt": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+    "licenses/OpenCC-Python-NOTICE.txt": "afcbc6ee2d4fa9c2e9d5944b53ca05d3cc06bab6d082817c689bdfa33c38fcb0",
+    "licenses/OpenCC-Python-Apache-2.0.txt": "18f3fedf9eac72e6054260489c764c1e54f63cf2b16055523f561ffeec7bc908",
+    "licenses/lunar-python-MIT.txt": "a9d04f47f0615c0ce48bdbe2ff58d5c174279d9f20f044ef29249632302a4ab3",
+    "licenses/tzdata-NOTICE.txt": "df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46",
+    "licenses/tzdata-Apache-2.0.txt": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+}
+LEGAL_FILES = (*LEGAL_DIGESTS, "DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licenses/README.md")
+NOTICE_COVERAGE = (
+    "lunar-python 1.4.8", "Copyright (c) 2020 6tail", "tzdata 2026.3",
+    "Copyright (c) 2020, Paul Ganssle (Google)", "Copyright (c) 2026, Stan Ulbrych",
+    "《高性价比人生指南》，eternity4719", "842e11c9d51fac7943e5abb4e332e29b460b5061",
+    "CC BY 4.0", "Copyright (c) 2026 eternity4719", "Three entries",
+    "Wikisource contributors", "CC BY-SA 4.0 where applicable", "ShareAlike",
+    "modern editorial work", "1923", "Module:SKchar revision 9013306",
+    "opencc-python-reimplemented==0.1.7", "1803", "dictionary-derived subset",
+    "iztro 2.6.3", "f24f2d9f21c37a3d48aa06c76d73372e4cc9bc94",
+    "Copyright (c) 2023 All Contributors", "seven-level star-brightness table",
+    "495b79ecb3524b20b2edc026067d7d0b0f407319", "Copyright (c) 2026 紫微研究",
+    "alternative 庚干四化 and 魁钺 tables", "大耗", "岁破",
+)
+
+
+def validate_legal_bundle(entries: dict[str, bytes]) -> None:
+    """Validate the reviewed legal bundle independently of a package's inventory."""
+    for name in LEGAL_FILES:
+        if not entries.get(name, b"").strip():
+            raise ValueError("required legal file missing or blank: " + name)
+    for name, digest in LEGAL_DIGESTS.items():
+        if _digest(entries[name]) != digest:
+            raise ValueError("legal fulltext differs from reviewed upstream bytes: " + name)
+    notices = entries["THIRD_PARTY_NOTICES.md"].decode("utf-8")
+    for fragment in NOTICE_COVERAGE:
+        if fragment not in notices:
+            raise ValueError("third-party notice coverage missing: " + fragment)
+    manifest = json.loads(entries["knowledge/manifest.json"])
+    trusted_manifest = json.loads((SKILL / "knowledge/manifest.json").read_bytes())
+    for key in ("books", "supporting_sources"):
+        if manifest[key] != trusted_manifest[key]:
+            raise ValueError("legal provenance index differs from trusted checkout: " + key)
+    for book in manifest["books"]:
+        row = next((line for line in notices.splitlines()
+                    if line.startswith(f"| `{book['id']}` |")), "")
+        if any(str(book[key]) not in row for key in ("title", "source_url", "revision")):
+            raise ValueError("third-party book attribution missing: " + book["id"])
+        attribution = book["license"].get("attribution")
+        if attribution and attribution not in notices:
+            raise ValueError("third-party source attribution missing: " + book["id"])
+    for source in manifest["supporting_sources"]:
+        if source["source_url"] not in notices or source["license"] not in notices:
+            raise ValueError("supporting-source attribution missing: " + source["path"])
+    for name in LEGAL_FILES:
+        if name.endswith(".md"):
+            for target in re.findall(r"\[[^\]]+\]\(([^)]+)\)", entries[name].decode("utf-8")):
+                if target.startswith(("https://", "http://", "#")):
+                    continue
+                path = posixpath.normpath(posixpath.join(posixpath.dirname(name), target.split("#")[0]))
+                if path not in entries:
+                    raise ValueError(f"unresolved legal reference in {name}: {target}")
+
+
+def _legal_files() -> list[Path]:
+    files = [SKILL / name for name in LEGAL_FILES]
+    entries = {_arcname(path): _file_bytes(path) for path in files if path.is_file()}
+    entries["knowledge/manifest.json"] = (SKILL / "knowledge/manifest.json").read_bytes()
+    validate_legal_bundle(entries)
+    if (ROOT / "LICENSE").read_bytes().replace(b"\r\n", b"\n") != entries["LICENSE"]:
+        raise ValueError("root and installed skill MIT licenses differ")
+    return files
 
 
 def read_version() -> str:
@@ -92,7 +168,8 @@ def _file_bytes(path: Path) -> bytes:
     # The frozen corpus is already hash-bound: do not rewrite its raw sources.
     # Binary files (the vendored zoneinfo data) keep their bytes: 0D 0A there is data.
     data = path.read_bytes()
-    if path.is_relative_to(SKILL / "knowledge") or b"\0" in data:
+    if (path.is_relative_to(SKILL / "knowledge") or
+            path.is_relative_to(SKILL / "licenses") or b"\0" in data):
         return data
     data = data.replace(b"\r\n", b"\n")
     if path.suffix == ".md" and not path.is_relative_to(SKILL):
@@ -112,8 +189,8 @@ def _source_manifest() -> dict:
 
 def collect() -> list[Path]:
     """Validate full sources, then select every declared book's runtime chapters."""
+    picked = _legal_files()
     manifest = _source_manifest()
-    picked = []
     for base_dir, names in ((SKILL, SKILL_FILES), (ROOT, INCLUDE_FILES)):
         for name in names:
             path = base_dir / name
@@ -203,11 +280,12 @@ def build_distribution(out_path: Path, *, commit: str | None = None) -> dict:
     version, provenance = read_version(), _provenance(commit)
     entries = {_arcname(p): _file_bytes(p) for p in files}
     release = {"schema_version": "1.0", "version": version, "build": provenance,
-               "license": "LICENSE; chapter transcription licenses in knowledge/manifest.json",
+               "license": "LICENSE; THIRD_PARTY_NOTICES.md; DISCLAIMER.md; licenses/",
                "validation_scope": "frozen text inventory and bytes, not image collation or prediction validity"}
     entries["RELEASE.json"] = _json_bytes(release)
-    source_entries = {"knowledge/manifest.json": (SKILL / "knowledge/manifest.json").read_bytes(),
-                      "LICENSE": entries["LICENSE"], "RELEASE.json": entries["RELEASE.json"]}
+    source_entries = {name: entries[name] for name in LEGAL_FILES}
+    source_entries.update({"knowledge/manifest.json": (SKILL / "knowledge/manifest.json").read_bytes(),
+                           "RELEASE.json": entries["RELEASE.json"]})
     archived = {}
     for book in manifest["books"]:
         archived[book["index_path"]] = book["index_sha256"]
