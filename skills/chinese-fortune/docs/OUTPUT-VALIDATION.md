@@ -49,7 +49,7 @@
 2. 实际回答评估：固定题目、版本、模型与设置，保存正文和全部工具轨迹，再审核事实、条件、完成程度、相关性与可读性。
 3. 现实预测验证：需要前瞻记录、事件与时间窗口定义、独立结果和失败标准。前两类通过不证明这一类。
 
-旧 [v3 开发试跑](https://github.com/ShousenZHANG/chinese-fortune/blob/main/docs/MODEL-PILOT.md) 保留首答和修订，其代码在过程中变动，不能当作冻结版本盲测。v4 另有 24 道完整任务能力集和保留的挑战集。测试题目本身不是运行记录。
+旧 [v3 开发试跑](https://github.com/ShousenZHANG/chinese-fortune/blob/v6.0.1/docs/MODEL-PILOT.md) 保留首答和修订，其代码在过程中变动，不能当作冻结版本盲测。v4 另有 24 道完整任务能力集和保留的挑战集。测试题目本身不是运行记录。
 
 本次实验状态、实际结果和成本见 [v4 对照报告](https://github.com/ShousenZHANG/chinese-fortune/blob/main/evals/v4/REPORT.md)。该报告属于开发评审材料，不放入运行包；未完成评审时不得把题目数量称为通过数量。
 

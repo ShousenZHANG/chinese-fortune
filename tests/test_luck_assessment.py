@@ -1,4 +1,4 @@
-"""大运取运判断：审定数据与判断逻辑（spec docs/superpowers/specs/2026-10-06-luck-assessment-design.md）。"""
+"""大运取运判断：审定数据与判断逻辑（设计说明 2026-10-06，v6.1 前的 git 历史里可查）。"""
 import json
 from pathlib import Path
 
