@@ -27,6 +27,9 @@ from wuxing_colours import aspects_asked
 FENGSHUI_WORDS = ('风水', '朝向', '坐向', '摆放', '床头', '办公桌', '大门', '户型', '摆件')
 ZIBAI_WORDS = ('紫白', '飞星', '九星', '五黄', '二黑')
 # 玄空宅盘要宅运和《沈氏玄空学》，奇门九星是另一套；这些不进紫白。
+# R2 S06 ran several tools for 240 s and sent nothing: past the budget, answer what is done first.
+TIME_BUDGET = {'time_budget_seconds': 180,
+               'on_budget': '工具累计超过 180 秒就先交付已算完的方法，写明还没算的步骤和各需多久，不等全部算完'}
 NOT_ZIBAI = ('玄空', '宅运', '下卦', '替卦', '奇门', '天蓬', '天芮')
 ALMANAC_WORDS = ('黄历', '皇历', '老黄历', '通书', '宜忌', '宜什么', '忌什么', '黄道吉时')
 NATAL_WORDS = ('命局', '八字', '四柱', '命盘', '性格', '一生', '命好不好', '格局', '日主', '适合什么', '适合做',
@@ -344,7 +347,7 @@ def route(question: str) -> dict:
                           *_reference_time_needs(text)]}
     if len(methods) > 1:
         return {'flow': 'multi_method', 'why': '各方法分别计算和解释，共用已确认资料，不合成命运分数',
-                'steps': methods, 'combine_verdicts': False,
+                'steps': methods, 'combine_verdicts': False, **TIME_BUDGET,
                 'needs': list(dict.fromkeys(need for step in methods for need in step['needs']))}
     if methods and methods[0]['method'] != 'bazi':
         return {'flow': 'method', 'why': '按明确点名的方法计算，已有资料复用，只补必要缺项',

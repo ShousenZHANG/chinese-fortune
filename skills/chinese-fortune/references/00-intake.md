@@ -60,3 +60,15 @@
 古籍补查另用 research_session.py 保存通用来源和检索记录到外部 research 目录，不保存个人盘面或整段问答；普通排盘不会调用这个写入入口。个人档案保存仍须用户明确确认。
 
 预测跟踪是另一个显式保存入口：用户授权后，`prediction_log.py` 仅在仓库外保存匿名验证记录，见 [前瞻验证](28-prospective-validation.md)。普通排盘不自动调用；不把姓名、生辰或整段对话复制进记录。
+
+## 运行环境
+
+只需 Python 3.9 或以上，不用安装任何包，计算不联网：排盘用的 lunar_python 和时区数据 tzdata 已随包放在 `scripts/`。本文命令里的 `python` 指本机能用的那一个：依次试 `python3`、`python`、Windows 的 `py -3`，用 `--version` 确认是 3.9 以上。
+
+一个都没有时，先征得用户同意再装 Python：Windows `winget install -e --id Python.Python.3.12`；macOS `xcode-select --install`（命令行工具自带 python3）；Linux 用发行版的包管理器装 `python3`。不要往用户的 Python 里用 pip 装任何东西。装好后或任何工具报环境错误（缺包、时区、编码、古籍文件）时运行 `python scripts/doctor.py`：`healthy=true` 即可用；否则按 `next_step` 处理第一项失败，不要猜原因。
+
+`ok=false` 时处理 message。`reliable=false`、`boundary`、`missing_in_table`、`*_granularity` 等仅解释会改变本题的限制。`hour_known=false` 不能使用内部占位时辰，其他柱也可能因边界待定。
+
+只有要复核旧算法或计算细节才用 `bazi_calc.py`。其 `--no-shensha / --no-geju / --no-yongshen` 是诊断裁剪参数。工程旺衰、格局候选和调候候选不属于默认判词。`--as-of-year` 固定流年参考年，不改变出生盘。
+
+涉及医疗、投资、法律、人身伤害或急性危机，读 [边界说明](20-disclaimer.md) 并提供现实帮助。古籍中的疾病、夭寿、刑克可解释历史语境，不据此诊断个人、预测死亡或下交易指令。

@@ -43,6 +43,11 @@ def compact_reading(result: dict) -> dict:
         # Which tz database gave the offset is evidence for a derivation question; the full view keeps it.
         if isinstance(compact['chart_facts'].get('timezone'), dict):
             compact['chart_facts']['timezone'].pop('source', None)
+        # Same for how the 交节 table and 起运 count were computed: method notes, not facts to state.
+        for block, keys in (('calendar_context', ('year_month_basis', 'precision')), ('qi_yun', ('method', 'source'))):
+            if isinstance(compact['chart_facts'].get(block), dict):
+                for key in keys:
+                    compact['chart_facts'][block].pop(key, None)
     assessment = compact['rule_assessment']
     pool: dict[str, dict] = {}
     condition_keys: dict[str, str] = {}
@@ -111,6 +116,7 @@ def compact_reading(result: dict) -> dict:
         'required_before_interpretation': '条件与例外不能省略；*_refs 指向同一 review 的同名索引表；引原文或推断前按ID取完整段落及上下文',
         'luck_refs': 'scenario_ref 指向 luck_index.scenarios，verdict_refs 指向 luck_index.verdicts；条件、反例及未判原因无删减',
         'omitted_fields': ['chart_facts.liu_nian', 'evidence_bundle', 'reading_support',
+                           'chart_facts.calendar_context.year_month_basis/precision', 'chart_facts.qi_yun.method/source',
                            'observed_structure', 'rule_assessment.routes.conditions.facts'],
     }
     return compact

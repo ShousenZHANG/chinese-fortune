@@ -23,7 +23,8 @@ def test_bazi_reading_writes_the_view_and_prints_the_draft(tmp_path):
     saved = json.loads(out.read_text(encoding='utf-8'))
     assert saved['view'] == 'compact' and saved['chart_facts']['four_pillars']['day']['ganzhi'] == '壬申'
     check = run('answer_check.py', '--answer', '-', '--facts', str(out), stdin='日柱甲子。')
-    assert [f['code'] for f in json.loads(check.stdout)['findings']] == ['pillar_mismatch']
+    # The question asks about 格局, so the tool's must_cover also flags the one-line reply.
+    assert [f['code'] for f in json.loads(check.stdout)['findings']] == ['pillar_mismatch', 'must_cover_missing']
     again = run('bazi_reading.py', *BIRTH, '--facts-out', str(out))   # replacing its own file is fine
     assert again.returncode == 0
 

@@ -55,7 +55,7 @@
 
 `knowledge/books/<book>/cNNN.json` 保存全段原字、段落层级、章内小标题、固定 passage ID、段落哈希和出处。搜索返回整段及前后相邻段，不把条件删掉后只留吉凶断语。
 
-`knowledge/sources/` 是复核和重建所需的锁定来源材料，**不是完整网站镜像**：
+`knowledge/sources/`（打包后在仓库根目录的 `corpus/sources.zip`，不随技能安装）是复核和重建所需的锁定来源材料，**不是完整网站镜像**：
 
 - `.wiki` 是 MediaWiki 固定 revision 的原始 wikitext；正文模板按明确规则展开，未识别标记不静默丢弃。
 - `.html` 只含公版原文节点或由已读取原文段落重建的节点。古文岛取 `contson`，古籍典藏取 `#pane-original article#article-content`。现代译文、广告、导航、关键词、现代评注不收录。

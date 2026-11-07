@@ -38,6 +38,7 @@ from datetime import datetime, timedelta, timezone
 from city_resolver import describe as describe_cities
 from city_resolver import resolve as resolve_city
 from method_rules import method_reading_packet
+from must_cover import SIHUA
 from utils import (
     DIZHI,
     VENDORED_MISSING,
@@ -574,6 +575,7 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         "da_xian": None if args.no_da_xian else da_xian,
         "liu_nian_sihua": liu_nian_sihua,
         "horoscope": horoscope,
+        **({"must_cover": [dict(SIHUA)]} if horoscope else {}),
         "patterns": patterns,
         "twelve_gods_sources": None if args.brief_palaces else god_sources(args.changsheng,
                                                                            args.changsheng_direction),

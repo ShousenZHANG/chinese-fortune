@@ -143,11 +143,12 @@ skills/chinese-fortune/     安装的就是这个目录（npx skills、Claude Co
 ├── SKILL.md                给 AI 的工作流程与方法路由
 ├── scripts/                排盘、择日、检索、核对脚本；lunar_python 与 tzdata 打包在 vendor.zip
 ├── references/             各方法的规则说明，按需读取
-├── knowledge/              十五部古籍的固定转录（books.zip）与来源（sources.zip）
+├── knowledge/              十五部古籍的固定转录（books.zip）
 ├── assets/                 规则库与古籍条款
 └── docs/                   方法、来源、迁移与发布说明
 skills/life-guide/          现实生活问答（《高性价比人生指南》），单独安装
 skills/fortune-extras/      塔罗、星座、解梦，单独安装
+corpus/sources.zip          古籍原始网页与来源记录，只供重建和复核，不随技能安装
 tests/  evals/  docs/       开发测试与评测记录，不随安装
 ```
 

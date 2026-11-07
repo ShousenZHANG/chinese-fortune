@@ -50,7 +50,9 @@ def test_stdin_tools_and_answer_check_with_facts():
     wrong_day = '甲子' if day != '甲子' else '乙丑'
     result, text = call('answer_check', {'answer': f'A方日柱{wrong_day}。', 'facts': [facts]})
     assert result['isError'] and any(f['code'] == 'pillar_mismatch' for f in json.loads(text)['findings'])
-    result, text = call('answer_check', {'answer': f'A方日柱{day}。', 'facts': [facts]})
+    # A marriage reply must also give the 三元九宫 count (must_cover); with it, the check passes.
+    answer = f"A方日柱{day}。" + facts['sanyuan_jiugong']['say']
+    result, text = call('answer_check', {'answer': answer, 'facts': [facts]})
     assert not result['isError'] and json.loads(text)['passed']
 
 

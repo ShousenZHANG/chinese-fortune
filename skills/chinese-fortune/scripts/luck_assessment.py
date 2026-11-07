@@ -5,7 +5,7 @@ A cycle's stem and branch are matched against the sentences of each 配法 the
 chart's stems and storage allow (``assets/luck_rules.json``). Nothing here
 settles the 格局: every 配法 is a candidate, interpretive conditions (身轻,
 身旺, 财多…) stay open with both sides shown, and the verdict covers the ten
-years, never a single day (spec: docs/superpowers/specs/2026-10-06-luck-assessment-design.md).
+years, never a single day (design spec 2026-10-06, kept in git history before v6.1).
 """
 from __future__ import annotations
 

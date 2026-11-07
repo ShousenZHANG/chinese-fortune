@@ -114,12 +114,15 @@ def test_life_guide_keeps_the_books_code_notice_and_licenses():
 def test_the_installed_layout_is_packed_and_reads_the_same_bytes():
     """The skill folder ships the corpus and the vendored packages as archives, never beside loose copies."""
     fortune = SKILLS / 'chinese-fortune'
-    for packed, loose in (('knowledge/books.zip', 'knowledge/books'), ('knowledge/sources.zip', 'knowledge/sources'),
+    for packed, loose in (('knowledge/books.zip', 'knowledge/books'),
                           ('scripts/vendor.zip', 'scripts/lunar_python'), ('scripts/vendor.zip', 'scripts/tzdata')):
         assert (fortune / packed).is_file() and not (fortune / loose).exists(), loose
+    # Raw sources are only for rebuilding: they sit in the repository's corpus/, not in the skill folder.
+    assert (SKILLS.parent / 'corpus/sources.zip').is_file()
+    assert not (fortune / 'knowledge/sources.zip').exists() and not (fortune / 'knowledge/sources').exists()
     from classical_search import library_bytes, validate_library
     report = validate_library()
-    assert report['ok'] and report['distribution_kind'] == 'source'
+    assert report['ok'] and report['distribution_kind'] == 'source' and report['raw_sources_verified']
     manifest = json.loads((fortune / 'knowledge/manifest.json').read_text(encoding='utf-8'))
     first = manifest['books'][0]['chapters'][0]
     import hashlib
@@ -132,20 +135,34 @@ def test_corpus_archives_round_trip_byte_for_byte(tmp_path):
     import shutil
 
     import corpus_archive
-    root = tmp_path / 'knowledge'
+    root, corpus = tmp_path / 'knowledge', tmp_path / 'corpus'
     shutil.copytree(SKILLS / 'chinese-fortune/knowledge', root)
-    names = ('books.zip', 'sources.zip')
-    before = {n: _members(root / n) for n in names}
-    corpus_archive.unpack(root)
-    assert (root / 'books/ziping').is_dir() and not (root / 'books.zip').exists()
-    corpus_archive.pack(root)
+    corpus.mkdir()
+    shutil.copy2(SKILLS.parent / 'corpus/sources.zip', corpus / 'sources.zip')
+    paths = {'books.zip': root / 'books.zip', 'sources.zip': corpus / 'sources.zip'}
+    before = {n: _members(p) for n, p in paths.items()}
+    corpus_archive.unpack(root, corpus)
+    assert (root / 'books/ziping').is_dir() and (root / 'sources').is_dir()
+    assert not any(p.exists() for p in paths.values())
+    corpus_archive.pack(root, corpus)
     # Same entries, order, timestamps and bytes; the deflate stream itself differs between zlib builds
     # (CI's Linux zlib vs Windows), so the committed archives are compared by content, not raw bytes.
-    assert {n: _members(root / n) for n in names} == before
-    first = {n: (root / n).read_bytes() for n in names}
-    corpus_archive.unpack(root)
-    corpus_archive.pack(root)
-    assert {n: (root / n).read_bytes() for n in names} == first     # repeatable on one machine
+    assert {n: _members(p) for n, p in paths.items()} == before
+    first = {n: p.read_bytes() for n, p in paths.items()}
+    corpus_archive.unpack(root, corpus)
+    corpus_archive.pack(root, corpus)
+    assert {n: p.read_bytes() for n, p in paths.items()} == first     # repeatable on one machine
+
+
+def test_an_installed_skill_without_raw_sources_still_validates_its_text(tmp_path):
+    import shutil
+
+    from classical_search import validate_library
+    skill = tmp_path / 'home/.claude/skills/chinese-fortune'
+    shutil.copytree(SKILLS / 'chinese-fortune/knowledge', skill / 'knowledge')
+    report = validate_library(skill / 'knowledge')
+    assert report['ok'], report['errors']
+    assert report['validation_scope'] == 'text_without_raw_sources' and not report['raw_sources_verified']
 
 
 def _members(path):

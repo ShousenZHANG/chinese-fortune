@@ -292,12 +292,49 @@ ABSENCE = re.compile(r'(?:不是|并非|并不是|不属于)《[^》]{1,20}》�
 ABSENCE_SCOPE = re.compile(r'随包|转录|所收|本次所?查|检索到的|这些版本|所查|整理本')
 
 
+# A denial that names the exact string right after it (「…里没有这句：XXX」) is checked by the quote check;
+# its scope is still advised, but only the bare claim that a book lacks something is an error.
+NAMED_DENIAL = re.compile(r'^\s*[：:「『“"]')
+
+
 def absence_findings(sentence: str) -> list[dict]:
     match = ABSENCE.search(sentence)
     if not match or ABSENCE_SCOPE.search(sentence):
         return []
-    return [_finding('unscoped_absence_claim', 'warning', sentence,
+    severity = 'warning' if NAMED_DENIAL.match(sentence[match.end():]) else 'error'
+    return [_finding('unscoped_absence_claim', severity, sentence,
                      '检索只覆盖随包转录本：写成「随包转录本里没有」，不能说原书或该书没有')]
+
+
+def must_cover_findings(answer: str, facts: list[dict]) -> list[dict]:
+    """Items a tool marked as required for this question (must_cover.py) that no line of the answer states."""
+    lines = [line for line in answer.splitlines() if line.strip()]
+    findings = []
+    for fact in facts:
+        items = fact.get('must_cover') if isinstance(fact, dict) else None
+        for entry in items if isinstance(items, list) else []:
+            groups = entry.get('groups') if isinstance(entry, dict) else None
+            if not isinstance(groups, list) or not groups:
+                continue
+            if not any(all(any(alt in line for alt in group) for group in groups) for line in lines):
+                findings.append(_finding('must_cover_missing', 'error', str(entry.get('what', '')),
+                                         f"{fact.get('tool', '工具')}要求这题必须答到：{entry.get('what', '')}"
+                                         '（同一行里写出）'))
+    return findings
+
+
+CITED_ID = re.compile(r'\b([a-z_]+:c\d{3}:p\d{4})\b')
+
+
+def citation_findings(answer: str, facts: list[dict]) -> list[dict]:
+    """A passage id in the answer that no tool result of this round carries (plan A3, R2 S24)."""
+    if not facts:
+        return []
+    known = json.dumps(facts, ensure_ascii=False)
+    missing = sorted({pid for pid in CITED_ID.findall(answer) if pid not in known})
+    return [_finding('citation_not_in_facts', 'warning', pid,
+                     f'{pid} 不在本轮任何工具结果里：用 classical_search.py --passage-id {pid} 核实后再引，'
+                     '或把取到它的那次结果一起交给 --facts') for pid in missing]
 
 
 def _ziwei_layers(facts: list[dict]) -> Iterator[dict]:
@@ -313,6 +350,8 @@ def sihua_palace_findings(answer: str, facts: list[dict]) -> list[dict]:
     should also name that star's palace (本命宫名或地支宫)."""
     findings = []
     lines = answer.splitlines()
+    required = any(isinstance(f, dict) and any(isinstance(e, dict) and e.get('check') == 'sihua_palaces'
+                                                for e in f.get('must_cover') or []) for f in facts)
     for layer in _ziwei_layers(facts):
         missing = []
         for row in layer['transformation_palaces']:
@@ -325,8 +364,9 @@ def sihua_palace_findings(answer: str, facts: list[dict]) -> list[dict]:
             palace = (row.get('natal_palace') or '').removesuffix('宫')
             if not any((palace and palace in line) or f"{row['branch']}宫" in line for line in named):
                 missing.append(f"{kind}{star}")
-        if len(missing) >= 2:
-            findings.append(_finding('sihua_palace_missing', 'warning', '、'.join(missing),
+        # The tool's must_cover makes one missing palace an error; older facts without it keep the warning.
+        if len(missing) >= (1 if required else 2):
+            findings.append(_finding('sihua_palace_missing', 'error' if required else 'warning', '、'.join(missing),
                                      f"{layer.get('layer', '')}四化只列了星，没写各星落在哪一宫；"
                                      '照 transformation_palaces 补上（本命宫名或地支宫）'))
     return findings
@@ -340,7 +380,8 @@ def _check_assertions(answer: str, facts: list[dict],
     facts_text = json.dumps(scores, ensure_ascii=False)
     assertions = facts if assertions is None else assertions
     findings = [*_quote_findings(answer, checked), *pillar_findings(answer, facts, checked, pillars),
-                *markup_findings(answer), *sihua_palace_findings(answer, facts)]
+                *markup_findings(answer), *sihua_palace_findings(answer, facts),
+                *must_cover_findings(answer, facts), *citation_findings(answer, facts)]
     titles = unresolved_titles(assertions)
     tie = has_tie(assertions)
     for sentence in (s.strip() for s in sentences(answer)):

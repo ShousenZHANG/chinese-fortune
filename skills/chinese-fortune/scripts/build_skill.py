@@ -312,6 +312,7 @@ def build_distribution(out_path: Path, *, commit: str | None = None) -> dict:
     source_bytes = _zip_bytes(source_entries)
     source_out_path = out_path.with_name(out_path.stem + "-sources.zip")
     runtime = copy.deepcopy(manifest)
+    runtime.pop("raw_sources_archive", None)  # the runtime package points at its own -sources.zip
     runtime.update({"schema_version": "2.0", "distribution_kind": "runtime",
                     "source_paths_scope": "source_archive/knowledge",
                     "source_archive": {"filename": source_out_path.name, "sha256": _digest(source_bytes),
