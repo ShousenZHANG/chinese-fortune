@@ -145,6 +145,7 @@ CODE_CITED = [
     ('life_areas', '人生领域速读', 'life_areas:life_areas', ('tests/test_life_areas.py',)),
     ('liuyao_timing', '六爻应期候选', 'liuyao_timing:timing', ('tests/test_liuyao_timing.py',)),
     ('liuren_xingnian', '六壬本命行年', 'liuren_xingnian:benming_xingnian', ('tests/test_liuren_xingnian.py',)),
+    ('qimen_dingju', '奇门置闰定局', 'qimen_dingju:zhirun_term', ('tests/test_qimen_zhirun.py',)),
     ('meihua_cast', '梅花取数与应期', 'meihua_cast:timing', ('tests/test_meihua_methods.py',)),
 ]
 
