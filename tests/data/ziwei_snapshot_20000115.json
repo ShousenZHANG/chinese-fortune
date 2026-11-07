@@ -1073,7 +1073,9 @@
   },
   "sect": {
     "value": 2,
-    "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)"
+    "label": "子正换日 (日柱与农历日取当日, 仅时柱按次日干)",
+    "judged_by": "真太阳时",
+    "reference": "--sect 1 子初换日与 iztro 2.6.5 的晚子时日期归一化相同（逐宫差分一致）；默认 --sect 2 子正换日，晚子时日不进位，星曜按当日排"
   },
   "birthplace": null,
   "timezone": null,

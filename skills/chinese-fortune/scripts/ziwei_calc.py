@@ -336,7 +336,10 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         lunar = solar.getLunar()
         birth_hour = 0
         sect_note.append("晚子时按子初换日 (--sect 1): 已整体推进至次日 00:00 排盘。")
-    sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect]}
+    sect_info = {"value": args.sect, "label": SECT_LABELS[args.sect],
+                 "judged_by": "真太阳时" if tst_applied else "所给钟表时间",
+                 "reference": ("--sect 1 子初换日与 iztro 2.6.5 的晚子时日期归一化相同（逐宫差分一致）；"
+                               "默认 --sect 2 子正换日，晚子时日不进位，星曜按当日排")}
 
     nihai = args.school == 'nihai'
     if args.leap_month is None:
