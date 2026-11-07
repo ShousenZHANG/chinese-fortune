@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="chinese-fortune 示例：用户问八字特点，回答先给白话结论，再引《子平真诠》原文并附段号">
+  <defs>
+    <style>
+      .t { font-family: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif; }
+      .m { font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1200" height="640" rx="24" fill="#faf7f2"/>
+  <rect x="0.5" y="0.5" width="1199" height="639" rx="24" fill="none" stroke="#e7dfd2"/>
+
+  <!-- left: the question and the computed chart -->
+  <text x="48" y="64" class="t" font-size="15" fill="#8a7b66" letter-spacing="2">你问</text>
+  <rect x="48" y="80" width="500" height="112" rx="16" fill="#ffffff" stroke="#e7dfd2"/>
+  <text class="t" font-size="19" fill="#2b2620">
+    <tspan x="72" y="120">我 2000-01-15 10:30 出生，男，东经 120°。</tspan>
+    <tspan x="72" y="152">这个八字有什么特点，能直接确定用神吗？</tspan>
+  </text>
+  <text x="72" y="178" class="t" font-size="13" fill="#a3947e">示例为固定测试盘，不是真实用户</text>
+
+  <text x="48" y="236" class="t" font-size="15" fill="#8a7b66" letter-spacing="2">程序排盘</text>
+  <g class="t" text-anchor="middle">
+    <rect x="48" y="252" width="116" height="200" rx="14" fill="#ffffff" stroke="#e7dfd2"/>
+    <text x="106" y="282" font-size="14" fill="#8a7b66">年柱</text>
+    <text x="106" y="308" font-size="14" fill="#a2462e">正官</text>
+    <text x="106" y="356" font-size="38" fill="#2b2620">己</text>
+    <text x="106" y="404" font-size="38" fill="#2b2620">卯</text>
+    <rect x="176" y="252" width="116" height="200" rx="14" fill="#ffffff" stroke="#e7dfd2"/>
+    <text x="234" y="282" font-size="14" fill="#8a7b66">月柱</text>
+    <text x="234" y="308" font-size="14" fill="#a2462e">正财</text>
+    <text x="234" y="356" font-size="38" fill="#2b2620">丁</text>
+    <text x="234" y="404" font-size="38" fill="#2b2620">丑</text>
+    <rect x="304" y="252" width="116" height="200" rx="14" fill="#f3e9da" stroke="#d8c7ad"/>
+    <text x="362" y="282" font-size="14" fill="#8a7b66">日柱</text>
+    <text x="362" y="308" font-size="14" fill="#a2462e">日主</text>
+    <text x="362" y="356" font-size="38" fill="#2b2620">壬</text>
+    <text x="362" y="404" font-size="38" fill="#2b2620">申</text>
+    <rect x="432" y="252" width="116" height="200" rx="14" fill="#ffffff" stroke="#e7dfd2"/>
+    <text x="490" y="282" font-size="14" fill="#8a7b66">时柱</text>
+    <text x="490" y="308" font-size="14" fill="#a2462e">伤官</text>
+    <text x="490" y="356" font-size="38" fill="#2b2620">乙</text>
+    <text x="490" y="404" font-size="38" fill="#2b2620">巳</text>
+  </g>
+  <text x="48" y="482" class="t" font-size="13" fill="#a3947e">干支、十神由随包脚本计算，AI 不另算</text>
+
+  <!-- right: the answer -->
+  <text x="600" y="64" class="t" font-size="15" fill="#8a7b66" letter-spacing="2">它答（节选）</text>
+  <rect x="600" y="80" width="552" height="372" rx="16" fill="#ffffff" stroke="#e7dfd2"/>
+  <text class="t" font-size="19" fill="#2b2620">
+    <tspan x="628" y="122">不能直接给你一个“补某种五行就好”的答案。</tspan>
+    <tspan x="628" y="154">盘里一条约束关系突出，同时有削弱和支持它</tspan>
+    <tspan x="628" y="186">的关系，要放在一起看。</tspan>
+  </text>
+  <rect x="628" y="208" width="496" height="92" rx="12" fill="#f8f1e6"/>
+  <text class="t" font-size="18" fill="#5c4a33">
+    <tspan x="648" y="242">《子平真诠》：“八字用神，專求月令。”</tspan>
+  </text>
+  <text x="648" y="280" class="m" font-size="14" fill="#a2462e">ziping:c008:p0001 · 可用 classical_search 原样查到</text>
+  <text class="t" font-size="19" fill="#2b2620">
+    <tspan x="628" y="340">所以本例的判断是：以正官为主线，财与伤官</tspan>
+    <tspan x="628" y="372">同时参与；直接套“官印相生”或“伤官见官</tspan>
+    <tspan x="628" y="404">必坏”都不合适。</tspan>
+  </text>
+  <text x="628" y="436" class="t" font-size="13" fill="#a3947e">每段古文后紧跟白话解释；没核完的条件照实说</text>
+
+  <!-- bottom: numbers with their source -->
+  <g class="t">
+    <rect x="48" y="512" width="252" height="76" rx="14" fill="#2b2620"/>
+    <text x="72" y="548" font-size="26" fill="#ffffff">0 / 48</text>
+    <text x="72" y="574" font-size="14" fill="#d9cdb9">伪造古籍引文</text>
+    <rect x="316" y="512" width="252" height="76" rx="14" fill="#2b2620"/>
+    <text x="340" y="548" font-size="26" fill="#ffffff">646 / 646</text>
+    <text x="340" y="574" font-size="14" fill="#d9cdb9">参考事实正确</text>
+    <rect x="584" y="512" width="284" height="76" rx="14" fill="#2b2620"/>
+    <text x="608" y="548" font-size="26" fill="#ffffff">15 部古籍</text>
+    <text x="608" y="574" font-size="14" fill="#d9cdb9">29,685 段，离线可查</text>
+    <rect x="884" y="512" width="268" height="76" rx="14" fill="#2b2620"/>
+    <text x="908" y="548" font-size="26" fill="#ffffff">零安装</text>
+    <text x="908" y="574" font-size="14" fill="#d9cdb9">Python 3.9+，不用 pip</text>
+  </g>
+  <text x="48" y="616" class="t" font-size="12" fill="#a3947e">前两项来自 v5.10 第五轮外部盲评（36 题）；不代表现实预测命中率</text>
+</svg>

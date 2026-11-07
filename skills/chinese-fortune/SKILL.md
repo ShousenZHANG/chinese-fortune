@@ -78,7 +78,7 @@ v5.6 真实回答评测（`evals/v56/REPORT.md`）里，答错的主要原因是
 
 用户授权跟踪预测及反馈时，读 [前瞻验证](references/28-prospective-validation.md)，使用 `prediction_log.py` 在分析前固定方法与事件，事前冻结原判断，事后仅保存用户确认的结果。沿用已有授权；普通问答不自动保存。
 
-档案保存、查看、更正或删除：同篇的档案流程使用 `personal_profiles.py`；仅保存用户确认的资料，默认不落盘问答。
+档案：用户说「我」「我的八字」「结合我的资料」时，先运行 `python scripts/personal_profiles.py list`：只有一份就 `show` 后直接复用并回显采用的资料，不再追问；有多份就问是哪一份；没有就按 [输入采集](references/00-intake.md) 一次问齐。用户第一次给全出生资料并拿到回答后，在回答最后用一句话问要不要存成本机档案（只存出生资料，不存问答，下次说「我」即可调出）；用户明确同意才 `save --profile-id me --confirmed`。查看、更正、删除见 [本机档案](references/24-personalized-forecast.md#本机档案)；默认不落盘问答。
 
 | 用户点名 | 资料 | 脚本 |
 |---|---|---|

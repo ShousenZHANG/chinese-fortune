@@ -93,3 +93,9 @@ def test_capability_table_points_at_real_passages_and_references():
         for key in ('method_passage_id', 'passage_id'):
             if authority.get(key):
                 assert get_passage(authority[key])['text'], (row['scenario'], authority[key])
+
+
+def test_the_skill_reuses_a_saved_profile_and_offers_to_save_one():
+    """A user who says 「我」 should not have to repeat their birth details, and is asked once whether to save them."""
+    assert 'personal_profiles.py list' in SKILL and '要不要存成本机档案' in SKILL
+    assert 'save --profile-id me --confirmed' in SKILL and '只存出生资料，不存问答' in SKILL

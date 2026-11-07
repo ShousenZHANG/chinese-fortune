@@ -1,4 +1,8 @@
-# Chinese Fortune
+<div align="center">
+
+# Chinese Fortune · 有据算命
+
+**Chinese fortune-telling for your AI, read from the classical texts themselves: a plain answer first, and every quotation traceable to its passage.**
 
 [![skills.sh](https://www.skills.sh/b/shousenzhang/chinese-fortune)](https://skills.sh/shousenzhang/chinese-fortune)
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
@@ -6,11 +10,24 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](#install)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**Chinese fortune-telling for your AI, read from the classical texts themselves: plain-language answers, and every quotation traceable to its passage.**
+<img src=".github/assets/hero.svg" alt="Example: asked about a BaZi chart, the answer gives a plain conclusion first, then quotes Zi Ping Zhen Quan with a passage id anyone can look up" width="880">
 
-An [Agent Skill](https://agentskills.io): stems, branches, day grades and luck-cycle verdicts are computed by bundled scripts, and the AI explains them instead of recalling them. Fifteen frozen classical transcriptions are searchable offline, and everyday questions are answered from the life guide 《高性价比人生指南》. Works with Claude Code, Codex, Cursor, GitHub Copilot, Gemini CLI, claude.ai and MCP-only hosts.
+[中文](README.md) · [Install](#install) · [What to ask](#what-to-ask) · [Why trust it](#why-trust-it) · [Capabilities](#capabilities) · [Update and remove](#update-and-remove)
 
-[中文](README.md) · [Install](#install) · [What to ask](#what-to-ask) · [Capabilities](#capabilities) · [Why trust it](#why-trust-it) · [Update and remove](#update-and-remove)
+</div>
+
+## How it differs from asking a model directly
+
+| Asking a model directly | With this skill |
+|---|---|
+| Ask about the same chart three times, possibly get three answers | Stems, ten gods and day grades come from bundled scripts: same input, same result |
+| Quotations that cannot be found anywhere | Every quotation carries a passage id you can retrieve verbatim; answers are checked before sending |
+| Jargon throughout | A plain conclusion first; each term explained where it first appears |
+| Either alarming or overconfident | No scores, no guarantees, no health verdicts; unchecked conditions are said as such |
+| Time zones and daylight saving guessed | Birth time zone, historical DST, true solar time, solar terms and day boundaries handled separately |
+| Birth details retyped every time | After you confirm, a local profile lets you just say "me" next time |
+
+The repository also ships two independent skills: **life-guide** answers everyday questions from the life guide 《高性价比人生指南》 (emergencies get the first action first), and **fortune-extras** does tarot, sun signs and dream symbols. Install only what you need.
 
 ## Install
 
@@ -81,7 +98,7 @@ Answers come in Chinese: the conclusion first in plain language, then short quot
 | Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
 | Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
 | Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,685 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
-| Everyday life | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
+| Everyday life (life-guide skill) | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
 A complete transcription, implemented rules, image collation and predictive validity are separate claims: computable conditions are checked by the scripts, while strength, cooperation and rescue are argued by the AI from the full passages. Tests do not establish predictive accuracy. Supported conventions and input changes are in the [6.0 migration notes](skills/chinese-fortune/docs/MIGRATION-6.0.md).
 
@@ -121,8 +138,10 @@ skills/chinese-fortune/     the installed skill (npx skills, Claude Code plugin,
 ├── scripts/                charting, date selection, lookup and checks; lunar_python and tzdata bundled
 ├── references/             per-method rules, read on demand
 ├── knowledge/              the fifteen frozen transcriptions and their source indexes
-├── assets/                 rule libraries, clauses and the life guide
+├── assets/                 rule libraries and classical clauses
 └── docs/                   methods, sources, migration and release notes
+skills/life-guide/          everyday life questions (the life guide), installed separately
+skills/fortune-extras/      tarot, sun signs and dreams, installed separately
 tests/  evals/  docs/       development tests and evaluation records, not installed
 ```
 
@@ -147,7 +166,7 @@ Candidate comparisons cover the entire event, including changes during it, and s
 </details>
 
 <details>
-<summary>Everyday life questions</summary>
+<summary>Everyday life questions (life-guide skill)</summary>
 
 Plain real-life questions (what to do first after a layoff, whether to stand surety for a friend, whether a two-hour commute is worth it) go to the book's own decision workflow: `life_guide.py --decide` finds the entries, ranks them by fit and then by the book's cost-effectiveness tier and evidence grade, splits "do" from the book's "don't" list, cites section and entry for each, and names what the book does not cover. An emergency, a suicidal thought or a legal process already under way gets the first action before anything else, with hotline numbers only for someone in mainland China. The snapshot is eternity4719/HowToLiveBetter at commit `842e11c9` (text CC BY 4.0, ported search and workflow code MIT): the whole book except three entries, 660 entries in 34 sections, 8 long articles, section intros, the glossary and resolved cross references. Divination questions keep priority. See [life decisions](skills/chinese-fortune/references/29-life-decision.md).
 
@@ -198,7 +217,7 @@ Issues and pull requests are welcome; see [CONTRIBUTING](CONTRIBUTING.md) for th
 ```sh
 python -m pip install -r requirements-dev.txt -c constraints-dev.txt
 python -m ruff check .
-python -m mypy skills/chinese-fortune/scripts/
+for d in skills/*/scripts; do python -m mypy "$d"; done
 python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
 python skills/chinese-fortune/scripts/build_skill.py
 python -X utf8 evals/package_smoke.py
