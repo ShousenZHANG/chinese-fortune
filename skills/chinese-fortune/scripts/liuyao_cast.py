@@ -19,6 +19,7 @@ from pathlib import Path
 import entropy
 from liuyao_judge import judge
 from liuyao_plan import plan
+from liuyao_timing import cuo_zong, timing
 from method_rules import method_reading_packet
 from request_time import add_request_arguments, resolve_time
 from utils import (
@@ -587,7 +588,7 @@ def _checks_text(checks: dict) -> str:
 
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   method question entropy yongshen_hint yongshen_hint_source cast_time raw_lines main_chart
-  changed_chart nuclear_chart active_lines main_judgment main_image
+  changed_chart nuclear_chart active_lines main_judgment main_image timing cuo_zong
   active_line_text fu_shen rule_checks reading_plan reading_support rule_index
 
 On error: {"error": ..., "message": ...} and exit 1."""
@@ -766,6 +767,8 @@ def main(argv: list[str] | None = None) -> int:
     hint = out["yongshen_hint"] or ""
     out["fu_shen"] = hidden_spirits(main_chart, [q for q in LIU_QIN if q in hint], month_branch, day_branch)
     out["rule_checks"] = judge(out, args.target_position)
+    out["timing"] = timing(main_chart, changed_chart, actives, out["rule_checks"]["targets"], month_branch, day_branch)
+    out["cuo_zong"] = cuo_zong(lines)
     out["reading_plan"] = plan(out)
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     out["rule_index"] = rule_index()

@@ -143,6 +143,7 @@ CODE_CITED = [
     ('fengshui_measure', '风水测量合同', 'fengshui_measure:measure', ('tests/test_fengshui_measure.py',)),
     ('zibai', '紫白九星', 'zibai:zibai', ('tests/test_zibai.py',)),
     ('life_areas', '人生领域速读', 'life_areas:life_areas', ('tests/test_life_areas.py',)),
+    ('liuyao_timing', '六爻应期候选', 'liuyao_timing:timing', ('tests/test_liuyao_timing.py',)),
     ('meihua_cast', '梅花取数与应期', 'meihua_cast:timing', ('tests/test_meihua_methods.py',)),
 ]
 
