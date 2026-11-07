@@ -25,6 +25,7 @@ import sys
 from datetime import timedelta, timezone
 from typing import Any
 
+from liuren_xingnian import benming_xingnian
 from request_time import add_request_arguments, resolve_time
 from utils import (
     DIZHI,
@@ -38,6 +39,7 @@ from utils import (
     ensure_utf8_stdio,
     error_envelope,
     hour_branch,
+    jiazi_index,
     json_print,
     require_lunar,
 )
@@ -626,10 +628,34 @@ def build_summary(ri_gan: str, ri_zhi: str, san_chuan: dict,
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   ok tool version input ganzhi ri_gan ri_zhi month_zhi season_wuxing
   zhong_qi yue_jiang yue_jiang_name zhan_shi ri_ye tian_pan
-  di_pan_jian_pan si_ke fa_yong_method san_chuan shi_er_tian_jiang
+  di_pan_jian_pan si_ke fa_yong_method san_chuan shi_er_tian_jiang benming_xingnian
   nine_gates_classification yong_shen wang_xiang summary boundary
 
 On error: {"error": ..., "message": ...} and exit 1."""
+
+
+def _lichun_year(year_ganzhi: str, civil_year: int) -> int:
+    """The Gregorian number of the 立春 year whose ganzhi this is (January before 立春 belongs to the last one)."""
+    return civil_year if jiazi_index(year_ganzhi[0], year_ganzhi[1]) == (civil_year - 4) % 60 else civil_year - 1
+
+
+def _benming(birth_date: str | None, gender: str | None, term_lunar: object, cast_civil_year: int,
+             tian_pan: dict, shi_er: dict) -> dict:
+    if not birth_date or not gender:
+        raise ValueError('本命行年要同时给 --birth-date 和 --gender')
+    from datetime import date as _date
+
+    from lunar_python import Solar  # type: ignore
+    try:
+        born = _date.fromisoformat(birth_date)
+    except ValueError:
+        raise ValueError(f'出生日期要写成 YYYY-MM-DD：{birth_date!r}') from None
+    birth_gz = Solar.fromYmdHms(born.year, born.month, born.day, 12, 0, 0).getLunar().getYearInGanZhiExact()
+    cast_gz = term_lunar.getYearInGanZhiExact()  # type: ignore[attr-defined]
+    birth_year, cast_year = _lichun_year(birth_gz, born.year), _lichun_year(cast_gz, cast_civil_year)
+    if cast_year < birth_year:
+        raise ValueError('占问时间早于出生')
+    return benming_xingnian(birth_gz, birth_year, cast_gz, cast_year, gender, tian_pan, shi_er)
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -642,6 +668,9 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--time", default=None, help="占问时辰 HH:MM")
     p.add_argument("--longitude", type=float, default=None,
                    help="经度 (可选, 仅记录, 不参与时辰换算; 真太阳时需另行调整)")
+    p.add_argument("--birth-date", default=None, metavar="YYYY-MM-DD",
+                   help="占者出生日期（公历）：给了就加本命、行年在课里的位置")
+    p.add_argument("--gender", choices=("male", "female"), default=None, help="行年男顺女逆，需与 --birth-date 同给")
     p.add_argument("--question", type=str, default=None,
                    help="所问之事 (用于 用神 提示)")
     return p
@@ -692,6 +721,14 @@ def main(argv: list[str] | None = None) -> int:
         "zhong": wang_xiang_state(wx_of(san_chuan["zhong_chuan"]), season_wx),
         "mo": wang_xiang_state(wx_of(san_chuan["mo_chuan"]), season_wx),
     } if san_chuan["status"] == "supported" else None
+
+    personal = None
+    if args.birth_date or args.gender:
+        try:
+            personal = _benming(args.birth_date, args.gender, term_lunar, calendar_clock.year, tian_pan, shi_er)
+        except ValueError as exc:
+            json_print(error_envelope('daliuren', 'invalid_input', str(exc)))
+            return 1
 
     classification = classify_course(san_chuan["method"])
     yong_hint = yong_shen_hint(args.question)
@@ -763,6 +800,7 @@ def main(argv: list[str] | None = None) -> int:
             "from_course": san_chuan.get("from_course"),
         },
         "shi_er_tian_jiang": shi_er,
+        **({"benming_xingnian": personal} if personal else {}),
         "nine_gates_classification": classification,
         "yong_shen": yong_hint,
         "wang_xiang": wang_xiang,

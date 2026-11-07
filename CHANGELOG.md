@@ -9,6 +9,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 - **技能目录瘦身**：557 个章节、576 个原始来源和约 660 个随包第三方文件分别打包成 `knowledge/books.zip`、`knowledge/sources.zip` 和 `scripts/vendor.zip`。chinese-fortune 技能目录从 1,972 个文件（29MB）降到 167 个文件（12.6MB，其中文本约 3.2MB），安装更快。检索、自检和构建直接从压缩包读，字节与记录的 SHA-256 不变；维护时用 `corpus_archive.py unpack/pack`。发行 zip 里的章节也改为 `knowledge/books.zip`。
 - **回答交付**（来自 v6.0 宿主实测）：紫微每一层运限列出四化星各在哪一宫，`answer_check` 发现只列星不列宫时给 warning；说「书里没有」而不写随包转录范围时给 warning；三元九宫合卦的 `say` 写出起宫、顺逆和步数；时区说明写出所用的 IANA 数据库版本；SKILL.md 要求未判项写补全路径，工具累计超过约三分钟先交付已算完的部分。
 - **首屏与档案**：README 首屏加示例图和「直接问大模型 vs 用本技能」对比；用户说「我」时先查本机档案，第一次算完主动问要不要存档。
+- **大六壬本命行年**：`liuren_cast.py --birth-date … --gender …` 给出本命、行年在课里的地盘位置、天盘神与天将；行年男起丙寅顺行、女起壬申逆行，《选择要略》与《六壬大全》四个例子逐条复算。
 - **六爻应期与错综**：`liuyao_cast.py` 新增 `timing`，按《增删卜易》应期总注章给主事爻的候选地支：静逢值冲、动逢合值、变爻、进退神、月破、旬空、入墓冲开、六合冲开，书中例子逐条复算并推到其他地支；要先判旺衰、吉凶的几条列在 `not_computed`。另给错卦、综卦卦名，注明随包古籍无错综条文。
 - **紫白补日、时**：`zibai.py` 按《选择要略》三元日白、时白法加 `day`、`hour`。日白与 lunar_python 的日家九星在 1990–2030 年每周抽样（不含正好隔三十天的两可日和置闰旬）全部一致；时白按「甲子时所在日定元、六十时连数」排，与 lunar_python 的按当日日支算不同，输出写明口径。
 - **本周、本月、今年**：新命令 `/chinese-fortune:week`、`:month`，配合已有的 `:year`。
