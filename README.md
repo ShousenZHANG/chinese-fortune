@@ -38,6 +38,7 @@
 | 宿主 | 命令 |
 |---|---|
 | Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`，再 `/plugin install chinese-fortune@chinese-fortune` |
+| Claude Code 斜杠命令 | 装好插件后可直接用 `/chinese-fortune:bazi`（八字）、`/chinese-fortune:days`（哪天好）、`/chinese-fortune:hehun`（合婚）、`/chinese-fortune:year`（年度运势），也可以直接用中文提问 |
 | 同仓库的另外两个技能 | 现实生活问答 `life-guide`，塔罗、星座、解梦 `fortune-extras`：把上面命令里的 `chinese-fortune` 换成技能名（Claude Code 是 `/plugin install life-guide@chinese-fortune`） |
 | Codex、Cursor、GitHub Copilot、Gemini CLI 等 | `npx skills add ShousenZHANG/chinese-fortune --skill chinese-fortune` |
 | Gemini CLI（自带命令） | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune --path skills/chinese-fortune` |
@@ -101,6 +102,7 @@ python scripts/doctor.py
 | 合婚、亲子、合作关系 | 两人哪几柱相合、相冲、相刑 | 逐柱列关系和日主互见的十神，按关系类型筛条款，只分类不打分；合婚另给《选择要略》三元九宫合卦并附驳议 |
 | 出生时间不准、资料更正 | 时辰不确定、生日记错了 | 列出不变与会变的柱和受影响的结论；也能由四柱反查日期 |
 | 风水坐向 | 测得的角度坐什么山 | 《协纪辨方书》二十四山分类；测量误差跨山时要求复测，不判吉凶 |
+| 紫白九星 | 今年五黄在哪、这个月紫白飞到哪一方 | 《协纪辨方书》卷八年表、月表逐格复算；给坐山再标紫白是否到方 |
 | 古籍检索 | 原文、版本、上下文 | 十五部固定转录，557 个章节或卷单元、29,685 段，离线可查；《焦氏易林》四部叢刊本与四库本可按本卦之卦并列查林 |
 | 现实生活问题（life-guide 技能） | 失业、担保、押金、保险等 | 《高性价比人生指南》34 节 660 条、8 篇长文；急症和自伤念头先给第一个动作 |
 
