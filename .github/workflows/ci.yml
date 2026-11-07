@@ -46,7 +46,7 @@ jobs:
         run: python -m ruff check .
 
       - name: Type check (mypy)
-        run: python -m mypy skills/chinese-fortune/scripts/ --ignore-missing-imports --disallow-untyped-defs
+        run: for d in skills/*/scripts; do python -m mypy "$d" --ignore-missing-imports --disallow-untyped-defs || exit 1; done
 
       - name: Full tests and combined coverage gate
         # No marker exclusion in CI. The local quick selection is not a release gate.

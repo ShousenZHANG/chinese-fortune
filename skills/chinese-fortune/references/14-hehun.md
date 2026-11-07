@@ -38,4 +38,4 @@
 
 ## 现实参考
 
-合婚结论写完之后，可以另起最后一段附现实参考：`python scripts/life_guide.py --scenario compatibility --current-timezone <现居地时区> --question "<原话>"`。只附返回的条目，照抄标题、节号、条号和证据等级，写明「与上面的术数结论无关」；返回为空就不附。映射里刻意不放对合婚本身有评价的条目（10:1、10:4 和长文《结婚划不划算》）。
+现实层面的建议（钱、工作、法律、健康）由同一仓库的 **life-guide** 技能按《高性价比人生指南》回答。术数回答本身不附现实参考；用户另问现实问题时，若已安装 life-guide 就用它另起一段回答，与术数结论分开，不拿它给日子、颜色或关系加分；没装就照实说明，并给安装命令 `npx skills add ShousenZHANG/chinese-fortune --skill life-guide`。

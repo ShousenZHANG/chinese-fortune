@@ -21,7 +21,8 @@
 | 宿主 | 命令 |
 |---|---|
 | Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`，再 `/plugin install chinese-fortune@chinese-fortune` |
-| Codex、Cursor、GitHub Copilot、Gemini CLI 等 | `npx skills add ShousenZHANG/chinese-fortune` |
+| 同仓库的另外两个技能 | 现实生活问答 `life-guide`，塔罗、星座、解梦 `fortune-extras`：把上面命令里的 `chinese-fortune` 换成技能名（Claude Code 是 `/plugin install life-guide@chinese-fortune`） |
+| Codex、Cursor、GitHub Copilot、Gemini CLI 等 | `npx skills add ShousenZHANG/chinese-fortune --skill chinese-fortune` |
 | Gemini CLI（自带命令） | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune --path skills/chinese-fortune` |
 | claude.ai、ChatGPT、Claude API | 从 [Releases](https://github.com/ShousenZHANG/chinese-fortune/releases) 下载 `chinese-fortune-v版本号.zip`：claude.ai 在 Settings > Features 上传；ChatGPT（Business、Enterprise、Edu）在 Plugins > Skills 上传；Claude API 用 Skills API 上传 |
 | 只支持 MCP 的工具（Claude Desktop、Cursor、VS Code 等） | 解压同一个 zip，按下方配置接入 |
@@ -139,27 +140,25 @@ tests/  evals/  docs/       开发测试与评测记录，不随安装
 它不是完整八字合参：出行、嫁娶、搬家、开业在协纪「民用三十七事」里，其余事项是借用这套方法，回答里会写明这是相主等级比较。下表由 `python scripts/fortune_rules.py --capabilities-markdown` 生成，和代码不一致时测试会失败。
 
 <!-- capability-table:start -->
-| 事项 | 流程 | 个人吉凶（相主） | 原文授权 | 事项忌日 | 现实参考 |
-|---|---|---|---|---|---|
-| 阶段运势（`outlook`） | 期间 | 已实现 | 借用 | — | — |
-| 面试（`interview`） | 择时 | 已实现 | 借用（最接近「上官」） | — | 第31节、第19节 |
-| 工作沟通、谈薪、转岗（`work_conversation`） | 择时 | 已实现 | 借用 | — | 第31节、第19节 |
-| 学习考试（`exam`） | 择时 | 已实现 | 借用（最接近「入學」） | — | 第23节、第31节 |
-| 约会、感情沟通（`relationship_conversation`） | 择时 | 已实现 | 借用（最接近「會親友」） | — | 第10节 |
-| 出行（`travel`） | 择时 | 已实现 | 协纪民用事「出行」 | 已实现 | 第13节、第21节 |
-| 订婚、领证、婚礼（`wedding`） | 择时 | 已实现 | 协纪民用事「嫁娶」（只含婚礼） | 已实现 | 长文、第10节 |
-| 搬家、入住（`moving`） | 择时 | 已实现 | 协纪民用事「移徙」 | 已实现 | 第15节 |
-| 开业、产品与作品发布（`business`） | 择时 | 已实现 | 协纪民用事「開市」（只含开业） | 已实现 | 第12节 |
-| 报价、催款（`billing`） | 择时 | 已实现 | 借用（名目有納財、交易、立券，未核是否对应） | — | 第9节、第12节、第8节 |
-| 连续行程（`multiple_events`） | 连续行程 | — | — | — | — |
-| 关系匹配（`compatibility`） | 专项 | — | — | — | 第10节 |
-| 起名改名（`naming`） | 专项 | — | — | — | — |
-| 城市与场所比较（`location`） | 专项 | — | — | — | — |
-| 环境与风水（`fengshui`） | 专项 | — | — | — | — |
-| 复盘纠错（`review`） | 专项 | — | — | — | — |
+| 事项 | 流程 | 个人吉凶（相主） | 原文授权 | 事项忌日 |
+|---|---|---|---|---|
+| 阶段运势（`outlook`） | 期间 | 已实现 | 借用 | — |
+| 面试（`interview`） | 择时 | 已实现 | 借用（最接近「上官」） | — |
+| 工作沟通、谈薪、转岗（`work_conversation`） | 择时 | 已实现 | 借用 | — |
+| 学习考试（`exam`） | 择时 | 已实现 | 借用（最接近「入學」） | — |
+| 约会、感情沟通（`relationship_conversation`） | 择时 | 已实现 | 借用（最接近「會親友」） | — |
+| 出行（`travel`） | 择时 | 已实现 | 协纪民用事「出行」 | 已实现 |
+| 订婚、领证、婚礼（`wedding`） | 择时 | 已实现 | 协纪民用事「嫁娶」（只含婚礼） | 已实现 |
+| 搬家、入住（`moving`） | 择时 | 已实现 | 协纪民用事「移徙」 | 已实现 |
+| 开业、产品与作品发布（`business`） | 择时 | 已实现 | 协纪民用事「開市」（只含开业） | 已实现 |
+| 报价、催款（`billing`） | 择时 | 已实现 | 借用（名目有納財、交易、立券，未核是否对应） | — |
+| 连续行程（`multiple_events`） | 连续行程 | — | — | — |
+| 关系匹配（`compatibility`） | 专项 | — | — | — |
+| 起名改名（`naming`） | 专项 | — | — | — |
+| 城市与场所比较（`location`） | 专项 | — | — | — |
+| 环境与风水（`fengshui`） | 专项 | — | — | — |
+| 复盘纠错（`review`） | 专项 | — | — | — |
 <!-- capability-table:end -->
-
-「现实参考」一列是回答末尾可能附上的《高性价比人生指南》条目，按所在地筛选，不参与术数判断。
 
 </details>
 

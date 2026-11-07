@@ -4,6 +4,13 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
+## [Unreleased] — 一个仓库三个技能
+
+- **拆出 `life-guide`**：《高性价比人生指南》的现实生活问答（含急症、自伤念头、法律程序先给第一个动作）移到 `skills/life-guide/`，自带书的数据、许可声明和 IANA 时区文本表，不再依赖 tzdata 包。
+- **拆出 `fortune-extras`**：塔罗、星座、解梦移到 `skills/fortune-extras/`。
+- `chinese-fortune` 只保留中国术数：描述、路由和方法表不再包含上面两类；`fortune_reading` 的结果不再附 `life_reference`（现实参考），能力表去掉「现实参考」一列。路由遇到这两类问题返回 `skill` 字段，指明用哪个技能。急症检测（`safety_stop.py`）在 `chinese-fortune` 和 `life-guide` 里各有一份相同副本，所以只装术数技能时，「我现在胸痛，帮我起一卦」也会先停下给第一个动作。
+- 插件清单列出三个插件；`npx skills add ShousenZHANG/chinese-fortune --skill <技能名>` 分别安装。新增 `tests/test_skill_split.py`：每个技能只用自己的文件就能运行，共用的小模块逐字节一致。
+
 ## [6.0.1] — 2026-11-03 — 安装目录与许可声明
 
 - 标准 MIT 全文与产品免责声明分开。补齐依赖、移植代码、古籍转录、现实参考和 OpenCC 字典派生数据的第三方署名及许可全文，安装目录、运行包和来源包均自带声明。构建与归档验证拒绝缺失、空白或丢失署名的法律文件，即使包内清单和校验值被一致重算。

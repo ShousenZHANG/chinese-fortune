@@ -33,9 +33,9 @@ import sys
 import zipfile
 from pathlib import Path
 
+from cf_io import ensure_utf8_stdio
 from life_guide_refs import scan
 from life_guide_review import DISPUTE_SENTENCES, ERRATA, REGION
-from utils import ensure_utf8_stdio
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'assets' / 'life_guide.json'

@@ -36,7 +36,7 @@ def test_major_arcana_report_astro_not_element():
 
 
 def test_asset_majors_are_astrological_not_elemental():
-    d = json.loads((ROOT / "skills/chinese-fortune/assets" / "tarot78.json").read_text(encoding="utf-8"))
+    d = json.loads((ROOT / "skills/fortune-extras/assets" / "tarot78.json").read_text(encoding="utf-8"))
     majors = d.get("major_arcana") or []
     assert len(majors) == 22
     elements = {"火", "水", "风", "土"}

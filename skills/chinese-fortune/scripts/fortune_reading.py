@@ -36,13 +36,10 @@ from fortune_ranking import (
 from fortune_rules import capabilities, evidence, luck_observations, research_request
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
-from life_guide import LIMIT as LIFE_LIMIT
-from life_guide import entries_for, library_source
 from luck_assessment import assess_luck, luck_paragraph
 from personal_profiles import birth_arguments, load_profile, validate_person
 from reading_views import facts_line, write_facts
-from region import is_zone, resolve_region
-from request_time import capture_request_time
+from request_time import capture_request_time, is_zone
 from utils import (
     UTC,
     ensure_utf8_stdio,
@@ -353,7 +350,6 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     if not isinstance(event, dict) or set(event) - EVENT_FIELDS:
         raise ValueError('event 字段无效')
     if event.get('destination_timezone') and not is_zone(event['destination_timezone']):
-        # An unknown zone must not count as 境外.
         raise ValueError('event.destination_timezone 须为 IANA 时区名，例如 Asia/Singapore')
     scenario = event.get('scenario', 'outlook')
     if scenario == 'multiple_events':
@@ -402,10 +398,6 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
         result['conclusion']['method_scope'] = scope
         if result.get('ranking'):
             result['ranking']['method_scope'] = scope
-    # Computed from the request only, after the divination answer is settled,
-    # so it cannot feed back into any ranking.
-    result['life_reference'] = {'source': library_source(), 'region': resolve_region(payload),
-                                'entries': entries_for(payload)}
     return ok_envelope('fortune_reading', result)
 
 
@@ -1392,36 +1384,6 @@ def _lead_sentence(result: dict) -> str:
     return lead
 
 
-def _life_lines(result: dict) -> list[str]:
-    """The last section: book titles verbatim, with where each comes from.
-
-    Titles are quoted as written, so no number or condition is paraphrased
-    into something the entry does not say.
-    """
-    ref = result.get('life_reference') or {}
-    entries = (ref.get('entries') or [])[:LIFE_LIMIT]
-    if not entries:
-        return []
-    rows = [f"现实参考（《高性价比人生指南》快照 {ref['source']['snapshot_date']}，与上面的术数结论无关）"]
-    for entry in entries:
-        notes = []
-        if entry['region'] == '中国公民在境外':
-            notes.append('面向中国公民')
-        if entry['region'] != '通用':
-            notes.append('以官方最新规定为准')
-        if entry.get('dispute'):
-            # The other side, as the book's 备注 words it; never paraphrased.
-            notes.append(f"原书备注：「{entry['dispute']}」")
-        tail = ('；' + '；'.join(notes)) if notes else ''
-        if entry.get('kind') == 'article':
-            rows.append(f"- 长文《{entry['title']}》（书里另附的一篇长文{tail}）")
-        else:
-            ratio = f"，性价比{entry['ratio']}" if entry.get('ratio') else ''
-            rows.append(f"- {entry['title']}（第 {entry['section']} 节第 {entry['number']} 条，"
-                        f"证据等级 {entry['grade']}{ratio}{tail}）")
-    return ['\n'.join(rows)]
-
-
 # Plain words for the labels the draft uses, said once at the end.
 TERMS = {
     '命禄': '当天地支是出生年天干的禄位（古表，如丁禄在午）',
@@ -1597,7 +1559,6 @@ def render_answer(result: dict, detail: bool = False) -> str:
     lines.extend(dict.fromkeys(missing))
     if state in RESEARCH_STATES:
         lines.append('以上是已有依据支持的部分。还缺的本题条款可继续补查约5分钟；这份计算结果尚未执行外部检索，不代表古籍里不存在相关内容。')
-    lines.extend(_life_lines(result))
     terms = _terms_line('\n'.join(lines))
     if terms:
         lines.append(terms)

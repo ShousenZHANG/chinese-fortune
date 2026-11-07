@@ -136,16 +136,12 @@ def _authority_cell(cap: dict) -> str:
 
 def capability_markdown() -> str:
     """The README coverage table, from the same data the tools use."""
-    from life_guide import SCENARIO_ENTRIES
-    rows = ['| 事项 | 流程 | 个人吉凶（相主） | 原文授权 | 事项忌日 | 现实参考 |',
-            '|---|---|---|---|---|---|']
+    rows = ['| 事项 | 流程 | 个人吉凶（相主） | 原文授权 | 事项忌日 |',
+            '|---|---|---|---|---|']
     for cap in capabilities():
-        mapped = SCENARIO_ENTRIES.get(cap['scenario'], [])
-        parts = ['长文' if isinstance(ref, str) else f'第{ref[0]}节' for ref in mapped]
-        sections = '、'.join(dict.fromkeys(parts)) or '—'
         rows.append(f"| {cap['label']}（`{cap['scenario']}`） | {ROUTE_WORDS[cap['route']]} | "
                     f"{'已实现' if cap['personal_ranking'] == 'rule_based' else '—'} | {_authority_cell(cap)} | "
-                    f"{'已实现' if cap.get('calendar_screening') == 'rule_based' else '—'} | {sections} |")
+                    f"{'已实现' if cap.get('calendar_screening') == 'rule_based' else '—'} |")
     return '\n'.join(rows)
 
 

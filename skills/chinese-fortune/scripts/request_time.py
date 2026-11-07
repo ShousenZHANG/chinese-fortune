@@ -7,8 +7,10 @@ from __future__ import annotations
 
 import argparse
 import re
+import zoneinfo
 from collections.abc import Callable
 from datetime import datetime
+from functools import cache
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 from utils import (
@@ -20,6 +22,16 @@ from utils import (
     parse_iso,
     resolve_timezone_offset,
 )
+
+
+@cache
+def _known_zones() -> frozenset[str]:
+    return frozenset(zoneinfo.available_timezones())
+
+
+def is_zone(zone: object) -> bool:
+    """A real IANA name, by membership: Windows' ZoneInfo also opens 'Asia/Shanghai ' and 'Asia\\Shanghai'."""
+    return isinstance(zone, str) and zone in _known_zones()
 
 
 def _zone(name: str | None) -> ZoneInfo:

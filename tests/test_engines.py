@@ -17,6 +17,7 @@ import pytest
 from utils import zip_exact
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
+from conftest import script_path  # noqa: E402
 
 try:
     import lunar_python  # noqa: F401
@@ -29,7 +30,7 @@ needs_lunar = pytest.mark.skipif(not HAS_LUNAR, reason="lunar_python not install
 
 def run(script, *args) -> dict:
     proc = subprocess.run(
-        [sys.executable, str(SCRIPTS / script), *map(str, args)],
+        [sys.executable, str(script_path(script)), *map(str, args)],
         capture_output=True, text=True, encoding="utf-8",
     )
     try:
@@ -276,7 +277,7 @@ def test_help_survives_non_utf8_console(script):
     import os
     env = {**os.environ, "PYTHONIOENCODING": "cp1252"}
     proc = subprocess.run(
-        [sys.executable, str(SCRIPTS / script), "--help"],
+        [sys.executable, str(script_path(script)), "--help"],
         capture_output=True, env=env,
     )
     assert proc.returncode == 0, (
@@ -295,7 +296,7 @@ def test_help_documents_output_keys(script):
     if script == "entropy.py":
         pytest.skip("entropy.py is a helper module, not a CLI")
     proc = subprocess.run(
-        [sys.executable, "-X", "utf8", str(SCRIPTS / script), "--help"],
+        [sys.executable, "-X", "utf8", str(script_path(script)), "--help"],
         capture_output=True, text=True, encoding="utf-8",
     )
     assert proc.returncode == 0

@@ -25,6 +25,7 @@ from utils import ENVELOPE_VERSION, ERROR_NEXT_STEP
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPTS = ROOT / "skills/chinese-fortune/scripts"
+from conftest import script_path  # noqa: E402
 
 try:
     import lunar_python  # noqa: F401
@@ -37,7 +38,7 @@ pytestmark = pytest.mark.skipif(not HAS_LUNAR, reason="lunar_python not installe
 
 def run(script: str, *args) -> subprocess.CompletedProcess:
     return subprocess.run(
-        [sys.executable, str(SCRIPTS / script), *map(str, args)],
+        [sys.executable, str(script_path(script)), *map(str, args)],
         capture_output=True, text=True, encoding="utf-8", errors="replace", input='',
     )
 

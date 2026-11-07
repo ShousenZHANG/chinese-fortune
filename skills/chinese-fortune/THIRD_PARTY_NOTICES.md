@@ -4,7 +4,7 @@ The project's own code and documentation use the [MIT license](LICENSE). That gr
 
 ## Distribution scope
 
-This document and every linked license text accompany the installable skill folder, runtime ZIP, and corpus-source ZIP. The corpus-source ZIP contains the frozen corpus and its source records, not the runtime packages, life-guide dataset, or adapted application code. Paths for those runtime-only components appear as code literals below. Keeping their notices in the source ZIP does not imply that their code or data is present there.
+This document and every linked license text accompany the installable skill folder, runtime ZIP, and corpus-source ZIP. The corpus-source ZIP contains the frozen corpus and its source records, not the runtime packages. Paths for those runtime-only components appear as code literals below. Keeping their notices in the source ZIP does not imply that their code or data is present there.
 
 [The bundled provenance index](knowledge/manifest.json) records the selected editions, each chapter's source URL and fixed revision or content hash, licensing statements, and supporting sources. In the runtime ZIP, raw-source paths in that index refer to the companion source ZIP. The source ZIP and checkout contain the archived raw inputs. The index is an attribution and provenance record, not a blanket grant of rights.
 
@@ -19,16 +19,6 @@ The runtime includes `scripts/lunar_python/` and `scripts/lunar_python-1.4.8.dis
 Copyright (c) 2020, Paul Ganssle (Google). Copyright (c) 2026, Stan Ulbrych. Upstream is [python/tzdata](https://github.com/python/tzdata), distributed as `tzdata==2026.3`.
 
 The runtime includes `scripts/tzdata/` and `scripts/tzdata-2026.3.dist-info/` without local edits. Preserve the upstream [copyright and license notice](licenses/tzdata-NOTICE.txt) and [complete Apache License 2.0](licenses/tzdata-Apache-2.0.txt). These standalone copies retain the vendor notice bytes. The upstream package contains the IANA time-zone data. This notice does not assert ownership of that data.
-
-## HowToLiveBetter text and adapted code
-
-《高性价比人生指南》，eternity4719，https://github.com/eternity4719/HowToLiveBetter.
-
-The fixed source is [commit 842e11c9d51fac7943e5abb4e332e29b460b5061](https://github.com/eternity4719/HowToLiveBetter/tree/842e11c9d51fac7943e5abb4e332e29b460b5061), snapshot date 2026-10-05. The text in runtime `assets/life_guide.json` is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The [complete CC BY 4.0 text](licenses/CC-BY-4.0.txt) accompanies this notice.
-
-Changes to the text are recorded in the dataset. It was frozen at that commit and converted to JSON. Three entries and the paragraph that retells them in the section 6 introduction were omitted to fit the product scope. The remaining entries, introductions, and long articles retain their wording. Corrections are separate `errata` fields and do not replace the source wording. Local region-review fields and resolved cross references are separate from that text.
-
-The search and ranking algorithms were ported from `index.html`, the reference checks from `tools/check-refs.mjs`, and the decision workflow from `skills/life-decision-guide`. The local adaptations are in `scripts/life_guide.py`, `scripts/life_search.py`, `scripts/life_decision.py`, and `scripts/life_guide_refs.py`. They use Python data structures and the project's CLI and result conventions. Upstream code is MIT, Copyright (c) 2026 eternity4719. Preserve its [complete MIT notice](licenses/HowToLiveBetter-MIT.txt) independently of the text's CC BY terms.
 
 ## Frozen historical corpus
 

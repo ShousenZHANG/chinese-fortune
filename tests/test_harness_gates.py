@@ -48,7 +48,7 @@ def test_every_assertion_kind_in_the_goldens_has_a_runner():
                          ids=lambda value: value if isinstance(value, str) else None)
 def test_reference_goldens_still_contain_their_required_text(case_id, assertion):
     """Each golden names text a reference must keep; a rename must fail loudly."""
-    target = ROOT / "skills/chinese-fortune" / assertion["file"]
+    target = ROOT / "skills" / assertion.get("skill", "chinese-fortune") / assertion["file"]
     assert target.exists(), (case_id, assertion["file"])
     text = target.read_text(encoding="utf-8")
     missing = [needle for needle in assertion["needles"] if needle not in text]
@@ -66,7 +66,7 @@ def test_cli_release_examples(case_id, assertion):
     """Migrated deterministic goldens: each command executes once under pytest."""
     # Commands run from the skill folder as installed; fixtures they read stay in the repository's tests/.
     cmd = [str(ROOT / arg) if arg.startswith(("tests/", "evals/")) else arg for arg in assertion["cmd"]]
-    proc = subprocess.run([sys.executable, "-X", "utf8", *cmd], cwd=ROOT / "skills/chinese-fortune",
+    proc = subprocess.run([sys.executable, "-X", "utf8", *cmd], cwd=ROOT / "skills" / assertion.get("skill", "chinese-fortune"),
                           capture_output=True, text=True, encoding="utf-8", timeout=60)
     assert proc.returncode == 0, (case_id, proc.stdout[-1000:], proc.stderr[-1000:])
     data = json.loads(proc.stdout)

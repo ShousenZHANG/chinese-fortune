@@ -29,8 +29,8 @@ from typing import Union
 
 import life_decision
 import life_search
+from cf_io import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from region import crosses_border, is_zone, resolve_destination, resolve_region
-from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 
 DATA_FILE = Path(__file__).resolve().parents[1] / 'assets' / 'life_guide.json'
 LIMIT = 3

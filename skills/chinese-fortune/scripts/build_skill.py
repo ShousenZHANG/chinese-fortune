@@ -34,7 +34,7 @@ INCLUDE_DIRS = ["references", "assets", "agents", "docs"]
 # requirements-dev.txt pins build_han_variants' opencc; its own first line says
 # it stays out of the runtime package, yet it had been shipping.
 SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py",
-                  "import_life_guide.py", "life_guide_refs.py", "life_guide_review.py", "rule_registry.py",
+                  "rule_registry.py",
                   "requirements-dev.txt"}
 EXCLUDE_RE = re.compile(
     r"(__pycache__|\.pyc$|\.pyo$|\.bak|\.bak-|/\.git/|\.pytest_cache|"
@@ -44,8 +44,6 @@ LEGAL_DIGESTS = {
     "LICENSE": "3eee53bd84945816dd771de205a605833bcd009dd0cf8666580caec9d88274e5",
     "licenses/Renhuai-MIT.txt": "c0214b387494be5b7a6d3e7bf62897e43dd425c2b77f42e20925029252275be4",
     "licenses/iztro-MIT.txt": "e6c7b6e313cbda3135b41bccc66c98be132cb8319d0d465903d17e669e748b36",
-    "licenses/HowToLiveBetter-MIT.txt": "b5637b996d72e74dac01e8799701ff6440b5a979cd15a29ac120e7ae57963c67",
-    "licenses/CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
     "licenses/CC-BY-SA-4.0.txt": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
     "licenses/OpenCC-Python-NOTICE.txt": "afcbc6ee2d4fa9c2e9d5944b53ca05d3cc06bab6d082817c689bdfa33c38fcb0",
     "licenses/OpenCC-Python-Apache-2.0.txt": "18f3fedf9eac72e6054260489c764c1e54f63cf2b16055523f561ffeec7bc908",
@@ -57,8 +55,6 @@ LEGAL_FILES = (*LEGAL_DIGESTS, "DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licen
 NOTICE_COVERAGE = (
     "lunar-python 1.4.8", "Copyright (c) 2020 6tail", "tzdata 2026.3",
     "Copyright (c) 2020, Paul Ganssle (Google)", "Copyright (c) 2026, Stan Ulbrych",
-    "《高性价比人生指南》，eternity4719", "842e11c9d51fac7943e5abb4e332e29b460b5061",
-    "CC BY 4.0", "Copyright (c) 2026 eternity4719", "Three entries",
     "Wikisource contributors", "CC BY-SA 4.0 where applicable", "ShareAlike",
     "modern editorial work", "1923", "Module:SKchar revision 9013306",
     "opencc-python-reimplemented==0.1.7", "1803", "dictionary-derived subset",

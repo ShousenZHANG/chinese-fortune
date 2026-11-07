@@ -240,19 +240,12 @@ def main(argv: list[str] | None = None) -> int:
         multi = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/question_router.py'),
                                '--question', '八字、紫微和梅花分别看'], work))
         assert [s['method'] for s in multi['steps']] == ['bazi', 'ziwei', 'meihua'] and not multi['combine_verdicts']
-        # 5.3 flows: a real-life decision, a stop, a dated how-question, the mainland trial limit.
-        life = [str(python), '-X', 'utf8', str(skill / 'scripts/life_guide.py')]
-        decided = json.loads(run([*life, '--decide', '失业了先做什么', '--current-timezone', 'Asia/Shanghai'], work))
-        assert decided['decision']['do'] and decided['decision']['sections'][0]['section'] == 7
-        emergency = run([*life, '--decide', '我胸痛喘不上气，很危险，怎么办', '--current-timezone', 'Asia/Shanghai',
-                         '--markdown'], work)
-        assert emergency.startswith('先打 120') and '先做（' not in emergency
-        dated = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/question_router.py'),
-                                '--question', '我今天被裁了，怎么申请失业保险金'], work))
-        assert dated['flow'] == 'life_guide'
-        lawsuit = json.loads(run([*life, '--decide', '房东不退押金，我要起诉怎么办', '--current-timezone',
-                                  'Asia/Shanghai'], work))
-        assert any('6 个月内审结' in n for n in lawsuit['decision']['notes'])
+        # Real-life questions belong to the life-guide skill; an emergency still stops first here.
+        router = [str(python), '-X', 'utf8', str(skill / 'scripts/question_router.py'), '--question']
+        dated = json.loads(run([*router, '我今天被裁了，怎么申请失业保险金'], work))
+        assert dated['flow'] == 'life_guide' and dated['skill'] == 'life-guide'
+        emergency = json.loads(run([*router, '我胸痛喘不上气，帮我起一卦'], work))
+        assert emergency['stop'] == 'emergency'
         qimen = json.loads(run([str(python), '-X', 'utf8', str(skill / 'scripts/qimen_cast.py'),
                                 '--date', '2026-06-18', '--time', '08:00',
                                 '--target-timezone', 'Asia/Shanghai'], work))

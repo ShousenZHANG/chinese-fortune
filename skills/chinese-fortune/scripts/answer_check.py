@@ -32,11 +32,11 @@ from classical_search import get_passage, iter_passages, normalized
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
 
 ASSETS = Path(__file__).resolve().parents[1] / 'assets'
-# Text assets a host may quote: hexagram texts, the life guide, tarot, dream
-# notes and the rule files' own excerpts. Lookup tables are not quotable.
-QUOTABLE_ASSETS = ('64hex', 'life_guide', 'tarot78', 'jiemeng', 'classical_evidence', 'luck_rules',
+# Text assets a host may quote: hexagram texts and the rule files' own
+# excerpts. Lookup tables are not quotable.
+QUOTABLE_ASSETS = ('64hex', 'classical_evidence', 'luck_rules',
                    'geju_rules', 'tiaohou', 'method_rules', 'bazi_rules', 'shensha', 'hehun_clauses', 'liuyao_rules')
-ASSET_TITLES = {'life_guide': '高性价比人生指南', '64hex': '周易'}
+ASSET_TITLES = {'64hex': '周易'}
 
 # Bracket quotes may wrap lines; ASCII pairs stay on one line. Markdown block
 # quotes count as quotations when a source cue or title introduces them.
