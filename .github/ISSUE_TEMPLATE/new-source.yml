@@ -1,0 +1,28 @@
+name: 建议收录新原典
+description: 推荐一部公版古籍或可靠转录本
+labels: ["source"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 书名与版本
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 转录本来源
+      description: 维基文库等可确认授权的地址
+    validations:
+      required: true
+  - type: textarea
+    id: license
+    attributes:
+      label: 授权
+      description: 原书是否公版，转录本用什么许可；整理者的注释、译文通常不能直接收
+    validations:
+      required: true
+  - type: textarea
+    id: use
+    attributes:
+      label: 用来补什么能力

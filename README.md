@@ -12,7 +12,7 @@
 
 <img src=".github/assets/hero.svg" alt="示例：用户问八字特点，回答先给白话结论，再引《子平真诠》原文并附可查的段号" width="880">
 
-[English](README.en.md) · [30 秒安装](#安装) · [这样问](#这样问) · [为什么可信](#为什么可信) · [能做什么](#能做什么) · [更新与卸载](#更新与卸载)
+[English](README.en.md) · [在线示例报告](https://shousenzhang.github.io/chinese-fortune/) · [30 秒安装](#安装) · [这样问](#这样问) · [为什么可信](#为什么可信) · [能做什么](#能做什么) · [更新与卸载](#更新与卸载)
 
 </div>
 

@@ -1,0 +1,33 @@
+name: 排盘或回答有错
+description: 某张盘的干支、星曜、日期等级算错了，或回答引错了原文
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: 请只用虚构或已同意公开的出生资料。真实个人资料不要贴在这里。
+  - type: input
+    id: command
+    attributes:
+      label: 运行的命令
+      description: 例如 python scripts/bazi_reading.py --year 2000 --month 1 --day 15 --hour 10 --gender male
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: 哪一项不对
+      description: 写出工具给的值和你认为正确的值
+    validations:
+      required: true
+  - type: textarea
+    id: basis
+    attributes:
+      label: 依据
+      description: 另一个排盘工具的结果、古籍原文与段号，或历法依据
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 工具输出里的 version，或 python scripts/doctor.py 的结果

@@ -1,0 +1,25 @@
+name: 补一条古籍规则
+description: 随包古籍里有原文，但工具还没接上（适合第一次贡献）
+labels: ["good first issue", "rule"]
+body:
+  - type: input
+    id: passage
+    attributes:
+      label: 段号
+      description: 用 python scripts/classical_search.py --query 关键词 找到的 passage_id，例如 ziping:c031:p0001
+    validations:
+      required: true
+  - type: textarea
+    id: quote
+    attributes:
+      label: 原文
+      description: 照抄这一段里要用的句子，不加省略号
+    validations:
+      required: true
+  - type: textarea
+    id: rule
+    attributes:
+      label: 这条规则怎么算
+      description: 什么条件下成立、有什么例外；书中有例子就写出来，方便做测试
+    validations:
+      required: true
