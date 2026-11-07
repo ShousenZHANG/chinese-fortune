@@ -99,3 +99,16 @@ def test_the_skill_reuses_a_saved_profile_and_offers_to_save_one():
     """A user who says 「我」 should not have to repeat their birth details, and is asked once whether to save them."""
     assert 'personal_profiles.py list' in SKILL and '要不要存成本机档案' in SKILL
     assert 'save --profile-id me --confirmed' in SKILL and '只存出生资料，不存问答' in SKILL
+
+
+def test_slash_commands_name_real_scripts_and_references():
+    commands = sorted((SKILL_DIR / 'commands').glob('*.md'))
+    assert [c.stem for c in commands] == ['bazi', 'days', 'hehun', 'year']
+    for command in commands:
+        text = command.read_text(encoding='utf-8')
+        head = text.split('---')[1]
+        assert 'description:' in head and 'argument-hint:' in head and '$ARGUMENTS' in text, command.name
+        for script in re.findall(r'scripts/([a-z_]+\.py)', text) + re.findall(r'`([a-z_]+\.py)`', text):
+            assert (SCRIPTS / script).is_file() and script not in SCRIPT_EXCLUDE, (command.name, script)
+        for ref in re.findall(r'references/([0-9a-z\-]+\.md)', text):
+            assert (SKILL_DIR / 'references' / ref).is_file(), (command.name, ref)

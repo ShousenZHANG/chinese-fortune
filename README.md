@@ -38,6 +38,7 @@
 | 宿主 | 命令 |
 |---|---|
 | Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`，再 `/plugin install chinese-fortune@chinese-fortune` |
+| Claude Code 斜杠命令 | 装好插件后可直接用 `/chinese-fortune:bazi`（八字）、`/chinese-fortune:days`（哪天好）、`/chinese-fortune:hehun`（合婚）、`/chinese-fortune:year`（年度运势），也可以直接用中文提问 |
 | 同仓库的另外两个技能 | 现实生活问答 `life-guide`，塔罗、星座、解梦 `fortune-extras`：把上面命令里的 `chinese-fortune` 换成技能名（Claude Code 是 `/plugin install life-guide@chinese-fortune`） |
 | Codex、Cursor、GitHub Copilot、Gemini CLI 等 | `npx skills add ShousenZHANG/chinese-fortune --skill chinese-fortune` |
 | Gemini CLI（自带命令） | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune --path skills/chinese-fortune` |

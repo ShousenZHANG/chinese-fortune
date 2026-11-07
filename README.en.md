@@ -38,6 +38,7 @@ The easiest way is to send your AI this line:
 | Host | Command |
 |---|---|
 | Claude Code | `/plugin marketplace add ShousenZHANG/chinese-fortune`, then `/plugin install chinese-fortune@chinese-fortune` |
+| Claude Code slash commands | After installing the plugin: `/chinese-fortune:bazi` (BaZi), `/chinese-fortune:days` (good days), `/chinese-fortune:hehun` (compatibility), `/chinese-fortune:year` (a year); plain questions work too |
 | The other two skills in this repository | Everyday life questions `life-guide`; tarot, sun signs and dreams `fortune-extras`: replace `chinese-fortune` with the skill name in the commands above (Claude Code: `/plugin install life-guide@chinese-fortune`) |
 | Codex, Cursor, GitHub Copilot, Gemini CLI and others | `npx skills add ShousenZHANG/chinese-fortune --skill chinese-fortune` |
 | Gemini CLI (built-in command) | `gemini skills install https://github.com/ShousenZHANG/chinese-fortune --path skills/chinese-fortune` |

@@ -27,7 +27,7 @@ ROOT = SKILL.parents[1]
 SKILL_FOLDER = "chinese-fortune"
 SKILL_FILES = ["SKILL.md"]
 INCLUDE_FILES = ["README.md", "README.en.md", "CHANGELOG.md"]
-INCLUDE_DIRS = ["references", "assets", "agents", "docs"]
+INCLUDE_DIRS = ["references", "assets", "agents", "docs", "commands"]
 # Maintenance tools: they run from a checkout, never from the installed
 # package. Tests derive their own exemptions from this set rather than
 # keeping parallel lists -- three copies had already drifted apart.
