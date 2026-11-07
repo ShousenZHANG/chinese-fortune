@@ -236,10 +236,54 @@ def compare(segments: list[dict]) -> dict:
             'affects': {p: AFFECTS[p] for p in varying}, 'say': say}
 
 
+EVENT_LIMIT = 10
+STARS = {'career': ('正官', '七杀'), 'wealth': ('正财', '偏财')}
+NO_SOURCE = ('考时没有古籍依据：这里只把用户说的经历年份放到每个候选盘的大运、流年上，列出那年天干是什么十神、'
+             '是不是该领域看的星；不判哪个候选更准，也不拿「哪张更像」去定时辰。')
+
+
+def _events(request: dict) -> list[dict]:
+    events = request.get('events', [])
+    if not isinstance(events, list) or len(events) > EVENT_LIMIT:
+        raise BirthInputError('events', f'events 须为最多 {EVENT_LIMIT} 项的列表')
+    rows = []
+    for i, event in enumerate(events):
+        year, what = (event.get('year'), event.get('what')) if isinstance(event, dict) else (None, None)
+        if type(year) is not int or not 1900 <= year <= 2100 or not isinstance(what, str) or not 0 < len(what) <= 40:
+            raise BirthInputError(f'events[{i}]', '每项写 {"year": 公历年, "what": "发生了什么（40 字内）"}')
+        rows.append({'year': year, 'what': what})
+    return rows
+
+
+def event_facts(base: dict, segments: list[dict], events: list[dict]) -> None:
+    """Each candidate's 大运 and 流年 at the years the user lived something, with the star that area looks at."""
+    from life_areas import areas_asked
+    from utils import DIZHI, TIANGAN, shi_shen
+    for segment in segments:
+        chart = _chart(base, _parse(segment['sampled_at']))
+        day = chart['day_master'].get('stem')
+        rows = []
+        for event in events:
+            y = event['year']
+            stem = TIANGAN[(y - 4) % 10]
+            cycle = next((c for c in chart.get('da_yun') or [] if c.get('start_year') and c['start_year'] <= y <= c['end_year']), None)
+            area = next(iter(areas_asked(event['what'])), None)
+            stars = STARS.get(area or '') or ({'male': ('正财', '偏财'), 'female': ('正官', '七杀')}.get(base.get('gender') or '')
+                                             if area == 'relationship' else None)
+            row = {**event, 'liu_nian': stem + DIZHI[(y - 4) % 12], 'liu_nian_role': shi_shen(day, stem) if day else None,
+                   'da_yun': cycle['ganzhi'] if cycle else None,
+                   'da_yun_role': shi_shen(day, cycle['stem']) if cycle and day else None, 'area': area}
+            if stars:
+                row['stars'] = list(stars)
+                row['brings_star'] = {'liu_nian': row['liu_nian_role'] in stars, 'da_yun': row['da_yun_role'] in stars}
+            rows.append(row)
+        segment['events'] = rows
+
+
 def run(request: object) -> dict:
     if not isinstance(request, dict):
         raise BirthInputError('request', '需要 JSON 对象')
-    unknown = set(request) - {'birth', 'range', 'candidates'}
+    unknown = set(request) - {'birth', 'range', 'candidates', 'events'}
     if unknown:
         raise BirthInputError('request', f"不认识的字段：{'、'.join(sorted(unknown))}")
     birth = request.get('birth')
@@ -274,8 +318,13 @@ def run(request: object) -> dict:
     else:
         segments = [_segment(m, m, _chart(base, m, f'candidates[{i}]')) for i, m in enumerate(moments)]
         replay = {'birth': canonical, 'candidates': [m.strftime('%Y-%m-%dT%H:%M') for m in moments]}
+    events = _events(request)
+    if events:
+        event_facts(base, segments, events)
+        replay['events'] = events
     context = segments[0]['calculation_context']
     return ok_envelope('birth_candidates', {
+        **({'events_note': NO_SOURCE} if events else {}),
         'input': replay, 'method': 'bazi-candidate-pillars',
         'time_context': {'source': 'birth_local_minutes', 'precision': 'minute',
                          'time_standard': base['time_standard'], 'sect': base['sect'], 'fold': base['fold'],

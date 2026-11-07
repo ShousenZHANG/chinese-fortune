@@ -9,6 +9,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 - **技能目录瘦身**：557 个章节、576 个原始来源和约 660 个随包第三方文件分别打包成 `knowledge/books.zip`、`knowledge/sources.zip` 和 `scripts/vendor.zip`。chinese-fortune 技能目录从 1,972 个文件（29MB）降到 167 个文件（12.6MB，其中文本约 3.2MB），安装更快。检索、自检和构建直接从压缩包读，字节与记录的 SHA-256 不变；维护时用 `corpus_archive.py unpack/pack`。发行 zip 里的章节也改为 `knowledge/books.zip`。
 - **回答交付**（来自 v6.0 宿主实测）：紫微每一层运限列出四化星各在哪一宫，`answer_check` 发现只列星不列宫时给 warning；说「书里没有」而不写随包转录范围时给 warning；三元九宫合卦的 `say` 写出起宫、顺逆和步数；时区说明写出所用的 IANA 数据库版本；SKILL.md 要求未判项写补全路径，工具累计超过约三分钟先交付已算完的部分。
 - **首屏与档案**：README 首屏加示例图和「直接问大模型 vs 用本技能」对比；用户说「我」时先查本机档案，第一次算完主动问要不要存档。
+- **考时候选对照**：`birth_candidates.py` 请求可带 `events`（经历年份与事情），每个候选盘列出那些年的流年、大运十神，以及是否该领域看的星；明说考时没有古籍依据，不判哪个候选更准。
 - **紫微对 iztro 2.6.5 重新差分**：903 张盘逐宫比较，晚子时按 `--sect 1`、其余按默认口径时全部一致；默认子正换日在晚子时与 iztro 的次日排盘不同，属取日流派。输出 `sect` 增加 `judged_by`（是否晚子按真太阳时判断）和与 iztro 的对应说明；冻结样本进测试。
 - **黄历多人筛日**：`huangli_query.py --person 称呼=出生年干支或出生日期` 可重复，每人按《协纪辨方书》相主各给等级和理由，与择日同一判法，不合成总分。
 - **奇门置闰定局**：`qimen_cast.py --ju-method zhirun` 按《遁甲演义》超神接气置闰定局，与默认的拆补法并列可选；书中万历二十六至二十九年的超神、正授、闰奇实例按真实历日逐条复算。
