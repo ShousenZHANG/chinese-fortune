@@ -95,7 +95,7 @@ def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
                      palaces: list[dict], sect: int = 2, include_hour: bool = True,
                      sihua: dict[str, dict[str, str]] | None = None, da_xian: list[dict] | None = None,
                      birth_lunar_year: int | None = None, kui_yue: str = 'tongxing',
-                     year_divide: str = 'lunar-new-year') -> dict:
+                     year_divide: str = 'lunar-new-year', star_branches: dict[str, str] | None = None) -> dict:
     """Layers for ``target`` (local clock). ``birth_month`` is the chart's effective lunar month."""
     natal = {p['branch']: p['name'] for p in palaces}
     table = sihua or SI_HUA
@@ -134,6 +134,10 @@ def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
         hour_at = DIZHI[(day_at + hour_branch_index(target.hour)) % 12]
         layers['liu_shi'] = {**_layer('流时', hour_ganzhi[0], hour_ganzhi[1], hour_at, natal, table),
                              'stars': layer_stars('时', hour_ganzhi[0], hour_ganzhi[1], kui_yue)}
+    if star_branches:
+        for layer in layers.values():
+            if layer and layer.get('transformations'):
+                layer['transformation_palaces'] = transformation_palaces(layer['transformations'], star_branches, natal)
     return {
         'target': {'clock': target.strftime('%Y-%m-%d %H:%M') if include_hour else target.strftime('%Y-%m-%d'),
                    'clock_used': target.isoformat(timespec='seconds' if target.second else 'minutes'),
@@ -155,6 +159,18 @@ def horoscope_layers(target: datetime, *, birth_month: int, birth_hour: int,
         + (['只给目标日期时，以该日 12:00 当地钟面作为代表时刻，含交节当日；流时仍为 null。'] if not include_hour else []),
         'limit': LIMIT,
     }
+
+
+def transformation_palaces(transformations: dict[str, str], star_branches: dict[str, str],
+                           natal: dict[str, str]) -> list[dict]:
+    """Where each transformed star sits in the natal chart: 化禄太阴在辰（本命某宫）. A star the chart
+    does not place (none should be missing) is listed with a null branch rather than dropped."""
+    rows = []
+    for kind, star in transformations.items():
+        branch = star_branches.get(star)
+        rows.append({'kind': '化' + kind, 'star': star, 'branch': branch,
+                     'natal_palace': natal.get(branch) if branch else None})
+    return rows
 
 
 def parse_target(day: str, clock: str | None) -> tuple[datetime, bool]:

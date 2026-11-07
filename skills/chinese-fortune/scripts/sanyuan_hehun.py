@@ -49,8 +49,18 @@ def palace(year: int, gender: str) -> dict:
     step = -index if gender == 'male' else index
     number = (start - 1 + step) % 9 + 1
     used = number if number != 5 else (2 if gender == 'male' else 8)
-    return {'year': year, 'yuan': YUAN[yuan], 'counted_palace': number, 'palace': used,
+    return {'year': year, 'yuan': YUAN[yuan], 'start_palace': start, 'direction': '逆' if gender == 'male' else '顺',
+            'steps': index, 'counted_palace': number, 'palace': used,
             'trigram': TRIGRAM[used][0], 'centre_moved': number == 5}
+
+
+def derivation(p: dict, who: str, year_pillar: str) -> str:
+    """「下元男从四宫起甲子，逆数 8 步到壬申，落中五宫，寄坤二」: the count a reader can redo by hand."""
+    digits = '〇一二三四五六七八九'
+    landed = (f"落中五宫，{who}寄{p['trigram']}{digits[p['palace']]}" if p['centre_moved']
+              else f"落{p['trigram']}{digits[p['palace']]}宫")
+    return (f"{p['yuan']}{who}从{digits[p['start_palace']]}宫起甲子，{p['direction']}数 {p['steps']} 步到{year_pillar}，"
+            f"{landed}")
 
 
 def relation(male_palace: int, female_palace: int) -> str:
@@ -69,10 +79,9 @@ def match(male: dict, female: dict) -> dict:
     f = palace(year_of_pillar(female['year_pillar'], female['birth_year']), 'female')
     name = relation(m['palace'], f['palace'])
     grade = GRADE[name]
-    moved = lambda p, who: f"（数到中五宫，{who}寄{p['trigram']}{p['palace']}）" if p['centre_moved'] else ''  # noqa: E731
-    say = (f"三元九宫合卦（《选择要略》）：男年柱{male['year_pillar']}（{m['year']} 年立春起），属{m['yuan']}，"
-           f"{m['palace']}宫{m['trigram']}{moved(m, '男')}；女年柱{female['year_pillar']}（{f['year']} 年立春起），属{f['yuan']}，"
-           f"{f['palace']}宫{f['trigram']}{moved(f, '女')}；合成{name}，"
+    say = (f"三元九宫合卦（《选择要略》）：男年柱{male['year_pillar']}（{m['year']} 年立春起），"
+           f"{derivation(m, '男', male['year_pillar'])}；女年柱{female['year_pillar']}（{f['year']} 年立春起），"
+           f"{derivation(f, '女', female['year_pillar'])}；以男宫之卦为本宫变卦，合成{name}，"
            f"原文「{GRADE_QUOTE[grade]}」（xuanze:c002:p0132）。《协纪辨方书》卷三十六驳此法："
            f"三元九宫本是年九星入中宫、不是人的命宫，世传九星又误以上元为中元（xieji:c036:p0016）；两说并列，不合成婚配结论。")
     return {'method': '三元男女九宫合卦', 'male': m, 'female': f, 'relation': name, 'book_grade': grade,

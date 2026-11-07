@@ -22,6 +22,7 @@ from datetime import date as _date
 from datetime import datetime as _datetime
 from datetime import timedelta as _timedelta
 from datetime import timezone as _timezone
+from pathlib import Path
 from typing import Any
 
 # datetime.UTC is 3.11+; the tools run on 3.9 (macOS Command Line Tools python3).
@@ -718,7 +719,21 @@ def resolve_timezone_offset(
         "fold": moment.fold,
         "ambiguous": ambiguous,
         "note": note,
+        "source": tz_source(tz_name),
     }
+
+
+def tz_source(tz_name: str) -> str:
+    """Which copy of the IANA database answered: a historical offset is checkable against that release."""
+    import zoneinfo
+    for folder in zoneinfo.TZPATH:
+        if (Path(folder) / tz_name).is_file():
+            return f"IANA 时区数据库（系统 zoneinfo：{folder}）"
+    try:
+        from importlib.metadata import version
+        return f"IANA 时区数据库（tzdata {version('tzdata')}）"
+    except Exception:  # pragma: no cover - tzdata vendored without metadata
+        return "IANA 时区数据库（tzdata）"
 
 
 def longitude_correction(
