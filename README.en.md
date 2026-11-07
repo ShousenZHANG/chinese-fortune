@@ -98,6 +98,7 @@ Answers come in Chinese: the conclusion first in plain language, then short quot
 | Marriage, family and partnership pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other, clauses filtered by relationship type; classified, never scored; marriage also gets the 《选择要略》 three-yuan nine-palace match with its recorded objection |
 | Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
 | Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
+| Purple-white nine stars | where 五黄 sits this year, which palace gets 紫白 this month | 《协纪辨方书》 vol. 8 year and month tables reproduced cell by cell; with a sitting mountain, marks whether 紫白 reaches it |
 | Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,685 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
 | Everyday life (life-guide skill) | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 

@@ -25,6 +25,9 @@ from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import aspects_asked
 
 FENGSHUI_WORDS = ('风水', '朝向', '坐向', '摆放', '床头', '办公桌', '大门', '户型', '摆件')
+ZIBAI_WORDS = ('紫白', '飞星', '九星', '五黄', '二黑')
+# 玄空宅盘要宅运和《沈氏玄空学》，奇门九星是另一套；这些不进紫白。
+NOT_ZIBAI = ('玄空', '宅运', '下卦', '替卦', '奇门', '天蓬', '天芮')
 ALMANAC_WORDS = ('黄历', '皇历', '老黄历', '通书', '宜忌', '宜什么', '忌什么', '黄道吉时')
 NATAL_WORDS = ('命局', '八字', '四柱', '命盘', '性格', '一生', '命好不好', '格局', '日主', '适合什么', '适合做',
                '事业', '财运', '婚姻', '感情')
@@ -286,6 +289,11 @@ def route(question: str) -> dict:
                 'reference': 'references/20-disclaimer.md', 'needs': []}
     if _knowledge_only(text):
         return _knowledge_route(text)
+    if any(word in text for word in ZIBAI_WORDS) and not any(word in text for word in NOT_ZIBAI):
+        return {'flow': 'specialist', 'why': '紫白九星：年、月哪颗星入中、飞到哪宫，按《协纪辨方书》卷八；给坐山再标紫白是否到方',
+                'command': 'python scripts/zibai.py --date YYYY-MM-DD [--time HH:MM] [--sitting 坐山]',
+                'reference': 'references/08-fengshui.md',
+                'needs': ['哪一天（「今年」「这个月」按所在地确定今天的日期）', '要看到方时给坐山，或先用测量角度换算']}
     if any(word in text for word in FENGSHUI_WORDS):
         if re.search(r'\d+(?:\.\d+)?\s*(?:度|°)|罗盘|指南针|几度|坐什么山|哪个山', text):
             return {'flow': 'specialist', 'why': '有测量角度：先按测量合同换成二十四山坐向，误差跨山不取整',

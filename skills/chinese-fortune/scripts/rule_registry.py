@@ -141,6 +141,7 @@ CODE_CITED = [
     ('fortune_reading', '运势读法', 'fortune_reading:outlook_skeleton', ('tests/test_answer_length.py',)),
     ('ziwei_gods', '紫微流年神煞', 'ziwei_gods:twelve_gods', ('tests/test_ziwei_schools.py',)),
     ('fengshui_measure', '风水测量合同', 'fengshui_measure:measure', ('tests/test_fengshui_measure.py',)),
+    ('zibai', '紫白九星', 'zibai:zibai', ('tests/test_zibai.py',)),
 ]
 
 

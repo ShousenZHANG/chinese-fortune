@@ -335,6 +335,9 @@ SOURCE_CHECKS: dict[str, Callable[[dict], bool]] = {
         or (_rows(v, 'principle', {'passage_id': str, 'text': str}, empty=False)
             and isinstance(v.get('context_and_exceptions'), list)),
     'fengshui_measure': _fengshui, 'qimen_select': _qimen_select,
+    'zibai': lambda v: (isinstance(v.get('year'), dict) and isinstance(v['year'].get('palaces'), dict)
+                        and isinstance(v.get('month'), dict) and isinstance(v['month'].get('palaces'), dict))
+        or (isinstance(v.get('boundary'), dict) and isinstance(v.get('candidates'), list) and len(v['candidates']) == 2),
 }
 
 
