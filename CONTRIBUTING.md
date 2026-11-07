@@ -28,7 +28,7 @@
 ```sh
 python -m pip install -r requirements-dev.txt -c constraints-dev.txt
 python -m ruff check .
-python -m mypy skills/chinese-fortune/scripts/
+for d in skills/*/scripts; do python -m mypy "$d"; done
 python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
 python skills/chinese-fortune/scripts/classical_search.py --validate
 python skills/chinese-fortune/scripts/build_skill.py --dist-dir dist

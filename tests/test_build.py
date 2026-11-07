@@ -480,14 +480,11 @@ def test_legal_bundle_survives_both_archives_and_a_direct_folder_copy(package, t
         ("tzdata-Apache-2.0.txt", "tzdata-2026.3.dist-info/licenses/licenses/LICENSE_APACHE"),
     ):
         assert (copied / "licenses" / standalone).read_bytes() == (skill / "scripts" / original).read_bytes()
-    life = json.loads((copied / "assets/life_guide.json").read_text(encoding="utf-8"))
-    assert (copied / "licenses/HowToLiveBetter-MIT.txt").read_text(encoding="utf-8").strip() == life["source"]["license_detail"]["code_notice"]
 
 
 @pytest.mark.parametrize("name", [
     "LICENSE", "DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licenses/README.md",
-    "licenses/Renhuai-MIT.txt", "licenses/iztro-MIT.txt", "licenses/HowToLiveBetter-MIT.txt",
-    "licenses/CC-BY-4.0.txt", "licenses/CC-BY-SA-4.0.txt",
+    "licenses/Renhuai-MIT.txt", "licenses/iztro-MIT.txt", "licenses/CC-BY-SA-4.0.txt",
     "licenses/OpenCC-Python-NOTICE.txt", "licenses/OpenCC-Python-Apache-2.0.txt",
     "licenses/lunar-python-MIT.txt", "licenses/tzdata-NOTICE.txt", "licenses/tzdata-Apache-2.0.txt",
 ])
@@ -547,8 +544,7 @@ def _repack_legal_damage(package, directory, changes):
 @pytest.mark.parametrize("distribution", ["runtime", "source"])
 @pytest.mark.parametrize("name", [
     "LICENSE", "DISCLAIMER.md", "THIRD_PARTY_NOTICES.md", "licenses/README.md",
-    "licenses/Renhuai-MIT.txt", "licenses/iztro-MIT.txt", "licenses/HowToLiveBetter-MIT.txt",
-    "licenses/CC-BY-4.0.txt", "licenses/CC-BY-SA-4.0.txt",
+    "licenses/Renhuai-MIT.txt", "licenses/iztro-MIT.txt", "licenses/CC-BY-SA-4.0.txt",
     "licenses/OpenCC-Python-NOTICE.txt", "licenses/OpenCC-Python-Apache-2.0.txt",
     "licenses/lunar-python-MIT.txt", "licenses/tzdata-NOTICE.txt", "licenses/tzdata-Apache-2.0.txt",
 ])

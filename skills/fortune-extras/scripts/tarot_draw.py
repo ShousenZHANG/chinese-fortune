@@ -24,7 +24,7 @@ import random
 import sys
 
 import entropy
-from utils import (
+from cf_io import (
     ensure_utf8_stdio,
     error_envelope,
     json_print,

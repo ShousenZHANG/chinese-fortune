@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 import entropy
+from conftest import script_path  # noqa: E402
 
 SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
 
@@ -103,7 +104,7 @@ def test_describe_quantum_degraded(monkeypatch):
 
 def _run(script, *args) -> dict:
     proc = subprocess.run(
-        [sys.executable, str(SCRIPTS / script), *map(str, args)],
+        [sys.executable, str(script_path(script)), *map(str, args)],
         capture_output=True, text=True, encoding="utf-8",
     )
     return json.loads(proc.stdout)

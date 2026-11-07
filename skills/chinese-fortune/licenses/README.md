@@ -10,8 +10,6 @@ The OpenCC wheel has SHA-256 `41b3b92943c7bed291f448e9c7fad4b577c8c2eae30fcfe5a7
 | --- | --- | --- |
 | [Renhuai-MIT.txt](Renhuai-MIT.txt) | [upstream](https://raw.githubusercontent.com/Renhuai123/ziwei-doushu/495b79ecb3524b20b2edc026067d7d0b0f407319/LICENSE) | `c0214b387494be5b7a6d3e7bf62897e43dd425c2b77f42e20925029252275be4` |
 | [iztro-MIT.txt](iztro-MIT.txt) | [upstream](https://raw.githubusercontent.com/SylarLong/iztro/v2.6.3/LICENSE) | `e6c7b6e313cbda3135b41bccc66c98be132cb8319d0d465903d17e669e748b36` |
-| [HowToLiveBetter-MIT.txt](HowToLiveBetter-MIT.txt) | [upstream](https://raw.githubusercontent.com/eternity4719/HowToLiveBetter/842e11c9d51fac7943e5abb4e332e29b460b5061/LICENSE-CODE) | `b5637b996d72e74dac01e8799701ff6440b5a979cd15a29ac120e7ae57963c67` |
-| [CC-BY-4.0.txt](CC-BY-4.0.txt) | [upstream](https://creativecommons.org/licenses/by/4.0/legalcode.txt) | `9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411` |
 | [CC-BY-SA-4.0.txt](CC-BY-SA-4.0.txt) | [upstream](https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt) | `28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5` |
 | [OpenCC-Python-NOTICE.txt](OpenCC-Python-NOTICE.txt) | [upstream](https://files.pythonhosted.org/packages/30/6b/055b7806f320cc8f2cdf23c5f70221c0dc1683fca9ffaf76dfc2ad4b91b6/opencc_python_reimplemented-0.1.7-py2.py3-none-any.whl) | `afcbc6ee2d4fa9c2e9d5944b53ca05d3cc06bab6d082817c689bdfa33c38fcb0` |
 | [OpenCC-Python-Apache-2.0.txt](OpenCC-Python-Apache-2.0.txt) | [upstream](https://files.pythonhosted.org/packages/30/6b/055b7806f320cc8f2cdf23c5f70221c0dc1683fca9ffaf76dfc2ad4b91b6/opencc_python_reimplemented-0.1.7-py2.py3-none-any.whl) | `18f3fedf9eac72e6054260489c764c1e54f63cf2b16055523f561ffeec7bc908` |

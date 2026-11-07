@@ -29,10 +29,9 @@ JSON_TYPES: dict[str, type | tuple[type, ...]] = {'string': str, 'integer': int,
 # (profiles, prediction log): saving needs the user's explicit say-so in a host
 # that shows what is written, which a generic tool call does not.
 PERSONAL_DATA = {'personal_profiles.py', 'prediction_log.py'}
-EXCLUDED = {'mcp_server.py', 'build_skill.py', 'build_han_variants.py', 'import_classics.py',
-            'import_life_guide.py', 'life_guide_refs.py', 'life_guide_review.py', 'rule_registry.py',
+EXCLUDED = {'mcp_server.py', 'build_skill.py', 'build_han_variants.py', 'import_classics.py', 'rule_registry.py',
             *PERSONAL_DATA}
-INSTRUCTIONS = ('中国术数与现实生活问答工具。先读资源 SKILL.md 的流程：拿不准走哪条流程先调 route_question；'
+INSTRUCTIONS = ('中国术数工具。先读资源 SKILL.md 的流程：拿不准走哪条流程先调 route_question；'
                 '八字本命用 bazi_reading（默认 view=compact）；回答发出前用 answer_check 核对正文；'
                 '不给分数，不把条件结论说成确定事件，未判的就说未判。')
 
@@ -95,9 +94,6 @@ TOOLS: dict[str, dict] = {
                          'schema': _schema({'query': {'type': 'string'}, 'passage_id': {'type': 'string'},
                                             'chapter_id': {'type': 'string'}, 'book': {'type': 'string'},
                                             'limit': {'type': 'integer'}})},
-    'life_guide': {'script': 'life_guide.py', 'description': '按《高性价比人生指南》回答现实生活问题',
-                   'schema': _schema({'decide': {'type': 'string'}, 'query': {'type': 'string'},
-                                      'scenario': {'type': 'string'}, 'entry': {'type': 'string'}})},
     'request_time': {'script': 'request_time.py', 'description': '固定本次请求的当前时刻与现居地时区',
                      'schema': _schema({'current_timezone': {'type': 'string'}, 'request_time': {'type': 'string'}})},
     'answer_check': {'script': 'answer_check.py', 'stdin_field': 'answer', 'flags': ['--answer', '-'],
@@ -105,7 +101,7 @@ TOOLS: dict[str, dict] = {
                      'schema': _schema({'answer': {'type': 'string'},
                                         'facts': {'type': 'array', 'items': {'type': 'object'}}}, ('answer',))},
     'doctor': {'script': 'doctor.py', 'description': '安装自检，失败时给出下一步', 'schema': _schema({})},
-    'run_script': {'script': None, 'description': '运行其他随包脚本（梅花、六爻、周易、奇门、六壬、塔罗、黄历、生肖等）；'
+    'run_script': {'script': None, 'description': '运行其他随包脚本（梅花、六爻、周易、奇门、六壬、黄历、生肖等）；'
                                                   'args 为命令行参数列表，先用 route_question 拿到命令',
                    'schema': _schema({'script': {'type': 'string'}, 'args': {'type': 'array', 'items': {'type': 'string'}},
                                       'stdin': {'type': 'string'}}, ('script',))},

@@ -53,13 +53,14 @@ def test_mcp_never_runs_maintenance_tools_and_its_tools_point_at_real_scripts():
 
 
 def test_router_names_only_shipped_scripts_and_existing_references():
+    skills = [SKILL_DIR, *(SKILL_DIR.parent / name for name in ('life-guide', 'fortune-extras'))]
     scripts = set(re.findall(r"scripts/([a-z_]+\.py)", ROUTER))
     scripts |= set(re.findall(r"'([a-z_]+\.py)'", ROUTER))
     assert scripts, 'router no longer names any script?'
     for name in scripts:
-        assert (SCRIPTS / name).is_file() and name not in SCRIPT_EXCLUDE, name
+        assert any((skill / 'scripts' / name).is_file() for skill in skills) and name not in SCRIPT_EXCLUDE, name
     for ref in set(re.findall(r"references/([0-9a-z\-]+\.md)", ROUTER)) | set(re.findall(r"'([0-9]{2}-[a-z\-]+\.md)'", ROUTER)):
-        assert ref in REFERENCES, ref
+        assert any((skill / 'references' / ref).is_file() for skill in skills), ref
 
 
 def test_router_method_references_mention_their_scripts():
@@ -68,6 +69,11 @@ def test_router_method_references_mention_their_scripts():
     for method in _named_methods(every):
         reference = method['reference'].removeprefix('references/')
         script = method['script'].removeprefix('scripts/')
+        if method.get('skill'):
+            other = SKILL_DIR.parent / method['skill']
+            text = (other / 'references' / reference).read_text(encoding='utf-8')
+            assert script in text or script in (other / 'SKILL.md').read_text(encoding='utf-8'), method
+            continue
         assert script in REFERENCES[reference] or script in SKILL, (method['method'], script, reference)
 
 

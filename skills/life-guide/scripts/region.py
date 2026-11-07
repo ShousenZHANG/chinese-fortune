@@ -9,13 +9,18 @@ then attach no region-bound entry rather than assume 中国大陆.
 港澳台 is its own region: mainland statutes do not apply there, and it is not
 where the book's 境外 advice (overseas advisories, the 12308 consular line)
 is aimed either.
+
+Zone names, countries and links come from the IANA text files bundled in
+assets/tz (zone.tab, tzdata.zi), so a Windows Python without the tzdata package
+answers the same as Linux; no zone is ever opened as binary data here.
 """
 from __future__ import annotations
 
 import zoneinfo
 from functools import cache
-from importlib import resources
 from pathlib import Path
+
+TZ_TEXT = Path(__file__).resolve().parents[1] / 'assets' / 'tz'
 
 MAINLAND = frozenset({'Asia/Shanghai', 'Asia/Urumqi', 'Asia/Chongqing', 'Asia/Chungking',
                       'Asia/Harbin', 'Asia/Kashgar', 'PRC'})
@@ -30,7 +35,9 @@ OWN_COUNTRIES = {**dict.fromkeys(MAINLAND, 'CN'), 'Asia/Hong_Kong': 'HK', 'Hongk
 def _known_zones() -> frozenset[str]:
     # Our own table names count even where a distribution ships legacy links
     # such as PRC separately (Debian's tzdata-legacy).
-    return frozenset(zoneinfo.available_timezones()) | MAINLAND | HK_MO_TW | NOT_A_PLACE
+    rows = (line.split() for line in _tz_text('tzdata.zi').splitlines() if line[:2] in ('Z ', 'L '))
+    bundled = {cols[1] if cols[0] == 'Z' else cols[2] for cols in rows if len(cols) >= 2 + (cols[0] == 'L')}
+    return frozenset(bundled) | frozenset(zoneinfo.available_timezones()) | MAINLAND | HK_MO_TW | NOT_A_PLACE
 
 
 def is_zone(zone: object) -> bool:
@@ -40,18 +47,11 @@ def is_zone(zone: object) -> bool:
 
 
 def _tz_text(name: str) -> str:
-    """A tz data file from wherever zoneinfo reads its zones: TZPATH, then tzdata."""
-    sources: list = [Path(p) / name for p in zoneinfo.TZPATH]
+    """One of the bundled IANA text files (zone.tab, tzdata.zi)."""
     try:
-        sources.append(resources.files('tzdata').joinpath('zoneinfo').joinpath(name))
-    except ModuleNotFoundError:
-        pass
-    for source in sources:
-        try:
-            return source.read_text(encoding='utf-8')
-        except OSError:
-            continue
-    return ''
+        return (TZ_TEXT / name).read_text(encoding='utf-8')
+    except OSError:
+        return ''
 
 
 @cache

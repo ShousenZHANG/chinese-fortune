@@ -20,7 +20,7 @@ import re
 import sys
 
 from answer_style import EVENT_KEYWORDS, question_kind
-from life_decision import stop_kind
+from safety_stop import stop_kind
 from utils import ensure_utf8_stdio, error_envelope, json_print, ok_envelope
 from wuxing_colours import aspects_asked
 
@@ -119,6 +119,21 @@ QIMEN_SELECT_COMMAND = ('python scripts/qimen_select.py --from 起始日期 --da
                         '--target-timezone 择时地点时区')
 
 
+# Methods that moved to their own skills in this repository. The router still names them so a
+# question is never left without a route; the host runs them in that skill (or says it is not installed).
+OTHER_SKILL_METHODS = {'tarot': 'fortune-extras'}
+EXTRAS_WORDS = ('塔罗', '星座', '解梦', '梦见', '梦到', '做梦')
+SUN_SIGNS = ('白羊座', '金牛座', '双子座', '巨蟹座', '狮子座', '处女座', '天秤座', '天蝎座', '射手座', '摩羯座',
+             '水瓶座', '双鱼座')
+LIFE_SKILL_NOTE = '由 life-guide 技能回答（同一仓库的另一个技能）；没装时照实说明并给安装命令，急症仍先给第一个动作'
+
+
+def _extras_route(text: str) -> dict:
+    return {'flow': 'other_skill', 'skill': 'fortune-extras',
+            'why': '塔罗、星座、解梦由 fortune-extras 技能回答（同一仓库的另一个技能），只作象征和文化参考',
+            'needs': ['塔罗：问题与牌阵；解梦：梦里的主要意象；星座：出生月日']}
+
+
 def _named_methods(text: str) -> list[dict]:
     """Concrete entry points for explicitly requested systems, in mention order."""
     # Avoid known place names without hiding the bare method names in a list.
@@ -146,7 +161,7 @@ def _named_methods(text: str) -> list[dict]:
         (('大六壬', '六壬'), 'liuren', 'liuren_cast.py', '07-daliuren.md',
          'python scripts/liuren_cast.py --current-timezone 现居地时区 --request-time 本次UTC',
          ['事件、占问时刻/时区和地点']),
-        (('塔罗',), 'tarot', 'tarot_draw.py', '18-tarot.md',
+        (('塔罗',), 'tarot', 'tarot_draw.py', 'tarot.md',
          'python scripts/tarot_draw.py one --question "<原话>"',
          ['问题与牌阵；已有抽牌直接复用，不因展开详情重新抽牌']),
     ]
@@ -161,9 +176,12 @@ def _named_methods(text: str) -> list[dict]:
         if positions:
             if method in ('bazi', 'ziwei'):
                 needs = [*needs, *_reference_time_needs(text)]
-            found.append((min(positions), {'method': method, 'script': 'scripts/' + script,
-                                          'reference': 'references/' + reference,
-                                          'command': command, 'needs': needs}))
+            item = {'method': method, 'script': 'scripts/' + script, 'reference': 'references/' + reference,
+                    'command': command, 'needs': needs}
+            if method in OTHER_SKILL_METHODS:
+                # Script and reference paths are inside that skill's folder, not this one.
+                item['skill'] = OTHER_SKILL_METHODS[method]
+            found.append((min(positions), item))
     return [item for _, item in sorted(found, key=lambda item: item[0])]
 
 
@@ -258,8 +276,8 @@ def route(question: str) -> dict:
     kind = question_kind(text)
     stop = stop_kind(text)
     if stop:
-        return {'flow': 'life_guide', 'stop': stop,
-                'why': '正在发生的急症、自伤念头或法律程序：先给第一个动作，不做术数解释、不排性价比',
+        return {'flow': 'life_guide', 'skill': 'life-guide', 'stop': stop,
+                'why': '正在发生的急症、自伤念头或法律程序：先给第一个动作，不做术数解释、不排性价比；' + LIFE_SKILL_NOTE,
                 'command': 'python scripts/life_guide.py --decide "<原话>" --current-timezone 现居地时区 --markdown',
                 'reference': 'references/20-disclaimer.md',
                 'needs': ['现居地时区（求助电话和法律口径按所在地给）']}
@@ -296,6 +314,8 @@ def route(question: str) -> dict:
                          '"range": {"start": "YYYY-MM-DDTHH:MM", "end": ...} 或 "candidates": [...]}',
                 'reference': 'references/00-intake.md', 'needs': ['性别、出生地、候选时间或时间范围']}
     methods = _named_methods(text)
+    if not methods and any(word in text for word in (*EXTRAS_WORDS, *SUN_SIGNS)):
+        return _extras_route(text)
     relationship = any(word in text for word in ('合婚', '合盘', '亲子关系', '姐妹关系', '合不合', '合得来', '合伙',
                                                  '搭档', '般配'))
     if relationship and (not methods or all(m['method'] in ('bazi', 'ziwei') for m in methods)):
@@ -372,11 +392,11 @@ def route(question: str) -> dict:
     if any(word in text for word in FORTUNE_CUES):
         return {'flow': 'other', 'why': '带命理说法的问题，按 SKILL.md 路由表选术数方法；现实决策流程不接', 'needs': []}
     if practical or any(word in text for word in DECISION_WORDS):
-        return {'flow': 'life_guide',
+        return {'flow': 'life_guide', 'skill': 'life-guide',
                 'why': '问现实层面怎么做：按《高性价比人生指南》的决策流程查条目、按性价比和证据等级排序，'
-                       '分先做和别做，每条注明出处',
+                       '分先做和别做，每条注明出处；' + LIFE_SKILL_NOTE,
                 'command': 'python scripts/life_guide.py --decide "<原话>" --current-timezone 现居地时区 --markdown',
-                'reference': 'references/29-life-decision.md',
+                'reference': 'references/life-decision.md',
                 'needs': ['现居地时区（决定适用哪里的规定；事情发生在别处时另给那里的时区）']}
     return {'flow': 'other', 'why': '不是这几类常见个人问题，按 SKILL.md 路由表选工具', 'needs': []}
 
@@ -387,7 +407,8 @@ def main(argv: list[str] | None = None) -> int:
         description='把一句问话对到计算流程；只做路由，不算命盘',
         epilog='Top-level JSON keys: ok tool version flow why needs [aspects command request kind reference method steps]. '
                'flow: wear_advice personal_days event_slots almanac natal method multi_method knowledge '
-               'compatibility specialist boundary life_guide other.')
+               'compatibility specialist boundary life_guide other_skill other. '
+               'skill: set when another skill in this repository (life-guide, fortune-extras) answers.')
     parser.add_argument('--question', required=True, help='用户原话')
     args = parser.parse_args(argv)
     if not args.question.strip() or len(args.question) > 2000:

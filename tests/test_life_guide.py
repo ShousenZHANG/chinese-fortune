@@ -8,7 +8,7 @@ import pytest
 from life_guide import FOREIGN_NOTE, SCENARIO_ENTRIES, entries_for, get_article, get_entry, search
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = json.loads((ROOT / 'skills/chinese-fortune/assets' / 'life_guide.json').read_text(encoding='utf-8'))
+DATA = json.loads((ROOT / 'skills/life-guide/assets' / 'life_guide.json').read_text(encoding='utf-8'))
 PRESENT = {(e['section'], e['number']) for e in DATA['entries']}
 
 
@@ -73,11 +73,11 @@ def test_the_compatibility_workflow_can_ask_for_its_references():
     assert _ids(rows) == [(10, 17), (10, 16)]       # 842e11c9 moved them from 10:18 and 10:17
     assert '健康账' in rows[0]['title'] and '为长辈结婚' in rows[1]['title']
     hehun = (ROOT / 'skills/chinese-fortune/references' / '14-hehun.md').read_text(encoding='utf-8')
-    assert 'life_guide.py --scenario compatibility' in hehun
+    assert 'life-guide' in hehun   # the real-world part is handed to that skill
 
 
 def test_the_cli_query_takes_the_users_region():
-    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / 'life_guide.py'),
+    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/life-guide/scripts' / 'life_guide.py'),
                            '--query', '押金', '--current-timezone', 'Australia/Sydney'],
                           capture_output=True, text=True, encoding='utf-8')
     assert proc.returncode == 0, proc.stderr
@@ -164,7 +164,7 @@ def test_the_certificate_entry_is_only_for_questions_about_certificates():
 
 
 def test_the_cli_returns_an_envelope_with_whole_entries():
-    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / 'life_guide.py'),
+    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/life-guide/scripts' / 'life_guide.py'),
                            '--scenario', 'travel', '--current-timezone', 'Australia/Sydney',
                            '--destination-timezone', 'Asia/Singapore'],
                           capture_output=True, text=True, encoding='utf-8')
@@ -176,7 +176,7 @@ def test_the_cli_returns_an_envelope_with_whole_entries():
 
 
 def test_the_cli_returns_the_long_article_whole():
-    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/chinese-fortune/scripts' / 'life_guide.py'),
+    proc = subprocess.run([sys.executable, '-X', 'utf8', str(ROOT / 'skills/life-guide/scripts' / 'life_guide.py'),
                            '--article', 'marriage', '--current-timezone', 'Australia/Sydney'],
                           capture_output=True, text=True, encoding='utf-8')
     assert proc.returncode == 0, proc.stderr

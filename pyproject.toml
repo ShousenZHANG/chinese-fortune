@@ -29,7 +29,7 @@ patch = ["subprocess"]
 parallel = true
 # Keep runtime and retained evaluation/build tools in the combined denominator.
 # Group reports describe the same run; they do not substitute for this gate.
-source = ["skills/chinese-fortune/scripts", "evals"]
+source = ["skills/chinese-fortune/scripts", "skills/life-guide/scripts", "skills/fortune-extras/scripts", "evals"]
 omit = ["skills/chinese-fortune/scripts/lunar_python/*", "skills/chinese-fortune/scripts/tzdata/*"]
 sigterm = true
 

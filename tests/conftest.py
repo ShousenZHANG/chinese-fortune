@@ -4,9 +4,19 @@ import subprocess
 import sys
 from pathlib import Path
 
-SCRIPTS = Path(__file__).resolve().parent.parent / "skills/chinese-fortune/scripts"
-if str(SCRIPTS) not in sys.path:
-    sys.path.insert(0, str(SCRIPTS))
+SKILLS = Path(__file__).resolve().parent.parent / "skills"
+SCRIPTS = SKILLS / "chinese-fortune/scripts"
+# Every skill's scripts are importable; chinese-fortune comes first, so its
+# utils/entropy win over a same-named helper elsewhere.
+SKILL_SCRIPTS = [SCRIPTS, SKILLS / "life-guide/scripts", SKILLS / "fortune-extras/scripts"]
+for folder in reversed(SKILL_SCRIPTS):
+    if str(folder) not in sys.path:
+        sys.path.insert(0, str(folder))
+
+
+def script_path(script: str) -> Path:
+    """The skill folder that ships this script."""
+    return next((folder / script for folder in SKILL_SCRIPTS if (folder / script).is_file()), SCRIPTS / script)
 
 
 def run_cli(script: str, *args, expect_rc: int = 0) -> dict:
@@ -16,7 +26,7 @@ def run_cli(script: str, *args, expect_rc: int = 0) -> dict:
     silently, and reports stderr when the output is not JSON.
     """
     proc = subprocess.run(
-        [sys.executable, str(SCRIPTS / script), *map(str, args)],
+        [sys.executable, str(script_path(script)), *map(str, args)],
         capture_output=True, text=True, encoding="utf-8",
     )
     assert proc.returncode == expect_rc, (

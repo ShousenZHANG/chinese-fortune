@@ -83,14 +83,14 @@ def test_a_real_life_decision_goes_to_the_books_decision_workflow(question):
     失业、工伤、担保 returning 'other'."""
     result = route(question)
     assert result['flow'] == 'life_guide' and '--decide' in result['command'], question
-    assert result['reference'] == 'references/29-life-decision.md'
+    assert result['reference'] == 'references/life-decision.md'
 
 
 def test_every_question_the_book_says_it_answers_reaches_the_workflow():
     """The 34 questions of the book's README, verbatim."""
     import json
     from pathlib import Path
-    data = json.loads((Path(__file__).resolve().parents[1] / 'skills/chinese-fortune/assets' / 'life_guide.json').read_text(encoding='utf-8'))
+    data = json.loads((Path(__file__).resolve().parents[1] / 'skills/life-guide/assets' / 'life_guide.json').read_text(encoding='utf-8'))
     missed = [q['question'] for q in data['guide']['questions'] if route(q['question'])['flow'] != 'life_guide']
     assert not missed
 
@@ -165,7 +165,7 @@ def test_a_named_day_keeps_a_practical_question_a_day_question(question):
     ('塔罗牌看裁员会不会轮到我', 'method'), ('奇门遁甲看租房合同签不签', 'method'),
     ('紫微斗数看明年运势', 'method'), ('用周易算算押金能不能要回来', 'method'),
     ('摇个卦看看试用期能不能转正', 'other'), ('问卦：押金能要回来吗', 'other'),
-    ('求个签看裁员会不会轮到我', 'other'), ('星座看试用期能不能转正', 'other'), ('测字看看借条', 'other'),
+    ('求个签看裁员会不会轮到我', 'other'), ('星座看试用期能不能转正', 'other_skill'), ('测字看看借条', 'other'),
 ])
 def test_a_named_divination_method_goes_to_that_method_not_a_new_flow(question, flow):
     """The asker chose the method; neither the reference library nor 相主 answers it."""

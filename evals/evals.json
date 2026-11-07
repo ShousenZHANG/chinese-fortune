@@ -147,7 +147,8 @@
             "cards.0.card_name_zh",
             "cards.0.orientation",
             "summary"
-          ]
+          ],
+          "skill": "fortune-extras"
         }
       ]
     },
@@ -189,7 +190,8 @@
             "traditional",
             "modern_psychology",
             "蛇变龙"
-          ]
+          ],
+          "skill": "fortune-extras"
         }
       ]
     },
@@ -526,7 +528,8 @@
           "contains": {
             "symbol": "蛇",
             "category": "动物"
-          }
+          },
+          "skill": "fortune-extras"
         }
       ]
     },

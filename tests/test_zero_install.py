@@ -125,9 +125,11 @@ def test_the_plugin_marketplace_installs_this_skill_at_this_version():
     from utils import __version__
     market = json.loads((ROOT / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
     assert market["name"] == "chinese-fortune" and market["owner"]["name"]
-    (plugin,) = market["plugins"]
-    assert plugin["name"] == "chinese-fortune" and plugin["source"] == "./skills/chinese-fortune"
-    assert plugin["version"] == __version__
-    # The plugin root is the skill folder, which holds SKILL.md directly (one skill). No SKILL.md at the
-    # repository root: the skills CLI would take the whole repository as the skill and shadow this one.
-    assert (ROOT / plugin["source"] / "SKILL.md").is_file() and not (ROOT / "SKILL.md").exists()
+    plugins = {plugin["name"]: plugin for plugin in market["plugins"]}
+    assert set(plugins) == {"chinese-fortune", "life-guide", "fortune-extras"}
+    for name, plugin in plugins.items():
+        assert plugin["source"] == f"./skills/{name}" and plugin["version"] == __version__
+        # Each plugin root is a skill folder holding SKILL.md directly (one skill). No SKILL.md at the
+        # repository root: the skills CLI would take the whole repository as the skill and shadow these.
+        assert (ROOT / plugin["source"] / "SKILL.md").is_file()
+    assert not (ROOT / "SKILL.md").exists()

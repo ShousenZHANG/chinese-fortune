@@ -15,11 +15,10 @@
 | 测字 | [测字](11-cezi.md) | 字形、字义与文化联想 |
 | 姓名 | [姓名](13-qiming.md) + [输入](00-intake.md) | name_analyze.py；近现代五格不等于古籍命理 |
 | 合婚 | [合婚](14-hehun.md) + [输入](00-intake.md) | 两盘分别核验，生肖关系不等于婚姻结果 |
-| 解梦 | [解梦](15-jiemeng.md) | jiemeng_lookup.py；不诊病或预测事件 |
 | 生肖 | [生肖](16-shengxiao.md) | zodiac_compat.py；旧分数不是现实适配率 |
-| 星座 | [星座](17-xingzuo.md) | 西方象征体系，未纳入中国古籍库 |
-| 塔罗 | [塔罗](18-tarot.md) | tarot_draw.py；不作为八字证据 |
 | 小六壬及扩展索引 | [扩展](21-extended-methods.md) | 小六壬有脚本，其余按实际覆盖说明 |
 | 随机寻访 | [散步工具](../docs/OPTIONAL-TOOLS.md) | explore_cast.py；散步灵感，不参与预测 |
 
 这些材料的具体引文需另行定位。尚未核验的材料只作查找线索，不直接套为个人结论。
+
+塔罗、星座和解梦不属于中国术数，已移到同一仓库的 **fortune-extras** 技能；用户点名时用它回答，没装就照实说明，并给安装命令 `npx skills add ShousenZHANG/chinese-fortune --skill fortune-extras`。

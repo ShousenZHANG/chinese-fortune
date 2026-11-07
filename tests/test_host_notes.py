@@ -102,11 +102,15 @@ def test_an_insurance_question_is_not_about_the_hazard(question):
     assert 'stop' not in result and (13, 24) not in shown
 
 
-def test_the_skill_says_tool_conclusions_come_first_and_takes_life_questions():
+def test_the_skill_says_tool_conclusions_come_first_and_hands_life_questions_on():
     text = (ROOT / 'skills/chinese-fortune/SKILL.md').read_text(encoding='utf-8')
     assert '## 工具结论优先（硬规则）' in text and '不写 `python -c`' in text
     description = next(line for line in text.splitlines() if line.startswith('description: '))
-    assert '燃气泄漏' in description and '收到传票' in description and len(description) <= 1024 + len('description: ')
+    assert 'life-guide' in description and 'fortune-extras' in description
+    assert len(description) <= 1024 + len('description: ')
+    life = (ROOT / 'skills/life-guide/SKILL.md').read_text(encoding='utf-8')
+    life_description = next(line for line in life.splitlines() if line.startswith('description: '))
+    assert '燃气泄漏' in life_description and '收到传票' in life_description
 
 
 def test_the_period_draft_explains_its_terms():
