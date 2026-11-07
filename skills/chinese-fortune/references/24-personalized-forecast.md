@@ -150,3 +150,23 @@ save 从 stdin 读上例中的 `person` 对象，首次 revision 为 1。修改�
 ## 现实参考
 
 现实层面的建议（钱、工作、法律、健康）由同一仓库的 **life-guide** 技能按《高性价比人生指南》回答。术数回答本身不附现实参考；用户另问现实问题时，若已安装 life-guide 就用它另起一段回答，与术数结论分开，不拿它给日子、颜色或关系加分；没装就照实说明，并给安装命令 `npx skills add ShousenZHANG/chinese-fortune --skill life-guide`。
+
+## 路由细则
+
+[SKILL.md](../SKILL.md) 的方法路由表之外，各流程的具体规则：
+
+通用生活事项都先确认本题意图（原局、期间、单件事、候选比较或资料研究）。新场景用原事项名称并指定 `intent`，按同一流程取资料、算事实、查对应依据。已有资料直接复用；无专用规则时完成可支持部分，再按限时补查推进。具体字段见 [通用请求](24-personalized-forecast.md#通用请求与明确时间)。
+
+先给已获依据支持的部分，再按 [限时补查](25-classical-research.md#限时补查与候选库) 使用 `research_session.py` 和宿主检索工具完成约5分钟查证，记录实际来源、停止原因及候选资料。工具没有搜索能力时如实记录，不能称已查全网。
+
+拿不准一句话该走哪条流程时，先运行 `python scripts/question_router.py --question "<原话>"`：它按问法返回流程、命令、请求骨架和输入要求，只做路由，不算命盘。`needs` 是该流程的要求清单，不是已经检查过上下文的缺项表；先扣除用户已给的资料再提问。`method` 走点名方法的脚本，`multi_method` 按 `steps` 分别执行，不把不同体系合成总分；路由给出的命令把占位符换成已给资料即可直接运行，不必先逐个看 `--help`；`knowledge` 不索取生辰；`compatibility` 先分别排两人的盘，八字再用 `pair_facts.py --stdin` 列两盘逐柱合冲刑害，不编造合婚分数。明确大运、流年或格局问题走八字入口，不能仅因出现“今年”就改做逐日择日。常见问法：
+
+问今天、这两天、下周、下个月的个人运势，或面试、考试、出行等候选档期：先读 [个人未来时段与择时](24-personalized-forecast.md)，使用 `fortune_reading.py --stdin`。它先取得当前时间，再计算出生盘和目标时间，输出实际档期与证据缺口；已有结果直接复用，不重复排出生盘。首次具体事项分析可加 `include_research:true` 一并取古籍上下文；根据 `candidate_comparison` 核整件事期间的个人事实，逐项处理 `decision_blockers`。状态为部分可用时继续核已有依据及补查，不把“尚未自动排名”当成整题拒答的理由。问某段时间哪天好、哪天不好：发期间请求，`personal_calendar` 逐日给出大吉到大凶（超过一个月时按节气月；原话问「哪天」的仍逐日，最长一年），首句直接说最好和要避开的日子；候选档期则按同一等级先排吉凶，再按用户偏好排。纯本命问题仍按下表。
+
+补查个人运势、具体事项或其他方法的古籍时，按 [古籍适配与补查](25-classical-research.md) 使用 `classical_guidance.py --scenario <场景> --retrieve`。已确认原局格局后，用 `--family <格局>` 取得对应取运章全文、例外和条件清单；不把资料入口当成已自动满足条件。长章用 `classical_search.py --chapter-id <书:章>` 分页继续读取。
+
+纯现实问题（失业了先做什么、替朋友担保签不签、押金不退怎么办）由同一仓库的 life-guide 技能回答；塔罗、星座、解梦由 fortune-extras 技能回答。路由返回 `skill` 字段时就用那个技能；没装就照实说明，并给安装命令 `npx skills add ShousenZHANG/chinese-fortune --skill <技能名>`。正在发生的急症和自伤念头不等安装，先给第一个动作（见 [边界说明](20-disclaimer.md)）。
+
+用户授权跟踪预测及反馈时，读 [前瞻验证](28-prospective-validation.md)，使用 `prediction_log.py` 在分析前固定方法与事件，事前冻结原判断，事后仅保存用户确认的结果。沿用已有授权；普通问答不自动保存。
+
+档案：用户说「我」「我的八字」「结合我的资料」时，先运行 `python scripts/personal_profiles.py list`：只有一份就 `show` 后直接复用并回显采用的资料，不再追问；有多份就问是哪一份；没有就按 [输入采集](00-intake.md) 一次问齐。用户第一次给全出生资料并拿到回答后，在回答最后用一句话问要不要存成本机档案（只存出生资料，不存问答，下次说「我」即可调出）；用户明确同意才 `save --profile-id me --confirmed`。查看、更正、删除见 [本机档案](24-personalized-forecast.md#本机档案)；默认不落盘问答。

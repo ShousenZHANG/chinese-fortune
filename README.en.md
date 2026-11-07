@@ -139,11 +139,12 @@ skills/chinese-fortune/     the installed skill (npx skills, Claude Code plugin,
 ├── SKILL.md                workflow and method routing for the AI
 ├── scripts/                charting, date selection, lookup and checks; lunar_python and tzdata in vendor.zip
 ├── references/             per-method rules, read on demand
-├── knowledge/              the fifteen frozen transcriptions (books.zip) and their sources (sources.zip)
+├── knowledge/              the fifteen frozen transcriptions (books.zip)
 ├── assets/                 rule libraries and classical clauses
 └── docs/                   methods, sources, migration and release notes
 skills/life-guide/          everyday life questions (the life guide), installed separately
 skills/fortune-extras/      tarot, sun signs and dreams, installed separately
+corpus/sources.zip          raw pages and capture records for rebuilding and re-verifying; not installed with the skill
 tests/  evals/  docs/       development tests and evaluation records, not installed
 ```
 

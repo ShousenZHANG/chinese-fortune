@@ -39,7 +39,7 @@ python -X utf8 evals/package_smoke.py --archive dist/chinese-fortune-v<VERSION>.
 
 ### 古籍语料的打包
 
-安装出去的技能把 557 个章节和 576 个原始来源分别打包成 `knowledge/books.zip`、`knowledge/sources.zip`（一个文件代替上千个，安装和索引都更快），检索直接从压缩包读，字节与 `manifest.json` 记录的 SHA-256 一致。重新导入或修改语料前先解包，审核后再打包；打包是确定性的，同样的文件得到同样的压缩包：
+557 个章节打包成技能里的 `knowledge/books.zip`；576 个原始来源只在重建和复核时用，打包成仓库根目录的 `corpus/sources.zip`，不随技能安装（`manifest.json` 的 `raw_sources_archive` 写明位置；没有它时自检只核正文，`validation_scope` 为 `text_without_raw_sources`）。检索直接从压缩包读，字节与 `manifest.json` 记录的 SHA-256 一致。重新导入或修改语料前先解包，审核后再打包；打包是确定性的，同样的文件得到同样的压缩包：
 
 ```sh
 python skills/chinese-fortune/scripts/corpus_archive.py unpack

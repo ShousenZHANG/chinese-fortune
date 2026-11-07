@@ -80,6 +80,24 @@ def _hash(path: Path) -> str:
 # is read from the unpacked folder when it exists (maintainers unpack to edit), else from the
 # archive named after its top folder. The bytes, and so every recorded SHA-256, are the same.
 ARCHIVES = {'books': 'books.zip', 'sources': 'sources.zip'}
+# The raw sources are needed only to rebuild or re-verify the corpus, never to answer. They live in the
+# repository's corpus/ folder, outside every skill folder, so an installed skill does not carry them.
+REPO_CORPUS = 'corpus'
+
+
+def archive_path(root: Path, top: str) -> Path | None:
+    """The archive that packs a top folder: beside the manifest, else in the repository's corpus/."""
+    name = ARCHIVES.get(top)
+    if not name:
+        return None
+    for candidate in (root / name, root.parent.parent.parent / REPO_CORPUS / name):
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def raw_sources_available(root: Path) -> bool:
+    return (root / 'sources').is_dir() or archive_path(root, 'sources') is not None
 
 
 @lru_cache(maxsize=8)
@@ -94,8 +112,8 @@ def library_bytes(root: Path, name: str) -> bytes | None:
     if path.is_file():
         return path.read_bytes()
     top, _, rest = name.partition('/')
-    archive = root / ARCHIVES.get(top, '')
-    if top in ARCHIVES and rest and archive.is_file():
+    archive = archive_path(root, top) if rest else None
+    if archive is not None:
         stat = archive.stat()
         return _archive(str(archive), (stat.st_mtime_ns, stat.st_size)).get(rest)
     return None
@@ -172,6 +190,11 @@ def _validate_distribution(root: Path, manifest: dict) -> str:
 
 def _validate_source_file(root: Path, manifest: dict, name: str, digest: str) -> None:
     name, digest = _checked_name(name), _checked_digest(digest)
+    if (manifest['distribution_kind'] == 'source' and manifest.get('raw_sources_archive')
+            and not raw_sources_available(root)):
+        # The manifest says raw sources live in the repository's corpus/; a skill installed from the
+        # repository folder has the text without them. Undeclared absence still fails below.
+        return
     if manifest['distribution_kind'] == 'source':
         data = library_bytes(root, name)
         if data is None or _digest(data) != digest:
@@ -252,9 +275,12 @@ def validate_library(library_root: Path | str | None = None) -> dict:
                           'source_flags': book.get('source_flags', [])})
     except (OSError, ValueError, KeyError, TypeError) as exc:
         errors.append(str(exc))
+    has_raw = kind == 'source' and raw_sources_available(root)
+    scope = ('raw_sources_and_text' if has_raw else 'text_without_raw_sources' if kind == 'source'
+             else 'runtime_files_and_provenance_index')
     return {'ok': not errors, 'schema_version': '2.0', 'distribution_kind': kind,
-            'validation_scope': 'raw_sources_and_text' if kind == 'source' else 'runtime_files_and_provenance_index',
-            'raw_sources_verified': kind == 'source' and not errors,
+            'validation_scope': scope,
+            'raw_sources_verified': has_raw and not errors,
             'errors': errors, 'books': books,
             'meaning': 'Inventory and byte integrity only; runtime does not revalidate raw sources. Image collation and interpretation are separate.'}
 

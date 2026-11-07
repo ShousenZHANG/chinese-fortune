@@ -27,6 +27,7 @@ import unicodedata
 import zipfile
 from pathlib import Path
 
+from classical_search import archive_path
 from utils import ensure_utf8_stdio
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,10 +39,11 @@ def corpus_characters() -> set[str]:
     """Every Han character appearing anywhere in the frozen library."""
     found: set[str] = set()
     texts = [path.read_text(encoding='utf-8') for path in sorted(LIBRARY.rglob('*.json'))]
-    # The installed layout packs books/ and sources/ (scripts/corpus_archive.py); read their JSON too.
-    for name in ('books.zip', 'sources.zip'):
-        if (LIBRARY / name).is_file():
-            with zipfile.ZipFile(LIBRARY / name) as archive:
+    # Packed books/ and sources/ (scripts/corpus_archive.py; sources sit in the repository's corpus/).
+    for top in ('books', 'sources'):
+        packed = archive_path(LIBRARY, top)
+        if packed is not None:
+            with zipfile.ZipFile(packed) as archive:
                 texts += [archive.read(info).decode('utf-8') for info in archive.infolist()
                           if info.filename.endswith('.json')]
     for text in texts:
