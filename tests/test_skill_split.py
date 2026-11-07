@@ -134,11 +134,25 @@ def test_corpus_archives_round_trip_byte_for_byte(tmp_path):
     import corpus_archive
     root = tmp_path / 'knowledge'
     shutil.copytree(SKILLS / 'chinese-fortune/knowledge', root)
-    before = {n: (root / n).read_bytes() for n in ('books.zip', 'sources.zip')}
+    names = ('books.zip', 'sources.zip')
+    before = {n: _members(root / n) for n in names}
     corpus_archive.unpack(root)
     assert (root / 'books/ziping').is_dir() and not (root / 'books.zip').exists()
     corpus_archive.pack(root)
-    assert {n: (root / n).read_bytes() for n in before} == before     # deterministic packing
+    # Same entries, order, timestamps and bytes; the deflate stream itself differs between zlib builds
+    # (CI's Linux zlib vs Windows), so the committed archives are compared by content, not raw bytes.
+    assert {n: _members(root / n) for n in names} == before
+    first = {n: (root / n).read_bytes() for n in names}
+    corpus_archive.unpack(root)
+    corpus_archive.pack(root)
+    assert {n: (root / n).read_bytes() for n in names} == first     # repeatable on one machine
+
+
+def _members(path):
+    import zipfile
+    with zipfile.ZipFile(path) as archive:
+        return [(i.filename, i.date_time, i.compress_type, i.external_attr, archive.read(i))
+                for i in archive.infolist()]
 
 
 def test_import_refuses_to_write_beside_packed_archives():

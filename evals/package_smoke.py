@@ -136,7 +136,8 @@ def main(argv: list[str] | None = None) -> int:
         # No pip, no packages: lunar_python and tzdata must come from the skill itself.
         venv.EnvBuilder(with_pip=False).create(work / 'venv')
         python = work / 'venv' / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python')
-        origin = run([str(python), '-c', 'import sys; sys.path.insert(0, sys.argv[1]); import lunar_python, tzdata; '
+        # utils puts scripts/vendor.zip on sys.path, as every script does on import.
+        origin = run([str(python), '-c', 'import sys; sys.path.insert(0, sys.argv[1]); import utils, lunar_python, tzdata; '
                       'print(lunar_python.__file__); print(tzdata.__file__)', str(skill / 'scripts')], work)
         vendored = [Path(line).resolve() for line in origin.splitlines() if line.strip()]
         assert all(path.is_relative_to(skill.resolve()) for path in vendored), vendored
