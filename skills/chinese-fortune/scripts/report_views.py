@@ -180,3 +180,148 @@ def professional_html(result: dict, redact: bool) -> str:
         html += ['<h2>大运</h2>', _table(('运', '十神', '周岁', '公历年'),
                                        [(r['ganzhi'], r['role'], r['ages'], r['years']) for r in luck])]
     return ''.join(html)
+
+
+# 分享卡片：一张 1080×1440 的离线 SVG，配色与 README 首图一致；每行文字都取自同一次计算的工具字段。
+REPO = 'github.com/ShousenZHANG/chinese-fortune'
+CARD_W, CARD_H, MARGIN = 1080, 1440, 72
+SANS = "'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC',sans-serif"
+SERIF = "'Songti SC','STSong','SimSun','Noto Serif CJK SC',serif"
+MONO = 'ui-monospace,Menlo,Consolas,monospace'
+INK, MUTED, FAINT, SEAL, PAPER, LINE, TINT = '#2b2620', '#8a7b66', '#a3947e', '#a2462e', '#faf7f2', '#e7dfd2', '#f3e9da'
+CARD_ROUTES = 3
+
+
+def _wrap(text: str, size: int, width: float, limit: int = 2) -> list[str]:
+    """Break a line by estimated glyph width (CJK one em, ASCII about half); SVG text never wraps itself."""
+    lines, line, used = [], '', 0.0
+    for ch in text:
+        advance = size * (0.56 if ch.isascii() else 1.0)
+        if line and used + advance > width:
+            lines.append(line)
+            line, used = '', 0.0
+        line += ch
+        used += advance
+    lines.append(line)
+    if len(lines) > limit:
+        lines = lines[:limit]
+        lines[-1] = lines[-1][:-1] + '…'
+    return lines
+
+
+def _t(x: float, y: float, text: str, size: int, fill: str, *, family: str = SANS, anchor: str = 'start',
+       weight: str = '') -> str:
+    bold = f' font-weight="{weight}"' if weight else ''
+    return (f'<text x="{x:.0f}" y="{y:.0f}" font-size="{size}" fill="{fill}" font-family="{escape(family)}" '
+            f'text-anchor="{anchor}"{bold}>{escape(text)}</text>')
+
+
+def _current_cycle(facts: dict) -> dict | None:
+    year = facts.get('reference_year')
+    return next((row for row in facts.get('da_yun') or []
+                 if isinstance(year, int) and row['start_year'] <= year <= row['end_year']), None)
+
+
+def _book_title(result: dict, passage: str) -> str:
+    books = (result.get('evidence_bundle') or {}).get('books') or {}
+    return str((books.get(passage.split(':', 1)[0]) or {}).get('book_title', ''))
+
+
+def card_facts(result: dict, redact: bool) -> list[tuple[str, str]]:
+    """Labelled lines under the pillars, each copied from a tool field; a share card drops what identifies."""
+    facts, observed = result['chart_facts'], result.get('observed_structure') or {}
+    stems = observed.get('month_hidden_stems') or []
+    if redact:
+        lines = [('日主', '已隐去（四柱干支和出生资料都不上分享卡）')]
+        if stems:
+            lines.append(('月令', '藏干是' + '、'.join(h['role'] for h in stems)))
+        return lines
+    day = facts.get('day_master') or {}
+    lines = [('日主', f"{day['stem']}{day['wuxing']} · {day['yin_yang']}干" if day.get('stem') else '待定')]
+    if observed.get('month_branch'):
+        hidden = '、'.join(f"{h['stem']}（{h['role']}）" for h in stems)
+        lines.append(('月令', f"{observed['month_branch']}，藏{hidden}" if hidden else observed['month_branch']))
+    cycle = _current_cycle(facts)
+    if cycle:
+        lines.append(('大运', cycle.get('say') or f"{cycle['ganzhi']}（{cycle['start_year']}–{cycle['end_year']}）"))
+    return lines
+
+
+def _card_pillars(rows: list[dict], top: int) -> list[str]:
+    gap = 16
+    width = (CARD_W - 2 * MARGIN - 3 * gap) / 4
+    parts = []
+    for i, row in enumerate(rows):
+        x = MARGIN + i * (width + gap)
+        middle = x + width / 2
+        fill = TINT if row['role'] == '日主' else '#ffffff'
+        parts.append(f'<rect x="{x:.0f}" y="{top}" width="{width:.0f}" height="400" rx="20" fill="{fill}" '
+                     f'stroke="{LINE}" stroke-width="2"/>')
+        parts.append(_t(middle, top + 52, row['label'], 26, MUTED, anchor='middle'))
+        if row['role'] == '未定':
+            # Unknown hour: say so; candidate pillars belong to the full reading, not a card.
+            parts.append(_t(middle, top + 100, '时辰不详', 28, FAINT, anchor='middle'))
+            parts.append(_t(middle, top + 250, '未定', 64, FAINT, family=SERIF, anchor='middle'))
+            continue
+        parts.append(_t(middle, top + 100, row['role'], 28, SEAL, anchor='middle', weight='600'))
+        parts.append(_t(middle, top + 214, row['stem'], 104, INK, family=SERIF, anchor='middle'))
+        parts.append(_t(middle, top + 326, row['branch'], 104, INK, family=SERIF, anchor='middle'))
+        if row['nayin']:
+            parts.append(_t(middle, top + 376, row['nayin'], 24, FAINT, anchor='middle'))
+    return parts
+
+
+def _card_routes(result: dict, top: int, redact: bool) -> list[str]:
+    routes = route_rows(result)
+    if redact:
+        routes = [{**r, 'title': redact_text(r['title'], result)} for r in routes]
+    titles = sorted({_book_title(result, r['passage']) for r in routes if r['passage'] != '—'} - {''})
+    heading = (f"《{'》《'.join(titles)}》" if titles else '古籍') + '条款核查'
+    parts = [_t(MARGIN, top, heading, 30, INK, weight='700')]
+    if not routes:
+        return parts + [_t(MARGIN, top + 60, '这张盘没有检索到需要核对的条款', 28, MUTED)]
+    y = top + 64
+    for row in routes[:CARD_ROUTES]:
+        colour = FAINT if row['status'] == STATUS['premise_not_met'] else SEAL
+        parts.append(_t(MARGIN, y, _wrap(row['title'], 32, 420, 1)[0], 32, INK))
+        parts.append(_t(CARD_W - MARGIN, y, _wrap(row['status'], 26, 480, 1)[0], 26, colour, anchor='end'))
+        parts.append(_t(MARGIN, y + 38, row['passage'], 22, FAINT, family=MONO))
+        y += 88
+    if len(routes) > CARD_ROUTES:
+        parts.append(_t(MARGIN, y - 10, f'另有 {len(routes) - CARD_ROUTES} 条见完整报告', 24, MUTED))
+    return parts
+
+
+def share_card_svg(result: dict, redact: bool = False) -> str:
+    """A portrait card to post or send: pillars, day master, month, current cycle, checked clauses, repo link.
+
+    Nothing is newly judged here; a redacted card keeps only ten-god relations, clause states and passage ids."""
+    subtitle = ('分享版：四柱干支、出生日期时间地点与公历年份已隐去' if redact else
+                '程序排盘，按古籍逐条核对，每条附原文段号')
+    parts = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {CARD_W} {CARD_H}" width="{CARD_W}" '
+             f'height="{CARD_H}" role="img" aria-label="有据算命 八字速览卡片">',
+             '<title>有据算命 · 八字速览</title>',
+             f'<rect width="100%" height="100%" fill="{PAPER}"/>',
+             f'<rect x="24" y="24" width="{CARD_W - 48}" height="{CARD_H - 48}" rx="28" fill="none" '
+             f'stroke="{LINE}" stroke-width="2"/>',
+             _t(MARGIN, 128, '有据算命 · 八字速览', 56, INK, weight='700'),
+             _t(MARGIN, 182, subtitle, 26, MUTED),
+             f'<rect x="{CARD_W - MARGIN - 104}" y="72" width="104" height="104" rx="12" fill="{SEAL}"/>',
+             _t(CARD_W - MARGIN - 52, 118, '有', 40, '#ffffff', family=SERIF, anchor='middle', weight='700'),
+             _t(CARD_W - MARGIN - 52, 162, '据', 40, '#ffffff', family=SERIF, anchor='middle', weight='700')]
+    parts += _card_pillars(pillar_rows(result, redact), 224)
+    y = 704
+    for label, value in card_facts(result, redact):
+        lines = _wrap(value, 30, CARD_W - 2 * MARGIN - 112)
+        parts.append(_t(MARGIN, y, label, 26, MUTED))
+        parts += [_t(MARGIN + 112, y + i * 40, line, 30, INK) for i, line in enumerate(lines)]
+        y += 40 * len(lines) + 22
+    rule = max(y, 900)
+    parts.append(f'<line x1="{MARGIN}" y1="{rule - 30}" x2="{CARD_W - MARGIN}" y2="{rule - 30}" stroke="{LINE}" '
+                 'stroke-width="2"/>')
+    parts += _card_routes(result, rule + 30, redact)
+    parts += [f'<line x1="{MARGIN}" y1="1300" x2="{CARD_W - MARGIN}" y2="1300" stroke="{LINE}" stroke-width="2"/>',
+              _t(MARGIN, 1346, REPO, 24, MUTED, family=MONO),
+              _t(MARGIN, 1386, f"传统文化研习，不是预测 · 版本 {result['version']}", 22, FAINT),
+              '</svg>']
+    return ''.join(parts)

@@ -13,6 +13,7 @@ from report_views import (
     professional_markdown,
     redact_text,
     route_rows,
+    share_card_svg,
     shareable,
 )
 
@@ -155,18 +156,33 @@ REDACTED = ['四柱干支', '出生日期与时间', '出生地、经度与时�
             '完整计算资料']
 
 
+def _private_path(destination: str, suffixes: tuple[str, ...], wrong_suffix: str) -> Path:
+    path = Path(destination).expanduser().resolve()
+    if path == SKILL_ROOT or SKILL_ROOT in path.parents:
+        raise ValueError('个人报告须保存在技能/仓库目录之外，避免混入发行包')
+    if path.suffix.lower() not in suffixes:
+        raise ValueError(wrong_suffix)
+    return path
+
+
+def write_card(result: dict, destination: str, *, redact: bool = False) -> dict:
+    """Save an explicitly requested share card (offline SVG); never replace an existing file."""
+    path = _private_path(destination, ('.svg',), '分享卡片路径须以 .svg 结尾')
+    content = share_card_svg(result, redact)
+    with path.open('x', encoding='utf-8', newline='\n') as handle:
+        handle.write(content)
+    return {'path': str(path), 'format': 'svg', 'offline': True, 'redacted': redact,
+            **({'removed': REDACTED} if redact else {})}
+
+
 def write_report(result: dict, facts_text: str, destination: str, *, style: str = 'plain',
                  redact: bool = False) -> dict:
     """Save an explicitly requested, offline report; never replace an existing file.
 
     style='professional' adds the pillar table, an inline SVG chart and the condition table; redact=True is a
     share preview with identifying values masked and no full JSON (report_views)."""
-    path = Path(destination).expanduser().resolve()
-    if path == SKILL_ROOT or SKILL_ROOT in path.parents:
-        raise ValueError('个人报告须保存在技能/仓库目录之外，避免混入发行包')
+    path = _private_path(destination, ('.md', '.html'), '报告路径须以 .md 或 .html 结尾')
     suffix = path.suffix.lower()
-    if suffix not in ('.md', '.html'):
-        raise ValueError('报告路径须以 .md 或 .html 结尾')
     if style not in ('plain', 'professional'):
         raise ValueError('报告写法只有 plain 或 professional')
     paragraphs = [p for p in facts_text.split('\n\n') if not p.startswith('写回答时：')]

@@ -21,7 +21,7 @@ from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
 from luck_assessment import assess_luck, luck_paragraph
-from reading_views import compact_reading, facts_line, write_facts, write_report
+from reading_views import compact_reading, facts_line, write_card, write_facts, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
     __version__,
@@ -630,7 +630,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.description = '八字白话解读准备：盘面事实、固定主体系、可追溯原文'
     parser.epilog = ('Top-level JSON keys: ok tool version schema_version question method_profile '
                      'chart_facts observed_structure reading_support rule_assessment geju_review evidence_bundle climate_review next_checks '
-                     'output_policy boundary host_notes; optional: luck_reading annual_reading report; compact: view evidence_index observations details; errors: error message')
+                     'output_policy boundary host_notes; optional: luck_reading annual_reading report card; compact: view evidence_index observations details; errors: error message')
     parser.add_argument('--question', default='', help='本次最关心的问题')
     parser.add_argument('--markdown', action='store_true', help='输出简短盘面说明，非完整个人判断')
     parser.add_argument('--view', choices=('full', 'compact'), default='full',
@@ -640,6 +640,10 @@ def build_parser() -> argparse.ArgumentParser:
                         help='报告写法：plain 白话（默认）；professional 加四柱表、离线命盘图与条款核查表')
     parser.add_argument('--report-redact', action='store_true',
                         help='分享预览：隐去四柱干支、出生日期时间地点、问题原话与公历年份，不附完整 JSON')
+    parser.add_argument('--card', metavar='PATH.svg',
+                        help='另存一张离线 SVG 分享卡片（四柱、日主、月令、当前大运、条款与段号）；不覆盖已有文件')
+    parser.add_argument('--card-redact', action='store_true',
+                        help='分享卡片隐去四柱干支、出生资料和公历年份，只留十神关系、条款状态与段号')
     parser.add_argument('--facts-out', metavar='PATH.json',
                         help='把 --view 选定的 JSON 存到这个文件，屏幕只输出白话草稿和文件路径；'
                              '供 answer_check --facts 使用，只覆盖本工具以前写的 JSON')
@@ -664,6 +668,12 @@ def main(argv: list[str] | None = None) -> int:
                                             style=args.report_style, redact=args.report_redact)
         except (OSError, ValueError) as exc:
             json_print(error_envelope('bazi_reading', 'report_unavailable', f'{exc}；请指定新的可写文件路径'))
+            return 1
+    if args.card:
+        try:
+            result['card'] = write_card(result, args.card, redact=args.card_redact)
+        except (OSError, ValueError) as exc:
+            json_print(error_envelope('bazi_reading', 'card_unavailable', f'{exc}；请指定新的可写文件路径'))
             return 1
     view = compact_reading(result) if args.view == 'compact' else result
     if args.facts_out:
