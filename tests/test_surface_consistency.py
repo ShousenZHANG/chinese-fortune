@@ -103,7 +103,7 @@ def test_the_skill_reuses_a_saved_profile_and_offers_to_save_one():
 
 def test_slash_commands_name_real_scripts_and_references():
     commands = sorted((SKILL_DIR / 'commands').glob('*.md'))
-    assert [c.stem for c in commands] == ['areas', 'bazi', 'days', 'hehun', 'year']
+    assert [c.stem for c in commands] == ['areas', 'bazi', 'days', 'hehun', 'month', 'week', 'year']
     for command in commands:
         text = command.read_text(encoding='utf-8')
         head = text.split('---')[1]

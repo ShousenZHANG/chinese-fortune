@@ -47,8 +47,7 @@ def test_reading_lists_positions_years_and_sources_without_verdicts(chart):
         assert word not in text.replace('不做健康断语', '')
     assert '不说好坏' in areas['career']['say']
     cited = {s['passage_id'] for a in areas.values() for s in a['sources']}
-    assert cited <= set(reading['evidence_bundle']['passages'][i]['passage_id']
-                        for i in range(len(reading['evidence_bundle']['passages'])))
+    assert cited <= {p['passage_id'] for p in reading['evidence_bundle']['passages']}
     draft = render_facts(reading)
     assert '事业：' in draft and '学业：' in draft
 
