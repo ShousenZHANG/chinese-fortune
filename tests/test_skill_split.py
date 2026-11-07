@@ -109,3 +109,53 @@ def test_life_guide_keeps_the_books_code_notice_and_licenses():
     for target in re.findall(r'\]\(([^)#]+)\)', notices):
         if not target.startswith('http'):
             assert (life / target).is_file(), target
+
+
+def test_the_installed_layout_is_packed_and_reads_the_same_bytes():
+    """The skill folder ships the corpus and the vendored packages as archives, never beside loose copies."""
+    fortune = SKILLS / 'chinese-fortune'
+    for packed, loose in (('knowledge/books.zip', 'knowledge/books'), ('knowledge/sources.zip', 'knowledge/sources'),
+                          ('scripts/vendor.zip', 'scripts/lunar_python'), ('scripts/vendor.zip', 'scripts/tzdata')):
+        assert (fortune / packed).is_file() and not (fortune / loose).exists(), loose
+    from classical_search import library_bytes, validate_library
+    report = validate_library()
+    assert report['ok'] and report['distribution_kind'] == 'source'
+    manifest = json.loads((fortune / 'knowledge/manifest.json').read_text(encoding='utf-8'))
+    first = manifest['books'][0]['chapters'][0]
+    import hashlib
+    assert hashlib.sha256(library_bytes(fortune / 'knowledge', first['path'])).hexdigest() == first['sha256']
+    files = sum(1 for p in fortune.rglob('*') if p.is_file() and '__pycache__' not in p.parts)
+    assert files < 300, files       # was 1,972 before packing
+
+
+def test_corpus_archives_round_trip_byte_for_byte(tmp_path):
+    import shutil
+
+    import corpus_archive
+    root = tmp_path / 'knowledge'
+    shutil.copytree(SKILLS / 'chinese-fortune/knowledge', root)
+    names = ('books.zip', 'sources.zip')
+    before = {n: _members(root / n) for n in names}
+    corpus_archive.unpack(root)
+    assert (root / 'books/ziping').is_dir() and not (root / 'books.zip').exists()
+    corpus_archive.pack(root)
+    # Same entries, order, timestamps and bytes; the deflate stream itself differs between zlib builds
+    # (CI's Linux zlib vs Windows), so the committed archives are compared by content, not raw bytes.
+    assert {n: _members(root / n) for n in names} == before
+    first = {n: (root / n).read_bytes() for n in names}
+    corpus_archive.unpack(root)
+    corpus_archive.pack(root)
+    assert {n: (root / n).read_bytes() for n in names} == first     # repeatable on one machine
+
+
+def _members(path):
+    import zipfile
+    with zipfile.ZipFile(path) as archive:
+        return [(i.filename, i.date_time, i.compress_type, i.external_attr, archive.read(i))
+                for i in archive.infolist()]
+
+
+def test_import_refuses_to_write_beside_packed_archives():
+    done = subprocess.run([sys.executable, '-X', 'utf8', str(SKILLS / 'chinese-fortune/scripts/import_classics.py'),
+                           '--wikisource'], capture_output=True, text=True, encoding='utf-8')
+    assert done.returncode == 2 and 'corpus_archive.py unpack' in done.stderr

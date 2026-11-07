@@ -10,7 +10,9 @@ import hashlib
 import json
 import re
 import unicodedata
+import zipfile
 from collections.abc import Iterator
+from functools import lru_cache
 from pathlib import Path
 
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
@@ -72,6 +74,56 @@ def _hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+# The installed skill keeps its 557 chapter files and 576 raw source files in two archives
+# (knowledge/books.zip, knowledge/sources.zip): one file each instead of a thousand, which
+# installers copy and index far more readily. A manifest path such as 「books/ziping/c008.json」
+# is read from the unpacked folder when it exists (maintainers unpack to edit), else from the
+# archive named after its top folder. The bytes, and so every recorded SHA-256, are the same.
+ARCHIVES = {'books': 'books.zip', 'sources': 'sources.zip'}
+
+
+@lru_cache(maxsize=8)
+def _archive(path: str, stamp: tuple[int, int]) -> dict[str, bytes]:
+    with zipfile.ZipFile(path) as archive:
+        return {info.filename: archive.read(info) for info in archive.infolist() if not info.is_dir()}
+
+
+def library_bytes(root: Path, name: str) -> bytes | None:
+    """A library file by its manifest path, or None when neither the folder nor its archive has it."""
+    path = _path(root, name)
+    if path.is_file():
+        return path.read_bytes()
+    top, _, rest = name.partition('/')
+    archive = root / ARCHIVES.get(top, '')
+    if top in ARCHIVES and rest and archive.is_file():
+        stat = archive.stat()
+        return _archive(str(archive), (stat.st_mtime_ns, stat.st_size)).get(rest)
+    return None
+
+
+def _digest(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _chapter(root: Path, entry: dict) -> dict:
+    """One chapter, read wherever it is stored and checked against its manifest hash."""
+    data = library_bytes(root, entry['path'])
+    if data is None:
+        raise ValueError('chapter missing: ' + entry['path'])
+    if _digest(data) != entry['sha256']:
+        raise ValueError('chapter hash mismatch: ' + entry['path'])
+    content = json.loads(data.decode('utf-8'))
+    if not isinstance(content, dict):
+        raise ValueError('library document must be an object')
+    return content
+
+
+def _container(root: Path, name: str) -> str:
+    """The runtime file that holds a chapter: its archive when the books are packed."""
+    top = name.partition('/')[0]
+    return ARCHIVES[top] if top in ARCHIVES and (root / ARCHIVES[top]).is_file() else name
+
+
 def _checked_name(name: str) -> str:
     if not isinstance(name, str) or not name or name.startswith('/') or "\\" in name:
         raise ValueError('invalid distribution path')
@@ -107,7 +159,8 @@ def _validate_distribution(root: Path, manifest: dict) -> str:
             _checked_digest(digest)
         files = manifest['runtime_files']
         needed = {'LICENSE', 'RELEASE.json', 'SKILL.md', 'scripts/classical_search.py', 'scripts/utils.py'}
-        needed.update('knowledge/' + row['path'] for book in manifest['books'] for row in book['chapters'])
+        needed.update('knowledge/' + _container(root, row['path'])
+                      for book in manifest['books'] for row in book['chapters'])
         if not needed.issubset(files) or 'knowledge/manifest.json' in files:
             raise ValueError('runtime file inventory missing required files or self-hashes its manifest')
         for name, digest in files.items():
@@ -120,7 +173,8 @@ def _validate_distribution(root: Path, manifest: dict) -> str:
 def _validate_source_file(root: Path, manifest: dict, name: str, digest: str) -> None:
     name, digest = _checked_name(name), _checked_digest(digest)
     if manifest['distribution_kind'] == 'source':
-        if _hash(_path(root, name)) != digest:
+        data = library_bytes(root, name)
+        if data is None or _digest(data) != digest:
             raise ValueError('source hash mismatch: ' + name)
     elif manifest['source_archive']['files'].get(name) != digest:
         # Runtime validates the frozen provenance index, not unavailable raw bytes.
@@ -163,13 +217,13 @@ def validate_library(library_root: Path | str | None = None) -> dict:
             count = 0
             for row in book['chapters']:
                 cid = row['id']
-                path = _path(root, row['path'])
-                if not path.is_file():
+                raw = library_bytes(root, row['path'])
+                if raw is None:
                     errors.append(bid + ':' + cid + ': chapter missing')
                     continue
-                if _hash(path) != row['sha256']:
+                if _digest(raw) != row['sha256']:
                     errors.append(bid + ':' + cid + ': chapter hash mismatch')
-                chapter = _read(path)
+                chapter = json.loads(raw.decode('utf-8'))
                 if chapter['chapter_id'] != cid or chapter['book_id'] != bid:
                     errors.append(bid + ':' + cid + ': chapter identity mismatch')
                 _validate_source_file(root, manifest, chapter['raw_path'], chapter['raw_sha256'])
@@ -268,10 +322,7 @@ def iter_passages(library_root: Path | str | None = None) -> Iterator[tuple[dict
     root = _root(library_root)
     for book in _selected_books(root, None):
         for entry in book['chapters']:
-            path = _path(root, entry['path'])
-            if _hash(path) != entry['sha256']:
-                raise ValueError('chapter hash mismatch: ' + entry['path'])
-            chapter = _read(path)
+            chapter = _chapter(root, entry)
             for passage in chapter['passages']:
                 yield book, chapter['title'], passage
 
@@ -284,10 +335,7 @@ def get_passage(passage_id: str, library_root: Path | str | None = None) -> dict
     for book in _selected_books(root, parts[0]):
         for entry in book['chapters']:
             if entry['id'] == parts[1]:
-                path = _path(root, entry['path'])
-                if _hash(path) != entry['sha256']:
-                    raise ValueError('chapter hash mismatch')
-                chapter = _read(path)
+                chapter = _chapter(root, entry)
                 for i, passage in enumerate(chapter['passages']):
                     if passage['passage_id'] == passage_id:
                         return _result(book, chapter, i)
@@ -301,10 +349,7 @@ def chapter_passages(chapter_id: str, library_root: Path | str | None = None) ->
     for book in _selected_books(root, bid):
         for entry in book['chapters']:
             if entry['id'] == cid:
-                path = _path(root, entry['path'])
-                if _hash(path) != entry['sha256']:
-                    raise ValueError('chapter hash mismatch')
-                return list(_read(path)['passages'])
+                return list(_chapter(root, entry)['passages'])
     raise ValueError('unknown chapter: ' + chapter_id)
 
 
@@ -319,10 +364,7 @@ def get_chapter(chapter_id: str, *, offset: int = 0, limit: int = 5,
         for entry in book['chapters']:
             if entry['id'] != cid:
                 continue
-            path = _path(root, entry['path'])
-            if _hash(path) != entry['sha256']:
-                raise ValueError('chapter hash mismatch')
-            chapter = _read(path)
+            chapter = _chapter(root, entry)
             count = len(chapter['passages'])
             if offset >= count:
                 raise ValueError('offset outside chapter')
@@ -362,10 +404,7 @@ def search_with_scope(query: str, book: str | None = None, chapter: str | None =
                               'chapters': len(entry['chapters'])})
         for row in entry['chapters']:
             chapter_matches = not chapter or normalized(chapter) in normalized(row['id'] + row['title'])
-            path = _path(root, row['path'])
-            if _hash(path) != row['sha256']:
-                raise ValueError('chapter hash mismatch: ' + row['path'])
-            data = _read(path)
+            data = _chapter(root, row)
             chapters_scanned += 1
             for i, item in enumerate(data['passages']):
                 if not chapter_matches and normalized(chapter or '') not in normalized(item['section']):

@@ -71,8 +71,10 @@ def wiki_url(title: str, revision: str) -> str:
 
 @lru_cache(maxsize=1)
 def glyphs() -> dict:
-    path = ROOT / 'sources' / 'skchar.json'
-    return json.loads(path.read_text(encoding='utf-8'))['entries'] if path.exists() else {}
+    # From knowledge/sources/ or, in the installed layout, knowledge/sources.zip (scripts/corpus_archive.py).
+    from classical_search import library_bytes
+    data = library_bytes(ROOT, 'sources/skchar.json')
+    return json.loads(data.decode('utf-8'))['entries'] if data is not None else {}
 
 
 def clean_wiki(raw: str) -> str:
@@ -919,6 +921,9 @@ def main() -> int:
     parser.add_argument('--output-dir', type=Path,
                         help='四库冻结重建的独立输出目录；与 --yilin-siku-frozen-from 同用')
     args = parser.parse_args()
+    if any((ROOT / name).is_file() for name in ('books.zip', 'sources.zip')):
+        # Writing loose files beside the archives would leave two diverging copies of the corpus.
+        parser.error('语料是打包状态：先运行 python scripts/corpus_archive.py unpack，导入并审核后再 pack')
     if args.yilin_siku_frozen_from:
         if not args.output_dir or any((args.wikisource, args.capture_qiongtong, args.captured_html,
                                        args.supplements_from, args.yilin_from)):

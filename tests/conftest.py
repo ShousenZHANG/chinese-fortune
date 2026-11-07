@@ -40,3 +40,16 @@ def run_cli(script: str, *args, expect_rc: int = 0) -> dict:
             f"{script} emitted non-JSON (rc={proc.returncode})\n"
             f"stderr={proc.stderr[:400]}\nstdout={proc.stdout[:400]}"
         ) from e
+
+
+def corpus_bytes(name: str) -> bytes:
+    """A corpus file by its manifest path (books/..., sources/...), from the folder or its archive."""
+    from classical_search import library_bytes
+    data = library_bytes(SCRIPTS.parent / "knowledge", name)
+    assert data is not None, name
+    return data
+
+
+def corpus_text(name: str) -> str:
+    """Decoded like Path.read_text: universal newlines, so frozen CRLF sources read as before."""
+    return corpus_bytes(name).decode("utf-8").replace("\r\n", "\n").replace("\r", "\n")

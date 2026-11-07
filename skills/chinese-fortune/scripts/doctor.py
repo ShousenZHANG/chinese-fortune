@@ -13,6 +13,7 @@ import csv
 import hashlib
 import json
 import sys
+import zipfile
 from datetime import datetime
 from pathlib import Path
 
@@ -42,23 +43,39 @@ def check_python() -> dict:
                   '安装 Python 3.9 或更新版本，再用 python3、python 或 py -3 运行')
 
 
+def _vendored_files() -> dict[str, bytes]:
+    """The vendored packages' files by relative path, from scripts/vendor.zip."""
+    with zipfile.ZipFile(SCRIPTS / 'vendor.zip') as packed:
+        return {info.filename: packed.read(info) for info in packed.infolist() if not info.is_dir()}
+
+
 def check_record(package: str) -> dict:
     """Every vendored file must match the hash its dist-info RECORD published."""
     name = f'vendored:{package}'
-    infos = sorted(SCRIPTS.glob(f'{package}-*.dist-info'))
+    packed = (SCRIPTS / 'vendor.zip').is_file()
+    files = _vendored_files() if packed else {}
+    infos = (sorted({n.split('/')[0] for n in files if n.startswith(package + '-') and '.dist-info/' in n})
+             if packed else [p.name for p in sorted(SCRIPTS.glob(f'{package}-*.dist-info'))])
     if not infos:
         return _check(name, False, 'dist-info 缺失', VENDORED_MISSING)
-    rows = csv.reader((infos[-1] / 'RECORD').read_text(encoding='utf-8').splitlines())
+
+    def read(relative: str) -> bytes | None:
+        if packed:
+            return files.get(relative)
+        path = SCRIPTS / relative
+        return path.read_bytes() if path.is_file() else None
+
+    rows = csv.reader((read(f'{infos[-1]}/RECORD') or b'').decode('utf-8').splitlines())
     bad = []
     for row in rows:
         if len(row) < 2 or not row[0].startswith(package + '/') or not row[1]:
             continue
-        path = SCRIPTS / row[0]
         algorithm, expected = row[1].split('=', 1)
-        actual = hashlib.new(algorithm, path.read_bytes()).digest() if path.is_file() else b''
+        data = read(row[0])
+        actual = hashlib.new(algorithm, data).digest() if data is not None else b''
         if base64.urlsafe_b64encode(actual).rstrip(b'=').decode() != expected:
             bad.append(row[0])
-    version = infos[-1].name.removeprefix(package + '-').removesuffix('.dist-info')
+    version = infos[-1].removeprefix(package + '-').removesuffix('.dist-info')
     return _check(name, not bad, f'{version}；' + ('文件与发布哈希一致' if not bad else '不一致：' + '、'.join(bad[:5])),
                   VENDORED_MISSING)
 

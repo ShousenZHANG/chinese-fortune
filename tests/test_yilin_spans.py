@@ -7,6 +7,7 @@ from pathlib import Path
 
 import import_classics as importer
 import pytest
+from conftest import corpus_text
 from yilin_lookup import lin
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,7 +19,7 @@ FROZEN = json.loads((Path(__file__).parent / 'data/yilin_siku_truncations.json')
 def reparsed_siku():
     result = {}
     for number in range(1, 5):
-        raw = (KNOWLEDGE / f'sources/yilin_siku/c{number:03}.wiki').read_text(encoding='utf-8')
+        raw = corpus_text(f'sources/yilin_siku/c{number:03}.wiki')
         body = '\n'.join(re.findall(r'<onlyinclude>(.*?)</onlyinclude>', raw, re.S)) or raw
         passages, _ = importer.siku_lins(importer.clean_wiki(body))
         result.update({p['section']: p['text'] for p in passages if p['layer'] == 'base_text'})
@@ -92,8 +93,8 @@ def test_sbck_inline_commentaries_and_unresolved_attribution_survive():
 
 @pytest.mark.parametrize('number', range(1, 5))
 def test_all_siku_record_spans_reconstruct_verse_and_commentary(number):
-    chapter = json.loads((KNOWLEDGE / f'books/yilin_siku/c{number:03}.json').read_text(encoding='utf-8'))
-    raw = (KNOWLEDGE / chapter['raw_path']).read_text(encoding='utf-8')
+    chapter = json.loads(corpus_text(f'books/yilin_siku/c{number:03}.json'))
+    raw = corpus_text(chapter['raw_path'])
     text = importer.clean_wiki('\n'.join(re.findall(r'<onlyinclude>(.*?)</onlyinclude>', raw, re.S)) or raw)
     for passage in chapter['passages']:
         span = passage['source_span']
@@ -110,7 +111,7 @@ def test_all_siku_record_spans_reconstruct_verse_and_commentary(number):
 
 def test_all_4096_siku_verses_have_unique_edition_local_addresses():
     verses = [passage for number in range(1, 5)
-              for passage in json.loads((KNOWLEDGE / f'books/yilin_siku/c{number:03}.json').read_text(encoding='utf-8'))['passages']
+              for passage in json.loads(corpus_text(f'books/yilin_siku/c{number:03}.json'))['passages']
               if passage['layer'] == 'base_text']
     assert len(verses) == len({p['section'] for p in verses}) == len({p['passage_id'] for p in verses}) == 4096
 

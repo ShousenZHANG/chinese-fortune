@@ -9,6 +9,7 @@ from collections import Counter
 from functools import lru_cache
 from pathlib import Path
 
+from classical_search import library_bytes
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -56,7 +57,7 @@ def audit_tiaohou() -> list[str]:
         errors.append('summary differs from per-cell status counts')
     passages = {}
     for n in range(2, 7):
-        chapter = json.loads((ROOT / f'knowledge/books/qiongtong/c{n:03d}.json').read_text(encoding='utf-8'))
+        chapter = json.loads(library_bytes(ROOT / 'knowledge', f'books/qiongtong/c{n:03d}.json') or b'{}')
         passages.update({p['passage_id']: p for p in chapter['passages']})
     for key, cell in cells.items():
         if cell['status'] not in registry['status_definitions']:

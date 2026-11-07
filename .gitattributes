@@ -11,6 +11,8 @@
 # Frozen source extracts retain their acquired trailing blank lines; their
 # recorded hashes must not change merely to satisfy code-format whitespace checks.
 skills/chinese-fortune/knowledge/sources/** whitespace=-blank-at-eof
+# The installed skill keeps the corpus and the vendored packages packed (scripts/corpus_archive.py).
+*.zip binary
 
 # 随包依赖 (5.9.0): 原样保存, 字节须与各自 dist-info/RECORD 的哈希一致。
 # tzdata 的时区文件是二进制, 其中可能出现 0D 0A 字节。

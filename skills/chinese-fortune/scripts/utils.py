@@ -22,11 +22,17 @@ from datetime import date as _date
 from datetime import datetime as _datetime
 from datetime import timedelta as _timedelta
 from datetime import timezone as _timezone
+from pathlib import Path
 from typing import Any
 
 # datetime.UTC is 3.11+; the tools run on 3.9 (macOS Command Line Tools python3).
 UTC = _timezone.utc
-# lunar_python and tzdata ship in scripts/ (5.9.0); nothing is pip installed.
+# lunar_python and tzdata ship in scripts/ (5.9.0); nothing is pip installed. The installed skill packs
+# them into scripts/vendor.zip (one file instead of about 660); Python imports straight from a zip on
+# sys.path, and an unpacked copy in scripts/ (maintainers) is found first because scripts/ comes earlier.
+_VENDOR = Path(__file__).resolve().parent / 'vendor.zip'
+if _VENDOR.is_file() and str(_VENDOR) not in sys.path:
+    sys.path.insert(1, str(_VENDOR))
 VENDORED_MISSING = ("scripts/ 里随包的 lunar_python 不见了：请重新下载完整的 chinese-fortune "
                     "发布包或仓库，不需要 pip 安装")
 
@@ -718,7 +724,21 @@ def resolve_timezone_offset(
         "fold": moment.fold,
         "ambiguous": ambiguous,
         "note": note,
+        "source": tz_source(tz_name),
     }
+
+
+def tz_source(tz_name: str) -> str:
+    """Which copy of the IANA database answered: a historical offset is checkable against that release."""
+    import zoneinfo
+    for folder in zoneinfo.TZPATH:
+        if (Path(folder) / tz_name).is_file():
+            return f"IANA zoneinfo {folder}"
+    try:
+        from importlib.metadata import version
+        return f"IANA tzdata {version('tzdata')}"
+    except Exception:  # pragma: no cover - tzdata vendored without metadata
+        return "IANA tzdata"
 
 
 def longitude_correction(

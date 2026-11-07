@@ -30,6 +30,7 @@ JSON_TYPES: dict[str, type | tuple[type, ...]] = {'string': str, 'integer': int,
 # that shows what is written, which a generic tool call does not.
 PERSONAL_DATA = {'personal_profiles.py', 'prediction_log.py'}
 EXCLUDED = {'mcp_server.py', 'build_skill.py', 'build_han_variants.py', 'import_classics.py', 'rule_registry.py',
+            'corpus_archive.py',
             *PERSONAL_DATA}
 INSTRUCTIONS = ('中国术数工具。先读资源 SKILL.md 的流程：拿不准走哪条流程先调 route_question；'
                 '八字本命用 bazi_reading（默认 view=compact）；回答发出前用 answer_check 核对正文；'

@@ -5,7 +5,7 @@ from pathlib import Path
 
 import import_classics as importer
 import pytest
-from conftest import run_cli
+from conftest import corpus_text, run_cli
 from yilin_lookup import GUA, canon, lin
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,7 +13,7 @@ KNOWLEDGE = ROOT / 'skills/chinese-fortune/knowledge'
 
 
 def _chapter(book: str, cid: str) -> dict:
-    return json.loads((KNOWLEDGE / 'books' / book / f'{cid}.json').read_text(encoding='utf-8'))
+    return json.loads(corpus_text(f'books/{book}/{cid}.json'))
 
 
 def _strip(passages: list[dict]) -> list[tuple]:
@@ -24,7 +24,7 @@ def test_sbck_volumes_resplit_from_the_frozen_page_revisions():
     state = None
     for i in range(1, 17):
         chapter = _chapter('yilin', f'c{i:03}')
-        revisions = json.loads((KNOWLEDGE / chapter['raw_path']).read_text(encoding='utf-8'))
+        revisions = json.loads(corpus_text(chapter['raw_path']))
         text = '\n'.join(importer.clean_sbck_page(r['raw']) for r in revisions)
         passages, _, state = importer.sbck_lins(text, state)
         assert _strip(passages) == _strip(chapter['passages']), chapter['chapter_id']
@@ -33,7 +33,7 @@ def test_sbck_volumes_resplit_from_the_frozen_page_revisions():
 def test_siku_volumes_resplit_from_the_frozen_revision():
     for i in range(1, 5):
         chapter = _chapter('yilin_siku', f'c{i:03}')
-        raw = (KNOWLEDGE / chapter['raw_path']).read_text(encoding='utf-8')
+        raw = corpus_text(chapter['raw_path'])
         body = '\n'.join(re.findall(r'<onlyinclude>(.*?)</onlyinclude>', raw, re.S)) or raw
         passages, _ = importer.siku_lins(importer.clean_wiki(body))
         assert _strip(passages) == _strip(chapter['passages']), chapter['chapter_id']

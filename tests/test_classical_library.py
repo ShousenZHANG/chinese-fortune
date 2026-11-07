@@ -107,17 +107,13 @@ def test_every_character_in_the_library_is_reachable_from_its_simplified_form() 
     Regenerate with ``python scripts/build_han_variants.py`` after adding a book.
     """
     import json
-    import unicodedata
     from pathlib import Path
 
     root = Path(__file__).resolve().parents[1]
     table = json.loads((root / 'skills/chinese-fortune/assets' / 'han-variants.json').read_text(encoding='utf-8'))
     folds = table['mapping']
-    corpus: set[str] = set()
-    for path in sorted((root / 'skills/chinese-fortune/knowledge').rglob('*.json')):
-        for char in path.read_text(encoding='utf-8'):
-            if unicodedata.category(char) == 'Lo' and '㐀' <= char <= '鿿':
-                corpus.add(char)
+    from build_han_variants import corpus_characters
+    corpus = corpus_characters()      # reads the packed books.zip / sources.zip as well as any unpacked folder
     assert len(corpus) == table['corpus_characters'], '表已过期，重新生成'
     from hashlib import sha256
 

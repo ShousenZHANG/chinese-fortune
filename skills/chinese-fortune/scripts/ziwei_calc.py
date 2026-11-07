@@ -518,7 +518,9 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
         horoscope = horoscope_layers(horoscope_at, birth_month=lunar_month, birth_hour=birth_hour,
                                      palaces=annotated, sect=args.sect, include_hour=with_hour, sihua=table,
                                      da_xian=da_xian, birth_lunar_year=lunar.getYear(), kui_yue=args.kui_yue,
-                                     year_divide=args.year_divide)
+                                     year_divide=args.year_divide,
+                                     star_branches={star: branch for branch, stars in branch_to_all.items()
+                                                    for star in stars})
 
     # 10. 格局识别.
     patterns: list[dict] = []

@@ -1,4 +1,8 @@
-# Chinese Fortune · 古籍与白话解读
+<div align="center">
+
+# 有据算命 · Chinese Fortune
+
+**让 AI 按古籍原文算八字、挑日子、看运势：先说大白话结论，每句古文都能查到出处。**
 
 [![skills.sh](https://www.skills.sh/b/shousenzhang/chinese-fortune)](https://skills.sh/shousenzhang/chinese-fortune)
 [![CI](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml/badge.svg)](https://github.com/ShousenZHANG/chinese-fortune/actions/workflows/ci.yml)
@@ -6,11 +10,24 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue)](#安装)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-**让 AI 按古籍原文算八字、挑日子、看运势，用大白话回答，每句引文都能查到出处。**
+<img src=".github/assets/hero.svg" alt="示例：用户问八字特点，回答先给白话结论，再引《子平真诠》原文并附可查的段号" width="880">
 
-一个 [Agent Skill](https://agentskills.io)：干支、吉凶等级、大运喜忌由随包脚本计算，AI 只负责讲清楚，不凭记忆另算。古籍库收十五部固定转录版本，离线可查；现实生活问题按《高性价比人生指南》回答。支持 Claude Code、Codex、Cursor、GitHub Copilot、Gemini CLI、claude.ai 和只认 MCP 的工具。
+[English](README.en.md) · [30 秒安装](#安装) · [这样问](#这样问) · [为什么可信](#为什么可信) · [能做什么](#能做什么) · [更新与卸载](#更新与卸载)
 
-[English](README.en.md) · [安装](#安装) · [这样问](#这样问) · [能做什么](#能做什么) · [为什么可信](#为什么可信) · [更新与卸载](#更新与卸载)
+</div>
+
+## 直接问大模型，和用它有什么不同
+
+| 直接问大模型算命 | 用有据算命 |
+|---|---|
+| 同一个八字问三遍，可能得到三个答案 | 干支、十神、吉凶等级由随包脚本计算，同样输入得到同样结果 |
+| 引文张口就来，查不到出处 | 每句引文带段号，用 `classical_search.py --passage-id` 能原样查到；发出前机械核对 |
+| 满篇术语，看不懂 | 先给白话结论，术语第一次出现就解释 |
+| 要么吓人，要么打包票 | 不打分、不保证结果、不给健康断语，没核完的条件照实说 |
+| 时辰、时区、夏令时随手一算 | 出生地时区、历史夏令时、真太阳时、交节和日界分开处理 |
+| 每次都要重报生辰 | 第一次确认后可存成本机档案，下次说「我」就能直接用 |
+
+同一仓库还有两个独立技能：**life-guide** 按《高性价比人生指南》回答现实生活问题（急症先给第一个动作），**fortune-extras** 做塔罗、星座和解梦。三个技能互不依赖，按需安装。
 
 ## 安装
 
@@ -85,7 +102,7 @@ python scripts/doctor.py
 | 出生时间不准、资料更正 | 时辰不确定、生日记错了 | 列出不变与会变的柱和受影响的结论；也能由四柱反查日期 |
 | 风水坐向 | 测得的角度坐什么山 | 《协纪辨方书》二十四山分类；测量误差跨山时要求复测，不判吉凶 |
 | 古籍检索 | 原文、版本、上下文 | 十五部固定转录，557 个章节或卷单元、29,685 段，离线可查；《焦氏易林》四部叢刊本与四库本可按本卦之卦并列查林 |
-| 现实生活问题 | 失业、担保、押金、保险等 | 《高性价比人生指南》34 节 660 条、8 篇长文；急症和自伤念头先给第一个动作 |
+| 现实生活问题（life-guide 技能） | 失业、担保、押金、保险等 | 《高性价比人生指南》34 节 660 条、8 篇长文；急症和自伤念头先给第一个动作 |
 
 完整转录库、已整理规则、影像校勘是不同进度：可计算的条件由程序核实，强弱、配合和救应的作用由 AI 结合完整原文解释。测试通过不代表现实预测命中率。各方法的支持范围和输入变化见 [6.0 迁移说明](skills/chinese-fortune/docs/MIGRATION-6.0.md)。
 
@@ -122,11 +139,13 @@ python scripts/doctor.py
 ```text
 skills/chinese-fortune/     安装的就是这个目录（npx skills、Claude Code 插件、发行 zip）
 ├── SKILL.md                给 AI 的工作流程与方法路由
-├── scripts/                排盘、择日、检索、核对脚本，附 lunar_python 与 tzdata
+├── scripts/                排盘、择日、检索、核对脚本；lunar_python 与 tzdata 打包在 vendor.zip
 ├── references/             各方法的规则说明，按需读取
-├── knowledge/              十五部古籍的固定转录与来源索引
-├── assets/                 规则库、条款与《高性价比人生指南》
+├── knowledge/              十五部古籍的固定转录（books.zip）与来源（sources.zip）
+├── assets/                 规则库与古籍条款
 └── docs/                   方法、来源、迁移与发布说明
+skills/life-guide/          现实生活问答（《高性价比人生指南》），单独安装
+skills/fortune-extras/      塔罗、星座、解梦，单独安装
 tests/  evals/  docs/       开发测试与评测记录，不随安装
 ```
 
@@ -180,7 +199,7 @@ tests/  evals/  docs/       开发测试与评测记录，不随安装
 </details>
 
 <details>
-<summary>现实生活问题怎样回答</summary>
+<summary>现实生活问题怎样回答（life-guide 技能）</summary>
 
 纯现实问题（失业了先做什么、替朋友担保签不签、通勤两小时值不值）走人生决策流程：从冻结的《高性价比人生指南》（eternity4719/HowToLiveBetter，提交 `842e11c9`，正文 CC BY 4.0，移植的检索和决策流程 MIT）里查条目，先看贴合程度，再按书里的算法排性价比和证据等级，分先做和别做，每条注明第几节第几条，书里没写的部分照实说。急症、自伤念头和正在进行的法律程序先给第一个动作，求助电话只给在中国大陆的人。本库收录除 3 条外的全书：34 节 660 条、8 篇长文、各节导读、术语表和交叉引用。命理问题优先走术数流程。详见 [人生决策](skills/chinese-fortune/references/29-life-decision.md)。
 
@@ -233,7 +252,7 @@ python scripts/classical_guidance.py --scenario interview --retrieve --limit 1
 ```sh
 python -m pip install -r requirements-dev.txt -c constraints-dev.txt
 python -m ruff check .
-python -m mypy skills/chinese-fortune/scripts/
+for d in skills/*/scripts; do python -m mypy "$d"; done
 python -X utf8 -m pytest tests/ -q --cov --cov-report=term-missing
 python skills/chinese-fortune/scripts/build_skill.py
 python -X utf8 evals/package_smoke.py

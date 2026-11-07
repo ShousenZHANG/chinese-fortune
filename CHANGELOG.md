@@ -4,7 +4,11 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
-## [Unreleased] — 一个仓库三个技能
+## [Unreleased] — 一个仓库三个技能、技能目录瘦身、回答交付
+
+- **技能目录瘦身**：557 个章节、576 个原始来源和约 660 个随包第三方文件分别打包成 `knowledge/books.zip`、`knowledge/sources.zip` 和 `scripts/vendor.zip`。chinese-fortune 技能目录从 1,972 个文件（29MB）降到 167 个文件（12.6MB，其中文本约 3.2MB），安装更快。检索、自检和构建直接从压缩包读，字节与记录的 SHA-256 不变；维护时用 `corpus_archive.py unpack/pack`。发行 zip 里的章节也改为 `knowledge/books.zip`。
+- **回答交付**（来自 v6.0 宿主实测）：紫微每一层运限列出四化星各在哪一宫，`answer_check` 发现只列星不列宫时给 warning；说「书里没有」而不写随包转录范围时给 warning；三元九宫合卦的 `say` 写出起宫、顺逆和步数；时区说明写出所用的 IANA 数据库版本；SKILL.md 要求未判项写补全路径，工具累计超过约三分钟先交付已算完的部分。
+- **首屏与档案**：README 首屏加示例图和「直接问大模型 vs 用本技能」对比；用户说「我」时先查本机档案，第一次算完主动问要不要存档。
 
 - **拆出 `life-guide`**：《高性价比人生指南》的现实生活问答（含急症、自伤念头、法律程序先给第一个动作）移到 `skills/life-guide/`，自带书的数据、许可声明和 IANA 时区文本表，不再依赖 tzdata 包。
 - **拆出 `fortune-extras`**：塔罗、星座、解梦移到 `skills/fortune-extras/`。

@@ -284,6 +284,54 @@ def markup_findings(answer: str) -> list[dict]:
                      '表格里有 HTML 写法（如 colspan）；多数宿主不渲染，改成每行列数相同的 Markdown 表')]
 
 
+# 「不是《滴天髓》的原句」「《子平真诠》里没有这句」: the search covers only the bundled transcriptions,
+# so an absence is said with that scope or not at all (R2 N08). The scope words may sit anywhere in the
+# same sentence; 「随包转录本《子平真诠》里检索不到」 passes.
+ABSENCE = re.compile(r'(?:不是|并非|并不是|不属于)《[^》]{1,20}》的?(?:原句|原文|原话|句子)'
+                     r'|《[^》]{1,20}》(?:里|中|原书)?(?:没有|并无|查无|找不到|未见|不见)(?:这句|此句|这段|该句|此语|原文|这话)?')
+ABSENCE_SCOPE = re.compile(r'随包|转录|所收|本次所?查|检索到的|这些版本|所查|整理本')
+
+
+def absence_findings(sentence: str) -> list[dict]:
+    match = ABSENCE.search(sentence)
+    if not match or ABSENCE_SCOPE.search(sentence):
+        return []
+    return [_finding('unscoped_absence_claim', 'warning', sentence,
+                     '检索只覆盖随包转录本：写成「随包转录本里没有」，不能说原书或该书没有')]
+
+
+def _ziwei_layers(facts: list[dict]) -> Iterator[dict]:
+    for fact in facts:
+        horoscope = fact.get('horoscope') if isinstance(fact, dict) and fact.get('tool') == 'ziwei' else None
+        for layer in (horoscope or {}).values():
+            if isinstance(layer, dict) and isinstance(layer.get('transformation_palaces'), list):
+                yield layer
+
+
+def sihua_palace_findings(answer: str, facts: list[dict]) -> list[dict]:
+    """A layer's 四化 listed without where the stars sit (R2 N04): each line that names 化X with its star
+    should also name that star's palace (本命宫名或地支宫)."""
+    findings = []
+    lines = answer.splitlines()
+    for layer in _ziwei_layers(facts):
+        missing = []
+        for row in layer['transformation_palaces']:
+            if not row.get('branch'):
+                continue
+            kind, star = row['kind'], row['star']
+            named = [line for line in lines if star in line and (kind in line or kind[1:] in line)]
+            if not named:
+                continue
+            palace = (row.get('natal_palace') or '').removesuffix('宫')
+            if not any((palace and palace in line) or f"{row['branch']}宫" in line for line in named):
+                missing.append(f"{kind}{star}")
+        if len(missing) >= 2:
+            findings.append(_finding('sihua_palace_missing', 'warning', '、'.join(missing),
+                                     f"{layer.get('layer', '')}四化只列了星，没写各星落在哪一宫；"
+                                     '照 transformation_palaces 补上（本命宫名或地支宫）'))
+    return findings
+
+
 def _check_assertions(answer: str, facts: list[dict],
                       pillars: tuple[PillarEvidence, ...] | None = None,
                       assertions: list[dict] | None = None) -> dict:
@@ -292,12 +340,13 @@ def _check_assertions(answer: str, facts: list[dict],
     facts_text = json.dumps(scores, ensure_ascii=False)
     assertions = facts if assertions is None else assertions
     findings = [*_quote_findings(answer, checked), *pillar_findings(answer, facts, checked, pillars),
-                *markup_findings(answer)]
+                *markup_findings(answer), *sihua_palace_findings(answer, facts)]
     titles = unresolved_titles(assertions)
     tie = has_tie(assertions)
     for sentence in (s.strip() for s in sentences(answer)):
         findings += score_findings(sentence, facts_text, checked)
         findings += certainty_findings(sentence)
+        findings += absence_findings(sentence)
         if titles:
             findings += geju_findings(sentence, titles)
         if tie:

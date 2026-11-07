@@ -9,6 +9,7 @@ import classical_guidance as guidance
 import import_classics as importer
 import pytest
 from classical_search import get_chapter, get_passage, search_classics, validate_library
+from conftest import corpus_bytes, corpus_text
 from fortune_rules import SCENARIOS, research_request
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -108,12 +109,12 @@ def test_frozen_source_archive_can_rebuild_added_chapters(tmp_path: Path, monkey
             continue
         title = parse_qs(urlsplit(book['source_url']).query)['title'][0]
         indexes[title] = {'title': title, 'revision': book['revision'], 'timestamp': book['source_timestamp'],
-                          'raw': (ROOT / 'skills/chinese-fortune/knowledge' / book['index_path']).read_text(encoding='utf-8')}
+                          'raw': corpus_text(book['index_path'])}
         for row in book['chapters']:
-            ch = json.loads((ROOT / 'skills/chinese-fortune/knowledge' / row['path']).read_text(encoding='utf-8'))
+            ch = json.loads(corpus_text(row['path']))
             page_title = parse_qs(urlsplit(ch['source_url']).query)['title'][0]
             pages[page_title] = {'title': page_title, 'revision': ch['revision'], 'timestamp': ch['source_timestamp'],
-                                'raw': (ROOT / 'skills/chinese-fortune/knowledge' / ch['raw_path']).read_text(encoding='utf-8')}
+                                'raw': corpus_text(ch['raw_path'])}
     (tmp_path / 'indexes.json').write_text(json.dumps(indexes, ensure_ascii=False), encoding='utf-8')
     (tmp_path / 'pages.json').write_text(json.dumps(pages, ensure_ascii=False), encoding='utf-8')
     for title in ['遁甲演義 (四庫全書本)', '六壬大全 (四庫全書本)', '奇門遁甲元靈經']:
@@ -127,7 +128,7 @@ def test_frozen_source_archive_can_rebuild_added_chapters(tmp_path: Path, monkey
     assert {b['id']: len(b['chapters']) for b in books} == EXPECTED
     for book in books:
         for chapter in book['chapters']:
-            assert (tmp_path / 'rebuilt' / chapter['path']).read_bytes() == (ROOT / 'skills/chinese-fortune/knowledge' / chapter['path']).read_bytes()
+            assert (tmp_path / 'rebuilt' / chapter['path']).read_bytes() == corpus_bytes(chapter['path'])
 
 
 def test_cli_errors_are_machine_readable(capsys: pytest.CaptureFixture) -> None:
