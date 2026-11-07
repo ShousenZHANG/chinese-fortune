@@ -88,7 +88,9 @@ def test_a_repeated_clock_time_can_be_disambiguated_with_fold():
 def test_answer_check_reads_pair_facts_output():
     from answer_check import check_answer
     result = check_answer('A的日主为甲，年柱己卯。', [facts()])
-    assert [f['code'] for f in result['findings']] == ['day_master_mismatch']
+    codes = [f['code'] for f in result['findings']]
+    # The fragment also leaves out the 三元九宫 count that a marriage answer must state (must_cover).
+    assert 'day_master_mismatch' in codes and set(codes) == {'day_master_mismatch', 'must_cover_missing'}
 
 
 def test_same_pillar_branch_class_and_matched_clauses():

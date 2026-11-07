@@ -21,6 +21,7 @@ from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
 from luck_assessment import assess_luck, luck_paragraph
+from must_cover import geju_items
 from reading_views import compact_reading, facts_line, write_card, write_facts, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
@@ -366,6 +367,9 @@ def age_at_request(facts: dict) -> dict | None:
             'say': f"到 {today.isoformat()}，周岁 {full} 岁，虚岁 {nominal} 岁（虚岁按农历年计）"}
 
 
+GEJU_WORDS = ('格局', '成格', '败格', '用神')
+
+
 def prepare_reading(chart: dict, question: str = '') -> dict:
     clean = chart_facts(chart)
     if (clean.get('true_solar_time') or {}).get('applied'):
@@ -445,6 +449,8 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     # Most hosts read the JSON, not the Markdown draft: the notes travel in both.
     result['host_notes'] = host_notes(result)
     result['derivation'] = derivation_steps(clean)
+    if any(word in question for word in GEJU_WORDS):
+        result['must_cover'] = geju_items()
     return result
 
 

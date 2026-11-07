@@ -17,7 +17,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 4. 运行工具后检查 exit code 和 `ok`；失败按 `error_class` 的 `next_step` 处理，不凭记忆补造结果。工具累计耗时超过约三分钟时，先答已确认的结论，再列还没算的步骤。
 5. 纯本命用 `scripts/bazi_reading.py --view compact --facts-out <临时目录>/bazi.json`，字段见 [八字](references/01-bazi.md)。
 6. 逐项核对盘面、原文条件、例外和范围。资料够就把解释做完；确有缺项时说明影响哪条判断，并写出补全路径（缺什么资料、要核哪条原文或哪个工具字段）。
-7. 发出前用 `scripts/answer_check.py --answer - --facts <上一步的 .json>` 核对：有 error 先改，有 warning 说明未核内容。
+7. 发出前用 `scripts/answer_check.py --answer - --facts <上一步的 .json>` 核对：有 error 先改，有 warning 说明未核内容。工具结果里的 `must_cover` 每一项都要答到，漏一项就是 error。
 8. 先白话回答所问，短引文附在对应解释旁。
 
 ## 工具结论优先（硬规则）

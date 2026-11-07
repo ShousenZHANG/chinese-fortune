@@ -70,3 +70,59 @@ def test_the_real_n08_answer_is_flagged():
                            '--answer', '-'], input=case.read_text(encoding='utf-8'), capture_output=True,
                           text=True, encoding='utf-8')
     assert 'unscoped_absence_claim' in [f['code'] for f in json.loads(done.stdout)['findings']]
+
+
+def test_a_bare_absence_is_an_error_and_a_named_denial_a_warning():
+    bare = check_answer('这句不是《滴天髓》的原句。', [])['findings']
+    assert [(f['code'], f['severity']) for f in bare] == [('unscoped_absence_claim', 'error')]
+    named = check_answer('《子平真詮》中没有这句：财多身弱。', [])['findings']
+    assert ('unscoped_absence_claim', 'warning') in [(f['code'], f['severity']) for f in named]
+
+
+def test_a_marriage_answer_must_show_the_three_yuan_count():
+    from pair_facts import pair_facts, subject_chart
+    a = subject_chart({'year': 1992, 'month': 6, 'day': 1, 'hour': 9, 'gender': 'male'})
+    b = subject_chart({'year': 1994, 'month': 6, 'day': 1, 'hour': 9, 'gender': 'female'})
+    facts = pair_facts(a, b)
+    assert {e['id'] for e in facts['must_cover']} == {'sanyuan:male', 'sanyuan:female', 'sanyuan:relation'}
+    short = check_answer('两人三元九宫合卦得' + facts['sanyuan_jiugong']['relation'] + '。', [facts])['findings']
+    assert sum(f['code'] == 'must_cover_missing' and f['severity'] == 'error' for f in short) == 2
+    full = check_answer(facts['sanyuan_jiugong']['say'], [facts])['findings']
+    assert not [f for f in full if f['code'] == 'must_cover_missing']
+
+
+def test_a_geju_question_must_say_the_structure_is_still_a_candidate():
+    from bazi_calc import build_parser, calculate_bazi
+    from bazi_reading import prepare_reading
+    chart = calculate_bazi(build_parser().parse_args(['--year', '2000', '--month', '1', '--day', '15', '--hour', '10',
+                                                      '--gender', 'male', '--as-of-year', '2026']))
+    reading = prepare_reading(chart, '我是什么格局')
+    assert [e['id'] for e in reading['must_cover']] == ['geju:limit']
+    assert 'must_cover' not in prepare_reading(chart, '看看八字')
+    codes = [f['code'] for f in check_answer('你是正官格。', [reading])['findings']]
+    assert 'must_cover_missing' in codes
+    codes = [f['code'] for f in check_answer('正官格只是候选，还要核月令透干。', [reading])['findings']]
+    assert 'must_cover_missing' not in codes
+
+
+def test_a_passage_id_the_tools_never_returned_is_flagged_for_checking():
+    facts = [{'ok': True, 'tool': 'classical_search', 'results': [{'passage_id': 'ziping:c008:p0001', 'text': '八字用神'}]}]
+    findings = check_answer('依据 ziping:c008:p0001 与 ditian:c016:p0001。', facts)['findings']
+    flagged = [f for f in findings if f['code'] == 'citation_not_in_facts']
+    assert [f['excerpt'] for f in flagged] == ['ditian:c016:p0001'] and flagged[0]['severity'] == 'warning'
+
+
+def test_several_methods_carry_a_time_budget():
+    from question_router import route
+    result = route('用八字和紫微一起看看我今年的事业')
+    assert result['flow'] == 'multi_method' and result['time_budget_seconds'] == 180 and result['on_budget']
+
+
+def test_with_the_tools_must_cover_one_missing_palace_is_an_error():
+    chart = _ziwei_hour()
+    assert chart['must_cover'][0]['check'] == 'sihua_palaces'
+    rows = chart['horoscope']['liu_shi']['transformation_palaces']
+    lines = [f"| {r['kind']} | {r['star']} | {r['branch']}宫 |" for r in rows]
+    lines[0] = f"| {rows[0]['kind']} | {rows[0]['star']} |"
+    findings = [f for f in check_answer('\n'.join(lines), [chart])['findings'] if f['code'] == 'sihua_palace_missing']
+    assert findings and findings[0]['severity'] == 'error'

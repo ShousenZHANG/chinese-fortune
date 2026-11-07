@@ -32,6 +32,7 @@ from bazi_tables import (
     SAN_XING_TRIPLES,
     TIANGAN_HE,
 )
+from must_cover import sanyuan_items
 from sanyuan_hehun import match
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
@@ -257,6 +258,7 @@ def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage') -> dict
         'say': say + ([RELATION_NOTES[relation]] if relation in RELATION_NOTES else []),
         'relation': {'type': relation, 'label': RELATIONS[relation]['label']},
         'sanyuan_jiugong': sanyuan,
+        **({'must_cover': sanyuan_items(sanyuan)} if sanyuan else {}),
         'classical_clauses': clauses,
         'notes': list(NOTES),
         'boundary': BOUNDARY,
