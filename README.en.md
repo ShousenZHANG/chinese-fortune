@@ -135,9 +135,9 @@ Changes per version are in the [CHANGELOG](CHANGELOG.md).
 ```text
 skills/chinese-fortune/     the installed skill (npx skills, Claude Code plugin, release zip)
 ├── SKILL.md                workflow and method routing for the AI
-├── scripts/                charting, date selection, lookup and checks; lunar_python and tzdata bundled
+├── scripts/                charting, date selection, lookup and checks; lunar_python and tzdata in vendor.zip
 ├── references/             per-method rules, read on demand
-├── knowledge/              the fifteen frozen transcriptions and their source indexes
+├── knowledge/              the fifteen frozen transcriptions (books.zip) and their sources (sources.zip)
 ├── assets/                 rule libraries and classical clauses
 └── docs/                   methods, sources, migration and release notes
 skills/life-guide/          everyday life questions (the life guide), installed separately

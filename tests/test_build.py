@@ -4,6 +4,7 @@ Locks the distribution contract: the zip must nest under chinese-fortune/,
 carry SKILL.md + runtime files, and leak NO dev/test cruft.
 """
 import hashlib
+import io
 import json
 import re
 import shutil
@@ -47,10 +48,8 @@ def test_runtime_files_present(package):
         "chinese-fortune/knowledge/manifest.json",
         "chinese-fortune/docs/CLASSICAL-SOURCES.md",
         "chinese-fortune/scripts/utils.py",
-        "chinese-fortune/scripts/lunar_python/__init__.py",
-        "chinese-fortune/scripts/lunar_python-1.4.8.dist-info/LICENSE",
-        "chinese-fortune/scripts/tzdata/zoneinfo/Asia/Shanghai",
-        "chinese-fortune/scripts/tzdata-2026.3.dist-info/licenses/LICENSE",
+        "chinese-fortune/scripts/vendor.zip",          # lunar_python, tzdata and their dist-info
+        "chinese-fortune/knowledge/books.zip",         # the 557 chapters
         "chinese-fortune/assets/64hex.json",
         "chinese-fortune/references/00-foundations.md",
         "chinese-fortune/agents/openai.yaml",
@@ -246,7 +245,7 @@ def test_package_is_lf_only_so_the_build_depends_on_the_commit_not_the_checkout(
     offenders = []
     with zipfile.ZipFile(out_path) as zf:
         for name in zf.namelist():
-            if b"\r\n" in zf.read(name) and "/licenses/" not in name:
+            if b"\r\n" in zf.read(name) and "/licenses/" not in name and not name.endswith(".zip"):
                 offenders.append(name)
     assert not offenders, f"CRLF in packaged files: {offenders[:10]}"
 
@@ -317,8 +316,9 @@ def test_runtime_and_source_archives_have_explicit_different_scopes(package, tmp
     assert manifest["schema_version"] == "2.0" and manifest["distribution_kind"] == "runtime"
     assert not any("/knowledge/sources/" in name for name in names)
     expected = json.loads((ROOT / "skills/chinese-fortune/knowledge/manifest.json").read_text(encoding="utf-8"))
-    chapters = {"chinese-fortune/knowledge/" + c["path"] for b in expected["books"] for c in b["chapters"]}
-    assert len(chapters) == 557 and chapters <= names
+    chapters = {c["path"].removeprefix("books/") for b in expected["books"] for c in b["chapters"]}
+    with zipfile.ZipFile(io.BytesIO(zipfile.ZipFile(package).read("chinese-fortune/knowledge/books.zip"))) as books:
+        assert len(chapters) == 557 and chapters == set(books.namelist())
     assert set(manifest["runtime_files"]) == {n.removeprefix("chinese-fortune/") for n in names} - {"knowledge/manifest.json"}
     assert manifest["source_archive"]["sha256"] == hashlib.sha256(source_out_path.read_bytes()).hexdigest()
     with zipfile.ZipFile(source_out_path) as archive:
@@ -344,12 +344,17 @@ def test_runtime_corruption_is_rejected(package, tmp_path, damage):
     path = skill / "knowledge/manifest.json"
     manifest = json.loads(path.read_text(encoding="utf-8"))
     if damage == "chapter":
-        (skill / "knowledge" / manifest["books"][0]["chapters"][0]["path"]).unlink()
+        books = skill / "knowledge/books.zip"
+        gone = manifest["books"][0]["chapters"][0]["path"].removeprefix("books/")
+        with zipfile.ZipFile(books) as archive:
+            kept = {info.filename: archive.read(info) for info in archive.infolist() if info.filename != gone}
+        with zipfile.ZipFile(books, "w") as archive:
+            for name, data in kept.items():
+                archive.writestr(name, data)
     elif damage == "script":
         (skill / "scripts/utils.py").write_text("# altered", encoding="utf-8")
     elif damage == "inventory":
-        name = "knowledge/" + manifest["books"][0]["chapters"][0]["path"]
-        del manifest["runtime_files"][name]
+        del manifest["runtime_files"]["knowledge/books.zip"]
     elif damage == "supporting_source":
         del manifest["source_archive"]["files"][manifest["supporting_sources"][0]["path"]]
     else:
@@ -479,7 +484,8 @@ def test_legal_bundle_survives_both_archives_and_a_direct_folder_copy(package, t
         ("tzdata-NOTICE.txt", "tzdata-2026.3.dist-info/licenses/LICENSE"),
         ("tzdata-Apache-2.0.txt", "tzdata-2026.3.dist-info/licenses/licenses/LICENSE_APACHE"),
     ):
-        assert (copied / "licenses" / standalone).read_bytes() == (skill / "scripts" / original).read_bytes()
+        with zipfile.ZipFile(skill / "scripts/vendor.zip") as vendor:
+            assert (copied / "licenses" / standalone).read_bytes() == vendor.read(original)
 
 
 @pytest.mark.parametrize("name", [
@@ -606,7 +612,7 @@ def test_archive_rejects_coordinated_book_and_notice_deletion(package, tmp_path)
             assert hashlib.sha256(archive.read("chinese-fortune/" + name)).hexdigest() == digest
         expected = json.loads((ROOT / "skills/chinese-fortune/knowledge/manifest.json").read_bytes())
         omitted = next(book for book in expected["books"] if book["id"] == "yilin_siku")
-        assert all("chinese-fortune/knowledge/" + chapter["path"] in archive.namelist()
-                   for chapter in omitted["chapters"])
+        with zipfile.ZipFile(io.BytesIO(archive.read("chinese-fortune/knowledge/books.zip"))) as books:
+            assert all(chapter["path"].removeprefix("books/") in books.namelist() for chapter in omitted["chapters"])
     with pytest.raises(ValueError, match="legal provenance index differs from trusted checkout: books"):
         package_smoke.verify_archive(out_path)

@@ -24,6 +24,7 @@ import hashlib
 import json
 import sys
 import unicodedata
+import zipfile
 from pathlib import Path
 
 from utils import ensure_utf8_stdio
@@ -36,8 +37,15 @@ TABLE = ROOT / 'assets' / 'han-variants.json'
 def corpus_characters() -> set[str]:
     """Every Han character appearing anywhere in the frozen library."""
     found: set[str] = set()
-    for path in sorted(LIBRARY.rglob('*.json')):
-        for char in path.read_text(encoding='utf-8'):
+    texts = [path.read_text(encoding='utf-8') for path in sorted(LIBRARY.rglob('*.json'))]
+    # The installed layout packs books/ and sources/ (scripts/corpus_archive.py); read their JSON too.
+    for name in ('books.zip', 'sources.zip'):
+        if (LIBRARY / name).is_file():
+            with zipfile.ZipFile(LIBRARY / name) as archive:
+                texts += [archive.read(info).decode('utf-8') for info in archive.infolist()
+                          if info.filename.endswith('.json')]
+    for text in texts:
+        for char in text:
             if unicodedata.category(char) == 'Lo' and '㐀' <= char <= '鿿':
                 found.add(char)
     return found

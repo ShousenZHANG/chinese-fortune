@@ -1,7 +1,7 @@
 """5.9.0: the skill runs with nothing but a Python 3.9+ interpreter.
 
-lunar_python and tzdata ship inside scripts/ with their own dist-info (RECORD,
-licence). A host that cannot pip install -- the Claude API sandbox has no
+lunar_python and tzdata ship inside scripts/vendor.zip with their own dist-info (RECORD,
+licence); utils.py puts the zip on sys.path. A host that cannot pip install -- the Claude API sandbox has no
 network and no runtime package installation -- still computes every chart, and
 a local agent never installs packages into the user's global Python.
 """
@@ -13,6 +13,8 @@ import json
 import os
 import subprocess
 import sys
+import zipfile
+from functools import cache
 from pathlib import Path
 
 import pytest
@@ -24,8 +26,15 @@ LICENCES = {"lunar_python": ["LICENSE"], "tzdata": ["licenses/LICENSE", "license
 BARE = {**os.environ, "PYTHONTZPATH": ""}      # no system zoneinfo: tzdata must come from scripts/
 
 
+@cache
+def _vendored() -> dict[str, bytes]:
+    """scripts/vendor.zip by member path (lunar_python/..., tzdata-2026.3.dist-info/...)."""
+    with zipfile.ZipFile(SCRIPTS / "vendor.zip") as archive:
+        return {info.filename: archive.read(info) for info in archive.infolist() if not info.is_dir()}
+
+
 def _record(package: str, version: str) -> list:
-    text = (SCRIPTS / f"{package}-{version}.dist-info" / "RECORD").read_text(encoding="utf-8")
+    text = _vendored()[f"{package}-{version}.dist-info/RECORD"].decode("utf-8")
     return [row for row in csv.reader(text.splitlines()) if row]
 
 
@@ -37,24 +46,24 @@ def test_vendored_files_are_the_published_ones(package, version):
     assert payload
     for path, digest in payload.items():
         algorithm, expected = digest.split("=", 1)
-        actual = hashlib.new(algorithm, (SCRIPTS / path).read_bytes()).digest()
+        actual = hashlib.new(algorithm, _vendored()[path]).digest()
         assert base64.urlsafe_b64encode(actual).rstrip(b"=").decode() == expected, path
-    shipped = {p.relative_to(SCRIPTS).as_posix() for p in (SCRIPTS / package).rglob("*")
-               if p.is_file() and "__pycache__" not in p.parts}
+    shipped = {name for name in _vendored() if name.startswith(package + "/") and "__pycache__" not in name}
     assert shipped == set(payload)
+    assert not (SCRIPTS / package).exists(), "unpacked copy left beside vendor.zip"
 
 
 @pytest.mark.parametrize("package,version", VENDORED.items())
 def test_vendored_packages_carry_their_licences(package, version):
-    info = SCRIPTS / f"{package}-{version}.dist-info"
-    assert f"Version: {version}" in (info / "METADATA").read_text(encoding="utf-8")
+    info = f"{package}-{version}.dist-info"
+    assert f"Version: {version}" in _vendored()[f"{info}/METADATA"].decode("utf-8")
     for name in LICENCES[package]:
-        assert (info / name).read_text(encoding="utf-8").strip(), name
+        assert _vendored()[f"{info}/{name}"].decode("utf-8").strip(), name
 
 
 def test_a_bare_interpreter_imports_the_vendored_copies():
     """-S drops site-packages, as in a fresh venv where nothing was installed."""
-    probe = ("import sys; sys.path.insert(0, sys.argv[1]); import lunar_python, tzdata, zoneinfo; "
+    probe = ("import sys; sys.path.insert(0, sys.argv[1]); import utils; import lunar_python, tzdata, zoneinfo; "
              "print(lunar_python.__file__); print(tzdata.__file__); "
              "print(zoneinfo.ZoneInfo('Australia/Sydney').key)")
     run = subprocess.run([sys.executable, "-S", "-c", probe, str(SCRIPTS)],

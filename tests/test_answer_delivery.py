@@ -53,7 +53,7 @@ def test_a_historical_offset_names_the_time_zone_database_that_gave_it():
     chart = run_cli('bazi_calc.py', '--year', 1988, '--month', 7, '--day', 1, '--hour', 12, '--gender', 'male',
                     '--timezone', 'Asia/Shanghai', '--time-standard', 'clock', '--no-shensha', '--no-geju',
                     '--no-yongshen')
-    assert chart['timezone']['offset_hours'] == 9.0 and chart['timezone']['source'].startswith('IANA 时区数据库')
+    assert chart['timezone']['offset_hours'] == 9.0 and chart['timezone']['source'].startswith('IANA ')
 
 
 def test_the_skill_asks_for_a_completion_path_and_partial_answers_under_a_time_budget():

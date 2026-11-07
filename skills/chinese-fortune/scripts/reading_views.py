@@ -39,6 +39,9 @@ def compact_reading(result: dict) -> dict:
     compact['view'] = 'compact'
     if not asks_derivation(result.get('question') or ''):
         compact.pop('derivation', None)
+        # Which tz database gave the offset is evidence for a derivation question; the full view keeps it.
+        if isinstance(compact['chart_facts'].get('timezone'), dict):
+            compact['chart_facts']['timezone'].pop('source', None)
     assessment = compact['rule_assessment']
     pool: dict[str, dict] = {}
     condition_keys: dict[str, str] = {}

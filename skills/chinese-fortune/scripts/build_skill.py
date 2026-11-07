@@ -33,7 +33,7 @@ INCLUDE_DIRS = ["references", "assets", "agents", "docs"]
 # keeping parallel lists -- three copies had already drifted apart.
 # requirements-dev.txt pins build_han_variants' opencc; its own first line says
 # it stays out of the runtime package, yet it had been shipping.
-SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py",
+SCRIPT_EXCLUDE = {"build_skill.py", "import_classics.py", "build_han_variants.py", "corpus_archive.py",
                   "rule_registry.py",
                   "requirements-dev.txt"}
 EXCLUDE_RE = re.compile(
@@ -198,8 +198,12 @@ def collect() -> list[Path]:
         if not base.is_dir():
             raise ValueError("required dir missing: " + name)
         picked.extend(p for p in base.rglob("*") if p.is_file())
-    picked.extend(SKILL / "knowledge" / c["path"]
-                  for b in manifest["books"] for c in b["chapters"])
+    books = SKILL / "knowledge" / "books.zip"
+    if books.is_file():
+        picked.append(books)      # the chapters ship packed, as the skill folder keeps them
+    else:
+        picked.extend(SKILL / "knowledge" / c["path"]
+                      for b in manifest["books"] for c in b["chapters"])
     picked.extend(p for p in (SKILL / "scripts").rglob("*")
                   if p.is_file() and p.name not in SCRIPT_EXCLUDE)
     if any(not p.resolve().is_relative_to(ROOT.resolve()) for p in picked):
@@ -288,13 +292,14 @@ def build_distribution(out_path: Path, *, commit: str | None = None) -> dict:
         if book.get("source_metadata_path"):
             archived[book["source_metadata_path"]] = book["source_metadata_sha256"]
         for row in book["chapters"]:
-            chapter = json.loads((SKILL / "knowledge" / row["path"]).read_text(encoding="utf-8"))
+            data = _library_file(row["path"])
+            chapter = json.loads(data.decode("utf-8"))
             archived[chapter["raw_path"]] = chapter["raw_sha256"]
-            source_entries["knowledge/" + row["path"]] = (SKILL / "knowledge" / row["path"]).read_bytes()
+            source_entries["knowledge/" + row["path"]] = data
     for source in manifest.get("supporting_sources", []):
         archived[source["path"]] = source["sha256"]
     for name in archived:
-        source_entries["knowledge/" + name] = (SKILL / "knowledge" / name).read_bytes()
+        source_entries["knowledge/" + name] = _library_file(name)
     with tempfile.TemporaryDirectory(prefix="fortune-source-validation-") as directory:
         source_root = Path(directory)
         for name, data in source_entries.items():
@@ -335,6 +340,15 @@ def build_distribution(out_path: Path, *, commit: str | None = None) -> dict:
                         "validation": runtime_report},
             "source_archive": {"path": str(source_out_path), "files": len(source_entries),
                                "sha256": _digest(source_bytes), "validation": source_report}}
+
+
+def _library_file(name: str) -> bytes:
+    """A corpus file by its manifest path, from knowledge/ or from the archive that packs its folder."""
+    from classical_search import library_bytes
+    data = library_bytes(SKILL / "knowledge", name)
+    if data is None:
+        raise ValueError("corpus file missing: " + name)
+    return data
 
 
 def _git_object_digest(kind: str, data: bytes) -> str:

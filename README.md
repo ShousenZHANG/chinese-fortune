@@ -139,9 +139,9 @@ python scripts/doctor.py
 ```text
 skills/chinese-fortune/     安装的就是这个目录（npx skills、Claude Code 插件、发行 zip）
 ├── SKILL.md                给 AI 的工作流程与方法路由
-├── scripts/                排盘、择日、检索、核对脚本，附 lunar_python 与 tzdata
+├── scripts/                排盘、择日、检索、核对脚本；lunar_python 与 tzdata 打包在 vendor.zip
 ├── references/             各方法的规则说明，按需读取
-├── knowledge/              十五部古籍的固定转录与来源索引
+├── knowledge/              十五部古籍的固定转录（books.zip）与来源（sources.zip）
 ├── assets/                 规则库与古籍条款
 └── docs/                   方法、来源、迁移与发布说明
 skills/life-guide/          现实生活问答（《高性价比人生指南》），单独安装
