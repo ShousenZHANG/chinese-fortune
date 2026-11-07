@@ -43,6 +43,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 | 这周哪天对我好、今天运气怎么样、明年哪几个月好 | `personal_days` | `fortune_reading.py --stdin`，`intent: period` |
 | 下个月哪天搬家好、下周面试哪天好 | `personal_days`（带事项） | 同上，加 `event.scenario` |
 | 明天 9 点还是 14 点出发好 | `event_slots` | `intent: selection`，给 `candidates` |
+| 事业、财运、感情、学业，人生领域速读 | `natal` | `bazi_reading.py --question "<原话>"`，照抄 `life_areas` |
 | 幸运色、戴什么、幸运数字、五行缺什么 | `wear_advice` | `bazi_reading.py --question "<原话>" --markdown` |
 | 今天黄历宜什么 | `almanac` | `huangli_query.py --date … --markdown` |
 | 今年五黄在哪、流年飞星 | `specialist` | `zibai.py --date … [--sitting 坐山]` |
