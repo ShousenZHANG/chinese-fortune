@@ -57,6 +57,8 @@ IMPOSSIBLE_INPUTS = [
     ('yilin_lookup.py', ['--from', '乾', '--to', '坤坤'], '不存在的之卦'),
     ('fengshui_measure.py', ['--bearing', '-5', '--of', 'facing', '--reference', 'magnetic', '--error', '3'], '角度越界'),
     ('fengshui_measure.py', ['--bearing', '90', '--of', 'facing', '--reference', 'magnetic', '--error', '90'], '误差越界'),
+    ('zibai.py', ['--date', '2026-13-01'], '没有 13 月'),
+    ('zibai.py', ['--date', '2026-11-08', '--sitting', '北'], '坐山不是二十四山'),
     ('qimen_select.py', ['--from', '2026-11-02', '--days', '0', '--target-timezone', 'Asia/Shanghai'], '天数越界'),
     ('pillars_to_dates.py', ['--year-pillar', '甲丑', '--month-pillar', '丁丑', '--day-pillar', '壬申'], '不存在的干支'),
     ('pillars_to_dates.py', ['--year-pillar', '己卯', '--month-pillar', '丁丑', '--day-pillar', '壬申', '--from-year', '1000'], '年份越界'),
@@ -177,6 +179,7 @@ VALID_INPUTS = [
     ("name_analyze.py", ["--name", "张子涵"]),
     ("name_analyze.py", ["--name", "李小龍"]),          # 繁体必须照收
     ("meihua_cast.py", ["--datetime", "2026-06-01T13:05", "time"]),
+    ("zibai.py", ["--date", "2026-11-08", "--sitting", "子"]),
 ]
 
 
