@@ -12,7 +12,7 @@
 
 <img src=".github/assets/hero.svg" alt="Example: asked about a BaZi chart, the answer gives a plain conclusion first, then quotes Zi Ping Zhen Quan with a passage id anyone can look up" width="880">
 
-[中文](README.md) · [Sample report and share card](site/) · [Install](#install) · [What to ask](#what-to-ask) · [Why trust it](#why-trust-it) · [Capabilities](#capabilities) · [Update and remove](#update-and-remove)
+[中文](README.md) · [Install](#install) · [What to ask](#what-to-ask) · [Why trust it](#why-trust-it) · [Capabilities](#capabilities) · [Update and remove](#update-and-remove)
 
 </div>
 

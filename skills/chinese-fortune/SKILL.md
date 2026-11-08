@@ -54,23 +54,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 
 期间、择时、行程、补查、前瞻验证的具体规则见 [路由细则](references/24-personalized-forecast.md#路由细则)。现实生活问题用 life-guide 技能，塔罗、星座、解梦用 fortune-extras；路由返回 `skill` 字段就用那个技能，没装就给 `npx skills add ShousenZHANG/chinese-fortune --skill <技能名>`。正在发生的急症和自伤念头先给第一个动作。
 
-| 用户点名 | 资料 | 脚本 |
-|---|---|---|
-| 短期运势 / 面试择时 | [个人未来时段](references/24-personalized-forecast.md) | fortune_reading.py |
-| 八字 / 四柱 / 用神 | [八字](references/01-bazi.md)；排盘口径 [复核](references/01-bazi-paipan.md) | bazi_reading.py |
-| 穿什么颜色、戴什么对自己有利 | [八字](references/01-bazi.md)（颜色按《穷通宝鉴》这一格调候的一般取法换算，例外未逐盘核对） | bazi_reading.py --question … --markdown |
-| 紫微 | [紫微](references/02-ziwei.md)；排盘推导 [口径](references/02-ziwei-paipan.md) | ziwei_calc.py |
-| 周易 / 易经 | [周易](references/03-yijing.md) | yijing_cast.py |
-| 六爻 | [六爻](references/04-liuyao.md) | liuyao_cast.py（用神不上卦看 `fu_shen`，不另起首卦） |
-| 梅花 | [梅花](references/05-meihua.md) | meihua_cast.py |
-| 连续行程 | [个人时段](references/24-personalized-forecast.md)的连续行程字段 | fortune_reading.py --stdin |
-| 奇门 | [奇门](references/06-qimen.md) | qimen_cast.py（默认已核核心；旧全盘须显式选择） |
-| 六壬 | [大六壬](references/07-daliuren.md) | liuren_cast.py |
-| 黄历 / 择日 | [黄历](references/12-huangli.md) | huangli_query.py |
-| 五行 / 天干地支 | [基础](references/00-foundations.md) | 按需查表 |
-| 神煞 | [神煞](references/19-shensha.md) | 解释起法和实际位置 |
-
-其他点名方法见 [可选方法](references/23-optional-methods.md)，纯八字不加载；点名时直接读对应一篇：[风水](references/08-fengshui.md)、[起名](references/13-qiming.md)、[合婚](references/14-hehun.md)、[生肖](references/16-shengxiao.md)、[扩展术数](references/21-extended-methods.md)、[面相](references/09-mianxiang.md)、[手相](references/10-shouxiang.md)、[测字](references/11-cezi.md)。无完整工具或条款时按实际覆盖回答，不编造盘面。各书收录以所选转录目录为界；紫微、六爻等解释规则仍未达到全书覆盖。
+用户点名某种方法时，先读 [可选方法](references/23-optional-methods.md)「点名方法索引」一节找资料和脚本；无完整工具或条款时按实际覆盖回答，不编造盘面。
 
 ## 运行环境
 

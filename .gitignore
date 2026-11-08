@@ -94,5 +94,3 @@ SCRATCH.md
 # 发布核对用的下载目录，按 docs/RELEASE-PROCESS.md 每次新建，不入库
 release-download/
 
-# Pages 示例页由 pages.yml 发布；全局 excludes 常含 /site，这里显式取消忽略
-!/site/

@@ -358,17 +358,3 @@ def test_ci_coverage_does_not_override_the_config_source():
         "仍保留的发布工具必须在覆盖率分母里 —— "
         "它们决定发什么货")
 
-
-def test_pages_site_is_tracked():
-    """pages.yml publishes site/ from a checkout, so an ignored site/ deploys nothing.
-
-    A contributor's global excludes file can ignore /site without any local symptom.
-    """
-    import re
-    workflow = (ROOT / ".github/workflows/pages.yml").read_text(encoding="utf-8")
-    folder = re.search(r"^\s+path:\s*(\S+)\s*$", workflow, re.M).group(1)
-    listed = subprocess.run(["git", "ls-files", folder], cwd=ROOT, capture_output=True,
-                            text=True, encoding="utf-8", check=True, timeout=15).stdout.split()
-    index = (ROOT / folder / "index.html").read_text(encoding="utf-8")
-    linked = {f"{folder}/{name}" for name in re.findall(r'(?:href|src)="([\w.-]+\.(?:html|svg))"', index)}
-    assert linked and {f"{folder}/index.html", *linked} <= set(listed), sorted(set(listed))

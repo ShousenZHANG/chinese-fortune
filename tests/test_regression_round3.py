@@ -169,3 +169,14 @@ def test_a_daylight_saving_birth_asks_which_time_was_written_down():
     assert '夏令时' in edge['say'] and '标准时' in edge['say']
     assert hour_boundary({'applied': True, 'clock_time': '13:30', 'true_solar_time': '12:34'}, 1.0)['kind'] == 'dst_record'
     assert hour_boundary({'applied': True, 'clock_time': '12:30', 'true_solar_time': '12:34'}, 0.0) is None
+
+
+def test_skill_stays_small_and_the_self_check_lives_in_the_contract():
+    # The plan's budget is about 8KB; the named-method index moved to references/23-optional-methods.md.
+    skill = (ROOT / 'skills/chinese-fortune/SKILL.md').read_bytes()
+    assert len(skill) <= 8192
+    assert '点名方法索引' in skill.decode('utf-8')
+    index = (ROOT / 'skills/chinese-fortune/references/23-optional-methods.md').read_text(encoding='utf-8')
+    assert '## 点名方法索引' in index and 'liuyao_cast.py' in index
+    contract = (ROOT / 'skills/chinese-fortune/references/22-output-contract.md').read_text(encoding='utf-8')
+    assert '### 7.4 发出前逐条自查' in contract and '引号里是不是原文' in contract
