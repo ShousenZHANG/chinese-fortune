@@ -27,6 +27,12 @@
 | Time zones and daylight saving guessed | Birth time zone, historical DST, true solar time, solar terms and day boundaries handled separately |
 | Birth details retyped every time | After you confirm, a local profile lets you just say "me" next time |
 
+**Measured** (rounds and method in the [source note](docs/核实记录/2026-11-08-首屏实测数字的来源.md), Chinese):
+
+- Fifth external verification (2026-10-31, 36 tasks, independently computed references): 646/646 reference facts correct, 0/48 fabricated classical quotations, 0/36 out-of-bounds answers.
+- Zi Wei charts against iztro 2.6.5, palace by palace: 903/903 identical.
+- Latest round of 16 hard cases that failed before: only 3 pass strict review. The 90% target is not met yet.
+
 The repository also ships two independent skills: **life-guide** answers everyday questions from the life guide 《高性价比人生指南》 (emergencies get the first action first), and **fortune-extras** does tarot, sun signs and dream symbols. Install only what you need.
 
 ## Install
