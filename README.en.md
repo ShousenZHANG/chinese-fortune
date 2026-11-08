@@ -12,7 +12,7 @@
 
 <img src=".github/assets/hero.svg" alt="Example: asked about a BaZi chart, the answer gives a plain conclusion first, then quotes Zi Ping Zhen Quan with a passage id anyone can look up" width="880">
 
-[中文](README.md) · [Live sample report](https://shousenzhang.github.io/chinese-fortune/) · [Install](#install) · [What to ask](#what-to-ask) · [Why trust it](#why-trust-it) · [Capabilities](#capabilities) · [Update and remove](#update-and-remove)
+[中文](README.md) · [Sample report and share card](site/) · [Install](#install) · [What to ask](#what-to-ask) · [Why trust it](#why-trust-it) · [Capabilities](#capabilities) · [Update and remove](#update-and-remove)
 
 </div>
 
@@ -81,7 +81,8 @@ For a fortune question the AI first asks for the birth details that question nee
 | Your BaZi | Born 1990-05-10 at 14:30, male, Beijing; currently in Sydney. Explain the main BaZi structure in plain language, including applicable conditions and exceptions. |
 | Good days | Which day next month is good for moving? Which of the next seven days are good for me? |
 | An interview slot | I can interview Tuesday morning or Thursday afternoon next week, one hour each. Which one? |
-| Luck cycle, a year | Is my current ten-year cycle favourable? How does 2027 look? |
+| Career, wealth, relationships, study | How do my career and finances look? A quick read of my life areas. |
+| Luck cycle, a year, this week or month | Is my current ten-year cycle favourable? How does 2027 look? How is this week, this month? |
 | Colours to wear | Which colours and accessories suit me? |
 | Almanac, Liu Yao, Qi Men | Can I move house on 29 October? Cast Liu Yao for next Tuesday's interview. Which hour next week suits travel? |
 | A classical text | How does Zi Ping Zhen Quan understand 用神? Explain, then give the passage. |
@@ -94,18 +95,20 @@ Answers come in Chinese: the conclusion first in plain language, then short quot
 | Method | Answers | Basis |
 |---|---|---|
 | BaZi natal chart | structure, 用神, conditions for success or failure | 《子平真诠》 month structure first; 《滴天髓》《穷通宝鉴》《三命通会》《渊海子平》 compared; 8 families, 25 review paths, 46 pattern conditions |
+| Life areas | career, wealth, relationships, study | the star or palace the classics read for each (官星, 财, the spouse palace and star, a woman's 官, 学堂); where it sits in the chart, and which of the current cycle and the next three years carry it, stem or hidden stems alike, each with its passage; no year is called good or bad, no health verdicts |
 | Ten-year luck cycle | conditional readings for each candidate configuration | All eight 《子平真诠》 luck families, 49 scenarios; unresolved conditions and contrary exceptions stay visible |
 | A year (流年) | a named year, this year, next year | 《渊海子平》《三命通会》《滴天髓》 on the year star, listed relation by relation, no total score |
 | Personal good days, periods | which days are good or to avoid | 《协纪辨方书》 vol. 33 相主, graded 大吉 to 大凶 by birth year |
 | Appointment times | interview, exam, travel, moving | 相主 plus event day rules; interviews and exams also 《奇门遁甲元灵经》 |
 | Colours, accessories | what to wear | 《穷通宝鉴》 general 调候 choice (the cell's exceptions not checked against your chart) |
-| Almanac | a day's dos and don'ts | sourced day rules from 《协纪辨方书》《渊海子平》 |
-| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun down to hourly layers; Liu Yao judges the rule-library conditions the chart decides; Qi Men offers the 《遁甲演义》 rotating plate, its volume-two patterns and hour selection; Liu Ren covers all nine transmission methods |
+| Almanac | a day's dos and don'ts, a day for several people | sourced day rules from 《协纪辨方书》《渊海子平》; with several people each gets their own 相主 grade, never a combined score |
+| Zi Wei, Liu Yao, I Ching, Mei Hua, Qi Men, Liu Ren | when you name them | frozen transcriptions, within documented coverage; Zi Wei adds yearly Dou Jun down to hourly layers; Liu Yao judges the rule-library conditions the chart decides, gives candidate timing branches and the opposite and reversed hexagrams, and shows both sides when the book contradicts a rule; Mei Hua casts by object count, sound, length and the 端法 object and direction methods with the book's own timing; Qi Men offers the 《遁甲演义》 rotating plate, its volume-two patterns, hour selection and optional intercalated (置闰) bureau setting; Liu Ren covers all nine transmission methods and the 本命行年 |
 | Marriage, family and partnership pairing | which pillars of two people combine, clash or punish | position-by-position relations and each day master's ten-god view of the other, clauses filtered by relationship type; classified, never scored; marriage also gets the 《选择要略》 three-yuan nine-palace match with its recorded objection |
-| Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; reverse lookup from four pillars to dates |
+| Uncertain or corrected birth data | unsure birth hour, a wrong date | which pillars stay and which change, and which conclusions they touch; both hour pillars when the time sits near an hour boundary or a daylight-saving record is unclear; reverse lookup from four pillars to dates; life events compared across candidate hours without picking one (no classical basis) |
 | Feng Shui facing | which of the 24 mountains a measured bearing falls in | 《协纪辨方书》 24-mountain classification; a measurement error that crosses a boundary asks for a re-measure; no verdicts |
-| Purple-white nine stars | where 五黄 sits this year, which palace gets 紫白 this month | 《协纪辨方书》 vol. 8 year and month tables reproduced cell by cell; with a sitting mountain, marks whether 紫白 reaches it |
+| Purple-white nine stars | where 五黄 sits this year, which palace gets 紫白 this month, day or hour | 《协纪辨方书》 vol. 8 year and month tables reproduced cell by cell, day and hour by 《选择要略》; with a sitting mountain, marks whether 紫白 reaches it |
 | Classical text lookup | passages, editions, context | 15 frozen transcriptions, 557 units, 29,685 paragraphs, offline; the 焦氏易林 in the Sibu Congkan and Siku editions, side by side by hexagram pair |
+| Report and share card | save a report, post an image | `bazi_reading.py --report` saves a review report, `--card` an SVG share card; `--card-redact` hides birth details and stems and branches, keeping ten-god relations, clause status and passage ids |
 | Everyday life (life-guide skill) | layoffs, guarantees, deposits, insurance | 《高性价比人生指南》 660 entries in 34 sections, 8 long articles; emergencies and self-harm get the first action first |
 
 A complete transcription, implemented rules, image collation and predictive validity are separate claims: computable conditions are checked by the scripts, while strength, cooperation and rescue are argued by the AI from the full passages. Tests do not establish predictive accuracy. Supported conventions and input changes are in the [6.0 migration notes](skills/chinese-fortune/docs/MIGRATION-6.0.md).
