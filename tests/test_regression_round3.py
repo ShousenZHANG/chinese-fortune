@@ -120,3 +120,21 @@ def test_a_luck_cycle_or_year_brings_a_star_through_its_branch_too():
     year = next(y for y in career['timing']['years'] if y['ganzhi'] == '丙午')
     assert year['brings_star'] and ('午', '己', '正官') in [tuple(h) for h in year['branch_roles']]
     assert '地支' in career['say'] and '七杀' in career['say']
+
+
+def test_a_stem_only_combination_with_the_year_says_the_books_leave_it_open():
+    # T21: 辛卯 day, 丙午 year. 丙辛 combine but 卯 and 午 do not; 《渊海子平》 writes 「日干支合太岁干支」.
+    from annual_assessment import assess_year
+    from must_cover import annual_scope_items
+
+    def chart(day: str) -> dict:
+        pillars = {k: {'stem': g[0], 'branch': g[1]} for k, g in
+                   (('year', '辛未'), ('month', '辛丑'), ('day', day), ('hour', '丁酉'))}
+        return {'day_master': {'stem': day[0]}, 'four_pillars': pillars, 'hour_known': True}
+    stem_only = assess_year(chart('辛卯'), 2026, '丙午')
+    hit = next(h for h in stem_only['hits'] if h['id'] == 'obscured')
+    assert hit['branches_combine'] is False and '日干支合太岁干支' in hit['scope_note']
+    assert [i['id'] for i in annual_scope_items([stem_only])] == ['annual:obscured:2026']
+    both = assess_year(chart('辛未'), 2026, '丙午')          # 未 and 午 combine as well
+    assert 'scope_note' not in next(h for h in both['hits'] if h['id'] == 'obscured')
+    assert annual_scope_items([both]) == []

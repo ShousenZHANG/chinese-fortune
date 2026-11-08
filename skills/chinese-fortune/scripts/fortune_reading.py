@@ -37,6 +37,7 @@ from fortune_rules import capabilities, evidence, luck_observations, research_re
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
 from luck_assessment import assess_luck, luck_paragraph
+from must_cover import annual_scope_items
 from personal_profiles import birth_arguments, load_profile, validate_person
 from reading_views import facts_line, write_facts
 from request_time import capture_request_time, is_zone
@@ -381,6 +382,9 @@ def read_request(payload: dict, *, data_dir: Path | None = None,
     for person in people:
         result['participants'].append(_participant(person, payload, event, now, window, grain=grain,
                                                    focus=focus, include=include, cache=cache))
+    must = annual_scope_items([r for person in result['participants'] for r in person.get('annual_reading') or []])
+    if must:
+        result['must_cover'] = must
     result['evidence'] = evidence()
     if capability['route'] == 'selection':
         _screen_selection(result, payload, event, scenario)

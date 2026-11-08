@@ -13,6 +13,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
   - 六爻命中的条款若有书内反例（如化空：c029 列为化凶，c027 说「動而化空…不爲空」），结果里附上反例，`must_cover` 要求两边都写出处。问装卦时，`must_cover` 要求每一爻写出纳支、六神、六亲。
   - 大运、流年带不带某颗星，同时看地支藏干（如戌中戊为七杀）。
   - `answer_check` 新增两条 error：把注文当原书正文引用；引古籍原文时旁边既没书名也没段号。
+  - 流年「晦」只有天干相合、地支不合时，结果写明《渊海子平》原句是「日干支合太岁干支」，而《三命通会》只说日干；`must_cover` 要求答到这一点。
 
 - **技能目录瘦身**：557 个章节、576 个原始来源和约 660 个随包第三方文件分别打包成 `knowledge/books.zip`、`knowledge/sources.zip` 和 `scripts/vendor.zip`。chinese-fortune 技能目录从 1,972 个文件（29MB）降到 167 个文件（12.6MB，其中文本约 3.2MB），安装更快。检索、自检和构建直接从压缩包读，字节与记录的 SHA-256 不变；维护时用 `corpus_archive.py unpack/pack`。发行 zip 里的章节也改为 `knowledge/books.zip`。
 - **回答交付**（来自 v6.0 宿主实测）：紫微每一层运限列出四化星各在哪一宫，`answer_check` 发现只列星不列宫时给 warning；说「书里没有」而不写随包转录范围时给 warning；三元九宫合卦的 `say` 写出起宫、顺逆和步数；时区说明写出所用的 IANA 数据库版本；SKILL.md 要求未判项写补全路径，工具累计超过约三分钟先交付已算完的部分。

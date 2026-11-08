@@ -86,3 +86,10 @@ def liuyao_line_items(question: str, lines: list[dict]) -> list[dict]:
     return [item(f"liuyao:line{ln['position']}",
                  f"第{ln['position']}爻写出纳支{ln['branch']}、六神{ln['liu_shen']}、六亲{ln['liu_qin']}",
                  [ln['liu_shen']], [ln['branch']], [ln['liu_qin']]) for ln in lines]
+
+
+def annual_scope_items(readings: list[dict]) -> list[dict]:
+    """A 流年 relation the tool found only in part, with the books' wording that leaves it open (R3 T21)."""
+    return [item(f"annual:{hit['id']}:{reading.get('year')}", hit['scope_note'],
+                 ['只有天干', '只合天干', '天干相合', '干合'], ['不合', '没合', '未合', '都合', '没说清'])
+            for reading in readings or [] for hit in reading.get('hits') or [] if hit.get('scope_note')]
