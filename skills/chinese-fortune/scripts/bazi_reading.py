@@ -20,6 +20,7 @@ from bazi_derivation import asks_derivation, derivation_steps, offset_sentence
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
+from life_areas import areas_asked, life_areas
 from luck_assessment import assess_luck, luck_paragraph
 from must_cover import geju_items
 from reading_views import compact_reading, facts_line, write_card, write_facts, write_report
@@ -428,6 +429,10 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
             for scenario in reading.get('scenarios', []):
                 extra_ids.extend(scenario['source_passage_ids'])
             extra_ids.extend(n['passage_id'] for n in reading.get('notes', []))
+    areas = areas_asked(question)
+    if areas:
+        extra['life_areas'] = life_areas(clean, (chart.get('input') or {}).get('gender'), areas)
+        extra_ids.extend(s['passage_id'] for area in extra['life_areas']['areas'] for s in area['sources'])
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     years = years_asked(question, _reference_year(clean))
     if years:
@@ -628,7 +633,8 @@ def _cycle_parts(result: dict) -> list[str]:
     for index, reading in enumerate(result.get('luck_reading', [])):
         text = luck_paragraph(reading)
         parts.append(text if index == 0 else text.replace('你现在走的', '下一步是', 1))
-    return parts + [annual_paragraph(r) for r in result.get('annual_reading', [])]
+    areas = [f"{a['label']}：{a['say']}" for a in (result.get('life_areas') or {}).get('areas', [])]
+    return parts + [annual_paragraph(r) for r in result.get('annual_reading', [])] + areas
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -636,7 +642,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.description = '八字白话解读准备：盘面事实、固定主体系、可追溯原文'
     parser.epilog = ('Top-level JSON keys: ok tool version schema_version question method_profile '
                      'chart_facts observed_structure reading_support rule_assessment geju_review evidence_bundle climate_review next_checks '
-                     'output_policy boundary host_notes; optional: luck_reading annual_reading report card; compact: view evidence_index observations details; errors: error message')
+                     'output_policy boundary host_notes; optional: luck_reading annual_reading life_areas must_cover report card; compact: view evidence_index observations details; errors: error message')
     parser.add_argument('--question', default='', help='本次最关心的问题')
     parser.add_argument('--markdown', action='store_true', help='输出简短盘面说明，非完整个人判断')
     parser.add_argument('--view', choices=('full', 'compact'), default='full',

@@ -15,11 +15,13 @@ from __future__ import annotations
 
 import argparse
 import sys
-from datetime import datetime
+from datetime import date, datetime
 
 from qimen_dingju import (
     SOURCE_URL,
+    ZHIRUN_SOURCES,
     determine_ju,
+    determine_ju_zhirun,
     futou,
     seasonal_context,
     zhi_shi_position,
@@ -358,8 +360,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="手动指定 阳遁/阴遁 (覆盖自动算法)")
     p.add_argument("--ju-number", type=int, default=None,
                    help="手动指定 局数 1..9 (与 --ju-type 配合)")
-    p.add_argument("--ju-method", choices=["futou", "legacy-days"], default="futou",
-                   help="定局口径: 默认符头三元+实交节; legacy-days仅复现旧节气日数法")
+    p.add_argument("--ju-method", choices=["futou", "zhirun", "legacy-days"], default="futou",
+                   help="定局口径: 默认符头三元+实交节（拆补）; zhirun 按《遁甲演义》超神接气置闰; legacy-days仅复现旧节气日数法")
     p.add_argument('--plate-method', choices=['yuanling-core', 'dunjia-zhuanpan', 'rotating-compat'],
                    default='yuanling-core',
                    help='默认输出元灵经已核地盘及值符值使；dunjia-zhuanpan 按遁甲演义转盘排全盘并判格局；'
@@ -432,6 +434,17 @@ def main(argv: list[str] | None = None) -> int:
             if args.ju_method == "legacy-days":
                 jq_name, days_since = jieqi_context(y, m, d)
                 ju_type, san_yuan, ju_number = determine_ju_legacy(jq_name, days_since)
+            elif args.ju_method == "zhirun":
+                ju_type, san_yuan, ju_number, zhirun = determine_ju_zhirun(date(y, m, d))
+                jq_name = zhirun['term']
+                term_context = {'name': jq_name, 'method': 'zhirun', **zhirun,
+                                'sources': [{'passage_id': pid, 'quote': q, 'use': use} for pid, q, use in ZHIRUN_SOURCES],
+                                'difference': '拆补（默认）按实交节换节气、符头定元；置闰按符头连排，超神时提前用下一节气，'
+                                              '芒种大雪超九日以上重排一个节气。两法在超神、接气、闰奇的日子定局不同'}
+                day_futou, _ = futou(day_gz)
+                if args.plate_method == 'dunjia-zhuanpan':
+                    json_print(error_envelope('qimen', 'unsupported', 'dunjia-zhuanpan 全盘暂只接拆补定局；置闰请用默认地盘'))
+                    return 1
             else:
                 if args.plate_method == 'dunjia-zhuanpan':
                     automatic_dunjia = dunjia_futou(dt, datetime(y, m, d, hh, mm, dt.second))
@@ -531,7 +544,7 @@ def main(argv: list[str] | None = None) -> int:
             "futou": day_futou,
             "solar_term": term_context,
             "day_boundary": "当地有效钟面00:00换日；23:00小时干支按历库晚子时规则",
-            "intercalation": "none",
+            "intercalation": "超神接气置闰（芒种、大雪超九日以上重排）" if args.ju_method == "zhirun" else "none",
             "scope": {"yuanling-core": "已核地盘、旬首、值符原星及落宫、值使计数；空值为待核，不表示无星无门",
                       "dunjia-zhuanpan": ("遁甲演义转盘：八宫环整体转、中五寄坤二、八神阳顺阴逆；格局照卷二原文判，"
                                           "与元灵经不同书，source_core 单列元灵经结果"),

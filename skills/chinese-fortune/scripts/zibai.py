@@ -6,9 +6,13 @@
 - 飞布：入中之星顺布九宫，中→乾→兑→艮→离→坎→坤→震→巽（同段康熙甲子例）。
 - 换年按立春、换月按节，北京时间（xieji:c034:p0024「如已過立春後年月凶神方位已定」，xieji:c020:p0003「立春正月節」）。
 
+- 日、时：《协纪》未载，按《选择要略》三元日白、时白法（xuanze:c002:p0232–p0250）。冬至后阳遁、夏至后阴遁；
+  日白以「冬至前後甲子」「雨水前後甲子」「穀雨前後甲子」分三元（夏至一侧为处暑、霜降），「前後」取离节气最近的
+  甲子日，这是本工具的读法，正好隔三十天时两个都列。时白按日支分元（子午卯酉上元等），从甲子时数起。阳遁顺飞、
+  阴遁逆飞。两遁之间多出的甲子旬（置闰）原文没说怎么排，不算。
+
 只排星，不判每颗星吉凶。《协纪》所引宗镜说某方「得年家月家之紫白」也可修（xieji:c034:p0016），
 《选择要略》说「遇三白，九紫」（xuanze:c002:p0532）；这里只标一白、六白、八白、九紫是否到方。
-日、时紫白《协纪》未载；《选择要略》的日白法以「冬至前後甲子」分元，取哪个甲子原文未定，所以不算。
 
 CLI:
     python zibai.py --date 2026-11-08 [--time 09:30] [--sitting 子]
@@ -18,7 +22,8 @@ from __future__ import annotations
 import argparse
 import re
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta
+from functools import lru_cache
 from typing import Any
 
 from fengshui_measure import MOUNTAINS, PALACE
@@ -51,8 +56,8 @@ SOURCES = (
     ('xieji:c034:p0016', '得年家月家之紫白或太陽三竒亦可修也', '紫白到方'),
     ('xuanze:c002:p0532', '遇三白，九紫', '哪几颗算紫白'),
 )
-NOT_COMPUTED = [{'item': '日紫白、时紫白',
-                 'reason': '《协纪辨方书》未载；《选择要略》日白法以「冬至前後甲子」分元，取冬至前还是后的甲子原文未定'}]
+NOT_COMPUTED = [{'item': '两遁之间多出的甲子旬（置闰）的日白',
+                 'reason': '《选择要略》只给冬至、夏至前后甲子起三元，三元满一百八十天后到下一遁之前怎么排原文没说'}]
 
 
 def _star(number: int) -> int:
@@ -69,8 +74,97 @@ def month_center(group: int, month_index: int) -> int:
     return _star(MONTH_START[group] - month_index)
 
 
-def layout(center: int) -> dict[str, str]:
-    return {palace: STARS[_star(center + i) - 1] for i, palace in enumerate(PALACE_ORDER)}
+def layout(center: int, reverse: bool = False) -> dict[str, str]:
+    """顺飞：中→乾→兑…各加一；逆飞（阴遁日白、时白）各减一。"""
+    step = -1 if reverse else 1
+    return {palace: STARS[_star(center + step * i) - 1] for i, palace in enumerate(PALACE_ORDER)}
+
+
+# 《选择要略》三元日白、时白：阳遁（冬至后）上中下元甲子起一白、七赤、四绿，顺数；阴遁（夏至后）起九紫、三碧、六白，逆数。
+YANG_START, YIN_START = (1, 7, 4), (9, 3, 6)
+HOUR_GROUP = {b: i for i, group in enumerate(('子午卯酉', '辰戌丑未', '寅申巳亥')) for b in group}
+DAY_HOUR_SOURCES = (
+    ('xuanze:c002:p0234', '冬至前後甲子爲上元，雨水前後甲子爲中元，穀雨前後甲子爲下元', '阳遁日白三元'),
+    ('xuanze:c002:p0235', '上元甲子日', '上元甲子日起一白'),
+    ('xuanze:c002:p0238', '却以直日星入中宮順飛入方', '阳遁日白顺飞'),
+    ('xuanze:c002:p0240', '夏至前後甲子爲上元，處暑前後甲子爲中元，霜降前後甲子爲下元', '阴遁日白三元'),
+    ('xuanze:c002:p0244', '却以直日星又中宮逆飛入方', '阴遁日白逆飞'),
+    ('xuanze:c002:p0246', '四仲日爲上元，以甲子時', '阳遁时白按日支分元'),
+    ('xuanze:c002:p0247', '却以直時星入中宮順飛入方', '阳遁时白顺飞'),
+    ('xuanze:c002:p0249', '四仲日爲上元，以甲子時', '阴遁时白按日支分元'),
+    ('xuanze:c002:p0250', '却以直時星，入中宮逆飛入方', '阴遁时白逆飞'),
+)
+
+
+@lru_cache(maxsize=64)
+def _solstices(year: int) -> list[tuple[datetime, str]]:
+    from lunar_python import Solar
+    found: dict[str, tuple[datetime, str]] = {}
+    for y in (year - 1, year, year + 1):
+        table = Solar.fromYmd(y, 6, 1).getLunar().getJieQiTable()
+        for key, name in (('冬至', '冬至'), ('DONG_ZHI', '冬至'), ('夏至', '夏至')):
+            moment = datetime.strptime(table[key].toYmdHms(), '%Y-%m-%d %H:%M:%S')
+            found[moment.isoformat()] = (moment, name)
+    return sorted(found.values())
+
+
+@lru_cache(maxsize=4096)
+def _jiazi_day(when: date) -> int:
+    lunar = _lunar(when, 12, 0)
+    gz = lunar.getDayInGanZhi()
+    return jiazi_index(gz[0], gz[1])
+
+
+def _yuan_start(term: date) -> list[date]:
+    """The 甲子 day nearest the solstice; two when it falls exactly between them."""
+    back = _jiazi_day(term)
+    forward = (60 - back) % 60
+    if back < forward:
+        return [term - timedelta(days=back)]
+    if forward < back:
+        return [term + timedelta(days=forward)]
+    return [term - timedelta(days=back), term + timedelta(days=forward)]
+
+
+def day_star(when: date) -> dict:
+    starts = sorted((start, name, len(_yuan_start(moment.date())) > 1)
+                    for moment, name in _solstices(when.year) for start in _yuan_start(moment.date()))
+    current = [row for row in starts if row[0] <= when]
+    if not current:
+        return {'status': 'not_computed', 'reason': '日期早于可推的遁起点'}
+    start, term, tie = current[-1]
+    k = (when - start).days
+    if k >= 180:
+        return {'status': 'not_computed',
+                'reason': f'{start.isoformat()} 起的{term}遁三元已满一百八十天，下一遁的甲子还没到；多出的这一旬原文没说怎么排'}
+    yuan, index = divmod(k, 60)
+    yang = term == '冬至'
+    center = _star((YANG_START if yang else YIN_START)[yuan] + (index if yang else -index))
+    return {'status': 'computed', 'dun': '阳遁' if yang else '阴遁', 'term': term, 'yuan': YUAN[yuan],
+            'yuan_start': start.isoformat(), 'start_tie': tie, 'center': STARS[center - 1],
+            'palaces': layout(center, reverse=not yang),
+            'convention': f'「{term}前後甲子」取离{term}最近的甲子日' + ('；正好隔三十天，另一个甲子也可取' if tie else '')}
+
+
+def hour_star(when: date, hour: int, minute: int) -> dict:
+    lunar = _lunar(when, hour, minute)
+    moment = datetime(when.year, when.month, when.day, hour, minute)
+    term = [name for at, name in _solstices(when.year) if at <= moment][-1]
+    yang = term == '冬至'
+    # 甲子时只落在甲、己日，而甲子、甲午、己卯、己酉都是四仲日，所以「四仲日爲上元，以甲子時起一白，乙丑二黑」
+    # 读作：甲子时所在那天（符头）的日支定元，此后五日六十时按时干支连数。lunar_python 改按当日日支、子时起算。
+    day_gz = lunar.getDayInGanZhiExact()
+    day_index = jiazi_index(day_gz[0], day_gz[1])
+    head = day_index - day_index % 5
+    head_gz = '甲乙丙丁戊己庚辛壬癸'[head % 10] + '子丑寅卯辰巳午未申酉戌亥'[head % 12]
+    group = HOUR_GROUP[head_gz[1]]
+    gz = lunar.getTimeInGanZhi()
+    index = jiazi_index(gz[0], gz[1])
+    center = _star((YANG_START if yang else YIN_START)[group] + (index if yang else -index))
+    return {'status': 'computed', 'dun': '阳遁' if yang else '阴遁', 'head_day': head_gz,
+            'yuan': YUAN[group], 'hour_ganzhi': gz, 'center': STARS[center - 1], 'palaces': layout(center, reverse=not yang),
+            'convention': f'甲子时所在的{head_gz}日（{head_gz[1]}）定元，从甲子时连数到{gz}时；'
+                          'lunar_python 的时家九星按当日日支、子时起算，两者在非甲、己日不同'}
 
 
 def _parse(day: str, time: str | None) -> tuple[date, int, int]:
@@ -120,9 +214,13 @@ def _directions(chart: dict, sitting: list[str]) -> list[dict]:
         for role, name in (('坐', mountain), ('向', OPPOSITE[mountain])):
             palace = PALACE[name]
             year_star, month_star = chart['year']['palaces'][palace], chart['month']['palaces'][palace]
-            rows.append({'role': role, 'mountain': name, 'palace': palace, 'year_star': year_star,
-                         'month_star': month_star, 'year_zibai': year_star in ZIBAI, 'month_zibai': month_star in ZIBAI,
-                         'zibai_to_direction': year_star in ZIBAI or month_star in ZIBAI})
+            row = {'role': role, 'mountain': name, 'palace': palace, 'year_star': year_star,
+                   'month_star': month_star, 'year_zibai': year_star in ZIBAI, 'month_zibai': month_star in ZIBAI,
+                   'zibai_to_direction': year_star in ZIBAI or month_star in ZIBAI}
+            for level in ('day', 'hour'):
+                if (chart.get(level) or {}).get('status') == 'computed':
+                    row[f'{level}_star'] = chart[level]['palaces'][palace]
+            rows.append(row)
     return rows
 
 
@@ -131,6 +229,11 @@ def _say(chart: dict) -> str:
     text = (f"{cal['year_number']}年{cal['year_ganzhi']}属{year['yuan']}，{year['center']}入中；"
             f"{cal['month_name']}（{cal['month_branch']}月）{month['center']}入中，"
             f"年星{year['center']}在月盘落{month['year_star_palace']}宫。")
+    day, hour = chart.get('day') or {}, chart.get('hour') or {}
+    if day.get('status') == 'computed':
+        text += f"日白按《选择要略》：{day['dun']}{day['yuan']}，{day['center']}入中。"
+    if hour.get('status') == 'computed':
+        text += f"时白：{hour['hour_ganzhi']}时{hour['center']}入中。"
     for row in chart.get('directions', []):
         mark = '，紫白到' if row['zibai_to_direction'] else ''
         text += f"{row['role']}{row['mountain']}（{row['palace']}宫）年星{row['year_star']}、月星{row['month_star']}{mark}；"
@@ -159,7 +262,11 @@ def zibai(day: str, time: str | None = None, sitting: list[str] | None = None) -
                 'say': f"{day} 是{jie.getName()}日，交节在 {moment[11:16]}（北京时间），交节前后入中星不同；"
                        '给 --time 再算，两种都列在 candidates。'}
     chart = _chart(when, hour, minute)
+    chart['day'] = day_star(when)
+    chart['hour'] = hour_star(when, hour, minute) if time is not None else {
+        'status': 'not_computed', 'reason': '没给 --time，不排时白'}
     chart['directions'] = _directions(chart, list(sitting or []))
+    sources += [{'passage_id': pid, 'quote': quote, 'use': use} for pid, quote, use in DAY_HOUR_SOURCES]
     return {**base, **chart, 'say': _say(chart)}
 
 

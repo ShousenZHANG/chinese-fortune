@@ -81,7 +81,8 @@ def test_a_date_gives_year_and_month_with_sources_and_no_star_judgements():
     for source in out['sources']:
         assert source['quote'] in _text(source['passage_id']), source
     assert '吉' not in json.dumps(out['year'], ensure_ascii=False)
-    assert any('日' in item['item'] and '时' in item['item'] for item in out['not_computed'])
+    assert any('置闰' in item['item'] for item in out['not_computed'])
+    assert out['day']['status'] == 'computed' and out['hour']['status'] == 'not_computed'
 
 
 def test_year_starts_at_lichun_and_a_boundary_day_without_time_keeps_both():
@@ -139,3 +140,65 @@ def test_bad_dates_are_input_errors(date):
 def test_router_sends_zibai_questions_to_the_tool(question, expected):
     from question_router import route
     assert ('zibai.py' in (route(question).get('command') or '')) is expected
+
+
+def _find(start, wanted, yang, hour=12):
+    """First date from start whose (exact) day ganzhi is wanted, inside the asked 遁."""
+    from datetime import timedelta
+
+    from lunar_python import Solar
+    from zibai import day_star
+    d = start
+    for _ in range(400):
+        lunar = Solar.fromYmdHms(d.year, d.month, d.day, hour, 0, 0).getLunar()
+        if lunar.getDayInGanZhiExact() == wanted and day_star(d).get('dun') == ('阳遁' if yang else '阴遁'):
+            return d
+        d += timedelta(days=1)
+    raise AssertionError(wanted)
+
+
+def test_day_white_counts_from_the_jiazi_nearest_the_solstice():
+    from datetime import date, timedelta
+
+    from zibai import day_star
+    first = date.fromisoformat(day_star(date(2025, 12, 25))['yuan_start'])   # 2025 年冬至前后的甲子
+    rows = [day_star(first + timedelta(days=k)) for k in (0, 1, 60, 120)]
+    assert [(r['yuan'], r['center']) for r in rows] == [('上元', '一白'), ('上元', '二黑'), ('中元', '七赤'), ('下元', '四绿')]
+    yin = date.fromisoformat(day_star(date(2026, 6, 25))['yuan_start'])      # 2026 年夏至前后的甲子
+    rows = [day_star(yin + timedelta(days=k)) for k in (0, 1, 60, 120)]
+    assert [(r['yuan'], r['center']) for r in rows] == [('上元', '九紫'), ('上元', '八白'), ('中元', '三碧'), ('下元', '六白')]
+    # 阴遁逆飞：中九紫，乾八白。
+    assert rows[0]['palaces']['中'] == '九紫' and rows[0]['palaces']['乾'] == '八白'
+
+
+def test_day_white_agrees_with_lunar_python_outside_ties_and_gaps():
+    from datetime import date, timedelta
+
+    from lunar_python import Solar
+    from zibai import day_star
+    agree = total = 0
+    d = date(1990, 1, 1)
+    while d < date(2031, 1, 1):
+        row = day_star(d)
+        if row['status'] == 'computed' and not row['start_tie']:
+            star = Solar.fromYmdHms(d.year, d.month, d.day, 12, 0, 0).getLunar().getDayNineStar().getNumber()
+            agree += str(star) in (row['center'][0], str('一二三四五六七八九'.index(row['center'][0]) + 1))
+            total += 1
+        d += timedelta(days=7)
+    assert agree == total, (agree, total)
+
+
+def test_hour_white_counts_from_the_jiazi_hour_and_its_day_sets_the_yuan():
+    from datetime import date
+
+    from zibai import hour_star
+    for day_gz, yuan, first in (('甲子', '上元', '一白'), ('甲戌', '中元', '七赤'), ('甲寅', '下元', '四绿')):
+        d = _find(date(2026, 1, 1), day_gz, yang=True, hour=0)
+        row = hour_star(d, 0, 30)
+        assert (row['hour_ganzhi'], row['yuan'], row['center']) == ('甲子', yuan, first), day_gz
+    d = _find(date(2026, 1, 1), '甲子', yang=True, hour=0)
+    assert hour_star(d, 2, 0)['center'] == '二黑'          # 乙丑时
+    nxt = _find(date(2026, 1, 1), '乙丑', yang=True, hour=0)
+    assert hour_star(nxt, 0, 30)['center'] == '四绿'       # 丙子时：仍是甲子日起的上元，第十三时
+    yin = _find(date(2026, 6, 25), '甲子', yang=False, hour=0)
+    assert hour_star(yin, 0, 30)['center'] == '九紫' and hour_star(yin, 2, 0)['center'] == '八白'

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 用法问题与讨论
+    url: https://github.com/ShousenZHANG/chinese-fortune/discussions
+    about: 怎么问、怎么装、结果怎么读，到 Discussions 提问。

@@ -284,7 +284,48 @@ def build_parser() -> argparse.ArgumentParser:
                    help="所问之事, 例如「这天搬家可以吗」; 用于 --markdown 的首句")
     p.add_argument("--markdown", action="store_true",
                    help="输出白话回答而非 JSON")
+    p.add_argument("--person", action="append", default=[], metavar="称呼=出生年干支或出生日期",
+                   help="多人筛日：每人一项，如 爸爸=1962-03-01 或 我=庚午；按《协纪辨方书》相主各给等级，不合成总分")
     return p
+
+
+def _birth_year(value: str) -> str:
+    """出生年干支：直接给干支，或给公历出生日期（按立春换年）。"""
+    from datetime import date as _date
+
+    from lunar_python import Solar  # type: ignore
+    if len(value) == 2 and value[0] in '甲乙丙丁戊己庚辛壬癸' and value[1] in '子丑寅卯辰巳午未申酉戌亥' \
+            and ('甲乙丙丁戊己庚辛壬癸'.index(value[0]) - '子丑寅卯辰巳午未申酉戌亥'.index(value[1])) % 2 == 0:
+        return value
+    try:
+        born = _date.fromisoformat(value)
+    except ValueError:
+        raise ValueError(f'出生年要写成干支（如 庚午）或公历日期 YYYY-MM-DD：{value!r}') from None
+    return Solar.fromYmdHms(born.year, born.month, born.day, 12, 0, 0).getLunar().getYearInGanZhiExact()
+
+
+def people_grades(people: list[str], day: str, zone: str) -> dict:
+    """Each person's 相主 grade for the day, side by side; never one combined score."""
+    from datetime import date as _date
+
+    from xiangzhu import assess_day, date_pillars, label_of
+    pillars = date_pillars(_date.fromisoformat(day), zone)
+    rows: list[dict] = []
+    for entry in people:
+        label, sep, value = entry.partition('=')
+        if not sep or not label.strip() or not value.strip():
+            raise ValueError(f'--person 写成 称呼=出生年干支或出生日期：{entry!r}')
+        birth = _birth_year(value.strip())
+        graded = assess_day(birth, pillars, label.strip())
+        rows.append({'label': label.strip(), 'birth_year': birth, 'grade': graded['grade'],
+                     'factors': [{'label': label_of(f), 'grade': f.get('grade'), 'plain': f.get('plain')}
+                                 for f in graded['factors']]})
+    worst = [str(r['label']) for r in rows if r['grade'] in ('凶', '大凶')]
+    return {'pillars': pillars, 'rows': rows, 'combined': None,
+            'say': '；'.join(f"{r['label']}（{r['birth_year']}年生）{r['grade']}" for r in rows) + '。'
+                   + (f"对{'、'.join(worst)}是凶日，按相主不宜为{'、'.join(worst)}选这天。" if worst else ''),
+            'note': '各人分别列出，不合成总分；同一天对任何一人凶，就照说对那个人凶（xieji:c033:p0020 论生年）',
+            'passage_id': 'xieji:c033:p0020'}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -411,6 +452,14 @@ def main(argv: list[str] | None = None) -> int:
             "next": {"name": next_jq.getName(), "solar": str(next_jq.getSolar())} if next_jq else None,
         },
     }
+
+    if args.person:
+        try:
+            out["people"] = people_grades(args.person, f"{dt.year:04d}-{dt.month:02d}-{dt.day:02d}",
+                                          (time_context or {}).get('timezone') or 'Asia/Shanghai')
+        except ValueError as exc:
+            json_print(error_envelope('huangli', 'invalid_input', str(exc)))
+            return 1
 
     from fortune_ranking import day_prohibitions
     exact_day, exact_month = lunar.getDayInGanZhiExact(), lunar.getMonthZhiExact()
