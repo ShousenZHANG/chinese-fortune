@@ -48,6 +48,12 @@ def compact_reading(result: dict) -> dict:
             if isinstance(compact['chart_facts'].get(block), dict):
                 for key in keys:
                     compact['chart_facts'][block].pop(key, None)
+    # The month name and element counts are stated through their say lines; the tables stay in the full view.
+    if isinstance(compact['chart_facts'].get('month_name'), dict):
+        compact['chart_facts']['month_name'] = {'say': compact['chart_facts']['month_name']['say']}
+    if isinstance(compact['chart_facts'].get('wuxing_counts'), dict) and not any(
+            word in (result.get('question') or '') for word in ('五行', '缺', '藏干')):
+        compact['chart_facts']['wuxing_counts'] = {'say': compact['chart_facts']['wuxing_counts']['say']}
     assessment = compact['rule_assessment']
     pool: dict[str, dict] = {}
     condition_keys: dict[str, str] = {}
@@ -117,7 +123,8 @@ def compact_reading(result: dict) -> dict:
         'luck_refs': 'scenario_ref 指向 luck_index.scenarios，verdict_refs 指向 luck_index.verdicts；条件、反例及未判原因无删减',
         'omitted_fields': ['chart_facts.liu_nian', 'evidence_bundle', 'reading_support',
                            'chart_facts.calendar_context.year_month_basis/precision', 'chart_facts.qi_yun.method/source',
-                           'observed_structure', 'rule_assessment.routes.conditions.facts'],
+                           'observed_structure', 'rule_assessment.routes.conditions.facts',
+                           'chart_facts.month_name (say kept)', 'chart_facts.wuxing_counts tables unless asked'],
     }
     return compact
 

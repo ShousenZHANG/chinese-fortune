@@ -10,7 +10,16 @@ from __future__ import annotations
 
 from datetime import date, datetime, timedelta
 
-from utils import DIZHI, TIANGAN, hour_branch, jiazi_index, parse_iso
+from utils import (
+    DIZHI,
+    DIZHI_WUXING,
+    HIDDEN_STEMS,
+    TIANGAN,
+    TIANGAN_WUXING,
+    hour_branch,
+    jiazi_index,
+    parse_iso,
+)
 
 # 1900-01-01 was a 甲戌 day, number 11 (index 10) of the sixty.
 ANCHOR = date(1900, 1, 1)
@@ -138,32 +147,45 @@ def _branch_at(minute: int) -> str:
     return hour_branch((minute // 60) % 24)
 
 
-def hour_boundary(tst: dict) -> dict | None:
+def hour_boundary(tst: dict, dst_hours: float = 0.0) -> dict | None:
     """The hour branch the birth time falls in, and the neighbour it nearly is.
 
     Returned when the time used for the hour pillar (true solar time when applied, else the clock) is within
-    BOUNDARY_MINUTES of a 时辰 edge, or when the clock reading alone would give another branch.
+    BOUNDARY_MINUTES of a 时辰 edge, when the standard-time clock alone would give another branch, or when a
+    daylight-saving birth would land in another branch had the clock already been standard time (R4 N02: the
+    raw DST clock is not a second method, the question is which time was written down).
     """
     used = _minute_of_day(tst.get('true_solar_time') if tst.get('applied') else tst.get('clock_time'))
     clock = _minute_of_day(tst.get('clock_time'))
     if used is None:
         return None
-    since = (used - 60) % 120          # minutes since the current 时辰 began
+    shift = round(dst_hours * 60)
+    if not tst.get('applied'):
+        used -= shift
     branch = _branch_at(used)
+    which = '真太阳时' if tst.get('applied') else '标准时'
+    if shift:
+        recorded_as_standard = _branch_at(used + shift)
+        if recorded_as_standard != branch:
+            say = (f"出生时当地行夏令时：钟表 {tst.get('clock_time')} 若是夏令时，扣回 {shift} 分钟后按{which}是{branch}时；"
+                   f"若当时记的已是标准时，就是{recorded_as_standard}时。要问清出生时间记的是哪种，"
+                   "用到时柱的结论两种都说。")
+            return {'branch': branch, 'clock_branch': recorded_as_standard, 'other_branch': recorded_as_standard,
+                    'minutes_to_boundary': None, 'time_used': which, 'kind': 'dst_record', 'say': say}
+    since = (used - 60) % 120          # minutes since the current 时辰 began
     before, after = since, 120 - since
     other, gap = (_branch_at(used - 1 - since), before) if before <= after else (_branch_at(used + after), after)
-    clock_branch = _branch_at(clock) if clock is not None else branch
+    clock_branch = _branch_at(clock - shift) if clock is not None else branch
     if gap > BOUNDARY_MINUTES and clock_branch == branch:
         return None
     if clock_branch != branch:
         other = clock_branch
-    which = '真太阳时' if tst.get('applied') else '钟表时间'
-    say = (f"按{which} {tst.get('true_solar_time') if tst.get('applied') else tst.get('clock_time')} 是{branch}时，"
-           f"离{other}时只差 {gap} 分钟" if gap <= BOUNDARY_MINUTES else
+    shown = tst.get('true_solar_time') if tst.get('applied') else tst.get('clock_time')
+    say = (f"按{which} {shown} 是{branch}时，离{other}时只差 {gap} 分钟" if gap <= BOUNDARY_MINUTES else
            f"按{which}是{branch}时，按钟表 {tst.get('clock_time')} 是{other}时")
     say += f"：出生时间差这么一点，时柱就换成{other}时，用到时柱的结论要两种都说。"
     return {'branch': branch, 'clock_branch': clock_branch, 'other_branch': other, 'minutes_to_boundary': gap,
-            'time_used': which, 'say': say}
+            'time_used': which, 'kind': 'edge' if gap <= BOUNDARY_MINUTES else 'clock', 'say': say}
 
 
 def _day_step(facts: dict) -> dict:
@@ -247,3 +269,43 @@ def derivation_steps(facts: dict) -> list[dict]:
     luck = _luck_step(facts)
     return steps + ([luck] if luck else [])
 
+
+
+# 节气月 → 传统月名 (R4 T05 called a 丑 month 「冬月」, the name of the 子 month).
+MONTH_NAMES = {'寅': ('孟春', '正月', '立春', '惊蛰'), '卯': ('仲春', '二月', '惊蛰', '清明'),
+               '辰': ('季春', '三月', '清明', '立夏'), '巳': ('孟夏', '四月', '立夏', '芒种'),
+               '午': ('仲夏', '五月', '芒种', '小暑'), '未': ('季夏', '六月', '小暑', '立秋'),
+               '申': ('孟秋', '七月', '立秋', '白露'), '酉': ('仲秋', '八月', '白露', '寒露'),
+               '戌': ('季秋', '九月', '寒露', '立冬'), '亥': ('孟冬', '十月', '立冬', '大雪'),
+               '子': ('仲冬', '冬月（十一月）', '大雪', '小寒'), '丑': ('季冬', '腊月（十二月）', '小寒', '立春')}
+ELEMENTS = ('木', '火', '土', '金', '水')
+
+
+def month_name(branch: str | None) -> dict | None:
+    if branch not in MONTH_NAMES:
+        return None
+    season, name, start, end = MONTH_NAMES[branch]
+    return {'branch': branch, 'season': season, 'name': name, 'from_term': start, 'to_term': end,
+            'say': f"月令{branch}：节气月从{start}到{end}，传统称{season}、{name}；节气月和农历月不完全对齐，不按农历日期改称。"}
+
+
+def wuxing_counts(pillars: dict, hour_known: bool = True) -> dict:
+    """Unweighted element counts of the eight characters and, separately, of the hidden stems (R4 T22 miscounted)."""
+    keys = [k for k in ('year', 'month', 'day', 'hour') if k != 'hour' or hour_known]
+    surface = dict.fromkeys(ELEMENTS, 0)
+    hidden = dict.fromkeys(ELEMENTS, 0)
+    for key in keys:
+        pillar = pillars.get(key) or {}
+        if pillar.get('stem') in TIANGAN_WUXING:
+            surface[TIANGAN_WUXING[pillar['stem']]] += 1
+        if pillar.get('branch') in DIZHI_WUXING:
+            surface[DIZHI_WUXING[pillar['branch']]] += 1
+        for stem in HIDDEN_STEMS.get(pillar.get('branch') or '', []):
+            hidden[TIANGAN_WUXING[stem]] += 1
+    def row(counts: dict) -> str:
+        return ' '.join(f'{e}{counts[e]}' for e in ELEMENTS)
+    scope = '四柱' if hour_known else '年月日三柱（时辰未知）'
+    return {'pillars_counted': keys, 'surface': surface, 'surface_total': sum(surface.values()),
+            'hidden': hidden, 'hidden_total': sum(hidden.values()),
+            'say': (f"只数{scope}的天干地支（每字记 1，不加权）：{row(surface)}，共 {sum(surface.values())} 个；"
+                    f"藏干另数（每个记 1，不加权）：{row(hidden)}，共 {sum(hidden.values())} 个。个数不等于力量，也不等于喜忌。")}

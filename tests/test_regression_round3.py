@@ -138,3 +138,34 @@ def test_a_stem_only_combination_with_the_year_says_the_books_leave_it_open():
     both = assess_year(chart('辛未'), 2026, '丙午')          # 未 and 午 combine as well
     assert 'scope_note' not in next(h for h in both['hits'] if h['id'] == 'obscured')
     assert annual_scope_items([both]) == []
+
+
+def test_the_chart_names_the_month_and_counts_elements_both_ways():
+    # R4 T05 called a 丑 month 「冬月」; R4 T22 counted 12 hidden stems with 土5 instead of 11 with 土4.
+    from bazi_derivation import month_name
+    facts = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '2004', '--month', '2', '--day', '29', '--hour', '12', '--minute', '15', '--gender', 'male',
+         '--timezone', 'Asia/Shanghai', '--longitude', '106.5516', '--time-standard', 'clock'])), '')['chart_facts']
+    counts = facts['wuxing_counts']
+    assert counts['surface'] == {'木': 3, '火': 2, '土': 2, '金': 1, '水': 0} and counts['surface_total'] == 8
+    assert counts['hidden'] == {'木': 2, '火': 3, '土': 4, '金': 1, '水': 1} and counts['hidden_total'] == 11
+    assert facts['month_name']['name'] == '正月'
+    assert month_name('丑')['name'] == '腊月（十二月）' and month_name('子')['name'] == '冬月（十一月）'
+
+
+def test_the_skill_requires_a_search_before_saying_a_book_lacks_something():
+    text = (ROOT / 'skills/chinese-fortune/SKILL.md').read_text(encoding='utf-8')
+    assert '这次没有检索' in text and 'xiangzhu_borrowed' in text and '正文改过就再跑一次' in text
+
+
+def test_a_daylight_saving_birth_asks_which_time_was_written_down():
+    # R4 N02: 1990-05-10 13:30 上海 was daylight-saving time. Standard time 12:30 is still 午; the raw 13:30 is not a
+    # second method. The real open question is whether 13:30 was recorded in DST or already in standard time.
+    reading = prepare_reading(calculate_bazi(build_parser().parse_args(
+        ['--year', '1990', '--month', '5', '--day', '10', '--hour', '13', '--minute', '30', '--gender', 'female',
+         '--timezone', 'Asia/Shanghai', '--longitude', '120.0'])), '排四柱')
+    edge = reading['chart_facts']['hour_boundary']
+    assert edge['kind'] == 'dst_record' and edge['branch'] == '午' and edge['other_branch'] == '未'
+    assert '夏令时' in edge['say'] and '标准时' in edge['say']
+    assert hour_boundary({'applied': True, 'clock_time': '13:30', 'true_solar_time': '12:34'}, 1.0)['kind'] == 'dst_record'
+    assert hour_boundary({'applied': True, 'clock_time': '12:30', 'true_solar_time': '12:34'}, 0.0) is None

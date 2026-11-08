@@ -16,7 +16,14 @@ from annual_assessment import (
 )
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
-from bazi_derivation import asks_derivation, derivation_steps, hour_boundary, offset_sentence
+from bazi_derivation import (
+    asks_derivation,
+    derivation_steps,
+    hour_boundary,
+    month_name,
+    offset_sentence,
+    wuxing_counts,
+)
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
@@ -375,9 +382,16 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     clean = chart_facts(chart)
     if (clean.get('true_solar_time') or {}).get('applied'):
         clean['true_solar_time']['say'] = offset_sentence(clean['true_solar_time'])
-    boundary = hour_boundary(clean['true_solar_time']) if clean.get('hour_known') and clean.get('true_solar_time') else None
+    dst = float((clean.get('timezone') or {}).get('dst_hours') or 0)
+    boundary = (hour_boundary(clean['true_solar_time'], dst)
+                if clean.get('hour_known') and clean.get('true_solar_time') else None)
     if boundary:
         clean['hour_boundary'] = boundary
+    season = month_name((clean['four_pillars'].get('month') or {}).get('branch'))
+    if season:
+        clean['month_name'] = season
+    if all((clean['four_pillars'].get(k) or {}).get('stem') for k in ('year', 'month', 'day')):
+        clean['wuxing_counts'] = wuxing_counts(clean['four_pillars'], bool(clean.get('hour_known')))
     for cycle in clean.get('da_yun') or []:
         if cycle.get('ganzhi') and cycle.get('start_year'):
             cycle['say'] = (f"{cycle['start_year']}–{cycle.get('cut_at_death_year') or cycle['end_year']} 年走{cycle['ganzhi']}运"

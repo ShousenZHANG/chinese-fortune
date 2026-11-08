@@ -240,7 +240,8 @@ WHO = {'male': '男方', 'female': '女方'}
 def _hour_edge(chart: dict) -> dict | None:
     """A known birth hour near a 时辰 edge: the relations below hold only for the branch computed (R3 N19)."""
     tst = chart.get('true_solar_time')
-    return hour_boundary(tst) if chart.get('hour_known', True) and isinstance(tst, dict) and tst.get('clock_time') else None
+    dst = float((chart.get('timezone') or {}).get('dst_hours') or 0)
+    return hour_boundary(tst, dst) if chart.get('hour_known', True) and isinstance(tst, dict) and tst.get('clock_time') else None
 
 
 def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage') -> dict:

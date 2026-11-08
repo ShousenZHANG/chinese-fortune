@@ -56,7 +56,7 @@ def hour_items(boundary: dict | None, item_id: str = 'hour:boundary', who: str =
     if not boundary:
         return []
     other = boundary['other_branch']
-    return [item(item_id, f"{who}{boundary['say']}", [f'{other}时'], ['分钟', '钟表', '真太阳时'])]
+    return [item(item_id, f"{who}{boundary['say']}", [f'{other}时'], ['分钟', '钟表', '真太阳时', '夏令时', '标准时'])]
 
 
 def liuyao_conflict_items(hits: list[dict]) -> list[dict]:
