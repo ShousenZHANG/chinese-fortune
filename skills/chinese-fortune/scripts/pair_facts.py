@@ -19,6 +19,7 @@ from pathlib import Path
 
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
+from bazi_derivation import hour_boundary
 from bazi_reading import chart_facts
 from bazi_tables import (
     DIZHI_CHONG,
@@ -32,7 +33,7 @@ from bazi_tables import (
     SAN_XING_TRIPLES,
     TIANGAN_HE,
 )
-from must_cover import sanyuan_items
+from must_cover import hour_items, sanyuan_items
 from sanyuan_hehun import match
 from utils import __version__, ensure_utf8_stdio, error_envelope, json_print, shi_shen
 
@@ -233,6 +234,15 @@ def _sanyuan(chart_a: dict, chart_b: dict) -> dict | None:
     return match(people['male'], people['female'])
 
 
+WHO = {'male': '男方', 'female': '女方'}
+
+
+def _hour_edge(chart: dict) -> dict | None:
+    """A known birth hour near a 时辰 edge: the relations below hold only for the branch computed (R3 N19)."""
+    tst = chart.get('true_solar_time')
+    return hour_boundary(tst) if chart.get('hour_known', True) and isinstance(tst, dict) and tst.get('clock_time') else None
+
+
 def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage') -> dict:
     if relation not in RELATIONS:
         raise ValueError(f"relation 须为 {'、'.join(RELATIONS)}")
@@ -245,20 +255,25 @@ def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage') -> dict
                                                        if m != sanyuan['method']],
                    'computed_methods': [sanyuan['method']]}
     say = say_lines(relations, _day_masters(chart_a, chart_b))
+    edges = {name: _hour_edge(chart) for name, chart in (('A', chart_a), ('B', chart_b))}
+    must = (sanyuan_items(sanyuan) if sanyuan else []) + [
+        entry for name, chart in (('A', chart_a), ('B', chart_b))
+        for entry in hour_items(edges[name], f'hour:{name}', WHO.get(chart.get('gender') or '', name) + '：')]
     if sanyuan:     # before the 日主互见 line, which stays last
         say = say[:-1] + [sanyuan['say']] + say[-1:]
     return {
         'ok': True, 'tool': 'pair_facts', 'version': __version__, 'schema_version': '1.0',
         'subjects': {name: {'four_pillars': {p['pillar']: p['ganzhi'] for p in pos},
                             'undecided_pillars': _undecided(chart),
-                            'hour_known': bool(chart.get('hour_known', True))}
+                            'hour_known': bool(chart.get('hour_known', True)),
+                            **({'hour_boundary': edges[name]} if edges[name] else {})}
                      for name, chart, pos in (('A', chart_a, a_pos), ('B', chart_b, b_pos))},
         'day_masters': _day_masters(chart_a, chart_b),
         'relations': relations,
         'say': say + ([RELATION_NOTES[relation]] if relation in RELATION_NOTES else []),
         'relation': {'type': relation, 'label': RELATIONS[relation]['label']},
         'sanyuan_jiugong': sanyuan,
-        **({'must_cover': sanyuan_items(sanyuan)} if sanyuan else {}),
+        **({'must_cover': must} if must else {}),
         'classical_clauses': clauses,
         'notes': list(NOTES),
         'boundary': BOUNDARY,

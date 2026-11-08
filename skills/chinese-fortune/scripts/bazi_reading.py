@@ -16,13 +16,13 @@ from annual_assessment import (
 )
 from bazi_calc import build_parser as chart_parser
 from bazi_calc import calculate_bazi
-from bazi_derivation import asks_derivation, derivation_steps, offset_sentence
+from bazi_derivation import asks_derivation, derivation_steps, hour_boundary, offset_sentence
 from bazi_rules import assess_rules, evidence_bundle
 from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
 from life_areas import areas_asked, life_areas
 from luck_assessment import assess_luck, luck_paragraph
-from must_cover import geju_items
+from must_cover import geju_items, hour_items
 from reading_views import compact_reading, facts_line, write_card, write_facts, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
@@ -375,6 +375,9 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     clean = chart_facts(chart)
     if (clean.get('true_solar_time') or {}).get('applied'):
         clean['true_solar_time']['say'] = offset_sentence(clean['true_solar_time'])
+    boundary = hour_boundary(clean['true_solar_time']) if clean.get('hour_known') and clean.get('true_solar_time') else None
+    if boundary:
+        clean['hour_boundary'] = boundary
     for cycle in clean.get('da_yun') or []:
         if cycle.get('ganzhi') and cycle.get('start_year'):
             cycle['say'] = (f"{cycle['start_year']}–{cycle.get('cut_at_death_year') or cycle['end_year']} 年走{cycle['ganzhi']}运"
@@ -454,8 +457,9 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     # Most hosts read the JSON, not the Markdown draft: the notes travel in both.
     result['host_notes'] = host_notes(result)
     result['derivation'] = derivation_steps(clean)
-    if any(word in question for word in GEJU_WORDS):
-        result['must_cover'] = geju_items()
+    must = hour_items(boundary) + (geju_items() if any(word in question for word in GEJU_WORDS) else [])
+    if must:
+        result['must_cover'] = must
     return result
 
 

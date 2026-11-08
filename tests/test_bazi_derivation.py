@@ -56,7 +56,7 @@ def test_summer_time_is_named_as_summer_time_not_as_a_longitude_gap():
 
 def test_tools_say_offsets_and_candidate_windows_in_words():
     known = reading('--hour', '10', '--minute', '30', '--longitude', '116.4')
-    assert known['chart_facts']['true_solar_time']['say'].startswith('真太阳时的读数比钟表少')
+    assert '比钟表 10:30 早' in known['chart_facts']['true_solar_time']['say']
     unknown = prepare_reading(calculate_bazi(build_parser().parse_args(
         ['--year', '2000', '--month', '1', '--day', '15', '--gender', 'male', '--timezone', 'Asia/Shanghai',
          '--longitude', '116.4'])), '看四柱')

@@ -117,8 +117,53 @@ def offset_sentence(tst: dict) -> str:
     total = float(tst.get('total_offset_min') or 0)
     if total == 0:
         return f"真太阳时与钟表读数相同（{tst.get('clock_time')}）。"
-    return (f"真太阳时的读数比钟表{'少' if total < 0 else '多'} {abs(total):g} 分钟："
-            f"钟表 {tst.get('clock_time')}，真太阳时 {tst.get('true_solar_time')}。")
+    # 「读数少」 alone was still rewritten as 「晚」 (R3 T05); 早/晚 is said outright.
+    return (f"真太阳时 {tst.get('true_solar_time')} 比钟表 {tst.get('clock_time')} {'早' if total < 0 else '晚'} "
+            f"{abs(total):g} 分钟（读数{'少' if total < 0 else '多'} {abs(total):g} 分钟）。")
+
+
+# A 时辰 starts at every odd hour; a birth this close to one can sit in either (R3 N19).
+BOUNDARY_MINUTES = 15
+
+
+def _minute_of_day(text: str | None) -> int | None:
+    try:
+        hour, minute = (int(part) for part in str(text).split(':')[:2])
+    except ValueError:
+        return None
+    return hour * 60 + minute
+
+
+def _branch_at(minute: int) -> str:
+    return hour_branch((minute // 60) % 24)
+
+
+def hour_boundary(tst: dict) -> dict | None:
+    """The hour branch the birth time falls in, and the neighbour it nearly is.
+
+    Returned when the time used for the hour pillar (true solar time when applied, else the clock) is within
+    BOUNDARY_MINUTES of a 时辰 edge, or when the clock reading alone would give another branch.
+    """
+    used = _minute_of_day(tst.get('true_solar_time') if tst.get('applied') else tst.get('clock_time'))
+    clock = _minute_of_day(tst.get('clock_time'))
+    if used is None:
+        return None
+    since = (used - 60) % 120          # minutes since the current 时辰 began
+    branch = _branch_at(used)
+    before, after = since, 120 - since
+    other, gap = (_branch_at(used - 1 - since), before) if before <= after else (_branch_at(used + after), after)
+    clock_branch = _branch_at(clock) if clock is not None else branch
+    if gap > BOUNDARY_MINUTES and clock_branch == branch:
+        return None
+    if clock_branch != branch:
+        other = clock_branch
+    which = '真太阳时' if tst.get('applied') else '钟表时间'
+    say = (f"按{which} {tst.get('true_solar_time') if tst.get('applied') else tst.get('clock_time')} 是{branch}时，"
+           f"离{other}时只差 {gap} 分钟" if gap <= BOUNDARY_MINUTES else
+           f"按{which}是{branch}时，按钟表 {tst.get('clock_time')} 是{other}时")
+    say += f"：出生时间差这么一点，时柱就换成{other}时，用到时柱的结论要两种都说。"
+    return {'branch': branch, 'clock_branch': clock_branch, 'other_branch': other, 'minutes_to_boundary': gap,
+            'time_used': which, 'say': say}
 
 
 def _day_step(facts: dict) -> dict:

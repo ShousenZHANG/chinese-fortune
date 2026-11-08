@@ -12,7 +12,7 @@
 """
 from __future__ import annotations
 
-from utils import chong_branch, shi_shen
+from utils import HIDDEN_STEMS, chong_branch, shi_shen
 
 AREA_WORDS = {
     'career': ('事业', '工作', '升职', '跳槽', '职场', '仕途', '当官'),
@@ -65,6 +65,17 @@ def _positions(facts: dict, stars: tuple[str, ...]) -> list[str]:
     return found
 
 
+def _branch_roles(day: str, branch: str) -> list[list[str]]:
+    """[branch, hidden stem, role] for every stem the branch holds, main qi first (R3 S06: 戌 holds 七杀 戊)."""
+    return [[branch, hidden, shi_shen(day, hidden)] for hidden in HIDDEN_STEMS.get(branch, [])]
+
+
+def _carriers(stem_role: str, roles: list[list[str]], stars: tuple[str, ...]) -> str:
+    """Where a cycle or year carries one of the stars, in words."""
+    parts = (['天干'] if stem_role in stars else []) + [f'地支{b}藏{h}（{r}）' for b, h, r in roles if r in stars]
+    return '、'.join(parts)
+
+
 def _timing(facts: dict, stars: tuple[str, ...]) -> dict:
     day, year = facts['day_master'].get('stem'), facts.get('reference_year')
     cycle = next((c for c in facts.get('da_yun') or [] if isinstance(year, int)
@@ -72,15 +83,18 @@ def _timing(facts: dict, stars: tuple[str, ...]) -> dict:
     out: dict = {'reference_year': year}
     if cycle and day:
         role = shi_shen(day, cycle['stem'])
+        held = _branch_roles(day, cycle['ganzhi'][1])
         out['current_cycle'] = {'ganzhi': cycle['ganzhi'], 'years': f"{cycle['start_year']}–{cycle['end_year']}",
-                                'stem_role': role, 'brings_star': role in stars}
+                                'stem_role': role, 'branch_roles': held,
+                                'brings_star': role in stars or any(r in stars for _, _, r in held)}
     if isinstance(year, int) and day:
         rows = []
         for y in range(year, year + YEARS_AHEAD):
             stem = '甲乙丙丁戊己庚辛壬癸'[(y - 4) % 10]
             branch = '子丑寅卯辰巳午未申酉戌亥'[(y - 4) % 12]
-            rows.append({'year': y, 'ganzhi': stem + branch, 'stem_role': shi_shen(day, stem),
-                         'brings_star': shi_shen(day, stem) in stars})
+            roles = _branch_roles(day, branch)
+            rows.append({'year': y, 'ganzhi': stem + branch, 'stem_role': shi_shen(day, stem), 'branch_roles': roles,
+                         'brings_star': shi_shen(day, stem) in stars or any(r in stars for _, _, r in roles)})
         out['years'] = rows
     return out
 
@@ -88,14 +102,17 @@ def _timing(facts: dict, stars: tuple[str, ...]) -> dict:
 def _star_area(area: str, stars: tuple[str, ...], facts: dict, sources: list[dict]) -> dict:
     found = _positions(facts, stars)
     timing = _timing(facts, stars)
-    star_years = [r['year'] for r in timing.get('years', []) if r['brings_star']]
     cycle = timing.get('current_cycle')
     say = (f"{LABELS[area]}看{'、'.join(stars)}：原局" + ('、'.join(found) if found else '天干地支里都没有') + '。')
     if cycle:
-        say += f"当步 {cycle['ganzhi']} 运天干是{cycle['stem_role']}" + ('，正是这颗星' if cycle['brings_star'] else '') + '；'
+        where = _carriers(cycle['stem_role'], cycle['branch_roles'], stars)
+        say += (f"当步 {cycle['ganzhi']} 运天干是{cycle['stem_role']}"
+                + (f"，{where}带这颗星" if where else '，天干和地支藏干都不是这颗星') + '；')
     if timing.get('years'):
-        say += (f"{'、'.join(map(str, star_years))} 年流年天干透出这颗星" if star_years
-                else f"{timing['years'][0]['year']}–{timing['years'][-1]['year']} 年流年天干都不是这颗星")
+        hits = [f"{r['year']} 年{r['ganzhi']}（{_carriers(r['stem_role'], r['branch_roles'], stars)}）"
+                for r in timing['years'] if r['brings_star']]
+        say += ('、'.join(hits) + '带这颗星' if hits
+                else f"{timing['years'][0]['year']}–{timing['years'][-1]['year']} 年流年天干和地支藏干都不是这颗星")
         say += '。是喜是忌要配原局用神，本盘用神未定就不说好坏。'
     return {'area': area, 'label': LABELS[area], 'stars': list(stars), 'natal': found, 'timing': timing,
             'sources': sources + _sources('timing'), 'say': say}

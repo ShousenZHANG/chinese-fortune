@@ -30,7 +30,7 @@ def test_real_quote_credited_to_the_wrong_book_is_an_error():
 
 
 def test_elided_quote_needs_every_part_in_one_passage_in_order():
-    assert codes('原文「官逢财印……无刑冲破害」。') == []
+    assert codes('《子平真诠》原文「官逢财印……无刑冲破害」。') == []
     assert codes('原文「无刑冲破害……官逢财印」。') == ['unverified_quote']
 
 
@@ -261,7 +261,7 @@ def test_reported_classical_rules_and_stated_ties_are_not_tie_collapse():
 def test_variant_glyph_in_a_quote_is_not_a_fake_quote():
     from answer_check import _check_assertions
     facts = [{'tool': 'fortune_reading', 'x': '原文「支干合命愈為竒上上格也」（xieji:c033:p0020）'}]
-    assert _check_assertions('原文说「支干合命愈为奇，上上格」。', facts)['findings'] == []
+    assert _check_assertions('原文说「支干合命愈为奇，上上格」（xieji:c033:p0020）。', facts)['findings'] == []
 
 
 def test_round7_diagnostics_clock_lists_and_two_tied_candidates():

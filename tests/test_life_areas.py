@@ -39,7 +39,8 @@ def test_reading_lists_positions_years_and_sources_without_verdicts(chart):
     years = areas['career']['timing']['years']
     assert [y['year'] for y in years] == [2026, 2027, 2028]
     assert {y['ganzhi'] for y in years} == {'丙午', '丁未', '戊申'}
-    assert all(y['brings_star'] == (y['stem_role'] in ('正官', '七杀')) for y in years)
+    assert all(y['brings_star'] == any(r in ('正官', '七杀') for r in [y['stem_role'], *(h[2] for h in y['branch_roles'])])
+               for y in years)
     assert areas['relationship']['palace']['branch'] == reading['chart_facts']['four_pillars']['day']['branch']
     assert '妻宫' in areas['relationship']['say']
     text = json.dumps(reading['life_areas'], ensure_ascii=False)
