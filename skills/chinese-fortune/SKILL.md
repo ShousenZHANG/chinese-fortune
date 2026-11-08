@@ -17,7 +17,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 4. 运行工具后检查 exit code 和 `ok`；失败按 `error_class` 的 `next_step` 处理，不凭记忆补造结果。工具累计耗时超过约三分钟时，先答已确认的结论，再列还没算的步骤。
 5. 纯本命用 `scripts/bazi_reading.py --view compact --facts-out <临时目录>/bazi.json`，字段见 [八字](references/01-bazi.md)。
 6. 逐项核对盘面、原文条件、例外和范围。资料够就把解释做完；确有缺项时说明影响哪条判断，并写出补全路径（缺什么资料、要核哪条原文或哪个工具字段）。
-7. 发出前用 `scripts/answer_check.py --answer - --facts <上一步的 .json>` 核对：有 error 先改，有 warning 说明未核内容。工具结果里的 `must_cover` 每一项都要答到，漏一项就是 error。
+7. 发出前用 `scripts/answer_check.py --answer - --facts <上一步的 .json>` 核对：有 error 先改，有 warning 说明未核内容；正文改过就再跑一次。工具结果里的 `must_cover` 每一项都要答到，漏一项就是 error。
 8. 先白话回答所问，短引文附在对应解释旁。
 
 ## 工具结论优先（硬规则）
@@ -25,7 +25,10 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 - 工具给了 `say` 句子就照抄，不改写正负号、不重排候选、不自己算年龄；合婚回答包含 `pair_facts.say` 的「日主互见」一行。
 - 工具写了「没判」「不判」「给不出」，或几个选项等级相同、`first_choice` 为空，就照说并列、照说没判，不补判、不排先后。
 - 干支、十神、生肖、旺衰、日期等级、大运喜忌只从工具输出取，不写 `python -c` 或其他代码自己另算；工具没给就说没给。
+- 每个脚本单独一次直接运行：`python <技能目录>/scripts/<名字>.py …`，看用法也单独跑 `--help`。不接管道（`| head`、`| grep`），不用 `cd … &&`、`;`、`2>&1` 或循环串起来；输出长就加 `--facts-out <本题新建的临时目录>/<名字>.json` 再读文件。串过、截过的输出核不了，答案里的盘面就没有依据。
 - `reliable=false`、`boundary`、`missing_in_table`、`*_granularity` 这类限制，会改变本题时就要说；`hour_known=false` 时不用占位时辰。
+- 说「书里没有」「古籍没有这类条款」之前，本轮先用 `classical_search.py` 查过；没查就写「这次没有检索」。引号里只放原文，转述不加引号。
+- 借用的相主等级（`method_scope.method` 为 `xiangzhu_borrowed`）只说成传统择日等级，不改写成「现实建议」；原文的轻重词（如「灾殃必重」）照抄，不改轻。
 - 古籍照抄，不用省略号删掉会改变意思的部分。细则见 [输出契约第 7 节](references/22-output-contract.md#7-执行细则)。
 
 ## 白话输出

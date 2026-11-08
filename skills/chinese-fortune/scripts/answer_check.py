@@ -262,6 +262,10 @@ def _quote_findings(answer: str, checked: dict) -> list[dict]:
             findings.append(_finding('misattributed_quote', 'error', quote, f'原文在 {hits[0][1]}，不在《{cited_name}》'))
         elif not hits:
             findings.append(_finding('unverified_quote', 'error', quote, '随包古籍内找不到这段原文'))
+        elif not cited and not passage_id:
+            # R3 S21: 「原文是『不可逢合』」 with neither book nor passage id cannot be located by the reader.
+            findings.append(_finding('quote_without_source', 'error', quote,
+                                     f'原文在 {hits[0][1]}：引文旁写出书名和段号'))
     return findings
 
 
@@ -337,6 +341,25 @@ def citation_findings(answer: str, facts: list[dict]) -> list[dict]:
                      '或把取到它的那次结果一起交给 --facts') for pid in missing]
 
 
+@cache
+def _layer(passage_id: str) -> str | None:
+    try:
+        return get_passage(passage_id).get('layer')
+    except ValueError:
+        return None
+
+
+def commentary_findings(answer: str) -> list[dict]:
+    """A commentary passage cited as the book's own words (R3 N08: 《滴天髓辑要》 notes as 《滴天髓》)."""
+    findings = []
+    for line in answer.splitlines():
+        for pid in dict.fromkeys(CITED_ID.findall(line)):
+            if _layer(pid) == 'commentary' and '注' not in line:
+                findings.append(_finding('commentary_cited_as_text', 'error', line.strip()[:80],
+                                         f'{pid} 是注文（layer=commentary），不是原书正文：同一行写明「注文」或「某某注」'))
+    return findings
+
+
 def _ziwei_layers(facts: list[dict]) -> Iterator[dict]:
     for fact in facts:
         horoscope = fact.get('horoscope') if isinstance(fact, dict) and fact.get('tool') == 'ziwei' else None
@@ -381,7 +404,7 @@ def _check_assertions(answer: str, facts: list[dict],
     assertions = facts if assertions is None else assertions
     findings = [*_quote_findings(answer, checked), *pillar_findings(answer, facts, checked, pillars),
                 *markup_findings(answer), *sihua_palace_findings(answer, facts),
-                *must_cover_findings(answer, facts), *citation_findings(answer, facts)]
+                *must_cover_findings(answer, facts), *citation_findings(answer, facts), *commentary_findings(answer)]
     titles = unresolved_titles(assertions)
     tie = has_tie(assertions)
     for sentence in (s.strip() for s in sentences(answer)):

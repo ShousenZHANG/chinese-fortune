@@ -10,7 +10,7 @@ from __future__ import annotations
 
 import re
 
-from bazi_tables import DIZHI_CHONG, TIANGAN_HE
+from bazi_tables import DIZHI_CHONG, DIZHI_LIU_HE, TIANGAN_HE
 from utils import DIZHI_WUXING, TIANGAN_WUXING, TIANGAN_YIN_YANG, WUXING_GEN, WUXING_KE
 
 YUANHAI_SUI = ('yuanhai:c161:p0002', 'a90d8f4e63fc534563ed3ef0f65e5ef5e7a1c329a78a8ad569b6e9d25f58f6e4')
@@ -110,8 +110,15 @@ def assess_year(chart: dict, year: int, ganzhi: str, cycle: dict | None = None,
     if frozenset((day['stem'], stem)) in TIANGAN_HE:
         # 「日干合太嵗如甲日巳年之例太嵗合日干如巳日甲年之例甲合巳災重巳合甲災輕」
         heavy = TIANGAN_YIN_YANG.get(day['stem']) == '阳'
+        both = frozenset((day['branch'], branch)) in DIZHI_LIU_HE
+        extra = {} if both else {
+            # R3 T21: 《渊海子平》 writes 「日干支合太岁干支」; 《三命通会》's examples (甲日己年) combine stems only.
+            # Whether the branches must combine too is not settled by either text, so a stem-only hit says so.
+            'branches_combine': False,
+            'scope_note': (f"只有天干相合，日支{day['branch']}与岁支{branch}不合：《渊海子平》原句是「日干支合太岁干支」，"
+                           '《三命通会》写「日干合太嵗如甲日巳年之例」只说日干；是否要干支都合，两书都没说清，答时要写明这一点')}
         hits.append(_hit('obscured', weight='灾重' if heavy else '灾轻',
-                         weight_quote='甲合巳災重巳合甲災輕', weight_passage=SANMING_SUIYUN[0]))
+                         weight_quote='甲合巳災重巳合甲災輕', weight_passage=SANMING_SUIYUN[0], **extra))
     if _clash(branch, day['branch']) and not any(h['id'] == 'fanyin' for h in hits):
         hits.append(_hit('day_branch_clash'))
     if _clash(branch, (pillars.get('month') or {}).get('branch')):

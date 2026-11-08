@@ -81,8 +81,9 @@ def test_a_bare_absence_is_an_error_and_a_named_denial_a_warning():
 
 def test_a_marriage_answer_must_show_the_three_yuan_count():
     from pair_facts import pair_facts, subject_chart
-    a = subject_chart({'year': 1992, 'month': 6, 'day': 1, 'hour': 9, 'gender': 'male'})
-    b = subject_chart({'year': 1994, 'month': 6, 'day': 1, 'hour': 9, 'gender': 'female'})
+    # 10:00, not 09:00: a birth on a 时辰 edge adds its own hour:A/hour:B items (R3 N19).
+    a = subject_chart({'year': 1992, 'month': 6, 'day': 1, 'hour': 10, 'gender': 'male'})
+    b = subject_chart({'year': 1994, 'month': 6, 'day': 1, 'hour': 10, 'gender': 'female'})
     facts = pair_facts(a, b)
     assert {e['id'] for e in facts['must_cover']} == {'sanyuan:male', 'sanyuan:female', 'sanyuan:relation'}
     short = check_answer('两人三元九宫合卦得' + facts['sanyuan_jiugong']['relation'] + '。', [facts])['findings']

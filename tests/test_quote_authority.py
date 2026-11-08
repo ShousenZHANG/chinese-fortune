@@ -57,7 +57,7 @@ def test_citation_constraints_must_match_the_same_corpus_source(answer):
     '《子平真诠》ziping:c009:p0002 原文「論用神成敗救應」。',
     '《子平真诠》原文「官逢财印……无刑冲破害」。',
     '《子平真诠》原文「生尅……格局分焉」。',
-    '原文说「支干合命愈为奇，上上格」。',
+    '原文说「支干合命愈为奇，上上格」（xieji:c033:p0020）。',
 ], ids=['book', 'book-and-passage', 'passage-heading', 'elision', 'non-negating-elision', 'variant-glyph'])
 def test_real_quotes_remain_verified_without_tool_text(answer):
     result = check_answer(answer, [])

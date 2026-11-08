@@ -168,7 +168,12 @@ def judge(out: dict, positions: list[int] | None = None) -> dict:
         else:
             results = [{'position': None, 'state': 'manual_only'}]
         rows.append({'id': rule['id'], 'name': rule['name'], 'scope': rule['scope'], 'passage_id': rule['passage_id'],
-                     'results': results, 'manual': manual})
+                     'results': results, 'manual': manual,
+                     # The table's own reading limit and counter-passages travel with a hit, so a reply that
+                     # uses the rule sees them without a second `rules --id` call (R3 T31).
+                     'allowed_interpretation': rule.get('allowed_interpretation'),
+                     'conflicts': [{'passage_id': c['passage_id'], 'description': c['description']}
+                                   for c in rule.get('conflicts') or []]})
     hits = [r for r in rows if any(x['state'].startswith('met') for x in r['results'])]
     return {'targets': lines, 'target_basis': 'given' if positions else 'yongshen_relative',
             'checked': len(rows), 'hits': hits,
