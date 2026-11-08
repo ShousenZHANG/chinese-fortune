@@ -4,6 +4,10 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 历史条目与早期标签存在缺漏，保留原记录，不追溯补造发布。旧测试数量和成本只描述当时版本；v4 已替换被发现无效的奇门、六爻检查，不能将旧通过率视为原典正确率。
 
+## [6.1.1] — 2026-11-08 — README 链接修正
+
+- README 中英文里「人生决策」的链接仍指向旧路径 `skills/chinese-fortune/references/29-life-decision.md`；这部分在 6.1.0 已拆到 life-guide 技能，链接改为 `skills/life-guide/references/life-decision.md`。发行 zip 里的 README 副本一并更正。功能和输出没有变化。
+
 ## [6.1.0] — 2026-11-08 — 一个仓库三个技能、技能目录瘦身、人生领域速读、回答交付
 
 - **16 题回归暴露的问题**（每题一个全新 agent 作答，两位独立评审加第三方裁定，严格语义 5/16）：

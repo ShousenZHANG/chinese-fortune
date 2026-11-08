@@ -10,7 +10,7 @@ from __future__ import annotations
 import json
 import sys
 
-__version__ = "6.1.0"
+__version__ = "6.1.1"
 ENVELOPE_VERSION = 'cf-result/1'
 ERROR_NEXT_STEP = {
     'input': '按 message 改正这一项输入后重试；不要猜一个值替用户补上',
