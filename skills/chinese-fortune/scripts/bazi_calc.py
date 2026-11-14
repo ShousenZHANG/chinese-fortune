@@ -389,8 +389,9 @@ class _ChartError(Exception):
 
 
 def _date_error(args: argparse.Namespace, error: str, exc: Exception) -> _ChartError:
-    return _ChartError({"ok": False, "tool": "bazi", "version": VERSION, "error": error,
-                        "message": str(exc), "input": vars(args)})
+    # 走 utils.error_envelope 的统一七键信封；从前这里自拼 dict，
+    # 缺 error_class/next_step/envelope，调用方对 bazi 的失败要特判。
+    return _ChartError(error_envelope("bazi", error, str(exc), input=vars(args)))
 
 
 @dataclass(frozen=True)
