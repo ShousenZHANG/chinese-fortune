@@ -29,7 +29,7 @@ from classical_search import get_passage
 from geju_assessment import assess_geju, geju_paragraph
 from life_areas import areas_asked, life_areas
 from luck_assessment import assess_luck, luck_paragraph
-from must_cover import annual_scope_items, geju_items, hour_items
+from must_cover import annual_scope_items, geju_items, hour_items, life_area_items
 from reading_views import compact_reading, facts_line, write_card, write_facts, write_report
 from tiaohou_provenance import get_tiaohou_audit
 from utils import (
@@ -472,7 +472,7 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
     result['host_notes'] = host_notes(result)
     result['derivation'] = derivation_steps(clean)
     must = (hour_items(boundary) + (geju_items() if any(word in question for word in GEJU_WORDS) else [])
-            + annual_scope_items(result.get('annual_reading') or []))
+            + annual_scope_items(result.get('annual_reading') or []) + life_area_items(result.get('life_areas')))
     if must:
         result['must_cover'] = must
     return result

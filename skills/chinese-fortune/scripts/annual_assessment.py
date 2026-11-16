@@ -16,7 +16,9 @@ from utils import DIZHI_WUXING, TIANGAN_WUXING, TIANGAN_YIN_YANG, WUXING_GEN, WU
 YUANHAI_SUI = ('yuanhai:c161:p0002', 'a90d8f4e63fc534563ed3ef0f65e5ef5e7a1c329a78a8ad569b6e9d25f58f6e4')
 YUANHAI_ZHENG = ('yuanhai:c174:p0003', '349a2404b1ff1d864f2e86a7496eb296be59213fcbcb905a39560817e4c934f4')
 YUANHAI_HUI = ('yuanhai:c174:p0004', '3c6e80e909529aedb18812ea25fef52692fcdfa6c79e3a9e67368a6d036172ea')
-SANMING_LIGHT = ('sanming:c011:p0118', '7437cfd454a85b40feef7a9167c18118628b13f4ad1e04b4d29e1ca62a41d56f')
+# Quoted from the body text of 卷二《論太嵗》 (R10 CLARIFY-01): c011:p0118 carries the sentence only as its section
+# heading, a navigation anchor of the transcription, while its body text is the next sentence.
+SANMING_LIGHT = ('sanming:c002:p0031', 'bb34a49a079e4265a48c3e8cfb9e32c87d9348920b41afce66212c52d8e09ee4')
 SANMING_SUIYUN = ('sanming:c002:p0032', '88a834d8dba163c4806983e3a9e83ae6bec0b4155ecb963656028287e9631597')
 DITIAN = ('ditian:c009:p0001', 'd1f02d205e375bb5bfd82b27bd6579ed83de47a90e01ee0f3c42f6a01ebd22fd')
 
@@ -29,7 +31,7 @@ def _rule(rule_id: str, label: str, source: tuple[str, str], quote: str, verdict
 RULES = {r['id']: r for r in (
     _rule('day_offends_year', '日犯岁君', YUANHAI_SUI, '日犯岁君，灾殃必重，五行有救，其年反必招财', '凶',
           '你的日干克这一年的天干'),
-    _rule('year_hurts_day', '岁伤日干', SANMING_LIGHT, '歲傷日干有禍必輕', '祸轻', '这一年的天干克你的日干'),
+    _rule('year_hurts_day', '岁伤日干', SANMING_LIGHT, '嵗傷日干有禍必輕', '祸轻', '这一年的天干克你的日干'),
     _rule('obscured', '晦气', YUANHAI_HUI, '日干支合太岁干支，曰晦，大运会岁干者亦然。遇此主晦气一年，反复，欲速不达', '晦',
           '你的日干和这一年的天干相合'),
     _rule('day_branch_clash', '征（日支冲太岁）', YUANHAI_ZHENG, '但看八字有无救助', '看救助',

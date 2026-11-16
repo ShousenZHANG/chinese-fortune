@@ -19,7 +19,8 @@ def _chart(year, month, day, hour, hour_known=True):
 def test_every_rule_quotes_the_frozen_text(rule):
     passage = get_passage(rule['passage_id'])
     assert passage['sha256'] == rule['sha256']
-    assert rule['quote'] in passage['text'] or rule['quote'] == passage.get('section')
+    # R10 CLARIFY-01: the quoted unit is the passage body; a section heading or navigation anchor only locates it.
+    assert rule['quote'] in passage['text']
 
 
 def test_the_day_stem_overcoming_the_year_without_rescue_is_heavy():
@@ -87,7 +88,7 @@ def test_a_missing_hour_still_reads_the_day_pillar_but_says_so():
 def test_the_paragraph_names_the_year_the_hits_and_the_limits():
     text = annual_paragraph(assess_year(_chart('丁丑', '壬子', '庚午', '丙子'), 2027, '丁未'))
     assert text.startswith('2027年（丁未）')
-    assert '「歲傷日干有禍必輕」' in text and '一年一个说法' in text
+    assert '「嵗傷日干有禍必輕」' in text and '一年一个说法' in text
 
 
 def test_a_quiet_year_says_the_texts_have_nothing_on_it():

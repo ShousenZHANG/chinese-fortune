@@ -16,6 +16,14 @@
 
 </div>
 
+**Works in**: Claude Code, Codex, Cursor and other AI tools that load Agent Skills. **Needs**: Python 3.9 or newer; nothing to pip install, no network for calculations.
+
+1. Download `chinese-fortune-v<version>.zip` from the [latest release](https://github.com/ShousenZHANG/chinese-fortune/releases/latest).
+2. Unzip it into your skills folder so that `chinese-fortune/SKILL.md` exists: `~/.claude/skills/` for Claude Code, `~/.codex/skills/` for Codex.
+3. Restart the tool and ask, in Chinese or English: "I was born on 15 May 1990 at 10:00 in Hangzhou, male. Read my BaZi."
+
+Claude Code can also install it as a plugin with one command; other hosts are under [Install](#install).
+
 ## How it differs from asking a model directly
 
 | Asking a model directly | With this skill |

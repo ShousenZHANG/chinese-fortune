@@ -13,7 +13,7 @@ compatibility: Requires Python 3.9+ (python3, python or py -3). No packages to i
 
 1. 先读 [输出契约](references/22-output-contract.md)（第 7 节是执行细则）和 [直接回答](references/27-direct-answer.md)；条款相反时按 [裁决顺序](references/26-precedence.md)。生辰或时间问题读 [输入采集](references/00-intake.md)，只问影响本题的缺项，已给的资料直接复用。
 2. 依赖「现在」时确认现居地 IANA 时区，用 `scripts/request_time.py` 固定时刻，同一请求复用；出生时间用出生地时区。
-3. 拿不准走哪条流程时运行 `python scripts/question_router.py --question "<原话>"`，按返回的命令走；`needs` 先扣除用户已给的资料再问。
+3. 拿不准走哪条流程时运行 `python scripts/question_router.py --question "<原话>"`，按返回的命令走；`needs` 先扣除用户已给的资料；问缺项时先答不依赖它的部分。
 4. 运行工具后检查 exit code 和 `ok`；失败按 `error_class` 的 `next_step` 处理，不凭记忆补造结果。工具累计耗时超过约三分钟时，先答已确认的结论，再列还没算的步骤。
 5. 纯本命用 `scripts/bazi_reading.py --view compact --facts-out <临时目录>/bazi.json`，字段见 [八字](references/01-bazi.md)。
 6. 逐项核对盘面、原文条件、例外和范围。资料够就把解释做完；确有缺项时说明影响哪条判断，并写出补全路径（缺什么资料、要核哪条原文或哪个工具字段）。

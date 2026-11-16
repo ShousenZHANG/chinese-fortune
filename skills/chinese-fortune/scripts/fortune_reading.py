@@ -36,6 +36,8 @@ from fortune_ranking import (
 from fortune_rules import capabilities, evidence, luck_observations, research_request
 from fortune_selection import compare_candidates, decision_blockers, event_basis
 from fortune_time import candidate_windows, resolve_window
+from life_areas import LABELS as AREA_LABELS
+from life_areas import areas_asked
 from luck_assessment import assess_luck, luck_paragraph
 from must_cover import annual_scope_items
 from personal_profiles import birth_arguments, load_profile, validate_person
@@ -981,6 +983,7 @@ def _context_sentence(calendar: dict, who: str, skip: tuple[str, ...] = ()) -> s
     return ('其中' + '；'.join(parts) + '，落在这段里的日子都受影响。') if parts else ''
 
 
+PARAGRAPH = chr(10) * 2
 BORROWED_MEANING = ('相主是给协纪所列事项挑时间的方法，借用到「{label}」上；结果只是本人生年与各日的相主等级，'
                     '不等于这件事已证的吉凶或客观上最好的日子')
 
@@ -1438,15 +1441,40 @@ def outlook_skeleton(result: dict) -> str:
             layers.append('流年（只列冲克合，不合总分）')
     if result.get('personal_calendar'):
         layers.append('月和日（出生年相主等级）')
+    areas = area_outlook(result)
+    if areas:
+        topic = '、'.join(areas)
+        return (f"回答按这个顺序：先用三句说{topic}已判、未判和最少要补什么；再说这段时间指 {span}；"
+                "再逐层说本次算到了什么——" + '、'.join(x for x in layers if not x.startswith('月和日'))
+                + f"；相主等级放在最后单列「附：传统择日等级（借用相主，不是{topic}预测）」；"
+                "现实动作标明是现实建议、不是命理结论；「不能保证结果」只说一次。")
     return (f"回答按这个顺序：先说这段时间指 {span}；再逐层说本次算到了什么——"
             + '、'.join(layers) + "，没算到的层（如这件事本身的专门条款）直说没有；然后按用户说的实际处境给一两条现实动作，"
             "标明是现实建议、不是命理结论；「不能保证结果」只说一次，不能代替上面已经能确定的部分。")
 
 
+def area_outlook(result: dict) -> list[str]:
+    """Life areas a period question asks about (「最近事业怎么样」), when no event was named."""
+    if (result.get('capability') or {}).get('scenario') != 'outlook':
+        return []
+    return [AREA_LABELS[a] for a in areas_asked(result.get('question') or '')]
+
+
+def area_outlook_note(areas: list[str]) -> str:
+    """R10 FIX-03: readers took 大吉/凶 day grades for a career forecast when they opened the answer."""
+    topic = '、'.join(areas)
+    return (f"问的是{topic}走势：开头三句依次说已判（原局{topic}看哪颗星、在哪几柱，用 bazi_reading 的 life_areas）、"
+            f"未判（{topic}好坏本次没判，用神或岁运条件未定）、最少还要补什么；相主等级不进开头和结论，"
+            f"放在后面单列一节「附：传统择日等级（借用相主，不是{topic}预测）」，原词照抄，范围在这一节说一次。")
+
+
 def host_notes(result: dict) -> list[str]:
     """What the host must say as the tool says it (evals/v56/REPORT.md 3.1)."""
     notes = ['等级、干支和理由只用上面的结果；不要自己写代码另算干支、十神或等级。']
-    if _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
+    areas = area_outlook(result)
+    if areas:
+        notes.append(area_outlook_note(areas))
+    elif _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
         label = _event_label(result)
         notes.append(f"相主是借用到「{label}」上的：首句和结论都要保留「借用相主比较」，只能说相主等级最高的是哪几天，"
                      "不能说这些是做这件事最好的日子、事业或感情的吉凶已定。")
@@ -1487,6 +1515,27 @@ def render_answer(result: dict, detail: bool = False) -> str:
         return render_itinerary(result)
     if not result.get('ok') or result.get('status') == 'specialist_required':
         return result['message']
+    areas = area_outlook(result)
+    if areas:
+        appendix = f"附：传统择日等级（借用相主，不是{'、'.join(areas)}预测）"
+        return PARAGRAPH.join([*area_lead(result, areas), appendix, _render_grades(result, detail)])
+    return _render_grades(result, detail)
+
+
+def area_lead(result: dict, areas: list[str]) -> list[str]:
+    """The judged natal facts first, then what is not judged (R10 FIX-03)."""
+    topic = '、'.join(areas)
+    says = [area['say'].split('。')[0] + '。'
+            for person in result.get('participants', [])
+            for area in ((person.get('natal_interpretation') or {}).get('life_areas') or {}).get('areas', [])
+            if area.get('say')]
+    judged = ''.join(says) or f"原局{topic}看哪颗星、在哪几柱，用 bazi_reading.py --question 原话 取 life_areas 再说。"
+    return [judged,
+            f"{topic}好坏本次没判：用神和岁运的取舍条件还没核完，下面的相主等级只比较出生年和各月各日，不是{topic}预测。",
+            '要再往下说，最少要补两样：现在的处境（在职求升、准备换工作还是推进项目），以及出生时间是否精确。']
+
+
+def _render_grades(result: dict, detail: bool = False) -> str:
     state = result['conclusion']['status']
     advice = _colour_advice(result)
     lines = [_lead_sentence(result), *(colour_lines(advice) if advice else []),

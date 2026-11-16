@@ -93,3 +93,27 @@ def annual_scope_items(readings: list[dict]) -> list[dict]:
     return [item(f"annual:{hit['id']}:{reading.get('year')}", hit['scope_note'],
                  ['只有天干', '只合天干', '天干相合', '干合'], ['不合', '没合', '未合', '都合', '没说清'])
             for reading in readings or [] for hit in reading.get('hits') or [] if hit.get('scope_note')]
+
+
+PILLAR_WORDS = {'年柱': ['年柱', '年干', '年支', '年上'], '月柱': ['月柱', '月干', '月支', '月令', '月上'],
+                '日柱': ['日柱', '日支', '日坐'], '时柱': ['时柱', '时干', '时支', '时上']}
+
+
+def life_area_items(life: dict | None) -> list[dict]:
+    """What the chart already says about an asked area (R10 T10).
+
+    The natal positions do not depend on where the user lives now, so a reply that stops at the four pillars to
+    ask for the current time zone still has to state them.
+    """
+    out = []
+    for area in (life or {}).get('areas', []):
+        natal = area.get('natal') or []
+        if not natal:
+            continue
+        stars = [star for star in area.get('stars', []) if any(star in place for place in natal)]
+        pillars = [word for label, words in PILLAR_WORDS.items() if any(place.startswith(label) for place in natal)
+                   for word in words]
+        out.append(item(f"life:{area['area']}", f"{area.get('label', area['area'])}：{area['say'].split('。')[0]}。"
+                        '这些原局位置不依赖现居时区，追问时区前先答', stars, pillars))
+    return out
+

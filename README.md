@@ -16,6 +16,14 @@
 
 </div>
 
+**装到哪**：Claude Code、Codex、Cursor 等支持 Agent Skills 的 AI 工具。**前提**：电脑上有 Python 3.9 或以上，不用 pip 装任何包，计算不联网。
+
+1. 从 [最新 Release](https://github.com/ShousenZHANG/chinese-fortune/releases/latest) 下载 `chinese-fortune-v版本号.zip`。
+2. 解压到技能目录，解压后应看到 `chinese-fortune/SKILL.md`：Claude Code 放 `~/.claude/skills/`，Codex 放 `~/.codex/skills/`。
+3. 重开 AI，直接问：「我 1990 年 5 月 15 日上午 10 点在杭州出生，男，看看八字」。
+
+Claude Code 也可以用插件一条命令装好，其他宿主见 [安装](#安装)。
+
 ## 直接问大模型，和用它有什么不同
 
 | 直接问大模型算命 | 用有据算命 |

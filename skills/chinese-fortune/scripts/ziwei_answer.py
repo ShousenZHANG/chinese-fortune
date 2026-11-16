@@ -140,6 +140,9 @@ def focus_palace(chart: dict, name: str) -> dict:
     hua_here = [f"{star}化{kind}" for kind, star in chart['four_transformations_native'].items()
                 if star in mains + palace.get('lucky_stars', [])]
     patterns = [p['name'] for p in chart.get('patterns', []) if name in '、'.join(p['required']) or name == '命宫']
+    quoted = set(seen)
+    held_back = [star for star in palace.get('lucky_stars', []) + palace.get('malefic_stars', [])
+                 + palace.get('miscellaneous_stars', []) if star not in quoted]
     opposite = by_branch[sfsz['对宫']]
     trines = [by_branch[b] for b in sfsz['三合']]
     say = (f"{name}在{palace['branch']}（{palace['ganzhi']}），主星{_stars_text(palace)}"
@@ -161,7 +164,13 @@ def focus_palace(chart: dict, name: str) -> dict:
         'search_queries': [f'{star} {short}' for star in seen] or [f'{short}宫'],
         'quotes': {star: palace_quotes(star, short) for star in seen} if name != '命宫' else {},
         'quotes_note': '取自讲这颗星的《全书》段落中提到该宫的那一句，原字照录可直接引用；是否适用于本盘仍要按原文条件解释。',
-        'answer_order': ['本宫主星与亮度（空宫说明借对宫）', '对宫与三合会照', '生年四化落入', '吉煞与相关格局',
-                         '每颗星先用 quotes 里的原句，不够再用 search_queries 查；没有原文的星只说位置'],
+        # Round 10 T41-T44: the facts were right but limits were repeated inside every paragraph. The answer now
+        # leads with what this chart supports, and every limit is said once, in one place at the end.
+        'answer_order': ['开头一至两句：本题能支持的结论；条件不全时直接说结论只到哪一步',
+                         '必要盘面：本宫主星与亮度（空宫说明借对宫）、对宫与三合会照、生年四化落入，一张表列完',
+                         '逐条解释：先白话，再给直接支持它的原句和段号（quotes）；没有原句的星只在表里列位置',
+                         '补查记录（全篇只写这一处，每项一次）：held_back 里只列位置、不作解释的星，还没核的解释，转录版本状态'],
+        'held_back': held_back,
+        'note_once': '转录尚未逐字校勘、未核原刻影像：放进补查记录说一次，不在每段重复。',
         'say': say,
     }
