@@ -203,6 +203,22 @@ def _quotes(answer: str) -> Iterator[tuple[str, str, str]]:
                answer[last.end():last.end() + 24])
 
 
+SOURCE_NEAR = re.compile(r'《[^》]{1,16}》|[a-z]+:c\d{3}:p\d{4}')
+
+
+def _sourced_nearby(answer: str, quote: str) -> bool:
+    """A book title or passage id in the lines around a quote (R10 T43: a block quote with the book on the line
+    above and the passage id on the line below is located, even though neither touches the quote)."""
+    head = quote[:8]
+    at = answer.find(head)
+    if at < 0:
+        return False
+    # Only the quote's own paragraph and the one right before or after it, never a paragraph further away.
+    before = '\n\n'.join(answer[max(0, at - 200):at].split('\n\n')[-2:])
+    after = '\n\n'.join(answer[at + len(quote):at + len(quote) + 120].split('\n\n')[:2])
+    return bool(SOURCE_NEAR.search(before) or SOURCE_NEAR.search(after))
+
+
 def _quote_findings(answer: str, checked: dict) -> list[dict]:
     findings = []
     for quote, before, after in _quotes(answer):
@@ -262,7 +278,7 @@ def _quote_findings(answer: str, checked: dict) -> list[dict]:
             findings.append(_finding('misattributed_quote', 'error', quote, f'原文在 {hits[0][1]}，不在《{cited_name}》'))
         elif not hits:
             findings.append(_finding('unverified_quote', 'error', quote, '随包古籍内找不到这段原文'))
-        elif not cited and not passage_id:
+        elif not cited and not passage_id and not _sourced_nearby(answer, quote):
             # R3 S21: 「原文是『不可逢合』」 with neither book nor passage id cannot be located by the reader.
             findings.append(_finding('quote_without_source', 'error', quote,
                                      f'原文在 {hits[0][1]}：引文旁写出书名和段号'))

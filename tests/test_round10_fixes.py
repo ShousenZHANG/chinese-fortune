@@ -8,6 +8,7 @@ from ziwei_calc import build_parser as ziwei_parser
 from ziwei_calc import calculate_ziwei
 
 ROOT = SCRIPTS.parents[2]
+PARA = chr(10) * 2
 REFS = SCRIPTS.parent / 'references'
 
 
@@ -79,3 +80,14 @@ def test_the_readme_first_screen_says_where_to_install_what_it_needs_and_how():
         assert needs in screen and 'releases/latest' in screen
         assert '~/.claude/skills/' in screen and '~/.codex/skills/' in screen
         assert '1. ' in screen and '3. ' in screen and 'chinese-fortune/SKILL.md' in screen
+
+
+def test_a_block_quote_sourced_on_the_lines_around_it_is_not_unsourced():
+    # Found by the 6.2.0 acceptance rerun of T43: the book is named on the line above and the passage id on the
+    # line below a block quote; the old window saw neither and reported quote_without_source.
+    located = PARA.join(['依据是《紫微斗数全书》卷三，「太阳太阴拱照」项原文：', '> 日卯月亥安命未宫多折桂',
+                         '定位：随包段号 **ziwei:c003:p0135**。'])
+    bare = '甲戌运按一般句算忌，原文是「不可逢合」。'
+    assert not [f for f in check_answer(located, [])['findings'] if f['code'] == 'quote_without_source']
+    assert [f['code'] for f in check_answer(bare, [])['findings']] == ['quote_without_source']
+
