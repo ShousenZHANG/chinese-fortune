@@ -241,6 +241,22 @@ def test_every_engine_entry_point_is_covered_by_the_contract():
         "加两条 IMPOSSIBLE_INPUTS (一条越界、一条格式错) 再提交。")
 
 
+def test_only_error_envelope_builds_a_failure_dict():
+    """#21: bazi_calc._date_error built its own {'ok': False, 'error': ...} without error_class, next_step and
+    envelope, so callers of calculate_bazi had to special-case it. Only utils.error_envelope may build one."""
+    import ast
+    builders = []
+    for f in sorted((ROOT / "skills/chinese-fortune/scripts").glob("*.py")):
+        for node in ast.walk(ast.parse(f.read_text(encoding="utf-8"), filename=str(f))):
+            if not isinstance(node, ast.Dict):
+                continue
+            keys = {k.value: v for k, v in zip(node.keys, node.values) if isinstance(k, ast.Constant)}
+            ok = keys.get("ok")
+            if "error" in keys and isinstance(ok, ast.Constant) and ok.value is False:
+                builders.append(f"{f.name}:{node.lineno}")
+    assert len(builders) == 1 and builders[0].startswith("utils.py:"), builders
+
+
 def test_no_engine_hand_rolls_an_error_envelope():
     """失败信封必须一律走 utils.error_envelope。
 

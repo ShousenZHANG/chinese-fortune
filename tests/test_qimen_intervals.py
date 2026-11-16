@@ -193,3 +193,25 @@ def test_boundary_provider_failure_is_not_a_partial_success(monkeypatch, capsys)
     output = json.loads(capsys.readouterr().out)
     assert output['ok'] is False and output['error'] == 'interval_calculation_failed'
     assert 'candidates' not in output
+
+
+@pytest.mark.parametrize('zone,day', [('America/New_York', date(2026, 3, 7)), ('Australia/Lord_Howe', date(2026, 4, 4)),
+                                      ('Pacific/Chatham', date(2026, 4, 3)), ('Asia/Shanghai', date(1988, 4, 16))])
+def test_time_zone_cuts_match_a_second_by_second_scan(zone, day):
+    """#21 replaced the per-second scan with hourly probes refined by bisection; the cuts must not move.
+
+    The bisection relies on no zone changing offset twice within an hour, which holds for every bundled zone.
+    """
+    tz = ZoneInfo(zone)
+    windows = qimen_select._windows(day, 3, tz)
+    found = {w.start_utc for w in windows if 'timezone_transition' in w.boundary_reasons}
+    lower, upper = windows[0].start_utc, windows[-1].end_utc
+    expected, previous = set(), lower.astimezone(tz).utcoffset()
+    for second in range(1, int((upper - lower).total_seconds()) + 1):
+        instant = lower + timedelta(seconds=second)
+        offset = instant.astimezone(tz).utcoffset()
+        if offset != previous:
+            expected.add(instant)
+            previous = offset
+    assert found == expected and len(found) == 1
+
