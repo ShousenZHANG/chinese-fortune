@@ -66,15 +66,25 @@ def _windows(start: date, days: int, zone: ZoneInfo) -> tuple[_Window, ...]:
                 if instant.astimezone(zone).replace(tzinfo=None) == wall:
                     cuts.setdefault(instant, set()).add('local_midnight' if hour == 0 else 'double_hour')
 
-    # TZif offsets and transitions have integral-second precision. Visiting each
-    # second avoids assuming how far apart a zone's historical transitions are.
-    previous = lower.astimezone(zone).utcoffset()
-    for second in range(1, int((upper - lower).total_seconds()) + 1):
-        instant = lower + timedelta(seconds=second)
-        offset_now = instant.astimezone(zone).utcoffset()
-        if offset_now != previous:
-            cuts.setdefault(instant, set()).add('timezone_transition')
-            previous = offset_now
+    # 时区切换点：逐时探针发现偏移变化后二分精化到秒（与
+    # fortune_time.civil_boundaries 同款）。旧实现逐秒扫全程，33 天要
+    # ~285 万次 astimezone；TZif 转换点秒级对齐且转换不会在一小时内
+    # 往返，逐时探针的端点差必能捕获每一次切换，结果相同、耗时毫秒级。
+    cursor = lower
+    while cursor < upper:
+        probe = min(cursor + timedelta(hours=1), upper)
+        if cursor.astimezone(zone).utcoffset() != probe.astimezone(zone).utcoffset():
+            lo, hi = cursor, probe
+            while (hi - lo).total_seconds() > 1:
+                mid = lo + timedelta(seconds=int((hi - lo).total_seconds() // 2))
+                if lo.astimezone(zone).utcoffset() == mid.astimezone(zone).utcoffset():
+                    lo = mid
+                else:
+                    hi = mid
+            cuts.setdefault(hi, set()).add('timezone_transition')
+            cursor = hi
+        else:
+            cursor = probe
     for instant in solar_term_boundaries(lower, upper):
         cuts.setdefault(instant, set()).add('solar_term')
     ordered = sorted(cuts)
