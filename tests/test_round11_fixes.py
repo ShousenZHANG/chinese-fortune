@@ -1,0 +1,66 @@
+"""Fixes from the eleventh external review (research/gpt-results-20261118/D4/fixes.json, FIX-11-01 to FIX-11-15).
+
+Every person here is fictional; the inputs are the frozen round-11 questions (D0/questions-e12.json, C0/questions.json).
+"""
+from conftest import SCRIPTS
+from ziwei_calc import build_parser as ziwei_parser
+from ziwei_calc import calculate_ziwei
+
+REFS = SCRIPTS.parent / 'references'
+
+
+def _ziwei(args: str) -> dict:
+    return calculate_ziwei(ziwei_parser().parse_args(args.split()))
+
+
+# T42: 2001-05-26 is 辛巳年闰四月初四, so the 闰月 rule moves 命宫 and with it every palace.
+T42 = '--year 2001 --month 5 --day 26 --hour 19 --minute 10 --gender male --timezone Asia/Shanghai --time-standard clock'
+# E07 as frozen after D0 (the birth moved to 4月2日): Beijing, the default true-solar standard.
+E07 = '--year 1999 --month 4 --day 2 --hour 20 --minute 0 --gender female --city 北京'
+T25 = '--year 1994 --month 12 --day 9 --hour 11 --minute 40 --gender female --longitude 114.3054 --time-standard clock'
+
+
+def test_ziwei_career_first_answer_action():
+    # FIX-11-02. T42 quoted 「後化貴化祿，最宜在官祿宮」 while the same passage makes 「若居廟旺」 a condition and
+    # 太阳 is 陷 in 亥; the answer gave general advice with no link to the chart, and only the default 闰月 chart.
+    focus = _ziwei(T42 + ' --focus-palace 官禄')['focus']
+    unmet = [c for c in focus['condition_checks'] if not c['met']]
+    assert any(c['star'] == '太阳' and '若居廟旺' in c['sentence'] and c['chart'] == '陷' for c in unmet)
+    # 命宫 moves one palace when the 闰月 counts as the next month, so 官禄 moves from 亥 to 子 with it.
+    charts = {c['condition']: c for c in focus['condition_charts']}
+    assert len(charts) == 2 and sum(c['used'] for c in charts.values()) == 1
+    other = next(c for c in charts.values() if not c['used'])
+    assert other['branch'] == '子' and not other['same'] and '官禄宫在子' in other['say']
+    career = focus['career']
+    assert [step['part'] for step in career['first_answer']] == ['facts', 'undecided', 'action']
+    assert '若居廟旺' in career['undecided'][0] and '闰' in career['undecided'][-1]
+    action = career['action']
+    assert action['text'] and '不是从这张盘推出' in action['boundary'] and '不预测' in action['boundary']
+
+    # E07: true solar 19:42 and clock 20:00 are both 戌时, so the clock chart is the same chart; no full clause found.
+    e07 = _ziwei(E07 + ' --focus-palace 官禄')['focus']
+    clock = next(c for c in e07['condition_charts'] if not c['used'])
+    assert clock['same'] and '戌' in clock['condition']
+    assert e07['career']['action']['text'] and e07['career']['first_answer'][0]['text'].startswith('官禄宫在酉')
+
+    # T25 fixed the clock standard and has no 闰月: no alternative chart to lay out, the action still comes.
+    t25 = _ziwei(T25 + ' --focus-palace 官禄')['focus']
+    assert t25['condition_charts'] == [] and t25['career']['action']['text']
+    # Only the career palace gets a work action; other palaces keep their own order.
+    assert 'career' not in _ziwei(T42 + ' --focus-palace 夫妻')['focus']
+
+
+def test_ziwei_compact_first_answer():
+    # FIX-11-03, T41/T44: limits were repeated, two tables restated the same palaces, and 武贪、廉破、科权禄 stood
+    # unexplained. The focus block now carries a plain gloss for every term its own sentence uses.
+    t41 = ('--year 1996 --month 2 --day 18 --hour 9 --minute 25 --gender female --timezone Asia/Shanghai '
+           '--time-standard clock --focus-palace 夫妻')
+    focus = _ziwei(t41)['focus']
+    for term in ('对宫', '三合', '生年四化'):
+        assert term in focus['terms'] and focus['terms'][term]
+    assert any(label in focus['terms'] for label in ('庙', '旺', '陷', '平', '利', '得'))
+    order = '\n'.join(focus['answer_order'])
+    assert '最多一张表' in order and '全称' in order
+    guide = (REFS / '02-ziwei.md').read_text(encoding='utf-8')
+    for rule in ('最多一张表', '星名写全称', '武贪', '首次出现'):
+        assert rule in guide

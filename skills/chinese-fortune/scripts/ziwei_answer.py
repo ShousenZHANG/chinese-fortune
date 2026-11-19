@@ -54,14 +54,39 @@ def _essay_sentences(text: str, star: str) -> list[str]:
     return kept
 
 
-def palace_quotes(star: str, short: str, limit: int = 2) -> list[dict]:
-    """Sentences naming the palace, from 全书 paragraphs that discuss the star, as written.
+OTHER_PALACE = re.compile('身命|命宫|兄弟|夫妻|妻宫|男女|子女|财帛|疾厄|迁移|奴仆|官禄|田宅|福德|父母')
+BRIGHTNESS_CONDITION = re.compile('庙|陷地|落陷|失陷|居陷|陷宫')
 
-    Round 6 Z04 timed out after one classical_search call per star; the focus
-    block now carries the matching sentences so the host can quote them directly.
-    A shared sentence is a lead to read, not a verdict about this chart.
+
+def _conditions(text: str, star: str, short: str) -> list[str]:
+    """Brightness conditions in the passage a quote came from, still about this star and this palace.
+
+    Round 11 T42: 「後化貴化祿，最宜在官祿宮」 was quoted, while the same passage makes 「若居廟旺，化祿化權，允為貴論」
+    a condition and 太阳 sits 陷 in that chart. A sentence that names another star, another palace, or a gendered
+    case (女人、妻、夫) is left out: it is not a condition on this star in this palace.
     """
+    others = _others(star)
+    kept = []
+    for sentence in SENTENCE.findall(text):
+        plain = normalized(sentence)
+        if (not BRIGHTNESS_CONDITION.search(plain) or any(n in plain for n in others)
+                or re.search('女|男|妻|夫|父|母', plain)
+                or any(seat != short for seat in OTHER_PALACE.findall(plain))):
+            continue
+        kept.append(sentence.strip())
+    return kept
+
+
+def _requires(sentence: str) -> str | None:
+    plain = normalized(sentence)
+    bright, dark = '庙' in plain, '陷' in plain
+    return '庙旺' if bright and not dark else '陷' if dark and not bright else None
+
+
+def _star_hits(star: str, short: str, limit: int = 2) -> tuple[list[dict], list[dict]]:
+    """palace_quotes plus the brightness conditions from the same passages."""
     out: list[dict] = []
+    conditions: list[dict] = []
     for hit in search_classics(f'{star} {short}', book='ziwei', limit=6):
         # Star essays name the star at the head and then go palace by palace (「在夫妻主於隔角」);
         # elsewhere the sentence itself must name the star. The palace must be used as a
@@ -77,9 +102,21 @@ def palace_quotes(star: str, short: str, limit: int = 2) -> list[dict]:
         sentence = next((x.strip() for x in candidates if _names_palace(x, star, seat, essay)), None)
         if sentence:
             out.append({'passage_id': hit['passage_id'], 'text': sentence})
+            conditions.extend({'passage_id': hit['passage_id'], 'sentence': c}
+                              for c in _conditions(hit['text'], star, short) if c != sentence)
         if len(out) >= limit:
             break
-    return out
+    return out, conditions[:3]
+
+
+def palace_quotes(star: str, short: str, limit: int = 2) -> list[dict]:
+    """Sentences naming the palace, from 全书 paragraphs that discuss the star, as written.
+
+    Round 6 Z04 timed out after one classical_search call per star; the focus
+    block now carries the matching sentences so the host can quote them directly.
+    A shared sentence is a lead to read, not a verdict about this chart.
+    """
+    return _star_hits(star, short, limit)[0]
 
 
 def palace_name(text: str) -> str | None:
@@ -128,6 +165,46 @@ def build_say(chart: dict) -> list[str]:
     return lines
 
 
+BRIGHTNESS_GLOSS = '亮度等级，从强到弱是庙、旺、得、利、平、不、陷；只是星在这一宫的传统亮度，不是好坏评分'
+TERMS = {
+    '对宫': '正对面的那一宫；看一宫时连对宫一起看',
+    '三合': '和本宫隔四位、成三角的两个宫，会照本宫',
+    '三方四正': '本宫、对宫和两个三合宫，看一个主题时一起看的四个宫',
+    '生年四化': '出生年天干带来的四个标记（化禄、化权、化科、化忌），各落在一颗星上',
+    '借对宫': '本宫没有主星时，借对宫的主星来看',
+}
+# Round 11 FIX-11-02: E07 stopped at 「不足以选定职业」 and T42 gave advice with no anchor. One action that holds for
+# anyone, said as such, so the reader has something to do without a career verdict drawn from the stars.
+CAREER_ACTION = {
+    'text': '先把下一份工作或下一次谈话要确认的三件事写下来：谁给你授权和拍板、成果按什么标准评、'
+            '工作量超了找谁调整；面谈或和上级沟通时逐条问清。',
+    'boundary': '这是一般工作做法，对谁都适用，不是从这张盘推出来的，也不预测结果。',
+}
+
+
+def _terms(say: str, palace: dict) -> dict:
+    """Plain glosses for the terms the focus sentence uses (FIX-11-03: 武贪、科权禄 went unexplained)."""
+    # 三方四正 and 生年四化 are always in the one table the answer order asks for, whether or not this sentence says them.
+    out = {term: gloss for term, gloss in TERMS.items() if term in say or term in ('三方四正', '生年四化')}
+    if palace.get('borrowed'):
+        out['借对宫'] = TERMS['借对宫']
+    for label in dict.fromkeys(re.findall('[（(](庙|旺|得|利|平|不|陷)[）)]', say)):
+        out[label] = BRIGHTNESS_GLOSS
+    return out
+
+
+def _career(say: str, seen: list[str], quotes: dict, checks: list[dict]) -> dict:
+    undecided = [f"《全书》{c['passage_id']}「{c['sentence'].rstrip('。')}」要{c['star']}{c['requires']}，"
+                 f"本盘{c['star']}是{c['chart']}，这一层不套用。" for c in checks if not c['met']]
+    if not any(quotes.get(star) for star in seen):
+        undecided.append(f"没有找到把{'、'.join(seen) or '本宫'}落在官禄宫对应到具体工作的完整原句，工作方向这次不定。")
+    else:
+        undecided.append('原句讲的是古代任职，换成今天的行业属于类比，不能据此指定职业。')
+    return {'undecided': undecided, 'action': dict(CAREER_ACTION),
+            'first_answer': [{'part': 'facts', 'text': say}, {'part': 'undecided', 'text': ''.join(undecided)},
+                             {'part': 'action', 'text': CAREER_ACTION['text'] + CAREER_ACTION['boundary']}]}
+
+
 def focus_palace(chart: dict, name: str) -> dict:
     """The asked palace laid out for a per-palace answer: stars, 对宫/三合, 四化, patterns, search terms."""
     palaces = {p['name']: p for p in chart['twelve_palaces']}
@@ -150,7 +227,21 @@ def focus_palace(chart: dict, name: str) -> dict:
            + f"；对宫{opposite['name']}{_stars_text(opposite)}；"
            + '；'.join(f"三合{t['name']}{_stars_text(t)}" for t in trines)
            + (f"；本宫生年{'、'.join(hua_here)}" if hua_here else '') + '。')
-    return {
+    hits = {star: _star_hits(star, short) for star in seen} if name != '命宫' else {}
+    quotes = {star: found for star, (found, _) in hits.items()}
+    brightness = {m['name']: m.get('brightness') for m in palace['main_stars']}
+    checks = []
+    for star, (_, conditions) in hits.items():
+        for c in conditions:
+            requires = _requires(c['sentence'])
+            if requires and brightness.get(star):
+                met = brightness[star] in ('庙', '旺') if requires == '庙旺' else brightness[star] == '陷'
+                checks.append({'star': star, 'passage_id': c['passage_id'], 'sentence': c['sentence'],
+                               'requires': requires, 'chart': brightness[star], 'met': met})
+    extra = {'career': _career(say, seen, quotes, checks)} if name == '官禄宫' else {}
+    lead = (['开头三句照 career.first_answer：盘面一句、未判一句、一条现实工作动作（连同它的 boundary 一起说）']
+            if extra else [])
+    return {**extra,
         'palace': name, 'branch': palace['branch'], 'ganzhi': palace['ganzhi'],
         'main_stars': palace['main_stars'], 'borrowed_from_branch': palace.get('borrowed_from_branch'),
         'borrowed_stars': palace.get('borrowed_stars', []),
@@ -162,13 +253,19 @@ def focus_palace(chart: dict, name: str) -> dict:
                    for t in trines],
         'patterns': patterns,
         'search_queries': [f'{star} {short}' for star in seen] or [f'{short}宫'],
-        'quotes': {star: palace_quotes(star, short) for star in seen} if name != '命宫' else {},
+        'quotes': quotes,
         'quotes_note': '取自讲这颗星的《全书》段落中提到该宫的那一句，原字照录可直接引用；是否适用于本盘仍要按原文条件解释。',
+        'condition_checks': checks,
+        'condition_checks_note': '同一段原文里对这颗星的庙旺、落陷条件，逐条对照本盘亮度；met 为 false 的那层不能套用。',
+        'terms': _terms(say, palace),
         # Round 10 T41-T44: the facts were right but limits were repeated inside every paragraph. The answer now
         # leads with what this chart supports, and every limit is said once, in one place at the end.
-        'answer_order': ['开头一至两句：本题能支持的结论；条件不全时直接说结论只到哪一步',
-                         '必要盘面：本宫主星与亮度（空宫说明借对宫）、对宫与三合会照、生年四化落入，一张表列完',
-                         '逐条解释：先白话，再给直接支持它的原句和段号（quotes）；没有原句的星只在表里列位置',
+        # Round 11 FIX-11-03: two tables restated the same palaces and 武贪、科权禄 went unexplained.
+        'answer_order': lead + ['开头一至两句：本题能支持的结论；条件不全时直接说结论只到哪一步',
+                         '必要盘面：本宫主星与亮度（空宫说明借对宫）、对宫与三合会照、生年四化落入，最多一张表列完',
+                         '逐条解释：先白话，再给直接支持它的原句和段号（quotes）；没有原句的星只在表里列位置；'
+                         'condition_checks 里不成立的条件，在那条解释旁说一次',
+                         '星名写全称（不写武贪、廉破、科权禄这类缩写）；术语首次出现时用 terms 里的白话当场解释',
                          '补查记录（全篇只写这一处，每项一次）：held_back 里只列位置、不作解释的星，还没核的解释，转录版本状态'],
         'held_back': held_back,
         'note_once': '转录尚未逐字校勘、未核原刻影像：放进补查记录说一次，不在每段重复。',

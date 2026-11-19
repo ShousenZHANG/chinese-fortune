@@ -236,6 +236,43 @@ def brief_palaces(palaces: list[dict]) -> list[dict]:
     return out
 
 
+MONTH_CN = dict(enumerate(('', '正', '二', '三', '四', '五', '六', '七', '八', '九', '十', '冬', '腊')))
+
+
+def _hour_branch(hhmm: str) -> str:
+    return '子丑寅卯辰巳午未申酉戌亥'[((int(hhmm.split(':')[0]) + 1) // 2) % 12]
+
+
+def condition_charts(request: argparse.Namespace, focus: dict, leap: dict | None, tst: dict) -> list[dict]:
+    """The asked palace under each reading the user did not fix: the other 闰月 rule, and clock time.
+
+    Round 11 FIX-11-02: T42 (闰四月初四) was read under the default rule only, though counting the 闰月 as the
+    next month moves 命宫 and the career palace with it; readers wanted each condition's chart said apart.
+    """
+    def variant(**change: object) -> dict:
+        alt = calculate_ziwei(argparse.Namespace(**{**vars(request), **change, 'variant': True}))
+        return alt['focus']
+
+    def row(condition: str, alt: dict, used: bool) -> dict:
+        return {'condition': condition, 'used': used, 'branch': alt['branch'], 'say': alt['say'],
+                'same': alt['say'] == focus['say']}
+
+    rows: list[dict] = []
+    if leap:
+        other = 'prev' if leap['month'] != leap['base'] else 'next'
+        other_month = leap['base'] if other == 'prev' else leap['base'] % 12 + 1
+        base = MONTH_CN[leap['base']]
+        rows.append(row(f"闰{base}月按{MONTH_CN[leap['month']]}月排（{LEAP_LABELS[leap['school']]}，本次所用）", focus, True))
+        rows.append(row(f"闰{base}月按{MONTH_CN[other_month]}月排（{LEAP_LABELS[other]}）",
+                        variant(leap_month=other), False))
+    if tst.get('applied'):
+        solar_branch, clock_branch = _hour_branch(tst['true_solar_time']), _hour_branch(tst['clock_time'])
+        rows.append(row(f"按真太阳时 {tst['true_solar_time']} 排（{solar_branch}时，本次所用）", focus, True))
+        rows.append(row(f"按钟表时间 {tst['clock_time']} 排（{clock_branch}时）",
+                        variant(time_standard='clock'), False))
+    return rows
+
+
 def calculate_ziwei(request: argparse.Namespace) -> dict:
     """Compute a chart without stdout; accepts arguments from build_parser()."""
     args = argparse.Namespace(**vars(request))
@@ -608,6 +645,18 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
     full = {**out, 'twelve_palaces': annotated}
     out['say'] = build_say(full)
     out['focus'] = focus_palace(full, focus_name) if focus_name else None
+    if out['focus'] is not None and not getattr(request, 'variant', False):
+        leap = ({'base': abs(raw_month), 'day': lunar_day, 'month': lunar_month, 'school': leap_school,
+                 'born': f'{lunar.getMonthInChinese()}月{lunar.getDayInChinese()}'} if is_leap_month else None)
+        out['focus']['condition_charts'] = condition_charts(request, out['focus'], leap, tst_info)
+        career = out['focus'].get('career')
+        if career and leap:
+            other = next(c for c in out['focus']['condition_charts'] if not c['used'])
+            if not other['same']:
+                note = (f"出生在{leap['born']}：本盘按{MONTH_CN[leap['month']]}月排；"
+                        f"{other['condition']}时官禄宫换到{other['branch']}，两种盘都列，不挑一个当唯一。")
+                career['undecided'].append(note)
+                career['first_answer'][1]['text'] += note
     out['schema_version'] = '2.0'
     out['reading_support'] = {
         'status': 'requires_semantic_review',
