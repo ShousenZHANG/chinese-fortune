@@ -226,7 +226,7 @@
 | `--changsheng-direction` | yinyang 阳男阴女顺 / gender 男顺女逆（ziwei:c002:p0056 字面） | 只影响长生十二神 |
 | `--school` | default / nihai 倪海厦派预设 | 见下 |
 
-`--school nihai` 把闰月改成整月归下月、晚子时算当日，并且不出宫干自化和大限四化（`school.self_transformations`、`school.da_xian_transformations` 为 false），生年四化与流年各层照常。这套取法依 Renhuai123/ziwei-doushu 现行代码；该项目的说明页另有「大限四化与流年四化叠加」的说法，与它的代码不一致，本项目以代码为准。单项开关可以覆盖预设，例如 `--school nihai --leap-month split`。倪师课程原话为 CC BY-NC-SA 授权，本项目不收录，只描述取法。
+`--school nihai` 把闰月改成整月归下月、晚子时算当日，并且不出宫干自化和大限四化（`school.self_transformations`、`school.da_xian_transformations` 为 false），生年四化与流年各层照常。这套取法依 Renhuai123/ziwei-doushu 现行代码；该项目的说明页另有「大限四化与流年四化叠加」的说法，与它的代码不一致，本项目以代码为准。单项开关可以覆盖预设，例如 `--school nihai --leap-month split`。倪师课程原话为 CC BY-NC-SA 授权，本项目不收录，只描述取法。用户要「用倪派讲授的口径」分析时（第十一轮 T40），输出里的 `school_source` 写明哪部分来自哪里：排盘口径按预设，解释只引随包《全书》的可核段落；倪派讲授原话、课次、时间戳都不写，也不用《全书》原句冒充讲授内容。回答先给按倪派口径排出的盘面和《全书》能核的解释，再一句说明倪派讲授原文本项目没有收录。
 
 天空「顺加生时」、闰月「保持闰月」两个选项只见于别家的设置面板，查不到算法，本项目没有实现。用户没说流派就用默认，回答里说明用的是哪一种；不同流派结果不同时并列说明，不挑一个当唯一正确。
 

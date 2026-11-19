@@ -303,3 +303,17 @@ def test_element_counts_presented_once():
     for e in missing:
         assert f'没有{e}' in counts['say'] and '藏' in counts['say']
     assert '木' in counts['hidden_say'] and '只出现一次' in counts['show_once']
+
+
+def test_ni_school_citation_provenance():
+    # FIX-11-06, T40 asked to read the chart 「用倪海厦《天纪》讲授紫微斗数的口径」. The package switches the chart rules
+    # (--school nihai) but carries no 《天纪》 lecture text; the output now says which part is which.
+    t40 = ('--year 1987 --month 11 --day 6 --hour 16 --minute 40 --gender male --city 成都 --time-standard clock '
+           '--school nihai --focus-palace 官禄')
+    out = _ziwei(t40)
+    source = out['school_source']
+    assert source['preset'] == 'nihai' and source['teaching_text'] is None
+    assert '不收录' in source['note'] and '课次' in source['note'] and '《紫微斗数全书》' in source['quotes_from']
+    assert 'school_source' not in _ziwei(T42)
+    guide = (REFS / '02-ziwei.md').read_text(encoding='utf-8')
+    assert '倪派讲授' in guide and 'school_source' in guide

@@ -106,6 +106,11 @@ SCHOOL_CHOICES: dict[str, tuple[str, ...]] = {
 }
 NIHAI_NOTE = ("倪海厦派预设 (--school nihai): 闰月整月归下月、晚子时算当日、不出宫干自化与大限四化，"
               "生年四化与流年各层照常。取法依 Renhuai123/ziwei-doushu 现行代码；单项开关仍可覆盖。")
+# Round 11 FIX-11-06, T40: the preset changes the chart rules only; no 《天纪》 lecture text ships with the package.
+NIHAI_SOURCE = {'preset': 'nihai', 'chart_rules_from': 'Renhuai123/ziwei-doushu 现行代码（闰月、晚子时、自化开关）',
+                'teaching_text': None, 'quotes_from': '随包《紫微斗数全书》转录，引用带 ziwei: 段号',
+                'note': '随包没有倪海厦《天纪》讲授原文（课程原话为 CC BY-NC-SA，本项目不收录）：课次、时间戳、原话都不能引；'
+                        '回答把倪派排盘口径和《全书》可核出处分开写，用户自己给出可核的课次或页码时再单列核对。'}
 YEAR_DIVIDE_NOTE = ("本命及目标流年干支按立春交节时刻换年 (--year-divide lichun)：本命年干支、五行局、生年四化、魁钺禄羊陀"
                     "与年系杂曜随之；目标流年相关字段和流月五虎遁采用选定年干支，实际农历日期与虚岁仍按农历年，见 horoscope.conventions。")
 KUI_YUE_NOTE = ("魁钺按 --kui-yue {school}：庚辛壬癸年与通行表不同。表取自 Renhuai123/ziwei-doushu，"
@@ -657,6 +662,8 @@ def calculate_ziwei(request: argparse.Namespace) -> dict:
                         f"{other['condition']}时官禄宫换到{other['branch']}，两种盘都列，不挑一个当唯一。")
                 career['undecided'].append(note)
                 career['first_answer'][1]['text'] += note
+    if nihai:
+        out['school_source'] = dict(NIHAI_SOURCE)
     out['schema_version'] = '2.0'
     out['reading_support'] = {
         'status': 'requires_semantic_review',
