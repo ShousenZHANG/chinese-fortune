@@ -20,7 +20,8 @@
 
 1. 从 [最新 Release](https://github.com/ShousenZHANG/chinese-fortune/releases/latest) 下载 `chinese-fortune-v版本号.zip`。
 2. 解压到技能目录，解压后应看到 `chinese-fortune/SKILL.md`：Claude Code 放 `~/.claude/skills/`，Codex 放 `~/.codex/skills/`。
-3. 重开 AI，直接问：「我 1990 年 5 月 15 日上午 10 点在杭州出生，男，看看八字」。
+3. 重开 AI，先确认技能已启用：问「你现在能用 chinese-fortune 技能吗？」，回答应提到这个技能；没提到就回头检查第 2 步的路径。
+4. 直接问：「我 1990 年 5 月 15 日上午 10 点在杭州出生，男，看看八字」。回答里带古籍段号（如 `ziping:c009:p0006`），就说明技能在工作。
 
 Claude Code 也可以用插件一条命令装好，其他宿主见 [安装](#安装)。
 

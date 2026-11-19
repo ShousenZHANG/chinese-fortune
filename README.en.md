@@ -20,7 +20,8 @@
 
 1. Download `chinese-fortune-v<version>.zip` from the [latest release](https://github.com/ShousenZHANG/chinese-fortune/releases/latest).
 2. Unzip it into your skills folder so that `chinese-fortune/SKILL.md` exists: `~/.claude/skills/` for Claude Code, `~/.codex/skills/` for Codex.
-3. Restart the tool and ask, in Chinese or English: "I was born on 15 May 1990 at 10:00 in Hangzhou, male. Read my BaZi."
+3. Restart the tool and check that the skill is on: ask "Can you use the chinese-fortune skill now?" The reply should name it; if not, check the folder in step 2.
+4. Ask, in Chinese or English: "I was born on 15 May 1990 at 10:00 in Hangzhou, male. Read my BaZi." A reply that cites passage ids such as `ziping:c009:p0006` shows the skill at work.
 
 Claude Code can also install it as a plugin with one command; other hosts are under [Install](#install).
 

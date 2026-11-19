@@ -317,3 +317,13 @@ def test_ni_school_citation_provenance():
     assert 'school_source' not in _ziwei(T42)
     guide = (REFS / '02-ziwei.md').read_text(encoding='utf-8')
     assert '倪派讲授' in guide and 'school_source' in guide
+
+
+def test_readme_first_fold_reports_skill_confirmation():
+    # FIX-11-09: readers could repeat the install steps but not say how to tell the host had loaded the skill.
+    root = SCRIPTS.parents[2]
+    for name, check, sign in (('README.md', '先确认技能已启用', '段号'), ('README.en.md', 'check that the skill is on', 'passage ids')):
+        text = (root / name).read_text(encoding='utf-8')
+        screen = text[:text.index('\n## ')]
+        assert check in screen and sign in screen and '4. ' in screen
+        assert screen.index(check) < screen.index('1990')
