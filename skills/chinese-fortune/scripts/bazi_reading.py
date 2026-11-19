@@ -493,6 +493,9 @@ def host_notes(result: dict) -> list[str]:
         if zodiac:
             notes.append(f"生肖按工具算的农历年说：属{zodiac}；不要按公历年份自己推。")
     advice = result.get('colour_advice')
+    if advice and advice.get('lead'):
+        notes.append('问穿什么颜色：第一段照 colour_advice.lead 的顺序说（五行计数一句、可照做的穿搭、这一格一般先取、'
+                     '不改运一句）；《穷通宝鉴》原文、审校说明（照录，不删提醒）和配色出处放在后面的依据段，不放进第一段。')
     if advice and advice.get('personal_choice') is False:
         notes.append('这一格的例外在你的盘里成立，原文改取别的：不要把一般取法说成个人建议，也不要另推颜色或饰物。')
     if 'luck_reading' in result:

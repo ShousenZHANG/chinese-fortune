@@ -267,12 +267,36 @@ def _layers(advice: dict) -> dict:
     return {'traditional': traditional, 'practical': practical, 'unsupported': list(UNSUPPORTED)}
 
 
+def _lead(advice: dict, chart: dict) -> list[dict]:
+    """R11 FIX-11-12, E03: count, an outfit to copy, the cell's usual choice, the no-luck-change line, in that order.
+
+    The 《穷通宝鉴》 quote, the review note and the colour mapping are the evidence layer after it; the review note
+    stays whole there and is not put in front of a reader who asked what to wear.
+    """
+    wear = advice.get('wear') or []
+    counts = (chart.get('wuxing_counts') or {}).get('say', '')
+    if len(wear) > 1:
+        first, second = wear[0]['colours'], wear[1]['colours']
+        outfit = (f"可以这样配：{first[0]}或{first[-1]}的上衣，配{second[0]}或{second[-1]}的下装；"
+                  f"也可以只用{first[0]}的小配件点缀。")
+    elif wear:
+        outfit = f"可以多用{'、'.join(wear[0]['colours'])}，放在上衣或小配件上。"
+    else:
+        outfit = ''
+    names = '，其次'.join(f"{w['wuxing']}（{'、'.join(w['colours'])}）" for w in wear)
+    usual = f"这一格一般先取{names}；这一格的例外还没按你的整张盘核完，所以不是个人喜忌的定论。" if names else ''
+    limit = '穿什么颜色只是个人喜好层面的选择：古籍没说穿某种颜色能改运、招财或治病。'
+    return [{'part': part, 'text': text} for part, text in
+            (('count', counts), ('outfit', outfit), ('usual', usual), ('limit', limit)) if text]
+
+
 def colour_advice(chart: dict, question: str | None = None) -> dict:
     """What suits this chart for what the question asks, or why it cannot be given."""
     advice = _advice(chart)
     advice['aspects'] = aspects_asked(question) or ['colour']
     if advice['status'] == 'ok':
         advice['layers'] = _layers(advice)
+        advice['lead'] = _lead(advice, chart)
     return advice
 
 

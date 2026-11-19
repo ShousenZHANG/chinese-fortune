@@ -327,3 +327,18 @@ def test_readme_first_fold_reports_skill_confirmation():
         screen = text[:text.index('\n## ')]
         assert check in screen and sign in screen and '4. ' in screen
         assert screen.index(check) < screen.index('1990')
+
+
+def test_colour_first_answer_examples_before_sources():
+    # FIX-11-12, E03: the reply put 「审校说明：先甲疏后壬洗；水局丙救，当前月段没有旧表丁固定次用的依据」 between the count
+    # and the outfit. The lead is count, outfit, the cell's usual choice, the no-luck-change line; sources come after.
+    # Gold E03: 丙子 戊戌 庚寅 壬午 -> 木1 火2 土2 金1 水2, nothing missing.
+    out = run_cli('bazi_reading.py', '--year', 1996, '--month', 10, '--day', 20, '--hour', 12, '--minute', 0,
+                  '--gender', 'male', '--city', '广州', '--question', '五行缺什么？平时穿什么颜色比较好？')
+    lead = out['colour_advice']['lead']
+    assert [part['part'] for part in lead] == ['count', 'outfit', 'usual', 'limit']
+    assert '木1 火2 土2 金1 水2' in lead[0]['text'] and '上衣' in lead[1]['text']
+    assert '这一格一般先取' in lead[2]['text'] and '改运' in lead[3]['text']
+    review = out['colour_advice']['tiaohou']['review_note']
+    assert all(review not in part['text'] for part in lead)
+    assert any('colour_advice.lead' in note for note in out['host_notes'])
