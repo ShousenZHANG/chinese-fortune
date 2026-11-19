@@ -70,7 +70,9 @@ def _rescue(chart: dict) -> list[str]:
     combines with it, or a complete branch frame of the element that overcomes it."""
     pillars = chart['four_pillars']
     day = chart['day_master']['stem']
-    found = [f"{p}干{pillars[p]['stem']}" for p in ('year', 'month', 'hour')
+    # R11 T10 draft: 「你的盘里有year干己、month干丁」 leaked the keys into the sentence.
+    label = {'year': '年', 'month': '月', 'hour': '时'}
+    found = [f"{label[p]}干{pillars[p]['stem']}" for p in ('year', 'month', 'hour')
              if (pillars.get(p) or {}).get('stem') and (_overcomes(pillars[p]['stem'], day)
                                                        or frozenset((pillars[p]['stem'], day)) in TIANGAN_HE)]
     enemy = next((w for w, target in WUXING_KE.items() if target == TIANGAN_WUXING[day]), None)

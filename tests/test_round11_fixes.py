@@ -246,3 +246,12 @@ def test_first_career_plain_next_step():
     career = _areas(e01)['career']
     assert career['lead'].startswith('事业方面') and '书上叫正官、七杀' in career['lead']
     assert '不是命理结论' in career['action']
+
+
+def test_rescue_pillars_are_named_in_chinese():
+    # Found while checking the T10 draft: 「你的盘里有year干己、month干丁能制住或合住日干」.
+    from annual_assessment import _rescue
+    chart = {'four_pillars': {'year': {'stem': '己', 'branch': '卯'}, 'month': {'stem': '丁', 'branch': '丑'},
+                              'day': {'stem': '壬', 'branch': '申'}, 'hour': {'stem': '乙', 'branch': '巳'}},
+             'day_master': {'stem': '壬'}}
+    assert _rescue(chart) == ['年干己', '月干丁']

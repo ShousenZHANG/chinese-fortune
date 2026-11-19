@@ -1491,7 +1491,8 @@ def host_notes(result: dict) -> list[str]:
         label = _event_label(result)
         notes.append(f"相主是借用到「{label}」上的：首句和结论都要保留「借用相主比较」，只能说相主等级最高的是哪几天，"
                      "不能说这些是做这件事最好的日子、事业或感情的吉凶已定。")
-    calendar = result.get('personal_calendar') or {}
+    # No date asked for an area outlook: the grades are not shown, so their tie notes would only bring them back.
+    calendar = (result.get('personal_calendar') or {}) if not areas or asks_dates(result.get('question') or '') else {}
     entries = [e for e in _ranked(_merged(calendar.get('entries', []))) if not e.get('event_hits')]
     order = ('大吉', '吉', '平', '小凶', '凶', '大凶')
     best = min((e['grade'] for e in entries), key=order.index, default=None)
@@ -1536,7 +1537,7 @@ def render_answer(result: dict, detail: bool = False) -> str:
     areas = area_outlook(result)
     if areas:
         if not asks_dates(result.get('question') or ''):
-            return PARAGRAPH.join(area_lead(result, areas))
+            return PARAGRAPH.join([*area_lead(result, areas), _render_grades(result, detail, grades=False)])
         appendix = f"附：传统择日等级（借用相主，不是{'、'.join(areas)}预测）"
         return PARAGRAPH.join([*area_lead(result, areas), appendix, _render_grades(result, detail)])
     return _render_grades(result, detail)
@@ -1556,10 +1557,11 @@ def area_lead(result: dict, areas: list[str]) -> list[str]:
             '要再往下说，最少要补两样：现在的处境（在职求升、准备换工作还是推进项目），以及出生时间是否精确。']
 
 
-def _render_grades(result: dict, detail: bool = False) -> str:
+def _render_grades(result: dict, detail: bool = False, grades: bool = True) -> str:
+    """``grades=False``: the window, luck and year layers without the 相主 day grades (R11 FIX-11-01)."""
     state = result['conclusion']['status']
     advice = _colour_advice(result)
-    lines = [_lead_sentence(result), *(colour_lines(advice) if advice else []),
+    lines = [*([_lead_sentence(result)] if grades else []), *(colour_lines(advice) if advice else []),
              _window_description(result['window'])]
     comparison = result.get('candidate_comparison', [])
     for candidate in comparison:
@@ -1608,7 +1610,8 @@ def _render_grades(result: dict, detail: bool = False) -> str:
                 both = '；'.join(f"《{BOOK_NAMES[r['passage_id'].split(':')[0]]}》作{''.join(r['hours'])}（{r['passage_id']}）" for r in rule['readings'])
                 spans = '、'.join(_hour_span(h) for h in group)
                 lines.append(f"{label}忌时两说并列：{both}。白话说，{row['candidate_id']} 覆盖到的 {spans} 只在其中一本书里算忌时，两本书指向不同时间，目前无法据此定下这段能不能用。")
-    lines.extend(_personal_lines(result, detail))
+    if grades:
+        lines.extend(_personal_lines(result, detail))
     for person in result['participants']:
         if person.get('time_note'):
             lines.append(person['time_note'] + '。')
