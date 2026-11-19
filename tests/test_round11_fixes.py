@@ -160,6 +160,7 @@ def test_sanyuan_explicit_xieji_and_xuanze_differ():
     import json
     import subprocess
     import sys
+
     from conftest import script_path
     request = {'a': {'year': 1990, 'month': 6, 'day': 12, 'gender': 'male', 'city': '北京'},
                'b': {'year': 1992, 'month': 9, 'day': 18, 'gender': 'female', 'city': '北京'},

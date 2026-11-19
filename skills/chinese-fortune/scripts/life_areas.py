@@ -100,7 +100,7 @@ def _timing(facts: dict, stars: tuple[str, ...], window: list[int] | None = None
                                 'stem_role': role, 'branch_roles': held,
                                 'brings_star': role in stars or any(r in stars for _, _, r in held)}
     if isinstance(year, int) and day:
-        rows = []
+        rows: list[dict] = []
         start = min(window) if window else year
         for y in sorted(set(range(start, start + YEARS_AHEAD)) | set(window or [])):
             stem = '甲乙丙丁戊己庚辛壬癸'[(y - 4) % 10]
