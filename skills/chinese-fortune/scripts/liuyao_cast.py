@@ -687,7 +687,7 @@ def first_answer(out: dict) -> list[dict]:
     hits = set((out.get('reading_plan') or {}).get('primary', {}).get('rule_hits') or [])
     mixed = any('support' in h for h in hits) and any('restraint' in h for h in hits)
     undecided = (('用神（这卦里代表所问之事的那一爻）有生扶也有克制，' if mixed else '')
-                 + '成败这次没断：工具只核了原文字面条件，喜忌和救助要人工再核，不推定结果和日期。')
+                 + '成败这次没断：工具只核了原文字面条件，其余要看的生克和补救条件还没核完，不推定结果和日期。')
     parts = [{'part': 'chart', 'text': chart}, {'part': 'undecided', 'text': undecided}]
     question = out.get('question') or ''
     step = next((text for words, text in NEXT_STEPS if any(w in question for w in words)), None)
@@ -804,7 +804,8 @@ def main(argv: list[str] | None = None) -> int:
         out["must_cover"] = must
     out["reading_plan"] = plan(out)
     out["first_answer"] = first_answer(out)
-    out["first_answer_order"] = "第一层只说 first_answer（卦名、未判、现实跟进）；爻表、纳甲、六亲和原文放在后面，按需核对。"
+    out["first_answer_order"] = ("第一层只说 first_answer（卦名、未判、现实跟进）；后面照常写全已能核的条件——用神旺衰、"
+                                 "日月生克、动爻的回头生克、旬空月破，不因为首段短就省掉；爻表和原文放在这些条件之后。")
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     out["rule_index"] = rule_index()
     if args.markdown:

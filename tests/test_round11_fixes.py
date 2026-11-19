@@ -42,6 +42,8 @@ def test_ziwei_career_first_answer_action():
     clock = next(c for c in e07['condition_charts'] if not c['used'])
     assert clock['same'] and '戌' in clock['condition']
     assert e07['career']['action']['text'] and e07['career']['first_answer'][0]['text'].startswith('官禄宫在酉')
+    # Acceptance review of E07: the full palace sentence opened the reply and the table repeated it.
+    assert '见下面的表' in e07['career']['first_answer'][0]['text'] and '三合' not in e07['career']['first_answer'][0]['text']
 
     # T25 fixed the clock standard and has no 闰月: no alternative chart to lay out, the action still comes.
     t25 = _ziwei(T25 + ' --focus-palace 官禄')['focus']
@@ -246,7 +248,7 @@ def test_first_career_plain_next_step():
                   '--question', '明年想换工作，帮我看看八字，适合换吗？')
     career = _areas(e01)['career']
     assert career['lead'].startswith('事业方面') and '书上叫正官、七杀' in career['lead']
-    assert '不是命理结论' in career['action']
+    assert '不是命理结论' in career['action'] and '求职' in career['action']   # T45 is a job seeker, not a promotion case
 
 
 def test_rescue_pillars_are_named_in_chinese():
@@ -359,6 +361,9 @@ def test_interview_liuyao_next_step_with_no_promise():
     assert '没断' in lead['undecided'] and '邮件' in lead['next_step'] and '不是卦象结论' in lead['next_step']
     assert not any(word in text for text in lead.values() for word in ('一定能', '一定会', '必过', '必然'))
     assert '爻表' in out['first_answer_order']
+    # Acceptance review of E06: with the table moved back, the host also dropped the 回头克 and 旬空、月破 it could check.
+    assert '回头生克' in out['first_answer_order'] and '旬空月破' in out['first_answer_order']
+    assert '喜忌和救助' not in lead['undecided']
     # A question with no mapped real-life step gets no invented one.
     other = run_cli('liuyao_cast.py', 'coins', '--lines', '8,6,7,8,9,7', '--date', '2026-11-18', '--time', '16:00',
                     '--target-timezone', 'Asia/Shanghai', '--question', '丢的猫在哪')

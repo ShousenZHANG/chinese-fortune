@@ -193,7 +193,7 @@ def _terms(say: str, palace: dict) -> dict:
     return out
 
 
-def _career(say: str, seen: list[str], quotes: dict, checks: list[dict]) -> dict:
+def _career(say: str, seen: list[str], quotes: dict, checks: list[dict], short_facts: str = '') -> dict:
     undecided = [f"《全书》{c['passage_id']}「{c['sentence'].rstrip('。')}」要{c['star']}{c['requires']}，"
                  f"本盘{c['star']}是{c['chart']}，这一层不套用。" for c in checks if not c['met']]
     if not any(quotes.get(star) for star in seen):
@@ -201,7 +201,8 @@ def _career(say: str, seen: list[str], quotes: dict, checks: list[dict]) -> dict
     else:
         undecided.append('原句讲的是古代任职，换成今天的行业属于类比，不能据此指定职业。')
     return {'undecided': undecided, 'action': dict(CAREER_ACTION),
-            'first_answer': [{'part': 'facts', 'text': say}, {'part': 'undecided', 'text': ''.join(undecided)},
+            # R11 acceptance (E07): the full sentence opened the reply and the table said it again; one short line here.
+            'first_answer': [{'part': 'facts', 'text': short_facts or say}, {'part': 'undecided', 'text': ''.join(undecided)},
                              {'part': 'action', 'text': CAREER_ACTION['text'] + CAREER_ACTION['boundary']}]}
 
 
@@ -238,8 +239,11 @@ def focus_palace(chart: dict, name: str) -> dict:
                 met = brightness[star] in ('庙', '旺') if requires == '庙旺' else brightness[star] == '陷'
                 checks.append({'star': star, 'passage_id': c['passage_id'], 'sentence': c['sentence'],
                                'requires': requires, 'chart': brightness[star], 'met': met})
-    extra = {'career': _career(say, seen, quotes, checks)} if name == '官禄宫' else {}
-    lead = (['开头三句照 career.first_answer：盘面一句、未判一句、一条现实工作动作（连同它的 boundary 一起说）']
+    career_line = (f"{name}在{palace['branch']}，主星" + ('、'.join(mains) if mains else
+                   f"空着，借对宫的{'、'.join(palace.get('borrowed_stars', []))}") + '；三方四正的完整位置见下面的表。')
+    extra = {'career': _career(say, seen, quotes, checks, career_line)} if name == '官禄宫' else {}
+    lead = (['开头三句照 career.first_answer：盘面一句、未判一句、一条现实工作动作（连同它的 boundary 一起说）；'
+             '后文的工作环境、协作、压力三段不再复述这条动作']
             if extra else [])
     return {**extra,
         'palace': name, 'branch': palace['branch'], 'ganzhi': palace['ganzhi'],
