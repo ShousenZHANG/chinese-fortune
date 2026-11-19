@@ -255,3 +255,25 @@ def test_rescue_pillars_are_named_in_chinese():
                               'day': {'stem': '壬', 'branch': '申'}, 'hour': {'stem': '乙', 'branch': '巳'}},
              'day_master': {'stem': '壬'}}
     assert _rescue(chart) == ['年干己', '月干丁']
+
+
+def test_move_first_request_answers_partial_before_clarification():
+    # FIX-11-11, E05: 「12月想搬家，12月哪几天比较好？」 got only two questions back (公历还是农历、在哪个城市). A day's 干支,
+    # 建除 and sourced prohibitions follow the civil date, and 1987-10-20 is 丁卯 whether read as 公历 or 农历, so the
+    # month can be laid out first; 相主 ranking still waits for the place.
+    import pytest
+    sxtwl = pytest.importorskip('sxtwl')
+    out = run_cli('huangli_query.py', '--month', '2026-12', '--question', '12月想搬家，12月哪几天比较好？',
+                  '--person', '我=1987-10-20')
+    assert out['scenarios'] == ['moving'] and len(out['rows']) == 31
+    assert out['births'][0]['gregorian'] == out['births'][0]['lunar'] == '丁卯' and out['births'][0]['same']
+    # 卯 clashes 酉: the 酉 days of December 2026 by an independent calendar.
+    branches = '子丑寅卯辰巳午未申酉戌亥'
+    you = [d for d in range(1, 32) if branches[sxtwl.fromSolar(2026, 12, d).getDayGZ().dz] == '酉']
+    assert [int(r['date'][-2:]) for r in out['rows'] if r['clashes']] == you
+    assert all(r['ganzhi'][1] == branches[sxtwl.fromSolar(2026, 12, int(r['date'][-2:])).getDayGZ().dz]
+               for r in out['rows'])
+    assert '不排个人先后' in out['not_ranked'] and 'grade' not in out['rows'][0]
+    assert any('term_day' in r for r in out['rows'])          # 大雪 falls on 12月7日
+    guide = (REFS / '00-intake.md').read_text(encoding='utf-8')
+    assert 'huangli_query.py --month' in guide and '两种读法' in guide

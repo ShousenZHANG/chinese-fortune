@@ -16,6 +16,7 @@ from typing import Any
 
 from request_time import add_request_arguments, resolve_time
 from utils import (
+    chong_branch,
     ensure_utf8_stdio,
     error_envelope,
     json_print,
@@ -284,6 +285,8 @@ def build_parser() -> argparse.ArgumentParser:
                    help="所问之事, 例如「这天搬家可以吗」; 用于 --markdown 的首句")
     p.add_argument("--markdown", action="store_true",
                    help="输出白话回答而非 JSON")
+    p.add_argument("--month", type=str, default=None, metavar="YYYY-MM",
+                   help="整月列出每天的日干支、建除、所问事项的忌日，以及冲生年的日子；不排个人先后（第十一轮 E05）")
     p.add_argument("--person", action="append", default=[], metavar="称呼=出生年干支或出生日期",
                    help="多人筛日：每人一项，如 爸爸=1962-03-01 或 我=庚午；按《协纪辨方书》相主各给等级，不合成总分")
     return p
@@ -302,6 +305,72 @@ def _birth_year(value: str) -> str:
     except ValueError:
         raise ValueError(f'出生年要写成干支（如 庚午）或公历日期 YYYY-MM-DD：{value!r}') from None
     return Solar.fromYmdHms(born.year, born.month, born.day, 12, 0, 0).getLunar().getYearInGanZhiExact()
+
+
+EVENT_WORDS = {'moving': ('搬家', '乔迁', '入宅', '移徙'), 'wedding': ('结婚', '嫁娶', '婚礼', '领证'),
+               'travel': ('出行', '旅行', '出门'), 'business': ('开业', '开张', '开市')}
+
+
+def _birth_readings(value: str) -> dict:
+    """The birth-year pillar if the date is 公历, and if it is 农历: when both agree, no need to ask which (R11 E05)."""
+    from datetime import date as _date
+
+    from lunar_python import Lunar  # type: ignore
+    solar = _birth_year(value)
+    try:
+        born = _date.fromisoformat(value)
+    except ValueError:
+        return {'gregorian': solar, 'lunar': solar, 'same': True}
+    lunar = Lunar.fromYmdHms(born.year, born.month, born.day, 12, 0, 0).getYearInGanZhiExact()
+    return {'gregorian': solar, 'lunar': lunar, 'same': solar == lunar}
+
+
+def month_rows(month: str, question: str = '', people: list[str] | None = None) -> dict:
+    """Every civil day of a month, for 「12月哪几天搬家好」 before the place is known (R11 FIX-11-11, E05).
+
+    A day's 干支, 建除 and the sourced day prohibitions follow the civil date and do not move with the city, so they
+    can be given at once. Who it clashes with needs only the birth-year pillar. No ranking is made here: 相主 grades
+    and hours wait for the place and the birth calendar.
+    """
+    import calendar
+    from datetime import date as _date
+
+    from fortune_ranking import day_prohibitions
+    from lunar_python import Solar  # type: ignore
+    year, mon = (int(x) for x in month.split('-'))
+    scenarios = [k for k, words in EVENT_WORDS.items() if any(w in question for w in words)] or list(DAY_RULE_EVENTS)
+    births = []
+    for entry in people or []:
+        label, _, value = entry.partition('=')
+        readings = _birth_readings(value.strip())
+        births.append({'label': label.strip(), **readings,
+                       'clash_branch': chong_branch(readings['gregorian'][1]) if readings['same'] else None})
+    rows = []
+    for day in range(1, calendar.monthrange(year, mon)[1] + 1):
+        lunar = Solar.fromYmdHms(year, mon, day, 12, 0, 0).getLunar()
+        ganzhi = lunar.getDayInGanZhiExact()
+        # A 节 that day: the month changes at its instant, so the day is read under both months.
+        months = list(dict.fromkeys(Solar.fromYmdHms(year, mon, day, h, m, 0).getLunar().getMonthZhiExact()
+                                    for h, m in ((0, 0), (23, 59))))
+        row = {'date': _date(year, mon, day).isoformat(), 'ganzhi': ganzhi, 'jian_chu': lunar.getZhiXing(),
+               'month_pillar_at_noon': lunar.getMonthInGanZhiExact(),
+               'prohibitions': {s: list(dict.fromkeys(h['rule'] for branch in months
+                                                      for h in day_prohibitions(s, ganzhi, branch)))
+                                for s in scenarios},
+               'clashes': [b['label'] for b in births if b['clash_branch'] == ganzhi[1]]}
+        if len(months) > 1:
+            row['term_day'] = f"{lunar.getJie() or '交节'}：当天前后属两个月，忌日按两个月都查过"
+        rows.append(row)
+    clash_days = {b['label']: [r['date'][-2:].lstrip('0') + '日' for r in rows if b['label'] in r['clashes']]
+                  for b in births}
+    barred = [r['date'][-2:].lstrip('0') + '日' for r in rows if any(r['prohibitions'].values())]
+    say = (f"{year} 年 {mon} 月的日子按公历日期列出，日干支、建除和忌日不随所在城市变。"
+           + ''.join(f"{b['label']}生年{b['gregorian']}，冲{b['clash_branch']}日：{'、'.join(clash_days[b['label']])}。"
+                     for b in births if b['clash_branch'])
+           + (f"按所问事项有原文忌日的是{'、'.join(barred)}。" if barred else '按所问事项，本月没有原文写明的忌日。'))
+    return {'month': month, 'scenarios': scenarios, 'rows': rows, 'births': births, 'say': say,
+            'not_ranked': '这里只列日历事实，不排个人先后；按相主分等级、选时辰，要先确认在哪个城市办（时区和日界），'
+                          '以及出生日期是公历还是农历（两种读法年柱相同时不必问）。'}
 
 
 def people_grades(people: list[str], day: str, zone: str) -> dict:
@@ -334,6 +403,13 @@ def main(argv: list[str] | None = None) -> int:
     require_lunar()
     from lunar_python import Solar  # type: ignore
 
+    if args.month:
+        try:
+            json_print(ok_envelope('huangli', month_rows(args.month, args.question, args.person)))
+        except ValueError as exc:
+            json_print(error_envelope('huangli', 'invalid_input', str(exc)))
+            return 1
+        return 0
     try:
         dt, time_context = resolve_time(args, date_value=args.date, day_only=True)
     except ValueError as exc:
