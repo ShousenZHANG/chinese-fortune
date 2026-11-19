@@ -1496,6 +1496,11 @@ def host_notes(result: dict) -> list[str]:
                      '不能省略限定后说这段一定忌用或必须避开。')
     if result.get('capability', {}).get('scenario') == 'outlook' and result.get('window'):
         notes.append(outlook_skeleton(result))
+    shown = [b['display'] + b['solar_term'] for person in result.get('participants', [])
+             for b in (person.get('target') or {}).get('boundaries', []) if b.get('display')]
+    if shown:
+        notes.append(f"交节时刻只说到分钟（{'、'.join(dict.fromkeys(shown))}），不要照抄 segments 里的秒："
+                     '不同历算对同一节气差十几到二十几秒；交节前后的月柱看 boundaries 的 month_before、month_after。')
     for person in result.get('participants', []):
         for reading in person.get('luck_reading', []):
             if reading['status'] != 'assessed' or not reading.get('scenarios'):

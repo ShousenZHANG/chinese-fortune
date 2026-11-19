@@ -53,6 +53,24 @@ def term_boundaries(start: datetime, end: datetime) -> dict[datetime, str]:
     return terms
 
 
+# Round 11 FIX-11-05: T45/T46 said 「11月7日17:52:05立冬」. sxtwl puts 2026 立冬 at 17:51:46; the two tables differ by
+# tens of seconds, so the reader gets the minute (rounded) and the table second stays in ``instant`` for the cuts.
+TERM_PRECISION = ('所用历法库（lunar_python）的节气表给到秒，另一套历算对同一节气常差十几到二十几秒，'
+                  '所以对用户只说到分钟；离交节一两分钟内的时刻，按所用历表口径复核。')
+
+
+def term_boundary(moment: datetime, name: str, zone: ZoneInfo) -> dict:
+    """A solar-term cut: the table instant, the minute to say, and the month on each side."""
+    local = moment.astimezone(zone)
+    shown = (local + timedelta(seconds=30)).replace(second=0, microsecond=0)
+
+    def month_at(at: datetime) -> str:
+        return str(_solar(at.astimezone(CALENDAR_ZONE)).getLunar().getMonthInGanZhiExact())
+    return {'instant': local.isoformat(), 'solar_term': name, 'display': f'{shown.month}月{shown.day}日 {shown:%H:%M}',
+            'month_before': month_at(moment - timedelta(minutes=1)),
+            'month_after': month_at(moment + timedelta(minutes=1)), 'precision': TERM_PRECISION}
+
+
 def relation(person_stem: str, target_stem: str) -> str:
     mine, other = TIANGAN_WUXING[person_stem], TIANGAN_WUXING[target_stem]
     if mine == other:
@@ -241,7 +259,6 @@ def period_facts(window: dict, natal: dict, *, granularity: str = 'day',
             'focus_intervals': None if focus is None else [
                 {'start': x.astimezone(zone).isoformat(), 'end': y.astimezone(zone).isoformat()} for x, y in ranges],
             'outside_focus_granularity': 'month' if focus is not None else None,
-            'boundaries': [{'instant': t.astimezone(zone).isoformat(), 'solar_term': name}
-                           for t, name in sorted(terms.items())],
+            'boundaries': [term_boundary(t, name, zone) for t, name in sorted(terms.items())],
             'segments': segments, 'pillar_catalog': pillar_catalog, 'luck_catalog': luck_catalog,
             'meaning': '这些是历法及与你出生盘的生克关系；尚未判喜忌，不是每日吉凶或择时排名'}

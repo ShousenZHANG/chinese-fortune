@@ -96,10 +96,9 @@ def test_relationship_first_answer_keeps_requested_window():
     assert '子藏癸' in areas['wealth']['say']
 
 
-def test_period_outlook_lead_stays_inside_the_window():
-    # FIX-11-10, T46: a seven-day window in November 2026; the lead quoted 「2028 年戊申（地支申藏壬（正官））带这颗星」.
-    from fortune_reading import read_request, render_answer
-    result = read_request({
+def _t46() -> dict:
+    from fortune_reading import read_request
+    return read_request({
         'intent': 'period', 'question': '按八字分析2026年11月3日至11月9日事业运势，软件测试准备首次向主管提出内部转岗，选沟通日期',
         'request_time': '2026-11-02T18:00:00+08:00', 'current_timezone': 'Asia/Shanghai',
         'period': {'start': '2026-11-03T00:00:00+08:00', 'end': '2026-11-10T00:00:00+08:00'},
@@ -109,5 +108,30 @@ def test_period_outlook_lead_stays_inside_the_window():
                       'city': '常州', 'timezone': 'Asia/Shanghai', 'time_standard': 'clock', 'sect': 2},
             'time_certainty': 'exact'}}],
         'granularity': 'day', 'include_natal_reading': True, 'include_research': True})
+
+
+def test_period_outlook_lead_stays_inside_the_window():
+    # FIX-11-10, T46: a seven-day window in November 2026; the lead quoted 「2028 年戊申（地支申藏壬（正官））带这颗星」.
+    from fortune_reading import render_answer
+    result = _t46()
     natal = result['participants'][0]['natal_interpretation']['life_areas']['areas']
     assert all('2028' not in a['say'] for a in natal) and '2028' not in render_answer(result)
+
+
+def test_solar_term_transition_precision():
+    # FIX-11-05, T45/T46: the answers said 「11月7日17:52:05立冬」 to the second; sxtwl puts 2026 立冬 at 17:51:46,
+    # 18.7 s earlier. Both round to 17:52, so the tool hands the reader the minute and keeps the table second apart.
+    import pytest
+    from fortune_reading import host_notes
+    sxtwl = pytest.importorskip('sxtwl')
+    result = _t46()
+    boundary = next(b for b in result['participants'][0]['target']['boundaries'] if b['solar_term'] == '立冬')
+    assert boundary['instant'].startswith('2026-11-07T17:52:05') and boundary['display'] == '11月7日 17:52'
+    # 丙午年 (丙辛之岁寻庚上): 戌月戊戌, 亥月己亥 on either side of 立冬, whichever calendar times it.
+    assert (boundary['month_before'], boundary['month_after']) == ('戊戌', '己亥')
+    assert '分钟' in boundary['precision'] and '复核' in boundary['precision']
+    jq = next(j for j in sxtwl.getJieQiByYear(2026) if j.jqIndex == 21)    # 21: 立冬 in sxtwl's 冬至-first order
+    t = sxtwl.JD2DD(jq.jd)
+    independent = int(t.h) * 60 + int(t.m) + (1 if t.s >= 30 else 0)
+    assert f'{independent // 60}:{independent % 60:02d}' == boundary['display'].split(' ')[1]
+    assert any('只说到分钟' in note for note in host_notes(result))
