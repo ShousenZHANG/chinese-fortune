@@ -82,9 +82,9 @@ def _branch_roles(day: str, branch: str) -> list[list[str]]:
     return [[branch, hidden, shi_shen(day, hidden)] for hidden in HIDDEN_STEMS.get(branch, [])]
 
 
-def _carriers(stem_role: str, roles: list[list[str]], stars: tuple[str, ...]) -> str:
-    """Where a cycle or year carries one of the stars, in words."""
-    parts = (['天干'] if stem_role in stars else []) + [f'地支{b}藏{h}（{r}）' for b, h, r in roles if r in stars]
+def _carriers(stem_role: str, roles: list[list[str]], stars: tuple[str, ...], stem: str = '') -> str:
+    """Where a cycle or year carries one of the stars, in words: 「天干甲（七杀）、地支未藏乙（正官）」."""
+    parts = ([f'天干{stem}（{stem_role}）' if stem else '天干'] if stem_role in stars else [])         + [f'地支{b}藏{h}（{r}）' for b, h, r in roles if r in stars]
     return '、'.join(parts)
 
 
@@ -125,17 +125,19 @@ def _star_area(area: str, stars: tuple[str, ...], facts: dict, sources: list[dic
     found = _positions(facts, stars)
     timing = _timing(facts, stars, window)
     cycle = timing.get('current_cycle')
-    say = (f"{LABELS[area]}看{'、'.join(stars)}：原局" + ('、'.join(found) if found else '天干地支里都没有') + '。')
+    # R11 acceptance (E01): the plain lead already says 「事业方面，古籍看…（书上叫正官、七杀）」; say is the evidence
+    # line under it, and names the stars instead of 「这颗星」.
+    names = '、'.join(stars)
+    say = '原局位置：' + ('、'.join(found) if found else f'天干地支里都没有{names}') + '。'
     if cycle:
-        where = _carriers(cycle['stem_role'], cycle['branch_roles'], stars)
-        say += (f"当步 {cycle['ganzhi']} 运天干是{cycle['stem_role']}"
-                + (f"，{where}带这颗星" if where else '，天干和地支藏干都不是这颗星') + '；')
+        where = _carriers(cycle['stem_role'], cycle['branch_roles'], stars, cycle['ganzhi'][0])
+        say += f"当步{cycle['ganzhi']}运：" + (where if where else f"天干和地支藏干都不是{names}") + '；'
     inside = [r for r in timing.get('years') or [] if r['in_window']]
     if inside:
-        hits = [f"{r['year']} 年{r['ganzhi']}（{_carriers(r['stem_role'], r['branch_roles'], stars)}）"
+        hits = [f"{r['year']} 年{r['ganzhi']}：{_carriers(r['stem_role'], r['branch_roles'], stars, r['ganzhi'][0])}"
                 for r in inside if r['brings_star']]
         span = str(inside[0]['year']) if len(inside) == 1 else f"{inside[0]['year']}–{inside[-1]['year']}"
-        say += '、'.join(hits) + '带这颗星' if hits else f'{span} 年流年天干和地支藏干都不是这颗星'
+        say += '；'.join(hits) if hits else f'{span} 年流年天干和地支藏干都不是{names}'
         say += '。是喜是忌要配原局用神，本盘用神未定就不说好坏。'
     pillars = list(dict.fromkeys(entry[:2] for entry in found))
     gloss = gloss or GLOSS.get(area, '')

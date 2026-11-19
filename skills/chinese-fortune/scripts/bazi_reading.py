@@ -492,6 +492,11 @@ def host_notes(result: dict) -> list[str]:
         zodiac = lunar.get('zodiac') if isinstance(lunar, dict) else None
         if zodiac:
             notes.append(f"生肖按工具算的农历年说：属{zodiac}；不要按公历年份自己推。")
+    if (result.get('life_areas') or {}).get('areas'):
+        notes.append('问事业、财运、感情：第一段用 life_areas 的 lead、「没判」一句和 action；say 是后面的依据段，'
+                     '不重复 lead 已说的话。timing.outside_window 里窗口外的年份只在用户追问时说。')
+    if (result.get('chart_facts') or {}).get('hour_boundary'):
+        notes.append('真太阳时与钟表的差别只说一次：用 hour_boundary 的那一句，不再另说 true_solar_time 的偏移句。')
     advice = result.get('colour_advice')
     if advice and advice.get('lead'):
         notes.append('问穿什么颜色：第一段照 colour_advice.lead 的顺序说（五行计数一句、可照做的穿搭、这一格一般先取、'

@@ -89,8 +89,8 @@ def test_relationship_first_answer_keeps_requested_window():
                   '--question', '2027年整体运势怎么样？要注意些什么？')
     areas = _areas(e10)
     assert all('2028' not in a['say'] for a in areas.values())
-    assert '2027 年丁未（地支未藏乙（正官））带这颗星' in areas['career']['say']
-    assert '2027 年流年天干和地支藏干都不是这颗星' in areas['wealth']['say']
+    assert '2027 年丁未：地支未藏乙（正官）' in areas['career']['say']
+    assert '2027 年流年天干和地支藏干都不是正财、偏财' in areas['wealth']['say']
     # 妻星 is the same 正财、偏财 as 财运: the second area points back instead of listing the pillars again.
     assert '见上面财运' in areas['relationship']['say'] and '子藏癸' not in areas['relationship']['say']
     assert '子藏癸' in areas['wealth']['say']
@@ -360,3 +360,16 @@ def test_interview_liuyao_next_step_with_no_promise():
     other = run_cli('liuyao_cast.py', 'coins', '--lines', '8,6,7,8,9,7', '--date', '2026-11-18', '--time', '16:00',
                     '--target-timezone', 'Asia/Shanghai', '--question', '丢的猫在哪')
     assert [part['part'] for part in other['first_answer']] == ['chart', 'undecided']
+
+
+def test_time_and_area_sentences_say_each_thing_once():
+    # Found in the round-11 acceptance review of E01: reviewers marked the time difference as said twice, 「这颗星」 as
+    # unclear, and the area sentence as repeating the plain lead. E01 (gold): true solar 06:15 is 卯, the clock 07:30 is 辰.
+    out = run_cli('bazi_reading.py', '--year', 1991, '--month', 3, '--day', 9, '--hour', 7, '--minute', 30,
+                  '--gender', 'female', '--city', '成都', '--as-of-year', 2026, '--question', '明年想换工作，帮我看看八字，适合换吗？')
+    facts = out['chart_facts']
+    assert '读数' not in facts['true_solar_time']['say']
+    assert facts['hour_boundary']['say'].startswith('按真太阳时 06:15 是卯时，按钟表 07:30 是辰时')
+    career = _areas(out)['career']
+    assert '这颗星' not in career['say'] and not career['say'].startswith('事业看')
+    assert '当步甲午运：天干甲（七杀）' in career['say'] and '2027 年丁未：地支未藏乙（正官）' in career['say']

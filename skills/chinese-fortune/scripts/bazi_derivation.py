@@ -127,8 +127,9 @@ def offset_sentence(tst: dict) -> str:
     if total == 0:
         return f"真太阳时与钟表读数相同（{tst.get('clock_time')}）。"
     # 「读数少」 alone was still rewritten as 「晚」 (R3 T05); 早/晚 is said outright.
+    # R11 acceptance (E01): 「（读数少 75 分钟）」 repeated the same number; reviewers marked the time sentences dense.
     return (f"真太阳时 {tst.get('true_solar_time')} 比钟表 {tst.get('clock_time')} {'早' if total < 0 else '晚'} "
-            f"{abs(total):g} 分钟（读数{'少' if total < 0 else '多'} {abs(total):g} 分钟）。")
+            f"{abs(total):g} 分钟。")
 
 
 # A 时辰 starts at every odd hour; a birth this close to one can sit in either (R3 N19).
@@ -181,9 +182,13 @@ def hour_boundary(tst: dict, dst_hours: float = 0.0) -> dict | None:
     if clock_branch != branch:
         other = clock_branch
     shown = tst.get('true_solar_time') if tst.get('applied') else tst.get('clock_time')
-    say = (f"按{which} {shown} 是{branch}时，离{other}时只差 {gap} 分钟" if gap <= BOUNDARY_MINUTES else
-           f"按{which}是{branch}时，按钟表 {tst.get('clock_time')} 是{other}时")
-    say += f"：出生时间差这么一点，时柱就换成{other}时，用到时柱的结论要两种都说。"
+    if gap <= BOUNDARY_MINUTES:
+        say = (f"按{which} {shown} 是{branch}时，离{other}时只差 {gap} 分钟："
+               f"出生时间差这么一点，时柱就换成{other}时，用到时柱的结论要两种都说。")
+    else:
+        # R11 acceptance (E01): this sentence now carries both times, so the offset sentence need not be said too.
+        say = (f"按{which} {shown} 是{branch}时，按钟表 {tst.get('clock_time')} 是{other}时："
+               "两种时间的时柱不同，用到时柱的结论两种都说。")
     return {'branch': branch, 'clock_branch': clock_branch, 'other_branch': other, 'minutes_to_boundary': gap,
             'time_used': which, 'kind': 'edge' if gap <= BOUNDARY_MINUTES else 'clock', 'say': say}
 
