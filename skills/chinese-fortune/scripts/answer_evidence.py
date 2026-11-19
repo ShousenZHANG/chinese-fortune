@@ -278,6 +278,13 @@ def _calendar(value: dict) -> bool:
             and isinstance(value.get('ganzhi'), dict) and all(_ganzhi(value['ganzhi'].get(k)) for k in ('year', 'month', 'day')))
 
 
+def _calendar_month(value: dict) -> bool:
+    """huangli --month (R11 E05): one civil-date row per day of the month, each with its day pillar."""
+    rows = value.get('rows')
+    return (isinstance(value.get('month'), str) and isinstance(rows, list) and bool(rows)
+            and all(isinstance(r, dict) and isinstance(r.get('date'), str) and _ganzhi(r.get('ganzhi')) for r in rows))
+
+
 def _method_rules(value: dict) -> bool:
     return (_rows(value, 'rules', {'id': str}, empty=False)
             or (value.get('errors') == [] and value.get('scope') in ('structural_only', 'frozen_excerpt_and_rule_schema')))
@@ -310,7 +317,7 @@ def _zodiac(value: dict) -> bool:
 
 SOURCE_CHECKS: dict[str, Callable[[dict], bool]] = {
     'classical_search': _search, 'classical_guidance': _guidance, 'life_guide': _life_guide, 'yilin': _yilin,
-    'huangli': _calendar, 'lunar_convert': _calendar, 'method_rules': _method_rules,
+    'huangli': lambda v: _calendar(v) or _calendar_month(v), 'lunar_convert': _calendar, 'method_rules': _method_rules,
     'meihua': lambda v: _hex(v.get('main_hex')) and isinstance(v.get('ti_yong'), dict),
     'yijing': lambda v: _hex(v.get('main_hex')) or _hex(v) or _rows(v, 'hexagrams', {'number': int, 'name': str}, empty=False),
     'qimen': lambda v: _pillar_strings(v.get('ganzhi')) and isinstance(v.get('palaces'), (dict, list)) and bool(v['palaces']),

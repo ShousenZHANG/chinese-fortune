@@ -276,6 +276,9 @@ def test_move_first_request_answers_partial_before_clarification():
                for r in out['rows'])
     assert '不排个人先后' in out['not_ranked'] and 'grade' not in out['rows'][0]
     assert any('term_day' in r for r in out['rows'])          # 大雪 falls on 12月7日
+    # Found in the acceptance run: answer_check did not admit the month listing, so the reply had to say so.
+    from answer_check import check_answer
+    assert not [f for f in check_answer('12月1日己酉冲丁卯。', [out])['findings'] if f['code'] == 'invalid_facts']
     guide = (REFS / '00-intake.md').read_text(encoding='utf-8')
     assert 'huangli_query.py --month' in guide and '两种读法' in guide
 
