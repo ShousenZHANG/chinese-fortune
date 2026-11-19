@@ -177,3 +177,18 @@ def test_sanyuan_output_exposes_cycle_epoch():
     assert (out['male']['epoch_year'], out['male']['steps'], out['female']['epoch_year'], out['female']['steps']) \
         == (1984, 8, 1984, 10)
     assert '1984 年甲子起' in out['say'] and 'xieji:c036:p0016' in out['say']
+
+
+def test_annual_he_sanming_distinguishes_exact_claim_scope():
+    # FIX-11-14, N1: the tool's note said 《三命通会》 「只说日干」, and the answer repeated it as the whole book's view.
+    # The sentence takes 日干 as its subject but its example 「甲日巳年」 names the year's branch. N1 (gold): day pillar
+    # 甲子, 2029 己酉: 甲己 combine, 子酉 do not.
+    reading = run_cli('bazi_reading.py', '--year', 1992, '--month', 8, '--day', 16, '--hour', 10, '--minute', 20,
+                      '--gender', 'male', '--city', '上海', '--as-of-year', 2026,
+                      '--question', '请看看我的事业、财运和感情，2027、2028、2029年哪些干支带来相关十神')
+    year = next(r for r in reading['annual_reading'] if r['year'] == 2029)
+    hit = next(h for h in year['hits'] if h['id'] == 'obscured')
+    assert hit['branches_combine'] is False
+    note = hit['scope_note']
+    assert '只说日干' not in note and '日干为主语' in note and '甲日巳年' in note and '岁支' in note
+    assert '日干支合太岁干支' in note and '没有说清' in note

@@ -117,8 +117,12 @@ def assess_year(chart: dict, year: int, ganzhi: str, cycle: dict | None = None,
             # R3 T21: 《渊海子平》 writes 「日干支合太岁干支」; 《三命通会》's examples (甲日己年) combine stems only.
             # Whether the branches must combine too is not settled by either text, so a stem-only hit says so.
             'branches_combine': False,
-            'scope_note': (f"只有天干相合，日支{day['branch']}与岁支{branch}不合：《渊海子平》原句是「日干支合太岁干支」，"
-                           '《三命通会》写「日干合太嵗如甲日巳年之例」只说日干；是否要干支都合，两书都没说清，答时要写明这一点')}
+            # R11 FIX-11-14, N1: 「只说日干」 was repeated as the whole book's view. The sentence takes 日干 as its
+            # subject, and its own example 「甲日巳年」 names the year by its branch; say the two sentences as they are.
+            'scope_note': (f"只有天干相合，日支{day['branch']}与岁支{branch}不合：《渊海子平》原句是「日干支合太岁干支」；"
+                           '《三命通会》这一句以日干为主语，写「日干合太嵗如甲日巳年之例」，例中年份写的是岁支。'
+                           '两书写法不同，是否要日支也合，原文都没有说清；答时照这两句说，不要概括成哪本书只看日干，'
+                           '也不据此直接断事')}
         hits.append(_hit('obscured', weight='灾重' if heavy else '灾轻',
                          weight_quote='甲合巳災重巳合甲災輕', weight_passage=SANMING_SUIYUN[0], **extra))
     if _clash(branch, day['branch']) and not any(h['id'] == 'fanyin' for h in hits):
