@@ -448,7 +448,8 @@ def prepare_reading(chart: dict, question: str = '') -> dict:
             extra_ids.extend(n['passage_id'] for n in reading.get('notes', []))
     areas = areas_asked(question)
     if areas:
-        extra['life_areas'] = life_areas(clean, (chart.get('input') or {}).get('gender'), areas)
+        extra['life_areas'] = life_areas(clean, (chart.get('input') or {}).get('gender'), areas,
+                                         window=life_window(question, _reference_year(clean)))
         extra_ids.extend(s['passage_id'] for area in extra['life_areas']['areas'] for s in area['sources'])
     bundle = evidence_bundle(assessment, question, getter=get_passage, extra_passage_ids=extra_ids)
     years = years_asked(question, _reference_year(clean))
@@ -504,6 +505,19 @@ def host_notes(result: dict) -> list[str]:
     elif 'luck_reading' in result:
         notes.append('这里只说大运；要问某一年，请用户说出年份。')
     return list(dict.fromkeys(notes))
+
+
+# 「最近」「这周」 ask about now: the window is this year (R11 E02, T46).
+RECENT_WORDS = ('最近', '近期', '近来', '这阵子', '这段时间', '眼下', '目前', '这周', '本周', '下周', '这个月', '本月',
+                '下个月')
+
+
+def life_window(question: str, reference: int | None) -> list[int] | None:
+    """The years a life-area question asks about: named years, 今年/明年, or this year for 「最近」."""
+    years = years_asked(question, reference)
+    if years:
+        return years
+    return [reference] if reference and any(word in question for word in RECENT_WORDS) else None
 
 
 def _reference_year(clean: dict) -> int | None:

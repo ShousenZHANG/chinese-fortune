@@ -2,7 +2,7 @@
 
 Every person here is fictional; the inputs are the frozen round-11 questions (D0/questions-e12.json, C0/questions.json).
 """
-from conftest import SCRIPTS
+from conftest import SCRIPTS, run_cli
 from ziwei_calc import build_parser as ziwei_parser
 from ziwei_calc import calculate_ziwei
 
@@ -64,3 +64,50 @@ def test_ziwei_compact_first_answer():
     guide = (REFS / '02-ziwei.md').read_text(encoding='utf-8')
     for rule in ('最多一张表', '星名写全称', '武贪', '首次出现'):
         assert rule in guide
+
+
+def _areas(reading: dict) -> dict:
+    return {a['area']: a for a in reading['life_areas']['areas']}
+
+
+def test_relationship_first_answer_keeps_requested_window():
+    # FIX-11-10. E02 asked about 「最近」 at 2026-11-15; the tool's three-year search said 「2028 年戊申（地支申藏庚（正财））
+    # 带这颗星」 and the answer had to explain that 2028 is not when he will meet someone. Day master 丁 (gold E02):
+    # 2026 丙午 holds 丙 劫财 and 丁、己 in 午, no 财; 2028 戊申 holds 庚 正财, outside the asked window.
+    e02 = run_cli('bazi_reading.py', '--year', 1995, '--month', 11, '--day', 2, '--hour', 21, '--minute', 50,
+                  '--gender', 'male', '--city', '西安', '--current-timezone', 'Asia/Shanghai',
+                  '--request-time', '2026-11-15T15:00:00Z', '--question', '最近桃花怎么样，大概什么时候能脱单？')
+    love = _areas(e02)['relationship']
+    assert love['timing']['window'] == [2026] and '2026 年' in love['say'] and '2028' not in love['say']
+    assert [row['year'] for row in love['timing']['outside_window']] == [2028]
+    assert '不当近期依据' in love['timing']['outside_note']
+
+    # E10 asked about 2027 for every area (整体运势). Day master 戊 (gold E10): 2027 丁未 holds 乙 正官 in 未, no 财;
+    # 2028 戊申 holds 壬 偏财. Before, 2028 came back in 财运 and again in 感情.
+    e10 = run_cli('bazi_reading.py', '--year', 1985, '--month', 12, '--day', 25, '--hour', 6, '--minute', 0,
+                  '--gender', 'male', '--city', '哈尔滨', '--as-of-year', 2027,
+                  '--question', '2027年整体运势怎么样？要注意些什么？')
+    areas = _areas(e10)
+    assert all('2028' not in a['say'] for a in areas.values())
+    assert '2027 年丁未（地支未藏乙（正官））带这颗星' in areas['career']['say']
+    assert '2027 年流年天干和地支藏干都不是这颗星' in areas['wealth']['say']
+    # 妻星 is the same 正财、偏财 as 财运: the second area points back instead of listing the pillars again.
+    assert '见上面财运' in areas['relationship']['say'] and '子藏癸' not in areas['relationship']['say']
+    assert '子藏癸' in areas['wealth']['say']
+
+
+def test_period_outlook_lead_stays_inside_the_window():
+    # FIX-11-10, T46: a seven-day window in November 2026; the lead quoted 「2028 年戊申（地支申藏壬（正官））带这颗星」.
+    from fortune_reading import read_request, render_answer
+    result = read_request({
+        'intent': 'period', 'question': '按八字分析2026年11月3日至11月9日事业运势，软件测试准备首次向主管提出内部转岗，选沟通日期',
+        'request_time': '2026-11-02T18:00:00+08:00', 'current_timezone': 'Asia/Shanghai',
+        'period': {'start': '2026-11-03T00:00:00+08:00', 'end': '2026-11-10T00:00:00+08:00'},
+        'event': {'scenario': '内部转岗沟通', 'timezone': 'Asia/Shanghai', 'time_standard': 'clock', 'sect': 2},
+        'participants': [{'id': 'fictional', 'confirmed': True, 'person': {
+            'birth': {'year': 1989, 'month': 12, 'day': 3, 'hour': 21, 'minute': 25, 'gender': 'female',
+                      'city': '常州', 'timezone': 'Asia/Shanghai', 'time_standard': 'clock', 'sect': 2},
+            'time_certainty': 'exact'}}],
+        'granularity': 'day', 'include_natal_reading': True, 'include_research': True})
+    natal = result['participants'][0]['natal_interpretation']['life_areas']['areas']
+    assert all('2028' not in a['say'] for a in natal) and '2028' not in render_answer(result)

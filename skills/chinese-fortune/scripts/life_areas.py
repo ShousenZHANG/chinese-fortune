@@ -76,11 +76,11 @@ def _carriers(stem_role: str, roles: list[list[str]], stars: tuple[str, ...]) ->
     return '、'.join(parts)
 
 
-def _timing(facts: dict, stars: tuple[str, ...]) -> dict:
-    day, year = facts['day_master'].get('stem'), facts.get('reference_year')
+def _timing(facts: dict, stars: tuple[str, ...], window: list[int] | None = None) -> dict:
+    day, year = facts['day_master'].get('stem'), facts.get('reference_year') or (min(window) if window else None)
     cycle = next((c for c in facts.get('da_yun') or [] if isinstance(year, int)
                   and c.get('start_year') and c['start_year'] <= year <= c['end_year']), None)
-    out: dict = {'reference_year': year}
+    out: dict = {'reference_year': year, 'window': window}
     if cycle and day:
         role = shi_shen(day, cycle['stem'])
         held = _branch_roles(day, cycle['ganzhi'][1])
@@ -89,42 +89,56 @@ def _timing(facts: dict, stars: tuple[str, ...]) -> dict:
                                 'brings_star': role in stars or any(r in stars for _, _, r in held)}
     if isinstance(year, int) and day:
         rows = []
-        for y in range(year, year + YEARS_AHEAD):
+        start = min(window) if window else year
+        for y in sorted(set(range(start, start + YEARS_AHEAD)) | set(window or [])):
             stem = '甲乙丙丁戊己庚辛壬癸'[(y - 4) % 10]
             branch = '子丑寅卯辰巳午未申酉戌亥'[(y - 4) % 12]
             roles = _branch_roles(day, branch)
             rows.append({'year': y, 'ganzhi': stem + branch, 'stem_role': shi_shen(day, stem), 'branch_roles': roles,
-                         'brings_star': shi_shen(day, stem) in stars or any(r in stars for _, _, r in roles)})
+                         'brings_star': shi_shen(day, stem) in stars or any(r in stars for _, _, r in roles),
+                         'in_window': window is None or y in window})
         out['years'] = rows
+        if window:
+            # Round 11 FIX-11-10: E02 asked about 「最近」 and E10 about 2027; the search found 2028 and the answers
+            # quoted it as if it were near. Years past the asked window stay here, out of the sentence.
+            out['outside_window'] = [{'year': r['year'], 'ganzhi': r['ganzhi'],
+                                      'carriers': _carriers(r['stem_role'], r['branch_roles'], stars)}
+                                     for r in rows if not r['in_window'] and r['brings_star']]
+            out['outside_note'] = '窗口外的年份：只在用户追问以后几年时再说，不当近期依据。'
     return out
 
 
-def _star_area(area: str, stars: tuple[str, ...], facts: dict, sources: list[dict]) -> dict:
+def _star_area(area: str, stars: tuple[str, ...], facts: dict, sources: list[dict],
+               window: list[int] | None = None) -> dict:
     found = _positions(facts, stars)
-    timing = _timing(facts, stars)
+    timing = _timing(facts, stars, window)
     cycle = timing.get('current_cycle')
     say = (f"{LABELS[area]}看{'、'.join(stars)}：原局" + ('、'.join(found) if found else '天干地支里都没有') + '。')
     if cycle:
         where = _carriers(cycle['stem_role'], cycle['branch_roles'], stars)
         say += (f"当步 {cycle['ganzhi']} 运天干是{cycle['stem_role']}"
                 + (f"，{where}带这颗星" if where else '，天干和地支藏干都不是这颗星') + '；')
-    if timing.get('years'):
+    inside = [r for r in timing.get('years') or [] if r['in_window']]
+    if inside:
         hits = [f"{r['year']} 年{r['ganzhi']}（{_carriers(r['stem_role'], r['branch_roles'], stars)}）"
-                for r in timing['years'] if r['brings_star']]
-        say += ('、'.join(hits) + '带这颗星' if hits
-                else f"{timing['years'][0]['year']}–{timing['years'][-1]['year']} 年流年天干和地支藏干都不是这颗星")
+                for r in inside if r['brings_star']]
+        span = str(inside[0]['year']) if len(inside) == 1 else f"{inside[0]['year']}–{inside[-1]['year']}"
+        say += '、'.join(hits) + '带这颗星' if hits else f'{span} 年流年天干和地支藏干都不是这颗星'
         say += '。是喜是忌要配原局用神，本盘用神未定就不说好坏。'
     return {'area': area, 'label': LABELS[area], 'stars': list(stars), 'natal': found, 'timing': timing,
             'sources': sources + _sources('timing'), 'say': say}
 
 
-def _relationship(facts: dict, gender: str | None) -> dict:
+def _relationship(facts: dict, gender: str | None, window: list[int] | None = None, after_wealth: bool = False) -> dict:
     if gender not in ('male', 'female'):
         return {'area': 'relationship', 'label': '感情', 'status': 'gender_required',
                 'say': '感情要分男女看（男看财为妻星，女看官为夫星），先确认性别。', 'sources': []}
     stars = ('正财', '偏财') if gender == 'male' else ('正官', '七杀')
     key = 'relationship_' + gender
-    out = _star_area('relationship', stars, facts, _sources(key))
+    out = _star_area('relationship', stars, facts, _sources(key), window)
+    if after_wealth:
+        # FIX-11-10: for a man 妻星 is 财, so 财运 and 感情 listed the same pillars and years twice.
+        out['say'] = '妻星就是财星（正财、偏财），原局位置和年份见上面财运一条，不再重复。'
     day = facts['four_pillars'].get('day') or {}
     if day.get('branch'):
         palace = day['branch']
@@ -156,15 +170,16 @@ def _study(facts: dict) -> dict:
             'not_computed': '学堂会禄、会食、官星学堂、魁星等其余诸说'}
 
 
-def life_areas(facts: dict, gender: str | None, areas: list[str]) -> dict:
+def life_areas(facts: dict, gender: str | None, areas: list[str], window: list[int] | None = None) -> dict:
+    """``window``: the years the question asks about; sentences stay inside it (None: the next three years)."""
     out = []
     for area in areas:
         if area == 'career':
-            out.append(_star_area('career', ('正官', '七杀'), facts, _sources('career')))
+            out.append(_star_area('career', ('正官', '七杀'), facts, _sources('career'), window))
         elif area == 'wealth':
-            out.append(_star_area('wealth', ('正财', '偏财'), facts, _sources('wealth')))
+            out.append(_star_area('wealth', ('正财', '偏财'), facts, _sources('wealth'), window))
         elif area == 'relationship':
-            out.append(_relationship(facts, gender))
+            out.append(_relationship(facts, gender, window, after_wealth=gender == 'male' and 'wealth' in areas))
         elif area == 'study':
             out.append(_study(facts))
     return {'areas': out, 'boundary': '只列古籍看哪颗星、原局在哪、哪年透出；不判好坏，不做健康断语，现代领域是类比'}
