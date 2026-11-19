@@ -192,3 +192,57 @@ def test_annual_he_sanming_distinguishes_exact_claim_scope():
     note = hit['scope_note']
     assert '只说日干' not in note and '日干为主语' in note and '甲日巳年' in note and '岁支' in note
     assert '日干支合太岁干支' in note and '没有说清' in note
+
+
+def _outlook(question: str, person: dict) -> dict:
+    from fortune_reading import read_request
+    return read_request({'current_timezone': 'Asia/Shanghai', 'request_time': '2026-11-15T04:00:00Z',
+                         'participants': [{'id': 'me', 'confirmed': True, 'person': person}],
+                         'question': question, 'intent': 'period', 'period': '最近',
+                         'event': {'scenario': 'outlook', 'longitude': 116.4}})
+
+
+T10_PERSON = {'birth': {'year': 2000, 'month': 1, 'day': 15, 'hour': 10, 'minute': 30, 'gender': 'male',
+                        'timezone': 'Asia/Shanghai', 'longitude': 116.4}, 'time_certainty': 'exact'}
+FIRST_PERSON = {'birth': {'year': 1990, 'month': 5, 'day': 15, 'hour': 10, 'minute': 0, 'gender': 'male',
+                          'timezone': 'Asia/Shanghai', 'longitude': 120.16}, 'time_certainty': 'exact'}
+TEN_GODS = ('正官', '七杀', '正财', '偏财', '正印', '偏印', '食神', '伤官', '比肩', '劫财')
+
+
+def _first_paragraph(draft: str) -> str:
+    return draft.split(chr(10) * 2)[0]
+
+
+def test_career_first_answer_separates_calendar():
+    # FIX-11-01, T10/T45: the career answer opened with judged/unjudged, then three scenarios and a 相主 grade appendix
+    # nobody asked for. When no date is asked, the grades are not laid out; the first paragraph ends on one step.
+    from fortune_reading import host_notes, render_answer
+    t10 = _outlook('看看我最近的事业运。', T10_PERSON)
+    draft = render_answer(t10)
+    lead = _first_paragraph(draft)
+    assert '没判' in lead and '不是命理结论' in lead
+    assert '附：传统择日等级' not in draft and '大吉' not in draft
+    assert any('不展开相主等级' in note for note in host_notes(t10))
+    # T45 asks which 日段 are better: the grades come, after the lead and labelled as borrowed.
+    t45 = _outlook('请用八字看近期事业倾向，说明相对有利或需谨慎的日段及依据', T10_PERSON)
+    asked = render_answer(t45)
+    assert asked.index('不是命理结论') < asked.index('附：传统择日等级（借用相主，不是事业预测）')
+
+
+def test_first_career_plain_next_step():
+    # FIX-11-07, FIRST/E01: the reply opened 「事业看正官、七杀：原局年柱午藏丁（正官）…」; readers met three terms before
+    # knowing what was judged. The lead now says the relation in plain words, names the book term once in brackets,
+    # and gives a real step before asking for more.
+    from fortune_reading import render_answer
+    draft = render_answer(_outlook('帮我看看八字，最近事业怎么样？', FIRST_PERSON))
+    lead = _first_paragraph(draft)
+    assert lead.startswith('事业方面')
+    first_two = '。'.join(lead.split('。')[:2]).replace('书上叫正官、七杀', '')
+    assert not any(term in first_two for term in TEN_GODS)
+    assert lead.index('不是命理结论') < draft.index('要再往下说')
+    e01 = run_cli('bazi_reading.py', '--year', 1991, '--month', 3, '--day', 8, '--hour', 7, '--minute', 30,
+                  '--gender', 'female', '--city', '成都', '--as-of-year', 2026,
+                  '--question', '明年想换工作，帮我看看八字，适合换吗？')
+    career = _areas(e01)['career']
+    assert career['lead'].startswith('事业方面') and '书上叫正官、七杀' in career['lead']
+    assert '不是命理结论' in career['action']

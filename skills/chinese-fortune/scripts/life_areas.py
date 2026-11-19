@@ -27,6 +27,18 @@ PILLARS = (('year', '年柱'), ('month', '月柱'), ('day', '日柱'), ('hour', 
 CHANGSHENG = {'甲': '亥', '丙': '寅', '戊': '寅', '庚': '巳', '壬': '申',
               '乙': '午', '丁': '酉', '己': '酉', '辛': '子', '癸': '卯'}
 YEARS_AHEAD = 3
+# Round 11 FIX-11-07: FIRST and E01 opened with 「事业看正官、七杀：原局年柱午藏丁（正官）…」; readers met three terms
+# before knowing what was judged. The lead says the relation plainly and names the book term once, in brackets.
+GLOSS = {'career': '管束你、给你职责的那类关系', 'wealth': '你能掌控、要去争取的那类东西',
+         'relationship_male': '妻星', 'relationship_female': '夫星'}
+ACTION = {
+    'career': '眼下能先做的一件事：把想要的变化写成一句话（升职、换岗还是换行业），再列出要谁同意、要先准备什么。'
+              '这是一般做法，不是命理结论。',
+    'wealth': '眼下能先做的一件事：把接下来三个月的固定开销和可能的收入各列出来，先看缺口在哪。'
+              '这是一般做法，不是命理结论，也不是投资建议。',
+    'relationship': '眼下能先做的一件事：每周固定留一段时间去能认识新朋友的场合，或者把想找什么样的人写下来。'
+                    '这是一般做法，不是命理结论，也不预测哪天遇到谁。',
+}
 
 SOURCES = {
     'career': [('ziping:c031:p0001', '正官者，分所當尊', '古籍以官星论贵；用于现代事业是类比')],
@@ -109,7 +121,7 @@ def _timing(facts: dict, stars: tuple[str, ...], window: list[int] | None = None
 
 
 def _star_area(area: str, stars: tuple[str, ...], facts: dict, sources: list[dict],
-               window: list[int] | None = None) -> dict:
+               window: list[int] | None = None, gloss: str = '') -> dict:
     found = _positions(facts, stars)
     timing = _timing(facts, stars, window)
     cycle = timing.get('current_cycle')
@@ -125,8 +137,12 @@ def _star_area(area: str, stars: tuple[str, ...], facts: dict, sources: list[dic
         span = str(inside[0]['year']) if len(inside) == 1 else f"{inside[0]['year']}–{inside[-1]['year']}"
         say += '、'.join(hits) + '带这颗星' if hits else f'{span} 年流年天干和地支藏干都不是这颗星'
         say += '。是喜是忌要配原局用神，本盘用神未定就不说好坏。'
+    pillars = list(dict.fromkeys(entry[:2] for entry in found))
+    gloss = gloss or GLOSS.get(area, '')
+    lead = (f"{LABELS[area]}方面，古籍看{gloss}（书上叫{'、'.join(stars)}）："
+            + (f"你的原局{'、'.join(pillars)}里有。" if pillars else '你的原局里没有。'))
     return {'area': area, 'label': LABELS[area], 'stars': list(stars), 'natal': found, 'timing': timing,
-            'sources': sources + _sources('timing'), 'say': say}
+            'sources': sources + _sources('timing'), 'say': say, 'lead': lead, 'action': ACTION.get(area, '')}
 
 
 def _relationship(facts: dict, gender: str | None, window: list[int] | None = None, after_wealth: bool = False) -> dict:
@@ -135,10 +151,11 @@ def _relationship(facts: dict, gender: str | None, window: list[int] | None = No
                 'say': '感情要分男女看（男看财为妻星，女看官为夫星），先确认性别。', 'sources': []}
     stars = ('正财', '偏财') if gender == 'male' else ('正官', '七杀')
     key = 'relationship_' + gender
-    out = _star_area('relationship', stars, facts, _sources(key), window)
+    out = _star_area('relationship', stars, facts, _sources(key), window, GLOSS[key])
     if after_wealth:
         # FIX-11-10: for a man 妻星 is 财, so 财运 and 感情 listed the same pillars and years twice.
         out['say'] = '妻星就是财星（正财、偏财），原局位置和年份见上面财运一条，不再重复。'
+        out['lead'] = '感情方面，男命看的妻星就是财星（书上叫正财、偏财），位置见上面财运一条。'
     day = facts['four_pillars'].get('day') or {}
     if day.get('branch'):
         palace = day['branch']

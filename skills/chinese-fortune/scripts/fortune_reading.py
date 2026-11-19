@@ -1444,10 +1444,11 @@ def outlook_skeleton(result: dict) -> str:
     areas = area_outlook(result)
     if areas:
         topic = '、'.join(areas)
-        return (f"回答按这个顺序：先用三句说{topic}已判、未判和最少要补什么；再说这段时间指 {span}；"
+        tail = (f"；相主等级放在最后单列「附：传统择日等级（借用相主，不是{topic}预测）」"
+                if asks_dates(result.get('question') or '') else '；用户没问哪天，不展开相主等级')
+        return (f"回答按这个顺序：先用三句说{topic}已判、未判和一条现实动作；再说这段时间指 {span}；"
                 "再逐层说本次算到了什么——" + '、'.join(x for x in layers if not x.startswith('月和日'))
-                + f"；相主等级放在最后单列「附：传统择日等级（借用相主，不是{topic}预测）」；"
-                "现实动作标明是现实建议、不是命理结论；「不能保证结果」只说一次。")
+                + tail + "；现实动作标明是现实建议、不是命理结论；「不能保证结果」只说一次。")
     return (f"回答按这个顺序：先说这段时间指 {span}；再逐层说本次算到了什么——"
             + '、'.join(layers) + "，没算到的层（如这件事本身的专门条款）直说没有；然后按用户说的实际处境给一两条现实动作，"
             "标明是现实建议、不是命理结论；「不能保证结果」只说一次，不能代替上面已经能确定的部分。")
@@ -1460,12 +1461,24 @@ def area_outlook(result: dict) -> list[str]:
     return [AREA_LABELS[a] for a in areas_asked(result.get('question') or '')]
 
 
-def area_outlook_note(areas: list[str]) -> str:
+# Words that ask which days (R11 FIX-11-01: T10 asked no date, and still got a 相主 appendix).
+DATE_WORDS = ('哪天', '哪几天', '日子', '择日', '吉日', '选日', '日期', '日段', '几号', '时段', '哪个时间')
+
+
+def asks_dates(question: str) -> bool:
+    return any(word in question for word in DATE_WORDS)
+
+
+def area_outlook_note(areas: list[str], dates: bool = True) -> str:
     """R10 FIX-03: readers took 大吉/凶 day grades for a career forecast when they opened the answer."""
     topic = '、'.join(areas)
-    return (f"问的是{topic}走势：开头三句依次说已判（原局{topic}看哪颗星、在哪几柱，用 bazi_reading 的 life_areas）、"
-            f"未判（{topic}好坏本次没判，用神或岁运条件未定）、最少还要补什么；相主等级不进开头和结论，"
-            f"放在后面单列一节「附：传统择日等级（借用相主，不是{topic}预测）」，原词照抄，范围在这一节说一次。")
+    lead = (f"问的是{topic}走势：第一段依次说已判（原局{topic}看哪颗星、在哪几柱，用 life_areas 的 lead 白话说，"
+            f"书上的十神名只在括号里出现一次）、未判（{topic}好坏本次没判，用神或岁运条件未定）、"
+            "一条现实动作（life_areas 的 action，连同「不是命理结论」一起说）；最少还要补什么放在第二段。")
+    if not dates:
+        return lead + f"用户没问哪天，不展开相主等级；追问哪天再给，并标明是借用相主、不是{topic}预测。"
+    return (lead + f"相主等级不进开头和结论，放在后面单列一节「附：传统择日等级（借用相主，不是{topic}预测）」，"
+            "原词照抄，范围在这一节说一次。")
 
 
 def host_notes(result: dict) -> list[str]:
@@ -1473,7 +1486,7 @@ def host_notes(result: dict) -> list[str]:
     notes = ['等级、干支和理由只用上面的结果；不要自己写代码另算干支、十神或等级。']
     areas = area_outlook(result)
     if areas:
-        notes.append(area_outlook_note(areas))
+        notes.append(area_outlook_note(areas, asks_dates(result.get('question') or '')))
     elif _borrowed(result) and (result.get('personal_calendar') or result.get('ranking')):
         label = _event_label(result)
         notes.append(f"相主是借用到「{label}」上的：首句和结论都要保留「借用相主比较」，只能说相主等级最高的是哪几天，"
@@ -1522,6 +1535,8 @@ def render_answer(result: dict, detail: bool = False) -> str:
         return result['message']
     areas = area_outlook(result)
     if areas:
+        if not asks_dates(result.get('question') or ''):
+            return PARAGRAPH.join(area_lead(result, areas))
         appendix = f"附：传统择日等级（借用相主，不是{'、'.join(areas)}预测）"
         return PARAGRAPH.join([*area_lead(result, areas), appendix, _render_grades(result, detail)])
     return _render_grades(result, detail)
@@ -1530,13 +1545,14 @@ def render_answer(result: dict, detail: bool = False) -> str:
 def area_lead(result: dict, areas: list[str]) -> list[str]:
     """The judged natal facts first, then what is not judged (R10 FIX-03)."""
     topic = '、'.join(areas)
-    says = [area['say'].split('。')[0] + '。'
-            for person in result.get('participants', [])
-            for area in ((person.get('natal_interpretation') or {}).get('life_areas') or {}).get('areas', [])
-            if area.get('say')]
-    judged = ''.join(says) or f"原局{topic}看哪颗星、在哪几柱，用 bazi_reading.py --question 原话 取 life_areas 再说。"
-    return [judged,
-            f"{topic}好坏本次没判：用神和岁运的取舍条件还没核完，下面的相主等级只比较出生年和各月各日，不是{topic}预测。",
+    found = [area for person in result.get('participants', [])
+             for area in ((person.get('natal_interpretation') or {}).get('life_areas') or {}).get('areas', [])]
+    # R11 FIX-11-07: the lead says the relation in plain words (life_areas lead), not 「事业看正官、七杀：…藏丁（正官）」.
+    judged = (''.join(a.get('lead') or a['say'].split('。')[0] + '。' for a in found if a.get('say'))
+              or f"原局{topic}看哪颗星、在哪几柱，用 bazi_reading.py --question 原话 取 life_areas 再说。")
+    step = next((a['action'] for a in found if a.get('action')), '')
+    # R11 FIX-11-01: judged, not judged, one real step, in the first paragraph; the question comes after.
+    return [judged + f"{topic}好坏本次没判：用神和岁运的取舍条件还没核完。" + step,
             '要再往下说，最少要补两样：现在的处境（在职求升、准备换工作还是推进项目），以及出生时间是否精确。']
 
 

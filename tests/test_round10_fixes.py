@@ -58,11 +58,16 @@ def _period(question: str) -> dict:
 
 def test_a_career_outlook_opens_with_what_is_judged_and_puts_day_grades_in_an_appendix():
     # FIX-03, C2 FIRST: five readers took the borrowed 大吉/凶 month grades for a career forecast.
+    # Round 11 (FIX-11-01, FIX-11-07): the plain lead replaces 「事业看正官、七杀」, and grades come only when a date
+    # is asked; FIRST asks none, so the appendix is checked on a question that asks which days.
     result = _period('帮我看看八字，最近事业怎么样')
     notes = '\n'.join(host_notes(result))
-    assert '附：传统择日等级（借用相主，不是事业预测）' in notes and '首句和结论都要保留' not in notes
+    assert '不展开相主等级' in notes and '首句和结论都要保留' not in notes
     draft = render_answer(result)
-    assert draft.startswith('事业看正官、七杀')
+    assert draft.startswith('事业方面') and '附：传统择日等级' not in draft
+    dated = _period('帮我看看八字，最近事业怎么样，哪几天适合谈')
+    assert '附：传统择日等级（借用相主，不是事业预测）' in '\n'.join(host_notes(dated))
+    draft = render_answer(dated)
     assert draft.index('事业好坏本次没判') < draft.index('附：传统择日等级') < draft.index('大吉')
     other = '\n'.join(host_notes(_period('未来七天哪天对我好')))
     assert '首句和结论都要保留「借用相主比较」' in other and '附：传统择日等级' not in other

@@ -61,8 +61,8 @@ def test_fortune_reading_facts_out(tmp_path):
     out = tmp_path / 'period.json'
     done = run('fortune_reading.py', '--stdin', '--facts-out', str(out), stdin=json.dumps(request))
     assert done.returncode == 0, done.stdout
-    # A career outlook opens with what is judged (R10 FIX-03), then the window.
-    assert ('回答按这个顺序：先用三句说事业已判、未判和最少要补什么；再说这段时间指 2026-11-01 至 2026-11-30'
+    # A career outlook opens with what is judged (R10 FIX-03) and one real step (R11 FIX-11-01), then the window.
+    assert ('回答按这个顺序：先用三句说事业已判、未判和一条现实动作；再说这段时间指 2026-11-01 至 2026-11-30'
             '（Asia/Shanghai，两端日期都含）') in done.stdout
     assert '2026年（丙午）' in done.stdout          # 阶段运势 lists the year layer even for a month
     assert json.loads(out.read_text(encoding='utf-8'))['host_notes']
