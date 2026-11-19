@@ -219,19 +219,24 @@ def say_lines(relations: list[dict], masters: dict) -> list[str]:
     return lines
 
 
-def _sanyuan(chart_a: dict, chart_b: dict) -> dict | None:
+def _sanyuan(chart_a: dict, chart_b: dict, source: str = 'xuanze') -> dict | None:
     """三元九宫合卦 for a man and a woman whose year pillars are settled (R2)."""
     people = {}
     for chart in (chart_a, chart_b):
         gender = chart.get('gender') or (chart.get('input') or {}).get('gender')
         pillar = ((chart.get('four_pillars') or {}).get('year') or {}).get('ganzhi')
+        # R11 N10 gave dates without hours: the date is then a pair of candidates, but the year pillar is settled
+        # and is all the 三元 count needs, so the candidates' common year stands in for the birth year.
         year = (chart.get('solar_date') or {}).get('year')
+        candidates = {d.get('year') for d in (chart.get('solar_date') or {}).get('candidate_dates') or []}
+        if not isinstance(year, int) and len(candidates) == 1:
+            year = candidates.pop()
         if gender not in ('male', 'female') or not pillar or not isinstance(year, int):
             return None
         people[gender] = {'year_pillar': pillar, 'birth_year': year}
     if set(people) != {'male', 'female'}:
         return None
-    return match(people['male'], people['female'])
+    return match(people['male'], people['female'], source)
 
 
 WHO = {'male': '男方', 'female': '女方'}
@@ -244,12 +249,14 @@ def _hour_edge(chart: dict) -> dict | None:
     return hour_boundary(tst, dst) if chart.get('hour_known', True) and isinstance(tst, dict) and tst.get('clock_time') else None
 
 
-def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage') -> dict:
+def pair_facts(chart_a: dict, chart_b: dict, relation: str = 'marriage', question: str = '') -> dict:
     if relation not in RELATIONS:
         raise ValueError(f"relation 须为 {'、'.join(RELATIONS)}")
     a_pos, b_pos = _positions(chart_a), _positions(chart_b)
     relations = [row for a, b in product(a_pos, b_pos) for row in _pair_relations(a, b)] + _full_trios(a_pos, b_pos)
-    sanyuan = _sanyuan(chart_a, chart_b) if relation == 'marriage' else None
+    # R11 FIX-11-15: a question that names 《协纪辨方书》 gets that book's own start table, not 《选择要略》's.
+    book = 'xieji' if '协纪' in question or '協紀' in question else 'xuanze'
+    sanyuan = _sanyuan(chart_a, chart_b, book) if relation == 'marriage' else None
     clauses = clause_refs(relations, relation)
     if sanyuan:
         clauses = {**clauses, 'not_computed_methods': [m for m in clauses['not_computed_methods']
@@ -288,7 +295,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description='两人八字之间逐柱的合冲刑害事实（不打分、不判好坏）',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog='stdin: {"a": {birth}, "b": {birth}, "relation": "marriage"|"parent_child"|"partnership"|"friendship"}；'
+        epilog='stdin: {"a": {birth}, "b": {birth}, "relation": "marriage"|"parent_child"|"partnership"|"friendship", '
+               '"question": 原话}；question 点名《协纪辨方书》时三元九宫按该书起宫；'
                '省略 relation 按婚恋；birth 键同 bazi_calc：year month day hour minute gender\n'
                'timezone longitude city sect lunar，省略 hour 表示时辰未知。\n'
                'Top-level JSON keys: ok tool version schema_version subjects day_masters relations say relation '
@@ -301,7 +309,7 @@ def main(argv: list[str] | None = None) -> int:
         if not isinstance(request, dict) or not all(isinstance(request.get(k), dict) for k in ('a', 'b')):
             raise ValueError('需要 {"a": {...}, "b": {...}} 两人的出生资料')
         result = pair_facts(subject_chart(request['a']), subject_chart(request['b']),
-                            request.get('relation', 'marriage'))
+                            request.get('relation', 'marriage'), str(request.get('question') or ''))
     except (ValueError, KeyError, TypeError) as exc:
         json_print(error_envelope('pair_facts', 'invalid_input', str(exc)))
         return 1

@@ -45,8 +45,8 @@ def test_an_absence_is_said_with_the_scope_of_the_search():
 def test_the_three_yuan_match_shows_its_count_so_it_can_be_redone_by_hand():
     from sanyuan_hehun import match
     say = match({'year_pillar': '壬申', 'birth_year': 1992}, {'year_pillar': '甲戌', 'birth_year': 1994})['say']
-    assert '下元男从四宫起甲子，逆数 8 步到壬申，落中五宫，男寄坤二' in say
-    assert '下元女从八宫起甲子，顺数 10 步到甲戌，落离九宫' in say and '合成游魂' in say
+    assert '下元（1984 年甲子起）男从四宫起甲子，逆数 8 步到壬申，落中五宫，男寄坤二' in say
+    assert '下元（1984 年甲子起）女从八宫起甲子，顺数 10 步到甲戌，落离九宫' in say and '合成游魂' in say
 
 
 def test_a_historical_offset_names_the_time_zone_database_that_gave_it():

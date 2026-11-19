@@ -39,7 +39,8 @@ def sanyuan_items(match: dict) -> list[dict]:
                         [f'{DIGITS[start]}宫起', f'{start}宫起', f'{DIGITS[start]}宫开始'],
                         [p['direction'] + '数', p['direction'] + '行', p['direction'] + '推'],
                         number_forms(p['steps'])))
-    out.append(item('sanyuan:relation', f"合成{match['relation']}", [match['relation']]))
+    if match.get('relation'):
+        out.append(item('sanyuan:relation', f"合成{match['relation']}", [match['relation']]))
     return out
 
 

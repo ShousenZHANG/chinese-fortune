@@ -135,3 +135,45 @@ def test_solar_term_transition_precision():
     independent = int(t.h) * 60 + int(t.m) + (1 if t.s >= 30 else 0)
     assert f'{independent // 60}:{independent % 60:02d}' == boundary['display'].split(' ')[1]
     assert any('只说到分钟' in note for note in host_notes(result))
+
+
+def test_sanyuan_explicit_xieji_and_xuanze_differ():
+    # FIX-11-15, N10 named 《协纪辨方书》 but the tool only had 《选择要略》's start table. 协纪 c035:p0016 (《三元經》):
+    # 男 上元起坎一、中元起巽四、下元起兑七逆行; 女 上元起中五、中元起坤二、下元起艮八顺行. Gold N10 (1990 庚午男、
+    # 1992 壬申女, 下元 from 1984): 男 兑七逆 6 步 -> 坎一, 女 艮八顺 8 步 -> 兑七; 小游年 (c002:p0021/p0023) 坎 -> 兑
+    # at step 5, 廉贞 (五鬼). 《选择要略》's 男下元起四宫 is the 俗误 that c035:p0017 records, so its pair differs.
+    from sanyuan_hehun import match
+    male, female = {'year_pillar': '庚午', 'birth_year': 1990}, {'year_pillar': '壬申', 'birth_year': 1992}
+    xieji = match(male, female, source='xieji')
+    assert (xieji['male']['start_palace'], xieji['male']['steps'], xieji['male']['palace']) == (7, 6, 1)
+    assert (xieji['female']['start_palace'], xieji['female']['steps'], xieji['female']['palace']) == (8, 8, 7)
+    assert (xieji['relation'], xieji['star']) == ('五鬼', '廉贞') and xieji['source_ids'][0] == 'xieji:c035:p0016'
+    for pid in ('xieji:c035:p0016', 'xieji:c002:p0021', 'xieji:c036:p0016'):
+        assert pid in xieji['say']
+    assert 'book_grade' not in xieji and '不合成' in xieji['say']
+    xuanze = match(male, female)
+    assert xuanze['male']['start_palace'] == 4 and xuanze['relation'] != xieji['relation']
+    # 下元男 from 兑七 two steps back lands on 中五; c035:p0016 does not say which palace stands in, so no result.
+    centre = match({'year_pillar': '丙寅', 'birth_year': 1986}, female, source='xieji')
+    assert centre['status'] == 'unsupported' and '中五' in centre['reason'] and 'relation' not in centre
+    # The pair tool takes the named book from the request.
+    import json
+    import subprocess
+    import sys
+    from conftest import script_path
+    request = {'a': {'year': 1990, 'month': 6, 'day': 12, 'gender': 'male', 'city': '北京'},
+               'b': {'year': 1992, 'month': 9, 'day': 18, 'gender': 'female', 'city': '北京'},
+               'question': '请按《协纪辨方书》所载三元九宫合婚法演示'}
+    done = subprocess.run([sys.executable, str(script_path('pair_facts.py')), '--stdin'], input=json.dumps(request),
+                          capture_output=True, text=True, encoding='utf-8')
+    assert json.loads(done.stdout)['sanyuan_jiugong']['source'] == 'xieji'
+
+
+def test_sanyuan_output_exposes_cycle_epoch():
+    # FIX-11-08, N19: the answer gave start palace and steps but not 1984, the 甲子 the count starts from (gold:
+    # 1444 + 3 × 180 = 1984). 1992 壬申男 counts 8 steps, 1994 甲戌女 10 steps, both from 1984.
+    from sanyuan_hehun import match
+    out = match({'year_pillar': '壬申', 'birth_year': 1992}, {'year_pillar': '甲戌', 'birth_year': 1994})
+    assert (out['male']['epoch_year'], out['male']['steps'], out['female']['epoch_year'], out['female']['steps']) \
+        == (1984, 8, 1984, 10)
+    assert '1984 年甲子起' in out['say'] and 'xieji:c036:p0016' in out['say']
