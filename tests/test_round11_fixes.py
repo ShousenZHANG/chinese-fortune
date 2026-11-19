@@ -342,3 +342,20 @@ def test_colour_first_answer_examples_before_sources():
     review = out['colour_advice']['tiaohou']['review_note']
     assert all(review not in part['text'] for part in lead)
     assert any('colour_advice.lead' in note for note in out['host_notes'])
+
+
+def test_interview_liuyao_next_step_with_no_promise():
+    # FIX-11-13, E06: the chart and the open verdict were right, but the full line table and terms came first and the
+    # reader had nothing to do. Gold E06: 8,6,7,8,9,7 bottom up -> 风山渐, lines 2 and 5 moving -> 山风蛊.
+    out = run_cli('liuyao_cast.py', 'coins', '--lines', '8,6,7,8,9,7', '--date', '2026-11-18', '--time', '16:00',
+                  '--target-timezone', 'Asia/Shanghai', '--question', '这次面试能不能过')
+    lead = {part['part']: part['text'] for part in out['first_answer']}
+    assert list(lead) == ['chart', 'undecided', 'next_step']
+    assert '风山渐' in lead['chart'] and '二、五爻动' in lead['chart'] and '山风蛊' in lead['chart']
+    assert '没断' in lead['undecided'] and '邮件' in lead['next_step'] and '不是卦象结论' in lead['next_step']
+    assert not any(word in text for text in lead.values() for word in ('一定能', '一定会', '必过', '必然'))
+    assert '爻表' in out['first_answer_order']
+    # A question with no mapped real-life step gets no invented one.
+    other = run_cli('liuyao_cast.py', 'coins', '--lines', '8,6,7,8,9,7', '--date', '2026-11-18', '--time', '16:00',
+                    '--target-timezone', 'Asia/Shanghai', '--question', '丢的猫在哪')
+    assert [part['part'] for part in other['first_answer']] == ['chart', 'undecided']

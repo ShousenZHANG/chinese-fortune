@@ -590,7 +590,7 @@ def _checks_text(checks: dict) -> str:
 EPILOG = """Top-level JSON keys on stdout (UTF-8):
   method question entropy yongshen_hint yongshen_hint_source cast_time raw_lines main_chart
   changed_chart nuclear_chart active_lines main_judgment main_image timing cuo_zong
-  active_line_text fu_shen rule_checks reading_plan reading_support rule_index; optional: must_cover
+  active_line_text fu_shen rule_checks reading_plan first_answer first_answer_order reading_support rule_index; optional: must_cover
 
 On error: {"error": ..., "message": ...} and exit 1."""
 
@@ -666,6 +666,34 @@ def parse_tosses(text: str, seed: int | None) -> list[int]:
     if len(parts) != 6 or any(p not in ('6', '7', '8', '9') for p in parts):
         raise ValueError("--lines 需要 6 个数, 每个是 6/7/8/9, 自下而上, 例如 7,8,9,6,7,7")
     return [int(p) for p in parts]
+
+
+LINE_NAMES = '初二三四五上'
+# Round 11 FIX-11-13, E06: a real-life step for the questions people ask most, said as such; none is made up for others.
+NEXT_STEPS = (
+    (('面试', '录用', '应聘', '求职', 'offer', '复试'),
+     '面试后两三个工作日还没消息，可以礼貌发一封邮件问进度；同时继续投别的机会，不把希望押在这一家。'),
+    (('考试', '考研', '考公', '考证', '高考'), '把离考试剩下的日子排成每天的小目标，先补最弱的一块。'),
+    (('押金', '退款', '欠款', '合同', '工资'), '把合同、付款和沟通记录整理在一起，书面写清你要求的日期和金额。'),
+)
+
+
+def first_answer(out: dict) -> list[dict]:
+    """The chart in one sentence, what is not judged, and a real step when the question has one."""
+    main_chart, changed, moving = out['main_chart'], out.get('changed_chart'), out.get('active_lines') or []
+    chart = f"本卦{main_chart['hex_name']}" + (
+        f"，{'、'.join(LINE_NAMES[p - 1] for p in moving)}爻动，变卦{changed['hex_name']}" if moving and changed
+        else '，六爻都没有动') + '。'
+    hits = set((out.get('reading_plan') or {}).get('primary', {}).get('rule_hits') or [])
+    mixed = any('support' in h for h in hits) and any('restraint' in h for h in hits)
+    undecided = (('用神（这卦里代表所问之事的那一爻）有生扶也有克制，' if mixed else '')
+                 + '成败这次没断：工具只核了原文字面条件，喜忌和救助要人工再核，不推定结果和日期。')
+    parts = [{'part': 'chart', 'text': chart}, {'part': 'undecided', 'text': undecided}]
+    question = out.get('question') or ''
+    step = next((text for words, text in NEXT_STEPS if any(w in question for w in words)), None)
+    if step:
+        parts.append({'part': 'next_step', 'text': f'现实跟进：{step}这是一般做法，不是卦象结论，也不预测结果。'})
+    return parts
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -775,6 +803,8 @@ def main(argv: list[str] | None = None) -> int:
     if must:
         out["must_cover"] = must
     out["reading_plan"] = plan(out)
+    out["first_answer"] = first_answer(out)
+    out["first_answer_order"] = "第一层只说 first_answer（卦名、未判、现实跟进）；爻表、纳甲、六亲和原文放在后面，按需核对。"
     out["reading_support"] = {"method_rules": method_reading_packet("liuyao", out)}
     out["rule_index"] = rule_index()
     if args.markdown:
