@@ -277,3 +277,29 @@ def test_move_first_request_answers_partial_before_clarification():
     assert any('term_day' in r for r in out['rows'])          # 大雪 falls on 12月7日
     guide = (REFS / '00-intake.md').read_text(encoding='utf-8')
     assert 'huangli_query.py --month' in guide and '两种读法' in guide
+
+
+def test_element_counts_presented_once():
+    # FIX-11-04, T22: the host read the tool's count sentence and then laid out the same five numbers in a table, with
+    # the hidden-stem count after it. The sentence now gives the surface count once, says where a missing element
+    # hides, and keeps the full hidden-stem count apart for when it is asked.
+    import pytest
+    sxtwl = pytest.importorskip('sxtwl')
+    out = run_cli('bazi_reading.py', '--year', 2004, '--month', 2, '--day', 29, '--hour', 12, '--minute', 15,
+                  '--gender', 'male', '--longitude', 106.5516, '--timezone', 'Asia/Shanghai', '--time-standard', 'clock',
+                  '--question', '这四柱五行各有几个，缺什么？')
+    counts = out['chart_facts']['wuxing_counts']
+    # Independent pillars (sxtwl) and the plain element of each character.
+    gan, zhi = '甲乙丙丁戊己庚辛壬癸', '子丑寅卯辰巳午未申酉戌亥'
+    element = dict(zip(gan + zhi, '木木火火土土金金水水' + '水土木木土火火土金金土水'))
+    day = sxtwl.fromSolar(2004, 2, 29)
+    pillars = [day.getYearGZ(), day.getMonthGZ(), day.getDayGZ(), day.getHourGZ(12)]
+    chars = [gan[p.tg] for p in pillars] + [zhi[p.dz] for p in pillars]
+    expected = {e: sum(element[c] == e for c in chars) for e in '木火土金水'}
+    assert counts['surface'] == expected
+    row = ' '.join(f'{e}{n}' for e, n in expected.items())
+    assert counts['say'].count(row) == 1 and '藏干另数' not in counts['say']
+    missing = [e for e, n in expected.items() if n == 0]
+    for e in missing:
+        assert f'没有{e}' in counts['say'] and '藏' in counts['say']
+    assert '木' in counts['hidden_say'] and '只出现一次' in counts['show_once']

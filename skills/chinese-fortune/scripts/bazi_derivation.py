@@ -305,7 +305,17 @@ def wuxing_counts(pillars: dict, hour_known: bool = True) -> dict:
     def row(counts: dict) -> str:
         return ' '.join(f'{e}{counts[e]}' for e in ELEMENTS)
     scope = '四柱' if hour_known else '年月日三柱（时辰未知）'
+    # R11 FIX-11-04, T22: the host read this sentence and laid out the same numbers again in a table, then the
+    # hidden-stem count. One sentence, one count; a missing element is placed where it hides; the rest on request.
+    holders = {e: [f"{(pillars.get(k) or {})['branch']}藏{stem}" for k in keys
+                   for stem in HIDDEN_STEMS.get((pillars.get(k) or {}).get('branch') or '', [])
+                   if TIANGAN_WUXING[stem] == e] for e in ELEMENTS if not surface[e]}
+    hidden_note = ''.join(f"表面没有{e}，" + (f"但{'、'.join(dict.fromkeys(spots))}（{e}）。" if spots else '藏干里也没有。')
+                          for e, spots in holders.items())
     return {'pillars_counted': keys, 'surface': surface, 'surface_total': sum(surface.values()),
             'hidden': hidden, 'hidden_total': sum(hidden.values()),
-            'say': (f"只数{scope}的天干地支（每字记 1，不加权）：{row(surface)}，共 {sum(surface.values())} 个；"
-                    f"藏干另数（每个记 1，不加权）：{row(hidden)}，共 {sum(hidden.values())} 个。个数不等于力量，也不等于喜忌。")}
+            'say': (f"只数{scope}的天干地支（每字记 1，不加权，不含藏干）：{row(surface)}，共 {sum(surface.values())} 个。"
+                    f"{hidden_note}个数不等于力量，也不等于喜忌。"),
+            'hidden_say': f"藏干另数（每个记 1，不加权）：{row(hidden)}，共 {sum(hidden.values())} 个。",
+            'show_once': '这组数字在回答里只出现一次：要么一张表，要么 say 这一句，不两样都给；'
+                         'hidden_say 的完整藏干统计只在用户问到时给。'}
