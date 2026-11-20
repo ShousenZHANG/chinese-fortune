@@ -37,3 +37,16 @@ def test_match_quotes_the_grade_and_the_dissent():
     assert out['male']['year'] == 1999 and out['relation'] == '归魂' and out['book_grade'] == '中平'
     assert out['dissent']['passage_id'] == 'xieji:c036:p0016' and '协纪辨方书' in out['say']
     assert out['dissent']['quote'].replace('', '') in get_passage('xieji:c036:p0016')['text']
+
+
+def test_xieji_say_passes_its_own_quote_check():
+    # Found by chinese-fortune-temple: 月老殿's 协纪 path was withheld because the say quoted 「上元起兑七中元起坎一下元起巽四」,
+    # but xieji:c035:p0017 reads 「起兑七中元起坎一下元起巽四」 (no 上元), so answer_check could not find the quote.
+    from answer_check import check_answer
+    from pair_facts import pair_facts, subject_chart
+    births = ({'year': 1990, 'month': 6, 'day': 12, 'gender': 'male', 'city': '北京'},
+              {'year': 1992, 'month': 9, 'day': 18, 'gender': 'female', 'city': '北京'})
+    out = pair_facts(*(subject_chart(birth) for birth in births), 'marriage', '按《协纪辨方书》起宫')
+    assert out['sanyuan_jiugong']['status'] == 'computed'
+    errors = [f for f in check_answer('\n'.join(out['say']), [out])['findings'] if f['severity'] == 'error']
+    assert errors == []
