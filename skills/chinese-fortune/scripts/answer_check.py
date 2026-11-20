@@ -47,8 +47,8 @@ ELLIPSIS = re.compile(r'……|…|\.{3,}|⋯+')
 TITLE_BEFORE = re.compile(r'《([^》]{1,16})》[^「『“"。！？]{0,40}$')
 # A cited passage id (ditian:c016:p0001) is the strongest cue there is: the quote
 # must then be in that very passage.
-PASSAGE_REF = re.compile(r'([a-z]+:c\d{3}:p\d{4})[^「『“"。！？]{0,24}$')
-PASSAGE_REF_AFTER = re.compile(r'^[^「『“"\n]{0,16}?([a-z]+:c\d{3}:p\d{4})')
+PASSAGE_REF = re.compile(r'([a-z][a-z_]*:c\d{3}:p\d{4})[^「『“"。！？]{0,24}$')
+PASSAGE_REF_AFTER = re.compile(r'^[^「『“"\n]{0,16}?([a-z][a-z_]*:c\d{3}:p\d{4})')
 NEGATOR = re.compile(r'[不無无非勿莫未弗毋]')
 MODALS = set('可能得宜必敢會会須须當当應应以')
 # 「最忌見傷」截成「見傷」：删掉忌、畏一类动词，同样把意思反过来。
@@ -203,7 +203,7 @@ def _quotes(answer: str) -> Iterator[tuple[str, str, str]]:
                answer[last.end():last.end() + 24])
 
 
-SOURCE_NEAR = re.compile(r'《[^》]{1,16}》|[a-z]+:c\d{3}:p\d{4}')
+SOURCE_NEAR = re.compile(r'《[^》]{1,16}》|[a-z][a-z_]*:c\d{3}:p\d{4}')
 
 
 def _sourced_nearby(answer: str, quote: str) -> bool:

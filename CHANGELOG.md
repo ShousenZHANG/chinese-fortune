@@ -7,6 +7,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 ## [Unreleased]
 
 - **协纪合婚引文可核**：`pair_facts` 按《协纪辨方书》起宫时，`say` 引卷三十五俗误写成「上元起兑七中元起坎一下元起巽四」，冻结原文 xieji:c035:p0017 作「起兑七中元起坎一下元起巽四」，「上元」二字不在这一段，`answer_check` 因此判为找不到原文，宿主按规则只能拦下这段回答。引文改为逐字原文；前半句说《选择要略》的起法后先断句，引文前只出现《协纪辨方书》一个书名，署名不会被认成《选择要略》（`tests/test_sanyuan_hehun.py`）。
+- **四库本易林的段号能被认出**：`answer_check` 识别段号的正则只收小写字母，`yilin_siku:c004:p0491` 被读成 `siku:c004:p0491`，四库本《焦氏易林》的正确引文因此被判为署名错误。段号前缀现在允许下划线（`tests/test_quote_authority.py`）。
 
 ## [6.3.0] — 2026-11-19 — 第十一轮外部核验后的首答与可靠性修复
 

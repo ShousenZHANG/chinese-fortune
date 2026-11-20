@@ -89,3 +89,11 @@ def test_stdin_cli_rejects_search_note_as_classical_authority():
     result = json.loads(done.stdout)
     assert result['passed'] is False
     assert [finding['code'] for finding in result['findings']] == ['unverified_quote']
+
+
+def test_a_quote_from_the_siku_yilin_is_checked_against_its_own_passage():
+    # Found by chinese-fortune-temple's 每日一签: an id like yilin_siku:c004:p0491 was read as siku:c004:p0491 (the
+    # underscore stopped the match), so a correct quote from the 四库本 was reported as misattributed.
+    answer = '《焦氏易林》震之震：「枯瓠不朽利以濟舟渡踰江海無有溺憂」（yilin_siku:c004:p0491）。'
+    errors = [f['code'] for f in check_answer(answer, [])['findings'] if f['severity'] == 'error']
+    assert errors == []
